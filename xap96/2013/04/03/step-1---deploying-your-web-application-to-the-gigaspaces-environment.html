@@ -1,0 +1,2973 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Step 1 - Deploying Your Web Application to the GigaSpaces Environment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/jquery.treeview.css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+        <div class="span12">
+          <h1>Step 1 - Deploying Your Web Application to the GigaSpaces Environment</h1>
+        </div>
+      </header>
+
+      <div class="row">
+        <div class='col-md-4'>
+          <div>
+  Browse XAP 9.6
+</div>
+<ul id='navigation'>
+  <li>
+    <a href="/xap96/2012/07/16/quick-start-guide.html" title="Quick Start Guide">
+      Quick Start Guide
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2013/07/21/screen-casts.html">
+          Screen Casts
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/04/10/your-first-data-grid-application2.html">
+          Your First Data Grid Application
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/04/03/your-first-web-application.html">
+          Your First Web Application
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/04/03/step-1---deploying-your-web-application-to-the-gigaspaces-environment.html">
+              Step 1 - Deploying Your Web Application to the GigaSpaces Environment
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/04/03/step-2---enabling-http-session-failover-and-fault-tolerance.html">
+              Step 2 - Enabling HTTP Session Failover and Fault Tolerance
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/04/03/step-3---scaling-the-data-access-layer.html">
+              Step 3 - Scaling the Data Access Layer
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/07/08/your-first-xtp-application.html">
+          Your First XTP Application
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/07/08/setting-up-your-ide-to-work-with-gigaspaces.html">
+              Setting Up your IDE to work with GigaSpaces
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/07/08/step-one---using-processing-units-for-scaling.html">
+              Step One - Using Processing Units for Scaling
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/01/21/step-two---creating-the-hello-world-application.html">
+              Step Two - Creating the Hello World Application
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/02/20/step-three---deploying-onto-the-service-grid.html">
+              Step Three - Deploying onto the Service Grid
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/07/08/step-four---scaling-the-hello-world-application.html">
+              Step Four - Scaling the Hello World Application
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/10/15/your-first-jpa-application.html">
+          Your First JPA Application
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/10/15/step-1---adjusting-your-jpa-domain-model-to-the-xap-jpa-implementation.html">
+              Step 1 - Adjusting Your JPA Domain Model to the XAP JPA Implementation
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/02/step-2---using-the-power-of-the-space-to-scale-your-data-access-layer.html">
+              Step 2 - Using the Power of the Space to Scale Your Data Access Layer
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/21/step-3---building-and-running-the-application.html">
+              Step 3 - Building and Running the Application
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2009/06/23/beyond-the-basics.html">
+          Beyond the Basics
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/05/10/the-openspaces-data-example.html">
+              The OpenSpaces Data Example
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/07/21/xap-order-management-tutorial.html">
+              XAP Order Management Tutorial
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/07/14/your-first-real-time-big-data-analytics-application.html">
+          Your First Real Time Big Data Analytics Application
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/xap96/2008/09/15/product-overview.html" title="Product Overview">
+      Product Overview
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2011/03/22/concepts.html">
+          Concepts
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/06/09/a-typical-sba-application.html">
+          A Typical SBA Application
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/12/12/database-integration.html">
+          Database Integration
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/10/02/product-architecture.html">
+          Product Architecture
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/04/09/the-application-layer.html">
+          The Application Layer
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/09/07/terminology---space-based-architecture.html">
+          Terminology
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2011/07/29/terminology---basic-components.html">
+              Terminology - Basic Components
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/02/25/terminology---data-grid-topologies.html">
+              Terminology - Data Grid Topologies
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/09/07/terminology---runtime-components.html">
+              Terminology - Runtime Components
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/09/07/terminology---space-based-architecture.html">
+              Terminology - Space-Based Architecture
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/xap96/2008/09/16/programmer's-guide.html" title="Programmer's Guide">
+      Programmer's Guide
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2013/02/28/getting-started.html">
+          Getting Started
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/02/25/setting-up-your-ide-to-work-with-xap.html">
+              Setting Up your IDE to work with XAP
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/01/04/running-and-debugging-within-your-ide.html">
+              Running and Debugging Within Your IDE
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/02/the-runtime-environment.html">
+              The Runtime Environment
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/06/05/the-grid-service-agent.html">
+                  The Grid Service Agent
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/03/18/the-grid-service-container.html">
+                  The Grid Service Container
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/09/07/the-grid-service-manager.html">
+                  The Grid Service Manager
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/09/07/the-lookup-service.html">
+                  The Lookup Service
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/02/14/packaging-and-deployment.html">
+              Packaging and Deployment
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/03/11/the-processing-unit-structure-and-configuration.html">
+                  The Processing Unit Structure and Configuration
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/09/04/configuring-processing-unit-elements.html">
+                      Configuring Processing Unit Elements
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/27/configuring-the-processing-unit-sla.html">
+                      Configuring the Processing Unit SLA
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/05/03/custom-processing-unit-details-and-monitors.html">
+                      Custom Processing Unit Details and Monitors
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/12/28/deployment-properties.html">
+                      Deployment Properties
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/09/07/deploying-and-running-the-processing-unit.html">
+                  Deploying and Running the Processing Unit
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/02/21/deploying-onto-the-service-grid.html">
+                      Deploying onto the Service Grid
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/09/11/running-in-standalone-mode.html">
+                      Running in Standalone Mode
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/elastic-processing-unit.html">
+                      Elastic Processing Unit
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/09/07/elastic-processing-unit---take-2.html">
+                          Elastic Processing Unit - take 2
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/31/elastic-space-processing-unit.html">
+                              Elastic Space Processing Unit
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/31/elastic-statelful-processing-unit.html">
+                              Elastic Statelful Processing Unit
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/31/elastic-stateless-processing-unit.html">
+                              Elastic Stateless Processing Unit
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/08/28/deploying-your-application-on-a-cloud.html">
+                  Deploying your Application on a Cloud
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/12/17/obtaining-cluster-information.html">
+                  Obtaining Cluster Information
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/10/15/main-modules.html">
+          Main Modules
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/05/25/the-in-memory-data-grid.html">
+              The In-Memory Data Grid
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/12/24/space-topologies.html">
+                  Space Topologies
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/29/multi-site-replication-over-the-wan.html">
+                      Multi-Site Replication over the WAN
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/06/03/communication-filter-over-the-wan-%28ssl,zip%29.html">
+                          Communication Filter Over the Wan (SSL,ZIP)
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/01/31/replication-gateway-components.html">
+                          Replication Gateway Components
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/13/configuring-space-gateway-targets.html">
+                          Configuring Space Gateway Targets
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/13/replication-gateway-bootstrapping-process.html">
+                          Replication Gateway Bootstrapping Process
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/06/11/multi-site-conflict-resolution-9.0.1.html">
+                          Multi-Site Conflict Resolution
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/06/11/multi-site-conflict-resolution-9.0.1.html">
+                              Multi-Site Conflict Resolution 9.0.1
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/08/01/changing-multi-site-deployment-during-runtime.html">
+                          Changing Multi-Site Deployment during Runtime
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/10/04/replication-gateway-filtering.html">
+                          Replication Gateway Filtering
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/10/02/intercepting-replication-events-at-the-gateway.html">
+                          Intercepting Replication Events at the Gateway
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/08/20/multi-site-replication-limitations.html">
+                          Multi-Site Replication Limitations
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/08/05/multi-site-replication-over-the-wan---faq.html">
+                          Multi-Site Replication over the WAN - FAQ
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/01/25/multi-space-replication-over-the-lan-or-vpn.html">
+                      Multi-Space Replication over the LAN or VPN
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/09/24/replication-gateway-lan-bootstrapping-process.html">
+                          Replication Gateway LAN Bootstrapping Process
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/03/30/deploying-and-interacting-with-the-space.html">
+                  Deploying and Interacting with the Space
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/19/the-space-component.html">
+                      The Space Component
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/03/06/space-filters.html">
+                          Space Filters
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/08/09/cluster-replication-filters.html">
+                          Cluster Replication Filters
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/12/29/space-mode-context-loader.html">
+                          Space Mode Context Loader
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/05/20/space-url.html">
+                          Space URL
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/11/14/client-side-caching-over-the-wan.html">
+                      Client Side Caching
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/11/local-view-and-local-cache.html">
+                          Local Cache
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/04/03/local-view.html">
+                          Local View
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/14/client-side-caching-over-the-wan.html">
+                          Client-Side Caching over the WAN
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/14/monitoring-the-client-side-cache.html">
+                          Monitoring the Client-Side Cache
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2009/06/28/programmatic-api-%28configurers%29.html">
+                      Programmatic API (Configurers)
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/02/19/memory-management-facilities.html">
+                      Memory Management Facilities
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/19/all-in-cache-cache-policy.html">
+                          ALL IN CACHE-Cache Policy
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/16/custom-eviction-policy.html">
+                          Custom Eviction Policy
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/19/lru-cache-policy.html">
+                          LRU-Cache Policy
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/28/asynchronous-persistency-with-the-mirror.html">
+                      Persistency
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/28/asynchronous-persistency-with-the-mirror.html">
+                          Asynchronous Persistency with the Mirror
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2013/02/14/async-persistency---mirror---advanced.html">
+                              Async Persistency - Mirror - Advanced
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/28/direct-persistency.html">
+                          Direct Persistency
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/11/space-persistency-advanced-topics.html">
+                          Persistency Advanced Topics
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/11/transient-entries.html">
+                              Transient Entries
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/25/space-persistency-initial-load.html">
+                          Space Persistency
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/28/cassandra-space-persistency.html">
+                              Cassandra Space Persistency
+                            </a>
+                            <ul>
+                              <li class='closed'>
+                                <a href="/xap96/2012/12/28/cassandra-space-data-source.html">
+                                  Cassandra Space Data Source
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2012/12/28/cassandra-space-synchronization-endpoint.html">
+                                  Cassandra Space Synchronization Endpoint
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2012/12/11/hector-cassandra-client.html">
+                                  Hector Cassandra Client
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/03/3/hibernate-space-persistency.html">
+                              Hibernate Space Persistency
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/07/28/migrating-from-external-data-source-api.html">
+                              Migrating From External Data Source API
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/02/24/space-data-source-api.html">
+                              Space Data Source API
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/11/space-persistency-advanced-topics.html">
+                              Space Persistency Advanced Topics
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/25/space-persistency-initial-load.html">
+                              Space Persistency Initial Load
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/02/25/space-synchronization-endpoint-api.html">
+                              Space Synchronization Endpoint API
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/modeling-and-accessing-your-data.html">
+                  Modeling and Accessing Your Data
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/08/20/clustered-vs-non-clustered-proxies.html">
+                      Clustered vs Non-Clustered Proxies
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/24/modeling-your-data.html">
+                      Modeling your data
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/12/pojo-support.html">
+                      POJO Support
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/06/02/pojo-metadata.html">
+                          POJO Metadata
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/06/parent-child-relationship.html">
+                          Parent Child Relationship
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/15/dynamic-properties.html">
+                          Dynamic Properties
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/03/15/storage-types---controlling-serialization.html">
+                          Storage Types - Controlling Serialization
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/document-api.html">
+                      Document API
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/05/25/extending-space-documents.html">
+                          Extending Space Documents
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/07/document-pojo-interoperability.html">
+                          Document-POJO Interoperability
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/06/14/caching-scenarios.html">
+                  Caching Scenarios
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/04/15/gigaspaces-for-hibernate-orm-users.html">
+                      GigaSpaces for Hibernate ORM Users
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/12/11/space-persistency-advanced-topics.html">
+                  Advanced Topics
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/08/communication-protocol.html">
+                      Communication Protocol
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/15/controlling-serialization-%28deprecated%29.html">
+                      Controlling Serialization (Deprecated)
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/29/externalizable-support-%28deprecated%29.html">
+                      Externalizable Support (Deprecated)
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/handling-large-objects.html">
+                      Handling Large Objects
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/27/the-space-api.html">
+              The Space API
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/03/30/the-gigaspace-interface.html">
+                  The GigaSpace Interface
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/26/change-api-advanced.html">
+                      Change API
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/03/26/change-api-advanced.html">
+                          Change API Advanced
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/24/counters.html">
+                      Counters
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/02/07/the-gigaspacecontext-annotation.html">
+                      The GigaSpaceContext Annotation
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/07/21/querying-the-space.html">
+                  Querying The Space
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/id-queries.html">
+                      Id Queries
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/20/template-matching.html">
+                      Template Matching
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/sqlquery.html">
+                      SQLQuery
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/query-nested-properties.html">
+                      Query Nested Properties
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/query-user-defined-classes.html">
+                      Query User Defined Classes
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/indexing.html">
+                      Indexing
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/paging-support-with-space-iterator.html">
+                      Paging Support with Space Iterator
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/06/23/getting-partial-results-using-projection-api.html">
+                      Getting Partial Results Using Projection API
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/06/23/space-object-id-operations.html">
+                  Space Object ID Operations
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/routing-in-partitioned-spaces.html">
+                  Routing In Partitioned Spaces
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/02/27/leases---automatic-expiration.html">
+                  Leases - Automatic Expiration
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/02/13/fifo-support.html">
+                  FIFO Support
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/01/23/fifo-grouping.html">
+                      FIFO Grouping
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/17/transaction-management.html">
+                  Transaction Management
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/space-locking-and-blocking.html">
+                      Space Locking and Blocking
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/06/21/gigaspaces-read-modifiers.html">
+                          GigaSpaces Read Modifiers
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/15/optimistic-locking.html">
+                          Optimistic Locking
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/21/pessimistic-locking.html">
+                          Pessimistic Locking
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/27/other-data-access-apis.html">
+              Other Data Access APIs
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/06/03/jdbc-driver.html">
+                  JDBC Driver
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/15/jpa-api.html">
+                  JPA API
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/06/23/jpa-entity-id.html">
+                      JPA Entity Id
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/02/03/jpa-relationships.html">
+                      JPA Relationships
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/03/gigaspaces-jpa-limitations.html">
+                      GigaSpaces JPA Limitations
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/03/09/map-api.html">
+                  Map API
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/15/memcached-api.html">
+                  Memcached API
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/28/services-on-top-of-the-data-grid.html">
+              Services on Top of the Data Grid
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/06/02/reloading-business-logic.html">
+                  Reloading Business Logic
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/01/task-execution-over-the-space.html">
+              Task Execution over the Space
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/aggregators.html">
+                  Aggregators
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2009/08/31/dynamic-language-tasks.html">
+                  Dynamic Language Tasks
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/05/24/space-based-remoting.html">
+              Space Based Remoting
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/executor-based-remoting.html">
+                  Executor Based Remoting
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/event-driven-remoting.html">
+                  Event Driven Remoting
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/28/event-processing.html">
+              Event Processing
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/03/04/archive-container.html">
+                  Archive Container
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/13/cassandra-archive-operation-handler.html">
+                      Cassandra Archive Operation Handler
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/24/notify-container.html">
+                  Notify Container
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/04/24/session-based-messaging-api.html">
+                      Session Based Messaging API
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/16/durable-notifications.html">
+                          Durable Notifications
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/09/slow-consumer.html">
+                          Slow Consumer
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/12/polling-container.html">
+                  Polling Container
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/06/18/data-event-listener.html">
+                  Data Event Listener
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/07/11/event-exception-handler.html">
+                  Event Exception Handler
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/04/messaging-support.html">
+              Messaging Support
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/03/27/jms-api-support.html">
+                  JMS API Support
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/12/jms---basics.html">
+                      JMS - Basics
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2010/05/06/jms-api-basic-usage.html">
+                          JMS API Basic Usage
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/04/07/jms-messages-in-gigaspaces.html">
+                          JMS Messages in GigaSpaces
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/12/02/jms-space-interoperability.html">
+                          JMS-Space Interoperability
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/09/12/jms-administration-api.html">
+                          JMS Administration API
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2008/05/22/working-with-gigaspaces-jndi.html">
+                              Working with GigaSpaces JNDI
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2008/10/28/working-with-gsjmsadmin.html">
+                              Working with GSJMSAdmin
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/05/02/using-jms-with-openspaces-example.html">
+                          Using JMS with OpenSpaces Example
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/12/jms---advanced.html">
+                      JMS - Advanced
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/14/jms-failover.html">
+                          JMS Failover
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/22/jms-transactions-in-gigaspaces.html">
+                          JMS Transactions in GigaSpaces
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/22/jms-user-security.html">
+                          JMS User Security
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/14/browsing-jms-queues.html">
+                          Browsing JMS Queues
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/14/jms-known-issues-and-considerations.html">
+                          JMS Known Issues and Considerations
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/25/using-gigaspaces-jms-without-changing-the-classpath.html">
+                          Using GigaSpaces JMS Without Changing the Classpath
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/02/web-application-support.html">
+              Web Application Support
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/05/26/global-http-session-sharing.html">
+                  Global HTTP Session Sharing
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/08/01/web-processing-unit-container.html">
+                  Web Processing Unit Container
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/17/web-jetty-processing-unit-container.html">
+                      Web Jetty Processing Unit Container
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/05/26/http-session-management.html">
+                          HTTP Session Management
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/3/apache-load-balancer-agent.html">
+                      Apache Load Balancer Agent
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/10/15/admin-modules.html">
+          Admin Modules
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/administration-and-monitoring-api-security.html">
+              Administration and Monitoring API
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/08/06/dump.html">
+                  Dump
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/12/25/logging-api.html">
+                  Logging API
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/17/administrative-alerts.html">
+                  Administrative Alerts
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/05/14/custom-triggering-of-an-alert.html">
+                      Custom Triggering of an Alert
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/19/snmp-connectivity-via-alert-logging-gateway.html">
+                      SNMP Connectivity via Alert Logging Gateway
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/integrations.html">
+          Integrations
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/07/04/maven-plugin.html">
+              Maven Plugin
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2008/10/27/maven-plugin---advanced.html">
+                  Maven Plugin - Advanced
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/08/30/mule-esb.html">
+              Mule ESB
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/09/04/mule-event-container-transport.html">
+                  Mule Event Container Transport
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/08/30/mule-processing-unit.html">
+                  Mule Processing Unit
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/30/mule-queue-provider.html">
+                  Mule Queue Provider
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/31/mule-seda-model.html">
+                  Mule SEDA Model
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/evaluating-performance-and-scalability.html">
+              Scala
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/constructor-based-properties.html">
+                  Constructor Based Properties
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/enhanced-xap-scala-repl.html">
+                  Enhanced XAP Scala REPL
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/scala-predicate-based-queries.html">
+                  Scala Predicate Based Queries
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/scala-scripting-executor.html">
+                  Scala Scripting Executor
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/07/20/scala-task-execution.html">
+                  Scala Task Execution
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/11/07/document-pojo-interoperability.html">
+          Interoperability
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2011/12/26/platform-interoperability-in-gigaspaces.html">
+              Platform Interoperability in GigaSpaces
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/03/05/rest-api.html">
+              REST API
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/07/18/xap-cpp.html">
+              XAP CPP
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/04/03/installing-cpp-api-package.html">
+                  Installing CPP API Package
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/04/12/cpp-api-hello-world-example.html">
+                  CPP API Hello World Example
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/04/29/cpp-api-basics.html">
+                  CPP API Basics
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/01/cpp-type-converter.html">
+                      CPP Type Converter
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/02/gigaspaces-cpp-api.html">
+                      GigaSpaces CPP API
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2010/04/29/cpp-api-configuration-file.html">
+                      CPP API Configuration File
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/18/cpp-api-code-generator.html">
+                      CPP API Code Generator
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/18/cpp-api-mapping-file.html">
+                          CPP API Mapping File
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/18/gsxml2cpp-utility.html">
+                          gsxml2cpp Utility
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/06/29/cpp-api-examples.html">
+                      CPP API Examples
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/22/cpp-api-usage-example.html">
+                          CPP API Usage Example
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/04/30/gigaspaces-cpp-processing-unit-example.html">
+                          GigaSpaces CPP Processing Unit Example
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/01/writing-existing-cpp-class-to-space.html">
+                          Writing Existing CPP Class to Space
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/04/29/cpp-api---advanced.html">
+                  CPP API - Advanced
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2010/04/30/gigaspaces-cpp-processing-unit-example.html">
+                      CPP Processing Unit
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/19/gigaspaces-cpp-api---overview.html">
+                      GigaSpaces CPP API - Overview
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2010/09/20/cloud-and-virtualization.html">
+          Cloud and Virtualization
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2010/09/20/xap-esm-on-cisco-ucs.html">
+              XAP ESM on Cisco UCS
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/09/20/xap-esm-on-rackspace.html">
+              XAP ESM on Rackspace
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/07/08/xap-on-rackspace.html">
+              XAP on Rackspace
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/06/21/xap-on-gogrid.html">
+              XAP on GoGrid
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/01/17/xap-on-vmware.html">
+              XAP on VMWare
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/10/12/appendix.html">
+          Appendix
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/09/04/xap-overview.html">
+              XAP Overview
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/04/09/openspaces-faq.html">
+              OpenSpaces FAQ
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2007/12/02/xap-community-faq.html">
+              XAP-Community FAQ
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/03/3/about-jini.html">
+              About Jini
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/xap96/2008/09/07/administrator's-guide.html" title="Administrator's Guide">
+      Administrator's Guide
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/installation.html">
+          Installation
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/installation-prerequisites.html">
+              Installation Prerequisites
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/04/05/installing-gigaspaces.html">
+                  Installing GigaSpaces
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/05/31/license-key.html">
+                  License Key
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/07/11/supported-platforms.html">
+                  Supported Platforms
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/system-environment-and-environment-variables.html">
+              System Environment and Environment Variables
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/07/24/common-environment-variables.html">
+                  Common Environment Variables
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/06/04/setting-classpath.html">
+                  Setting Classpath
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/12/22/setting-jvm-location.html">
+                  Setting JVM Location
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/configuring-the-system.html">
+          Configuring the System
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/07/17/system-properties-list.html">
+              System Properties List
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/12/22/failover-detection-and-tuning.html">
+              Failover Detection and Tuning
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/12/16/split-brain-and-island-scenarios.html">
+                  Split Brain and Island Scenarios
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/12/16/split-brain-and-active-election---general-definition.html">
+                      Split-Brain and Active Election - General Definition
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/06/16/web-management-console.html">
+          Web Management Console
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/04/08/starting-the-management-console.html">
+              Starting the Management Console
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/dashboard-view.html">
+              Dashboard View
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/application-view.html">
+              Application View
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/hosts-view.html">
+              Hosts View
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/data-grid-view.html">
+              Data Grid View
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2009/09/17/security-administration.html">
+          Security
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/security-basics.html">
+              Security Basics
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/security-concepts.html">
+                  Security Concepts
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/27/security-authorities.html">
+                  Security Authorities
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/05/5/security-configurations.html">
+                  Security Configurations
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/07/26/programmatically-managing-the-security-directory.html">
+                  Programmatically Managing the Security Directory
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/02/default-file-based-security-implementation.html">
+              Default File-Based Security Implementation
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/securing-xap-components.html">
+              Securing XAP Components
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/08/28/securing-your-data.html">
+                  Securing your Data
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/05/21/securing-the-grid-services.html">
+                  Securing the Grid Services
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/08/26/securing-the-transport-layer-%28using-ssl%29.html">
+                  Securing the Transport Layer (using SSL)
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/security-administration.html">
+              Security Administration
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/04/02/gigaspaces-management-center-%28ui%29-security.html">
+                  GigaSpaces Management Center (UI) Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/05/03/command-line-interface-%28cli%29-security.html">
+                  Command Line Interface (CLI) Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2009/09/17/administration-and-monitoring-api-security.html">
+                  Administration and Monitoring API Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/auditing.html">
+                  Auditing
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2009/09/21/java-security-policy-file.html">
+                  Java Security Policy File
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/04/02/securing-the-helloworld-example.html">
+              Securing the HelloWorld example
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/02/custom-security.html">
+              Custom Security
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/23/custom-authentication.html">
+                  Custom Authentication
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/custom-user-role-management.html">
+                  Custom User-Role Management
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/07/08/spring-security-bridge.html">
+              Spring Security Bridge
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2010/07/11/introducing-spring-security.html">
+                  Introducing Spring Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/04/09/gigaspaces-spring-based-security-bridge.html">
+                  GigaSpaces Spring-based Security bridge
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/24/authenticating-against-a-database.html">
+                  Authenticating against a database
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/24/authenticating-against-an-ldap-repository.html">
+                  Authenticating against an LDAP repository
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/09/30/gigaspaces-logging.html">
+          GigaSpaces Logging
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2009/07/16/formatting-log-messages.html">
+              Formatting Log Messages
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/08/24/managing-log-files.html">
+              Managing Log Files
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2009/07/16/backing-up-files-with-a-custom-policy.html">
+                  Backing-up Files With a Custom Policy
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/11/networking-how-tos.html">
+          Networking How Tos
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/how-to-configure-unicast-discovery.html">
+              How to Configure Unicast Discovery
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/03/3/how-to-configure-multicast.html">
+              How to Configure Multicast
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2008/09/08/how-to-determine-whether-multicast-is-available.html">
+                  How to Determine Whether Multicast is Available
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/08/25/how-to-set-gigaspaces-over-nat.html">
+              How to Set GigaSpaces Over NAT
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/lookup-service-configuration.html">
+              Lookup Service Configuration
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/04/02/how-to-configure-an-environment-with-multiple-network-cards-%28multi-nic%29.html">
+              How to Configure an Environment With Multiple Network-Cards (Multi-NIC)
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2010/04/25/advanced-multi-nic-configuration.html">
+                  Advanced Multi-NIC Configuration
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/how-to-set-gigaspaces-over-a-firewall.html">
+              How to Set GigaSpaces Over a Firewall
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/how-to-control-the-used-ports.html">
+              How to Control the Used Ports
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/managing-and-monitoring-a-running-system.html">
+          Managing and Monitoring a Running System
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2011/01/02/commands-and-scripts.html">
+              Commands and Scripts
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/01/02/commands-and-scripts.html">
+                  Scripts
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/gsinstance---gigaspaces-cli.html">
+                      gsInstance - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/platforminfo---gigaspaces-cli.html">
+                      PlatformInfo - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/startjinilus---gigaspaces-cli.html">
+                      startJiniLUS - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/startjinitx_mahalo---gigaspaces-cli.html">
+                      startJiniTX_Mahalo - GigaSpaces CLI
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/02/commands-and-scripts.html">
+                  Commands
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/cd---gigaspaces-cli.html">
+                      cd - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/06/6/undeploy-application---gigaspaces-cli.html">
+                      deploy-application - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/07/02/deploy---gigaspaces-cli.html">
+                      deploy - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/10/15/deploy-memcached---gigaspaces-cli.html">
+                      deploy-memcached - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/21/deploy-space-gigaspaces-cli.html">
+                      deploy-space GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/05/14/gs.bat---other-cli-commands.html">
+                      gs.bat - Other CLI Commands
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/gsa---gigaspaces-cli.html">
+                      gsa - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/help---gigaspaces-cli.html">
+                      help - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/12/jconsole---gigaspaces-cli.html">
+                      jconsole - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/27/list---gigaspaces-cli.html">
+                      list - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/login---gigaspaces-cli.html">
+                      login - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/ls---gigaspaces-cli.html">
+                      ls - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/pwd---gigaspaces-cli.html">
+                      pwd - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/quit---gigaspaces-cli.html">
+                      quit - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/set---gigaspaces-cli.html">
+                      set - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/17/space---gigaspaces-cli.html">
+                      space - GigaSpaces CLI
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/17/space-clean---gigaspaces-cli.html">
+                          space clean - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/17/space-clear---gigaspaces-cli.html">
+                          space clear - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/27/space-cluster-members---gigaspaces-cli.html">
+                          space cluster-members - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-config---gigaspaces-cli.html">
+                          space config - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-connections---gigaspaces-cli.html">
+                          space connections - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/22/space-copy---gigaspaces-cli.html">
+                          space copy - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-list---gigaspaces-cli.html">
+                          space list - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-ping---gigaspaces-cli.html">
+                          space ping - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-sql---gigaspaces-cli.html">
+                          space sql - GigaSpaces CLI
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/stats---gigaspaces-cli.html">
+                      stats - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/task---gigaspaces-cli.html">
+                      task - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/06/6/undeploy-application---gigaspaces-cli.html">
+                      undeploy-application - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/02/20/undeploy---gigaspaces-cli.html">
+                      undeploy - GigaSpaces CLI
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/05/03/graphical-user-interface.html">
+              Graphical User Interface
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/04/12/gigaspaces-management-center.html">
+                  GigaSpaces Management Center
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2008/11/10/using-space-browser-tab---gigaspaces-management-center.html">
+                      Using Space Browser Tab - GigaSpaces Management Center
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/27/gigaspaces-browser-tree-panel-and-configuration-panel.html">
+                          GigaSpaces Browser Tree Panel and Configuration Panel
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/connections-view---gigaspaces-browser.html">
+                              Connections View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/10/16/data-types-view---gigaspaces-browser.html">
+                              Data Types View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/object-inspector.html">
+                              Object Inspector
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/query-view---gigaspaces-browser.html">
+                              Query View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2010/04/12/statistics-view---gigaspaces-browser.html">
+                              Statistics View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/transactions-view---gigaspaces-browser.html">
+                              Transactions View - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/10/gigaspaces-browser-menus-and-buttons.html">
+                          GigaSpaces Browser Menus and Buttons
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/12/managing-space-containers---gigaspaces-browser.html">
+                          Managing Space Containers - GigaSpaces Browser
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-configuration-directory-services-tab---gigaspaces-browser.html">
+                              Space Container Configuration Directory Services Tab - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-configuration-general-tab---gigaspaces-browser.html">
+                              Space Container Configuration General Tab - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-configuration-jms-tab---gigaspaces-browser.html">
+                              Space Container Configuration JMS Tab - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-maintenance---gigaspaces-browser.html">
+                              Space Container Maintenance - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/12/pending-notify-templates-information.html">
+                          Pending Notify Templates Information
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/04/working-with-clusters---gigaspaces-browser.html">
+                          Working with Clusters - GigaSpaces Browser
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/customizing-cluster-view---gigaspaces-browser.html">
+                              Cluster View - GigaSpaces Browser
+                            </a>
+                            <ul>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/customizing-cluster-view---gigaspaces-browser.html">
+                                  Customizing Cluster View - GigaSpaces Browser
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/viewing-cluster-policy-settings-for-space---gigaspaces-browser.html">
+                                  Viewing Cluster Policy Settings for Space - GigaSpaces Browser
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/viewing-space-interrelations-in-cluster---gigaspaces-browser.html">
+                                  Viewing Space Interrelations in Cluster - GigaSpaces Browser
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/visualizing-cluster-groups-and-members---gigaspaces-browser.html">
+                                  Visualizing Cluster Groups and Members - GigaSpaces Browser
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/17/creating-custom-cluster---gigaspaces-browser.html">
+                              Creating Custom Cluster - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/failover-group---gigaspaces-browser.html">
+                              Failover Group - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/load-balancing-group---gigaspaces-browser.html">
+                              Load-Balancing Group - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/replication-group---gigaspaces-browser.html">
+                              Replication Group - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/04/working-with-spaces---gigaspaces-browser.html">
+                          Working with Spaces - GigaSpaces Browser
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-jms---gigaspaces-browser.html">
+                              Space JMS - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-maintenance---gigaspaces-browser.html">
+                              Space Maintenance - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-memory-management---gigaspaces-browser.html">
+                              Space Memory Management - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-serialization-and-engine-thread-pool---gigaspaces-browser.html">
+                              Space Serialization and Engine Thread Pool - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-timeout,-filters-and-lease-manager---gigaspaces-browser.html">
+                              Space Timeout, Filters and Lease Manager - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/12/09/running-gigaspaces-as-a-windows-service.html">
+              Running GigaSpaces as a Windows Service
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/04/27/space-jmx-management.html">
+              Space JMX Management
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/07/21/monitoring-network-activity.html">
+              Monitoring Network Activity
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/03/04/suggested-monitoring-tools.html">
+              Suggested Monitoring Tools
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/advanced-tasks.html">
+          Advanced Tasks
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/11/05/data-grid-clustering.html">
+              Data-Grid Clustering
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/05/consistency-level.html">
+                  Consistency Level
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/06/13/data-partitioning.html">
+                  Data-Partitioning
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/12/22/failover-detection-and-tuning.html">
+                  Failover
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/01/31/replication-gateway-components.html">
+                  Replication
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/01/replication-topologies.html">
+                      Replication Topologies
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/14/synchronous-replication.html">
+                      Synchronous Replication
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/13/asynchronous-replication.html">
+                      Asynchronous Replication
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/10/04/space-instance-recovery.html">
+                      Space Instance Recovery
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/replication-operations.html">
+                      Replication Operations
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/19/controlling-the-replication-redo-log.html">
+                      Controlling the Replication Redo Log
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/10/14/replication-parameters.html">
+                      Replication Parameters
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/01/split-brain-and-primary-resolution.html">
+                  Split Brain and Primary Resolution
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/performance-tuning-and-considerations.html">
+              Performance Tuning and Considerations
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/04/27/tuning-infrastructure.html">
+                  Tuning Infrastructure
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2008/09/10/tuning-gigaspaces-performance---advanced.html">
+                  Tuning GigaSpaces Performance
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/26/tuning-gigaspaces-performance---basics.html">
+                      Tuning GigaSpaces Performance - Basics
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/10/tuning-gigaspaces-performance---advanced.html">
+                      Tuning GigaSpaces Performance - Advanced
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/27/large-scale-deployment.html">
+                          Large Scale Deployment
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/07/08/proxy-connectivity-(old).html">
+                          Proxy Connectivity
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/07/08/proxy-connectivity-%28old%29.html">
+                              Proxy Connectivity (Old)
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/12/02/tuning-java-virtual-machines.html">
+                  Tuning Java Virtual Machines
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/01/08/moving-into-production-checklist.html">
+                  Moving into Production Checklist
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/08/07/tuning-threads-usage.html">
+                  Tuning Threads Usage
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/12/25/troubleshooting-tools.html">
+              Troubleshooting
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2010/12/20/troubleshooting-common-user-issues.html">
+                  Troubleshooting Common User Issues
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2008/09/03/troubleshooting-for-administrators.html">
+                  Troubleshooting for Administrators
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/06/19/testing-system-environment.html">
+                      Testing System Environment
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2008/06/11/locating-clustered-space-instances.html">
+                          Locating Clustered Space Instances
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/12/25/viewing-clustered-space-status.html">
+                          Viewing Clustered Space Status
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/07/11/failure-detection.html">
+                      Failure Detection
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2010/12/25/troubleshooting-tools.html">
+                      Troubleshooting Tools
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/04/24/migration-upgrade-interoperability-and-compatibility.html">
+              Migration Upgrade Interoperability and Compatibility
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/07/11/backward-compatibility.html">
+                  Backward Compatibility
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/evaluating-performance-and-scalability.html">
+              Evaluating Performance and Scalability
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/benchmarking.html">
+                  Benchmarking
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/27/benchmark-utility---gigaspaces-cli.html">
+                      Benchmark Utility - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/27/benchmark-view---gigaspaces-browser.html">
+                      Benchmark View - GigaSpaces Browser
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/01/c++-benchmark-framework.html">
+                      C++ Benchmark Framework
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+        </div>
+        <div class='col-md-8'>
+          
+<p>deck.tab.spacer=0px
+cloak.toggle.exclusive=false</p>
+
+<!--
+
+<p>Information Artifact Type: Tutorial </p>
+
+-->
+
+<!--
+
+<hr />
+<p><span style="color:grey">   Summary
+</span>
+——————————————————————————-</p>
+
+-->
+
+<p>{excerpt}
+<strong>Step summary</strong>: Learn how to <strong>deploy an existing stadard web application into the GigaSpaces environment</strong>, benefitting from the platform’s self healing and dynamic load blanacing capabilities{excerpt}</p>
+
+<!--
+
+<p>========================================================================================
+<span style="color:grey">   Example location
+</span>
+==========================================================================================</p>
+
+-->
+
+<div class="container"><div class="row">
+<h1 id="example-location--covered-topics">Example Location &amp; Covered Topics</h1>
+
+<!--
+
+<hr />
+<p><span style="color:grey">   Example folder, sources and introduced features
+</span>
+——————————————————————————-</p>
+
+-->
+
+<p><i class="icon-info-sign" style="color:#3B73AF;"></i> The Sample application for this step is located under <code>&lt;GigaSpaces Root&gt;/examples/web/plain</code>. </p>
+
+<h5 id="features-introduced">Features Introduced</h5>
+<p><i class="icon-ok-sign" style="color:#14892C;"></i> Deploying a standard JEE web application on to the GigaSpaces environment
+<i class="icon-ok-sign" style="color:#14892C;"></i> Defining SLA (Service Level Agreement) attributes for your web application 
+<i class="icon-ok-sign" style="color:#14892C;"></i> Using the GigaSpaces load balancing agent for Apache 2 to automatically configure the load balancer at runtime</p>
+
+</div></div>
+
+<hr />
+
+<!--
+
+<hr />
+<p><span style="color:grey">   Before you begin
+</span>
+——————————————————————————-</p>
+
+-->
+
+<div class="container"><div class="row">
+<h4 id="before-you-begin">Before you begin</h4>
+
+<p>We recommend that you go through the following steps before you begin this tutorial:</p>
+
+<ul>
+  <li><a href="Setting Up Your IDE to work with GigaSpaces">Download GigaSpaces and set up your development environment</a> to work with GigaSpaces - this is needed to run the sample application described in this tutorial.</li>
+</ul>
+</div></div>
+
+<hr />
+
+<!--
+
+<hr />
+<p><span style="color:grey">   Goal
+</span>
+—————————————————————————————</p>
+
+-->
+
+<div class="container"><div class="row">
+<h4 id="goals">Goals</h4>
+
+<p>Deploy an existing standard web application on to the GigaSpaces environment, define SLA for the application and configure dynamic load balancing for Apache 2</p>
+
+<!--
+
+<hr />
+<p><span style="color:grey">   Contents
+</span>
+———————————————————————————</p>
+
+-->
+
+<h4 id="contents">Contents</h4>
+
+<ol>
+  <li><a href="#ExampleOverview">Example Application Overview</a></li>
+  <li><a href="#BuildDirections">Building the Example</a></li>
+  <li><a href="#DeployDirections">Deploying the Application</a></li>
+  <li><a href="#SLA">Defining SLA Attributes for the Application</a></li>
+  <li><a href="#LoadBalancing">Configuring Dynamic Load Balancing</a></li>
+  <li><a href="#AllTogehter">Putting It All Together - Demonstrating Failover &amp; Self Healing</a></li>
+</ol>
+
+</div></div>
+
+<!--
+
+<hr />
+<p><span style="color:grey">   Components
+</span>
+———————————————————————————————-</p>
+
+-->
+
+<div id="ExampleOverview"></div>
+
+<h1 id="example-application-overview">Example Application Overview</h1>
+
+<p>The example application is a <strong>completely standard JEE web application</strong>. All steps in this tutorial can be <strong>applied to any standard JEE web application</strong>, but we’ll use this one for the sake of simplicity.
+The application is composed of a very simple JSP page, which greets the user and prints the time, the hostname of the container that served the request and some additional details.</p>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#Snippets"><p><strong>Click here for a code snippet and a screenshot of the sample application…</strong></p>
+</a></h4></div>
+<div id="Snippets" class="panel-collapse collapse"><div class="panel-body">
+<p>Here’s a snippet of the <code>hello.jsp</code> page which is the welcome page for the application:</p>
+
+<p>Here’s the code snippet from <code>SessionContents.jsp</code> that displays the session attributes: </p>
+
+<div class="highlight"><pre><code class="html"><span class="err">&lt;</span>%@page import=&quot;java.util.*&quot;%&gt;
+
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;title&gt;</span>Welcome to GigaSpaces XAP<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;h3&gt;</span>Welcome, current date and time are <span class="err">&lt;</span>%= new Date() %&gt;<span class="nt">&lt;/h3&gt;</span>
+<span class="err">&lt;</span>% 	String hostName = request.getServerName(); 
+    String sessionId = session.getId();
+%&gt;
+<span class="nt">&lt;br/&gt;</span>
+<span class="nt">&lt;table&gt;</span>	
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Servlet container host name:<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span><span class="err">&lt;</span>%= hostName %&gt;<span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span>
+	<span class="nt">&lt;tr&gt;</span>
+		<span class="nt">&lt;td&gt;</span>Session id:<span class="nt">&lt;/td&gt;</span>
+		<span class="nt">&lt;td&gt;</span><span class="err">&lt;</span>%= sessionId %&gt;<span class="nt">&lt;/td&gt;</span>
+	<span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+
+<p>When openning this page in a web browser, it looks as follows:</p>
+
+<p><img src="/attachment_files/plain-welcome.jpg" alt="plain-welcome.jpg" /></p>
+</div></div></div>
+
+<div id="BuildDirections"></div>
+
+<h1 id="building-the-example">Building the Example</h1>
+
+<p><img src="/attachment_files/Play arrow green.bmp" alt="Play arrow green.bmp" /> <strong>Steps to build the application:</strong>
+The first thing you need to do if you haven’t already done so, is <a href="Setting Up Your IDE to Work With GigaSpaces">Download GigaSpaces and set up your development environment</a>. 
+Next, you should open a shell / command prompt window in the example directory, and type the following: 
+<code>build.(sh/bat) dist</code>
+You should see an output similar to the following: </p>
+
+<div class="highlight"><pre><code class="java"><span class="nl">C:</span><span class="err">\</span><span class="n">GS</span><span class="o">-</span><span class="n">Releases</span><span class="err">\</span><span class="n">gigaspaces</span><span class="o">-</span><span class="n">xap</span><span class="o">-</span><span class="n">premium</span><span class="o">-</span><span class="mf">9.0</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">ga</span><span class="err">\</span><span class="n">examples</span><span class="err">\</span><span class="n">web</span><span class="err">\</span><span class="n">plain</span><span class="o">&gt;</span><span class="n">build</span> <span class="n">dist</span>
+<span class="nl">Buildfile:</span> <span class="n">build</span><span class="o">.</span><span class="na">xml</span>
+
+<span class="nl">build:</span>
+    <span class="o">[</span><span class="n">mkdir</span><span class="o">]</span> <span class="n">Created</span> <span class="nl">dir:</span> <span class="nl">C:</span><span class="err">\</span><span class="n">GS</span><span class="o">-</span><span class="n">Releases</span><span class="err">\</span><span class="n">gigaspaces</span><span class="o">-</span><span class="n">xap</span><span class="o">-</span><span class="n">premium</span><span class="o">-</span><span class="mf">9.0</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">ga</span><span class="err">\</span><span class="n">examples</span><span class="err">\</span><span class="n">web</span><span class="err">\</span><span class="n">plain</span><span class="err">\</span><span class="n">WebContent</span><span class="err">\</span><span class="n">WEB</span><span class="o">-</span><span class="n">INF</span><span class="err">\</span><span class="n">classes</span>
+
+<span class="nl">dist:</span>
+      <span class="o">[</span><span class="n">jar</span><span class="o">]</span> <span class="n">Building</span> <span class="nl">jar:</span> <span class="nl">C:</span><span class="err">\</span><span class="n">GS</span><span class="o">-</span><span class="n">Releases</span><span class="err">\</span><span class="n">gigaspaces</span><span class="o">-</span><span class="n">xap</span><span class="o">-</span><span class="n">premium</span><span class="o">-</span><span class="mf">9.0</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">ga</span><span class="err">\</span><span class="n">examples</span><span class="err">\</span><span class="n">web</span><span class="err">\</span><span class="n">plain</span><span class="err">\</span><span class="n">PlainWebAppExample</span><span class="o">.</span><span class="na">war</span>
+
+<span class="n">BUILD</span> <span class="n">SUCCESSFUL</span>
+<span class="n">Total</span> <span class="nl">time:</span> <span class="mi">1</span> <span class="n">second</span>
+</code></pre></div>
+
+<p>At the end of the process, the web application’s war file will be created in the example’s directory. </p>
+
+<div id="DeployDirections"></div>
+
+<h1 id="deploying-the-application">Deploying the Application</h1>
+
+<p>In order to deploy the application onto the GigaSpaces infrastructure (Service Grid), you will need to start the  <a href="/xap96/2012/06/05/the-grid-service-agent.html">GigaSpaces agent</a> on your local machine. The agent automatically manages the GigaSpaces processes for you, and will start one GSM and two GSCs by default. This is done by calling <code>&lt;gs root&gt;/bin/gs-agent.(sh/bat)</code>. </p>
+
+<p>The deploy command can be issued in three ways: </p>
+
+<ul>
+  <li>By using the GigaSpaces GUI. You should call the (<code>&lt;gs root&gt;/bin/gs-ui.(sh/bat)</code> script to start the GigaSpaces management console. Next, you should choose the “Hosts” view and verify that you see your local machine and the Grid Service Manager and the Grid Service Container under it. You can also see the running GSC in the center of the screen. Once this was verified, you should do the following to deploy the .war file: 
+    <ol>
+      <li>Click the <strong>Deploy Processing Unit Button</strong> <img src="/attachment_files/deploy_processing_unit_button.jpg" alt="deploy_processing_unit_button.jpg" /> to open the <strong>Deployment Wizard</strong> dialog.</li>
+      <li>Click the <strong>Select Processing Unit jar file button</strong> <strong>…</strong>, to browse for the .war file.</li>
+      <li>Browse to the <strong>PlainWebAppExample.war</strong> .war file, located under <code>&lt;gs root&gt;/examples/web/plain</code>, and select it.</li>
+      <li>Click the <strong>Deploy</strong> button, to deploy and wait for the web application to be provisioned to the running Grid Service Container. Once provisioned, you will see a small jetty icon under the processing unit instance tree node in the “Deplyoed Processing Units” tab:</li>
+    </ol>
+  </li>
+</ul>
+
+<p><img src="/attachment_files/after-deploy.jpg" alt="after-deploy.jpg" /></p>
+
+<ul>
+  <li>
+    <p>By using the GigaSpaces command line tool. You should call the following command:
+<code>&lt;gs root&gt;/bin/gs.(sh/bat) deploy &lt;.war file path&gt;</code>. Once deployed, the web application deployment will appear in the user interface as described above. </p>
+  </li>
+  <li>
+    <p>By calling <code>build.(sh/bat) deploy</code>, which will build the example and deploy the web application. Once deployed, the web application deployment will appear in the user interface as described above. </p>
+  </li>
+</ul>
+
+<h2 id="advanced-configuring-your-web-applications-runtime-environment">Advanced: Configuring Your Web Application’s Runtime Environment</h2>
+
+<p>When deploying the web application, you may want to control various aspect of its runtime environment, such as HTTP and HTTPS ports, context root, size of web container thread pools, size of requests buffers, etc. 
+By default, GigaSpaces uses the <a href="http://www.mortbay.org/jetty/">Jetty Web Container</a> to host your web application. In a typical deployment, the Jetty web container is started when your application is deployed and provisioned to one of the running GSCs. You can define many runtime parameters of the web container using <strong><a href="/xap96/2011/12/28/deployment-properties.html">Deployment Properties</a></strong>. Deployment properties are essentially overrides to the web container’s default values. For example, when deploying a web application to the GigaSpaces environment, the web container will bind by default to port 8080, the context root will be the .war file name (without the .war extension) and the maximum number of web container threads will be 200. Deployment properties can be specified in various ways: </p>
+
+<ul>
+  <li>By including a <code>pu.properties</code> file under the <code>META-INF/spring</code> directory or the root of your .war file. Here’s the <code>pu.properties</code> file included in the example application: </li>
+</ul>
+
+<div class="highlight"><pre><code class="java"><span class="n">web</span><span class="o">.</span><span class="na">port</span><span class="o">=</span><span class="mi">8080</span>
+<span class="n">web</span><span class="o">.</span><span class="na">sslPort</span><span class="o">=</span><span class="mi">9443</span>
+<span class="n">web</span><span class="o">.</span><span class="na">threadPool</span><span class="o">.</span><span class="na">minThreads</span><span class="o">=</span><span class="mi">15</span>
+<span class="n">web</span><span class="o">.</span><span class="na">threadPool</span><span class="o">.</span><span class="na">maxThreads</span><span class="o">=</span><span class="mi">100</span>
+</code></pre></div>
+
+<ul>
+  <li>
+    <p>By using the command line (when deploying using the command line). You can add deployment properties as arguments to the pudeploy command. These arguments will override the values in the <code>pu.properties</code> file. This can be done as follows: 
+<code>&lt;gs root&gt;/bin/gs.(sh/bat) pudeploy -properties embed://web.port=8080;web.sslPort=9443 &lt;.war file path&gt;</code></p>
+  </li>
+  <li>
+    <p>By using the GUI (when deploying using the GUI). In the deployment wizard, click <strong>Next</strong>, and then the “+” button in the next screen. You can then specify the deploy properties you want (these will override the values in the <code>pu.properties</code> file):</p>
+  </li>
+</ul>
+
+<p><img src="/attachment_files/deploy-props-2.jpg" alt="deploy-props-2.jpg" /></p>
+
+<div id="SLA"></div>
+
+<h1 id="defining-sla-for-the-application">Defining SLA for the Application</h1>
+
+<p>One of the key advantages of using GigaSpaces to deploy and manage your web application is the GigaSpaces <a href="/xap96/2011/10/02/product-architecture.html#ProductArchitecture-SLADrivenContainer">Service Grid infrastructure</a>. The GigaSpaces Service Grid will monitor the application running instances (in GigaSpaces these are termed <a href="/xap96/2012/04/09/the-application-layer.html#TheApplicationLayer-ProcessingUnit"><strong>Processing Units</strong></a>) and the containers on which they run. It has two major roles, which are together termed the application’s <strong>SLA</strong>: </p>
+
+<ul>
+  <li>
+    <p><strong>Making sure that your application is running properly</strong>. The first part of it is provisioning the specified number of application instances, for example you can specify at deployment time that you want 3 instances of your web application deployed, and that you want each instance to be deployed in a separate JVM, or even a separate machine. The Service Grid (or more accurately, the GSM) will provision the instances to the running containers, assuming there are enough containers to support the requested number of instances. 
+If a certain machine on which your application runs, or its hosting container / JVM fail, the service grid will automatically re-provision the application to run on another container somewhere on your network. This is referred to as <strong>Self Healing</strong>. </p>
+  </li>
+  <li>
+    <p><strong>Applying dynamic scalability to the application</strong>. You can define system-level or application-level thresholds, such as CPU utilization, memory utilization, number of requests per seconds or any other application specific indicator. When these are crossed, the service grid will instantiate and provision additional application instances, or shrink down existing ones based on the threshold definition. You can also manually increase or decrease the number of application instances through the GigaSpaces user interface. 
+In this step we will review the first type, i.e. we will show how we can define the number of instances for the application and how the service grid “self heals” the application when one of the instances fails. 
+In the previous section you learned how to deploy the .war file as is to the GigaSpaces environment. 
+You ended up with a single web container running on a GSC and hosting the web application. 
+Many real life web applications need more than one web container to serve the application clients. The GigaSpaces Service Grid was specifically designed for such requirements - it enables you to define the number of instances you want to run and makes sure that this number is always maintained (provided that there are enough running containers in your environment).</p>
+  </li>
+</ul>
+
+<h2 id="defining-the-number-of-application-instances">Defining the Number of Application Instances</h2>
+
+<p>As with other configuration elements, defining the number of instances can be done in 3 ways: </p>
+
+<ul>
+  <li>By including an SLA element in your <code>pu.xml</code> file under the <code>META-INF/spring</code> or the root directory of your .war file, or an <code>sla.xml</code> in one of the above locations within your .war file. Here’s the relevant snippet from the <code>sla.xml</code> file included in the example application: </li>
+</ul>
+
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;os-sla:sla</span> <span class="na">number-of-instances=</span><span class="s">&quot;1&quot;</span> <span class="na">max-instances-per-vm=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+
+<p>This file defines one instance for the application and the maximum allowed instances per JVM (GSC). Note that in this case the second attribute doesn’t really affect anything since we only have a single instance. It will come into play when the number of instances is increased (whether manually or based on an SLA monitor). If more than one instance is started in the same JVM, the service grid will make sure that the two instances do not try to bind to the same port. 
+You can also define the maximum number of instances per machine, as follows: </p>
+
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;os-sla:sla</span> <span class="na">number-of-instances=</span><span class="s">&quot;1&quot;</span> <span class="na">max-instances-per-machine=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</code></pre></div>
+
+<div class="alert alert-info"><i class="icon-info-sign pull-left"></i><strong><p>Web Container Instantiation </p>
+</strong>
+<p>By default, each application instance provisioned to the GSC will have its own Jetty server. The server will share some of the Jetty resources like request buffers and thread pools, but will bind to separate ports. The service grid also allows for running the web container in a <strong>shared</strong> mode, in which case all of the deployed applications will use the same Jetty instance</p>
+</div>
+
+<ul>
+  <li>
+    <p>By using the command line (when deploying using the command line). You can specify the total number of instances and the number of instances per JVM / machine as command line arguments. These arguments will override the values in the <code>pu.properties</code> file:
+<code>&lt;gs root&gt;/bin/gs.(sh/bat) deploy -cluster total_members=3 -max-instances-per-vm 1 -max-instances-per-machine 2 &lt;.war file path&gt;</code></p>
+  </li>
+  <li>
+    <p>By using the GUI (when deploying using the GUI). You can specify the total number of instances and the number of instances per JVM / machine in the dedicated text field in the Deployment wizard. These arguments will override the values in the <code>pu.properties</code> file:
+<img src="/attachment_files/sla-props.jpg" alt="sla-props.jpg" /></p>
+  </li>
+</ul>
+
+<div id="LoadBalancing"></div>
+
+<h1 id="configuring-dynamic-load-balancing">Configuring Dynamic Load Balancing</h1>
+
+<div class="alert alert-info"><i class="icon-info-sign pull-left"></i><strong><p>Prerequisite for this section </p>
+</strong>
+<p>To complete this section successfully you will need to download and install the <a href="http://httpd.apache.org/download.cgi">Apache 2.2 web server</a> in your local environment. Also make sure that you have the GigaSpaces XAP distribution installed on the same machine that Apache is installed on.</p>
+</div>
+
+<p>The next step after deploying your application with multiple instances is making those instances available to your application users using a single URL. This is done by fronting the application with a <a href="http://en.wikipedia.org/wiki/Load_balancer">Load Balancer</a> which is responsible to route incoming requests to one of the running containers based on predefined rules, such as current load on each container and whether the requesting user was previously routed to a certain instance (this is known as <strong>Session Stickiness</strong>). 
+GigaSpaces XAP integrates out of the box with the popular Apache HTTP server <a href="http://httpd.apache.org/docs/2.2/mod/mod_proxy_balancer.html">mod_proxy_balancer</a> module for load balancing support. <code>mod_proxy_balancer</code> is an apache module which enables the Apache HTTP server to act as a load balancer. 
+It is configured using a <strong>static configuration file</strong> which lists all the hosts to which it should balance the load. So in case you want to add or remove a web container from the configuration, you will have to do it manually by editing the configuration file.</p>
+
+<p>Since the GigaSpaces environment is dynamic by nature, and assumes that containers can join and leave the network randomly, and that web application instances can be started and stopped dynamically based on SLA definitions, this type of static configuration is problematic. </p>
+
+<h2 id="the-apache-load-balancing-agent">The Apache Load Balancing Agent</h2>
+
+<p>The solution for this is the GigaSpaces <strong>Apache Load Balancing Agent</strong>. This agent is a separate process, which runs on the same machine that the Apache HTTP server runs on, and monitors the runtime state of all web applications deployed to GigaSpaces. On startup, or when the state changes (web container added / removed), it updates the relevant Apache configuration file automatically and notifies the Apache HTTP server that it needs to reload the file. That way the Apache HTTP server always stays up to date with the current runtime state. </p>
+
+<h2 id="configuring-the-apache-load-balancing-agent">Configuring the Apache Load Balancing Agent</h2>
+
+<p>To configure Apache to work with the load balancing agent you should do the following: </p>
+
+<ol>
+  <li>Make sure Apache loads the load balancing module. This is done by adding the following statements to the Apache configuration, typically located under <code>&lt;Apache home&gt;/conf/httpd.conf</code> (usually these statements are already there, some of them might be commented out so you need to uncomment them): </li>
+</ol>
+
+<div class="highlight"><pre><code class="java"><span class="n">LoadModule</span> <span class="n">proxy_module</span> <span class="n">modules</span><span class="o">/</span><span class="n">mod_proxy</span><span class="o">.</span><span class="na">so</span>
+<span class="n">LoadModule</span> <span class="n">proxy_balancer_module</span> <span class="n">modules</span><span class="o">/</span><span class="n">mod_proxy_balancer</span><span class="o">.</span><span class="na">so</span>
+<span class="n">LoadModule</span> <span class="n">proxy_connect_module</span> <span class="n">modules</span><span class="o">/</span><span class="n">mod_proxy_connect</span><span class="o">.</span><span class="na">so</span>
+<span class="n">LoadModule</span> <span class="n">proxy_http_module</span> <span class="n">modules</span><span class="o">/</span><span class="n">mod_proxy_http</span><span class="o">.</span><span class="na">so</span>
+</code></pre></div>
+
+<p>You should also include the following in the Apache configuration to be able to monitor the load balancer (you will learn how this is done in the next section): </p>
+
+<div class="highlight"><pre><code class="java"><span class="n">ProxyPass</span> <span class="o">/</span><span class="n">balancer</span> <span class="o">!</span>
+
+<span class="err">#</span> <span class="n">Proxy</span> <span class="n">Management</span>
+
+<span class="o">&lt;</span><span class="n">Location</span> <span class="o">/</span><span class="n">balancer</span><span class="o">&gt;</span>
+<span class="n">SetHandler</span> <span class="n">balancer</span><span class="o">-</span><span class="n">manager</span>
+
+<span class="n">Order</span> <span class="n">Deny</span><span class="o">,</span><span class="n">Allow</span>
+<span class="n">Deny</span> <span class="n">from</span> <span class="n">all</span>
+<span class="n">Allow</span> <span class="n">from</span> <span class="n">all</span>
+<span class="o">&lt;/</span><span class="n">Location</span><span class="o">&gt;</span>
+
+<span class="n">ProxyStatus</span> <span class="n">On</span>
+<span class="o">&lt;</span><span class="n">Location</span> <span class="o">/</span><span class="n">status</span><span class="o">&gt;</span>
+<span class="n">SetHandler</span> <span class="n">server</span><span class="o">-</span><span class="n">status</span>
+
+<span class="n">Order</span> <span class="n">Deny</span><span class="o">,</span><span class="n">Allow</span>
+<span class="n">Deny</span> <span class="n">from</span> <span class="n">all</span>
+<span class="n">Allow</span> <span class="n">from</span> <span class="n">all</span>
+<span class="o">&lt;/</span><span class="n">Location</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<ol>
+  <li>Create an Apache GigaSpaces directory so that the Apache load balancing agent can use it as the location of the automatically generated load balancer configurations files it creates. This can be located anywhere on your disk, so long as the load balancer agent has permission to write to this directory and Apache to read from it. A good place would be <code>&lt;Apache home&gt;/conf/gigaspaces/</code>.</li>
+  <li>Instruct Apache to include the configurations files generated by the load balancing agent. This is done by adding the following to the Apache configuration file (the below snippet assumes that the directory created in the previous step is located at <code>/opt/local/apache2/conf/gigaspaces/</code>): </li>
+</ol>
+
+<div class="highlight"><pre><code class="java"><span class="n">Include</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">apache2</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">gigaspaces</span><span class="o">/*.</span><span class="na">conf</span>
+</code></pre></div>
+
+<p>In the next section you will learn how to start the load balancing agent and tie all the pieces together. 
+&lt;div id="AllTogehter"&gt;&lt;/div&gt;</p>
+
+<h1 id="putting-it-all-together">Putting It All Together</h1>
+
+<p>Now that we’ve gone over all the details, let’s see everything in action. In this section we will start multiple GSCs and deploy 3 application instances on them. We will then start Apache HTTP server and the Apache load balancer agent, and connect to the application from the load balancer. We will also verify that the load balancer is aware of all the running instances. 
+Finally, we will terminate one of the running containers and watch the failover and self-healing process in action. Note that we will not use the GigaSpaces Agent this time, simply because the following steps are better illustrared without it. Let’s get started: </p>
+
+<ol>
+  <li>Build the application <a href="#BuildDirections">as described earlier in this tutorial</a></li>
+  <li>Start the GigaSpaces agent by calling <code>&lt;gs root&gt;/bin/gs-agent.(sh/bat)</code>. </li>
+  <li>Start the GigaSpaces user interface by calling <code>&lt;gs root&gt;/bin/gs-ui.(sh/bat)</code>. When the user interface is started, you should see the three GSCs presented in it. </li>
+</ol>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#empty-gsui"><p><strong>Click to view screenshot…</strong></p>
+</a></h4></div>
+<div id="empty-gsui" class="panel-collapse collapse"><div class="panel-body">
+<p><img src="/attachment_files/empty-gsui.jpg" alt="empty-gsui.jpg" /></p>
+</div></div></div>
+
+<ol>
+  <li>Deploy the application using the user interface, <a href="#DeployDirections">as described earlier in this tutorial</a>. In the “Number of Instances” text field, type 2, and in the “Maximum Instances –&gt; Per VM” text field type 1. </li>
+</ol>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#deploy-2pus"><p><strong>Click to view screenshot…</strong></p>
+</a></h4></div>
+<div id="deploy-2pus" class="panel-collapse collapse"><div class="panel-body">
+<p><img src="/attachment_files/deploy-2pus.jpg" alt="deploy-2pus.jpg" /></p>
+</div></div></div>
+
+<p>Once deployed, you will see the two instances of the web application deployed within the UI. One GSC will remain empty, which is fine. We’ll use it to demonstrate failover. </p>
+
+<ol>
+  <li>If you haven’t already done so, start the Apache HTTP server on port 80 (the default). </li>
+  <li>Start the load balancer agent by calling the script <code>&lt;gs root&gt;/tools/apache/apache-lb-agent.(sh/bat) -apache &lt;Apache home&gt;</code>. <code>Apache home</code> is the location of the Apache installation on your disk. </li>
+</ol>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#lbagent-output"><p><strong>Click to show expected output…</strong></p>
+</a></h4></div>
+<div id="lbagent-output" class="panel-collapse collapse"><div class="panel-body">
+<div class="highlight"><pre><code class="java"><span class="n">Starting</span> <span class="n">apache</span><span class="o">-</span><span class="n">lb</span><span class="o">-</span><span class="n">agent</span> <span class="n">with</span> <span class="nl">line:</span>
+<span class="s">&quot;c:\Java\jdk1.6.0_11\bin\java&quot;</span>  <span class="o">-</span><span class="n">server</span> <span class="o">-</span><span class="nl">XX:</span><span class="o">+</span><span class="n">AggressiveOpts</span> <span class="o">-</span><span class="n">showversion</span> <span class="o">-</span><span class="n">Xmx512m</span>
+<span class="o">-</span><span class="n">Xbootclasspath</span><span class="o">/</span><span class="nl">p:</span><span class="o">.;</span><span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\platform\xml\serializer.jar&quot;</span><span class="o">;</span>
+<span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\platform\xml\xalan.jar&quot;</span><span class="o">;</span>
+<span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\platform\xml\xercesImpl.jar&quot;</span><span class="o">;</span>
+<span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\platform\xml\xml-apis.jar&quot;</span>
+<span class="o">-</span><span class="n">Dlb</span><span class="o">.</span><span class="na">vmDir</span><span class="o">=</span><span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\../tools/apache&quot;</span> <span class="o">-</span><span class="n">Dcom</span><span class="o">.</span><span class="na">gs</span><span class="o">.</span><span class="na">jini_lus</span><span class="o">.</span><span class="na">locators</span><span class="o">=</span>
+<span class="o">-</span><span class="n">Dcom</span><span class="o">.</span><span class="na">gs</span><span class="o">.</span><span class="na">jini_lus</span><span class="o">.</span><span class="na">groups</span><span class="o">=</span><span class="n">myGroup</span> <span class="o">-</span><span class="n">Dsun</span><span class="o">.</span><span class="na">rmi</span><span class="o">.</span><span class="na">dgc</span><span class="o">.</span><span class="na">client</span><span class="o">.</span><span class="na">gcInterval</span><span class="o">=</span><span class="mi">36000000</span> <span class="o">-</span><span class="n">Dsun</span><span class="o">.</span><span class="na">rmi</span><span class="o">.</span><span class="na">dgc</span><span class="o">.</span><span class="na">server</span><span class="o">.</span><span class="na">gcInterval</span><span class="o">=</span><span class="mi">36000000</span>
+<span class="o">-</span><span class="n">Djava</span><span class="o">.</span><span class="na">rmi</span><span class="o">.</span><span class="na">server</span><span class="o">.</span><span class="na">hostname</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="n">HOST01</span><span class="s">&quot;&quot;</span> <span class="o">-</span><span class="n">Djava</span><span class="o">.</span><span class="na">rmi</span><span class="o">.</span><span class="na">server</span><span class="o">.</span><span class="na">RMIClassLoaderSpi</span><span class="o">=</span><span class="k">default</span> <span class="o">-</span><span class="n">Djava</span><span class="o">.</span><span class="na">rmi</span><span class="o">.</span><span class="na">server</span><span class="o">.</span><span class="na">logCalls</span><span class="o">=</span><span class="kc">false</span>
+<span class="s">&quot;-Dcom.gs.home=c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..&quot;</span> 
+<span class="o">-</span><span class="n">Djava</span><span class="o">.</span><span class="na">security</span><span class="o">.</span><span class="na">policy</span><span class="o">=</span><span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\policy\policy.all&quot;</span> 
+<span class="o">-</span><span class="n">classpath</span> <span class="o">;.;</span><span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..&quot;</span><span class="o">;.;</span>
+<span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\required\commons-logging.jar&quot;</span><span class="o">;</span>
+<span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\required\gs-openspaces.jar&quot;</span><span class="o">;</span>
+<span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\required\gs-runtime.jar&quot;</span><span class="o">;</span>
+<span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\required\spring.jar&quot;</span><span class="o">;.;.;</span>
+<span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\optional\spring\cglib-nodep-2.1_3.jar&quot;</span><span class="o">;</span>
+<span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\optional\spring\common-annotations.jar&quot;</span><span class="o">;.;</span>
+<span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\platform\jdbc\h2.jar&quot;</span><span class="o">;</span>
+<span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\platform\jdbc\hsqldb.jar&quot;</span><span class="o">;.;</span>
+<span class="s">&quot;c:\GS-Releases\gigaspaces-xap-premium-9.0.0-ga\bin\\..\lib\platform\velocity\velocity-dep-1.5.jar&quot;</span><span class="o">;</span>
+<span class="n">org</span><span class="o">.</span><span class="na">openspaces</span><span class="o">.</span><span class="na">pu</span><span class="o">.</span><span class="na">container</span><span class="o">.</span><span class="na">jee</span><span class="o">.</span><span class="na">lb</span><span class="o">.</span><span class="na">apache</span><span class="o">.</span><span class="na">ApacheLoadBalancerAgent</span> <span class="o">-</span><span class="n">apache</span> <span class="nl">c:</span><span class="err">\</span><span class="n">Apache2</span><span class="o">.</span><span class="mi">2</span>
+
+<span class="n">java</span> <span class="n">version</span> <span class="s">&quot;1.6.0_11&quot;</span>
+<span class="n">Java</span><span class="o">(</span><span class="n">TM</span><span class="o">)</span> <span class="n">SE</span> <span class="n">Runtime</span> <span class="n">Environment</span> <span class="o">(</span><span class="n">build</span> <span class="mf">1.6</span><span class="o">.</span><span class="mi">0</span><span class="n">_11</span><span class="o">-</span><span class="n">b03</span><span class="o">)</span>
+<span class="n">Java</span> <span class="nf">HotSpot</span><span class="o">(</span><span class="n">TM</span><span class="o">)</span> <span class="n">Server</span> <span class="n">VM</span> <span class="o">(</span><span class="n">build</span> <span class="mf">11.0</span><span class="o">-</span><span class="n">b16</span><span class="o">,</span> <span class="n">mixed</span> <span class="n">mode</span><span class="o">)</span>
+
+<span class="n">Log</span> <span class="nl">file:</span> <span class="nl">c:</span><span class="err">\</span><span class="n">GS</span><span class="o">-</span><span class="n">Releases</span><span class="err">\</span><span class="n">gigaspaces</span><span class="o">-</span><span class="n">xap</span><span class="o">-</span><span class="n">premium</span><span class="o">-</span><span class="mf">9.0</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">ga</span><span class="err">\</span><span class="n">bin</span><span class="err">\</span><span class="o">..</span><span class="err">\</span><span class="n">logs</span><span class="err">\</span><span class="mi">2009</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">09</span><span class="o">~</span><span class="mf">22.15</span><span class="o">-</span><span class="n">gigaspaces</span><span class="o">-</span><span class="n">service</span><span class="o">-</span><span class="n">host01</span><span class="o">-</span><span class="mi">7764</span><span class="o">.</span><span class="na">log</span>
+<span class="n">Starting</span> <span class="n">Apache</span> <span class="n">Load</span> <span class="n">Balancer</span> <span class="n">Agent</span><span class="o">...</span>
+
+<span class="n">groups</span> <span class="o">[</span><span class="n">myGroup</span><span class="o">],</span> <span class="n">locators</span> <span class="o">[</span><span class="kc">null</span><span class="o">]</span>
+<span class="n">apachectl</span> <span class="n">Location</span> <span class="o">[</span><span class="nl">c:</span><span class="err">\</span><span class="n">Apache2</span><span class="o">.</span><span class="mi">2</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">httpd</span><span class="o">.</span><span class="na">exe</span><span class="o">]</span>
+<span class="n">config</span> <span class="n">directory</span> <span class="o">[</span><span class="nl">c:</span><span class="err">\</span><span class="n">Apache2</span><span class="o">.</span><span class="mi">2</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">gigaspaces</span><span class="o">]</span>
+<span class="n">update</span> <span class="n">config</span> <span class="n">interval</span> <span class="o">[</span><span class="mi">10000</span><span class="n">ms</span><span class="o">]</span>
+
+<span class="n">Detecting</span> <span class="n">existing</span> <span class="n">config</span> <span class="n">files</span><span class="o">...</span>
+<span class="n">Done</span> <span class="n">detecting</span> <span class="n">existing</span> <span class="n">config</span> <span class="n">files</span>
+
+<span class="n">LUS</span> <span class="n">Discovered</span> <span class="o">[</span><span class="n">com</span><span class="o">.</span><span class="na">sun</span><span class="o">.</span><span class="na">jini</span><span class="o">.</span><span class="na">reggie</span><span class="o">.</span><span class="na">RegistrarProxy</span><span class="o">[</span><span class="n">registrar</span><span class="o">=</span><span class="mi">859346</span><span class="n">b4</span><span class="o">-</span><span class="mi">08</span><span class="n">ae</span><span class="o">-</span><span class="mi">43</span><span class="n">ef</span><span class="o">-</span><span class="mi">8449</span><span class="o">-</span><span class="mi">983</span><span class="n">b40951964</span> 
+<span class="n">DynamicSmartStub</span> <span class="o">[</span><span class="nl">ImplObjClass:</span> <span class="n">com</span><span class="o">.</span><span class="na">sun</span><span class="o">.</span><span class="na">jini</span><span class="o">.</span><span class="na">reggie</span><span class="o">.</span><span class="na">GigaRegistrar</span><span class="o">,</span> <span class="nl">ConnectionURL:</span> 
+<span class="nl">NIO:</span><span class="c1">//HOST01:4950/pid[5756]/129385153946019_1_-3853749423915269055, MaxConnPool: 1024 ]]]</span>
+
+<span class="n">Started</span> <span class="n">Apache</span> <span class="n">Load</span> <span class="n">Balancer</span> <span class="n">Agent</span> <span class="n">successfully</span>
+<span class="n">Make</span> <span class="n">sure</span> <span class="n">Apache</span> <span class="n">is</span> <span class="n">configured</span> <span class="n">with</span> <span class="o">[</span><span class="n">Include</span> <span class="nl">c:</span><span class="err">\</span><span class="n">Apache2</span><span class="o">.</span><span class="mi">2</span><span class="err">\</span><span class="n">conf</span><span class="err">\</span><span class="n">gigaspaces</span><span class="o">/*.</span><span class="na">conf</span><span class="o">]</span>
+
+<span class="o">[</span><span class="n">PlainWebAppExample</span><span class="o">]:</span> <span class="n">Adding</span> <span class="o">[</span><span class="mi">0178396</span><span class="n">a</span><span class="o">-</span><span class="n">b610</span><span class="o">-</span><span class="mi">4297</span><span class="o">-</span><span class="mi">8</span><span class="n">f61</span><span class="o">-</span><span class="mi">0539</span><span class="n">f80dcc85</span><span class="o">]</span> <span class="o">[</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">2.102</span><span class="o">:</span><span class="mi">8081</span><span class="o">/</span><span class="n">PlainWebAppExample</span><span class="o">]</span>
+<span class="o">[</span><span class="n">PlainWebAppExample</span><span class="o">]:</span> <span class="n">Adding</span> <span class="o">[</span><span class="mi">1</span><span class="n">e95fe3d</span><span class="o">-</span><span class="n">c971</span><span class="o">-</span><span class="mi">4</span><span class="n">f36</span><span class="o">-</span><span class="n">a44f</span><span class="o">-</span><span class="n">a3c09400cac5</span><span class="o">]</span> <span class="o">[</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">2.102</span><span class="o">:</span><span class="mi">8082</span><span class="o">/</span><span class="n">PlainWebAppExample</span><span class="o">]</span>
+<span class="o">[</span><span class="n">PlainWebAppExample</span><span class="o">]:</span> <span class="n">Detected</span> <span class="n">as</span> <span class="n">dirty</span><span class="o">,</span> <span class="n">updating</span> <span class="n">config</span> <span class="n">file</span><span class="o">...</span>
+<span class="o">[</span><span class="n">PlainWebAppExample</span><span class="o">]:</span> <span class="n">Using</span> <span class="n">balancer</span> <span class="n">template</span> <span class="o">[</span><span class="nl">c:</span><span class="err">\</span><span class="n">GS</span><span class="o">-</span><span class="n">Releases</span><span class="err">\</span><span class="n">gigaspaces</span><span class="o">-</span><span class="n">xap</span><span class="o">-</span><span class="n">premium</span><span class="o">-</span><span class="mf">9.0</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">ga</span><span class="err">\</span><span class="n">bin</span><span class="err">\</span><span class="o">..</span><span class="err">\</span><span class="n">tools</span><span class="err">\</span><span class="n">apache</span><span class="err">\</span><span class="n">balancer</span><span class="o">-</span><span class="n">template</span><span class="o">.</span><span class="na">vm</span><span class="o">]</span>
+<span class="n">Jun</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">2009</span> <span class="mi">10</span><span class="o">:</span><span class="mi">15</span><span class="o">:</span><span class="mi">27</span> <span class="n">PM</span> <span class="n">org</span><span class="o">.</span><span class="na">apache</span><span class="o">.</span><span class="na">velocity</span><span class="o">.</span><span class="na">runtime</span><span class="o">.</span><span class="na">log</span><span class="o">.</span><span class="na">JdkLogChute</span> <span class="n">log</span>
+<span class="nl">INFO:</span> <span class="n">FileResourceLoader</span> <span class="o">:</span> <span class="n">adding</span> <span class="n">path</span> <span class="sc">&#39;.&#39;</span>
+<span class="o">[</span><span class="n">PlainWebAppExample</span><span class="o">]:</span> <span class="n">Updated</span> <span class="n">config</span> <span class="n">file</span>
+<span class="n">Executing</span> <span class="o">[</span><span class="s">&quot;c:\Apache2.2/bin/httpd.exe&quot;</span> <span class="o">-</span><span class="n">k</span> <span class="n">restart</span><span class="o">]...</span>
+<span class="n">Executed</span> <span class="o">[</span><span class="s">&quot;c:\Apache2.2/bin/httpd.exe&quot;</span> <span class="o">-</span><span class="n">k</span> <span class="n">restart</span><span class="o">],</span> <span class="n">exit</span> <span class="n">code</span> <span class="o">[</span><span class="mi">0</span><span class="o">]</span>
+</code></pre></div>
+
+</div></div></div>
+
+<ol>
+  <li>Now let’s verify that the load balancer agent worked as expected. Assuming Apache runs on your local machine on port 80, open you web browser and point it to <code>http://localhost/PlainWebAppExample/</code>. You should see the application’s welcome page. Another way to verify this is point your web browser to <code>http://localhost/balancer</code>. You should see the summary screen of Apache’s load balancing module. In this screen you should see listed the two running web containers. </li>
+</ol>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#lb-welcome"><p><strong>Click to view screenshots…</strong></p>
+</a></h4></div>
+<div id="lb-welcome" class="panel-collapse collapse"><div class="panel-body">
+<p><img src="/attachment_files/lb-summary.jpg" alt="lb-summary.jpg" /></p>
+</div></div></div>
+
+<h2 id="demonstrating-failover--self-healing">Demonstrating Failover &amp; Self Healing</h2>
+
+<p>After everything has been deployed, let’s deliberately terminate one of the GSCs on which the application is deployed: </p>
+
+<ol>
+  <li>Locate one of the GSCs on which the application is deployed. To do that, check the console of the running GSCs and find the one that has shows the following output at the bottom:</li>
+</ol>
+
+<div class="highlight"><pre><code class="java"><span class="n">GSC</span> <span class="n">INFO</span> <span class="o">[</span><span class="n">com</span><span class="o">.</span><span class="na">gigaspaces</span><span class="o">.</span><span class="na">grid</span><span class="o">.</span><span class="na">gsc</span><span class="o">]</span> <span class="o">-</span> <span class="n">Instantiated</span> <span class="n">PlainWebAppExample</span> <span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">in</span> <span class="mf">3.03</span> <span class="n">seconds</span>
+</code></pre></div>
+
+<ol>
+  <li>Next, <strong>terminate the process of the GSC you located</strong>. Quickly switch to the GigaSpaces user interface - you will see that this GSC has disappeared. You will also see that the application instance which ran on the terminated GSC is re-instantiated on the empty GSC. So in effect, <strong>the application self-healed itself</strong> so that all components are still running!</li>
+  <li>The load balancer agent will pick up the change in runtime state, and will update the apache load balancer (this may take a few seconds). You can now refresh the application and load balancer summary screen and verify that <strong>everything still works as before.</strong> </li>
+</ol>
+
+<h1 id="whats-next">What’s Next?</h1>
+
+<p><img src="/attachment_files/Jump arrow green.bmp" alt="Jump arrow green.bmp" /> 
+<span style="color:green">Step Two</span>
+ - <a href="/xap96/2013/04/03/step-2---enabling-http-session-failover-and-fault-tolerance.html">Enabling HTTP Session Failover &amp; Fault Tolerance</a> - Shows how to back your HTTP session with the Space to achieve highly available and fault-tolerant HTTP session for your web application.</p>
+
+<p>Or return to the <a href="/xap96/2013/04/03/your-first-web-application.html">GigaSpaces for Web Applications Tutorial</a>.</p>
+
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class="footer">
+          <ul class='list-inline'>
+    <li>
+        Simply Scale with
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com">GigaSpaces</a>
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com/wiki/x/xwBmAg" class="smalltext">Legal Notice</a>
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com/wiki/x/xgBmAg" class="smalltext">3rd Party License Agreements</a>
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com/wiki/x/BQFmAg" class="smalltext">Site Map</a>
+    </li>
+    <li>
+        <a href="mailto:techw@gigaspaces.com">Contact Admin</a>
+    </li>
+    <li>
+        <i><a href="http://www.atlassian.com/software/confluence">Powered by Atlassian Confluence</a></i>
+    </li>
+</ul>
+
+        </div>
+      </div>
+
+    </div><!-- /container -->
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/jquery.treeview.js"></script>
+    <script>
+      $(function () {
+        $(".tabsection").each(function(index) {
+          list = "";
+
+          $(this).find(".tab-pane").each(function(index) {
+            list_class = "";
+            timestamp = parseInt(Date.now() * Math.random()) ;
+
+            if(index === 0){
+              list_class = "class='active'";
+              $(this).prop("class", $(this).prop("class") + " active");
+            }
+
+            list += "<li " + list_class +"><a href='#" + timestamp + $(this).prop("id") +"'>" + $(this).prop("title") +"</a></li>";
+            $(this).prop("id", timestamp + $(this).prop("id"));
+          });
+          $(this).find(".nav").html(list);
+        });
+
+        $('ul.nav a').click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
+
+        summary_url = "";
+        $('.col-md-8').children('h1').each(function(index, item) {
+          summary_url += '<li><a href="#'+item.id+'">'+item.innerHTML+'</a></li>';
+        });
+
+        $("#summarypanel").html(summary_url);
+      })
+      $("#navigation").treeview({
+        persist: "location"
+      });
+    </script>
+  </body>
+</html>
