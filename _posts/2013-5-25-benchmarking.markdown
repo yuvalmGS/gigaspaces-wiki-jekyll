@@ -1,0 +1,35 @@
+---
+layout: post
+title:  Benchmarking
+categories: XAP96
+page_id: 61867306
+---
+
+# The Art of Benchmarks
+
+Performance benchmarks with GigaSpaces' In-Memory Data Grid mainly involve testing latency and throughput. Since GigaSpaces offers data access routines for remote data access as well as colocated data access, you should test latency and throughput in both cases (as appropriate for your architecture and deployment topology). 
+
+In addition, you should also test transactional and non-transactional operations, single and batch operations, synchronous and aynchronous options, as all of these are basic building blocks for any application. 
+
+Benchmarks should test simple and complex queries as GigaSpaces supports both simple and complex data models and provides indexes to speed up query execution time.
+
+Another dimension for these tests is concurrency - which measures how the system scales as a function of the amount of concurrent remote users or colocated threads accessing the system. 
+
+One more dimension is the grid size (the topology). This measures how the system scales as a function of the number of data-grid nodes leveraging GigaSpaces [In-Memory-Map-Reduce API](/xap96/2013/06/01/task-execution-over-the-space.html). There is also a [client side caching](/xap96/2012/12/02/client-side-caching.html) component that is viable in many scenarios that is important to test (read-mostly scenarios).  As you see the performance benchmark matrix is extensive and requires the benchmark tool to support all these options/scenarios.
+
+## Benchmark Results
+
+The different benchmarks results can be found on the [benchmarks page](http://www.gigaspaces.com/benchmarks). We  update these from time to time and post new benchmarks results on [our benchmark blog](http://blog.gigaspaces.com/category/benchmarks).
+
+## Benchmark Tools
+
+- [GS-UI Benchmark View](/xap96/2011/04/27/benchmark-view---gigaspaces-browser.html) — This is a Java Swing-based tool allowing you to run various tests. It does not currently have a good way to export the results and automate the benchmark scenarios. Still, with a matter of few clicks, you can get a good sense how your environment performs.
+- [Benchmark Utility - GigaSpaces CLI](/xap96/2011/04/27/benchmark-utility---gigaspaces-cli.html) — This is the Java command line version of the GS-UI Benchmark View. It include similar options, but being a command-line tool allows automation of the benchmarks via scripts. The source code is provided for this tool.
+- [C++ Benchmark Framework](/xap96/2012/04/01/c++-benchmark-framework.html) — XAP C++ API Benchmark framework. Source code provided.
+- [XAP96NET:.NET Benchmark Example](XAP96NET:.NET Benchmark Example) - XAP .Net API Benchmark framework. Source code provided.
+
+## Large Scale Benchmarks
+
+Note that once you are running large scale benchmarks with a large number of concurrent accesses, or a large number of data grid partitions, you should consider our involvement to help tune the configuration of the environment and JVM, and in some cases we should help with the code, too, as some of the default behaviors for the basic API have special modifiers that may boost the performance. 
+
+Many times developers sometime miss or misunderstand these advanced options, due to the vast amount of features the products offers.  Please do not hesitate to [approach our support team](http://www.gigaspaces.com/content/customer-support-services) for advanced benchmarking and testing options. The information about tuning the product for such environments is not fully publicly available, since many larger systems have specialized requirements for which configurations are available but for which generalized solutions are not entirely appropriate.

@@ -1,0 +1,8 @@
+---
+layout: post
+title:  .NET Icon
+categories: XAP96
+page_id: 61867360
+---
+
+{gallery}

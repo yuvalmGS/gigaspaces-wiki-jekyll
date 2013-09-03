@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/jquery.treeview.css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+        <div class="span12">
+          <h1>{{ page.title }}</h1>
+        </div>
+      </header>
+
+      <div class="row">
+        <div class='col-md-4'>
+          {% include nav.html %}
+        </div>
+        <div class='col-md-8'>
+          {{ content }}
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class="footer">
+          {% include footer.html %}
+        </div>
+      </div>
+
+    </div><!-- /container -->
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/jquery.treeview.js"></script>
+    <script>
+      $(function () {
+        $(".tabsection").each(function(index) {
+          list = "";
+
+          $(this).find(".tab-pane").each(function(index) {
+            list_class = "";
+            timestamp = parseInt(Date.now() * Math.random()) ;
+
+            if(index === 0){
+              list_class = "class='active'";
+              $(this).prop("class", $(this).prop("class") + " active");
+            }
+
+            list += "<li " + list_class +"><a href='#" + timestamp + $(this).prop("id") +"'>" + $(this).prop("title") +"</a></li>";
+            $(this).prop("id", timestamp + $(this).prop("id"));
+          });
+          $(this).find(".nav").html(list);
+        });
+
+        $('ul.nav a').click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
+
+        summary_url = "";
+        $('.col-md-8').children('h1').each(function(index, item) {
+          summary_url += '<li><a href="#'+item.id+'">'+item.innerHTML+'</a></li>';
+        });
+
+        $("#summarypanel").html(summary_url);
+      })
+      $("#navigation").treeview({
+        persist: "location"
+      });
+    </script>
+  </body>
+</html>
