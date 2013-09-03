@@ -1,0 +1,3199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Maven Plugin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/jquery.treeview.css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+        <div class="span12">
+          <h1>Maven Plugin</h1>
+        </div>
+      </header>
+
+      <div class="row">
+        <div class='col-md-4'>
+          <div>
+  Browse XAP 9.6
+</div>
+<ul id='navigation'>
+  <li>
+    <a href="/xap96/2012/07/16/quick-start-guide.html" title="Quick Start Guide">
+      Quick Start Guide
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2013/07/21/screen-casts.html">
+          Screen Casts
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/04/10/your-first-data-grid-application2.html">
+          Your First Data Grid Application
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/04/03/your-first-web-application.html">
+          Your First Web Application
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/04/03/step-1---deploying-your-web-application-to-the-gigaspaces-environment.html">
+              Step 1 - Deploying Your Web Application to the GigaSpaces Environment
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/04/03/step-2---enabling-http-session-failover-and-fault-tolerance.html">
+              Step 2 - Enabling HTTP Session Failover and Fault Tolerance
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/04/03/step-3---scaling-the-data-access-layer.html">
+              Step 3 - Scaling the Data Access Layer
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/07/08/your-first-xtp-application.html">
+          Your First XTP Application
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/07/08/setting-up-your-ide-to-work-with-gigaspaces.html">
+              Setting Up your IDE to work with GigaSpaces
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/07/08/step-one---using-processing-units-for-scaling.html">
+              Step One - Using Processing Units for Scaling
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/01/21/step-two---creating-the-hello-world-application.html">
+              Step Two - Creating the Hello World Application
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/02/20/step-three---deploying-onto-the-service-grid.html">
+              Step Three - Deploying onto the Service Grid
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/07/08/step-four---scaling-the-hello-world-application.html">
+              Step Four - Scaling the Hello World Application
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/10/15/your-first-jpa-application.html">
+          Your First JPA Application
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/10/15/step-1---adjusting-your-jpa-domain-model-to-the-xap-jpa-implementation.html">
+              Step 1 - Adjusting Your JPA Domain Model to the XAP JPA Implementation
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/02/step-2---using-the-power-of-the-space-to-scale-your-data-access-layer.html">
+              Step 2 - Using the Power of the Space to Scale Your Data Access Layer
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/21/step-3---building-and-running-the-application.html">
+              Step 3 - Building and Running the Application
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2009/06/23/beyond-the-basics.html">
+          Beyond the Basics
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/05/10/the-openspaces-data-example.html">
+              The OpenSpaces Data Example
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/07/21/xap-order-management-tutorial.html">
+              XAP Order Management Tutorial
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/07/14/your-first-real-time-big-data-analytics-application.html">
+          Your First Real Time Big Data Analytics Application
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/xap96/2008/09/15/product-overview.html" title="Product Overview">
+      Product Overview
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2011/03/22/concepts.html">
+          Concepts
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/06/09/a-typical-sba-application.html">
+          A Typical SBA Application
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/12/12/database-integration.html">
+          Database Integration
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/10/02/product-architecture.html">
+          Product Architecture
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/04/09/the-application-layer.html">
+          The Application Layer
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/09/07/terminology---space-based-architecture.html">
+          Terminology
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2011/07/29/terminology---basic-components.html">
+              Terminology - Basic Components
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/02/25/terminology---data-grid-topologies.html">
+              Terminology - Data Grid Topologies
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/09/07/terminology---runtime-components.html">
+              Terminology - Runtime Components
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/09/07/terminology---space-based-architecture.html">
+              Terminology - Space-Based Architecture
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/xap96/2008/09/16/programmer's-guide.html" title="Programmer's Guide">
+      Programmer's Guide
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2013/02/28/getting-started.html">
+          Getting Started
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/02/25/setting-up-your-ide-to-work-with-xap.html">
+              Setting Up your IDE to work with XAP
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/01/04/running-and-debugging-within-your-ide.html">
+              Running and Debugging Within Your IDE
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/02/the-runtime-environment.html">
+              The Runtime Environment
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/06/05/the-grid-service-agent.html">
+                  The Grid Service Agent
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/03/18/the-grid-service-container.html">
+                  The Grid Service Container
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/09/07/the-grid-service-manager.html">
+                  The Grid Service Manager
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/09/07/the-lookup-service.html">
+                  The Lookup Service
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/02/14/packaging-and-deployment.html">
+              Packaging and Deployment
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/03/11/the-processing-unit-structure-and-configuration.html">
+                  The Processing Unit Structure and Configuration
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/09/04/configuring-processing-unit-elements.html">
+                      Configuring Processing Unit Elements
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/27/configuring-the-processing-unit-sla.html">
+                      Configuring the Processing Unit SLA
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/05/03/custom-processing-unit-details-and-monitors.html">
+                      Custom Processing Unit Details and Monitors
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/12/28/deployment-properties.html">
+                      Deployment Properties
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/09/07/deploying-and-running-the-processing-unit.html">
+                  Deploying and Running the Processing Unit
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/02/21/deploying-onto-the-service-grid.html">
+                      Deploying onto the Service Grid
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/09/11/running-in-standalone-mode.html">
+                      Running in Standalone Mode
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/elastic-processing-unit.html">
+                      Elastic Processing Unit
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/09/07/elastic-processing-unit---take-2.html">
+                          Elastic Processing Unit - take 2
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/31/elastic-space-processing-unit.html">
+                              Elastic Space Processing Unit
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/31/elastic-statelful-processing-unit.html">
+                              Elastic Statelful Processing Unit
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/31/elastic-stateless-processing-unit.html">
+                              Elastic Stateless Processing Unit
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/08/28/deploying-your-application-on-a-cloud.html">
+                  Deploying your Application on a Cloud
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/12/17/obtaining-cluster-information.html">
+                  Obtaining Cluster Information
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/10/15/main-modules.html">
+          Main Modules
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/05/25/the-in-memory-data-grid.html">
+              The In-Memory Data Grid
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/12/24/space-topologies.html">
+                  Space Topologies
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/29/multi-site-replication-over-the-wan.html">
+                      Multi-Site Replication over the WAN
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/06/03/communication-filter-over-the-wan-%28ssl,zip%29.html">
+                          Communication Filter Over the Wan (SSL,ZIP)
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/01/31/replication-gateway-components.html">
+                          Replication Gateway Components
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/13/configuring-space-gateway-targets.html">
+                          Configuring Space Gateway Targets
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/13/replication-gateway-bootstrapping-process.html">
+                          Replication Gateway Bootstrapping Process
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/06/11/multi-site-conflict-resolution-9.0.1.html">
+                          Multi-Site Conflict Resolution
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/06/11/multi-site-conflict-resolution-9.0.1.html">
+                              Multi-Site Conflict Resolution 9.0.1
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/08/01/changing-multi-site-deployment-during-runtime.html">
+                          Changing Multi-Site Deployment during Runtime
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/10/04/replication-gateway-filtering.html">
+                          Replication Gateway Filtering
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/10/02/intercepting-replication-events-at-the-gateway.html">
+                          Intercepting Replication Events at the Gateway
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/08/20/multi-site-replication-limitations.html">
+                          Multi-Site Replication Limitations
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/08/05/multi-site-replication-over-the-wan---faq.html">
+                          Multi-Site Replication over the WAN - FAQ
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/01/25/multi-space-replication-over-the-lan-or-vpn.html">
+                      Multi-Space Replication over the LAN or VPN
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/09/24/replication-gateway-lan-bootstrapping-process.html">
+                          Replication Gateway LAN Bootstrapping Process
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/03/30/deploying-and-interacting-with-the-space.html">
+                  Deploying and Interacting with the Space
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/19/the-space-component.html">
+                      The Space Component
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/03/06/space-filters.html">
+                          Space Filters
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/08/09/cluster-replication-filters.html">
+                          Cluster Replication Filters
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/12/29/space-mode-context-loader.html">
+                          Space Mode Context Loader
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/05/20/space-url.html">
+                          Space URL
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/11/14/client-side-caching-over-the-wan.html">
+                      Client Side Caching
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/11/local-view-and-local-cache.html">
+                          Local Cache
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/04/03/local-view.html">
+                          Local View
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/14/client-side-caching-over-the-wan.html">
+                          Client-Side Caching over the WAN
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/14/monitoring-the-client-side-cache.html">
+                          Monitoring the Client-Side Cache
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2009/06/28/programmatic-api-%28configurers%29.html">
+                      Programmatic API (Configurers)
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/02/19/memory-management-facilities.html">
+                      Memory Management Facilities
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/19/all-in-cache-cache-policy.html">
+                          ALL IN CACHE-Cache Policy
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/16/custom-eviction-policy.html">
+                          Custom Eviction Policy
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/19/lru-cache-policy.html">
+                          LRU-Cache Policy
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/28/asynchronous-persistency-with-the-mirror.html">
+                      Persistency
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/28/asynchronous-persistency-with-the-mirror.html">
+                          Asynchronous Persistency with the Mirror
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2013/02/14/async-persistency---mirror---advanced.html">
+                              Async Persistency - Mirror - Advanced
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/28/direct-persistency.html">
+                          Direct Persistency
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/11/space-persistency-advanced-topics.html">
+                          Persistency Advanced Topics
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/11/transient-entries.html">
+                              Transient Entries
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/25/space-persistency-initial-load.html">
+                          Space Persistency
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/28/cassandra-space-persistency.html">
+                              Cassandra Space Persistency
+                            </a>
+                            <ul>
+                              <li class='closed'>
+                                <a href="/xap96/2012/12/28/cassandra-space-data-source.html">
+                                  Cassandra Space Data Source
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2012/12/28/cassandra-space-synchronization-endpoint.html">
+                                  Cassandra Space Synchronization Endpoint
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2012/12/11/hector-cassandra-client.html">
+                                  Hector Cassandra Client
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/03/3/hibernate-space-persistency.html">
+                              Hibernate Space Persistency
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/07/28/migrating-from-external-data-source-api.html">
+                              Migrating From External Data Source API
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/02/24/space-data-source-api.html">
+                              Space Data Source API
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/11/space-persistency-advanced-topics.html">
+                              Space Persistency Advanced Topics
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/25/space-persistency-initial-load.html">
+                              Space Persistency Initial Load
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/02/25/space-synchronization-endpoint-api.html">
+                              Space Synchronization Endpoint API
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/modeling-and-accessing-your-data.html">
+                  Modeling and Accessing Your Data
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/08/20/clustered-vs-non-clustered-proxies.html">
+                      Clustered vs Non-Clustered Proxies
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/24/modeling-your-data.html">
+                      Modeling your data
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/12/pojo-support.html">
+                      POJO Support
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/06/02/pojo-metadata.html">
+                          POJO Metadata
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/06/parent-child-relationship.html">
+                          Parent Child Relationship
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/15/dynamic-properties.html">
+                          Dynamic Properties
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/03/15/storage-types---controlling-serialization.html">
+                          Storage Types - Controlling Serialization
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/document-api.html">
+                      Document API
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/05/25/extending-space-documents.html">
+                          Extending Space Documents
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/07/document-pojo-interoperability.html">
+                          Document-POJO Interoperability
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/06/14/caching-scenarios.html">
+                  Caching Scenarios
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/04/15/gigaspaces-for-hibernate-orm-users.html">
+                      GigaSpaces for Hibernate ORM Users
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/12/11/space-persistency-advanced-topics.html">
+                  Advanced Topics
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/08/communication-protocol.html">
+                      Communication Protocol
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/15/controlling-serialization-%28deprecated%29.html">
+                      Controlling Serialization (Deprecated)
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/29/externalizable-support-%28deprecated%29.html">
+                      Externalizable Support (Deprecated)
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/handling-large-objects.html">
+                      Handling Large Objects
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/27/the-space-api.html">
+              The Space API
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/03/30/the-gigaspace-interface.html">
+                  The GigaSpace Interface
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/26/change-api-advanced.html">
+                      Change API
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/03/26/change-api-advanced.html">
+                          Change API Advanced
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/24/counters.html">
+                      Counters
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/02/07/the-gigaspacecontext-annotation.html">
+                      The GigaSpaceContext Annotation
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/07/21/querying-the-space.html">
+                  Querying The Space
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/id-queries.html">
+                      Id Queries
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/20/template-matching.html">
+                      Template Matching
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/sqlquery.html">
+                      SQLQuery
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/query-nested-properties.html">
+                      Query Nested Properties
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/query-user-defined-classes.html">
+                      Query User Defined Classes
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/indexing.html">
+                      Indexing
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/paging-support-with-space-iterator.html">
+                      Paging Support with Space Iterator
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/06/23/getting-partial-results-using-projection-api.html">
+                      Getting Partial Results Using Projection API
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/06/23/space-object-id-operations.html">
+                  Space Object ID Operations
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/routing-in-partitioned-spaces.html">
+                  Routing In Partitioned Spaces
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/02/27/leases---automatic-expiration.html">
+                  Leases - Automatic Expiration
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/02/13/fifo-support.html">
+                  FIFO Support
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/01/23/fifo-grouping.html">
+                      FIFO Grouping
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/17/transaction-management.html">
+                  Transaction Management
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/space-locking-and-blocking.html">
+                      Space Locking and Blocking
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/06/21/gigaspaces-read-modifiers.html">
+                          GigaSpaces Read Modifiers
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/15/optimistic-locking.html">
+                          Optimistic Locking
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/21/pessimistic-locking.html">
+                          Pessimistic Locking
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/27/other-data-access-apis.html">
+              Other Data Access APIs
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/06/03/jdbc-driver.html">
+                  JDBC Driver
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/15/jpa-api.html">
+                  JPA API
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/06/23/jpa-entity-id.html">
+                      JPA Entity Id
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/02/03/jpa-relationships.html">
+                      JPA Relationships
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/03/gigaspaces-jpa-limitations.html">
+                      GigaSpaces JPA Limitations
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/03/09/map-api.html">
+                  Map API
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/15/memcached-api.html">
+                  Memcached API
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/28/services-on-top-of-the-data-grid.html">
+              Services on Top of the Data Grid
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/06/02/reloading-business-logic.html">
+                  Reloading Business Logic
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/01/task-execution-over-the-space.html">
+              Task Execution over the Space
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/aggregators.html">
+                  Aggregators
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2009/08/31/dynamic-language-tasks.html">
+                  Dynamic Language Tasks
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/05/24/space-based-remoting.html">
+              Space Based Remoting
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/executor-based-remoting.html">
+                  Executor Based Remoting
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/event-driven-remoting.html">
+                  Event Driven Remoting
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/28/event-processing.html">
+              Event Processing
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/03/04/archive-container.html">
+                  Archive Container
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/13/cassandra-archive-operation-handler.html">
+                      Cassandra Archive Operation Handler
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/24/notify-container.html">
+                  Notify Container
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/04/24/session-based-messaging-api.html">
+                      Session Based Messaging API
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/16/durable-notifications.html">
+                          Durable Notifications
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/09/slow-consumer.html">
+                          Slow Consumer
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/12/polling-container.html">
+                  Polling Container
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/06/18/data-event-listener.html">
+                  Data Event Listener
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/07/11/event-exception-handler.html">
+                  Event Exception Handler
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/04/messaging-support.html">
+              Messaging Support
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/03/27/jms-api-support.html">
+                  JMS API Support
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/12/jms---basics.html">
+                      JMS - Basics
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2010/05/06/jms-api-basic-usage.html">
+                          JMS API Basic Usage
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/04/07/jms-messages-in-gigaspaces.html">
+                          JMS Messages in GigaSpaces
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/12/02/jms-space-interoperability.html">
+                          JMS-Space Interoperability
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/09/12/jms-administration-api.html">
+                          JMS Administration API
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2008/05/22/working-with-gigaspaces-jndi.html">
+                              Working with GigaSpaces JNDI
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2008/10/28/working-with-gsjmsadmin.html">
+                              Working with GSJMSAdmin
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/05/02/using-jms-with-openspaces-example.html">
+                          Using JMS with OpenSpaces Example
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/12/jms---advanced.html">
+                      JMS - Advanced
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/14/jms-failover.html">
+                          JMS Failover
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/22/jms-transactions-in-gigaspaces.html">
+                          JMS Transactions in GigaSpaces
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/22/jms-user-security.html">
+                          JMS User Security
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/14/browsing-jms-queues.html">
+                          Browsing JMS Queues
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/14/jms-known-issues-and-considerations.html">
+                          JMS Known Issues and Considerations
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/25/using-gigaspaces-jms-without-changing-the-classpath.html">
+                          Using GigaSpaces JMS Without Changing the Classpath
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/02/web-application-support.html">
+              Web Application Support
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/05/26/global-http-session-sharing.html">
+                  Global HTTP Session Sharing
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/08/01/web-processing-unit-container.html">
+                  Web Processing Unit Container
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/17/web-jetty-processing-unit-container.html">
+                      Web Jetty Processing Unit Container
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/05/26/http-session-management.html">
+                          HTTP Session Management
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/3/apache-load-balancer-agent.html">
+                      Apache Load Balancer Agent
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/10/15/admin-modules.html">
+          Admin Modules
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/administration-and-monitoring-api-security.html">
+              Administration and Monitoring API
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/08/06/dump.html">
+                  Dump
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/12/25/logging-api.html">
+                  Logging API
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/17/administrative-alerts.html">
+                  Administrative Alerts
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/05/14/custom-triggering-of-an-alert.html">
+                      Custom Triggering of an Alert
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/19/snmp-connectivity-via-alert-logging-gateway.html">
+                      SNMP Connectivity via Alert Logging Gateway
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/integrations.html">
+          Integrations
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/07/04/maven-plugin.html">
+              Maven Plugin
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2008/10/27/maven-plugin---advanced.html">
+                  Maven Plugin - Advanced
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/08/30/mule-esb.html">
+              Mule ESB
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/09/04/mule-event-container-transport.html">
+                  Mule Event Container Transport
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/08/30/mule-processing-unit.html">
+                  Mule Processing Unit
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/30/mule-queue-provider.html">
+                  Mule Queue Provider
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/31/mule-seda-model.html">
+                  Mule SEDA Model
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/evaluating-performance-and-scalability.html">
+              Scala
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/constructor-based-properties.html">
+                  Constructor Based Properties
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/enhanced-xap-scala-repl.html">
+                  Enhanced XAP Scala REPL
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/scala-predicate-based-queries.html">
+                  Scala Predicate Based Queries
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/scala-scripting-executor.html">
+                  Scala Scripting Executor
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/07/20/scala-task-execution.html">
+                  Scala Task Execution
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/11/07/document-pojo-interoperability.html">
+          Interoperability
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2011/12/26/platform-interoperability-in-gigaspaces.html">
+              Platform Interoperability in GigaSpaces
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/03/05/rest-api.html">
+              REST API
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/07/18/xap-cpp.html">
+              XAP CPP
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/04/03/installing-cpp-api-package.html">
+                  Installing CPP API Package
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/04/12/cpp-api-hello-world-example.html">
+                  CPP API Hello World Example
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/04/29/cpp-api-basics.html">
+                  CPP API Basics
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/01/cpp-type-converter.html">
+                      CPP Type Converter
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/02/gigaspaces-cpp-api.html">
+                      GigaSpaces CPP API
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2010/04/29/cpp-api-configuration-file.html">
+                      CPP API Configuration File
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/18/cpp-api-code-generator.html">
+                      CPP API Code Generator
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/18/cpp-api-mapping-file.html">
+                          CPP API Mapping File
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/18/gsxml2cpp-utility.html">
+                          gsxml2cpp Utility
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/06/29/cpp-api-examples.html">
+                      CPP API Examples
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/22/cpp-api-usage-example.html">
+                          CPP API Usage Example
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/04/30/gigaspaces-cpp-processing-unit-example.html">
+                          GigaSpaces CPP Processing Unit Example
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/01/writing-existing-cpp-class-to-space.html">
+                          Writing Existing CPP Class to Space
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/04/29/cpp-api---advanced.html">
+                  CPP API - Advanced
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2010/04/30/gigaspaces-cpp-processing-unit-example.html">
+                      CPP Processing Unit
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/19/gigaspaces-cpp-api---overview.html">
+                      GigaSpaces CPP API - Overview
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2010/09/20/cloud-and-virtualization.html">
+          Cloud and Virtualization
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2010/09/20/xap-esm-on-cisco-ucs.html">
+              XAP ESM on Cisco UCS
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/09/20/xap-esm-on-rackspace.html">
+              XAP ESM on Rackspace
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/07/08/xap-on-rackspace.html">
+              XAP on Rackspace
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/06/21/xap-on-gogrid.html">
+              XAP on GoGrid
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/01/17/xap-on-vmware.html">
+              XAP on VMWare
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/10/12/appendix.html">
+          Appendix
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/09/04/xap-overview.html">
+              XAP Overview
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/04/09/openspaces-faq.html">
+              OpenSpaces FAQ
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2007/12/02/xap-community-faq.html">
+              XAP-Community FAQ
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/03/3/about-jini.html">
+              About Jini
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/xap96/2008/09/07/administrator's-guide.html" title="Administrator's Guide">
+      Administrator's Guide
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/installation.html">
+          Installation
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/installation-prerequisites.html">
+              Installation Prerequisites
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/04/05/installing-gigaspaces.html">
+                  Installing GigaSpaces
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/05/31/license-key.html">
+                  License Key
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/07/11/supported-platforms.html">
+                  Supported Platforms
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/system-environment-and-environment-variables.html">
+              System Environment and Environment Variables
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/07/24/common-environment-variables.html">
+                  Common Environment Variables
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/06/04/setting-classpath.html">
+                  Setting Classpath
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/12/22/setting-jvm-location.html">
+                  Setting JVM Location
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/configuring-the-system.html">
+          Configuring the System
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/07/17/system-properties-list.html">
+              System Properties List
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/12/22/failover-detection-and-tuning.html">
+              Failover Detection and Tuning
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/12/16/split-brain-and-island-scenarios.html">
+                  Split Brain and Island Scenarios
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/12/16/split-brain-and-active-election---general-definition.html">
+                      Split-Brain and Active Election - General Definition
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/06/16/web-management-console.html">
+          Web Management Console
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/04/08/starting-the-management-console.html">
+              Starting the Management Console
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/dashboard-view.html">
+              Dashboard View
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/application-view.html">
+              Application View
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/hosts-view.html">
+              Hosts View
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/data-grid-view.html">
+              Data Grid View
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2009/09/17/security-administration.html">
+          Security
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/security-basics.html">
+              Security Basics
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/security-concepts.html">
+                  Security Concepts
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/27/security-authorities.html">
+                  Security Authorities
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/05/5/security-configurations.html">
+                  Security Configurations
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/07/26/programmatically-managing-the-security-directory.html">
+                  Programmatically Managing the Security Directory
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/02/default-file-based-security-implementation.html">
+              Default File-Based Security Implementation
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/securing-xap-components.html">
+              Securing XAP Components
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/08/28/securing-your-data.html">
+                  Securing your Data
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/05/21/securing-the-grid-services.html">
+                  Securing the Grid Services
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/08/26/securing-the-transport-layer-%28using-ssl%29.html">
+                  Securing the Transport Layer (using SSL)
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/security-administration.html">
+              Security Administration
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/04/02/gigaspaces-management-center-%28ui%29-security.html">
+                  GigaSpaces Management Center (UI) Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/05/03/command-line-interface-%28cli%29-security.html">
+                  Command Line Interface (CLI) Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2009/09/17/administration-and-monitoring-api-security.html">
+                  Administration and Monitoring API Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/auditing.html">
+                  Auditing
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2009/09/21/java-security-policy-file.html">
+                  Java Security Policy File
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/04/02/securing-the-helloworld-example.html">
+              Securing the HelloWorld example
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/02/custom-security.html">
+              Custom Security
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/23/custom-authentication.html">
+                  Custom Authentication
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/custom-user-role-management.html">
+                  Custom User-Role Management
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/07/08/spring-security-bridge.html">
+              Spring Security Bridge
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2010/07/11/introducing-spring-security.html">
+                  Introducing Spring Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/04/09/gigaspaces-spring-based-security-bridge.html">
+                  GigaSpaces Spring-based Security bridge
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/24/authenticating-against-a-database.html">
+                  Authenticating against a database
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/24/authenticating-against-an-ldap-repository.html">
+                  Authenticating against an LDAP repository
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/09/30/gigaspaces-logging.html">
+          GigaSpaces Logging
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2009/07/16/formatting-log-messages.html">
+              Formatting Log Messages
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/08/24/managing-log-files.html">
+              Managing Log Files
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2009/07/16/backing-up-files-with-a-custom-policy.html">
+                  Backing-up Files With a Custom Policy
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/11/networking-how-tos.html">
+          Networking How Tos
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/how-to-configure-unicast-discovery.html">
+              How to Configure Unicast Discovery
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/03/3/how-to-configure-multicast.html">
+              How to Configure Multicast
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2008/09/08/how-to-determine-whether-multicast-is-available.html">
+                  How to Determine Whether Multicast is Available
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/08/25/how-to-set-gigaspaces-over-nat.html">
+              How to Set GigaSpaces Over NAT
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/lookup-service-configuration.html">
+              Lookup Service Configuration
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/04/02/how-to-configure-an-environment-with-multiple-network-cards-%28multi-nic%29.html">
+              How to Configure an Environment With Multiple Network-Cards (Multi-NIC)
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2010/04/25/advanced-multi-nic-configuration.html">
+                  Advanced Multi-NIC Configuration
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/how-to-set-gigaspaces-over-a-firewall.html">
+              How to Set GigaSpaces Over a Firewall
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/how-to-control-the-used-ports.html">
+              How to Control the Used Ports
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/managing-and-monitoring-a-running-system.html">
+          Managing and Monitoring a Running System
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2011/01/02/commands-and-scripts.html">
+              Commands and Scripts
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/01/02/commands-and-scripts.html">
+                  Scripts
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/gsinstance---gigaspaces-cli.html">
+                      gsInstance - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/platforminfo---gigaspaces-cli.html">
+                      PlatformInfo - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/startjinilus---gigaspaces-cli.html">
+                      startJiniLUS - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/startjinitx_mahalo---gigaspaces-cli.html">
+                      startJiniTX_Mahalo - GigaSpaces CLI
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/02/commands-and-scripts.html">
+                  Commands
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/cd---gigaspaces-cli.html">
+                      cd - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/06/6/undeploy-application---gigaspaces-cli.html">
+                      deploy-application - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/07/02/deploy---gigaspaces-cli.html">
+                      deploy - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/10/15/deploy-memcached---gigaspaces-cli.html">
+                      deploy-memcached - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/21/deploy-space-gigaspaces-cli.html">
+                      deploy-space GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/05/14/gs.bat---other-cli-commands.html">
+                      gs.bat - Other CLI Commands
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/gsa---gigaspaces-cli.html">
+                      gsa - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/help---gigaspaces-cli.html">
+                      help - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/12/jconsole---gigaspaces-cli.html">
+                      jconsole - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/27/list---gigaspaces-cli.html">
+                      list - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/login---gigaspaces-cli.html">
+                      login - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/ls---gigaspaces-cli.html">
+                      ls - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/pwd---gigaspaces-cli.html">
+                      pwd - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/quit---gigaspaces-cli.html">
+                      quit - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/set---gigaspaces-cli.html">
+                      set - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/17/space---gigaspaces-cli.html">
+                      space - GigaSpaces CLI
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/17/space-clean---gigaspaces-cli.html">
+                          space clean - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/17/space-clear---gigaspaces-cli.html">
+                          space clear - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/27/space-cluster-members---gigaspaces-cli.html">
+                          space cluster-members - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-config---gigaspaces-cli.html">
+                          space config - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-connections---gigaspaces-cli.html">
+                          space connections - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/22/space-copy---gigaspaces-cli.html">
+                          space copy - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-list---gigaspaces-cli.html">
+                          space list - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-ping---gigaspaces-cli.html">
+                          space ping - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-sql---gigaspaces-cli.html">
+                          space sql - GigaSpaces CLI
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/stats---gigaspaces-cli.html">
+                      stats - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/task---gigaspaces-cli.html">
+                      task - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/06/6/undeploy-application---gigaspaces-cli.html">
+                      undeploy-application - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/02/20/undeploy---gigaspaces-cli.html">
+                      undeploy - GigaSpaces CLI
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/05/03/graphical-user-interface.html">
+              Graphical User Interface
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/04/12/gigaspaces-management-center.html">
+                  GigaSpaces Management Center
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2008/11/10/using-space-browser-tab---gigaspaces-management-center.html">
+                      Using Space Browser Tab - GigaSpaces Management Center
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/27/gigaspaces-browser-tree-panel-and-configuration-panel.html">
+                          GigaSpaces Browser Tree Panel and Configuration Panel
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/connections-view---gigaspaces-browser.html">
+                              Connections View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/10/16/data-types-view---gigaspaces-browser.html">
+                              Data Types View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/object-inspector.html">
+                              Object Inspector
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/query-view---gigaspaces-browser.html">
+                              Query View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2010/04/12/statistics-view---gigaspaces-browser.html">
+                              Statistics View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/transactions-view---gigaspaces-browser.html">
+                              Transactions View - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/10/gigaspaces-browser-menus-and-buttons.html">
+                          GigaSpaces Browser Menus and Buttons
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/12/managing-space-containers---gigaspaces-browser.html">
+                          Managing Space Containers - GigaSpaces Browser
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-configuration-directory-services-tab---gigaspaces-browser.html">
+                              Space Container Configuration Directory Services Tab - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-configuration-general-tab---gigaspaces-browser.html">
+                              Space Container Configuration General Tab - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-configuration-jms-tab---gigaspaces-browser.html">
+                              Space Container Configuration JMS Tab - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-maintenance---gigaspaces-browser.html">
+                              Space Container Maintenance - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/12/pending-notify-templates-information.html">
+                          Pending Notify Templates Information
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/04/working-with-clusters---gigaspaces-browser.html">
+                          Working with Clusters - GigaSpaces Browser
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/customizing-cluster-view---gigaspaces-browser.html">
+                              Cluster View - GigaSpaces Browser
+                            </a>
+                            <ul>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/customizing-cluster-view---gigaspaces-browser.html">
+                                  Customizing Cluster View - GigaSpaces Browser
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/viewing-cluster-policy-settings-for-space---gigaspaces-browser.html">
+                                  Viewing Cluster Policy Settings for Space - GigaSpaces Browser
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/viewing-space-interrelations-in-cluster---gigaspaces-browser.html">
+                                  Viewing Space Interrelations in Cluster - GigaSpaces Browser
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/visualizing-cluster-groups-and-members---gigaspaces-browser.html">
+                                  Visualizing Cluster Groups and Members - GigaSpaces Browser
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/17/creating-custom-cluster---gigaspaces-browser.html">
+                              Creating Custom Cluster - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/failover-group---gigaspaces-browser.html">
+                              Failover Group - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/load-balancing-group---gigaspaces-browser.html">
+                              Load-Balancing Group - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/replication-group---gigaspaces-browser.html">
+                              Replication Group - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/04/working-with-spaces---gigaspaces-browser.html">
+                          Working with Spaces - GigaSpaces Browser
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-jms---gigaspaces-browser.html">
+                              Space JMS - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-maintenance---gigaspaces-browser.html">
+                              Space Maintenance - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-memory-management---gigaspaces-browser.html">
+                              Space Memory Management - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-serialization-and-engine-thread-pool---gigaspaces-browser.html">
+                              Space Serialization and Engine Thread Pool - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-timeout,-filters-and-lease-manager---gigaspaces-browser.html">
+                              Space Timeout, Filters and Lease Manager - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/12/09/running-gigaspaces-as-a-windows-service.html">
+              Running GigaSpaces as a Windows Service
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/04/27/space-jmx-management.html">
+              Space JMX Management
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/07/21/monitoring-network-activity.html">
+              Monitoring Network Activity
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/03/04/suggested-monitoring-tools.html">
+              Suggested Monitoring Tools
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/advanced-tasks.html">
+          Advanced Tasks
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/11/05/data-grid-clustering.html">
+              Data-Grid Clustering
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/05/consistency-level.html">
+                  Consistency Level
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/06/13/data-partitioning.html">
+                  Data-Partitioning
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/12/22/failover-detection-and-tuning.html">
+                  Failover
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/01/31/replication-gateway-components.html">
+                  Replication
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/01/replication-topologies.html">
+                      Replication Topologies
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/14/synchronous-replication.html">
+                      Synchronous Replication
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/13/asynchronous-replication.html">
+                      Asynchronous Replication
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/10/04/space-instance-recovery.html">
+                      Space Instance Recovery
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/replication-operations.html">
+                      Replication Operations
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/19/controlling-the-replication-redo-log.html">
+                      Controlling the Replication Redo Log
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/10/14/replication-parameters.html">
+                      Replication Parameters
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/01/split-brain-and-primary-resolution.html">
+                  Split Brain and Primary Resolution
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/performance-tuning-and-considerations.html">
+              Performance Tuning and Considerations
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/04/27/tuning-infrastructure.html">
+                  Tuning Infrastructure
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2008/09/10/tuning-gigaspaces-performance---advanced.html">
+                  Tuning GigaSpaces Performance
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/26/tuning-gigaspaces-performance---basics.html">
+                      Tuning GigaSpaces Performance - Basics
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/10/tuning-gigaspaces-performance---advanced.html">
+                      Tuning GigaSpaces Performance - Advanced
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/27/large-scale-deployment.html">
+                          Large Scale Deployment
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/07/08/proxy-connectivity-(old).html">
+                          Proxy Connectivity
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/07/08/proxy-connectivity-%28old%29.html">
+                              Proxy Connectivity (Old)
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/12/02/tuning-java-virtual-machines.html">
+                  Tuning Java Virtual Machines
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/01/08/moving-into-production-checklist.html">
+                  Moving into Production Checklist
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/08/07/tuning-threads-usage.html">
+                  Tuning Threads Usage
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/12/25/troubleshooting-tools.html">
+              Troubleshooting
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2010/12/20/troubleshooting-common-user-issues.html">
+                  Troubleshooting Common User Issues
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2008/09/03/troubleshooting-for-administrators.html">
+                  Troubleshooting for Administrators
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/06/19/testing-system-environment.html">
+                      Testing System Environment
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2008/06/11/locating-clustered-space-instances.html">
+                          Locating Clustered Space Instances
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/12/25/viewing-clustered-space-status.html">
+                          Viewing Clustered Space Status
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/07/11/failure-detection.html">
+                      Failure Detection
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2010/12/25/troubleshooting-tools.html">
+                      Troubleshooting Tools
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/04/24/migration-upgrade-interoperability-and-compatibility.html">
+              Migration Upgrade Interoperability and Compatibility
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/07/11/backward-compatibility.html">
+                  Backward Compatibility
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/evaluating-performance-and-scalability.html">
+              Evaluating Performance and Scalability
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/benchmarking.html">
+                  Benchmarking
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/27/benchmark-utility---gigaspaces-cli.html">
+                      Benchmark Utility - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/27/benchmark-view---gigaspaces-browser.html">
+                      Benchmark View - GigaSpaces Browser
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/01/c++-benchmark-framework.html">
+                      C++ Benchmark Framework
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+        </div>
+        <div class='col-md-8'>
+          <div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title"><strong>Summary: </strong><p>Installing the OpenSpaces Maven plugin, creating and running a Processing Unit project.</p>
+</h3></div><div class="panel-body"><ul class="nav nav-pills" id="summarypanel"></ul></div></div>
+
+<h1 id="overview">Overview</h1>
+
+<p>Maven is a tool used to automate and simplify the development cycle of any Java-based project. The OpenSpaces plugin for Maven utilizes Maven to simplify the development cycle of OpenSpaces-based applications. You can use this plugin to easily create, compile, package, run unit tests, execute and deploy Processing Units.</p>
+
+<p>You don&#8217;t need to be an experienced Maven user to start working with this plugin. This section provides you with everything you need to know in order to start developing Processing Units with the Maven plugin. Experienced Maven users can use the Maven plugin to embed Processing Unit development with their existing development environment.</p>
+
+<p><i class="icon-info-sign" style="color:#3B73AF;"></i> The OpenSpaces Maven plugin has been tested with Maven 3.0.</p>
+
+<p>{refer}For further information about maven see: <a href="http://maven.apache.org/what-is-maven.html">apache.org; What is Maven?</a>{refer}</p>
+
+<h1 id="prior-to-installation">Prior to Installation</h1>
+
+<p>In order to use the OpenSpaces Maven plugin, Maven needs to be installed on the machine. If a Maven installation already exists on the machine, it can be used. If not, GigaSpaces comes with a ready-to-use distribution of Maven 3.0, located under: <code>&lt;JSHOMEDIR&gt;/tools/maven/apache-maven-3.0</code>.</p>
+
+<p>All you need to do is add the Maven <code>bin</code> directory to the system <code>PATH</code> variable, and you are ready to go. To test whether the Maven command is accessible, open a command line window, type <code>mvn \-version</code>, and press Enter.
+The following message should be displayed:</p>
+
+<div class="highlight"><pre><code class="java"><span class="o">&gt;</span><span class="n">mvn</span> <span class="o">-</span><span class="n">version</span>
+
+<span class="n">Apache</span> <span class="n">Maven</span> <span class="mf">3.0</span> <span class="o">(</span><span class="n">r1004208</span><span class="o">;</span> <span class="mi">2010</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">04</span> <span class="mi">13</span><span class="o">:</span><span class="mi">50</span><span class="o">:</span><span class="mi">56</span><span class="o">+</span><span class="mi">0200</span><span class="o">)</span>
+<span class="n">Java</span> <span class="nl">version:</span> <span class="mf">1.6</span><span class="o">.</span><span class="mi">0</span><span class="n">_23</span>
+<span class="n">OS</span> <span class="nl">name:</span> <span class="s">&quot;windows 7&quot;</span> <span class="nl">version:</span> <span class="s">&quot;6.1&quot;</span> <span class="nl">arch:</span> <span class="s">&quot;x86&quot;</span> <span class="nl">Family:</span> <span class="s">&quot;windows&quot;</span>
+</code></pre></div>
+
+<p><i class="icon-warning-sign" style="color:#CF9E53;"></i> <strong>First uses of Maven require internet connection</strong> in order for the local repository to be populated with required libraries. Once all required libraries are in the local repository the internet connection is not mandatory.</p>
+
+<p><i class="icon-info-sign" style="color:#3B73AF;"></i> <strong>Dependency Download by Maven</strong>
+Maven uses repositories: a local repository where all required dependencies (artifacts) are stored for Maven&#8217;s use, and remote repositories from which Maven downloads required dependencies that are missing in the local repository. If a dependency is missing from the local repository during execution, Maven automatically downloads the missing dependencies from the remote repositories. The download might take a few minutes (progress messages are printed to the console). When the download is finished, Maven returns to its original tasks.</p>
+
+<h1 id="installation">Installation</h1>
+
+<p>To install the OpenSpaces Maven plugin:</p>
+
+<p>Run the <code>installmavenrep</code> script from the <code>&lt;GigaSpaces Root&gt;\tools\maven</code> directory:</p>
+
+<div class="highlight"><pre><code class="java"><span class="nl">D:</span><span class="err">\</span><span class="n">gigaspaces</span><span class="o">-</span><span class="n">xap</span><span class="o">-</span><span class="n">premium</span><span class="o">-</span><span class="mf">8.0</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">ga</span><span class="err">\</span><span class="n">tools</span><span class="err">\</span><span class="n">maven</span><span class="o">&gt;</span><span class="n">installmavenrep</span><span class="o">.</span><span class="na">bat</span>
+</code></pre></div>
+
+<p>This installs the GigaSpaces libraries and the OpenSpaces Maven plugin into the local Maven repository. Once the installation is finished, the Maven plugin is ready to be used.</p>
+
+<p><i class="icon-info-sign" style="color:#3B73AF;"></i> The OpenSpaces Maven plugin is installed under: <code>&lt;maven-repository-dir&gt;\org\apache\maven\plugins\maven-openspaces-plugin</code></p>
+
+<h2 id="location-of-libraries-and-local-repository">Location of Libraries and Local Repository</h2>
+
+<p><strong>Library Location</strong>:</p>
+
+<ul>
+  <li>GigaSpaces libraries are installed under: <code>&lt;maven-repository-dir&gt;/com/gigaspaces</code></li>
+</ul>
+
+<h3 id="dependencies">Dependencies</h3>
+
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>gs-runtime<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>com.gigaspaces<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>8.0.x<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;dependency&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>gs-openspaces<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>com.gigaspaces<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>8.0.x<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+
+<h3 id="local-repository-location">Local Repository Location</h3>
+
+<p>By default, Maven creates the local repository under the your home directory: <code>&lt;USER_HOME&gt;\.m2\repository</code>. For example, on Windows XP, the local repository is created in <code>C:\Documents and Settings\&lt;username&gt;\.m2\repository</code>. However, the location of the repository can be changed by editing the <code>settings.xml</code> file under <code>&lt;Maven Root&gt;\conf</code>.</p>
+
+<h3 id="public-repository-location">public repository Location</h3>
+
+<p>You can install the OpenSpaces artifacts using a public repository:</p>
+
+<div class="highlight"><pre><code class="xml"><span class="nt">&lt;repository&gt;</span>
+   <span class="nt">&lt;id&gt;</span>org.openspaces<span class="nt">&lt;/id&gt;</span>
+   <span class="nt">&lt;url&gt;</span>http://maven-repository.openspaces.org<span class="nt">&lt;/url&gt;</span>
+<span class="nt">&lt;/repository&gt;</span> 
+</code></pre></div>
+
+<h1 id="using-available-project-templates">Using Available Project Templates</h1>
+
+<p>You may view list of available project templates and their description using the following command:</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="nl">os:</span><span class="n">create</span>
+</code></pre></div>
+
+<p>The result is a list of available template names and descriptions:</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="text-align: left">Template Name</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">basic</td>
+      <td style="text-align: left">Creates a basic SBA application with two processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">basic-async-persistency</td>
+      <td style="text-align: left">Creates a basic SBA application with three processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit.The Processor is connected to a Mirror and provides a reliable async replication and persistency to the Database using Hibernate.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">basic-xml</td>
+      <td style="text-align: left">Creates a basic SBA application with two processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">basic-async-persistency-xml</td>
+      <td style="text-align: left">Creates a basic SBA application with three processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit. The Processor is connected to a Mirror and provides a reliable asynchronous replication and persistency to the Database using Hibernate.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">mule</td>
+      <td style="text-align: left">Creates a SBA application with two processing units that use mule as an ESB. The Feeder processing unit writes Data objects to the Space. The Processor processing unit uses the extended SEDA model to defines 3 services. A Verifier service that verifies unprocessed Data objects, an Approver service that approves verified Data objects and a Processor service that processes approved Data objects. The Space and the Processor are collocated in the same processing unit.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Use the -Dtemplate=<template> argument to specify a project template. Example:</template></p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="nl">os:</span><span class="n">create</span> <span class="o">-</span><span class="n">Dtemplate</span><span class="o">=</span><span class="n">basic</span><span class="o">-</span><span class="n">async</span><span class="o">-</span><span class="n">persistency</span>
+</code></pre></div>
+
+<h1 id="creating-processing-unit-project">Creating Processing Unit Project</h1>
+
+<p>The OpenSpaces Maven plugin can create Processing Unit projects. It generates the resources and the appropriate directory structure, making it easy to immediately start working on the Processing Units. Projects can be created in any directory. Before creating the project change to the directory where the project should be created. To create a Processing Unit project, use the following command-line:</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="nl">os:</span><span class="n">create</span>
+    <span class="o">-</span><span class="n">DgroupId</span><span class="o">=&lt;</span><span class="n">group</span><span class="o">-</span><span class="n">id</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">DartifactId</span><span class="o">=&lt;</span><span class="n">artifact</span><span class="o">-</span><span class="n">id</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dtemplate</span><span class="o">=&lt;</span><span class="n">project</span><span class="o">-</span><span class="n">template</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="text-align: left">Argument</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Required</th>
+      <th style="text-align: left">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>groupId</code></td>
+      <td style="text-align: left">The project package name</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left"><code>com.mycompany.app</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>artifactId</code></td>
+      <td style="text-align: left">The project name</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left"><code>my-app</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>template</code></td>
+      <td style="text-align: left">The project template</td>
+      <td style="text-align: left"><i class="icon-ok-sign" style="color:#14892C;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The project is generated in the current directory (<code>my-app</code> directory).</p>
+
+<p><i class="icon-info-sign" style="color:#3B73AF;"></i> Executing <code>os:create</code> without specifying a template shows a list of available templates and their description.</p>
+
+<p><i class="icon-warning-sign" style="color:#CF9E53;"></i> To start working with the project (compiling, packaging etc&#8230;) you should change directory to the directory of the project.</p>
+
+<h1 id="processing-unit-project-structure">Processing Unit Project Structure</h1>
+
+<p>Basically, a Processing Unit project structure is what Maven users call a multi-module project. It consists of a main (top-level) project that contains sub-projects called modules. A Processing Unit is implemented as a module of the main project, thus a main project might consist of many Processing Units.</p>
+
+<p>The project, created by the <code>default</code> template, consists of a main project and three modules (sub-projects):</p>
+
+<ul>
+  <li><strong>feeder</strong> &#8211; a Processing Unit that writes data into the space.</li>
+  <li><strong>processor</strong> &#8211; a Processing Unit that takes data from the space, processes it and writes the results back to the space.</li>
+  <li><strong>common</strong> &#8211; a module that contains resources shared by both the feeder and the processor.</li>
+</ul>
+
+<p><i class="icon-info-sign" style="color:#3B73AF;"></i> The archives generated by the common module and its dependencies are added to the <code>lib</code> directory of the feeder&#8217;s and processor&#8217;s distributables.</p>
+
+<p>The main project and each of the modules contain a project-descriptor file called <code>pom.xml</code>; which contains information about the project&#8217;s properties, dependencies, build configuration, and so on. A module is considered a Processing Unit module if its <code>pom.xml</code> file contains the property <code>gsType=PU</code>. In this case, only the feeder and the processor are considered Processing Unit modules.</p>
+
+<!--
+
+<p>For a full overview of the OpenSpaces Maven plugin project templates, refer to: <em>link will be added soon.</em></p>
+
+-->
+
+<h1 id="compiling-the-processing-unit-project">Compiling the Processing Unit Project</h1>
+
+<p>In order to compile the Processing Unit project, use the following command line from the main project&#8217;s directory.</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="n">compile</span>
+</code></pre></div>
+
+<p>This compiles each module and puts the output files under the modules&#8217; <em>target</em> directory.</p>
+
+<h1 id="running-processing-unit-modules">Running Processing Unit Modules</h1>
+
+<p>Sometimes, during development, the developer might want to run the Processing Unit module to check its functionality. The OpenSpaces Maven plugin allows you to run Processing Unit modules without the need to package them as Processing Unit distributables first. This feature saves time, while evading build phases that are not required for this task.</p>
+
+<p><i class="icon-info-sign" style="color:#3B73AF;"></i> To run modules, they need to be compiled first.</p>
+
+<p>Make sure you are in the directory of the project.
+To run Processing Unit modules, use the following command-line (found in the <code>artifactId</code> folder):</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="nl">os:</span><span class="n">run</span>
+    <span class="o">-</span><span class="n">Dcluster</span><span class="o">=&lt;</span><span class="s">&quot;cluster-properties&quot;</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dgroups</span><span class="o">=&lt;</span><span class="n">groups</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dlocators</span><span class="o">=&lt;</span><span class="n">locators</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dproperties</span><span class="o">=&lt;</span><span class="s">&quot;context-level-properties-location&quot;</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dmodule</span><span class="o">=&lt;</span><span class="n">module</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="text-align: left">Argument</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Required</th>
+      <th style="text-align: left">Properties</th>
+      <th style="text-align: left">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>cluster</code></td>
+      <td style="text-align: left">Cluster properties</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">* <code>schema</code> &#8211; the cluster schema name<br />- <code>total_members</code> &#8211; a list of the cluster members, separated by a comma<br />- <code>id</code> &#8211; the cluster ID<br />- <code>backup_id</code> &#8211; the backup ID</td>
+      <td style="text-align: left">* <code>schema=partitioned</code><br />- <code>total_members=1,1</code><br />- <code>id=1</code><br />- <code>backup_id=1</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>groups</code></td>
+      <td style="text-align: left">Comma-delimited list of lookup group names</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+      <td style="text-align: left">group1,group2</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>locators</code></td>
+      <td style="text-align: left">Comma-delimited list of Jini locators hosts</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+      <td style="text-align: left">jini://<hostname1>, jini://<hostname2></hostname2></hostname1></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>properties</code></td>
+      <td style="text-align: left">Location of context-level properties</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">* <code>file</code> &#8211; the properties file<br />- <code>embed</code> &#8211; property definition</td>
+      <td style="text-align: left">file://config/context.properties<br />    embed://prop1=value1</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>module</code></td>
+      <td style="text-align: left">The name of the Processing Unit module to run</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+      <td style="text-align: left"><code>feeder</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong></p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="n">compile</span> <span class="nl">os:</span><span class="n">run</span> <span class="o">-</span><span class="n">Dcluster</span><span class="o">=</span><span class="s">&quot;schema=partitioned total_members=1,1 </span>
+<span class="s">id=1&quot;</span> <span class="o">-</span><span class="n">Dproperties</span><span class="o">=</span><span class="s">&quot;embed://prop1=value1&quot;</span> <span class="o">-</span><span class="n">Dmodule</span><span class="o">=</span><span class="n">feeder</span>
+</code></pre></div>
+
+<h2 id="determining-module-execution">Determining Module Execution</h2>
+
+<ul>
+  <li>If the current directory is a the base directory of a module, only this module is executed.</li>
+  <li>If the current directory is the main project directory and the <code>module</code> argument is not set, all modules are executed one by one.</li>
+  <li>If the current directory is the main project directory and the <code>module</code> argument is set, only the specified module is executed.</li>
+</ul>
+
+<div id="overriding"></div>
+
+<h2 id="overriding-spacecluster-configuration">Overriding Space/Cluster Configuration</h2>
+
+<p>If you need to override the configuration of the space or cluster when running the processing units through the OpenSpaces plugin and you want to do it by replacing the original configuration files, you can do it by placing the required file in the project&#8217;s root directory.</p>
+
+<p>Examples:
+To change the logging configuration place the new <em>gs_logging.properties</em> file in the <em>config</em> directory (you may need to create this directory) under the project&#8217;s root directory.</p>
+
+<p>To change the security permissions place the new <em>policy.all</em> file in the <em>policy</em> directory (you may need to create this directory) under the project&#8217;s root directory.</p>
+
+<div id="packaging"></div>
+
+<h1 id="packaging-processing-units">Packaging Processing Units</h1>
+
+<p>In order to deploy Processing Units, you need to package them in a distributable form. The OpenSpaces Maven plugin allows you to package two types of distributables supported by GigaSpaces: a single JAR archive and an open directory structure.</p>
+
+<p>Make sure you are in the directory of the project.
+To package the Processing Units, use the following command-line from the main project directory:</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="kn">package</span>
+</code></pre></div>
+
+<p>The Processing Units&#8217; distributable bundles are generated for each module, under the directory <code>target</code>. For example, the distributables of a module named <code>feeder</code> are generated under <code>&lt;proj-dir&gt;\feeder\target</code>.</p>
+
+<p>The single JAR distributable is <code>feeder.jar</code>; the open directory structure distributable is created under the directory <code>feeder</code>.</p>
+
+<h2 id="suppressing-unit-test-execution-while-packaging">Suppressing Unit Test Execution While Packaging</h2>
+
+<p>If not specified explicitly, unit tests are executed when packaging the Processing Units.</p>
+
+<p>To suppress the execution of unit tests, add one of the following arguments to the command line: <code>skipTests</code> or <code>maven.test.skip</code>:</p>
+
+<p class="table table-bordered">| Argument | Description |
+|:&#8212;&#8212;&#8212;|:&#8212;&#8212;&#8212;&#8212;|
+| <code>skipTests</code> | Skips the unit test execution, but still performs unit test compilation |
+| <code>maven.test.skip</code> | Skips the unit testing phase entirely, including the test compilation |
+For example:</p>
+
+<div class="highlight"><pre><code class="java"><span class="o">&gt;</span><span class="n">mvn</span> <span class="kn">package</span> <span class="o">-</span><span class="n">DskipTests</span>
+
+ <span class="o">..</span> <span class="n">or</span> <span class="o">..</span>
+
+<span class="o">&gt;</span><span class="n">mvn</span> <span class="kn">package</span> <span class="o">-</span><span class="n">Dmaven</span><span class="o">.</span><span class="na">test</span><span class="o">.</span><span class="na">skip</span>
+</code></pre></div>
+
+<h1 id="running-processing-units">Running Processing Units</h1>
+
+<p>After packaging the Processing Units, you might want to test the validity of the assemblies. The OpenSpaces Maven plugin makes it possible to run the Processing Units as standalone modules. The Maven plugin includes all the assembly dependencies in the execution classpath, making sure that the Processing Unit finds all the required resources. Managing to run the Processing Unit as a module while failing to run it as a standalone module might imply that a problem exists with the assembly definitions.</p>
+
+<p>Make sure you are in the directory of the project.
+To run Processing Units as standalone modules, use the following command-line:</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="nl">os:</span><span class="n">run</span><span class="o">-</span><span class="n">standalone</span>
+    <span class="o">-</span><span class="n">Dcluster</span><span class="o">=&lt;</span><span class="s">&quot;cluster-properties&quot;</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dgroups</span><span class="o">=&lt;</span><span class="n">groups</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dlocators</span><span class="o">=&lt;</span><span class="n">locators</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dproperties</span><span class="o">=&lt;</span><span class="s">&quot;context-level-properties-location&quot;</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dmodule</span><span class="o">=&lt;</span><span class="n">module</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="text-align: left">Argument</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Required</th>
+      <th style="text-align: left">Properties</th>
+      <th style="text-align: left">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>cluster</code></td>
+      <td style="text-align: left">Cluster properties</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">* <code>schema</code> &#8211; the cluster schema name<br />- <code>total_members</code> &#8211; a list of the cluster members, separated by a comma<br />- <code>id</code> &#8211; the cluster ID<br />- <code>backup_id</code> &#8211; the backup ID</td>
+      <td style="text-align: left">* <code>schema=partitioned</code><br />- <code>total_members=1,1</code><br />- <code>id=1</code><br />- <code>backup_id=1</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>groups</code></td>
+      <td style="text-align: left">Comma-delimited list of lookup group names</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+      <td style="text-align: left">group1,group2</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>locators</code></td>
+      <td style="text-align: left">Comma-delimited list of Jini locators hosts</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+      <td style="text-align: left">jini://<hostname1>, jini://<hostname2></hostname2></hostname1></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>properties</code></td>
+      <td style="text-align: left">Context-level properties location</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">* <code>file</code> &#8211; properties file<br />- <code>embed</code> &#8211; properties definition</td>
+      <td style="text-align: left"><br />    file://config/context.properties<br />    embed://prop1=value1</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>module</code></td>
+      <td style="text-align: left">The name of the Processing Unit module to run</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+      <td style="text-align: left"><code>feeder</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong></p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="nl">os:</span><span class="n">run</span><span class="o">-</span><span class="n">standalone</span> <span class="o">-</span><span class="n">Dcluster</span><span class="o">=</span><span class="s">&quot;schema=partitioned total_members=1,1 </span>
+<span class="s">id=1&quot;</span> <span class="o">-</span><span class="n">Dproperties</span><span class="o">=</span><span class="s">&quot;embed://prop1=value1&quot;</span> <span class="o">-</span><span class="n">Dmodule</span><span class="o">=</span><span class="n">feeder</span>
+</code></pre></div>
+
+<h2 id="determining-processing-unit-execution">Determining Processing Unit Execution</h2>
+
+<ul>
+  <li>If the current directory is a Processing Unit module&#8217;s base directory, only this Processing Unit is executed.</li>
+  <li>If the current directory is the main project directory and the <code>pu-name</code> argument is not set, all Processing Units are executed one by one.</li>
+  <li>If the current directory is the main project directory and the <code>pu-name</code> argument is set, only the specified Processing Unit is executed.</li>
+</ul>
+
+<h2 id="overriding-spacecluster-configuration-1">Overriding Space/Cluster Configuration</h2>
+
+<p>Overriding the space and cluster configuration is explained in <a href="#overriding">Running Processing Unit Modules</a>.</p>
+
+<h1 id="deploying-processing-units">Deploying Processing Units</h1>
+
+<p>Processing Units usually run in the Service Grid. In order to deploy a Processing Unit, you first need to package it (see <a href="#packaging">Packaging Processing Units</a>).</p>
+
+<p>GigaSpaces supports two forms of Processing Unit distributables: A single JAR archive and an open directory structure. The OpenSpaces Maven plugin allows you to deploy Processing Units simply &#8211; packaged as JAR archives &#8211; into the Service Grid.</p>
+
+<p><i class="icon-warning-sign" style="color:#CF9E53;"></i> When deploying Processing Units, make sure that the Grid Service Manager (GSM) and the Grid Service Container (GSC) are running. </p>
+
+<p>Make sure you are in the directory of the project.
+Once your Processing Units are packaged, use the following command-line to deploy them to the Service Grid:</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="nl">os:</span><span class="n">deploy</span>
+    <span class="o">-</span><span class="n">Dsla</span><span class="o">=&lt;</span><span class="n">sla</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dcluster</span><span class="o">=&lt;</span><span class="n">cluster</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dgroups</span><span class="o">=&lt;</span><span class="n">groups</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dlocators</span><span class="o">=&lt;</span><span class="n">locators</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dtimeout</span><span class="o">=&lt;</span><span class="n">timeout</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dproperties</span><span class="o">=&lt;</span><span class="s">&quot;prop1=val1 prop2=val2...&quot;</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Doverride</span><span class="o">-</span><span class="n">name</span><span class="o">=&lt;</span><span class="n">override</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dmax</span><span class="o">-</span><span class="n">instances</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">vm</span><span class="o">=&lt;</span><span class="n">max</span><span class="o">-</span><span class="n">instances</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">vm</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dmax</span><span class="o">-</span><span class="n">instances</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">machine</span><span class="o">=&lt;</span><span class="n">max</span><span class="o">-</span><span class="n">instances</span><span class="o">-</span><span class="n">per</span><span class="o">-</span><span class="n">machine</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dmodule</span><span class="o">=&lt;</span><span class="n">module</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="text-align: left">Argument</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Required</th>
+      <th style="text-align: left">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>sla</code></td>
+      <td style="text-align: left">The SLA policy</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>cluster</code></td>
+      <td style="text-align: left">The name of the cluster</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>groups</code></td>
+      <td style="text-align: left">Comma-delimited list of lookup group names</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">gigaspaces-<version></version></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>locators</code></td>
+      <td style="text-align: left">Comma-delimited list of Jini locators hosts</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>timeout</code></td>
+      <td style="text-align: left">Timeout</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">10000</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>properties</code></td>
+      <td style="text-align: left">The properties file name or key-value pairs</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>override-name</code></td>
+      <td style="text-align: left">Override name</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>max-instances-per-vm</code></td>
+      <td style="text-align: left">The maximum instances per virtual machine</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>max-instances-per-machine</code></td>
+      <td style="text-align: left">The maximum instances per machine (host)</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>module</code></td>
+      <td style="text-align: left">The name of the Processing Unit module to deploy</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If the current directory is a Processing Unit module&#8217;s base directory, only this processing unit is deployed.</p>
+
+<p>If the current directory is the main project directory and the <code>pu-name</code> argument is not set, Maven deploys the Processing Unit in the order described <a href="#order">below</a>.</p>
+
+<p>If the current directory is the main project directory and the <code>pu-name</code> argument is set, only the specified Processing Unit is deployed.</p>
+
+<h1 id="undeploying-processing-units">Undeploying Processing Units</h1>
+
+<p>The OpenSpaces Maven plugin makes it simple to undeploy Processing Units from the Service Grid. Make sure you are in the directory of the project. To undeploy a Processing Unit from the Service Grid, use the following command-line:</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="nl">os:</span><span class="n">undeploy</span>
+    <span class="o">-</span><span class="n">Dgroups</span><span class="o">=&lt;</span><span class="n">groups</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dlocators</span><span class="o">=&lt;</span><span class="n">locators</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dtimeout</span><span class="o">=&lt;</span><span class="n">timeout</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dmodule</span><span class="o">=&lt;</span><span class="n">module</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="text-align: left">Argument</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Required</th>
+      <th style="text-align: left">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>groups</code></td>
+      <td style="text-align: left">Comma-delimited list of lookup group names</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">gigaspaces-<version></version></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>locators</code></td>
+      <td style="text-align: left">Comma-delimited list of Jini locators hosts</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>timeout</code></td>
+      <td style="text-align: left">Timeout</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">10000</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>module</code></td>
+      <td style="text-align: left">The name of the Processing Unit module to undeploy</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>If the current directory is a Processing Unit module&#8217;s base directory, only this Processing Unit is undeployed.</li>
+  <li>If the current directory is the main project directory and the <code>pu-name</code> argument is not set, Maven undeploys the Processing Unit the order described <a href="#order">below</a>.</li>
+  <li>If the current directory is the main project directory and the <code>pu-name</code> argument is set, only the specified Processing Unit is undeployed.</li>
+</ul>
+
+<div id="order"></div>
+
+<h1 id="controlling-order-of-deploymentundeployment">Controlling Order of Deployment/Undeployment</h1>
+
+<h2 id="deployment">Deployment</h2>
+
+<p>A Processing Unit might have a dependency on another Processing Unit (this dependency is defined in the Processing Unit <code>pom.xml</code> file). It is important to deploy these Processing Units in the right order to prevent errors.</p>
+
+<ul>
+  <li>The independent Processing Unit should be deployed first, and the the dependent Processing Unit should be deployed second.</li>
+  <li>The Maven plugin identifies these dependencies and deploys the Processing Units in the right order.</li>
+  <li>If there is no dependency between the Processing Units, they are deployed in the same order in which the modules are declared in the main project <code>pom.xml</code> file.</li>
+</ul>
+
+<h2 id="undeployment">Undeployment</h2>
+
+<p>Undeployment of Processing Units takes place in a reverse order: the dependent Processing Unit is undeployed first and the independent second.</p>
+
+<h1 id="adding-dependencies-to-modules">Adding Dependencies to Modules</h1>
+
+<p>A dependency is a library (usually a JAR archive containing class libraries) required by the Processing Unit for compilation, execution, etc.
+For example, if the Processing Unit&#8217;s code uses a class from an external archive, this archive needs to be added as a dependency of the Processing Unit.
+Adding dependencies is done a Maven-typical way, which is editing the module&#8217;s <code>pom.xml</code> file.
+For example, to add <code>commons-logging</code> version 1.1.1 as a dependency to the processor Processing Unit, add the following XML snippet to the <code>&lt;dependencies&gt;</code> section of the <code>pom.xml</code> file:</p>
+
+<div id="xml"></div>
+
+<div class="highlight"><pre><code class="java"><span class="o">&lt;</span><span class="n">project</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+    <span class="o">&lt;</span><span class="n">dependencies</span><span class="o">&gt;</span>
+        <span class="o">...</span>
+        <span class="o">&lt;!--</span><span class="n">The</span> <span class="n">added</span> <span class="n">snippet</span><span class="o">--&gt;</span>
+        <span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">groupId</span><span class="o">&gt;</span><span class="n">commons</span><span class="o">-</span><span class="n">logging</span><span class="o">&lt;/</span><span class="n">groupId</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">artifactId</span><span class="o">&gt;</span><span class="n">commons</span><span class="o">-</span><span class="n">logging</span><span class="o">&lt;/</span><span class="n">artifactId</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">version</span><span class="o">&gt;</span><span class="mf">1.1</span><span class="o">.</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">version</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">scope</span><span class="o">&gt;</span><span class="n">compile</span><span class="o">&lt;/</span><span class="n">scope</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">dependency</span><span class="o">&gt;</span>
+        <span class="o">...</span>
+    <span class="o">&lt;/</span><span class="n">dependencies</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+<span class="o">&lt;/</span><span class="n">project</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<h2 id="private-dependencies">Private Dependencies</h2>
+
+<p>Private dependencies are Processing Unit dependencies that are not shared with other Processing Units. Processing Unit distributions hold private dependencies in the <code>lib</code> directory. To add private dependency, add it to the Processing Unit module <code>pom.xml</code> file. For example, to add the <code>commons-logging</code> version 1.1.1 as a private dependency of the processor Processing Unit, add the XML snippet <a href="#xml">above</a> to the <strong>processor</strong> module&#8217;s <code>pom.xml</code> file. When the Processing Unit is packaged, the <code>commons-logging</code> archive is located under the <code>lib</code> directory of the processor distributable.</p>
+
+<h2 id="shared-dependencies">Shared Dependencies</h2>
+
+<p>Shared dependencies are Processing Unit dependencies that are shared with other Processing Units. To add shared dependencies, add the dependencies to the common module <code>pom.xml</code> file. For example, to add the <code>commons-logging</code> version 1.1.1 as a shared dependency of the processor and the feeder Processing Units, add the XML snippet <a href="#xml">above</a> to the <strong>common</strong> module&#8217;s <code>pom.xml</code> file. When the Processing Units are packaged, the <code>commons-logging</code> archive is located under the <code>lib</code> directory of the processor and the feeder distributables.</p>
+
+<h1 id="importing-processing-unit-projects-to-eclipse-ide">Importing Processing Unit Projects to Eclipse IDE</h1>
+
+<p>It is possible to import a Processing Unit project into the Eclipse environment. Imported projects have built-in launch targets, allowing you to run the processor and the feeder using Eclipse run (or debug) targets.</p>
+
+<h2 id="generate-eclipse-project">1. Generate Eclipse Project</h2>
+
+<p>Execute the following command from the project root directory:</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="nl">eclipse:</span><span class="n">eclipse</span>
+</code></pre></div>
+
+<p>This generates a <code>.project</code> file under each module&#8217;s base directory.</p>
+
+<h2 id="import-generated-projects-to-eclipse-environment">2. Import Generated Projects to Eclipse Environment</h2>
+
+<ol>
+  <li>Select <strong>File</strong> &gt; <strong>Import</strong> &gt; <strong>Existing Projects into Workspace</strong>.</li>
+  <li>In the <strong>Import</strong> dialog, keep the <strong>Select root directory</strong> option selected, and click <strong>Browse</strong>.</li>
+  <li>Select the base directory of the project you want to import and click <strong>Finish</strong>.</li>
+</ol>
+
+<p>This imports the three modules to Eclipse, each as a separate project.</p>
+
+<h2 id="define-m2repo-variable">3. Define M2_REPO Variable</h2>
+
+<p>Imported projects use a variable called <code>M2_REPO</code> to point to the location of Maven&#8217;s local repository. If this is a fresh Eclipse installation, the <code>M2_REPO</code> variable needs to be defined:</p>
+
+<ol>
+  <li>Select <strong>Window</strong> &gt; <strong>Preferences</strong>.</li>
+  <li>In the <strong>Preferences</strong> dialog, select <strong>Java</strong> &gt; <strong>Build Path</strong> &gt; <strong>Classpath Variables</strong>, and click <strong>New</strong>.</li>
+  <li>In the <strong>New Variable Entry</strong> dialog, type <code>M2_REPO</code> in the <strong>Name</strong> field.</li>
+  <li>Press <strong>Folder</strong> and select the directory of Maven&#8217;s local repository.</li>
+  <li>Click <strong>OK</strong> to close all dialogs.</li>
+</ol>
+
+<h2 id="convert-generated-projects-to-maven-projects">4. Convert Generated Projects To Maven Projects</h2>
+
+<p>Do the following for each project:</p>
+
+<ol>
+  <li>Right click on the project.</li>
+  <li>Select <strong>Configure</strong> &gt; <strong>Convert to Maven Project</strong>.</li>
+</ol>
+
+<h1 id="viewing-persistent-data">Viewing Persistent Data</h1>
+
+<p>When running a Processing Unit that uses persistency, e.g when using the <em>basic-async-persistency</em> template, one would like to view the persisted data. OpenSpaces Maven Plugin makes it easy to start the HSQLDB viewer to immediately view persisted data.</p>
+
+<p><i class="icon-warning-sign" style="color:#CF9E53;"></i> The HSQLDB viewer is for monitoring HSQLDB databases only.</p>
+
+<p>To start the HSQLDB viewer use the following command-line:</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">mvn</span> <span class="nl">os:</span><span class="n">hsql</span><span class="o">-</span><span class="n">ui</span>
+    <span class="o">-</span><span class="n">Ddriver</span><span class="o">=&lt;</span><span class="n">driver</span><span class="o">-</span><span class="n">class</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Durl</span><span class="o">=&lt;</span><span class="n">url</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Duser</span><span class="o">=&lt;</span><span class="n">user</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dpassword</span><span class="o">=&lt;</span><span class="n">password</span><span class="o">&gt;</span>
+    <span class="o">-</span><span class="n">Dhelp</span>
+</code></pre></div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="text-align: left">Argument</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Required</th>
+      <th style="text-align: left">Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>driver</code></td>
+      <td style="text-align: left">JDBC driver class</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">org.hsqldb.jdbcDriver</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>url</code></td>
+      <td style="text-align: left">JDBC url</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">jdbc:hsqldb:hsql://localhost/testDB</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>user</code></td>
+      <td style="text-align: left">User name used for the connection</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>password</code></td>
+      <td style="text-align: left">Password used for this user</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>help</code></td>
+      <td style="text-align: left">Prints the usage options</td>
+      <td style="text-align: left"><i class="icon-remove-sign" style="color:#D04437;"></i></td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><i class="icon-info-sign" style="color:#3B73AF;"></i> The default values are sufficient when using the data source values generated by the plugin.</p>
+
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class="footer">
+          <ul class='list-inline'>
+    <li>
+        Simply Scale with
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com">GigaSpaces</a>
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com/wiki/x/xwBmAg" class="smalltext">Legal Notice</a>
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com/wiki/x/xgBmAg" class="smalltext">3rd Party License Agreements</a>
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com/wiki/x/BQFmAg" class="smalltext">Site Map</a>
+    </li>
+    <li>
+        <a href="mailto:techw@gigaspaces.com">Contact Admin</a>
+    </li>
+    <li>
+        <i><a href="http://www.atlassian.com/software/confluence">Powered by Atlassian Confluence</a></i>
+    </li>
+</ul>
+
+        </div>
+      </div>
+
+    </div><!-- /container -->
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/jquery.treeview.js"></script>
+    <script>
+      $(function () {
+        $(".tabsection").each(function(index) {
+          list = "";
+
+          $(this).find(".tab-pane").each(function(index) {
+            list_class = "";
+            timestamp = parseInt(Date.now() * Math.random()) ;
+
+            if(index === 0){
+              list_class = "class='active'";
+              $(this).prop("class", $(this).prop("class") + " active");
+            }
+
+            list += "<li " + list_class +"><a href='#" + timestamp + $(this).prop("id") +"'>" + $(this).prop("title") +"</a></li>";
+            $(this).prop("id", timestamp + $(this).prop("id"));
+          });
+          $(this).find(".nav").html(list);
+        });
+
+        $('ul.nav a').click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
+
+        summary_url = "";
+        $('.col-md-8').children('h1').each(function(index, item) {
+          summary_url += '<li><a href="#'+item.id+'">'+item.innerHTML+'</a></li>';
+        });
+
+        $("#summarypanel").html(summary_url);
+      })
+      $("#navigation").treeview({
+        persist: "location"
+      });
+    </script>
+  </body>
+</html>

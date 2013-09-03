@@ -1,0 +1,3297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Session Based Messaging API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/jquery.treeview.css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+        <div class="span12">
+          <h1>Session Based Messaging API</h1>
+        </div>
+      </header>
+
+      <div class="row">
+        <div class='col-md-4'>
+          <div>
+  Browse XAP 9.6
+</div>
+<ul id='navigation'>
+  <li>
+    <a href="/xap96/2012/07/16/quick-start-guide.html" title="Quick Start Guide">
+      Quick Start Guide
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2013/07/21/screen-casts.html">
+          Screen Casts
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/04/10/your-first-data-grid-application2.html">
+          Your First Data Grid Application
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/04/03/your-first-web-application.html">
+          Your First Web Application
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/04/03/step-1---deploying-your-web-application-to-the-gigaspaces-environment.html">
+              Step 1 - Deploying Your Web Application to the GigaSpaces Environment
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/04/03/step-2---enabling-http-session-failover-and-fault-tolerance.html">
+              Step 2 - Enabling HTTP Session Failover and Fault Tolerance
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/04/03/step-3---scaling-the-data-access-layer.html">
+              Step 3 - Scaling the Data Access Layer
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/07/08/your-first-xtp-application.html">
+          Your First XTP Application
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/07/08/setting-up-your-ide-to-work-with-gigaspaces.html">
+              Setting Up your IDE to work with GigaSpaces
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/07/08/step-one---using-processing-units-for-scaling.html">
+              Step One - Using Processing Units for Scaling
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/01/21/step-two---creating-the-hello-world-application.html">
+              Step Two - Creating the Hello World Application
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/02/20/step-three---deploying-onto-the-service-grid.html">
+              Step Three - Deploying onto the Service Grid
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/07/08/step-four---scaling-the-hello-world-application.html">
+              Step Four - Scaling the Hello World Application
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/10/15/your-first-jpa-application.html">
+          Your First JPA Application
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/10/15/step-1---adjusting-your-jpa-domain-model-to-the-xap-jpa-implementation.html">
+              Step 1 - Adjusting Your JPA Domain Model to the XAP JPA Implementation
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/02/step-2---using-the-power-of-the-space-to-scale-your-data-access-layer.html">
+              Step 2 - Using the Power of the Space to Scale Your Data Access Layer
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/21/step-3---building-and-running-the-application.html">
+              Step 3 - Building and Running the Application
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2009/06/23/beyond-the-basics.html">
+          Beyond the Basics
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/05/10/the-openspaces-data-example.html">
+              The OpenSpaces Data Example
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/07/21/xap-order-management-tutorial.html">
+              XAP Order Management Tutorial
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/07/14/your-first-real-time-big-data-analytics-application.html">
+          Your First Real Time Big Data Analytics Application
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/xap96/2008/09/15/product-overview.html" title="Product Overview">
+      Product Overview
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2011/03/22/concepts.html">
+          Concepts
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/06/09/a-typical-sba-application.html">
+          A Typical SBA Application
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/12/12/database-integration.html">
+          Database Integration
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/10/02/product-architecture.html">
+          Product Architecture
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/04/09/the-application-layer.html">
+          The Application Layer
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/09/07/terminology---space-based-architecture.html">
+          Terminology
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2011/07/29/terminology---basic-components.html">
+              Terminology - Basic Components
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/02/25/terminology---data-grid-topologies.html">
+              Terminology - Data Grid Topologies
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/09/07/terminology---runtime-components.html">
+              Terminology - Runtime Components
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/09/07/terminology---space-based-architecture.html">
+              Terminology - Space-Based Architecture
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/xap96/2008/09/16/programmer's-guide.html" title="Programmer's Guide">
+      Programmer's Guide
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2013/02/28/getting-started.html">
+          Getting Started
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/02/25/setting-up-your-ide-to-work-with-xap.html">
+              Setting Up your IDE to work with XAP
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/01/04/running-and-debugging-within-your-ide.html">
+              Running and Debugging Within Your IDE
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/02/the-runtime-environment.html">
+              The Runtime Environment
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/06/05/the-grid-service-agent.html">
+                  The Grid Service Agent
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/03/18/the-grid-service-container.html">
+                  The Grid Service Container
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/09/07/the-grid-service-manager.html">
+                  The Grid Service Manager
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/09/07/the-lookup-service.html">
+                  The Lookup Service
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/02/14/packaging-and-deployment.html">
+              Packaging and Deployment
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/03/11/the-processing-unit-structure-and-configuration.html">
+                  The Processing Unit Structure and Configuration
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/09/04/configuring-processing-unit-elements.html">
+                      Configuring Processing Unit Elements
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/27/configuring-the-processing-unit-sla.html">
+                      Configuring the Processing Unit SLA
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/05/03/custom-processing-unit-details-and-monitors.html">
+                      Custom Processing Unit Details and Monitors
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/12/28/deployment-properties.html">
+                      Deployment Properties
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/09/07/deploying-and-running-the-processing-unit.html">
+                  Deploying and Running the Processing Unit
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/02/21/deploying-onto-the-service-grid.html">
+                      Deploying onto the Service Grid
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/09/11/running-in-standalone-mode.html">
+                      Running in Standalone Mode
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/elastic-processing-unit.html">
+                      Elastic Processing Unit
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/09/07/elastic-processing-unit---take-2.html">
+                          Elastic Processing Unit - take 2
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/31/elastic-space-processing-unit.html">
+                              Elastic Space Processing Unit
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/31/elastic-statelful-processing-unit.html">
+                              Elastic Statelful Processing Unit
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/31/elastic-stateless-processing-unit.html">
+                              Elastic Stateless Processing Unit
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/08/28/deploying-your-application-on-a-cloud.html">
+                  Deploying your Application on a Cloud
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/12/17/obtaining-cluster-information.html">
+                  Obtaining Cluster Information
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/10/15/main-modules.html">
+          Main Modules
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/05/25/the-in-memory-data-grid.html">
+              The In-Memory Data Grid
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/12/24/space-topologies.html">
+                  Space Topologies
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/29/multi-site-replication-over-the-wan.html">
+                      Multi-Site Replication over the WAN
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/06/03/communication-filter-over-the-wan-%28ssl,zip%29.html">
+                          Communication Filter Over the Wan (SSL,ZIP)
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/01/31/replication-gateway-components.html">
+                          Replication Gateway Components
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/13/configuring-space-gateway-targets.html">
+                          Configuring Space Gateway Targets
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/13/replication-gateway-bootstrapping-process.html">
+                          Replication Gateway Bootstrapping Process
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/06/11/multi-site-conflict-resolution-9.0.1.html">
+                          Multi-Site Conflict Resolution
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/06/11/multi-site-conflict-resolution-9.0.1.html">
+                              Multi-Site Conflict Resolution 9.0.1
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/08/01/changing-multi-site-deployment-during-runtime.html">
+                          Changing Multi-Site Deployment during Runtime
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/10/04/replication-gateway-filtering.html">
+                          Replication Gateway Filtering
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/10/02/intercepting-replication-events-at-the-gateway.html">
+                          Intercepting Replication Events at the Gateway
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/08/20/multi-site-replication-limitations.html">
+                          Multi-Site Replication Limitations
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/08/05/multi-site-replication-over-the-wan---faq.html">
+                          Multi-Site Replication over the WAN - FAQ
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/01/25/multi-space-replication-over-the-lan-or-vpn.html">
+                      Multi-Space Replication over the LAN or VPN
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/09/24/replication-gateway-lan-bootstrapping-process.html">
+                          Replication Gateway LAN Bootstrapping Process
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/03/30/deploying-and-interacting-with-the-space.html">
+                  Deploying and Interacting with the Space
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/19/the-space-component.html">
+                      The Space Component
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/03/06/space-filters.html">
+                          Space Filters
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/08/09/cluster-replication-filters.html">
+                          Cluster Replication Filters
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/12/29/space-mode-context-loader.html">
+                          Space Mode Context Loader
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/05/20/space-url.html">
+                          Space URL
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/11/14/client-side-caching-over-the-wan.html">
+                      Client Side Caching
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/11/local-view-and-local-cache.html">
+                          Local Cache
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/04/03/local-view.html">
+                          Local View
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/14/client-side-caching-over-the-wan.html">
+                          Client-Side Caching over the WAN
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/14/monitoring-the-client-side-cache.html">
+                          Monitoring the Client-Side Cache
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2009/06/28/programmatic-api-%28configurers%29.html">
+                      Programmatic API (Configurers)
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/02/19/memory-management-facilities.html">
+                      Memory Management Facilities
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/19/all-in-cache-cache-policy.html">
+                          ALL IN CACHE-Cache Policy
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/16/custom-eviction-policy.html">
+                          Custom Eviction Policy
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/19/lru-cache-policy.html">
+                          LRU-Cache Policy
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/28/asynchronous-persistency-with-the-mirror.html">
+                      Persistency
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/28/asynchronous-persistency-with-the-mirror.html">
+                          Asynchronous Persistency with the Mirror
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2013/02/14/async-persistency---mirror---advanced.html">
+                              Async Persistency - Mirror - Advanced
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/28/direct-persistency.html">
+                          Direct Persistency
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/11/space-persistency-advanced-topics.html">
+                          Persistency Advanced Topics
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/11/transient-entries.html">
+                              Transient Entries
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/25/space-persistency-initial-load.html">
+                          Space Persistency
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/28/cassandra-space-persistency.html">
+                              Cassandra Space Persistency
+                            </a>
+                            <ul>
+                              <li class='closed'>
+                                <a href="/xap96/2012/12/28/cassandra-space-data-source.html">
+                                  Cassandra Space Data Source
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2012/12/28/cassandra-space-synchronization-endpoint.html">
+                                  Cassandra Space Synchronization Endpoint
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2012/12/11/hector-cassandra-client.html">
+                                  Hector Cassandra Client
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/03/3/hibernate-space-persistency.html">
+                              Hibernate Space Persistency
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/07/28/migrating-from-external-data-source-api.html">
+                              Migrating From External Data Source API
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/02/24/space-data-source-api.html">
+                              Space Data Source API
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/11/space-persistency-advanced-topics.html">
+                              Space Persistency Advanced Topics
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/25/space-persistency-initial-load.html">
+                              Space Persistency Initial Load
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/02/25/space-synchronization-endpoint-api.html">
+                              Space Synchronization Endpoint API
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/modeling-and-accessing-your-data.html">
+                  Modeling and Accessing Your Data
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/08/20/clustered-vs-non-clustered-proxies.html">
+                      Clustered vs Non-Clustered Proxies
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/24/modeling-your-data.html">
+                      Modeling your data
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/12/pojo-support.html">
+                      POJO Support
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/06/02/pojo-metadata.html">
+                          POJO Metadata
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/06/parent-child-relationship.html">
+                          Parent Child Relationship
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/15/dynamic-properties.html">
+                          Dynamic Properties
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/03/15/storage-types---controlling-serialization.html">
+                          Storage Types - Controlling Serialization
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/document-api.html">
+                      Document API
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/05/25/extending-space-documents.html">
+                          Extending Space Documents
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/07/document-pojo-interoperability.html">
+                          Document-POJO Interoperability
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/06/14/caching-scenarios.html">
+                  Caching Scenarios
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/04/15/gigaspaces-for-hibernate-orm-users.html">
+                      GigaSpaces for Hibernate ORM Users
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/12/11/space-persistency-advanced-topics.html">
+                  Advanced Topics
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/08/communication-protocol.html">
+                      Communication Protocol
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/15/controlling-serialization-%28deprecated%29.html">
+                      Controlling Serialization (Deprecated)
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/29/externalizable-support-%28deprecated%29.html">
+                      Externalizable Support (Deprecated)
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/handling-large-objects.html">
+                      Handling Large Objects
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/27/the-space-api.html">
+              The Space API
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/03/30/the-gigaspace-interface.html">
+                  The GigaSpace Interface
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/26/change-api-advanced.html">
+                      Change API
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/03/26/change-api-advanced.html">
+                          Change API Advanced
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/24/counters.html">
+                      Counters
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/02/07/the-gigaspacecontext-annotation.html">
+                      The GigaSpaceContext Annotation
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/07/21/querying-the-space.html">
+                  Querying The Space
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/id-queries.html">
+                      Id Queries
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/20/template-matching.html">
+                      Template Matching
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/sqlquery.html">
+                      SQLQuery
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/query-nested-properties.html">
+                      Query Nested Properties
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/query-user-defined-classes.html">
+                      Query User Defined Classes
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/indexing.html">
+                      Indexing
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/paging-support-with-space-iterator.html">
+                      Paging Support with Space Iterator
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/06/23/getting-partial-results-using-projection-api.html">
+                      Getting Partial Results Using Projection API
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/06/23/space-object-id-operations.html">
+                  Space Object ID Operations
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/routing-in-partitioned-spaces.html">
+                  Routing In Partitioned Spaces
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/02/27/leases---automatic-expiration.html">
+                  Leases - Automatic Expiration
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/02/13/fifo-support.html">
+                  FIFO Support
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/01/23/fifo-grouping.html">
+                      FIFO Grouping
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/17/transaction-management.html">
+                  Transaction Management
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/space-locking-and-blocking.html">
+                      Space Locking and Blocking
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/06/21/gigaspaces-read-modifiers.html">
+                          GigaSpaces Read Modifiers
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/15/optimistic-locking.html">
+                          Optimistic Locking
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/21/pessimistic-locking.html">
+                          Pessimistic Locking
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/27/other-data-access-apis.html">
+              Other Data Access APIs
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/06/03/jdbc-driver.html">
+                  JDBC Driver
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/15/jpa-api.html">
+                  JPA API
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/06/23/jpa-entity-id.html">
+                      JPA Entity Id
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/02/03/jpa-relationships.html">
+                      JPA Relationships
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/03/gigaspaces-jpa-limitations.html">
+                      GigaSpaces JPA Limitations
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/03/09/map-api.html">
+                  Map API
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/15/memcached-api.html">
+                  Memcached API
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/28/services-on-top-of-the-data-grid.html">
+              Services on Top of the Data Grid
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/06/02/reloading-business-logic.html">
+                  Reloading Business Logic
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/01/task-execution-over-the-space.html">
+              Task Execution over the Space
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/aggregators.html">
+                  Aggregators
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2009/08/31/dynamic-language-tasks.html">
+                  Dynamic Language Tasks
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/05/24/space-based-remoting.html">
+              Space Based Remoting
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/executor-based-remoting.html">
+                  Executor Based Remoting
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/event-driven-remoting.html">
+                  Event Driven Remoting
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/28/event-processing.html">
+              Event Processing
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/03/04/archive-container.html">
+                  Archive Container
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/13/cassandra-archive-operation-handler.html">
+                      Cassandra Archive Operation Handler
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/24/notify-container.html">
+                  Notify Container
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/04/24/session-based-messaging-api.html">
+                      Session Based Messaging API
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/16/durable-notifications.html">
+                          Durable Notifications
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/09/slow-consumer.html">
+                          Slow Consumer
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/12/polling-container.html">
+                  Polling Container
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/06/18/data-event-listener.html">
+                  Data Event Listener
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/07/11/event-exception-handler.html">
+                  Event Exception Handler
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/04/messaging-support.html">
+              Messaging Support
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/03/27/jms-api-support.html">
+                  JMS API Support
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/12/jms---basics.html">
+                      JMS - Basics
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2010/05/06/jms-api-basic-usage.html">
+                          JMS API Basic Usage
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/04/07/jms-messages-in-gigaspaces.html">
+                          JMS Messages in GigaSpaces
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/12/02/jms-space-interoperability.html">
+                          JMS-Space Interoperability
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/09/12/jms-administration-api.html">
+                          JMS Administration API
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2008/05/22/working-with-gigaspaces-jndi.html">
+                              Working with GigaSpaces JNDI
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2008/10/28/working-with-gsjmsadmin.html">
+                              Working with GSJMSAdmin
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/05/02/using-jms-with-openspaces-example.html">
+                          Using JMS with OpenSpaces Example
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/12/jms---advanced.html">
+                      JMS - Advanced
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/14/jms-failover.html">
+                          JMS Failover
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/22/jms-transactions-in-gigaspaces.html">
+                          JMS Transactions in GigaSpaces
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/22/jms-user-security.html">
+                          JMS User Security
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/14/browsing-jms-queues.html">
+                          Browsing JMS Queues
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/14/jms-known-issues-and-considerations.html">
+                          JMS Known Issues and Considerations
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/25/using-gigaspaces-jms-without-changing-the-classpath.html">
+                          Using GigaSpaces JMS Without Changing the Classpath
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/02/web-application-support.html">
+              Web Application Support
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/05/26/global-http-session-sharing.html">
+                  Global HTTP Session Sharing
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/08/01/web-processing-unit-container.html">
+                  Web Processing Unit Container
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/17/web-jetty-processing-unit-container.html">
+                      Web Jetty Processing Unit Container
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/05/26/http-session-management.html">
+                          HTTP Session Management
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/3/apache-load-balancer-agent.html">
+                      Apache Load Balancer Agent
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/10/15/admin-modules.html">
+          Admin Modules
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/administration-and-monitoring-api-security.html">
+              Administration and Monitoring API
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/08/06/dump.html">
+                  Dump
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/12/25/logging-api.html">
+                  Logging API
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/17/administrative-alerts.html">
+                  Administrative Alerts
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/05/14/custom-triggering-of-an-alert.html">
+                      Custom Triggering of an Alert
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/19/snmp-connectivity-via-alert-logging-gateway.html">
+                      SNMP Connectivity via Alert Logging Gateway
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/integrations.html">
+          Integrations
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/07/04/maven-plugin.html">
+              Maven Plugin
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2008/10/27/maven-plugin---advanced.html">
+                  Maven Plugin - Advanced
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/08/30/mule-esb.html">
+              Mule ESB
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/09/04/mule-event-container-transport.html">
+                  Mule Event Container Transport
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/08/30/mule-processing-unit.html">
+                  Mule Processing Unit
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/30/mule-queue-provider.html">
+                  Mule Queue Provider
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/31/mule-seda-model.html">
+                  Mule SEDA Model
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/evaluating-performance-and-scalability.html">
+              Scala
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/constructor-based-properties.html">
+                  Constructor Based Properties
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/enhanced-xap-scala-repl.html">
+                  Enhanced XAP Scala REPL
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/scala-predicate-based-queries.html">
+                  Scala Predicate Based Queries
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/scala-scripting-executor.html">
+                  Scala Scripting Executor
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/07/20/scala-task-execution.html">
+                  Scala Task Execution
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/11/07/document-pojo-interoperability.html">
+          Interoperability
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2011/12/26/platform-interoperability-in-gigaspaces.html">
+              Platform Interoperability in GigaSpaces
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/03/05/rest-api.html">
+              REST API
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/07/18/xap-cpp.html">
+              XAP CPP
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/04/03/installing-cpp-api-package.html">
+                  Installing CPP API Package
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/04/12/cpp-api-hello-world-example.html">
+                  CPP API Hello World Example
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/04/29/cpp-api-basics.html">
+                  CPP API Basics
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/01/cpp-type-converter.html">
+                      CPP Type Converter
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/02/gigaspaces-cpp-api.html">
+                      GigaSpaces CPP API
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2010/04/29/cpp-api-configuration-file.html">
+                      CPP API Configuration File
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/18/cpp-api-code-generator.html">
+                      CPP API Code Generator
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/18/cpp-api-mapping-file.html">
+                          CPP API Mapping File
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/18/gsxml2cpp-utility.html">
+                          gsxml2cpp Utility
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/06/29/cpp-api-examples.html">
+                      CPP API Examples
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/22/cpp-api-usage-example.html">
+                          CPP API Usage Example
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/04/30/gigaspaces-cpp-processing-unit-example.html">
+                          GigaSpaces CPP Processing Unit Example
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/01/writing-existing-cpp-class-to-space.html">
+                          Writing Existing CPP Class to Space
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/04/29/cpp-api---advanced.html">
+                  CPP API - Advanced
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2010/04/30/gigaspaces-cpp-processing-unit-example.html">
+                      CPP Processing Unit
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/19/gigaspaces-cpp-api---overview.html">
+                      GigaSpaces CPP API - Overview
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2010/09/20/cloud-and-virtualization.html">
+          Cloud and Virtualization
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2010/09/20/xap-esm-on-cisco-ucs.html">
+              XAP ESM on Cisco UCS
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/09/20/xap-esm-on-rackspace.html">
+              XAP ESM on Rackspace
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/07/08/xap-on-rackspace.html">
+              XAP on Rackspace
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/06/21/xap-on-gogrid.html">
+              XAP on GoGrid
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/01/17/xap-on-vmware.html">
+              XAP on VMWare
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/10/12/appendix.html">
+          Appendix
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/09/04/xap-overview.html">
+              XAP Overview
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/04/09/openspaces-faq.html">
+              OpenSpaces FAQ
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2007/12/02/xap-community-faq.html">
+              XAP-Community FAQ
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/03/3/about-jini.html">
+              About Jini
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/xap96/2008/09/07/administrator's-guide.html" title="Administrator's Guide">
+      Administrator's Guide
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/installation.html">
+          Installation
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/installation-prerequisites.html">
+              Installation Prerequisites
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/04/05/installing-gigaspaces.html">
+                  Installing GigaSpaces
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/05/31/license-key.html">
+                  License Key
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/07/11/supported-platforms.html">
+                  Supported Platforms
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/system-environment-and-environment-variables.html">
+              System Environment and Environment Variables
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/07/24/common-environment-variables.html">
+                  Common Environment Variables
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/06/04/setting-classpath.html">
+                  Setting Classpath
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/12/22/setting-jvm-location.html">
+                  Setting JVM Location
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/configuring-the-system.html">
+          Configuring the System
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/07/17/system-properties-list.html">
+              System Properties List
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/12/22/failover-detection-and-tuning.html">
+              Failover Detection and Tuning
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/12/16/split-brain-and-island-scenarios.html">
+                  Split Brain and Island Scenarios
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/12/16/split-brain-and-active-election---general-definition.html">
+                      Split-Brain and Active Election - General Definition
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/06/16/web-management-console.html">
+          Web Management Console
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/04/08/starting-the-management-console.html">
+              Starting the Management Console
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/dashboard-view.html">
+              Dashboard View
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/application-view.html">
+              Application View
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/hosts-view.html">
+              Hosts View
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/data-grid-view.html">
+              Data Grid View
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2009/09/17/security-administration.html">
+          Security
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/security-basics.html">
+              Security Basics
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/security-concepts.html">
+                  Security Concepts
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/27/security-authorities.html">
+                  Security Authorities
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/05/5/security-configurations.html">
+                  Security Configurations
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/07/26/programmatically-managing-the-security-directory.html">
+                  Programmatically Managing the Security Directory
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/02/default-file-based-security-implementation.html">
+              Default File-Based Security Implementation
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/securing-xap-components.html">
+              Securing XAP Components
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/08/28/securing-your-data.html">
+                  Securing your Data
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/05/21/securing-the-grid-services.html">
+                  Securing the Grid Services
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/08/26/securing-the-transport-layer-%28using-ssl%29.html">
+                  Securing the Transport Layer (using SSL)
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/security-administration.html">
+              Security Administration
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/04/02/gigaspaces-management-center-%28ui%29-security.html">
+                  GigaSpaces Management Center (UI) Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/05/03/command-line-interface-%28cli%29-security.html">
+                  Command Line Interface (CLI) Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2009/09/17/administration-and-monitoring-api-security.html">
+                  Administration and Monitoring API Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/auditing.html">
+                  Auditing
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2009/09/21/java-security-policy-file.html">
+                  Java Security Policy File
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/04/02/securing-the-helloworld-example.html">
+              Securing the HelloWorld example
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/02/custom-security.html">
+              Custom Security
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/23/custom-authentication.html">
+                  Custom Authentication
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/custom-user-role-management.html">
+                  Custom User-Role Management
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/07/08/spring-security-bridge.html">
+              Spring Security Bridge
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2010/07/11/introducing-spring-security.html">
+                  Introducing Spring Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/04/09/gigaspaces-spring-based-security-bridge.html">
+                  GigaSpaces Spring-based Security bridge
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/24/authenticating-against-a-database.html">
+                  Authenticating against a database
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/24/authenticating-against-an-ldap-repository.html">
+                  Authenticating against an LDAP repository
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/09/30/gigaspaces-logging.html">
+          GigaSpaces Logging
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2009/07/16/formatting-log-messages.html">
+              Formatting Log Messages
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/08/24/managing-log-files.html">
+              Managing Log Files
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2009/07/16/backing-up-files-with-a-custom-policy.html">
+                  Backing-up Files With a Custom Policy
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/11/networking-how-tos.html">
+          Networking How Tos
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/how-to-configure-unicast-discovery.html">
+              How to Configure Unicast Discovery
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/03/3/how-to-configure-multicast.html">
+              How to Configure Multicast
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2008/09/08/how-to-determine-whether-multicast-is-available.html">
+                  How to Determine Whether Multicast is Available
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/08/25/how-to-set-gigaspaces-over-nat.html">
+              How to Set GigaSpaces Over NAT
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/lookup-service-configuration.html">
+              Lookup Service Configuration
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/04/02/how-to-configure-an-environment-with-multiple-network-cards-%28multi-nic%29.html">
+              How to Configure an Environment With Multiple Network-Cards (Multi-NIC)
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2010/04/25/advanced-multi-nic-configuration.html">
+                  Advanced Multi-NIC Configuration
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/how-to-set-gigaspaces-over-a-firewall.html">
+              How to Set GigaSpaces Over a Firewall
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/how-to-control-the-used-ports.html">
+              How to Control the Used Ports
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/managing-and-monitoring-a-running-system.html">
+          Managing and Monitoring a Running System
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2011/01/02/commands-and-scripts.html">
+              Commands and Scripts
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/01/02/commands-and-scripts.html">
+                  Scripts
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/gsinstance---gigaspaces-cli.html">
+                      gsInstance - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/platforminfo---gigaspaces-cli.html">
+                      PlatformInfo - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/startjinilus---gigaspaces-cli.html">
+                      startJiniLUS - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/startjinitx_mahalo---gigaspaces-cli.html">
+                      startJiniTX_Mahalo - GigaSpaces CLI
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/02/commands-and-scripts.html">
+                  Commands
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/cd---gigaspaces-cli.html">
+                      cd - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/06/6/undeploy-application---gigaspaces-cli.html">
+                      deploy-application - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/07/02/deploy---gigaspaces-cli.html">
+                      deploy - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/10/15/deploy-memcached---gigaspaces-cli.html">
+                      deploy-memcached - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/21/deploy-space-gigaspaces-cli.html">
+                      deploy-space GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/05/14/gs.bat---other-cli-commands.html">
+                      gs.bat - Other CLI Commands
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/gsa---gigaspaces-cli.html">
+                      gsa - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/help---gigaspaces-cli.html">
+                      help - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/12/jconsole---gigaspaces-cli.html">
+                      jconsole - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/27/list---gigaspaces-cli.html">
+                      list - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/login---gigaspaces-cli.html">
+                      login - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/ls---gigaspaces-cli.html">
+                      ls - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/pwd---gigaspaces-cli.html">
+                      pwd - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/quit---gigaspaces-cli.html">
+                      quit - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/set---gigaspaces-cli.html">
+                      set - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/17/space---gigaspaces-cli.html">
+                      space - GigaSpaces CLI
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/17/space-clean---gigaspaces-cli.html">
+                          space clean - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/17/space-clear---gigaspaces-cli.html">
+                          space clear - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/27/space-cluster-members---gigaspaces-cli.html">
+                          space cluster-members - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-config---gigaspaces-cli.html">
+                          space config - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-connections---gigaspaces-cli.html">
+                          space connections - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/22/space-copy---gigaspaces-cli.html">
+                          space copy - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-list---gigaspaces-cli.html">
+                          space list - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-ping---gigaspaces-cli.html">
+                          space ping - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-sql---gigaspaces-cli.html">
+                          space sql - GigaSpaces CLI
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/stats---gigaspaces-cli.html">
+                      stats - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/task---gigaspaces-cli.html">
+                      task - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/06/6/undeploy-application---gigaspaces-cli.html">
+                      undeploy-application - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/02/20/undeploy---gigaspaces-cli.html">
+                      undeploy - GigaSpaces CLI
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/05/03/graphical-user-interface.html">
+              Graphical User Interface
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/04/12/gigaspaces-management-center.html">
+                  GigaSpaces Management Center
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2008/11/10/using-space-browser-tab---gigaspaces-management-center.html">
+                      Using Space Browser Tab - GigaSpaces Management Center
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/27/gigaspaces-browser-tree-panel-and-configuration-panel.html">
+                          GigaSpaces Browser Tree Panel and Configuration Panel
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/connections-view---gigaspaces-browser.html">
+                              Connections View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/10/16/data-types-view---gigaspaces-browser.html">
+                              Data Types View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/object-inspector.html">
+                              Object Inspector
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/query-view---gigaspaces-browser.html">
+                              Query View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2010/04/12/statistics-view---gigaspaces-browser.html">
+                              Statistics View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/transactions-view---gigaspaces-browser.html">
+                              Transactions View - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/10/gigaspaces-browser-menus-and-buttons.html">
+                          GigaSpaces Browser Menus and Buttons
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/12/managing-space-containers---gigaspaces-browser.html">
+                          Managing Space Containers - GigaSpaces Browser
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-configuration-directory-services-tab---gigaspaces-browser.html">
+                              Space Container Configuration Directory Services Tab - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-configuration-general-tab---gigaspaces-browser.html">
+                              Space Container Configuration General Tab - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-configuration-jms-tab---gigaspaces-browser.html">
+                              Space Container Configuration JMS Tab - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-maintenance---gigaspaces-browser.html">
+                              Space Container Maintenance - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/12/pending-notify-templates-information.html">
+                          Pending Notify Templates Information
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/04/working-with-clusters---gigaspaces-browser.html">
+                          Working with Clusters - GigaSpaces Browser
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/customizing-cluster-view---gigaspaces-browser.html">
+                              Cluster View - GigaSpaces Browser
+                            </a>
+                            <ul>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/customizing-cluster-view---gigaspaces-browser.html">
+                                  Customizing Cluster View - GigaSpaces Browser
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/viewing-cluster-policy-settings-for-space---gigaspaces-browser.html">
+                                  Viewing Cluster Policy Settings for Space - GigaSpaces Browser
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/viewing-space-interrelations-in-cluster---gigaspaces-browser.html">
+                                  Viewing Space Interrelations in Cluster - GigaSpaces Browser
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/visualizing-cluster-groups-and-members---gigaspaces-browser.html">
+                                  Visualizing Cluster Groups and Members - GigaSpaces Browser
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/17/creating-custom-cluster---gigaspaces-browser.html">
+                              Creating Custom Cluster - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/failover-group---gigaspaces-browser.html">
+                              Failover Group - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/load-balancing-group---gigaspaces-browser.html">
+                              Load-Balancing Group - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/replication-group---gigaspaces-browser.html">
+                              Replication Group - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/04/working-with-spaces---gigaspaces-browser.html">
+                          Working with Spaces - GigaSpaces Browser
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-jms---gigaspaces-browser.html">
+                              Space JMS - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-maintenance---gigaspaces-browser.html">
+                              Space Maintenance - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-memory-management---gigaspaces-browser.html">
+                              Space Memory Management - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-serialization-and-engine-thread-pool---gigaspaces-browser.html">
+                              Space Serialization and Engine Thread Pool - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-timeout,-filters-and-lease-manager---gigaspaces-browser.html">
+                              Space Timeout, Filters and Lease Manager - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/12/09/running-gigaspaces-as-a-windows-service.html">
+              Running GigaSpaces as a Windows Service
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/04/27/space-jmx-management.html">
+              Space JMX Management
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/07/21/monitoring-network-activity.html">
+              Monitoring Network Activity
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/03/04/suggested-monitoring-tools.html">
+              Suggested Monitoring Tools
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/advanced-tasks.html">
+          Advanced Tasks
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/11/05/data-grid-clustering.html">
+              Data-Grid Clustering
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/05/consistency-level.html">
+                  Consistency Level
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/06/13/data-partitioning.html">
+                  Data-Partitioning
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/12/22/failover-detection-and-tuning.html">
+                  Failover
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/01/31/replication-gateway-components.html">
+                  Replication
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/01/replication-topologies.html">
+                      Replication Topologies
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/14/synchronous-replication.html">
+                      Synchronous Replication
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/13/asynchronous-replication.html">
+                      Asynchronous Replication
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/10/04/space-instance-recovery.html">
+                      Space Instance Recovery
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/replication-operations.html">
+                      Replication Operations
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/19/controlling-the-replication-redo-log.html">
+                      Controlling the Replication Redo Log
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/10/14/replication-parameters.html">
+                      Replication Parameters
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/01/split-brain-and-primary-resolution.html">
+                  Split Brain and Primary Resolution
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/performance-tuning-and-considerations.html">
+              Performance Tuning and Considerations
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/04/27/tuning-infrastructure.html">
+                  Tuning Infrastructure
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2008/09/10/tuning-gigaspaces-performance---advanced.html">
+                  Tuning GigaSpaces Performance
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/26/tuning-gigaspaces-performance---basics.html">
+                      Tuning GigaSpaces Performance - Basics
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/10/tuning-gigaspaces-performance---advanced.html">
+                      Tuning GigaSpaces Performance - Advanced
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/27/large-scale-deployment.html">
+                          Large Scale Deployment
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/07/08/proxy-connectivity-(old).html">
+                          Proxy Connectivity
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/07/08/proxy-connectivity-%28old%29.html">
+                              Proxy Connectivity (Old)
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/12/02/tuning-java-virtual-machines.html">
+                  Tuning Java Virtual Machines
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/01/08/moving-into-production-checklist.html">
+                  Moving into Production Checklist
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/08/07/tuning-threads-usage.html">
+                  Tuning Threads Usage
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/12/25/troubleshooting-tools.html">
+              Troubleshooting
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2010/12/20/troubleshooting-common-user-issues.html">
+                  Troubleshooting Common User Issues
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2008/09/03/troubleshooting-for-administrators.html">
+                  Troubleshooting for Administrators
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/06/19/testing-system-environment.html">
+                      Testing System Environment
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2008/06/11/locating-clustered-space-instances.html">
+                          Locating Clustered Space Instances
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/12/25/viewing-clustered-space-status.html">
+                          Viewing Clustered Space Status
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/07/11/failure-detection.html">
+                      Failure Detection
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2010/12/25/troubleshooting-tools.html">
+                      Troubleshooting Tools
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/04/24/migration-upgrade-interoperability-and-compatibility.html">
+              Migration Upgrade Interoperability and Compatibility
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/07/11/backward-compatibility.html">
+                  Backward Compatibility
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/evaluating-performance-and-scalability.html">
+              Evaluating Performance and Scalability
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/benchmarking.html">
+                  Benchmarking
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/27/benchmark-utility---gigaspaces-cli.html">
+                      Benchmark Utility - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/27/benchmark-view---gigaspaces-browser.html">
+                      Benchmark View - GigaSpaces Browser
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/01/c++-benchmark-framework.html">
+                      C++ Benchmark Framework
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+        </div>
+        <div class='col-md-8'>
+          <div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title"><strong>Summary: </strong><p>The new Notify Session API provides a unified and consistent mechanism for event registration.</p>
+</h3></div><div class="panel-body"><ul class="nav nav-pills" id="summarypanel"></ul></div></div>
+
+<h1 id="overview">Overview</h1>
+
+<p>In some cases, SBA applications require the ability to call the user&#8217;s business logic once a relevant event occurs in the space. This can be a trader desk application that is notified when a quote stock object modifies its data, or when a matching engine removes/updates a matched order. The space supports a message delivery mechanism that allows clients to register for matching events inside the space - aka Continuous query. Once a matching event occurs in the space, the space triggers an event and notifies the client by calling the client business logic.</p>
+
+<p>The Event Session API is the low level API for notifications. It is preferable to use the high level <a href="/xap96/2013/04/24/notify-container.html">Notify Container</a> with simple continuous query scenarios. You can use the <a href="/xap96/2013/04/24/notify-container.html">Notify Container</a> programmatically using its <code>SimpleNotifyContainerConfigurer</code>.</p>
+
+<p><strong>Basic Flow</strong>:</p>
+
+<ul>
+  <li>The JavaSpaces API includes the standard notify method, that allows an application to receive notifications once a new Entry has been written into the space. To receive notifications, the client application needs to register for notification delivery.</li>
+  <li>The most important part of the notify registration is preparing the right template - all Entries that match the template (conducted by the appropriate operation), trigger an event back to the registered client application.</li>
+  <li>When a new Entry that matches the template arrives at the space, the notify method of the <code>RemoteEventListener</code> in the registration is invoked, supplying the client with a <code>RemoteEvent</code> object.</li>
+</ul>
+
+<p><strong>When using the Session Event API, you should implement 3 basic routines</strong>:</p>
+
+<ol>
+  <li>Register for notifications.</li>
+  <li>Filter the events before sent to the client (optional).</li>
+  <li>Receive the event.</li>
+</ol>
+
+<div class="indent0">
+<p><img src="/attachment_files/SessionBasedMessagingAPI1.jpg" alt="SessionBasedMessagingAPI1.jpg" /></p>
+</div>
+
+<p>The session-based messaging API is designed with the following objectives:</p>
+
+<ul>
+  <li><strong>Simple and unified interfaces</strong> </li>
+  <li><strong>Single entry point</strong> - users access all the event-related services from a single entry point.</li>
+  <li><strong>Extensibility</strong> - allows simple extensions for other types of event services, as well as other configuration parameters.</li>
+  <li><strong>Backwards compatibility</strong> - coexists with the existing API in a way that allows a deprecation period without duplicating the code.</li>
+  <li>Support for Spring bean creation/configuration.</li>
+  <li>Batch notification support.</li>
+</ul>
+
+<p>Some advanced options supported with the Session messaging API:</p>
+
+<ul>
+  <li>No client codebase needs to be set.</li>
+  <li>Support registering large amount of listeners using the same session reducing resource consumption.</li>
+  <li>Provides the ability to get the Entry that triggered the event in the space.</li>
+  <li>Allows registration for specific notification events, for example, write, update, take, and lease expiration events.</li>
+  <li>Option delivering events in FIFO order (default is non-FIFO).</li>
+  <li>Supports TCP transmission protocols.</li>
+  <li>Supports server-side notification filtering capabilities.</li>
+</ul>
+
+<p>The session API provides a convenient and efficient mechanism for sending messaging to multiple recipients through the space. Every recipient can register for notifications by creating a <code>DataEventSession</code> object.</p>
+
+<div class="alert alert-success"><i class="icon-ok pull-left"></i>
+<p>When using EventSession in several threads, each thread should create and use its own EventSession .</p>
+</div>
+
+<p>The sender of the message can write an Entry with a limited lease time to the space. The recipients receive the Entry through the remote event. New recipients have the opportunity to get old messages from the space through read. The messages are cleaned automatically by the expiration mechanism.</p>
+
+<h1 id="supported-topologies">Supported Topologies</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td>{toc-zone:minLevel=2</td>
+      <td>maxLevel=2</td>
+      <td>type=flat</td>
+      <td>separator=pipe</td>
+      <td>location=top}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Event registration is available with all supported space topologies. Each topology allows the client to receive the event. Still, there are behaviors you should be aware of when deploying the application.</p>
+
+<h2 id="single-remote-space">Single Remote Space</h2>
+
+<p>When registering for notifications with a remote space, the space performs a remote call when delivering the event to the client application.</p>
+
+<h2 id="embedded-space">Embedded Space</h2>
+
+<p>When the client registers for notifications running in the same JVM as the space, no remote calls are involved. This allows fast notification delivery without serialization of the object that started the event.</p>
+
+<h2 id="replicated-space">Replicated Space</h2>
+
+<p>When deploying a replicated space, you might want to replicate notify registration from the source space (primary) to the replica (backup space), allowing the replica space to continue and send notifications in case the source space failed.</p>
+
+<p>Receiving events occurs as a result of data replication, and not directly from a client-space operation. This is popular in WAN-based applications, where a remote client running in the remote site wants to be notified when an operation occurs in the source space, without getting the actual notification from the remote source space, but from a replica space that is located at its local site.</p>
+
+<h2 id="partitioned-space">Partitioned Space</h2>
+
+<p>The most common requirement when deploying partitioned spaces is to register the notification to all partitions, and receive the notifications from all partitions when a matching event is identified. This is the default behavior of the partitioned space.</p>
+
+<h2 id="local-cache">Local Cache</h2>
+
+<p>When registering for notifications using a proxy running in the <a href="local cache">local cache</a>, notifications are delivered from the master space. Any matching event in the master space is delivered to the registered client. Events in the local cache are not delivered to the registered client, unless you specifically register for events by getting the local cache proxy.</p>
+
+<h2 id="local-view">Local View</h2>
+
+<p>When registering for notifications using a proxy running in the <a href="local view">local view</a>, notifications are delivered from the local view. These do not involve remote calls and are based on activities performed in the local view. The events do not affect the remote master space or other clients accessing the master space. The events delivered from the local view are relatively fast, and do not involve serialization. Since notifications received from the local view are based on the local view query filter, the registered client might not receive events that other clients, registered for notifications using the master space, receive.</p>
+
+<div class="alert alert-success"><i class="icon-ok pull-left"></i>
+<p>Starting with XAP 8.0.6 Local view using the replication mechanism to update the local view</p>
+</div>
+
+<p>{toc-zone}</p>
+
+<h1 id="register-for-notifications">Register for Notifications</h1>
+
+<div class="tabsection"><ul class="nav nav-tabs"></ul><div class="tab-content">
+
+<div class="tab-pane" id="eventsessionfactory" title="EventSessionFactory">
+The `EventSessionFactory` creates `DataEventSession` objects. The `EventSessionFactory` is associated with a space, and is required in order to create a factory. Once a factory has been created, it can be used to create sessions. Every session is configured according to an `EventSessionConfig` object and is bounded to a transaction.
+
+The `EventSessionFactory` includes the following methods:
+
+
+<div class="highlight"><pre><code class="java"><span class="n">EventSessionFactory</span> <span class="nf">getFactory</span><span class="o">(</span><span class="n">IJSpace</span><span class="o">)</span>
+<span class="n">DataEventSession</span> <span class="nf">newDataSession</span><span class="o">(</span><span class="n">IJSpace</span><span class="o">,</span> <span class="n">Transaction</span><span class="o">,</span> <span class="n">String</span><span class="o">)</span>
+<span class="n">DataEventSession</span> <span class="nf">newDataEventSession</span><span class="o">(</span><span class="n">EventSessionConfig</span><span class="o">,</span> <span class="n">Transaction</span><span class="o">)</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="tab-pane" id="simple_template_registration" title="Simple Template Registration">
+Here is an example for getting an `EventSessionFactory`, generating a `DataEventSession`, and registering for notifications using simple template and cancelling the registeration:
+
+
+<div class="highlight"><pre><code class="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataSessionEventExample</span> <span class="kd">implements</span> <span class="n">RemoteEventListener</span>
+<span class="o">{</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">simpleTemplate</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span>
+<span class="o">{</span>
+<span class="n">EventSessionFactory</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">EventSessionFactory</span><span class="o">.</span><span class="na">getFactory</span><span class="o">(</span><span class="n">space</span><span class="o">);</span>
+<span class="n">EventSessionConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EventSessionConfig</span><span class="o">();</span>
+<span class="n">DataEventSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">newDataEventSession</span><span class="o">(</span><span class="n">config</span><span class="o">);</span>
+<span class="n">EventRegistration</span> <span class="n">registration</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="k">new</span> <span class="n">MyData</span><span class="o">(),</span><span class="k">this</span><span class="o">,</span><span class="n">Lease</span><span class="o">.</span><span class="na">FOREVER</span><span class="o">,</span><span class="kc">null</span><span class="o">,</span><span class="kc">null</span><span class="o">,</span><span class="n">NotifyActionType</span><span class="o">.</span><span class="na">NOTIFY_ALL</span><span class="o">);</span>
+<span class="c1">// wait for notifications</span>
+<span class="n">session</span><span class="o">.</span><span class="na">removeListener</span><span class="o">(</span><span class="n">registration</span> <span class="o">);</span>
+<span class="n">session</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="tab-pane" id="sqlquery_template_registration" title="SQLQuery Template Registration">
+Here is an example for getting an `EventSessionFactory`, generating a `DataEventSession`, and registering for notifications using a `SQLQuery` template and cancelling the registration:
+
+
+<div class="highlight"><pre><code class="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataSessionEventExample</span> <span class="kd">implements</span> <span class="n">RemoteEventListener</span>
+<span class="o">{</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">sqlTemplate</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span>
+<span class="o">{</span>
+<span class="n">EventSessionFactory</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">EventSessionFactory</span><span class="o">.</span><span class="na">getFactory</span><span class="o">(</span><span class="n">space</span><span class="o">);</span>
+<span class="n">EventSessionConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EventSessionConfig</span><span class="o">();</span>
+<span class="n">DataEventSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">newDataEventSession</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<span class="n">SQLQuery</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SQLQuery</span> <span class="o">(</span><span class="k">new</span> <span class="n">MyData</span><span class="o">()</span> <span class="o">,</span> <span class="s">&quot;m_integer &gt; 22 and m_long &gt; 15&quot;</span><span class="o">);</span>
+<span class="n">EventRegistration</span> <span class="n">registration</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="n">query</span> <span class="o">,</span><span class="k">this</span><span class="o">,</span><span class="n">Lease</span><span class="o">.</span><span class="na">FOREVER</span><span class="o">,</span><span class="kc">null</span><span class="o">,</span><span class="kc">null</span><span class="o">,</span><span class="n">NotifyActionType</span><span class="o">.</span><span class="na">NOTIFY_ALL</span><span class="o">);</span>
+<span class="c1">// wait for notifications</span>
+<span class="n">session</span><span class="o">.</span><span class="na">removeListener</span><span class="o">(</span><span class="n">registration</span> <span class="o">);</span>
+<span class="n">session</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="tab-pane" id="batch_notification_registration" title="Batch Notification Registration">
+When a client expects to receive a large amount of events, it is recommended to deliver the events from the space into the client in batches. Batch notifications minimize the amount of remote calls the space needs to perform in order to deliver the events to the client. The downside when using this approach is the potential of some latency issues when delivering the events to the client.
+
+
+<div class="highlight"><pre><code class="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataSessionEventExample</span> <span class="kd">implements</span> <span class="n">RemoteEventListener</span>
+<span class="o">{</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">batchNotify</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span>
+<span class="o">{</span>
+<span class="kd">final</span> <span class="kt">long</span> <span class="n">TIME</span> <span class="o">=</span> <span class="mi">5000</span><span class="o">;</span>
+<span class="n">EventSessionFactory</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">EventSessionFactory</span><span class="o">.</span><span class="na">getFactory</span><span class="o">(</span><span class="n">space</span><span class="o">);</span>
+<span class="n">EventSessionConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EventSessionConfig</span><span class="o">();</span>
+<span class="n">config</span><span class="o">.</span><span class="na">setFifo</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+
+<span class="c1">// setting batch size to 3 entries</span>
+<span class="n">config</span><span class="o">.</span><span class="na">setBatch</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="n">TIME</span><span class="o">);</span>
+<span class="n">DataEventSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">newDataEventSession</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+
+<span class="n">EventRegistration</span> <span class="n">registration</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="k">new</span> <span class="n">MyData</span><span class="o">(),</span><span class="k">this</span><span class="o">,</span><span class="n">Lease</span><span class="o">.</span><span class="na">FOREVER</span><span class="o">,</span><span class="kc">null</span><span class="o">,</span><span class="kc">null</span><span class="o">,</span><span class="n">NotifyActionType</span><span class="o">.</span><span class="na">NOTIFY_ALL</span><span class="o">);</span>
+
+<span class="c1">// wait for notifications</span>
+<span class="n">session</span><span class="o">.</span><span class="na">removeListener</span><span class="o">(</span><span class="n">registration</span><span class="o">);</span>
+<span class="n">session</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="tab-pane" id="eventsession" title="EventSession">
+The session-based API defines an entity called `EventSession` -- a stateful registration service that is used to register/un-register listeners to the space. The `EventSession` is created using the `EventSessionFactory`, and configured using the `EventSessionConfig` entity.
+
+The `EventSessionConfig` can be configured using:
+
+- A specific API
+- The Properties object
+- The properties file located in the classpath
+- Using a Spring application context
+
+The created session is bound to a specific space (or cluster), and can be bounded to a specific transaction. Closing a session is done via the `close()` method.
+
+The `EventSession` interface includes the following methods:
+
+
+<div class="highlight"><pre><code class="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">EventSession</span>
+<span class="o">{</span>
+<span class="n">Transaction</span> <span class="nf">getTransaction</span><span class="o">();</span>
+<span class="n">EventSessionConfig</span> <span class="nf">getSessionConfig</span><span class="o">();</span>
+<span class="kt">void</span> <span class="nf">close</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">RemoteException</span><span class="o">,</span> <span class="n">UnknownLeaseException</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="tab-pane" id="dataeventsession" title="DataEventSession">
+The `DataEventSession` is a unified class that encapsulate the capabilities of the:
+
+- `NotifyDelegator`
+- `NotifyDelegatorMultiplextor`
+
+The `addListener()` method on the `DataEventSession` receives, among other parameters, the `NotifyActionType` parameter:
+
+- `NOTIFY_WRITE`
+- `NOTIFY_TAKE`
+- `NOTIFY_UPDATE`
+- `NOTIFY_LEASE_EXPIRATION`
+- `NOTIFY_NONE`
+- `NOTIFY_UNMATCHED`
+- `NOTIFY_MATCHED_UPDATE`
+- `NOTIFY_REMATCHED_UPDATE`
+- `NOTIFY_ALL`
+
+<i class="icon-warning-sign" style="color:#CF9E53;"></i> This type is a type-safe replacement for the old `NotifyModifiers` constants.
+<i class="icon-warning-sign" style="color:#CF9E53;"></i> Notifications for expired objects sent both from the primary and the backup space (in case you have such).
+
+The `DataEventSession` interface includes the following methods:
+
+
+<div class="highlight"><pre><code class="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">DataEventSession</span> <span class="kd">extends</span> <span class="n">EventSession</span>
+<span class="o">{</span>
+<span class="n">EventRegistration</span> <span class="nf">addListener</span><span class="o">(</span><span class="n">Object</span> <span class="n">template</span><span class="o">,</span><span class="n">RemoteEventListener</span> <span class="n">listener</span><span class="o">,</span><span class="kt">long</span>
+ <span class="n">lease</span><span class="o">,</span><span class="n">MarshalledObject</span> <span class="n">handback</span><span class="o">,</span>
+<span class="n">INotifyDelegatorFilter</span> <span class="n">filter</span><span class="o">,</span><span class="n">NotifyActionType</span> <span class="n">actionTypes</span><span class="o">)</span>
+<span class="kd">throws</span> <span class="n">RemoteException</span><span class="o">,</span> <span class="n">TransactionException</span><span class="o">;</span>
+
+<span class="n">EventRegistration</span> <span class="nf">addListener</span><span class="o">(</span><span class="n">Entry</span> <span class="n">template</span><span class="o">,</span><span class="n">RemoteEventListener</span> <span class="n">listener</span><span class="o">,</span> <span class="kt">long</span> <span class="n">lease</span><span class="o">,</span><span class="n">MarshalledObject</span> <span class="n">handback</span><span class="o">,</span>
+<span class="n">INotifyDelegatorFilter</span> <span class="n">filter</span><span class="o">,</span><span class="n">NotifyActionType</span> <span class="n">actionTypes</span><span class="o">)</span>
+<span class="kd">throws</span> <span class="n">RemoteException</span><span class="o">,</span> <span class="n">TransactionException</span><span class="o">;</span>
+
+<span class="kt">void</span> <span class="nf">removeListener</span><span class="o">(</span><span class="n">EventRegistration</span> <span class="n">registration</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">RemoteException</span><span class="o">,</span> <span class="n">UnknownLeaseException</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="tab-pane" id="eventregistration" title="EventRegistration">
+
+The `EventRegistration` is a utility class used as a return value for event-interest registration methods. Objects in this class encapsulate the information needed by a client in order to identify a notification as a response to a registration request, and to maintain that registration request. It is not mandatory for an event-interest registration method to use this class.
+
+A registration of interest in an event that occurs in the scope of a transaction is leased in the same way as other event interest registrations. However, the duration of the registration is the minimum length of the lease and the duration of the transaction. In other words, when the transaction ends (either because of a commit or an abort) the interest registration also ends. This is true even if the lease for the event registration has not expired, and no call has been made to cancel the lease.
+
+
+<div class="highlight"><pre><code class="java"><span class="n">net</span><span class="o">.</span><span class="na">jini</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">event</span><span class="o">.</span><span class="na">EventRegistration</span> <span class="kd">implements</span> <span class="n">Serializable</span>
+<span class="o">{</span>
+<span class="c1">//Returns the identifier that will be used in all RemoteEvents generated for</span>
+<span class="c1">//this interest registration.</span>
+<span class="kt">long</span> <span class="nf">getID</span><span class="o">()</span>
+
+<span class="c1">//Returns the Lease object for this registration.</span>
+<span class="n">lease</span> <span class="nf">getLease</span><span class="o">()</span>
+
+<span class="c1">//Returns the value of the sequence number on the event kind that was current</span>
+<span class="c1">// when the registration was granted, allowing comparison with the sequence number</span>
+<span class="c1">// in any subsequent notifications.</span>
+<span class="kt">long</span> <span class="nf">getSequenceNumber</span><span class="o">()</span>
+
+<span class="c1">//Returns the source that will be used in all RemoteEvents generated for this interest registration.</span>
+<span class="n">Object</span> <span class="nf">getSource</span><span class="o">()</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="tab-pane" id="eventsessionconfig" title="EventSessionConfig">
+
+This class is used to configure an `EventSession`. It contains a set of configuration parameters that influence the way event listeners are registered with the space, and how event notifications are processed.
+
+There are three different ways to create an `EventSessionConfig` object:
+
+- Use the empty constructor, and set the different parameters using API.
+- Pass a `Properties` object, that contains a list of parameters according the a list specified below, to the constructor.
+- Use a pre-configured, named set of parameters. The name is used to load a properties file that resides in the `config` directory
+
+The names of the parameters that can be used in the `Properties` object or file:
+
+- `comType` -- specifies the communication protocol: `UNICAST`/`MULTIPLEX`.
+- `batchSize` -- buffered notifications -- the size of the batch used when sending notifications to the client. Must be used with `batchTime`.
+- `batchTime` -- the maximum elapsed time between two batch notifications. Must be used with `batchSize`.
+- `replicateNotifyTemplate` -- whether to replicate the registration to other spaces in the cluster.
+- `triggerNotifyTemplate` -- whether to send notifications from all spaces in the cluster.
+- `leaseListener` -- `LeaseListener` callback to be called in case the renew failed.
+- `fifo` -- whether to return notification in fifo order or as soon as possible.
+- `autoRenew` -- whether to automatically renew the lease of the registered listeners.
+- `renewExpiration` -- specifies the time of expiration of the registration. Used when `autoRenew=true`.
+- `renewDuration` -- specifies the time for each renew. Used when `autoRenew=true`.
+- `renewRTT` -- specifies the time that takes the Lease to renew. Used when `autoRenew=true`.
+</div>
+</div></div>
+
+<h1 id="receive-the-event">Receive the Event</h1>
+
+<div class="tabsection"><ul class="nav nav-tabs"></ul><div class="tab-content">
+<div class="tab-pane" id="remoteeventlistener" title="RemoteEventListener">
+
+The `RemoteEventListener` interface should to be implemented to receive the notification from the space. The class implementing this interface does not need to be the object that originally registered interest in the occurrence of an event. To allow the notification of an event's occurrence to be sent to an entity other than the one that made the interest registration, the registration call needs to accept a destination parameter, which indicates to which object the notification should be sent. This parameter must be an object which supports the `RemoteEventListener` interface.
+
+
+<div class="highlight"><pre><code class="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">net</span><span class="o">.</span><span class="na">jini</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">event</span><span class="o">.</span><span class="na">RemoteEventListener</span> <span class="kd">extends</span> <span class="n">Remote</span><span class="o">,</span> <span class="n">EventListener</span>
+<span class="o">{</span>
+<span class="c1">//Notify the listener about an event.</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">notify</span><span class="o">(</span><span class="n">RemoteEvent</span> <span class="n">theEvent</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">UnknownEventException</span><span class="o">,</span><span class="n">RemoteException</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+Below, the `DataSessionEventExample` implements the `RemoteEventListener`. The `EntryArrivedRemoteEvent` is used to retrieve the object that starts the event:
+
+
+<div class="highlight"><pre><code class="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DataSessionEventExample</span> <span class="kd">implements</span> <span class="n">RemoteEventListener</span>
+<span class="o">{</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">notify</span><span class="o">(</span><span class="n">RemoteEvent</span> <span class="n">theEvent</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">UnknownEventException</span><span class="o">,</span> <span class="n">RemoteException</span>
+<span class="o">{</span>
+<span class="k">try</span> <span class="o">{</span>
+<span class="n">EntryArrivedRemoteEvent</span> <span class="n">arrivedRemoteEvent</span> <span class="o">=(</span><span class="n">EntryArrivedRemoteEvent</span><span class="o">)</span> <span class="n">theEvent</span><span class="o">;</span>
+<span class="n">MyData</span> <span class="n">msg</span> <span class="o">=</span> <span class="o">(</span><span class="n">MyData</span><span class="o">)</span> <span class="n">arrivedRemoteEvent</span><span class="o">.</span><span class="na">getObject</span><span class="o">();</span>
+<span class="c1">// ...</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+<span class="o">}</span>
+<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="tab-pane" id="entryarrivedremoteevent" title="EntryArrivedRemoteEvent">
+
+The `EntryArrivedRemoteEvent` allows you to retrieve the object that triggered the event, as well as retrieving additional meta data about the event.
+
+The `EntryArrivedRemoteEvent` extends the `RemoteEvent`, and implements the `Externalizable` and `Cloneable` interfaces.
+
+The `EntryArrivedRemoteEvent` includes the following methods:
+
+
+<div class="highlight"><pre><code class="java"><span class="c1">// Returns a shallow copy of this EntryArrivedRemoteEvent instance.</span>
+<span class="n">Object</span> <span class="nf">clone</span><span class="o">()</span>
+
+<span class="c1">// Returns the ExternalEntry that triggered the specified remote event.</span>
+<span class="n">ExternalEntry</span> <span class="nf">getExternalEntry</span><span class="o">()</span>
+
+<span class="n">String</span> <span class="nf">getKey</span><span class="o">()</span>
+
+<span class="c1">// Returns a notify type of this event.</span>
+<span class="kt">int</span> <span class="nf">getNotifyType</span><span class="o">()</span>
+
+<span class="c1">// Returns the entry by specification of user.</span>
+<span class="n">Object</span> <span class="nf">getObject</span><span class="o">()</span>
+
+<span class="n">MarshalledObject</span> <span class="nf">getRegistrationObject</span><span class="o">()</span>
+
+<span class="n">Object</span> <span class="nf">getSource</span><span class="o">()</span>
+
+<span class="c1">//Returns the unique uid of the space the event originated from.</span>
+<span class="n">Uuid</span> <span class="nf">getSpaceUuid</span><span class="o">()</span>
+
+<span class="c1">//returns templateID</span>
+<span class="n">String</span> <span class="nf">getTemplateUID</span><span class="o">()</span>
+
+<span class="c1">// specific is the event comes from replication or not.</span>
+<span class="kt">boolean</span> <span class="nf">isFromReplication</span><span class="o">()</span>
+</code></pre></div>
+
+
+</div>
+</div></div>
+
+<p>{include:COM7:Notify-Recovery}</p>
+
+<h1 id="cancelling-registration-and-closing-the-session">Cancelling Registration and Closing the Session</h1>
+
+<div class="tabsection"><ul class="nav nav-tabs"></ul><div class="tab-content">
+<div class="tab-pane" id="cancelling_notify_registration" title="Cancelling Notify Registration">
+
+To cancel the notify registration, call the following:
+
+
+<div class="highlight"><pre><code class="java"><span class="n">DataEventSession</span> <span class="nf">removeListener</span><span class="o">(</span><span class="n">EventRegistration</span> <span class="n">registration</span><span class="o">)</span>
+</code></pre></div>
+
+
+This frees the relevant resources allocated to manage the notify registration, such as cancelling the automatic lease renewal, unexporting object client stubs, and releasing the client FIFO thread.
+</div>
+
+<div class="tab-pane" id="closing_the_session" title="Closing the Session">
+To close the session, call the following:
+
+
+<div class="highlight"><pre><code class="java"><span class="n">DataEventSession</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</code></pre></div>
+
+
+This cancels all the registrations done with the `DataEventSession`. You need to start a new session in order to register for new events.
+</div>
+</div></div>
+
+<h1 id="filtering-events">Filtering Events</h1>
+
+<p>The session messaging API allows for space-side notify filtering. To control the events delivered to the client, implement the <code>INotifyDelegatorFilter</code> interface, pass the object implementing the <code>INotifyDelegatorFilter</code>, and return a <code>false</code> value from the <code>INotifyDelegatorFilter.process</code> for events you do not want to be sent to the registered client.</p>
+
+<div class="tabsection"><ul class="nav nav-tabs"></ul><div class="tab-content">
+<div class="tab-pane" id="inotifydelegatorfilter" title="INotifyDelegatorFilter">
+
+The `INotifyDelegatorFilter` allows you to execute business logic at the space side before the event is delivered to the client. The `INotifyDelegatorFilter` might prevent a specific event from being delivered to the client registered for the matching event, by returning `false` from the process method.
+
+The `INotifyDelegatorFilter` interface includes the following methods:
+
+
+<div class="highlight"><pre><code class="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">INotifyDelegatorFilter</span> <span class="kd">extends</span> <span class="n">Serializable</span>
+<span class="o">{</span>
+<span class="c1">// called when the filter created</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">init</span><span class="o">(</span> <span class="n">IJSpace</span> <span class="n">space</span><span class="o">,</span> <span class="n">Object</span> <span class="n">notifyTemplate</span> <span class="o">);</span>
+
+<span class="c1">// called before the event delivered to the client. Returning false will not</span>
+<span class="c1">// deliver the event to the client</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">process</span><span class="o">(</span> <span class="n">EntryArrivedRemoteEvent</span> <span class="n">theEvent</span><span class="o">);</span>
+
+<span class="c1">// called when the registration cancelled</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">close</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+</div>
+
+<div class="tab-pane" id="inotifydelegatorfilter_implementation_example" title="INotifyDelegatorFilter Implementation Example">
+Below is an example for the `INotifyDelegatorFilter` implementation, where the `process()` method allows only messages with the value `aaa` to be delivered to the client:
+
+
+<div class="highlight"><pre><code class="java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">j_spaces</span><span class="o">.</span><span class="na">examples</span><span class="o">.</span><span class="na">sessionevent</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">net.jini.core.entry.Entry</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">net.jini.core.entry.UnusableEntryException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.j_spaces.core.IJSpace</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.j_spaces.core.client.EntryArrivedRemoteEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.j_spaces.core.client.INotifyDelegatorFilter</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyNotifyFilter</span> <span class="kd">implements</span> <span class="n">INotifyDelegatorFilter</span>
+<span class="o">{</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">init</span><span class="o">(</span><span class="n">IJSpace</span> <span class="n">space</span><span class="o">,</span> <span class="n">Object</span> <span class="n">entry</span><span class="o">)</span>
+<span class="o">{</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot; -&gt;&gt; Init called - Registration Template:&quot;</span><span class="o">+</span><span class="n">entry</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="c1">// only messages with m_string = aaa will be delivered to the registered client</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">process</span><span class="o">(</span><span class="n">EntryArrivedRemoteEvent</span> <span class="n">theEvent</span><span class="o">)</span>
+<span class="o">{</span>
+<span class="n">EntryArrivedRemoteEvent</span> <span class="n">arrivedRemoteEvent</span> <span class="o">=</span> <span class="o">(</span><span class="n">EntryArrivedRemoteEvent</span><span class="o">)</span> <span class="n">theEvent</span><span class="o">;</span>
+<span class="n">MyData</span> <span class="n">msg</span><span class="o">;</span>
+<span class="k">try</span> <span class="o">{</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="o">(</span><span class="n">MyData</span><span class="o">)</span> <span class="n">arrivedRemoteEvent</span><span class="o">.</span><span class="na">getObject</span><span class="o">();</span>
+<span class="kt">int</span> <span class="n">notifyType</span> <span class="o">=</span> <span class="n">arrivedRemoteEvent</span><span class="o">.</span><span class="na">getNotifyType</span><span class="o">();</span>
+<span class="n">String</span> <span class="n">msgStr</span> <span class="o">=</span> <span class="s">&quot; -&gt;&gt; process called - Type:&quot;</span> <span class="o">+</span> <span class="n">DataSessionEventExample</span><span class="o">.</span><span class="na">getNotifyDesc</span><span class="o">(</span><span class="n">notifyType</span><span class="o">)+</span><span class="s">&quot; - Data:&quot;</span> <span class="o">+</span> <span class="n">msg</span> <span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">msgStr</span><span class="o">);</span>
+<span class="k">return</span> <span class="o">(</span><span class="n">msg</span><span class="o">.</span><span class="na">m_string</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;aaa&quot;</span><span class="o">));</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UnusableEntryException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+<span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+<span class="o">}</span>
+<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">close</span><span class="o">()</span>
+<span class="o">{</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot; -&gt;&gt; closed called&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+The notify registration:
+
+
+<div class="highlight"><pre><code class="java"><span class="n">EventSessionFactory</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">EventSessionFactory</span><span class="o">.</span><span class="na">getFactory</span><span class="o">(</span><span class="n">space</span><span class="o">);</span>
+<span class="n">EventSessionConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EventSessionConfig</span><span class="o">();</span>
+<span class="n">DataEventSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">newDataEventSession</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<span class="n">MyNotifyFilter</span> <span class="n">filter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyNotifyFilter</span> <span class="o">();</span>
+<span class="n">EventRegistration</span> <span class="n">registration</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="k">new</span> <span class="n">MyData</span><span class="o">(),</span><span class="k">this</span><span class="o">,</span><span class="n">Lease</span><span class="o">.</span><span class="na">FOREVER</span><span class="o">,</span><span class="kc">null</span><span class="o">,</span><span class="n">filter</span><span class="o">,</span><span class="n">NotifyActionType</span><span class="o">.</span><span class="na">NOTIFY_ALL</span><span class="o">);</span>
+</code></pre></div>
+
+
+When writing the following objects, only `msg1` is delivered to the client who registered for notifications:
+
+
+<div class="highlight"><pre><code class="java"><span class="n">MyData</span> <span class="n">msg1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyData</span><span class="o">(</span><span class="s">&quot;aaa&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">Long</span> <span class="o">(</span><span class="mi">100</span> <span class="o">)</span> <span class="o">,</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span><span class="mi">5</span><span class="o">,</span><span class="mi">20</span><span class="o">)</span> <span class="o">,</span>
+<span class="k">new</span> <span class="nf">Date</span> <span class="o">(</span><span class="mi">107</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">40</span><span class="o">),</span><span class="k">new</span> <span class="n">Integer</span> <span class="o">(</span><span class="mi">60</span> <span class="o">)</span> <span class="o">,</span><span class="k">new</span> <span class="n">Double</span> <span class="o">(</span><span class="mf">500.2</span><span class="o">));</span>
+<span class="n">MyData</span> <span class="n">msg2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyData</span><span class="o">(</span><span class="s">&quot;bbb&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">Long</span> <span class="o">(</span><span class="mi">100</span> <span class="o">)</span> <span class="o">,</span> <span class="k">new</span> <span class="n">Time</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span><span class="mi">5</span><span class="o">,</span><span class="mi">20</span><span class="o">)</span> <span class="o">,</span>
+<span class="k">new</span> <span class="nf">Date</span> <span class="o">(</span><span class="mi">107</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span> <span class="mi">40</span><span class="o">),</span><span class="k">new</span> <span class="n">Integer</span> <span class="o">(</span><span class="mi">60</span> <span class="o">)</span> <span class="o">,</span><span class="k">new</span> <span class="n">Double</span> <span class="o">(</span><span class="mf">500.2</span><span class="o">));</span>
+
+<span class="n">space</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">msg1</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="n">Lease</span><span class="o">.</span><span class="na">FOREVER</span><span class="o">);</span>
+<span class="n">space</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">msg2</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="n">Lease</span><span class="o">.</span><span class="na">FOREVER</span><span class="o">);</span>
+</code></pre></div>
+
+
+<i class="icon-warning-sign" style="color:#CF9E53;"></i> The `INotifyDelegatorFilter` implementation class should be part of the space classpath.
+</div>
+</div></div>
+
+<h1 id="advanced-options">Advanced Options</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td>{toc-zone:minLevel=2</td>
+      <td>maxLevel=2</td>
+      <td>type=flat</td>
+      <td>separator=pipe</td>
+      <td>location=top}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="registering-large-number-of-listeners">Registering Large Number of Listeners</h2>
+
+<p>When having a system that requirs large number of listeners (above few hundreds) the <code>Multiplex</code> communication mode should be used. With this mode the amount of resources (threads) used to invoke the listener are shared between all the session listeners. This approach reduces the memory footprint of the client considerably. This option avoiding the need to construct multiple <a href="notify container">notify containers</a> that may consume large amount of resources when having many of these created. See below how the <code>MULTIPLEX</code> communication mode should be used:</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">EventSessionFactory</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">EventSessionFactory</span><span class="o">.</span><span class="na">getFactory</span><span class="o">(</span><span class="n">space</span><span class="o">.</span><span class="na">getSpace</span><span class="o">());</span>
+<span class="n">EventSessionConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EventSessionConfig</span><span class="o">();</span>
+<span class="n">config</span><span class="o">.</span><span class="na">setComType</span><span class="o">(</span><span class="n">ComType</span><span class="o">.</span><span class="na">MULTIPLEX</span><span class="o">);</span>
+<span class="n">DataEventSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">newDataEventSession</span><span class="o">(</span><span class="n">config</span><span class="o">);</span>
+
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">100</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
+<span class="o">{</span>
+	<span class="n">Listener</span> <span class="n">lisenter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Listener</span><span class="o">(</span><span class="s">&quot;Listener &quot;</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>	
+	<span class="n">SQLQuery</span><span class="o">&lt;</span><span class="n">MyData</span><span class="o">&gt;</span> <span class="n">query</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SQLQuery</span><span class="o">&lt;</span><span class="n">MyData</span><span class="o">&gt;(</span><span class="n">MyData</span><span class="o">.</span><span class="na">class</span> <span class="o">,</span> <span class="s">&quot;key1=&#39;A&quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">&quot;&#39;&quot;</span><span class="o">);</span>
+	<span class="n">EventRegistration</span> <span class="n">registration</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="n">query</span><span class="o">,</span><span class="n">lisenter</span><span class="o">,</span><span class="n">Lease</span><span class="o">.</span><span class="na">FOREVER</span><span class="o">,</span><span class="kc">null</span><span class="o">,</span><span class="kc">null</span><span class="o">,</span><span class="n">NotifyActionType</span><span class="o">.</span><span class="na">NOTIFY_ALL</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<h2 id="auto-re-register-notifications-after-space-failure">Auto Re-Register Notifications After Space Failure</h2>
+
+<p>Event Session under the hood uses Notification Registration. When a remote client with an independent life cycle creates a Event Session and is terminated, the registration remains in the space. This may create an overhead for the space once there are other clients registered with many templates.</p>
+
+<p>To avoid this overhead, an optimization is required where notification registration is created with a limited lease and the client periodically renews the lease to keep it active. If client is shutdown or does not need this events anymore, the lease is not renewed thereby removing the registration.</p>
+
+<p>Lease Renewal Manager provides a systematic lease renewal and management framework and is used by Event Session for managing the notification registration leases. Leases are managed in an automatic manner without any application intervention. More information regarding Lease Renewal Manager can be found at the <a href="/xap96/2013/02/27/leases---automatic-expiration.html">Leases - Automatic Expiration</a> section.</p>
+
+<p>To allow a remote client using an Event Session to continue and receive notifications in case the space cluster was completely shutdown and restarted, you should use the <code>LeaseListener</code> and re-create the Event Session in case its lease renewal failed (i.e. <code>LeaseListener.notify()</code> been called). The Event Session <strong>must enable</strong> the <code>autoRenew</code> property to instruct GigaSpaces to construct a <code>Lease Renewal Manager</code> and have the associated <code>LeaseListener</code> implementation to be invoked. </p>
+
+<p>With this approach we assume the space will be available is some point to acknowledge the registration and continue and send notifications for the matching events back to the client.</p>
+
+<p>See below <code>com.gigaspaces.events.EventSessionConfig</code> methods you should use passing the <code>LeaseListener</code> implemenation:</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">setAutoRenew</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">renew</span><span class="o">,</span> <span class="n">net</span><span class="o">.</span><span class="na">jini</span><span class="o">.</span><span class="na">lease</span><span class="o">.</span><span class="na">LeaseListener</span> <span class="n">listener</span><span class="o">)</span> 
+<span class="n">setAutoRenew</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">renew</span><span class="o">,</span> <span class="n">net</span><span class="o">.</span><span class="na">jini</span><span class="o">.</span><span class="na">lease</span><span class="o">.</span><span class="na">LeaseListener</span> <span class="n">listener</span><span class="o">,</span> <span class="kt">long</span> <span class="n">renewExpiration</span><span class="o">,</span> <span class="kt">long</span> <span class="n">renewDuration</span><span class="o">,</span> <span class="kt">long</span> <span class="n">renewRTT</span><span class="o">)</span> 
+</code></pre></div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="text-align: left">Property</th>
+      <th style="text-align: left">Description</th>
+      <th style="text-align: left">Default</th>
+      <th style="text-align: left">Unit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">renew</td>
+      <td style="text-align: left">If set to <code>true</code>, automatically performs lease renewal and call the <code>LeaseListener.notify()</code> if fails to renew, where the lease&#8217;s desired expiration time has not yet been reached.</td>
+      <td style="text-align: left">false</td>
+      <td style="text-align: left">&#160;</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">renewExpiration</td>
+      <td style="text-align: left">The period of time your notifications stopped from being renewed. Applies Only when <code>renew</code> is <code>true</code></td>
+      <td style="text-align: left">Lease.FOREVER</td>
+      <td style="text-align: left">ms</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">renewDuration</td>
+      <td style="text-align: left">The period of time that passes between client failure, and the time your notifications stop from being sent. Should be larger than renewRTT. Applies Only when <code>renew</code> is <code>true</code>.</td>
+      <td style="text-align: left">20000</td>
+      <td style="text-align: left">ms</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">renewRTT</td>
+      <td style="text-align: left">RoundTripTime - The time that takes to reach the server and return. Applies Only when <code>renew</code> is <code>true</code>.</td>
+      <td style="text-align: left">10000</td>
+      <td style="text-align: left">ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-success"><i class="icon-ok pull-left"></i>
+<p>Prior calling the <code>LeaseListener.notify()</code> , the <code>LeaseRenewalManager</code> used by the Notify container, will remove the affected lease from its managed set of leases.</p>
+</div>
+
+<div class="highlight"><pre><code class="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyLeaseListener</span> <span class="kd">implements</span> <span class="n">LeaseListener</span><span class="o">{</span>
+
+	<span class="kd">public</span> <span class="nf">MyLeaseListener</span> <span class="o">(</span><span class="n">DataEventSession</span> <span class="n">session</span><span class="o">)</span>
+	<span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">session</span><span class="o">=</span><span class="n">session</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="n">DataEventSession</span> <span class="n">session</span><span class="o">;</span>
+
+	<span class="c1">//Called by the LeaseRenewalManager when it cannot renew a lease that it is managing, </span>
+	<span class="c1">//and the lease&#39;s desired expiration time has not yet been reached.	</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">notify</span><span class="o">(</span><span class="n">LeaseRenewalEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Can&#39;t renew - try to re-register&quot;</span><span class="o">);</span>			
+		<span class="n">session</span><span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="k">new</span> <span class="n">MyData</span><span class="o">(),</span><span class="k">this</span><span class="o">,</span><span class="n">Lease</span><span class="o">.</span><span class="na">FOREVER</span><span class="o">,</span><span class="kc">null</span><span class="o">,</span><span class="kc">null</span><span class="o">,</span><span class="n">NotifyActionType</span><span class="o">.</span><span class="na">NOTIFY_ALL</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Notfy ReRegistration Done!&quot;</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<h2 id="slow-consumer">Slow Consumer</h2>
+
+<p>The <a href="/xap96/2011/02/09/slow-consumer.html">Slow Consumer</a> mechanism allows GigaSpaces to identify clients that cannot receive events and cancel their notify registration. This avoids system instability and out of memory problems.</p>
+
+<h2 id="transient-notify-registration">Transient Notify Registration</h2>
+
+<p>Notify registrations are consider to be Transient.
+Transient registrations are not persistent, and aren&#8217;t recovered once the space is restarted.</p>
+
+<h2 id="stale-notify-registration">Stale Notify Registration</h2>
+
+<p>When the space detects a stale notify registration (clients that registered for a notify registration but do not respond to the triggered event), the notify registration is cancelled.
+If you need to terminate the notify registration before the lease expires, it is recommended to use the <code>DataEventSession removeListener(EventRegistration registration)</code> method. This cancels the registration lease.</p>
+
+<h2 id="notifications-with-transactions">Notifications with Transactions</h2>
+
+<p>When performing operations using transactions while performing notify registration using a <code>null</code> transaction object, matching events are delivered to clients only when the transaction is committed. Matching events for notify registration using a transaction object are triggered immediately when the operation is called using the same transaction object that is used as part of the notify registration.</p>
+
+<h2 id="long-notification-lease-time">Long Notification Lease Time</h2>
+
+<p>Use <code>Lease.FOREVER</code> as the notify registration lease time carefully. Registration for notifications is cancelled automatically when the notification object invalidates &#8211; i.e. is cleared by the garbage collector. With abnormal termination of the application, the garbage collector cannot finalize the registration object. This might lead to delays when delivering notifications to live clients, because the space accumulates notification registrations without the ability to clear these once they are invalidated.</p>
+
+<p>The space includes a mechanism that detects stale notify registrations. Once a notification can&#8217;t be delivered to a client (network failure or a dead client), the space retries to send the notification several times (according the <code>space-config.notifier-retries</code> parameter value) and once it fails, the notify registration is removed. If there are many clients terminating their operation in an abnormal manner while having an active event registration, the space might need some time to detect all stale clients and their notify registrations, delaying notification delivery to existing live clients.</p>
+
+<p>The root cause of this behavior is the thread pool within the space engine that is responsible for delivering events to clients. When all pool threads are fully consumed, notification delivery time suffers, due to the time it takes to detect and remove all stale registrations.</p>
+
+<p>{refer}To configure the notification thread pool size you should use the following Space properties:
+space-config.engine.notify_min_threads
+space-config.engine.notify_max_threads
+{refer}
+See the <a href="/xap96/2013/04/24/notify-container.html#Scaling Notification Delivery">Scaling Notification Delivery</a> for details.</p>
+
+<p>To reduce the amount of stale registrations, register notification with a reasonable lease time (30 seconds - 2 minutes can be a good interval), and renew these using the <a href="http://www.gigaspaces.com/docs/JiniApi/net/jini/lease/LeaseRenewalManager.html">LeaseRenewalManager</a> every 30 seconds - 2 minutes. This ensures that once the client exists in an abnormal manner, the registration automatically expires and is removed, reducing the chance to fully consume the notification thread pool and delay notification delivery to live clients.</p>
+
+<h2 id="improving-notification-speed">Improving Notification Speed</h2>
+
+<p>When the space is running in a different JVM than the client that is registered for the notifications, remote calls between the space and the notified client are involved. This means that the object that triggered the notification sent as part of the <code>RemoteEvent</code> is serialized at the space side, and de-serialized at the client side when delivered to the client. To minimize the impact of the serialization process, it is recommended to implement the <code>Externalizable</code> interface &#8211; this optimizes the footprint of the delivered packet across the network.</p>
+
+<h2 id="fifo-based-notifications">FIFO Based Notifications</h2>
+
+<p>When registering for notifications in FIFO mode, a special thread at the client side is responsible for delivering the events to the listener in FIFO order. By default, the space uses a dedicated thread pool to trigger the events at the client side, where the client itself is using another thread pool to call the listener notify method implementation.</p>
+
+<p>The FIFO thread at the client side uses the event sequence number generated in the space to order the incoming events handled by the different threads, and calls the listener in the right order. Since the ordering requires some amount of synchronization, FIFO-based notifications are slower than non-FIFO notifications.</p>
+
+<p>{refer}For the custom client-side FIFO-based notifications example, send a request to support@gigaspaces.com.{refer}</p>
+
+<h2 id="notification-reliability">Notification Reliability</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>{toc-zone:minLevel=2</td>
+      <td>maxLevel=2</td>
+      <td>type=flat</td>
+      <td>separator=pipe</td>
+      <td>location=top}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Notifications are asynchronous by nature. The client that triggered the notification is unaware of the notification delivery, and does not wait for an acknowledgement from the client receiving the notification for successful arrival of the event before continuing with its operation &#8211; i.e., when process A registers for notification delivery, and B writes an Entry to the space, process B does not wait for process A to receive the notification before taking control after the write operation. Process B might perform additional space operations before process A receives the notification.</p>
+
+<div class="indent0">
+<p><img src="/attachment_files/SessionBasedMessagingAPI2.jpg" alt="SessionBasedMessagingAPI2.jpg" /></p>
+</div>
+
+<p>When a space running in a fault tolerant configuration (<code>primary-backup</code> or <code>partitioned-sync2backup</code> cluster schemas) and the primary space fails, the backup space takes over and sends the notifications to the registered clients. In such a configuration, the primary and backup spaces do not establish a handshake mechanism when a notification is sent to the client. The backup space, that is running in stand-by mode, is unaware of the notifications that have been sent by the primary space, and the acknowledgement that the recipients clients provided when receiving the events is not sent.</p>
+
+<p>To allow the backup space to send notifications when the primary fails and move to active mode, the backup space should have the notification registration information (notify templates) replicated/recovered from the primary space. The cluster configuration includes the following properties allowing notification registrations to survive space failures:</p>
+
+<ul>
+  <li><code>replicate-notify-templates</code> &#8211; boolean value. Set to <code>true</code> if you want to make notification templates available in the target space.</li>
+  <li><code>trigger-notify-templates</code> &#8211; boolean value. Set to <code>true</code> if you want to trigger matching notification templates when Entries are written to the space, because of replication (and thus causing remote events to be generated and sent to the notify template listeners). If set to <code>true</code>, triggering occurs; if set to <code>false</code>, triggering does not occur.</li>
+</ul>
+
+<h3 id="replicate-notify-template-and-trigger-notify-template">Replicate Notify Template and Trigger Notify Template</h3>
+
+<p>The replication settings allows replicating notification registration, and the ability to trigger events that are a result of replication (and not a direct client operation) from a source space.</p>
+
+<p>Here is the system behavior when using these options:</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th style="text-align: left">Replicate Notify Template Setting</th>
+      <th style="text-align: left">Trigger Notify Template Setting</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code>true</code></td>
+      <td style="text-align: left"><code>false</code></td>
+      <td style="text-align: left">The client gets notifications from the master space while it is active after registration.<br />If failover has been configured, it gets notifications from the replica space when the master space fails.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>false</code></td>
+      <td style="text-align: left"><code>true</code></td>
+      <td style="text-align: left">The client gets notifications only from the spaces it registered to for notifications.<br />A notification occurs when data has been delivered to the space, either by a client application, or from the replication.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>true</code></td>
+      <td style="text-align: left"><code>true</code></td>
+      <td style="text-align: left">The client gets notifications from all clustered spaces after registration.<br />The client gets multiple notifications for every space event.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code>false</code></td>
+      <td style="text-align: left"><code>false</code></td>
+      <td style="text-align: left">The client gets notifications only from the spaces to which it registered.<br />The client does not get notifications from spaces that received their data by replication.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Replicated notify templates and triggered notify templates are orthogonal. However, if you enable them both, you should be aware that for each Entry that matches the notify template and is replicated to another space, you get an event.</p>
+
+<p>This might result in more events than you initially intended. You can use the source of the event to check which space triggered it.</p>
+
+<h2 id="durable-notifications---notification-delivery-during-failover">Durable Notifications - Notification Delivery During Failover</h2>
+
+<p>Due to the asynchronous nature of notification delivery, when a primary space fails right after replicating an operation to the backup space and before sending the notification to the registered client, the backup space might not be able to send the missing notifications, since it is in the process of moving to active mode. 
+This means that during this very short period of time, the registered client might not receive events that occurred in the primary space and were replicated to the backup space.</p>
+
+<p>To ensure notification delivery by the backup space during the failover period, durable notifications mode needs to be enabled: </p>
+
+<div class="highlight"><pre><code class="java"><span class="n">EventSessionFactory</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">EventSessionFactory</span><span class="o">.</span><span class="na">getFactory</span><span class="o">(</span><span class="n">space</span><span class="o">);</span>
+<span class="n">EventSessionConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">EventSessionConfig</span><span class="o">();</span>
+<span class="n">config</span><span class="o">.</span><span class="na">setDurableNotifications</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+<span class="n">DataEventSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">newDataEventSession</span><span class="o">(</span><span class="n">config</span><span class="o">);</span>
+</code></pre></div>
+
+<p>Durable notifications are based on the replication mechanism and as such have some different semantics regarding other <code>EventSessionConfig</code> parameters.
+For further details see <a href="/xap96/2012/04/16/durable-notifications.html">Durable Notifications</a>.</p>
+
+<h2 id="the-unmatched-notifyactiontype">The UNMATCHED NotifyActionType</h2>
+
+<p>The <code>UNMATCHED</code> <code>NotifyActionType</code> should be used when you would like to receive notifications for objects which got their value been updated where the object that was initially matches the template no longer matches the template.
+Example:
+You would like to maintain within the client side a list for all the objects which got their status as <code>true</code>. You registe for notifications using a template which had the status field as <code>true</code>.</p>
+
+<p>An object with status as <code>true</code> is written into the space. This triggers a notification about the existence of this object. In some point the object is read from the space, the status field value changed from <code>true</code> to <code>false</code> and the object is written back into the space with its updated data. </p>
+
+<p>Registering a notification using a template which got <code>status=true</code> with the <code>NOTIFY_UPDATE</code> <code>NotifyActionType</code> without using the <code>UNMATCHED NotifyActionType</code> as well, <strong>will not trigger</strong> a notification when the <code>status</code> field value changed from <code>true</code> to <code>false</code>. </p>
+
+<p>You have to include the <code>UNMATCHED NotifyActionType</code> to receive a notification when the object changing <code>status=true</code> to <code>status=false</code>.</p>
+
+<h2 id="the-matchedupdate--notifyactiontype">The MATCHED_UPDATE  NotifyActionType</h2>
+
+<p>The <code>MATCHED_UPDATE</code> <code>NotifyActionType</code> should be used to receive notifications for entries that match a given notify template after being updated and did not match before that update.
+Example:</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">template</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+<span class="n">eventSession</span><span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="n">template</span><span class="o">,</span> <span class="n">listener</span><span class="o">,</span> <span class="n">Lease</span><span class="o">.</span><span class="na">FOREVER</span><span class="o">,</span> <span class="n">NotifyActionType</span><span class="o">.</span><span class="na">NOTIFY_MATCHED_UPDATE</span><span class="o">)</span>
+<span class="n">myPojo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span> <span class="c1">//  myPojo, before update, doesn&#39;t match the template.</span>
+<span class="n">gigaSpace</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">myPojo</span><span class="o">);</span>
+<span class="n">myPojo</span><span class="o">.</span><span class="na">setProcessed</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+<span class="n">gigaSpace</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">myPojo</span><span class="o">);</span> <span class="c1">// myPojo, after being updated, matches the template.</span>
+</code></pre></div>
+
+<p>The last operation (updating myPojo&#8217;s &#8216;processed&#8217; property from false to true) will trigger the NotifyActionType.NOTIFY_MATCHED_UPDATE notification.</p>
+
+<p>NOTIFY_MATCHED_UPDATE and NOTIFY_UPDATE cannot be used together for the same listener. </p>
+
+<h2 id="the-rematchedupdate--notifyactiontype">The REMATCHED_UPDATE  NotifyActionType</h2>
+
+<p>The <code>REMATCHED_UPDATE</code> <code>NotifyActionType</code> should be used to receive notifications for entries that match a given notify template after being updated and that were also a match before that update.
+Example:</p>
+
+<div class="highlight"><pre><code class="java"><span class="n">template</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+<span class="n">eventSession</span><span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="n">template</span><span class="o">,</span> <span class="n">listener</span><span class="o">,</span> <span class="n">Lease</span><span class="o">.</span><span class="na">FOREVER</span><span class="o">,</span> <span class="n">NotifyActionType</span><span class="o">.</span><span class="na">NOTIFY_MATCHED_UPDATE</span><span class="o">)</span>
+<span class="n">myPojo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pojo</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span> <span class="c1">// myPojo, before update, matches the template.</span>
+<span class="n">gigaSpace</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">myPojo</span><span class="o">);</span>
+<span class="n">myPojo</span><span class="o">.</span><span class="na">setProcessed</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+<span class="n">gigaSpace</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">myPojo</span><span class="o">);</span> <span class="c1">// myPojo, after being updated, still matches the template.</span>
+</code></pre></div>
+
+<p>The last operation (updating myPojo&#8217;s &#8216;processed&#8217; property from false to true) will trigger the NotifyActionType.NOTIFY_REMATCHED_UPDATE notification.
+&lt;div class="alert alert-warning"&gt;<i class="icon-warning-sign pull-left"></i><strong>&lt;p&gt;Note &lt;/p&gt;
+</strong></p>
+<p>The first write of myPojo would have triggered the NotifyActionType.NOTIFY_WRITE notification if there was also a registration with NOTIFY_WRITE type and the same template.</p>
+<p>&lt;/div&gt;</p>
+
+<p>NOTIFY_REMATCHED_UPDATE and NOTIFY_UPDATE cannot be used together for the same listener. </p>
+
+<p>{toc-zone}</p>
+
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class="footer">
+          <ul class='list-inline'>
+    <li>
+        Simply Scale with
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com">GigaSpaces</a>
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com/wiki/x/xwBmAg" class="smalltext">Legal Notice</a>
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com/wiki/x/xgBmAg" class="smalltext">3rd Party License Agreements</a>
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com/wiki/x/BQFmAg" class="smalltext">Site Map</a>
+    </li>
+    <li>
+        <a href="mailto:techw@gigaspaces.com">Contact Admin</a>
+    </li>
+    <li>
+        <i><a href="http://www.atlassian.com/software/confluence">Powered by Atlassian Confluence</a></i>
+    </li>
+</ul>
+
+        </div>
+      </div>
+
+    </div><!-- /container -->
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/jquery.treeview.js"></script>
+    <script>
+      $(function () {
+        $(".tabsection").each(function(index) {
+          list = "";
+
+          $(this).find(".tab-pane").each(function(index) {
+            list_class = "";
+            timestamp = parseInt(Date.now() * Math.random()) ;
+
+            if(index === 0){
+              list_class = "class='active'";
+              $(this).prop("class", $(this).prop("class") + " active");
+            }
+
+            list += "<li " + list_class +"><a href='#" + timestamp + $(this).prop("id") +"'>" + $(this).prop("title") +"</a></li>";
+            $(this).prop("id", timestamp + $(this).prop("id"));
+          });
+          $(this).find(".nav").html(list);
+        });
+
+        $('ul.nav a').click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
+
+        summary_url = "";
+        $('.col-md-8').children('h1').each(function(index, item) {
+          summary_url += '<li><a href="#'+item.id+'">'+item.innerHTML+'</a></li>';
+        });
+
+        $("#summarypanel").html(summary_url);
+      })
+      $("#navigation").treeview({
+        persist: "location"
+      });
+    </script>
+  </body>
+</html>

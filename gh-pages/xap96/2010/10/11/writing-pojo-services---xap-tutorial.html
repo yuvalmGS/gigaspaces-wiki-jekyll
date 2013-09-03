@@ -1,0 +1,3185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Writing POJO Services - XAP Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/jquery.treeview.css">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="row">
+        <div class="span12">
+          <h1>Writing POJO Services - XAP Tutorial</h1>
+        </div>
+      </header>
+
+      <div class="row">
+        <div class='col-md-4'>
+          <div>
+  Browse XAP 9.6
+</div>
+<ul id='navigation'>
+  <li>
+    <a href="/xap96/2012/07/16/quick-start-guide.html" title="Quick Start Guide">
+      Quick Start Guide
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2013/07/21/screen-casts.html">
+          Screen Casts
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/04/10/your-first-data-grid-application2.html">
+          Your First Data Grid Application
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/04/03/your-first-web-application.html">
+          Your First Web Application
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/04/03/step-1---deploying-your-web-application-to-the-gigaspaces-environment.html">
+              Step 1 - Deploying Your Web Application to the GigaSpaces Environment
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/04/03/step-2---enabling-http-session-failover-and-fault-tolerance.html">
+              Step 2 - Enabling HTTP Session Failover and Fault Tolerance
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/04/03/step-3---scaling-the-data-access-layer.html">
+              Step 3 - Scaling the Data Access Layer
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/07/08/your-first-xtp-application.html">
+          Your First XTP Application
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/07/08/setting-up-your-ide-to-work-with-gigaspaces.html">
+              Setting Up your IDE to work with GigaSpaces
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/07/08/step-one---using-processing-units-for-scaling.html">
+              Step One - Using Processing Units for Scaling
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/01/21/step-two---creating-the-hello-world-application.html">
+              Step Two - Creating the Hello World Application
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/02/20/step-three---deploying-onto-the-service-grid.html">
+              Step Three - Deploying onto the Service Grid
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/07/08/step-four---scaling-the-hello-world-application.html">
+              Step Four - Scaling the Hello World Application
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/10/15/your-first-jpa-application.html">
+          Your First JPA Application
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/10/15/step-1---adjusting-your-jpa-domain-model-to-the-xap-jpa-implementation.html">
+              Step 1 - Adjusting Your JPA Domain Model to the XAP JPA Implementation
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/02/step-2---using-the-power-of-the-space-to-scale-your-data-access-layer.html">
+              Step 2 - Using the Power of the Space to Scale Your Data Access Layer
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/21/step-3---building-and-running-the-application.html">
+              Step 3 - Building and Running the Application
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2009/06/23/beyond-the-basics.html">
+          Beyond the Basics
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/05/10/the-openspaces-data-example.html">
+              The OpenSpaces Data Example
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/07/21/xap-order-management-tutorial.html">
+              XAP Order Management Tutorial
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/07/14/your-first-real-time-big-data-analytics-application.html">
+          Your First Real Time Big Data Analytics Application
+        </a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/xap96/2008/09/15/product-overview.html" title="Product Overview">
+      Product Overview
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2011/03/22/concepts.html">
+          Concepts
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/06/09/a-typical-sba-application.html">
+          A Typical SBA Application
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/12/12/database-integration.html">
+          Database Integration
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/10/02/product-architecture.html">
+          Product Architecture
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/04/09/the-application-layer.html">
+          The Application Layer
+        </a>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/09/07/terminology---space-based-architecture.html">
+          Terminology
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2011/07/29/terminology---basic-components.html">
+              Terminology - Basic Components
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/02/25/terminology---data-grid-topologies.html">
+              Terminology - Data Grid Topologies
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/09/07/terminology---runtime-components.html">
+              Terminology - Runtime Components
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/09/07/terminology---space-based-architecture.html">
+              Terminology - Space-Based Architecture
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/xap96/2008/09/16/programmer's-guide.html" title="Programmer's Guide">
+      Programmer's Guide
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2013/02/28/getting-started.html">
+          Getting Started
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/02/25/setting-up-your-ide-to-work-with-xap.html">
+              Setting Up your IDE to work with XAP
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/01/04/running-and-debugging-within-your-ide.html">
+              Running and Debugging Within Your IDE
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/02/the-runtime-environment.html">
+              The Runtime Environment
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/06/05/the-grid-service-agent.html">
+                  The Grid Service Agent
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/03/18/the-grid-service-container.html">
+                  The Grid Service Container
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/09/07/the-grid-service-manager.html">
+                  The Grid Service Manager
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/09/07/the-lookup-service.html">
+                  The Lookup Service
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/02/14/packaging-and-deployment.html">
+              Packaging and Deployment
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/03/11/the-processing-unit-structure-and-configuration.html">
+                  The Processing Unit Structure and Configuration
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/09/04/configuring-processing-unit-elements.html">
+                      Configuring Processing Unit Elements
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/27/configuring-the-processing-unit-sla.html">
+                      Configuring the Processing Unit SLA
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/05/03/custom-processing-unit-details-and-monitors.html">
+                      Custom Processing Unit Details and Monitors
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/12/28/deployment-properties.html">
+                      Deployment Properties
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/09/07/deploying-and-running-the-processing-unit.html">
+                  Deploying and Running the Processing Unit
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/02/21/deploying-onto-the-service-grid.html">
+                      Deploying onto the Service Grid
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/09/11/running-in-standalone-mode.html">
+                      Running in Standalone Mode
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/elastic-processing-unit.html">
+                      Elastic Processing Unit
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/09/07/elastic-processing-unit---take-2.html">
+                          Elastic Processing Unit - take 2
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/31/elastic-space-processing-unit.html">
+                              Elastic Space Processing Unit
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/31/elastic-statelful-processing-unit.html">
+                              Elastic Statelful Processing Unit
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/31/elastic-stateless-processing-unit.html">
+                              Elastic Stateless Processing Unit
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/08/28/deploying-your-application-on-a-cloud.html">
+                  Deploying your Application on a Cloud
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/12/17/obtaining-cluster-information.html">
+                  Obtaining Cluster Information
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/10/15/main-modules.html">
+          Main Modules
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/05/25/the-in-memory-data-grid.html">
+              The In-Memory Data Grid
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/12/24/space-topologies.html">
+                  Space Topologies
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/29/multi-site-replication-over-the-wan.html">
+                      Multi-Site Replication over the WAN
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/06/03/communication-filter-over-the-wan-%28ssl,zip%29.html">
+                          Communication Filter Over the Wan (SSL,ZIP)
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/01/31/replication-gateway-components.html">
+                          Replication Gateway Components
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/13/configuring-space-gateway-targets.html">
+                          Configuring Space Gateway Targets
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/13/replication-gateway-bootstrapping-process.html">
+                          Replication Gateway Bootstrapping Process
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/06/11/multi-site-conflict-resolution-9.0.1.html">
+                          Multi-Site Conflict Resolution
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/06/11/multi-site-conflict-resolution-9.0.1.html">
+                              Multi-Site Conflict Resolution 9.0.1
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/08/01/changing-multi-site-deployment-during-runtime.html">
+                          Changing Multi-Site Deployment during Runtime
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/10/04/replication-gateway-filtering.html">
+                          Replication Gateway Filtering
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/10/02/intercepting-replication-events-at-the-gateway.html">
+                          Intercepting Replication Events at the Gateway
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/08/20/multi-site-replication-limitations.html">
+                          Multi-Site Replication Limitations
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/08/05/multi-site-replication-over-the-wan---faq.html">
+                          Multi-Site Replication over the WAN - FAQ
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/01/25/multi-space-replication-over-the-lan-or-vpn.html">
+                      Multi-Space Replication over the LAN or VPN
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/09/24/replication-gateway-lan-bootstrapping-process.html">
+                          Replication Gateway LAN Bootstrapping Process
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/03/30/deploying-and-interacting-with-the-space.html">
+                  Deploying and Interacting with the Space
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/19/the-space-component.html">
+                      The Space Component
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/03/06/space-filters.html">
+                          Space Filters
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/08/09/cluster-replication-filters.html">
+                          Cluster Replication Filters
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/12/29/space-mode-context-loader.html">
+                          Space Mode Context Loader
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/05/20/space-url.html">
+                          Space URL
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/11/14/client-side-caching-over-the-wan.html">
+                      Client Side Caching
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/11/local-view-and-local-cache.html">
+                          Local Cache
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/04/03/local-view.html">
+                          Local View
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/14/client-side-caching-over-the-wan.html">
+                          Client-Side Caching over the WAN
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/14/monitoring-the-client-side-cache.html">
+                          Monitoring the Client-Side Cache
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2009/06/28/programmatic-api-%28configurers%29.html">
+                      Programmatic API (Configurers)
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/02/19/memory-management-facilities.html">
+                      Memory Management Facilities
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/19/all-in-cache-cache-policy.html">
+                          ALL IN CACHE-Cache Policy
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/16/custom-eviction-policy.html">
+                          Custom Eviction Policy
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/19/lru-cache-policy.html">
+                          LRU-Cache Policy
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/28/asynchronous-persistency-with-the-mirror.html">
+                      Persistency
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/28/asynchronous-persistency-with-the-mirror.html">
+                          Asynchronous Persistency with the Mirror
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2013/02/14/async-persistency---mirror---advanced.html">
+                              Async Persistency - Mirror - Advanced
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/28/direct-persistency.html">
+                          Direct Persistency
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/11/space-persistency-advanced-topics.html">
+                          Persistency Advanced Topics
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/11/transient-entries.html">
+                              Transient Entries
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/12/25/space-persistency-initial-load.html">
+                          Space Persistency
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/28/cassandra-space-persistency.html">
+                              Cassandra Space Persistency
+                            </a>
+                            <ul>
+                              <li class='closed'>
+                                <a href="/xap96/2012/12/28/cassandra-space-data-source.html">
+                                  Cassandra Space Data Source
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2012/12/28/cassandra-space-synchronization-endpoint.html">
+                                  Cassandra Space Synchronization Endpoint
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2012/12/11/hector-cassandra-client.html">
+                                  Hector Cassandra Client
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/03/3/hibernate-space-persistency.html">
+                              Hibernate Space Persistency
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/07/28/migrating-from-external-data-source-api.html">
+                              Migrating From External Data Source API
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/02/24/space-data-source-api.html">
+                              Space Data Source API
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/11/space-persistency-advanced-topics.html">
+                              Space Persistency Advanced Topics
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2012/12/25/space-persistency-initial-load.html">
+                              Space Persistency Initial Load
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2013/02/25/space-synchronization-endpoint-api.html">
+                              Space Synchronization Endpoint API
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/modeling-and-accessing-your-data.html">
+                  Modeling and Accessing Your Data
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/08/20/clustered-vs-non-clustered-proxies.html">
+                      Clustered vs Non-Clustered Proxies
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/24/modeling-your-data.html">
+                      Modeling your data
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/12/pojo-support.html">
+                      POJO Support
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/06/02/pojo-metadata.html">
+                          POJO Metadata
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/06/parent-child-relationship.html">
+                          Parent Child Relationship
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/15/dynamic-properties.html">
+                          Dynamic Properties
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/03/15/storage-types---controlling-serialization.html">
+                          Storage Types - Controlling Serialization
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/document-api.html">
+                      Document API
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/05/25/extending-space-documents.html">
+                          Extending Space Documents
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/07/document-pojo-interoperability.html">
+                          Document-POJO Interoperability
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/06/14/caching-scenarios.html">
+                  Caching Scenarios
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/04/15/gigaspaces-for-hibernate-orm-users.html">
+                      GigaSpaces for Hibernate ORM Users
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/12/11/space-persistency-advanced-topics.html">
+                  Advanced Topics
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/08/communication-protocol.html">
+                      Communication Protocol
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/15/controlling-serialization-%28deprecated%29.html">
+                      Controlling Serialization (Deprecated)
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/29/externalizable-support-%28deprecated%29.html">
+                      Externalizable Support (Deprecated)
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/handling-large-objects.html">
+                      Handling Large Objects
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/27/the-space-api.html">
+              The Space API
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/03/30/the-gigaspace-interface.html">
+                  The GigaSpace Interface
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/26/change-api-advanced.html">
+                      Change API
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/03/26/change-api-advanced.html">
+                          Change API Advanced
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/24/counters.html">
+                      Counters
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/02/07/the-gigaspacecontext-annotation.html">
+                      The GigaSpaceContext Annotation
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/07/21/querying-the-space.html">
+                  Querying The Space
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/id-queries.html">
+                      Id Queries
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/20/template-matching.html">
+                      Template Matching
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/sqlquery.html">
+                      SQLQuery
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/query-nested-properties.html">
+                      Query Nested Properties
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/query-user-defined-classes.html">
+                      Query User Defined Classes
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/indexing.html">
+                      Indexing
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/21/paging-support-with-space-iterator.html">
+                      Paging Support with Space Iterator
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/06/23/getting-partial-results-using-projection-api.html">
+                      Getting Partial Results Using Projection API
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/06/23/space-object-id-operations.html">
+                  Space Object ID Operations
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/routing-in-partitioned-spaces.html">
+                  Routing In Partitioned Spaces
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/02/27/leases---automatic-expiration.html">
+                  Leases - Automatic Expiration
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/02/13/fifo-support.html">
+                  FIFO Support
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/01/23/fifo-grouping.html">
+                      FIFO Grouping
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/17/transaction-management.html">
+                  Transaction Management
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/space-locking-and-blocking.html">
+                      Space Locking and Blocking
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/06/21/gigaspaces-read-modifiers.html">
+                          GigaSpaces Read Modifiers
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/11/15/optimistic-locking.html">
+                          Optimistic Locking
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/21/pessimistic-locking.html">
+                          Pessimistic Locking
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/27/other-data-access-apis.html">
+              Other Data Access APIs
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/06/03/jdbc-driver.html">
+                  JDBC Driver
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/15/jpa-api.html">
+                  JPA API
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/06/23/jpa-entity-id.html">
+                      JPA Entity Id
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/02/03/jpa-relationships.html">
+                      JPA Relationships
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/03/gigaspaces-jpa-limitations.html">
+                      GigaSpaces JPA Limitations
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/03/09/map-api.html">
+                  Map API
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/15/memcached-api.html">
+                  Memcached API
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/28/services-on-top-of-the-data-grid.html">
+              Services on Top of the Data Grid
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/06/02/reloading-business-logic.html">
+                  Reloading Business Logic
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/01/task-execution-over-the-space.html">
+              Task Execution over the Space
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/aggregators.html">
+                  Aggregators
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2009/08/31/dynamic-language-tasks.html">
+                  Dynamic Language Tasks
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/05/24/space-based-remoting.html">
+              Space Based Remoting
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/executor-based-remoting.html">
+                  Executor Based Remoting
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/event-driven-remoting.html">
+                  Event Driven Remoting
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/28/event-processing.html">
+              Event Processing
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/03/04/archive-container.html">
+                  Archive Container
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/13/cassandra-archive-operation-handler.html">
+                      Cassandra Archive Operation Handler
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/24/notify-container.html">
+                  Notify Container
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/04/24/session-based-messaging-api.html">
+                      Session Based Messaging API
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/16/durable-notifications.html">
+                          Durable Notifications
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/09/slow-consumer.html">
+                          Slow Consumer
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/12/polling-container.html">
+                  Polling Container
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/06/18/data-event-listener.html">
+                  Data Event Listener
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/07/11/event-exception-handler.html">
+                  Event Exception Handler
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/04/messaging-support.html">
+              Messaging Support
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/03/27/jms-api-support.html">
+                  JMS API Support
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/12/jms---basics.html">
+                      JMS - Basics
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2010/05/06/jms-api-basic-usage.html">
+                          JMS API Basic Usage
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/04/07/jms-messages-in-gigaspaces.html">
+                          JMS Messages in GigaSpaces
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/12/02/jms-space-interoperability.html">
+                          JMS-Space Interoperability
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/09/12/jms-administration-api.html">
+                          JMS Administration API
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2008/05/22/working-with-gigaspaces-jndi.html">
+                              Working with GigaSpaces JNDI
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2008/10/28/working-with-gsjmsadmin.html">
+                              Working with GSJMSAdmin
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/05/02/using-jms-with-openspaces-example.html">
+                          Using JMS with OpenSpaces Example
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/12/jms---advanced.html">
+                      JMS - Advanced
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/14/jms-failover.html">
+                          JMS Failover
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/22/jms-transactions-in-gigaspaces.html">
+                          JMS Transactions in GigaSpaces
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/22/jms-user-security.html">
+                          JMS User Security
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/14/browsing-jms-queues.html">
+                          Browsing JMS Queues
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/14/jms-known-issues-and-considerations.html">
+                          JMS Known Issues and Considerations
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/25/using-gigaspaces-jms-without-changing-the-classpath.html">
+                          Using GigaSpaces JMS Without Changing the Classpath
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/09/02/web-application-support.html">
+              Web Application Support
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/05/26/global-http-session-sharing.html">
+                  Global HTTP Session Sharing
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/08/01/web-processing-unit-container.html">
+                  Web Processing Unit Container
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/17/web-jetty-processing-unit-container.html">
+                      Web Jetty Processing Unit Container
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/05/26/http-session-management.html">
+                          HTTP Session Management
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/03/3/apache-load-balancer-agent.html">
+                      Apache Load Balancer Agent
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2012/10/15/admin-modules.html">
+          Admin Modules
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/administration-and-monitoring-api-security.html">
+              Administration and Monitoring API
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/08/06/dump.html">
+                  Dump
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/12/25/logging-api.html">
+                  Logging API
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/04/17/administrative-alerts.html">
+                  Administrative Alerts
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/05/14/custom-triggering-of-an-alert.html">
+                      Custom Triggering of an Alert
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/19/snmp-connectivity-via-alert-logging-gateway.html">
+                      SNMP Connectivity via Alert Logging Gateway
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/integrations.html">
+          Integrations
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/07/04/maven-plugin.html">
+              Maven Plugin
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2008/10/27/maven-plugin---advanced.html">
+                  Maven Plugin - Advanced
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/08/30/mule-esb.html">
+              Mule ESB
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2012/09/04/mule-event-container-transport.html">
+                  Mule Event Container Transport
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/08/30/mule-processing-unit.html">
+                  Mule Processing Unit
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/30/mule-queue-provider.html">
+                  Mule Queue Provider
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/10/31/mule-seda-model.html">
+                  Mule SEDA Model
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/evaluating-performance-and-scalability.html">
+              Scala
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/constructor-based-properties.html">
+                  Constructor Based Properties
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/enhanced-xap-scala-repl.html">
+                  Enhanced XAP Scala REPL
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/scala-predicate-based-queries.html">
+                  Scala Predicate Based Queries
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/05/scala-scripting-executor.html">
+                  Scala Scripting Executor
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/07/20/scala-task-execution.html">
+                  Scala Task Execution
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/11/07/document-pojo-interoperability.html">
+          Interoperability
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2011/12/26/platform-interoperability-in-gigaspaces.html">
+              Platform Interoperability in GigaSpaces
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/03/05/rest-api.html">
+              REST API
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/07/18/xap-cpp.html">
+              XAP CPP
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/04/03/installing-cpp-api-package.html">
+                  Installing CPP API Package
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/04/12/cpp-api-hello-world-example.html">
+                  CPP API Hello World Example
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/04/29/cpp-api-basics.html">
+                  CPP API Basics
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/01/cpp-type-converter.html">
+                      CPP Type Converter
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/02/gigaspaces-cpp-api.html">
+                      GigaSpaces CPP API
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2010/04/29/cpp-api-configuration-file.html">
+                      CPP API Configuration File
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/18/cpp-api-code-generator.html">
+                      CPP API Code Generator
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/18/cpp-api-mapping-file.html">
+                          CPP API Mapping File
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/18/gsxml2cpp-utility.html">
+                          gsxml2cpp Utility
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/06/29/cpp-api-examples.html">
+                      CPP API Examples
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/02/22/cpp-api-usage-example.html">
+                          CPP API Usage Example
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/04/30/gigaspaces-cpp-processing-unit-example.html">
+                          GigaSpaces CPP Processing Unit Example
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/01/writing-existing-cpp-class-to-space.html">
+                          Writing Existing CPP Class to Space
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/04/29/cpp-api---advanced.html">
+                  CPP API - Advanced
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2010/04/30/gigaspaces-cpp-processing-unit-example.html">
+                      CPP Processing Unit
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/19/gigaspaces-cpp-api---overview.html">
+                      GigaSpaces CPP API - Overview
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2010/09/20/cloud-and-virtualization.html">
+          Cloud and Virtualization
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2010/09/20/xap-esm-on-cisco-ucs.html">
+              XAP ESM on Cisco UCS
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/09/20/xap-esm-on-rackspace.html">
+              XAP ESM on Rackspace
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/07/08/xap-on-rackspace.html">
+              XAP on Rackspace
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/06/21/xap-on-gogrid.html">
+              XAP on GoGrid
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/01/17/xap-on-vmware.html">
+              XAP on VMWare
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/10/12/appendix.html">
+          Appendix
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/09/04/xap-overview.html">
+              XAP Overview
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/04/09/openspaces-faq.html">
+              OpenSpaces FAQ
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2007/12/02/xap-community-faq.html">
+              XAP-Community FAQ
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/03/3/about-jini.html">
+              About Jini
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="/xap96/2008/09/07/administrator's-guide.html" title="Administrator's Guide">
+      Administrator's Guide
+    </a>
+    <ul>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/installation.html">
+          Installation
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/installation-prerequisites.html">
+              Installation Prerequisites
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/04/05/installing-gigaspaces.html">
+                  Installing GigaSpaces
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/05/31/license-key.html">
+                  License Key
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/07/11/supported-platforms.html">
+                  Supported Platforms
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/system-environment-and-environment-variables.html">
+              System Environment and Environment Variables
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/07/24/common-environment-variables.html">
+                  Common Environment Variables
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/06/04/setting-classpath.html">
+                  Setting Classpath
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/12/22/setting-jvm-location.html">
+                  Setting JVM Location
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/configuring-the-system.html">
+          Configuring the System
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/07/17/system-properties-list.html">
+              System Properties List
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/12/22/failover-detection-and-tuning.html">
+              Failover Detection and Tuning
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/12/16/split-brain-and-island-scenarios.html">
+                  Split Brain and Island Scenarios
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/12/16/split-brain-and-active-election---general-definition.html">
+                      Split-Brain and Active Election - General Definition
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2013/06/16/web-management-console.html">
+          Web Management Console
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2013/04/08/starting-the-management-console.html">
+              Starting the Management Console
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/dashboard-view.html">
+              Dashboard View
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/application-view.html">
+              Application View
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/hosts-view.html">
+              Hosts View
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/16/data-grid-view.html">
+              Data Grid View
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2009/09/17/security-administration.html">
+          Security
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/security-basics.html">
+              Security Basics
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/security-concepts.html">
+                  Security Concepts
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/27/security-authorities.html">
+                  Security Authorities
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/05/5/security-configurations.html">
+                  Security Configurations
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/07/26/programmatically-managing-the-security-directory.html">
+                  Programmatically Managing the Security Directory
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/02/default-file-based-security-implementation.html">
+              Default File-Based Security Implementation
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/securing-xap-components.html">
+              Securing XAP Components
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/08/28/securing-your-data.html">
+                  Securing your Data
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/05/21/securing-the-grid-services.html">
+                  Securing the Grid Services
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/08/26/securing-the-transport-layer-%28using-ssl%29.html">
+                  Securing the Transport Layer (using SSL)
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2009/09/17/security-administration.html">
+              Security Administration
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/04/02/gigaspaces-management-center-%28ui%29-security.html">
+                  GigaSpaces Management Center (UI) Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/05/03/command-line-interface-%28cli%29-security.html">
+                  Command Line Interface (CLI) Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2009/09/17/administration-and-monitoring-api-security.html">
+                  Administration and Monitoring API Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/auditing.html">
+                  Auditing
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2009/09/21/java-security-policy-file.html">
+                  Java Security Policy File
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/04/02/securing-the-helloworld-example.html">
+              Securing the HelloWorld example
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/06/02/custom-security.html">
+              Custom Security
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/23/custom-authentication.html">
+                  Custom Authentication
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/06/02/custom-user-role-management.html">
+                  Custom User-Role Management
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/07/08/spring-security-bridge.html">
+              Spring Security Bridge
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2010/07/11/introducing-spring-security.html">
+                  Introducing Spring Security
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/04/09/gigaspaces-spring-based-security-bridge.html">
+                  GigaSpaces Spring-based Security bridge
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/24/authenticating-against-a-database.html">
+                  Authenticating against a database
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/24/authenticating-against-an-ldap-repository.html">
+                  Authenticating against an LDAP repository
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2011/09/30/gigaspaces-logging.html">
+          GigaSpaces Logging
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2009/07/16/formatting-log-messages.html">
+              Formatting Log Messages
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/08/24/managing-log-files.html">
+              Managing Log Files
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2009/07/16/backing-up-files-with-a-custom-policy.html">
+                  Backing-up Files With a Custom Policy
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/11/networking-how-tos.html">
+          Networking How Tos
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/how-to-configure-unicast-discovery.html">
+              How to Configure Unicast Discovery
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/03/3/how-to-configure-multicast.html">
+              How to Configure Multicast
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2008/09/08/how-to-determine-whether-multicast-is-available.html">
+                  How to Determine Whether Multicast is Available
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/08/25/how-to-set-gigaspaces-over-nat.html">
+              How to Set GigaSpaces Over NAT
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/lookup-service-configuration.html">
+              Lookup Service Configuration
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/04/02/how-to-configure-an-environment-with-multiple-network-cards-%28multi-nic%29.html">
+              How to Configure an Environment With Multiple Network-Cards (Multi-NIC)
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2010/04/25/advanced-multi-nic-configuration.html">
+                  Advanced Multi-NIC Configuration
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/how-to-set-gigaspaces-over-a-firewall.html">
+              How to Set GigaSpaces Over a Firewall
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/10/09/how-to-control-the-used-ports.html">
+              How to Control the Used Ports
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/managing-and-monitoring-a-running-system.html">
+          Managing and Monitoring a Running System
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2011/01/02/commands-and-scripts.html">
+              Commands and Scripts
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/01/02/commands-and-scripts.html">
+                  Scripts
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/gsinstance---gigaspaces-cli.html">
+                      gsInstance - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/platforminfo---gigaspaces-cli.html">
+                      PlatformInfo - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/startjinilus---gigaspaces-cli.html">
+                      startJiniLUS - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/29/startjinitx_mahalo---gigaspaces-cli.html">
+                      startJiniTX_Mahalo - GigaSpaces CLI
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/01/02/commands-and-scripts.html">
+                  Commands
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/cd---gigaspaces-cli.html">
+                      cd - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/06/6/undeploy-application---gigaspaces-cli.html">
+                      deploy-application - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/07/02/deploy---gigaspaces-cli.html">
+                      deploy - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/10/15/deploy-memcached---gigaspaces-cli.html">
+                      deploy-memcached - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/21/deploy-space-gigaspaces-cli.html">
+                      deploy-space GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/05/14/gs.bat---other-cli-commands.html">
+                      gs.bat - Other CLI Commands
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/gsa---gigaspaces-cli.html">
+                      gsa - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/help---gigaspaces-cli.html">
+                      help - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/12/jconsole---gigaspaces-cli.html">
+                      jconsole - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/27/list---gigaspaces-cli.html">
+                      list - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/login---gigaspaces-cli.html">
+                      login - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/ls---gigaspaces-cli.html">
+                      ls - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/pwd---gigaspaces-cli.html">
+                      pwd - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/quit---gigaspaces-cli.html">
+                      quit - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/set---gigaspaces-cli.html">
+                      set - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/17/space---gigaspaces-cli.html">
+                      space - GigaSpaces CLI
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/17/space-clean---gigaspaces-cli.html">
+                          space clean - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/17/space-clear---gigaspaces-cli.html">
+                          space clear - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/27/space-cluster-members---gigaspaces-cli.html">
+                          space cluster-members - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-config---gigaspaces-cli.html">
+                          space config - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-connections---gigaspaces-cli.html">
+                          space connections - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/04/22/space-copy---gigaspaces-cli.html">
+                          space copy - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-list---gigaspaces-cli.html">
+                          space list - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-ping---gigaspaces-cli.html">
+                          space ping - GigaSpaces CLI
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2009/12/08/space-sql---gigaspaces-cli.html">
+                          space sql - GigaSpaces CLI
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/stats---gigaspaces-cli.html">
+                      stats - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/01/01/task---gigaspaces-cli.html">
+                      task - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/06/6/undeploy-application---gigaspaces-cli.html">
+                      undeploy-application - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/02/20/undeploy---gigaspaces-cli.html">
+                      undeploy - GigaSpaces CLI
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/05/03/graphical-user-interface.html">
+              Graphical User Interface
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/04/12/gigaspaces-management-center.html">
+                  GigaSpaces Management Center
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2008/11/10/using-space-browser-tab---gigaspaces-management-center.html">
+                      Using Space Browser Tab - GigaSpaces Management Center
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/27/gigaspaces-browser-tree-panel-and-configuration-panel.html">
+                          GigaSpaces Browser Tree Panel and Configuration Panel
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/connections-view---gigaspaces-browser.html">
+                              Connections View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/10/16/data-types-view---gigaspaces-browser.html">
+                              Data Types View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/object-inspector.html">
+                              Object Inspector
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/query-view---gigaspaces-browser.html">
+                              Query View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2010/04/12/statistics-view---gigaspaces-browser.html">
+                              Statistics View - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/transactions-view---gigaspaces-browser.html">
+                              Transactions View - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2013/07/10/gigaspaces-browser-menus-and-buttons.html">
+                          GigaSpaces Browser Menus and Buttons
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/12/managing-space-containers---gigaspaces-browser.html">
+                          Managing Space Containers - GigaSpaces Browser
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-configuration-directory-services-tab---gigaspaces-browser.html">
+                              Space Container Configuration Directory Services Tab - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-configuration-general-tab---gigaspaces-browser.html">
+                              Space Container Configuration General Tab - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-configuration-jms-tab---gigaspaces-browser.html">
+                              Space Container Configuration JMS Tab - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-container-maintenance---gigaspaces-browser.html">
+                              Space Container Maintenance - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/12/pending-notify-templates-information.html">
+                          Pending Notify Templates Information
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/04/working-with-clusters---gigaspaces-browser.html">
+                          Working with Clusters - GigaSpaces Browser
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/customizing-cluster-view---gigaspaces-browser.html">
+                              Cluster View - GigaSpaces Browser
+                            </a>
+                            <ul>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/customizing-cluster-view---gigaspaces-browser.html">
+                                  Customizing Cluster View - GigaSpaces Browser
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/viewing-cluster-policy-settings-for-space---gigaspaces-browser.html">
+                                  Viewing Cluster Policy Settings for Space - GigaSpaces Browser
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/viewing-space-interrelations-in-cluster---gigaspaces-browser.html">
+                                  Viewing Space Interrelations in Cluster - GigaSpaces Browser
+                                </a>
+                              </li>
+                              <li class='closed'>
+                                <a href="/xap96/2011/04/12/visualizing-cluster-groups-and-members---gigaspaces-browser.html">
+                                  Visualizing Cluster Groups and Members - GigaSpaces Browser
+                                </a>
+                              </li>
+                            </ul>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/03/17/creating-custom-cluster---gigaspaces-browser.html">
+                              Creating Custom Cluster - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/failover-group---gigaspaces-browser.html">
+                              Failover Group - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/load-balancing-group---gigaspaces-browser.html">
+                              Load-Balancing Group - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/replication-group---gigaspaces-browser.html">
+                              Replication Group - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2008/05/04/working-with-spaces---gigaspaces-browser.html">
+                          Working with Spaces - GigaSpaces Browser
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-jms---gigaspaces-browser.html">
+                              Space JMS - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-maintenance---gigaspaces-browser.html">
+                              Space Maintenance - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-memory-management---gigaspaces-browser.html">
+                              Space Memory Management - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-serialization-and-engine-thread-pool---gigaspaces-browser.html">
+                              Space Serialization and Engine Thread Pool - GigaSpaces Browser
+                            </a>
+                          </li>
+                          <li class='closed'>
+                            <a href="/xap96/2011/04/12/space-timeout,-filters-and-lease-manager---gigaspaces-browser.html">
+                              Space Timeout, Filters and Lease Manager - GigaSpaces Browser
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/12/09/running-gigaspaces-as-a-windows-service.html">
+              Running GigaSpaces as a Windows Service
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2011/04/27/space-jmx-management.html">
+              Space JMX Management
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2013/07/21/monitoring-network-activity.html">
+              Monitoring Network Activity
+            </a>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/03/04/suggested-monitoring-tools.html">
+              Suggested Monitoring Tools
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class='closed'>
+        <a href="/xap96/2008/09/03/advanced-tasks.html">
+          Advanced Tasks
+        </a>
+        <ul>
+          <li class='closed'>
+            <a href="/xap96/2012/11/05/data-grid-clustering.html">
+              Data-Grid Clustering
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/06/05/consistency-level.html">
+                  Consistency Level
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2012/06/13/data-partitioning.html">
+                  Data-Partitioning
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/12/22/failover-detection-and-tuning.html">
+                  Failover
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/01/31/replication-gateway-components.html">
+                  Replication
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/01/replication-topologies.html">
+                      Replication Topologies
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/14/synchronous-replication.html">
+                      Synchronous Replication
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/13/asynchronous-replication.html">
+                      Asynchronous Replication
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/10/04/space-instance-recovery.html">
+                      Space Instance Recovery
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2013/05/25/replication-operations.html">
+                      Replication Operations
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/12/19/controlling-the-replication-redo-log.html">
+                      Controlling the Replication Redo Log
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/10/14/replication-parameters.html">
+                      Replication Parameters
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2013/08/01/split-brain-and-primary-resolution.html">
+                  Split Brain and Primary Resolution
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/performance-tuning-and-considerations.html">
+              Performance Tuning and Considerations
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2011/04/27/tuning-infrastructure.html">
+                  Tuning Infrastructure
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2008/09/10/tuning-gigaspaces-performance---advanced.html">
+                  Tuning GigaSpaces Performance
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2013/07/26/tuning-gigaspaces-performance---basics.html">
+                      Tuning GigaSpaces Performance - Basics
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2008/09/10/tuning-gigaspaces-performance---advanced.html">
+                      Tuning GigaSpaces Performance - Advanced
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2011/04/27/large-scale-deployment.html">
+                          Large Scale Deployment
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2012/07/08/proxy-connectivity-(old).html">
+                          Proxy Connectivity
+                        </a>
+                        <ul>
+                          <li class='closed'>
+                            <a href="/xap96/2012/07/08/proxy-connectivity-%28old%29.html">
+                              Proxy Connectivity (Old)
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/12/02/tuning-java-virtual-machines.html">
+                  Tuning Java Virtual Machines
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2010/01/08/moving-into-production-checklist.html">
+                  Moving into Production Checklist
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2011/08/07/tuning-threads-usage.html">
+                  Tuning Threads Usage
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2010/12/25/troubleshooting-tools.html">
+              Troubleshooting
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2010/12/20/troubleshooting-common-user-issues.html">
+                  Troubleshooting Common User Issues
+                </a>
+              </li>
+              <li class='closed'>
+                <a href="/xap96/2008/09/03/troubleshooting-for-administrators.html">
+                  Troubleshooting for Administrators
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/06/19/testing-system-environment.html">
+                      Testing System Environment
+                    </a>
+                    <ul>
+                      <li class='closed'>
+                        <a href="/xap96/2008/06/11/locating-clustered-space-instances.html">
+                          Locating Clustered Space Instances
+                        </a>
+                      </li>
+                      <li class='closed'>
+                        <a href="/xap96/2010/12/25/viewing-clustered-space-status.html">
+                          Viewing Clustered Space Status
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/07/11/failure-detection.html">
+                      Failure Detection
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2010/12/25/troubleshooting-tools.html">
+                      Troubleshooting Tools
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2012/04/24/migration-upgrade-interoperability-and-compatibility.html">
+              Migration Upgrade Interoperability and Compatibility
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/07/11/backward-compatibility.html">
+                  Backward Compatibility
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class='closed'>
+            <a href="/xap96/2008/09/03/evaluating-performance-and-scalability.html">
+              Evaluating Performance and Scalability
+            </a>
+            <ul>
+              <li class='closed'>
+                <a href="/xap96/2013/05/25/benchmarking.html">
+                  Benchmarking
+                </a>
+                <ul>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/27/benchmark-utility---gigaspaces-cli.html">
+                      Benchmark Utility - GigaSpaces CLI
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2011/04/27/benchmark-view---gigaspaces-browser.html">
+                      Benchmark View - GigaSpaces Browser
+                    </a>
+                  </li>
+                  <li class='closed'>
+                    <a href="/xap96/2012/04/01/c++-benchmark-framework.html">
+                      C++ Benchmark Framework
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+        </div>
+        <div class='col-md-8'>
+          
+<h1 id="writing-pojo-services">Writing POJO Services</h1>
+
+<p>{urhere}~<a href="#1">Overview</a> - <a href="#2">The Application Workflow</a> - <a href="#3">Implementation</a> - <a href="#4">POJO Domain Model</a> - <img src="/attachment_files/sstar.gif" alt="sstar.gif" /> <strong><a href="#5">Writing POJO Services</a></strong> - <a href="#6">Wiring with Spring (PU Configuration)</a> - <a href="#7">Building and Packaging</a> - <a href="#8">Deployment</a> - <a href="#9">What&#8217;s Next?</a>~{urhere}</p>
+
+<p>Once we&#8217;re done with the implementation of our domain model, it&#8217;s time to implement each of the six services described in the above diagram. We will cover each one of them, but first, we want to make the code of the services oblivious to the underlying space so that our code will not be dependent on the GigaSpaces solution.</p>
+
+<p>Solving the dependency issue for the event objects (<code>OrderEvent</code>) is easy, as Open Spaces takes care of the polling and notification operations behind the scenes since it&#8217;s all configured in the <code>pu.xml</code> file of the Processing Unit. Doing the same with the <code>AccountData</code> objects is not possible as the services have to access those objects according to the application&#8217;s specific business logic. To solve this, we&#8217;ll implement a DAO (Data Access Object) that will take care of the space operations.</p>
+
+<h2 id="accountdatadao">AccountDataDAO</h2>
+
+<div id="deck2"></div>
+<div class="tabsection"><ul class="nav nav-tabs"></ul><div class="tab-content">
+<div class="tab-pane" id="interface" title="Interface">
+
+
+<div class="highlight"><pre><code class="java"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">openspaces</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">oms</span><span class="o">.</span><span class="na">common</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * accountData data access object interface.</span>
+<span class="cm"> */</span> 
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IAccountDataDAO</span> <span class="o">{</span>
+	
+	<span class="cm">/**</span>
+<span class="cm">	 * Checks if the accountData object for a given userName is found. </span>
+<span class="cm">	 * @param userName</span>
+<span class="cm">	 * @return true if account found, otherwise returns false.</span>
+<span class="cm">	 */</span>
+	<span class="kt">boolean</span> <span class="nf">isAccountFound</span><span class="o">(</span><span class="n">String</span> <span class="n">userName</span><span class="o">);</span>
+	
+	<span class="cm">/**</span>
+<span class="cm">	 * Updates the stored accountData object with the new parameters. </span>
+<span class="cm">	 * @param accountData - accountData object containing the new parameters to use for updating,</span>
+<span class="cm">	 * 		accountData.userName attribute is used as the unique accountData identifier.</span>
+<span class="cm">	 */</span>
+	<span class="kt">void</span> <span class="nf">updateAccountData</span><span class="o">(</span><span class="n">AccountData</span> <span class="n">accountData</span><span class="o">);</span>
+
+	<span class="cm">/**</span>
+<span class="cm">	 * Gets the accountData object matching the userName, blocks until found.</span>
+<span class="cm">	 * @param userName</span>
+<span class="cm">	 * @return AccountData</span>
+<span class="cm">	 */</span>
+	<span class="n">AccountData</span> <span class="nf">getAccountData</span><span class="o">(</span><span class="n">String</span> <span class="n">userName</span><span class="o">);</span>
+	
+	<span class="cm">/**</span>
+<span class="cm">	 * Saves the accountData object.</span>
+<span class="cm">	 * @param accountData - accountData to be saved.</span>
+<span class="cm">	 */</span>
+	<span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">AccountData</span> <span class="n">accountData</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+[Choose another tab](#deck2) (back to top)
+</div>
+<div class="tab-pane" id="implementation" title="Implementation">
+
+
+<div class="highlight"><pre><code class="java"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">openspaces</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">oms</span><span class="o">.</span><span class="na">common</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">net.jini.core.lease.Lease</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.openspaces.core.GigaSpace</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.core.context.GigaSpaceContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.example.oms.common.AccountData</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.j_spaces.core.client.ReadModifiers</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.j_spaces.core.client.UpdateModifiers</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * A gigapsaces based implementation of the account data access abstraction.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AccountDataDAO</span> <span class="kd">implements</span> <span class="n">IAccountDataDAO</span> <span class="o">{</span>
+
+	<span class="cm">/**</span>
+<span class="cm">	 *  gigaSpace is injected through the pu.xml using the setter. </span>
+<span class="cm">	 */</span>
+	<span class="nd">@GigaSpaceContext</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;gigaSpace&quot;</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="n">GigaSpace</span> <span class="n">gigaSpace</span><span class="o">;</span>
+	
+	<span class="cm">/**</span>
+<span class="cm">	 * @param gigaSpace - Sets gigaSpace</span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setGigaSpace</span><span class="o">(</span><span class="n">GigaSpace</span> <span class="n">gigaSpace</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">gigaSpace</span> <span class="o">=</span> <span class="n">gigaSpace</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	<span class="cm">/**</span>
+<span class="cm">	 * isAccountFound&lt;p&gt;</span>
+<span class="cm">	 * Checks if account found in space, works even if the account is blocked.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param userName</span>
+<span class="cm">	 * @return true if account with the following userName is found in the space, otherwise returns false.</span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isAccountFound</span><span class="o">(</span><span class="n">String</span> <span class="n">userName</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">AccountData</span> <span class="n">accountDataTemplate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AccountData</span><span class="o">();</span>
+		<span class="n">accountDataTemplate</span><span class="o">.</span><span class="na">setUserName</span><span class="o">(</span><span class="n">userName</span><span class="o">);</span>
+		<span class="c1">// read the accountData with dirty read making to read even blocked accounts.</span>
+		<span class="n">AccountData</span> <span class="n">accountData</span> <span class="o">=</span> <span class="n">gigaSpace</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">accountDataTemplate</span><span class="o">,</span> <span class="mi">0</span><span class="cm">/* nowait */</span><span class="o">,</span> <span class="n">ReadModifiers</span><span class="o">.</span><span class="na">DIRTY_READ</span><span class="o">);</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">accountData</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+			<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+		<span class="k">else</span>
+			<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**</span>
+<span class="cm">	 * Reads the accountData with exclusive read, making it invisible to other</span>
+<span class="cm">	 * processor threads, Blocks until found.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param userName - user name of the account.</span>
+<span class="cm">	 * @return accountData - the accountData read.</span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="n">AccountData</span> <span class="nf">getAccountData</span><span class="o">(</span><span class="n">String</span> <span class="n">userName</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">AccountData</span> <span class="n">accountDataTemplate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AccountData</span><span class="o">();</span>
+		<span class="n">accountDataTemplate</span><span class="o">.</span><span class="na">setUserName</span><span class="o">(</span><span class="n">userName</span><span class="o">);</span>
+		<span class="c1">// read the accountData with exclusive read making it invisible to other</span>
+		<span class="c1">// processor threads, block until found</span>
+		<span class="n">AccountData</span> <span class="n">accountData</span> <span class="o">=</span> <span class="n">gigaSpace</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">accountDataTemplate</span><span class="o">,</span> <span class="n">Long</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">,</span> 
+			<span class="n">ReadModifiers</span><span class="o">.</span><span class="na">EXCLUSIVE_READ_LOCK</span><span class="o">);</span>
+		<span class="k">return</span> <span class="n">accountData</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**</span>
+<span class="cm">	 * Updates the accountData object according to its userName unique</span>
+<span class="cm">	 * attribute. Blocks until updates.</span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">updateAccountData</span><span class="o">(</span><span class="n">AccountData</span> <span class="n">accountData</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// Writes the account data to the space, using &lt;code&gt;Long.MAX_VALUE_VALUE&lt;/code&gt;</span>
+		<span class="c1">// as the update timeout (which basically means forever).</span>
+		<span class="n">gigaSpace</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">accountData</span><span class="o">,</span> <span class="n">Lease</span><span class="o">.</span><span class="na">FOREVER</span><span class="o">,</span> <span class="n">Long</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">,</span> <span class="n">UpdateModifiers</span><span class="o">.</span><span class="na">UPDATE_ONLY</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**</span>
+<span class="cm">	 * Writes the accountData object to the space.</span>
+<span class="cm">	 * </span>
+<span class="cm">	 * @param accountData - accountData to be written.</span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">AccountData</span> <span class="n">accountData</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">gigaSpace</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">accountData</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+
+[Choose another tab](#deck2) (back to top)
+</div>
+</div></div>
+
+<p>Let&#8217;s move on to the services, each described in its own tab below:
+&lt;div id="deck3"&gt;&lt;/div&gt;
+&lt;div class='tabsection'&gt;&lt;ul class='nav nav-tabs'&gt;&lt;/ul&gt;&lt;div class='tab-content'&gt;
+&lt;div class='tab-pane' id='account_preloader' 
+      		title='Account Preloader'&gt;</p>
+
+<h2 id="account-preloader----feeder-processing-unit">Account Preloader &#8211; Feeder Processing Unit</h2>
+
+<p>The preloader simply loads 100 accounts into the space. You should note two things in the code below. First, it implements <code>InitializingBean</code>, which means its <code>afterPropertiesSet</code> method is called when the service is loaded for the first time. The second thing to note is the use of the DAO that we implemented earlier in order to write the 100 accounts. The DAO is not initialized in the class, instead it&#8217;s injected by the container (the Processing Unit).</p>
+
+<div class="highlight"><pre><code class="java"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">openspaces</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">oms</span><span class="o">.</span><span class="na">feeder</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.openspaces.example.oms.common.AccountData</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.example.oms.common.IAccountDataDAO</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.InitializingBean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Required</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.util.Assert</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * A loader bean that writes AccountData objects with unique userNames to the</span>
+<span class="cm"> * space. Since the write is executed directly in the afterPropertiesSet method</span>
+<span class="cm"> * (and not in a new thread), the processing unit waits until the loading is</span>
+<span class="cm"> * finished before initializing the next bean.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AccountDataLoader</span> <span class="kd">implements</span> <span class="n">InitializingBean</span> <span class="o">{</span>
+
+	<span class="cm">/**</span>
+<span class="cm">	 * Number of accounts to be loaded by the loader, hardcoded to 100, can be overridden </span>
+<span class="cm">	 * in the pu.xml (by setting the prop key &quot;numberOfAccounts&quot;)</span>
+<span class="cm">	 */</span>
+	<span class="kd">private</span> <span class="kt">int</span> <span class="n">numberOfAccounts</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+
+	<span class="cm">/**</span>
+<span class="cm">	 * DAO object used to access the AccountData objects implicitly. Will be</span>
+<span class="cm">	 * injected from the pu.xml. Interface enables different DAO</span>
+<span class="cm">	 * Implementations.</span>
+<span class="cm">	 */</span>
+	<span class="kd">private</span> <span class="n">IAccountDataDAO</span> <span class="n">accountDataDAO</span><span class="o">;</span>
+
+	<span class="cm">/**</span>
+<span class="cm">	 * Sets the DAO object used to access the accountData objects.</span>
+<span class="cm">	 * @param accountDataDAO&lt;p&gt;</span>
+<span class="cm">	 * &lt;code&gt;@Required&lt;/code&gt; annotation provides the &#39;blow up if this </span>
+<span class="cm">	 * required property has not been set&#39; logic. </span>
+<span class="cm">	 */</span>
+	<span class="nd">@Required</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAccountDataDAO</span><span class="o">(</span><span class="n">IAccountDataDAO</span> <span class="n">accountDataDAO</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">accountDataDAO</span> <span class="o">=</span> <span class="n">accountDataDAO</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**</span>
+<span class="cm">	 * Allows to control the number of accounts that will be initally</span>
+<span class="cm">	 * loaded to the Space. Defaults to &lt;code&gt;100&lt;/code&gt;.</span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNumberOfAccounts</span><span class="o">(</span><span class="kt">int</span> <span class="n">numberOfAccounts</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">numberOfAccounts</span> <span class="o">=</span> <span class="n">numberOfAccounts</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**</span>
+<span class="cm">	 * The first method run upon bean Initialization when implementing InitializingBean.</span>
+<span class="cm">	 * Writes &lt;numberOfAccounts&gt; AccountData through the accountDataDAO. </span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">afterPropertiesSet</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+		<span class="c1">// Checks and outputs if accountDataDAO is null.</span>
+		<span class="n">Assert</span><span class="o">.</span><span class="na">notNull</span><span class="o">(</span><span class="n">accountDataDAO</span><span class="o">,</span> <span class="s">&quot;accountDao is required property&quot;</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---[Start writing AccountData objects]---&quot;</span><span class="o">);</span>
+		<span class="c1">// Writing &lt;numberOfAccounts&gt; accountData objects to the space.</span>
+		<span class="n">AccountData</span> <span class="n">accountData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AccountData</span><span class="o">();</span>
+		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">numberOfAccounts</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+			<span class="n">accountData</span><span class="o">.</span><span class="na">setUserName</span><span class="o">(</span><span class="s">&quot;USER&quot;</span> <span class="o">+</span> <span class="n">i</span><span class="o">);</span>
+			<span class="n">accountData</span><span class="o">.</span><span class="na">setBalance</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+			<span class="c1">// Saving the accountData</span>
+			<span class="n">accountDataDAO</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">accountData</span><span class="o">);</span>
+		<span class="o">}</span>
+
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---[Wrote &quot;</span> <span class="o">+</span> <span class="n">numberOfAccounts</span> <span class="o">+</span> <span class="s">&quot; AccountData objects]---&quot;</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p><a href="#deck3">Choose another tab</a> (back to top)
+&lt;/div&gt;
+&lt;div class='tab-pane' id='event_feeder' 
+      		title='Event Feeder'&gt;</p>
+
+<h2 id="event-feeder----feeder-processing-unit">Event Feeder &#8211; Feeder Processing Unit</h2>
+
+<p>The Feeder writes <code>OrderEvents</code> to the space that trigger the process of the application. The service implements the <code>InitializingBean</code> interface, which means the <code>afterPropertiesSet</code> method is called when the service is loaded. Additionaly, it implements <code>DisposableBean</code>, which invokes the <code>destroy</code> method when the service is stopped.</p>
+
+<p>The objects are written directly to the space (as defined in the <code>OrderEventFeederTask</code> inner class). The reference to the space proxy is received through injection from the Processing Unit by using the <strong><code>@GigaSpaceContext(name = "gigaSpace")</code></strong> annotation before the declaration of the <code>GigaSpace</code> member. This annotation marks the injection of a GigaSpace object that is defined with a certain name (e.g. <code>gigaSpace</code>) within the <code>pu.xml</code> file.</p>
+
+<div class="highlight"><pre><code class="java"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">openspaces</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">oms</span><span class="o">.</span><span class="na">feeder</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.openspaces.core.GigaSpace</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.core.context.GigaSpaceContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.example.oms.common.OrderEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.DisposableBean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.InitializingBean</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Random</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.Executors</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.ScheduledExecutorService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.ScheduledFuture</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.concurrent.TimeUnit</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * A feeder bean that starts a scheduled task that writes a new OrderEvent object to the space.</span>
+<span class="cm"> *</span>
+<span class="cm"> * &lt;p&gt;The space is injected into this bean using OpenSpaces support for @GigaSpaceContext</span>
+<span class="cm"> * annoation.</span>
+<span class="cm"> *</span>
+<span class="cm"> * &lt;p&gt;The scheduled support uses the java.util.concurrent Scheduled Executor Service. It</span>
+<span class="cm"> * is started and stopped based on Spring lifeceycle events.</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderEventFeeder</span> <span class="kd">implements</span> <span class="n">InitializingBean</span><span class="o">,</span> <span class="n">DisposableBean</span> <span class="o">{</span>
+
+	<span class="kd">private</span> <span class="n">Random</span> <span class="n">randomGen</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="o">();</span>
+
+    <span class="kd">private</span> <span class="n">ScheduledExecutorService</span> <span class="n">executorService</span><span class="o">;</span>
+
+    <span class="c1">//	Delayed result bearing action</span>
+    <span class="kd">private</span> <span class="n">ScheduledFuture</span><span class="o">&lt;?&gt;</span> <span class="n">sf</span><span class="o">;</span>
+    
+    <span class="cm">/**</span>
+<span class="cm">     * Delay between scheduled tasks</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">defaultDelay</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">;</span>
+    
+	<span class="cm">/**</span>
+<span class="cm">	 * Number of accounts loaded by the loader, injected from the pu.xml to calculate</span>
+<span class="cm">	 * the number of non-matching (without matching accounts) orderEvents to feed.</span>
+<span class="cm">	 */</span>
+    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">numberOfAccounts</span><span class="o">;</span>
+        
+    <span class="cm">/**</span>
+<span class="cm">     * Percent of AccountData objects to be rejected due to missing account.</span>
+<span class="cm">     * This is used artificially in this example to create orderEvents that </span>
+<span class="cm">     * will not have any matching account.</span>
+<span class="cm">     */</span>	 
+    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">dropOffPercent</span><span class="o">=</span><span class="mi">20</span><span class="o">;</span>
+    
+    <span class="cm">/**</span>
+<span class="cm">     * This number is used to create dropOffPercent rejected orderEvents</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="n">Integer</span> <span class="n">numberOfAccountsPlusAccountsToDrop</span><span class="o">;</span>
+    
+    <span class="cm">/**</span>
+<span class="cm">     * The scheduled orderEvent feeding task.</span>
+<span class="cm">     */</span> 
+    <span class="kd">private</span> <span class="n">OrderEventFeederTask</span> <span class="n">orderEventFeederTask</span><span class="o">;</span>
+    
+    <span class="nd">@GigaSpaceContext</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;gigaSpace&quot;</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">GigaSpace</span> <span class="n">gigaSpace</span><span class="o">;</span>
+    
+    <span class="cm">/**</span>
+<span class="cm">     * @param defaultDelay - Sets default delay between feeding tasks.</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDefaultDelay</span><span class="o">(</span><span class="kt">long</span> <span class="n">defaultDelay</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">defaultDelay</span> <span class="o">=</span> <span class="n">defaultDelay</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="cm">/**</span>
+<span class="cm">     * @param numberOfAccounts - Sets number of accounts preloaded by the loader.</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNumberOfAccounts</span><span class="o">(</span><span class="n">Integer</span> <span class="n">numberOfAccounts</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">numberOfAccounts</span> <span class="o">=</span> <span class="n">numberOfAccounts</span><span class="o">;</span>
+	<span class="o">}</span>
+    
+	<span class="cm">/**</span>
+<span class="cm">	 * The first method run upon bean Initialization when implementing InitializingBean.</span>
+<span class="cm">	 * Starts a scheduled orderEvent feeding task. </span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">afterPropertiesSet</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="n">numberOfAccountsPlusAccountsToDrop</span> <span class="o">=</span> <span class="o">(</span><span class="mi">100</span><span class="o">*</span><span class="n">numberOfAccounts</span><span class="o">)/(</span><span class="mi">100</span><span class="o">-</span><span class="n">dropOffPercent</span><span class="o">);</span>
+    	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---[Starting feeder with cycle &lt;&quot;</span> <span class="o">+</span> <span class="n">defaultDelay</span> <span class="o">+</span> <span class="s">&quot;&gt; ]---&quot;</span><span class="o">);</span>
+        <span class="c1">//	Create a thread pool containing 1 thread capable of performing scheduled tasks</span>
+        <span class="n">executorService</span> <span class="o">=</span> <span class="n">Executors</span><span class="o">.</span><span class="na">newScheduledThreadPool</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="n">orderEventFeederTask</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OrderEventFeederTask</span><span class="o">();</span>
+        <span class="c1">//	Schedule the thread to execute the task at fixed rate with the default delay defined </span>
+        <span class="n">sf</span> <span class="o">=</span> <span class="n">executorService</span><span class="o">.</span><span class="na">scheduleAtFixedRate</span><span class="o">(</span><span class="n">orderEventFeederTask</span><span class="o">,</span> <span class="cm">/* initialDelay */</span><span class="n">defaultDelay</span><span class="o">,</span> <span class="n">defaultDelay</span><span class="o">,</span>
+                <span class="n">TimeUnit</span><span class="o">.</span><span class="na">MILLISECONDS</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">destroy</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    	<span class="c1">//	Shuting down the thread pool upon bean disposal</span>
+    	<span class="n">sf</span><span class="o">.</span><span class="na">cancel</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="n">sf</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">executorService</span><span class="o">.</span><span class="na">shutdown</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderEventFeederTask</span> <span class="kd">implements</span> <span class="n">Runnable</span> <span class="o">{</span>
+
+        <span class="kd">private</span> <span class="kt">int</span> <span class="n">counter</span><span class="o">;</span>
+                 
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>       
+            	<span class="c1">//	Create a new orderEvent with randomized userName , price and </span>
+            	<span class="c1">//	operation divided between buy and sell values.</span>
+            	<span class="n">OrderEvent</span> <span class="n">orderEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OrderEvent</span>
+                	<span class="o">(</span><span class="s">&quot;USER&quot;</span> <span class="o">+</span><span class="n">randomGen</span><span class="o">.</span><span class="na">nextInt</span><span class="o">(</span><span class="n">numberOfAccountsPlusAccountsToDrop</span><span class="o">+</span><span class="mi">1</span><span class="o">),</span> <span class="mi">100</span><span class="cm">/*price*/</span><span class="o">,</span> 
+                	 <span class="n">OrderEvent</span><span class="o">.</span><span class="na">OPERATIONS</span><span class="o">[</span><span class="n">counter</span><span class="o">++</span> <span class="o">%</span> <span class="n">OrderEvent</span><span class="o">.</span><span class="na">OPERATIONS</span><span class="o">.</span><span class="na">length</span><span class="o">]);</span>
+                <span class="n">gigaSpace</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">orderEvent</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---[Wrote orderEvent: &quot;</span><span class="o">+</span><span class="n">orderEvent</span><span class="o">+</span><span class="s">&quot; ]---&quot;</span><span class="o">);</span>
+            <span class="o">}</span> 
+            <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getCounter</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">counter</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getFeedCount</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">orderEventFeederTask</span><span class="o">.</span><span class="na">getCounter</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p><a href="#deck3">Choose another tab</a> (back to top)
+&lt;/div&gt;
+&lt;div class='tab-pane' id='event_validator' 
+      		title='Event Validator'&gt;</p>
+
+<h2 id="event-validator----runtime-processing-unit">Event Validator &#8211; Runtime Processing Unit</h2>
+
+<p>The <code>OrderEventValidator</code> takes <code>OrderEvents</code> with status <code>New</code> from the space, and checks if there&#8217;s an account with a matching username. When you follow the code, you&#8217;ll see there is no indication to the type of <code>OrderEvents</code> the validator is handling. All this logic is defined in the <code>pu.xml</code>, as well as the type of operation the validator performs on the space (by default a take operation of a single object that matches the defined template) and at which interval.</p>
+
+<p>The service implementation does not need to implement any specific interface or to have any special code. The only thing necessary is the use of the <em><code>@SpaceDataEvent</code></em> annotation that marks the method that handles the event (in this case the event is a take of an <code>OrderEvent</code> from the space). Note that the same event-handling method (<code>validatesOrderEvent</code> in our case) has a return value. That returned object is written back to the space by the container. Again, we are using the DAO object to access the accounts within the space without writing any specific GigaSpaces code.</p>
+
+<p>As you can see, the implementation has no use of propietary code. The <code>OrderEvents</code> are received and written to the space automatically by the container. Accessing the accounts is done through the DAO, so there is no code that gives any indication to the use of GigaSpaces as the underlying layer for data and messaging.</p>
+
+<div class="highlight"><pre><code class="java"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">openspaces</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">oms</span><span class="o">.</span><span class="na">runtime</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.openspaces.events.adapter.SpaceDataEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.example.oms.common.IAccountDataDAO</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.example.oms.common.OrderEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Required</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderEventValidator</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">workDuration</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+    
+    <span class="cm">/**</span>
+<span class="cm">     *	DAO object used to access the AccountData objects implicitly. </span>
+<span class="cm">     *	Will be injected from the pu.xml.</span>
+<span class="cm">     *	Interface enables different DAO Implementations.</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="n">IAccountDataDAO</span> <span class="n">accountDataDAO</span><span class="o">;</span>
+    
+    <span class="nd">@Required</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAccountDataDAO</span><span class="o">(</span><span class="n">IAccountDataDAO</span> <span class="n">accountDataDAO</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">accountDataDAO</span> <span class="o">=</span> <span class="n">accountDataDAO</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**</span>
+<span class="cm">     * Sets the simulated work duration (in milliseconds). Default to 100.</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setWorkDuration</span><span class="o">(</span><span class="kt">long</span> <span class="n">workDuration</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">workDuration</span> <span class="o">=</span> <span class="n">workDuration</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Validate the given OrderEvent object and returning the validated OrderEvent.</span>
+<span class="cm">     *</span>
+<span class="cm">     * Can be invoked using OpenSpaces Events when a matching event</span>
+<span class="cm">     * occurs or using OpenSpaces Remoting.</span>
+<span class="cm">     */</span>
+    <span class="nd">@SpaceDataEvent</span>	<span class="c1">//	This annotation marks the method as the event listener.</span>
+    <span class="kd">public</span> <span class="n">OrderEvent</span> <span class="nf">validatesOrderEvent</span><span class="o">(</span><span class="n">OrderEvent</span> <span class="n">orderEvent</span><span class="o">)</span> <span class="o">{</span>
+            	    	
+    	<span class="c1">// sleep to simluate some work</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">workDuration</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// do nothing</span>
+        <span class="o">}</span>
+     
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---[Validator: Validating orderEvent:&quot;</span><span class="o">+</span><span class="n">orderEvent</span><span class="o">+</span><span class="s">&quot; ]---&quot;</span><span class="o">);</span>
+        
+        <span class="c1">//	Getting the AccountData object matching the orderEvent userName through the DAO</span>
+        <span class="kt">boolean</span> <span class="n">isAccountFound</span> <span class="o">=</span> <span class="n">accountDataDAO</span><span class="o">.</span><span class="na">isAccountFound</span><span class="o">(</span><span class="n">orderEvent</span><span class="o">.</span><span class="na">getUserName</span><span class="o">());</span> 
+        <span class="k">if</span> <span class="o">(</span><span class="n">isAccountFound</span> <span class="o">==</span> <span class="kc">true</span><span class="o">){</span>
+        	<span class="c1">//	Matching accountData found - changing orderEvent status to pending.</span>
+        	<span class="n">orderEvent</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&quot;Pending&quot;</span><span class="o">);</span>
+        	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---[Validator: OrderEvent approved, status set to PENDING]---&quot;</span><span class="o">);</span>	
+        <span class="o">}</span>
+        <span class="k">else</span> <span class="o">{</span>
+        	<span class="c1">//	No matching accountData found - changing orderEvent status to account not found.</span>
+        	<span class="n">orderEvent</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&quot;AccountNotFound&quot;</span><span class="o">);</span>
+        	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---[Validator: OrderEvent rejected, ACCOUNT NOT FOUND]---&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+        
+        <span class="c1">//  orderID is declared as primary key and as auto-generated. </span>
+    	<span class="c1">//	It must be null before writing an operation.</span>
+    	<span class="n">orderEvent</span><span class="o">.</span><span class="na">setOrderID</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+    	
+        <span class="k">return</span> <span class="n">orderEvent</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Prints out the OrderEvent object passed as a parameter. Usually invoked</span>
+<span class="cm">     * when using OpenSpaces remoting.</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sayData</span><span class="o">(</span><span class="n">OrderEvent</span> <span class="n">orderEvent</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;+++[Saying: &quot;</span><span class="o">+</span><span class="n">orderEvent</span><span class="o">+</span><span class="s">&quot;]+++&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p><a href="#deck3">Choose another tab</a> (back to top)
+&lt;/div&gt;
+&lt;div class='tab-pane' id='event_processor' 
+      		title='Event Processor'&gt;</p>
+
+<h2 id="event-processor----runtime-processing-unit">Event Processor &#8211; Runtime Processing Unit</h2>
+
+<p>Very similiar to how we implemented the <code>OrderEventValidator</code>, the <code>OrderEventProcessor</code> has a method that is annotated with <strong><code>@SpaceDataEvent</code></strong> to mark it as the handler of events. Again, the events are taken as <code>OrderEvents</code> from the space, this time only orders with status <code>Pending</code> that were validated by the <code>Validator</code>.</p>
+
+<p>With the help of the container that routes the events and the DAO to access the accounts, there is no reference to GigaSpaces&#8217; proprietary code.</p>
+
+<div class="highlight"><pre><code class="java"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">openspaces</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">oms</span><span class="o">.</span><span class="na">runtime</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.openspaces.events.adapter.SpaceDataEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.example.oms.common.AccountData</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.example.oms.common.IAccountDataDAO</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.example.oms.common.OrderEvent</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * An implementation of IOrderEventProcessor. Can set the simulated work done when</span>
+<span class="cm"> * processOrderEvent is called by setting the work duration (defaults to 100 ms).</span>
+<span class="cm"> *</span>
+<span class="cm"> * &lt;p&gt;This implementaiton is used to demonstrate OpenSpaces Events, using simple Spring configuration to cause</span>
+<span class="cm"> * processOrderEvent to be invoked when a matching event occurs. The processor uses</span>
+<span class="cm"> * OpenSpaces support for annotation markup allowing to use @SpaceDataEvent to</span>
+<span class="cm"> * mark a method as an event listener. Note, processOrderEvent does not use any space</span>
+<span class="cm"> * API on the OrderEvent object (though it can), receiving the OrderEvent object to be processed </span>
+<span class="cm"> * and returning the result that will be automatically written back to the space.</span>
+<span class="cm"> *</span>
+<span class="cm"> * &lt;p&gt;Note, changing the event container is just a matter of configuration (for example,</span>
+<span class="cm"> * switching from polling container to notify container) and does not affect this class.</span>
+<span class="cm"> *</span>
+<span class="cm"> * &lt;p&gt;Also note, the deployment model or the Space topology does not affect this orderEvent processor</span>
+<span class="cm"> * as well. The data processor can run on a remote space, embedded within a space, and using</span>
+<span class="cm"> * any Space cluster topology (partitioned, replicated, primary/backup). It is all just a</span>
+<span class="cm"> * matter of configuraion.</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OrderEventProcessor</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">workDuration</span> <span class="o">=</span> <span class="mi">100</span><span class="o">;</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *	DAO object used to access the AccountData objects implicitly. </span>
+<span class="cm">     *	Will be injected from the pu.xml.</span>
+<span class="cm">     *	Interface enables different DAO Implementations.</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span> <span class="n">IAccountDataDAO</span> <span class="n">accountDataDAO</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAccountDataDAO</span><span class="o">(</span><span class="n">IAccountDataDAO</span> <span class="n">accountDataDAO</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">accountDataDAO</span> <span class="o">=</span> <span class="n">accountDataDAO</span><span class="o">;</span>
+	<span class="o">}</span>
+    
+    <span class="cm">/** Sets the simulated work duration (in milliseconds). Defaut to 100. */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setWorkDuration</span><span class="o">(</span><span class="kt">long</span> <span class="n">workDuration</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">workDuration</span> <span class="o">=</span> <span class="n">workDuration</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**  Process the given OrderEvent object and returning the processed OrderEvent.</span>
+<span class="cm">         Can be invoked using OpenSpaces Events when a matching event</span>
+<span class="cm">         occurs or using OpenSpaces Remoting. */</span>
+    <span class="nd">@SpaceDataEvent</span>
+    <span class="kd">public</span> <span class="n">OrderEvent</span> <span class="nf">processOrderEvent</span><span class="o">(</span><span class="n">OrderEvent</span> <span class="n">orderEvent</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// sleep to simluate some work</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">workDuration</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// do nothing</span>
+        <span class="o">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---[Processor: Processing orderEvent:&quot;</span><span class="o">+</span><span class="n">orderEvent</span><span class="o">+</span><span class="s">&quot; ]---&quot;</span><span class="o">);</span>
+        
+        <span class="c1">//	read the accountData with exclusive read making it invisible to other processor threads, block until found</span>
+        <span class="n">AccountData</span> <span class="n">accountData</span> <span class="o">=</span> <span class="n">accountDataDAO</span><span class="o">.</span><span class="na">getAccountData</span><span class="o">(</span><span class="n">orderEvent</span><span class="o">.</span><span class="na">getUserName</span><span class="o">());</span>
+            	
+        <span class="k">if</span> <span class="o">(</span><span class="n">accountData</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---[Processor: Found accountData matching the orderEvent: &quot;</span><span class="o">+</span><span class="n">accountData</span><span class="o">+</span> <span class="s">&quot;]---&quot;</span><span class="o">);</span>	
+        
+        	<span class="k">if</span> <span class="o">(</span><span class="n">orderEvent</span><span class="o">.</span><span class="na">getOperation</span><span class="o">()</span> <span class="o">==</span> <span class="n">OrderEvent</span><span class="o">.</span><span class="na">BUY_OPERATION</span><span class="o">)</span> <span class="o">{</span> 
+        		<span class="c1">//	orderEvent operation is buy</span>
+        		
+        		<span class="k">if</span> <span class="o">(</span><span class="n">accountData</span><span class="o">.</span><span class="na">getBalance</span><span class="o">()</span> <span class="o">&gt;=</span> <span class="n">orderEvent</span><span class="o">.</span><span class="na">getPrice</span><span class="o">()){</span>	
+        			<span class="c1">//	balance is enough to buy</span>
+        			<span class="n">accountData</span><span class="o">.</span><span class="na">setBalance</span><span class="o">(</span><span class="n">accountData</span><span class="o">.</span><span class="na">getBalance</span><span class="o">()-</span><span class="n">orderEvent</span><span class="o">.</span><span class="na">getPrice</span><span class="o">());</span>
+        			<span class="n">orderEvent</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&quot;Processed&quot;</span><span class="o">);</span>
+        			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---[Processor: OrderEvent PROCESSED successfully!]---&quot;</span><span class="o">);</span>
+        			<span class="c1">//	update the accountData object with the new balance </span>
+        			<span class="n">accountDataDAO</span><span class="o">.</span><span class="na">updateAccountData</span><span class="o">(</span><span class="n">accountData</span><span class="o">);</span>
+        		<span class="o">}</span>
+        		<span class="k">else</span> <span class="o">{</span>
+        			<span class="c1">//	balance insufficient</span>
+        			<span class="n">orderEvent</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&quot;InsufficientFunds&quot;</span><span class="o">);</span>
+        			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---[Processor: OrderEvent rejected due to INSUFFICIENT FUNDS]---&quot;</span><span class="o">);</span>
+        		<span class="o">}</span>
+        	<span class="o">}</span>
+        	<span class="k">else</span> <span class="o">{</span>
+        		<span class="c1">//	orderEvent operation is sell</span>
+        		<span class="n">accountData</span><span class="o">.</span><span class="na">setBalance</span><span class="o">(</span><span class="n">accountData</span><span class="o">.</span><span class="na">getBalance</span><span class="o">()+</span><span class="n">orderEvent</span><span class="o">.</span><span class="na">getPrice</span><span class="o">());</span>
+        		<span class="n">orderEvent</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&quot;Processed&quot;</span><span class="o">);</span>
+        		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---[Processor: OrderEvent PROCESSED successfully!]---&quot;</span><span class="o">);</span>
+        		<span class="c1">//	update the accountData object with the new balance </span>
+        		<span class="n">accountDataDAO</span><span class="o">.</span><span class="na">updateAccountData</span><span class="o">(</span><span class="n">accountData</span><span class="o">);</span>
+        	<span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="c1">//  orderID is declared as primary key and as auto-generated. </span>
+    	<span class="c1">//	It must be null before writing an operation.</span>
+    	<span class="n">orderEvent</span><span class="o">.</span><span class="na">setOrderID</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>       
+        
+    	<span class="k">return</span> <span class="n">orderEvent</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/** Prints out the OrderEvent object passed as a parameter. Usually invoked</span>
+<span class="cm">        when using OpenSpaces remoting. */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sayData</span><span class="o">(</span><span class="n">OrderEvent</span> <span class="n">orderEvent</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;+++[Saying: &quot;</span><span class="o">+</span><span class="n">orderEvent</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p><a href="#deck3">Choose another tab</a> (back to top)
+&lt;/div&gt;
+&lt;div class='tab-pane' id='account_counter' 
+      		title='Account Counter'&gt;</p>
+
+<h2 id="account-counter----statistics-processing-unit">Account Counter &#8211; Statistics Processing Unit</h2>
+
+<p>The <code>@SpaceDataEvent</code> annotation marks the <code>outputInfo(AccountData accountData)</code> method to receive events and increment a counter. Note that as opposed to the <code>Validator</code> and <code>Processor</code>, the method here does not return any value, which means that nothing is written to the space when the method exits.</p>
+
+<div class="highlight"><pre><code class="java"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">openspaces</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">oms</span><span class="o">.</span><span class="na">stats</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.openspaces.events.adapter.SpaceDataEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.example.oms.common.AccountData</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.concurrent.atomic.AtomicInteger</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * A simple bean outputting the accountData updated balance.</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OutputAccountData</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">AtomicInteger</span> <span class="n">accountDataUpdatedCounter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+
+    <span class="nd">@SpaceDataEvent</span>	<span class="c1">//	Indicates that this method should be invoked upon notification.</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">outputInfo</span><span class="o">(</span><span class="n">AccountData</span> <span class="n">accountData</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">accountDataUpdatedCounter</span><span class="o">.</span><span class="na">incrementAndGet</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---{ AccountData balance for [&quot;</span><span class="o">+</span><span class="n">accountData</span><span class="o">.</span><span class="na">getUserName</span><span class="o">()+</span><span class="s">&quot;] was updated to [&quot;</span>
+                           <span class="o">+</span><span class="n">accountData</span><span class="o">.</span><span class="na">getBalance</span><span class="o">()+</span><span class="s">&quot;] ,Total account updates [&quot;</span> <span class="o">+</span> <span class="n">accountDataUpdatedCounter</span> <span class="o">+</span> <span class="s">&quot;] }---&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAccountDataUpdatedCount</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">accountDataUpdatedCounter</span><span class="o">.</span><span class="na">intValue</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p><a href="#deck3">Choose another tab</a> (back to top)
+&lt;/div&gt;
+&lt;div class='tab-pane' id='event_counter' 
+      		title='Event Counter'&gt;</p>
+
+<h2 id="event-counter----statistics-processing-unit">Event Counter &#8211; Statistics Processing Unit</h2>
+
+<p>This service receives notifications about <code>OrderEvents</code> that are written to the space with different states. Since it implements the <code>InitializingBean</code> interface, when the service is loaded, the <code>afterPropertiesSet()</code> method is called and several count operations are performed on the space (each for an <code>OrderEvent</code> with a different state). After this initialization, the counters are updated on each event that is received by the service.</p>
+
+<p>Later we&#8217;ll show how these counters are used as monitors that are displayed in the GigaSpaces Management Center.</p>
+
+<div class="highlight"><pre><code class="java"><span class="kn">package</span> <span class="n">org</span><span class="o">.</span><span class="na">openspaces</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">oms</span><span class="o">.</span><span class="na">stats</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.openspaces.core.GigaSpace</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.core.context.GigaSpaceContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.events.adapter.SpaceDataEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openspaces.example.oms.common.OrderEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.InitializingBean</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.concurrent.atomic.AtomicInteger</span><span class="o">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * A simple bean counting the number of orderEvent writes , processes and rejection due to</span>
+<span class="cm"> * account not found. </span>
+<span class="cm"> * Holds a 3 simple counters that are incremented each time a matching event occurs.</span>
+<span class="cm"> * Outputting the orderEvent updated status.</span>
+<span class="cm"> *</span>
+<span class="cm"> * &lt;p&gt;Also note, the orderEvent that will be counted depends on the</span>
+<span class="cm"> * configuration. For example, this example uses the &quot;non clustered&quot; view</span>
+<span class="cm"> * of the space while running within an embedded space. This means this</span>
+<span class="cm"> * coutner will count only the relevant partition processed data. It is</span>
+<span class="cm"> * just a matter of configuration to count the number of processed data</span>
+<span class="cm"> * across a cluster.</span>
+<span class="cm"> *</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OutputOrderEventCounter</span> <span class="kd">implements</span> <span class="n">InitializingBean</span> <span class="o">{</span>
+	
+	<span class="kd">private</span> <span class="n">AtomicInteger</span> <span class="n">orderEventWrittenCounter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+    <span class="kd">private</span> <span class="n">AtomicInteger</span> <span class="n">orderEventProcessedCounter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+    <span class="kd">private</span> <span class="n">AtomicInteger</span> <span class="n">orderEventAccountNotFoundCounter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+    
+    <span class="nd">@GigaSpaceContext</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;gigaSpace&quot;</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="n">GigaSpace</span> <span class="n">gigaSpace</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">afterPropertiesSet</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+		<span class="c1">//	Upon bean instantiating counts how many New, Processed and AccountNotFound </span>
+    	<span class="c1">//	are in the space and setting the relevant counters.</span>
+    	<span class="n">OrderEvent</span> <span class="n">orderEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OrderEvent</span><span class="o">();</span>
+    	<span class="n">orderEvent</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&quot;New&quot;</span><span class="o">);</span>
+    	<span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="n">gigaSpace</span><span class="o">.</span><span class="na">count</span><span class="o">(</span><span class="n">orderEvent</span><span class="o">);</span>
+    	<span class="n">orderEventWrittenCounter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(</span><span class="n">counter</span><span class="o">);</span>
+    	<span class="n">orderEvent</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&quot;Processed&quot;</span><span class="o">);</span>
+    	<span class="n">counter</span> <span class="o">=</span> <span class="n">gigaSpace</span><span class="o">.</span><span class="na">count</span><span class="o">(</span><span class="n">orderEvent</span><span class="o">);</span>
+    	<span class="n">orderEventProcessedCounter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(</span><span class="n">counter</span><span class="o">);</span>
+    	
+    	<span class="n">orderEvent</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="s">&quot;AccountNotFound&quot;</span><span class="o">);</span>
+    	<span class="n">counter</span> <span class="o">=</span> <span class="n">gigaSpace</span><span class="o">.</span><span class="na">count</span><span class="o">(</span><span class="n">orderEvent</span><span class="o">);</span>
+    	<span class="n">orderEventAccountNotFoundCounter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(</span><span class="n">counter</span><span class="o">);</span>
+	<span class="o">}</span>
+    
+    <span class="nd">@SpaceDataEvent</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">outputInfo</span><span class="o">(</span><span class="n">OrderEvent</span> <span class="n">orderEvent</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---{ OrderEvent [&quot;</span><span class="o">+</span><span class="n">orderEvent</span><span class="o">.</span><span class="na">getStatus</span><span class="o">()+</span> 
+        					<span class="s">&quot;], Total operations on orderEvents [&quot;</span> <span class="o">+</span> <span class="n">orderEventWrittenCounter</span> <span class="o">+</span> <span class="s">&quot;] }---&quot;</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">orderEvent</span><span class="o">.</span><span class="na">getStatus</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;New&quot;</span><span class="o">)){</span>
+        	<span class="n">orderEventWrittenCounter</span><span class="o">.</span><span class="na">incrementAndGet</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">else</span> <span class="o">{</span>
+        	<span class="k">if</span> <span class="o">(</span><span class="n">orderEvent</span><span class="o">.</span><span class="na">getStatus</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;Processed&quot;</span><span class="o">)){</span>
+            	<span class="n">orderEventProcessedCounter</span><span class="o">.</span><span class="na">incrementAndGet</span><span class="o">();</span>
+        	<span class="o">}</span>
+        	<span class="k">else</span> <span class="o">{</span>
+            	<span class="k">if</span> <span class="o">(</span><span class="n">orderEvent</span><span class="o">.</span><span class="na">getStatus</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;AccountNotFound&quot;</span><span class="o">)){</span>
+                	<span class="n">orderEventAccountNotFoundCounter</span><span class="o">.</span><span class="na">incrementAndGet</span><span class="o">();</span>
+            	<span class="o">}</span>
+        	<span class="o">}</span>
+        <span class="o">}</span> 	
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getOrderEventWrittenCounter</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">orderEventWrittenCounter</span><span class="o">.</span><span class="na">intValue</span><span class="o">();</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getOrderEventProcessedCounter</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">orderEventProcessedCounter</span><span class="o">.</span><span class="na">intValue</span><span class="o">();</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getOrderEventAccountNotFoundCounter</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">orderEventAccountNotFoundCounter</span><span class="o">.</span><span class="na">intValue</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p><a href="#deck3">Choose another tab</a> (back to top)
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</p>
+
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class="footer">
+          <ul class='list-inline'>
+    <li>
+        Simply Scale with
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com">GigaSpaces</a>
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com/wiki/x/xwBmAg" class="smalltext">Legal Notice</a>
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com/wiki/x/xgBmAg" class="smalltext">3rd Party License Agreements</a>
+    </li>
+    <li>
+        <a href="http://www.gigaspaces.com/wiki/x/BQFmAg" class="smalltext">Site Map</a>
+    </li>
+    <li>
+        <a href="mailto:techw@gigaspaces.com">Contact Admin</a>
+    </li>
+    <li>
+        <i><a href="http://www.atlassian.com/software/confluence">Powered by Atlassian Confluence</a></i>
+    </li>
+</ul>
+
+        </div>
+      </div>
+
+    </div><!-- /container -->
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/jquery.treeview.js"></script>
+    <script>
+      $(function () {
+        $(".tabsection").each(function(index) {
+          list = "";
+
+          $(this).find(".tab-pane").each(function(index) {
+            list_class = "";
+            timestamp = parseInt(Date.now() * Math.random()) ;
+
+            if(index === 0){
+              list_class = "class='active'";
+              $(this).prop("class", $(this).prop("class") + " active");
+            }
+
+            list += "<li " + list_class +"><a href='#" + timestamp + $(this).prop("id") +"'>" + $(this).prop("title") +"</a></li>";
+            $(this).prop("id", timestamp + $(this).prop("id"));
+          });
+          $(this).find(".nav").html(list);
+        });
+
+        $('ul.nav a').click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
+
+        summary_url = "";
+        $('.col-md-8').children('h1').each(function(index, item) {
+          summary_url += '<li><a href="#'+item.id+'">'+item.innerHTML+'</a></li>';
+        });
+
+        $("#summarypanel").html(summary_url);
+      })
+      $("#navigation").treeview({
+        persist: "location"
+      });
+    </script>
+  </body>
+</html>
