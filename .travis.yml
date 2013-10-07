@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+- 1.9.3
+script: bundle exec jekyll build
+install: bundle install
+after_success: bundle exec s3_website push --headless
+env:
+  global:
+  - secure: QtsSdlHQUcjlYHsti5AQx2EQPOvbyxnUXL1g8pxdat5a43y8oGhMyficG587DQP26/sLjPFkgyXFuCYd63AA38RxW878LER5PaILqb5mAUYk4535VchkoYGoTrXzSHNJpj3rBJlaSP0OoteN684pDl4hpSlBNHoM3PAvu73XvaA=
+  - secure: atmh+qK9JVMMzJTAT+OwgN3i0K515F/M0Amozqndubi+ifwfnD8AiOoIDVfXEkj6nYrixa4XDmlPCbzD4Ag1j+wRC5NpMGCC05YBZZjXa+PeR74T3TpitQ0cLfRAVquvWZx+TAPyQzobPu+guR9Mj8bZRhSabNAZfjVT6oa5F0A=
+  - secure: IR6rZmb3v/up/o3AckDAK9VD/4scYCKEAu3nzS5r8Y3c7uqvUxY+s2sIiXBG6BCOat5PClIRoL5aFswfADcFRI3QvIY4BvMvPdckVpSJEBreZD4LbJEr6k3pt0nl0zS98IWEr8bi06F6nMvFRovMRPWWHy9VS0GoU8vnzFOaY1M=
+  - secure: CDeYLXfCEIjhN9xHksw0X8woBadapfbt7PuCWkAKaiCTu2L+38BEeKVgUIeEPUCDcY4Xvw8vjf+sri2qCcEYaRAXtRg4B3q13awVdfIKpgkleo76M6G22AXjBS+BdkVUdRYIQVZwZk5J0kcNucCUCYe8rPAVNu4oVSpEL6baXGs=
+  - secure: eb9aRee7DEMsfLj1rA3YVrrg5my7uWzHvFWj+CDh+mkffX2MmNB59Jqx81mkJjqeeZc8QWFdV0tv50mtZHcwiUrEucsj8SnDHPJtfHePZLUDitWHkWNclGzemT9GbTqW8lrMZwPUhyyNXiEq8OmNZsEtcGsZwKEbjnuggEATMKU=
