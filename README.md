@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/uric/gigaspaces-wiki-jekyll.png)](https://travis-ci.org/uric/gigaspaces-wiki-jekyll#) 
+
 gigaspaces-wiki-jekyll
 ======================
 
