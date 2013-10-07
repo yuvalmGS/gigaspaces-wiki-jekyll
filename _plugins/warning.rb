@@ -10,10 +10,10 @@ module Jekyll
         @title = ""
         unless markup.nil?
           markups = markup.split("|")
-          
+
           title   = markups.select {|x| x =~ /title/}[0]
           icon    = markups.select {|x| x =~ /icon/}[0]
-          
+
           @title  = title.sub("title=", "") if title
           @icon   = false if icon
         end
@@ -25,15 +25,14 @@ module Jekyll
 
       def add_warning(context, content)
       	output = "<div class=\"alert alert-danger\">"
-        output += "<i class=\"icon-minus-sign pull-left\"></i>" if @icon
+        output << "<i class=\"icon-minus-sign\"></i>&nbsp;" if @icon
         unless @title.empty?
-          output += "<strong>"
-          output += Kramdown::Document.new(@title).to_html  
-          output += "</strong>"
+          output << "<strong>"
+          output << Kramdown::Document.new(@title).to_html
+          output << "</strong>"
         end
-        output += Kramdown::Document.new(content).to_html
-        output += "</div>"
-        output
+        output << Kramdown::Document.new(content).to_html
+        output << "</div>"
       end
     end
   end

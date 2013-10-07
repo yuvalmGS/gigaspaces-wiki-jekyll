@@ -24,18 +24,17 @@ module Jekyll
       def add_summary(context, content)
       	output = "<div class='panel panel-primary'><div class='panel-heading'><h3 class='panel-title'>"
         if @section
-          output += "<strong>Section Summary: </strong>" 
+          output << "<strong>Section Summary: </strong>"
         else
-          output += "<strong>Summary: </strong>"          
+          output << "<strong>Summary: </strong>"
         end
-        output += Kramdown::Document.new(content).to_html
-        output += "</h3>"
+        output << Kramdown::Document.new(content).to_html
+        output << "</h3>"
         if @section
-          output += "</div></div>"
+          output << "</div></div>"
         else
-          output += "</div><div class='panel-body'><ul class='nav nav-pills' id='summarypanel'></ul></div></div>"
+          output << "</div><div class='panel-body'><ul class='nav nav-pills' id='summarypanel'></ul></div></div>"
         end
-        output
       end
     end
   end

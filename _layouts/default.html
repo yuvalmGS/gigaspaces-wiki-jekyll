@@ -10,30 +10,30 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/font-awesome.css">
     <link rel="stylesheet" href="/css/jquery.treeview.css">
+    <link rel="stylesheet" href="/css/docs.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/syntax.css">
   </head>
   <body>
     <div class="container">
       <div class='row'>
-
-        <div class='col-md-4'>
+        <div class='col-md-3'>
           {% include nav.html %}
         </div>
-        <div class='col-md-8'>
-          {{ content }}
+        <div class='col-md-9'>
+          {% include toc.html %}
         </div>
       </div>
-
       <div class='row'>
         <div class="footer">
           {% include footer.html %}
         </div>
       </div>
-
     </div> <!-- /container -->
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/bootstrap.js"></script>
     <script type="text/javascript" src="/js/jquery.treeview.js"></script>
+    <script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>
     <script>
       $("#navigation").treeview({
         persist: "location"

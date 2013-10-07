@@ -14,9 +14,8 @@ module Jekyll
 
       def add_comment(context, content)
       	output = "<!--\n"
-        output += Kramdown::Document.new(content).to_html
-        output += "\n-->"
-        output
+        output << Kramdown::Document.new(content).to_html
+        output << "\n-->"
       end
     end
   end

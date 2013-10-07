@@ -1,8 +1,0 @@
----
-layout: post
-title:  jpql
-categories: XAP96
-page_id: 61867210
----
-
-{redirect:JPA Support}

@@ -11,4 +11,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('compositionsetup', Jekyll::CompositionsetupTag) 
+Liquid::Template.register_tag('compositionsetup', Jekyll::CompositionsetupTag)

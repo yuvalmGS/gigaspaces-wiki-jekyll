@@ -18,10 +18,9 @@ module Jekyll
 
       def add_togglecloak(context, content)
       	output = "<div class='panel panel-default'><div class='panel-heading'><h4 class='panel-title'>"
-        output += "<a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion' href='##{@div_id}'>"
-        output += Kramdown::Document.new(content).to_html
-        output += "</a></h4></div>"
-        output
+        output << "<a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion' href='##{@div_id}'>"
+        output << Kramdown::Document.new(content).to_html
+        output << "</a></h4></div>"
       end
     end
 
@@ -43,11 +42,10 @@ module Jekyll
 
       def add_gcloak(context, content)
       	output = "<div id='#{@div_id}' class='panel-collapse collapse'><div class='panel-body'>"
-        output += Kramdown::Document.new(content).to_html
-        output += "</div></div></div>"
-        output
+        output << Kramdown::Document.new(content).to_html
+        output << "</div></div></div>"
       end
-    end    
+    end
   end
 end
 

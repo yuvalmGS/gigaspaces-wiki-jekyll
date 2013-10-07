@@ -12,8 +12,9 @@ module Jekyll
       end
 
       def add_div_for_tab(context, code)
-      	output = "<div class='tabsection'><ul class='nav nav-tabs'></ul><div class='tab-content'>" + code
-        output += "</div></div>"
+      	output = "<div class='tabsection'><ul class='nav nav-tabs'></ul><div class='tab-content'>"
+        output << Kramdown::Document.new(code).to_html
+        output << "</div></div>"
         output
       end
     end
@@ -31,12 +32,12 @@ module Jekyll
       end
 
       def add_div_for_tabcontent(context, code)
-      	output = "<div class='tab-pane' id='#{@title.downcase.gsub(/(\s)/, "_")}' 
-      		title='#{@title}'>" + code
-        output += "</div>"
-        output
+      	output = "<div class='tab-pane' id='#{@title.downcase.gsub(/(\s)/, "_")}'
+      		title='#{@title}'>"
+        output << Kramdown::Document.new(code).to_html
+        output << "</div>"
       end
-    end    
+    end
   end
 end
 

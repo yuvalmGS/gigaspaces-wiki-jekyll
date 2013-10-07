@@ -7,9 +7,9 @@ module Jekyll
     end
 
     def render(context)
-      "<div id=\"#{@text}\"></div>"
+      "<span id=\"#{@text}\"></span>"
     end
   end
 end
 
-Liquid::Template.register_tag('anchor', Jekyll::AnchorTag) 
+Liquid::Template.register_tag('anchor', Jekyll::AnchorTag)

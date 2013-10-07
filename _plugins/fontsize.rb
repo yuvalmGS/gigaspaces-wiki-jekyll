@@ -22,10 +22,9 @@ module Jekyll
         else
           output = "<div style=\"font-size:#{@size}px\">"
         end
-      	
-        output += Kramdown::Document.new(content).to_html
-        output += "</div>"
-        output
+
+        output << Kramdown::Document.new(content).to_html
+        output << "</div>"
       end
     end
   end

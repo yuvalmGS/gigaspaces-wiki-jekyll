@@ -1,0 +1,12 @@
+---
+layout: post
+title:  Web Application Support
+page_id: 61867386
+---
+
+# Section Contents
+
+- [Global HTTP Session Sharing](/xap96/global-http-session-sharing.html) - Global HTTP Session Sharing allows transparent session replication between remote sites and session sharing between different application servers in real-time. 
+- [Web Processing Unit Container](/xap96/web-processing-unit-container.html) — Allows you to deploy a web application (WAR) into the Service Grid.
+    - [Web Jetty Processing Unit Container](/xap96/web-jetty-processing-unit-container.html) — OpenSpaces integration with Jetty as the web container when running web applications on top of the Service Grid.
+    - [Apache Load Balancer Agent](/xap96/apache-load-balancer-agent.html) — Provides dynamic load balancing integration with an Apache httpd server.

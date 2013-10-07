@@ -14,9 +14,8 @@ module Jekyll
 
       def add_section(context, content)
         output = "<div class='container'><div class='row'>"
-        output += Kramdown::Document.new(content).to_html
-        output += "</div></div>"
-        output
+        output << Kramdown::Document.new(content).to_html
+        output << "</div></div>"
       end
     end
   end

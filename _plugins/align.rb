@@ -19,9 +19,8 @@ module Jekyll
 
       def add_align(context, content)
       	output = "<div style=\"text-align:#{@align}\">"
-        output += Kramdown::Document.new(content).to_html
-        output += "</div>"
-        output
+        output << Kramdown::Document.new(content).to_html
+        output << "</div>"
       end
     end
   end

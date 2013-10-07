@@ -18,9 +18,8 @@ module Jekyll
 
       def add_indent(context, content)
       	output = "<div class=\"indent#{@size}\">"
-        output += Kramdown::Document.new(content).to_html
-        output += "</div>"
-        output
+        output << Kramdown::Document.new(content).to_html
+        output << "</div>"
       end
     end
   end

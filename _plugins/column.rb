@@ -19,9 +19,8 @@ module Jekyll
         else
          output = "<div style='float:left;#{@width};padding-left:15px;padding-right:15px;position:relative;margin-left:15px;margin-right:15px;'>"
         end
-        output += Kramdown::Document.new(content).to_html
-        output += "</div>"
-        output
+        output << Kramdown::Document.new(content).to_html
+        output << "</div>"
       end
     end
   end

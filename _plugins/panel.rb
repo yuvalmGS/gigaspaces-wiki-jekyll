@@ -10,7 +10,7 @@ module Jekyll
 
         unless markup.nil?
           markups = markup.split("|")
-          
+
           title           = markups.select {|x| x =~ /title/}[0]
           backgroundcolor = markups.select {|x| x =~ /bgColor/}[0]
           borderstyle     = markups.select {|x| x =~ /borderStyle/}[0]
@@ -29,19 +29,18 @@ module Jekyll
 
       def add_panel(context, content)
         style_string = ""
-        style_string += "background-color:#{@backgroundcolor};" if @backgroundcolor
-        style_string += "border-style:#{@borderstyle};" if @borderstyle
-        style_string += "border-color:#{@bordercolor};" if @bordercolor
+        style_string << "background-color:#{@backgroundcolor};" if @backgroundcolor
+        style_string << "border-style:#{@borderstyle};" if @borderstyle
+        style_string << "border-color:#{@bordercolor};" if @bordercolor
 
       	output = "<div class='well' style='#{style_string}'>"
         unless @title.empty?
-          output += "<strong>"
-          output += Kramdown::Document.new(@title).to_html  
-          output += "</strong>"
+          output << "<strong>"
+          output << Kramdown::Document.new(@title).to_html
+          output << "</strong>"
         end
-        output += Kramdown::Document.new(content).to_html
-        output += "</div>"
-        output
+        output << Kramdown::Document.new(content).to_html
+        output << "</div>"
       end
     end
   end

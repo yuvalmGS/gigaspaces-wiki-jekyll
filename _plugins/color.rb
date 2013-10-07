@@ -18,10 +18,8 @@ module Jekyll
 
       def add_color(context, content)
       	output = "<span style=\"color:#{@color}\">"
-        output += content
-        #output += Kramdown::Document.new(content).to_html
-        output += "</span>"
-        output
+        output << content
+        output << "</span>"
       end
     end
   end

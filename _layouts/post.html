@@ -10,7 +10,13 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/font-awesome.css">
     <link rel="stylesheet" href="/css/jquery.treeview.css">
+    <link rel="stylesheet" href="/css/docs.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+    <script type='text/javascript'>
+      var tocheaders = {};
+      var tocheadersz = {};
+    </script>
   </head>
   <body>
     <div class="container">
@@ -21,10 +27,10 @@
       </header>
 
       <div class="row">
-        <div class='col-md-4'>
+        <div class='col-md-3'>
           {% include nav.html %}
         </div>
-        <div class='col-md-8'>
+        <div class='col-md-9'>
           {{ content }}
         </div>
       </div>
@@ -34,11 +40,11 @@
           {% include footer.html %}
         </div>
       </div>
-
     </div><!-- /container -->
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/bootstrap.js"></script>
     <script type="text/javascript" src="/js/jquery.treeview.js"></script>
+    <script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>
     <script>
       $(function () {
         $(".tabsection").each(function(index) {
@@ -65,12 +71,52 @@
         });
 
         summary_url = "";
-        $('.col-md-8').children('h1').each(function(index, item) {
+        $('.col-md-9').children('h1').each(function(index, item) {
           summary_url += '<li><a href="#'+item.id+'">'+item.innerHTML+'</a></li>';
         });
 
         $("#summarypanel").html(summary_url);
+
+        if (!$.isEmptyObject(tocheaders)) {
+          $.each(tocheaders, function(tocindex, tocvalue) {
+            toc_url = "";
+            $("#" + tocindex).children(tocvalue).each(function(index, item) {
+              toc_url += '<li><a href="#'+item.id+'">'+item.innerHTML+'</a></li>';
+            });
+
+            $("#toczone-top" + tocindex +",#toczone-bot" + tocindex).html(toc_url);
+
+          });
+        }
+
+        if (!$.isEmptyObject(tocheadersz)) {
+          $.each(tocheadersz, function(tocindexz, tocvaluez) {
+            toc_urlz = "";
+            $(".col-md-9").children(tocvaluez).each(function(index, item) {
+              toc_urlz += '<li><a href="#'+item.id+'">'+item.innerHTML+'</a></li>';
+            });
+
+            $("#toczone-top" + tocindexz +",#toczone-bot" + tocindexz).html(toc_urlz);
+
+          });
+        }
+
+        if ($("#childrentree").length !== 0) {
+          var childrentreeid = $("a:contains('" + $("title").text() +"')");
+          var childrens_li = childrentreeid.siblings("ul").children("li");
+          $("#childrentree").append("<ul></ul>");
+          childrentreeul = $("#childrentree").children("ul");
+          childrens_li.each(function() {
+            childrentreeul.append($(this));
+          });
+        }
+
+        if ($("#gallery").length !== 0) {
+          $("#gallery a").fancybox();
+        }
+
       })
+
       $("#navigation").treeview({
         persist: "location"
       });
