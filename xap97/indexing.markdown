@@ -213,7 +213,7 @@ SQLQuery<Person> query = new SQLQuery<Person>(Person.class,
 	"personalInfo.socialSecurity<10000050L and personalInfo.socialSecurity>=10000010L");
 {% endhighlight %}
 
-{% infosign %} For more information, see [Nested Object Queries](/xap96/sqlquery.html#Nested Properties)
+{% infosign %} For more information, see [Nested Object Queries](./sqlquery.html#Nested Properties)
 
 {% info title=Map based nested properties %}
 Note that the same indexing techniques above are also applicable to Map-based nested properties, which means that in the example above the `Info` and `Address` classes could be replaced with a `java.util.Map<String,Object>`, with the map keys representing the property names.
@@ -249,7 +249,7 @@ SQLQuery<CollectionIndexingExample> sqlQuery = new SQLQuery<CollectionIndexingEx
 CollectionIndexingExample[] result = gigaspace.readMultiple(sqlQuery, Integer.MAX_VALUE);
 {% endhighlight %}
 
-{% exclamation %} See the [Free Text Search](/xap96/sqlquery.html#Free Text Search) section for more details.
+{% exclamation %} See the [Free Text Search](./sqlquery.html#Free Text Search) section for more details.
 
 ### Nested property within a Collection
 
@@ -336,7 +336,7 @@ Using a Compound Index that will be based on field X and field Y will improve a 
 An attribute can be a segment of several compound indexes, and can be indexed itself. Compound indexes can be only `BASIC` indices - they support equality based queries only. The name of the compound index is composed from the paths of its segments separated by a "+" sign.
 
 {% info %}
-All segments of a compound index must have consistent `hashCode()` and `equals()` methods implementation and must use the OBJECT [StorageType](/xap96/storage-types---controlling-serialization.html).
+All segments of a compound index must have consistent `hashCode()` and `equals()` methods implementation and must use the OBJECT [StorageType](./storage-types---controlling-serialization.html).
 {% endinfo %}
 
 ## Creating a Compound Index using POJO Annotation
@@ -390,7 +390,7 @@ A Compound Index can be defined within the gs.xml configuration file. Example: T
 
 ## Creating a Compound Indexing for a Space Document
 
-A Compound Space Index of a [space Document](/xap96/document-api.html) can be described by `pu.xml` configuration file. Example:
+A Compound Space Index of a [space Document](./document-api.html) can be described by `pu.xml` configuration file. Example:
 
 {% highlight xml %}
 <os-core:space id="space" url="/./space" >

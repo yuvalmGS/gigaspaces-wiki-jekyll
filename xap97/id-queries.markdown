@@ -8,7 +8,7 @@ page_id: 61867449
 
 # Overview
 
-The space can be queried for entries using [Template Matching](/xap96/template-matching.html) or [SQLQuery](/xap96/sqlquery.html), but sometimes we know the exact id of the entry we need and prefer a faster solution. This is where id-based queries come handy.
+The space can be queried for entries using [Template Matching](./template-matching.html) or [SQLQuery](./sqlquery.html), but sometimes we know the exact id of the entry we need and prefer a faster solution. This is where id-based queries come handy.
 
 # Reading an Entry By ID
 
@@ -58,10 +58,10 @@ for (Employee employee : result) {
 
 ## Getting Partial Results
 
-You can specify which properties should be populated when the result is created the [Projection API](/xap96/getting-partial-results-using-projection-api.html).
+You can specify which properties should be populated when the result is created the [Projection API](./getting-partial-results-using-projection-api.html).
 
 {% tip %}
-See [Parent Child Relationship](/xap96/parent-child-relationship.html) for a full usage example of the `readByIds` operation.
+See [Parent Child Relationship](./parent-child-relationship.html) for a full usage example of the `readByIds` operation.
 ReadById is intended to objects with meaningful ids,if used with auto-generate="true" ids,the given object type will be ignored.
 {% endtip %}
 

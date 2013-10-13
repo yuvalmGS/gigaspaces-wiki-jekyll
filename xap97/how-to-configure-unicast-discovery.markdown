@@ -12,7 +12,7 @@ There are many cases when you need to use a unicast-based services discovery. Fo
 
 In such cases, the Jini lookup discovery enables the user to discover services (spaces, GSC, GSM, processing units etc.) using unicast protocol.
 
-{% infosign %} Please refer to the [Lookup Service Configuration](/xap96/lookup-service-configuration.html) or the [Networking How Tos](/xap96/networking-how-tos.html) section for more details.
+{% infosign %} Please refer to the [Lookup Service Configuration](./lookup-service-configuration.html) or the [Networking How Tos](./networking-how-tos.html) section for more details.
 
 # Configuring the lookup locators property
 
@@ -56,7 +56,7 @@ jini://linux-lab1:4174,linux-lab2:4174/./mySpace?locators=linux-lab1:4174,linux-
 
 To change the lookup service port when using the Service Grid, you can use the **`com.sun.jini.reggie.initialUnicastDiscoveryPort`** system property. The default value is the one assigned to the `com.gs.multicast.discoveryPort` system property, that is 4174 with XAP 7.x.
 
-- Set the `LOOKUPLOCATORS` system property in `<GigaSpaces Root>\bin\setenv.bat/sh` to match the port number you defined (in this case, `host:1234`). That is required if you specify an explicit unicast/locators port, otherwise the service will use the default port if not set explicitly (see [**com.gs.multicast.discoveryPort system property**](/xap96/lookup-service-configuration.html#Multicast Settings)).
+- Set the `LOOKUPLOCATORS` system property in `<GigaSpaces Root>\bin\setenv.bat/sh` to match the port number you defined (in this case, `host:1234`). That is required if you specify an explicit unicast/locators port, otherwise the service will use the default port if not set explicitly (see [**com.gs.multicast.discoveryPort system property**](./lookup-service-configuration.html#Multicast Settings)).
 
 # Configuring lookup discovery intervals
 

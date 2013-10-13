@@ -144,7 +144,7 @@ space.clear(query);
 {% endhighlight %}
 
 {% note %}
-When using the SQLQuery with bigger/less than queries, turn on the [extended indexing](/xap96/indexing.html#ExtendedIndexing).
+When using the SQLQuery with bigger/less than queries, turn on the [extended indexing](./indexing.html#ExtendedIndexing).
 {% endnote %}
 {% endtabcontent %}
 
@@ -194,7 +194,7 @@ is thrown.
             - [EntryNotInSpaceException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/EntryNotInSpaceException)
 \- in case the object does not exist in the space.
             - [SpaceOptimisticLockingFailureException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/SpaceOptimisticLockingFailureException)
-. Thrown only when running in Optimistic Locking mode. This Exception includes the existing version id of the object within the space and the client side version id of the object. In this case you should read the object again and retry the update operation. See [Optimistic Locking](/xap96/optimistic-locking.html) for more details.
+. Thrown only when running in Optimistic Locking mode. This Exception includes the existing version id of the object within the space and the client side version id of the object. In this case you should read the object again and retry the update operation. See [Optimistic Locking](./optimistic-locking.html) for more details.
 
 - when the [WriteModifiers.PARTIAL_UPDATE](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html) modifier is applied the return values are the same as with the `WriteModifiers.UPDATE_ONLY` case. Fields that should not be updated **should have the value `null`**. This means that only fields which are set will be sent into the space to replace the existing field's value. Make sure the updated object include its ID when using this option.
 
@@ -386,7 +386,7 @@ space.writeMultiple(employees, Lease.FOREVER, WriteModifiers.PARTIAL_UPDATE);
 
 ## Changing an Object
 
-{% include /xap96/change-api-code-snippet.markdown %}
+{% include ./change-api-code-snippet.markdown %}
 {% endtabcontent %}
 {% endinittab %}
 

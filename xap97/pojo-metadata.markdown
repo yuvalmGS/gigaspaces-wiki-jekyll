@@ -10,7 +10,7 @@ page_id: 61867320
 
 {% anchor 1 %}
 
-The [GigaSpaces API](/xap96/the-gigaspace-interface.html) supports class and field-level decorations with POJOs. These can be specified via annotations on the space class source itself or external xml file accompanied with the class byte code files located within the jar/war. You can define common behavior for all class instances, and specific behavior for class fields. You may use the gs.xml files to decorate your Space classes as an alternative to Annotations or when you want to share the space decorations with .Net and C++ application accessing the same space objects.
+The [GigaSpaces API](./the-gigaspace-interface.html) supports class and field-level decorations with POJOs. These can be specified via annotations on the space class source itself or external xml file accompanied with the class byte code files located within the jar/war. You can define common behavior for all class instances, and specific behavior for class fields. You may use the gs.xml files to decorate your Space classes as an alternative to Annotations or when you want to share the space decorations with .Net and C++ application accessing the same space objects.
 
 {% inittab os_simple_space|top %}
 {% tabcontent Annotations %}
@@ -22,12 +22,12 @@ The [GigaSpaces API](/xap96/the-gigaspace-interface.html) supports class and fie
 {: .table .table-bordered}
 | Annotation Element Name | Type | Description | Default Value |
 |:------------------------|:-----|:------------|:--------------|
-| `replicate` | boolean | When running in a partial replication mode, a **`false`** value for this property will not replicates all objects from this class type to the replica space or backup space. To run in a partial replication mode deploy the space cluster using the following property:{% wbr %}{% wbr %}`<os-core:space id="space" url="/./space" no-write-lease="true">`{% wbr %} `<os-core:properties>`{% wbr %}  `<props>`{% wbr %}   `<prop key="cluster-config.groups.group.repl-policy.policy-type">`{% wbr %}      `partial-replication`{% wbr %}   `</prop>`{% wbr %}  `</props>`{% wbr %} `</os-core:properties>`{% wbr %}`</os-core:space>`{% wbr %}. {% wbr %}{% wbr %}To control replication at the object level you should specify a [replication filter](/xap96/cluster-replication-filters.html){% wbr %}{% wbr %}| `true` |
-| `persist` | boolean | When a space is defined as persistent, a `true` value for this annotation persists objects of this type. {% refer %}For more details, refer to the [Persistency](/xap96/persistency.html) section.{% endrefer %} | `true` |
-| `fifoSupport` | enum of `FifoSupport` | To enable FIFO operations, set this attribute to `FifoSupport.OPERATION`. {% refer %}For more details, refer to the [FIFO operations](/xap96/fifo-support.html) section.{% endrefer %} | `FifoSupport.NOT_SET` |
+| `replicate` | boolean | When running in a partial replication mode, a **`false`** value for this property will not replicates all objects from this class type to the replica space or backup space. To run in a partial replication mode deploy the space cluster using the following property:{% wbr %}{% wbr %}`<os-core:space id="space" url="/./space" no-write-lease="true">`{% wbr %} `<os-core:properties>`{% wbr %}  `<props>`{% wbr %}   `<prop key="cluster-config.groups.group.repl-policy.policy-type">`{% wbr %}      `partial-replication`{% wbr %}   `</prop>`{% wbr %}  `</props>`{% wbr %} `</os-core:properties>`{% wbr %}`</os-core:space>`{% wbr %}. {% wbr %}{% wbr %}To control replication at the object level you should specify a [replication filter](./cluster-replication-filters.html){% wbr %}{% wbr %}| `true` |
+| `persist` | boolean | When a space is defined as persistent, a `true` value for this annotation persists objects of this type. {% refer %}For more details, refer to the [Persistency](./persistency.html) section.{% endrefer %} | `true` |
+| `fifoSupport` | enum of `FifoSupport` | To enable FIFO operations, set this attribute to `FifoSupport.OPERATION`. {% refer %}For more details, refer to the [FIFO operations](./fifo-support.html) section.{% endrefer %} | `FifoSupport.NOT_SET` |
 | `includeProperties` | String | `IncludeProperties.IMPLICIT` takes into account all POJO fields -- even if a `get` method is not declared with a `@SpaceProperty` annotation, it is taken into account as a space field.{% wbr %}`IncludeProperties.EXPLICIT` takes into account only the `get` methods which are declared with a `@SpaceProperty` annotation. | `IMPLICIT` |
 | `inheritIndexes` | `boolean` | Whether to use the class indexes list only, or to also include the superclass' indexes. {% wbr %}If the class does not define indexes, superclass indexes are used. {% wbr %}Options:{% wbr %}- `false` -- class indexes only.{% wbr %}- `true` -- class indexes and superclass indexes. | `true` |
-| `storageType` | enum of `StorageType` | To determine a default storage type for each non primitive property for which a (field level) storage type was not defined.{% wbr %}{% refer %}For more details, refer to the [Storage Types - Controlling Serialization](/xap96/storage-types---controlling-serialization.html) section.{% endrefer %} | `StorageType.OBJECT` |
+| `storageType` | enum of `StorageType` | To determine a default storage type for each non primitive property for which a (field level) storage type was not defined.{% wbr %}{% refer %}For more details, refer to the [Storage Types - Controlling Serialization](./storage-types---controlling-serialization.html) section.{% endrefer %} | `StorageType.OBJECT` |
 
 ## Field Level Annotation -- @SpaceProperty
 
@@ -66,7 +66,7 @@ If `autoGenerate` is `true`, the field must be of the type `java.lang.String`.
 |:--------|:-----|:------------|:--------------|
 | `autoGenerate` | boolean | Specifies if the object ID is generated automatically by the space when written into the space. If `false`, the field is indexed automatically, and if `true`, the field isn't indexed | `false` |
 
-{% refer %}For more details, see the [Space Object ID Operations](/xap96/space-object-id-operations.html) section.{% endrefer %}
+{% refer %}For more details, see the [Space Object ID Operations](./space-object-id-operations.html) section.{% endrefer %}
 
 ## Field Level Decoration -- @SpaceIndex
 
@@ -123,7 +123,7 @@ public static class Info implements Serializable {
 }
 {% endhighlight %}
 
-{% exclamation %} See the [Indexing](/xap96/indexing.html) section for details.
+{% exclamation %} See the [Indexing](./indexing.html) section for details.
 
 {% note %}
 It is highly recommended to index fields used for matching/query. Without the proper index (BASIC or EXTENDED ), the read/readMultiple/take/takeMultiple operations response time might be affected.
@@ -147,10 +147,10 @@ When using this option, you must have the space class level `persist` decoration
 ## Field Level Decoration - @SpaceRouting
 
 The `@SpaceRouting` annotation specifies a get method for the field to be used to calculate the target space for the space operation (read , write...). The `@SpaceRouting` field value hash code is used to calculate the target space when the space is running in **partitioned mode**.
-See more details at the [Data-Partitioning](/xap96/data-partitioning.html) section.
+See more details at the [Data-Partitioning](./data-partitioning.html) section.
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](/xap96/elastic-processing-unit.html) section.
+For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
 {% endtip %}
 
 {% anchor SpaceLeaseExpiration %}
@@ -219,7 +219,7 @@ This is also the default type.
 
 - `COMPRESSED` - The property is compressed before being transferred into the space and is stored within the space in the compressed mode, reducing foot-print.
 
-{% refer %}For more details and examples, refer to the [Storage Types - Controlling Serialization](/xap96/storage-types---controlling-serialization.html) section.{% endrefer %}
+{% refer %}For more details and examples, refer to the [Storage Types - Controlling Serialization](./storage-types---controlling-serialization.html) section.{% endrefer %}
 
 ## Field Level Decoration -- @SpaceFifoGroupingProperty
 
@@ -229,7 +229,7 @@ all space entries that match the selection template in FIFO order.
 Different values of the FG property define groups of space entries that match each value -
 FIFO ordering exists within each group and not between different groups.
 
-{% refer %}For more details and examples, refer to the [FIFO Grouping](/xap96/fifo-grouping.html) section.{% endrefer %}
+{% refer %}For more details and examples, refer to the [FIFO Grouping](./fifo-grouping.html) section.{% endrefer %}
 
 ## Field Level Decoration -- @SpaceFifoGroupingIndex
 
@@ -238,7 +238,7 @@ Can be declared on several properties in a class in order to assist in efficient
 If defined, there must be a property in the class, marked with the `@SpaceFifoGroupingProperty` annotation.
 A compound index that contains this FIFO grouping index and the FIFO grouping property will be created.
 
-{% refer %}For more details and examples, refer to the [FIFO Grouping](/xap96/fifo-grouping.html) section.{% endrefer %}
+{% refer %}For more details and examples, refer to the [FIFO Grouping](./fifo-grouping.html) section.{% endrefer %}
 
 ## Constructor Level Decoration -- @SpaceClassConstructor
 
@@ -445,9 +445,9 @@ The Employee class uses the <reference> tag to inherit metadata from the Person 
 | Attribute | Description |
 |:----------|:------------|
 | `name` | Contains the full qualified name of the specified class. Because this attribute is of the XML type `ID`, there can only be one `class-descriptor` per class. |
-| `persist` | This field indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this attribute will persist objects of this type. {% refer %}For more details, refer to the [Persistency](/xap96/persistency.html) section. {% endrefer %} |
-| `replicate` | This field indicates the replication mode of the object. When a space is defined as replicated, a `true` value for this attribute will replicate objects of this type. {% refer %}For more details, refer to the [Replication](/xap96/replication.html) section. {% endrefer %}{% wbr %}{% tip %}{% wbr %}To control replication at the object level you should specify a [replication filter](/xap96/cluster-replication-filters.html){% wbr %}{% endtip %}|
-| `fifo-support` | To enable FIFO operations, set this attribute to one of the [FifoSupport](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/annotation/pojo/FifoSupport.html) enumeration values. {% refer %}For more details, refer to the [FIFO operations](/xap96/fifo-support.html) section.{% endrefer %} |
+| `persist` | This field indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this attribute will persist objects of this type. {% refer %}For more details, refer to the [Persistency](./persistency.html) section. {% endrefer %} |
+| `replicate` | This field indicates the replication mode of the object. When a space is defined as replicated, a `true` value for this attribute will replicate objects of this type. {% refer %}For more details, refer to the [Replication](./replication.html) section. {% endrefer %}{% wbr %}{% tip %}{% wbr %}To control replication at the object level you should specify a [replication filter](./cluster-replication-filters.html){% wbr %}{% endtip %}|
+| `fifo-support` | To enable FIFO operations, set this attribute to one of the [FifoSupport](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/annotation/pojo/FifoSupport.html) enumeration values. {% refer %}For more details, refer to the [FIFO operations](./fifo-support.html) section.{% endrefer %} |
 
 ### Field Level Tags
 
@@ -520,7 +520,7 @@ For details about scaling a running space cluster **in runtime** see the [Dynami
 
 # User Defined Space Class Fields
 
-You may have user defined data types (non-primitive data types) with your Space class. These should implement the `Serializable` or `Externalizable` interface. The user defined class nested fields can be used with queries and can be indexed. See the [Nested Properties](/xap96/sqlquery.html#Nested Properties) and the [Nested Properties Indexing](/xap96/indexing.html#Nested Properties Indexing) section for details.
+You may have user defined data types (non-primitive data types) with your Space class. These should implement the `Serializable` or `Externalizable` interface. The user defined class nested fields can be used with queries and can be indexed. See the [Nested Properties](./sqlquery.html#Nested Properties) and the [Nested Properties Indexing](./indexing.html#Nested Properties Indexing) section for details.
 
 # Troubleshooting
 
@@ -583,4 +583,4 @@ FINE [com.gigaspaces.pojo]: ExternalEntry after converter is:
 
 ## Using The GUI
 
-Use the GS-UI [Data Types View](/xap96/data-types-view---gigaspaces-browser.html) to examine the POJO meta data. Make sure the annotations/xml decorations have been introduced to the space correctly i.e. correct class name, field names, field types, indexes, routing field, replication mode and FIFO mode etc.
+Use the GS-UI [Data Types View](./data-types-view---gigaspaces-browser.html) to examine the POJO meta data. Make sure the annotations/xml decorations have been introduced to the space correctly i.e. correct class name, field names, field types, indexes, routing field, replication mode and FIFO mode etc.

@@ -72,7 +72,7 @@ com.gigaspaces.client.cluster.liveness.level = INFO
 
 GigaSpaces Client can be another component or application that connects to a GigaSpaces cluster.
 Liveness check is a functionality that runs inside a GigaSpaces proxy (usually held by a client connecting to a space) to keep track of the cluster members.
-Additional info about GigaSpaces proxy can be found [here](/xap96/proxy-connectivity.html)
+Additional info about GigaSpaces proxy can be found [here](./proxy-connectivity.html)
 
 ### .Net API
 
@@ -103,7 +103,7 @@ org.openspaces.pu.container.jee.context.ProcessingUnitWebApplicationContext.leve
 org.springframework.level = WARNING
 {% endhighlight %}
 
-OpenSpaces wraps the GigaSpaces core product with Spring which enables Spring configuration and Spring life cycle to GigaSpaces applications. Some additional info about OpenSpaces is [here](/xap96/openspaces-faq.html).
+OpenSpaces wraps the GigaSpaces core product with Spring which enables Spring configuration and Spring life cycle to GigaSpaces applications. Some additional info about OpenSpaces is [here](./openspaces-faq.html).
 
 ### Spring
 
@@ -139,7 +139,7 @@ com.gigaspaces.lrmi.channel.manager.level = INFO
 com.gigaspaces.lrmi.channel.protocol.level = INFO
 {% endhighlight %}
 
-GigaSpaces components communicate using internal communications adaptor, LRMI (Light Remote Method Invocation), which is based on NIO communication protocol. More information about lrmi is [here](/xap96/communication-protocol.html).
+GigaSpaces components communicate using internal communications adaptor, LRMI (Light Remote Method Invocation), which is based on NIO communication protocol. More information about lrmi is [here](./communication-protocol.html).
 {% endtabcontent %}
 {% tabcontent Class Loader %}
 
@@ -148,8 +148,8 @@ com.gigaspaces.core.classloadercleaner.level = INFO
 com.gigaspaces.core.classloadercache.level = INFO
 {% endhighlight %}
 
-GigaSpaces applications are running as part of a GigaSpaces runtime container and packaged using the structure described [here](/xap96/the-processing-unit-structure-and-configuration.html).
-Application jars/classes are packaged in different folders and some of the classes could be loaded as part of GigaSpaces container (GSC's). There are multiple class loaders involved when an application is running. More information about the class loaders and their hierarchy is [here](/xap96/the-processing-unit-structure-and-configuration.html#Class Loaders).
+GigaSpaces applications are running as part of a GigaSpaces runtime container and packaged using the structure described [here](./the-processing-unit-structure-and-configuration.html).
+Application jars/classes are packaged in different folders and some of the classes could be loaded as part of GigaSpaces container (GSC's). There are multiple class loaders involved when an application is running. More information about the class loaders and their hierarchy is [here](./the-processing-unit-structure-and-configuration.html#Class Loaders).
 {% endtabcontent %}
 {% tabcontent Space %}
 
@@ -174,7 +174,7 @@ Core runtime for the space component of GigaSpaces, above loggers relate to this
 com.gigaspaces.filters.level = INFO
 {% endhighlight %}
 
-Space filters are described [here](/xap96/space-filters.html)
+Space filters are described [here](./space-filters.html)
 
 ### Space Persistency
 
@@ -184,7 +184,7 @@ com.gigaspaces.persistent.shared_iterator.level = INFO
 org.hibernate.level = WARNING
 {% endhighlight %}
 
-GigaSpaces persistence options are explained [here](/xap96/persistency.html). One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here](Hibernate External Data Source).
+GigaSpaces persistence options are explained [here](./persistency.html). One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here](Hibernate External Data Source).
 
 ### Space Query
 
@@ -192,7 +192,7 @@ GigaSpaces persistence options are explained [here](/xap96/persistency.html). On
 com.gigaspaces.query.level = INFO
 {% endhighlight %}
 
-GigaSpaces supports SQL queries on the data in space and logger corresponds to this [functionality](/xap96/sqlquery.html).
+GigaSpaces supports SQL queries on the data in space and logger corresponds to this [functionality](./sqlquery.html).
 
 ### Space LRU and Eviction
 
@@ -200,7 +200,7 @@ GigaSpaces supports SQL queries on the data in space and logger corresponds to t
 com.gigaspaces.cache.level = INFO
 {% endhighlight %}
 
-More information about LRU policy and Eviction behavior is [here](/xap96/lru-cache-policy.html)
+More information about LRU policy and Eviction behavior is [here](./lru-cache-policy.html)
 
 ### Space Notifications
 
@@ -208,8 +208,8 @@ More information about LRU policy and Eviction behavior is [here](/xap96/lru-cac
 com.gigaspaces.core.notify.level = INFO
 {% endhighlight %}
 
-Notifications are a mechanism that can be used to identify events related to space data (write, update, take, etc). Notifications are typically used with a [Notify Container](/xap96/notify-container.html).
-Another way notifications can be used is thru Session based messaging which is discussed [here](/xap96/session-based-messaging-api.html).
+Notifications are a mechanism that can be used to identify events related to space data (write, update, take, etc). Notifications are typically used with a [Notify Container](./notify-container.html).
+Another way notifications can be used is thru Session based messaging which is discussed [here](./session-based-messaging-api.html).
 
 ### Space FIFO
 
@@ -217,7 +217,7 @@ Another way notifications can be used is thru Session based messaging which is d
 com.gigaspaces.core.fifo.level = INFO
 {% endhighlight %}
 
-FIFO functionality is applicable for writes, reads and events (notifications) and discussed [here](/xap96/fifo-support.html).
+FIFO functionality is applicable for writes, reads and events (notifications) and discussed [here](./fifo-support.html).
 
 ### Space Replication
 
@@ -227,8 +227,8 @@ com.gigaspaces.core.cluster.replication.redolog.level = INFO
 com.gigaspaces.core.cluster.sync_replication.level = INFO
 {% endhighlight %}
 
-When a cluster topology is replicated, replication functionality is enabled. More information about topologies is [here](/xap96/space-topologies.html).
-Replication between spaces is one of the core features of GigaSpaces and is explained in detail [here](/xap96/replication.html).
+When a cluster topology is replicated, replication functionality is enabled. More information about topologies is [here](./space-topologies.html).
+Replication between spaces is one of the core features of GigaSpaces and is explained in detail [here](./replication.html).
 
 ### Space Partitioning
 
@@ -236,7 +236,7 @@ Replication between spaces is one of the core features of GigaSpaces and is expl
 com.gigaspaces.core.cluster.partition.level = INFO
 {% endhighlight %}
 
-When cluster uses partitioned topology, data is partitioned across multiple instances of spaces. More information about topologies is [here](/xap96/space-topologies.html).
+When cluster uses partitioned topology, data is partitioned across multiple instances of spaces. More information about topologies is [here](./space-topologies.html).
 
 ### Space Active-Election
 
@@ -252,7 +252,7 @@ When multiple instances (primary/backup(s)), Active Election process is used by 
 com.gigaspaces.pojo.level = INFO
 {% endhighlight %}
 
-Logger corresponding to GigaSpaces POJO support, more info [here](/xap96/pojo-support.html).
+Logger corresponding to GigaSpaces POJO support, more info [here](./pojo-support.html).
 
 ### Space XA manager
 
@@ -260,7 +260,7 @@ Logger corresponding to GigaSpaces POJO support, more info [here](/xap96/pojo-su
 com.gigaspaces.core.xa.level = INFO
 {% endhighlight %}
 
-Logger corresponding to XA Transaction manager running in the space, more information [here](/xap96/transaction-management.html).
+Logger corresponding to XA Transaction manager running in the space, more information [here](./transaction-management.html).
 
 ### Space Jini Dist. TX manager
 
@@ -269,7 +269,7 @@ com.sun.jini.mahalo.startup.level = INFO
 com.sun.jini.mahalo.destroy.level = INFO
 {% endhighlight %}
 
-Logger for Jini Distributed Transaction manager, more information [here](/xap96/transaction-management.html#DistributedJiniTransactionManager).
+Logger for Jini Distributed Transaction manager, more information [here](./transaction-management.html#DistributedJiniTransactionManager).
 
 ### SpaceURL, SpaceValidator, SpaceURLParser
 
@@ -280,7 +280,7 @@ com.gigaspaces.common.lookupfinder.level = INFO
 com.gigaspaces.common.resourceloader.level = INFO
 {% endhighlight %}
 
-SpaceURL and its constraints are explained [here](/xap96/space-url.html).
+SpaceURL and its constraints are explained [here](./space-url.html).
 Other loggers are related to this and applicable when a client trying to create a space proxy using a URL.
 
 ### Space Multicast Notifications
@@ -289,7 +289,7 @@ Other loggers are related to this and applicable when a client trying to create 
 com.gigaspaces.worker.multicast.level = INFO
 {% endhighlight %}
 
-Space notifications support multicast mode and this logger corresponds to this [functionality](/xap96/session-based-messaging-api.html#AdvancedOptions)
+Space notifications support multicast mode and this logger corresponds to this [functionality](./session-based-messaging-api.html#AdvancedOptions)
 {% endtabcontent %}
 {% tabcontent Runtime %}
 
@@ -318,7 +318,7 @@ com.sun.jini.start.service.starter.level = INFO
 com.sun.jini.thread.TaskManager.level = INFO
 {% endhighlight %}
 
-Lookup Service is a runtime registry of GigaSpaces components. Each component registers itself to a LUS thereby providing visibility to other components. For e.g., a GSM discovers a GSC by looking at an entry in LUS and GSC discovers a GSM similarly. More information about LUS is [here](/xap96/the-lookup-service.html).
+Lookup Service is a runtime registry of GigaSpaces components. Each component registers itself to a LUS thereby providing visibility to other components. For e.g., a GSM discovers a GSC by looking at an entry in LUS and GSC discovers a GSM similarly. More information about LUS is [here](./the-lookup-service.html).
 
 ### GSM
 
@@ -369,7 +369,7 @@ The GigaSpaces Agent (GSA) acts as a process manager that can spawn and manage S
 com.gigaspaces.security.level = INFO
 {% endhighlight %}
 
-Logger corresponding to security of GigaSpaces components. This includes configuration and runtime execution of security functionality. More information regarding GigaSpaces security is [here](/xap96/security.html).
+Logger corresponding to security of GigaSpaces components. This includes configuration and runtime execution of security functionality. More information regarding GigaSpaces security is [here](./security.html).
 {% endtabcontent %}
 {% tabcontent Web Container %}
 
@@ -380,7 +380,7 @@ web.level = INFO
 org.mortbay.level = WARNING
 {% endhighlight %}
 
-Web application support in GigaSpaces is provided using a Jetty container. These loggers correspond to Web Container. More information about GigaSpaces Web Application support is [here](/xap96/web-jetty-processing-unit-container.html).
+Web application support in GigaSpaces is provided using a Jetty container. These loggers correspond to Web Container. More information about GigaSpaces Web Application support is [here](./web-jetty-processing-unit-container.html).
 {% endtabcontent %}
 {% tabcontent Mule Integration %}
 
@@ -391,7 +391,7 @@ org.mule.RegistryContext.level = INFO
 org.openspaces.esb.mule.level = WARNING
 {% endhighlight %}
 
-These loggers correspond to Mule integration. More information about Mule integration is here, [Mule ESB](/xap96/mule-esb.html) and [Mule Processing Unit](/xap96/mule-processing-unit.html)
+These loggers correspond to Mule integration. More information about Mule integration is here, [Mule ESB](./mule-esb.html) and [Mule Processing Unit](./mule-processing-unit.html)
 {% endtabcontent %}
 
 {% tabcontent Management %}
@@ -406,7 +406,7 @@ com.gigaspaces.admin.cli.level = INFO
 com.gigaspaces.jmx.level = INFO
 {% endhighlight %}
 
-Loggers corresponding to GigaSpaces Management Console/UI. Additional information regarding UI can be found [here](/xap96/gigaspaces-management-center.html).
+Loggers corresponding to GigaSpaces Management Console/UI. Additional information regarding UI can be found [here](./gigaspaces-management-center.html).
 {% endtabcontent %}
 {% endinittab %}
 
@@ -464,7 +464,7 @@ To troubleshoot and detect which logging properties file was loaded and from whi
 GigaSpaces out of the box configures logging with two log Handlers,
 
 - `java.util.logging.**ConsoleHandler**`: A simple handler for writing formatted output to System.err (level is set to ALL)
-- `com.gigaspaces.logger.**RollingFileHandler**`: A handler that writes formatted output to a file that rolls over if a certain policy is triggered. see [Managing Log Files](/xap96/managing-log-files.html)
+- `com.gigaspaces.logger.**RollingFileHandler**`: A handler that writes formatted output to a file that rolls over if a certain policy is triggered. see [Managing Log Files](./managing-log-files.html)
 
 Java util logging supports other handlers. MemoryHandler, SocketHandler or any other handler can be used instead of the above. More information about handlers is [here](http://download.oracle.com/javase/1.4.2/docs/guide/util/logging/overview.html#1.5). You can also use one of the [open source logging frameworks](http://java-source.net/open-source/logging) that support java.util.logging.
 
@@ -472,7 +472,7 @@ Java util logging supports other handlers. MemoryHandler, SocketHandler or any o
 
 Formatters are in charge of formatting the log messages and adding meta data to them (date, time, level, etc).
 GigaSpaces configures the logging `Handler`'s `formatter` property with a single `Formatter` implementation class:
-`com.gigaspaces.logger.`**`GSSimpleFormatter`**. This formatter class is based on the `java.util.logging.`**`SimpleFormatter`** class. see [Formatting Log Messages](/xap96/formatting-log-messages.html) for more details.
+`com.gigaspaces.logger.`**`GSSimpleFormatter`**. This formatter class is based on the `java.util.logging.`**`SimpleFormatter`** class. see [Formatting Log Messages](./formatting-log-messages.html) for more details.
 
 # Exception visibility
 

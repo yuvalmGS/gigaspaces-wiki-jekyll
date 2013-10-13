@@ -11,7 +11,7 @@ page_id: 61867136
 
 {% section %}
 {% column width=30% %}
-The polling event container is an implementation of the [polling consumer pattern](http://enterpriseintegrationpatterns.com/PollingConsumer.html){:target="_blank"} which uses the space to receive events. It performs polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the [Data Event Listener](/xap96/data-event-listener.html) is invoked with the event. A polling event operation is mainly used when simulating Queue semantics or when using the master-worker design pattern.
+The polling event container is an implementation of the [polling consumer pattern](http://enterpriseintegrationpatterns.com/PollingConsumer.html){:target="_blank"} which uses the space to receive events. It performs polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the [Data Event Listener](./data-event-listener.html) is invoked with the event. A polling event operation is mainly used when simulating Queue semantics or when using the master-worker design pattern.
 {% endcolumn %}
 {% column width=70% %}
 ![polling_container_basic.jpg](/attachment_files/polling_container_basic.jpg)
@@ -145,7 +145,7 @@ pollingEventListenerContainer.destroy();
  `@EventDriven` , `@Polling` , `@Notify` can't be placed on interface classes. You should place these on the implementation class.
 {% endtip %}
 
-The example above performs single take operations (see below) using the provided template (a `Data` object with its processed flag set to `false`). If the take operation succeeds (a value is returned), the `SimpleListener` is invoked. The operations are performed on the configured [GigaSpace](/xap96/the-gigaspace-interface.html) bean (in this case, if working in a clustered topology, it is performed directly on the cluster member).
+The example above performs single take operations (see below) using the provided template (a `Data` object with its processed flag set to `false`). If the take operation succeeds (a value is returned), the `SimpleListener` is invoked. The operations are performed on the configured [GigaSpace](./the-gigaspace-interface.html) bean (in this case, if working in a clustered topology, it is performed directly on the cluster member).
 
 # Primary/Backup
 
@@ -155,7 +155,7 @@ The polling event container, by default, performs receive operations only when t
 
 # FIFO Grouping
 
-The FIFO Grouping designed to allow efficient processing of events with partial ordering constraints. Instead of maintaining a FIFO queue per class type, it lets you have a higher level of granularity by having FIFO queue maintained according to a specific value of a specific property. For more details see [FIFO grouping](/xap96/fifo-grouping.html).
+The FIFO Grouping designed to allow efficient processing of events with partial ordering constraints. Instead of maintaining a FIFO queue per class type, it lets you have a higher level of granularity by having FIFO queue maintained according to a specific value of a specific property. For more details see [FIFO grouping](./fifo-grouping.html).
 
 # Concurrent Consumers
 
@@ -164,7 +164,7 @@ By default, the polling event container starts a single thread that performs the
 In order to receive events using multiple consumer threads, in the same order they are written to the Space:
 
 - You may start multiple polling containers consuming data in FIFO manner , each running a single consumer thread using different (mutually exclusive) templates. Each thread may potentially consume a batch of space objects at a time.
-- You may use one polling container with multiple consumer threads and enable FIFO Grouping. The FIFO order of each value is not broken. See [FIFO Grouping](/xap96/fifo-grouping.html) page for more details.  Each thread may potentially consume a batch of space objects at a time.
+- You may use one polling container with multiple consumer threads and enable FIFO Grouping. The FIFO order of each value is not broken. See [FIFO Grouping](./fifo-grouping.html) page for more details.  Each thread may potentially consume a batch of space objects at a time.
 
 Here is an example of a polling container with 3 concurrent consumers and 5 maximum concurrent consumers:
 
@@ -257,7 +257,7 @@ Sometimes, it is very convenient to have a listener instance per concurrent poll
 
 # Static Template Definition
 
-When performing receive operations, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SQLQuery](/xap96/sqlquery.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
+When performing receive operations, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SQLQuery](./sqlquery.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
 {% inittab os_simple_space|top %}
 {% tabcontent Annotation %}
@@ -615,7 +615,7 @@ public class SimpleListener {
 
 ## Non-Blocking Receive Handler
 
-When working with a partitioned cluster and configuring the remote polling container to work against the [whole cluster](/xap96/the-gigaspace-interface.html#Clustered Flag), blocking operations (take with a timeout>0) are not allowed (when the routing field is not set on the template or SQLQuery). The default receive operation handlers support performing the receive operation in a non-blocking manner, by sleeping between non-blocking operations. For example, the `SingleTakeReceiveOperationHandler` performs a non-blocking take operation against the space and then sleeps for a configurable amount of time. A classic scenario where the Non-Blocking mode would be used is the [Master-Worker Pattern](http://wiki.gigaspaces.com/wiki/display/SBP/Master-Worker+Pattern).
+When working with a partitioned cluster and configuring the remote polling container to work against the [whole cluster](./the-gigaspace-interface.html#Clustered Flag), blocking operations (take with a timeout>0) are not allowed (when the routing field is not set on the template or SQLQuery). The default receive operation handlers support performing the receive operation in a non-blocking manner, by sleeping between non-blocking operations. For example, the `SingleTakeReceiveOperationHandler` performs a non-blocking take operation against the space and then sleeps for a configurable amount of time. A classic scenario where the Non-Blocking mode would be used is the [Master-Worker Pattern](http://wiki.gigaspaces.com/wiki/display/SBP/Master-Worker+Pattern).
 
 {% section %}
 {% column width=50% %}

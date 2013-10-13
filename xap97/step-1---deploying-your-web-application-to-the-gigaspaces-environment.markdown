@@ -183,7 +183,7 @@ At the end of the process, the web application's war file will be created in the
 
 # Deploying the Application
 
-In order to deploy the application onto the GigaSpaces infrastructure (Service Grid), you will need to start the  [GigaSpaces agent](/xap96/the-grid-service-agent.html) on your local machine. The agent automatically manages the GigaSpaces processes for you, and will start one GSM and two GSCs by default. This is done by calling `<gs root>/bin/gs-agent.(sh/bat)`.
+In order to deploy the application onto the GigaSpaces infrastructure (Service Grid), you will need to start the  [GigaSpaces agent](./the-grid-service-agent.html) on your local machine. The agent automatically manages the GigaSpaces processes for you, and will start one GSM and two GSCs by default. This is done by calling `<gs root>/bin/gs-agent.(sh/bat)`.
 
 The deploy command can be issued in three ways:
 
@@ -203,7 +203,7 @@ The deploy command can be issued in three ways:
 ## Advanced: Configuring Your Web Application's Runtime Environment
 
 When deploying the web application, you may want to control various aspect of its runtime environment, such as HTTP and HTTPS ports, context root, size of web container thread pools, size of requests buffers, etc.
-By default, GigaSpaces uses the [Jetty Web Container](http://www.mortbay.org/jetty/) to host your web application. In a typical deployment, the Jetty web container is started when your application is deployed and provisioned to one of the running GSCs. You can define many runtime parameters of the web container using **[Deployment Properties](/xap96/deployment-properties.html)**. Deployment properties are essentially overrides to the web container's default values. For example, when deploying a web application to the GigaSpaces environment, the web container will bind by default to port 8080, the context root will be the .war file name (without the .war extension) and the maximum number of web container threads will be 200. Deployment properties can be specified in various ways:
+By default, GigaSpaces uses the [Jetty Web Container](http://www.mortbay.org/jetty/) to host your web application. In a typical deployment, the Jetty web container is started when your application is deployed and provisioned to one of the running GSCs. You can define many runtime parameters of the web container using **[Deployment Properties](./deployment-properties.html)**. Deployment properties are essentially overrides to the web container's default values. For example, when deploying a web application to the GigaSpaces environment, the web container will bind by default to port 8080, the context root will be the .war file name (without the .war extension) and the maximum number of web container threads will be 200. Deployment properties can be specified in various ways:
 
 - By including a `pu.properties` file under the `META-INF/spring` directory or the root of your .war file. Here's the `pu.properties` file included in the example application:
 
@@ -225,7 +225,7 @@ web.threadPool.maxThreads=100
 
 # Defining SLA for the Application
 
-One of the key advantages of using GigaSpaces to deploy and manage your web application is the GigaSpaces [Service Grid infrastructure](/xap96/product-architecture.html#ProductArchitecture-SLADrivenContainer). The GigaSpaces Service Grid will monitor the application running instances (in GigaSpaces these are termed [**Processing Units**](/xap96/the-application-layer.html#TheApplicationLayer-ProcessingUnit)) and the containers on which they run. It has two major roles, which are together termed the application's **SLA**:
+One of the key advantages of using GigaSpaces to deploy and manage your web application is the GigaSpaces [Service Grid infrastructure](./product-architecture.html#ProductArchitecture-SLADrivenContainer). The GigaSpaces Service Grid will monitor the application running instances (in GigaSpaces these are termed [**Processing Units**](./the-application-layer.html#TheApplicationLayer-ProcessingUnit)) and the containers on which they run. It has two major roles, which are together termed the application's **SLA**:
 
 - **Making sure that your application is running properly**. The first part of it is provisioning the specified number of application instances, for example you can specify at deployment time that you want 3 instances of your web application deployed, and that you want each instance to be deployed in a separate JVM, or even a separate machine. The Service Grid (or more accurately, the GSM) will provision the instances to the running containers, assuming there are enough containers to support the requested number of instances.
 If a certain machine on which your application runs, or its hosting container / JVM fail, the service grid will automatically re-provision the application to run on another container somewhere on your network. This is referred to as **Self Healing**.
@@ -440,6 +440,6 @@ GSC INFO [com.gigaspaces.grid.gsc] - Instantiated PlainWebAppExample [1] in 3.03
 
 ![Jump arrow green.bmp](/attachment_files/Jump arrow green.bmp)
 {% color green %}Step Two{% endcolor %}
- - [Enabling HTTP Session Failover & Fault Tolerance](/xap96/step-2---enabling-http-session-failover-and-fault-tolerance.html) - Shows how to back your HTTP session with the Space to achieve highly available and fault-tolerant HTTP session for your web application.
+ - [Enabling HTTP Session Failover & Fault Tolerance](./step-2---enabling-http-session-failover-and-fault-tolerance.html) - Shows how to back your HTTP session with the Space to achieve highly available and fault-tolerant HTTP session for your web application.
 
-Or return to the [GigaSpaces for Web Applications Tutorial](/xap96/your-first-web-application.html).
+Or return to the [GigaSpaces for Web Applications Tutorial](./your-first-web-application.html).

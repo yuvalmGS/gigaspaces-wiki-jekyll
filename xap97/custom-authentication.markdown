@@ -233,7 +233,7 @@ Security repositories and administrators often prefer not to map users directly 
 
 ## Custom DirectoryManager
 
-The `createDirectoryManager` method can be used to implement a custom users-roles directory management component. However, this is not part of the authentication process, but rather an administrative task, hence our demo throws an exception. If you want to learn more, see [Custom User-Role Management](/xap96/custom-user-role-management.html).
+The `createDirectoryManager` method can be used to implement a custom users-roles directory management component. However, this is not part of the authentication process, but rather an administrative task, hence our demo throws an exception. If you want to learn more, see [Custom User-Role Management](./custom-user-role-management.html).
 
 ## Usage
 
@@ -278,7 +278,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(urlSpaceConfigurer).create();
 
 {% endtabcontent %}
 {% tabcontent  Properties %}
-The `SecurityManager` can be configured using custom properties supplied as part of the security properties file (see [Security Configurations](/xap96/security-configurations.html) for information about configuring security properties).
+The `SecurityManager` can be configured using custom properties supplied as part of the security properties file (see [Security Configurations](./security-configurations.html) for information about configuring security properties).
 The property `com.gs.security.security-manager.class` defines the `SecurityManager` class to instantiate (requires a default constructor).
 Additional custom properties can be added to facilitate custom configuration for the security manager.
 For example:
@@ -295,7 +295,7 @@ custom-security.server-address = myServer
 
 Use the **`-user-details-provider`** and **`-user-details-properties`** arguments to use a custom credentials provider with the CLI.
 
-{% plus %} For a full list of command usage, please refer to: [Command Line Interface (CLI) Security](/xap96/command-line-interface-(cli)-security.html)
+{% plus %} For a full list of command usage, please refer to: [Command Line Interface (CLI) Security](./command-line-interface-(cli)-security.html)
 
 Run the `gs` script, and then use the **`login`** command:
 

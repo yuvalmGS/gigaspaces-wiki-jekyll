@@ -10,7 +10,7 @@ page_id: 61867275
 
 We recommend that you do the following before starting this step of the Tutorial:
 
-- Follow [Step 1](/xap96/step-1---adjusting-your-jpa-domain-model-to-the-xap-jpa-implementation.html) of this tutorial
+- Follow [Step 1](./step-1---adjusting-your-jpa-domain-model-to-the-xap-jpa-implementation.html) of this tutorial
 
 #Preparing the `PetClinicService`
 The `PetClinicService` is an implementation of the `Clinic` interface that the Spring MVC layer of the application is using. The easiest way to implement this service is simply define an `EntityManagerFactory` that accesses the remote space from within the web application (similar the traditional database backed implementation). But in our case we want to be able to take advantage of the built in capabilities  that GigaSpaces XAP provides for scaling your business logic:
@@ -19,10 +19,10 @@ The `PetClinicService` is an implementation of the `Clinic` interface that the S
 - Map/Reduce: this means that you're able to run your business logic on multiple nodes on the space cluster, and reduce the results back at the client side to provide the same experience as invoking the business logic on the client side.
 - Smart content based routing: In a distributed data store, it's very important in terms of performance and scalability to be able to route each data accessing operation to the right node, i.e. the node on which the data your operate on actually resides instead of sending the operation to all of the cluster nodes.
 
-We can easily achieve all of the above by using the GigaSpaces XAP [Space Based Remoting](/xap96/space-based-remoting.html) support, and making a few small adaptations to the clinic interface (adding a few annotations to it).
+We can easily achieve all of the above by using the GigaSpaces XAP [Space Based Remoting](./space-based-remoting.html) support, and making a few small adaptations to the clinic interface (adding a few annotations to it).
 
 #Adjusting the `Clinic` Interface
-As mentioned above, we will use [Space Based Remoting](/xap96/space-based-remoting.html) to back the `Clinic` interface. The actual implementation will run on each of the Space nodes we will deploy. The first thing we need to do is declare for each operation (method) whether it will be sent to the entire cluster or to a specific Space partition. In case an operation is sent to the entire cluster, we also need to tell the client how to aggregate (or _reduce_) the results on from all cluster members. This is done using a reducer class which implements the [RemoteResultReducer](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/remoting/RemoteResultReducer.html) interface.
+As mentioned above, we will use [Space Based Remoting](./space-based-remoting.html) to back the `Clinic` interface. The actual implementation will run on each of the Space nodes we will deploy. The first thing we need to do is declare for each operation (method) whether it will be sent to the entire cluster or to a specific Space partition. In case an operation is sent to the entire cluster, we also need to tell the client how to aggregate (or _reduce_) the results on from all cluster members. This is done using a reducer class which implements the [RemoteResultReducer](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/remoting/RemoteResultReducer.html) interface.
 
 All of the above is done by applying the `@ExecutorRemotingMethod` annotation (new in 8.0.1) to each of the methods. This annotation has several attributes:
 
@@ -176,4 +176,4 @@ public class IdGeneratorImpl implements IdGenerator {
 
 ![Jump arrow green.bmp](/attachment_files/Jump arrow green.bmp)
 {% color green %}Step Three{% endcolor %}
- - [Building and Running the Application](/xap96/step-3---building-and-running-the-application.html) - Shows how to build, package and deploy the application while taking advatage of XAP's dynamic load balancing capabilities and the Space as a highly `HttpSession` store.
+ - [Building and Running the Application](./step-3---building-and-running-the-application.html) - Shows how to build, package and deploy the application while taking advatage of XAP's dynamic load balancing capabilities and the Space as a highly `HttpSession` store.

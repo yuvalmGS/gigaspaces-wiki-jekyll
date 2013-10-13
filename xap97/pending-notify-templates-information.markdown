@@ -16,7 +16,7 @@ You may view the information regarding pending notify templates. The following i
 - Expiration date
 - If the notification is blocked on a specific UID, the UID is shown
 
-In the Classes view, you can click a specific class to view all the pending notify templates that are registered. You can investigate the template values by opening the [Object Inspector](/xap96/object-inspector.html).
+In the Classes view, you can click a specific class to view all the pending notify templates that are registered. You can investigate the template values by opening the [Object Inspector](./object-inspector.html).
 
 {% indent %}
 ![Pending Notify Templates Information.gif](/attachment_files/Pending Notify Templates Information.gif)

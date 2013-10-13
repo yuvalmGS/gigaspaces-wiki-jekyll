@@ -14,7 +14,7 @@ Benchmarks should test simple and complex queries as GigaSpaces supports both si
 
 Another dimension for these tests is concurrency - which measures how the system scales as a function of the amount of concurrent remote users or colocated threads accessing the system. 
 
-One more dimension is the grid size (the topology). This measures how the system scales as a function of the number of data-grid nodes leveraging GigaSpaces [In-Memory-Map-Reduce API](/xap96/task-execution-over-the-space.html). There is also a [client side caching](/xap96/client-side-caching.html) component that is viable in many scenarios that is important to test (read-mostly scenarios).  As you see the performance benchmark matrix is extensive and requires the benchmark tool to support all these options/scenarios.
+One more dimension is the grid size (the topology). This measures how the system scales as a function of the number of data-grid nodes leveraging GigaSpaces [In-Memory-Map-Reduce API](./task-execution-over-the-space.html). There is also a [client side caching](./client-side-caching.html) component that is viable in many scenarios that is important to test (read-mostly scenarios).  As you see the performance benchmark matrix is extensive and requires the benchmark tool to support all these options/scenarios.
 
 ## Benchmark Results
 
@@ -22,9 +22,9 @@ The different benchmarks results can be found on the [benchmarks page](http://ww
 
 ## Benchmark Tools
 
-- [GS-UI Benchmark View](/xap96/benchmark-view---gigaspaces-browser.html) — This is a Java Swing-based tool allowing you to run various tests. It does not currently have a good way to export the results and automate the benchmark scenarios. Still, with a matter of few clicks, you can get a good sense how your environment performs.
-- [Benchmark Utility - GigaSpaces CLI](/xap96/benchmark-utility---gigaspaces-cli.html) — This is the Java command line version of the GS-UI Benchmark View. It include similar options, but being a command-line tool allows automation of the benchmarks via scripts. The source code is provided for this tool.
-- [C++ Benchmark Framework](/xap96/c++-benchmark-framework.html) — XAP C++ API Benchmark framework. Source code provided.
+- [GS-UI Benchmark View](./benchmark-view---gigaspaces-browser.html) — This is a Java Swing-based tool allowing you to run various tests. It does not currently have a good way to export the results and automate the benchmark scenarios. Still, with a matter of few clicks, you can get a good sense how your environment performs.
+- [Benchmark Utility - GigaSpaces CLI](./benchmark-utility---gigaspaces-cli.html) — This is the Java command line version of the GS-UI Benchmark View. It include similar options, but being a command-line tool allows automation of the benchmarks via scripts. The source code is provided for this tool.
+- [C++ Benchmark Framework](./c++-benchmark-framework.html) — XAP C++ API Benchmark framework. Source code provided.
 - [XAP96NET:.NET Benchmark Example](XAP96NET:.NET Benchmark Example) - XAP .Net API Benchmark framework. Source code provided.
 
 ## Large Scale Benchmarks

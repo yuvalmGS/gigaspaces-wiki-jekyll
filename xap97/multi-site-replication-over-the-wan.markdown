@@ -38,7 +38,7 @@ The GigaSpaces WAN Gateway features the following:
 - Changing WAN replication topology in runtime - adding or removing remote sites without system shutdown.
 
 {% info %}
-This page describe how to establish replication between multiple spaces in a typical WAN environment, where each space is a separate network and there is a need for a designated outbound and inbound gateway machine or machines on each network in order to interact with the other network. If this is not the case, and there is a direct network connection available between all space instances machine like VLAN or VPN please refer to [Multi-Space Replication over the LAN or VPN](/xap96/multi-space-replication-over-the-lan-or-vpn.html)
+This page describe how to establish replication between multiple spaces in a typical WAN environment, where each space is a separate network and there is a need for a designated outbound and inbound gateway machine or machines on each network in order to interact with the other network. If this is not the case, and there is a direct network connection available between all space instances machine like VLAN or VPN please refer to [Multi-Space Replication over the LAN or VPN](./multi-space-replication-over-the-lan-or-vpn.html)
 {% endinfo %}
 
 # Supported Toplogies
@@ -48,7 +48,7 @@ This page will demonstrate two sample multi-site replication topologies. These a
 - Multi-master with two sites, where each site is active and updates its subset of the data.
 - Master-slave, where only one site actually updates the data while the rest either serve as a backup or use it in read only mode.
 
-For both of the above topologies, replication is done in in a similar way: Each space is replicating the relevant data to its target space(s) via a local gateway which routes the data to the gateway of the target space(s) and from there to the target space. The data is being replicated asynchronously in a reliable mode, which means that even if a primary space instance fails on the source site, the backup space instance which replaces it will immediately take control and replicate the missing data along with new data that has been  generated on the newly elected primary space instance. This is very similar to the [Mirror Service](/xap96/asynchronous-persistency-with-the-mirror.html) replication scheme. The gateway is discussed in full below.
+For both of the above topologies, replication is done in in a similar way: Each space is replicating the relevant data to its target space(s) via a local gateway which routes the data to the gateway of the target space(s) and from there to the target space. The data is being replicated asynchronously in a reliable mode, which means that even if a primary space instance fails on the source site, the backup space instance which replaces it will immediately take control and replicate the missing data along with new data that has been  generated on the newly elected primary space instance. This is very similar to the [Mirror Service](./asynchronous-persistency-with-the-mirror.html) replication scheme. The gateway is discussed in full below.
 
 ![wan_how_it_works.jpg](/attachment_files/wan_how_it_works.jpg)
 
@@ -88,7 +88,7 @@ Each of replication channel to the gateways can be configured with more paramete
 {% endhighlight %}
 
 Here we have specified a global bulk size of 1000 but have specifically overridden it in the replication channel to Hong Kong with 100, and have a global maximum redo log capacity for both targets of 1000000.
-{% refer %}For more details about all the available configuration elements of the space gateway targets please refer to the [Configuring Space Gateway Targets](/xap96/configuring-space-gateway-targets.html) section.{% endrefer %}
+{% refer %}For more details about all the available configuration elements of the space gateway targets please refer to the [Configuring Space Gateway Targets](./configuring-space-gateway-targets.html) section.{% endrefer %}
 
 {% tip %}
 **Use the `partitioned-sync2backup` cluster schema**
@@ -154,11 +154,11 @@ have no meaning, all sites could designate the same ports as well-->
 In the above example we see that both the sink and delegator needs a reference to the gateway lookup configuration, and that's because both components are using this configuration to locate the relevant component or to register themselves. They use their local gateway name to identify themselves to the lookup configuration, where they should be registered and where they should look for their targets.
 
 The delegator and sink components are actually isolated and can even be deployed in separate processing units but the most simple deployment would be to bundle theses two together. However, in some cases you might want to separate this into two or more machines due to system loads or other reasons.
-{% refer %}For full details and available configuration please refer to [Replication Gateway Components](/xap96/replication-gateway-components.html){% endrefer %}
+{% refer %}For full details and available configuration please refer to [Replication Gateway Components](./replication-gateway-components.html){% endrefer %}
 
 ## Gateway and the Mirror Service
 
-A gateway and a [Mirror Service](/xap96/asynchronous-persistency-with-the-mirror.html) are two different components which can co-exist together without any effect on each other. A gateway is just another reliable asynchronous target. Due to this fact, we will not discuss or demonstrate mirror service along side with a gateway because they do not contradict each other or require any special configuration when used in the same space cluster.
+A gateway and a [Mirror Service](./asynchronous-persistency-with-the-mirror.html) are two different components which can co-exist together without any effect on each other. A gateway is just another reliable asynchronous target. Due to this fact, we will not discuss or demonstrate mirror service along side with a gateway because they do not contradict each other or require any special configuration when used in the same space cluster.
 
 ## Gateway and Distributed Transactions
 
@@ -482,7 +482,7 @@ With this architecture, we will have a multi-master topology where data is being
 
 ![wan_multi_master.jpg](/attachment_files/wan_multi_master.jpg)
 
-We will demonstrate this using two sites but any number of sites is supported in the same manner. In a master-slave topology, each site should try to modify different subsets of the data as much as possible because many conflicts can occur if multiple sites are changing the same space entries at the same time. Such conflict can be resolved using a conflict resolver which will be discussed fully at [Multi-Site Conflict Resolution](/xap96/multi-site-conflict-resolution.html).
+We will demonstrate this using two sites but any number of sites is supported in the same manner. In a master-slave topology, each site should try to modify different subsets of the data as much as possible because many conflicts can occur if multiple sites are changing the same space entries at the same time. Such conflict can be resolved using a conflict resolver which will be discussed fully at [Multi-Site Conflict Resolution](./multi-site-conflict-resolution.html).
 
 With the example below we will have only New York and London as the two active sites.
 
@@ -744,19 +744,19 @@ The [Multi-Master running example](http://wiki.gigaspaces.com/wiki/display/SBP/W
 
 # Filtering Replication Between Gateways
 
-In some cases, there can be data that should not be replicated between the sites but should still be replicated locally to the backup or a mirror service. Hence, specifying the object is not replicated does not fit. Since a replication channel to a gateway is like any other replication channel, a custom [Replication Filter](/xap96/cluster-replication-filters.html) at the source space can be used to filter the relevant data from being sent to the target gateway. This filtering should be based on the replication target name in order to identify that the replication filter is called for the correct outgoing replication to the gateway.
-{% refer %}For full details and example please refer to [Replication Gateway Filtering](/xap96/replication-gateway-filtering.html){% endrefer %}
+In some cases, there can be data that should not be replicated between the sites but should still be replicated locally to the backup or a mirror service. Hence, specifying the object is not replicated does not fit. Since a replication channel to a gateway is like any other replication channel, a custom [Replication Filter](./cluster-replication-filters.html) at the source space can be used to filter the relevant data from being sent to the target gateway. This filtering should be based on the replication target name in order to identify that the replication filter is called for the correct outgoing replication to the gateway.
+{% refer %}For full details and example please refer to [Replication Gateway Filtering](./replication-gateway-filtering.html){% endrefer %}
 
 # Bootstrap One Site From Another Site
 
 Bootstrapping a site from another site is a process in which one site space is starting fresh and it is being populated with the data of another site space. This can be useful after a very long disconnection where the replication redo-log in the source spaces that replicates to this site was dropped due to breaching capacity limitations, and the disconnected site should start fresh. Other reasons may be an explicit planned downtime due-to some maintenance of one site which lead to a complete system bootstrap once restarted.
-{% refer %}For full details of how to enable the bootstrap mechanism refer to [Replication Gateway Bootstrapping Process](/xap96/replication-gateway-bootstrapping-process.html){% endrefer %}
+{% refer %}For full details of how to enable the bootstrap mechanism refer to [Replication Gateway Bootstrapping Process](./replication-gateway-bootstrapping-process.html){% endrefer %}
 
 # Changing Sites Topology During Runtime
 
 The topology might change during runtime, for instance a new site can be added and the existing sites should be familiar with it and start replicating to it and receive replication from it. On the other hand a site can be removed and the existing should stop holding replication backlog for it and drop it from their list of gateway targets.
 
-{% refer %}For full details of how to add and remove sites during runtime refer to [Changing Multi-Site Deployment during Runtime](/xap96/changing-multi-site-deployment-during-runtime.html){% endrefer %}
+{% refer %}For full details of how to add and remove sites during runtime refer to [Changing Multi-Site Deployment during Runtime](./changing-multi-site-deployment-during-runtime.html){% endrefer %}
 
 # Read More
 

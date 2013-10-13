@@ -55,7 +55,7 @@ You can very easily replace your existing Hibernate cache provider, typically EH
 
 ## Step 2: Scaling Up Your Database by Adding a Data Grid
 
-If you need to scale up your database, you can use GigaSpaces as an In-Memory Data Grid. Your application communicates with the Data Grid using [The GigaSpace Interface](/xap96/the-gigaspace-interface.html) or the [Map API](/xap96/map-api.html) interfaces. On the back-end, GigaSpaces persists the data to your existing database using your existing Hibernate O/R mapping in [asynchronous manner](/xap96/asynchronous-persistency-with-the-mirror.html).
+If you need to scale up your database, you can use GigaSpaces as an In-Memory Data Grid. Your application communicates with the Data Grid using [The GigaSpace Interface](./the-gigaspace-interface.html) or the [Map API](./map-api.html) interfaces. On the back-end, GigaSpaces persists the data to your existing database using your existing Hibernate O/R mapping in [asynchronous manner](./asynchronous-persistency-with-the-mirror.html).
 
 ![Hibernate DataGrid.jpg](/attachment_files/Hibernate DataGrid.jpg)
 
@@ -64,7 +64,7 @@ If you need to scale up your database, you can use GigaSpaces as an In-Memory Da
 - **Database scalability** through partitioning and data distribution - enables higher data volumes and higher throughput with low latency
 - **Better decoupling** between your application and the database - no need to hard-wire Hibernate and database concepts into your code and runtime environment
 - **Event-driven** model enables notifications when data is modified
-- **Database access can be synchronous or asynchronous** \- the [GigaSpaces Mirror Service](/xap96/asynchronous-persistency-with-the-mirror.html) allows data to be persisted to the database asynchronously, without a performance penalty
+- **Database access can be synchronous or asynchronous** \- the [GigaSpaces Mirror Service](./asynchronous-persistency-with-the-mirror.html) allows data to be persisted to the database asynchronously, without a performance penalty
 
 {% infosign %} To learn how to do this, see the [Moving from Hibernate to Space](http://wiki.gigaspaces.com/wiki/display/SBP/Moving+from+Hibernate+to+Space) best practice.
 
@@ -78,7 +78,7 @@ This approach is called Space Based Architecture, and the way to achieve it is t
 
 {% refer %}To learn more about Space-Based Architecture and its implications, read our white paper, [The Scalability Revolution: From Dead End to Open Road](http://www.gigaspaces.com/WhitePapers).{% endrefer %}
 
-{% refer %}To learn more about OpenSpaces, see the [OpenSpaces](/xap96/product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) section in this online help.{% endrefer %}
+{% refer %}To learn more about OpenSpaces, see the [OpenSpaces](./product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) section in this online help.{% endrefer %}
 
 {% anchor step1 %}
 
@@ -89,7 +89,7 @@ This section provides instructions on switching your existing Hibernate local ca
 **To switch your Hibernate cache provider to GigaSpaces and use GigaSpaces distributed caching:**
 
 1. Download the GigaSpaces {% refer %} [Download Page](http://www.gigaspaces.com/os_downloads.html#g)) {% endrefer %}
-2. Install GigaSpaces. If you need help, refer to the [installation instructions](/xap96/installing-gigaspaces.html).
+2. Install GigaSpaces. If you need help, refer to the [installation instructions](./installing-gigaspaces.html).
 3. This step is different if you are managing your Hibernate configuration using Spring (refer to the Spring documentation, ORM Data Access, section 12.2.2), or directly using `hibernate.properties` or `hibernate.cfg.xml`. Select the relevant tab below.
 
 {% c %}
@@ -226,7 +226,7 @@ In this topology each application accessing a remote cache.
 - Set your `gigaspaces.hibernate.cache.url` property to {% wbr %}
     `jini://\*/\*/dataGrid`
 - Copy `dom4j.jar` and `hibernate3.jar` and all relevant Hibernate distribution package libraries into the `<GigaSpaces Root>/lib/platform/ext` folder.
-- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment](/xap96/the-runtime-environment.html).
+- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment](./the-runtime-environment.html).
 - Run the deploy command to deploy the remote space:
     <GigaSpaces root>\bin\gs.bat deploy-space datagrid
 Wait to see the following output:
@@ -253,7 +253,7 @@ In this topology each application has a lightweight, embedded cache, which is in
     jini://\*/\*/dataGrid?useLocalCache
 
 - Copy `dom4j.jar` and `hibernate3.jar` and all relevant Hibernate distribution package libraries into the `<GigaSpaces Root>/lib/platform/ext` folder.
-- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment](/xap96/the-runtime-environment.html).
+- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment](./the-runtime-environment.html).
 - Run the deploy command to deploy the master space:
     <GigaSpaces root>\bin\gs.bat deploy-space datagrid
 
@@ -283,7 +283,7 @@ In this topology, data is split between two spaces (partitions) according to an 
     jini://\*/\*/dataGrid?useLocalCache
 
 - Copy `dom4j.jar` and `hibernate3.jar` from Hibernate distribution package into the `<GigaSpaces Root>/lib/platform/ext` folder.
-- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment](/xap96/the-runtime-environment.html).
+- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment](./the-runtime-environment.html).
 - Run the deploy command to deploy the master space in cluster of two partitions topology:
     <GigaSpaces root>\bin\gs.bat deploy-space -cluster schema=partitioned total_members=2,0 datagrid
 
@@ -330,7 +330,7 @@ This topology consists of two or more space instances with replication between t
 - For the application components that are read/write (up to 50% write/remove/update) you should have the hibernate 2nd local cache to use a remote partitioned space topology.
 - For the application components that are read mostly (above 50% read) you should have the hibernate 2nd local cache to use a master [local cache](local cache)/[local view](local view) with remote partitioned space topology.
 - The embedded replicated cache topology is recommended only when having few client applications (up to 3) where the total amount of data can be accommodated within a single JVM and the application is 50% read/write.
-- For the application components that are write mostly (above 50% write/remove/update), you should **not use hibernate API directly** , but move into the [GigaSpace  Interface](/xap96/the-gigaspace-interface.html) and use the [Mirror service](/xap96/asynchronous-persistency-with-the-mirror.html) (if you still want to persist the data). In this case you can leverage [SQLQuery](/xap96/sqlquery.html) or [Task Executors](/xap96/task-execution-over-the-space.html) for complex distributed activities. In this case you should use remote partitioned space topology.
+- For the application components that are write mostly (above 50% write/remove/update), you should **not use hibernate API directly** , but move into the [GigaSpace  Interface](./the-gigaspace-interface.html) and use the [Mirror service](./asynchronous-persistency-with-the-mirror.html) (if you still want to persist the data). In this case you can leverage [SQLQuery](./sqlquery.html) or [Task Executors](./task-execution-over-the-space.html) for complex distributed activities. In this case you should use remote partitioned space topology.
 
 {% tip %}
 See the [Moving from Hibernate to Space](http://wiki.gigaspaces.com/wiki/display/SBP/Moving+from+Hibernate+to+Space) best practice for step by step instructions moving from Hibernate based application to GigaSpaces Data-Grid as the data access layer.
@@ -398,6 +398,6 @@ GigaSpaces Hibernate 2nd Level Cache controlled via the following system propert
 {: .table .table-bordered}
 |Property|Description|Default|Mandatory?|
 |:-------|:----------|:------|:---------|
-|gigaspace.hibernate.cache.url|  [Space URL](/xap96/space-url.html) String. This could be remote (clustered space) with/without a local cache/view URL or embedded space URL. Example:  `jini://\*/\*/mySpace`|  | YES |
+|gigaspace.hibernate.cache.url|  [Space URL](./space-url.html) String. This could be remote (clustered space) with/without a local cache/view URL or embedded space URL. Example:  `jini://\*/\*/mySpace`|  | YES |
 |gigaspace.hibernate.cache.timeToLive| Time in ms for the cached Hibernate object to live within the space. When you would like to evict Hibernate objects form the space based on a specific time duration, you should set this value.| [Long.MAX_VALUE](http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Long.html#MAX_VALUE) | NO |
 |gigaspace.hibernate.cache.waitForResponse| Time in ms to wait for a matching object to be written into the space when reading object from the space. When having transactional hibernate configuration you might want to increase this value to allow GigaSpaces to wait for locked objects under a transaction to be committed before rejecting the read operation. A value of 60000 (60 second) might be relevant in such cases.| 0 | NO |

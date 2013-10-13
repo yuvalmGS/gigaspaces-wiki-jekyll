@@ -22,8 +22,8 @@ GigaSpaces is 100% pure Java, and therefore can run on any UNIX or Windows machi
 
 - The `JAVA_HOME` environment variable points to the correct JDK (not JRE) directory before running GigaSpaces. For example, `D:\Java\jdk1.6.0_39`.
 - The `JAVA_HOME` environment variable should be added to the beginning of the `Path` environment variable. For example, `%JAVA_HOME%\bin;SystemRoot%\system32;%SystemRoot%;%SystemRoot%`
-- Optional: Your network and machines running GigaSpaces are configured to have multicast enabled. See the [Multicast Configuration](/xap96/how-to-configure-multicast.html) section for details on how to enable multicast.
-- You have reviewed the **[Supported Platforms](/xap96/supported-platforms.html)** section.
+- Optional: Your network and machines running GigaSpaces are configured to have multicast enabled. See the [Multicast Configuration](./how-to-configure-multicast.html) section for details on how to enable multicast.
+- You have reviewed the **[Supported Platforms](./supported-platforms.html)** section.
 - Set the `NIC_ADDR` environment variable to have the machine IP.
 
 # Installation
@@ -39,8 +39,8 @@ GigaSpaces is 100% pure Java, and therefore can run on any UNIX or Windows machi
 
 {% lampon %} **What's Next?**
 
-- To verify a local installation, a remote installation, and the cluster configuration, refer to the [Testing System Environment](/xap96/testing-system-environment.html) section.
-- See the [Quick Start Guide](/xap96/quick-start-guide.html) for your first steps with GigaSpaces.
+- To verify a local installation, a remote installation, and the cluster configuration, refer to the [Testing System Environment](./testing-system-environment.html) section.
+- See the [Quick Start Guide](./quick-start-guide.html) for your first steps with GigaSpaces.
 
 ## Installing on Linux
 
@@ -55,8 +55,8 @@ unzip gigaspaces-xap-premium-9.5.0-ga-b8500.zip
 
 {% lampon %} **What's Next?**
 
-- To verify a local installation, a remote installation, and the cluster configuration, refer to the [Testing System Environment](/xap96/testing-system-environment.html) section.
-- See the [Quick Start Guide](/xap96/quick-start-guide.html) for your first steps with GigaSpaces.
+- To verify a local installation, a remote installation, and the cluster configuration, refer to the [Testing System Environment](./testing-system-environment.html) section.
+- See the [Quick Start Guide](./quick-start-guide.html) for your first steps with GigaSpaces.
 
 {% endtoczone %}
 
@@ -86,13 +86,13 @@ You should also remove specific JDK command-line arguments, like `\-server`, whi
 
 ## Performance Tips
 
-Before you begin working with GigaSpaces, it is recommended to review the [Performance Tuning and Considerations](/xap96/performance-tuning-and-considerations.html) sections and apply some of the required changes. For example, you must update the [**max file descriptors limit**](Tuning Infrastructure#Max Processes and File Descriptors Limit) before you begin.
+Before you begin working with GigaSpaces, it is recommended to review the [Performance Tuning and Considerations](./performance-tuning-and-considerations.html) sections and apply some of the required changes. For example, you must update the [**max file descriptors limit**](Tuning Infrastructure#Max Processes and File Descriptors Limit) before you begin.
 
 {% info %}
  The recommendation is to review at least the following sections:
 
-- [Tuning Infrastructure](/xap96/tuning-infrastructure.html)
+- [Tuning Infrastructure](./tuning-infrastructure.html)
 - [Tuning GigaSpaces Performance - Basics](Tuning GigaSpaces Performance - Basics)
-- [Tuning Java Virtual Machines](/xap96/tuning-java-virtual-machines.html)
-- [Benchmarking the platform](/xap96/moving-into-production-checklist.html)
+- [Tuning Java Virtual Machines](./tuning-java-virtual-machines.html)
+- [Benchmarking the platform](./moving-into-production-checklist.html)
 {% endinfo %}

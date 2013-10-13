@@ -44,4 +44,4 @@ Scroll right to see more attributes:
 
 {% anchor 1 %}
 
-- Inspecting objects using the [Object Inspector](/xap96/object-inspector.html) or the [Object Snapshot Inspector](/xap96/object-inspector.html).
+- Inspecting objects using the [Object Inspector](./object-inspector.html) or the [Object Snapshot Inspector](./object-inspector.html).

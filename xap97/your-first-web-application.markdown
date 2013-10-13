@@ -25,7 +25,7 @@ page_id: 61867190
 
 ## Before You Begin - Set Up Your Environment
 
-If you would like to build and run the tutorial sample application, [download GigaSpaces and set up your Eclipse development environment](/xap96/setting-up-your-ide-to-work-with-gigaspaces.html).
+If you would like to build and run the tutorial sample application, [download GigaSpaces and set up your Eclipse development environment](./setting-up-your-ide-to-work-with-gigaspaces.html).
 If you also wish to utilize the GigaSpaces XAP load balancing agent, you should [download](http://httpd.apache.org/download.cgi) and install the [Apache 2.2 Http Server](http://httpd.apache.org/).
 
 {% comment %}
@@ -58,7 +58,7 @@ This tutorial will also contain in the near future more advanced examples and pa
 
 {% endcolumn %}
 {% column width=35% %}
-[**Adding Self-Healing and Automatic Scaling to Your Existing Web Application**](/xap96/step-1---deploying-your-web-application-to-the-gigaspaces-environment.html)
+[**Adding Self-Healing and Automatic Scaling to Your Existing Web Application**](./step-1---deploying-your-web-application-to-the-gigaspaces-environment.html)
 {% color grey %}~15 minutes{% endcolor %}
 Shows how to take an existing web application (in our case a very simple servlet and JSP example) and deploy it to the GigaSpaces environment to achieve high availability and dynamic load balancer configuration
 {% endcolumn %}
@@ -100,7 +100,7 @@ Shows how to take an existing web application (in our case a very simple servlet
 
 {% endcolumn %}
 {% column width=35% %}
-[**Enabling HTTP Session Failover & Fault Tolerance**](/xap96/step-2---enabling-http-session-failover-and-fault-tolerance.html)
+[**Enabling HTTP Session Failover & Fault Tolerance**](./step-2---enabling-http-session-failover-and-fault-tolerance.html)
 {% color grey %}~15 minutes{% endcolor %}
 Shows how to back your application's HTTP session store with the Space to achieve high availability and fault-tolerance
 {% endcolumn %}
@@ -142,7 +142,7 @@ Shows how to back your application's HTTP session store with the Space to achiev
 {% endcolumn %}
 {% column width=35% %}
 
-[**Removing the Database Bottleneck**](/xap96/step-3---scaling-the-data-access-layer.html)
+[**Removing the Database Bottleneck**](./step-3---scaling-the-data-access-layer.html)
 {% color grey %}~15 minutes{% endcolor %}
 Shows how to access the GigaSpaces XAP in memory data grid from within your web application to achieve unparalleled scalability and performance compared to a relational database.
 

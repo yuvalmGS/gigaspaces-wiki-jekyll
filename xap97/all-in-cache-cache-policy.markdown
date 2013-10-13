@@ -8,7 +8,7 @@ page_id: 61867183
 
 # Overview
 
-When running in `ALL_IN_CACHE` cache policy mode, the space uses only the available physical memory. When running in a persistent space mode and having [Space Persistency](/xap96/space-persistency.html) defined, the space data is backed with the underlying database, but the overall capacity of the space does not exceed the capacity of the available physical memory.
+When running in `ALL_IN_CACHE` cache policy mode, the space uses only the available physical memory. When running in a persistent space mode and having [Space Persistency](./space-persistency.html) defined, the space data is backed with the underlying database, but the overall capacity of the space does not exceed the capacity of the available physical memory.
 
 {% tip %}
 When using the All IN CACHE, the **cache size** parameter is ignored.
@@ -48,4 +48,4 @@ Getting `SpaceMemoryShortageException` when running in `ALL-IN_CACHE` policy mod
 -XX:MaxPermSize=256m -XX:+ExplicitGCInvokesConcurrent -XX:+UseCompressedOops
 {% endhighlight %}
 
-When running with large heap size you should tune the memory manager settings. This will avoid throwing `SpaceMemoryShortageException` too early. See the [Handling Large JVM Heap Size](/xap96/memory-management-facilities.html#HandlingLargeJVMHeapSize) section for details.
+When running with large heap size you should tune the memory manager settings. This will avoid throwing `SpaceMemoryShortageException` too early. See the [Handling Large JVM Heap Size](./memory-management-facilities.html#HandlingLargeJVMHeapSize) section for details.

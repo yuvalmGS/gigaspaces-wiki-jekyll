@@ -12,9 +12,9 @@ Template matching (a.k.a. Match by example) is a simple way to query the space -
 
 Since by convention the default constructor usually initializes all the properties to `null` either implicitly or explicitly, in most cases it's enough to simply set the properties which should be matched, without bothering with explicitly setting null to the other properties. Note that setting two or more properties with non-null values provides an **AND** behavior.
 
-{% infosign %} It is highly recommended to index one or more of the properties used in the template to speed up the matching process. For more information see [Indexing](/xap96/indexing.html).
+{% infosign %} It is highly recommended to index one or more of the properties used in the template to speed up the matching process. For more information see [Indexing](./indexing.html).
 
-{% plus %} If you require additional query options refer to [SQLQuery](/xap96/sqlquery.html).
+{% plus %} If you require additional query options refer to [SQLQuery](./sqlquery.html).
 
 # Examples
 
@@ -51,7 +51,7 @@ gigaspace.clear(null);
 
 # Indexes
 
-GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (regardless whether the space is persistent or not) that maintains a hash and btree like indexes for each indexed Space Class attribute. If you store a large number of Space objects from the same class type in the space, consider defining one or more indexes for attributes used with [template matching](/xap96/template-matching.html) or [SQL Query](/xap96/sqlquery.html). Defining indexes will improve the `read/take/readMultiple/takeMultiple/clear/count` operations response time significantly. Remember, indexes impact `write` and `take` operations response time, so choose your indexed fields carefully - each index has an overhead. GigaSpaces support index for equality , comparison (bigger/less than) queries and support [Regular Index](/xap96/indexing.html) for a specific field and a [Compound Index](/xap96/indexing.html#Compound Indexing) for multiple fields. Indexes can be defined for space class root level object or for a nested field allowing you to query different type of objects ("join") using the same query without any performance penalty.
+GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (regardless whether the space is persistent or not) that maintains a hash and btree like indexes for each indexed Space Class attribute. If you store a large number of Space objects from the same class type in the space, consider defining one or more indexes for attributes used with [template matching](./template-matching.html) or [SQL Query](./sqlquery.html). Defining indexes will improve the `read/take/readMultiple/takeMultiple/clear/count` operations response time significantly. Remember, indexes impact `write` and `take` operations response time, so choose your indexed fields carefully - each index has an overhead. GigaSpaces support index for equality , comparison (bigger/less than) queries and support [Regular Index](./indexing.html) for a specific field and a [Compound Index](./indexing.html#Compound Indexing) for multiple fields. Indexes can be defined for space class root level object or for a nested field allowing you to query different type of objects ("join") using the same query without any performance penalty.
 
 # Inheritance Support
 
@@ -72,7 +72,7 @@ int numberOfCitizens = gigaSpace.count(new Citizen());
 # Partitioned cluster
 
 When querying a partitioned cluster using a template, it is possible to use the routing property to control whether the query is broadcasted to the entire cluster or executed against a specific partition.
-For more information see [Routing In Partitioned Spaces](/xap96/routing-in-partitioned-spaces.html).
+For more information see [Routing In Partitioned Spaces](./routing-in-partitioned-spaces.html).
 
 # Considerations
 
@@ -108,7 +108,7 @@ public class Person {
 }
 {% endhighlight %}
 
-We've indicated that `-1` should be treated as `null` when performing template matching, and initialized age to `-1` so users of Person class need not set it explicitly whenever they use it. Note that gs.xml can be used instead of annotations to specify metadata - for more information refer to [POJO Metadata](/xap96/pojo-metadata.html).
+We've indicated that `-1` should be treated as `null` when performing template matching, and initialized age to `-1` so users of Person class need not set it explicitly whenever they use it. Note that gs.xml can be used instead of annotations to specify metadata - for more information refer to [POJO Metadata](./pojo-metadata.html).
 
 {% infosign %} Properties of primitive types are implicitly boxed when stored in the space and unboxed when reconstructed to a POJO.
 
@@ -116,4 +116,4 @@ We've indicated that `-1` should be treated as `null` when performing template m
 
 ## Nested Template Matching
 
-Nested template matching is not supported - to match nested properties, collections and arrays use [SQLQuery](/xap96/sqlquery.html).
+Nested template matching is not supported - to match nested properties, collections and arrays use [SQLQuery](./sqlquery.html).

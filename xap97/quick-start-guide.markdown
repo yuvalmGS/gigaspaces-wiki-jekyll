@@ -10,13 +10,13 @@ page_id: 61867014
 {% column width=25% %}
 
 {% align center %}
-[![screencasts-single.jpg](/attachment_files/screencasts-single.jpg)](/xap96/screen-casts.html)
+[![screencasts-single.jpg](/attachment_files/screencasts-single.jpg)](./screen-casts.html)
 {% endalign %}
 
 {% endcolumn %}
 {% column width=55% %}
 
-[Screen Casts](/xap96/screen-casts.html)
+[Screen Casts](./screen-casts.html)
 Watch our getting started screen casts and get up and running with XAP in minutes!
 {% endcolumn %}
 {% column %}
@@ -30,13 +30,13 @@ Watch our getting started screen casts and get up and running with XAP in minute
 {% column width=25% %}
 
 {% align center %}
-[![button2.jpg](/attachment_files/button2.jpg)](/xap96/your-first-data-grid-application.html)
+[![button2.jpg](/attachment_files/button2.jpg)](./your-first-data-grid-application.html)
 {% endalign %}
 
 {% endcolumn %}
 {% column width=55% %}
 
-[Your First Data Grid Application](/xap96/your-first-data-grid-application.html)
+[Your First Data Grid Application](./your-first-data-grid-application.html)
 Create your first data grid and access it from your Java application
 {% endcolumn %}
 {% column %}
@@ -49,13 +49,13 @@ Create your first data grid and access it from your Java application
 {% column width=25% %}
 
 {% align center %}
-[![rt_arch.png](/attachment_files/rt_arch.png)](/xap96/your-first-real-time-big-data-analytics-application.html)
+[![rt_arch.png](/attachment_files/rt_arch.png)](./your-first-real-time-big-data-analytics-application.html)
 {% endalign %}
 
 {% endcolumn %}
 {% column width=55% %}
 
-[Your First Real Time Big Data Analytics Application](/xap96/your-first-real-time-big-data-analytics-application.html)
+[Your First Real Time Big Data Analytics Application](./your-first-real-time-big-data-analytics-application.html)
 Create a Twitter like word count application
 {% endcolumn %}
 {% column %}
@@ -68,13 +68,13 @@ Create a Twitter like word count application
 {% column width=25% %}
 
 {% align center %}
-[![button2.jpg](/attachment_files/button2.jpg)](/xap96/your-first-xtp-application.html)
+[![button2.jpg](/attachment_files/button2.jpg)](./your-first-xtp-application.html)
 {% endalign %}
 
 {% endcolumn %}
 {% column width=55% %}
 
-[Your First XTP Application](/xap96/your-first-xtp-application.html)
+[Your First XTP Application](./your-first-xtp-application.html)
 Create your first scalable extreme transaction processing application
 {% endcolumn %}
 {% column %}
@@ -87,13 +87,13 @@ Create your first scalable extreme transaction processing application
 {% column width=25% %}
 
 {% align center %}
-[![web-icon.jpg](/attachment_files/web-icon.jpg)](/xap96/your-first-web-application.html)
+[![web-icon.jpg](/attachment_files/web-icon.jpg)](./your-first-web-application.html)
 {% endalign %}
 
 {% endcolumn %}
 {% column %}
 
-[Your First Web Application](/xap96/your-first-web-application.html)
+[Your First Web Application](./your-first-web-application.html)
 Deploying and scaling your existing web application with GigaSpaces
 {% endcolumn %}
 {% endsection %}
@@ -104,13 +104,13 @@ Deploying and scaling your existing web application with GigaSpaces
 {% column width=25% %}
 
 {% align center %}
-[![Your First JPA Application](/attachment_files/animals.png)](/xap96/your-first-jpa-application.html)
+[![Your First JPA Application](/attachment_files/animals.png)](./your-first-jpa-application.html)
 {% endalign %}
 
 {% endcolumn %}
 {% column %}
 
-[Your First JPA Application](/xap96/your-first-jpa-application.html)
+[Your First JPA Application](./your-first-jpa-application.html)
 Learn how to use the standard JPA API to leverage the performance and scale of the XAP data grid
 {% endcolumn %}
 {% endsection %}
@@ -121,13 +121,13 @@ Learn how to use the standard JPA API to leverage the performance and scale of t
 {% column width=25% %}
 
 {% align center %}
-[![scale2.jpg](/attachment_files/scale2.jpg)](/xap96/beyond-the-basics.html)
+[![scale2.jpg](/attachment_files/scale2.jpg)](./beyond-the-basics.html)
 {% endalign %}
 
 {% endcolumn %}
 {% column %}
 
-[Beyond the Basics](/xap96/beyond-the-basics.html)
+[Beyond the Basics](./beyond-the-basics.html)
 After learning the basics, dive into the details and create complete applications
 {% endcolumn %}
 {% endsection %}
@@ -139,13 +139,13 @@ After learning the basics, dive into the details and create complete application
 {% column width=25% %}
 
 {% align center %}
-[![tv2.jpg](/attachment_files/tv2.jpg)](/xap96/screen-casts.html)
+[![tv2.jpg](/attachment_files/tv2.jpg)](./screen-casts.html)
 {% endalign %}
 
 {% endcolumn %}
 {% column %}
 
-[Screencasts](/xap96/screen-casts.html)
+[Screencasts](./screen-casts.html)
 Demonstrates how to develop and scale a simple application
 {% endcolumn %}
 {% endsection %}

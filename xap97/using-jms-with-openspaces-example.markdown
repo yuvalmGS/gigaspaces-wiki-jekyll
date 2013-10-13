@@ -24,7 +24,7 @@ page_id: 61867224
 
 # Overview
 
-The [OpenSpaces Data Example](/xap96/the-openspaces-data-example.html) demonstrates how to use a JMS feeder to send POJOs to the space. In order to make it happen we use two main features: Spring [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html) and JMS [MessageConverter](/xap96/jms-space-interoperability.html). This section describes how those features are used in the example.
+The [OpenSpaces Data Example](./the-openspaces-data-example.html) demonstrates how to use a JMS feeder to send POJOs to the space. In order to make it happen we use two main features: Spring [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html) and JMS [MessageConverter](./jms-space-interoperability.html). This section describes how those features are used in the example.
 
 # Architecture
 
@@ -61,7 +61,7 @@ public class JMSDataFeeder implements InitializingBean, DisposableBean {
 {% endtabcontent %}
 {% endinittab %}
 
-The `JMSDataFeeder` is injected with a Spring [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html). The [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html) is injected with a JMS `ConnectionFactory` and a destination of type `Queue`. Unlike the `DataFeeder`, the `JMSDataFeeder` does not declare an instance of `GigaSpace`. `GigaSpace` is injected into the `ConnectionFactory` bean, and is used behind the scenes by the JMS layer. In addition, the `ConnectionFactory` is injected with a [MessageConverter](/xap96/jms-space-interoperability.html) of type `ObjectMessage2ObjectConverter`.
+The `JMSDataFeeder` is injected with a Spring [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html). The [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html) is injected with a JMS `ConnectionFactory` and a destination of type `Queue`. Unlike the `DataFeeder`, the `JMSDataFeeder` does not declare an instance of `GigaSpace`. `GigaSpace` is injected into the `ConnectionFactory` bean, and is used behind the scenes by the JMS layer. In addition, the `ConnectionFactory` is injected with a [MessageConverter](./jms-space-interoperability.html) of type `ObjectMessage2ObjectConverter`.
 
 {% inittab os_simple_space|top %}
 {% tabcontent Code %}

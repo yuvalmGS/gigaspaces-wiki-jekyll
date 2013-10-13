@@ -59,6 +59,6 @@ Imagine that each car model has to be washed in a slightly different manner to a
 
 ![Jump arrow green.bmp](/attachment_files/Jump arrow green.bmp)
 {% color green %}Next Page{% endcolor %}
- - [Step two - Creating the Hello World Application](/xap96/step-two---creating-the-hello-world-application.html). Shows how to create your first GigaSpaces application and run it on your local machine.
+ - [Step two - Creating the Hello World Application](./step-two---creating-the-hello-world-application.html). Shows how to create your first GigaSpaces application and run it on your local machine.
 
-Or return to the [Your First XTP Application](/xap96/your-first-xtp-application.html) page.
+Or return to the [Your First XTP Application](./your-first-xtp-application.html) page.

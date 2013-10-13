@@ -9,7 +9,7 @@ page_id: 61867037
 
 # Overview
 
-The Grid Service Manager (GSM), is a special infrastructure service, responsible for managing [The Grid Service Container](/xap96/the-grid-service-container.html)s. The GSM accepts user deployment and undeployment requests of Processing Units, and provisions them to the Service Grid Cloud accordingly.
+The Grid Service Manager (GSM), is a special infrastructure service, responsible for managing [The Grid Service Container](./the-grid-service-container.html)s. The GSM accepts user deployment and undeployment requests of Processing Units, and provisions them to the Service Grid Cloud accordingly.
 
 The GSM monitors SLA breach events throughout the life-cycle of the application, and is responsible for taking corrective actions, once SLAs are breached.
 
@@ -26,7 +26,7 @@ After repeated failures, the GSM forcefully tries to destroy the instance and re
 
 # Starting the GSM
 
-The preferable way to start a GSM is using [The Grid Service Agent](/xap96/the-grid-service-agent.html). A GSM can be started on its own using the `\[GSHOME\]/bin/gsm.(bat/sh)` script (starts a GSM **with** embedded [Lookup Service](/xap96/the-lookup-service.html)), or using the `\[GSHOME\]/bin/gsm_nolus.(bat/sh)` script (starts a GSM **without** embedded [Lookup Service](/xap96/the-lookup-service.html)).
+The preferable way to start a GSM is using [The Grid Service Agent](./the-grid-service-agent.html). A GSM can be started on its own using the `\[GSHOME\]/bin/gsm.(bat/sh)` script (starts a GSM **with** embedded [Lookup Service](./the-lookup-service.html)), or using the `\[GSHOME\]/bin/gsm_nolus.(bat/sh)` script (starts a GSM **without** embedded [Lookup Service](./the-lookup-service.html)).
 
 # Configuring the GSM
 

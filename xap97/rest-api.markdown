@@ -11,7 +11,7 @@ page_id: 61867008
 
 {% section %}
 {% column %}
-The REST API exposing HTTP based interface Space. It is leveraging the [GigaSpace API](/xap96/the-gigaspace-interface.html). It support the following methods:
+The REST API exposing HTTP based interface Space. It is leveraging the [GigaSpace API](./the-gigaspace-interface.html). It support the following methods:
 
 1. GET - can be used to perform a readByID or a readMultiple action by a space query.
 1. POST - can be used to perform a write / writeMultiple action.
@@ -112,4 +112,4 @@ See that Item3 does not exists:
 1.Download the project from the [github repository](https://github.com/OpenSpaces/RESTData) 
 2.Edit "/RESTData/src/main/webapp/WEB-INF/config.properties"? to include your space url, for example: `spaceUrl=jini://\*/\*/testSpace?groups=restdata`
 3.Package the project using maven: "mvn package". This will run the unit tests and package the project to a war file located at /target/RESTData.war
-4.[Deploy](/xap96/deploy---gigaspaces-cli.html) the war file. 
+4.[Deploy](./deploy---gigaspaces-cli.html) the war file.

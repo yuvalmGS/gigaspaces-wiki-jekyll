@@ -9,7 +9,7 @@ page_id: 64323585
 
 # Introduction
 
-When deploying a Processing Unit(PU) configured with an embedded [Space](/xap96/the-space-component.html) with a clustered SLA or when running a remote clustered space, a clustered `GigaSpace` proxy is created. 
+When deploying a Processing Unit(PU) configured with an embedded [Space](./the-space-component.html) with a clustered SLA or when running a remote clustered space, a clustered `GigaSpace` proxy is created.
 
 A clustered proxy is a smart proxy that performs operations against the entire cluster when needed.
 
@@ -26,7 +26,7 @@ Many times, especially when working with a PU that starts an embedded space, ope
 
 The decision of working directly with a cluster member or against the whole cluster is done in the `GigaSpace` level. The `GigaSpacesFactoryBean` provides a clustered flag with the following logic as the default value: If the space is started in embedded mode (for example, `/./space`), the clustered flag is set to `false`. When the space is looked up in a remote protocol (i.e. `jini://*/*/space`, the clustered flag is set to `true`. 
 
-You can use the `clustered` property to control this behavior or use the API to use a non-clustered embedded proxy to create a clustered proxy. This allows the collocated business logic to access the entire cluster to perform cluster wide operations. Clustered and Non-Clustered proxies may be used with Collocated a [Task](/xap96/task-execution-over-the-space.html), [Service](/xap96/executor-based-remoting.html), [Notify Container](/xap96/notify-container.html) , [Polling Container](/xap96/polling-container.html) and any other Collocated business logic.
+You can use the `clustered` property to control this behavior or use the API to use a non-clustered embedded proxy to create a clustered proxy. This allows the collocated business logic to access the entire cluster to perform cluster wide operations. Clustered and Non-Clustered proxies may be used with Collocated a [Task](./task-execution-over-the-space.html), [Service](./executor-based-remoting.html), [Notify Container](./notify-container.html) , [Polling Container](./polling-container.html) and any other Collocated business logic.
 
 # How to Create a Clustered Proxy?
 
@@ -34,7 +34,7 @@ You may use Spring based configuration or API to create a Clustered Proxy.
 
 ## Using Spring
 
-When using a Spring based `pu.xml` to construct the [GigaSpace](/xap96/the-gigaspace-interface.html) bean to be injected into the relevant other beans the following should be used to create a clustered and a non-clustered `GigaSpace` bean:
+When using a Spring based `pu.xml` to construct the [GigaSpace](./the-gigaspace-interface.html) bean to be injected into the relevant other beans the following should be used to create a clustered and a non-clustered `GigaSpace` bean:
 
 {% highlight java %}
 <os-core:space id="space" url="/./space" />
@@ -162,7 +162,7 @@ With this example the `pu.xml` includes the following:
 <os-remoting:service-exporter id="serviceExporter" />
 {% endhighlight %}
 
-Our Service using the [@PostPrimary](/xap96/the-space-component.html#Primary Backup Notifications) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](/xap96/obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID. 
+Our Service using the [@PostPrimary](./the-space-component.html#Primary Backup Notifications) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](./obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID.
 
 Here is how the service interface looks like:
 
@@ -266,7 +266,7 @@ Service call - routing 1 partition 2 gigaSpaceEmbed - total visible objects:1
 
 ## A DistributedTask Usage of a Clustered and a Non-Clustered Proxy
 
-Our `DistributedTask` implements the [ClusterInfoAware](/xap96/obtaining-cluster-information.html). This allows it to be injected with the `ClusterInfo` that provides information about the cluster topology and the local partition ID. Here is how the `DistributedTask` looks like:
+Our `DistributedTask` implements the [ClusterInfoAware](./obtaining-cluster-information.html). This allows it to be injected with the `ClusterInfo` that provides information about the cluster topology and the local partition ID. Here is how the `DistributedTask` looks like:
 
 The `pu.xml` includes the following:
 
@@ -367,7 +367,7 @@ With this example the `pu.xml` includes the following:
 <context:component-scan base-package="com.test"/>
 {% endhighlight %}
 
-Our Event Container (notify container) using the [@PostPrimary](/xap96/the-space-component.html#Primary Backup Notifications) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](/xap96/obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID. 
+Our Event Container (notify container) using the [@PostPrimary](./the-space-component.html#Primary Backup Notifications) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](./obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID.
 
 Here is how the event container looks like:
 

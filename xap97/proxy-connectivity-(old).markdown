@@ -6,20 +6,20 @@ page_id: 61867003
 
 {% summary %}Client Proxy Connectivity and reconnection options{% endsummary %}
 
-{% warning title=This page describes the old proxy router, which is disabled starting 9.0.1. For information regarding the new proxy router, refer to [Proxy Connectivity](/xap96/proxy-connectivity.html) %}
+{% warning title=This page describes the old proxy router, which is disabled starting 9.0.1. For information regarding the new proxy router, refer to [Proxy Connectivity](./proxy-connectivity.html) %}
 {% endwarning %}
 
 # Overview
 
 A client proxy object used by the application to interface with the data-grid. The application is unaware of it , but under-the-hood it maintains at the client side a mapping of the locations for all the data-grid members (logical partitions) and their physical location. Using this information it routs the requests (read/write) to the correct target logical partition or perform parallel map-reduce style activity when needed (readMultiple/writeMultiple/Execute).
 
-The master location of the logical partitions mapping is the [Lookup Service](/xap96/the-lookup-service.html). It is responsible to update the client proxy with the latest location of each logical partition when the proxy bootstrap itself, when the system scales or when there is a failure that triggers a promotion of a backup into a primary and the creation of the new backup instace.
+The master location of the logical partitions mapping is the [Lookup Service](./the-lookup-service.html). It is responsible to update the client proxy with the latest location of each logical partition when the proxy bootstrap itself, when the system scales or when there is a failure that triggers a promotion of a backup into a primary and the creation of the new backup instace.
 
-Each space operation on a data-grid cluster is routed to a single member or multiple cluster members. The routing done based on the operation type and [data partitioning](/xap96/data-partitioning.html) policy. To make this routing possible and efficient, the client proxy holds a set of [remote stubs](http://download.oracle.com/javase/1.5.0/docs/guide/rmi/spec/rmi-stubs22.html) to the relevant cluster members. The proxy connectivity policy determines which remote proxy members should be constructed at client startup, and how to monitor them to control the failover response time and reconnection behavior. The client proxy monitors the cluster members in two ways: checking existing stubs and locating members that does not have stubs created for yet.
+Each space operation on a data-grid cluster is routed to a single member or multiple cluster members. The routing done based on the operation type and [data partitioning](./data-partitioning.html) policy. To make this routing possible and efficient, the client proxy holds a set of [remote stubs](http://download.oracle.com/javase/1.5.0/docs/guide/rmi/spec/rmi-stubs22.html) to the relevant cluster members. The proxy connectivity policy determines which remote proxy members should be constructed at client startup, and how to monitor them to control the failover response time and reconnection behavior. The client proxy monitors the cluster members in two ways: checking existing stubs and locating members that does not have stubs created for yet.
 
 # Client Proxy Connectivity Configuration
 
-The proxy Connectivity settings should be specified as part of the **space configuration** (server side). You may specify these as part of the [Space Component](/xap96/the-space-component.html#Reconnection) or via API.  The settings are loaded into the client side once it connects to the space. Client proxy connectivity settings controlled via the following settings:
+The proxy Connectivity settings should be specified as part of the **space configuration** (server side). You may specify these as part of the [Space Component](./the-space-component.html#Reconnection) or via API.  The settings are loaded into the client side once it connects to the space. Client proxy connectivity settings controlled via the following settings:
 
 {: .table .table-bordered}
 |Property|Description|Default|Unit|
@@ -38,25 +38,25 @@ To allow a space client performing the different space operation (read,write,tak
 
 ## Reconnection with Notify Registration
 
-To allow a client using notifications (using the [Session Based Messaging API](/xap96/session-based-messaging-api.html) or the [Notify Container](/xap96/notify-container.html)) to reconnect and also re-register for notifications, use the `LeaseListener`. See the [Re-Register after complete space shutdown and restart](/xap96/notify-container.html#Re-Register after complete space shutdown and restart) section for details.
+To allow a client using notifications (using the [Session Based Messaging API](./session-based-messaging-api.html) or the [Notify Container](./notify-container.html)) to reconnect and also re-register for notifications, use the `LeaseListener`. See the [Re-Register after complete space shutdown and restart](./notify-container.html#Re-Register after complete space shutdown and restart) section for details.
 
 {% tip %}
-See the [Resending Notifications after a Space-Client Disconnection](/xap96/notify-container.html#Resending Notifications after a Space-Client Disconnection) section for space-client disconnection behavior.
+See the [Resending Notifications after a Space-Client Disconnection](./notify-container.html#Resending Notifications after a Space-Client Disconnection) section for space-client disconnection behavior.
 {% endtip %}
 
 ## Reconnection with Blocked Operations
 
-When using blocked operations such as read operation with a timeout>0, take operation timeout>0 or [Polling Container](/xap96/polling-container.html), GigaSpaces can't guaranty the read/take timeout will match the specified timeout once a client reconnects to a space that was shutdown and restarted (or failed and client routed to the backup instance).
+When using blocked operations such as read operation with a timeout>0, take operation timeout>0 or [Polling Container](./polling-container.html), GigaSpaces can't guaranty the read/take timeout will match the specified timeout once a client reconnects to a space that was shutdown and restarted (or failed and client routed to the backup instance).
 
 Once the client reconnects, the entire read operation is reinitiated, ignoring the amount of time the client already spent waiting for a matching object before the client was disconnected.
 
 ## Reconnection with Local Cache/View
 
-For information regarding local cache/view reconnection, refer to [Local Cache](/xap96/local-cache.html) or [Local View](/xap96/local-view.html).
+For information regarding local cache/view reconnection, refer to [Local Cache](./local-cache.html) or [Local View](./local-view.html).
 
 # Unicast Lookup Service Discovery
 
-If you are using [Unicast lookup service discovery](/xap96/how-to-configure-unicast-discovery.html) you should set the `com.gigaspaces.unicast.interval` system property to allow the client to keep searching for the lookup service in case it was terminated and later restarted while the client was running. See the [How to Configure Unicast Discovery](/xap96/how-to-configure-unicast-discovery.html#Configuring lookup discovery intervals) for details.
+If you are using [Unicast lookup service discovery](./how-to-configure-unicast-discovery.html) you should set the `com.gigaspaces.unicast.interval` system property to allow the client to keep searching for the lookup service in case it was terminated and later restarted while the client was running. See the [How to Configure Unicast Discovery](./how-to-configure-unicast-discovery.html#Configuring lookup discovery intervals) for details.
 
 # Inactive Space retries
 

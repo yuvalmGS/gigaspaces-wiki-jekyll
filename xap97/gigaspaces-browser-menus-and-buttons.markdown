@@ -106,7 +106,7 @@ Selecting a Jini group defines which services (containers, spaces, GSCs, GSMs) a
 ![GMC_space_SettingsMenuOption_Discovery_LookupServiceDiscovTimes_Window_6.5.jpg](/attachment_files/GMC_space_SettingsMenuOption_Discovery_LookupServiceDiscovTimes_Window_6.5.jpg)
 {% endindent %}
 
-- **Color Settings** -- opens the Preferences Panel, allowing you to choose change the default colors of the operations shown in the [Statistics View](/xap96/statistics-view---gigaspaces-browser.html).
+- **Color Settings** -- opens the Preferences Panel, allowing you to choose change the default colors of the operations shown in the [Statistics View](./statistics-view---gigaspaces-browser.html).
 - **Reset Perspective** -- resets all main window tabs, returns docking windows to their initial size and location.
 - **System Properties** -- see the [following section](#Configured System Properties Window). {% anchor cluster %}
 - **Cluster Configuration** 
@@ -123,7 +123,7 @@ Selecting a Jini group defines which services (containers, spaces, GSCs, GSMs) a
 
 ## Configured System Properties Window
 
-The **System Properties** option opens a window listing all configured [system properties](/xap96/system-properties-list.html). The Configured System Properties window allows you to edit existing system properties, and add new properties.
+The **System Properties** option opens a window listing all configured [system properties](./system-properties-list.html). The Configured System Properties window allows you to edit existing system properties, and add new properties.
 
 {% indent %}
 ![GMC_space_SettingsMenuOption_Settings_ConfiguredSystemProp_Window_6.5.jpg](/attachment_files/GMC_space_SettingsMenuOption_Settings_ConfiguredSystemProp_Window_6.5.jpg)
@@ -148,7 +148,7 @@ Press **OK** to accept the changes and exit the window, or **Cancel** to exit wi
 The **Help** menu provides the following options:
 
 - **About** -- provides product version information.
-- **Online Help** -- opens the [GigaSpaces Online Help homepage](/xap96/xap-9.6-documentation-home.html).
+- **Online Help** -- opens the [GigaSpaces Online Help homepage](./xap-9.6-documentation-home.html).
 
 ## Button Toolbar
 
@@ -160,7 +160,7 @@ The button toolbar allows you to perform maintenance operations on containers an
 | ![destroy_space.gif](/attachment_files/destroy_space.gif) | Destroys the selected space |
 | ![GMC_space_groupManagementToolbarIcon_6.5.jpg](/attachment_files/GMC_space_groupManagementToolbarIcon_6.5.jpg) | Opens the [Discovery Group Selection](#Settings Menu) window |
 | ![GMC_space_ResetPerspectiveToolbarIcon_6.5.jpg](/attachment_files/GMC_space_ResetPerspectiveToolbarIcon_6.5.jpg) | Resets all main window tabs, returns docking windows to their initial size and location. |
-| ![help.gif](/attachment_files/help.gif) | Opens the [GigaSpaces Online Help homepage](/xap96/xap-9.6-documentation-home.html) |
+| ![help.gif](/attachment_files/help.gif) | Opens the [GigaSpaces Online Help homepage](./xap-9.6-documentation-home.html) |
 
 # Address Bar
 

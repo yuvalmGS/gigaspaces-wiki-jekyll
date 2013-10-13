@@ -8,12 +8,12 @@ page_id: 61867369
 
 # Overview
 
-GigaSpaces IMDG may store file and large objects in memory (audio files/movie files/large xml files). The GigaSpaces internal communication protocol implementation split large data objects passed between different remote processes (i.e. client and space) into multiple chunks (64K size by default). This provides scalable and stable system allowing clients to write and read large space objects. You may use any client interface; Java, .Net and C++ leveraging any of the supported data access API with large objects: [GigaSpace](/xap96/the-gigaspace-interface.html) , [GigaMap](/xap96/map-api.html) , [JDBC Driver](/xap96/jdbc-driver.html), [JMS](/xap96/jms-api-support.html), [JPA](/xap96/jpa-api.html), [Document](/xap96/document-api.html).
+GigaSpaces IMDG may store file and large objects in memory (audio files/movie files/large xml files). The GigaSpaces internal communication protocol implementation split large data objects passed between different remote processes (i.e. client and space) into multiple chunks (64K size by default). This provides scalable and stable system allowing clients to write and read large space objects. You may use any client interface; Java, .Net and C++ leveraging any of the supported data access API with large objects: [GigaSpace](./the-gigaspace-interface.html) , [GigaMap](./map-api.html) , [JDBC Driver](./jdbc-driver.html), [JMS](./jms-api-support.html), [JPA](./jpa-api.html), [Document](./document-api.html).
 
 In order to store large files in memory, you should simply load the file into the relevant Data type (byte array , blob) and use the relevant API to write the data into the space. Large objects are treated like any other objects stored within the space.
 
 {% tip %}
-The `com.gs.transport_protocol.lrmi.maxBufferSize` system property controls the chunk size. See the [Communication Protocol](/xap96/communication-protocol.html#maxBufferSize) for details.
+The `com.gs.transport_protocol.lrmi.maxBufferSize` system property controls the chunk size. See the [Communication Protocol](./communication-protocol.html#maxBufferSize) for details.
 {% endtip %}
 
 ## Memory Allocation Behavior

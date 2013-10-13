@@ -25,7 +25,7 @@ The space memory can be managed using the following mechanisms:
 
 # Cache Eviction Policies
 
-The space supports two cache eviction policies: [LRU-Cache Policy](/xap96/lru-cache-policy.html) (code 0) and [ALL IN CACHE-Cache Policy](/xap96/all-in-cache-cache-policy.html) (code 1) defined via the the `space-config.engine.cache_policy` property. See below example how you can configure it:
+The space supports two cache eviction policies: [LRU-Cache Policy](./lru-cache-policy.html) (code 0) and [ALL IN CACHE-Cache Policy](./all-in-cache-cache-policy.html) (code 1) defined via the the `space-config.engine.cache_policy` property. See below example how you can configure it:
 
 {% highlight java %}
 <os-core:space id="space" url="/./space">
@@ -37,9 +37,9 @@ The space supports two cache eviction policies: [LRU-Cache Policy](/xap96/lru-ca
 </os-core:space>
 {% endhighlight %}
 
-- [ALL IN CACHE-Cache Policy](/xap96/all-in-cache-cache-policy.html) \- Assumes the JVM hosting the space instance has enough heap to hold all data in memory.
-- [LRU-Cache Policy](/xap96/lru-cache-policy.html) \- Assumes the JVM hosting the space instance does not have enough heap to hold all data in memory.
-By default ALL IN CACHE policy is used for an in-memory data grid,and LRU-Cache Policy is used for a persistent space with [Space Persistency](/xap96/space-persistency.html) enabled.
+- [ALL IN CACHE-Cache Policy](./all-in-cache-cache-policy.html) \- Assumes the JVM hosting the space instance has enough heap to hold all data in memory.
+- [LRU-Cache Policy](./lru-cache-policy.html) \- Assumes the JVM hosting the space instance does not have enough heap to hold all data in memory.
+By default ALL IN CACHE policy is used for an in-memory data grid,and LRU-Cache Policy is used for a persistent space with [Space Persistency](./space-persistency.html) enabled.
 
 # Calculating the Available Memory
 
@@ -101,7 +101,7 @@ Since LRU eviction can be costly, it is done in asynchronously by the memory man
 
 # Explicit Eviction of Objects from the Space
 
-Objects can be evicted explicitly from the space by calling the `takeMultiple` or `clear` operations on [the GigaSpace interface](/xap96/the-gigaspace-interface.html) combined with the [`TakeModifiers.EVICT_ONLY`](http://www.gigaspaces.com/docs/JavaDoc8.0/com/j_spaces/core/client/TakeModifiers.html) modifier. The `clear` operation only returns the number of objects actually evicted from the space. The `takeMultiple` operation returns the actual objects that were evicted. Here's usage example:
+Objects can be evicted explicitly from the space by calling the `takeMultiple` or `clear` operations on [the GigaSpace interface](./the-gigaspace-interface.html) combined with the [`TakeModifiers.EVICT_ONLY`](http://www.gigaspaces.com/docs/JavaDoc8.0/com/j_spaces/core/client/TakeModifiers.html) modifier. The `clear` operation only returns the number of objects actually evicted from the space. The `takeMultiple` operation returns the actual objects that were evicted. Here's usage example:
 
 {% inittab %}
 {% tabcontent Using clear() %}
@@ -138,8 +138,8 @@ User[] evictedUsers = gigaSpace.takeMultiple(template, Integer.MAX\_VALUE, TakeM
 
 The overall space capacity is not necessarily limited to the capacity of its physical memory. Currently there are two options for exceeding this limit:
 
-- **Using an LRU and [Space Persistency](/xap96/space-persistency.html)** \- in this mode, all the space data is kept in the database and therefore the space capacity is dependent on the database capacity rather than the memory capacity. The space maintains in memory, a partial image of the persistent view in an LRU basis.
-- **Using [Partitioned Space](/xap96/terminology---data-grid-topologies.html)** \- in this mode, the space utilizes the physical memory of multiple JVMs. This means the application using the space is able to access all the space instances transparently, as if they were a single space with higher memory capacity.
+- **Using an LRU and [Space Persistency](./space-persistency.html)** \- in this mode, all the space data is kept in the database and therefore the space capacity is dependent on the database capacity rather than the memory capacity. The space maintains in memory, a partial image of the persistent view in an LRU basis.
+- **Using [Partitioned Space](./terminology---data-grid-topologies.html)** \- in this mode, the space utilizes the physical memory of multiple JVMs. This means the application using the space is able to access all the space instances transparently, as if they were a single space with higher memory capacity.
 
 # Memory Manager Parameters
 
@@ -158,7 +158,7 @@ The following properties used to control the memory manager.
 | `space-config.engine.memory\_usage.retry\_count` | Number of retries to lower the memory level below the `Low\_watermark\_percentage`. If after all retries, the memory level is still above the `space-config.engine.memory\_usage.write\_only\_block\_percentage`, a `com.j\_spaces.core.MemoryShortageException` is thrown for that write request. | `5` | LRU |
 | `space-config.engine.memory\_usage.explicit-gc` | If `true`, the garbage collector is called explicitly before trying to evict.{% wbr %}{% exclamation %} When using the LRU cache policy, `space-config.engine.memory\_usage.explicit-gc=false` means that the garbage collector might evict fewer objects than the defined minimum (low watermark percentage). This tag is `false` by default, because setting the garbage collector explicitly consumes a large amount of CPU, thus affecting performance. Therefore, it is recommended that you set this to `true` only if you want to ensure that the minimum amount of objects are evicted from the space (and not less than the minimum). | `false` | LRU |
 | `space-config.engine.memory\_usage.retry\_yield\_time` | Time (in milliseconds) to wait after evicting a batch of objects, before measuring the current memory utilization. | 50 | LRU |
-| `space-config.engine.initial\_load` | When a persistent space running in LRU cache policy mode is started/deployed, it loads data from the underlying data source before being available for clients to access. The default behavior is to load data up to 50% of the `space-config.engine.cache\_size value`. See the [Reloading Data](/xap96/lru-cache-policy.html#Reloading Data) section for details. | 50 | LRU |
+| `space-config.engine.initial\_load` | When a persistent space running in LRU cache policy mode is started/deployed, it loads data from the underlying data source before being available for clients to access. The default behavior is to load data up to 50% of the `space-config.engine.cache\_size value`. See the [Reloading Data](./lru-cache-policy.html#Reloading Data) section for details. | 50 | LRU |
 | `space-config.engine.memory\_usage.lruTouchThreshold` | LRU touch activity kicks-in when the percentage of objects within the space exceeds `space-config.engine.memory\_usage.lruTouchThreshold` where the `space-config.engine.cache\_size` is the max amount. This avoid the overhead involved with the LRU activity. A 0 value means always touch, 100 means no touch at all.{% wbr %}The default value of the `space-config.engine.memory\_usage.lruTouchThreshold` is 50 which means the LRU touch activity will kick-in when the amount of objects within the space will cross half of the amount specified by the `space-config.engine.cache\_size` value. | 50 | LRU |
 
 {% infosign %} A `com.j_spaces.core.MemoryShortageException` or an `org.openspaces.core.SpaceMemoryShortageException` are thrown only when the JVM garbage collection and the eviction mechanism do not evict enough memory. This can happen if the `space-config.engine.memory_usage.low_watermark_percentage` value is too high.

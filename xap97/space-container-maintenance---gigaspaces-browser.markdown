@@ -29,7 +29,7 @@ The report is displayed in a new window:
 
 {% tip %}
 You can also view the GigaSpaces runtime configuration settings by setting the system property 
-`-Dcom.gs.env.report=true` in the Java command line. Refer to the [GigaSpaces Properties List](/xap96/system-properties-list.html) for more details.
+`-Dcom.gs.env.report=true` in the Java command line. Refer to the [GigaSpaces Properties List](./system-properties-list.html) for more details.
 {% endtip %}
 
 The information displayed includes: 

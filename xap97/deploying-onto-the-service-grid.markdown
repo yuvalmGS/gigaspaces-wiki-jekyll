@@ -5,17 +5,17 @@ page_id: 61867279
 ---
 
 {% compositionsetup %}
-{% summary page|70 %}Explains how to deploy your processing unit onto the GigaSpaces [Service Grid](/xap96/the-runtime-environment.html) to get automated SLA management and self-healing capabilities{% endsummary %}
+{% summary page|70 %}Explains how to deploy your processing unit onto the GigaSpaces [Service Grid](./the-runtime-environment.html) to get automated SLA management and self-healing capabilities{% endsummary %}
 
 # Overview
 
-Deploying your processing unit to the [service grid](/xap96/the-runtime-environment.html) is the preferred way to run in your production environment. The service grid provides the following main benefits to every processing unit deployed onto it:
+Deploying your processing unit to the [service grid](./the-runtime-environment.html) is the preferred way to run in your production environment. The service grid provides the following main benefits to every processing unit deployed onto it:
 
-- Automatic distribution and provisioning of the processing unit instances: When deploying to the [service grid](/xap96/the-runtime-environment.html) the [GigaSpaces Manager](/xap96/the-grid-service-manager.html) identifies the relevant [GigaSpaces Containers](/xap96/the-grid-service-container.html) and takes care of distributing the processing unit binaries to them. You do not need to manually install the processing unit anywhere on the cluster - only into the service grid.
+- Automatic distribution and provisioning of the processing unit instances: When deploying to the [service grid](./the-runtime-environment.html) the [GigaSpaces Manager](./the-grid-service-manager.html) identifies the relevant [GigaSpaces Containers](./the-grid-service-container.html) and takes care of distributing the processing unit binaries to them. You do not need to manually install the processing unit anywhere on the cluster - only into the service grid.
 
-- SLA enforcement: The [GigaSpaces Manager](/xap96/the-grid-service-manager.html) is also responsible for enforcing your processing unit's [Service Level Agreement](/xap96/configuring-the-processing-unit-sla.html), or SLA. At deployment time, it will create a specified number of processing unit instances (based on the SLA) and provision them to the running containers while enforcing all the [deployment requirements](/xap96/configuring-the-processing-unit-sla.html#deployment-reqs), such as memory and CPU utilization, or specific deployment zones. At runtime, it will monitor the processing unit instances, and if any of them fail to fulfill the SLA or become unavailable it will re-instantiate the processing unit automatically on another container.
+- SLA enforcement: The [GigaSpaces Manager](./the-grid-service-manager.html) is also responsible for enforcing your processing unit's [Service Level Agreement](./configuring-the-processing-unit-sla.html), or SLA. At deployment time, it will create a specified number of processing unit instances (based on the SLA) and provision them to the running containers while enforcing all the [deployment requirements](./configuring-the-processing-unit-sla.html#deployment-reqs), such as memory and CPU utilization, or specific deployment zones. At runtime, it will monitor the processing unit instances, and if any of them fail to fulfill the SLA or become unavailable it will re-instantiate the processing unit automatically on another container.
 
-- Automatic machine provisioning and dynamic SLA enforcement: Elastic Processing Units are a new type of [Processing Unit](/xap96/packaging-and-deployment.html). Elastic PUs provision machines and start [GigaSpaces Containers](/xap96/the-grid-service-container.html) automatically based on the processing units' Memory and CPU requirements. When the available machines do not meet the requirements, the manager provisions new machines and balances the Processing Unit deployment across machines. This also occurs when a machine fails, or when the requirements changes while the application is running.
+- Automatic machine provisioning and dynamic SLA enforcement: Elastic Processing Units are a new type of [Processing Unit](./packaging-and-deployment.html). Elastic PUs provision machines and start [GigaSpaces Containers](./the-grid-service-container.html) automatically based on the processing units' Memory and CPU requirements. When the available machines do not meet the requirements, the manager provisions new machines and balances the Processing Unit deployment across machines. This also occurs when a machine fails, or when the requirements changes while the application is running.
 
 {% tip %}
 You can use the [GigaSpaces Universal Deployer](http://wiki.gigaspaces.com/wiki/display/SBP/Universal+Deployer) to deploy complex multi processing unit applications.
@@ -23,9 +23,9 @@ You can use the [GigaSpaces Universal Deployer](http://wiki.gigaspaces.com/wiki/
 
 # The Deployment Process
 
-Once built according to the processing unit [directory structure](/xap96/the-processing-unit-structure-and-configuration.html), the processing unit can be deployed via the various deployment tools available in GigaSpaces XAP ([UI](/xap96/graphical-user-interface.html), [CLI](/xap96/deploy---gigaspaces-cli.html), Ant, [Maven](/xap96/maven-plugin.html) or the [Admin API](/xap96/administration-and-monitoring-api.html)).
+Once built according to the processing unit [directory structure](./the-processing-unit-structure-and-configuration.html), the processing unit can be deployed via the various deployment tools available in GigaSpaces XAP ([UI](./graphical-user-interface.html), [CLI](./deploy---gigaspaces-cli.html), Ant, [Maven](./maven-plugin.html) or the [Admin API](./administration-and-monitoring-api.html)).
 
-After you [package](/xap96/packaging-and-deployment.html) the processing unit and deploy it via one of the deployment tools, the deployment tool uploads it to all the running [GSMs](/xap96/the-grid-service-manager.html), where it is extracted and provisioned to the [GSCs](/xap96/the-grid-service-container.html).
+After you [package](./packaging-and-deployment.html) the processing unit and deploy it via one of the deployment tools, the deployment tool uploads it to all the running [GSMs](./the-grid-service-manager.html), where it is extracted and provisioned to the [GSCs](./the-grid-service-container.html).
 
 {% info title=To Jar or Not to Jar %}
 The recommended way to deploy the processing unit is by packaging it into a .jar or a .zip archive and specifying the location of the packaged file to the deployment tool in use.
@@ -37,7 +37,7 @@ However, GigaSpaces XAP also supports the deployment of exploded processing unit
 
 By default, when a processing unit instance is provisioned to run on a certain GSC, the GSC downloads the processing unit archive from the GSM into the `<GigaSpaces Root>/work/deployed-processing-units` directory (The location of this directory can be overridden via the `com.gs.work` system property).
 
-Downloading the processing unit archive to the GSC is the recommended option, but it can be disabled. In order to disable it, the `pu.download` [deployment property](/xap96/deployment-properties.html)  should be set to `false`. This will not download the entire archive to the GSC, but will force the GSC to load the processing unit classes one at a time from the GSM via a URLClassLoader.
+Downloading the processing unit archive to the GSC is the recommended option, but it can be disabled. In order to disable it, the `pu.download` [deployment property](./deployment-properties.html)  should be set to `false`. This will not download the entire archive to the GSC, but will force the GSC to load the processing unit classes one at a time from the GSM via a URLClassLoader.
 
 {% anchor deployDirections %}
 
@@ -47,7 +47,7 @@ GigaSpaces provides several options to deploy a processing unit onto the Service
 
 {% inittab os_simple_space|top %}
 {% tabcontent Admin API %}
-Deploying via code is done using the GigaSpaces [Admin API](/xap96/administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](/xap96/administration-and-monitoring-api.html) and [javadoc](http://www.gigaspaces.com/docs/JavaDoc8.0/index.html) of the Admin API.
+Deploying via code is done using the GigaSpaces [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](./administration-and-monitoring-api.html) and [javadoc](http://www.gigaspaces.com/docs/JavaDoc8.0/index.html) of the Admin API.
 
 {% highlight java %}
 Admin admin = new AdminFactory().addGroup("myGroup").create();
@@ -60,7 +60,7 @@ ProcessingUnit pu = admin.getGridServiceManagers().deploy(
 {% tabcontent Ant %}
 Deploying with Ant is based on the `org.openspaces.pu.container.servicegrid.deploy.Deploy` class (in fact, all of the deployment tools use this class although it is not exposed directly to the end user).
 
-In the below example we create an Ant macro using this class and use it to deploy our processing unit. The deploy class is executable via its `main()` method, and can accept various parameters to control the deployment process. These parameters are identical to these of the `deploy` CLI command, for a complete list of the available parameters please consult the [`deploy` CLI reference documentation.](/xap96/deploy---gigaspaces-cli.html).
+In the below example we create an Ant macro using this class and use it to deploy our processing unit. The deploy class is executable via its `main()` method, and can accept various parameters to control the deployment process. These parameters are identical to these of the `deploy` CLI command, for a complete list of the available parameters please consult the [`deploy` CLI reference documentation.](./deploy---gigaspaces-cli.html).
 
 {% highlight xml %}
 <deploy file="/opt/gigaspaces/myPU.jar" />
@@ -82,7 +82,7 @@ In the below example we create an Ant macro using this class and use it to deplo
 
 {% endtabcontent %}
 {% tabcontent GigaSpaces CLI %}
-Deploying via the CLI is based on the `deploy` command. This command accepts various parameters to control the deployment process. These parameters are documented in full in the [`deploy` CLI reference documentation.](/xap96/deploy---gigaspaces-cli.html).
+Deploying via the CLI is based on the `deploy` command. This command accepts various parameters to control the deployment process. These parameters are documented in full in the [`deploy` CLI reference documentation.](./deploy---gigaspaces-cli.html).
 
 {% highlight java %}
 > <gigaspaces root>/bin/gs.sh(bat) deploy myPU.jar
@@ -99,7 +99,7 @@ Deploying via the CLI is based on the `deploy` command. This command accepts var
 
 # Elastic Processing Unit Deployment using the Admin API
 
-When deploying a partitioned Processing Unit or a paritioned Space it is recommended to use the new [Elastic Processing Unit](/xap96/elastic-processing-unit.html). This can be done via the [Admin API](/xap96/administration-and-monitoring-api.html). The following example shows how to deploy a processing unit as an Elastic PU.
+When deploying a partitioned Processing Unit or a paritioned Space it is recommended to use the new [Elastic Processing Unit](./elastic-processing-unit.html). This can be done via the [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy a processing unit as an Elastic PU.
 
 ## Step 1 - Start a GigaSpaces agent on each machine:
 
@@ -218,7 +218,7 @@ To enable business continuity in a better manner, having system upgrade without 
 4. Restart the Primary PU instance. This will turn the existing backup instance to become a primary instance. The previous primary will turn into a backup, load the new business logic classes and recover its data from the existing primary.
 5. Optional - You can restart the existing primary to force it to switch into a backup instance again. The new primary will also use the new version of the business logic classes.
 
-You can script the above procedure via the [Administration and Monitoring API](/xap96/administration-and-monitoring-api.html), allowing you to perform system upgrade without downtime.
+You can script the above procedure via the [Administration and Monitoring API](./administration-and-monitoring-api.html), allowing you to perform system upgrade without downtime.
 
 ## Restart a running PU via the GS-UI
 
@@ -590,7 +590,7 @@ A compound listener (implements several interfaces) can be registered using the 
 
 # Monitoring Processing Unit instance Fault-detection
 
-Using the member-alive-indicator (see [Monitoring the Liveness of Processing Unit Instances](/xap96/configuring-the-processing-unit-sla.html#ConfiguringtheProcessingUnitSLA-livenessDetection) ) the Grid Service Manager (GSM) actively monitors each processing unit instance. When an "is alive" check fails, it **suspects** that the processing unit instance is no longer alive, and retries to contact it (using the configured retries and timeouts in pu.xml under os-sla:member-alive-indicator). When all retries fail, the GSM reports that it **detected** a failure and tries to re-deploy it on an available Grid Service Container (GSC).
+Using the member-alive-indicator (see [Monitoring the Liveness of Processing Unit Instances](./configuring-the-processing-unit-sla.html#ConfiguringtheProcessingUnitSLA-livenessDetection) ) the Grid Service Manager (GSM) actively monitors each processing unit instance. When an "is alive" check fails, it **suspects** that the processing unit instance is no longer alive, and retries to contact it (using the configured retries and timeouts in pu.xml under os-sla:member-alive-indicator). When all retries fail, the GSM reports that it **detected** a failure and tries to re-deploy it on an available Grid Service Container (GSC).
 
 These member-alive-indicator transitions are reflected using the Admin API `MemberAliveIndicatorStatus`. Use the API to register for status changed events, and better visibility of GSM decisions based on the fault-detection mechanism. An alert is fired upon a fault- detection trigger, also visible in Web User Interface.
 

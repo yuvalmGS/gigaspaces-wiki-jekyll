@@ -30,7 +30,7 @@ This topology extends the previous one by having a mirror service that is part o
 
 This topology consists of a group of space instances that are part of the same replication group, unlike primary backup, all of the space instances are active and the application interacts with all of them. The common usage in this case is to have this topology as part of a multi site deployment where each site is interacting with the local space instance while having all the operations replicated and kept in the other sites as well. Each space instance replicates its data to all the other members thus having all the space instances holding the data of each other.
 
-{% refer %}For more info refer to [Replication Topologies](/xap96/replication-topologies.html){% endrefer %}
+{% refer %}For more info refer to [Replication Topologies](./replication-topologies.html){% endrefer %}
 
 # Replication Modes
 
@@ -46,7 +46,7 @@ The common usage of these modes is synchronous for Primary-Backup topology and a
 With synchronous replication, the client receives acknowledgement for any replicated operations only after all the space instances in the replication group have performed the operation.
 ![replication-matrix-IMG503.jpg](/attachment_files/replication-matrix-IMG503.jpg)
 
-{% refer %}For more info refer to [Synchronous Replication](/xap96/synchronous-replication.html){% endrefer %}
+{% refer %}For more info refer to [Synchronous Replication](./synchronous-replication.html){% endrefer %}
 
 ## Asynchronous replication
 
@@ -54,7 +54,7 @@ With asynchronous replication, operations are performed in the source space inst
 ![replication-matrix-IMG504.jpg](/attachment_files/replication-matrix-IMG504.jpg)
 Operations are accumulated in the source space and sent asynchronously to the target space, after a predefined period of time has elapsed, or after a predefined number of operations have been performed (the first of the two to occur). The downside of this replication mode is the possibility of data loss if the source space fails while transferring the accumulated operations to the target space. Another problem is data consistency - the source and the target do not have identical data at all times.
 
-{% refer %}For more info refer to [Asynchronous Replication](/xap96/asynchronous-replication.html){% endrefer %}
+{% refer %}For more info refer to [Asynchronous Replication](./asynchronous-replication.html){% endrefer %}
 
 ## Replication During Disconnections Between Space Instances
 
@@ -72,11 +72,11 @@ The table below shows a conceptual comparison between synchronous and asynchrono
 
 ## Configuration
 
-There are many parameters that configure the replication behavior. For a full list of the parameters see [Replication Parameters](/xap96/replication-parameters.html).
+There are many parameters that configure the replication behavior. For a full list of the parameters see [Replication Parameters](./replication-parameters.html).
 
 ## Monitoring and Statistics
 
-The replication module can be monitored and exposes various statistics using the [Administration and Monitoring API](/xap96/administration-and-monitoring-api.html) via [Replication Statistics](http://www.gigaspaces.com/docs/JavaDocOS/com/j_spaces/core/filters/ReplicationStatistics.html)
+The replication module can be monitored and exposes various statistics using the [Administration and Monitoring API](./administration-and-monitoring-api.html) via [Replication Statistics](http://www.gigaspaces.com/docs/JavaDocOS/com/j_spaces/core/filters/ReplicationStatistics.html)
 
 # Pages in This Section
 

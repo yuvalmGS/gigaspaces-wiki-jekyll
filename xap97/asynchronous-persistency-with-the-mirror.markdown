@@ -30,7 +30,7 @@ Enabling the Mirror Service involves the following:
 - The Data-Grid Processing Unit Mirror Settings
 - The Mirror Service Processing Unit Settings
 
-The above share the **same** [Space Persistency](/xap96/space-persistency.html) settings but have different space settings. See the [Hibernate Space Persistency](/xap96/hibernate-space-persistency.html) for details how to use the built-in `HibernateSpaceSynchronizationEndpoint`.
+The above share the **same** [Space Persistency](./space-persistency.html) settings but have different space settings. See the [Hibernate Space Persistency](./hibernate-space-persistency.html) for details how to use the built-in `HibernateSpaceSynchronizationEndpoint`.
 
 # The Data-Grid Processing Unit
 
@@ -51,8 +51,8 @@ The IMDG Mirror replication settings includes the following options:
 | cluster-config.mirror-service.interval-millis | The replication frequency - Replication will happen every `interval-millis` milliseconds | 2000 |
 | cluster-config.mirror-service.interval-opers | The replication buffer size - Replication will happen every `interval-opers` operations. | 100 |
 | cluster-config.groups.group.repl-policy.repl-original-state | The replication reconciliation mode - This settings should be enabled to ensure that write/take operations or multiple updates for the same space object will be sent to the mirror and not will be discarded when sent within the same batch. | true |
-| cluster-config.mirror-service.on-redo-log-capacity-exceeded | Available options:{% wbr %}block-operations - all cluster operations that need to be replicated (write/update/take) are blocked until the redo log size decreases below the capacity. (Users get RedoLogCapacityExceededException exceptions while trying to execute these operations.){% wbr %}drop-oldest - the oldest packet in the redo log is dropped.{% wbr %}See the [Controlling the Replication Redo Log](/xap96/controlling-the-replication-redo-log.html) for details. | block-operations |
-| cluster-config.mirror-service.redo-log-capacity | Specifies the total capacity of replication packets the redo log can hold for a mirror service replication target.{% wbr %}See the [Controlling the Replication Redo Log](/xap96/controlling-the-replication-redo-log.html) for details. | 1000000 |
+| cluster-config.mirror-service.on-redo-log-capacity-exceeded | Available options:{% wbr %}block-operations - all cluster operations that need to be replicated (write/update/take) are blocked until the redo log size decreases below the capacity. (Users get RedoLogCapacityExceededException exceptions while trying to execute these operations.){% wbr %}drop-oldest - the oldest packet in the redo log is dropped.{% wbr %}See the [Controlling the Replication Redo Log](./controlling-the-replication-redo-log.html) for details. | block-operations |
+| cluster-config.mirror-service.redo-log-capacity | Specifies the total capacity of replication packets the redo log can hold for a mirror service replication target.{% wbr %}See the [Controlling the Replication Redo Log](./controlling-the-replication-redo-log.html) for details. | 1000000 |
 |cluster-config.groups.group.repl-policy.async-replication.async-channel-shutdown-timeout | Determines how long (in ms) the primary space will wait before replicating all existing redo log data into its targets before shutting down. | 300000 ms |
 
 {% note %}
@@ -91,10 +91,10 @@ The above example:
 - Configures the Space to only read data from the data source. This means that all destructive operations will be delegated into the database via the Mirror service.
 - Configures the Data-Grid to use a data source that is **central** to the cluster. This means that both primary and backup IMDG instances will interact with the same data source.
 
-{% refer %}See the [Space Persistency Properties](/xap96/space-persistency-advanced-topics.html#Properties) and the [Hibernate Space Persistency](/xap96/hibernate-space-persistency.html) for full details about the EDS properties the you may configure.{% endrefer %}
+{% refer %}See the [Space Persistency Properties](./space-persistency-advanced-topics.html#Properties) and the [Hibernate Space Persistency](./hibernate-space-persistency.html) for full details about the EDS properties the you may configure.{% endrefer %}
 You **must use a Data-Grid cluster schema that includes a backup** (i.e. `partitioned-sync2backup`) when running a Mirror Service. Without having backup, the Primary IMDG Spaces **will not** replicate their activities to the Mirror Service. For testing purposes, in case you don't want to start backup spaces, you can use the `partitioned-sync2backup` cluster schema and have 0 as the number of backups - this will still allow the primary spaces to replicate their operations to the Mirror.
 
-If you wish to change the mirror service name please refer to [Async Persistency - Mirror - Advanced](/xap96/async-persistency---mirror---advanced.html).
+If you wish to change the mirror service name please refer to [Async Persistency - Mirror - Advanced](./async-persistency---mirror---advanced.html).
 
 {% exclamation %} Enabling replication into the mirror without starting the Mirror will generate a backlog within the primary space (and backup). Please avoid running in this configuration.
 
@@ -107,7 +107,7 @@ The Mirror settings includes the following options:
 {: .table .table-bordered}
 | Property | Description | Default |
 |:---------|:------------|:--------|
-|operation-grouping| Options:{% wbr %}group-by-space-transaction - Mirror delegating each transaction separately to the data source (database).{% wbr %}group-by-replication-bulk - Mirror delegating all replicated items as one bulk to the data source (database).{% wbr %}See the [Mirror behavior with Distributed Transactions](/xap96/async-persistency---mirror---advanced.html#Mirror behavior with Distributed Transactions) for details| group-by-replication-bulk |
+|operation-grouping| Options:{% wbr %}group-by-space-transaction - Mirror delegating each transaction separately to the data source (database).{% wbr %}group-by-replication-bulk - Mirror delegating all replicated items as one bulk to the data source (database).{% wbr %}See the [Mirror behavior with Distributed Transactions](./async-persistency---mirror---advanced.html#Mirror behavior with Distributed Transactions) for details| group-by-replication-bulk |
 |source-space name| The name of source space (cluster) this mirror serves | NONE, must be supplied |
 |source-space partitions| The number of partitions in source space (cluster) this mirror serves | NONE, must be supplied |
 |source-space backups| The number of backups per partition in source space (cluster) this mirror serves | NONE, must be supplied |
@@ -141,7 +141,7 @@ The OpenSpaces mirror name space is a syntactic sugar and it is equivalent to th
 </os-core:space>
 {% endhighlight %}
 
-- The above configuration constructs a Mirror Service using GigaSpaces built-in [Hibernate Space Persistency](/xap96/hibernate-space-persistency.html). The `hibernateSpaceSynchronizationEndpoint` should have its `sessionFactory` injected.
+- The above configuration constructs a Mirror Service using GigaSpaces built-in [Hibernate Space Persistency](./hibernate-space-persistency.html). The `hibernateSpaceSynchronizationEndpoint` should have its `sessionFactory` injected.
 - The name of the Mirror Space is important. The `mirror-service` is the default name for a mirror Space, which is then used by the IMDG to connect to its mirror.
 - The `os-sla` definition insures that there will be only one Mirror Service instance running.
 - The configuration above should exist within the mirror PU pu.xml file.
@@ -157,7 +157,7 @@ The Mirror processing unit structure is shown below:
 -------------- pu.xml
 {% endhighlight %}
 
-See the [The Processing Unit Structure and Configuration](/xap96/the-processing-unit-structure-and-configuration.html) for more information on the processing unit structure.
+See the [The Processing Unit Structure and Configuration](./the-processing-unit-structure-and-configuration.html) for more information on the processing unit structure.
 
 The relevant Hibernate JAR file and its third party dependencies should be available to the mirror processing unit. The jar files should be placed in the processing unit `lib` directory.
 
@@ -195,11 +195,11 @@ With the above configuration the primary partition will replicate its redo log a
 
 - Tune the data source to commit data into the database in batches.
 - Optimize the database transaction support.
-- Use stateless session with the [Hibernate Space Persistency](/xap96/hibernate-space-persistency.html) configuration. See the `StatelessHibernateSpaceSynchronizationEndpoint`.
+- Use stateless session with the [Hibernate Space Persistency](./hibernate-space-persistency.html) configuration. See the `StatelessHibernateSpaceSynchronizationEndpoint`.
 - Implement a Mirror Service that will write the incoming data into a CSV file. This should be faster than writing data into the database. Later import the data into the database. (normally very fast operation)
 - Increase the database maximum connections.
-- Optimize Hibernate mapping and configuration. Using a proper [Hibernate ID generator](/xap96/space-persistency-advanced-topics.html#HibernateIDGeneration) is crucial for getting optimum performance.
-- Use PARTIAL_UPDATE (see [Partial Update](http://www.gigaspaces.com/wiki/display/XAP96/POJO+Support)). Updates to an object that are performed using the PARTIAL_UPDATE modifier can be executed on the mirror as partial update as well. This can increase the performance in case a lot of updates are performed on a large object.
+- Optimize Hibernate mapping and configuration. Using a proper [Hibernate ID generator](./space-persistency-advanced-topics.html#HibernateIDGeneration) is crucial for getting optimum performance.
+- Use PARTIAL_UPDATE (see [Partial Update](http://www.gigaspaces.com/wiki/display./POJO+Support)). Updates to an object that are performed using the PARTIAL_UPDATE modifier can be executed on the mirror as partial update as well. This can increase the performance in case a lot of updates are performed on a large object.
 To use this optimization you need to set the following space property:
 
 {% highlight xml %}
@@ -211,9 +211,9 @@ See com.gigaspaces.sync.DataSyncOperation for more details.
 
 # Mirror Monitoring
 
-The activity of the mirror service can be monitored using the [Administration and monitoring API](/xap96/administration-and-monitoring-api.html#AdministrationandMonitoringAPI-MonitoringtheMirrorService). This API exposes statistics on operations that were executed by the mirror and can be used to monitor the mirror throughput and health status.
+The activity of the mirror service can be monitored using the [Administration and monitoring API](./administration-and-monitoring-api.html#AdministrationandMonitoringAPI-MonitoringtheMirrorService). This API exposes statistics on operations that were executed by the mirror and can be used to monitor the mirror throughput and health status.
 
-You may view Mirror and its replication statistics via the [GigaSpaces Management Center](/xap96/gigaspaces-management-center.html). Move into the Space Browser tab, click the top tree Spaces icon, right click the table columns title area on the right panel, select the columns you would to view as part of the table and click OK.
+You may view Mirror and its replication statistics via the [GigaSpaces Management Center](./gigaspaces-management-center.html). Move into the Space Browser tab, click the top tree Spaces icon, right click the table columns title area on the right panel, select the columns you would to view as part of the table and click OK.
 
 {% indent %}
 ![mirror_ui_stats.jpg](/attachment_files/mirror_ui_stats.jpg)
@@ -225,4 +225,4 @@ See also the [Mirror Monitor JMX utility](http://wiki.gigaspaces.com/wiki/displa
 
 # Advanced Information & Operations
 
-{% refer %}For more advanced operations and information see [Async Persistency - Mirror - Advanced](/xap96/async-persistency---mirror---advanced.html).{% endrefer %}
+{% refer %}For more advanced operations and information see [Async Persistency - Mirror - Advanced](./async-persistency---mirror---advanced.html).{% endrefer %}

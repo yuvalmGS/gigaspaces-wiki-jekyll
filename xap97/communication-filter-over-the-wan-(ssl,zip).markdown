@@ -7,7 +7,7 @@ page_id: 61867318
 {% summary %}This page is about putting filters over the network communication which goes across the WAN.{% endsummary %}
 
 {% info %}
-This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](/xap96/multi-site-replication-over-the-wan.html) before reading this page.
+This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
 {% endinfo %}
 
 # Overview
@@ -17,7 +17,7 @@ Filtering network communication across the WAN are done for two main reasons:
 1. Compressing the network traffic between the sites.
 1. Securing the network using SSL in case the communication between the sites is going over open WAN (not via VPN or other underlying encryption mechanisms).
 
-For both cases there are two built-in [LRMI](/xap96/communication-protocol.html) [Filters](/xap96/securing-the-transport-layer-(using-ssl).html).
+For both cases there are two built-in [LRMI](./communication-protocol.html) [Filters](./securing-the-transport-layer-(using-ssl).html).
 
 # Selecting the Filter
 

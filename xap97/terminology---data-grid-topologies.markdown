@@ -6,7 +6,7 @@ page_id: 61867088
 
 {% summary page|65 %}GigaSpaces Data-Grid components {% endsummary %}
 
-|[Basic Components](/xap96/terminology---basic-components.html)|Data Grid Topologies|[Space-Based Architecture](/xap96/terminology---space-based-architecture.html)|[Runtime Components](/xap96/terminology---runtime-components.html)|
+|[Basic Components](./terminology---basic-components.html)|Data Grid Topologies|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|
 
 # Data Grid
 
@@ -174,7 +174,7 @@ A [partitioned Data Grid](#Partitioned Data Grid), with one or more [backup](#Pr
 {% endsection %}
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](/xap96/elastic-processing-unit.html) section.
+For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
 {% endtip %}
 
-|[Basic Components](/xap96/terminology---basic-components.html)|Data Grid Topologies|[Space-Based Architecture](/xap96/terminology---space-based-architecture.html)|[Runtime Components](/xap96/terminology---runtime-components.html)|
+|[Basic Components](./terminology---basic-components.html)|Data Grid Topologies|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|

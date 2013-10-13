@@ -5,11 +5,11 @@ page_id: 61867339
 ---
 
 {% compositionsetup %}
-{% summary page|60 %} The default Hibernate implementation of the [Space Persistency](/xap96/space-persistency.html) APIs.{% endsummary %}
+{% summary page|60 %} The default Hibernate implementation of the [Space Persistency](./space-persistency.html) APIs.{% endsummary %}
 
 # Overview
 
-GigaSpaces comes with a built in implementation of [Space Persistency](/xap96/space-persistency.html) APIs for Hibernate. This implementation is an extension of the `SpaceDataSource` and `SpaceSynchronizationEndpoint` classes. The implementation allows a custom objects persistency using Hibernate mappings.
+GigaSpaces comes with a built in implementation of [Space Persistency](./space-persistency.html) APIs for Hibernate. This implementation is an extension of the `SpaceDataSource` and `SpaceSynchronizationEndpoint` classes. The implementation allows a custom objects persistency using Hibernate mappings.
 
 {% indent %}
 ![HibernateSpacedataSource.jpg](/attachment_files/HibernateSpacedataSource.jpg)
@@ -25,7 +25,7 @@ There are two available implementations:
 
 `StatelessHibernateSpaceDataSource` and `StatelessHibernateSpaceSynchronizationEndpoint` based on Hiberante [StatelessSession](http://docs.jboss.org/hibernate/orm/3.5/javadocs/org/hibernate/StatelessSession.html). This implementation is faster than the `Default Hibernate Space Persistency Implementation`, but it does not have first level cache, as well as does not perform any cascading operations (both in read operations as well as dirty operations).
 
-The `Hibernate Space Persistency Implementation` is used both with the [Synchronous](/xap96/direct-persistency.html) and the [Asynchronous Persistency](/xap96/asynchronous-persistency-with-the-mirror.html) modes.
+The `Hibernate Space Persistency Implementation` is used both with the [Synchronous](./direct-persistency.html) and the [Asynchronous Persistency](./asynchronous-persistency-with-the-mirror.html) modes.
 
 # Configuration
 
@@ -164,7 +164,7 @@ Here is an example for a Space Domain class with its Hibernate decorations. See 
 {% info %}
 Make sure your POJO @SpaceId is defined on the same property as the Hibernate @Id. This is necessary for proper object mapping.
 {% endinfo %}
-See the [POJO Metadata](/xap96/pojo-metadata.html) for details about these decorations.
+See the [POJO Metadata](./pojo-metadata.html) for details about these decorations.
 
 {% highlight java %}
 package com.mycompany.app.common;

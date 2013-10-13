@@ -9,8 +9,8 @@ page_id: 61867160
 
 # Overview
 
-The [GigaSpace.change](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/GigaSpace.html) and the [ChangeSet](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/ChangeSet.html) allows updating existing objects in space, by specifying only the required change instead of passing the entire updated object. Thus reducing required network traffic between the client and the space, and the network traffic generated from replicating the changes between the space instances (e.g between the primary space instance and its backup). Moreover, using this API also can prevent the need of reading the existing object prior to the change operation because the change operation can specify how to change the existing property without knowing its current value. For instance, implementing atomic [Counters](/xap96/counters.html) can be done by increasing a counter property of an integer property by some delta. Another example would be to add a value to a collection and so on.
-The change API supports [transactions](/xap96/transaction-management.html) in the same way the other space operation supports it, using a transactional `GigaSpace` instance.
+The [GigaSpace.change](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/GigaSpace.html) and the [ChangeSet](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/ChangeSet.html) allows updating existing objects in space, by specifying only the required change instead of passing the entire updated object. Thus reducing required network traffic between the client and the space, and the network traffic generated from replicating the changes between the space instances (e.g between the primary space instance and its backup). Moreover, using this API also can prevent the need of reading the existing object prior to the change operation because the change operation can specify how to change the existing property without knowing its current value. For instance, implementing atomic [Counters](./counters.html) can be done by increasing a counter property of an integer property by some delta. Another example would be to add a value to a collection and so on.
+The change API supports [transactions](./transaction-management.html) in the same way the other space operation supports it, using a transactional `GigaSpace` instance.
 
 ![change-api.jpg](/attachment_files/change-api.jpg)
 
@@ -27,7 +27,7 @@ space.change(idQuery, new ChangeSet().increment("count", 1));
 
 # The Query Template
 
-The change operation may receive any [query template](/xap96/querying-the-space.html) for matching a single or multiple objects that needs to be changed by the operation.
+The change operation may receive any [query template](./querying-the-space.html) for matching a single or multiple objects that needs to be changed by the operation.
 
 # The Change Set
 
@@ -70,7 +70,7 @@ space.change(idQuery, new ChangeSet().increment("balance.euro", 5.2D));
 
 Each operation in the change set acts on a specified string path. This path points to the property that needs to be changed and it has the following semantic:
 
-1. **First level property** - A path with no '.' character in it points to a first level property, If the property specified by this path is not part of the Object it will be treated as a dynamic property (see [Dynamic Properties](/xap96/dynamic-properties.html)) if the object does not support dynamic properties, an exception will be generated.
+1. **First level property** - A path with no '.' character in it points to a first level property, If the property specified by this path is not part of the Object it will be treated as a dynamic property (see [Dynamic Properties](./dynamic-properties.html)) if the object does not support dynamic properties, an exception will be generated.
 1. **Nested property** - A path that contains '.' character is considered a path to a nested property, the location process of the final property which needs to be changed is done recursively by activating the properties, specified by the split of the path using the '.' character, one at a time until reaching the targeted end property.
 1. **Nested Map property** - A path that contains '.' may also point to keys inside a map as, meaning the following path - 'attributes.color' will look for key named 'color' if the property named 'attribute' in the object is actually a map. This affects nested properties as well.
 
@@ -114,7 +114,7 @@ In this case the key euro inside the map behind the balance will be increased by
 
 # Using Change with the Embedded model
 
-With the [embedded model](/xap96/modeling-your-data.html#Embedded vs. Non-Embedded Relationships), updating (as well adding or removing) a nested collection with large number of elements **must use the change API** since the default behavior would be to replicate the entire space object and its nested collection elements from the primary to the backup (or other replica primary copies when using the sync-replicate or the async-replicated cluster schema). The Change API reduces the CPU utilization at the primary side, reduce the serialization overhead and reduce the garbage collection activity both at the primary and backup. This improves the overall system stability significantly.
+With the [embedded model](./modeling-your-data.html#Embedded vs. Non-Embedded Relationships), updating (as well adding or removing) a nested collection with large number of elements **must use the change API** since the default behavior would be to replicate the entire space object and its nested collection elements from the primary to the backup (or other replica primary copies when using the sync-replicate or the async-replicated cluster schema). The Change API reduces the CPU utilization at the primary side, reduce the serialization overhead and reduce the garbage collection activity both at the primary and backup. This improves the overall system stability significantly.
 
 # Change Result
 
@@ -255,7 +255,7 @@ catch(ChangeException e)
 
 # Change and Optimistic Locking
 
-The `change` operation has the same semantics as regular space `update` operation when it comes to [Optimistic Locking](/xap96/optimistic-locking.html). It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
+The `change` operation has the same semantics as regular space `update` operation when it comes to [Optimistic Locking](./optimistic-locking.html). It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
 
 {% highlight java %}
 GigaSpace space = // ... obtain a space reference
@@ -344,12 +344,12 @@ space.asyncChange(idQuery, new ChangeSet().increment("balance.euro", 5.2D), myLi
 # Change and SpaceSynchronizationEndpoint
 
 A SpaceSynchronizationEndpoint implementation could support change operations and make use of lighter replication between the space and the mirror.
-{% refer %}For more information on how to implement it please refer to [Change API Advanced](/xap96/change-api-advanced.html){% endrefer %}
+{% refer %}For more information on how to implement it please refer to [Change API Advanced](./change-api-advanced.html){% endrefer %}
 
 # Change and Replication Filter
 
-Change passes through [Replication Filter](/xap96/cluster-replication-filters.html) like other operations and for example can be discarded on replication level.
-{% refer %}For more information on how to handle change in replication filters please refer to [Change API Advanced](/xap96/change-api-advanced.html){% endrefer %}
+Change passes through [Replication Filter](./cluster-replication-filters.html) like other operations and for example can be discarded on replication level.
+{% refer %}For more information on how to handle change in replication filters please refer to [Change API Advanced](./change-api-advanced.html){% endrefer %}
 
 # Considerations
 

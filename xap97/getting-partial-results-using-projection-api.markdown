@@ -21,7 +21,7 @@ In some cases when querying the space for objects, only specific properties of t
 
 # Specifying a Projection with your Query
 
-Projection supported using a [SQLQuery](/xap96/sqlquery.html) or [Id Queries](/xap96/id-queries.html). Below a simple example reading a `Person` object where only the 'firstName' and 'lastName' properties are returned with the query result array. All other `Person` properties will not be returned:
+Projection supported using a [SQLQuery](./sqlquery.html) or [Id Queries](./id-queries.html). Below a simple example reading a `Person` object where only the 'firstName' and 'lastName' properties are returned with the query result array. All other `Person` properties will not be returned:
 
 {% highlight java %}
 public class Person
@@ -54,7 +54,7 @@ IdsQuery<Person> idsQuery = new IdsQuery<Person>(Person.class, new Long[]{id1,id
 Person result[] = space.readByIds(idsQuery).getResultsArray();
 {% endhighlight %}
 
-The [SpaceDocument](/xap96/document-api.html) support projections as well:
+The [SpaceDocument](./document-api.html) support projections as well:
 
 {% highlight java %}
 SQLQuery<SpaceDocument> docQuery = new SQLQuery<SpaceDocument>(Person.class.getName() ,"", 
@@ -65,7 +65,7 @@ SpaceDocument docresult[] = gigaSpace.readMultiple(docQuery);
 # Supported Operations
 
 The projection is defined for any operation that return data from the space. Therefore ID Based or Query based operations supporting projections. You can use with `read`,`take`,`readById`,`takeById`,`readMultiple` and `takeMultiple` operations. When performing a `take` operation with projection the entire object will be removed from the space, but the result returned to the user will contain only the projected properties.
-You can use projections with the [Notify Container](/xap96/notify-container.html) when subscribing to notifications, or with the [Polling Container](/xap96/polling-container.html) when consuming space objects. You can also create a [Local View](/xap96/local-view.html) with templates or a `View` using projections. The local view will maintain the relevant objects, but with the projected data - only with the projected properties.
+You can use projections with the [Notify Container](./notify-container.html) when subscribing to notifications, or with the [Polling Container](./polling-container.html) when consuming space objects. You can also create a [Local View](./local-view.html) with templates or a `View` using projections. The local view will maintain the relevant objects, but with the projected data - only with the projected properties.
 Projected properties can specify both dynamic or fixed properties and the usage is the same. As a result, when providing a projected property name which is not part of the fixed properties set, it will be treated as a dynamic property. If there is no dynamic property present with that name on an object which is a result of the query - that projection property will be ignored (and no exception will be raised). Please note that a result may contain multiple objects, each with different set of properties (fixed and dynamic), each object will be treated individually when applying the projections on it.
 
 {% exclamation %} Space Iterator does not support projections
@@ -73,5 +73,5 @@ Projected properties can specify both dynamic or fixed properties and the usage 
 # Considerations
 
 1. Projection supported only for first level properties (root level). Nested properties can't be specified as part of the projection properties list.
-1. You can't use a projection on [Local Cache](/xap96/local-cache.html) as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projection will only impact performance.
+1. You can't use a projection on [Local Cache](./local-cache.html) as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projection will only impact performance.
 1. You can't use a projection to query a Local View for the same reason as Local Cache, however, You can create the local view with projection template and the Local View will be contain the objects in their projected form.

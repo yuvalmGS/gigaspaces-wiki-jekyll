@@ -106,7 +106,7 @@ The `GSIterator` constructed using the following parameters:
 
 ## Using GSIterator with SQLQuery
 
-When using the `GSIterator` with [SQLQuery](/xap96/sqlquery.html), only [simple SQL queries](/xap96/sqlquery.html#Simple Queries - Supported and Non-Supported Operators) are supported:
+When using the `GSIterator` with [SQLQuery](./sqlquery.html), only [simple SQL queries](./sqlquery.html#Simple Queries - Supported and Non-Supported Operators) are supported:
     (field1 < value1) AND (field2 > value2) AND (field3 == values3)...
 The following operators **are not supported** when using `GSIterator`:
 

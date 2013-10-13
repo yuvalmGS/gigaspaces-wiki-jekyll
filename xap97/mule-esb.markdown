@@ -8,13 +8,13 @@ page_id: 61867050
 
 # Overview
 
-OpenSpaces comes with comprehensive support for [Mule](http://www.mulesoft.org/) 3.3. It allows you to use the Space as a Mule external [transport](/xap96/mule-event-container-transport.html), enabling receiving and dispatching of POJO messages over the Space.
+OpenSpaces comes with comprehensive support for [Mule](http://www.mulesoft.org/) 3.3. It allows you to use the Space as a Mule external [transport](./mule-event-container-transport.html), enabling receiving and dispatching of POJO messages over the Space.
 
-An additional transport called [os-queue](/xap96/mule-queue-provider.html) allows you to replace Mule VM transport with highly available inter VM transport over the Space.
+An additional transport called [os-queue](./mule-queue-provider.html) allows you to replace Mule VM transport with highly available inter VM transport over the Space.
 
-OpenSpaces Mule integration also [enhances the Mule SEDA model](/xap96/mule-seda-model.html), allowing you to store a Mule internal SEDA queue over the Space.
+OpenSpaces Mule integration also [enhances the Mule SEDA model](./mule-seda-model.html), allowing you to store a Mule internal SEDA queue over the Space.
 
-Last, a Mule application can be [packaged and run as a Processing Unit](/xap96/mule-processing-unit.html) within one of the OpenSpaces Processing Unit containers -- most importantly the SLA-driven container.
+Last, a Mule application can be [packaged and run as a Processing Unit](./mule-processing-unit.html) within one of the OpenSpaces Processing Unit containers -- most importantly the SLA-driven container.
 
 {% exclamation %} See the [Distributed Multi Mule service example](http://wiki.gigaspaces.com/wiki/display/SBP/Mule+ESB+Example) for a best practice approach when designing your Mule based application.
 {% children %}

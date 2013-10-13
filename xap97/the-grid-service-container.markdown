@@ -9,7 +9,7 @@ page_id: 61867270
 
 # Overview
 
-A Grid Service Container (GSC) is a container which hosts Processing Unit Instances (actual instances of a deployed Processing Unit). The GSC can be perceived as a node on the grid, which is controlled by [The Grid Service Manager](/xap96/the-grid-service-manager.html). The GSM provides commands of deployment and un-deployment of the Processing Unit instances into the GSC. The GSC reports its status to the GSM.
+A Grid Service Container (GSC) is a container which hosts Processing Unit Instances (actual instances of a deployed Processing Unit). The GSC can be perceived as a node on the grid, which is controlled by [The Grid Service Manager](./the-grid-service-manager.html). The GSM provides commands of deployment and un-deployment of the Processing Unit instances into the GSC. The GSC reports its status to the GSM.
 
 Another aspect of a GSC is its ability to host Processing Units. The GSC class loading hierarchy makes sure that various Processing Units are isolated from one another within the same GSC.
 
@@ -19,7 +19,7 @@ The deployment of multiple GSCs on a single or multiple machines creates a virtu
 
 # Starting the GSC
 
-The preferable way to start a GSC is using [The Grid Service Agent](/xap96/the-grid-service-agent.html). A GSC can be started on its own using the `\[GSHOME\]/bin/gsc.(bat/sh)` script.
+The preferable way to start a GSC is using [The Grid Service Agent](./the-grid-service-agent.html). A GSC can be started on its own using the `\[GSHOME\]/bin/gsc.(bat/sh)` script.
 
 # Configuring the GSC
 

@@ -57,8 +57,8 @@ The processing unit is built as an extension of the [Spring](http://www.springfr
 
 There are basically two main types of event containers:
 
-- [Polling](/xap96/polling-container.html)
-- [Notify](/xap96/notify-container.html)
+- [Polling](./polling-container.html)
+- [Notify](./notify-container.html)
 
 Event containers are used to abstract the event processing from the event source. This abstraction enables users to build their business logic with minimal binding to the underlying event source, whether it is a space-based event source, or a JMS event source, etc.
 
@@ -98,7 +98,7 @@ public class DataProcessor {
 
 ### The GigaSpace Core Middleware Component
 
-The [GigaSpace](/xap96/the-gigaspace-interface.html) component is a POJO driven abstraction of the JavaSpaces specification. JavaSpaces is a service specification. It provides a distributed object exchange/coordination mechanism (which might or might not be persistent) for Java objects. It can be used to store the system state and implement distributed algorithms. In a space, all communication partners (peers) communicate by sharing states. It is an implementation of the [Tuple spaces idea](/xap96/concepts.html#tuple).
+The [GigaSpace](./the-gigaspace-interface.html) component is a POJO driven abstraction of the JavaSpaces specification. JavaSpaces is a service specification. It provides a distributed object exchange/coordination mechanism (which might or might not be persistent) for Java objects. It can be used to store the system state and implement distributed algorithms. In a space, all communication partners (peers) communicate by sharing states. It is an implementation of the [Tuple spaces idea](./concepts.html#tuple).
 
 JavaSpaces is used when someone wants to achieve scalability and availability, while reducing the complexity of the overall system. Processes perform simple operations to write new objects into a space, take objects from a space, or read (make a copy of) objects from a space.
 
@@ -140,7 +140,7 @@ public class Data {
 
 ### Space-Based Remoting
 
-[Space-Based Remoting](/xap96/space-based-remoting.html) allows for POJO services that are collocated within a specific processing unit to be exposed to remote clients, like any other RMI service. Spring provides a generic framework for exposing and invoking POJO-based services. OpenSpaces utilizes the Spring remoting framework to enable POJO services to expose themselves through the space, as illustrated in the diagram below:
+[Space-Based Remoting](./space-based-remoting.html) allows for POJO services that are collocated within a specific processing unit to be exposed to remote clients, like any other RMI service. Spring provides a generic framework for exposing and invoking POJO-based services. OpenSpaces utilizes the Spring remoting framework to enable POJO services to expose themselves through the space, as illustrated in the diagram below:
 ![intro5.jpg](/attachment_files/intro5.jpg)
 The client uses the `SpaceRemotingProxyFactoryBean` to create a space-based dynamic proxy for the service. The client uses the proxy to invoke methods on the appropriate service instance. The proxy captures the invocation, and creates a generic command Entry with the information on the service-instance, the method-name, and arguments; and calls the space write operation to send the command to the service implementation, followed by a blocking take for the response.
 
@@ -176,4 +176,4 @@ The following is a snippet taken from the example SLA definition section of the 
 {% include /COM7/j2eevsxap.markdown %}
 
 {% whr %}
-{% refer %}**Next Chapter:** [Database Integration](/xap96/database-integration.html){% endrefer %}
+{% refer %}**Next Chapter:** [Database Integration](./database-integration.html){% endrefer %}

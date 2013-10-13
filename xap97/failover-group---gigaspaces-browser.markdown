@@ -17,4 +17,4 @@ A space cannot reside in different load-balancing and failover groups. In other 
 
 If an operation performed on a space fails because the space server fails, the clustered proxy tries to locate another space in the failover group and redirect the operation to it, subject to the failover policy defined. An exception is operations that are performed under a transaction; in this case, the clustered proxy aborts the transaction and throws an exception to the application. In this case, the application should start a new transaction, perform the operations again and re-commit.
 
-See the [Data-Partitioning](/xap96/data-partitioning.html) for details.
+See the [Data-Partitioning](./data-partitioning.html) for details.

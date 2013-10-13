@@ -6,7 +6,7 @@ page_id: 61867104
 
 {% summary page|65 %}GigaSpaces runtime components {% endsummary %}
 
-|[Basic Components](/xap96/terminology---basic-components.html)|[Data Grid Topologies](/xap96/terminology---data-grid-topologies.html)|[Space-Based Architecture](/xap96/terminology---space-based-architecture.html)|Runtime Components|
+|[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|Runtime Components|
 
 # GigaSpaces Runtime and Administration Components
 
@@ -31,7 +31,7 @@ page_id: 61867104
 {% section %}
 {% column width=50% %}
 
-A container that hosts a [Processing Unit](/xap96/terminology---basic-components.html#Processing Unit).
+A container that hosts a [Processing Unit](./terminology---basic-components.html#Processing Unit).
 
 {% sub %}Key sentence: The Processing Unit can run only inside a hosting Processing Unit Container.{% endsub %}
 {% endcolumn %}
@@ -118,8 +118,8 @@ It enables running the processing unit within a [service grid](#Service Grid), w
 
 # Service Grid
 
-A set of [GigaSpaces Containers (GSC)](/xap96/the-grid-service-container.html) managed by a [GigaSpaces Manager (GSM)](/xap96/the-grid-service-manager.html).
-The containers host various deployments of [Processing Units](/xap96/terminology---basic-components.html#Processing Unit) and [Data Grids](/xap96/terminology---data-grid-topologies.html).
+A set of [GigaSpaces Containers (GSC)](./the-grid-service-container.html) managed by a [GigaSpaces Manager (GSM)](./the-grid-service-manager.html).
+The containers host various deployments of [Processing Units](./terminology---basic-components.html#Processing Unit) and [Data Grids](./terminology---data-grid-topologies.html).
 Each container can be run on a separate physical machine.
 
 {% sub %}Key sentence: A set of managed containers hosting Processing Unit Deployments{% endsub %}
@@ -148,8 +148,8 @@ Each container can be run on a separate physical machine.
 
 #### GigaSpaces Container (GSC)
 
-A [Service Grid](#Service Grid) component which hosts [Processing Unit](/xap96/terminology---basic-components.html#Processing Unit) instances.
-A machine can run one or more [GSC](/xap96/the-grid-service-container.html) processes. Each GSC communicates with a manager component ([GSM](/xap96/the-grid-service-manager.html)). The GSC receives requests to start/stop a processing unit instance, and sends information about the machine which runs it (OS, processor architecture, current memory and CPU stats), the software installed on it and the status of processing unit instances currently running on it.
+A [Service Grid](#Service Grid) component which hosts [Processing Unit](./terminology---basic-components.html#Processing Unit) instances.
+A machine can run one or more [GSC](./the-grid-service-container.html) processes. Each GSC communicates with a manager component ([GSM](./the-grid-service-manager.html)). The GSC receives requests to start/stop a processing unit instance, and sends information about the machine which runs it (OS, processor architecture, current memory and CPU stats), the software installed on it and the status of processing unit instances currently running on it.
 
 {% sub %}Key sentence: A set of managed containers hosting different Processing Unit Instances{% endsub %}
 {% endcolumn %}
@@ -176,7 +176,7 @@ A machine can run one or more [GSC](/xap96/the-grid-service-container.html) proc
 
 #### GigaSpaces Manager (GSM)
 
-The [GSM](/xap96/the-grid-service-manager.html) is a [Service Grid](#Service Grid) component which manages a set of [GigaSpaces Containers (GSC)](/xap96/the-grid-service-container.html).
+The [GSM](./the-grid-service-manager.html) is a [Service Grid](#Service Grid) component which manages a set of [GigaSpaces Containers (GSC)](./the-grid-service-container.html).
 A GSM has an API for deploying/undeploying processing units. When a GSM is instructed to deploy a Processing Unit, it allocates an appropriate, available GSC and tells that GSC to run an instance of that processing unit. It then continues to monitor that the GSC is alive and the SLA is not breached.
 
 {% sub %}Key sentence: A GSM manages all the running containers in the network and deploys processing units to them.{% endsub %}
@@ -220,4 +220,4 @@ Enables the user to view and interact with the runtime components running in the
 {% endcolumn %}
 {% endsection %}
 
-|[Basic Components](/xap96/terminology---basic-components.html)|[Data Grid Topologies](/xap96/terminology---data-grid-topologies.html)|[Space-Based Architecture](/xap96/terminology---space-based-architecture.html)|Runtime Components|
+|[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|Runtime Components|

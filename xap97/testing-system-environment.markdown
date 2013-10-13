@@ -118,7 +118,7 @@ Service is not found using the URL: jini://*/*/mySpace?timeout=5000
 {% endhighlight %}
 
 You have the following options:
-    - Make sure your network and machines running GigaSpaces are configured to have multicast enabled. See the [How to Configure Multicast](/xap96/how-to-configure-multicast.html) section for details on how to enable multicast.
+    - Make sure your network and machines running GigaSpaces are configured to have multicast enabled. See the [How to Configure Multicast](./how-to-configure-multicast.html) section for details on how to enable multicast.
     - Perform a space ping using **unicast** lookup discovery protocol:
     gs space ping -url jini://localhost/*/mySpace
 The following result should appear on the console:
@@ -147,4 +147,4 @@ Repeat the above steps #3, where the ping command is called from a machine diffe
 
 # What's Next?
 
-{% refer %}**[Get Started with GigaSpaces Tutorials](/xap96/quick-start-guide.html)**{% endrefer %}
+{% refer %}**[Get Started with GigaSpaces Tutorials](./quick-start-guide.html)**{% endrefer %}

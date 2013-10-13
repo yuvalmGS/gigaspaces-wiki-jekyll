@@ -7,7 +7,7 @@ page_id: 61867174
 {% summary %}This page explains how to configure replication gateway targets of a space.{% endsummary %}
 
 {% info %}
-This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](/xap96/multi-site-replication-over-the-wan.html) before reading this page.
+This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
 {% endinfo %}
 
 # Overview

@@ -29,4 +29,4 @@ You may also define **multiple spaces URL using semi colon** {% color black %}se
     
     rmi://host1/container1/space1;rmi://host2/container2/space2;rmi://host3/container3/space3
 
-{% lampon %} To use a unicast instead of or with multicast service discovery, refer to the [How do I Use/Set Unicast (Jini Locators) Discovery?](/xap96/lookup-service-configuration.html#How do I Use/Set Unicast (Jini Locators) Discovery?) section.
+{% lampon %} To use a unicast instead of or with multicast service discovery, refer to the [How do I Use/Set Unicast (Jini Locators) Discovery?](./lookup-service-configuration.html#How do I Use/Set Unicast (Jini Locators) Discovery?) section.

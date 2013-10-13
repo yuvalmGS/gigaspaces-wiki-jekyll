@@ -8,7 +8,7 @@ page_id: 61867091
 
 # Introduction
 
-If you are new to the **Hello World** example, we suggest to first review the [Your First XTP Application](/xap96/your-first-xtp-application.html) tutorial and its [Hello World screencast](http://www.youtube.com/watch?v=I2s8jg_Gufs&feature=relmfu). With this page we provide a short overview of the example, and get you started with applying security aspects to it.
+If you are new to the **Hello World** example, we suggest to first review the [Your First XTP Application](./your-first-xtp-application.html) tutorial and its [Hello World screencast](http://www.youtube.com/watch?v=I2s8jg_Gufs&feature=relmfu). With this page we provide a short overview of the example, and get you started with applying security aspects to it.
 
 {% infosign %} The example distribution can be found under `<GigaSpaces root>/examples/helloworld`.
 
@@ -104,7 +104,7 @@ The "helloFeeder" user will be granted **`Write`** access for `HelloObject` and 
 - The `ProcessedHelloObject` is fictive. Actually the `Feeder` waits for `HelloObject` template matching the "Hello World !!" String.
 - The `HelloObject` was replaced by a `Message` Object in the products example. Thus the actual class that should be granted privileges for is `org.openspaces.example.helloworld.common.Message`.
 
-Lets look at how easily it can be using the [GigaSpaces Management Center (UI) Security](/xap96/gigaspaces-management-center-(ui)-security.html)
+Lets look at how easily it can be using the [GigaSpaces Management Center (UI) Security](./gigaspaces-management-center-(ui)-security.html)
 ![helloWorldUsers.png](/attachment_files/helloWorldUsers.png)
 
 # Running the Example

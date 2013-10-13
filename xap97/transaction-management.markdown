@@ -13,11 +13,11 @@ The Spring Framework provides a transaction manager abstraction using the `Platf
 
 ![tx_manager.jpg](/attachment_files/tx_manager.jpg)
 
-By implementing Spring's `PlatformTransactionManager`, the OpenSpaces API allows users to utilize Spring's rich support for [declarative transaction management](http://static.springframework.org/spring/docs/2.5.x/reference/transaction.html#transaction-declarative). The declarative transaction support can be easily utilized with the [GigaSpace Interface](/xap96/the-gigaspace-interface.html).
+By implementing Spring's `PlatformTransactionManager`, the OpenSpaces API allows users to utilize Spring's rich support for [declarative transaction management](http://static.springframework.org/spring/docs/2.5.x/reference/transaction.html#transaction-declarative). The declarative transaction support can be easily utilized with the [GigaSpace Interface](./the-gigaspace-interface.html).
 
 Please note that when using Spring declarative transaction, a proxy is generated for the classes annotated with `@Transactional` methods. In such a case **only external method calls** coming in through the proxy will be intercepted. This means that 'self-invocation', i.e. a method within the target object calling some other method of the target object, won't lead to an actual transaction at runtime even if the invoked method is marked with `@Transactional`.
 
-{% exclamation %} In order to make [The GigaSpace Interface ](/xap96/the-gigaspace-interface.html) transactional, the transaction manager must be provided to it when constructing the GigaSpace bean.
+{% exclamation %} In order to make [The GigaSpace Interface ](./the-gigaspace-interface.html) transactional, the transaction manager must be provided to it when constructing the GigaSpace bean.
 {% exclamation %} The following should be added to your `pu.xml` to enable the configuration of transactional behavior based on annotations:
 
 {% highlight java %}
@@ -311,7 +311,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gig
 
 The above configuration creates a Distributed Transaction Manager with a pool of 2 transaction (lease) renewal managers (a single manager can handle multiple transactions, more managers allow for better concurrency). Each transaction is renewed every 1 second (1000 milliseconds) with an expected round trip time of 500 milliseconds. This means that a transaction with a timeout of 10 seconds is renewed 10 times (approximately) and if the JVM crashes, the transaction expires within a second (at most).
 
-More information regarding Lease Renewal Manager can be found [here](/xap96/leases---automatic-expiration.html#LeaseRenewalManager).
+More information regarding Lease Renewal Manager can be found [here](./leases---automatic-expiration.html#LeaseRenewalManager).
 
 # XA/JTA Support
 
@@ -460,7 +460,7 @@ To enable the declarative transaction management:
 </beans>
 {% endhighlight %}
 
-Note that you can also annotate beans exposed via [space based remoting](/xap96/space-based-remoting.html). If you include the `<tx:annotation-driven>` element in your `pu.xml` file, it will be processed as any other bean and the remoting mechanism will use the proxied instance, thus making the remote call to the bean transactional.
+Note that you can also annotate beans exposed via [space based remoting](./space-based-remoting.html). If you include the `<tx:annotation-driven>` element in your `pu.xml` file, it will be processed as any other bean and the remoting mechanism will use the proxied instance, thus making the remote call to the bean transactional.
 
 # Programmatic Transaction Management
 

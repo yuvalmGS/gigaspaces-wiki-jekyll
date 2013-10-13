@@ -34,14 +34,14 @@ FIFO-Grouping ('FG') enables reading/taking certain space entries in FIFO order 
 
 {% note %}
 **Exclusivity**
-The selected group is locked until the operation is terminated- the operation transaction is committed/ aborted.  See the [Exclusivity](/xap96/fifo-grouping.html#Exclusivity) section for more elaborations.
+The selected group is locked until the operation is terminated- the operation transaction is committed/ aborted.  See the [Exclusivity](./fifo-grouping.html#Exclusivity) section for more elaborations.
 {% endnote %}
 
 # Method Of Operation
 
 - FG operations must be performed within transactions.
 - Any class that supports FG is logically divided to groups according to the FG designated property. This property must be indexed and will be automatically indexed by the system if an index definition does not exist for it.  An additional data structure is kept for this property in order to assist in traversing the different groups.
-- In the selecting template a null value will generally be rendered for this property which stands for bring any available group. An available group is any FG that matches the selection template and is not currently locked by another FG thread (see [Exclusivity](/xap96/fifo-grouping.html#Exclusivity) section).
+- In the selecting template a null value will generally be rendered for this property which stands for bring any available group. An available group is any FG that matches the selection template and is not currently locked by another FG thread (see [Exclusivity](./fifo-grouping.html#Exclusivity) section).
 
 - If the selecting template (Pojo) has a value for a property other than the FG designated property - this property can be indexed (like for any regular read/take operation) and in addition a `@SpaceFifoGroupingIndex` annotation can be added  to it  in order to assist in efficient traversal. In this case the system will create a compound index that contains this property and the FG designated property. For example, if a polling container is responsible for all the new reservations (reservations with processingState = NEW), then it is recommended to declare a SpaceFifoGroupingIndex on the processingState property. This would help to achieve better performance when searching for reservations of certain flight that have processingState = NEW.
 
@@ -219,7 +219,7 @@ For example, declaring `SpaceFifoGroupingIndex(path="a")`, overriding in subclas
 
 # Considerations
 
-- FG is not supported with a Space using [LRU Cache policy](/xap96/lru-cache-policy.html) and [Space Persistency](/xap96/space-persistency.html) enabled.
+- FG is not supported with a Space using [LRU Cache policy](./lru-cache-policy.html) and [Space Persistency](./space-persistency.html) enabled.
 - Cross partitioning of groups is not supported (same limitation as in regular FIFO operations).
 - `@SpaceFifoGroupingProperty` and `@SpaceFifoGroupingIndex` cannot be used as dynamic indexes.
 - `@SpaceFifoGroupingProperty` and `@SpaceFifoGroupingIndex` cannot be used  as collection indexes.

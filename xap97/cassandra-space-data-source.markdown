@@ -8,7 +8,7 @@ page_id: 61867225
 
 ## Configuration
 
-A Cassandra based implementation of the [Space Data Source](/xap96/space-data-source-api.html).
+A Cassandra based implementation of the [Space Data Source](./space-data-source-api.html).
 
 ### Library dependencies
 
@@ -51,7 +51,7 @@ include the following in your `pom.xml`
 ### Setup
 
 An example of how the Cassandra Space Data Source can be configured for a space that loads data back from Cassandra once initialized and
-also asynchronously persists the data using a mirror (see [Cassandra Space Synchronization Endpoint](/xap96/cassandra-space-synchronization-endpoint.html)).
+also asynchronously persists the data using a mirror (see [Cassandra Space Synchronization Endpoint](./cassandra-space-synchronization-endpoint.html)).
 
 {% inittab Configuration Examples %}
 {% tabcontent Spring %}
@@ -159,7 +159,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")
 {% endtabcontent %}
 {% endinittab %}
 
-For more details about different configurations see [Space Persistency](/xap96/space-persistency.html).
+For more details about different configurations see [Space Persistency](./space-persistency.html).
 
 ### `CassandraSpaceDataSource` Properties
 
@@ -167,12 +167,12 @@ For more details about different configurations see [Space Persistency](/xap96/s
 |Property|Description|Default|
 |:-------|:----------|:------|
 |cassandraDataSource|A configured `org.apache.cassandra.cql.jdbc.CassandraDataSource` bean. Must be configured to use CQL 2.0.0.| |
-|hectorClient|A configured [HectorCassandraClient](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/persistency/cassandra/HectorCassandraClient.html) bean. see [Hector Cassandra Client](/xap96/hector-cassandra-client.html).| |
+|hectorClient|A configured [HectorCassandraClient](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/persistency/cassandra/HectorCassandraClient.html) bean. see [Hector Cassandra Client](./hector-cassandra-client.html).| |
 |minimumNumberOfConnections|The minimum number of jdbc connections to hold in the pool.|5|
 |maximumNumberOfConnections|The maximum number of jdbc connections to hold in the pool. If a connection is required and the pool is full, a new connection will be opened which will be closed shortly after its usage is completed.|30|
 |batchLimit|The underlying cassandra-jdbc implementation brings the entire result set in one batch. If paging is required, this parameter will control the maximum number of entries to fetch in each batch. (this parameter controls both initial data load and general cache miss queries) |10000|
-|fixedPropertyValueSerializer|see [Property Value Serializer](/xap96/cassandra-space-synchronization-endpoint.html#Property Value Serializer).| |
-|dynamicPropertyValueSerializer|see [Property Value Serializer](/xap96/cassandra-space-synchronization-endpoint.html#Property Value Serializer).| |
+|fixedPropertyValueSerializer|see [Property Value Serializer](./cassandra-space-synchronization-endpoint.html#Property Value Serializer).| |
+|dynamicPropertyValueSerializer|see [Property Value Serializer](./cassandra-space-synchronization-endpoint.html#Property Value Serializer).| |
 
 ## Considerations
 

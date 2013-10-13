@@ -10,8 +10,8 @@ page_id: 61867446
 
 We recommend that you do the following before starting this step of the Tutorial: 
 
-- Follow [Step 1](/xap96/step-1---adjusting-your-jpa-domain-model-to-the-xap-jpa-implementation.html) of this tutorial
-- Follow [Step 2](/xap96/step-2---using-the-power-of-the-space-to-scale-your-data-access-layer.html) of this tutorial
+- Follow [Step 1](./step-1---adjusting-your-jpa-domain-model-to-the-xap-jpa-implementation.html) of this tutorial
+- Follow [Step 2](./step-2---using-the-power-of-the-space-to-scale-your-data-access-layer.html) of this tutorial
 
 # Building the Example Application 
 
@@ -21,7 +21,7 @@ To build the example you should follow the following steps:
 
 - Download and unzip the [application sources](/attachment_files/petclinic.zip)
 - Download and install [GigaSpaces XAP 9.5 Premium Edition](http://www.gigaspaces.com/LatestProductVersion). 
-- Install the Gigaspaces Maven Plugin as described [here](/xap96/maven-plugin.html). Please take note of the GigaSpaces build number in the console output, e.g.: 
+- Install the Gigaspaces Maven Plugin as described [here](./maven-plugin.html). Please take note of the GigaSpaces build number in the console output, e.g.:
 
 {% highlight java %}
 D:\GS-Releases\gigaspaces-xap-premium-9.5.0-ga\tools\maven>installmavenrep.bat
@@ -52,7 +52,7 @@ This will download the application's decencies, compile the sources and package 
 
 To deploy the application, you should do the following: 
 
-- Start a [GigaSpaces Agent](/xap96/the-grid-service-agent.html)
+- Start a [GigaSpaces Agent](./the-grid-service-agent.html)
 - Run the following Maven command from the application's root directory:
 
 {% highlight java %}
@@ -67,15 +67,15 @@ To have an initial sample data set to work with, simply click the "Create Dummy 
 
 # Monitoring the Deployed Application
 
-To monitor  the application, start the GigaSpaces UI using the `<GigaSpaces root>/bin/gs-ui.sh(bat)` or the GigaSpaces [Web UI](/xap96/web-management-console.html).
+To monitor  the application, start the GigaSpaces UI using the `<GigaSpaces root>/bin/gs-ui.sh(bat)` or the GigaSpaces [Web UI](./web-management-console.html).
 
 ![web-ui-pc.png](/attachment_files/web-ui-pc.png)
 
 # Backing the `HttpSession` with the Space for High Availability
 
-Please refer to [this page](/xap96/step-2---enabling-http-session-failover-and-fault-tolerance.html) for directions on how to enable `HttpSession` high availability for the web application. 
+Please refer to [this page](./step-2---enabling-http-session-failover-and-fault-tolerance.html) for directions on how to enable `HttpSession` high availability for the web application.
 
 # Configuring Dynamic Load Balancing 
 
-Please refer to [this page](/xap96/step-3---scaling-the-data-access-layer.html) for directions on how to enable `HttpSession` high availability for the web application. 
+Please refer to [this page](./step-3---scaling-the-data-access-layer.html) for directions on how to enable `HttpSession` high availability for the web application.
 

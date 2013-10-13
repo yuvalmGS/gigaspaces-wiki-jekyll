@@ -21,19 +21,19 @@ The typical scenario is when streaming vast number of raw events through the Spa
 - The Archive Container configures the set of objects to be archived.
 - The Archive Container supports Space fail-over, and Big-Data storage unavailability.
 - The persisted objects, can then be read by 3rd party tools directly from the Big-Data storage.
-- Big-Data storage is abstracted with the `[ArchiveOperationHandler`](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/archive/ArchiveOperationHandler.html) interface. [Cassandra Archive Operation Handler](/xap96/cassandra-archive-operation-handler.html) implementation is available out of the box.
+- Big-Data storage is abstracted with the `[ArchiveOperationHandler`](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/archive/ArchiveOperationHandler.html) interface. [Cassandra Archive Operation Handler](./cassandra-archive-operation-handler.html) implementation is available out of the box.
 
 ## Archive Container vs Space Persistency
 
-The Archive Container differs from [Space Persistency](/xap96/space-persistency.html) in the following ways:
+The Archive Container differs from [Space Persistency](./space-persistency.html) in the following ways:
 
 - Persisted objects are not read back from the Big-Data storage into the Space.
-- Objects are persisted from multiple partitions in parallel directly to the Big-Data storage (not going through the [Space Persistency](/xap96/space-persistency.html)).
-- Archive Container uses the [Polling Container](/xap96/polling-container.html) behind the scenes, which can be co-located with each space partition.
+- Objects are persisted from multiple partitions in parallel directly to the Big-Data storage (not going through the [Space Persistency](./space-persistency.html)).
+- Archive Container uses the [Polling Container](./polling-container.html) behind the scenes, which can be co-located with each space partition.
 
 ## Archive Container running side-by-side with Space Persistency
 
-There are use-cases in which the same Space uses both an Archive Container and Space Persistency. Normally types that are archived by the Archive Container, should not be handled by Space Persistency. Hence, these types should be marked as [Transient](/xap96/transient-entries.html).
+There are use-cases in which the same Space uses both an Archive Container and Space Persistency. Normally types that are archived by the Archive Container, should not be handled by Space Persistency. Hence, these types should be marked as [Transient](./transient-entries.html).
 In cases where the same type is handled by both, configure the Archive Container and EDS to modify a different table/keyspace.
 
 # Configuration
@@ -212,7 +212,7 @@ urlSpaceConfigurer.destroy();
 {% endinittab %}
 
 The example above removes (takeMultiple) objects with a certain timestamp member value from space and writes them onto Cassandra.
-The takeMultiple operations are performed on the configured [GigaSpace](/xap96/the-gigaspace-interface.html) bean (in this case, if working in a clustered topology, it is performed directly on the cluster member).
+The takeMultiple operations are performed on the configured [GigaSpace](./the-gigaspace-interface.html) bean (in this case, if working in a clustered topology, it is performed directly on the cluster member).
 The archive operation is performed on the bean that implements the ArchiveOpertaionHandler interface, in this case the CassandraArchiveOperationHandler bean.
 
 For a  real-world example consult the streaming-bigdata example :
@@ -228,7 +228,7 @@ The archive container, performs take operations only when the relevant space it 
 
 # Static Template Definition
 
-When removing objects from the space, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SQLQuery](/xap96/sqlquery.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
+When removing objects from the space, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SQLQuery](./sqlquery.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
 {% inittab os_simple_space|top %}
 {% tabcontent Annotation %}
@@ -331,7 +331,7 @@ By default, the archive container starts a single thread that performs take oper
 In order to archive objects using multiple consumer threads, in the same order they are written to the Space:
 
 - You may start multiple archive containers consuming data in FIFO manner , each running a single consumer thread using different (mutually exclusive) templates.
-- You may use one archive container with multiple consumer threads and enable FIFO Grouping. The FIFO order of each value is not broken. See [FIFO Grouping](/xap96/fifo-grouping.html) page for more details.
+- You may use one archive container with multiple consumer threads and enable FIFO Grouping. The FIFO order of each value is not broken. See [FIFO Grouping](./fifo-grouping.html) page for more details.
 
 Here is an example of an archive container with 3 concurrent consumers and 5 maximum concurrent consumers and fifo grouping enabled:
 

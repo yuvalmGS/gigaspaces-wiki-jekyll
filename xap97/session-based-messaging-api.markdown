@@ -11,7 +11,7 @@ page_id: 61867392
 
 In some cases, SBA applications require the ability to call the user's business logic once a relevant event occurs in the space. This can be a trader desk application that is notified when a quote stock object modifies its data, or when a matching engine removes/updates a matched order. The space supports a message delivery mechanism that allows clients to register for matching events inside the space - aka Continuous query. Once a matching event occurs in the space, the space triggers an event and notifies the client by calling the client business logic.
 
-The Event Session API is the low level API for notifications. It is preferable to use the high level [Notify Container](/xap96/notify-container.html) with simple continuous query scenarios. You can use the [Notify Container](/xap96/notify-container.html) programmatically using its `SimpleNotifyContainerConfigurer`.
+The Event Session API is the low level API for notifications. It is preferable to use the high level [Notify Container](./notify-container.html) with simple continuous query scenarios. You can use the [Notify Container](./notify-container.html) programmatically using its `SimpleNotifyContainerConfigurer`.
 
 **Basic Flow**:
 
@@ -529,7 +529,7 @@ Event Session under the hood uses Notification Registration. When a remote clien
 
 To avoid this overhead, an optimization is required where notification registration is created with a limited lease and the client periodically renews the lease to keep it active. If client is shutdown or does not need this events anymore, the lease is not renewed thereby removing the registration.
 
-Lease Renewal Manager provides a systematic lease renewal and management framework and is used by Event Session for managing the notification registration leases. Leases are managed in an automatic manner without any application intervention. More information regarding Lease Renewal Manager can be found at the [Leases - Automatic Expiration](/xap96/leases---automatic-expiration.html) section.
+Lease Renewal Manager provides a systematic lease renewal and management framework and is used by Event Session for managing the notification registration leases. Leases are managed in an automatic manner without any application intervention. More information regarding Lease Renewal Manager can be found at the [Leases - Automatic Expiration](./leases---automatic-expiration.html) section.
 
 To allow a remote client using an Event Session to continue and receive notifications in case the space cluster was completely shutdown and restarted, you should use the `LeaseListener` and re-create the Event Session in case its lease renewal failed (i.e. `LeaseListener.notify()` been called). The Event Session **must enable** the `autoRenew` property to instruct GigaSpaces to construct a `Lease Renewal Manager` and have the associated `LeaseListener` implementation to be invoked.
 
@@ -576,7 +576,7 @@ public class MyLeaseListener implements LeaseListener{
 
 ## Slow Consumer
 
-The [Slow Consumer](/xap96/slow-consumer.html) mechanism allows GigaSpaces to identify clients that cannot receive events and cancel their notify registration. This avoids system instability and out of memory problems.
+The [Slow Consumer](./slow-consumer.html) mechanism allows GigaSpaces to identify clients that cannot receive events and cancel their notify registration. This avoids system instability and out of memory problems.
 
 ## Transient Notify Registration
 
@@ -604,7 +604,7 @@ The root cause of this behavior is the thread pool within the space engine that 
 space-config.engine.notify_min_threads
 space-config.engine.notify_max_threads
 {% endrefer %}
-See the [Scaling Notification Delivery](/xap96/notify-container.html#Scaling Notification Delivery) for details.
+See the [Scaling Notification Delivery](./notify-container.html#Scaling Notification Delivery) for details.
 
 To reduce the amount of stale registrations, register notification with a reasonable lease time (30 seconds - 2 minutes can be a good interval), and renew these using the [LeaseRenewalManager](http://www.gigaspaces.com/docs/JiniApi/net/jini/lease/LeaseRenewalManager.html) every 30 seconds - 2 minutes. This ensures that once the client exists in an abnormal manner, the registration automatically expires and is removed, reducing the chance to fully consume the notification thread pool and delay notification delivery to live clients.
 
@@ -672,7 +672,7 @@ DataEventSession session = factory.newDataEventSession(config);
 {% endhighlight %}
 
 Durable notifications are based on the replication mechanism and as such have some different semantics regarding other `EventSessionConfig` parameters.
-For further details see [Durable Notifications](/xap96/durable-notifications.html).
+For further details see [Durable Notifications](./durable-notifications.html).
 
 ## The UNMATCHED NotifyActionType
 

@@ -7,7 +7,7 @@ page_id: 61867070
 {% summary %}This page explains how to configure replication gateway targets of a space.{% endsummary %}
 
 {% info %}
-This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](/xap96/multi-site-replication-over-the-wan.html) before reading this page.
+This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
 {% endinfo %}
 
 # Overview
@@ -27,7 +27,7 @@ Here is an example of how this configuration should look:
 </os-gateway:targets>
 {% endhighlight %}
 
-Each configuration can be configured for all gateways or specifically per each gateway as seen in the above example, max-redo-log-capacity is configured for all gateways while bulk-size is specifically overridden in the configuration of HONGKONG gateway target. A recommended reading regarding the replication redo-log is [Controlling the Replication Redo Log](/xap96/controlling-the-replication-redo-log.html).
+Each configuration can be configured for all gateways or specifically per each gateway as seen in the above example, max-redo-log-capacity is configured for all gateways while bulk-size is specifically overridden in the configuration of HONGKONG gateway target. A recommended reading regarding the replication redo-log is [Controlling the Replication Redo Log](./controlling-the-replication-redo-log.html).
 
 # Configurable Parameters
 
@@ -40,4 +40,4 @@ Each configuration can be configured for all gateways or specifically per each g
 |max-redo-log-capacity|Specifies the maximum number of packets that should be held in the redo-log for a replication gateway (-1 means unlimited) | 100,000,000 |
 |on-redo-log-capacity-exceeded| `drop-oldest` will result in dropping the oldest packet in the redo-log once the capacity is exceeded, `block-operations` will result in blocking all new replicated operations by denying such new operation by throwing an exception to the operation invoker. | `drop-oldest` |
 
-If one of the gateway targets name matches the local-gateway-name, it will be filtered and removed from the list at deploy time. This may be helpful for creating symmetric configuration which is demonstrated at [Multi-Site Replication (WAN)](/xap96/multi-site-replication-over-the-wan.html) page.
+If one of the gateway targets name matches the local-gateway-name, it will be filtered and removed from the list at deploy time. This may be helpful for creating symmetric configuration which is demonstrated at [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) page.

@@ -20,8 +20,8 @@ The client-side cache size is limited to the heap size of the client application
 
 There are two variations provided: 
 
-- [Local Cache](/xap96/local-cache.html) - This client side cache maintains any object used by the application. The cache data is loaded on demand (lazily), based on the client application's read activities.
-- [Local View](/xap96/local-view.html) - This client side cache maintains a specific subset of the entire data, and client side cache is populated when the client application is started.
+- [Local Cache](./local-cache.html) - This client side cache maintains any object used by the application. The cache data is loaded on demand (lazily), based on the client application's read activities.
+- [Local View](./local-view.html) - This client side cache maintains a specific subset of the entire data, and client side cache is populated when the client application is started.
 
 In both cases, once updates are performed (objects are added/updated/removed) on the master space, the master space propagates the changes to all relevant local views and caches.
 
@@ -44,7 +44,7 @@ Use local view in case you can encapsulate the information you need to distribut
 
 ## When to use a local cache?
 
-Use local cache in case you are not sure which information you need in the client cache and you want to read it in a dynamic manner. Therefore the local cache is more suitable for [query by ID](/xap96/id-queries.html) scenarios.
+Use local cache in case you are not sure which information you need in the client cache and you want to read it in a dynamic manner. Therefore the local cache is more suitable for [query by ID](./id-queries.html) scenarios.
 
 # Learn More 
 

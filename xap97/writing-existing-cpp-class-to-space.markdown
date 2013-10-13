@@ -12,7 +12,7 @@ This example shows you how to write your own c++ class to the space (as opposed 
 
 {% exclamation %} This example can be built and run on **Windows OS** only. If you use **Visual Studio** open the solution `PocoFromExistingClass.sln` located in `<GigaSpaces Root>\cpp\examples\PocoFromExistingClass\`. It is recommended to set your solution configuration to `Release` and do a rebuild that will generate all related files.
 
-{% refer %}It is assumed that you have read the [GigaSpaces C++ Hello World example](/xap96/cpp-api-hello-world-example.html) which serves as a starting point.{% endrefer %}
+{% refer %}It is assumed that you have read the [GigaSpaces C++ Hello World example](./cpp-api-hello-world-example.html) which serves as a starting point.{% endrefer %}
 
 To write your c++ class to the space, perform the following steps:
 

@@ -13,7 +13,7 @@ An OpenSpaces web processing unit can use [Jetty](http://www.mortbay.org) as the
 
 ![web_app_archi.jpg](/attachment_files/web_app_archi.jpg)
 
-{% lampon %} For general web support features that are relevant, regardless of the web container used, please refer to [Web Processing Unit Container](/xap96/web-processing-unit-container.html).
+{% lampon %} For general web support features that are relevant, regardless of the web container used, please refer to [Web Processing Unit Container](./web-processing-unit-container.html).
 
 {% tip %}
 See the [http Session Management](http Session Management) for details about clustering the Jetty HTTP session.
@@ -381,7 +381,7 @@ Allow from all
 
 The above configuration configures the load balancer to direct traffic to `/petclinic` on `machine1` and `machine2`. On both machines, the ports used are `8080` and `8081`. This is because of the dynamic nature of the Service Grid, where web application instance number 1 (which corresponds to port `8080`) might be deployed on `machine1` or `machine2`.
 
-The above provides an overview of how to configure apache load balancer by hand. GigaSpaces comes with a built in [Apache Load Balancer Agent](/xap96/apache-load-balancer-agent.html) that provides a dynamic update of apache, based on changes occurring in the deployment of the web application.
+The above provides an overview of how to configure apache load balancer by hand. GigaSpaces comes with a built in [Apache Load Balancer Agent](./apache-load-balancer-agent.html) that provides a dynamic update of apache, based on changes occurring in the deployment of the web application.
 
 # Securing Jetty Container
 

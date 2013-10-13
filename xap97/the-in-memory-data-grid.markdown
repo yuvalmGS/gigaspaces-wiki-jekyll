@@ -27,7 +27,7 @@ GigaSpaces IMDG support variety of caching scenarios. Using GigaSpaces IMDG as a
 - Less load on the database layer - Since the cache will offload the database, you will have less contention generated at the database layer.
 - Continuous High-Availability - Zero downtime of your data access layer with the ability to survive system failures without any data loss.
 
-The [Caching Scenarios](/xap96/caching-scenarios.html) describes the different caching options GigaSpaces support.
+The [Caching Scenarios](./caching-scenarios.html) describes the different caching options GigaSpaces support.
 
 # Characteristics of a Space
 
@@ -38,7 +38,7 @@ The space has a number of determining characteristics that should be configured 
 ### The Space Clustering Topology
 
 The space can have a single instance, in which case it runs on a single JVM, or multiple instances, in which case it can run on multiple JVMs.
-When it has multiple instances, the space can run in a number of [topologies](/xap96/space-topologies.html) which determine how the data is distributed across those JVMs. In general, the data can be either **replicated**, which means it resides on all of the JVMs in the cluster, or **partitioned**, which means that the data is distributed across all of the JVMs, each containing a different subset of it. With a partitioned topology you can also assign one or more backup space instances for each partition.
+When it has multiple instances, the space can run in a number of [topologies](./space-topologies.html) which determine how the data is distributed across those JVMs. In general, the data can be either **replicated**, which means it resides on all of the JVMs in the cluster, or **partitioned**, which means that the data is distributed across all of the JVMs, each containing a different subset of it. With a partitioned topology you can also assign one or more backup space instances for each partition.
 
 ![topologies.jpg](/attachment_files/topologies.jpg)
 
@@ -57,7 +57,7 @@ With asynchronous replication, this replication is done in a separate thread, an
 
 The space is an in-memory data grid. As such its capacity is limited to the sum of the memory capacity of all the JVMs on which the space instances run.
 In many cases, you have to deal with larger portions of data, or load a subset of a larger data set, which resides in an external data source such as a relational database, into the space.
-The space supports many [persistency options](/xap96/persistency.html), allowing you to easily configure how it interacts with an external relational database, or a more exotic source of data.
+The space supports many [persistency options](./persistency.html), allowing you to easily configure how it interacts with an external relational database, or a more exotic source of data.
 It supports the following options, from which you can choose:
 
 - Cache warm-up: load data from an external data source on startup.
@@ -67,7 +67,7 @@ It supports the following options, from which you can choose:
 
 ### Eviction Policy and Memory Management
 
-Since the space is memory-based, it is essential to verify that it does not overflow and crash. The space has a number of [facilities](/xap96/memory-management-facilities.html) to manage its memory and make sure it does not overflow.
+Since the space is memory-based, it is essential to verify that it does not overflow and crash. The space has a number of [facilities](./memory-management-facilities.html) to manage its memory and make sure it does not overflow.
 The first one is the eviction policy. The space supports two eviction policies: `ALL_IN_CACHE` and `LRU` (Least Recently Used). With the `LRU` policy, the space starts to evict the least used entries when it becomes full. The `ALL_IN_CACHE` policy never evicts anything from the space.
 The memory manager allows you to define numerous thresholds that control when entries are evicted (in case you use `LRU`), or when the space simply blocks clients from adding data to it.
 Combined, these two facilities enable you to better control your environment and make sure that the memory of the space instances in your cluster does not overflow.
@@ -76,11 +76,11 @@ Combined, these two facilities enable you to better control your environment and
 
 GigaSpaces and its Space-Based-Architecture embrace the [reactive programming](http://en.wikipedia.org/wiki/Reactive_programming) approach. The following falls under reactive programming with GigaSpaces:
 
-- [Data Event Listener](/xap96/data-event-listener.html) - [Polling Container](/xap96/polling-container.html), [Notify Container](/xap96/notify-container.html)
-- [Local View and Local Cache](/xap96/local-view-and-local-cache.html)
-- [Mule ESB Integration](/xap96/mule-esb.html)
-- [Task Execution over the Space](/xap96/task-execution-over-the-space.html)
-- [Asynchronous Operations](/xap96/the-gigaspace-interface.html#Asynchronous Operations)
+- [Data Event Listener](./data-event-listener.html) - [Polling Container](./polling-container.html), [Notify Container](./notify-container.html)
+- [Local View and Local Cache](./local-view-and-local-cache.html)
+- [Mule ESB Integration](./mule-esb.html)
+- [Task Execution over the Space](./task-execution-over-the-space.html)
+- [Asynchronous Operations](./the-gigaspace-interface.html#Asynchronous Operations)
 - [Drools Rule Engine Integration](http://wiki.gigaspaces.com/wiki/display/SBP/Drools+Rule+Engine+Integration) - Available from a 3rd party.
 
 {% endtoczone %}
@@ -89,23 +89,23 @@ GigaSpaces and its Space-Based-Architecture embrace the [reactive programming](h
 
 The space supports a number of APIs to allow for maximum flexibility to space clients when accessing the space:
 
-- The core [Space API](/xap96/the-gigaspace-interface.html), which is the most recommended, allows you to read objects from the space based on various criteria, write objects to it, remove objects from it and get notified about changes made to objects. It is inspired by the JavaSpaces specification and the tuple space model, although the basic data unit is a POJO, which means the space entries are simply Java objects. This API supports transactions.
+- The core [Space API](./the-gigaspace-interface.html), which is the most recommended, allows you to read objects from the space based on various criteria, write objects to it, remove objects from it and get notified about changes made to objects. It is inspired by the JavaSpaces specification and the tuple space model, although the basic data unit is a POJO, which means the space entries are simply Java objects. This API supports transactions.
 
 {% info title=Accessing the Space from Other Languages %}
-The code space API is also supported in [.Net](XAP91NET:The In-Memory Data Grid) and [C++](/xap96/xap-cpp.html). This allows clients to access the space via these languages. It also supports [interoperability](/xap96/platform-interoperability-in-gigaspaces.html) between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
+The code space API is also supported in [.Net](XAP91NET:The In-Memory Data Grid) and [C++](./xap-cpp.html). This allows clients to access the space via these languages. It also supports [interoperability](./platform-interoperability-in-gigaspaces.html) between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
 {% endinfo %}
 
-- The [JPA API](/xap96/jpa-api.html) allows you to use JPA annotations and execute JPQL queries on the space
-- The [Document API](/xap96/document-api.html) allows you to develop your application in a schema-less manner. Using map-like objects, you can add attributes to data types in runtime.
-- The [Map API](/xap96/map-api.html) allows you to access entries using a key/value approach. This is only recommended for specific scenarios where you only retrieve objects based on their IDs and would settle for the Map interface which is very limited in functionality compared to the core Space API. This API supports transactions.
-- The [JDBC API](/xap96/jdbc-driver.html) allows you to access the space in a similar way to how you would access a relational database (note that it has a number of limitations).
+- The [JPA API](./jpa-api.html) allows you to use JPA annotations and execute JPQL queries on the space
+- The [Document API](./document-api.html) allows you to develop your application in a schema-less manner. Using map-like objects, you can add attributes to data types in runtime.
+- The [Map API](./map-api.html) allows you to access entries using a key/value approach. This is only recommended for specific scenarios where you only retrieve objects based on their IDs and would settle for the Map interface which is very limited in functionality compared to the core Space API. This API supports transactions.
+- The [JDBC API](./jdbc-driver.html) allows you to access the space in a similar way to how you would access a relational database (note that it has a number of limitations).
 
 # Services on Top of the Space
 
-Building on top of the core API, the Space also provides [higher level services](/xap96/services-on-top-of-the-data-grid.html) onto the application. These services, along with the space's basic capabilities, provide the full stack of middleware features that you can build your application with.
-[The Task Execution API](/xap96/task-execution-over-the-space.html) allows you send your code to the space and execute it on one or more  nodes in parallel, accessing the space data on each node locally.
-[Event containers](/xap96/messaging-support.html) use the core API's operations and abstract your code from all the low level details involved in handling the event, such as event registration with the space, transaction initiation, etc. This has the benefit of abstracting your code from the lower level API and allows it to focus on your business logic and the application behavior.
-[Space-Based Remoting](/xap96/space-based-remoting.html) allows you to use the space's messaging and code execution capabilities to enable application clients to invoke space side services transparently, using an application specific interface. Using the space as the transport mechanism for the remote calls, allows for location transparency, high availability and parallel execution of the calls, without changing the client code.
+Building on top of the core API, the Space also provides [higher level services](./services-on-top-of-the-data-grid.html) onto the application. These services, along with the space's basic capabilities, provide the full stack of middleware features that you can build your application with.
+[The Task Execution API](./task-execution-over-the-space.html) allows you send your code to the space and execute it on one or more  nodes in parallel, accessing the space data on each node locally.
+[Event containers](./messaging-support.html) use the core API's operations and abstract your code from all the low level details involved in handling the event, such as event registration with the space, transaction initiation, etc. This has the benefit of abstracting your code from the lower level API and allows it to focus on your business logic and the application behavior.
+[Space-Based Remoting](./space-based-remoting.html) allows you to use the space's messaging and code execution capabilities to enable application clients to invoke space side services transparently, using an application specific interface. Using the space as the transport mechanism for the remote calls, allows for location transparency, high availability and parallel execution of the calls, without changing the client code.
 
 # Spring Integration
 
@@ -115,14 +115,14 @@ In addition, the higher level services (remoting and event processing), are also
 
 # The Space as the Foundation for Space-Based Architecture
 
-Besides its ability to function as an in-memory data grid, the Space's core features and the services on top of it, form the foundation for [Space-Based Architecture (SBA)](/xap96/a-typical-sba-application.html). By using SBA, you can gain performance and scalability benefits not available with traditional tier-based architectures, even when these include an in-memory data grid, such as the Space.
-The basic unit of scalability in SBA is the [processing unit](/xap96/packaging-and-deployment.html). The Space can be embedded into the processing unit, or accessed remotely from it. When embedded into the processing unit, local services, such as event handler and service bean exposed remotely over the space, can interact with the local space instance to achieve unparalleled performance and scalability. The Space's built-in support for data partitioning is used to distribute the data and processing across the nodes, and for scaling the application.
+Besides its ability to function as an in-memory data grid, the Space's core features and the services on top of it, form the foundation for [Space-Based Architecture (SBA)](./a-typical-sba-application.html). By using SBA, you can gain performance and scalability benefits not available with traditional tier-based architectures, even when these include an in-memory data grid, such as the Space.
+The basic unit of scalability in SBA is the [processing unit](./packaging-and-deployment.html). The Space can be embedded into the processing unit, or accessed remotely from it. When embedded into the processing unit, local services, such as event handler and service bean exposed remotely over the space, can interact with the local space instance to achieve unparalleled performance and scalability. The Space's built-in support for data partitioning is used to distribute the data and processing across the nodes, and for scaling the application.
 
 # What's Next
 
 It is recommended that you read the following sections next:
 
-- [Space Topologies](/xap96/space-topologies.html)
-- [Deploying and Interacting with the Space](/xap96/deploying-and-interacting-with-the-space.html)
+- [Space Topologies](./space-topologies.html)
+- [Deploying and Interacting with the Space](./deploying-and-interacting-with-the-space.html)
 
 {% children %}

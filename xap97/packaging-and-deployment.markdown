@@ -14,17 +14,17 @@ This section details the anatomy and details of the processing unit. It describe
 
 # Processing Units - The Packaging & Deployment Unit 
 
-GigaSpaces applications are composed of one or more processing units. Generally speaking, a processing unit is simply a .jar file which contains your application classes, any jars it depends on, and a [deployment descriptor](/xap96/configuring-processing-unit-elements.html). 
+GigaSpaces applications are composed of one or more processing units. Generally speaking, a processing unit is simply a .jar file which contains your application classes, any jars it depends on, and a [deployment descriptor](./configuring-processing-unit-elements.html).
 
 GigaSpaces XAP deployment configuration utilizes the [Spring Framework](http://www.springframework.org). A processing unit configuration is actually a Spring framework XML configuration with GigaSpaces-specific namespace bindings to reflect the GigaSpaces specific attributes of the processing unit. Unlike a plain Spring application, a processing unit defines its **Service Level Agreement** (SLA). 
 
 The SLA can determine the amount of processing unit instances, the deployment constraints for it (e.g. specific IP range), the topology of the data grid contained in it (see below) and more. 
 
-When a processing unit is deployed to [the GigaSpaces runtime environment](/xap96/the-runtime-environment.html), one or more **processing unit instances** are created and provisioned to the running [GigaSpaces containers](/xap96/the-grid-service-container.html). The amount of processing unit instances depends on the configuration of the processing unit. 
+When a processing unit is deployed to [the GigaSpaces runtime environment](./the-runtime-environment.html), one or more **processing unit instances** are created and provisioned to the running [GigaSpaces containers](./the-grid-service-container.html). The amount of processing unit instances depends on the configuration of the processing unit.
 
 In general, there are 3 types of processing units: Data only, business-logic only and mixed processing units (which contain both data and business logic). The data container for processing units is GigaSpaces' in memory data grid (IMDG) implementation, which is called the **Space**. 
 
-The space can be accessed via various APIs, and can be deployed in multiple [topologies](/xap96/space-topologies.html) (which determine how the data is distributed across the cluster). It can be replicated (in which case the objects written to it are replicated across the cluster) or partitioned (in which case objects are distributed across multiple instances). If it's partitioned, it may also have backups for each partition. 
+The space can be accessed via various APIs, and can be deployed in multiple [topologies](./space-topologies.html) (which determine how the data is distributed across the cluster). It can be replicated (in which case the objects written to it are replicated across the cluster) or partitioned (in which case objects are distributed across multiple instances). If it's partitioned, it may also have backups for each partition.
 
 ![PackagingandDeployment-topologies.jpg](/attachment_files/PackagingandDeployment-topologies.jpg)
 
@@ -44,6 +44,6 @@ In such processing units, the processing unit state is directly related to that 
 
 ![PackagingandDeployment-putypes.jpg](/attachment_files/PackagingandDeployment-putypes.jpg)
 
-In recent versions (since XAP 6.6), the processing unit concept has been expanded to include [web applications](/xap96/web-application-support.html) and [Mule ESB applications](/xap96/mule-esb.html), so you can deploy these types of applications onto the GigaSpaces runtime environment and assign SLA attributes to them. 
+In recent versions (since XAP 6.6), the processing unit concept has been expanded to include [web applications](./web-application-support.html) and [Mule ESB applications](./mule-esb.html), so you can deploy these types of applications onto the GigaSpaces runtime environment and assign SLA attributes to them.
 
 {% children %}

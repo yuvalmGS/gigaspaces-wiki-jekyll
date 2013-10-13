@@ -12,7 +12,7 @@ The status of clustered spaces can be viewed using different logging levels. Thi
 
 The `Monitor` monitors the status of live spaces and reports disconnections, while the `Detector` detects the status of disconnected spaces and reports reconnection. The space status frequency can be configured using the `CONFIG` logging level.
 
-{% exclamation %} See the [Proxy Connectivity](/xap96/proxy-connectivity.html) for details how to tune the Monitor and Detector behavior.
+{% exclamation %} See the [Proxy Connectivity](./proxy-connectivity.html) for details how to tune the Monitor and Detector behavior.
 
 The `com.gigaspaces.client.cluster.liveness` logger is set by default (in `gs_logging.properties`) to `INFO`:
 

@@ -10,8 +10,8 @@ page_id: 61867083
 
 This example demonstrates serialization of data types that do not have built-in support in GigaSpaces c++ API. It shows you how to add your own code to convert your data type to the supported type, and vice versa.
 
-{% infosign %} Supported types are stated in the `gs.xml` file. For more details, refer to the [C++ Mapping File](/xap96/cpp-api-mapping-file.html#type -- Supported Types) section.
-{% refer %}It is assumed that you have read the [Writing Existing CPP Class to Space](/xap96/writing-existing-cpp-class-to-space.html) example which serves as a starting point for this example.{% endrefer %}
+{% infosign %} Supported types are stated in the `gs.xml` file. For more details, refer to the [C++ Mapping File](./cpp-api-mapping-file.html#type -- Supported Types) section.
+{% refer %}It is assumed that you have read the [Writing Existing CPP Class to Space](./writing-existing-cpp-class-to-space.html) example which serves as a starting point for this example.{% endrefer %}
 
 The code for this example is located at `<GigaSpaces Root>\cpp\examples\PocoUserPackaging`. This path will be referred to as `<Example Root>` in this page.
 
@@ -70,7 +70,7 @@ void	UserMessageSerializer::PostDeserialize(IEntry* pNewObject)
 
 1. Handle the c++ serializer code generation, build the shared library (DLL) from your extension code, and place the library in the appropriate directory.
 
-    {% infosign %} As shown in the [previous example](/xap96/writing-existing-cpp-class-to-space.html), you can use a custom build with the supplied makefile (at `<Example Root>/makefileSerializer.mk`).
+    {% infosign %} As shown in the [previous example](./writing-existing-cpp-class-to-space.html), you can use a custom build with the supplied makefile (at `<Example Root>/makefileSerializer.mk`).
 
 1. **Rebuild** and run your code.
 

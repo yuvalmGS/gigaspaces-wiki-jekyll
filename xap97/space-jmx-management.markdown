@@ -21,14 +21,14 @@ A JMX manageable resource can be an application, an implementation of a service,
 1. The easiest way to open JConsole for a specific service is through the GigaSpaces Management Center:
     - In the Deployments tab, right-click the GSC, GSM, or LookupService tree node, or
     - In the Space Browser tab:
-        - In the Grid Tree, right-click the relevant [space container node](/xap96/gigaspaces-browser-tree-panel-and-configuration-panel.html#Container Node), or {% wbr %} ![space_JMX_1_GMC_space_LaunchingJConsoleFromContainerNode_6.5.jpg](/attachment_files/space_JMX_1_GMC_space_LaunchingJConsoleFromContainerNode_6.5.jpg)
-        - Right-click the relevant [space node](/xap96/gigaspaces-browser-tree-panel-and-configuration-panel.html#Space Node) or clustered space node, or {% wbr %}![space_JMX_2_GMC_space_LaunchingJConsoleFromSpaceNode_6.5.jpg](/attachment_files/space_JMX_2_GMC_space_LaunchingJConsoleFromSpaceNode_6.5.jpg)
-        - Right-click the relevant space from the [space network view](/xap96/gigaspaces-browser-tree-panel-and-configuration-panel.html#Spaces Network View):{% wbr %}![space_JMX_3_GMC_space_network_LaunchingJconsole_6.5.jpg](/attachment_files/space_JMX_3_GMC_space_network_LaunchingJconsole_6.5.jpg)
+        - In the Grid Tree, right-click the relevant [space container node](./gigaspaces-browser-tree-panel-and-configuration-panel.html#Container Node), or {% wbr %} ![space_JMX_1_GMC_space_LaunchingJConsoleFromContainerNode_6.5.jpg](/attachment_files/space_JMX_1_GMC_space_LaunchingJConsoleFromContainerNode_6.5.jpg)
+        - Right-click the relevant [space node](./gigaspaces-browser-tree-panel-and-configuration-panel.html#Space Node) or clustered space node, or {% wbr %}![space_JMX_2_GMC_space_LaunchingJConsoleFromSpaceNode_6.5.jpg](/attachment_files/space_JMX_2_GMC_space_LaunchingJConsoleFromSpaceNode_6.5.jpg)
+        - Right-click the relevant space from the [space network view](./gigaspaces-browser-tree-panel-and-configuration-panel.html#Spaces Network View):{% wbr %}![space_JMX_3_GMC_space_network_LaunchingJconsole_6.5.jpg](/attachment_files/space_JMX_3_GMC_space_network_LaunchingJconsole_6.5.jpg)
 
 1. Click **Launch JConsole**.
 1. This opens the JConsole (only if you are running JDK 1.5 and above) of the selected process.
 1. You can browse the various MBeans.
-1. Make sure you have a [gsInstance](/xap96/gsinstance---gigaspaces-cli.html) running (`<GigaSpaces Root>\bin\gsInstance.bat/sh`).
+1. Make sure you have a [gsInstance](./gsinstance---gigaspaces-cli.html) running (`<GigaSpaces Root>\bin\gsInstance.bat/sh`).
 1. Open a console and type the following command:{% wbr %}`jconsole`{% wbr %}{% infosign %} By default, operations in the MBeans **Operations** tab which have GigaSpaces classes as their type are disabled. To enable these, type{% wbr %}`jconsole -J-Djava.class.path=%JAVA_HOME%\lib\jconsole.jar;GS_HOME\lib\JSpaces.jar`{% wbr %}in your console. Instead of `GS_HOME`, type the directory in which GigaSpaces is installed on your computer.
 
 1. Connect to the MBean server (choose one of the following options):
@@ -113,7 +113,7 @@ The container **Operations** tab allows you to perform different space container
 - **destroySpace** -- destroys a space in this container (type the space's name in the **spaceName** text box).
 - **createSpace (spaceName, schemaName, clusterConfigURL)** -- creates a space with a unique name in this container and writes the created space to the appropriate Storage Adapter. (Type the name of the space, the name of the schema, and the cluster configuration URL\*\*\* in the relevant text boxes).
 - **createSpace (spaceName, schemaName)** -- creates a space with a unique name in this container.
-- **getRuntimeConfigReport** -- displays a runtime configuration report. For more details, refer to the [Runtime Configuration Report](/xap96/space-container-maintenance---gigaspaces-browser.html#Runtime Configuration Report) section.
+- **getRuntimeConfigReport** -- displays a runtime configuration report. For more details, refer to the [Runtime Configuration Report](./space-container-maintenance---gigaspaces-browser.html#Runtime Configuration Report) section.
 
 {% indent %}
 ![space_JMX_11_IMG995.gif](/attachment_files/space_JMX_11_IMG995.gif)

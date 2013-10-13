@@ -10,7 +10,7 @@ page_id: 61867368
 
 The Connections view exposes information regarding all connected and disconnected space proxies. 
 
-{% lampon %} It is also possible to retrieve space connections using the **[space connections](/xap96/space-connections---gigaspaces-cli.html)** command
+{% lampon %} It is also possible to retrieve space connections using the **[space connections](./space-connections---gigaspaces-cli.html)** command
 
 The following properties are exposed:
 

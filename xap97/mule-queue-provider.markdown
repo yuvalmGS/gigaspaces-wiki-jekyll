@@ -15,7 +15,7 @@ When working with Mule and the OpenSpaces Mule integration, each Mule instance c
 
 In this case, when the primary instance fails, the backup takes over and become primary, allowing services to continue and process messages without losing any data.
 
-{% exclamation %} In such a scenario, the backup services probably shouldn't run at all and should start processing only in case of failover. In order to configure the SEDA services to be aware of the current space state of the cluster member they are working against, see the [Mule SEDA Model](/xap96/mule-seda-model.html) section.
+{% exclamation %} In such a scenario, the backup services probably shouldn't run at all and should start processing only in case of failover. In order to configure the SEDA services to be aware of the current space state of the cluster member they are working against, see the [Mule SEDA Model](./mule-seda-model.html) section.
 
 In order to use the OpenSpaces queue provider, the following namespaces should be defined:
 
@@ -110,7 +110,7 @@ For further information see [http://www.mulesoft.org/documentation/display/MULEC
 
 # Transaction Support
 
-Operations performed on the Space when working with a virtualized queue are all performed using the `GigaSpace` bean. The `GigaSpace` bean supports [declarative transactions](/xap96/the-gigaspace-interface.html#OpenSpacesCoreComponent-GigaSpace-DeclarativeTransactions) when working with Spring transaction managers. Mule can be configured to work with Spring transaction managers as due to its built-in transaction management strategy, which allows you to use OpenSpaces with [different transaction managers](/xap96/transaction-management.html), including XA.
+Operations performed on the Space when working with a virtualized queue are all performed using the `GigaSpace` bean. The `GigaSpace` bean supports [declarative transactions](./the-gigaspace-interface.html#OpenSpacesCoreComponent-GigaSpace-DeclarativeTransactions) when working with Spring transaction managers. Mule can be configured to work with Spring transaction managers as due to its built-in transaction management strategy, which allows you to use OpenSpaces with [different transaction managers](./transaction-management.html), including XA.
 
 Here is an example of how to configure working with queues using the Distributed Transaction Manager:
 

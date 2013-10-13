@@ -8,9 +8,9 @@ page_id: 61867394
 
 # Summary
 
-A **Local View** is a [Client Side Cache](/xap96/client-side-caching.html) that maintains a subset of the master space's data, allowing the client to read distributed data without performing any remote calls or data serialization.
+A **Local View** is a [Client Side Cache](./client-side-caching.html) that maintains a subset of the master space's data, allowing the client to read distributed data without performing any remote calls or data serialization.
 
-Data is streamed into the client local view based on predefined criteria (a collection of [SQLQuery](/xap96/sqlquery.html) objects) specified by the client when the local view is created.
+Data is streamed into the client local view based on predefined criteria (a collection of [SQLQuery](./sqlquery.html) objects) specified by the client when the local view is created.
 
 During the local view initialization, data is loaded into the client's memory based on the view criteria. Afterwards, the local view is continuously updated by the master space asynchronously  - any operation executed on the master space that affects an entry which matches the view criteria is automatically propagated to the client.
 
@@ -18,7 +18,7 @@ During the local view initialization, data is loaded into the client's memory ba
 ![local_view.jpg](/attachment_files/local_view.jpg)
 {% endindent %}
 
-{% plus %} For additional client side caching options, refer to [Client Side Caching](/xap96/client-side-caching.html).
+{% plus %} For additional client side caching options, refer to [Client Side Caching](./client-side-caching.html).
 
 ## Where the Local View Can be Used?
 
@@ -26,7 +26,7 @@ The Local view can be used with financial applications (e.g. trading , market da
 
 # Usage
 
-Creating a local view is similar to creating a `[GigaSpace](/xap96/the-gigaspace-interface.html)` instance, except the space should be wrapped with a local view before exposing it as a `GigaSpace`. The local view can be configured via Spring using `LocalViewSpaceFactoryBean` or the `<os-core:local-view>` Spring tag, or in code using `LocalViewSpaceConfigurer`. For exmaple:
+Creating a local view is similar to creating a `[GigaSpace](./the-gigaspace-interface.html)` instance, except the space should be wrapped with a local view before exposing it as a `GigaSpace`. The local view can be configured via Spring using `LocalViewSpaceFactoryBean` or the `<os-core:local-view>` Spring tag, or in code using `LocalViewSpaceConfigurer`. For exmaple:
 
 {% inittab os_simple_space|top %}
 {% tabcontent Spring Namespace Configuration %}
@@ -87,9 +87,9 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 # Read Only Cache
 
 The Local View is a **Read-Only** client side cache. The following operations are supported - these are served by the local view. The master space is not accessed when calling these:
-    - `read` , `readMultiple` , `asyncRead` , `count` , using [Template Matching](/xap96/template-matching.html), [Id Queries](/xap96/id-queries.html) or [SQLQuery](/xap96/sqlquery.html).
-    - [Notify Container](/xap96/notify-container.html) , [Session Based Messaging API](/xap96/session-based-messaging-api.html).
-    - [IteratorBuilder](/xap96/paging-support-with-space-iterator.html).
+    - `read` , `readMultiple` , `asyncRead` , `count` , using [Template Matching](./template-matching.html), [Id Queries](./id-queries.html) or [SQLQuery](./sqlquery.html).
+    - [Notify Container](./notify-container.html) , [Session Based Messaging API](./session-based-messaging-api.html).
+    - [IteratorBuilder](./paging-support-with-space-iterator.html).
 
 The following operations are not supported when using local view, and should be performed using a regular space proxy:
     - Any operation that creates or changes data (`write`, `writeMultiple`, `update`, `updateMultiple`, `execute`).
@@ -112,10 +112,10 @@ If the JVM running client X's available memory breaches the `write_only_block_pe
 
 # Synchronization
 
-Starting with XAP 8.0.6, the local view uses [replication](/xap96/replication.html) instead of [notifications](/xap96/session-based-messaging-api.html) to synchronize with the master space. The reason for that change is that replication provides higher reliability than notification. In general this is an implementation detail that should not concern the user, except for the following cases:
+Starting with XAP 8.0.6, the local view uses [replication](./replication.html) instead of [notifications](./session-based-messaging-api.html) to synchronize with the master space. The reason for that change is that replication provides higher reliability than notification. In general this is an implementation detail that should not concern the user, except for the following cases:
 
-- Using a view query on a type/class configured to be [non-replicable](/xap96/pojo-metadata.html).
-- Using a cluster with an [Active-Active](/xap96/replication-topologies.html) topology, or a non-clustered space.
+- Using a view query on a type/class configured to be [non-replicable](./pojo-metadata.html).
+- Using a cluster with an [Active-Active](./replication-topologies.html) topology, or a non-clustered space.
 
 In those cases, the local view will automatically revert to notification-based synchronization.
 
@@ -170,7 +170,7 @@ In previous versions the batch size and timeout were configured by setting the `
 
 ## Notification
 
-If local view synchronization is done using notifications, the round-trip-time can be configured using the `space-config.dist-cache.events.lease-renew.round-trip-time` custom property. For more information about this setting refer to [Session Based Messaging API](/xap96/session-based-messaging-api.html).
+If local view synchronization is done using notifications, the round-trip-time can be configured using the `space-config.dist-cache.events.lease-renew.round-trip-time` custom property. For more information about this setting refer to [Session Based Messaging API](./session-based-messaging-api.html).
 
 ## Configuring from Space URL
 

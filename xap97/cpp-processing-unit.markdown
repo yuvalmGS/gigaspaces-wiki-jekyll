@@ -31,7 +31,7 @@ Once the c++ business logic deployed with collocated spaces, there are no remote
 When the business logic deployed with a collocated space it can inherit the space active mode (Primary or backup). This means that you may have your business logic running in stand-by mode, none initialized as long as it's collocated space running in backup mode. Backup mode space would get its operations only from the existing primary space and is not accessible for client for direct interaction. Once the primary space and its collocated business logic fails (normally or abnormally), the collocated c++ business logic is initialized and started.
 
 {% tip %}
-You can find a fully running [C++ PU example](/xap96/gigaspaces-cpp-processing-unit-example.html) with source code, build scripts and running instructions.
+You can find a fully running [C++ PU example](./gigaspaces-cpp-processing-unit-example.html) with source code, build scripts and running instructions.
 {% endtip %}
 
 # Scalability - How Can I Get More Horsepower?
@@ -213,7 +213,7 @@ The url="/./space" instructs the GigaSpaces runtime to start the c++ worker with
 Having
     url="jini://*/*/space"
 means the c++ worker will access remote space(s).  These spaces may span multiple machines and may have any clustered topology (replicated or partitioned).
-See more details about the [Space URL](/xap96/space-url.html).
+See more details about the [Space URL](./space-url.html).
 
 Optional settings you may include as part of the processing unit declaration:
 

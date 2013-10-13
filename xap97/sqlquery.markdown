@@ -55,7 +55,7 @@ results = gigapace.readMultiple(
     new SQLQuery<MyClass>(MyClass.class, "num > 1 ORDER BY name"));
 {% endhighlight %}
 
-{% refer %} For an example of `SQLQuery` with `EventSession`, refer to the [Session Based Messaging API](/xap96/session-based-messaging-api.html#SQLQuery Template Registration) section.{% endrefer %}
+{% refer %} For an example of `SQLQuery` with `EventSession`, refer to the [Session Based Messaging API](./session-based-messaging-api.html#SQLQuery Template Registration) section.{% endrefer %}
 
 # Supported Space Operations
 
@@ -90,7 +90,7 @@ GigaSpaces SQLQuery supports the following:
 - `rownum` - limits the number of rows to select.
 - Sub queries.
 - "." used to indicate a double data type.
-- [Regular Index](/xap96/indexing.html) and a [Compound Index](/xap96/indexing.html#Compound Indexing) - Index a single property or multiple properties to improve query execution time.
+- [Regular Index](./indexing.html) and a [Compound Index](./indexing.html#Compound Indexing) - Index a single property or multiple properties to improve query execution time.
 
 # Parameterized Queries
 
@@ -145,7 +145,7 @@ Some examples:
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*] = 'Honda'");
 {% endhighlight %}
 
-For more information see [Query Nested Properties](/xap96/query-nested-properties.html).
+For more information see [Query Nested Properties](./query-nested-properties.html).
 
 ## Enum Properties
 
@@ -207,7 +207,7 @@ These space properties should be configured with a valid Java format pattern as 
 
 {% infosign %} The `space-config.QueryProcessor.date_format` property used when your query include a String representing the date
 
-{% plus %} Date properties are often used for comparison (greater/less than). Consider using [extended indexing](/xap96/indexing.html) to boost performance.
+{% plus %} Date properties are often used for comparison (greater/less than). Consider using [extended indexing](./indexing.html) to boost performance.
 
 ## sysdate
 
@@ -293,7 +293,7 @@ All the supported methods and options above are relevant also for using `rlike` 
 
 # Free Text Search
 
-Free text search required almost with every application. Users placing some free text into a form and later the system allows users to search for records that includes one or more words within a free text field. A simple way to enable such fast search without using regualr expression query that my have some overhead can be done using the [Collection Indexing](/xap96/indexing.html#Collection Indexing), having an array or a collection of String values used for the query. Once the query is executed the SQL Query should use the searched words as usual. See example below:
+Free text search required almost with every application. Users placing some free text into a form and later the system allows users to search for records that includes one or more words within a free text field. A simple way to enable such fast search without using regualr expression query that my have some overhead can be done using the [Collection Indexing](./indexing.html#Collection Indexing), having an array or a collection of String values used for the query. Once the query is executed the SQL Query should use the searched words as usual. See example below:
 
 Our Space class incldues the following - note the **words** and the **freeText** fields:
 
@@ -347,7 +347,7 @@ MyData results[] = gigaspace.readMultiple(new SQLQuery<MyData>(MyData.class, wor
 With the above approach you avoid the overhead with regular expression queries.
 
 {% tip %}
-The same approach can be implemented also with the [SpaceDocument](/xap96/document-api.html).
+The same approach can be implemented also with the [SpaceDocument](./document-api.html).
 {% endtip %}
 
 {% comment %}
@@ -365,7 +365,7 @@ Implementing case insensitive queries can be done via:
 
 ## Compound Index
 
-When having an **AND** query or a template that use two or more fields for matching a [Compound Index](/xap96/indexing.html#Compound Indexing) may boost the query execution time. The Compound Index should be defined on multiple properties for a specific space class and will be used implictly when a SQL Query or a [Template](/xap96/template-matching.html) will be using these properties.
+When having an **AND** query or a template that use two or more fields for matching a [Compound Index](./indexing.html#Compound Indexing) may boost the query execution time. The Compound Index should be defined on multiple properties for a specific space class and will be used implictly when a SQL Query or a [Template](./template-matching.html) will be using these properties.
 
 ## Re-using SQLQuery
 
@@ -390,7 +390,7 @@ OR
 ## Projecting Partial Results
 
 You can specify that the `SQLQuery` should contain only partial results which means that the returned object should only be populated with the projected properties.
-{% refer %}For details on how to use the projection API please refer to [Getting Partial Results Using Projection API](/xap96/getting-partial-results-using-projection-api.html){% endrefer %}
+{% refer %}For details on how to use the projection API please refer to [Getting Partial Results Using Projection API](./getting-partial-results-using-projection-api.html){% endrefer %}
 
 # Considerations
 
@@ -398,9 +398,9 @@ You can specify that the `SQLQuery` should contain only partial results which me
 
 GigaSpaces SQLQuery **does not** support the following:
 
-- Aggregate functions: COUNT, MAX, MIN, SUM, AVG are only supported in sub queries (These are fully supported with the [JDBC API](/xap96/jdbc-driver.html)).
-- Multiple tables select - This is supported with the [JDBC API](/xap96/jdbc-driver.html).
-- `DISTINCT` - This is supported with the [JDBC API](/xap96/jdbc-driver.html).
+- Aggregate functions: COUNT, MAX, MIN, SUM, AVG are only supported in sub queries (These are fully supported with the [JDBC API](./jdbc-driver.html)).
+- Multiple tables select - This is supported with the [JDBC API](./jdbc-driver.html).
+- `DISTINCT` - This is supported with the [JDBC API](./jdbc-driver.html).
 - The SQL statements: HAVING, VIEW, TRIGGERS, EXISTS, NOT, CREATE USER, GRANT, REVOKE, SET PASSWORD, CONNECT USER, ON.
 - Constraints: NOT NULL, IDENTITY, UNIQUE, PRIMARY KEY, Foreign Key/REFERENCES, NO ACTION, CASCADE, SET NULL, SET DEFAULT, CHECK.
 - Set operations: Union, Minus, Union All.
@@ -426,8 +426,8 @@ The following features support only simple SQL queries
 
 - Snapshot
 - Blocking operations
-- [Notifications](/xap96/session-based-messaging-api.html)
-- [GSIterator](/xap96/paging-support-with-space-iterator.html)
+- [Notifications](./session-based-messaging-api.html)
+- [GSIterator](./paging-support-with-space-iterator.html)
 
 ## Interface Classes
 

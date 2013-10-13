@@ -9,7 +9,7 @@ page_id: 61867042
 # Overview
 
 {% warning %}
-This section intended only for advanced users interested with a special data-grid cluster topology that is not provided with the out of the box [supported topologies](/xap96/space-topologies.html). The supported out of the box data-grid cluster topologies are: synchronous replicated , a-synchronous replicated , partitioned , partitioned+ synchronous replicated. Any out of the box cluster topology can be deployed via the GS-UI or the [deploy CLI](/xap96/deploy-space-gigaspaces-cli.html) without the need to generate cluster configuration file as described below.
+This section intended only for advanced users interested with a special data-grid cluster topology that is not provided with the out of the box [supported topologies](./space-topologies.html). The supported out of the box data-grid cluster topologies are: synchronous replicated , a-synchronous replicated , partitioned , partitioned+ synchronous replicated. Any out of the box cluster topology can be deployed via the GS-UI or the [deploy CLI](./deploy-space-gigaspaces-cli.html) without the need to generate cluster configuration file as described below.
 {% endwarning %}
 
 **To build a custom cluster from a standard cluster schema:**

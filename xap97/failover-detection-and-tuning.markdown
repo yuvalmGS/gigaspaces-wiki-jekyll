@@ -7,7 +7,7 @@ page_id: 61867273
 {% summary page|70 %}This page describes how to calculate the duration of various failover scenarios and what configuration parameters control it{% endsummary %}
 
 {% note %}
-Please read [infrastructure tuning directions](/xap96/tuning-infrastructure.html) before reading this page
+Please read [infrastructure tuning directions](./tuning-infrastructure.html) before reading this page
 {% endnote %}
 
 # Overview

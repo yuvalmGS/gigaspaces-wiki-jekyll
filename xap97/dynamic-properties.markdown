@@ -11,7 +11,7 @@ page_id: 61867452
 
 POJO entries properties are bound by the schema of the POJO class definition, which means a property cannot be added without changing the class, and since changing the class requires restarting the space this can be a long and tiresome project.
 
-Starting with version 8.0, GigaSpaces provides the [Document API](/xap96/document-api.html), which is schema free, and enables users to add properties freely without worrying about the schema. However, some users still prefer to continue working with POJO but would like to enjoy the benefits of dynamic properties.
+Starting with version 8.0, GigaSpaces provides the [Document API](./document-api.html), which is schema free, and enables users to add properties freely without worrying about the schema. However, some users still prefer to continue working with POJO but would like to enjoy the benefits of dynamic properties.
 
 Starting with 8.0.1, dynamic properties can be used with POJOs as well. This provides better interoperability between POJO and document entries, and provides excellent schema evolution support without switching from POJO to document.
 
@@ -104,4 +104,4 @@ Note that:
 
 - The query expression refers to 'age', not 'extraInfo.age' - the space recognizes that the extraInfo property is annotated with @SpaceDynamicProperties and treats the dynamic properties as if they were regular properties of the Person class.
 - Since 'age' and 'email' are dynamic properties, there's no guarantee they'll exist in each Person entry. The semantic for non-existent property is as if its value is null, which allows us to ignore it in the query expression and simply check for null before sending the email.
-- Dynamic properties can be indexed similar to fixed properties. For more info see [Indexing](/xap96/indexing.html).
+- Dynamic properties can be indexed similar to fixed properties. For more info see [Indexing](./indexing.html).

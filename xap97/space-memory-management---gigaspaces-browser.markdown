@@ -10,4 +10,4 @@ page_id: 61867409
 
 ![Space Memory Management - GigaSpaces Browser.jpg](/attachment_files/Space Memory Management - GigaSpaces Browser.jpg)
 
-See the [Memory Management Facilities](/xap96/memory-management-facilities.html) for details.
+See the [Memory Management Facilities](./memory-management-facilities.html) for details.

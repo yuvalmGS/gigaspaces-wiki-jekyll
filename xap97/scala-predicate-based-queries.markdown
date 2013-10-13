@@ -13,7 +13,7 @@ This feature makes use of Scala macros. As such, the minimum Scala version requi
 
 # Overview
 
-Support for predicate based queries on the `GigaSpace` proxy has been in added. This support is based on the new macros feature introduced in Scala 2.10.  Each predicate based query is transformed during compilation into an equivalent [SQLQuery](/xap96/sqlquery.html).
+Support for predicate based queries on the `GigaSpace` proxy has been in added. This support is based on the new macros feature introduced in Scala 2.10.  Each predicate based query is transformed during compilation into an equivalent [SQLQuery](./sqlquery.html).
 
 # Usage
 

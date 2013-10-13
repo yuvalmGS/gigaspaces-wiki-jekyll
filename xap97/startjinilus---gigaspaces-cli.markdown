@@ -15,11 +15,11 @@ page_id: 61867398
 The `startJiniLUS` starts the Jini Lookup Service as a stand alone process.
 
 {% tip %}
-For details on how to configure the Jini Looup Service, refer to the [Lookup Service Configuration](/xap96/lookup-service-configuration.html) section.
+For details on how to configure the Jini Looup Service, refer to the [Lookup Service Configuration](./lookup-service-configuration.html) section.
 {% endtip %}
 
 {% tip %}
-For details on how to start an embedded Mahalo (Jini Transaction Manager), refer to the [gsInstance - GigaSpaces CLI](/xap96/gsinstance---gigaspaces-cli.html) section.
+For details on how to start an embedded Mahalo (Jini Transaction Manager), refer to the [gsInstance - GigaSpaces CLI](./gsinstance---gigaspaces-cli.html) section.
 {% endtip %}
 
 # Options

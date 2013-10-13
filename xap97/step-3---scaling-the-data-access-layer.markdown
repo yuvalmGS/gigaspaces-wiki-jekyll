@@ -63,8 +63,8 @@ page_id: 61867433
 We recommend that you go through the following steps before you begin this tutorial:
 
 - [Download GigaSpaces and set up your development environment](Setting Up Your IDE to Work With GigaSpaces)  - needed to run the sample application described in this tutorial.
-- [Step 1 - Deploying Your Web Application to the GigaSpaces Environment](/xap96/step-1---deploying-your-web-application-to-the-gigaspaces-environment.html) - needed to understand how your web application can be deployed to the GigaSpaces environment and benefit from it.
-- [Step 2 - Enabling HTTP Session Failover & Fault Tolerance](/xap96/step-2---enabling-http-session-failover-and-fault-tolerance.html) - If you're interested in transparent failover and fault tolerance for your HTTP session.
+- [Step 1 - Deploying Your Web Application to the GigaSpaces Environment](./step-1---deploying-your-web-application-to-the-gigaspaces-environment.html) - needed to understand how your web application can be deployed to the GigaSpaces environment and benefit from it.
+- [Step 2 - Enabling HTTP Session Failover & Fault Tolerance](./step-2---enabling-http-session-failover-and-fault-tolerance.html) - If you're interested in transparent failover and fault tolerance for your HTTP session.
 {% endsection %}
 
 {% whr %}
@@ -250,7 +250,7 @@ Total time: 4 seconds
 
 In order to access the space from your application's code you need to get a reference to a _Space Proxy_. Similar to a database connection, the space proxy enables you to perform various operations on the space, such as writing to and reading from it, registering for notifications, etc.
 The space proxy can reference an **embedded space**, which means that the space instance is running within the same memory space (JVM) as your application, or a **remote space**, which means that the space is running in separate JVM(s) from your application's JVM. Regardless, the space proxy's API remains the same and is manifested in the [GigaSpace interface](http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/core/GigaSpace.html).
-The example application in this tutorial references a remote space, but the techniques presented below are also applicable when accessing an embedded space. The main difference between an embedded and a remote space proxy configuration is the [Space URL](/xap96/space-url.html).
+The example application in this tutorial references a remote space, but the techniques presented below are also applicable when accessing an embedded space. The main difference between an embedded and a remote space proxy configuration is the [Space URL](./space-url.html).
 There are several ways to access the Space from within your web application.
 The most obvious one is to explicitly create a space proxy inside the web application's code. This is the approach we use in the sample application:
 
@@ -295,8 +295,8 @@ If you're application is Spring based and uses the Spring MVC framework, you can
 
 The Space API is very straightforward. In general, it has the following operations:
 
-- `read` - Enables you to read objects from the space. You can use the `readMultiple` methods if you're expecting more than one result. Read criteria is specified via a template (which is an example object whose non-null fields will be matched against existing objects in the space), or via a [query](/xap96/sqlquery.html) with a SQL syntax.
-- `write` - Enables you to write objects to the space. In general you can write any instance to the remote space so long that each of its non-transient fields can be serialized over the wire (i.e. implement `Serializable` or `Externalizable`). You can determine various characteristics of the objects written to the space, such as indexing, partitioning, etc. by [annotating the object's class or by using XML](/xap96/pojo-support.html). The `write` operation also allows you to batch the writing of multiple objects to the space for optimized performance via the `writeMultiple` methods.
+- `read` - Enables you to read objects from the space. You can use the `readMultiple` methods if you're expecting more than one result. Read criteria is specified via a template (which is an example object whose non-null fields will be matched against existing objects in the space), or via a [query](./sqlquery.html) with a SQL syntax.
+- `write` - Enables you to write objects to the space. In general you can write any instance to the remote space so long that each of its non-transient fields can be serialized over the wire (i.e. implement `Serializable` or `Externalizable`). You can determine various characteristics of the objects written to the space, such as indexing, partitioning, etc. by [annotating the object's class or by using XML](./pojo-support.html). The `write` operation also allows you to batch the writing of multiple objects to the space for optimized performance via the `writeMultiple` methods.
 - `take` - Enables you to remove objects from the space (similar to the `Map#remove` method). As with the read operation, the criteria are specified via a template or a query.
 - `notify` - Enables you to register for notifications on changes made to the space (objects written, taken or updated). Upon registration, you can specify a filter using a template or a query.
 - `execute` - Enables you to send tasks for execution on the data grid, utilizing the collocation with the data. Tasks can be sent to one, a few, or all members of the data grid. Results received from the task can then be reduced and returned back to the calling code (this pattern is known as Map/Reduce).
@@ -315,7 +315,7 @@ UserData[] spaceEntries = gigaSpace.readMultiple(new UserData(), Integer.MAX_VAL
 # Considerations - Space or HTTP Session?
 
 {% section %}
-In the [previous step](/xap96/step-2---enabling-http-session-failover-and-fault-tolerance.html) we demonstrated how to back your HTTP session with the space. So in effect, the application actually wrote object to space without using the space API explicitly. So you're probably wondering when you should use each of the approaches.
+In the [previous step](./step-2---enabling-http-session-failover-and-fault-tolerance.html) we demonstrated how to back your HTTP session with the space. So in effect, the application actually wrote object to space without using the space API explicitly. So you're probably wondering when you should use each of the approaches.
 Generally speaking the HTTP session API is completely portable and is designed to store session-specific information in a flat structure (key-value). The benefits here are quite obvious:
 
 - You don't use any GigaSpaces-specific API, and therefore your application is 100% portable
@@ -359,7 +359,7 @@ In some cases, you may want to access the space from an external web application
 
 # Putting It All Together
 
-Now that we've gone over all the details, let's see everything in action. In this section we will start a partitioned space with 2 primaries and 2 backups. We will deploy 3 web application instances to the GigaSpaces environment. We will then start Apache HTTP server and the Apache load balancer agent (see [Step 1](/xap96/step-1---deploying-your-web-application-to-the-gigaspaces-environment.html) of this tutorial for more details), and connect to the application from the load balancer. We will write some objects into the space and verify that they are indeed there. Finally, we will terminate one of the running containers (the one which handled our requests) and watch the failover and self-healing process in action, verifying that information stored in the space was not lost. Let's start:
+Now that we've gone over all the details, let's see everything in action. In this section we will start a partitioned space with 2 primaries and 2 backups. We will deploy 3 web application instances to the GigaSpaces environment. We will then start Apache HTTP server and the Apache load balancer agent (see [Step 1](./step-1---deploying-your-web-application-to-the-gigaspaces-environment.html) of this tutorial for more details), and connect to the application from the load balancer. We will write some objects into the space and verify that they are indeed there. Finally, we will terminate one of the running containers (the one which handled our requests) and watch the failover and self-healing process in action, verifying that information stored in the space was not lost. Let's start:
 
 1. Build the application [as described earlier in this tutorial](#BuildDirections)
 1. Start one GSM by calling `<gs root>/bin/gsm.(sh/bat)`
@@ -473,4 +473,4 @@ Now let's deliberately terminate one of the GSCs on which the application is dep
 # What's Next?
 
 ![Jump arrow green.bmp](/attachment_files/Jump arrow green.bmp) You have completed the web application scaling tutorial.
-Click here to view [other tutorials](/xap96/quick-start-guide.html) or go directly to the [GigaSpaces XAP programmer's guide](/xap96/programmer's-guide.html).
+Click here to view [other tutorials](./quick-start-guide.html) or go directly to the [GigaSpaces XAP programmer's guide](./programmer's-guide.html).

@@ -22,7 +22,7 @@ It is still possible that multicast does not work outside the tested host.
 
 {% tip %}
 Make sure your network and machines running GigaSpaces are configured to have multicast enabled. 
-See the [How to Configure Multicast](/xap96/how-to-configure-multicast.html) section for details on how to enable multicast.
+See the [How to Configure Multicast](./how-to-configure-multicast.html) section for details on how to enable multicast.
 {% endtip %}
 
 This multicast utility serves to check multicast communication between sender and receiver running on different machines. You should run this utility from two different shells, where one should run from the sender machine and the other from the receiver machine. The sender machine should display the round trip reply time from all receiver machines. If multicast is configured properly on your machine and network, you should see the following message in your sender machine:
@@ -34,7 +34,7 @@ For multi-homed network card machine use `multicastTest -sender -ba \[network ca
 {% endtip %}
 
 {% tip %}
-To configure Jini in a multi network environment see the [Multi Network Card Configuration Section](/xap96/how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).html).
+To configure Jini in a multi network environment see the [Multi Network Card Configuration Section](./how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).html).
 {% endtip %}
 
 # Options

@@ -32,8 +32,8 @@ A space has five information views, which appear under the space node in the Gri
 
 From the context menu, select one of the options to access one of the space information views:
 
-- [Date Types](/xap96/data-types-view---gigaspaces-browser.html)
-- [Query](/xap96/query-view---gigaspaces-browser.html)
-- [Statistics](/xap96/statistics-view---gigaspaces-browser.html)
-- [Benchmark](/xap96/benchmark-view---gigaspaces-browser.html)
-- [Transactions](/xap96/transactions-view---gigaspaces-browser.html)
+- [Date Types](./data-types-view---gigaspaces-browser.html)
+- [Query](./query-view---gigaspaces-browser.html)
+- [Statistics](./statistics-view---gigaspaces-browser.html)
+- [Benchmark](./benchmark-view---gigaspaces-browser.html)
+- [Transactions](./transactions-view---gigaspaces-browser.html)

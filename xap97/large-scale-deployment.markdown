@@ -54,4 +54,4 @@ When attempting to run hundreds of clients, which need to find a space and perfo
 ## Cluster Availability Monitoring
 
 When there are many clients monitoring the availability of a cluster, it is recommended to increase the value of the `Monitor` thread to a maximum. Usually, when there is no failover or there are no backup-only spaces, the `Monitor` thread can be safely set to its maximum value; since clients directly interact with the space members. If either is detected as unavailable, the `Detector` thread is responsible for detecting their re-availability.
-{% refer %}For more details, refer to the [Viewing Clustered Space Status](/xap96/viewing-clustered-space-status.html) section.{% endrefer %}
+{% refer %}For more details, refer to the [Viewing Clustered Space Status](./viewing-clustered-space-status.html) section.{% endrefer %}

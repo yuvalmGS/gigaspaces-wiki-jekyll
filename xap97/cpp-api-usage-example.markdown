@@ -10,9 +10,9 @@ page_id: 61867410
 # Overview
 
 The API Usage Example demonstrates using the GigaSpaces C++ API to perform space operations.
-{% refer %}To learn about GigaSpaces C++ API, refer to the [GigaSpaces C++ API](/xap96/gigaspaces-cpp-api.html) section.{% endrefer %}
+{% refer %}To learn about GigaSpaces C++ API, refer to the [GigaSpaces C++ API](./gigaspaces-cpp-api.html) section.{% endrefer %}
 
-{% refer %}It is assumed that you have read the [GigaSpaces CPP API Hello World Example](/xap96/cpp-api-hello-world-example.html) which serves as a starting point.{% endrefer %}
+{% refer %}It is assumed that you have read the [GigaSpaces CPP API Hello World Example](./cpp-api-hello-world-example.html) which serves as a starting point.{% endrefer %}
 
 The code for this example is located at `<GigaSpaces Root>\cpp\examples\APIUsageExample\`.
 
@@ -22,7 +22,7 @@ This example runs by default using a predefined **embedded space**. It can work 
 
 {% exclamation %} This example can be built and run on **Windows OS** only. If you use **Visual Studio** open the solution `examples.sln` located in `<GigaSpaces Root>\cpp\examples\`. It is recommended to set your solution configuration to `Release` and do a rebuild that will generate all related files.
 
-For more information on setting the environment refer to [Installing C++ Package](/xap96/installing-cpp-api-package.html#Setting the Environment).
+For more information on setting the environment refer to [Installing C++ Package](./installing-cpp-api-package.html#Setting the Environment).
 
 After running the example the console will have the following output:
 {noformat:borderStyle=solid}

@@ -45,10 +45,10 @@ In case a limited redo log is used the following property defines the maximum si
 |:---------|:------------|:--------------|
 | `cluster-config.groups.group.repl-policy.redo-log-recovery-capacity` | Integer value. Defines the maximum size of the redo log kept on the source space during recovery.  | 5000000 |
 
-{% refer %}For more info refer to [Controlling the Replication Redo Log](/xap96/controlling-the-replication-redo-log.html){% endrefer %}
+{% refer %}For more info refer to [Controlling the Replication Redo Log](./controlling-the-replication-redo-log.html){% endrefer %}
 
 Completion phase is finished according to the consistency requirements of the replication type.
-{% refer %}For more info refer to [Synchronous Replication Behavior During Recovery](/xap96/synchronous-replication.html#Behavior During Recovery) and [Asynchronous Replication Behavior During Recovery](/xap96/asynchronous-replication.html#Behavior During Recovery){% endrefer %}
+{% refer %}For more info refer to [Synchronous Replication Behavior During Recovery](./synchronous-replication.html#Behavior During Recovery) and [Asynchronous Replication Behavior During Recovery](./asynchronous-replication.html#Behavior During Recovery){% endrefer %}
 
 Once the recovery process is complete, a full report including the total amount of recovered space objects and notify registrations, and their class types, is logged.
 During the recovery process, the source space is available, and the target space is unavailable to clients.
@@ -73,7 +73,7 @@ If there are other space instances in the same replication group, they don't rep
 
 Primary and Backup space instances use the same database to stored their data. The space is the system of record. The data is usually persisted through the Mirror service.
 Which data is recovered depends on the space caching policy.
-There is special handling for [Transient Entries](/xap96/transient-entries.html) (`persist=false`), since they can't be persisted - they are always recovered from the primary.
+There is special handling for [Transient Entries](./transient-entries.html) (`persist=false`), since they can't be persisted - they are always recovered from the primary.
 
 ### All In Cache Policy
 
@@ -97,7 +97,7 @@ If the primary space is unavailable for some reason - recovery will be retried  
 - the primary gets reconnected and then the recovery continues normally.
 - the space itself becomes primary and then no recovery is necessary.
 
-Any other failure - [SpaceMemoryShortageException](/xap96/all-in-cache-cache-policy.html#SpaceMemoryShortageException), Database not available etc. is retried 3 times before failing.
+Any other failure - [SpaceMemoryShortageException](./all-in-cache-cache-policy.html#SpaceMemoryShortageException), Database not available etc. is retried 3 times before failing.
 
 # Active-Active Topology
 
@@ -117,7 +117,7 @@ With this scenario:
 1. If the database is empty --> target space instance recovers everything from the source.
 1. If database has data --> recover persistent objects from the database + recover transient objects from the source.
 
-For further info and configuration options see [Distributed Databases](/xap96/direct-persistency.html#Distributed Databases)
+For further info and configuration options see [Distributed Databases](./direct-persistency.html#Distributed Databases)
 
 ## Space Instance Recovery Failure Handling
 

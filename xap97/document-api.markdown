@@ -32,7 +32,7 @@ Note that the Document type does not describe the properties themselves (except 
 
 Since a `SpaceDocument` is completely dynamic by nature, it is very easy to change or evolve your data model without ever taking down the Space. Simply change your application code to add additional properties or remove existing ones, and you're good to go. Even better, old and new versions can co-exist since the space does not enforce any restriction with regards to the property set of documents that belong to a certain type. This is a much more lightweight model in comparison to the classic POJO model, where a recompilation and in many cases a full space restart is required to change the data schema.
 
-If POJO model cannot be replaced with Document model, yet some level of schema evolution is desired within the POJO model, [Dynamic Properties](/xap96/dynamic-properties.html) can be used.
+If POJO model cannot be replaced with Document model, yet some level of schema evolution is desired within the POJO model, [Dynamic Properties](./dynamic-properties.html) can be used.
 
 # Type Definition
 
@@ -227,7 +227,7 @@ public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
 
 ## SQL Query
 
-You can use the [SQLQuery](/xap96/sqlquery.html) to search for matching `SpaceDocument` entries.
+You can use the [SQLQuery](./sqlquery.html) to search for matching `SpaceDocument` entries.
 For example: Read a document of type **Product** whose **Price** is greater than 15:
 
 {% highlight java %}
@@ -299,7 +299,7 @@ Properties and nested paths can be [indexed](indexing) to boost queries performa
 
 Since the schema is flexible and new properties might be added after the type has been registered, it is possible to add indexes dynamically as well.
 
-For more information about indexing, see the [Indexing](/xap96/indexing.html) page.
+For more information about indexing, see the [Indexing](./indexing.html) page.
 
 # Events
 
@@ -451,7 +451,7 @@ pollingEventListenerContainer.destroy();
 
 # FIFO
 
-[FIFO support](/xap96/fifo-support.html) is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
+[FIFO support](./fifo-support.html) is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
 
 {% inittab os_simple_space|top %}
 {% tabcontent Spring Namespace Configuration %}
@@ -507,11 +507,11 @@ gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 {% endinittab %}
 
 {% exclamation %} Changing FIFO support after a type has been registered is not supported.
-For more information about FIFO, see the [FIFO Support](/xap96/fifo-support.html) page.
+For more information about FIFO, see the [FIFO Support](./fifo-support.html) page.
 
 # Transactions and Optimistic Locking
 
-Transactions and isolation modifiers semantics is identical to the POJO semantics. For more information about transactions, see the [Transaction Management](/xap96/transaction-management.html) page.
+Transactions and isolation modifiers semantics is identical to the POJO semantics. For more information about transactions, see the [Transaction Management](./transaction-management.html) page.
 
 Optimistic locking is disabled by default with `Document` entries (same as with POJO). To enable it, modify the type introduction code and set the optimistic locking support. For example:
 
@@ -569,13 +569,13 @@ gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 {% endinittab %}
 
 {% exclamation %} Changing optimistic locking after a type has been registered is not supported.
-For more information about optimistic locking, see the [Optimistic Locking](/xap96/optimistic-locking.html) page.
+For more information about optimistic locking, see the [Optimistic Locking](./optimistic-locking.html) page.
 
 # Local Cache / Local View
 
-[Local View](/xap96/local-view.html) and [Local Cache](/xap96/local-cache.html) are supported for Documents. By default, the `SpaceDocument` instance is stored in the cache which speeds up query performance since the data does not need to be transformed from internal structure to `SpaceDocument`.
+[Local View](./local-view.html) and [Local Cache](./local-cache.html) are supported for Documents. By default, the `SpaceDocument` instance is stored in the cache which speeds up query performance since the data does not need to be transformed from internal structure to `SpaceDocument`.
 
-If you intend to use local cache or local view in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](/xap96/document-pojo-interoperability.html).
+If you intend to use local cache or local view in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](./document-pojo-interoperability.html).
 
 # Persistency
 
@@ -671,13 +671,13 @@ Pojos can be persisted via document EDS as well, in the same way.
 
 Space Filter are supported for space documents.
 
-If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](/xap96/document-pojo-interoperability.html).
+If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](./document-pojo-interoperability.html).
 
 # Space Replication Filters
 
 Space Replication Filter are supported for space documents.
 
-If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](/xap96/document-pojo-interoperability.html).
+If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](./document-pojo-interoperability.html).
 
 # Advanced Options
 

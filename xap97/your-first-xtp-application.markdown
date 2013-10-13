@@ -28,7 +28,7 @@ page_id: 61867358
 
 ## Before You Begin - Set Up Your Environment
 
-If you would like to run the tutorial sample application, [download GigaSpaces and set up your development environment](/xap96/setting-up-your-ide-to-work-with-gigaspaces.html).
+If you would like to run the tutorial sample application, [download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html).
 The sample application used in all steps is located in ![folder.jpg](/attachment_files/folder.jpg) <GigaSpaces root>\examples\helloworld
 
 {% comment %}
@@ -62,7 +62,7 @@ We recommend that you follow these 4 basic tutorials in the specified order:
 
 {% endcolumn %}
 {% column width=35% %}
-[**Using Processing Units for Scaling**](/xap96/step-one---using-processing-units-for-scaling.html)
+[**Using Processing Units for Scaling**](./step-one---using-processing-units-for-scaling.html)
 {% color grey %}~5 minutes{% endcolor %}
 A short introduction that shows what a Processing Unit is, and how it is used for scaling your applications
 
@@ -70,7 +70,7 @@ A short introduction that shows what a Processing Unit is, and how it is used fo
 {% column width=50% %}
 {% align center %}
 
-[![What is a Processing Unit.jpg](/attachment_files/What is a Processing Unit.jpg)](/xap96/step-one---using-processing-units-for-scaling.html)
+[![What is a Processing Unit.jpg](/attachment_files/What is a Processing Unit.jpg)](./step-one---using-processing-units-for-scaling.html)
 {% endalign %}
 
 {% endcolumn %}
@@ -95,7 +95,7 @@ A short introduction that shows what a Processing Unit is, and how it is used fo
 
 {% endcolumn %}
 {% column width=35% %}
-[**Creating the Hello World Application**](/xap96/step-two---creating-the-hello-world-application.html)
+[**Creating the Hello World Application**](./step-two---creating-the-hello-world-application.html)
 {% color grey %}~10 minutes{% endcolor %}
 How to create, deploy, run and monitor your Processing Unit
 
@@ -136,7 +136,7 @@ How to create, deploy, run and monitor your Processing Unit
 
 {% endcolumn %}
 {% column width=35% %}
-[**Deploying the Hello World Application onto the ServiceGrid**](/xap96/deploying-onto-the-service-grid.html)
+[**Deploying the Hello World Application onto the ServiceGrid**](./deploying-onto-the-service-grid.html)
 {% color grey %}~10 minutes{% endcolor %}
 How to deploy the _Hello World Processing Unit_ onto the grid enabled infrastructure (the ServiceGrid) to enable instant fail-over, recovery, SLA management and runtime monitoring capabilities for your application
 
@@ -179,7 +179,7 @@ How to deploy the _Hello World Processing Unit_ onto the grid enabled infrastruc
 
 {% endcolumn %}
 {% column width=35% %}
-[**Scaling the Hello World Application**](/xap96/step-four---scaling-the-hello-world-application.html)
+[**Scaling the Hello World Application**](./step-four---scaling-the-hello-world-application.html)
 {% color grey %}~10 minutes{% endcolor %}
 How to scale the _Hello World Processing Unit_ application
 
@@ -211,7 +211,7 @@ How to scale the _Hello World Processing Unit_ application
 {% section %}
 ## Go Beyond the Basics
 
-After you have learned the basics, you can go to the [more advanced tutorials](/xap96/beyond-the-basics.html) to dive into the details, and learn how to implement real world scenarios.
-{% refer %}[Back to Quick Start Guide Home](/xap96/quick-start-guide.html){% endrefer %}
+After you have learned the basics, you can go to the [more advanced tutorials](./beyond-the-basics.html) to dive into the details, and learn how to implement real world scenarios.
+{% refer %}[Back to Quick Start Guide Home](./quick-start-guide.html){% endrefer %}
 {% endsection %}
 

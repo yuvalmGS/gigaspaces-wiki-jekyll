@@ -14,7 +14,7 @@ Once you've passed the login screen, you will enter the main dashboard screen. T
 
 # Alerts panel
 
-The Alerts panel displays XAP Alert groups (Alerts are grouped by correlation key) for more details see [Administrative Alerts](http://www.gigaspaces.com/wiki/display/XAP96/Administrative+Alerts)
+The Alerts panel displays XAP Alert groups (Alerts are grouped by correlation key) for more details see [Administrative Alerts](http://www.gigaspaces.com/wiki/display./Administrative+Alerts)
 
 ![xap-dashboard-alerts-inline.png](/attachment_files/xap-dashboard-alerts-inline.png)
 
@@ -31,7 +31,7 @@ Select the desired components for the dump and click "Generate", and a zip file 
 
 At the bottom panel of the web dashboard, the events time line is displayed upon selection of the "Events" tab.
 The events time-line shows the deployment life cycle of all the processing units.
-To filter by application, the events time line is also available in the Application tab. (see [Application View#Events time-line (per application)](/xap96/application-view.html#Events time-line (per application)))
+To filter by application, the events time line is also available in the Application tab. (see [Application View#Events time-line (per application)](./application-view.html#Events time-line (per application)))
 
 ### Life-cycle success events for each instance: 
 

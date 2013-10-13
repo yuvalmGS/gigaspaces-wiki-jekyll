@@ -30,7 +30,7 @@ To implement the pessimistic locking protocol you should have the following:
 - Update the object within the space. You may update multiple objects. 
 - Commit the transaction. This will happen automatically when the transactional method will be completed.
 
-{% exclamation %} Having the above executed at the space side via [Executor Based Remoting](/xap96/executor-based-remoting.html) or [Task Executors](/xap96/task-execution-over-the-space.html) is highly recommended. This will shorten the transaction time period since all space operations will be executed against a colocated space.
+{% exclamation %} Having the above executed at the space side via [Executor Based Remoting](./executor-based-remoting.html) or [Task Executors](./task-execution-over-the-space.html) is highly recommended. This will shorten the transaction time period since all space operations will be executed against a colocated space.
 
 # Example
 

@@ -7,7 +7,7 @@ page_id: 61867441
 {% summary %}This page is about bootstrapping a site from another site across gateways.{% endsummary %}
 
 {% info %}
-This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](/xap96/multi-site-replication-over-the-wan.html) before reading this page.
+This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
 {% endinfo %}
 
 # Overview
@@ -55,7 +55,7 @@ The bootstrap is initiated on the local gateway sink of the space's site that ne
 </os-gateway:sink>
 {% endhighlight %}
 
-After meting the condition specified in the previous, the bootstrap should be initiated using the [Admin API](/xap96/administration-and-monitoring-api.html).
+After meting the condition specified in the previous, the bootstrap should be initiated using the [Admin API](./administration-and-monitoring-api.html).
 Following is an example of how to bootstrap New-York from London:
 
 {% highlight java %}

@@ -36,7 +36,7 @@ You can enable this option in one of the following ways:
     com.j_spaces.core.container.embedded-services.mahalo.start-embedded-mahalo=true
 
 {% tip %}
-GigaSpaces supports space monitoring and management using JMX - The Java Management Extensions. For more details, refer to the [JMX Management](/xap96/space-jmx-management.html) section. 
+GigaSpaces supports space monitoring and management using JMX - The Java Management Extensions. For more details, refer to the [JMX Management](./space-jmx-management.html) section.
 {% endtip %}
 
 {% note %}

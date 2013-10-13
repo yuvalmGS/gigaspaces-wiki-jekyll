@@ -12,7 +12,7 @@ page_id: 61867332
 The standalone processing unit container allows you to run a processing unit in standalone mode, which means that the processing unit constructs its own dedicated classloader, and automatically includes it its classpath all of the jar files located under the processing unit's `lib` directory.
 It's implementation class is `[org.openspaces.pu.container.standalone.StandaloneProcessingUnitContainer](http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/pu/container/standalone/StandaloneProcessingUnitContainer.html)`.
 
-The standalone processing unit container is built around Spring's `ApplicationContext` with several extensions relevant to GigaSpaces, such as `[ClusterInfo](/xap96/obtaining-cluster-information.html)`.
+The standalone processing unit container is built around Spring's `ApplicationContext` with several extensions relevant to GigaSpaces, such as `[ClusterInfo](./obtaining-cluster-information.html)`.
 It contains a `main()` method and can be started from an external script or programmatically by using the `ProcessingUnitContainerProvider` abstraction.
 
 It should be used when you would like to run your processing unit in a non-managed environment (outside of the service grid) or from within your own code, and still benefit from the automatic classpath creation as with the managed mode.
@@ -28,8 +28,8 @@ The `StandaloneProcessingUnitContainer` class provides an executable `main()` me
 |:-------|:------------|
 | `\-config \[configLocation\]` | Allows you to set/add a processing unit deployment descriptor location.{% wbr %}Follows the Spring [Resource Loader](http://static.springframework.org/spring/docs/2.5.x/reference/resources.html#resources-resourceloader) including [ant style patterns](http://static.springframework.org/spring/docs/2.5.x/reference/resources.html#resources-app-ctx-wildcards-in-resource-paths). This parameter can be specified multiple times.{% wbr %}The default is `classpath*:/META-INF/spring/pu.xml`. |
 | `\-cluster \[cluster options\]` | Allows you to control the `ClusterInfo` injected into the container and the runtime topology{% wbr %}of the processing unit.{% wbr %}The following options are available (they are used automatically by any embedded space included{% wbr %}in the processing unit):{% wbr %}- `schema` \- the cluster schema used by the processing unit. Possible values are `sync-replicated`, `async-replicated` and `partitioned-sync2backup`{% wbr %}- `total_members` \- Determines the total members in the emulated cluster. Format is `numberOfInstances\[,numberOfBackups\]`, e.g. `total_members 2,1`{% wbr %}- `id` -- Mandatory. Determines the id of the processing unit instance the this container will run.{% wbr %}- `backup_id` -- If you want the container to run a backup instance, use this parameter in conjunction with the `id` parameter. It will force the container to run the instance and will determines its backup ID. |
-| `\-properties \[property file location\]` | Allows you to [inject properties](/xap96/deployment-properties.html) to the processing unit at deployment time. |
-| `\-properties embed://\[property1 name\]=\[property1 value\];\[property2 name\]=\[property2 value\]` | Allows you to [directly inject properties](/xap96/deployment-properties.html) to the processing unit at startup time. |
+| `\-properties \[property file location\]` | Allows you to [inject properties](./deployment-properties.html) to the processing unit at deployment time. |
+| `\-properties embed://\[property1 name\]=\[property1 value\];\[property2 name\]=\[property2 value\]` | Allows you to [directly inject properties](./deployment-properties.html) to the processing unit at startup time. |
 
 # Starting the Standalone Processing Unit Container via the `puInstance` Shell Script
 

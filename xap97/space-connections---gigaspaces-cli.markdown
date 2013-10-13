@@ -14,7 +14,7 @@ page_id: 61867230
 
 Displays all live connections to the specified space.
 
-{% lampon %} It is also possible to retrieve space connections using the GigaSpaces UI **[Connections view](/xap96/connections-view---gigaspaces-browser.html)**.
+{% lampon %} It is also possible to retrieve space connections using the GigaSpaces UI **[Connections view](./connections-view---gigaspaces-browser.html)**.
 
 The information that is shown:
 

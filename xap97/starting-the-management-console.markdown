@@ -54,7 +54,7 @@ Note that you can also use the `WEBUI_JAVA_OPTIONS` environment variable to set 
 
 # Deploying the Management Console Web Application to the GigaSpaces Runtime Environment
 
-To deploy the management console web application to the GigaSpaces [Runtime Environment](/xap96/the-runtime-environment.html), you should simply point your deployment tool of choice (CLI, Admin API or the standalone Java-based UI) to the `<GigaSpaces root>/tools/gs-webui/gs-webui.war` file and deploy it.
+To deploy the management console web application to the GigaSpaces [Runtime Environment](./the-runtime-environment.html), you should simply point your deployment tool of choice (CLI, Admin API or the standalone Java-based UI) to the `<GigaSpaces root>/tools/gs-webui/gs-webui.war` file and deploy it.
 
 Note that in this case the management console application actually monitors the runtime environment on which it runs.
 
@@ -67,14 +67,14 @@ Here's an example of how this can be done using the GS CLI:
 
 The above command will deploy the management console web application to the GigaSpaces runtime environment, listening on port 80 with the root context path.
 
-For more details on GigaSpaces XAP web application support, please refer to [this page](/xap96/web-application-support.html).
+For more details on GigaSpaces XAP web application support, please refer to [this page](./web-application-support.html).
 
 # Deploying the Management Console Web Application to a 3rd Party JEE Servlet Container
 
 It is also possible to deploy the web application to a 3rd party servlet container (e.g. Apache Tomcat). Please consult your web container documentation for deployment instructions.
 
 {% info Packaging the GigaSpaces runtime libraries when deploying to a 3rd party web container %}
-When deploying to a 3rd party web container like tomcat, you will need to repackage the `gs-webui.war` file and add all the `.jar` files located under `<GigaSpaces root>/lib/required` to the `WEB-INF/lib` directory of the `gs-webui.war` file. By default, they are not part of the the `gs-webui.war` file since they are automatically included in the classpath of both the standalone container and the GigaSpaces [Runtime Environment](/xap96/the-runtime-environment.html)
+When deploying to a 3rd party web container like tomcat, you will need to repackage the `gs-webui.war` file and add all the `.jar` files located under `<GigaSpaces root>/lib/required` to the `WEB-INF/lib` directory of the `gs-webui.war` file. By default, they are not part of the the `gs-webui.war` file since they are automatically included in the classpath of both the standalone container and the GigaSpaces [Runtime Environment](./the-runtime-environment.html)
 {% endinfo %}
 
 # Logging into the Web Dashboard
@@ -98,7 +98,7 @@ Currently, the web dashboard supports the following web browsers:
 
 ## Deployment Location of the Dashboard Web Application
 
-Since the dashboard web application communicates with the runtime components of the GigaSpaces cluster, and receives notification from the GigaSpaces [lookup service](/xap96/the-lookup-service.html), it is highly recommended to run the dashboard web application in the same network segment of the other cluster components. Note that this does not affect the dashboard web browser client, which communicates with the dashboard web application using standard http and can be located anywhere, provided that it has access to the dashboard web application.
+Since the dashboard web application communicates with the runtime components of the GigaSpaces cluster, and receives notification from the GigaSpaces [lookup service](./the-lookup-service.html), it is highly recommended to run the dashboard web application in the same network segment of the other cluster components. Note that this does not affect the dashboard web browser client, which communicates with the dashboard web application using standard http and can be located anywhere, provided that it has access to the dashboard web application.
 
 # Running Via A Reverse Proxy
 

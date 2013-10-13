@@ -18,7 +18,7 @@ We will do this is two phases. First, we'll show how to deploy the application w
 
 ## Deployment of a Single Space
 
-1. Because we want to deploy to the Service Grid, we first need to start it. Running the grid is as easy as running the [GS-Agent](/xap96/the-grid-service-agent.html)  from the `<GigaSpaces Root\bin` directory, which will start up an agent (which will itself start a Grid Service Manager and two Grid Service Containers) on top of which we run our processing units. The deployed application will then look like this:
+1. Because we want to deploy to the Service Grid, we first need to start it. Running the grid is as easy as running the [GS-Agent](./the-grid-service-agent.html)  from the `<GigaSpaces Root\bin` directory, which will start up an agent (which will itself start a Grid Service Manager and two Grid Service Containers) on top of which we run our processing units. The deployed application will then look like this:
 ![XAP Open OMS tutorial SLA Single PUsmall-layout2.jpg](/attachment_files/XAP Open OMS tutorial SLA Single PUsmall-layout2.jpg)
 
 {% infosign %} Even though the image shows one container per processing unit, we can run several processing units on each container.

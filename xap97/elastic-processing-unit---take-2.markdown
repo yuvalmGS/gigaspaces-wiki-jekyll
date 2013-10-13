@@ -9,15 +9,15 @@ page_id: 61867412
 
 # Introduction
 
-An Elastic Processing Unit (EPU) is a [Processing Unit](/xap96/the-processing-unit-structure-and-configuration.html) with additional capabilities that simplify its deployment across multiple machines. Containers and machine resources such as Memory and CPU are automatically provisioned based on Memory and CPU requirements. When a machine failure occurs, or when scale requirements change, new machines are provisioned and the Processing Unit deployment distribution is balanced automatically. The PU scale is triggered by modifying the requirements through an API call. From that point in time the EPU is continuously maintained to satisfy the specified capacity (indefinitely, or until the next scale trigger). When a processing unit is undeployed, machines and resources which were provisioned and are no longer needed will scale-in.
+An Elastic Processing Unit (EPU) is a [Processing Unit](./the-processing-unit-structure-and-configuration.html) with additional capabilities that simplify its deployment across multiple machines. Containers and machine resources such as Memory and CPU are automatically provisioned based on Memory and CPU requirements. When a machine failure occurs, or when scale requirements change, new machines are provisioned and the Processing Unit deployment distribution is balanced automatically. The PU scale is triggered by modifying the requirements through an API call. From that point in time the EPU is continuously maintained to satisfy the specified capacity (indefinitely, or until the next scale trigger). When a processing unit is undeployed, machines and resources which were provisioned and are no longer needed will scale-in.
 
 ##### Prerequisites
 
-The Elastic Processing Unit is managed by a separate service called an Elastic Service Manager (ESM). This manager exists to enforce the elastic requirements. In future versions, the Elastic Service Manager will be merged with the Grid Service Manager (GSM). In current release (including 8.0.1), the [Grid Service Agent](/xap96/the-grid-service-agent.html) should maintain one global instance of an ESM.
+The Elastic Processing Unit is managed by a separate service called an Elastic Service Manager (ESM). This manager exists to enforce the elastic requirements. In future versions, the Elastic Service Manager will be merged with the Grid Service Manager (GSM). In current release (including 8.0.1), the [Grid Service Agent](./the-grid-service-agent.html) should maintain one global instance of an ESM.
 
 # Overview
 
-An Elastic Processing Unit is currently deployed using the [Admin API](/xap96/administration-and-monitoring-api.html). The deployment is done similar to deployment of a Processing Unit, but with additional capabilities exposed. The API defines elasticity from a resource perspective and not from Processing Unit Instance perspective. The resources - Memory and CPU - describe the scaling requirements.
+An Elastic Processing Unit is currently deployed using the [Admin API](./administration-and-monitoring-api.html). The deployment is done similar to deployment of a Processing Unit, but with additional capabilities exposed. The API defines elasticity from a resource perspective and not from Processing Unit Instance perspective. The resources - Memory and CPU - describe the scaling requirements.
 
 ##### Elasticity
 

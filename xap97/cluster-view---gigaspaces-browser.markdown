@@ -38,7 +38,7 @@ When you select a group node, the display shows the spaces in the node. When you
 ![GMC_space_cluster_SpecificClusterNodeSelected_6.5.jpg](/attachment_files/GMC_space_cluster_SpecificClusterNodeSelected_6.5.jpg)
 {% endindent %}
 
-{% exclamation %} The view above does not display the number of objects for persistent spaces in LRU mode, since this might result in very high CPU usage. To change this, see the [Menus and Buttons](/xap96/gigaspaces-browser-menus-and-buttons.html#Display Persistent LRU Space Metrics) section.
+{% exclamation %} The view above does not display the number of objects for persistent spaces in LRU mode, since this might result in very high CPU usage. To change this, see the [Menus and Buttons](./gigaspaces-browser-menus-and-buttons.html#Display Persistent LRU Space Metrics) section.
 
 ## Viewing Information for Entire Cluster
 
@@ -50,15 +50,15 @@ The **Operations** cluster node (![GMC_space_OperationsClusterNode_icon_6.5.jpg]
 
 The views under the **Operations** node have the same functionality as the views under the regular space/cluster nodes:
 
-- **Data Types view** -- allows you to view all classes in the cluster and to inspect class objects. For more details, refer to the [Classes View](/xap96/data-types-view---gigaspaces-browser.html) section.
-- **Transactions view** -- displays all transactions in the cluster. For more details, refer to the [Transactions View](/xap96/transactions-view---gigaspaces-browser.html) section.
-- **Query view** -- allows you to query space classes and to inspect class objects. For more details, refer to the [Query View](/xap96/query-view---gigaspaces-browser.html) section.
-- **Statistics view** -- displays statistics for operations performed in the cluster. For more details, refer to the [Statistics View](/xap96/statistics-view---gigaspaces-browser.html) section.
-- **Connections view** -- displays connections to the cluster (includes additional columns: **Cluster Member Name**, **Server IP Address**, **Server Port**). For more details, refer to the [Connections View](/xap96/connections-view---gigaspaces-browser.html) section.
+- **Data Types view** -- allows you to view all classes in the cluster and to inspect class objects. For more details, refer to the [Classes View](./data-types-view---gigaspaces-browser.html) section.
+- **Transactions view** -- displays all transactions in the cluster. For more details, refer to the [Transactions View](./transactions-view---gigaspaces-browser.html) section.
+- **Query view** -- allows you to query space classes and to inspect class objects. For more details, refer to the [Query View](./query-view---gigaspaces-browser.html) section.
+- **Statistics view** -- displays statistics for operations performed in the cluster. For more details, refer to the [Statistics View](./statistics-view---gigaspaces-browser.html) section.
+- **Connections view** -- displays connections to the cluster (includes additional columns: **Cluster Member Name**, **Server IP Address**, **Server Port**). For more details, refer to the [Connections View](./connections-view---gigaspaces-browser.html) section.
 
 # More in this Section
 
-- [Top-level view: groups and cluster members](/xap96/visualizing-cluster-groups-and-members---gigaspaces-browser.html)
-- [Viewing space interrelations](/xap96/viewing-space-interrelations-in-cluster---gigaspaces-browser.html)
-- [Viewing space settings](/xap96/viewing-cluster-policy-settings-for-space---gigaspaces-browser.html)
-- [Customizing the cluster view display](/xap96/customizing-cluster-view---gigaspaces-browser.html)
+- [Top-level view: groups and cluster members](./visualizing-cluster-groups-and-members---gigaspaces-browser.html)
+- [Viewing space interrelations](./viewing-space-interrelations-in-cluster---gigaspaces-browser.html)
+- [Viewing space settings](./viewing-cluster-policy-settings-for-space---gigaspaces-browser.html)
+- [Customizing the cluster view display](./customizing-cluster-view---gigaspaces-browser.html)

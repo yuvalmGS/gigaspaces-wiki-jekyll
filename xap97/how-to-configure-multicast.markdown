@@ -15,11 +15,11 @@ The word "multicast" is typically used to refer to IP Multicast, the implementat
 
 GigaSpaces uses multicast in the following cases:
 
-- [When deploying onto the service grid](/xap96/deploying-onto-the-service-grid.html) GigaSpaces XAP uses multicast to discover the [Lookup Service](Lookup Service Configuration ), and register their proxies.
+- [When deploying onto the service grid](./deploying-onto-the-service-grid.html) GigaSpaces XAP uses multicast to discover the [Lookup Service](Lookup Service Configuration ), and register their proxies.
 - Clients use multicast to discover the [Lookup Service](Lookup Service Configuration ) and look up a matching service proxy (such as the space).
 
 {% tip title=What should I do in order to determine if multicast is enabled on my environment? %}
-Refer to the [How to Determine Whether Multicast is Available](/xap96/how-to-determine-whether-multicast-is-available.html) section for more details.
+Refer to the [How to Determine Whether Multicast is Available](./how-to-determine-whether-multicast-is-available.html) section for more details.
 {% endtip %}
 
 To enable the important capabilities above, you should enable multicast on machines running clients, spaces or services.
@@ -30,7 +30,7 @@ To enable the important capabilities above, you should enable multicast on machi
 - Space cluster replication uses unicast by default. You should use multicast replication when having more than 10 clients acting as replica spaces per target space.
 {% endtip %}
 
-{% exclamation %} In case you want to **disable the Jini Lookup Service Multicast announcements** please refer to [this](/xap96/lookup-service-configuration.html#Multicast Settings) section in the Wiki.
+{% exclamation %} In case you want to **disable the Jini Lookup Service Multicast announcements** please refer to [this](./lookup-service-configuration.html#Multicast Settings) section in the Wiki.
 
 # Configuring Multicast on Linux
 
@@ -168,4 +168,4 @@ The problem of multicasts/broadcasts not passing the router/switch is a well kno
 
 {% infosign %} **To find TTL**, you should monitor some traffic (start-stop on the proper interface), in the monitoring log. Choose the packet you are interested in, and look at its IP layer - TTL (and other parameters) are shown.
 
-{% infosign %} The **default TTL value is 3** (was 15). See [Multicast Settings](/xap96/lookup-service-configuration.html#LookupServiceConfiguration-MulticastSettings) section for details of how to modify that value.
+{% infosign %} The **default TTL value is 3** (was 15). See [Multicast Settings](./lookup-service-configuration.html#LookupServiceConfiguration-MulticastSettings) section for details of how to modify that value.

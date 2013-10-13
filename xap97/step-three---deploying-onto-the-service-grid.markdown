@@ -64,9 +64,9 @@ page_id: 61867203
 
 We recommend that you go through the following steps before starting this tutorial:
 
-1. [Download GigaSpaces and set up your development environment](/xap96/setting-up-your-ide-to-work-with-xap.html) - this is needed to run the tutorial sample application.
-1. [Step One - Using Processing Units For Scaling](/xap96/step-one---using-processing-units-for-scaling.html) - a short introduction to how processing units are used for scaling your application - **Recommended**.
-1. [Step Two - Creating the Hello World Application](/xap96/step-two---creating-the-hello-world-application.html) - Create and run your first Processing Unit.
+1. [Download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-xap.html) - this is needed to run the tutorial sample application.
+1. [Step One - Using Processing Units For Scaling](./step-one---using-processing-units-for-scaling.html) - a short introduction to how processing units are used for scaling your application - **Recommended**.
+1. [Step Two - Creating the Hello World Application](./step-two---creating-the-hello-world-application.html) - Create and run your first Processing Unit.
 
 {% whr %}
 
@@ -133,7 +133,7 @@ Start the Service Grid components, deploy and run the Hello World application on
 {% section %}
 {% column width=70% %}
 
-The Processing Unit that we deploy onto the Service Grid is our Hello World Processor from the [previous step](/xap96/step-two---creating-the-hello-world-application.html).
+The Processing Unit that we deploy onto the Service Grid is our Hello World Processor from the [previous step](./step-two---creating-the-hello-world-application.html).
 Reminder - the Feeder application writes each Message object to the processor Processing Unit, which in turn processes them.
 {% align center %}
 
@@ -268,7 +268,7 @@ In some tutorials this part can be called Build/Build and Package
 
 **Install GigaSpaces**
 
-{% exclamation %} After going through the previous tutorial [Step Two - Creating the Hello World Application](/xap96/step-two---creating-the-hello-world-application.html), you should have GigaSpaces installed and the Hello World sample application environment set. If not, please [download GigaSpaces and set up your development environment](/xap96/setting-up-your-ide-to-work-with-gigaspaces.html) to work with GigaSpaces - this is needed to run the tutorial sample application.
+{% exclamation %} After going through the previous tutorial [Step Two - Creating the Hello World Application](./step-two---creating-the-hello-world-application.html), you should have GigaSpaces installed and the Hello World sample application environment set. If not, please [download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html) to work with GigaSpaces - this is needed to run the tutorial sample application.
 
 {% anchor Start Service Grid %}
 
@@ -404,6 +404,6 @@ A new Grid Service Container starts on your local machine, and its output is sho
 
 ![Jump arrow green.bmp](/attachment_files/Jump arrow green.bmp)
 {% color green %}Step Four{% endcolor %}
- - [Scaling the Hello World Application](/xap96/step-four---scaling-the-hello-world-application.html)
+ - [Scaling the Hello World Application](./step-four---scaling-the-hello-world-application.html)
 
-Or return to the [Quick Start Guide](/xap96/quick-start-guide.html).
+Or return to the [Quick Start Guide](./quick-start-guide.html).

@@ -10,7 +10,7 @@ page_id: 61867000
 # GigaSpace Context
 
 {% info title=Annotation Based Injection with Spring %}
-In previous Spring releases, Spring only allowed you to inject the [GigaSpace](/xap96/the-gigaspace-interface.html) instace using setter injection or constructor injection. OpenSpaces extended this injection mechanism by allowing you to use annotations to inject a `GigaSpace` instance.
+In previous Spring releases, Spring only allowed you to inject the [GigaSpace](./the-gigaspace-interface.html) instace using setter injection or constructor injection. OpenSpaces extended this injection mechanism by allowing you to use annotations to inject a `GigaSpace` instance.
 **As of Spring 2.5, this is no longer required** since Spring support annotation based injection using the [`@Resource`](http://download.oracle.com/javaee/6/api/javax/annotation/Resource.html) or [`@Autowired`](http://static.springsource.org/spring/docs/3.0.x/api/org/springframework/beans/factory/annotation/Autowired.html) annotations.
 {% endinfo %}
 

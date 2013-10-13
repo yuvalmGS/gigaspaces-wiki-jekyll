@@ -10,7 +10,7 @@ page_id: 61867238
 # Overview
 
 {% info title=Built in External Data Source Implementation %}
-GigaSpaces XAP also ships with an [out-of-the-box implementation](/xap96/hibernate-space-persistency.html) based on Hibernate
+GigaSpaces XAP also ships with an [out-of-the-box implementation](./hibernate-space-persistency.html) based on Hibernate
 {% endinfo %}
 
 The External Data Source API provide three major functionalities, each is defined by a specific interface:
@@ -52,7 +52,7 @@ The **[DataProvider](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gi
 
 ## Data Persistency
 
-Data Persistency can be implemented as Synchronous or Asynchronous. In Synchronous approach, DataPersister logic is running in the same space instance, in Asynchronous approach DataPersister logic runs in a Mirror Service (see [Asynchronous Persistency with the Mirror](/xap96/asynchronous-persistency-with-the-mirror.html))
+Data Persistency can be implemented as Synchronous or Asynchronous. In Synchronous approach, DataPersister logic is running in the same space instance, in Asynchronous approach DataPersister logic runs in a Mirror Service (see [Asynchronous Persistency with the Mirror](./asynchronous-persistency-with-the-mirror.html))
 
 In either approach, DataPersistor interface is implemented and configured appropriately. There are two options to implement Data Persistency:
 
@@ -60,7 +60,7 @@ In either approach, DataPersistor interface is implemented and configured approp
 - [Persistency Non-Transactional Mode](#Persistency Non-Transactional Mode)
 
 {% tip %}
-In case you would like to avoid specific classes or space objects from being persistent (invoking the Data Persistency EDS methods), you should use the `@SpaceClass (persist=false)` class level decoration or the `@SpacePersist` method level decoration. See the [POJO Metadata](/xap96/pojo-metadata.html) for details.
+In case you would like to avoid specific classes or space objects from being persistent (invoking the Data Persistency EDS methods), you should use the `@SpaceClass (persist=false)` class level decoration or the `@SpacePersist` method level decoration. See the [POJO Metadata](./pojo-metadata.html) for details.
 {% endtip %}
 
 ### Persistency Transactional Mode
@@ -79,7 +79,7 @@ The **[DataPersister](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/g
 - `remove(Object userObject)` - Invoked when an object is removed from the space.
 
 {% tip %}
-`userObject` is always the original user object unless stated otherwise. See the `space-config.external-data-source.data-class` at the [External Data Source Properties](/xap96/space-persistency-advanced-topics.html#Properties) section.
+`userObject` is always the original user object unless stated otherwise. See the `space-config.external-data-source.data-class` at the [External Data Source Properties](./space-persistency-advanced-topics.html#Properties) section.
 {% endtip %}
 
 ##Initialization and Shutdown

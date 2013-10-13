@@ -26,11 +26,11 @@ The `os-core:giga-space` Spring Bean provides a simple way to confgire a GigaSpa
 {: .table .table-bordered}
 |Element|Description|Required|Default Value|
 |:------|:----------|:-------|:------------|
-|space| [The Space bean](/xap96/the-space-component.html). This can be an embedded space , remote space , local view or local cache proxy. |YES| |
-|clustered|Boolean. [Cluster flag](/xap96/clustered-vs-non-clustered-proxies.html). Controlling if this GigaSpace will work with a clustered view of the space or directly with a cluster member. By default if this flag is not set it will be set automatically by this factory. It will be set to true if the space is an embedded one AND the space is not a local cache proxy. It will be set to false otherwise (i.e. the space is not an embedded space OR the space is a local cache proxy)| NO | true for remote proxy , false for embedded proxy|
+|space| [The Space bean](./the-space-component.html). This can be an embedded space , remote space , local view or local cache proxy. |YES| |
+|clustered|Boolean. [Cluster flag](./clustered-vs-non-clustered-proxies.html). Controlling if this GigaSpace will work with a clustered view of the space or directly with a cluster member. By default if this flag is not set it will be set automatically by this factory. It will be set to true if the space is an embedded one AND the space is not a local cache proxy. It will be set to false otherwise (i.e. the space is not an embedded space OR the space is a local cache proxy)| NO | true for remote proxy , false for embedded proxy|
 |default-read-timeout|Numerical Value. Sets the default read timeout for `read(Object)` and `readIfExists(Object)` operations.|NO| 0 (NO\_WAIT). TimeUnit:millsec|
 |default-take-timeout|Numerical Value. Sets the default take timeout for `take(Object)` and `takeIfExists(Object)` operations.|NO| 0 (NO\_WAIT). TimeUnit:millsec|
-|default-write-lease| Numerical Value. Sets the default [space object lease](/xap96/leases---automatic-expiration.html) (TTL) for `write(Object)` operation. |NO| FOREVER. TimeUnit:millsec|
+|default-write-lease| Numerical Value. Sets the default [space object lease](./leases---automatic-expiration.html) (TTL) for `write(Object)` operation. |NO| FOREVER. TimeUnit:millsec|
 |default-isolation| Options: DEFAULT , READ\_UNCOMMITTED, READ\_COMMITTED , REPEATABLE\_READ|NO| DEFAULT|
 |tx-manager|Set the transaction manager to enable transactional operations. Can be null if transactional support is not required or the default space is used as a transactional context. |NO| |
 |write-modifier|Defines a single default write modifier for the space proxy. Options: NONE, WRITE\_ONLY, UPDATE\_ONLY, UPDATE\_OR\_WRITE, RETURN\_PREV\_ON\_UPDATE, ONE\_WAY, MEMORY\_ONLY\_SEARCH, PARTIAL\_UPDATE|NO| UPDATE\_OR\_WRITE |
@@ -167,11 +167,11 @@ The Embedded space can be used in a distributed architecture such as the replica
 ![replicated-space1.jpg](/attachment_files/replicated-space1.jpg)
 {% endindent %}
 
-A simple way to use the embedded space in a clustered architecture would be by deploying a [clustered space](/xap96/deploying-and-interacting-with-the-space.html) or packaging your application as a [Processing Unit](/xap96/packaging-and-deployment.html) and deploy it using the relevant SLA.
+A simple way to use the embedded space in a clustered architecture would be by deploying a [clustered space](./deploying-and-interacting-with-the-space.html) or packaging your application as a [Processing Unit](./packaging-and-deployment.html) and deploy it using the relevant SLA.
 
 ## GigaSpace with a Local (Near) Cache
 
-The `GigaSpace` support [Local Cache](/xap96/local-cache.html) (near cache) configuration. This provides a front-end client side cache that will be used with the `read` operations implictly. The local cache will be loaded on demand or when you perform a `read` operation and will be updated implictly by the space.
+The `GigaSpace` support [Local Cache](./local-cache.html) (near cache) configuration. This provides a front-end client side cache that will be used with the `read` operations implictly. The local cache will be loaded on demand or when you perform a `read` operation and will be updated implictly by the space.
 
 {% indent %}
 ![local_cache.jpg](/attachment_files/local_cache.jpg)
@@ -220,7 +220,7 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
 
 ## GigaSpace with a Local View
 
-The `GigaSpace` support [Local View](/xap96/local-view.html) configuration. This provides a front-end client side cache that will be used with any `read` or `readMultiple` operations implictly. The local view will be loaded on start and will be updated implictly by the space.
+The `GigaSpace` support [Local View](./local-view.html) configuration. This provides a front-end client side cache that will be used with any `read` or `readMultiple` operations implictly. The local view will be loaded on start and will be updated implictly by the space.
 
 {% indent %}
 ![local_view.jpg](/attachment_files/local_view.jpg)
@@ -338,7 +338,7 @@ Few basic usage guidelines when using the `GigaSpace` interface:
 - The `GigaSpace` variable represents a remote or embedded space proxy (for a single space or clustered) and **should be constructed only** once throughout the lifetime of the application process.
 - You should treat the `GigaSpace` variable as a singleton to be shared across multiple different threads within your application.
 - The `GigaSpace` interface is a thread safe and there is no need to create a `GigaSpace` variable per application thread.
-- In case the space has been fully terminated (no backup or primary instances running any more) the client space proxy will try to reconnect to the space up to a predefined timeout based on the [Proxy Connectivity](/xap96/proxy-connectivity.html) settings. If it fails to reconnect, an error will be displayed.
+- In case the space has been fully terminated (no backup or primary instances running any more) the client space proxy will try to reconnect to the space up to a predefined timeout based on the [Proxy Connectivity](./proxy-connectivity.html) settings. If it fails to reconnect, an error will be displayed.
 - The `IJSpace` interface is not hidden, and can be used even when using the `GigaSpace` interface. `GigaSpace` simplifies most operations used with the space (compared to `IJSpace`), but some operations still require access to `IJSpace`, which can be accessed through the `GigaSpace` API.
 - The `GigaSpace` interface is a thin wrapper built on top of `IJSpace`. Within a single Processing Unit (or Spring application context), several `GigaSpace` instances can be defined, each with different characteristics, all will be interacting with the same rmeote space.
 
@@ -352,11 +352,11 @@ The [GigaSpace](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/Gig
 |[readById](ID Queries#Reading an Object using its ID){% wbr %}takeById{% wbr %}[readByIds](ID Queries#Reading Multiple Objects using their IDs){% wbr %}takeByIds{% wbr %}readIfExistsById{% wbr %}takeIfExistsById|readMultiple{% wbr %}takeMultiple{% wbr %}writeMultiple{% wbr %}readByIds{% wbr %}takeByIds|asyncRead{% wbr %}asyncTake{% wbr %}asyncChange{% wbr %}execute|count|
 
 {: .table .table-bordered}
-|[Data Query operations](/xap96/sqlquery.html)|Data Insert and Update operations|[Business logic execution operations](/xap96/task-execution-over-the-space.html)|Data removal operations|
+|[Data Query operations](./sqlquery.html)|Data Insert and Update operations|[Business logic execution operations](./task-execution-over-the-space.html)|Data removal operations|
 |:--|:--|:--|:--|
-|read{% wbr %}readMultiple{% wbr %}[iterator](/xap96/paging-support-with-space-iterator.html)|write{% wbr %}writeMultiple{% wbr %}   [change](/xap96/change-api.html) |execute{% wbr %}executorBuilder|clean{% wbr %}clear{% wbr %}take{% wbr %}takeMultiple|
+|read{% wbr %}readMultiple{% wbr %}[iterator](./paging-support-with-space-iterator.html)|write{% wbr %}writeMultiple{% wbr %}   [change](./change-api.html) |execute{% wbr %}executorBuilder|clean{% wbr %}clear{% wbr %}take{% wbr %}takeMultiple|
 
-{% include /xap96/pojo-code-snippets.markdown %}
+{% include ./pojo-code-snippets.markdown %}
 
 {% tip %}
 The `clear` and `clean` operations does not remove the space class definition from the space. You should restart the space to allow it to drop the class definitions.
@@ -364,7 +364,7 @@ The `clear` and `clean` operations does not remove the space class definition fr
 
 # Clustered Flag
 
-When configuring a [Space](/xap96/the-space-component.html) with an embedded clustered space or with a remote clustered space, a clustered `GigaSpace` proxy is created. A clustered proxy is a smart proxy that performs operations against the entire cluster when needed.
+When configuring a [Space](./the-space-component.html) with an embedded clustered space or with a remote clustered space, a clustered `GigaSpace` proxy is created. A clustered proxy is a smart proxy that performs operations against the entire cluster when needed.
 
 Many times, especially when working with a Processing Unit that starts an embedded space, operations against the space should be performed directly on the cluster member without interacting with the other space cluster members (partitions). This is a core concept of the SBA and the Processing Unit, where most if not all the operations should be performed in-memory without leaving the Processing Unit boundaries, when a Processing Unit starts an embedded space.
 
@@ -424,7 +424,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).clustered(true).gigaSpace()
 
 The above example shows a typical scenario where the clustered flag is used. Within a Processing Unit, an application might need to access both the cluster member and the whole cluster directly.
 
-The [Clustered vs Non-Clustered Proxies](/xap96/clustered-vs-non-clustered-proxies.html) provide more details how to use Clustered Proxies.
+The [Clustered vs Non-Clustered Proxies](./clustered-vs-non-clustered-proxies.html) provide more details how to use Clustered Proxies.
 
 # Simpler API
 
@@ -482,28 +482,28 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).defaultTakeTimeout(1000).gi
 {% endinittab %}
 
 {% tip %}
-See more examples for the `GigaSpace` interface usage with the [POJO Support](/xap96/pojo-support.html) section.
+See more examples for the `GigaSpace` interface usage with the [POJO Support](./pojo-support.html) section.
 {% endtip %}
 
 # write Operation
 
 A write operation places a copy of an object into the space. The object passed to the write is not affected by the operation. Each write operation places a new object into the space unless there is an object with the same `ID` already stored within the space. In such a case an **update operation** will be performed implictly. If you would like to change this default behavior you should change the update mode to use the `WriteModifiers.WRITE_ONLY` mode. When updating an object with many fields you may use the `PARTIAL_UPDATE` mode.
 
-When performing a write operation you may provide a lease (time to live) duration (in milliseconds time unit) for the object. The write invocation returns a [Lease](/xap96/leases---automatic-expiration.html) object allowing you to cancel or renew the object lease. When the lease expires, the object is removed from the space. The default lease duration is `FOREVER`. An `IllegalArgumentException` will be thrown if the lease time requested is negative.
+When performing a write operation you may provide a lease (time to live) duration (in milliseconds time unit) for the object. The write invocation returns a [Lease](./leases---automatic-expiration.html) object allowing you to cancel or renew the object lease. When the lease expires, the object is removed from the space. The default lease duration is `FOREVER`. An `IllegalArgumentException` will be thrown if the lease time requested is negative.
 
 If a write returns without throwing an exception, that object is committed to the space, possibly within a transaction. If a `RemoteException` is thrown, the write may or may not have been successful. If any other exception is thrown, the object was not written into the space.
 
-Writing an object into a space might generate [notifications](/xap96/notify-container.html) to registered objects.
+Writing an object into a space might generate [notifications](./notify-container.html) to registered objects.
 
 ## Time To Live - Lease
 
-To write an object into the space with a limited time to live you should specify [a lease value](/xap96/leases---automatic-expiration.html) (in millisecond). The object will expire automatically from the space.
+To write an object into the space with a limited time to live you should specify [a lease value](./leases---automatic-expiration.html) (in millisecond). The object will expire automatically from the space.
 
 {% highlight java %}
 gigaSpace.write(myObject, 10000)
 {% endhighlight %}
 
-You can [register for notifications](/xap96/notify-container.html) having a listener triggered when the object has been expired.
+You can [register for notifications](./notify-container.html) having a listener triggered when the object has been expired.
 
 ## Return Previous Value
 
@@ -560,7 +560,7 @@ catch (EntryNotInSpaceException enise)
 }
 {% endhighlight %}
 
-Alternatively, you can use the [change](/xap96/change-api.html) operation and update specific fields or even nested fields or modify collections and maps without having to supply the entire collection or map upon such update. The following `change` operation example is equivalent to the previous partial update operation.
+Alternatively, you can use the [change](./change-api.html) operation and update specific fields or even nested fields or modify collections and maps without having to supply the entire collection or map upon such update. The following `change` operation example is equivalent to the previous partial update operation.
 
 {% highlight java %}
 IdQuery<MyClass> idQuery = new IdQuery<MyClass>(MyClass.class, "1")
@@ -580,28 +580,28 @@ There are various mechanisms offered by GigaSpaces XAP to access the data within
 Each space object includes an ID. You may read or remove objects from the space using their ID via the `readByID`,`takeByID`,`readIfExistsById`,`takeIfExistsById`, `readByIDs` or the `takeByIDs` operations.
 
 {% tip %}
-The `readByID` and `readByIDs` have a special performance optimization when running a [Local Cache](/xap96/local-cache.html) or [Local View](/xap96/local-view.html).
+The `readByID` and `readByIDs` have a special performance optimization when running a [Local Cache](./local-cache.html) or [Local View](./local-view.html).
 {% endtip %}
 
- See the [Id Queries](/xap96/id-queries.html) for details.
+ See the [Id Queries](./id-queries.html) for details.
 
 ## Template Based
 
-The template is a POJO of the desired entry type, and the properties which are set on the template (i.e. not null) are matched against the respective properties of entries of the same type in the space. Properties with null values are ignored (not matched). See the [Template Matching](/xap96/template-matching.html) for details.
+The template is a POJO of the desired entry type, and the properties which are set on the template (i.e. not null) are matched against the respective properties of entries of the same type in the space. Properties with null values are ignored (not matched). See the [Template Matching](./template-matching.html) for details.
 
 ## SQL Based
 
-The [SQLQuery](/xap96/sqlquery.html) class is used to query the space using SQL-like syntax. The query statement includes only the `WHERE` statement part - the selection aspect of a SQL statement is embedded in other parameters for a SQL query. See the [SQLQuery](/xap96/sqlquery.html) for details.
+The [SQLQuery](./sqlquery.html) class is used to query the space using SQL-like syntax. The query statement includes only the `WHERE` statement part - the selection aspect of a SQL statement is embedded in other parameters for a SQL query. See the [SQLQuery](./sqlquery.html) for details.
 
 ## Space Iterator
 
-The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/client/GSIterator.html) allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the `readMultiple` since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side. See the [Paging Support with Space Iterator](/xap96/paging-support-with-space-iterator.html) for details.
+The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/client/GSIterator.html) allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the `readMultiple` since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side. See the [Paging Support with Space Iterator](./paging-support-with-space-iterator.html) for details.
 
 # readIfExists and read Operations
 
-The two forms of the `read` operations query the space for an object that matches the template/[SQLQuery](/xap96/sqlquery.html) provided. If a match is found, a copy of the matching object is returned. If no match is found, `null` is returned. Passing a `null` reference as the template will match any object.
+The two forms of the `read` operations query the space for an object that matches the template/[SQLQuery](./sqlquery.html) provided. If a match is found, a copy of the matching object is returned. If no match is found, `null` is returned. Passing a `null` reference as the template will match any object.
 
-Any matching object can be returned. Successive read requests with the same template may or may not return equivalent objects, even if no intervening modifications have been made to the space. Each invocation of `read` may return a new object even if the same object is matched in the space. If you would like to read objects in the same order they have been written into the space you should perform the read objects in a [FIFO mode](/xap96/fifo-support.html).
+Any matching object can be returned. Successive read requests with the same template may or may not return equivalent objects, even if no intervening modifications have been made to the space. Each invocation of `read` may return a new object even if the same object is matched in the space. If you would like to read objects in the same order they have been written into the space you should perform the read objects in a [FIFO mode](./fifo-support.html).
 
 A `readIfExists` operation will return a matching object, or a `null` if there is currently no matching object in the space. If the only possible matches for the template have **conflicting locks** from one or more other transactions, the `timeout` value specifies how long the client is willing to wait for interfering transactions to settle before returning a value. If at the end of that time no value can be returned that would not interfere with transactional state, `null` is returned. Note that, due to the remote nature of the space, `read` and `readIfExists` may throw a `RemoteException` if the network or server fails prior to the `timeout` expiration.
 
@@ -621,9 +621,9 @@ If a `take` returns a non-null value, the object has been removed from the space
 
 With a `RemoteException`, an object can be removed from a space and yet never returned to the client that performed the take, thus losing the object in between. In circumstances in which this is unacceptable, the take can be wrapped inside a transaction that is committed by the client when it has the requested object in hand.
 
-If you would like to take objects from the space in the same order they have been written into the space you should perform the take objects in a [FIFO mode](/xap96/fifo-support.html).
+If you would like to take objects from the space in the same order they have been written into the space you should perform the take objects in a [FIFO mode](./fifo-support.html).
 
-Taking an object from the space might generate [notifications](/xap96/notify-container.html) to registered objects/queries.
+Taking an object from the space might generate [notifications](./notify-container.html) to registered objects/queries.
 
 {% tip %}
 The `take` operation default timeout is `JavaSpace.NO_WAIT`.
@@ -666,7 +666,7 @@ Alternatively, asyncRead and asyncTake also accept an implementation of [AsyncFu
 
 ![async_operationsnew.jpg](/attachment_files/async_operationsnew.jpg)
 
-Asynchronous `write` operation can be implemented using a [Task](/xap96/task-execution-over-the-space.html), where the `Task` implementation include a write operation. With this approach the `Task` is sent to the space and executed in an asynchronous manner. The write operation itself will be completed once both the primary and the backup will acknowledge the operation. This activity will be performed as a background activity from the client perspective.
+Asynchronous `write` operation can be implemented using a [Task](./task-execution-over-the-space.html), where the `Task` implementation include a write operation. With this approach the `Task` is sent to the space and executed in an asynchronous manner. The write operation itself will be completed once both the primary and the backup will acknowledge the operation. This activity will be performed as a background activity from the client perspective.
 
 {% inittab async_operations|top %}
 {% tabcontent Space Class %}
@@ -744,7 +744,7 @@ space.write(obj,WriteModifiers.ONE_WAY);
 
 # Declarative Transactions
 
-As seen in the take API above, there is no need to provide a Jini transaction object for the different space operations. `GigaSpace` with the different OpenSpaces [transaction managers](/xap96/transaction-management.html) and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the `GigaSpace` interface joins it, using Spring's rich transaction support.
+As seen in the take API above, there is no need to provide a Jini transaction object for the different space operations. `GigaSpace` with the different OpenSpaces [transaction managers](./transaction-management.html) and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the `GigaSpace` interface joins it, using Spring's rich transaction support.
 
 {% exclamation %} In order to have GigaSpace transactional, the transaction manager must be provided as a reference when constructing the GigaSpace bean. For example (using the distributed transaction manager):
 

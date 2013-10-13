@@ -6,7 +6,7 @@ page_id: 61867130
 
 {% summary page|65 %}GigaSpaces SBA components {% endsummary %}
 
-|[Basic Components](/xap96/terminology---basic-components.html)|[Data Grid Topologies](/xap96/terminology---data-grid-topologies.html)|Space-Based Architecture|[Runtime Components](/xap96/terminology---runtime-components.html)|
+|[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|Space-Based Architecture|[Runtime Components](./terminology---runtime-components.html)|
 
 # Space-Based Architecture
 
@@ -29,7 +29,7 @@ page_id: 61867130
 {% section %}
 **A Space-Based Architecture (SBA) implementation** is a set of Processing Units, with the following properties:
 
-- Each processing unit instances holds a [partitioned](/xap96/terminology---data-grid-topologies.html#Partitioned Data Grid) space instance and one or more services that are registered on events on that specific partition. Together they form an application cluster. If the cluster is required to be highly available, each primary partition has one or more backup partitions, which run in their own processing unit instances. These instances are inactive, and become active only when their primary partition fails.
+- Each processing unit instances holds a [partitioned](./terminology---data-grid-topologies.html#Partitioned Data Grid) space instance and one or more services that are registered on events on that specific partition. Together they form an application cluster. If the cluster is required to be highly available, each primary partition has one or more backup partitions, which run in their own processing unit instances. These instances are inactive, and become active only when their primary partition fails.
 
 - Each Processing Unit instance handles only the data sent to the space partition it runs.
 
@@ -37,9 +37,9 @@ page_id: 61867130
 
 - The system can be scaled by simply increasing the number of space partitions and their corresponding processing unit instances.
 
-- When deployed onto the [Service Grid](/xap96/terminology---runtime-components.html#Service Grid), self-healing and SLA capabilities are added.
+- When deployed onto the [Service Grid](./terminology---runtime-components.html#Service Grid), self-healing and SLA capabilities are added.
 
-- Full monitoring and management during runtime are available through the [Management UI](/xap96/terminology---runtime-components.html#Management UI).
+- Full monitoring and management during runtime are available through the [Management UI](./terminology---runtime-components.html#Management UI).
 
 {% align center %}
 
@@ -55,7 +55,7 @@ page_id: 61867130
 
 {% anchor Space Based Architecture Artifacts %}
 
-Once a [Processing Unit library](/xap96/the-processing-unit-structure-and-configuration.html) is deployed, a processing unit instance is created. The processing unit instance is hosted within the [GigaSpaces container](/xap96/the-grid-service-container.html). If the processing unit instance includes a space, all the collocated beans within the processing unit instance inherit the space primary/backup mode: If the space running in a primary mode, they will be active; if the space running in a backup mode, they will be in a standby mode.
+Once a [Processing Unit library](./the-processing-unit-structure-and-configuration.html) is deployed, a processing unit instance is created. The processing unit instance is hosted within the [GigaSpaces container](./the-grid-service-container.html). If the processing unit instance includes a space, all the collocated beans within the processing unit instance inherit the space primary/backup mode: If the space running in a primary mode, they will be active; if the space running in a backup mode, they will be in a standby mode.
 
 {% section %}
 {% align center %}
@@ -68,8 +68,8 @@ Once a [Processing Unit library](/xap96/the-processing-unit-structure-and-config
 - JVM - Java process. Native OS process.
 - Processing unit - Deployable package (bundle).
 - GigaSpaces Container - Hosting deployed PU.
-- [Processing unit Instance](/xap96/packaging-and-deployment.html) - deployed instantiated PU.
-- [Space Partition](/xap96/terminology---data-grid-topologies.html) - Data-Grid Member. Store data in-memory.
+- [Processing unit Instance](./packaging-and-deployment.html) - deployed instantiated PU.
+- [Space Partition](./terminology---data-grid-topologies.html) - Data-Grid Member. Store data in-memory.
 - Data-Grid - Collection of Space Partitions.
 - Local Proxy - Access to collocated space partition.
 - Clustered Proxy - Access to all space partitions.
@@ -80,4 +80,4 @@ Once a [Processing Unit library](/xap96/the-processing-unit-structure-and-config
 - [Polling container](Polling container) - Execution queue. Consumes objects from the space.
 {% endsection %}
 
-|[Basic Components](/xap96/terminology---basic-components.html)|[Data Grid Topologies](/xap96/terminology---data-grid-topologies.html)|Space-Based Architecture|[Runtime Components](/xap96/terminology---runtime-components.html)|
+|[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|Space-Based Architecture|[Runtime Components](./terminology---runtime-components.html)|

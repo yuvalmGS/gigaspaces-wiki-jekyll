@@ -19,7 +19,7 @@ The rollover mechanism is based on two policies, whichever policy is triggered f
 
 # `formatter` property
 
-The default log output formatting is determined by `GSSimpleFormatter` (see [Formatting Log Messages](/xap96/formatting-log-messages.html)).
+The default log output formatting is determined by `GSSimpleFormatter` (see [Formatting Log Messages](./formatting-log-messages.html)).
 
 {% highlight java %}
 com.gigaspaces.logger.RollingFileHandler.formatter = com.gigaspaces.logger.GSSimpleFormatter
@@ -116,7 +116,7 @@ com.gigaspaces.logger.DeleteBackupPolicy.period = 30
 com.gigaspaces.logger.DeleteBackupPolicy.backup = 10 
 {% endhighlight %}
 
-For more information see [Backing-up Files With a Custom Policy](/xap96/backing-up-files-with-a-custom-policy.html)
+For more information see [Backing-up Files With a Custom Policy](./backing-up-files-with-a-custom-policy.html)
 
 # `debug-level` Property
 

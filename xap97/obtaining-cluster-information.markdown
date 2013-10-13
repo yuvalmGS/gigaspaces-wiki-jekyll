@@ -61,7 +61,7 @@ public interface ClusterInfoAware {
 }
 {% endhighlight %}
 
-All of the processing unit [runtime modes](/xap96/deploying-and-running-the-processing-unit.html) provide support for the `ClusterInfo` and `ClusterInfoAware` interfaces by default. Built-in GigaSpaces components make use of this feature. User-defined beans can make use of this information as well (for example, to connect to a specific database based on the ID of the processing unit instance).
+All of the processing unit [runtime modes](./deploying-and-running-the-processing-unit.html) provide support for the `ClusterInfo` and `ClusterInfoAware` interfaces by default. Built-in GigaSpaces components make use of this feature. User-defined beans can make use of this information as well (for example, to connect to a specific database based on the ID of the processing unit instance).
 
 {% anchor ClusterInfoContext %}
 
@@ -81,7 +81,7 @@ public class MyBean {
 
 # Space Construction and ClusterInfo
 
-The [Space component](/xap96/the-space-component.html) implements the `ClusterInfoAware`, and uses it in order to construct an embedded space by mapping `ClusterInfo` properties to Space URL properties (if provided). Here is a mapping from `ClusterInfo` to Space URL properties:
+The [Space component](./the-space-component.html) implements the `ClusterInfoAware`, and uses it in order to construct an embedded space by mapping `ClusterInfo` properties to Space URL properties (if provided). Here is a mapping from `ClusterInfo` to Space URL properties:
 
 {: .table .table-bordered}
 |ClusterInfo|Space URL|
@@ -94,7 +94,7 @@ The [Space component](/xap96/the-space-component.html) implements the `ClusterIn
 
 # ClusterInfo XML Injection
 
-When running the processing unit in any of the [runtime modes](/xap96/deploying-and-running-the-processing-unit.html), `ClusterInfo` can also be used directly within the Spring XML configuration. In a similar manner, properties can be injected. Here is an example of how this can be used:
+When running the processing unit in any of the [runtime modes](./deploying-and-running-the-processing-unit.html), `ClusterInfo` can also be used directly within the Spring XML configuration. In a similar manner, properties can be injected. Here is an example of how this can be used:
 
 {% highlight xml %}
 
@@ -118,12 +118,12 @@ In the above example, the value of the `connectionUrl` property of `myBean` is  
 
 # Processing Unit Container Injection
 
-Each of the [runtime modes](/xap96/deploying-and-running-the-processing-unit.html) supports the injection of `ClusterInfo`. However, when running in [standalone mode](/xap96/running-in-standalone-mode.html) or [within your IDE](/xap96/running-and-debugging-within-your-ide.html), the `-cluster` parameter controls the clustering aspects of the processing unit instance(s). Below is a list of the parameters you can specify for the standalone and IDE runtime modes, and how they are mapped the `ClusterInfo` properties:
+Each of the [runtime modes](./deploying-and-running-the-processing-unit.html) supports the injection of `ClusterInfo`. However, when running in [standalone mode](./running-in-standalone-mode.html) or [within your IDE](./running-and-debugging-within-your-ide.html), the `-cluster` parameter controls the clustering aspects of the processing unit instance(s). Below is a list of the parameters you can specify for the standalone and IDE runtime modes, and how they are mapped the `ClusterInfo` properties:
 
 - `schema clusterSchemaName`: Maps to `ClusterInfo#setSchema`.
 - `total_members numberOfInstances\[,numberOfBackups\]`: Maps to `ClusterInfo#setNumberOfInstances`, and optionally `ClusterInfo#setNumberOfBackups`.
 - `id instanceId`: Maps to `ClusterInfo#setInstanceId`.
 - `backup_id backupId`: Maps to `ClusterInfo#setBackupId`.
 
-{% refer %}For more details on how to use the `-cluster` option, see the [processing unit runtime modes section](/xap96/deploying-and-running-the-processing-unit.html){% endrefer %}
+{% refer %}For more details on how to use the `-cluster` option, see the [processing unit runtime modes section](./deploying-and-running-the-processing-unit.html){% endrefer %}
 

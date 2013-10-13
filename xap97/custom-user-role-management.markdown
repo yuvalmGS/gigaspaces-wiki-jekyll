@@ -16,7 +16,7 @@ GigaSpaces security is not aware of the directory at all. As long as the authent
 
 ## Example usage of the `DirectoryManager` API
 
-{% refer %}[Securing the HelloWorld example](/xap96/securing-the-helloworld-example.html){% endrefer %}
+{% refer %}[Securing the HelloWorld example](./securing-the-helloworld-example.html){% endrefer %}
 
 In the Hello World example, we presented a way to declare the users using the UI. It can also be done using the `DirectoryManager` API.
 

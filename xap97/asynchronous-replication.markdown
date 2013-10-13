@@ -7,7 +7,7 @@ page_id: 61867158
 {% summary %}This page describe what is asynchronous replication and how to configure it{% endsummary %}
 
 {% info %}
-This page covers details which are specific to asynchronous replication which are not covered in the [Replication](/xap96/replication.html) page, the previous page should be read before this one.
+This page covers details which are specific to asynchronous replication which are not covered in the [Replication](./replication.html) page, the previous page should be read before this one.
 {% endinfo %}
 
 # Overview

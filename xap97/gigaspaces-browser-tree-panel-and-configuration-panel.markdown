@@ -42,7 +42,7 @@ The columns to choose from are as follows:
 
 - **Objects Count** -- the number of objects in the space.
 
-   {% exclamation %} The **Objects Count** column does not display the number of objects for persistent spaces running in LRU mode (this might result in very high CPU usage). To change this, see the [Menus and Buttons](/xap96/gigaspaces-browser-menus-and-buttons.html#Display Persistent LRU Space Metrics) section.
+   {% exclamation %} The **Objects Count** column does not display the number of objects for persistent spaces running in LRU mode (this might result in very high CPU usage). To change this, see the [Menus and Buttons](./gigaspaces-browser-menus-and-buttons.html#Display Persistent LRU Space Metrics) section.
 
 - **Object Count Delta** -- shows an ascending or descending arrow, if the number of objects in the space is currently growing or being reduced (when objects are either written to or taken from the space). For example, if you are currently taking objects from a certain space, during the take operation, an arrow pointing down appears in this column (see screenshot above).
 
@@ -57,19 +57,19 @@ The columns to choose from are as follows:
 - **Clustered** -- whether the space participates in a cluster.
 - **Primary** -- whether the space is primary (**Yes**) or a backup space (**No**).
 - **Used Memory (MB)** -- the amount of used memory in this space, in MB.
-This column is highlighted in orange if the space memory usage is more than the minimum (low) watermark percentage and lower than the write only block percentage (defined in the [memory usage tag](/xap96/memory-management-facilities.html)), for example:
+This column is highlighted in orange if the space memory usage is more than the minimum (low) watermark percentage and lower than the write only block percentage (defined in the [memory usage tag](./memory-management-facilities.html)), for example:
 
 {% indent %}
 ![GMC_space_SpaceNetworkView_UsedMoemory_Column_Orange_6.5_RC2.jpg](/attachment_files/GMC_space_SpaceNetworkView_UsedMoemory_Column_Orange_6.5_RC2.jpg)
 {% endindent %}
 
-This column is highlighted in red if the space memory exceeds the write only block percentage (defined in the [memory usage tag](/xap96/memory-management-facilities.html)), for example:
+This column is highlighted in red if the space memory exceeds the write only block percentage (defined in the [memory usage tag](./memory-management-facilities.html)), for example:
 
 {% indent %}
 ![space_network_view_memoryUsage_red_6.5.jpg](/attachment_files/space_network_view_memoryUsage_red_6.5.jpg)
 {% endindent %}
 
-{% refer %}For more details on memory usage, refer to the [Memory Management](/xap96/memory-management-facilities.html) section.{% endrefer %}
+{% refer %}For more details on memory usage, refer to the [Memory Management](./memory-management-facilities.html) section.{% endrefer %}
 
 - **Write**, **Update**, **Read**, **Take**, **Notify Sent**, **Notify Ack.**, **Notify Registration** -- shows the number of objects the operation has been performed on. For example, 60000 in the **Write** column means that 60000 objects have been written to this space.
 
@@ -92,8 +92,8 @@ Right-clicking a space container node ( ![container.gif](/attachment_files/conta
 {% endindent %}
 
 - **Refresh** -- refreshes the tree panel display.
-- **Runtime Configuration Report** -- displays the current configuration of the selected space container (see [Runtime Configuration Report](/xap96/space-container-maintenance---gigaspaces-browser.html#Runtime Configuration Report)).
-- **Launch JConsole** -- launches a [JConsole](/xap96/space-jmx-management.html) for the selected space container.
+- **Runtime Configuration Report** -- displays the current configuration of the selected space container (see [Runtime Configuration Report](./space-container-maintenance---gigaspaces-browser.html#Runtime Configuration Report)).
+- **Launch JConsole** -- launches a [JConsole](./space-jmx-management.html) for the selected space container.
 
 When the space container node is selected, its configuration data is displayed in the configuration panel on the right side.
 
@@ -106,12 +106,12 @@ Space nodes ( ![spaceTreeIcon.gif](/attachment_files/spaceTreeIcon.gif)) represe
 
 **The space node has five possible views:**
 
-- [Classes view](/xap96/data-types-view---gigaspaces-browser.html)
-- [Query view](/xap96/query-view---gigaspaces-browser.html)
-- [Statistics view](/xap96/statistics-view---gigaspaces-browser.html)
-- [Benchmark view](/xap96/benchmark-view---gigaspaces-browser.html)
-- [Transactions view](/xap96/transactions-view---gigaspaces-browser.html)
-- [Connections view](/xap96/connections-view---gigaspaces-browser.html)
+- [Classes view](./data-types-view---gigaspaces-browser.html)
+- [Query view](./query-view---gigaspaces-browser.html)
+- [Statistics view](./statistics-view---gigaspaces-browser.html)
+- [Benchmark view](./benchmark-view---gigaspaces-browser.html)
+- [Transactions view](./transactions-view---gigaspaces-browser.html)
+- [Connections view](./connections-view---gigaspaces-browser.html)
 
 Right-clicking a space node invokes a context menu containing the following options:
 
@@ -131,7 +131,7 @@ When a space node is selected, its configuration data is displayed in the **Serv
 # Cluster Node
 
 A cluster is a collection of spaces from one or more space containers. The cluster node ( ![cluster_node.gif](/attachment_files/cluster_node.gif)) in the **Grid Tree** represents a cluster of spaces.
-{% refer %}For more details, refer to the [Cluster View](/xap96/cluster-view---gigaspaces-browser.html) section.{% endrefer %}
+{% refer %}For more details, refer to the [Cluster View](./cluster-view---gigaspaces-browser.html) section.{% endrefer %}
 
 # Service View panel
 

@@ -13,7 +13,7 @@ As part of your development process, you may want to run/debug your processing u
 
 The Integrated processing unit container allows you to run a processing unit within such "embedded" environment. It's implementation class is `[org.openspaces.pu.container.integrated.IntegratedProcessingUnitContainer](http://www.gigaspaces.com/docs/JavaDoc7.0/org/openspaces/pu/container/integrated/IntegratedProcessingUnitContainer.html)`.
 
-The Integrated Processing Unit Container is built around Spring's `ApplicationContext` with several extensions relevant to GigaSpaces, such as `[ClusterInfo](/xap96/obtaining-cluster-information.html)`.
+The Integrated Processing Unit Container is built around Spring's `ApplicationContext` with several extensions relevant to GigaSpaces, such as `[ClusterInfo](./obtaining-cluster-information.html)`.
 
 The Integrated Processing Unit Container runs directly in your IDE using its `main()` method, or can be started by another class in your code by using the `ProcessingUnitContainerProvider` abstraction.
 
@@ -27,8 +27,8 @@ The `IntegratedProcessingUnitContainer` class provides an executable `main()` me
 | `\-config \[configLocation\]` | Allows you to set/add a processing unit deployment descriptor location.{% wbr %}Follows the Spring [Resource Loader](http://static.springframework.org/spring/docs/2.5.x/reference/resources.html#resources-resourceloader) including [ant style patterns](http://static.springframework.org/spring/docs/2.5.x/reference/resources.html#resources-app-ctx-wildcards-in-resource-paths). This parameter can be specified multiple times.{% wbr %}The default is `classpath*:/META-INF/spring/pu.xml`. |
 | `\-cluster \[cluster options\]` | Allows you to control the `ClusterInfo` injected into the container and the runtime topology {% wbr %} of the processing unit (Note that the integrated processing unit container can run multiple processing {% wbr %} unit instances in the same JVM to more accurately emulate the behavior of the actual runtime environment). {% wbr %} The following options are available (they are used automatically by any embedded space included {% wbr %} in the processing unit):
 - `schema` \- the cluster schema used by the processing unit. Possible values are `sync-replicated`, `async-replicated` and `partitioned-sync2backup`{% wbr %}- `total_members` \- Determines the total members in the emulated cluster. Format is `numberOfInstances\[,numberOfBackups\]`, e.g. `total_members=2,1`{% wbr %}- `id` -- If you want the container to run a single processing unit instance, use this parameter. It will force the container to run one instance and will determines the instance ID of that instance. {% wbr %}- `backup_id` -- If you want the container to run a single processing unit instance, use this parameter in conjunction with the `id` parameter. It will force the container to run one instance and will determines the backup ID of that instance.  |
-| `\-properties \[property file location\]` | Allows you to [inject properties](/xap96/deployment-properties.html) to the processing unit at deployment time. |
-| `\-properties embed://\[property1 name\]=\[property1 value\];\[property2 name\]=\[property2 value\]` | Allows you to [directly inject properties](/xap96/deployment-properties.html) to the processing unit at startup time. |
+| `\-properties \[property file location\]` | Allows you to [inject properties](./deployment-properties.html) to the processing unit at deployment time. |
+| `\-properties embed://\[property1 name\]=\[property1 value\];\[property2 name\]=\[property2 value\]` | Allows you to [directly inject properties](./deployment-properties.html) to the processing unit at startup time. |
 
 ## Example
 
@@ -60,7 +60,7 @@ You can run the Integrated Processing Unit Container without actually specifying
 # Using IntegratedProcessingUnitContainer in the IDE
 
 The main usage of the `IntegratedProcessingUnitContainer` is to execute processing units in your IDE.
-The following screenshot displays the **Create, manage, and run configurations** Eclipse dialog for executing the processor processing unit of the [data example](/xap96/the-openspaces-data-example.html):
+The following screenshot displays the **Create, manage, and run configurations** Eclipse dialog for executing the processor processing unit of the [data example](./the-openspaces-data-example.html):
 
 {% indent %}
 ![IntegratedProcessingUnitContainer2.jpg](/attachment_files/IntegratedProcessingUnitContainer2.jpg)
@@ -69,7 +69,7 @@ The following screenshot displays the **Create, manage, and run configurations**
 In the screenshot above, we run the data processor module using the integrated processing unit container from within the Eclipse IDE (we simply imported the Eclipse project provided with the example into our Eclipse workspace). There are no arguments provided in this example, which means that the integrated processing unit container will use its defaults. Since our project source includes a `META-INF/spring/pu.xml` file, it is automatically detected by the `IntegratedProcessingUnitContainer` class and used as the processing unit's deployment descriptor (since it's part of the processor module's classpath). The processor Eclipse project also has all the required libraries in its project definition. These include all the jars located under the `GigaSpaces root>/lib/required` directory, namely `gs-openspaces.jar`, `gs-runtime.jar`, `commons-logging.jar` and the Spring framework jars (all start with `com.spring*`), so the integrated processing unit container is running with these libraries.
 
 {% info title=Classpath Settings of the IntegratedProcessingUnitContainer %}
-The `IntegratedProcessingUnitContainer` is a simple class that wraps the processing unit with Spring application context and makes all the proper initializations around it. Note that as with any other code you run within your IDE, you will have to manually include the classes your processing unit code depends on in your project classpath. In contrast, when [running your processing unit on the GigaSpaces service grid](/xap96/deploying-onto-the-service-grid.html) or in [standalone mode](/xap96/running-in-standalone-mode.html), all of the jars located under the processing unit's `lib` directory are automatically added to the classpath and GigaSpaces specific jar files (`gs-runtime.jar` and `gs-openspaces.jar` are added automatically).
+The `IntegratedProcessingUnitContainer` is a simple class that wraps the processing unit with Spring application context and makes all the proper initializations around it. Note that as with any other code you run within your IDE, you will have to manually include the classes your processing unit code depends on in your project classpath. In contrast, when [running your processing unit on the GigaSpaces service grid](./deploying-onto-the-service-grid.html) or in [standalone mode](./running-in-standalone-mode.html), all of the jars located under the processing unit's `lib` directory are automatically added to the classpath and GigaSpaces specific jar files (`gs-runtime.jar` and `gs-openspaces.jar` are added automatically).
 {% endinfo %}
 
 The following screenshot shows how to run a data processor instance with a partitioned cluster schema and ID `1`, and the arguments that should provided in this configuration:
@@ -79,7 +79,7 @@ The following screenshot shows how to run a data processor instance with a parti
 {% endindent %}
 
 {% info title=Using Lookup Groups/Locators %}
-You can isolate your environment by defining [Lookup Groups/Locators](/xap96/the-lookup-service.html). You can set lookup groups/locators in your IDE run configuration using system variables as VM arguments. If you have LOOKUPGROUPS/LOOKUPLOCATORS OS environment variables, you can use their values for the system variables. For example, to set lookup groups in Eclipse IDE using LOOKUPGROUPS environment variable you need to add the following as VM argument to the run configuration:
+You can isolate your environment by defining [Lookup Groups/Locators](./the-lookup-service.html). You can set lookup groups/locators in your IDE run configuration using system variables as VM arguments. If you have LOOKUPGROUPS/LOOKUPLOCATORS OS environment variables, you can use their values for the system variables. For example, to set lookup groups in Eclipse IDE using LOOKUPGROUPS environment variable you need to add the following as VM argument to the run configuration:
 
 {% highlight java %}
 -Dcom.gs.jini_lus.groups=${env_var:LOOKUPGROUPS}

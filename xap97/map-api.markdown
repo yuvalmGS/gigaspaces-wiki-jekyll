@@ -134,7 +134,7 @@ A simple way to use the embedded space in a clustered architecture would be by p
 
 ## GigaMap with a Local (Near) Cache
 
-The `GigaMap` support [Local Cache](/xap96/local-cache.html) (near cache) configuration. This provides a front-end client side cache that will be used with the `get` operations implictly. The local cache will be loaded on demand or when you perform a `put` operation (when the **putFirst** option is activated).
+The `GigaMap` support [Local Cache](./local-cache.html) (near cache) configuration. This provides a front-end client side cache that will be used with the `get` operations implictly. The local cache will be loaded on demand or when you perform a `put` operation (when the **putFirst** option is activated).
 
 {% indent %}
 ![local_cache-map.jpg](/attachment_files/local_cache-map.jpg)
@@ -251,7 +251,7 @@ gigaMap.put(key , value , 5000);
 
 # Declarative Transactions
 
-There is no need to provide a Jini transaction object for the different map operations. `GigaMap` with the different OpenSpaces [transaction managers](/xap96/transaction-management.html) and Spring allow simple declarative definition of transactions. This means that if there is an ongoing transaction running, most operations performed using the `GigaMap` interface join it, using Spring's rich transaction support.
+There is no need to provide a Jini transaction object for the different map operations. `GigaMap` with the different OpenSpaces [transaction managers](./transaction-management.html) and Spring allow simple declarative definition of transactions. This means that if there is an ongoing transaction running, most operations performed using the `GigaMap` interface join it, using Spring's rich transaction support.
 
 {% lampon %} It is highly recommended to read the [transaction management chapter](http://static.springframework.org/spring/docs/2.0.x/reference/transaction.html) in the Spring reference documentation.
 
@@ -374,7 +374,7 @@ The Lock API using transactions to ensure isolation and data consistency.
 
 # GigaSpace API vs. GigaMap API
 
-Here is a simple comparison between the GigaMap API vs. the [GigaSpace API](/xap96/the-gigaspace-interface.html):
+Here is a simple comparison between the GigaMap API vs. the [GigaSpace API](./the-gigaspace-interface.html):
 
 {% section %}
 {% column %}

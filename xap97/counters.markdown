@@ -68,7 +68,7 @@ WordCount wordount = space.readById(WordCount.class , idQuery);
 int counterValue = wordount.getMycounter();
 {% endhighlight %}
 
-Another way geting the Counter value without reading the space object back to the client would be via a [Task](/xap96/task-execution-over-the-space.html):
+Another way geting the Counter value without reading the space object back to the client would be via a [Task](./task-execution-over-the-space.html):
 
 {% highlight java %}
 public class GetCounterTask implements Task<Integer> {
@@ -99,11 +99,11 @@ int counterValue= future.get();
 
 # Pre-Loading Counters
 
-When pre-loading the space via the [External Data Source initial-load](/xap96/space-persistency-initial-load.html) you may need to construct Counters data. The `initialLoad` method allows you to implement the logic to generate the counter data and load it into the space after the actual data been loaded from the external data source (database). 
+When pre-loading the space via the [External Data Source initial-load](./space-persistency-initial-load.html) you may need to construct Counters data. The `initialLoad` method allows you to implement the logic to generate the counter data and load it into the space after the actual data been loaded from the external data source (database).
 
 # Example
 
-With the following example the `Counter` class wraps the `GigaSpace.change` operation providing simple `increment`,`decrement`,`get` and `unset` methods to manage counters. The example using an [extended SpaceDocument](/xap96/extending-space-documents.html) as the space object storing the counters data. To retrieve the counter existing value a [Task](/xap96/task-execution-over-the-space.html) is used. To launch the example run the `CounterTest` unit test. 
+With the following example the `Counter` class wraps the `GigaSpace.change` operation providing simple `increment`,`decrement`,`get` and `unset` methods to manage counters. The example using an [extended SpaceDocument](./extending-space-documents.html) as the space object storing the counters data. To retrieve the counter existing value a [Task](./task-execution-over-the-space.html) is used. To launch the example run the `CounterTest` unit test.
 
 {% highlight java %}
 package org.openspaces;

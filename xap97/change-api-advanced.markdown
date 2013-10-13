@@ -9,7 +9,7 @@ page_id: 61867447
 
 # Change and SpaceSynchronizationEndpoint
 
-A `SpaceSynchronizationEndpoint` implementation can make use of the [Change API](/xap96/change-api.html) and support change operation, this way allowing the network utilization to be more optimized by sending only the change set to the mirror service instead of the fully updated object. By default the mirror service starts in a mode which does not support change, hence, any change operation done on the space is being replicated as a regular update to the mirror service. You could provide an implementation that does support change and configure the space to send the supported change operations to the mirror with only the required data to apply the change. Following is an example of how can one obtain the change set from a `DataSyncOperation`.
+A `SpaceSynchronizationEndpoint` implementation can make use of the [Change API](./change-api.html) and support change operation, this way allowing the network utilization to be more optimized by sending only the change set to the mirror service instead of the fully updated object. By default the mirror service starts in a mode which does not support change, hence, any change operation done on the space is being replicated as a regular update to the mirror service. You could provide an implementation that does support change and configure the space to send the supported change operations to the mirror with only the required data to apply the change. Following is an example of how can one obtain the change set from a `DataSyncOperation`.
 
 {% section %}
 {% column %}
@@ -88,7 +88,7 @@ Here is the full list of change operations:
 
 # Change and Replication Filters
 
-When using [Replication Filter](/xap96/cluster-replication-filters.html), one can extract the `DataSyncChangeSet` from the `IReplicationFilterEntry` in the same way as extracting it from a `DataSyncOperation` by using the
+When using [Replication Filter](./cluster-replication-filters.html), one can extract the `DataSyncChangeSet` from the `IReplicationFilterEntry` in the same way as extracting it from a `DataSyncOperation` by using the
 `ChangeDataSyncOperation` class in the following way:
 
 {% highlight java %}
@@ -108,4 +108,4 @@ public class MyReplicationFilter implements IReplicationFilter {
 
 # Change and Space Filters
 
-[Space Filter](/xap96/space-filters.html) can intercept a `FilterOperationCodes.BEFORE_CHANGE` and `FilterOperationCodes.AFTER_CHANGE` events, and in that events the `DataSyncChangeSet` can be extracted from the ISpaceFilterEntry using the `ChangeDataSyncOperation.getChangeSet(IFilterEntry)` method.
+[Space Filter](./space-filters.html) can intercept a `FilterOperationCodes.BEFORE_CHANGE` and `FilterOperationCodes.AFTER_CHANGE` events, and in that events the `DataSyncChangeSet` can be extracted from the ISpaceFilterEntry using the `ChangeDataSyncOperation.getChangeSet(IFilterEntry)` method.

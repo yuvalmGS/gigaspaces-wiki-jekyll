@@ -24,5 +24,5 @@ space.change(idQuery, new ChangeSet().increment("count", 1));
 
 Upon any failure, the change operation will throw `ChangeException` which will contain full details regarding the failure.
 
-{% refer %}Refer to [Change API](/xap96/change-api.html) for full details regarding the change operation{% endrefer %}
+{% refer %}Refer to [Change API](./change-api.html) for full details regarding the change operation{% endrefer %}
 

@@ -11,7 +11,7 @@ page_id: 61867310
 
 {% section %}
 {% column width=30% %}
-The notify event container uses the space inherited support for notifications (continuous query) using a GigaSpaces unified event session API. If a notification occurs, the [data event listener](/xap96/data-event-listener.html) is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
+The notify event container uses the space inherited support for notifications (continuous query) using a GigaSpaces unified event session API. If a notification occurs, the [data event listener](./data-event-listener.html) is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
 {% endcolumn %}
 {% column width=70% %}
 ![notify_container_basic.jpg](/attachment_files/notify_container_basic.jpg)
@@ -140,7 +140,7 @@ notifyEventListenerContainer.destroy();
  `@EventDriven` , `@Polling` , `@Notify` can't be placed on interface classes. You should place these on the implementation class.
 {% endtip %}
 
-The above example registers with the space for write notifications using the provided template (a `Data` object with its processed flag set to `false`). If a notification occurs, the `SimpleListener` is invoked. Registration for notifications is performed on the configured [GigaSpace](/xap96/the-gigaspace-interface.html) bean. (In this case, if working in a clustered topology, the notification is performed directly on the cluster member.)
+The above example registers with the space for write notifications using the provided template (a `Data` object with its processed flag set to `false`). If a notification occurs, the `SimpleListener` is invoked. Registration for notifications is performed on the configured [GigaSpace](./the-gigaspace-interface.html) bean. (In this case, if working in a clustered topology, the notification is performed directly on the cluster member.)
 
 # Primary/Backup
 
@@ -151,7 +151,7 @@ By default, the notify event container registers for notifications only when the
 
 # Template Definition
 
-When performing receive operations, a template is defined, creating a virtualized subset of data in the space, matching it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SQLQuery](/xap96/sqlquery.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
+When performing receive operations, a template is defined, creating a virtualized subset of data in the space, matching it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SQLQuery](./sqlquery.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
 {% inittab os_simple_space|top %}
 {% tabcontent Annotation %}
@@ -219,7 +219,7 @@ public class SimpleListener {
 {% endinittab %}
 
 {% tip %}
-A polling container or notify container could have only one template. If you need multiple event handlers you will need to create another polling container or notify container or use the [Session Based Messaging API](/xap96/session-based-messaging-api.html#Registering Large Number of Listeners) that support multiple listeners with one Session. If you use multiple polling containers make sure the different templates does not overlap each other.
+A polling container or notify container could have only one template. If you need multiple event handlers you will need to create another polling container or notify container or use the [Session Based Messaging API](./session-based-messaging-api.html#Registering Large Number of Listeners) that support multiple listeners with one Session. If you use multiple polling containers make sure the different templates does not overlap each other.
 {% endtip %}
 
 # Multiple Values Template
@@ -280,7 +280,7 @@ To free the resources used by the notify container make sure you close it proper
 
 The notify container can be configured with transaction support, so the event action can be performed under a transaction. Exceptions thrown by the event listener cause the operations performed within the listener to be rolled back automatically.
 
-{% exclamation %} When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. In case this behavior is required, please consider using the [Polling Event Container](/xap96/polling-container.html).
+{% exclamation %} When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. In case this behavior is required, please consider using the [Polling Event Container](./polling-container.html).
 
 Transaction support can be configured as follows:
 
@@ -589,7 +589,7 @@ public class AsyncListener {
 
 # Batch Events
 
-OpenSpaces, through the [Session Based Messaging API](/xap96/session-based-messaging-api.html), allows batching of notifications. Batching causes the space to accumulate the notifications at the space side for the specified operation(s) with objects that match the template/SQL criteria. Once a certain amount of time has been elapsed or a certain amount of objects have been accumulated, the events are sent to the client.
+OpenSpaces, through the [Session Based Messaging API](./session-based-messaging-api.html), allows batching of notifications. Batching causes the space to accumulate the notifications at the space side for the specified operation(s) with objects that match the template/SQL criteria. Once a certain amount of time has been elapsed or a certain amount of objects have been accumulated, the events are sent to the client.
 
 Batching is very useful when working with a remote space, since it reduces the network roundtrip operations.  The downside of this approach is a potential delay when events are delivered to the client.
 
@@ -707,7 +707,7 @@ public class SimpleListener {
 
 By default the notify event container running on non-FIFO mode. This means the event listener will be called simultaneously by multiple threads in case there are concurrent notifications sent from the space. To have a sequential event listener calls, you should run the notify  event container in a FIFO mode.
 
-{% infosign %} For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [Space FIFO support](/xap96/fifo-support.html) section.
+{% infosign %} For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [Space FIFO support](./fifo-support.html) section.
 
 Here is an example of how FIFO events can be configured with the notify container:
 
@@ -787,7 +787,7 @@ Notify Containers under the hood use Notification Registration. When a remote cl
 
 To avoid this overhead, an optimization is required where notification registration is created with a limited lease and the client periodically renews the lease to keep it active. If client is shutdown or does not need this events anymore, the lease is not renewed thereby removing the registration.
 
-Lease Renewal Manager provides a systematic lease renewal and management framework and is used by Notify Container for managing the notification registration leases. Leases are managed in an automatic manner without any application intervention. More information regarding Lease Renewal Manager can be found [here](/xap96/leases---automatic-expiration.html#LeaseRenewalManager).
+Lease Renewal Manager provides a systematic lease renewal and management framework and is used by Notify Container for managing the notification registration leases. Leases are managed in an automatic manner without any application intervention. More information regarding Lease Renewal Manager can be found [here](./leases---automatic-expiration.html#LeaseRenewalManager).
 
 To allow a remote client using a notify container to continue and receive notifications in case the space cluster was completely shutdown and restarted, you should use the `LeaseListener` and re-create the notify container in case its lease renewal failed (i.e. `LeaseListener.notify()` been called). The notify container **must enable** the `autoRenew` property to instruct GigaSpaces to construct a `Lease Renewal Manager` and have the associated `LeaseListener` implementation to be invoked.
 
@@ -902,7 +902,7 @@ public class MyLeaseListener implements LeaseListener{
 {% endinittab %}
 
 {% tip %}
-To make sure the client application will manage to reconnect automatically to the space cluster once it was restarted you may want to change the default configuration. See the [Proxy Connectivity](/xap96/proxy-connectivity.html) for details.
+To make sure the client application will manage to reconnect automatically to the space cluster once it was restarted you may want to change the default configuration. See the [Proxy Connectivity](./proxy-connectivity.html) for details.
 {% endtip %}
 
 # Resending Notifications after a Space-Client Disconnection
@@ -999,7 +999,7 @@ public class SimpleListener {
 {% endinittab %}
 
 Durable notifications are based on the replication mechanism and as such have some different semantics regarding other notify container configuration parameters.
-For further details see [Durable Notifications](/xap96/durable-notifications.html).
+For further details see [Durable Notifications](./durable-notifications.html).
 
 # Take on Notify
 

@@ -10,8 +10,8 @@ page_id: 61867096
 
 GigaSpaces provides a default security implementation. The implementation uses a local file to store the users and roles. This file, needs to be shared or copied between the secured services. The default implementation has configurations for most of its defaults and some handy extension points (e.g. HTTP file-service).
 
-To provide other custom security implementations see the [Custom Security](/xap96/custom-security.html) section.
-One such custom security implementation is the [Spring Security Bridge](/xap96/spring-security-bridge.html).
+To provide other custom security implementations see the [Custom Security](./custom-security.html) section.
+One such custom security implementation is the [Spring Security Bridge](./spring-security-bridge.html).
 
 # Getting Started
 

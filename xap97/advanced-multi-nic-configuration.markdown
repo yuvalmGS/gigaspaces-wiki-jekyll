@@ -67,7 +67,7 @@ This is equivalent to `InteAddress.getLocalHost().getHostAddress()`.
 
 ## Configuring Lookup Service
 
-The lookup service should be configured to run against a specific Network IP Address (for more details, see [Jini Lookup Discovery Service Interface](/xap96/lookup-service-configuration.html)). The `NIC_ADDR` is used to control it.
+The lookup service should be configured to run against a specific Network IP Address (for more details, see [Jini Lookup Discovery Service Interface](./lookup-service-configuration.html)). The `NIC_ADDR` is used to control it.
 
 ## Configuring Server Hostname
 
@@ -305,7 +305,7 @@ NIC_ADDR=192.168.80.146; export NIC_ADDR
 
 {% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
-{% refer %}For details on viewing the exact configuration in which the system is currently running, refer to the [Container Maintenance](/xap96/space-container-maintenance---gigaspaces-browser.html#Runtime Configuration Report) section.{% endrefer %}
+{% refer %}For details on viewing the exact configuration in which the system is currently running, refer to the [Container Maintenance](./space-container-maintenance---gigaspaces-browser.html#Runtime Configuration Report) section.{% endrefer %}
 
 ## Logging with RMI_OPTIONS
 

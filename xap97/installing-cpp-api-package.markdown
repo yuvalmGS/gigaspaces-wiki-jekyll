@@ -17,7 +17,7 @@ The current supported platforms and compilers are:
 - Windows
     - 32/64bit -- VS 9.0/10.0 (Visual Studio 2008/2010)
 
-{% exclamation %} Prior to installation, see the **[GigaSpaces installation prerequisites](/xap96/installing-gigaspaces.html#Prior to Installation)**.
+{% exclamation %} Prior to installation, see the **[GigaSpaces installation prerequisites](./installing-gigaspaces.html#Prior to Installation)**.
 
 # Installation
 
@@ -117,6 +117,6 @@ Result files can be found in `<GigaSpaces Root>\cpp`:
 {% panel title= | borderStyle=solid %}
 {% lampon %} **What's next?**
 
-- [Write your first C++ Application](/xap96/cpp-api-hello-world-example.html)
-- Return to the [C++ homepage](/xap96/xap-cpp.html)
+- [Write your first C++ Application](./cpp-api-hello-world-example.html)
+- Return to the [C++ homepage](./xap-cpp.html)
 {% endpanel %}

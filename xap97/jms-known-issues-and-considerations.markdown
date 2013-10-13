@@ -13,7 +13,7 @@ page_id: 61867352
 Message recovery takes place in the following scenarios:
     - Transaction rollback.
     - The `Session.recover` method is invoked.
-    - In case of space failover (for more details, see the [JMS failover](/xap96/jms-failover.html) section).
+    - In case of space failover (for more details, see the [JMS failover](./jms-failover.html) section).
 
 - GS-2169 -- **Message Selectors** are currently not supported. Creating a `MessageConsumer` with a selector does not effect the message consumption. Note: Since the JMS message is also a space entry, you can use the space template matching and querying features.
 - GS-2170 -- **Message priority** is currently not supported. Currently, all message are have the same priority: `Message.DEFAULT_PRIORITY`. When setting the priority of a message, the priority value is set correctly in the message, but the JMS layer does not take it in consideration.

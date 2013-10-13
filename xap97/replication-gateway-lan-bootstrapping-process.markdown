@@ -7,7 +7,7 @@ page_id: 61867053
 {% summary %}This page is about bootstrapping a space from another space via gateway.{% endsummary %}
 
 {% info %}
-This page assume prior knowledge of multi-space replication, please refer to [Multi-Space Replication](/xap96/multi-space-replication-over-the-lan-or-vpn.html) before reading this page.
+This page assume prior knowledge of multi-space replication, please refer to [Multi-Space Replication](./multi-space-replication-over-the-lan-or-vpn.html) before reading this page.
 {% endinfo %}
 
 # Overview
@@ -53,7 +53,7 @@ The bootstrap is initiated on the gateway sink of the space that needs to be boo
 </os-gateway:sink>
 {% endhighlight %}
 
-After meting the condition specified in the previous, the bootstrap should be initiated using the [Admin API](/xap96/administration-and-monitoring-api.html).
+After meting the condition specified in the previous, the bootstrap should be initiated using the [Admin API](./administration-and-monitoring-api.html).
 Following is an example of how to bootstrap New-York from London:
 
 {% highlight java %}

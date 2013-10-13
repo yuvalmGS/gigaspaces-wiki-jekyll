@@ -27,15 +27,15 @@ The following procedure explains the general configuration process required to t
 
 {% endnote %}
 
-{% exclamation %} Make sure your network and machines running GigaSpaces are configured to have multicast enabled. See the [Multicast Configuration](/xap96/how-to-configure-multicast.html) section for details on how to enable multicast.
+{% exclamation %} Make sure your network and machines running GigaSpaces are configured to have multicast enabled. See the [Multicast Configuration](./how-to-configure-multicast.html) section for details on how to enable multicast.
 
 # Configuring GigaSpaces for Multiple NICs
 
-1. [Viewing the network interface information](/xap96/advanced-multi-nic-configuration.html#1) (optional)
-1. [Specifying a network card to bind the lookup service](/xap96/advanced-multi-nic-configuration.html#2)
-1. [Limiting use to a specific network interface (multicast only)](/xap96/advanced-multi-nic-configuration.html#3) (optional)
-1. [Using unicast to register with a lookup service](/xap96/advanced-multi-nic-configuration.html#4) (optional)
-1. [Testing your configuration](/xap96/advanced-multi-nic-configuration.html#5)
-1. [Troubleshooting your configuration](/xap96/advanced-multi-nic-configuration.html#6), if you experience problems
+1. [Viewing the network interface information](./advanced-multi-nic-configuration.html#1) (optional)
+1. [Specifying a network card to bind the lookup service](./advanced-multi-nic-configuration.html#2)
+1. [Limiting use to a specific network interface (multicast only)](./advanced-multi-nic-configuration.html#3) (optional)
+1. [Using unicast to register with a lookup service](./advanced-multi-nic-configuration.html#4) (optional)
+1. [Testing your configuration](./advanced-multi-nic-configuration.html#5)
+1. [Troubleshooting your configuration](./advanced-multi-nic-configuration.html#6), if you experience problems
 
-{% refer %}For more details, refer to the **[Advanced Multi-NIC Configuration](/xap96/advanced-multi-nic-configuration.html)** section.{% endrefer %}
+{% refer %}For more details, refer to the **[Advanced Multi-NIC Configuration](./advanced-multi-nic-configuration.html)** section.{% endrefer %}

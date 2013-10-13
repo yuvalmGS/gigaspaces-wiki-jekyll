@@ -491,7 +491,7 @@ In the above case, `SumTask` is a distributed task that wraps a simple `Task`. I
 
 `SumTask` uses internally the `SumReducer` which is just implements `AsyncResultsReducer`. The reducer, by itself, can be used with APIs that just use a reducer, for example, the `ExecutorBuilder` construction.
 
-See the [Aggregators](/xap96/aggregators.html) section for more details.
+See the [Aggregators](./aggregators.html) section for more details.
 
 # Transactions
 

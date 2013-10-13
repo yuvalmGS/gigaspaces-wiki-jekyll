@@ -13,15 +13,15 @@ The GigaSpaces JDBC interface allows database-driven applications to interact wi
 Applications can access the GigaSpaces Data Grid using the JDBC API; data written to the IMDG using the JDBC API can also be accessed using other APIs.
 
 {% note %}
-An alternative way of querying the space using SQL syntax is the [SQLQuery](/xap96/sqlquery.html) class. This class allows you to perform SQL queries directly against space objects, without adding O/R mapping complexity.
+An alternative way of querying the space using SQL syntax is the [SQLQuery](./sqlquery.html) class. This class allows you to perform SQL queries directly against space objects, without adding O/R mapping complexity.
 {% endnote %}
 
-JDBC support in GigaSpaces is centered around the Space-Based Architecture - its main motivation is to enable more sophisticated querying of the space, beyond the template matching provided by the [The GigaSpace Interface](/xap96/the-gigaspace-interface.html).
+JDBC support in GigaSpaces is centered around the Space-Based Architecture - its main motivation is to enable more sophisticated querying of the space, beyond the template matching provided by the [The GigaSpace Interface](./the-gigaspace-interface.html).
 
 GigaSpaces is not a full-fledged relational database and it does not support the full SQL92 standard (see [JDBC Supported Features](#Supported Features)). However, the existing SQL support is extremely useful for applications that need to execute queries on a space for real-time queries.
 
 {% tip %}
-You can use the [SQL Command Line](/xap96/space-sql---gigaspaces-cli.html) to query and fetch data from the IMDG. The SQL Command Line using the GigaSpaces JDBC Driver when accessing the IMDG.
+You can use the [SQL Command Line](./space-sql---gigaspaces-cli.html) to query and fetch data from the IMDG. The SQL Command Line using the GigaSpaces JDBC Driver when accessing the IMDG.
 {% endtip %}
 
 ## Using Existing SQL Code and Porting to External Systems
@@ -49,7 +49,7 @@ Connection con = DriverManager.getConnection("jdbc:gigaspaces:url:jini://*/*/myS
 You may use the GigaSpaces JDBC driver with remote or embedded space
 {% endtip %}
 
-{% refer %}For more details on the Space URL, refer to the [Space URL](/xap96/space-url.html) section.{% endrefer %}
+{% refer %}For more details on the Space URL, refer to the [Space URL](./space-url.html) section.{% endrefer %}
 
 Example:
 
@@ -143,7 +143,7 @@ public static Connection getInstance(IJSpace space, String username, String pass
 
 # Mixing Space API with the JDBC API
 
-The following example using the Space API [DistributedTask](/xap96/task-execution-over-the-space.html) with the JDBC API. With this example we use map/reduce approach to query the space using the JDBC API, but we send the JDBC query to be executed within the space. This approach scales very well once the space have multiple partitions avoiding the need to retrieve the actual space objects from the space to evaluate the query. Retrieving objects from the space involved network latency and serialization overhead.
+The following example using the Space API [DistributedTask](./task-execution-over-the-space.html) with the JDBC API. With this example we use map/reduce approach to query the space using the JDBC API, but we send the JDBC query to be executed within the space. This approach scales very well once the space have multiple partitions avoiding the need to retrieve the actual space objects from the space to evaluate the query. Retrieving objects from the space involved network latency and serialization overhead.
 
 With the example below we execute the following query:
 
@@ -255,7 +255,7 @@ The GigaSpaces JDBC Driver translates in runtime a Space object into a relationa
 - All Java class attributes are translated into their corresponding SQL types.
 - Class names are translated into table names.
 - Field names are translated into column names.
-- Indexed columns are translated into indexed fields. Make sure the `btree` index is turned on allowing fast processing of bigger than/less than queries. For more details, refer to the [Indexing](/xap96/indexing.html#Extended Indexing) section.
+- Indexed columns are translated into indexed fields. Make sure the `btree` index is turned on allowing fast processing of bigger than/less than queries. For more details, refer to the [Indexing](./indexing.html#Extended Indexing) section.
 
 The following information represents the SQL to Java mapping conducted at runtime when a table is created via the JDBC driver.
 
@@ -376,7 +376,7 @@ As a workaround, construct a JDBC query that includes a relevant `WHERE` part.
 
 In order to partition the data and rout operations to the correct partition you should specify a "routing column" for each table. The "routing column" is specified through one of three mechanisms:
 
-1. A POJO with a [@SpaceRouting](/xap96/pojo-metadata.html) field can be sent to the space via the `snapshot` call prior to calling the JDBC API.
+1. A POJO with a [@SpaceRouting](./pojo-metadata.html) field can be sent to the space via the `snapshot` call prior to calling the JDBC API.
 1. Create the table through JDBC; the first index as part of the CREATE TABLE statement will be the routing field.
 1. If there is no indexed column, the first column as part of the CREATE TABLE will be the routing field.
 
@@ -501,7 +501,7 @@ char timestamp long clob blob empty\_clob() empty\_blob() lob true false
 
 # Configuration
 
-The JDBC Driver should be configured using the following properties. These should be part of the [The Space Component](/xap96/the-space-component.html) configuration when deployed:
+The JDBC Driver should be configured using the following properties. These should be part of the [The Space Component](./the-space-component.html) configuration when deployed:
 
 {: .table .table-bordered}
 | Parameter | Description | Default Value |

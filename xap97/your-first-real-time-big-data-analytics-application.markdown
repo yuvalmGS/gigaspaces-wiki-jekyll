@@ -48,7 +48,7 @@ The first challenge is providing **unlimited scalability** - therefore, we are t
 
 The second challenge is providing **low latency** - we can't afford to use a distributed file system such as Hadoop HDFS, a relational database or a distributed disk-based structured data store such as NoSQL database. All of these use physical I/O that becomes a bottleneck when dealing with massive writes. Furthermore, we want the business logic collocated with the data on a single platform for faster processing, with minimal network hops and integration issues.
 
-To overcome the latency challenge, we use an in-memory system of record. GigaSpaces XAP is built just for that. Its core component is [in-memory data grid](/xap96/the-in-memory-data-grid.html) (IMDG, a.k.a. the Space) that partitions the data based on a specified attribute within the data object. The data grid uses a share nothing policy, and each primary node has consistent backup. In addition the grid keeps its SLA by self-healing crashed nodes, so it's completely consistent and highly-available.
+To overcome the latency challenge, we use an in-memory system of record. GigaSpaces XAP is built just for that. Its core component is [in-memory data grid](./the-in-memory-data-grid.html) (IMDG, a.k.a. the Space) that partitions the data based on a specified attribute within the data object. The data grid uses a share nothing policy, and each primary node has consistent backup. In addition the grid keeps its SLA by self-healing crashed nodes, so it's completely consistent and highly-available.
 
 The third challenge is the **efficient processing** of the data in a distributed system. To achieve this, we use the **Map** / **Reduce** algorithm for distributed computing on large data sets on clusters of computers. In the **Map** step, we normalize the data so we can create local counters. In the **Reduce** step, we aggregate the entire set of interim results into a single set of results.
 {% endcolumn %}
@@ -84,9 +84,9 @@ The processor's **Reduce** phase aggregates the local results into global word c
 {% column %}
 To implement our solution, we use Cassandra (or a local file) as the historical data tier and build a XAP application that processes and persists the data in real-time using the following modules:
 
-- The [`processor`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/processor) module is a XAP [processing unit](/xap96/the-processing-unit-structure-and-configuration.html) that contains the Space and performs the real-time workflow of processing the incoming tweets. The processing of data objects is performed using event containers.
+- The [`processor`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/processor) module is a XAP [processing unit](./the-processing-unit-structure-and-configuration.html) that contains the Space and performs the real-time workflow of processing the incoming tweets. The processing of data objects is performed using event containers.
 - The [`feeder`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/feeder) module is implemented as a processing unit thereby enabling the dynamic deployment of multiple instances of the feeder across multiple nodes, increasing the load it can manage, and thus the ability handle larger tweet streams. The processing unit contains the following feeder strategies:
-    - The [`TwitterHomeTimelineFeederTask`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/feeder/src/main/java/org/openspaces/bigdata/feeder/TwitterHomeTimelineFeederTask.java) class, which feeds in tweets from Twitter's public timeline using [Spring Social](http://www.springsource.org/spring-social), converting them to a canonical [Space Document](/xap96/document-api.html) representation, and writes them to the Space ,which in turn invokes the relevant event processors of the processor module.
+    - The [`TwitterHomeTimelineFeederTask`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/feeder/src/main/java/org/openspaces/bigdata/feeder/TwitterHomeTimelineFeederTask.java) class, which feeds in tweets from Twitter's public timeline using [Spring Social](http://www.springsource.org/spring-social), converting them to a canonical [Space Document](./document-api.html) representation, and writes them to the Space ,which in turn invokes the relevant event processors of the processor module.
     - The [`ListBasedFeederTask`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/feeder/src/main/java/org/openspaces/bigdata/feeder/ListBasedFeederTask.java) class is a simulation feeder for testing purposes, which simulates tweets locally, avoiding the need to connect to the Twitter API over the Internet.
 
 - Optionally, the [`common`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/common) module for including items that are shared between the feeder and the processor modules (e.g. common interfaces, shared data model, etc.).
@@ -101,7 +101,7 @@ To implement our solution, we use Cassandra (or a local file) as the historical 
 
 The following are step-by-step instructions building the application:
 
-1. [Download](http://www.gigaspaces.com/LatestProductVersion) and [install](/xap96/installing-gigaspaces.html) XAP
+1. [Download](http://www.gigaspaces.com/LatestProductVersion) and [install](./installing-gigaspaces.html) XAP
 Edit `<XapInstallationRoot>/gslicense.xml>` and place the license key file provided with the email sent to you after downloading GigaSpaces XAP as the `<licensekey>` value.
 
 2. Getting the Application
@@ -201,7 +201,7 @@ rt-feeder project run configuration:
 
 - In IntelliJ, create two run configurations, with [`org.openspaces.pu.container.integrated.IntegratedProcessingUnitContainer`](http://www.gigaspaces.com/docs/JavaDoc9.0/org/openspaces/pu/container/integrated/IntegratedProcessingUnitContainer.html) as the main class, and make sure that the feeder configuration uses the classpath of the `feeder` module, and that the processor configuration uses that of the `processor` module.
 
-For more information about the `IntegratedProcessingUnitContainer` class (runs the processing units within your IDE), see [Running and Debugging Within Your IDE](/xap96/running-and-debugging-within-your-ide.html).
+For more information about the `IntegratedProcessingUnitContainer` class (runs the processing units within your IDE), see [Running and Debugging Within Your IDE](./running-and-debugging-within-your-ide.html).
 
 {% tip %}
 Make sure you have updated **gslicense.xml** located under the GigaSpaces XAP root folder with the license key provided as part of the email sent to you after downloading GigaSpaces XAP.
@@ -250,7 +250,7 @@ Since the [Twitter API uses rate limiting](https://dev.twitter.com/docs/rate-lim
 
 The following are step-by-step instructions for running the application in XAP:
 
-1. [Download](http://www.gigaspaces.com/LatestProductVersion) and [install](/xap96/installing-gigaspaces.html) XAP.
+1. [Download](http://www.gigaspaces.com/LatestProductVersion) and [install](./installing-gigaspaces.html) XAP.
 1. Edit `<XapInstallationRoot>/gslicense.xml>` and place the license key file provided with the email sent to you after downloading GigaSpaces XAP as the `<licensekey>` value.
 1. Start a shell prompt in the `<XapInstallationRoot>/recipes/apps/streaming-bigdata` folder.
 1. Run
@@ -295,7 +295,7 @@ set GSC_JAVA_OPTIONS=-Dspring.profiles.active=list-feeder,file-archiver
 {% endtabcontent %}
 {% endinittab %}
 
-1. Start a [Grid Service Agent](/xap96/the-grid-service-agent.html) by running the `gs-agent.sh/bat` script. This will start two [GSCs](/xap96/the-grid-service-container.html) (GSCs are the container JVMs for your processing units) and a [GSM](/xap96/the-grid-service-manager.html).
+1. Start a [Grid Service Agent](./the-grid-service-agent.html) by running the `gs-agent.sh/bat` script. This will start two [GSCs](./the-grid-service-container.html) (GSCs are the container JVMs for your processing units) and a [GSM](./the-grid-service-manager.html).
 
 {% inittab d1|top %}
 {% tabcontent Unix %}
@@ -386,7 +386,7 @@ Once the application is running, you can use the XAP UI tools to view your appli
 - For the Rich Based UI run gs-ui.bat/sh
 
 {% info title=More Deployment Options %}
-To learn about additional options for deploying your XAP processing units, please see [Deploying onto the Service Grid](/xap96/deploying-onto-the-service-grid.html)
+To learn about additional options for deploying your XAP processing units, please see [Deploying onto the Service Grid](./deploying-onto-the-service-grid.html)
 {% endinfo %}
 
 # Viewing Most Popular Words on Twitter
@@ -410,7 +410,7 @@ You can re-execute the query just by clicking the ![rt-tw5.jpg](/attachment_file
 Once raw tweets are processed, they are moved from the Space to the historical data backend store. By default, this points to a **simple flat file archiver** storage implemented with the `FileArchiveOperationHandler`. The example application also includes a Cassandra driver `CassandraArchiveHandler`.
 
 {% tip %}
-For more advanced persistency implementation see the [Cassandra Space Persistency Solution](/xap96/cassandra-space-persistency.html).
+For more advanced persistency implementation see the [Cassandra Space Persistency Solution](./cassandra-space-persistency.html).
 {% endtip %}
 
 {% tip %}
@@ -591,7 +591,7 @@ This section describes the following components of the solution that implements 
 
 ### Getting the Tweets
 
-First, we need to get the tweets and store them in the Space (IMDG). In this example, we use [Spring Social](https://github.com/SpringSource/spring-social) to provide a Java interface to the Twitter API and get the tweets, and the [SpaceDocument](/xap96/document-api.html) API of XAP to store the tweets. Using a SpaceDocument allows for a more flexible data model, the `SpaceDocument` being like a Map. The partitioning used the default 'ID' attribute.
+First, we need to get the tweets and store them in the Space (IMDG). In this example, we use [Spring Social](https://github.com/SpringSource/spring-social) to provide a Java interface to the Twitter API and get the tweets, and the [SpaceDocument](./document-api.html) API of XAP to store the tweets. Using a SpaceDocument allows for a more flexible data model, the `SpaceDocument` being like a Map. The partitioning used the default 'ID' attribute.
 
 The following snippet shows the relevant `TwitterHomeTimelineFeederTask` sections.
 
@@ -651,7 +651,7 @@ public class TwitterHomeTimelineFeederTask implement Runnable {
 
 We have the raw data but we need to tokenize and filter it, and then update the local counters - these are the tasks performed by the **Map** phase of the **Map** / **Reduce** algorithm.
 
-To generate this real-time flow, XAP uses the [event driven architecture of the event container](/xap96/messaging-support.html). Specifically, we use a [Polling Container](/xap96/polling-container.html) to listen for events relating to the writing of raw tweets to the Space. These events are configured using the `SQLQuery` returned by the `unprocessedTweet` method marked as `@EventTemplate`. Then, we tokenize & filter the tweet using the `@SpaceDataEvent` to mark the event handling method. The result is an object of type `TokenizedTweet` written to the Space.
+To generate this real-time flow, XAP uses the [event driven architecture of the event container](./messaging-support.html). Specifically, we use a [Polling Container](./polling-container.html) to listen for events relating to the writing of raw tweets to the Space. These events are configured using the `SQLQuery` returned by the `unprocessedTweet` method marked as `@EventTemplate`. Then, we tokenize & filter the tweet using the `@SpaceDataEvent` to mark the event handling method. The result is an object of type `TokenizedTweet` written to the Space.
 
 The following snippet shows the relevant `TweetParser` sections.
 

@@ -9,25 +9,25 @@ page_id: 61867072
 
 # Overview
 
-The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [The Grid Service Manager](/xap96/the-grid-service-manager.html), [The Grid Service Container](/xap96/the-grid-service-container.html), and [The Lookup Service](/xap96/the-lookup-service.html).
+The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [The Grid Service Manager](./the-grid-service-manager.html), [The Grid Service Container](./the-grid-service-container.html), and [The Lookup Service](./the-lookup-service.html).
 
-Usually, a single GSA is run per machine (on a lookup group or lookup locator level, see more in  [The Lookup Service](/xap96/the-lookup-service.html)). The GSA allows to spawn a [Grid Service Manager](/xap96/the-grid-service-manager.html), [Grid Service Container](/xap96/the-grid-service-container.html), [Lookup Service](/xap96/the-lookup-service.html), and custom processes. Once spawned, the GSA assigns a unique id for it and manages its lifecycle. The GSA will restart the process if it exits, or if a specific console output has been encountered (for example, OutOfMemoryError).
+Usually, a single GSA is run per machine (on a lookup group or lookup locator level, see more in  [The Lookup Service](./the-lookup-service.html)). The GSA allows to spawn a [Grid Service Manager](./the-grid-service-manager.html), [Grid Service Container](./the-grid-service-container.html), [Lookup Service](./the-lookup-service.html), and custom processes. Once spawned, the GSA assigns a unique id for it and manages its lifecycle. The GSA will restart the process if it exits, or if a specific console output has been encountered (for example, OutOfMemoryError).
 
-The GSA exposes the ability to start, restart, and kill a process either using the [Administration and Monitoring API](/xap96/administration-and-monitoring-api.html) or the GigaSpaces UI.
+The GSA exposes the ability to start, restart, and kill a process either using the [Administration and Monitoring API](./administration-and-monitoring-api.html) or the GigaSpaces UI.
 
-{% lampon %} Although [The Grid Service Manager](/xap96/the-grid-service-manager.html), [The Grid Service Container](/xap96/the-grid-service-container.html), and [The Lookup Service](/xap96/the-lookup-service.html) can be started on their own using their respective scripts, it is preferable that they will be started using the GSA thus allowing to easily monitor and manage them.
+{% lampon %} Although [The Grid Service Manager](./the-grid-service-manager.html), [The Grid Service Container](./the-grid-service-container.html), and [The Lookup Service](./the-lookup-service.html) can be started on their own using their respective scripts, it is preferable that they will be started using the GSA thus allowing to easily monitor and manage them.
 
 # Process Management
 
 The GSA manages Operating System processes. There are two types of process management, local and global.
 
-Local processes simply start the process type (for example, a [Grid Service Container](/xap96/the-grid-service-container.html)) without taking into account any other process types running by different GSAs.
+Local processes simply start the process type (for example, a [Grid Service Container](./the-grid-service-container.html)) without taking into account any other process types running by different GSAs.
 
-Global processes take into account the number of process types ([Grid Service Manager](/xap96/the-grid-service-manager.html) for example) that are currently running by other GSAs (within the same lookup groups or lookup locators). It will automatically try and run at least X number of processes **across** all the different GSAs (with a maximum of 1 process type per GSA). If a GSA running a process type that is managed globally fails, another GSA will identify the failure and start it in order to maintain at least X number of global process types.
+Global processes take into account the number of process types ([Grid Service Manager](./the-grid-service-manager.html) for example) that are currently running by other GSAs (within the same lookup groups or lookup locators). It will automatically try and run at least X number of processes **across** all the different GSAs (with a maximum of 1 process type per GSA). If a GSA running a process type that is managed globally fails, another GSA will identify the failure and start it in order to maintain at least X number of global process types.
 
 # Starting the GSA
 
-In order to start the GSA, the `<GSHOME>/bin/gs-agent.(sh/bat)` can be used. The GSA, by default, will start 2 local [Grid Service Container](/xap96/the-grid-service-container.html)s, and manage 2 global [Grid Service Manager](/xap96/the-grid-service-manager.html)s and 2 global [Lookup Service](/xap96/the-lookup-service.html)s.
+In order to start the GSA, the `<GSHOME>/bin/gs-agent.(sh/bat)` can be used. The GSA, by default, will start 2 local [Grid Service Container](./the-grid-service-container.html)s, and manage 2 global [Grid Service Manager](./the-grid-service-manager.html)s and 2 global [Lookup Service](./the-lookup-service.html)s.
 
 # Configuring the GSA
 
@@ -69,7 +69,7 @@ call gs-agent.bat
 
 GSA parameters include controlling how many local process the GSA will spawn on startup (per process type), and the number of globally managed process the GSA will maintain (in cooperation with other GSAs) (per process type).
 
-By default, the GSA is started with 2 local [Grid Service Container](/xap96/the-grid-service-container.html)s, and manage 2 global [Grid Service Manager](/xap96/the-grid-service-manager.html) and 2 global [Lookup Service](/xap96/the-lookup-service.html). This is the equivalent of starting the GSA with the following parameters:
+By default, the GSA is started with 2 local [Grid Service Container](./the-grid-service-container.html)s, and manage 2 global [Grid Service Manager](./the-grid-service-manager.html) and 2 global [Lookup Service](./the-lookup-service.html). This is the equivalent of starting the GSA with the following parameters:
 
 {% highlight java %}
 gs-agent.(sh/bat) gsa.gsc 2 gsa.global.gsm 2 gsa.global.lus 2
@@ -96,11 +96,11 @@ The following are the process types that come out of the box:
 {: .table .table-bordered}
 |Processes Type|Description|XML config file name|Properties file name|
 |:-------------|:----------|:-------------------|:-------------------|
-|gsc|Defines a [Grid Service Container](/xap96/the-grid-service-container.html)|gsc.xml|gsc.properties|
-|gsm|Defines a [Grid Service Manager](/xap96/the-grid-service-manager.html)|gsm.xml|gsm.properties|
-|lus|Defines a [Lookup Service](/xap96/the-lookup-service.html)| lus.xml|lus.properties|
-|gsm\_lus|Defines a [Grid Service Manager](/xap96/the-grid-service-manager.html) and [Lookup Service](/xap96/the-lookup-service.html) within the same JVM|gsm\_lus.xml|gsm_lus.properties|
-|esm|Defines an Elastic Service Manager which is required for deploying [Elastic Processing Unit](/xap96/elastic-processing-unit.html)|esm.xml|esm.properties |
+|gsc|Defines a [Grid Service Container](./the-grid-service-container.html)|gsc.xml|gsc.properties|
+|gsm|Defines a [Grid Service Manager](./the-grid-service-manager.html)|gsm.xml|gsm.properties|
+|lus|Defines a [Lookup Service](./the-lookup-service.html)| lus.xml|lus.properties|
+|gsm\_lus|Defines a [Grid Service Manager](./the-grid-service-manager.html) and [Lookup Service](./the-lookup-service.html) within the same JVM|gsm\_lus.xml|gsm_lus.properties|
+|esm|Defines an Elastic Service Manager which is required for deploying [Elastic Processing Unit](./elastic-processing-unit.html)|esm.xml|esm.properties |
 
 Here is an example of the gsc xml configuration file:
 
@@ -134,7 +134,7 @@ The GSA can either spawn a script based process, or a pure JVM (with its argumen
 
 # Lookup Service Considerations
 
-When starting a [Lookup Service](/xap96/the-lookup-service.html) and other services in unicast mode (not multicast), it means that specific machines will be the ones that will run the [Lookup Service](/xap96/the-lookup-service.html). This means that on the machines running the LUS, the following command will be used (assuming other defaults are used for GSM and GSC):
+When starting a [Lookup Service](./the-lookup-service.html) and other services in unicast mode (not multicast), it means that specific machines will be the ones that will run the [Lookup Service](./the-lookup-service.html). This means that on the machines running the LUS, the following command will be used (assuming other defaults are used for GSM and GSC):
 
 {% highlight java %}
 gs-agent.(sh/bat) gsa.global.lus 0 gsa.lus 1

@@ -9,7 +9,7 @@ page_id: 61867145
 
 # Overview
 
-The GigaSpaces Data-Grid includes special interceptor that allow users to pre-load the Data-Grid with data before it is available for clients access. This interceptor called **Initial Load** and has a default implementation that is using the [Hibernate Space Persistency](/xap96/hibernate-space-persistency.html) implementation to load data from a database directly into the Data-Grid instances. 
+The GigaSpaces Data-Grid includes special interceptor that allow users to pre-load the Data-Grid with data before it is available for clients access. This interceptor called **Initial Load** and has a default implementation that is using the [Hibernate Space Persistency](./hibernate-space-persistency.html) implementation to load data from a database directly into the Data-Grid instances.
 
 To enable the initial load activity a `SpaceDataSource` should be specified.
 We distinguish between two modes of operation - if `SpaceSynchronizationEndpoint` is specified the mode is 'read-write', otherwise 'read-only'.
@@ -84,7 +84,7 @@ public class SpaceDataSourceInitialLoadExample extends DefaultHibernateSpaceData
 Additional level of customization can be done by loading only the relevant data into each partition.
 
 In this case you should use the `partition ID` and `total amount of partitions` parameters to form the correct database query. The relevant table column mapped to the routing field should have `numeric` type to allow simple calculation of the matching rows that need to be retrieved from the database and loaded into the partition. This means your database query needs to "slice" the correct data set from the database tables based on the `partition ID`.
-`Partition ID` retrieval is explained in the [Obtaining Cluster Information](/xap96/obtaining-cluster-information.html) page. For example:
+`Partition ID` retrieval is explained in the [Obtaining Cluster Information](./obtaining-cluster-information.html) page. For example:
 
 {% highlight java %}
 import org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSource;

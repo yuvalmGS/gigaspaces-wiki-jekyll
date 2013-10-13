@@ -13,7 +13,7 @@ Most of the OpenSpaces built-in components take into account the state of the sp
 
 Many times, custom beans or POJOs would like to operate directly on the cluster member. To do this, they need to take the space mode into account -- by not performing any actions against the cluster member when it is in backup mode, and by starting to perform all relevant actions when the space mode changes to primary.
 
-Using the custom space mode events described in the [Space](/xap96/the-space-component.html) section, the bean can register for such events (by implementing the Spring `ApplicationListener` interface), and perform relevant actions based on the space mode event.
+Using the custom space mode events described in the [Space](./the-space-component.html) section, the bean can register for such events (by implementing the Spring `ApplicationListener` interface), and perform relevant actions based on the space mode event.
 
 OpenSpaces provides a simpler solution, allowing you to load a Spring application context (based on a separate Spring XML configuration file) only when the Processing Unit or space is in primary mode, and unload it when the Processing Unit or space is in backup mode. If we take the following simple bean:
 

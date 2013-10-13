@@ -13,21 +13,21 @@ When running in direct persistency mode (i.e. Read-Write Through) the IMDG inter
 
 The above means you should be careful when using this persistency mode in case your application have the requirement to respond quickly (low latency) and scale in linear manner.
 
-{% refer %}See the [Asynchronous Persistency](/xap96/asynchronous-persistency-with-the-mirror.html) mode that allows you to delegate the IMDG operation to the data storage as a background activity without impacting the application performance.{% endrefer %}
+{% refer %}See the [Asynchronous Persistency](./asynchronous-persistency-with-the-mirror.html) mode that allows you to delegate the IMDG operation to the data storage as a background activity without impacting the application performance.{% endrefer %}
 
 When the application reading data from the IMDG there are two operational modes you should consider:
 
 - Having **All** Application Data within the IMDG - Enabled when running in `ALL_IN_CACHE` Cache policy mode. IMDG will not perform any lazy load in case matching object can't be found within the IMDG. This more provides the most deterministic performance.
 - Having a **subset** of the Application Data within the IMDG - Enabled when running in `LRU` Cache policy mode. IMDG will perform lazy load (i.e. Read Through) in case of matching object can't be found within the IMDG. Lazy load might impact the performance and the scalability of the application.
 
-{% refer %}See the [Memory Management Facilities](/xap96/memory-management-facilities.html) for details about the differences between `ALL_IN_CACHE` and the `LRU` cache policies.{% endrefer %}
+{% refer %}See the [Memory Management Facilities](./memory-management-facilities.html) for details about the differences between `ALL_IN_CACHE` and the `LRU` cache policies.{% endrefer %}
 
 The Cache policy mode impacts also the initialization of the IMDG instance and the way it is reading data from the data source to bootstrap itself.
 
 - With **`ALL_IN_CACHE`** Cache policy - Each IMDG instance iterating through the database and loading all the relevant data.
 - With **`LRU`** Cache policy - Each IMDG instance iterating through the database and loading only partial amount of data (based on the Initial-load , memory-usage and Cache Size settings).
 
-{% refer %}See the [Space Persistency Initial Load](/xap96/space-persistency-initial-load.html) for details how you can change the default behavior of the IMDG bootstrapping process once started.{% endrefer %}
+{% refer %}See the [Space Persistency Initial Load](./space-persistency-initial-load.html) for details how you can change the default behavior of the IMDG bootstrapping process once started.{% endrefer %}
 
 Direct persistency mode supports the following database topologies:
 
@@ -101,7 +101,7 @@ A Data-Grid running in Direct persistency mode using distributed databases topol
 </os-core:space>
 {% endhighlight %}
 
-{% refer %}See the [Space Persistency](/xap96/space-persistency.html) section for full details about the properties you may configure.{% endrefer %}
+{% refer %}See the [Space Persistency](./space-persistency.html) section for full details about the properties you may configure.{% endrefer %}
 
 # Supported Options
 

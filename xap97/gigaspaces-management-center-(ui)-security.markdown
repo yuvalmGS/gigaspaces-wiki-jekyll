@@ -12,7 +12,7 @@ GigaSpaces Management Center (UI) allows to manage the Grid services and Process
 
 Administrators can use the UI to manage users and roles, and allow them to Login and operate based on their granted privileges.
 
-{% refer %}This section assumes familiarity with the [Security Basics](/xap96/security-basics.html) section.{% endrefer %}
+{% refer %}This section assumes familiarity with the [Security Basics](./security-basics.html) section.{% endrefer %}
 
 # Managing Users and Roles
 
@@ -154,7 +154,7 @@ To deploy a secured data-grid, select the **`Secured Space`** checkbox. Supplyin
 
 ### Supplying custom properties
 
-{% refer %}[Security Configurations](/xap96/security-configurations.html){% endrefer %}
+{% refer %}[Security Configurations](./security-configurations.html){% endrefer %}
 Security configuration properties can be supplied, during deployment of a Space, as custom properties; Either from a file or added through the dialog.
 The custom properties can hold both space configurations and security configurations.
 
@@ -170,7 +170,7 @@ _For example, the `data-processor` has a polling container - when deployed, the 
 
 ### Supplying bean level properties
 
-{% refer %}[Security Configurations](/xap96/security-configurations.html){% endrefer %}
+{% refer %}[Security Configurations](./security-configurations.html){% endrefer %}
 Security configuration properties can be supplied, during deployment of a ProcessingUnit, as context bean level properties; Either from a file or added through the dialog.
 
 ![bean-level-properties.png](/attachment_files/bean-level-properties.png)

@@ -27,7 +27,7 @@ Setting cascading globally can also be done in orm.xml:
 
 {% endtip %}
 
-Further information can be found on the [Modeling your data](/xap96/modeling-your-data.html) page.
+Further information can be found on the [Modeling your data](./modeling-your-data.html) page.
 
 # Embedded
 

@@ -412,7 +412,7 @@ API page for [LeaseRenewalManager](http://www.gigaspaces.com/docs/JiniApi/net/ji
 
 # Lease Expiration Notifications
 
-Getting events once the space object lease expired can be done using the [Notify Container](/xap96/notify-container.html). See example below:
+Getting events once the space object lease expired can be done using the [Notify Container](./notify-container.html). See example below:
 
 {% highlight java %}
 SimpleListener myListenr = new SimpleListener();
@@ -442,7 +442,7 @@ Notifications for expired space objects are delivered both from the primary and 
 
 # Space Object Lease with a Persistent Space
 
-When Objects are written to a Persistent Space (backed by a permanent store using ExternalDataSource), objects are written to the permanent store and removed from the space once lease expires. To avoid reloading the expired data into space objects should use @SpaceLeaseExpiration annotation. More information about how @SpaceLeaseExpiration works is [here](/xap96/pojo-metadata.html#SpaceLeaseExpiration).
+When Objects are written to a Persistent Space (backed by a permanent store using ExternalDataSource), objects are written to the permanent store and removed from the space once lease expires. To avoid reloading the expired data into space objects should use @SpaceLeaseExpiration annotation. More information about how @SpaceLeaseExpiration works is [here](./pojo-metadata.html#SpaceLeaseExpiration).
 
 # Lease Manager
 

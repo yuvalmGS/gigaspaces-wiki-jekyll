@@ -11,7 +11,7 @@ page_id: 61867331
 
 This section covers the main APIs of GigaSpaces XAP. It explains how to:
 
-- Instantiate a data grid (a Space) programmatically, via Spring or by [deploying onto the service grid](/xap96/deploying-onto-the-service-grid.html).
+- Instantiate a data grid (a Space) programmatically, via Spring or by [deploying onto the service grid](./deploying-onto-the-service-grid.html).
 - Connect to the Space to gain access to it using the core GigaSpaces API, the Map API, or other APIs.
 - Read data from the Space and write data to it, using the core GigaSpaces API.
 
@@ -24,7 +24,7 @@ To compile and run code that interacts with the Space from within the IDE, you s
 - commons-logging.jar
 - Spring framework core jars
 
-If you run your Space client as a [Processing Unit](/xap96/the-processing-unit-structure-and-configuration.html) within the GigaSpaces [runtime environment](/xap96/the-runtime-environment.html), GigaSpaces classes and interfaces are part of the JVM's classpath by default. If you run in standalone mode (from within your IDE or non-GigaSpaces JVM), you should include the above thirteen JARs in your classpath.
+If you run your Space client as a [Processing Unit](./the-processing-unit-structure-and-configuration.html) within the GigaSpaces [runtime environment](./the-runtime-environment.html), GigaSpaces classes and interfaces are part of the JVM's classpath by default. If you run in standalone mode (from within your IDE or non-GigaSpaces JVM), you should include the above thirteen JARs in your classpath.
 
 {% warning %}
 If you're running Java 6, you can use a shorthand to include directories of jars: `java -classpath /installation/lib/required/*.jar mypackage.myClass`, for example.
@@ -32,7 +32,7 @@ If you're running Java 6, you can use a shorthand to include directories of jars
 
 # Space Cluster Schemas
 
-A Space is identified by its name, and is comprised of one or more Space instances, which form the Space cluster. The Space instances interact with one another, based on the [Space topology](/xap96/space-topologies.html) defined for the Space. The topology is defined using a cluster schema, and the following schemas are provided out-of-the-box:
+A Space is identified by its name, and is comprised of one or more Space instances, which form the Space cluster. The Space instances interact with one another, based on the [Space topology](./space-topologies.html) defined for the Space. The topology is defined using a cluster schema, and the following schemas are provided out-of-the-box:
 
 - `sync_replicated` - defines a replicated cluster with synchronous replication between Space instances.
 
@@ -61,10 +61,10 @@ A partitioned cluster with one primary and one backup for each partition:
 {% endindent %}
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](/xap96/elastic-processing-unit.html) section.
+For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
 {% endtip %}
 
-The Space cluster is typically accessed from a remote JVM. Alternatively, applications that are collocated on the same JVM with a Space instance can access that instance locally without being exposed to the other instances (this is useful for implementing [SBA applications](/xap96/a-typical-sba-application.html)).
+The Space cluster is typically accessed from a remote JVM. Alternatively, applications that are collocated on the same JVM with a Space instance can access that instance locally without being exposed to the other instances (this is useful for implementing [SBA applications](./a-typical-sba-application.html)).
 
 # Instantiating a Space
 
@@ -72,15 +72,15 @@ The Space can be instantiated in a number of ways:
 
 {% toczone minLevel=2|maxLevel=3|type=list|separator=pipe|location=top %}
 
-With the first approach, you deploy a Space onto the GigaSpaces Service Grid infrastructure (using the management GUI, the [CLI](/xap96/deploy---gigaspaces-cli.html) or the [administration and monitoring API](/xap96/administration-and-monitoring-api.html)).
-With the second approach, you create a processing unit that contains an embedded Space, and deploy it onto the GigaSpaces Service Grid infrastructure (using the management GUI, the [CLI](/xap96/deploy---gigaspaces-cli.html) or the [administration and monitoring API](/xap96/administration-and-monitoring-api.html)).
+With the first approach, you deploy a Space onto the GigaSpaces Service Grid infrastructure (using the management GUI, the [CLI](./deploy---gigaspaces-cli.html) or the [administration and monitoring API](./administration-and-monitoring-api.html)).
+With the second approach, you create a processing unit that contains an embedded Space, and deploy it onto the GigaSpaces Service Grid infrastructure (using the management GUI, the [CLI](./deploy---gigaspaces-cli.html) or the [administration and monitoring API](./administration-and-monitoring-api.html)).
 
 The last two ways of instantiating a space are from within your own application, using Spring or from plain Java code. In both cases, you have to manually start each Space instance.
 
 ## Deploying a Space onto the Service Grid Infrastructure
 
-The service grid infrastructure is composed of one or more [GigaSpaces Containers](/xap96/the-grid-service-container.html) (GSCs) and at least one [GigaSpaces Manager](/xap96/the-grid-service-manager.html) (GSM). When deploying onto the service grid, the deployment tool you use connects to the GSM and instructs it to provision Space instances to the running GSCs, based on the deployment details (Space topology, number of instances, etc.).
-After starting the appropriate amount of GSCs and GSMs in your cluster (note that as of version 7.0 you can use [The Grid Service Agent](/xap96/the-grid-service-agent.html) for this), there are a number of tools that can be used to deploy a Space onto the service grid:
+The service grid infrastructure is composed of one or more [GigaSpaces Containers](./the-grid-service-container.html) (GSCs) and at least one [GigaSpaces Manager](./the-grid-service-manager.html) (GSM). When deploying onto the service grid, the deployment tool you use connects to the GSM and instructs it to provision Space instances to the running GSCs, based on the deployment details (Space topology, number of instances, etc.).
+After starting the appropriate amount of GSCs and GSMs in your cluster (note that as of version 7.0 you can use [The Grid Service Agent](./the-grid-service-agent.html) for this), there are a number of tools that can be used to deploy a Space onto the service grid:
 
 - [Using the Management UI](#app)
 - [Using the CLI](#cli)
@@ -160,7 +160,7 @@ Partitioned cluster with 2 nodes and a backup for each node:
 gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,1 mySpace
 {% endhighlight %}
 
-To see the full list of options available with this command, refer to [this page](/xap96/deploy-space-gigaspaces-cli.html).
+To see the full list of options available with this command, refer to [this page](./deploy-space-gigaspaces-cli.html).
 
 {% anchor api %}
 
@@ -175,13 +175,13 @@ Space Space = processingUnit.waitForSpace();
 Space.waitFor(4);
 {% endhighlight %}
 
-Refer to the [admin API documentation](/xap96/administration-and-monitoring-api.html) for more details.
+Refer to the [admin API documentation](./administration-and-monitoring-api.html) for more details.
 
 {% anchor elstic %}
 
 ## Deploying a Space Using the Elastic PU API
 
-The [Elastic PU](/xap96/elastic-processing-unit.html) allows you to deploy a space that elastically scale to increase its capacity dynamically.
+The [Elastic PU](./elastic-processing-unit.html) allows you to deploy a space that elastically scale to increase its capacity dynamically.
 
 {% highlight java %}
 // Deploy the Elastic Space
@@ -203,29 +203,29 @@ You can use the [GigaSpaces Universal Deployer](http://wiki.gigaspaces.com/wiki/
 
 ## Creating and Deploying a Processing Unit onto the Service Grid Infrastructure
 
-By using [processing units](/xap96/the-processing-unit-structure-and-configuration.html), you can deploy full-blown applications onto the service grid, and leverage on the [Space's messaging](Messaging and Events) and code execution capabilities, such as [remoting](/xap96/space-based-remoting.html) and [task execution](/xap96/task-execution-over-the-space.html). This allows you to execute the business logic close to the Space instance for the best possible performance.
+By using [processing units](./the-processing-unit-structure-and-configuration.html), you can deploy full-blown applications onto the service grid, and leverage on the [Space's messaging](Messaging and Events) and code execution capabilities, such as [remoting](./space-based-remoting.html) and [task execution](./task-execution-over-the-space.html). This allows you to execute the business logic close to the Space instance for the best possible performance.
 
-A processing unit can define an embedded Space in the processing unit's `[pu.xml](/xap96/configuring-processing-unit-elements.html)` file. The `pu.xml` file is, in effect a [Spring](http://www.springframework.org) XML configuration file, and you simply define the Space using GigaSpaces namespace extensions, or using plain Spring format. Here is an example:
+A processing unit can define an embedded Space in the processing unit's `[pu.xml](./configuring-processing-unit-elements.html)` file. The `pu.xml` file is, in effect a [Spring](http://www.springframework.org) XML configuration file, and you simply define the Space using GigaSpaces namespace extensions, or using plain Spring format. Here is an example:
 
 {% highlight xml %}
 <os-core:space id="space" url="/./mySpace"/>
 {% endhighlight %}
 
 This defines an embedded Space within the processing unit. The fact that the Space is embedded is determined by the `url` property. As you can see below, a URL that starts with the `jini://` prefix, indicates that a connection to a remote Space is created, not an embedded Space.
-Note that the cluster schema and number of instances are defined inside the processing unit's [SLA definitions](/xap96/configuring-the-processing-unit-sla.html) (typically within the `sla.xml` file), to allow for seamless transition between your local development environment and the actual runtime environment. Here is an example of an SLA definition within the `sla.xml` file:
+Note that the cluster schema and number of instances are defined inside the processing unit's [SLA definitions](./configuring-the-processing-unit-sla.html) (typically within the `sla.xml` file), to allow for seamless transition between your local development environment and the actual runtime environment. Here is an example of an SLA definition within the `sla.xml` file:
 
 {% highlight xml %}
 <os-sla:sla cluster-schema="partitioned-sync2backup" number-of-instances="2" number-of-backups="1"/>
 {% endhighlight %}
 
-Refer to [this page](/xap96/the-space-component.html) for more details on how to configure the Space component, and to [this page](/xap96/configuring-the-processing-unit-sla.html) for more details about the SLA definitions.
+Refer to [this page](./the-space-component.html) for more details on how to configure the Space component, and to [this page](./configuring-the-processing-unit-sla.html) for more details about the SLA definitions.
 Once packaged, the processing unit can be deployed onto the service grid using one of the deployment tools (UI, CLI, admin API).
-Refer to [this page](/xap96/deploying-onto-the-service-grid.html) for more details on how to deploy your processing unit onto the service grid.
+Refer to [this page](./deploying-onto-the-service-grid.html) for more details on how to deploy your processing unit onto the service grid.
 
 ## Creating the Space via Spring
 
 If you would like to create a Space within your own Spring application, and do not wish to deploy it as a processing unit onto the GigaSpaces service grid, you can create an embedded Space instance within the application's JVM much the same way you would do in a regular processing unit configuration. The main difference with this approach is that when deploying on to the service grid, the GSM automatically starts the right amount of Space instances for you, and assigns the instance ID to each of the instances.
-When creating the Space instance in your own application, you have to provide the instance ID on your own, as described in the [Space URL](/xap96/space-url.html) section. Therefore this option is not recommended for large Space clusters.
+When creating the Space instance in your own application, you have to provide the instance ID on your own, as described in the [Space URL](./space-url.html) section. Therefore this option is not recommended for large Space clusters.
 
 {% highlight xml %}
 <os-core:space id="space" url="/./mySpace?total_members=2&id=1"/>
@@ -240,14 +240,14 @@ ClusterInfo clusterInfo = new ClusterInfo("sync-replicated", 1, null, 10, null);
 IJSpace space = new UrlSpaceConfigurer("/./mySpace").clusterInfo(clusterInfo).space();
 {% endhighlight %}
 
-Refer to [this page](/xap96/the-space-component.html) for more details on how to configure the Space component programmatically (click the **Code** tabs in all of the examples).
+Refer to [this page](./the-space-component.html) for more details on how to configure the Space component programmatically (click the **Code** tabs in all of the examples).
 
 {% endtoczone %}
 
 # Accessing the Space
 
 The handle to the Space is represented by the low level `IJSpace` interface. When creating the Space in one of the above ways (programmatically, via Spring or within a processing unit), you get a handle to the local Space instance within your JVM.
-If you are connecting to the Space from a remote JVM, you can use all of the above methods, with the exception that [the Space URL](/xap96/space-url.html) you should use is a remote URL (using the `jini://` discovery protocol), and you don't have to specify the clustering topology or the instance ID (since your code in that case does not create the Space, it simply connects to an already running Space).
+If you are connecting to the Space from a remote JVM, you can use all of the above methods, with the exception that [the Space URL](./space-url.html) you should use is a remote URL (using the `jini://` discovery protocol), and you don't have to specify the clustering topology or the instance ID (since your code in that case does not create the Space, it simply connects to an already running Space).
 Here is an example of how you would do this programmatically, or via Spring configuration (from within a processing unit or a plain Spring application):
 
 {% inittab os_simple_Space|top %}
@@ -279,10 +279,10 @@ IJSpace space = new UrlSpaceConfigurer("jini://*/*/mySpace").space();
 {% endtabcontent %}
 {% endinittab %}
 
-Although you can access the Space directly via the `IJSpace` interface (which was the mainstream approach until version 6.0), it is much more recommended to access the Space via one of the higher level APIs, namely the `org.openSpaces.core.GigaSpace` interface, the [Map API](/xap96/map-api.html), or the [JDBC API](/xap96/jdbc-driver.html).
+Although you can access the Space directly via the `IJSpace` interface (which was the mainstream approach until version 6.0), it is much more recommended to access the Space via one of the higher level APIs, namely the `org.openSpaces.core.GigaSpace` interface, the [Map API](./map-api.html), or the [JDBC API](./jdbc-driver.html).
 All of these APIs are built on top of the lower level `IJSpace` interface. With the `GigaSpace` and `GigaMap` interfaces, you simply create an `IJSpace` instance as described above (embedded or remote) and then wrap it with one of the higher level constructs, namely `GigaSpace`, `GigaMap` or JDBC API (all of this can be done either programmatically or via Spring). With the JDBC API, you use the GigaSpaces JDBC driver directly.
 
-The most recommended API is the `GigaSpaces` interface. It is the closest to the older `IJSpace` interface, but is different since it supports Java 5 generics, [declarative Spring transactions](/xap96/transaction-management.html) and [task execution over the Space](/xap96/task-execution-over-the-space.html).
+The most recommended API is the `GigaSpaces` interface. It is the closest to the older `IJSpace` interface, but is different since it supports Java 5 generics, [declarative Spring transactions](./transaction-management.html) and [task execution over the Space](./task-execution-over-the-space.html).
 Historically, both the `GigaSpace` and `IJSpace` interfaces are based on the [JavaSpaces specification](http://www.jini.org/wiki/JavaSpaces_Specification) and the [tuple Space](http://en.wikipedia.org/wiki/Tuple_Space) model.
 
 They support 4 basic "verbs" of this model, namely read, write, take and notify (see [below](#verbs) for more details).
@@ -292,7 +292,7 @@ The `org.openSpaces.core.GigaSpace` interface differs from the classic JavaSpace
 - It supports Java 5 Generics
 - It supports batch operations
 - It supports asynchronous operations
-- It supports [task execution over the Space](/xap96/task-execution-over-the-space.html)
+- It supports [task execution over the Space](./task-execution-over-the-space.html)
 - It is Spring-enabled, which means it automatically joins Spring-managed transactions (declarative or programmatic) and uses the Spring `DataAccessException` as a base class for all the exceptions that are thrown when something goes wrong.
 - It does not implement the `net.jini.Space.JavaSpace` interface, and therefore does not enforce any of its restrictions.
 
@@ -303,10 +303,10 @@ The rest of this page describes the `GigaSpace` interface, and how to perform ba
 {% toczone minLevel=2|maxLevel=3|type=list|separator=pipe|location=top %}
 
 {% tip %}
-If you are interested in the Map API (HashTable/JCache API), refer to the [Map API](/xap96/map-api.html) section.
+If you are interested in the Map API (HashTable/JCache API), refer to the [Map API](./map-api.html) section.
 {% endtip %}
 
-For details about the JDBC API, refer to [this](/xap96/jdbc-driver.html) page.
+For details about the JDBC API, refer to [this](./jdbc-driver.html) page.
 However, it is recommended that you familiarize yourself with the `GigaSpace` interface before moving on to the other APIs.
 
 {% anchor verbs %}
@@ -325,15 +325,15 @@ At the API level, the `GigaSpace` interface contains a number of options to read
 
 - **Write**: Allows you to write instances to the Space, or update existing instances in it. When you write an instance to the Space, you can specify a _lease_ for that instance. The lease determines how long the object will live in the Space. Once the lease expires, the object is automatically cleared from the Space.
 
-- **Take**: The take operation is similar to the read operation, but instead of just returning the read data to the client, it actually removes it from the Space. The take operation also supports a timeout argument (also referred to as a _blocking take_). A blocking take is used as the foundation for point-to-point messaging capabilities of the Space (for more details refer to [this page](/xap96/polling-container.html)).
+- **Take**: The take operation is similar to the read operation, but instead of just returning the read data to the client, it actually removes it from the Space. The take operation also supports a timeout argument (also referred to as a _blocking take_). A blocking take is used as the foundation for point-to-point messaging capabilities of the Space (for more details refer to [this page](./polling-container.html)).
 As with the read operation, the `GigaSpace` interface also supports asynchronous, ID-based, and batch take operations.
 
 - **Clear**: Removes the matched object(s) from the Space, but does not return them to the client like the take operation. Use this operation when you would like to delete certain objects from the Space, but your application does not need to access the removed objects. In general, the clear operation is a bit faster than take, since it does not return anything to the client.
 
-- **Change**: The Change operation allows you to change a specific content of an existing object(s) in the space. Unlike the write operation that may update an existing object, the change operation does not require reading the object and later sending its updated copy with the operation back to the space. The Change operation allow you to [manipulate numerical fields](/xap96/counters.html) directly (increment , decrements) directly on the space without reading these back to the client and later writing these back.
+- **Change**: The Change operation allows you to change a specific content of an existing object(s) in the space. Unlike the write operation that may update an existing object, the change operation does not require reading the object and later sending its updated copy with the operation back to the space. The Change operation allow you to [manipulate numerical fields](./counters.html) directly (increment , decrements) directly on the space without reading these back to the client and later writing these back.
 
 {% info title=Using the Space as a Messaging Bus %}
-The Space can also be used to deliver events (messages) to your application. This is based on its ability to support blocking operations, and the Space's built-in notification API. This section only deals with the data access aspects of the Space. Refer to [this section](/xap96/messaging-support.html) for details about the Space's messaging capabilities.
+The Space can also be used to deliver events (messages) to your application. This is based on its ability to support blocking operations, and the Space's built-in notification API. This section only deals with the data access aspects of the Space. Refer to [this section](./messaging-support.html) for details about the Space's messaging capabilities.
 {% endinfo %}
 
 ## Creating a `GigaSpace` Instance
@@ -390,7 +390,7 @@ There are two types of resources associated with space instances and space clien
 1. **Thread and memory resources**: If your space client or embedded space are running within a Spring-enabled environment (e.g. the GigaSpaces service grid or a standalone Spring application), and are configured in a Spring application context, these resources will be cleaned up automatically when the Spring application context is destroyed.
 However, if you start the space client or space instance programatically, you must call the `UrlSpaceConfigurer#destroy` method when your application no longer uses the space instance / space client.
 1. **Communication resources**: All communication related resources in GigaSpaces are are shared between all the GigaSpaces components
-at the Java classloader level. If you're using the [GigasSpaces service grid](/xap96/the-runtime-environment.html) to run your GigaSpaces application you do not need to handle communication resources cleanup explicitly. But if your application runs on a standalone environment or another hosted environment (e.g. a JEE application server) you will need to explicitly clean up those resources.
+at the Java classloader level. If you're using the [GigasSpaces service grid](./the-runtime-environment.html) to run your GigaSpaces application you do not need to handle communication resources cleanup explicitly. But if your application runs on a standalone environment or another hosted environment (e.g. a JEE application server) you will need to explicitly clean up those resources.
 You should make sure to shutdown these resources explicitly when your application no longer uses the GigaSpaces components (e.g. when it's undeployed from the application server). This is done by calling the static method [`LRMIManager#shutdown`](http://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/lrmi/LRMIManager.html).
 Note that if the JVM process is shut down anyway, you do not need to do explicitly shut down the communication resources.
 {% endnote %}
@@ -492,11 +492,11 @@ Person[] multipleResults2 = gigaSpace.takeMultiple(query, 50);
 
 ## Changing an Object in the Space
 
-{% include /xap96/change-api-code-snippet.markdown %}
+{% include ./change-api-code-snippet.markdown %}
 
 ## Ordering of Results
 
-The Space matches the stored object with the template to return a result. Matched objects are stored in the Space and returned from it in no particular order. However you can use [FIFO ordering](/xap96/fifo-support.html) or the `ORDER BY` statement to control the ordering.
+The Space matches the stored object with the template to return a result. Matched objects are stored in the Space and returned from it in no particular order. However you can use [FIFO ordering](./fifo-support.html) or the `ORDER BY` statement to control the ordering.
 
 {% endtoczone %}
 

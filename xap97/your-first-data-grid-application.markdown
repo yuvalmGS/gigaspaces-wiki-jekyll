@@ -5,16 +5,16 @@ page_id: 61867330
 ---
 
 {% compositionsetup %}
-{% summary page %}This page explains how to start and use a XAP [Data Grid](/xap96/the-in-memory-data-grid.html) from within another Java process, catering to quick and self-sufficient embedding of XAP within another, external application.{% endsummary %}
+{% summary page %}This page explains how to start and use a XAP [Data Grid](./the-in-memory-data-grid.html) from within another Java process, catering to quick and self-sufficient embedding of XAP within another, external application.{% endsummary %}
 
 GigaSpaces XAP can be used as a scalable application platforom on which you can host your Java application, similar to JEE and web containers. However, GigaSpaces XAP's in memory data grid can also be embedded within another Java application which is not hosted within the XAP platform. This section describes the steps required to start and access the XAP data grid from within external Java processes. 
 
 # General Description 
 
-The XAP data grid requires a number of components to be deployed and started successfully, such as the [lookup service](/xap96/the-lookup-service.html), the [grid service container](/xap96/the-grid-service-container.html) and the [grid service manager](/xap96/the-grid-service-manager.html). The simplest way to start all of these components is to fire up a [grid service agent](/xap96/the-grid-service-agent.html) on every machine you wish to run a data grid node on. 
+The XAP data grid requires a number of components to be deployed and started successfully, such as the [lookup service](./the-lookup-service.html), the [grid service container](./the-grid-service-container.html) and the [grid service manager](./the-grid-service-manager.html). The simplest way to start all of these components is to fire up a [grid service agent](./the-grid-service-agent.html) on every machine you wish to run a data grid node on.
 The agent is responsible for bootstrapping the GigaSpaces cluster environment implicitly, and starting all of the required components. All agents use a peer to peer communication between one another to ensure a successful cluster wide startup of all infrastructure components. 
 
-Once all agents have started, you can issue a few simple API calls from within your application code to bootstrap the data grid and interact with it, by using the [GigaSpaces Elastic Middleware](/xap96/elastic-processing-unit.html) capabilties.
+Once all agents have started, you can issue a few simple API calls from within your application code to bootstrap the data grid and interact with it, by using the [GigaSpaces Elastic Middleware](./elastic-processing-unit.html) capabilties.
 These API calls will provision a data grid on the GigaSpaces cluster based on the capacity and other SLA requirements specified in the API calls. 
 
 The following example shows how to run the GigaSpaces Data Grid within your application.
@@ -31,7 +31,7 @@ In a UNIX environment, you might install it into `/usr/local/`, which would resu
 
 ## Running the GigaSpaces Agent
 
-A GigaSpaces node is best facilitated through the use of a service called the "[Grid Service Agent](/xap96/the-grid-service-agent.html)", or GSA.
+A GigaSpaces node is best facilitated through the use of a service called the "[Grid Service Agent](./the-grid-service-agent.html)", or GSA.
 The simplest way to start a node with GigaSpaces is to invoke the GSA from the GigaSpaces bin directory, preferably in its own command shell (although you can easily start a background process with `start` or `nohup` if desired):
 
 {% highlight java %}
@@ -69,7 +69,7 @@ pu.waitFor(4, 30, TimeUnit.SECONDS);
 GigaSpace gigaSpace = pu.waitForSpace().getGigaSpace(); 
 {% endhighlight %}
 
-You can also use a simple helper utility (DataGridConnectionUtility) that combines the two. It first look for a DataGrid instance and if one doesn't exist it will create a new one; it's trivial to alter the `getSpace()` method to increase the number of nodes or even scale dynamically as required. Read [this](/xap96/elastic-processing-unit.html) for more detailed information on how elastic scaling works.   
+You can also use a simple helper utility (DataGridConnectionUtility) that combines the two. It first look for a DataGrid instance and if one doesn't exist it will create a new one; it's trivial to alter the `getSpace()` method to increase the number of nodes or even scale dynamically as required. Read [this](./elastic-processing-unit.html) for more detailed information on how elastic scaling works.
 
 {% tip %}
 A The DataGridConnectionUtility class [is available on Github](https://github.com/Gigaspaces/bestpractices/blob/master/plains/src/main/java/org/openspaces/plains/datagrid/DataGridConnectionUtility.java), in the "plains" project.
@@ -154,8 +154,8 @@ That's it, you're good to go!
 
 Read more about the GigaSpaces runtime environment, how to model your data in a clustered environment, and how to levarage the power capabilties of the Space. 
 
-- [Elastic Processing Unit](/xap96/elastic-processing-unit.html)
-- [Modeling and Accessing Your Data](/xap96/modeling-and-accessing-your-data.html)
-- [Deploying and Interacting with the Space](/xap96/deploying-and-interacting-with-the-space.html)
-- [The GigaSpaces Runtime Environment](/xap96/the-runtime-environment.html)
+- [Elastic Processing Unit](./elastic-processing-unit.html)
+- [Modeling and Accessing Your Data](./modeling-and-accessing-your-data.html)
+- [Deploying and Interacting with the Space](./deploying-and-interacting-with-the-space.html)
+- [The GigaSpaces Runtime Environment](./the-runtime-environment.html)
 

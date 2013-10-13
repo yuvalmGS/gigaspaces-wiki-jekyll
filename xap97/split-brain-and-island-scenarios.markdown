@@ -10,15 +10,15 @@ page_id: 61867140
 
 In order to determine how to monitor/detect and handle a Split Brain scenario, you need to first understand how our system works.
 
-{% infosign %} Attached is another [**presentation**](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/Service-grid-FDH%20and%20SplitBrain.pdf) which will illustrate it. For more general details and definition of the Split-Brain please refer to [Split-Brain and Active Election - General Definition](/xap96/split-brain-and-active-election---general-definition.html) page.
+{% infosign %} Attached is another [**presentation**](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/Service-grid-FDH%20and%20SplitBrain.pdf) which will illustrate it. For more general details and definition of the Split-Brain please refer to [Split-Brain and Active Election - General Definition](./split-brain-and-active-election---general-definition.html) page.
 
 There are 2 different mechanisms which deals with failover scenarios (note there is a difference between version 6.6 and 7.x):
 
 1) **GSM Processing Unit FaultDetection Handler**: once a GSM detects that one of the PU's it is managing is no longer available (the GSM pings each PU from time to time to verify they are active using keep-alive algorithm) it relocates the PU to another available GSC. More
-[information on the GSM PU Fault Detection Handler](/xap96/configuring-the-processing-unit-sla.html#ConfiguringtheProcessingUnitSLA-MonitoringtheLivenessofProcessingUnitInstances) is available.
+[information on the GSM PU Fault Detection Handler](./configuring-the-processing-unit-sla.html#ConfiguringtheProcessingUnitSLA-MonitoringtheLivenessofProcessingUnitInstances) is available.
 
 2) **Active Election mechanism**:
-This is a mechanism which basically [controls the failure detection of a primary space and the process of moving a backup space into a primary space state](/xap96/split-brain-and-active-election---general-definition.html).
+This is a mechanism which basically [controls the failure detection of a primary space and the process of moving a backup space into a primary space state](./split-brain-and-active-election---general-definition.html).
 
 Here are some examples for a common deployment and the expected behavior.
 
@@ -27,11 +27,11 @@ In one scenario, we have two machines, each with a single GSA, GSC, GSM, and LUS
 - The GSM FaultDetection mechanism will not perform any relocation since there is only one GSC on each machine and you have the limitation of max-per-machine and max-per-vm set to 1.
 - The active election mechanism will move the backup space into a primary and once the network is reconnected, likely there will initially be 2 partitions marked as primaries, but the split brain controller component will kick in and manage to recover the cluster eventually back to the consistent state.
 
-Having one specific primary machine and one specific backup machine could be achieved by using [Zone configurations](/xap96/configuring-the-processing-unit-sla.html).
+Having one specific primary machine and one specific backup machine could be achieved by using [Zone configurations](./configuring-the-processing-unit-sla.html).
 
 {% infosign %} Bear in mind that once a failover occurs, the backup space will become a primary even though it is located in a backup zone. You will have to manually relocate the spaces back to their originally-targeted primary machines.
 
-{% infosign %} This [SpaceModeTest.java source](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/SpaceModeTest.java) file is an example of how to determine the status of your spaces using the [Administration and Monitoring API](/xap96/administration-and-monitoring-api.html).
+{% infosign %} This [SpaceModeTest.java source](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/SpaceModeTest.java) file is an example of how to determine the status of your spaces using the [Administration and Monitoring API](./administration-and-monitoring-api.html).
 
 # Islands
 
@@ -61,4 +61,4 @@ Below are the most common causes for Split-Brain scenarios and ways to detect th
 - **Network outages/disconnections** - As discussed, disconnections between the GSMs or GSMs and GSCs can cause any of the GSMs to get into what is called "islands".
     - You should be using a network monitoring tool to monitor network outages/disconnections and re connections on machines which run the GSMs and GSCs. Such tool should report and alert on exact datetime of the event.
 
-{% infosign %} Please refer to [Suggested Monitoring Tools](/xap96/suggested-monitoring-tools.html) section for more details on recommended tools.
+{% infosign %} Please refer to [Suggested Monitoring Tools](./suggested-monitoring-tools.html) section for more details on recommended tools.

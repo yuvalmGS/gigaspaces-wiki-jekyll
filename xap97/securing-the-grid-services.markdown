@@ -20,13 +20,13 @@ Actually it affects also a standalone PU instance (with a space).
 
 # Grid Service Agent
 
-{% refer %}[Grid Service Agent](/xap96/the-grid-service-agent.html){% endrefer %}
+{% refer %}[Grid Service Agent](./the-grid-service-agent.html){% endrefer %}
 
 The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (GSM, GSC, etc.). When GSA is secured, a spawned GSM/GSC will also be secured. To _start_, _kill_, _restart_ a process you need **Manage Grid** privileges.
 
 # Grid Service Manager
 
-{% refer %}[Grid Service Manager](/xap96/the-grid-service-manager.html){% endrefer %}
+{% refer %}[Grid Service Manager](./the-grid-service-manager.html){% endrefer %}
 
 The Grid Service Manager (GSM) is responsible for managing Processing Units and Grid Service Containers. The GSM accepts deployment and un-deployment requests of Processing Units, and provisions them to GSCs. To _deploy_, _un-deploy_ you need **Provision PU** privileges.
 
@@ -34,7 +34,7 @@ A secured GSM can **only** connect to another secured GSM. This means that a Pro
 
 # Grid Service Container
 
-{% refer %}[Grid Service Container](/xap96/the-grid-service-container.html){% endrefer %}
+{% refer %}[Grid Service Container](./the-grid-service-container.html){% endrefer %}
 
 A Grid Service Container (GSC) is a container which hosts deployed Processing Unit Instances, and reports its status to the GSM. In general, operations on the GSC are routed to the managing GSM of the processing unit. To _scale up/down_, _relocate_, _restart PU instance_, _destroy PU instance_ you need **Manage PU** privileges.
 

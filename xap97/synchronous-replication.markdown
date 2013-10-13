@@ -7,7 +7,7 @@ page_id: 61867015
 {% summary %}This page describe what is synchronous replication and how to configure it{% endsummary %}
 
 {% info %}
-This page covers details which are specific to synchronous replication which are not covered in the [Replication](/xap96/replication.html) page, the previous page should be read before this one.
+This page covers details which are specific to synchronous replication which are not covered in the [Replication](./replication.html) page, the previous page should be read before this one.
 {% endinfo %}
 
 # Overview
@@ -55,7 +55,7 @@ Synchronous replication is most beneficial in the following scenarios:
 When a replication target space instance is unavailable (disconnection) or some error occurred during the processing of the replication data at the target, a synchronous replication channel (between the source and the specific target space instance) moves to asynchronous operating state. During that time, all the replicated operations are accumulated at a backlog (named replication redolog) and a special worker attempts to replicate the items from the redolog to the target space instance in batches. This worker will succeed sending the accumulated replication data once the connection is re-established or the error is resolved at the target and once the redolog is replicated, the channel will return to synchronous operation state. During the asynchronous operating state time period, the client will receive acknowledgements for the operations without them being replicated, thus not halting the cluster when a replication target is down.
 
 {% info %}
-The current operating mode of a replication channel can be retrieved via the [Administration and Monitoring API](/xap96/administration-and-monitoring-api.html) by getting the
+The current operating mode of a replication channel can be retrieved via the [Administration and Monitoring API](./administration-and-monitoring-api.html) by getting the
 [Space Instance](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/admin/space/SpaceInstance.html) [Replication Statistics](http://www.gigaspaces.com/docs/JavaDocOS/com/j_spaces/core/filters/ReplicationStatistics.html) of the specific replication channel and calling the following getter [OutgoingChannel.getOperatingMode()](http://www.gigaspaces.com/docs/JavaDocOS/com/j_spaces/core/filters/ReplicationStatistics.OutgoingChannel.html#getOperatingMode())
 {% endinfo %}
 

@@ -29,7 +29,7 @@ The `set` comand sets the Service Grid system environment variables.
 
 {% tip %}
 Make sure your network and machines running GigaSpaces are configured to have multicast enabled.
-See the [How to Configure Multicast](/xap96/how-to-configure-multicast.html) section for details on how to enable multicast.
+See the [How to Configure Multicast](./how-to-configure-multicast.html) section for details on how to enable multicast.
 {% endtip %}
 
 # Examples

@@ -39,7 +39,7 @@ In this case, the space (process) is required to identify other existing primary
 
 ### How it Works
 
-The active election mechanism is based by default on the [Jini Lookup service](/xap96/about-jini.html), which serves as the distributed naming service to coordinate a three-phase join flow electing the active service. The current implementation is based on a generic naming service abstraction, that can be replaced with any other distributed directory service, such as LDAP.
+The active election mechanism is based by default on the [Jini Lookup service](./about-jini.html), which serves as the distributed naming service to coordinate a three-phase join flow electing the active service. The current implementation is based on a generic naming service abstraction, that can be replaced with any other distributed directory service, such as LDAP.
 
 Each service maintains its state using the naming service. Each service can have one of the following states:
 

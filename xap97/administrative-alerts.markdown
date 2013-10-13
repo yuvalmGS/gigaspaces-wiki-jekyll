@@ -9,13 +9,13 @@ page_id: 61867189
 
 # Overview
 
-The alert mechanism provides the ability to receive alerts on various problematic conditions at runtime by using the [Administration and Monitoring API](/xap96/administration-and-monitoring-api.html). The alerts give indication for the "health state" of the system.
+The alert mechanism provides the ability to receive alerts on various problematic conditions at runtime by using the [Administration and Monitoring API](./administration-and-monitoring-api.html). The alerts give indication for the "health state" of the system.
 
 {% info title=Runtime Model %}
-The alerts rules are running within the `Admin` instance which the user created. GigaSpaces does not run an alert service that is running behind the scenes. If you would like to register for alerts in your production system, the recommended way to do it is to deploy your alert listener to the GigaSpaces [The Runtime Environment](/xap96/the-runtime-environment.html) in the form of a [processing unit](/xap96/the-processing-unit-structure-and-configuration.html).
+The alerts rules are running within the `Admin` instance which the user created. GigaSpaces does not run an alert service that is running behind the scenes. If you would like to register for alerts in your production system, the recommended way to do it is to deploy your alert listener to the GigaSpaces [The Runtime Environment](./the-runtime-environment.html) in the form of a [processing unit](./the-processing-unit-structure-and-configuration.html).
 {% endinfo %}
 
-The [Administration and Monitoring API](/xap96/administration-and-monitoring-api.html) provides events and statistics on top of which 'rules' can be applied to trigger an alert when required.
+The [Administration and Monitoring API](./administration-and-monitoring-api.html) provides events and statistics on top of which 'rules' can be applied to trigger an alert when required.
 
 - **Events** such as `ReplicationStatusChangedEvent` indicate that the `ReplicationStatus` has changed (e.g. ACTIVE, DISABLED, DISCONNECTED). From this event, an alert trigger can be written to raise an alert if replication has disconnected, and to resolve an alert once replication has reconnected (ref. **Predefined Alerts** below).
 
@@ -80,7 +80,7 @@ Sort the 'status' column in ascending order to show latest unresolved alerts.
 
 # Listening for Alerts
 
-Alerts can be consumed using a registered event listener by registereing with the `AlertManager` component (which is part of the [Administration and Monitoring API](/xap96/administration-and-monitoring-api.html). The listener will be notified of alerts that have been triggered.
+Alerts can be consumed using a registered event listener by registereing with the `AlertManager` component (which is part of the [Administration and Monitoring API](./administration-and-monitoring-api.html). The listener will be notified of alerts that have been triggered.
 
 Javadoc ref: [Alert](http://www.gigaspaces.com/docs/JavaDoc8.0/org/openspaces/admin/alert/Alert.html)&nbsp;[AlertManager](http://www.gigaspaces.com/docs/JavaDoc8.0/org/openspaces/admin/alert/AlertManager.html)&nbsp;[XmlAlertConfigurationParser](http://www.gigaspaces.com/docs/JavaDoc8.0/org/openspaces/admin/alert/config/parser/XmlAlertConfigurationParser.html)&nbsp;[AlertTriggeredEventListener](http://www.gigaspaces.com/docs/JavaDoc8.0/org/openspaces/admin/alert/events/AlertTriggeredEventListener.html)
 

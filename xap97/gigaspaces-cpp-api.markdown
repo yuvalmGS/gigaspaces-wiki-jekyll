@@ -34,7 +34,7 @@ A C++ client may write and read objects from the space.
 ![POJO_read.jpg](/attachment_files/POJO_read.jpg)
 {% endindent %}
 
-The following code example constructs a space proxy by passing a [space URL](/xap96/space-url.html) string into the `SpaceFinder.find()` method.
+The following code example constructs a space proxy by passing a [space URL](./space-url.html) string into the `SpaceFinder.find()` method.
 The returned object is the `SpaceProxy` object. This allows performing all space operations such as write, read, take, notify registration, etc.
 
 {% highlight java %}
@@ -189,7 +189,7 @@ Below is an example for a registered listener with a template and a `WRITE` oper
 
 # Using Transactions
 
-Space operations can be conducted using transactions. Transactions provide ACID: Atomicity, Consistency, Isolation, and Durability. For more information on using JavaSpaces transactions, see [Transaction Management](/xap96/transaction-management.html).
+Space operations can be conducted using transactions. Transactions provide ACID: Atomicity, Consistency, Isolation, and Durability. For more information on using JavaSpaces transactions, see [Transaction Management](./transaction-management.html).
 
 When using transactions, the following basic operations should be conducted:
 

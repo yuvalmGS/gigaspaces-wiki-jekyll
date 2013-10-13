@@ -77,4 +77,4 @@ If you're using Eclipse, it is also recommended to install the [Spring Tool Suit
 
 ### What's Next?
 
-**Write your first GigaSpaces Application: [Writing your first Application](/xap96/your-first-xtp-application.html).**
+**Write your first GigaSpaces Application: [Writing your first Application](./your-first-xtp-application.html).**

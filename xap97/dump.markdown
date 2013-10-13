@@ -83,7 +83,7 @@ The above code will generate a dump, including the just the last 200 log entries
 
 # Dump UI
 
-You may use the [GigaSpaces Management Center](/xap96/gigaspaces-management-center.html) to generate a dump file that includes information about the runtime GigaSpaces environment for a specific GSC or across the entire environment.
+You may use the [GigaSpaces Management Center](./gigaspaces-management-center.html) to generate a dump file that includes information about the runtime GigaSpaces environment for a specific GSC or across the entire environment.
 Start the GS-UI , move into the Hosts tab and select the relevant option:
 Full environment dump:
 

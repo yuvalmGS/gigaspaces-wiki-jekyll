@@ -14,7 +14,7 @@ Generally speaking, the space proxy router is transparent to the data grid user.
 
 The space proxy router has the following responsibilities:
 
-- Obtain the data grid topology from the initial connection, and connect to the other data grid members implicitly on demand via the [Lookup Service](/xap96/the-lookup-service.html).
+- Obtain the data grid topology from the initial connection, and connect to the other data grid members implicitly on demand via the [Lookup Service](./the-lookup-service.html).
 - If an operation cannot be executed because a space is not available, try to reconnect. If the connection cannot be restored during a predefined timeout, throw an appropriate exception.
 - If the data grid topology is primary-backup, and the operation cannot be executed because a primary space is not available, try to reconnect. If the connection cannot be restored during a predefined timeout, throw an appropriate exception.
 - If the data grid topology is partitioned, route the operation to the relevant partition(s) and aggregate the partitions results. (For example: a **count** operation is broadcasted concurrently to each partition, results are accumulated implicitly and when the last partition result arrives the operation is completed).
@@ -25,7 +25,7 @@ When the space resides in the same process as the client (a.k.a. embedded space)
 
 {% infosign %} **Single Space**: A single remote space is treated as a clustered space with a single member.
 
-{% plus %} **Optimizing Failure Detection**: When searching for an active server the default interval between samples is 100 milliseconds. If your system demands shorter failure detection, the sampling interval can be configured using the `space-config.proxy.router.active-server-lookup-sampling-interval` property (see [Configuration](#Configuration)). **Note**: This settings does not affect the failover duration (i.e. how long it takes for a backup space to become primary), it only affects how long it takes for a space proxy to discover the new primary space. For more information refer to [Failure Detection](/xap96/failure-detection.html).
+{% plus %} **Optimizing Failure Detection**: When searching for an active server the default interval between samples is 100 milliseconds. If your system demands shorter failure detection, the sampling interval can be configured using the `space-config.proxy.router.active-server-lookup-sampling-interval` property (see [Configuration](#Configuration)). **Note**: This settings does not affect the failover duration (i.e. how long it takes for a backup space to become primary), it only affects how long it takes for a space proxy to discover the new primary space. For more information refer to [Failure Detection](./failure-detection.html).
 
 ## Partitioned Space
 
@@ -37,19 +37,19 @@ When executing a batch operation (write multiple, read multiple, etc.) on a part
 
 ## Blocking Operations
 
-When executing blocking operations (such as read/take operation with a timeout > 0 or [Polling Container](/xap96/polling-container.html)), keep in mind that the operation's timeout argument determines the maximum time to wait for a matching entry in the space, whereas the space proxy configuration `active-server-lookup-timeout` determines the maximum time to wait for an active server. These timeouts are separate and do not affect each other. Moreover, if a failover occurs while the operation is blocked on a server, it will be re-invoked on the new active server with the original timeout, ignoring the amount of time the client already spent waiting for a matching object before the client was disconnected.
+When executing blocking operations (such as read/take operation with a timeout > 0 or [Polling Container](./polling-container.html)), keep in mind that the operation's timeout argument determines the maximum time to wait for a matching entry in the space, whereas the space proxy configuration `active-server-lookup-timeout` determines the maximum time to wait for an active server. These timeouts are separate and do not affect each other. Moreover, if a failover occurs while the operation is blocked on a server, it will be re-invoked on the new active server with the original timeout, ignoring the amount of time the client already spent waiting for a matching object before the client was disconnected.
 
 ## Notifications
 
-If communication is disrupted during the notification registration process, it is handled in the same manner as the other operations (i.e. proxy automatically looks for an active space up to the configured timeout). However, if communication is disrupted afterwards, other mechanisms are needed to ensure communication is restored and events are not lost. For more information refer to [Notify Container](/xap96/notify-container.html) and [Session Based Messaging API](/xap96/session-based-messaging-api.html).
+If communication is disrupted during the notification registration process, it is handled in the same manner as the other operations (i.e. proxy automatically looks for an active space up to the configured timeout). However, if communication is disrupted afterwards, other mechanisms are needed to ensure communication is restored and events are not lost. For more information refer to [Notify Container](./notify-container.html) and [Session Based Messaging API](./session-based-messaging-api.html).
 
 ## Local Cache/View
 
-When using [Client side caching](Client side caching), the connection management is different because cache staleness needs to be considered as well. For information refer to [Local Cache](/xap96/local-cache.html) or [Local View](/xap96/local-view.html).
+When using [Client side caching](Client side caching), the connection management is different because cache staleness needs to be considered as well. For information refer to [Local Cache](./local-cache.html) or [Local View](./local-view.html).
 
 ## Unicast Lookup Service
 
-The space proxy router uses the [Lookup Service](/xap96/the-lookup-service.html) to locate data grid members. The lookup service uses either [multicast](/xap96/how-to-configure-multicast.html) or [unicast](/xap96/how-to-configure-unicast-discovery.html) discovery (default is multicast). When a unicast lookup service is restarted, the space proxy will automatically re-discover after a while. If you need to better understand that process and  fine-tune it, refer to [Configuring lookup discovery intervals](/xap96/how-to-configure-unicast-discovery.html#Configuring lookup discovery intervals).
+The space proxy router uses the [Lookup Service](./the-lookup-service.html) to locate data grid members. The lookup service uses either [multicast](./how-to-configure-multicast.html) or [unicast](./how-to-configure-unicast-discovery.html) discovery (default is multicast). When a unicast lookup service is restarted, the space proxy will automatically re-discover after a while. If you need to better understand that process and  fine-tune it, refer to [Configuring lookup discovery intervals](./how-to-configure-unicast-discovery.html#Configuring lookup discovery intervals).
 
 # Load balancing
 
@@ -64,7 +64,7 @@ Configuring the load balancer type is done using the `space-config.proxy.router.
 
 # Configuration
 
-The space proxy router behavior is controlled using the following configuration properties, which can be specified as part of the [Space Component](/xap96/the-space-component.html#Reconnection) or via API:
+The space proxy router behavior is controlled using the following configuration properties, which can be specified as part of the [Space Component](./the-space-component.html#Reconnection) or via API:
 
 {: .table .table-bordered}
 |Property|Description|Default value|
@@ -80,7 +80,7 @@ The space proxy router behavior is controlled using the following configuration 
 
 This section is intended to summarize the changes in 9.0.1 for users upgrading from previous versions.
 
-{% infosign %} For detailed information regarding the old proxy router, refer to [Proxy Connectivity (Old)](/xap96/proxy-connectivity-(old).html).
+{% infosign %} For detailed information regarding the old proxy router, refer to [Proxy Connectivity (Old)](./proxy-connectivity-(old).html).
 
 ## Reconnection Algorithm
 

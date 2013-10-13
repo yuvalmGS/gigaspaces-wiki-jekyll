@@ -51,7 +51,7 @@ Here is a quick EPU tutorial:
 
 <div style="width:425px" id="__ss_7017690"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/shayhassidim/the-elastic-pu" title="The Elastic PU">The Elastic PU</a></strong><object id="__sse7017690" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=elasticpu-110222110302-phpapp02&stripped_title=the-elastic-pu&userName=shayhassidim" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse7017690" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=elasticpu-110222110302-phpapp02&stripped_title=the-elastic-pu&userName=shayhassidim" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object></div>
 
-{% exclamation %} For a quick start follow the [Elastic Processing Unit deployment example](/xap96/deploying-onto-the-service-grid.html#ElasticProcessingUnitDeploymentusingtheAdminAPI).
+{% exclamation %} For a quick start follow the [Elastic Processing Unit deployment example](./deploying-onto-the-service-grid.html#ElasticProcessingUnitDeploymentusingtheAdminAPI).
 
 {% tip %}
 When using the EPU, GigaSpaces manage the **entire** life cycle of the container. Once the EPU is deployed containers are started and the EPU instances are provisioned into these containers. When the EPU scales up, additional containers are started and instances are relocated into these containers. When the EPU is un-deployed, all the containers associated with the EPU are automatically terminated.
@@ -396,7 +396,7 @@ pu.scale(new EagerScaleConfigurer().create());
 The Eager trigger has the following limitations:
 
 - Number of maximum machines is limited to the number of partitions calculated/defined during the deployment time. This limitation does not exist for stateless processing units.
-- Multiple Eager EPUs can run on the same [Lookup Service](/xap96/the-lookup-service.html) but on different machines. Machines are marked by starting a Grid Service Agent with a specific zone (With a commandline argument -Dcom.gs.zones=zone1).
+- Multiple Eager EPUs can run on the same [Lookup Service](./the-lookup-service.html) but on different machines. Machines are marked by starting a Grid Service Agent with a specific zone (With a commandline argument -Dcom.gs.zones=zone1).
 
 {% highlight java %}
 ProcessingUnit pu1 = gsm.deploy(
@@ -443,7 +443,7 @@ The differences between the Eager scale trigger and a Manual capacity trigger in
 
 ## System Bootstrapping
 
-Each machine requires a single running [GigaSpaces Agent](/xap96/the-grid-service-agent.html). The example below shows how to start a new GigaSpaces agent. The command line parameters instruct the agents to communicate with each other and start the specified amount of managers. It does not start any containers automatically. The EPU starts containers on demand.
+Each machine requires a single running [GigaSpaces Agent](./the-grid-service-agent.html). The example below shows how to start a new GigaSpaces agent. The command line parameters instruct the agents to communicate with each other and start the specified amount of managers. It does not start any containers automatically. The EPU starts containers on demand.
 
 That means that potentially any machine could be a management machine:
 
@@ -594,7 +594,7 @@ numberOfPartitions X ( 1 + numberOfBackupsPerPartition ) X memoryCapacityPerCont
 .
 
 - During relocation of a specific instance, primary election takes place. For a few seconds, operations on that partition and operations on the whole cluster is denied. Internally, the client proxy retries the operation until the primary election takes place and masks the failure, but the delay exists.
-This delay can be reduced by modifying configuration settings as explained in [Failure Detection](/xap96/failure-detection.html). Overriding the default value of these context properties is achieved with the [addContextProperty](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/admin/pu/elastic/topology/ElasticDeploymentTopology.html) deployment property. For example:
+This delay can be reduced by modifying configuration settings as explained in [Failure Detection](./failure-detection.html). Overriding the default value of these context properties is achieved with the [addContextProperty](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/admin/pu/elastic/topology/ElasticDeploymentTopology.html) deployment property. For example:
 
 {% highlight java %}
 ProcessingUnit pu = gsm.deploy(

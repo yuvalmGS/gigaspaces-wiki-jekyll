@@ -17,7 +17,7 @@ The replication module used to synchronize the data and state between two space 
 1. Object/Notifications lease cancellation or renewal.
 1. Committed transactions.
 
-{% infosign %} All the operations that are replicated, are also recovered during the space recovery process. See [Space Instance Recovery](/xap96/space-instance-recovery.html)
+{% infosign %} All the operations that are replicated, are also recovered during the space recovery process. See [Space Instance Recovery](./space-instance-recovery.html)
 
 # Which Operations are Not Replicated?
 
@@ -136,4 +136,4 @@ Additional optimizations that can affect the replication performance is the upda
 # Replication Filters
 
 You can call your own business logic whenever the data is replicated. For example, you can modify the space objects data, compress/decompress, or block specific operations and space objects from being replicated to other spaces. Your business logic is called whenever the replication packet leaves the source space (output event), and arrives at the target space (input event).
-This is described under the [Cluster Replication Filters](/xap96/cluster-replication-filters.html) section.
+This is described under the [Cluster Replication Filters](./cluster-replication-filters.html) section.

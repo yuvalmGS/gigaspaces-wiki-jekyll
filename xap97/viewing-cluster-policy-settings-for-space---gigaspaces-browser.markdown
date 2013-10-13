@@ -13,7 +13,7 @@ When you select a space node in the Cluster Tree, the information panel shows co
 # Viewing Replication Settings
 
 To view the replication settings of a space, first select it by clicking its node in the tree or double-clicking it in the visual display area. In the information panel, click the **Replication** tab, then the internal tab **Settings**. The **Replication** tab can be clicked only if the space belongs to a replication group. 
-For more information on these settings, see [Replication Options](/xap96/replication-group---gigaspaces-browser.html).
+For more information on these settings, see [Replication Options](./replication-group---gigaspaces-browser.html).
 
 # Viewing Load-Balancing Settings
 

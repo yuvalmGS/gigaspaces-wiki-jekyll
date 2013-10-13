@@ -9,7 +9,7 @@ page_id: 61867079
 
 # Secured Space
 
-A secured embedded Space protects access (to data) which is granted only to users with sufficient privileges. When a remote Space proxy connects to a secured Space, it must provide security credentials (usually username and password - see [Custom Security](/xap96/custom-security.html) for extensions).
+A secured embedded Space protects access (to data) which is granted only to users with sufficient privileges. When a remote Space proxy connects to a secured Space, it must provide security credentials (usually username and password - see [Custom Security](./custom-security.html) for extensions).
 
 {% inittab remote_space|top %}
 {% tabcontent Namespace %}
@@ -129,7 +129,7 @@ For security reasons, you may not want to expose the security credentials in you
 
 # Processing Unit
 
-{% refer %}[Configuring Processing Unit Elements](/xap96/configuring-processing-unit-elements.html), [Configuring the Space](/xap96/the-space-component.html){% endrefer %}
+{% refer %}[Configuring Processing Unit Elements](./configuring-processing-unit-elements.html), [Configuring the Space](./the-space-component.html){% endrefer %}
 
 A processing unit by itself is not secured. It inherits its security from the managing GSM and GSC. These protect the processing unit from being restarted, relocated, destroyed, and undeployed.
 
@@ -168,7 +168,7 @@ Using the CLI deploy command embed the username and password matching the placeh
 
 ## Protecting User/Password {% exclamation %}
 
-Of course, having the username and password exposed (in pu.xml/pu.properties) isn't that "secure". A preferred usage would be to supply the credentials **during deployment**. The _UI_, _CLI_ and _Admin API_ provide a comprehensive support for deploying a secured processing unit (see [Security Administration](/xap96/security-administration.html)).
+Of course, having the username and password exposed (in pu.xml/pu.properties) isn't that "secure". A preferred usage would be to supply the credentials **during deployment**. The _UI_, _CLI_ and _Admin API_ provide a comprehensive support for deploying a secured processing unit (see [Security Administration](./security-administration.html)).
 
 Here is how the CLI deploy command would look like:
 
@@ -183,7 +183,7 @@ Using the CLI deploy command supply username and password using the -user and -p
 
 # Local Cache
 
-{% refer %}[Local Cache](/xap96/local-view-and-local-cache.html){% endrefer %}
+{% refer %}[Local Cache](./local-view-and-local-cache.html){% endrefer %}
 
 The local cache is a read-only service on top of a remote Space. Thus, the local cache "creator" needs to have **Read** privileges.
 Security is enforced by the remote Space, and the proxy should be acquired by supplying the username and password.
@@ -220,7 +220,7 @@ GigaSpace localCache = new GigaSpaceConfigurer(configurer.localCache()).gigaSpac
 
 # Local View
 
-{% refer %}[Local View](/xap96/local-view-and-local-cache.html){% endrefer %}
+{% refer %}[Local View](./local-view-and-local-cache.html){% endrefer %}
 
 Similar to a Local Cache, the Local View is a read-only service on top of a remote Space. Here, the cache is limited to Views. Thus, the local view "creator" needs to have **Read** privileges for the specific views. For example, needs to have **Read** privileges for both `Trade` and `Stock` classes, otherwise access will be denied.
 
@@ -450,7 +450,7 @@ public class CustomAccessControlFilter {
 
 # Task Execution over the Space
 
-{% refer %}[Executors](/xap96/task-execution-over-the-space.html){% endrefer %}
+{% refer %}[Executors](./task-execution-over-the-space.html){% endrefer %}
 
 Tasks can be executed in a collocated asynchronous manner within the Space (processing unit with an embedded Space). To execute a task, you must have **Execute** privileges. Execution can be restricted to certain tasks by applying the 'Class-Filter'. There is no need to define specific privileges for operations being performed by the task on the Space.
 
@@ -479,19 +479,19 @@ Space operations performed from +within+ the task are guarded by a _temporary_ t
 
 # Executors Based Remoting
 
-{% refer %}[Executors Based Remoting](/xap96/executor-based-remoting.html){% endrefer %}
+{% refer %}[Executors Based Remoting](./executor-based-remoting.html){% endrefer %}
 
 Executor Remoting allows you to use remote invocations of POJO services, with the Space as the transport layer using OpenSpaces Executors. To invoke a service method, you must have **Execute** privileges for class `org.openspaces.remoting.ExecutorRemotingTask`.
 
 # Event Driven Remoting
 
-{% refer %}[Event Driven Remoting](/xap96/event-driven-remoting.html){% endrefer %}
+{% refer %}[Event Driven Remoting](./event-driven-remoting.html){% endrefer %}
 
 Event Driven Remoting allows you to use remote invocations of POJO services, with the space as the transport layer using a polling container on the space side to process the invocations. Under the wires, event driven remoting uses the Space write and take capabilities. Thus, you must have **Write* and *Take** privileges (at both ends) for class `org.openspaces.remoting.EventDrivenSpaceRemotingEntry`.
 
 # JDBC Driver
 
-{% refer %}[JDBC Driver](/xap96/jdbc-driver.html){% endrefer %}
+{% refer %}[JDBC Driver](./jdbc-driver.html){% endrefer %}
 
 GigaSpaces allows applications to connect using a JDBC driver. A GigaSpaces JDBC driver accepts SQL statements, translates them to Space operations, and returns standard result sets. To acquire a connection to a remote secured space, provide the credentials (username and password) as parameters to the connection.
 
@@ -503,4 +503,4 @@ Statement st = conn.createStatement();
 ...
 {% endhighlight %}
 
-{% infosign %} An alternative way of querying the Space using SQL syntax is the [SQLQuery](/xap96/sqlquery.html) class, with a privileged GigaSpace proxy.
+{% infosign %} An alternative way of querying the Space using SQL syntax is the [SQLQuery](./sqlquery.html) class, with a privileged GigaSpace proxy.

@@ -12,7 +12,7 @@ The Java Persistency API (JPA) is a Java programming language framework managing
 
 {% info %}
 It is highly recommended that you [get yourself familiar with JPA](http://download.oracle.com/javaee/6/tutorial/doc/bnbpz.html) before reading this page.
-It is also recommended that you take the [XAP PetClinic JPA Tutorial](/xap96/your-first-jpa-application.html) which describes how a standard JPA application (the Spring PetClinic) can be adapted to XAP JPA and deployed on to the XAP runtime environment
+It is also recommended that you take the [XAP PetClinic JPA Tutorial](./your-first-jpa-application.html) which describes how a standard JPA application (the Spring PetClinic) can be adapted to XAP JPA and deployed on to the XAP runtime environment
 {% endinfo %}
 
 # GigaSpaces JPA Configuration
@@ -176,7 +176,7 @@ Detailed information regarding persistence.xml can be found in [OpenJPA's Manual
 ### Listing Your Persistent Classes
 
 {% info %}
-Information regarding Entities declaration can be found [here](/xap96/jpa-api.html#GigaSpaces JPA Entities)
+Information regarding Entities declaration can be found [here](./jpa-api.html#GigaSpaces JPA Entities)
 {% endinfo %}
 
 When working with persistent classes, you have a number of ways to make the JPA layer aware of them:
@@ -246,7 +246,7 @@ As with GigaSpaces POJOs, you may use the `@SpaceIndex` & `@SpaceRouting` annota
 
 {% info %}
 Please note that indexes should only be declared in the owning entity of a relationship.
-Examples can be found on the [JPA Relationships](/xap96/jpa-relationships.html) page.
+Examples can be found on the [JPA Relationships](./jpa-relationships.html) page.
 {% endinfo %}
 
 Here's an example of a basic JPA Entity:
@@ -295,7 +295,7 @@ public class Trade {
 }
 {% endhighlight %}
 
-For auto generated Id declaration and complex object Id declaration refer to [JPA Entity Id](/xap96/jpa-entity-id.html).
+For auto generated Id declaration and complex object Id declaration refer to [JPA Entity Id](./jpa-entity-id.html).
 
 Example of a JPA Owner entity with one to many relationship:
 
@@ -475,7 +475,7 @@ Vehicle result2 = (Vehicle) query2.getSingleResult();
 
 # Interoperability
 
-One of the nice benefits of the GigaSpaces JPA implementation is that its fully interoperable with the GigaSpaces [native POJO API](/xap96/pojo-support.html).
+One of the nice benefits of the GigaSpaces JPA implementation is that its fully interoperable with the GigaSpaces [native POJO API](./pojo-support.html).
 For instance, we can persist a JPA entity and read it using the native POJO-driven Space API:
 
 {% highlight java %}
@@ -567,9 +567,9 @@ result = gigaspace.read(query);
 ![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
 GigaSpaces JPA native query execution is a powerful feature used for executing:
 
-- SQLQuery syntax-like queries ([SQLQuery](/xap96/sqlquery.html)).
-- GigaSpaces Tasks ([Task Execution over the Space](/xap96/task-execution-over-the-space.html)).
-- GigaSpaces Dynamic Scripts ([Dynamic Language Tasks](/xap96/dynamic-language-tasks.html)).
+- SQLQuery syntax-like queries ([SQLQuery](./sqlquery.html)).
+- GigaSpaces Tasks ([Task Execution over the Space](./task-execution-over-the-space.html)).
+- GigaSpaces Dynamic Scripts ([Dynamic Language Tasks](./dynamic-language-tasks.html)).
 
 ### SQLQuery Execution
 
@@ -587,7 +587,7 @@ query.setParameter(1, "John Doe");
 author = (Author) query.getSingleResult();
 {% endhighlight %}
 
-For more details on the SQLQuery syntax, refer to the [SQLQuery](/xap96/sqlquery.html) page.
+For more details on the SQLQuery syntax, refer to the [SQLQuery](./sqlquery.html) page.
 
 ### Task Execution
 
@@ -657,7 +657,7 @@ public class MyTask implements Task<Integer>, ApplicationContextAware {
 
 Another option instead of using the ApplicationContextAware interface is to annotate your Task with the @AutowireTask annotation and annotate the EntityManagerFactory property with a @Resource annotation.
 
-For more information about GigaSpaces tasks refer to [Task Execution over the Space](/xap96/task-execution-over-the-space.html).
+For more information about GigaSpaces tasks refer to [Task Execution over the Space](./task-execution-over-the-space.html).
 
 ### Dynamic Script Execution
 
@@ -682,9 +682,9 @@ query.setParameter(1, script);                       // We pass our script as a 
 Integer result = (Integer) query.getSingleResult();  // Script execution always returns a single result
 {% endhighlight %}
 
-For more information about dynamic script execution refer to [Dynamic Language Tasks](/xap96/dynamic-language-tasks.html).
+For more information about dynamic script execution refer to [Dynamic Language Tasks](./dynamic-language-tasks.html).
 
 # GigaSpaces JPA Limitations
 
-For a list of unsupported JPA features and limitations please refer to [GigaSpaces JPA Limitations](/xap96/gigaspaces-jpa-limitations.html).
+For a list of unsupported JPA features and limitations please refer to [GigaSpaces JPA Limitations](./gigaspaces-jpa-limitations.html).
 

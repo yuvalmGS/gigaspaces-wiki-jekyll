@@ -11,7 +11,7 @@ page_id: 61867335
 In some cases, you might want to store objects within the space that include references to other space objects -- i.e. an object graph. With such object relationships, you might want to fetch a parent object that is associated with a child object(s) holds a specific data (join).
 
 {% tip %}
-See the [Modeling your data](/xap96/modeling-your-data.html) section for details about when you should construct strong relationship between parent-child objects (embed) and when you should not embed child objects within their parent but have the ID of child objects placed within the parent object. 
+See the [Modeling your data](./modeling-your-data.html) section for details about when you should construct strong relationship between parent-child objects (embed) and when you should not embed child objects within their parent but have the ID of child objects placed within the parent object.
 {% endtip %}
 
 The example below demonstrates how ID operations handle relationships between objects. This example using the `readByIds` batch operation to retrieve multiple space objects using on their ID:

@@ -9,7 +9,7 @@ page_id: 61867280
 
 # Overview
 
-The different space components allow you to configure a space within a Spring application context (or a Processing Unit). A Space component allows you to create an `IJSpace` (or `JavaSpace`) with the most common practice of creating one based on a [Space URL](/xap96/space-url.html).
+The different space components allow you to configure a space within a Spring application context (or a Processing Unit). A Space component allows you to create an `IJSpace` (or `JavaSpace`) with the most common practice of creating one based on a [Space URL](./space-url.html).
 
 ![OS_OnlyEmbedded.jpg](/attachment_files/OS_OnlyEmbedded.jpg)
 
@@ -53,12 +53,12 @@ spaceConfigurer.destroy();
 This example creates an embedded space (`IJSpace`) within the Spring application context (using the `/./` prefix) with the name `space` and a Spring bean id of the `space`.
 
 {% tip %}
- You may consider using the **[OpenSpaces Configuration API (Configurers)](/xap96/programmatic-api-(configurers).html)** in scenarios in which a Spring wiring them through XML configuration can not be used or you prefer using Code Based Configuration. Refer to the **[UrlSpaceConfigurer](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/space/UrlSpaceConfigurer.html)** for more details.
+ You may consider using the **[OpenSpaces Configuration API (Configurers)](./programmatic-api-(configurers).html)** in scenarios in which a Spring wiring them through XML configuration can not be used or you prefer using Code Based Configuration. Refer to the **[UrlSpaceConfigurer](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/space/UrlSpaceConfigurer.html)** for more details.
 {% endtip %}
 
 # URL Properties
 
-The `UrlSpaceFactoryBean` allows you to set different URL properties (as defined in the [Space URL](/xap96/space-url.html)), either explicitly using explicit properties, or using a custom `Properties` object. All of the current URL properties are exposed using explicit properties, in order to simplify the configuration.
+The `UrlSpaceFactoryBean` allows you to set different URL properties (as defined in the [Space URL](./space-url.html)), either explicitly using explicit properties, or using a custom `Properties` object. All of the current URL properties are exposed using explicit properties, in order to simplify the configuration.
 
 Here is an example of a space with a specific schema working in FIFO mode, using specific lookup groups.
 
@@ -203,15 +203,15 @@ Built on the same concept of Spring `ApplicationContextAware` callback interface
 
 The `UrlSpaceFactoryBean` implements this `ClusterInfoAware` and uses the `ClusterInfo` in order to automatically amend the Space URL with cluster parameters. The `ClusterInfo` is provided by external containers that can run a Processing Unit.
 
-{% refer %}For more details on `ClusterInfo`, refer to [this section](/xap96/obtaining-cluster-information.html).{% endrefer %}
+{% refer %}For more details on `ClusterInfo`, refer to [this section](./obtaining-cluster-information.html).{% endrefer %}
 
 {% tip %}
-Deploying a space (Stateful PU) may use the [Elastic Processing Unit](/xap96/elastic-processing-unit.html) allowing dynamic scale and space instances (primary/backup) rebalancing without any downtime.
+Deploying a space (Stateful PU) may use the [Elastic Processing Unit](./elastic-processing-unit.html) allowing dynamic scale and space instances (primary/backup) rebalancing without any downtime.
 {% endtip %}
 
 # Reconnection
 
-When working with a **remote space**, the space may become unavailable (network problems, processing unit relocation, etc.). For information on how such disruptions are handled and configured refer to [Proxy Connectivity](/xap96/proxy-connectivity.html).
+When working with a **remote space**, the space may become unavailable (network problems, processing unit relocation, etc.). For information on how such disruptions are handled and configured refer to [Proxy Connectivity](./proxy-connectivity.html).
 
 # Primary/Backup
 
@@ -221,7 +221,7 @@ When working in clustered mode (schema) that includes a primary/backup schema, s
 
 Custom beans that need to be aware of the space mode (for example, working directly against a cluster member, i.e. not using a clustered proxy of the space, and performing operations against the space only when it is in primary mode) can implement the Spring `ApplicationListener` and check for the mentioned events.
 
-{% infosign %} OpenSpaces also provides the [Space Mode Context Loader](/xap96/space-mode-context-loader.html), which can load the Spring application context when it has become primary, and unload it when it moves to backup.
+{% infosign %} OpenSpaces also provides the [Space Mode Context Loader](./space-mode-context-loader.html), which can load the Spring application context when it has become primary, and unload it when it moves to backup.
 
 In embedded mode, the space factory bean registers with the space for space mode changes. The registration is performed on the actual space instance (and not a clustered proxy of it), and any events raised are translated to the equivalent OpenSpaces space mode change events. In remote mode, a single primary event is raised.
 
@@ -345,7 +345,7 @@ In order to enable this feature, the following should be placed within the appli
 
 When a remote client is interested to receive events when a space instance changing its runtime mode (from primary to backup or vise versa), it should implement the `SpaceModeChangedEventListener`. See below how:
 
-Registering for the event using the [Administration API](/xap96/administration-and-monitoring-api.html):
+Registering for the event using the [Administration API](./administration-and-monitoring-api.html):
 
 {% highlight java %}
 Admin admin = new AdminFactory().createAdmin();
@@ -444,11 +444,11 @@ Here is an example of how to define security with an embedded space. In this cas
 
 It is possible to configure the space to be secured using deploy time properties (bean level properties), without declaring the security element. The `security.username` and `security.password` can be provided, and the spaces defined within the processing unit are automatically secured.
 
-{% refer %}For more details, refer to the [Space Security](/xap96/security.html) section.{% endrefer %}
+{% refer %}For more details, refer to the [Space Security](./security.html) section.{% endrefer %}
 
 # Space Filters
 
-The `UrlSpaceFactoryBean` allows you to configure [Space Filters](/xap96/space-filters.html). It uses the space support for a `FilterProvider`, which is a wrapper for an `ISpaceFilter` implementation and its characteristics (such as priority, `activeWhenBackup`). This allows you to provide space filters without changing the space schema.
+The `UrlSpaceFactoryBean` allows you to configure [Space Filters](./space-filters.html). It uses the space support for a `FilterProvider`, which is a wrapper for an `ISpaceFilter` implementation and its characteristics (such as priority, `activeWhenBackup`). This allows you to provide space filters without changing the space schema.
 
 {% exclamation %} Space Filters can only be used with embedded spaces.
 
@@ -677,11 +677,11 @@ The following Spring configuration XML shows how the filter can be configured, u
 
 ## Accessing a Space within a Space Filter
 
-Accessing a space within a space filter can cause a cycle construction exception, since the space can not be injected to the filter (because the space was not constructed yet). There are options to solve this with pure Spring, but OpenSpaces provides a simpler option by using the [GigaSpacesLateContext](/xap96/the-gigaspacecontext-annotation.html) annotation.
+Accessing a space within a space filter can cause a cycle construction exception, since the space can not be injected to the filter (because the space was not constructed yet). There are options to solve this with pure Spring, but OpenSpaces provides a simpler option by using the [GigaSpacesLateContext](./the-gigaspacecontext-annotation.html) annotation.
 
 # Space Replication Filters
 
-The `UrlSpaceFactoryBean` allows you to configure [Cluster Replication Filters](/xap96/cluster-replication-filters.html). It uses the space support for a `ReplicationFilterProvider` which is a wrapper for an `IReplicationFilter` implementation and its characteristics (such as `activeWhenBackup`). This allows you to provide space replication filters without changing the space schema.
+The `UrlSpaceFactoryBean` allows you to configure [Cluster Replication Filters](./cluster-replication-filters.html). It uses the space support for a `ReplicationFilterProvider` which is a wrapper for an `IReplicationFilter` implementation and its characteristics (such as `activeWhenBackup`). This allows you to provide space replication filters without changing the space schema.
 
 {% exclamation %} Space replication filters can only be used with embedded spaces.
 
@@ -744,7 +744,7 @@ The following configuration shows how it can be injected:
 
 # Space Persistency
 
-When constructing a space, it is possible to provide [Space Persistency](/xap96/space-persistency.html) extensions using Spring-based configuration (instead of using the space schema). Here is an example of how it can be defined:
+When constructing a space, it is possible to provide [Space Persistency](./space-persistency.html) extensions using Spring-based configuration (instead of using the space schema). Here is an example of how it can be defined:
 
 {% inittab os_simple_space|top %}
 {% tabcontent Namespace %}
@@ -830,7 +830,7 @@ When constructing a space, it is possible to provide [Space Persistency](/xap96/
 
 The above example uses Spring built-in support for configuring both a custom JDBC `DataSource` and a Hibernate `SessionFactory` to define and use the GigaSpaces built-in `HibernateSpaceDataSource`. The GigaSpaces data source is then injected into the space construction (note the specific schema change), and causes the space to use it.
 
-{% lampon %} This configuration can also be used with the GigaSpaces [Mirror Service](/xap96/asynchronous-persistency-with-the-mirror.html) deployed as a Processing Unit.
+{% lampon %} This configuration can also be used with the GigaSpaces [Mirror Service](./asynchronous-persistency-with-the-mirror.html) deployed as a Processing Unit.
 
 # Schema
 

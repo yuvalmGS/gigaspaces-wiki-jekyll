@@ -9,7 +9,7 @@ page_id: 61867163
 
 # Overview
 
-OpenSpaces event container transport uses [event components](/xap96/messaging-support.html) (namely the [polling container](/xap96/polling-container.html) and [notify container](/xap96/notify-container.html)) to receive POJO messages using the Space as the transport layer. It also allows you to send POJO messages using the Space as the transport layer.
+OpenSpaces event container transport uses [event components](./messaging-support.html) (namely the [polling container](./polling-container.html) and [notify container](./notify-container.html)) to receive POJO messages using the Space as the transport layer. It also allows you to send POJO messages using the Space as the transport layer.
 
 Since Mule configuration uses Spring, the event container transport can be easily integrated with OpenSpaces event components.
 
@@ -132,9 +132,9 @@ There is option to configure `writeLease` (defaults to `FOREVER`), `updateOrWrit
 
 # Transaction Support
 
-Since the inbound component is based on the event containers, transaction support can be enabled using the event container transaction support. Learn how to do this with the [polling container](/xap96/polling-container.html#OpenSpacesEventsComponent-PollingContainer-TransactionSupport).
+Since the inbound component is based on the event containers, transaction support can be enabled using the event container transaction support. Learn how to do this with the [polling container](./polling-container.html#OpenSpacesEventsComponent-PollingContainer-TransactionSupport).
 
-Any operation performed using the `GigaSpace` interface joins the ongoing transaction started by the event container using its support for [declarative transactions](/xap96/the-gigaspace-interface.html#OpenSpacesCoreComponent-GigaSpace-DeclarativeTransactions).
+Any operation performed using the `GigaSpace` interface joins the ongoing transaction started by the event container using its support for [declarative transactions](./the-gigaspace-interface.html#OpenSpacesCoreComponent-GigaSpace-DeclarativeTransactions).
 
 This means that any outbound component operating within a Spring managed transaction automatically joins the transaction since it uses `GigaSpace`. For outbound components that are used with a different inbound component (such as JMS), the Mule Spring transaction manager can be used. Here is an example (note the custom-transaction tag in the inbound and outbound transports):
 
@@ -180,7 +180,7 @@ This means that any outbound component operating within a Spring managed transac
 </model>
 {% endhighlight %}
 
-In the above example, the Mule transaction factory used is Spring-based, wrapping the Spring `PlatformTransactionManager`. For more information regarding OpenSpaces support for transactions (including XA), see the [OpenSpaces Core Component - Transaction Manager](/xap96/transaction-management.html) section.
+In the above example, the Mule transaction factory used is Spring-based, wrapping the Spring `PlatformTransactionManager`. For more information regarding OpenSpaces support for transactions (including XA), see the [OpenSpaces Core Component - Transaction Manager](./transaction-management.html) section.
 
 # Full Example
 

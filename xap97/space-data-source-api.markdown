@@ -21,7 +21,7 @@ The space data source API is adequate for different kinds of data sources which 
 {% endindent %}
 
 {% info %}
-Persisting data to the data is explained in the [Space Synchronization Endpoint API](/xap96/space-synchronization-endpoint-api.html) page.
+Persisting data to the data is explained in the [Space Synchronization Endpoint API](./space-synchronization-endpoint-api.html) page.
 {% endinfo %}
 
 # Configuration

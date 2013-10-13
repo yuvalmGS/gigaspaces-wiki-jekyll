@@ -6,7 +6,7 @@ page_id: 61867108
 
 {% summary %}GigaSpaces provides a generic network filter that also provides SSL support, through an SSL communication filter.{% endsummary %}
 
-{% refer %}[How to Set GigaSpaces Over a Firewall](/xap96/how-to-set-gigaspaces-over-a-firewall.html){% endrefer %}
+{% refer %}[How to Set GigaSpaces Over a Firewall](./how-to-set-gigaspaces-over-a-firewall.html){% endrefer %}
 
 # Overview
 

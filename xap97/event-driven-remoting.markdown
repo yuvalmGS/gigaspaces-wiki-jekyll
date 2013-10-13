@@ -149,7 +149,7 @@ The next step is exporting the service over the space. Exporting the service is 
 {% endtabcontent %}
 {% endinittab %}
 
-Exporting the service as a remote space service uses the [event polling container](/xap96/polling-container.html). The polling container automatically listens to internal `EventDrivenSpaceRemotingEntry` objects, and writes back an updated `EventDrivenSpaceRemotingEntry` to the space. All polling event container features, such as transactions and different receive handlers can be used with Space remoting.
+Exporting the service as a remote space service uses the [event polling container](./polling-container.html). The polling container automatically listens to internal `EventDrivenSpaceRemotingEntry` objects, and writes back an updated `EventDrivenSpaceRemotingEntry` to the space. All polling event container features, such as transactions and different receive handlers can be used with Space remoting.
 
 ## Exporting a Service Non-Collocated with the Space
 
@@ -421,7 +421,7 @@ public interface MyService {
 
 In the above example, the `getProperty` method is called on the `Value` object and its return value is used to extract the routing index.
 
-{% exclamation %} **Note:** Using a [SpaceDocument](/xap96/document-api.html) as the annotated routing argument will cause an exception since the `SpaceDocument` class does not define a getter method for each property, but rather a generic getter method to get a property value by its name. The solution is either to extend the `SpaceDocument` class as described in [Extending Space Documents](/xap96/extending-space-documents.html), and define the relevant `getProperty` method in the extension class, or use the `RemoteRoutingHandler` mentioned above.
+{% exclamation %} **Note:** Using a [SpaceDocument](./document-api.html) as the annotated routing argument will cause an exception since the `SpaceDocument` class does not define a getter method for each property, but rather a generic getter method to get a property value by its name. The solution is either to extend the `SpaceDocument` class as described in [Extending Space Documents](./extending-space-documents.html), and define the relevant `getProperty` method in the extension class, or use the `RemoteRoutingHandler` mentioned above.
 
 # Server Side Services Injection
 
@@ -786,6 +786,6 @@ In other words, the regular method should be prefixed with `async` and the retur
 
 In case of a Primary Backup clusters and Partitioned Sync2Backup clusters, when there is failure of primary space partition, remoting request is transparently forwarded to the backup.
 
-Event Driven Remoting proxy is aware of each partition in the cluster and connection with the failed primary partition will get interrupted/disconnected in case of a failure. Proxy recognizes failure and redirects the request to the backup partition. When the backup becomes ready (any warmup code that needs to run and is ready to accept operations), it will accept this request and process the request. All of this failover behavior is done within the GigaSpaces proxy code and client does not need any extra logic. For more information refer to [Proxy Connectivity](/xap96/proxy-connectivity.html).
+Event Driven Remoting proxy is aware of each partition in the cluster and connection with the failed primary partition will get interrupted/disconnected in case of a failure. Proxy recognizes failure and redirects the request to the backup partition. When the backup becomes ready (any warmup code that needs to run and is ready to accept operations), it will accept this request and process the request. All of this failover behavior is done within the GigaSpaces proxy code and client does not need any extra logic. For more information refer to [Proxy Connectivity](./proxy-connectivity.html).
 
 If the backup space does not become ready to accept requests within the configured number of retries, execute request will fail with an Exception.

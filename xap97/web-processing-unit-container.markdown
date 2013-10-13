@@ -9,7 +9,7 @@ page_id: 61867154
 
 # Overview
 
-OpenSpaces integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid. The integration is built on top of the [Service Grid Processing Unit Container](/xap96/deploying-onto-the-service-grid.html).
+OpenSpaces integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid. The integration is built on top of the [Service Grid Processing Unit Container](./deploying-onto-the-service-grid.html).
 
 The integration allows you to make use of the following Service Grid features:
 
@@ -21,11 +21,11 @@ The integration allows you to make use of the following Service Grid features:
 
 The web application itself is a pure, JEE based, web application. The application can be the most generic web application, and automatically make use of the Service Grid features. The web application can define a Space (either embedded or remote) very easily (either using Spring or not).
 
-The web container used behind the scenes is [Jetty](http://www.mortbay.org) (with other containers coming in the near future). This page will list the common usage and configuration of web containers. Jetty specific configuration and usage can be found [here](/xap96/web-jetty-processing-unit-container.html).
+The web container used behind the scenes is [Jetty](http://www.mortbay.org) (with other containers coming in the near future). This page will list the common usage and configuration of web containers. Jetty specific configuration and usage can be found [here](./web-jetty-processing-unit-container.html).
 
 # Deployment
 
-The integration can either deploy a packaged WAR file or an exploded WAR file. In order to deploy packaged WAR file, it can be specified using one of the deployment mechanisms (UI/CLI/Programmatic, see more [here](/xap96/deploying-onto-the-service-grid.html#deployDirections)). When deploying a WAR file, it goes through the following steps until it gets to the GSC:
+The integration can either deploy a packaged WAR file or an exploded WAR file. In order to deploy packaged WAR file, it can be specified using one of the deployment mechanisms (UI/CLI/Programmatic, see more [here](./deploying-onto-the-service-grid.html#deployDirections)). When deploying a WAR file, it goes through the following steps until it gets to the GSC:
 
 {% infosign %} Note that the deploy client, the GSMs, and the GSCs can run on different machines.
 
@@ -151,7 +151,7 @@ spaceConfigurer.destroy();
 
 ## Using pu.xml
 
-A web application is still just a processing unit. This means that a **META-INF/spring/pu.xml** can be added, which can be used to define a [Space](/xap96/the-space-component.html) and [GigaSpace](/xap96/the-gigaspace-interface.html). Accessing the beans is relatively simple as they are automatically added to the web application context and can be accessed from there. The key they are stored under is the bean id that each bean corresponds to.
+A web application is still just a processing unit. This means that a **META-INF/spring/pu.xml** can be added, which can be used to define a [Space](./the-space-component.html) and [GigaSpace](./the-gigaspace-interface.html). Accessing the beans is relatively simple as they are automatically added to the web application context and can be accessed from there. The key they are stored under is the bean id that each bean corresponds to.
 
 Here is an example that starts an embedded Space as part of the web application within the `pu.xml`. The following is the content of the `pu.xml`
 
@@ -203,4 +203,4 @@ When deploying a highly available web site, usually a load balancer is used to l
 
 In order to create a single point of view, in terms of clients connecting to a server, a load balancer is usually used. While there are many different types of load balancers (both hardware and software), solving the load balancing problem is not new (i.e. it is not something that is introduced because the web application is deployed on GigaSpaces). Examples of how to configure load balancers can be found in specific web container sections.
 
-GigaSpaces also comes with a built in integration with Apache httpd load balancer as described in the [Apache Load Balancer Agent](/xap96/apache-load-balancer-agent.html) section.
+GigaSpaces also comes with a built in integration with Apache httpd load balancer as described in the [Apache Load Balancer Agent](./apache-load-balancer-agent.html) section.

@@ -269,4 +269,4 @@ public class MyConflictResolver extends com.gigaspaces.cluster.replication.gatew
 
 # Limitations
 
-Please refer to the [Multi-Site Replication Limitations](/xap96/multi-site-replication-limitations.html) page.
+Please refer to the [Multi-Site Replication Limitations](./multi-site-replication-limitations.html) page.

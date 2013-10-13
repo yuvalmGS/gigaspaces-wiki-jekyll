@@ -34,7 +34,7 @@ The OpenSpaces API is divided into four parts:
 
 ## Core API
 
-The core package of OpenSpaces provides APIs for direct access to a data grid, internally referred to as a "space." The main interface is the GigaSpace, which enables the basic interaction with the data grid. The core components include basic infrastructure support such as [Space](/xap96/the-space-component.html) construction, simplified API using the [GigaSpace](/xap96/the-gigaspace-interface.html) interface including [Transaction Management](/xap96/transaction-management.html) and declarative transaction support. Core components also include support for [Map/Cache](The Map Component) construction and a simplified API using [GigaMap](The GigaMap Interface).
+The core package of OpenSpaces provides APIs for direct access to a data grid, internally referred to as a "space." The main interface is the GigaSpace, which enables the basic interaction with the data grid. The core components include basic infrastructure support such as [Space](./the-space-component.html) construction, simplified API using the [GigaSpace](./the-gigaspace-interface.html) interface including [Transaction Management](./transaction-management.html) and declarative transaction support. Core components also include support for [Map/Cache](The Map Component) construction and a simplified API using [GigaMap](The GigaMap Interface).
 
 ## Events
 
@@ -42,11 +42,11 @@ The events package is built on top of the core package, and provides simple obje
 
 Another alternative for events is the usage of JMS 1.1 on top of GigaSpaces, which is supported within the product and is recommended for client applications integrating with SBA applications.
 
-The events module includes components for simplified EDA/Service Bus development. These components allow [unified event-handling](/xap96/data-event-listener.html) and provide two mechanisms for event-generation: a [Polling Container](/xap96/polling-container.html) uses polling received operations against the space, and a [Notify Container](/xap96/notify-container.html) which uses the space's built-in notification support.
+The events module includes components for simplified EDA/Service Bus development. These components allow [unified event-handling](./data-event-listener.html) and provide two mechanisms for event-generation: a [Polling Container](./polling-container.html) uses polling received operations against the space, and a [Notify Container](./notify-container.html) which uses the space's built-in notification support.
 
 ## Space Based Remoting
 
-The [Remoting](/xap96/space-based-remoting.html) package provides capabilities for clients to access remote services. Remoting in GigaSpaces XAP is implemented on top of the data grid's clustering model, which provides location transparency, fail-over, and performance to remote service invocations. OpenSpaces implements [remoting](/xap96/space-based-remoting.html), using the space as the transport layer, similar to [other Spring remoting components](http://static.springframework.org/spring/docs/3.0.x/reference/remoting.html).
+The [Remoting](./space-based-remoting.html) package provides capabilities for clients to access remote services. Remoting in GigaSpaces XAP is implemented on top of the data grid's clustering model, which provides location transparency, fail-over, and performance to remote service invocations. OpenSpaces implements [remoting](./space-based-remoting.html), using the space as the transport layer, similar to [other Spring remoting components](http://static.springframework.org/spring/docs/3.0.x/reference/remoting.html).
 
 Remoting can be viewed as the alternative to Java EE Session Beans, or Java RMI, as it provides all of their capabilities as well as supporting synchronous and asynchronous invocations, and dynamic scripting languages - enabling you to use Groovy or Ruby in your space-based applications.
 
@@ -77,7 +77,7 @@ GigaSpaces XAP provides several default implementations as part of the product, 
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 
-More information on the usage of the above integrations can be found in the [Programmer's Guide](/xap96/programmer's-guide.html).
+More information on the usage of the above integrations can be found in the [Programmer's Guide](./programmer's-guide.html).
 
 ## Spring Container
 
@@ -87,9 +87,9 @@ The Spring framework provides very elegant abstractions, which makes it very eas
 
 ## Jetty Web Container
 
-Jetty is a very popular web container, which provides support for JEE [web container](/xap96/web-processing-unit-container.html) specification services such as: Servlet, JavaServer Pages, JavaServer Faces, and others.
+Jetty is a very popular web container, which provides support for JEE [web container](./web-processing-unit-container.html) specification services such as: Servlet, JavaServer Pages, JavaServer Faces, and others.
 
-The [integration with the Jetty web container](/xap96/web-jetty-processing-unit-container.html), allows you to run JEE web applications (.war files) in GigaSpaces XAP.
+The [integration with the Jetty web container](./web-jetty-processing-unit-container.html), allows you to run JEE web applications (.war files) in GigaSpaces XAP.
 
 ## Microsoft .NET container
 
@@ -99,11 +99,11 @@ The [.NET container](XAP96NET:Programmer's Guide) bridges the technical gap and 
 
 ## C++ Container
 
-Much like the .NET container, the [CPP Processing Unit](/xap96/cpp-processing-unit.html) provides a native C++ runtime environment for C++ SBA applications.
+Much like the .NET container, the [CPP Processing Unit](./cpp-processing-unit.html) provides a native C++ runtime environment for C++ SBA applications.
 
 ## Mule
 
-Mule is a popular open source Enterprise Services Bus implementation in Java. The [Mule container integration](/xap96/mule-esb.html) allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
+Mule is a popular open source Enterprise Services Bus implementation in Java. The [Mule container integration](./mule-esb.html) allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
 
 {% endtoczone %}
 
@@ -117,7 +117,7 @@ Data access, messaging, parallel processing services, speeding up your applicati
 - High Availability: Built-in hot backup and self-healing capabilities for zero downtime
 - Consistency: Maintain data integrity with 100% transactional data handling
 
-As an application platform, GigaSpaces XAP provides integrated, memory-based runtime capabilities. The core of these capabilities is backed by the space technology - for more information, please refer to [Space - Concepts and Capabilities](/xap96/concepts.html#Space - Concepts and Capabilities).
+As an application platform, GigaSpaces XAP provides integrated, memory-based runtime capabilities. The core of these capabilities is backed by the space technology - for more information, please refer to [Space - Concepts and Capabilities](./concepts.html#Space - Concepts and Capabilities).
 
 The core middleware capabilities are:
 
@@ -136,7 +136,7 @@ It is important to note that the IMDG, although a memory-based service, is fully
 
 The IMDG uses the unified clustering layer, to provide a highly available and reliable service.
 
-The main API to access the IMDG service, is the [`GigaSpace` interface](/xap96/the-gigaspace-interface.html). In addition, one can use the Map API (using the [GigaMap interface](The GigaMap Interface)) to access the IMDG. Please refer to the [Programmer's Guide](/xap96/programmer's-guide.html) for usage examples.
+The main API to access the IMDG service, is the [`GigaSpace` interface](./the-gigaspace-interface.html). In addition, one can use the Map API (using the [GigaMap interface](The GigaMap Interface)) to access the IMDG. Please refer to the [Programmer's Guide](./programmer's-guide.html) for usage examples.
 
 ## Messaging Grid
 
@@ -145,10 +145,10 @@ The messaging grid aspect of the space provides messaging capabilities such as:
 1. Event-Driven capabilities - the ability to build event-driven processing applications. This model enables fast (in-memory-based) asynchronous modular processing, resulting in a very efficient and scalable processing paradigm.
 1. Asynchronous production and consumption of information.
 1. One-to-one, Many-to-One, One-to-Many and Many-to-Many relationships.
-1. [FIFO](/xap96/fifo-support.html) ordering.
-1. [Transaction Management](/xap96/transaction-management.html).
+1. [FIFO](./fifo-support.html) ordering.
+1. [Transaction Management](./transaction-management.html).
 
-The core APIs used for messaging are the OpenSpaces [Notify](/xap96/notify-container.html) and [Polling](/xap96/polling-container.html) Containers. In addition, there is a [JMS 1.1 implementation](/xap96/jms-api-support.html) available to be used with existing applications. More information can be found in the [Messaging and Events](Messaging and Events) section.
+The core APIs used for messaging are the OpenSpaces [Notify](./notify-container.html) and [Polling](./polling-container.html) Containers. In addition, there is a [JMS 1.1 implementation](./jms-api-support.html) available to be used with existing applications. More information can be found in the [Messaging and Events](Messaging and Events) section.
 
 ## Processing Services
 
@@ -220,7 +220,7 @@ Production-grade control and visibility
 
 The role of clustering in GigaSpaces XAP is to provide scaling, load-balancing and high-availability. The main difference between GigaSpaces XAP and other clustering alternatives, is the use of a single clustering model for all middleware core capabilities. This means that the data and the services colocated with it are equally available. An example of how useful this is is that when a primary node fails, and another node acts as its backup, both application components (i.e. data and messaging) become active at the same time.
 
-The ability to support a unified clustering model is a direct result of the underlying space-based clustering model. For more information on the concept of space, please refer to [Space - Concepts and Capabilities](/xap96/concepts.html#Space - Concepts and Capabilities).
+The ability to support a unified clustering model is a direct result of the underlying space-based clustering model. For more information on the concept of space, please refer to [Space - Concepts and Capabilities](./concepts.html#Space - Concepts and Capabilities).
 
 ## Scaling
 
@@ -265,11 +265,11 @@ In this type of example, the Deployment Infrastructure is responsible for making
 
 ## Grid Service Agent (GSA)
 
-The [Grid Service Agent (GSA)](/xap96/the-grid-service-agent.html) acts as a process manager that can spawn and manage Deployment Infrastructure processes (Operating System level processes) such as [Grid Service Manager](/xap96/the-grid-service-manager.html) and [Grid Service Container](/xap96/the-grid-service-container.html).
+The [Grid Service Agent (GSA)](./the-grid-service-agent.html) acts as a process manager that can spawn and manage Deployment Infrastructure processes (Operating System level processes) such as [Grid Service Manager](./the-grid-service-manager.html) and [Grid Service Container](./the-grid-service-container.html).
 
-Usually, a single GSA is deployed on each individual machine. The GSA spawns [Grid Service Managers](/xap96/the-grid-service-manager.html), [Grid Service Containers](/xap96/the-grid-service-container.html), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
+Usually, a single GSA is deployed on each individual machine. The GSA spawns [Grid Service Managers](./the-grid-service-manager.html), [Grid Service Containers](./the-grid-service-container.html), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
 
-{% lampon %} Though [Grid Service Manager](/xap96/the-grid-service-manager.html), [Grid Service Container](/xap96/the-grid-service-container.html), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
+{% lampon %} Though [Grid Service Manager](./the-grid-service-manager.html), [Grid Service Container](./the-grid-service-container.html), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
 
 {% anchor gsm %}
 
@@ -287,9 +287,9 @@ The GSM monitors SLA breach events throughout the life-cycle of the application,
 
 A Grid Service Container (GSC) is a container which hosts Processing Units instances. The GSC can be perceived as a node on the grid, which is controlled by the GSM. The GSM instruct the GSC to deploy or undeploy Processing Unit instances. The GSC reports its status to the GSM.
 
-It is common to start several GSCs on the same physical machine, depending on the machine CPU and memory resources. The GSCs provide a layer of abstraction on top of the physical layer (Machines). This concept enables deployment of clusters on various deployment topologies on enterprise data centers and [public clouds](/xap96/cloud-and-virtualization.html).
+It is common to start several GSCs on the same physical machine, depending on the machine CPU and memory resources. The GSCs provide a layer of abstraction on top of the physical layer (Machines). This concept enables deployment of clusters on various deployment topologies on enterprise data centers and [public clouds](./cloud-and-virtualization.html).
 
 {% endtoczone %}
 
 {% whr %}
-{% refer %} **Next chapter**: [Terminology](/xap96/terminology.html){% endrefer %}
+{% refer %} **Next chapter**: [Terminology](./terminology.html){% endrefer %}

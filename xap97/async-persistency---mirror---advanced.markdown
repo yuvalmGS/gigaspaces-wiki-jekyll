@@ -43,7 +43,7 @@ Here is how the space should be started:
 
 # Implementing a Custom Mirror Data Source
 
-GigaSpaces has a built in [Hibernate Space Persistency](/xap96/hibernate-space-persistency.html) implementation which is a `SpaceSynchronizationEndpoint` extension. You can implement your own Mirror very easily to accommodate your exact needs. See example below:
+GigaSpaces has a built in [Hibernate Space Persistency](./hibernate-space-persistency.html) implementation which is a `SpaceSynchronizationEndpoint` extension. You can implement your own Mirror very easily to accommodate your exact needs. See example below:
 
 {% togglecloak id=custom %}{% color #88aed2 %}Show code...{% endcolor %}{% endtogglecloak %}
 {% gcloak custom %}
@@ -415,12 +415,12 @@ Here is a schematic flow of how two partitions (each a primary-backup pair) asyn
 
 # Considerations and Known Issues
 
-{% exclamation %} [Space persistency considerations](/xap96/space-persistency-advanced-topics.html#limits) also apply to the Mirror Service.
+{% exclamation %} [Space persistency considerations](./space-persistency-advanced-topics.html#limits) also apply to the Mirror Service.
 
 - The Mirror Service cannot be used with a single space or the `partitioned` cluster schema. It is supported with the `async-replicated`, and `partitioned-sync2backup` cluster schemas.
 - The Mirror Service is a single space which joins a replication group. The Mirror Service is not a clustered space or part of the replication group declaration.
 - When the Mirror Service is loaded, it does not perform memory recovery. See the [reliability section](#reliability) for more details.
-- [Transient Entries](/xap96/transient-entries.html) are not persisted into the data source, just as in any other persistent mode.
+- [Transient Entries](./transient-entries.html) are not persisted into the data source, just as in any other persistent mode.
 - When using a Jini Entry as your space class, it must have accessors and mutators ("getters" and "setters") for all public fields.
 - You should have one Mirror Service running per Data-Grid cluster.
 - The Mirror Service cannot be clustered. Deploying it as a Processing unit ensures its high-availability.

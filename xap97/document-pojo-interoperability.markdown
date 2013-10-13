@@ -124,7 +124,7 @@ SpaceDocument[] documents = gigaSpace.readByIds(
 
 ![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
 
-When a type descriptor is created from a POJO class, the type descriptor builder checks if the POJO class supports [Dynamic Properties](/xap96/dynamic-properties.html) (new in 8.0.1). If it doesn't, the type descriptor will also not support dynamic properties. If a space document will be created using the same type with a property that is not defined in the POJO and written to the space, an exception will be thrown indicating the property is not defined in the type and the type does not support dynamic properties.
+When a type descriptor is created from a POJO class, the type descriptor builder checks if the POJO class supports [Dynamic Properties](./dynamic-properties.html) (new in 8.0.1). If it doesn't, the type descriptor will also not support dynamic properties. If a space document will be created using the same type with a property that is not defined in the POJO and written to the space, an exception will be thrown indicating the property is not defined in the type and the type does not support dynamic properties.
 
 It is possible to manually create a `SpaceTypeDescriptor` of the POJO using the `SpaceTypeDescriptorBuilder` and enable dynamic properties. Note, however, that in that case if client A writes a document with a dynamic property and client B reads it as a POJO, the dynamic property will be ignored, and if client B will proceed to update the entry the dynamic property will be deleted from the space.
 
@@ -190,7 +190,7 @@ This behavior applies to arrays and collections as well (for example, if `Person
 
 # Local View / Local Cache
 
-[Local View](/xap96/local-view.html) and [Local Cache](/xap96/local-cache.html) supports both POJOs and Documents. Unlike an embedded space, the entry is stored in the cache as a user object (either POJO or document), which speeds up query performance since the result entries do not have to be transformed.
+[Local View](./local-view.html) and [Local Cache](./local-cache.html) supports both POJOs and Documents. Unlike an embedded space, the entry is stored in the cache as a user object (either POJO or document), which speeds up query performance since the result entries do not have to be transformed.
 
 When working with POJOs only or Documents only, this is not an issue. However, when working in a mixed POJO-document environment it is important to understand how the objects are stored in cache to assure optimal performance.
 

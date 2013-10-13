@@ -44,7 +44,7 @@ spring-security-config-location = ../config/security/security-config.xml
 This is all the configuration required to enable the use of the Spring-based security bridge. The rest is part of the Spring Security configuration XML file.
 
 {% info %}
- For convenience, the template properties `config/security/spring-security.properties` can be renamed to `security.properties` or referenced using a system property (see [Security Configurations](/xap96/security-configurations.html)).
+ For convenience, the template properties `config/security/spring-security.properties` can be renamed to `security.properties` or referenced using a system property (see [Security Configurations](./security-configurations.html)).
 {% endinfo %}
 
 # Logging
@@ -90,7 +90,7 @@ public class Main {
 
 # GigaSpaces Security Authorities
 
-GigaSpaces provides a set of [Security Authorities](/xap96/security-authorities.html) which can be stored as a String in any external directory. Much like the Spring's Security `GrantedAuthority` s which translate to and from a String.
+GigaSpaces provides a set of [Security Authorities](./security-authorities.html) which can be stored as a String in any external directory. Much like the Spring's Security `GrantedAuthority` s which translate to and from a String.
 
 Lets take for example a Box-Office employee which has `READ` privileges, for class "eg.cinema.Movie".
 We convert the class expression using the `WildcardExpressionToFilterConverter` methods. This converter takes in an expression, for example a regular expression expressing the permitted classes the employee can read.

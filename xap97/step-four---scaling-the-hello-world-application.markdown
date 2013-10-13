@@ -52,10 +52,10 @@ page_id: 61867363
 
 We recommend that you go through the following steps before starting this tutorial:
 
-1. [Download GigaSpaces and Set Up Your Development Environment](/xap96/setting-up-your-ide-to-work-with-gigaspaces.html) to work with GigaSpaces - this is needed for running the tutorial sample application.
-1. [Step One - Using Processing Units for Scaling](/xap96/step-one---using-processing-units-for-scaling.html) - a short introduction to what a Processing Unit is - **Recommended**.
-1. [Step Two - Creating the Hello World Application](/xap96/step-two---creating-the-hello-world-application.html) - create and run a Processing Unit.
-1. [Step Three - Deploying the Hello World onto the Service Grid](/xap96/step-three---deploying-onto-the-service-grid.html) - deploy the Processing Unit onto the Service Grid and monitor it at runtime.
+1. [Download GigaSpaces and Set Up Your Development Environment](./setting-up-your-ide-to-work-with-gigaspaces.html) to work with GigaSpaces - this is needed for running the tutorial sample application.
+1. [Step One - Using Processing Units for Scaling](./step-one---using-processing-units-for-scaling.html) - a short introduction to what a Processing Unit is - **Recommended**.
+1. [Step Two - Creating the Hello World Application](./step-two---creating-the-hello-world-application.html) - create and run a Processing Unit.
+1. [Step Three - Deploying the Hello World onto the Service Grid](./step-three---deploying-onto-the-service-grid.html) - deploy the Processing Unit onto the Service Grid and monitor it at runtime.
 
 {% whr %}
 
@@ -109,7 +109,7 @@ Scale the Hello World application
 
 #### Application Components
 
-The Processing Unit we deploy onto the Service Grid is our Hello World Processor application from the [previous steps](/xap96/your-first-xtp-application.html). Reminder - a feeder application writes each Message object to the processor Processing Unit, which is in turn processed by the Processor class.
+The Processing Unit we deploy onto the Service Grid is our Hello World Processor application from the [previous steps](./your-first-xtp-application.html). Reminder - a feeder application writes each Message object to the processor Processing Unit, which is in turn processed by the Processor class.
 
 {% align center %}
 ![Application Components.jpg](/attachment_files/Application Components.jpg)
@@ -135,7 +135,7 @@ The _GigaSpaces Management Center_ is the graphical user interface for administr
 
 #### Scaled-Out Deployment Layout
 
-In this tutorial we scale the Hello World Processor we created in the the [previous steps](/xap96/your-first-xtp-application.html).
+In this tutorial we scale the Hello World Processor we created in the the [previous steps](./your-first-xtp-application.html).
 First we scale it to 3 instances (Figure 3), and then into 4 instances, divided into two primary instances and two backup instances (Figure 4).
 
 {% section %}
@@ -211,7 +211,7 @@ This is achieved by dividing the application data into partitions (each partitio
 **Routing Index** - When writing an object to a cluster of Processing Units which contains multiple partitions, the routing of that object to a specific partition, is calculated based on the value of one of the object's properties. This property is designated using the `@SpaceRouting` annotation, and is referred to as the **Routing Index**.
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](/xap96/elastic-processing-unit.html) section.
+For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
 {% endtip %}
 
 {% comment %}
@@ -225,7 +225,7 @@ For details about scaling a running space cluster **in runtime** see the [Elasti
 
 ## Walkthrough - the Routing Index applied to the Message Object
 
-As you may recall from [step 2 of this tutorial](/xap96/step-two---creating-the-hello-world-application.html), the @SpaceRouting annotation decorates the getId() method of the Message object. This designates the _id_ as the **Routing Index** of the Message object. It means that when a Message object is written to the partitioned space, the return value of this method determines the partition to which the Message is written. The calculation is very simple: the hashCode() method of the return value is called, and the result is used in a modulus calculation with the number of partitions. For example, if the result of the hashCode() method call is 30, and the number of partitions is 3, then 30%3 = 0, meaning the object will be sent to the first partition.
+As you may recall from [step 2 of this tutorial](./step-two---creating-the-hello-world-application.html), the @SpaceRouting annotation decorates the getId() method of the Message object. This designates the _id_ as the **Routing Index** of the Message object. It means that when a Message object is written to the partitioned space, the return value of this method determines the partition to which the Message is written. The calculation is very simple: the hashCode() method of the return value is called, and the result is used in a modulus calculation with the number of partitions. For example, if the result of the hashCode() method call is 30, and the number of partitions is 3, then 30%3 = 0, meaning the object will be sent to the first partition.
 
 {% highlight java %}
 @SpaceRouting
@@ -256,7 +256,7 @@ Next, we show you how to start the service grid components, by starting a grid s
 
 **Install GigaSpaces**
 
-{% exclamation %} After going through the previous tutorial [Step Two - Creating the Hello World Application](/xap96/step-two---creating-the-hello-world-application.html), you should have GigaSpaces installed and the Hello World sample application environment set. If not, please [download GigaSpaces and set up your development environment](/xap96/setting-up-your-ide-to-work-with-gigaspaces.html) to work with GigaSpaces - this is needed to run the tutorial sample application.
+{% exclamation %} After going through the previous tutorial [Step Two - Creating the Hello World Application](./step-two---creating-the-hello-world-application.html), you should have GigaSpaces installed and the Hello World sample application environment set. If not, please [download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html) to work with GigaSpaces - this is needed to run the tutorial sample application.
 
 {% anchor Start Service Grid %}
 
@@ -401,4 +401,4 @@ The backup instance of the primary you just shut down becomes the primary. Then 
 ## What's Next?
 
 Congratulations! By now you should have implemented your first GigaSpaces application, introduced high availability to it and scaled it out.
-Next, you can go [Beyond the Basics, and explore GigaSpaces more Advanced Features](/xap96/beyond-the-basics.html), or return to the [Quick Start Guide Home ](/xap96/quick-start-guide.html).
+Next, you can go [Beyond the Basics, and explore GigaSpaces more Advanced Features](./beyond-the-basics.html), or return to the [Quick Start Guide Home ](./quick-start-guide.html).

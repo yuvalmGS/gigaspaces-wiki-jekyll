@@ -24,10 +24,10 @@ page_id: 61867323
 
 ### Browse XAP 9.6
 
-[Quick Start Guide](/xap96/quick-start-guide.html)
-[Product Overview](/xap96/product-overview.html)
-[Programmer's Guide](/xap96/programmer's-guide.html)
-[Administrator's Guide](/xap96/administrator's-guide.html)
+[Quick Start Guide](./quick-start-guide.html)
+[Product Overview](./product-overview.html)
+[Programmer's Guide](./programmer's-guide.html)
+[Administrator's Guide](./administrator's-guide.html)
 
 {% comment %}
 ### Offline Documentation|main

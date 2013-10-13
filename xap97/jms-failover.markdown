@@ -46,7 +46,7 @@ In transacted sessions, the client should react to this exception as it would re
 
 The client has to resend the produced messages that have been disposed. In case of a single consumer, the next message to arrive is the first unacknowledged message. The `JMSRedelivered` header of recovered messages is set.
 
-{% exclamation %} The `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [JMS Known Issues and Considerations](/xap96/jms-known-issues-and-considerations.html).
+{% exclamation %} The `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [JMS Known Issues and Considerations](./jms-known-issues-and-considerations.html).
 
 # Example Scenarios
 
@@ -64,7 +64,7 @@ The client has to resend the produced messages that have been disposed. In case 
 1. In the next `receive()` call, the client receives the first unacknowledged message.
 1. The `JMSRedelivered` header of recovered messages is set.
 
-{% exclamation %} In GigaSpaces 6.0, the `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [Known Issues and Limitations](/xap96/jms-known-issues-and-considerations.html).
+{% exclamation %} In GigaSpaces 6.0, the `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [Known Issues and Limitations](./jms-known-issues-and-considerations.html).
 
 ## Asynchronous Consumer
 
@@ -80,4 +80,4 @@ The client has to resend the produced messages that have been disposed. In case 
 
 {% endtoczone %}
 
-{% exclamation %} In GigaSpaces 6.0, the `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [Known Issues and Limitations](/xap96/jms-known-issues-and-considerations.html).
+{% exclamation %} In GigaSpaces 6.0, the `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [Known Issues and Limitations](./jms-known-issues-and-considerations.html).

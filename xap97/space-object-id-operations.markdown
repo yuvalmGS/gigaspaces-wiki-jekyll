@@ -20,7 +20,7 @@ The space UID for space object can be created in three different ways:
 See the [Global ID Generator](http://wiki.gigaspaces.com/wiki/display/SBP/Global+ID+Generator) for a generic ID generator service you may use with your application.
 {% endtip %}
 
-{% infosign %} To learn how to read space entries by ID see [ID Queries](/xap96/id-queries.html).
+{% infosign %} To learn how to read space entries by ID see [ID Queries](./id-queries.html).
 
 # The SpaceId Field content
 

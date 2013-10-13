@@ -20,7 +20,7 @@ The GigaSpaces HTTP Session Management provides the following:
 - Non intrusive session management or explicit Data Grid API access for fine grain control - Allows multiple web servers to share the same session in transparent manner
 
 {% tip %}
-For global HTTP Session Managment for Tomcat , JBoss , Weblogic , Websphere , Glassfish and other J2EE web/application servers see the [Global Http Session Sharing](/xap96/global-http-session-sharing.html).
+For global HTTP Session Managment for Tomcat , JBoss , Weblogic , Websphere , Glassfish and other J2EE web/application servers see the [Global Http Session Sharing](./global-http-session-sharing.html).
 {% endtip %}
 
 # How to enable GigaSpaces HTTP Session Management
@@ -44,7 +44,7 @@ For example, if the session will be stored on a remote clustered Space with loca
 In case there is already a Space configured within the web application. For example, defined within **META-INF/spring/pu.xml**, it can be used as the Space where sessions will be stored as well. In this case, the **jetty.sessions.spaceUrl** can use the special prefix **bean**. For example, if the Space was defined as a bean with id of **sessionSpace**, the  **jetty.sessions.spaceUrl** can be set to **bean://sessionSpace**.
 
 {% tip %}
-See the [Quick Start Guide](/xap96/step-2---enabling-http-session-failover-and-fault-tolerance.html) for an example how to use the HTTP Session Management.
+See the [Quick Start Guide](./step-2---enabling-http-session-failover-and-fault-tolerance.html) for an example how to use the HTTP Session Management.
 {% endtip %}
 
 # Options

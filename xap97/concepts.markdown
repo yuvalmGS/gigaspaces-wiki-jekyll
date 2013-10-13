@@ -114,7 +114,7 @@ These capabilities are at the core of GigaSpaces XAP. This combination, plus the
 
 {% tip title=Template Matching %}
 Because the space stores entries in the form of objects, retrieval of information is done using template matching. The application creates a template object -- the class of the template object defines which type of objects the application wants to read (for example, a template of class `Message` will return `Message` objects), and the template object's properties are used as retrieval criteria. If a template property has a value, objects are only retrieved if they have the same value for that property. If properties in the template are null, they are ignored.
-GigaSpaces XAP extends template matching by providing semantics to query ranges on information as well. For additional information, please refer to the [SQLQuery API](/xap96/sqlquery.html) in the Programmer's Guide.
+GigaSpaces XAP extends template matching by providing semantics to query ranges on information as well. For additional information, please refer to the [SQLQuery API](./sqlquery.html) in the Programmer's Guide.
 {% endtip %}
 
 {% endtoczone %}
@@ -158,7 +158,7 @@ Information is divided into partitions when it is accessed into the cluster, usi
 For example, when writing one million orders into a space, the orders are (and should be) divided across the partitions in the cluster. The routing that specifies which order instance should be stored in which partition, is decided based on a property of the order itself. The application developer provides hints to the clustered proxy by suggesting a particular property within the entry. The clustered proxy decides, based on the hash-code of the property module, the size of the cluster.
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](/xap96/elastic-processing-unit.html) section.
+For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
 {% endtip %}
 
 ## Resilient Partitioning
@@ -172,5 +172,5 @@ The common topology is of a partitioned cluster, where each partition member has
 {% endtoczone %}
 
 {% whr %}
-{% refer %}**Next Chapter:** [A Typical SBA Application](/xap96/a-typical-sba-application.html){% endrefer %}
+{% refer %}**Next Chapter:** [A Typical SBA Application](./a-typical-sba-application.html){% endrefer %}
 

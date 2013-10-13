@@ -20,7 +20,7 @@ One of two main failure scenarios might occur:
 - Process failure or machine crash
 - Network cable disconnection
 
-It takes GigaSpaces a few seconds to recover from process failure or a machine crash. In case of network cable disconnection, the client first has to detect that it has been disconnected from the machine running the space. Therefore, recovery time in this case is longer. For details on how network failure is detected and handled, see the [Communication Protocol](/xap96/communication-protocol.html#watchdog) section.
+It takes GigaSpaces a few seconds to recover from process failure or a machine crash. In case of network cable disconnection, the client first has to detect that it has been disconnected from the machine running the space. Therefore, recovery time in this case is longer. For details on how network failure is detected and handled, see the [Communication Protocol](./communication-protocol.html#watchdog) section.
 
 # Reducing Failure Detection Time
 
@@ -83,11 +83,11 @@ The following parameters in the cluster schema [active election](#Active Electio
 
 ### Proxy Connectivity
 
-The [Proxy Connectivity](/xap96/proxy-connectivity.html) defines the settings in which the system checks the liveness of space members.
+The [Proxy Connectivity](./proxy-connectivity.html) defines the settings in which the system checks the liveness of space members.
 
 ### Watchdog Parameters
 
-See the `com.gs.transport_protocol.lrmi.idle_connection_timeout` and the `com.gs.transport_protocol.lrmi.request_timeout` watchdog properties at the [Communication Protocol](/xap96/communication-protocol.html#watchdog) section.
+See the `com.gs.transport_protocol.lrmi.idle_connection_timeout` and the `com.gs.transport_protocol.lrmi.request_timeout` watchdog properties at the [Communication Protocol](./communication-protocol.html#watchdog) section.
 
 ## Service Grid Parameters
 
@@ -99,7 +99,7 @@ The Service Grid uses two complementary mechanisms for service detections -- the
 
 The fault-detection handlers check periodically if a service is alive, and in case of failure, how many times to retry and how often.
 
-The GSM and GSC fault-detection handler settings are controlled via the relevant properties. The `PUFaultDetectionHandler` is configurable using the [SLA - member alive indicator](/xap96/configuring-the-processing-unit-sla.html#livenessDetection).
+The GSM and GSC fault-detection handler settings are controlled via the relevant properties. The `PUFaultDetectionHandler` is configurable using the [SLA - member alive indicator](./configuring-the-processing-unit-sla.html#livenessDetection).
 
 For logging information, it is advised to monitor service failure by setting the logging level to `Level.FINE`.
 
@@ -129,4 +129,4 @@ When a Jini Lookup Service fails and is brought back online, a client (such as a
 
 The downside is that it may delay the discovery of services if these are not brought up quickly. A discovery can be delayed us much as 15 minutes. If you have two GSMs and one fails, but it will be brought back up only in the next hour, then it's discovery will take ~15 minutes after it has loaded.
 
-These settings can be configured - see [How to Configure Unicast Discovery](/xap96/how-to-configure-unicast-discovery.html).
+These settings can be configured - see [How to Configure Unicast Discovery](./how-to-configure-unicast-discovery.html).

@@ -46,7 +46,7 @@ com.gigaspaces.persistent.level = FINER
 
 # Initial Space Load
 
-When the space is started, restarted, or cleaned, the system can initially fill the space with space objects that are likely to be required by the application. You can specify the data to loaded using the `ExternalDataSource.initialLoad` method that is called once the space is started. See the [Space Persistency Initial Load](/xap96/space-persistency-initial-load.html) for details. The space is not available for clients, until the data load process has been completed.
+When the space is started, restarted, or cleaned, the system can initially fill the space with space objects that are likely to be required by the application. You can specify the data to loaded using the `ExternalDataSource.initialLoad` method that is called once the space is started. See the [Space Persistency Initial Load](./space-persistency-initial-load.html) for details. The space is not available for clients, until the data load process has been completed.
 
 {% tip %}
 The Initial Load is supported with the `partitioned-sync2backup` cluster schema. If you would like to pre-load a clustered space using the Initial-Load without running backups you can use the `partitioned-sync2backup` and have ZERO as the amount of backups.
@@ -65,7 +65,7 @@ In order to allow an object that has been removed to be loaded again into the sp
 
 # Eliminating Resonance Affect when Using Mirror Service
 
-When using the [Mirror Service](/xap96/asynchronous-persistency-with-the-mirror.html), and the `SpaceDatasource` is enabled for the space, all data loaded into the space using `SpaceDataSource.initialDataLoad` while it is being started, **is not replicated back to the Mirror Service**.
+When using the [Mirror Service](./asynchronous-persistency-with-the-mirror.html), and the `SpaceDatasource` is enabled for the space, all data loaded into the space using `SpaceDataSource.initialDataLoad` while it is being started, **is not replicated back to the Mirror Service**.
 
 # Count Operation
 
@@ -108,9 +108,9 @@ A better strategy would be to use a dummy generator like "increment" in hibernat
 - When a space is configured to be persistent, and a `POJO` is used as the Space Domain class, it must use the `SpaceId(autogenerate=false)` decoration.
 - When running in LRU Cache policy the `GigaSpace.count` operation using the data within the space only and does not access the space data source (database) to return the object count.
 - When a space is configured to be persistent, only Native serialization mode should be used.
-- Objects loaded via the `SpaceDataSource.initialDataLoad` can be expired using the `@SpaceLeaseExpiration` annotation. See the [POJO Support - Advanced](/xap96/pojo-metadata.html#SpaceLeaseExpiration) page for more details.
+- Objects loaded via the `SpaceDataSource.initialDataLoad` can be expired using the `@SpaceLeaseExpiration` annotation. See the [POJO Support - Advanced](./pojo-metadata.html#SpaceLeaseExpiration) page for more details.
 - When using the Map API, the key must be `Serializable`.
-- The `SpaceDataSource.initialDataLoad()` loads data into partitioned spaces, by reading all the data into the space and filtering it at the space side. To tune this behavior, you should execute the relevant query from the database on the partition ID, to fetch the relevant result set to load into the space. See the [Space Persistency Initial Load](/xap96/space-persistency-initial-load.html) for more details.
+- The `SpaceDataSource.initialDataLoad()` loads data into partitioned spaces, by reading all the data into the space and filtering it at the space side. To tune this behavior, you should execute the relevant query from the database on the partition ID, to fetch the relevant result set to load into the space. See the [Space Persistency Initial Load](./space-persistency-initial-load.html) for more details.
 - [Hibernate Lazy load](http://www.hibernate.org/162.html) is not supported when using the `DefaultHibernateSpaceDataSource` implementation. See [Space Object Modeling](http://wiki.gigaspaces.com/wiki/display/SBP/Space+Object+Modeling) for more details.
 - When running in `ALL_IN_CACHE` cache policy mode, optimistic locking is supported - i.e. updates in optimistic locking mode will be rejected, in case the client performs an update with the non-latest version of the entry. The loaded object from the database should include the latest version or the value 1.
 - When running a local cache, the client cache will be updated using an optimistic locking mode - i.e. updates will include the correct version of the entry.

@@ -21,7 +21,7 @@ In many scenarios, you need to set up GigaSpaces in environments which have a fi
 - Same topology as above: All cluster components and clients communicate over **unicast only. Multicast traffic is prohibited**.
 - The firewall divides GigaSpaces cluster into zones. Some components (GSCs, GSM) are running in one firewall zone, while the rest of the components are running in another firewall zone/s. Only unicast traffic is allowed between firewall zones.
 
-{% refer %}To learn more about GigaSpaces port usage, refer to [How to Control the Used Ports](/xap96/how-to-control-the-used-ports.html).{% endrefer %}
+{% refer %}To learn more about GigaSpaces port usage, refer to [How to Control the Used Ports](./how-to-control-the-used-ports.html).{% endrefer %}
 
 # GigaSpaces Firewall Settings
 
@@ -147,7 +147,7 @@ LOOKUPLOCATORS=server111:7102; export LOOKUPLOCATORS
 
 ### LRMI Communication Protocol Port Range Setting Modifications
 
-{% refer %}For more details on the LRMI communication protocol, see the [Communication Protocol](/xap96/communication-protocol.html) section.{% endrefer %}
+{% refer %}For more details on the LRMI communication protocol, see the [Communication Protocol](./communication-protocol.html) section.{% endrefer %}
 The `com.gigaspaces.start.httpPort` Webster port number property can be defined by overriding as shown below, or using a system property:
 
 {% highlight java %}
@@ -172,7 +172,7 @@ Content of override file for Webster port definitions:
 
 The blocking Take operation (`timeout >0`) with a remote client opens a network connection between the client and the space and also a **reverse** network connection between the space and the client before the object is removed from the space to ensure that the client that initiated the blocking take operation is still active. This ensures that the removed object will be actually consumed by the remote client.
 
-There might be cases where the network would not allow the space to perform network operations from the space process back into the client process - for example send SYN_SENT TCP packets over the network. This could happen when the space running within a non-secured network zone (`DMZ`) that sits behind a firewall and the remote client running within a secured network zone. This would cause the take operation to react very slowly since the space network activity ([LRMI](/xap96/communication-protocol.html)) will timeout after 5 seconds (this is the default settings) without the ability to complete the take operation correctly.
+There might be cases where the network would not allow the space to perform network operations from the space process back into the client process - for example send SYN_SENT TCP packets over the network. This could happen when the space running within a non-secured network zone (`DMZ`) that sits behind a firewall and the remote client running within a secured network zone. This would cause the take operation to react very slowly since the space network activity ([LRMI](./communication-protocol.html)) will timeout after 5 seconds (this is the default settings) without the ability to complete the take operation correctly.
 
 In such a case you could disable the `Blocking Reliable Take` activity by using the `space-config.engine.reliable_take` property. You can control the Take operation to restore the object in case the client was terminated during the time it was in blocking mode by using transactions - this will ensure that the removed object will reappear within the space in case the client was terminated abnormally or failed.
 

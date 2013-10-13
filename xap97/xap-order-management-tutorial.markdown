@@ -56,7 +56,7 @@ The `Status` is a Java enum that reflects the states an order can be in.
 
 The `Operation` is a Java enum that reflects one of two operations for an order: Buy or Sell.
 
-The `OrderEvent` is a simple [JavaBean](/xap96/pojo-support.html), which exposes an id (a unique identifier for the data grid), an account key, a price, the order status, and an operation for the order.
+The `OrderEvent` is a simple [JavaBean](./pojo-support.html), which exposes an id (a unique identifier for the data grid), an account key, a price, the order status, and an operation for the order.
 
 The `AccountData` object is much simpler, exposing only an account key (called the username in this model) and a balance.
 
@@ -750,7 +750,7 @@ The "processor" module is stateful, in that it establishes a data model and defi
 
 The "feeder" and "web" modules are stateless, in that they don't define a container for the data grid; they use a "remote URL", which might look like "`jini://*/*/dataGridName`." As stateless containers, they provide services for a stateful container; therefore, they have dependencies on stateful containers and must be deployed after the stateful containers are deployed.
 
-To deploy a module in XAP, you send it to a "[Grid Service Manager](/xap96/the-grid-service-manager.html)," a GSM, which then sends it to GSCs based on service level requirements. (This might mean sending it to multiple GSCs to fulfill space or failover requirements.)
+To deploy a module in XAP, you send it to a "[Grid Service Manager](./the-grid-service-manager.html)," a GSM, which then sends it to GSCs based on service level requirements. (This might mean sending it to multiple GSCs to fulfill space or failover requirements.)
 
 Starting the container services can be done in multiple ways (with varying features) but for the purposes of simplicity, we'll use the [Grid Service Agent](Grid Service Agent), which starts up each service the datagrid requires.
 

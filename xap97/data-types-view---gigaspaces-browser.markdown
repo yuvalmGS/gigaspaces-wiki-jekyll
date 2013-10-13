@@ -8,7 +8,7 @@ page_id: 61867453
 
 # Overview
 
-The Data Types view displays a list of space data type (space classes) stored in the space, and their instance count. You can view the Data Type instances content using the [Query view](/xap96/query-view---gigaspaces-browser.html). Clear the Data Type instances or completely delete the Data Type and all its instances from the space.
+The Data Types view displays a list of space data type (space classes) stored in the space, and their instance count. You can view the Data Type instances content using the [Query view](./query-view---gigaspaces-browser.html). Clear the Data Type instances or completely delete the Data Type and all its instances from the space.
 
 Details are displayed for each Data Type -- i.e., attributes and their properties (names, types, indexed), whether the Data Type is FIFO enabled, whether the Data Type is partial-replication enabled, a list of Super Data Types (inherited classes), etc. These properties appear at the bottom of the panel when the Data Type is selected.
 
@@ -24,7 +24,7 @@ The **Data Type List** is located at the top of the panel. It displays the Data 
 
 The following buttons appear at the bottom of the **Data Type List** (right clicking a Data Type row also displays these options):
 
-- **Query** -- opens the [Query view](/xap96/query-view---gigaspaces-browser.html) with the selected Data Type content in the result table, where each Entry is displayed in a separate row.
+- **Query** -- opens the [Query view](./query-view---gigaspaces-browser.html) with the selected Data Type content in the result table, where each Entry is displayed in a separate row.
 - **Delete** -- removes a Data Type and all its instances from the space. This option removes all existing templates and Data Type meta data from the space.
 - **Clear** -- clears Data Type instances from the space, while keeping the Data Type meta data in the space.
 

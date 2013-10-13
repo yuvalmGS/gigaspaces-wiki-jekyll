@@ -9,7 +9,7 @@ page_id: 61867431
 
 # Overview
 
-OpenSpaces allows to configure, package and deploy a [Processing Unit](/xap96/packaging-and-deployment.html). The OpenSpaces Mule integration allows you to run a pure Mule application (with or without OpenSpaces special extension points and transports) as a Processing Unit.
+OpenSpaces allows to configure, package and deploy a [Processing Unit](./packaging-and-deployment.html). The OpenSpaces Mule integration allows you to run a pure Mule application (with or without OpenSpaces special extension points and transports) as a Processing Unit.
 
 # Configuration
 
@@ -25,9 +25,9 @@ In the example above, the `OpenSpacesMuleContextLoader` loads a Mule application
 
 # Packaging
 
-Packaging of the Processing Unit should follow the [Processing Unit structure](/xap96/the-processing-unit-structure-and-configuration.html).
+Packaging of the Processing Unit should follow the [Processing Unit structure](./the-processing-unit-structure-and-configuration.html).
 
-{% exclamation %} When deploying a Processing Unit into the [SLA-driven container](/xap96/deploying-onto-the-service-grid.html), Mule JAR files should be "installed" into the GigaSpaces installation (on each node). The following minimum set of JARs need to be copied into **`<GigaSpaces Root>\lib\platform\mule`** (if the Mule directory does not exists, create it).
+{% exclamation %} When deploying a Processing Unit into the [SLA-driven container](./deploying-onto-the-service-grid.html), Mule JAR files should be "installed" into the GigaSpaces installation (on each node). The following minimum set of JARs need to be copied into **`<GigaSpaces Root>\lib\platform\mule`** (if the Mule directory does not exists, create it).
 
 - Copy the following JAR files from `<Mule Root>\lib\mule` to `<GigaSpaces Root>\lib\platform\mule`:
 `mule-core`, `mule-module-spring-config`, `mule-module-spring-extras`, `mule-transport-quartz`, `mule-transport-stdio`, `mule-transport-vm` . Other transports (if used) should be copied as well.
@@ -69,5 +69,5 @@ slf4j-api-1.6.1.jar
 
 Once the Processing Unit is packaged, it can be run using the different options that come with OpenSpaces:
 
-- [Standalone](/xap96/running-in-standalone-mode.html)
-- [SLA driven container](/xap96/deploying-onto-the-service-grid.html)
+- [Standalone](./running-in-standalone-mode.html)
+- [SLA driven container](./deploying-onto-the-service-grid.html)

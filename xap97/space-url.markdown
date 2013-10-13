@@ -14,7 +14,7 @@ The **[SpaceURL](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spac
 
 # Usage
 
-In order to locate a space you should specify its URL. The SpaceURL is used as part of the **[Space Component](/xap96/the-space-component.html#SpaceComponent-URLProperties)* and in set using the OpenSpaces *`UrlSpaceFactoryBean`** (and the deprecated `SpaceFinder.find`) API, cluster configuration, management tools as well as by GigaSpaces C++,.Net.
+In order to locate a space you should specify its URL. The SpaceURL is used as part of the **[Space Component](./the-space-component.html#SpaceComponent-URLProperties)* and in set using the OpenSpaces *`UrlSpaceFactoryBean`** (and the deprecated `SpaceFinder.find`) API, cluster configuration, management tools as well as by GigaSpaces C++,.Net.
 
 The general format of the space URL is:
 
@@ -22,7 +22,7 @@ The general format of the space URL is:
 <protocol>://<host name>:<port>/<container name>/<space name>?<properties>
 {% endhighlight %}
 
-{% infosign %} A more commonly used format is using the **[OpenSpaces Configurer API](/xap96/programmatic-api-(configurers).html)** e.g:
+{% infosign %} A more commonly used format is using the **[OpenSpaces Configurer API](./programmatic-api-(configurers).html)** e.g:
 
 {% highlight java %}
 UrlSpaceConfigurer spaceConfigurer = new UrlSpaceConfigurer("/./space").fifo(true)
@@ -45,7 +45,7 @@ spaceConfigurer.destroy();
 | Space Name | The space name to search. The same name defined when space has been created via the Space browser or the `createSpace` utility. |
 | Properties String | (Optional) named value list of special properties. |
 
-{% exclamation %} Make sure your network and machines running GigaSpaces are configured to have multicast enabled. See the [How to Configure Multicast](/xap96/how-to-configure-multicast.html) section for details on how to enable multicast.
+{% exclamation %} Make sure your network and machines running GigaSpaces are configured to have multicast enabled. See the [How to Configure Multicast](./how-to-configure-multicast.html) section for details on how to enable multicast.
 
 # URL Properties
 
@@ -145,7 +145,7 @@ jini://host1:port1/container-name/space name?locators=h1:port,h2:port,h3:port
 
 ## Running Replicated Space
 
-To start three space instances using the [replicated cache topology](/xap96/terminology---data-grid-topologies.html), which enables replicating their data and operations synchronously, you should have the following commands:
+To start three space instances using the [replicated cache topology](./terminology---data-grid-topologies.html), which enables replicating their data and operations synchronously, you should have the following commands:
 
 {% highlight java %}
 gsInstance "/./mySpace?cluster_schema=sync_replicated&total_members=3&id=1"
@@ -161,7 +161,7 @@ jini://*/*/mySpace
 
 ## Running Partitioned Space
 
-To start three space instances using the [partitioned cache topology](/xap96/terminology---data-grid-topologies.html) where each partition stores different portions of the data, you should have the following calls:
+To start three space instances using the [partitioned cache topology](./terminology---data-grid-topologies.html) where each partition stores different portions of the data, you should have the following calls:
 
 {% highlight java %}
 gsInstance "/./mySpace?cluster_schema=partitioned&total_members=3&id=1"
@@ -177,7 +177,7 @@ jini://*/*/mySpace
 
 ## Running Embedded Space
 
-You may run the replicated or partitioned space from within your application. In this case, the space instance will be running in the same memory address as the application - i.e. [embedded space](/xap96/terminology---data-grid-topologies.html). See the following example for running three space instances in partitioned embedded mode.
+You may run the replicated or partitioned space from within your application. In this case, the space instance will be running in the same memory address as the application - i.e. [embedded space](./terminology---data-grid-topologies.html). See the following example for running three space instances in partitioned embedded mode.
 Each `CacheFinder.find()` or `SpaceFinder.find()` call should be done from a different application process.
 
 {% highlight java %}

@@ -45,13 +45,13 @@ The GigaSpaces c++ API provides the following:
 
 c++ business logic can run as a standalone application or can be deployed into the Grid accessing the space in any of the supported runtime topologies: single space, clustered space, remote, or embedded.
 
-When the c++ application interacts with the space, all relevant space components: space filter, replication filter, space data provider (known also as [Space Persistency](/xap96/space-persistency.html) or read/write through), and the mirror service (known also as write-behind) are active and available. In order to access space data originated by CPP business logic and POCOs, these interfaces should be implemented using Java code and relevant POJO classes.
+When the c++ application interacts with the space, all relevant space components: space filter, replication filter, space data provider (known also as [Space Persistency](./space-persistency.html) or read/write through), and the mirror service (known also as write-behind) are active and available. In order to access space data originated by CPP business logic and POCOs, these interfaces should be implemented using Java code and relevant POJO classes.
 
 Data written into the space can be monitored and viewed using the standard GUI and CLI tools. These same tools can be used to monitor and view data stored in the space with Java or .NET applications.
 
 Running c++ classes in a SBA (Space Based Architecture) environment is just as easy as it is in a pure Java environment -- the developer provides the Processing Unit configuration with the relevant SLA, and deploys it into the Grid.
 
-The POCO API is a micro version of the [GigaSpaces OpenSpaces API](/xap96/the-gigaspace-interface.html); it supports the read, write, take and notify paradigm of SBA.
+The POCO API is a micro version of the [GigaSpaces OpenSpaces API](./the-gigaspace-interface.html); it supports the read, write, take and notify paradigm of SBA.
 
 In order to allow interoperability of POCO objects with both POJO (Java) and PONO (.Net) counterparts error-free, you should generate matching Java and .Net classes used to interact with the space. All transformations between these objects will be done transparently using the lightweight GigaSpaces PBS protocol.
 
@@ -86,7 +86,7 @@ In general, you need to simply introduce your c++ class to the space using a sta
 On top of the c++ class itself, which includes the attribute names and types, additional information is required for the space class. This information can include the indexed fields, FIFO mode, versioned mode, replicable mode, etc.
 
 To introduce this additional metadata to the space, the c++ engineer provides a simple XML-based configuration file (the `gs.xml`). This file is parsed at pre-compile time and allows a code generator facility to create a piece of code that "glues" between the c++ runtime and the space runtime (the marshaling code).
-{% refer %}For more details, refer to the [CPP API Code Generator](/xap96/cpp-api-code-generator.html) section.{% endrefer %}
+{% refer %}For more details, refer to the [CPP API Code Generator](./cpp-api-code-generator.html) section.{% endrefer %}
 Here is a simple example of the `gs.xml` content:
 
 {% highlight xml %}
@@ -148,7 +148,7 @@ As you can see, the example above uses `boost::shared_ptr`. If you are not famil
 # Using Existing c++ Classes with the Space
 
 To use existing c++ classes with the space, you need to perform minor changes to your existing c++ classes (such as inheriting from the `IEntry` base class). This allows you to implement your own serialization and data transport protocol to gain total control of the byte stream content sent through the wire when the client interacts with the space process.
-{% refer %}For more details, see the [Writing Existing C++ Class to Space](/xap96/writing-existing-cpp-class-to-space.html) section.{% endrefer %}
+{% refer %}For more details, see the [Writing Existing C++ Class to Space](./writing-existing-cpp-class-to-space.html) section.{% endrefer %}
 
 # Interoperability -- Sharing Data across Java, .NET and c++ Applications
 
@@ -164,17 +164,17 @@ With the PBS approach, a POCO class (that is a graph object) holds references to
 
 The main problem with Grid-based applications and such heterogeneous, complex environments is the inability to forecast how many machines need to store the data or run the business logic. Without a smart container for the data and business logic that can handle the application objects (and not only network processes), it's almost impossible to scale your application efficiently. You need a nervous system with sensors that instruct data and business logic instances to started, shut down, or move to another machine to scale dynamically. In a sense, you have 2 dimensions to scale: in-proc and out-of-proc. In-proc means multiple threads of your business logic running within the same process. Out-of-proc means starting new instances of your business logic across multiple Grid nodes (on the same machine or different machines). In both cases, you need the ability to increase/decrease the amount of business logic instances in runtime, based on some SLA of dynamic external business logic.
 
-The space has already introduced Java based-business logic -- scaling your application by adding more containers on-the-fly to increase space cluster capacity. Java-based in/out-of-proc scalability is supported via Jini service beans and expanded also to Spring beans. This is one of the main capabilities of the [OpenSpaces](/xap96/product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) framework. The new c++ framework allows you to do the same with c++ business logic.
+The space has already introduced Java based-business logic -- scaling your application by adding more containers on-the-fly to increase space cluster capacity. Java-based in/out-of-proc scalability is supported via Jini service beans and expanded also to Spring beans. This is one of the main capabilities of the [OpenSpaces](./product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) framework. The new c++ framework allows you to do the same with c++ business logic.
 
 {% note %}
-See the [Elastic Processing Unit](/xap96/elastic-processing-unit.html) section for details about Dynamic Scalability.
+See the [Elastic Processing Unit](./elastic-processing-unit.html) section for details about Dynamic Scalability.
 {% endnote %}
 
 # Deployment -- Standalone and Grid-Based
 
 Deploying a c++ SBA application involves the standard c++ runtime libraries, the `gs.xml` files, and the GigaSpaces runtime libraries (C++, Java, and JDK libraries).
 
-These can be packaged using an installer that simplifies the deployment routine. You can place the runtime libraries in a shared folder, so you won't need to distribute the files to every machine running an application that accesses the space. Another option is to can encapsulate the business logic as a [Processing Unit](/xap96/cpp-processing-unit.html) to be managed, deployed and executed across the Grid nodes by the SLA-driven container. This allows you to control the different c++ business logic instances to access remote spaces or collocated spaces (c++ business logic running in the same memory address as the space, allowing you to avoid remote calls).
+These can be packaged using an installer that simplifies the deployment routine. You can place the runtime libraries in a shared folder, so you won't need to distribute the files to every machine running an application that accesses the space. Another option is to can encapsulate the business logic as a [Processing Unit](./cpp-processing-unit.html) to be managed, deployed and executed across the Grid nodes by the SLA-driven container. This allows you to control the different c++ business logic instances to access remote spaces or collocated spaces (c++ business logic running in the same memory address as the space, allowing you to avoid remote calls).
 
 # Configuration
 
@@ -194,7 +194,7 @@ GigaSpaces c++ API is compatible with other important GigaSpaces components and 
 
 The GigaSpaces c++ package includes the following components:
 
-- **Examples** -- this is in fact most of the package. It includes a simple hello world example, c++ benchmark, and a full c++ SBA example. For more details, see the [c++ homepage](/xap96/xap-cpp.html).
+- **Examples** -- this is in fact most of the package. It includes a simple hello world example, c++ benchmark, and a full c++ SBA example. For more details, see the [c++ homepage](./xap-cpp.html).
 - **Documentation** -- Doxygen ([http://www.stack.nl/~dimitri/doxygen](http://www.stack.nl/~dimitri/doxygen)) and CHM-based API reference documentaion.
 - Open-source and GigaSpaces API `h` files.
 - **Runtime libraries** -- core c++ API, memory allocator library, and a dynamic loader library used when deploying your c++ application into the Grid.

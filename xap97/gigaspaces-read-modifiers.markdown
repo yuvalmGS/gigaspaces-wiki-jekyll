@@ -113,7 +113,7 @@ If the read operation is under a transaction, there is no need to "enlist" the s
 | Read Committed transaction X or null | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed |
 | Dirty Read Transaction X or null| Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed |
 
-{% refer %}Refer to the [Space Locking and Blocking](/xap96/space-locking-and-blocking.html) section for GigaSpaces general locking and blocking rules.{% endrefer %}
+{% refer %}Refer to the [Space Locking and Blocking](./space-locking-and-blocking.html) section for GigaSpaces general locking and blocking rules.{% endrefer %}
 {% note %}
 
 - To read the original state of a space object that is locked under a transaction (take or update) you should use READ_COMMITTED mode.

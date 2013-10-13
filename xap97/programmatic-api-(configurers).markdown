@@ -75,7 +75,7 @@ SimplePollingEventListenerContainer pollingEventListenerContainer = new SimplePo
 
 ## Where is this Documented?
 
-Every OpenSpaces [documentation page](/xap96/the-space-component.html) includes code snippets that show how to configure it.
+Every OpenSpaces [documentation page](./the-space-component.html) includes code snippets that show how to configure it.
 
 The configuration is displayed in a tabbed pane, which typically includes the following tabs:
 

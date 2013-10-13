@@ -32,7 +32,7 @@ Pay attention to the size of your space class -- do you really need all this inf
 
 # Make proper use of Indexes
 
-GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (regardless whether the space is persistent or not) that maintains a hash and btree like indexes for each indexed Space Class attribute. If you store a large number of Space objects from the same class type in the space, consider defining one or more indexes for attributes used with [template matching](/xap96/template-matching.html) or [SQL Query](/xap96/sqlquery.html). Defining indexes will improve the `read/take/readMultiple/takeMultiple/clear/count` operations response time significantly. Remember, indexes impact `write` and `take` operations response time, so choose your indexed fields carefully - each index has an overhead. GigaSpaces support index for equality , comparison (bigger/less than) queries and support [Regular Index](/xap96/indexing.html) for a specific field and a [Compound Index](/xap96/indexing.html#Compound Indexing) for multiple fields. Indexes can be defined for space class root level object or for a nested field allowing you to query different type of objects ("join") using the same query without any performance penalty. For bigger/less than/between queries use the **Extended index**.
+GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (regardless whether the space is persistent or not) that maintains a hash and btree like indexes for each indexed Space Class attribute. If you store a large number of Space objects from the same class type in the space, consider defining one or more indexes for attributes used with [template matching](./template-matching.html) or [SQL Query](./sqlquery.html). Defining indexes will improve the `read/take/readMultiple/takeMultiple/clear/count` operations response time significantly. Remember, indexes impact `write` and `take` operations response time, so choose your indexed fields carefully - each index has an overhead. GigaSpaces support index for equality , comparison (bigger/less than) queries and support [Regular Index](./indexing.html) for a specific field and a [Compound Index](./indexing.html#Compound Indexing) for multiple fields. Indexes can be defined for space class root level object or for a nested field allowing you to query different type of objects ("join") using the same query without any performance penalty. For bigger/less than/between queries use the **Extended index**.
 
 # Use Asynchronous Operation
 
@@ -85,7 +85,7 @@ If you access the space from a single JVM, or access it a large number of times 
 # Distribute Data and User Requests among Several Partitions
 
 A single machine is always limited in the amount of data and user requests it can handle.
-You can use [Data-Partitioning](/xap96/data-partitioning.html) to distribute the data and the calculation colocated with each partition. In more advanced scenarios you should use the [Master-Worker pattern](http://wiki.gigaspaces.com/wiki/display/SBP/Master-Worker+Pattern) to distribute the data and the calculation in a different ratio.
+You can use [Data-Partitioning](./data-partitioning.html) to distribute the data and the calculation colocated with each partition. In more advanced scenarios you should use the [Master-Worker pattern](http://wiki.gigaspaces.com/wiki/display/SBP/Master-Worker+Pattern) to distribute the data and the calculation in a different ratio.
 
 # Memory Usage Considerations
 
@@ -103,10 +103,10 @@ You can use [Data-Partitioning](/xap96/data-partitioning.html) to distribute the
 
 # Choose Local Transactions Over Distributed Transactions
 
-[Distributed Transactions](/xap96/transaction-management.html#Distributed Jini Transaction Manager) perform a lengthy 2PC process. [Local Transactions](/xap96/transaction-management.html#Local Jini Transaction Manager), in contrast, perform a 1PC process. If you are performing some operations under a transaction on a single space, use local transactions. The slower your network compared to other resources (for example, a disk), the greater will be the noticeable improvement.
+[Distributed Transactions](./transaction-management.html#Distributed Jini Transaction Manager) perform a lengthy 2PC process. [Local Transactions](./transaction-management.html#Local Jini Transaction Manager), in contrast, perform a 1PC process. If you are performing some operations under a transaction on a single space, use local transactions. The slower your network compared to other resources (for example, a disk), the greater will be the noticeable improvement.
 
 {% tip %}
-For more details on transaction support, refer to the [Transaction Management](/xap96/transaction-management.html) section.
+For more details on transaction support, refer to the [Transaction Management](./transaction-management.html) section.
 {% endtip %}
 
 # Using Snapshot to Reduce Object Creation and Space Object Data Inspection
@@ -132,7 +132,7 @@ The Benchmark View provides a user interface for benchmarking the space.
 {% tip %}
 For more details, refer to:
 
-- [Benchmark View](/xap96/benchmark-view---gigaspaces-browser.html)
-- [Benchmark Example](/xap96/benchmark-utility---gigaspaces-cli.html)
+- [Benchmark View](./benchmark-view---gigaspaces-browser.html)
+- [Benchmark Example](./benchmark-utility---gigaspaces-cli.html)
 {% endtip %}
 

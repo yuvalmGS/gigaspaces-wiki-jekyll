@@ -34,4 +34,4 @@ Copies all objects from a source secured space named `spaceSource` to a destinat
 
     space copy jini://localhost/*/spaceSource jini://localhost/*/spaceDest
 
-If copying from and to a secured space, the logged in user permissions are used (needs read permissions from the source space and write permissions to the destination space). For more information on security, see the [Command Line Interface (CLI) Security](/xap96/command-line-interface-(cli)-security.html) page.
+If copying from and to a secured space, the logged in user permissions are used (needs read permissions from the source space and write permissions to the destination space). For more information on security, see the [Command Line Interface (CLI) Security](./command-line-interface-(cli)-security.html) page.

@@ -8,7 +8,7 @@ page_id: 61867384
 
 ## Configuration
 
-A Cassandra based implementation of the [Space Synchronization Endpoint](/xap96/space-synchronization-endpoint-api.html).
+A Cassandra based implementation of the [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html).
 
 ### Library dependencies
 
@@ -158,18 +158,18 @@ IJSpace mirror = new UrlSpaceConfigurer("/./mirror-service")
 {% endtabcontent %}
 {% endinittab %}
 
-For more details about different configurations see [Space Persistency](/xap96/space-persistency.html).
+For more details about different configurations see [Space Persistency](./space-persistency.html).
 
 ## `CassandraSpaceSynchronizationEndpoint` Properties
 
 {: .table .table-bordered}
 |Property|Description|
 |:-------|:----------|
-|hectorClient|A configured [HectorCassandraClient](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/persistency/cassandra/HectorCassandraClient.html) bean. see [Hector Cassandra Client](/xap96/hector-cassandra-client.html).|
-|fixedPropertyValueSerializer|see [Property Value Serializer](/xap96/cassandra-space-synchronization-endpoint.html#Property Value Serializer).|
-|dynamicPropertyValueSerializer|see [Property Value Serializer](/xap96/cassandra-space-synchronization-endpoint.html#Property Value Serializer).|
-|flattenedPropertiesFilter| see [Flattened Properties Filter](/xap96/cassandra-space-synchronization-endpoint.html#Flattened Properties Filter).|
-|columnFamilyNameConverter| see [Column Family Name Converter](/xap96/cassandra-space-synchronization-endpoint.html#Column Family Name Converter).|
+|hectorClient|A configured [HectorCassandraClient](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/persistency/cassandra/HectorCassandraClient.html) bean. see [Hector Cassandra Client](./hector-cassandra-client.html).|
+|fixedPropertyValueSerializer|see [Property Value Serializer](./cassandra-space-synchronization-endpoint.html#Property Value Serializer).|
+|dynamicPropertyValueSerializer|see [Property Value Serializer](./cassandra-space-synchronization-endpoint.html#Property Value Serializer).|
+|flattenedPropertiesFilter| see [Flattened Properties Filter](./cassandra-space-synchronization-endpoint.html#Flattened Properties Filter).|
+|columnFamilyNameConverter| see [Column Family Name Converter](./cassandra-space-synchronization-endpoint.html#Column Family Name Converter).|
 
 ### Property Value Serializer
 
@@ -251,7 +251,7 @@ Now suppose that a `Person` is written to the space as a `SpaceDocument` which a
 - `String newName`
 - `Address newAddress`
 
-By default, dynamic properties are not flattened and are written as is to Cassandra. Moreover, their static type is not updated in the `Column Family` metadata and they are serialized using a custom serializer. (see [Property Value Serializer](/xap96/cassandra-space-synchronization-endpoint.html#Property Value Serializer)).
+By default, dynamic properties are not flattened and are written as is to Cassandra. Moreover, their static type is not updated in the `Column Family` metadata and they are serialized using a custom serializer. (see [Property Value Serializer](./cassandra-space-synchronization-endpoint.html#Property Value Serializer)).
 
 This is how they will be written to Cassandra:
 

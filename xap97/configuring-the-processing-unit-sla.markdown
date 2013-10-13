@@ -5,11 +5,11 @@ page_id: 61867039
 ---
 
 {% compositionsetup %}
-{% summary page|70 %}The GigaSpaces runtime environment, aka Service Grid, provides SLA-driven capabilities when deploying and running processing units by using the available [GSCs](/xap96/the-grid-service-container.html) as a dynamic pool of processes which can host the processing unit{% endsummary %}
+{% summary page|70 %}The GigaSpaces runtime environment, aka Service Grid, provides SLA-driven capabilities when deploying and running processing units by using the available [GSCs](./the-grid-service-container.html) as a dynamic pool of processes which can host the processing unit{% endsummary %}
 
 # Overview
 
-The GigaSpaces runtime environment (A.K.A the Service Grid) provides SLA-driven capabilities via the [GSM](/xap96/the-grid-service-manager.html) and the [GSC](/xap96/the-grid-service-container.html) runtime components. The GSC is responsible for running one or more Processing Units; while the GSM is responsible for analyzing the deployment and provisioning the processing unit instances to the available GSCs.
+The GigaSpaces runtime environment (A.K.A the Service Grid) provides SLA-driven capabilities via the [GSM](./the-grid-service-manager.html) and the [GSC](./the-grid-service-container.html) runtime components. The GSC is responsible for running one or more Processing Units; while the GSM is responsible for analyzing the deployment and provisioning the processing unit instances to the available GSCs.
 
 {% note title=Enforcing SLA definitions %}
 The SLA definition are only enforced when deploying the processing unit on to the GigaSpaces service grid, since this environment actively manages and controls the deployment using the GSM(s). When running within your IDE or in standalone mode these definitions are ignored.
@@ -27,7 +27,7 @@ It can be defined in multiple ways:
 
 -  Embed the SLA definitions within the processing unit's `pu.xml` file.
 
--  Provide a separate XML files with the SLA definitions to the GSM at deployment via one of the [deployment tools](/xap96/deploying-onto-the-service-grid.html).
+-  Provide a separate XML files with the SLA definitions to the GSM at deployment via one of the [deployment tools](./deploying-onto-the-service-grid.html).
 
 - Use the deployment tools themselves to provide/override the processing unit's SLA (see below). For example, the GUI deployment dialogue enables you to type in various SLA definitions, such as the number of instances, number of backups and space topology.
 
@@ -74,12 +74,12 @@ The SLA definition, whether it comes in a separate file or embedded inside the `
 {% endtabcontent %}
 {% endinittab %}
 
-The SLA definition above creates 4 instances of a Processing Unit using the `partitioned-sync2backup` [space topology](/xap96/space-topologies.html). It defines 2 partitions (`number-of-instances="2"`), each with one backup (`number-of-backups="1"`). In addition, it requires that a primary and a backup instance of the same partition will not be provisioned to the same GSC (`max-instances-per-vm="1"`).
+The SLA definition above creates 4 instances of a Processing Unit using the `partitioned-sync2backup` [space topology](./space-topologies.html). It defines 2 partitions (`number-of-instances="2"`), each with one backup (`number-of-backups="1"`). In addition, it requires that a primary and a backup instance of the same partition will not be provisioned to the same GSC (`max-instances-per-vm="1"`).
 
 {% lampon %} It is up to the deployer to configure the SLA correctly. Trying to deploy a Processing Unit with a cluster schema that requires backups without specifying `numberOfBackups` causes the deployment to fail.
 
 {% info %}
-In previous releases, the SLA definition also included dynamic runtime policies, e.g. creating additional processing unit instances based on CPU load, relocating a certain instance when the memory becomes saturated, etc. These capabilities are still supported, but are considered deprecated.  Version 7.0 introduces the [Administration and Monitoring API](/xap96/administration-and-monitoring-api.html) which supports the above and and much more.
+In previous releases, the SLA definition also included dynamic runtime policies, e.g. creating additional processing unit instances based on CPU load, relocating a certain instance when the memory becomes saturated, etc. These capabilities are still supported, but are considered deprecated.  Version 7.0 introduces the [Administration and Monitoring API](./administration-and-monitoring-api.html) which supports the above and and much more.
 {% endinfo %}
 
 # Defining the Space Cluster Topology
@@ -105,7 +105,7 @@ There are numerous clustering topologies you can choose from:
 From the client application's perspective (the one that connects to the space from another process), the clustering topology is transparent in most cases.
 
 {% info %}
-Please refer to [this page](/xap96/space-topologies.html) for more details about space clustering topologies and guidelines regarding when to use each of the topologies.
+Please refer to [this page](./space-topologies.html) for more details about space clustering topologies and guidelines regarding when to use each of the topologies.
 {% endinfo %}
 
 {% info %}
@@ -466,7 +466,7 @@ When using instance level SLA, max-instances settings do not apply (or any clust
 
 # Monitoring the Liveness of Processing Unit Instances
 
-The [GSM](/xap96/the-grid-service-manager.html) monitors the liveness of all the processing unit instances it provisioned to the GSCs. The GSM pings each instance in the cluster to see whether it's available.
+The [GSM](./the-grid-service-manager.html) monitors the liveness of all the processing unit instances it provisioned to the GSCs. The GSM pings each instance in the cluster to see whether it's available.
 
 You can also control how often a processing unit instance will be monitored by the GSM, and in case of failure, how many times the GSM will retry to ping the instance and for how long it will wait between retry attempts.
 

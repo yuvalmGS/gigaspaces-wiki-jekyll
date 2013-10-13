@@ -8,13 +8,13 @@ page_id: 61867052
 
 # Summary
 
-A **Local Cache** is a [client side cache](/xap96/client-side-caching.html) that maintains a subset of the master space's data based on the client application's recent activity. The local cache is created empty, and whenever the client application executes a query the local cache first tries to fulfill it from the cache, otherwise it executes it on the master space and caches the result locally for future queries.
+A **Local Cache** is a [client side cache](./client-side-caching.html) that maintains a subset of the master space's data based on the client application's recent activity. The local cache is created empty, and whenever the client application executes a query the local cache first tries to fulfill it from the cache, otherwise it executes it on the master space and caches the result locally for future queries.
 
 {% indent %}
 ![local_cache.jpg](/attachment_files/local_cache.jpg)
 {% endindent %}
 
-{% plus %} For additional client side caching options, refer to [Client Side Caching](/xap96/client-side-caching.html).
+{% plus %} For additional client side caching options, refer to [Client Side Caching](./client-side-caching.html).
 
 # Usage
 
@@ -67,9 +67,9 @@ Transactional operations are **always** executed on the master space.
 
 The local cache uses the entry's version to determine whether the local entry is up-to-date or stale when handling updates. Usually this mechanism is transparent to the user and does not require declaring a version property, since the master space and local cache maintain version information for each entry implicitly.
 
-The exception is a master space with an [Space Persistency](/xap96/space-persistency.html) enabled - Suppose that an entry in the master space has version 7, and gets cached in the local cache, then evicted from the master space and later reloaded from the data source. If the version is not persisted and reloaded, it will be set to 1 and the local cache will ignore upcoming updates on that entry since its cached version is 7. In that case it is the user's responsibility to make sure that the entry's version is persisted and loaded in the data source, using the following rules:
+The exception is a master space with an [Space Persistency](./space-persistency.html) enabled - Suppose that an entry in the master space has version 7, and gets cached in the local cache, then evicted from the master space and later reloaded from the data source. If the version is not persisted and reloaded, it will be set to 1 and the local cache will ignore upcoming updates on that entry since its cached version is 7. In that case it is the user's responsibility to make sure that the entry's version is persisted and loaded in the data source, using the following rules:
 
-1. Each POJO class should declare a [SpaceVersion](/xap96/pojo-support.html#JavaSpacesPOJO-POJOAnnotationsandXMLSpaceMappingFileElements) property.
+1. Each POJO class should declare a [SpaceVersion](./pojo-support.html#JavaSpacesPOJO-POJOAnnotationsandXMLSpaceMappingFileElements) property.
 1. In the database, you should add a `VERSION_ID` column that will be mapped to this property in the corresponding tables. If you are using Hibernate, add the versionId property to the hbm.xml file or the `@Version` annotation to the mapped class.
 1. When writing new entries the space, it is recommended to use version 0 and let the space implicitly initialize to version 1.
 1. When using template matching to query the space, make sure that the template used has the version ID field set to ZERO to make sure the space will ignore it.
@@ -178,13 +178,13 @@ The maximum disconnection duration can be configured using `LocalCacheSpaceFacto
 
 ## Advanced Notification
 
-The  round-trip-time setting can be configured using the `space-config.dist-cache.events.lease-renew.round-trip-time` custom property. For more information about this setting refer to [Session Based Messaging API](/xap96/session-based-messaging-api.html).
+The  round-trip-time setting can be configured using the `space-config.dist-cache.events.lease-renew.round-trip-time` custom property. For more information about this setting refer to [Session Based Messaging API](./session-based-messaging-api.html).
 
 # Memory Eviction
 
 ## Cache Policy
 
-When using a local cache with `GigaSpace`, the cache policy is hard-writed to `LRU` and cannot be changed. When using the local cache with `GigaMap`, the default cache policy is `com.j_spaces.map.eviction.FIFOEvictionStrategy`, and other policies may be used by setting the `space-config.dist-cache.eviction-strategy` custom property. For more details refer to the [Map API](/xap96/map-api.html#GigaMap with a Local (Near) Cache).
+When using a local cache with `GigaSpace`, the cache policy is hard-writed to `LRU` and cannot be changed. When using the local cache with `GigaMap`, the default cache policy is `com.j_spaces.map.eviction.FIFOEvictionStrategy`, and other policies may be used by setting the `space-config.dist-cache.eviction-strategy` custom property. For more details refer to the [Map API](./map-api.html#GigaMap with a Local (Near) Cache).
 
 ## Memory Configuration Properties
 
@@ -203,7 +203,7 @@ In order to properly configure the local cache eviction mechanism, you should co
 |space-config.engine.memory\_usage.explicit-gc|false|
 |space-config.engine.memory\_usage.retry\_yield\_time|100|
 
-See the [Memory Management Facilities](/xap96/memory-management-facilities.html) for additional details on these configuration properties.
+See the [Memory Management Facilities](./memory-management-facilities.html) for additional details on these configuration properties.
 
 {% exclamation %} Having the property `space-config.engine.memory_usage.explicit-gc` set to 'enabled' is recommended only in extreme cases when there is high load on the system, with large amount of concurrent users accessing the local cache and when the amount of CPUs/Cores is relatively small.
 

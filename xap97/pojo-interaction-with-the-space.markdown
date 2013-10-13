@@ -14,4 +14,4 @@ o	Indexing space information
 
 Any POJO can be used to interact with the space as long it follows the Java Beans convention. The POJO needs to implement a default constructor, setters and getters for every property you want to store in the Space and the @SpaceId attribute annotation needs to be added to designate the unique key for each object. 
 
-[Write an object to Space ](/xap96/writing-objects-to-space.html)
+[Write an object to Space ](./writing-objects-to-space.html)

@@ -16,7 +16,7 @@ If a space belongs to a load-balancing group, the clustered proxy originating fr
 ![load_balancing_basic.gif](/attachment_files/load_balancing_basic.gif)
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](/xap96/elastic-processing-unit.html) section.
+For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
 {% endtip %}
 
 # Partitioning Types

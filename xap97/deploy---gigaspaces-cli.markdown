@@ -16,7 +16,7 @@ The `deploy` command replaces the `pudeploy` command and is identical to it in t
 
 # Description
 
-A Processing Unit can be easily deployed onto the Service Grid. In order to deploy a Processing Unit, the Processing Unit must follow the [processing unit directory structure](/xap96/the-processing-unit-structure-and-configuration.html).
+A Processing Unit can be easily deployed onto the Service Grid. In order to deploy a Processing Unit, the Processing Unit must follow the [processing unit directory structure](./the-processing-unit-structure-and-configuration.html).
 Before deploying the processing unit you will need to jar it and then specify that jar file as the parameter to the `deploy` command. The deployment process will upload the jar file to all the GSMs it finds and unpack it under the `deploy` directory. It will then issue the deploy command.
 
 {% tip %}
@@ -38,9 +38,9 @@ Property files and other resources should be jared and placed within any of the 
 {: .table .table-bordered}
 |Option|Description|Value Format|
 |:-----|:----------|:-----------|
-| Processing Unit Location/Name -- **mandatory** | The location of the processing unit directory or jar file on your file system (see [this page](/xap96/deploying-onto-the-service-grid.html)).{% wbr %}If you are using a few options in the `deploy` command, pass this option as the **last parameter**.{% wbr %}For example: `gs> deploy hello-world.jar`{% wbr %}(`hello-world.jar` is the processing jar file). | |
+| Processing Unit Location/Name -- **mandatory** | The location of the processing unit directory or jar file on your file system (see [this page](./deploying-onto-the-service-grid.html)).{% wbr %}If you are using a few options in the `deploy` command, pass this option as the **last parameter**.{% wbr %}For example: `gs> deploy hello-world.jar`{% wbr %}(`hello-world.jar` is the processing jar file). | |
 | `-cluster` |Allows you to control the clustering characteristics of the processing unit.{% wbr %}The cluster option is a simplified option that overrides the cluster part of the processing unit's built in SLA (if such exists).{% wbr %}The following options are available (used automatically by any embedded space included in the Processing Unit):{% wbr %}- `schema` -- the cluster schema used by the Processing Unit.{% wbr %}- `total_members` -- the number of instances, optionally followed by the number of backups{% wbr %}(number of backups is required only if the `partitioned-sync2backup` schema is used). | `-cluster schema=\[schema name\] {% wbr %}otal_members=numberOfInstances[,numberOfBackups\]` |
-| `-properties` | Allows you to control [deployment properties](/xap96/deployment-properties.html). | `-properties \[bean name\] location` |
+| `-properties` | Allows you to control [deployment properties](./deployment-properties.html). | `-properties \[bean name\] location` |
 | `-sla` | Allows you to specify a link (default to file-system) to a Spring XML configuration, holding the SLA definition. | `-sla \[slaLocation\]` |
 | `-zones` | Allows you to specify a list of deployment zones that are to restrict that the deployment to specific GSCs. | `-zones \[zoneName1, zoneName2 ... \]` |
 | `-timeout` | Allows you to specify a timeout value (in milliseconds) when looking up the GSM to deploy to.
@@ -50,8 +50,8 @@ Property files and other resources should be jared and placed within any of the 
 | `-max-instances-per-machine` | Allows you to set the SLA number of instances per machine | |
 | `-max-instances-per-zone` | Allows you to set the SLA number of instances per zone in the format of `zoneX/number,zoneY/number` | |
 | `h` / `help`  | Prints help | |
-| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security](/xap96/command-line-interface-(cli)-security.html)| `-secured \[true/false\]`|
-| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security](/xap96/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
+| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security](./command-line-interface-(cli)-security.html)| `-secured \[true/false\]`|
+| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security](./command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
 {% tip %}
 You may use the [Primary-Backup Zone Controller](http://wiki.gigaspaces.com/wiki/display/SBP/Primary-Backup+Zone+Controller) to deploy primary and backup on specific different zones.

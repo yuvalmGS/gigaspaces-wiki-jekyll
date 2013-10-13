@@ -156,7 +156,7 @@ extern "C" EXPORT ICppWorker* getWorkerByClass(const char* className)
 
 ## Processing Unit Configuration File
 
-The CPP PU following the standard [Processing Unit Configuration](/xap96/the-processing-unit-structure-and-configuration.html).
+The CPP PU following the standard [Processing Unit Configuration](./the-processing-unit-structure-and-configuration.html).
 
 {% togglecloak id=2 %}  {% sub %}**Click Here to view the CPP PU Configuration File**{% endsub %}{% endtogglecloak %}
 {% gcloak 2 %}

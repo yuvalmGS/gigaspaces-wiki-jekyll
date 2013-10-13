@@ -14,15 +14,15 @@ GigaSpaces XAP security was designed with customization in mind - since there ar
 
 The following security aspects can be customized:
 
-- [Authentication](/xap96/custom-authentication.html) - Cuztomize how servers authenticate the clients which access them.
-- [User/Role Management](/xap96/custom-user-role-management.html) - Customize creation and management of users and roles.
+- [Authentication](./custom-authentication.html) - Cuztomize how servers authenticate the clients which access them.
+- [User/Role Management](./custom-user-role-management.html) - Customize creation and management of users and roles.
 
-{% infosign %} This section assumes that you are familiar with the [Security Basics](/xap96/security-basics.html), and more specifically with [Security Configurations](/xap96/security-configurations.html).
+{% infosign %} This section assumes that you are familiar with the [Security Basics](./security-basics.html), and more specifically with [Security Configurations](./security-configurations.html).
 
 {% plus %} Before implementing custom security from scratch, consider the following alternatives:
 
-- Extending the [Default File-Based Security Implementation](/xap96/default-file-based-security-implementation.html) provided with the product (Supports replacing the encoding, referencing a security file on an HTTP server, and more).
-- Using or extending the [Spring Security Bridge](/xap96/spring-security-bridge.html).
+- Extending the [Default File-Based Security Implementation](./default-file-based-security-implementation.html) provided with the product (Supports replacing the encoding, referencing a security file on an HTTP server, and more).
+- Using or extending the [Spring Security Bridge](./spring-security-bridge.html).
 
 # Packaging and Classpath
 

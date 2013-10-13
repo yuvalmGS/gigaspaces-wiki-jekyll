@@ -8,7 +8,7 @@ page_id: 61867457
 
 # gsxml2cpp Utility
 
-This section describes the `gsxml2cpp` utility usage and available options. The `gsxml2cpp` utility generates serializer code, created by the `gs.xml` file, allowing you to perform space operations in the space. To learn how to do this, see the [CPP API Code Generator](/xap96/cpp-api-code-generator.html) section.
+This section describes the `gsxml2cpp` utility usage and available options. The `gsxml2cpp` utility generates serializer code, created by the `gs.xml` file, allowing you to perform space operations in the space. To learn how to do this, see the [CPP API Code Generator](./cpp-api-code-generator.html) section.
 
 # How to invoke the gsxml2cpp Utility
 

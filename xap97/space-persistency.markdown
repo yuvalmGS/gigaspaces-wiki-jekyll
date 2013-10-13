@@ -17,7 +17,7 @@ The two components mentioned above are in charge of the following activities:
 - The Space data source component handles Pre-Loading data from the persistency layer and lazy load data from the persistency (available when the space is running in LRU mode).
 - The Space synchronization endpoint component handles changes done within the space delegation to the persistency layer.
 
-GigaSpaces Space Persistency provides the [SpaceDataSource](http://www.gigaspaces.com/docs/JavaDocOS/org/com/gigaspaces/datasource/SpaceDataSource) and [SpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDocOS/org/com/gigaspaces/datasource/SpaceSynchronizationEndpoint) classes which can be extended and then used to load data and store data into an existing data source. Data is [loaded from the data source](/xap96/space-persistency-initial-load.html) during space initialization (`SpaceDataSource`), and from then onwards the application works with the space directly.
+GigaSpaces Space Persistency provides the [SpaceDataSource](http://www.gigaspaces.com/docs/JavaDocOS/org/com/gigaspaces/datasource/SpaceDataSource) and [SpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDocOS/org/com/gigaspaces/datasource/SpaceSynchronizationEndpoint) classes which can be extended and then used to load data and store data into an existing data source. Data is [loaded from the data source](./space-persistency-initial-load.html) during space initialization (`SpaceDataSource`), and from then onwards the application works with the space directly.
 
 {% indent %}
 ![data-grid-initial-loadNew.jpg](/attachment_files/data-grid-initial-loadNew.jpg)
@@ -27,13 +27,13 @@ Meanwhile, the space persisting the changes made in the space via a `SpaceSynchr
 
 Persistency can be configured to run in Synchronous or Asynchronous mode:
 
-- Synchronous Mode - see [Direct Persistency](/xap96/direct-persistency.html)
+- Synchronous Mode - see [Direct Persistency](./direct-persistency.html)
 
 {% indent %}
 ![data-grid-sync-persistNew.jpg](/attachment_files/data-grid-sync-persistNew.jpg)
 {% endindent %}
 
-- Asynchronous Mode - see  [Asynchronous Persistency with the Mirror](/xap96/asynchronous-persistency-with-the-mirror.html)
+- Asynchronous Mode - see  [Asynchronous Persistency with the Mirror](./asynchronous-persistency-with-the-mirror.html)
 
 {% indent %}
 ![data-grid-async-persistNew.jpg](/attachment_files/data-grid-async-persistNew.jpg)
@@ -42,7 +42,7 @@ Persistency can be configured to run in Synchronous or Asynchronous mode:
 {% infosign %} The difference between the Synchronous or Asynchronous persistency mode concerns how data is persisted back to the database. The Synchronous mode data is persisted immediately once the operation is conducted where the client application wait for the `SpaceDataSource`/`SpaceSynchronizationEndpoint` to confirm the write. With the Asynchronous mode (mirror Service), data is persisted in a **reliable** asynchronous manner using the mirror Service as a write behind activity. This mode provides maximum performance.
 
 {% tip %}
-If you're migrating from a GigaSpaces version prior to 9.5 please see the [Migrating From External Data Source API](/xap96/migrating-from-external-data-source-api.html) page.
+If you're migrating from a GigaSpaces version prior to 9.5 please see the [Migrating From External Data Source API](./migrating-from-external-data-source-api.html) page.
 {% endtip %}
 
 # Space Persistency API
@@ -52,18 +52,18 @@ The ability to customize the space persistency functionality allows GigaSpaces t
 
 {% infosign %} GigaSpaces built in Hibernate Persistency implementation is an extension of SpaceDataSource and SpaceSynchronizationEndpoint classes.
 
-For detailed API information see [Space Data Source API](/xap96/space-data-source-api.html) and [Space Synchronization Endpoint API](/xap96/space-synchronization-endpoint-api.html).
+For detailed API information see [Space Data Source API](./space-data-source-api.html) and [Space Synchronization Endpoint API](./space-synchronization-endpoint-api.html).
 
 # RDBMS Space Persistency
 
-GigaSpaces comes with a built-in implementation of `SpaceDataSource` and `SpaceSynchronizationEndpoint` called [Hibernate Space Persistency](/xap96/hibernate-space-persistency.html). See [Space Persistency Initial Load](/xap96/space-persistency-initial-load.html) to allow the space to pre-load its data. You can also use splitter data source `SpaceDataSourceSplitter`  that allows you to split data sources according to entry type.
+GigaSpaces comes with a built-in implementation of `SpaceDataSource` and `SpaceSynchronizationEndpoint` called [Hibernate Space Persistency](./hibernate-space-persistency.html). See [Space Persistency Initial Load](./space-persistency-initial-load.html) to allow the space to pre-load its data. You can also use splitter data source `SpaceDataSourceSplitter`  that allows you to split data sources according to entry type.
 
 # NoSQL DB Space Persistency
 
-The [Cassandra Space Persistency Solution](/xap96/cassandra-space-persistency.html) allows applications to push the long term data into Cassandra database in an asynchronous manner without impacting the application response time and also load data from the Cassandra database once the GigaSpaces IMDG is started or in a lazy manner once there is a cache miss when reading data from GigaSpaces IMDG.
+The [Cassandra Space Persistency Solution](./cassandra-space-persistency.html) allows applications to push the long term data into Cassandra database in an asynchronous manner without impacting the application response time and also load data from the Cassandra database once the GigaSpaces IMDG is started or in a lazy manner once there is a cache miss when reading data from GigaSpaces IMDG.
 
 The GigaSpaces Cassandra Space Peristency Solution leverages the [Cassandra CQL](http://www.datastax.com/docs/0.8/dml/using_cql), [Cassandra JDBC Driver](http://code.google.com/a/apache-extras.org/p/cassandra-jdbc) and the [Cassandra Hector Library](http://hector-client.github.com/hector/build/html/index.html). Every application's write or take operation against the IMDG is delegated into the Mirror service that is using the Cassandra Mirror implementation to push the changes into the Cassandra database.
 
 # Advanced Information & Operations
 
-{% refer %}For more advanced information and operations, see [Space Persistency Advanced Topics](/xap96/space-persistency-advanced-topics.html).{% endrefer %}
+{% refer %}For more advanced information and operations, see [Space Persistency Advanced Topics](./space-persistency-advanced-topics.html).{% endrefer %}

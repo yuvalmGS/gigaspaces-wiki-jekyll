@@ -22,7 +22,7 @@ The replication filter can be used to monitor or alter the data passed through t
 - [com.j_spaces.core.cluster.ReplicationFilterException](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/cluster/ReplicationFilterException.html) -- the `ReplicationFilterException` is thrown when there are errors that occur in the replication filter.  Errors can happen in the source or target space. The error is wrapped as part of the `ReplicationFilterException` and thrown back to the client. The `ReplicationFilterException` includes methods that includes information about the origin of the error, replication mode (input/output), the implementation class and the underlying exception. The `ReplicationFilterException.getCause()` should be used to retrieve the original exception that occurred.
 
 {% tip %}
- you can **control the replication at the operation level, using configuration only**. For more details, refer to the [Replication Operations](/xap96/replication-operations.html) section.
+ you can **control the replication at the operation level, using configuration only**. For more details, refer to the [Replication Operations](./replication-operations.html) section.
 {% endtip %}
 
 # Guidelines for Cluster Replication Filters

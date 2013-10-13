@@ -19,7 +19,6 @@ At their core, all different event containers should support raising event to an
 
 {% highlight java %}
 public interface SpaceDataEventListener {
-
     /**
      * An event callback with the actual data object of the event.
      *

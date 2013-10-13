@@ -484,7 +484,7 @@ Next, we compile and run the sample application
 
 ![Play arrow green.bmp](/attachment_files/Play arrow green.bmp) **Steps to run the application inside Eclipse IDE:**
 
-If you haven't already done so,[download GigaSpaces and set up your development environment](/xap96/setting-up-your-ide-to-work-with-gigaspaces.html)
+If you haven't already done so,[download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html)
 \- This is needed for running the tutorial sample application.
 {% anchor JImporting Project to the IDE %} **Importing the project into Eclipse**
 
@@ -616,6 +616,6 @@ The url the feeder is using to connect to the space is written in the
 ## What's Next?
 
 ![Jump arrow green.bmp](/attachment_files/Jump arrow green.bmp)
-{% color green %}Step three{% endcolor %} - [Deploying the Hello World Application onto the Service Grid](/xap96/step-three---deploying-onto-the-service-grid.html) - shows how to deploy our application onto the grid, to gain fail-over, recovery and self healing capabilities.
+{% color green %}Step three{% endcolor %} - [Deploying the Hello World Application onto the Service Grid](./step-three---deploying-onto-the-service-grid.html) - shows how to deploy our application onto the grid, to gain fail-over, recovery and self healing capabilities.
 
-Or return to the [Quick Start Guide](/xap96/quick-start-guide.html).
+Or return to the [Quick Start Guide](./quick-start-guide.html).

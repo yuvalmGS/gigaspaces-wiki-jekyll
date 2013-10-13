@@ -8,7 +8,7 @@ page_id: 61867148
 
 # Overview
 
-{% refer %}[Administration and Monitoring API](/xap96/administration-and-monitoring-api.html){% endrefer %}
+{% refer %}[Administration and Monitoring API](./administration-and-monitoring-api.html){% endrefer %}
 The Admin API provides a way to administer and monitor all on GigaSpaces services and components using a simple API. The API, amongst others, provides the ability to operate on the currently running GigaSpaces Agents, GigaSpaces Managers, GigaSpaces Containers, Lookup Services, Processing Units and Spaces.
 
 # Constructing the Admin instance

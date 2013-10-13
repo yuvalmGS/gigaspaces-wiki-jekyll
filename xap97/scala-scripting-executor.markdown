@@ -9,11 +9,11 @@ page_id: 63078417
 
 # Overview
 
-[Dynamic Language Tasks](/xap96/dynamic-language-tasks.html) has been extended and now supports Scala based script execution.
+[Dynamic Language Tasks](./dynamic-language-tasks.html) has been extended and now supports Scala based script execution.
 
 # Configuration
 
-Here is how you would configure a processing unit to run a scripting executor with scala support and use it from a client proxy. For detailed information on the `Scripting Executor` framework, see [Dynamic Language Tasks](/xap96/dynamic-language-tasks.html).
+Here is how you would configure a processing unit to run a scripting executor with scala support and use it from a client proxy. For detailed information on the `Scripting Executor` framework, see [Dynamic Language Tasks](./dynamic-language-tasks.html).
 
 ## Processing Unit Configuration
 

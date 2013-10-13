@@ -21,14 +21,14 @@ The Transactions view allows you to view all of the transactions that are curren
     - The number of objects locked under the transaction.
 
 - View the specific objects locked under the transaction -- clicking on the transaction displays a table of the locked objects at the bottom of the screen which shows each object's UID, class name, operation type, and lock type.
-- Drill into objects locked under the transaction by double-clicking them, using the [Object Inspector](/xap96/object-inspector.html).
+- Drill into objects locked under the transaction by double-clicking them, using the [Object Inspector](./object-inspector.html).
 - Refresh rate -- every 1, 3, or 5 seconds (see [below](#2)).
 
 {% indent %}
 ![GMC_space_transactions_view_6.5.jpg](/attachment_files/GMC_space_transactions_view_6.5.jpg)
 {% endindent %}
 
-{% refer %}For details on transactions, refer to the [Transaction Management](/xap96/transaction-management.html) section.{% endrefer %}
+{% refer %}For details on transactions, refer to the [Transaction Management](./transaction-management.html) section.{% endrefer %}
 
 {% anchor 2 %}
 

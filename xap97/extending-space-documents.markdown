@@ -14,11 +14,11 @@ While documents provide us with a dynamic schema, they force us to give up Java'
 ![document_arch.jpg](/attachment_files/document_arch.jpg)
 {% endcomment %}
 
-{% plus %} Do not confuse this with [Document-POJO interoperability](/xap96/document-pojo-interoperability.html), which is a different feature.
+{% plus %} Do not confuse this with [Document-POJO interoperability](./document-pojo-interoperability.html), which is a different feature.
 
 # Creating the Extension Class
 
-Let's create a type-safe document wrapper for the **Product** type described in the [Document Support](/xap96/document-api.html) page. The extensions are:
+Let's create a type-safe document wrapper for the **Product** type described in the [Document Support](./document-api.html) page. The extensions are:
 
 - Provide a parameterless constructor, since the type name is fixed.
 - Provide type-safe properties, but instead of using private fields to store/retrieve the values, use the getProperty/setProperty methods from the SpaceDocument class.

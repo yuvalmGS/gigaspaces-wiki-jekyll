@@ -146,7 +146,7 @@ The `LRMI` configuration options set as system proprties. They are listed below:
 | `com.gs.transport_protocol.lrmi.tcp-keep-alive` | Set the TCP keep alive mode (SO_KEEPALIVE).| `true` | Client & Server| Seconds|Yes|
 | `com.gs.transport_protocol.lrmi.timeout_resolution` | Resolution in percents. Timeout resolution indicates the accuracy of the request timeout. | `10` | Client | Percent|Yes|
 
-{% lampon %} If you are using the **notification slow consumer** mechanism see the [Slow Consumer](/xap96/slow-consumer.html#Configuration -- Server Side) for additional LRMI parameters to configure.
+{% lampon %} If you are using the **notification slow consumer** mechanism see the [Slow Consumer](./slow-consumer.html#Configuration -- Server Side) for additional LRMI parameters to configure.
 
 {% anchor portrange %}
 
@@ -171,7 +171,7 @@ The value of this property represents the host name string that must be associat
 
 # Monitoring
 
-You can monitor network and usage activity during runtime to track which client is invoking which methods on each space serving remote client requests such as read/write. For more information on monitoring see [Monitoring Network Activity](http://wiki.gigaspaces.com/wiki/display/XAP96/Monitoring+Network+Activity)
+You can monitor network and usage activity during runtime to track which client is invoking which methods on each space serving remote client requests such as read/write. For more information on monitoring see [Monitoring Network Activity](http://wiki.gigaspaces.com/wiki/display./Monitoring+Network+Activity)
 
 # Troubleshooting
 

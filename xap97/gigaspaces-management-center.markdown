@@ -8,4 +8,4 @@
 
 {% include /COM/about-gigaspaces-management-center.markdown %}
 
-{% include /xap96/using-space-browser-tab---gigaspaces-management-center.markdown %}
+{% include ./using-space-browser-tab---gigaspaces-management-center.markdown %}

@@ -21,11 +21,11 @@ In terms of preconditions, your POJO classes need to follow the JavaBeans conven
 
 ### Providing Metadata to the Space about the POJO Class
 
-When writing POJOs to the Space, you can provide some metadata about the POJO's class to the space, using Java 5 annotations, or an XML configuration. This overview uses annotation to provide metadata. For a complete reference to POJO annotations and XML configuration, refer to the [POJO Metadata](/xap96/pojo-metadata.html) section.
+When writing POJOs to the Space, you can provide some metadata about the POJO's class to the space, using Java 5 annotations, or an XML configuration. This overview uses annotation to provide metadata. For a complete reference to POJO annotations and XML configuration, refer to the [POJO Metadata](./pojo-metadata.html) section.
 
 Here is an overview of the most commonly used POJO annotations:
 
-- `@SpaceClass`: Class level annotation - not mandatory. Used to mark a class that is written to the space (by default if you write a class to the space, it is marked as such automatically). Use this when you would like to provide additional metadata at the class level, such as whether or not this class is persisted to a database if [Persistency](/xap96/persistency.html) is configured on the Space.
+- `@SpaceClass`: Class level annotation - not mandatory. Used to mark a class that is written to the space (by default if you write a class to the space, it is marked as such automatically). Use this when you would like to provide additional metadata at the class level, such as whether or not this class is persisted to a database if [Persistency](./persistency.html) is configured on the Space.
 
 - `@SpaceId`: The identifier property of the POJO. This property uniquely identifies the POJO within the space, and is similar to a primary key in a database. You can choose between an application-generated ID (`autoGenerate=false`), and an automatically-generated ID (`autoGenerate=true`).
 
@@ -77,7 +77,7 @@ GigaSpaces `POJO` rules:
 - Do not implement the `net.jini.core.entry` interface.
 - Follow the [JavaBeans specification](http://java.sun.com/javase/technologies/desktop/javabeans/docs/spec.html).
 - Have private fields.
-- Avoid using numeric [primitives](http://download.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) (long , int) as the POJO fields. Use their relevant Object wrapper instead ([Long](http://download-llnw.oracle.com/javase/6/docs/api/java/lang/Long.html) , [Integer](http://download-llnw.oracle.com/javase/6/docs/api/java/lang/Integer.html)). This will avoid the need to specify a null-value and simplify query construction when using the [SQLQuery](/xap96/sqlquery.html).
+- Avoid using numeric [primitives](http://download.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) (long , int) as the POJO fields. Use their relevant Object wrapper instead ([Long](http://download-llnw.oracle.com/javase/6/docs/api/java/lang/Long.html) , [Integer](http://download-llnw.oracle.com/javase/6/docs/api/java/lang/Integer.html)). This will avoid the need to specify a null-value and simplify query construction when using the [SQLQuery](./sqlquery.html).
 - Have getter and setter methods for every field you would like to be stored within the space object.
 - Include space class metadata decorations (indexed fields, affinity-keys, persisted mode, etc.).
 
@@ -85,7 +85,7 @@ GigaSpaces `POJO` rules:
  You can define space classes metadata by class and field level decorations. These can be defined via annotations or XML configurations files (*gs.xml file).
 {% endinfo %}
 
-{% exclamation %} This page deals with the POJO class as a space domain class, used to model the space, and store application data into the IMDG. POJO classes deployed as services into the Service Grid are described in the [Data Event Listener](/xap96/data-event-listener.html) and [Space Based Remoting](/xap96/space-based-remoting.html) sections. In these cases, the POJO class is used to process incoming data, or is invoked remotely.
+{% exclamation %} This page deals with the POJO class as a space domain class, used to model the space, and store application data into the IMDG. POJO classes deployed as services into the Service Grid are described in the [Data Event Listener](./data-event-listener.html) and [Space Based Remoting](./space-based-remoting.html) sections. In these cases, the POJO class is used to process incoming data, or is invoked remotely.
 
 # A POJO as a Space Domain Class
 
@@ -110,14 +110,14 @@ public int getEmployeeID()
 - When using POJOs, the **write operation** uses the [WriteModifiers.UPDATE_OR_WRITE](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html) mode by default. This means that when the space already includes an object with the same UID (`@SpaceId(autoGenerate=false)` with the same value), the POJO is updated, and a new object is not inserted.
 - When using `SpaceId(autoGenerate=true)`, the UID is stored inside the `SpaceId` field, causing an overhead when indexed.
 - A `null` value as template is not supported. Use `new Object()` instead.
-- A POJO class must implement the `Serializable` or `Externalizable` interface if used as a parameter for a remote call ([OpenSpaces remoting](/xap96/space-based-remoting.html)).
+- A POJO class must implement the `Serializable` or `Externalizable` interface if used as a parameter for a remote call ([OpenSpaces remoting](./space-based-remoting.html)).
 - When using the [org.openspaces.core.GigaSpace](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/GigaSpace) interface, you can use [generics](http://en.wikipedia.org/wiki/Generics_in_Java) when conducting space operations.
 - The `@Spaceid` annotation or `id` tag must be declared when performing update operations.
 - To persist a POJO object using the `ExternalDataSource` or via Mirror Service the `persist` decoration must have the value `true`.
 - When a space is configured to use the `ExternalDataSource`, the `@Spaceid` annotation or `id` tag `auto-generate` attribute should be set to **`false`**. The object must include a unique value with the `SpaceId` field when written into the space.
 - The `SpaceId` field can be `java.lang.String` type or any other type that implements the `toString()` which provides a unique value.
 - Primitive `boolean` should not be used as a POJO field as this could lead to problems when using template based matching. `Boolean` should be used instead.
-- [SQLQuery](/xap96/sqlquery.html) should not be used to query base abstract class.
+- [SQLQuery](./sqlquery.html) should not be used to query base abstract class.
 
 ## Controlling Space Class Fields Introduction
 
@@ -135,7 +135,7 @@ POJO space mapping files `gs.xml` files can be loaded from:
 
 ## Jini Entry Handling
 
-All `net.jini.core.entry.Entry` based classes meta data methods are not supported with POJO based classes. These include: __setEntryInfo() , \__getEntryInfo() , \__setEntryUID() , \__getEntryUID() ,_\_getSpaceIndexedFields(). With POJO based space domain classes, meta data is declared using relevant annotations or xml tags. see the [POJO Metadata](/xap96/pojo-metadata.html) for details.
+All `net.jini.core.entry.Entry` based classes meta data methods are not supported with POJO based classes. These include: __setEntryInfo() , \__getEntryInfo() , \__setEntryUID() , \__getEntryUID() ,_\_getSpaceIndexedFields(). With POJO based space domain classes, meta data is declared using relevant annotations or xml tags. see the [POJO Metadata](./pojo-metadata.html) for details.
 
 ## Reference Handling
 
@@ -148,9 +148,9 @@ For example, index lists aren't maintained because the space is unaware of the m
 Non-Indexed fields that are not used for queries should be placed within a user defined class (payload object) and have their getter and setter placed within the payload class. This improves the read/write performance since these fields would not be introduced to the space class model.
 
 {% tip %}
-[Indexing](/xap96/indexing.html) is **critical** for good performance over large spaces. Don't forget to index properly with the @SpaceIndex(type=SpaceIndexType.BASIC) or @SpaceIndex(type=SpaceIndexType.EXTENDED) annotation or use the gs.xml equivalent.
+[Indexing](./indexing.html) is **critical** for good performance over large spaces. Don't forget to index properly with the @SpaceIndex(type=SpaceIndexType.BASIC) or @SpaceIndex(type=SpaceIndexType.EXTENDED) annotation or use the gs.xml equivalent.
 {% endtip %}
 
-{% include /xap96/pojo-code-snippets.markdown %}
+{% include ./pojo-code-snippets.markdown %}
 {% whr %}
-{% refer %}**Next subchapter:** [POJO Metadata](/xap96/pojo-metadata.html) - This section deals with the annotations and gs.xml mapping file, troubleshooting procedures, considerations, UID generation and usage, as well as frequently used code snippets.{% endrefer %}
+{% refer %}**Next subchapter:** [POJO Metadata](./pojo-metadata.html) - This section deals with the annotations and gs.xml mapping file, troubleshooting procedures, considerations, UID generation and usage, as well as frequently used code snippets.{% endrefer %}

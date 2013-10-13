@@ -15,7 +15,7 @@ page_id: 61867311
 The `startJiniTX_Mahalo` starts the Jini Transaction Manager as a stand alone process.
 
 {% tip %}
-For details on how to start an embedded Jini Transaction Manager, refer to the [gsInstance - GigaSpaces CLI](/xap96/gsinstance---gigaspaces-cli.html) section.
+For details on how to start an embedded Jini Transaction Manager, refer to the [gsInstance - GigaSpaces CLI](./gsinstance---gigaspaces-cli.html) section.
 {% endtip %}
 
 # Options

@@ -5,7 +5,7 @@ page_id: 61867444
 ---
 
 {% note title=This implementation is deprecated starting from version 9.0 %}
-The implementation described in this page is deprecated since version 9.0 in favor of an enhanced implementation described [here](/xap96/storage-types---controlling-serialization.html)
+The implementation described in this page is deprecated since version 9.0 in favor of an enhanced implementation described [here](./storage-types---controlling-serialization.html)
 {% endnote %}
 
 {% summary %}Controlling the Space Object non-primitive serialization mode when written/read from the space. {% endsummary %}
@@ -15,7 +15,7 @@ The implementation described in this page is deprecated since version 9.0 in fav
 GigaSpaces using a unique approach when transporting space objects from one process to another (client-space, space-space). By default, objects are not serialized using the regular [Java serialization approach](http://java.sun.com/developer/technicalArticles/Programming/serialization/), but using GigaSpaces serialization technology. You have several options to control GigaSpaces serialization:
 
 - Default mode - Active when your Space class doesn't implement [Externalizable](http://java.sun.com/j2se/1.5.0/docs/api/java/io/Externalizable.html). You may choose one of the Serialization mode listed below to control the way the space object fields are serialized.
-- [Implement Externalizable](/xap96/externalizable-support-(deprecated).html) - In this case, only the Native Serialization is supported. This mode allows you to have total control on the object transport.
+- [Implement Externalizable](./externalizable-support-(deprecated).html) - In this case, only the Native Serialization is supported. This mode allows you to have total control on the object transport.
 
 With the Default mode (when the space class doesn't Implement Externalizable), you can control the serialization mode of **Space Class non-primitive fields** when they are written or read from the space (remote or embedded) using the following space property:
 
@@ -53,7 +53,7 @@ Here is example how you can set the serialization-type when using the pu.xml:
 
 ## Setting the serialization-type via the deploy command
 
-Here is example how you can set the serialization-type when using the [deploy-space](/xap96/deploy-space-gigaspaces-cli.html) command. The same approach can be used when using the [deploy](/xap96/deploy---gigaspaces-cli.html) command:
+Here is example how you can set the serialization-type when using the [deploy-space](./deploy-space-gigaspaces-cli.html) command. The same approach can be used when using the [deploy](./deploy---gigaspaces-cli.html) command:
 
 {% highlight java %}
 gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,1 -properties embed://space-config.serialization-type=1 myDataGrid
@@ -90,7 +90,7 @@ If the POJO class implements [Serializable](http://docs.oracle.com/javase/1.5.0/
 
 # Externalizable Serialization Flow
 
-When the Space Class implements the [Externalizable](http://docs.oracle.com/javase/1.5.0/docs/api/index.html?java/io/Externalizable) interface, `readExternal` and `writeExternal` are called, you may control the stream transferred across the network. The [Externalizable Support (Deprecated)](/xap96/externalizable-support-(deprecated).html) includes details about this advanced option.
+When the Space Class implements the [Externalizable](http://docs.oracle.com/javase/1.5.0/docs/api/index.html?java/io/Externalizable) interface, `readExternal` and `writeExternal` are called, you may control the stream transferred across the network. The [Externalizable Support (Deprecated)](./externalizable-support-(deprecated).html) includes details about this advanced option.
 
 {% indent %}
 ![serialization2.jpg](/attachment_files/serialization2.jpg)
@@ -111,7 +111,7 @@ Below are the supported serialization modes for non-primitive fields:
 | Compressed (3) | Non-primitive fields are Compressed before transferred into the space and stored within the space in compressed mode. This option is useful when the object includes fields with a relatively large amount of data such as XML data (DOM objects). This mode speeds up the access to remote space and reduces the space memory footprint when dealing with large entries. The compression algorithm using the `java.util.zip` package. |
 
 {% tip %}
-For additional optimization when serializing objects, refer to the [Externalizable Support (Deprecated)](/xap96/externalizable-support-(deprecated).html) section.
+For additional optimization when serializing objects, refer to the [Externalizable Support (Deprecated)](./externalizable-support-(deprecated).html) section.
 {% endtip %}
 
 ## Embedded Mode
@@ -135,4 +135,4 @@ In remote mode, the Object's non-primitive fields are serialized where the seria
 - Full mode -- supports the [JavaSpace specification](http://java.sun.com/products/jini/2.1/doc/specs/html/js-spec.html). When serialized, non-primitive fields are wrapped with a [MarshalledObject](http://docs.oracle.com/javase/1.5.0/docs/api/index.html?java/rmi/MarshalledObject). The `MarshalledObject` is de-serialized at the space side before it is stored, allowing you to perform matching using these fields. This mode is slower compared other options.
 - Compressed mode -- non-primitive fields are compressed before being sent to the space at the client side. These are stored in compressed form within the space.
 
-With Space Classes that implements [Externalizable](/xap96/externalizable-support-(deprecated).html) make sure you use `Native` Serialization mode. In many cases this is the best way to boost remote space access. Externalizable based classes are not relevant for embedded space mode.
+With Space Classes that implements [Externalizable](./externalizable-support-(deprecated).html) make sure you use `Native` Serialization mode. In many cases this is the best way to boost remote space access. Externalizable based classes are not relevant for embedded space mode.

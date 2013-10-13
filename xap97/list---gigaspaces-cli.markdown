@@ -14,7 +14,7 @@ page_id: 61867343
 
 The `list` command lists information about active Service Grid services.
 
-{% refer %}For the space list CLI, please refer to the [space list - GigaSpaces CLI](/xap96/space-list---gigaspaces-cli.html) section.{% endrefer %}
+{% refer %}For the space list CLI, please refer to the [space list - GigaSpaces CLI](./space-list---gigaspaces-cli.html) section.{% endrefer %}
 
 The following values are allowed for **`type`**. Only one type can be specified.
 
@@ -115,6 +115,6 @@ The `list` command uses the lookup service to extract the information regarding 
 
 A service's entry in the lookup is leased and kept until the next renewal attempt fails. If the service is not properly shutdown, i.e. abruptly terminated, it doesn't unregister itself from the lookup service. Thus, attempts to call `list` will still display the service until its lease expires.
 
-For defaults and configuration options, refer to [Jini Lookup Service configuration](/xap96/lookup-service-configuration.html) settings for `minMaxServiceLease` property.
+For defaults and configuration options, refer to [Jini Lookup Service configuration](./lookup-service-configuration.html) settings for `minMaxServiceLease` property.
 
 {% endtoczone %}

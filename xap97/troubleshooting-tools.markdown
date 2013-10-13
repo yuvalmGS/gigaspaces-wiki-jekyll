@@ -73,7 +73,7 @@ Both tools are well tested and common in Windows environment.
 
 # Packet Sniffer/Network Analyzer Tool
 
-{% infosign %} See [Packet Sniffer/Network Analyzer Tool](/xap96/how-to-configure-multicast.html#Packet Sniffer/Network Analyzer Tool) section for more details.
+{% infosign %} See [Packet Sniffer/Network Analyzer Tool](./how-to-configure-multicast.html#Packet Sniffer/Network Analyzer Tool) section for more details.
 
 # Threads Dumper
 
