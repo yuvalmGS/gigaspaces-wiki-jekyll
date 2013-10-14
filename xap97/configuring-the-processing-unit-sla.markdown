@@ -365,7 +365,7 @@ for (GridServiceAgent gridServiceAgent : agents) {
 {% endtabcontent %}
 {% endinittab %}
 
-The above defines zones "zone1" and "zone3" to be tagged to the GSC which will be started. Note that multiple can be specified using a comma separated list.
+The above defines zones "zone1" and "zone3" to be tagged to the GSC which will be started. Note that multiple zones can be specified using a comma separated list.
 
 The following table explains when a container with a specified zone can satisfy a Processing Unit with a required zone:
 

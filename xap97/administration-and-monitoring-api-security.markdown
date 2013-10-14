@@ -18,8 +18,10 @@ When using a secured Service Grid, the `Admin` instance needs to be constructed 
 The following creates an `Admin` instance with the user "user/password".
 
 {% highlight java %}
-Admin admin = new AdminFactory().addGroup("gigaspaces").userDetails("user", "password").createAdmin();
+Admin admin = new AdminFactory().addGroup("gigaspaces").credentials("user", "password").createAdmin();
 {% endhighlight %}
+
+For security other than username/password see [Custom Authentication]
 
 # Space Deployment
 

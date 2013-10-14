@@ -35,6 +35,14 @@ Creating a local view is similar to creating a `[GigaSpace](./the-gigaspace-inte
 <os-core:space id="space" url="jini://*/*/space" />
 
 <os-core:local-view id="localViewSpace" space="space">
+    <os-core:properties>
+ 	 <props>
+ 	 <prop key="space-config.engine.memory_usage.high_watermark_percentage">90</prop>
+ 	 <prop key="space-config.engine.memory_usage.write_only_block_percentage">88</prop>
+ 	 <prop key="space-config.engine.memory_usage.write_only_check_percentage">86</prop>
+ 	 <prop key="space-config.engine.memory_usage.low_watermark_percentage">85</prop>
+ 	 </props>
+ 	</os-core:properties>
     <os-core:view-query class="com.example.Message1" where="processed = true"/>
     <os-core:view-query class="com.example.Message2" where="priority > 3"/>
 </os-core:local-view>
@@ -75,8 +83,19 @@ Creating a local view is similar to creating a `[GigaSpace](./the-gigaspace-inte
 UrlSpaceConfigurer urlConfigurer = new UrlSpaceConfigurer("jini://*/*/mySpace");
 // Initialize local view configurer
 LocalViewSpaceConfigurer localViewConfigurer = new LocalViewSpaceConfigurer(urlConfigurer)
-    .addViewQuery(new SQLQuery(com.example.Message1.class, "processed = true"))
-    .addViewQuery(new SQLQuery(com.example.Message2.class, "priority > 3"));
+	.batchSize(1000)
+	.batchTimeout(100)
+	.maxDisconnectionDuration(1000*60*60)
+	.addProperty("space-config.engine.memory_usage.high_watermark_percentage", "90")
+	.addProperty("space-config.engine.memory_usage.write_only_block_percentage", "88")
+	.addProperty("space-config.engine.memory_usage.write_only_check_percentage", "86")
+	.addProperty("space-config.engine.memory_usage.low_watermark_percentage", "85")
+	.addProperty("space-config.engine.memory_usage.eviction_batch_size", "1000")
+	.addProperty("space-config.engine.memory_usage.retry_count", "5")
+	.addProperty("space-config.engine.memory_usage.explicit", "false")
+	.addProperty("space-config.engine.memory_usage.retry_yield_time", "50")
+	.addViewQuery(new SQLQuery(com.example.Message1.class, "processed = true"))
+	.addViewQuery(new SQLQuery(com.example.Message2.class, "priority > 3"));
 // Create local view:
 GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 {% endhighlight %}

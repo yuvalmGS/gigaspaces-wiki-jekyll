@@ -25,7 +25,22 @@ Creating a local cache is similar to creating a GigaSpace, except that we wrap t
 
 {% highlight xml %}
 <os-core:space id="space" url="jini://*/*/mySpace" />
-<os-core:local-cache id="localCacheSpace" space="space"/>
+<os-core:local-cache id="localCacheSpace" space="space">
+    <os-core:properties>
+	<props>
+		<prop key="space-config.engine.cache_size">5000000</prop>
+		<prop key="space-config.engine.memory_usage.high_watermark_percentage">75</prop>
+		<prop key="space-config.engine.memory_usage.write_only_block_percentage">73</prop>
+		<prop key="space-config.engine.memory_usage.write_only_check_percentage">71</prop>
+		<prop key="space-config.engine.memory_usage.low_watermark_percentage">50</prop>
+		<prop key="space-config.engine.memory_usage.eviction_batch_size">1000</prop>
+		<prop key="space-config.engine.memory_usage.retry_count">20</prop>
+		<prop key="space-config.engine.memory_usage.explicit">false</prop>
+		<prop key="space-config.engine.memory_usage.retry_yield_time">200</prop>
+	</props>
+    </os-core:properties>
+</os-core:local-cache>
+
 <os-core:giga-space id="localCache" space="localCacheSpace"/>
 {% endhighlight %}
 

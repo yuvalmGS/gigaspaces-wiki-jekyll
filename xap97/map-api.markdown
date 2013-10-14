@@ -4,7 +4,7 @@ title:  Map API
 page_id: 61867396
 ---
 
-{% compositionsetup %}{% summary page|60 %}Using GigaSpaces as a distributed cache. Interacting with the space using the Hashtable API. This is an optimized API to store user sessions or metadata accessed via a simple key{% endsummary %}
+{% compositionsetup %}{% summary page|60 %}Using GigaSpaces as a distributed cache. Interacting with the space using the Hashtable/JCache (JSR-107) API. This is an optimized API to store user sessions or metadata accessed via a simple key{% endsummary %}
 
 {% comment %}
 # Connecting to the space with the Map API
@@ -12,8 +12,7 @@ page_id: 61867396
 Using the Map API requires two layers:
 
 - The Map component that provides the clustered proxy capabilities. A clustered proxy is a smart proxy that performs operations against the whole cluster.
-- The GigaMap Interface which provides enriched JCache API including declarative transactions, coherent runtime exception hierarchy, and more.
-
+- The GigaMap Interface which provides enriched JCache (JSR-107)API including declarative transactions, coherent runtime exception hierarchy, and more.
 In general, you would use the Map component to create the proxy layer, and then wrap it with a GigaMap instance and do all the operations against this instance.
 
 --------

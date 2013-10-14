@@ -65,6 +65,8 @@ SpaceDocument docresult[] = gigaSpace.readMultiple(docQuery);
 # Supported Operations
 
 The projection is defined for any operation that return data from the space. Therefore ID Based or Query based operations supporting projections. You can use with `read`,`take`,`readById`,`takeById`,`readMultiple` and `takeMultiple` operations. When performing a `take` operation with projection the entire object will be removed from the space, but the result returned to the user will contain only the projected properties.
+
+
 You can use projections with the [Notify Container](./notify-container.html) when subscribing to notifications, or with the [Polling Container](./polling-container.html) when consuming space objects. You can also create a [Local View](./local-view.html) with templates or a `View` using projections. The local view will maintain the relevant objects, but with the projected data - only with the projected properties.
 Projected properties can specify both dynamic or fixed properties and the usage is the same. As a result, when providing a projected property name which is not part of the fixed properties set, it will be treated as a dynamic property. If there is no dynamic property present with that name on an object which is a result of the query - that projection property will be ignored (and no exception will be raised). Please note that a result may contain multiple objects, each with different set of properties (fixed and dynamic), each object will be treated individually when applying the projections on it.
 
