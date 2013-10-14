@@ -46,6 +46,8 @@ com.gs.security.fs.file-service.file-path = /opt/head/security/my-directory.fsm
 {% question %} The file extension doesn't have to be `.fsm`.
 {% exclamation %} If the file doesn't exist, only a warning is displayed
 
+![security_namagement_config_file.jpg](/attachment_files/security_namagement_config_file.jpg)
+
 # Custom Extensions
 
 There are some handy extension points which allow you to modify some of the defaults we have considered, and replace them with your suitable requirements. These are extensions which are relevant to this specific File-based implementation. It might not be relevant for other security implementations.
