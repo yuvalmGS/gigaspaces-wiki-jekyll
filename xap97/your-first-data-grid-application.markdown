@@ -14,6 +14,10 @@ GigaSpaces XAP can be used as a scalable application platforom on which you can 
 The XAP data grid requires a number of components to be deployed and started successfully, such as the [lookup service](./the-lookup-service.html), the [grid service container](./the-grid-service-container.html) and the [grid service manager](./the-grid-service-manager.html). The simplest way to start all of these components is to fire up a [grid service agent](./the-grid-service-agent.html) on every machine you wish to run a data grid node on.
 The agent is responsible for bootstrapping the GigaSpaces cluster environment implicitly, and starting all of the required components. All agents use a peer to peer communication between one another to ensure a successful cluster wide startup of all infrastructure components. 
 
+
+![POJO_write.jpg](/attachment_files/POJO_write.jpg)
+
+
 Once all agents have started, you can issue a few simple API calls from within your application code to bootstrap the data grid and interact with it, by using the [GigaSpaces Elastic Middleware](./elastic-processing-unit.html) capabilties.
 These API calls will provision a data grid on the GigaSpaces cluster based on the capacity and other SLA requirements specified in the API calls. 
 
@@ -68,6 +72,17 @@ pu.waitFor(4, 30, TimeUnit.SECONDS);
 //and finally, obtain a reference to it
 GigaSpace gigaSpace = pu.waitForSpace().getGigaSpace(); 
 {% endhighlight %}
+
+
+{% note %}*Lite edition support a single partition*
+If you are using the Lite edition use this:
+{% highlight java %}
+ProcessingUnit pu = esm.deploy(new SpaceDeployment(spaceName).partitioned(1, 1));
+....
+pu.waitFor(2, 30, TimeUnit.SECONDS);
+{% endhighlight %}
+{% endnote %}
+
 
 You can also use a simple helper utility (DataGridConnectionUtility) that combines the two. It first look for a DataGrid instance and if one doesn't exist it will create a new one; it's trivial to alter the `getSpace()` method to increase the number of nodes or even scale dynamically as required. Read [this](./elastic-processing-unit.html) for more detailed information on how elastic scaling works.
 

@@ -50,7 +50,22 @@ If you're migrating from a GigaSpaces version prior to 9.5 please see the [Migra
 The Space Persistency API contains two abstract classes one should extend in order to customize the space persistency functionality.
 The ability to customize the space persistency functionality allows GigaSpaces to interact with any external application or data source.
 
+
+{: .table .table-bordered}
+| Client Call | Space Data Source/Synchronization Endpoint Call| Cache Policy Mode|EDS Usage Mode|
+|:------------|:-----------------------------------------------|:-----------------|:-------------|
+ 	|write , change , take , asyncTake , writeMultiple , takeMultiple , clear|onOperationsBatchSynchronization , afterOperationsBatchSynchronization|ALL_IN_CACHE, LRU|read-write|
+ 	|readById|getById|ALL_IN_CACHE, LRU|read-write,read-only|
+ 	|readByIds|getDataIteratorByIds|ALL_IN_CACHE, LRU|read-write,read-only|
+ 	|read , asyncRead|getDataIterator|LRU|read-write,read-only|
+ 	|readMultiple , count|getDataIterator|LRU|read-write,read-only|
+ 	|takeMultiple|getDataIterator|ALL_IN_CACHE, LRU|read-write|
+ 	|transaction committed|onTransactionSynchronization , afterTransactionSynchronization|ALL_IN_CACHE, LRU|read-write|
+ 	|transaction failed|onTransactionConsolidationFailure|ALL_IN_CACHE, LRU|read-write|
+
 {% infosign %} GigaSpaces built in Hibernate Persistency implementation is an extension of SpaceDataSource and SpaceSynchronizationEndpoint classes.
+
+
 
 For detailed API information see [Space Data Source API](./space-data-source-api.html) and [Space Synchronization Endpoint API](./space-synchronization-endpoint-api.html).
 

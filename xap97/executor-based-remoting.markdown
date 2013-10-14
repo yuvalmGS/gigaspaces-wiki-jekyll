@@ -35,6 +35,33 @@ The `executor-proxy` include the following properties:
 | methodHashLookup | Map<Method, MethodHash> |
 |interface | Class | Yes | | The interface (fully qualified class name) that this remoting proxy will proxy. Also controls which service will be invoked in the "server".| |
 
+Example:
+{% highlight xml %}
+<bean id="dataProcessor" class="org.openspaces.remoting.ExecutorSpaceRemotingProxyFactoryBean">
+    <property name="gigaSpace" ref="gigaSpace" />
+    <property name="timeout" value="60000" />
+
+    <property name="serviceInterface" value="org.openspaces.example.data.common.IDataProcessor" />
+    <property name="broadcast" value="true" />
+
+    <property name="remoteInvocationAspect">
+    	<bean class="eg.MyRemoteInvocationAspect" />
+    </property>
+
+	<property name="metaArgumentsHandler">
+    	<bean class="eg.MyMetaArgumentsHandler" />
+    </property>
+
+	<property name="remoteResultReducer">
+    	<bean class="eg.MyRemoteResultReducer" />
+    </property>
+
+	<property name="remoteRoutingHandler">
+        <bean class="org.openspaces.example.data.feeder.support.DataRemoteRoutingHandler"/>
+    </property>
+</bean>
+{% endhighlight %}
+
 # Defining the Contract
 
 In order to support remoting, the first step is to define the contract between the client and the server. In our case, the contract is a simple Java interface. Here is an example:

@@ -88,7 +88,7 @@ One way to package such processing unit is to use the standard processing unit p
 
 GigaSpaces also provides a simpler option via its built-in data-only processing unit templates (located under `<GigaSpaces Root>/deploy/templates/datagrid`. Using these templates you can deploy and run data only processing unit without creating a dedicated jar for them.
 
-For more information please refer to [this section](./deploying-and-running-the-processing-unit.html)
+For more information please refer to [Deploying and running the processing unit](./deploying-and-running-the-processing-unit.html)
 
 # Class Loaders
 
@@ -135,8 +135,7 @@ For applications that are using relatively large amount of third party libraries
 
 # Manifest Based Classpath
 
-It is possible adding additional jars to the processing unit classpath by having a manifest file located at `META-INF/MANIFEST.MF` and defining the property `Class-Path`
-as shown in the following example (using a simple `MANIFEST.MF` file):
+You may add additional jars to the processing unit classpath by having a manifest file located at `META-INF/MANIFEST.MF` and defining the property `Class-Path` as shown in the following example (using a simple `MANIFEST.MF` file):
 
 {% highlight java %}
 Manifest-Version: 1.0

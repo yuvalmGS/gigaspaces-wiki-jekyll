@@ -31,7 +31,7 @@ Here is an example for a space configuration that performs only initial load fro
     </os-core:properties>
 </os-core:space>
 
-<bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSource">
+<bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSourceFactoryBean">
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
 {% endhighlight %}

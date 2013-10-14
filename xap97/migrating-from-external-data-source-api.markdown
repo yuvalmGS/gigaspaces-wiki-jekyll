@@ -37,9 +37,7 @@ Please note that the new two classes `SpaceDataSource` and `SpaceSynchronization
 
 # Migrating From EDS APIs to Space Persistency APIs
 
-One of the advantages the `SpaceDataSource` and `SpaceSynchronizationEndpoint` is the fact that it defines a single API for the purpose of persistency so instead of implementing
-many interfaces, one should extend only the the classes and methods which matches the requested functionality.
-
+One of the advantages the `SpaceDataSource` and `SpaceSynchronizationEndpoint` is the fact that it defines a single API for the purpose of persistency so instead of implementing many interfaces, one should extend only the the classes and methods which matches the requested functionality.
 The following table lists the EDS interfaces methods replaced by the new Space Persistency classes:
 
 {: .table .table-bordered}
@@ -68,8 +66,7 @@ On transaction execution, getting the transaction metadata was done using the `B
 
 When using [Space Persistency](./space-persistency.html) - the same space properties used to configure the EDS can be used with two exceptions:
 
-- "space-config.external-data-source.usage" specifies the EDS operation mode (read-only or read-write) is no longer used and the operation mode is
-determined by whether a `SpaceSynchronizationEndpoint` implementation has been specified or not. If it has been specified it means the operation mode is 'read-write', otherwise 'read-only'.
+- "space-config.external-data-source.usage" specifies the EDS operation mode (read-only or read-write) is no longer used and the operation mode is determined by whether a `SpaceSynchronizationEndpoint` implementation has been specified or not. If it has been specified it means the operation mode is 'read-write', otherwise 'read-only'.
 
 - "space-config.external-data-source.supports-inheritance" specifies whether the EDS implementation supports types inheritance. This space property is no longer and whether inheritance is supported by the implementation is determined by the `SpaceDataSource.supportsInheritance` method.
 

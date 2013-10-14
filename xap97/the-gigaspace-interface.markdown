@@ -46,27 +46,44 @@ Here is an example of the giga-space Bean:
 {% tabcontent Namespace %}
 
 {% highlight xml %}
+ <os-core:giga-space id="gigaSpaceClustered" space="space" clustered="true"
+  	 default-read-timeout="10000"
+  	 default-take-timeout="10000"
+  	 default-write-lease="100000">
+  	 <os-core:read-modifier value="FIFO"/>
+  	 <os-core:change-modifier value="RETURN_DETAILED_RESULTS"/>
+  	 <os-core:clear-modifier value="EVICT_ONLY"/>
+  	 <os-core:count-modifier value="READ_COMMITTED"/>
+  	 <os-core:take-modifier value="FIFO"/>
 
-<os-core:giga-space id="gigaSpace" clustered="true" space="space" default-read-timeout="10000" default-write-lease="100000" />
+  	 <!-- to add more than one modifier, simply include all desired modifiers -->
+  	 <os-core:write-modifier value="PARTIAL_UPDATE"/>
+  	 <os-core:write-modifier value="UPDATE_ONLY"/>
+  	</os-core:giga-space>
 {% endhighlight %}
 
 {% endtabcontent %}
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
-	<property name="space" ref="space" />
-	<property name="clustered" value="
-	<property name="defaultReadTimeout" value="10000" />
-	<property name="defaultTakeTimeout" value="100000" />
-	<property name="defaultWriteLease" value="100000" />
-	<property name="defaultWriteModifiers" value="NONE" />
-	<property name="defaultReadModifiers" value="NONE" />
-	<property name="defaultTakeModifiers" value="NONE" />
-	<property name="defaultChangeModifiers" value="NONE" />
-	<property name="defaultClearModifiers" value="NONE" />
-	<property name="defaultCountModifiers" value="NONE" />
+ 	 <property name="space" ref="space" />
+ 	 <property name="clustered" value="true" />
+ 	 <property name="defaultReadTimeout" value="10000" />
+ 	 <property name="defaultTakeTimeout" value="100000" />
+ 	 <property name="defaultWriteLease" value="100000" />
+ 	 <property name="defaultWriteModifiers">
+ 	 <array>
+ 	 <bean id="updateOnly"
+ 	 class="org.openspaces.core.config.modifiers.WriteModifierFactoryBean">
+ 	 <property name="modifierName" value="UPDATE_ONLY" />
+ 	 </bean>
+ 	 <bean id="partialUpdate"
+ 	 class="org.openspaces.core.config.modifiers.WriteModifierFactoryBean">
+ 	 <property name="modifierName" value="PARTIAL_UPDATE" />
+ 	 </bean>
+ 	 </array>
+ 	 </property>
 </bean>
 {% endhighlight %}
 

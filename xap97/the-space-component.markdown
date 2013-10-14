@@ -154,6 +154,13 @@ spaceConfigurer.destroy();
 {% endtabcontent %}
 {% endinittab %}
 
+Popular overrides:
+- [Memory Manager Settings](./memory-management-facilities.html#Memory Manager Parameters)
+- [Replication Settings](./replication-parameters.html)
+- [Replication Redo-log Settings](./controlling-the-replication-redo-log.html#Redo Log Capacity Configuration)
+- [Proxy Connectivity Settings](./proxy-connectivity.html#Configuration)
+- [Persistency Settings](./space-persistency-advanced-topics.html#Properties)
+
 # Embedded vs. Remote Space
 
 When looking up or creating a space, OpenSpaces qualifies the state of the Space as either embedded or remote. An embedded space uses `/./` as the URL "protocol", and causes the space to be created and be part of the application context (or processing unit). A remote space is one that was looked up using one of the remote protocols (Jini or RMI). The previous example showed how to look up an embedded space, while the example below shows you how to look up a remote space using the Jini protocol (looks up a space called `space` on all machines under the same lookup group).

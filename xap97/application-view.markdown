@@ -65,14 +65,54 @@ The monitoring view, allow the user to monitor the performance of a the selected
 
 ![metrics_explained.png](/attachment_files/metrics_explained.png)
 
-#### Stateful Processing Unit metrics:
-
+### Stateful Processing Unit metrics:
 In the case of backup spaces OS and VM metrics can be selected either for all instances of Processing Unit( Cluster ) or all instances without backups.
 The same with Processing Unit that has replication.
-Space operation metrics are available for selection as well.
+
+
+#### OS metrics
+- Memory
+- CPU
+
+#### JVM metrics
+- Memory
+- CPU
+- GC
+
+#### Space replication
+- Replication TP(bytes/sec)
+- Redo Log Size
+- Redo Log Memory Packets Count
+- Redo Log External Storage Packet Count
+- Redo Log External Storage Space Used
+
+Total and average Space operation metrics are available for selection as well.
+
+#### Space Troughput
+- Write per sec.
+- Read per sec.
+- Take per sec.
+- Update per sec.
+- Execute per sec.
+- Notify Ack per sec.
+- Notify Reg per sec.
+- Notify Trigger per sec.
+- Change per sec.
+
+#### Space operations
+- Write
+- Read
+- Take
+- Update
+- Execute
+- Notify Ack
+- Notify Reg
+- Notify Trigger
+- Change
 
 ![space_vm_metrics.jpg](/attachment_files/space_vm_metrics.jpg)
 ![space_metrics.jpg](/attachment_files/space_metrics.jpg)
+
 
 #### Stateless Processing Unit metrics:
 
@@ -81,6 +121,22 @@ Space operation metrics are available for selection as well.
 #### Web Processing Unit metrics:
 
 ![web_pu_metrics.jpg](/attachment_files/web_pu_metrics.jpg)
+
+#### Mirror metrics:
+###### OS metrics
+- Memory
+- CPU
+
+###### JVM metrics
+- Memory
+- CPU
+- GC
+
+###### Mirror
+- Failed operations count
+- Mirror Write per sec.
+- Mirror Update per sec.
+- Mirror Remove per sec.
 
 # The Infrastructure view
 

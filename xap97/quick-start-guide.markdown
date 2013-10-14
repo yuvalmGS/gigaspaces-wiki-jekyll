@@ -30,7 +30,7 @@ Watch our getting started screen casts and get up and running with XAP in minute
 {% column width=25% %}
 
 {% align center %}
-[![button2.jpg](/attachment_files/button2.jpg)](./your-first-data-grid-application.html)
+[![tot-data-grid-logo.jpg](/attachment_files/tot-data-grid-logo.jpg)](./your-first-data-grid-application.html)
 {% endalign %}
 
 {% endcolumn %}
@@ -68,7 +68,8 @@ Create a Twitter like word count application
 {% column width=25% %}
 
 {% align center %}
-[![button2.jpg](/attachment_files/button2.jpg)](./your-first-xtp-application.html)
+
+[![tot-xtp-logo.jpg](/attachment_files/tot-xtp-logo.jpg)](./your-first-xtp-application.html)
 {% endalign %}
 
 {% endcolumn %}
