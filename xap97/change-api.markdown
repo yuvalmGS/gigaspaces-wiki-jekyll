@@ -156,6 +156,9 @@ if (changeResult.getNumberOfChangedEntries() == 0)
 
 The `ChangeResult` contains the `getNumberOfChangedEntries` which specifies how many objects where changed by this operation where 0 means none were changed. The `getResults` property gives further details about the objects that were actually changes by providing a collection which gives details for each of the objects that were changed, such as their id and version after the change took affect. By default, in order to reduce network overhead, calling the getResults will throw `UnsupportedOperationException`. In order to get the more detailed result, the `ChangeModifiers.RETURN_DETAILED_RESULTS` should be passed to the `change` operation.
 
+
+{% refer %}For more information please read [Change API Advanced](./change-api-advanced.html). {% endrefer %}
+
 # ChangeException
 
 Upon any error a `ChangeException` will be thrown containing the following details:
@@ -344,12 +347,17 @@ space.asyncChange(idQuery, new ChangeSet().increment("balance.euro", 5.2D), myLi
 # Change and SpaceSynchronizationEndpoint
 
 A SpaceSynchronizationEndpoint implementation could support change operations and make use of lighter replication between the space and the mirror.
-{% refer %}For more information on how to implement it please refer to [Change API Advanced](./change-api-advanced.html){% endrefer %}
+For more information on how to implement it please read [Change API Advanced](./change-api-advanced.html)
 
 # Change and Replication Filter
 
 Change passes through [Replication Filter](./cluster-replication-filters.html) like other operations and for example can be discarded on replication level.
-{% refer %}For more information on how to handle change in replication filters please refer to [Change API Advanced](./change-api-advanced.html){% endrefer %}
+
+{% refer %}For more information on how to handle change in replication filters please read to [Change API Advanced](./change-api-advanced.html).{% endrefer %}
+
+# Change Extension
+
+See [Change Extension](./change-extension.html) which provide utility methods for common usage patterns.
 
 # Considerations
 
