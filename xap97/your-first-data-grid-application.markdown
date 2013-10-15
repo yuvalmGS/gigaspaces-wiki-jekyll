@@ -16,6 +16,8 @@ The agent is responsible for bootstrapping the GigaSpaces cluster environment im
 
 
 ![POJO_write.jpg](/attachment_files/POJO_write.jpg)
+![POJO_write.jpg](/attachment_files/POJO_read.jpg)
+
 
 
 Once all agents have started, you can issue a few simple API calls from within your application code to bootstrap the data grid and interact with it, by using the [GigaSpaces Elastic Middleware](./elastic-processing-unit.html) capabilties.
