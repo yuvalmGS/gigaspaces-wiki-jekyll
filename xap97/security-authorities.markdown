@@ -18,7 +18,6 @@ In general, one can have both management capabilities, but in some organizations
 
 {: .table .table-bordered}
 | Manage Roles | Define roles (a set of privileges assigned to a logical role name) |
-|:-------------|:-------------------------------------------------------------------|
 | Manage Users | Assign users to pre-defined roles, or assign user-specific privileges |
 
 # Grid Authority
@@ -27,11 +26,13 @@ The **Grid Authority** consists of privileges for managing the Grid and its Serv
 
 {: .table .table-bordered}
 | Provision PU | Deploy, Un-deploy of processing units |
-|:-------------|:--------------------------------------|
 | Manage PU | Scale up/down, Relocate, Restart PU instance, Destroy PU instance |
 | Manage Grid | Start, Terminate, Restart of GSC/GSM/LUS via GSA |
 
 In distributed systems, it may be confusing as to which service is performing the authorization. The GSM is responsible for deploying, un-deploying, scaling, relocating, restarting and destroying of processing units. The GSA (if available) is responsible for starting, terminating restarting of GSC/GSM/LUS. The GSC on the other hand, mainly delegates the calls to the managing GSM (e.g. relocate).
+
+
+(% exclamation %) When deploying an [elastic processing unit], the *Provision PU* privilege is not enough - *Manage PU* and *Manage Grid* are required as well, since an elastic PU requires scaling and grid management.
 
 # Space Authority
 
@@ -39,12 +40,9 @@ The **Space Authority** consists of privileges for operation on space (stored) d
 
 {: .table .table-bordered}
 | Write | Write and Update operations |
-|:------|:----------------------------|
+| Create| Write only (no Updates) operations|
 | Read | Read, Count and Notify operations |
-
-{: .table .table-bordered}
 | Take | Take and Clear operations |
-|:-----|:--------------------------|
 | Alter | Register type descriptor, Clean and Drop-Class operations |
 | Execute | Execute tasks |
 
@@ -79,5 +77,4 @@ Note that the monitoring is secured only by the 'tooling' (CLI/UI).
 
 {: .table .table-bordered}
 | Monitor JVM | Monitoring of JVM statistics |
-|:------------|:-----------------------------|
 | Monitor PU | Monitoring of Processing Units (classes, connections, statistics, etc.) |

@@ -84,7 +84,7 @@ A role can be declared using the `[RoleManager](http://www.gigaspaces.com/docs/J
 {% highlight java %}
 RoleManager roleManager = directoryManager.getRoleManager();
 
-roleManager.createRole(new Role("author", "password",
+roleManager.createRole(new Role("author",
         new SpaceAuthority(SpacePrivilege.READ, new ClassFilter("eg.ClassA")),
         new SpaceAuthority(SpacePrivilege.WRITE, new ClassFilter("eg.ClassA")),
         new SpaceAuthority(SpacePrivilege.TAKE, new ClassFilter("eg.ClassA"))

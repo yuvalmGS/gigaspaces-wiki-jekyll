@@ -10,12 +10,15 @@
     <file path="/quick-start-guide.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381764500396" ignored="false" />
     <file path="/the-processing-unit-structure-and-configuration.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381770743546" ignored="false" />
     <file path="/the-space-component.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381771978289" ignored="false" />
-    <file path="/your-first-data-grid-application.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381772470905" ignored="false" />
+    <file path="/your-first-data-grid-application.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381799939216" ignored="false" />
     <file path="/executor-based-remoting.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381773199692" ignored="false" />
     <file path="/default-file-based-security-implementation.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381780154803" ignored="false" />
     <file path="/change-api.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381799687427" ignored="false" />
     <file path="/change-api-advanced.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381798371527" ignored="false" />
     <file path="/change-extension.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381799262526" ignored="false" />
+    <file path="/communication-protocol.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381978902888" ignored="false" />
+    <file path="/customizing-gsa-components.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381980526402" ignored="false" />
+    <file path="/security-authorities.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381985344067" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,92 +79,80 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="administration-and-monitoring-api.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/administration-and-monitoring-api.markdown">
+      <file leaf-file-name="elastic-processing-unit---take-2.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/elastic-processing-unit---take-2.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="379" column="125" selection-start="33920" selection-end="33920" vertical-scroll-proportion="-4.1320753">
+            <state line="6" column="111" selection-start="103" selection-end="103" vertical-scroll-proportion="-1.2075472">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application-view.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/application-view.markdown">
+      <file leaf-file-name="elastic-processing-unit.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/elastic-processing-unit.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="126" column="102" selection-start="4034" selection-end="4034" vertical-scroll-proportion="-6.851852">
+            <state line="406" column="130" selection-start="19729" selection-end="19729" vertical-scroll-proportion="-6.3018866">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="change-api.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/change-api.markdown">
+      <file leaf-file-name="getting-partial-results-using-projection-api.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/getting-partial-results-using-projection-api.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="355" column="158" selection-start="20160" selection-end="20160" vertical-scroll-proportion="-5.037736">
+            <state line="63" column="74" selection-start="2846" selection-end="2846" vertical-scroll-proportion="-3.6226416">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="change-extension.markdown" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/xap97/change-extension.markdown">
+      <file leaf-file-name="gigaspaces-browser-menus-and-buttons.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/gigaspaces-browser-menus-and-buttons.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="1" selection-start="345" selection-end="345" vertical-scroll-proportion="0.41420117">
+            <state line="150" column="70" selection-start="7988" selection-end="7991" vertical-scroll-proportion="-2.8867924">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="change-api-code-snippet.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/change-api-code-snippet.markdown">
+      <file leaf-file-name="local-view.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/local-view.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="50" selection-start="1580" selection-end="1581" vertical-scroll-proportion="-13.333333">
+            <state line="84" column="88" selection-start="4110" selection-end="4110" vertical-scroll-proportion="-5.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="change-api-advanced.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/change-api-advanced.markdown">
+      <file leaf-file-name="programmatically-managing-the-security-directory.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/programmatically-managing-the-security-directory.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="226" selection-start="5674" selection-end="5674" vertical-scroll-proportion="-19.444445">
+            <state line="86" column="41" selection-start="5271" selection-end="5271" vertical-scroll-proportion="-13.888889">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="counters.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/counters.markdown">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="10.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deploy---gigaspaces-cli.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/deploy---gigaspaces-cli.markdown">
+      <file leaf-file-name="quick-start.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/quick-start.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
@@ -172,22 +163,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="archive-container.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/archive-container.markdown">
+      <file leaf-file-name="quick-start-guide.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/quick-start-guide.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="12" selection-start="541" selection-end="541" vertical-scroll-proportion="-0.0">
+            <state line="17" column="76" selection-start="308" selection-end="308" vertical-scroll-proportion="-4.3207545">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="indent.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_plugins/indent.rb">
+      <file leaf-file-name="scripts.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/scripts.markdown">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="security-authorities.markdown" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xap97/security-authorities.markdown">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="46" selection-start="4687" selection-end="4687" vertical-scroll-proportion="2.2941177">
               <folding />
             </state>
           </provider>
@@ -203,28 +209,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/xap97/routing-in-partitioned-spaces.markdown" />
-        <option value="$PROJECT_DIR$/xap97/persistency.markdown" />
-        <option value="$PROJECT_DIR$/xap97/space-persistency.markdown" />
-        <option value="$PROJECT_DIR$/xap97/space-persistency-initial-load.markdown" />
-        <option value="$PROJECT_DIR$/xap97/the-processing-unit-structure-and-configuration.markdown" />
         <option value="$PROJECT_DIR$/xap97/the-space-component.markdown" />
-        <option value="$PROJECT_DIR$/xap97/your-first-data-grid-application.markdown" />
         <option value="$PROJECT_DIR$/xap97/executor-based-remoting.markdown" />
         <option value="$PROJECT_DIR$/xap97/the-gigaspace-interface.markdown" />
         <option value="$PROJECT_DIR$/xap97/application-view.markdown" />
-        <option value="$PROJECT_DIR$/xap97/default-file-based-security-implementation.markdown" />
         <option value="$PROJECT_DIR$/xap97/archive-container.markdown" />
         <option value="$PROJECT_DIR$/xap97/administration-and-monitoring-api.markdown" />
         <option value="$PROJECT_DIR$/xap97/change-api-advanced.markdown" />
         <option value="$PROJECT_DIR$/xap97/change-api.markdown" />
         <option value="$PROJECT_DIR$/xap97/change-extension.markdown" />
+        <option value="$PROJECT_DIR$/xap97/your-first-data-grid-application.markdown" />
+        <option value="$PROJECT_DIR$/xap97/communication-protocol.markdown" />
+        <option value="$PROJECT_DIR$/xap97/default-file-based-security-implementation.markdown" />
+        <option value="$PROJECT_DIR$/xap97/customizing-gsa-components.markdown" />
+        <option value="$PROJECT_DIR$/xap97/getting-partial-results-using-projection-api.markdown" />
+        <option value="$PROJECT_DIR$/xap97/programmatically-managing-the-security-directory.markdown" />
+        <option value="$PROJECT_DIR$/xap97/security-authorities.markdown" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="27" />
-    <option name="y" value="22" />
+    <option name="x" value="376" />
+    <option name="y" value="61" />
     <option name="width" value="1420" />
     <option name="height" value="767" />
   </component>
@@ -254,7 +260,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -304,6 +309,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -443,7 +449,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="27" y="22" width="1420" height="767" extended-state="0" />
+    <frame x="376" y="61" width="1420" height="767" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -529,12 +535,22 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xap97/running-gigaspaces-as-a-windows-service.markdown">
+    <entry file="file://$PROJECT_DIR$/xap97/change-api-advanced.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="329" selection-start="1121" selection-end="1121" vertical-scroll-proportion="-1.1111112">
+        <state line="11" column="31" selection-start="252" selection-end="253" vertical-scroll-proportion="-6.111111">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/communication-protocol.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="119" selection-start="12724" selection-end="12842" vertical-scroll-proportion="-10.0">
           <folding />
         </state>
       </provider>
@@ -544,39 +560,122 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="75" selection-start="2823" selection-end="2823" vertical-scroll-proportion="-7.962963">
+        <state line="32" column="40" selection-start="2383" selection-end="2383" vertical-scroll-proportion="-2.0566037">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/startjinilus---gigaspaces-cli.markdown">
+    <entry file="file://$PROJECT_DIR$/xap97/customizing-gsa-components.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="15.111111">
+        <state line="21" column="53" selection-start="1042" selection-end="1042" vertical-scroll-proportion="-5.943396">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/your-first-real-time-big-data-analytics-application.markdown">
+    <entry file="file://$PROJECT_DIR$/xap97/the-lookup-service.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="75" selection-start="16402" selection-end="16446" vertical-scroll-proportion="-6.6981134">
+        <state line="39" column="120" selection-start="2958" selection-end="2958" vertical-scroll-proportion="-6.111111">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_plugins/compositionsetup.rb">
+    <entry file="file://$PROJECT_DIR$/xap97/deploying-and-running-the-processing-unit.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.4814816">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/elastic-processing-unit---take-2.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="111" selection-start="103" selection-end="103" vertical-scroll-proportion="-1.2075472">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/elastic-processing-unit.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="406" column="130" selection-start="19729" selection-end="19729" vertical-scroll-proportion="-6.3018866">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/getting-partial-results-using-projection-api.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="74" selection-start="2846" selection-end="2846" vertical-scroll-proportion="-3.6226416">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/gigaspaces-browser-menus-and-buttons.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="70" selection-start="7988" selection-end="7991" vertical-scroll-proportion="-2.8867924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/local-view.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="88" selection-start="4110" selection-end="4110" vertical-scroll-proportion="-5.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/programmatically-managing-the-security-directory.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="41" selection-start="5271" selection-end="5271" vertical-scroll-proportion="-13.888889">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/quick-start.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/concepts.markdown">
+    <entry file="file://$PROJECT_DIR$/xap97/quick-start-guide.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="76" selection-start="308" selection-end="308" vertical-scroll-proportion="-4.3207545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/scripts.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
@@ -586,99 +685,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/counters.markdown">
+    <entry file="file://$PROJECT_DIR$/xap97/security-authorities.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="10.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/deploy---gigaspaces-cli.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_plugins/indent.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/archive-container.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="12" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/administration-and-monitoring-api.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="379" column="125" selection-start="33920" selection-end="33920" vertical-scroll-proportion="-4.1320753">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/application-view.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="126" column="102" selection-start="4034" selection-end="4034" vertical-scroll-proportion="-6.851852">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/change-api-advanced.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="226" selection-start="5674" selection-end="5674" vertical-scroll-proportion="-19.444445">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/change-api-code-snippet.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="50" selection-start="1580" selection-end="1581" vertical-scroll-proportion="-13.333333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/change-api.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="355" column="158" selection-start="20160" selection-end="20160" vertical-scroll-proportion="-5.037736">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/change-extension.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="1" selection-start="345" selection-end="345" vertical-scroll-proportion="0.41420117">
+        <state line="78" column="46" selection-start="4687" selection-end="4687" vertical-scroll-proportion="2.2941177">
           <folding />
         </state>
       </provider>
