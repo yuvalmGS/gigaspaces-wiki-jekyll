@@ -32,7 +32,7 @@ page_id: 61867286
 - [9.6.X Release Notes](http://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+XAP+9.6.X+Release+Notes)
 - [API Documentation](http://wiki.gigaspaces.com/wiki/display/API/API+Documentation+Portal)
 - [Solutions and Best Practices](http://wiki.gigaspaces.com/wiki/display/SBP/Solutions+and+Best+Practices+Home)
-- [Forum](http://forum.openspaces.org/forum.jspa?forumID=175)
+- [Forum](http://ask.gigaspaces.org/)
 - [Customer Support Portal](http://www.gigaspaces.com/supportcenter)
 - [Blog](http://blog.gigaspaces.com/)
 - Looking for **[other versions](http://wiki.gigaspaces.com/wiki/display/ALL/Choose+a+GigaSpaces+Version)**?

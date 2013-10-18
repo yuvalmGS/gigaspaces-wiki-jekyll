@@ -55,8 +55,8 @@ SUSE-10 sp3 has bugs which make OS network layer unreliable. This OS should be a
 
 See below tested JVMs:
 
-- Oracle 6 - XAP was tested using Sun JVM version 6u39 and above.
-- Oracle 7 - XAP was tested using Sun JVM version 7u17 and above.
+- Oracle 6 - XAP was tested using Sun JVM version 643 and above.
+- Oracle 7 - XAP was tested using Sun JVM version 7u21 and above.
 - JRockit/BEA 1.6.x - XAP was tested using BEA JRockit(R) build 1.6.0_31-b05
 - IBM 1.6.0 - XAP was tested using IBM JVM version 1.6.0 IBM J9 VM (build 2.4, JRE 1.6.0 IBM J9 2.4 Linux amd64-64 jvmxa6460sr12-20121024_126067 (JIT enabled, AOT enabled)
 
@@ -78,7 +78,7 @@ The current supported platforms and compilers are:
 
 # Integrations with 3rd Party Products
 
-The following products/projects were tested and certified using GigaSpaces 9.6:
+The following products/projects were tested and certified using GigaSpaces 9.7:
 
 - Spring 3.1.3.RELEASE
 - Hibernate version 3.6.1.Final
