@@ -53,7 +53,7 @@ The following services use the LUS:
 * Processing Unit Instances (actual instances of a deployed Processing Unit)
 * Space Instances (actual instances of a Space that form a topology)
 
-(% exclamation %) For advanced information on the lookup service architecture, refer to [The Lookup Service](./the-lookup-service.html).
+{% exclamation %} For advanced information on the lookup service architecture, refer to [The Lookup Service](./the-lookup-service.html).
 
 {% anchor gsa %}
 
