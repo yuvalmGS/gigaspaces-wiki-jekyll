@@ -22,6 +22,7 @@
     <file path="/service-grid-configuration.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382115707293" ignored="false" />
     <file path="/the-runtime-environment.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382119272287" ignored="false" />
     <file path="/version-gigaspaces-cli.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382120109671" ignored="false" />
+    <file path="/.gitignore" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382121244315" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,13 +143,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="your-first-jpa-application.markdown" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="your-first-jpa-application.markdown" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xap97/your-first-jpa-application.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="133" selection-start="1662" selection-end="1662" vertical-scroll-proportion="0.36037737">
+            <state line="40" column="133" selection-start="1662" selection-end="1662" vertical-scroll-proportion="-3.6037736">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="0" selection-start="7" selection-end="7" vertical-scroll-proportion="0.025167786">
               <folding />
             </state>
           </provider>
@@ -176,7 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/xap97/change-api-advanced.markdown" />
         <option value="$PROJECT_DIR$/xap97/change-api.markdown" />
         <option value="$PROJECT_DIR$/xap97/change-extension.markdown" />
         <option value="$PROJECT_DIR$/xap97/your-first-data-grid-application.markdown" />
@@ -192,12 +201,13 @@
         <option value="$PROJECT_DIR$/xap97/the-runtime-environment.markdown" />
         <option value="$PROJECT_DIR$/xap97/version-gigaspaces-cli.markdown" />
         <option value="$PROJECT_DIR$/xap97/xap-9.6-documentation-home.markdown" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="39" />
-    <option name="y" value="78" />
+    <option name="x" value="415" />
+    <option name="y" value="72" />
     <option name="width" value="1420" />
     <option name="height" value="767" />
   </component>
@@ -402,7 +412,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="39" y="78" width="1420" height="767" extended-state="0" />
+    <frame x="415" y="72" width="1420" height="767" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -488,16 +498,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xap97/programmatically-managing-the-security-directory.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="41" selection-start="5271" selection-end="5271" vertical-scroll-proportion="-2.5185184">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xap97/quick-start.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
@@ -637,7 +637,14 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="133" selection-start="1662" selection-end="1662" vertical-scroll-proportion="0.36037737">
+        <state line="40" column="133" selection-start="1662" selection-end="1662" vertical-scroll-proportion="-3.6037736">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="7" selection-end="7" vertical-scroll-proportion="0.025167786">
           <folding />
         </state>
       </provider>
