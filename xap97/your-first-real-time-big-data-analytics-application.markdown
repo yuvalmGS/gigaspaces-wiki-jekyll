@@ -295,7 +295,7 @@ set GSC_JAVA_OPTIONS=-Dspring.profiles.active=list-feeder,file-archiver
 {% endtabcontent %}
 {% endinittab %}
 
-1. Start a [Grid Service Agent](./the-grid-service-agent.html) by running the `gs-agent.sh/bat` script. This will start two [GSCs](./the-grid-service-container.html) (GSCs are the container JVMs for your processing units) and a [GSM](./the-grid-service-manager.html).
+1. Start a [Grid Service Agent](./service-grid.html#gsa) by running the `gs-agent.sh/bat` script. This will start two [GSCs](./service-grid.html#gsc) (GSCs are the container JVMs for your processing units) and a [GSM](./service-grid.html#gsm).
 
 {% inittab d1|top %}
 {% tabcontent Unix %}

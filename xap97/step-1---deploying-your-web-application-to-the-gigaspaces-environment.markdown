@@ -183,7 +183,7 @@ At the end of the process, the web application's war file will be created in the
 
 # Deploying the Application
 
-In order to deploy the application onto the GigaSpaces infrastructure (Service Grid), you will need to start the  [GigaSpaces agent](./the-grid-service-agent.html) on your local machine. The agent automatically manages the GigaSpaces processes for you, and will start one GSM and two GSCs by default. This is done by calling `<gs root>/bin/gs-agent.(sh/bat)`.
+In order to deploy the application onto the GigaSpaces infrastructure (Service Grid), you will need to start the  [GigaSpaces agent](./service-grid.html#gsa) on your local machine. The agent automatically manages the GigaSpaces processes for you, and will start one GSM and two GSCs by default. This is done by calling `<gs root>/bin/gs-agent.(sh/bat)`.
 
 The deploy command can be issued in three ways:
 

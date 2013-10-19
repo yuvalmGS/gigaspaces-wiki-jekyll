@@ -36,7 +36,7 @@ The processing unit jar file is composed of several key elements:
 - **`META-INF/spring/sla.xml`** (not mandatory): This file contains SLA definitions for the processing unit (i.e. number of instances, number of backup and deployment requirements). Note that this is optional, and can be replaced with an <os:sla> definition in the `pu.xml` file. If neither is present, the [default SLA](./configuring-the-processing-unit-sla.html) will be applied. Note, the `sla.xml` can also be placed at the root of the processing unit. SLA definitions can be also specified at the deploy time via the [deploy CLI](./deploy---gigaspaces-cli.html) or [deploy API](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/admin/gsm/GridServiceManager).
 
 {% note %}
-SLA definitions are only enforced when deploying the processing unit to the GigaSpaces service grid, since this environment actively manages and controls the deployment using the [GSM](./the-grid-service-manager.html). When [running within your IDE](./running-and-debugging-within-your-ide.html) or in [standalone mode](./running-in-standalone-mode.html) these definitions are ignored.
+SLA definitions are only enforced when deploying the processing unit to the GigaSpaces service grid, since this environment actively manages and controls the deployment using the [GSM](./service-grid.html#gsm). When [running within your IDE](./running-and-debugging-within-your-ide.html) or in [standalone mode](./running-in-standalone-mode.html) these definitions are ignored.
 {% endnote %}
 
 - **`META-INF/spring/pu.properties`** (not mandatory): Enables you to externalize properties included in the `pu.xml` file (e.g. database connection username and password), and also set system-level deployment properties and overrides, such as JEE related deployment properties (see [this page](./web-application-support.html) for more details) or space properties (when defining a space inside your processing unit). Note, the `pu.properties` can also be placed at the root of the processing unit.
@@ -72,9 +72,9 @@ When [running within your IDE](./running-and-debugging-within-your-ide.html), it
 
 # Deploying the Processing Unit to the GigaSpaces Service Grid
 
-When deploying the processing unit to [GigaSpaces Service Grid](./the-runtime-environment.html), the processing unit jar file is uploaded to the [GigaSpaces Manager (GSM)](./the-grid-service-manager.html) and extracted to the `deploy` directory of the local GigaSpaces installation (located by default under `<GigaSpaces Root>/deploy`).
+When deploying the processing unit to [GigaSpaces Service Grid](./the-runtime-environment.html), the processing unit jar file is uploaded to the [GigaSpaces Manager (GSM)](./service-grid.html#gsm) and extracted to the `deploy` directory of the local GigaSpaces installation (located by default under `<GigaSpaces Root>/deploy`).
 
-Once extracted, the [GSM](./the-grid-service-manager.html) processes the deployment descriptor and based on that provisions processing unit instances to the running [GigaSpaces containers](./the-grid-service-container.html).
+Once extracted, the [GSM](./service-grid.html#gsm) processes the deployment descriptor and based on that provisions processing unit instances to the running [GigaSpaces containers](./service-grid.html#gsc).
 
 Each GSC to which a certain instance was provisioned, downloads the processing unit jar file from the GSM, extracts it to its local work directory (located by default under `<GigaSpaces Root>/work/deployed-processing-units`) and starts the processing unit instance.
 

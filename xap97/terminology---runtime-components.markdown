@@ -118,7 +118,7 @@ It enables running the processing unit within a [service grid](#Service Grid), w
 
 # Service Grid
 
-A set of [GigaSpaces Containers (GSC)](./the-grid-service-container.html) managed by a [GigaSpaces Manager (GSM)](./the-grid-service-manager.html).
+A set of [GigaSpaces Containers (GSC)](./service-grid.html#gsc) managed by a [GigaSpaces Manager (GSM)](./service-grid.html#gsm).
 The containers host various deployments of [Processing Units](./terminology---basic-components.html#Processing Unit) and [Data Grids](./terminology---data-grid-topologies.html).
 Each container can be run on a separate physical machine.
 
@@ -149,7 +149,7 @@ Each container can be run on a separate physical machine.
 #### GigaSpaces Container (GSC)
 
 A [Service Grid](#Service Grid) component which hosts [Processing Unit](./terminology---basic-components.html#Processing Unit) instances.
-A machine can run one or more [GSC](./the-grid-service-container.html) processes. Each GSC communicates with a manager component ([GSM](./the-grid-service-manager.html)). The GSC receives requests to start/stop a processing unit instance, and sends information about the machine which runs it (OS, processor architecture, current memory and CPU stats), the software installed on it and the status of processing unit instances currently running on it.
+A machine can run one or more [GSC](./service-grid.html#gsc) processes. Each GSC communicates with a manager component ([GSM](./service-grid.html#gsm)). The GSC receives requests to start/stop a processing unit instance, and sends information about the machine which runs it (OS, processor architecture, current memory and CPU stats), the software installed on it and the status of processing unit instances currently running on it.
 
 {% sub %}Key sentence: A set of managed containers hosting different Processing Unit Instances{% endsub %}
 {% endcolumn %}
@@ -176,7 +176,7 @@ A machine can run one or more [GSC](./the-grid-service-container.html) processes
 
 #### GigaSpaces Manager (GSM)
 
-The [GSM](./the-grid-service-manager.html) is a [Service Grid](#Service Grid) component which manages a set of [GigaSpaces Containers (GSC)](./the-grid-service-container.html).
+The [GSM](./service-grid.html#gsm) is a [Service Grid](#Service Grid) component which manages a set of [GigaSpaces Containers (GSC)](./service-grid.html#gsc).
 A GSM has an API for deploying/undeploying processing units. When a GSM is instructed to deploy a Processing Unit, it allocates an appropriate, available GSC and tells that GSC to run an instance of that processing unit. It then continues to monitor that the GSC is alive and the SLA is not breached.
 
 {% sub %}Key sentence: A GSM manages all the running containers in the network and deploys processing units to them.{% endsub %}

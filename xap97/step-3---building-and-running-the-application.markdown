@@ -52,7 +52,7 @@ This will download the application's decencies, compile the sources and package 
 
 To deploy the application, you should do the following: 
 
-- Start a [GigaSpaces Agent](./the-grid-service-agent.html)
+- Start a [GigaSpaces Agent](./service-grid.html#gsa)
 - Run the following Maven command from the application's root directory:
 
 {% highlight java %}

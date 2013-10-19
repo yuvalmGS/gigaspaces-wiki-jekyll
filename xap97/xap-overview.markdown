@@ -40,7 +40,7 @@ The following diagram shows a component view of GigaSpaces XAP. The main compone
 To achieve these goals, Open Spaces adds the following components to the Spring development environment:
 
 - **[Processing Unit](./packaging-and-deployment.html)** -- the core unit of work. Encapsulates the middleware together with the business logic in a single unit of scaling and failover.
-- **[SLA-Driven Container](./the-grid-service-container.html)** -- a lightweight container that enables dynamic deployment of Processing Units over a pool of machines, based on machine availability, CPU utilization, and other hardware and software criteria.
+- **[SLA-Driven Container](./service-grid.html#gsc)** -- a lightweight container that enables dynamic deployment of Processing Units over a pool of machines, based on machine availability, CPU utilization, and other hardware and software criteria.
 - [In-Memory Data Grid](./the-in-memory-data-grid.html) -- provides in-memory distributed data storage.
 - **[Declarative Event Containers](./messaging-support.html)** -- for triggering events from the space into POJOs in pull or push mode.
 - **[Remoting](./space-based-remoting.html)** -- utilizes the space as the underlying transport for invoking remote methods on the POJO services inside the Processing Unit. This approach allows the client to invoke methods on a service even if it changes physical location, and enables re-routing of requests to available services in case of failover.
