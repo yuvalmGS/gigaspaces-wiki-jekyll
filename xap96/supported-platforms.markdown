@@ -87,5 +87,6 @@ The following products/projects were tested and certified using GigaSpaces 9.6:
 - Groovy 1.8.6
 - Maven 3.0.4
 - Hyperic SIGAR 1.6.5
+- Apache Cassandra 1.1.6
 
 {% endtoczone %}
