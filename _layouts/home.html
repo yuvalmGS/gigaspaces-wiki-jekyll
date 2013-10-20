@@ -1,18 +1,17 @@
----
-layout: home
-title: XAP Documentation Portal
----
 <!DOCTYPE html>
 <html lang="en">
-  {% include head.html %}
-  <body>    
+  
+{% include head.html %}
+  
+  <body>  
+    {% include scripts.html %}  
     {% include navbar.html %}
     <div class="row" style="padding-top: 80px;">
       <div class="container">
         <div class="jumbotron">
           <div class="row">
               <div class="col-md-6 headerDivider">
-                <img src="https://s3.amazonaws.com/media.jetstrap.com/mpQFs8ySiCVr63CJy9MW_xaplogo.png" style="height:150px" class="img-responsive">
+                <img src="/images/xaplogo.png" style="height:150px" class="img-responsive">
                 </br>
                 <p>
                 Welcome to the GigaSpaces XAP documentation portal! Here you'll find all
@@ -66,13 +65,12 @@ title: XAP Documentation Portal
         <br>
         <br>
       </div>
-      <hr>
+      <hr/>
       
       <footer>
         {% include footer.html %}
       </footer>
-    </div>
-    {% include scripts.html %}
+    </div>    
   </body>
 
 </html>

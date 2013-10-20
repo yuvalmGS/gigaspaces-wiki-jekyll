@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include scripts.html %}
+    {% include navbar.html %}
+    <div class="container" style="padding-top: 80px;">
+      <div class='row'>
+        <div class='col-md-3'>
+          {% include nav.html %}
+        </div>
+        <div class='col-md-9'>
+          {{ content }}
+        </div>
+      </div>
+      <hr/>
+      <div class='row'>
+        <div class="footer">
+          {% include footer.html %}
+        </div>
+      </div>
+    </div> <!-- /container -->
+    
+    <script>
+      $("#navigation").treeview({
+        persist: "location"
+      });
+    </script>
+  </body>
+</html>
