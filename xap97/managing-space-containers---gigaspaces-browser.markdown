@@ -13,6 +13,6 @@ To edit a container's configuration, select a container node (![IMG501.jpg](/att
 # More in this Section
 
 - [General tab](./space-container-configuration-general-tab---gigaspaces-browser.html)
-- [Directory Services tab](./space-container-configuration-directory-services-tab-gigaspaces-browser.html)
+- [Directory Services tab](./space-container-configuration-directory-services-tab---gigaspaces-browser.html)
 - [JMS tab](./space-container-configuration-jms-tab---gigaspaces-browser.html)
 - [Container maintenance and runtime configuration report](./space-container-maintenance---gigaspaces-browser.html)

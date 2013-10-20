@@ -64,8 +64,8 @@
     <file path="/paging-support-with-space-iterator.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382236619881" ignored="false" />
     <file path="/jdbc-driver.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382236722298" ignored="false" />
     <file path="/global-http-session-sharing.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382236865415" ignored="false" />
-    <file path="/installing-gigaspaces.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382240460812" ignored="false" />
-    <file path="/failover-detection-and-tuning.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382238071657" ignored="false" />
+    <file path="/installing-gigaspaces.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382285765848" ignored="false" />
+    <file path="/failover-detection-and-tuning.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382286184096" ignored="false" />
     <file path="/gigaspaces-logging.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382240870694" ignored="false" />
     <file path="/dashboard-view.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382238213586" ignored="false" />
     <file path="/security.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382238352763" ignored="false" />
@@ -87,6 +87,11 @@
     <file path="/tuning-java-virtual-machines.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382241403464" ignored="false" />
     <file path="/benchmark-view---gigaspaces-browser.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382241563217" ignored="false" />
     <file path="/space-persistency.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382241618353" ignored="false" />
+    <file path="/monitoring-the-client-side-cache.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382284422168" ignored="false" />
+    <file path="/modeling-your-data.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382285305882" ignored="false" />
+    <file path="/split-brain-and-island-scenarios.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382286731688" ignored="false" />
+    <file path="/authenticating-against-an-ldap-repository.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382286913741" ignored="false" />
+    <file path="/troubleshooting-tools.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382287969920" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,10 +152,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="stats---gigaspaces-cli.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/stats---gigaspaces-cli.markdown">
+      <file leaf-file-name="troubleshooting-tools.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/troubleshooting-tools.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="136" selection-start="978" selection-end="978" vertical-scroll-proportion="-6.3018866">
+            <state line="98" column="194" selection-start="6140" selection-end="6140" vertical-scroll-proportion="-5.09434">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hibernate-space-persistency.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/hibernate-space-persistency.markdown">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="space-persistency.markdown" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xap97/space-persistency.markdown">
+          <provider editor-type-id="text-editor">
+            <state line="20" column="227" selection-start="1065" selection-end="1065" vertical-scroll-proportion="-5.4615383">
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="failover-detection-and-tuning.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/failover-detection-and-tuning.markdown">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="152" selection-start="2144" selection-end="2144" vertical-scroll-proportion="-3.1132076">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="split-brain-and-island-scenarios.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/split-brain-and-island-scenarios.markdown">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="64" selection-start="2691" selection-end="2691" vertical-scroll-proportion="-2.3962264">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="authenticating-against-an-ldap-repository.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/authenticating-against-an-ldap-repository.markdown">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="48" selection-start="2105" selection-end="2105" vertical-scroll-proportion="-4.4444447">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gigaspaces-logging.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/gigaspaces-logging.markdown">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="145" column="0" selection-start="5217" selection-end="5217" vertical-scroll-proportion="-4.09434">
               <folding />
             </state>
           </provider>
@@ -162,7 +239,7 @@
       <file leaf-file-name="managing-space-containers---gigaspaces-browser.markdown" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xap97/managing-space-containers---gigaspaces-browser.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="105" selection-start="720" selection-end="720" vertical-scroll-proportion="-8.333333">
+            <state line="15" column="107" selection-start="644" selection-end="722" vertical-scroll-proportion="-8.333333">
               <folding />
             </state>
           </provider>
@@ -171,99 +248,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="running-gigaspaces-as-a-windows-service.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/running-gigaspaces-as-a-windows-service.markdown">
+      <file leaf-file-name="sample.ldif" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/download_files/sample.ldif">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="146" selection-start="2166" selection-end="2170" vertical-scroll-proportion="-2.3962264">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tuning-infrastructure.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/tuning-infrastructure.markdown">
+      <file leaf-file-name="SpaceModeTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/download_files/SpaceModeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="33" selection-start="3253" selection-end="3259" vertical-scroll-proportion="-2.2641509">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tuning-java-virtual-machines.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/tuning-java-virtual-machines.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="159" selection-start="8190" selection-end="8281" vertical-scroll-proportion="-2.3962264">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="troubleshooting-tools.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/troubleshooting-tools.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="29" selection-start="251" selection-end="251" vertical-scroll-proportion="13.740741">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="benchmark-view---gigaspaces-browser.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/benchmark-view---gigaspaces-browser.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="106" selection-start="9211" selection-end="9211" vertical-scroll-proportion="-5.226415">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="space-persistency.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/space-persistency.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="294" selection-start="1131" selection-end="1131" vertical-scroll-proportion="12.867925">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="proxy-connectivity.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/proxy-connectivity.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="59" selection-start="8155" selection-end="8155" vertical-scroll-proportion="-2.3962264">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="the-processing-unit-structure-and-configuration.markdown" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/xap97/the-processing-unit-structure-and-configuration.markdown">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="192" selection-start="4999" selection-end="4999" vertical-scroll-proportion="-0.83677685">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
           </provider>
         </entry>
       </file>
@@ -277,28 +276,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/xap97/elastic-processing-unit---take-2.markdown" />
-        <option value="$PROJECT_DIR$/xap97/asynchronous-persistency-with-the-mirror.markdown" />
-        <option value="$PROJECT_DIR$/xap97/maven-plugin---advanced.markdown" />
-        <option value="$PROJECT_DIR$/xap97/xap-community-faq.markdown" />
-        <option value="$PROJECT_DIR$/xap97/installing-gigaspaces.markdown" />
-        <option value="$PROJECT_DIR$/xap97/gigaspaces-logging.markdown" />
-        <option value="$PROJECT_DIR$/xap97/how-to-configure-multicast.markdown" />
-        <option value="$PROJECT_DIR$/xap97/gsinstance---gigaspaces-cli.markdown" />
         <option value="$PROJECT_DIR$/xap97/stats---gigaspaces-cli.markdown" />
-        <option value="$PROJECT_DIR$/xap97/managing-space-containers---gigaspaces-browser.markdown" />
         <option value="$PROJECT_DIR$/xap97/running-gigaspaces-as-a-windows-service.markdown" />
         <option value="$PROJECT_DIR$/xap97/tuning-java-virtual-machines.markdown" />
         <option value="$PROJECT_DIR$/xap97/benchmark-view---gigaspaces-browser.markdown" />
-        <option value="$PROJECT_DIR$/xap97/space-persistency.markdown" />
         <option value="$PROJECT_DIR$/xap97/proxy-connectivity.markdown" />
         <option value="$PROJECT_DIR$/xap97/the-processing-unit-structure-and-configuration.markdown" />
+        <option value="$PROJECT_DIR$/xap97/monitoring-the-client-side-cache.markdown" />
+        <option value="$PROJECT_DIR$/xap97/modeling-your-data.markdown" />
+        <option value="$PROJECT_DIR$/xap97/installing-gigaspaces.markdown" />
+        <option value="$PROJECT_DIR$/xap97/failover-detection-and-tuning.markdown" />
+        <option value="$PROJECT_DIR$/xap97/split-brain-and-island-scenarios.markdown" />
+        <option value="$PROJECT_DIR$/xap97/authenticating-against-an-ldap-repository.markdown" />
+        <option value="$PROJECT_DIR$/xap97/gigaspaces-logging.markdown" />
+        <option value="$PROJECT_DIR$/xap97/managing-space-containers---gigaspaces-browser.markdown" />
+        <option value="$PROJECT_DIR$/xap97/troubleshooting-tools.markdown" />
+        <option value="$PROJECT_DIR$/xap97/space-persistency.markdown" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="21" />
-    <option name="y" value="141" />
+    <option name="x" value="86" />
+    <option name="y" value="60" />
     <option name="width" value="1420" />
     <option name="height" value="767" />
   </component>
@@ -370,21 +369,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="_site" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gigaspaces-wiki-jekyll" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gigaspaces-wiki-jekyll" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_layouts" />
+              <option name="myItemId" value="presentation_files" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -405,8 +390,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/presentation_files" />
+      <recent name="$PROJECT_DIR$/download_files" />
+      <recent name="$PROJECT_DIR$/download" />
       <recent name="$PROJECT_DIR$/_site/attachment_files" />
       <recent name="$PROJECT_DIR$/attachment_files" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/presentation_files" />
     </key>
   </component>
   <component name="RunManager">
@@ -552,23 +543,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="21" y="141" width="1420" height="767" extended-state="0" />
+    <frame x="86" y="60" width="1420" height="767" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19165379" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19165379" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496361" sideWeight="0.8083462" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16739447" sideWeight="0.8083462" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27292576" sideWeight="0.8083462" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -638,146 +629,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xap97/xap-community-faq.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="121" selection-start="1868" selection-end="1868" vertical-scroll-proportion="-2.925926">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/installing-gigaspaces.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="86" selection-start="4910" selection-end="4910" vertical-scroll-proportion="-4.3962264">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/failover-detection-and-tuning.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="97" selection-start="2080" selection-end="2089" vertical-scroll-proportion="-2.2641509">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/gigaspaces-logging.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="366" column="256" selection-start="13769" selection-end="13769" vertical-scroll-proportion="-3.2452831">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/how-to-configure-multicast.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="92" selection-start="1225" selection-end="1225" vertical-scroll-proportion="-2.6792452">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/gsinstance---gigaspaces-cli.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="212" selection-start="4173" selection-end="4173" vertical-scroll-proportion="-4.6792455">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/stats---gigaspaces-cli.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="136" selection-start="978" selection-end="978" vertical-scroll-proportion="-6.3018866">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/managing-space-containers---gigaspaces-browser.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="105" selection-start="720" selection-end="720" vertical-scroll-proportion="-8.333333">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/running-gigaspaces-as-a-windows-service.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="146" selection-start="2166" selection-end="2170" vertical-scroll-proportion="-2.3962264">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/tuning-infrastructure.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="33" selection-start="3253" selection-end="3259" vertical-scroll-proportion="-2.2641509">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/tuning-java-virtual-machines.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="159" selection-start="8190" selection-end="8281" vertical-scroll-proportion="-2.3962264">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/troubleshooting-tools.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="29" selection-start="251" selection-end="251" vertical-scroll-proportion="13.740741">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/benchmark-view---gigaspaces-browser.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="106" selection-start="9211" selection-end="9211" vertical-scroll-proportion="-5.226415">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/space-persistency.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="294" selection-start="1131" selection-end="1131" vertical-scroll-proportion="12.867925">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xap97/proxy-connectivity.markdown">
       <provider selected="true" editor-type-id="text-editor">
         <state line="106" column="59" selection-start="8155" selection-end="8155" vertical-scroll-proportion="-2.3962264">
@@ -790,11 +641,145 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xap97/the-processing-unit-structure-and-configuration.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="192" selection-start="4999" selection-end="4999" vertical-scroll-proportion="-0.83677685">
+        <state line="62" column="0" selection-start="4999" selection-end="4999" vertical-scroll-proportion="7.6415095">
           <folding />
         </state>
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/monitoring-the-client-side-cache.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="65" selection-start="861" selection-end="861" vertical-scroll-proportion="10.320755">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/modeling-your-data.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="28" selection-start="10829" selection-end="10829" vertical-scroll-proportion="-2.3962264">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/installing-gigaspaces.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="51" selection-start="5069" selection-end="5069" vertical-scroll-proportion="-5.5283017">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/split-brain-and-active-election---general-definition.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/failover-detection-and-tuning.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="152" selection-start="2144" selection-end="2144" vertical-scroll-proportion="-3.1132076">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/download_files/SpaceModeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/split-brain-and-island-scenarios.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="64" selection-start="2691" selection-end="2691" vertical-scroll-proportion="-2.3962264">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/download_files/sample.ldif">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/authenticating-against-an-ldap-repository.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="48" selection-start="2105" selection-end="2105" vertical-scroll-proportion="-4.4444447">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/gigaspaces-logging.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="145" column="0" selection-start="5217" selection-end="5217" vertical-scroll-proportion="-4.09434">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/managing-space-containers---gigaspaces-browser.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="107" selection-start="644" selection-end="722" vertical-scroll-proportion="-8.333333">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/troubleshooting-tools.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="194" selection-start="6140" selection-end="6140" vertical-scroll-proportion="-5.09434">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/hibernate-space-persistency.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/space-persistency.markdown">
+      <provider editor-type-id="text-editor">
+        <state line="20" column="227" selection-start="1065" selection-end="1065" vertical-scroll-proportion="-5.4615383">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
     </entry>

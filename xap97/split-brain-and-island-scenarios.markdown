@@ -10,7 +10,7 @@ page_id: 61867140
 
 In order to determine how to monitor/detect and handle a Split Brain scenario, you need to first understand how our system works.
 
-{% infosign %} Attached is another [**presentation**](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/Service-grid-FDH%20and%20SplitBrain.pdf) which will illustrate it. For more general details and definition of the Split-Brain please refer to [Split-Brain and Active Election - General Definition](./split-brain-and-active-election---general-definition.html) page.
+{% infosign %} Attached is another [**presentation**](/presentation_files/Service-grid-FDH%20and%20SplitBrain.pdf) which will illustrate it. For more general details and definition of the Split-Brain please refer to [Split-Brain and Active Election - General Definition](./split-brain-and-active-election---general-definition.html) page.
 
 There are 2 different mechanisms which deals with failover scenarios (note there is a difference between version 6.6 and 7.x):
 
@@ -31,7 +31,7 @@ Having one specific primary machine and one specific backup machine could be ach
 
 {% infosign %} Bear in mind that once a failover occurs, the backup space will become a primary even though it is located in a backup zone. You will have to manually relocate the spaces back to their originally-targeted primary machines.
 
-{% infosign %} This [SpaceModeTest.java source](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/SpaceModeTest.java) file is an example of how to determine the status of your spaces using the [Administration and Monitoring API](./administration-and-monitoring-api.html).
+{% infosign %} This [SpaceModeTest.java source](/download_files/SpaceModeTest.java) file is an example of how to determine the status of your spaces using the [Administration and Monitoring API](./administration-and-monitoring-api.html).
 
 # Islands
 

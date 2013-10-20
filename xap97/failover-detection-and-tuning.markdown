@@ -34,7 +34,7 @@ For example, if you requried a failover time of under 15 seconds, there's no to 
 **Approximate Default Duration**: up to 9 seconds
 This part of the failover process represents the time it takes for a backup space to identify the primary space failure and become primary.
 Here are the formulas for calculating the failover time (each parameter is described in the table below). The specified times are based on the out-of-the-box default values.
-The active election times are reffring to the active election process. Please refer to [this page](./active-election-and-avoiding-split-brain-scenarios.html) for more details about the active election process.
+The active election times are reffring to the active election process. Please refer to [this page](./split-brain-and-active-election--general-definition.html) for more details about the active election process.
 
 {% highlight java %}
 [Failover Time] = [Primary Failure Detection Time] + [Primary Election Time]

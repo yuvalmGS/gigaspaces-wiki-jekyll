@@ -50,7 +50,7 @@ userPassword: koala
 ...
 {% endhighlight %}
 
-&nbsp;&nbsp;&nbsp;&nbsp; [sample.ldif](/attachment_files/sample.ldif)
+&nbsp;&nbsp;&nbsp;&nbsp; [sample.ldif](/download_files/sample.ldif)
 {% endcolumn %}
 {% column %}
 ![SpringSecurity-LDAP.png](/attachment_files/SpringSecurity-LDAP.png)

@@ -143,6 +143,7 @@ GigaSpaces components communicate using internal communications adaptor, LRMI (L
 {% endtabcontent %}
 {% tabcontent Class Loader %}
 
+
 {% highlight java %}
 com.gigaspaces.core.classloadercleaner.level = INFO
 com.gigaspaces.core.classloadercache.level = INFO
