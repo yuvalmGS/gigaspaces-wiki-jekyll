@@ -33,7 +33,7 @@ The processing unit jar file is composed of several key elements:
 
 - **`META-INF/spring/pu.xml`** (mandatory): This is the processing unit's deployment descriptor, which is in fact a [Spring](http://www.springframework.org) context XML configuration with a number of GigaSpaces-specific namespace bindings. These bindings include GigaSpaces specific components (such as the space for example). The `pu.xml` file typically contains definitions of GigaSpaces components ([space](./the-in-memory-data-grid.html), [event containers](./messaging-support.html), [remote service exporters](./space-based-remoting.html)) and user defined beans which would typically interact with those components (e.g. an event handler to which the event containers delegate the events, or a service beans which is exposed to remote clients by a remote service exporter).
 
-- **`META-INF/spring/sla.xml`** (not mandatory): This file contains SLA definitions for the processing unit (i.e. number of instances, number of backup and deployment requirements). Note that this is optional, and can be replaced with an <os:sla> definition in the `pu.xml` file. If neither is present, the [default SLA](./configuring-the-processing-unit-sla.html) will be applied. Note, the `sla.xml` can also be placed at the root of the processing unit. SLA definitions can be also specified at the deploy time via the [deploy CLI](./deploy---gigaspaces-cli.html) or [deploy API](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/admin/gsm/GridServiceManager).
+- **`META-INF/spring/sla.xml`** (not mandatory): This file contains SLA definitions for the processing unit (i.e. number of instances, number of backup and deployment requirements). Note that this is optional, and can be replaced with an <os:sla> definition in the `pu.xml` file. If neither is present, the [default SLA](./configuring-the-processing-unit-sla.html) will be applied. Note, the `sla.xml` can also be placed at the root of the processing unit. SLA definitions can be also specified at the deploy time via the [deploy CLI](./deploy---gigaspaces-cli.html) or [deploy API](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/gsm/GridServiceManager).
 
 {% note %}
 SLA definitions are only enforced when deploying the processing unit to the GigaSpaces service grid, since this environment actively manages and controls the deployment using the [GSM](./service-grid.html#gsm). When [running within your IDE](./running-and-debugging-within-your-ide.html) or in [standalone mode](./running-in-standalone-mode.html) these definitions are ignored.
@@ -51,16 +51,50 @@ SLA definitions are only enforced when deploying the processing unit to the Giga
 You may add your own jars into the runtime (GSC) classpath by using the `PRE_CLASSPATH` and `POST_CLASSPATH` variables. These should point to your application jars.
 {% endtip %}
 
+
+
 # Sharing Libraries Between Multiple Processing Units
 
-In some cases, multiple processing units use the same jar files. In such cases it makes sense to place these jar files in a central location accessible by all processing unit not repackage each of processing unit separately. Note that this is also useful for decreasing the deployment time in case your processing units contain a lot of 3rd party jars files. since it save a lot of the network overhead associated with downloading these jars to each of the GSCs. There are two options to achieve this:
+In some cases, multiple Processing Units use the same JAR files. In such cases it makes sense to place these JAR files in a central location accessible by all the Processing Units rather than packaging them individually with each of the Processing Units. Note that this is also useful for decreasing the deployment time in case your Processing Units contain a lot of 3rd party jars files, since it saves a lot of the network overhead associated with downloading these JARs to each of the GSCs.
+There are three options to achieve this:
 
-1. The `<GigaSpaces root>/lib/optional/pu-common` directory: Placing jars in this directory means they will be loaded by each processing unit instance its own separate classloader (called the service classloader, see the [Class Loaders](#classloaders) section below). You can either place these jars in each GigaSpaces installation in your network, or point the `pu-common` directory to a shared location on your network by specifying this location in the `com.gs.pu-common` system property in each of the GSCs on your network.
-1. The `<GigaSpaces root>/lib/platform/ext` directory: Placing jars in this directory means they will be loaded once by the GSC-wide classloader and not separately by each processing unit instance (this classloader is called the common classloader, see the [Class Loaders](#class-loaders) section below). You can either place these jars in each GigaSpaces installation in your network, or point the `platform/lib/ext` directory to a shared location on your network by specifying this location in the `com.gigaspaces.lib.platform.ext` system property in each of the GSCs on your network.
+## `lib/optional/pu-common directory`
+JAR files placed in the `<GigaSpaces root>/lib/optional/pu-common` directory will be loaded by each Processing Unit instance in its own separate classloader (called the Service Classloader, see the [./class-loaders.html#ClassLoaders] section below).
 
-{% note %}
-For Database 3rd party jars (e.g. JDBC driver) we recommend using the second option (GSC-wide classloader)
-{% endnote %}
+This means they are not shared between Processing Units on the same JVM, which provides an isolation quality often required for JARs containing the application's proprietary business-logic. On the other hand this option consumes more PermGen memory (due to potentially multiple instances per JVM).
+
+You can place these JARs in each XAP installation in your network, but it is more common to share this folder on your network and point the `pu-common` directory to the shared location by specifying this location in the `com.gs.pu-common` system property in each of the GSCs on your network.
+
+When a new JAR needs to be loaded, just place the new JAR in `pu-common` directory and restart the Processing Unit.
+
+Note: if different Processing Units use different versions of the same JAR (under same JAR file name) then `pu-common` should not be used.
+
+## `META-INF/MANIFEST.MF` descriptor
+JAR files specified in the Processing Unit's `META-INF/MANIFEST.MF` descriptor file will be loaded by each Processing Unit instance in its own separate classloader (called the Service Classloader, see the [Class Loaders](./classloaders.html) section below.
+
+This option achieves similar behavior to the `lib/optional/pu-common` option above, but allows a more fine-grained control by enabling to specify specific JAR files (each in its own location) rather than an entire folder (and only a single folder).
+
+For more information see [Manifest Based Classpath|#ManifestBasedClasspath] section below.
+
+## `lib/platform/ext` directory
+JAR files placed in the `<GigaSpaces root>/lib/platform/ext` directory will be loaded once by the GSC-wide classloader and not separately by each Processing Unit instance (this classloader is called the Common Classloader, see the [Class Loaders|#classloaders] section below).
+
+This means they are shared between Processing Units on the same JVM and thereby offer no isolation. On the other hand this option consumes less PermGen memory (one instance per JVM).
+
+This method is recommended for 3rd party libraries that have no requirement for isolation or different versions for different Processing Units, and are upgraded rather infrequently, such as JDBC driver.
+
+You can place these jars in each XAP installation in your network, but it is more common to share this folder on your network and point the `platform/lib/ext` directory to the shared location on your network by specifying this location in the `com.gigaspaces.lib.platform.ext` system property in each of the GSCs on your network.
+
+When a new JAR needs to be loaded, place the new JAR in `lib/platform/ext` directory and restart the relevant GSCs (on which an instance of the PU was running).
+
+## Considerations
+When coming to choose the right option for your system, the following should be considered:
+* Size of loaded classes in memory (PermGen)
+* Size of Processing Unit JAR file and Processing Unit deployment time
+* Isolation (sharing classes between Processing Units)
+* Frequency of updating the library JAR
+
+
 
 # Runtime Modes
 

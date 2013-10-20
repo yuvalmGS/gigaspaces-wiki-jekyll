@@ -8,7 +8,7 @@ page_id: 61867241
 
 # Description
 
-This page contains information beyond the basics. It was created for those who want to know a little bit more about how OpenSpaces and Maven integrate. Basically, the information given in [OpenSpaces Maven Plugin](http://www.gigaspaces.com/wiki/display./OpenSpaces+Maven+Plugin) should be sufficient for the common user.
+This page contains information beyond the basics. It was created for those who want to know a little bit more about how OpenSpaces and Maven integrate. Basically, the information given in [OpenSpaces Maven Plugin](./openspaces-maven-plugin.html) should be sufficient for the common user.
 
 # Processing Unit Assembly Definition
 

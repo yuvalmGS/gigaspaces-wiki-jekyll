@@ -6,9 +6,9 @@ page_id: 61867349
 
 # Code Snippets
 
-{% lampon %} Space operations with POJO objects can be conducted using the [org.openspaces.core.GigaSpace](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/GigaSpace) interface or the [com.j_spaces.core.IJSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/IJSpace.html) interface.
+{% lampon %} Space operations with POJO objects can be conducted using the [org.openspaces.core.GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/GigaSpace) interface or the [com.j_spaces.core.IJSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/IJSpace.html) interface.
 
-{% lampon %} **The code snippets below use the** [org.openspaces.core.GigaSpace](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/GigaSpace) interface that is the recommended interface.
+{% lampon %} **The code snippets below use the** [org.openspaces.core.GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/GigaSpace) interface that is the recommended interface.
 
 {% inittab code_examples %}
 {% tabcontent Write and Read %}
@@ -174,7 +174,7 @@ The `GigaSpace.write` has a few activity modes - **With each mode the return obj
             - The previous version of the object (update operation)
     - For an unsuccessful operation:
         - an
-[UpdateOperationTimeoutException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/UpdateOperationTimeoutException)
+[UpdateOperationTimeoutException](http://www.gigaspaces.com/docs/JavaDoc.6/org/openspaces/core/UpdateOperationTimeoutException)
 is thrown if a timeout occurred. This means the object is locked under another transaction.
 
 - when the [WriteModifiers.WRITE_ONLY](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html) modifier is applied the following returns:
@@ -182,7 +182,7 @@ is thrown if a timeout occurred. This means the object is locked under another t
         - `LeaseContext` \- Where the `LeaseContext.getObject()` will return a `null`.
     - For an unsuccessful operation:
         - an
-[EntryAlreadyInSpaceException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/EntryAlreadyInSpaceException)
+[EntryAlreadyInSpaceException](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/EntryAlreadyInSpaceException)
 is thrown.
 
 - when the [WriteModifiers.UPDATE_ONLY](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html) modifier is applied the following returns:
@@ -191,9 +191,9 @@ is thrown.
     - For an unsuccessful operation
         - `null` \- if a timeout occurred. This means the object is locked under another transaction.
         - an Exception object is thrown - the options are:
-            - [EntryNotInSpaceException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/EntryNotInSpaceException)
+            - [EntryNotInSpaceException](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/EntryNotInSpaceException)
 \- in case the object does not exist in the space.
-            - [SpaceOptimisticLockingFailureException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/SpaceOptimisticLockingFailureException)
+            - [SpaceOptimisticLockingFailureException](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/SpaceOptimisticLockingFailureException)
 . Thrown only when running in Optimistic Locking mode. This Exception includes the existing version id of the object within the space and the client side version id of the object. In this case you should read the object again and retry the update operation. See [Optimistic Locking](./optimistic-locking.html) for more details.
 
 - when the [WriteModifiers.PARTIAL_UPDATE](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html) modifier is applied the return values are the same as with the `WriteModifiers.UPDATE_ONLY` case. Fields that should not be updated **should have the value `null`**. This means that only fields which are set will be sent into the space to replace the existing field's value. Make sure the updated object include its ID when using this option.
@@ -313,9 +313,9 @@ The `GigaSpace.writeMultiple` returns an array of objects which correspond to th
     - For an unsuccessful operation:
         - null - if a timeout occurred. This means the object is locked under another transaction.
         - an Exception object - the options are:
-            - [EntryNotInSpaceException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/EntryNotInSpaceException)
+            - [EntryNotInSpaceException](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/EntryNotInSpaceException)
 \- in case the entry does not exist
-            - [SpaceOptimisticLockingFailureException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/SpaceOptimisticLockingFailureException)
+            - [SpaceOptimisticLockingFailureException](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/SpaceOptimisticLockingFailureException)
 
 - when the [WriteModifiers.UPDATE_OR_WRITE](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html) modifier is applied the following returns:
     - For a successful operation:
@@ -326,7 +326,7 @@ The `GigaSpace.writeMultiple` returns an array of objects which correspond to th
 Since the `GigaSpace.writeMultiple` in
 [WriteModifiers.UPDATE_OR_WRITE](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html)
 mode does not support timeout based updates, there is no way to identify if an updated object is already locked under a transaction - i.e. the
-[UpdateOperationTimeoutException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/UpdateOperationTimeoutException) **is not returned** as part of the returned array elements.
+[UpdateOperationTimeoutException](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/UpdateOperationTimeoutException) **is not returned** as part of the returned array elements.
 With a transactional system, it is recommended to perform batch updates using the [WriteModifiers.UPDATE_ONLY](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html)
 modifier.
 {% endtip %}

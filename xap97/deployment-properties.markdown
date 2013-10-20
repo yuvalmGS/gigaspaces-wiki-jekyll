@@ -139,4 +139,4 @@ Here's an example for a space configured within the processing unit, and a prope
 {% endinittab %}
 
 When deploying the space you should use `-properties space embed://gs.space.url.arg.schema=persistent`. This instructs the runtime to override the configuration of the bean named "space" in your pu.xml file with the specified value. You may also configure the space directly inside your processing unit using direct property injection on the space bean. See
-[this page](http://www.gigaspaces.com/wiki/display./Overriding+Default+Configuration) for more details and for a complete list of the configurable XPath properties.
+[this page](./overriding-default-configuration.html) for more details and for a complete list of the configurable XPath properties.

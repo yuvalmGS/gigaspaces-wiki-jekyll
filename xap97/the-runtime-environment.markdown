@@ -42,9 +42,9 @@ h2. Optional Components
 
 * The Elastic Service Manager (ESM) manages the [Elastic Processing Unit](./elastic-processing-unit.html) together with the GSM.
 
-* The [Apache Load Balancer Agent](./apache-load-balancer.html) is used when deploying web applications.
+* The [Apache Load Balancer Agent](./apache-load-balancer-agent.html) is used when deploying web applications.
 
-* The Transaction Manager (TXM) is an optional component. When executing transactions that spans multiple space partitions you should use the Jini Transaction Manager or the Distributed Transaction Manager. See the [Transaction Management](./transaction-manager.html) section for details.
+* The Transaction Manager (TXM) is an optional component. When executing transactions that spans multiple space partitions you should use the Jini Transaction Manager or the Distributed Transaction Manager. See the [Transaction Management](./transaction-management.html) section for details.
 
 
 

@@ -10,7 +10,7 @@ page_id: 61867415
 
 ## What is GigaSpaces XAP-Community?
 
-The GigaSpaces eXtreme Application Platform - Community enables application developers to use a full, mature implementation of GigaSpaces XAP free of charge, both in development and in production environments. While GigaSpaces XAP-Community is limited to a single server node, it allows unlimited number of clients with local caches (Master/Local cache) which makes it ideal for small-scale applications that are not data-intensive.(read more at: [http://www.gigaspaces.com/pr_overview.html](http://www.gigaspaces.com/pr_overview.html)).
+The GigaSpaces eXtreme Application Platform - Community enables application developers to use a full, mature implementation of GigaSpaces XAP free of charge, both in development and in production environments. While GigaSpaces XAP-Community is limited to a single server node, it allows unlimited number of clients with local caches (Master/Local cache) which makes it ideal for small-scale applications that are not data-intensive.(read more at: [www.gigaspaces.com](http://www.gigaspaces.com).
 
 ## Why was it launched?
 
@@ -30,7 +30,7 @@ Yes. The XAP-Community is available for embedding within a commercial product. (
 
 ## What is the difference between the XAP-Community and XAP?
 
-GigaSpaces XAP offers a complete middleware platform (read more at: [http://www.gigaspaces.com/pr_overview.html](http://www.gigaspaces.com/pr_overview.html)) and is not free. The XAP-Community enables application developers to use a full, mature implementation of GigaSpaces XAP free of charge, both in development and in production environments. While GigaSpaces XAP-Community is limited to a single server node, it allows unlimited number of clients with local caches (Master/Local cache) which makes it ideal for small-scale applications that are not data-intensive. For more information about GigaSpaces XAP please contact sales at: [sales@gigaspaces.com](mailto:sales@gigaspaces.com)
+GigaSpaces XAP offers a complete middleware platform (read more at: [http://www.gigaspaces.com](http://www.gigaspaces.com)) and is not free. The XAP-Community enables application developers to use a full, mature implementation of GigaSpaces XAP free of charge, both in development and in production environments. While GigaSpaces XAP-Community is limited to a single server node, it allows unlimited number of clients with local caches (Master/Local cache) which makes it ideal for small-scale applications that are not data-intensive. For more information about GigaSpaces XAP please contact sales at: [sales@gigaspaces.com](mailto:sales@gigaspaces.com)
 
 ## What are the terms for using the XAP-Community?
 

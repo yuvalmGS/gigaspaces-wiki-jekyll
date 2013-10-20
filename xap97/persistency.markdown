@@ -68,7 +68,7 @@ The space can be used as a [Hibernate second level cache](./gigaspaces-for-hiber
 
 ## All In Cache Policy
 
-With the [All In Cache policy](ALL IN CACHE-Cache Policy), the assumption is the Space holds the entire data in memory. In this case, the space communicated with the data source at startup, and loads all the data. If data within the space is updated/added/removed, the space is calling the [`SpaceSynchronizationEndpoint`](./space-synchronization-endpoint-api.html) implementation to update the underlying data source. All data activities leveraging the data in memory.
+With the [All In Cache policy](./all-in-cache-cache-policy.html), the assumption is the Space holds the entire data in memory. In this case, the space communicated with the data source at startup, and loads all the data. If data within the space is updated/added/removed, the space is calling the [`SpaceSynchronizationEndpoint`](./space-synchronization-endpoint-api.html) implementation to update the underlying data source. All data activities leveraging the data in memory.
 
 {% comment %}
 ### Delegating Queries Directly to the Data Source

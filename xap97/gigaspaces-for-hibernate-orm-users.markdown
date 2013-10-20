@@ -74,7 +74,7 @@ To gain ultimate scalability for your application, you can package your business
 
 This approach is called Space Based Architecture, and the way to achieve it is the Spring-based OpenSpaces platform, which allows you to deploy your application as a set of services encased in a Processing Unit.
 
-{% refer %}**To get started with SBA and Open Spaces** see our [eXtreme Application Platform Tutorial](GS6:Extreme Application Platform Tutorial).{% endrefer %}
+{% refer %}**To get started with SBA and Open Spaces** see our [eXtreme Application Platform Tutorial](./extreme-application-platform-tutorial.html).{% endrefer %}
 
 {% refer %}To learn more about Space-Based Architecture and its implications, read our white paper, [The Scalability Revolution: From Dead End to Open Road](http://www.gigaspaces.com/WhitePapers).{% endrefer %}
 
@@ -88,7 +88,7 @@ This section provides instructions on switching your existing Hibernate local ca
 ![TwoSteps.jpg](/attachment_files/TwoSteps.jpg)
 **To switch your Hibernate cache provider to GigaSpaces and use GigaSpaces distributed caching:**
 
-1. Download the GigaSpaces {% refer %} [Download Page](http://www.gigaspaces.com/os_downloads.html#g)) {% endrefer %}
+1. Download the GigaSpaces {% refer %} [Download Page](http://www.gigaspaces.com/xap-download) {% endrefer %}
 2. Install GigaSpaces. If you need help, refer to the [installation instructions](./installing-gigaspaces.html).
 3. This step is different if you are managing your Hibernate configuration using Spring (refer to the Spring documentation, ORM Data Access, section 12.2.2), or directly using `hibernate.properties` or `hibernate.cfg.xml`. Select the relevant tab below.
 
@@ -328,7 +328,7 @@ This topology consists of two or more space instances with replication between t
 ## Basic Guidelines
 
 - For the application components that are read/write (up to 50% write/remove/update) you should have the hibernate 2nd local cache to use a remote partitioned space topology.
-- For the application components that are read mostly (above 50% read) you should have the hibernate 2nd local cache to use a master [local cache](local cache)/[local view](local view) with remote partitioned space topology.
+- For the application components that are read mostly (above 50% read) you should have the hibernate 2nd local cache to use a master [local cache](./local-cache.html)/[local view](./local-view.html) with remote partitioned space topology.
 - The embedded replicated cache topology is recommended only when having few client applications (up to 3) where the total amount of data can be accommodated within a single JVM and the application is 50% read/write.
 - For the application components that are write mostly (above 50% write/remove/update), you should **not use hibernate API directly** , but move into the [GigaSpace  Interface](./the-gigaspace-interface.html) and use the [Mirror service](./asynchronous-persistency-with-the-mirror.html) (if you still want to persist the data). In this case you can leverage [SQLQuery](./sqlquery.html) or [Task Executors](./task-execution-over-the-space.html) for complex distributed activities. In this case you should use remote partitioned space topology.
 

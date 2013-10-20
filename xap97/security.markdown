@@ -48,6 +48,6 @@ GigaSpaces Main Security Features:
 
 # Getting Started
 
-To help you get started, the section goes through the [basics](Security Basics), how to secure the [components](Securing XAP Components), [administration tools](./security-administration.html), applying security to the [HelloWorld example](./securing-the-helloworld-example.html), and finally once you gain an in-depth understanding, shows you how to [customize](./custom-security.html) the security based on your application requirements. One such custom security implementation is the [Spring Security Bridge](./spring-security-bridge.html).
+To help you get started, the section goes through the [basics](./security-basics.html), how to secure the [components](./securing-xap-components.html), [administration tools](./security-administration.html), applying security to the [HelloWorld example](./securing-the-helloworld-example.html), and finally once you gain an in-depth understanding, shows you how to [customize](./custom-security.html) the security based on your application requirements. One such custom security implementation is the [Spring Security Bridge](./spring-security-bridge.html).
 
 {% children %}

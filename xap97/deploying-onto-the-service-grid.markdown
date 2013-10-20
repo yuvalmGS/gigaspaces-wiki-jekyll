@@ -47,7 +47,7 @@ GigaSpaces provides several options to deploy a processing unit onto the Service
 
 {% inittab os_simple_space|top %}
 {% tabcontent Admin API %}
-Deploying via code is done using the GigaSpaces [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](./administration-and-monitoring-api.html) and [javadoc](http://www.gigaspaces.com/docs/JavaDoc8.0/index.html) of the Admin API.
+Deploying via code is done using the GigaSpaces [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](./administration-and-monitoring-api.html) and [javadoc](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html) of the Admin API.
 
 {% highlight java %}
 Admin admin = new AdminFactory().addGroup("myGroup").create();
@@ -238,7 +238,7 @@ To restart a running PU (all instances) via the GS-UI you should:
 
 ## Restart a running PU via the Admin API
 
-The [ProcessingUnitInstance](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/admin/pu/ProcessingUnitInstance) includes few `restart` methods you may use to restart a PU instance:
+The [ProcessingUnitInstance](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/pu/ProcessingUnitInstance.html) includes few `restart` methods you may use to restart a PU instance:
 
 {% highlight java %}
 restart()

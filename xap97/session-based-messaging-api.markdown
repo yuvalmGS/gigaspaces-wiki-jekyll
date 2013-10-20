@@ -82,11 +82,11 @@ The most common requirement when deploying partitioned spaces is to register the
 
 ## Local Cache
 
-When registering for notifications using a proxy running in the [local cache](local cache), notifications are delivered from the master space. Any matching event in the master space is delivered to the registered client. Events in the local cache are not delivered to the registered client, unless you specifically register for events by getting the local cache proxy.
+When registering for notifications using a proxy running in the [local cache](./local-cache.html), notifications are delivered from the master space. Any matching event in the master space is delivered to the registered client. Events in the local cache are not delivered to the registered client, unless you specifically register for events by getting the local cache proxy.
 
 ## Local View
 
-When registering for notifications using a proxy running in the [local view](local view), notifications are delivered from the local view. These do not involve remote calls and are based on activities performed in the local view. The events do not affect the remote master space or other clients accessing the master space. The events delivered from the local view are relatively fast, and do not involve serialization. Since notifications received from the local view are based on the local view query filter, the registered client might not receive events that other clients, registered for notifications using the master space, receive.
+When registering for notifications using a proxy running in the [local view](./local-view.html), notifications are delivered from the local view. These do not involve remote calls and are based on activities performed in the local view. The events do not affect the remote master space or other clients accessing the master space. The events delivered from the local view are relatively fast, and do not involve serialization. Since notifications received from the local view are based on the local view query filter, the registered client might not receive events that other clients, registered for notifications using the master space, receive.
 
 {% tip %}
 Starting with XAP 8.0.6 Local view using the replication mechanism to update the local view
@@ -507,7 +507,7 @@ space.write(msg2, null, Lease.FOREVER);
 
 ## Registering Large Number of Listeners
 
-When having a system that requirs large number of listeners (above few hundreds) the `Multiplex` communication mode should be used. With this mode the amount of resources (threads) used to invoke the listener are shared between all the session listeners. This approach reduces the memory footprint of the client considerably. This option avoiding the need to construct multiple [notify containers](notify container) that may consume large amount of resources when having many of these created. See below how the `MULTIPLEX` communication mode should be used:
+When having a system that requirs large number of listeners (above few hundreds) the `Multiplex` communication mode should be used. With this mode the amount of resources (threads) used to invoke the listener are shared between all the session listeners. This approach reduces the memory footprint of the client considerably. This option avoiding the need to construct multiple [notify containers](./notify-container.html) that may consume large amount of resources when having many of these created. See below how the `MULTIPLEX` communication mode should be used:
 
 {% highlight java %}
 EventSessionFactory factory = EventSessionFactory.getFactory(space.getSpace());

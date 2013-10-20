@@ -382,7 +382,7 @@ In order to partition the data and rout operations to the correct partition you 
 
 # Nested Field Query
 
-You may use as part of the JDBC select statement nested fields. These could be [Map](http://download-llnw.oracle.com/javase/6/docs/api/java/util/Map.html) type fields or user defined data type fields within the Space object. See below example for a space class with a nested Map and a nested object fields. Both are indexed:
+You may use as part of the JDBC select statement nested fields. These could be a Map type fields or user defined data type fields within the Space object. See below example for a space class with a nested Map and a nested object fields. Both are indexed:
 
 {% highlight java %}
 public class MyData implements Serializable{

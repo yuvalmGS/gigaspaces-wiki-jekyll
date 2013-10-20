@@ -361,12 +361,12 @@ Few basic usage guidelines when using the `GigaSpace` interface:
 
 # Operations
 
-The [GigaSpace](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/GigaSpace) interface includes the following main operations:
+The [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/GigaSpace) interface includes the following main operations:
 
 {: .table .table-bordered}
-|[Id Based operations](ID Queries)|[Batch operations](#Batch Operations)|[Asynchronous operations](#Asynchronous Operations)|Data Count operations|
+|[Id Based operations](./id-queries.html)|[Batch operations](#Batch Operations)|[Asynchronous operations](#Asynchronous Operations)|Data Count operations|
 |:--|:--|:--|:--|
-|[readById](ID Queries#Reading an Object using its ID){% wbr %}takeById{% wbr %}[readByIds](ID Queries#Reading Multiple Objects using their IDs){% wbr %}takeByIds{% wbr %}readIfExistsById{% wbr %}takeIfExistsById|readMultiple{% wbr %}takeMultiple{% wbr %}writeMultiple{% wbr %}readByIds{% wbr %}takeByIds|asyncRead{% wbr %}asyncTake{% wbr %}asyncChange{% wbr %}execute|count|
+|[readById]./id-queries.html#Reading an Object using its ID){% wbr %}takeById{% wbr %}[readByIds](./id-queries.html#Reading Multiple Objects using their IDs){% wbr %}takeByIds{% wbr %}readIfExistsById{% wbr %}takeIfExistsById|readMultiple{% wbr %}takeMultiple{% wbr %}writeMultiple{% wbr %}readByIds{% wbr %}takeByIds|asyncRead{% wbr %}asyncTake{% wbr %}asyncChange{% wbr %}execute|count|
 
 {: .table .table-bordered}
 |[Data Query operations](./sqlquery.html)|Data Insert and Update operations|[Business logic execution operations](./task-execution-over-the-space.html)|Data removal operations|

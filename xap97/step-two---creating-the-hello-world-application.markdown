@@ -65,7 +65,7 @@ We recommend that you go through the following steps before you begin this tutor
 1. [Download GigaSpaces and set up your development environment](Setting Up Your IDE to Work With GigaSpaces)
 to work with GigaSpaces - this is needed to run the sample application described in this tutorial.
 
-1. [Step One - Using Processing Units For Scaling](Step One - Using Processing Units For Scaling)
+1. [Step One - Using Processing Units For Scaling](./step-one-using-processing-units-for-scaling.html)
 \- a short, one page introduction to scaling your application, using Processing Units - **Recommended**.
 {% c %}
 ---------------END [JAVA]---------

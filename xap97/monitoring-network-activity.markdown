@@ -63,8 +63,8 @@ Work Queue: Size [0], Completed [10084]
 Exported Services Inbound Monitoring Details: 
 LRMIServiceTrackingDetails (ServiceDetails=class com.gigaspaces.grid.gsc.GSCImpl ServiceClassLoaderDetails=GSC 
 RemoteObjectId=800938341788765
- ConnectionUrl=NIO://my-PC:61174/pid[9768]/800938341788765_2_5863825252831098999_details[class com.gigaspaces.grid.gsc.GSCImpl])
-	/192.168.10.138[pid:7464]:
+ ConnectionUrl=NIO://my-PC:61174/pid[9768]/800938341788765_2_5863825252831098999_details class com.gigaspaces.grid.gsc.GSCImpl
+	/192.168.10.138 pid:7464:
 		LRMIServiceClientTrackingDetails (TotalReceivedTraffic=15.99 kilobytes TotalGeneratedTraffic=16.46 kilobytes TotalTraffic=32.45 kilobytes ClientVersion=9.5.0.7495-210)
 		org.jini.rio.core.provision.ServiceBeanInstantiator.getServiceRecords: invoked count=1 received traffic=15.99 kilobytes generated traffic=16.46 kilobytes total traffic=32.45 kilobytes
 

@@ -63,7 +63,7 @@ page_id: 61867166
 
 We recommend that you go through the following steps before you begin this tutorial:
 
-- [Download GigaSpaces and set up your development environment](Setting Up Your IDE to work with GigaSpaces) to work with GigaSpaces - this is needed to run the sample application described in this tutorial.
+- [Download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work -with-gigaspaces.html) to work with GigaSpaces - this is needed to run the sample application described in this tutorial.
 {% endsection %}
 
 {% whr %}

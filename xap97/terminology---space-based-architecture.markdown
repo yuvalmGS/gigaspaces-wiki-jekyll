@@ -77,7 +77,7 @@ Once a [Processing Unit library](./the-processing-unit-structure-and-configurati
 - Backup Instance - standby space partition.
 - Standby Bean - Bean collocated with a backup instance.
 - Partition - Collection of primary and backup processing unit instances
-- [Polling container](Polling container) - Execution queue. Consumes objects from the space.
+- [Polling container](./polling-container.html) - Execution queue. Consumes objects from the space.
 {% endsection %}
 
 |[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|Space-Based Architecture|[Runtime Components](./terminology---runtime-components.html)|

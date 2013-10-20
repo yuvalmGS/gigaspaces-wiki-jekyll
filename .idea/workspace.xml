@@ -4,11 +4,11 @@
     <list default="true" id="ef3b7754-cf39-4242-8d6c-21c221d48aba" name="Default" comment="" />
     <ignored path="gigaspaces-wiki-jekyll.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/administration-and-monitoring-api.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382132654879" ignored="false" />
+    <file path="/administration-and-monitoring-api.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382224902631" ignored="false" />
     <file path="/administration-and-monitoring-api-security.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381727335169" ignored="false" />
-    <file path="/proxy-connectivity.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381763820466" ignored="false" />
+    <file path="/proxy-connectivity.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382241683489" ignored="false" />
     <file path="/quick-start-guide.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381764500396" ignored="false" />
-    <file path="/the-processing-unit-structure-and-configuration.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382145982990" ignored="false" />
+    <file path="/the-processing-unit-structure-and-configuration.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382242944449" ignored="false" />
     <file path="/the-space-component.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381771978289" ignored="false" />
     <file path="/your-first-data-grid-application.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381799939216" ignored="false" />
     <file path="/executor-based-remoting.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381773199692" ignored="false" />
@@ -16,28 +16,77 @@
     <file path="/change-api.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381799687427" ignored="false" />
     <file path="/change-api-advanced.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381798371527" ignored="false" />
     <file path="/change-extension.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381799262526" ignored="false" />
-    <file path="/communication-protocol.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381978902888" ignored="false" />
+    <file path="/communication-protocol.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382221722420" ignored="false" />
     <file path="/customizing-gsa-components.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381980526402" ignored="false" />
     <file path="/security-authorities.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1381985344067" ignored="false" />
     <file path="/service-grid-configuration.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382115707293" ignored="false" />
-    <file path="/the-runtime-environment.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382119272287" ignored="false" />
+    <file path="/the-runtime-environment.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382223184742" ignored="false" />
     <file path="/version-gigaspaces-cli.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382120109671" ignored="false" />
     <file path="/.gitignore" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382121402876" ignored="false" />
     <file path="/service-grid.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382127368479" ignored="false" />
-    <file path="/elastic-processing-unit.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382128941949" ignored="false" />
+    <file path="/elastic-processing-unit.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382211001236" ignored="false" />
     <file path="/packaging-and-deployment.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382129158588" ignored="false" />
     <file path="/replication-gateway-components.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382129470916" ignored="false" />
     <file path="/aaaaa.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382133371784" ignored="false" />
-    <file path="/scripts.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382144558839" ignored="false" />
+    <file path="/scripts.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382224840366" ignored="false" />
     <file path="/securing-the-grid-services.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382144782889" ignored="false" />
-    <file path="/starting-the-management-console.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382145032937" ignored="false" />
-    <file path="/step-1---deploying-your-web-application-to-the-gigaspaces-environment.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382145220052" ignored="false" />
+    <file path="/starting-the-management-console.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382238259343" ignored="false" />
+    <file path="/step-1---deploying-your-web-application-to-the-gigaspaces-environment.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382217404450" ignored="false" />
     <file path="/step-3---building-and-running-the-application.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382145339623" ignored="false" />
     <file path="/terminology---runtime-components.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382145624613" ignored="false" />
-    <file path="/terminology---space-based-architecture.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382145804694" ignored="false" />
+    <file path="/terminology---space-based-architecture.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382223086034" ignored="false" />
     <file path="/xap-order-management-tutorial.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382146123050" ignored="false" />
     <file path="/xap-overview.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382146256582" ignored="false" />
-    <file path="/your-first-real-time-big-data-analytics-application.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382146635890" ignored="false" />
+    <file path="/your-first-real-time-big-data-analytics-application.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382239448737" ignored="false" />
+    <file path="/commands.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382211987570" ignored="false" />
+    <file path="/index.html" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382231416358" ignored="false" />
+    <file path="/session-based-messaging-api.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382221649688" ignored="false" />
+    <file path="/custom-processing-unit-details-and-monitors.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382219607178" ignored="false" />
+    <file path="/space-url.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382219810730" ignored="false" />
+    <file path="/large-scale-deployment.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382219866273" ignored="false" />
+    <file path="/document-api.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382221593048" ignored="false" />
+    <file path="/gigaspaces-for-hibernate-orm-users.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382226457399" ignored="false" />
+    <file path="/the-gigaspace-interface.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382223948128" ignored="false" />
+    <file path="/services-on-top-of-the-data-grid.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382224166618" ignored="false" />
+    <file path="/archive-container.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382222427443" ignored="false" />
+    <file path="/product-architecture.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382239655944" ignored="false" />
+    <file path="/deploying-and-interacting-with-the-space.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382223043297" ignored="false" />
+    <file path="/deployment-properties.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382223228868" ignored="false" />
+    <file path="/deploying-onto-the-service-grid.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382223272050" ignored="false" />
+    <file path="/persistency.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382223634161" ignored="false" />
+    <file path="/map-api.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382236761559" ignored="false" />
+    <file path="/dynamic-language-tasks.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382224388793" ignored="false" />
+    <file path="/step-2---enabling-http-session-failover-and-fault-tolerance.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382226379347" ignored="false" />
+    <file path="/gigaspaces-management-center.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382227153753" ignored="false" />
+    <file path="/notify-container.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382230684992" ignored="false" />
+    <file path="/product-architecture.html" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382235733393" ignored="false" />
+    <file path="/caching-scenarios.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382236537716" ignored="false" />
+    <file path="/paging-support-with-space-iterator.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382236619881" ignored="false" />
+    <file path="/jdbc-driver.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382236722298" ignored="false" />
+    <file path="/global-http-session-sharing.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382236865415" ignored="false" />
+    <file path="/installing-gigaspaces.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382240460812" ignored="false" />
+    <file path="/failover-detection-and-tuning.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382238071657" ignored="false" />
+    <file path="/gigaspaces-logging.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382240870694" ignored="false" />
+    <file path="/dashboard-view.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382238213586" ignored="false" />
+    <file path="/security.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382238352763" ignored="false" />
+    <file path="/securing-your-data.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382238426010" ignored="false" />
+    <file path="/data-grid-clustering.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382238542274" ignored="false" />
+    <file path="/replication-operations.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382238599410" ignored="false" />
+    <file path="/step-two---creating-the-hello-world-application.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382239021433" ignored="false" />
+    <file path="/step-four---scaling-the-hello-world-application.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382239190537" ignored="false" />
+    <file path="/step-three---deploying-onto-the-service-grid.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382239141945" ignored="false" />
+    <file path="/deploying-your-application-on-a-cloud.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382239495549" ignored="false" />
+    <file path="/elastic-processing-unit---take-2.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382239849249" ignored="false" />
+    <file path="/asynchronous-persistency-with-the-mirror.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382240090165" ignored="false" />
+    <file path="/maven-plugin---advanced.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382240194206" ignored="false" />
+    <file path="/how-to-configure-multicast.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382241001911" ignored="false" />
+    <file path="/gsinstance---gigaspaces-cli.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382241061009" ignored="false" />
+    <file path="/stats---gigaspaces-cli.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382241118686" ignored="false" />
+    <file path="/managing-space-containers---gigaspaces-browser.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382241255549" ignored="false" />
+    <file path="/running-gigaspaces-as-a-windows-service.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382241310369" ignored="false" />
+    <file path="/tuning-java-virtual-machines.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382241403464" ignored="false" />
+    <file path="/benchmark-view---gigaspaces-browser.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382241563217" ignored="false" />
+    <file path="/space-persistency.markdown" changelist="ef3b7754-cf39-4242-8d6c-21c221d48aba" time="1382241618353" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,123 +147,123 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="step-1---deploying-your-web-application-to-the-gigaspaces-environment.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/step-1---deploying-your-web-application-to-the-gigaspaces-environment.markdown">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
+      <file leaf-file-name="stats---gigaspaces-cli.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/stats---gigaspaces-cli.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="185" column="156" selection-start="6349" selection-end="6349" vertical-scroll-proportion="-3.0566037">
+            <state line="24" column="136" selection-start="978" selection-end="978" vertical-scroll-proportion="-6.3018866">
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="step-3---building-and-running-the-application.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/step-3---building-and-running-the-application.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="managing-space-containers---gigaspaces-browser.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/managing-space-containers---gigaspaces-browser.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="127" selection-start="1570" selection-end="1570" vertical-scroll-proportion="-3.3333333">
+            <state line="15" column="105" selection-start="720" selection-end="720" vertical-scroll-proportion="-8.333333">
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="terminology---runtime-components.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/terminology---runtime-components.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="running-gigaspaces-as-a-windows-service.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/running-gigaspaces-as-a-windows-service.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="134" selection-start="4964" selection-end="4964" vertical-scroll-proportion="-1.3396226">
+            <state line="37" column="146" selection-start="2166" selection-end="2170" vertical-scroll-proportion="-2.3962264">
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="terminology---space-based-architecture.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/terminology---space-based-architecture.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tuning-infrastructure.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/tuning-infrastructure.markdown">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="289" selection-start="2526" selection-end="2526" vertical-scroll-proportion="-4.4444447">
+            <state line="73" column="33" selection-start="3253" selection-end="3259" vertical-scroll-proportion="-2.2641509">
               <folding />
             </state>
           </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="the-processing-unit-structure-and-configuration.markdown" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="tuning-java-virtual-machines.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/tuning-java-virtual-machines.markdown">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="62" column="159" selection-start="8190" selection-end="8281" vertical-scroll-proportion="-2.3962264">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="troubleshooting-tools.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/troubleshooting-tools.markdown">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="29" selection-start="251" selection-end="251" vertical-scroll-proportion="13.740741">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="benchmark-view---gigaspaces-browser.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/benchmark-view---gigaspaces-browser.markdown">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="147" column="106" selection-start="9211" selection-end="9211" vertical-scroll-proportion="-5.226415">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="space-persistency.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/space-persistency.markdown">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="294" selection-start="1131" selection-end="1131" vertical-scroll-proportion="12.867925">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="proxy-connectivity.markdown" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xap97/proxy-connectivity.markdown">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="106" column="59" selection-start="8155" selection-end="8155" vertical-scroll-proportion="-2.3962264">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="the-processing-unit-structure-and-configuration.markdown" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xap97/the-processing-unit-structure-and-configuration.markdown">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="37" selection-start="6976" selection-end="6976" vertical-scroll-proportion="-4.1698112">
+            <state line="62" column="192" selection-start="4999" selection-end="4999" vertical-scroll-proportion="-0.83677685">
               <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xap-order-management-tutorial.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/xap-order-management-tutorial.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="754" column="179" selection-start="31928" selection-end="31928" vertical-scroll-proportion="-4.018868">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xap-overview.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/xap-overview.markdown">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="50" selection-start="4086" selection-end="4086" vertical-scroll-proportion="-4.8679247">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="the-runtime-environment.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/the-runtime-environment.markdown">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="122" selection-start="221" selection-end="221" vertical-scroll-proportion="-4.4444447">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="your-first-real-time-big-data-analytics-application.markdown" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/xap97/your-first-real-time-big-data-analytics-application.markdown">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="268" column="37" selection-start="20889" selection-end="20889" vertical-scroll-proportion="0.1322314">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="service-grid.markdown" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xap97/service-grid.markdown">
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="1" selection-start="4466" selection-end="4466" vertical-scroll-proportion="-0.5555556">
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -228,28 +277,28 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/xap97/elastic-processing-unit.markdown" />
-        <option value="$PROJECT_DIR$/xap97/packaging-and-deployment.markdown" />
-        <option value="$PROJECT_DIR$/xap97/replication-gateway-components.markdown" />
-        <option value="$PROJECT_DIR$/xap97/administration-and-monitoring-api.markdown" />
-        <option value="$PROJECT_DIR$/xap97/aaaaa.markdown" />
-        <option value="$PROJECT_DIR$/xap97/scripts.markdown" />
-        <option value="$PROJECT_DIR$/xap97/securing-the-grid-services.markdown" />
-        <option value="$PROJECT_DIR$/xap97/starting-the-management-console.markdown" />
-        <option value="$PROJECT_DIR$/xap97/step-1---deploying-your-web-application-to-the-gigaspaces-environment.markdown" />
-        <option value="$PROJECT_DIR$/xap97/step-3---building-and-running-the-application.markdown" />
-        <option value="$PROJECT_DIR$/xap97/terminology---runtime-components.markdown" />
-        <option value="$PROJECT_DIR$/xap97/terminology---space-based-architecture.markdown" />
+        <option value="$PROJECT_DIR$/xap97/elastic-processing-unit---take-2.markdown" />
+        <option value="$PROJECT_DIR$/xap97/asynchronous-persistency-with-the-mirror.markdown" />
+        <option value="$PROJECT_DIR$/xap97/maven-plugin---advanced.markdown" />
+        <option value="$PROJECT_DIR$/xap97/xap-community-faq.markdown" />
+        <option value="$PROJECT_DIR$/xap97/installing-gigaspaces.markdown" />
+        <option value="$PROJECT_DIR$/xap97/gigaspaces-logging.markdown" />
+        <option value="$PROJECT_DIR$/xap97/how-to-configure-multicast.markdown" />
+        <option value="$PROJECT_DIR$/xap97/gsinstance---gigaspaces-cli.markdown" />
+        <option value="$PROJECT_DIR$/xap97/stats---gigaspaces-cli.markdown" />
+        <option value="$PROJECT_DIR$/xap97/managing-space-containers---gigaspaces-browser.markdown" />
+        <option value="$PROJECT_DIR$/xap97/running-gigaspaces-as-a-windows-service.markdown" />
+        <option value="$PROJECT_DIR$/xap97/tuning-java-virtual-machines.markdown" />
+        <option value="$PROJECT_DIR$/xap97/benchmark-view---gigaspaces-browser.markdown" />
+        <option value="$PROJECT_DIR$/xap97/space-persistency.markdown" />
+        <option value="$PROJECT_DIR$/xap97/proxy-connectivity.markdown" />
         <option value="$PROJECT_DIR$/xap97/the-processing-unit-structure-and-configuration.markdown" />
-        <option value="$PROJECT_DIR$/xap97/xap-order-management-tutorial.markdown" />
-        <option value="$PROJECT_DIR$/xap97/xap-overview.markdown" />
-        <option value="$PROJECT_DIR$/xap97/your-first-real-time-big-data-analytics-application.markdown" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="58" />
-    <option name="y" value="143" />
+    <option name="x" value="21" />
+    <option name="y" value="141" />
     <option name="width" value="1420" />
     <option name="height" value="767" />
   </component>
@@ -279,7 +328,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -312,9 +360,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gigaspaces-wiki-jekyll" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gigaspaces-wiki-jekyll" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gigaspaces-wiki-jekyll" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gigaspaces-wiki-jekyll" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -328,6 +405,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/_site/attachment_files" />
       <recent name="$PROJECT_DIR$/attachment_files" />
     </key>
   </component>
@@ -453,8 +531,28 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="143" width="1420" height="767" extended-state="0" />
+    <frame x="21" y="141" width="1420" height="767" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -462,19 +560,19 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19165379" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496361" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921174" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496361" sideWeight="0.8083462" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24599709" sideWeight="0.8083462" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16739447" sideWeight="0.8083462" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19165379" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19165379" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -540,161 +638,164 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/xap97/packaging-and-deployment.markdown">
+    <entry file="file://$PROJECT_DIR$/xap97/xap-community-faq.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="121" selection-start="1868" selection-end="1868" vertical-scroll-proportion="-2.925926">
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/installing-gigaspaces.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="240" selection-start="1854" selection-end="1854" vertical-scroll-proportion="-12.222222">
+        <state line="94" column="86" selection-start="4910" selection-end="4910" vertical-scroll-proportion="-4.3962264">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/administration-and-monitoring-api.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/failover-detection-and-tuning.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="88" selection-start="9446" selection-end="9489" vertical-scroll-proportion="-2.6226416">
+        <state line="36" column="97" selection-start="2080" selection-end="2089" vertical-scroll-proportion="-2.2641509">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/scripts.markdown">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="44" selection-start="1511" selection-end="1511" vertical-scroll-proportion="-9.307693">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/replication-gateway-components.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/gigaspaces-logging.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="49" selection-start="2083" selection-end="2084" vertical-scroll-proportion="-2.2641509">
+        <state line="366" column="256" selection-start="13769" selection-end="13769" vertical-scroll-proportion="-3.2452831">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/securing-the-grid-services.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/how-to-configure-multicast.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="453" selection-start="1901" selection-end="1901" vertical-scroll-proportion="-4.90566">
+        <state line="18" column="92" selection-start="1225" selection-end="1225" vertical-scroll-proportion="-2.6792452">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/starting-the-management-console.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/gsinstance---gigaspaces-cli.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="133" selection-start="6394" selection-end="6394" vertical-scroll-proportion="-6.4339623">
+        <state line="76" column="212" selection-start="4173" selection-end="4173" vertical-scroll-proportion="-4.6792455">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/service-grid.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/stats---gigaspaces-cli.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="1" selection-start="4466" selection-end="4466" vertical-scroll-proportion="-0.5555556">
+        <state line="24" column="136" selection-start="978" selection-end="978" vertical-scroll-proportion="-6.3018866">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/step-1---deploying-your-web-application-to-the-gigaspaces-environment.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/managing-space-containers---gigaspaces-browser.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="156" selection-start="6349" selection-end="6349" vertical-scroll-proportion="-3.0566037">
+        <state line="15" column="105" selection-start="720" selection-end="720" vertical-scroll-proportion="-8.333333">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/step-3---building-and-running-the-application.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/running-gigaspaces-as-a-windows-service.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="127" selection-start="1570" selection-end="1570" vertical-scroll-proportion="-3.3333333">
+        <state line="37" column="146" selection-start="2166" selection-end="2170" vertical-scroll-proportion="-2.3962264">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/terminology---runtime-components.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/tuning-infrastructure.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="134" selection-start="4964" selection-end="4964" vertical-scroll-proportion="-1.3396226">
+        <state line="73" column="33" selection-start="3253" selection-end="3259" vertical-scroll-proportion="-2.2641509">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/terminology---space-based-architecture.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/tuning-java-virtual-machines.markdown">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="289" selection-start="2526" selection-end="2526" vertical-scroll-proportion="-4.4444447">
+        <state line="62" column="159" selection-start="8190" selection-end="8281" vertical-scroll-proportion="-2.3962264">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/troubleshooting-tools.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="29" selection-start="251" selection-end="251" vertical-scroll-proportion="13.740741">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/benchmark-view---gigaspaces-browser.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="106" selection-start="9211" selection-end="9211" vertical-scroll-proportion="-5.226415">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/space-persistency.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="294" selection-start="1131" selection-end="1131" vertical-scroll-proportion="12.867925">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xap97/proxy-connectivity.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="59" selection-start="8155" selection-end="8155" vertical-scroll-proportion="-2.3962264">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xap97/the-processing-unit-structure-and-configuration.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="37" selection-start="6976" selection-end="6976" vertical-scroll-proportion="-4.1698112">
+        <state line="62" column="192" selection-start="4999" selection-end="4999" vertical-scroll-proportion="-0.83677685">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/xap-order-management-tutorial.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="754" column="179" selection-start="31928" selection-end="31928" vertical-scroll-proportion="-4.018868">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/xap-overview.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="50" selection-start="4086" selection-end="4086" vertical-scroll-proportion="-4.8679247">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/the-runtime-environment.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="122" selection-start="221" selection-end="221" vertical-scroll-proportion="-4.4444447">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xap97/your-first-real-time-big-data-analytics-application.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="268" column="37" selection-start="20889" selection-end="20889" vertical-scroll-proportion="0.1322314">
-          <folding />
-        </state>
       </provider>
     </entry>
   </component>

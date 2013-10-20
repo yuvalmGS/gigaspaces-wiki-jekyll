@@ -127,8 +127,8 @@ Here are few options you may use to refresh the cache:
 - Lease expiration - You may write objects into the space with a specific time to live (lease duration).
 - Programmatic expiration - You may expire the object using:
     - `net.jini.core.lease.Lease.cancel()` - You can get the Lease object as a result of a write operation for a new object.
-    - `GigaSpace.write` operation for an existing object (update) using a short lease time. See the [GigaSpace](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/GigaSpace) interface write operation for details.
-    - Take operation with [TakeModifiers.EVICT_ONLY mode](./lru-cache-policy.html#Explicit Eviction of Objects from the Space). See the [GigaSpace](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/GigaSpace) interface take operation for details.
+    - `GigaSpace.write` operation for an existing object (update) using a short lease time. See the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/GigaSpace.html) interface write operation for details.
+    - Take operation with [TakeModifiers.EVICT_ONLY mode](./lru-cache-policy.html#Explicit Eviction of Objects from the Space). See the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/GigaSpace.html) interface take operation for details.
 
 ## Refresh data using LRU and Timer
 

@@ -181,7 +181,7 @@ Please also check out this webinar about this API's capabilities and features:
 
 The Admin API uses the `AdminFactory` in order to create `Admin` instances. Once working with the `Admin` is done, its `Admin#close()` method should be called.
 
-The Admin discovers all the advertised services from the [Lookup Service](./grid-service.html#lus). In order to define which lookup groups the `AdminFactory#addGroup` can be used. The lookup locators can also be used for non multicast enabled environment using `AdminFactory#addLocator` can be used. If the services started are secured, the username and password can be set on the Admin API as well.
+The Admin discovers all the advertised services from the [Lookup Service](./service-grid.html#lus). In order to define which lookup groups the `AdminFactory#addGroup` can be used. The lookup locators can also be used for non multicast enabled environment using `AdminFactory#addLocator` can be used. If the services started are secured, the username and password can be set on the Admin API as well.
 
 
 # Discovery Process
@@ -393,7 +393,7 @@ for (Space space : admin.getSpaces()) {
 
 {% endhighlight %}
 
-For more information please refer to the API documentation: **[MirrorStatistics](http://www.gigaspaces.com/docs/JavaDoc9.5/com/gigaspaces/cluster/replication/async/mirror/MirrorStatistics)**
+For more information please refer to the API documentation: **[MirrorStatistics](http://www.gigaspaces.com/docs/JavaDoc9.5/com/gigaspaces/cluster/replication/async/mirror/MirrorStatistics.html)**
 
 
 # Monitoring the Remote Transport Activity

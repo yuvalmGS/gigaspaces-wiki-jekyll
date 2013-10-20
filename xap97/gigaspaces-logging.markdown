@@ -184,7 +184,7 @@ com.gigaspaces.persistent.shared_iterator.level = INFO
 org.hibernate.level = WARNING
 {% endhighlight %}
 
-GigaSpaces persistence options are explained [here](./persistency.html). One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here](Hibernate External Data Source).
+GigaSpaces persistence options are explained [here](./persistency.html). One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here](./hibernate-external-data-source).
 
 ### Space Query
 
@@ -352,8 +352,8 @@ GSC is the runtime environment for GigaSpaces applications. More information abo
 org.openspaces.grid.esm.level = INFO
 {% endhighlight %}
 
-Elastic Service Manager (ESM) is an implementation of the Elastic Middleware Services. It is built on-top of the existing administrative API exposed by the GigaSpaces components. See [The Elastic Service Manager](The Elastic Service Manager) page for more details.
-Elastic Middleware Services are explained [here](Elastic Middleware Services).
+Elastic Service Manager (ESM) is an implementation of the Elastic Middleware Services. It is built on-top of the existing administrative API exposed by the GigaSpaces components. See [The Elastic Service Manager](./the-elastic-service-manager.html) page for more details.
+Elastic Middleware Services are explained [here](./elastic-middleware-services.html).
 
 ### GSA
 
@@ -361,7 +361,7 @@ Elastic Middleware Services are explained [here](Elastic Middleware Services).
 com.gigaspaces.grid.gsa.level = INFO
 {% endhighlight %}
 
-The GigaSpaces Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as The GigaSpaces Manager (GSM), The GigaSpaces Container (GSC), and Lookup Service (LUS). More information regarding GSA can be found [here](The GigaSpaces Agent).
+The GigaSpaces Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as The GigaSpaces Manager (GSM), The GigaSpaces Container (GSC), and Lookup Service (LUS). More information regarding GSA can be found [here](./the-gigaspaces-agent.html).
 {% endtabcontent %}
 {% tabcontent Security %}
 

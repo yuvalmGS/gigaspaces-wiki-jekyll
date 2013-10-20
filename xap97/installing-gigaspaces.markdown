@@ -86,13 +86,13 @@ You should also remove specific JDK command-line arguments, like `\-server`, whi
 
 ## Performance Tips
 
-Before you begin working with GigaSpaces, it is recommended to review the [Performance Tuning and Considerations](./performance-tuning-and-considerations.html) sections and apply some of the required changes. For example, you must update the [**max file descriptors limit**](Tuning Infrastructure#Max Processes and File Descriptors Limit) before you begin.
+Before you begin working with GigaSpaces, it is recommended to review the [Performance Tuning and Considerations](./performance-tuning-and-considerations.html) sections and apply some of the required changes. For example, you must update the [**max file descriptors limit**](./tuning-infrastructure.html#Max Processes and File Descriptors Limit) before you begin.
 
 {% info %}
  The recommendation is to review at least the following sections:
 
 - [Tuning Infrastructure](./tuning-infrastructure.html)
-- [Tuning GigaSpaces Performance - Basics](Tuning GigaSpaces Performance - Basics)
+- [Tuning GigaSpaces Performance - Basics](./tuning-gigaSpaces-performance-basics.html)
 - [Tuning Java Virtual Machines](./tuning-java-virtual-machines.html)
 - [Benchmarking the platform](./moving-into-production-checklist.html)
 {% endinfo %}

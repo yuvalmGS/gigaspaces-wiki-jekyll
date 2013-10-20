@@ -8,7 +8,7 @@ page_id: 61867380
 
 # Overview
 
-The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/IteratorBuilder) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/client/GSIterator.html)  provides the ability to exhaustively read through all of the objects from the space that match one or more SQLQuery/templates.
+The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/client/GSIterator.html)  provides the ability to exhaustively read through all of the objects from the space that match one or more SQLQuery/templates.
 
 There are scenarios where the conventional read operation that returns a single space object does not fit and there is a need to return a collection of entries from the space. Generally, an iterator should be used in cases where returning all the entries in one result with the `readMultiple` operation will consume too much memory on the client or introduce too much latency before the first space object could be processed.
 
@@ -49,7 +49,7 @@ for (;;)
 
 # The IteratorBuilder
 
-The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/IteratorBuilder) is a utility builder class for the GSIterator. It allows to use method chaining for simple configuration of an iterator and then call iterate() to get the actual iterator.
+The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/IteratorBuilder.html) is a utility builder class for the GSIterator. It allows to use method chaining for simple configuration of an iterator and then call iterate() to get the actual iterator.
 
 By default, when no template is added (using `addTemplate`), a `null` template will be used to iterate over all the content of the Space.
 

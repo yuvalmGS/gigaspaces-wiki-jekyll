@@ -27,7 +27,7 @@ GigaSpaces Data-Grid clustering Scalability and High-Availability are based on t
 1. Persistency to database/disk done in a reliable [Asynchronous manner](./asynchronous-persistency-with-the-mirror.html).
 1. Once an instance of the system [fails](./failover.html) a new one recreated on-the-fly on some available machine. If the instance is primary, the existing backup turn into primary and a new backup is created.
 1. You can have more than a single backup copy per partition.
-1. Backup can be on the LAN or WAN. For remote WAN, special replication module is provided called the [replication Gateway](Multi-Site Replication over the WAN ).
+1. Backup can be on the LAN or WAN. For remote WAN, special replication module is provided called the [replication Gateway](./multi-site-replication-over-the-wan.html ).
 1. Backup instances cannot be accessed by clients for write/read. This ensures total data consistency and avoids conflicts.
 1. Once a backup is not available the primary will log all activities (on file or [overflow to disk](./controlling-the-replication-redo-log.html)) and send these to the backup once it will be available (send only delta). With a long disconnection total recovery of the backup will be conducted.
 1. Transaction boundary preserved when data is replicated from primary instance to the backup, when persisting the data or when replicating the data into remote site over the WAN ([WAN Gateway](./multi-site-replication-over-the-wan.html)).

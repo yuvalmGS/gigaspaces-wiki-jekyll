@@ -382,7 +382,7 @@ Finished deploying [1] processing unit instances
 
 Once the application is running, you can use the XAP UI tools to view your application , access the data and the counters and manage the application:
 
-- For the Web Based UI run gs-webui.bat/sh and point your browser to [localhost:8099](http://localhost:8099)
+- For the Web Based UI run gs-webui.bat/sh and point your browser to localhost:8099 http://localhost:8099
 - For the Rich Based UI run gs-ui.bat/sh
 
 {% info title=More Deployment Options %}
@@ -556,13 +556,13 @@ install-application <XapInstallationRoot>/recipes/apps/streaming-bigdata/bigData
 You can track the progress on the shell and on the web management console (localhost:8099).
 {% endinfo %}
 
-For more information, see [Deploying Applications](http://www.cloudifysource.org/guide/deploying/deploying_apps) page.
+For more information, see [Deploying Applications](http://www.cloudifysource.org/guide/deploying/deploying_apps.html) page.
 
 ### Running on Clouds
 
 To run the application on one of the supported clouds, proceed the following steps:
 
-1. Configure the cloud driver configuration file and get the cloud certificate. For more information, see [Post-Installation Configuration](http://www.cloudifysource.org/guide/setup/post_installation_configuration) page.
+1. Configure the cloud driver configuration file and get the cloud certificate. For more information, see [Post-Installation Configuration](http://www.cloudifysource.org/guide/setup/post_installation_configuration.html) page.
 1. Bootstrap the cloud. For more information, see [The Bootstrapping Process](http://shlomo-tech-tav.github.com/guide/bootstrapping/bootstrapping_process) page.
 1. To install and deploy the application, use the `install-application` command, as described in the previous section.
 

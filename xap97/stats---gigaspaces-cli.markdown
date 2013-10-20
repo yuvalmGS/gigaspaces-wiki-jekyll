@@ -22,7 +22,7 @@ The `stats` comand provides statistics from the Grid Service Container (GSC) and
 | Time of login | Time the Service Grid CLI was started. |
 | Elapsed time since login | Elapsed time since the Service Grid CLI was started. |
 | Pathname of log file | Where advertised, the group advertised, and the time when the service was found to be discarded. |
-| HTTP | Address (plus roots) if any HTTP server has been started under this session using the [http command](http - GigaSpaces CLI). |
+| HTTP | Address (plus roots) if any HTTP server has been started under this session using the [http command](./http-gigaSpaces-cli.html). |
 | Lookup service discovery statistics | Statistics on discovered lookup instances, including IP address and port, group, and time elapsed. At the end, statistics are shown for discarded lookup services, if any. |
 
 # Options

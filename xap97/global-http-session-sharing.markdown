@@ -4,4 +4,4 @@ title:  Global HTTP Session Sharing
 page_id: 61867399
 ---
 
-{% include /SBP/global-http-session-sharing.markdown %}
+{% include http://wiki.gigaspaces.com/wiki/display/SBP/global-http-session-sharing.html %}

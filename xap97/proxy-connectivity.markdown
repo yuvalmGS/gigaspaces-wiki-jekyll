@@ -104,7 +104,7 @@ If communication is disrupted during the notification registration process, it i
 
 ## Local Cache/View
 
-When using [Client side caching](Client side caching), the connection management is different because cache staleness needs to be considered as well. For information refer to [Local Cache](./local-cache.html) or [Local View](./local-view.html).
+When using [Client side caching](./client-side-caching.html), the connection management is different because cache staleness needs to be considered as well. For information refer to [Local Cache](./local-cache.html) or [Local View](./local-view.html).
 
 ## Unicast Lookup Service
 

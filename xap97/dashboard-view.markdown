@@ -14,7 +14,7 @@ Once you've passed the login screen, you will enter the main dashboard screen. T
 
 # Alerts panel
 
-The Alerts panel displays XAP Alert groups (Alerts are grouped by correlation key) for more details see [Administrative Alerts](http://www.gigaspaces.com/wiki/display./Administrative+Alerts)
+The Alerts panel displays XAP Alert groups (Alerts are grouped by correlation key) for more details see [Administrative Alerts](./administrative-Alerts.html)
 
 ![xap-dashboard-alerts-inline.png](/attachment_files/xap-dashboard-alerts-inline.png)
 

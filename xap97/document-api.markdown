@@ -295,7 +295,7 @@ The `Document` properties values can be either scalars (integers, strings, enumu
 
 # Indexing
 
-Properties and nested paths can be [indexed](indexing) to boost queries performance. In the type registration sample above the **Name** and **Price** properties are indexed.
+Properties and nested paths can be [indexed](./indexing.html) to boost queries performance. In the type registration sample above the **Name** and **Price** properties are indexed.
 
 Since the schema is flexible and new properties might be added after the type has been registered, it is possible to add indexes dynamically as well.
 
@@ -303,7 +303,7 @@ For more information about indexing, see the [Indexing](./indexing.html) page.
 
 # Events
 
-Event containers (both [polling container](polling container) and [notify container](notify container)) support Space `Document` entries.
+Event containers (both [polling container](./polling-container.html) and [notify container](./notify-container.html)) support Space `Document` entries.
 
 Here is a simple example of a polling event container configuration using a `Document`:
 

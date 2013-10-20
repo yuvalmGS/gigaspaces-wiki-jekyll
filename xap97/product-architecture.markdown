@@ -34,7 +34,7 @@ The OpenSpaces API is divided into four parts:
 
 ## Core API
 
-The core package of OpenSpaces provides APIs for direct access to a data grid, internally referred to as a "space." The main interface is the GigaSpace, which enables the basic interaction with the data grid. The core components include basic infrastructure support such as [Space](./the-space-component.html) construction, simplified API using the [GigaSpace](./the-gigaspace-interface.html) interface including [Transaction Management](./transaction-management.html) and declarative transaction support. Core components also include support for [Map/Cache](The Map Component) construction and a simplified API using [GigaMap](The GigaMap Interface).
+The core package of OpenSpaces provides APIs for direct access to a data grid, internally referred to as a "space." The main interface is the GigaSpace, which enables the basic interaction with the data grid. The core components include basic infrastructure support such as [Space](./the-space-component.html) construction, simplified API using the [GigaSpace](./the-gigaspace-interface.html) interface including [Transaction Management](./transaction-management.html) and declarative transaction support. Core components also include support for [Map/Cache](./map-api.html) construction and a simplified API using [GigaMap](./map-api.html).
 
 ## Events
 
@@ -136,7 +136,7 @@ It is important to note that the IMDG, although a memory-based service, is fully
 
 The IMDG uses the unified clustering layer, to provide a highly available and reliable service.
 
-The main API to access the IMDG service, is the [`GigaSpace` interface](./the-gigaspace-interface.html). In addition, one can use the Map API (using the [GigaMap interface](The GigaMap Interface)) to access the IMDG. Please refer to the [Programmer's Guide](./programmer's-guide.html) for usage examples.
+The main API to access the IMDG service, is the [`GigaSpace` interface](./the-gigaspace-interface.html). In addition, one can use the Map API (using the [GigaMap interface](./map-api.html)) to access the IMDG. Please refer to the [Programmer's Guide](./programmer's-guide.html) for usage examples.
 
 ## Messaging Grid
 
@@ -148,7 +148,7 @@ The messaging grid aspect of the space provides messaging capabilities such as:
 1. [FIFO](./fifo-support.html) ordering.
 1. [Transaction Management](./transaction-management.html).
 
-The core APIs used for messaging are the OpenSpaces [Notify](./notify-container.html) and [Polling](./polling-container.html) Containers. In addition, there is a [JMS 1.1 implementation](./jms-api-support.html) available to be used with existing applications. More information can be found in the [Messaging and Events](Messaging and Events) section.
+The core APIs used for messaging are the OpenSpaces [Notify](./notify-container.html) and [Polling](./polling-container.html) Containers. In addition, there is a [JMS 1.1 implementation](./jms-api-support.html) available to be used with existing applications. More information can be found in the [Messaging and Events](./messaging-support.html) section.
 
 ## Processing Services
 

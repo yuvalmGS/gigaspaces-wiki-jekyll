@@ -123,13 +123,13 @@ To start the localcloud environment:
 install-application c:/rt-app
 {% endhighlight %}
 
-You can track the progress in the shell and in the Web Management Console at [http://localhost:8099](http://localhost:8099).
+You can track the progress in the shell and in the Web Management Console at http://localhost:8099.
 For more information refer to [the cloudify application deployment guide](http://www.cloudifysource.org/guide/deploying/deploying_apps).
 
 ### Running on Any Cloud
 
 To deploy your recipe to one a cloud environment, follow the below steps:
 
-- Obtain your cloud's credentials and [configure the cloud driver](http://www.cloudifysource.org/guide/setup/post_installation_configuration))
+- Obtain your cloud's credentials and [configure the cloud driver](http://www.cloudifysource.org/guide/setup/post_installation_configuration.html))
 - Bootstrap the cloud using [`bootstrap-cloud` command](http://www.cloudifysource.org/guide/bootstrapping/bootstrapping_process).
 - [Install the application](http://www.cloudifysource.org/guide/deploying/deploying_apps) using the `install-application` command, as described in the previous section.

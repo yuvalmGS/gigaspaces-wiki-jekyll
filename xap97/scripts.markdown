@@ -9,17 +9,17 @@ page_id: 61867124
 
 The `<gigaspaces root>/bin` folder includes several scripts for windows and linux needed to manage GigaSpaces Runtime Components and Applications:
 
-- [gs-agent.bat/sh](./service-grid.html#gsa) - This is the main script you should use when starting the [GigaSpaces runtime environment](./the-runtime-environment.html) - [The Grid Service Agent](./grid-service.html#gsa) (GSA). It acts as a process manager, parent process for the following:
+- [gs-agent.bat/sh](./service-grid.html#gsa) - This is the main script you should use when starting the [GigaSpaces runtime environment](./the-runtime-environment.html) - [The Grid Service Agent](./service-grid.html#gsa) (GSA). It acts as a process manager, parent process for the following:
     - [Lookup Service](./service-grid.html#lus) (LUS) - GigaSpaces Directory Service.
     - [GigaSpaces Manager](./service-grid.html#gsm) (GSM) - Deployment and provisiosning Manager service.
     - [GigaSpaces Container](./service-grid.html#gsm) (GSC) - Universal  Container.
 
 - [gs-ui.bat/sh](./gigaspaces-management-center.html) - starts the rich UI.
 - [gs.bat](./commands.html) - starts the GigaSpaces interactive shell / Command line.
-- [gsc.bat/sh](./grid-service.html#gsc) - starts an instance of the GSC. Called by the GSA. You should not use this script directly when using the GSA.
+- [gsc.bat/sh](./service-grid.html#gsc) - starts an instance of the GSC. Called by the GSA. You should not use this script directly when using the GSA.
 - [gsInstance.bat/sh](./gsinstance---gigaspaces-cli.html) - starts an instance of a space. Used usually in development.
-- [gsm.bat/sh](./grid-service.html#gsm) - starts an instance of the GSM and LUS. You should not use this script directly when using the GSA.
-- [gsm_nolus.bat/sh](./grid-service.html#gsm) - starts an instance of the GSM. Called by the GSA. You should not use this script directly when using the GSA.
+- [gsm.bat/sh](./service-grid.html#gsm) - starts an instance of the GSM and LUS. You should not use this script directly when using the GSA.
+- [gsm_nolus.bat/sh](./service-grid.html#gsm) - starts an instance of the GSM. Called by the GSA. You should not use this script directly when using the GSA.
 - lcp.bat - utility script.
 - gs-memcached.bat/sh - starts an instance of [Memcached API](./memcached-api.html) listener. Used usually in development.
 - lookupbrowser.bat/sh - Used with for special debug scenarios to inspect the lookup service.

@@ -39,7 +39,7 @@ Increasing these values causes a delay when the space recognizes failover, since
 Since every space container starts an embedded `RMIRegistry` service, it creates a set of threads which consume some resources.
 
 {% lampon %} If the `RMIRegistry` service is not used, or if a full replication cluster or a large cluster is used; it is recommended to disable the `RMIRegistry` service in the space container and in the GSC/GSM.
-{% refer %}For details on how to disable the space container `RMIRegistry`, refer to the [Overwriting Default Configuration](Overriding Default Configuration) section.{% endrefer %}
+{% refer %}For details on how to disable the space container `RMIRegistry`, refer to the [Overwriting Default Configuration](./overriding-default-configuration.html) section.{% endrefer %}
 
 ## Lookup Service
 
