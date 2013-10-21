@@ -184,3 +184,9 @@ body {
 .headerDivider {
      border-right: #dfdfdf 1px solid;    
 }
+
+@media (min-width: 768px) { 
+  .sb-fixed{
+    position: fixed;
+  } 
+}
