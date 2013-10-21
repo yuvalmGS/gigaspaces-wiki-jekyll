@@ -26,10 +26,10 @@ module Jekyll
         if @section
           output << "<strong>Section Summary: </strong>"
         else
-          output << "<strong>Summary: </strong>"
+          output << "<strong>Summary: </strong></h3></p>"
         end
         output << Kramdown::Document.new(content).to_html
-        output << "</h3>"
+        output << "</p>"
         if @section
           output << "</div></div>"
         else

@@ -20,7 +20,6 @@ page_id: 61867014
 Watch our getting started screen casts and get up and running with XAP in minutes!
 {% endcolumn %}
 {% column %}
-{% trainingbox %}
 {% endcolumn %}
 {% endsection %}
 

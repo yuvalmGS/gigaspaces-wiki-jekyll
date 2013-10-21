@@ -25,13 +25,19 @@ module Jekyll
 
       def add_info(context, content)
       	output = "<div class=\"alert alert-info\">"
-        output << "<i class=\"icon-info-sign\"></i>&nbsp;" if @icon
+        output << "<div class=\"row\">"
+        output << "<div class=\"col-md-1\">"
+        output << "<i class=\"icon-info-sign icon-2x\"></i>&nbsp;" 
+        output << "</div>"
+        output << "<div class=\"col-md-11\">"
         unless @title.empty?
           output << "<strong>"
           output << Kramdown::Document.new(@title).to_html
           output << "</strong>"
         end
         output << Kramdown::Document.new(content).to_html
+        output << "</div>"
+        output << "</div>"
         output << "</div>"
       end
     end
