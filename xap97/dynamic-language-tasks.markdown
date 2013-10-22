@@ -73,7 +73,7 @@ The first step in using scripting is exposing the built in scripting service ove
 {% endtabcontent %}
 {% endinittab %}
 
-The next simple step is using the exposed scripting service on the client side, here is a groovy example (for more complete client side configuration instructions refer to the [Scripting on the Client Side section](./open-spaces-remoting-component-scripting#OpenSpacesRemotingComponent-Scripting-ScriptingontheClientSide.html) below):
+The next simple step is using the exposed scripting service on the client side, here is a groovy example :
 
 {% highlight java %}
 public class MyRemoting {

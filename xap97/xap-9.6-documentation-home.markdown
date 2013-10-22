@@ -4,6 +4,7 @@ title:  XAP 9.6 Documentation Home
 page_id: 61867286
 ---
 
+{%comment%}
 {% compositionsetup %}
 
 {% section %}
@@ -38,4 +39,5 @@ page_id: 61867286
 - Looking for **[other versions](http://wiki.gigaspaces.com/wiki/display/ALL/Choose+a+GigaSpaces+Version)**?
 {% endcolumn %}
 {% endsection %}
+{%endcomment%}
 

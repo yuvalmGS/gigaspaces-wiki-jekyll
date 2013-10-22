@@ -9,7 +9,7 @@ page_id: 61867112
 
 # Overview
 
-GigaSpaces JavaSpaces `POJO` support allows you to use `JavaBean` classes as space domain classes, and perform space operations using these objects. POJO domain Classes should follow rules similar to the ones defined by [JPA](http://en.wikipedia.org/wiki/Java_Persistence_API), [Hibernate](http://www.hibernate.org) and other domain class frameworks.
+GigaSpaces JavaSpaces `POJO` support allows you to use `JavaBean` classes as space domain classes, and perform space operations using these objects. POJO domain Classes should follow rules similar to the ones defined by [JPA](http://en.wikipedia.org/wiki/Java_Persistence_API), [Hibernate](http://www.hibernate.org/hibernate) and other domain class frameworks.
 
 # POJOs as Data Objects
 
@@ -77,7 +77,7 @@ GigaSpaces `POJO` rules:
 - Do not implement the `net.jini.core.entry` interface.
 - Follow the [JavaBeans specification](http://java.sun.com/javase/technologies/desktop/javabeans/docs/spec.html).
 - Have private fields.
-- Avoid using numeric [primitives](http://download.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) (long , int) as the POJO fields. Use their relevant Object wrapper instead ([Long](http://download-llnw.oracle.com/javase/6/docs/api/java/lang/Long.html) , [Integer](http://download-llnw.oracle.com/javase/6/docs/api/java/lang/Integer.html)). This will avoid the need to specify a null-value and simplify query construction when using the [SQLQuery](./sqlquery.html).
+- Avoid using numeric [primitives](http://download.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) (long , int) as the POJO fields. Use their relevant Object wrapper instead Long and Integer. This will avoid the need to specify a null-value and simplify query construction when using the [SQLQuery](./sqlquery.html).
 - Have getter and setter methods for every field you would like to be stored within the space object.
 - Include space class metadata decorations (indexed fields, affinity-keys, persisted mode, etc.).
 
@@ -111,7 +111,7 @@ public int getEmployeeID()
 - When using `SpaceId(autoGenerate=true)`, the UID is stored inside the `SpaceId` field, causing an overhead when indexed.
 - A `null` value as template is not supported. Use `new Object()` instead.
 - A POJO class must implement the `Serializable` or `Externalizable` interface if used as a parameter for a remote call ([OpenSpaces remoting](./space-based-remoting.html)).
-- When using the [org.openspaces.core.GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/GigaSpace) interface, you can use [generics](http://en.wikipedia.org/wiki/Generics_in_Java) when conducting space operations.
+- When using the [org.openspaces.core.GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/GigaSpace.html) interface, you can use [generics](http://en.wikipedia.org/wiki/Generics_in_Java) when conducting space operations.
 - The `@Spaceid` annotation or `id` tag must be declared when performing update operations.
 - To persist a POJO object using the `ExternalDataSource` or via Mirror Service the `persist` decoration must have the value `true`.
 - When a space is configured to use the `ExternalDataSource`, the `@Spaceid` annotation or `id` tag `auto-generate` attribute should be set to **`false`**. The object must include a unique value with the `SpaceId` field when written into the space.

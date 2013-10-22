@@ -123,7 +123,7 @@ To start the localcloud environment:
 install-application c:/rt-app
 {% endhighlight %}
 
-You can track the progress in the shell and in the Web Management Console at http://localhost:8099.
+You can track the progress in the shell and in the Web Management Console at localhost:8099.
 For more information refer to [the cloudify application deployment guide](http://www.cloudifysource.org/guide/deploying/deploying_apps).
 
 ### Running on Any Cloud

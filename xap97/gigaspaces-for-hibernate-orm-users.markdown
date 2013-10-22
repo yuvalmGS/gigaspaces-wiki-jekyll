@@ -13,7 +13,7 @@ page_id: 61867033
 
 This page explains how you can use GigaSpaces eXtreme Application Platform (XAP) to:
 
-- **Get a free 2nd-level distributed cache** for your [Hibernate](http://www.hibernate.org)-based database integration
+- **Get a free 2nd-level distributed cache** for your [Hibernate](http://www.hibernate.org/hibernate)-based database integration
 - **Scale up your database using the existing ORM** by adding a GigaSpaces Data Grid with back-end Hibernate integration
 
 GigaSpaces as Hibernate 2nd level cache provides:
@@ -74,8 +74,7 @@ To gain ultimate scalability for your application, you can package your business
 
 This approach is called Space Based Architecture, and the way to achieve it is the Spring-based OpenSpaces platform, which allows you to deploy your application as a set of services encased in a Processing Unit.
 
-{% refer %}**To get started with SBA and Open Spaces** see our [eXtreme Application Platform Tutorial](./extreme-application-platform-tutorial.html).{% endrefer %}
-
+ 
 {% refer %}To learn more about Space-Based Architecture and its implications, read our white paper, [The Scalability Revolution: From Dead End to Open Road](http://www.gigaspaces.com/WhitePapers).{% endrefer %}
 
 {% refer %}To learn more about OpenSpaces, see the [OpenSpaces](./product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) section in this online help.{% endrefer %}
