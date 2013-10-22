@@ -283,7 +283,7 @@ Although you can access the Space directly via the `IJSpace` interface (which wa
 All of these APIs are built on top of the lower level `IJSpace` interface. With the `GigaSpace` and `GigaMap` interfaces, you simply create an `IJSpace` instance as described above (embedded or remote) and then wrap it with one of the higher level constructs, namely `GigaSpace`, `GigaMap` or JDBC API (all of this can be done either programmatically or via Spring). With the JDBC API, you use the GigaSpaces JDBC driver directly.
 
 The most recommended API is the `GigaSpaces` interface. It is the closest to the older `IJSpace` interface, but is different since it supports Java 5 generics, [declarative Spring transactions](./transaction-management.html) and [task execution over the Space](./task-execution-over-the-space.html).
-Historically, both the `GigaSpace` and `IJSpace` interfaces are based on the [JavaSpaces specification](http://www.jini.org/wiki/JavaSpaces_Specification) and the [tuple Space](http://en.wikipedia.org/wiki/Tuple_Space) model.
+Historically, both the `GigaSpace` and `IJSpace` interfaces are based on the [JavaSpaces specification](http://river.apache.org/doc/specs/html/js-spec.html) and the [tuple Space](http://en.wikipedia.org/wiki/Tuple_space) model.
 
 They support 4 basic "verbs" of this model, namely read, write, take and notify (see [below](#verbs) for more details).
 The `org.openSpaces.core.GigaSpace` interface differs from the classic JavaSpaces model in a number of ways:
@@ -497,6 +497,7 @@ Person[] multipleResults2 = gigaSpace.takeMultiple(query, 50);
 ## Ordering of Results
 
 The Space matches the stored object with the template to return a result. Matched objects are stored in the Space and returned from it in no particular order. However you can use [FIFO ordering](./fifo-support.html) or the `ORDER BY` statement to control the ordering.
+ 
 
 {% endtoczone %}
 

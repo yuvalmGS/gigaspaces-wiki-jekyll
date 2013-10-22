@@ -185,7 +185,7 @@ com.gigaspaces.persistent.shared_iterator.level = INFO
 org.hibernate.level = WARNING
 {% endhighlight %}
 
-GigaSpaces persistence options are explained [here](./persistency.html). One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here](./hibernate-external-data-source).
+GigaSpaces persistence options are explained [here](./persistency.html). One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here](./hibernate-external-data-source.html).
 
 ### Space Query
 
@@ -245,7 +245,7 @@ When cluster uses partitioned topology, data is partitioned across multiple inst
 com.gigaspaces.cluster.active_election.level = INFO
 {% endhighlight %}
 
-When multiple instances (primary/backup(s)), Active Election process is used by cluster members to determine which member acts as a primary. Additional information regarding active election process is [here](Active Election and Avoiding Split-Brain Scenarios).
+When multiple instances (primary/backup(s)), Active Election process is used by cluster members to determine which member acts as a primary. Additional information regarding active election process is [here](./active-election-and-avoiding-split-brain-scenarios.html).
 
 ### POJO
 
@@ -334,7 +334,7 @@ com.gigaspaces.grid.gsm.selector.level = INFO
 org.jini.rio.tools.webster.level = INFO
 {% endhighlight %}
 
-GSM manages the applications and maintains the SLA's of deployments. More information about GSM is [here](The GigaSpaces Manager).
+GSM manages the applications and maintains the SLA's of deployments. More information about GSM is [here](./the-gigaspaces-manager.html).
 
 ### GSC
 
@@ -345,7 +345,7 @@ com.gigaspaces.grid.gsm.GSMFaultDetectionHandler.level = INFO
 org.openspaces.pu.container.servicegrid.PUFaultDetectionHandler.level = INFO
 {% endhighlight %}
 
-GSC is the runtime environment for GigaSpaces applications. More information about GSC's is [here](The GigaSpaces Container).
+GSC is the runtime environment for GigaSpaces applications. More information about GSC's is [here](./the-gigaspaces-container.html).
 
 ### ESM
 

@@ -284,7 +284,7 @@ The GSA, by default, will start 2 local Grid Service Containers, and manage a gl
 
 **The GigaSpaces Agent**
 
-[The GigaSpaces Agent (GSA)](./the-gigaSpaces-agent.html) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as the Grid Service Manager (aka [The GigaSpaces Manager](XAP96:The GigaSpaces Manager)), the Grid Service Container (aka [The GigaSpaces Container](XAP96:The GigaSpaces Container)), and Lookup Service.
+[The GigaSpaces Agent (GSA)](./the-gigaSpaces-agent.html) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as the Grid Service Manager (aka [The GigaSpaces Manager](./the-gigaspaces-manager.html)), the Grid Service Container (aka [The GigaSpaces Container](./the-gigaspaces-container.html)), and Lookup Service.
 
 {% endpanel %}
 {% endgcloak %}
@@ -300,9 +300,9 @@ The GSA, by default, will start 2 local Grid Service Containers, and manage a gl
 
 The GSA manages Operating System processes. There are two types of process management, local and global.
 
-Local processes simply start the process type (for example, a [GigaSpaces Container](The GigaSpaces Container)) without taking into account any other process types running by different GSAs.
+Local processes simply start the process type (for example, a [GigaSpaces Container](./the-gigaspaces-container.html)) without taking into account any other process types running by different GSAs.
 
-Global processes take into account the number of process types ([GigaSpaces Manager](The GigaSpaces Manager) for example) that are currently running by other GSAs (within the same lookup groups or lookup locators). It will automatically try and run at least X number of processes **across** all the different GSAs (with a maximum of 1 process type per GSA). If a GSA running a process type that is managed globally fails, another GSA will identify the failure and start it in order to maintain at least X number of global process types.
+Global processes take into account the number of process types ([GigaSpaces Manager](./the-gigaspaces-manager.html) for example) that are currently running by other GSAs (within the same lookup groups or lookup locators). It will automatically try and run at least X number of processes **across** all the different GSAs (with a maximum of 1 process type per GSA). If a GSA running a process type that is managed globally fails, another GSA will identify the failure and start it in order to maintain at least X number of global process types.
 
 {% endpanel %}
 {% endgcloak %}

@@ -63,7 +63,7 @@ page_id: 61867166
 
 We recommend that you go through the following steps before you begin this tutorial:
 
-- [Download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work -with-gigaspaces.html) to work with GigaSpaces - this is needed to run the sample application described in this tutorial.
+- [Download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html) to work with GigaSpaces - this is needed to run the sample application described in this tutorial.
 {% endsection %}
 
 {% whr %}
@@ -158,7 +158,7 @@ When openning this page in a web browser, it looks as follows:
 # Building the Example
 
 ![Play arrow green.bmp](/attachment_files/Play arrow green.bmp) **Steps to build the application:**
-The first thing you need to do if you haven't already done so, is [Download GigaSpaces and set up your development environment](Setting Up Your IDE to Work With GigaSpaces).
+The first thing you need to do if you haven't already done so, is [Download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-wigaspaces.html).
 Next, you should open a shell / command prompt window in the example directory, and type the following:
 `build.(sh/bat) dist`
 You should see an output similar to the following:

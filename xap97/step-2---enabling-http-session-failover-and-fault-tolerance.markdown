@@ -163,7 +163,7 @@ When opening this page in a web browser, it looks as follows:
 # Building the Example
 
 ![Play arrow green.bmp](/attachment_files/Play arrow green.bmp) **Steps to build the application:**
-The first thing you need to do if you haven't already done so, is [Download GigaSpaces and set up your development environment](Setting Up Your IDE to Work With GigaSpaces).
+The first thing you need to do if you haven't already done so, is [Download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html).
 Next, you should open a shell / command prompt window in the example directory, and type the following:
 `build.(sh/bat) dist`
 You should see an output similar to the following:

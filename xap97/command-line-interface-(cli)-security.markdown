@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Command Line Interface (CLI) Security
+title:  Command Line Interface CLI Security
 page_id: 61867110
 ---
 
@@ -9,7 +9,7 @@ page_id: 61867110
 
 # Overview
 
-The Command Line Interface (CLI) can be used to manage and monitor a running system. It is mainly used for script automation, and when there is a limitation to run a Graphical User Interface. This section covers how security can be applied to the commands supported by the CLI tool.
+The Command Line Interface can be used to manage and monitor a running system. It is mainly used for script automation, and when there is a limitation to run a Graphical User Interface. This section covers how security can be applied to the commands supported by the CLI tool.
 
 # Login/Logout
 

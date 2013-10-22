@@ -16,7 +16,7 @@ An OpenSpaces web processing unit can use [Jetty](http://www.mortbay.org) as the
 {% lampon %} For general web support features that are relevant, regardless of the web container used, please refer to [Web Processing Unit Container](./web-processing-unit-container.html).
 
 {% tip %}
-See the [http Session Management](http Session Management) for details about clustering the Jetty HTTP session.
+See the [http Session Management](./http-session-management.html) for details about clustering the Jetty HTTP session.
 {% endtip %}
 
 # Jetty Instance Handling
@@ -406,12 +406,12 @@ Web Applications running inside the Jetty container can use SSL. Here is an exam
 </property>
 {% endhighlight %}
 
-You can find a complete Jetty container definition [here](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/jetty.pu.xml) and the associated properties file [here](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/pu.properties)
+You can find a complete Jetty container definition [here](/download_files/jetty.pu.xml) and the associated properties file [here](/download_files/pu.properties)
 
 Jetty documentation outlines all the steps involved in configuring SSL. Please refer to this [link](http://docs.codehaus.org/display/JETTY/How+to+configure+SSL) for more information.
 
 {% tip %}
-Find a complete example with a keystore and certificate file included [here](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/jetty-ssl.zip).
+Find a complete example with a keystore and certificate file included [here](/download_files/jetty-ssl.zip).
 {% endtip %}
 
 ## Authentication and Access Control using Security Realms
@@ -430,7 +430,7 @@ Jetty documentation has more information about Security Realms and how to config
 
 ### Hash Login Example
 
-Attached [example](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/webapp-hash-security.zip) shows a web processing unit configured to use `HashLoginService`. This uses a security realm file for storing userid and passwords which are used for authenticating users. Roles authorized for the app are defined in the web.xml file.
+Attached [example](/download_files/webapp-hash-security.zip) shows a web processing unit configured to use `HashLoginService`. This uses a security realm file for storing userid and passwords which are used for authenticating users. Roles authorized for the app are defined in the web.xml file.
 
 Jetty configuration should include SecurityHandler configuration (`HashLoginService`) which will be something like below,
 
@@ -452,7 +452,7 @@ Web.xml file should include security-constraint, login-config and roles.
 
 ### Custom JAAS Security Example
 
-Attached [example](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/webapp-jaas.zip) shows a web processing unit configured to use `JAASLoginService` and a custom Login Module. Authentication request is passed to the login module and behavior of this can be customized to application specific needs. In this simplistic example any request with a password of "password" goes thru successfully.
+Attached [example](/download_files/webapp-jaas.zip) shows a web processing unit configured to use `JAASLoginService` and a custom Login Module. Authentication request is passed to the login module and behavior of this can be customized to application specific needs. In this simplistic example any request with a password of "password" goes thru successfully.
 
 Jetty configuration should include SecurityHandler configuration (`JAASLoginService`) which will be something like below,
 

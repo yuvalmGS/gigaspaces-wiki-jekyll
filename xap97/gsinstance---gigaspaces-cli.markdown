@@ -73,7 +73,5 @@ If you are using the third and/or second argument only, **you must use empty quo
 
 In the example above, only the third argument is used, so two pairs of empty quote signs are written before it. In this case, the default URL and classpath (defined in the `gsInstance` script) are used, and only the system properties are appended. 
 
-{% tip %}
-The Java command in the `gsInstance` script starts the JVM that hosts the space. For more details, refer to the [Quick Start Guide - Using the Examples (GigaSpaces Environment) - The Server Side](./top_bar_2.html@qsg).
-{% endtip %}
+ 
 

@@ -361,7 +361,7 @@ Few basic usage guidelines when using the `GigaSpace` interface:
 
 # Operations
 
-The [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/GigaSpace) interface includes the following main operations:
+The [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/GigaSpace.html) interface includes the following main operations:
 
 {: .table .table-bordered}
 |[Id Based operations](./id-queries.html)|[Batch operations](#Batch Operations)|[Asynchronous operations](#Asynchronous Operations)|Data Count operations|

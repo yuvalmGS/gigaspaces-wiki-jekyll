@@ -4,24 +4,7 @@ title:  Quick Start Guide Part I
 page_id: 61867014
 ---
 
-{% section %}
-{% column width=10% %}
-{% endcolumn %}
-{% column width=25% %}
-
-{% align center %}
-[![tot-data-grid-logo.jpg](/attachment_files/tot-data-grid-logo.jpg)](./your-first-data-grid-application.html)
-{% endalign %}
-
-{% endcolumn %}
-{% column width=55% %}
-
-[Your First Data Grid Application](./your-first-data-grid-application.html)
-Create your first data grid and access it from your Java application
-{% endcolumn %}
-{% column %}
-{% endcolumn %}
-{% endsection %}
+ 
  
 
 

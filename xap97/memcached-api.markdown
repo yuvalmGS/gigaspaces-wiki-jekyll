@@ -31,7 +31,7 @@ The last deployment model uses a single access point for access - a single node 
 
 # Using memcached
 
-Memcached uses a standardized and language-neutral [protocol](http://code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt), providing fourteen commands (six reads, two sets, two updates, one delete, and some status-related commands), issued over a plain text connection. A client application can open a telnet session and use a memcached server with no problems (assuming no errors are made in using the protocol, of course.)
+Memcached uses a standardized and language-neutral [protocol](http://www.sixapart.com/labs/memcached/), providing fourteen commands (six reads, two sets, two updates, one delete, and some status-related commands), issued over a plain text connection. A client application can open a telnet session and use a memcached server with no problems (assuming no errors are made in using the protocol, of course.)
 
 However, since the protocol is simple and well-known, there have been many client libraries written that provide access to memcached services.
 

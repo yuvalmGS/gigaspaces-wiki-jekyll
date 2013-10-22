@@ -38,7 +38,7 @@ The section below lists the different types of transaction managers supported by
 
 # Distributed Jini Transaction Manager
 
-The distributed [Jini Transaction Manager](http://www.jini.org/wiki/Jini_Transaction_Specification) starts an embedded distributed (Mahalo) **Jini Transaction Manager**, which is then wrapped with an implementation of the Spring `PlatformTransactionManager`. This transaction manager is used in order to perform distributed transactions spanning multiple space instances.
+The distributed [Jini Transaction Manager](http://river.apache.org/doc/specs/html/txn-spec.html) starts an embedded distributed (Mahalo) **Jini Transaction Manager**, which is then wrapped with an implementation of the Spring `PlatformTransactionManager`. This transaction manager is used in order to perform distributed transactions spanning multiple space instances.
 
 Below is an example of how it can be defined in a Spring application context:
 
@@ -244,7 +244,6 @@ When using Jini based transactions, a timeout value can be set for both the comm
 
 {% info %}
 Local Jini Transaction Manager was deprecated in 8.0. Use [Distributed Jini Transaction Manager](#Distributed Jini Transaction Manager) instead.
-Please refer to the [documentation of release 7.1](XAP71:Transaction Management#LocalJiniTransactionManager) if you're not using XAP 8.0.
 {% endinfo %}
 
 # Renewing Transactions

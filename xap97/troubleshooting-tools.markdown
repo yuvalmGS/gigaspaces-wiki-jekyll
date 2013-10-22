@@ -12,13 +12,13 @@ page_id: 61867023
 
 The application starts a space and collects the memory and CPU utilization and dumps the threads when the CPU britches the configured CPU level.
 
-- Extract the *[zip](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/winJVMDumper.zip)* under `Gigaspaces root dir/bin`.
+- Extract the *[zip](/download_files/winJVMDumper.zip)* under `Gigaspaces root dir/bin`.
 - Modify the config.dat and set the proper classpath, the CPU (in % beyond it the dump will be created) and the TIME (in msc of the time which lasts the application to breech beyond the configured CPU value)
 - Run the GetJvmDump.exe
 
 ## A Script Utility for Linux
 
-The [attached gsInstance.sh script](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/gsInstanceDumper.zip) script starts a space using the regular gsInstance.sh equivalent and dumps the threads once the application breeches a certain CPU level for a certain period, set by the TIME value. The CPU and TIME can be passed as additional arguments to the script.
+The [attached gsInstance.sh script](/download_files/gsInstanceDumper.zip) script starts a space using the regular gsInstance.sh equivalent and dumps the threads once the application breeches a certain CPU level for a certain period, set by the TIME value. The CPU and TIME can be passed as additional arguments to the script.
 You can also simply copy the following section into any script:
 
 {% highlight java %}
