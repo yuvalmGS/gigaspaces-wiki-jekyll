@@ -7,13 +7,13 @@ page_id: 61867355
 
 {%summary%}This tutorial will introduce you to the basic features of GigaSpace's XAP platform.{%endsummary%}
 
-{%section%}
-{%column%}
 # Overview
+{%section%}
+{%column width=70% %}
 This Tutorial provides a high-level overview of the GigaSpaces XAP platform. Hands on examples are provided to demonstrate the core concepts and API's. The primary people who can benefit from this tutorial, are architects and developers who wish to build scaled-out applications with GigaSpaces XAP.
 {%endcolumn%}
-{%column%}
-!GS.png|width=100px, height=100px!
+{%column width=20% %}
+<img src="/attachment_files/gs/gs.png" width="100" height="100">
 {%endcolumn%}
 {%endsection%}
 
@@ -25,10 +25,16 @@ Throughout this tutorial we will create and use a simple internet payment servic
 
 Here is the simplified Class Model:
 
-{indent:5}!classd.png| witdh=300px, height=300px!{indent}
+{%indent %}
+<img src="/attachment_files/qsg/class_diagram.png" width="500" height="400">
+{%endindent%}
+ 
 
+{%comment%}
+| witdh=300px, height=300px!
+{%endcomment%}
 
-You can download all examples presented here from [GitHub|https://github.com/Gigaspaces/xap-tutorial]. Feel free to clown, fork and contribute to the tutorial code.
+You can download all examples presented here from [GitHub](https://github.com/Gigaspaces/xap-tutorial). Feel free to clown, fork and contribute to the tutorial code.
 
 # Let's get started
 

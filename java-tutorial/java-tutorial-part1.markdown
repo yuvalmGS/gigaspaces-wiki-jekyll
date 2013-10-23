@@ -18,23 +18,18 @@ page_id: 61867355
 
 
 
+# Overview
 {%section%}
 {%column width=70% %}
 In this part of the tutorial we will demonstrate how to create a space and how you can interact with it. We will also demonstrate how you can improve your space search performance by using indexes and returning partial results.
 {%endcolumn%}
 {%column width=20% %}
-hello there
+<img src="/attachment_files/qsg/data.png" width="100" height="100">
 {%endcolumn%}
 {%endsection%}
 
-<img src="/attachment_files/POJO_operations.png" width="100" height="100">
-
-!data.png|width=100px,height=100px!
-
 
 # Creating a Space
-
-
 Let's create a space called 'xapTutorialSpace' that is co-located within an application. This type of space is called embedded space.
 
 Here is an example how you start an embedded space:
@@ -106,9 +101,6 @@ public class User {
 }
 {%endhighlight%}
 
-{%info%}
-sdhfjhfdshfhds
-{%endinfo%}
 
 ##### The SpaceId
 The space generates a unique identifier (UID) for every object in one of the following ways:
@@ -188,8 +180,8 @@ Only properties with special roles like ID and Routing are part of the schema de
 # Interacting with the Space
 All space operations are relevant to both the POJO and Document.
 {%endcolumn%}
-{%column width=25% %}
-<img src="/attachment_files/POJO_operations.png" width="350" height="200">
+{%column width=35% %}
+<img src="/attachment_files/space_operations/POJO_operations.png" width="350" height="200">
 {%endcolumn%}
 {% endsection %}
 
