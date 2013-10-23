@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  Quick Start Guide Part I
-page_id: 61867014
+title:  XAP Tutorial Part I
+page_id: 61867355
 ---
 
- 
- 
 
 
+
+{%comment%}
  [< Previous|XAP Tutorial] * [Home|XAP Tutorial] * [Next >|Tutorial  Part II]
-
+{%endcomment%}
 
 
 
@@ -17,17 +17,19 @@ page_id: 61867014
 {%summary%}This tutorial will introduce you to the basic features of the GigaSpaces XAP platform.{%endsummary%}
 
 
-{%section width=80% %}
-{%column%}
- Overview
+
+{%section%}
+{%column width=70% %}
 In this part of the tutorial we will demonstrate how to create a space and how you can interact with it. We will also demonstrate how you can improve your space search performance by using indexes and returning partial results.
 {%endcolumn%}
-{%column width=18% %}
-!data.png|width=100px,height=100px!
+{%column width=20% %}
+hello there
 {%endcolumn%}
-{% endsection %}
+{%endsection%}
 
+<img src="/attachment_files/POJO_operations.png" width="100" height="100">
 
+!data.png|width=100px,height=100px!
 
 
 # Creating a Space
@@ -51,21 +53,21 @@ String url ="jini://*/*/xapTutorialSpace";
 
 You can configure the Space URL with several options.
 
-Learn more [![Learn more](/attachment_files/navigation/l-more.png)](./xap96/space-url.html)
-
-[Learn more](/xap96/space-url.html) ![](/attachment_files/navigation/l-more.png)
+{%learn%}/xap97/space-url.html{%endlearn%}
 
 
 When a client connects to a space, a proxy is created that holds a connection which implements the space API. All client interaction is performed through this proxy.
 
 
 With XAP you can also create a Local Cache and a Local View.
-* Local Cache : This client side cache maintains any object used by the application. The cache data is loaded on demand (lazily), based on the client application's read operations.
-* Local View  : This client side cache maintains a specific subset of the data. The subset is predefined by the user. The cache is populated when the client application is started.
+
+- Local Cache : This client side cache maintains any object used by the application. The cache data is loaded on demand (lazily), based on the client application's read operations.
+- Local View  : This client side cache maintains a specific subset of the data. The subset is predefined by the user. The cache is populated when the client application is started.
 In both cases, updates are performed (objects are added/updated/removed) on the master space, the master space then propagates the changes to all relevant local views and caches.
 
 These two scenarios are only applicable for remote clients.
-[Learn more](/xap96/client-side-caching.html) ![](/attachment_files/navigation/l-more.png)
+{%learn%}/xap97/client-side-caching.html{%endlearn%}
+
 
 
 
@@ -104,6 +106,10 @@ public class User {
 }
 {%endhighlight%}
 
+{%info%}
+sdhfjhfdshfhds
+{%endinfo%}
+
 ##### The SpaceId
 The space generates a unique identifier (UID) for every object in one of the following ways:
 
@@ -114,7 +120,7 @@ The space generates a unique identifier (UID) for every object in one of the fol
 ##### Compound SpaceId
 You might need to construct a space id that will be comprised from a user defined class rather than using a Numeric or String type field. In such a case your user defined class used as the SpaceId data type must implement the toString , hashCode and equals methods. The compound ID class must implement a toString method that return a unique String for each ID.
 
-[Learn more](/xap96/space-object-id.html) ![](/attachment_files/navigation/l-more.png)
+{%learn%}/xap97/space-object-id.html{%endlearn%}
 
 
 ##### Defining Routing
@@ -124,12 +130,12 @@ Partitioning is used when the total number of objects is too big to be stored in
 
 {%info%}The routing attribute can be explicitly set using the @SpaceRouting annotation for POJO entries or via the SpaceTypeDescriptorBuilder for document entries. If the routing attribute is not explicitly set, the space id attribute is used for routing. If the space id attribute is not defined, the first indexed attribute (alphabetically) is used for routing, otherwise the first attribute (alphabetically) is used for routing.{%endinfo%}
 
-[Learn more](/xap96/data-partitioning.html) ![](/attachment_files/navigation/l-more.png)
+{%learn%}/xap97/data-partitioning.html{%endlearn%}
 
 
 
 
-# Space Document
+##### Space Document
 
 The GigaSpaces document API exposes the space as Document Store. A document, which is represented by the class SpaceDocument, is essentially a collection of key-value pairs, where the keys are strings and the values are primitives, String, Date, other documents, or collections thereof. Unlike POJOs, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic, users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the class SpaceTypeDescriptor.
 
@@ -173,17 +179,17 @@ Only properties with special roles like ID and Routing are part of the schema de
 
 {%info%}It is possible to write a POJO to the space and read it back as a document, and vice versa. This scenario is useful when you want to read or modify POJO objects without loading the concrete java classes.{%endinfo%}
 
-[Learn more](/xap96/document-pojo-interoperability.html) ![](/attachment_files/navigation/l-more.png)
+{%learn%}/xap97/document-pojo-interoperability.html{%endlearn%}
 
 
 
 {%section%}
-{%column width=70% %}
+{%column width=60% %}
 # Interacting with the Space
 All space operations are relevant to both the POJO and Document.
 {%endcolumn%}
 {%column width=25% %}
-![](/attachment_files/POJO_operations.png)
+<img src="/attachment_files/POJO_operations.png" width="350" height="200">
 {%endcolumn%}
 {% endsection %}
 
@@ -191,9 +197,7 @@ All space operations are relevant to both the POJO and Document.
 
 When writing an object to the space, the object is created in space if it does not exist. If it already exists in space it will be updated. This is the default behavior of the write operation.
 
-{%gallery%}
-[![IMG101.jpg](/attachment_files/POJO_operations.png)](/attachment_files/POJO_operations.png)
-{%endgallery%}
+
 
 {%highlight java%}
 public void writeUser() {
@@ -242,7 +246,8 @@ public void writeOnlyWithLease() {
 
 In this example, we are writing an object to the space with zero delay, 10 seconds to live and write only if the object does not already exist in the space. If the object already exists, an exception will be thrown.
 
-[Learn more](/xap96/the-gigaspace-interface.html) ![](/attachment_files/navigation/l-more.png)
+{%learn%}/xap97/the-gigaspace-interface.html{%endlearn%}
+
 
 
 
@@ -269,9 +274,8 @@ public void ChangeSet() {
 }
 {%endhighlight%}
 
-There are several other change operations available; {{increment}}, {{decrement}}, {{addToCollection}}, {{removeFromCollection}} etc.
-[Learn more](/xap96/change-api.html) ![](/attachment_files/navigation/l-more.png)
-
+There are several other change operations available; 'increment', 'decrement', 'addToCollection', 'removeFromCollection' etc.
+{%learn%}/xap97/change-api.html{%endlearn%}
 
 # Querying the Space
 
@@ -433,16 +437,16 @@ public SpaceDocument[] readProductsBySQL() {
 {linkinnew:Document API}Learn more  !GRA:Images3^l-more.png!{linkinnew}
 
 
-### Removing Objects from Space
+##### Removing Objects from Space
 To remove objects from a space you can use the take or the clear operation.
 
-#### Take operation
+##### Take operation
 The take operation returns an object and removes it from the space. XAP provides several options for the take operation:
 
-- Take by ID
-- Take by template
-- Take by SQLQuery
-- Take multiple
+* Take by ID
+* Take by template
+* Take by SQLQuery
+* Take multiple
 
 Here are some examples:
 {%highlight java%}
@@ -466,7 +470,7 @@ public User[] takeUsersBySQL() {
 
 
 
-#### Clear operation
+##### Clear operation
 The clear operation removes objects from a space without returning them.
 Here are some examples:
 {%highlight java%}
@@ -558,11 +562,12 @@ SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Dow' AND cred
 {%endhighlight%}
 
 There are several additional indexing options available. For example you can index nested attributes, Nested Maps, Collections, nested attributes within a Collection, free text search and others.
-{linkinnew:Indexing}Learn more  !GRA:Images3^l-more.png!{linkinnew}
+{%learn%}/xap97/indexing.html{%endlearn%}
 
 # Other Data Access API's
 XAP provides a JDBC Driver, JPA API, MAP and Memcached API's.
-{linkinnew:Other Data Access APIs}Learn more  !GRA:Images3^l-more.png!{linkinnew}
+{%learn%}/xap97/other-data-access-apis.html{%endlearn%}
+
 
 
 # Spring Integration
@@ -570,15 +575,15 @@ All XAP components can be wired and configured with the application using corres
 
 The GigaSpaces Spring Integration supports:
 
-- Spring Automatic Transaction Demarcation
-- Spring Data
-- Spring JMS
-- Spring JPA
-- Spring Hibernate
-- Spring Remoting
-- String Batch
-- Spring Security
-- Mule
+* Spring Automatic Transaction Demarcation
+* Spring Data
+* Spring JMS
+* Spring JPA
+* Spring Hibernate
+* Spring Remoting
+* String Batch
+* Spring Security
+* Mule
 
 Lets look at a Spring configuration file that represents the creation of an embedded space:
 
@@ -628,10 +633,10 @@ public void findSpace()  {
 
 
 # What's Next
+
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part II|Tutorial  Part II] of this tutorial will show how you can create an In Memory Data Grid (IMDG) and how you can interact with it.
 
 
 #
 {align:center}[< Previous|XAP Tutorial] * [Home|XAP Tutorial] * [Next >|Tutorial  Part II]{align}
 
- 
