@@ -1,4 +1,3 @@
-require 'kramdown'
 module Jekyll
   module Tags
     class NextTag < Liquid::Block
@@ -13,8 +12,6 @@ module Jekyll
 
          ur  = markups.select {|x| x =~ /ur/}[0]
          text = markups.select {|x| x =~ /text/}[0]
-         puts "URL::::::"
-         puts ur
          @ur  = ur.sub("ur=", "") if ur
          @text = text.sub("text=", "") if text
          end
@@ -29,12 +26,6 @@ module Jekyll
         output << @ur
         output << ")"
         output << @text
-
-
-
-        puts output
-
-        return output
       end
     end
   end
