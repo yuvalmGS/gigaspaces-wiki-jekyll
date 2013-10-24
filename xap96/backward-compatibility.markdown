@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Backward Compatibility
 page_id: 61867265
 ---

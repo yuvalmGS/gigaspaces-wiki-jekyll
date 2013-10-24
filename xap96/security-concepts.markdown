@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Security Concepts
 page_id: 61867195
 ---

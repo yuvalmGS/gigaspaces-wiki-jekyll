@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Extending Space Documents
 page_id: 61867407
 ---
@@ -35,7 +35,7 @@ public class ProductDocument extends SpaceDocument {
     public ProductDocument() {
         super(TYPE_NAME);
     }
-    
+
     public String getCatalogNumber() {
         return super.getProperty(PROPERTY_CATALOG_NUMBER);
     }
@@ -51,7 +51,7 @@ public class ProductDocument extends SpaceDocument {
         super.setProperty(PROPERTY_NAME, name);
         return this;
     }
-    
+
     public float getPrice() {
         return super.getProperty(PROPERTY_PRICE);
     }
@@ -70,7 +70,7 @@ To overcome that, we need to include the document wrapper class in the type intr
 {% highlight java %}
 public void registerProductType(GigaSpace gigaspace) {
     // Create type descriptor:
-    SpaceTypeDescriptor typeDescriptor = 
+    SpaceTypeDescriptor typeDescriptor =
         new SpaceTypeDescriptorBuilder("Product")
         // ... Other type settings
         .documentWrapperClass(ProductDocument.class)
@@ -95,7 +95,7 @@ public void example(GigaSpace gigaSpace) {
         .setPrice(9.99f);
     // Write a product document:
     gigaSpace.write(product);
-    
+
     // Read product document using a template:
     ProductDocument template = new ProductDocument()
         .setName("Anvil");

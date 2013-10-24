@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Controlling Serialization (Deprecated)
 page_id: 61867444
 ---

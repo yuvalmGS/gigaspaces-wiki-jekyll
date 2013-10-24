@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Event Exception Handler
 page_id: 61867274
 ---

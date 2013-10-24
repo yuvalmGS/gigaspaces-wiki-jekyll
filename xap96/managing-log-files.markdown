@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Managing Log Files
 page_id: 61867061
 ---
@@ -12,7 +12,7 @@ The log file names, location and format are all properties of the Java log `Hand
 
 # Rolling Over to a New File
 
-The rollover mechanism is based on two policies, whichever policy is triggered first: 
+The rollover mechanism is based on two policies, whichever policy is triggered first:
 
 - File size rolling policy (default 2MB)
 - Time based rolling policy (default is daily)
@@ -33,7 +33,7 @@ The file name pattern can be configured to include a placeholder for properties 
 com.gigaspaces.logger.RollingFileHandler.filename-pattern = {homedir}/logs/{date,yyyy-MM-dd~HH.mm}-gigaspaces-{service}-{host}-{pid}.log
 {% endhighlight %}
 
-To determine the place holder's value, we first look for an overriding system property. If no override was specified, and the property is one of the predefined properties (i.e. homedir, host, pid, date), its value is evaluated by the handler implementation. If the place holder is of a custom property, and no value is defined, the property is left as is. If any error occurs, it is reported and the property is replaced by an empty string. Example override by system property: 
+To determine the place holder's value, we first look for an overriding system property. If no override was specified, and the property is one of the predefined properties (i.e. homedir, host, pid, date), its value is evaluated by the handler implementation. If the place holder is of a custom property, and no value is defined, the property is left as is. If any error occurs, it is reported and the property is replaced by an empty string. Example override by system property:
 
 {% highlight java %}
 -Dcom.gigaspaces.logger.RollingFileHandler.filename-pattern.date=yyyy-MM-dd
@@ -84,7 +84,7 @@ com.gigaspaces.logger.RollingFileHandler.filename-pattern = ../{mycustom}/mylog.
 
 # `append` Property
 
-The append property specifies if output should be appended to an existing file. Default is set to false. Thus, if a file already exists by this name, a unique incrementing index to resolve the conflict will be concatenated. It will be added at the end of the filename replacing ".log" with "__\{unique\}.log" or at the end of the filename if the pattern doesn't end with ".log". 
+The append property specifies if output should be appended to an existing file. Default is set to false. Thus, if a file already exists by this name, a unique incrementing index to resolve the conflict will be concatenated. It will be added at the end of the filename replacing ".log" with "__\{unique\}.log" or at the end of the filename if the pattern doesn't end with ".log".
 
 {% highlight java %}
 com.gigaspaces.logger.RollingFileHandler.append = false
@@ -100,7 +100,7 @@ com.gigaspaces.logger.RollingFileHandler.size-rolling-policy = 2000000
 
 # `time-rolling-policy` Property
 
-The time based rolling policy can be configured to roll the file based on a certain recurring schedule. The time policy can be set to one of the following values: daily, weekly, monthly or yearly. If the property is omitted, then the default pattern of "daily" is assumed; meaning a daily rollover (at midnight). For example, if "monthly" is configured, the file will rollover at the beginning of each month. 
+The time based rolling policy can be configured to roll the file based on a certain recurring schedule. The time policy can be set to one of the following values: daily, weekly, monthly or yearly. If the property is omitted, then the default pattern of "daily" is assumed; meaning a daily rollover (at midnight). For example, if "monthly" is configured, the file will rollover at the beginning of each month.
 
 {% highlight java %}
 com.gigaspaces.logger.RollingFileHandler.time-rolling-policy = daily
@@ -111,16 +111,16 @@ com.gigaspaces.logger.RollingFileHandler.time-rolling-policy = daily
 A backup-policy can be configured to backup files. By default a **NullBackupPolicy** is configured, which does nothing. It can be replaced by a **DeleteBackupPolicy** to keep a backup of files for a specified period. The **BackupPolicy** interface allows custom implementations to be plugged-in.
 
 {% highlight java %}
-com.gigaspaces.logger.RollingFileHandler.backup-policy = com.gigaspaces.logger.DeleteBackupPolicy 
-com.gigaspaces.logger.DeleteBackupPolicy.period = 30 
-com.gigaspaces.logger.DeleteBackupPolicy.backup = 10 
+com.gigaspaces.logger.RollingFileHandler.backup-policy = com.gigaspaces.logger.DeleteBackupPolicy
+com.gigaspaces.logger.DeleteBackupPolicy.period = 30
+com.gigaspaces.logger.DeleteBackupPolicy.backup = 10
 {% endhighlight %}
 
 For more information see [Backing-up Files With a Custom Policy](/xap96/backing-up-files-with-a-custom-policy.html)
 
 # `debug-level` Property
 
-The debug level (configured to one of logging Levels) is the level in which debug messages are displayed to the "standard" output stream. By default the level is configured to "CONFIG" which displays the log file name. 
+The debug level (configured to one of logging Levels) is the level in which debug messages are displayed to the "standard" output stream. By default the level is configured to "CONFIG" which displays the log file name.
 
 "_Log file: /export/users/gs/gigaspaces-xap/logs/2010-08-04~12.29-gigaspaces-cli-lab1-4422.log_"
 
@@ -132,7 +132,7 @@ This can also be overridden by a system property.
 
 # System property overrides
 
-Any of the logger properties can be configured by a system property override, specified as follows: 
+Any of the logger properties can be configured by a system property override, specified as follows:
 `-Dcom.gigaspaces.logger.RollingFileHandler.\[property-name\]=\[property-value\]`
 
 For example:

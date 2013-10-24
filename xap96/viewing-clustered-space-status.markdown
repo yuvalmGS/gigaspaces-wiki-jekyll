@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Viewing Clustered Space Status
 page_id: 61867071
 ---

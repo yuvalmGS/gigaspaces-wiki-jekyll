@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Large Scale Deployment
 page_id: 61867115
 ---

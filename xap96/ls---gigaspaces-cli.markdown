@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  ls - GigaSpaces CLI
 page_id: 61867347
 ---

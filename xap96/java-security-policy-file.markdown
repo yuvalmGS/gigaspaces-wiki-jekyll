@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Java Security Policy File
 page_id: 61867069
 ---

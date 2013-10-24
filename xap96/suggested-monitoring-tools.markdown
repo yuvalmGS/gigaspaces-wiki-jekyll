@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Suggested Monitoring Tools
 page_id: 61867250
 ---

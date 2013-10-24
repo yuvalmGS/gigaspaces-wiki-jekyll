@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  GigaSpaces Management Center (UI) Security
 page_id: 61867156
 ---

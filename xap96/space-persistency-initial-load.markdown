@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Space Persistency Initial Load
 page_id: 61867145
 ---
@@ -9,7 +9,7 @@ page_id: 61867145
 
 # Overview
 
-The GigaSpaces Data-Grid includes special interceptor that allow users to pre-load the Data-Grid with data before it is available for clients access. This interceptor called **Initial Load** and has a default implementation that is using the [Hibernate Space Persistency](/xap96/hibernate-space-persistency.html) implementation to load data from a database directly into the Data-Grid instances. 
+The GigaSpaces Data-Grid includes special interceptor that allow users to pre-load the Data-Grid with data before it is available for clients access. This interceptor called **Initial Load** and has a default implementation that is using the [Hibernate Space Persistency](/xap96/hibernate-space-persistency.html) implementation to load data from a database directly into the Data-Grid instances.
 
 To enable the initial load activity a `SpaceDataSource` should be specified.
 We distinguish between two modes of operation - if `SpaceSynchronizationEndpoint` is specified the mode is 'read-write', otherwise 'read-only'.
@@ -42,7 +42,7 @@ You can load 1TB data into a Data-Grid in less than 30 min by having each partit
 
 # Parallel Load
 
-By default each Data-Grid primary partition loading its relevant data from the database (parallel load) and from there replicated to the backup instances. 
+By default each Data-Grid primary partition loading its relevant data from the database (parallel load) and from there replicated to the backup instances.
 ![eds_initial_load.jpg](/attachment_files/eds_initial_load.jpg)
 
 All irrelevant objects are filtered out during the data load process. You may optimize this activity by instructing each Data-Grid primary instance to a load-specific data set from the database via a custom query you may construct during the initial load phase.

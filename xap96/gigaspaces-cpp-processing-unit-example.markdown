@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  GigaSpaces CPP Processing Unit Example
 page_id: 61867212
 ---

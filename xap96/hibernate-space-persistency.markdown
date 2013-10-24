@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Hibernate Space Persistency
 page_id: 61867339
 ---

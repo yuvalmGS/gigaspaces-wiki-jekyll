@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Document-POJO Interoperability
 page_id: 61867215
 ---

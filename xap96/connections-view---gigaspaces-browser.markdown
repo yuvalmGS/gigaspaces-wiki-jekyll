@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Connections View - GigaSpaces Browser
 page_id: 61867368
 ---
@@ -8,7 +8,7 @@ page_id: 61867368
 
 # Overview
 
-The Connections view exposes information regarding all connected and disconnected space proxies. 
+The Connections view exposes information regarding all connected and disconnected space proxies.
 
 {% lampon %} It is also possible to retrieve space connections using the **[space connections](/xap96/space-connections---gigaspaces-cli.html)** command
 

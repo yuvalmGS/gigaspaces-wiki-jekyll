@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Securing your Data
 page_id: 61867079
 ---

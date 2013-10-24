@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  XAP CPP
 page_id: 61867227
 ---

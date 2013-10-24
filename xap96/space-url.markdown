@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Space URL
 page_id: 61867144
 ---

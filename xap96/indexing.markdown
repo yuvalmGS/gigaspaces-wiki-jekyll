@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Indexing
 page_id: 61867200
 ---

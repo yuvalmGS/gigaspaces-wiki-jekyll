@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  The Grid Service Manager
 page_id: 61867037
 ---

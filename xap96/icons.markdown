@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Icons
 page_id: 61867188
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  REST API
 page_id: 61867008
 ---
@@ -34,8 +34,8 @@ POST is mapped to a WriteOnly action. An exception will be thrown when trying to
 - writeMultiple
 
 {% highlight java %}
-curl -XPOST -d '[{"id":"1", "data":"testdata", "data2":"common", "nestedData" : {"nestedKey1":"nestedValue1"`, 
-{"id":"2", "data":"testdata2", "data2":"common", "nestedData" : {"nestedKey2":"nestedValue2"`, 
+curl -XPOST -d '[{"id":"1", "data":"testdata", "data2":"common", "nestedData" : {"nestedKey1":"nestedValue1"`,
+{"id":"2", "data":"testdata2", "data2":"common", "nestedData" : {"nestedKey2":"nestedValue2"`,
 {"id":"3", "data":"testdata3", "data2":"common", "nestedData" : {"nestedKey3":"nestedValue3"`]' http://localhost:8080/WebApp/rest/data/Item
 {% endhighlight %}
 
@@ -43,7 +43,7 @@ curl -XPOST -d '[{"id":"1", "data":"testdata", "data2":"common", "nestedData" : 
 
 {% highlight java %}
 [http://localhost:8080/WebApp/rest/data/Item/_criteria?q=data2='common]'
-[http://localhost:8080/WebApp/rest/data/Item/_criteria?q=id=%271%27%20or%20id=%272%27%20or%20id=%273%27] 
+[http://localhost:8080/WebApp/rest/data/Item/_criteria?q=id=%271%27%20or%20id=%272%27%20or%20id=%273%27]
 {% endhighlight %}
 
 The url is encoded, the query is "id='1' or id='2' or id='3'".
@@ -59,12 +59,12 @@ The url is encoded, the query is "id='1' or id='2' or id='3'".
 - updateMultiple
 
 {% highlight java %}
-curl -XPUT -d '[{"id":"1", "data":"testdata", "data2":"commonUpdated", "nestedData" : {"nestedKey1":"nestedValue1"`, 
-{"id":"2", "data":"testdata2", "data2":"commonUpdated", "nestedData" : {"nestedKey2":"nestedValue2"`, 
+curl -XPUT -d '[{"id":"1", "data":"testdata", "data2":"commonUpdated", "nestedData" : {"nestedKey1":"nestedValue1"`,
+{"id":"2", "data":"testdata2", "data2":"commonUpdated", "nestedData" : {"nestedKey2":"nestedValue2"`,
 {"id":"3", "data":"testdata3", "data2":"commonUpdated", "nestedData" : {"nestedKey3":"nestedValue3"`]' http://localhost:8080/WebApp/rest/data/Item
 {% endhighlight %}
 
-See that data2 field is updated: 
+See that data2 field is updated:
 
 {% highlight java %}
 [http://localhost:8080/WebApp/rest/data/Item/_criteria?q=data2='commonUpdated']
@@ -73,7 +73,7 @@ See that data2 field is updated:
 Single nested update:
 
 {% highlight java %}
-curl -XPUT -d '{"id":"1", "data":"testdata", "data2":"commonUpdated", "nestedData" : 
+curl -XPUT -d '{"id":"1", "data":"testdata", "data2":"commonUpdated", "nestedData" :
 {"nestedKey1":"nestedValue1Updated"`' http://localhost:8080/WebApp/rest/data/Item
 {% endhighlight %}
 
@@ -89,7 +89,7 @@ http://localhost:8080/WebApp/rest/data/Item/1
 curl -XDELETE http://localhost:8080/WebApp/rest/data/Item/_criteria?q=id=%271%27%20or%20id=%272%27
 {% endhighlight %}
 
-See that only Item3 remains: 
+See that only Item3 remains:
 
 {% highlight java %}
 [http://localhost:8080/WebApp/rest/data/Item/_criteria?q=id=%271%27%20or%20id=%272%27%20or%20id=%273%27]
@@ -101,7 +101,7 @@ See that only Item3 remains:
 curl -XDELETE "http://localhost:8080/WebApp/rest/data/Item/3"
 {% endhighlight %}
 
-See that Item3 does not exists: 
+See that Item3 does not exists:
 
 {% highlight java %}
 [http://localhost:8080/WebApp/rest/data/Item/_criteria?q=id=%271%27%20or%20id=%272%27%20or%20id=%273%27]
@@ -109,7 +109,7 @@ See that Item3 does not exists:
 
 # Setup Instructions
 
-1.Download the project from the [github repository](https://github.com/OpenSpaces/RESTData) 
+1.Download the project from the [github repository](https://github.com/OpenSpaces/RESTData)
 2.Edit "/RESTData/src/main/webapp/WEB-INF/config.properties"? to include your space url, for example: `spaceUrl=jini://\*/\*/testSpace?groups=restdata`
 3.Package the project using maven: "mvn package". This will run the unit tests and package the project to a war file located at /target/RESTData.war
-4.[Deploy](/xap96/deploy---gigaspaces-cli.html) the war file. 
+4.[Deploy](/xap96/deploy---gigaspaces-cli.html) the war file.

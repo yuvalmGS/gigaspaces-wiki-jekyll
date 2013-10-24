@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  JDBC Driver
 page_id: 61867309
 ---

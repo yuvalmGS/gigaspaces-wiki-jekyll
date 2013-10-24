@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Troubleshooting Common User Issues
 page_id: 61867223
 ---

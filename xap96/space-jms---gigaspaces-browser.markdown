@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Space JMS - GigaSpaces Browser
 page_id: 61867387
 ---

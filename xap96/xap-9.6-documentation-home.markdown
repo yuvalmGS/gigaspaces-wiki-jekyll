@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  XAP 9.6 Documentation Home
 page_id: 61867286
 ---

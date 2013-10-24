@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Step 1 - Deploying Your Web Application to the GigaSpaces Environment
 page_id: 61867166
 ---

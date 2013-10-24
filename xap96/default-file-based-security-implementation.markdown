@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Default File-Based Security Implementation
 page_id: 61867096
 ---

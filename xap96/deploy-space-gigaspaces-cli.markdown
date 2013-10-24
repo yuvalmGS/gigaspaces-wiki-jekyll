@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  deploy-space GigaSpaces CLI
 page_id: 61867333
 ---

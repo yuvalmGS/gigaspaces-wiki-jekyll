@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Testing System Environment
 page_id: 61867092
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  FIFO Grouping
 page_id: 61867128
 ---

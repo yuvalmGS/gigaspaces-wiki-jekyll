@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Load-Balancing Group - GigaSpaces Browser
 page_id: 61867436
 ---
@@ -13,6 +13,6 @@ If a group defines a load-balancing policy, it is called a load-balancing group 
 If a space belongs to a failover group and a load-balancing group, it must be the same group. If there is a space failure in the group, load-balancing will continue among the space members in the group (as long as there is at least one live space in the group) according to the load-balancing policy.
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](/xap96/elastic-processing-unit.html) section. 
+For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](/xap96/elastic-processing-unit.html) section.
 {% endtip %}
 

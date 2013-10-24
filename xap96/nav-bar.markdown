@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Nav Bar
 page_id: 61867323
 ---

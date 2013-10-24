@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Web Processing Unit Container
 page_id: 61867154
 ---

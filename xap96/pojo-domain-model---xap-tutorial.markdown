@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  POJO Domain Model - XAP Tutorial
 page_id: 61867090
 ---

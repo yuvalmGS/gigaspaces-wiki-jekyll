@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Multi-Site Replication Limitations
 page_id: 61867303
 ---

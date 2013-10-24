@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Memcached API
 page_id: 61867350
 ---
@@ -62,7 +62,7 @@ MemcachedClient c = builder.build();
 {% endhighlight %}
 
 {% warning %}
-Traditional memcached servers shard data by running multiple instances as unassociated peers. Clients connect to each of them, and manually determine which of the server instances data is sent to. 
+Traditional memcached servers shard data by running multiple instances as unassociated peers. Clients connect to each of them, and manually determine which of the server instances data is sent to.
 
 GigaSpaces' memcached service would run access points on each of the servers - memcached1 and memcached2, as shown above - but the servers share data, so you could get the same dataset by just connecting to only one of the server instances.
 {% endwarning %}
@@ -121,7 +121,7 @@ ProcessingUnit unit = admin.getGridServiceManagers()
 unit.waitFor(unit.getTotalNumberOfInstances());
 
 for (ProcessingUnitInstance instance : unit) {
-    System.out.println(instance.getClusterInfo().getUniqueName() + 
+    System.out.println(instance.getClusterInfo().getUniqueName() +
               ": Memcached started on port [" + instance.getMemcachedDetails().getPort() + "]");
 }
 
@@ -129,7 +129,7 @@ while (true) {
     Thread.sleep(3000);
     System.out.println("---------------------------------");
     for (ProcessingUnitInstance instance : unit) {
-        System.out.println(instance.getClusterInfo().getUniqueName() + 
+        System.out.println(instance.getClusterInfo().getUniqueName() +
              ": Gets [" + instance.getStatistics().getMemcached().getGetCmds() + "]");
     }
 }
@@ -143,7 +143,7 @@ The memcached deployment descriptor looks as follows, for deployment with a Giga
 <!--
     Spring property configurer which allows us to use system properties (such as user.name).
 -->
-<bean id="propertiesConfigurer" 
+<bean id="propertiesConfigurer"
       class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="properties">
         <props>
@@ -162,7 +162,7 @@ The memcached deployment descriptor looks as follows, for deployment with a Giga
 </os-core:space>
 
 <os-core:local-cache id="localCache" space="space">
-    
+
 </os-core:local-cache>
 
 <os-core:giga-space id="gigaSpace" space="localCache" />

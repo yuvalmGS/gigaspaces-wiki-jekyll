@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Locating Clustered Space Instances
 page_id: 61867229
 ---
@@ -26,7 +26,7 @@ For example, to find a proxy in cluster C using Jini multicast discovery, use th
     jini://*/*/*?clustername=C
 
 You may also define **multiple spaces URL using semi colon** {% color black %}separated{% endcolor %} URLs. The `SpaceFinder` tries to locate the space according to the order of the URLs. The first space proxy found is returned to the caller. For example:
-    
+
     rmi://host1/container1/space1;rmi://host2/container2/space2;rmi://host3/container3/space3
 
 {% lampon %} To use a unicast instead of or with multicast service discovery, refer to the [How do I Use/Set Unicast (Jini Locators) Discovery?](/xap96/lookup-service-configuration.html#How do I Use/Set Unicast (Jini Locators) Discovery?) section.

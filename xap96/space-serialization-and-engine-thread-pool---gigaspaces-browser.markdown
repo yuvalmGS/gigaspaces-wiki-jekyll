@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Space Serialization and Engine Thread Pool - GigaSpaces Browser
 page_id: 61867081
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Space Mode Context Loader
 page_id: 61867062
 ---

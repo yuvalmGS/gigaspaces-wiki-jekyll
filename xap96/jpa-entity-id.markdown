@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  JPA Entity Id
 page_id: 61867245
 ---

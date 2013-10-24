@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Viewing Cluster Policy Settings for Space - GigaSpaces Browser
 page_id: 61867168
 ---
@@ -12,12 +12,12 @@ When you select a space node in the Cluster Tree, the information panel shows co
 
 # Viewing Replication Settings
 
-To view the replication settings of a space, first select it by clicking its node in the tree or double-clicking it in the visual display area. In the information panel, click the **Replication** tab, then the internal tab **Settings**. The **Replication** tab can be clicked only if the space belongs to a replication group. 
+To view the replication settings of a space, first select it by clicking its node in the tree or double-clicking it in the visual display area. In the information panel, click the **Replication** tab, then the internal tab **Settings**. The **Replication** tab can be clicked only if the space belongs to a replication group.
 For more information on these settings, see [Replication Options](/xap96/replication-group---gigaspaces-browser.html).
 
 # Viewing Load-Balancing Settings
 
-To view the load-balancing settings of a space, first select it by clicking its node in the tree or double-clicking it in the visual display area. In the information panel, click the **Load Balancing** tab (the tab can be clicked only if the space belongs to a load-balancing group). 
+To view the load-balancing settings of a space, first select it by clicking its node in the tree or double-clicking it in the visual display area. In the information panel, click the **Load Balancing** tab (the tab can be clicked only if the space belongs to a load-balancing group).
 
 # Viewing Failover Settings
 

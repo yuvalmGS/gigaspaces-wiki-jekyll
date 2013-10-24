@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Product Architecture
 page_id: 61867135
 ---

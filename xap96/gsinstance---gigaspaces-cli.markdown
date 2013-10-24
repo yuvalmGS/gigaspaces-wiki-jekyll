@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  gsInstance - GigaSpaces CLI
 page_id: 61867002
 ---
@@ -16,7 +16,7 @@ By default, `gsInstance` does not start an embedded Mahalo (Jini Transaction Man
 
 You can enable this option in one of the following ways:
 
-- Setting the following option to `true` in your container schema: 
+- Setting the following option to `true` in your container schema:
 
 {% highlight xml %}
 <embedded-services>
@@ -27,7 +27,7 @@ You can enable this option in one of the following ways:
 </mahalo>
 {% endhighlight %}
 
-- Setting the following option in the `gsInstance` command line: 
+- Setting the following option in the `gsInstance` command line:
 
     -Dcom.gs.start-embedded-mahalo=true
 
@@ -36,12 +36,12 @@ You can enable this option in one of the following ways:
     com.j_spaces.core.container.embedded-services.mahalo.start-embedded-mahalo=true
 
 {% tip %}
-GigaSpaces supports space monitoring and management using JMX - The Java Management Extensions. For more details, refer to the [JMX Management](/xap96/space-jmx-management.html) section. 
+GigaSpaces supports space monitoring and management using JMX - The Java Management Extensions. For more details, refer to the [JMX Management](/xap96/space-jmx-management.html) section.
 {% endtip %}
 
 {% note %}
 When running `gsIntance`, the Jini Lookup Service runs implicitly. When having many Jini Lookup Services running across the network, the spaces and clients might be overloaded since they publish themselves into the Lookup Service, or are trying to get updates about newly registered services.
-A good practice is to have two Lookup Services running using the `startJiniLUS` command located in the `<GigaSpaces Root>\bin` directory, or the GSM command located in the `<GigaSpaces Root>\bin` folder. This ensures no single point of failure for the Lookup Service. 
+A good practice is to have two Lookup Services running using the `startJiniLUS` command located in the `<GigaSpaces Root>\bin` directory, or the GSM command located in the `<GigaSpaces Root>\bin` folder. This ensures no single point of failure for the Lookup Service.
 {% endnote %}
 
 # Syntax & Arguments
@@ -71,9 +71,9 @@ If you are using the third and/or second argument only, **you must use empty quo
 
     gsInstance "" "" "-DmyOwnSysProp=value -DmyOwnSysProp2=value"
 
-In the example above, only the third argument is used, so two pairs of empty quote signs are written before it. In this case, the default URL and classpath (defined in the `gsInstance` script) are used, and only the system properties are appended. 
+In the example above, only the third argument is used, so two pairs of empty quote signs are written before it. In this case, the default URL and classpath (defined in the `gsInstance` script) are used, and only the system properties are appended.
 
 {% tip %}
-The Java command in the `gsInstance` script starts the JVM that hosts the space. For more details, refer to the [Quick Start Guide - Using the Examples (GigaSpaces Environment) - The Server Side](Top_Bar_2.htm@qsg). 
+The Java command in the `gsInstance` script starts the JVM that hosts the space. For more details, refer to the [Quick Start Guide - Using the Examples (GigaSpaces Environment) - The Server Side](Top_Bar_2.htm@qsg).
 {% endtip %}
 

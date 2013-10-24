@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Setting Up your IDE to work with GigaSpaces
 page_id: 61867371
 ---
@@ -72,8 +72,8 @@ Download and install Eclipse zip
 ------------------------------------------------
 {% endcomment %}
 
-- **Install a Java IDE**: If you don't have an IDE installed, you can [download and unzip the Eclipse IDE for Java Developers](http://www.eclipse.org/downloads), or the [IntelliJ IDEA](http://www.jetbrains.com/idea/download/index.html) IDE (we recommend the Ultimate Edition because of its excellent Spring framework support). 
-If you're using Eclipse, it is also recommended to install the [Spring Tool Suite plugin for Eclipse](http://www.springsource.com/developer/sts). 
+- **Install a Java IDE**: If you don't have an IDE installed, you can [download and unzip the Eclipse IDE for Java Developers](http://www.eclipse.org/downloads), or the [IntelliJ IDEA](http://www.jetbrains.com/idea/download/index.html) IDE (we recommend the Ultimate Edition because of its excellent Spring framework support).
+If you're using Eclipse, it is also recommended to install the [Spring Tool Suite plugin for Eclipse](http://www.springsource.com/developer/sts).
 
 ### What's Next?
 

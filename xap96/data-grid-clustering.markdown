@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Data-Grid Clustering
 page_id: 61867428
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  XAP Overview
 page_id: 61867422
 ---

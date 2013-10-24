@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  JMS Messages in GigaSpaces
 page_id: 61867296
 ---

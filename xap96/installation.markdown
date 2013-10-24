@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Installation
 page_id: 61867435
 ---

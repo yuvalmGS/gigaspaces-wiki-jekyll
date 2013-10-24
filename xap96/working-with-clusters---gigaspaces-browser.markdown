@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Working with Clusters - GigaSpaces Browser
 page_id: 61867402
 ---

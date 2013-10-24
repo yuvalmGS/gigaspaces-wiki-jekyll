@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  PlatformInfo - GigaSpaces CLI
 page_id: 61867221
 ---

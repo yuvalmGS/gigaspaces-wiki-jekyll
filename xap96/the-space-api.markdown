@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  The Space API
 page_id: 61867344
 ---

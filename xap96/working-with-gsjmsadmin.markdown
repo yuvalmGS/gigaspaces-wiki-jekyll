@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Working with GSJMSAdmin
 page_id: 61867338
 ---

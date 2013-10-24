@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Query User Defined Classes
 page_id: 63078969
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Replication Parameters
 page_id: 61867095
 ---

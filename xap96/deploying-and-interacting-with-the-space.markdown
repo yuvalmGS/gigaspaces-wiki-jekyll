@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Deploying and Interacting with the Space
 page_id: 61867331
 ---

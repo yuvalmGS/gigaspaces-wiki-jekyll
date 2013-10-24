@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Template Matching
 page_id: 61867374
 ---

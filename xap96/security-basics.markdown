@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Security Basics
 page_id: 61867131
 ---

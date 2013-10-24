@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Elastic Application Platform Home
 page_id: 61867365
 ---

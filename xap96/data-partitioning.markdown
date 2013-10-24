@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Data-Partitioning
 page_id: 61867242
 ---

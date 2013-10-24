@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Polling Container
 page_id: 61867136
 ---

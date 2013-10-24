@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Viewing Space Interrelations in Cluster - GigaSpaces Browser
 page_id: 61867129
 ---

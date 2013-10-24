@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  GigaSpaces Read Modifiers
 page_id: 61867097
 ---

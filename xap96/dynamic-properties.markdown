@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Dynamic Properties
 page_id: 61867452
 ---
@@ -77,11 +77,11 @@ public class Person {
     public DocumentProperties getExtraInfo() {return extraInfo;}
     public void setExtraInfo(DocumentProperties extraInfo) {this.extraInfo=extraInfo;}
 
-    @SpaceExclude 
+    @SpaceExclude
     public String getEmail() {return (String)extraInfo.getProperty("email")}
     public void setEmail(String email) {extraInfo.setProperty("email",email)}
 
-    @SpaceExclude 
+    @SpaceExclude
     public Integer getAge() {return (Integer.valueOf(extraInfo.getProperty("age")))}
     public void setAge(String age) {extraInfo.setProperty("age",age)}
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Paging Support with Space Iterator
 page_id: 61867380
 ---

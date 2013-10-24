@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Your First JPA Application
 page_id: 61867253
 ---

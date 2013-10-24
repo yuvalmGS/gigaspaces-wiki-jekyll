@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Aggregators
 page_id: 63078663
 ---
@@ -61,7 +61,7 @@ public class MyData {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String getStr1() {
 		return str1;
 	}
@@ -97,25 +97,25 @@ import com.j_spaces.core.client.SQLQuery;
 public class SumAggregatorTask implements Task<Double>{
 	@TaskGigaSpace
 	GigaSpace space;
-	
+
 	String queryField ;
 	Integer minValue ;
 	Integer maxValue ;
 	String aggregatedField;
-	
-	public SumAggregatorTask(String queryField , Integer minValue , 
+
+	public SumAggregatorTask(String queryField , Integer minValue ,
 		Integer maxValue , String aggregatedField)
 	{
 		this.queryField = queryField ;
 		this.minValue = minValue ;
 		this.maxValue = maxValue ;
 		this.aggregatedField= aggregatedField;
-		
+
 	}
-	  public Double execute() throws Exception {		  
-		SQLQuery<SpaceDocument> query = new SQLQuery<SpaceDocument>(MyData.class.getName(), 
+	  public Double execute() throws Exception {
+		SQLQuery<SpaceDocument> query = new SQLQuery<SpaceDocument>(MyData.class.getName(),
 			queryField + " between ? and ?",QueryResultType.DOCUMENT);
-		
+
 		query.setProjections(aggregatedField);
 		query.setParameter(1, minValue);
 		query.setParameter(2, maxValue);

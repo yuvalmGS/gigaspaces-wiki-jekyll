@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Clustered vs Non-Clustered Proxies
 page_id: 64323585
 ---
@@ -9,14 +9,14 @@ page_id: 64323585
 
 # Introduction
 
-When deploying a Processing Unit(PU) configured with an embedded [Space](/xap96/the-space-component.html) with a clustered SLA or when running a remote clustered space, a clustered `GigaSpace` proxy is created. 
+When deploying a Processing Unit(PU) configured with an embedded [Space](/xap96/the-space-component.html) with a clustered SLA or when running a remote clustered space, a clustered `GigaSpace` proxy is created.
 
 A clustered proxy is a smart proxy that performs operations against the entire cluster when needed.
 
-- The `write` operation will be routed based on the routing field value to the relevant partition (using the routing field hashcode to calculate the the target partition). 
-- The `read` operation will do the same by routing the operation to the relevant partition. 
-- The `writeMultiple` will generate a entries bucket per partition for all entries that should be placed within the same partition and perform a parallel write to all relevant partition. 
-- The `readMultiple` and `clear` operations will access all cluster partitions in a map-reduce fashion in case the query/template routing value is not specified. 
+- The `write` operation will be routed based on the routing field value to the relevant partition (using the routing field hashcode to calculate the the target partition).
+- The `read` operation will do the same by routing the operation to the relevant partition.
+- The `writeMultiple` will generate a entries bucket per partition for all entries that should be placed within the same partition and perform a parallel write to all relevant partition.
+- The `readMultiple` and `clear` operations will access all cluster partitions in a map-reduce fashion in case the query/template routing value is not specified.
 - The `execute` operation will be routing the `Task` to the relevant partition based on the routing value.
 - The `execute` operation will be routing the `DistributedTask` to all partitions if no routing value been specified or to a specific partitions in case a routing value been specified.
 
@@ -24,7 +24,7 @@ Many times, especially when working with a PU that starts an embedded space, ope
 
 ![clustered-vs-non-clustered-proxy.jpg](/attachment_files/clustered-vs-non-clustered-proxy.jpg)
 
-The decision of working directly with a cluster member or against the whole cluster is done in the `GigaSpace` level. The `GigaSpacesFactoryBean` provides a clustered flag with the following logic as the default value: If the space is started in embedded mode (for example, `/./space`), the clustered flag is set to `false`. When the space is looked up in a remote protocol (i.e. `jini://*/*/space`, the clustered flag is set to `true`. 
+The decision of working directly with a cluster member or against the whole cluster is done in the `GigaSpace` level. The `GigaSpacesFactoryBean` provides a clustered flag with the following logic as the default value: If the space is started in embedded mode (for example, `/./space`), the clustered flag is set to `false`. When the space is looked up in a remote protocol (i.e. `jini://*/*/space`, the clustered flag is set to `true`.
 
 You can use the `clustered` property to control this behavior or use the API to use a non-clustered embedded proxy to create a clustered proxy. This allows the collocated business logic to access the entire cluster to perform cluster wide operations. Clustered and Non-Clustered proxies may be used with Collocated a [Task](/xap96/task-execution-over-the-space.html), [Service](/xap96/executor-based-remoting.html), [Notify Container](/xap96/notify-container.html) , [Polling Container](/xap96/polling-container.html) and any other Collocated business logic.
 
@@ -59,7 +59,7 @@ An example of a Remoting Service with a clustered and non-clustred proxy:
 @RemotingService
 public class MyService implements ClusterInfoAware, IMyService{
 	@GigaSpaceContext(name="gigaSpaceEmbedNonClustered")
-	GigaSpace gigaSpaceEmbedNonClustered;	
+	GigaSpace gigaSpaceEmbedNonClustered;
 	GigaSpace gigaSpaceClustered;
 	...
 }
@@ -72,7 +72,7 @@ Here is how the clustred proxy is constructed:
 public void postPrimary() {
 	gigaSpaceClustered=gigaSpaceEmbedNonClustered.getClustered();
 	...
-}	
+}
 {% endhighlight %}
 
 An example of a `DistributedTask` implementation with a clustered and non-clustred proxy:
@@ -89,7 +89,7 @@ public class MyTask implements ClusterInfoAware , DistributedTask<Integer, Integ
 Here is how the clustred proxy is constructed:
 
 {% highlight java %}
-	
+
 public Integer execute() throws Exception {
 	gigaSpaceClustered=gigaSpaceEmbedNonClustered.getClustered();
 	...
@@ -102,7 +102,7 @@ A clustered proxy provide you access the entire cluster rather a specific partit
 
 # Performance Considerations of a Clustered Proxy
 
-With a remote client, serialization and network activity will impact the performance when writing/reading data. With a collocated non-clustered proxy  serialization and network activity will not happen when the client code interacts with the embedded space so these should not be considered, but they will be considered when the embedded space have a backup pair. Here the replication activity will be impacted by the serialization and network activity. Still, this would be a single network hop rather two when having a remote client.   
+With a remote client, serialization and network activity will impact the performance when writing/reading data. With a collocated non-clustered proxy  serialization and network activity will not happen when the client code interacts with the embedded space so these should not be considered, but they will be considered when the embedded space have a backup pair. Here the replication activity will be impacted by the serialization and network activity. Still, this would be a single network hop rather two when having a remote client.
 
 # Protective Mode Exception when using a Non-Clustered Proxy
 
@@ -110,7 +110,7 @@ To protect a user using a non-clustered proxy from writing or updates objects us
 
 The `com.gigaspaces.client.protective.ProtectiveModeException` is thrown when:
 
-- Writing a new object using a wrong routing field with a non-clustered proxy. 
+- Writing a new object using a wrong routing field with a non-clustered proxy.
 - Changing/Updating an existing object modifying its routing field to a different value which doesn't match the partition it resides in.
 
 The error message looks like this:
@@ -162,7 +162,7 @@ With this example the `pu.xml` includes the following:
 <os-remoting:service-exporter id="serviceExporter" />
 {% endhighlight %}
 
-Our Service using the [@PostPrimary](/xap96/the-space-component.html#Primary Backup Notifications) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](/xap96/obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID. 
+Our Service using the [@PostPrimary](/xap96/the-space-component.html#Primary Backup Notifications) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](/xap96/obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID.
 
 Here is how the service interface looks like:
 
@@ -190,7 +190,7 @@ public class MyService implements IMyService{
 
 	@GigaSpaceContext(name="gigaSpaceEmbedNonClustered")
 	GigaSpace gigaSpaceEmbedNonClustered;
-	GigaSpace gigaSpaceClustered;	
+	GigaSpace gigaSpaceClustered;
 	@ClusterInfoContext
 	ClusterInfo clusterInfo;
 
@@ -198,14 +198,14 @@ public class MyService implements IMyService{
 	public void postPrimary() {
 		String preMes = "From Service - partition " + clusterInfo.getInstanceId() ;
 		System.out.println(preMes+ " - Cluster info " + clusterInfo);
-		System.out.println(preMes + " writing object using embedded Non-Clustered proxy" ); 
+		System.out.println(preMes + " writing object using embedded Non-Clustered proxy" );
 		Data d = new Data();
 		// We write a single dummy object to the local partition. Since the ID is also the routing field we are OK.
 		d.setId(clusterInfo.getInstanceId()-1); // Partition id = InstanceId - 1
 		gigaSpaceEmbedNonClustered.write(d);
-		
+
 		System.out.println(preMes+ " Getting Remote Clustered proxy from the embedded Non-Clustered");
-		gigaSpaceClustered=gigaSpaceEmbedNonClustered.getClustered();		
+		gigaSpaceClustered=gigaSpaceEmbedNonClustered.getClustered();
 		System.out.println(preMes+ " - gigaSpaceEmbed -  total visible objects:" + gigaSpaceEmbedNonClustered.count(null));
 	}
 
@@ -213,10 +213,10 @@ public class MyService implements IMyService{
 	{
 		int countEmbed = gigaSpaceClustered.count(null);
 		int countRemote = gigaSpaceEmbedNonClustered.count(null);
-		
-		String mes = "Service call - routing " + routing + " partition " + 
+
+		String mes = "Service call - routing " + routing + " partition " +
 			clusterInfo.getInstanceId() + " gigaSpaceRemote - total visible objects:" + countEmbed;
-		mes = mes  + "\nService call - routing " + routing + " partition " + 
+		mes = mes  + "\nService call - routing " + routing + " partition " +
 			clusterInfo.getInstanceId() + " gigaSpaceEmbed - total visible objects:" + countRemote;
 		return mes;
 	}
@@ -228,7 +228,7 @@ The service is called using the following:
 {% highlight java %}
 GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
 IMyService service = new ExecutorRemotingProxyConfigurer<IMyService>
-	(space , IMyService.class).proxy(); 
+	(space , IMyService.class).proxy();
 String mes1 = service.myMethod(0);
 String mes2 = service.myMethod(1);
 System.out.println(mes1);
@@ -293,20 +293,20 @@ import com.gigaspaces.async.AsyncResult;
 
 public class MyTask implements ClusterInfoAware , DistributedTask<Integer, Integer>{
 	@TaskGigaSpace
-	transient GigaSpace gigaSpaceEmbedNonClustered;	
+	transient GigaSpace gigaSpaceEmbedNonClustered;
 	transient GigaSpace gigaSpaceClustered;
 	transient ClusterInfo clusterInfo;
 	int routing;
-	
+
 	public void setClusterInfo(ClusterInfo clusterInfo ) {
 		this.clusterInfo = clusterInfo;
 	}
-    
+
 	public Integer execute() throws Exception {
 		String preMes = "From Task Execute - partition " + clusterInfo.getInstanceId() ;
 		System.out.println(preMes+ " - Cluster info " + clusterInfo);
-		System.out.println(preMes + " writing object using embedded Non-Clustered proxy" ); 
-		Data d = new Data();		
+		System.out.println(preMes + " writing object using embedded Non-Clustered proxy" );
+		Data d = new Data();
 		// We write a single dummy object to the local partition. Since the ID is also the routing field we are OK.
 		d.setId(clusterInfo.getInstanceId()-1); // Partition id = InstanceId - 1
 		gigaSpaceEmbedNonClustered.write(d);
@@ -314,7 +314,7 @@ public class MyTask implements ClusterInfoAware , DistributedTask<Integer, Integ
 		gigaSpaceClustered= gigaSpaceEmbedNonClustered.getClustered();
 		System.out.println(preMes+ " - gigaSpaceEmbed -  total visible objects:" +
 			 gigaSpaceEmbedNonClustered.count(null));
-		System.out.println(preMes + " gigaSpaceRemote - total visible objects:" + 
+		System.out.println(preMes + " gigaSpaceRemote - total visible objects:" +
 			gigaSpaceClustered.count(null));
 		return null;
 	}
@@ -367,7 +367,7 @@ With this example the `pu.xml` includes the following:
 <context:component-scan base-package="com.test"/>
 {% endhighlight %}
 
-Our Event Container (notify container) using the [@PostPrimary](/xap96/the-space-component.html#Primary Backup Notifications) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](/xap96/obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID. 
+Our Event Container (notify container) using the [@PostPrimary](/xap96/the-space-component.html#Primary Backup Notifications) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](/xap96/obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID.
 
 Here is how the event container looks like:
 
@@ -390,25 +390,25 @@ public class MyNotifyContainer {
 	@GigaSpaceContext(name="gigaSpaceEmbedNonClustered")
 	GigaSpace gigaSpaceEmbedNonClustered;
 	GigaSpace gigaSpaceClustered;
-	
+
 	@ClusterInfoContext
 	ClusterInfo clusterInfo;
-	
+
 	@EventTemplate
 	Data unprocessedData() {
 	    Data template = new Data();
 	    return template;
 	}
-    
+
 	@SpaceDataEvent
 	public void eventListener(Data event) {
 	    //process Data here
 		String preMes = "From Notify Container - partition " + clusterInfo.getInstanceId() ;
 		System.out.println("Got event! " + event);
-		System.out.println(preMes + " Counting total space objects using a Clustered proxy" ); 
+		System.out.println(preMes + " Counting total space objects using a Clustered proxy" );
 		gigaSpaceEmbedNonClustered.count(null);
 	}
-	
+
 	@PostPrimary
 	public void postPrimary() {
 		String preMes = "From Notify Container - partition " + clusterInfo.getInstanceId() ;
@@ -464,21 +464,21 @@ public class LoadTask implements DistributedTask<Integer, Integer> ,ClusterInfoA
     }
     int maxObjects;
     int routing;
-    
+
     @TaskGigaSpace
     transient GigaSpace space;
-    
+
     transient ClusterInfo clusterInfo;
-    
+
     @Override
     public Integer execute() throws Exception {
-        int partitions = clusterInfo.getNumberOfInstances();                     
+        int partitions = clusterInfo.getNumberOfInstances();
         int partitionId = clusterInfo.getInstanceId();
-        
+
         int count = 0;
         for(int i=0;i<maxObjects;i++){
-            String id = "12345678901234567890123456789"+i;                                                
-            int targetPartition  = safeABS(id.hashCode()) % (partitions);                                                                               
+            String id = "12345678901234567890123456789"+i;
+            int targetPartition  = safeABS(id.hashCode()) % (partitions);
             if (targetPartition == (partitionId -1))
             {
                 count ++;
@@ -507,7 +507,7 @@ public class LoadTask implements DistributedTask<Integer, Integer> ,ClusterInfoA
     public void setMax(int maxObjects) {
     	this.maxObjects = maxObjects;
     }
-    
+
     @SpaceRouting
     public int getRouting() {
 		return routing;

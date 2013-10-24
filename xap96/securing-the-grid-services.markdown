@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Securing the Grid Services
 page_id: 61866996
 ---

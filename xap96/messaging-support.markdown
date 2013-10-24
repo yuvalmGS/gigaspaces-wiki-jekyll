@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Messaging Support
 page_id: 61867443
 ---

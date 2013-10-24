@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Supported Platforms
 page_id: 61867269
 ---

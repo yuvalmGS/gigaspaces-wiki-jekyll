@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  CPP API Mapping File
 page_id: 61867249
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Scripts
 page_id: 61867124
 ---

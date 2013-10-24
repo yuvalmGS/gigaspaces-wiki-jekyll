@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  quit - GigaSpaces CLI
 page_id: 61867414
 ---
@@ -15,7 +15,7 @@ page_id: 61867414
 The `quit` command ends the CLI session.
 
 {% tip %}
-A shortcut for this command is `q`. 
+A shortcut for this command is `q`.
 {% endtip %}
 
 # Options

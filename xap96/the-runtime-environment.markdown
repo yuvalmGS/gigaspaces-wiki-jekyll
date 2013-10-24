@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  The Runtime Environment
 page_id: 61867113
 ---

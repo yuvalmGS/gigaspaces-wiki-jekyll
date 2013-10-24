@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Interoperability
 page_id: 61867345
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  How to Configure Unicast Discovery
 page_id: 61867036
 ---

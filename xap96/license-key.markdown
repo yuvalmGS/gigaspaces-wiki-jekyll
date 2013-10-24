@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  License Key
 page_id: 61867202
 ---

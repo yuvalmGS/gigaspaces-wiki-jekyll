@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  XAP on VMWare
 page_id: 61867301
 ---
@@ -29,7 +29,7 @@ This section describes the details of GigaSpaces XAP 7.0.2 VMWare package. Pleas
 
 # Software information
 
-	
+
 
 - Java version: 1.6.0_17, 64-bit
 - Java path: /opt/jdk1.6.0_17

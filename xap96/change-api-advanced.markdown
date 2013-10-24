@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Change API Advanced
 page_id: 61867447
 ---
@@ -45,11 +45,11 @@ public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint
                 break;
               case ...
             }
-          } 
+          }
           break;
 
       ...
-      }            
+      }
     }
   }
   ..
@@ -97,7 +97,7 @@ public class MyReplicationFilter implements IReplicationFilter {
 
   @Override
   public void process(int direction, IReplicationFilterEntry replicationFilterEntry,
-                String remoteSpaceMemberName) {           
+                String remoteSpaceMemberName) {
      if (replicationFilterEntry.getOperationType() == ReplicationOperationType.CHANGE){
         DataSyncChangeSet changeSet = ChangeDataSyncOperation.getChangeSet(replicationFilterEntry);
         // ... do something in filter

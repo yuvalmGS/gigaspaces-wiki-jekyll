@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Mule Processing Unit
 page_id: 61867431
 ---

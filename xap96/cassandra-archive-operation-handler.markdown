@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Cassandra Archive Operation Handler
 page_id: 61867211
 ---

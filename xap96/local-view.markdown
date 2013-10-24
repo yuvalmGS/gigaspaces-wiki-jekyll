@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Local View
 page_id: 61867394
 ---

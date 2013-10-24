@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Migrating From External Data Source API
 page_id: 61867085
 ---
@@ -62,7 +62,7 @@ When using EDS API, `BulkDataPersister.executeBulk` might be invoked on two occa
 1. Batch execution.
 1. Transaction execution.
 
-On transaction execution, getting the transaction metadata was done using the `BulkDataPersisterContext.getCurrentContext` method. This is no longer needed because on transaction execution, the `SpaceSynchronizationEndpoint.onTransactionSynchronization` method is invoked and receives the transaction data as a parameter. 
+On transaction execution, getting the transaction metadata was done using the `BulkDataPersisterContext.getCurrentContext` method. This is no longer needed because on transaction execution, the `SpaceSynchronizationEndpoint.onTransactionSynchronization` method is invoked and receives the transaction data as a parameter.
 
 # Configuration Changes
 
@@ -85,7 +85,7 @@ The following example shows how to configure a space with a Hibernate `SpaceData
     <property name="sessionFactory" ref="sessionFactory"/>
     <property name="initialLoadChunkSize" value="2000"/>
 </bean>
-<os-core:space id="space" url="/./space" schema="persistent" 
+<os-core:space id="space" url="/./space" schema="persistent"
     mirror="true" space-data-source="hibernateSpaceDataSource">
     <os-core:properties>
         <props>

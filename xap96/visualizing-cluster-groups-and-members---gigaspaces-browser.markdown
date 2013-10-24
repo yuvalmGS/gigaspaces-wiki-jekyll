@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Visualizing Cluster Groups and Members - GigaSpaces Browser
 page_id: 61867191
 ---

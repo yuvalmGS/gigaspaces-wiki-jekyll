@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Data Types View - GigaSpaces Browser
 page_id: 61867453
 ---
@@ -20,7 +20,7 @@ Details are displayed for each Data Type -- i.e., attributes and their propertie
 
 The **Data Type List** is located at the top of the panel. It displays the Data Type stored in the space, and their current instance and template count (how many objects and how many templates currently exist in the space). Data Type meta data is introduced to the space after the first write operation of one of its instances or after calling the snapshot method.
 
-{% exclamation %} The **Data Type List* doesn't display any Data Types or objects for persistent spaces working when running in `LRU` mode. If you are working with such a space and want to turn on this option, from the top menu, select *View* > *Display Persistent LRU Space Metrics** (toggle option). 
+{% exclamation %} The **Data Type List* doesn't display any Data Types or objects for persistent spaces working when running in `LRU` mode. If you are working with such a space and want to turn on this option, from the top menu, select *View* > *Display Persistent LRU Space Metrics** (toggle option).
 
 The following buttons appear at the bottom of the **Data Type List** (right clicking a Data Type row also displays these options):
 
@@ -33,7 +33,7 @@ The following buttons appear at the bottom of the **Data Type List** (right clic
 The **Data Type Info** panel at the bottom of the panel displays the following:
 
 - Public Data Type attributes, their types and indexes
-- The name of the routing field 
+- The name of the routing field
 - List of super Data Types (inherited classes)
 - Indication whether the Data Type is FIFO enabled.
 - Indication whether the Data Type is partial-replication enabled

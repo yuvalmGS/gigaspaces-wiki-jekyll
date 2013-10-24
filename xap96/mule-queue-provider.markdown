@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Mule Queue Provider
 page_id: 61867390
 ---
@@ -59,7 +59,7 @@ The OpenSpaces queue inbound component is very simple once the queue connector i
         <inbound-router>
             <os-queue:inbound-endpoint path="test1"/>
         </inbound-router>
-        
+
         <!-- outbound transport ... -->
     </service>
 </model>
@@ -121,7 +121,7 @@ Here is an example of how to configure working with queues using the Distributed
     <os-core:distributed-tx-manager id="transactionManager" />
 
     <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-    
+
     <spring:bean id="transactionFactory"
                  class="org.mule.extras.spring.transaction.SpringTransactionFactory">
         <spring:property name="manager">

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Space Based Remoting
 page_id: 61867389
 ---
@@ -24,17 +24,17 @@ The OpenSpaces API supports two types of remoting, distinguished by the underlyi
 
 # Choosing the Correct Remoting Mechanism
 
-This section explains when you should choose to use each of the remoting implementations. Note that as far as the calling code is concerned, the choice between the implementations is transparent and requires only configuration changes. 
+This section explains when you should choose to use each of the remoting implementations. Note that as far as the calling code is concerned, the choice between the implementations is transparent and requires only configuration changes.
 
-In most cases, you should choose [Executor Based Remoting](/xap96/executor-based-remoting.html). It is based on the GigaSpaces [Task Executors](/xap96/task-execution-over-the-space.html) feature, which means that it executes the method invocation by submitting a special kind of task which executes on the space side by calling the invoked service. It allows for synchronous and asynchronous invocation, map/reduce style invocations and transparent invocation failover. 
+In most cases, you should choose [Executor Based Remoting](/xap96/executor-based-remoting.html). It is based on the GigaSpaces [Task Executors](/xap96/task-execution-over-the-space.html) feature, which means that it executes the method invocation by submitting a special kind of task which executes on the space side by calling the invoked service. It allows for synchronous and asynchronous invocation, map/reduce style invocations and transparent invocation failover.
 
-[Event Driven Remoting](/xap96/event-driven-remoting.html) supports most of the above capabilities, but does not support map/reduce style invocations. In terms of implementation, it's based on the [Polling Container](/xap96/polling-container.html) feature, which means that it writes an invocation entry to the space which is later consumed by a polling container. Once taking the invocation entry from the space, the polling container's event handler delegates the call to the space-side service. 
+[Event Driven Remoting](/xap96/event-driven-remoting.html) supports most of the above capabilities, but does not support map/reduce style invocations. In terms of implementation, it's based on the [Polling Container](/xap96/polling-container.html) feature, which means that it writes an invocation entry to the space which is later consumed by a polling container. Once taking the invocation entry from the space, the polling container's event handler delegates the call to the space-side service.
 
-The [Event Driven Remoting](/xap96/event-driven-remoting.html) implementation is slower than the [Executor Based Remoting](/xap96/executor-based-remoting.html) since it requires 4 space operations to complete a single remote call: write invocation entry by client --> take invocation entry by polling container --> write invocation result by polling container --> take invocation result by client. In contrast, [Executor Based Remoting](/xap96/executor-based-remoting.html) only requires a single `execute()` call. 
+The [Event Driven Remoting](/xap96/event-driven-remoting.html) implementation is slower than the [Executor Based Remoting](/xap96/executor-based-remoting.html) since it requires 4 space operations to complete a single remote call: write invocation entry by client --> take invocation entry by polling container --> write invocation result by polling container --> take invocation result by client. In contrast, [Executor Based Remoting](/xap96/executor-based-remoting.html) only requires a single `execute()` call.
 
-However, there are two main scenarios where you should prefer [Event Driven Remoting](/xap96/event-driven-remoting.html) on top of [Executor Based Remoting](/xap96/executor-based-remoting.html): 
+However, there are two main scenarios where you should prefer [Event Driven Remoting](/xap96/event-driven-remoting.html) on top of [Executor Based Remoting](/xap96/executor-based-remoting.html):
 
-- When you would like the actual service to not to be co-located with the space. With [Executor Based Remoting](/xap96/executor-based-remoting.html), the remote service implementation can only be located within the space's JVM(s). With [Event Driven Remoting](/xap96/event-driven-remoting.html), you can locate the client on a remote machine and use the classic **Master/Worker pattern** for processing the invocation. This offloads the processing from the space (at the expense of moving your service away from the data it might need to do the processing). 
+- When you would like the actual service to not to be co-located with the space. With [Executor Based Remoting](/xap96/executor-based-remoting.html), the remote service implementation can only be located within the space's JVM(s). With [Event Driven Remoting](/xap96/event-driven-remoting.html), you can locate the client on a remote machine and use the classic **Master/Worker pattern** for processing the invocation. This offloads the processing from the space (at the expense of moving your service away from the data it might need to do the processing).
 - When unexpected bursts of invocations are a probable scenario, using [Event Driven Remoting](/xap96/event-driven-remoting.html) may prove worthwhile, since invocations are not processed as they occur; they are "queued" in the space and are processed by the polling container when resources are available. By limiting the number of threads of the polling container you can make sure the invocations do not maximize the CPU of the space. (The [Alerts](/xap96/administrative-alerts.html) API can help monitor this situation.)
 
 {% children %}

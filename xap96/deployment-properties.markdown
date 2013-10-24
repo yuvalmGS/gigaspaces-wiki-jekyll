@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap96
 title:  Deployment Properties
 page_id: 61867122
 ---
