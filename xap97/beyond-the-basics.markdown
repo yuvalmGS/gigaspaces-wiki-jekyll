@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Beyond the Basics
 page_id: 61867351
 ---

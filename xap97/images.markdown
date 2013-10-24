@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Images
 page_id: 61867370
 ---

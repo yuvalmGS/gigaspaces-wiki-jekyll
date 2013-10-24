@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Services on Top of the Data Grid
 page_id: 61867099
 ---
@@ -16,7 +16,7 @@ GigaSpaces includes a set of built-in service components such as Task execution 
 
 This section explains when you should use each of the service components:
 
-## Task Execution 
+## Task Execution
 
 [Task Execution](./task-execution-over-the-space.html) provides a fine-grained API for performing ad-hoc parallel execution of user defined tasks. You should use this framework in the following scenarios:
 
@@ -40,7 +40,7 @@ See the [Task Execution over the Space](./task-execution-over-the-space.html) fo
 
 The Space's Messaging and Events support provides messaging handlers that simplify event driven programming. With this framework you select an event based on its content and designate a method that would be triggered as a result of that event, all through a simple and non-intrusive configuration. There are two main event handlers that are avaliable:
 
-### Notify Container 
+### Notify Container
 
 The [Notify Container ](./notify-container.html ) is the equivalent of a publish/subscribe messaging. Uses the space.notify() API as the underlying event delivery mechanism. With this method the listener doesn't hold a connection to the space. The event handler is triggered by the space as soon as matching event arrived. Notify will call ALL matched subscribers at the same time.
 
@@ -48,7 +48,7 @@ The [Notify Container ](./notify-container.html ) is the equivalent of a publish
 
 The [Polling Container ](./polling-container.html ) is the equivalent of a point to point communication. It uses the space.take() API as the underlying event delivery mechanism. Unlike the notify container the Polling container blocks contentiously on space connection until a matching event arrives. Polling containers ensures that one and only one listener will be triggered per event even if there are more then one listener that matches that event.
 
-You should use the notify container for one to many or many to many relationship and polling container for one to one or many to one relationship. 
+You should use the notify container for one to many or many to many relationship and polling container for one to one or many to one relationship.
 
 ### JMS
 
@@ -66,7 +66,7 @@ There are basically two flavors to this framework:
 
 The [Executor Based Remoting](./executor-based-remoting.html) used to deliver synchronous or asynchronous calls between the client and the server. In this mode the client invocation executes a task that invokes the relevant server method immediately when the call arrives to the server. The server must therefore be collocated with the space.
 
-The client thread can wait for the execution to complete synchronously or use `Future` to receive the result asynchronously. 
+The client thread can wait for the execution to complete synchronously or use `Future` to receive the result asynchronously.
 
 ##### Event Driven Remoting
 

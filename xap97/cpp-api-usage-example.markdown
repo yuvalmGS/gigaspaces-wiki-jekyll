@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  CPP API Usage Example
 page_id: 61867410
 ---

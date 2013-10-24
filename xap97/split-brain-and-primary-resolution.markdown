@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Split Brain and Primary Resolution
 page_id: 61867103
 ---
@@ -9,7 +9,7 @@ page_id: 61867103
 
 # Overview
 
-Split brain occurs when there are two or more primary instances running for the same partition. In most cases the reason for such behavior would be a network disruption that does not allow each space instance to communicate with all lookup services running. Usually you will have each space instance communicating with a different lookup service rather all of them (two in most cases).  
+Split brain occurs when there are two or more primary instances running for the same partition. In most cases the reason for such behavior would be a network disruption that does not allow each space instance to communicate with all lookup services running. Usually you will have each space instance communicating with a different lookup service rather all of them (two in most cases).
 
 During this split clients may communicate with each primary considering it as its master data copy updating the data within the space. If the active GSM also loosing connectivity with both lookup service it may provision a new backup.
 
@@ -21,7 +21,7 @@ The primary resolution may involves few steps. Each tries to calculate the most 
 Data resolution occurs between two different clusters using the WAN gateway as a replication channel. In this case a [conflict resolution](./multi-site-conflict-resolution.html) is executed.
 {% endtip %}
 
-# Primary Resolution 
+# Primary Resolution
 
 ## Resolution - Step One
 
@@ -55,6 +55,6 @@ Below are the most common causes for Split-Brain scenarios and ways to detect th
 In events of network or failures, the system might get into unexpected behavior, also called Islands, which are extreme and need special handling. Here are two islands scenarios you might encounter:
 
 - When a server running one of the GSMs that is managing some of the PUs is disconnected from the network, and later reconnects with the network. The GSM (that was still a primary) tried to redeploy the failed PUs. It depends which of the two GSMs is the primary at the point of disconnection. If the primary GSM is on the island with the GSCs, its backup GSM will become a primary until the network disconnection is resolved. When the network is repaired, the GSM will realize that the 'former' primary is still managing the services, and return to its backup state. But if it was the other way around - and the primary GSM lost connection with its PUs either due-to network disconnection or any other failure - it will behave as primary and try to redeploy as soon as a GSC is available. That will lead obviously into inconsistent mapping of services and an inconsistent system.
-- A more complex form of "islands" would be if on both islands GSCs are available, leading both GSMs to behave as primaries and deploy the failed PUs. Reconciling at this point will need to take data integrity into account. 
+- A more complex form of "islands" would be if on both islands GSCs are available, leading both GSMs to behave as primaries and deploy the failed PUs. Reconciling at this point will need to take data integrity into account.
 
 The solution for these scenarios would be to manually reconcile the cluster. Terminate the GSM, with only one remaining managing GSM, restart the GSCs hosting the backup space instances, and as a last step, start the second GSM (will be the backup GSM).

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  The In-Memory Data Grid
 page_id: 61867295
 ---

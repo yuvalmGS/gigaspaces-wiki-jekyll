@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  External Data Source API
 page_id: 61867238
 ---

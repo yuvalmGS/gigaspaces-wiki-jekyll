@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  gsa - GigaSpaces CLI
 page_id: 61867314
 ---
@@ -17,7 +17,7 @@ The following gsa CLI commands are available:
 {: .table .table-bordered}
 | Command | Description |
 |:--------|:------------|
-| shutdown | shutdown gsa | 
+| shutdown | shutdown gsa |
 | start-gsc | starts gsc agent within specific gsa service |
 | start-gsm | starts gsm agent within specific gsa service |
 | start-lookup | starts lus agent within specific gsa service |
@@ -41,7 +41,7 @@ The following prints a numbered list of GSA services, and you can choose a GSA s
     [3]  26850  Grid Service Agent  gigaspaces-8.0.0-XAPPremium...  pc-lab38@192.xxx.x.xx
     [4]  11752  Grid Service Agent  gigaspaces-8.0.0-XAPPremium...  Evgeny@192.xxx.xx.xxx
     [5]  1608   Grid Service Agent  gigaspaces-8.0.0-XAPPremium...  pc-lab42@192.xxx.x.xx
-    
+
     Enter a number of service to gsa start-gsc or "c" to cancel :
 
 Example fo gsa shutdown when specific host name provided:
@@ -50,6 +50,6 @@ Example fo gsa shutdown when specific host name provided:
     total 1
     [1]  10278  Grid Service Agent  gigaspaces-8.0.0-XAPPremium...  pc-lab43@192.xxx.x.xx
     [2]  all
-    
+
     Enter a comma-separated list to gsa shutdown or "c" to cancel :
 

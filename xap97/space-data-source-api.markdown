@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Space Data Source API
 page_id: 61867226
 ---

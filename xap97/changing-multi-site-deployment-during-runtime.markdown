@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Changing Multi-Site Deployment during Runtime
 page_id: 61867174
 ---

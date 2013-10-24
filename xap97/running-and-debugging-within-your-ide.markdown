@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Running and Debugging Within Your IDE
 page_id: 61867143
 ---

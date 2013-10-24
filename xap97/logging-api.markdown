@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Logging API
 page_id: 61867067
 ---
@@ -32,7 +32,7 @@ The above example uses the Admin API in order to get the GridServiceContainer we
 
 # On Log Entry, Log Entries, and Matchers
 
-At the base of the logging support is the `LogEntry` class. `LogEntry` represents an entry or a "row" in the results that are returned as part of the logging API call. 
+At the base of the logging support is the `LogEntry` class. `LogEntry` represents an entry or a "row" in the results that are returned as part of the logging API call.
 
 The `LogEntry` comes in two types, the first, is a `LOG` type. This type represents a single "log line" within the traversed log file(s) (A log line holder all the information in logger.log(...), including the exception). The `LogEntry` allows to access the actual text of the log line, and the timestamp of when it was taken.
 

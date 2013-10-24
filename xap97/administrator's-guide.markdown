@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Administrator's Guide
 page_id: 61867315
 ---

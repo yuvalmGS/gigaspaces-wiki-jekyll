@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  The Grid Service Agent
 page_id: 61867072
 ---

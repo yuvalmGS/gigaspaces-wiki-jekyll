@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Writing Objects to Space
 page_id: 63079280
 ---

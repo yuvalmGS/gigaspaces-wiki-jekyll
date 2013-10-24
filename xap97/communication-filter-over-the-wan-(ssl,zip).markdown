@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Communication Filter Over the Wan (SSL,ZIP)
 page_id: 61867318
 ---

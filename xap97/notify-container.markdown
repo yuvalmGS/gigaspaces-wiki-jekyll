@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Notify Container
 page_id: 61867310
 ---

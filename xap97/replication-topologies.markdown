@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Replication Topologies
 page_id: 61867405
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  The Processing Unit Structure and Configuration
 page_id: 61867075
 ---

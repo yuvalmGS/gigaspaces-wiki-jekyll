@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Authenticating against an LDAP repository
 page_id: 61867044
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Custom Authentication
 page_id: 63078672
 ---

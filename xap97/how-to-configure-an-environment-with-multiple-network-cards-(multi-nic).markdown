@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  How to Configure an Environment With Multiple Network-Cards (Multi-NIC)
 page_id: 61867346
 ---

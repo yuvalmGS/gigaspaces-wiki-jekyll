@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Administration and Monitoring API
 page_id: 61867291
 ---

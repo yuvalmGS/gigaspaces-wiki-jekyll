@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Custom Triggering of an Alert
 page_id: 61867032
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Handling Large Objects
 page_id: 61867369
 ---
@@ -30,7 +30,7 @@ Maximum number of concurrent connections X Maximum Object size
 
 {% highlight java %}
 public class SpaceFile {
-	
+
 	SpaceFile (){}
 	SpaceFile (String name , byte[] content)
 	{
@@ -39,12 +39,12 @@ public class SpaceFile {
 	}
 	String name;
 	byte[] content;
-	
+
 	@SpaceId
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -64,7 +64,7 @@ public static void main(String[] args) {
   temp
   test.pdf";
 	File myfile = new File(myfileName);
-	
+
 	//writing Space File to space
 	SpaceFile spaceFile = new SpaceFile(myfile.getName(),fileToBytes(myfileName));
 	gigaspace.write(spaceFile);

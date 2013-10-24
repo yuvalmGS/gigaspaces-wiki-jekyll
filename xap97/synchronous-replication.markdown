@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Synchronous Replication
 page_id: 61867015
 ---

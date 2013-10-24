@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  XAP on GoGrid
 page_id: 61867244
 ---

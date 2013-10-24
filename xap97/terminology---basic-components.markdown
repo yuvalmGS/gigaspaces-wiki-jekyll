@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Terminology - Basic Components
 page_id: 61867004
 ---

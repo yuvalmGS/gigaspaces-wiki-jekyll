@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  task - GigaSpaces CLI
 page_id: 61867312
 ---

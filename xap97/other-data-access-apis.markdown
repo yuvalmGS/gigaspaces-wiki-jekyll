@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Other Data Access APIs
 page_id: 61867294
 ---

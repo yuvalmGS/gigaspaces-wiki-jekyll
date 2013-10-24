@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Pending Notify Templates Information
 page_id: 61867086
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Nav Links
 page_id: 61867235
 ---

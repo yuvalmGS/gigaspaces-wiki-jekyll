@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Maven Plugin - Advanced
 page_id: 61867241
 ---

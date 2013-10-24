@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Dynamic Language Tasks
 page_id: 61867041
 ---

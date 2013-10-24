@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  How to Determine Whether Multicast is Available
 page_id: 61867240
 ---
@@ -21,7 +21,7 @@ It is still possible that multicast does not work outside the tested host.
 {% endtip %}
 
 {% tip %}
-Make sure your network and machines running GigaSpaces are configured to have multicast enabled. 
+Make sure your network and machines running GigaSpaces are configured to have multicast enabled.
 See the [How to Configure Multicast](./how-to-configure-multicast.html) section for details on how to enable multicast.
 {% endtip %}
 

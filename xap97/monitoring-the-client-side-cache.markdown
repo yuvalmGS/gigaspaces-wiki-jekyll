@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Monitoring the Client-Side Cache
 page_id: 61867228
 ---
@@ -46,14 +46,14 @@ To use the Local View/Cache JMX Monitor:
 </os-core:local-cache>
 <os-core:giga-space id="gigaSpace2" space="localCacheSpace2"/>
 
-<bean id="gsClientCacheMonitor" 
+<bean id="gsClientCacheMonitor"
 	class="com.gigaspaces.clientcachemonitor.GigaSpacesClientCacheJMXMonitor">
-	<property name="gigaSpaceList" > 
+	<property name="gigaSpaceList" >
     	 <list>
            <ref bean="gigaSpace1"/>
            <ref bean="gigaSpace2"/>
          </list>
-	</property>    	
+	</property>
 </bean>
 {% endhighlight %}
 
@@ -68,7 +68,7 @@ See below example how you can monitor multiple local cache instances running wit
 ![clientCacheJMXMonitor.jpg](/attachment_files/clientCacheJMXMonitor.jpg)
 {% endindent %}
 
-{% exclamation %} This version of the local view/cache monitor does not reflect statistics for operations using the `readByID` operation from the local view/cache. 
+{% exclamation %} This version of the local view/cache monitor does not reflect statistics for operations using the `readByID` operation from the local view/cache.
 
 {% comment %}
 The Local View/Cache JMX Monitor source code is available [here](/attachment_files/GSClientCacheJMXMonitor_src.zip) .

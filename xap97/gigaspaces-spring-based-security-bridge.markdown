@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  GigaSpaces Spring-based Security bridge
 page_id: 61867272
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  JMS Known Issues and Considerations
 page_id: 61867352
 ---

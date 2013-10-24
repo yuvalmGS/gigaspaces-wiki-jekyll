@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Read-Through Write-Through Images
 page_id: 61867001
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  space ping - GigaSpaces CLI
 page_id: 61867383
 ---
@@ -25,7 +25,7 @@ The `space ping` command is relevant only for spaces in a started state.
 
 You can ping spaces in a specific container (see the options below) -- specifying a container URL prints a numbered list of all the spaces in that container, and you can choose a space to ping by its number, or `all` (ping all spaces).
 
-Specifying a URL of a clustered space prints a list of all spaces in the cluster, and you can choose a space to ping by its number, or `all` (pings all spaces). 
+Specifying a URL of a clustered space prints a list of all spaces in the cluster, and you can choose a space to ping by its number, or `all` (pings all spaces).
 
 {% tip %}
 Using `-c` (or `-cluster`) with a URL of a clustered space pings **all** cluster members.
@@ -44,7 +44,7 @@ Using `-c` (or `-cluster`) with a URL of a clustered space pings **all** cluster
 | `i` |  Sets the iteration number. Default is `5`. | `10` |
 | `read` | Reads from the space. Cannot be performed together with take -- either read or take is performed. If you do not specify read nor take, read is performed by default. | |
 | `take` | Takes from the space. Cannot be performed together with read -- either take or read is performed. If you do not specify read nor take, read is performed by default. | |
-| `x` | All operations performed as part of `space ping` are under a transaction. | | 
+| `x` | All operations performed as part of `space ping` are under a transaction. | |
 | `help` \ `h` | Prints help -- the command's usage and options. | |
 
 # Example

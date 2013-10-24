@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  GigaSpaces Browser Menus and Buttons
 page_id: 61867172
 ---
@@ -48,11 +48,11 @@ The **Space** menu allows you to:
 - Start or stop a preexisting space - the **Stop** option is enabled when the selected space is in a started state, and the **Start** option is enabled when the selected space is in stopped state.
 - **Display Persistent LRU Space Metrics** -- see the following section.
 
-## Display Persistent LRU Space Metrics 
+## Display Persistent LRU Space Metrics
 
 When working with persistent spaces in LRU mode, this option turns on the instance count (a list or total of instances) in the relevant Spaces Network view row; and in the Classes view and Cluster view under the relevant space/cluster node.
 
-{% lampon %} This option is turned off by default, since displaying the instance count for such spaces might result in very high CPU usage. 
+{% lampon %} This option is turned off by default, since displaying the instance count for such spaces might result in very high CPU usage.
 
 Clicking **Space** > **Display Persistent LRU Space Metrics** turns on the instance count for all persistent LRU-mode spaces you are using. Clicking this option again turns off the instance count for these spaces.
 
@@ -79,9 +79,9 @@ The **View** menu provides the following options:
 ![GMC_space_SettingsMenuOption_6.5.jpg](/attachment_files/GMC_space_SettingsMenuOption_6.5.jpg)
 {% endindent %}
 
-The **Settings** menu provides the following options: 
+The **Settings** menu provides the following options:
 
-- **Discovery** 
+- **Discovery**
 
 {% indent %}
 ![GMC_space_SettingsMenuOption_Discovery_6.5.jpg](/attachment_files/GMC_space_SettingsMenuOption_Discovery_6.5.jpg)
@@ -100,7 +100,7 @@ Selecting a Jini group defines which services (containers, spaces, GSCs, GSMs) a
 ![GMC_space_SettingsMenuOption_Discovery_LocatorDiscov_Window_6.5.jpg](/attachment_files/GMC_space_SettingsMenuOption_Discovery_LocatorDiscov_Window_6.5.jpg)
 {% endindent %}
 
-    - **Discovery Stats** -- opens the Lookup Service Discovery Times window, which displays the locator IP address, its Jini group, and the time in \[ms\]: 
+    - **Discovery Stats** -- opens the Lookup Service Discovery Times window, which displays the locator IP address, its Jini group, and the time in \[ms\]:
 
 {% indent %}
 ![GMC_space_SettingsMenuOption_Discovery_LookupServiceDiscovTimes_Window_6.5.jpg](/attachment_files/GMC_space_SettingsMenuOption_Discovery_LookupServiceDiscovTimes_Window_6.5.jpg)
@@ -109,7 +109,7 @@ Selecting a Jini group defines which services (containers, spaces, GSCs, GSMs) a
 - **Color Settings** -- opens the Preferences Panel, allowing you to choose change the default colors of the operations shown in the [Statistics View](./statistics-view---gigaspaces-browser.html).
 - **Reset Perspective** -- resets all main window tabs, returns docking windows to their initial size and location.
 - **System Properties** -- see the [following section](#Configured System Properties Window). {% anchor cluster %}
-- **Cluster Configuration** 
+- **Cluster Configuration**
 
 {% indent %}
 ![GMC_space_SettingsMenuOption_ClusterConfig_6.5.jpg](/attachment_files/GMC_space_SettingsMenuOption_ClusterConfig_6.5.jpg)

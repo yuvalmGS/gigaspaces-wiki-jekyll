@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  GigaSpaces CPP API - Overview
 page_id: 61867182
 ---

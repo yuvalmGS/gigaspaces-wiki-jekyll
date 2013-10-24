@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Data Grid View
 page_id: 61867421
 ---
@@ -32,7 +32,7 @@ SELECT uid,* FROM com.gigaspaces.sba.trading.model.TradePojo WHERE rownum < 7
 {% endhighlight %}
 
 Press the **"Play"** icon to execute the query. Query is executed against the selected Space (cluster) or Space instance.
-If the query has too many results, use the paging at the bottom to move between them. Paging is static, meaning that these results are fetched once per execute request. 
+If the query has too many results, use the paging at the bottom to move between them. Paging is static, meaning that these results are fetched once per execute request.
 Use the arrows - **back** and **forward** to navigate between previously executed queries.
 
 ![query_9_6.png](/attachment_files/query_9_6.png)
@@ -40,13 +40,13 @@ Use the arrows - **back** and **forward** to navigate between previously execute
 # Space Types
 
 The metadata of the Types in the Space are shown by clicking on the "Types" tab. This lists all the types registered with the Space.
-Displayed for each type are: **instance count**, **notify template count**, **Space key** (index), **Space routing key**, and **indexed fields**. 
+Displayed for each type are: **instance count**, **notify template count**, **Space key** (index), **Space routing key**, and **indexed fields**.
 
 ![data_types_9_6.png](/attachment_files/data_types_9_6.png)
 
 # Object inspection
 
-Double click on a single result set in the query results table, to show the metadata and values of each result. 
+Double click on a single result set in the query results table, to show the metadata and values of each result.
 Object inspection shows the **field name**, **field type**, and **field value**. For compound fields, drill down using the arrow toggles.
 For array types, the array length and toString is displayed.
 

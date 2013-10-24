@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  alert-event
 page_id: 61867105
 ---

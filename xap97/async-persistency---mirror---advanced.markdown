@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Async Persistency - Mirror - Advanced
 page_id: 61867440
 ---

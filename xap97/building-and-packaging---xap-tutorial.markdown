@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Building and Packaging - XAP Tutorial
 page_id: 61867381
 ---

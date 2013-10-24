@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Counters
 page_id: 61867141
 ---
@@ -77,11 +77,11 @@ public class GetCounterTask implements Task<Integer> {
 
 	public GetCounterTask (string id) {
 		this.id= id;
-	}  
-		
+	}
+
   	@TaskGigaSpace
   	private transient GigaSpace space;
-  	
+
   	public Integer execute() throws Exception {
 		IdQuery<WordCount> idQuery = new IdQuery<WordCount>(WordCount.class, id);
 		WordCount wordount = space.readById(WordCount.class , idQuery);
@@ -119,7 +119,7 @@ public class CounterTest {
 	static GigaSpace space = null;
 	static GigaSpace spaceEmb = null;
 	static Counter counter = null;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		if (space == null)
@@ -149,7 +149,7 @@ public class CounterTest {
 		assertEquals(counterValue , 10);
 	}
 
-	
+
 	@Test
 	public void test3() throws Exception
 	{
@@ -171,10 +171,10 @@ import com.gigaspaces.client.ChangeSet;
 import com.gigaspaces.query.IdQuery;
 
 public class Counter {
-	
+
 	GigaSpace space = null;
-	String id = null; 
-	
+	String id = null;
+
 	public Counter (GigaSpace space , String id , String name , int initialValue)
 	{
 		this.space = space;
@@ -225,14 +225,14 @@ import com.gigaspaces.metadata.index.SpaceIndexType;
 
 public class CounterData extends SpaceDocument{
 	   public static final String TYPE_NAME = "CounterData";
-	   
+
 	   public CounterData() {
 	        super(TYPE_NAME);
 	    }
-	   
+
 	   static public void registerType(GigaSpace gigaspace) {
 		    // Create type descriptor:
-		    SpaceTypeDescriptor typeDescriptor = 
+		    SpaceTypeDescriptor typeDescriptor =
 		        new SpaceTypeDescriptorBuilder(TYPE_NAME)
 		        // ... Other type settings
 		        .documentWrapperClass(CounterData.class)
@@ -261,11 +261,11 @@ public class CounterTask implements Task<Integer> {
 	public CounterTask(String id , String name ) {
 		this.id= id;
 		this.name = name;
-	}  
-		
+	}
+
   	@TaskGigaSpace
   	private transient GigaSpace space;
-  	
+
   	public Integer execute() throws Exception {
 		IdQuery<CounterData> query= new IdQuery<CounterData> (CounterData.TYPE_NAME , id , id);
 		CounterData counterData = space.readById(query);

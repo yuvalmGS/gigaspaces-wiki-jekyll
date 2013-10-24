@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Enhanced XAP Scala REPL
 page_id: 63078419
 ---
@@ -9,9 +9,9 @@ page_id: 63078419
 
 # Overview
 
-Following is a short demo of what can be done with the XAP scala shell. It should be noted that this shell is a regular Scala REPL with some initial imports and initialization code. 
+Following is a short demo of what can be done with the XAP scala shell. It should be noted that this shell is a regular Scala REPL with some initial imports and initialization code.
 
-# Demo Setup 
+# Demo Setup
 
 - Run `$GS_HOME/bin/gs-agent.sh` (or `.bat`)
 - Start the shell `$GS_HOME/tools/scala/shell.sh` (or `.bat`)

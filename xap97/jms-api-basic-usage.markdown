@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  JMS API Basic Usage
 page_id: 61867456
 ---

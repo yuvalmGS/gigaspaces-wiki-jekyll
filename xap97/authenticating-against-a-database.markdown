@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Authenticating against a database
 page_id: 61867100
 ---

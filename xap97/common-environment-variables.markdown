@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Common Environment Variables
 page_id: 61867342
 ---

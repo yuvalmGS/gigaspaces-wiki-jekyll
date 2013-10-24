@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Mule Event Container Transport
 page_id: 61867163
 ---
@@ -30,9 +30,9 @@ In order to use the event container transport (using XML namespaces), the follow
        http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
        http://www.mulesoft.org/schema/mule/stdio http://www.mulesoft.org/schema/mule/stdio/3.1/mule-stdio.xsd
        http://www.openspaces.org/schema/mule/os-eventcontainer http://www.openspaces.org/schema/8.0/mule/3.1/mule-os-eventcontainer.xsd">
-       
+
        <!-- Mule configuration comes here ... -->
-       
+
 </mule>
 {% endhighlight %}
 
@@ -116,7 +116,7 @@ We configure the outbound as defined in the example below. The `os-eventcontaine
 
 <model name="helloSample">
     <service name="MessageReaderUMO">
-    
+
         <!-- inbound definitions -->
 
         <outbound-router>
@@ -145,9 +145,9 @@ This means that any outbound component operating within a Spring managed transac
     <os-core:distributed-tx-manager id="transactionManager" />
 
     <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-    
+
     <spring:bean id="transactionFactory"
-                 class="org.mule.module.spring.transaction.SpringTransactionFactory">               
+                 class="org.mule.module.spring.transaction.SpringTransactionFactory">
         <spring:property name="manager">
             <spring:ref bean="transactionManager"/>
         </spring:property>
@@ -233,7 +233,7 @@ In this example, POJO messages are received (`SimpleMessage`) from the Space, wi
             </inbound>
 
             <component class="org.openspaces.itest.esb.mule.MessageReader"/>
-            
+
             <outbound>
                 <outbound-pass-through-router>
                     <os-eventcontainer:outbound-endpoint
@@ -254,9 +254,9 @@ OpenSpaces mule event transport supports sending and receiving metadata using Mu
 
 # Transformer
 
-In order to transfer the metadata from the `UMOMessage` to the outgoing message via the OpenSpaces outbound endpoint, the transport is configured with a default outbound transformer called `org.openspaces.esb.mule.transformers.OpenSpacesTransformer`. The transformer copies the metadata from the `UMOMessage` to the transformed object, and assumes that the return object is the payload that is contained within the `UMOMessage`. 
+In order to transfer the metadata from the `UMOMessage` to the outgoing message via the OpenSpaces outbound endpoint, the transport is configured with a default outbound transformer called `org.openspaces.esb.mule.transformers.OpenSpacesTransformer`. The transformer copies the metadata from the `UMOMessage` to the transformed object, and assumes that the return object is the payload that is contained within the `UMOMessage`.
 
-If the returned object is not the payload within the `UMOMessage`, the transformer allows overriding of the `getResultPayload(UMOMessage, String)` method and returns the new transformer object. 
+If the returned object is not the payload within the `UMOMessage`, the transformer allows overriding of the `getResultPayload(UMOMessage, String)` method and returns the new transformer object.
 
 Here is an example:
 

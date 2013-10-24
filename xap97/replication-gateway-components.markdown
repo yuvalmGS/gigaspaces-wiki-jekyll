@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Replication Gateway Components
 page_id: 61867022
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Mule SEDA Model
 page_id: 61867176
 ---
@@ -39,15 +39,15 @@ This is easily achieved using OpenSpaces extensions to the Mule SEDA model. Here
 <os-seda:model name="sampleModel" giga-space="gigaSpace">
 
     <os-seda:space-aware-service name="spaceAwareService">
-    
+
         <!-- service definition -->
-    
+
     </os-seda:space-aware-service>
-    
+
     <service name="plainService">
-    
+
         <!-- service definition -->
-    
+
     </service>
 
 </os-seda:model>
@@ -59,7 +59,7 @@ In the above example we have two services: `spaceAwareService` and `plainService
 
 OpenSpaces enhanced SEDA model allows storing of SEDA queues on top of the Space. This allows you to have a highly available and fault-tolerant SEDA implementation with the benefits of fast, in-memory, virtualized Space queue implementations.
 
-The enhanced SEDA queue model is mainly used when working in SBA mode. This means that each Mule Processing Unit instance starts a Space cluster member, and SEDA queues are stored directly in the cluster member this instance started. When working with a primary-backup topology, `os-seda` aware services of a Mule Processing Unit instance that started a backup cluster member are not started until the cluster member moves to primary mode. 
+The enhanced SEDA queue model is mainly used when working in SBA mode. This means that each Mule Processing Unit instance starts a Space cluster member, and SEDA queues are stored directly in the cluster member this instance started. When working with a primary-backup topology, `os-seda` aware services of a Mule Processing Unit instance that started a backup cluster member are not started until the cluster member moves to primary mode.
 
 {% lampon %} In such a topology, SEDA queue content is replicated from the primary cluster member to the backup, allowing you to continue the processing seamlessly in case of the primary failure.
 
@@ -123,7 +123,7 @@ Here is an example of how working with `os-seda` using the Space Local Transacti
     <os-core:distributed-tx-manager id="transactionManager" />
 
     <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-    
+
     <spring:bean id="transactionFactory"
                  class="org.mule.module.spring.transaction.SpringTransactionFactory">
         <spring:property name="manager">

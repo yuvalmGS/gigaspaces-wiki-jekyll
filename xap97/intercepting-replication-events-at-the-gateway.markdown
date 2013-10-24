@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Intercepting Replication Events at the Gateway
 page_id: 61867233
 ---
@@ -19,7 +19,7 @@ The interceptor is an abstract class which may be extended to provide custom beh
 public abstract class SynchronizationEndpointInterceptor
 {
     /**
-     * Triggered when a consolidation for a specific distributed transaction participant is failed due to 
+     * Triggered when a consolidation for a specific distributed transaction participant is failed due to
      * timeout or too much backlog accumulation while waiting for other participant parts.
      * @param participantData the transaction participant data for which the consolidation failed
      */
@@ -27,7 +27,7 @@ public abstract class SynchronizationEndpointInterceptor
     {
         participantData.commit();
     }
-    
+
     /**
      * Triggered after synchronization of a transaction was completed successfully.
      * @param transactionData the transaction data
@@ -35,7 +35,7 @@ public abstract class SynchronizationEndpointInterceptor
     public void afterTransactionSynchronization(TransactionData transactionData)
     {
     }
-    
+
     /**
      * Triggered after synchronization batch of operations was completed successfully.
      * @param batchData the batched operations data
@@ -52,8 +52,8 @@ To use a custom interceptor implementation one should first extends the `Synchro
 
 {% highlight xml %}
 <bean id="interceptor" class="com.gigaspaces.examples.MyCustomSynchronizationEndpointInterceptor" />
-	
-<os-gateway:sink id="sink" local-gateway-name="MY-SITE-NAME" 
+
+<os-gateway:sink id="sink" local-gateway-name="MY-SITE-NAME"
   gateway-lookups="gatewayLookups" local-space-url="jini://*/*/mySiteSpace">
   <os-gateway:sources>
     <os-gateway:source name="..." />
@@ -89,48 +89,48 @@ Each of the above intercepted events contains a data item that includes the rele
 {% highlight java %}
 public interface DataSyncOperation
 {
-    
+
     /**
      * @return The operation UID.
      */
     String getUid();
-    
+
     /**
      * @return the operation type.
      */
     DataSyncOperationType getDataSyncOperationType();
-    
+
     /**
-     * @return the operation data as object (i.e pojo), this can only be used 
+     * @return the operation data as object (i.e pojo), this can only be used
      * if {@link #supportsDataAsObject()} return true, otherwise an exception
      * will be thrown.
      */
     Object getDataAsObject();
-    
+
     /**
-     * @return the operation data as space document, this can only be 
+     * @return the operation data as space document, this can only be
      * used if {@link #supportsDataAsDocument()} return true, otherwise an exception
      * will be thrown.
      */
     SpaceDocument getDataAsDocument();
-    
+
     /**
-     * @return the type descriptor of the data type. this can only be 
+     * @return the type descriptor of the data type. this can only be
      * used if {@link #supportsGetTypeDescriptor()} return true, otherwise an exception
      * will be thrown.
      */
     SpaceTypeDescriptor getTypeDescriptor();
-    
+
     /**
      * @return whether this data operation support the {@link #getTypeDescriptor()} operation.
      */
     boolean supportsGetTypeDescriptor();
-    
+
     /**
      * @return whether this data operation support the {@link #getDataAsObject()} operation.
      */
     boolean supportsDataAsObject();
-    
+
     /**
      * @return whether this data operation support the {@link #getDataAsDocument()} operation.
      */
@@ -150,7 +150,7 @@ The following example will demonstrate how to implement an interceptor that stor
 public class ExampleSynchronizationEndpointInterceptor extends SynchronizationEndpointInterceptor
 {
     ...
-    
+
     private SomeExternalDataSource externalDataSource = ...
 
     public void onTransactionConsolidationFailure(ConsolidationParticipantData participantData)
@@ -163,13 +163,13 @@ public class ExampleSynchronizationEndpointInterceptor extends SynchronizationEn
       }
       participantData.abort();
     }
-        
+
     public void afterTransactionSynchronization(TransactionData transactionData)
     {
       if(transactionData.isConsolidated())
         externalDataSource.storeExecutedConsolidatedTransactionMetadaa(transactionData.
                           getConsolidatedDistributedTransactionMetaData().getTransactionUniqueId());
     }
-       
+
 }
 {% endhighlight %}

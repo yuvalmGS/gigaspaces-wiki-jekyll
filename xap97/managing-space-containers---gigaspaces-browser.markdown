@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Managing Space Containers - GigaSpaces Browser
 page_id: 61867260
 ---

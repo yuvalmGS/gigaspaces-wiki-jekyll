@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Hosts View
 page_id: 61867425
 ---
@@ -8,7 +8,7 @@ page_id: 61867425
 
 # The Hosts view
 
-By clicking the services tab at the top left, you will enter the hosts screen. This screen enables you to monitor the physical resources of your cluster. The physical resources include the hosts and virtual machines. Please refer the image below and the call-outs in it for more details. 
+By clicking the services tab at the top left, you will enter the hosts screen. This screen enables you to monitor the physical resources of your cluster. The physical resources include the hosts and virtual machines. Please refer the image below and the call-outs in it for more details.
 
 ![hosts1.jpg](/attachment_files/hosts1.jpg)
 

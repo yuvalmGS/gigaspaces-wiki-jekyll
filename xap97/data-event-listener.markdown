@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Data Event Listener
 page_id: 61867025
 ---

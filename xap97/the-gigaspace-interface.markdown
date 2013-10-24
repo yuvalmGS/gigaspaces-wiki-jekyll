@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  The GigaSpace Interface
 page_id: 61867266
 ---

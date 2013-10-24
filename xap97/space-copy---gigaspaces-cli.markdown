@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  space copy - GigaSpaces CLI
 page_id: 61867317
 ---

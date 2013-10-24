@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Wiring with Spring - XAP Tutorial
 page_id: 61867404
 ---

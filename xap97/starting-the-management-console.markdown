@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Starting the Management Console
 page_id: 61867251
 ---

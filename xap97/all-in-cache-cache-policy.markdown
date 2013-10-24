@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  ALL IN CACHE-Cache Policy
 page_id: 61867183
 ---
@@ -36,7 +36,7 @@ The `org.openspaces.core.SpaceMemoryShortageException` or `com.j_spaces.core.Mem
 Here is an example of the `org.openspaces.core.SpaceMemoryShortageException` message:
 
 {% highlight java %}
-org.openspaces.core.SpaceMemoryShortageException at: host: MachineHostName, container: mySpace_container1_1, space mySpace, 
+org.openspaces.core.SpaceMemoryShortageException at: host: MachineHostName, container: mySpace_container1_1, space mySpace,
 total memory: 1820 mb, used memory: 1283 mb
 {% endhighlight %}
 
@@ -44,7 +44,7 @@ Getting `SpaceMemoryShortageException` when running in `ALL-IN_CACHE` policy mod
 
 {% highlight java %}
 -server -Xms8g -Xmx8g -Xmn300m -XX:+UseConcMarkSweepGC -XX:+UseParNewGC
--XX:CMSInitiatingOccupancyFraction=60 -XX:+UseCMSInitiatingOccupancyOnly 
+-XX:CMSInitiatingOccupancyFraction=60 -XX:+UseCMSInitiatingOccupancyOnly
 -XX:MaxPermSize=256m -XX:+ExplicitGCInvokesConcurrent -XX:+UseCompressedOops
 {% endhighlight %}
 

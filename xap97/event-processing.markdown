@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Event Processing
 page_id: 61867213
 ---

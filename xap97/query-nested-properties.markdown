@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Query Nested Properties
 page_id: 63078974
 ---

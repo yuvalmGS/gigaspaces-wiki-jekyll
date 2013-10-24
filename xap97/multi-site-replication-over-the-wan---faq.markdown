@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Multi-Site Replication over the WAN - FAQ
 page_id: 61867027
 ---
@@ -7,7 +7,7 @@ page_id: 61867027
 # FAQ
 
 - **What's the Replication flow?**
-Replications starts with the local site cluster. Updates in the form of replication redo log packets are sent to the local delegator in an async manner which in turn writes them to the appropriate Sink(s) in a sync manner. This sink will perform operations corresponding to these packets on its local cluster. 
+Replications starts with the local site cluster. Updates in the form of replication redo log packets are sent to the local delegator in an async manner which in turn writes them to the appropriate Sink(s) in a sync manner. This sink will perform operations corresponding to these packets on its local cluster.
 
 - **What happens when Gateway fails or is restarted?**
 Gateway component is stateless and does not save any state. When this PU is missing because of a failure (hardware, OS or process failure), GSM will restart the PU in a available container. Once it is active, it will start replicating the changes that where it left off.

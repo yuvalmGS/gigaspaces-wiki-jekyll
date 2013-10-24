@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  The Application Layer
 page_id: 61867196
 ---
@@ -59,7 +59,7 @@ The GigaSpaces Spring Integration support:
 - Spring Data
 - Spring JMS
 - Spring JPA
-- Spring Hibernate 
+- Spring Hibernate
 - Spring Remoting
 - String Batch
 - Spring Security
@@ -71,4 +71,4 @@ It's important to realize that ease of migration was a core focus for GigaSpaces
 
 1. Migrating a traditional Java EE application to GigaSpaces XAP is often started by replacing the asynchronous invocation layer with GigaSpaces XAP - i.e., removing your normal JMS container, with its points of failure based on database backends and TCP/IP connections, and using GigaSpaces XAP instead. This is a simple configuration change!
 1. The next step in migrating a traditional Java EE application involves using the in-memory data grid to lower requirements on the standard relational database, which means your speed of execution of transactions goes up dramatically.
-1. The third step in migration is converting the business logic to run inside GigaSpaces XAP itself in a processing unit, instead of using an enterprise application archive in a Java EE container. This conversion is usually very easy if the prior migration steps are followed - and they're easy as well. 
+1. The third step in migration is converting the business logic to run inside GigaSpaces XAP itself in a processing unit, instead of using an enterprise application archive in a Java EE container. This conversion is usually very easy if the prior migration steps are followed - and they're easy as well.

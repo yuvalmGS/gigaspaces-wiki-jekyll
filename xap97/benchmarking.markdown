@@ -1,18 +1,18 @@
 ---
-layout: post
+layout: xap97
 title:  Benchmarking
 page_id: 61867306
 ---
 
 # The Art of Benchmarks
 
-Performance benchmarks with GigaSpaces' In-Memory Data Grid mainly involve testing latency and throughput. Since GigaSpaces offers data access routines for remote data access as well as colocated data access, you should test latency and throughput in both cases (as appropriate for your architecture and deployment topology). 
+Performance benchmarks with GigaSpaces' In-Memory Data Grid mainly involve testing latency and throughput. Since GigaSpaces offers data access routines for remote data access as well as colocated data access, you should test latency and throughput in both cases (as appropriate for your architecture and deployment topology).
 
-In addition, you should also test transactional and non-transactional operations, single and batch operations, synchronous and aynchronous options, as all of these are basic building blocks for any application. 
+In addition, you should also test transactional and non-transactional operations, single and batch operations, synchronous and aynchronous options, as all of these are basic building blocks for any application.
 
 Benchmarks should test simple and complex queries as GigaSpaces supports both simple and complex data models and provides indexes to speed up query execution time.
 
-Another dimension for these tests is concurrency - which measures how the system scales as a function of the amount of concurrent remote users or colocated threads accessing the system. 
+Another dimension for these tests is concurrency - which measures how the system scales as a function of the amount of concurrent remote users or colocated threads accessing the system.
 
 One more dimension is the grid size (the topology). This measures how the system scales as a function of the number of data-grid nodes leveraging GigaSpaces [In-Memory-Map-Reduce API](./task-execution-over-the-space.html). There is also a [client side caching](./client-side-caching.html) component that is viable in many scenarios that is important to test (read-mostly scenarios).  As you see the performance benchmark matrix is extensive and requires the benchmark tool to support all these options/scenarios.
 
@@ -29,6 +29,6 @@ The different benchmarks results can be found on the [benchmarks page](http://ww
 
 ## Large Scale Benchmarks
 
-Note that once you are running large scale benchmarks with a large number of concurrent accesses, or a large number of data grid partitions, you should consider our involvement to help tune the configuration of the environment and JVM, and in some cases we should help with the code, too, as some of the default behaviors for the basic API have special modifiers that may boost the performance. 
+Note that once you are running large scale benchmarks with a large number of concurrent accesses, or a large number of data grid partitions, you should consider our involvement to help tune the configuration of the environment and JVM, and in some cases we should help with the code, too, as some of the default behaviors for the basic API have special modifiers that may boost the performance.
 
 Many times developers sometime miss or misunderstand these advanced options, due to the vast amount of features the products offers.  Please do not hesitate to [approach our support team](http://www.gigaspaces.com/content/customer-support-services) for advanced benchmarking and testing options. The information about tuning the product for such environments is not fully publicly available, since many larger systems have specialized requirements for which configurations are available but for which generalized solutions are not entirely appropriate.

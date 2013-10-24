@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  JPA API
 page_id: 61867043
 ---

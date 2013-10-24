@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  The OpenSpaces Data Example
 page_id: 61867165
 ---

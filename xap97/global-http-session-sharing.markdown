@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Global HTTP Session Sharing
 page_id: 61867399
 ---

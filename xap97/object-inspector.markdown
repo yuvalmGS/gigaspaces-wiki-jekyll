@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Object Inspector
 page_id: 61867455
 ---
@@ -10,7 +10,7 @@ page_id: 61867455
 
 The Object Inspector allows you to view a specific object's information.
 
-Using the selected object's UID, the Object Inspector takes the object itself from the space and displays its class fields, allowing you to drill down into any non-primitive types. 
+Using the selected object's UID, the Object Inspector takes the object itself from the space and displays its class fields, allowing you to drill down into any non-primitive types.
 
 To use the Object Inspector, either right click the object you would like to view (from the list of objects displayed in the [Query view](./query-view---gigaspaces-browser.html) or in the [Transactions view](./transactions-view---gigaspaces-browser.html)) and select **Object Inspector**, or double-click it.
 

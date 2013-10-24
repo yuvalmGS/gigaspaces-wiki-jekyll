@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Deployment Properties
 page_id: 61867122
 ---
@@ -138,4 +138,4 @@ Here's an example for a space configured within the processing unit, and a prope
 {% endtabcontent %}
 {% endinittab %}
 
-When deploying the space you should use `-properties space embed://gs.space.url.arg.schema=persistent`. This instructs the runtime to override the configuration of the bean named "space" in your pu.xml file with the specified value. You may also configure the space directly inside your processing unit using direct property injection on the space bean.  
+When deploying the space you should use `-properties space embed://gs.space.url.arg.schema=persistent`. This instructs the runtime to override the configuration of the bean named "space" in your pu.xml file with the specified value. You may also configure the space directly inside your processing unit using direct property injection on the space bean.

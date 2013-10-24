@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Quick Start Guide
 page_id: 61867014
 ---

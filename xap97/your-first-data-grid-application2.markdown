@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Your First Data Grid Application2
 page_id: 61867198
 ---

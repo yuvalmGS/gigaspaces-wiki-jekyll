@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Scala Predicate Based Queries
 page_id: 63078413
 ---

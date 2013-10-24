@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Cluster Replication Filters
 page_id: 61867236
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Running GigaSpaces as a Windows Service
 page_id: 61867185
 ---

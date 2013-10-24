@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Web Application Support
 page_id: 61867386
 ---

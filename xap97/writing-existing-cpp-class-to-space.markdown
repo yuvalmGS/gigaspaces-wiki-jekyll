@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Writing Existing CPP Class to Space
 page_id: 61867164
 ---

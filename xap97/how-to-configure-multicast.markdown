@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  How to Configure Multicast
 page_id: 61867133
 ---

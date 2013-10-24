@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Cassandra Space Persistency
 page_id: 61867169
 ---

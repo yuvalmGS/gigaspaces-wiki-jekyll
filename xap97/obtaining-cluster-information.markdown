@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Obtaining Cluster Information
 page_id: 61867248
 ---

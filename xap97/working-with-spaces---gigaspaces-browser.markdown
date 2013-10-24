@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Working with Spaces - GigaSpaces Browser
 page_id: 61867102
 ---

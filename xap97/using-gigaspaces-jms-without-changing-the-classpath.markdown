@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Using GigaSpaces JMS Without Changing the Classpath
 page_id: 61867078
 ---

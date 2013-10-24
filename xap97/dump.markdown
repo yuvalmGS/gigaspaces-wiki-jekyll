@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Dump
 page_id: 61867016
 ---
@@ -16,7 +16,7 @@ Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 
 // wait a bit for components to be discovered (or use waitFor) ...
 
-DumpResult dumpResult = admin.dump("reason comes here", null, 
+DumpResult dumpResult = admin.dump("reason comes here", null,
                                 "summary", "thread", "log", "processingUnits");
 dumpResult.download(new File("target/dump.zip"), null);
 {% endhighlight %}
@@ -35,16 +35,16 @@ Admin admin = new AdminFactory().addGroup("myGroup").createAdmin();
 // wait a bit for components to be discovered (or use waitFor) ...
 
 // dump all the GSMs
-DumpResult dumpResult = admin.getGridServiceManagers().dump("reason comes here", null, 
+DumpResult dumpResult = admin.getGridServiceManagers().dump("reason comes here", null,
                                 "summary", "thread", "log", "processingUnits");
 dumpResult.download(new File("target/gsms.zip"), null);
 
 // dump all the GSCs
-dumpResult = admin.getGridServiceContainers().dump("reason comes here", null, 
+dumpResult = admin.getGridServiceContainers().dump("reason comes here", null,
                                 "summary", "thread", "log", "processingUnits");
 dumpResult.download(new File("target/gscs.zip"), null);
 
-dumpResult = admin.getZones().getByName("zoneA").dump("reason comes here", null, 
+dumpResult = admin.getZones().getByName("zoneA").dump("reason comes here", null,
                                 "summary", "thread", "log", "processingUnits");
 dumpResult.download(new File("target/zoneA.zip"), null);
 {% endhighlight %}
@@ -132,7 +132,7 @@ dump_file.zip
         summary.txt
         threads.txt
         logs
-            2010-09-19~08.22-gigaspaces-gsc_1-10.10.10.249-23739.log     
+            2010-09-19~08.22-gigaspaces-gsc_1-10.10.10.249-23739.log
         processing-units
             space
                 1
@@ -144,19 +144,19 @@ dump_file.zip
     gsc-10.10.10.249-23766--1284928573079
         network.txt
         summary.txt
-        threads.txt     
+        threads.txt
         logs
             2010-09-19~08.22-gigaspaces-gsc_2-10.10.10.249-23766.log
         processing-units
             mirror
                 1
-                    pu.xml                 
+                    pu.xml
                     spaces
                         mirror
                             summary.txt
             space
                 1_1
-                    pu.xml                 
+                    pu.xml
                     spaces
                         space
                             summary.txt
@@ -166,7 +166,7 @@ dump_file.zip
         summary.txt
         threads.txt
         logs
-            2010-09-19~08.22-gigaspaces-gsm_3-10.10.10.249-24112.log 
+            2010-09-19~08.22-gigaspaces-gsm_3-10.10.10.249-24112.log
     lus-10.10.10.249-24127--1284928573201
         network.txt
         summary.txt

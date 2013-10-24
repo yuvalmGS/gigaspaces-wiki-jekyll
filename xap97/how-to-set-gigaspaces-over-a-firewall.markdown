@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  How to Set GigaSpaces Over a Firewall
 page_id: 61867357
 ---

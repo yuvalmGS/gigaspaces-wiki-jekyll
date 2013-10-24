@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Setting Classpath
 page_id: 61867262
 ---
@@ -12,7 +12,7 @@ GigaSpaces libraries are located under `<GigaSpaces Root>\lib`
 
 You'll find three sub directories:
 **lib/required** \- jar files that are required for any GigaSpaces application.
-**lib/optional** \- jar files which enable additional capabilities, such as servlet api and Spring CGLib support. 
+**lib/optional** \- jar files which enable additional capabilities, such as servlet api and Spring CGLib support.
 **lib/platform** \- This directory contains jar files which are used by the XAP platform only.
 
 # Compilation
@@ -38,7 +38,7 @@ You may add your own jars into the runtime (GSC) classpath by using the `PRE_CLA
 
 # Runtime - Standalone
 
-When running a standalone client which accesses GigaSpaces XAP, please ensure that all the jars located under the `<GigaSpaces root>/lib/required` directory are part of the JVM's classpath. These include the following jars: 
+When running a standalone client which accesses GigaSpaces XAP, please ensure that all the jars located under the `<GigaSpaces root>/lib/required` directory are part of the JVM's classpath. These include the following jars:
 
 - `gs-runtime.jar`
 - `gs-openspaces.jar`

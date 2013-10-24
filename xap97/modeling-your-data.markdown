@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Modeling your data
 page_id: 61866998
 ---

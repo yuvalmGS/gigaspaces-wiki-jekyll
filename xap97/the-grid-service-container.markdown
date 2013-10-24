@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  The Grid Service Container
 page_id: 61867270
 ---

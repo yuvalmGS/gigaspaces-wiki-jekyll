@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Securing the Transport Layer (using SSL)
 page_id: 61867108
 ---

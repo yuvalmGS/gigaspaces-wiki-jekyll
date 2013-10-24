@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Scala Scripting Executor
 page_id: 63078417
 ---
@@ -86,7 +86,7 @@ val script = new ScalaTypedStaticScript("myScript", "scala", code)
   .parameter("someString", "str")
   // explicit type is requierd because the runtime type of the generated
   // set is not public
-  .parameter("someSet", Set(1,2,3), classOf[Set[_]]) 
+  .parameter("someSet", Set(1,2,3), classOf[Set[_]])
 
 val result = executor.execute(script)
 

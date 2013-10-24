@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Internal
 page_id: 61867413
 ---

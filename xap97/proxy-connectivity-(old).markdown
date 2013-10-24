@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Proxy Connectivity (Old)
 page_id: 61867003
 ---

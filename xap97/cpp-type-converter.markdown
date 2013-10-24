@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  CPP Type Converter
 page_id: 61867083
 ---

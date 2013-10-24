@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: xap97
 title:  Space Memory Management - GigaSpaces Browser
 page_id: 61867409
 ---
