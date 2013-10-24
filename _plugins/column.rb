@@ -15,9 +15,9 @@ module Jekyll
 
       def add_column(context, content)
         if @width.empty?
-      	 output = "<div style='float:left;padding-left:15px;padding-right:15px;position:relative;margin-left:15px;margin-right:15px;'>"
+      	 output = "<div style='float:left;padding-left:0px;padding-right:15px;position:relative;margin-left:0px;margin-right:15px;'>"
         else
-         output = "<div style='float:left;#{@width};padding-left:15px;padding-right:15px;position:relative;margin-left:15px;margin-right:15px;'>"
+         output = "<div style='float:left;#{@width};padding-left:0px;padding-right:15px;position:relative;margin-left:0px;margin-right:15px;'>"
         end
         output << Kramdown::Document.new(content).to_html
         output << "</div>"

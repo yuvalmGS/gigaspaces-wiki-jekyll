@@ -31,14 +31,16 @@ module Jekyll
         #end
         output = "<h4 style='font-weight:300'>"
         output << Kramdown::Document.new(content).to_html
-        output << "</h4><hr/>"
+        output << "</h4><hr style='margin-top:5px; margin-bottom:5px;'/>"
         #if @section
         #  output << "</div></div>"
         #else
           #output << "</div><div class='panel-body'><ul class='nav nav-pills' id='summarypanel'></ul></div></div>"
-        #end
+        #end        
+        output << "<div class='row'>"
         output << "<ul class='nav nav-pills' id='summarypanel'></ul>"
-        output << "<hr/>"
+        output << "</div>"
+        output << "<hr style='margin-top:5px; margin-bottom:5px;'/>"        
       end
     end
   end
