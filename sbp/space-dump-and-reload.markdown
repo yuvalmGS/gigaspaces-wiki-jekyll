@@ -1,0 +1,39 @@
+---
+layout: sbp
+title:  Space Dump and Reload
+categories: SBP
+page_id: 54820920
+---
+
+{composition-setup}
+{tip}*Summary:* {excerpt}Space Dump and Reload{excerpt}
+*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
+*Recently tested with GigaSpaces version*: XAP 7.1
+*Last Update:* November 2010
+{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+{tip}
+{rate}
+
+h1. Space Dump and Reload
+When running a system using an in-memory data grid (IMDG), you may need to dump the data stored within the IMDG into a file and later reload it back. This might happen when you would like to copy the IMDG data from one system to another or when you would like to shutdown the system to perform some maintenance procedures or when you would like to upgrade the GigaSpaces release.
+
+{tip}If you would like to perform hardware maintenance activities without shutting down the system you can use a [rolling upgrade technique|XAP71:Deploying onto the Service Grid#HotDeploy].{tip}
+
+The [Space Dump Utility|^spacedump.zip] copies the data currently stored within the IMDG and saves it into an embedded DB file used by a temporary space. Later, once you would like to reload the data back into the IMDG, the utility performs the procedure in a reverse manner, by reading the data from the file and copy it back into the IMDG.
+
+{indent}!GRA:Images^spaceDumpReload.jpg!{indent}
+
+The Space Dump utility uses a temporary persistent space approach with the [space copy API|http://www.gigaspaces.com/docs/JavaDoc7.1/com/j_spaces/core/admin/IRemoteJSpaceAdmin.html#spaceCopy]. This allows the utility to consume all the data from every IMDG partition and push it into a file. To reload the data from the file, the temporary space is started, loading the data from the file, and then the data is copied back into the relevant IMDG partition. If the IMDG is running backup spaces, these are restarted to allow them to recover their data from their relevant primary instance.
+
+h1. The Space Dump Utility
+To run the Space Dump Utility:
+1. Download the [Space Dump Utility|^spacedump.zip].
+2. Run the utility - The Space Dump Utility accept the following arguments:
+{code}java com.gigaspaces.util.spacedump.SpaceDumpMain <lookup locator> <Operation [dump | reload] <spaceName>{code}
+
+Example - Dump space data into a file:
+{code}java com.gigaspaces.util.spacedump.SpaceDumpMain myhostName dump mySpace{code}
+Example - Reload space data from a file:
+{code}java com.gigaspaces.util.spacedump.SpaceDumpMain myhostName reload mySpace{code}
+
+{tip}Make sure the Space Dump utility has the {{/gigaspaces-xap-root/lib/platform/jdbc/h2.jar}} as part of its classpath.{tip}

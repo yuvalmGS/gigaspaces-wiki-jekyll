@@ -26,11 +26,11 @@ The GigaSpaces cache instance that holds data objects in memory.
 ~Key sentence: The space holds your data objects.~
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_space.gif!
 
 ~*A space holding objects*~
-{align}
+{% endalign %}
 {column}
 {section}
 {whr}
@@ -47,11 +47,11 @@ A set of methods used to read, write, take, and register for notification on obj
 ~Key sentence: Interaction with the space is done using the read, write, update, take and notify methods.~
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_verbs.jpg!
 
 ~*A client application uses the read, write, take, update and notify methods to exchange objects and receive notifications from the space*~
-{align}
+{% endalign %}
 {column}
 {section}
 {whr}
@@ -69,11 +69,11 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 ~Key sentence: The service component interacts with the space to implement your application's logic.~
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_service_bean.gif!
 
 ~*A Service Component*~
-{align}
+{% endalign %}
 {column}
 {section}
 {whr}
@@ -89,11 +89,11 @@ A combination of service components and/or an embedded space instance. This is t
 
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_empty_pu.gif!
 
 ~*A Processing Unit*~
-{align}
+{% endalign %}
 {column}
 {section}
 h1. Common Processing Unit Configurations
@@ -107,11 +107,11 @@ h4. Processing Unit configured with an embedded space
 A deployable package which instantiates an embedded space instance, also called a data grid instance. A set of embedded space instances that run within the processing units typically form a [Data Grid|Terminology - Data Grid Topologies].
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_pu_with_space.gif!
 
 ~*A Processing Unit with an embedded space*~
-{align}
+{% endalign %}
 {column}
 {section}
 {comment}----------------------------
@@ -124,11 +124,11 @@ h4. Processing Unit configured with one of more services
 A deployable package containing one or more services. In the GigaSpaces context, it usually acts as a client that interacts with other Processing Units by utilizing the messaging capabilities of the space.
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_pu_with_bean.gif!
 
 ~*A Processing Unit containing a Service component that interacts with a space embedded in another Processing Unit*~
-{align}
+{% endalign %}
 {column}
 {section}
 {comment}----------------------------
@@ -142,11 +142,11 @@ A deployable, independent, scalable unit, which is the building block of [Space-
 Client application (which can also be other processing units) write objects to the space, and the procesing unit which contains this space consumes these objects or is notified about them and triggeres a related services.
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_pu_with_space_and_bean.gif!
 
 ~*A Processing Unit with an embedded service that interacts with an embedded space*~
-{align}
+{% endalign %}
 {column}
 {section}
 \\

@@ -1,0 +1,560 @@
+---
+layout: sbp
+title:  Moving from Hibernate to Space
+categories: SBP
+page_id: 55935740
+---
+
+{composition-setup}
+{tip}*Summary:* {excerpt}Moving Spring/Hibernate Application to GigaSpaces{excerpt}
+*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
+*Recently tested with GigaSpaces version*: XAP 8.0
+*Last Update:* Feb 2011
+{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+{tip}
+{rate}
+
+h1. Overview
+The following example is based on the standard [Spring Hibernate Integration tutorial|http://www.vaannila.com/spring/spring-hibernate-integration-1.html].
+In this best practice you will see how to modify an existing simple spring/hibernate application to leverage GigaSpaces as the [in-memory Data-grid|XAP91:The In-Memory Data Grid] and the application server hosting both the [web application|XAP91:Web Application Support] and the data in-memory. The Hibernate persistency settings will still be leveraged by [GigaSpaces Hibernate External Data Source|XAP91:Hibernate External Data Source] storing the data in-memory into a database in an [asynchronous manner|XAP91:Asynchronous Persistency with the Mirror].
+
+Moving Spring/Hibernate application to GigaSpaces involves the following basic steps:
+1. Spring bean Configuration file changes
+2. [POJO Class|XAP91:POJO Support] changes
+3. DAO implementation changes
+4. Deploying the data-grid and the Spring based web application into GigaSpaces
+
+h1. Architecture Change
+
+The procedure described below will move a standard Spring/Hibernate application that is using the following architecture:
+!GS6:Images^Hibernate with EhCache.jpg!
+
+To use the following architecture where the Data-Grid placed in-line between the application and the database:
+!GRA:Images^Hibernate_DataGrid_mirror.jpg!
+
+h1. Spring bean Configuration File
+The existing application Spring bean Configuration file will be modified to:
+- Remove the usage of database at the application layer.
+- Use the GigaSpaces DAO implementation instead of the original Hibernate DAO implementation.
+- Use Data Grid (space) as the data access layer instead of the database.
+- Add a Spring Configuration file for the Data-Grid (Data-Grid PU).
+- Add a Spring Configuration file for the Mirror (Mirror PU).
+
+{gdeck:SpringbeanConfigurationFile|top}
+{gcard:Hibernate spring bean configuration file}
+{code}
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+ 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />
+
+	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
+		<property name="url" value="jdbc:hsqldb:hsql://localhost/xdb"/>
+		<property name="username" value="sa"/>
+		<property name="password" value=""/>
+	</bean>
+
+	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="myDataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>com.vaannila.domain.User</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="myUserDAO" class="com.vaannila.dao.UserDAOImpl">
+		<property name="sessionFactory" ref="mySessionFactory"/>
+	</bean>
+
+	<bean name="/user/*.htm" class="com.vaannila.web.UserController" >
+		<property name="userDAO" ref="myUserDAO" />
+	</bean>
+</beans>
+{code}
+{gcard}
+{gcard:GigsSpaces spring bean configuration file}
+h2. The Application spring bean configuration file
+The {myUserSpaceDAO}} includs the GigaSpaces DAO.
+{code:xml}
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:os-core="http://www.openspaces.org/schema/core"
+	   xmlns:p="http://www.springframework.org/schema/p"
+
+ 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/core/openspaces-core.xsd">
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />
+
+	<bean name="/user/*.htm" class="com.vaannila.web.UserController" >
+		<property name="userDAO" ref="myUserSpaceDAO" />
+	</bean>
+
+	<os-core:space id="space" url="jini://*/*/mySpace" />
+	<os-core:giga-space id="gigaSpace" space="space"/>
+
+	<bean id="myUserSpaceDAO" class="com.vaannila.dao.UserDAOSpaceImpl">
+		<property name="gigaspace" ref="gigaSpace"/>
+	</bean>
+</beans>
+{code}
+
+h2. The Data-Grid PU spring bean configuration file
+{code:xml}
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:os-core="http://www.openspaces.org/schema/core"
+       xmlns:os-events="http://www.openspaces.org/schema/events"
+       xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
+       http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/remoting/openspaces-remoting.xsd">
+
+    <!--
+        Spring property configurer which allows us to use system properties (such as user.name).
+    -->
+    <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
+
+    <!--
+        Enables the usage of @GigaSpaceContext annotation based injection.
+    -->
+    <os-core:giga-space-context/>
+
+    <!--
+        A JDBC pooled data source that connects to the HSQL server the mirror starts.
+    -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
+        <property name="url" value="jdbc:hsqldb:hsql://localhost/xdb"/>
+        <property name="username" value="sa"/>
+        <property name="password" value=""/>
+    </bean>
+
+    <!--
+        Hibernate SessionFactory bean. Uses the pooled data source to connect to the database.
+    -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.vaannila.domain.User</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+                <prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
+                <prop key="hibernate.cache.use_second_level_cache">false</prop>
+                <prop key="hibernate.cache.use_query_cache">false</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="hibernateDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateExternalDataSource">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!--
+        A bean representing a space (an IJSpace implementation).
+
+        Note, we do not specify here the cluster topology of the space. It is declared outside of
+        the processing unit or within the SLA bean.
+
+        The space is configured to connect to a mirror, and uses the configured external data source
+        to perform the initial load operation from the database when the Space starts up.
+    -->
+    <os-core:space id="space" url="/./mySpace" schema="persistent" mirror="true"
+                   external-data-source="hibernateDataSource">
+        <os-core:properties>
+            <props>
+                <!-- Use ALL IN CACHE -->
+                <prop key="space-config.engine.cache_policy">1</prop>
+                <prop key="space-config.external-data-source.usage">read-only</prop>
+                <prop key="cluster-config.cache-loader.external-data-source">true</prop>
+                <prop key="cluster-config.cache-loader.central-data-source">true</prop>
+            </props>
+        </os-core:properties>
+    </os-core:space>
+
+    <!--
+        Defines a local Jini transaction manager.
+    -->
+    <os-core:local-tx-manager id="transactionManager" space="space"/>
+
+    <!--
+        OpenSpaces simplified space API built on top of IJSpace/JavaSpace.
+    -->
+    <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
+
+</beans>
+{code}
+h2. The Mirror PU spring bean configuration file
+{code:xml}
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:os-core="http://www.openspaces.org/schema/core"
+       xmlns:os-events="http://www.openspaces.org/schema/events"
+       xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
+       xmlns:os-sla="http://www.openspaces.org/schema/sla"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
+       http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/remoting/openspaces-remoting.xsd
+       http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/sla/openspaces-sla.xsd">
+
+    <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    </bean>
+
+    <!--
+        A JDBC datasource pool that connects to HSQL.
+    -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" >
+        <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
+        <property name="url" value="jdbc:hsqldb:hsql://localhost/xdb"/>
+        <property name="username" value="sa"/>
+        <property name="password" value=""/>
+    </bean>
+
+    <!--
+        Hibernate SessionFactory bean. Uses the pooled data source to connect to the database.
+    -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.vaannila.domain.User</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+                <prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
+                <prop key="hibernate.cache.use_second_level_cache">false</prop>
+                <prop key="hibernate.cache.use_query_cache">false</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--
+        An external data source that will be responsible for persisting changes done on the cluster that
+        connects to this mirror using Hibernate.
+    -->
+	<bean id="hibernateDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateExternalDataSource">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!--
+        The mirror space. Uses the Hiberante external data source. Persists changes done on the Space that
+        connects to this mirror space into the database using Hibernate.
+    -->
+	<os-core:space id="mirror" url="/./mirror-service" schema="mirror" external-data-source="hibernateDataSource" >
+		<os-core:properties>
+			<props>
+				<prop key="space-config.mirror-service.cluster.name">mySpace</prop>
+			</props>
+		</os-core:properties>
+	</os-core:space>
+
+</beans>
+{code}
+{gcard}
+{gdeck}
+
+h1. The POJO Class
+The POJO Class will be modified to include:
+- SpaceID field
+- Routing field
+- Indexed fields
+- Other Space class metadata decorations
+
+{gdeck:ThePOJOClass|top}
+{gcard:Hibernate POJO Class}
+{code}
+package com.vaannila.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="USER")
+public class User {
+
+	private Long id;  private String name; 	private String password;	private String gender;
+	private String country; private String aboutYou; private String[] community; private Boolean mailingList;
+
+	@Id
+	@GeneratedValue
+	@Column(name="USER_ID")
+	public Long getId() {return id;}
+	public void setId(Long id) {this.id = id;}
+
+	@Column(name="USER_NAME")
+	public String getName() {return name;}
+	public void setName(String name) {this.name = name;}
+
+	@Column(name="USER_PASSWORD")
+	public String getPassword() {return password;}
+	public void setPassword(String password) {this.password = password;}
+
+	@Column(name="USER_GENDER")
+	public String getGender() {return gender;}
+	public void setGender(String gender) {this.gender = gender;	}
+
+	@Column(name="USER_COUNTRY")
+	public String getCountry() {return country;}
+	public void setCountry(String country) {this.country = country;}
+
+	@Column(name="USER_ABOUT_YOU")
+	public String getAboutYou() {return aboutYou;}
+	public void setAboutYou(String aboutYou) {this.aboutYou = aboutYou;}
+
+	@Column(name="USER_COMMUNITY")
+	public String[] getCommunity() {return community;}
+	public void setCommunity(String[] community) {this.community = community;}
+
+	@Column(name="USER_MAILING_LIST")
+	public Boolean getMailingList() {return mailingList;}
+	public void setMailingList(Boolean mailingList) {this.mailingList = mailingList;}
+}
+{code}
+{gcard}
+{gcard:GigsSpaces POJO Class}
+{code}
+package com.vaannila.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.gigaspaces.annotation.pojo.SpaceId;
+import com.gigaspaces.annotation.pojo.SpaceRouting;
+
+@Entity
+@Table(name="USER")
+public class User {
+
+	private Long id;	private String name;	private String password;	private String gender;	private String country;
+	private String aboutYou; 	private String[] community; 	private Boolean mailingList;
+
+	@Id
+	@GeneratedValue
+	@Column(name="USER_ID")
+	public Long getId() {return id;}
+	public void setId(Long id) {this.id = id;}
+
+	@Column(name="USER_NAME")
+	@SpaceId(autoGenerate=false) // <-- ADDED FOR GIGASPACES
+	@SpaceRouting				 // <-- ADDED FOR GIGASPACES
+	public String getName() {return name;}
+	public void setName(String name) {this.name = name;	}
+
+	@Column(name="USER_PASSWORD")
+	public String getPassword() {return password;	}
+	public void setPassword(String password) {this.password = password;	}
+
+	@Column(name="USER_GENDER")
+	public String getGender() {return gender;}
+	public void setGender(String gender) {this.gender = gender;	}
+
+	@Column(name="USER_COUNTRY")
+	public String getCountry() {return country;	}
+	public void setCountry(String country) {this.country = country;}
+
+	@Column(name="USER_ABOUT_YOU")
+	public String getAboutYou() {return aboutYou;}
+	public void setAboutYou(String aboutYou) {this.aboutYou = aboutYou;	}
+
+	@Column(name="USER_COMMUNITY")
+	public String[] getCommunity() {return community;}
+	public void setCommunity(String[] community) {this.community = community;}
+
+	@Column(name="USER_MAILING_LIST")
+	public Boolean getMailingList() {return mailingList;}
+	public void setMailingList(Boolean mailingList) {this.mailingList = mailingList;	}
+}
+{code}
+{gcard}
+{gdeck}
+
+h1. UserDAO interface
+The UserDAO interface remains as is:
+{code}
+package com.vaannila.dao;
+
+import java.util.List;
+import com.vaannila.domain.User;
+
+public interface UserDAO {
+	public void saveUser(User user) ;
+	public List<User> listUser() ;
+}
+{code}
+
+h1. The DAO Implementation
+The DAO implementation should be modified to use the [GigaSpace interface|XAP91:The GigaSpace Interface] to access the data grid instead of using the {{HibernateTemplate}} that is accessing the database. The {{GigaSpace}} interface simialr methods to the {{HibernateTemplate}} to write and [Query|XAP91:SQLQuery] for objects.
+{gdeck:DAOImplemenation|top}
+{gcard:Hibernate DAO Implemenation}
+{code}
+package com.vaannila.dao;
+
+import java.util.List;
+import org.hibernate.SessionFactory;
+import org.springframework.orm.hibernate3.HibernateTemplate;
+import com.vaannila.domain.User;
+
+public class UserDAOImpl implements UserDAO {
+
+	private HibernateTemplate hibernateTemplate;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.hibernateTemplate = new HibernateTemplate(sessionFactory);
+	}
+
+	@Override
+	public void saveUser(User user) {hibernateTemplate.saveOrUpdate(user);	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<User> listUser() {	return hibernateTemplate.find("from User");	}
+}
+{code}
+{gcard}
+
+{gcard:GigsSpaces DAO Implemenation}
+{code}
+package com.vaannila.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.openspaces.core.GigaSpace;
+import com.vaannila.domain.User;
+
+public class UserDAOSpaceImpl implements UserDAO {
+
+	private GigaSpace gigaspace;
+
+	@Override
+	public void saveUser(User user) {
+		gigaspace.write(user);
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<User> listUser() {
+		List<User> users = new ArrayList<User>();
+		User usersArry[] = gigaspace.readMultiple(new User(), Integer.MAX_VALUE);
+		for (User user : usersArry) {
+			users.add(user);
+		}
+		return users;
+	}
+
+	public GigaSpace getGigaspace() {return gigaspace;}
+	public void setGigaspace(GigaSpace gigaspace) {this.gigaspace = gigaspace;}
+}
+{code}
+{gcard}
+{gdeck}
+
+h1. Deploying the Data-Grid and the Application
+To deploy the Data-Grid and the web Application into the [GigaSpaces runtime enviroment|XAP91:The Runtime Environment] perform the following:
+- Download the [3rd party libraries|^3rd_party_libraries.zip] package, and extract it into the {{\gigaspaces-xap\lib\optional\pu-common}} folder.
+- Download the [application.war|^application.war] , [myDataGrid.jar|^myDataGrid.jar] and the [myMirror.jar|^myMirror.jar].
+- Start the [GigaSpaces agent|XAP91:The Grid Service Agent]:
+On windows run the following command:
+{code}\gigaspaces-xap\bin\gs-agent.bat{code}
+On linux run the following command:
+{code}\gigaspaces-xap\bin\gs-agent.sh{code}
+
+- Start the HSQLDB database:
+{code}java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb{code}
+
+Once the agent is up and running call the deploy commands.
+- Deploy the Data-grid using:
+{code}gs.sh deploy myDataGrid.jar{code}
+You should see the following:
+{code}
+Found 1 GSMs
+Deploying [myDataGrid.jar] with name [myDataGrid] under groups [gigaspaces-8.0.0-XAPPremium-ga] and locators []
+Uploading [myDataGrid] to [http://192.168.1.101:3354/]
+Waiting for [2] processing unit instances to be deployed...
+[myDataGrid.1] [1] deployed successfully on [192.168.1.101]
+[myDataGrid.1] [2] deployed successfully on [192.168.1.101]
+Finished deploying [2] processing unit instances
+{code}
+- Deploy the Mirror using:
+{code}gs.sh deploy myMirror.jar{code}
+You should see the following:
+{code}
+Found 1 GSMs
+Deploying [myMirror.jar] with name [myMirror] under groups [gigaspaces-8.0.0-XAPPremium-ga] and locators []
+Uploading [myMirror] to [http://192.168.1.101:3354/]
+SLA Not Found in PU.  Using Default SLA.
+Waiting for [1] processing unit instances to be deployed...
+[myMirror] [1] deployed successfully on [192.168.1.101]
+Finished deploying [1] processing unit instances
+{code}
+
+- Deploy the web Application using:
+{code}gs.sh deploy application.war{code}
+You should see the following:
+{code}
+Found 1 GSMs
+Deploying [application.war] with name [application] under groups [gigaspaces-8.0.0-XAPPremium-ga] and locators []
+Uploading [application] to [http://192.168.1.101:3354/]
+Waiting for [1] processing unit instances to be deployed...
+[application] [1] deployed successfully on [192.168.1.101]
+Finished deploying [1] processing unit instances
+{code}
+
+- To view the deployed application and data-grid start the GS-UI:
+On windows run the following command:
+{code}\gigaspaces-xap\bin\gs-ui.bat{code}
+On linux run the following command:
+{code}\gigaspaces-xap\bin\gs-ui.sh{code}
+
+- Once the Data-Grid, Mirror and the application will be deployed you should see the following within the GS-UI:
+{indent}!hib2space1.jpg|thumbnail!{indent}
+
+- You can start the web application and register users:
+{indent}!hib2space3.jpg|thumbnail!{indent}
+
+Each registered user data will be stored within the space and also be persist into the database.
+
+- To view the data within the space click the Data Types , select the User class and click Query:
+{indent}!hib2space2.jpg|thumbnail!{indent}
+This will display the Query view with the User objects data stored within the space:
+{indent}!hib2space5.jpg|thumbnail!{indent}
+
+- To view the data within the database, start the database UI :
+{code}java -cp  ../lib/platform/jdbc/hsqldb.jar  org.hsqldb.util.DatabaseManager{code}
+And query the database:
+{indent}!hib2space4.jpg|thumbnail!{indent}
+
+(!) You may download the full source code of the application [here|^HibernateToSpace.zip].

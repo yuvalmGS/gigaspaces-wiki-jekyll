@@ -30,10 +30,10 @@ A container that hosts a [Processing Unit|Terminology - Basic Components#Process
 ~Key sentence: The Processing Unit can run only inside a hosting Processing Unit Container.~
 {column}
 {column:width=30%}
-{align:center}!GS6:Images^term_puc.gif!
+{% align center %}!GS6:Images^term_puc.gif!
 
 ~*A Processing Unit Container*~
-{align}
+{% endalign %}
 {column}
 {section}
 h1. Types of Processing Unit Containers
@@ -50,12 +50,12 @@ A container that runs the Processing Unit inside an IDE (e.g. Visual Studio, Ecl
 
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_ipuc.gif!
 
 ~*An Intgrated Processing Unit Container running a Processing Unit*~
 ~*inside an IDE*~
-{align}
+{% endalign %}
 {column}
 {section}
 {comment}----------------------------
@@ -70,12 +70,12 @@ A Processing Unit Container which runs within a [Grid Service Container|#GSC].
 It enables running the processing unit within a [service grid|#Service Grid], which provides self-healing and SLA capabilities to components deployed on it.
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_gscnet.gif!
 
 ~*A Service Grid Processing Unit Container running a Processing Unit*~
 ~*inside an IDE*~
-{align}
+{% endalign %}
 {column}
 {section}
 {whr}
@@ -99,10 +99,10 @@ Each container can be run on a separate physical machine.
 \\
 \\
 \\
-{align:center}!GS6:Images^term_empty_service_grid.gif!
+{% align center %}!GS6:Images^term_empty_service_grid.gif!
 
 ~*A Service Grid composed of a Grid Service Manager which manages 3 Grid Service Containers*~
-{align}
+{% endalign %}
 {column}
 {section}
 {comment}----------------------------
@@ -119,10 +119,10 @@ A machine can run one or more GSC processes. Each GSC communicates with a manage
 ~Key sentence: A set of managed containers hosting different Processing Unit Instances~
 {column}
 {column:width=30%}
-{align:center}!GS6:Images^term_gsc.jpg!
+{% align center %}!GS6:Images^term_gsc.jpg!
 
 ~*Grid Service Container*~
-{align}
+{% endalign %}
 {column}
 {section}
 {comment}-------------------------------------------------
@@ -139,10 +139,10 @@ A GSM has an API for deploying/undeploying processing units. When a GSM is instr
 ~Key sentence: A GSM manages all the running containers in the network and deploys processing units to them.~
 {column}
 {column:width=30%}
-{align:center}!GS6:Images^term_gsm.gif!
+{% align center %}!GS6:Images^term_gsm.gif!
 
 ~*Grid Service Manager*~
-{align}
+{% endalign %}
 {column}
 {section}
 {comment}-------------------------------------------------
@@ -160,10 +160,10 @@ Enables the user to view and interact with the runtime components running in the
 {column}
 {column:width=30%}
 \\
-{align:center}!GS6:Images^term_management_ui.gif!
+{% align center %}!GS6:Images^term_management_ui.gif!
 
 ~*Management UI Console*~
-{align}
+{% endalign %}
 {column}
 {section}
 

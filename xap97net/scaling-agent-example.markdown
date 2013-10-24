@@ -13,8 +13,8 @@ that monitors a deployed application, and scale it up on demand.{summary}
 {column:width=7%}
 {column}
 {column:width=86%}
-{align:center}||!GRA:Images^wiki_icon_folder.gif!||Example Root|{{<GigaSpaces Root>\Examples\ScalingAgent}} |
-{align}
+{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|{{<GigaSpaces Root>\Examples\ScalingAgent}} |
+{% endalign %}
 {column}
 {column:width=7%}
 {column}
@@ -31,7 +31,7 @@ The activities to scale up the application could be: starting a new GSC on remot
 the [SBA Example] first.{refer}
 
 
-{align:center}!GRA:Images^scaling agent .net.jpg!{align}
+{% align center %}!GRA:Images^scaling agent .net.jpg!{% endalign %}
 
 h1. How the Scaling Agent Works
 The scaling agent periodically samples the throughput of feeds that are processed by the running application instances, and compares the average throughput per instance to a specific threshold. If the average throughput is larger than the pre-defined threshold, which is part of the processing unit configuration, the scaling agent scales up the application by starting a new GSC, and by increasing the amount of instances (see the {{ScaleUp()}} method). The sampling is done by letting the feed processor implement the {{IServiceMonitorsProvider}} interface, which exposes the public API that is used by the agent.

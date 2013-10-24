@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: sbp
 title:  Your First XTP Application
 categories: XAP97NET
 page_id: 63799346

@@ -29,11 +29,11 @@ The relations between the spaces define the [Data Grid Topology|#Data Grid Topol
 
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_populated_data_grid.gif!
 
 ~*A Data Grid with 3 Instances*~
-{align}
+{% endalign %}
 {column}
 {section}
 {anchor:Data Grid Topology}
@@ -53,11 +53,11 @@ Operations that do not modify any data (e.g. read, count) are performed only on 
 
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_primary_backup_text_data_grid.gif!
 
 ~*A Data Grid comprised of a primary instance with one backup instance*~
-{align}
+{% endalign %}
 {column}
 {section}
 {comment}----------------------------
@@ -74,12 +74,12 @@ When the objects are written to this Data Grid, they are routed to the proper pa
 
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_partitioned_data_grid.gif!
 
 ~*A Partitioned Data Grid with 3 Instances, each holding a different set objects*~
 
-{align}
+{% endalign %}
 {column}
 {section}
 {comment}----------------------------
@@ -97,12 +97,12 @@ The routing is based on a designated property/field inside the objects that are 
 
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_routing.gif!
 
 ~*Routing in a partitioned Data Grid with 3 instances*~
 
-{align}
+{% endalign %}
 {column}
 {section}
 {comment}--------------------------------------------------
@@ -117,12 +117,12 @@ A [partitioned Data Grid|#Partitioned Data Grid], with one or more [backup|#Prim
 
 {column}
 {column:width=30%}
-{align:center}
+{% align center %}
 !GS6:Images^term_partitioned_primary_backup_data_grid.gif!
 
 ~*A Primary Backup Partitioned Data Grid: 2 partitions, each replicates to one backup instance*~
 
-{align}
+{% endalign %}
 {column}
 {section}
 \\
