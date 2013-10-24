@@ -1,9 +1,0 @@
----
-layout: sbp
-title:  Admin Modules
-categories: XAP97NET
-page_id: 63799421
----
-
-{summary}This section explains how to manage and monitor XAP using administrative APIs{summary}
-{section-page:na}
