@@ -11,7 +11,7 @@ h1. Overview
 
 In some cases, you might want to monitor the activity of the JVM running as part of your .NET application. The [jconsole|http://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.html] is a great tool that allows you to troubleshoot the JVM internals.
 
-*To view and monitor the JVM loaded into the .NET process memory address using* {{{*}jconsole{*}{}}}*:*
+**To view and monitor the JVM loaded into the .NET process memory address using `jconsole`:**
 # Have the following settings as part of your {{app.config}} file:
 {code:xml}
 <?xml version="1.0" encoding="utf-8" ?>

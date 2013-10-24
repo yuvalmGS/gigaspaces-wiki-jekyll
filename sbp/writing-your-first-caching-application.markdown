@@ -135,7 +135,7 @@ In this tutorial, we provide a sample application that consists of the following
 * *A Simple Reader* that reads data directly from the Data Grid (using spaces _read_).
 * *A Notified Reader* that registers for notifications on the Data Grid and is notified when data is written by the Data Loader.
 You can run one or more reader of either or both types.
-* *An* {{{*}Account{*}}} *object*, defined as a .Net PONO , which represents the data in the Data Grid. It has the following fields: {{userName}}, {{accountID}} and {{balance}}.
+* *An* **`Account`** *object*, defined as a .Net PONO , which represents the data in the Data Grid. It has the following fields: {{userName}}, {{accountID}} and {{balance}}.
 
 h2. Getting Source Code and Full Client Package
 
@@ -168,7 +168,7 @@ jini://*/*/myDataGrid
 {noformat}\\
 * This URL uses the Jini protocol, which enables dynamic discovery of the space (the client does not need to know which machines are participating in the Data Grid).
 * {{\*/\*/myDataGrid}} specifies that the client wants to connect to a cluster in which all the spaces are called {{myDataGrid}}, regardless of which physical machines participate in the cluster.
-* {{{*}useLocalCache{*}}} is an additional parameter, not shown above, which launches a local cache in the connecting application. This is necessary for the master-local and local-view topologies.
+* **`useLocalCache`** is an additional parameter, not shown above, which launches a local cache in the connecting application. This is necessary for the master-local and local-view topologies.
 
 (i) The URL above is used by the application to *connect* to the space (a cluster of spaces in this case), so it is called a _space connection URL_. This should not be confused with a _space start URL_, a similar form of URL which can be used to *start* a space. In this tutorial, you will not use a space start URL, rather you will start the spaces using the GS-UI, as described below.
 

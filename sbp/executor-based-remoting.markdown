@@ -181,7 +181,7 @@ public interface ISimpleService
 
 Both the client and server share the same interface, with the interface holding both synchronous and asynchronous services. Here is an example:
 
-In the above case, the server implementation does not need to implement the {{BeginCalc}} and {{EndCalc}} methods (simply return {{null} or throw {{NotSupportedException}} for the {{BeginCalc}} and {{EndCalc}} methods). The client side can choose which service to invoke.
+In the above case, the server implementation does not need to implement the {{BeginCalc}} and {{EndCalc}} methods (simply return {{null}} or throw {{NotSupportedException}} for the {{BeginCalc}} and {{EndCalc}} methods). The client side can choose which service to invoke.
 You should note the naming convention and the signature of the asynchronous method in this case, which follows the conventional naming convention of the .NET framework.
 If the regular method looks as follows:
 {{T DoSomething(String arg)}}, T being the return value type, then the asynchronous method should have the following two methods:
