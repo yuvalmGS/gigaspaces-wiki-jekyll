@@ -5,20 +5,20 @@ page_id: 61867355
 ---
 
 
-
+{%comment%}
 [< Previous|Tutorial Part III] * [Home|XAP Tutorial] * [Next >|Tutorial Part V] 
-
+ {%endcomment%}
 
 {%summary%}This part of the tutorial explains the different event and messaging services that are available over the space.{%endsummary%}
  
 
-{%section%}
-{%column%}
 # Overview
+{%section%}
+{%column width=70% %}
 The Space's Messaging and Events support provides messaging handlers that simplify event driven programming. Events are generated when objects are written, updated or taken from the space. With this framework you select events based on its content and designate a method that would be triggered as a result of that event, all through a simple and non-intrusive configuration. There are two main event handlers that are available:
 {%endcolumn%}
-{%column%}
-!Events-Message.png|width=100px, height=100px!
+{%column width=20% %}
+<img src="/attachment_files/qsg/Events-Message.png" width="100" height="100">
 {%endcolumn%}
 {%endsection%}
 
@@ -31,6 +31,7 @@ The Polling Container is the equivalent of a point to point paradigm. Unlike the
 
 # Archive Container
 The archive container is a mechanism built on top of a polling container to transfer historical data into Big-Data storage (for example Cassandra). The typical scenario is when streaming vast number of raw events through the Space, enriching them and then moving them to a Big-Data storage. Typically, there is no intention of keeping them in the space nor querying them in the space.
+
 {%learn%}/xap97/archive-container.html{%endlearn%}
 
  
@@ -63,7 +64,9 @@ public class PaymentListener {
 
 In this example we define: 
 {%indent%}
-|| Annotation|| Description||
+{: .table .table-bordered}
+|Annotation | Description|
+|:----------|:-----------|
 |@EventDriven @Notify| the listener as a notification listener |
 |@EventTemplate|       the event that will trigger the listener; a payment that was cancelled|
 |@SpaceDataEvent|      the method that processes the event arrives. The return value is null, nothing will be written back into the space|
@@ -148,6 +151,7 @@ public class Payment implements Serializable {
 	private Integer payingAccountId;
 }
 {%endhighlight%}
+
 {%learn%}/xap97/fifi-support.html{%endlearn%}
 
 
@@ -157,29 +161,33 @@ public class Payment implements Serializable {
 
 # JMS
 In addition to the polling containers you can also use a JMS facade on top of the space to deliver events. The JMS facade is designed to enable integration with external feeders that cannot or were not designed to work with the space based API. 
+
 {%learn%}/xap97/jms-basics.html{%endlearn%}
 
  
 
 
-{%section%}
-{%column%}
 # Master Worker Pattern
+{%section%}
+{%column width=60% %}
 The Master-Worker Pattern (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a {{Master}} and multiple {{Workers}}. 
 In GigaSpaces XAP, you can implement the Master-Worker pattern using several methods:
 - [Task Executors|http://wiki.gigaspaces.com/wiki/display/SBP/Map-Reduce+Pattern+-+Executors+Example] - best for a scenario where the processing activity is collocated with the data (the data is stored within the same space as the tasks being executed).
 - [Polling Containers|Polling Container] - in this case the processing activity runs in a separate machine/VM from the space. This approach should be used when the processing activity consumes a relatively large amount of CPU and takes a large amount of time. It might also be relevant if the actual data required for the processing is not stored within the space, or the time it takes to retrieve the required data from the space is much shorter than the time it takes to complete the processing. 
 {%endcolumn%}
-{%column%}
-!GRA:Images^the_master_worker.jpg|thumbnail!
+{%column width=30% %}
+<img src="/attachment_files/qsg/the_master_worker.jpg" width="100" height="100">
 {%endcolumn%}
 {%endsection%}
+
 {%learn%}http://wiki.gigaspaces.com/wiki/display/SBP/Master-Worker+Pattern{%endlearn%}
 
 
 # What's Next
-!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part IV|Tutorial Part V] of this tutorial will introduce you to the concept of a Processing Unit which is the fundamental unit of deployment in GigaSpaces XAP.
+ {%comment%}
 
+!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part IV|Tutorial Part V] of this tutorial will introduce you to the concept of a Processing Unit which is the fundamental unit of deployment in GigaSpaces XAP.
 
 # 
 {align:center}[< Previous|Tutorial Part III] * [Home|XAP Tutorial] * [Next >|Tutorial Part V]{align}
+  {%endcomment%}

@@ -6,22 +6,20 @@ page_id: 61867355
 
 
 
-
-
+{%comment%}
 [< Previous|Tutorial Part I]  *  [Home|XAP Tutorial]  *  [Next >|Tutorial Part III]
- 
+ {%endcomment%}
 
 {%summary%}This part of the tutorial will introduce you to the XAP In Memory Data Grid (IMDG).{%endsummary%}
 
 
-{%section%}
-{%column%}
 # Overview
+{%section%}
+{%column width=70% %}
 In Part I you have learned about XAP's capabilities as a data store. In this part of the tutorial we will show you how you can deploy an In Memory Data Grid (IMDG) that provides scalability and failover. GigaSpaces XAP can be used as a scalable application platform on which you can host your Java application, similar to JEE and web containers. However, GigaSpaces XAP's IMDG can also be embedded within another Java application which is not hosted within the XAP platform. In this part of the tutorial we will show you how to start a data grid and how you can interact with it.  
 {%endcolumn%}
-{%column%}
-![grid](/attachment_files/tutorial/grid.gif)
-
+{%column width=20% %}
+<img src="/attachment_files/qsg/grid.gif" width="100" height="100">
 {%endcolumn%}
 {%endsection%}
 
@@ -33,18 +31,15 @@ To start an XAP data grid, run the following command:
 
 {% inittab tab1|top %}
 {% tabcontent Windows %}
-
 {%highlight java%}
 GS_HOME\bin\gs-agent.bat  
 {%endhighlight%}
-
 {% endtabcontent %}
-{% tabcontent Unix/Linux %}
 
+{% tabcontent Unix %}
 {%highlight java%}
 GS_HOME/bin/gs-agent.sh
 {%endhighlight%}
-
 {% endtabcontent %}
 {% endinittab %}
 
@@ -52,32 +47,33 @@ GS_HOME/bin/gs-agent.sh
 
 
 {%section%}
-{%column%}
+{%column width=60% %}
 This will start all the infrastructure required to run the data grid. The following components are started: 
 
-* Grid Service Manager (GSM)
+- Grid Service Manager (GSM)
 The Grid Service Manager is the component which manages the deployment and life cycle of the processing unit.
  
 
-* Grid Service Container (GSC)
+- Grid Service Container (GSC)
 The Grid Service Container provides an isolated runtime for one (or more) processing unit instance and exposes its state to the GSM.
 
-* The Lookup Service (LUS)
+- The Lookup Service (LUS)
 The Lookup Service provides a mechanism for services to discover each other. Each service can query the lookup service for other services, and register itself in the lookup service so other services may find it. For example, the GSM queries the LUS to find active GSCs.
  
-* Grid Service Agent (GSA)
+- Grid Service Agent (GSA)
 The GSA is a process manager that can spawn and manage service grid processes (Operating System level processes) such as the Grid Service Manager, The Grid Service Container, and The Lookup Service. Using the agent, you can bootstrap the entire data grid very easily, and start and stop additional GSCs, GSMs and lookup services at will. Usually, a single GSA is run per machine.
 
 {%learn%}/xap97/service-grid.html{%endlearn%}
 
 
 {%endcolumn%}
-{%column%}
-{center}!GRA:Images3^gs_runtime-core.jpg!{center}
+{%column width=30% %}
+<img src="/attachment_files/qsg/gs_runtime-core.jpg"  >
 {%endcolumn%}
 {%endsection%}
 
 When you execute the gs-agent command above without any arguments, 1 GSA, 1 GSM, 1 LUS and 2 GSC's will be started. The gs-agent command takes several different parameters as arguments.
+
 {%learn%}/xap97/scripts.html{%endlearn%}
  
  
@@ -128,6 +124,7 @@ GS_HOME\bin\gs.sh deploy-space  -cluster schema=partitioned-sync2backup total_me
        -max-instances-per-machine 1 xapTutorialSpace
 {%endhighlight%}
 When the application write Payment objects into this space, XAP will use the routing information provided (@SpaceRouting) by the Payment class to route the object to the right partition. 
+
 {%learn%}/xap97/space-topology.html{%endlearn%}
 
 
@@ -166,9 +163,6 @@ GS_HOME/bin/gs_webui.sh
 {% endinittab %}
 
 After you execute the above command, open a browser and goto to http://your_host:8099 and the login screen for the admin application will open up. The following screen shots will demonstrate some of the UI features:
- 
-h5.
-
 
  
 {%section%}
@@ -228,12 +222,14 @@ With the Admin UI console has many more features which we will introduce you to 
  
 
 # What's Next
+{%comment%}
+
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part III|Tutorial Part III] of this tutorial will introduce you to the processing services that can be performed over the space.
  
 
 #
 {align:center}[< Previous|Tutorial Part I] * [Home|XAP Tutorial] * [Next >|Tutorial Part III]{align}
-
+{%endcomment%}
 
  
  

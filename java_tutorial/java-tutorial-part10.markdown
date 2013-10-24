@@ -84,6 +84,7 @@ Note that the monitoring is secured only by the 'tooling' (CLI/UI).
 |Monitor JVM	 |Monitoring of JVM statistics|
 |Monitor PU	 |Monitoring of Processing Units (classes, connections, statistics, etc.)|
 {%endindent%}
+
 {%learn%}/xap97/security-authorities.html{%endlearn%}
 
 
