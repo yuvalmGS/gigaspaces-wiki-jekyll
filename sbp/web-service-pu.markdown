@@ -119,11 +119,11 @@ The client application:
 ## Running the Client
 You may test the web service using a client application running as a standalone Java application, Spring Application or via [SOAP UI|http://www.soapui.org].
 
-h3. Standalone Java Application
+### Standalone Java Application
 The `com.example.customerservice.client.CustomerServiceClient` can be used as a standalone Java application to invoke the service. Run the `main` to run the client:
 {code}java com.example.customerservice.client.CustomerServiceClient{code}
 
-h3. Spring Application
+### Spring Application
 The `com.example.customerservice.client.CustomerServiceSpringClient` can be used as a Spring client application to invoke the service. The `\resources\client-applicationContext.xml` used as the client application context. Make sure you have the `resources` folder as part of the client classpath when running the client.
 Run the `main` to run the client:
 {code}com.example.customerservice.client.CustomerServiceSpringClient{code}
@@ -137,7 +137,7 @@ Found 1 customers with Name:Smith
 All calls were successful
 {code}
 
-h3. SOAP UI
+### SOAP UI
 You can use the [SOAP UI|http://www.soapui.org] to test the web service.
 Writing a Custmer object:
 {indent}!soap_ui1.jpg!{indent}

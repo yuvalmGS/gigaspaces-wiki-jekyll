@@ -100,7 +100,7 @@ public class MyTask implements DistributedTask<Integer, Integer>{
 {code}
 
 ## The Client
-h3. Sync mode
+### Sync mode
 The client invokes the Task on the remote space in sync mode using the following:
 {code}
 space = new UrlSpaceConfigurer("jini://*/*/space").space();
@@ -109,7 +109,7 @@ AsyncFuture<Integer> future =gigaSpace.execute(new MyTask());
 Integer result = future.get();
 {code}
 
-h3. A-Sync mode
+### A-Sync mode
 The client invokes the Task on the remote space in A-sync mode using the following:
 {code}
 space = new UrlSpaceConfigurer("jini://*/*/space").space();
@@ -125,7 +125,7 @@ public void onResult(AsyncResult<Integer> result) {
 {code}
 
 ## Running the Example
-h3. Deploying the Space
+### Deploying the Space
 Using IDE:
 Set your IDe to have the Following:
 !GRA:Screens^exec_ide1.jpg!
@@ -148,7 +148,7 @@ with url [/./space?cluster_schema=partitioned&total_members=2&id=2&schema=defaul
 started successfully
 {code}
 
-h3. Run the Client Application
+### Run the Client Application
 Run the Client Application (ExecutorTaskClientMain.java).
 
 The ExecutorTaskClientMain requires the following as application arguments:
@@ -161,7 +161,7 @@ A-Sync mode:
 org.test.executor.ExecutorTaskClientMain async
 {code}
 
-h3. Expected output
+### Expected output
 {code:title=Server Output}
 14:14:16 MyTask execute called at space_container1 - total is:24500
 14:14:16 MyTask execute called at space_container2 - total is:25000
@@ -357,7 +357,7 @@ System.out.println(new Time(System.currentTimeMillis()) + " - Client got Result:
 - The result is being displayed.
 
 ## Running the Example
-h3. Deploying the Space and Services
+### Deploying the Space and Services
 Using IDE:
 Set your IDe to have the Following:
 !GRA:Screens^exec_ide1.jpg!
@@ -382,13 +382,13 @@ with url [/./space?cluster_schema=partitioned&total_members=2&id=2&schema=defaul
 started successfully
 {code}
 
-h3. Run the Client Application
+### Run the Client Application
 Run the Client Application (ExecutorClientMain.java) using the following:
 {code}
 org.test.executor.ExecutorClientMain sync
 {code}
 
-h3. Expected Output
+### Expected Output
 {code:title=Server Output}
 14:12:18 MyTask execute called at space_container2 - total is:25000
 14:12:18 MyTask execute called at space_container1 - total is:24500

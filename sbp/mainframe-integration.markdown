@@ -24,10 +24,10 @@ GigaSpaces' ability to deploy, manage and scale services along with the data (th
 
 ## IBM QRep and Event Publishing as an Integration bridge to GigaSpaces IMDG
 There are various architectural options moving Data From Mainframe (Z/OS) DB2 to GigaSpaces XAP IMDG:
-h3. Replication
+### Replication
 [IBM® InfoSphere® Data Replication|http://www-03.ibm.com/software/products/us/en/infodatarepl] (aka IBM QRep) replicates information between heterogeneous data stores in near real time. It provides replication with transactional integrity to support database migration, application consolidation, warehousing, master data management, business analytics and data quality processes. DB2 Replication programs read the source database recovery logs continuously and apply them to target data source (i.e. databases). This can be achieved via either SQL Replication or Queue Replication.
 
-h3. Event Publishing
+### Event Publishing
 DB2 Event publishing programs read source database changes from the database logs and makes the same available to consuming applications(in delimited, XML format or direct to database tables). When publishing messages, these can be available via IBM Websphere MQ.
 
 !GRA:Images3^db2-delta-server.jpg!

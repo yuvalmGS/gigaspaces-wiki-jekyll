@@ -53,7 +53,7 @@ The concept of the OpenSpaces Processing Unit was designed around scalability, a
 Nevertheless, in some cases it is not possible to fully take advantage of the available horsepower across the network.
 
 
-h3. Data-access Starvation
+### Data-access Starvation
 Often this occurs because of the data access layer, which cannot feed data quickly enough to the business logic.
 
 This is known as a starvation scenario.
@@ -70,7 +70,7 @@ Collocated Mode - The Task Executor-Step 2:
 {column}
 {section}
 
-h3. CPU Starvation
+### CPU Starvation
 In other cases, the bottleneck is not data access, but in the amount of time it takes to process the incoming data (a.k.a. the CPU bound scenario). In this scenario, there is no problem with accessing the data and handing it to the business logic that needs to process it. However, there is a need to run the business logic across as many CPUs and machines as possible, to fully take advantage of the resources over the network.
 
 In this case, it makes better sense to have the data and business logic running in separate processing units, each with its own SLA and scaling requirements. In this case, the business logic may use the [Master-Worker Pattern], having the actual business logic running separately and independently from the space processing unit.

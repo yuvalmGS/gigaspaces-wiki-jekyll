@@ -69,10 +69,10 @@ The client performs 3 types of queries:
 
 To run the example you should first run the IMDG and later run the client. the example below explains how to run these within the IDE, but you can also modify these to run as a PU and deploy these into the GigaSpaces runtime environment.
 
-h3. Running the IMDG
+### Running the IMDG
 
 The `MyEDS` class main method will start IMDG with 3 nodes. Once the IMDG will be started, each partition will load the dummy data.
 
-h3. Running the Client
+### Running the Client
 
 The `Client` class main method will start a client that will perform the above queries.

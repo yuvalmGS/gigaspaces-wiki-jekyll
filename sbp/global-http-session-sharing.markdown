@@ -59,7 +59,7 @@ The end-to-end path between the 2 data center nodes includes the servlet and Shi
 
 {indent}!httpSessionSharing3.jpg!{indent}
 
-h3. Load-Balancing Scenarios
+### Load-Balancing Scenarios
 
 The GigaSpaces Global HTTP Session Sharing support two Load-Balancing scenarios:
 
@@ -83,7 +83,7 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 {column}
 {section}
 
-h3. The Web Application
+### The Web Application
 
 The web application requires a couple of configuration changes to the web.xml file in order to include the Shiro filter:
 
@@ -155,7 +155,7 @@ securityManager.sessionManager.sessionValidationScheduler = $sessionValidationSc
 
 {tip}The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Space URL|XAP9:Space URL] to the IMDG deployed within your site.{tip}
 
-h3. Web Application Libraries
+### Web Application Libraries
 
 The web application should include the following libraries within its \WEB-INF\lib  file folder:
 aopalliance-1.0.jar, commons-beanutils-1.8.3.jar, commons-collections-2.1.1.jar, gs-runtime.jar, gs-session-manager-2.0-b103.jar, jcl-over-slf4j-1.6.4.jar, log4j-1.2.16.jar, shiro-all-1.3.0-317b.jar, slf4j-api-1.6.4.jar, slf4j-log4j12-1.6.4.jar, xmlbeans-2.2.0.jar, xmlpull-1.1.3.1.jar, xpp3_min-1.1.4c.jar and xstream-1.4.2.jar.
@@ -163,7 +163,7 @@ aopalliance-1.0.jar, commons-beanutils-1.8.3.jar, commons-collections-2.1.1.jar,
 {note}The gs-runtime.jar should be replaced with the relevant GigaSpaces gs-runtime.jar matching your environment. \\ Use appropriate version of gs-session-manager-<version>.jar (example uses version 2.0-b103 version)
 {note}
 
-h3. GigaSpaces In Memory Data Grid (IMDG)
+### GigaSpaces In Memory Data Grid (IMDG)
 GigaSpaces IMDG should be deployed using your favorite topology (replicated and/or partitioned, static or elastic) and include a reference to a WAN Gateway.
 
 Before deploying regular IMDG:
@@ -178,10 +178,10 @@ gs deploy-space sessionSpace
 
 {tip}See the [deploy-space|XAP9:deploy-space GigaSpaces CLI] command for details.{tip}
 
-h3. The WAN Gateway
+### The WAN Gateway
 The [WAN Gateway|XAP9:Multi-Site Replication over the WAN] should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway|http://www.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gateway] best practice for an example of how a multi-master Gateway architecture can be deployed.
 
-h3. Other configuration options
+### Other configuration options
 
 h5. Non-Serializable Session Data
 
@@ -229,7 +229,7 @@ The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblo
 - View the session within the space via the GS-UI. Click the Data-Types icon , click the `org.openspaces.sessions.shiro.SpaceSession` class and Click the query button. The Query view will be displayed. You can double click any of the sessions and drill into the attributes map within the session to view the session attributes:
 {indent}!httpSessionSharing5.jpg|thumbnail!{indent}
 
-h3. Multi-Web Servers Deployment
+### Multi-Web Servers Deployment
 
 h5. Multiple Tabs
 You may share the HTTP session between different web servers. To test this on your local environment you can install multiple web servers, deploy the web application and have your browser access the same application via the same browser. See the below example:
@@ -237,7 +237,7 @@ You may share the HTTP session between different web servers. To test this on yo
 {indent}!httpSessionSharing9.jpg|thumbnail!{indent}
 Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the space.
 {note}When deploying the web application WAR file please make sure the web app context will be identical.{note}
-h3. Load-Balancer
+### Load-Balancer
 Another option would be to use a load-balancer such as the [apache httpd|http://httpd.apache.org] and configure it to load-balance the web requests between the different web servers. Here is a simple setup:
 - Install [apache httpd|http://httpd.apache.org].
 - Create a file named `HttpSession.conf` located at <Apache HTTPD 2.2 root>\conf\gigaspaces
@@ -286,7 +286,7 @@ http://127.0.0.1:8888/balancer-manager
 {indent}!httpSessionSharing6.jpg|thumbnail!{indent}
 You can shutdown Websphere or Tomcat and later restart these. Your web application will not lose its session data.
 
-h3. Multi-Site Deployment
+### Multi-Site Deployment
 When deploying the [multi-site example|WAN Replication Gateway] you should change the `shiro.ini` for each site to match the local site Space URL. For example,
 to connect to the DE space you should have the web application use a `shiro.ini` with the following:
 {code}

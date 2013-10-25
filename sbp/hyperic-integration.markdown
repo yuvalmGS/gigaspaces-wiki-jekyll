@@ -23,7 +23,7 @@ In order to use the plugin on an hyperic agent you have to prepare this agent to
 
 # Usage
 
-h3. Create a platform
+### Create a platform
 
 In order to use the plugin you'll have to configure a GigaSpaces platform. Indeed as a correct defined GigaSpaces cluster discovery relies on lookup groups and/or lookup locators the plugin won't be able to auto-discover your infrastructure without these parameters.
 

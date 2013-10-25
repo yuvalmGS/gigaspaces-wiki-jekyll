@@ -350,7 +350,7 @@ Another way to deploy the processing units will be to use GigaSpaces Command Lin
 <GigaSpaces Root>\Bin\Gs-Cli.exe deploy DataFeeder
 {code}
 
-h3. Application Domain (AppDomain)
+### Application Domain (AppDomain)
 Each processing unit instance is deployed in a seperate isolated AppDomain with in the Grid Service Container, therefore they do not affect each other and once undeployed all the related libraries are being unloaded as well.
 
 Once the processing units are deployed, they will appear in the managament center and the different components can be monitored:

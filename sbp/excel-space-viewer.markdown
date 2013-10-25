@@ -165,7 +165,7 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 ## Space Viewer toolbar does not show up in Excel
 
 
-h3. Problem
+### Problem
 
 The Excel Space Viewer is installed on a laptop PC. It is working OK but after a few days, the Space Viewer toolbar does not appear in Excel.
 
@@ -173,7 +173,7 @@ Running the installation file (`GigaSpacesViewerSetup.msi`) and selecting *Add*/
 - *Operating system* -- Microsoft Windows XP Professional, Version - 5.1.2600 Service Pack 2 Build 2600
 - *Office version* -- Microsoft Office Small Business Edition 2003, Office version: 11.0.8169
 
-h3. Solution
+### Solution
 
 - Open Excel
 - Click *Help* > *About Excel* > *Disabled Items*

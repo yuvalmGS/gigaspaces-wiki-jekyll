@@ -210,7 +210,7 @@ public class Evictor {
 {gcard}
 {gdeck}
 
-h3. Running the example
+### Running the example
 
 {note}
 This example is using Maven for packaging and build.
@@ -510,7 +510,7 @@ gs.write(wMark, Lease.FOREVER, 5000, UpdateModifiers.UPDATE_OR_WRITE);
 {gcard}
 {gdeck}
 
-h3. Running the example
+### Running the example
 
 {note}
 This example is using Maven for packaging and build.
