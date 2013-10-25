@@ -45,7 +45,7 @@ For more information please read [XAP66:Develop a custom benchmark|#2]
 
 The structure of the [XAP66:configuration xml file|#Example configuration file] is the same for the two benchmark options.
 
-{anchor:1}
+{% anchor 1 %}
 
 # Option 1: Out-of-the-box Benchmark
 
@@ -108,7 +108,7 @@ GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.I
 - **threads** - Number of concurrent threads that will execute this benchmark
 - **Results xml** - Location of benchmarks results xml file. The default is the Results directory.
 
-{anchor:2}
+{% anchor 2 %}
 
 # Option 2: Develop a Custom Benchmark
 

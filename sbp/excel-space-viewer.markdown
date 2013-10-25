@@ -67,7 +67,7 @@ To connect to a space:
     {indent}!Connect1.JPG!{indent}
 - The **Customize the Selection** button opens the [#Customize the Selection] window.
 
-{anchor:create}
+{% anchor create %}
 To create a new view:
 1. Click the **Create View** option in the Space Viewer toolbar. The Create View window is opened.
 2. Make sure you are connected to a space.

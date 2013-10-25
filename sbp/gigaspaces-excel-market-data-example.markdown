@@ -41,7 +41,7 @@ The example contains a few projects:
 - The **`StockOperations`** project is an Excel UDF (User-Defined Function). It returns the "Open" value of a Stock Symbol.
 - The **`StockMarketFeeder`** project writes the stock market data into the space. It simulates changes and actions that take place in the stock market.
 
-{anchor:building}
+{% anchor building %}
 
 # Building the Example
 

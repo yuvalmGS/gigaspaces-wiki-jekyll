@@ -20,7 +20,7 @@ When using a GigaSpaces cluster as a task queue there are times you will need to
 
 There are couple of approaches you could use to identify these partitions: [task executors|#taskexecutor] and an [executor service|#serviceexecutor]. You can also see the [Executors example|Map-Reduce Pattern - Executors Example] page for other similar examples.
 
-{anchor:taskexecutor}
+{% anchor taskexecutor %}
 
 # Using a Task Executor
 
@@ -141,7 +141,9 @@ public class MyDistributedTask implements
 {gcard}
 {gdeck}
 
-# {anchor:serviceexecutor}Using an Executor Service
+{% anchor serviceexecutor %}
+
+# Using an Executor Service
 
 Another [example|^GetMinLoadPartition-ExecutorService.zip] shows an implementation using Executor Service. This approach should be used when this functionality is intrinsic part of the system and not needed on ad-hoc basis. Usage instructions are similar to the [Executor Service Example|Map-Reduce Pattern - Executors Example#ExecutorsExample-ServiceExecutorsExample].
 
