@@ -13,7 +13,7 @@ page_id: 54298007
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 
-#  Overview
+# Overview
 GigaSpaces being an in memory grid, is limited by the amount of memory allocated to the JVM's that make the cluster. Applications that are built using GigaSpaces and use it as a run time environment should be designed to work with this constraint. This article shows common strategies GigaSpaces applications use for Evicting old objects and make room for new data.
 
 GigaSpaces supports two cache policies, [LRU|XAP8:LRU-Cache Policy] and [ALL_IN_CACHE|XAP8:ALL IN CACHE-Cache Policy]. GigaSpace evicts data only in the [LRU|XAP8:LRU-Cache Policy] mode, where "oldest" objects are evicted from memory when the configured thresholds are reached.
@@ -22,7 +22,7 @@ As the name suggests LRU is "least recently used" data and any data written firs
 
 For some applications LRU based eviction is not suitable. Examples include, applications that cache reference data which should always be in the space. applications that want some data to be always in space irrespective of when it is written as this data has higher SLA requirements and need to be readily available. For these scenarios, [ALL_IN_CACHE|XAP8:ALL IN CACHE-Cache Policy] is more appropriate. In these scenarios, application can adopt one of the strategies mentioned below and not run out of memory and cause MemoryShortageExceptions.
 
-#  Eviction Strategies
+# Eviction Strategies
 
 ## Eviction using Leases
 
@@ -552,7 +552,7 @@ Start monitoring the JVM Tenured pool in JConsole and GSC logs. After few second
 Below is a screenshot of Tenured pool of the JVM,
 !HeapUsageGraph.png!
 
-#  Important Considerations
+# Important Considerations
 
 - Defining a Eviction Start Threshold value that is proportionate to data load rates of the application and gives enough time for eviction logic. If eviction is not given enough time, application might reach Write Block Percentage which will result into  Memory Shortage Exceptions making things worse. Perform some tests and tune this threshold to fit your needs.
 
@@ -564,7 +564,7 @@ Below is a screenshot of Tenured pool of the JVM,
 
 - Identifying memory usage of a space partition becomes tricky once more than one space partition shares the same GSC. JVM Memory Notification API strategy as described above may not work in those scenarios, you will need to build additional functionality to identify other cluster members and coordinate eviction across cluster members in order to make this work.
 
-#  External Data Source (EDS) Considerations
+# External Data Source (EDS) Considerations
 
 Applications using External Data Source Integration will need some changes to the eviction functionality. Because of EDS integration the take/clear will remove the data from the database also which might not be intended.
 

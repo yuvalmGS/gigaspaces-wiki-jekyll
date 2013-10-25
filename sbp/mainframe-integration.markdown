@@ -15,7 +15,7 @@ page_id: 56429998
 {tip}
 {rate}
 
-#  Overview
+# Overview
 Mainframe (Z/OS) based systems running COBOL programs are legacy systems in many organizations. These are planned to be replaced with low cost commodity servers running Java or .Net based systems, saving the cost of the expensive mainframe MIPS and COBOL-based development.
 
 GigaSpaces XAP can simplify the migration effort from mainframe based systems and reduce the cost of the legacy applications. In addition, having GigaSpaces XAP act as a front-end layer for mainframe based systems may boost the system performance and improve the overall system response time on peak load.
@@ -48,7 +48,7 @@ References:
 - [Replication and Event Publishing documentation|http://publib.boulder.ibm.com/infocenter/db2luw/v10r5/index.jsp?topic=%2Fcom.ibm.swg.im.iis.db.prod.repl.nav.doc%2Fdochome%2Fiiyrcnav_dochome.html].
 - Examples and details about IBM QRep can be found on this [Solution Brief|http://public.dhe.ibm.com/common/ssi/ecm/en/ims14394usen/IMS14394USEN.PDF].
 
-#  GigaSpaces Intelligent Mainframe Front-end Architecture
+# GigaSpaces Intelligent Mainframe Front-end Architecture
 GigaSpaces XAP provides an extremely flexible persistence layer (known as the mirror service) that enables transparent communication between the GigaSpaces IMDG and virtually any type of back-end application or database system.
 
 When used with a database, the Mirror service is one of the primary reasons allowing GigaSpaces XAP to overcome database locking issues experienced on peak load periods. The Mirror service offloads the database access, since the IMDG operates as the primary interface to the application data access while handling persistence as a back-end durable ordered activity, delegating in-memory transactions to the database running on the mainframe.
@@ -86,7 +86,7 @@ These may be the backbone of the entire system to access backend data and servic
 
 GigaSpaces XAP has built-in multi-tenancy support, meaning that several applications can share the same data grid, reducing the total infrastructure required across the enterprise.  In addition, GigaSpaces preserves the boundaries between applications and data sets for you, and enable your operations team to define application-specific SLA's to meet the individual needs of each line of business. This means each application has its own life-cycle and scaling rules, its own dedicated security settings, etc.
 
-#  Other Interfaces to Bridge between Mainframe and GigaSpaces
+# Other Interfaces to Bridge between Mainframe and GigaSpaces
 
 GigaSpaces can be used with Mainframe using the following:
 

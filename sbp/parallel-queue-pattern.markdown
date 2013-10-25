@@ -14,7 +14,7 @@ page_id: 52887871
 {tip}
 {rate}
 
-#  Overview
+# Overview
 When building [low latency systems|http://en.wikipedia.org/wiki/High_frequency_trading], a critical requirement of such systems is to be able to process the incoming data as fast as they can, but also to do that in the exact order the request has been submitted into the system. The system can't process requests associated with the same Order in parallel, but in the exact order these has been created at the client side.
 
 Such a requirement would be relevant with algorithmic trading engines , Order Management Systems , Market Data processing system , High Speed inventory systems, etc.
@@ -31,7 +31,7 @@ The above results retrived when running the Data-Grid with 4 partitions with a b
 
 {tip}You can [download|^ParallelQueue.zip] the Order Management Processor code used with this example.{tip}
 
-#  The Order Management Processor Example
+# The Order Management Processor Example
 
 The following example illustrates a simple Order management processor that includes the following artifacts:
 - *The Order Class* - This represents an Order request. An order includes a _Symbol_ , _requestType_, _id_ , _orderId_ and a _bucketId_ field.

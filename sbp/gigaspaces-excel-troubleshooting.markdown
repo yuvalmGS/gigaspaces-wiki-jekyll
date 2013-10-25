@@ -7,9 +7,9 @@ page_id: 47218928
 
 {summary:page|65}Debugging using Excel; how to write a hosting application for easy debugging.{summary}
 {rate}
-#  Overview
+# Overview
 
-#  Writing a Hosting Application for Easy Debugging
+# Writing a Hosting Application for Easy Debugging
 
 (on) If it's the first time you are running UDF of RTD, try running a simple example that only returns a value, to check that the API works in your environment.
 

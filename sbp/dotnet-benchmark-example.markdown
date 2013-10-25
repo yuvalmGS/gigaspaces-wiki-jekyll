@@ -21,7 +21,7 @@ page_id: 63799403
 
 
 
-#  Overview
+# Overview
 
 The Benchmark Example is used to measure simple space operation throughput.
 
@@ -48,7 +48,7 @@ For more information please read [XAP66:Develop a custom benchmark|#2]
 The structure of the [XAP66:configuration xml file|#Example configuration file] is the same for the two benchmark options.
 
 {anchor:1}
-#  Option 1: Out-of-the-box Benchmark
+# Option 1: Out-of-the-box Benchmark
 
 The syntax of the command line for running the out-of-the-box benchmark is as follows:
 {code}
@@ -96,7 +96,7 @@ GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.I
 
 
 {anchor:2}
-#  Option 2: Develop a Custom Benchmark
+# Option 2: Develop a Custom Benchmark
 
 Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.
 
@@ -122,7 +122,7 @@ Develop a custom benchmark with your own code for the benchmark scenario and the
 3. For running the customized benchmark, follow the steps below in *Building and Running the Example*
 
 
-#  Building and Running the Example
+# Building and Running the Example
 
 - To build the example, execute compile.bat (You can also build GigaSpaces.Examples.Benchmarks.sln from Visual Studio).
 - To run a benchmark on an embedded space, execute runEmbeddedBenchmark.bat.
@@ -140,7 +140,7 @@ Example command line for running an embedded benchmark run:
  Xmls\BenchmarkPerson.xml Results\EmbeddedBenchmarkPersonResult.xml
 {code}
 
-#  Example Configuration File
+# Example Configuration File
 
 The *Input xml* structure is the same for the two benchmark options (the Out-of-the-box benchmark and the Customized benchmark).
 

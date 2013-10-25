@@ -13,7 +13,7 @@ JDK:*Sun JDK 1.6*
 Date: July 2009
 {rate}
 
-#  Overview
+# Overview
 By default, when using the GigaSpaces Java API, the space stores space object fields as is. No data compaction, or compression is done while the object is transported across the network or when stored within the space.
 
 {note}- The Compressed Storage Type compressing non-primitive fields using the zip utilities. It is different than the compact serialization pattern.
@@ -28,7 +28,7 @@ The basic idea of the compact serialization pattern is simple: Total control on 
 - Avoids the de-serialization replicated to a backup space(s)
 - Avoids the serialization involved when reading an object back from the space into the client process (at the space side).
 
-#  The Basic Flow
+# The Basic Flow
 With the compact serialization pattern:
 - Before you write the object you serialize all non indexed fields (payload data) into one byte array field using the GigaSpaces serialization API (pack).
 - You serialize/de-serialize all indexed fields as usual (have the `writeExternal` , `readExternal` implementation to write and read these into the stream).
@@ -46,7 +46,7 @@ When the object is read from the space:
 - The matching object is serialized and sent to the client.
 - When the matching object arrives the client side is it de-serialized, and the byte array data is de-serialized and expand (in a lazy manner).
 
-#  The Implementation
+# The Implementation
 Using the compact serialization pattern can reduce the object footprint when stored within the space in drastic manner. As much as you will have more fields as part of the space object serialized using the GigaSpaces Serialization API, the memory footprint overhead will be smaller compared to the default serialization mode.
 
 The compact serialization pattern involves creation the following methods:
@@ -57,10 +57,10 @@ The compact serialization pattern involves creation the following methods:
 - `checkNulls` method - Handles null data for the indexed and byte array fields.
 - `getnulls` method - Handles null data for non indexed fields.
 
-#  BinaryOutputStream and BinaryInputStream
+# BinaryOutputStream and BinaryInputStream
 The `BinaryOutputStream` contains various method to serialize all java's primitive type, their Object wrappers and arrays forms in a compacted mode. `BinaryInputStream` is its counterpart for deserialization. Your `pack` and `unpack` methods will be using an instance of those classes.
 
-#  Example
+# Example
 With the [attached example|Lowering the Space Object Footprint^BinaryCompaction.zip] we have a space class with 37 fields.
 - 1 Integer data type field (indexed used for queries).
 - 12 String fields
@@ -317,5 +317,5 @@ BinaryFormatEntry resBFE = (BinaryFormatEntry)_gigaspace.read(templateBFE, 0);
 resBFE.unpack(); // this deserialize the binary data into the object fields
 {code}
 
-#  References
+# References
 The [PackRat|http://www.openspaces.org/display/PRT/PackRat] project allows you to use the compact serialization pattern via simple annotations.

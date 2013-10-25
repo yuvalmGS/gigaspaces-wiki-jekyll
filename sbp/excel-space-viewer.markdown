@@ -14,7 +14,7 @@ page_id: 47219420
 {rate}
 {composition-setup}
 
-#  Overview
+# Overview
 
 The Excel space viewer allows you to create customized views of data for spaces running in your network, and to configure existing views. The displayed data is constantly updated in the Excel spreadsheet.
 
@@ -25,7 +25,7 @@ Links:
 - *[*Installing the Excel Space Viewer*|#Installing the Excel Space Viewer]* -- running the installing of the Excel Space Viewer
 - *[*Troubleshooting*|#Troubleshooting]* -- troubleshooting
 
-#  Using Excel Space Viewer
+# Using Excel Space Viewer
 
 The Excel Space Viewer allows you to create views of data to a certain space class. The generated view is a tabular representation of the displayable class fields, numeric and textual types. In the view, each class field is represented by a column, and each row in this column represents an instance of the class.
 
@@ -113,10 +113,10 @@ The *Configure View* option allows you to make changes to existing views. If you
 The Configure View window already includes your previously selected options, and you are free to change them as you like.
 {toc-zone}
 
-#  Installation
+# Installation
 
 
-#  Prerequisites
+# Prerequisites
 
 *Before you begin, make sure the following are installed*:
 - GigaSpaces 6.5 GA.
@@ -127,12 +127,12 @@ For more details see [Installing GigaSpaces|http://www.gigaspaces.com/wiki/displ
 - The [.NET Framework|http://msdn2.microsoft.com/en-us/netframework/aa569263.aspx]
 - Microsoft Office 2003
 
-#  Supported Office Versions
+# Supported Office Versions
 
 The Excel Space Viewer has been tested with the following editions of Microsoft Office 2003:
 - Microsoft Office Small Business Edition 2003
 
-#  Installing the Excel Space Viewer
+# Installing the Excel Space Viewer
 
 *To install and run the Excel space viewer*:
 - (on) *Download the [Excel Space Viewer Installation|^GigaSpacesViewerSetup.zip]* file and extract it.
@@ -159,7 +159,7 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 \\
 {indent}!Toolbar4.JPG!{indent}
 
-#  Troubleshooting
+# Troubleshooting
 
 
 ## Space Viewer toolbar does not show up in Excel

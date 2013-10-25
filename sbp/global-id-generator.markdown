@@ -13,7 +13,7 @@ page_id: 52887597
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
-#  Overview
+# Overview
 When writing objects into the space, you may need to generate a global unique ID for your space objects. The ID will be used later to fetch the object based on its ID via the readById/readByIds methods, or associate it with another object by placing the object ID as a field value within another object.
 
 GigaSpaces generates a unique global ID when writing new objects using its built-in internal ID generator utility used when enabling the `auto-generate` ID property. Still, you may want to have your own custom global unique ID generator.
@@ -30,7 +30,7 @@ The following example includes a custom global unique ID generator PU and a clie
 
 !id_generator.jpg!
 
-#  Using the ID Generator
+# Using the ID Generator
 To use the ID Generator you should:
 1. Deploy the ID Generator PU using the pu.xml below. You should deploy it using *one partition and a backup*.
 2. With your application, inject a `SpaceBasedIdGenerator` Bean. You should have it with every application instance.
@@ -42,7 +42,7 @@ Integer myNextID = idGenerator.generateId();
 
 {info}The `SpaceBasedIdGenerator` using [Spring Transactions|http://static.springsource.org/spring/docs/2.0.x/reference/transaction.html] to update the `IdCounterEntry` object.{info}
 
-#  The ID Generator Components
+# The ID Generator Components
 The following should be used to enable the ID Generator:
 {gdeck:IDGeneratorComponents|top}
 {gcard:ID Generator PU}

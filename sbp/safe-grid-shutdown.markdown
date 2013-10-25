@@ -16,18 +16,18 @@ page_id: 64325420
 
 
 {rate}
-#  Problem
+# Problem
 Shutting down an entire cluster in GigaSpaces XAP is usually done through the "gsa shutdown" command in the [XAP96:gsa - GigaSpaces CLI]. However, in cases of a space asynchronously replicating to a persistent store ([XAP96:Asynchronous Persistency with the Mirror]) or a remote grid ([XAP96:Multi-Site Replication over the WAN]), the gsa shutdown workflow does not wait for replication redo logs to completely flush before killing the child GSC processes. Since replication redo logs are almost always stored in memory, this could lead to a situation where pending space changes do not make it to an external data store or cluster.
 
 
-#  Solution
+# Solution
 To ensure that no pending asynchronous replication data is lost during shutdown, we utilize the [Admin API|XAP96:Administration and Monitoring API] to ensure that the shutdown process does not kill all processes until all replication operations have been committed (redo log size is 0). This mechanism is achieved through the following orderly steps:
 1.	Wait until the redo log size for mirrors is 0
 2.	Wait until the redo log size for all backups is 0
 If the redo logs are not flushed after a specific timeout, an E-mail alert is sent as a warning and the shutdown process is cancelled.
 
 
-#  Application
+# Application
 The sample code below is meant to illustrate how the Admin API can be used to discover Grid Service Containers, Spaces, and Mirrors in order to check the replication statistics.
 
 {note} This example uses multicast to discover the service grid components. For unicast discovery, you can use the  [addLocator()|http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/AdminFactory.html#addLocator(java.lang.String)] method with a LUS address. {note}

@@ -5,7 +5,7 @@ categories: SBP
 page_id: 47219561
 ---
 
-#  Prerequisites
+# Prerequisites
 
 Before you begin, make sure:
 

@@ -7,17 +7,17 @@ page_id: 47219033
 
 {summary:page|65}Frequently asked questions about the GigaSpaces-Excel integration.{summary}
 {rate}
-#  Overview
+# Overview
 The following FAQs deal with the GigaSpaces Excel Integration solutions.
 
-#  General FAQs
+# General FAQs
 
 - [What are the *Prerequisites*?|#Prerequisites]
 - [Why does the Space Viewer toolbar not show up in Excel?|#The Space Viewer toolbar does not show up in Excel]
 
 {include:Prerequisites - GigaSpaces-Excel Integration}
 
-#  The Space Viewer toolbar does not show up in Excel
+# The Space Viewer toolbar does not show up in Excel
 
 h3. Problem
 The Excel Space Viewer is installed on a laptop PC. It is working OK but after a few days, the Space Viewer toolbar does not appear in Excel.

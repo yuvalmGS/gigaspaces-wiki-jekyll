@@ -32,7 +32,7 @@ The Elastic Calculation Engine example illustrates the following:
 
 The Distributed Calcualtion Engine performs Net Present Value calculations where the Trades used for the calculation divided into several Books. These books could represent different types of Trades, different markets, different customers , etc.
 
-#  Colocated vs. Remote Calculations
+# Colocated vs. Remote Calculations
 Calculations can be deployed colocated with the data or seperatly.
 
 ||Functionality ||Colocated Calculations||Remote Calculations||
@@ -47,7 +47,7 @@ Calculations can be deployed colocated with the data or seperatly.
 |Calculation splitting support|Yes. Intelligent routing support.|Yes|
 |Recommended with|Lightweight calculations. No IO|Heavyweight calculations. CPU / IO bound|
 
-#  Colocated Calculations
+# Colocated Calculations
 ## The Calculating Flow
 The Calculating Flow includes the following:
 - A client, splitting a list of Trade IDs into multiple batches. Each Batch is sent into the calculation node (space partition) via a [AnalysisTask|#The AnalysisTask] that implements the [Task Interface|XAP8:Task Execution over the Space]. Each calculation node stores a subset of the Trade data.
@@ -97,12 +97,12 @@ The Trade Space class stores the following items:
 ## Elasticity
 The [Elastic Processing Unit|XAP8:Elastic Processing Unit] is used to deploy the data/compute grid and scale it dynamically. This allows you to increase the capacity of the data grid and leverage additional CPU resources for the calculation activity. With this demo, the user changes the capacity using a scale command that instructs the data/compute grid to increase its capacity (this in turn starts additional containers and rebalances the data/compute grid) or decrease its capacity (by terminating containers and rebalancing).
 
-#  Remote Calculations
+# Remote Calculations
 For long calculations that consume relatively large amount of CPU time, the recommended approach to implement distributed calculations is the [Master-Worker Pattern]. The approach suggested with the Master-Worker pattern should be used when the calculation time is relativity very long where the data access time can't be considered as overhead.
 
 !ElasticDistributedRiskAnalysisEngine_remote_workers.jpg!
 
-#  Running the Demo
+# Running the Demo
 1. Download the [ElasticCalculationEngine.zip|Elastic Distributed Calculation Engine^ElasticCalculationEngine.zip] and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and *edit* the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.
 2. Start the GigaSpaces agent by running the following:
 {code}startAgent.bat{code}

@@ -14,7 +14,7 @@ page_id: 56426564
 {tip}
 {rate}
 
-#  Overview
+# Overview
 This example illustrates a simple web service packaged as a WAR using [Apache CXF|http://cxf.apache.org] 2.4. Web service is also interacting with a space and performing read and write operations on behalf of the client.
 
 {indent}!web_service_pu.jpg!{indent}
@@ -25,12 +25,12 @@ For simplicity:
 
 The example is based on the [sample|http://cxf.apache.org/docs/sample-projects.html] found within the CXF package under the `\apache-cxf-2.4.0\samples\wsdl_first` folder. This sample shows how to build and call a web service using a given WSDL (also called Contract First).
 
-#  What the Sample Web Service is Doing?
+# What the Sample Web Service is Doing?
 The web service performs the following space operations:
 - Write a Customer object into the space - See the `com.example.customerservice.server.CustomerServiceImpl.updateCustomer (Customer customer)`.
 - Read Customer objects from the space - See the `com.example.customerservice.server.CustomerServiceImpl.getCustomersByName (String name)`.
 
-#  Running the Web Service
+# Running the Web Service
 1. Download the [Web Service WAR file|^CustomerServicePort.war].
 2. Download the [Web Service project|^WebServicePU.zip]. This includes the entire source code for the client and the web service.
 3. Setup the application project class path libraries. See the [Client Application Project jars|#Client Application Project jars] for details.
@@ -42,7 +42,7 @@ The web service performs the following space operations:
 {code}java com.example.customerservice.client.CustomerServiceClient{code}
 See the [The Client Application|#The Client Application] for details.
 
-#  Web Service Configuration
+# Web Service Configuration
 The WAR file includes the web service configuration. It is placed within `\CustomerServicePort\WEB-INF\cxf-servlet.xml`.
 The configuration includes:
 - The Space bean.
@@ -90,7 +90,7 @@ The configuration includes:
 There is no `pu.xml` used with this war. cxf-servlet.xml has all the required configuration.
 {note}
 
-#  Space Proxy Injection into the Service
+# Space Proxy Injection into the Service
 The space proxy injected into the `com.example.customerservice.server.CustomerServiceImpl` using `@GigaSpaceContext` annotation:
 {code}
 public class CustomerServiceImpl implements CustomerService , InitializingBean{
@@ -99,7 +99,7 @@ public class CustomerServiceImpl implements CustomerService , InitializingBean{
     GigaSpace space;
 {code}
 
-#  WSDL Contract
+# WSDL Contract
 The WSDL used by the web service includes following:
 {code:xml}
 <wsdl:service name="CustomerServiceService">
@@ -111,7 +111,7 @@ The WSDL used by the web service includes following:
 
 WSDL is packaged in the CustomerServicePort.war file as `\WEB-INF\CustomerService.wsdl`.
 
-#  The Client Application
+# The Client Application
 The client application:
 - Call the `CustomerServiceImpl.updateCustomer (Customer customer)`.
 - Call the `CustomerServiceImpl.getCustomersByName (String name)`.
@@ -157,7 +157,7 @@ When the client application running sucessfuly you will be able to see the Custo
 Click the Query button to view the Customer Data:
 {indent}!web_serv_ui2.jpg|thumbnail!{indent}
 
-#  WAR file jars
+# WAR file jars
 The CustomerServicePort.war file includes the following jars within its `\CustomerServicePort\WEB-INF\lib` folder.
 Spring and Jetty jars should not be included since they are loaded by GigaSpaces:
 {section}
@@ -204,7 +204,7 @@ xmlschema-core-2.0.jar
 {column}
 {section}
 
-#  Client Application Project jars
+# Client Application Project jars
 The Client project should include the following libraries:
 - All jars within the `GigaSpaces root/lib/platform/jetty` folder.
 - All jars within the `GigaSpaces root/lib/required` folder.

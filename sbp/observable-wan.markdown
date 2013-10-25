@@ -23,7 +23,7 @@ The basic idea is to write timestamps into spaces that are being replicated usin
 
 {% align center %}!observablewan.png!{% endalign %}
 
-#  Getting the project
+# Getting the project
 The mirror project is held on github in the [best practices|https://github.com/Gigaspaces/bestpractices] project. This is an umbrella repository; the specific project is in the observable-wan directory under the root directory.
 
 ## Building the project

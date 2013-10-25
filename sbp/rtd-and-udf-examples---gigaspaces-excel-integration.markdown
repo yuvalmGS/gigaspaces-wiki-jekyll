@@ -13,11 +13,11 @@ page_id: 47219410
 {tip}
 {rate}
 
-#  Overview
+# Overview
 
 This section includes basic and advanced code examples for using the GigaSpaces-Excel integration with Microsoft Excel User-Defined Functions (UDF) and Real-Time Data (RTD).
 
-#  Basic Examples
+# Basic Examples
 
 {toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
 
@@ -633,7 +633,7 @@ namespace TickInfo
 
 {toc-zone}
 
-#  What's Next?
+# What's Next?
 
 {refer}[Write Your First RTD/UDF Application|Writing Your First RTD or UDF Application]{refer}
 {refer}[See the Market-Data Example|GigaSpaces-Excel Market-Data Example]{refer}

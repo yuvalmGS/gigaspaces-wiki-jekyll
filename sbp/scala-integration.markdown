@@ -13,13 +13,13 @@ page_id: 56428283
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 
-#  Overview
+# Overview
 
 Scala is a general purpose programming language designed to express common programming patterns in a concise, elegant, and type-safe way. It smoothly integrates features of object-oriented and functional languages, enabling Java and other programmers to be more productive.
 
 Scala programs run on the Java VM, are byte code compatible with Java so you can make full use of existing Java libraries or existing application code. You can call Scala from Java and you can call Java from Scala, the integration is seamless. Because of this, Scala applications can use of GigaSpaces libraries and API like any other Java library or API.
 
-#  Scala Helloworld examples
+# Scala Helloworld examples
 
 There are many possible permutations for integrating Java and Scala applications, you may have mixture of Java and Scala code or pure Scala code that you want to run on top of GigaSpaces. [Hello World in Scala|http://www.openspaces.org/display/SCL/Hello+World+in+Scala] OpenSpaces project ports the GigaSpaces XAP standard helloworld example application for common Scala integration scenarios. Use this as a reference for how to integrate your Scala applications with GigaSpaces.
 
@@ -166,7 +166,7 @@ object Feeder {
 {gcard}
 {gdeck}
 
-#  Using Scala Interpreter
+# Using Scala Interpreter
 
 Scala also comes with an interpreter ([REPL|http://www.scala-lang.org/node/2097]) which can be handy for development and testing. It is an interactive "shell" for writing Scala expressions and programs.
 

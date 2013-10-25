@@ -8,7 +8,7 @@ page_id: 56430569
 {composition-setup}
 {summary:page|60}Global HTTP Session Sharing allows transparent session replication between remote sites and session sharing between different application servers in real-time. The solution uses the [Shiro Session Manager library|http://shiro.apache.org/session-management.html]{summary}
 
-#  Global HTTP Session Sharing - Massive Web Application Scaling
+# Global HTTP Session Sharing - Massive Web Application Scaling
 
 It's becoming increasingly important for organizations to share HTTP session data across multiple data centers, multiple web server instances or different types of web servers. Here are few scenarios where HTTP session sharing is required:
 - *Multiple different Web servers running your web application* - You may be porting your application from one web server to another and there will be a period of time when both types of servers need to be active in production.
@@ -28,7 +28,7 @@ The GigaSpaces Global HTTP Session Sharing architecture allows users to deploy t
 
 With this solution, there is no need to deploy a database to store the session, so you avoid the use of expensive database replication across multiple sites. Setting up GigaSpaces for session sharing between each site is simple and does not involve any code changes to the application.
 
-#  What does GigaSpaces Global HTTP Session Management provide?
+# What does GigaSpaces Global HTTP Session Management provide?
 
 GigaSpaces Global HTTP Session Management designed to deliver the application maximum performance with ZERO application code changes.
 
@@ -45,7 +45,7 @@ GigaSpaces Global HTTP Session Management features the following:
 - *Sticky session and Non-sticky* session support - Your requests can move across multiple instances of web application seamlessly.
 - *Atomic HTTP request* session access support - multiple requests for the session attributes within the same HTTP request will be served without performing any remote calls. Master session copy will be updated when the HTTP request will be completed.
 
-#  Using GigaSpaces Global HTTP Session Sharing with your Application
+# Using GigaSpaces Global HTTP Session Sharing with your Application
 
 You simply need to configure your web application to use the Shiro session manager  with GigaSpaces, deploy the GigaSpaces in-memory data grid (IMDG) and its WAN Gateway in each data center and deploy your web application. That's it!
 
@@ -215,7 +215,7 @@ When using a [Secure GigaSpaces cluster|XAP9:Securing your Data] you can pass se
 - cacheManager.password = gs
 {code}
 
-#  Http Session Web Application Example
+# Http Session Web Application Example
 
 ## Single-Site Deployment
 The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish....).
@@ -299,7 +299,7 @@ sessionDAO.activeSessionsCacheName = jini://*/*/wanSpaceUS?useLocalCache&groups=
 {code}
 
 
-#  Other Considerations
+# Other Considerations
 
 h5. Web Application Context
 Global HTTP session sharing works only when your application is deployed as a non-root context. It is relying on browser cookies for identifying user session, specifically JSESSIONID cookie. Cookies are generated at a context name per host level. This way all the links on the page are referring to the same cookie/user session.

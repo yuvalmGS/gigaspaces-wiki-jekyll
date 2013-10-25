@@ -40,7 +40,7 @@ With the above config the PUs will be deployed in the following order: F, D, E, 
 ## Abort Strategy
 In case of a deployment failure, you may specify an abort strategy. In case of unsuccessful deployment you may instruct the GUD to undeploy the specific PU that could not be deployed or undeploy the entire PUs that already been deployed.
 
-#  GUD Command Line Options
+# GUD Command Line Options
 The GUD support the following command line arguments:
 ||Switch||Description||Options||Default||
 |-command|deploy or undeploy PU listed at the config file location| deploy , undeploy| deploy|
@@ -49,7 +49,7 @@ The GUD support the following command line arguments:
 |-groups|lookup service groups| | |
 |-abortDeployOnFailure|In case of a failure with the deploy of any of the PUs, undeploy all the PUs listed at the GUD config file| true,false| false|
 
-#  Running the GUD
+# Running the GUD
 ## Install the GUD
 - Download the [GigaSpaces Universal Deployer|^GSUniversalDeployer.zip] and extract it into an empty folder.
 - Edit the `runGSUniversalDeployer.bat` or `runGSUniversalDeployer.sh` to include the correct parameters.

@@ -10,7 +10,7 @@ page_id: 48236956
 This section contains GigaSpaces usage patterns, best practices and solutions. Each best practice is listed with the author/origin, and the GigaSpaces product version that it was tested against.
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 
-#  Data Access Patterns
+# Data Access Patterns
 || Best Practice || Level || Description||
 |[Moving from Hibernate to Space] | Beginner | Moving from Database Centric into In-Memory Model. Can be used when moving from *J2EE Session Bean* into XAP.|
 |[Finding Partition Load]| Beginner | Monitoring Data Grid partitions in real time.|
@@ -30,7 +30,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |[MongoDB External DataStore]|Advanced| MongoDB External Data Source with Mirror Service implementation. |
 |[Scala Integration] | Advanced| Common Scala integration scenarios on top of XAP. |
 
-#  Parallel Processing & Messaging Patterns
+# Parallel Processing & Messaging Patterns
 || Best Practice || Level || Description||
 |[Map-Reduce Pattern - Executors Example]| Beginner | Implementing Task Executors and Service Executors to perform parallel queries or parallel processing across multiple IMDG partitions. Can be used when moving from *J2EE EJB*/RMI/IIOP into XAP.|
 |[Master-Worker Pattern]| Beginner | Grid computing pattern. Implementing distributed processing across multiple workers deployed into the Grid. |
@@ -43,7 +43,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |[Spring Batch PU]| Advanced | Complex Batch Processing using [Spring Batch|http://static.springsource.org/spring-batch].|
 |[JTA-XA Example] | Advanced | Integrating GigaSpaces with an external JMS Server using XA. Atomikos is used as the JTA Transaction provider. Apache ActiveMQ is used as a the JMS provider.|
 
-#  Setup Production Environment
+# Setup Production Environment
 || Best Practice || Level ||Description||
 |[Embedding XAP for OEMs]| Beginner | A quick and simple example of how an OEM might embed GigaSpaces XAP for customer use.|
 |[Universal Deployer] |Beginner | Allows deploying composite applications. Support multiple processing unit dependency based deployment.|
@@ -64,7 +64,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |[Capacity Planning]| Advanced | Considerations for sizing your system before moving into production.|
 |[Refreshable Business Logic Example]| Advanced | Using the administration API to reload new application code (hot deploy) while the application is running.|
 
-#  Solutions
+# Solutions
 || Best Practice || Level ||Description||
 |[Elastic Distributed Calculation Engine]|Advanced| Elastic Distributed Calculation Engine implementation using Map-Reduce approach.|
 |[Trading Settlement] |Advanced| A trading settlement system where the entire tier-based architecture is built on GigaSpaces.|

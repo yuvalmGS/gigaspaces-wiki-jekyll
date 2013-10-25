@@ -21,10 +21,10 @@ One of the challenges in using an in-memory data grid is that it's an ideal repr
 
 The mirror-parent project is meant to collect various external datastore implementations. As of September 2011, implementations include Cassandra and MongoDB, with slight feature differences between them (which will be discussed); however, the implementations work for the general case and illustrate a pattern that can be customized as needed.
 
-#  Getting the project
+# Getting the project
 The mirror project is held on github in the [best practices|https://github.com/Gigaspaces/bestpractices] project. This is an umbrella repository; the specific project is in the mirror-parent directory under the root directory.
 
-#  How the NoSQL EDS implementations work?
+# How the NoSQL EDS implementations work?
 The GigaSpaces XAP external datastore is used by two kinds of processing units: a stateful processing unit (which represents the data grid) and a mirror processing unit (whose sole purpose is to use an external datastore via write-through to persist data.)
 
 !noSQL-EDS.jpg!
@@ -100,11 +100,11 @@ The data grid uses the EDS for reads. If no initial load is desired, configuring
     </os-core:space>{code}
 This configuration is almost an exact analog to the mirror declaration. However, this will read the data from the EDS on startup, such that any data held in the right format and collection in the MongoDB datastore will be loaded into the data grid, ready for read and update. Any writes will naturally be persisted through the mirror back to Mongo.
 
-#  MongoDB Specifics
+# MongoDB Specifics
 
 The example configuration as described shows the MongoDB configuration. One aspect of the MongoEDS is that it allows manipulation and persistence of POJOs and SpaceDocuments, interchangeably (and in fact it relies on the the SpaceDocument API to perform the initial load, with XAP converting to POJOs as needed.)
 
-#  Cassandra Specifics
+# Cassandra Specifics
 
 Cassandra configuration can be seen in the [test project resources|https://github.com/Gigaspaces/bestpractices/tree/master/mirror-parent/cassandra/cassandra-common/src/test/resources].
 

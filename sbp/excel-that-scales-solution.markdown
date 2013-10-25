@@ -13,13 +13,13 @@ page_id: 47219144
 {tip}
 {rate}
 
-#  Overview
+# Overview
 
 This section gets you started with the Excel integration by understanding its available functionality, how to develop the integration components and how to configure, deploy and run the solution.
 
 Along with several examples that can be used as starting points for development, it includes supported platforms and a short description of testing that was performed to validate the proposed patterns.
 
-#  GigaSpaces-Excel Integration Patterns
+# GigaSpaces-Excel Integration Patterns
 
 There are two main problems that the GigaSpaces-Excel solution is relevant for:
 

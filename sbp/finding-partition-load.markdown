@@ -12,11 +12,11 @@ page_id: 54297314
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 
-#  Overview
+# Overview
 When using a GigaSpaces cluster as a task queue there are times you will need to determine how the space instances are loaded. This could be to determine where you can route the next task (minimum load partition/instance) or where you want to launch more processors (heavily loaded partition/instance).
 
 There are couple of approaches you could use to identify these partitions: [task executors|#taskexecutor] and an [executor service|#serviceexecutor]. You can also see the [Executors example|Map-Reduce Pattern - Executors Example] page for other similar examples.
-#  {anchor:taskexecutor}Using a Task Executor
+# {anchor:taskexecutor}Using a Task Executor
 The [first example|^GetMinLoadPartition-TaskExecutors.zip] shows an implementation of DistributedTask that can be used in scenarios where you want to run ad-hoc queries. Usage instructions are similar to the Task Executors Example. Business logic does not have to be on the cluster, it is dynamically transported to the server side and executed remotely.
 
 Example is trying to find a partition with least number of objects and uses GigaSpaces SpaceRuntimeInfo API to get the count of objects. This API is lot faster compared to the count API and is preferred way of getting object counts.
@@ -127,7 +127,7 @@ public class MyDistributedTask implements
 {gcard}
 {gdeck}
 
-#  {anchor:serviceexecutor}Using an Executor Service
+# {anchor:serviceexecutor}Using an Executor Service
 
 Another [example|^GetMinLoadPartition-ExecutorService.zip] shows an implementation using Executor Service. This approach should be used when this functionality is intrinsic part of the system and not needed on ad-hoc basis. Usage instructions are similar to the [Executor Service Example|Map-Reduce Pattern - Executors Example#ExecutorsExample-ServiceExecutorsExample].
 

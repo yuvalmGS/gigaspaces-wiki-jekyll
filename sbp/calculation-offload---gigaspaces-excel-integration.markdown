@@ -8,7 +8,7 @@ page_id: 47219279
 {summary:page|65}Using the calculation offload pattern.{summary}
 {rate}
 
-#  Overview
+# Overview
 
 In this pattern, all Excel functions and calculations are performed *by the space* (on the server side) asynchronously. This allows you to use Excel regularly, where calculations are performed on the space side simultaneously, until the calculation is finished; then, Excel is notified and the data is displayed in the spreadsheet.
 
@@ -60,7 +60,7 @@ The space writes a notification to the Microsoft Excel RTD (Real-Time Data) serv
 
 {refer}For details on building Excel Real-Time Data components in Visual Basic .NET, see the [Microsoft website|http://msdn2.microsoft.com/en-us/library/aa140061(office.10).aspx].{refer}
 
-#  What's Next?
+# What's Next?
 
 {refer}[See the full example|GigaSpaces-Excel Market-Data Example]{refer}
 {refer}[Try another pattern|Excel that Scales Solution]{refer}

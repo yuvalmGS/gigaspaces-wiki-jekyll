@@ -12,7 +12,7 @@ page_id: 55935416
 {tip}
 {rate}
 
-#  Overview
+# Overview
 
 When having an application using a very large backend database leveraging the IMDG, caching a subset of the application data, while running on-going data eviction policy with read-through policy (i.e. LRU cache policy mode with External-Data-Source used), the main requirement is to *access the database in the most optimal manner* when performing queries against the IMDG.
 
@@ -24,7 +24,7 @@ But when performing queries, using `readMultiple` with a template or SQLQuery fi
 - When loading data from database data eviction process may be triggered. This may impact the performance.
 - Database access involves reading objects that will not be loaded into the space (none matching routing value).
 
-#  Solution
+# Solution
 The main motivation with the solution proposed below, is to have better control when a space partition accessing the database. The space is inspected prior retrieving the data leveraging the ability to count matching objects to a given query very fast (via the in-memory indexes the space maintains). If there are adequate amount of matching objects, the client accessing the relevant space partition(s) and retrieving the data from the space without accessing the database.
 
 Here is the full query execution strategy:
@@ -51,7 +51,7 @@ To control the data within the space should evict it. Evicting data from the spa
 
 See the [Custom Eviction|Custom Eviction#Eviction Strategies] section for details.
 
-#  Example
+# Example
 
 With the [attached example|IMDG with Large Backend Database Support^LargeDBLRUSpace.zip] the clustered space has 600 objects in memory:
 - 100 object loaded into partition 1.

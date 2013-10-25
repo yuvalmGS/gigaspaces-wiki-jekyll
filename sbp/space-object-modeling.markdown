@@ -17,7 +17,7 @@ When constructing the space classes and their relationship, and having persisten
 
 There are two options you may use: a *Hibernate-based model* and a *Space-based model*. The latter is the recommended one, since it provides better performance, scalability and consumes less memory when an object is stored in memory.
 
-#  The Hibernate-Based Object Model
+# The Hibernate-Based Object Model
 When you have an object graph object model with collections or references association (using Hibernate OneToMany, ManyToOne), you can use the Hibernate model to load these objects into the space. There are some important considerations when using this approach:
 - You should use the DefaultExternalDataSource.
 - The footprint utilization is high since you might end up loading the same object more than once into the space JVM. This can happen in the following cases:
@@ -27,7 +27,7 @@ When you have an object graph object model with collections or references associ
 - Data should be fully loaded from the database - only *Eager mode* is supported. Lazy fetching is not supported.
 - You might end up having data inconsistency problems due to the duplicated objects in memory.
 
-#  The Space Object Model
+# The Space Object Model
 If you want to optimize the memory footprint, and avoid duplicated objects in memory, and the inconsistency involved with the usage of the Hibernate model when loading collection/reference objects, you need to implement the collection/reference object load and store, using the GigaSpaces API (at the DAO layer or some helper class). Important considerations when using this approach:
 
 - You can use the StatelessExternalDataSource that is usually faster than the DefaultExternalDataSource - but it does not support collection/reference load and store.

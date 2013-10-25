@@ -8,7 +8,7 @@ page_id: 47219052
 {summary:page|65}Using the data offload pattern.{summary}
 {rate}
 
-#  Overview
+# Overview
 
 In this pattern, all data is stored in the space (on the server side). Excel in turn loads only the relevant data each time and displays it in the spreadsheet. This removes the load from Excel, which is sometimes unable to cope with such large amounts of data, and, if required, updates the displayed data without delay.
 
@@ -36,6 +36,6 @@ This can be done using the *[Excel Space Viewer]*, which allows you to perform q
 
 If you need the data displayed in your spreadsheet to be constantly updated, you can do this using the [Excel Space Viewer]. Simply define the required refresh rate in milliseconds in the [New View|Excel Space Viewer#Creating New View] or [Configure View|Excel Space Viewer#Changing Existing View] window. Excel in turn loads the updated data from the space according to the specified refresh rate.
 
-#  What's Next?
+# What's Next?
 
 {refer}[Try another pattern|Excel that Scales Solution]{refer}

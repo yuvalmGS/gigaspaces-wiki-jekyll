@@ -14,7 +14,7 @@ page_id: 55938230
 {tip}
 {rate}
 
-#  Overview
+# Overview
 
 When a deploying a data grid, primary and backup instances will be provisioned in an arbitrary manner across the available machines running GSA/GSCs. You don't have a control where these will be physically located as the primary election mechanism determines the primary and backup instances location at the deploy time (first instance per partition elected as the primary).
 
@@ -30,7 +30,7 @@ When there is a requirement to leverage remote sites for disaster recovery or re
 ## Controlling Primary/Backup Location
 The Primary-Backup Zone Controller can be deployed as a PU or run as a stand-alone utility. It allows you to specify a specific zone for primary instances and a different zone for backup instances. Once the Primary-Backup Zone Controller deployed/started it relocates all the primary instances into GSCs associated with the primary zone and later relocates all the backup instances into GSCs associated with the backup zone. The Primary-Backup Zone Controller periodically checks the status of the deployed data grid and relocates relevant instances as needed.
 
-#  Running the Primary-Backup Zone Controller
+# Running the Primary-Backup Zone Controller
 
 The example below will show how to use the Primary-Backup Zone Controller to place all primary instances on Zone A and all backup instances on Zone B. We will start GSCs with 3 zones, deploy a data-grid and use the Primary-Backup Zone Controller to execute the relocation activity.
 
