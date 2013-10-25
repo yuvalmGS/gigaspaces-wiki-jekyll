@@ -28,9 +28,7 @@ This section shows you how to write your first RTD or UDF application using the 
 - Build the projects.
 - Make sure `GigaSpaces.Core.dll` and `GigaSpaces.NetToJava.dll` exist in your `Release` folder.
 - Run the following command from the `Release` folder:
-{noformat}
-%WinDir%\Microsoft.NET\Framework\v2.0.50727\RegAsm.exe \[MY_RTD_CLASSNAME\].dll /Codebase
-{noformat}
+    `%WinDir%\Microsoft.NET\Framework\v2.0.50727\RegAsm.exe \[MY_RTD_CLASSNAME\].dll /Codebase`
 - Save the [^excel.exe.config] file in your Excel runtime folder. For example: `C:\Program Files\Microsoft Office\OFFICE11`
 - Open Excel.
 - To add the UDF function:
@@ -39,9 +37,7 @@ This section shows you how to write your first RTD or UDF application using the 
 - Start a space: `<GigaSpaces Root>\Bin\Gs-ui.exe`.
 - To call a UDF, click the *Function* icon, and look for the *\[MY_UDF_CLASSNAME\]* functions.
 - To call a RTD, write in any Excel cell:
-{noformat}
-=RTD("[MY PROG ID]",,[MY PARAMETERS])
-{noformat}
+    `=RTD("[MY PROG ID]",,[MY PARAMETERS])`
 
 # What's Next?
 
