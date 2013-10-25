@@ -31,14 +31,14 @@ The basic idea of the compact serialization pattern is simple: Total control on 
 h1. The Basic Flow
 With the compact serialization pattern:
 - Before you write the object you serialize all non indexed fields (payload data) into one byte array field using the GigaSpaces serialization API (pack).
-- You serialize/de-serialize all indexed fields as usual (have the {{writeExternal}} , {{readExternal}} implementation to write and read these into the stream).
+- You serialize/de-serialize all indexed fields as usual (have the `writeExternal` , `readExternal` implementation to write and read these into the stream).
 - After reading the object from the space you should de-serialize the byte array data (unpack).
 
 {indent}!GRA:Images^bin_ser.jpg!{indent}
 
 When the object is written to the space:
 - The non-indexed fields are compacted and serialized into the same field (as a byte array).
-- All the indexed fields + the byte array are serialized as usual via the {{writeExternal}} call.
+- All the indexed fields + the byte array are serialized as usual via the `writeExternal` call.
 - The object with arrives in the space, de-serialized, indexed fields stored as usual and the byte array field stored as is.
 
 When the object is read from the space:
@@ -50,15 +50,15 @@ h1. The Implementation
 Using the compact serialization pattern can reduce the object footprint when stored within the space in drastic manner. As much as you will have more fields as part of the space object serialized using the GigaSpaces Serialization API, the memory footprint overhead will be smaller compared to the default serialization mode.
 
 The compact serialization pattern involves creation the following methods:
-# {{pack}} method - Packs the object data into one field. Serialize the non-Indexed fields into the byte array.
-# {{unpack}} method - Unpacks the object data into one field. De-serialize the non-Indexed fields from the byte array.
-# {{writeExternal}} method - Serialize the object data. Required for the {{Externalizable}} implementation. Serialize the indexed fields and the byte array.
-# {{readExternal}} method - De-serialize the object data. Required for the {{Externalizable}} implementation. De-serialize the indexed fields and the byte array.
-# {{checkNulls}} method - Handles null data for the indexed and byte array fields.
-# {{getnulls}} method - Handles null data for non indexed fields.
+- `pack` method - Packs the object data into one field. Serialize the non-Indexed fields into the byte array.
+- `unpack` method - Unpacks the object data into one field. De-serialize the non-Indexed fields from the byte array.
+- `writeExternal` method - Serialize the object data. Required for the `Externalizable` implementation. Serialize the indexed fields and the byte array.
+- `readExternal` method - De-serialize the object data. Required for the `Externalizable` implementation. De-serialize the indexed fields and the byte array.
+- `checkNulls` method - Handles null data for the indexed and byte array fields.
+- `getnulls` method - Handles null data for non indexed fields.
 
 h1. BinaryOutputStream and BinaryInputStream
-The {{BinaryOutputStream}} contains various method to serialize all java's primitive type, their Object wrappers and arrays forms in a compacted mode. {{BinaryInputStream}} is its counterpart for deserialization. Your {{pack}} and {{unpack}} methods will be using an instance of those classes.
+The `BinaryOutputStream` contains various method to serialize all java's primitive type, their Object wrappers and arrays forms in a compacted mode. `BinaryInputStream` is its counterpart for deserialization. Your `pack` and `unpack` methods will be using an instance of those classes.
 
 h1. Example
 With the [attached example|Lowering the Space Object Footprint^BinaryCompaction.zip] we have a space class with 37 fields.
@@ -114,15 +114,15 @@ public class SimpleEntry {
 
 h2. The BinaryFormatEntry class
 The modified class that implements the compact serialization pattern includes:
-- Using the {{@SpaceClass(includeProperties=IncludeProperties.EXPLICIT)}} decoration - this allows you to control which fields will be Space class fields explicitly.
+- Using the `@SpaceClass(includeProperties=IncludeProperties.EXPLICIT)` decoration - this allows you to control which fields will be Space class fields explicitly.
 - One Integer indexed field.
 - One byte array field declared as a space class field.
 - 12 String type non indexed fields. These are not space class fields.
 - 12 Long type non indexed fields. These are not space class fields.
 - 12 Integer type non indexed fields. These are not space class fields.
 - Getter and setter methods for the above fields.
-- {{pack}} and {{unpack}} method and few helper methods.
-- {{Externalizable}} implementation - {{writeExternal}} and {{readExternal}} methods
+- `pack` and `unpack` method and few helper methods.
+- `Externalizable` implementation - `writeExternal` and `readExternal` methods
 
 The modified class looks like this:
 {code}
@@ -177,7 +177,7 @@ public class BinaryFormatEntry implements Externalizable {
 {code}
 
 h2. The pack method
-The {{pack}} method serializes the object non indexed data. It is called explicitly before calling the space write operation. This method serialize the object data by placing the data into the byte array field. Null values fields indication stored within one field. The {{BinaryOutputStream}} utility class is used to write the compacted data into the byte array.
+The `pack` method serializes the object non indexed data. It is called explicitly before calling the space write operation. This method serialize the object data by placing the data into the byte array field. Null values fields indication stored within one field. The `BinaryOutputStream` utility class is used to write the compacted data into the byte array.
 
 {code}
 public void pack() throws Exception
@@ -196,7 +196,7 @@ public void pack() throws Exception
 {code}
 
 h2. The unpack method
-This method de-serialize the object data by extracting the data from the byte array field and populating the fields with their corresponding values. {{null}} values fields are non-populated.  This method is called after calling the space read operation. The {{BinaryOutputStream}} utility class is used to read the compacted data and place it into the relevant field.
+This method de-serialize the object data by extracting the data from the byte array field and populating the fields with their corresponding values. `null` values fields are non-populated.  This method is called after calling the space read operation. The `BinaryOutputStream` utility class is used to read the compacted data and place it into the relevant field.
 
 {code}
 public void unpack() throws Exception
@@ -218,7 +218,7 @@ public void unpack() throws Exception
 
 
 h2. The writeExternal method
-The {{writeExternal}} method serializes the object data into the output stream.  The object data involves a field indicates which fields have {{null}} value, the indexed fields and a byte array field that includes all non indexed fields data (created by the {{pack}} method). The {{writeExternal}} assumes the {{pack}} method has been called explicitly prior the space write method call that initiated the {{writeExternal}} call.
+The `writeExternal` method serializes the object data into the output stream.  The object data involves a field indicates which fields have `null` value, the indexed fields and a byte array field that includes all non indexed fields data (created by the `pack` method). The `writeExternal` assumes the `pack` method has been called explicitly prior the space write method call that initiated the `writeExternal` call.
 
 {code}
 public void writeExternal(ObjectOutput out) throws IOException {
@@ -238,7 +238,7 @@ public void writeExternal(ObjectOutput out) throws IOException {
 {code}
 
 h2. The readExternal method
-The {{readExternal}} method essentially performs the opposite of the what the {{writeExternal}} method is doing. This methods populates the indexed fields data and the byte array field data. Later, the remaining fields will be populated once the {{unpack}} method will be called.
+The `readExternal` method essentially performs the opposite of the what the `writeExternal` method is doing. This methods populates the indexed fields data and the byte array field data. Later, the remaining fields will be populated once the `unpack` method will be called.
 
 {code}
 public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
@@ -260,7 +260,7 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 {code}
 
 h2. The checkNulls method
-This method goes through the indexed fields and the byte array field and place into a {{short}} data type field an indication for the ones with null value using a bit map.
+This method goes through the indexed fields and the byte array field and place into a `short` data type field an indication for the ones with null value using a bit map.
 
 {code}
 private short checkNulls() {
@@ -277,7 +277,7 @@ private short checkNulls() {
 
 
 h2. The getnulls method
-This method goes through all class non indexed fields (the ones that their data is stored within the byte array) and place into a {{long}} data type field indication for the ones with null value using a bit map.
+This method goes through all class non indexed fields (the ones that their data is stored within the byte array) and place into a `long` data type field indication for the ones with null value using a bit map.
 {code}
 private long getnulls()
 {
@@ -295,7 +295,7 @@ private long getnulls()
 {code}
 
 h2. The Factory method
-The example using a factory method called {{generateBinaryFormatEntry}} to create the space object. Once it has been populated , its {{pack}} method is called.
+The example using a factory method called `generateBinaryFormatEntry` to create the space object. Once it has been populated , its `pack` method is called.
 {code}
 private BinaryFormatEntry generateBinaryFormatEntry(int id){
 	BinaryFormatEntry bfe = new BinaryFormatEntry(id, value1 , value2 ?)

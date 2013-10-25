@@ -22,7 +22,7 @@ GigaSpaces supports addition of new space classes while the system is running ou
 The following sections describe the recommended options to evolve the space schema.
 
 h1. Schema-less Model - Document Model
-A {{SpaceDocument}} is completely dynamic model artifact you can write into the space and read back into the application. It allows you to change or evolve your data model without ever taking down the Space. Change your application code to add additional properties or remove existing ones, and you're good to go. In addition, *old and new versions of the same Entity model can co-exist* since the space does not enforce any restriction with regards to the property set of {{SpaceDocuments}} belong to a certain type. {{SpaceDocument}} can be [mapped to a POJO|XAP91:Document-POJO Interoperability] during runtime allowing the application leverage POJO and evolve these as neeeded. You can also make the {{SpaceDocument}} type safe by [Extending SpaceDocument|XAP91:Extending Space Documents].
+A `SpaceDocument` is completely dynamic model artifact you can write into the space and read back into the application. It allows you to change or evolve your data model without ever taking down the Space. Change your application code to add additional properties or remove existing ones, and you're good to go. In addition, *old and new versions of the same Entity model can co-exist* since the space does not enforce any restriction with regards to the property set of `SpaceDocuments` belong to a certain type. `SpaceDocument` can be [mapped to a POJO|XAP91:Document-POJO Interoperability] during runtime allowing the application leverage POJO and evolve these as neeeded. You can also make the `SpaceDocument` type safe by [Extending SpaceDocument|XAP91:Extending Space Documents].
 
 !GRA:Images^document_arch.jpg|thumbnail!
 
@@ -72,7 +72,7 @@ The space model can be evolved using a few extra fields as part of the space cla
 
 h1. Evolving Space Schema using Externalizable Implementation
 
-This approach is the class serialization and de-serialization methods as transformation methods. This allows you to deploy version 1 and version 2 of the class simultaneously across different application instances. The space must have version 2 as part of its classpath. This option requires the space to be restarted with the new version of the classes. The {{Externalizable}} implementation needs to cope with removal of fields (in this case the data stream might contain additional data which must be skipped over), and with fields being added (in this case the data stream might not contain sufficient data, so the fields must be initialized properly).
+This approach is the class serialization and de-serialization methods as transformation methods. This allows you to deploy version 1 and version 2 of the class simultaneously across different application instances. The space must have version 2 as part of its classpath. This option requires the space to be restarted with the new version of the classes. The `Externalizable` implementation needs to cope with removal of fields (in this case the data stream might contain additional data which must be skipped over), and with fields being added (in this case the data stream might not contain sufficient data, so the fields must be initialized properly).
 
 h1. Evolving Space Schema using Inheritance
 
@@ -80,13 +80,13 @@ You can evolve the space schema by downloading a codebase and using inheritance 
 
 h2. Example
 
-# Class A is written to a space by client X.
-# Class A is taken or read from the space by client Y, using a template based on A.
-# At some point, an A' class is created, which extends A.
-# Entries from type A' are written to the space by client Z.
-# Class A' metadata is acquired by the space server via a codebase from client Z.
-# Client X now receives Entries from type A', and A' metadata is acquired by client X from the client Z codebase.
-# Client X continues to typecast A' to A, and to work with Entries of type A', as if they were of type A.
+- Class A is written to a space by client X.
+- Class A is taken or read from the space by client Y, using a template based on A.
+- At some point, an A' class is created, which extends A.
+- Entries from type A' are written to the space by client Z.
+- Class A' metadata is acquired by the space server via a codebase from client Z.
+- Client X now receives Entries from type A', and A' metadata is acquired by client X from the client Z codebase.
+- Client X continues to typecast A' to A, and to work with Entries of type A', as if they were of type A.
 
 The system does not have to shut down during the process and clients are not interrupted.
 
@@ -96,13 +96,13 @@ With this pattern, a simple program should be created in order to transform a sp
 
 The transformer application reads an Entry from the source space (the old class schema that was used), transforms it to its new schema, and writes it to a target space (the new class schema) that is used with the new version of the application.
 
-As seen in the code example below, every migrated Entry preserves its Entry UID. The Entries are read from the source space using the {{GSIterator}}, and are written into the target space using transactions and the {{writeMultiple}} operation.
+As seen in the code example below, every migrated Entry preserves its Entry UID. The Entries are read from the source space using the `GSIterator`, and are written into the target space using transactions and the `writeMultiple` operation.
 
-Below is a transformer program, that transforms a class with two attributes into a class with one attribute. To speed up the transformation process, you may implement the transformation process as {{IWroker}}, by running the transformation business logic in the source space or in the target space.
+Below is a transformer program, that transforms a class with two attributes into a class with one attribute. To speed up the transformation process, you may implement the transformation process as `IWroker`, by running the transformation business logic in the source space or in the target space.
 
 The migration process can also be optimized by running multiple threads that handle the migration of different space classes in parallel.
 
-{comment}Data migration can be done using the space underlying Entry representation -- the {{ExternalEntry}}. A simple migration program can transform data stored in the space from one schema to a new schema, and create it in a new space that is used by the new version of the application. {comment}
+{comment}Data migration can be done using the space underlying Entry representation -- the `ExternalEntry`. A simple migration program can transform data stored in the space from one schema to a new schema, and create it in a new space that is used by the new version of the application. {comment}
 
 h2. Schema Evolution Example
 {code}

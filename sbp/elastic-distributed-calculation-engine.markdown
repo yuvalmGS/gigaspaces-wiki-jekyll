@@ -59,13 +59,13 @@ The Calculating Flow includes the following:
 (!) When running the Elastic Calcualtion Engine on a single machine, scaling up and down will not affect the calculation time, but when running this on a grid with multiple machines, you will see better or worse calculation time when the grid scales up or down.
 
 h2. Intelligent Map-Reduce
-The Elastic Calcualtion Engine uses the [ExecutorBuilder|XAP8:Task Execution over the Space#ExecutorBuilder API]. This allows executing multiple {{AnalysisTasks}} in a parallel manner where each Task includes a different Trade ID list to use for the calculation. Each List is sent to a relevant node where it is used to fetch the Trade data from the colocated space or to be loaded from the database.
+The Elastic Calcualtion Engine uses the [ExecutorBuilder|XAP8:Task Execution over the Space#ExecutorBuilder API]. This allows executing multiple `AnalysisTasks` in a parallel manner where each Task includes a different Trade ID list to use for the calculation. Each List is sent to a relevant node where it is used to fetch the Trade data from the colocated space or to be loaded from the database.
 
 h2. The AnalysisTask
-The {{AnalysisTask}} include the following:
-- {{execute}} method - invoked on each partition. It returns a sum of all of the calculated NPV values for all the trades found within the partition devided by books. The demo assumes there are four books.
-- {{getTradesFromDB}} method  - used to load missing Trade objects from the database. Since this demo does not include a running live database the Trade  data is generated via random data.
-- {{calculateNPV}} method - called by the execute method to calculate the Net present value for the Trade.
+The `AnalysisTask` include the following:
+- `execute` method - invoked on each partition. It returns a sum of all of the calculated NPV values for all the trades found within the partition devided by books. The demo assumes there are four books.
+- `getTradesFromDB` method  - used to load missing Trade objects from the database. Since this demo does not include a running live database the Trade  data is generated via random data.
+- `calculateNPV` method - called by the execute method to calculate the Net present value for the Trade.
 
 h2. The Net Present Value (NPV) Calculation
 The Net Present Value calculation calculates the NPV for 6 years. It is using the following code:
@@ -87,7 +87,7 @@ The above can be described using the following formula:
 !NPV_formula.jpg!
 
 h2. The NPVResultsReducer
-The {{NPVResultsReducer}} receives the NPV calculation for each book from each calculation node (partition) and reduces it into a list of NPV values for each book (four values).
+The `NPVResultsReducer` receives the NPV calculation for each book from each calculation node (partition) and reduces it into a list of NPV values for each book (four values).
 
 h2. The Trade
 The Trade Space class stores the following items:
@@ -103,7 +103,7 @@ For long calculations that consume relatively large amount of CPU time, the reco
 !ElasticDistributedRiskAnalysisEngine_remote_workers.jpg!
 
 h1. Running the Demo
-1. Download the [ElasticCalculationEngine.zip|Elastic Distributed Calculation Engine^ElasticCalculationEngine.zip] and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and *edit* the {{setExampleEnv.bat}} to include correct values for the {{NIC_ADDR}} and the {{GS_HOME}} variables.
+1. Download the [ElasticCalculationEngine.zip|Elastic Distributed Calculation Engine^ElasticCalculationEngine.zip] and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and *edit* the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.
 2. Start the GigaSpaces agent by running the following:
 {code}startAgent.bat{code}
 (!) You will need a machine with at least 2GB free memory to run this demo.
@@ -120,10 +120,10 @@ This will deploy the Worker PU into the Service Grid.
 The client will run the calculation repeatedly for 10,000 Trades where each cycle will use different rates (2%, 3%, 4%, 5%, 6%, 7%, 8%). To stop the client hit CTRL + C.
 7. To scale the worker run the following:
 {code}ScaleWorker.bat{code} and follow the instructions.
-8. To Scale the Data-Grid following Hit Enter at the command running the {{deployDataGrid.bat}}.
+8. To Scale the Data-Grid following Hit Enter at the command running the `deployDataGrid.bat`.
 
 h2. Running within eclipse
-You may run the Calcualtion Engine within eclipse by using the StartCluster main class. It will start a clustered space. You can use this to debug the {{AnalysisTask}} when executed at the space side.
+You may run the Calcualtion Engine within eclipse by using the StartCluster main class. It will start a clustered space. You can use this to debug the `AnalysisTask` when executed at the space side.
 
 h2. Expected Output
 {code:title=Deploy expected output}

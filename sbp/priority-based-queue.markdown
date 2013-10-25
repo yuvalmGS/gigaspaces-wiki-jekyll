@@ -16,9 +16,9 @@ page_id: 48760404
 
 h1. Overview
 
-To implement a Priority based Queue you should use the {{Take}} operation with {{SQLQuery}} having the priority field used as part of the query. This field should use the {{EXTENDED}} index type.
+To implement a Priority based Queue you should use the `Take` operation with `SQLQuery` having the priority field used as part of the query. This field should use the `EXTENDED` index type.
 
-You can query for all objects which got their priority bigger than X ({{priority > X}}) or query for objects based on a range ({{Y > priority > X}}). In both cases the objects will be taken from the space in an orderly manner based on their field values.
+You can query for all objects which got their priority bigger than X (`priority > X`) or query for objects based on a range (`Y > priority > X`). In both cases the objects will be taken from the space in an orderly manner based on their field values.
 
 See below example code:
 
@@ -109,8 +109,8 @@ Worker 3 : priorities 7-9 - Low priories orders
 To run:
 1. Extract [the attached|^PriorityBasedQueue.zip].
 2. Load the example project into your IDE.
-3. Set the project classpath to include GigaSpaces jars located under {{\gigaspaces-xap\lib\required}} folder.
-4. Run the {{com.gigaspaces.examples.priorityq.PriorityQueueExample}} main.
+3. Set the project classpath to include GigaSpaces jars located under `\gigaspaces-xap\lib\required` folder.
+4. Run the `com.gigaspaces.examples.priorityq.PriorityQueueExample` main.
 
 Expected output:
 {code}

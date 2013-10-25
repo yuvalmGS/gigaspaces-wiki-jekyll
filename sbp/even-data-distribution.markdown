@@ -35,7 +35,7 @@ The most common approach to partitioning is, as stated in the [XAP91:Data-Partit
     public void setGroupId(String s) { groupId=s; }
 }{code}
 
-The approach for efficient partitioning depends very much on how the data is used. In the case of the {{MyData}} class above, it's likely that different groups' data will be routed to different partitions (but not *guaranteed* - because it's possible that various groupId values end up with the same partitioning values. As usual, see the [XAP91:Data-Partitioning] documentation for more detail.)
+The approach for efficient partitioning depends very much on how the data is used. In the case of the `MyData` class above, it's likely that different groups' data will be routed to different partitions (but not *guaranteed* - because it's possible that various groupId values end up with the same partitioning values. As usual, see the [XAP91:Data-Partitioning] documentation for more detail.)
 
 When a task is started to handle all of a specific groupId's data, then the *single* partition holding that data will be involved, which can yield very efficient results; if multiple requests go out to handle different groups (i.e., count all values based on groupId), then the partitions can focus on handling only the groupIds held locally, sending the results back to the original caller. As stated above, this is a representation of the Map/Reduce algorithm, which is documented in [XAP91:Task Execution over the Space].
 

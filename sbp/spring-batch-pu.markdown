@@ -406,18 +406,18 @@ public class JobRunner implements ApplicationContextAware,InitializingBean ,Disp
 h1. Spring Batch PU Example
 To run the Spring Batch PU Example exectue the following steps:
 h2. Start a Database
-Start an HSQL database. Move into the {{gigaspaces-xap-premium\bin}} folder and run the following:
+Start an HSQL database. Move into the `gigaspaces-xap-premium\bin` folder and run the following:
 {code}java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb{code}
 
 This will start an HSQL database used with the Spring Batch PU.
 
 h2. Create the Spring Batch PU
 - Download and extract the [Spring Batch PU example|^SpringBatch.zip] into an empty folder.
-- Create a new folder named {{SpringBatchPU}} under the {{gigaspaces-xap-premium\deploy}} folder.
-- Copy the example *bin folder* content into the {{gigaspaces-xap-premium\deploy\SpringBatchPU}} folder.
+- Create a new folder named `SpringBatchPU` under the `gigaspaces-xap-premium\deploy` folder.
+- Copy the example *bin folder* content into the `gigaspaces-xap-premium\deploy\SpringBatchPU` folder.
 
 h2. Spring Batch PU libraries
-Include the following libraries with the Spring Batch PU {{lib}} folder:
+Include the following libraries with the Spring Batch PU `lib` folder:
 spring-batch-core-2.1.6.RELEASE.jar
 spring-batch-infrastructure-2.1.6.RELEASE.jar
 spring-batch-test-2.1.6.RELEASE.jar
@@ -437,15 +437,15 @@ hibernate-annotations-3.2.1.ga.jar
 hsqldb-1.8.0.7.jar
 persistence-api-1.0.jar
 
-{tip}To speed up the Spring Batch deploy time you should copy these libraries into the {{\gigaspaces-xap-premium\lib\optional\pu-common}} folder.{tip}
+{tip}To speed up the Spring Batch deploy time you should copy these libraries into the `\gigaspaces-xap-premium\lib\optional\pu-common` folder.{tip}
 
 h2. Set Deploy Tool Classpath
-Add the {{spring-batch-core-2.1.6.RELEASE.jar}} to the deploy tool (GS-UI or gs CLI) CLASSPATH.
+Add the `spring-batch-core-2.1.6.RELEASE.jar` to the deploy tool (GS-UI or gs CLI) CLASSPATH.
 You may do that by running the following prior calling the deploy command:
 {code}set PRE_CLASSPATH=C:\gigaspaces-xap-premium\deploy\SpringBatchPU\lib\spring-batch-core-2.1.6.RELEASE.jar{code}
 
 h2. Deploy the Space
-Deploy a space call {{mySapce}}. You may deploy a single space or a space in a partitioned topology.
+Deploy a space call `mySapce`. You may deploy a single space or a space in a partitioned topology.
 {code}gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,0 mySpace{code}
 
 Here is the expected output:

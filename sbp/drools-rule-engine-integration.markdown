@@ -226,7 +226,7 @@ public enum DroolsOperationContext {
 {code}
 
 Notes:
-* In the above example the DroolsOperationContext values are passed as "context-values" to the rules engine. A single set of rules can therefore be customized for the operation under which the invocation occurred.
+- In the above example the DroolsOperationContext values are passed as "context-values" to the rules engine. A single set of rules can therefore be customized for the operation under which the invocation occurred.
 
 {gcard}
 {gcard:Service validation}
@@ -314,5 +314,5 @@ Some rule-engines like Yasu also have the ability to access a standardized persi
 h2. Parallel execution
 
 A RETE network which is created out of a set of rules itself is not designed for parallel execution over multiple machines. It can at best make use of multi-core processors on a single machine. If rulesets need to be defined that can be executed in a parallel way the following considerations are useful:
-* Decrease and partition the data-set that the rule-engine needs to use for execution, and use Map/Reduce style operations using task-execution or Executor Driven Remoting for parallel execution.
-* Break up several rule-engine executions into separate executions and use Event Containers for chaining the various calls. This will make more efficient use of your resources.
+- Decrease and partition the data-set that the rule-engine needs to use for execution, and use Map/Reduce style operations using task-execution or Executor Driven Remoting for parallel execution.
+- Break up several rule-engine executions into separate executions and use Event Containers for chaining the various calls. This will make more efficient use of your resources.

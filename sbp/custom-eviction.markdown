@@ -55,7 +55,7 @@ Lease reaper functionality on the GigaSpace runs periodically and evicts objects
 
 h2. Manually managing Object Leases
 
-GigaSpaces API returns the {{LeaseContext}} after every write operation/update operation. In this approach application evicts the data by cancelling the Lease on objects in space that are eligible for eviction.
+GigaSpaces API returns the `LeaseContext` after every write operation/update operation. In this approach application evicts the data by cancelling the Lease on objects in space that are eligible for eviction.
 
 {code}
 LeaseContext<Order> lease;
@@ -104,11 +104,11 @@ Attached is an [example|^PollingEvictor.zip] that uses a polling container for e
 
 In this simplistic example (created using hello-world example included in the product distribution),
 
-* Application is processing new {{Order}}'s that are written into the space using a Polling Container. Any {{Order}}'s that are in {{processed=false}} status are candidates for Polling container.
-* Application also defines another Polling Container for Eviction, {{Evictor}}, which is polling for {{Order}}'s in processed status.
-* {{Evictor}} polling container is also configured with a {{TriggerReceiveOperationHandler}} which modifies the query dynamically per each invocation. Purge age of the orders is used as the criterion for eviction.
-* Currently example is evicting any orders older than 1 minute old.
-* A TestClient loads Orders into the space. After 1 minute {{Evictor}} gets into action and starts evicting any data older than 1 minute old.
+- Application is processing new `Order`'s that are written into the space using a Polling Container. Any `Order`'s that are in `processed=false` status are candidates for Polling container.
+- Application also defines another Polling Container for Eviction, `Evictor`, which is polling for `Order`'s in processed status.
+- `Evictor` polling container is also configured with a `TriggerReceiveOperationHandler` which modifies the query dynamically per each invocation. Purge age of the orders is used as the criterion for eviction.
+- Currently example is evicting any orders older than 1 minute old.
+- A TestClient loads Orders into the space. After 1 minute `Evictor` gets into action and starts evicting any data older than 1 minute old.
 
 Some relavent code from the example,
 
@@ -214,8 +214,8 @@ h3. Running the example
 
 {note}
 This example is using Maven for packaging and build.
-* Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
-* Please update the GigaSpaces and Spring versions to appropriate versions in the pom.xml file.
+- Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
+- Please update the GigaSpaces and Spring versions to appropriate versions in the pom.xml file.
 {note}
 
 Extract the [example|^PollingEvictor.zip] archive into a folder. Navigate to the folder
@@ -247,7 +247,7 @@ mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.cli
 -Dexec.args="jini://*/*/mySpace"
 {code}
 
-Start monitoring the GSC logs. After about a minute you will see that the eviction logic will trigger and clear the old {{Order}} objects from space.
+Start monitoring the GSC logs. After about a minute you will see that the eviction logic will trigger and clear the old `Order` objects from space.
 
 h2. Using the JVM Memory Notification API
 
@@ -255,21 +255,21 @@ Another strategy used by some of the very complex GigaSpaces applications is to 
 An application can define custom eviction logic and register this functionality to be triggered when the usage exceeds the threshold.
 
 Some advantages with this approach are,
-* Lets you effectively utilize all the available memory in GigaSpaces cluster.
-* Notification based instead of querying the cluster for types/counts.
+- Lets you effectively utilize all the available memory in GigaSpaces cluster.
+- Notification based instead of querying the cluster for types/counts.
 
 Attached is an [example|^MyCustomEvictor.zip] that uses Memory Notification feature for triggering eviction logic.
 
 In this simplistic example (created using hello-world example included in the product distribution),
 
-* Application is processing new {{Order}}'s that are written into the space using a Polling Container. Any {{Order}}'s that are in {{processed=false}} status are candidates for Polling container.
-* Application also defines an EvictionManager Bean that implements InitializingBean, NotificationListener.
-* As part of the initialization logic, EvictionManager registers for Memory Threshold Notification.
-* Initialization logic also defines {{Watermark}} objects in the space.
-* Watermark pattern is useful where multiple parts of functionality are interdependent. Boundary condition is exposed using a special type of object in the space ({{Watermark}}). Changes to boundary definition are maintained and communicated using this special entry.
-* A TestClient loads Orders in the space.
-* When the usage reaches the limit eviction logic is triggered. This example uses a logic where all processed orders are removed from the space using GigaSpaces {{clear}} API.
-* The oldest Order object that is available in space is updated each time eviction logic is triggered using the {{Watermark}} object. If there were other parts of application like query logic or any monitoring application, it could easily know the status by looking at the {{boundaryValue}} of {{Watermark}} object.
+- Application is processing new `Order`'s that are written into the space using a Polling Container. Any `Order`'s that are in `processed=false` status are candidates for Polling container.
+- Application also defines an EvictionManager Bean that implements InitializingBean, NotificationListener.
+- As part of the initialization logic, EvictionManager registers for Memory Threshold Notification.
+- Initialization logic also defines `Watermark` objects in the space.
+- Watermark pattern is useful where multiple parts of functionality are interdependent. Boundary condition is exposed using a special type of object in the space (`Watermark`). Changes to boundary definition are maintained and communicated using this special entry.
+- A TestClient loads Orders in the space.
+- When the usage reaches the limit eviction logic is triggered. This example uses a logic where all processed orders are removed from the space using GigaSpaces `clear` API.
+- The oldest Order object that is available in space is updated each time eviction logic is triggered using the `Watermark` object. If there were other parts of application like query logic or any monitoring application, it could easily know the status by looking at the `boundaryValue` of `Watermark` object.
 
 Some relevant code from the example,
 
@@ -514,8 +514,8 @@ h3. Running the example
 
 {note}
 This example is using Maven for packaging and build.
-* Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
-* Please update the GigaSpaces and Spring versions to appropriate versions in the pom.xml file.
+- Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
+- Please update the GigaSpaces and Spring versions to appropriate versions in the pom.xml file.
 {note}
 
 Extract the [example|^MyCustomEvictor.zip] archive into a folder. Navigate to the folder
@@ -547,31 +547,31 @@ mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.cli
 -Dexec.args="jini://*/*/mySpace"
 {code}
 
-Start monitoring the JVM Tenured pool in JConsole and GSC logs. After few seconds you will see that the memory thresohold is breached and eviction logic will trigger and clear the old {{Order}} objects from space. Once the memory usage reached the eviction stop limit, eviction logic stops. You will see that the orders flow into the space constantly and the eviction logic triggers as and when needed making this a self healing application.
+Start monitoring the JVM Tenured pool in JConsole and GSC logs. After few seconds you will see that the memory thresohold is breached and eviction logic will trigger and clear the old `Order` objects from space. Once the memory usage reached the eviction stop limit, eviction logic stops. You will see that the orders flow into the space constantly and the eviction logic triggers as and when needed making this a self healing application.
 
 Below is a screenshot of Tenured pool of the JVM,
 !HeapUsageGraph.png!
 
 h1. Important Considerations
 
-* Defining a Eviction Start Threshold value that is proportionate to data load rates of the application and gives enough time for eviction logic. If eviction is not given enough time, application might reach Write Block Percentage which will result into  Memory Shortage Exceptions making things worse. Perform some tests and tune this threshold to fit your needs.
+- Defining a Eviction Start Threshold value that is proportionate to data load rates of the application and gives enough time for eviction logic. If eviction is not given enough time, application might reach Write Block Percentage which will result into  Memory Shortage Exceptions making things worse. Perform some tests and tune this threshold to fit your needs.
 
-* When evicting data, evict data in small batches. Evicting large number of objects using a clear or take operations will sometimes overwhelm the JVM and trigger GC logic and might result application pauses.
+- When evicting data, evict data in small batches. Evicting large number of objects using a clear or take operations will sometimes overwhelm the JVM and trigger GC logic and might result application pauses.
 
-* Don't overdo eviction and evict everything. Define a Eviction Stop Threshold value and leave important data in space for faster access. Eviction limit can either be count of objects, ratio of number of objects left in space or available memory. Example above uses available memory but you could one of the above options.
+- Don't overdo eviction and evict everything. Define a Eviction Stop Threshold value and leave important data in space for faster access. Eviction limit can either be count of objects, ratio of number of objects left in space or available memory. Example above uses available memory but you could one of the above options.
 
-* Maintaining Statistics can help in troubleshooting. Example above stores the statistics as part of the Watermark object.
+- Maintaining Statistics can help in troubleshooting. Example above stores the statistics as part of the Watermark object.
 
-* Identifying memory usage of a space partition becomes tricky once more than one space partition shares the same GSC. JVM Memory Notification API strategy as described above may not work in those scenarios, you will need to build additional functionality to identify other cluster members and coordinate eviction across cluster members in order to make this work.
+- Identifying memory usage of a space partition becomes tricky once more than one space partition shares the same GSC. JVM Memory Notification API strategy as described above may not work in those scenarios, you will need to build additional functionality to identify other cluster members and coordinate eviction across cluster members in order to make this work.
 
 h1. External Data Source (EDS) Considerations
 
 Applications using External Data Source Integration will need some changes to the eviction functionality. Because of EDS integration the take/clear will remove the data from the database also which might not be intended.
 
 In cases where the Space is using [LRU|XAP8:LRU-Cache Policy] mode,
-* Take or clear operation can be triggered using the [TakeModifiers.EVICT_ONLY|XAP8:LRU-Cache Policy#LRU-CachePolicy-ExplicitEvictionofObjectsfromtheSpace] which will remove the data only from space and not from the DB.
+- Take or clear operation can be triggered using the [TakeModifiers.EVICT_ONLY|XAP8:LRU-Cache Policy#LRU-CachePolicy-ExplicitEvictionofObjectsfromtheSpace] which will remove the data only from space and not from the DB.
 
 In [ALL_IN_CACHE|XAP8:ALL IN CACHE-Cache Policy] mode,
-* Take or clear operations will remove the data from space and database (in read-write mode), you should use
-** Lease expiration option to remove the entries from the space and free up memory. When you restart the cluster, expired data will get loaded again and fill up the entire cluster. In order to avaoid this you have to propogate the lease information into the DB (using the [@SpaceLease|XAP8:POJO Metadata] property). \\Objects which are cleared from the space using Lease expiration are not loaded automatically when someone queries for them, you will need to build custom functionality to retrieve this data.
-** Custom EDS mechanism that intercepts the eviction requests and stops propogating them into DB.
+- Take or clear operations will remove the data from space and database (in read-write mode), you should use
+    - Lease expiration option to remove the entries from the space and free up memory. When you restart the cluster, expired data will get loaded again and fill up the entire cluster. In order to avaoid this you have to propogate the lease information into the DB (using the [@SpaceLease|XAP8:POJO Metadata] property). \\Objects which are cleared from the space using Lease expiration are not loaded automatically when someone queries for them, you will need to build custom functionality to retrieve this data.
+    - Custom EDS mechanism that intercepts the eviction requests and stops propogating them into DB.

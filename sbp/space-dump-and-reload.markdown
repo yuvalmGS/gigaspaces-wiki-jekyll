@@ -36,4 +36,4 @@ Example - Dump space data into a file:
 Example - Reload space data from a file:
 {code}java com.gigaspaces.util.spacedump.SpaceDumpMain myhostName reload mySpace{code}
 
-{tip}Make sure the Space Dump utility has the {{/gigaspaces-xap-root/lib/platform/jdbc/h2.jar}} as part of its classpath.{tip}
+{tip}Make sure the Space Dump utility has the `/gigaspaces-xap-root/lib/platform/jdbc/h2.jar` as part of its classpath.{tip}

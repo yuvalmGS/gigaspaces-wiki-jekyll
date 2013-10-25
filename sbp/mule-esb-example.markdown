@@ -56,8 +56,8 @@ public class Data implements Serializable {
 }
 {code}
 
-- The {{type}} field is the routing field used to load-balance state object across the different IMDG partitions.
-- The {{state}} field is the "Queue" used to determine the state of the Data object. This field is modified when the Data object is passing between the different Services. This field is indexed to allow fast search of matching objects when the different services consume these from the IMDG.
+- The `type` field is the routing field used to load-balance state object across the different IMDG partitions.
+- The `state` field is the "Queue" used to determine the state of the Data object. This field is modified when the Data object is passing between the different Services. This field is indexed to allow fast search of matching objects when the different services consume these from the IMDG.
 
 h1. The Feeder Service
 This service pushing data objects into the Data-Grid in periodic manner. These will be consumed by the Verifier Service. Here is the Feeder Service:
@@ -126,7 +126,7 @@ public class Verifier {
 {code}
 
 h2. The Verifier Service Configuration
-The Verifier Service Configuration using a {{polling-container}} running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
+The Verifier Service Configuration using a `polling-container` running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
 {toggle-cloak:id=The Verifier Service Configuration} *Click to view the Verifier Service Configuration..*
 {gcloak:The Verifier Service Configuration}
 {code}
@@ -183,7 +183,7 @@ public class Approver {
 {code}
 
 h2. The Approver Service Configuration
-The Approver Service Configuration using a {{polling-container}} running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
+The Approver Service Configuration using a `polling-container` running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
 {toggle-cloak:id=The Approver Service Configuration} *Click to view the Approver Service Configuration..*
 {gcloak:The Approver Service Configuration}
 {code:title=Approver mule.xml}
@@ -226,7 +226,7 @@ The Approver Service Configuration using a {{polling-container}} running in a [N
 {gcloak}
 
 h1. Building the Example
-1. Have the correct maven bin folder (located at {{\gigaspaces-xap-premium-8.0.1\tools\maven\apache-maven-3.0.2\bin}}) as part of the {{PATH}}.
+1. Have the correct maven bin folder (located at `\gigaspaces-xap-premium-8.0.1\tools\maven\apache-maven-3.0.2\bin`) as part of the `PATH`.
 2. Have the GigaSpaces maven plug-in installed. See the [XAP8:Maven Plugin] for instructions how to install it.
 In general to install the GigaSpaces maven plug-in you should run the following:
 {code}
@@ -235,7 +235,7 @@ Windows:
 Unix:
 \gigaspaces-xap-premium-8.0.1\tools\maven>installmavenrep.sh
 {code}
-3. Download the [example package|^Mule_Multi_service_Example.zip] and extract it into {{Gigaspaces Root\tools\maven}}. Once extracted you will have the following folders under {{Gigaspaces Root\tools\maven\my-app}}:
+3. Download the [example package|^Mule_Multi_service_Example.zip] and extract it into `Gigaspaces Root\tools\maven`. Once extracted you will have the following folders under `Gigaspaces Root\tools\maven\my-app`:
 - common
 - feeder
 - approver
@@ -251,9 +251,9 @@ Once the example libraries will be successfully created, you will be able to dep
 
 h1. Deploying the Example
 In order to deploy the different Processing unit comprising this example:
-# Make sure you have the [libraries required|#Libraries Required] located at the correct location.
-# Start at least one GSM and several GSCs in the same machine on multiple different machines.
-# Use the following commands to deploy the Processing unit libraries:
+- Make sure you have the [libraries required|#Libraries Required] located at the correct location.
+- Start at least one GSM and several GSCs in the same machine on multiple different machines.
+- Use the following commands to deploy the Processing unit libraries:
 {code}
 \gigaspaces-xap-premium-8.0.1\bin\gs pudeploy -cluster schema=partitioned-sync2backup
 	total_members=2,1 -properties embed://dataGridName=space -max-instances-per-vm 1
@@ -264,7 +264,7 @@ In order to deploy the different Processing unit comprising this example:
 \gigaspaces-xap-premium-8.0.1\bin\gs pudeploy ..\tools\maven\my-app\feeder\target\my-app-feeder.jar
 {code}
 
-(!) You may find the different Processing Unit libraries under the {{target}} folder of each Processing Unit.
+(!) You may find the different Processing Unit libraries under the `target` folder of each Processing Unit.
 
 Once the different processing will be deployed you should have the following displayed as part of the GS-UI:
 {indent}!GRA:Screens^mule_deploy.jpg!{indent}
@@ -288,7 +288,7 @@ A new instance of the relevant service will be created at of the existing runnin
 h1. Scale Dynamically
 In many cases you might want to scale the mule services in a dynamic manner. Dynamic Scaling means increasing or decreasing the amount of active Mule services while the system is running to be able to consume/process incoming data faster/slower.
 
-The example includes a special processing Unit - The {{Monitor}} PU. This service monitors Data objects within the space with a specific state field value and increase/decrease the amount of the relevant Service instances while the system is running. You may run for example several {{Feeder}} instances to push more Data objects into the IMDG. In order there would not be generated a backlog of too many Data objects with {{state=0}} the {{Monitor}} Service will increase the amount of {{Verifier}} services. Once there is small amount of Data objects with {{state=0}} the {{Monitor}} service will decrease the amount of {{Verifier}} services instances running to maintain only one {{Verifier}} service instance running.
+The example includes a special processing Unit - The `Monitor` PU. This service monitors Data objects within the space with a specific state field value and increase/decrease the amount of the relevant Service instances while the system is running. You may run for example several `Feeder` instances to push more Data objects into the IMDG. In order there would not be generated a backlog of too many Data objects with `state=0` the `Monitor` Service will increase the amount of `Verifier` services. Once there is small amount of Data objects with `state=0` the `Monitor` service will decrease the amount of `Verifier` services instances running to maintain only one `Verifier` service instance running.
 
 The Monitor Service includes the following properties:
 ||Property Name||Description||Default Value||
@@ -320,9 +320,9 @@ To see how the Verifier Service scale up, deploy the Feeder with 2 instances:
 {code}
 \gigaspaces-xap-premium-8.0.1\bin\gs pudeploy -cluster total_members=2 ..\tools\maven\my-app\feeder\target\my-app-feeder.jar
 {code}
-The Monitor Service will increment the amount of verifier instances when there will be 50 ,100, 150 and 200 Data objects with {{state=0}} within the IMDG.
+The Monitor Service will increment the amount of verifier instances when there will be 50 ,100, 150 and 200 Data objects with `state=0` within the IMDG.
 {indent}!GRA:Images^mule_scale_u.jpg!{indent}
-You can Query the IMDG via the Query view for Data objects with {{state=0}} using the following Query:
+You can Query the IMDG via the Query view for Data objects with `state=0` using the following Query:
 {code}
 select count(*) from com.mycompany.app.common.Data WHERE state='0'
 {code}
@@ -331,11 +331,11 @@ To scale Down the verifier Service undeploy the Feeder PU.
 {code}
 \gigaspaces-xap-premium-8.0.1\bin\gs undeploy my-app-feeder
 {code}
-The Monitor Service will decrement the amount of verifier instances when there will be 50 ,40 30 and 20 Data objects with {{state=0}} within the IMDG.
+The Monitor Service will decrement the amount of verifier instances when there will be 50 ,40 30 and 20 Data objects with `state=0` within the IMDG.
 {indent}!GRA:Images^mule_scale_d.jpg!{indent}
 
 h1. Transaction Support
-You may add [transaction support|XAP8:Mule Event Container Transport#Transaction Support] to the Mule Service by adding the {{distributed-tx-manager}} and the {{tx-support}} tags. Since we are using a clustered space we will be using the [Distributed Jini Transaction Manager|XAP8:Transaction Management#Distributed Jini Transaction Manager].
+You may add [transaction support|XAP8:Mule Event Container Transport#Transaction Support] to the Mule Service by adding the `distributed-tx-manager` and the `tx-support` tags. Since we are using a clustered space we will be using the [Distributed Jini Transaction Manager|XAP8:Transaction Management#Distributed Jini Transaction Manager].
 
 (!) See also the [Polling Container Transaction Support|XAP8:Polling Container#Transaction Support] for additional details.
 
@@ -401,7 +401,7 @@ See below example:
 - The receive-timeout , commit and abort timeout , lookup-timeout , duration and round-trip-time parameters are in millisecond units.{warning}
 
 h1. Libraries Required
-The [attached libraries|^mule-jars.zip] should be located at your {{GigaSpaces Root\lib\platform\mule}} folder before deploying the example. See below fill list of the libraries required to run this example:
+The [attached libraries|^mule-jars.zip] should be located at your `GigaSpaces Root\lib\platform\mule` folder before deploying the example. See below fill list of the libraries required to run this example:
 {code}
 backport-util-concurrent-3.1-osgi.jar
 commons-beanutils-1.8.0.jar

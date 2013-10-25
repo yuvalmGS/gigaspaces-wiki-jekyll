@@ -35,16 +35,16 @@ h1. The Order Management Processor Example
 
 The following example illustrates a simple Order management processor that includes the following artifacts:
 - *The Order Class* - This represents an Order request. An order includes a _Symbol_ , _requestType_, _id_ , _orderId_ and a _bucketId_ field.
--- The {{orderId}} field used to partition the Order requests (its getter method annotated with {{@SpaceRouting}}) between the partitions.
--- The {{id}} used as the space object ID (its getter annotated with {{@SpaceID}}).
--- The {{bucketId}} used to generate the buckets that each polling container consuming Orders from.
--- The {{Order}} class is decorated with the {{FIFO}} mode allows it to be consumed in a FIFO manner.
+-- The `orderId` field used to partition the Order requests (its getter method annotated with `@SpaceRouting`) between the partitions.
+-- The `id` used as the space object ID (its getter annotated with `@SpaceID`).
+-- The `bucketId` used to generate the buckets that each polling container consuming Orders from.
+-- The `Order` class is decorated with the `FIFO` mode allows it to be consumed in a FIFO manner.
 - *The Feeder* - A client running multiple threads pushing requests for different Order.
 - *The Processor* - Polling Container listener. Running collocated with the data-grid. Each polling container consumes different set of objects from its colocated space. Each Polling Container template using *different bucketId*.
-- *The Data-Grid* - Stores the incoming {{Order}} requests state until these are consumed by the polling containers. It provides the ability to scale the system and also provides high-availability.
-- *The ProcessorFactory* - A Spring bean. Creates the polling containers and their listeners.  The polling containers consumes data based on the Order {{Symbol}}. Each associated with a different Symbol. These are running collocated with the Data-Grid.
+- *The Data-Grid* - Stores the incoming `Order` requests state until these are consumed by the polling containers. It provides the ability to scale the system and also provides high-availability.
+- *The ProcessorFactory* - A Spring bean. Creates the polling containers and their listeners.  The polling containers consumes data based on the Order `Symbol`. Each associated with a different Symbol. These are running collocated with the Data-Grid.
 
-The {{bucketId}} is calculated using the following formula:
+The `bucketId` is calculated using the following formula:
 {code}
 (first char of Symbol hashcode) % (# of machine cores)
 {code}

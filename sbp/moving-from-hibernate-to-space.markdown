@@ -417,7 +417,7 @@ public interface UserDAO {
 {code}
 
 h1. The DAO Implementation
-The DAO implementation should be modified to use the [GigaSpace interface|XAP91:The GigaSpace Interface] to access the data grid instead of using the {{HibernateTemplate}} that is accessing the database. The {{GigaSpace}} interface simialr methods to the {{HibernateTemplate}} to write and [Query|XAP91:SQLQuery] for objects.
+The DAO implementation should be modified to use the [GigaSpace interface|XAP91:The GigaSpace Interface] to access the data grid instead of using the `HibernateTemplate` that is accessing the database. The `GigaSpace` interface simialr methods to the `HibernateTemplate` to write and [Query|XAP91:SQLQuery] for objects.
 {gdeck:DAOImplemenation|top}
 {gcard:Hibernate DAO Implemenation}
 {code}
@@ -484,7 +484,7 @@ public class UserDAOSpaceImpl implements UserDAO {
 
 h1. Deploying the Data-Grid and the Application
 To deploy the Data-Grid and the web Application into the [GigaSpaces runtime enviroment|XAP91:The Runtime Environment] perform the following:
-- Download the [3rd party libraries|^3rd_party_libraries.zip] package, and extract it into the {{\gigaspaces-xap\lib\optional\pu-common}} folder.
+- Download the [3rd party libraries|^3rd_party_libraries.zip] package, and extract it into the `\gigaspaces-xap\lib\optional\pu-common` folder.
 - Download the [application.war|^application.war] , [myDataGrid.jar|^myDataGrid.jar] and the [myMirror.jar|^myMirror.jar].
 - Start the [GigaSpaces agent|XAP91:The Grid Service Agent]:
 On windows run the following command:

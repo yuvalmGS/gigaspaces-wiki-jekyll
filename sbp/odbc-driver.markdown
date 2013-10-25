@@ -21,7 +21,7 @@ h1. GigaSpaces Installation
 - You can download Gigaspaces java version from http://www.gigaspaces.com/LatestProductVersion.
 - Unzip the downloaded file into a directory on your local machine. (Note: make sure the directory path does not have any spaces). This directory will be referred as <GigaSpaces root> in further instructions.
 - Download and install the latest version of [Java JDK|http://java.sun.com/javase/downloads/widget/jdk6.jsp].
-- Set a {{JAVA_HOME}} variable to the path where you have installed the JDK.
+- Set a `JAVA_HOME` variable to the path where you have installed the JDK.
 
 h1. GigaSpaces Configuration
 - Start the GigaSpaces Agent by running <GigaSpaces root>\bin\gs-agent.bat(bat).
@@ -60,4 +60,4 @@ URL String: jdbc:gigaspaces:url:jini://*/*/mySpace
 User name  User name : user, Password: password
 {code}
 
-You can test the connection using the openlink sample application at {{Program Files\OpenLink Software\UDA\Samples\Odbc}}
+You can test the connection using the openlink sample application at `Program Files\OpenLink Software\UDA\Samples\Odbc`

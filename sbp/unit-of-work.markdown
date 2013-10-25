@@ -41,14 +41,14 @@ With the above scenario requests 1, 3 and 4 should be processed as one atomic op
 
 h1. How is the GigaSpaces Unit of Work configured?
 - Multiple polling containers running in the following mode are started:
--- Using {{SingleTakeReceiveOperationHandler}}.
+-- Using `SingleTakeReceiveOperationHandler`.
 -- Using one concurrent consumer thread.
 -- Consumed objects in a FIFO mode.
--- Template set with a different {{bucketId}} for each polling container - This ensures *no contention* or *race conditions* will be generated.
+-- Template set with a different `bucketId` for each polling container - This ensures *no contention* or *race conditions* will be generated.
 -- Using Local Transaction Manager.
-- The polling container {{SpaceDataEvent}} implementation flow:
+- The polling container `SpaceDataEvent` implementation flow:
 1. Transaction started and an object at the top of the FIFO chain is taken.
-2. To consume the entire group, a {{takeMultiple}} is called using a template with the group identity set. The objects are retrieved in FIFO fashion (in order).
+2. To consume the entire group, a `takeMultiple` is called using a template with the group identity set. The objects are retrieved in FIFO fashion (in order).
 3. Group is processed.
 4. Transaction is committed.
 5. Other groups are processes in-parallel by other polling containers.
@@ -60,7 +60,7 @@ h2.  Running the Example
 {tip}You can [download|^uow.zip] eclipse project with example source code, running scripts and configuration.{tip}
 {gdeck:RunningExample|top}
 {gcard:Running the UOWProcessor within your IDE}
-You can run the UOW Data-Grid with the collocated {{UOWProcessor}} within your IDE using the following configuration:
+You can run the UOW Data-Grid with the collocated `UOWProcessor` within your IDE using the following configuration:
 {indent}!GRA:Images^uow_3.jpg!{indent}
 Here is a configuration for a UOW Data-Grid with 2 partitions:
 {indent}!GRA:Images^uow_2.jpg!{indent}
@@ -68,7 +68,7 @@ Here is a configuration for a UOW Data-Grid with 2 partitions:
 
 {gcard:Deploying the UOWProcessor into the Service Grid}
 Instead of running the UOWProcessor within your IDE, you can deploy it into the Service Grid.
-1. Edit the {{setExampleEnv.bat}} to include correct values for the {{NIC_ADDR}} variable as your machine IP and the {{GS_HOME}} variable as the GigaSpaces root folder.
+1. Edit the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` variable as your machine IP and the `GS_HOME` variable as the GigaSpaces root folder.
 2. Start the Service-Grid
 {code}runAgent.bat{code}
 3. Deploy the UOWProcessor PU
@@ -76,7 +76,7 @@ Instead of running the UOWProcessor within your IDE, you can deploy it into the 
 This will deploy the UOW Data-Grid with 2 partitions and a backup.
 {gcard}
 {gcard:Running the UOWFeeder}
-You can run the {{UOWFeeder}} within your IDE using the following configuration:
+You can run the `UOWFeeder` within your IDE using the following configuration:
 {indent}!GRA:Images^uow_4.jpg!{indent}
 or using the following:
 {code}runClient.bat{code}
@@ -142,7 +142,7 @@ public class UOWMessage {
 {gcard}
 {gcard:The UOWFeeder}
 
-The {{buketId}} is calculated using the following:
+The `buketId` is calculated using the following:
 {code}group % bucketsCount{code}
 
 {code:title=The UOWFeeder}

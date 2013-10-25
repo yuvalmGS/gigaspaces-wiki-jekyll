@@ -26,25 +26,25 @@ In both cases, the business logic will be invoked with a collocated space.
 
 h1. Installing the Example
 
-# Download the [example|Map-Reduce Pattern - Executors Example^ExecutorExample.zip] and extract the zip file. Open your IDE and import the project files.
-# Set the project libraries to have the correct GigaSpaces libraries location. Make sure your project libraries list will include all the libraries located at {{gigaspaces-xap\lib\required}}.
+- Download the [example|Map-Reduce Pattern - Executors Example^ExecutorExample.zip] and extract the zip file. Open your IDE and import the project files.
+- Set the project libraries to have the correct GigaSpaces libraries location. Make sure your project libraries list will include all the libraries located at `gigaspaces-xap\lib\required`.
 {indent}!project_libraries.jpg|thumbnail!{indent}
 
 h1. Executors Task Example
 {toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
 The example will illustrate a simple map-reduce implementation.
 
-A client writing some Account objects into the Data Grid. Later it will calculate the average balance for all the Accounts via a {{DistributedTask}} that is sent to each partition to be executed:
+A client writing some Account objects into the Data Grid. Later it will calculate the average balance for all the Accounts via a `DistributedTask` that is sent to each partition to be executed:
 !GRA:Images^DistributedTaskExecution_phase1.jpg!
-The Task will read all the Account objects at the collocated partition and calculate the average balance for these objects and return the result back to the client. The results sent from each partition back to the client will be aggregated (via the {{DistributedTask}} reducer implementation at the client side) and the final result will be displayed.
+The Task will read all the Account objects at the collocated partition and calculate the average balance for these objects and return the result back to the client. The results sent from each partition back to the client will be aggregated (via the `DistributedTask` reducer implementation at the client side) and the final result will be displayed.
 !GRA:Images^DistributedTaskExecution_phase2.jpg!
 
 The example code will have the following implemented:
-# Task
-# Client
+- Task
+- Client
 
 h2. The Task Implementation
-The Task implements the {{DistributedTask}} interface. It includes the {{execute}} and the {{reduce}} methods:
+The Task implements the `DistributedTask` interface. It includes the `execute` and the `reduce` methods:
 {code}
 package org.test.executor;
 
@@ -210,7 +210,7 @@ Log file: C:\gigaspaces-xap-premium-7.1.2-ga\logs\2010-12-17~14.14-gigaspaces-se
 14:14:25 - Client got Result:495
 {code}
 
-You can view the space operations statistics by running the {{\gigaspaces-xap\bin\gs-ui}}:
+You can view the space operations statistics by running the `\gigaspaces-xap\bin\gs-ui`:
 {indent}!exe_example_stats.jpg|thumbnail!{indent}
 {toc-zone}
 
@@ -223,10 +223,10 @@ The results created at each partition will be sent to the client. These will be 
 
 This example illustrates simple Service Executors usage in *Synchronous* mode and *Asynchronous* mode.
 Your code should have the following implemented:
-# Service Interface
-# Service Implementation
-# Service Result Reducer (Client Side)
-# Client
+- Service Interface
+- Service Implementation
+- Service Result Reducer (Client Side)
+- Client
 
 h2. The Service Interface
 
@@ -282,7 +282,7 @@ public class DataProcessorService implements IDataProcessor {
 
 h2. The Service Declaration
 
-The {{pu.xml}} used to export the Service and start the space described below:
+The `pu.xml` used to export the Service and start the space described below:
 {code:xml}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -314,12 +314,12 @@ The {{pu.xml}} used to export the Service and start the space described below:
 </beans>
 {code}
 
-{note}The {{context:component-scan}} , {{os-remoting:service-exporter}} and {{os-remoting:annotation-support}} used to allow the system to locate classes annotated with {{RemotingService}} and export these implicitly.{note}
+{note}The `context:component-scan` , `os-remoting:service-exporter` and `os-remoting:annotation-support` used to allow the system to locate classes annotated with `RemotingService` and export these implicitly.{note}
 
 h2. Service Result Reducer
 The Service Result Reducer is called at the client side and aggregates results sent from all invoked services (collocated with all space partitions).
 
-The Reducer implements the {{RemoteResultReducer}} interface:
+The Reducer implements the `RemoteResultReducer` interface:
 {code}
 import org.openspaces.remoting.RemoteResultReducer;
 import org.openspaces.remoting.SpaceRemotingInvocation;
@@ -351,10 +351,10 @@ Integer result = dataProcessor.processData("A" + count);
 System.out.println(new Time(System.currentTimeMillis()) + " - Client got Result:" + result.intValue() );
 {code}
 
-# The client getting a proxy to a remote space
-# The client constructing Service proxy using the {{ExecutorRemotingProxyConfigurer}}. The {{DataProcessorServiceReducer}} is used when constructing Service proxy .
-# The client invokes the service in *Synchronous* mode
-# The result is being displayed.
+- The client getting a proxy to a remote space
+- The client constructing Service proxy using the `ExecutorRemotingProxyConfigurer`. The `DataProcessorServiceReducer` is used when constructing Service proxy .
+- The client invokes the service in *Synchronous* mode
+- The result is being displayed.
 
 h2. Running the Example
 h3. Deploying the Space and Services
@@ -370,7 +370,7 @@ To start the clustered space with 2 partitions and export the Service run the fo
 \gigaspaces-xap\bin\bin>puInstance -cluster schema=partitioned total_members=2 \ExecutorExample\classes
 {code}
 
-Where the {{\ExecutorExample\classes}} should include the processing unit pu.xml under {{META-INF\spring\pu.xml}} and relevant Service class files.
+Where the `\ExecutorExample\classes` should include the processing unit pu.xml under `META-INF\spring\pu.xml` and relevant Service class files.
 
 When you start the space make sure you see both partitions started before you run the client:
 {code:title=Space startup output}
@@ -433,6 +433,6 @@ Log file: C:\gigaspaces-xap-premium-7.1.2-ga\logs\2010-12-17~14.12-gigaspaces-se
 14:12:27 - Client got Result:495
 {code}
 
-You can view the space operations statistics by running the {{\gigaspaces-xap\bin\gs-ui}}:
+You can view the space operations statistics by running the `\gigaspaces-xap\bin\gs-ui`:
 {indent}!exe_example_stats.jpg|thumbnail!{indent}
 {toc-zone}

@@ -22,7 +22,7 @@ The activities to scale up the application (add more instances) could be startin
 {tip}See the [Mule ESB Example|Mule ESB Example#Scale Dynamically] for an advanced usage of the Administration and Monitoring API{tip}
 
 h1. How the Scaling Agent works?
-The scaling agent sample periodically the amount of HTTP requests served by the running web application instances and compares the total amount of recent requests with the current ones ({{getAverageRequests}}). If the average amount of requests is larger than the maximum amount of Requests Per Instance threshold (which has been pre-defined as part of the processing unit configuration) the scaling agent scales up the application by starting a new GSC and increasing the amount of instances (see the {{scaleUp()}} method).
+The scaling agent sample periodically the amount of HTTP requests served by the running web application instances and compares the total amount of recent requests with the current ones (`getAverageRequests`). If the average amount of requests is larger than the maximum amount of Requests Per Instance threshold (which has been pre-defined as part of the processing unit configuration) the scaling agent scales up the application by starting a new GSC and increasing the amount of instances (see the `scaleUp()` method).
 
 {tip}The [WebScale.zip|^WebScale.zip] includes the source and configuration described below.{tip}
 

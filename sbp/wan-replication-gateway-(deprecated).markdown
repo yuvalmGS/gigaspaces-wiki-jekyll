@@ -253,34 +253,34 @@ Some instructions below might use windows syntax please use appropriate *nix syn
 Example was tested using a single machine with ip address, 192.168.2.100 and Lookup Server ports for SiteA and SiteB as 14164 and 14165 respectively. Please modify these corresponding to your environment.
 {note}
 
-# Extract the [example|WAN Replication Gateway (Deprecated)^multi-cluster.zip] archive into a folder. Navigate to the folder (calling it <multi-cluster-example>) and open a command shell. Modify the setDevEnv-SiteA.bat/sh and setDevEnv-SiteB.bat/sh files to have proper paths for GigaSpaces home and Java home. Also modify the NIC_ADDR variable to have proper ip address for each site.
-# Run setDevEnv-SiteA script to set the environment variables.
-{tip}Make sure you change the {{pom.xml}} <gsVersion> paramter to use the GigaSpaces release version you are testing with.{tip}
-# Run maven clean using following command \\ {code}mvn clean{code}
-# Run maven package (skip the tests) using following command \\ {code}mvn package -DskipTests{code}
-# Start a gs-ui instance.
-# Run gs-agent-SiteA and gs-agent-SiteB scripts on appropriate machines. \\ This will start GSA, GSM, LUS and 2 GSC's for SiteA with SiteA zone and GSA, GSM, LUS and 3 GSC's for SiteB with SiteB zone. Hosts tab in gs-ui will look like something below after you add the appropriate groups and locators in gs-ui, \\ !after_gsa_start.jpg!
-# Deploy the SiteA space cluster (2,1) by running deploy-SiteA script from <multi-cluster-example> directory.
-# Deploy the SiteB space cluster (3,1) using following, \\ {code}
+- Extract the [example|WAN Replication Gateway (Deprecated)^multi-cluster.zip] archive into a folder. Navigate to the folder (calling it <multi-cluster-example>) and open a command shell. Modify the setDevEnv-SiteA.bat/sh and setDevEnv-SiteB.bat/sh files to have proper paths for GigaSpaces home and Java home. Also modify the NIC_ADDR variable to have proper ip address for each site.
+- Run setDevEnv-SiteA script to set the environment variables.
+{tip}Make sure you change the `pom.xml` <gsVersion> paramter to use the GigaSpaces release version you are testing with.{tip}
+- Run maven clean using following command \\ {code}mvn clean{code}
+- Run maven package (skip the tests) using following command \\ {code}mvn package -DskipTests{code}
+- Start a gs-ui instance.
+- Run gs-agent-SiteA and gs-agent-SiteB scripts on appropriate machines. \\ This will start GSA, GSM, LUS and 2 GSC's for SiteA with SiteA zone and GSA, GSM, LUS and 3 GSC's for SiteB with SiteB zone. Hosts tab in gs-ui will look like something below after you add the appropriate groups and locators in gs-ui, \\ !after_gsa_start.jpg!
+- Deploy the SiteA space cluster (2,1) by running deploy-SiteA script from <multi-cluster-example> directory.
+- Deploy the SiteB space cluster (3,1) using following, \\ {code}
 cd <multi-cluster-example>\processor
 mvn os:deploy -Dsla=../config/SiteB-sla.xml -Dgroups=SiteB -Dlocators=192.168.2.100:14165 -Dmodule=processor
 {code}
-# Deploy the mirror using following, \\ {code}
+- Deploy the mirror using following, \\ {code}
 cd <multi-cluster-example>\mirror
 mvn os:deploy -Dgroups=SiteB -Dlocators=192.168.2.100:14165 -Dmodule=mirror
 {code}
-# Ensure that the spaces are mirror are available in gs-ui. Space Browser tab after everything is deployed will look like below, \\ !after_deploying_everything.jpg!
-# For running the clients you need the common jar in the maven repo. Install the common jar using following, \\{code}
+- Ensure that the spaces are mirror are available in gs-ui. Space Browser tab after everything is deployed will look like below, \\ !after_deploying_everything.jpg!
+- For running the clients you need the common jar in the maven repo. Install the common jar using following, \\{code}
 cd <multi-cluster-example>\common
 mvn install
 {code}
-# Create products (in SiteB) by running {{WriteProducts}} client using following, \\{code}
+- Create products (in SiteB) by running `WriteProducts` client using following, \\{code}
 cd <multi-cluster-example>\feeder
 mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.client.WriteProducts"
 -Dexec.args="jini://*/*/SiteB?groups=SiteB"
 {code}
-# You will notice Products are available on the SiteA as well.
-# Write new orders into the system using {{WriteOrders}} client using following, \\{code}
+- You will notice Products are available on the SiteA as well.
+- Write new orders into the system using `WriteOrders` client using following, \\{code}
 mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.client.WriteOrders"
 -Dexec.args="jini://*/*/SiteB?groups=SiteB"
 {code} \\ New orders will update the Product quantities on SiteB which are in turn replicated to SiteA instance as well.

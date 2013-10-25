@@ -15,5 +15,5 @@ h1. Writing a Hosting Application for Easy Debugging
 
 Writing applicative UDF/RTD:
 
-# Comment the space API calls inside UDF/RTD code and make it return constant values.
-# Create a console or Win-form application that hosts the UDF/RTD DLL and debug it directly to solve the function implementation problems.
+- Comment the space API calls inside UDF/RTD code and make it return constant values.
+- Create a console or Win-form application that hosts the UDF/RTD DLL and debug it directly to solve the function implementation problems.

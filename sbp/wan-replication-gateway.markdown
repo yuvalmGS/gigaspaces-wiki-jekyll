@@ -31,7 +31,7 @@ The internal architecture of the setup includes a clustered space and a Gateway,
 
 h1. Installing the Example
 1. Download the [WAN_Gateway_example.zip|WAN Replication Gateway^WAN_Gateway_example.zip]. It includes two folders: *deploy* and *scripts*.
-2. Please extract the file and and copy the content of the *deploy folder* into {{\gigaspaces-xap-premium-8.0.X-ga\deploy}} folder. It should looks like this:
+2. Please extract the file and and copy the content of the *deploy folder* into `\gigaspaces-xap-premium-8.0.X-ga\deploy` folder. It should looks like this:
 {code}
 Directory of D:\gigaspaces-xap-premium-8.0.3-ga\deploy
 
@@ -45,17 +45,17 @@ Directory of D:\gigaspaces-xap-premium-8.0.3-ga\deploy
 09/11/2011  05:15 AM    <DIR>          wan-space-RU
 09/11/2011  04:42 AM    <DIR>          wan-space-US
 {code}
-3. Please move into the {{scripts}} folder and edit the {{setExampleEnv.bat/sh}} to include correct values for {{NIC_ADDR}} as the machine IP and {{GS_HOME}} to have Gigaspaces root folder location.
+3. Please move into the `scripts` folder and edit the `setExampleEnv.bat/sh` to include correct values for `NIC_ADDR` as the machine IP and `GS_HOME` to have Gigaspaces root folder location.
 
 h1. Running the Example
-You will find within the {{scripts}} folder running scripts to start [Grid Service Agent|XAP91:The Grid Service Agent] for each site and a deploy script for all sites. This will allow you to run the entire setup on one machine to test. Here are the steps to run the example:
-1. Run {{startAgent-DE.bat/sh}} or to start DE site.
-2. Run {{startAgent-RU.bat/sh}} to start RU site.
-3. Run {{startAgent-US.bat/sh}} to start US site.
-4. Run {{deployAll.bat/sh}} file to deploy all the PUs listed above.
+You will find within the `scripts` folder running scripts to start [Grid Service Agent|XAP91:The Grid Service Agent] for each site and a deploy script for all sites. This will allow you to run the entire setup on one machine to test. Here are the steps to run the example:
+1. Run `startAgent-DE.bat/sh` or to start DE site.
+2. Run `startAgent-RU.bat/sh` to start RU site.
+3. Run `startAgent-US.bat/sh` to start US site.
+4. Run `deployAll.bat/sh` file to deploy all the PUs listed above.
 
 h1. Viewing the Clusters
-- Start the {{\gigaspaces-xap-premium-8.0.X-ga\bin\GS-UI.bat/sh}}.
+- Start the `\gigaspaces-xap-premium-8.0.X-ga\bin\GS-UI.bat/sh`.
 - Once you deployed make sure you enable the relevant groups within the GS-UI:
 !GRA:Images2^wan_example3.jpg!
 

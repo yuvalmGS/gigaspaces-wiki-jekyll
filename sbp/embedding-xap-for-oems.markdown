@@ -30,15 +30,15 @@ Acquiring XAP is simple: download an archive from the [Current Releases|http://w
 
 Installation of XAP is just as easy as getting XAP is: since it's a simple archive, unzip it into a directory of your choice.
 
-On Windows, for example, one might install it into {{C:\tools\}}, leading to an installation directory of {{C:\tools\gigaspaces-xap-premium-8.0.5\}}.
+On Windows, for example, one might install it into `C:\tools\`, leading to an installation directory of `C:\tools\gigaspaces-xap-premium-8.0.5\`.
 
-In a UNIX environment, you might install it into {{/usr/local/}}, which would result in a final installation directory of {{/usr/local/gigaspaces-xap-premium-8.0.5/}}.
+In a UNIX environment, you might install it into `/usr/local/`, which would result in a final installation directory of `/usr/local/gigaspaces-xap-premium-8.0.5/`.
 
 h2. Running the GigaSpaces Agent
 
 A GigaSpaces node is best facilitated through the use of a service called the "[Grid Service Agent|XAP91:The Grid Service Agent]," or GSA.
 
-The simplest way to start a node with GigaSpaces is just to invoke the GSA in the GigaSpaces home directory, preferably in its own command shell (although you can easily start a background process with {{start}} or {{nohup}} if desired):
+The simplest way to start a node with GigaSpaces is just to invoke the GSA in the GigaSpaces home directory, preferably in its own command shell (although you can easily start a background process with `start` or `nohup` if desired):
 
 {gdeck:deckName1|top}
 {gcard:Windows}
@@ -77,7 +77,7 @@ Getting a reference to an existing DataGrid instance
       IJSpace space = configurer.space();
 {code}
 
-You can also use a simple helper utility (DataGridConnectionUtility) that combines the two. It first look for a DataGrid instance and if one doesn't exist it will create a new one; it's trivial to alter the {{getSpace()}} method to increase the number of nodes or even scale dynamically as required.
+You can also use a simple helper utility (DataGridConnectionUtility) that combines the two. It first look for a DataGrid instance and if one doesn't exist it will create a new one; it's trivial to alter the `getSpace()` method to increase the number of nodes or even scale dynamically as required.
 
 {tip}A The DataGridConnectionUtility class [is available on Github|https://github.com/Gigaspaces/bestpractices/blob/master/plains/src/main/java/org/openspaces/plains/datagrid/DataGridConnectionUtility.java], in the "plains" project.{tip}
 With this class in the classpath, getting a datagrid reference is as simple as:
@@ -85,6 +85,6 @@ With this class in the classpath, getting a datagrid reference is as simple as:
 {code}GigaSpace space=DataGridConnectionUtility.getSpace("myGrid");{code}
 
 h2. Further reading:
-* [Modeling and Accessing Your Data|XAP91:Modeling and Accessing Your Data]
-* [Deploying and Interacting with the Space|XAP91:Deploying and Interacting with the Space]
+- [Modeling and Accessing Your Data|XAP91:Modeling and Accessing Your Data]
+- [Deploying and Interacting with the Space|XAP91:Deploying and Interacting with the Space]
 

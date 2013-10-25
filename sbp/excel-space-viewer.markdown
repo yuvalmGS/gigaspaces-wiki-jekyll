@@ -19,11 +19,11 @@ h1. Overview
 The Excel space viewer allows you to create customized views of data for spaces running in your network, and to configure existing views. The displayed data is constantly updated in the Excel spreadsheet.
 
 Links:
-* *[*Using the Excel Space Viewer*|#Using Excel Space Viewer]* -- allows you to connect to a Space, create and customize a new and existing views
-* *[*Prerequisites*|#Prerequisites]* -- prerequisites
-* *[*Supported Office Versions*|#Supported Office Versions]* -- a list of the Supported Office Versions
-* *[*Installing the Excel Space Viewer*|#Installing the Excel Space Viewer]* -- running the installing of the Excel Space Viewer
-* *[*Troubleshooting*|#Troubleshooting]* -- troubleshooting
+- *[*Using the Excel Space Viewer*|#Using Excel Space Viewer]* -- allows you to connect to a Space, create and customize a new and existing views
+- *[*Prerequisites*|#Prerequisites]* -- prerequisites
+- *[*Supported Office Versions*|#Supported Office Versions]* -- a list of the Supported Office Versions
+- *[*Installing the Excel Space Viewer*|#Installing the Excel Space Viewer]* -- running the installing of the Excel Space Viewer
+- *[*Troubleshooting*|#Troubleshooting]* -- troubleshooting
 
 h1. Using Excel Space Viewer
 
@@ -33,9 +33,9 @@ The Excel Space Viewer allows you to create views of data to a certain space cla
 
 (i) It is possible to create several views in the same spreadsheet. All views can display data for the same space, or for different spaces. If you are displaying data for a different space, you need to connect to that space before creating an additional view.
 The Space Viewer toolbar includes the following options:
-* *[*Create View*|#Creating New View]* -- allows you to create and customize a new view
-* *[*Configure View*|#Changing Existing View]* -- allows you to edit and customize existing views
-* *Refresh results* -- refreshes the view or views with updated data
+- *[*Create View*|#Creating New View]* -- allows you to create and customize a new view
+- *[*Configure View*|#Changing Existing View]* -- allows you to edit and customize existing views
+- *Refresh results* -- refreshes the view or views with updated data
 \\
 \\
 {indent}!Toolbar3.JPG!{indent}
@@ -43,16 +43,16 @@ The Space Viewer toolbar includes the following options:
 h2. Creating New View
 
 The *Create View* option allows you to create a view of space data inside your Excel spreadsheet, and to customize your selection according to your requirements.
-* The *Connected to* drop-down menu displays the space URL of the space you are currently connected to.
-* The *Work with Class* drop-down menu allows you to select which space class you would like to view.
-* The *Available Columns* area lists all fields in this class.
-* The *Undisplayable Columns* area lists fields that belong to this class, but can't be displayed in Excel (usually user-defined fields).
-* The *Selected Columns* area displays the fields you choose to display in this view. Use the arrow buttons (for example: !arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpg!) allow you to organize the fields in the order in which they will appear in the final view.
+- The *Connected to* drop-down menu displays the space URL of the space you are currently connected to.
+- The *Work with Class* drop-down menu allows you to select which space class you would like to view.
+- The *Available Columns* area lists all fields in this class.
+- The *Undisplayable Columns* area lists fields that belong to this class, but can't be displayed in Excel (usually user-defined fields).
+- The *Selected Columns* area displays the fields you choose to display in this view. Use the arrow buttons (for example: !arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpg!) allow you to organize the fields in the order in which they will appear in the final view.
 \\
 \\
 {indent}!ConfigureView2.JPG!{indent}\\
 \\
-* It is possible to connect to any running space in your network.
+- It is possible to connect to any running space in your network.
 To connect to a space:
 *# Click the *Connect* button.
 *# In the Connect to Space dialog box, type the [space URL|XAP66:Space URL]. The general format of the space URL is:
@@ -60,27 +60,27 @@ To connect to a space:
 <protocol>://<host name>:<port>/<container name>/<space name>?<properties>
 {code}
 {indent}!Connect1.JPG!{indent}
-* The *Customize the Selection* button opens the [#Customize the Selection] window.
+- The *Customize the Selection* button opens the [#Customize the Selection] window.
 
 {anchor:create}
 To create a new view:
-# Click the *Create View* option in the Space Viewer toolbar. The Create View window is opened.
-# Make sure you are connected to a space.
-# Use the arrow buttons ( !arrowExcel.jpg!) to move columns from the *Available Columns* area to the *Selected Columns* area.
-# If you want to narrow your view to more specific results (by querying your class fields), click the *Customize the Selection* button (see [*Customize the Selection*|#Customize the Selection]).
+- Click the *Create View* option in the Space Viewer toolbar. The Create View window is opened.
+- Make sure you are connected to a space.
+- Use the arrow buttons ( !arrowExcel.jpg!) to move columns from the *Available Columns* area to the *Selected Columns* area.
+- If you want to narrow your view to more specific results (by querying your class fields), click the *Customize the Selection* button (see [*Customize the Selection*|#Customize the Selection]).
 (i) This step is optional. If you want to generate the view with all the existing entries of the selected type in the space, proceed to the next step.
-## On the left side of the Customize the Selection window, click the class field you want to query. (For example, the *Age* field is selected below.)
+    - On the left side of the Customize the Selection window, click the class field you want to query. (For example, the *Age* field is selected below.)
 \\
 \\
 {indent}!CustomizeTheSelection1.JPG!{indent}\\
 \\
-## The selected field appears on the right, under *WHERE*. You can now select the desired expression and value, and choose to sort your results in an ascending or descending manner.
-## When you've finished selecting, press *Save*.
-## Your query syntax is shown in the *SQL* area. Under the *SQL* box, the number of instances (the query's result) is displayed.
-## Repeat steps 1-4 for any additional fields you'd like to query.
-## Click *OK*.
-# In the Create View window, Click *OK*.
-# Your selection is displayed in the spreadsheet:
+    - The selected field appears on the right, under *WHERE*. You can now select the desired expression and value, and choose to sort your results in an ascending or descending manner.
+    - When you've finished selecting, press *Save*.
+    - Your query syntax is shown in the *SQL* area. Under the *SQL* box, the number of instances (the query's result) is displayed.
+    - Repeat steps 1-4 for any additional fields you'd like to query.
+    - Click *OK*.
+- In the Create View window, Click *OK*.
+- Your selection is displayed in the spreadsheet:
 \\
 \\ !ExcelSheet1.JPG!
 \\
@@ -96,10 +96,10 @@ The Customize the Selection window allows you to perform queries on a certain fi
 
 The top left pane is listing all the class fields. At the top of this list is the class name (in the example below: *GigaSpacesViewer.Person*).
 By clicking a field, the top right pane is enabled with customization options for that field.
-* The *WHERE* statement is displayed, under which is the name of the selected field in bold.
-* The *Expression* drop-down menu allows you to select the expression for this query (such as larger than, equals to for integer fields; and like for string fields).
-* The *Value* drop-down menu allows you to select the value for your query.
-* The *Sort* drop-down menu defines if this column will be displayed in an ascending or descending manner.
+- The *WHERE* statement is displayed, under which is the name of the selected field in bold.
+- The *Expression* drop-down menu allows you to select the expression for this query (such as larger than, equals to for integer fields; and like for string fields).
+- The *Value* drop-down menu allows you to select the value for your query.
+- The *Sort* drop-down menu defines if this column will be displayed in an ascending or descending manner.
 
 Pressing *Save* saves the query for this field.
 
@@ -119,42 +119,42 @@ h1. Installation
 h1. Prerequisites
 
 *Before you begin, make sure the following are installed*:
-* GigaSpaces 6.5 GA.
+- GigaSpaces 6.5 GA.
 .Net product is unzipped.
 JSHOMEDIR is configured.
 For more details see [Installing GigaSpaces|http://www.gigaspaces.com/wiki/display/XAP66/Building+Your+First+.NET+Application#BuildingYourFirst.NETApplication-InstallingGigaSpaces] section.
-* A [JDK 1.5|XAP66:Installing GigaSpaces#Prior to Installation]
-* The [.NET Framework|http://msdn2.microsoft.com/en-us/netframework/aa569263.aspx]
-* Microsoft Office 2003
+- A [JDK 1.5|XAP66:Installing GigaSpaces#Prior to Installation]
+- The [.NET Framework|http://msdn2.microsoft.com/en-us/netframework/aa569263.aspx]
+- Microsoft Office 2003
 
 h1. Supported Office Versions
 
 The Excel Space Viewer has been tested with the following editions of Microsoft Office 2003:
-* Microsoft Office Small Business Edition 2003
+- Microsoft Office Small Business Edition 2003
 
 h1. Installing the Excel Space Viewer
 
 *To install and run the Excel space viewer*:
-# (on) *Download the [Excel Space Viewer Installation|^GigaSpacesViewerSetup.zip]* file and extract it.
-# Run the {{GigaSpacesViewerSetup.msi}} file.
+- (on) *Download the [Excel Space Viewer Installation|^GigaSpacesViewerSetup.zip]* file and extract it.
+- Run the `GigaSpacesViewerSetup.msi` file.
 \\
-\\ (!) If the .NET Framework is not installed on your machine, the system opens a dialog asking whether you want to install it. In this case, select *Yes* and proceed with the installation. After you finish installing, reopen the {{GigaSpacesViewerSetup.msi}} file and continue the procedure below.
+\\ (!) If the .NET Framework is not installed on your machine, the system opens a dialog asking whether you want to install it. In this case, select *Yes* and proceed with the installation. After you finish installing, reopen the `GigaSpacesViewerSetup.msi` file and continue the procedure below.
 \\
 \\
-# The Excel Space Viewer Setup Wizard is displayed:
+- The Excel Space Viewer Setup Wizard is displayed:
 \\
 \\
 {indent}!ExcelSpaceViewer_setup_1.jpg!{indent}\\
 \\
-# In the Select Installation Folder window, browse to the desired installation folder. Choose whether you want the Excel Space Viewer to be used by you only, or by other users:
+- In the Select Installation Folder window, browse to the desired installation folder. Choose whether you want the Excel Space Viewer to be used by you only, or by other users:
 \\
 \\
 {indent}!ExcelSpaceViewer_setup_2.jpg!{indent}\\
 \\
-# In the Confirm Installation window, click *Next*.
-# Wait for the installation to complete and click *Next*, then click *Close*.
-# Open Excel.
-# A new toolbar appears in the top left:
+- In the Confirm Installation window, click *Next*.
+- Wait for the installation to complete and click *Next*, then click *Close*.
+- Open Excel.
+- A new toolbar appears in the top left:
 \\
 \\
 {indent}!Toolbar4.JPG!{indent}
@@ -169,12 +169,12 @@ h3. Problem
 
 The Excel Space Viewer is installed on a laptop PC. It is working OK but after a few days, the Space Viewer toolbar does not appear in Excel.
 
-Running the installation file ({{GigaSpacesViewerSetup.msi}}) and selecting *Add*/*Remove*/*Repair* works fine, but the toolbar still doesn't show up in Excel.
-* *Operating system* -- Microsoft Windows XP Professional, Version - 5.1.2600 Service Pack 2 Build 2600
-* *Office version* -- Microsoft Office Small Business Edition 2003, Office version: 11.0.8169
+Running the installation file (`GigaSpacesViewerSetup.msi`) and selecting *Add*/*Remove*/*Repair* works fine, but the toolbar still doesn't show up in Excel.
+- *Operating system* -- Microsoft Windows XP Professional, Version - 5.1.2600 Service Pack 2 Build 2600
+- *Office version* -- Microsoft Office Small Business Edition 2003, Office version: 11.0.8169
 
 h3. Solution
 
-# Open Excel
-# Click *Help* > *About Excel* > *Disabled Items*
-# Highlight the *mscorlib.dll* item and click *Enable*
+- Open Excel
+- Click *Help* > *About Excel* > *Disabled Items*
+- Highlight the *mscorlib.dll* item and click *Enable*

@@ -21,13 +21,13 @@ In some cases you might want to use a custom data type with a custom business lo
 
 Such custom business logic might be useful when comparing vector data (2 dimensional Cartesian space). These may represent sound, maps, pictures or any other 2 or 3 dimensional artifacts. You may use this technique to query data based on any other mathematical or financial related formulas such as [Time value of money|http://en.wikipedia.org/wiki/Time_value_of_money] like Present Value of a Cash Flow Series, Future Value of a Cash Flow Series, etc. Other areas where such custom matching is relevant, are Pattern recognition, Sequence analysis, Surveillance, Forensic, Social network behavior etc.
 
-(!) In some cases, you may index the data to speed up the custom matching process. To enable this, you should index the field so that its class implements the {{Comparable}} interface using the {{EXTENDED}} index type as part of the space class. See the [Indexing|XAP91:Indexing] page for additional information about how to enable the {{EXTENDED}} index. Indexing the custom type field *should be used carefully since it does not support* a {{Comparable.compareTo}} implementation that performs relative-based matching, as demonstrated by the following example.
+(!) In some cases, you may index the data to speed up the custom matching process. To enable this, you should index the field so that its class implements the `Comparable` interface using the `EXTENDED` index type as part of the space class. See the [Indexing|XAP91:Indexing] page for additional information about how to enable the `EXTENDED` index. Indexing the custom type field *should be used carefully since it does not support* a `Comparable.compareTo` implementation that performs relative-based matching, as demonstrated by the following example.
 
 h1. Vector Compare Example
 The following example illustrates a business logic implementation used to query for vector data (an array of Integer values), using the [Euclidean distance|http://en.wikipedia.org/wiki/Euclidean_distance] formula:
 {panel}!GRA:Images^EuclideanDistance.jpg!{panel}
 
-The object that holds the array implements the [Comparable|http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html] interface. The Space class has a getter method for this field indexing, using the {{EXTENDED}} index. The actual query involves indexed fields for several sample data points within the vector, together with the custom field:
+The object that holds the array implements the [Comparable|http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html] interface. The Space class has a getter method for this field indexing, using the `EXTENDED` index. The actual query involves indexed fields for several sample data points within the vector, together with the custom field:
 {code}
 SQLQuery<Vector> query= new SQLQuery<Vector>(Vector.class ,
 		"(x0 > ? AND x0 < ? ) " +
@@ -49,7 +49,7 @@ Here is an example of a target vector, and a matching vector found using the cus
 
 {tip}To scale the system you should deploy the space using the [partitioned cluster schema|XAP91:Terminology - Data Grid Topologies]. This will allow queries (i.e. matching) to be executed across all the partitions in parallel, speeding up the query execution time.{tip}
 
-See *The Application* tab for the full query usage. This allows the {{Comparable.compareTo}} implementation to be performed on a smaller candidate subset of objects.
+See *The Application* tab for the full query usage. This allows the `Comparable.compareTo` implementation to be performed on a smaller candidate subset of objects.
 
 {gdeck:example|top}
 {gcard:The Comparable implementation}

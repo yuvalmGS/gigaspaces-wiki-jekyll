@@ -16,11 +16,11 @@ h1. Overview
 
 When having an application using a very large backend database leveraging the IMDG, caching a subset of the application data, while running on-going data eviction policy with read-through policy (i.e. LRU cache policy mode with External-Data-Source used), the main requirement is to *access the database in the most optimal manner* when performing queries against the IMDG.
 
-When using {{readById}} or {{readByIds}} operations looking for a single specific object(s), that cannot be found within the IMDG (a cache miss), the database access is very minimal. Only one raw is retrieved from the database per object lookup activity via the space External Data Source (EDS) implementation.
+When using `readById` or `readByIds` operations looking for a single specific object(s), that cannot be found within the IMDG (a cache miss), the database access is very minimal. Only one raw is retrieved from the database per object lookup activity via the space External Data Source (EDS) implementation.
 
-But when performing queries, using {{readMultiple}} with a template or SQLQuery filter, that return a result set that may involve relatively large amount of objects, with an IMDG running in LRU cache policy mode, the probability accessing the database retrieving large amount of data is very high:
-- When using {{readMultiple}} having {{Integer.MAX_VALUE}} as the {{max_objects}} parameter, every partition will access the database (parallel database access). This may overload the database.
-- When using {{readMultiple}} having {{max_objects}} < {{Integer.MAX_VALUE}} the database might be accessed even if there are enough objects matching the query criteria across all the space partitions.
+But when performing queries, using `readMultiple` with a template or SQLQuery filter, that return a result set that may involve relatively large amount of objects, with an IMDG running in LRU cache policy mode, the probability accessing the database retrieving large amount of data is very high:
+- When using `readMultiple` having `Integer.MAX_VALUE` as the `max_objects` parameter, every partition will access the database (parallel database access). This may overload the database.
+- When using `readMultiple` having `max_objects` < `Integer.MAX_VALUE` the database might be accessed even if there are enough objects matching the query criteria across all the space partitions.
 - When loading data from database data eviction process may be triggered. This may impact the performance.
 - Database access involves reading objects that will not be loaded into the space (none matching routing value).
 
@@ -71,8 +71,8 @@ To run the example you should first run the IMDG and later run the client. the e
 
 h3. Running the IMDG
 
-The {{MyEDS}} class main method will start IMDG with 3 nodes. Once the IMDG will be started, each partition will load the dummy data.
+The `MyEDS` class main method will start IMDG with 3 nodes. Once the IMDG will be started, each partition will load the dummy data.
 
 h3. Running the Client
 
-The {{Client}} class main method will start a client that will perform the above queries.
+The `Client` class main method will start a client that will perform the above queries.

@@ -61,7 +61,7 @@ To use a custom EDS with the mirror space, all you have to do is declare the EDS
         </os-core:properties>
     </os-core:mirror>{code}
 
-The important facets here are the {{mongoEDS}} bean declaration, and the {{external-data-source}} attribute of the space. Assuming you have a MongoDB instance running on localhost (as the MongoDB configuration above shows), this would instantiate a mirror space, prepared for all write-through activity.
+The important facets here are the `mongoEDS` bean declaration, and the `external-data-source` attribute of the space. Assuming you have a MongoDB instance running on localhost (as the MongoDB configuration above shows), this would instantiate a mirror space, prepared for all write-through activity.
 
 h2. Configuring the Data-Grid
 

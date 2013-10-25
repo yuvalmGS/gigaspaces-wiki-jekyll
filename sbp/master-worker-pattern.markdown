@@ -13,7 +13,7 @@ JDK:*Sun JDK 1.6*
 Date: August 2009
 {rate}
 h1. Overview
-The [Master-Worker Pattern|http://books.google.com/books?id=9cV3TbahjW0C&pg=PA153&lpg=PA153&dq=JavaSpaces+Master-Worker+Pattern&source=bl&ots=1l_DQmEGNl&sig=IU2UTbG-xytamrby2r5yaJLnAkk&hl=en&ei=lm6RSo-dGJXjlAeYqOWjDA&sa=X&oi=book_result&ct=result&resnum=1#v=onepage&q=JavaSpaces%20Master-Worker%20Pattern&f=false] (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a {{Master}} and multiple {{Workers}}.
+The [Master-Worker Pattern|http://books.google.com/books?id=9cV3TbahjW0C&pg=PA153&lpg=PA153&dq=JavaSpaces+Master-Worker+Pattern&source=bl&ots=1l_DQmEGNl&sig=IU2UTbG-xytamrby2r5yaJLnAkk&hl=en&ei=lm6RSo-dGJXjlAeYqOWjDA&sa=X&oi=book_result&ct=result&resnum=1#v=onepage&q=JavaSpaces%20Master-Worker%20Pattern&f=false] (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a `Master` and multiple `Workers`.
 
 {indent}!GRA:Images^the_master_worker.jpg!{indent}
 
@@ -23,22 +23,22 @@ In GigaSpaces XAP, you can implement the Master-Worker pattern using several met
 
 h1. Implementing Master-Worker in XAP using Polling Containers
 
-The Polling Containers approach uses the classic JavaSpaces write/take operations to implement the parallel processing. This allows a {{Master}} client application to generate a {{Job}} that is a set of {{Request}} objects, write these into the space and immediately perform a Take operation on the {{Result}} objects.
+The Polling Containers approach uses the classic JavaSpaces write/take operations to implement the parallel processing. This allows a `Master` client application to generate a `Job` that is a set of `Request` objects, write these into the space and immediately perform a Take operation on the `Result` objects.
 
-The {{Request}} object has an {{execute}} method that includes the actual processing business logic. The {{Workers}}, implemented via a polling container, perform a continuous {{Take}} operation on the {{Request}} objects. Once a {{Request}} object has been consumed, its {{execute}} method is called and a {{Result}} object is written back into the space. The {{Master}} application consumes these incoming objects. Once the amount of {{Result}} objects consumed by the {{Master}} for the relevant {{Job}} matches the amount of {{Request}} objects, the {{Job}} execution has been completed.
+The `Request` object has an `execute` method that includes the actual processing business logic. The `Workers`, implemented via a polling container, perform a continuous `Take` operation on the `Request` objects. Once a `Request` object has been consumed, its `execute` method is called and a `Result` object is written back into the space. The `Master` application consumes these incoming objects. Once the amount of `Result` objects consumed by the `Master` for the relevant `Job` matches the amount of `Request` objects, the `Job` execution has been completed.
 
-When there is one space (with or without a backup) used by the {{Master}} and {{Workers}}, you can run the workers in blocking mode (take operation with timeout > 0). This means that once a matching {{Request}} is written into the space, one of the running workers immediately consumes it.
+When there is one space (with or without a backup) used by the `Master` and `Workers`, you can run the workers in blocking mode (take operation with timeout > 0). This means that once a matching `Request` is written into the space, one of the running workers immediately consumes it.
 
-When running multiple {{Workers}}, processing is load-balanced across all the workers in an even manner. When there is a large amount of activity, you might need to run a partitioned space to allow the space layer to store a large number of {{Request}} objects (there will always be a small number of {{Result}} objects in the space), and to cope with a large number of {{Workers}}. This makes sure that your system can scale, and the space layer does not act as a bottleneck.
+When running multiple `Workers`, processing is load-balanced across all the workers in an even manner. When there is a large amount of activity, you might need to run a partitioned space to allow the space layer to store a large number of `Request` objects (there will always be a small number of `Result` objects in the space), and to cope with a large number of `Workers`. This makes sure that your system can scale, and the space layer does not act as a bottleneck.
 
-When running the space in clustered partitioned mode, you cannot run the workers in blocking mode without assigning a value to the {{Request}} object routing field. The [Designated Workers approach|#Example 2 - Designated Workers] allows you to run the workers against a partitioned space, in blocking mode.
+When running the space in clustered partitioned mode, you cannot run the workers in blocking mode without assigning a value to the `Request` object routing field. The [Designated Workers approach|#Example 2 - Designated Workers] allows you to run the workers against a partitioned space, in blocking mode.
 
 The following sections include code samples and configuration that illustrate the Master-Worker implementation via Polling Containers, using the Random Workers and Designated Workers approach.
 
 {tip}We invite you to [download|Master-Worker Pattern^MasterWorker.zip] the code examples and configuration files used with this article.{tip}
 
 h1. Example 1 - Random Workers
-With the Random Workers approach, each worker can consume {{Request}} objects from *every* space partition. In this case, the non-blocking mode is used. The workers scan the partitions in a round-robin fashion for a {{Request}} object to consume and execute. With this approach, there might be a small delay until the workers consume a {{Request}} object. This approach might generate some chatting over the network, since the workers connect to all existing partitions to look for {{Request}} objects to consume and in case none is found, wait for some time and then try again.
+With the Random Workers approach, each worker can consume `Request` objects from *every* space partition. In this case, the non-blocking mode is used. The workers scan the partitions in a round-robin fashion for a `Request` object to consume and execute. With this approach, there might be a small delay until the workers consume a `Request` object. This approach might generate some chatting over the network, since the workers connect to all existing partitions to look for `Request` objects to consume and in case none is found, wait for some time and then try again.
 {section}
 {column:width=50%}
 Step 1:
@@ -232,7 +232,7 @@ Deploying the Workers PU:
 {gdeck}
 
 h1. Example 2 - Designated Workers
-With this approach, each new worker is assigned a specific ID and consumes {{Request}} objects from a designated partition. In this case, the worker runs in blocking mode. The {{Request}} object routing field is populated with the partition ID, with the Polling Container template, and is also populated by the {{Master}} application before it is written into the partitioned clustered space.
+With this approach, each new worker is assigned a specific ID and consumes `Request` objects from a designated partition. In this case, the worker runs in blocking mode. The `Request` object routing field is populated with the partition ID, with the Polling Container template, and is also populated by the `Master` application before it is written into the partitioned clustered space.
 {section}
 {column:width=50%}
 Step 1:
@@ -244,7 +244,7 @@ Step 2:
 {column}
 {section}
 
-{tip}With this approach the number of {{Workers}} should be greater than or equal to the number of partitions.{tip}
+{tip}With this approach the number of `Workers` should be greater than or equal to the number of partitions.{tip}
 
 See below how the Designated Workers approach should be implemented:
 {gdeck:Designated Workers approach|top}

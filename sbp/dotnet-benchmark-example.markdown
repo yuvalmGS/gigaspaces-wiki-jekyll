@@ -12,7 +12,7 @@ page_id: 63799403
 {column:width=7%}
 {column}
 {column:width=86%}
-{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|{{<GigaSpaces Root>\Examples\Benchmark}} |
+{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|`<GigaSpaces Root>\Examples\Benchmark` |
 {% endalign %}
 {column}
 {column:width=7%}
@@ -68,8 +68,8 @@ Remote:
 You can control the benchmark by changing parameters in the configuration file.
 
 The configuration file includes the following information:
-*  *<assembly>* elements. Each element defines an assembly that needs to be loaded (for custom objects).
-*  *<Benchmark>* elements. Each element defines a benchmark that will be included in the benchmark run.
+-  *<assembly>* elements. Each element defines an assembly that needs to be loaded (for custom objects).
+-  *<Benchmark>* elements. Each element defines a benchmark that will be included in the benchmark run.
 
 The Benchmark elements contain the following parameters:
 - *type* \- Define the benchmark type name. The type structure is:
@@ -144,7 +144,7 @@ h1. Example Configuration File
 
 The *Input xml* structure is the same for the two benchmark options (the Out-of-the-box benchmark and the Customized benchmark).
 
-(on) It is recommended that you use the {{BenchmarkPerson.xml}} file that is provided with the benchmark example, as a template.
+(on) It is recommended that you use the `BenchmarkPerson.xml` file that is provided with the benchmark example, as a template.
 
 Example configuration file:
 {code:xml}

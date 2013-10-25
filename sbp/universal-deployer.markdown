@@ -52,7 +52,7 @@ The GUD support the following command line arguments:
 h1. Running the GUD
 h2. Install the GUD
 - Download the [GigaSpaces Universal Deployer|^GSUniversalDeployer.zip] and extract it into an empty folder.
-- Edit the {{runGSUniversalDeployer.bat}} or {{runGSUniversalDeployer.sh}} to include the correct parameters.
+- Edit the `runGSUniversalDeployer.bat` or `runGSUniversalDeployer.sh` to include the correct parameters.
 
 Here an exmaple how you should run the GUD:
 {code}java com.gigaspaces.admin.GSUniversalDeployer -config c:\\puList.txt -locators 127.0.0.1 -abortDeployOnFailure true{code}
@@ -97,7 +97,7 @@ Each GUD configuration file line supports the following options:
 |-singleMachineDeployment |Used with an Elastic PU. Allows deployment of the processing unit on a single machine, by lifting the limitation for primary and backup processing unit instances from the same partition to be deployed on different machines. | false,true|false|
 
 h2.Commenting lines
-You may use {{/}} or {{#}} to comment out a line within the configuration file.
+You may use `/` or `#` to comment out a line within the configuration file.
 
 h2. Logging
 When deploying the GUD will display information about started/terminated containers, started/terminated PU instances.

@@ -13,17 +13,17 @@ h1. Overview
 In this pattern, all data is stored in the space (on the server side). Excel in turn loads only the relevant data each time and displays it in the spreadsheet. This removes the load from Excel, which is sometimes unable to cope with such large amounts of data, and, if required, updates the displayed data without delay.
 
 Using this pattern is divided into 4 main steps:
-# [Loading all your data to the space|#1 -- Loading Data to Space].
-# [Loading a subset of your data to the Excel spreadsheet|#2 -- Loading Data Subset to Excel].
-# If required: [Defining a refresh policy|#3 -- Defining Refresh Policy].
+- [Loading all your data to the space|#1 -- Loading Data to Space].
+- [Loading a subset of your data to the Excel spreadsheet|#2 -- Loading Data Subset to Excel].
+- If required: [Defining a refresh policy|#3 -- Defining Refresh Policy].
 
 h2. 1 -- Loading Data to Space
 
 As a first step, you need to load all your data from its current source to the space.
 
 GigaSpaces provides [OpenSpaces|XAP66:Product Architecture#ProductArchitecture-OpenSpacesAPIandComponents] as its main API. However, it is also possible to load data from different types of applications transparently, using different connectors implemented by GigaSpaces:
-* For messaging-based applications, refer to the [XAP66:JMS] section.
-* If your application is an external data source (like a database), refer to the [XAP66:External Data Source] section.
+- For messaging-based applications, refer to the [XAP66:JMS] section.
+- If your application is an external data source (like a database), refer to the [XAP66:External Data Source] section.
 
 
 h2. 2 -- Loading Data Subset to Excel

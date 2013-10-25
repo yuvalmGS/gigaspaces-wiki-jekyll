@@ -61,7 +61,7 @@ See below an example of an object footprint using a 32 and 64 Bit JVM using diff
 
 {tip}You may decrease the raw object footprint (not the indexes footprint) using the [GigaSpaces Serialization API|Lowering the Space Object Footprint]{tip}
 
-{tip}You can reduce the JVM memory footprint using the {{-XX:+UseCompressedOops}} JVM option. It is part of the JDK6u14 and JDK7. See more details here: [http://wikis.sun.com/display/HotSpotInternals/CompressedOops]. It is highly recommended to use the latest JDK release when using this option.
+{tip}You can reduce the JVM memory footprint using the `-XX:+UseCompressedOops` JVM option. It is part of the JDK6u14 and JDK7. See more details here: [http://wikis.sun.com/display/HotSpotInternals/CompressedOops]. It is highly recommended to use the latest JDK release when using this option.
 {tip}
 
 h1. Active Clients vs. Cores vs. Heap Size

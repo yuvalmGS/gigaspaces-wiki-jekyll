@@ -21,7 +21,7 @@ The Mirror Service behavior is important for the stability of the application an
 h1. How the Mirror Monitor works?
 The Mirror Monitor utility gathers statistics about the Mirror Service behavior and exposes these via standard JMX Mbean. You may access this collected data using standard JMX viewers such as the JConsole utility comes with the JVM.
 
-The Mirror Monitor extends the built-in openspaces {{DefaultHibernateExternalDataSource}}, and collects statistics about the activities the mirror performs. You may log these statistics into a log file or/and access these by using the JMX API.
+The Mirror Monitor extends the built-in openspaces `DefaultHibernateExternalDataSource`, and collects statistics about the activities the mirror performs. You may log these statistics into a log file or/and access these by using the JMX API.
 
 The Mirror Monitor using the GigaSpaces [XAP91:Administration and Monitoring API] to receive information about the current status of the replication redo log size of all the IMDG primary instances. When having multiple partitions for the IMDG, the redo log value exposed is a sum of all the IMDG primary instances current replication redo log size.
 
@@ -31,10 +31,10 @@ This utility collecting stats about:
 - Redo log size accumulated at the primary spaces.
 
 The Mirror Monitor includes the following:
-- {{IMirrorStats}} Interface - required for the JMX MBean.
-- {{MirrorStats}} - JMX MBean exposing the statistics collected.
-- {{Mirror}} - extends the {{DefaultHibernateExternalDataSource}} , and calculates the current Mirror Write/Update/Remove speed.
-- {{SpaceModeListener}} - Identify a failure of the primary space and switch monitoring the new primary.
+- `IMirrorStats` Interface - required for the JMX MBean.
+- `MirrorStats` - JMX MBean exposing the statistics collected.
+- `Mirror` - extends the `DefaultHibernateExternalDataSource` , and calculates the current Mirror Write/Update/Remove speed.
+- `SpaceModeListener` - Identify a failure of the primary space and switch monitoring the new primary.
 
 h1. How to use the Mirror Monitor?
 In order to use the Mirror Monitor with your application you should:

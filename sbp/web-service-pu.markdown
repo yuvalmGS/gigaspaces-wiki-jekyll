@@ -23,12 +23,12 @@ For simplicity:
 - Space is collocated with the web service.
 - Example does not include HTTP Load balancer and Load balancer Agent.
 
-The example is based on the [sample|http://cxf.apache.org/docs/sample-projects.html] found within the CXF package under the {{\apache-cxf-2.4.0\samples\wsdl_first}} folder. This sample shows how to build and call a web service using a given WSDL (also called Contract First).
+The example is based on the [sample|http://cxf.apache.org/docs/sample-projects.html] found within the CXF package under the `\apache-cxf-2.4.0\samples\wsdl_first` folder. This sample shows how to build and call a web service using a given WSDL (also called Contract First).
 
 h1. What the Sample Web Service is Doing?
 The web service performs the following space operations:
-- Write a Customer object into the space - See the {{com.example.customerservice.server.CustomerServiceImpl.updateCustomer (Customer customer)}}.
-- Read Customer objects from the space - See the {{com.example.customerservice.server.CustomerServiceImpl.getCustomersByName (String name)}}.
+- Write a Customer object into the space - See the `com.example.customerservice.server.CustomerServiceImpl.updateCustomer (Customer customer)`.
+- Read Customer objects from the space - See the `com.example.customerservice.server.CustomerServiceImpl.getCustomersByName (String name)`.
 
 h1. Running the Web Service
 1. Download the [Web Service WAR file|^CustomerServicePort.war].
@@ -43,10 +43,10 @@ h1. Running the Web Service
 See the [The Client Application|#The Client Application] for details.
 
 h1. Web Service Configuration
-The WAR file includes the web service configuration. It is placed within {{\CustomerServicePort\WEB-INF\cxf-servlet.xml}}.
+The WAR file includes the web service configuration. It is placed within `\CustomerServicePort\WEB-INF\cxf-servlet.xml`.
 The configuration includes:
 - The Space bean.
-- The GigaSpace bean. It is injected into the Service implementation automatically via the {{@GigaSpaceContext}} annotation.
+- The GigaSpace bean. It is injected into the Service implementation automatically via the `@GigaSpaceContext` annotation.
 - The Service implementation.
 - The endpoint Configuration.
 
@@ -87,11 +87,11 @@ The configuration includes:
 {code}
 
 {note}
-There is no {{pu.xml}} used with this war. cxf-servlet.xml has all the required configuration.
+There is no `pu.xml` used with this war. cxf-servlet.xml has all the required configuration.
 {note}
 
 h1. Space Proxy Injection into the Service
-The space proxy injected into the {{com.example.customerservice.server.CustomerServiceImpl}} using {{@GigaSpaceContext}} annotation:
+The space proxy injected into the `com.example.customerservice.server.CustomerServiceImpl` using `@GigaSpaceContext` annotation:
 {code}
 public class CustomerServiceImpl implements CustomerService , InitializingBean{
 ....
@@ -109,23 +109,23 @@ The WSDL used by the web service includes following:
 </wsdl:service>
 {code}
 
-WSDL is packaged in the CustomerServicePort.war file as {{\WEB-INF\CustomerService.wsdl}}.
+WSDL is packaged in the CustomerServicePort.war file as `\WEB-INF\CustomerService.wsdl`.
 
 h1. The Client Application
 The client application:
-- Call the {{CustomerServiceImpl.updateCustomer (Customer customer)}}.
-- Call the {{CustomerServiceImpl.getCustomersByName (String name)}}.
+- Call the `CustomerServiceImpl.updateCustomer (Customer customer)`.
+- Call the `CustomerServiceImpl.getCustomersByName (String name)`.
 
 h2. Running the Client
 You may test the web service using a client application running as a standalone Java application, Spring Application or via [SOAP UI|http://www.soapui.org].
 
 h3. Standalone Java Application
-The {{com.example.customerservice.client.CustomerServiceClient}} can be used as a standalone Java application to invoke the service. Run the {{main}} to run the client:
+The `com.example.customerservice.client.CustomerServiceClient` can be used as a standalone Java application to invoke the service. Run the `main` to run the client:
 {code}java com.example.customerservice.client.CustomerServiceClient{code}
 
 h3. Spring Application
-The {{com.example.customerservice.client.CustomerServiceSpringClient}} can be used as a Spring client application to invoke the service. The {{\resources\client-applicationContext.xml}} used as the client application context. Make sure you have the {{resources}} folder as part of the client classpath when running the client.
-Run the {{main}} to run the client:
+The `com.example.customerservice.client.CustomerServiceSpringClient` can be used as a Spring client application to invoke the service. The `\resources\client-applicationContext.xml` used as the client application context. Make sure you have the `resources` folder as part of the client classpath when running the client.
+Run the `main` to run the client:
 {code}com.example.customerservice.client.CustomerServiceSpringClient{code}
 
 h2. Expected Output
@@ -158,7 +158,7 @@ Click the Query button to view the Customer Data:
 {indent}!web_serv_ui2.jpg|thumbnail!{indent}
 
 h1. WAR file jars
-The CustomerServicePort.war file includes the following jars within its {{\CustomerServicePort\WEB-INF\lib}} folder.
+The CustomerServicePort.war file includes the following jars within its `\CustomerServicePort\WEB-INF\lib` folder.
 Spring and Jetty jars should not be included since they are loaded by GigaSpaces:
 {section}
 {column}
@@ -206,7 +206,7 @@ xmlschema-core-2.0.jar
 
 h1. Client Application Project jars
 The Client project should include the following libraries:
-- All jars within the {{GigaSpaces root/lib/platform/jetty}} folder.
-- All jars within the {{GigaSpaces root/lib/required}} folder.
-- All jars within the {{GigaSpaces root/lib/optional/spring}} folder.
-- All jars within the CustomerServicePort.war {{CustomerServicePort/WEB-INF/lib}} folder
+- All jars within the `GigaSpaces root/lib/platform/jetty` folder.
+- All jars within the `GigaSpaces root/lib/required` folder.
+- All jars within the `GigaSpaces root/lib/optional/spring` folder.
+- All jars within the CustomerServicePort.war `CustomerServicePort/WEB-INF/lib` folder
