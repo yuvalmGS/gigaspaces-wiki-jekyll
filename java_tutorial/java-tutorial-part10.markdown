@@ -4,21 +4,22 @@ title:  XAP Tutorial Part X
 page_id: 61867355
 ---
 
+{%comment%}
 [< Previous|Tutorial Part IX] * [Home|XAP Tutorial] *
-
+{%endcomment%}
 
 
 
 {%summary%}This part of the tutorial will introduce you to security concepts of XAP.{%endsummary%}
 
 
-{%section%}
-{%column%}
 # Overview
+{%section%}
+{%column width=70% %}
 In this part of the tutorial we will introduce you to XAP security, where it fits in the XAP architecture, which components can be secured, and how to configure and customize the security depending on your application security requirements. XAP Security provides comprehensive support for securing your data and services.
 {%endcolumn%}
-{%column%}
-!security.png|width=100px, height=100px!
+{%column width=20% %}
+<img src="/attachment_files/qsg/security.png" width="100" height="100">
 {%endcolumn%}
 {%endsection%}
 
@@ -99,23 +100,35 @@ The default username and password for the security are admin/admin.
 {%section%}
 {%column%}
 Start UI Admin
-!Admin0.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Admin0.png" width="120" height="100">](/attachment_files/qsg/Admin0.png)
+
+
 {%endcolumn%}
 {%column%}
 Select Security options
-!Security-select.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Security-select.png" width="120" height="100">](/attachment_files/qsg/Security-select.png)
+
+
 {%endcolumn%}
 {%column%}
-Login admin/admin dfault
-!SecurityLogin.png|thumbnail!
+Login admin/admin default
+
+[<img src="/attachment_files/qsg/SecurityLogin.png" width="120" height="100">](/attachment_files/qsg/SecurityLogin.png)
+
 {%endcolumn%}
 {%column%}
 Create a Role
-!CreateRole.png|thumbnail!
+
+[<img src="/attachment_files/qsg/CreateRole.png" width="120" height="100">](/attachment_files/qsg/CreateRole.png)
+
 {%endcolumn%}
 {%column%}
 Display Roles
-!CreateRole2.png|thumbnail!
+
+[<img src="/attachment_files/qsg/CreateRole2.png" width="120" height="100">](/attachment_files/qsg/CreateRole2.png)
+
 {%endcolumn%}
 {%endsection%}
 You may have noticed that you can assign fine grained access control for space operations (read/write/etc) per space class(slide 4).
@@ -129,17 +142,23 @@ A user is assigned roles. You can create new roles and users with a configuratio
 {%section%}
 {%column%}
 Login
-!SecurityLogin.png|thumbnail!
+
+[<img src="/attachment_files/qsg/SecurityLogin.png" width="120" height="100">](/attachment_files/qsg/SecurityLogin.png)
+
+
 {%endcolumn%}
 
 {%column%}
 Create User
-!CreateUser1.png|thumbnail!
+
+[<img src="/attachment_files/qsg/CreateUser1.png" width="120" height="100">](/attachment_files/qsg/CreateUser1.png)
 {%endcolumn%}
 
 {%column%}
 Display Users
-!CreateUser2.png|thumbnail!
+
+[<img src="/attachment_files/qsg/CreateUser2.png" width="120" height="100">](/attachment_files/qsg/CreateUser2.png)
+
 {%endcolumn%}
 {%endsection%}
 
@@ -185,13 +204,15 @@ private Role createRole() {
 {%learn%}/xap97/gigaspaces-management-center-(ui)-security{%endlearn%}
 
 
-{%section%}
-{%column%}
 # Securing XAP Components
+{%section%}
+{%column width=70% %}
 XAP has security built over the major component, GSA, GSM, GSC and Processing Unit with Space data. Each one of these components can be configured according to your application security requirements.
  {%endcolumn%}
-{%column%}
-{indent}!GRA:Images^security_ovreview.jpg|thumbnail!{indent}
+{%column width=20% %}
+
+[<img src="/attachment_files/qsg/security_ovreview.jpg" width="200" height="200">](/attachment_files/qsg/security_ovreview.jpg)
+
 {%endcolumn%}
 {%endsection%}
 
@@ -270,13 +291,14 @@ The transport layer can be secured using an SSL communication filter.
 
 
 
-{%info%}This concludes this tutorial. For more detailed information of the XAP platform and its API please consult the [Programmers Guide |Programmer's Guide] {%endinfo%}
+{%info%}This concludes this tutorial. For more detailed information of the XAP platform and its API please consult the [Programmers Guide](/xap97/programmer's-guide.html) {%endinfo%}
 
 
 {%comment%}
 # What's Next
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Programmer's Guide](./programmer's-guide.html) of this tutorial will introduce you to security aspects of XAP.
-{%endcomment%}
+
 
 #
 {align:center}[< Previous|Tutorial Part IX] * [Home|XAP Tutorial] *  {align}
+{%endcomment%}

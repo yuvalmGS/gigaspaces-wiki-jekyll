@@ -169,14 +169,18 @@ In addition to the polling containers you can also use a JMS facade on top of th
 
 # Master Worker Pattern
 {%section%}
-{%column width=60% %}
+{%column width=70% %}
 The Master-Worker Pattern (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a {{Master}} and multiple {{Workers}}. 
 In GigaSpaces XAP, you can implement the Master-Worker pattern using several methods:
-- [Task Executors|http://wiki.gigaspaces.com/wiki/display/SBP/Map-Reduce+Pattern+-+Executors+Example] - best for a scenario where the processing activity is collocated with the data (the data is stored within the same space as the tasks being executed).
-- [Polling Containers|Polling Container] - in this case the processing activity runs in a separate machine/VM from the space. This approach should be used when the processing activity consumes a relatively large amount of CPU and takes a large amount of time. It might also be relevant if the actual data required for the processing is not stored within the space, or the time it takes to retrieve the required data from the space is much shorter than the time it takes to complete the processing. 
+
+- [Task Executors](http://wiki.gigaspaces.com/wiki/display/SBP/Map-Reduce+Pattern+-+Executors+Example) - best for a scenario where the processing activity is collocated with the data (the data is stored within the same space as the tasks being executed).
+- [Polling Containers](/xap97/polling-container.html) - in this case the processing activity runs in a separate machine/VM from the space. This approach should be used when the processing activity consumes a relatively large amount of CPU and takes a large amount of time. It might also be relevant if the actual data required for the processing is not stored within the space, or the time it takes to retrieve the required data from the space is much shorter than the time it takes to complete the processing.
+
 {%endcolumn%}
-{%column width=30% %}
-<img src="/attachment_files/qsg/the_master_worker.jpg" width="100" height="100">
+{%column width=20% %}
+
+[<img src="/attachment_files/qsg//the_master_worker.jpg" width="200" height="200">](/attachment_files/qsg/the_master_worker.jpg)
+
 {%endcolumn%}
 {%endsection%}
 
@@ -184,10 +188,12 @@ In GigaSpaces XAP, you can implement the Master-Worker pattern using several met
 
 
 # What's Next
- {%comment%}
+
+{%comment%}
 
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part IV|Tutorial Part V] of this tutorial will introduce you to the concept of a Processing Unit which is the fundamental unit of deployment in GigaSpaces XAP.
 
 # 
 {align:center}[< Previous|Tutorial Part III] * [Home|XAP Tutorial] * [Next >|Tutorial Part V]{align}
-  {%endcomment%}
+
+{%endcomment%}

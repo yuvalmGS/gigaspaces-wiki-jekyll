@@ -267,6 +267,7 @@ In this step will create the configuration file for the PU deployment
 Now we have all the pieces that are necessary to create the jar file for the PU. After we have created the jar file its time to deploy the PU onto the data grid. Again, you can do this in three ways; by script, Java code or via the admin UI. In our example will use the scripts to deploy the PU.
 
 First we start the GigaSpace Agent (GSA) that will create our IMDG on this machine:
+
 {% inittab d1|top %}
 {% tabcontent Windows %}
 {%highlight java%}
@@ -353,25 +354,34 @@ When you run this code you should see that the PU deployed onto the IMDG is proc
 
 #### Deploy a PU with the WEB Admin UI
 There is complete example available of PU on GitHub. You can download, build and deploy this example. Here is an example how you deploy a PU with the WEB admin UI:
+
 {%section%}
 {%column%}
 Deploy PU
-!EventPU1.png|thumbnail!
+
+[<img src="/attachment_files/qsg/EventPU1.png" width="120" height="100">](/attachment_files/qsg/EventPU1.png)
+
 {%endcolumn%}
 
 {%column%}
 Applications deployed
-!EventPU2.png|thumbnail!
+
+[<img src="/attachment_files/qsg/EventPU2.png" width="120" height="100">](/attachment_files/qsg/EventPU2.png)
+
 {%endcolumn%}
 
 {%column%}
 Data Grid
-!EventPU3.png|thumbnail!
+
+[<img src="/attachment_files/qsg/EventPU3.png" width="120" height="100">](/attachment_files/qsg/EventPU3.png)
+
 {%endcolumn%}
 
 {%column%}
 Statistics
-!EventPU4.png|thumbnail!
+
+[<img src="/attachment_files/qsg/EventPU4.png" width="120" height="100">](/attachment_files/qsg/EventPU4.png)
+
 {%endcolumn%}
 {%endsection%}
 
@@ -406,14 +416,13 @@ With a stateless PU
 {%learn%}/xap97/deploy-gigaspaces-cli.html{%endlearn%}
 
 
- # What's Next
+# What's Next
 
- {%comment%}
+{%comment%}
+
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part VI|Tutorial Part VI] of this tutorial will introduce you to transaction management and space persistence.
 
 
-
-
-#
 {align:center}[< Previous|Tutorial Part IV] * [Home|XAP Tutorial] * [Next >|Tutorial Part VI] {align}
- {%endcomment%}
+
+{%endcomment%}

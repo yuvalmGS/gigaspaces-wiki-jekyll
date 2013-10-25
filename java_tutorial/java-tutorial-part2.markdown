@@ -162,53 +162,69 @@ GS_HOME/bin/gs_webui.sh
 {% endtabcontent %}
 {% endinittab %}
 
-After you execute the above command, open a browser and goto to http://your_host:8099 and the login screen for the admin application will open up. The following screen shots will demonstrate some of the UI features:
+After you execute the above command, open a browser and goto to http://your_host:8099 and the login screen for the admin application will open up. The following screen shots will demonstrate some of the UI features: (no username and password needed)
 
  
 {%section%}
 {%column%}
-Login  (no user/password needed)       
-!Shot0.png|thumbnail!
+Login
+
+[<img src="/attachment_files/qsg/Shot0.png" width="120" height="80">](/attachment_files/qsg/Shot0.png)
+
 {%endcolumn%}
 
 {%column%}
 Dashboard
-!Shot1.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Shot1.png" width="120" height="80">](/attachment_files/qsg/Shot1.png)
+
 {%endcolumn%}
 
 {%column%}
 Deployed Applications
-!Shot11.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Shot11.png" width="120" height="80">](/attachment_files/qsg/Shot11.png)
+
 {%endcolumn%}
 
 {%column%}
 Hosts (GSA,GSC,GSM,LUS)
-!Shot2.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Shot2.png" width="120" height="80">](/attachment_files/qsg/Shot2.png)
+
 {%endcolumn%}
 {%endsection%}
  
 
-{align:center}{%section%}
+{%section%}
 {%column%}
-Deployed Data Grids       
-!Shot3.png|thumbnail! 
+Deployed Data Grids
+
+[<img src="/attachment_files/qsg/Shot3.png" width="120" height="80">](/attachment_files/qsg/Shot3.png)
+
 {%endcolumn%}
 
 {%column%}
 Classes in Space
-!Shot4.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Shot4.png" width="120" height="80">](/attachment_files/qsg/Shot4.png)
+
 {%endcolumn%}
 
 {%column%}
 Class attributes
-!Shot5.png|thumbnail! 
+
+[<img src="/attachment_files/qsg/Shot5.png" width="120" height="80">](/attachment_files/qsg/Shot5.png)
+
 {%endcolumn%}
 
 {%column%}
 Space Query
-!Shot6.png|thumbnail! 
+
+[<img src="/attachment_files/qsg/Shot6.png" width="120" height="80">](/attachment_files/qsg/Shot6.png)
+
 {%endcolumn%}
-{%endsection%}{align}
+{%endsection%}
  
 {%tip%}You can modify the query statement and query the space in realtime.
 Example : select UID,* from xap.tutorial.user.model.User *where creditLimit > 100 and* rowNum<5000{%endtip%}

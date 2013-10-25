@@ -20,7 +20,7 @@ page_id: 61867355
 
 # Overview
 {%section%}
-{%column width=70% %}
+{%column width=75% %}
 In this part of the tutorial we will demonstrate how to create a space and how you can interact with it. We will also demonstrate how you can improve your space search performance by using indexes and returning partial results.
 {%endcolumn%}
 {%column width=20% %}
