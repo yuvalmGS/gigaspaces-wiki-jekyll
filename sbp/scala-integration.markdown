@@ -172,4 +172,3 @@ Scala also comes with an interpreter ([REPL|http://www.scala-lang.org/node/2097]
 
 Interestingly, REPL can also be embedded in your application which is discussed in detail by Josh Suereth  [here|http://suereth.blogspot.com/2009/04/embedding-scala-interpreter.html] and by Vassil Dichev [here|http://speaking-my-language.blogspot.com/2009/11/embedded-scala-interpreter.html]. Running REPL in your application is a useful trick which is theoretically possible but the ramifications of doing this on top of GigaSpaces are unknown. It is not recommended to run Scala on top of GigaSpaces using this approach.
 
-

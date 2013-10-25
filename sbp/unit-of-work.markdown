@@ -56,6 +56,7 @@ With the above scenario requests 1, 3 and 4 should be processed as one atomic op
 {indent}!GRA:Images2^uow_1.jpg!{indent}
 
 # UOW Example
+
 ##  Running the Example
 {tip}You can [download|^uow.zip] eclipse project with example source code, running scripts and configuration.{tip}
 {gdeck:RunningExample|top}

@@ -67,7 +67,6 @@ public static String getRandomCurrency(int partition) {
 }
 {code}
 
-
 The getRandomCurrency is used with our data generator utility.
 
 ## The LoaderRequest
@@ -192,7 +191,6 @@ public class LoaderRequest implements DistributedTask<String, String>{
 
 }
 {code}
-
 
 ## The Client Application
 The client application creates a `LoaderRequest` object and executes it, one for each space Class, where in reality all these `LoaderRequest` objects are sent in parallel to all running partitions to be executed. This is how you have these 3 types of objects loaded into all partitions simultaneously:

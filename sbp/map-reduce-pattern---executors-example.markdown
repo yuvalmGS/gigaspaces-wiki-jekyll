@@ -100,6 +100,7 @@ public class MyTask implements DistributedTask<Integer, Integer>{
 {code}
 
 ## The Client
+
 ### Sync mode
 The client invokes the Task on the remote space in sync mode using the following:
 {code}
@@ -125,6 +126,7 @@ public void onResult(AsyncResult<Integer> result) {
 {code}
 
 ## Running the Example
+
 ### Deploying the Space
 Using IDE:
 Set your IDe to have the Following:
@@ -357,6 +359,7 @@ System.out.println(new Time(System.currentTimeMillis()) + " - Client got Result:
 - The result is being displayed.
 
 ## Running the Example
+
 ### Deploying the Space and Services
 Using IDE:
 Set your IDe to have the Following:

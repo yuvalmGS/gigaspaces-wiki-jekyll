@@ -51,4 +51,3 @@ java com.jmxutil.JMXSpaceStats space_url logfile sampling_duration
 
 The example works both with JDK 1.5 and JDK 1.6.
 
-

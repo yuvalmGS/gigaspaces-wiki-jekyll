@@ -19,8 +19,6 @@ page_id: 63799403
 {column}
 {section}
 
-
-
 # Overview
 
 The Benchmark Example is used to measure simple space operation throughput.
@@ -48,6 +46,7 @@ For more information please read [XAP66:Develop a custom benchmark|#2]
 The structure of the [XAP66:configuration xml file|#Example configuration file] is the same for the two benchmark options.
 
 {anchor:1}
+
 # Option 1: Out-of-the-box Benchmark
 
 The syntax of the command line for running the out-of-the-box benchmark is as follows:
@@ -94,8 +93,8 @@ GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.I
 - *threads* \- Number of concurrent threads that will execute this benchmark
 - *Results xml* \- Location of benchmarks results xml file. The default is the Results directory.
 
-
 {anchor:2}
+
 # Option 2: Develop a Custom Benchmark
 
 Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.
@@ -120,7 +119,6 @@ Develop a custom benchmark with your own code for the benchmark scenario and the
 {code}
 
 3. For running the customized benchmark, follow the steps below in *Building and Running the Example*
-
 
 # Building and Running the Example
 

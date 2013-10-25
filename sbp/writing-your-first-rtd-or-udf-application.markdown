@@ -7,6 +7,7 @@ page_id: 47219379
 
 {summary:page|65}Writing your first RTD/UDF application using the GigaSpaces-Excel integration.{summary}
 {rate}
+
 # Overview
 
 This section shows you how to write your first RTD or UDF application using the GigaSpaces-Excel integration.

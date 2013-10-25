@@ -216,7 +216,6 @@ public void unpack() throws Exception
 }
 {code}
 
-
 ## The writeExternal method
 The `writeExternal` method serializes the object data into the output stream.  The object data involves a field indicates which fields have `null` value, the indexed fields and a byte array field that includes all non indexed fields data (created by the `pack` method). The `writeExternal` assumes the `pack` method has been called explicitly prior the space write method call that initiated the `writeExternal` call.
 
@@ -275,7 +274,6 @@ private short checkNulls() {
 }
 {code}
 
-
 ## The getnulls method
 This method goes through all class non indexed fields (the ones that their data is stored within the byte array) and place into a `long` data type field indication for the ones with null value using a bit map.
 {code}
@@ -283,7 +281,6 @@ private long getnulls()
 {
     long nulls = 0;
     int i=0;
-
 
     nulls = ((_longFieldA1 == null)  ? nulls | 1L << i : nulls ) ;
     i++;
@@ -303,7 +300,6 @@ private BinaryFormatEntry generateBinaryFormatEntry(int id){
 	return bfe;
 }
 {code}
-
 
 ## Writing and Reading the Object from the space
 The following code snipped illustrates how the copact serialized object is written into the space and read from the space:

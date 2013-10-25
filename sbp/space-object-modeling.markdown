@@ -104,7 +104,6 @@ public class Child implements Serializable {
 }
 {code}
 
-
 The Data access layer:
 {code}
 public Child loadChild(int childId) {

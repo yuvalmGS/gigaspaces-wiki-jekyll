@@ -15,7 +15,7 @@ page_id: 64323671
 # Overview
 
 The WAN Gateway provides a simple way of creating a master-slave topology enabling data from one XAP site to be replicated to one or more remote sites. For instance, given three clusters in New York, London, and Hong Kong, with New York being the master and the remaining two acting as slaves, any updates to the New York space will propagate to both London and Hong Kong asynchronously. The sample processing units and configuration provided below are intended as an example of implementing a single-master/multi-slave topology across three sites: New York (US), London (GB), and Hong Kong (HK) where each site has an independent cluster and a Gateway.
-\\  !WAN_masterslave.png|width=616,height=326!\\
+!WAN_masterslave.png|width=616,height=326!
 
 The demo is configured to start three space instances across three clusters. While the three clusters run on your local machine, they are demarcated by zones and different lookup service ports as follows:
 || Gateway/Space || Zone || Lookup Service Port ||
@@ -26,7 +26,7 @@ The demo is configured to start three space instances across three clusters. Whi
 | wan-gateway-GB | GB | 4366 |
 | wan-space-GB | GB | 4366 |
 The internal architecture of the setup includes a clustered space and a Gateway, such that the master site (US) only configures delegators while the slave sites (GB, HK) only configure sinks (click the thumbnail to enlarge):
-!WAN_masterslave_arch.png|thumbnail!\\
+!WAN_masterslave_arch.png|thumbnail!
 
 As a result of this topology setup, the following scenario will take place once updates are written to the New York space:
 
@@ -74,13 +74,11 @@ The master-slave topology configuration is simply implemented through delegators
 
 
 
-
 {code}
 {gcard}
  
 {gcard:New York Gateway}
 {code:xml}
-
 
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -97,7 +95,6 @@ The master-slave topology configuration is simply implemented through delegators
         <os-gateway:delegation target="HK" />
     </os-gateway:delegator>
 
-
     <os-gateway:lookups id="gatewayLookups">
         <os-gateway:lookup gateway-name="US" host="localhost" discovery-port="10768" communication-port="7000"/>
         <os-gateway:lookup gateway-name="GB" host="localhost" discovery-port="10769" communication-port="8000"/>
@@ -108,12 +105,10 @@ The master-slave topology configuration is simply implemented through delegators
 
 
 
-
 {code}
 {gcard}
 {gcard:London Space}
 {code:xml}
-
 
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -141,9 +136,7 @@ The master-slave topology configuration is simply implemented through delegators
 
 	<os-core:giga-space-context />
 
-
 </beans>
-
 
 
 {code}
@@ -174,7 +167,6 @@ The master-slave topology configuration is simply implemented through delegators
     </os-gateway:lookups>
 
 </beans>
-
 
 
 
@@ -209,15 +201,12 @@ The master-slave topology configuration is simply implemented through delegators
 	<os-core:giga-space-context />
 	<os-remoting:annotation-support />
 
-
 </beans>
-
 
 {code}
 {gcard}
 {gcard:Hong Kong Gateway}
 {code:xml}
-
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -241,9 +230,7 @@ The master-slave topology configuration is simply implemented through delegators
         <os-gateway:lookup gateway-name="HK" host="localhost" discovery-port="10770" communication-port="9000"/>
     </os-gateway:lookups>
 
-
 </beans>
-
 
 
 
@@ -275,10 +262,10 @@ Check to enable all three advertised groups for each site:
 As a result, you should see the service grid components for each site displayed under the "Hosts" tree as follows:
 !masterslave_hosts_view.png|thumbnail!
 Once The deployAll.bat/sh script finishes running, you should be able to see all three sites deployed as follows:
-!pu_deployments.jpg|thumbnail!\\
+!pu_deployments.jpg|thumbnail!
 
 If you are using the GS-WEBUI, you can also view the site topology through the "Data Grids > Gateways" view as the following:
-\\  !webui_gw_topology.png|thumbnail!
+!webui_gw_topology.png|thumbnail!
 
 # Testing Master-Slave Replication
 

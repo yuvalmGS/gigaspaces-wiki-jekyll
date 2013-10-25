@@ -50,6 +50,7 @@ The GUD support the following command line arguments:
 |-abortDeployOnFailure|In case of a failure with the deploy of any of the PUs, undeploy all the PUs listed at the GUD config file| true,false| false|
 
 # Running the GUD
+
 ## Install the GUD
 - Download the [GigaSpaces Universal Deployer|^GSUniversalDeployer.zip] and extract it into an empty folder.
 - Edit the `runGSUniversalDeployer.bat` or `runGSUniversalDeployer.sh` to include the correct parameters.
@@ -80,11 +81,10 @@ Each GUD configuration file line supports the following options:
 |-undeployOnFailure | undeploy the PU in case of a failure or when the deploy could not be completed within the timeout specified|false , true|  false|
 |-spaceurl|Used with memcache PU type.|The url of the space, can be embedded, eg: /./myMemcached, or remote eg: {noformat}jini://*/*/myMemcached{noformat}|{noformat}/./memcached{noformat}|
 |-sla |Location of an optional xml file holding the SLA element|sla file location| |
-|-cluster |Set cluster parameters|schema=partitioned-sync2backup  : The cluster schema \\
-             total_members=1,1               : The number of instances and number of backups | |
+|-cluster |Set cluster parameters|schema=partitioned-sync2backup  : The cluster schema{% wbr %}total_members=1,1               : The number of instances and number of backups | |
 |-user xxx -password yyyy               |Deploys a secured processing unit propagated with the supplied user and password| | |
 |-secured |Deploys a secured processing unit (implicit when using -user/-password)| false,true|false|
-|-properties | Location of context level properties file or list of properties. Examples:\\{noformat}-properties embed://prop2=value2;prop3=value3{noformat} or {noformat}-properties file://d:/context.properties{noformat}| | |
+|-properties | Location of context level properties file or list of properties. Examples:{% wbr %}{noformat}-properties embed://prop2=value2;prop3=value3{noformat} or {noformat}-properties file://d:/context.properties{noformat}| | |
 |-max-instances-per-vm number           | Set the SLA number of instances per VM|Numeric value | |
 |-max-instances-per-machine number      | Set the SLA number of instances per machine|Numeric value | |
 |-max-instances-per-zone |Set the SLA number of instances per zone |zone/number| |

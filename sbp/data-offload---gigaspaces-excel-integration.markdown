@@ -25,7 +25,6 @@ GigaSpaces provides [OpenSpaces|XAP66:Product Architecture#ProductArchitecture-O
 - For messaging-based applications, refer to the [XAP66:JMS] section.
 - If your application is an external data source (like a database), refer to the [XAP66:External Data Source] section.
 
-
 ## 2 -- Loading Data Subset to Excel
 
 After you've loaded your data to the space, you need to load the portion you want to work with into your Excel spreadsheet. A SQL query is performed on the space, thus separating the specified data from all the data and loading it into the spreadsheet.

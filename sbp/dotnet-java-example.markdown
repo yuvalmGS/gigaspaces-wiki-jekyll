@@ -44,7 +44,6 @@ The `\[XAP66:SpaceClass(AliasName="")\]` attribute is used to map the .NET names
 
 - The .NET fields/properties *SomeByte, SomeString* are mapped to the Java properties *someByte, someString*.
 
-
 || C# || Java ||
 |{Code:java}
 Using GigaSpaces.Core.Metadata;

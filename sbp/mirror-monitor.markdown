@@ -13,6 +13,7 @@ page_id: 52888463
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
+
 # Overview
 The Mirror Service is an essential component when persisting your data into the enterprise database. The [Mirror Service|XAP91:Asynchronous Persistency with the Mirror] delegates the IMDG activities into the database in a reliable asynchronous manner, allowing the application to access the data stored in-memory without having the database as part of the critical path of the transaction. When using the Mirror Service, the database performance and availability would not impact the application response time.
 

@@ -36,8 +36,7 @@ The Space Viewer toolbar includes the following options:
 - *[*Create View*|#Creating New View]* -- allows you to create and customize a new view
 - *[*Configure View*|#Changing Existing View]* -- allows you to edit and customize existing views
 - *Refresh results* -- refreshes the view or views with updated data
-\\
-\\
+
 {indent}!Toolbar3.JPG!{indent}
 
 ## Creating New View
@@ -48,18 +47,17 @@ The *Create View* option allows you to create a view of space data inside your E
 - The *Available Columns* area lists all fields in this class.
 - The *Undisplayable Columns* area lists fields that belong to this class, but can't be displayed in Excel (usually user-defined fields).
 - The *Selected Columns* area displays the fields you choose to display in this view. Use the arrow buttons (for example: !arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpg!) allow you to organize the fields in the order in which they will appear in the final view.
-\\
-\\
-{indent}!ConfigureView2.JPG!{indent}\\
-\\
+
+{indent}!ConfigureView2.JPG!{indent}
+
 - It is possible to connect to any running space in your network.
 To connect to a space:
-*# Click the *Connect* button.
-*# In the Connect to Space dialog box, type the [space URL|XAP66:Space URL]. The general format of the space URL is:
-{code}
-<protocol>://<host name>:<port>/<container name>/<space name>?<properties>
-{code}
-{indent}!Connect1.JPG!{indent}
+    1. Click the *Connect* button.
+    1. In the Connect to Space dialog box, type the [space URL|XAP66:Space URL]. The general format of the space URL is:
+    {code}
+    <protocol>://<host name>:<port>/<container name>/<space name>?<properties>
+    {code}
+    {indent}!Connect1.JPG!{indent}
 - The *Customize the Selection* button opens the [#Customize the Selection] window.
 
 {anchor:create}
@@ -70,10 +68,9 @@ To create a new view:
 - If you want to narrow your view to more specific results (by querying your class fields), click the *Customize the Selection* button (see [*Customize the Selection*|#Customize the Selection]).
 (i) This step is optional. If you want to generate the view with all the existing entries of the selected type in the space, proceed to the next step.
     - On the left side of the Customize the Selection window, click the class field you want to query. (For example, the *Age* field is selected below.)
-\\
-\\
-{indent}!CustomizeTheSelection1.JPG!{indent}\\
-\\
+
+{indent}!CustomizeTheSelection1.JPG!{indent}
+
     - The selected field appears on the right, under *WHERE*. You can now select the desired expression and value, and choose to sort your results in an ascending or descending manner.
     - When you've finished selecting, press *Save*.
     - Your query syntax is shown in the *SQL* area. Under the *SQL* box, the number of instances (the query's result) is displayed.
@@ -81,10 +78,9 @@ To create a new view:
     - Click *OK*.
 - In the Create View window, Click *OK*.
 - Your selection is displayed in the spreadsheet:
-\\
-\\ !ExcelSheet1.JPG!
-\\
-\\
+
+ !ExcelSheet1.JPG!
+
 
 (i) This view displays the selections you made in the Create View and Customize the Selection windows. The view is constantly refreshed (according to the last refresh rate you defined.).
 
@@ -115,7 +111,6 @@ The Configure View window already includes your previously selected options, and
 
 # Installation
 
-
 # Prerequisites
 
 *Before you begin, make sure the following are installed*:
@@ -137,33 +132,27 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 *To install and run the Excel space viewer*:
 - (on) *Download the [Excel Space Viewer Installation|^GigaSpacesViewerSetup.zip]* file and extract it.
 - Run the `GigaSpacesViewerSetup.msi` file.
-\\
-\\ (!) If the .NET Framework is not installed on your machine, the system opens a dialog asking whether you want to install it. In this case, select *Yes* and proceed with the installation. After you finish installing, reopen the `GigaSpacesViewerSetup.msi` file and continue the procedure below.
-\\
-\\
+
+ (!) If the .NET Framework is not installed on your machine, the system opens a dialog asking whether you want to install it. In this case, select *Yes* and proceed with the installation. After you finish installing, reopen the `GigaSpacesViewerSetup.msi` file and continue the procedure below.
+
 - The Excel Space Viewer Setup Wizard is displayed:
-\\
-\\
-{indent}!ExcelSpaceViewer_setup_1.jpg!{indent}\\
-\\
+
+{indent}!ExcelSpaceViewer_setup_1.jpg!{indent}
+
 - In the Select Installation Folder window, browse to the desired installation folder. Choose whether you want the Excel Space Viewer to be used by you only, or by other users:
-\\
-\\
-{indent}!ExcelSpaceViewer_setup_2.jpg!{indent}\\
-\\
+
+{indent}!ExcelSpaceViewer_setup_2.jpg!{indent}
+
 - In the Confirm Installation window, click *Next*.
 - Wait for the installation to complete and click *Next*, then click *Close*.
 - Open Excel.
 - A new toolbar appears in the top left:
-\\
-\\
+
 {indent}!Toolbar4.JPG!{indent}
 
 # Troubleshooting
 
-
 ## Space Viewer toolbar does not show up in Excel
-
 
 ### Problem
 

@@ -405,6 +405,7 @@ public class JobRunner implements ApplicationContextAware,InitializingBean ,Disp
 
 # Spring Batch PU Example
 To run the Spring Batch PU Example exectue the following steps:
+
 ## Start a Database
 Start an HSQL database. Move into the `gigaspaces-xap-premium\bin` folder and run the following:
 {code}java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb{code}

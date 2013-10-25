@@ -29,4 +29,3 @@ There are two main problems that the GigaSpaces-Excel solution is relevant for:
 | * You are *performing very complex calculations*, or a *large amount of calculations* in Excel
 - These calculations are *costly* -- they *cause Excel to slow down or freeze*; or *slow down other applications* | !blue_arrow2.jpg! | *[Calculation offload|Calculation Offload - GigaSpaces-Excel Integration]* |
 
-

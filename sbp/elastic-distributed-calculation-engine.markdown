@@ -48,7 +48,9 @@ Calculations can be deployed colocated with the data or seperatly.
 |Recommended with|Lightweight calculations. No IO|Heavyweight calculations. CPU / IO bound|
 
 # Colocated Calculations
+
 ## The Calculating Flow
+
 The Calculating Flow includes the following:
 - A client, splitting a list of Trade IDs into multiple batches. Each Batch is sent into the calculation node (space partition) via a [AnalysisTask|#The AnalysisTask] that implements the [Task Interface|XAP8:Task Execution over the Space]. Each calculation node stores a subset of the Trade data.
 - [#The AnalysisTask] is executed. Once completed, an intermediate result is sent back to the client. If the requested Trade cannot be found within the space, it is loaded from the database.

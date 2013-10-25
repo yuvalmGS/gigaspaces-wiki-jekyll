@@ -83,7 +83,6 @@ The data grid uses the EDS for reads. If no initial load is desired, configuring
     </bean>
     <!-- END mongo config -->
 
-
     <os-core:space id="space" url="/./space" mirror="true" external-data-source="mongoEDS">
         <os-core:properties>
             <props>

@@ -11,7 +11,9 @@ page_id: 54297306
 *Recently tested with GigaSpaces version*: XAP 7.1.2
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
+
 # Overview
+
 In order to leverage your entire space in the most efficient way, you need to be aware of and use an efficient partitioning strategy.
 
 Partitioning refers to distribution across multiple nodes; if all of your data is held in one container, then your data isn't partitioned. It's far more efficient to spread a dataset across multiple nodes and multiple machines, if possible, which allows you to process a subset of data in parallel on each machine, collecting the results and collating them. (This is the "map/reduce" pattern in a nutshell.)

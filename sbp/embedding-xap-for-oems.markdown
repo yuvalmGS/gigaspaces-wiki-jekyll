@@ -18,9 +18,7 @@ The agent is responsible for bootstrapping the GigaSpaces cluster environment im
 Once the agent get started you can start using the [GigaSpaces Elastic middleware|XAP91:Elastic Processing Unit] directly from your application.
 The Elastic Middleware automatically provision itself on the GigaSpaces cluster based on the capacity and other SLA requirements.
 
-
 The following example shows how to embed GigaSpaces Data Grid using this model.
-
 
 # Example - Embedding GigaSpaces Data Grid
 

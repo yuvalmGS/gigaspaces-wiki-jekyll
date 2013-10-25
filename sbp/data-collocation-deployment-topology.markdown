@@ -52,7 +52,6 @@ The concept of the OpenSpaces Processing Unit was designed around scalability, a
 ## The Starvation Scenario
 Nevertheless, in some cases it is not possible to fully take advantage of the available horsepower across the network.
 
-
 ### Data-access Starvation
 Often this occurs because of the data access layer, which cannot feed data quickly enough to the business logic.
 

@@ -31,8 +31,6 @@ The demo is configured to start three space instances across three clusters. Whi
 
 
 
-
-
 The internal architecture of the setup includes a clustered space and a Gateway, where each Gateway includes a Delegator and a Sink (click the thumbnail to enlarge):
 !WAN_passthrough_arch.jpg|thumbnail!
 
@@ -119,7 +117,6 @@ The pass-through topology configuration is implemented through delegators across
 
 
 
-
 {code}
 {gcard}
 {gcard:London Space}
@@ -193,7 +190,6 @@ The pass-through topology configuration is implemented through delegators across
 </beans>
 
 
-
 {code}
 {gcard}
 {gcard:Hong Kong Space}
@@ -262,20 +258,16 @@ The pass-through topology configuration is implemented through delegators across
         <os-gateway:lookup gateway-name="HK" host="localhost" discovery-port="10770" communication-port="9000"/>
     </os-gateway:lookups>
 
-
 </beans>
-
 
 {code}
 {gcard}
 {gdeck}
 
-
 # Installing and Running the Example
 1. Download the [WAN_Replication_PassThrough.zip|^WAN_Replication_PassThrough.zip]. It includes two folders: *deploy* and *scripts*.
 2. Please extract the file and and copy the content of the *deploy* folder into `\<GIGASPACES_HOME>\deploy` folder.
 3. Extract the `scripts` folder to an arbitrary location and edit the `setExampleEnv.bat/sh` script to include correct values for `NIC_ADDR` as the machine IP and `JSHOMEDIR` as the GigaSpaces root folder location.
-
 
 The `scripts` folder contains the necessary scripts to start the [Grid Service Agent|XAP91:The Grid Service Agent] for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:
 1. Run `startAgent-GB.bat/sh` or to start GB site.
@@ -306,5 +298,4 @@ Click the Spaces icon on the Space Browser Tab to get a global view of all space
 
 You can also utilize the Take operation and click Start to remove objects from either the HK or US space. As a result, you will see the object count reaching zero across both HK and US as the pass through replication is taking place:
 !object_count_zero.jpg|thumbnail!
-
 

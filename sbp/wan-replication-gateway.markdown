@@ -81,7 +81,6 @@ You can remove objects from each space cluster by selecting the *Take operation*
 You will see the Object Count changing having zero object count for each space:
 !GRA:Images2^wan_example10.jpg|thumbnail!
 
-
 # Replication Throughput Capacity
 
 The total TP a gateway can push out into remote sites depends on:

@@ -314,16 +314,25 @@ public class Message  {
 - Extract the [example|JTA-XA Example^helloworld-jta.zip] archive into a folder (calling it <helloworld-jta>). Modify the setDevEnv.bat and build.properties files to have proper paths for GigaSpaces home, Java home, ActiveMQ home and Atomikos home. Also modify the NIC_ADDR and locators variable to have proper IP address.
 - Open a command shell and navigate to <helloworld-jta> folder.
 - Run `setDevEnv.bat` script in <helloworld-jta> folder, to set the environment variables.
-- Copy the required jars to the <helloworld-jta>\lib folder using the `copy-libs` ant task provided. \\ {code} build copy-libs {code} \\ {note} Example was tested using following product versions, \\ * GigaSpaces - *8.0.1* \\ * Apache ActiveMQ - *5.5* \\ * Atomikos TransactionEssentials - *3.7.0* \\ If you are using different versions please make sure all the equivalent jars are reflected in `copy-libs` ant task {note}
+- Copy the required jars to the <helloworld-jta>\lib folder using the `copy-libs` ant task provided.
+{code} build copy-libs {code}
+{note} Example was tested using following product versions,
+- GigaSpaces - *8.0.1*
+- Apache ActiveMQ - *5.5*
+- Atomikos TransactionEssentials - *3.7.0*
+If you are using different versions please make sure all the equivalent jars are reflected in `copy-libs` ant task {note}
 - Start a gs-ui instance using `gs-ui.bat` script in <helloworld-jta> folder.
 - Run `gs-agent.bat`  <helloworld-jta> folder, to start the GigaSpaces components (GSA,GSM, LUS, GSM).
 - Start the ActiveMQ process using <ActiveMQHome>`\bin\activemq.bat` script.
 {note} If ActiveMQ is running on another server, please remember to update the brokerURL in `pu.xml` {note}
-- Deploy the processorSpace cluster by running `deploy-processor` ant task. \\ {code} build deploy-processor {code}
-- Run the feeder process using `run-feeder` ant task. \\ {code} build run-feeder {code}
+- Deploy the processorSpace cluster by running `deploy-processor` ant task.
+{code} build deploy-processor {code}
+- Run the feeder process using `run-feeder` ant task.
+{code} build run-feeder {code}
 - If you check GigaSpaces logs, you will notice that the Message-0 (id=0) is Rolled back and all other messages are processed successfully and sent to JMS server.
 {note} Message-0 (id=0) will keep going back to Polling container logic because the space update and JMS message both are rolled back. This is intentionally done, to demonstrate XA. {note}
-- You can validate the JMS messages received by the Queue using a test JMS client included. You can run the client using `jms-client` ant task. \\ {code} build jms-client {code}
+- You can validate the JMS messages received by the Queue using a test JMS client included. You can run the client using `jms-client` ant task.
+{code} build jms-client {code}
 
 ## References
 

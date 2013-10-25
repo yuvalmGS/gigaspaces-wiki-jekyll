@@ -73,6 +73,7 @@ Deal matching uses a [polling container|http://www.gigaspaces.com/wiki/display/X
 !SA-PUs.png!
 
 # Key Features
+
 ## Event Processing for Trade Matching
 Trade matching for deals is based on the following fields: trading party, counter-party, instrument, matched flag, and buy/sell flag.  A polling container receives an event for each unprocessed trade in the space, and the matching process is done by transaction.
 

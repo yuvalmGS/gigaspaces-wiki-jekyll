@@ -74,33 +74,23 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 {column}
 {column}
 
-
 #### Quick Links
-
 
 ##### • [9.6.X Release Notes|RN:GigaSpaces XAP 9.6.X Release Notes]
 
-
 ##### • [What's new in XAP 9.6.X|RN:What's New in GigaSpaces 9.6.X]
-
 
 ##### • [API Documentation|API:API Documentation Portal]
 
-
 ##### • [Solutions and Best Practices|SBP:Solutions and Best Practices Home]
-
 
 ##### • [Forum|http://ask.gigaspaces.org/]
 
-
 ##### • [Downloads|http://www.gigaspaces.com/LatestProductVersion]
-
 
 ##### • [Blog|http://blog.gigaspaces.com/]
 
-
 ##### • [White Papers|http://www.gigaspaces.com/os_papers.html]
-
 
 ##### • Looking for *[*XAP.NET*|XAP96NET:XAP.NET 9.6 Documentation Home]* or *[*other versions*|ALL:Choose a GigaSpaces Version]*?
 

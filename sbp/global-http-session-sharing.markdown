@@ -160,7 +160,8 @@ securityManager.sessionManager.sessionValidationScheduler = $sessionValidationSc
 The web application should include the following libraries within its \WEB-INF\lib  file folder:
 aopalliance-1.0.jar, commons-beanutils-1.8.3.jar, commons-collections-2.1.1.jar, gs-runtime.jar, gs-session-manager-2.0-b103.jar, jcl-over-slf4j-1.6.4.jar, log4j-1.2.16.jar, shiro-all-1.3.0-317b.jar, slf4j-api-1.6.4.jar, slf4j-log4j12-1.6.4.jar, xmlbeans-2.2.0.jar, xmlpull-1.1.3.1.jar, xpp3_min-1.1.4c.jar and xstream-1.4.2.jar.
 
-{note}The gs-runtime.jar should be replaced with the relevant GigaSpaces gs-runtime.jar matching your environment. \\ Use appropriate version of gs-session-manager-<version>.jar (example uses version 2.0-b103 version)
+{note}The gs-runtime.jar should be replaced with the relevant GigaSpaces gs-runtime.jar matching your environment.
+Use appropriate version of gs-session-manager-<version>.jar (example uses version 2.0-b103 version)
 {note}
 
 ### GigaSpaces In Memory Data Grid (IMDG)
@@ -237,6 +238,7 @@ You may share the HTTP session between different web servers. To test this on yo
 {indent}!httpSessionSharing9.jpg|thumbnail!{indent}
 Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the space.
 {note}When deploying the web application WAR file please make sure the web app context will be identical.{note}
+
 ### Load-Balancer
 Another option would be to use a load-balancer such as the [apache httpd|http://httpd.apache.org] and configure it to load-balance the web requests between the different web servers. Here is a simple setup:
 - Install [apache httpd|http://httpd.apache.org].
@@ -276,7 +278,8 @@ Allow from 127.0.0.1
 </Location>
 
 {code}
-{note}The `/tools/Apache2.2` folder name should be replaced with your correct Apache httpd location. \\ The `127.0.0.1` IP should be replaced with appropriate IP addresses of the machine that is running apache.{note}
+{note}The `/tools/Apache2.2` folder name should be replaced with your correct Apache httpd location.
+The `127.0.0.1` IP should be replaced with appropriate IP addresses of the machine that is running apache.{note}
 - Once you have the space running, Websphere running, Tomcat running, and Apache httpd configured, restart the Apache http. On windows you can use its service.
 {indent}!httpSessionSharing7.jpg|thumbnail!{indent}
 - Once you performed the above steps, access the following URL:
@@ -297,7 +300,6 @@ To connect to the US space you should have the web application use a `shiro.ini`
 {code}
 sessionDAO.activeSessionsCacheName = jini://*/*/wanSpaceUS?useLocalCache&groups=US
 {code}
-
 
 # Other Considerations
 

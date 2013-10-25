@@ -332,7 +332,6 @@ namespace HelloCommon
 		private string _msg;
 		private string _status;
 
-
 		public HelloMsg()
 		{
 			_id = -1;

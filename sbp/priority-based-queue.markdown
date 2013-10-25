@@ -88,7 +88,6 @@ public class Order {
 
 {code}
 
-
 # Example
 
 This is a [Priority based queue example|^PriorityBasedQueue.zip] - It includes 2 parts:
