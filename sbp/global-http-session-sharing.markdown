@@ -63,7 +63,7 @@ The end-to-end path between the 2 data center nodes includes the servlet and Shi
 
 The GigaSpaces Global HTTP Session Sharing support two Load-Balancing scenarios:
 
-h5. Session Sharing Scenario
+##### Session Sharing Scenario
 {section}
 {column:width=40%}
 Have `cacheManager.cacheSessionLocally = true` when you would like multiple web application instances to share the same HTTP session. In this case your load balancer should be configured to support *non-sticky sessions* routing requests to a different web application based on some load-balancing algorithm. This will improve the performance of your application by avoiding reading the latest copy of the session from the remote space on each page load.
@@ -73,7 +73,7 @@ Have `cacheManager.cacheSessionLocally = true` when you would like multiple web 
 {column}
 {section}
 
-h5. Session Failover Scenario
+##### Session Failover Scenario
 {section}
 {column:width=40%}
 Have `cacheManager.cacheSessionLocally = false` when you would like the same web application instance to serve the same client and have the client to failover to another web application in case the original web application fails. In this case *sticky sessions* should be enabled at the HTTP load-balancer allowing the HTTP request associated with the same session to be routed always to the same Web container. When there is a web container failure, other Web container will take over and have the most up-to-date session retrieved from the In-Memory-Data-Grid.
@@ -183,7 +183,7 @@ The [WAN Gateway|XAP9:Multi-Site Replication over the WAN] should be deployed us
 
 ### Other configuration options
 
-h5. Non-Serializable Session Data
+##### Non-Serializable Session Data
 
 There are cases when applications store session data which is not defined as serializable. To support non-serializable session data you can configure the session manager to serializable session to XML by defining following parameter in `shiro.ini` file mentioned above,
 
@@ -205,7 +205,7 @@ Session manager uses XStream libraries for serializing session data to XML. XStr
 - cacheManager.converterNameList = org.openspaces.xtreme.converter.XmlCalendarConverter
 {code}
 
-h5. Secured GigaSpaces cluster
+##### Secured GigaSpaces cluster
 
 When using a [Secure GigaSpaces cluster|XAP9:Securing your Data] you can pass security credentials using following parameters in `shiro.ini` file,
 
@@ -231,7 +231,7 @@ The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblo
 
 ### Multi-Web Servers Deployment
 
-h5. Multiple Tabs
+##### Multiple Tabs
 You may share the HTTP session between different web servers. To test this on your local environment you can install multiple web servers, deploy the web application and have your browser access the same application via the same browser. See the below example:
 {indent}!httpSessionSharing8.jpg|thumbnail!{indent}
 {indent}!httpSessionSharing9.jpg|thumbnail!{indent}
@@ -301,11 +301,11 @@ sessionDAO.activeSessionsCacheName = jini://*/*/wanSpaceUS?useLocalCache&groups=
 
 # Other Considerations
 
-h5. Web Application Context
+##### Web Application Context
 Global HTTP session sharing works only when your application is deployed as a non-root context. It is relying on browser cookies for identifying user session, specifically JSESSIONID cookie. Cookies are generated at a context name per host level. This way all the links on the page are referring to the same cookie/user session.
 
-h5. WebSphere Application Server HttpSessionIdReuse Custom Property
+##### WebSphere Application Server HttpSessionIdReuse Custom Property
 When using the Global HTTP session sharing with WebSphere Application Server , please enable the [HttpSessionIdReuse|http://pic.dhe.ibm.com/infocenter/wasinfo/v7r0/index.jsp?topic=%2Fcom.ibm.websphere.express.doc%2Finfo%2Fexp%2Fae%2Frprs_custom_properties.html] custom property. In a multi-JVM environment that is not configured for session persistence setting this property to true enables the session manager to use the same session information for all of a user's requests even if the Web applications that are handling these requests are governed by different JVMs.
 
-h5. Transient Attribute
+##### Transient Attribute
 An attribute specified as *transient* would not be shared and its content will not be stored within the IMDG. Your code should be modified to have this as a regular attribute that can be serialized.

@@ -34,7 +34,7 @@ On the hyperic new platform page select
 - In Agent Connection select the agent that you prepared for GigaSpaces monitoring (Cf. Installation).
 - IP Address is not used by the plugin, Hyperic requires a valid one however so you can put any address (the one of the hyperic server if you like).
 
-h4. Configure the platform
+#### Configure the platform
 
 Once the platform is created you should be able to configure it:
 

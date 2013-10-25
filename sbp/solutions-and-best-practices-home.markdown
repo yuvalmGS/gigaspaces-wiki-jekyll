@@ -75,34 +75,34 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 {column}
 
 
-h4. Quick Links
+#### Quick Links
 
 
-h5. • [9.6.X Release Notes|RN:GigaSpaces XAP 9.6.X Release Notes]
+##### • [9.6.X Release Notes|RN:GigaSpaces XAP 9.6.X Release Notes]
 
 
-h5. • [What's new in XAP 9.6.X|RN:What's New in GigaSpaces 9.6.X]
+##### • [What's new in XAP 9.6.X|RN:What's New in GigaSpaces 9.6.X]
 
 
-h5. • [API Documentation|API:API Documentation Portal]
+##### • [API Documentation|API:API Documentation Portal]
 
 
-h5. • [Solutions and Best Practices|SBP:Solutions and Best Practices Home]
+##### • [Solutions and Best Practices|SBP:Solutions and Best Practices Home]
 
 
-h5. • [Forum|http://ask.gigaspaces.org/]
+##### • [Forum|http://ask.gigaspaces.org/]
 
 
-h5. • [Downloads|http://www.gigaspaces.com/LatestProductVersion]
+##### • [Downloads|http://www.gigaspaces.com/LatestProductVersion]
 
 
-h5. • [Blog|http://blog.gigaspaces.com/]
+##### • [Blog|http://blog.gigaspaces.com/]
 
 
-h5. • [White Papers|http://www.gigaspaces.com/os_papers.html]
+##### • [White Papers|http://www.gigaspaces.com/os_papers.html]
 
 
-h5. • Looking for *[*XAP.NET*|XAP96NET:XAP.NET 9.6 Documentation Home]* or *[*other versions*|ALL:Choose a GigaSpaces Version]*?
+##### • Looking for *[*XAP.NET*|XAP96NET:XAP.NET 9.6 Documentation Home]* or *[*other versions*|ALL:Choose a GigaSpaces Version]*?
 
 {column}
 {section}

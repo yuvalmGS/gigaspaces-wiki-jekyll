@@ -98,33 +98,33 @@ When designing your system deployment strategy, you should take a decision about
 
 To help you make the right decision when deploying your application, here are a few guidelines that correlate to the above considerations:
 
-h4. Is your business logic designed to process incoming data events without accessing data located in remote other space partitions?
+#### Is your business logic designed to process incoming data events without accessing data located in remote other space partitions?
 In other words: the business logic can access only its collocated space, or the entire cluster members.
 
 If the collocated space can store both the data required for the processing (cached data), and the consumed data (messages), there is a good chance you can use the collocated mode.
 
 If the business logic needs data stored within other partitions, you might have two space proxies used by the business logic - one that accesses only the collocated space and consumes the incoming "tasks" that need to be processed, and one that accesses all space cluster members and fetches data using space SQL queries needed for the processing. Advanced implementations would use the Map Reduce technique (a.k.a. executors). This popular technique invokes business logic at the relevant partitions that produce intermediate results. These results are then delivered back to the client that aggregates these and returns the final result to the original caller.
 
-h4. Is your data model designed to support stickiness?
+#### Is your data model designed to support stickiness?
 To allow the application data to be routed to the correct logical partition, associated different objects should have the same routing field value used. A client accessing a remote clustered space has, by default, a space proxy running a simple algorithm before each space operation that calculates the target partition for each space operation.
 
 By default, the calculation uses the hash code value of a field declared as the routing field.
 
 Each space class should have a single routing field declared where the actual field value can be assigned by getting data from possibly several other fields. The routing field value hash code is used to rout write/read operations to the correct partition. For fail-safe operations, a partition may have one or more dedicated backup spaces running in standby mode and holding identical data.
 
-h4. How big is the data used by a single business logic transaction?
+#### How big is the data used by a single business logic transaction?
 When a processing unit hosts your business logic, but accesses a remote space running as a separate processing unit within the same machine as the business logic, or in a different remote machine, there is some cost involved that varies depending on the topology. The remote call overhead depends on the network speed, network bandwidth, data complexity (serialization involved), and its size. The larger the size of the serialized and transported data, the longer it takes for the remote operation to be completed. This applies both to write and read operations.
 
 If the amount of data used for each business logic transaction involves a small amount of objects with a relatively small size, colocating the business logic with the data would not impact the performance significantly. This means you should consider running the business logic and the space as separate processing units.
 
 If the amount of data used for each business logic transaction involves a large amount of objects with a relatively large size, colocating the data and the business logic would boost the application performance dramatically.
 
-h4. 4. What is the time it takes to process the incoming events?
+#### 4. What is the time it takes to process the incoming events?
 When a processing unit hosting your business logic has the space colocated as well, no remote calls or serialization calls are involved when the business logic accesses its colocated data. If the time spent executing the business logic ("task" calculation time) is much longer than the time it takes for the business logic to: retrieve the task from the space, write back the result, or read the required data from the space, it might be logical to run the business logic as a standalone processing unit, separately from the space (i.e. use the [Master-Worker Pattern]).
 
 As a rule of thumb, a good ratio for running the business logic separately from the space would be 1:10 or more - i.e. if the average time for performing the three basic space remote calls required to retrieve the object from the space (take, read, write) is ~1 ms, and the time it takes to perform the relevant business logic (unrelated to the space) is ~10 ms, it would be wise to run the business logic as a standalone processing unit. If the ratio is less than 1:10, you should consider colocating the business logic with the data.
 
-h4. 5. What is the amount of data you would like to store within the space?
+#### 5. What is the amount of data you would like to store within the space?
 Another important consideration is the total amount of data that your application stores within the space. If you have a relatively small amount of data (that fits into one JVM process), there is no point in partitioning it across many partitions. This means that if you would like to distribute the business logic to many machines having a different scaling ratio than the space, you should not colocate the business logic and the data, but run it as an independent processing unit.
 
 If the amount of data you store within the space is relatively large (more than what can be stored within one JVM process or one machine), and is partitioned across multiple partitions, you should use one of the colocation techniques to allow the business logic and the data to be colocated. You might use only the executors or colocate the business logic service statically, or mix these two options.
