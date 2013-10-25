@@ -175,7 +175,7 @@ public class Worker {
 	<os-core:giga-space id="gigaSpace" space="space"/>
     <os-core:giga-space-context/>
     <os-remoting:annotation-support/>
-
+</beans>
 {% endhighlight %}
 
 {gcard}

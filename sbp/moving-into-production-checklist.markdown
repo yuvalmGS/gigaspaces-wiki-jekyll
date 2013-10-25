@@ -39,14 +39,14 @@ Examples:
 
 
 {% highlight java %}
- export NIC_ADDR=10.10.10.100
-
+export NIC_ADDR=10.10.10.100
+./gs-agent.sh & 
 {% endhighlight %}
 
 
 
 {% highlight java %}
-
+ java -Djava.rmi.server.hostname=10.10.10.100 MyApplication
 {% endhighlight %}
 
 
@@ -74,7 +74,6 @@ Here are examples of how to set different LRMI listening ports for the GS-UI, an
 
 {% highlight java %}
  export EXT_JAVA_OPTIONS=-Dcom.gs.transport_protocol.lrmi.bind-port=7000-7500
-
 {% endhighlight %}
 
 
@@ -82,7 +81,6 @@ Here are examples of how to set different LRMI listening ports for the GS-UI, an
 
 {% highlight java %}
  export EXT_JAVA_OPTIONS=-Dcom.gs.transport_protocol.lrmi.bind-port=8000-8100
-
 {% endhighlight %}
 
 
@@ -109,14 +107,14 @@ You may need to change the `com.gs.transport_protocol.lrmi.max-conn-pool` value 
 
 
 {% highlight java %}
-
+Client total # of open connections = com.gs.transport_protocol.lrmi.max-conn-pool * # of partitions
 {% endhighlight %}
 
 This may result very large amount of connections started at the client side resulting "Too many open files" error. You should increase the OS' max file descriptors amount by calling the following before running the client application (on UNIX):
 
 
 {% highlight java %}
-
+ulimit -n 65536
 {% endhighlight %}
 
 or by lowering the `com.gs.transport_protocol.lrmi.max-conn-pool` value.
@@ -144,7 +142,7 @@ To configure the GigaSpaces runtime components (GSA,GSC,GSM,LUS) to use unicast 
 
 {% highlight java %}
 export LOOKUPLOCATORS=MachineA,MachineB
-
+./gs-agent.sh & 
 {% endhighlight %}
 
 
@@ -153,7 +151,7 @@ To configure the GigaSpaces runtime components (GSA,GSC,GSM,LUS) to use multicas
 
 {% highlight java %}
 export LOOKUPGROUPS=Group1,Group2
-
+./gs-agent.sh & 
 {% endhighlight %}
 
 
@@ -186,7 +184,7 @@ See below for examples of [Space URL|XAP91:Space URL]s you should be familiar wi
 {% highlight java %}
 "jini://*/*/space?groups=A"
 or
-
+"jini://*/*/space?groups=B"
 {% endhighlight %}
 
 
@@ -415,7 +413,7 @@ gs-agent gsa.gsc 2
 
 
 {% highlight java %}
-
+gs deploy -zones webZone myWar.war
 {% endhighlight %}
 
 
@@ -425,7 +423,7 @@ You may have a set of LUS/GSM managing multiple zones (recommended) or have a se
 
 
 {% highlight java %}
-
+gs-agent.sh gsa.global.lus 0 gsa.lus 1 gsa.global.gsm 0 gsa.gsm 1 gsa.gsc 0
 {% endhighlight %}
 
 2. Run gs-agent that will start GSCs with zoneX (4 GGCs with this example):
@@ -511,7 +509,7 @@ To capture the detailed information about garbage collection and how it is perfo
 
 
 {% highlight java %}
-
+-verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/path/to/log/directory/gc-log-file.log 
 {% endhighlight %}
 
 Modify the path and file names appropriately. You will need to use a different file name for each invocation in order to not overwrite the files from multiple processes.
@@ -536,7 +534,7 @@ For applications that are using relatively large amount of third party libraries
 
 
 {% highlight java %}
-
+-XX:PermSize=512m -XX:MaxPermSize=512m
 {% endhighlight %}
 
 

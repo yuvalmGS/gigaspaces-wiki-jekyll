@@ -64,7 +64,7 @@ To use a custom EDS with the mirror space, all you have to do is declare the EDS
                 <prop key="space-config.external-data-source.data-class">com.j_spaces.core.IGSEntry</prop>
             </props>
         </os-core:properties>
-
+    </os-core:mirror>
 {% endhighlight %}
 
 
@@ -106,7 +106,7 @@ The data grid uses the EDS for reads. If no initial load is desired, configuring
             <os-core:basic-index path="Name"/>
             <os-core:extended-index path="Price"/>
         </os-core:space-type>
-
+    </os-core:space>
 {% endhighlight %}
 
 This configuration is almost an exact analog to the mirror declaration. However, this will read the data from the EDS on startup, such that any data held in the right format and collection in the MongoDB datastore will be loaded into the data grid, ready for read and update. Any writes will naturally be persisted through the mirror back to Mongo.

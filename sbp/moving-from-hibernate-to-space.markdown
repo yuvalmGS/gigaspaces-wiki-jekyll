@@ -520,14 +520,14 @@ On windows run the following command:
 
 
 {% highlight java %}
-
+\gigaspaces-xap\bin\gs-agent.bat
 {% endhighlight %}
 
 On linux run the following command:
 
 
 {% highlight java %}
-
+\gigaspaces-xap\bin\gs-agent.sh
 {% endhighlight %}
 
 
@@ -535,7 +535,7 @@ On linux run the following command:
 
 
 {% highlight java %}
-
+java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb
 {% endhighlight %}
 
 
@@ -544,7 +544,7 @@ Once the agent is up and running call the deploy commands.
 
 
 {% highlight java %}
-
+gs.sh deploy myDataGrid.jar
 {% endhighlight %}
 
 You should see the following:
@@ -564,7 +564,7 @@ Finished deploying [2] processing unit instances
 
 
 {% highlight java %}
-
+gs.sh deploy myMirror.jar
 {% endhighlight %}
 
 You should see the following:
@@ -585,7 +585,7 @@ Finished deploying [1] processing unit instances
 
 
 {% highlight java %}
-
+gs.sh deploy application.war
 {% endhighlight %}
 
 You should see the following:
@@ -606,14 +606,14 @@ On windows run the following command:
 
 
 {% highlight java %}
-
+\gigaspaces-xap\bin\gs-ui.bat
 {% endhighlight %}
 
 On linux run the following command:
 
 
 {% highlight java %}
-
+\gigaspaces-xap\bin\gs-ui.sh
 {% endhighlight %}
 
 
@@ -634,7 +634,7 @@ This will display the Query view with the User objects data stored within the sp
 
 
 {% highlight java %}
-
+java -cp  ../lib/platform/jdbc/hsqldb.jar  org.hsqldb.util.DatabaseManager
 {% endhighlight %}
 
 And query the database:

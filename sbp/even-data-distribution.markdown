@@ -41,7 +41,7 @@ public class MyData {
     @SpaceRouting
     public String getGroupId() { return groupId; }
     public void setGroupId(String s) { groupId=s; }
-
+}
 {% endhighlight %}
 
 

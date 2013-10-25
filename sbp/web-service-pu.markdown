@@ -41,21 +41,21 @@ The web service performs the following space operations:
 
 
 {% highlight java %}
-
+gs-agent
 {% endhighlight %}
 
 5. Deploy the WAR file. You may use the GS-UI or the CLI.
 
 
 {% highlight java %}
-
+gs deploy CustomerServicePort.war
 {% endhighlight %}
 
 6. Run the Client application.
 
 
 {% highlight java %}
-
+java com.example.customerservice.client.CustomerServiceClient
 {% endhighlight %}
 
 See the [The Client Application|#The Client Application] for details.
@@ -151,7 +151,7 @@ The `com.example.customerservice.client.CustomerServiceClient` can be used as a 
 
 
 {% highlight java %}
-
+java com.example.customerservice.client.CustomerServiceClient
 {% endhighlight %}
 
 
@@ -161,7 +161,7 @@ Run the `main` to run the client:
 
 
 {% highlight java %}
-
+com.example.customerservice.client.CustomerServiceSpringClient
 {% endhighlight %}
 
 

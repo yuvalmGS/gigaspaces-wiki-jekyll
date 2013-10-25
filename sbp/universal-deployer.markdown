@@ -69,7 +69,7 @@ Here an exmaple how you should run the GUD:
 
 
 {% highlight java %}
-
+java com.gigaspaces.admin.GSUniversalDeployer -config c:\\puList.txt -locators 127.0.0.1 -abortDeployOnFailure true
 {% endhighlight %}
 
 
@@ -78,7 +78,7 @@ The universal Deployer configuration file may include multiple lines with the fo
 
 
 {% highlight java %}
-
+PU Name [Dependent PU List] deploy options
 {% endhighlight %}
 
 Example:

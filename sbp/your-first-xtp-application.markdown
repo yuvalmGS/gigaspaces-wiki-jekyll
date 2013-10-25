@@ -322,7 +322,7 @@ From the `<Example Root>` directory (`<GigaSpaces Root>\Examples\ProcessingUnit`
 
 
 {% highlight java %}
-
+compile
 {% endhighlight %}
 
 

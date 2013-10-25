@@ -337,7 +337,7 @@ public class Message  {
 
 
 {% highlight java %}
-
+ build copy-libs 
 {% endhighlight %}
 
 
@@ -370,7 +370,7 @@ build deploy-processor
 
 
 {% highlight java %}
-
+ build run-feeder 
 {% endhighlight %}
 
 14. If you check GigaSpaces logs, you will notice that the Message-0 (id=0) is Rolled back and all other messages are processed successfully and sent to JMS server.
@@ -383,7 +383,7 @@ build deploy-processor
 
 
 {% highlight java %}
-
+ build jms-client 
 {% endhighlight %}
 
 

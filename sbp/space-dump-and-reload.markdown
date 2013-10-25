@@ -39,7 +39,7 @@ To run the Space Dump Utility:
 
 
 {% highlight java %}
-
+java com.gigaspaces.util.spacedump.SpaceDumpMain <lookup locator> <Operation [dump | reload] <spaceName>
 {% endhighlight %}
 
 
@@ -47,14 +47,14 @@ Example - Dump space data into a file:
 
 
 {% highlight java %}
-
+java com.gigaspaces.util.spacedump.SpaceDumpMain myhostName dump mySpace
 {% endhighlight %}
 
 Example - Reload space data from a file:
 
 
 {% highlight java %}
-
+java com.gigaspaces.util.spacedump.SpaceDumpMain myhostName reload mySpace
 {% endhighlight %}
 
 
