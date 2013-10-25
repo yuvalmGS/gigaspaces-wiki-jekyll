@@ -5,11 +5,11 @@ categories: SBP
 page_id: 48760404
 ---
 
-{tip}*Summary:* {excerpt}Implementing Priority based Queue{excerpt}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 8.0
-*Last Update*: Feb 2011
-*Contents:*
+{tip}**Summary:** {excerpt}Implementing Priority based Queue{excerpt}
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 8.0
+**Last Update**: Feb 2011
+**Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
@@ -36,7 +36,7 @@ while (true) {
 }
 {code}
 
-The Order Class will have the *Priority* indexed:
+The Order Class will have the **Priority** indexed:
 
 {code}
 import com.gigaspaces.annotation.pojo.SpaceClass;

@@ -6,11 +6,11 @@ page_id: 55938209
 ---
 
 {composition-setup}
-{tip}*Summary:* {excerpt}Integrating GigaSpaces with External JMS Server using JTA/XA{excerpt}
-*Author*: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 8.0.1
-*Last Update*: April 2011
-*Contents:*
+{tip}**Summary:** {excerpt}Integrating GigaSpaces with External JMS Server using JTA/XA{excerpt}
+**Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 8.0.1
+**Last Update**: April 2011
+**Contents:**
 {toc:minLevel=1|maxLevel=2|type=flat|separator=pipe}
 {tip}
 {rate}
@@ -130,7 +130,7 @@ This example includes:
 {gcard}
 {gdeck}
 
-*Processor Bean and Message Bean definitions*
+**Processor Bean and Message Bean definitions**
 
 {gdeck:Java Code}
 {gcard:Processor bean definition}
@@ -317,9 +317,9 @@ public class Message  {
 6. Copy the required jars to the <helloworld-jta>\lib folder using the `copy-libs` ant task provided.
 {code} build copy-libs {code}
 {note} Example was tested using following product versions,
-7. GigaSpaces - *8.0.1*
-8. Apache ActiveMQ - *5.5*
-9. Atomikos TransactionEssentials - *3.7.0*
+7. GigaSpaces - **8.0.1**
+8. Apache ActiveMQ - **5.5**
+9. Atomikos TransactionEssentials - **3.7.0**
 If you are using different versions please make sure all the equivalent jars are reflected in `copy-libs` ant task {note}
 . Start a gs-ui instance using `gs-ui.bat` script in <helloworld-jta> folder.
 10. Run `gs-agent.bat`  <helloworld-jta> folder, to start the GigaSpaces components (GSA,GSM, LUS, GSM).

@@ -6,10 +6,10 @@ page_id: 56429380
 ---
 
 {composition-setup}
-{tip}*Summary:* {excerpt}Trading Settlement Demo.{excerpt}
-*Authors*: Shay Hassidim, Deputy CTO, GigaSpaces; Norm Leitman, Sales Engineer, GigaSpaces; Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 8.0.4
-*Last Update:* Nov 2011
+{tip}**Summary:** {excerpt}Trading Settlement Demo.{excerpt}
+**Authors**: Shay Hassidim, Deputy CTO, GigaSpaces; Norm Leitman, Sales Engineer, GigaSpaces; Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 8.0.4
+**Last Update:** Nov 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
@@ -208,31 +208,31 @@ The trade and matched deal objects are persisted to the HSQL database through Hi
 ## Web Session Management
 HTTP Sessions are maintained in the space and a copy is also kept in a [local cache|http://www.gigaspaces.com/wiki/display/XAP8/Client+Side+Caching], with 1 object per client.  Sessions are accessed using the following:
 {code}
-jetty.sessions.spaceUrl=jini://*/*/settlementSpace?useLocalCache
+jetty.sessions.spaceUrl=jini://**/**/settlementSpace?useLocalCache
 {code}
 
 # Running the Demo
-1. *Download* the [TradingSettlement.zip|Trading Settlement^TradingSettlement.zip] file and *extract* it into an empty folder.
-2. *Move* into the settlement-app folder.
-3. *Rename* the files ending in *.at* to *.bat*.
-4. *Edit* setExampleEnv.bat and change JAVA_HOME and JSHOMEDIR.
-5. *Add* \gigaspaces-xap-premium-8.0.4-ga\tools\maven\apache-maven-3.0.2\bin to you *path*.
-6. *Run* \gigaspaces-xap-premium-8.0.4-ga\tools\maven\installmavenrep.bat.
-7. *Build* the demo by *running* the following command:  mvn package
-8. *Execute* the demo by running the start and deploy scripts in the following order:
-    - *gs-agent-esm.bat*: starts the GigaSpaces agent in elastic deployment mode
-    - *gs-ui.bat*: starts the GigaSpaces user interface
-    - *start-hsqldb.bat*: starts the HSQL database
-    - *start-DatabaseManager.bat*: starts the HSQL database manager
-    - *deploy-app.bat*
-    - *deploy-messaging.bat*
-    - *deploy-feeder.bat*
-    - *deploy-monitor.bat*
-    - *deploy-mirror.bat*
-    - *deploy-blotter.bat* (could take up to 10 minutes to deploy)
-9. *Connect* to the blotter (gwt-dealsBlotter processing unit) using your browser (http://127.0.0.1:8080/gwt-dealsBlotter/).
-10. *Log in* with username that matches this format:  <any characters>@<trading entity> where <trading entity> = bank1 or cust1 or bank2 or cust2, etc.  For example, username = 123@bank1.  Password can be any characters.
-11. *Start* the application by clicking on the Administration tab and then clicking Start Feeder. You can Speed up the feeder rate by decreasing the refresh Interval to 1000 and clicking the Start Feeder.
+1. **Download** the [TradingSettlement.zip|Trading Settlement^TradingSettlement.zip] file and **extract** it into an empty folder.
+2. **Move** into the settlement-app folder.
+3. **Rename** the files ending in **.at** to **.bat**.
+4. **Edit** setExampleEnv.bat and change JAVA_HOME and JSHOMEDIR.
+5. **Add** \gigaspaces-xap-premium-8.0.4-ga\tools\maven\apache-maven-3.0.2\bin to you **path**.
+6. **Run** \gigaspaces-xap-premium-8.0.4-ga\tools\maven\installmavenrep.bat.
+7. **Build** the demo by **running** the following command:  mvn package
+8. **Execute** the demo by running the start and deploy scripts in the following order:
+    - **gs-agent-esm.bat**: starts the GigaSpaces agent in elastic deployment mode
+    - **gs-ui.bat**: starts the GigaSpaces user interface
+    - **start-hsqldb.bat**: starts the HSQL database
+    - **start-DatabaseManager.bat**: starts the HSQL database manager
+    - **deploy-app.bat**
+    - **deploy-messaging.bat**
+    - **deploy-feeder.bat**
+    - **deploy-monitor.bat**
+    - **deploy-mirror.bat**
+    - **deploy-blotter.bat** (could take up to 10 minutes to deploy)
+9. **Connect** to the blotter (gwt-dealsBlotter processing unit) using your browser (http://127.0.0.1:8080/gwt-dealsBlotter/).
+10. **Log in** with username that matches this format:  <any characters>@<trading entity> where <trading entity> = bank1 or cust1 or bank2 or cust2, etc.  For example, username = 123@bank1.  Password can be any characters.
+11. **Start** the application by clicking on the Administration tab and then clicking Start Feeder. You can Speed up the feeder rate by decreasing the refresh Interval to 1000 and clicking the Start Feeder.
 12. When the number of com.gigaspaces.settlement.model.Trade object > 50 (use the GS-UI - Data Type List for the settlementSpace to see the amount of objects), the settlementSpace will scale up by creating 2 additional GSCs. See the Hosts view.
 13. You can scale the application down by clicking on the Administration tab and then clicking on Clear Trades.
 

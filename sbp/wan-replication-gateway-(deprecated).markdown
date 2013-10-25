@@ -7,9 +7,9 @@ page_id: 54820903
 
 {composition-setup}
 
-{tip}*Summary:* {excerpt}WAN Replication Gateway example.{excerpt}
-*Author*: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 7.1.2
+{tip}**Summary:** {excerpt}WAN Replication Gateway example.{excerpt}
+**Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 7.1.2
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 
@@ -249,7 +249,7 @@ public class MyExternalDataSource implements BulkDataPersister, ManagedDataSourc
 # Running the example
 
 {note} This example is using Maven for packaging and build. Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
-Some instructions below might use windows syntax please use appropriate *nix syntax if you are running the example in a *nix machine.
+Some instructions below might use windows syntax please use appropriate **nix syntax if you are running the example in a **nix machine.
 Example was tested using a single machine with ip address, 192.168.2.100 and Lookup Server ports for SiteA and SiteB as 14164 and 14165 respectively. Please modify these corresponding to your environment.
 {note}
 

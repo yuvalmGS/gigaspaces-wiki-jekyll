@@ -7,9 +7,9 @@ page_id: 56428286
 
 {composition-setup}
 
-{tip}*Summary:* {excerpt}WAN Replication Gateway example.{excerpt}
-*Author*: Shay Hassidim, Deputy CTO GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 8.0.3
+{tip}**Summary:** {excerpt}WAN Replication Gateway example.{excerpt}
+**Author**: Shay Hassidim, Deputy CTO GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 8.0.3
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 
@@ -19,19 +19,19 @@ This [WAN Gateway|XAP91:Multi-Site Replication over the WAN] example includes PU
 !GRA:Images2^wan_example1.jpg!
 
 You will find folders for the following PUs:
-- wan-gateway-DE - Deployed into *DE* zone, using the *DE* lookup group and a lookup service listening on port 4366.
-- wan-gateway-RU - Deployed into *RU* zone, using the *RU* lookup group and a lookup service listening on port 4166.
-- wan-gateway-US - Deployed into *US* zone, using the *US* lookup group and a lookup service listening on port 4266.
-- wan-space-DE - Deployed into *DE* zone, using the *DE* lookup group and a lookup service listening on port 4366.
-- wan-space-RU - Deployed into *RU* zone, using the *RU* lookup group and a lookup service listening on port 4166.
-- wan-space-US - Deployed into *US* zone, using the *US* lookup group and a lookup service listening on port 4266.
+- wan-gateway-DE - Deployed into **DE** zone, using the **DE** lookup group and a lookup service listening on port 4366.
+- wan-gateway-RU - Deployed into **RU** zone, using the **RU** lookup group and a lookup service listening on port 4166.
+- wan-gateway-US - Deployed into **US** zone, using the **US** lookup group and a lookup service listening on port 4266.
+- wan-space-DE - Deployed into **DE** zone, using the **DE** lookup group and a lookup service listening on port 4366.
+- wan-space-RU - Deployed into **RU** zone, using the **RU** lookup group and a lookup service listening on port 4166.
+- wan-space-US - Deployed into **US** zone, using the **US** lookup group and a lookup service listening on port 4266.
 
 The internal architecture of the setup includes a clustered space and a Gateway, where each Gateway includes a Delegator and a Sink:
 !GRA:Images2^wan_example2.jpg|thumbnail!
 
 # Installing the Example
-1. Download the [WAN_Gateway_example.zip|WAN Replication Gateway^WAN_Gateway_example.zip]. It includes two folders: *deploy* and *scripts*.
-2. Please extract the file and and copy the content of the *deploy folder* into `\gigaspaces-xap-premium-8.0.X-ga\deploy` folder. It should looks like this:
+1. Download the [WAN_Gateway_example.zip|WAN Replication Gateway^WAN_Gateway_example.zip]. It includes two folders: **deploy** and **scripts**.
+2. Please extract the file and and copy the content of the **deploy folder** into `\gigaspaces-xap-premium-8.0.X-ga\deploy` folder. It should looks like this:
 {code}
 Directory of D:\gigaspaces-xap-premium-8.0.3-ga\deploy
 
@@ -72,10 +72,10 @@ Once deployed successfully you should see this:
 You can test the setup by using the [benchmark utility|XAP91:Benchmark View - GigaSpaces Browser] comes with the GS-UI. Move the one of the Clusters Benchmark icon and click the Start Button:
 !GRA:Images2^wan_example7.jpg|thumbnail!
 
-You will see all spaces *Object Count* across all clusters by clicking the *Spaces icon* on the Space Browser Tab. You should see identical number of objects (5000) for all members:
+You will see all spaces **Object Count** across all clusters by clicking the **Spaces icon** on the Space Browser Tab. You should see identical number of objects (5000) for all members:
 !GRA:Images2^wan_example8.jpg|thumbnail!
 
-You can remove objects from each space cluster by selecting the *Take operation* and click Start:
+You can remove objects from each space cluster by selecting the **Take operation** and click Start:
 !GRA:Images2^wan_example9.jpg|thumbnail!
 
 You will see the Object Count changing having zero object count for each space:

@@ -12,7 +12,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 # Data Access Patterns
 || Best Practice || Level || Description||
-|[Moving from Hibernate to Space] | Beginner | Moving from Database Centric into In-Memory Model. Can be used when moving from *J2EE Session Bean* into XAP.|
+|[Moving from Hibernate to Space] | Beginner | Moving from Database Centric into In-Memory Model. Can be used when moving from **J2EE Session Bean** into XAP.|
 |[Finding Partition Load]| Beginner | Monitoring Data Grid partitions in real time.|
 |[Even Data Distribution]| Beginner | Technique to ensure even data load-balancing with partitioned IMDG.|
 |[Space Object Modeling]| Beginner | Migrating Relational Model into Object model.|
@@ -32,13 +32,13 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 # Parallel Processing & Messaging Patterns
 || Best Practice || Level || Description||
-|[Map-Reduce Pattern - Executors Example]| Beginner | Implementing Task Executors and Service Executors to perform parallel queries or parallel processing across multiple IMDG partitions. Can be used when moving from *J2EE EJB*/RMI/IIOP into XAP.|
+|[Map-Reduce Pattern - Executors Example]| Beginner | Implementing Task Executors and Service Executors to perform parallel queries or parallel processing across multiple IMDG partitions. Can be used when moving from **J2EE EJB**/RMI/IIOP into XAP.|
 |[Master-Worker Pattern]| Beginner | Grid computing pattern. Implementing distributed processing across multiple workers deployed into the Grid. |
-|[Event Driven Remoting Example]| Beginner | Request-Response pattern. Implementing asynchronous remove service invocation. Can be used when moving from *J2EE MDB* into XAP.|
+|[Event Driven Remoting Example]| Beginner | Request-Response pattern. Implementing asynchronous remove service invocation. Can be used when moving from **J2EE MDB** into XAP.|
 |[Mule ESB Example]| Advanced | Scaling ESB based application. Using the IMDG as the ESB state repository. Deploying the ESB into the GigaSpaces grid allowing it to scale in an elastic manner.|
-|[Priority Based Queue]| Advanced | Messaging based pattern. Can be used when moving from *J2EE JMS* Quality of Service into XAP.|
-|[Parallel Queue Pattern]| Advanced |Messaging based pattern. Can be used when moving from *J2EE JMS Service Activator Aggregator Strategy/MDB* into XAP.|
-|[Unit Of Work]| Advanced |Messaging based pattern. Can be used when moving from *J2EE JMS* Unit of Order into XAP.|
+|[Priority Based Queue]| Advanced | Messaging based pattern. Can be used when moving from **J2EE JMS** Quality of Service into XAP.|
+|[Parallel Queue Pattern]| Advanced |Messaging based pattern. Can be used when moving from **J2EE JMS Service Activator Aggregator Strategy/MDB** into XAP.|
+|[Unit Of Work]| Advanced |Messaging based pattern. Can be used when moving from **J2EE JMS** Unit of Order into XAP.|
 |[Drools Rule Engine Integration]| Advanced | Scaling business rule management system based application.|
 |[Spring Batch PU]| Advanced | Complex Batch Processing using [Spring Batch|http://static.springsource.org/spring-batch].|
 |[JTA-XA Example] | Advanced | Integrating GigaSpaces with an external JMS Server using XA. Atomikos is used as the JTA Transaction provider. Apache ActiveMQ is used as a the JMS provider.|
@@ -58,8 +58,8 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |[RESTful Admin API|http://www.openspaces.org/display/RES/Project+Documentation]| Beginner | Using web services to monitor and administrate GigaSpaces.|
 |[JMX Space Statistics]| Beginner | Using JMX to expose space statistics.|
 |[Space Dump and Reload]| Beginner | Using the administration API to dump the space data into a file and reload it back.|
-|[Scaling Agent]| Beginner | Using the administration API to scale web applications. Can be used when moving *J2EE Web applications* into XAP elastic Web Container.|
-|[Web Load Balancer Agent PU]| Advanced | Using the administration API to build customized HTTP load-balancer agent. Can be used when moving *J2EE Web applications* into XAP elastic Web Container.|
+|[Scaling Agent]| Beginner | Using the administration API to scale web applications. Can be used when moving **J2EE Web applications** into XAP elastic Web Container.|
+|[Web Load Balancer Agent PU]| Advanced | Using the administration API to build customized HTTP load-balancer agent. Can be used when moving **J2EE Web applications** into XAP elastic Web Container.|
 |[Moving into Production Checklist]| Advanced | All what you need to review before moving your system into production.|
 |[Capacity Planning]| Advanced | Considerations for sizing your system before moving into production.|
 |[Refreshable Business Logic Example]| Advanced | Using the administration API to reload new application code (hot deploy) while the application is running.|
@@ -92,7 +92,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 ##### • [White Papers|http://www.gigaspaces.com/os_papers.html]
 
-##### • Looking for *[*XAP.NET*|XAP96NET:XAP.NET 9.6 Documentation Home]* or *[*other versions*|ALL:Choose a GigaSpaces Version]*?
+##### • Looking for **[XAP.NET|XAP96NET:XAP.NET 9.6 Documentation Home]** or **[other versions|ALL:Choose a GigaSpaces Version]**?
 
 {column}
 {section}

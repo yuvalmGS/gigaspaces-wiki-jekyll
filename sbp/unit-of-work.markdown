@@ -6,28 +6,28 @@ page_id: 54296773
 ---
 
 {composition-setup}
-{tip}*Summary:* {excerpt}The Unit of work Pattern - Parallel atomic ordered data processing for associated data objects{excerpt}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 8.0.0
-*Last Update:* Feb 2011
+{tip}**Summary:** {excerpt}The Unit of work Pattern - Parallel atomic ordered data processing for associated data objects{excerpt}
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 8.0.0
+**Last Update:** Feb 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
 
 # GigaSpaces Unit of Work
-GigaSpaces Unit of Work (UOW) enables a stand-alone message producer to group messages into a single unit such that those messages can be handled in order - similar to a FIFO queue localized within a transaction. This single unit is called a Unit-of-work and requires that all messages from that unit be processed *sequentially in the order* they were created (within the unit of work). Other units can be processes in parallel. This approach maximize the system performance and its scalability and allows it to processes vast amount of data consuming memory and CPU resources in a very optimal manner.
+GigaSpaces Unit of Work (UOW) enables a stand-alone message producer to group messages into a single unit such that those messages can be handled in order - similar to a FIFO queue localized within a transaction. This single unit is called a Unit-of-work and requires that all messages from that unit be processed **sequentially in the order** they were created (within the unit of work). Other units can be processes in parallel. This approach maximize the system performance and its scalability and allows it to processes vast amount of data consuming memory and CPU resources in a very optimal manner.
 
-The UOW can be used with financial systems to process *trade orders* , in healthcare systems to processes *patient medical data* , with transportation systems to process *reservations* , with airlines systems to process *flight schedule* , with billing system to processes *payments*, etc.
+The UOW can be used with financial systems to process **trade orders** , in healthcare systems to processes **patient medical data** , with transportation systems to process **reservations** , with airlines systems to process **flight schedule** , with billing system to processes **payments**, etc.
 
-{tip}Starting with XAP 9 you may use the *FIFO Grouping* to implement the Unit of Work model. See the [FIFO Grouping|XAP9:FIFO Grouping] for details.{tip}
+{tip}Starting with XAP 9 you may use the **FIFO Grouping** to implement the Unit of Work model. See the [FIFO Grouping|XAP9:FIFO Grouping] for details.{tip}
 
 # GigaSpaces FIFO and UOW
 While the [FIFO|XAP8:FIFO Support] mode provides ordered object consumption, it does so in a very strict sense. It defines an order between space objects based on the time they were written into the space. FIFO does not take into account consuming associated objects as one atomic operation. UOW allows a polling container to process a group of associated objects in the order they have been written in parallel to other processing groups. Multiple polling containers handle different groups concurrently, each group items processed in a FIFO fashion.
 
 # When can the GigaSpaces Unit of Work be used?
 GigaSpaces UOW can be used in the following cases:
-- When having *many consumers*, each should handle a different group (number of groups may be unlimited) where the processing of the items within the group should be done in an ordered fashion as *one atomic operation*.
-- When having *multiple producers*, where data from each producer may be associated with different groups (number of groups may be unlimited) where the processing of the items within the group should be done in an ordered fashion as *one atomic operation*.
+- When having **many consumers**, each should handle a different group (number of groups may be unlimited) where the processing of the items within the group should be done in an ordered fashion as **one atomic operation**.
+- When having **multiple producers**, where data from each producer may be associated with different groups (number of groups may be unlimited) where the processing of the items within the group should be done in an ordered fashion as **one atomic operation**.
 
 # Example use case
 Here is a simple scenario illustrates the Unit of Work usage:
@@ -44,7 +44,7 @@ With the above scenario requests 1, 3 and 4 should be processed as one atomic op
 -- Using `SingleTakeReceiveOperationHandler`.
 -- Using one concurrent consumer thread.
 -- Consumed objects in a FIFO mode.
--- Template set with a different `bucketId` for each polling container - This ensures *no contention* or *race conditions* will be generated.
+-- Template set with a different `bucketId` for each polling container - This ensures **no contention** or **race conditions** will be generated.
 -- Using Local Transaction Manager.
 - The polling container `SpaceDataEvent` implementation flow:
 1. Transaction started and an object at the top of the FIFO chain is taken.

@@ -7,10 +7,10 @@ page_id: 51118632
 
 {composition-setup}
 
-{tip}*Summary:* {excerpt}This article illustrates the usage of Task Executors to rapidly load data into the In-Memory-Data-Grid{excerpt}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 7.0
-*Last Update:* July 2009
+{tip}**Summary:** {excerpt}This article illustrates the usage of Task Executors to rapidly load data into the In-Memory-Data-Grid{excerpt}
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 7.0
+**Last Update:** July 2009
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}

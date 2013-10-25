@@ -7,15 +7,15 @@ page_id: 51120319
 
 {composition-setup}
 {summary}Space object modelling basic rules.{summary}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-Using XAP:*7.0GA*
-JDK:*Sun JDK 1.6*
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+Using XAP:**7.0GA**
+JDK:**Sun JDK 1.6**
 Date: October  2009
 {rate}
 
 When constructing the space classes and their relationship, and having persistency turned on, you should design the space classes to follow a few basic rules. The rules are mostly relevant when having associations between different objects, and when the database tables include foreign and primary key relations that need to be mapped to objects in memory.
 
-There are two options you may use: a *Hibernate-based model* and a *Space-based model*. The latter is the recommended one, since it provides better performance, scalability and consumes less memory when an object is stored in memory.
+There are two options you may use: a **Hibernate-based model** and a **Space-based model**. The latter is the recommended one, since it provides better performance, scalability and consumes less memory when an object is stored in memory.
 
 # The Hibernate-Based Object Model
 When you have an object graph object model with collections or references association (using Hibernate OneToMany, ManyToOne), you can use the Hibernate model to load these objects into the space. There are some important considerations when using this approach:
@@ -24,7 +24,7 @@ When you have an object graph object model with collections or references associ
 1. When the loaded objects are regular space objects (in case you wrote these also as space objects) and also an embedded object within another space object.
 2. When you have the same object referenced from more than one space object.
 - The initial-load phase is relatively slow (mostly due to the duplicated objects).
-- Data should be fully loaded from the database - only *Eager mode* is supported. Lazy fetching is not supported.
+- Data should be fully loaded from the database - only **Eager mode** is supported. Lazy fetching is not supported.
 - You might end up having data inconsistency problems due to the duplicated objects in memory.
 
 # The Space Object Model

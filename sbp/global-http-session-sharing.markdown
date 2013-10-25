@@ -11,10 +11,10 @@ page_id: 56430569
 # Global HTTP Session Sharing - Massive Web Application Scaling
 
 It's becoming increasingly important for organizations to share HTTP session data across multiple data centers, multiple web server instances or different types of web servers. Here are few scenarios where HTTP session sharing is required:
-- *Multiple different Web servers running your web application* - You may be porting your application from one web server to another and there will be a period of time when both types of servers need to be active in production.
-- *Web Application is broken into multiple modules* - When applications are modularized such that different functionalities are deployed across multiple server instances. For example, you may have login, basic info, check-in and shopping functionalities split into separate modules and deployed individually across different servers for manageability or scalability. In order for the user to be presented with a single, seamless, and transparent application, session data needs to be shared between all the servers.
-- *Reduce Web application memory footprint* - The web application storing all session within the web application process heap, consuming large amount of memory. Having the session stored within a remote process will reduce web application utilization avoiding garbage collocation and long pauses.
-- *Multiple Data-Center deployment* - You may need to deploy your application across multiple data centers for high-availability, scalability or flexibility, so session data will need to be replicated.
+- **Multiple different Web servers running your web application** - You may be porting your application from one web server to another and there will be a period of time when both types of servers need to be active in production.
+- **Web Application is broken into multiple modules** - When applications are modularized such that different functionalities are deployed across multiple server instances. For example, you may have login, basic info, check-in and shopping functionalities split into separate modules and deployed individually across different servers for manageability or scalability. In order for the user to be presented with a single, seamless, and transparent application, session data needs to be shared between all the servers.
+- **Reduce Web application memory footprint** - The web application storing all session within the web application process heap, consuming large amount of memory. Having the session stored within a remote process will reduce web application utilization avoiding garbage collocation and long pauses.
+- **Multiple Data-Center deployment** - You may need to deploy your application across multiple data centers for high-availability, scalability or flexibility, so session data will need to be replicated.
 
 {html}
 <div style="width:425px;text-align:left"><a style="font:14px Helvetica,Arial,Sans-serif;color: #0000CC;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="//www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2" title="Global Http Session Sharing">Global Http Session Sharing</a><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="425" height="370" id="onlinePlayer631622"><param name="movie" value="//www.slideboom.com/player/player.swf?id_resource=631622" /><param name="allowScriptAccess" value="always" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><param name="allowFullScreen" value="true" /><param name="flashVars" value="" /><embed src="//www.slideboom.com/player/player.swf?id_resource=631622" width="425" height="370" name="onlinePlayer631622" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"allowScriptAccess="always" quality="high" bgcolor="#ffffff" allowFullScreen="true" flashVars="" ></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View <a href="" style="color: #0000CC;">more presentations</a> or <a href="/upload" style="color: #0000CC;">Upload</a> your own.</div></div>
@@ -33,17 +33,17 @@ With this solution, there is no need to deploy a database to store the session, 
 GigaSpaces Global HTTP Session Management designed to deliver the application maximum performance with ZERO application code changes.
 
 GigaSpaces Global HTTP Session Management features the following:
-- *Reduce App/Web server memory footprint* storing the session within a remote JVM.
-- *No code changes required* to share the session with other remote Web/App servers - Support *Serialized and Non-Serialized* Session attributes. Your attributes do not need to implement Serializable or Externalizable interface.
-- *Transparent Session sharing* between any App/Web server - Any JEE app/web server (WebSphere , Weblogic , JBoss , Tomcat , Jetty , GlassFish...) may share their HTTP session with each other.
-- *Application elasticity* - Support *session replication* across different App/Web applications located within the same or different data-centers/clouds allowing the application to scale dynamically without any downtime.
-- *Unlimited number of sessions and concurrent users* support - Sub-millisecond session data access by using GigaSpaces In-Memory-Data-Grid.
-- *Session replication over the WAN* support - Utilizing GigaSpaces [XAP9:Multi-Site Replication over the WAN] technology.
-- HTTP Session *data access scalability* - Session data can utilize any of the supported In-Memory-Data-Grid topologies ; replicated , partitioned , with and without local cache.
-- *Transparent App/Web Failover* - Allow app server restart without any session data loss.
-- Any session data type attribute support - *Primitive and Non-Primitive* (collections, user defined types) attributes supported.
-- *Sticky session and Non-sticky* session support - Your requests can move across multiple instances of web application seamlessly.
-- *Atomic HTTP request* session access support - multiple requests for the session attributes within the same HTTP request will be served without performing any remote calls. Master session copy will be updated when the HTTP request will be completed.
+- **Reduce App/Web server memory footprint** storing the session within a remote JVM.
+- **No code changes required** to share the session with other remote Web/App servers - Support **Serialized and Non-Serialized** Session attributes. Your attributes do not need to implement Serializable or Externalizable interface.
+- **Transparent Session sharing** between any App/Web server - Any JEE app/web server (WebSphere , Weblogic , JBoss , Tomcat , Jetty , GlassFish...) may share their HTTP session with each other.
+- **Application elasticity** - Support **session replication** across different App/Web applications located within the same or different data-centers/clouds allowing the application to scale dynamically without any downtime.
+- **Unlimited number of sessions and concurrent users** support - Sub-millisecond session data access by using GigaSpaces In-Memory-Data-Grid.
+- **Session replication over the WAN** support - Utilizing GigaSpaces [XAP9:Multi-Site Replication over the WAN] technology.
+- HTTP Session **data access scalability** - Session data can utilize any of the supported In-Memory-Data-Grid topologies ; replicated , partitioned , with and without local cache.
+- **Transparent App/Web Failover** - Allow app server restart without any session data loss.
+- Any session data type attribute support - **Primitive and Non-Primitive** (collections, user defined types) attributes supported.
+- **Sticky session and Non-sticky** session support - Your requests can move across multiple instances of web application seamlessly.
+- **Atomic HTTP request** session access support - multiple requests for the session attributes within the same HTTP request will be served without performing any remote calls. Master session copy will be updated when the HTTP request will be completed.
 
 # Using GigaSpaces Global HTTP Session Sharing with your Application
 
@@ -66,7 +66,7 @@ The GigaSpaces Global HTTP Session Sharing support two Load-Balancing scenarios:
 ##### Session Sharing Scenario
 {section}
 {column:width=40%}
-Have `cacheManager.cacheSessionLocally = true` when you would like multiple web application instances to share the same HTTP session. In this case your load balancer should be configured to support *non-sticky sessions* routing requests to a different web application based on some load-balancing algorithm. This will improve the performance of your application by avoiding reading the latest copy of the session from the remote space on each page load.
+Have `cacheManager.cacheSessionLocally = true` when you would like multiple web application instances to share the same HTTP session. In this case your load balancer should be configured to support **non-sticky sessions** routing requests to a different web application based on some load-balancing algorithm. This will improve the performance of your application by avoiding reading the latest copy of the session from the remote space on each page load.
 {column}
 {column}
 {indent}!GRA:Images2^http-session-non-sticky.jpg!{indent}
@@ -76,7 +76,7 @@ Have `cacheManager.cacheSessionLocally = true` when you would like multiple web 
 ##### Session Failover Scenario
 {section}
 {column:width=40%}
-Have `cacheManager.cacheSessionLocally = false` when you would like the same web application instance to serve the same client and have the client to failover to another web application in case the original web application fails. In this case *sticky sessions* should be enabled at the HTTP load-balancer allowing the HTTP request associated with the same session to be routed always to the same Web container. When there is a web container failure, other Web container will take over and have the most up-to-date session retrieved from the In-Memory-Data-Grid.
+Have `cacheManager.cacheSessionLocally = false` when you would like the same web application instance to serve the same client and have the client to failover to another web application in case the original web application fails. In this case **sticky sessions** should be enabled at the HTTP load-balancer allowing the HTTP request associated with the same session to be routed always to the same Web container. When there is a web container failure, other Web container will take over and have the most up-to-date session retrieved from the In-Memory-Data-Grid.
 {column}
 {column}
 {indent}!GRA:Images2^http-session-sticky.jpg!{indent}
@@ -112,7 +112,7 @@ The web application requires a couple of configuration changes to the web.xml fi
 </web-app>
 {code}
 
-{note}The *ShiroFilter* must be the first filter defined.{note}
+{note}The **ShiroFilter** must be the first filter defined.{note}
 
 The `shiro.ini` file needs to be placed within the WEB-INF folder and to define parameters for the session manager for it to be able to access GigaSpaces:
 
@@ -166,7 +166,7 @@ Use appropriate version of gs-session-manager-<version>.jar (example uses versio
 GigaSpaces IMDG should be deployed using your favorite topology (replicated and/or partitioned, static or elastic) and include a reference to a WAN Gateway.
 
 Before deploying regular IMDG:
-- Create a *lib* folder under \gigaspaces-xap-premium-X\deploy\templates\datagrid\
+- Create a **lib** folder under \gigaspaces-xap-premium-X\deploy\templates\datagrid\
 - Copy the following jars located within the HttpSession.war\WEB-INF\lib into \gigaspaces-xap-premium-X\deploy\templates\datagrid\lib folder:
 aopalliance-1.0.jar, commons-beanutils-1.8.3.jar, commons-collections-2.1.1.jar, gs-runtime.jar, gs-session-manager-2.0-b103.jar, jcl-over-slf4j-1.6.4.jar, log4j-1.2.16.jar, shiro-all-1.3.0-317b.jar, slf4j-api-1.6.4.jar, slf4j-log4j12-1.6.4.jar, xmlbeans-2.2.0.jar, xmlpull-1.1.3.1.jar, xpp3_min-1.1.4c.jar and xstream-1.4.2.jar.
 
@@ -219,12 +219,12 @@ When using a [Secure GigaSpaces cluster|XAP9:Securing your Data] you can pass se
 ## Single-Site Deployment
 The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish....).
 1. Download the [HttpSession.war|^HttpSession.war].
-2. Deploy a space named *sessionSpace*. You can start the `GigaSpaces root/bin/gsInstance.sh/bat` for a single instance space or deploy a clustered space using the command line or GS-UI.
+2. Deploy a space named **sessionSpace**. You can start the `GigaSpaces root/bin/gsInstance.sh/bat` for a single instance space or deploy a clustered space using the command line or GS-UI.
 3. Deploy the HttpSession.war into Tomcat (or any other app server).
 4. Start your browser and access the web application via the following URL: http://localhost:8080/HttpSession
 {note}The URL above assumes the Web Server configured to use port 8080.{note}
 {indent}!httpSessionSharing4.jpg!{indent}
-5. Set some values for the Session Name and Attribute and click the *Update Session* button.
+5. Set some values for the Session Name and Attribute and click the **Update Session** button.
 6. View the session within the space via the GS-UI. Click the Data-Types icon , click the `org.openspaces.sessions.shiro.SpaceSession` class and Click the query button. The Query view will be displayed. You can double click any of the sessions and drill into the attributes map within the session to view the session attributes:
 {indent}!httpSessionSharing5.jpg|thumbnail!{indent}
 
@@ -308,4 +308,4 @@ Global HTTP session sharing works only when your application is deployed as a no
 When using the Global HTTP session sharing with WebSphere Application Server , please enable the [HttpSessionIdReuse|http://pic.dhe.ibm.com/infocenter/wasinfo/v7r0/index.jsp?topic=%2Fcom.ibm.websphere.express.doc%2Finfo%2Fexp%2Fae%2Frprs_custom_properties.html] custom property. In a multi-JVM environment that is not configured for session persistence setting this property to true enables the session manager to use the same session information for all of a user's requests even if the Web applications that are handling these requests are governed by different JVMs.
 
 ##### Transient Attribute
-An attribute specified as *transient* would not be shared and its content will not be stored within the IMDG. Your code should be modified to have this as a regular attribute that can be serialized.
+An attribute specified as **transient** would not be shared and its content will not be stored within the IMDG. Your code should be modified to have this as a regular attribute that can be serialized.

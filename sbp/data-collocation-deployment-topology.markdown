@@ -7,9 +7,9 @@ page_id: 51119964
 
 {composition-setup}
 {summary}Choosing the right data-collocation deployment topology - to Collocate or not to Collocate?{summary}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-Using XAP:*7.0GA*
-JDK:*Sun JDK 1.6*
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+Using XAP:**7.0GA**
+JDK:**Sun JDK 1.6**
 Date: September 2009
 {rate}
 
@@ -57,7 +57,7 @@ Often this occurs because of the data access layer, which cannot feed data quick
 
 This is known as a starvation scenario.
 
-To solve this bottleneck, the processing unit allows you to *colocate* the business logic and data; both data and business logic are hosted within the same process, sharing the same memory space. Colocating business logic and data can be done statically (user service associated with a colocated space), or dynamically (via [Service Executors |Map-Reduce Pattern - Executors Example#Service Executors Example] or [Task Executors|Map-Reduce Pattern - Executors Example#Executors Task Example]).
+To solve this bottleneck, the processing unit allows you to **colocate** the business logic and data; both data and business logic are hosted within the same process, sharing the same memory space. Colocating business logic and data can be done statically (user service associated with a colocated space), or dynamically (via [Service Executors |Map-Reduce Pattern - Executors Example#Service Executors Example] or [Task Executors|Map-Reduce Pattern - Executors Example#Executors Task Example]).
 {section}
 {column:width=50%}
 Collocated Mode - The Task Executor-Step 1:

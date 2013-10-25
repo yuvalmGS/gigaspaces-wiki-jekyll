@@ -6,10 +6,10 @@ page_id: 55937171
 ---
 
 {composition-setup}
-{tip}*Summary:* {excerpt}GigaSpaces Spring Batch Elastic Processing Unit{excerpt}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 8.0. Spring Batch 2.1.6.
-*Last Update:* March 2011
+{tip}**Summary:** {excerpt}GigaSpaces Spring Batch Elastic Processing Unit{excerpt}
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 8.0. Spring Batch 2.1.6.
+**Last Update:** March 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
@@ -415,7 +415,7 @@ This will start an HSQL database used with the Spring Batch PU.
 ## Create the Spring Batch PU
 - Download and extract the [Spring Batch PU example|^SpringBatch.zip] into an empty folder.
 - Create a new folder named `SpringBatchPU` under the `gigaspaces-xap-premium\deploy` folder.
-- Copy the example *bin folder* content into the `gigaspaces-xap-premium\deploy\SpringBatchPU` folder.
+- Copy the example **bin folder** content into the `gigaspaces-xap-premium\deploy\SpringBatchPU` folder.
 
 ## Spring Batch PU libraries
 Include the following libraries with the Spring Batch PU `lib` folder:

@@ -8,10 +8,10 @@ page_id: 50758015
 {composition-setup}
 {summary}Mule ESB Distributed Multi Service Example{summary}
 !GRA:Images^new-in-801-banner.png|align=right!
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-Using Mule:*3.1.0*
-Using XAP:*8.0.1*
-JDK:*Sun JDK 1.6*
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+Using Mule:**3.1.0**
+Using XAP:**8.0.1**
+JDK:**Sun JDK 1.6**
 Updated by: Rafi Pinto, R&D Solutions developer, GigaSpaces
 Date: March 2011
 {rate}
@@ -68,7 +68,7 @@ public class Feeder  {
     public void setNumberOfTypes(long num) {
         numberOfTypes = num;
     }
-    /**
+    /****
      * Triggered by mule quartz squeduling service to write new Data object to the space.
      */
     public Data feed() {
@@ -82,13 +82,13 @@ public class Feeder  {
 {code}
 
 ## The Feeder Service Configuration
-{toggle-cloak:id=The Feeder Service Configuration} *Click to view the Feeder Service Configuration..*
+{toggle-cloak:id=The Feeder Service Configuration} **Click to view the Feeder Service Configuration..**
 {gcloak:The Feeder Service Configuration}
 Here is the Feeder Service Configuration:
 {code:title=Feeder Service Configuration}
 <mule ...
     <spring:beans>
-        <os-core:space id="space" url="jini://*/*/space"/>
+        <os-core:space id="space" url="jini://**/**/space"/>
         <os-core:giga-space id="gigaSpace" space="space"/>
     </spring:beans>
     <os-eventcontainer:connector name="gigaSpacesConnector" />
@@ -127,13 +127,13 @@ public class Verifier {
 
 ## The Verifier Service Configuration
 The Verifier Service Configuration using a `polling-container` running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
-{toggle-cloak:id=The Verifier Service Configuration} *Click to view the Verifier Service Configuration..*
+{toggle-cloak:id=The Verifier Service Configuration} **Click to view the Verifier Service Configuration..**
 {gcloak:The Verifier Service Configuration}
 {code}
 <mule
 ...
     <spring:beans>
-        <os-core:space id="space" url="jini://*/*/space"/>
+        <os-core:space id="space" url="jini://**/**/space"/>
         <os-core:giga-space id="gigaSpace" space="space"/>
         <os-events:polling-container id="dataProcessorPollingEventContainer" giga-space="gigaSpace" receive-timeout="10000">
 			<os-events:receive-operation-handler>
@@ -184,13 +184,13 @@ public class Approver {
 
 ## The Approver Service Configuration
 The Approver Service Configuration using a `polling-container` running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
-{toggle-cloak:id=The Approver Service Configuration} *Click to view the Approver Service Configuration..*
+{toggle-cloak:id=The Approver Service Configuration} **Click to view the Approver Service Configuration..**
 {gcloak:The Approver Service Configuration}
 {code:title=Approver mule.xml}
 <mule
 ...
     <spring:beans>
-        <os-core:space id="space" url="jini://*/*/space"/>
+        <os-core:space id="space" url="jini://**/**/space"/>
         <os-core:giga-space id="gigaSpace" space="space"/>
         <os-events:polling-container id="dataProcessorPollingEventContainer" giga-space="gigaSpace" receive-timeout="10000">
 			<os-events:receive-operation-handler>
@@ -343,7 +343,7 @@ See below example:
 {code:title=Mule Service with Transaction Support}
 <mule ....
     <spring:beans>
-        <os-core:space id="space" url="jini://*/*/space"/>
+        <os-core:space id="space" url="jini://**/**/space"/>
 		<os-core:distributed-tx-manager id="transactionManager" default-timeout="30"/>
 		<os-core:giga-space id="gigaSpace" tx-manager="transactionManager" space="space"/>
 		<context:component-scan base-package="com.mycompany.app.processor"/>
@@ -397,7 +397,7 @@ See below example:
 {code}
 
 {warning}Time based Parameters Units:
-- The *default-timeout* parameter and the *custom-transaction timeout* parameter are in second units.
+- The **default-timeout** parameter and the **custom-transaction timeout** parameter are in second units.
 - The receive-timeout , commit and abort timeout , lookup-timeout , duration and round-trip-time parameters are in millisecond units.{warning}
 
 # Libraries Required

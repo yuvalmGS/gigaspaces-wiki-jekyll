@@ -7,9 +7,9 @@ page_id: 54298007
 
 {composition-setup}
 
-{tip}*Summary:* {excerpt}This article illustrates the approaches that can be used to build Custom Eviction functionality.{excerpt}
-*Author*: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 7.1.2
+{tip}**Summary:** {excerpt}This article illustrates the approaches that can be used to build Custom Eviction functionality.{excerpt}
+**Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 7.1.2
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 

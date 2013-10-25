@@ -5,10 +5,10 @@ categories: SBP
 page_id: 47219542
 ---
 
-{tip}*Summary:* {excerpt}This example shows the usage of Microsoft Excel spreadsheets and GigaSpaces XAP for working with stock market data. It also demonstrates the building of Excel RTD and UDF components in C# .NET.{excerpt}
-*Author*: Pini Cohen, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP.NET 6.6
-*Contents:*
+{tip}**Summary:** {excerpt}This example shows the usage of Microsoft Excel spreadsheets and GigaSpaces XAP for working with stock market data. It also demonstrates the building of Excel RTD and UDF components in C# .NET.{excerpt}
+**Author**: Pini Cohen, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP.NET 6.6
+**Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
@@ -24,7 +24,7 @@ The example demonstrates the following:
 - Running Excel spreadsheets that show a view of the stock market data, and are updated almost in realtime; to show changes and updates in the market data.
 - Building and using Excel RTD and UDF components.
 
-(on) *[*Download the example*|^ExcelStocks.zip]* and extract it into your `<GigaSpaces Root>\Examples` directory.
+(on) **[Download the example|^ExcelStocks.zip]** and extract it into your `<GigaSpaces Root>\Examples` directory.
 
 {refer}Getting Started with RTD and UDF? See the [Writing Your First RTD/UDF Application|Writing Your First RTD or UDF Application] section.{refer}
 
@@ -48,33 +48,33 @@ The .NET files are created in the `<Example Root>\Release` directory.
 
 # Adding UDF Function to Excel
 
-1. In Excel, go to *Tools* > *add ins* > *automation*.
-2. Scroll down to *GigaSpaces.Examples.ExcelStocks.Operations.StockOperations*, select it and click *OK*.
+1. In Excel, go to **Tools** > **add ins** > **automation**.
+2. Scroll down to **GigaSpaces.Examples.ExcelStocks.Operations.StockOperations**, select it and click **OK**.
 {indent}!automation.JPG!{indent}
 3. You might get a dialog at this point about mscoree.dll. Click No to this dialog (Yes will delete the add-in from the list).
 {indent}!mscoree_dll.JPG!{indent}
-4. Click *OK* in the Add-ins dialog.
+4. Click **OK** in the Add-ins dialog.
 {indent}!add-ins.JPG!{indent}
 
 ## Opening .NET Solution with Microsoft Visual Studio
 
 1. Double-click the `ExcelStocks.sln` file, according to the version of Visual Studio you are using.
-2. Choose *Build* > *Build Solution*. The files: `StockEntities.dll`, `StockOperations.dll(UDF)`, `StockQuote.dll(RTD)` and `StockMarketFeeder.exe(Market feeder)`  are created in the `Release` subdirectory.
+2. Choose **Build** > **Build Solution**. The files: `StockEntities.dll`, `StockOperations.dll(UDF)`, `StockQuote.dll(RTD)` and `StockMarketFeeder.exe(Market feeder)`  are created in the `Release` subdirectory.
 
 # Running the Example
 
 (!) The example must be compiled before you run it (see [Building the Example|#building] above).
 1. Start the GigaSpaces environment: `<Example Root>\bin\startAll.bat`.
-2. Run the GigaSpaces Management Center `(<GigaSpaces Root>\Bin\Gs-ui.exe`) to see the *`GigaSpaces.Examples.ExcelStocks.StockEntities.StockData`* instances. To view only the relevant spaces:
-    1. In the top menu bar, choose *Settings* > *Discovery* > *Group management*.
-    2. Select only the *Excel* group, unselect all the rest.
+2. Run the GigaSpaces Management Center `(<GigaSpaces Root>\Bin\Gs-ui.exe`) to see the **`GigaSpaces.Examples.ExcelStocks.StockEntities.StockData`** instances. To view only the relevant spaces:
+    1. In the top menu bar, choose **Settings** > **Discovery** > **Group management**.
+    2. Select only the **Excel** group, unselect all the rest.
 3. Open the Excel file `<Example Root>\Chart.xls`.
 
 # Example Scripts
 
 The example includes the following scripts:
-- **`compile.bat`** \- compiles the .NET components.
-- **`startAll.bat`** \- runs the feeder process that starts an embedded space and fills the space with stock market data updates. These updates trigger RTD calls, and are presented in realtime in the open Excel workbook.
+- **`compile.bat`** - compiles the .NET components.
+- **`startAll.bat`** - runs the feeder process that starts an embedded space and fills the space with stock market data updates. These updates trigger RTD calls, and are presented in realtime in the open Excel workbook.
 
 # Tested Configuration
 

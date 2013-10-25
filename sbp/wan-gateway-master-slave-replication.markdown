@@ -6,9 +6,9 @@ page_id: 64323671
 ---
 
 {composition-setup}
-{tip}{*}Summary:* {excerpt}WAN Master-Slave replication example{excerpt}
-*Author*: Ali Hodroj, Senior Solutions Architect, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 9.6
+{tip}{**}Summary:** {excerpt}WAN Master-Slave replication example{excerpt}
+**Author**: Ali Hodroj, Senior Solutions Architect, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 9.6
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 
@@ -240,8 +240,8 @@ The master-slave topology configuration is simply implemented through delegators
 
 # Installing and Running the Example
 
-1. Download the [^WAN_Replication_MasterSlave.zip] archive. It includes two folders: *deploy* and *scripts*.
-2. Please extract the file and and copy the content of the *deploy* folder into `\<GIGASPACES_HOME>\deploy` folder.
+1. Download the [^WAN_Replication_MasterSlave.zip] archive. It includes two folders: **deploy** and **scripts**.
+2. Please extract the file and and copy the content of the **deploy** folder into `\<GIGASPACES_HOME>\deploy` folder.
 3. Extract the `scripts` folder to an arbitrary location and edit the `setExampleEnv.bat/sh` script to include correct values for `NIC_ADDR` as the machine IP and `JSHOMEDIR` as the GigaSpaces root folder location.
 
 The `scripts` folder contains the necessary scripts to start the [Grid Service Agent|XAP91:The Grid Service Agent] for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:

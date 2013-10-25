@@ -29,7 +29,7 @@ GigaSpaces provides [OpenSpaces|XAP66:Product Architecture#ProductArchitecture-O
 
 After you've loaded your data to the space, you need to load the portion you want to work with into your Excel spreadsheet. A SQL query is performed on the space, thus separating the specified data from all the data and loading it into the spreadsheet.
 
-This can be done using the *[Excel Space Viewer]*, which allows you to perform queries on the space and display the data in the spreadsheet.
+This can be done using the **[Excel Space Viewer]**, which allows you to perform queries on the space and display the data in the spreadsheet.
 
 ## 3 -- Defining Refresh Policy
 

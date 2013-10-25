@@ -7,10 +7,10 @@ page_id: 49414729
 
 {composition-setup}
 
-{tip}*Summary:* {excerpt}the Map-Reduce Pattern - This example illustrates the usage of Executors Remoting (Service Executors) and Task Executors to process data in parallel.{excerpt}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 7.1
-*Last Update:* Dec 2010
+{tip}**Summary:** {excerpt}the Map-Reduce Pattern - This example illustrates the usage of Executors Remoting (Service Executors) and Task Executors to process data in parallel.{excerpt}
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 7.1
+**Last Update:** Dec 2010
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
@@ -132,7 +132,7 @@ Using IDE:
 Set your IDe to have the Following:
 !GRA:Screens^exec_ide1.jpg!
 !GRA:Screens^exec_ide2.jpg!
-Click *Run*. This will start the clustered space within your IDE.
+Click **Run**. This will start the clustered space within your IDE.
 
 Using CLI:
 To start the clustered space with 2 partitions run the following:
@@ -223,7 +223,7 @@ The example will have a clustered space with a collocated service running. A cli
 The results created at each partition will be sent to the client. These will be aggregated via the reducer implementation at the client side and displayed:
 !GRA:Images^Executor2.jpg!
 
-This example illustrates simple Service Executors usage in *Synchronous* mode and *Asynchronous* mode.
+This example illustrates simple Service Executors usage in **Synchronous** mode and **Asynchronous** mode.
 Your code should have the following implemented:
 1. Service Interface
 2. Service Implementation
@@ -232,7 +232,7 @@ Your code should have the following implemented:
 
 ## The Service Interface
 
-The Service Interface includes 2 methods. One used to invoke the Service method in *Synchronous* mode and another used to invoke the Service method *Asynchronous* mode:
+The Service Interface includes 2 methods. One used to invoke the Service method in **Synchronous** mode and another used to invoke the Service method **Asynchronous** mode:
 {code}
 import com.gigaspaces.async.AsyncFuture;
 
@@ -343,7 +343,7 @@ public class DataProcessorServiceReducer implements RemoteResultReducer<Integer,
 
 ## The Client
 
-The client invokes the service in *Synchronous* mode using the following:
+The client invokes the service in **Synchronous** mode using the following:
 {code}
 IJSpace space = new UrlSpaceConfigurer("jini://*/*/space").space();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
@@ -355,7 +355,7 @@ System.out.println(new Time(System.currentTimeMillis()) + " - Client got Result:
 
 1. The client getting a proxy to a remote space
 2. The client constructing Service proxy using the `ExecutorRemotingProxyConfigurer`. The `DataProcessorServiceReducer` is used when constructing Service proxy .
-3. The client invokes the service in *Synchronous* mode
+3. The client invokes the service in **Synchronous** mode
 4. The result is being displayed.
 
 ## Running the Example
@@ -365,7 +365,7 @@ Using IDE:
 Set your IDe to have the Following:
 !GRA:Screens^exec_ide1.jpg!
 !GRA:Screens^exec_ide2.jpg!
-Click *Run*. This will start the clustered space and the Services within your IDE.
+Click **Run**. This will start the clustered space and the Services within your IDE.
 
 Using CLI:
 To start the clustered space with 2 partitions and export the Service run the following:

@@ -5,11 +5,11 @@ categories: SBP
 page_id: 52888463
 ---
 
-{tip}*Summary:* {excerpt}Mirror Service Monitoring Utility{excerpt}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 7.1
-*Last Update:* April 2010
-*Contents:*
+{tip}**Summary:** {excerpt}Mirror Service Monitoring Utility{excerpt}
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 7.1
+**Last Update:** April 2010
+**Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}

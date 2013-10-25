@@ -7,9 +7,9 @@ page_id: 51118939
 
 {composition-setup}
 {summary}Implementing the Master-Worker Pattern with GigaSpaces XAP.{summary}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-Using XAP:*7.0GA*
-JDK:*Sun JDK 1.6*
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+Using XAP:**7.0GA**
+JDK:**Sun JDK 1.6**
 Date: August 2009
 {rate}
 
@@ -39,7 +39,7 @@ The following sections include code samples and configuration that illustrate th
 {tip}We invite you to [download|Master-Worker Pattern^MasterWorker.zip] the code examples and configuration files used with this article.{tip}
 
 # Example 1 - Random Workers
-With the Random Workers approach, each worker can consume `Request` objects from *every* space partition. In this case, the non-blocking mode is used. The workers scan the partitions in a round-robin fashion for a `Request` object to consume and execute. With this approach, there might be a small delay until the workers consume a `Request` object. This approach might generate some chatting over the network, since the workers connect to all existing partitions to look for `Request` objects to consume and in case none is found, wait for some time and then try again.
+With the Random Workers approach, each worker can consume `Request` objects from **every** space partition. In this case, the non-blocking mode is used. The workers scan the partitions in a round-robin fashion for a `Request` object to consume and execute. With this approach, there might be a small delay until the workers consume a `Request` object. This approach might generate some chatting over the network, since the workers connect to all existing partitions to look for `Request` objects to consume and in case none is found, wait for some time and then try again.
 {section}
 {column:width=50%}
 Step 1:
@@ -59,7 +59,7 @@ public class Master {
 	static GigaSpace space;
 
 	public static void main(String[] args) {
-		space= new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/mySpace")).gigaSpace();
+		space= new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://**/**/mySpace")).gigaSpace();
 
 		for (int i=0;i<10;i++)
 		{

@@ -6,10 +6,10 @@ page_id: 55937666
 ---
 
 {composition-setup}
-{tip}*Summary:* {excerpt}GigaSpaces Universal Deployer tool. Allows deploying composite applications without any coding.{excerpt}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 8.0.1
-*Last Update:* April 2011
+{tip}**Summary:** {excerpt}GigaSpaces Universal Deployer tool. Allows deploying composite applications without any coding.{excerpt}
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 8.0.1
+**Last Update:** April 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
@@ -17,7 +17,7 @@ page_id: 55937666
 # Overview
 The GigaSpaces Universal Deployer (GUD) allows deploying the different supported processing units ([Space PU|XAP8:Deploying and Interacting with the Space], [Regular PU|XAP8:Packaging and Deployment], [Elastic PU|XAP8:Elastic Processing Unit], [memCache PU|XAP8:The Memcached API] or [Web PU|XAP8:Web Processing Unit Container]) via a simple configuration file. The GUD support dependency based deployment allowing multiple processing units to be deployed as one atomic process (e.g composite application).
 
-{tip}Starting with XAP 9 you may use the *Deployment Dependencies API* to specify the deployment order. See the [Application Deployment and Processing Unit Dependencies|XAP9:Deploying onto the Service Grid#Application Deployment and Processing Unit Dependencies] for details.{tip}
+{tip}Starting with XAP 9 you may use the **Deployment Dependencies API** to specify the deployment order. See the [Application Deployment and Processing Unit Dependencies|XAP9:Deploying onto the Service Grid#Application Deployment and Processing Unit Dependencies] for details.{tip}
 
 ## Dependency Based Deployment
 The GUD allows you to specify for each deployed PU its dependency PU list. The dependent PU will be deployed after all its PUs dependencies will be fully deployed. The mechanism is recursive; if any of these PUs depends on other PU(s), these will be deployed before the top level dependent PU is deployed. This ensures the deploy order will have the entire PUs deployed in the correct order.
@@ -92,8 +92,8 @@ Each GUD configuration file line supports the following options:
 |-elastic | Deploy the PU as an [Elastic PU|XAP8:Elastic Processing Unit]. You should have the ESM started when using this option.| manualCapacity,eagerCapacity | |
 |-highlyAvailable | Used with a Stale-full Elastic PU. Start backup instances. Specifies if the space should duplicate each information on two different machines.|true,false|true|
 |-memoryCapacityPerContainer |Used with an Elastic PU. Specifies the the heap size per container (operating system process). |Numeric value with a Memory Unit. Memory units supported: m for MB,g for GB|32m|
-|-maxMemoryCapacity |Used with an Elastic PU. Specifies the estimated *maximum* total memory capacity used with this processing unit. |Numeric value with a Memory Unit. Memory units supported: m for MB,g for GB|256m|
-|-memoryCapacity |Used with an Elastic PU. Specifies the estimated *initial* total memory capacity used with this processing unit. | Numeric value with a Memory Unit. Memory units supported: m for MB,g for GB|128m|
+|-maxMemoryCapacity |Used with an Elastic PU. Specifies the estimated **maximum** total memory capacity used with this processing unit. |Numeric value with a Memory Unit. Memory units supported: m for MB,g for GB|256m|
+|-memoryCapacity |Used with an Elastic PU. Specifies the estimated **initial** total memory capacity used with this processing unit. | Numeric value with a Memory Unit. Memory units supported: m for MB,g for GB|128m|
 |-singleMachineDeployment |Used with an Elastic PU. Allows deployment of the processing unit on a single machine, by lifting the limitation for primary and backup processing unit instances from the same partition to be deployed on different machines. | false,true|false|
 
 ## Commenting lines

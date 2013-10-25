@@ -6,11 +6,11 @@ page_id: 56427156
 ---
 
 {composition-setup}
-{tip}*Summary:* {excerpt}Elastic Distributed Calculation Engine implementation using Map-Reduce approach.{excerpt}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 8.0.3
-*Last Update:* Sep 2011
-*Contents:*
+{tip}**Summary:** {excerpt}Elastic Distributed Calculation Engine implementation using Map-Reduce approach.{excerpt}
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 8.0.3
+**Last Update:** Sep 2011
+**Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}{tip}
 {rate}
 
@@ -20,7 +20,7 @@ page_id: 56427156
 Financial services, Healthcare, Transportations,Fraud Detection, Payment systems,etc. produce reports constantly. Some of them produce reports where the data required for the report is generated over night via batch processing, and some other type of reports are produced instantly upon user request. This type of processing activity requires fast access to the raw data and the ability to utilize distributed resources available on the local environment or on the cloud.
 
 The Elastic Calculation Engine example illustrates the following:
-1. Calculating *Net present value* ([NPV|http://en.wikipedia.org/wiki/Net_present_value]) for large amounts of trades in real time using an In-Memory Data Grid.
+1. Calculating **Net present value** ([NPV|http://en.wikipedia.org/wiki/Net_present_value]) for large amounts of trades in real time using an In-Memory Data Grid.
 2. Intelligent Map-Reduce directing calculations into distributed nodes, lowering the network traffic and lowering the load on each calculation node.
 3. Simulating lazy data load in a batch mode optimizing database access in case of a cache miss.
 4. While the calculation is going on, dynamically scaling up and down the compute/data grid. This will increase the capacity of the compute/data grid and will allow it to utilize additional CPU resources to speed up the calculation time.
@@ -105,13 +105,13 @@ For long calculations that consume relatively large amount of CPU time, the reco
 !ElasticDistributedRiskAnalysisEngine_remote_workers.jpg!
 
 # Running the Demo
-1. Download the [ElasticCalculationEngine.zip|Elastic Distributed Calculation Engine^ElasticCalculationEngine.zip] and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and *edit* the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.
+1. Download the [ElasticCalculationEngine.zip|Elastic Distributed Calculation Engine^ElasticCalculationEngine.zip] and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and **edit** the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.
 2. Start the GigaSpaces agent by running the following:
 {code}startAgent.bat{code}
 (!) You will need a machine with at least 2GB free memory to run this demo.
 3. Run the Elastic Data-Grid deploy script:
 {code}deployDataGrid.bat{code}
-This will deploy the data grid/compute grid and will later allow you to scale it. Whenever you would like to scale the data grid/compute grid just *hit Enter*. Running the deploy script again will initiate the scaling cycle again for the existing running data grid/compute grid.
+This will deploy the data grid/compute grid and will later allow you to scale it. Whenever you would like to scale the data grid/compute grid just **hit Enter**. Running the deploy script again will initiate the scaling cycle again for the existing running data grid/compute grid.
 4. Run the Ealstic Worker deploy script:
 {code}deployWorker.bat{code}
 This will deploy the Worker PU into the Service Grid.

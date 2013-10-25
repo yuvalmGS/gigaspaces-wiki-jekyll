@@ -10,7 +10,7 @@ page_id: 47219279
 
 # Overview
 
-In this pattern, all Excel functions and calculations are performed *by the space* (on the server side) asynchronously. This allows you to use Excel regularly, where calculations are performed on the space side simultaneously, until the calculation is finished; then, Excel is notified and the data is displayed in the spreadsheet.
+In this pattern, all Excel functions and calculations are performed **by the space** (on the server side) asynchronously. This allows you to use Excel regularly, where calculations are performed on the space side simultaneously, until the calculation is finished; then, Excel is notified and the data is displayed in the spreadsheet.
 
 This pattern is based on the [GigaSpaces master-worker pattern|Master-Worker Pattern], and allows you to offload complex logic from Excel spreadsheets to run in parallel on the GigaSpaces cluster collocated with the data.
 
@@ -18,7 +18,7 @@ A typical use-case for this pattern is a Value at Risk (VAR) calculation. The Ex
 
 Using this pattern is divided into 4 main steps:
 1. [Loading your data to the space|#1 -- Loading Data].
-2. [Implementing the algorithm|#2 -- Implementing Algorithm] that performs the desired calculation *inside the space*.
+2. [Implementing the algorithm|#2 -- Implementing Algorithm] that performs the desired calculation **inside the space**.
 3. [Implementing a start trigger|#Implementing Start Trigger and Passing Parameters] by which Excel tells the space to begin calculating, and passing the relevant parameters from Excel to the space.
 4. [Implementing a finish trigger|#Implementing Finish Trigger] by which the space tells Excel that it has finished calculating, and displays the results into the Excel spreadsheet.
 
@@ -42,7 +42,7 @@ After you've implemented Processing Units to perform the calculation, you need t
 
 Using Microsoft Excel UDF (User-Defined Functions), Excel writes an Entry to the space instructing the Processing Units to begin working.
 
-{refer}*Learn how to do this*:
+{refer}**Learn how to do this**:
 - [HelloUDF example|RTD and UDF Examples - GigaSpaces-Excel Integration#HelloUDF -- Performing Excel Functions in Space] (basic)
 - [UDFSample example|RTD and UDF Examples - GigaSpaces-Excel Integration#UDFSample -- Performing Excel Functions in Space] (advanced)
 - [Writing Your First UDF Application|Writing Your First RTD or UDF Application]{refer}
@@ -53,7 +53,7 @@ In the last step, you need to implement a finish trigger in the space, which tel
 
 The space writes a notification to the Microsoft Excel RTD (Real-Time Data) server, which in turn notifies Excel that the space has finished calculating.
 
-{refer}*Learn how to do this*:
+{refer}**Learn how to do this**:
 - [HelloRTD example|RTD and UDF Examples - GigaSpaces-Excel Integration#HelloRTD -- Loading Data from Space to Excel] (basic)
 - [RTDSample example|RTD and UDF Examples - GigaSpaces-Excel Integration#RTDSample -- Loading Data from Space to Excel] (advanced)
 - [Writing Your First UDF Application|Writing Your First RTD or UDF Application]{refer}

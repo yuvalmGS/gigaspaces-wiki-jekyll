@@ -6,11 +6,11 @@ page_id: 56429998
 ---
 
 {composition-setup}
-{tip}*Summary:* {excerpt}Mainframe (Z/OS) based systems integration with GigaSpaces.{excerpt}
-*Authors*: Shay Hassidim, Deputy CTO, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 9
-*Creation Update:* Dec 2011
-*Last Update:* Sep 2013
+{tip}**Summary:** {excerpt}Mainframe (Z/OS) based systems integration with GigaSpaces.{excerpt}
+**Authors**: Shay Hassidim, Deputy CTO, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 9
+**Creation Update:** Dec 2011
+**Last Update:** Sep 2013
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
@@ -41,7 +41,7 @@ Overall, an architectural decision needs to be made based on the specific use ca
 
 With the architecture described above any updates conducted directly against DB2 database on the Mainframe are propagated in real-time to the In-Memory Data-Grid via the Delta Server. These can be processed at the Delta Server level or at the In-Memory Data-Grid level using a normalized structure, flattened or object hierarchy model that is more natural for the application consumption. From there, this data can be delivered to remote In-Memory Data-Grid located in other geographies (via GigaSpaces Multi-Site-Data-Replication), Client side Cache or consumed proactively using the regular GigaSpaces API.
 
-{tip}*Running Demo*
+{tip}**Running Demo**
 For a running demo of the Delta Server architecture please contact [support@gigaspaces.com|mailto:support@gigaspaces.com?subject=Delta Server Demo for DB2&body=I'm interested with a demo of the Delta Server architecture for DB2...].
 {tip}
 
@@ -57,7 +57,7 @@ When used with a database, the Mirror service is one of the primary reasons allo
 Any access to the data done primarily from the IMDG using one of the standard interfaces GigaSpaces XAP supports (POJO/Spring, JPA, JDBC, Key/value, .Net , C++ or Document APIs). If the desired data item cannot be found within the IMDG, it will be accessed through the database running on the mainframe, retrieving the relevant data item, loading it into the IMDG to be reused for subsequent transactions and passing it back to the client application. This approach saves the need for accessing the mainframe on every application data access by using an in-memory layer that may scale on demand.
 
 ## Controlled, Reliable, and Optimized Mainframe Access
-GigaSpaces XAP Mirror service has a central coordinator for all back-end store updates, enabling your system to batch data and persist in-memory transactions via a continuous background access to the mainframe where the frequency of access is controlled and pre-configured.  This allows the system to *minimize the number of mainframe connections* and interactions reducing MIPS consumption while controlling the data consistency level and synchronization between the in-memory representation of the data and its copy on the mainframe.
+GigaSpaces XAP Mirror service has a central coordinator for all back-end store updates, enabling your system to batch data and persist in-memory transactions via a continuous background access to the mainframe where the frequency of access is controlled and pre-configured.  This allows the system to **minimize the number of mainframe connections** and interactions reducing MIPS consumption while controlling the data consistency level and synchronization between the in-memory representation of the data and its copy on the mainframe.
 
 Many mainframe-based applications that perform nightly batch jobs drive a large number of data updates being made to back-end stores.  In this context, GigaSpaces' inherent ability to maintain transactional integrity is critical. In-Memory transactions can be fully committed preserved in multiple different physical locations using GigaSpaces' high-availability mechanism, and ultimately persisted to the database with zero risk of the mainframe and GigaSpaces being out of sync for a long duration.
 

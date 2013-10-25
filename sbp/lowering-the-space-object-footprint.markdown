@@ -7,9 +7,9 @@ page_id: 52527436
 
 {composition-setup}
 {summary}Lowering the Space Object Footprint - Compact Serialization Pattern{summary}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-Using XAP:*7.1GA*
-JDK:*Sun JDK 1.6*
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+Using XAP:**7.1GA**
+JDK:**Sun JDK 1.6**
 Date: July 2009
 {rate}
 
@@ -67,7 +67,7 @@ With the [attached example|Lowering the Space Object Footprint^BinaryCompaction.
 - 12 Long fields
 - 12 Integer Fields.
 
-{info}With this example - The footprint overhead of the default serialization compared to a compact format is *250%*.{info}
+{info}With this example - The footprint overhead of the default serialization compared to a compact format is **250%**.{info}
 To run this example copy the example package zip into \GigaSpaces Root\examples\, extract the zip file and follow the instructions at the readme file.
 
 ## The Original Space class

@@ -5,10 +5,10 @@ categories: SBP
 page_id: 48236978
 ---
 
-{tip}*Summary:* {excerpt}The space schema can be evolved using codebase downloading and Java extensions, or an explicit data migration process.{excerpt}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 7.1
-*Contents:*
+{tip}**Summary:** {excerpt}The space schema can be evolved using codebase downloading and Java extensions, or an explicit data migration process.{excerpt}
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 7.1
+**Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
@@ -22,7 +22,7 @@ GigaSpaces supports addition of new space classes while the system is running ou
 The following sections describe the recommended options to evolve the space schema.
 
 # Schema-less Model - Document Model
-A `SpaceDocument` is completely dynamic model artifact you can write into the space and read back into the application. It allows you to change or evolve your data model without ever taking down the Space. Change your application code to add additional properties or remove existing ones, and you're good to go. In addition, *old and new versions of the same Entity model can co-exist* since the space does not enforce any restriction with regards to the property set of `SpaceDocuments` belong to a certain type. `SpaceDocument` can be [mapped to a POJO|XAP91:Document-POJO Interoperability] during runtime allowing the application leverage POJO and evolve these as neeeded. You can also make the `SpaceDocument` type safe by [Extending SpaceDocument|XAP91:Extending Space Documents].
+A `SpaceDocument` is completely dynamic model artifact you can write into the space and read back into the application. It allows you to change or evolve your data model without ever taking down the Space. Change your application code to add additional properties or remove existing ones, and you're good to go. In addition, **old and new versions of the same Entity model can co-exist** since the space does not enforce any restriction with regards to the property set of `SpaceDocuments` belong to a certain type. `SpaceDocument` can be [mapped to a POJO|XAP91:Document-POJO Interoperability] during runtime allowing the application leverage POJO and evolve these as neeeded. You can also make the `SpaceDocument` type safe by [Extending SpaceDocument|XAP91:Extending Space Documents].
 
 !GRA:Images^document_arch.jpg|thumbnail!
 

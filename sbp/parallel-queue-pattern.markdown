@@ -6,10 +6,10 @@ page_id: 52887871
 ---
 
 {composition-setup}
-{tip}*Summary:* {excerpt}The Parallel Queue Pattern - High speed data processing pattern for low-latency systems{excerpt}
-*Author*: Shay Hassidim, Deputy CTO, GigaSpaces
-*Recently tested with GigaSpaces version*: XAP 8.0.0
-*Last Update:* Feb 2011
+{tip}**Summary:** {excerpt}The Parallel Queue Pattern - High speed data processing pattern for low-latency systems{excerpt}
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
+**Recently tested with GigaSpaces version**: XAP 8.0.0
+**Last Update:** Feb 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
@@ -21,7 +21,7 @@ Such a requirement would be relevant with algorithmic trading engines , Order Ma
 
 GigaSpaces introduce the ability to partition data in memory across multiple data-grid partitions. This provides the ability to scale the system, but it does not ensure fast data processing in the correct order. You should add another component that allows the system to "slice" each partition into virtual queues or several buckets. The polling container consuming data in a FIFO manner is the missing required component.
 {indent}!GRA:Images^par_q2.jpg!{indent}
-Having multiple polling containers running collocated with each partition allows us to scale at the partition level, forming set of "virtual queues", that consume data pushed into the partition in a parallel manner, but also in the correct order. The amount of polling containers will be usually the *number of machine cores*. This will optimize the ability to use the machine CPUs in the most efficient manner.
+Having multiple polling containers running collocated with each partition allows us to scale at the partition level, forming set of "virtual queues", that consume data pushed into the partition in a parallel manner, but also in the correct order. The amount of polling containers will be usually the **number of machine cores**. This will optimize the ability to use the machine CPUs in the most efficient manner.
 
 With our example we will simulate a simple Order Management processing system where Orders are sent into the system. An order might have 5 states (state 1-5) where these should be processed in the correct order by a "processor". Different Orders (from different clients) should be processed in parallel, but requests associated with the same order MUST be processed in the exact order they have submitted by the end point client.
 
@@ -34,15 +34,15 @@ The above results retrived when running the Data-Grid with 4 partitions with a b
 # The Order Management Processor Example
 
 The following example illustrates a simple Order management processor that includes the following artifacts:
-- *The Order Class* - This represents an Order request. An order includes a _Symbol_ , _requestType_, _id_ , _orderId_ and a _bucketId_ field.
+- **The Order Class** - This represents an Order request. An order includes a _Symbol_ , _requestType_, _id_ , _orderId_ and a _bucketId_ field.
 -- The `orderId` field used to partition the Order requests (its getter method annotated with `@SpaceRouting`) between the partitions.
 -- The `id` used as the space object ID (its getter annotated with `@SpaceID`).
 -- The `bucketId` used to generate the buckets that each polling container consuming Orders from.
 -- The `Order` class is decorated with the `FIFO` mode allows it to be consumed in a FIFO manner.
-- *The Feeder* - A client running multiple threads pushing requests for different Order.
-- *The Processor* - Polling Container listener. Running collocated with the data-grid. Each polling container consumes different set of objects from its colocated space. Each Polling Container template using *different bucketId*.
-- *The Data-Grid* - Stores the incoming `Order` requests state until these are consumed by the polling containers. It provides the ability to scale the system and also provides high-availability.
-- *The ProcessorFactory* - A Spring bean. Creates the polling containers and their listeners.  The polling containers consumes data based on the Order `Symbol`. Each associated with a different Symbol. These are running collocated with the Data-Grid.
+- **The Feeder** - A client running multiple threads pushing requests for different Order.
+- **The Processor** - Polling Container listener. Running collocated with the data-grid. Each polling container consumes different set of objects from its colocated space. Each Polling Container template using **different bucketId**.
+- **The Data-Grid** - Stores the incoming `Order` requests state until these are consumed by the polling containers. It provides the ability to scale the system and also provides high-availability.
+- **The ProcessorFactory** - A Spring bean. Creates the polling containers and their listeners.  The polling containers consumes data based on the Order `Symbol`. Each associated with a different Symbol. These are running collocated with the Data-Grid.
 
 The `bucketId` is calculated using the following formula:
 {code}
