@@ -69,7 +69,9 @@ Properties List:
 |debug|Will bypass the Database calls. Should be true only when debugging. |false|
 |displayStats|When true will display the Mirror stats to output. Should be used in Development mode.|false|
 
-{info}The example assumes that space is deployed before the mirror,if you require otherwise,then you should move the code from Mirror.init method to first call of collectStats() (when space is available.){info}
+{% info %}
+The example assumes that space is deployed before the mirror,if you require otherwise,then you should move the code from Mirror.init method to first call of collectStats() (when space is available.)
+{% endinfo %}
 
 # Viewing the Mirror Statistics
 To view the Statistics gathered by the Mirror monitor:

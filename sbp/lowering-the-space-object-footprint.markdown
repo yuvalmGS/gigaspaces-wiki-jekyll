@@ -67,7 +67,10 @@ With the [attached example|Lowering the Space Object Footprint^BinaryCompaction.
 - 12 Long fields
 - 12 Integer Fields.
 
-{info}With this example - The footprint overhead of the default serialization compared to a compact format is **250%**.{info}
+{% info %}
+With this example - The footprint overhead of the default serialization compared to a compact format is **250%**.
+{% endinfo %}
+
 To run this example copy the example package zip into \GigaSpaces Root\examples\, extract the zip file and follow the instructions at the readme file.
 
 ## The Original Space class

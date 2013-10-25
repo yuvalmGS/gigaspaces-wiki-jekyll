@@ -44,14 +44,14 @@ To use the ID Generator you should:
 2. With your application, inject a `SpaceBasedIdGenerator` Bean. You should have it with every application instance.
 3. With your client application call the following when you need a unique global ID:
 
-
 {% highlight java %}
 SpaceBasedIdGenerator idGenerator;
 Integer myNextID = idGenerator.generateId();
 {% endhighlight %}
 
-
-{info}The `SpaceBasedIdGenerator` using [Spring Transactions|http://static.springsource.org/spring/docs/2.0.x/reference/transaction.html] to update the `IdCounterEntry` object.{info}
+{% info %}
+The `SpaceBasedIdGenerator` using [Spring Transactions|http://static.springsource.org/spring/docs/2.0.x/reference/transaction.html] to update the `IdCounterEntry` object.
+{% endinfo %}
 
 # The ID Generator Components
 The following should be used to enable the ID Generator:
