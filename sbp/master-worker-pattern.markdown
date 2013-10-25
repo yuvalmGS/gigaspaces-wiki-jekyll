@@ -12,7 +12,7 @@ Using XAP:*7.0GA*
 JDK:*Sun JDK 1.6*
 Date: August 2009
 {rate}
-h1. Overview
+#  Overview
 The [Master-Worker Pattern|http://books.google.com/books?id=9cV3TbahjW0C&pg=PA153&lpg=PA153&dq=JavaSpaces+Master-Worker+Pattern&source=bl&ots=1l_DQmEGNl&sig=IU2UTbG-xytamrby2r5yaJLnAkk&hl=en&ei=lm6RSo-dGJXjlAeYqOWjDA&sa=X&oi=book_result&ct=result&resnum=1#v=onepage&q=JavaSpaces%20Master-Worker%20Pattern&f=false] (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a `Master` and multiple `Workers`.
 
 {indent}!GRA:Images^the_master_worker.jpg!{indent}
@@ -21,7 +21,7 @@ In GigaSpaces XAP, you can implement the Master-Worker pattern using several met
 - [Task Executors|Map-Reduce Pattern - Executors Example] - best for a scenario where the processing activity is collocated with the data (the data is stored within the same space as the tasks being executed).
 - [Polling Containers|XAP8:Polling Container] - in this case the processing activity runs in a separate machine/VM from the space. This approach should be used when the processing activity consumes a relatively large amount of CPU and takes a large amount of time. It might also be relevant if the actual data required for the processing is not stored within the space, or the time it takes to retrieve the required data from the space is much shorter than the time it takes to complete the processing.
 
-h1. Implementing Master-Worker in XAP using Polling Containers
+#  Implementing Master-Worker in XAP using Polling Containers
 
 The Polling Containers approach uses the classic JavaSpaces write/take operations to implement the parallel processing. This allows a `Master` client application to generate a `Job` that is a set of `Request` objects, write these into the space and immediately perform a Take operation on the `Result` objects.
 
@@ -37,7 +37,7 @@ The following sections include code samples and configuration that illustrate th
 
 {tip}We invite you to [download|Master-Worker Pattern^MasterWorker.zip] the code examples and configuration files used with this article.{tip}
 
-h1. Example 1 - Random Workers
+#  Example 1 - Random Workers
 With the Random Workers approach, each worker can consume `Request` objects from *every* space partition. In this case, the non-blocking mode is used. The workers scan the partitions in a round-robin fashion for a `Request` object to consume and execute. With this approach, there might be a small delay until the workers consume a `Request` object. This approach might generate some chatting over the network, since the workers connect to all existing partitions to look for `Request` objects to consume and in case none is found, wait for some time and then try again.
 {section}
 {column:width=50%}
@@ -231,7 +231,7 @@ Deploying the Workers PU:
 {gcard}
 {gdeck}
 
-h1. Example 2 - Designated Workers
+#  Example 2 - Designated Workers
 With this approach, each new worker is assigned a specific ID and consumes `Request` objects from a designated partition. In this case, the worker runs in blocking mode. The `Request` object routing field is populated with the partition ID, with the Polling Container template, and is also populated by the `Master` application before it is written into the partitioned clustered space.
 {section}
 {column:width=50%}
@@ -489,7 +489,7 @@ Deploying the Workers PU:
 {gcard}
 {gdeck}
 
-h1. References
+#  References
 - [JavaSpaces Principles, Patterns, and Practice: Chapter 11|http://java.sun.com/developer/Books/JavaSpaces/chapter11.html]
 - [Blog post:How to Implement my Processor? - The Polling Container Benchmark|http://blog.gigaspaces.com/2008/10/03/how-to-implement-my-processor-the-polling-container-benchmark]
 

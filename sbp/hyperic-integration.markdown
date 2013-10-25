@@ -5,13 +5,13 @@ categories: SBP
 page_id: 57212965
 ---
 
-h1. Overview
+#  Overview
 
 [Hyperic|http://www.hyperic.com/] is a global monitoring system and this page describes a quick GigaSpaces integration that I made during a consulting session.
 The plugin uses the GigaSpaces Admin API to perform the monitoring of a global system.
 The plugin is offered as open source as part of OpenSpaces community.
 
-h1. Installation
+#  Installation
 
 As the GigaSpaces plugin uses the [Administration and Monitoring API|XAP8:Administration and Monitoring API] (a.k.a. Admin API) a single Hyperic agent will be used to monitor the whole cluster. Indeed GigaSpaces is a very dynamic platform and a classical Hyperic installation based on an agent monitoring the processes on his physical (or virtual) machine won't work well, a given processing unit could be unavailable on a machine because the GSM decided to deploy it somewhere else.
 
@@ -21,7 +21,7 @@ In order to use the plugin on an hyperic agent you have to prepare this agent to
 - Restart the agent
 - Connect to the Hyperic server console with admin account and go to the plugin manager. Install the GigaSpaces plugin ([hyperic-gs-plugin.jar|^hyperic-gs-plugin.jar])
 
-h1. Usage
+#  Usage
 
 h3. Create a platform
 
@@ -50,7 +50,7 @@ _Note that Hyperic Autodiscovery of services etc run daily only so if you deploy
 
 _The plugin is currently delivering some very basic features and has to be improved in the future to cover more monitoring informations_
 
-h1. Building the plugin
+#  Building the plugin
 
 If you wish to enhance the plugin, fix bugs or just review the source code, you can [download the source code|https://github.com/Gigaspaces/bestpractices] from _GigaSpaces Solutions and Best Practices GitHub repository_ and build it yourself.
 Plugin package uses maven but requires a few Hyperic artifacts that are not available in public repositories. In order to build the plugin you'll first have to add them to your repository:

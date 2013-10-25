@@ -15,7 +15,7 @@ page_id: 54820978
 {toc:minLevel=1|maxLevel=2|type=flat|separator=pipe}
 {tip}
 
-h1. Overview
+#  Overview
 
 GigaSpaces can host JEE Web Applications in a Grid Service Container using Jetty as a Web Server. Because of GigaSpaces' virtualized infrastructure your application is supposed to be unaware of its location (its host container and machine), or topology (such as the number of instances). This can lead to problems with web applications, for example for a load-balancer to detect where the instances (and how many) are running in the GigaSpaces Containers.
 
@@ -27,7 +27,7 @@ This page describes how to create a Web Load Balancer Agent as a Processing Unit
 
 Click [here|http://www.gigaspaces.com/wiki/download/attachments/54820978/eAuctionWebLoadBalancer.zip] to download a working code sample that uses the Apache Load Balancer as an example. The example is simple to extend so it can incorporate other load balancers as well.
 
-h1. Usage
+#  Usage
 
 {gdeck:Configuration and Usage}
 {gcard:Spring Configuration}

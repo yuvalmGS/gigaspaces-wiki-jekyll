@@ -14,7 +14,7 @@ page_id: 55935740
 {tip}
 {rate}
 
-h1. Overview
+#  Overview
 The following example is based on the standard [Spring Hibernate Integration tutorial|http://www.vaannila.com/spring/spring-hibernate-integration-1.html].
 In this best practice you will see how to modify an existing simple spring/hibernate application to leverage GigaSpaces as the [in-memory Data-grid|XAP91:The In-Memory Data Grid] and the application server hosting both the [web application|XAP91:Web Application Support] and the data in-memory. The Hibernate persistency settings will still be leveraged by [GigaSpaces Hibernate External Data Source|XAP91:Hibernate External Data Source] storing the data in-memory into a database in an [asynchronous manner|XAP91:Asynchronous Persistency with the Mirror].
 
@@ -24,7 +24,7 @@ Moving Spring/Hibernate application to GigaSpaces involves the following basic s
 3. DAO implementation changes
 4. Deploying the data-grid and the Spring based web application into GigaSpaces
 
-h1. Architecture Change
+#  Architecture Change
 
 The procedure described below will move a standard Spring/Hibernate application that is using the following architecture:
 !GS6:Images^Hibernate with EhCache.jpg!
@@ -32,7 +32,7 @@ The procedure described below will move a standard Spring/Hibernate application 
 To use the following architecture where the Data-Grid placed in-line between the application and the database:
 !GRA:Images^Hibernate_DataGrid_mirror.jpg!
 
-h1. Spring bean Configuration File
+#  Spring bean Configuration File
 The existing application Spring bean Configuration file will be modified to:
 - Remove the usage of database at the application layer.
 - Use the GigaSpaces DAO implementation instead of the original Hibernate DAO implementation.
@@ -281,7 +281,7 @@ h2. The Mirror PU spring bean configuration file
 {gcard}
 {gdeck}
 
-h1. The POJO Class
+#  The POJO Class
 The POJO Class will be modified to include:
 - SpaceID field
 - Routing field
@@ -402,7 +402,7 @@ public class User {
 {gcard}
 {gdeck}
 
-h1. UserDAO interface
+#  UserDAO interface
 The UserDAO interface remains as is:
 {code}
 package com.vaannila.dao;
@@ -416,7 +416,7 @@ public interface UserDAO {
 }
 {code}
 
-h1. The DAO Implementation
+#  The DAO Implementation
 The DAO implementation should be modified to use the [GigaSpace interface|XAP91:The GigaSpace Interface] to access the data grid instead of using the `HibernateTemplate` that is accessing the database. The `GigaSpace` interface simialr methods to the `HibernateTemplate` to write and [Query|XAP91:SQLQuery] for objects.
 {gdeck:DAOImplemenation|top}
 {gcard:Hibernate DAO Implemenation}
@@ -482,7 +482,7 @@ public class UserDAOSpaceImpl implements UserDAO {
 {gcard}
 {gdeck}
 
-h1. Deploying the Data-Grid and the Application
+#  Deploying the Data-Grid and the Application
 To deploy the Data-Grid and the web Application into the [GigaSpaces runtime enviroment|XAP91:The Runtime Environment] perform the following:
 - Download the [3rd party libraries|^3rd_party_libraries.zip] package, and extract it into the `\gigaspaces-xap\lib\optional\pu-common` folder.
 - Download the [application.war|^application.war] , [myDataGrid.jar|^myDataGrid.jar] and the [myMirror.jar|^myMirror.jar].

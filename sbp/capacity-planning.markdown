@@ -12,7 +12,7 @@ page_id: 50759531
 {tip}
 {rate}
 
-h1. Capacity Planning - Voodoo or Simple Math?
+#  Capacity Planning - Voodoo or Simple Math?
 Planning the number of machines your application requires, is one of the most important tasks you need to do before moving into production and making your application available to your customers/users. Typically, this is a task you need to do in the early stages of the project in order to budget for hardware and relevant software products your system will use. At a minimum, this involves estimating the number of CPUs and cores plus the memory each machine must have.
 
 Another important deployment decision is to calculate the maximum number of In-Memory-Data-Grid (IMDG) partitions the application requires. This deployment parameter determines how scalable your application IMDG is. Once the application is deployed, the number of IMDG partitions remains constant, but their physical location, their activation mode (primary or backup), and hosting containers are dynamic.
@@ -26,7 +26,7 @@ This article deals with the following capacity planning issues:
 
 Please note that there is no need to specify the maximum number of partitions for services that are not collocated with IMDG instances. These can be scaled dynamically without the need to specify maximum instances.
 
-h1. The Object Footprint within the IMDG
+#  The Object Footprint within the IMDG
 The object footprint within the IMDG is determined, based on:
 - The original object size - the number of object fields and their content size.
 - The JVM type (32 or 64 bit) - a 64 bit JVM might consume more memory due to the pointer address size.
@@ -64,7 +64,7 @@ See below an example of an object footprint using a 32 and 64 Bit JVM using diff
 {tip}You can reduce the JVM memory footprint using the `-XX:+UseCompressedOops` JVM option. It is part of the JDK6u14 and JDK7. See more details here: [http://wikis.sun.com/display/HotSpotInternals/CompressedOops]. It is highly recommended to use the latest JDK release when using this option.
 {tip}
 
-h1. Active Clients vs. Cores vs. Heap Size
+#  Active Clients vs. Cores vs. Heap Size
 Since the IMDG kernel is a highly multi-threaded process, it has a relatively large number of active threads handling incoming requests. These requests could come from remote clients or collocated clients. Here are a few examples:
 - any remote call involves a thread at the IMDG side that handles the request.
 - a notification delivery might involve multiple threads sending events to registered clients.
@@ -77,7 +77,7 @@ The number of active threads and machine cores is important also for the maximum
 
 A machine running 4 quad-core cores with fast CPUs (3GHz clock) is able to handle 20-30 concurrent collocated clients without any special delay, and 100-150 concurrent remote clients without any special delay. Such a JVM should have at least a 2-3GB heap size to handle the IMDG data and additional resources utilizing memory. With the above we assume the application business logic is very simple and does not have any IO operations, and the IMDG persistency mode is asynchronous.
 
-h1. How should I Calculate the Number of IMDG Partitions?
+#  How should I Calculate the Number of IMDG Partitions?
 The question is how to calculate the number of IMDG partitions required by an application.
 The calculation is essentially based on the maximum number of machines available. Theoretically, in an ideal world where you have an unlimited budget and unlimited resources, you might want to have a dedicated machine per IMDG instance hosted within a dedicated Grid Container (GSC). In the real world, in order to avoid a large budget for hardware, you can initially have multiple IMDG instances running on the same machine within a single GSC. This deployment topology can be modified later to move closer to the ideal of a dedicated GSC hosting a single IMDG instance (one IMDG instance per GSC).
 
@@ -139,6 +139,6 @@ When using a machine with 32GB of RAM, we need 4 machines to run primary IMDG in
 
 This means that we have 160 IMDG instances (half primary and half backups) hosted within 40 GSCs. Theoretically, this allows us to expand the IMDG to run across 160 machines (one GSC per machine). This means 160 X 10GB as the heap size = 1.6TB of IMDG memory capacity to host the IMDG objects!  This is a huge capacity for the IMDG, which is in fact, ten times larger than the estimated size - we have lots of room in case our initial memory utilization was wrong.
 
-h1. Conclusion
+#  Conclusion
 Capacity planning is not voodoo. You can estimate the number of machines your application IMDG might need via a simple capacity planning process. To avoid over provisioning, you should start small, and expand your IMDG capacity when needed. The maximum number of IMDG partitions can be calculated, based on a simple estimation of the number of machines you have available, or based on the size and quantity of objects your application generates. This allows your application to scale while remaining resilient and robust.
 

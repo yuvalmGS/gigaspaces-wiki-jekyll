@@ -14,7 +14,7 @@ page_id: 55937171
 {tip}
 {rate}
 
-h1. Overview
+#  Overview
 [Batch processing|http://en.wikipedia.org/wiki/Batch_processing] involves usually complex flows using conditional or sequential steps. This involves relatively large CPU cycles and IO access. In such case the data access time required for the processing is relatively small compared to the processing/IO activities duration time.
 
 To allow batch processing systems to leverage available resources on the network/cloud, the batch processing system should be able to scale in a dynamic manner across multiple machines.
@@ -33,7 +33,7 @@ The GigaSpaces Spring Batch PU provides:
 - Scalability
 -- [Elastic|XAP8:Elastic Processing Unit] and Dynamic scalability of the Spring batch PU instances.
 
-h1. Spring Batch Introduction
+#  Spring Batch Introduction
 [Spring Batch|http://static.springsource.org/spring-batch] is a lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.
 Spring Batch builds upon the productivity, POJO-based development approach, and general ease of use capabilities people have come to know from the Spring Framework, while making it easy for developers to access and leverage more advance enterprise services when necessary.
 Spring Batch is not a scheduling framework.
@@ -52,7 +52,7 @@ Spring Batch support both [sequential and conditional flows|http://static.spring
 h2. Spring Batch Usage Scenarios
 A typical batch program generally reads a large number of records from a database, file, or queue, processes the data in some fashion, and then writes back data in a modified form. Spring Batch automates this basic batch iteration, providing the capability to process similar transactions as a set, typically in an offline environment without any user interaction. Batch jobs are part of most IT projects and Spring Batch is the only open source framework that provides a robust, enterprise-scale solution.
 
-h1. GigaSpaces Spring Batch PU
+#  GigaSpaces Spring Batch PU
 In GigaSpaces XAP, you can implement the [Master-Worker pattern|Master-Worker Pattern] using several methods:
 - Task Executors - Best for scenarios where the processing activity is collocated with the data. Designed for low latency situations.
 - Polling Containers - A remote consumer/worker component used with simple processing scenarios.
@@ -60,7 +60,7 @@ In GigaSpaces XAP, you can implement the [Master-Worker pattern|Master-Worker Pa
 
 Polling Container and Spring Batch approach should be used when the processing activity consumes relatively large amount of CPU and takes a large amount of time. It is also relevant if the actual data required for the processing is not stored within the space, or the time it takes to retrieve the required data from the space is much shorter than the time it takes to complete the processing.
 
-h1. GigaSpaces Spring Batch PU Architecture
+#  GigaSpaces Spring Batch PU Architecture
 The Spring Batch PU encapsulates all the required components to run a Spring Batch instance:
 {indent}!spring_batch_PU_archi.jpg!{indent}
 
@@ -74,7 +74,7 @@ h2. Dedicated Worker
 With the Dedicated Worker mode a Spring Batch PU instance will be consuming requests from a dedicated specific space partition.
 {indent}!spring_batch_DedicatedWorker.jpg!{indent}
 
-h1. The Spring Batch PU Implementation
+#  The Spring Batch PU Implementation
 The Spring Batch PU implementation includes the following components:
 ||Components||Description||
 |Space| A space proxy used by the SpaceItemReader, SpaceItemProcessor and SpaceItemWriter to consume Requests and send back Results.|
@@ -403,7 +403,7 @@ public class JobRunner implements ApplicationContextAware,InitializingBean ,Disp
 {gcard}
 {gdeck}
 
-h1. Spring Batch PU Example
+#  Spring Batch PU Example
 To run the Spring Batch PU Example exectue the following steps:
 h2. Start a Database
 Start an HSQL database. Move into the `gigaspaces-xap-premium\bin` folder and run the following:

@@ -13,7 +13,7 @@ page_id: 56428286
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 
-h1. Overview
+#  Overview
 
 This [WAN Gateway|XAP91:Multi-Site Replication over the WAN] example includes PU folders with config files for a [Multi-Master|XAP91:Multi-Site Replication over the WAN#Multi-Master Topology] topology that includes 3 sites: DE , RU , US. Each site have an independent cluster and a Gateway.
 !GRA:Images2^wan_example1.jpg!
@@ -29,7 +29,7 @@ You will find folders for the following PUs:
 The internal architecture of the setup includes a clustered space and a Gateway, where each Gateway includes a Delegator and a Sink:
 !GRA:Images2^wan_example2.jpg|thumbnail!
 
-h1. Installing the Example
+#  Installing the Example
 1. Download the [WAN_Gateway_example.zip|WAN Replication Gateway^WAN_Gateway_example.zip]. It includes two folders: *deploy* and *scripts*.
 2. Please extract the file and and copy the content of the *deploy folder* into `\gigaspaces-xap-premium-8.0.X-ga\deploy` folder. It should looks like this:
 {code}
@@ -47,14 +47,14 @@ Directory of D:\gigaspaces-xap-premium-8.0.3-ga\deploy
 {code}
 3. Please move into the `scripts` folder and edit the `setExampleEnv.bat/sh` to include correct values for `NIC_ADDR` as the machine IP and `GS_HOME` to have Gigaspaces root folder location.
 
-h1. Running the Example
+#  Running the Example
 You will find within the `scripts` folder running scripts to start [Grid Service Agent|XAP91:The Grid Service Agent] for each site and a deploy script for all sites. This will allow you to run the entire setup on one machine to test. Here are the steps to run the example:
 1. Run `startAgent-DE.bat/sh` or to start DE site.
 2. Run `startAgent-RU.bat/sh` to start RU site.
 3. Run `startAgent-US.bat/sh` to start US site.
 4. Run `deployAll.bat/sh` file to deploy all the PUs listed above.
 
-h1. Viewing the Clusters
+#  Viewing the Clusters
 - Start the `\gigaspaces-xap-premium-8.0.X-ga\bin\GS-UI.bat/sh`.
 - Once you deployed make sure you enable the relevant groups within the GS-UI:
 !GRA:Images2^wan_example3.jpg!
@@ -68,7 +68,7 @@ You should see this:
 Once deployed successfully you should see this:
 !GRA:Images2^wan_example6.jpg|thumbnail!
 
-h1. Testing the WAN Gateway Replication
+#  Testing the WAN Gateway Replication
 You can test the setup by using the [benchmark utility|XAP91:Benchmark View - GigaSpaces Browser] comes with the GS-UI. Move the one of the Clusters Benchmark icon and click the Start Button:
 !GRA:Images2^wan_example7.jpg|thumbnail!
 
@@ -82,7 +82,7 @@ You will see the Object Count changing having zero object count for each space:
 !GRA:Images2^wan_example10.jpg|thumbnail!
 
 
-h1. Replication Throughput Capacity
+#  Replication Throughput Capacity
 
 The total TP a gateway can push out into remote sites depends on:
 - Network speed
@@ -103,7 +103,7 @@ If we have 10 IMDG partitions, each sending 5000 objects/sec 1K size to the GW w
  
 The above assumes the network bandwidth is larger than 50M.
 
-h1. WAN Gateway Replication Benchmark
+#  WAN Gateway Replication Benchmark
 
 With the following benchmark we have 2 sites; one located in the US East coast EC2 region and another one located within EC2 EU Ireland region. The latency between the sites is 95 ms and the maximum bandwidth measured is 12MByte/sec.
 

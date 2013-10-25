@@ -13,7 +13,7 @@ JDK:*Sun JDK 1.6*
 Date: September 2009
 {rate}
 
-h1.The ABCs of the Processing Unit
+# The ABCs of the Processing Unit
 GigaSpaces XAP includes a universal grid-based runtime environment for real-time extreme transaction processing (XTP) for Java, C++ and .Net applications. The runtime environment includes a Service Level Agreement-based container called a [GSC|XAP91:The Grid Service Container], in which you are able to deploy business logic and stateful data.
 
 When your business logic and its state are managed by the GigaSpaces runtime components, they are able to self-heal in the case of a failure via the continuous high-availability mechanism of the system. They can dynamically scale themselves by configuration or by a programmable API - all out-of-the-box.
@@ -40,7 +40,7 @@ There are no remote calls involved when the business logic interacts only with i
 
 When the business logic is deployed with a colocated space, it can inherit the space's active mode (i.e., primary or backup). This means that the business logic can be running in stand-by mode, uninitialized, as long as its colocated space is running in backup mode. A space running in backup mode is updated via the existing primary space, and is not accessible by a regular client for direct interaction. If the primary space and its colocated business logic fails (for any reason), the colocated business logic running with the backup space is initialized and started.
 
-h1. How can I get more CPU Power for my Application?
+#  How can I get more CPU Power for my Application?
 Historically, software systems scaled by adding more hardware. These ran more software instances that eventually scaled the overall system allowing it to support additional increasing numbers of requests. More CPUs and more memory can always be added to the same machine to be able to process more data/requests per unit of time, but at some point the machine is bound to reach its physical limits in terms of CPU and memory.
 
 h2. How can I Scale my Application?
@@ -88,7 +88,7 @@ GigaSpaces allows you to build your business logic without having to take the fi
 
 So the question is: to colocate or not to colocate?
 
-h1. To Colocate or not to Colocate?
+#  To Colocate or not to Colocate?
 When designing your system deployment strategy, you should take a decision about colocating or not colocating your business logic with its state (your application data). This means you should take the following into consideration:
 - Is your business logic designed to process incoming data events without accessing data located in remote other space partitions?
 - Is your data model able to support stickiness, meaning that it can be routed to the same logical partition, based on its content?
@@ -140,5 +140,5 @@ Here is a simple matrix you can use to determine if you should collocate your sp
 |Amount of data within the space <2GB| | (/)|
 |Amount of data within the space >2GB| (/)| |
 
-h1. Conclusion
+#  Conclusion
 Choosing the right data colocation deployment topology involves several different considerations. There is no one golden rule you should follow. You should review the different considerations described above, to determine the right data colocation deployment topology that fits your application the best.

@@ -15,7 +15,7 @@ page_id: 54821146
 {toc:minLevel=1|maxLevel=2|type=flat|separator=pipe}
 {tip}
 
-h1. Overview
+#  Overview
 
 A rule engine is a component specialized in the execution of business rules. There are dedicated algorithms for such engines, such as the [RETE algorithm|http://en.wikipedia.org/wiki/Rete_algorithm], which is optimized for efficiency, concurrency and speed. As such a rule engine is capable of processing large volumes of data, and therefore, an integration with GigaSpaces would combine the best of two worlds.
 
@@ -25,7 +25,7 @@ This article demonstrates how to integrate a rules engine called Drools (also kn
 
 Click [here|http://gigaspaces.com/wiki/download/attachments/54821146/SpaceEnabledDrools.zip] to download a working code sample that uses [JBoss Drools 5|http://www.jboss.org/drools].
 
-h1. Modules
+#  Modules
 
 The example project is based on a Maven project structure and has four submodules:
 - RulesClient - Contains only a single class that demonstrates how a client would access the rules engine. See the 'Executing rules' section for details.
@@ -150,7 +150,7 @@ The result of the call is a (possibly updated) set of fact objects.
 {gcard}
 {gdeck}
 
-h1. Use Cases
+#  Use Cases
 
 Below is a short explanation on a number of typical use-cases, where the combination between GigaSpaces and a rules engine such as Drools form a great symbiosis:
 
@@ -303,7 +303,7 @@ public @interface Droolable {
 {gcard}
 {gdeck}
 
-h1. Final Notes
+#  Final Notes
 
 h2. Integration with other engines
 

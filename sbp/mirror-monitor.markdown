@@ -13,12 +13,12 @@ page_id: 52888463
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 {rate}
-h1. Overview
+#  Overview
 The Mirror Service is an essential component when persisting your data into the enterprise database. The [Mirror Service|XAP91:Asynchronous Persistency with the Mirror] delegates the IMDG activities into the database in a reliable asynchronous manner, allowing the application to access the data stored in-memory without having the database as part of the critical path of the transaction. When using the Mirror Service, the database performance and availability would not impact the application response time.
 
 The Mirror Service behavior is important for the stability of the application and the consistency of the data within the Database. With large scale application, you might want to monitor the Mirror Service behavior in real time. This means reacting in a timely fashion in case there is a need to intervene with its activity or related components that interacts with the Mirror Service (IMDG, Database).
 
-h1. How the Mirror Monitor works?
+#  How the Mirror Monitor works?
 The Mirror Monitor utility gathers statistics about the Mirror Service behavior and exposes these via standard JMX Mbean. You may access this collected data using standard JMX viewers such as the JConsole utility comes with the JVM.
 
 The Mirror Monitor extends the built-in openspaces `DefaultHibernateExternalDataSource`, and collects statistics about the activities the mirror performs. You may log these statistics into a log file or/and access these by using the JMX API.
@@ -36,7 +36,7 @@ The Mirror Monitor includes the following:
 - `Mirror` - extends the `DefaultHibernateExternalDataSource` , and calculates the current Mirror Write/Update/Remove speed.
 - `SpaceModeListener` - Identify a failure of the primary space and switch monitoring the new primary.
 
-h1. How to use the Mirror Monitor?
+#  How to use the Mirror Monitor?
 In order to use the Mirror Monitor with your application you should:
 1. Download the [Mirror Monitor project|^MirrorMonitor.zip].
 2. Add the Mirror Monitor classes into your Mirror PU.
@@ -64,7 +64,7 @@ Properties List:
 
 {info}The example assumes that space is deployed before the mirror,if you require otherwise,then you should move the code from Mirror.init method to first call of collectStats() (when space is available.){info}
 
-h1. Viewing the Mirror Statistics
+#  Viewing the Mirror Statistics
 To view the Statistics gathered by the Mirror monitor:
 1. Start the JConsole via the Gigaspaces Mangament Console for the Mirror Service:
 !GRA:Screens^mirror_monitor2.jpg!

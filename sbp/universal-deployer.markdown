@@ -14,7 +14,7 @@ page_id: 55937666
 {tip}
 {rate}
 
-h1. Overview
+#  Overview
 The GigaSpaces Universal Deployer (GUD) allows deploying the different supported processing units ([Space PU|XAP8:Deploying and Interacting with the Space], [Regular PU|XAP8:Packaging and Deployment], [Elastic PU|XAP8:Elastic Processing Unit], [memCache PU|XAP8:The Memcached API] or [Web PU|XAP8:Web Processing Unit Container]) via a simple configuration file. The GUD support dependency based deployment allowing multiple processing units to be deployed as one atomic process (e.g composite application).
 
 {tip}Starting with XAP 9 you may use the *Deployment Dependencies API* to specify the deployment order. See the [Application Deployment and Processing Unit Dependencies|XAP9:Deploying onto the Service Grid#Application Deployment and Processing Unit Dependencies] for details.{tip}
@@ -40,7 +40,7 @@ With the above config the PUs will be deployed in the following order: F, D, E, 
 h2. Abort Strategy
 In case of a deployment failure, you may specify an abort strategy. In case of unsuccessful deployment you may instruct the GUD to undeploy the specific PU that could not be deployed or undeploy the entire PUs that already been deployed.
 
-h1. GUD Command Line Options
+#  GUD Command Line Options
 The GUD support the following command line arguments:
 ||Switch||Description||Options||Default||
 |-command|deploy or undeploy PU listed at the config file location| deploy , undeploy| deploy|
@@ -49,7 +49,7 @@ The GUD support the following command line arguments:
 |-groups|lookup service groups| | |
 |-abortDeployOnFailure|In case of a failure with the deploy of any of the PUs, undeploy all the PUs listed at the GUD config file| true,false| false|
 
-h1. Running the GUD
+#  Running the GUD
 h2. Install the GUD
 - Download the [GigaSpaces Universal Deployer|^GSUniversalDeployer.zip] and extract it into an empty folder.
 - Edit the `runGSUniversalDeployer.bat` or `runGSUniversalDeployer.sh` to include the correct parameters.

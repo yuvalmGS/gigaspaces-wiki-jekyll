@@ -14,7 +14,7 @@ page_id: 48760404
 {tip}
 {rate}
 
-h1. Overview
+#  Overview
 
 To implement a Priority based Queue you should use the `Take` operation with `SQLQuery` having the priority field used as part of the query. This field should use the `EXTENDED` index type.
 
@@ -89,7 +89,7 @@ public class Order {
 {code}
 
 
-h1. Example
+#  Example
 
 This is a [Priority based queue example|^PriorityBasedQueue.zip] - It includes 2 parts:
 -- Master - Write Orders into the space with a random priority (1-9)

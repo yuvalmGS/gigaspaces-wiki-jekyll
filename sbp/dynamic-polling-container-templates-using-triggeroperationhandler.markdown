@@ -15,7 +15,7 @@ page_id: 58098677
 {tip}
 {rate}
 
-h1. Overview
+#  Overview
 
 Polling Container is one of the most powerful and commonly used feature of GigaSpaces when processing data. To recap polling container performs a polling receive operation against the space, if a receive operation succeeds (a value is returned from the receive operation), the Data Event Listener is invoked with the event. The receive operation is performed using a static template. For most use cases a static template or a static SQL query (parameters are constant) is sufficient, examples include, receive any Order that is marked as "UN_PROCESSED", receive any Order where customer name is like "VIPCustomer", etc.
 
@@ -23,7 +23,7 @@ There are always use cases where you need dynamic templates. Some examples inclu
 
 The [Polling Container|XAP9:Polling Container] shows where `TriggerOperationsHandler` fits into the Polling Container Life Cycle. Polling Container invokes the `TriggerOperationsHandler.triggerReceive()` method before invoking the `ReceiveHandler` which does the actual take and this is the perfect extension point where you can customize or modify the template.
 
-h1. Example
+#  Example
 
 Below is an example that shows how you can use `TriggerOperationsHandler` to process the Message with highest priority (assuming id is the priority) across the cluster and process them in same partition where the `Message` object resides. It is based on helloworld example which is included with GigaSpaces XAP. Using a default Polling container template this will not be possible, but using a custom `TriggerOperationHandler` you can achieve this.
 
@@ -120,7 +120,7 @@ pu.xml snippet below shows how MyTrigger is configured on the polling container,
 
 Notice the clustered proxy being passed to MyTrigger as a property.
 
-h1. Getting the project
+#  Getting the project
 Example project is held on github in the [bestpractices|https://github.com/Gigaspaces/bestpractices] project. This is an umbrella repository; the specific project is in the [helloTriggerHandler|https://github.com/Gigaspaces/bestpractices/tree/master/helloTriggerHandler] directory under the root.
 
 You can run this example just as how you would run helloworld example using the included ant build scripts. Be sure to use a cluster with at least 2 partitions when testing this.

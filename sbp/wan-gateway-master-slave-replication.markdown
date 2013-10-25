@@ -12,7 +12,7 @@ page_id: 64323671
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 
-h1. Overview
+#  Overview
 
 The WAN Gateway provides a simple way of creating a master-slave topology enabling data from one XAP site to be replicated to one or more remote sites. For instance, given three clusters in New York, London, and Hong Kong, with New York being the master and the remaining two acting as slaves, any updates to the New York space will propagate to both London and Hong Kong asynchronously. The sample processing units and configuration provided below are intended as an example of implementing a single-master/multi-slave topology across three sites: New York (US), London (GB), and Hong Kong (HK) where each site has an independent cluster and a Gateway.
 \\  !WAN_masterslave.png|width=616,height=326!\\
@@ -34,7 +34,7 @@ As a result of this topology setup, the following scenario will take place once 
 2.	London and Hong Kong sinks will receive the updates asynchronously
 3.	London and Hong Kong sinks apply the updates on their local cluster
 
-h1. Configuring Master-Slave Replication
+#  Configuring Master-Slave Replication
 
 The master-slave topology configuration is simply implemented through delegators on the master (New York) and a sink on each slave (London, Hong Kong). In this case, New York's site will be the active site while London and  Hong Kong will be the passive sites. While the slave sites are passive,  this does not necessarily mean that no work is done in these sites. However, in  terms of replication over the WAN, these sites should not replicate to  the other sites and usually should not alter data replicated from other  sites because it may cause conflicts:
 {gdeck}
@@ -251,7 +251,7 @@ The master-slave topology configuration is simply implemented through delegators
 {gcard}
 {gdeck}
 
-h1. Installing and Running the Example
+#  Installing and Running the Example
 
 1. Download the [^WAN_Replication_MasterSlave.zip] archive. It includes two folders: *deploy* and *scripts*.
 2. Please extract the file and and copy the content of the *deploy* folder into `\<GIGASPACES_HOME>\deploy` folder.
@@ -263,7 +263,7 @@ The `scripts` folder contains the necessary scripts to start the [Grid Service A
 3. Run `startAgent-US.bat/sh` to start US site.
 4. Run `deployAll.bat/sh` file to deploy all the processing units listed above.
 
-h1. Viewing the Clusters
+#  Viewing the Clusters
 
 - Start the GigaSpaces Management Center and configure the appropriate lookup groups through the "Group Management" dialog.
 - Once all clusters are up and running, you will need to enable the relative groups:
@@ -280,7 +280,7 @@ Once The deployAll.bat/sh script finishes running, you should be able to see all
 If you are using the GS-WEBUI, you can also view the site topology through the "Data Grids > Gateways" view as the following:
 \\  !webui_gw_topology.png|thumbnail!
 
-h1. Testing Master-Slave Replication
+#  Testing Master-Slave Replication
 
 You can test the setup by using the [benchmark utility|XAP91:Benchmark View - GigaSpaces Browser] comes with the GS-UI. Select the US Benchmark icons and click Start to begin writing objects to the space:
 !masterslave_space_write.png|thumbnail!

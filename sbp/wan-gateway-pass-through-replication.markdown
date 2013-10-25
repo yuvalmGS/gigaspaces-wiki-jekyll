@@ -13,7 +13,7 @@ page_id: 59441985
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 
-h1. Overview
+#  Overview
 
 The WAN Gateway allows for the implementation of a pass-through replication topology across clusters of space instances. In this architecture, a site may act as an intermediary for delegating replication requests across two or more other sites. For instance, given three clusters in New York, London, and Hong Kong, there might be bandwidth or connectivity issues between Hong Kong and New York, thereby requiring London to be used as a pass through site. Such replication behavior may be specified through the use of the indirect delegation feature. The sample processing units and configuration provided below are intended as an example of implementing a pass through topology across three sites: New York (US), London (GB), and Hong Kong (HK) where each site has an independent cluster and a Gateway.
 
@@ -43,7 +43,7 @@ As a result of indirect delegation, the following scenario will take place once 
 3.	London sink will in turn push the updates to Hong Kong sink
 4.	Hong Kong sink applies the updates on the local cluster
 
-h1. Configuring Indirect Delegation
+#  Configuring Indirect Delegation
 
 The pass-through topology configuration is implemented through delegators across Hong-Kong and New York that are routed via London. This is achieved by setting the delegate-through property to London for delegation targets in Hong-Kong and New York. Notice that the in the HK and US do not need to have gateway lookups against each other in their configuration:
 
@@ -271,7 +271,7 @@ The pass-through topology configuration is implemented through delegators across
 {gdeck}
 
 
-h1. Installing and Running the Example
+#  Installing and Running the Example
 1. Download the [WAN_Replication_PassThrough.zip|^WAN_Replication_PassThrough.zip]. It includes two folders: *deploy* and *scripts*.
 2. Please extract the file and and copy the content of the *deploy* folder into `\<GIGASPACES_HOME>\deploy` folder.
 3. Extract the `scripts` folder to an arbitrary location and edit the `setExampleEnv.bat/sh` script to include correct values for `NIC_ADDR` as the machine IP and `JSHOMEDIR` as the GigaSpaces root folder location.
@@ -283,7 +283,7 @@ The `scripts` folder contains the necessary scripts to start the [Grid Service A
 3. Run `startAgent-US.bat/sh` to start US site.
 4. Run `deployAll.bat/sh` file to deploy all the processing units listed above.
 
-h1. Viewing the Clusters
+#  Viewing the Clusters
 - Start the GigaSpaces Management Center and configure the appropriate lookup groups through the "Group Management" dialog.
 - Once all clusters are up and running, you will need to enable the relative groups:
 !group_management_dialog.jpg!
@@ -297,7 +297,7 @@ As a result, you should see the service grid components for each site displayed 
 Once The deployAll.bat/sh script finishes running, you should be able to see all three sites deployed as follows:
 !pu_deployments.jpg|thumbnail!
 
-h1. Testing Pass Through Replication
+#  Testing Pass Through Replication
 You can test the setup by using the [benchmark utility|XAP91:Benchmark View - GigaSpaces Browser] comes with the GS-UI. Select one of the HK or US Benchmark icons and click Start to begin writing objects to the space:
 !space_write.jpg|thumbnail!
 

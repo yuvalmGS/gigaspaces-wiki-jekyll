@@ -10,7 +10,7 @@ page_id: 56429827
 
 GigaSpaces XAP can be used as a self contained application platform in which case your application would be contained (embedded) within the GigaSpaces application container. GigaSpaces XAP can also be embedded within external application processes. This section describe the steps required to embed GigaSpaces within external application processes.
 
-h1. General Description
+#  General Description
 
 Embedding GigaSpaces cluster can be as simple as starting the [GigaSpaces Agent|XAP91:The Grid Service Agent] in each machine.
 The agent is responsible for bootstrapping the GigaSpaces cluster environment implicitly. The agent uses a peer to peer communication between themselves to ensure that the environment is up and running also in an  event of a failure.
@@ -22,7 +22,7 @@ The Elastic Middleware automatically provision itself on the GigaSpaces cluster 
 The following example shows how to embed GigaSpaces Data Grid using this model.
 
 
-h1. Example - Embedding GigaSpaces Data Grid
+#  Example - Embedding GigaSpaces Data Grid
 
 h2. Acquiring and Installing XAP
 

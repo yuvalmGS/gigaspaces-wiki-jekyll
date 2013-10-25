@@ -13,7 +13,7 @@ page_id: 47219542
 {tip}
 {rate}
 
-h1. Overview
+#  Overview
 
 This example shows the usage of Microsoft Excel spreadsheets and GigaSpaces XAP for working with stock market data. It also demonstrates the building of Excel RTD and UDF components in C# .NET. These components are integrated with Excel and work with the GigaSpaces XAP platform.
 
@@ -30,7 +30,7 @@ The example demonstrates the following:
 
 {include:Prerequisites - GigaSpaces-Excel Integration}
 
-h1. Example Structure
+#  Example Structure
 
 The example contains a few projects:
 - The **`StockEntities`** project defines the `StockData` object, which stocks the market data with updated information.
@@ -40,13 +40,13 @@ The example contains a few projects:
 
 {anchor:building}
 
-h1. Building the Example
+#  Building the Example
 
 Compile the .NET applications using `<GigaSpaces Root>\Examples\ExcelStocks\bin\compile.bat`.
 
 The .NET files are created in the `<Example Root>\Release` directory.
 
-h1. Adding UDF Function to Excel
+#  Adding UDF Function to Excel
 
 - In Excel, go to *Tools* > *add ins* > *automation*.
 - Scroll down to *GigaSpaces.Examples.ExcelStocks.Operations.StockOperations*, select it and click *OK*.
@@ -61,7 +61,7 @@ h2. Opening .NET Solution with Microsoft Visual Studio
 - Double-click the `ExcelStocks.sln` file, according to the version of Visual Studio you are using.
 - Choose *Build* > *Build Solution*. The files: `StockEntities.dll`, `StockOperations.dll(UDF)`, `StockQuote.dll(RTD)` and `StockMarketFeeder.exe(Market feeder)`  are created in the `Release` subdirectory.
 
-h1. Running the Example
+#  Running the Example
 
 (!) The example must be compiled before you run it (see [Building the Example|#building] above).
 - Start the GigaSpaces environment: `<Example Root>\bin\startAll.bat`.
@@ -70,20 +70,20 @@ h1. Running the Example
     - Select only the *Excel* group, unselect all the rest.
 - Open the Excel file `<Example Root>\Chart.xls`.
 
-h1. Example Scripts
+#  Example Scripts
 
 The example includes the following scripts:
 - **`compile.bat`** \- compiles the .NET components.
 - **`startAll.bat`** \- runs the feeder process that starts an embedded space and fills the space with stock market data updates. These updates trigger RTD calls, and are presented in realtime in the open Excel workbook.
 
-h1. Tested Configuration
+#  Tested Configuration
 
 - OS client -- Windows XP, SP2 and onwards
 - .NET client -- MS .NET Framework 2
 - Excel -- Office 2003 Professional
 - GigaSpaces XAP.NET 6.6
 
-h1. Tested Performance Metrics
+#  Tested Performance Metrics
 
 The following metrics describe the scope of testing performed using the examples from above. The solution is known to be working with these numbers. It should be noted that these metrics are not an upper boundary. It is recommended that any deviation beyond these numbers first be verified with GigaSpaces PM and/or RND.
 - Excel 2003 clients

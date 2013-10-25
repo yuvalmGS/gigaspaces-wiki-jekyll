@@ -13,7 +13,7 @@ page_id: 54820903
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 {tip}
 
-h1. Overview
+#  Overview
 
 Mirror Gateway Synchronization can be used to synchronize operations conducted at one local site with data in a remote site or another cluster instance as explained in the [Clusters Over WAN|SBP:Clusters Over WAN#MirrorGatewaySynchronization] page. This example demonstrates how this can be done using a custom external dataSource implementation running on the mirror.
 
@@ -21,11 +21,11 @@ This is a simple order processing example based on GigaSpaces maven basic-async-
 
 (!) The GigaSpaces WAN Gateway, a solution for synchronizing multiple clusters over the WAN can be found at [XAP8:Multi-Site Replication over the WAN].
 
-h1. Mirror Gateway - One way
+#  Mirror Gateway - One way
 
 {indent}!rep_over_wan_MirrorGatewayOneway.jpg!{indent}
 
-h1. Source Code
+#  Source Code
 
 Some relevant code from the example is in the following sections.
 
@@ -246,7 +246,7 @@ public class MyExternalDataSource implements BulkDataPersister, ManagedDataSourc
 {gcard}
 {gdeck}
 
-h1. Running the example
+#  Running the example
 
 {note} This example is using Maven for packaging and build. Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
 Some instructions below might use windows syntax please use appropriate *nix syntax if you are running the example in a *nix machine.

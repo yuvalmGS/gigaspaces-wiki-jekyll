@@ -13,7 +13,7 @@ page_id: 48236978
 {tip}
 {rate}
 
-h1. Overview
+#  Overview
 
 Developing software is a never ending process. There is never a final version or a last release. This means you may need to deploy new versions of the application, where the space classes model have been modified to accommodate changes required by the updates business logic of the application or changes required by the database schema. In many cases, the changes involves new space classes, or changing the model of existing space classes -- removing some fields or changing the inheritance structure.
 
@@ -21,14 +21,14 @@ GigaSpaces supports addition of new space classes while the system is running ou
 
 The following sections describe the recommended options to evolve the space schema.
 
-h1. Schema-less Model - Document Model
+#  Schema-less Model - Document Model
 A `SpaceDocument` is completely dynamic model artifact you can write into the space and read back into the application. It allows you to change or evolve your data model without ever taking down the Space. Change your application code to add additional properties or remove existing ones, and you're good to go. In addition, *old and new versions of the same Entity model can co-exist* since the space does not enforce any restriction with regards to the property set of `SpaceDocuments` belong to a certain type. `SpaceDocument` can be [mapped to a POJO|XAP91:Document-POJO Interoperability] during runtime allowing the application leverage POJO and evolve these as neeeded. You can also make the `SpaceDocument` type safe by [Extending SpaceDocument|XAP91:Extending Space Documents].
 
 !GRA:Images^document_arch.jpg|thumbnail!
 
 See the [Document Support|XAP91:Document (Schema-Free) API] for details.
 
-h1. Evolving Space Schema using a Map Field
+#  Evolving Space Schema using a Map Field
 
 With this approach you should have a "static portion" and a "dynamic portion" to the space object. The static portion will be using regular POJO primitive fields and the dynamic portion will be using a Map data type. The map keys would be indexed to allow you to query these "dynamic fields" once used. See:
 
@@ -64,17 +64,17 @@ See more:
 - [Matching Nested Maps|XAP91:SQLQuery#MatchingNestedMaps]
 - [Nested Object Indexing|XAP91:Indexing#Nestedpropertiesindexing]
 
-h1. Evolving Space Schema using Placeholder Fields
+#  Evolving Space Schema using Placeholder Fields
 
 The space model can be evolved using a few extra fields as part of the space class, which are used in future versions of the application. When using POJOs/PONOs/POCOs, these fields include getter/setter fields that include relevant façade methods once the actual business logic requests these. When dealing with Entry space classes, you can change the fields getter/setter methods. This is because these methods are not used when getting the class metadata (when the class is introduced to the space).
 
 (!) In most cases, the placeholder fields technique is the simplest one to use. It allows you to index future fields and its impact on the deployment is minimal.
 
-h1. Evolving Space Schema using Externalizable Implementation
+#  Evolving Space Schema using Externalizable Implementation
 
 This approach is the class serialization and de-serialization methods as transformation methods. This allows you to deploy version 1 and version 2 of the class simultaneously across different application instances. The space must have version 2 as part of its classpath. This option requires the space to be restarted with the new version of the classes. The `Externalizable` implementation needs to cope with removal of fields (in this case the data stream might contain additional data which must be skipped over), and with fields being added (in this case the data stream might not contain sufficient data, so the fields must be initialized properly).
 
-h1. Evolving Space Schema using Inheritance
+#  Evolving Space Schema using Inheritance
 
 You can evolve the space schema by downloading a codebase and using inheritance -- by adding a new Entry class type to your application. This class can extend an existing space Entry class. Clients are able to work with existing Entries, as well as the newly added Entry types.
 
@@ -90,7 +90,7 @@ h2. Example
 
 The system does not have to shut down during the process and clients are not interrupted.
 
-h1. Evolving Space Schema using Data Migration Tool
+#  Evolving Space Schema using Data Migration Tool
 
 With this pattern, a simple program should be created in order to transform a space Entry from one schema to another.
 

@@ -7,7 +7,7 @@ page_id: 47219379
 
 {summary:page|65}Writing your first RTD/UDF application using the GigaSpaces-Excel integration.{summary}
 {rate}
-h1. Overview
+#  Overview
 
 This section shows you how to write your first RTD or UDF application using the GigaSpaces-Excel integration.
 
@@ -15,7 +15,7 @@ This section shows you how to write your first RTD or UDF application using the 
 
 {include: Prerequisites - GigaSpaces-Excel Integration}
 
-h1. Writing Your First RTD/UDF Application
+#  Writing Your First RTD/UDF Application
 
 - In Visual Studio, create 2 new *Class Library* projects, one for UDF and one for RTD.
 - Add the `<GigaSpaces Root>\Bin\GigaSpaces.Core.dll` reference.
@@ -42,7 +42,7 @@ h1. Writing Your First RTD/UDF Application
 =RTD("[MY PROG ID]",,[MY PARAMETERS])
 {noformat}
 
-h1. What's Next?
+#  What's Next?
 
 {refer}See the [GigaSpaces-Excel Market-Data Example].{refer}
 {refer}Back to The [Excel that Scales Solution] section.{refer}

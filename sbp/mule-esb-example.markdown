@@ -16,7 +16,7 @@ Updated by: Rafi Pinto, R&D Solutions developer, GigaSpaces
 Date: March 2011
 {rate}
 
-h1. Overview
+#  Overview
 GigaSpaces [XAP8:Mule ESB] OpenSpaces comes with comprehensive support for Mule 3.1.0. It allows you to use the [Space as a Mule external transport|XAP8:Mule Event Container Transport], enabling receiving and dispatching of POJO messages over the Space.
 
 This [example|^Mule_Multi_service_Example.zip] illustrates distributed multi services mule application. The different mule services construct a simple workflow, where each service passes its outbound data into the next service in line via the Space. Each Service can run in a different machine(s) and [scale dynamically|#Scale Dynamically] or [manualy|#Scale Manually] in a different manner.
@@ -37,7 +37,7 @@ Each service with this example is packaged within its own [Processing Unit|XAP8:
 
 (!) The [Mule Queue Provider|XAP8:Mule Queue Provider] is not illustrated with this example. It is relevant for different use case where the Mule Services scales together with the Data-Grid and running within the same Processing Unit.
 
-h1. The Space Data Class
+#  The Space Data Class
 The Space Data Class is the POJO used as the "Queue" to coordinate the activities between the different services. Data Objects are consumed from the Data-Grid and written back into the Data-Grid by each Service. Here is the Data Space class definition:
 {code:Title=Data Space Class}
 @SpaceClass
@@ -59,7 +59,7 @@ public class Data implements Serializable {
 - The `type` field is the routing field used to load-balance state object across the different IMDG partitions.
 - The `state` field is the "Queue" used to determine the state of the Data object. This field is modified when the Data object is passing between the different Services. This field is indexed to allow fast search of matching objects when the different services consume these from the IMDG.
 
-h1. The Feeder Service
+#  The Feeder Service
 This service pushing data objects into the Data-Grid in periodic manner. These will be consumed by the Verifier Service. Here is the Feeder Service:
 {code:title=The Feeder Service}
 public class Feeder  {
@@ -111,7 +111,7 @@ Here is the Feeder Service Configuration:
 {code}
 {gcloak}
 
-h1. The Verifier Service
+#  The Verifier Service
 This service consumes Data objects with state=0 and transfer these into state=1.
 {code:title=The Verifier Service}
 public class Verifier {
@@ -169,7 +169,7 @@ The Verifier Service Configuration using a `polling-container` running in a [Non
 {code}
 {gcloak}
 
-h1. The Approver Service
+#  The Approver Service
 This service consumes Data objects with state=1 and transfer these into state=2.
 {code:title=The Approver Service}
 public class Approver {
@@ -225,7 +225,7 @@ The Approver Service Configuration using a `polling-container` running in a [Non
 {code}
 {gcloak}
 
-h1. Building the Example
+#  Building the Example
 1. Have the correct maven bin folder (located at `\gigaspaces-xap-premium-8.0.1\tools\maven\apache-maven-3.0.2\bin`) as part of the `PATH`.
 2. Have the GigaSpaces maven plug-in installed. See the [XAP8:Maven Plugin] for instructions how to install it.
 In general to install the GigaSpaces maven plug-in you should run the following:
@@ -249,7 +249,7 @@ Unix:
 
 Once the example libraries will be successfully created, you will be able to deploy the example.
 
-h1. Deploying the Example
+#  Deploying the Example
 In order to deploy the different Processing unit comprising this example:
 - Make sure you have the [libraries required|#Libraries Required] located at the correct location.
 - Start at least one GSM and several GSCs in the same machine on multiple different machines.
@@ -275,7 +275,7 @@ Once the different processing will be deployed you should have the following dis
 
 You may check the statistics you review the Write and Take operations called by the different Services when interacting with the Data-Grid.
 
-h1. Scale Manually
+#  Scale Manually
 You may have multiple instances of each service running. Running multiple instances of the Feeder service will push more Data objects into the Space. Running multiple services of the Approver or Verifier will consume relevant objects faster.
 {indent}!GRA:Images^mule_example_flow2.jpg!{indent}
 In order to increase the amount of the deployed services (Feeder, Approver or Verifier) , select the relevant processing unit and click the Increase button. See example below:
@@ -285,7 +285,7 @@ In order to increase the amount of the deployed services (Feeder, Approver or Ve
 {indent}!GRA:Screens^mule_scale_manual.jpg!{indent}
 A new instance of the relevant service will be created at of the existing running GSCs.
 
-h1. Scale Dynamically
+#  Scale Dynamically
 In many cases you might want to scale the mule services in a dynamic manner. Dynamic Scaling means increasing or decreasing the amount of active Mule services while the system is running to be able to consume/process incoming data faster/slower.
 
 The example includes a special processing Unit - The `Monitor` PU. This service monitors Data objects within the space with a specific state field value and increase/decrease the amount of the relevant Service instances while the system is running. You may run for example several `Feeder` instances to push more Data objects into the IMDG. In order there would not be generated a backlog of too many Data objects with `state=0` the `Monitor` Service will increase the amount of `Verifier` services. Once there is small amount of Data objects with `state=0` the `Monitor` service will decrease the amount of `Verifier` services instances running to maintain only one `Verifier` service instance running.
@@ -334,7 +334,7 @@ To scale Down the verifier Service undeploy the Feeder PU.
 The Monitor Service will decrement the amount of verifier instances when there will be 50 ,40 30 and 20 Data objects with `state=0` within the IMDG.
 {indent}!GRA:Images^mule_scale_d.jpg!{indent}
 
-h1. Transaction Support
+#  Transaction Support
 You may add [transaction support|XAP8:Mule Event Container Transport#Transaction Support] to the Mule Service by adding the `distributed-tx-manager` and the `tx-support` tags. Since we are using a clustered space we will be using the [Distributed Jini Transaction Manager|XAP8:Transaction Management#Distributed Jini Transaction Manager].
 
 (!) See also the [Polling Container Transaction Support|XAP8:Polling Container#Transaction Support] for additional details.
@@ -400,7 +400,7 @@ See below example:
 - The *default-timeout* parameter and the *custom-transaction timeout* parameter are in second units.
 - The receive-timeout , commit and abort timeout , lookup-timeout , duration and round-trip-time parameters are in millisecond units.{warning}
 
-h1. Libraries Required
+#  Libraries Required
 The [attached libraries|^mule-jars.zip] should be located at your `GigaSpaces Root\lib\platform\mule` folder before deploying the example. See below fill list of the libraries required to run this example:
 {code}
 backport-util-concurrent-3.1-osgi.jar

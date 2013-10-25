@@ -13,7 +13,7 @@ page_id: 48760469
 {tip}
 {rate}
 
-h1. Overview
+#  Overview
 
 The [attached example|^JMXSTAT.zip] illustrates usage of the JMX API, getting the JVM statistics and the Space statistics. The example collects statistics and generates a consolidated report of the space and its JVM activity.
 This example supports both clustered and single space. For clustered space the report will include statistics for all cluster space members.

@@ -15,7 +15,7 @@ page_id: 49414729
 {tip}
 {rate}
 
-h1. Overview
+#  Overview
 
 The [Map-Reduce|http://en.wikipedia.org/wiki/MapReduce] pattern is a popular pattern used in distributed systems to process data in parallel. This [example|^ExecutorExample.zip] illustrates the usage of [Executors Remoting|XAP8:Executor Based Remoting] (Service Executors) and [Task Executors|XAP8:Task Execution over the Space] to execute your business logic on a remote process that is collocated with a space in a parallel manner.
 
@@ -24,13 +24,13 @@ The [Map-Reduce|http://en.wikipedia.org/wiki/MapReduce] pattern is a popular pat
 
 In both cases, the business logic will be invoked with a collocated space.
 
-h1. Installing the Example
+#  Installing the Example
 
 - Download the [example|Map-Reduce Pattern - Executors Example^ExecutorExample.zip] and extract the zip file. Open your IDE and import the project files.
 - Set the project libraries to have the correct GigaSpaces libraries location. Make sure your project libraries list will include all the libraries located at `gigaspaces-xap\lib\required`.
 {indent}!project_libraries.jpg|thumbnail!{indent}
 
-h1. Executors Task Example
+#  Executors Task Example
 {toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
 The example will illustrate a simple map-reduce implementation.
 
@@ -214,7 +214,7 @@ You can view the space operations statistics by running the `\gigaspaces-xap\bin
 {indent}!exe_example_stats.jpg|thumbnail!{indent}
 {toc-zone}
 
-h1. Service Executors Example
+#  Service Executors Example
 {toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
 The example will have a clustered space with a collocated service running. A client will be invoking the service:
 !GRA:Images^Executor1.jpg!

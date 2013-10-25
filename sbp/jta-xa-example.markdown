@@ -15,7 +15,7 @@ page_id: 55938209
 {tip}
 {rate}
 
-h1. Overview
+#  Overview
 
 Integrating GigaSpaces with an external JMS Servers is demonstrated in this page. This example shows how GigaSpaces event container can process events and send JMS messages to a external JMS server all under one distributed transaction.
 {note} Use of distributed transactions is done as a demonstration. Use this with caution, in production applications this can be expensive and have a performance penalty. Well known patterns like [Idempotent Receiver|http://www.eaipatterns.com/IdempotentReceiver.html] are potential alternatives to distributed transactions. {note}

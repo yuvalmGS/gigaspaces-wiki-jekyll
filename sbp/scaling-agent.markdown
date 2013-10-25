@@ -12,7 +12,7 @@ Using XAP:*7.0GA*
 JDK:*Sun JDK 1.6*
 Date: September 2009
 {rate}
-h1. Overview
+#  Overview
 The [Administration and Monitoring API|XAP8:Administration and Monitoring API] allows you to monitor the application health and its resources to enforce a specific pre-defined configurable SLA that will scale the application while it is running. This ensures deterministic response time when there is increasing amount of users accessing the system and the high-availability and robustness of the application.
 !GRA:Images^scaling_agent.jpg!
 The following example illustrates how you can construct a simple processing unit (*The Scaling Agent*) to monitor a web application deployed into GigaSpaces and track the web requests routed to the web application. Once the total average amount of the HTTP requests served by the current running web application instances breach a pre-defined upper or lower limit, the scaling agent will react and perform the necessary activities to scale the web application tier (add or remove instances).
@@ -21,7 +21,7 @@ The activities to scale up the application (add more instances) could be startin
 
 {tip}See the [Mule ESB Example|Mule ESB Example#Scale Dynamically] for an advanced usage of the Administration and Monitoring API{tip}
 
-h1. How the Scaling Agent works?
+#  How the Scaling Agent works?
 The scaling agent sample periodically the amount of HTTP requests served by the running web application instances and compares the total amount of recent requests with the current ones (`getAverageRequests`). If the average amount of requests is larger than the maximum amount of Requests Per Instance threshold (which has been pre-defined as part of the processing unit configuration) the scaling agent scales up the application by starting a new GSC and increasing the amount of instances (see the `scaleUp()` method).
 
 {tip}The [WebScale.zip|^WebScale.zip] includes the source and configuration described below.{tip}

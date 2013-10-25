@@ -14,7 +14,7 @@ page_id: 56429380
 {tip}
 {rate}
 
-h1. Overview
+#  Overview
 This is a demo of a trading settlement system.  Settlement occurs after a trade, and involves the delivery of securities for payment between one party and another.  Because the demo operates in real-time, it can be expanded to provide risk management or be integrated with a rules engine for complex event processing (CEP).
 
 Due to the speed at which markets move today, reliable risk assessment requires the ability to analyze trades and their impact on a portfolio in as close to real-time as possible.  In addition, having a [straight-through processing|http://en.wikipedia.org/wiki/Straight-through_processing] capability provides major benefits for risk and cost reduction. This demo illustrates how such minimum-latency systems can be built and we do so with the entire tier-based architecture built on GigaSpaces, including the following components:
@@ -39,7 +39,7 @@ The following GigaSpaces features are utilized:
 - Elastic Processing Unit
 - Document API
 
-h1. Architecture
+#  Architecture
 
 Blotter clients connect to the servlet through HTTP.  The blotter displays user trades, counter-party trades and matched deals.  It is also used to control the feeder.
 
@@ -60,7 +60,7 @@ The [mirror service|http://www.gigaspaces.com/wiki/display/XAP8/Asynchronous+Per
 
 !SA-Architecture.png!
 
-h1. Processing Unit Relationships and Events
+#  Processing Unit Relationships and Events
 
 The feeder, web servlet, monitor, messaging and mirror are deployed as [Processing Units (PUs)|http://www.gigaspaces.com/wiki/display/XAP8/A+Typical+SBA+Application].
 
@@ -72,7 +72,7 @@ Deal matching uses a [polling container|http://www.gigaspaces.com/wiki/display/X
 
 !SA-PUs.png!
 
-h1. Key Features
+#  Key Features
 h2. Event Processing for Trade Matching
 Trade matching for deals is based on the following fields: trading party, counter-party, instrument, matched flag, and buy/sell flag.  A polling container receives an event for each unprocessed trade in the space, and the matching process is done by transaction.
 
@@ -210,7 +210,7 @@ HTTP Sessions are maintained in the space and a copy is also kept in a [local ca
 jetty.sessions.spaceUrl=jini://*/*/settlementSpace?useLocalCache
 {code}
 
-h1. Running the Demo
+#  Running the Demo
 - *Download* the [TradingSettlement.zip|Trading Settlement^TradingSettlement.zip] file and *extract* it into an empty folder.
 - *Move* into the settlement-app folder.
 - *Rename* the files ending in *.at* to *.bat*.
@@ -235,5 +235,5 @@ h1. Running the Demo
 - When the number of com.gigaspaces.settlement.model.Trade object > 50 (use the GS-UI - Data Type List for the settlementSpace to see the amount of objects), the settlementSpace will scale up by creating 2 additional GSCs. See the Hosts view.
 - You can scale the application down by clicking on the Administration tab and then clicking on Clear Trades.
 
-h1. Questions and Feedback
+#  Questions and Feedback
 [mailto:nleitman@gigaspaces.com]

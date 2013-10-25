@@ -19,11 +19,11 @@ page_id: 63799346
 {column}
 {section}
 
-h1. Overview
+#  Overview
 
 This example demonstrates a simple processing unit architecture project -- a complete SBA application that can easily scale. It demonstrates a usage of GigaSpaces's SBA related components, such as [Event Listener Container|Event Driven Architecture], [Space Based Remoting|Space Based Remoting] and the [Basic Processing Unit Container|Basic Processing Unit Container].
 
-h1. Architecture
+#  Architecture
 
 This example includes a module that is deployed to the grid, and a domain model that consists of `Data` objects. The [DataFeeder|#datafeeder] module runs within a [Basic Processing Unit Container|Basic Processing Unit Container] and writes `Data` objects with raw data into the remote space. The space is actually embedded within the other Processing Unit Container, which runs the [DataProcessor|#dataprocessor] module.
 
@@ -41,7 +41,7 @@ h2. Application Workflow
 - The [DataFeeder|#datafeeder] writes non-processed `Data` objects into the space every second.
 - The [DataProcessor|#dataprocessor] takes non-processed `Data` objects, processes them, and writes the processed `Data` objects back to the space.
 
-h1. Data Domain Model
+#  Data Domain Model
 
 The only object in our model is the `Data` object.
 
@@ -299,7 +299,7 @@ We configure a remote proxy to the cluster which is used by the feeder in order 
 
 The `Feed()` method does the actual work, by creating a new `Data` object with random data in an unprocessed state every second, and feeds it to the cluster. Additionaly every number of iterations it displays the statistics of processing of a certain type by executing a remote service which the processors expose. It does so by using an [Executor based remoting proxy|Executor Based Remoting] to the remote service which is hosted in the grid.
 
-h1. Building the Example
+#  Building the Example
 
 This example includes `compile.bat` script.
 
@@ -312,7 +312,7 @@ This compiles all the related projects and creates the processing unit dlls insi
 
 {anchor:deployment}
 
-h1. Deployment
+#  Deployment
 
 There are a few ways to deploy the Processing Units:
 

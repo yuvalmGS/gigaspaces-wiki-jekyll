@@ -19,7 +19,7 @@ page_id: 63799316
 {column}
 {section}
 
-h1. Overview
+#  Overview
 
 The .NET-Java  Example illustrates basic interoperability operations between Java and .NET space proxies.
 
@@ -82,7 +82,7 @@ public class Person
 {Code}|
 For more details about .NET-Java Interoperability and designing the interoperable classes, refer to [.NET-Java Interoperability|http://www.gigaspaces.com/wiki/display/XAP66/.NET-Java+Interoperability]
 
-h1. Building and Running the Example
+#  Building and Running the Example
 - Build the .NET application, using compileC#.bat (You can also build the DotNetJavaDemo.sln from Visual Studio).
 - Build the Java application, using compileJava.bat.
 - Start a remote space, using startAll.bat. The .NET and Java applications use this space to communicate.
