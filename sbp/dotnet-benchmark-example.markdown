@@ -100,12 +100,11 @@ GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.I
 Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.
 
 1. Use the Benchmark Framework:
-- write space operation classes, by extending the framework's BenchmarkStandard abstact class, and using the framework's interfaces: IBenchmarkContainer, IBenchmarkObjectAdapter.
-- write your own object, or use the Person (Benchmark\Objects\Person.cs) and the PersonAdapter (Benchmark\ObjectAdapters\PersonAdapter.cs) as a template.
-
+    - write space operation classes, by extending the framework's BenchmarkStandard abstact class, and using the framework's interfaces: IBenchmarkContainer, IBenchmarkObjectAdapter.
+    - write your own object, or use the Person (Benchmark\Objects\Person.cs) and the PersonAdapter (Benchmark\ObjectAdapters\PersonAdapter.cs) as a template.
 2. Prepare the inputs for your benchmark run:
-- Adjust the configuration parameters in the input xml file:
-- Type your object definition
+    - Adjust the configuration parameters in the input xml file:
+    - Type your object definition
 
 {code}
 <type>GigaSpaces.Core.Benchmarks.Implementations.Basic.ReadBenchmark`2

@@ -80,13 +80,13 @@ You can evolve the space schema by downloading a codebase and using inheritance 
 
 ## Example
 
-- Class A is written to a space by client X.
-- Class A is taken or read from the space by client Y, using a template based on A.
-- At some point, an A' class is created, which extends A.
-- Entries from type A' are written to the space by client Z.
-- Class A' metadata is acquired by the space server via a codebase from client Z.
-- Client X now receives Entries from type A', and A' metadata is acquired by client X from the client Z codebase.
-- Client X continues to typecast A' to A, and to work with Entries of type A', as if they were of type A.
+1. Class A is written to a space by client X.
+2. Class A is taken or read from the space by client Y, using a template based on A.
+3. At some point, an A' class is created, which extends A.
+4. Entries from type A' are written to the space by client Z.
+5. Class A' metadata is acquired by the space server via a codebase from client Z.
+6. Client X now receives Entries from type A', and A' metadata is acquired by client X from the client Z codebase.
+7. Client X continues to typecast A' to A, and to work with Entries of type A', as if they were of type A.
 
 The system does not have to shut down during the process and clients are not interrupted.
 

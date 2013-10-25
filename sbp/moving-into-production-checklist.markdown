@@ -193,32 +193,32 @@ call gs-agent.bat
 
 ## Running Multiple Groups
 You may have a set of LUS/GSM managing GSCs associated to a specific group. Let's assume you would like to "break" your network into 2 groups. Here is how you should start the GigaSpaces runtime environment:
-- Run gs-agent starting LUS/GSM with GroupX:
+1. Run gs-agent starting LUS/GSM with GroupX:
 {code}
 export LOOKUPGROUPS=GroupX
 gs-agent.sh gsa.global.lus 0 gsa.lus 1 gsa.global.gsm 0 gsa.gsm 1 gsa.gsc 0
 {code}
-- Run gs-agent that will start GSCs with GroupX (4 GGCs with this example):
+2. Run gs-agent that will start GSCs with GroupX (4 GGCs with this example):
 {code}
 export LOOKUPGROUPS=GroupX
 gs-agent.sh gsa.global.lus 0 gsa.lus 0 gsa.global.gsm 0 gsa.gsm 0 gsa.gsc 4
 {code}
-- Run gs-agent starting LUS/GSM with GroupY:
+3. Run gs-agent starting LUS/GSM with GroupY:
 {code}
 export LOOKUPGROUPS=GroupX
 gs-agent.sh gsa.global.lus 0 gsa.lus 1 gsa.global.gsm 0 gsa.gsm 1 gsa.gsc 0
 {code}
-- Run gs-agent that will start GSCs with GroupY (2 GGCs with this example):
+4. Run gs-agent that will start GSCs with GroupY (2 GGCs with this example):
 {code}
 export LOOKUPGROUPS=GroupY
 gs-agent.sh gsa.global.lus 0 gsa.lus 0 gsa.global.gsm 0 gsa.gsm 0 gsa.gsc 2
 {code}
-- Deploy a space into GroupX GSCs
+5. Deploy a space into GroupX GSCs
 {code}
 export LOOKUPGROUPS=GroupX
 gs deploy-space -cluster schema=partitioned total_members=4 spaceX
 {code}
-- Deploy a space into GroupY GSCs
+6. Deploy a space into GroupY GSCs
 {code}
 export LOOKUPGROUPS=GroupY
 gs deploy-space -cluster schema=partitioned total_members=2 spaceY
@@ -226,38 +226,38 @@ gs deploy-space -cluster schema=partitioned total_members=2 spaceY
 
 ## Running Multiple Locators
 You may have a set of LUS/GSM managing GSCs associated to a specific locaator. Let's assume you would like to "break" your network into 2 groups using different lookup locators. Here is how you should start the GigaSpaces runtime environment:
-- Run gs-agent starting LUS/GSM with a lookup service listening on port 8888:
+1. Run gs-agent starting LUS/GSM with a lookup service listening on port 8888:
 {code}
 export LUS_JAVA_OPTIONS=-Dcom.sun.jini.reggie.initialUnicastDiscoveryPort=8888
 export LOOKUPLOCATORS=127.0.0.1:8888
 export EXT_JAVA_OPTIONS=-Dcom.gs.multicast.enabled=false
 gs-agent.sh gsa.global.lus 0 gsa.lus 1 gsa.global.gsm 0 gsa.gsm 1 gsa.gsc 0
 {code}
-- Run gs-agent that will start GSCs using the lookup listening on port 8888 (4 GGCs with this example):
+2. Run gs-agent that will start GSCs using the lookup listening on port 8888 (4 GGCs with this example):
 {code}
 export LOOKUPLOCATORS=127.0.0.1:8888
 export EXT_JAVA_OPTIONS=-Dcom.gs.multicast.enabled=false
 gs-agent.sh gsa.global.lus 0 gsa.lus 0 gsa.global.gsm 0 gsa.gsm 0 gsa.gsc 4
 {code}
-- Run gs-agent starting LUS/GSM with a lookup service listening on port 9999:
+3. Run gs-agent starting LUS/GSM with a lookup service listening on port 9999:
 {code}
 export LUS_JAVA_OPTIONS=-Dcom.sun.jini.reggie.initialUnicastDiscoveryPort=9999
 export LOOKUPLOCATORS=127.0.0.1:8888
 export EXT_JAVA_OPTIONS=-Dcom.gs.multicast.enabled=false
 gs-agent.sh gsa.global.lus 0 gsa.lus 1 gsa.global.gsm 0 gsa.gsm 1 gsa.gsc 0
 {code}
-- Run gs-agent that will start GSCs using the lookup listening on port 9999 (2 GGCs with this example):
+4. Run gs-agent that will start GSCs using the lookup listening on port 9999 (2 GGCs with this example):
 {code}
 export LOOKUPLOCATORS=127.0.0.1:9999
 export EXT_JAVA_OPTIONS=-Dcom.gs.multicast.enabled=false
 gs-agent.sh gsa.global.lus 0 gsa.lus 0 gsa.global.gsm 0 gsa.gsm 0 gsa.gsc 2
 {code}
-- Deploy a space using lookup listening on port 8888
+5. Deploy a space using lookup listening on port 8888
 {code}
 export LOOKUPLOCATORS=127.0.0.1:8888
 gs deploy-space -cluster schema=partitioned total_members=4 spaceX
 {code}
-- Deploy a space using lookup listening on port 9999
+6. Deploy a space using lookup listening on port 9999
 {code}
 export LOOKUPLOCATORS=127.0.0.1:9999
 gs deploy-space -cluster schema=partitioned total_members=2 spaceY
@@ -287,14 +287,14 @@ gs-agent gsa.gsc 2
 
 ## Running Multiple Zones
 You may have a set of LUS/GSM managing multiple zones (recommended) or have a separate LUS/GSM set per zone. In such a case (set of LUS/GSM managing multiple zones) you should run these in the following manner:
-- Run gs-agent on the machines you want to have the LUS/GSM:
+1. Run gs-agent on the machines you want to have the LUS/GSM:
 {code}gs-agent.sh gsa.global.lus 0 gsa.lus 1 gsa.global.gsm 0 gsa.gsm 1 gsa.gsc 0{code}
-- Run gs-agent that will start GSCs with zoneX (4 GGCs with this example):
+2. Run gs-agent that will start GSCs with zoneX (4 GGCs with this example):
 {code}
 export EXT_JAVA_OPTIONS=-Dcom.gs.zones=zoneX ${EXT_JAVA_OPTIONS}
 gs-agent.sh gsa.global.lus 0 gsa.lus 0 gsa.global.gsm 0 gsa.gsm 0 gsa.gsc 4
 {code}
-- Run gs-agent that will start GSCs with zoneY (2 GGCs with this example):
+3. Run gs-agent that will start GSCs with zoneY (2 GGCs with this example):
 {code}
 export EXT_JAVA_OPTIONS=-Dcom.gs.zones=zoneY ${EXT_JAVA_OPTIONS}
 gs-agent.sh gsa.global.lus 0 gsa.lus 0 gsa.global.gsm 0 gsa.gsm 0 gsa.gsc 2

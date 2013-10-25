@@ -17,10 +17,10 @@ This pattern is based on the [GigaSpaces master-worker pattern|Master-Worker Pat
 A typical use-case for this pattern is a Value at Risk (VAR) calculation. The Excel user initiates a command to start a VAR calculation with specific parameters. This command is updated in the space using UDF. Once the command arrives, multiple Processing Units (PU) or spaces workers "pick up" the VAR task, execute it in parallel, and return the completed calculation result to the space (for example, with the status `done`). The completed results are then pushed to the Excel spreadsheet using RTD, which "listens" for a specific notification (for example, objects with status `done`); thus completing the workflow.
 
 Using this pattern is divided into 4 main steps:
-- [Loading your data to the space|#1 -- Loading Data].
-- [Implementing the algorithm|#2 -- Implementing Algorithm] that performs the desired calculation *inside the space*.
-- [Implementing a start trigger|#Implementing Start Trigger and Passing Parameters] by which Excel tells the space to begin calculating, and passing the relevant parameters from Excel to the space.
-- [Implementing a finish trigger|#Implementing Finish Trigger] by which the space tells Excel that it has finished calculating, and displays the results into the Excel spreadsheet.
+1. [Loading your data to the space|#1 -- Loading Data].
+2. [Implementing the algorithm|#2 -- Implementing Algorithm] that performs the desired calculation *inside the space*.
+3. [Implementing a start trigger|#Implementing Start Trigger and Passing Parameters] by which Excel tells the space to begin calculating, and passing the relevant parameters from Excel to the space.
+4. [Implementing a finish trigger|#Implementing Finish Trigger] by which the space tells Excel that it has finished calculating, and displays the results into the Excel spreadsheet.
 
 ## 1 -- Loading Data
 

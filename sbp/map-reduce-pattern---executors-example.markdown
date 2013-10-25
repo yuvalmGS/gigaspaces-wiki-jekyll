@@ -26,8 +26,8 @@ In both cases, the business logic will be invoked with a collocated space.
 
 # Installing the Example
 
-- Download the [example|Map-Reduce Pattern - Executors Example^ExecutorExample.zip] and extract the zip file. Open your IDE and import the project files.
-- Set the project libraries to have the correct GigaSpaces libraries location. Make sure your project libraries list will include all the libraries located at `gigaspaces-xap\lib\required`.
+1. Download the [example|Map-Reduce Pattern - Executors Example^ExecutorExample.zip] and extract the zip file. Open your IDE and import the project files.
+2. Set the project libraries to have the correct GigaSpaces libraries location. Make sure your project libraries list will include all the libraries located at `gigaspaces-xap\lib\required`.
 {indent}!project_libraries.jpg|thumbnail!{indent}
 
 # Executors Task Example
@@ -225,10 +225,10 @@ The results created at each partition will be sent to the client. These will be 
 
 This example illustrates simple Service Executors usage in *Synchronous* mode and *Asynchronous* mode.
 Your code should have the following implemented:
-- Service Interface
-- Service Implementation
-- Service Result Reducer (Client Side)
-- Client
+1. Service Interface
+2. Service Implementation
+3. Service Result Reducer (Client Side)
+4. Client
 
 ## The Service Interface
 
@@ -353,10 +353,10 @@ Integer result = dataProcessor.processData("A" + count);
 System.out.println(new Time(System.currentTimeMillis()) + " - Client got Result:" + result.intValue() );
 {code}
 
-- The client getting a proxy to a remote space
-- The client constructing Service proxy using the `ExecutorRemotingProxyConfigurer`. The `DataProcessorServiceReducer` is used when constructing Service proxy .
-- The client invokes the service in *Synchronous* mode
-- The result is being displayed.
+1. The client getting a proxy to a remote space
+2. The client constructing Service proxy using the `ExecutorRemotingProxyConfigurer`. The `DataProcessorServiceReducer` is used when constructing Service proxy .
+3. The client invokes the service in *Synchronous* mode
+4. The result is being displayed.
 
 ## Running the Example
 

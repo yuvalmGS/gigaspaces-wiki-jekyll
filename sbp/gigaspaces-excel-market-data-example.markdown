@@ -48,27 +48,27 @@ The .NET files are created in the `<Example Root>\Release` directory.
 
 # Adding UDF Function to Excel
 
-- In Excel, go to *Tools* > *add ins* > *automation*.
-- Scroll down to *GigaSpaces.Examples.ExcelStocks.Operations.StockOperations*, select it and click *OK*.
+1. In Excel, go to *Tools* > *add ins* > *automation*.
+2. Scroll down to *GigaSpaces.Examples.ExcelStocks.Operations.StockOperations*, select it and click *OK*.
 {indent}!automation.JPG!{indent}
-- You might get a dialog at this point about mscoree.dll. Click No to this dialog (Yes will delete the add-in from the list).
+3. You might get a dialog at this point about mscoree.dll. Click No to this dialog (Yes will delete the add-in from the list).
 {indent}!mscoree_dll.JPG!{indent}
-- Click *OK* in the Add-ins dialog.
+4. Click *OK* in the Add-ins dialog.
 {indent}!add-ins.JPG!{indent}
 
 ## Opening .NET Solution with Microsoft Visual Studio
 
-- Double-click the `ExcelStocks.sln` file, according to the version of Visual Studio you are using.
-- Choose *Build* > *Build Solution*. The files: `StockEntities.dll`, `StockOperations.dll(UDF)`, `StockQuote.dll(RTD)` and `StockMarketFeeder.exe(Market feeder)`  are created in the `Release` subdirectory.
+1. Double-click the `ExcelStocks.sln` file, according to the version of Visual Studio you are using.
+2. Choose *Build* > *Build Solution*. The files: `StockEntities.dll`, `StockOperations.dll(UDF)`, `StockQuote.dll(RTD)` and `StockMarketFeeder.exe(Market feeder)`  are created in the `Release` subdirectory.
 
 # Running the Example
 
 (!) The example must be compiled before you run it (see [Building the Example|#building] above).
-- Start the GigaSpaces environment: `<Example Root>\bin\startAll.bat`.
-- Run the GigaSpaces Management Center `(<GigaSpaces Root>\Bin\Gs-ui.exe`) to see the *`GigaSpaces.Examples.ExcelStocks.StockEntities.StockData`* instances. To view only the relevant spaces:
-    - In the top menu bar, choose *Settings* > *Discovery* > *Group management*.
-    - Select only the *Excel* group, unselect all the rest.
-- Open the Excel file `<Example Root>\Chart.xls`.
+1. Start the GigaSpaces environment: `<Example Root>\bin\startAll.bat`.
+2. Run the GigaSpaces Management Center `(<GigaSpaces Root>\Bin\Gs-ui.exe`) to see the *`GigaSpaces.Examples.ExcelStocks.StockEntities.StockData`* instances. To view only the relevant spaces:
+    1. In the top menu bar, choose *Settings* > *Discovery* > *Group management*.
+    2. Select only the *Excel* group, unselect all the rest.
+3. Open the Excel file `<Example Root>\Chart.xls`.
 
 # Example Scripts
 

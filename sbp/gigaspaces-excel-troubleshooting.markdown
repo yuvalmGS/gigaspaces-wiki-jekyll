@@ -16,5 +16,5 @@ page_id: 47218928
 
 Writing applicative UDF/RTD:
 
-- Comment the space API calls inside UDF/RTD code and make it return constant values.
-- Create a console or Win-form application that hosts the UDF/RTD DLL and debug it directly to solve the function implementation problems.
+1. Comment the space API calls inside UDF/RTD code and make it return constant values.
+2. Create a console or Win-form application that hosts the UDF/RTD DLL and debug it directly to solve the function implementation problems.

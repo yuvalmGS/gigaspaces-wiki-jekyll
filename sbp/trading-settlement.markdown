@@ -212,29 +212,29 @@ jetty.sessions.spaceUrl=jini://*/*/settlementSpace?useLocalCache
 {code}
 
 # Running the Demo
-- *Download* the [TradingSettlement.zip|Trading Settlement^TradingSettlement.zip] file and *extract* it into an empty folder.
-- *Move* into the settlement-app folder.
-- *Rename* the files ending in *.at* to *.bat*.
-- *Edit* setExampleEnv.bat and change JAVA_HOME and JSHOMEDIR.
-- *Add* \gigaspaces-xap-premium-8.0.4-ga\tools\maven\apache-maven-3.0.2\bin to you *path*.
-- *Run* \gigaspaces-xap-premium-8.0.4-ga\tools\maven\installmavenrep.bat.
-- *Build* the demo by *running* the following command:  mvn package
-- *Execute* the demo by running the start and deploy scripts in the following order:
-    1. *gs-agent-esm.bat*: starts the GigaSpaces agent in elastic deployment mode
-    1. *gs-ui.bat*: starts the GigaSpaces user interface
-    1. *start-hsqldb.bat*: starts the HSQL database
-    1. *start-DatabaseManager.bat*: starts the HSQL database manager
-    1. *deploy-app.bat*
-    1. *deploy-messaging.bat*
-    1. *deploy-feeder.bat*
-    1. *deploy-monitor.bat*
-    1. *deploy-mirror.bat*
-    1. *deploy-blotter.bat* (could take up to 10 minutes to deploy)
-- *Connect* to the blotter (gwt-dealsBlotter processing unit) using your browser (http://127.0.0.1:8080/gwt-dealsBlotter/).
-- *Log in* with username that matches this format:  <any characters>@<trading entity> where <trading entity> = bank1 or cust1 or bank2 or cust2, etc.  For example, username = 123@bank1.  Password can be any characters.
-- *Start* the application by clicking on the Administration tab and then clicking Start Feeder. You can Speed up the feeder rate by decreasing the refresh Interval to 1000 and clicking the Start Feeder.
-- When the number of com.gigaspaces.settlement.model.Trade object > 50 (use the GS-UI - Data Type List for the settlementSpace to see the amount of objects), the settlementSpace will scale up by creating 2 additional GSCs. See the Hosts view.
-- You can scale the application down by clicking on the Administration tab and then clicking on Clear Trades.
+1. *Download* the [TradingSettlement.zip|Trading Settlement^TradingSettlement.zip] file and *extract* it into an empty folder.
+2. *Move* into the settlement-app folder.
+3. *Rename* the files ending in *.at* to *.bat*.
+4. *Edit* setExampleEnv.bat and change JAVA_HOME and JSHOMEDIR.
+5. *Add* \gigaspaces-xap-premium-8.0.4-ga\tools\maven\apache-maven-3.0.2\bin to you *path*.
+6. *Run* \gigaspaces-xap-premium-8.0.4-ga\tools\maven\installmavenrep.bat.
+7. *Build* the demo by *running* the following command:  mvn package
+8. *Execute* the demo by running the start and deploy scripts in the following order:
+    - *gs-agent-esm.bat*: starts the GigaSpaces agent in elastic deployment mode
+    - *gs-ui.bat*: starts the GigaSpaces user interface
+    - *start-hsqldb.bat*: starts the HSQL database
+    - *start-DatabaseManager.bat*: starts the HSQL database manager
+    - *deploy-app.bat*
+    - *deploy-messaging.bat*
+    - *deploy-feeder.bat*
+    - *deploy-monitor.bat*
+    - *deploy-mirror.bat*
+    - *deploy-blotter.bat* (could take up to 10 minutes to deploy)
+9. *Connect* to the blotter (gwt-dealsBlotter processing unit) using your browser (http://127.0.0.1:8080/gwt-dealsBlotter/).
+10. *Log in* with username that matches this format:  <any characters>@<trading entity> where <trading entity> = bank1 or cust1 or bank2 or cust2, etc.  For example, username = 123@bank1.  Password can be any characters.
+11. *Start* the application by clicking on the Administration tab and then clicking Start Feeder. You can Speed up the feeder rate by decreasing the refresh Interval to 1000 and clicking the Start Feeder.
+12. When the number of com.gigaspaces.settlement.model.Trade object > 50 (use the GS-UI - Data Type List for the settlementSpace to see the amount of objects), the settlementSpace will scale up by creating 2 additional GSCs. See the Hosts view.
+13. You can scale the application down by clicking on the Administration tab and then clicking on Clear Trades.
 
 # Questions and Feedback
 [mailto:nleitman@gigaspaces.com]

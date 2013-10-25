@@ -125,31 +125,29 @@ sessionDAO = org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO
 sessionManager.sessionDAO = $sessionDAO
 
 sessionDAO.activeSessionsCacheName = jini://*/*/sessionSpace
-- ensure the securityManager uses our native SessionManager:
+# ensure the securityManager uses our native SessionManager:
 securityManager.sessionManager = $sessionManager
 
-- whatever your CacheManager implementation is, for example:
+# whatever your CacheManager implementation is, for example:
 cacheManager = org.openspaces.sessions.shiro.GigaCacheManager
 
-- Session data TTL/Lease in milliseconds
-- In a multi container non-sticky mode, session should expire from GigaSpaces based on sessions last accessed time
-- Default lease is 30 minutes - 30 * 60 * 1000 = 1800000
+# Session data TTL/Lease in milliseconds
+# In a multi container non-sticky mode, session should expire from GigaSpaces based on sessions last accessed time
+# Default lease is 30 minutes - 30 * 60 * 1000 = 1800000
 cacheManager.sessionLease = 1800000
 
-- This will use GigaSpaces for _all_ of Shiro's caching needs (realms, etc), # not just for Session storage.
+# This will use GigaSpaces for _all_ of Shiro's caching needs (realms, etc), # not just for Session storage.
 securityManager.cacheManager = $cacheManager
 
-- Session validation
+# Session validation
 sessionValidationScheduler = org.apache.shiro.session.mgt.ExecutorServiceSessionValidationScheduler
 
-- Session timeout
+# Session timeout
 securityManager.sessionManager.defaultSessionTimeout = 1800000
 
-- Default is 3,600,000 millis = 1 hour:
+# Default is 3,600,000 millis = 1 hour:
 sessionValidationScheduler.interval = 1800000
-
 sessionValidationScheduler.sessionManager = $sessionManager
-
 securityManager.sessionManager.sessionValidationScheduler = $sessionValidationScheduler
 {code}
 
@@ -189,21 +187,21 @@ The [WAN Gateway|XAP9:Multi-Site Replication over the WAN] should be deployed us
 There are cases when applications store session data which is not defined as serializable. To support non-serializable session data you can configure the session manager to serializable session to XML by defining following parameter in `shiro.ini` file mentioned above,
 
 {code}
-- Session serializationType - JAVA/XML (default JAVA)
+# Session serializationType - JAVA/XML (default JAVA)
 cacheManager.serializationType = XML
 {code}
 
 Session manager uses XStream libraries for serializing session data to XML. XStream serialization can be further customized, application can configure GigaSpaces session manager to use Refection Converter for Externalizable classes and register custom converters. Following two parameters in `shiro.ini` file can help in customizing serialization,
 
 {code}
-- When using Externalizable classes with customized serialization and want to stick to serialization based on Reflection enable this option
-- Default value is false
-- cacheManager.registerReflectionConverter = true
+# When using Externalizable classes with customized serialization and want to stick to serialization based on Reflection enable this option
+# Default value is false
+# cacheManager.registerReflectionConverter = true
 
-- List of XStream converters that application would like to register
-- (Expecting that these are part of classpath or WEB-INF/lib)
-- Pass them comma separated
-- cacheManager.converterNameList = org.openspaces.xtreme.converter.XmlCalendarConverter
+# List of XStream converters that application would like to register
+# (Expecting that these are part of classpath or WEB-INF/lib)
+# Pass them comma separated
+# cacheManager.converterNameList = org.openspaces.xtreme.converter.XmlCalendarConverter
 {code}
 
 ##### Secured GigaSpaces cluster
@@ -211,23 +209,23 @@ Session manager uses XStream libraries for serializing session data to XML. XStr
 When using a [Secure GigaSpaces cluster|XAP9:Securing your Data] you can pass security credentials using following parameters in `shiro.ini` file,
 
 {code}
-- When using secured GigaSpace cluster, pass the credentials here
-- cacheManager.username = gs
-- cacheManager.password = gs
+# When using secured GigaSpace cluster, pass the credentials here
+# cacheManager.username = gs
+# cacheManager.password = gs
 {code}
 
 # Http Session Web Application Example
 
 ## Single-Site Deployment
 The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish....).
-- Download the [HttpSession.war|^HttpSession.war].
-- Deploy a space named *sessionSpace*. You can start the `GigaSpaces root/bin/gsInstance.sh/bat` for a single instance space or deploy a clustered space using the command line or GS-UI.
-- Deploy the HttpSession.war into Tomcat (or any other app server).
-- Start your browser and access the web application via the following URL: http://localhost:8080/HttpSession
+1. Download the [HttpSession.war|^HttpSession.war].
+2. Deploy a space named *sessionSpace*. You can start the `GigaSpaces root/bin/gsInstance.sh/bat` for a single instance space or deploy a clustered space using the command line or GS-UI.
+3. Deploy the HttpSession.war into Tomcat (or any other app server).
+4. Start your browser and access the web application via the following URL: http://localhost:8080/HttpSession
 {note}The URL above assumes the Web Server configured to use port 8080.{note}
 {indent}!httpSessionSharing4.jpg!{indent}
-- Set some values for the Session Name and Attribute and click the *Update Session* button.
-- View the session within the space via the GS-UI. Click the Data-Types icon , click the `org.openspaces.sessions.shiro.SpaceSession` class and Click the query button. The Query view will be displayed. You can double click any of the sessions and drill into the attributes map within the session to view the session attributes:
+5. Set some values for the Session Name and Attribute and click the *Update Session* button.
+6. View the session within the space via the GS-UI. Click the Data-Types icon , click the `org.openspaces.sessions.shiro.SpaceSession` class and Click the query button. The Query view will be displayed. You can double click any of the sessions and drill into the attributes map within the session to view the session attributes:
 {indent}!httpSessionSharing5.jpg|thumbnail!{indent}
 
 ### Multi-Web Servers Deployment
@@ -241,9 +239,9 @@ Hit the Refresh button when switching between the tabs. The session data will be
 
 ### Load-Balancer
 Another option would be to use a load-balancer such as the [apache httpd|http://httpd.apache.org] and configure it to load-balance the web requests between the different web servers. Here is a simple setup:
-- Install [apache httpd|http://httpd.apache.org].
-- Create a file named `HttpSession.conf` located at <Apache HTTPD 2.2 root>\conf\gigaspaces
-- Place the following within the `HttpSession.conf` file. The `BalancerMember` should be mapped to different URLs of your web servers instances. With the example below we have Tomcat using port 8080 and Websphere using port 9080.
+1. Install [apache httpd|http://httpd.apache.org].
+2. Create a file named `HttpSession.conf` located at <Apache HTTPD 2.2 root>\conf\gigaspaces
+3. Place the following within the `HttpSession.conf` file. The `BalancerMember` should be mapped to different URLs of your web servers instances. With the example below we have Tomcat using port 8080 and Websphere using port 9080.
 {code}
 <VirtualHost *:8888>
   ProxyPass / balancer://HttpSession_cluster/
@@ -257,7 +255,7 @@ Another option would be to use a load-balancer such as the [apache httpd|http://
 {code}
 {note} The `127.0.0.1` IP should be replaced with IP addresses of the machine(s)/port(s) of WebSphere/Tomcat instances.{note}
 
-- Configure the `<Apache2.2 HTTPD root>\conf\httpd.conf` to have the following:
+4. Configure the `<Apache2.2 HTTPD root>\conf\httpd.conf` to have the following:
 {code}
 Include "/tools/Apache2.2/conf/gigaspaces/*.conf"
 
@@ -280,9 +278,9 @@ Allow from 127.0.0.1
 {code}
 {note}The `/tools/Apache2.2` folder name should be replaced with your correct Apache httpd location.
 The `127.0.0.1` IP should be replaced with appropriate IP addresses of the machine that is running apache.{note}
-- Once you have the space running, Websphere running, Tomcat running, and Apache httpd configured, restart the Apache http. On windows you can use its service.
+5. Once you have the space running, Websphere running, Tomcat running, and Apache httpd configured, restart the Apache http. On windows you can use its service.
 {indent}!httpSessionSharing7.jpg|thumbnail!{indent}
-- Once you performed the above steps, access the following URL:
+6. Once you performed the above steps, access the following URL:
 http://127.0.0.1:8888/HttpSession
 You should have the web application running. Any access to the web application will be routed between Websphere and Tomcat. You can check this by accessing the Apache httpd balancer console:
 http://127.0.0.1:8888/balancer-manager

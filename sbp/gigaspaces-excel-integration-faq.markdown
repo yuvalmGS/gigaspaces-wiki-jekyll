@@ -30,6 +30,6 @@ Running the installation file (`GigaSpacesViewerSetup.msi`) and selecting *Add*/
 
 ### Solution
 
-- Open Excel
-- Click *Help* > *About Excel* > *Disabled Items*
-- Highlight the *mscorlib.dll* item and click *Enable*
+1. Open Excel
+2. Click *Help* > *About Excel* > *Disabled Items*
+3. Highlight the *mscorlib.dll* item and click *Enable*

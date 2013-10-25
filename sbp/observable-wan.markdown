@@ -34,14 +34,14 @@ The project has a Maven2 pom structure.  A "mvn install" at the root directory w
 
 Deployment should occur in the following order:
 
-- trans-space-site1-pu
-- trans-space-site2-pu
-- trans-gateway-site1
-- trans-gateway-site2
+1. trans-space-site1-pu
+2. trans-space-site2-pu
+3. trans-gateway-site1
+4. trans-gateway-site2
 
 At this point you should see the replication channels linking up.  You'll also see logging indicating that there are no TimeRecords.  This is normal.  Next deploy the time writers:
 
-- site1-time-pu
-- site2-time-pu
+1. site1-time-pu
+2. site2-time-pu
 
 Timestamps will now flow into both "sites". You will notice logging indicating that the remote site is "DOWN", until 10 samples arrive.  Then it will change the status to "UP".  After everything is "UP", you can experiment by undeploying the gateways and watching the status degrade to "DOWN" through "DEGRADED".  If running on a multi-site setup, you can try interfering with the network (unplugging it) to simulate connectivity problems.

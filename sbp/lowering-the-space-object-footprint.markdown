@@ -50,12 +50,12 @@ When the object is read from the space:
 Using the compact serialization pattern can reduce the object footprint when stored within the space in drastic manner. As much as you will have more fields as part of the space object serialized using the GigaSpaces Serialization API, the memory footprint overhead will be smaller compared to the default serialization mode.
 
 The compact serialization pattern involves creation the following methods:
-- `pack` method - Packs the object data into one field. Serialize the non-Indexed fields into the byte array.
-- `unpack` method - Unpacks the object data into one field. De-serialize the non-Indexed fields from the byte array.
-- `writeExternal` method - Serialize the object data. Required for the `Externalizable` implementation. Serialize the indexed fields and the byte array.
-- `readExternal` method - De-serialize the object data. Required for the `Externalizable` implementation. De-serialize the indexed fields and the byte array.
-- `checkNulls` method - Handles null data for the indexed and byte array fields.
-- `getnulls` method - Handles null data for non indexed fields.
+1. `pack` method - Packs the object data into one field. Serialize the non-Indexed fields into the byte array.
+2. `unpack` method - Unpacks the object data into one field. De-serialize the non-Indexed fields from the byte array.
+3. `writeExternal` method - Serialize the object data. Required for the `Externalizable` implementation. Serialize the indexed fields and the byte array.
+4. `readExternal` method - De-serialize the object data. Required for the `Externalizable` implementation. De-serialize the indexed fields and the byte array.
+5. `checkNulls` method - Handles null data for the indexed and byte array fields.
+6. `getnulls` method - Handles null data for non indexed fields.
 
 # BinaryOutputStream and BinaryInputStream
 The `BinaryOutputStream` contains various method to serialize all java's primitive type, their Object wrappers and arrays forms in a compacted mode. `BinaryInputStream` is its counterpart for deserialization. Your `pack` and `unpack` methods will be using an instance of those classes.

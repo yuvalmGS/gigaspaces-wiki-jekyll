@@ -62,22 +62,20 @@ To connect to a space:
 
 {anchor:create}
 To create a new view:
-- Click the *Create View* option in the Space Viewer toolbar. The Create View window is opened.
-- Make sure you are connected to a space.
-- Use the arrow buttons ( !arrowExcel.jpg!) to move columns from the *Available Columns* area to the *Selected Columns* area.
-- If you want to narrow your view to more specific results (by querying your class fields), click the *Customize the Selection* button (see [*Customize the Selection*|#Customize the Selection]).
+1. Click the *Create View* option in the Space Viewer toolbar. The Create View window is opened.
+2. Make sure you are connected to a space.
+3. Use the arrow buttons ( !arrowExcel.jpg!) to move columns from the *Available Columns* area to the *Selected Columns* area.
+4. If you want to narrow your view to more specific results (by querying your class fields), click the *Customize the Selection* button (see [*Customize the Selection*|#Customize the Selection]).
 (i) This step is optional. If you want to generate the view with all the existing entries of the selected type in the space, proceed to the next step.
-    - On the left side of the Customize the Selection window, click the class field you want to query. (For example, the *Age* field is selected below.)
-
+    1. On the left side of the Customize the Selection window, click the class field you want to query. (For example, the *Age* field is selected below.)
 {indent}!CustomizeTheSelection1.JPG!{indent}
-
-    - The selected field appears on the right, under *WHERE*. You can now select the desired expression and value, and choose to sort your results in an ascending or descending manner.
-    - When you've finished selecting, press *Save*.
-    - Your query syntax is shown in the *SQL* area. Under the *SQL* box, the number of instances (the query's result) is displayed.
-    - Repeat steps 1-4 for any additional fields you'd like to query.
-    - Click *OK*.
-- In the Create View window, Click *OK*.
-- Your selection is displayed in the spreadsheet:
+    2. The selected field appears on the right, under *WHERE*. You can now select the desired expression and value, and choose to sort your results in an ascending or descending manner.
+    3. When you've finished selecting, press *Save*.
+    4. Your query syntax is shown in the *SQL* area. Under the *SQL* box, the number of instances (the query's result) is displayed.
+    5. Repeat steps 1-4 for any additional fields you'd like to query.
+    6. Click *OK*.
+5. In the Create View window, Click *OK*.
+6. Your selection is displayed in the spreadsheet:
 
  !ExcelSheet1.JPG!
 
@@ -130,24 +128,17 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 # Installing the Excel Space Viewer
 
 *To install and run the Excel space viewer*:
-- (on) *Download the [Excel Space Viewer Installation|^GigaSpacesViewerSetup.zip]* file and extract it.
-- Run the `GigaSpacesViewerSetup.msi` file.
-
+1. (on) *Download the [Excel Space Viewer Installation|^GigaSpacesViewerSetup.zip]* file and extract it.
+2. Run the `GigaSpacesViewerSetup.msi` file.
  (!) If the .NET Framework is not installed on your machine, the system opens a dialog asking whether you want to install it. In this case, select *Yes* and proceed with the installation. After you finish installing, reopen the `GigaSpacesViewerSetup.msi` file and continue the procedure below.
-
-- The Excel Space Viewer Setup Wizard is displayed:
-
+3. The Excel Space Viewer Setup Wizard is displayed:
 {indent}!ExcelSpaceViewer_setup_1.jpg!{indent}
-
-- In the Select Installation Folder window, browse to the desired installation folder. Choose whether you want the Excel Space Viewer to be used by you only, or by other users:
-
+4. In the Select Installation Folder window, browse to the desired installation folder. Choose whether you want the Excel Space Viewer to be used by you only, or by other users:
 {indent}!ExcelSpaceViewer_setup_2.jpg!{indent}
-
-- In the Confirm Installation window, click *Next*.
-- Wait for the installation to complete and click *Next*, then click *Close*.
-- Open Excel.
-- A new toolbar appears in the top left:
-
+5. In the Confirm Installation window, click *Next*.
+6. Wait for the installation to complete and click *Next*, then click *Close*.
+7. Open Excel.
+8. A new toolbar appears in the top left:
 {indent}!Toolbar4.JPG!{indent}
 
 # Troubleshooting
@@ -164,6 +155,6 @@ Running the installation file (`GigaSpacesViewerSetup.msi`) and selecting *Add*/
 
 ### Solution
 
-- Open Excel
-- Click *Help* > *About Excel* > *Disabled Items*
-- Highlight the *mscorlib.dll* item and click *Enable*
+1. Open Excel
+2. Click *Help* > *About Excel* > *Disabled Items*
+3. Highlight the *mscorlib.dll* item and click *Enable*
