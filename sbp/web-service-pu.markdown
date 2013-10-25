@@ -106,9 +106,11 @@ The configuration includes:
 {% endhighlight %}
 
 
-{note}
+
+{% note %}
 There is no `pu.xml` used with this war. cxf-servlet.xml has all the required configuration.
-{note}
+{% endnote %}
+
 
 # Space Proxy Injection into the Service
 The space proxy injected into the `com.example.customerservice.server.CustomerServiceImpl` using `@GigaSpaceContext` annotation:

@@ -358,7 +358,11 @@ The `pu.xml` used to export the Service and start the space described below:
 {% endhighlight %}
 
 
-{note}The `context:component-scan` , `os-remoting:service-exporter` and `os-remoting:annotation-support` used to allow the system to locate classes annotated with `RemotingService` and export these implicitly.{note}
+
+{% note %}
+The `context:component-scan` , `os-remoting:service-exporter` and `os-remoting:annotation-support` used to allow the system to locate classes annotated with `RemotingService` and export these implicitly.
+{% endnote %}
+
 
 ## Service Result Reducer
 The Service Result Reducer is called at the client side and aggregates results sent from all invoked services (collocated with all space partitions).

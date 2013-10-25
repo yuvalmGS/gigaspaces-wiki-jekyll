@@ -55,7 +55,11 @@ gigaSpace.write(referenceData, Lease.FOREVER);
 
 Lease reaper functionality on the GigaSpace runs periodically and evicts objects whose lease is up.
 
-{note}Lease amount should be tuned based on available memory, expected throughput rate and most importantly available memory in the cluster{note}
+
+{% note %}
+Lease amount should be tuned based on available memory, expected throughput rate and most importantly available memory in the cluster
+{% endnote %}
+
 
 
 {% tip %}
@@ -240,11 +244,13 @@ public class Evictor {
 
 ### Running the example
 
-{note}
+
+{% note %}
 This example is using Maven for packaging and build.
 - Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
 - Please update the GigaSpaces and Spring versions to appropriate versions in the pom.xml file.
-{note}
+{% endnote %}
+
 
 Extract the [example|^PollingEvictor.zip] archive into a folder. Navigate to the folder
 
@@ -564,11 +570,13 @@ gs.write(wMark, Lease.FOREVER, 5000, UpdateModifiers.UPDATE_OR_WRITE);
 
 ### Running the example
 
-{note}
+
+{% note %}
 This example is using Maven for packaging and build.
 - Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
 - Please update the GigaSpaces and Spring versions to appropriate versions in the pom.xml file.
-{note}
+{% endnote %}
+
 
 Extract the [example|^MyCustomEvictor.zip] archive into a folder. Navigate to the folder
 

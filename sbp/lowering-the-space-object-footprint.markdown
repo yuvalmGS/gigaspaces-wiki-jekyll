@@ -16,9 +16,13 @@ Date: July 2009
 # Overview
 By default, when using the GigaSpaces Java API, the space stores space object fields as is. No data compaction, or compression is done while the object is transported across the network or when stored within the space.
 
-{note}- The Compressed Storage Type compressing non-primitive fields using the zip utilities. It is different than the compact serialization pattern.
+
+{% note %}
+- The Compressed Storage Type compressing non-primitive fields using the zip utilities. It is different than the compact serialization pattern.
 - The Binary Storage Type store non-primitive fields within the space as it in its byte array form. It does not compress or reduce the footprint of the data as the compact pattern. It avoid the need to introduce nested space object data type to the space JVM and the need to de-serialize these at the space side. The Binary Storage Type may improve the performance when the space object store large collection.
-- The C++ and .Net API objects data does go through some compaction when sent across the network. {note}
+- The C++ and .Net API objects data does go through some compaction when sent across the network.
+{% endnote %}
+
 
 With the Compact Serialization pattern you may reduce the space object memory footprint when stored within the data grid. This allows you to store more space objects per memory unit. This pattern works very well when the space object includes large number of numerical values as it is storing these in more optimal data type.
 

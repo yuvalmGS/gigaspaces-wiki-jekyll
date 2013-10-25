@@ -262,10 +262,13 @@ public class MyExternalDataSource implements BulkDataPersister, ManagedDataSourc
 
 # Running the example
 
-{note} This example is using Maven for packaging and build. Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
+
+{% note %}
+ This example is using Maven for packaging and build. Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
 Some instructions below might use windows syntax please use appropriate **nix syntax if you are running the example in a **nix machine.
 Example was tested using a single machine with ip address, 192.168.2.100 and Lookup Server ports for SiteA and SiteB as 14164 and 14165 respectively. Please modify these corresponding to your environment.
-{note}
+{% endnote %}
+
 
 1. Extract the [example|WAN Replication Gateway (Deprecated)^multi-cluster.zip] archive into a folder. Navigate to the folder (calling it <multi-cluster-example>) and open a command shell. Modify the setDevEnv-SiteA.bat/sh and setDevEnv-SiteB.bat/sh files to have proper paths for GigaSpaces home and Java home. Also modify the NIC_ADDR variable to have proper ip address for each site.
 2. Run setDevEnv-SiteA script to set the environment variables.

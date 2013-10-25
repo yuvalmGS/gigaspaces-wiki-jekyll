@@ -21,7 +21,11 @@ page_id: 55938209
 # Overview
 
 Integrating GigaSpaces with an external JMS Servers is demonstrated in this page. This example shows how GigaSpaces event container can process events and send JMS messages to a external JMS server all under one distributed transaction.
-{note} Use of distributed transactions is done as a demonstration. Use this with caution, in production applications this can be expensive and have a performance penalty. Well known patterns like [Idempotent Receiver|http://www.eaipatterns.com/IdempotentReceiver.html] are potential alternatives to distributed transactions. {note}
+
+{% note %}
+ Use of distributed transactions is done as a demonstration. Use this with caution, in production applications this can be expensive and have a performance penalty. Well known patterns like [Idempotent Receiver|http://www.eaipatterns.com/IdempotentReceiver.html] are potential alternatives to distributed transactions.
+{% endnote %}
+
 
 This example includes:
 - GigaSpaces updates and JMS message creation are done transactionally so as to avoid duplicate processing/data loss.
@@ -336,18 +340,25 @@ public class Message  {
 
 {% endhighlight %}
 
-{note} Example was tested using following product versions,
+
+{% note %}
+ Example was tested using following product versions,
 1. GigaSpaces - **8.0.1**
 2. Apache ActiveMQ - **5.5**
 3. Atomikos TransactionEssentials - **3.7.0**
 If you are using different versions please make sure all the equivalent jars are reflected in `copy-libs` ant task
-{note}
+{% endnote %}
+
 
 7. Start a gs-ui instance using `gs-ui.bat` script in <helloworld-jta> folder.
 8. Run `gs-agent.bat`  <helloworld-jta> folder, to start the GigaSpaces components (GSA,GSM, LUS, GSM).
 9. Start the ActiveMQ process using <ActiveMQHome>`\bin\activemq.bat` script.
 
-{note}If ActiveMQ is running on another server, please remember to update the brokerURL in `pu.xml` {note}
+
+{% note %}
+If ActiveMQ is running on another server, please remember to update the brokerURL in `pu.xml`
+{% endnote %}
+
 10. Deploy the processorSpace cluster by running `deploy-processor` ant task.
 
 
@@ -363,7 +374,11 @@ build deploy-processor
 {% endhighlight %}
 
 14. If you check GigaSpaces logs, you will notice that the Message-0 (id=0) is Rolled back and all other messages are processed successfully and sent to JMS server.
-{note} Message-0 (id=0) will keep going back to Polling container logic because the space update and JMS message both are rolled back. This is intentionally done, to demonstrate XA. {note}
+
+{% note %}
+ Message-0 (id=0) will keep going back to Polling container logic because the space update and JMS message both are rolled back. This is intentionally done, to demonstrate XA.
+{% endnote %}
+
 15. You can validate the JMS messages received by the Queue using a test JMS client included. You can run the client using `jms-client` ant task.
 
 

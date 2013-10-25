@@ -113,7 +113,11 @@ The web application requires a couple of configuration changes to the web.xml fi
 {% endhighlight %}
 
 
-{note}The **ShiroFilter** must be the first filter defined.{note}
+
+{% note %}
+The **ShiroFilter** must be the first filter defined.
+{% endnote %}
+
 
 The `shiro.ini` file needs to be placed within the WEB-INF folder and to define parameters for the session manager for it to be able to access GigaSpaces:
 
@@ -166,9 +170,12 @@ The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Sp
 The web application should include the following libraries within its \WEB-INF\lib  file folder:
 aopalliance-1.0.jar, commons-beanutils-1.8.3.jar, commons-collections-2.1.1.jar, gs-runtime.jar, gs-session-manager-2.0-b103.jar, jcl-over-slf4j-1.6.4.jar, log4j-1.2.16.jar, shiro-all-1.3.0-317b.jar, slf4j-api-1.6.4.jar, slf4j-log4j12-1.6.4.jar, xmlbeans-2.2.0.jar, xmlpull-1.1.3.1.jar, xpp3_min-1.1.4c.jar and xstream-1.4.2.jar.
 
-{note}The gs-runtime.jar should be replaced with the relevant GigaSpaces gs-runtime.jar matching your environment.
+
+{% note %}
+The gs-runtime.jar should be replaced with the relevant GigaSpaces gs-runtime.jar matching your environment.
 Use appropriate version of gs-session-manager-<version>.jar (example uses version 2.0-b103 version)
-{note}
+{% endnote %}
+
 
 ### GigaSpaces In Memory Data Grid (IMDG)
 GigaSpaces IMDG should be deployed using your favorite topology (replicated and/or partitioned, static or elastic) and include a reference to a WAN Gateway.
@@ -246,7 +253,11 @@ The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblo
 2. Deploy a space named **sessionSpace**. You can start the `GigaSpaces root/bin/gsInstance.sh/bat` for a single instance space or deploy a clustered space using the command line or GS-UI.
 3. Deploy the HttpSession.war into Tomcat (or any other app server).
 4. Start your browser and access the web application via the following URL: http://localhost:8080/HttpSession
-{note}The URL above assumes the Web Server configured to use port 8080.{note}
+
+{% note %}
+The URL above assumes the Web Server configured to use port 8080.
+{% endnote %}
+
 {indent}!httpSessionSharing4.jpg!{indent}
 5. Set some values for the Session Name and Attribute and click the **Update Session** button.
 6. View the session within the space via the GS-UI. Click the Data-Types icon , click the `org.openspaces.sessions.shiro.SpaceSession` class and Click the query button. The Query view will be displayed. You can double click any of the sessions and drill into the attributes map within the session to view the session attributes:
@@ -259,7 +270,11 @@ You may share the HTTP session between different web servers. To test this on yo
 {indent}!httpSessionSharing8.jpg|thumbnail!{indent}
 {indent}!httpSessionSharing9.jpg|thumbnail!{indent}
 Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the space.
-{note}When deploying the web application WAR file please make sure the web app context will be identical.{note}
+
+{% note %}
+When deploying the web application WAR file please make sure the web app context will be identical.
+{% endnote %}
+
 
 ### Load-Balancer
 Another option would be to use a load-balancer such as the [apache httpd|http://httpd.apache.org] and configure it to load-balance the web requests between the different web servers. Here is a simple setup:
@@ -280,7 +295,11 @@ Another option would be to use a load-balancer such as the [apache httpd|http://
 </VirtualHost>
 {% endhighlight %}
 
-{note} The `127.0.0.1` IP should be replaced with IP addresses of the machine(s)/port(s) of WebSphere/Tomcat instances.{note}
+
+{% note %}
+ The `127.0.0.1` IP should be replaced with IP addresses of the machine(s)/port(s) of WebSphere/Tomcat instances.
+{% endnote %}
+
 
 4. Configure the `<Apache2.2 HTTPD root>\conf\httpd.conf` to have the following:
 
@@ -306,8 +325,12 @@ Allow from 127.0.0.1
 
 {% endhighlight %}
 
-{note}The `/tools/Apache2.2` folder name should be replaced with your correct Apache httpd location.
-The `127.0.0.1` IP should be replaced with appropriate IP addresses of the machine that is running apache.{note}
+
+{% note %}
+The `/tools/Apache2.2` folder name should be replaced with your correct Apache httpd location.
+The `127.0.0.1` IP should be replaced with appropriate IP addresses of the machine that is running apache.
+{% endnote %}
+
 5. Once you have the space running, Websphere running, Tomcat running, and Apache httpd configured, restart the Apache http. On windows you can use its service.
 {indent}!httpSessionSharing7.jpg|thumbnail!{indent}
 6. Once you performed the above steps, access the following URL:
