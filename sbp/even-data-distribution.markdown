@@ -41,7 +41,8 @@ public class MyData {
     @SpaceRouting
     public String getGroupId() { return groupId; }
     public void setGroupId(String s) { groupId=s; }
-}{% endhighlight %}
+
+{% endhighlight %}
 
 
 The approach for efficient partitioning depends very much on how the data is used. In the case of the `MyData` class above, it's likely that different groups' data will be routed to different partitions (but not **guaranteed** - because it's possible that various groupId values end up with the same partitioning values. As usual, see the [XAP91:Data-Partitioning] documentation for more detail.)

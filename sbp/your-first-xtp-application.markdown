@@ -322,7 +322,8 @@ From the `<Example Root>` directory (`<GigaSpaces Root>\Examples\ProcessingUnit`
 
 
 {% highlight java %}
-compile{% endhighlight %}
+
+{% endhighlight %}
 
 
 This compiles all the related projects and creates the processing unit dlls inside each project, under the `Deployment` directory. It also copies the Processing Units Deployment directory to the `<GigaSpaces Root>\Runtime\deploy` directory, which simplifies deployment through the `gs-ui`.

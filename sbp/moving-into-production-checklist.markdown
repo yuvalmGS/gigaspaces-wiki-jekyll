@@ -40,12 +40,14 @@ Examples:
 
 {% highlight java %}
  export NIC_ADDR=10.10.10.100
-./gs-agent.sh & {% endhighlight %}
+
+{% endhighlight %}
 
 
 
 {% highlight java %}
- java -Djava.rmi.server.hostname=10.10.10.100 MyApplication{% endhighlight %}
+
+{% endhighlight %}
 
 
 
@@ -72,14 +74,16 @@ Here are examples of how to set different LRMI listening ports for the GS-UI, an
 
 {% highlight java %}
  export EXT_JAVA_OPTIONS=-Dcom.gs.transport_protocol.lrmi.bind-port=7000-7500
-./gs-agent.sh & {% endhighlight %}
+
+{% endhighlight %}
 
 
 
 
 {% highlight java %}
  export EXT_JAVA_OPTIONS=-Dcom.gs.transport_protocol.lrmi.bind-port=8000-8100
-./gs-ui.sh & {% endhighlight %}
+
+{% endhighlight %}
 
 
 A running GSC tries to use the first free port that is not used out of the port range specified. The same port might be used for several connections (via a multiplexed protocol). If all of the port range is exhausted, an error is displayed.
@@ -105,13 +109,15 @@ You may need to change the `com.gs.transport_protocol.lrmi.max-conn-pool` value 
 
 
 {% highlight java %}
-Client total # of open connections = com.gs.transport_protocol.lrmi.max-conn-pool * # of partitions{% endhighlight %}
+
+{% endhighlight %}
 
 This may result very large amount of connections started at the client side resulting "Too many open files" error. You should increase the OS' max file descriptors amount by calling the following before running the client application (on UNIX):
 
 
 {% highlight java %}
-ulimit -n 65536{% endhighlight %}
+
+{% endhighlight %}
 
 or by lowering the `com.gs.transport_protocol.lrmi.max-conn-pool` value.
 {% endtip %}
@@ -138,7 +144,8 @@ To configure the GigaSpaces runtime components (GSA,GSC,GSM,LUS) to use unicast 
 
 {% highlight java %}
 export LOOKUPLOCATORS=MachineA,MachineB
-./gs-agent.sh & {% endhighlight %}
+
+{% endhighlight %}
 
 
 To configure the GigaSpaces runtime components (GSA,GSC,GSM,LUS) to use multicast discovery you should set the `LOOKUPGROUPS` variable:
@@ -146,7 +153,8 @@ To configure the GigaSpaces runtime components (GSA,GSC,GSM,LUS) to use multicas
 
 {% highlight java %}
 export LOOKUPGROUPS=Group1,Group2
-./gs-agent.sh & {% endhighlight %}
+
+{% endhighlight %}
 
 
 When running multiple systems on the same network infrastructure, you should isolate these by having a dedicated set of lookup services (and  GSC/GSM) for each system. Each should have different locators/groups settings.
@@ -178,7 +186,8 @@ See below for examples of [Space URL|XAP91:Space URL]s you should be familiar wi
 {% highlight java %}
 "jini://*/*/space?groups=A"
 or
-"jini://*/*/space?groups=B"{% endhighlight %}
+
+{% endhighlight %}
 
 
 ## Space Configuration with Unit Tests
@@ -406,7 +415,8 @@ gs-agent gsa.gsc 2
 
 
 {% highlight java %}
-gs deploy -zones webZone myWar.war{% endhighlight %}
+
+{% endhighlight %}
 
 
 ## Running Multiple Zones
@@ -415,7 +425,8 @@ You may have a set of LUS/GSM managing multiple zones (recommended) or have a se
 
 
 {% highlight java %}
-gs-agent.sh gsa.global.lus 0 gsa.lus 1 gsa.global.gsm 0 gsa.gsm 1 gsa.gsc 0{% endhighlight %}
+
+{% endhighlight %}
 
 2. Run gs-agent that will start GSCs with zoneX (4 GGCs with this example):
 
@@ -500,7 +511,8 @@ To capture the detailed information about garbage collection and how it is perfo
 
 
 {% highlight java %}
--verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/path/to/log/directory/gc-log-file.log {% endhighlight %}
+
+{% endhighlight %}
 
 Modify the path and file names appropriately. You will need to use a different file name for each invocation in order to not overwrite the files from multiple processes.
 {% endtip %}
@@ -524,7 +536,8 @@ For applications that are using relatively large amount of third party libraries
 
 
 {% highlight java %}
--XX:PermSize=512m -XX:MaxPermSize=512m{% endhighlight %}
+
+{% endhighlight %}
 
 
 (!) GigaSpaces is a Java-based product. .Net and C++ applications using GigaSpaces should also be aware the usage of the JVM libraries as part of the .Net and C++ client libraries.

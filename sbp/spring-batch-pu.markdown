@@ -439,7 +439,8 @@ Start an HSQL database. Move into the `gigaspaces-xap-premium\bin` folder and ru
 
 
 {% highlight java %}
-java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb{% endhighlight %}
+
+{% endhighlight %}
 
 
 This will start an HSQL database used with the Spring Batch PU.
@@ -482,7 +483,8 @@ You may do that by running the following prior calling the deploy command:
 
 
 {% highlight java %}
-set PRE_CLASSPATH=C:\gigaspaces-xap-premium\deploy\SpringBatchPU\lib\spring-batch-core-2.1.6.RELEASE.jar{% endhighlight %}
+
+{% endhighlight %}
 
 
 ## Deploy the Space
@@ -490,7 +492,8 @@ Deploy a space call `mySapce`. You may deploy a single space or a space in a par
 
 
 {% highlight java %}
-gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,0 mySpace{% endhighlight %}
+
+{% endhighlight %}
 
 
 Here is the expected output:
@@ -515,7 +518,8 @@ Deploy the Spring Batch PU using the GS-UI or the CLI.
 
 
 {% highlight java %}
-gs deploy -cluster total_members=2 SpringBatchPU{% endhighlight %}
+
+{% endhighlight %}
 
 
 Here is the expected output:
@@ -540,6 +544,7 @@ To run the master execute the following:
 
 
 {% highlight java %}
-java com.gigaspaces.springbatch.Master{% endhighlight %}
+
+{% endhighlight %}
 
 The Master will write 100 Request objects with a specific Job ID into the space and will wait for 100 Result objects with the relevant Job ID. This cycle will repeat itself 10 times.

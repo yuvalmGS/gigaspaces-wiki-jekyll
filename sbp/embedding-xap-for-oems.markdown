@@ -99,7 +99,8 @@ With this class in the classpath, getting a datagrid reference is as simple as:
 
 
 {% highlight java %}
-GigaSpace space=DataGridConnectionUtility.getSpace("myGrid");{% endhighlight %}
+
+{% endhighlight %}
 
 
 ## Further reading:

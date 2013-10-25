@@ -117,41 +117,47 @@ For long calculations that consume relatively large amount of CPU time, the reco
 
 
 {% highlight java %}
-startAgent.bat{% endhighlight %}
+
+{% endhighlight %}
 
 (!) You will need a machine with at least 2GB free memory to run this demo.
 3. Run the Elastic Data-Grid deploy script:
 
 
 {% highlight java %}
-deployDataGrid.bat{% endhighlight %}
+
+{% endhighlight %}
 
 This will deploy the data grid/compute grid and will later allow you to scale it. Whenever you would like to scale the data grid/compute grid just **hit Enter**. Running the deploy script again will initiate the scaling cycle again for the existing running data grid/compute grid.
 4. Run the Ealstic Worker deploy script:
 
 
 {% highlight java %}
-deployWorker.bat{% endhighlight %}
+
+{% endhighlight %}
 
 This will deploy the Worker PU into the Service Grid.
 5. Run the client invoking the Colocated calculations (this will be using the Task):
 
 
 {% highlight java %}
-runClientExecutor.bat{% endhighlight %}
+
+{% endhighlight %}
 
 6. Run the client invoking the Remote calculations (this will be using the workers):
 
 
 {% highlight java %}
-runClientMasterWorker.bat{% endhighlight %}
+
+{% endhighlight %}
 
 The client will run the calculation repeatedly for 10,000 Trades where each cycle will use different rates (2%, 3%, 4%, 5%, 6%, 7%, 8%). To stop the client hit CTRL + C.
 7. To scale the worker run the following:
 
 
 {% highlight java %}
-ScaleWorker.bat{% endhighlight %}
+
+{% endhighlight %}
  and follow the instructions.
 8. To Scale the Data-Grid following Hit Enter at the command running the `deployDataGrid.bat`.
 

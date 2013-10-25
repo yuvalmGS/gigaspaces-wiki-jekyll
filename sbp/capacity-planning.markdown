@@ -97,22 +97,26 @@ Here are a few basic formulas you can use:
 
 
 {% highlight java %}
-Amount of GSCs per Machine = Amount of Total Machine Cores/2{% endhighlight %}
+
+{% endhighlight %}
 
 
 
 {% highlight java %}
-Total Amount of GSC = Amount of GSCs per Machine X Initial amount of Machines{% endhighlight %}
+
+{% endhighlight %}
 
 
 
 {% highlight java %}
-GSC max heap Size = min (6, (Machine RAM Size * 0.8) / Amount of GSCs per Machine)){% endhighlight %}
+
+{% endhighlight %}
 
 
 
 {% highlight java %}
-Amount of Data-Grid Partitions = Total Amount of GSC X Scaling Growth Rate / 2{% endhighlight %}
+
+{% endhighlight %}
 
 
 Where:

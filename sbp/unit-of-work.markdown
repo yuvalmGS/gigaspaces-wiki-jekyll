@@ -85,13 +85,15 @@ Instead of running the UOWProcessor within your IDE, you can deploy it into the 
 
 
 {% highlight java %}
-runAgent.bat{% endhighlight %}
+
+{% endhighlight %}
 
 3. Deploy the UOWProcessor PU
 
 
 {% highlight java %}
-deployUOW.bat{% endhighlight %}
+
+{% endhighlight %}
 
 This will deploy the UOW Data-Grid with 2 partitions and a backup.
 {gcard}
@@ -102,7 +104,8 @@ or using the following:
 
 
 {% highlight java %}
-runClient.bat{% endhighlight %}
+
+{% endhighlight %}
 
 {gcard}
 {gdeck}
@@ -177,7 +180,8 @@ The `buketId` is calculated using the following:
 
 
 {% highlight java %}
-group % bucketsCount{% endhighlight %}
+
+{% endhighlight %}
 
 
 

@@ -278,13 +278,15 @@ Make sure you change the `pom.xml` <gsVersion> paramter to use the GigaSpaces re
 
 
 {% highlight java %}
-mvn clean{% endhighlight %}
+
+{% endhighlight %}
 
 4. Run maven package (skip the tests) using following command
 
 
 {% highlight java %}
-mvn package -DskipTests{% endhighlight %}
+
+{% endhighlight %}
 
 5. Start a gs-ui instance.
 6. Run gs-agent-SiteA and gs-agent-SiteB scripts on appropriate machines.

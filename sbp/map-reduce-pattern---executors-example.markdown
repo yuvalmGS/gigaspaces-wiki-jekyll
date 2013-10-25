@@ -274,7 +274,8 @@ import com.gigaspaces.async.AsyncFuture;
 public interface IDataProcessor {
     Integer processData(Object data);
     AsyncFuture<Integer>  asyncProcessData(Object data);
-}{% endhighlight %}
+
+{% endhighlight %}
 
 
 ## The Service Implementation

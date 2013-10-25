@@ -190,26 +190,30 @@ pu.download=false
 
 
 {% highlight java %}
- build dist {% endhighlight %}
+
+{% endhighlight %}
 
 3. Start a gs-agent using the provided script.
 
 
 {% highlight java %}
- gs-agent.bat {% endhighlight %}
+
+{% endhighlight %}
 
 4. Run the ant task "deploy-processor" to deploy the processor space.
 
 
 {% highlight java %}
- build deploy-processor {% endhighlight %}
+
+{% endhighlight %}
 
  Confirm that the processor space was deployed successfully using a gs-ui session.
 5. Run the ant task "run-feeder" to load data into the space. This will put 1000 `Data` objects into the space.
 
 
 {% highlight java %}
- build run-feeder {% endhighlight %}
+
+{% endhighlight %}
 
  You will see that the processor code that was used to process these messages by inspecting the log messages.
 
@@ -220,7 +224,8 @@ pu.download=false
 [gsc][2/6872]   2011-01-21 13:25:31,473 processor.1 [1]/refreshableBeans INFO
 [org.openspaces.example.helloworld.processor.Processor] - Processor PROCESSING: id [292] info[Hello ]
 [gsc][2/6872]   2011-01-21 13:25:31,476 processor.1 [1]/refreshableBeans INFO
-[org.openspaces.example.helloworld.processor.Processor] - Processor PROCESSING: id [258] info[Hello ] {% endhighlight %}
+
+{% endhighlight %}
 
 6. Make code changes to processor to simulate business logic changes. (You can use the newer version of Processor code provided in this file "<refreshable-prototype>\processor\src\org\openspaces\example\helloworld\processor\NewProcessorCode.txt".
  This version modifies the processor to log new messages to simulate business logic change).

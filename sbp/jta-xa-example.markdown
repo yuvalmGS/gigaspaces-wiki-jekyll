@@ -333,28 +333,34 @@ public class Message  {
 
 
 {% highlight java %}
- build copy-libs {% endhighlight %}
+
+{% endhighlight %}
 
 {note} Example was tested using following product versions,
-7. GigaSpaces - **8.0.1**
-8. Apache ActiveMQ - **5.5**
-9. Atomikos TransactionEssentials - **3.7.0**
-If you are using different versions please make sure all the equivalent jars are reflected in `copy-libs` ant task {note}
-. Start a gs-ui instance using `gs-ui.bat` script in <helloworld-jta> folder.
-10. Run `gs-agent.bat`  <helloworld-jta> folder, to start the GigaSpaces components (GSA,GSM, LUS, GSM).
-11. Start the ActiveMQ process using <ActiveMQHome>`\bin\activemq.bat` script.
-{note} If ActiveMQ is running on another server, please remember to update the brokerURL in `pu.xml` {note}
-12. Deploy the processorSpace cluster by running `deploy-processor` ant task.
+1. GigaSpaces - **8.0.1**
+2. Apache ActiveMQ - **5.5**
+3. Atomikos TransactionEssentials - **3.7.0**
+If you are using different versions please make sure all the equivalent jars are reflected in `copy-libs` ant task
+{note}
+
+7. Start a gs-ui instance using `gs-ui.bat` script in <helloworld-jta> folder.
+8. Run `gs-agent.bat`  <helloworld-jta> folder, to start the GigaSpaces components (GSA,GSM, LUS, GSM).
+9. Start the ActiveMQ process using <ActiveMQHome>`\bin\activemq.bat` script.
+
+{note}If ActiveMQ is running on another server, please remember to update the brokerURL in `pu.xml` {note}
+10. Deploy the processorSpace cluster by running `deploy-processor` ant task.
 
 
 {% highlight java %}
- build deploy-processor {% endhighlight %}
+build deploy-processor
+{% endhighlight %}
 
 13. Run the feeder process using `run-feeder` ant task.
 
 
 {% highlight java %}
- build run-feeder {% endhighlight %}
+
+{% endhighlight %}
 
 14. If you check GigaSpaces logs, you will notice that the Message-0 (id=0) is Rolled back and all other messages are processed successfully and sent to JMS server.
 {note} Message-0 (id=0) will keep going back to Polling container logic because the space update and JMS message both are rolled back. This is intentionally done, to demonstrate XA. {note}
@@ -362,7 +368,8 @@ If you are using different versions please make sure all the equivalent jars are
 
 
 {% highlight java %}
- build jms-client {% endhighlight %}
+
+{% endhighlight %}
 
 
 ## References

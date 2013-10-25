@@ -520,20 +520,23 @@ On windows run the following command:
 
 
 {% highlight java %}
-\gigaspaces-xap\bin\gs-agent.bat{% endhighlight %}
+
+{% endhighlight %}
 
 On linux run the following command:
 
 
 {% highlight java %}
-\gigaspaces-xap\bin\gs-agent.sh{% endhighlight %}
+
+{% endhighlight %}
 
 
 - Start the HSQLDB database:
 
 
 {% highlight java %}
-java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb{% endhighlight %}
+
+{% endhighlight %}
 
 
 Once the agent is up and running call the deploy commands.
@@ -541,7 +544,8 @@ Once the agent is up and running call the deploy commands.
 
 
 {% highlight java %}
-gs.sh deploy myDataGrid.jar{% endhighlight %}
+
+{% endhighlight %}
 
 You should see the following:
 
@@ -560,7 +564,8 @@ Finished deploying [2] processing unit instances
 
 
 {% highlight java %}
-gs.sh deploy myMirror.jar{% endhighlight %}
+
+{% endhighlight %}
 
 You should see the following:
 
@@ -580,7 +585,8 @@ Finished deploying [1] processing unit instances
 
 
 {% highlight java %}
-gs.sh deploy application.war{% endhighlight %}
+
+{% endhighlight %}
 
 You should see the following:
 
@@ -600,13 +606,15 @@ On windows run the following command:
 
 
 {% highlight java %}
-\gigaspaces-xap\bin\gs-ui.bat{% endhighlight %}
+
+{% endhighlight %}
 
 On linux run the following command:
 
 
 {% highlight java %}
-\gigaspaces-xap\bin\gs-ui.sh{% endhighlight %}
+
+{% endhighlight %}
 
 
 - Once the Data-Grid, Mirror and the application will be deployed you should see the following within the GS-UI:
@@ -626,7 +634,8 @@ This will display the Query view with the User objects data stored within the sp
 
 
 {% highlight java %}
-java -cp  ../lib/platform/jdbc/hsqldb.jar  org.hsqldb.util.DatabaseManager{% endhighlight %}
+
+{% endhighlight %}
 
 And query the database:
 {indent}!hib2space4.jpg|thumbnail!{indent}

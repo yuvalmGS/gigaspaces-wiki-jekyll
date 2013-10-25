@@ -243,7 +243,8 @@ public class DataProcessorServiceReducer implements RemoteResultReducer<Partitio
     }
     return minPart;
   }
-}{% endhighlight %}
+
+{% endhighlight %}
 
 {gcard}
 {gcard:The Client}
