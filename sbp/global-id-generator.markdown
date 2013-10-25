@@ -6,12 +6,15 @@ page_id: 52887597
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}Unique Global ID Generator{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Unique Global ID Generator{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1
 **Last Update:** Jan 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -19,7 +22,11 @@ When writing objects into the space, you may need to generate a global unique ID
 
 GigaSpaces generates a unique global ID when writing new objects using its built-in internal ID generator utility used when enabling the `auto-generate` ID property. Still, you may want to have your own custom global unique ID generator.
 
-{tip}You can [download|Global ID Generator^GlobalIDGenerator.zip] the custom Unique Global ID Generator source code used with this example.{tip}
+
+{% tip %}
+You can [download|Global ID Generator^GlobalIDGenerator.zip] the custom Unique Global ID Generator source code used with this example.
+{% endtip %}
+
 
 The following example includes a custom global unique ID generator PU and a client side utility. The Unique Global ID Generator features the following:
 - Spring based configured.
@@ -36,10 +43,13 @@ To use the ID Generator you should:
 1. Deploy the ID Generator PU using the pu.xml below. You should deploy it using **one partition and a backup**.
 2. With your application, inject a `SpaceBasedIdGenerator` Bean. You should have it with every application instance.
 3. With your client application call the following when you need a unique global ID:
-{code:java}
+
+
+{% highlight java %}
 SpaceBasedIdGenerator idGenerator;
 Integer myNextID = idGenerator.generateId();
-{code}
+{% endhighlight %}
+
 
 {info}The `SpaceBasedIdGenerator` using [Spring Transactions|http://static.springsource.org/spring/docs/2.0.x/reference/transaction.html] to update the `IdCounterEntry` object.{info}
 
@@ -48,7 +58,9 @@ The following should be used to enable the ID Generator:
 {gdeck:IDGeneratorComponents|top}
 {gcard:ID Generator PU}
 This is ID Generator `pu.xml`:
-{code:title=The ID Generator pu.xml}
+
+
+{% highlight java %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -85,12 +97,15 @@ This is ID Generator `pu.xml`:
     </os-sla:sla>
 
 </beans>
-{code}
+{% endhighlight %}
+
 
 {gcard}
 {gcard:The Client}
 The following should be added to your PU `pu.xml` used to deploy the client application:
-{code:title=The Client}
+
+
+{% highlight java %}
 <context:component-scan base-package="com.gigaspaces.idgenerator.client" />
 <os-core:giga-space-context/>
 
@@ -100,6 +115,7 @@ The following should be added to your PU `pu.xml` used to deploy the client appl
 <os-core:giga-space id="IDGeneratogigaSpace" space="IDGeneratoSpace" tx-manager="IDGeneratortransactionManager"   />
 <tx:annotation-driven transaction-manager="IDGeneratortransactionManager"/>
 <bean id="idGenerator" class="com.gigaspaces.idgenerator.client.SpaceBasedIdGenerator"/>
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}

@@ -6,11 +6,14 @@ page_id: 54297314
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}This page describes two ways to determine the partition load in a Gigaspaces grid programmatically.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}This page describes two ways to determine the partition load in a Gigaspaces grid programmatically.{excerpt}
 **Author**: Joe Ottinger, Technology Evangelist, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1.2
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 
 # Overview
 When using a GigaSpaces cluster as a task queue there are times you will need to determine how the space instances are loaded. This could be to determine where you can route the next task (minimum load partition/instance) or where you want to launch more processors (heavily loaded partition/instance).
@@ -27,7 +30,9 @@ Example is trying to find a partition with least number of objects and uses Giga
 
 {gdeck:Task Executor Example}
 {gcard:Client Code}
-{code:java}
+
+
+{% highlight java %}
 ...
 IJSpace ijs = new UrlSpaceConfigurer("jini://*/*/space").space();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(ijs).gigaSpace();
@@ -43,10 +48,14 @@ try {
   e.printStackTrace();
 }
 ...
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Task Implementation}
-{code:java}import java.rmi.RemoteException;
+
+
+{% highlight java %}
+import java.rmi.RemoteException;
 import java.util.List;
 
 import org.openspaces.core.GigaSpace;
@@ -127,7 +136,8 @@ public class MyDistributedTask implements
     this.clusterInfo = clusterInfo;
   }
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -141,15 +151,20 @@ In this example, we're trying to find the partition with the least number of obj
 {gcard:Service Interface}
 The Service Interface includes only one method, used to invoke the Service method in Synchronous mode:
 
-{code:java}
+
+
+{% highlight java %}
 public interface IDataProcessor {
   PartitionCount processData();
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Service Implementation}
 The Service Implementation includes business logic to determine the load (in this case number of objects in the partition):
-{code:java}
+
+
+{% highlight java %}
 import java.rmi.RemoteException;
 
 import org.openspaces.core.GigaSpace;
@@ -197,11 +212,14 @@ public class DataProcessorService implements IDataProcessor {
     return pc;
   }
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Reducer}
 The Result Reducer applies the additional logic (finding the partition with the least number of objects, in this case).
-{code:java}
+
+
+{% highlight java %}
 import org.openspaces.remoting.RemoteResultReducer;
 import org.openspaces.remoting.SpaceRemotingInvocation;
 import org.openspaces.remoting.SpaceRemotingResult;
@@ -225,11 +243,14 @@ public class DataProcessorServiceReducer implements RemoteResultReducer<Partitio
     }
     return minPart;
   }
-}{code}
+}{% endhighlight %}
+
 {gcard}
 {gcard:The Client}
 This is how a client might invoke the service:
-{code:java}
+
+
+{% highlight java %}
 space = new UrlSpaceConfigurer("jini://*/*/space").space();
 gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 
@@ -237,6 +258,7 @@ dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcessor>(
                 gigaSpace, IDataProcessor.class).broadcast(
                 new DataProcessorServiceReducer()).proxy();
 PartitionCount result = dataProcessor.processData();
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}

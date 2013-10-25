@@ -40,15 +40,21 @@ The simplest way to start a node with GigaSpaces is just to invoke the GSA in th
 
 {gdeck:deckName1|top}
 {gcard:Windows}
-{code}
+
+
+{% highlight java %}
 .\gs-agent.bat
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gcard:Linux}
-{code}
+
+
+{% highlight java %}
 ./gs-agent.sh
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -59,28 +65,42 @@ It's actually fairly easy to write some code that can connect to an existing dat
 First, make sure the [classpath|XAP91:Setting classpath] includes the GigaSpaces runtime. Then, connect to the datagrid. The following snippets shows how to create and deploy an Elastic Data Grid and how to find an existing data Data Grid service.
 
 Creating and deploying an Elastic Data Grid
-{code}
+
+
+{% highlight java %}
         Admin admin = new AdminFactory().createAdmin();
         GridServiceManager esm = admin.getGridServiceManagers().waitForAtLeastOne();
         ProcessingUnit pu = esm.deploy(new SpaceDeployment(spaceName)
           .partitioned(2, 1));
         admin.close();
-{code}
+{% endhighlight %}
+
 
 Getting a reference to an existing DataGrid instance
 
-{code}
+
+
+{% highlight java %}
      UrlSpaceConfigurer configurer =
         new UrlSpaceConfigurer("jini:/*/*/" + spaceName);
       IJSpace space = configurer.space();
-{code}
+{% endhighlight %}
+
 
 You can also use a simple helper utility (DataGridConnectionUtility) that combines the two. It first look for a DataGrid instance and if one doesn't exist it will create a new one; it's trivial to alter the `getSpace()` method to increase the number of nodes or even scale dynamically as required.
 
-{tip}A The DataGridConnectionUtility class [is available on Github|https://github.com/Gigaspaces/bestpractices/blob/master/plains/src/main/java/org/openspaces/plains/datagrid/DataGridConnectionUtility.java], in the "plains" project.{tip}
+
+{% tip %}
+A The DataGridConnectionUtility class [is available on Github|https://github.com/Gigaspaces/bestpractices/blob/master/plains/src/main/java/org/openspaces/plains/datagrid/DataGridConnectionUtility.java], in the "plains" project.
+{% endtip %}
+
 With this class in the classpath, getting a datagrid reference is as simple as:
 
-{code}GigaSpace space=DataGridConnectionUtility.getSpace("myGrid");{code}
+
+
+{% highlight java %}
+GigaSpace space=DataGridConnectionUtility.getSpace("myGrid");{% endhighlight %}
+
 
 ## Further reading:
 - [Modeling and Accessing Your Data|XAP91:Modeling and Accessing Your Data]

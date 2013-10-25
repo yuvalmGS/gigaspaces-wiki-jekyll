@@ -6,12 +6,15 @@ page_id: 52528551
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}Custom Matching Implementation{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Custom Matching Implementation{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.0
 **Last Update:** January 2010
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -19,7 +22,11 @@ page_id: 52528551
 Usually you index and execute queries using primitive fields (long, float, string, etc). The fields may be within the root level of the space object, or embedded within [nested objects|XAP91:SQLQuery#Nested Object Query] within the space object. You may construct a query using a template object or SQL to specify the criteria you would like to use when the matching phase is performed within the space when looking for the relevant objects.
 
 In some cases you might want to use a custom data type with a custom business logic to find matching objects within the space, rather the usual [primitive data type|http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html] comparison. To allow the space to invoke your business logic when the matching process is conducted, the [Comparable|http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html] interface should be implemented for a class that stores the data you would like to use with your custom business logic.
-{tip}The [Comparable|http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html] implementation should not be done for the space class itself, but for one of its fields.{tip}
+
+{% tip %}
+The [Comparable|http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html] implementation should not be done for the space class itself, but for one of its fields.
+{% endtip %}
+
 
 Such custom business logic might be useful when comparing vector data (2 dimensional Cartesian space). These may represent sound, maps, pictures or any other 2 or 3 dimensional artifacts. You may use this technique to query data based on any other mathematical or financial related formulas such as [Time value of money|http://en.wikipedia.org/wiki/Time_value_of_money] like Present Value of a Cash Flow Series, Future Value of a Cash Flow Series, etc. Other areas where such custom matching is relevant, are Pattern recognition, Sequence analysis, Surveillance, Forensic, Social network behavior etc.
 
@@ -30,7 +37,9 @@ The following example illustrates a business logic implementation used to query 
 {panel}!GRA:Images^EuclideanDistance.jpg!{panel}
 
 The object that holds the array implements the [Comparable|http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html] interface. The Space class has a getter method for this field indexing, using the `EXTENDED` index. The actual query involves indexed fields for several sample data points within the vector, together with the custom field:
-{code}
+
+
+{% highlight java %}
 SQLQuery<Vector> query= new SQLQuery<Vector>(Vector.class ,
 		"(x0 > ? AND x0 < ? ) " +
 		"AND (x1 > ? AND x1 < ? ) " +
@@ -44,18 +53,25 @@ SQLQuery<Vector> query= new SQLQuery<Vector>(Vector.class ,
 		"AND (x9 > ? AND x9 < ? ) " +
 		"AND (x10 > ? AND x10 < ? ) " +
 		"AND vectordata <= ?");
-{code}
+{% endhighlight %}
+
 
 Here is an example of a target vector, and a matching vector found using the custom matching implementation illustrated below:
 {panel}!GRA:Images^custommatching.jpg!{panel}
 
-{tip}To scale the system you should deploy the space using the [partitioned cluster schema|XAP91:Terminology - Data Grid Topologies]. This will allow queries (i.e. matching) to be executed across all the partitions in parallel, speeding up the query execution time.{tip}
+
+{% tip %}
+To scale the system you should deploy the space using the [partitioned cluster schema|XAP91:Terminology - Data Grid Topologies]. This will allow queries (i.e. matching) to be executed across all the partitions in parallel, speeding up the query execution time.
+{% endtip %}
+
 
 See **The Application** tab for the full query usage. This allows the `Comparable.compareTo` implementation to be performed on a smaller candidate subset of objects.
 
 {gdeck:example|top}
 {gcard:The Comparable implementation}
-{code:title=The Comparable implementation}
+
+
+{% highlight java %}
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -121,10 +137,13 @@ public class VectorData implements Serializable, Comparable <VectorData>{
 		return true;
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:The Space Class}
-{code:title=The Space Class}
+
+
+{% highlight java %}
 import com.gigaspaces.annotation.pojo.SpaceClass;
 import com.gigaspaces.annotation.pojo.SpaceId;
 import com.gigaspaces.annotation.pojo.SpaceProperty;
@@ -178,10 +197,13 @@ public class Vector {
 	....
 	void setX10(Integer x){};
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:The Application}
-{code:title=The Application}
+
+
+{% highlight java %}
 static Random rand = new Random();
 static int[] baseVector =null;
 public static void main(String[] args) throws Exception{
@@ -241,6 +263,7 @@ static int[] getRandomVector()
 	}
 	return data;
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}

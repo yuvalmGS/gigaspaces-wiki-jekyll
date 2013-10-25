@@ -7,12 +7,15 @@ page_id: 49414729
 
 {composition-setup}
 
-{tip}**Summary:** {excerpt}the Map-Reduce Pattern - This example illustrates the usage of Executors Remoting (Service Executors) and Task Executors to process data in parallel.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}the Map-Reduce Pattern - This example illustrates the usage of Executors Remoting (Service Executors) and Task Executors to process data in parallel.{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1
 **Last Update:** Dec 2010
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -45,7 +48,9 @@ The example code will have the following implemented:
 
 ## The Task Implementation
 The Task implements the `DistributedTask` interface. It includes the `execute` and the `reduce` methods:
-{code}
+
+
+{% highlight java %}
 package org.test.executor;
 
 import java.sql.Time;
@@ -97,33 +102,43 @@ public class MyTask implements DistributedTask<Integer, Integer>{
 		return total_result/partitions;
 	}
 }
-{code}
+{% endhighlight %}
+
 
 ## The Client
 
 ### Sync mode
 The client invokes the Task on the remote space in sync mode using the following:
-{code}
+
+
+{% highlight java %}
 space = new UrlSpaceConfigurer("jini://*/*/space").space();
 gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 AsyncFuture<Integer> future =gigaSpace.execute(new MyTask());
 Integer result = future.get();
-{code}
+{% endhighlight %}
+
 
 ### A-Sync mode
 The client invokes the Task on the remote space in A-sync mode using the following:
-{code}
+
+
+{% highlight java %}
 space = new UrlSpaceConfigurer("jini://*/*/space").space();
 gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 gigaSpace.execute(new MyTask(),new ExecutorTaskClientMain ());
-{code}
+{% endhighlight %}
+
 
 ExecutorTaskClientMain implements AsyncFutureListener:
-{code}
+
+
+{% highlight java %}
 public void onResult(AsyncResult<Integer> result) {
 	System.out.println(new Time(System.currentTimeMillis()) + " - Client got Result:" + result.getResult() );
 }
-{code}
+{% endhighlight %}
+
 
 ## Running the Example
 
@@ -136,35 +151,49 @@ Click **Run**. This will start the clustered space within your IDE.
 
 Using CLI:
 To start the clustered space with 2 partitions run the following:
-{code}
+
+
+{% highlight java %}
 \gigaspaces-xap\bin\bin>puInstance -cluster schema=partitioned total_members=2 ..\deploy\templates\datagrid
-{code}
+{% endhighlight %}
+
 
 When you start the space make sure you see both partitions started before you run the client:
-{code:title=Space startup output}
+
+
+{% highlight java %}
 2010-12-17 14:02:20,453  INFO [com.gigaspaces.core.common] - Space [space_container1:space]
 with url [/./space?cluster_schema=partitioned&total_members=2&id=1&schema=default&groups=gigaspaces-7.1.2-XAPPremium-ga&state=started]
 started successfully
 2010-12-17 14:03:04,187  INFO [com.gigaspaces.core.common] - Space [space_container2:space]
 with url [/./space?cluster_schema=partitioned&total_members=2&id=2&schema=default&groups=gigaspaces-7.1.2-XAPPremium-ga&state=started]
 started successfully
-{code}
+{% endhighlight %}
+
 
 ### Run the Client Application
 Run the Client Application (ExecutorTaskClientMain.java).
 
 The ExecutorTaskClientMain requires the following as application arguments:
 Sync mode:
-{code}
+
+
+{% highlight java %}
 org.test.executor.ExecutorTaskClientMain sync
-{code}
+{% endhighlight %}
+
 A-Sync mode:
-{code}
+
+
+{% highlight java %}
 org.test.executor.ExecutorTaskClientMain async
-{code}
+{% endhighlight %}
+
 
 ### Expected output
-{code:title=Server Output}
+
+
+{% highlight java %}
 14:14:16 MyTask execute called at space_container1 - total is:24500
 14:14:16 MyTask execute called at space_container2 - total is:25000
 14:14:17 MyTask execute called at space_container1 - total is:24500
@@ -185,9 +214,12 @@ org.test.executor.ExecutorTaskClientMain async
 14:14:24 MyTask execute called at space_container2 - total is:25000
 14:14:25 MyTask execute called at space_container1 - total is:24500
 14:14:25 MyTask execute called at space_container2 - total is:25000
-{code}
+{% endhighlight %}
 
-{code:title=Client Output}
+
+
+
+{% highlight java %}
 Sync Executor example started
 Log file: C:\gigaspaces-xap-premium-7.1.2-ga\logs\2010-12-17~14.14-gigaspaces-service-207.172.165.179-6516.log
 14:14:16 - Client calling MyTask execute sync
@@ -210,7 +242,8 @@ Log file: C:\gigaspaces-xap-premium-7.1.2-ga\logs\2010-12-17~14.14-gigaspaces-se
 14:14:24 - Client got Result:495
 14:14:25 - Client calling MyTask execute sync
 14:14:25 - Client got Result:495
-{code}
+{% endhighlight %}
+
 
 You can view the space operations statistics by running the `\gigaspaces-xap\bin\gs-ui`:
 {indent}!exe_example_stats.jpg|thumbnail!{indent}
@@ -233,19 +266,24 @@ Your code should have the following implemented:
 ## The Service Interface
 
 The Service Interface includes 2 methods. One used to invoke the Service method in **Synchronous** mode and another used to invoke the Service method **Asynchronous** mode:
-{code}
+
+
+{% highlight java %}
 import com.gigaspaces.async.AsyncFuture;
 
 public interface IDataProcessor {
     Integer processData(Object data);
     AsyncFuture<Integer>  asyncProcessData(Object data);
-}{code}
+}{% endhighlight %}
+
 
 ## The Service Implementation
 
 The Service Implementation includes some business logic for both of these methods:
 
-{code}
+
+
+{% highlight java %}
 import java.sql.Time;
 import org.openspaces.core.GigaSpace;
 import org.openspaces.core.cluster.ClusterInfo;
@@ -280,12 +318,14 @@ public class DataProcessorService implements IDataProcessor {
 		return total/accounts.length;
 	}
 }
-{code}
+{% endhighlight %}
+
 
 ## The Service Declaration
 
 The `pu.xml` used to export the Service and start the space described below:
-{code:xml}
+
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -314,7 +354,8 @@ The `pu.xml` used to export the Service and start the space described below:
 <os-remoting:service-exporter id="serviceExporter" />
 
 </beans>
-{code}
+{% endhighlight %}
+
 
 {note}The `context:component-scan` , `os-remoting:service-exporter` and `os-remoting:annotation-support` used to allow the system to locate classes annotated with `RemotingService` and export these implicitly.{note}
 
@@ -322,7 +363,9 @@ The `pu.xml` used to export the Service and start the space described below:
 The Service Result Reducer is called at the client side and aggregates results sent from all invoked services (collocated with all space partitions).
 
 The Reducer implements the `RemoteResultReducer` interface:
-{code}
+
+
+{% highlight java %}
 import org.openspaces.remoting.RemoteResultReducer;
 import org.openspaces.remoting.SpaceRemotingInvocation;
 import org.openspaces.remoting.SpaceRemotingResult;
@@ -339,19 +382,23 @@ public class DataProcessorServiceReducer implements RemoteResultReducer<Integer,
 		return total_result/results.length  ;
 	}
 }
-{code}
+{% endhighlight %}
+
 
 ## The Client
 
 The client invokes the service in **Synchronous** mode using the following:
-{code}
+
+
+{% highlight java %}
 IJSpace space = new UrlSpaceConfigurer("jini://*/*/space").space();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 IDataProcessor dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcessor>
 	(gigaSpace, IDataProcessor.class).broadcast(new DataProcessorServiceReducer()).proxy();
 Integer result = dataProcessor.processData("A" + count);
 System.out.println(new Time(System.currentTimeMillis()) + " - Client got Result:" + result.intValue() );
-{code}
+{% endhighlight %}
+
 
 1. The client getting a proxy to a remote space
 2. The client constructing Service proxy using the `ExecutorRemotingProxyConfigurer`. The `DataProcessorServiceReducer` is used when constructing Service proxy .
@@ -369,30 +416,41 @@ Click **Run**. This will start the clustered space and the Services within your 
 
 Using CLI:
 To start the clustered space with 2 partitions and export the Service run the following:
-{code}
+
+
+{% highlight java %}
 \gigaspaces-xap\bin\bin>puInstance -cluster schema=partitioned total_members=2 \ExecutorExample\classes
-{code}
+{% endhighlight %}
+
 
 Where the `\ExecutorExample\classes` should include the processing unit pu.xml under `META-INF\spring\pu.xml` and relevant Service class files.
 
 When you start the space make sure you see both partitions started before you run the client:
-{code:title=Space startup output}
+
+
+{% highlight java %}
 2010-12-17 14:02:20,453  INFO [com.gigaspaces.core.common] - Space [space_container1:space]
 with url [/./space?cluster_schema=partitioned&total_members=2&id=1&schema=default&groups=gigaspaces-7.1.2-XAPPremium-ga&state=started]
 started successfully
 2010-12-17 14:03:04,187  INFO [com.gigaspaces.core.common] - Space [space_container2:space]
 with url [/./space?cluster_schema=partitioned&total_members=2&id=2&schema=default&groups=gigaspaces-7.1.2-XAPPremium-ga&state=started]
 started successfully
-{code}
+{% endhighlight %}
+
 
 ### Run the Client Application
 Run the Client Application (ExecutorClientMain.java) using the following:
-{code}
+
+
+{% highlight java %}
 org.test.executor.ExecutorClientMain sync
-{code}
+{% endhighlight %}
+
 
 ### Expected Output
-{code:title=Server Output}
+
+
+{% highlight java %}
 14:12:18 MyTask execute called at space_container2 - total is:25000
 14:12:18 MyTask execute called at space_container1 - total is:24500
 14:12:19 MyTask execute called at space_container1 - total is:24500
@@ -411,9 +469,12 @@ org.test.executor.ExecutorClientMain sync
 14:12:26 MyTask execute called at space_container1 - total is:24500
 14:12:27 MyTask execute called at space_container2 - total is:25000
 14:12:27 MyTask execute called at space_container1 - total is:24500
-{code}
+{% endhighlight %}
 
-{code:title=Client Output}
+
+
+
+{% highlight java %}
 Sync Service Executor example started
 Log file: C:\gigaspaces-xap-premium-7.1.2-ga\logs\2010-12-17~14.12-gigaspaces-service-207.172.165.179-6472.log
 14:12:18 - Client calling sync dataProcessor
@@ -434,7 +495,8 @@ Log file: C:\gigaspaces-xap-premium-7.1.2-ga\logs\2010-12-17~14.12-gigaspaces-se
 14:12:26 - Client got Result:495
 14:12:27 - Client calling sync dataProcessor
 14:12:27 - Client got Result:495
-{code}
+{% endhighlight %}
+
 
 You can view the space operations statistics by running the `\gigaspaces-xap\bin\gs-ui`:
 {indent}!exe_example_stats.jpg|thumbnail!{indent}

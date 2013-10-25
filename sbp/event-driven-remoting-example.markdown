@@ -7,12 +7,15 @@ page_id: 47219276
 
 {composition-setup}
 
-{tip}**Summary:** {excerpt}Event based remoting example{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Event based remoting example{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.4
 **Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -61,7 +64,9 @@ To allow the client to invoke the service and immediately return the actual dial
 
 ## Sample Client Output
 
-{code}
+
+
+{% highlight java %}
 EventRemotingClient: I am being constructed.
 2011-11-08 09:11:46,871  INFO [org.openspaces.pu.container.integrated.IntegratedProcessingUnitContainer] -
 Processing unit(s) started successfully
@@ -74,13 +79,17 @@ Processing unit(s) started successfully
 2011-11-08 09:11:57.985 Got EventDrivenRemoteFuture back...
 2011-11-08 09:11:57.985 Future.get() returns Hi
 ---------------------------------------------------
-{code}
+{% endhighlight %}
+
 
 ## Sample Service Output
-{code}
+
+
+{% highlight java %}
 SimpleServiceImpl constructed...
 2011-11-08 09:11:40,036  INFO [org.openspaces.pu.container.integrated.IntegratedProcessingUnitContainer] -
 Processing unit(s) started successfully
 2011-11-08 09:11:47.965 SimpleServiceImpl - Request Number:1 called!
 2011-11-08 09:11:57.985 SimpleServiceImpl - Request Number:2 called!
-{code}
+{% endhighlight %}
+

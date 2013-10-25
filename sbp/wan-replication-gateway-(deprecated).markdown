@@ -7,11 +7,14 @@ page_id: 54820903
 
 {composition-setup}
 
-{tip}**Summary:** {excerpt}WAN Replication Gateway example.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}WAN Replication Gateway example.{excerpt}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1.2
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 
 # Overview
 
@@ -33,7 +36,9 @@ Some relevant code from the example is in the following sections.
 
 {gdeck:Data Model}
 {gcard:Product Class}
-{code:java}
+
+
+{% highlight java %}
 
 package com.gigaspaces.domain;
 
@@ -78,10 +83,13 @@ public class Product extends MultiClusterEnabled {
 				+ "] quantity[" + quantity + "]";
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:MultiClusterEnabled Class}
-{code:java}
+
+
+{% highlight java %}
 
 package com.gigaspaces.domain;
 
@@ -97,7 +105,8 @@ public abstract class MultiClusterEnabled {
 		this.multiClusterReplicate = multiClusterReplicate;
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -105,7 +114,8 @@ public abstract class MultiClusterEnabled {
 
 {gdeck:Mirror}
 {gcard:Mirror pu.xml}
-{code:xml}
+
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:os-core="http://www.openspaces.org/schema/core"
@@ -139,10 +149,13 @@ public abstract class MultiClusterEnabled {
 		external-data-source="myDataSource" />
 
 </beans>
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:MyExternalDataSource Implementation}
-{code:java}
+
+
+{% highlight java %}
 package com.gigaspaces.datasource;
 
 import java.util.List;
@@ -242,7 +255,8 @@ public class MyExternalDataSource implements BulkDataPersister, ManagedDataSourc
 
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -255,43 +269,70 @@ Example was tested using a single machine with ip address, 192.168.2.100 and Loo
 
 1. Extract the [example|WAN Replication Gateway (Deprecated)^multi-cluster.zip] archive into a folder. Navigate to the folder (calling it <multi-cluster-example>) and open a command shell. Modify the setDevEnv-SiteA.bat/sh and setDevEnv-SiteB.bat/sh files to have proper paths for GigaSpaces home and Java home. Also modify the NIC_ADDR variable to have proper ip address for each site.
 2. Run setDevEnv-SiteA script to set the environment variables.
-{tip}Make sure you change the `pom.xml` <gsVersion> paramter to use the GigaSpaces release version you are testing with.{tip}
+
+{% tip %}
+Make sure you change the `pom.xml` <gsVersion> paramter to use the GigaSpaces release version you are testing with.
+{% endtip %}
+
 3. Run maven clean using following command
-{code}mvn clean{code}
+
+
+{% highlight java %}
+mvn clean{% endhighlight %}
+
 4. Run maven package (skip the tests) using following command
-{code}mvn package -DskipTests{code}
+
+
+{% highlight java %}
+mvn package -DskipTests{% endhighlight %}
+
 5. Start a gs-ui instance.
 6. Run gs-agent-SiteA and gs-agent-SiteB scripts on appropriate machines.
 This will start GSA, GSM, LUS and 2 GSC's for SiteA with SiteA zone and GSA, GSM, LUS and 3 GSC's for SiteB with SiteB zone. Hosts tab in gs-ui will look like something below after you add the appropriate groups and locators in gs-ui,
 !after_gsa_start.jpg!
 7. Deploy the SiteA space cluster (2,1) by running deploy-SiteA script from <multi-cluster-example> directory.
 8. Deploy the SiteB space cluster (3,1) using following,
-{code}
+
+
+{% highlight java %}
 cd <multi-cluster-example>\processor
 mvn os:deploy -Dsla=../config/SiteB-sla.xml -Dgroups=SiteB -Dlocators=192.168.2.100:14165 -Dmodule=processor
-{code}
+{% endhighlight %}
+
 9. Deploy the mirror using following,
-{code}
+
+
+{% highlight java %}
 cd <multi-cluster-example>\mirror
 mvn os:deploy -Dgroups=SiteB -Dlocators=192.168.2.100:14165 -Dmodule=mirror
-{code}
+{% endhighlight %}
+
 10. Ensure that the spaces are mirror are available in gs-ui. Space Browser tab after everything is deployed will look like below,
 !after_deploying_everything.jpg!
 11. For running the clients you need the common jar in the maven repo. Install the common jar using following,
-{code}
+
+
+{% highlight java %}
 cd <multi-cluster-example>\common
 mvn install
-{code}
+{% endhighlight %}
+
 12. Create products (in SiteB) by running `WriteProducts` client using following,
-{code}
+
+
+{% highlight java %}
 cd <multi-cluster-example>\feeder
 mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.client.WriteProducts"
 -Dexec.args="jini://*/*/SiteB?groups=SiteB"
-{code}
+{% endhighlight %}
+
 13. You will notice Products are available on the SiteA as well.
 14. Write new orders into the system using `WriteOrders` client using following,
-{code}
+
+
+{% highlight java %}
 mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.client.WriteOrders"
 -Dexec.args="jini://*/*/SiteB?groups=SiteB"
-{code}
+{% endhighlight %}
+
 New orders will update the Product quantities on SiteB which are in turn replicated to SiteA instance as well.

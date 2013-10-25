@@ -6,12 +6,15 @@ page_id: 55938230
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}Primary-Backup Zone Controller, allows you to specify a specific zone for primary instances and a different zone for backup instances.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Primary-Backup Zone Controller, allows you to specify a specific zone for primary instances and a different zone for backup instances.{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0
 **Last Update:** April 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -39,101 +42,139 @@ The example below will show how to use the Primary-Backup Zone Controller to pla
 2. Start LUS and GSM:
 {gdeck:1|top}
 {gcard:Windows}
-{code}
+
+
+{% highlight java %}
 gs-agent gsa.gsc 0 gsa.lus 1 gsa.gsm 1
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Linux}
-{code}
+
+
+{% highlight java %}
 ./gs-agent.sh gsa.gsc 0 gsa.lus 1 gsa.gsm 1
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
 3. Start Zone A:
 {gdeck:3|top}
 {gcard:Windows}
-{code}
+
+
+{% highlight java %}
 set GSC_JAVA_OPTIONS=-Dcom.gs.zones="A"
 gs-agent gsa.gsc 2 gsa.lus 0 gsa.gsm 0
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Linux}
-{code}
+
+
+{% highlight java %}
 export GSC_JAVA_OPTIONS=-Dcom.gs.zones="A"
 ./gs-agent.sh gsa.gsc 2 gsa.lus 0 gsa.gsm 0
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
 4. Start Zone B:
 {gdeck:4|top}
 {gcard:Windows}
-{code}
+
+
+{% highlight java %}
 set GSC_JAVA_OPTIONS=-Dcom.gs.zones="B"
 gs-agent gsa.gsc 2 gsa.lus 0 gsa.gsm 0
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Linux}
-{code}
+
+
+{% highlight java %}
 export GSC_JAVA_OPTIONS=-Dcom.gs.zones="B"
 ./gs-agent.sh gsa.gsc 2 gsa.lus 0 gsa.gsm 0
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
 5. Start Zone C:
 {gdeck:5|top}
 {gcard:Windows}
-{code}
+
+
+{% highlight java %}
 set GSC_JAVA_OPTIONS=-Dcom.gs.zones="C"
 gs-agent 0 gsa.gsc 2 gsa.lus 0 gsa.gsm 0
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Linux}
-{code}
+
+
+{% highlight java %}
 export GSC_JAVA_OPTIONS=-Dcom.gs.zones="C"
 ./gs-agent.sh gsa.gsc 2 gsa.lus 0 gsa.gsm 0
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
 6. Deploy a Data-Grid:
 {gdeck:6|top}
 {gcard:Windows}
-{code}
+
+
+{% highlight java %}
 gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,1 mySpace
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Linux}
-{code}
+
+
+{% highlight java %}
 ./gs.sh deploy-space -cluster schema=partitioned-sync2backup total_members=2,1 mySpace
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
 7. Run the Primary-Backup Zone Controller utility:
 {gdeck:7|top}
 {gcard:Windows}
-{code}
+
+
+{% highlight java %}
 call c:\gigaspaces-xap-root\bin\setenv.bat
 set JARS=%GS_JARS%;.\bin
 java %JARS% -DpuName=mySpace -DprimaryZone=A -DbackupZone=B -Dlocators=127.0.0.1 com.gigaspaces.admin.PrimaryBackupController
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Linux}
-{code}
+
+
+{% highlight java %}
 JSHOMEDIR=`dirname $0`/../gigaspaces-xap-root; export JSHOMEDIR
 . ${JSHOMEDIR}/bin/setenv.sh
 export JARS=$GS_JARS:./bin
 java $JARS -DpuName=mySpace -DprimaryZone=A -DbackupZone=B -Dlocators=127.0.0.1 com.gigaspaces.admin.PrimaryBackupController
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
 ## Deploying the Primary-Backup Zone Controller as a PU
 When deploying the Primary-Backup Zone Controller utility as a PU the PU configuration includes the following:
-{code}
+
+
+{% highlight java %}
 <bean id="PrimaryBackupController" class="com.gigaspaces.admin.PrimaryBackupController" >
 	<property name="primaryZone" value="A" />
 	<property name="backupZone" value="B" />
@@ -142,4 +183,5 @@ When deploying the Primary-Backup Zone Controller utility as a PU the PU configu
 	<property name="puName" value="mySpace" />
 	<property name="delayBetweenChecks" value="60" />
 </bean>
-{code}
+{% endhighlight %}
+

@@ -6,12 +6,15 @@ page_id: 55935740
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}Moving Spring/Hibernate Application to GigaSpaces{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Moving Spring/Hibernate Application to GigaSpaces{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0
 **Last Update:** Feb 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -42,7 +45,9 @@ The existing application Spring bean Configuration file will be modified to:
 
 {gdeck:SpringbeanConfigurationFile|top}
 {gcard:Hibernate spring bean configuration file}
-{code}
+
+
+{% highlight java %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -82,13 +87,15 @@ The existing application Spring bean Configuration file will be modified to:
 		<property name="userDAO" ref="myUserDAO" />
 	</bean>
 </beans>
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:GigsSpaces spring bean configuration file}
 
 ## The Application spring bean configuration file
 The {myUserSpaceDAO}} includs the GigaSpaces DAO.
-{code:xml}
+
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -112,10 +119,12 @@ The {myUserSpaceDAO}} includs the GigaSpaces DAO.
 		<property name="gigaspace" ref="gigaSpace"/>
 	</bean>
 </beans>
-{code}
+{% endhighlight %}
+
 
 ## The Data-Grid PU spring bean configuration file
-{code:xml}
+
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -206,10 +215,12 @@ The {myUserSpaceDAO}} includs the GigaSpaces DAO.
     <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 
 </beans>
-{code}
+{% endhighlight %}
+
 
 ## The Mirror PU spring bean configuration file
-{code:xml}
+
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -279,7 +290,8 @@ The {myUserSpaceDAO}} includs the GigaSpaces DAO.
 	</os-core:space>
 
 </beans>
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -292,7 +304,9 @@ The POJO Class will be modified to include:
 
 {gdeck:ThePOJOClass|top}
 {gcard:Hibernate POJO Class}
-{code}
+
+
+{% highlight java %}
 package com.vaannila.domain;
 
 import javax.persistence.Column;
@@ -342,10 +356,13 @@ public class User {
 	public Boolean getMailingList() {return mailingList;}
 	public void setMailingList(Boolean mailingList) {this.mailingList = mailingList;}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:GigsSpaces POJO Class}
-{code}
+
+
+{% highlight java %}
 package com.vaannila.domain;
 
 import javax.persistence.Column;
@@ -400,13 +417,16 @@ public class User {
 	public Boolean getMailingList() {return mailingList;}
 	public void setMailingList(Boolean mailingList) {this.mailingList = mailingList;	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
 # UserDAO interface
 The UserDAO interface remains as is:
-{code}
+
+
+{% highlight java %}
 package com.vaannila.dao;
 
 import java.util.List;
@@ -416,13 +436,16 @@ public interface UserDAO {
 	public void saveUser(User user) ;
 	public List<User> listUser() ;
 }
-{code}
+{% endhighlight %}
+
 
 # The DAO Implementation
 The DAO implementation should be modified to use the [GigaSpace interface|XAP91:The GigaSpace Interface] to access the data grid instead of using the `HibernateTemplate` that is accessing the database. The `GigaSpace` interface simialr methods to the `HibernateTemplate` to write and [Query|XAP91:SQLQuery] for objects.
 {gdeck:DAOImplemenation|top}
 {gcard:Hibernate DAO Implemenation}
-{code}
+
+
+{% highlight java %}
 package com.vaannila.dao;
 
 import java.util.List;
@@ -445,11 +468,14 @@ public class UserDAOImpl implements UserDAO {
 	@SuppressWarnings("unchecked")
 	public List<User> listUser() {	return hibernateTemplate.find("from User");	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gcard:GigsSpaces DAO Implemenation}
-{code}
+
+
+{% highlight java %}
 package com.vaannila.dao;
 
 import java.util.ArrayList;
@@ -480,7 +506,8 @@ public class UserDAOSpaceImpl implements UserDAO {
 	public GigaSpace getGigaspace() {return gigaspace;}
 	public void setGigaspace(GigaSpace gigaspace) {this.gigaspace = gigaspace;}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -490,18 +517,36 @@ To deploy the Data-Grid and the web Application into the [GigaSpaces runtime env
 - Download the [application.war|^application.war] , [myDataGrid.jar|^myDataGrid.jar] and the [myMirror.jar|^myMirror.jar].
 - Start the [GigaSpaces agent|XAP91:The Grid Service Agent]:
 On windows run the following command:
-{code}\gigaspaces-xap\bin\gs-agent.bat{code}
+
+
+{% highlight java %}
+\gigaspaces-xap\bin\gs-agent.bat{% endhighlight %}
+
 On linux run the following command:
-{code}\gigaspaces-xap\bin\gs-agent.sh{code}
+
+
+{% highlight java %}
+\gigaspaces-xap\bin\gs-agent.sh{% endhighlight %}
+
 
 - Start the HSQLDB database:
-{code}java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb{code}
+
+
+{% highlight java %}
+java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb{% endhighlight %}
+
 
 Once the agent is up and running call the deploy commands.
 - Deploy the Data-grid using:
-{code}gs.sh deploy myDataGrid.jar{code}
+
+
+{% highlight java %}
+gs.sh deploy myDataGrid.jar{% endhighlight %}
+
 You should see the following:
-{code}
+
+
+{% highlight java %}
 Found 1 GSMs
 Deploying [myDataGrid.jar] with name [myDataGrid] under groups [gigaspaces-8.0.0-XAPPremium-ga] and locators []
 Uploading [myDataGrid] to [http://192.168.1.101:3354/]
@@ -509,11 +554,18 @@ Waiting for [2] processing unit instances to be deployed...
 [myDataGrid.1] [1] deployed successfully on [192.168.1.101]
 [myDataGrid.1] [2] deployed successfully on [192.168.1.101]
 Finished deploying [2] processing unit instances
-{code}
+{% endhighlight %}
+
 - Deploy the Mirror using:
-{code}gs.sh deploy myMirror.jar{code}
+
+
+{% highlight java %}
+gs.sh deploy myMirror.jar{% endhighlight %}
+
 You should see the following:
-{code}
+
+
+{% highlight java %}
 Found 1 GSMs
 Deploying [myMirror.jar] with name [myMirror] under groups [gigaspaces-8.0.0-XAPPremium-ga] and locators []
 Uploading [myMirror] to [http://192.168.1.101:3354/]
@@ -521,25 +573,41 @@ SLA Not Found in PU.  Using Default SLA.
 Waiting for [1] processing unit instances to be deployed...
 [myMirror] [1] deployed successfully on [192.168.1.101]
 Finished deploying [1] processing unit instances
-{code}
+{% endhighlight %}
+
 
 - Deploy the web Application using:
-{code}gs.sh deploy application.war{code}
+
+
+{% highlight java %}
+gs.sh deploy application.war{% endhighlight %}
+
 You should see the following:
-{code}
+
+
+{% highlight java %}
 Found 1 GSMs
 Deploying [application.war] with name [application] under groups [gigaspaces-8.0.0-XAPPremium-ga] and locators []
 Uploading [application] to [http://192.168.1.101:3354/]
 Waiting for [1] processing unit instances to be deployed...
 [application] [1] deployed successfully on [192.168.1.101]
 Finished deploying [1] processing unit instances
-{code}
+{% endhighlight %}
+
 
 - To view the deployed application and data-grid start the GS-UI:
 On windows run the following command:
-{code}\gigaspaces-xap\bin\gs-ui.bat{code}
+
+
+{% highlight java %}
+\gigaspaces-xap\bin\gs-ui.bat{% endhighlight %}
+
 On linux run the following command:
-{code}\gigaspaces-xap\bin\gs-ui.sh{code}
+
+
+{% highlight java %}
+\gigaspaces-xap\bin\gs-ui.sh{% endhighlight %}
+
 
 - Once the Data-Grid, Mirror and the application will be deployed you should see the following within the GS-UI:
 {indent}!hib2space1.jpg|thumbnail!{indent}
@@ -555,7 +623,11 @@ This will display the Query view with the User objects data stored within the sp
 {indent}!hib2space5.jpg|thumbnail!{indent}
 
 - To view the data within the database, start the database UI :
-{code}java -cp  ../lib/platform/jdbc/hsqldb.jar  org.hsqldb.util.DatabaseManager{code}
+
+
+{% highlight java %}
+java -cp  ../lib/platform/jdbc/hsqldb.jar  org.hsqldb.util.DatabaseManager{% endhighlight %}
+
 And query the database:
 {indent}!hib2space4.jpg|thumbnail!{indent}
 

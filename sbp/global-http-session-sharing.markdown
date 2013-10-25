@@ -85,7 +85,9 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 
 The web application requires a couple of configuration changes to the web.xml file in order to include the Shiro filter:
 
-{code:title=The WEB_INF/web.xml file }
+
+
+{% highlight java %}
 <web-app>
 
 ....
@@ -108,13 +110,16 @@ The web application requires a couple of configuration changes to the web.xml fi
 	</filter-mapping>
 
 </web-app>
-{code}
+{% endhighlight %}
+
 
 {note}The **ShiroFilter** must be the first filter defined.{note}
 
 The `shiro.ini` file needs to be placed within the WEB-INF folder and to define parameters for the session manager for it to be able to access GigaSpaces:
 
-{code:title=The WEB_INF/shiro.ini file }
+
+
+{% highlight java %}
 [main]
 sessionManager = org.apache.shiro.web.session.mgt.StandardWebSessionManager
 
@@ -147,9 +152,14 @@ securityManager.sessionManager.defaultSessionTimeout = 1800000
 sessionValidationScheduler.interval = 1800000
 sessionValidationScheduler.sessionManager = $sessionManager
 securityManager.sessionManager.sessionValidationScheduler = $sessionValidationScheduler
-{code}
+{% endhighlight %}
 
-{tip}The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Space URL|XAP9:Space URL] to the IMDG deployed within your site.{tip}
+
+
+{% tip %}
+The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Space URL|XAP9:Space URL] to the IMDG deployed within your site.
+{% endtip %}
+
 
 ### Web Application Libraries
 
@@ -169,11 +179,18 @@ Before deploying regular IMDG:
 aopalliance-1.0.jar, commons-beanutils-1.8.3.jar, commons-collections-2.1.1.jar, gs-runtime.jar, gs-session-manager-2.0-b103.jar, jcl-over-slf4j-1.6.4.jar, log4j-1.2.16.jar, shiro-all-1.3.0-317b.jar, slf4j-api-1.6.4.jar, slf4j-log4j12-1.6.4.jar, xmlbeans-2.2.0.jar, xmlpull-1.1.3.1.jar, xpp3_min-1.1.4c.jar and xstream-1.4.2.jar.
 
 To deploy the IMDG start the GigaSpaces agent using the `gs-agent` and run the following:
-{code}
-gs deploy-space sessionSpace
-{code}
 
-{tip}See the [deploy-space|XAP9:deploy-space GigaSpaces CLI] command for details.{tip}
+
+{% highlight java %}
+gs deploy-space sessionSpace
+{% endhighlight %}
+
+
+
+{% tip %}
+See the [deploy-space|XAP9:deploy-space GigaSpaces CLI] command for details.
+{% endtip %}
+
 
 ### The WAN Gateway
 The [WAN Gateway|XAP9:Multi-Site Replication over the WAN] should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway|http://www.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gateway] best practice for an example of how a multi-master Gateway architecture can be deployed.
@@ -184,14 +201,19 @@ The [WAN Gateway|XAP9:Multi-Site Replication over the WAN] should be deployed us
 
 There are cases when applications store session data which is not defined as serializable. To support non-serializable session data you can configure the session manager to serializable session to XML by defining following parameter in `shiro.ini` file mentioned above,
 
-{code}
+
+
+{% highlight java %}
 # Session serializationType - JAVA/XML (default JAVA)
 cacheManager.serializationType = XML
-{code}
+{% endhighlight %}
+
 
 Session manager uses XStream libraries for serializing session data to XML. XStream serialization can be further customized, application can configure GigaSpaces session manager to use Refection Converter for Externalizable classes and register custom converters. Following two parameters in `shiro.ini` file can help in customizing serialization,
 
-{code}
+
+
+{% highlight java %}
 # When using Externalizable classes with customized serialization and want to stick to serialization based on Reflection enable this option
 # Default value is false
 # cacheManager.registerReflectionConverter = true
@@ -200,17 +222,21 @@ Session manager uses XStream libraries for serializing session data to XML. XStr
 # (Expecting that these are part of classpath or WEB-INF/lib)
 # Pass them comma separated
 # cacheManager.converterNameList = org.openspaces.xtreme.converter.XmlCalendarConverter
-{code}
+{% endhighlight %}
+
 
 ##### Secured GigaSpaces cluster
 
 When using a [Secure GigaSpaces cluster|XAP9:Securing your Data] you can pass security credentials using following parameters in `shiro.ini` file,
 
-{code}
+
+
+{% highlight java %}
 # When using secured GigaSpace cluster, pass the credentials here
 # cacheManager.username = gs
 # cacheManager.password = gs
-{code}
+{% endhighlight %}
+
 
 # Http Session Web Application Example
 
@@ -240,7 +266,9 @@ Another option would be to use a load-balancer such as the [apache httpd|http://
 1. Install [apache httpd|http://httpd.apache.org].
 2. Create a file named `HttpSession.conf` located at <Apache HTTPD 2.2 root>\conf\gigaspaces
 3. Place the following within the `HttpSession.conf` file. The `BalancerMember` should be mapped to different URLs of your web servers instances. With the example below we have Tomcat using port 8080 and Websphere using port 9080.
-{code}
+
+
+{% highlight java %}
 <VirtualHost *:8888>
   ProxyPass / balancer://HttpSession_cluster/
   ProxyPassReverse / balancer://HttpSession_cluster/
@@ -250,11 +278,14 @@ Another option would be to use a load-balancer such as the [apache httpd|http://
     BalancerMember http://127.0.0.1:9080 route=HttpSession_2
   </Proxy>
 </VirtualHost>
-{code}
+{% endhighlight %}
+
 {note} The `127.0.0.1` IP should be replaced with IP addresses of the machine(s)/port(s) of WebSphere/Tomcat instances.{note}
 
 4. Configure the `<Apache2.2 HTTPD root>\conf\httpd.conf` to have the following:
-{code}
+
+
+{% highlight java %}
 Include "/tools/Apache2.2/conf/gigaspaces/*.conf"
 
 LoadModule proxy_module modules/mod_proxy.so
@@ -273,7 +304,8 @@ Deny from all
 Allow from 127.0.0.1
 </Location>
 
-{code}
+{% endhighlight %}
+
 {note}The `/tools/Apache2.2` folder name should be replaced with your correct Apache httpd location.
 The `127.0.0.1` IP should be replaced with appropriate IP addresses of the machine that is running apache.{note}
 5. Once you have the space running, Websphere running, Tomcat running, and Apache httpd configured, restart the Apache http. On windows you can use its service.
@@ -288,14 +320,20 @@ You can shutdown Websphere or Tomcat and later restart these. Your web applicati
 ### Multi-Site Deployment
 When deploying the [multi-site example|WAN Replication Gateway] you should change the `shiro.ini` for each site to match the local site Space URL. For example,
 to connect to the DE space you should have the web application use a `shiro.ini` with the following:
-{code}
+
+
+{% highlight java %}
 sessionDAO.activeSessionsCacheName = jini://*/*/wanSpaceDE?useLocalCache&groups=DE
-{code}
+{% endhighlight %}
+
 
 To connect to the US space you should have the web application use a `shiro.ini` with the following:
-{code}
+
+
+{% highlight java %}
 sessionDAO.activeSessionsCacheName = jini://*/*/wanSpaceUS?useLocalCache&groups=US
-{code}
+{% endhighlight %}
+
 
 # Other Considerations
 

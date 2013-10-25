@@ -7,11 +7,14 @@ page_id: 64325420
 
 {composition-setup}
 
-{tip}**Summary:** {excerpt}This article illustrates an approache that can be used to perform a clean shutdown mechanism by waiting for all asynchronous persistence to finish before killing Grid Service Containers.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}This article illustrates an approache that can be used to perform a clean shutdown mechanism by waiting for all asynchronous persistence to finish before killing Grid Service Containers.{excerpt}
 **Author**: Ali Hodroj, Senior Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 9.6.0
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 
 {rate}
 
@@ -31,7 +34,9 @@ The sample code below is meant to illustrate how the Admin API can be used to di
 
 {gdeck:Clean Shutdown Example}
 {gcard:Grid Shutdown Code}
-{code:java}
+
+
+{% highlight java %}
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -309,10 +314,12 @@ public class GridShutdown {
 	}
 }
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:shutdown.properties}
-{code:xml}
+
+{% highlight xml %}
 lookupgroups = MyGroup
 
 mailDomain=smtp.server.com
@@ -326,6 +333,7 @@ mailSubject=Grid Shutdown Failure
 numberOfGSAgents = 1
 
 transactionTimeout = 1000
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}

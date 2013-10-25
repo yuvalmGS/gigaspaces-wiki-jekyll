@@ -6,12 +6,16 @@ page_id: 56427156
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}Elastic Distributed Calculation Engine implementation using Map-Reduce approach.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Elastic Distributed Calculation Engine implementation using Map-Reduce approach.{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.3
 **Last Update:** Sep 2011
 **Contents:**
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}{tip}
+{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -71,7 +75,9 @@ The `AnalysisTask` include the following:
 
 ## The Net Present Value (NPV) Calculation
 The Net Present Value calculation calculates the NPV for 6 years. It is using the following code:
-{code}
+
+
+{% highlight java %}
 public void calculateNPV(double rate , Trade trade) {
     double disc = 1.0/(1.0+(double)(rate/100));
     CacheFlowData cf =  trade.getCacheFlowData();
@@ -83,7 +89,8 @@ public void calculateNPV(double rate , Trade trade) {
     		disc*cf.getCacheFlowYear5())))));
     trade.setNPV(NPV);
 }
-{code}
+{% endhighlight %}
+
 
 The above can be described using the following formula:
 !NPV_formula.jpg!
@@ -107,28 +114,54 @@ For long calculations that consume relatively large amount of CPU time, the reco
 # Running the Demo
 1. Download the [ElasticCalculationEngine.zip|Elastic Distributed Calculation Engine^ElasticCalculationEngine.zip] and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and **edit** the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.
 2. Start the GigaSpaces agent by running the following:
-{code}startAgent.bat{code}
+
+
+{% highlight java %}
+startAgent.bat{% endhighlight %}
+
 (!) You will need a machine with at least 2GB free memory to run this demo.
 3. Run the Elastic Data-Grid deploy script:
-{code}deployDataGrid.bat{code}
+
+
+{% highlight java %}
+deployDataGrid.bat{% endhighlight %}
+
 This will deploy the data grid/compute grid and will later allow you to scale it. Whenever you would like to scale the data grid/compute grid just **hit Enter**. Running the deploy script again will initiate the scaling cycle again for the existing running data grid/compute grid.
 4. Run the Ealstic Worker deploy script:
-{code}deployWorker.bat{code}
+
+
+{% highlight java %}
+deployWorker.bat{% endhighlight %}
+
 This will deploy the Worker PU into the Service Grid.
 5. Run the client invoking the Colocated calculations (this will be using the Task):
-{code}runClientExecutor.bat{code}
+
+
+{% highlight java %}
+runClientExecutor.bat{% endhighlight %}
+
 6. Run the client invoking the Remote calculations (this will be using the workers):
-{code}runClientMasterWorker.bat{code}
+
+
+{% highlight java %}
+runClientMasterWorker.bat{% endhighlight %}
+
 The client will run the calculation repeatedly for 10,000 Trades where each cycle will use different rates (2%, 3%, 4%, 5%, 6%, 7%, 8%). To stop the client hit CTRL + C.
 7. To scale the worker run the following:
-{code}ScaleWorker.bat{code} and follow the instructions.
+
+
+{% highlight java %}
+ScaleWorker.bat{% endhighlight %}
+ and follow the instructions.
 8. To Scale the Data-Grid following Hit Enter at the command running the `deployDataGrid.bat`.
 
 ## Running within eclipse
 You may run the Calcualtion Engine within eclipse by using the StartCluster main class. It will start a clustered space. You can use this to debug the `AnalysisTask` when executed at the space side.
 
 ## Expected Output
-{code:title=Deploy expected output}
+
+
+{% highlight java %}
 \ElasticRiskAnalysisDemo>set NIC_ADDR=127.0.0.1
 Log file: D:\gigaspaces-xap-premium-8.0.1-ga\logs\2011-06-23~15.05-gigaspaces-service-192.168.1.100-13980.log
 2011-06-23 15:05:32,566  INFO [Deployer] - Created Admin - OK!
@@ -166,9 +199,12 @@ About to scale data-grid memory capacity from 1024.0 MB to 256 MB
 2011-06-23 15:09:57,049  INFO [Deployer] - >> Total Memory used:384.0 MB - Progress:66.7 % done - Total Containers:3
 2011-06-23 15:10:00,398  INFO [Deployer] - >> Total Memory used:256.0 MB - Progress:100.0 % done - Total Containers:2
 2011-06-23 15:10:02,400  INFO [Deployer] - Data-Grid Memory capacity change done! - Time to scale system:46 seconds
-{code}
+{% endhighlight %}
 
-{code:title=Client expected output}
+
+
+
+{% highlight java %}
 Time to calculate Net present value for 10000 Trades using 2.0 % rate:41 ms
 2011-06-23 15:08:15,346  INFO [Client] - Book = Book0, NPV = 2237537745.8
 2011-06-23 15:08:15,346  INFO [Client] - Book = Book2, NPV = 2238433119.1
@@ -204,4 +240,5 @@ Time to calculate Net present value for 10000 Trades using 7.0 % rate:214 ms
 2011-06-23 15:08:21,029  INFO [Client] - Book = Book2, NPV = 11722218903.8
 2011-06-23 15:08:21,031  INFO [Client] - Book = Book1, NPV = 11719874460.1
 2011-06-23 15:08:21,031  INFO [Client] - Book = Book3, NPV = 11724563347.6
-{code}
+{% endhighlight %}
+

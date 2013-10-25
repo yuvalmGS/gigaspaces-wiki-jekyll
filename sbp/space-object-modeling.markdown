@@ -47,7 +47,9 @@ If you want to optimize the memory footprint, and avoid duplicated objects in me
 ## Example
 
 The Parent Class:
-{code}
+
+
+{% highlight java %}
 @Entity
 @Table(name = "parent")
 public class Parent
@@ -83,10 +85,13 @@ public class Parent
 	}
 
 }
-{code}
+{% endhighlight %}
+
 
 The Child Class:
-{code}
+
+
+{% highlight java %}
 public class Child implements Serializable {
 
     @Id
@@ -102,17 +107,23 @@ public class Child implements Serializable {
 		return id;
 	}
 }
-{code}
+{% endhighlight %}
+
 
 The Data access layer:
-{code}
+
+
+{% highlight java %}
 public Child loadChild(int childId) {
 	Child child = gigaSpace.readById(Child.class, childId);
 	return child;
 }
-{code}
+{% endhighlight %}
 
-{code}
+
+
+
+{% highlight java %}
 @Transactional
 public void storeChild(Child entity) {
 if (entity.getId() == null) {
@@ -120,7 +131,8 @@ if (entity.getId() == null) {
 }
 gigaSpace.write(entity);
 }
-{code}
+{% endhighlight %}
+
 
 In both cases, you can implement object navigation (myObject.getA().getB()). You just need to make sure that the collections/references object load is supported.
 

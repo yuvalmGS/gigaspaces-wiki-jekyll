@@ -7,12 +7,15 @@ page_id: 51118632
 
 {composition-setup}
 
-{tip}**Summary:** {excerpt}This article illustrates the usage of Task Executors to rapidly load data into the In-Memory-Data-Grid{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}This article illustrates the usage of Task Executors to rapidly load data into the In-Memory-Data-Grid{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.0
 **Last Update:** July 2009
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -27,7 +30,9 @@ Here is a simple example: we have 3 types of Space Classes:
 
 ## The createCurrencyGroups
 A Data generator utility class has a `createCurrencyGroups()` method that generates a Hash Map that groups currencies that belong to the same partition using the Currency String hashcode - here is a simple implementation of such a method:
-{code}
+
+
+{% highlight java %}
 
 static String currencies[] = { "AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD",
 "BDT","BGN","BHD","BIF","BMD","BND","BOB","BRL","BSD","BTN",
@@ -48,14 +53,17 @@ public static void createCurrencyGroups(int maxPartitions) {
 		currencyGroups.get(group).add(currency);
 	}
 }
-{code}
+{% endhighlight %}
+
 
 With the above implementation, we generate several lists of currencies, all of these are maintained within `currencyGroups` - one for each partition.
 
 ## The getRandomCurrency
 The Data generator also has the `getRandomCurrency` method that returns a random currency, based on a given partition - it uses the currencyGroups we created above:
 
-{code}
+
+
+{% highlight java %}
 public static String getRandomCurrency(int partition) {
 
 	// for a Single space
@@ -65,13 +73,16 @@ public static String getRandomCurrency(int partition) {
 	List<String> list = currencyGroups.get(partition-1);
 	return list.get (random.nextInt(list.size()));
 }
-{code}
+{% endhighlight %}
+
 
 The getRandomCurrency is used with our data generator utility.
 
 ## The LoaderRequest
 The LoaderRequest execute method implementation generates an array of the requested type and writes it using one method call (writeMultiple) into its collocated space:
-{code}
+
+
+{% highlight java %}
 public class LoaderRequest implements DistributedTask<String, String>{
 
 	public static final int RequestTypeLastPrice =1;
@@ -190,11 +201,14 @@ public class LoaderRequest implements DistributedTask<String, String>{
 	}
 
 }
-{code}
+{% endhighlight %}
+
 
 ## The Client Application
 The client application creates a `LoaderRequest` object and executes it, one for each space Class, where in reality all these `LoaderRequest` objects are sent in parallel to all running partitions to be executed. This is how you have these 3 types of objects loaded into all partitions simultaneously:
-{code}
+
+
+{% highlight java %}
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space").space()).gigaSpace();
 AsyncFuture<String> future1 = gigaSpace.execute(new LoaderRequest(objectsToLoad,LoaderRequest.RequestTypeLastPrice));
 AsyncFuture<String> future2 = gigaSpace.execute(new LoaderRequest(objectsToLoad,LoaderRequest.RequestTypeStockHist));
@@ -202,5 +216,6 @@ AsyncFuture<String> future3 = gigaSpace.execute(new LoaderRequest(objectsToLoad,
 String result1 = future1.get();
 String result2 = future2.get();
 String result3 = future3.get();
-{code}
+{% endhighlight %}
+
 

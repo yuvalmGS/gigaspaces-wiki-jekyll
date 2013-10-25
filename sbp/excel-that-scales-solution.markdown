@@ -5,12 +5,15 @@ categories: SBP
 page_id: 47219144
 ---
 
-{tip}**Summary:** {excerpt}Available functionality, how to develop the integration components and how to configure, deploy and run the GigaSpaces-Excel solution.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Available functionality, how to develop the integration components and how to configure, deploy and run the GigaSpaces-Excel solution.{excerpt}
 **Author**: Pini Cohen, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP.NET 6.6
 **Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview

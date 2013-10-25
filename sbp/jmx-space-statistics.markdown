@@ -5,12 +5,15 @@ categories: SBP
 page_id: 48760469
 ---
 
-{tip}**Summary:** {excerpt}JMX Space Statistics Agent{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}JMX Space Statistics Agent{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 6.6
 **Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -40,14 +43,20 @@ To install the example:
 Download the [example|^JMXSTAT.zip] and unzip it to an empty folder.
 
 To run the example:
-{code}
+
+
+{% highlight java %}
 java -classpath ./;JSpaces.jar com.jmxutil.JMXSpaceStats jini://*/*/space space_stats.txt 10000
-{code}
+{% endhighlight %}
+
 
 Example usage options:
-{code}
+
+
+{% highlight java %}
 java com.jmxutil.JMXSpaceStats space_url logfile sampling_duration
-{code}
+{% endhighlight %}
+
 
 The example works both with JDK 1.5 and JDK 1.6.
 

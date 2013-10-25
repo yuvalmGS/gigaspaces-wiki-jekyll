@@ -7,11 +7,14 @@ page_id: 54298007
 
 {composition-setup}
 
-{tip}**Summary:** {excerpt}This article illustrates the approaches that can be used to build Custom Eviction functionality.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}This article illustrates the approaches that can be used to build Custom Eviction functionality.{excerpt}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1.2
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 
 # Overview
 GigaSpaces being an in memory grid, is limited by the amount of memory allocated to the JVM's that make the cluster. Applications that are built using GigaSpaces and use it as a run time environment should be designed to work with this constraint. This article shows common strategies GigaSpaces applications use for Evicting old objects and make room for new data.
@@ -28,7 +31,9 @@ For some applications LRU based eviction is not suitable. Examples include, appl
 
 In this approach, application writes the objects into cluster with a limited Lease. Also limited Lease will be used selectively, reference data will be written with Lease.FOREVER and stay for the life of cluster but transient data will be written with limited lease.
 
-{code}
+
+
+{% highlight java %}
 
 // connect to the space using its URL
 IJSpace space = new UrlSpaceConfigurer(url).space();
@@ -45,19 +50,26 @@ gigaSpace.writeMultiple(batchOfOrders, 1000 * 60 * 60 );
 
 ...
 gigaSpace.write(referenceData, Lease.FOREVER);
-{code}
+{% endhighlight %}
+
 
 Lease reaper functionality on the GigaSpace runs periodically and evicts objects whose lease is up.
 
 {note}Lease amount should be tuned based on available memory, expected throughput rate and most importantly available memory in the cluster{note}
 
-{tip}This approach is most suitable for application which have data coming in at a steady and predictable rate.{tip}
+
+{% tip %}
+This approach is most suitable for application which have data coming in at a steady and predictable rate.
+{% endtip %}
+
 
 ## Manually managing Object Leases
 
 GigaSpaces API returns the `LeaseContext` after every write operation/update operation. In this approach application evicts the data by cancelling the Lease on objects in space that are eligible for eviction.
 
-{code}
+
+
+{% highlight java %}
 LeaseContext<Order> lease;
 
 ...
@@ -70,11 +82,14 @@ lease = gigaSpace.write(singleOrder);
 public void cancelLease() {
 ...
 lease.cancel();
-{code}
+{% endhighlight %}
+
 
 Another alternative to saving the Lease is to retrieve the objects that can be evicted and updating the Lease to a very short duration so that they become eligible for eviction.
 
-{code}
+
+
+{% highlight java %}
 
 //Retrieve all processed low priority orders and expire the lease
 Order template = new Order();
@@ -88,9 +103,14 @@ Order[] processedLowPriorityOrders = gigaSpace.readMultiple(template, 1000);
 gigaSpace.writeMultiple(processedLowPriorityOrders,
 		1000,					// Update the Lease to 1 second
 		UpdateModifiers.UPDATE_OR_WRITE); // Update existing object
-{code}
+{% endhighlight %}
 
-{tip}This approach is most suitable for application which have fluctuating data loads. Eviction logic can be triggered by monitoring the object count on the cluster and selectively evicting data like the example above.{tip}
+
+
+{% tip %}
+This approach is most suitable for application which have fluctuating data loads. Eviction logic can be triggered by monitoring the object count on the cluster and selectively evicting data like the example above.
+{% endtip %}
+
 
 ## Using a Polling Container
 
@@ -114,7 +134,8 @@ Some relavent code from the example,
 
 {gdeck:Polling Evictor Example}
 {gcard:Configuring Eviction logic in pu.xml}
-{code:xml}
+
+{% highlight xml %}
 	<!--
 		Eviction Polling container
 	-->
@@ -155,10 +176,13 @@ Some relavent code from the example,
     -->
 	<bean id="evictor" class="com.gigaspaces.eviction.Evictor"/>
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Trigger Receive Operation Handler}
-{code:java}
+
+
+{% highlight java %}
 
 public class EvictionTrigger implements TriggerOperationHandler {
 
@@ -185,10 +209,13 @@ public class EvictionTrigger implements TriggerOperationHandler {
 			return null;
 		}
 	}
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Evictor}
-{code:java}
+
+
+{% highlight java %}
 
 public class Evictor {
 
@@ -206,7 +233,8 @@ public class Evictor {
     }
 
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -221,31 +249,43 @@ This example is using Maven for packaging and build.
 Extract the [example|^PollingEvictor.zip] archive into a folder. Navigate to the folder
 
 Run maven clean using following command
-{code}
+
+
+{% highlight java %}
 mvn clean
-{code}
+{% endhighlight %}
+
 
 Run maven package (skip the tests) using following command
-{code}
+
+
+{% highlight java %}
 mvn package -DskipTests
-{code}
+{% endhighlight %}
+
 
 Start an instance of gs-agent using the script inside GigaSpacesRoot/bin/gs-agent.bin(sh). If your objective is to run the prototype and see it in action, please update your GSC_JVM_OPTIONS to have a Xmx and Xms of 128M.
 
 Deploy the application using following command
-{code}
+
+
+{% highlight java %}
 mvn os:deploy -Dmodule=pollingEvictor
-{code}
+{% endhighlight %}
+
 
 Invoke a gs-ui session to monitor the space.
 
 Also Launch a JConsole session for the space that just started.
 
 Run the test client using the following command
-{code}
+
+
+{% highlight java %}
 mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.client.TestClient"
 -Dexec.args="jini://*/*/mySpace"
-{code}
+{% endhighlight %}
+
 
 Start monitoring the GSC logs. After about a minute you will see that the eviction logic will trigger and clear the old `Order` objects from space.
 
@@ -275,7 +315,8 @@ Some relevant code from the example,
 
 {gdeck:Memory Notification Example}
 {gcard:Configuring Eviction logic in pu.xml}
-{code:xml}
+
+{% highlight xml %}
 <bean id="ec" class="com.gigaspaces.domain.EvictionConfig">
 	<property name="evictionStartThreshold"><value>70</value></property>
 	<property name="evictionStopThreshold"><value>60</value></property>
@@ -298,10 +339,13 @@ Some relevant code from the example,
 <bean id="orderProcessor" class="com.gigaspaces.processor.Processor">
 	<property name="workDuration"><value>10</value></property>
 </bean>
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Eviction Manager}
-{code:java}
+
+
+{% highlight java %}
 
 public class EvictionManager implements InitializingBean, NotificationListener {
 
@@ -317,10 +361,13 @@ public void handleNotification(Notification n, Object handback) {
 
 }
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Watermark Object}
-{code:java}
+
+
+{% highlight java %}
 
 package com.gigaspaces.domain;
 
@@ -383,10 +430,13 @@ public class Watermark {
 		this.evictionStatistics = evictionStatistics;
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Registering for JVM usage Threshold}
-{code:java}
+
+
+{% highlight java %}
 
 private void setJVMUsageThreshold() throws RuntimeException {
 
@@ -430,10 +480,13 @@ private void setJVMUsageThreshold() throws RuntimeException {
 	}
 }
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Eviction Logic}
-{code:java}
+
+
+{% highlight java %}
 
 // Update the Watermark object to indicate eviction is in progress
 wMark.setEvictionInProgress(true);
@@ -504,7 +557,8 @@ wMark.setEvictionStatistics(wMarkStatistics);
 wMark.setEvictionInProgress(false);
 gs.write(wMark, Lease.FOREVER, 5000, UpdateModifiers.UPDATE_OR_WRITE);
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -519,31 +573,43 @@ This example is using Maven for packaging and build.
 Extract the [example|^MyCustomEvictor.zip] archive into a folder. Navigate to the folder
 
 Run maven clean using following command
-{code}
+
+
+{% highlight java %}
 mvn clean
-{code}
+{% endhighlight %}
+
 
 Run maven package (skip the tests) using following command
-{code}
+
+
+{% highlight java %}
 mvn package -DskipTests
-{code}
+{% endhighlight %}
+
 
 Start an instance of gs-agent using the script inside GigaSpacesRoot/bin/gs-agent.bin(sh). If your objective is to run the prototype and see it in action, please update your GSC_JVM_OPTIONS to have a Xmx and Xms of 128M.
 
 Deploy the application using following command
-{code}
+
+
+{% highlight java %}
 mvn os:deploy -Dmodule=customEviction
-{code}
+{% endhighlight %}
+
 
 Invoke a gs-ui session to monitor the space.
 
 Also Launch a JConsole session for the space that just started.
 
 Run the test client using the following command
-{code}
+
+
+{% highlight java %}
 mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.client.TestClient"
 -Dexec.args="jini://*/*/mySpace"
-{code}
+{% endhighlight %}
+
 
 Start monitoring the JVM Tenured pool in JConsole and GSC logs. After few seconds you will see that the memory thresohold is breached and eviction logic will trigger and clear the old `Order` objects from space. Once the memory usage reached the eviction stop limit, eviction logic stops. You will see that the orders flow into the space constantly and the eviction logic triggers as and when needed making this a self healing application.
 

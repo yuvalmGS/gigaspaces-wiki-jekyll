@@ -6,12 +6,15 @@ page_id: 53379091
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}Access GgaSpaces Data-Grid via ODBC Driver{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Access GgaSpaces Data-Grid via ODBC Driver{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1
 **Last Update:** April 2010
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -34,30 +37,39 @@ See [GigaSpaces Management Center Security|XAP8:GigaSpaces Management Center (UI
 # Deploy a Secured Space
 - Click  the  "Deploy In-Memory Data Grid" button (top left, second button) in the UI.
 - In the dialog  select the following properties:
-{code}
+
+
+{% highlight java %}
 DataGrid Name : mySpace
 Space Schema : default
 Secured Space checkbox enabled
 User name : user, password: password
 Cluster Schema <None>
-{code}
+{% endhighlight %}
+
 And deploy the space.
 
 # ODBC-JDBC bridge
 - Download and install the ODBC-JDBC bridge from http://uda.openlinksw.com/odbc/st/odbc-jdbc-bridge-st.
 - Set the following environment variables in your system:
-{code}
+
+
+{% highlight java %}
 PATH=<Your Java Install directory>\jre\bin\server;%PATH%
 CLASSPATH=<GigaSpaces root>lib\required\commons-logging.jar;
 <GigaSpaces root>\lib\required\gs-openspaces.jar;<GigaSpaces root>\lib\required\gs-runtime.jar;
 <GigaSpaces root>\lib\required\spring.jar
-{code}
+{% endhighlight %}
+
 
 - Create a new OpenLink ODBC datasource with the following properties:
-{code}
+
+
+{% highlight java %}
 JDBC Driver : com.j_spaces.jdbc.driver.GDriver
 URL String: jdbc:gigaspaces:url:jini://*/*/mySpace
 User name  User name : user, Password: password
-{code}
+{% endhighlight %}
+
 
 You can test the connection using the openlink sample application at `Program Files\OpenLink Software\UDA\Samples\Odbc`

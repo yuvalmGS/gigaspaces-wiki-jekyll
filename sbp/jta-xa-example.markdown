@@ -6,13 +6,16 @@ page_id: 55938209
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}Integrating GigaSpaces with External JMS Server using JTA/XA{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Integrating GigaSpaces with External JMS Server using JTA/XA{excerpt}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.1
 **Last Update**: April 2011
 **Contents:**
 {toc:minLevel=1|maxLevel=2|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -31,7 +34,8 @@ This example includes:
 
 {gdeck:Processor pu.xml}
 {gcard:Atomikos Configuration}
-{code:xml}
+
+{% highlight xml %}
 
 <!-- Construct Atomikos UserTransactionManager, needed to configure Spring -->
 <bean id="atomikosTransactionManager" class="com.atomikos.icatch.jta.UserTransactionManager"
@@ -54,10 +58,12 @@ This example includes:
 	</property>
 </bean>
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:JMS Configuration}
-{code:xml}
+
+{% highlight xml %}
 
 <!-- creates an activemq xa connection factory using the amq namespace -->
 <bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQXAConnectionFactory">
@@ -82,10 +88,12 @@ This example includes:
 	<property name="sessionTransacted" value="true" />
 </bean>
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:GigaSpaces Configuration}
-{code:xml}
+
+{% highlight xml %}
 
 <!-- A bean representing a space (an IJSpace implementation). -->
 <os-core:space id="space" url="/./processorSpace" />
@@ -126,7 +134,8 @@ This example includes:
 	<property name="queue" ref="queue"/>
 </bean>
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -134,7 +143,9 @@ This example includes:
 
 {gdeck:Java Code}
 {gcard:Processor bean definition}
-{code:java}
+
+
+{% highlight java %}
 package org.openspaces.example.helloworld.processor;
 
 import java.io.IOException;
@@ -234,10 +245,13 @@ public class Processor implements InitializingBean {
 
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Message bean definition}
-{code:java}
+
+
+{% highlight java %}
 package org.openspaces.example.helloworld.common;
 
 import com.gigaspaces.annotation.pojo.SpaceRouting;
@@ -303,7 +317,8 @@ public class Message  {
         return "id[" + id + "] info[" + info +"]";
     }
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -315,7 +330,11 @@ public class Message  {
 4. Open a command shell and navigate to <helloworld-jta> folder.
 5. Run `setDevEnv.bat` script in <helloworld-jta> folder, to set the environment variables.
 6. Copy the required jars to the <helloworld-jta>\lib folder using the `copy-libs` ant task provided.
-{code} build copy-libs {code}
+
+
+{% highlight java %}
+ build copy-libs {% endhighlight %}
+
 {note} Example was tested using following product versions,
 7. GigaSpaces - **8.0.1**
 8. Apache ActiveMQ - **5.5**
@@ -326,13 +345,25 @@ If you are using different versions please make sure all the equivalent jars are
 11. Start the ActiveMQ process using <ActiveMQHome>`\bin\activemq.bat` script.
 {note} If ActiveMQ is running on another server, please remember to update the brokerURL in `pu.xml` {note}
 12. Deploy the processorSpace cluster by running `deploy-processor` ant task.
-{code} build deploy-processor {code}
+
+
+{% highlight java %}
+ build deploy-processor {% endhighlight %}
+
 13. Run the feeder process using `run-feeder` ant task.
-{code} build run-feeder {code}
+
+
+{% highlight java %}
+ build run-feeder {% endhighlight %}
+
 14. If you check GigaSpaces logs, you will notice that the Message-0 (id=0) is Rolled back and all other messages are processed successfully and sent to JMS server.
 {note} Message-0 (id=0) will keep going back to Polling container logic because the space update and JMS message both are rolled back. This is intentionally done, to demonstrate XA. {note}
 15. You can validate the JMS messages received by the Queue using a test JMS client included. You can run the client using `jms-client` ant task.
-{code} build jms-client {code}
+
+
+{% highlight java %}
+ build jms-client {% endhighlight %}
+
 
 ## References
 

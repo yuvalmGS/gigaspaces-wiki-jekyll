@@ -36,7 +36,11 @@ When running the space in clustered partitioned mode, you cannot run the workers
 
 The following sections include code samples and configuration that illustrate the Master-Worker implementation via Polling Containers, using the Random Workers and Designated Workers approach.
 
-{tip}We invite you to [download|Master-Worker Pattern^MasterWorker.zip] the code examples and configuration files used with this article.{tip}
+
+{% tip %}
+We invite you to [download|Master-Worker Pattern^MasterWorker.zip] the code examples and configuration files used with this article.
+{% endtip %}
+
 
 # Example 1 - Random Workers
 With the Random Workers approach, each worker can consume `Request` objects from **every** space partition. In this case, the non-blocking mode is used. The workers scan the partitions in a round-robin fashion for a `Request` object to consume and execute. With this approach, there might be a small delay until the workers consume a `Request` object. This approach might generate some chatting over the network, since the workers connect to all existing partitions to look for `Request` objects to consume and in case none is found, wait for some time and then try again.
@@ -53,7 +57,9 @@ Step 2:
 
 {gdeck:Random Workers approach|top}
 {gcard:The Master}
-{code:title=The Master Application}
+
+
+{% highlight java %}
 public class Master {
 
 	static GigaSpace space;
@@ -101,10 +107,13 @@ public class Master {
 		}
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:The Worker}
-{code:title=The Worker}
+
+
+{% highlight java %}
 @EventDriven @Polling (concurrentConsumers=2)
 public class Worker {
 
@@ -139,10 +148,12 @@ public class Worker {
     	return reponse;
     }
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:The Worker PU config}
-{code:xml}
+
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -164,10 +175,13 @@ public class Worker {
 	<os-core:giga-space id="gigaSpace" space="space"/>
     <os-core:giga-space-context/>
     <os-remoting:annotation-support/>
-</beans> {code}
+</beans> {% endhighlight %}
+
 {gcard}
 {gcard:The Base Space Class}
-{code:title=Request / Result Base Class}
+
+
+{% highlight java %}
 @SpaceClass
 public class Base {
 
@@ -200,35 +214,48 @@ public class Base {
 		this.payload = payload;
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:The Request Class}
-{code:title=The Request Space Class}
+
+
+{% highlight java %}
 @SpaceClass
 public class Request extends Base{
 	public Request (){}
 
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard: The Result Class}
-{code:title=The Result Space Class }
+
+
+{% highlight java %}
 @SpaceClass
 public class Result extends Base {
 	public Result (){}
 
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Deployment Commands}
 Deploying the clustered space PU:
-{code}
+
+
+{% highlight java %}
 >gs deploy-space -cluster schema=partitioned total_members=2 mySpace
-{code}
+{% endhighlight %}
+
 Deploying the Workers PU:
-{code}
+
+
+{% highlight java %}
 >gs deploy -cluster total_members=4 MasterWorker.jar
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -245,12 +272,18 @@ Step 2:
 {column}
 {section}
 
-{tip}With this approach the number of `Workers` should be greater than or equal to the number of partitions.{tip}
+
+{% tip %}
+With this approach the number of `Workers` should be greater than or equal to the number of partitions.
+{% endtip %}
+
 
 See below how the Designated Workers approach should be implemented:
 {gdeck:Designated Workers approach|top}
 {gcard:The Master}
-{code:title=The Master Application}
+
+
+{% highlight java %}
 public class Master {
 
 	static GigaSpace space;
@@ -310,10 +343,13 @@ public class Master {
 		}
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:The Worker }
-{code:title=The Worker}
+
+
+{% highlight java %}
 @EventDriven @Polling (concurrentConsumers=1)
 public class Worker implements ClusterInfoAware{
 
@@ -388,10 +424,12 @@ public class Worker implements ClusterInfoAware{
     	return reponse;
     }
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:The Worker PU config}
-{code:xml}
+
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -414,10 +452,13 @@ public class Worker implements ClusterInfoAware{
     <os-core:giga-space-context/>
     <os-remoting:annotation-support/>
 </beans>
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:The Base Space Class}
-{code:title=Request / Result Base Class}
+
+
+{% highlight java %}
 @SpaceClass
 public class Base {
 
@@ -458,35 +499,48 @@ public class Base {
 		this.routing = routing;
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:The Request Class}
-{code:title=The Request Space Class}
+
+
+{% highlight java %}
 @SpaceClass
 public class Request extends Base{
 	public Request (){}
 
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:The Result Class}
-{code:title=The Result Space Class }
+
+
+{% highlight java %}
 @SpaceClass
 public class Result extends Base {
 	public Result (){}
 
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Deployment Commands}
 Deploying the clustered space PU:
-{code}
+
+
+{% highlight java %}
 >gs deploy-space -cluster schema=partitioned total_members=2 mySpace
-{code}
+{% endhighlight %}
+
 Deploying the Workers PU:
-{code}
+
+
+{% highlight java %}
 >gs deploy -cluster total_members=4 MasterWorker.jar
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 

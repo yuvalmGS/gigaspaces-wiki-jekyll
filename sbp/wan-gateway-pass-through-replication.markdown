@@ -7,11 +7,14 @@ page_id: 59441985
 
 {composition-setup}
 
-{tip}**Summary:** {excerpt}WAN Pass Through replication example{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}WAN Pass Through replication example{excerpt}
 **Author**: Ali Hodroj, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.7
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 
 # Overview
 
@@ -47,7 +50,8 @@ The pass-through topology configuration is implemented through delegators across
 
 {gdeck}
 {gcard:New York Space}
-{code:xml}
+
+{% highlight xml %}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -81,10 +85,12 @@ The pass-through topology configuration is implemented through delegators across
 	</os-gateway:targets>
 </beans>
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:New York Gateway}
-{code:xml}
+
+{% highlight xml %}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -117,10 +123,12 @@ The pass-through topology configuration is implemented through delegators across
 
 
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:London Space}
-{code:xml}
+
+{% highlight xml %}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -154,10 +162,12 @@ The pass-through topology configuration is implemented through delegators across
 	</os-gateway:targets>
 </beans>
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:London Gateway}
-{code:xml}
+
+{% highlight xml %}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -190,10 +200,12 @@ The pass-through topology configuration is implemented through delegators across
 </beans>
 
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Hong Kong Space}
-{code:xml}
+
+{% highlight xml %}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -228,10 +240,12 @@ The pass-through topology configuration is implemented through delegators across
 	</os-gateway:targets>
 </beans>
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Hong Kong Gateway}
-{code:xml}
+
+{% highlight xml %}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -260,7 +274,8 @@ The pass-through topology configuration is implemented through delegators across
 
 </beans>
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 

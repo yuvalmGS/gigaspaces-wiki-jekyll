@@ -5,11 +5,14 @@ categories: SBP
 page_id: 50759531
 ---
 
-{tip}**Summary:** {excerpt}Capacity Planning - voodoo or simple math?{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Capacity Planning - voodoo or simple math?{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Capacity Planning - Voodoo or Simple Math?
@@ -59,10 +62,17 @@ See below an example of an object footprint using a 32 and 64 Bit JVM using diff
 - Footprint measured in Bytes.
 - Basic Index type is used. An Extended Index type will have an additional footprint (20%) compared to a Basic Index type.
 
-{tip}You may decrease the raw object footprint (not the indexes footprint) using the [GigaSpaces Serialization API|Lowering the Space Object Footprint]{tip}
 
-{tip}You can reduce the JVM memory footprint using the `-XX:+UseCompressedOops` JVM option. It is part of the JDK6u14 and JDK7. See more details here: [http://wikis.sun.com/display/HotSpotInternals/CompressedOops]. It is highly recommended to use the latest JDK release when using this option.
-{tip}
+{% tip %}
+You may decrease the raw object footprint (not the indexes footprint) using the [GigaSpaces Serialization API|Lowering the Space Object Footprint]
+{% endtip %}
+
+
+
+{% tip %}
+You can reduce the JVM memory footprint using the `-XX:+UseCompressedOops` JVM option. It is part of the JDK6u14 and JDK7. See more details here: [http://wikis.sun.com/display/HotSpotInternals/CompressedOops]. It is highly recommended to use the latest JDK release when using this option.
+{% endtip %}
+
 
 # Active Clients vs. Cores vs. Heap Size
 Since the IMDG kernel is a highly multi-threaded process, it has a relatively large number of active threads handling incoming requests. These requests could come from remote clients or collocated clients. Here are a few examples:
@@ -84,10 +94,26 @@ The calculation is essentially based on the maximum number of machines available
 The number of GSCs per machine you need initially, is calculated based on the machine's physical RAM and the amount of heap memory you would like to have for the JVM running the GSC. In many cases the heap size is determined based on the operating system: for a 32 bit OS, you would go for a 2G maximum heap size, and for a 64 bit OS, you would go for 6-10G maximum heap size (the JVM -Xmx argument). For performance optimization you should have the initial heap size the same as the maximum size. The next sections demonstrate capacity planning using a simple real life example.
 
 Here are a few basic formulas you can use:
-{code}Amount of GSCs per Machine = Amount of Total Machine Cores/2{code}
-{code}Total Amount of GSC = Amount of GSCs per Machine X Initial amount of Machines{code}
-{code}GSC max heap Size = min (6, (Machine RAM Size * 0.8) / Amount of GSCs per Machine)){code}
-{code}Amount of Data-Grid Partitions = Total Amount of GSC X Scaling Growth Rate / 2{code}
+
+
+{% highlight java %}
+Amount of GSCs per Machine = Amount of Total Machine Cores/2{% endhighlight %}
+
+
+
+{% highlight java %}
+Total Amount of GSC = Amount of GSCs per Machine X Initial amount of Machines{% endhighlight %}
+
+
+
+{% highlight java %}
+GSC max heap Size = min (6, (Machine RAM Size * 0.8) / Amount of GSCs per Machine)){% endhighlight %}
+
+
+
+{% highlight java %}
+Amount of Data-Grid Partitions = Total Amount of GSC X Scaling Growth Rate / 2{% endhighlight %}
+
 
 Where:
 - Number of Total Machine Cores - the total number of cores the machine is running. For a quad-core with 2 CPUs (Duo) machine this value is 8.

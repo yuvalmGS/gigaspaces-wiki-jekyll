@@ -6,12 +6,15 @@ page_id: 52887871
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}The Parallel Queue Pattern - High speed data processing pattern for low-latency systems{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}The Parallel Queue Pattern - High speed data processing pattern for low-latency systems{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.0
 **Last Update:** Feb 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -29,7 +32,11 @@ Here is an example for the latency duration for the Order request processing tim
 {indent}!GRA:Images^par_q1.jpg!{indent}
 The above results retrived when running the Data-Grid with 4 partitions with a backup.
 
-{tip}You can [download|^ParallelQueue.zip] the Order Management Processor code used with this example.{tip}
+
+{% tip %}
+You can [download|^ParallelQueue.zip] the Order Management Processor code used with this example.
+{% endtip %}
+
 
 # The Order Management Processor Example
 
@@ -45,9 +52,12 @@ The following example illustrates a simple Order management processor that inclu
 - **The ProcessorFactory** - A Spring bean. Creates the polling containers and their listeners.  The polling containers consumes data based on the Order `Symbol`. Each associated with a different Symbol. These are running collocated with the Data-Grid.
 
 The `bucketId` is calculated using the following formula:
-{code}
+
+
+{% highlight java %}
 (first char of Symbol hashcode) % (# of machine cores)
-{code}
+{% endhighlight %}
+
 
 ##  Running the Example
 {gdeck:RunningExample|top}
@@ -66,7 +76,9 @@ You can run the Feeder within your IDE using the following configuration:
 ## Example Code and Configuration
 {gdeck:example|top}
 {gcard: The Order Class}
-{code:title=The Order Class}
+
+
+{% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
 
 import com.gigaspaces.annotation.pojo.FifoSupport;
@@ -148,11 +160,14 @@ public class Order {
 		this.bucket= bucket;
 	}
 }
-{code}
+{% endhighlight %}
+
 
 {gcard}
 {gcard: The Feeder}
-{code:title= The Feeder}
+
+
+{% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -209,11 +224,14 @@ public class Feeder implements Runnable{
 		}
 	}
 }
-{code}
+{% endhighlight %}
+
 
 {gcard}
 {gcard: The Processor}
-{code:title= The Processor}
+
+
+{% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
 
 import org.openspaces.core.GigaSpace;
@@ -241,11 +259,14 @@ public class Processor implements SpaceDataEventListener<Order>{
 
 	}
 }
-{code}
+{% endhighlight %}
+
 
 {gcard}
 {gcard: The Data-Grid pu.xml }
-{code:title= The Data-Grid pu.xml }
+
+
+{% highlight java %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -276,11 +297,14 @@ public class Processor implements SpaceDataEventListener<Order>{
    <os-core:local-tx-manager id="transactionManager" space="space"/>
    <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 </beans>
-{code}
+{% endhighlight %}
+
 
 {gcard}
 {gcard: The ProcessorFactory - None TX}
-{code:title=The ProcessorFactory - None-Transactional Mode}
+
+
+{% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
 
 import java.util.ArrayList;
@@ -341,11 +365,14 @@ public class ProcessorFactory implements InitializingBean{
         }
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gcard: The ProcessorFactory - TX}
-{code:title=The ProcessorFactory - Transactional Mode}
+
+
+{% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
 
 import java.util.ArrayList;
@@ -418,6 +445,7 @@ public class ProcessorFactory implements InitializingBean{
 	}
 
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}

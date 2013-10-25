@@ -6,18 +6,25 @@ page_id: 55937666
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}GigaSpaces Universal Deployer tool. Allows deploying composite applications without any coding.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}GigaSpaces Universal Deployer tool. Allows deploying composite applications without any coding.{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.1
 **Last Update:** April 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
 The GigaSpaces Universal Deployer (GUD) allows deploying the different supported processing units ([Space PU|XAP8:Deploying and Interacting with the Space], [Regular PU|XAP8:Packaging and Deployment], [Elastic PU|XAP8:Elastic Processing Unit], [memCache PU|XAP8:The Memcached API] or [Web PU|XAP8:Web Processing Unit Container]) via a simple configuration file. The GUD support dependency based deployment allowing multiple processing units to be deployed as one atomic process (e.g composite application).
 
-{tip}Starting with XAP 9 you may use the **Deployment Dependencies API** to specify the deployment order. See the [Application Deployment and Processing Unit Dependencies|XAP9:Deploying onto the Service Grid#Application Deployment and Processing Unit Dependencies] for details.{tip}
+
+{% tip %}
+Starting with XAP 9 you may use the **Deployment Dependencies API** to specify the deployment order. See the [Application Deployment and Processing Unit Dependencies|XAP9:Deploying onto the Service Grid#Application Deployment and Processing Unit Dependencies] for details.
+{% endtip %}
+
 
 ## Dependency Based Deployment
 The GUD allows you to specify for each deployed PU its dependency PU list. The dependent PU will be deployed after all its PUs dependencies will be fully deployed. The mechanism is recursive; if any of these PUs depends on other PU(s), these will be deployed before the top level dependent PU is deployed. This ensures the deploy order will have the entire PUs deployed in the correct order.
@@ -25,7 +32,9 @@ The GUD allows you to specify for each deployed PU its dependency PU list. The d
 {indent}!universantDeploy_depen.jpg!{indent}
 
 To describe the above deploy plan the GUD should have the following config file:
-{code}
+
+
+{% highlight java %}
 A [B,C] -file myA_PU.jar
 B [D,E] -file myB_PU.jar
 C [F,G] -file myC_PU.jar
@@ -33,7 +42,8 @@ D [] -file myD_PU.jar
 E [] -file myE_PU.jar
 F [] -file myF_PU.jar
 G [] -file myG_PU.jar
-{code}
+{% endhighlight %}
+
 
 With the above config the PUs will be deployed in the following order: F, D, E, G, C, B, A.
 
@@ -56,13 +66,23 @@ The GUD support the following command line arguments:
 - Edit the `runGSUniversalDeployer.bat` or `runGSUniversalDeployer.sh` to include the correct parameters.
 
 Here an exmaple how you should run the GUD:
-{code}java com.gigaspaces.admin.GSUniversalDeployer -config c:\\puList.txt -locators 127.0.0.1 -abortDeployOnFailure true{code}
+
+
+{% highlight java %}
+java com.gigaspaces.admin.GSUniversalDeployer -config c:\\puList.txt -locators 127.0.0.1 -abortDeployOnFailure true{% endhighlight %}
+
 
 ## GUD Configuration File
 The universal Deployer configuration file may include multiple lines with the following format:
-{code}PU Name [Dependent PU List] deploy options{code}
+
+
+{% highlight java %}
+PU Name [Dependent PU List] deploy options{% endhighlight %}
+
 Example:
-{code}
+
+
+{% highlight java %}
 mySpace [] -type space -cluster schema=partitioned-sync2backup total_members=2,1
 myPU [] -type regular -file c:\myPU.zip
 A [B,C] -elastic manualCapacity  -user xxx -password yyyy -undeployOnFailure true -file mywar.war
@@ -70,7 +90,8 @@ B [D,E] -cluster schema=partitioned total_members=2,1 -user xxx -password yyyy  
 C [F,E] -elastic eagerCapacity -user xxx -password yyyy -properties embed://prop2=value2;prop3=value3 -file myzip.zip
 D [] -cluster total_members=2 -user xxx -password yyyy -properties file://d:/temp/context.properties
 E [] -cluster total_members=2 -user xxx -password yyyy -zones zone1,zone2
-{code}
+{% endhighlight %}
+
 
 ## GUD Configuration File Options
 Each GUD configuration file line supports the following options:

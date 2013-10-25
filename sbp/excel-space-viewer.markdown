@@ -5,12 +5,15 @@ categories: SBP
 page_id: 47219420
 ---
 
-{tip}**Summary:** {excerpt}The Excel space viewer allows you to create customized views of data for spaces running in your network.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}The Excel space viewer allows you to create customized views of data for spaces running in your network.{excerpt}
 **Author**: Pini Cohen, GigaSpaces
 **Recently tested with GigaSpaces version**: GigaSpaces 6.5 GA (build 2352)
 **Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 {composition-setup}
 
@@ -54,9 +57,12 @@ The **Create View** option allows you to create a view of space data inside your
 To connect to a space:
     1. Click the **Connect** button.
     1. In the Connect to Space dialog box, type the [space URL|XAP66:Space URL]. The general format of the space URL is:
-    {code}
+
+
+{% highlight java %}
     <protocol>://<host name>:<port>/<container name>/<space name>?<properties>
-    {code}
+    {% endhighlight %}
+
     {indent}!Connect1.JPG!{indent}
 - The **Customize the Selection** button opens the [#Customize the Selection] window.
 

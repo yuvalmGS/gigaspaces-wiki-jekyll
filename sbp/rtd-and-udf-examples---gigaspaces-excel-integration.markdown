@@ -5,12 +5,15 @@ categories: SBP
 page_id: 47219410
 ---
 
-{tip}**Summary:** {excerpt}Basic and advanced code examples for using RTD and UDF with the GigaSpaces-Excel integration.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Basic and advanced code examples for using RTD and UDF with the GigaSpaces-Excel integration.{excerpt}
 **Author**: Pini Cohen, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP.NET 6.6
 **Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -23,7 +26,9 @@ This section includes basic and advanced code examples for using the GigaSpaces-
 
 ## HelloUDF -- Performing Excel Functions in Space
 
-{code:java}
+
+
+{% highlight java %}
 using System;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
@@ -136,11 +141,14 @@ namespace HelloUDF
         }
     }
 }
-{code}
+{% endhighlight %}
+
 
 ## HelloRTD -- Loading Data from Space to Excel
 
-{code:java}
+
+
+{% highlight java %}
 using System;
 using System.Configuration;
 using System.Runtime.InteropServices;//<-- For our interop attributes.
@@ -313,11 +321,14 @@ namespace HelloRTD
 		}
 	}
 }
-{code}
+{% endhighlight %}
+
 
 ## HelloMsg
 
-{code:java}
+
+
+{% highlight java %}
 using System.Text;
 
 using GigaSpaces.Core.Metadata;
@@ -367,11 +378,14 @@ namespace HelloCommon
 		}
 	}
 }
-{code}
+{% endhighlight %}
+
 
 ## RTDSample -- Loading Data from Space to Excel
 
-{code:java}
+
+
+{% highlight java %}
 using System;
 using System.Collections;
 using System.Text;
@@ -560,11 +574,14 @@ namespace GSStreamer
         }
     }
 }
-{code}
+{% endhighlight %}
+
 
 ## TickInfo
 
-{code:java}
+
+
+{% highlight java %}
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -628,7 +645,8 @@ namespace TickInfo
         }
     }
 }
-{code}
+{% endhighlight %}
+
 
 {toc-zone}
 

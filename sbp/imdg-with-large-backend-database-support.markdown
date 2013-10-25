@@ -5,11 +5,14 @@ categories: SBP
 page_id: 55935416
 ---
 
-{tip}{**}Summary:** {excerpt}Very Large Backend database/IMDG support. Query IMDG with on going data eviction.{excerpt}
+
+{% tip %}
+{**}Summary:** {excerpt}Very Large Backend database/IMDG support. Query IMDG with on going data eviction.{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview

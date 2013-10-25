@@ -5,13 +5,16 @@ categories: SBP
 page_id: 48760404
 ---
 
-{tip}**Summary:** {excerpt}Implementing Priority based Queue{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Implementing Priority based Queue{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0
 **Last Update**: Feb 2011
 **Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -22,7 +25,9 @@ You can query for all objects which got their priority bigger than X (`priority 
 
 See below example code:
 
-{code}
+
+
+{% highlight java %}
 GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer(spaceURL)).gigaSpace();
 String queryStr = "priority>" + priorityMin + " and priority<"+ priorityMax;
 SQLQuery query = new SQLQuery(Order.class.getName(), queryStr);
@@ -34,11 +39,14 @@ while (true) {
 		...
 	}
 }
-{code}
+{% endhighlight %}
+
 
 The Order Class will have the **Priority** indexed:
 
-{code}
+
+
+{% highlight java %}
 import com.gigaspaces.annotation.pojo.SpaceClass;
 import com.gigaspaces.annotation.pojo.SpaceId;
 import com.gigaspaces.annotation.pojo.SpaceIndex;
@@ -86,7 +94,8 @@ public class Order {
 	}
 }
 
-{code}
+{% endhighlight %}
+
 
 # Example
 
@@ -112,7 +121,9 @@ To run:
 4. Run the `com.gigaspaces.examples.priorityq.PriorityQueueExample` main.
 
 Expected output:
-{code}
+
+
+{% highlight java %}
 Welcome to GigaSpaces Priority Based Queue Example
 ....
 Connect to space:/./mySpace OK!
@@ -215,4 +226,5 @@ Worker 0 priority>0 :Processing Order:id:40 priority:9 timestamp:1270582547658
 Worker 1 priority>0 :Processing Order:id:33 priority:9 timestamp:1270582547518
 Worker 0 priority>0 :Processing Order:id:29 priority:9 timestamp:1270582547435
 Worker 1 priority>0 :Processing Order:id:10 priority:9 timestamp:1270582547055
-{code}
+{% endhighlight %}
+

@@ -6,18 +6,25 @@ page_id: 54820920
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}Space Dump and Reload{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Space Dump and Reload{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1
 **Last Update:** November 2010
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Space Dump and Reload
 When running a system using an in-memory data grid (IMDG), you may need to dump the data stored within the IMDG into a file and later reload it back. This might happen when you would like to copy the IMDG data from one system to another or when you would like to shutdown the system to perform some maintenance procedures or when you would like to upgrade the GigaSpaces release.
 
-{tip}If you would like to perform hardware maintenance activities without shutting down the system you can use a [rolling upgrade technique|XAP71:Deploying onto the Service Grid#HotDeploy].{tip}
+
+{% tip %}
+If you would like to perform hardware maintenance activities without shutting down the system you can use a [rolling upgrade technique|XAP71:Deploying onto the Service Grid#HotDeploy].
+{% endtip %}
+
 
 The [Space Dump Utility|^spacedump.zip] copies the data currently stored within the IMDG and saves it into an embedded DB file used by a temporary space. Later, once you would like to reload the data back into the IMDG, the utility performs the procedure in a reverse manner, by reading the data from the file and copy it back into the IMDG.
 
@@ -29,11 +36,27 @@ The Space Dump utility uses a temporary persistent space approach with the [spac
 To run the Space Dump Utility:
 1. Download the [Space Dump Utility|^spacedump.zip].
 2. Run the utility - The Space Dump Utility accept the following arguments:
-{code}java com.gigaspaces.util.spacedump.SpaceDumpMain <lookup locator> <Operation [dump | reload] <spaceName>{code}
+
+
+{% highlight java %}
+java com.gigaspaces.util.spacedump.SpaceDumpMain <lookup locator> <Operation [dump | reload] <spaceName>{% endhighlight %}
+
 
 Example - Dump space data into a file:
-{code}java com.gigaspaces.util.spacedump.SpaceDumpMain myhostName dump mySpace{code}
-Example - Reload space data from a file:
-{code}java com.gigaspaces.util.spacedump.SpaceDumpMain myhostName reload mySpace{code}
 
-{tip}Make sure the Space Dump utility has the `/gigaspaces-xap-root/lib/platform/jdbc/h2.jar` as part of its classpath.{tip}
+
+{% highlight java %}
+java com.gigaspaces.util.spacedump.SpaceDumpMain myhostName dump mySpace{% endhighlight %}
+
+Example - Reload space data from a file:
+
+
+{% highlight java %}
+java com.gigaspaces.util.spacedump.SpaceDumpMain myhostName reload mySpace{% endhighlight %}
+
+
+
+{% tip %}
+Make sure the Space Dump utility has the `/gigaspaces-xap-root/lib/platform/jdbc/h2.jar` as part of its classpath.
+{% endtip %}
+

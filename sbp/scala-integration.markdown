@@ -7,11 +7,14 @@ page_id: 56428283
 
 {composition-setup}
 
-{tip}**Summary:** {excerpt}This article presents common Scala integration scenarios on top of XAP.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}This article presents common Scala integration scenarios on top of XAP.{excerpt}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.3
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 
 # Overview
 
@@ -29,7 +32,9 @@ Find below code and configuration for the Helloworld application written complet
 
 {gdeck:Scala Helloworld Example}
 {gcard:Scala Data Model}
-{code:java}
+
+
+{% highlight java %}
 package org.openspaces.example.helloworld.common
 
 import com.gigaspaces.annotation.pojo.SpaceRouting
@@ -47,10 +52,13 @@ case class Message(
   def this() = this(null, null)
 
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Scala Polling Container Bean}
-{code:java}
+
+
+{% highlight java %}
 package org.openspaces.example.helloworld.processor
 
 import org.openspaces.events.adapter.SpaceDataEvent
@@ -71,10 +79,13 @@ class Processor {
 	}
 
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Scala Feeder}
-{code:java}
+
+
+{% highlight java %}
 package org.openspaces.example.helloworld.feeder
 
 import org.openspaces.core.GigaSpace
@@ -119,10 +130,12 @@ object Feeder {
 	}
 
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Scala Helloworld pu.xml}
-{code:xml}
+
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -162,7 +175,8 @@ object Feeder {
 				max-instances-per-vm="1">
 	</os-sla:sla>
 </beans>
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 

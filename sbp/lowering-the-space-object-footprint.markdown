@@ -81,7 +81,9 @@ The original class includes:
 - Getter and Setter methods for the above fields
 
 The original class looks like this:
-{code}
+
+
+{% highlight java %}
 @SpaceClass
 public class SimpleEntry {
 
@@ -110,7 +112,8 @@ public class SimpleEntry {
 	public void set_longFieldA1(Long fieldA1) {
 		_longFieldA1 = fieldA1;
 	}
-{code}
+{% endhighlight %}
+
 
 ## The BinaryFormatEntry class
 The modified class that implements the compact serialization pattern includes:
@@ -125,7 +128,9 @@ The modified class that implements the compact serialization pattern includes:
 - `Externalizable` implementation - `writeExternal` and `readExternal` methods
 
 The modified class looks like this:
-{code}
+
+
+{% highlight java %}
 @SpaceClass(includeProperties=IncludeProperties.EXPLICIT)
 public class BinaryFormatEntry implements Externalizable {
 
@@ -174,12 +179,15 @@ public class BinaryFormatEntry implements Externalizable {
 	private long getnulls(){...}
 	private short checkNulls() {...}
 }
-{code}
+{% endhighlight %}
+
 
 ## The pack method
 The `pack` method serializes the object non indexed data. It is called explicitly before calling the space write operation. This method serialize the object data by placing the data into the byte array field. Null values fields indication stored within one field. The `BinaryOutputStream` utility class is used to write the compacted data into the byte array.
 
-{code}
+
+
+{% highlight java %}
 public void pack() throws Exception
 {
     BinaryOutputStream output = new BinaryOutputStream();
@@ -193,12 +201,15 @@ public void pack() throws Exception
     _binary = output.toByteArray();
     output.close();
 }
-{code}
+{% endhighlight %}
+
 
 ## The unpack method
 This method de-serialize the object data by extracting the data from the byte array field and populating the fields with their corresponding values. `null` values fields are non-populated.  This method is called after calling the space read operation. The `BinaryOutputStream` utility class is used to read the compacted data and place it into the relevant field.
 
-{code}
+
+
+{% highlight java %}
 public void unpack() throws Exception
 {
     BinaryInputStream input = new BinaryInputStream(_binary);
@@ -214,12 +225,15 @@ public void unpack() throws Exception
     input.close();
     _binary = null;
 }
-{code}
+{% endhighlight %}
+
 
 ## The writeExternal method
 The `writeExternal` method serializes the object data into the output stream.  The object data involves a field indicates which fields have `null` value, the indexed fields and a byte array field that includes all non indexed fields data (created by the `pack` method). The `writeExternal` assumes the `pack` method has been called explicitly prior the space write method call that initiated the `writeExternal` call.
 
-{code}
+
+
+{% highlight java %}
 public void writeExternal(ObjectOutput out) throws IOException {
 	short nulls = 0;
     int i=0;
@@ -234,12 +248,15 @@ public void writeExternal(ObjectOutput out) throws IOException {
         out.write(_binary);
     }
 }
-{code}
+{% endhighlight %}
+
 
 ## The readExternal method
 The `readExternal` method essentially performs the opposite of the what the `writeExternal` method is doing. This methods populates the indexed fields data and the byte array field data. Later, the remaining fields will be populated once the `unpack` method will be called.
 
-{code}
+
+
+{% highlight java %}
 public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
 	short nulls;
     int i=0;
@@ -256,12 +273,15 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
          System.arraycopy(data, 0, _binary, 0, len);
     }
 }
-{code}
+{% endhighlight %}
+
 
 ## The checkNulls method
 This method goes through the indexed fields and the byte array field and place into a `short` data type field an indication for the ones with null value using a bit map.
 
-{code}
+
+
+{% highlight java %}
 private short checkNulls() {
     short nulls = 0;
     int i = 0;
@@ -272,11 +292,14 @@ private short checkNulls() {
     i++;
     return nulls;
 }
-{code}
+{% endhighlight %}
+
 
 ## The getnulls method
 This method goes through all class non indexed fields (the ones that their data is stored within the byte array) and place into a `long` data type field indication for the ones with null value using a bit map.
-{code}
+
+
+{% highlight java %}
 private long getnulls()
 {
     long nulls = 0;
@@ -289,21 +312,27 @@ private long getnulls()
     ...
     return nulls;
 }
-{code}
+{% endhighlight %}
+
 
 ## The Factory method
 The example using a factory method called `generateBinaryFormatEntry` to create the space object. Once it has been populated , its `pack` method is called.
-{code}
+
+
+{% highlight java %}
 private BinaryFormatEntry generateBinaryFormatEntry(int id){
 	BinaryFormatEntry bfe = new BinaryFormatEntry(id, value1 , value2 ?)
 	bfe.pack();     //  the pack method is called implicitly as part of the factory method
 	return bfe;
 }
-{code}
+{% endhighlight %}
+
 
 ## Writing and Reading the Object from the space
 The following code snipped illustrates how the copact serialized object is written into the space and read from the space:
-{code}
+
+
+{% highlight java %}
 GigaSpace _gigaspace;
 BinaryFormatEntry testBFE = generateBinaryFormatEntry(500);
 _gigaspace.write(testBFE, Lease.FOREVER);
@@ -311,7 +340,8 @@ BinaryFormatEntry templateBFE = new BinaryFormatEntry();
 templateBFE.setQueryField (new Long(500));
 BinaryFormatEntry resBFE = (BinaryFormatEntry)_gigaspace.read(templateBFE, 0);
 resBFE.unpack(); // this deserialize the binary data into the object fields
-{code}
+{% endhighlight %}
+
 
 # References
 The [PackRat|http://www.openspaces.org/display/PRT/PackRat] project allows you to use the compact serialization pattern via simple annotations.

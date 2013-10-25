@@ -6,14 +6,16 @@ page_id: 56428168
 ---
 
 {composition-setup}
-{tip}
+
+{% tip %}
 **Summary:** {excerpt}NoSQL Extended DataStore Implementation{excerpt}
 **Author**: Joseph Ottinger, Uri Cohen, Shay Hassidim
 **Recently tested with GigaSpaces version**: XAP 8.0.3
 **Last Update:** September 2011
 **Contents:**
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -32,7 +34,10 @@ There are two phases of an EDS: writethrough persistence and initial load. The w
 
 ## Configuring the Mirror
 To use a custom EDS with the mirror space, all you have to do is declare the EDS via Spring, and configure the mirror space to use the EDS, as shown in the MongoDB EDS configuration from the tests:
-{code}    <!-- BEGIN mongo config -->
+
+
+{% highlight java %}
+    <!-- BEGIN mongo config -->
     <mongo:mongo id="mongo" host="localhost" port="27017">
         <mongo:options connections-per-host="10"
                        threads-allowed-to-block-for-connection-multiplier="5"
@@ -59,7 +64,8 @@ To use a custom EDS with the mirror space, all you have to do is declare the EDS
                 <prop key="space-config.external-data-source.data-class">com.j_spaces.core.IGSEntry</prop>
             </props>
         </os-core:properties>
-    </os-core:mirror>{code}
+    </os-core:mirror>{% endhighlight %}
+
 
 The important facets here are the `mongoEDS` bean declaration, and the `external-data-source` attribute of the space. Assuming you have a MongoDB instance running on localhost (as the MongoDB configuration above shows), this would instantiate a mirror space, prepared for all write-through activity.
 
@@ -67,7 +73,10 @@ The important facets here are the `mongoEDS` bean declaration, and the `external
 
 The data grid uses the EDS for reads. If no initial load is desired, configuring the data grid for mirroring is enough; otherwise, you'll replicate the EDS declaration for the data grid declaration as well, which yields the following configuration:
 
-{code}<!-- BEGIN mongo config -->
+
+
+{% highlight java %}
+<!-- BEGIN mongo config -->
     <mongo:mongo id="mongo" host="localhost" port="27017">
         <mongo:options connections-per-host="10"
                        threads-allowed-to-block-for-connection-multiplier="5"
@@ -96,7 +105,8 @@ The data grid uses the EDS for reads. If no initial load is desired, configuring
             <os-core:basic-index path="Name"/>
             <os-core:extended-index path="Price"/>
         </os-core:space-type>
-    </os-core:space>{code}
+    </os-core:space>{% endhighlight %}
+
 This configuration is almost an exact analog to the mirror declaration. However, this will read the data from the EDS on startup, such that any data held in the right format and collection in the MongoDB datastore will be loaded into the data grid, ready for read and update. Any writes will naturally be persisted through the mirror back to Mongo.
 
 # MongoDB Specifics

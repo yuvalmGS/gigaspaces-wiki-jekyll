@@ -7,11 +7,14 @@ page_id: 56428286
 
 {composition-setup}
 
-{tip}**Summary:** {excerpt}WAN Replication Gateway example.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}WAN Replication Gateway example.{excerpt}
 **Author**: Shay Hassidim, Deputy CTO GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.3
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 
 # Overview
 
@@ -32,7 +35,9 @@ The internal architecture of the setup includes a clustered space and a Gateway,
 # Installing the Example
 1. Download the [WAN_Gateway_example.zip|WAN Replication Gateway^WAN_Gateway_example.zip]. It includes two folders: **deploy** and **scripts**.
 2. Please extract the file and and copy the content of the **deploy folder** into `\gigaspaces-xap-premium-8.0.X-ga\deploy` folder. It should looks like this:
-{code}
+
+
+{% highlight java %}
 Directory of D:\gigaspaces-xap-premium-8.0.3-ga\deploy
 
 09/11/2011  04:41 AM    <DIR>          .
@@ -44,7 +49,8 @@ Directory of D:\gigaspaces-xap-premium-8.0.3-ga\deploy
 09/11/2011  04:43 AM    <DIR>          wan-space-DE
 09/11/2011  05:15 AM    <DIR>          wan-space-RU
 09/11/2011  04:42 AM    <DIR>          wan-space-US
-{code}
+{% endhighlight %}
+
 3. Please move into the `scripts` folder and edit the `setExampleEnv.bat/sh` to include correct values for `NIC_ADDR` as the machine IP and `GS_HOME` to have Gigaspaces root folder location.
 
 # Running the Example
@@ -94,9 +100,12 @@ The total TP a gateway can push out into remote sites depends on:
 - Replication Meta data size
 
 The total TP will be:
-{code}
+
+
+{% highlight java %}
 Total TP = (Partition TP X Partitions count X Distribution X Network Speed)+ Replication Meta data size / Replication Frequency
-{code}
+{% endhighlight %}
+
 
 If we have 10 IMDG partitions, each sending 5000 objects/sec 1K size to the GW with a replication frequency of 10 replication cycles per/sec (100 ms delay between each replication cycle , i.e. 1000 operations per batch) with even distribution (1) and network speed between the sites is 10 requests/sec (i.e. 100 ms latency) the Total TP we will have is: (10 X 5000 X 1 X 10) / 10 = 50,000 objects per second. = 50M per second
  

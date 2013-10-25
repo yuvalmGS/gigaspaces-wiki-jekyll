@@ -6,11 +6,14 @@ page_id: 54297306
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}This page covers some of the concepts to consider when partitioning data. It does not replace the load-balancing pages, where the concept is explored in greater detail, but provides a slightly higher-level view.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}This page covers some of the concepts to consider when partitioning data. It does not replace the load-balancing pages, where the concept is explored in greater detail, but provides a slightly higher-level view.{excerpt}
 **Author**: Joe Ottinger, Technology Evangelist, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1.2
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 
 # Overview
 
@@ -24,7 +27,10 @@ In Gigaspaces XAP, there are six approaches to partitioning, as discussed on [XA
 
 The most common approach to partitioning is, as stated in the [XAP91:Data-Partitioning] documentation, hash-based partitioning, using an explicit value contained in a data object. This is specified via an annotation:
 
-{code:java}public class MyData {
+
+
+{% highlight java %}
+public class MyData {
     private String id;
     private String groupId;
 
@@ -35,7 +41,8 @@ The most common approach to partitioning is, as stated in the [XAP91:Data-Partit
     @SpaceRouting
     public String getGroupId() { return groupId; }
     public void setGroupId(String s) { groupId=s; }
-}{code}
+}{% endhighlight %}
+
 
 The approach for efficient partitioning depends very much on how the data is used. In the case of the `MyData` class above, it's likely that different groups' data will be routed to different partitions (but not **guaranteed** - because it's possible that various groupId values end up with the same partitioning values. As usual, see the [XAP91:Data-Partitioning] documentation for more detail.)
 
@@ -47,7 +54,9 @@ For perfectly distributed data that isn't naturally partitioned (i.e., something
 
 {gdeck}
 {gcard:storeEvenlyDistributedData}
-{code:java}
+
+
+{% highlight java %}
 ...
 public void storeEvenlyDistributedData(GigaSpace space, int count) {
    if(count<1)
@@ -64,10 +73,13 @@ public void storeEvenlyDistributedData(GigaSpace space, int count) {
    }
 }
 ...
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:MyData}
-{code:java}
+
+
+{% highlight java %}
 ...
 public class MyData {
    String key;
@@ -85,7 +97,8 @@ public class MyData {
    public Integer getRouting() { return routing; }
    // various mutators follow, eliminated for brevity
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 

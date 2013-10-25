@@ -7,13 +7,16 @@ page_id: 54821146
 
 {composition-setup}
 
-{tip}**Summary:** {excerpt}This article illustrates how to integrate the Drools Rule Engine with GigaSpaces XAP{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}This article illustrates how to integrate the Drools Rule Engine with GigaSpaces XAP{excerpt}
 **Author:** Jeroen Remmerswaal
 **Recently tested with GigaSpaces version**: XAP 7.1.1
 **Last Update:** December 2010
 **Contents:**
 {toc:minLevel=1|maxLevel=2|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 
 # Overview
 
@@ -38,7 +41,8 @@ The example project is based on a Maven project structure and has four submodule
 Before being able to execute any business rule, the system first needs to load a set of rules into the space. This means reading rules files from disk, converting them into Java objects and then writing them to a space. Inside this space (called rules-space) is a polling container that will pick up and precompile the new rules so they are ready to be used.
 
 The main loader class is called GigaSpacesRulesLoader. When started, it reads its configuration from a Spring Framework context file. Next is an example snippet of such a configuration:
-{code:xml}
+
+{% highlight xml %}
 <bean id="ruleSets" class="java.util.HashMap">
    <constructor-arg>
       <map>
@@ -46,12 +50,14 @@ The main loader class is called GigaSpacesRulesLoader. When started, it reads it
       </map>
    </constructor-arg>
 </bean>
-{code}
+{% endhighlight %}
+
 
 This piece of configuration tells the rules loader to load an XML ruleset file called testruleset.xml and place all rules defined in that set under ruleset name 'Test'.
 
 Here is a testruleset.xml file example:
-{code:xml}
+
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <change-set xmlns='http://drools.org/drools-5.0/change-set'
                xmlns:xs='http://www.w3.org/2001/XMLSchema-instance'
@@ -60,10 +66,13 @@ Here is a testruleset.xml file example:
       <resource source='classpath:META-INF/rules/test/testrule.drl' type='DRL'/>
    </add>
 </change-set>
-{code}
+{% endhighlight %}
+
 
 As you can see, the file contains resources. Each resource points to an actual Drools rule file (DRL/DSLR), or a Drools DSL file. Next is an example of such a Drools rule file:
-{code}
+
+
+{% highlight java %}
 import com.tricode.gigaspaces.rules.shared.fact.*;
 import org.apache.log4j.*;
 
@@ -73,7 +82,8 @@ when
 then
    Logger.getLogger("rulesspace").info($h1.getName() + ":" + $h1.getWhen());
 end
-{code}
+{% endhighlight %}
+
 
 Each file can contain multiple rules. When the rules loader reads these rules files, it converts their contents to a Java byte array (this is a small optimization because the Drools KnowledgeBuilder does not accept Strings).
 
@@ -91,13 +101,16 @@ The rules loader uses a GigaSpaces remoting service to load the rules into the s
 
 The interface has the following contract:
 
-{code:java}
+
+
+{% highlight java %}
 public interface IRulesLoadingService
     void loadRuleset(@Routing("getProjectName") DroolsRuleset ruleSet);
     void unloadRuleset(@Routing("getProjectName") DroolsRuleset ruleSet);
     void unloadAllRulesets();
 }
-{code}
+{% endhighlight %}
+
 
 And on the server side the implementation is provided that will write new rule-objects into the rule space, which is called RulesLoadingServiceImpl.
 {gcard}
@@ -121,19 +134,25 @@ For a remoting service the following need to be established:
 
 - A contract, in our case an interface called IRulesExecutionService.
 
-{code}
+
+
+{% highlight java %}
 interface IRulesExecutionService {
     Collection<IFact> executeRules(@Routing String projectName, String[] rulesetNames, Map<String, Object> globals, Collection<IFact> facts);
     Collection<IFact> executeRules(@Routing String projectName, String[] rulesetNames, Collection<IFact> facts);
 }
-{code}
+{% endhighlight %}
+
 
 - A client using the stub to the interface. This value is automatically injected by use of a proxy, which exists in a few flavors in GigaSpaces, for example ExecutorProxy.
 
-{code}
+
+
+{% highlight java %}
 @ExecutorProxy
 private IRulesExecutionService rulesExecutionService;
-{code}
+{% endhighlight %}
+
 
 When a client invokes it, the name of the project, the name(s) of the ruleset(s) to execute, an optional map of globals and finally the facts that will be used in the rules will be specified.
 
@@ -168,7 +187,9 @@ Examples:
 
 A filter to achieve this are simple to write and involves the Space-Filter framework. An example can be found below:
 
-{code}
+
+
+{% highlight java %}
 @Component
 public class RulesFilter {
     private final Logger log = Logger.getLogger(RulesFilter.class);
@@ -223,7 +244,8 @@ public class RulesFilter {
 public enum DroolsOperationContext {
 	WRITE, UPDATE, TAKE;
 }
-{code}
+{% endhighlight %}
+
 
 Notes:
 - In the above example the DroolsOperationContext values are passed as "context-values" to the rules engine. A single set of rules can therefore be customized for the operation under which the invocation occurred.
@@ -233,7 +255,9 @@ Notes:
 GigaSpaces allows seamless integration with AOP libraries like AspectJ. Service invocations to a GigaSpaces Remoting Service can therefore be automatically wrapped in calls to the RuleExecutionService.
 
 An example of such a generic aspect could look like the following:
-{code}
+
+
+{% highlight java %}
 @Aspect
 @Component
 public class DroolsAspect {
@@ -273,11 +297,14 @@ public class DroolsAspect {
       return o ;
    }
 }
-{code}
+{% endhighlight %}
+
 
 In the above Around-Advice it can be seen that the rules-engine will only be invoked for service-methods that have the @Droolable annotation, like this:
 
-{code}
+
+
+{% highlight java %}
 @RemotingService
 @Loggable
 public class RulesTestService implements {
@@ -288,17 +315,21 @@ public class RulesTestService implements {
       logger.info(String.format("Testing rules for class '%s'", object.getClass().getSimpleName()));
    }
 }
-{code}
+{% endhighlight %}
+
 
 The Droolable annotation itself is defined as follows:
 
-{code}
+
+
+{% highlight java %}
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface Droolable {
 
 }
-{code}
+{% endhighlight %}
+
 
 {gcard}
 {gdeck}

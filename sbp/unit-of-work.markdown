@@ -6,12 +6,15 @@ page_id: 54296773
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}The Unit of work Pattern - Parallel atomic ordered data processing for associated data objects{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}The Unit of work Pattern - Parallel atomic ordered data processing for associated data objects{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.0
 **Last Update:** Feb 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # GigaSpaces Unit of Work
@@ -19,7 +22,11 @@ GigaSpaces Unit of Work (UOW) enables a stand-alone message producer to group me
 
 The UOW can be used with financial systems to process **trade orders** , in healthcare systems to processes **patient medical data** , with transportation systems to process **reservations** , with airlines systems to process **flight schedule** , with billing system to processes **payments**, etc.
 
-{tip}Starting with XAP 9 you may use the **FIFO Grouping** to implement the Unit of Work model. See the [FIFO Grouping|XAP9:FIFO Grouping] for details.{tip}
+
+{% tip %}
+Starting with XAP 9 you may use the **FIFO Grouping** to implement the Unit of Work model. See the [FIFO Grouping|XAP9:FIFO Grouping] for details.
+{% endtip %}
+
 
 # GigaSpaces FIFO and UOW
 While the [FIFO|XAP8:FIFO Support] mode provides ordered object consumption, it does so in a very strict sense. It defines an order between space objects based on the time they were written into the space. FIFO does not take into account consuming associated objects as one atomic operation. UOW allows a polling container to process a group of associated objects in the order they have been written in parallel to other processing groups. Multiple polling containers handle different groups concurrently, each group items processed in a FIFO fashion.
@@ -58,7 +65,11 @@ With the above scenario requests 1, 3 and 4 should be processed as one atomic op
 # UOW Example
 
 ##  Running the Example
-{tip}You can [download|^uow.zip] eclipse project with example source code, running scripts and configuration.{tip}
+
+{% tip %}
+You can [download|^uow.zip] eclipse project with example source code, running scripts and configuration.
+{% endtip %}
+
 {gdeck:RunningExample|top}
 {gcard:Running the UOWProcessor within your IDE}
 You can run the UOW Data-Grid with the collocated `UOWProcessor` within your IDE using the following configuration:
@@ -71,24 +82,42 @@ Here is a configuration for a UOW Data-Grid with 2 partitions:
 Instead of running the UOWProcessor within your IDE, you can deploy it into the Service Grid.
 1. Edit the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` variable as your machine IP and the `GS_HOME` variable as the GigaSpaces root folder.
 2. Start the Service-Grid
-{code}runAgent.bat{code}
+
+
+{% highlight java %}
+runAgent.bat{% endhighlight %}
+
 3. Deploy the UOWProcessor PU
-{code}deployUOW.bat{code}
+
+
+{% highlight java %}
+deployUOW.bat{% endhighlight %}
+
 This will deploy the UOW Data-Grid with 2 partitions and a backup.
 {gcard}
 {gcard:Running the UOWFeeder}
 You can run the `UOWFeeder` within your IDE using the following configuration:
 {indent}!GRA:Images^uow_4.jpg!{indent}
 or using the following:
-{code}runClient.bat{code}
+
+
+{% highlight java %}
+runClient.bat{% endhighlight %}
+
 {gcard}
 {gdeck}
 
 ## Example Code and Configuration
-{tip}The bucket count configured via the UOW Data-Grid pu.xml using the BucketConfiguration Bean{tip}
+
+{% tip %}
+The bucket count configured via the UOW Data-Grid pu.xml using the BucketConfiguration Bean
+{% endtip %}
+
 {gdeck:example|top}
 {gcard:The UOWMessage Class}
-{code:title=The UOWMessage Class}
+
+
+{% highlight java %}
 package com.giagspaces.patterns.uow;
 
 @SpaceClass(fifoSupport = FifoSupport.ALL)
@@ -138,15 +167,22 @@ public class UOWMessage {
 		this.buketId = buketId;
 	}
 }
-{code}
+{% endhighlight %}
+
 
 {gcard}
 {gcard:The UOWFeeder}
 
 The `buketId` is calculated using the following:
-{code}group % bucketsCount{code}
 
-{code:title=The UOWFeeder}
+
+{% highlight java %}
+group % bucketsCount{% endhighlight %}
+
+
+
+
+{% highlight java %}
 package com.giagspaces.patterns.uow;
 public class UOWFeederMain {
 
@@ -196,21 +232,27 @@ public class UOWFeederMain {
 	}
 }
 
-{code}
+{% endhighlight %}
+
 
 {gcard}
 {gcard:The UOWProcessorService}
-{code:title=The UOWProcessorService}
+
+
+{% highlight java %}
 package com.giagspaces.patterns.uow;
 
 public interface UOWProcessorService {
 	int getBucketsCount();
 }
-{code}
+{% endhighlight %}
+
 
 {gcard}
 {gcard:The UOWProcessor}
-{code:title=The UOWProcessor}
+
+
+{% highlight java %}
 package com.giagspaces.patterns.uow;
 public class UOWProcessor {
 	int bucketID;
@@ -294,11 +336,14 @@ public class UOWProcessor {
 		System.out.println("Partition ID:" + partitionID + " TID:" + Thread.currentThread().getId() + " bucket ID:"+ bucketID + " " + buf.toString());
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gcard:The UOWProcessorFactory}
-{code:title=The UOWProcessorFactory}
+
+
+{% highlight java %}
 @RemotingService
 public class UOWProcessorFactory implements UOWProcessorService{
 
@@ -353,11 +398,14 @@ public class UOWProcessorFactory implements UOWProcessorService{
 		return bucketConfig.getBucketsCount();
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gcard:The UOW Data-Grid pu.xml }
-{code:title=The UOW Data-Grid pu.xml }
+
+
+{% highlight java %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -392,11 +440,14 @@ public class UOWProcessorFactory implements UOWProcessorService{
 	<os-remoting:service-exporter id="serviceExporter" />
 
 </beans>
-{code}
+{% endhighlight %}
+
 
 {gcard}
 {gcard:The BucketConfiguration}
-{code:title=The BucketConfiguration}
+
+
+{% highlight java %}
 package com.giagspaces.patterns.uow;
 
 public class BucketConfiguration {
@@ -410,7 +461,8 @@ public class BucketConfiguration {
 		this.bucketsCount = bucketsCount;
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gdeck}

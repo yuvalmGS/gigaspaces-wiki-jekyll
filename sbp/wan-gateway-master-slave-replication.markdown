@@ -6,11 +6,14 @@ page_id: 64323671
 ---
 
 {composition-setup}
-{tip}{**}Summary:** {excerpt}WAN Master-Slave replication example{excerpt}
+
+{% tip %}
+{**}Summary:** {excerpt}WAN Master-Slave replication example{excerpt}
 **Author**: Ali Hodroj, Senior Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 9.6
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 
 # Overview
 
@@ -39,7 +42,8 @@ As a result of this topology setup, the following scenario will take place once 
 The master-slave topology configuration is simply implemented through delegators on the master (New York) and a sink on each slave (London, Hong Kong). In this case, New York's site will be the active site while London and  Hong Kong will be the passive sites. While the slave sites are passive,  this does not necessarily mean that no work is done in these sites. However, in  terms of replication over the WAN, these sites should not replicate to  the other sites and usually should not alter data replicated from other  sites because it may cause conflicts:
 {gdeck}
 {gcard:New York Space}
-{code:xml}
+
+{% highlight xml %}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -74,11 +78,13 @@ The master-slave topology configuration is simply implemented through delegators
 
 
 
-{code}
+{% endhighlight %}
+
 {gcard}
  
 {gcard:New York Gateway}
-{code:xml}
+
+{% highlight xml %}
 
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -105,10 +111,12 @@ The master-slave topology configuration is simply implemented through delegators
 
 
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:London Space}
-{code:xml}
+
+{% highlight xml %}
 
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -139,10 +147,12 @@ The master-slave topology configuration is simply implemented through delegators
 </beans>
 
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:London Gateway}
-{code:xml}
+
+{% highlight xml %}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -170,10 +180,12 @@ The master-slave topology configuration is simply implemented through delegators
 
 
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Hong Kong Space}
-{code:xml}
+
+{% highlight xml %}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -203,10 +215,12 @@ The master-slave topology configuration is simply implemented through delegators
 
 </beans>
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gcard:Hong Kong Gateway}
-{code:xml}
+
+{% highlight xml %}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -234,7 +248,8 @@ The master-slave topology configuration is simply implemented through delegators
 
 
 
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 

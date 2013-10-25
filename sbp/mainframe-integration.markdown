@@ -6,13 +6,16 @@ page_id: 56429998
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}Mainframe (Z/OS) based systems integration with GigaSpaces.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Mainframe (Z/OS) based systems integration with GigaSpaces.{excerpt}
 **Authors**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 9
 **Creation Update:** Dec 2011
 **Last Update:** Sep 2013
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -41,9 +44,12 @@ Overall, an architectural decision needs to be made based on the specific use ca
 
 With the architecture described above any updates conducted directly against DB2 database on the Mainframe are propagated in real-time to the In-Memory Data-Grid via the Delta Server. These can be processed at the Delta Server level or at the In-Memory Data-Grid level using a normalized structure, flattened or object hierarchy model that is more natural for the application consumption. From there, this data can be delivered to remote In-Memory Data-Grid located in other geographies (via GigaSpaces Multi-Site-Data-Replication), Client side Cache or consumed proactively using the regular GigaSpaces API.
 
-{tip}**Running Demo**
+
+{% tip %}
+**Running Demo**
 For a running demo of the Delta Server architecture please contact [support@gigaspaces.com|mailto:support@gigaspaces.com?subject=Delta Server Demo for DB2&body=I'm interested with a demo of the Delta Server architecture for DB2...].
-{tip}
+{% endtip %}
+
 
 References:
 - [Replication and Event Publishing documentation|http://publib.boulder.ibm.com/infocenter/db2luw/v10r5/index.jsp?topic=%2Fcom.ibm.swg.im.iis.db.prod.repl.nav.doc%2Fdochome%2Fiiyrcnav_dochome.html].
@@ -61,7 +67,11 @@ GigaSpaces XAP Mirror service has a central coordinator for all back-end store u
 
 Many mainframe-based applications that perform nightly batch jobs drive a large number of data updates being made to back-end stores.  In this context, GigaSpaces' inherent ability to maintain transactional integrity is critical. In-Memory transactions can be fully committed preserved in multiple different physical locations using GigaSpaces' high-availability mechanism, and ultimately persisted to the database with zero risk of the mainframe and GigaSpaces being out of sync for a long duration.
 
-{tip}Other data grid solutions require a tremendous amount of custom code or integration with a third party transaction manager to address these requirements, increasing development time, on-going management of custom code and generates greater level of risk for inconsistent data.{tip}
+
+{% tip %}
+Other data grid solutions require a tremendous amount of custom code or integration with a third party transaction manager to address these requirements, increasing development time, on-going management of custom code and generates greater level of risk for inconsistent data.
+{% endtip %}
+
 
 ## Flexibility
 
@@ -75,7 +85,11 @@ Without a coordinator, you might end up pushing different pieces of the distribu
 
 Another aspect of the central coordinator is its ability to save MIPS. Since it allows you to condense operations from different partitions into one bulk operation, you may push more data in one batch to the database on the mainframe. As much as the IMDG is larger and include more partitions the savings with MIPS is higher.  This makes sure the MIPS usage will not be a function of the number of nodes.
 
-{tip}Summary: the mirror service serves as a coordinator that provides not only access to the persistence lifecycle, but provides consistency and safety for your application as well.{tip}
+
+{% tip %}
+Summary: the mirror service serves as a coordinator that provides not only access to the persistence lifecycle, but provides consistency and safety for your application as well.
+{% endtip %}
+
 
 ## Web layer Scalability
 

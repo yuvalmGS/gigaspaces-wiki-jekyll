@@ -7,12 +7,15 @@ page_id: 58098677
 
 {composition-setup}
 
-{tip}**Summary:** {excerpt}This article illustrates how to use TriggerOperationHandler{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}This article illustrates how to use TriggerOperationHandler{excerpt}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 9.0.0
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
 
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -29,7 +32,9 @@ Below is an example that shows how you can use `TriggerOperationsHandler` to pro
 
 `MyTrigger` implementation is shown below,
 
-{code}
+
+
+{% highlight java %}
 public class MyTrigger implements TriggerOperationHandler {
 
 	private GigaSpace clusteredGigaSpace;
@@ -80,13 +85,16 @@ public class MyTrigger implements TriggerOperationHandler {
 	}
 
 }
-{code}
+{% endhighlight %}
+
 
 `MyTrigger` runs a cluster wide query and will need clustered proxy which is injected from the pu.xml. Another useful feature of `TriggerOperationHandler` is ability to pass the template that the receive operation handler uses for performing the take. As you can see above the `isUseTriggerAsTemplate` returns a boolean flag to indicate that the receive operation handler should use the template returned by `MyTrigger` to perform the take.
 
 pu.xml snippet below shows how MyTrigger is configured on the polling container,
 
-{code}
+
+
+{% highlight java %}
     <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 
     <os-core:giga-space id="clusteredGigaSpace" clustered="true" space="space" tx-manager="transactionManager"/>
@@ -116,7 +124,8 @@ pu.xml snippet below shows how MyTrigger is configured on the polling container,
 		</os-events:listener>
 	</os-events:polling-container>
 
-{code}
+{% endhighlight %}
+
 
 Notice the clustered proxy being passed to MyTrigger as a property.
 

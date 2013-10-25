@@ -6,12 +6,17 @@ page_id: 55937171
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}GigaSpaces Spring Batch Elastic Processing Unit{excerpt}
+
+
+{% tip %}
+**Summary:** {excerpt}GigaSpaces Spring Batch Elastic Processing Unit{excerpt}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0. Spring Batch 2.1.6.
 **Last Update:** March 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
+
 {rate}
 
 # Overview
@@ -93,7 +98,8 @@ The Spring Batch PU implementation includes the following components:
 Components implemenation:
 {gdeck:SpringBatchPU|top}
 {gcard:Spring Batch PU}
-{code:xml}
+
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -152,11 +158,14 @@ Components implemenation:
 	<os-core:giga-space id="gigaSpace" space="space" />
 	<os-core:giga-space-context/>
 </beans>
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gcard:Item Base}
-{code}
+
+
+{% highlight java %}
 public class ItemBase {
 	String id=null;
 	Object payload;
@@ -197,11 +206,14 @@ public class ItemBase {
 		this.routing = routing;
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gcard:ItemRequest}
-{code}
+
+
+{% highlight java %}
 @SpaceClass(fifoSupport=FifoSupport.ALL)
 public class ItemRequest extends ItemBase{
 	public ItemRequest ()
@@ -210,19 +222,25 @@ public class ItemRequest extends ItemBase{
 
 	void execute(){};
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gcard:ItemResult}
-{code}
+
+
+{% highlight java %}
 public class ItemResult  extends ItemBase{
 	public ItemResult(){}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gcard:SpaceItemReader}
-{code}
+
+
+{% highlight java %}
 public class SpaceItemReader<T> implements ItemReader<T>, InitializingBean  {
 
 	@GigaSpaceContext
@@ -302,11 +320,14 @@ public class SpaceItemReader<T> implements ItemReader<T>, InitializingBean  {
 		this.dedicatedWorker = dedicatedWorker;
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gcard:SpaceItemProcessor}
-{code}
+
+
+{% highlight java %}
 public class SpaceItemProcessor<I,O>  implements ItemProcessor<I,O>{
 
 	@GigaSpaceContext
@@ -325,11 +346,14 @@ public class SpaceItemProcessor<I,O>  implements ItemProcessor<I,O>{
 		return (O)result;
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gcard:SpaceItemWriter}
-{code}
+
+
+{% highlight java %}
 public class SpaceItemWriter<T> implements ItemWriter<T> , InitializingBean  {
 
 	@GigaSpaceContext
@@ -345,11 +369,14 @@ public class SpaceItemWriter<T> implements ItemWriter<T> , InitializingBean  {
 		System.out.println("SpaceItemWriter called with "+  items.size()+" Space Have " + space.count(new ItemResult()) + " results");
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 
 {gcard:JobRunner}
-{code}
+
+
+{% highlight java %}
 public class JobRunner implements ApplicationContextAware,InitializingBean ,DisposableBean{
 
 	FlowJob job ;
@@ -399,7 +426,8 @@ public class JobRunner implements ApplicationContextAware,InitializingBean ,Disp
 		launcherTask.jobExecution.stop();
 	}
 }
-{code}
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -408,7 +436,11 @@ To run the Spring Batch PU Example exectue the following steps:
 
 ## Start a Database
 Start an HSQL database. Move into the `gigaspaces-xap-premium\bin` folder and run the following:
-{code}java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb{code}
+
+
+{% highlight java %}
+java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb{% endhighlight %}
+
 
 This will start an HSQL database used with the Spring Batch PU.
 
@@ -438,19 +470,33 @@ hibernate-annotations-3.2.1.ga.jar
 hsqldb-1.8.0.7.jar
 persistence-api-1.0.jar
 
-{tip}To speed up the Spring Batch deploy time you should copy these libraries into the `\gigaspaces-xap-premium\lib\optional\pu-common` folder.{tip}
+
+{% tip %}
+To speed up the Spring Batch deploy time you should copy these libraries into the `\gigaspaces-xap-premium\lib\optional\pu-common` folder.
+{% endtip %}
+
 
 ## Set Deploy Tool Classpath
 Add the `spring-batch-core-2.1.6.RELEASE.jar` to the deploy tool (GS-UI or gs CLI) CLASSPATH.
 You may do that by running the following prior calling the deploy command:
-{code}set PRE_CLASSPATH=C:\gigaspaces-xap-premium\deploy\SpringBatchPU\lib\spring-batch-core-2.1.6.RELEASE.jar{code}
+
+
+{% highlight java %}
+set PRE_CLASSPATH=C:\gigaspaces-xap-premium\deploy\SpringBatchPU\lib\spring-batch-core-2.1.6.RELEASE.jar{% endhighlight %}
+
 
 ## Deploy the Space
 Deploy a space call `mySapce`. You may deploy a single space or a space in a partitioned topology.
-{code}gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,0 mySpace{code}
+
+
+{% highlight java %}
+gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,0 mySpace{% endhighlight %}
+
 
 Here is the expected output:
-{code}
+
+
+{% highlight java %}
 Found 1 GSMs
 Deploying [datagrid] with name [mySpace] under groups [gigaspaces-8.0.0-XAPPremium-ga] and locators []
 SLA Not Found in PU.  Using Default SLA.
@@ -461,14 +507,21 @@ Waiting for [2] processing unit instances to be deployed...
 [mySpace] [1] deployed successfully on [127.0.0.1]
 [mySpace] [2] deployed successfully on [127.0.0.1]
 Finished deploying [2] processing unit instances
-{code}
+{% endhighlight %}
+
 
 ## Deploy the Spring Batch PU
 Deploy the Spring Batch PU using the GS-UI or the CLI.
-{code}gs deploy -cluster total_members=2 SpringBatchPU{code}
+
+
+{% highlight java %}
+gs deploy -cluster total_members=2 SpringBatchPU{% endhighlight %}
+
 
 Here is the expected output:
-{code}
+
+
+{% highlight java %}
 Found 1 GSMs
 Deploying [SpringBatchPU] with name [SpringBatchPU] under groups [gigaspaces-8.0
 .0-XAPPremium-ga] and locators []
@@ -479,9 +532,14 @@ Waiting for [2] processing unit instances to be deployed...
 [SpringBatchPU] [1] deployed successfully on [127.0.0.1]
 [SpringBatchPU] [2] deployed successfully on [127.0.0.1]
 Finished deploying [2] processing unit instances
-{code}
+{% endhighlight %}
+
 
 ## Run the Master
 To run the master execute the following:
-{code}java com.gigaspaces.springbatch.Master{code}
+
+
+{% highlight java %}
+java com.gigaspaces.springbatch.Master{% endhighlight %}
+
 The Master will write 100 Request objects with a specific Job ID into the space and will wait for 100 Result objects with the relevant Job ID. This cycle will repeat itself 10 times.

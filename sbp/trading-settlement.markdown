@@ -6,12 +6,15 @@ page_id: 56429380
 ---
 
 {composition-setup}
-{tip}**Summary:** {excerpt}Trading Settlement Demo.{excerpt}
+
+{% tip %}
+**Summary:** {excerpt}Trading Settlement Demo.{excerpt}
 **Authors**: Shay Hassidim, Deputy CTO, GigaSpaces; Norm Leitman, Sales Engineer, GigaSpaces; Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.4
 **Last Update:** Nov 2011
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{tip}
+{% endtip %}
+
 {rate}
 
 # Overview
@@ -77,7 +80,9 @@ Deal matching uses a [polling container|http://www.gigaspaces.com/wiki/display/X
 ## Event Processing for Trade Matching
 Trade matching for deals is based on the following fields: trading party, counter-party, instrument, matched flag, and buy/sell flag.  A polling container receives an event for each unprocessed trade in the space, and the matching process is done by transaction.
 
-{code}
+
+
+{% highlight java %}
 @EventDriven @Polling(gigaSpace = "gigaSpace") @TransactionalEvent(transactionManager="transactionManager")
 public class TradeMatchingProcessor {
 	@EventTemplate
@@ -98,11 +103,14 @@ public class TradeMatchingProcessor {
 		trade.setProcessed(true);
 		return trade;
 	}
-{code}
+{% endhighlight %}
+
 
 ## Data Partitioning
 In a partitioned space, data is routed to a particular partition based on a routing property.  Here we use a hash based on the trading party and counter-party.  This provides data affinity so that trades between these parties are located in the same space, which minimizes latency.
-{code}
+
+
+{% highlight java %}
 @SpaceClass
 public class Trade implements Serializable {
 ...
@@ -117,19 +125,23 @@ public String getRouting() {
 	return routing;
 }
 }
-{code}
+{% endhighlight %}
+
 
 ## Scaling the Elastic Processing Unit (EPU)
 
 When the number of trade objects in the space equals 50, the memory available for processing containers is increased from 128MB to 256MB.
 
-{code}
+
+
+{% highlight java %}
 pu = admin.getProcessingUnits().waitFor("settlement-app-components", 5,TimeUnit.SECONDS);
 pu.scale(new ManualCapacityScaleConfigurer()
         .memoryCapacity(TARGET_MEMEORY_CAPACITY_MB_SCALED_UP,MemoryUnit.MEGABYTES)
         .create());
         );
-{code}
+{% endhighlight %}
+
 
 Click [here|http://www.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit#ElasticProcessingUnit-MaximumMemoryCapacity] to see how the number of processing containers is dynamically calculated based on the amount of memory.
 
@@ -142,7 +154,9 @@ A [document store|http://www.gigaspaces.com/wiki/display/XAP8/Document+(Schema-F
 - MatchedDeal object
 
 The document properties are _get_ and _set_ with code like this:
-{code}
+
+
+{% highlight java %}
 public class MatchedDeal extends SpaceDocument {
 	public String getDealId() {
 		return getProperty("DealId");
@@ -154,11 +168,14 @@ public class MatchedDeal extends SpaceDocument {
 	}
 	...
 }
-{code}
+{% endhighlight %}
+
 
 ## Data Access Object (DAO)
 The below interface defines how to interact with the space.
-{code}
+
+
+{% highlight java %}
 public interface SettlementAppDAO {
 	MatchedDeal[] getMatchedDeals(String entity);
 
@@ -174,11 +191,14 @@ public interface SettlementAppDAO {
 
 	void clearUnmatchedTrades();
 }
-{code}
+{% endhighlight %}
+
 
 ## Database Table Mapping
 The trade and matched deal objects are persisted to the HSQL database through Hibernate.  An example of the Hibernate mapping is below.
-{code}
+
+
+{% highlight java %}
 <hibernate-mapping>
     <class
         name="com.gigaspaces.settlement.model.Trade"
@@ -203,13 +223,17 @@ The trade and matched deal objects are persisted to the HSQL database through Hi
         />
 
 ............
-{code}
+{% endhighlight %}
+
 
 ## Web Session Management
 HTTP Sessions are maintained in the space and a copy is also kept in a [local cache|http://www.gigaspaces.com/wiki/display/XAP8/Client+Side+Caching], with 1 object per client.  Sessions are accessed using the following:
-{code}
+
+
+{% highlight java %}
 jetty.sessions.spaceUrl=jini://**/**/settlementSpace?useLocalCache
-{code}
+{% endhighlight %}
+
 
 # Running the Demo
 1. **Download** the [TradingSettlement.zip|Trading Settlement^TradingSettlement.zip] file and **extract** it into an empty folder.
