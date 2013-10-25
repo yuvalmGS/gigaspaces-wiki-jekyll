@@ -81,7 +81,7 @@ public class Feeder  {
 }
 {code}
 
-h2. The Feeder Service Configuration
+## The Feeder Service Configuration
 {toggle-cloak:id=The Feeder Service Configuration} *Click to view the Feeder Service Configuration..*
 {gcloak:The Feeder Service Configuration}
 Here is the Feeder Service Configuration:
@@ -125,7 +125,7 @@ public class Verifier {
 }
 {code}
 
-h2. The Verifier Service Configuration
+## The Verifier Service Configuration
 The Verifier Service Configuration using a `polling-container` running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
 {toggle-cloak:id=The Verifier Service Configuration} *Click to view the Verifier Service Configuration..*
 {gcloak:The Verifier Service Configuration}
@@ -182,7 +182,7 @@ public class Approver {
 }
 {code}
 
-h2. The Approver Service Configuration
+## The Approver Service Configuration
 The Approver Service Configuration using a `polling-container` running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
 {toggle-cloak:id=The Approver Service Configuration} *Click to view the Approver Service Configuration..*
 {gcloak:The Approver Service Configuration}
@@ -309,13 +309,13 @@ The Monitor Service using the following Classes to implement the dynamic scaling
 
 (!) See the [XAP8:Administration and Monitoring API] for more details about the GigaSpaces Administration API.
 
-h2. Deploying the Monitor Service
+## Deploying the Monitor Service
 In order to deploy the Monitor Service run the following:
 {code}
 \gigaspaces-xap-premium-8.0.1\bin\gs pudeploy ..\tools\maven\my-app\monitor\target\my-app-monitor.jar
 {code}
 
-h2. Testing Dynamic Scalability
+## Testing Dynamic Scalability
 To see how the Verifier Service scale up, deploy the Feeder with 2 instances:
 {code}
 \gigaspaces-xap-premium-8.0.1\bin\gs pudeploy -cluster total_members=2 ..\tools\maven\my-app\feeder\target\my-app-feeder.jar

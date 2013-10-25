@@ -35,7 +35,7 @@ Both applications:
         - Subscribes for notifications about all changes in Person objects (a new Person will also trigger a notification)
         - Writes the data of the Person objects whenever they arrive
 
-h2. The Person Interoperable Class
+## The Person Interoperable Class
 
 - The .NET naming convention is different than the Java naming convention.
 The `\[XAP66:SpaceClass(AliasName="")\]` attribute is used to map the .NET names to the respective Java names.

@@ -22,7 +22,7 @@ Using this pattern is divided into 4 main steps:
 - [Implementing a start trigger|#Implementing Start Trigger and Passing Parameters] by which Excel tells the space to begin calculating, and passing the relevant parameters from Excel to the space.
 - [Implementing a finish trigger|#Implementing Finish Trigger] by which the space tells Excel that it has finished calculating, and displays the results into the Excel spreadsheet.
 
-h2. 1 -- Loading Data
+## 1 -- Loading Data
 
 As a first step, you need to load your data from its current source to the space.
 
@@ -30,13 +30,13 @@ GigaSpaces provides [OpenSpaces|XAP66:Product Architecture#ProductArchitecture-O
 - For messaging-based applications, refer to the [XAP66:JMS] section.
 - If your application is an external data source (like a database), refer to the [XAP66:Persistency] section.
 
-h2. 2 -- Implementing Algorithm
+## 2 -- Implementing Algorithm
 
 After you've loaded your data to the space, you need to implement the algorithm which performs the calculation in the space, thus removing the load from Excel.
 
 To do this, you need to write a set of [Processing Units|XAP66:Processing Unit] into the space, which perform the calculation.
 
-h2. 3 -- Implementing Start Trigger and Passing Parameters
+## 3 -- Implementing Start Trigger and Passing Parameters
 
 After you've implemented Processing Units to perform the calculation, you need to tell them to begin calculating. You also need to pass the Excel function parameters to the space.
 
@@ -47,7 +47,7 @@ Using Microsoft Excel UDF (User-Defined Functions), Excel writes an Entry to the
 - [UDFSample example|RTD and UDF Examples - GigaSpaces-Excel Integration#UDFSample -- Performing Excel Functions in Space] (advanced)
 - [Writing Your First UDF Application|Writing Your First RTD or UDF Application]{refer}
 
-h2. 4 -- Implementing Finish Trigger
+## 4 -- Implementing Finish Trigger
 
 In the last step, you need to implement a finish trigger in the space, which tells Excel that the space has finished calculating; and finally, displaying your results in the spreadsheet.
 

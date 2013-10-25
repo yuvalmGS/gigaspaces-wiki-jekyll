@@ -26,7 +26,7 @@ Since the GSC and its GSM manager include "sensors" that allow the behavior of t
 
 The Processing Unit configuration should follow the basic standards that comprise any processing unit. These include space settings, transaction settings, cluster settings, notify and polling container settings, and your own specific business logic settings. The Processing Unit should also include the actual business logic libraries and any relevant third party libraries used.
 
-h2.  The Data Colocation Deployment Topologies
+##  The Data Colocation Deployment Topologies
 When deploying the processing unit, one of the following data colocation deployment topologies can be used:
 - Pure business logic - the state is stored within another processing unit deployed separately. Multiple instances of the business logic can be deployed and scaled dynamically.
 {indent}!GRA:Images^pu_with_bean.gif!{indent}
@@ -43,13 +43,13 @@ When the business logic is deployed with a colocated space, it can inherit the s
 #  How can I get more CPU Power for my Application?
 Historically, software systems scaled by adding more hardware. These ran more software instances that eventually scaled the overall system allowing it to support additional increasing numbers of requests. More CPUs and more memory can always be added to the same machine to be able to process more data/requests per unit of time, but at some point the machine is bound to reach its physical limits in terms of CPU and memory.
 
-h2. How can I Scale my Application?
+## How can I Scale my Application?
 The concept of the OpenSpaces Processing Unit was designed around scalability, and the Processing Unit is the unit of scale. Adding scalability, then, is a matter of running more processing units on the any machine participating in the XAP cluster. The application can be scaled by:
 - Running multiple consumers concurrently within the same process (when using the polling container).
 - Running multiple processing unit instances concurrently within the same machine.
 - Running multiple processing unit instances across multiple machines that are running concurrently, and utilizing your compute resources over the network (a.k.a. the grid).
 
-h2. The Starvation Scenario
+## The Starvation Scenario
 Nevertheless, in some cases it is not possible to fully take advantage of the available horsepower across the network.
 
 
@@ -129,7 +129,7 @@ Another important consideration is the total amount of data that your applicatio
 
 If the amount of data you store within the space is relatively large (more than what can be stored within one JVM process or one machine), and is partitioned across multiple partitions, you should use one of the colocation techniques to allow the business logic and the data to be colocated. You might use only the executors or colocate the business logic service statically, or mix these two options.
 
-h2. Summary
+## Summary
 Here is a simple matrix you can use to determine if you should collocate your space with your business logic or not:
 ||Scenario||Collocate||Not Collocate||
 |Data model supports stickiness| (/)| |

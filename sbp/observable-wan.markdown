@@ -26,11 +26,11 @@ The basic idea is to write timestamps into spaces that are being replicated usin
 #  Getting the project
 The mirror project is held on github in the [best practices|https://github.com/Gigaspaces/bestpractices] project. This is an umbrella repository; the specific project is in the observable-wan directory under the root directory.
 
-h2. Building the project
+## Building the project
 
 The project has a Maven2 pom structure.  A "mvn install" at the root directory will build everything.  Currently, the project depends on XAP 8.0.4.  You'll have to install XAP 8.0.4 gs-openspaces.jar and gs-runtime.jar into your local repo.  Versions more recent than 8.0.4 should work as well, but haven't been tested.  The space and gateway projects are currently configured to use "localhost" in a 2 site, multi-master configuration.  For a more realistic run, install the site1 and site2 components on grids on two different hosts (with different lookup groups).
 
-h2. Running the project
+## Running the project
 
 Deployment should occur in the following order:
 

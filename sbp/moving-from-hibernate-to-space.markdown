@@ -85,7 +85,7 @@ The existing application Spring bean Configuration file will be modified to:
 {code}
 {gcard}
 {gcard:GigsSpaces spring bean configuration file}
-h2. The Application spring bean configuration file
+## The Application spring bean configuration file
 The {myUserSpaceDAO}} includs the GigaSpaces DAO.
 {code:xml}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -113,7 +113,7 @@ The {myUserSpaceDAO}} includs the GigaSpaces DAO.
 </beans>
 {code}
 
-h2. The Data-Grid PU spring bean configuration file
+## The Data-Grid PU spring bean configuration file
 {code:xml}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -206,7 +206,7 @@ h2. The Data-Grid PU spring bean configuration file
 
 </beans>
 {code}
-h2. The Mirror PU spring bean configuration file
+## The Mirror PU spring bean configuration file
 {code:xml}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"

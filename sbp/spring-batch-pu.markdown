@@ -49,7 +49,7 @@ The Spring Batch [runtime environment|http://static.springsource.org/spring-batc
 Spring Batch support both [sequential and conditional flows|http://static.springsource.org/spring-batch/reference/html/configureStep.html]. This allows building flexible batch processing systems.
 {indent}!spring_batch_SequentialAndConditionalFlows.jpg!{indent}
 
-h2. Spring Batch Usage Scenarios
+## Spring Batch Usage Scenarios
 A typical batch program generally reads a large number of records from a database, file, or queue, processes the data in some fashion, and then writes back data in a modified form. Spring Batch automates this basic batch iteration, providing the capability to process similar transactions as a set, typically in an offline environment without any user interaction. Batch jobs are part of most IT projects and Spring Batch is the only open source framework that provides a robust, enterprise-scale solution.
 
 #  GigaSpaces Spring Batch PU
@@ -66,11 +66,11 @@ The Spring Batch PU encapsulates all the required components to run a Spring Bat
 
 The Spring Batch PU supports the Round Robin Workers mode and the Dedicated Workers mode.
 
-h2. Round Robin Worker
+## Round Robin Worker
 With the Round Robin Worker mode a Spring Batch PU instance will be consuming requests from all the space partitions in round robin manner.
 {indent}!spring_batch_RoundRobinWorker.jpg!{indent}
 
-h2. Dedicated Worker
+## Dedicated Worker
 With the Dedicated Worker mode a Spring Batch PU instance will be consuming requests from a dedicated specific space partition.
 {indent}!spring_batch_DedicatedWorker.jpg!{indent}
 
@@ -405,18 +405,18 @@ public class JobRunner implements ApplicationContextAware,InitializingBean ,Disp
 
 #  Spring Batch PU Example
 To run the Spring Batch PU Example exectue the following steps:
-h2. Start a Database
+## Start a Database
 Start an HSQL database. Move into the `gigaspaces-xap-premium\bin` folder and run the following:
 {code}java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb -dbname.0 xdb{code}
 
 This will start an HSQL database used with the Spring Batch PU.
 
-h2. Create the Spring Batch PU
+## Create the Spring Batch PU
 - Download and extract the [Spring Batch PU example|^SpringBatch.zip] into an empty folder.
 - Create a new folder named `SpringBatchPU` under the `gigaspaces-xap-premium\deploy` folder.
 - Copy the example *bin folder* content into the `gigaspaces-xap-premium\deploy\SpringBatchPU` folder.
 
-h2. Spring Batch PU libraries
+## Spring Batch PU libraries
 Include the following libraries with the Spring Batch PU `lib` folder:
 spring-batch-core-2.1.6.RELEASE.jar
 spring-batch-infrastructure-2.1.6.RELEASE.jar
@@ -439,12 +439,12 @@ persistence-api-1.0.jar
 
 {tip}To speed up the Spring Batch deploy time you should copy these libraries into the `\gigaspaces-xap-premium\lib\optional\pu-common` folder.{tip}
 
-h2. Set Deploy Tool Classpath
+## Set Deploy Tool Classpath
 Add the `spring-batch-core-2.1.6.RELEASE.jar` to the deploy tool (GS-UI or gs CLI) CLASSPATH.
 You may do that by running the following prior calling the deploy command:
 {code}set PRE_CLASSPATH=C:\gigaspaces-xap-premium\deploy\SpringBatchPU\lib\spring-batch-core-2.1.6.RELEASE.jar{code}
 
-h2. Deploy the Space
+## Deploy the Space
 Deploy a space call `mySapce`. You may deploy a single space or a space in a partitioned topology.
 {code}gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,0 mySpace{code}
 
@@ -462,7 +462,7 @@ Waiting for [2] processing unit instances to be deployed...
 Finished deploying [2] processing unit instances
 {code}
 
-h2. Deploy the Spring Batch PU
+## Deploy the Spring Batch PU
 Deploy the Spring Batch PU using the GS-UI or the CLI.
 {code}gs deploy -cluster total_members=2 SpringBatchPU{code}
 
@@ -480,7 +480,7 @@ Waiting for [2] processing unit instances to be deployed...
 Finished deploying [2] processing unit instances
 {code}
 
-h2. Run the Master
+## Run the Master
 To run the master execute the following:
 {code}java com.gigaspaces.springbatch.Master{code}
 The Master will write 100 Request objects with a specific Job ID into the space and will wait for 100 Result objects with the relevant Job ID. This cycle will repeat itself 10 times.

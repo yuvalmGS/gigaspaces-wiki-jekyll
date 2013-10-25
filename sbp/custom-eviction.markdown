@@ -24,7 +24,7 @@ For some applications LRU based eviction is not suitable. Examples include, appl
 
 #  Eviction Strategies
 
-h2. Eviction using Leases
+## Eviction using Leases
 
 In this approach, application writes the objects into cluster with a limited Lease. Also limited Lease will be used selectively, reference data will be written with Lease.FOREVER and stay for the life of cluster but transient data will be written with limited lease.
 
@@ -53,7 +53,7 @@ Lease reaper functionality on the GigaSpace runs periodically and evicts objects
 
 {tip}This approach is most suitable for application which have data coming in at a steady and predictable rate.{tip}
 
-h2. Manually managing Object Leases
+## Manually managing Object Leases
 
 GigaSpaces API returns the `LeaseContext` after every write operation/update operation. In this approach application evicts the data by cancelling the Lease on objects in space that are eligible for eviction.
 
@@ -92,7 +92,7 @@ gigaSpace.writeMultiple(processedLowPriorityOrders,
 
 {tip}This approach is most suitable for application which have fluctuating data loads. Eviction logic can be triggered by monitoring the object count on the cluster and selectively evicting data like the example above.{tip}
 
-h2. Using a Polling Container
+## Using a Polling Container
 
 Sometimes applications data usage is based on the age of the data. After end of a business day any data for that day is not needed by the application and can be evicted. Applications like these use a [polling container|XAP8:Polling Container] to perform eviction logic.
 
@@ -249,7 +249,7 @@ mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.cli
 
 Start monitoring the GSC logs. After about a minute you will see that the eviction logic will trigger and clear the old `Order` objects from space.
 
-h2. Using the JVM Memory Notification API
+## Using the JVM Memory Notification API
 
 Another strategy used by some of the very complex GigaSpaces applications is to rely on the JVM Memory Notification API. Java 5 introduced [MemoryPoolMXBean| http://download.oracle.com/javase/1.5.0/docs/api/java/lang/management/MemoryPoolMXBean.html] API and this API lets you register for usage threshold notifications.
 An application can define custom eviction logic and register this functionality to be triggered when the usage exceeds the threshold.

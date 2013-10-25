@@ -22,7 +22,7 @@ GigaSpaces XAP can simplify the migration effort from mainframe based systems an
 
 GigaSpaces' ability to deploy, manage and scale services along with the data (that can be partitioned and replicated across multiple commodity machines) will enable your mainframe applications to access GigaSpaces XAP's In-Memory Data Grid (IMDG) with minimal re-factoring of existing application code without having to introduce additional third party products, dramatically reducing implementation times and minimizing incremental costs in software licenses and hardware.
 
-h2. IBM QRep and Event Publishing as an Integration bridge to GigaSpaces IMDG
+## IBM QRep and Event Publishing as an Integration bridge to GigaSpaces IMDG
 There are various architectural options moving Data From Mainframe (Z/OS) DB2 to GigaSpaces XAP IMDG:
 h3. Replication
 [IBM® InfoSphere® Data Replication|http://www-03.ibm.com/software/products/us/en/infodatarepl] (aka IBM QRep) replicates information between heterogeneous data stores in near real time. It provides replication with transactional integrity to support database migration, application consolidation, warehousing, master data management, business analytics and data quality processes. DB2 Replication programs read the source database recovery logs continuously and apply them to target data source (i.e. databases). This can be achieved via either SQL Replication or Queue Replication.
@@ -55,18 +55,18 @@ When used with a database, the Mirror service is one of the primary reasons allo
 
 Any access to the data done primarily from the IMDG using one of the standard interfaces GigaSpaces XAP supports (POJO/Spring, JPA, JDBC, Key/value, .Net , C++ or Document APIs). If the desired data item cannot be found within the IMDG, it will be accessed through the database running on the mainframe, retrieving the relevant data item, loading it into the IMDG to be reused for subsequent transactions and passing it back to the client application. This approach saves the need for accessing the mainframe on every application data access by using an in-memory layer that may scale on demand.
 
-h2. Controlled, Reliable, and Optimized Mainframe Access
+## Controlled, Reliable, and Optimized Mainframe Access
 GigaSpaces XAP Mirror service has a central coordinator for all back-end store updates, enabling your system to batch data and persist in-memory transactions via a continuous background access to the mainframe where the frequency of access is controlled and pre-configured.  This allows the system to *minimize the number of mainframe connections* and interactions reducing MIPS consumption while controlling the data consistency level and synchronization between the in-memory representation of the data and its copy on the mainframe.
 
 Many mainframe-based applications that perform nightly batch jobs drive a large number of data updates being made to back-end stores.  In this context, GigaSpaces' inherent ability to maintain transactional integrity is critical. In-Memory transactions can be fully committed preserved in multiple different physical locations using GigaSpaces' high-availability mechanism, and ultimately persisted to the database with zero risk of the mainframe and GigaSpaces being out of sync for a long duration.
 
 {tip}Other data grid solutions require a tremendous amount of custom code or integration with a third party transaction manager to address these requirements, increasing development time, on-going management of custom code and generates greater level of risk for inconsistent data.{tip}
 
-h2. Flexibility
+## Flexibility
 
 The persistency layer within GigaSpaces has a rich and flexible interface you can leverage. This allows XAP to hook into complex and non-standard legacy systems. As much as the data model is complex and the business transactions span different entities, they will have more flexibility and room to maneuver. The persistency API is triggered transparently and allows your system to playback the in-memory transactions in the exact order these have been conducted against the system running on the mainframe. You can distinguish between write and update , delta updates operations, or between the different transactions, or between the different data model items.
 
-h2. Consistency
+## Consistency
 
 The data flow from the IMDG to the legacy systems has a unique and special behavior with GigaSpaces. It provides one central coordinator (Mirror) that receives transactions from all partitions and allows the users to aggregate operations belong to the same IMDG transaction before it goes back to the legacy backend mainframe system.
 
@@ -76,13 +76,13 @@ Another aspect of the central coordinator is its ability to save MIPS. Since it 
 
 {tip}Summary: the mirror service serves as a coordinator that provides not only access to the persistence lifecycle, but provides consistency and safety for your application as well.{tip}
 
-h2. Web layer Scalability
+## Web layer Scalability
 
 The ability to deploy web services acting as gateways to the data/business logic hosted within GigaSpaces is important.  This functionality allows every new component or legacy component to interact with the system. The GigaSpaces container may run a set of web services, and can scale these dynamically.
 
 These may be the backbone of the entire system to access backend data and services. The web layer can have its own [cache|XAP91:Client Side Caching] running within the web application. This speeds up access to reused data by having it as part of the application memory address avoiding the need to perform remote access to the IMDG.
 
-h2. Multi-Tenancy
+## Multi-Tenancy
 
 GigaSpaces XAP has built-in multi-tenancy support, meaning that several applications can share the same data grid, reducing the total infrastructure required across the enterprise.  In addition, GigaSpaces preserves the boundaries between applications and data sets for you, and enable your operations team to define application-specific SLA's to meet the individual needs of each line of business. This means each application has its own life-cycle and scaling rules, its own dedicated security settings, etc.
 
@@ -90,10 +90,10 @@ GigaSpaces XAP has built-in multi-tenancy support, meaning that several applicat
 
 GigaSpaces can be used with Mainframe using the following:
 
-h2. GigaSpaces External Data Source
+## GigaSpaces External Data Source
 
 Allows the IMDG to pull data from Mainframe via a public interfaces (web services for example) through the [IMDG EDS API|XAP91:External Data Source API]. Once there is a cache miss or once the IMDG is started, the IMDG accesses the Mainframe and fetch relevant data. The IMDG can push any changes done back to the Mainframe in a synchronous or asynchronous manner.
-h2. JCICS
+## JCICS
 
 [JCICS|http://publib.boulder.ibm.com/infocenter/cicsts/v3r1/index.jsp?topic=%2Fcom.ibm.cics.ts31.doc%2Fdfhpj%2Ftopics%2Fdfhpjlp.htm] (provided by CICS) is the Java equivalent of the EXEC CICS application programming interface (API) that you would use with other CICS supported languages, such as COBOL. It allows you to access CICS resources and integrate your Java programs with programs written in other languages. Most of the functions of the EXEC CICS API are supported. For a description of the JCICS API, see [The JCICS class library|http://publib.boulder.ibm.com/infocenter/cicsts/v3r1/topic/com.ibm.cics.ts31.doc/dfhpj/topics/dfhpjl9.htm#dfhpjl9]. You may leverage JCICS to allow Java application and native (COBOL) programs running on the mainframe. You may use GigaSpaces IMDG notifications and update the mainframe applications with every change within the IMDG in a transparent manner.
 
@@ -104,18 +104,18 @@ References:
 - [Sample JCICS programs|http://www.redbooks.ibm.com/abstracts/sg245275.html?Open] - A COBOL program invokes the Java program (JVMPool or JVMServer) using the EXEC CICS LINK PROGRAM API and passes in a CommArea or a Channel which is a mechanism to send data to the Java program.
 
 
-h2. Web Services
+## Web Services
 
 Allows the application to pull data from the Mainframe via their public interfaces in an explicit manner. In this case we can host the web services and scale them.
 
-h2. JMS Broker
+## JMS Broker
 
 Connect into a known messaging broker (IBM MQ) within the existing system, consume messages and push them into the IMDG to be leveraged by whoever using the IMDG as its data source.
 
-h2. Mule ESB
+## Mule ESB
 
 Leverage [MF Mule integration|http://www.mulesoft.com/webinar-getting-mainframe-30-minutes] and [GigaSpaces Mule|XAP91:Mule ESB] support to have these to communicate with each other.
 
-h2. WebMethods EntireX
+## WebMethods EntireX
 
 WebMethods EntireX Java/.Net API provides bi-directional service wrapping for a unique range of mainframe environments.

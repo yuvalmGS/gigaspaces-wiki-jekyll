@@ -116,7 +116,7 @@ The client application:
 - Call the `CustomerServiceImpl.updateCustomer (Customer customer)`.
 - Call the `CustomerServiceImpl.getCustomersByName (String name)`.
 
-h2. Running the Client
+## Running the Client
 You may test the web service using a client application running as a standalone Java application, Spring Application or via [SOAP UI|http://www.soapui.org].
 
 h3. Standalone Java Application
@@ -128,7 +128,7 @@ The `com.example.customerservice.client.CustomerServiceSpringClient` can be used
 Run the `main` to run the client:
 {code}com.example.customerservice.client.CustomerServiceSpringClient{code}
 
-h2. Expected Output
+## Expected Output
 When running the client application you should get the following output:
 {code}
 Updating Customer info named:Smith
@@ -151,7 +151,7 @@ The Server will have the following output:
 found 1 Customers matching the name:Smith
 {code}
 
-h2. Checking the Data within the Space
+## Checking the Data within the Space
 When the client application running sucessfuly you will be able to see the Customer data within the space using the GS-UI.
 {indent}!web_serv_ui1.jpg|thumbnail!{indent}
 Click the Query button to view the Customer Data:

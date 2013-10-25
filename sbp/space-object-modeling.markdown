@@ -44,7 +44,7 @@ If you want to optimize the memory footprint, and avoid duplicated objects in me
 
 - With this approach, the actual referenced object/collection within the space object is not stored within the space object. It should be excluded using the @SpaceExclude decoration. This allows the field data to be transient within the space object.
 
-h2. Example
+## Example
 
 The Parent Class:
 {code}

@@ -21,7 +21,7 @@ This section includes basic and advanced code examples for using the GigaSpaces-
 
 {toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
 
-h2. HelloUDF -- Performing Excel Functions in Space
+## HelloUDF -- Performing Excel Functions in Space
 
 {code:java}
 using System;
@@ -138,7 +138,7 @@ namespace HelloUDF
 }
 {code}
 
-h2. HelloRTD -- Loading Data from Space to Excel
+## HelloRTD -- Loading Data from Space to Excel
 
 {code:java}
 using System;
@@ -315,7 +315,7 @@ namespace HelloRTD
 }
 {code}
 
-h2. HelloMsg
+## HelloMsg
 
 {code:java}
 using System.Text;
@@ -370,7 +370,7 @@ namespace HelloCommon
 }
 {code}
 
-h2. RTDSample -- Loading Data from Space to Excel
+## RTDSample -- Loading Data from Space to Excel
 
 {code:java}
 using System;
@@ -563,7 +563,7 @@ namespace GSStreamer
 }
 {code}
 
-h2. TickInfo
+## TickInfo
 
 {code:java}
 using System;

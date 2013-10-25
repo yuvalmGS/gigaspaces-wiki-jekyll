@@ -49,7 +49,7 @@ The `bucketId` is calculated using the following formula:
 (first char of Symbol hashcode) % (# of machine cores)
 {code}
 
-h2.  Running the Example
+##  Running the Example
 {gdeck:RunningExample|top}
 {gcard:Running the Order Processor}
 You can run the Data-Grid with the collocated Order Processor within your IDE using the following configuration:
@@ -63,7 +63,7 @@ You can run the Feeder within your IDE using the following configuration:
 {gcard}
 {gdeck}
 
-h2. Example Code and Configuration
+## Example Code and Configuration
 {gdeck:example|top}
 {gcard: The Order Class}
 {code:title=The Order Class}

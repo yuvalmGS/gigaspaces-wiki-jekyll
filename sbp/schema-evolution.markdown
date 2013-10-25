@@ -78,7 +78,7 @@ This approach is the class serialization and de-serialization methods as transfo
 
 You can evolve the space schema by downloading a codebase and using inheritance -- by adding a new Entry class type to your application. This class can extend an existing space Entry class. Clients are able to work with existing Entries, as well as the newly added Entry types.
 
-h2. Example
+## Example
 
 - Class A is written to a space by client X.
 - Class A is taken or read from the space by client Y, using a template based on A.
@@ -104,7 +104,7 @@ The migration process can also be optimized by running multiple threads that han
 
 {comment}Data migration can be done using the space underlying Entry representation -- the `ExternalEntry`. A simple migration program can transform data stored in the space from one schema to a new schema, and create it in a new space that is used by the new version of the application. {comment}
 
-h2. Schema Evolution Example
+## Schema Evolution Example
 {code}
 package com.j_spaces.transformer;
 

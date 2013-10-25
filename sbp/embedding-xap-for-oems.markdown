@@ -24,7 +24,7 @@ The following example shows how to embed GigaSpaces Data Grid using this model.
 
 #  Example - Embedding GigaSpaces Data Grid
 
-h2. Acquiring and Installing XAP
+## Acquiring and Installing XAP
 
 Acquiring XAP is simple: download an archive from the [Current Releases|http://www.gigaspaces.com/LatestProductVersion] page.
 
@@ -34,7 +34,7 @@ On Windows, for example, one might install it into `C:\tools\`, leading to an in
 
 In a UNIX environment, you might install it into `/usr/local/`, which would result in a final installation directory of `/usr/local/gigaspaces-xap-premium-8.0.5/`.
 
-h2. Running the GigaSpaces Agent
+## Running the GigaSpaces Agent
 
 A GigaSpaces node is best facilitated through the use of a service called the "[Grid Service Agent|XAP91:The Grid Service Agent]," or GSA.
 
@@ -54,7 +54,7 @@ The simplest way to start a node with GigaSpaces is just to invoke the GSA in th
 {gcard}
 {gdeck}
 
-h2. Connecting to a Data Grid
+## Connecting to a Data Grid
 
 It's actually fairly easy to write some code that can connect to an existing datagrid, and deploy a new one if the datagrid doesn't exist.
 
@@ -84,7 +84,7 @@ With this class in the classpath, getting a datagrid reference is as simple as:
 
 {code}GigaSpace space=DataGridConnectionUtility.getSpace("myGrid");{code}
 
-h2. Further reading:
+## Further reading:
 - [Modeling and Accessing Your Data|XAP91:Modeling and Accessing Your Data]
 - [Deploying and Interacting with the Space|XAP91:Deploying and Interacting with the Space]
 

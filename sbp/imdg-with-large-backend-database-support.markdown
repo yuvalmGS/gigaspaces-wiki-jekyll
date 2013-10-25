@@ -41,7 +41,7 @@ Here is the full query execution strategy:
 
 {indent}!GRA:Images^imdg_eviction_large_db.jpg!{indent}
 
-h2. Data Eviction Options
+## Data Eviction Options
 To control the data within the space should evict it. Evicting data from the space can be done using the following options:
 - LRU Cache policy - The simplest way to evict data based on available memory. Built-in option.
 - Lease - Space objects expire based on TTL specified once the object is written into the space.
@@ -65,7 +65,7 @@ The client performs 3 types of queries:
 - Query for 500 matching objects - This will return objects from multiple partitions without accessing the database.
 - Query for 700 matching objects - Load data from the database and return objects from all partitions.
 
-h2. Running the Example
+## Running the Example
 
 To run the example you should first run the IMDG and later run the client. the example below explains how to run these within the IDE, but you can also modify these to run as a PU and deploy these into the GigaSpaces runtime environment.
 

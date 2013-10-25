@@ -56,7 +56,7 @@ The .NET files are created in the `<Example Root>\Release` directory.
 - Click *OK* in the Add-ins dialog.
 {indent}!add-ins.JPG!{indent}
 
-h2. Opening .NET Solution with Microsoft Visual Studio
+## Opening .NET Solution with Microsoft Visual Studio
 
 - Double-click the `ExcelStocks.sln` file, according to the version of Visual Studio you are using.
 - Choose *Build* > *Build Solution*. The files: `StockEntities.dll`, `StockOperations.dll(UDF)`, `StockQuote.dll(RTD)` and `StockMarketFeeder.exe(Market feeder)`  are created in the `Release` subdirectory.

@@ -100,7 +100,7 @@ Where:
 - Machine RAM Size - amount of physical RAM a machine has.
 - Total number of GSCs - total number of GSCs that are initially running when deploying the Data-Grid.
 
-h2. Example 1 - Basic Capacity Planning
+## Example 1 - Basic Capacity Planning
 With our example, we initially have 2 machines used to run our IMDG application. 10 machines might be allocated for the project within the next 12 months. Each machine has 32GB of RAM with 4 quad-core CPUs. This gives us a total of 64GB of RAM. Later, when all 10 machines are available we will have potentially 320GB of total memory. The memory is used both by the primary IMDG and the backup IMDG instances (exact replica of the primary machines).
 
 The machines run Linux 64 bit OS. Allocating 6GB per JVM as the max heap size for the GSC, results in 5 GSCs per machine - i.e. 10 GSCs initially across 2 machines. Once we use all the machines our full budget allows us, we will have 50 GSCs.
@@ -117,7 +117,7 @@ This rebalancing of the IMDG instances can be done via the UI, or via a simple p
 
 Note that being able to determine the number of IMDG partitions prior to the application deployment allows you to have exact knowledge of how your routing field values should be distributed, and how your data will be partitioned across the different JVMs that will be hosting your data in-memory.
 
-h2. Example 2 - Capacity Planning when Running on the Cloud
+## Example 2 - Capacity Planning when Running on the Cloud
 In a cloud environment, you have access to essentially unlimited resources. You can spin up new virtual machines and have practically unlimited amounts of memory and CPU power. With such an environment, the calculation of the maximum number of IMDG partitions cannot be based on the maximum number of machines you might have allocated for your project. Theoretically you could have an unlimited number of machines started on the cloud to host your IMDG.
 
 Still, you must have some value for the maximum number of IMDG partitions when deploying your application. In such cases, you should calculate the number of IMDG partitions, based on the amount of memory your application might generate and store within the IMDG.

@@ -25,7 +25,7 @@ The Distributed Task is executed for each Space class you have, allowing you to 
 Here is a simple example: we have 3 types of Space Classes:
 `StockMktHist`, `LastPrice`, `StockHist` - all of these use the `Currency` field as their routing field. The Currency routing field is a string-based field, where its values could be USD,EUR,GBP, etc.
 
-h2. The createCurrencyGroups
+## The createCurrencyGroups
 A Data generator utility class has a `createCurrencyGroups()` method that generates a Hash Map that groups currencies that belong to the same partition using the Currency String hashcode - here is a simple implementation of such a method:
 {code}
 
@@ -52,7 +52,7 @@ public static void createCurrencyGroups(int maxPartitions) {
 
 With the above implementation, we generate several lists of currencies, all of these are maintained within `currencyGroups` - one for each partition.
 
-h2. The getRandomCurrency
+## The getRandomCurrency
 The Data generator also has the `getRandomCurrency` method that returns a random currency, based on a given partition - it uses the currencyGroups we created above:
 
 {code}
@@ -70,7 +70,7 @@ public static String getRandomCurrency(int partition) {
 
 The getRandomCurrency is used with our data generator utility.
 
-h2. The LoaderRequest
+## The LoaderRequest
 The LoaderRequest execute method implementation generates an array of the requested type and writes it using one method call (writeMultiple) into its collocated space:
 {code}
 public class LoaderRequest implements DistributedTask<String, String>{
@@ -194,7 +194,7 @@ public class LoaderRequest implements DistributedTask<String, String>{
 {code}
 
 
-h2. The Client Application
+## The Client Application
 The client application creates a `LoaderRequest` object and executes it, one for each space Class, where in reality all these `LoaderRequest` objects are sent in parallel to all running partitions to be executed. This is how you have these 3 types of objects loaded into all partitions simultaneously:
 {code}
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space").space()).gigaSpace();

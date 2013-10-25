@@ -26,7 +26,7 @@ The scaling agent sample periodically the amount of HTTP requests served by the 
 
 {tip}The [WebScale.zip|^WebScale.zip] includes the source and configuration described below.{tip}
 
-h2. The Scaling Agent Implementation
+## The Scaling Agent Implementation
 {code:java}
 package com.gigaspaces.examples.webscale;
 
@@ -134,7 +134,7 @@ Total [" + totalRequests + "] Previous Total [" + previousTotalRequests + "]");
 }
 {code}
 
-h2. The Scaling Agent PU Configuration
+## The Scaling Agent PU Configuration
 {code:xml}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"

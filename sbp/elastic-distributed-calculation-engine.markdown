@@ -48,7 +48,7 @@ Calculations can be deployed colocated with the data or seperatly.
 |Recommended with|Lightweight calculations. No IO|Heavyweight calculations. CPU / IO bound|
 
 #  Colocated Calculations
-h2. The Calculating Flow
+## The Calculating Flow
 The Calculating Flow includes the following:
 - A client, splitting a list of Trade IDs into multiple batches. Each Batch is sent into the calculation node (space partition) via a [AnalysisTask|#The AnalysisTask] that implements the [Task Interface|XAP8:Task Execution over the Space]. Each calculation node stores a subset of the Trade data.
 - [#The AnalysisTask] is executed. Once completed, an intermediate result is sent back to the client. If the requested Trade cannot be found within the space, it is loaded from the database.
@@ -58,16 +58,16 @@ The Calculating Flow includes the following:
 
 (!) When running the Elastic Calcualtion Engine on a single machine, scaling up and down will not affect the calculation time, but when running this on a grid with multiple machines, you will see better or worse calculation time when the grid scales up or down.
 
-h2. Intelligent Map-Reduce
+## Intelligent Map-Reduce
 The Elastic Calcualtion Engine uses the [ExecutorBuilder|XAP8:Task Execution over the Space#ExecutorBuilder API]. This allows executing multiple `AnalysisTasks` in a parallel manner where each Task includes a different Trade ID list to use for the calculation. Each List is sent to a relevant node where it is used to fetch the Trade data from the colocated space or to be loaded from the database.
 
-h2. The AnalysisTask
+## The AnalysisTask
 The `AnalysisTask` include the following:
 - `execute` method - invoked on each partition. It returns a sum of all of the calculated NPV values for all the trades found within the partition devided by books. The demo assumes there are four books.
 - `getTradesFromDB` method  - used to load missing Trade objects from the database. Since this demo does not include a running live database the Trade  data is generated via random data.
 - `calculateNPV` method - called by the execute method to calculate the Net present value for the Trade.
 
-h2. The Net Present Value (NPV) Calculation
+## The Net Present Value (NPV) Calculation
 The Net Present Value calculation calculates the NPV for 6 years. It is using the following code:
 {code}
 public void calculateNPV(double rate , Trade trade) {
@@ -86,15 +86,15 @@ public void calculateNPV(double rate , Trade trade) {
 The above can be described using the following formula:
 !NPV_formula.jpg!
 
-h2. The NPVResultsReducer
+## The NPVResultsReducer
 The `NPVResultsReducer` receives the NPV calculation for each book from each calculation node (partition) and reduces it into a list of NPV values for each book (four values).
 
-h2. The Trade
+## The Trade
 The Trade Space class stores the following items:
 - id - The Trade ID.
 - CacheFlowData - The cache flow data for Year 0 through Year 5.
 
-h2. Elasticity
+## Elasticity
 The [Elastic Processing Unit|XAP8:Elastic Processing Unit] is used to deploy the data/compute grid and scale it dynamically. This allows you to increase the capacity of the data grid and leverage additional CPU resources for the calculation activity. With this demo, the user changes the capacity using a scale command that instructs the data/compute grid to increase its capacity (this in turn starts additional containers and rebalances the data/compute grid) or decrease its capacity (by terminating containers and rebalancing).
 
 #  Remote Calculations
@@ -122,10 +122,10 @@ The client will run the calculation repeatedly for 10,000 Trades where each cycl
 {code}ScaleWorker.bat{code} and follow the instructions.
 8. To Scale the Data-Grid following Hit Enter at the command running the `deployDataGrid.bat`.
 
-h2. Running within eclipse
+## Running within eclipse
 You may run the Calcualtion Engine within eclipse by using the StartCluster main class. It will start a clustered space. You can use this to debug the `AnalysisTask` when executed at the space side.
 
-h2. Expected Output
+## Expected Output
 {code:title=Deploy expected output}
 \ElasticRiskAnalysisDemo>set NIC_ADDR=127.0.0.1
 Log file: D:\gigaspaces-xap-premium-8.0.1-ga\logs\2011-06-23~15.05-gigaspaces-service-192.168.1.100-13980.log

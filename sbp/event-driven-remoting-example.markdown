@@ -35,7 +35,7 @@ The Event Driven Remoting allows you to:
 
 {toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
 
-h2. Installing and Running the example
+## Installing and Running the example
 
 1. Download the [example|Event Driven Remoting Example^event_remoting_Example.zip] package and unzip it under your <GigaSpaces Root>\examples folder.
 2. Load the example into your IDE (eclipse or your favorite Java development environment).
@@ -49,7 +49,7 @@ h2. Installing and Running the example
 6. Run the Service PU
 7. Run the Client PU. This will invoke the service to that will immediately return and after 10 seconds will receive the result.
 
-h2. The Flow
+## The Flow
 
 To allow the client to invoke the service and immediately return the actual dialog between the client and the service done via request/response space objects. The service business logic is executed in the background, and when completed returns the result back to the client:
 - Client is writing a Request object to the space.
@@ -59,7 +59,7 @@ To allow the client to invoke the service and immediately return the actual dial
 
 !async_remot1.jpg!
 
-h2. Sample Client Output
+## Sample Client Output
 
 {code}
 EventRemotingClient: I am being constructed.
@@ -76,7 +76,7 @@ Processing unit(s) started successfully
 ---------------------------------------------------
 {code}
 
-h2. Sample Service Output
+## Sample Service Output
 {code}
 SimpleServiceImpl constructed...
 2011-11-08 09:11:40,036  INFO [org.openspaces.pu.container.integrated.IntegratedProcessingUnitContainer] -

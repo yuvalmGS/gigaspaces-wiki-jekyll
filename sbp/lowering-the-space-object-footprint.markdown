@@ -70,7 +70,7 @@ With the [attached example|Lowering the Space Object Footprint^BinaryCompaction.
 {info}With this example - The footprint overhead of the default serialization compared to a compact format is *250%*.{info}
 To run this example copy the example package zip into \GigaSpaces Root\examples\, extract the zip file and follow the instructions at the readme file.
 
-h2. The Original Space class
+## The Original Space class
 Our example involves a space class that will be modified to follow the compact serialization pattern.
 
 The original class includes:
@@ -112,7 +112,7 @@ public class SimpleEntry {
 	}
 {code}
 
-h2. The BinaryFormatEntry class
+## The BinaryFormatEntry class
 The modified class that implements the compact serialization pattern includes:
 - Using the `@SpaceClass(includeProperties=IncludeProperties.EXPLICIT)` decoration - this allows you to control which fields will be Space class fields explicitly.
 - One Integer indexed field.
@@ -176,7 +176,7 @@ public class BinaryFormatEntry implements Externalizable {
 }
 {code}
 
-h2. The pack method
+## The pack method
 The `pack` method serializes the object non indexed data. It is called explicitly before calling the space write operation. This method serialize the object data by placing the data into the byte array field. Null values fields indication stored within one field. The `BinaryOutputStream` utility class is used to write the compacted data into the byte array.
 
 {code}
@@ -195,7 +195,7 @@ public void pack() throws Exception
 }
 {code}
 
-h2. The unpack method
+## The unpack method
 This method de-serialize the object data by extracting the data from the byte array field and populating the fields with their corresponding values. `null` values fields are non-populated.  This method is called after calling the space read operation. The `BinaryOutputStream` utility class is used to read the compacted data and place it into the relevant field.
 
 {code}
@@ -217,7 +217,7 @@ public void unpack() throws Exception
 {code}
 
 
-h2. The writeExternal method
+## The writeExternal method
 The `writeExternal` method serializes the object data into the output stream.  The object data involves a field indicates which fields have `null` value, the indexed fields and a byte array field that includes all non indexed fields data (created by the `pack` method). The `writeExternal` assumes the `pack` method has been called explicitly prior the space write method call that initiated the `writeExternal` call.
 
 {code}
@@ -237,7 +237,7 @@ public void writeExternal(ObjectOutput out) throws IOException {
 }
 {code}
 
-h2. The readExternal method
+## The readExternal method
 The `readExternal` method essentially performs the opposite of the what the `writeExternal` method is doing. This methods populates the indexed fields data and the byte array field data. Later, the remaining fields will be populated once the `unpack` method will be called.
 
 {code}
@@ -259,7 +259,7 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 }
 {code}
 
-h2. The checkNulls method
+## The checkNulls method
 This method goes through the indexed fields and the byte array field and place into a `short` data type field an indication for the ones with null value using a bit map.
 
 {code}
@@ -276,7 +276,7 @@ private short checkNulls() {
 {code}
 
 
-h2. The getnulls method
+## The getnulls method
 This method goes through all class non indexed fields (the ones that their data is stored within the byte array) and place into a `long` data type field indication for the ones with null value using a bit map.
 {code}
 private long getnulls()
@@ -294,7 +294,7 @@ private long getnulls()
 }
 {code}
 
-h2. The Factory method
+## The Factory method
 The example using a factory method called `generateBinaryFormatEntry` to create the space object. Once it has been populated , its `pack` method is called.
 {code}
 private BinaryFormatEntry generateBinaryFormatEntry(int id){
@@ -305,7 +305,7 @@ private BinaryFormatEntry generateBinaryFormatEntry(int id){
 {code}
 
 
-h2. Writing and Reading the Object from the space
+## Writing and Reading the Object from the space
 The following code snipped illustrates how the copact serialized object is written into the space and read from the space:
 {code}
 GigaSpace _gigaspace;

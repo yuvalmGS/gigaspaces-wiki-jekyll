@@ -29,7 +29,7 @@ This is a simple order processing example based on GigaSpaces maven basic-async-
 
 Some relevant code from the example is in the following sections.
 
-h2. Data Model
+## Data Model
 
 {gdeck:Data Model}
 {gcard:Product Class}
@@ -101,7 +101,7 @@ public abstract class MultiClusterEnabled {
 {gcard}
 {gdeck}
 
-h2. Mirror Definition
+## Mirror Definition
 
 {gdeck:Mirror}
 {gcard:Mirror pu.xml}

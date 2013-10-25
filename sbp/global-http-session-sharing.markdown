@@ -217,7 +217,7 @@ When using a [Secure GigaSpaces cluster|XAP9:Securing your Data] you can pass se
 
 #  Http Session Web Application Example
 
-h2. Single-Site Deployment
+## Single-Site Deployment
 The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish....).
 - Download the [HttpSession.war|^HttpSession.war].
 - Deploy a space named *sessionSpace*. You can start the `GigaSpaces root/bin/gsInstance.sh/bat` for a single instance space or deploy a clustered space using the command line or GS-UI.

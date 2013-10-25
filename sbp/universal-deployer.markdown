@@ -14,12 +14,12 @@ page_id: 55937666
 {tip}
 {rate}
 
-#  Overview
+# Overview
 The GigaSpaces Universal Deployer (GUD) allows deploying the different supported processing units ([Space PU|XAP8:Deploying and Interacting with the Space], [Regular PU|XAP8:Packaging and Deployment], [Elastic PU|XAP8:Elastic Processing Unit], [memCache PU|XAP8:The Memcached API] or [Web PU|XAP8:Web Processing Unit Container]) via a simple configuration file. The GUD support dependency based deployment allowing multiple processing units to be deployed as one atomic process (e.g composite application).
 
 {tip}Starting with XAP 9 you may use the *Deployment Dependencies API* to specify the deployment order. See the [Application Deployment and Processing Unit Dependencies|XAP9:Deploying onto the Service Grid#Application Deployment and Processing Unit Dependencies] for details.{tip}
 
-h2. Dependency Based Deployment
+## Dependency Based Deployment
 The GUD allows you to specify for each deployed PU its dependency PU list. The dependent PU will be deployed after all its PUs dependencies will be fully deployed. The mechanism is recursive; if any of these PUs depends on other PU(s), these will be deployed before the top level dependent PU is deployed. This ensures the deploy order will have the entire PUs deployed in the correct order.
 
 {indent}!universantDeploy_depen.jpg!{indent}
@@ -37,7 +37,7 @@ G [] -file myG_PU.jar
 
 With the above config the PUs will be deployed in the following order: F, D, E, G, C, B, A.
 
-h2. Abort Strategy
+## Abort Strategy
 In case of a deployment failure, you may specify an abort strategy. In case of unsuccessful deployment you may instruct the GUD to undeploy the specific PU that could not be deployed or undeploy the entire PUs that already been deployed.
 
 #  GUD Command Line Options
@@ -50,14 +50,14 @@ The GUD support the following command line arguments:
 |-abortDeployOnFailure|In case of a failure with the deploy of any of the PUs, undeploy all the PUs listed at the GUD config file| true,false| false|
 
 #  Running the GUD
-h2. Install the GUD
+## Install the GUD
 - Download the [GigaSpaces Universal Deployer|^GSUniversalDeployer.zip] and extract it into an empty folder.
 - Edit the `runGSUniversalDeployer.bat` or `runGSUniversalDeployer.sh` to include the correct parameters.
 
 Here an exmaple how you should run the GUD:
 {code}java com.gigaspaces.admin.GSUniversalDeployer -config c:\\puList.txt -locators 127.0.0.1 -abortDeployOnFailure true{code}
 
-h2. GUD Configuration File
+## GUD Configuration File
 The universal Deployer configuration file may include multiple lines with the following format:
 {code}PU Name [Dependent PU List] deploy options{code}
 Example:
@@ -71,7 +71,7 @@ D [] -cluster total_members=2 -user xxx -password yyyy -properties file://d:/tem
 E [] -cluster total_members=2 -user xxx -password yyyy -zones zone1,zone2
 {code}
 
-h2. GUD Configuration File Options
+## GUD Configuration File Options
 Each GUD configuration file line supports the following options:
 ||Switch||Description||Options||Default||
 |-file| PU file. You may have .zip , .jar , .war file deployed.| | |
@@ -96,9 +96,9 @@ Each GUD configuration file line supports the following options:
 |-memoryCapacity |Used with an Elastic PU. Specifies the estimated *initial* total memory capacity used with this processing unit. | Numeric value with a Memory Unit. Memory units supported: m for MB,g for GB|128m|
 |-singleMachineDeployment |Used with an Elastic PU. Allows deployment of the processing unit on a single machine, by lifting the limitation for primary and backup processing unit instances from the same partition to be deployed on different machines. | false,true|false|
 
-h2.Commenting lines
+## Commenting lines
 You may use `/` or `#` to comment out a line within the configuration file.
 
-h2. Logging
+## Logging
 When deploying the GUD will display information about started/terminated containers, started/terminated PU instances.
 

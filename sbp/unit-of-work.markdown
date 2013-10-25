@@ -56,7 +56,7 @@ With the above scenario requests 1, 3 and 4 should be processed as one atomic op
 {indent}!GRA:Images2^uow_1.jpg!{indent}
 
 #  UOW Example
-h2.  Running the Example
+##  Running the Example
 {tip}You can [download|^uow.zip] eclipse project with example source code, running scripts and configuration.{tip}
 {gdeck:RunningExample|top}
 {gcard:Running the UOWProcessor within your IDE}
@@ -83,7 +83,7 @@ or using the following:
 {gcard}
 {gdeck}
 
-h2. Example Code and Configuration
+## Example Code and Configuration
 {tip}The bucket count configured via the UOW Data-Grid pu.xml using the BucketConfiguration Bean{tip}
 {gdeck:example|top}
 {gcard:The UOWMessage Class}

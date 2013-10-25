@@ -40,7 +40,7 @@ The Space Viewer toolbar includes the following options:
 \\
 {indent}!Toolbar3.JPG!{indent}
 
-h2. Creating New View
+## Creating New View
 
 The *Create View* option allows you to create a view of space data inside your Excel spreadsheet, and to customize your selection according to your requirements.
 - The *Connected to* drop-down menu displays the space URL of the space you are currently connected to.
@@ -90,7 +90,7 @@ To create a new view:
 
 (i) You can use all Excel capabilities on this list, such as column sorting and list. However, *column sorting is not saved when you update your view*.
 
-h2. Customize the Selection
+## Customize the Selection
 
 The Customize the Selection window allows you to perform queries on a certain field, and thus narrows the final view that is displayed in your workbook.
 
@@ -106,7 +106,7 @@ Pressing *Save* saves the query for this field.
 The *SQL* area at the bottom displays the query syntax in SQL. After pressing *Save* on the right, the number of instances found as a result of this query is displayed under the *SQL* area (this is also the number of rows that will appear in this column). You can refresh this result using the refresh button ( !ExcelRefresh.jpg!).
 {indent}!CustomizeTheSelection1.JPG!{indent}
 
-h2. Changing Existing View
+## Changing Existing View
 
 The *Configure View* option allows you to make changes to existing views. If you have a few views in the same spreadsheet, click anywhere in the relevant view and then click *Configure View*.
 
@@ -162,7 +162,7 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 #  Troubleshooting
 
 
-h2. Space Viewer toolbar does not show up in Excel
+## Space Viewer toolbar does not show up in Excel
 
 
 h3. Problem

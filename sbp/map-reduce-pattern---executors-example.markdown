@@ -43,7 +43,7 @@ The example code will have the following implemented:
 - Task
 - Client
 
-h2. The Task Implementation
+## The Task Implementation
 The Task implements the `DistributedTask` interface. It includes the `execute` and the `reduce` methods:
 {code}
 package org.test.executor;
@@ -99,7 +99,7 @@ public class MyTask implements DistributedTask<Integer, Integer>{
 }
 {code}
 
-h2. The Client
+## The Client
 h3. Sync mode
 The client invokes the Task on the remote space in sync mode using the following:
 {code}
@@ -124,7 +124,7 @@ public void onResult(AsyncResult<Integer> result) {
 }
 {code}
 
-h2. Running the Example
+## Running the Example
 h3. Deploying the Space
 Using IDE:
 Set your IDe to have the Following:
@@ -228,7 +228,7 @@ Your code should have the following implemented:
 - Service Result Reducer (Client Side)
 - Client
 
-h2. The Service Interface
+## The Service Interface
 
 The Service Interface includes 2 methods. One used to invoke the Service method in *Synchronous* mode and another used to invoke the Service method *Asynchronous* mode:
 {code}
@@ -239,7 +239,7 @@ public interface IDataProcessor {
     AsyncFuture<Integer>  asyncProcessData(Object data);
 }{code}
 
-h2. The Service Implementation
+## The Service Implementation
 
 The Service Implementation includes some business logic for both of these methods:
 
@@ -280,7 +280,7 @@ public class DataProcessorService implements IDataProcessor {
 }
 {code}
 
-h2. The Service Declaration
+## The Service Declaration
 
 The `pu.xml` used to export the Service and start the space described below:
 {code:xml}
@@ -316,7 +316,7 @@ The `pu.xml` used to export the Service and start the space described below:
 
 {note}The `context:component-scan` , `os-remoting:service-exporter` and `os-remoting:annotation-support` used to allow the system to locate classes annotated with `RemotingService` and export these implicitly.{note}
 
-h2. Service Result Reducer
+## Service Result Reducer
 The Service Result Reducer is called at the client side and aggregates results sent from all invoked services (collocated with all space partitions).
 
 The Reducer implements the `RemoteResultReducer` interface:
@@ -339,7 +339,7 @@ public class DataProcessorServiceReducer implements RemoteResultReducer<Integer,
 }
 {code}
 
-h2. The Client
+## The Client
 
 The client invokes the service in *Synchronous* mode using the following:
 {code}
@@ -356,7 +356,7 @@ System.out.println(new Time(System.currentTimeMillis()) + " - Client got Result:
 - The client invokes the service in *Synchronous* mode
 - The result is being displayed.
 
-h2. Running the Example
+## Running the Example
 h3. Deploying the Space and Services
 Using IDE:
 Set your IDe to have the Following:

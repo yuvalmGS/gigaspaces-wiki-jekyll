@@ -305,13 +305,13 @@ public @interface Droolable {
 
 #  Final Notes
 
-h2. Integration with other engines
+## Integration with other engines
 
 Integration with other rule-engines, such as Yasu (now SAP BRMS), or Jess can be done in a similar way: many rule engines have a low memory footprint and allow themselves to be embedded in a Java Virtual Machine quite easily.
 
 Some rule-engines like Yasu also have the ability to access a standardized persistency layer, which can be replaced to make use of the GigaSpaces datagrid. This will increase the speed of loading large sets of rules.
 
-h2. Parallel execution
+## Parallel execution
 
 A RETE network which is created out of a set of rules itself is not designed for parallel execution over multiple machines. It can at best make use of multi-core processors on a single machine. If rulesets need to be defined that can be executed in a parallel way the following considerations are useful:
 - Decrease and partition the data-set that the rule-engine needs to use for execution, and use Map/Reduce style operations using task-execution or Executor Driven Remoting for parallel execution.

@@ -27,7 +27,7 @@ This example includes:
 - Example is based on the GigaSpaces helloworld example included with the product.
 - To demonstrate the XA transaction it rollbacks messages with 100 modulo. You will notice that these messages will never appear in the JMS queue and are rolled back on GigaSpaces server.
 
-h2. Source Code
+## Source Code
 
 {gdeck:Processor pu.xml}
 {gcard:Atomikos Configuration}
@@ -307,7 +307,7 @@ public class Message  {
 {gcard}
 {gdeck}
 
-h2. Running the example
+## Running the example
 
 - Download Apache ActiveMQ from [here|http://activemq.apache.org/download.html].
 - Download Atomikos TransactionEssentials from [here|http://www.atomikos.com/Main/TransactionsEssentialsDownloadForm].
@@ -325,7 +325,7 @@ h2. Running the example
 {note} Message-0 (id=0) will keep going back to Polling container logic because the space update and JMS message both are rolled back. This is intentionally done, to demonstrate XA. {note}
 - You can validate the JMS messages received by the Queue using a test JMS client included. You can run the client using `jms-client` ant task. \\ {code} build jms-client {code}
 
-h2. References
+## References
 
 - JTA/XA support information, http://www.gigaspaces.com/wiki/display/XAP71/Transaction+Management#TransactionManagement-XA%2FJTASupport.
 - XA transactions using Spring, http://www.javaworld.com/javaworld/jw-04-2007/jw-04-xa.html.
