@@ -10,14 +10,26 @@ page_id: 63799365
 that monitors a deployed application, and scale it up on demand.{summary}
 
 {section}
-{column:width=7%}
-{column}
-{column:width=86%}
+
+{% column width=7% %}
+
+
+{% endcolumn %}
+
+
+{% column width=86% %}
+
 {% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|{{<GigaSpaces Root>\Examples\ScalingAgent}} |
 {% endalign %}
-{column}
-{column:width=7%}
-{column}
+
+{% endcolumn %}
+
+
+{% column width=7% %}
+
+
+{% endcolumn %}
+
 {section}
 
 h1. Overview

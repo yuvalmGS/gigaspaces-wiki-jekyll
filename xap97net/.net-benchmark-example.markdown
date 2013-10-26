@@ -9,14 +9,26 @@ page_id: 63799403
 {summary}The Benchmark Example measures the performance of several GigaSpaces .Net API operations.{summary}
 
 {section}
-{column:width=7%}
-{column}
-{column:width=86%}
+
+{% column width=7% %}
+
+
+{% endcolumn %}
+
+
+{% column width=86% %}
+
 {% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|{{<GigaSpaces Root>\Examples\Benchmark}} |
 {% endalign %}
-{column}
-{column:width=7%}
-{column}
+
+{% endcolumn %}
+
+
+{% column width=7% %}
+
+
+{% endcolumn %}
+
 {section}
 
 

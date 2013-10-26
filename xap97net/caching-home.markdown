@@ -7,7 +7,9 @@ page_id: 63799408
 
 {composition-setup}
 {section}
-{column:width=70%}
+
+{% column width=70% %}
+
 {space-num-version-code:hsize=1|prefix=XAP.NET|suffix=Documentation}
 
 
@@ -34,8 +36,12 @@ Developing with GigaSpaces XAP.NET -- reference documentation, foundations, APIs
 Administrating GigaSpaces XAP.NET components, including "how to", troubleshooting and reference documentation.
 {lozenge}
 
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 h1. Quick Links
 [!XAP95:XAP 9.0 Documentation Home^training_banner.png!|http://www.gigaspaces.com/content/gigaspaces-training]
 h5. &bull; [What's New in 9.0.X|RN:What's New in GigaSpaces 9.0.X]
@@ -49,5 +55,7 @@ h5. &bull; [Training Programs|http://www.gigaspaces.com/content/gigaspaces-train
 h5. &bull; [Blog|http://blog.gigaspaces.com/]
 h5. &bull; [White Papers|http://www.gigaspaces.com/os_papers.html]
 h5. &bull; Looking for *[*XAP*|XAP95:9.0 Documentation Home]* or *[*other versions*|ALL:Choose a GigaSpaces Version]*?
-{column}
+
+{% endcolumn %}
+
 {section}

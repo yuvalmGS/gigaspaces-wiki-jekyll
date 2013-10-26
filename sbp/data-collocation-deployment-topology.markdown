@@ -59,14 +59,22 @@ This is known as a starvation scenario.
 
 To solve this bottleneck, the processing unit allows you to **colocate** the business logic and data; both data and business logic are hosted within the same process, sharing the same memory space. Colocating business logic and data can be done statically (user service associated with a colocated space), or dynamically (via [Service Executors |Map-Reduce Pattern - Executors Example#Service Executors Example] or [Task Executors|Map-Reduce Pattern - Executors Example#Executors Task Example]).
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 Collocated Mode - The Task Executor-Step 1:
 {indent}!GRA:Images^DistributedTaskExecution_phase1.jpg!{indent}
-{column}
-{column:width=50%}
+
+{% endcolumn %}
+
+
+{% column width=50% %}
+
 Collocated Mode - The Task Executor-Step 2:
 {indent}!GRA:Images^DistributedTaskExecution_phase2.jpg!{indent}
-{column}
+
+{% endcolumn %}
+
 {section}
 
 ### CPU Starvation
@@ -74,14 +82,22 @@ In other cases, the bottleneck is not data access, but in the amount of time it 
 
 In this case, it makes better sense to have the data and business logic running in separate processing units, each with its own SLA and scaling requirements. In this case, the business logic may use the [Master-Worker Pattern], having the actual business logic running separately and independently from the space processing unit.
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 Non-Collocated Mode - The Master Worker Pattern-Step 1:
 {indent}!GRA:Images^master_worker_rr1.jpg!{indent}
-{column}
-{column:width=50%}
+
+{% endcolumn %}
+
+
+{% column width=50% %}
+
 Non-Collocated Mode - The Master Worker Pattern-Step 2:
 {indent}!GRA:Images^master_worker_rr2.jpg!{indent}
-{column}
+
+{% endcolumn %}
+
 {section}
 GigaSpaces allows you to build your business logic without having to take the final deployment topology into consideration. The code can be designed, implemented and unit-tested using a single, embedded space colocated with the business logic on your development or testing environment. The same code can then be deployed across a production system involving hundreds of machines having hundreds of spaces with the business logic and data in separated spaces, ultimately processing millions of data items per second with a sub-millisecond latency.
 

@@ -9,14 +9,26 @@ page_id: 63799346
 {summary:page|65}This example demonstrates basic usage of a .NET Processing Unit. The example contains two Processing Unit Containers; one that feeds data objects into the system, and another that reads these objects and processes them.{summary}
 
 {section}
-{column:width=7%}
-{column}
-{column:width=86%}
+
+{% column width=7% %}
+
+
+{% endcolumn %}
+
+
+{% column width=86% %}
+
 {% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|`<GigaSpaces Root>\Examples\ProcessingUnit` |
 {% endalign %}
-{column}
-{column:width=7%}
-{column}
+
+{% endcolumn %}
+
+
+{% column width=7% %}
+
+
+{% endcolumn %}
+
 {section}
 
 # Overview

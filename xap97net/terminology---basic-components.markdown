@@ -18,20 +18,28 @@ h1. Basic Components
 ----------------------------{comment}
 {anchor:Space}
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 h4. Space
 
 The GigaSpaces cache instance that holds data objects in memory.
 
 ~Key sentence: The space holds your data objects.~
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 {% align center %}
 !GS6:Images^term_space.gif!
 
 ~*A space holding objects*~
 {% endalign %}
-{column}
+
+{% endcolumn %}
+
 {section}
 {whr}
 {comment}----------------------------
@@ -39,20 +47,28 @@ The GigaSpaces cache instance that holds data objects in memory.
 ----------------------------{comment}
 {anchor:Execute, Read, Write, Take and Notify}
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 h4. Execute, Read, Write, Take and Notify
 
 A set of methods used to read, write, take, and register for notification on objects that are stored in the space. Execute allows sending Tasks to be executed within the space. Read and Take critera can be specified via a query or a template (an example object).
 
 ~Key sentence: Interaction with the space is done using the read, write, update, take and notify methods.~
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 {% align center %}
 !GS6:Images^term_verbs.jpg!
 
 ~*A client application uses the read, write, take, update and notify methods to exchange objects and receive notifications from the space*~
 {% endalign %}
-{column}
+
+{% endcolumn %}
+
 {section}
 {whr}
 {comment}*Local Cache* - a space embedded within a client application to enable ...{comment}
@@ -61,20 +77,28 @@ A set of methods used to read, write, take, and register for notification on obj
 ----------------------------{comment}
 {anchor:Service Component}
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 h4. Service Component
 
 An application component that interacts with the space (using read, write, take, etc.), and implements a certain functionality.
 Java people sometimes refer to it as a Service Bean, but it does not have to be a [Java Bean|http://en.wikipedia.org/wiki/JavaBean].
 ~Key sentence: The service component interacts with the space to implement your application's logic.~
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 {% align center %}
 !GS6:Images^term_service_bean.gif!
 
 ~*A Service Component*~
 {% endalign %}
-{column}
+
+{% endcolumn %}
+
 {section}
 {whr}
 {comment}----------------------------
@@ -82,72 +106,104 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 ----------------------------{comment}
 {anchor:Processing Unit}
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 h4. Processing Unit
 
 A combination of service components and/or an embedded space instance. This is the fundamental unit of deployment in GigaSpaces XAP. The Processing Unit itself runs within a [Processing Unit Container|Terminology - Runtime Components#Processing Unit Container], and is typically deployed onto the [Service Grid|Terminology - Runtime Components#Service Grid].
 
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 {% align center %}
 !GS6:Images^term_empty_pu.gif!
 
 ~*A Processing Unit*~
 {% endalign %}
-{column}
+
+{% endcolumn %}
+
 {section}
 h1. Common Processing Unit Configurations
 {comment}----------------------------
           PU with an embedded space
 ----------------------------{comment}
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 h4. Processing Unit configured with an embedded space
 
 A deployable package which instantiates an embedded space instance, also called a data grid instance. A set of embedded space instances that run within the processing units typically form a [Data Grid|Terminology - Data Grid Topologies].
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 {% align center %}
 !GS6:Images^term_pu_with_space.gif!
 
 ~*A Processing Unit with an embedded space*~
 {% endalign %}
-{column}
+
+{% endcolumn %}
+
 {section}
 {comment}----------------------------
           PU with services
 ----------------------------{comment}
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 h4. Processing Unit configured with one of more services
 
 A deployable package containing one or more services. In the GigaSpaces context, it usually acts as a client that interacts with other Processing Units by utilizing the messaging capabilities of the space.
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 {% align center %}
 !GS6:Images^term_pu_with_bean.gif!
 
 ~*A Processing Unit containing a Service component that interacts with a space embedded in another Processing Unit*~
 {% endalign %}
-{column}
+
+{% endcolumn %}
+
 {section}
 {comment}----------------------------
           SBA PU
 ----------------------------{comment}
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 h4. Processing Unit configured with embedded space and embedded services
 
 A deployable, independent, scalable unit, which is the building block of [Space-Based Architecture|Terminology - Space-Based Architecture].
 Client application (which can also be other processing units) write objects to the space, and the procesing unit which contains this space consumes these objects or is notified about them and triggeres a related services.
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 {% align center %}
 !GS6:Images^term_pu_with_space_and_bean.gif!
 
 ~*A Processing Unit with an embedded service that interacts with an embedded space*~
 {% endalign %}
-{column}
+
+{% endcolumn %}
+
 {section}
 \\
 \\

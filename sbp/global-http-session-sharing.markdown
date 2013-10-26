@@ -63,9 +63,13 @@ The GigaSpaces Global HTTP Session Sharing support two Load-Balancing scenarios:
 
 ##### Session Sharing Scenario
 {section}
-{column:width=40%}
+
+{% column width=40% %}
+
 Have `cacheManager.cacheSessionLocally = true` when you would like multiple web application instances to share the same HTTP session. In this case your load balancer should be configured to support **non-sticky sessions** routing requests to a different web application based on some load-balancing algorithm. This will improve the performance of your application by avoiding reading the latest copy of the session from the remote space on each page load.
-{column}
+
+{% endcolumn %}
+
 {column}
 {indent}!GRA:Images2^http-session-non-sticky.jpg!{indent}
 {column}
@@ -73,9 +77,13 @@ Have `cacheManager.cacheSessionLocally = true` when you would like multiple web 
 
 ##### Session Failover Scenario
 {section}
-{column:width=40%}
+
+{% column width=40% %}
+
 Have `cacheManager.cacheSessionLocally = false` when you would like the same web application instance to serve the same client and have the client to failover to another web application in case the original web application fails. In this case **sticky sessions** should be enabled at the HTTP load-balancer allowing the HTTP request associated with the same session to be routed always to the same Web container. When there is a web container failure, other Web container will take over and have the most up-to-date session retrieved from the In-Memory-Data-Grid.
-{column}
+
+{% endcolumn %}
+
 {column}
 {indent}!GRA:Images2^http-session-sticky.jpg!{indent}
 {column}

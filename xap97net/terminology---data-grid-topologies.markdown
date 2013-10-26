@@ -18,7 +18,9 @@ h1. Data Grid
 ----------------------------{comment}
 {anchor:Data Grid}
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 h4. In Memory Data Grid (IMDG) or Enterprise Data Grid (EDG)
 
 A set of space instances, typically running within their respective processing unit instances.
@@ -27,14 +29,20 @@ The relations between the spaces define the [Data Grid Topology|#Data Grid Topol
 
 ~Key Sentence: A set of connected space instances holding objects form a space cluster~
 
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 {% align center %}
 !GS6:Images^term_populated_data_grid.gif!
 
 ~*A Data Grid with 3 Instances*~
 {% endalign %}
-{column}
+
+{% endcolumn %}
+
 {section}
 {anchor:Data Grid Topology}
 h1. Data Grid Topologies
@@ -43,7 +51,9 @@ h1. Data Grid Topologies
 ----------------------------{comment}
 {anchor:Primary Backup Data Grid}
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 h4. Primary Backup Data Grid
 
 A Data Grid with a primary instance and one or more backup instances.
@@ -51,43 +61,59 @@ Operations that do not modify any data (e.g. read, count) are performed only on 
 
 ~Key Sentence: Objects in primary instance are replicated to its backup instance/s~
 
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 {% align center %}
 !GS6:Images^term_primary_backup_text_data_grid.gif!
 
 ~*A Data Grid comprised of a primary instance with one backup instance*~
 {% endalign %}
-{column}
+
+{% endcolumn %}
+
 {section}
 {comment}----------------------------
           Partitioned Data Grid
 ----------------------------{comment}
 {anchor:Partitioned Data Grid}
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 h4. Partitioned Data Grid
 
 When the Data Grid needs to hold large amounts of data, it is possible to partition the data across multiple instances.
 Each Data Grid instance (partition) holds a different subset of the objects in the Data Grid.
 When the objects are written to this Data Grid, they are routed to the proper partition, according to a predefined property in the object that acts as the [routing|#Routing] index.
 
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 {% align center %}
 !GS6:Images^term_partitioned_data_grid.gif!
 
 ~*A Partitioned Data Grid with 3 Instances, each holding a different set objects*~
 
 {% endalign %}
-{column}
+
+{% endcolumn %}
+
 {section}
 {comment}----------------------------
           Routing
 ----------------------------{comment}
 {anchor:Routing}
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 h4. Routing
 
 The mechanism that is in charge of routing the objects into and out of the corresponding partitions.
@@ -95,35 +121,49 @@ The routing is based on a designated property/field inside the objects that are 
 
 ~Key sentence: Routing the mechanism that determines how object will be partitioned.~
 
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 {% align center %}
 !GS6:Images^term_routing.gif!
 
 ~*Routing in a partitioned Data Grid with 3 instances*~
 
 {% endalign %}
-{column}
+
+{% endcolumn %}
+
 {section}
 {comment}--------------------------------------------------
           Primary Backup Partitioned Data Grid
 --------------------------------------------------{comment}
 {anchor:Primary Backup Partitioned Data Grid}
 {section}
-{column:width=50%}
+
+{% column width=50% %}
+
 h4. Primary Backup Partitioned Data Grid
 
 A [partitioned Data Grid|#Partitioned Data Grid], with one or more [backup|#Primary Backup Data Grid] instances for each partition. Each of the Data Grid instances (partitions) holds a different subset of the objects in the Data Grid, and replicates this subset to its backup instance/s.
 
-{column}
-{column:width=30%}
+
+{% endcolumn %}
+
+
+{% column width=30% %}
+
 {% align center %}
 !GS6:Images^term_partitioned_primary_backup_data_grid.gif!
 
 ~*A Primary Backup Partitioned Data Grid: 2 partitions, each replicates to one backup instance*~
 
 {% endalign %}
-{column}
+
+{% endcolumn %}
+
 {section}
 \\
 \\
