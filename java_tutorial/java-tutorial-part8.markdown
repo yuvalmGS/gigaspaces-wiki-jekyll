@@ -6,10 +6,10 @@
 
 
 
-
+{%comment%}
 
 [< Previous|Tutorial Part VII] * [Home|XAP Tutorial] * [Next >|Tutorial Part IX]  
-
+{%endcomment%}
 
 
  
@@ -18,20 +18,22 @@
 # Overview
 
 {%section%}
-{%column%}
-# Overview
+{%column width=70% %}
+
 In this part of the tutorial we will show you how you can deploy a standard WAR file onto the Service Grid. XAP allows you to deploy web applications (packaged as a WAR file) onto the Service Grid. The integration is built on top of the Service Grid Processing Unit Container. The web container used behind the scenes is Jetty. 
+
+{%endcolumn%}
+{%column width=20%%}
+<img src="/attachment_files/qsg/web.png" width="100" height="100">
+
+{%endcolumn%}
+{%endsection%}
 
 The integration allows you to make use of the following Service Grid features:
 
 - Dynamic allocation of several instances of a web application (probably fronted by a load balancer).
 - Management of the instances running (if a GSC fails, the web application instances running on it will be instantiated on a different GSC).
 - SLA monitor based dynamic allocation and de-allocation of web application instances.
-{%endcolumn%}
-{%column%}
-!web.png|width=100px,height=100px!
-{%endcolumn%}
-{%endsection%}
 
 
 
@@ -43,18 +45,18 @@ Here is an example how you can deploy a web application on top of the service gr
 ### Command line deployment
 You deploy a war file just like you deploy a pu jar.
 
-{gdeck}
-{gcard:Unix}
+{% inittab d1 |top %}
+{% tabcontent Unix %}
 {%highlight java%}
 GS_HOME/bin/gs.sh deploy tutorial.war
 {%endhighlight%}
-{gcard}
-{gcard:Windows}
+{% endtabcontent %}
+{% tabcontent Windows %}
 {%highlight java%}
 GS_HOME\bin\gs.sh deploy tutorial.war
 {%endhighlight%}
-{gcard}
-{gdeck}
+{% endtabcontent %}
+{%endinittab%}
 
 ### Deploy with Web Admin UI
 You can deploy a war file just like a PU with the Web Administration UI:
@@ -62,31 +64,38 @@ You can deploy a war file just like a PU with the Web Administration UI:
 {%section%}
 {%column%}
 Host view
-!Deploy-web1.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Deploy-web1.png" width="120" height="80">](/attachment_files/qsg/Deploy-web1.png)
 {%endcolumn%}
 
 {%column%}
 Upload war file
-!Deploy-web2.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Deploy-web2.png" width="120" height="80">](/attachment_files/qsg/Deploy-web2.png)
 {%endcolumn%}
  
 {%column%}
 Application display
-!Deploy-web3.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Deploy-web3.png" width="120" height="80">](/attachment_files/qsg/Deploy-web3.png)
 {%endcolumn%}
 
 {%column%}
-Service display URL of page
-!Deploy-web4.png|thumbnail!
+Service display
+
+[<img src="/attachment_files/qsg/Deploy-web4.png" width="120" height="80">](/attachment_files/qsg/Deploy-web4.png)
 {%endcolumn%}
 
 {%column%}
 Web page display
-!Deploy-web5.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Deploy-web5.png" width="120" height="80">](/attachment_files/qsg/Deploy-web5.png)
 {%endcolumn%}
 {%endsection%}
 
-There are fully functional examples on GitHub available.{linkinnew:https://github.com/Gigaspaces/xap-tutorial}Try it out !GRA:Images3^tryit.jpg!{linkinnew} 
+There are fully functional examples on GitHub available.
+
+{%try%}https://github.com/Gigaspaces/xap-tutorial{%endtry%}
 
 
 
@@ -135,21 +144,21 @@ GigaSpace gigaSpace = (GigaSpace) getServletContext().getAttribute("xapTutorialS
 {%learn%}/xap97/web-processing-unit-container.html{%endlearn%}
 
 
-
+# Jetty Instance
 {%section%}
-{%column%}
-# Jetty Instance  
+{%column width=70% %}
+
 Jetty itself is configured using Spring, and allows you to control all aspects of both the Jetty instance created, and the web application context. There are two flavors of how Jetty instances are created (by default). The first is the plain mode, where a Jetty instance is created for each web processing unit instance running within a GSC. The second is the shared mode, where a single Jetty instance is created, and shared between all the different web processing unit instances running on the same GSC. A custom Jetty instantiation and handling can also be configured.
 {%endcolumn%}
-{%column%}
-!GRA:Images2^web_app_archi.jpg|thumbnail!
+{%column width=20% %}
+
+[<img src="/attachment_files/qsg/web_app_archi.jpg" width="200" height="200">](/attachment_files/qsg/web_app_archi.jpg)
 
 {%endcolumn%}
 {%endsection%}
 
 {%learn%}/xap97/web-processing-unit-container.html{%endlearn%}
 
-{
 
 
 
@@ -187,49 +196,60 @@ When deploying, include within the META-INF/spring/pu.properties file the jetty.
 
 ### Deploying with the Web Admin UI:
 
-There are fully functional examples on GitHub available.{linkinnew:https://github.com/Gigaspaces/xap-tutorial}Try it out !GRA:Images3^tryit.jpg!{linkinnew} 
+There are fully functional examples on GitHub available.{%try%}https://github.com/Gigaspaces/xap-tutorial}{%endtry%}
+
 
 {%section%}
 {%column%}
-Deploy http session space 
-!Deploy-session1.png|thumbnail!
+Deploy http space
+
+[<img src="/attachment_files/qsg/Deploy-session1.png" width="120" height="100">](/attachment_files/qsg/Deploy-session1.png)
 {%endcolumn%}
 
 {%column%}
 Define deployment
-!Deploy-session2.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Deploy-session2.png" width="120" height="100">](/attachment_files/qsg/Deploy-session2.png)
 {%endcolumn%}
 
 {%column%}
 Inspect data grid
-!Deploy-session3.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Deploy-session3.png" width="120" height="100">](/attachment_files/qsg/Deploy-session3.png)
 {%endcolumn%}
 
 {%column%}
 Deploy war file
-!Deploy-session4.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Deploy-session4.png" width="120" height="100">](/attachment_files/qsg/Deploy-session4.png)
 {%endcolumn%}
 {%endsection%}
 
 {%section%}
 {%column%}
 Select web URL
-!Deploy-session51.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Deploy-session51.png" width="120" height="100">](/attachment_files/qsg/Deploy-session51.png)
 {%endcolumn%}
 
 {%column%}
 Web page
-!Deploy-session6.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Deploy-session6.png" width="120" height="100">](/attachment_files/qsg/Deploy-session6.png)
+
 {%endcolumn%}
 
 {%column%}
 Inspect data grid
-!Deploy-session65.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Deploy-session65.png" width="120" height="100">](/attachment_files/qsg/Deploy-session65.png)
+
 {%endcolumn%}
 
 {%column%}
 Inspect session
-!Deploy-session7.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Deploy-session7.png" width="120" height="100">](/attachment_files/qsg/Deploy-session7.png)
 {%endcolumn%}
 {%endsection%}
 
@@ -237,55 +257,62 @@ Inspect session
 {%learn%}/xap97/http-session-management.html{%endlearn%}
 
 
+# Global HTTP Session Sharing
 {%section%}
-{%column%}
-# Global HTTP Session Sharing 
+{%column width=70% %}
+
 XAP lets you share HTTP session data across multiple data centers, multiple web server instances or different types of web servers. Here are few scenarios where HTTP session sharing is required:
 
 - Multiple different Web servers running your web application
-You may be porting your application from one web server to another and there will be a period of time when both types of servers need to be active in production.
+  You may be porting your application from one web server to another and there will be a period of time when both types of servers need to be active in production.
 - Web Application is broken into multiple modules
-When applications are modularized such that different functionalities are deployed across multiple server instances. For example, you may have login, basic info, check-in and shopping functionalities split into separate modules and deployed individually across different servers for manageability or scalability. In order for the user to be presented with a single, seamless, and transparent application, session data needs to be shared between all the servers.
-- Reduce Web application memory footprint|The web application storing all session within the web application process heap, consuming large amount of memory. Having the session stored within a remote process will reduce web application utilization avoiding garbage collocation and long pauses.
+  When applications are modularized such that different functionalities are deployed across multiple server instances. For example, you may have login, basic info, check-in and shopping functionalities split into separate modules and deployed individually across different servers for manageability or scalability. In order for the user to be presented with a single, seamless, and transparent application, session data needs to be shared between all the servers.
+- Reduce Web application memory footprint
+  The web application storing all session within the web application process heap, consuming large amount of memory. Having the session stored within a remote process will reduce web application utilization avoiding garbage collocation and long pauses.
 - Multiple Data-Center deployment
-You may need to deploy your application across multiple data centers for high-availability, scalability or flexibility, so session data will need to be replicated
+  You may need to deploy your application across multiple data centers for high-availability, scalability or flexibility, so session data will need to be replicated
+
 {%endcolumn%}
-{%column%}
-!httpSessionSharing1.jpg.png|thumbnail!
+{%column width=20% %}
+
+[<img src="/attachment_files/qsg/httpSessionSharing1.png" width="200" height="200">](/attachment_files/qsg/httpSessionSharing1.png)
+
 {%endcolumn%}
 {%endsection%}
 
 {%learn%}/xap97/global-http-session-sharing.html{%endlearn%}
 
 
-
-{%section%}
-{%column%}
 # Load Balancing
+{%section%}
+{%column width=70% %}
 
 When deploying a highly available web site, usually a load balancer is used to load balance requests between at least two instances of a web containers that run the web applications. When using XAP to deploy web applications, running more than one instance of a web application becomes very easy. XAP comes with a built-in utility allowing you to dynamically update an Apache httpd web server load-balancing configuration, based on deployed web applications.
 
-The integration dynamically creates and updates the mod_proxy_balancer configuration, based on the state of the deployed web applications. Once changes occur (relocation / failover / changes to the number of web application instances), the utility identifies the change, updates the balancer configuration, and sends a soft restart to Apache to take the new configuration into account.
-
- 
 {%endcolumn%}
-{%column%}
-!GRA:Images^httpd_lb_agent.jpg|thumbnail!
+{%column width=20% %}
+
+[<img src="/attachment_files/qsg/httpd_lb_agent.jpg" width="200" height="200">](/attachment_files/qsg/httpd_lb_agent.jpg)
+
 {%endcolumn%}
 {%endsection%}
+
+The integration dynamically creates and updates the mod_proxy_balancer configuration, based on the state of the deployed web applications. Once changes occur (relocation / failover / changes to the number of web application instances), the utility identifies the change, updates the balancer configuration, and sends a soft restart to Apache to take the new configuration into account.
 
  
  
 {%learn%}/xap97/apache-load-balancer-agent.html{%endlearn%}
 
+# What's next
 
+{%comment%}
  # What's Next
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part IX|Tutorial Part IX] of this tutorial will introduce you to XAP's Big Data integration.
 
 
 # 
 {align:center}[< Previous|Tutorial Part VII] * [Home|XAP Tutorial] * [Next >|Tutorial Part IX] {align}
-
+{%endcomment%}
 
  
 

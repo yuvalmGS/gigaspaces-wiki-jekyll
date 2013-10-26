@@ -5,20 +5,20 @@ page_id: 61867355
 ---
 
 
-
+{%comment%}
 [< Previous](./tutorial-part-II.html) * [Home](./XAP Tutorial) * [Next >](./Tutorial Part IV)
-
+{%endcomment%}
 
 {%summary%}This part of the tutorial explains the different processing services that are available over the space.{%endsummary%}
 
 
-{%section%}
-{%column%}
 # Overview
+{%section%}
+{%column width=70% %}
 In this part of the tutorial we will introduce you to the different processing services you can run on top of the space. XAP includes a set of built-in service components such as Task Execution and Messaging services, each implementing commonly used Enterprise integration patterns. It's purpose is to make the implementation of distributed applications on-top of the space simpler and less intrusive and allow you to easily build highly scalable and performing applications. All services follow the POJO/Spring based abstraction approach which includes dependency injection and annotations.
 {%endcolumn%}
-{%column%}
-!processing.png|width=100px, height=100px!
+{%column width=20% %}
+<img src="/attachment_files/qsg/processing.png" width="100" height="100">
 {%endcolumn%}
 {%endsection%}
 
@@ -32,7 +32,7 @@ Task Execution provides a fine-grained API for performing ad-hoc parallel execut
 Task execution comes in two flavors:
 
 - Java Tasks* - In this mode you can pass Java code from the client to the cluster to be executed on the data grid nodes. The code is dynamically introduced to the server nodes classpath.
-- Dynamic language tasks* - Tasks can be defined using one of the dynamic languages supported by the JVM (JSR-223) and be compiled and executed on the fly. In this part of the tutorial we will not cover Dynamic language tasks.
+- Dynamic language tasks - Tasks can be defined using one of the dynamic languages supported by the JVM (JSR-223) and be compiled and executed on the fly. In this part of the tutorial we will not cover Dynamic language tasks.
 
 {%learn%}/xap97/dynamic-language-tasks.html{%endlearn%}
 
@@ -117,7 +117,7 @@ public void executeAsyncTask() throws InterruptedException {
 {% endtabcontent %}
 {% endinittab %}
 
-# Task Routing
+#### Task Routing
 By nature, task execution is broadcasted to all partitions in the space. You can route a task directly to one of the partitions of the space. Here is an example demonstrating how to route a task to a partition:
 
 {%highlight java%}
@@ -127,7 +127,8 @@ public void executeTaskWithRouting() throws InterruptedException, ExecutionExcep
 }
 {%endhighlight%}
 
-There are other options available for task routing.
+There are other options available for task routing
+.
 {%learn%}/xap97/task-execution-over-the-space.html{%endlearn%}
 
 
@@ -188,11 +189,13 @@ By default, the task is broadcasted to all primary nodes. You can also execute a
 {%endhighlight%}
 
 XAP provides out of the box Aggregator Tasks.
+
 {%learn%}/xap97/aggregators.html{%endlearn%}
 
 
-# ExecutorBuilder
+#### ExecutorBuilder
 The executor builder allows to combine several task executions (both distributed ones and non distributed ones) into a seemingly single execution (with a reduce phase).
+
 {%learn%}/xap97/task-execution-overthe-space.html{%endlearn%}
 
 
@@ -218,7 +221,7 @@ Event Driven Remoting supports most of the above capabilities, but does not supp
 
 In this tutorial will look at an Executor based Remoting service.
 
-## Defining the contract
+#### Defining the contract
 In order to support remoting, the first step is to define the contract between the client and the server. Here is an example of a payment service:
 {%highlight java%}
 public interface IPaymentProcessor {
@@ -226,7 +229,7 @@ public interface IPaymentProcessor {
 }
 {%endhighlight%}
 
-## Implement the Service
+#### Implement the Service
 Next, an implementation of this contract needs to be provided. This implementation will "live" on the server side. Here is a sample implementation:
 {%highlight java%}
 @RemotingService
@@ -238,7 +241,7 @@ public class PaymentProcessor implements IPaymentProcessor {
 }
 {%endhighlight%}
 
-## Exporting the service
+#### Exporting the service
 The service is exported to the server with the Spring configuration. Here is an example:
 {%highlight xml%}
 <!-- Scan the packages for annotations / -->
@@ -256,7 +259,7 @@ The service is exported to the server with the Spring configuration. Here is an 
 <os-remoting:service-exporter id="serviceExporter" />
 {%endhighlight%}
 
-## Client side invocation
+#### Client side invocation
 On the client side the remoting proxy is injected with the @ExecutorProxy annotation:
 {%highlight java%}
 public class RemoteService {
@@ -280,8 +283,12 @@ public class RemoteService {
 
 
 # What's Next
+
+{%comment%}
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part IV|Tutorial Part IV] of this tutorial will introduce you to the event and messaging processing capabilities of XAP.
 ##
 
 #
 {align:center}[< Previous|Tutorial  Part II] * [Home|XAP Tutorial] * [Next >|Tutorial Part IV]{align}
+
+{%endcomment%}
