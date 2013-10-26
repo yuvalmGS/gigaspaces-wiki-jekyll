@@ -139,7 +139,7 @@ And then change the application configuration files to look like this:
         <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core"/>
     </configSections>
     <GigaSpaces>
-        <BaseConfigFile Path="\\MyServer\MyAppSharedFolder\MyApp.config" />
+        <BaseConfigFile Path="MyServer\MyAppSharedFolder\MyApp.config" />
     </GigaSpaces>
 </configuration>
 {code}

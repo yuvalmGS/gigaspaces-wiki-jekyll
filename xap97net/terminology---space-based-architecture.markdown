@@ -35,7 +35,7 @@ page_id: 63799428
 - Full monitoring and management during runtime are available through the [Management UI|Terminology - Runtime Components#Management UI].
 
 {% align center %}
-\\ \\
+
 
 !GRA:Images^sba_with_backup.jpg!
 

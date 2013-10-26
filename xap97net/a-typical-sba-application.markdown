@@ -27,18 +27,18 @@ The application needs to provide a 100% guarantee that once a transaction enters
 The first step in building such an application with SBA, is to define its business logic components as independent services - Enrichment Service (parsing and validation), Order Book Service (matching and execution), and Reconciliation Service (routing): !GS6:Images^intro1a.jpg|align=center!
 
 To reduce the latency overhead of communication between these services, they are all collocated in a single Virtual Machine (VM). To eliminate the network overhead of communication with the messaging and data tiers, Messaging Grid and Data Grid instances are both collocated in the same VM. All the interaction with all the services is done purely in-process, bringing I/O overhead to a minimum, in both the data and messaging layers.
-\\
+
 
 This collocated unit of work (which includes business logic, messaging and data) is called a Processing Unit. Because the Processing Unit encompasses all application tiers, it represents the application's full latency path. And because everything occurs in-process, latency is reduced to an absolute minimum. !GS6:Images^intro2a.jpg|align=center!
 Scaling is achieved simply by adding more Processing Units and spreading the load among them. Scaling does not affect latency, because the application's complexity does not increase. Each transaction is still routed to a single Processing Unit, which handles the entire business transaction in-process, with the same minimal level of latency. !GS6:Images^intro3a.jpg|align=center!
 We can see that the trading application guarantees both minimal latency and linear scalability - something that would be impossible with a tier-based, best-of-breed approach (in other words, with separate products to manage business logic, data and messaging).
-\\
+
 
 # Application Structure
 
 {toc-zone:minLevel=3|maxLevel=3|type=flat|separator=pipe|location=top}
 
-The following diagram outlines a typical architecture of an application built with OpenSpaces: !GS6:Images^intro4a.jpg|align=center!\\
+The following diagram outlines a typical architecture of an application built with OpenSpaces: !GS6:Images^intro4a.jpg|align=center!
 
 ### Processing Unit
 
@@ -111,10 +111,10 @@ The {{ISpaceProxy}} component is a .NET POCO driven abstraction of the JavaSpace
 Space is used when users want to achieve scalability and availability, while reducing the complexity of the overall system. Processes perform simple operations to write new objects into a space, take objects from a space, or read (make a copy of) objects from a space.
 
 The {{ISpaceProxy}} abstraction was designed with the following principles in mind:
-\\
+
 - *POCO Entries* \- the data model in JavaSpaces is an Entry. An Entry has to inherit from a specific interface ({{Entry}}). All public, non-transient fields are stored in the space. This model is quite different from modern data caching and persistence frameworks (NHibernate, ADO.NET Entity Framework, etc.), which are POCO-oriented. The POCO data model is basically a simple class with annotations that extend that model with specific meta-information such as indexes definition, persistency model, etc. The
 - *Generics support* \- users can use generics to avoid unnecessary casting and make their interaction with the space more type-safe.
-\\
+
 - *Overloaded methods* \- the {{ISpaceProxy}} interface uses overloaded methods, that can use defaults to reduce the amount of arguments passed in read/take/write methods.
 
 ### Using the GigaSpace Component in the Context of EDA/SOA Applications
@@ -156,7 +156,7 @@ A processing unit that needs to be export a service uses the {{DomainServiceHost
 {comment}TODO_NIV - Change to internal link when available.{comment}
 An [OpenSpaces SLA Driven Container|XAP97NET:Basic Processing Unit Container] that allows you to deploy a processing unit over a dynamic pool of machines, is available through an SLA-driven container, formerly known as the Grid Service Containers - GSCs. The SLA-driven containers are .NET processes that provide a hosting environment for a running processing unit. The Grid Service Manager (GSM) is used to manage the deployment of the processing unit, based on SLA. The SLA definition is part of the processing unit configuration, and is normally named {{sla.xml}}. The SLA definition defines: the number of PU instances that need to be running at a given point of time, the scaling policy, the failover policy based on CPU, and memory or application-specific measurement. !GS6:Images^intro6a.jpg|align=center!
 The following is a snippet taken from the example SLA definition section of the processing unit Spring configuration:
-\\
+
 {code:xml}
 <os-sla:sla cluster-schema="partitioned-sync2backup" number-of-instances="2" number-of-backups="1" max-instances-per-vm="1">
     <os-sla:monitors>

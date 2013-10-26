@@ -27,7 +27,7 @@ To use this practice, compile the reference: {{<GigaSpaces Root>\Bin\GigaSpaces.
 
 Session state implementations can be configured by setting the {{mode}} attribute to a valid {{SessionStateMode sessionState}} element in your application configuration.
 {refer}For more details, see: [msdn; Session-State Modes|http://msdn2.microsoft.com/en-us/library/ms178586.aspx].{refer}
-The {{mode}} attribute is set up in the {{web.config}} file (or the {{machine.config}} file). The {{machine.config}} file is located in {{c:\\Microsoft.NET\Framework\\config\machine.config}}.
+The {{mode}} attribute is set up in the {{web.config}} file (or the {{machine.config}} file). The {{machine.config}} file is located in {{c:Microsoft.NET\Frameworkconfig\machine.config}}.
 Configure your {{web.config}} file as follows:
 {code:xml}
 <configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">

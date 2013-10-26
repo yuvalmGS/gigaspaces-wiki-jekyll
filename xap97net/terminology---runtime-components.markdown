@@ -109,7 +109,7 @@ It enables running the processing unit within a [service grid|#Service Grid], wh
 
 # Service Grid
 
-\\
+
 A set of [Grid Service Containers (GSC)|#GSC] managed by a [Grid Service Manager (GSM)|#GSM].
 The containers host various deployments of [Processing Units|Terminology - Basic Components#Processing Unit], [Data Grid|Terminology - Data Grid Topologies].
 Each container can be run on a separate physical machine.
@@ -120,10 +120,10 @@ Each container can be run on a separate physical machine.
 
 {% column width=30% %}
 
-\\
-\\
-\\
-\\
+
+
+
+
 {% align center %}!GS6:Images^term_empty_service_grid.gif!
 
 ~*A Service Grid composed of a Grid Service Manager which manages 3 Grid Service Containers*~
@@ -205,7 +205,7 @@ Enables the user to view and interact with the runtime components running in the
 
 {% column width=30% %}
 
-\\
+
 {% align center %}!GS6:Images^term_management_ui.gif!
 
 ~*Management UI Console*~
@@ -215,6 +215,6 @@ Enables the user to view and interact with the runtime components running in the
 
 {section}
 
-\\
-\\
+
+
 |[Basic Components|Terminology - Basic Components]|[Data Grid Topologies|Terminology - Data Grid Topologies]|[Space-Based Architecture|Terminology - Space-Based Architecture]||Runtime Components|

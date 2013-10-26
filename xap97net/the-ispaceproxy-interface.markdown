@@ -56,28 +56,28 @@ Several {{ISpaceProxy}} instances can be defined within a single Processing Unit
 
 The {javadocos:/docs/dotnetdocs9.5/|ISpaceProxy} interface includes the following main operations:
 ||[Id Based operations|ID Queries]||[Batch operations|#Batch Operations]||[Asynchronous operations|#Asynchronous Operations]||Data Count operations||
-|[ReadById|ID Queries#Reading an Object using its ID]\\
-TakeById\\
-[ReadByIds|ID Queries#Reading Multiple Objects using their IDs]\\
-TakeByIds\\
-ReadIfExistsById\\
-TakeIfExistsById|ReadMultiple\\
-TakeMultiple\\
-WriteMultiple\\
-ReadByIds\\
-TakeByIds|BeginExecute\\
-BeginTake\\
-EndExecute\\
-EndTake|Count\\
+|[ReadById|ID Queries#Reading an Object using its ID]
+TakeById
+[ReadByIds|ID Queries#Reading Multiple Objects using their IDs]
+TakeByIds
+ReadIfExistsById
+TakeIfExistsById|ReadMultiple
+TakeMultiple
+WriteMultiple
+ReadByIds
+TakeByIds|BeginExecute
+BeginTake
+EndExecute
+EndTake|Count
 
 ||[Data Query operations|SQLQuery]||Data Insert and Update operations||[Business logic execution operations|Task Execution over the Space]||Data removal operations||
-|Read\\
-ReadMultiple\\
-[GetSpaceIterator|Paging Support with Space Iterator]|Write\\
-WriteMultiple\\ [change|Change API] |Execute\\
-executorBuilder|Clean\\
-Clear\\
-Take\\
+|Read
+ReadMultiple
+[GetSpaceIterator|Paging Support with Space Iterator]|Write
+WriteMultiple [change|Change API] |Execute
+executorBuilder|Clean
+Clear
+Take
 TakeMultiple|
 
 {include:ISpaceProxy Code Snippets}

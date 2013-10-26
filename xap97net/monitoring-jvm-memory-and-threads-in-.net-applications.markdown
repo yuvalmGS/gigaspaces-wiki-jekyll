@@ -32,11 +32,11 @@ In some cases, you might want to monitor the activity of the JVM running as part
 {code}
 2. Start {{jconsole}} -- jconsole is located under the bin directory of the Java home, by default it is under {{<Installation dir>\Runtime\java\bin}}
 3. Once the {{jconsole}} is started, select the *Local* tab:
-\\ \\
+
 {indent}!jcon1.JPG!{indent}
-\\ \\
+
 4. This shows the status of the JVM running in your .NET application:
-\\ \\
+
 !jcon2.JPG!
 
 {refer}For more details on JMX and {{jconsole}}, refer to:{refer}

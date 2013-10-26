@@ -20,15 +20,15 @@ In this tutorial, you will use GigaSpaces to implement a simple application that
 
 ## GigaSpaces Data Grid - Basic Terms
 
-- *Data Grid instance* \- an independent data storage unit, also called a cache. The Data Grid is comprised of all the Data Grid instances running on the network.\\ !GS6:Images^DGA-DataGrid.jpg|align=center!\\
-- *Space* \- a distributed, shared, memory-based repository for objects. A space runs in a _space container_ \- this is usually transparent to the developer. In GigaSpaces each Data Grid instance is implemented as a space, and the Data Grid is implemented as a cluster of spaces organized in one of several predefined topologies.\\ !GS6:Images^DGA-GigaSpacesDataGrid.jpg|align=center!\\
-- *Grid Service Container* \- a generic container that can run one or more space instances (together with their space containers) and other services. This container is launched on each machine that participates in the Data Grid, and hosts the Data Grid instances.\\ !GS6:Images^DGA-ServiceGridDataGrid.jpg|align=center!\\
-- *Replication* \- a relationship in which data is copied between two or more Data Grid instances, with the aim of having the same data in some or all of them.\\ !GS6:Images^DGA-Replication2.jpg|align=center!\\
+- *Data Grid instance* \- an independent data storage unit, also called a cache. The Data Grid is comprised of all the Data Grid instances running on the network. !GS6:Images^DGA-DataGrid.jpg|align=center!
+- *Space* \- a distributed, shared, memory-based repository for objects. A space runs in a _space container_ \- this is usually transparent to the developer. In GigaSpaces each Data Grid instance is implemented as a space, and the Data Grid is implemented as a cluster of spaces organized in one of several predefined topologies. !GS6:Images^DGA-GigaSpacesDataGrid.jpg|align=center!
+- *Grid Service Container* \- a generic container that can run one or more space instances (together with their space containers) and other services. This container is launched on each machine that participates in the Data Grid, and hosts the Data Grid instances. !GS6:Images^DGA-ServiceGridDataGrid.jpg|align=center!
+- *Replication* \- a relationship in which data is copied between two or more Data Grid instances, with the aim of having the same data in some or all of them. !GS6:Images^DGA-Replication2.jpg|align=center!
 - *Syncronous replication* \- replication in which applications using the Data Grid are blocked until their changes are propagated to all Data Grid instances. This guarantees that everyone sees the same data, but reduces performance.
 
 - *Asyncronous replication* \- replication in which changes are propagated to Data Grid instances in the background; applications do not have to wait for their changes to be propagated. Asynchronous replication does not negatively effect performance, but on the other hand, changes are not instantly available to everyone.
 
-- *Partitioning* \- new data or operations on data are routed to one of several Data Grid instances (partitions). Each Data Grid instance holds a subset of the data, with no overlap. Partitioning is done according to an _index field_ in the data - operations are routed to partitions based on the value of this field.\\ !GS6:Images^DGA-Partitioning2.jpg|align=center!\\
+- *Partitioning* \- new data or operations on data are routed to one of several Data Grid instances (partitions). Each Data Grid instance holds a subset of the data, with no overlap. Partitioning is done according to an _index field_ in the data - operations are routed to partitions based on the value of this field. !GS6:Images^DGA-Partitioning2.jpg|align=center!
 - *Topology* \- a specific configuration of Data Grid instances. For example, a replicated topology is a configuration in which some or all Data Grid instances replicate data between them. In GigaSpaces, Data Grid topologies are defined by _cluster policies_ (explained in the following section).
 
 - *Reading* \- one way to retrieve data from the Data Grid, which will be used in this tutorial, is to call the space _read_ operation, supplying a _read template_ object which specifies what needs to be read.
@@ -51,18 +51,18 @@ A *{_}cluster schema{_}* defines the cluster schema type. GigaSpaces provides pr
 ## Data Grid Topologies Shown in this Tutorial
 
 || Topology and Description || Common Use || Options ||
-| *Replicated* ([view diagram|GS6:Images^dg_a_topology2a.gif])\\
+| *Replicated* ([view diagram|GS6:Images^dg_a_topology2a.gif])
  Two or more space instances with replication between them. | Allowing two or more applications to work with their own dedicated data store, while working on the same data as the other applications. | * Replication can be synchronous (slower but guarantees consistency) or asynchronous (fast but less reliable, as it does not guarantee identical content).
 - Space instances can run within the application (embedded - allows faster read access) or as a separate process (remote - allows multiple applications to use the space, easier management).
 - *In this tutorial:* two remote spaces, synchronous replication. |
-| *Partitioned* ([view diagram|GS6:Images^dg_a_topology3.gif])\\
+| *Partitioned* ([view diagram|GS6:Images^dg_a_topology3.gif])
  Data and operations are split between two spaces (partitions) according to an index field defined in the data. An algorithm, defined in the Load-Balancing Policy, maps values of the index field to specific partitions. | Allows the In-Memory Data Grid to hold a large volume of data, even if it is larger than the memory of a single machine, by splitting the data into several partitions. | * Several routing algorithms to chose from.
 - With/without backup space for each partition.
 - *In this tutorial:* Two spaces, hash-based routing, with backup. |
-| *Master-Local* ([view diagram|GS6:Images^dg_a_topology4.gif])\\
- Each application has a lightweight, embedded cache, which is initially empty. The first time data is read, it is loaded from a master cache to the local cache (lazy load); the next time the same data is read, it is loaded quickly from the local cache. Later on data is either updated from the master or evicted from the cache. \\  \\  | Boosting read performance for frequently used data. A useful rule of thumb is to use a local cache when over 80% of all operations are read operations. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.
+| *Master-Local* ([view diagram|GS6:Images^dg_a_topology4.gif])
+ Each application has a lightweight, embedded cache, which is initially empty. The first time data is read, it is loaded from a master cache to the local cache (lazy load); the next time the same data is read, it is loaded quickly from the local cache. Later on data is either updated from the master or evicted from the cache.     | Boosting read performance for frequently used data. A useful rule of thumb is to use a local cache when over 80% of all operations are read operations. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.
 - *In this tutorial:* The master cache comprises two spaces in a partitioned topology. |
-| *Local-View* ([view diagram|GS6:Images^dg_a_topology5.gif])\\
+| *Local-View* ([view diagram|GS6:Images^dg_a_topology5.gif])
  Similar to master-local, except that data is pushed to the local cache. The application defines a filter, using a spaces _read template_ or an SQL query, and data matching the filter is streamed to the cache from the master cache. | Achieving maximal read performance for a predetermined subset of data. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.
 - *In this tutorial:* The master cache comprises two spaces in a partitioned topology. |
 
@@ -92,40 +92,40 @@ Next, start up the GigaSpaces Management Center, from the same menu. This is an 
 *To deploy the Data Grid:*
 
 1. Inside the Management Center, on the toolbar at the top, click the *Launch Data Grid* ( !GS6:Images^dg_a_icon1-6.5rc2.jpg!) button. This is how you deploy a data grid.
-\\
-\\ !GS6:Images^deploy_button-6.5rc2.jpg!\\
-\\
+
+ !GS6:Images^deploy_button-6.5rc2.jpg!
+
 The following page showing the Data Grid attribute fields is displayed:
-\\
-\\ !GS6:Images^Deployment_Wizard_EDG_set-myDataGrid-6.5rc2.jpg!\\
-\\
+
+ !GS6:Images^Deployment_Wizard_EDG_set-myDataGrid-6.5rc2.jpg!
+
 1. In the *Data Grid Name* field, type the name {{myDataGrid}} as shown above. This name represents the Data Grid you are deploying in the Management Center. This name will be given to all spaces in the cluster. Remember this space name - you will use it when running the client application and connecting to the Data Grid.
 2. In the *Space Schema* field, leave the space schema as *default*. This field allows you to specify whether the space instances in the cluster should be persistent (data automatically persisted to a database) or not. You will not use persistency in this tutorial.
 3. In this page of the wizard you will define the Data Grid topology by filling the *Cluster Info* area, do one of the following:
     - *If you want to deploy the Data Grid in a* *{_}replicated topology{_}{*}*, From the \*Cluster schema* drop-down menu, select the *sync_replicated* option. This option uses the {{sync_replicated}}, which has synchronous replication between all cluster members. This option refers to a single space or a cluster of spaces (in one of several common topologies) with no backup.
         - Select the number of spaces (Data Grid instances) in your replicated cluster. Deploy a cluster with 2 spaces, by typing the number {{2}} into *Number of Instances* field.
 The following shows the settings for the replicated topology:
-\\
-\\ !GS6:Images^Deployment_Wizard_EDG_set-myDataGrid-2-Syncreplicated-6.5rc2.jpg!\\
-\\
+
+ !GS6:Images^Deployment_Wizard_EDG_set-myDataGrid-2-Syncreplicated-6.5rc2.jpg!
+
     - *If you want one of the other topologies,* *{_}partitioned, master-local or local-view{_}*, from the *Cluster schema* drop-down menu, select the *partitioned* option. This option refers to a single space with a backup, or a partitioned cluster of spaces with backups.
         - You need to select the number of partitions. Specify two partitions by typing {{2}} into the *Number of Instances* field. This option uses the {{partitioned}}. Specify one backup for each partition, by typing {{1}} into the *Number of backups* field. When using the partitioned cluster with backups the cluster schema used is the {{partitioned-sync2backup}}.
 The following shows the settings for the partitioned (with backup) topology:
-\\
-\\ !GS6:Images^Deployment_Wizard_EDG_set-myDataGrid-2-1-Partitioned-6.5rc2.jpg!\\
-\\
+
+ !GS6:Images^Deployment_Wizard_EDG_set-myDataGrid-2-1-Partitioned-6.5rc2.jpg!
+
     - For both topologies you need to *select a Grid Service Manager (GSM) for deployment* from the table placed in the bottom area of the page.
 The table might include more than one Grid Service Manager. If so, look for the specific manager you launched - you can find it according to the *Machine* field (look for the machine on which you ran the Grid Service Manager). Click your Grid Service Manager to select it.
-\\
-\\ !GS6:Images^Deployment_Wizard_EDG_cut-GSM_Select.jpg!\\
-\\
+
+ !GS6:Images^Deployment_Wizard_EDG_cut-GSM_Select.jpg!
+
 4. Click *Deploy* to deploy the cluster. Deployment status is displayed (Here for the two replicated Data Grid instances):
-\\
-\\ !GS6:Images^Deployment_Wizard_EDG_InProcess-myDataGrid-2-SyncRep.JPG!\\
-\\ (i) In the master-local and local-view topologies, the master cache can in principle be clustered in any topology - partitioned, replicated, etc. (or can be a single space). The master-local/local-view aspect of the topology is specified on the client side: when the client connects to the cluster or space (the master cache), it specifies if it wants to start a local cache and how this cache should operate.
-\\
-\\ !GS6:Images^Deployment_Wizard_EDG_Provisioned-myDataGrid-2-SyncRep.JPG!\\
-\\
+
+ !GS6:Images^Deployment_Wizard_EDG_InProcess-myDataGrid-2-SyncRep.JPG!
+ (i) In the master-local and local-view topologies, the master cache can in principle be clustered in any topology - partitioned, replicated, etc. (or can be a single space). The master-local/local-view aspect of the topology is specified on the client side: when the client connects to the cluster or space (the master cache), it specifies if it wants to start a local cache and how this cache should operate.
+
+ !GS6:Images^Deployment_Wizard_EDG_Provisioned-myDataGrid-2-SyncRep.JPG!
+
 Depending on the type of deployment you performed, you should see that either two spaces (two replicated Data Grid instances) or four spaces (two Data Grid partitions with one backup each) were provisioned to the host running the Grid Service Containers.
 5. *If this is not the first topology* you are deploying, and you are already familiar with the client application, skip to [Running Client, Testing Notifications and Verifying Topologies|#running].
 
@@ -170,7 +170,7 @@ The application connects to the space using the GigaSpaces {{GigaSpacesFactory.F
 In this tutorial, we will use a space connection URL similar to the following:
 {noformat}
 jini://*/*/myDataGrid
-{noformat}\\
+{noformat}
 - This URL uses the Jini protocol, which enables dynamic discovery of the space (the client does not need to know which machines are participating in the Data Grid).
 - {{\*/\*/myDataGrid}} specifies that the client wants to connect to a cluster in which all the spaces are called {{myDataGrid}}, regardless of which physical machines participate in the cluster.
 - **`useLocalCache`** is an additional parameter, not shown above, which launches a local cache in the connecting application. This is necessary for the master-local and local-view topologies.

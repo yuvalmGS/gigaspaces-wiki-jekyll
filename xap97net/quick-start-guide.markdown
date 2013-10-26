@@ -22,8 +22,8 @@ If you would like to run the tutorial sample application, download GigaSpaces an
 
 {% column width=110% %}
 
-\\
-\\
+
+
 {blank-line}
 [{fontsize20}Writing Your First Caching Application{fontsize20}|Your First Data Grid Application]
 Create your first simple Hello World caching application
@@ -48,8 +48,8 @@ Create your first simple Hello World caching application
 
 {% column width=110% %}
 
-\\
-\\
+
+
 {blank-line}
 [{fontsize20}The Full Space Based Architecture Example{fontsize20}|Your First XTP Application]
 A kitchen sink demonstration of all the major features in GigaSpaces XAP.NET

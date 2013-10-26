@@ -8,11 +8,11 @@ page_id: 63799375
 # System Properties List
 
 {refer}Refer to the {javadoc6:com/j_spaces/kernel/SystemProperties|SystemProperties} class for more details.{refer}
-|| Property name \\ || Description || Default value \\ ||
+|| Property name  || Description || Default value  ||
 | {{com.gs.active_election.timeout}} | Defines the sleep timeout between iterations in the Active election algorithm | 1000 msec |
 | {{com.gs.replication.disable-duplicate-filtering}} | Disables the duplication filtering mechanism used to avoid double processing of packets after recovery. | false |
 | {{com.gs.cluster.cache-loader.external-data-source}} | Boolean property. Must be set to {{true}} when working with external data source | {{true (since 8.0)}} |
-| {{com.gs.cluster.cache-loader.central-data-source}} | Boolean property. Must be set to {{true}} when the cluster uses external data source and \\
+| {{com.gs.cluster.cache-loader.central-data-source}} | Boolean property. Must be set to {{true}} when the cluster uses external data source and
 a central database to keep its data | {{true (since 8.0)}} |
 | {{com.gs.transport_protocol.lrmi.classloading}} | Enables lrmi dynamic class loading. | true |
 | {{com.gs.transport_protocol.lrmi.classloading.import}} | Enables importing of classes using lrmi dynamic class loading. | true |
@@ -20,41 +20,41 @@ a central database to keep its data | {{true (since 8.0)}} |
 | {{com.gs.transport_protocol.lrmi.tcp-send-buffer-size}} | Set the TCP Send Buffer size (SO_SNDBUF). | OS default |
 | {{com.gs.transport_protocol.lrmi.tcp-receive-buffer-size}} | Set the TCP receive Buffer size (SO_RCVBUF). | OS default |
 | {{com.gs.transport_protocol.lrmi.tcp-keep-alive}} | Set the TCP keep alive mode (SO_KEEPALIVE). | true |
-| {{com.gs.transport_protocol.lrmi.timeout_resolution}} | Resolution in percents. Timeout resolution indicates the accuracy of the request timeout. \\
-\\  (!)\\
+| {{com.gs.transport_protocol.lrmi.timeout_resolution}} | Resolution in percents. Timeout resolution indicates the accuracy of the request timeout.
+  (!)
 Overrides {{services.config}} file settings. | 10 |
-| {{com.gs.transport_protocol.lrmi.connect_timeout}} | LRMI timout on the Socket connect. Default connect timeout in seconds is 0 - infinite timeout. By default time unit is in seconds. \\
-\\  (!)\\
+| {{com.gs.transport_protocol.lrmi.connect_timeout}} | LRMI timout on the Socket connect. Default connect timeout in seconds is 0 - infinite timeout. By default time unit is in seconds.
+  (!)
 Overrides {{services.config}} file settings. | 0 |
-| {{com.gs.transport_protocol.lrmi.request_timeout}} | Watchdog parameter - Occurs when the client sends a request to the space and doesn't get a reply for the defined timeout. By default time unit is seconds. Defaults to 30s. \\
-\\  (!)\\
+| {{com.gs.transport_protocol.lrmi.request_timeout}} | Watchdog parameter - Occurs when the client sends a request to the space and doesn't get a reply for the defined timeout. By default time unit is seconds. Defaults to 30s.
+  (!)
 Overrides {{services.config}} file settings. | 30 |
-| {{com.gs.transport_protocol.lrmi.listening_timeout}} | Watchdog parameter. \\
-\\  (!)\\
+| {{com.gs.transport_protocol.lrmi.listening_timeout}} | Watchdog parameter.
+  (!)
 Overrides {{services.config}} file settings. Defaults to 5m | 300 |
-| {{com.gs.transport_protocol.lrmi.idle_connection_timeout}} | Watchdog parameter. \\
-\\  (!)\\
+| {{com.gs.transport_protocol.lrmi.idle_connection_timeout}} | Watchdog parameter.
+  (!)
 Overrides {{services.config}} file settings. Defaults to 15m. | 900 |
-| {{com.gs.transport_protocol.lrmi.threadpool.idle_timeout}} | LRMI thread pool idle timeout. Default is 5 min. \\
-\\  (!)\\
+| {{com.gs.transport_protocol.lrmi.threadpool.idle_timeout}} | LRMI thread pool idle timeout. Default is 5 min.
+  (!)
 Overrides {{services.config}} file settings. Defaults to 15m. | 300000 |
-| {{com.gs.transport_protocol.lrmi.bind-port}} | Server port used for incoming client requests, or notifications from server to client. The server port is set by default to 0, which means next free port. This means that whenever GigaSpaces is launched, it allocates one of the available ports. Define a specific port value to enforce a specific port on the space server or client side. Alternatively, you can define a range of ports. \\
-\\  (!)\\
+| {{com.gs.transport_protocol.lrmi.bind-port}} | Server port used for incoming client requests, or notifications from server to client. The server port is set by default to 0, which means next free port. This means that whenever GigaSpaces is launched, it allocates one of the available ports. Define a specific port value to enforce a specific port on the space server or client side. Alternatively, you can define a range of ports.
+  (!)
 Overrides {{services.config}} file settings. | 0 |
-| {{com.gs.transport_protocol.lrmi.min-threads}} | The system maintains thread pool in Client and Server that manage incoming remote requests. The thread pool size is increased each time with one additional thread and shrinks when existing threads are not used for 5 minutes. This parameter specifies the minimum size of this thread pool. \\
-\\  (!)\\
+| {{com.gs.transport_protocol.lrmi.min-threads}} | The system maintains thread pool in Client and Server that manage incoming remote requests. The thread pool size is increased each time with one additional thread and shrinks when existing threads are not used for 5 minutes. This parameter specifies the minimum size of this thread pool.
+  (!)
 Overrides {{services.config}} file settings. | 1 |
-| {{com.gs.transport_protocol.lrmi.max-threads}} | The system maintains thread pool in Client and Server that manage incoming remote requests. This parameter specifies the maximum size of this thread pool. You should make sure the pool max size will accommodate the maximum number of concurrent requests to the serverEndPoint. When the pool is exhausted and all threads are consumed to process incoming requests, additional requests will be blocked until existing requested processing will be completed. \\
-\\  (!)\\
+| {{com.gs.transport_protocol.lrmi.max-threads}} | The system maintains thread pool in Client and Server that manage incoming remote requests. This parameter specifies the maximum size of this thread pool. You should make sure the pool max size will accommodate the maximum number of concurrent requests to the serverEndPoint. When the pool is exhausted and all threads are consumed to process incoming requests, additional requests will be blocked until existing requested processing will be completed.
+  (!)
 Overrides {{services.config}} file settings. | 128 |
-| {{com.gs.transport_protocol.lrmi.max-conn-pool}} | Client connection pool maximum size to server. Starts with 1 connection. \\
-\\  (!)\\
+| {{com.gs.transport_protocol.lrmi.max-conn-pool}} | Client connection pool maximum size to server. Starts with 1 connection.
+  (!)
 Overrides {{services.config}} file settings. | 1024 |
-| {{com.gs.transport_protocol.lrmi.selector.threads}} | Maintains thread pool queue size in Client and Server that manage incoming remote requests. Once the queue sized is reached the incoming messages are blocked. \\
-\\  (!)\\
+| {{com.gs.transport_protocol.lrmi.selector.threads}} | Maintains thread pool queue size in Client and Server that manage incoming remote requests. Once the queue sized is reached the incoming messages are blocked.
+  (!)
 Overrides {{services.config}} file settings. | 1 |
-| {{com.gs.lrmi.maxBufferSize}} | Maximum size of buffer sent over the network. Each buffer sent by the LRMI layer is broken into smaller buffers according to the this parameter value. \\
-\\  (!)\\
+| {{com.gs.lrmi.maxBufferSize}} | Maximum size of buffer sent over the network. Each buffer sent by the LRMI layer is broken into smaller buffers according to the this parameter value.
+  (!)
 Overrides {{services.config}} file settings. | 65536 (64k) |
 | {{com.gs.lrmi.filter.factory}} | Factory class that is used to load communication filter. | empty |
 | {{com.gs.lrmi.filter.security.keystore}} | Name of the keystore file that should be used by SSL communication filter. | empty |
@@ -73,7 +73,7 @@ Overrides {{services.config}} file settings. | 65536 (64k) |
 | {{com.gs.embeddedQP.properties}} | Used at JDBC driver. Properties file location. | |
 | {{com.gs.env.report}} | Allows you to view all the runtime configuration settings. | |
 | {{com.gs.EvictionStrategy}} | Local Cache property. | {anchor:standby} |
-| {{com.gs.home}} | GigaSpaces home directory. \\
+| {{com.gs.home}} | GigaSpaces home directory.
 Since 5.0 not required, if not set explicitly, it is resolved as the parent directory of the {{JSpaces.jar}} file. | |
 | {{com.gs.jca.demo.cfname}} | JCA example connection factory class name. | {{eis/GigaSpacesCF}} |
 | {{com.gs.jms.compressionMinSize}} | Compresses a JMS text message's data if its size is larger than a configured value (threshold). The message data is compressed when sent, and decompressed when received. The value assigned should be in bytes. | {{500000}} (0.5 MB) |
@@ -98,7 +98,7 @@ Since 5.0 not required, if not set explicitly, it is resolved as the parent dire
 | {{line.separator}} | The GS logging formater Line separator string.&nbsp; This is the value of the {{line.separator}} property at the moment that the {{SimpleFormatter}} was created. | |
 | {{com.gigaspaces.start.jmx}} | JMX property. | |
 | {{com.gigaspaces.start.container}} | JMX property. | |
-| {{com.gigaspaces.start.httpPort}} | Webster http port definition \\ | default 0 - free port \\ |
+| {{com.gigaspaces.start.httpPort}} | Webster http port definition  | default 0 - free port  |
 | {{com.gigaspaces.start.httpServerRetries}} | Webster http port retries - if the initial HTTP port is in use, tries ports between {{httpPort ..}} and {{httpPort+(N-1)}} | default is {{10}}, for example: {{initial port=1900}} tries {{1900}}, {{1901}}, {{... 1909}} |
 | {{com.gigaspaces.start.hostAddress}} | Webster host address. | default is {{localhost}} |
 | {{com.gigaspaces.start.httpRoots}} | Webster root library locations. | Default includes GigaSpaces libraries, Jini libraries, etc. |
@@ -115,13 +115,13 @@ Since 5.0 not required, if not set explicitly, it is resolved as the parent dire
 | {{com.gs.cluster.livenessMonitorFrequency}} | Defines the frequency in which liveness of 'live' members in a cluster is monitored. See [Viewing Clustered Space Status|XAP95:Viewing Clustered Space Status] for more details. | Default 10000 ms&nbsp; |
 | {{com.gs.cluster.livenessDetectorFrequency}} | Defines the frequency in which liveness of members in a cluster is detected. See [Viewing Clustered Space Status|XAP95:Viewing Clustered Space Status] | Default 5000 ms |
 | {{com.gs.number_implicit_indexs}} | Used by default space schema. | the default number of implicit indexes: for {{MemorySpace = 2}}, {{PersistentSpace = 1}} |
-| {{com.gs.callGC}} | Boolean value. \\
+| {{com.gs.callGC}} | Boolean value.
 Call garbage collection when performing eviction. This used when running in LRU cache policy and also at client side when using local cache. | {{false}} |
-| {{com.gs.replication.disable_multicast_adaptor}} | Boolean value. \\
+| {{com.gs.replication.disable_multicast_adaptor}} | Boolean value.
 Force disabling replication multicast adaptor. | {{false}} {anchor:xa} |
-| {{com.gs.xa.failOnInvalidRollback}} | Boolean value. \\
-When set to {{false}}, the {{XAResource}} does not throw an error when attempting to roll back a non-existing transaction or a transaction the has already been rolled back. For more details, see \\
-{sunjavadoc:javax/transaction/xa/XAResource|Javadoc} | {{true}} {anchor:maxbuffer} | \\ |
+| {{com.gs.xa.failOnInvalidRollback}} | Boolean value.
+When set to {{false}}, the {{XAResource}} does not throw an error when attempting to roll back a non-existing transaction or a transaction the has already been rolled back. For more details, see
+{sunjavadoc:javax/transaction/xa/XAResource|Javadoc} | {{true}} {anchor:maxbuffer} |  |
 | com.gs.grid.secured | Security property indicating whether the GSM and GSC should be loaded in a secured mode. (see services.config for more info). | false (non-secured) |
 | {{com.gs.deploy}} | The location of the deploy directory of the GSM. | {{GSHOME/deploy}} |
 | {{com.gs.work}} | The location of the work directory of the GSM and GSC. | {{GSHOME/work}} |

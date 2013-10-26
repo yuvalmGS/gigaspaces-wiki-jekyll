@@ -87,7 +87,7 @@ XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Co
 #### Q. I need to minimize the installation size. Can I use a shared folder on a server to store part of the installation?
 
 Yes. You can manually set the registry settings shown above to point both java and XAP to a shared folder on a remote server.
-(!) In such scenarios, the shared folder that contains XAP must be mapped as a network drive. XAP will fail to load if a network path is used (e.g. \\server\share).
+(!) In such scenarios, the shared folder that contains XAP must be mapped as a network drive. XAP will fail to load if a network path is used (e.g. server\share).
 
 # Using GAC (Global Assembly Cache)
 

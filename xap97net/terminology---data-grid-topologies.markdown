@@ -159,6 +159,6 @@ A [partitioned Data Grid|#Partitioned Data Grid], with one or more [backup|#Prim
 {% endcolumn %}
 
 {section}
-\\
-\\
+
+
 |[Basic Components|Terminology - Basic Components]||Data Grid Topologies|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|

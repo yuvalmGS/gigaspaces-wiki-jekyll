@@ -15,7 +15,7 @@ GigaSpaces XAP is built from the following sub-systems:
 - [*Developers API and Components*|#Developers API and Components] -- the API layer and a component model (building blocks) for application developers.
 
 Each sub-system (layer) is responsible for providing application server capabilities, and the bottom layers provide services to the upper layers. Figure 1 provides a representation of the sub-systems which compose the entire GigaSpaces XAP product.
-\\
+
 !GS6:Images^XAP Architecture Overview.jpg|align=center!
 {center} ~*Figure 1. Architecture overview for GigaSpaces XAP*~ {center}
 

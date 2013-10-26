@@ -201,6 +201,6 @@ Client application (which can also be other processing units) write objects to t
 {% endcolumn %}
 
 {section}
-\\
-\\
+
+
 ||Basic Components|[Data Grid Topologies|Terminology - Data Grid Topologies]|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|
