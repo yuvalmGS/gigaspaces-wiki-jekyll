@@ -7,7 +7,7 @@ page_id: 63799305
 
 {summary}Querying the space using a Prepared Template{summary}
 
-h1. Overview
+# Overview
 
 When executing a query operation on the space, there's an overhead incurred by translating the query to an internal representation (in object templates the properties values are extracted using reflection, in [SQLQuery] the expression string is parsed to an expression tree). If the same query is executed over and over again without modification, that overhead can be removed by using *prepared templates*.
 
@@ -15,17 +15,19 @@ The {{ISpaceProxy}} interface provides a method called {{Snapshot}} which receiv
 
 (i) In previous versions the {{Snapshot()}} method was also used as a workaround for using SQLQuery with blocking operations. Starting 8.0 SQLQuery supports blocking operations out of the box so that workaround is no longer required.
 
-h1. Usage
+# Usage
+
 Use {{ISpaceProxy.Snapshot}} to create a prepared template from an object template or a [SqlQuery].
 
-h4. Creating a prepared template from an object
+#### Creating a prepared template from an object
+
 {code:java}
 Person template= new Person();
 template.Age = 21;
 IPreparedTemplate<Person> preparedTemplate = proxy.Snapshot(template);
 {code}
 
-h4. Creating a prepared template from SqlQuery
+#### Creating a prepared template from SqlQuery
 
 {code:java}
 SqlQuery<Person> query = new SqlQuery<Person>(personTemplate, "Age >= ?");
@@ -37,7 +39,8 @@ IPreparedTemplate<Person> preparedTemplate = proxy.Snapshot(query);
 
 After creating the prepared template, it can be passed as a template to the Read, Take, ReadMultiple, TakeMultiple, Count and Clear operations, as well as a template when registering for notification.
 
-h4. Taking an object from the space using the prepared template
+#### Taking an object from the space using the prepared template
+
 {code:java}
 Person person = proxy.Take(preparedTemplate);
 {code}

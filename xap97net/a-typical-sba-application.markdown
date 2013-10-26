@@ -7,12 +7,11 @@ page_id: 63799429
 
 {summary}A Typical Space-Based Application {summary}
 
-
-h1. Overview
+# Overview
 
 This section describes SBA from an application development perspective. It focuses on developing a high-throughput, event-driven, service-oriented application using GigaSpaces XAP and Space-Based Architecture.
 
-h1. Application Description
+# Application Description
 
 Let's take a trading order management application as an example, to understand Space-Based Architecture and its application to GigaSpaces XAP. It is a classic case of an application with highly demanding scalability and latency requirements, in a stateful environment.
 
@@ -23,7 +22,7 @@ A trading application usually consists of a data feed i.e. trade requests, which
 
 The application needs to provide a 100% guarantee that once a transaction enters the system, it will not be lost. It also needs to keep end-to-end latency (latency from the time the system receives a trade, to the time the business process ends) to a fraction of a millisecond, and ensure that this low latency is not affected by future scaling.
 
-h1. Application Design
+# Application Design
 
 The first step in building such an application with SBA, is to define its business logic components as independent services - Enrichment Service (parsing and validation), Order Book Service (matching and execution), and Reconciliation Service (routing): !GS6:Images^intro1a.jpg|align=center!
 
@@ -35,12 +34,13 @@ Scaling is achieved simply by adding more Processing Units and spreading the loa
 We can see that the trading application guarantees both minimal latency and linear scalability - something that would be impossible with a tier-based, best-of-breed approach (in other words, with separate products to manage business logic, data and messaging).
 \\
 
-h1. Application Structure
+# Application Structure
+
 {toc-zone:minLevel=3|maxLevel=3|type=flat|separator=pipe|location=top}
 
 The following diagram outlines a typical architecture of an application built with OpenSpaces: !GS6:Images^intro4a.jpg|align=center!\\
 
-h3. Processing Unit
+### Processing Unit
 
 At the heart of the application is the processing unit. A processing unit represents the unit of scale and failover of an application. It is built as a self-sufficient unit that can contain all the relevant components required to process a user's transaction within the same unit. This includes:
 - a messaging component required to route transactions between processing units, as well as providing a means for communication between services that are collocated within the processing unit itself.
@@ -51,7 +51,7 @@ In XAP.NET, a processing unit can be implemented imperatively (extending an abst
 
 {anchor:event_containers}
 
-h3. Event Containers
+### Event Containers
 
 Event containers are used to abstract the event processing from the event source. This abstraction enables users to build their business logic with minimal binding to the underlying event source, whether it is a space-based event source or not.
 
@@ -104,7 +104,7 @@ Or XML:
 </EventContainers>
 {code}
 
-h3. The ISpaceProxy Core Middleware Component
+### The ISpaceProxy Core Middleware Component
 
 The {{ISpaceProxy}} component is a .NET POCO driven abstraction of the JavaSpaces specification. JavaSpaces is a service specification. It provides a distributed object exchange/coordination mechanism (which might or might not be persistent) for objects. It can be used to store the system state and implement distributed algorithms. In a space, all communication partners (peers) communicate by sharing states. It is an implementation of the [Tuple spaces idea|Concepts#tuple].
 
@@ -117,7 +117,7 @@ The {{ISpaceProxy}} abstraction was designed with the following principles in mi
 \\
 - *Overloaded methods* \- the {{ISpaceProxy}} interface uses overloaded methods, that can use defaults to reduce the amount of arguments passed in read/take/write methods.
 
-h3. Using the GigaSpace Component in the Context of EDA/SOA Applications
+### Using the GigaSpace Component in the Context of EDA/SOA Applications
 
 The space serves several purposes in an EDA/SOA type of application:
 - *Messaging Grid* \- in this case, the space is used as a distributed transport that enables remote and local services to send and receive objects based on their content. In a typical Space-Based Architecture, the space is used to route requests/orders from the data source to the processing unit, based on a predefined affinity-key. The affinity-key is used to route the request/order to the appropriate processing unit. Since it is optimized to run in-memory, it is used also as a means to enable the workflow between the embedded POCO services.
@@ -136,7 +136,7 @@ public class Data
 
 - *Processing Grid* \- a processing grid represents a particular and common use of the space for parallel transaction processing, using a master/worker pattern. In Space-Based architecture, the processing grid is implemented through a set of POCO services that serve as the workers and event containers, that trigger events from the space into and from these services. Requests/orders are processed in parallel between the different processing units, as well as within these processing units, in case there is a pool of services handling the event.
 
-h3. Space-Based Remoting
+### Space-Based Remoting
 
 [Space-Based Remoting|Space Based Remoting] allows for POCO services that are collocated within a specific processing unit to be exposed to remote clients, like any other RMI or RPC service.
 
@@ -151,7 +151,7 @@ A processing unit that needs to be export a service uses the {{DomainServiceHost
 - *Loosely coupled* \- a single proxy can point to a set of service instances. This provides the flexibility of invoking methods on a single service, and performing broadcast operations, i.e. invoking multiple services at the same time, or only a single service regardless of its physical location.
 - *Synchronous/Asynchronous invocation* \- a client can choose to invoke a method and wait for a result (synchronous invocation). It can also invoke a method and pick up the result at a later stage.
 
-h3. SLA-Driven Container
+### SLA-Driven Container
 
 {comment}TODO_NIV - Change to internal link when available.{comment}
 An [OpenSpaces SLA Driven Container|XAP97NET:Basic Processing Unit Container] that allows you to deploy a processing unit over a dynamic pool of machines, is available through an SLA-driven container, formerly known as the Grid Service Containers - GSCs. The SLA-driven containers are .NET processes that provide a hosting environment for a running processing unit. The Grid Service Manager (GSM) is used to manage the deployment of the processing unit, based on SLA. The SLA definition is part of the processing unit configuration, and is normally named {{sla.xml}}. The SLA definition defines: the number of PU instances that need to be running at a given point of time, the scaling policy, the failover policy based on CPU, and memory or application-specific measurement. !GS6:Images^intro6a.jpg|align=center!

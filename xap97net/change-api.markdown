@@ -8,14 +8,14 @@ page_id: 63799419
 {composition-setup}
 {summary:}This page covers the Change API, its usage and behavior.{summary}
 
-h1. Overview
+# Overview
 
 The {{ISpaceProxy.Change}} and the {{ChangeSet}} allows updating existing objects in space, by specifying only the required change instead of passing the entire updated object. Thus reducing required network traffic between the client and the space, and the network traffic generated from replicating the changes between the space instances (e.g between the primary space instance and its backup). Moreover, using this API also can prevent the need of reading the existing object prior to the change operation because the change operation can specify how to change the existing property without knowing its current value. For instance, implementing atomic counters can be done by increasing a counter property of an integer property by some delta. Another example would be to add a value to a collection and so on.
 The change API supports transactions in the same way the other space operation supports it.
 
 !GRA:Images2^change-api.jpg!
 
-h1. Basic Usage Example
+# Basic Usage Example
 
 The following example demonstrates how to increase the property 'count' in a an object of type 'WordCount' with id 'the' by one.
 
@@ -26,11 +26,11 @@ IdQuery<WordCount> idQuery = new IdQuery<WordCount>(id, routing);
 space.Change(idQuery, new ChangeSet().Increment("Count", 1));
 {code}
 
-h1. The Query Template
+# The Query Template
 
 The change operation may receive any [query template|Querying The Space] for matching a single or multiple objects that needs to be changed by the operation.
 
-h1. The Change Set
+# The Change Set
 
 The change operation requires a {{ChangeSet}} which described the changes that needs to be done once locating the object specified by the query template.
 The {{ChangeSet}} contains a predefined set of operations that can be invoked to alter the object, the set may contain one or more changes that will be applied sequentially to the object.
@@ -64,7 +64,7 @@ IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
 space.Change(idQuery, new ChangeSet().Increment("Balance.Euro", 5.2D));
 {code}
 
-h2. Change Path Specification
+## Change Path Specification
 
 Each operation in the change set acts on a specified string path. This path points to the property that needs to be changed and it has the following semantic:
 1. *First level property* - A path with no '.' character in it points to a first level property, If the property specified by this path is not part of the Object it will be treated as a dynamic property (see [Dynamic Properties]) if the object does not support dynamic properties, an exception will be generated.
@@ -92,7 +92,7 @@ space.Change(idQuery, new ChangeSet().Increment("Balance.Euro", 5.2D));
 
 In this case the key euro inside the dictionary behind the balance will be increased by 5.2.
 
-h2. Available Change Set Operations
+## Available Change Set Operations
 
 ||Operation Name||Description||Semantics||
 |*Set*|sets a property value|sets value of the given property|
@@ -105,11 +105,11 @@ h2. Available Change Set Operations
 |*SetInDictionary*|Sets a key value pair in a dictionary property|if the property do not exists an exception will be thrown|
 |*RemoveFromDictionary*|removes a key and its associated value from a dictionary property|if the property do not exists an exception will be thrown|
 
-h1. Using Change with the Embedded model
+# Using Change with the Embedded model
 
 With the [embedded model|Modeling your data#Embedded vs. Non-Embedded Relationships], updating (as well adding or removing) a nested collection with large number of elements *must use the change API* since the default behavior would be to replicate the entire space object and its nested collection elements from the primary to the backup (or other replica primary copies when using the sync-replicate or the async-replicated cluster schema). The Change API reduces the CPU utilization at the primary side, reduce the serialization overhead and reduce the garbage collection activity both at the primary and backup. This improves the overall system stability significantly.
 
-h1. Change Result
+# Change Result
 
 The change operations returns a {{IChangeResult}} object that provides information regarding the change operation affect.
 {code:java}
@@ -150,7 +150,7 @@ The {{IChangeResult}} contains the {{NumberOfChangedEntries}} which specifies ho
 
 {refer}For more information please refer to [Change API Advanced]{refer}
 
-h1. ChangeException
+# ChangeException
 
 Upon any error a {{ChangeException}} will be thrown containing the following details:
 {code:java}
@@ -185,7 +185,7 @@ The {{SuccesfullChanges}} property contains details for objects that were succes
 The {{FailedChanges}} property contains details for objects that failed being changed, the details contains information about id, version and the actual cause for failure.
 The {{Errors}} property contains general failure reason for executing the change operation which do not apply to a specific object, such as not being able to access the space.
 
-h1. Multiple Changes in One Operation
+# Multiple Changes in One Operation
 
 One may apply multiple changes in one {{Change}} operation by setting up multiple operation in the change set, this is done simply by chaining changes as follows:
 
@@ -199,7 +199,7 @@ space.Change(idQuery, new ChangeSet().Increment("SomeIntProperty", 1)
 
 The changes will applied to the object sequentially (and atomically) keeping the order applied on the {{ChangeSet}}.
 
-h1. Changing the Object's Lease
+# Changing the Object's Lease
 
 By default, the change operation will not modify the existing remaining lease of the changed entries. In order to change the lease, the new lease should be specified on the {{ChangeSet}} using the {{lease}} operation.
 
@@ -212,7 +212,7 @@ The lease can be changed as part of other changes applied to the object, as well
 The lease time specified will override the existing lease with the new value relative to the current time while ignoring the current lease.
 The above example will set the lease of the changed object to be one second from the time the change operation took affect.
 
-h1. Change with Timeout
+# Change with Timeout
 
 A timeout can be passed to the {{change}} operation, this timeout will only be used if any of the objects that needs to be changed is locked under a transaction which is not from the
 current thread context. In that case, all objects which are not locked will be changed and the operation will block until either one of the two happens, which ever comes first:
@@ -245,7 +245,7 @@ catch(ChangeException e)
 }
 {code}
 
-h1. Change and Optimistic Locking
+# Change and Optimistic Locking
 
 The {{Change}} operation has the same semantics as regular space {{Update}} operation when it comes to [Optimistic Locking]. It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
 
@@ -277,11 +277,11 @@ catch(ChangeException e)
 
 (!) In order to prevent constructor overload ambiguity, when using id query with version, the space routing property needs to be specified as well. If the object has no space routing then its space id property is the routing property and it should be used as shown in the previous example.
 
-h1. Change and Notifications
+# Change and Notifications
 
 Change will be delivered as a regular update notification, with the state of the object after the change was applied.
 
-h1. Change Modifiers
+# Change Modifiers
 
 The following modifiers can be used with the change operation
 
@@ -291,11 +291,11 @@ there is no guarantee whether the operation succeeded or not as this mode does n
 3. *{{ChangeModifiers.MemoryOnlySearch}}* - Search for matching entries in cache memory only (do not use the underlying external data source). However, any changes done on the matches entries
 will propagate to the underlying external data source.
 
-h1. Change Extension
+# Change Extension
 
 See [Change Extension] which provide utility methods for common usage patterns.
 
-h1. Considerations
+# Considerations
 
 1. When replicated to a gateway and a conflict occurs, change operation only supports the built in {{abort}} resolution as {{override}} in change case may result with an inconsistent state of the object.
 2. The change operation is converted to a regular update when delegated to a data source.

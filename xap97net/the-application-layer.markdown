@@ -11,7 +11,8 @@ Each XAP.NET application is composed of one or more scalable modules, and contai
 
 A module in SBA is called a Processing Unit. This is the smallest unit for cross-cluster scaling. This unit is used for design, development, testing, packaging and deployment.
 
-h1. Processing Unit
+# Processing Unit
+
 {comment}TODO_NIV - Change to internal link when available.{comment}
 A [Processing Unit|XAP95:Packaging and Deployment] is the unit of scale. It is an application component, provided by the application developer, which is deployed to be run on several GSC instances.
 
@@ -31,15 +32,16 @@ A Processing Unit package structure is defined, based on the technology:
 - A [*Java* Processing Unit|XAP95:The Processing Unit Structure and Configuration] is packaged usually as a JAR file, modeled after the Spring DI structure. The package can also be within a file structure based on the same structure.
 - A [*Web* Processing Unit|XAP95:Web Processing Unit Container#Deployment] is packaged as a standard JEE WAR file.
 
-h1. Data-Only Processing Unit (EDG)
+# Data-Only Processing Unit (EDG)
+
 In some cases there is a need to deploy an In Memory Data Grid (IMDG) only. For this reason there is a special Processing Unit called EDG - Enterprise Data Grid which can be deployed into the Service Grid. The EDG Processing Unit provides IMDG capabilities, and is accessed using the GigaSpace APIs.
 
 An EDG Processing Unit is usually used in caching scenarios, when there is a need to provide the front-end of an information system or a database.
 
 The value of an EDG Processing Unit is that its SLA is still maintained by the Service Grid.
 
+# Collocation of Business Logic and Data
 
-h1. Collocation of Business Logic and Data
 One of the key values of SBA, as explained above, is the ability to collocate data, business logic and messaging. A typical Processing Unit will contain, within the boundaries of the same Processing Unit, a space instance and business logic services.
 
 The services will usually operate on data that is stored within the same space partition, providing memory access within the same process address space. This mode of interaction allows the minimal latency possible, as data is accessed by reference, as opposed to serialization required for out-of-process communication. Further more operation performance is maximal, as context switches are minimal.

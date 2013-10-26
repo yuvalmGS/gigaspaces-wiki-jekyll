@@ -13,9 +13,7 @@ that monitors a deployed application, and scale it up on demand.{summary}
 
 {% column width=7% %}
 
-
 {% endcolumn %}
-
 
 {% column width=86% %}
 
@@ -24,15 +22,14 @@ that monitors a deployed application, and scale it up on demand.{summary}
 
 {% endcolumn %}
 
-
 {% column width=7% %}
-
 
 {% endcolumn %}
 
 {section}
 
-h1. Overview
+# Overview
+
 The [Administration and Monitoring API|Administration and Monitoring API] allows you to monitor an application's health and its resources, to enforce a specific pre-defined configurable SLA that scales the application while it is running. This ensures a deterministic response time when there is an increasing number of users accessing the system, and also ensures the high-availability and robustness of the application.
 
 The following example illustrates how you can construct a simple processing unit (*The Scaling Agent*) to monitor an application deployed into GigaSpaces, and track the load on the application. Once the average throughput per instance of the application breaches a pre-defined limit, the scaling agent reacts and performs the necessary activities to scale the application tier.
@@ -42,13 +39,14 @@ The activities to scale up the application could be: starting a new GSC on remot
 {refer}This page assumes knowledge of the processing unit concept. If you are unfamilar with it, please refer to
 the [SBA Example] first.{refer}
 
-
 {% align center %}!GRA:Images^scaling agent .net.jpg!{% endalign %}
 
-h1. How the Scaling Agent Works
+# How the Scaling Agent Works
+
 The scaling agent periodically samples the throughput of feeds that are processed by the running application instances, and compares the average throughput per instance to a specific threshold. If the average throughput is larger than the pre-defined threshold, which is part of the processing unit configuration, the scaling agent scales up the application by starting a new GSC, and by increasing the amount of instances (see the {{ScaleUp()}} method). The sampling is done by letting the feed processor implement the {{IServiceMonitorsProvider}} interface, which exposes the public API that is used by the agent.
 
-h2. Scaling Agent Implementation
+## Scaling Agent Implementation
+
 {gdeck:scalingagent|top}
 {gcard:Code}
 {code:java}
@@ -190,7 +188,7 @@ public class Agent : IDisposable
 {gcard}
 {gdeck}
 
-h2. Feed Processor
+## Feed Processor
 
 The processor waits for new feeds to be fed into the cluster, and acts upon such an event. Since the processor throughput needs to be monitored by the agent, the processor implements the {{IServiceMonitorsProvider}} interface to expose its throughput for external query.
 {code:java}
@@ -287,7 +285,7 @@ public class FeedProcessorTpMonitor : IServiceMonitors
 }
 {code}
 
-h1. Running the Example
+# Running the Example
 
 The example consists of the following parts:
 - Data grid
@@ -306,9 +304,12 @@ To simplify the deployment of the examples, there are several scripts in the exa
 5. The next step is to deploy the Scaling Agent. This can be done by running {{<XAP.NET installation>\Examples\ScalingAgent\DeployAgent.bat}}, which deploys the agent as a processing unit, or by running {{<XAP.NET installation>\Examples\ScalingAgent\RunStandaloneAgent.bat}}, which runs the agent as a standalone application.
 6. At this stage, the entire application is deployed and waiting for new feeds to be processed. Start a feeder by executing {{<XAP.NET installation>\Examples\ScalingAgent\RunFeeder.bat}}. Use the feeder user interface to specify the rate of feeding, in order to simulate different loads on the cluster.
 
-h2. Feeder Application
+## Feeder Application
+
 {indent}!GRA:Images^ScalingAgentFeeder.jpg!{indent}
-h2. Agent Application
+
+## Agent Application
+
 {indent}!GRA:Images^ScalingAgentConsole.jpg!{indent}
 
 {rate}

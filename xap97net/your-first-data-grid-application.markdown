@@ -7,36 +7,39 @@ page_id: 63799337
 
 {summary}Writing your first XAP.NET application {summary}
 
-h1. Overview
+# Overview
+
 This page explains how to create a simple Hello World application using XAP.NET API. The application is very simple: connect to a space, store an entry and retrieve it. The application shown here is also available in the examples distributed with the product (from the Windows Start menu, select *Programs > GigaSpaces XAP.NET > Examples* and review the *HelloWorld* example).
 
 (i) All the instructions and code shown in this page are for C# developers. Naturally all other .NET languages (VB.NET, C++/CLI, J#, etc.) are supported as well.
 
-h1. Prerequisites
+# Prerequisites
 
 If you haven't done so yet, please [download|http://www.gigaspaces.com/LatestProductVersion] and [install|Installing XAP.NET] GigaSpaces XAP.NET.
 
-h1. Setting Up the Project
+# Setting Up the Project
 
 This section shows how to create a C# Console Application named *HelloWorld* with a reference to the *GigaSpaces.Core* assembly.
 
-h2. Create a Console Application Project
+## Create a Console Application Project
+
 1. Open Microsoft Visual Studio. From the *File* menu select *New > Project*. The *New Project* dialog appears.
 2. In the *Project types* tree, select *Visual C#*, then select *Console Application* in the *Templates* list.
 3. In the *Name* test box, type *HelloWorld*. If you wish, change the default location to a path you prefer.
 4. Select *OK* to continue. Visual Studio creates the project and opens the automatically generated {{program.cs}} file.
 
-h2. Add a Reference to the GigaSpaces Core Assembly
+## Add a Reference to the GigaSpaces Core Assembly
+
 1. From the *Project* menu, select *Add Reference*. The *Add Reference* dialog appears.
 2. Select the *Browse* tab, navigate to the XAP.NET installation folder (e.g. *C:\GigaSpaces\XAP.NET 8.0.0 x86\NET v4.0.30319*). Go into the *Bin* folder, select *GigaSpaces.Core.dll*, and click *OK*.
     1. Since running .NET 4.0 side-by-side with .NET 2.0 [has limitations|http://msdn.microsoft.com/en-us/magazine/ee819091.aspx], GigaSpaces XAP.NET comes with a separate set of assemblies for .NET 2.0 and .NET 4.0. Make sure you use the one relevant for you.
 3. In the *Solution Explorer*, make sure you see *GigaSpaces.Core* in the project references. There's no need to reference any other assembly.
 
-h1. Writing the Code
+# Writing the Code
 
 This section shows how to write a simple program that connects to the space, stores a {{Message}} object with some text, and retrieves it.
 
-h2. Creating the Message Class
+## Creating the Message Class
 
 We want to demonstrate storing some object to the space. To do this, let's create a simple {{Message}} class with a {{Text}} property of type {{String}}.
 
@@ -64,14 +67,16 @@ public class Message
 }
 {code}
 
-h2. Getting Started
+## Getting Started
+
 The XAP.NET API used in this example is located in the {{GigaSpaces.Core}} namespace.
 Switch to the *Program.cs* editor, and add a {{using}} statement to include {{GigaSpaces.Core}}:
 {code:java}
 using GigaSpaces.Core;
 {code}
 
-h2. Connecting to the Space
+## Connecting to the Space
+
 We need to establish a connection to a space which stores the object. To do this, we use the {{FindSpace}} method from a factory class called {{GigaSpacesFactory}}. This takes a URL of the requested space, and returns a space proxy of type {{ISpaceProxy}}. Since we don't have any spaces running yet, we use a special URL prefix to indicate that we want the space lookup to occur in-process, and that the searched space should be created in-process if it doesn't exist yet. The space name is *myEmbeddedSpace* (when the space and the proxy reside in the same process, the space is called an *embedded space*).
 
 Edit the {{Main}} method and add the following code:
@@ -84,7 +89,8 @@ ISpaceProxy proxy = GigaSpacesFactory.FindSpace(spaceUrl);
 Console.WriteLine("*** Connected to space.");
 {code}
 
-h2. Storing a Message Object
+## Storing a Message Object
+
 The next step is to create a {{Message}} object, and store it in the space. To do this, we use the {{Write}} method in the {{ISpaceProxy}} we've just created, and simply pass the object we want to store as an argument:
 
 Add the following code to the {{Main}} method, after the previous code:
@@ -95,7 +101,8 @@ Console.WriteLine("Writing Message [" + outgoingMessage.Text + "]");
 proxy.Write(outgoingMessage);
 {code}
 
-h2. Retrieving the Stored Message
+## Retrieving the Stored Message
+
 Finally, we want to retrieve the object from the space. To do this, we use the {{Take}} method in {{ISpaceProxy}}, which takes a template argument and searches for a matching entry in the space. If a match is found, it is removed from the space, and returned to the caller, otherwise null is returned.
 
 A template is an object of the type we wish to query, where the null properties are ignored and the non-null properties are matched. For example, creating a {{Message}}, and setting the {{Text}} to "Goodbye" returns null, because the space does not contain such an object. We use a new {{Message}}, without setting the {{Text}} property, which matches all possible entries of type {{Message}} (of course, we know there's currently only one in the space).
@@ -110,7 +117,7 @@ Console.WriteLine("Press ENTER to exit.");
 Console.ReadLine();
 {code}
 
-h1. Running the Program
+# Running the Program
 
 To run the program, from the *Debug* menu, select *Start Debugging*.
 

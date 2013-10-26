@@ -8,18 +8,19 @@ page_id: 63799338
 {composition-setup}
 {summary}Describing the built-in BasicProcessingUnitContainer which is an extension of the AbstractProcessingUnitContainer class.{summary}
 
-h1. Overview
+# Overview
 
 A [processing unit container|Processing Unit Container] is a component implemented by the user and deployed and managed by the service grid. XAP.NET comes with a built-in type implementation of the processing unit container called the {{BasicProcessingUnitContainer}} which provides basic implementations for common activities, and allows the user to focus on business logic and less with GigaSpaces internals.
 
 {refer}For a full example of a processing unit and a usage of the {{BasicProcessingUnitContainer}} refer to the [SBA Example].{refer}
 
-h1. Using The Container
+# Using The Container
 
 The basic container simplifies the actual implementation of the processing unit by managing on its own GigaSpaces related components which are commonly used when developing application which are deployed into the grid.
 
 {toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
-h1. Integrating The Container Into Your Project
+
+# Integrating The Container Into Your Project
 
 In order to use the container as part of the processing unit project, you need a configuration file, which is used to deploy the Processing Unit Container. This config file must be named {{pu.config}} and needs to be placed together with your processing unit container implementation assemblies.
 
@@ -41,7 +42,7 @@ The {{pu.config}} file should be as follows:
 
 This configuration file specifies that the container that should be deployed is the {{BasicProcessingUnitContainer}}, in the same manner any other custom container implementation would have been deployed.
 
-h1. Automatic Space Proxy Creation And Management
+# Automatic Space Proxy Creation And Management
 
 The container can create and manage the lifecycle of space proxies, and reduces the need from the user to properly dispose proxies or shutdown embedded spaces when the container is undeployed. A managed space proxy can also be created in the container by configuring it with a configuration file.
 
@@ -67,7 +68,8 @@ The following config file will cause the container to create and manage an embed
 {code}
 
 {anchor:basiccomponents}
-h1. Basic Processing Unit Components
+
+# Basic Processing Unit Components
 
 There can be different user components that are part of the processing unit. Such components can be automatically generated and managed by the container by creating a class, which represent the logical component, and marking it with the \[BasicProcessingUnitComponent\] attribute. Optionally, the component can mark methods with the \[ContainerInitializing\] and \[ContainerInitialized\] which will be called when the managing basic ontainer is initializing and after it is initialized correspondigly. Moreover, it can implement the {{IDisposable}} interface which will be called once the managing container is disposing upon undeployment.
 
@@ -120,7 +122,8 @@ The container automatically detects components by scanning all the assembly (dll
 (!) The assembly name is the actual name and not a file path, the assembly should be part of the processing unit project output directory and be placed beside the {{pu.config}} file.
 
 {anchor:services}
-h1. Automatic Remote Services Creation And Hosting
+
+# Automatic Remote Services Creation And Hosting
 
 One of GigaSpaces grid component capabilities is [remote services|Space Based Remoting], which can be hosted in the grid. The basic container automatically detects , creates, hosts and manages such services' life cycle. This is done by marking the remote service with the \[SpaceRemotingService\] attribute.
 
@@ -133,7 +136,8 @@ public class MyService : IService
 {code}
 
 {anchor:eventcontainers}
-h1. Automatic Event Listener Creation And Management
+
+# Automatic Event Listener Creation And Management
 
 An [event listener container|Event Driven Architecture] is one of the most commonly used GigaSpaces components as part of a processing unit. Similarly to the other components, such event containers can be automatically detected, created and managed by the basic container. The basic container will automatically detect classes that need to be wrapped with the proper event listener container via the corresponding {{EventDriven}} attributes ({{PollingEventDriven}} or {{NotifyEventDriven}}) that mark them.
 
@@ -177,7 +181,8 @@ The following basic container config will start two space proxies and supply the
 {code}
 
 {anchor:lifecycle}
-h1. Space Life-Cycle Events
+
+# Space Life-Cycle Events
 
 In a topology with backup spaces, it is quite common to have a business logic co-located with an embedded space instance, that should be activated only when the embedded space instance mode is primary. The built-in event listener container work that way; they only start to operate when the co-located embedded space becomes primary. It is quite common to have different custom logic that should be notified upon space mode change events and act accordingly (for instance, start some monitoring process of the co-located space instance). The container will detect automatically methods marked with a space mode changed attribute (\[PostPrimary\], \[BeforePrimary\], \[PostBackup\] and \[BeforeBackup\]) and it will invoke these methods once the space instance mode is changed.
 

@@ -7,7 +7,7 @@ page_id: 63799397
 
 {edit-subjects}
 
-h1. ISpaceFilter Interface
+# ISpaceFilter Interface
 
 The {{ISpaceFilter}} interface implements IDisposable and consists of 3 additional methods.
 {code:java}

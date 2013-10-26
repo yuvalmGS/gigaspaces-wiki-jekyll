@@ -7,7 +7,9 @@ page_id: 63799398
 
 *Summary* - GigaSpaces components from a functional perspective.
 ||Basic Components|[Data Grid Topologies|Terminology - Data Grid Topologies]|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|
-h1. Basic Components
+
+# Basic Components
+
 {comment}=========================================
 
          Basic Components
@@ -21,14 +23,13 @@ h1. Basic Components
 
 {% column width=50% %}
 
-h4. Space
+#### Space
 
 The GigaSpaces cache instance that holds data objects in memory.
 
 ~Key sentence: The space holds your data objects.~
 
 {% endcolumn %}
-
 
 {% column width=30% %}
 
@@ -50,14 +51,13 @@ The GigaSpaces cache instance that holds data objects in memory.
 
 {% column width=50% %}
 
-h4. Execute, Read, Write, Take and Notify
+#### Execute, Read, Write, Take and Notify
 
 A set of methods used to read, write, take, and register for notification on objects that are stored in the space. Execute allows sending Tasks to be executed within the space. Read and Take critera can be specified via a query or a template (an example object).
 
 ~Key sentence: Interaction with the space is done using the read, write, update, take and notify methods.~
 
 {% endcolumn %}
-
 
 {% column width=30% %}
 
@@ -80,14 +80,13 @@ A set of methods used to read, write, take, and register for notification on obj
 
 {% column width=50% %}
 
-h4. Service Component
+#### Service Component
 
 An application component that interacts with the space (using read, write, take, etc.), and implements a certain functionality.
 Java people sometimes refer to it as a Service Bean, but it does not have to be a [Java Bean|http://en.wikipedia.org/wiki/JavaBean].
 ~Key sentence: The service component interacts with the space to implement your application's logic.~
 
 {% endcolumn %}
-
 
 {% column width=30% %}
 
@@ -109,13 +108,11 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 
 {% column width=50% %}
 
-h4. Processing Unit
+#### Processing Unit
 
 A combination of service components and/or an embedded space instance. This is the fundamental unit of deployment in GigaSpaces XAP. The Processing Unit itself runs within a [Processing Unit Container|Terminology - Runtime Components#Processing Unit Container], and is typically deployed onto the [Service Grid|Terminology - Runtime Components#Service Grid].
 
-
 {% endcolumn %}
-
 
 {% column width=30% %}
 
@@ -128,7 +125,9 @@ A combination of service components and/or an embedded space instance. This is t
 {% endcolumn %}
 
 {section}
-h1. Common Processing Unit Configurations
+
+# Common Processing Unit Configurations
+
 {comment}----------------------------
           PU with an embedded space
 ----------------------------{comment}
@@ -136,12 +135,11 @@ h1. Common Processing Unit Configurations
 
 {% column width=50% %}
 
-h4. Processing Unit configured with an embedded space
+#### Processing Unit configured with an embedded space
 
 A deployable package which instantiates an embedded space instance, also called a data grid instance. A set of embedded space instances that run within the processing units typically form a [Data Grid|Terminology - Data Grid Topologies].
 
 {% endcolumn %}
-
 
 {% column width=30% %}
 
@@ -161,12 +159,11 @@ A deployable package which instantiates an embedded space instance, also called 
 
 {% column width=50% %}
 
-h4. Processing Unit configured with one of more services
+#### Processing Unit configured with one of more services
 
 A deployable package containing one or more services. In the GigaSpaces context, it usually acts as a client that interacts with other Processing Units by utilizing the messaging capabilities of the space.
 
 {% endcolumn %}
-
 
 {% column width=30% %}
 
@@ -186,13 +183,12 @@ A deployable package containing one or more services. In the GigaSpaces context,
 
 {% column width=50% %}
 
-h4. Processing Unit configured with embedded space and embedded services
+#### Processing Unit configured with embedded space and embedded services
 
 A deployable, independent, scalable unit, which is the building block of [Space-Based Architecture|Terminology - Space-Based Architecture].
 Client application (which can also be other processing units) write objects to the space, and the procesing unit which contains this space consumes these objects or is notified about them and triggeres a related services.
 
 {% endcolumn %}
-
 
 {% column width=30% %}
 

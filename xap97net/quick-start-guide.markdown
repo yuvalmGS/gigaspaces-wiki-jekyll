@@ -10,9 +10,7 @@ If you would like to run the tutorial sample application, download GigaSpaces an
 
 {% column width=10% %}
 
-
 {% endcolumn %}
-
 
 {% column width=30% %}
 
@@ -21,7 +19,6 @@ If you would like to run the tutorial sample application, download GigaSpaces an
 {% align center %}[!button2.jpg!|Your First Data Grid Application]{% endalign %}
 
 {% endcolumn %}
-
 
 {% column width=110% %}
 
@@ -35,15 +32,11 @@ Create your first simple Hello World caching application
 
 {section}
 
-
 {section}
-
 
 {% column width=10% %}
 
-
 {% endcolumn %}
-
 
 {% column width=30% %}
 
@@ -52,7 +45,6 @@ Create your first simple Hello World caching application
 {% align center %}[!dataexamplesmall.jpg!|Your First XTP Application]{% endalign %}
 
 {% endcolumn %}
-
 
 {% column width=110% %}
 

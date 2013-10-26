@@ -8,10 +8,9 @@ page_id: 63799322
 {composition-setup}
 {summary}Describing the built-in BasicProcessingUnitContainer which is an extension of the AbstractProcessingUnitContainer class.{summary}
 
-
 {info}This page coveres additional details about the BasicProcessingUnitContainer which are not covered in [Basic Processing Unit Container|Basic Processing Unit Container] page, the previous page should be read before this one.{info}
 
-h1. Configuring The Container Automatic Scanning
+# Configuring The Container Automatic Scanning
 
 By default, the container will look for [basic processing unit components|#basiccomponents], [remote service|#services] and [event listener container|#eventcontainers] and instantiate and manage these components if found. This behavior can be enabled or disabled by configuring the container in the following manner:
 
@@ -49,7 +48,7 @@ By default, when given an assembly name to scan for components, the entire assem
 </configuration>
 {code}
 
-h1. Configuring Managed Space Proxies
+# Configuring Managed Space Proxies
 
 The space proxies which are created and managed by the container can be configured regarding their cluster state.
 They can be configured whether to be clustered proxies or a proxy to the direct cluster member. Moreover, they can be configured whether they should be created as part of a cluster by being aware to the cluster info the container received at deploy time, or being created as a single space. Both of these configurations are only relevant for space proxies which are embedded and not remote.
@@ -103,7 +102,7 @@ In order to have a space proxy with custom property the following configuration 
 
 This will create an embedded space with the additional provided custom properties.
 
-h1. Basic Container Initialization Events
+# Basic Container Initialization Events
 
 The container exposes some events that can be used to be notified at the different stages of the container initialization.
 *{{ContainerInitializing}}* - Triggered when the container it initializing.
@@ -152,7 +151,8 @@ public class Feeder
 {code}
 
 (on) The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container
-h1. Creating a Space Proxy Programatically
+
+# Creating a Space Proxy Programatically
 
 In same cases, the {{SpaceProxies}} config element does not suffice in order to construct a space proxy. For instance if you want to start a space with an external data source, or some other custom properties. In these cases, the {{CreateSpaceProxy}} method should be used in one of the container initialization events. If this proxy is used by other components in the processing unit, it should be put in the {{ContainerInitializing}} event in order for it to be available for the other components when they are created, otherwise you can put it in the {{ContainerInitialized}} just as well. Here's a simple example of how to use the {{CreateSpaceProxy}}:
 {code:java}
@@ -168,7 +168,7 @@ public void Initialize(BasicProcessingUnitContainer container)
 }
 {code}
 
-h1. Basic Container Programatic API
+# Basic Container Programatic API
 
 The container exposes API for creating managed space proxies and receiving its managed components.
 
@@ -204,6 +204,6 @@ IEventListenerContainer<Data> eventListenerContainer = container.GetEventListene
 
 (on) For full API please read the API documentation file.
 
-h1. Security
+# Security
 
 When the processing unit is deployed with injected security properties (Using the Management Center or the [Service Grid admin api|Administration and Monitoring API]), the basic processing unit container will automatically attach this security context to all the proxies that it manages. Both for proxies that are created automatically from the configuration and proxies that are created programatically using the container {{CreateSpaceProxy}} method.

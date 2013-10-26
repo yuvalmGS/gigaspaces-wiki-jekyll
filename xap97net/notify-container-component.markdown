@@ -8,7 +8,7 @@ page_id: 63799370
 {composition-setup}
 {summary:page}The notify event container implements the {{IEventListenerContainer}} interface, and uses the space inheritance support for notifications, using a GigaSpaces unified event session API.{summary}
 
-h1. Overview
+# Overview
 
 The notify event container implements the [IEventListenerContainer|Event Listener Container] interface, and uses the space inheritance support for notifications, using a GigaSpaces data event session API. If a notification occurs, the [DataEventArrived|Event Listener Container#DataEventArrived] event is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
 !GRA:Images^Net_notify_cont.jpg!
@@ -84,13 +84,13 @@ public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data
 
 The above example registers with the space for write notifications using the provided template, which can be any .NET object (in this case a {{Data}} object with its processed flag set to {{false}}). If a notification occurs, the {{SimpleListener}} is invoked. Registration for notifications is performed on the supplied space proxy.
 
-h1. Primary/Backup
+# Primary/Backup
 
 The notify event container registers for notifications only when the relevant space it is working against is in primary mode. When the space is in backup mode, no registration occurs. If the space moves from backup mode to primary mode, the container registers for notifications, and if it moved to backup mode, the registrations are canceled.
 
 (i) This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
 
-h1. Template Definition
+# Template Definition
 
 When performing receive operations, a template is defined, creating a virtualized subset of data in the space, matching it. GigaSpaces supports templates based on the actual domain model (with {{null}} values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SqlQuery|SqlQuery] in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
@@ -132,7 +132,7 @@ notifyEventListenerContainer.Template = new SqlQuery<Data>(template, "Processed 
 {gcard}
 {gdeck}
 
-h1. Transaction Support
+# Transaction Support
 
 The notify container can be configured with transaction support, so the event action can be performed under a transaction. Exceptions thrown by the event listener cause the operations performed within the listener to be rolled back automatically.
 
@@ -193,7 +193,7 @@ notifyEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAda
 
 {refer}The order of parameters of the event handling method is strict, please refer to [Dynamic Data Event Handler Adapter|Event Listener Container#eventhandleradapter] for more information about it.{refer}
 
-h1. Masking Notifications
+# Masking Notifications
 
 The notify container allows you to mask which operations performed against the space, should cause notifications. By default (if none is defined), notifications are sent for write operations. The operations are: {{write}} (an entry matching the template has been written to the space), {{update}} (an entry matching the template has been updated in the Space), {{take}} (an entry matching the template has been taken from the Space), {{lease expiration}} (an entry matching the template lease has been expired), and {{all}}. Here is an example of the notify container configured to trigger notifications for both write and update operations:
 
@@ -231,7 +231,7 @@ notifyEventListenerContainer.NotifyType = DataEventType.Write | DataEventType.Up
 {gcard}
 {gdeck}
 
-h1. Batch Events
+# Batch Events
 
 The notify container, through the unified event API, allows batching of notifications. Batching causes the space to accumulate the notifications, and once a certain amount of time has passed or a certain size is reached, causes the events to be raised to the client. Batching is very useful when working with a remote space, since it reduces the network roundtrip operations. Moreover, when using Batch notification, it is possible (but not mandatory) to work with the [BatchDataEventArrived|Event Listener Container#BatchDataEventArrived] instead, and handle a batch of notifications at once.
 
@@ -289,7 +289,7 @@ notifyEventListenerContainer.BatchDataEventArrived += new DelegateDataEventArriv
 {gcard}
 {gdeck}
 
-h1. FIFO Events
+# FIFO Events
 
 The notify event container can register for events or notifications, and have the events delivered in a FIFO order.
 
@@ -344,7 +344,7 @@ notifyEventListenerContainer.EventSessionConfig = sessionConfig;
 {gcard}
 {gdeck}
 
-h1. Durable Notifications
+# Durable Notifications
 
 Durable notifications allows configuring the notify container to withstand failover and short network disconnections with no notifications lost.
 
@@ -397,7 +397,7 @@ notifyEventListenerContainer.EventSessionConfig = sessionConfig;
 {gcard}
 {gdeck}
 
-h1. Take on Notify
+# Take on Notify
 
 The notify event container can be configured to automatically perform a take on the notification data event. It can also be further configured to filter out events if the take operation returned {{null}}. (This usually happens when several clients receive this event, and only one succeeds with the take.)
 
@@ -439,7 +439,8 @@ notifyEventListenerContainer.IgnoreEventOnNullTake = true;
 {gdeck}
 
 {anchor:SpaceDataEventArgs}
-h1. Space Data Event Args
+
+# Space Data Event Args
 
 The notify container uses GigaSpaces [data event session API|Space Events] under the hood. When a notification is triggered, it contains SpaceDataEventArgs, which holds more information about the notification itself, such as the template and the DataEventType (e.g. was this notification triggered by a write or an update operation?). When using the notify container, it is possible to receive that additional information as a parameter of the event listener method:
 
@@ -498,7 +499,7 @@ public Data ProcessData(IEventListenerContainer sender, DataEventArgs<Data> e)
 {gcard}
 {gdeck}
 
-h1. Queued Event Handling
+# Queued Event Handling
 
 When a notification is received, it occurs asynchronously in a separate thread. That thread is part of the space proxy resource pool that is in charge of receiving and executing notifications code. As a result, special care should be taken when the event listening method execution is not very short, because it could hold the proxy resource for too long, and eventually exhaust it, which causes notifications to get lost. If the event listening method needs to execute code that takes some time, it is recommended to use the {{QueuedEventHandling}} feature.
 
@@ -564,7 +565,7 @@ notifyEventListenerContainer.CloneEventListenersPerThread = true;
 {gcard}
 {gdeck}
 
-h1. Handling Exceptions
+# Handling Exceptions
 
 During the life-cycle of the polling container, two types of exceptions might be thrown:
 - User Exception
@@ -572,7 +573,7 @@ During the life-cycle of the polling container, two types of exceptions might be
 
 A User Exception is an exception that occurs during the invocation of the user event listener. A Container Exception is an exception that occurs anywhere else during the life-cycle of the container (for example, during the receive or trigger operation handler).
 
-h2. Subscribing to the ContainerExceptionOccured Event
+## Subscribing to the ContainerExceptionOccured Event
 
 It is possible to be notified when a container exception occured, by subscribing to the ContainerExceptionOccured event, and get a reference to the exception.
 
@@ -611,7 +612,7 @@ public void ExceptionHandler(object sender, ContainerExceptionEventArgs e)
 {gcard}
 {gdeck}
 
-h2. Subscribing to the UserExceptionOccured Event
+## Subscribing to the UserExceptionOccured Event
 
 It is possible to be notified when a user exception occured, by subscribing to the UserExceptionOccured event. This arguments of this event contain the entire DataEventArgs of the original DataEventArrived. By default, any event that is thrown inside the event listener scope, results in transaction rollback if the container is set to be transactional. This can be overriden if the user exception handler sets the event state to: ignored.
 
@@ -649,6 +650,7 @@ public void ExceptionHandler(object sender, UserExceptionEventArgs<Data> e)
 {code}
 {gcard}
 {gdeck}
-h1. Default Values of Notify Container Configuration Parameters
+
+# Default Values of Notify Container Configuration Parameters
 
 The default values for all of the notify container configuration parameters, such as {{perform-take-on-notify, ignore-event-on-null-take}}, and others, can be found in the API docs. Each property has a corresponding Default<property name> const field that sets the default value of the property.

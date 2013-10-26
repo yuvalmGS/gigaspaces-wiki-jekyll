@@ -8,13 +8,13 @@ page_id: 63799341
 {composition-setup}
 {summary:page}Space task executors allow you to easily execute grid-wide tasks on the space.{summary}
 
-h1. Overview
+# Overview
 
 GigaSpaces support executing tasks in a collocated Space (processing unit that started an embedded Space). Space tasks can be executed either directly on a specific cluster member using typical routing value. Space tasks can also be distributed, which means it is executed in a "broadcast" mode on all the primary cluster members concurrently and reduced to a single result on the client side, which is also known as the map reduce pattern which is used in many applications that does parallel processing. Space tasks are dynamic in terms of content, it contains user code that will be executed at the Space as is.
 
 !GRA:Images^Executors_task_flow_basic.jpg!
 
-h1. Space Task API
+# Space Task API
 
 The {{ISpaceTask}} interface is defined as follows:
 
@@ -64,7 +64,7 @@ ISpaceProxy spaceProxy = // obtain a proxy to a space
 int count = spaceProxy.Execute(new CountTask("hello world"), 2);
 {code}
 
-h1. Distributed Space Task API (Map Reduce)
+# Distributed Space Task API (Map Reduce)
 
 A {{IDistributedSpaceTask}} is a space task that ends up executing more than once (concurrently) and returns a result that is a reduced operation of all the different execution.
 
@@ -135,7 +135,7 @@ ISpaceProxy spaceProxy = // obtain a proxy to a space
 long count = spaceProxy.Execute(new DistributedCountTask("hello world"));
 {code}
 
-h1. Space Task Results Filter
+# Space Task Results Filter
 
 When executing a distributed space task, results arrive in an asynchronous manner and once all the results have arrived, the {{ISpaceTaskResultsReducer}} is used to reduce them. The {{ISpaceTasukResultsFilter}} can be used as a callback and filter mechanism to be invoked for each result that arrives.
 
@@ -181,7 +181,7 @@ The filter can be used to control if a result should be used or not (the {{Skip}
 
 The filter can also be used as a way to be identify that results have arrived and we can do something within our application as a result of that. Note, in this case, make sure that heavy processing should be performed on a separate (probably pooled) thread.
 
-h1. Transactions
+# Transactions
 
 Space tasks fully support transactions, an execute request can receive a
 transaction from the client and it will be delegated into the task execution it self once it is being executed at the space node.
@@ -221,7 +221,7 @@ public class ClearMyObjectTask : ISpaceTask<int>
 }
 {code}
 
-h1. Asynchronous Execution
+# Asynchronous Execution
 
 A space task can also be executed asynchronously with the corresponding {{BeginExecute}} {{EndExecute}} method. This follows the standard .NET asynchronous API, once the execution is complete the execute invoker is notified by the async result which is received from the {{BeginExecute}} method or to a supplied callback. This will be similiar to executing a task in a seperate thread, allowing to continue local process while waiting for the result to be calculated at the space nodes.
 
@@ -259,7 +259,6 @@ ISpaceProxy spaceProxy = // obtain a proxy to a space
 spaceProxy.BeginExecute(new DistributedCountTask("hello world"),ResultCallBack, new MyStateObject());
 
 ...
-
 
 public void ResultCallBack<long>(IAsyncResult<long> asyncResult)
 {

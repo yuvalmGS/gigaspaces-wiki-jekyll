@@ -8,7 +8,8 @@ page_id: 63799391
 {composition-setup}
 {summary}Working with Space Documents{summary}
 
-h1. Overview
+# Overview
+
 !GRA:Images^new-in-801-banner.png|align=right!
 
 The GigaSpaces document API exposes the space as [Document Store|http://en.wikipedia.org/wiki/Document-oriented_database]. A document, which is represented by the class {{SpaceDocument}}, is essentially a collection of key-value pairs, where the keys are strings and the values are primitives, {{String}}, {{Date}}, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
@@ -21,10 +22,11 @@ Before a certain Document instance is written to the space, its type should be i
 
 Note that the Document type does not describe the properties themselves (except for the names of the ID and Routing properties). These are completely dynamic and each instance can have a different set of properties (although in most cases Document instances of the same type are likely to have identical or similar set of properties).
 
-h2. Schema Evolution with Space Documents
+## Schema Evolution with Space Documents
+
 Since a {{SpaceDocument}} is completely dynamic by nature, it is very easy to change or evolve your data model without ever taking down the Space. Simply change your application code to add additional properties or remove existing ones, and you're good to go. Even better, old and new versions can co-exist since the space does not enforce any restriction with regards to the property set of documents that belong to a certain type. This is a much more lightweight model in comparison to the classic concrete object model, where a recompilation and in many cases a full space restart is required to change the data schema.
 
-h1. Type Definition
+# Type Definition
 
 Before we start writing and reading {{SpaceDocument}} from the space, we need an *initial* schema definition of the document type.
 
@@ -56,7 +58,7 @@ spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 
 Note that this code does not reflect the complete model - most of the properties do not need to be introduced to the schema. Only properties with special roles (ID, Routing) are part of the schema definition. These meta model *settings cannot be changed* without restarting the space or dropping the type, clearing all its instances and reintroducing it again.
 
-h1. Creating and Writing Documents
+# Creating and Writing Documents
 
 To create a document in the space, create a {{SpaceDocument}} object using the type name, and set the desired properties. Then write it to the space using the regular {{ISpaceProxy}} write method:
 {code:java}
@@ -135,11 +137,11 @@ public void WriteProduct2(ISpaceProxy spaceProxy)
 (!) Update semantics are the same as for concrete objects, except *partial update*, which is not currently supported.
 (!) Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviors in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
 
-h1. Reading and Removing Documents
+# Reading and Removing Documents
 
 There are three types of document queries:
 
-h2. Template Query
+## Template Query
 
 This type of query uses a SpaceDocument with _type_ and any other set of properties values as a template for the query
 For example: Read a document of type *Product* whose *Name* is *Anvil*:
@@ -156,7 +158,7 @@ public SpaceDocument ReadProductByTemplate(ISpaceProxy spaceProxy)
 }
 {code}
 
-h2. Sql Query
+## Sql Query
 
 You can use the [SqlQuery] to search for matching {{SpaceDocument}} entries.
 
@@ -189,7 +191,7 @@ public SpaceDocument[] ReadProductBySqlNested(ISpaceProxy spaceProxy)
 }
 {code}
 
-h2. ID Based Query
+## ID Based Query
 
 For example: Read a document of type *Product* whose ID is *hw-1234*:
 {code:java}
@@ -215,14 +217,14 @@ public SpaceDocument[] ReadProductByMultipleIds(ISpaceProxy spaceProxy)
 (+) All other Id based operations (ReadIfExists, TakeById, TakeIfExistsById, TakeByIds) are supported for documents as well.
 (+) All overloads of those operations with timeout, transactions, modifiers etc. are supported for documents. The semantics is similar to concrete objects.
 
-h1. Nested Properties
+# Nested Properties
 
 The {{Document}} properties' values can be either scalars (integers, strings, enumerations, etc), collections (arrays, lists), or nested properties (dictionary or an extension of dictionary, such as {{DocumentProperties}}). Values must adhere to the same restrictions as in the concrete object model (e.g. be serializable). Nested properties can be queried by using the dot ('.') notation to describe paths, as shown above.
 
 (+) It's highly recommended to use {{DocumentProperties}} for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
 (!) While it's possible to use  {{SpaceDocument}} as a property, it is probably a mistake, since it contains extra information which is not relevant for nested properties (type name, version, etc.).
 
-h1. Indexing
+# Indexing
 
 Properties and nested paths can be [indexed|indexing] to boost queries performance. In the type registration sample above, the *Name* and *Price* properties are indexed.
 
@@ -230,7 +232,7 @@ Since the schema is flexible and new properties might be added after the type ha
 
 {refer}For more information about indexing, see the [Indexing|Indexing] page.{refer}
 
-h1. Events
+# Events
 
 Event containers (both [polling container|Polling Container Component] and [notify container|Notify Container Component]) support {{SpaceDocument}} entries.
 
@@ -259,7 +261,7 @@ public class SimpleListener
 }
 {code}
 
-h1. FIFO
+# FIFO
 
 FIFO support is off by default with {{SpaceDocument}} entries (as with concrete object entries). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
 
@@ -277,7 +279,8 @@ spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 
 (!) Changing FIFO support after a type has been registered is not supported.
 
-h1. Transactions and Optimistic Locking
+# Transactions and Optimistic Locking
+
 Transactions and isolation modifier semantics is identical to the concrete object semantics.
 
 Optimistic locking is disabled by default with {{SpaceDocument}} entries (same as with concrete object). To enable it, modify the type introduction code and set the optimistic locking support. For example:
@@ -296,7 +299,8 @@ spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 
 (!) Changing optimistic locking after a type has been registered is not supported.
 
-h1. Dynamic Properties Storage Type
+# Dynamic Properties Storage Type
+
 By default, the dynamic properties of the document will be deserialized fully and kept in space as an instance of their corresponding space type class. This allows indexing and nested matching against these properties. However, in some scenarios, the data kept inside the dynamic properties is not used for matching. In that case it is possible to keep these properties serialized in their binary format in the space, increasing performance and reducing memory consumption.
 
 However, the data stored in binary format will be not be visible via the management center or readable from an interoperable Java/C++ client, it will appear as binary large object to these clients and will only deserialized when a .NET client reads it. The way to specify the storage type is when constructing the type using the {{SpaceTypeDescriptorBuilder}}:
@@ -315,7 +319,8 @@ spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 
 {refer}For more info on storage types, please refer to [Property Storage Type]{refer}
 
-h1. Persistency
+# Persistency
+
 The External Data Source is supported for space documents, however, if the EDS is also used to initially load the space with data, the space needs to be aware of the type descriptors of the documents. Therefore, the space needs to be started with known type descriptors.
 
 Example on how to implement an EDS that persists SpaceDocuments of type "Trade" and start a space in a basic processing unit container with the EDS and known Trade type descriptors:
@@ -404,5 +409,6 @@ Concrete objects can be persisted via document EDS as well, in the same way.
 (!) In order to support InitialLoad of documents the relevant types must be declared in the space config, so that they are registered in the space before InitialLoad is invoked.
 (!) Document persistence is currently not provided by default - If needed, the External Data Source should be implemented to fit the required solution.
 
-h1. Advanced Options
+# Advanced Options
+
 {children}

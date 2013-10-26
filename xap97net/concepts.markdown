@@ -13,7 +13,8 @@ Enterprise-level application solutions were last truly designed and deployed in 
 
 For this reason, these application servers focused mainly on resource management, and provided the means for web application deployment, such as web-containers, COM+ containers for business logic processing, and a data-access layer for interaction with external data sources, mainly relational databases.
 
-h1. Space-Based Architecture
+# Space-Based Architecture
+
 A detailed description of the model and the theory that led to the inception of GigaSpaces XAP as a next-generation development and runtime platform, as the means to achieve scalability in a high-throughput, stateful environment, is provided in the following white paper: [The Scalability Revolution: From Dead End to Open Road|http://www.gigaspaces.com/os_papers.html#scalrev].
 
 In "The Scalability Revolution", we define scalability as the ability to increase an application's working capacity while retaining data and logic consistency, latency, and the application code - and show that inherent scalability barriers represent a dead end for today's tier-based business-critical applications. In order to survive, today's applications must achieve linear scalability, and the only valid way to do so, is to switch from a tier-based model to a new architectural approach - partitioned applications.
@@ -24,7 +25,8 @@ The [Space-Based Architecture and the End of Tier-based Computing|http://www.gig
 
 GigaSpaces XAP was built to be an implementation of the theory behind these concepts, and to make the development of applications based on this model, *simple.*
 
-h1. Overcoming Limitations of First-Generation Servers
+# Overcoming Limitations of First-Generation Servers
+
 {toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
 GigaSpaces XAP and Space-Based Architecture overcome the major limitations found in first-generation application servers. These limitations can be divided into three main categories:
 
@@ -34,13 +36,13 @@ GigaSpaces XAP and Space-Based Architecture overcome the major limitations found
 
 GigaSpaces XAP provides a unique advantage in terms of scalability and performance, in addition to supporting many types of applications. The complexity is solved by providing a holistic view of the application requirements, and by not focusing only on a single aspect of the system.
 
-h2. Overcoming Complexity
+## Overcoming Complexity
 
 Common tier-based architecture preach to separation of concerns across layers. While this is a good practice in theory, it leads to various different technologies, libraries, frameworks and products each developer needs to be familiar with even for simple applications, instead of focusing on the most important thing -  business logic processing. Data storage/management and messaging were always defined as a problem of other types of servers. This assumption moves the burden of putting it all together onto the development teams.
 
 GigaSpaces XAP takes a different approach. Space-Based Architecture views the problem from end-to-end, and provides a complete solution without the need for complex integration within the boundaries of applications and systems.
 
-h2. Built for Scalability and Performance
+## Built for Scalability and Performance
 
 GigaSpaces XAP is a memory-based technology at its core. The sheer capability of data storage and computation within the boundaries of a single process (i.e. collocation), without a need for expensive inter-process communications and file-system access, performs far better than alternatives, such as integration between application servers and relational databases.
 
@@ -48,7 +50,7 @@ In addition, built-in data partitioning on top of grid deployment and management
 
 In alternative tier-based architecture the need to use specific server implementation, such as database, application server and messaging server and integrating those into a single system, results in complexity and inability to scale the entire system linearly. The fact that each server has a different scaling and high-availability (clustering) policies, makes it difficult and in many cases impossible to support scaling beyond a certain size.
 
-h2. A Wider Range of Applications
+## A Wider Range of Applications
 
 Prior generations of application servers were built for the web in the days when HTTP was purely request/response. This limited their usage in the cases of:
 - Event driven applications, where an event can be state changes or elapsed time.
@@ -61,13 +63,16 @@ Prior generations of application servers were built for the web in the days when
 GigaSpaces XAP supports web-enabled request/response applications, in addition to all the modern computational styles described above, and the combination of all of the above.
 {toc-zone}
 
-h1. Space - Concepts and Capabilities
+# Space - Concepts and Capabilities
+
 {toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
 
 The space is the 'secret sauce' behind GigaSpaces XAP architecture, and it is important to understand its capabilities in order to better understand the entire Space-Based Architecture model.
 
 {anchor:tuple}
-h2. Tuple Space
+
+## Tuple Space
+
 Tuple Space is a different paradigm for inter-process communication, based on sharing information tuples instead of the alternate message passing paradigm.
 
 Linda language, developed by David Gelernter and Nicholas Carriero at Yale University, was the first implementation of Tuple Spaces. Later on, the [JavaSpaces specification|http://www.sun.com/software/jini/specs/js2_0.pdf] was defined as part of [Sun's Jini specification|http://www.sun.com/software/jini/specs/].
@@ -78,9 +83,12 @@ Over the life-cycle of the product, with additional capabilities added into the 
 
 This section describes the capabilities of the space, and how a combination of these capabilities results in a simple and sound runtime model for the GigaSpaces XAP application server.
 
-h2. Space
+## Space
+
 A Space is a logical in-memory service, which can store entries of information. {{Entry}} is a domain object. In .NET, an entry can be as simple as a [POCO|http://en.wikipedia.org/wiki/Plain_Old_CLR_Object].
-h2. Space - Basic Concepts
+
+## Space - Basic Concepts
+
 The space is accessed via a programmatic interface which supports the following main verbs:
 - *Write* -- the semantics of writing a new entry of information into the space.
 - *Read* -- read the contents of a stored entry into the client side.
@@ -100,7 +108,8 @@ GigaSpaces XAP extends template matching by providing semantics to query ranges 
 {tip}
 {toc-zone}
 
-h1. Clustering and Topologies
+# Clustering and Topologies
+
 {toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
 
 The [space as defined previously|#Space - Concepts and Capabilities] is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a *cluster*, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
@@ -110,20 +119,24 @@ The three main cluster topologies are:
 - [Partitioned|#Partitioned]
 - [Resilient Partitioning|#Resilient Partitioning]: a combination of Replication and Partitioned.
 
-h2. Replication
+## Replication
+
 When two or more spaces share their entire content with one another, these spaces are fully replicated. When an entry is added into one of them, it is immediately replicated to its replica. Replication is useful to preserve high-availability of the data instances. In case one of the space instances dies, another one contains the entire information set.
 
 Full replication, where all the spaces of a cluster are a replica of one another, provides the highest availability of information. However there is a limit to the amount of information which can be stored in the cluster. The sum of information is limited according to the memory capacity of a single node.
 
-h4. Synchronous Replication
+#### Synchronous Replication
+
 GigaSpaces XAP provides various levels of replication QoS. The highest quality is synchronous replication (sync replication). In sync replication, any client writing into the space is blocked until the information has been replicated into its replicated space(s).
 
-h4. Asynchronous Replication
+#### Asynchronous Replication
+
 The asynchronous replication (async replication) strategy returns the call back to the client, and at the same time replicates the information into the other replica. Async replication may lose information in the case of a failure within the source space while the information has not yet been delivered to its replica. However, it does provide better performance for clients.
 
 (i) The replication QoS should be considered, based on the application requirements. The default replication policy is synchronous replication.
 
-h2. Partitioned
+## Partitioned
+
 Spaces form a 'partitioned cluster' when there is a need to store, in-memory, larger amounts of data than can be stored in a single space process memory. Data is divided into partitions, and each space contains a subset of the information. A combination of all the spaces within the same cluster, creates the full set of information.
 
 For a remote client using a proxy to the cluster (clustered proxy), the division into partitions is transparent.
@@ -132,8 +145,8 @@ Information is divided into partitions when it is accessed into the cluster, usi
 
 For example, when writing one million orders into a space, the orders are (and should be) divided across the partitions in the cluster. The routing that specifies which order instance should be stored in which partition, is decided based on a property of the order itself. The application developer provides hints to the clustered proxy by suggesting a particular property within the entry. The clustered proxy decides, based on the hash-code of the property module, the size of the cluster.
 
+## Resilient Partitioning
 
-h2. Resilient Partitioning
 Since each partition contains only a subset of the data, losing a partition can result in information being lost if that partition is the only place that the data exists. For this reason, a combination of partitioning and replication provides both scalability and resiliency.
 
 The common topology is of a partitioned cluster, where each partition member has one or more replicas. With this topology, there is no scalability bottleneck in the amount of data that can be stored in the cluster, and each partition is fault-tolerant as it has a backup replica.

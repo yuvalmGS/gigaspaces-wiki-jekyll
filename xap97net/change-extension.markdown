@@ -8,11 +8,11 @@ page_id: 64325381
 {composition-setup}
 {summary:}This page covers the Change Extension extension methods.{summary}
 
-h1. Overview
+# Overview
 
 The {{ChangeExtension}} provides extension methods of {{ISpaceProxy}} on top of the [Change API] that simplify the common use cases of the {{Change}} operation.
 
-h1. Add and Get operation
+# Add and Get operation
 
 A common usage pattern is to increment a numeric property of a specific entry and needing the updated value after the increment was applied.
 Using the {{AddAndGet}} operation you can do that using one method call and get an atomic add and get operation semantics.

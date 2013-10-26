@@ -7,7 +7,8 @@ page_id: 63799393
 
 {summary}How to implement deep (complex) interoperable classes.{summary}
 
-h1. Overview
+# Overview
+
 A deep class is defined as a class in which, at least one of its fields is a user defined class.
 
 (i) Creating a deep class to be interoperability ready, requires defining all its deep fields as fields that will be stored to the space, using its matching Java objects types. Use the property, {{StorageType = StorageType.Object}} on the {{SpaceProperty()}} attribute, defined to all the fields that are user defined objects.
@@ -16,7 +17,7 @@ A deep class is defined as a class in which, at least one of its fields is a use
 
 (i) Properties mapping: when defining interoperability of properties the names of the properties of the Java and .NET classes have to match exactly. In order to keep .NET and Java coding conventions and still create matching classes we use {{AliasName}} property of the {{SpaceProperty()}} attribute to map properties between .NET and Java.
 
-h1. Designing Interoperable Classes
+# Designing Interoperable Classes
 
 For the purpose of explaining the subject we'll look at a Person class (a deep class)
 

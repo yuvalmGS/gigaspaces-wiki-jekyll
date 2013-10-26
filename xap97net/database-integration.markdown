@@ -6,7 +6,9 @@ page_id: 63799360
 ---
 
 {summary}This section describes Database Integration in SBA{summary}
-h1. Overview
+
+# Overview
+
 One of the first concerns people have when encountering space-based architecture is that the role of the database seems to be diminished. That makes sense. In SBA, the role of the database is different than in typical tier-based architecture - where the database is considered the only system of record and is more important than all of the other moving parts.
 
 The location of the data should be considered, based on its life-span. For example, transaction state, which is only valid for a short itme, should not be stored in a database to achieve fault-tolerance. In SBA, this type of information is stored in memory, and the space provides fault-tolerance capabilities.
@@ -17,10 +19,9 @@ A database has an additional role in SBA, when there is a need to extend memory 
 
 SBA does not deny the use of a database, but suggests a more natural role for it. For this reason, integration with the database is core to GigaSpaces XAP.
 
+# Types of Database Integration
 
-h1. Types of Database Integration
-
-h3. Reliable Asynchronous Persistence
+### Reliable Asynchronous Persistence
 
 In a high performance transactional system, we would like the transaction to be bound to space resources only, and the update of the backing database be done after the transaction is complete, asynchronous to the transaction. The synchronization between the in-memory system of record and the database, should be reliable as well.
 
@@ -31,13 +32,11 @@ The typical cluster topology is of reliable partitioning (partitions with backup
 
 The mirroring service is one-way only - from the space cluster to the database or other external data source.
 
-
-h3. External Data Source Integration
+### External Data Source Integration
 
 GigaSpaces XAP provides open interfaces to external data source integration. The default implementation of these interfaces is database integration using [NHibernate|http://nhforge.org/Default.aspx]. For implementation details please refer to [Integration with Other Data Sources |Integration with Other Data Sources] in the Programmer's Guide.
 
 These interfaces are used by the space to store and retrieve data from external data sources (e.g. databases).
-
 
 {tip:title=About Memory Volatility}
 One of the common questions when it comes to memory as a critical system of record, is its volatility. There is no doubt that in-memory storage is much faster than disk storage, however, how can we guarantee information completeness if the data is stored in memory?

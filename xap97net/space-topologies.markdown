@@ -8,7 +8,7 @@ page_id: 63799355
 {composition-setup}
 {summary:page|60}Explains the topologies and clustering mechanism of the GigaSpaces in-memory data grid (the Space){summary}
 
-h1. Overview
+# Overview
 
 Different applications might have different caching requirements. Some applications require on-demand loading from an external, slower data source, due to limited memory. Others use the cache for read-mostly purposes. Transactional applications need a cache that handles write and read operations, maintains consistency and serves as the application's system of record.
 
@@ -16,7 +16,7 @@ In order to address these different requirements, GigaSpaces provides an in-memo
 
 This section explains the topologies supported by XAP: Replicated, partitioned and master-local.
 
-h1. GigaSpaces Data Grid: Basic Terms
+# GigaSpaces Data Grid: Basic Terms
 
 - *Space (data grid) instance*: an independent data storage unit. The Space is comprised of all the space instances running on the network.\\ !GS6:Images^DGA-DataGrid.jpg|align=center!\\
 - *Space*: GigaSpaces data grid implementation. A distributed, shared, memory-based repository for objects. A space runs in a _space container_ which is usually transparent to the developer.\\
@@ -34,7 +34,7 @@ h1. GigaSpaces Data Grid: Basic Terms
 
 {info:title=Replication Configuration}For more details on how to configure the replication mechanisms of the Space, refer to [Replication|Replication] in the [Administrator's Guide]. {info}
 
-h1. Data Grid Topologies
+# Data Grid Topologies
 
 GigaSpaces XAP supports the following data grid topologies:
 

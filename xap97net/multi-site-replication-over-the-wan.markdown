@@ -10,7 +10,8 @@ page_id: 63799328
 
 {info:title=Licensing}The Gateway requires a separate license in addition to the GigaSpaces commercial license. Please contact [GigaSpaces Customer Support|http://www.gigaspaces.com/content/customer-support-services] for more details.
 {info}
-h1. Overview
+
+# Overview
 
 Multiple site replication is the ability to replicate state between different deployed spaces, where each space can be also physically located in a different geographical location (also termed a different deployment site).
 
@@ -21,7 +22,8 @@ Multiple site replication is a very common deployment topology in the following 
 
 !GRA:Images2^wan_use_cases.jpg!
 
-h2. WAN Gateway Features
+## WAN Gateway Features
+
 The GigaSpaces WAN Gateway features the following:
 - Optimized bandwidth and WAN connection usage - With the GigaSpaces WAN Gateway every site using one connection when interacting with remote sites.
 - Total Data consistency and no data lost - Due-to its unique architecture where the WAN Gateway is totally stateless no data lose will ever happen. Transactions at the local site are replicate in atomic manner to the remote sites.
@@ -32,7 +34,8 @@ The GigaSpaces WAN Gateway features the following:
 - Site booststraping - Once a sites starts it can reload its entire data or specific data from a remote site without introducing data consistency problems.
 - Data filtering - The WAN Gateway replication can have custom plug-in that allows users to filter/modify data before it is replicated and after it has been replicated at each source/target node.
 
-h1. Supported Toplogies
+# Supported Toplogies
+
 This page will demonstrate two sample multi-site replication topologies. These are not the only supported topologies. In fact, the permutations of topologies are quite extensive, and we've chosen to demonstrate two of the more common topologies which can also serve as a basis for other topologies as required by the user:
 - Multi-master with two sites, where each site is active and updates its subset of the data.
 - Master-slave, where only one site actually updates the data while the rest either serve as a backup or use it in read only mode.
@@ -44,7 +47,7 @@ For both of the above topologies, replication is done in in a similar way: Each 
 Replication may use Hub & Spoke, Ring, Hierarchical or Pass-Through architecture:
 !GRA:Images2^wan_topologies.jpg!
 
-h1. Configuring a Space With Gateway Targets
+# Configuring a Space With Gateway Targets
 
 A replication from one space to the another is basically a replication from a space to a target gateway. The source space is decoupled from the target space. Instead, it is configured to replicate to target space's local gateway, the local gateway is in charge of dispatching the incoming replication packets to the relevant target space. Each space needs to be made aware of the target gateways to which it replicates the data, by specifying the target gateways in the source space configuration.
 
@@ -94,17 +97,17 @@ If you are not interested in having backups running but have the replication to 
 Note that when there are no backups running any failure of the primary might cause a loss of data.
 {tip}
 
-h1. Configuring and Deploying the Gateway
+# Configuring and Deploying the Gateway
 
 A gateway needs to be deployed locally as a spring(java) based processing unit in each site, and is composed of two different components: The delegator and the sink. The delegator is in charge of delegating outgoing replication from the local site to a remote gateway and the sink is in charge of dispatching incoming replication from remote sites into the local space.
 
 !GRA:Images2^wan_gatway_archi.jpg!
 
-h2. Gateway Lookup
+## Gateway Lookup
 
 The different gateway components needs to locate each other across the different sites, for example, a delegator needs to locate the sink of the target gateway to which is delegates the replication. This lookup is done by using dedicated lookup services that the gateways are using to register and locate each other. Since this lookup process is usually done across the WAN, the most reasonable way of locating the lookup services is using unicast (multicast is also supported). With the following example we will demonstrate a unicast lookup discovery.
 
-h2. Gateway Basic Configuration
+## Gateway Basic Configuration
 
 Following the above example, here we demonstrate how to configure the local gateway processing unit in New York, which needs to send replication to London and Hong Kong and also receive replication from these two sites.
 
@@ -147,11 +150,11 @@ In the above example we see that both the sink and delegator needs a reference t
 The delegator and sink components are actually isolated and can even be deployed in separate processing units but the most simple deployment would be to bundle theses two together. However, in some cases you might want to separate this into two or more machines due to system loads or other reasons.
 {refer}For full details and available configuration please refer to [Replication Gateway Components|XAP95:Replication Gateway Components]{refer}
 
-h2. Gateway and the Mirror Service
+## Gateway and the Mirror Service
 
 A gateway and a [Mirror Service|XAP95:Asynchronous Persistency with the Mirror] are two different components which can co-exist together without any effect on each other. A gateway is just another reliable asynchronous target. Due to this fact, we will not discuss or demonstrate mirror service along side with a gateway because they do not contradict each other or require any special configuration when used in the same space cluster.
 
-h2. Gateway and Distributed Transactions
+## Gateway and Distributed Transactions
 
 In order to preserve distributed transactions atomicity (distributed transactions consolidation) the following property should be added to the space configuration:
 {code:xml}
@@ -198,8 +201,7 @@ Distributed transaction participants data will be processed individually if 10 s
 
 {info}Note that by setting the "cluster-config.groups.group.repl-policy.processing-type" property to "multi-source" all reliable asynchronous replication targets for that space will work in distributed transaction consolidation mode (For example, a Mirror would be in distributed transaction consolidation mode as well.){info}
 
-
-h1. Master-Slave Topology
+# Master-Slave Topology
 
 With this architecture, we have a master-slave topology where all data is being manipulated in one site, and two other sites are reading the data but not updating it. In other words, the "other sites" - the slaves - should not replicate data to the other gateways.
 
@@ -445,7 +447,7 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 {gcard}
 {gdeck}
 
-h1. Multi-Master Topology
+# Multi-Master Topology
 
 With this architecture, we will have a multi-master topology where data is being generated and manipulated in all sites.
 
@@ -693,24 +695,26 @@ In the above we have configured both LONDON and NEWYORK at the sources of the si
 {tip}*Multi-Master Running example*
 The [Multi-Master running example|SBP:WAN Replication Gateway] includes a three-way setup replicating data between three sites, this example contains a spring(java) processing unit for the spaces, but the gateway components are the same.{tip}
 
-h1. Filtering Replication Between Gateways
+# Filtering Replication Between Gateways
 
 In some cases, there can be data that should not be replicated between the sites but should still be replicated locally to the backup or a mirror service. Hence, specifying the object is not replicated does not fit. Since a replication channel to a gateway is like any other replication channel, a custom [Replication Filter|XAP95:Cluster Replication Filters] at the source space can be used to filter the relevant data from being sent to the target gateway. This filtering should be based on the replication target name in order to identify that the replication filter is called for the correct outgoing replication to the gateway.
 {refer}For full details and example please refer to [Replication Gateway Filtering|XAP95:Replication Gateway Filtering]{refer}
 
-h1. Bootstrap One Site From Another Site
+# Bootstrap One Site From Another Site
 
 Bootstrapping a site from another site is a process in which one site space is starting fresh and it is being populated with the data of another site space. This can be useful after a very long disconnection where the replication redo-log in the source spaces that replicates to this site was dropped due to breaching capacity limitations, and the disconnected site should start fresh. Other reasons may be an explicit planned downtime due-to some maintenance of one site which lead to a complete system bootstrap once restarted.
 {refer}For full details of how to enable the bootstrap mechanism refer to [Replication Gateway Bootstrapping Process|Replication Gateway Bootstrapping Process]{refer}
 
 {HTMLcomment:hidden}
-h1. Adding and Removing Sites
+
+# Adding and Removing Sites
 
 Adding and removing a site without down time is done by applying the [Hot Deploy|Deploying onto the Service Grid#DeployingontotheServiceGrid-HotDeploy] method on the space PU.
 - For a Gateway PUs, the process is pretty straightforward. Since they are stateless, their {{pu.xml}} can be simply updated and they can be undeployed and redeployed with the new added sites or removed sites relevant configuration in a regular fashion.
 - A space, however, is stateful. Redeploying it entirely will cause downtime and loss of data (if no database initial load is configured). Therefore the [Hot Deploy|Deploying onto the Service Grid#DeployingontotheServiceGrid-HotDeploy] method should be used. Roughly speaking, while the space is up, its {{pu.xml}} should be updated reflecting the new gateway replication topology state (addition or removal of sites) and then this {{pu.xml}} should be copied into the GSM's #deployment directories, overriding the existing {{pu.xml}} of the space processing unit of the current deployment. Then a manual restart of space instances should be performed, going over each partition, restarting its backup, waiting for it to perform full recovery from the primary (now it should be with the updated{{pu.xml}} configuration) and then restarting the primary instance which will be replaced by the updated backup and will become a backup after restart.
 {HTMLcomment}
 
-h1. Read More
+# Read More
+
 The following pages in this section provide more details on the Multi-Site Replication module:
 {children}

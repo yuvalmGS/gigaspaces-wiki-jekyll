@@ -7,7 +7,9 @@ page_id: 63799428
 
 *Summary* - GigaSpaces components from a functional perspective.
 |[Basic Components|Terminology - Basic Components]|[Data Grid Topologies|Terminology - Data Grid Topologies]||Space-Based Architecture|[Runtime Components|Terminology - Runtime Components]|
-h1. Space-Based Architecture
+
+# Space-Based Architecture
+
 {comment}=========================================
 
          Space Based Architecture
@@ -31,7 +33,6 @@ h1. Space-Based Architecture
 - When deployed onto the [Service Grid|Terminology - Runtime Components#Service Grid], self-healing and SLA capabilities are added.
 
 - Full monitoring and management during runtime are available through the [Management UI|Terminology - Runtime Components#Management UI].
-
 
 {% align center %}
 \\ \\

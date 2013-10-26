@@ -9,7 +9,7 @@ page_id: 63799325
 
 {refer}The [.Net-Java Example] demonstrates many .NET-Java interoperability features.{refer}
 
-h1. Designing Interoperable Classes
+# Designing Interoperable Classes
 
 || C# || Java ||
 |{Code}
@@ -32,7 +32,6 @@ namespace MyCompany.MyProject.Entities
 {Code}|{Code}
 package com.mycompany.myproject.entities;
 
-
 public class Person
 {
     private String name;
@@ -47,7 +46,8 @@ public class Person
 }
 {Code}|
 
-h3. Guidelines and Restrictions
+### Guidelines and Restrictions
+
 The following guidelines and restrictions should be followed in order to enable platform interoperability:
 - The full class name (including package\namespace) in all platforms should be identical.
 \\ (on) Since java packages use a different naming convention than .Net namespaces, it is recommended to use the {{SpaceClass(AliasName="")}} feature to map a .Net class to the respective java class.
@@ -64,7 +64,7 @@ The following guidelines and restrictions should be followed in order to enable 
 \\ (on) If your class contains a field whose type is not in the table, you can use {{SpaceExclude}} to exclude it from the space.
 \\ (i) Some of the types have different charactaristics in .NET and Java (signed\unsigned, nullable\not nullable, precision, etc.) This can lead to runtime exceptions (e.g. trying to store {{null}} in a .NET structure) or unexpected results (e.g. copying values between signed and unsigned fields).
 
-h1. Supported Types for Matching and Interoperability
+# Supported Types for Matching and Interoperability
 
 The following types are supported by the space for matching and interoperability:
 || CLS || C# || VB.Net || Java || Description ||
@@ -95,7 +95,7 @@ The following types are supported by the space for matching and interoperability
 3. In .Net a {{DateTime}} is measured in ticks (=100 nanoseconds) since 1/1/0001, whereas in java a {{Date}} is a measured in milliseconds since 1/1/1970.
 4. The types {{Decimal}} (.Net) and {{BigDecimal}} (java) have different precision and range (see .Net and java documentation for more details). In addition, be aware that serialization/deserialization of these types is relatively slow, compared to other numeric types. As a rule of thumb these types should not be used, unless the other numeric types presicion/range is not satisfactory.
 
-h1. Arrays and Collections support
+# Arrays and Collections support
 
 The following collections are mapped for interoperability:
 || .Net || Java || Description ||

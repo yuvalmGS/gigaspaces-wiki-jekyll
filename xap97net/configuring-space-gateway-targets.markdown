@@ -9,7 +9,7 @@ page_id: 63799430
 {composition-setup}
 {info}This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)|Multi-Site Replication over the WAN] before reading this page.{info}
 
-h1. Overview
+# Overview
 
 Each space that is replicating to another space (or spaces) is actually replicating to the local gateway of the target space,
 and that gateway is in charge of dispatching the replication to the relevant partitions. Such replicating space needs be configured with the name of each of the target gateways and
@@ -76,7 +76,7 @@ container.CreateSpaceProxy("Space", "/./myNYSpace", spaceConfig);
 
 Each configuration can be configured for all gateways or specifically per each gateway as seen in the above example, max-redo-log-capacity is configured for all gateways while bulk-size is specifically overridden in the configuration of HONGKONG gateway target. A recommended reading regarding the replication redo-log is [Controlling the Replication Redo Log|XAP95:Controlling the Replication Redo Log].
 
-h1. Configurable Parameters
+# Configurable Parameters
 
 ||Property||Description||Default||
 |BulkSize|Specifies the size of each replication bulk in terms of replication packets| 100 packets |

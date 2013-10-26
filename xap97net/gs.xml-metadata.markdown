@@ -7,14 +7,14 @@ page_id: 63799396
 
 {summary:page|65}This page explains how to use GS.XML to define space objects metadata.{summary}
 
-h1. Overview
+# Overview
 
 This page describes the usage of GS.XML to define space objects metadata.
 GS.XML is an XML file that contains the space type's metadata definitions. The metadata definitions available using the XML are equivalent to attribute-based space metadata functionality. The main advantage of using the GS.XML file for the space metadata definitions, is that the data model remains unchanged when used in the space. Data objects can have independent space metadata definitions that have no impact on the objects' code.
 
 {refer}For more info about space metadata definitions, refer to [Object Metadata]{refer}
 
-h1. GS.XML File Naming and Location
+# GS.XML File Naming and Location
 
 All GS.XML files ({{\*.gs.xml}}) should be located in the execution directory.
 All files have to use the .GS.XML extension.
@@ -24,12 +24,14 @@ The files can be named as follows:
 2) File name = class name only. Example: type name: MyPackage.MyType, GS.XML file: MyType.GS.XML
 3) Any other file name with .GS.XML extension -- this option is the last to be searched and naturally works a bit slower.
 
-h2. GS.XML Schema Definitions
+## GS.XML Schema Definitions
+
 Schema definitions for the .NET GS.XML can be found in two locations
 1)	Web: http://www.gigaspaces.com/dtd/6_5/gigaspaces-metadata-net.dtd
 2)	Local: under <install Dir>\ Bin\gigaspaces-metadata-net.dtd
 
-h1. GS.XML Example
+# GS.XML Example
+
 See blow an example of {{Car}} class's space metadata definitions in GS.XML
 {code}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -47,9 +49,9 @@ See blow an example of {{Car}} class's space metadata definitions in GS.XML
 </gigaspaces-mapping>
 {code}
 
-h1. XML Elements
+# XML Elements
 
-h3. Class Level Elements
+### Class Level Elements
 
 - {{*<class>*}} -- a {{class}} element encapsulates metadata information of a concrete class. The below table shows the available attributes for the Class element.
 || Attribute || Description ||
@@ -62,8 +64,8 @@ For more details, see: [Object Metadata|Object Metadata#Including/Excluding Cont
 | {{include-fields}} |Gives the ability to expose or hide fields from the space (default is public) {refer}For more details, see: [Object Metadata|Object Metadata#Including/Excluding Content from the Space]{refer} |
 | {{alias-name}} |Gives the ability to map a .NET class name (including namespace) to a space class name |
 
+### Field Level Elements
 
-h3. Field Level Elements
 - {{*<property>*}} \- contains metadata information for a class's field.
 || Attribute || Description ||
 | {{name}} | (Required) Maps to the relevant class's field name. |

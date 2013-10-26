@@ -8,11 +8,11 @@ page_id: 63799425
 {summary}This page is about bootstrapping a site from another site across gateways.{summary}
 {info}This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)|Multi-Site Replication over the WAN] before reading this page.{info}
 
-h1. Overview
+# Overview
 
 Bootstrapping a site from another site is a process in which one site space is starting fresh and it is being populated with the data of another site space. This can be useful after a very long disconnection where the replication redo-log in the source spaces that replicates to this site was dropped due to breaching capacity limitations, and the disconnected site should start fresh. Or some initiated downtime due to some maintenance of one site which should bootstrap once it is restarted.
 
-h1. How It Works
+# How It Works
 
 A bootstrap of a site is being done via a gateway sink of that site and the gateway sink of the site that the bootstrap should be done from. Therefore, both sites must have a deployed gateway sink.
 
@@ -29,7 +29,7 @@ All the changes that are done in the bootstrap source site during this copy proc
 
 !GRA:Images2^wan-bootstrap-sync.jpg!
 
-h1. Initiating a Bootstrap
+# Initiating a Bootstrap
 
 Unlike regular space recovery, where a backup or replicated space performs a recovery, a bootstrap has much more implications and therefore it is an administrative command executed by the user on demand.
 

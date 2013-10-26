@@ -7,17 +7,17 @@ page_id: 63799413
 
 {summary}Advance events scenarios{summary}
 
-h1. Overview
+# Overview
 
 While in most cases, using the {{DefaultDataEventSession}} as desribed in the [Space Events|Space Events] page is enough to get the job done, in some cases it is not enough. For instance if you want a mechanism that detects that an event listener is no longer active due to space failure, or to make sure that if the client proxy terminates unexpectedly, the listener resources are cleaned up in the space. All of these, and more, are covered in this page.
 
-h1. Event Mechanism in General
+# Event Mechanism in General
 
 Event registration is done using a supplied [template|Query Template Types], and a callback method. The registration notify template can be stored in one or more spaces, depending on the template and cluster topology.
 
 Every time an event occurs in a space, which matches the given template and event type in that space, the event is triggered at the proxy, which activates the callback method. What happens if the space or the proxy is no longer available? What happens if the proxy can't manage the events overload? These issues can be addressed by customizing a data event session, with appropriate behaviors to handle these issues.
 
-h1. Customizing DataEventSession Behavior
+# Customizing DataEventSession Behavior
 
 In order to customize the behavior of an [{{IDataEventSession}}|http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_IDataEventSession.htm], a new one needs to be created, using a specific [{{DataEventConfig}} |http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_EventSessionConfig.htm] that configures the behavior. This section describes different scenarios, and how to address them, by customizing the data event session
 
@@ -30,7 +30,7 @@ EventSessionConfig eventSessionConfig = new EventSessionConfig();
 IDataEventSession dataEventSession = proxy.CreateDataEventSession(eventSessionConfig);
 {code}
 
-h2. Detecting an Event Listener Failure/Disconnection
+## Detecting an Event Listener Failure/Disconnection
 
 An event listener that is registered for an event might be disconnected for the following reasons:
 - The space that holds the listener registration template, is no longer available.
@@ -63,7 +63,7 @@ eventSessionConfig.AutoRenewLeaseDuration = 10000;
 eventSessionConfig.AutoRenewRTT = 5000;
 {code}
 
-h2. Managing High Notifications Throughput
+## Managing High Notifications Throughput
 
 When a notification is sent from the space to the client, the callback method is executed inside a thread that belongs to the resource pool of the proxy. As a result, this thread is occupied until the callback method returns. As a good practice, it is recommended to create the callback method that returns as fast as possible, otherwise the resources pool of the proxy can be choked, and cause a [slow consumer|XAP95:Slow Consumer] scenario. If the notifications should trigger a long running job, it is better to put this job in a queue, and handle it in a client thread later on.
 

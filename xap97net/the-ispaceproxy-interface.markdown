@@ -8,7 +8,7 @@ page_id: 63799326
 {composition-setup}
 {summary:page|60}The {{ISpaceProxy}} interface provides access to the In-Memory Data Grid or the Space. The {{ISpaceProxy}} interface is used to read froom and write to the space. {summary}
 
-h1. Overview
+# Overview
 
 The {{ISpaceProxy}} interface is ideal for connecting to data stored in the Space. The {{ISpaceProxy}} interface is used to interact with the Space, allowing both read and write actions. An {{ISpaceProxy}} is initialized using the {{GigaSpacesFactor}} static class object.
 
@@ -52,7 +52,8 @@ Several {{ISpaceProxy}} instances can be defined within a single Processing Unit
 - In case the space has been fully terminated (no backup or primary instances running any more) the client space proxy will try to reconnect to the space up to a predefined timeout based on the [Proxy Connectivity] settings. If it fails to reconnect, an error will be displayed.
 {note}
 
-h1. Operations
+# Operations
+
 The {javadocos:/docs/dotnetdocs9.5/|ISpaceProxy} interface includes the following main operations:
 ||[Id Based operations|ID Queries]||[Batch operations|#Batch Operations]||[Asynchronous operations|#Asynchronous Operations]||Data Count operations||
 |[ReadById|ID Queries#Reading an Object using its ID]\\
@@ -83,7 +84,7 @@ TakeMultiple|
 
 {tip}The {{Clear}} and {{Clean}} operations do not remove the Space class definition from the Space. You should restart the Space to allow it to drop the class definitions.{tip}
 
-h1. Clustered Flag
+# Clustered Flag
 
 When starting an embedded space with a cluster topology, or when looking up a remote space started with a cluster topology, a clustered proxy is returned. A clustered proxy is a smart proxy that performs operations against the whole cluster.
 
@@ -121,7 +122,7 @@ ISpaceProxy proxy = GigaSpacesFactory.FindSpace("/./embSpace", mySettings);
 
 The above example shows a typical scenario where the clustered flag is used. Within a Processing Unit, an application might need to access both the cluster member and the whole cluster directly.
 
-h1. Using Generics and Default Values in the ISpaceProxy object
+# Using Generics and Default Values in the ISpaceProxy object
 
 The {{ISpaceProxy}} interface is implemented to provide a wide variety of options for reading data. By receiving and returning a generic parameter, the function provides the capability to read all types of objects in the Space. By implementing many overriding functions, you can take advantage of the in-built default values, or choose to specify your own values according to your own needs. In the Take function below, you can choose to override the timeout value, or use the default value of {{0}} and not specify a timeout value at all.
 
@@ -133,7 +134,6 @@ public interface ISpaceProxy{
     <T> T Take(T template) throws DataAccessException;
 
     <T> T Take(T template, long timeout) throws DataAccessException;
-
 
 }
 {code}
@@ -167,15 +167,14 @@ In a similar manner, the read timeout and write lease can be specified.
 //call Take function overriding the default timeout value
     myProxy.Take(myTemplate, 10000);
 
-
-
 {code}
 {gcard}
 {gdeck}
 
 {tip}See more examples for the {{ISpaceProxy}} interface usage with the [POJO Support] section.{tip}
 
-h1. Saving Data to the Space
+# Saving Data to the Space
+
 The {{ISpaceProxy.Write()}} operation saves a copy of an object into the Space. The actual object passed as a parameter to the Write function is not affected by the operation. As with the Read operation, the Write operation supports default values and generic parameters. When the object to be saved already exists in the Space (objects are identified with their {{ID}}), the default behavior is to perform an *update operation*.  To change the default update operation scenario, change the update mode in the {{WriteModifiers}} enum settings to {{WriteModifiers.WRITE_ONLY}} mode.
 
 When updating an object with many fields use the {{PARTIAL_UPDATE}} mode.
@@ -186,14 +185,16 @@ If a Write returns without throwing an exception, that object is committed to th
 
 Writing an object into a space might generate [notifications|Notify Container] to registered objects.
 
-h2. Returning Previous Value
+## Returning Previous Value
 
 When updating an existing object in the space, you may need the object's value before it was updated. The previous value is returned as an {{ILeaseContext}} Object. The default behavior is to return a null value. To change the setting, set the {{WriteModifiers.RETURN_PREV_ON_UPDATE}} to true.
 
-h1. Performing a Delta Update
+# Performing a Delta Update
+
 You may update selected Space object fields (delta) using the {JavaDoc6:com/gigaspaces/client/WriteModifiers|WriteModifiers.PARTIAL_UPDATE} modifier. This option is useful when having objects with large number of fields where you would like to update only few of the space object fields. This optimizes the network utilization and avoids serializing/de-serializing the entire object fields when interacting with a remote space.
 
-h2. How to Perform a Delta Update?
+## How to Perform a Delta Update?
+
 When using the {{PARTIAL_UPDATE}} modifier, only enter values into the fields that *should* be updated. All other fields *should be assigned a {{null}} value*. This means that only fields which are set are sent from the client to the Space to replace the existing field's value. In case of a backup (replica) space, the primary space only replicates the updated fields (delta).
 
 Make sure the updated object include its ID when using this option.
@@ -243,34 +244,38 @@ if (changeResult.getNumberOfChangedEntries() == 0)
 }
 {code}
 
-h1. Data Access
+# Data Access
 
 There are various mechanisms offered by GigaSpaces XAP to access the data within the space:
 
-h2. ID Based
+## ID Based
+
 Each space object includes an ID. You may read or remove objects from the space using their ID via the {{ReadByID}},{{TakeByID}},{{ReadIfExistsById}},{{TakeIfExistsById}}, {{ReadByIDs}} or the {{TakeByIDs}} operations.
 
 {tip}The {{ReadByID}} and {{ReadByIDs}} have a special performance optimization when running a [Local Cache] or [Local View].{tip}
 
 See the [Id Queries] for details.
 
-h2. Template Based
+## Template Based
+
 The template is an object of the desired entry type, and the properties which are set on the template (i.e. not null) are matched against the respective properties of entries of the same type in the space. Properties with null values are ignored (not matched).
 
 See the [Template Matching] for details.
 
-h2. SQL Based
+## SQL Based
 
 The [SQLQuery] class is used to query the space using SQL-like syntax. The query statement includes only the {{WHERE}} clause. The selection aspect of a SQL statement is embedded in other parameters for a SQL query.
 
 See the [SQLQuery] for details.
 
-h2. Space Iterator
+## Space Iterator
+
 The {javadoc6:org/openspaces/core/IteratorBuilder|IteratorBuilder} with the {javadoc6:com/j_spaces/core/client/GSIterator|GSIterator} allows you to iterate over large amount of space objects in a *paging approach*. It avoids the need to retrieve the entire result set in one batch as the {{readMultiple}} since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side.
 
 See the [Paging Support with Space Iterator] for details.
 
-h1. ReadIfExists and Read Operations
+# ReadIfExists and Read Operations
+
 The two forms of the {{Read}} operations query the space for an object that matches the template/[SQLQuery] provided. If a match is found, a copy of the matching object is returned. If no match is found, {{null}} is returned. Passing a {{null}} reference as the template will match any object.
 
 Any matching object can be returned. Successive Read requests with the same template may or may not return equivalent objects, even if no intervening modifications have been made to the Space. Each invocation of {{Read}} may return a new object even if the same object is matched in the space. If you would like to Read objects in the same order they have been written into the space you should perform the read objects in a [FIFO mode|FIFO Support].
@@ -283,7 +288,8 @@ In both read methods, a timeout of {{JavaSpace.NO_WAIT}} means to return immedia
 
 {tip}The {{Read}} operation default timeout is {{JavaSpace.NO_WAIT}}.{tip}
 
-h1. takeIfExists and take Operations
+# takeIfExists and take Operations
+
 The {{take}} operations perform exactly like the corresponding {{read}} operations, except that the matching object is *removed* from the space on one atomic operation. Two {{take}} operations will *never return* copies of the same object, although if two equivalent objects were in the space the two {{take}} operations could return equivalent objects.
 
 If a {{take}} returns a non-null value, the object has been removed from the space, possibly within a transaction. This modifies the claims to once-only retrieval: A take is considered to be successful only if all enclosing transactions commit successfully. If a {{RemoteException}} is thrown, the take may or may not have been successful. If an {{UnusableEntryException}} is thrown, the take {{removed}} the unusable object from the space. If any other exception is thrown, the take did not occur, and no object was removed from the space.
@@ -296,7 +302,8 @@ Taking an object from the space might generate [notifications|Notify Container] 
 
 {tip}The {{take}} operation default timeout is {{JavaSpace.NO_WAIT}}.{tip}
 
-h1. Batch Operations
+# Batch Operations
+
 The GigaSpace interface provides simple way to perform bulk operations. You may read or write large amount of objects in one call. The batch operations can be called using the following:
 - GigaSpace.readMultiple - Bulk read.
 - GigaSpace.takeMultiple - Bulk take (read+remove). Returns the removed objects back to the client.
@@ -318,7 +325,7 @@ Here are few important considerations when using the batch operations:
     - {JavaDocOS:org/openspaces/core/TakeMultipleException|org.openspaces.core.TakeMultipleException}
     - {JavaDocOS:org/openspaces/core/ClearException|org.openspaces.core.ClearException}
 
-h1. Asynchronous Operations
+# Asynchronous Operations
 
 The GigaSpace interface supports asynchronous (non-blocking) read and asynchronous take operations through the GigaSpace interface. Both return a [Future<T>|http://download.oracle.com/javase/6/docs/api/java/util/concurrent/Future.html] object, where T is the type of the object the request returns. Future<T>.get() can be used to query the object to see if a result has been returned or not.
 
@@ -403,7 +410,7 @@ public class AsyncWriteTask implements Task<Integer>{
 {gcard}
 {gdeck}
 
-h1. Declarative Transactions
+# Declarative Transactions
 
 As seen in the take API above, there is no need to provide a Jini transaction object for the different space operations. {{GigaSpace}} with the different OpenSpaces [transaction managers|Transaction Management] and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the {{GigaSpace}} interface joins it, using Spring's rich transaction support.
 
@@ -437,10 +444,9 @@ As seen in the take API above, there is no need to provide a Jini transaction ob
 {gcard}
 {gdeck}
 
-
 (on) It is highly recommended to read the [transaction management chapter|http://static.springframework.org/spring/docs/3.0.x/reference/transaction.html] in the Spring reference documentation.
 
-h2. Transaction Provider
+## Transaction Provider
 
 OpenSpaces provides a pluggable transaction provider using the following interface:
 
@@ -459,7 +465,7 @@ OpenSpaces comes with a default transaction provider implementation, which uses 
 
 {code:java}gigaSpace.getSpace().take(obj, gigaSpace.getCurrentTransaction(), 1000);{code}
 
-h1. Transaction Isolation Level
+# Transaction Isolation Level
 
 GigaSpaces supports three isolation levels: {{READ_UNCOMMITTED}}, {{READ_COMMITTED}} and {{REPEATABLE_READ}} (default). When using {{GigaSpace}}, the default isolation level that it will perform under can be defined in the following manner:
 
@@ -522,7 +528,7 @@ public class DefaultFooService implements FooService {
 
 In the above example, any operation performed using {{GigaSpace}} in the {{updateFoo}} method automatically works under the {{READ_COMMITTED}} isolation level.
 
-h1. Exception Hierarchy
+# Exception Hierarchy
 
 OpenSpaces is built on top of the Spring [consistent exception hierarchy|http://static.springframework.org/spring/docs/2.0.x/reference/dao.html#dao-exceptions] by translating all of the different JavaSpaces exceptions and GigaSpaces exceptions into runtime exceptions, consistent with the Spring exception hierarchy. All the different exceptions exist in the {{org.openspaces.core}} package.
 
@@ -537,7 +543,8 @@ public interface ExceptionTranslator {
 
 A default implementation of the exception translator is automatically used, which translates most of the relevant exceptions into either Spring data access exceptions, or concrete OpenSpaces runtime exceptions (in the {{org.openspaces.core}} package).
 
-h2. Exception handling for Batch Operations
+## Exception handling for Batch Operations
+
 Batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
     - {javadocos:org/openspaces/core/WriteMultiplePartialFailureException|org.openspaces.core.WriteMultiplePartialFailureException}
     - {javadocos:org/openspaces/core/WriteMultipleException|org.openspaces.core.WriteMultipleException}

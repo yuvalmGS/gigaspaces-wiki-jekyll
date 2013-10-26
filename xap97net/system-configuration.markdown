@@ -7,12 +7,11 @@ page_id: 63799332
 
 {summary}Using System Properties to configure XAP.NET{summary}
 
-h1. Overview
+# Overview
 
 GigaSpaces XAP.NET offers a collection of system properties which can be used to tweak the system's behavior. For a list of system properties refer to [System Properties List]. This page discusses various options of defining and overriding system properties configuration.
 
-
-h1. Using Application Configuration File
+# Using Application Configuration File
 
 Like most .NET libraries, GigaSpaces XAP.NET configuration is based on [Application Configuration Files|http://msdn.microsoft.com/en-us/library/ms229689(VS.80).aspx]. To set system properties via the configuration file:
 
@@ -49,7 +48,7 @@ Like most .NET libraries, GigaSpaces XAP.NET configuration is based on [Applicat
 </configuration>
 {code}
 
-h1. Reading and changing configuration at runtime
+# Reading and changing configuration at runtime
 
 The Xml configuration is mapped to a .NET Object model, which can be viewed and changed at runtime. This can be useful for logging the configuration settings, setting a specific configuration based on some business logic, etc.
 
@@ -76,7 +75,7 @@ if (zones == "foo")
 
 In addition, the {{GigaSpacesFactory.Initialize()}} method can be used to initialize XAP.NET explicitly and finalize changes (this is optional - if not called explicitly, this method will be called implicitly by GigaSpaces automatically when needed).
 
-h1. Macros
+# Macros
 
 Continuing the previous example, say we have not one but five applications which we want to configure with the same zones. We want to be able to change the zones in a single place which affects all those applications. This is where  macros are useful.
 
@@ -109,7 +108,7 @@ Next we'll edit the application configuration file to use the macro instead of t
 
 GigaSpaces automatically scans property values for macros and replaces them with macro values.
 
-h1. Base Configuration Files
+# Base Configuration Files
 
 Continuing the previous example, say we want to add more system properties to be shared by all applications. Instead of having to edit each application configuration file, we prefer a single configuration file which contains shared settings. This is where Base Configuration Files come handy.
 
@@ -145,7 +144,7 @@ And then change the application configuration files to look like this:
 </configuration>
 {code}
 
-h3. Overriding settings from a base configuration
+### Overriding settings from a base configuration
 
 Suppose that we have five applications using this base configuration file, and now we want to add a sixth application with one small difference - the property 'SomeProperty' should be 'OtherValue' and not 'SomeValue1'. What do we do?
 

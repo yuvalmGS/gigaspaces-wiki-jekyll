@@ -7,14 +7,15 @@ page_id: 64127781
 
 {summary}The section explains How to Configure and use Unicast Discovery.{summary}
 
-h1. Overview
+# Overview
+
 There are many cases when you need to use a unicast-based services discovery. For example if you want to to use unicast with multicast (using Jini Groups), which is the default, or when *you do not have multicast enabled, or you prefer not to use multicast*.
 
 In such cases, the Jini lookup discovery enables the user to discover services (spaces, GSC, GSM, processing units etc.) using unicast protocol.
 
 (i) Please refer to the [Lookup Service Configuration] or the [Networking How Tos] section for more details.
 
-h1. Configuring the lookup locators property
+# Configuring the lookup locators property
 
 Services will use the locators property to locate the Jini Lookup Service to lookup other services registered on it. The locators property is configured using the {{XapNet.Locators}} macro or the {{com.gs.jini_lus.locators}} system property. By default it is left blank. It accepts a comma separated list of {{host:port}}. This list should include the hosts (and ports) where the Jini Lookup Service (or GSM) is running. The default port is 4174.
 
@@ -23,7 +24,7 @@ For example, considering the GSM(+LUS) is running on machine1:4174 and machine2:
 <XapNet.Locators>machine1:4174,machine2:4174</XapNet.Locators>
 {code}
 
-h1. Locating services using locators
+# Locating services using locators
 
 Once the services are started with the locators settings, then any client should be able to find a service, using unicast discovery.
 
@@ -42,12 +43,12 @@ If you want unicast only, you should disable multicast altogether.
 
 (i) For troubleshooting purposes you should verify that the services (spaces, GSC, GSM, processing units etc.) print correct settings for the locators while they initialize. You can turn on the relevant loggings if required.
 
-h1. Configuring Jini Lookup Service Unicast Port
+# Configuring Jini Lookup Service Unicast Port
 
 To change the lookup service port when using the Service Grid, you can use the *{{com.sun.jini.reggie.initialUnicastDiscoveryPort}}* system property. The default value is the one assigned to the {{com.gs.multicast.discoveryPort}} system property, that is 4174 with XAP 7.x.
 - Set the {{LOOKUPLOCATORS}} system property in {{<GigaSpaces Root>\bin\setenv.bat/sh}} to match the port number you defined (in this case, {{host:1234}}). That is required if you specify an explicit unicast/locators port, otherwise the service will use the default port if not set explicitly (see [*com.gs.multicast.discoveryPort system property*|Lookup Service Configuration#Multicast Settings]).
 
-h1. Configuring lookup discovery intervals
+# Configuring lookup discovery intervals
 
 When a lookup service fails and is brought back online, a client (such as a GSC, space or a client with a space proxy) needs to re-discover and federate again. In order to make that happen, Jini unicast discovery must retry connections to the remote lookup service. The default unicast retry protocol provides a graduating approach, increasing the amount of time to wait before the next discovery attempts are made - upon each invocation, eventually reaching a maximum time interval over which discovery is re-tried. In this way, the network is not flooded with unicast discovery requests referencing a lookup service that may not be available for quite some time (if ever). The default time to wait between unicast retry attempts are:
 

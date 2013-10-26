@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799375
 ---
 
-h1. System Properties List
+# System Properties List
 
 {refer}Refer to the {javadoc6:com/j_spaces/kernel/SystemProperties|SystemProperties} class for more details.{refer}
 || Property name \\ || Description || Default value \\ ||

@@ -10,7 +10,7 @@ page_id: 63799342
 
 !GRA:Images^new-in-801-banner.png|align=right!
 
-h1. Overview
+# Overview
 
 Object entries' properties are bound by the schema of the Object class, which means a property cannot be added without changing the class, and since changing the class requires restarting the space, this can be a long and tiresome project.
 
@@ -18,7 +18,7 @@ Starting with 8.0.1, GigaSpaces XAP provides the [Document API|Document (Schema-
 
 Dynamic properties can be used with Object as well. This provides better interoperability between Object and document entries, and provides excellent schema evolution support without switching from Objects to documents.
 
-h1. Enabling Dynamic Properties
+# Enabling Dynamic Properties
 
 To enable dynamic properties add a {{Dictionary<String, Object>}} property to the relevant class and decorate it with {{\[SpaceDynamicProperties\]}}. For example, the following *Person* class has two fixed properties (Name and Id), and an additional *ExtraInfo* property used to host the dynamic properties:
 
@@ -35,7 +35,7 @@ public class Person
 
 (+) It is recommended to use the {{DocumentProperties}} class to host dynamic properties.
 
-h1. Using Dynamic Properties
+# Using Dynamic Properties
 
 To write an entry with dynamic properties, simply populate them in the dynamic properties property. For example:
 

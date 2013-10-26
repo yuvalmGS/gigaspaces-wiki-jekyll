@@ -8,7 +8,7 @@ page_id: 63799324
 {composition-setup}
 {summary}The polling container implements the {{IEventListenerContainer}} interface, and allows you to perform polling receive operations against the space.{summary}
 
-h1. Overview
+# Overview
 
 The polling event container implements the [IEventListenerContainer|Event Listener Container] interface. Its life-cycle consists of performing polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the [DataEventArrived|Event Listener Container#DataEventArrived] event is invoked. A polling event operation is mainly used when simulating Queue semantics, or when using the master-worker design pattern.
 !GRA:Images^Net_polling_cont.jpg!
@@ -84,17 +84,17 @@ public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data
 
 The example above performs single take operations (see [below|#Receive Operation Handler]), using the provided template, which can be any .NET object (in this case a {{Data}} object with its processed flag set to {{false}}). If the take operation succeeds (a value is returned), the {{SimpleListener.ProcessData}} method is invoked. The operations are performed on the supplied space proxy.
 
-h1. Primary/Backup
+# Primary/Backup
 
 The polling event container performs receive operations only when the relevant space it is working against is in primary mode. When the space is in backup mode, no receive operations are performed. If the space moves from backup mode to primary mode, the receive operations are started.
 
 (i) This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
 
-h1. FIFO Grouping
+# FIFO Grouping
 
 The FIFO Grouping designed to allow efficient processing of events with partial ordering constraints. Instead of maintaining a FIFO queue per class type, it lets you have a higher level of granularity by having FIFO queue maintained according to a specific value of a specific property. For more details see [FIFO grouping].
 
-h1. Concurrent Consumers
+# Concurrent Consumers
 
 By default, the polling event container starts a single thread that performs the receive operations and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads, the container will manage the scaling up and down of concurrent consumers automatically according to the load, however, there are a few parameters regarding this scaling logic which are described in [Auto Polling Consumer Scaling|Auto Polling Consumer Scaling]. This provides faster processing of events. However, any FIFO behavior that might be configured in the space and/or template is lost.
 (!) When using a FIFO Grouping, the FIFO order of each value is not broken. See [FIFO Grouping] page for more details.
@@ -159,8 +159,7 @@ pollingEventListenerContainer.CloneEventListenersPerThread = true;
 {gcard}
 {gdeck}
 
-
-h1. Static Template Definition
+# Static Template Definition
 
 When performing receive operations, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates, based on the actual domain model (with {{null}} values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SqlQuery|SqlQuery] in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
@@ -198,11 +197,10 @@ pollingEventListenerContainer.Template = new SqlQuery<Data>("Processed = false")
 {gcard}
 {gdeck}
 
-h1. Dynamic Template Definition
+# Dynamic Template Definition
 
 When performing polling receive operations, a dynamic template can be used. A method providing a dynamic template is called before each receive operation, and can return a different object in each call.
 The event template object needs to be of IQuery<TData> type, which means if you want to use an object based template you need to wrap it with the {{ObjectQuery}} wrapper.
-
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -256,7 +254,7 @@ public class ExpiredDataTemplateProvider
 
 {tip}Only polling containers support dynamic templates. Notify containers do not support dynamic templates.{tip}
 
-h1. Receive Operation Handler
+# Receive Operation Handler
 
 The polling receive container performs receive operations. The actual implementation of the receive operation is abstracted using the following interface:
 
@@ -339,7 +337,7 @@ pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
 {gcard}
 {gdeck}
 
-h2. Non-Blocking Receive Handler
+## Non-Blocking Receive Handler
 
 When working with a partitioned cluster, and configuring the polling container to work against the whole cluster, blocking operations are not allowed (when the routing index is not set in the template). The default receive operation handlers support performing the receive operation in a non-blocking manner, by sleeping between non-blocking operations. For example, the {{TakeReceiveOperationHandler}} performs a non-blocking Take operation against the space, and then sleeps for a configurable amount of time. Here is an example of how it can be configured:
 
@@ -391,7 +389,7 @@ pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
 
 The above example uses a receive timeout of 10 seconds (10000 milliseconds). The {{TakeReceiveOperationHandler}} is configured to be non-blocking, with a non-blocking factor of 10. This means that the receive handler performs 10 non-blocking takes within 10 seconds, and sleeps the rest of the time (~1 second each time).
 
-h2. Batch Events
+## Batch Events
 
 Sometimes it is better to use batch events, for instance to improve network traffic. This is done by subscribing to the [BatchDataEventArrived event|Event Listener Container#BatchDataEventArrived]. This event receives a batch of event data objects in one invocation.
 
@@ -447,7 +445,7 @@ pollingEventListenerContainer.Dispose();
 {gcard}
 {gdeck}
 
-h1. Transaction Support
+# Transaction Support
 
 Both the receive operation, and the actual event action can be configured to be performed under a transaction. Transaction support is required for example, when an exception occurs in the event listener, and the receive operation needs to be to rolled back (and the actual data event is returned to the space). Adding transaction support to the polling container is very simple. It is done by setting the {{TransactionType}} property. There are two transaction types: Distributed and Manual.
 - Distributed transaction - an embedded distributed transaction manager will be created and it will be used for creating transaction (Only one transaction manager will be created per AppDomain).
@@ -530,7 +528,7 @@ pollingEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAd
 
 {refer}The order of parameters of the event handling method is strict, please refer to [Dynamic Data Event Handler Adapter|Event Listener Container#eventhandleradapter] for more information about it.{refer}
 
-h1. Trigger Receive Operation
+# Trigger Receive Operation
 
 When configuring the polling event container to perform its receive operation, and event actions under a transaction, a transaction is started and commited for each unsuccessful receive operation, which results in a higher load on the space. The polling event container allows pluggable logic to be used in order to decide if the actual receive operation should be performed or not. This logic, called the trigger receive operation, is performed outside the receive transaction boundaries. The following interface is provided for custom implementation of this logic:
 
@@ -606,11 +604,11 @@ pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
 {gcard}
 {gdeck}
 
-h2. Non-Blocking Trigger Handler
+## Non-Blocking Trigger Handler
 
 The {{ReadTriggerOperationHandler}} can be set to be non-blocking, in the same way as described in [#Non-Blocking Receive Handler].
 
-h1. Handling Exceptions
+# Handling Exceptions
 
 During the life-cycle of the polling container, two types of exceptions might be thrown:
 - User Exception
@@ -618,7 +616,7 @@ During the life-cycle of the polling container, two types of exceptions might be
 
 The User Exception is an exception that occurs during the invocation of the user event listener. The Container Exception is an exception that occurs anywhere else during the life-cycle of the container (e.g. during the receive or trigger operation handler).
 
-h2. Subscribing to Container Exception Occured Event
+## Subscribing to Container Exception Occured Event
 
 It is possible to be notified when a container exception occured, by subscribing to the ContainerExceptionOccured event, and get a reference to the exception.
 
@@ -657,7 +655,7 @@ public void ExceptionHandler(object sender, ContainerExceptionEventArgs e)
 {gcard}
 {gdeck}
 
-h2. Subscribing to User Exception Occured Event
+## Subscribing to User Exception Occured Event
 
 It is possible to be notified when a user exception occured, by subscribing to the UserExceptionOccured event. This arguments of this event contain the entire DataEventArgs of the original DataEventArrived. By default, any event that is thrown inside the event listener scope results in a transaction rollback, if the container is set to be transactional. This can be overriden if the user exception handler sets the event state to: ignored.
 
@@ -696,6 +694,6 @@ public void ExceptionHandler(object sender, UserExceptionEventArgs<Data> e)
 {gcard}
 {gdeck}
 
-h1. Default Values of Polling Container Configuration Parameters
+# Default Values of Polling Container Configuration Parameters
 
 The default values for all of the polling container properties such as {{min-concurrent-consumers, receive-operation-handler, receive-timeout}} and others can be found in the API docs. Each property has a corresponding Default<property name> const field that sets the default value of the property.

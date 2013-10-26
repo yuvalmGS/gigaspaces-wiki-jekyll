@@ -7,7 +7,7 @@ page_id: 63799323
 
 {summary}How to query the space using Template Matching{summary}
 
-h1. Overview
+# Overview
 
 Template matching (a.k.a. Match by example) is a simple way to query the space - The template is a POCO of the desired entry type, and the properties which are set on the template (i.e. not null) are matched against the respective properties of entries of the same type in the space. Properties with null values are ignored (not matched).
 
@@ -17,7 +17,7 @@ Since by convention the default constructor usually initializes all the properti
 
 (+) If you require additional query options refer to [SQLQuery].
 
-h1. Examples
+# Examples
 
 The following examples assume the default constructor of *Person* initializes all its properties to {{null}}.
 
@@ -46,9 +46,11 @@ If the template class is null, all the entries in the space are matched. For exa
 spaceProxy.Clear(null);
 {code}
 
-h1. Indexes
+# Indexes
+
 GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (regardless whether the space is persistent or not) that maintains a hash and btree like indexes for each indexed Space Class attribute. If you store a large number of Space objects from the same class type in the space, consider defining one or more indexes for attributes used with [template matching|Template Matching] or [SQL Query|SQLQuery]. Defining indexes will improve the {{Read/Take/ReadMultiple/TakeMultiple/Clear/Count}} operations response time significantly. Remember, indexes impact {{Write}} and {{Take}} operations response time, so choose your indexed fields carefully - each index has an overhead. For more information see [Indexing].
-h1. Inheritance Support
+
+# Inheritance Support
 
 Template Matching support inheritance relationships, so that entries of a sub-class are visible in the context of the super class, but not the other way around.
 For example, suppose class *Citizen* extends class *Person*:
@@ -64,14 +66,14 @@ int numberOfCitizens = spaceProxy.Count(new Citizen());
 
 (i) Since all classes extends {{Object}}, a template of type {{Object}} will match all the entries in the space.
 
-h1. Partitioned cluster
+# Partitioned cluster
 
 When querying a partitioned cluster using a template, it is possible to use the routing property to control whether the query is broadcasted to the entire cluster or executed against a specific partition.
 For more information see [Routing In Partitioned Spaces].
 
-h1. Considerations
+# Considerations
 
-h2. Primitive Types
+## Primitive Types
 
 Properties with primitive types pose a problem - a primitive type cannot be set to null. For example, suppose class *Person* has property *Age* of type *int*, and we wrote the following piece of code which writes and reads a person:
 {code}
@@ -104,5 +106,6 @@ We've indicated that {{-1}} should be treated as {{null}} when performing templa
 
 (+) It is highly recommended to use the  primitive wrapper classes instead of primitives to simplify the code and avoid user errors.
 
-h2. Nested Template Matching
+## Nested Template Matching
+
 Nested template matching is not supported - to match nested properties, collections and arrays use [SQLQuery].

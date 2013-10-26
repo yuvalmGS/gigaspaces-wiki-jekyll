@@ -12,9 +12,7 @@ page_id: 63799346
 
 {% column width=7% %}
 
-
 {% endcolumn %}
-
 
 {% column width=86% %}
 
@@ -23,19 +21,17 @@ page_id: 63799346
 
 {% endcolumn %}
 
-
 {% column width=7% %}
-
 
 {% endcolumn %}
 
 {section}
 
-h1. Overview
+# Overview
 
 This example demonstrates a simple processing unit architecture project -- a complete SBA application that can easily scale. It demonstrates a usage of GigaSpaces's SBA related components, such as [Event Listener Container|Event Driven Architecture], [Space Based Remoting|Space Based Remoting] and the [Basic Processing Unit Container|Basic Processing Unit Container].
 
-h1. Architecture
+# Architecture
 
 This example includes a module that is deployed to the grid, and a domain model that consists of {{Data}} objects. The [DataFeeder|#datafeeder] module runs within a [Basic Processing Unit Container|Basic Processing Unit Container] and writes {{Data}} objects with raw data into the remote space. The space is actually embedded within the other Processing Unit Container, which runs the [DataProcessor|#dataprocessor] module.
 
@@ -48,12 +44,12 @@ The example solution is based on three projects:
 
 !GRA:Images^dataexample architecture.jpg!
 
-h2. Application Workflow
+## Application Workflow
 
 1. The [DataFeeder|#datafeeder] writes non-processed {{Data}} objects into the space every second.
 2. The [DataProcessor|#dataprocessor] takes non-processed {{Data}} objects, processes them, and writes the processed {{Data}} objects back to the space.
 
-h1. Data Domain Model
+# Data Domain Model
 
 The only object in our model is the {{Data}} object.
 
@@ -98,7 +94,8 @@ Note the attributes that are used in this object:
 Basically, every {{Data}} object is written to the space by the {{DataFeeder}} with the {{processed}} value set to {{false}}, which is later set to {{true}} by the {{DataProcessor}}.
 
 {anchor:dataprocessor}
-h2. DataProcessor
+
+## DataProcessor
 
 The data processor module consists of one class named {{DataProcessor}} which contains the processing business logic.
 The {{DataProcessor}} class is created upon deployment of the data processor processing unit project which will be created and managed within a [Basic Processing Unit Container|Basic Processing Unit Container].
@@ -192,7 +189,7 @@ We configure a single colocated space specified by the Url of the space, in our 
 {gcard}
 {gdeck}
 
-h2. SLA File
+## SLA File
 
 This data processor comes with an sla.xml file which define the default topology, which in our case is a cluster of 2 primaries and a single backup per primary. This can be override at deploy time or by editing the sla.xml file that resides in the data processor deployment directory.
 
@@ -201,7 +198,8 @@ This data processor comes with an sla.xml file which define the default topology
 {refer}See [Basic Processing Unit Container|Basic Processing Unit Container] for more info about the built in basic processing unit container.{refer}
 
 {anchor:datafeeder}
-h2. DataFeeder
+
+## DataFeeder
 
 The data feeder is in charge of feeding the cluster with unprocessed data every second. It does so by creating new {{Data}} objects with a random type and random information, and writes it to the cluster.
 
@@ -311,7 +309,7 @@ We configure a remote proxy to the cluster which is used by the feeder in order 
 
 The {{Feed()}} method does the actual work, by creating a new {{Data}} object with random data in an unprocessed state every second, and feeds it to the cluster. Additionaly every number of iterations it displays the statistics of processing of a certain type by executing a remote service which the processors expose. It does so by using an [Executor based remoting proxy|Executor Based Remoting] to the remote service which is hosted in the grid.
 
-h1. Building the Example
+# Building the Example
 
 This example includes {{compile.bat}} script.
 
@@ -324,7 +322,7 @@ This compiles all the related projects and creates the processing unit dlls insi
 
 {anchor:deployment}
 
-h1. Deployment
+# Deployment
 
 There are a few ways to deploy the Processing Units:
 
@@ -333,7 +331,8 @@ There are a few ways to deploy the Processing Units:
 - [Standalone deployment|#standalone]
 
 {anchor:grid}
-h2. Grid Deployment
+
+## Grid Deployment
 
 Under {{<GigaSpaces Root>\Examples\ProcessingUnit}}, there are two directories: {{Feeder}} and {{Processor}}. These contain the two Processing Unit projects, and in each of these directories there is a {{Deployment\DataFeeder}} and {{Deplotmeny\DataProcessor}} directories correspondingly. This directories are in the required structure to deploy a Processing Unit, and are copied by the {{copydeploymentfiles}} script to the {{<GigaSpaces Root>\Runtime\deploy}} directory. This simplifies the deployment of the processing units in to the Service Grid using GigaSpaces Managament Center or GigaSpaces Command Line Interface.
 Alternatively, a specific directory can be deployed using its fullpath, processing units that reside at the {{<GigaSpaces Root>\Runtime\deploy}} directory are automatically detected by GigaSpaces Managament Center or GigaSpaces Command Line Interface and can be deployed by their name.
@@ -362,7 +361,8 @@ Another way to deploy the processing units will be to use GigaSpaces Command Lin
 <GigaSpaces Root>\Bin\Gs-Cli.exe deploy DataFeeder
 {code}
 
-h3. Application Domain (AppDomain)
+### Application Domain (AppDomain)
+
 Each processing unit instance is deployed in a seperate isolated AppDomain with in the Grid Service Container, therefore they do not affect each other and once undeployed all the related libraries are being unloaded as well.
 
 Once the processing units are deployed, they will appear in the managament center and the different components can be monitored:
@@ -370,7 +370,8 @@ Once the processing units are deployed, they will appear in the managament cente
 !GRA:Images^deployed dataexample.jpg!
 
 {anchor:ide}
-h2. IDE Integrated Deployment
+
+## IDE Integrated Deployment
 
 One option is to run the processing unit within the IDE, which should be used for debug purposes only since it is not deployed and managed by the service grid. The example contains one project named PUDebugExecuter, that shows how to start the processing unit projects within the IDE. It uses a class named {{ProcessingUnitContainerHost}} to host the processing unit container and manage its life cycle, it does so in the following manner:
 
@@ -387,7 +388,8 @@ This will host the two processing units, processor and feeder, which reside in t
 When the host is created the hosted processing units are immidiatly created and initialized, once the host is disposed it will dispose of the hosted processing unit container.
 
 {anchor:standalone}
-h2. Standalone Process Deployment
+
+## Standalone Process Deployment
 
 One option is to run a standalone process which will host the Processing Unit container. Like above, this should be used for debug purposes only since it is not deployed and managed by the service grid. This is done simply by calling the following commands from your {{<GigaSpaces Root>\Bin}} directory:
 

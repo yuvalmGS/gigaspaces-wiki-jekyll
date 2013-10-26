@@ -8,13 +8,14 @@ page_id: 63799304
 {composition-setup}
 {summary:page|60}GigaSpaces .Net transaction model.{summary}
 
-h1. Overview
+# Overview
+
 GigaSpaces .Net provides an explicit transaction management programing model. It allows developers to easily write transactional code with the lowest overhead possible while minimizing the amount of hand-crafted code and separating it from the application hosting environment and instance management. This section presents the programming model and its main features.
 !GRA:Images^tx_manager.jpg!
 With the GigaSpaces .Net transaction model the developer is responsible for explicitly starting and managing the transaction. You obtain an object representing the underlying space transaction by calling {{GigaSpacesFactory.CreateDistributedTransactionManager}}.  This call returns an implementation of the {{ITransactionManager}} interface used to create the transaction using the {{ITransactionManager.Create()}} call. This return {{ITransaction}} object that should be used with every space operations that participant with the transaction. Once you would like to commit the transaction call the {{ITransaction.Commit()}}.
 If any error occurred, you need to abort the transaction by calling {{ITransaction.Abort()}}. To clean up the transaction resources call the {{ITransaction.Dispose()}}.
 
-h1. Usage
+# Usage
 
 Suppose we have an order processing system, and we need to validate incoming orders before they continue to be processed. Our code could look something like this:
 {code:java}
@@ -74,7 +75,7 @@ Last but not least, we now need to provide a transaction manager when invoking *
 {tip:title=Distributed vs. Local transaction manager}
 In previous versions, users had to choose between using the distributed and local transaction manager, since the distributed manager was slower and the local did not support multiple partitions. The 8.0 release includes significant improvements in the distributed manager which makes this choice redundant. The local transaction manager has been deprecated and will be removed in future versions.{tip}
 
-h1. Timeout
+# Timeout
 
 Another thing that can go wrong is that the application will hang before the transaction is committed or aborted, which means that entries that were affected by the transactions are locked away from other users. The solution to that is to create the transaction with a timeout - when the timeout expires the transaction is automatically rolled back and all entries are released.
 
@@ -89,7 +90,7 @@ Alternatively, you can set the default transaction timeout on the transaction ma
 txnManager.DefaultLeaseTime = 5 * 60 * 1000;
 {code}
 
-h1. Isolation Levels
+# Isolation Levels
 
 When performing read operations with transactions the transaction isolation level can be set by using the  Read Modifiers:
 ||  Modifier || Description || Comment||

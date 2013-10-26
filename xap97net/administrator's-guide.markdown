@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799420
 ---
 
-h1. What Does the .NET Adminstrator's Guide Cover?
+# What Does the .NET Adminstrator's Guide Cover?
 
 As the administrator of your organization's computing applications, you are responsible for setting up and running a system that is critical to your corporate mission. You must plan how to maximize the performance and reliability of your GigaSpaces XAP, and then make it happen.
 
@@ -15,5 +15,6 @@ After reading this guide, administrators and operators will be able to set up, v
 
 (!) Note that this guide is specific to XAP.NET administrators. For instructions for XAP administrators, please refer to the [XAP Administrator's Guide|XAP95:Administrator's Guide].
 
-h2. High Level Topics
+## High Level Topics
+
 {children}

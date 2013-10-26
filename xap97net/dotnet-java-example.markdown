@@ -12,9 +12,7 @@ page_id: 63799316
 
 {% column width=7% %}
 
-
 {% endcolumn %}
-
 
 {% column width=86% %}
 
@@ -23,15 +21,13 @@ page_id: 63799316
 
 {% endcolumn %}
 
-
 {% column width=7% %}
-
 
 {% endcolumn %}
 
 {section}
 
-h1. Overview
+# Overview
 
 The .NET-Java  Example illustrates basic interoperability operations between Java and .NET space proxies.
 
@@ -47,7 +43,7 @@ Both applications:
   *** Subscribes for notifications about all changes in Person objects (a new Person will also trigger a notification)
   *** Writes the data of the Person objects whenever they arrive
 
-h2. The Person Interoperable Class
+## The Person Interoperable Class
 
 - The .NET naming convention is different than the Java naming convention.
 The {{\[XAP66:SpaceClass(AliasName="")\]}} attribute is used to map the .NET names to the respective Java names.
@@ -55,7 +51,6 @@ The {{\[XAP66:SpaceClass(AliasName="")\]}} attribute is used to map the .NET nam
 - The .NET class *GigaSpaces.Examples.DotnetJava.Person* is mapped to the Java class *com.gigaspaces.examples.dotnetjava.Person*.
 
 - The .NET fields/properties *SomeByte, SomeString* are mapped to the Java properties *someByte, someString*.
-
 
 || C# || Java ||
 |{Code:java}
@@ -94,7 +89,8 @@ public class Person
 {Code}|
 For more details about .NET-Java Interoperability and designing the interoperable classes, refer to [.NET-Java Interoperability|http://www.gigaspaces.com/wiki/display/XAP66/.NET-Java+Interoperability]
 
-h1. Building and Running the Example
+# Building and Running the Example
+
 1. Build the .NET application, using compileC#.bat (You can also build the DotNetJavaDemo.sln from Visual Studio).
 2. Build the Java application, using compileJava.bat.
 3. Start a remote space, using startAll.bat. The .NET and Java applications use this space to communicate.

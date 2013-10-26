@@ -7,7 +7,7 @@ page_id: 63799307
 
 {summary}Reading entries from the space{summary}
 
-h1. Overview
+# Overview
 
 Entries can be retrieved from the space using the {{Read}} method. A read operation queries the space for an entry matching the provided [template|Query Template Types], and returns a copy of that entry (or null, if no match is found).
 The returned object is a copy of the entry stored in the space, which means that changing the returned object does not affect the entry stored in the space.
@@ -42,7 +42,7 @@ public class Person
 
 {refer}See also the [Object Metadata] and [GS.XML Metadata] sections for details about the GigaSpaces class decorations you may specify.{refer}
 
-h1. Blocking Read
+# Blocking Read
 
 Calling {{Read}} searches the space for a matching entry. If no match is found, the call returns immediatly with null.
 In some scenarios an application may need to poll the space until a matching entry is available. Instead of calling read and doing a {{Thread.Sleep()}} in a loop, you can use the {{timeout}} argument to get a blocking behaviour. For example:
@@ -56,7 +56,7 @@ If the space contains a Person when the call is executed, it will return immedia
 Calling {{Read}} without a timeout argument will use the default value stored in {{ISpaceProxy.DefaultTimeout}}, which is zero by default.
 Calling {{Read}} with a timeout argument ignores {{ISpaceProxy.DefaultTimeout}}.
 
-h1. Reading from a Partitioned Cluster
+# Reading from a Partitioned Cluster
 
 In a partitioned cluster each entry is stored in a specific partition, according to its routing property. When reading from such a cluster, if the routing property is specified in the template, the read request is sent directly to the relevant partition (which may or may not contain a match). If the routing property is not specified, the read request is broadcasted to all the cluster members, looking for a match. Naturally queries which include the routing property are more efficient (no broadcast means less network traffic) and faster (the proxy does not have to wait for a response from multiple members).
 
@@ -78,14 +78,14 @@ public class Person
 {refer}For more information about routing, see [SpaceRouting|Object Metadata#Routing] or [GS.XML Metadata].{refer}
 (!) *Note:* [Blocking read|#Blocking Read] is not supported on a clustered proxy.
 
-h1. Improving performance
+# Improving performance
 
 If a certain property is commonly used when querying the space, you can instruct the space to index it for faster retrieval. Moreover, if one of the object's properties is marked as {{SpaceID}} and is used in the template, the matching mechanism will recognize it and use it to optimize the search.
 
 {refer}See also [Unique Constraints|Object Metadata#Unique Constraints]. {refer}
 {refer}See also [Indexing|Object Metadata#Indexing]. {refer}
 
-h1. When a Template Matches More Than One Entry
+# When a Template Matches More Than One Entry
 
 Let's examine the following piece of code:
 {code:java}

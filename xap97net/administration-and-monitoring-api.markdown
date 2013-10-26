@@ -8,7 +8,7 @@ page_id: 63799361
 {composition-setup}
 {summary}Administration and monitoring API for GigaSpaces services and components.{summary}
 
-h1. Overview
+# Overview
 
 The Service Grid Admin API provides a way to administer and monitor all of GigaSpaces services and components, using a simple API. The API provides information and the ability to operate on the currently running Service Grid Agents, Service Grid Managers, Service Grid Containers, Lookup Services, Processing Units and Spaces.
 
@@ -198,19 +198,19 @@ foreach (IMachine machine in admin.Machines)
 {tip}See a fully running example of a [Scaling Agent|Scaling Agent Example] which comes with the product.
 {tip}
 
-h1. Admin Construction
+# Admin Construction
 
 Use {{ServiceGridAdminBuilder}} in order to create {{IServiceGridAdmin}} instances. Once working with the {{IServiceGridAdmin}} is done, its {{IServiceGridAdmin.Dispose()}} method should be called.
 
 The admin discovers all the advertised services from the Lookup Services. In order to define which lookup groups are used, the {{ServiceGridAdminBuilder.Groups.Add}} can be used. The lookup locators can also be used for a non-multicast-enabled environment, using {{ServiceGridAdminBuilder.Locators.Add}}. If the services started are secured, the username and password can be set on the admin as well.
 
-h1. Discovery Process
+# Discovery Process
 
 Once the {{IServiceGridAdmin}} is created, it starts to receive discovery events of all the advertised services/components within its lookup groups/lookup locators. Note that the events occur asynchronously, and the data model within the admin gets initialized in the background with services coming and going.
 
 This means that just creating the {{IServiceGridAdmin}}, and calling a specific get property for a data structure, might not return what is currently deployed, and one should wait until the structures are filled. Some components have a {{WaitFor}} method that allows them to wait for a specific number of services to be up. When navigating the data model, the admin API provides its most up-to-date state of the system that it is monitoring.
 
-h1. Domain Model
+# Domain Model
 
 The Service Grid Admin Domain Model has representation to the main actors at different GigaSpaces levels. They include:
 
@@ -334,7 +334,7 @@ The Service Grid Admin Domain Model has representation to the main actors at dif
 - Register for aggregated Transports statistics change events (if monitoring).
 - Register for Transport level statistics change events (across all Transports, if monitoring).|
 
-h1. Accessing the Domain Model
+# Accessing the Domain Model
 
 There are two ways the Service Grid Admin API can be used to access information the Admin API can provide:
 - Call specific properties for the data, and enumerate over them (as shown in the example at the top of the page).
@@ -380,7 +380,7 @@ void Spaces_SpaceModeChanged(object sender, SpaceModeChangedEventArgs e)
 
 Of course, we can register the same event listener on a specific {{ISpace}} topology, or event on a specific {{ISpaceInstance}}.
 
-h1. Details and Statistics
+# Details and Statistics
 
 - Some components in the Admin API can provide statistics. For example, an {{ISpaceInstance}} can provide statistics on how many times the read API was called on it. Statistics change over time, and in order to get them, either the property for the statistics can be used, or a statistics listener can be registered for statistics change events.
 

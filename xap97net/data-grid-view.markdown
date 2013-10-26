@@ -16,7 +16,8 @@ Navigate back to show all the Spaces, by clicking on the breadcrumb on the left.
 
 !GRA:Images^DataGrid_SpaceSelection.png|border=1!
 
-h1. Query Editor
+# Query Editor
+
 The Query editor supports SQL queries. For example, to query a specific class:
 {code}
 SELECT * FROM my.company.com.MyPojo WHERE rownum < 1000
@@ -33,13 +34,14 @@ Use the *back* and *forward* arrows to navigate between previously executed quer
 
 !GRA:Images^query.png|border=1!
 
-h1. Space Types
+# Space Types
+
 The metadata of the Types in the Space are shown by clicking on the "Types" tab. This lists all the types registered with the Space.
 Displayed for each type are: *instance count*, *notify template count*, *Space key* (index), *Space routing key*, and *indexed fields*.
 
 !GRA:Images^data_types.png|border=1!
 
-h1. Object inspection
+# Object inspection
 
 Double click on a single result set in the query results table, to show the metadata and values of each result.
 Object inspection shows the *field name*, *field type*, and *field value*. For compound fields, drill down using the arrow toggles.

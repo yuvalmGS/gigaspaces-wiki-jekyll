@@ -7,7 +7,8 @@ page_id: 63799308
 
 {summary}This page describes how you can obtain partial results when querying the space to improve application performance and reduce memory footprint.{summary}
 
-h1. Overview
+# Overview
+
 {section}
 
 {% column width=40 %}
@@ -15,7 +16,6 @@ h1. Overview
 In some cases when querying the space for objects, only specific properties of objects are required and not the entire object (delta read). The same scenario is also relevant when subscribing for notifications on space data changes, where only specific properties are of interest to the subscriber. For that purpose the Projection API can be used where one can specify which properties are of interest and the space will only populate these properties with the actual data when the result is returned back to the user. This approach reduces network overhead , garbage memory generation and serialization CPU overhead.
 
 {% endcolumn %}
-
 
 {% column %}
 
@@ -25,7 +25,7 @@ In some cases when querying the space for objects, only specific properties of o
 
 {section}
 
-h1. Specifying a Projection with your Query
+# Specifying a Projection with your Query
 
 Projections are supported using a [SqlQuery] or [ID Queries]. Below is a simple example that demonstrates reading a {{Person}} object where only the 'FirstName' and 'LastName' properties are returned with the query result array. All other {{Person}} properties will not be returned:
 {code:java}
@@ -62,7 +62,7 @@ SqlQuery<SpaceDocument> docQuery = new SqlQuery<SpaceDocument>(typeof(Person).Na
 SpaceDocument docresult[] = space.ReadMultiple(docQuery);
 {code}
 
-h1. Supported Operations
+# Supported Operations
 
 The projection is defined for any operation that returns data from the space. Therefore ID Based or Query based operations support projections. You can use projections with {{Read}},{{Take}},{{ReadById}},{{TakeById}},{{ReadMultiple}} and {{TakeMultiple}} operations. When performing a {{Take}} operation with projections, the entire object will be removed from the space, but the result returned to the user will contain only the projected properties.
 You can use projections with the [Notify Container|Notify Container Component] when subscribing to notifications, or with the [Polling Container|Polling Container Component] when consuming space objects. You can also create a [Local View] with templates or a {{View}} using projections. The local view will maintain the relevant objects, but with the projected data - only with the projected properties.
@@ -70,7 +70,7 @@ Projected properties can specify both dynamic or fixed properties and the usage 
 
 (!) Space Iterator does not support projections
 
-h1. Considerations
+# Considerations
 
 1. Projections are supported only for first level properties (root level). Nested properties can't be specified as part of the projection properties list.
 2. You can't use a projection on [Local Cache] as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projections will only impact performance.

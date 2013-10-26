@@ -7,7 +7,7 @@ page_id: 63799395
 
 {summary} A Local View allows the client application to cache specific data based on client's criteria at the client memory address and have it updated automatically by the space when that data changes.{summary}
 
-h1. Introduction
+# Introduction
 
 A *Local View* is a [Client Side Cache|Client Side Caching] that maintains a subset of the master space's data. The Local View allows the client to read distributed data without performing any remote calls.
 
@@ -19,7 +19,7 @@ During the local view initialization, data is loaded into the client's memory ba
 
 (+) For additional client side caching options, refer to [Client Side Caching].
 
-h1. Initializing the Local View Class
+# Initializing the Local View Class
 
 Creating a local view is similar to creating an {{ISpaceProxy}} instance, except the space should be wrapped with a local view before exposing it as an {{ISpaceProxy}}. The local view is configured in code using {{IReadOnlySpaceProxy}}. For example:
 
@@ -36,21 +36,24 @@ IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views);
 
 {code}
 
-h1. Local View Features
+# Local View Features
+
 The Local View is a *Read-Only* data structure. The following operations are not supported when using local view, and should be performed using a regular space proxy:
 - Any operation that creates or changes data ({{Write}}, {{WriteMultiple}}, {{Execute}}).
 - Any operation that removes data: ({{Clean}}, {{Clear}}, {{Take}}, {{TakeById}}, {{TakeMultiple}}, {{AsyncTake}}, etc.).
 - Any operation under a transaction.
 
-h1. Memory Management
+# Memory Management
+
 Data is *never* evicted from the local view (the cache policy is hardwired to {{ALL_IN_CACHE}}). Therefore, specifying criteria that retrieves large amounts of data from the master space can cause the client to run out of memory.
 
-h3. Preventing memory shortages
+### Preventing memory shortages
+
 As data is stored in the client application's memory, care must be taken to ensure that the application's memory is sufficient to maintain the data. Certain scenarios can result in a memory shortage. If you create multiple local views in the same client or your local view query is too broad, the application could run out of memory and the {{MemoryShortageException}} will be thrown.
 
 To overcome this either refine the local view queries to cache less data or increase the underlying JVM's memory, as explained in [Jvm Configuration|Jvm Configuration].
 
-h1. Synchronization
+# Synchronization
 
 In most cases, the local view uses replication to synchronize with the master space. Replication provides high reliability and stability.
 
@@ -58,7 +61,7 @@ The local view reverts to notification-based synchronization, which is less reli
 - Using a view query on a type/class configured to be non-replicable.
 - Using a cluster with an Active-Active topology, or a non-clustered space.
 
-h1. Synchronization Batch
+# Synchronization Batch
 
 Changes in the server are grouped and sent to the client in batches. The following configuration settings control synchronization batching:
 - Batch Size: When the batch size reaches the configured value, the batch is sent to the client. The default is 1000 packets.
@@ -81,7 +84,7 @@ IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views, 
 
 {code}
 
-h1. Recovering From Disconnection
+# Recovering From Disconnection
 
 When the connection between a local view and remote master space is disrupted, the local view starts trying to reconnect with the remote space.
 

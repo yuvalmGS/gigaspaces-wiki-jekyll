@@ -8,7 +8,7 @@ page_id: 64127766
 {composition-setup}
 {summary:page|70}How to configure a Service Grid{summary}
 
-h1. Overview
+# Overview
 
 The {{<XAP_NET>\Config}} folder contains a default configuration file for each of the service grids component: {{gsc.config}}, {{gsm.config}}, {{lus.config}}, {{gs-agent.config}}. These files extend the {{ServiceGrid.config}} file, which contains the configuration settings which are shared in the service grid.
 
@@ -16,14 +16,14 @@ When overriding configuration settings it is highly recommended NOT to modify th
 
 Instead, follow one of the following procedures.
 
-h1. Configuring a Service Grid - Console Application
+# Configuring a Service Grid - Console Application
 
 The {{<XAP_NET>\Bin}} folder contains a folder called {{gs-agent}}, which contains a script called {{gs-agent.bat}} and a set of configuration files which extend the default configuration files from the {{Config}} folder. You can safely modify these files (both the script and the overrides) to customize your gs-agent configuration, and use the script to launch the customized GSA.
 
 (+) We recommend to create a copy of the {{gs-agent}} folder and make the modifications in it - that way you can copy your modified agent as you move between environments and versions without hassle.
 (+) You can create multiple copies of the {{gs-agent}} folder to support multiple agent configurations on the same machine.
 
-h1. Configuring a Service Grid - Windows Service
+# Configuring a Service Grid - Windows Service
 
 The {{<XAP_NET>\Config}} folder contains a {{ServiceTemplates}} folder, which the *GigaSpaces Services Manager* tool uses to create and configure Windows Services. Each subfolder denotes a type of service. Within each subfolder there is a {{service-template.config}} file which bootstraps the service and and a set of configuration files which extend the default configuration files from the {{Config}} folder.
 

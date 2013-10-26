@@ -7,11 +7,12 @@ page_id: 63799358
 
 {summary}This section describes the XAP.NET product structure{summary}
 
-h1. Overview
+# Overview
+
 XAP .NET comes as a standalone product, that includes the following basic artifacts:
 {toc-zone:type=list|location=top}
 
-h1. Product Directory Structure
+# Product Directory Structure
 
 The default product location is *C:\GigaSpaces\XAP.NET \{Version\} \{Platform\}* (For example: C:\GigaSpaces\XAP.NET 8.0.6 x86). This convention supports side-by-side installation of different versions and platforms (x86, x64) of XAP.NET.
 
@@ -35,7 +36,8 @@ The product directory structure as follows (see Figure 1):
 !XapNetProductStructure_806.jpg!
 ~*Figure 1. product directory structure*~{indent}
 
-h1. Start Menu Links
+# Start Menu Links
+
 The installer creates useful shortcuts in the start menu.
 
 {indent}

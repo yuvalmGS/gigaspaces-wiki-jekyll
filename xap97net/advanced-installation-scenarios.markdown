@@ -7,23 +7,23 @@ page_id: 63799333
 
 {summary}Common Questions and Answers about XAP.NET installations.{summary}
 
-h1. Overview
+# Overview
 
 GigaSpaces XAP.NET takes advantage of several runtime components from GigaSpaces XAP (and, as a consequence, Java). In most cases, this is transparent to the user, since the XAP.NET installation process includes the required Java and XAP files. However, in some cases, users may wish to use an existing Java or XAP installation (e.g. developing interoperability solutions, using both XAP and XAP.NET). This page explains how to install XAP.NET in such scenarios.
 
-h1. Customizing Java
+# Customizing Java
 
-h4. Q. Can I install XAP.NET using an existing java installation?
-
-Yes. See [Jvm Configuration|Jvm Configuration#JvmLocation] for more information.
-
-h4. Q. I've already installed XAP.NET. Can I configure it to work with a different java version or location?
+#### Q. Can I install XAP.NET using an existing java installation?
 
 Yes. See [Jvm Configuration|Jvm Configuration#JvmLocation] for more information.
 
-h1. Customizing XAP
+#### Q. I've already installed XAP.NET. Can I configure it to work with a different java version or location?
 
-h4. Q. How do I install XAP.NET using an existing XAP installation?
+Yes. See [Jvm Configuration|Jvm Configuration#JvmLocation] for more information.
+
+# Customizing XAP
+
+#### Q. How do I install XAP.NET using an existing XAP installation?
 
 GigaSpaces XAP.NET is bundled with GigaSpaces XAP components required at runtime. Developers engaged in interoperability solutions may prefer working with a full installation of the Java XAP, which contains additional documentation, examples and tutorials.
 If you wish XAP.NET to use an existing XAP installation instead of creating an additional installation, follow these steps:
@@ -34,21 +34,23 @@ If you wish XAP.NET to use an existing XAP installation instead of creating an a
 4. In the *XAP Runtime Components Installation Path* groupbox, type the location of your installed XAP, and click *Next* to continue.
 5. Click *Install* to start the installation process.
 
-h4. Q. I've already installed XAP.NET. Can I configure it to work with a different XAP location?
+#### Q. I've already installed XAP.NET. Can I configure it to work with a different XAP location?
+
 Yes. Edit the {{Settings.xml}} file (located in {{<ProductRoot>\Config}}) and change the value of {{<XapNet.Runtime.Path>}} to the new location.
 (!) Mixing XAP.NET and XAP versions is not supported - always use the same version and build.
 
-h1. Automated Setup
+# Automated Setup
 
-h4. Q. Can I run an automated, quiet install of XAP.NET from the command line?
+#### Q. Can I run an automated, quiet install of XAP.NET from the command line?
+
 Yes. From the command line, type the following:
 {{C:\>msiexec /i GigaSpaces-XAP.NET-9.0.0.5000-GA-x86.msi /quiet}}
 
 (+) For more information about installing msi packages from command line, see [http://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspx]).
 
-h1. Manual configuration without setup
+# Manual configuration without setup
 
-h4. Q. Can I package XAP.NET as a zip file instead of Windows Installer (msi)?
+#### Q. Can I package XAP.NET as a zip file instead of Windows Installer (msi)?
 
 XAP.NET installation is released as an {{msi}} file because simply copying the file to the target machine is not enough - a few machine settings need to be configured, and the preferred method of doing this to date is Windows Installer.
 
@@ -82,13 +84,15 @@ XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Co
     GigaSpacesFactory.Configuration.XapNetSettingsFile.Path = @"C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml"
 {code}
 
-h4. Q. I need to minimize the installation size. Can I use a shared folder on a server to store part of the installation?
+#### Q. I need to minimize the installation size. Can I use a shared folder on a server to store part of the installation?
+
 Yes. You can manually set the registry settings shown above to point both java and XAP to a shared folder on a remote server.
 (!) In such scenarios, the shared folder that contains XAP must be mapped as a network drive. XAP will fail to load if a network path is used (e.g. \\server\share).
 
-h1. Using GAC (Global Assembly Cache)
+# Using GAC (Global Assembly Cache)
 
-h4. Q. My application uses the Global Assembly Cache to locate 3rd party assemblies. Which XAP.NET assemblies do I need to register?
+#### Q. My application uses the Global Assembly Cache to locate 3rd party assemblies. Which XAP.NET assemblies do I need to register?
+
 1. Register the following XAP.NET assemblies in the Global Assembly Cache:
     1. {{Bin\GigaSpaces.Core.dll}}
     2. {{Bin\GigaSpaces.NetToJava.dll}}

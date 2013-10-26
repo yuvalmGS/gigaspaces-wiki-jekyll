@@ -6,7 +6,8 @@ page_id: 63799423
 ---
 
 {edit-subjects}
-h1. ISpaceFilterEntry interface
+
+# ISpaceFilterEntry interface
 
 An {{ISpaceFilterEntry}} represents an object in the context of a filter operation, and allows you to interact with it.
 

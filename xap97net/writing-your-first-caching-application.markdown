@@ -9,14 +9,17 @@ page_id: 63799409
 {summary}This tutorial shows how an application interacts with a GigaSpaces Data Grid, clustered in either a replicated, partitioned, master-local, or local-view topology. The application either actively reads data or registers for notifications.
 {summary}
 {anchor:1}
-h1. Overview
+
+# Overview
+
 Different applications might have different caching requirements. Some applications require on-demand loading from a remote cache, due to limited memory; others use the cache for read-mostly purposes; transactional applications need a cache that handles both write and read operations and maintains consistency.
 
 In order to address these different requirements, GigaSpaces provides an In-Memory Data Grid that is policy-driven. Most of the policies do not affect the actual application code, but rather affect the way each Data Grid instance interacts with other instances. The policies allow the Data Grid to be configured in almost any topology; most common topologies are predefined in the GigaSpaces product and do not require editing policies.
 
 In this tutorial, you will use GigaSpaces to implement a simple application that writes and retrieves user accounts from the GigaSpaces In-Memory Data Grid, clustered in the most common topologies - replicated, partitioned, master-local and local-view. The application will either actively read data or ask to be notified when data is written to or modified in the Data Grid.
 
-h2. GigaSpaces Data Grid - Basic Terms
+## GigaSpaces Data Grid - Basic Terms
+
 - *Data Grid instance* \- an independent data storage unit, also called a cache. The Data Grid is comprised of all the Data Grid instances running on the network.\\ !GS6:Images^DGA-DataGrid.jpg|align=center!\\
 - *Space* \- a distributed, shared, memory-based repository for objects. A space runs in a _space container_ \- this is usually transparent to the developer. In GigaSpaces each Data Grid instance is implemented as a space, and the Data Grid is implemented as a cluster of spaces organized in one of several predefined topologies.\\ !GS6:Images^DGA-GigaSpacesDataGrid.jpg|align=center!\\
 - *Grid Service Container* \- a generic container that can run one or more space instances (together with their space containers) and other services. This container is launched on each machine that participates in the Data Grid, and hosts the Data Grid instances.\\ !GS6:Images^DGA-ServiceGridDataGrid.jpg|align=center!\\
@@ -32,7 +35,7 @@ h2. GigaSpaces Data Grid - Basic Terms
 
 - *Notifications* \- GigaSpaces allows applications to be notified when changes are made to objects in the Data Grid. Applications register in advance to be notified about specific events. When these events occur, a notification is triggered on the application, which delivers the actual data that triggered the event.
 
-h2. GigaSpaces Clustering Concepts
+## GigaSpaces Clustering Concepts
 
 In GigaSpaces, a _cluster_ is a grouping of several spaces running in one or more containers. For an application trying to access data, the cluster appears as one space, but in fact consists of several spaces which may be distributed across several physical machines. The spaces in the cluster are also called _cluster members_.
 
@@ -45,7 +48,7 @@ A GigaSpaces cluster group can have one or more of the following policies:
 
 A *{_}cluster schema{_}* defines the cluster schema type. GigaSpaces provides predefined cluster schemas for all common cluster topologies. Each topology is a certain combination of replication, load balancing and failover policies.
 
-h2. Data Grid Topologies Shown in this Tutorial
+## Data Grid Topologies Shown in this Tutorial
 
 || Topology and Description || Common Use || Options ||
 | *Replicated* ([view diagram|GS6:Images^dg_a_topology2a.gif])\\
@@ -72,7 +75,8 @@ The cluster schema supported are:
 
 {anchor:2}
 
-h1. Deploying the Data Grid
+# Deploying the Data Grid
+
 Now that you have a little background about the GigaSpaces Data Grid and the topologies used in this tutorial, the first step is to deploy the Data Grid.
 
 To deploy the Data Grid instances, you will run a GigaSpaces Agent (a "GSA"), which starts a lookup service ("LUS"), a management service ("GSM"), and two generic container instances ("GSCs") by default. In real deployment environments, physical machines will normally run a subset of these services; for example, most physical participants in a cluster will run a single GSC through the agent but not a GSM or LUS.
@@ -127,9 +131,10 @@ Depending on the type of deployment you performed, you should see that either tw
 
 (i) You deployed the the Data Grid using the Management Center and its Deployment Wizard. An alternative way deploying a single space instance can be done by using the {{SpaceInstance}} command.
 
-
 {anchor:3}
-h1. The Client Application
+
+# The Client Application
+
 In this tutorial, we provide a sample application that consists of the following components:
 - *A Data Loader* that writes data to the Data Grid.
 - *A Simple Reader* that reads data directly from the Data Grid (using spaces _read_).
@@ -137,7 +142,7 @@ In this tutorial, we provide a sample application that consists of the following
 You can run one or more reader of either or both types.
 - *An* **`Account`** *object*, defined as a .Net PONO , which represents the data in the Data Grid. It has the following fields: {{userName}}, {{accountID}} and {{balance}}.
 
-h2. Getting Source Code and Full Client Package
+## Getting Source Code and Full Client Package
 
 *The source code* of all three components, and the scripts used to run them, remains the same for all Data Grid topologies described above. To view the source code, use the links below:
 - Full source code for Data Loader: [DataLoader.cs|EX:Data Grid A .NET - Basic Topologies - DataLoader.cs]
@@ -147,7 +152,7 @@ h2. Getting Source Code and Full Client Package
 
 *The full .NET client package* can be found at the following path: {{<GigaSpaces Root>\NET vX\examples\DataGrid\}}.
 
-h2. Client Operating Process (In Brief)
+## Client Operating Process (In Brief)
 
 1. When you run the Data Loader, it:
     - Connects to the Data Grid and clears it from all data.
@@ -158,7 +163,7 @@ h2. Client Operating Process (In Brief)
 2. When you run a Notified Reader, it registers for notification on the {{Account}} class, and starts listening for notifications. When {{Account}} objects are written to the Data Grid, the Notified Reader immediately receives notifications from the Data Grid. The notifications include the {{Account}} objects themselves.
 3. If you run more 'Simple Readers' or 'Notified Readers', they repeat step 2 or 3 above, respectively.
 
-h2. How the Client Application Connects to the Data Grid
+## How the Client Application Connects to the Data Grid
 
 The application connects to the space using the GigaSpaces {{GigaSpacesFactory.FindSpace(spaceUrl)}} method. This is a method that accepts a _space URL_, discovers the space, and returns a proxy that allows the application to work with the space. The URL is usually not defined in the client application itself, but is supplied to it as an argument when it is started.
 

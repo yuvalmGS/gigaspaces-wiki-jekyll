@@ -7,12 +7,12 @@ page_id: 63799352
 
 {summary}Installing and managing Service Grid Components as Windows Services{summary}
 
-h1. Overview
+# Overview
 
 When deploying on a Microsoft Windows environment, it is often useful to setup the Service Grid components as Windows Services.
 In XAP.NET there are two binaries for each Grid Service component - a console application and a Windows service, allowing administrators to setup their environment as they please. In addition, XAP.NET provides a tool to simplify installation and management of Grid Service components as services.
 
-h1. Benefits of Windows Services
+# Benefits of Windows Services
 
 Windows Services have several advantages over standard console applications. Most notable are:
 - A service can be configured to start automatically when the machine boots, without any user logging in.
@@ -24,7 +24,7 @@ These features can come in handy on servers running Service Grid: For example, a
 
 {refer}See [Deployment on Machine Startup|Deployment on Machine Startup] to learn how to start service grid and deploy processing units automatically on machine startup{refer}
 
-h1. GigaSpaces Windows Services Manager
+# GigaSpaces Windows Services Manager
 
 The Windows Services management console lets users start/stop installed services and modify their properties, but does not support installing new services. This task is can be done via a command line, or during installation of an application.
 GigaSpaces XAP.NET provides a supplementary tool called *Windows Services Manager* which simplifies common administration tasks:
@@ -37,17 +37,17 @@ GigaSpaces XAP.NET provides a supplementary tool called *Windows Services Manage
 The tool can be started from Start->Programs->GigaSpaces XAP.NET->Tools->Windows Services Manager.
 (!) *Note:* This tool requires elevated permissions. Make sure you run it with appropriate permissions. If you're using Windows Vista or later and UAC is turned on, it is recommended to use 'Run As Administrator' (for more info see: http://support.microsoft.com/kb/922708)
 
-h1. Advanced
+# Advanced
 
-h2. Service Properties
+## Service Properties
 
 To view a service properties, right-click it and select *Properties*, or simply double-click it. A dialog window with the service properties will appear.
 
-h2. Configuration
+## Configuration
 
 The Service Properties window shows the name of the service configuration file. Either Click the configuration label to open the configuration file using your default XML viewer, or click the location label to open the service folder, then edit the configuration file using your favorite XML editor.
 (!) *Note:* In order for configuration changes to take effect the service needs to be stopped and restarted.
 
-h2. Logging
+## Logging
 
 When a service is started for the first time, it creates a *log.txt* file in its folder which contains log information.

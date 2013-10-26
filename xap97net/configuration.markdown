@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799392
 ---
 
-h1. Section Contents
+# Section Contents
 
 GigaSpaces XAP.NET installer enables developers to start evaluating and using the product immediately, without any manual configuration changes.
 

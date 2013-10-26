@@ -8,7 +8,7 @@ page_id: 63799343
 {composition-setup}
 {summary:page}Executor Remoting allows you to use remote invocations of services, with the space as the transport layer using Executors.{summary}
 
-h1. Overview
+# Overview
 
 Executor based remoting uses [Executors|Task Execution over the Space] to implement remoting capabilities on top of the space. Executor based remoting allows for direct invocation of services, both in synchronous and an asynchronous manner as well as broadcast capabilities. Executor remoting works with services that are exposed within a processing unit that started a collocated space.
 
@@ -16,7 +16,7 @@ Executor based remoting uses [Executors|Task Execution over the Space] to implem
 
 {refer}For a full SBA example demonstrating remote services usage please refer to the [Data Example|.NET Processing Unit Data Example]{refer}
 
-h1. Defining the Contract
+# Defining the Contract
 
 In order to support remoting, the first step is to define the contract between the client and the server. In our case, the contract is a simple interface. Here is an example:
 
@@ -30,7 +30,7 @@ public interface IDataProcessor
 
 (!) The {{Data}} object should be {{Serializable}}
 
-h1. Implementing the Contract
+# Implementing the Contract
 
 Next, an implementation of this contract needs to be provided. This implementation will "live" on the server side. Here is a sample implementation:
 
@@ -46,7 +46,7 @@ public class DataProcessor : IDataProcessor
 }
 {code}
 
-h1. Hosting the Service in the Grid
+# Hosting the Service in the Grid
 
 The next step is hosting the service in the grid. Hosting the service is done on the server side within a processing unit that hosts the service, when using the [Basic Processing Unit Container|Basic Processing Unit Container], all types which have the \[SpaceRemotingService\] attribute, will automatically be created and hosted:
 
@@ -62,7 +62,7 @@ public class DataProcessor : IDataProcessor
 
 {refer}For more details regarding service hosting please refer to [Domain Service Host|Domain Service Host]{refer}
 
-h1. Using the Service on the Client Side
+# Using the Service on the Client Side
 
 In order to use the exported {{IDataProcessor}} on the client side, the client should use the {{IDataProcessor}} interface directly and construct a proxy to the service using the appropriate builder:
 
@@ -76,7 +76,7 @@ IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 
 The above example uses the {{ExecutorRemotingProxyBuilder}} in order to create the remoting proxy which can then be used for remote invocation.
 
-h2. Service Lookup Name
+## Service Lookup Name
 
 By default, the service type full name will be used as its lookup name. However, it is possible to specify a specific name if the service is hosted under a different lookup name. Specifying a lookup name is done by supplying the builder with a lookup name in the following manner:
 
@@ -91,7 +91,7 @@ IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 
 {refer}Learn how to host a service under specific lookup names in [Domain Service Host|Domain Service Host#Service Lookup Name]{refer}
 
-h2. Remote Routing Handler
+## Remote Routing Handler
 
 Many times, space remoting is done by exporting services in a space with a partitioned cluster topology. The service is exported when working directly with a cluster member (and not against the whole space cluster). When working with such a topology, the client side remoting automatically generates a random routing index value. In order to control the routing index, the following interface can be implemented:
 
@@ -138,7 +138,7 @@ proxyBuilder.RoutingHandler = new DataRemoteRoutingHandler();
 IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 {code}
 
-h2. Routing Attribute
+## Routing Attribute
 
 The above option of using the remote routing handler is very handy when not using attributes. If no routing handler is specified, the default routing handler will be used which is attributed based. It uses the \[ServiceRouting\] attribute in order to define which of the parameters control the routing. Here is an example:
 
@@ -160,7 +160,7 @@ public interface IMyService {
 
 In the above example, the {{RoutingProperty}} property is called on the {{Value}} object, and its return value is used to extract the routing index.
 
-h1. Asynchronous Execution
+# Asynchronous Execution
 
 executor remoting supports asynchronous execution of remote services using the conventional {{IAsyncResult}} interface.
 
@@ -189,7 +189,7 @@ If the regular method looks as follows:
 {{T EndDoSomething(IAsyncResult asyncResult)}}
 In other words, the regular method should be wrapped with two additional methods, one is prefixed with {{Begin}} and the return value should be an {{IAsyncResult}}, this method starts the asynchornous invocation. And an additional method prefixed with {{End}} and the return value is of the synchronous method which receives the {{IAsyncResult}} as its single parameter.
 
-h1. Transactional Execution
+# Transactional Execution
 
 Executor remoting supports transactional execution of services. The client can pass a transaction as one of
 the service invocation parameters (if specified by the service contract) and the transaction itself is passed to the server and the service can use that transaction as part of its logic. The transaction lifecycle itself can controlled either on the client side or at the service. (Note, exceptions on the server side will simply propagate to the client side, and will cause a rollback only if the client explicitly rolls back the transaction.)
@@ -204,7 +204,7 @@ public interface ITransactionalService
 
 When using broadcast with executor remoting, a distributed transaction must be used and not a local.
 
-h1. One Way Invocation
+# One Way Invocation
 
 Some invocations might be one way, which means that the client executes some kind of a service operation and he does not require a return value or even a guarantee of successful execution. For instance, print something at the service console.
 This can be done by specifying a \[SpaceServiceOperation\] attribute over the one way operation, demonstrated in the following example:
@@ -219,11 +219,11 @@ public interface ISimpleService
 
 A one way operation must have a return type of void and by its nature, has no guarantee that the operation was executed succesfully, if an exception is thrown during the execution at the server side, it will not be propogated to the client.
 
-h1. Execution Aspects
+# Execution Aspects
 
 Space based remoting allows you to inject different "aspects" that can wrap the invocation of a remote method on the client side, as well as wrapping the execution of an invocation on the server side. The different aspect can add custom logic to the execution, for instance, loggings or security.
 
-h2. The Client Invocation Aspect
+## The Client Invocation Aspect
 
 The client invocation aspect interface is shown below. You should implement this interface and wire it to the builder instance, as explained below:
 {code:java}
@@ -270,7 +270,8 @@ IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 There can be one or more aspects supplied to the builder, they will be invoked one after the other according to the order in which they were set. Each aspect can decide whether to continue executing the aspect pipeline invocation using the {{invocation.Proceed()}} method, or return the invocation result without continuing to the next aspects by setting a return value using the {{invocation.ReturnValue}} property. The final remote invocation it self is an aspect which is the last one to be executed. Plugging custom aspects can decide according to the aspect implementation whether to invoke the actual remote service or not.
 
 {anchor:serverExecutionApect}
-h2. The Server Invocation Aspect
+
+## The Server Invocation Aspect
 
 The server side invocation aspect interface is shown below. You should implement this interface and wire it to the {{DomainServiceHost}} (this is the component that is responsible for hosting and exposing your service to remote clients):
 
@@ -299,7 +300,7 @@ The different execution aspects can be wired only once, and that is when the Dom
 
 The execution of the aspects is very similar to the client side aspects, it follows the same pattern of pipeline execution of aspects followed by the specified order. Each aspect can decide whether to continue executing the aspect pipeline execution using the {{invocation.Proceed()}} method, or return the execution result without continuing to the next aspects by setting a return value using the {{invocation.ReturnValue}} property. The final service execution it self is an aspect which is the last one to be executed. Plugging custom aspects can decide according to the aspect implementation whether to execute the actual operation on the service or not.
 
-h1. The Metadata Handler
+# The Metadata Handler
 
 When executing a service using Space based remoting, a set of one or more metadata arguments (in the form of a {{System.Object}} array) can be passed to the server with the remote invocation. This feature is very handy when you want to pass certain metadata with every remote call that is not part of the arguments of the method you call. A prime example for using meta arguments is security -- i.e. passing security credentials as meta arguments, and using a server side aspect to authorize the execution or to log who actually called the method.
 
@@ -331,7 +332,7 @@ IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 
 The way to access the meta arguments on the server side is to configure a [server side execution aspect|#serverExecutionApect] by implementing the {{ServiceExecutionAspect}} and wiring it on the server side as shown [above|#serverExecutionApect]. To access the meta arguments, you should call {{SpaceRemotingInvocation.MetaArguments}} on the {{invocation}} argument provided to the server side aspect.
 
-h1. Broadcast Remoting
+# Broadcast Remoting
 
 When using executor remoting, a remote invocation can be broadcasted to all active (primary) cluster members. Each Service instance is invoked and return a result to its called which in turn reduce these and pass the final result to the application.
 
@@ -351,7 +352,7 @@ ExecutorBroadcastRemotingProxyBuilder<IDataProcessor> proxyBuilder = new Executo
 IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 {code}
 
-h2. The Remote Result Reducer
+## The Remote Result Reducer
 
 When broadcasting remote invocations to all active cluster members, and the remote method returns a result, on the client side a collection of all remote results needs to be processed. By default, if no reducer is supplied, the first result is returned. The executor remoting proxy allows for a pluggable remote result reducer that can reduce a collection of remoting results into a single one. Here is the defined interface:
 
@@ -411,7 +412,7 @@ proxyBuilder.ResultReducer = new SearchServiceReducer();
 ISearchService dataProcessorProxy = proxyBuilder.CreateProxy();
 {code}
 
-h2. The Remote Result Filter
+## The Remote Result Filter
 
 When the results arrive from a broadcast remoting invocation, they are all collected and assembled as one result collection, a result
 filter can control this process and decide which results to collect, which results to ignore and when to break the collection process.

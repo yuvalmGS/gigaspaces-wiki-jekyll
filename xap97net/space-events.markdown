@@ -7,13 +7,13 @@ page_id: 63799367
 
 {summary}Registering to Space events{summary}
 
-h1. Overview
+# Overview
 
 It is possible to subscribe to different space events and be notified of changes inside the space that match the event subscription. These notifications are pushed from the space to the proxy, unlike the opposite way, where the proxy executes queries on the space.
 
 This page demonstrates a basic event usage scenario.
 
-h1. Event Registration
+# Event Registration
 
 Subscribing to an event is done using an {{IDataEventSession}} with a [template|Query Template Types], an event type and a callback method. {{ISpaceProxy}} has a default data event session that can be used for subscription.
 

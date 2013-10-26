@@ -7,7 +7,7 @@ page_id: 63799362
 
 {edit-subjects}
 
-h1. SpaceFilterConfig
+# SpaceFilterConfig
 
 The {{SpaceFilterConfig}} is used to start a space integrated with a space filter.
 
@@ -39,7 +39,8 @@ ISpaceProxy embeddedSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceConfi
 {code}
 
 {anchor:priority}
-h2. FilterOperation and its Relevance to Priority
+
+## FilterOperation and its Relevance to Priority
 
 Filters are grouped by priorities, and activated by a specific operation.
 

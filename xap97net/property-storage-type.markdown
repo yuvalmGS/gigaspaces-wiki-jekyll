@@ -7,7 +7,8 @@ page_id: 63799405
 
 {summary:page|65}Controlling properties storage and serialization{summary}
 
-h1. Overview
+# Overview
+
 GigaSpaces PBS (Portable Binary Serialization) is the underlying technology used to serialize and transport non Java objects from the client side to the space side. It is highly optimized serialization technology allowing a .Net or C++ client to communicate with the space in very efficiency manner.
 
 To control Space Class field serialization you should use the [StorageType|http://www.gigaspaces.com/docs/dotnetdocs8.0/html/T_GigaSpaces_Core_Metadata_StorageType.htm] attribute.
@@ -41,7 +42,8 @@ Here are the {{StorageType}} supported options:
 
 (!) Indexing a property with a binary or custom binary storage type is not supported. For more information about indexing see [Indexing|Indexing].
 
-h1. Interoperability
+# Interoperability
+
 StorageType can be defined on .NET classes and C++ classes, but it currently cannot be defined on POJOs (planned for future releases).
 
 Effectively this means a POJO property is always considered as StorageType.Object.
@@ -49,12 +51,14 @@ Effectively this means a POJO property is always considered as StorageType.Objec
 - *StorageType=Binary* is fully interoperable between .NET and C++, and partial interop with java (a java proxy can read the pojo, and access/modify all properties which are StorageType.Object, leaving the rest unchanged).
 - *StorageType=BinaryCustom* is currently only supported for .NET proxies, with partial interop with java and C++ as described above.
 
-h1. Defaults
+# Defaults
+
 There is a list of types which have 'premium citizenship' in the {{PBS}} protocol, which means all platforms know how to read/write them. These are: all the primitives (int, DateTime, string, etc,), nullables (Nullable<int>, Nullable<DateTime>, etc), arrays/collections/lists/maps/dictionaries of such. All of these types default to Object storage types.
 
 Any other type is assumed to be a user defined type, and its default storage type will be BinaryCustom, to make sure a novice user will have no trouble working with it. Setting it to Object would required the user to provide the space with an equivalent POJO class, so the space would be able to store it, and this is something most .NET users don't care about. Setting it to Binary might provide faster result, but it have some limitations (e.g. complex object graphs which contains the same object twice, or cycles).
 
-h1. Performance Considerations
+# Performance Considerations
+
 - *Binary* is supposed to be the fastest (almost) always, because the server side doesn't need to deserialize/serialize on write/read.
 - *BinaryCustom* is somewhat slower in most cases than Binary, because {{PBS}} serialization is faster and more efficient than .NET default serialization, since .NET serialization is more generic and needs to take into account stuff that we don't (for example: we only serialize metadata on the first time, .NET does it every time...). However, on the space side, the data is still stored as a blob.
 - *Object* and *Document* serialization is usually the slowest because the space have to fully deserialize the blob and reconstruct the pojo or the document.

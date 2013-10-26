@@ -8,22 +8,21 @@ page_id: 63799299
 {composition-setup}
 {summary:page|65}A walkthrough of a common scenario for using the GigaSpaces NHibernate External Data Source.{summary}
 
-h1. Overview
+# Overview
 
 This page demonstrates how to use the GigaSpaces .Net NHibernate [External Data Source|Persistency] in a common scenario: a cluster topology with a mirror. This is asynchronous persistency, which means that the operation against the cluster members is persisted to the database in an asynchronous manner. Each cluster member uses the External Data Source in read-only mode. Therefore it only reads data from the External Data Source, and each write operation is replicated to the mirror space.
 
 The mirror uses the External Data Source interface in write mode, and delegates destructive space operations (write, update, take) to the database through the External Data Source implementation.
 
-
 (!) Before using the {{ExternalDataSource.NHibernate}} practice, compile it by calling {{<GigaSpaces Root>\Bin\Practices\ExternalDataSource\NHibernate\build.bat}}.
 
 (i) The database server used in this walkthrough is MySQL, and a database named {{dotnetpersistency}} is created in it.
 
-h1. NHibernate Mapping and Configuration Files
+# NHibernate Mapping and Configuration Files
 
 {anchor:sessionfactory}
 
-h2. NHibernate Session Factory Configuration File
+## NHibernate Session Factory Configuration File
 
 NHibernate requires a session factory that creates new sessions over the database for each operation executed on it. You can create such a session factory, either with a configuration file or by code. This walkthrough demonstrates a simple configuration file for the session factory, over a MySQL database server into a database named dotnetpersistency. These parameters are configured in the {{Connection}} string property.
 {code:xml}
@@ -48,7 +47,7 @@ NHibernate requires a session factory that creates new sessions over the databas
 </hibernate-configuration>
 {code}
 
-h2. NHibernate Mapping File
+## NHibernate Mapping File
 
 Each persistent class requires a mapping file that defines how to map the object to and from the database. This walkthrough shows a simple {{Person}} class and its corresponding mapping file.
 {gdeck:Person Class|top}
@@ -101,7 +100,7 @@ namespace Entities
 {gcard}
 {gdeck}
 
-h1. Starting the Spaces with NHibernate External Data Source
+# Starting the Spaces with NHibernate External Data Source
 
 This walkthrough demonstrates how to start the spaces with the NHibernate External Data Source from code, using a cluster in a [partitioned-sync2backup|Terminology - Data Grid Topologies] topology.
 Our cluster is 2,1 and a mirror. Therefore it consists of:
@@ -109,7 +108,7 @@ Our cluster is 2,1 and a mirror. Therefore it consists of:
 - 2 backup spaces, one for each partition
 - 1 mirror space
 
-h2. Starting a Cluster Member Space
+## Starting a Cluster Member Space
 
 The following code starts a cluster member space with the NHibernate External Data Source:
 {code:java}
@@ -162,7 +161,7 @@ spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 2, null, 2,
 spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 2, 1, 2, 1);
 {code}
 
-h2. Starting the Mirror Space
+## Starting the Mirror Space
 
 The following code starts the mirror space with the NHibernate External Data Source:
 {code:java}

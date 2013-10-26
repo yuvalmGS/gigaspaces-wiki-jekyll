@@ -7,15 +7,16 @@ page_id: 63799350
 
 {summary}Querying the space using SqlQuery{summary}
 
-h1. Overview
+# Overview
 
 The *{{SqlQuery}}* class is used to query the space using SQL-like syntax. This query can be passed as a template to the Read, Take, ReadMultiple, TakeMultiple, Count and Clear operations, as well as a template when registering for notification.
 
-h1. Usage
+# Usage
 
 An {{SqlQuery}} is composed from the *type* of entry to query, an *expression* in a SQL syntax and optionally one or more *parameters* which provide values for the expression.
 
-h4. Example 1
+#### Example 1
+
 Read all entries of type *Person* whose *Age* is greater than or equal to *21*.
 {code:java}
 Person[] persons = proxy.ReadMultiple<Person>(
@@ -24,7 +25,8 @@ Person[] persons = proxy.ReadMultiple<Person>(
 
 Note that the expression is equivalent to the WHERE part of a query. The FROM part is derived from the generic argument of the {{SqlQuery}} class, and the SELECT part is not needed since the result is a fully-formed object.
 
-h4. Example 2
+#### Example 2
+
 Take up to *100* entries of type *Person* whose *Age* is greater than or equal to *21*, AND whose *FirstName* is *John*.
 {code:java}
 SqlQuery<Person> query = new SqlQuery<Person>(
@@ -36,7 +38,8 @@ Person[] persons = proxy.TakeMultiple<Person>(query, 100);
 
 This time instead of specifying the values directly in the expression we've used question marks to denote expression variables and parameters to specify the values for those variables.
 
-h1. Supported SQL Features
+# Supported SQL Features
+
 GigaSpaces SqlQuery supports the following:
 - {{AND}} / {{OR}} operators to combine two or more conditions.
 - All basic logical operations to create conditions: {{=, <>, <,>, >=, <=, like, NOT like, is null, is NOT null, IN}}.
@@ -47,11 +50,11 @@ GigaSpaces SqlQuery supports the following:
 - {{rownum}} - limits the number of rows to select.
 - Sub queries.
 
-h1. Indexing
+# Indexing
 
 It is highly recommended to use indexes on relevant properties to increase performance. For more information see [Indexing].
 
-h1. Blocking Operations
+# Blocking Operations
 
 Blocking operations (i.e. {{Read}} or {{Take}} with {{timeout}} greater than {{0}}) are supported with the following restrictions:
 - Blocking operations on a partitioned space require a routing value (broadcast is not supported). For more information see [#Routing].
@@ -63,7 +66,7 @@ MyClass result = space.Take<MyClass>(new SQLQuery<MyClass>(
     "Num > 500"), timeout);
 {code}
 
-h1. Routing
+# Routing
 
 When running on a partitioned space, it is important to understand how routing is determined for SQL queries. Routing is how the partitioned space determines on which partition a given data element is stored.
 
@@ -95,13 +98,15 @@ query.Routing = 1;
 MyClass[] result = space.ReadMultiple<MyClass>(query);
 {code}
 
-h1. Limitations
+# Limitations
 
-h3. Enums
+### Enums
+
 Since Enums are stored in the space as their underlying primitive type, they must be explicitly cast to that primitive type to be used with SqlQuery.
 
 {anchor:SimpleQueries}
-h3. Simple vs. Complex Queries
+
+### Simple vs. Complex Queries
 
 Most space operations and features support any SQL query, but some support only *simple* queries and not *complex* ones.
 
@@ -118,7 +123,8 @@ The following features support only simple SQL queries
 - Notifications
 - SpaceIterator
 
-h3. Unsupported SQL Features
+### Unsupported SQL Features
+
 GigaSpaces SqlQuery *does not* support the following:
 - Aggregate functions: COUNT, MAX, MIN, SUM, AVG.
 - Multiple tables select.
@@ -132,7 +138,8 @@ GigaSpaces SqlQuery *does not* support the following:
 - {{RIGHT OUTER JOIN}}
 - {{INNER JOIN}}
 
-h3. Reserved Words
+### Reserved Words
+
 The following are reserved keywords in the GigaSpaces SQL syntax:
 {code}
 ALTER ADD AND ASC BETWEEN BY CREATE CALL DROP DEFAULT_NULL DESC  DISTINCT END FROM GROUP IN IS LIKE
@@ -141,7 +148,8 @@ INSERT INTO SET TABLE TO_CHAR TO_NUMBER FOR_UPDATE UPDATE UNION VALUES COMMIT RO
 UID USING
 {code}
 
-h3. Reserved Separators and Operators:
+### Reserved Separators and Operators:
+
 {code}
 := || ; . ROWTYPE ~ < <= >  >= => != <> \(+\) ( ) \* / + - ? \{ \}
 {code}

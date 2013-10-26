@@ -9,7 +9,7 @@ page_id: 63799336
 
 {summary:page|65}Using the GigaSpaces External Data Source interface to persist data stored in the space{summary}
 
-h1. Overview
+# Overview
 
 GigaSpaces [Space Persistency|XAP95:Space Persistency] interface is the key middleware connection link for loading and storing data to and from persistent data sources.
 
@@ -19,11 +19,11 @@ GigaSpaces [Space Persistency|XAP95:Space Persistency] interface is the key midd
 
 {tip}For a fully running example using the Mirror Service see {{GigaSpaces Root\XAP.NET\NET vX\Examples\StockSba}} folder.{tip}
 
-h1. .NET Specific Settings
+# .NET Specific Settings
 
 {toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
 
-h2. Creating a Space with ExternalDataSource
+## Creating a Space with ExternalDataSource
 
 You can either use GigaSpaces NHibernate implementation, or create a custom implementation:
 
@@ -81,7 +81,7 @@ ISpaceProxy persistentSpace = SpaceProxyProviderFactory.Instance.FindSpace("/./m
 {gcard}
 {gdeck}
 
-h2. Advanced Options
+## Advanced Options
 
 The number of objects passed between the .Net {{IDataEnumerator}} (Part of the {{ISqlDataSource}} interface) to the server on each iteration can be changed, its default value is set to {{1000}}.
 
@@ -93,13 +93,13 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties = new Dictionary<string, s
 spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size", "[batch size]");
 {code}
 
-h2. Server Side Logging
+## Server Side Logging
 
 {refer}To enable the .NET {{ExternalDataSource}} adapter logging, refer to the [GigaSpaces Logging|XAP95:GigaSpaces Logging#GigaSpacesLoggers] section.{refer}
 
 {toc-zone}
 
-h1. Creating Custom ExternalDataSource Implementation
+# Creating Custom ExternalDataSource Implementation
 
 To create a custom implementation, implement the {{GigaSpaces.Core.Persistency.ISqlDataSource}} interface.
 

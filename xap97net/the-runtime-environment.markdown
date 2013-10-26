@@ -9,7 +9,7 @@ page_id: 63799318
 
 {anchor:GSRuntimeEnv}
 
-h1. The GigaSpaces Runtime Environment
+# The GigaSpaces Runtime Environment
 
 The basic unit of deployment in the GigaSpaces XAP platform is the [Processing Unit|Packaging and Deployment].
 
@@ -17,12 +17,12 @@ Once packaged, a processing unit is deployed onto the GigaSpaces runtime environ
 !GRA:Images2^archi_deployenv.jpg!
 {info}When developing your processing unit, you can [run and debug the processing unit within your IDE|Running and Debugging Within Your IDE]. You will typically deploy it to the GigaSpaces runtime environment when it's ready for production or when you want to run it in the real-life runtime environment{info}
 
-h1. Service Grid Architecture
+# Service Grid Architecture
 
 The service grid is composed of a number of components:
 !GRA:Images3^gs_runtime-core.jpg!
 
-h2. Core Components
+## Core Components
 
 A processing unit can be deployed to the Service Grid using one of GigaSpaces deployment tools (UI, CLI, API), which uploads it to the *GSM* ([Grid Service Manager|Service Grid#gsm], the component which manages the deployment and life cycle of the processing unit). The GSM analyzes the deployment descriptor and determines how many instances of the processing unit should be created, and which containers should run them. It then ships the processing unit code to the running *GSC*'s ([Grid Service Container|Service Grid#gsc]) and instructs them to instantiate the processing unit instances. The GSC provides an isolated runtime for the processing unit instance, and exposes its state to the GSM for monitoring.  This phase in the deployment process is called *provisioning*.
 

@@ -9,7 +9,8 @@ page_id: 64127758
 {summary:page|70}Overview of Service Grid Components{summary}
 
 {anchor:gsm}
-h1. Grid Service Manager (GSM)
+
+# Grid Service Manager (GSM)
 
 The Grid Service Manager is the component which manages the deployment and life cycle of the processing unit.
 
@@ -20,7 +21,8 @@ Once provisioned, the GSM continuously monitors the processing unit instances to
 (on) It is common to start two GSM instances in each Service Grid for high-availability reasons: At any given point in time, each deployed processing unit is managed by a one GSM instance, and the other GSM(s) serve as its hot standby. If the active GSM fails for some reason, one of the standbys automatically takes over and start managing and monitoring the processing units that the failed GSM managed.
 
 {anchor:gsc}
-h1. Grid Service Container (GSC)
+
+# Grid Service Container (GSC)
 
 The Grid Service Container provides an isolated runtime for one (or more) processing unit instance, and exposes its state to the [GSM|#gsm].
 
@@ -31,7 +33,8 @@ The GSC can host multiple processing unit instances simultaneously. The processi
 It is common to start several GSCs on the same physical machine, depending on the machine CPU and memory resources. The deployment of multiple GSCs on a single or multiple machines creates a virtual Service Grid. The fact is that GSCs are providing a layer of abstraction on top of the physical layer of machines. This concept enables deployment of clusters on various deployment typologies of enterprise data centers and public clouds.
 
 {anchor:lus}
-h1. The Lookup Service (LUS)
+
+# The Lookup Service (LUS)
 
 The Lookup Service provides a mechanism for services to discover each other. Each service can query the Lookup service for other services, and register itself in the Lookup Service so other services may find it. For example, the GSM queries the LUS to find active GSCs.
 
@@ -52,7 +55,8 @@ The following services use the LUS:
 - Space Instances (actual instances of a Space that form a topology)
 
 {anchor:gsa}
-h1. Grid Service Agent (GSA)
+
+# Grid Service Agent (GSA)
 
 The Grid Service Agent (GSA) is a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [The Grid Service Manager|#gsm], [The Grid Service Container|#gsc], and [The Lookup Service|#lus]. Typically, the GSA is started with the hosting machine's startup. Using the agent, you can bootstrap the entire cluster very easily, and start and stop additional GSCs, GSMs and lookup services at will.
 
@@ -60,7 +64,7 @@ Usually, a single GSA is run per machine. If you're setting up multiple Service 
 
 The GSA exposes the ability to start, restart, and kill a process either using the [Administration and Monitoring API] or the GigaSpaces UI.
 
-h2. Process Management
+## Process Management
 
 The GSA manages Operating System processes. There are two types of process management, local and global.
 
@@ -68,7 +72,7 @@ Local processes simply start the process type (for example, a [Grid Service Cont
 
 Global processes take into account the number of process types ([Grid Service Manager|#gsm] for example) that are currently running by other GSAs (within the same lookup groups or lookup locators). It will automatically try and run at least X number of processes *across* all the different GSAs (with a maximum of 1 process type per GSA). If a GSA running a process type that is managed globally fails, another GSA will identify the failure and start it in order to maintain at least X number of global process types.
 
-h1. Starting a Service Grid
+# Starting a Service Grid
 
 The Service Grid can be started in two fashions:
 1. *Console Application* - using {{<GSHOME>\bin\gs-agent.exe}}
@@ -86,7 +90,7 @@ The following table summarized how to start each component:
 | LUS | {{startJiniLUS.sh}} | {{startJiniLUS.bat}} | {{lus.exe}} |
 | GSM + LUS | {{gsm.sh}} | {{gsm.bat}} | {{gsm.exe}} |
 
-h2. GSA Parameters
+## GSA Parameters
 
 The GSA parameters control how many local process the GSA will spawn on startup (per process type), and the number of globally managed process the GSA will maintain (in cooperation with other GSAs) (per process type). By default, the GSA is started with 2 local [Grid Service Container|#gsc]s, and manage 2 global [Grid Service Manager|#gsm] and 2 global [Lookup Service|#lus]. This is the equivalent of starting the GSA with the following parameters:
 
@@ -102,7 +106,7 @@ gs-agent gsa.gsc 3 gsa.global.gsm 2 gsa.global.lus 0
 
 In general, the {{gsa.\[process type]}} followed by a number controls the number of local processes of the specific process type that will be spawned by the GSA. The {{gsa.global.\[process type\]}} following by a number controls the number of globally managed processes of the specific process type.
 
-h3. Lookup Service Considerations
+### Lookup Service Considerations
 
 When starting a [Lookup Service|#lus] and other services in unicast mode (not multicast), it means that specific machines will be the ones that will run the [Lookup Service|#lus]. This means that on the machines running the LUS, the following command will be used (assuming other defaults are used for GSM and GSC):
 

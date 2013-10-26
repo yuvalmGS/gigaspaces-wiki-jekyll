@@ -7,11 +7,11 @@ page_id: 63799334
 
 {summary}How to query the space using entry ID{summary}
 
-h1. Overview
+# Overview
 
 The space can be queried for entries using [Template Matching] or [SQLQuery], but sometimes we know the exact id of the entry we need and prefer a faster solution. This is where id-based queries come handy.
 
-h1. Reading an Entry By ID
+# Reading an Entry By ID
 
 When you would like to access an object using its ID for read and take operations you should first specify the ID field. You can specify it via {{@SpaceId (autogenerate=false)}} annotation:
 {code}
@@ -28,7 +28,8 @@ GigaSpace gigaSpace;
 Employee myEmployee = gigaSpace.readById(Employee.class , myEmployeeID , routingValue);
 {code}
 
-h1. Reading Multiple Entries by IDs
+# Reading Multiple Entries by IDs
+
 The following shows how to read multiple objects using their IDs:
 {code}
 GigaSpace gigaSpace;

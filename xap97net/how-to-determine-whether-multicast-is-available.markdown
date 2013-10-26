@@ -7,13 +7,13 @@ page_id: 64127791
 
 {summary}Used to determine whether multicast is available.{summary}
 
-h1. Syntax
+# Syntax
 
 {noformat}
 gs> admin multicastTest [variable[variable]]
 {noformat}
 
-h1. Description
+# Description
 
 The admin {{multicastTest}} utility is used to determine whether multicast is available.
 
@@ -32,7 +32,7 @@ This multicast utility serves to check multicast communication between sender an
 
 {tip}To configure Jini in a multi network environment see the [Multi Network Card Configuration Section|How to Configure an Environment With Multiple Network-Cards (Multi-NIC)].{tip}
 
-h1. Options
+# Options
 
 || Option || Description || Value Format ||
 | {{sender}} / {{receiver}} | Specifies whether you are the sender or the receiver -- {{-sender}} is used by the source machine, and {{-receiver}} is used by each target machine. | |
@@ -41,7 +41,7 @@ h1. Options
 | {{t}} | Time to live for multicast packets. | |
 | {{verbose}} | Print out the received messages. | |
 
-h1. Example
+# Example
 
 Run the following at the sender machine:
 {noformat}admin multicastTest -sender -ba localhost -verbose{noformat}

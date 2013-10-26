@@ -7,7 +7,7 @@ page_id: 63799317
 
 {edit-subjects}
 
-h1. Overview
+# Overview
 
 An [ISpaceFilter|ISpaceFilter Interface] implementation that acts as an adapter, delegating the execution of the filter life-cycle methods and specific operation, to pluggable reflection-based methods.
 
@@ -17,7 +17,7 @@ There are two ways to use the {{SpaceFilterOperationDelegate}}:
 - Attribute-based implementation.
 - Method name-based implementation.
 
-h1. Attribute-Based Implementation
+# Attribute-Based Implementation
 
 The filter itself is a class that doesn't need to implement any interface. Instead, the filter methods are marked with specific attributes.
 
@@ -50,7 +50,7 @@ SpaceFilterConfig filterConfig = filterConfigFactory.CreateSpaceFilterConfig();
 
 The {{AttributeSpaceFilterConfigFactory}} creates a [SpaceFilterConfig|SpaceFilterConfig Class] instance, using a fully constructed {{SpaceFilterOperationDelegate}} as its Filter instance. The {{SpaceFilterOperationDelegate}} acts as the [ISpaceFilter|ISpaceFilter Interface] implementation, and delegates the filter operation to the {{SpaceAttributeFilter}} instance.
 
-h1. Method Name-Based Implementation
+# Method Name-Based Implementation
 
 A method name-based filter has the same basic principle as the one above. However, instead of using attributes to mark the method, the method names are specified by properties.
 
@@ -78,7 +78,7 @@ filterConfigFactory.BeforeWrite = "ReportBeforeWrite";
 SpaceFilterConfig filterConfig = filterConfigFactory.CreateSpaceFilterConfig();
 {code}
 
-h1. How the SpaceFilterOperationDelegate Works
+# How the SpaceFilterOperationDelegate Works
 
 The {{SpaceFilterOperationDelegate}} holds a map of {{FilterOperationDelegateInvoker}} for each filtered operation, which contains the logic that is used to delegate the filter operation to the supplied method.
 

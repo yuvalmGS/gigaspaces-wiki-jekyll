@@ -7,7 +7,7 @@ page_id: 63799356
 
 {summary}Monitoring JVM memory and threads in .Net Applications, when troubleshooting application memory and thread consumption. {summary}
 
-h1. Overview
+# Overview
 
 In some cases, you might want to monitor the activity of the JVM running as part of your .NET application. The [jconsole|http://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.html] is a great tool that allows you to troubleshoot the JVM internals.
 

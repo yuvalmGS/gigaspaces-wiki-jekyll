@@ -7,13 +7,14 @@ page_id: 63799372
 
 {summary}Extending the SpaceDocument class{summary}
 !GRA:Images^new-in-801-banner.png|align=right!
-h1. Overview
+
+# Overview
 
 While documents provide us with a dynamic schema, they force us to give up .NET type-safety for working with typeless key-value pairs. GigaSpaces supports extending the SpaceDocument class to provide a type-safe wrapper for documents which is much easier to code with, while maintaining the dynamic schema.
 
 (+) Do not confuse this with [Document-Object interoperability|Document-Object interoperability], which is a different feature.
 
-h1. Creating the Extension Class
+# Creating the Extension Class
 
 Let's create a type-safe document wrapper for the *Product* type described in the [Document Support|Document (Schema-Free) Entries] page. The extensions are:
 - Provide a parameterless constructor, since the type name is fixed.
@@ -53,7 +54,7 @@ public class ProductDocument : SpaceDocument
 }
 {code}
 
-h1. Registering the Extension Class
+# Registering the Extension Class
 
 If your only intention is to write/update document entries, creating the extension class is sufficient - from the space's perspective it is equivalent to a {{SpaceDocument}} instance. However, if you attempt to read/take entries from the space, the results will be {{SpaceDocument}} instances, and the cast to {{ProductDocument}} will throw an exception.
 To overcome that, we need to include the document wrapper type in the type introduction:
@@ -72,7 +73,7 @@ public void RegisterProductType(ISpaceProxy spaceProxy)
 
 This wrapper type-registration is kept in the proxy and not propagated to the server, so that from the server's perspective this is still a virtual document type with no affiliated Concrete object class.
 
-h1. Using the Extension Class
+# Using the Extension Class
 
 The following code snippet demonstrate usage of the {{ProductDocument}} extensions we've created to write and read documents from the space.
 

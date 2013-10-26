@@ -7,7 +7,8 @@ page_id: 63799385
 
 {summary}GigaSpaces IMDG supports three different caching mechanisms: in-line cache, side cache and client cache.{summary}
 
-h1. Overview
+# Overview
+
 GigaSpaces IMDG supports three kinds of caching mechanisms. Using GigaSpaces IMDG as a cache provides you the following benefits:
 - Low latency: In-Memory Data access time without any disk usage.
 - Data access layer elasticity: Scale out/up on demand to leverage additional machine resources.
@@ -18,7 +19,8 @@ The main supported caching mechanisms are the [in-line cache|#In-line Cache] and
 
 Both the In-line cache and the Side cache support the common deployment toplogies: [replicated|Terminology - Data Grid Topologies#Primary Backup Data Grid], [partitioned|Terminology - Data Grid Topologies#Partitioned Data Grid] and [primary-backup partitioned|Terminology - Data Grid Topologies#Primary Backup Partitioned Data Grid].
 
-h1. In-line Cache
+# In-line Cache
+
 With this mechanism, the IMDG is the system of record. The database data is loaded into the IMDG when it is started. The IMDG is responsible for loading the data and pushing updates back into the database. The database can be updated synchronously or asynchronously.
 
 - When running in {{ALL-IN-CACHE}} cache policy mode, all data is loaded from the database into the cache once it is started.
@@ -40,12 +42,14 @@ The in-line cache mechanism is widely used with the following GigaSpaces APIs:
 - [GigaSpace API|The ISpaceProxy Interface]: GigaSpaces native Object/SQL API.
 - [Map API|The GigaMap Interface]: GigaSpaces Key/Value (JCache/Hashtable) API.
 
-h2. When you should use an in-line cache?
+## When you should use an in-line cache?
+
 An in-line cache is very useful when:
 - The total size of data stored within the database (or any other external data source) is equal or less than the amount of data stored in memory. Ideally, you'd use the {{ALL_IN_CACHE}} cache policy mode.
 - The original data model of the data within the database (or any other external data source) is similar to the data model of the objects in memory. The [external data source] will work very well: the data will be loaded automatically from the database into the cache and every change to the data in the cache will be propagated to the database behind the scenes.
 
-h1. Side Cache
+# Side Cache
+
 With this mechanism, the application is responsible for maintaining the data in the cache. Here is the flow, identical to other cache products:
 1. The application attempts to read an object from the cache.
 2. If the object is found within the cache, the application uses it.
@@ -63,21 +67,24 @@ The Side cache scenario is widely used with the following GigaSpaces APIs:
 - [memcached API|The Memcached API] - Using any memcached client ([Java|http://code.google.com/p/xmemcached] , C# , C , C++..). See [memcached libraries page|http://code.google.com/p/memcached/wiki/Clients] for the different programming languages supporting the memcached protocol that may be used with GigaSpaces server memcached implementation.
 - [Hibernate|GigaSpaces for Hibernate ORM Users] - Leveraging GigaSpaces as Hibernate 2nd Level Cache.
 
-h2. When you should use a side cache?
+## When you should use a side cache?
+
 A side cache is very useful when:
 - The total amount of data stored in the database (or any other external data source) is relatively much higher than the amount of data stored in-memory. In such a case, you should be running in {{LRU}} cache policy mode.
 - The original data model of the data within the database (or any other external data source) is very different than the data model of the objects in-memory. In such a case the built-in [External Data Source] may not work well, but customized mapping logic should be implemented at the client application side to load data from the database and push it into the cache.
 
-h1. Client Cache
+# Client Cache
+
 Together with the in-line cache and side cache scenarios, you can also use client cache. This client cache may host data loaded from any IMDG partition. The client cache data access does not involve any serialization or network calls.
 
 When using client cache, you use a two-layered cache architecture: The first layer runs locally, within the client, and the second layer runs in the remote IMDG. The remote IMDG may use any of the supported deployment topologies.
 
-h5. In-line cache with a client cache:
+##### In-line cache with a client cache:
+
 !GRA:Images^in-line_cache-local-cache.jpg!
 
+##### Side cache with a client cache:
 
-h5. Side cache with a client cache:
 !GRA:Images^side-cache-local-cache.jpg!
 
 The client cache size is limited to the client process heap size. The client-side cache is updated automaticaly once the master copy of the object within the IMDG is updated. The client cache can be implemented using the following configurations:
@@ -86,10 +93,12 @@ The client cache size is limited to the client process heap size. The client-sid
 
 {tip}Client cache is not enabled by default.{tip}
 
-h2. When you should use a Client Cache?
+## When you should use a Client Cache?
+
 Client side cache should be used when most of the application activities (above 80%) involves reading data (a read-mostly scenario). When having repeated read activities for the same data (using {{readById}} operation), client cache will provide excellent performance boost (up to 100 times faster when compared to when a client cache is not being used). You should not use client cache when having a relatively large amount of data updates or removal operations since the overhead of the client cache updates will impact the overall application performance.
 
-h1. Cache Refresh Options
+# Cache Refresh Options
+
 When running the cache in LRU cache policy mode, you may need to expire or evict the cache data. This will make sure you will not load the cache with unnecessary data. Another reason to expire or evict the cache data is to make sure the memory allocated for the cache (JVM heap size) can accommodate the most valuable objects your applications needs.
 
 !GRA:Images^query-service.jpg!

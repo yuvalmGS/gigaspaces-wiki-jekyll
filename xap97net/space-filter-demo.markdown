@@ -7,7 +7,7 @@ page_id: 63799401
 
 {edit-subjects}
 
-h1. Overview
+# Overview
 
 The Space Filter Demo demonstrates the different ways to [implement|Implementing and Using a Space Filter] a [space filter|Space Filters] and how to integrate it in a space.
 
@@ -19,13 +19,11 @@ This demo shows three equivalent space filter implementations, and a console app
 - [MessageCensorshipMethodNamesFilter|#2].
 - [MessageCensorshipSpaceFilter|#3].
 
-
-
-h1. Censorship Filters
+# Censorship Filters
 
 This demo data object is the {{Message}} class. This class contains one string property {{Content}} that holds the content of the message. The purpose of each filter, is to log certain {{Message}} related operations (Take, Write), and to censor messages that contain illegal words, before entering the space. All filters extend the {{MessageCensorship}} class, which implements the {{CensorMessage}} method that contains the censorship logic. The {{MessageCensorship}} receives an array of illegal words, and uses that to censor a message when {{CensorMessage}} is called.
 
-h1. Demo Sequence
+# Demo Sequence
 
 The demo sequence consists of: creating the relevant Space Filter, creating a [SpaceFilterConfig|SpaceFilterConfig Class] to configure the filter, starting a space with the filter integrated in it, and executing a short sequence of writing and taking Message objects into and from the space.
 
@@ -48,7 +46,8 @@ space.Write(new object());
 {code}
 
 {anchor:1}
-h1. Message Censorship Attribute Filter
+
+# Message Censorship Attribute Filter
 
 This filter is implemented, using an attribute to mark the filter operation methods. This filter is based on the [Attribute-based SpaceFilterOperationDelegate|SpaceFilterOperationDelegate#Attribute based implementation]
 
@@ -126,9 +125,9 @@ Another important thing to notice is that the {{LogAndCensorizeWrite}} method fi
 
 This filter class implements {{IDisposable}}, to demonstrate that when a filter class implements the {{IDisposable}} interface, it is disposed of when the space shuts down.
 
-
 {anchor:2}
-h1. Message Censorship Method Names Filter
+
+# Message Censorship Method Names Filter
 
 This filter is implemented using method names to mark the filter operation methods. This filter is based on the [Method name-based SpaceFilterOperationDelegate|SpaceFilterOperationDelegate#Method name based implementation].
 
@@ -201,7 +200,8 @@ space = GigaSpacesFactory.FindSpace("/./spaceMethodFilterDemo", spaceConfig);
 The same structure for the filter operation method applies here as well.
 
 {anchor:3}
-h1. Message Censorship Space Filter
+
+# Message Censorship Space Filter
 
 This filter implements the [{{ISpaceFilter}}|ISpaceFilter Interface] interface directly.
 
