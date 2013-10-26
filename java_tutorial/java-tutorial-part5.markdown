@@ -5,14 +5,15 @@ page_id: 61867355
 ---
 
 
-
+{%comment %}
 [< Previous|Tutorial Part IV] * [Home|XAP Tutorial] * [Next >|Tutorial Part VI]
-
+   {%endcomment %}
 {%summary%}This part of the tutorial will introduce you to the concept of a Processing Unit .{%endsummary%}
 
-{%section%}
-{%column%}
 # Overview
+{%section%}
+{%column width=70% %}
+
 In this part of the tutorial we will introduce you the the Processing Unit (PU). The PU is the fundamental unit of deployment in XAP. The PU itself runs within a Processing Unit Container and is deployed onto the Service Grid. Once a PU is deployed, a PU instance is the actual runtime entity. There are two types of Processing Unit Containers:
 
 - Integrated Processing Unit Container
@@ -21,8 +22,8 @@ A container that runs the PU inside an IDE (e.g. IntelliJ IDEA, Eclipse). The in
 - Service Grid Processing Unit Container
 A Processing Unit Container which runs within a Grid Service Container. It enables running the PU within a service grid, which provides self-healing and SLA capabilities to components deployed on it.
 {%endcolumn%}
-{%column%}
-!pu.gif|width=100px,height=100px!
+{%column width=20% %}
+<img src="/attachment_files/qsg/pu.gif" width="100" height="100">
 {%endcolumn%}
 {%endsection%}
 
@@ -42,15 +43,18 @@ This type of PU's includes both business logic and a space. Typically, the busin
 
 #### Elastic Processing Unit (EPU)
 An Elastic Processing Unit (EPU) is a Processing Unit with additional capabilities that simplify its deployment across multiple machines. Containers and machine resources such as Memory and CPU are automatically provisioned based on Memory and CPU requirements. When a machine failure occurs, or when scale requirements change, new machines are provisioned and the Processing Unit deployment distribution is balanced automatically. The PU scale is triggered by modifying the requirements through an API call. From that point in time the EPU continuously maintains the specified capacity (indefinitely, or until the next scale trigger).
+
 {%learn%}/xap97/elastic-processing-unit.html{%endlearn%}
 
 
 #### Web PU
 XAP allows you to deploy web applications (packaged as a WAR file) onto the Service Grid. The integration is built on top of the Service Grid Processing Unit Container. The web application itself is a pure, JEE based, web application. The application can be the most generic web application, and automatically make use of the Service Grid features. The web application can define a Space (either embedded or remote) very easily (either using Spring or not).The web container used behind the scenes is Jetty.
+
 {%learn%}/xap97/web-application-support.html{%endlearn%}
 
 #### Mule PU
 XAP's Mule integration allows you to run a pure Mule application (with or without XAP special extension points and transports) as a PU.
+
 {%learn%}/xap97/mule-processing-unit.html{%endlearn%}
 
 
@@ -173,6 +177,7 @@ A sample SLA definition is shown below:
        </os-sla:sla>
 </beans>
 {%endhighlight%}
+
 {%learn%}/xap97/configuring-the-processing-unit-sla.html{%endlearn%}
 
 
@@ -189,7 +194,7 @@ Each GSC to which a certain instance was provisioned, downloads the PU jar file 
 # Example
 Our Online Payment system is expected to handle a large amount of concurrent users performing transactions. The system also needs to be highly available. This is where XAP's PU comes into play. We will create a polling container that takes a payment event as input and processes it. Then, we will deploy this code as a PU onto the IMDG. Payment events are being written into a space and the polling container will pick up the events and process them. We will use the pu.xml file to define the deployment and add an SLA configuration to it to provide failover and scalability.
 
-#### Polling Container
+### Polling Container
 First we define a polling container that will handle the business logic upon receiving a payment event. In our example we define a polling container that will receive events when a new payment is created:
 {%highlight java%}
 @EventDriven
@@ -258,10 +263,11 @@ In this step will create the configuration file for the PU deployment
 </beans>
 {%endhighlight%}
 
-####Deployment
+#### Deployment
 Now we have all the pieces that are necessary to create the jar file for the PU. After we have created the jar file its time to deploy the PU onto the data grid. Again, you can do this in three ways; by script, Java code or via the admin UI. In our example will use the scripts to deploy the PU.
 
 First we start the GigaSpace Agent (GSA) that will create our IMDG on this machine:
+
 {% inittab d1|top %}
 {% tabcontent Windows %}
 {%highlight java%}
@@ -348,25 +354,34 @@ When you run this code you should see that the PU deployed onto the IMDG is proc
 
 #### Deploy a PU with the WEB Admin UI
 There is complete example available of PU on GitHub. You can download, build and deploy this example. Here is an example how you deploy a PU with the WEB admin UI:
+
 {%section%}
 {%column%}
 Deploy PU
-!EventPU1.png|thumbnail!
+
+[<img src="/attachment_files/qsg/EventPU1.png" width="120" height="100">](/attachment_files/qsg/EventPU1.png)
+
 {%endcolumn%}
 
 {%column%}
 Applications deployed
-!EventPU2.png|thumbnail!
+
+[<img src="/attachment_files/qsg/EventPU2.png" width="120" height="100">](/attachment_files/qsg/EventPU2.png)
+
 {%endcolumn%}
 
 {%column%}
 Data Grid
-!EventPU3.png|thumbnail!
+
+[<img src="/attachment_files/qsg/EventPU3.png" width="120" height="100">](/attachment_files/qsg/EventPU3.png)
+
 {%endcolumn%}
 
 {%column%}
 Statistics
-!EventPU4.png|thumbnail!
+
+[<img src="/attachment_files/qsg/EventPU4.png" width="120" height="100">](/attachment_files/qsg/EventPU4.png)
+
 {%endcolumn%}
 {%endsection%}
 
@@ -401,11 +416,13 @@ With a stateless PU
 {%learn%}/xap97/deploy-gigaspaces-cli.html{%endlearn%}
 
 
- # What's Next
+# What's Next
+
+{%comment%}
+
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part VI|Tutorial Part VI] of this tutorial will introduce you to transaction management and space persistence.
 
 
-
-
-#
 {align:center}[< Previous|Tutorial Part IV] * [Home|XAP Tutorial] * [Next >|Tutorial Part VI] {align}
+
+{%endcomment%}

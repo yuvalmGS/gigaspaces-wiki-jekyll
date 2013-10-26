@@ -6,23 +6,24 @@
 
 
 
-
+{%comment%}
 [< Previous|Tutorial Part V] * [Home|XAP Tutorial] * [Next >|Tutorial Part VII]
-
+{%endcomment%}
 
 
 
 
 {%summary%}This part of the tutorial will introduce you to transactions.{%endsummary%}
 
-
-{%section%}
-{%column%}
 # Overview
+{%section%}
+{%column width=70% %}
+
 In this part of the tutorial we will introduce you to the transaction processing capabilities of XAP. The Spring Framework provides a transaction manager abstraction using the PlatformTransactionManager interface with several different built-in implementations, such as JDBC Data Source and JTA. XAP provides several implementations for Spring's PlatformTransactionManager, allowing you to use the XAP Distributed Transaction Manager and the Jini Distributed Transaction Manager. XAP can also be used within an XA transaction manager using JTA.
 {%endcolumn%}
-{%column%}
-!transaction.png|width=100px, height=100px!
+{%column width=20% %}
+<img src="/attachment_files/qsg/transaction.png" width="100" height="100">
+
 {%endcolumn%}
 {%endsection%}
 
@@ -216,7 +217,10 @@ XAP provides additional read modifiers to denote the isolation level:
 
 
 
- # What's Next
+# What's Next
+
+{%comment%}
+
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part VII|Tutorial Part VII] of this tutorial will introduce you to space persistence.
 
 
@@ -224,3 +228,5 @@ XAP provides additional read modifiers to denote the isolation level:
 
 #
 {align:center}[< Previous|Tutorial Part V] * [Home|XAP Tutorial] * [Next >|Tutorial Part VII] {align}
+
+{%endcomment%}

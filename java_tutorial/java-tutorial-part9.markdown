@@ -4,18 +4,20 @@ title:  XAP Tutorial Part IX
 page_id: 61867355
 ---
 
-
+{%comment%}
 [< Previous|Tutorial Part VIII] * [Home|XAP Tutorial] * [Next >|Tutorial Part X]
+{%endcomment%}
 
 {%summary%}This part of the tutorial will introduce you to XAP's Big Data Integration.{%endsummary%}
 
-{%section%}
-{%column%}
 # Overview
+{%section%}
+{%column width=70% %}
+
 In this part of the tutorial will introduce you to XAP's Big Data interface. Will show you how you can use Cassandra and other Big-Data storage systems to archive data or use them for space persistence.
 {%endcolumn%}
-{%column%}
-!BData.png|width=100px, height=100px!
+{%column width=20% %}
+<img src="/attachment_files/qsg/bgdata.png" width="100" height="100">
 {%endcolumn%}
 {%endsection%}
 
@@ -32,19 +34,19 @@ The archive container is used to transfer historical data into Big-Data storage.
 
 
 {%section%}
-{%column%}
+{%column width=70% %}
 The Archive Container differs from Space Persistency in the following ways:
 
-* Persisted objects are not read back from the Big-Data storage into the Space.
-* Objects are persisted from multiple partitions in parallel directly to the Big-Data storage (not going through the Space Persistency).
-* Archive Container uses the Polling Container behind the scenes, which can be co-located with each space partition.
+- Persisted objects are not read back from the Big-Data storage into the Space.
+- Objects are persisted from multiple partitions in parallel directly to the Big-Data storage (not going through the Space Persistency).
+- Archive Container uses the Polling Container behind the scenes, which can be co-located with each space partition.
 
 
 ### Cassandra Archive Container
 The Apache Cassandra Project™ is a scalable multi-master database with no single points of failure. The Apache Cassandra Project provides a highly scalable second-generation distributed database, bringing together Dynamo's fully distributed design and Bigtable's ColumnFamily-based data model.
 {%endcolumn%}
-{%column%}
-!GRA:Images3^archive-container-cassandra.jpg|thumbnail!
+{%column width=20% %}
+<img src="/attachment_files/qsg/archive-container-cassandra.jpg" width="200" height="200">
 {%endcolumn%}
 {%endsection%}
 
@@ -132,29 +134,35 @@ It is possible to override this default behavior by providing a custom implement
 
 
 
-h5. Deploying an example
+#### Deploying an example
 There is a fully working example on GitHub. You can download, build and execute it. Here are the steps how you would deploy it and inspect XAP and Cassandra using the OpsCenter.
-{linkinnew:https://github.com/Gigaspaces/xap-tutorial/tree/master/cassandra}Try it out !GRA:Images3^tryit.jpg!{linkinnew}
+
+{%try%}https://github.com/Gigaspaces/xap-tutorial/tree/master/cassandra{%endtry%}
 
 {%section%}
 {%column%}
 Start deploy
-!Cassandra1.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Cassandra1.png" width="120" height="100">](/attachment_files/qsg/Cassandra1.png)
+
 {%endcolumn%}
 
 {%column%}
 Deploy Cassandra PU
-!Cassandra2.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Cassandra2.png" width="120" height="100">](/attachment_files/qsg/Cassandra2.png)
 {%endcolumn%}
 
 {%column%}
 Applications
-!Cassandra3.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Cassandra3.png" width="120" height="100">](/attachment_files/qsg/Cassandra3.png)
 {%endcolumn%}
 
 {%column%}
 Data Grid
-!Cassandra4.png|thumbnail!
+
+[<img src="/attachment_files/qsg/Cassandra4.png" width="120" height="100">](/attachment_files/qsg/Cassandra4.png)
 {%endcolumn%}
 
 {%endsection%}
@@ -162,21 +170,25 @@ Data Grid
 {%section%}
 {%column%}
 OpsCenter
-!OpsCenter1.png|thumbnail!
+
+[<img src="/attachment_files/qsg/OpsCenter1.png" width="120" height="100">](/attachment_files/qsg/OpsCenter1.png)
 {%endcolumn%}
 {%column%}
 OpsCenter schema
-!OpsCenter2.png|thumbnail!
+
+[<img src="/attachment_files/qsg/OpsCenter2.png" width="120" height="100">](/attachment_files/qsg/OpsCenter2.png)
 {%endcolumn%}
 
 {%column%}
 Keyspace
-!OpsCenter3.png|thumbnail!
+
+[<img src="/attachment_files/qsg/OpsCenter3.png" width="120" height="100">](/attachment_files/qsg/OpsCenter3.png)
 {%endcolumn%}
 
 {%column%}
 Data Explorer
-!OpsCenter4.png|thumbnail!
+
+[<img src="/attachment_files/qsg/OpsCenter4.png" width="120" height="100">](/attachment_files/qsg/OpsCenter4.png)
 {%endcolumn%}
 {%endsection%}
 
@@ -187,13 +199,16 @@ You can implement your own Archive Container to use your NoSQL backend or RDBMS 
 
 
 
-{%section%}
-{%column%}
 # Space Persistency
+{%section%}
+{%column width=70% %}
+
 The XAP Mirror Service provides reliable asynchronous persistency. This allows you to asynchronously delegate the operations conducted with the In-Memory-Data-Grid (IMDG) into a backend database, significantly reducing the performance overhead. XAP comes with built in implementations of Space Data Source and Space Synchronization Endpoint for Cassandra, called CassandraSpaceDataSource and CassandraSpaceSynchronizationEndpoint, respectively.
 {%endcolumn%}
-{%column%}
-!GRA:noSQL-EDS.jpg|thumbnai
+{%column width=20% %}
+
+[<img src="/attachment_files/qsg/noSQL-EDS.jpg" width="200" height="200">](/attachment_files/qsg/noSQL-EDS.jpg)
+
 {%endcolumn%}
 {%endsection%}
 
@@ -208,9 +223,14 @@ An example of a MongoDB asynchronous persistence is presented in the Best Practi
 
 
 
- # What's Next
+# What's Next
+
+{%comment%}
+
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part X|Tutorial Part X] of this tutorial will introduce you to security aspects of XAP.
 
 
 #
 {align:center}[< Previous|Tutorial Part VIII] * [Home|XAP Tutorial] * [Next >|Tutorial Part IX] {align}
+
+{%endcomment%}
