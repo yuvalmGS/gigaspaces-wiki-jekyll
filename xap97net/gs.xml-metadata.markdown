@@ -66,7 +66,7 @@ For more details, see: [Object Metadata|Object Metadata#Including/Excluding Cont
 
 ### Field Level Elements
 
-- {{*<property>*}} \- contains metadata information for a class's field.
+- {{*<property>*}} - contains metadata information for a class's field.
 || Attribute || Description ||
 | {{name}} | (Required) Maps to the relevant class's field name. |
 | {{index}} | Indicates if the field is indexed in the space. |
@@ -82,19 +82,19 @@ For more details, see: [Object Metadata|Object Metadata#Including/Excluding Cont
 </class>
 {code}
 
-- {{*<id>*}} \- Defines whether this field can used as the objects unique identifier. The value is used when generating the object UID in the space.
+- {{*<id>*}} - Defines whether this field can used as the objects unique identifier. The value is used when generating the object UID in the space.
 || Attribute || Description ||
 | {{name}} | (Required) Maps to the relevant class's field name. |
 | {{auto-generate}} | Specifies if the object UID is generated automatically by the space when written into the space. If {{false}}, the UID will be generated using the field value, and if {{true}}, the field should be left null and the auto generated UID will be stored in it once written to the space. |
 
-- {{*<version>*}} \- Uses for optimistic concurrency, as the field that contains the objects version in the space. This must be an {{int}} data type field.
+- {{*<version>*}} - Uses for optimistic concurrency, as the field that contains the objects version in the space. This must be an {{int}} data type field.
 || Attribute || Description ||
 | {{name}} | (Required) Maps to the relevant class's field name. |
 
-- {{*<routing>*}} \- Defines the field the will be used by the load balancing mechanism to calculate the routing track.
+- {{*<routing>*}} - Defines the field the will be used by the load balancing mechanism to calculate the routing track.
 || Attribute || Description ||
 | {{name}} | (Required) Maps to the relevant class's field name. |
 
-- {{*<exclude>*}} \- A filed marked as Exclude will not be stored into the space.
+- {{*<exclude>*}} - A filed marked as Exclude will not be stored into the space.
 || Attribute || Description ||
 | {{name}} | (Required) Maps to the relevant class's field name. |

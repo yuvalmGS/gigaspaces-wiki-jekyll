@@ -112,16 +112,16 @@ Space is used when users want to achieve scalability and availability, while red
 
 The {{ISpaceProxy}} abstraction was designed with the following principles in mind:
 
-- *POCO Entries* \- the data model in JavaSpaces is an Entry. An Entry has to inherit from a specific interface ({{Entry}}). All public, non-transient fields are stored in the space. This model is quite different from modern data caching and persistence frameworks (NHibernate, ADO.NET Entity Framework, etc.), which are POCO-oriented. The POCO data model is basically a simple class with annotations that extend that model with specific meta-information such as indexes definition, persistency model, etc. The
-- *Generics support* \- users can use generics to avoid unnecessary casting and make their interaction with the space more type-safe.
+- *POCO Entries* - the data model in JavaSpaces is an Entry. An Entry has to inherit from a specific interface ({{Entry}}). All public, non-transient fields are stored in the space. This model is quite different from modern data caching and persistence frameworks (NHibernate, ADO.NET Entity Framework, etc.), which are POCO-oriented. The POCO data model is basically a simple class with annotations that extend that model with specific meta-information such as indexes definition, persistency model, etc. The
+- *Generics support* - users can use generics to avoid unnecessary casting and make their interaction with the space more type-safe.
 
-- *Overloaded methods* \- the {{ISpaceProxy}} interface uses overloaded methods, that can use defaults to reduce the amount of arguments passed in read/take/write methods.
+- *Overloaded methods* - the {{ISpaceProxy}} interface uses overloaded methods, that can use defaults to reduce the amount of arguments passed in read/take/write methods.
 
 ### Using the GigaSpace Component in the Context of EDA/SOA Applications
 
 The space serves several purposes in an EDA/SOA type of application:
-- *Messaging Grid* \- in this case, the space is used as a distributed transport that enables remote and local services to send and receive objects based on their content. In a typical Space-Based Architecture, the space is used to route requests/orders from the data source to the processing unit, based on a predefined affinity-key. The affinity-key is used to route the request/order to the appropriate processing unit. Since it is optimized to run in-memory, it is used also as a means to enable the workflow between the embedded POCO services.
-- *In Memory Data Grid (IMDG)* \- in this case, the space is used as a distributed object repository, that provides in-memory access to distributed data. Data can be distributed in various topologies - partitioned and replicated are the main ones. In a typical Space-Based Architecture, the space instances are collocated within each processing unit and therefore provide local access to distributed data required by POCO services running under that processing unit. The domain model is also POCO-driven. Data objects are basically objects with annotations, (which add specific metadata required by the Data Grid to mark indexed fields), the affinity-key, and whether the object should be persisted or not, as can be seen in the code snippet below:
+- *Messaging Grid* - in this case, the space is used as a distributed transport that enables remote and local services to send and receive objects based on their content. In a typical Space-Based Architecture, the space is used to route requests/orders from the data source to the processing unit, based on a predefined affinity-key. The affinity-key is used to route the request/order to the appropriate processing unit. Since it is optimized to run in-memory, it is used also as a means to enable the workflow between the embedded POCO services.
+- *In Memory Data Grid (IMDG)* - in this case, the space is used as a distributed object repository, that provides in-memory access to distributed data. Data can be distributed in various topologies - partitioned and replicated are the main ones. In a typical Space-Based Architecture, the space instances are collocated within each processing unit and therefore provide local access to distributed data required by POCO services running under that processing unit. The domain model is also POCO-driven. Data objects are basically objects with annotations, (which add specific metadata required by the Data Grid to mark indexed fields), the affinity-key, and whether the object should be persisted or not, as can be seen in the code snippet below:
 {code:java}
 [SpaceClass]
 public class Data
@@ -134,7 +134,7 @@ public class Data
 }
 {code}
 
-- *Processing Grid* \- a processing grid represents a particular and common use of the space for parallel transaction processing, using a master/worker pattern. In Space-Based architecture, the processing grid is implemented through a set of POCO services that serve as the workers and event containers, that trigger events from the space into and from these services. Requests/orders are processed in parallel between the different processing units, as well as within these processing units, in case there is a pool of services handling the event.
+- *Processing Grid* - a processing grid represents a particular and common use of the space for parallel transaction processing, using a master/worker pattern. In Space-Based architecture, the processing grid is implemented through a set of POCO services that serve as the workers and event containers, that trigger events from the space into and from these services. Requests/orders are processed in parallel between the different processing units, as well as within these processing units, in case there is a pool of services handling the event.
 
 ### Space-Based Remoting
 
@@ -145,11 +145,11 @@ The client uses the {{ExecutorRemotingProxyBuilder<T>}} to create a space-based 
 A processing unit that needs to be export a service uses the {{DomainServiceHost}}. The {{DomainServiceHost}} creates a service-delegator listener that registers for invocations. The invocation context contains information about the instance that needs to be invoked, the method and the arguments. The delegator uses this information to invoke the appropriate method on the POCO service. If the method returns a value, it captures the value and uses the space to return response Entry.
 
 *Benefits compared to RMI*:
-- *Efficiency* \- unlike RMI, space-based remoting leverages the fact that the space is the network gateway, and therefore doesn't require any additional sockets or I/O resources beyond the ones that have already been allocated to the space.
-- *Scalability* \- the client stub can point to a cluster of processing units, each containing different instances of the same service for scalability. The proxy utilizes the space clustered proxy for load-balancing of the requests between processing units.
-- *Continuous high availability* \- since the client proxy doesn't point directly to a specific server but to a space proxy, it remains valid during failover or relocation of a service, i.e. - if a service fails, the command is automatically routed to the backup processing unit. The POCO service contained in this unit immediately picks up the request and responds instead of the failed service, thus enabling smooth continuation of the request during a service failure.
-- *Loosely coupled* \- a single proxy can point to a set of service instances. This provides the flexibility of invoking methods on a single service, and performing broadcast operations, i.e. invoking multiple services at the same time, or only a single service regardless of its physical location.
-- *Synchronous/Asynchronous invocation* \- a client can choose to invoke a method and wait for a result (synchronous invocation). It can also invoke a method and pick up the result at a later stage.
+- *Efficiency* - unlike RMI, space-based remoting leverages the fact that the space is the network gateway, and therefore doesn't require any additional sockets or I/O resources beyond the ones that have already been allocated to the space.
+- *Scalability* - the client stub can point to a cluster of processing units, each containing different instances of the same service for scalability. The proxy utilizes the space clustered proxy for load-balancing of the requests between processing units.
+- *Continuous high availability* - since the client proxy doesn't point directly to a specific server but to a space proxy, it remains valid during failover or relocation of a service, i.e. - if a service fails, the command is automatically routed to the backup processing unit. The POCO service contained in this unit immediately picks up the request and responds instead of the failed service, thus enabling smooth continuation of the request during a service failure.
+- *Loosely coupled* - a single proxy can point to a set of service instances. This provides the flexibility of invoking methods on a single service, and performing broadcast operations, i.e. invoking multiple services at the same time, or only a single service regardless of its physical location.
+- *Synchronous/Asynchronous invocation* - a client can choose to invoke a method and wait for a result (synchronous invocation). It can also invoke a method and pick up the result at a later stage.
 
 ### SLA-Driven Container
 

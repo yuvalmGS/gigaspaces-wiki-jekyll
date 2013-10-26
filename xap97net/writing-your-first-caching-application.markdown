@@ -20,20 +20,20 @@ In this tutorial, you will use GigaSpaces to implement a simple application that
 
 ## GigaSpaces Data Grid - Basic Terms
 
-- *Data Grid instance* \- an independent data storage unit, also called a cache. The Data Grid is comprised of all the Data Grid instances running on the network. !GS6:Images^DGA-DataGrid.jpg|align=center!
-- *Space* \- a distributed, shared, memory-based repository for objects. A space runs in a _space container_ \- this is usually transparent to the developer. In GigaSpaces each Data Grid instance is implemented as a space, and the Data Grid is implemented as a cluster of spaces organized in one of several predefined topologies. !GS6:Images^DGA-GigaSpacesDataGrid.jpg|align=center!
-- *Grid Service Container* \- a generic container that can run one or more space instances (together with their space containers) and other services. This container is launched on each machine that participates in the Data Grid, and hosts the Data Grid instances. !GS6:Images^DGA-ServiceGridDataGrid.jpg|align=center!
-- *Replication* \- a relationship in which data is copied between two or more Data Grid instances, with the aim of having the same data in some or all of them. !GS6:Images^DGA-Replication2.jpg|align=center!
-- *Syncronous replication* \- replication in which applications using the Data Grid are blocked until their changes are propagated to all Data Grid instances. This guarantees that everyone sees the same data, but reduces performance.
+- *Data Grid instance* - an independent data storage unit, also called a cache. The Data Grid is comprised of all the Data Grid instances running on the network. !GS6:Images^DGA-DataGrid.jpg|align=center!
+- *Space* - a distributed, shared, memory-based repository for objects. A space runs in a _space container_ - this is usually transparent to the developer. In GigaSpaces each Data Grid instance is implemented as a space, and the Data Grid is implemented as a cluster of spaces organized in one of several predefined topologies. !GS6:Images^DGA-GigaSpacesDataGrid.jpg|align=center!
+- *Grid Service Container* - a generic container that can run one or more space instances (together with their space containers) and other services. This container is launched on each machine that participates in the Data Grid, and hosts the Data Grid instances. !GS6:Images^DGA-ServiceGridDataGrid.jpg|align=center!
+- *Replication* - a relationship in which data is copied between two or more Data Grid instances, with the aim of having the same data in some or all of them. !GS6:Images^DGA-Replication2.jpg|align=center!
+- *Syncronous replication* - replication in which applications using the Data Grid are blocked until their changes are propagated to all Data Grid instances. This guarantees that everyone sees the same data, but reduces performance.
 
-- *Asyncronous replication* \- replication in which changes are propagated to Data Grid instances in the background; applications do not have to wait for their changes to be propagated. Asynchronous replication does not negatively effect performance, but on the other hand, changes are not instantly available to everyone.
+- *Asyncronous replication* - replication in which changes are propagated to Data Grid instances in the background; applications do not have to wait for their changes to be propagated. Asynchronous replication does not negatively effect performance, but on the other hand, changes are not instantly available to everyone.
 
-- *Partitioning* \- new data or operations on data are routed to one of several Data Grid instances (partitions). Each Data Grid instance holds a subset of the data, with no overlap. Partitioning is done according to an _index field_ in the data - operations are routed to partitions based on the value of this field. !GS6:Images^DGA-Partitioning2.jpg|align=center!
-- *Topology* \- a specific configuration of Data Grid instances. For example, a replicated topology is a configuration in which some or all Data Grid instances replicate data between them. In GigaSpaces, Data Grid topologies are defined by _cluster policies_ (explained in the following section).
+- *Partitioning* - new data or operations on data are routed to one of several Data Grid instances (partitions). Each Data Grid instance holds a subset of the data, with no overlap. Partitioning is done according to an _index field_ in the data - operations are routed to partitions based on the value of this field. !GS6:Images^DGA-Partitioning2.jpg|align=center!
+- *Topology* - a specific configuration of Data Grid instances. For example, a replicated topology is a configuration in which some or all Data Grid instances replicate data between them. In GigaSpaces, Data Grid topologies are defined by _cluster policies_ (explained in the following section).
 
-- *Reading* \- one way to retrieve data from the Data Grid, which will be used in this tutorial, is to call the space _read_ operation, supplying a _read template_ object which specifies what needs to be read.
+- *Reading* - one way to retrieve data from the Data Grid, which will be used in this tutorial, is to call the space _read_ operation, supplying a _read template_ object which specifies what needs to be read.
 
-- *Notifications* \- GigaSpaces allows applications to be notified when changes are made to objects in the Data Grid. Applications register in advance to be notified about specific events. When these events occur, a notification is triggered on the application, which delivers the actual data that triggered the event.
+- *Notifications* - GigaSpaces allows applications to be notified when changes are made to objects in the Data Grid. Applications register in advance to be notified about specific events. When these events occur, a notification is triggered on the application, which delivers the actual data that triggered the event.
 
 ## GigaSpaces Clustering Concepts
 
@@ -42,9 +42,9 @@ In GigaSpaces, a _cluster_ is a grouping of several spaces running in one or mor
 A *{_}cluster group{_}* is a logical collection of cluster members, which defines how these members interact. The only way to define relationships between clustered spaces in GigaSpaces, is to add them to a group and define policies. A cluster can contain several, possibly overlapping groups, each of which defines some relations between some cluster members - this provides much flexibility in cluster configuration.
 
 A GigaSpaces cluster group can have one or more of the following policies:
-- *Replication Policy* \- defines replication between two or more spaces in the cluster, and replication options such as synchronous/asynchronous and replication direction.
-- *Load Balancing Policy* \- because user requests are submitted to the entire cluster, there is a need to distribute the requests between cluster members. The load balancing policy defines an algorithm according to which requests are routed to different members. For example, in a replicated topology, requests are divided evenly between cluster members; in a partitioned topology they are routed according to the partitioning key.
-- *Failover Policy* \- defines what happens when a cluster member fails. Operations on the cluster member can be transparently routed to another member in the group, or to another cluster group.
+- *Replication Policy* - defines replication between two or more spaces in the cluster, and replication options such as synchronous/asynchronous and replication direction.
+- *Load Balancing Policy* - because user requests are submitted to the entire cluster, there is a need to distribute the requests between cluster members. The load balancing policy defines an algorithm according to which requests are routed to different members. For example, in a replicated topology, requests are divided evenly between cluster members; in a partitioned topology they are routed according to the partitioning key.
+- *Failover Policy* - defines what happens when a cluster member fails. Operations on the cluster member can be transparently routed to another member in the group, or to another cluster group.
 
 A *{_}cluster schema{_}* defines the cluster schema type. GigaSpaces provides predefined cluster schemas for all common cluster topologies. Each topology is a certain combination of replication, load balancing and failover policies.
 

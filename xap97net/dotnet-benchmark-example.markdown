@@ -61,7 +61,7 @@ The syntax of the command line for running the out-of-the-box benchmark is as fo
 {code}
 ..\..\lib\GigaSpaces.Core.Benchmarks.Launcher.exe {space-url}  {Input xml} {Results xml}
 {code}
-*space-url* \- The url for finding the Space. You can control the Space topology by changing the space-url parameter.
+*space-url* - The url for finding the Space. You can control the Space topology by changing the space-url parameter.
 Examples:
 Embedded:
 {code}
@@ -71,7 +71,7 @@ Remote:
 {code}
 "jini://localhost/*/remoteBenchmarkSpace?NoWriteLease=true&groups=myGroup"
 {code}
-*Input xml* \- Location of the xml file that contains the benchmark run configuration. The default is Xmls\BenchmarkPerson.xml.
+*Input xml* - Location of the xml file that contains the benchmark run configuration. The default is Xmls\BenchmarkPerson.xml.
 You can control the benchmark by changing parameters in the configuration file.
 
 The configuration file includes the following information:
@@ -79,7 +79,7 @@ The configuration file includes the following information:
 -  *<Benchmark>* elements. Each element defines a benchmark that will be included in the benchmark run.
 
 The Benchmark elements contain the following parameters:
-- *type* \- Define the benchmark type name. The type structure is:
+- *type* - Define the benchmark type name. The type structure is:
 {code}
 {Benchmark type name}`2[[Object type name, Assembly name],[Adapter type name, Assembly name]], Assembly name
 {code}
@@ -91,15 +91,15 @@ GigaSpaces.Core.Benchmarks.Implementations.Basic],[GigaSpaces.Core.Benchmarks.Im
 GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.Implementations.Basic</type>
 {code}
 
-- *repeats* \- Number of times to repeat the benchmark
-- *warmups* \- Number of repeats that will count as warm-up repeats, which will not be taken into consideration when calculating the benchmark performance results
-- *chunks* \- The batch size of the operation. Single operations use a chunk size of 0. This is relevant to multiple benchmarks, such as writemultiple
-- *executions* \- Number of executions of the benchmark single operation in each repeat
-- *payload* \- Use this field to manually enlarge the size of the Object (in bytes)
-- *txn-type* \- Transaction type. (Available transaction types: None, Jini, Local)
-- *show-info* \- Instructs detailed info to be displayed for each repeat
-- *threads* \- Number of concurrent threads that will execute this benchmark
-- *Results xml* \- Location of benchmarks results xml file. The default is the Results directory.
+- *repeats* - Number of times to repeat the benchmark
+- *warmups* - Number of repeats that will count as warm-up repeats, which will not be taken into consideration when calculating the benchmark performance results
+- *chunks* - The batch size of the operation. Single operations use a chunk size of 0. This is relevant to multiple benchmarks, such as writemultiple
+- *executions* - Number of executions of the benchmark single operation in each repeat
+- *payload* - Use this field to manually enlarge the size of the Object (in bytes)
+- *txn-type* - Transaction type. (Available transaction types: None, Jini, Local)
+- *show-info* - Instructs detailed info to be displayed for each repeat
+- *threads* - Number of concurrent threads that will execute this benchmark
+- *Results xml* - Location of benchmarks results xml file. The default is the Results directory.
 
 {anchor:2}
 
