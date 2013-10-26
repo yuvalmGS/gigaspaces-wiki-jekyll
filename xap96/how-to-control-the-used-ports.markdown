@@ -29,7 +29,7 @@ GigaSpaces space and client components open different ports in various situation
 
 {% comment %}
 | Webster | linux: `NO_HTTP` Windows: `noHTTP` | `0` | `\-Dcom.gigaspaces.start.httpPort=0 \-Dcom.gigaspaces.start.httpServerRetries=20`
-   | [How to Control the Used Ports^webster.xml](How to Control the Used Ports^webster.xml) | Additional properties can also be overridden (for example: `httpServerRetries`, `hostAddress`)
+   | [How to Control the Used Ports](webster.xml) | Additional properties can also be overridden (for example: `httpServerRetries`, `hostAddress`)
 
    `httpServerRetries` retries N-1 consecutive ports if the initial port is used (relevant if the initial port is different than zero). Default is 20.
    |

@@ -9,7 +9,7 @@ page_id: 61867375
 
 # Overview
 
-GigaSpaces makes logging calls by use of the Java ^TM^ platform's core logging facilities.
+GigaSpaces makes logging calls by use of the Java <sup>TM</sup> platform's core logging facilities.
 For more information on the JDK logging framework, please refer to the following online documentation: [Java Logging Overview](http://java.sun.com/j2se/1.5.0/docs/guide/logging/overview.html).
 
 # Configuration File
