@@ -23,7 +23,7 @@ As a result, when messages are redelivered, even if a message with higher priori
 - GS-2173 -- JMS does not support `StreamMessage`. Using this message type will probably cause errors, and therefore is not recommended. A working implementation of `StreamMessage` is planned for future releases.
 - GS-2213 -- JMS does not support message delivery threshold. A JMS provider might implement a message delivery threshold that prevents a message from being redelivered (due to session recovery) more times than that threshold number. When that number is passed, the message is sent to a dead letter queue. Currently, this feature is not supported.
 - GS-3314 -- In cluster environment, custom JMS destinations that are specified in the properties file are not bound to the RMI registry.
-For example, you may bind a JMS Queue by setting the property `_space-config.jms.administrated-destinations.queues.queue-names=_{*}{_}gs.Queue1{_}*`. You should expect to find it in the RMI registry as `_GigaSpaces;ContainerName;spaceName;jms;destinations;_{*}{_}gs.Queue1{_}*`, but it will be missing.
+For example, you may bind a JMS Queue by setting the property _`space-config.jms.administrated-destinations.queues.queue-names=`_**_`gs.Queue1`_**. You should expect to find it in the RMI registry as _`GigaSpaces;ContainerName;spaceName;jms;destinations;`_**_`gs.Queue1`_**, but it will be missing.
 Workaround:
 
 1. Extract the file: DefaultConfig_ClusteredJMS.xml from JSpaces.jar\config to the JS_HOME\config.
