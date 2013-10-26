@@ -22,10 +22,10 @@ In such a case, make sure you have a different lookup group for each space, wher
 # Setting up the Lookup Service For Multicast Discovery (Using Lookup Group)
 
 Each of the Jini Services (such as the Reggie lookup service or the Mahalo Transaction Manager) registers and advertises using a group name which is defined by the following system property (set in the {{/bin/setenv.bat file}}):
-{noformat}
-set LOOKUPGROUPS="gigaspaces-%USERNAME%"
-set LOOKUP_GROUPS_PROP=-Dcom.gs.jini_lus.groups=%LOOKUPGROUPS%
-{noformat}
+
+    set LOOKUPGROUPS="gigaspaces-%USERNAME%"
+    set LOOKUP_GROUPS_PROP=-Dcom.gs.jini_lus.groups=%LOOKUPGROUPS%
+
 While the {{%USERNAME%}} will be replaced after installation with the version number e.g.
 set {{LOOKUPGROUPS="gigaspaces-7.0XAPga"}}.
 

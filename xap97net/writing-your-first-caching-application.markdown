@@ -168,13 +168,13 @@ You can run one or more reader of either or both types.
 The application connects to the space using the GigaSpaces {{GigaSpacesFactory.FindSpace(spaceUrl)}} method. This is a method that accepts a _space URL_, discovers the space, and returns a proxy that allows the application to work with the space. The URL is usually not defined in the client application itself, but is supplied to it as an argument when it is started.
 
 In this tutorial, we will use a space connection URL similar to the following:
-{noformat}
-jini://*/*/myDataGrid
-{noformat}
+
+    jini://*/*/myDataGrid
+
 - This URL uses the Jini protocol, which enables dynamic discovery of the space (the client does not need to know which machines are participating in the Data Grid).
 - {{\*/\*/myDataGrid}} specifies that the client wants to connect to a cluster in which all the spaces are called {{myDataGrid}}, regardless of which physical machines participate in the cluster.
 - **`useLocalCache`** is an additional parameter, not shown above, which launches a local cache in the connecting application. This is necessary for the master-local and local-view topologies.
 
 (i) The URL above is used by the application to *connect* to the space (a cluster of spaces in this case), so it is called a _space connection URL_. This should not be confused with a _space start URL_, a similar form of URL which can be used to *start* a space. In this tutorial, you will not use a space start URL, rather you will start the spaces using the GS-UI, as described below.
 
-{anchor:notif
+{% anchor notif %}

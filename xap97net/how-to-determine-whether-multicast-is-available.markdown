@@ -9,9 +9,7 @@ page_id: 64127791
 
 # Syntax
 
-{noformat}
-gs> admin multicastTest [variable[variable]]
-{noformat}
+`gs> admin multicastTest [variable[variable]]`
 
 # Description
 
@@ -26,7 +24,7 @@ See the [How to Configure Multicast] section for details on how to enable multic
 
 This multicast utility serves to check multicast communication between sender and receiver running on different machines. You should run this utility from two different shells, where one should run from the sender machine and the other from the receiver machine. The sender machine should display the round trip reply time from all receiver machines. If multicast is configured properly on your machine and network, you should see the following message in your sender machine:
 
-{noformat}Reply from 192.138.120.56:5558 bytes=100 time=1.539ms{noformat}
+`Reply from 192.138.120.56:5558 bytes=100 time=1.539ms`
 
 {tip}For multi-homed network card machine use {{multicastTest -sender -ba \[network card IP]}}.{tip}
 
@@ -44,10 +42,10 @@ This multicast utility serves to check multicast communication between sender an
 # Example
 
 Run the following at the sender machine:
-{noformat}admin multicastTest -sender -ba localhost -verbose{noformat}
+`admin multicastTest -sender -ba localhost -verbose`
 
 Run the following at the receiver machine:
-{noformat}admin multicastTest -receiver -ba localhost -verbose{noformat}
+`admin multicastTest -receiver -ba localhost -verbose`
 
 The sender should display the following:
 {code:java}<GigaSpaces Root>\bin\gs>admin multicastTest -sender -ba localhost  -verbose
