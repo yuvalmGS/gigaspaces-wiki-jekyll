@@ -10,13 +10,13 @@ page_id: 64325381
 
 # Overview
 
-The {{ChangeExtension}} provides extension methods of {{ISpaceProxy}} on top of the [Change API] that simplify the common use cases of the {{Change}} operation.
+The `ChangeExtension` provides extension methods of `ISpaceProxy` on top of the [Change API] that simplify the common use cases of the `Change` operation.
 
 # Add and Get operation
 
 A common usage pattern is to increment a numeric property of a specific entry and needing the updated value after the increment was applied.
-Using the {{AddAndGet}} operation you can do that using one method call and get an atomic add and get operation semantics.
-Following is an example of incrementing a property named {{Counter}} inside an entry of type {{WordCount}}:
+Using the `AddAndGet` operation you can do that using one method call and get an atomic add and get operation semantics.
+Following is an example of incrementing a property named `Counter` inside an entry of type `WordCount`:
 {code:java}
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
@@ -25,4 +25,4 @@ int? newCounter = ISpaceProxy.AddAndGet(idQuery, "Counter", 1);
 {code}
 
 (!) You should use the primitive wrapper types as the operation semantic is to return null if there is no object matching the provided id query
-{info}Add {{using GigaSpaces.Core.Change.Extensions;}} in order to have the extension methods available.{info}
+{info}Add `using GigaSpaces.Core.Change.Extensions;` in order to have the extension methods available.{info}

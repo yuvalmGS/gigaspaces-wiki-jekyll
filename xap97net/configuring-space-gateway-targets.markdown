@@ -47,7 +47,7 @@ Here is an example of how this configuration should look:
 {code}
 {gcard}
 {gcard:Code Construction}
-When using code construction for creating a space, the gateway configuration should be part of the {{SpaceConfig}} object that is used to create the space:
+When using code construction for creating a space, the gateway configuration should be part of the `SpaceConfig` object that is used to create the space:
 {code:java}
 SpaceConfig spaceConfig = new SpaceConfig();
 //... Configure all other space properties
@@ -81,8 +81,8 @@ Each configuration can be configured for all gateways or specifically per each g
 ||Property||Description||Default||
 |BulkSize|Specifies the size of each replication bulk in terms of replication packets| 100 packets |
 |PendingOperationThreshold|Specifies the threshold of number of packets that are pending replication that once breached, a replication bulk will be transmitted | 100 packets |
-|IdleTimeThreshold|Specifies the maximum time to wait since the last time a replication bulk was transmitted, once elapsed, a replication bulk will be transmitted even if the {{pending-operation-threshold}} is not reached| 1000 miliseconds |
+|IdleTimeThreshold|Specifies the maximum time to wait since the last time a replication bulk was transmitted, once elapsed, a replication bulk will be transmitted even if the `pending-operation-threshold` is not reached| 1000 miliseconds |
 |MaxRedoLogCapacity|Specifies the maximum number of packets that should be held in the redo-log for a replication gateway (-1 means unlimited) | 100,000,000 |
-|OnRedoLogCapacityExceeded| {{DropOldest}} will result in dropping the oldest packet in the redo-log once the capacity is exceeded, {{BlockOperations}} will result in blocking all new replicated operations by denying such new operation by throwing an exception to the operation invoker. | {{DropOldest}} |
+|OnRedoLogCapacityExceeded| `DropOldest` will result in dropping the oldest packet in the redo-log once the capacity is exceeded, `BlockOperations` will result in blocking all new replicated operations by denying such new operation by throwing an exception to the operation invoker. | `DropOldest` |
 
 If one of the gateway targets name matches the local-gateway-name, it will be filtered and removed from the list at deploy time. This may be helpful for creating symmetric configuration which is demonstrated at [Multi-Site Replication (WAN)|Multi-Site Replication over the WAN] page.

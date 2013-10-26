@@ -11,7 +11,7 @@ page_id: 64127778
 
 (!) **It is essential to set the `groups` and `locators` system properties in the Java process which starts the Lookup Service or Mahalo services**. This is required in order to "tell" the Jini service which groups and locators it should join, and which to serve. If these properties are not set, the Lookup Service/Mahalo uses the Jini fallback values and that impact the SLA these services serve with.
 
-(-) **Do not have more than two Jini Lookup Services across one site** - having the {{gsInstance}} running a Jini Lookup Service embedded by default can cause problems. As a result of not have more than two Jini Lookup Services across one site, spaces do not have to deal with registering themselves into too many Jini Lookup Services, and the Space Browser's freezing behavior is reduced.
+(-) **Do not have more than two Jini Lookup Services across one site** - having the `gsInstance` running a Jini Lookup Service embedded by default can cause problems. As a result of not have more than two Jini Lookup Services across one site, spaces do not have to deal with registering themselves into too many Jini Lookup Services, and the Space Browser's freezing behavior is reduced.
 
 (!) **Jini groups vs. locators** - Jini groups are irrelevant when using unicast lookup discovery - they are relevant only when using multicast lookup discovery. If you have multiple spaces with the same name and you are using unicast lookup discovery, you might end up getting the wrong proxy.
 
@@ -21,15 +21,15 @@ In such a case, make sure you have a different lookup group for each space, wher
 
 # Setting up the Lookup Service For Multicast Discovery (Using Lookup Group)
 
-Each of the Jini Services (such as the Reggie lookup service or the Mahalo Transaction Manager) registers and advertises using a group name which is defined by the following system property (set in the {{/bin/setenv.bat file}}):
+Each of the Jini Services (such as the Reggie lookup service or the Mahalo Transaction Manager) registers and advertises using a group name which is defined by the following system property (set in the `/bin/setenv.bat file`):
 
     set LOOKUPGROUPS="gigaspaces-%USERNAME%"
     set LOOKUP_GROUPS_PROP=-Dcom.gs.jini_lus.groups=%LOOKUPGROUPS%
 
-While the {{%USERNAME%}} will be replaced after installation with the version number e.g.
-set {{LOOKUPGROUPS="gigaspaces-7.0XAPga"}}.
+While the `%USERNAME%` will be replaced after installation with the version number e.g.
+set `LOOKUPGROUPS="gigaspaces-7.0XAPga"`.
 
-The command that loads a space needs to have this system property set. Another way of doing it instead of setting the {{com.gs.jini_lus.groups}} system property, is to set the Space URL groups attribute, e.g.:
+The command that loads a space needs to have this system property set. Another way of doing it instead of setting the `com.gs.jini_lus.groups` system property, is to set the Space URL groups attribute, e.g.:
 {code:java}
 /./mySpace?schema=cache&groups=myPrivateGroupName
 {code}
@@ -45,9 +45,9 @@ If you are looking for a way to use a unicast discovery, please refer to the [Ho
 (/) To support co-existence of different GigaSpaces versions, the defaults below may change between releases.
 
 Adjusting the lookup services multicast settings can be done using the following system properties:
-- **`com.gs.multicast.announcement`** - the multicast address that controls the lookup service announcement. The lookup service uses this address to periodically announce its existence. Defaults to {{224.0.1.188}}.
-- **`com.gs.multicast.request`** - the multicast address that controls the request of clients (when started) to available lookup services. Defaults to {{224.0.1.187}}.
-- **`com.gs.multicast.discoveryPort`** - the port used during discovery for multicast requests. Defaults to {{4174}}. Note that in case the property {{com.sun.jini.reggie.initialUnicastDiscoveryPort}} system property is not defined it is also used as the default post for unicast requests.
+- **`com.gs.multicast.announcement`** - the multicast address that controls the lookup service announcement. The lookup service uses this address to periodically announce its existence. Defaults to `224.0.1.188`.
+- **`com.gs.multicast.request`** - the multicast address that controls the request of clients (when started) to available lookup services. Defaults to `224.0.1.187`.
+- **`com.gs.multicast.discoveryPort`** - the port used during discovery for multicast requests. Defaults to `4174`. Note that in case the property `com.sun.jini.reggie.initialUnicastDiscoveryPort` system property is not defined it is also used as the default post for unicast requests.
 - **`com.gs.multicast.ttl`** - The multicast packet time to live. Defaults to 3.
 - **`com.gs.multicast.enabled`** - a global property allowing you to completely enable or disable multicast in the system.
 
@@ -55,8 +55,8 @@ Adjusting the lookup services multicast settings can be done using the following
 
 # Troubleshooting the Discovery/Group Configuration
 
-Using the [list LUS |list - GigaSpaces CLI#list-6.0-ListsallactiveJiniLookupServiceinstancesandtheirattributes] CLI option, run from {{<GigaSpaces Root>\bin\gs.bat/sh}}, you can search for available Jini Lookup Services in the network.
-{{<GigaSpaces Root>\bin\gs.bat/sh}} list lus
+Using the [list LUS |list - GigaSpaces CLI#list-6.0-ListsallactiveJiniLookupServiceinstancesandtheirattributes] CLI option, run from `<GigaSpaces Root>\bin\gs.bat/sh`, you can search for available Jini Lookup Services in the network.
+`<GigaSpaces Root>\bin\gs.bat/sh` list lus
 
 The following result examples appear on the console:
 {code:java}

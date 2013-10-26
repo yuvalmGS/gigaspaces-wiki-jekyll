@@ -28,7 +28,7 @@ public interface IDataProcessor
 }
 {code}
 
-(!) The {{Data}} object should be {{Serializable}}
+(!) The `Data` object should be `Serializable`
 
 # Implementing the Contract
 
@@ -64,7 +64,7 @@ public class DataProcessor : IDataProcessor
 
 # Using the Service on the Client Side
 
-In order to use the exported {{IDataProcessor}} on the client side, the client should use the {{IDataProcessor}} interface directly and construct a proxy to the service using the appropriate builder:
+In order to use the exported `IDataProcessor` on the client side, the client should use the `IDataProcessor` interface directly and construct a proxy to the service using the appropriate builder:
 
 {code:java}
 ISpaceProxy spaceProxy = // obtain a space proxy
@@ -74,7 +74,7 @@ ExecutorRemotingProxyBuilder<IDataProcessor> proxyBuilder = new ExecutorRemoting
 IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 {code}
 
-The above example uses the {{ExecutorRemotingProxyBuilder}} in order to create the remoting proxy which can then be used for remote invocation.
+The above example uses the `ExecutorRemotingProxyBuilder` in order to create the remoting proxy which can then be used for remote invocation.
 
 ## Service Lookup Name
 
@@ -109,7 +109,7 @@ public interface IRemoteRoutingHandler
 }
 {code}
 
-Here is a sample implementation which uses the first parameter {{Data}} object type as the routing index.
+Here is a sample implementation which uses the first parameter `Data` object type as the routing index.
 
 {code:java}
 public class DataRemoteRoutingHandler : IRemoteRoutingHandler
@@ -158,13 +158,13 @@ public interface IMyService {
 }
 {code}
 
-In the above example, the {{RoutingProperty}} property is called on the {{Value}} object, and its return value is used to extract the routing index.
+In the above example, the `RoutingProperty` property is called on the `Value` object, and its return value is used to extract the routing index.
 
 # Asynchronous Execution
 
-executor remoting supports asynchronous execution of remote services using the conventional {{IAsyncResult}} interface.
+executor remoting supports asynchronous execution of remote services using the conventional `IAsyncResult` interface.
 
-Since the definition of the interface acts as the contract between the client and the server, asynchronous invocation requires the interface to also support the same business method, returning an {{IAsyncResult}} instead of its actual return value and the conventional Begin End methods. The asynchronous nature is only relevant on the client side, provided by the asynchronous remoting capability.
+Since the definition of the interface acts as the contract between the client and the server, asynchronous invocation requires the interface to also support the same business method, returning an `IAsyncResult` instead of its actual return value and the conventional Begin End methods. The asynchronous nature is only relevant on the client side, provided by the asynchronous remoting capability.
 
 The following code demonstrates how such service would be implemented:
 
@@ -181,13 +181,13 @@ public interface ISimpleService
 
 Both the client and server share the same interface, with the interface holding both synchronous and asynchronous services. Here is an example:
 
-In the above case, the server implementation does not need to implement the {{BeginCalc}} and {{EndCalc}} methods (simply return {{null}} or throw {{NotSupportedException}} for the {{BeginCalc}} and {{EndCalc}} methods). The client side can choose which service to invoke.
+In the above case, the server implementation does not need to implement the `BeginCalc` and `EndCalc` methods (simply return `null` or throw `NotSupportedException` for the `BeginCalc` and `EndCalc` methods). The client side can choose which service to invoke.
 You should note the naming convention and the signature of the asynchronous method in this case, which follows the conventional naming convention of the .NET framework.
 If the regular method looks as follows:
-{{T DoSomething(String arg)}}, T being the return value type, then the asynchronous method should have the following two methods:
-{{IAsyncResult BeginDoSomething(String arg, AsyncCallback callback, Object stateObject)}}.
-{{T EndDoSomething(IAsyncResult asyncResult)}}
-In other words, the regular method should be wrapped with two additional methods, one is prefixed with {{Begin}} and the return value should be an {{IAsyncResult}}, this method starts the asynchornous invocation. And an additional method prefixed with {{End}} and the return value is of the synchronous method which receives the {{IAsyncResult}} as its single parameter.
+`T DoSomething(String arg)`, T being the return value type, then the asynchronous method should have the following two methods:
+`IAsyncResult BeginDoSomething(String arg, AsyncCallback callback, Object stateObject)`.
+`T EndDoSomething(IAsyncResult asyncResult)`
+In other words, the regular method should be wrapped with two additional methods, one is prefixed with `Begin` and the return value should be an `IAsyncResult`, this method starts the asynchornous invocation. And an additional method prefixed with `End` and the return value is of the synchronous method which receives the `IAsyncResult` as its single parameter.
 
 # Transactional Execution
 
@@ -267,13 +267,13 @@ proxyBuilder.SetInvocationAspects(new MyLoggingAspect(), new MySecurityAspect())
 IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 {code}
 
-There can be one or more aspects supplied to the builder, they will be invoked one after the other according to the order in which they were set. Each aspect can decide whether to continue executing the aspect pipeline invocation using the {{invocation.Proceed()}} method, or return the invocation result without continuing to the next aspects by setting a return value using the {{invocation.ReturnValue}} property. The final remote invocation it self is an aspect which is the last one to be executed. Plugging custom aspects can decide according to the aspect implementation whether to invoke the actual remote service or not.
+There can be one or more aspects supplied to the builder, they will be invoked one after the other according to the order in which they were set. Each aspect can decide whether to continue executing the aspect pipeline invocation using the `invocation.Proceed()` method, or return the invocation result without continuing to the next aspects by setting a return value using the `invocation.ReturnValue` property. The final remote invocation it self is an aspect which is the last one to be executed. Plugging custom aspects can decide according to the aspect implementation whether to invoke the actual remote service or not.
 
 {anchor:serverExecutionApect}
 
 ## The Server Invocation Aspect
 
-The server side invocation aspect interface is shown below. You should implement this interface and wire it to the {{DomainServiceHost}} (this is the component that is responsible for hosting and exposing your service to remote clients):
+The server side invocation aspect interface is shown below. You should implement this interface and wire it to the `DomainServiceHost` (this is the component that is responsible for hosting and exposing your service to remote clients):
 
 {code:java}
 public interface IServiceExecutionAspect
@@ -298,11 +298,11 @@ DomainServiceHost.Initialize(new MyExecutionLoggingAspect(), new MySecurityExecu
 
 The different execution aspects can be wired only once, and that is when the DomainServiceHost is initialized, which means before publishing any service in it.
 
-The execution of the aspects is very similar to the client side aspects, it follows the same pattern of pipeline execution of aspects followed by the specified order. Each aspect can decide whether to continue executing the aspect pipeline execution using the {{invocation.Proceed()}} method, or return the execution result without continuing to the next aspects by setting a return value using the {{invocation.ReturnValue}} property. The final service execution it self is an aspect which is the last one to be executed. Plugging custom aspects can decide according to the aspect implementation whether to execute the actual operation on the service or not.
+The execution of the aspects is very similar to the client side aspects, it follows the same pattern of pipeline execution of aspects followed by the specified order. Each aspect can decide whether to continue executing the aspect pipeline execution using the `invocation.Proceed()` method, or return the execution result without continuing to the next aspects by setting a return value using the `invocation.ReturnValue` property. The final service execution it self is an aspect which is the last one to be executed. Plugging custom aspects can decide according to the aspect implementation whether to execute the actual operation on the service or not.
 
 # The Metadata Handler
 
-When executing a service using Space based remoting, a set of one or more metadata arguments (in the form of a {{System.Object}} array) can be passed to the server with the remote invocation. This feature is very handy when you want to pass certain metadata with every remote call that is not part of the arguments of the method you call. A prime example for using meta arguments is security -- i.e. passing security credentials as meta arguments, and using a server side aspect to authorize the execution or to log who actually called the method.
+When executing a service using Space based remoting, a set of one or more metadata arguments (in the form of a `System.Object` array) can be passed to the server with the remote invocation. This feature is very handy when you want to pass certain metadata with every remote call that is not part of the arguments of the method you call. A prime example for using meta arguments is security -- i.e. passing security credentials as meta arguments, and using a server side aspect to authorize the execution or to log who actually called the method.
 
 To create the meta arguments on the client side you should implement the following interface and inject an instance of the implementing class to the client side proxy:
 
@@ -319,7 +319,7 @@ public interface IMetaArgumentsHandler
 }
 {code}
 
-The following snippets show how to plug a custom meta arguments handler to the client side remote proxy. The {{Object}} array returned by the implementation of the {{IMetaArgumentsHandler}} interface will be sent along with the invocation to server side.
+The following snippets show how to plug a custom meta arguments handler to the client side remote proxy. The `Object` array returned by the implementation of the `IMetaArgumentsHandler` interface will be sent along with the invocation to server side.
 
 {code:java}
 ISpaceProxy spaceProxy = // obtain a space proxy
@@ -330,7 +330,7 @@ proxyBuilder.MetaArgumentsHandler = new MyMetaArgumentsHandler();
 IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 {code}
 
-The way to access the meta arguments on the server side is to configure a [server side execution aspect|#serverExecutionApect] by implementing the {{ServiceExecutionAspect}} and wiring it on the server side as shown [above|#serverExecutionApect]. To access the meta arguments, you should call {{SpaceRemotingInvocation.MetaArguments}} on the {{invocation}} argument provided to the server side aspect.
+The way to access the meta arguments on the server side is to configure a [server side execution aspect|#serverExecutionApect] by implementing the `ServiceExecutionAspect` and wiring it on the server side as shown [above|#serverExecutionApect]. To access the meta arguments, you should call `SpaceRemotingInvocation.MetaArguments` on the `invocation` argument provided to the server side aspect.
 
 # Broadcast Remoting
 
@@ -434,10 +434,10 @@ public interface IRemoteResultFilter
 {code}
 
 Each time a result arrives the filter is called and the collection process is managed by the 4 possible return results of the filter decision:
-{{Continue}} - Collect this result and continue.
-{{Skip}} - Skip this result and continue.
-{{Break}} - Collect this result and break.
-{{SkipAndBreak}} - Skip this result and break.
+`Continue` - Collect this result and continue.
+`Skip` - Skip this result and continue.
+`Break` - Collect this result and break.
+`SkipAndBreak` - Skip this result and break.
 
 We demonstrate a filter usage by extending the previous example:
 {code:java}

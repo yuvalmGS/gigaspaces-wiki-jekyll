@@ -9,11 +9,11 @@ page_id: 63799350
 
 # Overview
 
-The **{{SqlQuery}}** class is used to query the space using SQL-like syntax. This query can be passed as a template to the Read, Take, ReadMultiple, TakeMultiple, Count and Clear operations, as well as a template when registering for notification.
+The **`SqlQuery`** class is used to query the space using SQL-like syntax. This query can be passed as a template to the Read, Take, ReadMultiple, TakeMultiple, Count and Clear operations, as well as a template when registering for notification.
 
 # Usage
 
-An {{SqlQuery}} is composed from the **type** of entry to query, an **expression** in a SQL syntax and optionally one or more **parameters** which provide values for the expression.
+An `SqlQuery` is composed from the **type** of entry to query, an **expression** in a SQL syntax and optionally one or more **parameters** which provide values for the expression.
 
 #### Example 1
 
@@ -23,7 +23,7 @@ Person[] persons = proxy.ReadMultiple<Person>(
     new SqlQuery<Person>("Age >= 21"));
 {code}
 
-Note that the expression is equivalent to the WHERE part of a query. The FROM part is derived from the generic argument of the {{SqlQuery}} class, and the SELECT part is not needed since the result is a fully-formed object.
+Note that the expression is equivalent to the WHERE part of a query. The FROM part is derived from the generic argument of the `SqlQuery` class, and the SELECT part is not needed since the result is a fully-formed object.
 
 #### Example 2
 
@@ -41,13 +41,13 @@ This time instead of specifying the values directly in the expression we've used
 # Supported SQL Features
 
 GigaSpaces SqlQuery supports the following:
-- {{AND}} / {{OR}} operators to combine two or more conditions.
-- All basic logical operations to create conditions: {{=, <>, <,>, >=, <=, like, NOT like, is null, is NOT null, IN}}.
-- {{BETWEEN}} (starting 8.0.1)
-- {{ORDER BY (ASC | DESC)}} for multiple POJO properties. Supported only by readMultiple. {{ORDER BY}} supports also nested object fields.
-- {{GROUP BY}} - performs DISTINCT on the POJO properties. Supported only by readMultiple. {{GROUP BY}} supports also nested object fields.
-- {{sysdate}} - current system date and time.
-- {{rownum}} - limits the number of rows to select.
+- `AND` / `OR` operators to combine two or more conditions.
+- All basic logical operations to create conditions: `=, <>, <,>, >=, <=, like, NOT like, is null, is NOT null, IN`.
+- `BETWEEN` (starting 8.0.1)
+- `ORDER BY (ASC | DESC)` for multiple POJO properties. Supported only by readMultiple. `ORDER BY` supports also nested object fields.
+- `GROUP BY` - performs DISTINCT on the POJO properties. Supported only by readMultiple. `GROUP BY` supports also nested object fields.
+- `sysdate` - current system date and time.
+- `rownum` - limits the number of rows to select.
 - Sub queries.
 
 # Indexing
@@ -56,7 +56,7 @@ It is highly recommended to use indexes on relevant properties to increase perfo
 
 # Blocking Operations
 
-Blocking operations (i.e. {{Read}} or {{Take}} with {{timeout}} greater than {{0}}) are supported with the following restrictions:
+Blocking operations (i.e. `Read` or `Take` with `timeout` greater than `0`) are supported with the following restrictions:
 - Blocking operations on a partitioned space require a routing value (broadcast is not supported). For more information see [#Routing].
 - Blocking operations on complex queries are not supported. For more information see [Simple Queries|#SimpleQueries] definition.
 
@@ -72,7 +72,7 @@ When running on a partitioned space, it is important to understand how routing i
 
 If the routing property is part of the criteria expression with an equality operand and without ORs, its value is used for routing.
 
-For example, suppose the routing property of **{{MyClass}}** is **{{Num}}**:
+For example, suppose the routing property of **`MyClass`** is **`Num`**:
 {code:java}
 // Execute query on partition #1
 SQLQuery<MyClass> query1 = new SQLQuery<MyClass>(
@@ -89,9 +89,9 @@ SQLQuery<MyClass> query3 = new SQLQuery<MyClass>(
     "Num = 1 OR Name='smith'");
 {code}
 
-Note that in {{query1}} the {{Num}} property is used both for routing and matching.
+Note that in `query1` the `Num` property is used both for routing and matching.
 
-In some scenarios we may want to execute the query on a specific partition without matching the routing property (e.g. blocking operation). Starting 8.0.1, this can be done via the {{Routing}} property:
+In some scenarios we may want to execute the query on a specific partition without matching the routing property (e.g. blocking operation). Starting 8.0.1, this can be done via the `Routing` property:
 {code:java}
 SQLQuery<MyClass> query = new SQLQuery<MyClass>("Num > 3");
 query.Routing = 1;
@@ -111,11 +111,11 @@ Since Enums are stored in the space as their underlying primitive type, they mus
 Most space operations and features support any SQL query, but some support only **simple** queries and not **complex** ones.
 
 A query is considered complex if it contains one or more of the following:
-- {{NOT LIKE}}
-- {{GROUP BY}}
-- {{ORDER BY}}
+- `NOT LIKE`
+- `GROUP BY`
+- `ORDER BY`
 - Subqueries
-- {{OR}} (before 8.0.1)
+- `OR` (before 8.0.1)
 
 The following features support only simple SQL queries
 - Snapshot
@@ -128,15 +128,15 @@ The following features support only simple SQL queries
 GigaSpaces SqlQuery **does not** support the following:
 - Aggregate functions: COUNT, MAX, MIN, SUM, AVG.
 - Multiple tables select.
-- {{DISTINCT}}
+- `DISTINCT`
 - The SQL statements: HAVING, VIEW, TRIGGERS, EXISTS, BETWEEN, NOT, CREATE USER, GRANT, REVOKE, SET PASSWORD, CONNECT USER, ON.
 - Constraints: NOT NULL, IDENTITY, UNIQUE, PRIMARY KEY, Foreign Key/REFERENCES, NO ACTION, CASCADE, SET NULL, SET DEFAULT, CHECK.
 - Set operations: Union, Minus, Union All.
 - Advanced Aggregate Functions: STDEV, STDEVP, VAR, VARP, FIRST, LAST.
 - Mathematical expressions.
-- {{LEFT OUTER JOIN}}
-- {{RIGHT OUTER JOIN}}
-- {{INNER JOIN}}
+- `LEFT OUTER JOIN`
+- `RIGHT OUTER JOIN`
+- `INNER JOIN`
 
 ### Reserved Words
 

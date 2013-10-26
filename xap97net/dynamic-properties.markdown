@@ -20,7 +20,7 @@ Dynamic properties can be used with Object as well. This provides better interop
 
 # Enabling Dynamic Properties
 
-To enable dynamic properties add a {{Dictionary<String, Object>}} property to the relevant class and decorate it with {{\[SpaceDynamicProperties\]}}. For example, the following **Person** class has two fixed properties (Name and Id), and an additional **ExtraInfo** property used to host the dynamic properties:
+To enable dynamic properties add a `Dictionary<String, Object>` property to the relevant class and decorate it with `\[SpaceDynamicProperties\]`. For example, the following **Person** class has two fixed properties (Name and Id), and an additional **ExtraInfo** property used to host the dynamic properties:
 
 {code:java}
 public class Person
@@ -33,7 +33,7 @@ public class Person
 }
 {code}
 
-(+) It is recommended to use the {{DocumentProperties}} class to host dynamic properties.
+(+) It is recommended to use the `DocumentProperties` class to host dynamic properties.
 
 # Using Dynamic Properties
 
@@ -49,7 +49,7 @@ p.ExtraInfo["age"] = 30;
 space.Write(p);
 {code}
 
-When the entry is read from the space the dynamic properties will be stored in the DocumentProperties reference annotated with {{SpaceDynamicProperties}}.
+When the entry is read from the space the dynamic properties will be stored in the DocumentProperties reference annotated with `SpaceDynamicProperties`.
 
 Dynamic properties can also be used for matching. For example, suppose we want to get all persons who are not minors (defined here as those less than twenty-one years of age) and email them something:
 

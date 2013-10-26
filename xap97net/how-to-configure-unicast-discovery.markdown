@@ -17,7 +17,7 @@ In such cases, the Jini lookup discovery enables the user to discover services (
 
 # Configuring the lookup locators property
 
-Services will use the locators property to locate the Jini Lookup Service to lookup other services registered on it. The locators property is configured using the {{XapNet.Locators}} macro or the {{com.gs.jini_lus.locators}} system property. By default it is left blank. It accepts a comma separated list of {{host:port}}. This list should include the hosts (and ports) where the Jini Lookup Service (or GSM) is running. The default port is 4174.
+Services will use the locators property to locate the Jini Lookup Service to lookup other services registered on it. The locators property is configured using the `XapNet.Locators` macro or the `com.gs.jini_lus.locators` system property. By default it is left blank. It accepts a comma separated list of `host:port`. This list should include the hosts (and ports) where the Jini Lookup Service (or GSM) is running. The default port is 4174.
 
 For example, considering the GSM(+LUS) is running on machine1:4174 and machine2:4174 machines:
 {code:title=Settings.xml}
@@ -39,7 +39,7 @@ If you want unicast only, you should disable multicast altogether.
 
 
 {% tip %}
-For **unicast discovery only**, you should disable multicast using **{{com.gs.multicast.enabled=false}}** system property, and use:
+For **unicast discovery only**, you should disable multicast using **`com.gs.multicast.enabled=false`** system property, and use:
 {code}jini://machine1:4174,machine2:4174/./mySpace?locators=machine1:4174,machine2:4174{code}
 {% endtip %}
 
@@ -48,8 +48,8 @@ For **unicast discovery only**, you should disable multicast using **{{com.gs.mu
 
 # Configuring Jini Lookup Service Unicast Port
 
-To change the lookup service port when using the Service Grid, you can use the **{{com.sun.jini.reggie.initialUnicastDiscoveryPort}}** system property. The default value is the one assigned to the {{com.gs.multicast.discoveryPort}} system property, that is 4174 with XAP 7.x.
-- Set the {{LOOKUPLOCATORS}} system property in {{<GigaSpaces Root>\bin\setenv.bat/sh}} to match the port number you defined (in this case, {{host:1234}}). That is required if you specify an explicit unicast/locators port, otherwise the service will use the default port if not set explicitly (see [**com.gs.multicast.discoveryPort system property**|Lookup Service Configuration#Multicast Settings]).
+To change the lookup service port when using the Service Grid, you can use the **`com.sun.jini.reggie.initialUnicastDiscoveryPort`** system property. The default value is the one assigned to the `com.gs.multicast.discoveryPort` system property, that is 4174 with XAP 7.x.
+- Set the `LOOKUPLOCATORS` system property in `<GigaSpaces Root>\bin\setenv.bat/sh` to match the port number you defined (in this case, `host:1234`). That is required if you specify an explicit unicast/locators port, otherwise the service will use the default port if not set explicitly (see [**com.gs.multicast.discoveryPort system property**|Lookup Service Configuration#Multicast Settings]).
 
 # Configuring lookup discovery intervals
 
@@ -65,7 +65,7 @@ long[] sleepTime = {5 ** 1000, 10 ** 1000, 20 * 1000,
 You'll max out at 15 minutes between retries. Thats a big window.
 The retry logic only begins once the discovered lookup service is discarded.
 
-To tune the unicast retry intervals, the {{com.gigaspaces.unicast.interval}} system property is used to control the behavior of this LookupLocatorDiscovery utility. A comma separated list of values defining the intervals to wait between subsequent retries. Values are declared in milliseconds.
+To tune the unicast retry intervals, the `com.gigaspaces.unicast.interval` system property is used to control the behavior of this LookupLocatorDiscovery utility. A comma separated list of values defining the intervals to wait between subsequent retries. Values are declared in milliseconds.
 
 Example:
 {code}

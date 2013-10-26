@@ -9,7 +9,7 @@ page_id: 63799413
 
 # Overview
 
-While in most cases, using the {{DefaultDataEventSession}} as desribed in the [Space Events|Space Events] page is enough to get the job done, in some cases it is not enough. For instance if you want a mechanism that detects that an event listener is no longer active due to space failure, or to make sure that if the client proxy terminates unexpectedly, the listener resources are cleaned up in the space. All of these, and more, are covered in this page.
+While in most cases, using the `DefaultDataEventSession` as desribed in the [Space Events|Space Events] page is enough to get the job done, in some cases it is not enough. For instance if you want a mechanism that detects that an event listener is no longer active due to space failure, or to make sure that if the client proxy terminates unexpectedly, the listener resources are cleaned up in the space. All of these, and more, are covered in this page.
 
 # Event Mechanism in General
 
@@ -19,7 +19,7 @@ Every time an event occurs in a space, which matches the given template and even
 
 # Customizing DataEventSession Behavior
 
-In order to customize the behavior of an [{{IDataEventSession}}|http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_IDataEventSession.htm], a new one needs to be created, using a specific [{{DataEventConfig}} |http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_EventSessionConfig.htm] that configures the behavior. This section describes different scenarios, and how to address them, by customizing the data event session
+In order to customize the behavior of an [`IDataEventSession`|http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_IDataEventSession.htm], a new one needs to be created, using a specific [`DataEventConfig` |http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_EventSessionConfig.htm] that configures the behavior. This section describes different scenarios, and how to address them, by customizing the data event session
 
 {code:java}
 EventSessionConfig eventSessionConfig = new EventSessionConfig();
@@ -40,14 +40,14 @@ In order to detect and handle listener disconnection, the **auto renewal** mecha
 
 When adding a new listener, one of the parameters is the leaseTime. A leaseTime is a concept that appears in many places in the API. The idea behind it, is that it allows you to specify how long to keep the object alive in the space. In a listener context, it means how long the event registration should remain active (in milliseconds). By default, the lease time is forever (Long.MaxValue).
 
-The auto renewal idea is that the listener is added with a limited lease, for example 10 seconds, and the proxy automatically renews the lease before it expires. The client can register to the {{EventSessionConfig.AutoRenewalFailed}} event, and be notified if the auto renewal failed. This approach solves the following issues:
+The auto renewal idea is that the listener is added with a limited lease, for example 10 seconds, and the proxy automatically renews the lease before it expires. The client can register to the `EventSessionConfig.AutoRenewalFailed` event, and be notified if the auto renewal failed. This approach solves the following issues:
 
 - The client process terminated unexpectedly, and didn't unregister its listener. After the lease expires, the notify template is removed from the space, instead of staying alive forever.
 - If the space is no longer available, then the client is notified that it couldn't renew the listener lease.
 - If the client causes a [slow consumer|XAP95:Slow Consumer] scenario, and as a result its listener has been disconnected by the space, then the client is notified that it couldn't renew the listener lease, and it can reregister to the event.
 
 **Configuring data event session with auto renewal**
-Auto renewal behavior is determined by the {{EventSessionConfig.AutoRenew}} property.
+Auto renewal behavior is determined by the `EventSessionConfig.AutoRenew` property.
 {code:java}
 EventSessionConfig eventSessionConfig = new EventSessionConfig();
 eventSessionConfig.AutoRenew = true;
@@ -70,9 +70,9 @@ When a notification is sent from the space to the client, the callback method is
 It is possible to reduce network traffic, and concurrent threads that handle notifications, by using the batch notification mechanism. Instead of sending each notification separately, notifications are grouped together in the space, and sent as one batch.
 
 **Configuring data event session with batch notifications**
-Batch notification behavior is determined by the {{EventSessionConfig.Batch}} property, in conjuction with the {{EventSessionConfig.BatchSize}} and {{EventSessionConfig.BatchTime}} properties.
+Batch notification behavior is determined by the `EventSessionConfig.Batch` property, in conjuction with the `EventSessionConfig.BatchSize` and `EventSessionConfig.BatchTime` properties.
 
-The batch notification is sent when either one of these two parameters has been reached or exceeded. Either the pending notification size has reached the {{BatchSize}}, or the time, in milliseconds, that elapsed from the last sent notification batch, exceeds {{BatchTime}}.
+The batch notification is sent when either one of these two parameters has been reached or exceeded. Either the pending notification size has reached the `BatchSize`, or the time, in milliseconds, that elapsed from the last sent notification batch, exceeds `BatchTime`.
 {code:java}
 EventSessionConfig eventSessionConfig = new EventSessionConfig();
 eventSessionConfig.Batch = true;

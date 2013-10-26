@@ -15,7 +15,7 @@ Supporting FIFO (First In, First Out) behavior for Entries is a critical require
 
 The default space behavior is non-FIFO. The reason is that FIFO support comes at a cost: the space needs to organize and maintain the entries internally in a more complex fashion to support FIFO queries, thus slowing down concurrent write operations. To enable FIFO operations users need to turn on FIFO support for classes which will participate in such operations. If a FIFO operation is performed on an entry whose class does not support FIFO, an exception will be thrown.
 
-Setting FIFO support for a class can be done via the {{FifoSupport}} property on the {{\[SpaceClass\]}} attribute:
+Setting FIFO support for a class can be done via the `FifoSupport` property on the `\[SpaceClass\]` attribute:
 
 {code:java}
 [SpaceClass(FifoSupport = FifoSupport.Operation)]
@@ -25,7 +25,7 @@ public class Person
 }
 {code}
 
-or when using gs.xml via the {{fifo-support}} attribute on the {{class}} element:
+or when using gs.xml via the `fifo-support` attribute on the `class` element:
 
 {code:xml}
 <gigaspaces-mapping>
@@ -35,22 +35,22 @@ or when using gs.xml via the {{fifo-support}} attribute on the {{class}} element
 </gigaspaces-mapping>
 {code}
 
-The {{FifoSupport}} modes are:
+The `FifoSupport` modes are:
 
-1. **{{Off}}** - This class does not support FIFO. Attempting to execute FIFO operations will throw an exception.
-2. **{{Operation}}** - FIFO support is enabled. An operation's FIFO behavior is determined by its modifiers or settings.
-3. **{{All}}** - FIFO support is enabled. Any operation will be FIFO, overriding its other modifier or settings.
-4. **{{Default}}** - FIFO support will be derived from the base class recursively.
+1. **`Off`** - This class does not support FIFO. Attempting to execute FIFO operations will throw an exception.
+2. **`Operation`** - FIFO support is enabled. An operation's FIFO behavior is determined by its modifiers or settings.
+3. **`All`** - FIFO support is enabled. Any operation will be FIFO, overriding its other modifier or settings.
+4. **`Default`** - FIFO support will be derived from the base class recursively.
 
 # Space Operations with FIFO
 
 ## Query Operations with FIFO
 
-To execute Read/Take operations with FIFO, use {{ReadModifiers.Fifo}} / {{TakeModifiers.Fifo}} respectively. For example:
+To execute Read/Take operations with FIFO, use `ReadModifiers.Fifo` / `TakeModifiers.Fifo` respectively. For example:
 {code:java}
 Person result = space.Take(new Person(), transaction, timeout, TakeModifiers.FIFO);
 {code}
-If class {{Person}} is not set to support FIFO, an exception will be thrown.
+If class `Person` is not set to support FIFO, an exception will be thrown.
 
 ## Read with FIFO
 
@@ -64,7 +64,7 @@ A take operation using FIFO might be critical when building a Point-to-Point (P2
 
 ## Batch operations with FIFO
 
-When using the {{ReadMultiple}} or {{TakeMultiple}} with FIFO, the returned array will be ordered according to the time the entries were written to the space.
+When using the `ReadMultiple` or `TakeMultiple` with FIFO, the returned array will be ordered according to the time the entries were written to the space.
 
 ## Transactions and FIFO
 
@@ -74,7 +74,7 @@ For example, if a transactional polling container consumes data and throws an ex
 
 # Events with FIFO
 
-When registering for events, use {{EventSessionConfig.Fifo}} to instruct the space that events should be sent to the client in FIFO order. For example:
+When registering for events, use `EventSessionConfig.Fifo` to instruct the space that events should be sent to the client in FIFO order. For example:
 {code:java}
 // Create an event session configuration with FIFO:
 EventSessionConfig sessionConfig = new EventSessionConfig();

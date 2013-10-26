@@ -74,7 +74,7 @@ They can be configured whether to be clustered proxies or a proxy to the direct 
 This configuration file will create a container with two embedded spaces, one will not be aware to the cluster info which the container received, and as a result will be a single embedded space not part of any cluster.
 The second proxy will be embedded and part of the cluster which was specified by the cluster info, moreover, the proxy that is kept in the container under MyClusteredSpace name will be a proxy to the entire cluster and not just the direct cluster member that this container created.
 
-The default values for these properties are {{Direct}} for {{Mode}} and {{true}} for {{ClusterInfoAware}}.
+The default values for these properties are `Direct` for `Mode` and `true` for `ClusterInfoAware`.
 
 In order to have a space proxy with custom property the following configuration block should be used:
 
@@ -105,10 +105,10 @@ This will create an embedded space with the additional provided custom propertie
 # Basic Container Initialization Events
 
 The container exposes some events that can be used to be notified at the different stages of the container initialization.
-**{{ContainerInitializing}}** - Triggered when the container it initializing.
-**{{ContainerInitialized}}** - Triggered once the container finished its initialization process.
+**`ContainerInitializing`** - Triggered when the container it initializing.
+**`ContainerInitialized`** - Triggered once the container finished its initialization process.
 
-Here's a simple example of using this events in a {{BasicProcessingUnitComponent}} which acts as a feeder
+Here's a simple example of using this events in a `BasicProcessingUnitComponent` which acts as a feeder
 {code:java}
 [BasicProcessingUnitComponent(Name="Feeder")]
 public class Feeder
@@ -154,7 +154,7 @@ public class Feeder
 
 # Creating a Space Proxy Programatically
 
-In same cases, the {{SpaceProxies}} config element does not suffice in order to construct a space proxy. For instance if you want to start a space with an external data source, or some other custom properties. In these cases, the {{CreateSpaceProxy}} method should be used in one of the container initialization events. If this proxy is used by other components in the processing unit, it should be put in the {{ContainerInitializing}} event in order for it to be available for the other components when they are created, otherwise you can put it in the {{ContainerInitialized}} just as well. Here's a simple example of how to use the {{CreateSpaceProxy}}:
+In same cases, the `SpaceProxies` config element does not suffice in order to construct a space proxy. For instance if you want to start a space with an external data source, or some other custom properties. In these cases, the `CreateSpaceProxy` method should be used in one of the container initialization events. If this proxy is used by other components in the processing unit, it should be put in the `ContainerInitializing` event in order for it to be available for the other components when they are created, otherwise you can put it in the `ContainerInitialized` just as well. Here's a simple example of how to use the `CreateSpaceProxy`:
 {code:java}
 [ContainerInitializing]
 public void Initialize(BasicProcessingUnitContainer container)
@@ -206,4 +206,4 @@ IEventListenerContainer<Data> eventListenerContainer = container.GetEventListene
 
 # Security
 
-When the processing unit is deployed with injected security properties (Using the Management Center or the [Service Grid admin api|Administration and Monitoring API]), the basic processing unit container will automatically attach this security context to all the proxies that it manages. Both for proxies that are created automatically from the configuration and proxies that are created programatically using the container {{CreateSpaceProxy}} method.
+When the processing unit is deployed with injected security properties (Using the Management Center or the [Service Grid admin api|Administration and Monitoring API]), the basic processing unit container will automatically attach this security context to all the proxies that it manages. Both for proxies that are created automatically from the configuration and proxies that are created programatically using the container `CreateSpaceProxy` method.

@@ -14,7 +14,7 @@ page_id: 63799383
 
 {% column %}
 
-The GigaSpaces document API exposes the space as [Document Store|http://en.wikipedia.org/wiki/Document-oriented_database]. A document, which is represented by the class {{SpaceDocument}}, is essentially collection of key-value pairs, where the keys are strings and the values are primitives, {{String}}, {{Date}}, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
+The GigaSpaces document API exposes the space as [Document Store|http://en.wikipedia.org/wiki/Document-oriented_database]. A document, which is represented by the class `SpaceDocument`, is essentially collection of key-value pairs, where the keys are strings and the values are primitives, `String`, `Date`, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
 
 {% endcolumn %}
 
@@ -25,7 +25,7 @@ The GigaSpaces document API exposes the space as [Document Store|http://en.wikip
 {% endcolumn %}
 
 {section}
-Unlike POJOs, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic - users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the class {{SpaceTypeDescriptor}}.
+Unlike POJOs, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic - users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the class `SpaceTypeDescriptor`.
 
 Before a certain Document instance is written to the space, its type should be introduced to it. The type has a name and controls metadata such as identifier property, routing property and which properties are initially indexed (naturally, you can also index new properties at runtime after adding them to your documents).
 
@@ -39,13 +39,13 @@ Note that the Document type does not describe the properties themselves (except 
 
 ## Schema Evolution with Space Documents
 
-Since a {{SpaceDocument}} is completely dynamic by nature, it is very easy to change or evolve your data model without ever taking down the Space. Simply change your application code to add additional properties or remove existing ones, and you're good to go. Even better, old and new versions can co-exist since the space does not enforce any restriction with regards to the property set of documents that belong to a certain type. This is a much more lightweight model in comparison to the classic POJO model, where a recompilation and in many cases a full space restart is required to change the data schema.
+Since a `SpaceDocument` is completely dynamic by nature, it is very easy to change or evolve your data model without ever taking down the Space. Simply change your application code to add additional properties or remove existing ones, and you're good to go. Even better, old and new versions can co-exist since the space does not enforce any restriction with regards to the property set of documents that belong to a certain type. This is a much more lightweight model in comparison to the classic POJO model, where a recompilation and in many cases a full space restart is required to change the data schema.
 
 If POJO model cannot be replaced with Document model, yet some level of schema evolution is desired within the POJO model, [Dynamic Properties| Dynamic Properties] can be used.
 
 # Type Definition
 
-Before we start writing and reading {{SpaceDocument}} from the space, we need an **initial** schema definition of the document type.
+Before we start writing and reading `SpaceDocument` from the space, we need an **initial** schema definition of the document type.
 
 For example, suppose we're implementing an electronic commerce system, and decided we need a type called **Product** with the following properties:
 - CatalogNumber : String
@@ -137,7 +137,7 @@ Note that this code does not reflect the complete model - most of the properties
 
 # Creating and Writing Documents
 
-To create a document create a {{Map<String,Object>}} with the requested properties, create a {{SpaceDocument}} object using the type name and properties, and write it to the space using the regular {{GigaSpace}} write method:
+To create a document create a `Map<String,Object>` with the requested properties, create a `SpaceDocument` object using the type name and properties, and write it to the space using the regular `GigaSpace` write method:
 {code:java}
 public void writeProduct1(GigaSpace gigaspace) {
     // 1. Create the properties:
@@ -171,7 +171,7 @@ public void writeProduct1(GigaSpace gigaspace) {
 }
 {code}
 
-Another way is to use the {{DocumentProperties}} class provided, which extends HashMap to provide fluent coding:
+Another way is to use the `DocumentProperties` class provided, which extends HashMap to provide fluent coding:
 
 {code:java}
 public void writeProduct2(GigaSpace gigaspace) {
@@ -201,7 +201,7 @@ public void writeProduct2(GigaSpace gigaspace) {
 }
 {code}
 
-(+) The {{GigaSpace.writeMultiple}} method can be used to write a batch of documents.
+(+) The `GigaSpace.writeMultiple` method can be used to write a batch of documents.
 (!) Update semantics are the same as POJO, except **partial update** that is not currently supported.
 (!) Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviours in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
 
@@ -227,7 +227,7 @@ public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
 
 ## SQL Query
 
-You can use the [SQLQuery] to search for matching {{SpaceDocument}} entries.
+You can use the [SQLQuery] to search for matching `SpaceDocument` entries.
 For example: Read a document of type **Product** whose **Price** is greater than 15:
 {code:java}
 public SpaceDocument readProductBySQL(GigaSpace gigaSpace) {
@@ -280,16 +280,16 @@ public SpaceDocument[] readProductByMultipleIds(GigaSpace gigaSpace) {
 }
 {code}
 
-(+) All other {{GigaSpace}} query operations (readIfExists, readMultiple, take, takeIfExists, takeMultiple, count, clear) are supported for documents entries as well.
+(+) All other `GigaSpace` query operations (readIfExists, readMultiple, take, takeIfExists, takeMultiple, count, clear) are supported for documents entries as well.
 (+) All other Id based operations (readIfExists, takeById, takeIfExistsById, takeByIds) are supported for documents as well.
 (+) All overloads of those operations with timeout, transactions, modifiers etc. are supported for documents. The semantics is similar to POJOs.
 
 # Nested Properties
 
-The {{Document}} properties values can be either scalars (integers, strings, enumuerations, etc), collections (arrays, lists), or nested properties (Map or an extension of map, such as {{DocumentProperties}}). Values must adhere to the same restrictions as in the POJO model (e.g. be serializable). Nested properties can be queried by using the dot ('.') notation to describe paths, as shown above.
+The `Document` properties values can be either scalars (integers, strings, enumuerations, etc), collections (arrays, lists), or nested properties (Map or an extension of map, such as `DocumentProperties`). Values must adhere to the same restrictions as in the POJO model (e.g. be serializable). Nested properties can be queried by using the dot ('.') notation to describe paths, as shown above.
 
-(+) It's highly recommended to use {{DocumentProperties}} for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
-(!) While it's possible to use  {{SpaceDocument}} as a property, it is probably a mistake, since it contains extra information which is not relevant for nested properties (type name, version, etc.).
+(+) It's highly recommended to use `DocumentProperties` for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
+(!) While it's possible to use  `SpaceDocument` as a property, it is probably a mistake, since it contains extra information which is not relevant for nested properties (type name, version, etc.).
 (!) Changing nested properties in an embedded space is not safe.
 
 # Indexing
@@ -302,9 +302,9 @@ For more information about indexing, see the [Indexing|Indexing] page.
 
 # Events
 
-Event containers (both [polling container] and [notify container]) support Space {{Document}} entries.
+Event containers (both [polling container] and [notify container]) support Space `Document` entries.
 
-Here is a simple example of a polling event container configuration using a {{Document}}:
+Here is a simple example of a polling event container configuration using a `Document`:
 
 {gdeck:os_simple_space|top}
 {gcard:Annotation}
@@ -440,7 +440,7 @@ pollingEventListenerContainer.destroy();
 
 # FIFO
 
-[FIFO support] is off by default with {{Document}} entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
+[FIFO support] is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
 
 {gdeck:os_simple_space|top}
 {gcard:Spring Namespace Configuration}
@@ -497,7 +497,7 @@ For more information about FIFO, see the [FIFO Support|FIFO Support] page.
 
 Transactions and isolation modifiers semantics is identical to the POJO semantics. For more information about transactions, see the [Transaction Management|Transaction Management] page.
 
-Optimistic locking is disabled by default with {{Document}} entries (same as with POJO). To enable it, modify the type introduction code and set the optimistic locking support. For example:
+Optimistic locking is disabled by default with `Document` entries (same as with POJO). To enable it, modify the type introduction code and set the optimistic locking support. For example:
 
 {gdeck:os_simple_space|top}
 {gcard:Spring Namespace Configuration}
@@ -553,7 +553,7 @@ For more information about optimistic locking, see the [Optimistic Locking|Optim
 
 # Local Cache / Local View
 
-[Local View] and [Local Cache] are supported for Documents. By default, the {{SpaceDocument}} instance is stored in the cache which speeds up query performance since the data does not need to be transformed from internal structure to {{SpaceDocument}}.
+[Local View] and [Local Cache] are supported for Documents. By default, the `SpaceDocument` instance is stored in the cache which speeds up query performance since the data does not need to be transformed from internal structure to `SpaceDocument`.
 
 If you intend to use local cache or local view in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability|Document-POJO Interoperability].
 

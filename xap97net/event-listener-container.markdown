@@ -6,11 +6,11 @@ page_id: 63799388
 ---
 
 {composition-setup}
-{summary}{{IEventListenerContainer}} is an interface that represents an abstraction for subscribing to, and receiving events over a space proxy.{summary}
+{summary}`IEventListenerContainer` is an interface that represents an abstraction for subscribing to, and receiving events over a space proxy.{summary}
 
 # Overview
 
-The {{IEventListenerContainer}} interface is an abstraction that allows subscribing to, and receiving events from the space, where in most cases, the business logic doesn't need to be aware of the actual container implementation. The benefit of doing this, is the loose coupling between how the events are received (the different containers), and what to do with a received event (the listener). This interface has two out-of-the-box implementors: [{{PollingEventListenerContainer}}|Polling Container Component] and [{{NotifyEventListenerContainer}}|Notify Container Component].
+The `IEventListenerContainer` interface is an abstraction that allows subscribing to, and receiving events from the space, where in most cases, the business logic doesn't need to be aware of the actual container implementation. The benefit of doing this, is the loose coupling between how the events are received (the different containers), and what to do with a received event (the listener). This interface has two out-of-the-box implementors: [`PollingEventListenerContainer`|Polling Container Component] and [`NotifyEventListenerContainer`|Notify Container Component].
 !GRA:Images^Net_polling_notify_cont.jpg!
 
 {anchor: DataEventArrived}
@@ -18,7 +18,7 @@ The {{IEventListenerContainer}} interface is an abstraction that allows subscrib
 
 # DataEventArrived
 
-The {{IEventListenerContainer}} interface exposes the {{DataEventArrived}} event, where the various implementors invoke (according to their internal logic, which determines when a space data event arrived occurs). The event argument contains the {{data}} object, which can be any .NET object, that triggered this event. The event subscription is done with a listener method that has the {{DataEventHandler}} delegate constraints, which follows the .NET event handler's conventions.
+The `IEventListenerContainer` interface exposes the `DataEventArrived` event, where the various implementors invoke (according to their internal logic, which determines when a space data event arrived occurs). The event argument contains the `data` object, which can be any .NET object, that triggered this event. The event subscription is done with a listener method that has the `DataEventHandler` delegate constraints, which follows the .NET event handler's conventions.
 
 Here is a simple example of event subscription:
 
@@ -43,7 +43,7 @@ The sender is the actual container that sent this event (Can be casted to IEvent
 
 ## Batch Event
 
-Sometimes it is better to use batch events, for instance to improve network traffic. This is done by subscribing to the {{BatchDataEventArrived}} event. This event invokes a listener method that receives a batch of event data in one invocation. The different implementors of the {{IEventListenerContainer}} interface have their own logic of when to use batch events and when to use regular events.
+Sometimes it is better to use batch events, for instance to improve network traffic. This is done by subscribing to the `BatchDataEventArrived` event. This event invokes a listener method that receives a batch of event data in one invocation. The different implementors of the `IEventListenerContainer` interface have their own logic of when to use batch events and when to use regular events.
 
 Here is a simple example of event subscription:
 
@@ -67,7 +67,7 @@ void MyEventHandler(object sender, BatchDataEventArgs<Data> e)
 
 # Event Listener Container Factory
 
-One of the ways to create an event listener container is to use the {{EventListenerContainerFactory.CreateContainer}} method. The factory creates a container from a supplied listener class, which is marked with attributes that are used to configure and create the container. This is demonstrated in the [Polling Container Component page|Polling Container Component] and the [Notify Container Component page|Notify Container Component].
+One of the ways to create an event listener container is to use the `EventListenerContainerFactory.CreateContainer` method. The factory creates a container from a supplied listener class, which is marked with attributes that are used to configure and create the container. This is demonstrated in the [Polling Container Component page|Polling Container Component] and the [Notify Container Component page|Notify Container Component].
 
 # Data Event Handler Adapters
 
@@ -77,7 +77,7 @@ In many scenarios, the event triggers a processing operation and its result shou
 
 ## DynamicMethod DataEventArrived Adapter
 
-The {{DynamicMethodDataEventArrivedAdapter<TData>}} is an internal class that is used by the {{EventListenerContainerFactory}}. This class dynamically creates a wrapper method over user methods that are marked with the [DataEventHandler attribute|#DataEventHandlerAttribute]. If the user method has a return value which is not null, the wrapper is automatically written to the space, with configurable parameters (see  [DataEventHandler attribute|#DataEventHandlerAttribute]). This adapter gives you the ability to write the event listening method receiving only the parameters that you need.
+The `DynamicMethodDataEventArrivedAdapter<TData>` is an internal class that is used by the `EventListenerContainerFactory`. This class dynamically creates a wrapper method over user methods that are marked with the [DataEventHandler attribute|#DataEventHandlerAttribute]. If the user method has a return value which is not null, the wrapper is automatically written to the space, with configurable parameters (see  [DataEventHandler attribute|#DataEventHandlerAttribute]). This adapter gives you the ability to write the event listening method receiving only the parameters that you need.
 
 Here are a few examples:
 
@@ -115,7 +115,7 @@ The user methods can receive different parameters and be either a void method, o
 - The second parameter is the space proxy the event arrived from.
 - The third parameter is a transaction if the event is executed within a transaction context.
 - The fourth parameter is the custom event args that each container creates (for example, see [Notify Container SpaceDataEventArgs|Notify Container Component#SpaceDataEventArgs]).
-- The fifth parameter is the {{IEventListenerContainer}} that triggered this event.
+- The fifth parameter is the `IEventListenerContainer` that triggered this event.
 
 The return parameter, if not void, is the result that is written back to the space (when the result is not null).
 
@@ -128,7 +128,7 @@ public EnrichedData ProcessData(Data event, ISpaceProxy proxy, ITransaction tx, 
 
 ## Delegate DataEventArrived Adapter
 
-The {{DelegateDataEventArrivedAdapter<TData, TResult>}} receives a delegate to a method that receives similar event args as the {{DataEventHandler}}, but also returns a result of type {{TResult}}. If the result is not null, it is automatically written to the space, with configurable parameters (see [DataEventHandler attribute|#DataEventHandlerAttribute]). After the adapter is created, its {{WriteBackDataEventHandler}} method adapts the supplied method, while adding the write back logic, and it can be used as the delegate when subscribing to the [DataEventArrived event|#DataEventArrived].
+The `DelegateDataEventArrivedAdapter<TData, TResult>` receives a delegate to a method that receives similar event args as the `DataEventHandler`, but also returns a result of type `TResult`. If the result is not null, it is automatically written to the space, with configurable parameters (see [DataEventHandler attribute|#DataEventHandlerAttribute]). After the adapter is created, its `WriteBackDataEventHandler` method adapts the supplied method, while adding the write back logic, and it can be used as the delegate when subscribing to the [DataEventArrived event|#DataEventArrived].
 
 Here is a simple example:
 
@@ -154,11 +154,11 @@ The result can also be an array, and the appropriate multiple operation is execu
 ## DataEventHandler attribute
 
 The DataEventHandler attribute has two roles. The first is to mark a method to be subscribed to the [DataEventArrived event|#DataEventArrived], when using the [EventListenerContainerFactory|#EventListenerContainerFactory]. The second role is to determine the write back behavior of the marked method result. This behavior has three configurable parameters:
-- WriteOrUpdate -- states whether to write or update the result back to the space, or only to write, which means if there's a matching object in the space to the result object, an {{EntryAlreadyInSpaceException}} is thrown (the default is true).
+- WriteOrUpdate -- states whether to write or update the result back to the space, or only to write, which means if there's a matching object in the space to the result object, an `EntryAlreadyInSpaceException` is thrown (the default is true).
 - WriteLease -- the lease of the result object that is being written to the space (the default is lease forever).
 - UpdateTimeout -- if the operation is an update operation, determines how long to wait if the object is locked for updates (the default is 0).
 
-(on) The write back behavior is modified when using the {{DelegateDataEventArrivedAdapter}} by this attribute as well.
+(on) The write back behavior is modified when using the `DelegateDataEventArrivedAdapter` by this attribute as well.
 
 Here is a simple example:
 

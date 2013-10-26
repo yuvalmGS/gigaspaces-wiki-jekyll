@@ -27,7 +27,7 @@ public interface IDataProcessor
 }
 {code}
 
-(!) The {{Data}} object should be {{Serializable}}
+(!) The `Data` object should be `Serializable`
 
 # Implementing the Contract
 
@@ -57,7 +57,7 @@ public class DataProcessor : IDataProcessor
 }
 {code}
 
-Alternatively, or when using a custom [processing unit container|Processing Unit Container], a service can be directly hosted using the {{DomainServiceHost.Host.Publish}}
+Alternatively, or when using a custom [processing unit container|Processing Unit Container], a service can be directly hosted using the `DomainServiceHost.Host.Publish`
 
 {code:java}
 public ServiceHostProcessingUnitContainer : AbstractProcessingUnitContainer
@@ -79,7 +79,7 @@ By default, the service will be published under the interfaces it implements, it
 
 ## Service Attribute
 
-A different lookup name can be specified by the \[SpaceRemotingService\] {{LookupName}} property:
+A different lookup name can be specified by the \[SpaceRemotingService\] `LookupName` property:
 
 {code:java}
 [SpaceRemotingService(LookupName="MyDataProcessor")]
@@ -91,7 +91,7 @@ public class DataProcessor : IDataProcessor
 
 ## Publish Lookup Names
 
-When publishing a service it is possible to specify a list of lookup names to publish it under as part of the {{Publish}} method arguments:
+When publishing a service it is possible to specify a list of lookup names to publish it under as part of the `Publish` method arguments:
 
 {code:java}
 DomainServiceHost.Host.Publish(new DataProcessor(), "MyDataProcessor", "MySpecialDataProcessor");
@@ -99,7 +99,7 @@ DomainServiceHost.Host.Publish(new DataProcessor(), "MyDataProcessor", "MySpecia
 
 ## Publish For Specific Types
 
-Alternatively, a service can be hosted under specific types instead of querying all the interfaces it implements, This can be achieved with the {{Publish}} method as well:
+Alternatively, a service can be hosted under specific types instead of querying all the interfaces it implements, This can be achieved with the `Publish` method as well:
 
 {code:java}
 DomainServiceHost.Host.Publish(new DataProcessor(), typeof(IDataProcessor), typeof(IMyService));
@@ -108,7 +108,7 @@ DomainServiceHost.Host.Publish(new DataProcessor(), typeof(IDataProcessor), type
 # Unpublishing a Service
 
 Once the processing unit that hosts the service is unloaded, all the services within that pu are also removed.
-However, it is possible to explicitly unpublish a service during the processing unit life cycle if needed, this is done by the {{Unpublish}} method, with the specific registration of the service that we want to unpublish.
+However, it is possible to explicitly unpublish a service during the processing unit life cycle if needed, this is done by the `Unpublish` method, with the specific registration of the service that we want to unpublish.
 
 {code:java}
 IServiceRegistration registration = DomainServiceHost.Host.Publish(new DataProcessor());
@@ -120,7 +120,7 @@ DomainServiceHost.Host.Unpublish(registration);
 
 Space based remoting allows you to inject different "aspects" that can wrap the invocation of a remote method on the client side, as well as wrapping the execution of an invocation on the server side. The different aspect can add custom logic to the execution, for instance, loggings or security.
 
-The server side invocation aspect interface is shown below. You should implement this interface and wire it to the {{DomainServiceHost}} (this is the component that is responsible for hosting and exposing your service to remote clients):
+The server side invocation aspect interface is shown below. You should implement this interface and wire it to the `DomainServiceHost` (this is the component that is responsible for hosting and exposing your service to remote clients):
 
 {code:java}
 public interface IServiceExecutionAspect
@@ -162,4 +162,4 @@ DomainServiceHost.Initialize(new ExecutionLoggingAspect(), new SecurityExecution
 
 The different execution aspects can be wired only once, and that is when the DomainServiceHost is initialized, which means before publishing any service in it.
 
-The execution of the aspects follows a pattern of pipeline execution of all the aspects followed by the order in which they were set. Each aspect can decide whether to continue with the pipeline execution using the {{invocation.Proceed()}} method. It can either alter a return value of the next aspect in line by setting the {{invocation.ReturnValue}} or it can immidiately return the execution result without continuing to the next aspect by setting the return value using the {{invocation.ReturnValue}} property and not calling the {{invocation.Proceed()}} method. The final service execution it self is an aspect which is the last one to be executed. Plugging custom aspects can decide according to the aspect implementation whether to execute the actual operation on the service or not.
+The execution of the aspects follows a pattern of pipeline execution of all the aspects followed by the order in which they were set. Each aspect can decide whether to continue with the pipeline execution using the `invocation.Proceed()` method. It can either alter a return value of the next aspect in line by setting the `invocation.ReturnValue` or it can immidiately return the execution result without continuing to the next aspect by setting the return value using the `invocation.ReturnValue` property and not calling the `invocation.Proceed()` method. The final service execution it self is an aspect which is the last one to be executed. Plugging custom aspects can decide according to the aspect implementation whether to execute the actual operation on the service or not.

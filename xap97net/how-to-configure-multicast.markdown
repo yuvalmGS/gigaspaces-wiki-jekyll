@@ -35,13 +35,13 @@ To enable the important capabilities above, you should enable multicast on machi
 
 # Configuring Multicast on Windows
 
-To enable multicasting from a token ring on a Windows® 2000 workstation to any Windows 98/NT machine, set the {{TrFunctionalMcastAddress}} parameter to {{0}} in the Windows 2000 registry:
+To enable multicasting from a token ring on a Windows® 2000 workstation to any Windows 98/NT machine, set the `TrFunctionalMcastAddress` parameter to `0` in the Windows 2000 registry:
 1. Click **Start** > **Run** on the Windows 2000 taskbar.
 2. In the **Open** field, select or type **REGEDIT**.
 3. Click **OK**. The **Registry Editor** window opens.
 4. Click **HKEY_LOCAL_Machine** > **SYSTEM** > **CurrentControlSet** > **Services** > **Tcpip** > **Parameters**.
 5. Right-click **TrFunctionalMcastAddress**, and click **Modify**. The **Edit DWORD Value** window opens.
-6. In the **Value** data field, type {{0}}.
+6. In the **Value** data field, type `0`.
 7. Click **OK** to save changes and exit.
 8. Close the **Registry Editor**.
 

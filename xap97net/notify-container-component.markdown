@@ -6,14 +6,14 @@ page_id: 63799370
 ---
 
 {composition-setup}
-{summary:page}The notify event container implements the {{IEventListenerContainer}} interface, and uses the space inheritance support for notifications, using a GigaSpaces unified event session API.{summary}
+{summary:page}The notify event container implements the `IEventListenerContainer` interface, and uses the space inheritance support for notifications, using a GigaSpaces unified event session API.{summary}
 
 # Overview
 
 The notify event container implements the [IEventListenerContainer|Event Listener Container] interface, and uses the space inheritance support for notifications, using a GigaSpaces data event session API. If a notification occurs, the [DataEventArrived|Event Listener Container#DataEventArrived] event is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
 !GRA:Images^Net_notify_cont.jpg!
 The examples in this page follow a certain pattern -- each code example has two tabs: Using EventListenerContainerFactory and NotifyEventListenerContainer Code Construction.
-The first tab demonstrates how to create and configure a notify container using the {{EventListenerContainerFactory}}, and the second tab demonstrates how to build and configure a {{NotifyEventListenerContainer}} with a constructor and setting the different properties.
+The first tab demonstrates how to create and configure a notify container using the `EventListenerContainerFactory`, and the second tab demonstrates how to build and configure a `NotifyEventListenerContainer` with a constructor and setting the different properties.
 
 Here is a simple example of polling event container construction:
 
@@ -42,7 +42,7 @@ public class SimpleListener
 }
 {code}
 
-Constructing the notify container that uses the {{SimpleListener}} class as the event listener, and starting it.
+Constructing the notify container that uses the `SimpleListener` class as the event listener, and starting it.
 
 {code:java}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
@@ -82,7 +82,7 @@ public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data
 {gcard}
 {gdeck}
 
-The above example registers with the space for write notifications using the provided template, which can be any .NET object (in this case a {{Data}} object with its processed flag set to {{false}}). If a notification occurs, the {{SimpleListener}} is invoked. Registration for notifications is performed on the supplied space proxy.
+The above example registers with the space for write notifications using the provided template, which can be any .NET object (in this case a `Data` object with its processed flag set to `false`). If a notification occurs, the `SimpleListener` is invoked. Registration for notifications is performed on the supplied space proxy.
 
 # Primary/Backup
 
@@ -92,7 +92,7 @@ The notify event container registers for notifications only when the relevant sp
 
 # Template Definition
 
-When performing receive operations, a template is defined, creating a virtualized subset of data in the space, matching it. GigaSpaces supports templates based on the actual domain model (with {{null}} values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SqlQuery|SqlQuery] in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
+When performing receive operations, a template is defined, creating a virtualized subset of data in the space, matching it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SqlQuery|SqlQuery] in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -136,9 +136,9 @@ notifyEventListenerContainer.Template = new SqlQuery<Data>(template, "Processed 
 
 The notify container can be configured with transaction support, so the event action can be performed under a transaction. Exceptions thrown by the event listener cause the operations performed within the listener to be rolled back automatically.
 
-(!) When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. If this behavior is required, please consider using the [Polling Event Container|Polling Container Component]. Adding transaction support to the polling container is very simple. It is done by setting the {{TransactionType}} property. There are two transaction types: Distributed and Manual.
+(!) When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. If this behavior is required, please consider using the [Polling Event Container|Polling Container Component]. Adding transaction support to the polling container is very simple. It is done by setting the `TransactionType` property. There are two transaction types: Distributed and Manual.
 - Distributed transaction - an embedded distributed transaction manager will be created and it will be used for creating transaction (Only one transaction manager will be created per AppDomain).
-- Manual transaction - transactions will be created by the transaction manager that is stored in the {{TransactionManager}} property. By default no transaction manager is stored and therefore, no transaction will be used. For example:
+- Manual transaction - transactions will be created by the transaction manager that is stored in the `TransactionManager` property. By default no transaction manager is stored and therefore, no transaction will be used. For example:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -195,7 +195,7 @@ notifyEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAda
 
 # Masking Notifications
 
-The notify container allows you to mask which operations performed against the space, should cause notifications. By default (if none is defined), notifications are sent for write operations. The operations are: {{write}} (an entry matching the template has been written to the space), {{update}} (an entry matching the template has been updated in the Space), {{take}} (an entry matching the template has been taken from the Space), {{lease expiration}} (an entry matching the template lease has been expired), and {{all}}. Here is an example of the notify container configured to trigger notifications for both write and update operations:
+The notify container allows you to mask which operations performed against the space, should cause notifications. By default (if none is defined), notifications are sent for write operations. The operations are: `write` (an entry matching the template has been written to the space), `update` (an entry matching the template has been updated in the Space), `take` (an entry matching the template has been taken from the Space), `lease expiration` (an entry matching the template lease has been expired), and `all`. Here is an example of the notify container configured to trigger notifications for both write and update operations:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -399,7 +399,7 @@ notifyEventListenerContainer.EventSessionConfig = sessionConfig;
 
 # Take on Notify
 
-The notify event container can be configured to automatically perform a take on the notification data event. It can also be further configured to filter out events if the take operation returned {{null}}. (This usually happens when several clients receive this event, and only one succeeds with the take.)
+The notify event container can be configured to automatically perform a take on the notification data event. It can also be further configured to filter out events if the take operation returned `null`. (This usually happens when several clients receive this event, and only one succeeds with the take.)
 
 Here is how the notify container can be configured:
 
@@ -501,9 +501,9 @@ public Data ProcessData(IEventListenerContainer sender, DataEventArgs<Data> e)
 
 # Queued Event Handling
 
-When a notification is received, it occurs asynchronously in a separate thread. That thread is part of the space proxy resource pool that is in charge of receiving and executing notifications code. As a result, special care should be taken when the event listening method execution is not very short, because it could hold the proxy resource for too long, and eventually exhaust it, which causes notifications to get lost. If the event listening method needs to execute code that takes some time, it is recommended to use the {{QueuedEventHandling}} feature.
+When a notification is received, it occurs asynchronously in a separate thread. That thread is part of the space proxy resource pool that is in charge of receiving and executing notifications code. As a result, special care should be taken when the event listening method execution is not very short, because it could hold the proxy resource for too long, and eventually exhaust it, which causes notifications to get lost. If the event listening method needs to execute code that takes some time, it is recommended to use the `QueuedEventHandling` feature.
 
-When this feature is enabled, each event that is received is put into a queue, and the notifiying thread is released immediately. The queue is processed by a different thread or threads. Doing this keeps the proxy resource pool free. The number of threads that are processing the events together, can be determined using the {{QueuedEventHandlersPoolSize}} property. The queue size limit is configured using the {{QueuedEventsSizeLimitProperty}}. When the limit is reached, the notify thread blocks until it can insert the event into the queue. This is done in order to avoid the client running out of memory when it process events too slowly, and the queue keeps accumulating.
+When this feature is enabled, each event that is received is put into a queue, and the notifiying thread is released immediately. The queue is processed by a different thread or threads. Doing this keeps the proxy resource pool free. The number of threads that are processing the events together, can be determined using the `QueuedEventHandlersPoolSize` property. The queue size limit is configured using the `QueuedEventsSizeLimitProperty`. When the limit is reached, the notify thread blocks until it can insert the event into the queue. This is done in order to avoid the client running out of memory when it process events too slowly, and the queue keeps accumulating.
 
 Here is how the notify container can be configured:
 
@@ -542,7 +542,7 @@ notifyEventListenerContainer.QueuedEventHandlersPoolSize = 3;
 {gcard}
 {gdeck}
 
-Sometimes, it is very convenient to have a listener instance per concurrent queue processing thread. This allows a thread-safe instance variable to be constructed without worrying about concurrent access. In such a case, the event listener containing class should implement {{System.ICloneable}}, and the {{CloneEventListenersPerThread}} property should be set to true. Here is an example:
+Sometimes, it is very convenient to have a listener instance per concurrent queue processing thread. This allows a thread-safe instance variable to be constructed without worrying about concurrent access. In such a case, the event listener containing class should implement `System.ICloneable`, and the `CloneEventListenersPerThread` property should be set to true. Here is an example:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -653,4 +653,4 @@ public void ExceptionHandler(object sender, UserExceptionEventArgs<Data> e)
 
 # Default Values of Notify Container Configuration Parameters
 
-The default values for all of the notify container configuration parameters, such as {{perform-take-on-notify, ignore-event-on-null-take}}, and others, can be found in the API docs. Each property has a corresponding Default<property name> const field that sets the default value of the property.
+The default values for all of the notify container configuration parameters, such as `perform-take-on-notify, ignore-event-on-null-take`, and others, can be found in the API docs. Each property has a corresponding Default<property name> const field that sets the default value of the property.

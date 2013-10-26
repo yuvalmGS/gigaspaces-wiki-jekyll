@@ -16,7 +16,7 @@ page_id: 63799403
 
 {% column width=86% %}
 
-{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|{{<GigaSpaces Root>\Examples\Benchmark}} |
+{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|`<GigaSpaces Root>\Examples\Benchmark` |
 {% endalign %}
 
 {% endcolumn %}
@@ -150,7 +150,7 @@ Example command line for running an embedded benchmark run:
 
 The **Input xml** structure is the same for the two benchmark options (the Out-of-the-box benchmark and the Customized benchmark).
 
-(on) It is recommended that you use the {{BenchmarkPerson.xml}} file that is provided with the benchmark example, as a template.
+(on) It is recommended that you use the `BenchmarkPerson.xml` file that is provided with the benchmark example, as a template.
 
 Example configuration file:
 {code:xml}

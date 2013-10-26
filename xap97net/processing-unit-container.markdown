@@ -25,7 +25,7 @@ However, if you are not familiar with processing unit and event container concep
 
 # AbstractProcessingUnitContainer class
 
-The {{AbstractProcessingUnitContainer}} class implements {{IDisposable}}, and consists of one additional method and two properties:
+The `AbstractProcessingUnitContainer` class implements `IDisposable`, and consists of one additional method and two properties:
 
 {code:java}
 public abstract class AbstractProcessingUnitContainer
@@ -44,7 +44,7 @@ public abstract class AbstractProcessingUnitContainer
 }
 {code}
 
-The Processing Unit Container lifecycle consists only of these two methods: {{Initialize}} is called when the Processing Unit Container is constructed, and {{Dispose}} is called when it is removed. Before the initialization, the ClusterInfo and Properties are set with the deploy-time data.
+The Processing Unit Container lifecycle consists only of these two methods: `Initialize` is called when the Processing Unit Container is constructed, and `Dispose` is called when it is removed. Before the initialization, the ClusterInfo and Properties are set with the deploy-time data.
 
 # ClusterInfo
 
@@ -54,17 +54,17 @@ One of the core ideas of the Processing Unit is the determination of the deploym
 - Define a routing index on the domain model written to the space, so the partitioned topology can work.
 - When working directly against a cluster member, make sure you don't perform operations against the backup member.
 
-The {{ClusterInfo}} class holds the following information:
+The `ClusterInfo` class holds the following information:
 
 ||Name||Description||
-| {{Schema}} | The cluster topology. |
-| {{NumberOfInstances}} |The number of primary instances this cluster holds. |
-| {{NumberOfBackups}} |The number of backups per primary instance.|
-| {{InstanceId}} | 1 to the {{NumberOfInstances}} value, denoting the primary instance ID of the current Processing Unit instance. |
-| {{BackupId}} | 1 to the {{NumberOfBackups}} value, denoting the backup ID of the {{InstanceId}} of the current Processing Unit instance. |
-| {{RunningNumber}} |A running number of the cluster instance. Takes into account different topologies and provides a unique identifier (starting from {{0}}) of the cluster member. |
+| `Schema` | The cluster topology. |
+| `NumberOfInstances` |The number of primary instances this cluster holds. |
+| `NumberOfBackups` |The number of backups per primary instance.|
+| `InstanceId` | 1 to the `NumberOfInstances` value, denoting the primary instance ID of the current Processing Unit instance. |
+| `BackupId` | 1 to the `NumberOfBackups` value, denoting the backup ID of the `InstanceId` of the current Processing Unit instance. |
+| `RunningNumber` |A running number of the cluster instance. Takes into account different topologies and provides a unique identifier (starting from `0`) of the cluster member. |
 
-(!) Defining a {{null}} value in one of these properties means that they are not set.
+(!) Defining a `null` value in one of these properties means that they are not set.
 
 # Creating Your Own Processing Unit Container
 
@@ -72,18 +72,18 @@ The {{ClusterInfo}} class holds the following information:
 
 ## Step 1 -- Create the Processing Unit Container
 
-A processing unit container is an extension of the {{GigaSpaces.XAP.ProcessingUnit.Containers.AbstractProcesingUnitContainer}} class, which is deployed and executed inside the Service Grid. You need to create your own library with your own extension of the {{GigaSpaces.XAP.ProcessingUnit.Containers.AbstractProcesingUnitContainer}} class.
+A processing unit container is an extension of the `GigaSpaces.XAP.ProcessingUnit.Containers.AbstractProcesingUnitContainer` class, which is deployed and executed inside the Service Grid. You need to create your own library with your own extension of the `GigaSpaces.XAP.ProcessingUnit.Containers.AbstractProcesingUnitContainer` class.
 
 ## Step 2 -- Create a Deployment pu.config File
 
-You need a config file, which is used to deploy the Processing Unit Container. This config file must be named {{pu.config}} and needs to be placed together with your processing unit container implementation assemblies.
+You need a config file, which is used to deploy the Processing Unit Container. This config file must be named `pu.config` and needs to be placed together with your processing unit container implementation assemblies.
 {anchor:pu.config}
 
 ## Step 3 -- Configure the Deployment pu.config File
 
-The {{pu.config}} you've created needs to be edited to point to your Processing Unit Container implementation. The file should contain the following data:
+The `pu.config` you've created needs to be edited to point to your Processing Unit Container implementation. The file should contain the following data:
 
-(on) It is recommended to use the {{pu.config}} file located in {{<GigaSpaces Root>\Examples\ProcessingUnit\Feeder\Deployment}} as a template.
+(on) It is recommended to use the `pu.config` file located in `<GigaSpaces Root>\Examples\ProcessingUnit\Feeder\Deployment` as a template.
 
 {code:xml}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -106,7 +106,7 @@ The {{pu.config}} you've created needs to be edited to point to your Processing 
 # SLA Definition
 
 In order to define the service layer agreement of your processing unit, an SLA file needs to be created.
-That file should be named {{sla.xml}}, and should be placed in the root directory of the processing unit.
+That file should be named `sla.xml`, and should be placed in the root directory of the processing unit.
 
 {refer}Read about SLA in [Service Grid Processing Unit Container|XAP97NET:Basic Processing Unit Container].{refer}
 

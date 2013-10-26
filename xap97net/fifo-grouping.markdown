@@ -27,7 +27,7 @@ The FIFO-Grouping can be used with financial systems to process **trade orders**
 
 # How it works?
 
-FIFO-Grouping ('FG') enables reading/taking certain space entries in FIFO order (by order of insertion), and is mainly used as an enhancement of the openspaces polling-containers.  When a property is declared with the {{SpaceFifoGroupingProperty}} attribute ('the FG designated property'), a read/take operation with the {{FIFO_GROUPING_POLL}} modifier will return all space entries that match the selection template in FIFO order. Different values of the FG property define groups of space entries that match that value - FIFO ordering exists within each group and not between different groups.
+FIFO-Grouping ('FG') enables reading/taking certain space entries in FIFO order (by order of insertion), and is mainly used as an enhancement of the openspaces polling-containers.  When a property is declared with the `SpaceFifoGroupingProperty` attribute ('the FG designated property'), a read/take operation with the `FIFO_GROUPING_POLL` modifier will return all space entries that match the selection template in FIFO order. Different values of the FG property define groups of space entries that match that value - FIFO ordering exists within each group and not between different groups.
 
 {note}**Exclusivity**
 The selected group is locked until the operation is terminated- the operation transaction is committed/ aborted.  See the [Exclusivity|FIFO Grouping#Exclusivity] section for more elaborations.{note}
@@ -41,11 +41,11 @@ This property must be indexed and will be automatically indexed by the system if
 - In the selecting template a null value will generally be rendered for this property which stands for bring any available group.
 An available group is any FG that matches the selection template and is not currently locked by another FG thread (see [Exclusivity|FIFO Grouping#Exclusivity] section).
 
-- If the selecting template (Pojo) has a value for a property other than the FG designated property - this property can be indexed (like for any regular read/take operation) and in addition a {{SpaceFifoGroupingIndex}} attribute can be added  to it  in order to assist in efficient traversal.
+- If the selecting template (Pojo) has a value for a property other than the FG designated property - this property can be indexed (like for any regular read/take operation) and in addition a `SpaceFifoGroupingIndex` attribute can be added  to it  in order to assist in efficient traversal.
 In this case the system will create a compound index that contains this property and the FG designated property.
-For example, if a polling container is responsible for all the new reservations (reservations with processingState = NEW), then it is recommended to declare a {{SpaceFifoGroupingIndex}} on the processingState property.
+For example, if a polling container is responsible for all the new reservations (reservations with processingState = NEW), then it is recommended to declare a `SpaceFifoGroupingIndex` on the processingState property.
 This would help to achieve better performance when searching for reservations of certain flight that have processingState = NEW.
-{note}{{SpaceFifoGroupingIndex}} has its toll in footprint.{note}
+{note}`SpaceFifoGroupingIndex` has its toll in footprint.{note}
 
 # Exclusivity
 
@@ -54,7 +54,7 @@ Once a FG operation returns with a result, the relevant group(s) is locked to ot
 A group can be locked by a requesting template if no other template is locking the same FG designated property value, or - if another template is locking the same FG designated property value, the intersection between the 2 groups is null.
 
 **For example:**
-Lets assume we have an Order POJO template with property named label marked with  {{SpaceFifoGroupingProperty}} attribute and property named state marked with  {{SpaceFifoGroupingIndex}} attribute .
+Lets assume we have an Order POJO template with property named label marked with  `SpaceFifoGroupingProperty` attribute and property named state marked with  `SpaceFifoGroupingIndex` attribute .
 If polling container A got a FG with Label = "LABEL1" using an Order POJO with State property = null, no other FG thread/container will be able to access the FG designated by "LABEL1".
 If on the other hand polling container B got a FG with Label = "LABEL2" using an Order pojo with State property = 0, polling container C will be able to get FG with same label "LABEL2" using an Order pojo with State = 1, since the intersection between the groups is null. Exclusivity is released upon transaction termination.
 
@@ -118,30 +118,30 @@ public Person Customer { get; set; }
 
 ## Take
 
-Take the first entry from an available FG ({{TakeReceiveOperationHandler}}).
+Take the first entry from an available FG (`TakeReceiveOperationHandler`).
 **Take multiple:** take entries from available FG. No ordering between different groups. Entries of same groups may not be in adjacent positions.
 
 ## Read
 
 read the first entry from an available FG. In this pattern entry property may be changed and the operation ending with update. For example- a ProcessingState property which is initially  0, some FG polling container querying for 0 and changing it to 1, other container querying for 1 and changing to 2 etc until a container querying for the final state with take.
-Note that in such implementation the ProcessingState property should better be defined as  {{SpaceFifoGroupingIndexAttribute}}.
-({{ExclusiveReadReceiveOperationHandler}})
+Note that in such implementation the ProcessingState property should better be defined as  `SpaceFifoGroupingIndexAttribute`.
+(`ExclusiveReadReceiveOperationHandler`)
 
 ## Read multiple
 
-read entries from available FG. No ordering between different groups. Entries of same groups may not be in adjacent positions. (openspaces {{MultiExclusiveReadReceiveOperationHandler}})
+read entries from available FG. No ordering between different groups. Entries of same groups may not be in adjacent positions. (openspaces `MultiExclusiveReadReceiveOperationHandler`)
 
 # Query operations with FIFO Grouping
 
 ## Using READ/TAKE modifiers
 
-To execute read/take operations with FG, use the {{TakeModifiers.FifoGroupingPoll}} modifier. For example:
+To execute read/take operations with FG, use the `TakeModifiers.FifoGroupingPoll` modifier. For example:
 {code:java}proxy.Take<FlightReservation>(new FlightReservation(), transaction, timeout, TakeModifiers.FifoGroupingPoll);{code}
 If class FlightReservation isn't declared with a FG property, an exception will be thrown.
 
 ## Using Polling container
 
-When registering for polling events use the {{FifoGroupingReceiveHandler<TData>.UseFifoGrouping = true}}
+When registering for polling events use the `FifoGroupingReceiveHandler<TData>.UseFifoGrouping = true`
 to instruct the space that events should be sent to the client in FIFO order (grouping by the fifoGroupingProperty that should have been declared for the space class).
 
 Here is a simple example of a polling event container construction, using FifoGrouping:
@@ -172,7 +172,7 @@ public class FlightReservationEventListener
 }
 {code}
 
-Constructing the polling container that uses the {{FlightReservationEventListener}} class as the event listener, and starting it.
+Constructing the polling container that uses the `FlightReservationEventListener` class as the event listener, and starting it.
 {code:java}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 IEventListenerContainer<FlightReservation> eventListenerContainer = EventListenerContainerFactory.CreateContainer<FlightReservation>(spaceProxy, new FlightReservationEventListener());
@@ -212,37 +212,37 @@ public FlightReservationProcessData(IEventListenerContainer<FlightReservation> s
 
 # SpaceIndex Attribute
 
-Declaring both {{SpaceFifoGroupingProperty}} or {{SpaceFifoGroupingIndex}} and {{SpaceIndex}} (type {{BASIC}} or {{Extended}}) with the same path will yield one index with the {{SpaceIndex}} type.
-Declaring only {{SpaceFifoGroupingProperty}} or {{SpaceFifoGroupingIndex}} will yield one index, type {{BASIC}}.
+Declaring both `SpaceFifoGroupingProperty` or `SpaceFifoGroupingIndex` and `SpaceIndex` (type `BASIC` or `Extended`) with the same path will yield one index with the `SpaceIndex` type.
+Declaring only `SpaceFifoGroupingProperty` or `SpaceFifoGroupingIndex` will yield one index, type `BASIC`.
 
 # Inheritance
 
-All property's FG declarations (both {{SpaceFifoGroupingProeprty}} and {{SpaceFifoGroupingIndex}}) are inherited in sub classes.
-- Overriding of {{SpaceFifoGroupingProperty}} is not allowed.
-- Overriding of {{SpaceFifoGroupingIndex}} is allowed in order to add more FG indexes.
-For example, declaring {{SpaceFifoGroupingIndex(Path="a")}}, overriding in subclass and declaring {{SpaceFifoGroupingIndex(Path="b")}} will yield two FG indexes: property a index and property b index (both of type {{BASIC}} if no {{SpaceIndex}} with {{Extended}} type was declared).
+All property's FG declarations (both `SpaceFifoGroupingProeprty` and `SpaceFifoGroupingIndex`) are inherited in sub classes.
+- Overriding of `SpaceFifoGroupingProperty` is not allowed.
+- Overriding of `SpaceFifoGroupingIndex` is allowed in order to add more FG indexes.
+For example, declaring `SpaceFifoGroupingIndex(Path="a")`, overriding in subclass and declaring `SpaceFifoGroupingIndex(Path="b")` will yield two FG indexes: property a index and property b index (both of type `BASIC` if no `SpaceIndex` with `Extended` type was declared).
 
 # Considerations
 
 - FG not supported with a Space using [LRU-Cache Policy|http://www.gigaspaces.com/wiki/display/XAP95/LRU-Cache+Policy] over [EDS|http://www.gigaspaces.com/wiki/display/XAP95/External+Data+Source].
 - Cross partitioning of groups is not supported (same limitation as in regular FIFO operations).
-- {{SpaceFifoGroupingProperty}} and {{SpaceFifoGroupingIndex}} cannot be used as dynamic indexes.
-- {{SpaceFifoGroupingProperty}} and {{SpaceFifoGroupingIndex}} cannot be used  as collection indexes.
-(e.g. declaring {{SpaceFifoGroupingProperty( Path="\[*\]")}} is not allowed).
+- `SpaceFifoGroupingProperty` and `SpaceFifoGroupingIndex` cannot be used as dynamic indexes.
+- `SpaceFifoGroupingProperty` and `SpaceFifoGroupingIndex` cannot be used  as collection indexes.
+(e.g. declaring `SpaceFifoGroupingProperty( Path="\[*\]")` is not allowed).
 - FIFO operation is not supported for FG template - it is ignored.
 - If the template is a SQL query template, only queries that can be performed in a single call to the space are supported (an exception is thrown).
 - FG operations must be performed under a transaction.
 - There can be only one FG property per type.
 - A FG index cannot be declared on some type's property without existence of a FG property for that type.
 - The following attributes cannot be used with the FG property/index attributes for the same property:
-    - {{SpaceVersion}}
-    - {{SpacePersist}}
-    - {{SpaceDynamicProperties}}
-    - {{SpaceExclude}}.
-    - {{SpaceProperty.StorageType}} Different than OBJECT
+    - `SpaceVersion`
+    - `SpacePersist`
+    - `SpaceDynamicProperties`
+    - `SpaceExclude`.
+    - `SpaceProperty.StorageType` Different than OBJECT
 
 # Performance Hints
 
-- If an indexed-property is used in the FG template - define it as {{SpaceFifoGroupingIndex}} if footprint is not a crucial issue.
+- If an indexed-property is used in the FG template - define it as `SpaceFifoGroupingIndex` if footprint is not a crucial issue.
 - Since each successful operation locks a group (until its completion) there is no use in using # of threads which is greater than the # of potential groups.
-- For indexed properties (other than the {{SpaceFifoGroupingProperty}}) which are used with >, >=, < , <= conditions - the index cannot be used in the scan (because no FIFO order is maintained  in an ordered index).
+- For indexed properties (other than the `SpaceFifoGroupingProperty`) which are used with >, >=, < , <= conditions - the index cannot be used in the scan (because no FIFO order is maintained  in an ordered index).

@@ -26,7 +26,7 @@ A [SpaceFilterConfig|SpaceFilterConfig Class] can be created in two ways, depend
 
 #### Implementing the ISpaceFilter Interface
 
-If the filter implements the [ISpaceFilter Interface|ISpaceFilter Interface], then a [SpaceFilterConfig|SpaceFilterConfig Class] needs to be created for it, and each operation that needs to be filtered should be added to the {{FilterOperations}} list, as in the following code:
+If the filter implements the [ISpaceFilter Interface|ISpaceFilter Interface], then a [SpaceFilterConfig|SpaceFilterConfig Class] needs to be created for it, and each operation that needs to be filtered should be added to the `FilterOperations` list, as in the following code:
 
 {code:java}
 SpaceFilterConfig mySpaceFilterConfig = new SpaceFilterConfig();
@@ -36,7 +36,7 @@ mySpaceFilterConfig.Filter = new MySpaceFilter();
 
 #### Implementing a Space Filter using SpaceFilterOperationDelegate
 
-If the filter is based on the [SpaceFilterOperationDelegate|SpaceFilterOperationDelegate], then a [SpaceFilterConfig|SpaceFilterConfig Class] needs to be created. This is done with the appropriate {{SpaceFilterConfigFactory}}, either [AttributeSpaceFilterConfigFactory|SpaceFilterOperationDelegate#Attribute based implementation], or [MethodNameSpaceFilterConfigFactory|SpaceFilterOperationDelegate#Method name based implementation], using the {{CreateSpaceFilterConfig()}} method.
+If the filter is based on the [SpaceFilterOperationDelegate|SpaceFilterOperationDelegate], then a [SpaceFilterConfig|SpaceFilterConfig Class] needs to be created. This is done with the appropriate `SpaceFilterConfigFactory`, either [AttributeSpaceFilterConfigFactory|SpaceFilterOperationDelegate#Attribute based implementation], or [MethodNameSpaceFilterConfigFactory|SpaceFilterOperationDelegate#Method name based implementation], using the `CreateSpaceFilterConfig()` method.
 
 Once a [SpaceFilterConfig|SpaceFilterConfig Class] is created, it needs to be used when starting the space.
 
@@ -47,4 +47,4 @@ spaceConfig.Add(mySpaceFilterConfig);
 ISpaceProxy embeddedSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceConfig);
 {code}
 
-(on) A space can have multiple space filters integrated in it. Simply create a [SpaceFilterConfig|SpaceFilterConfig Class] instance per filter, and add it to the {{SpaceFiltersConfig}} list.
+(on) A space can have multiple space filters integrated in it. Simply create a [SpaceFilterConfig|SpaceFilterConfig Class] instance per filter, and add it to the `SpaceFiltersConfig` list.

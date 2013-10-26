@@ -85,7 +85,7 @@ This section describes the capabilities of the space, and how a combination of t
 
 ## Space
 
-A Space is a logical in-memory service, which can store entries of information. {{Entry}} is a domain object. In .NET, an entry can be as simple as a [POCO|http://en.wikipedia.org/wiki/Plain_Old_CLR_Object].
+A Space is a logical in-memory service, which can store entries of information. `Entry` is a domain object. In .NET, an entry can be as simple as a [POCO|http://en.wikipedia.org/wiki/Plain_Old_CLR_Object].
 
 ## Space - Basic Concepts
 
@@ -104,7 +104,7 @@ These capabilities are at the core of GigaSpaces XAP. This combination, plus the
 
 
 {% tip title=Template Matching %}
-In traditional relational databases retrieving data is synonym with SQL. While the space supports retrieving data via SQL-like queries, it offers an alternative, lightweight approach called Template Matching. The application creates a template object -- the class of the template object defines which type of objects the application wants to read (for example, a template of class {{Message}} will return {{Message}} objects), and the template object's properties are used as retrieval criteria. If a template property has a value, objects are only retrieved if they have the same value for that property. If properties in the template are null, they are ignored.
+In traditional relational databases retrieving data is synonym with SQL. While the space supports retrieving data via SQL-like queries, it offers an alternative, lightweight approach called Template Matching. The application creates a template object -- the class of the template object defines which type of objects the application wants to read (for example, a template of class `Message` will return `Message` objects), and the template object's properties are used as retrieval criteria. If a template property has a value, objects are only retrieved if they have the same value for that property. If properties in the template are null, they are ignored.
 GigaSpaces XAP extends template matching by providing semantics to query ranges on information as well. For additional information, please refer to the [SQLQuery API|SQLQuery] in the Programmer's Guide.
 {% endtip %}
 

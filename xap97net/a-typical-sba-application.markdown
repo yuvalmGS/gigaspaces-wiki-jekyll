@@ -106,16 +106,16 @@ Or XML:
 
 ### The ISpaceProxy Core Middleware Component
 
-The {{ISpaceProxy}} component is a .NET POCO driven abstraction of the JavaSpaces specification. JavaSpaces is a service specification. It provides a distributed object exchange/coordination mechanism (which might or might not be persistent) for objects. It can be used to store the system state and implement distributed algorithms. In a space, all communication partners (peers) communicate by sharing states. It is an implementation of the [Tuple spaces idea|Concepts#tuple].
+The `ISpaceProxy` component is a .NET POCO driven abstraction of the JavaSpaces specification. JavaSpaces is a service specification. It provides a distributed object exchange/coordination mechanism (which might or might not be persistent) for objects. It can be used to store the system state and implement distributed algorithms. In a space, all communication partners (peers) communicate by sharing states. It is an implementation of the [Tuple spaces idea|Concepts#tuple].
 
 Space is used when users want to achieve scalability and availability, while reducing the complexity of the overall system. Processes perform simple operations to write new objects into a space, take objects from a space, or read (make a copy of) objects from a space.
 
-The {{ISpaceProxy}} abstraction was designed with the following principles in mind:
+The `ISpaceProxy` abstraction was designed with the following principles in mind:
 
-- **POCO Entries** - the data model in JavaSpaces is an Entry. An Entry has to inherit from a specific interface ({{Entry}}). All public, non-transient fields are stored in the space. This model is quite different from modern data caching and persistence frameworks (NHibernate, ADO.NET Entity Framework, etc.), which are POCO-oriented. The POCO data model is basically a simple class with annotations that extend that model with specific meta-information such as indexes definition, persistency model, etc. The
+- **POCO Entries** - the data model in JavaSpaces is an Entry. An Entry has to inherit from a specific interface (`Entry`). All public, non-transient fields are stored in the space. This model is quite different from modern data caching and persistence frameworks (NHibernate, ADO.NET Entity Framework, etc.), which are POCO-oriented. The POCO data model is basically a simple class with annotations that extend that model with specific meta-information such as indexes definition, persistency model, etc. The
 - **Generics support** - users can use generics to avoid unnecessary casting and make their interaction with the space more type-safe.
 
-- **Overloaded methods** - the {{ISpaceProxy}} interface uses overloaded methods, that can use defaults to reduce the amount of arguments passed in read/take/write methods.
+- **Overloaded methods** - the `ISpaceProxy` interface uses overloaded methods, that can use defaults to reduce the amount of arguments passed in read/take/write methods.
 
 ### Using the GigaSpace Component in the Context of EDA/SOA Applications
 
@@ -140,9 +140,9 @@ public class Data
 
 [Space-Based Remoting|Space Based Remoting] allows for POCO services that are collocated within a specific processing unit to be exposed to remote clients, like any other RMI or RPC service.
 
-The client uses the {{ExecutorRemotingProxyBuilder<T>}} to create a space-based dynamic proxy for the service T. The client uses the proxy to invoke methods on the appropriate service instance. The proxy captures the invocation, extracts information on the service-instance, the method-name, and arguments, and invokes a service request on the space using that information. It then blocks for a response, which can be either a successful result or an exception thrown by the remote service.
+The client uses the `ExecutorRemotingProxyBuilder<T>` to create a space-based dynamic proxy for the service T. The client uses the proxy to invoke methods on the appropriate service instance. The proxy captures the invocation, extracts information on the service-instance, the method-name, and arguments, and invokes a service request on the space using that information. It then blocks for a response, which can be either a successful result or an exception thrown by the remote service.
 
-A processing unit that needs to be export a service uses the {{DomainServiceHost}}. The {{DomainServiceHost}} creates a service-delegator listener that registers for invocations. The invocation context contains information about the instance that needs to be invoked, the method and the arguments. The delegator uses this information to invoke the appropriate method on the POCO service. If the method returns a value, it captures the value and uses the space to return response Entry.
+A processing unit that needs to be export a service uses the `DomainServiceHost`. The `DomainServiceHost` creates a service-delegator listener that registers for invocations. The invocation context contains information about the instance that needs to be invoked, the method and the arguments. The delegator uses this information to invoke the appropriate method on the POCO service. If the method returns a value, it captures the value and uses the space to return response Entry.
 
 **Benefits compared to RMI**:
 - **Efficiency** - unlike RMI, space-based remoting leverages the fact that the space is the network gateway, and therefore doesn't require any additional sockets or I/O resources beyond the ones that have already been allocated to the space.
@@ -154,7 +154,7 @@ A processing unit that needs to be export a service uses the {{DomainServiceHost
 ### SLA-Driven Container
 
 {comment}TODO_NIV - Change to internal link when available.{comment}
-An [OpenSpaces SLA Driven Container|XAP97NET:Basic Processing Unit Container] that allows you to deploy a processing unit over a dynamic pool of machines, is available through an SLA-driven container, formerly known as the Grid Service Containers - GSCs. The SLA-driven containers are .NET processes that provide a hosting environment for a running processing unit. The Grid Service Manager (GSM) is used to manage the deployment of the processing unit, based on SLA. The SLA definition is part of the processing unit configuration, and is normally named {{sla.xml}}. The SLA definition defines: the number of PU instances that need to be running at a given point of time, the scaling policy, the failover policy based on CPU, and memory or application-specific measurement. !GS6:Images^intro6a.jpg|align=center!
+An [OpenSpaces SLA Driven Container|XAP97NET:Basic Processing Unit Container] that allows you to deploy a processing unit over a dynamic pool of machines, is available through an SLA-driven container, formerly known as the Grid Service Containers - GSCs. The SLA-driven containers are .NET processes that provide a hosting environment for a running processing unit. The Grid Service Manager (GSM) is used to manage the deployment of the processing unit, based on SLA. The SLA definition is part of the processing unit configuration, and is normally named `sla.xml`. The SLA definition defines: the number of PU instances that need to be running at a given point of time, the scaling policy, the failover policy based on CPU, and memory or application-specific measurement. !GS6:Images^intro6a.jpg|align=center!
 The following is a snippet taken from the example SLA definition section of the processing unit Spring configuration:
 
 {code:xml}

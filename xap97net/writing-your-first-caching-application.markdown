@@ -103,17 +103,17 @@ The following page showing the Data Grid attribute fields is displayed:
 
  !GS6:Images^Deployment_Wizard_EDG_set-myDataGrid-6.5rc2.jpg!
 
-1. In the **Data Grid Name** field, type the name {{myDataGrid}} as shown above. This name represents the Data Grid you are deploying in the Management Center. This name will be given to all spaces in the cluster. Remember this space name - you will use it when running the client application and connecting to the Data Grid.
+1. In the **Data Grid Name** field, type the name `myDataGrid` as shown above. This name represents the Data Grid you are deploying in the Management Center. This name will be given to all spaces in the cluster. Remember this space name - you will use it when running the client application and connecting to the Data Grid.
 2. In the **Space Schema** field, leave the space schema as **default**. This field allows you to specify whether the space instances in the cluster should be persistent (data automatically persisted to a database) or not. You will not use persistency in this tutorial.
 3. In this page of the wizard you will define the Data Grid topology by filling the **Cluster Info** area, do one of the following:
-    - **If you want to deploy the Data Grid in a _replicated topology_**, From the **Cluster schema** drop-down menu, select the **sync_replicated* option. This option uses the {{sync_replicated}}, which has synchronous replication between all cluster members. This option refers to a single space or a cluster of spaces (in one of several common topologies) with no backup.
-        - Select the number of spaces (Data Grid instances) in your replicated cluster. Deploy a cluster with 2 spaces, by typing the number {{2}} into **Number of Instances** field.
+    - **If you want to deploy the Data Grid in a _replicated topology_**, From the **Cluster schema** drop-down menu, select the **sync_replicated* option. This option uses the `sync_replicated`, which has synchronous replication between all cluster members. This option refers to a single space or a cluster of spaces (in one of several common topologies) with no backup.
+        - Select the number of spaces (Data Grid instances) in your replicated cluster. Deploy a cluster with 2 spaces, by typing the number `2` into **Number of Instances** field.
 The following shows the settings for the replicated topology:
 
  !GS6:Images^Deployment_Wizard_EDG_set-myDataGrid-2-Syncreplicated-6.5rc2.jpg!
 
     - **If you want one of the other topologies,** **_partitioned, master-local or local-view_**, from the **Cluster schema** drop-down menu, select the **partitioned** option. This option refers to a single space with a backup, or a partitioned cluster of spaces with backups.
-        - You need to select the number of partitions. Specify two partitions by typing {{2}} into the **Number of Instances** field. This option uses the {{partitioned}}. Specify one backup for each partition, by typing {{1}} into the **Number of backups** field. When using the partitioned cluster with backups the cluster schema used is the {{partitioned-sync2backup}}.
+        - You need to select the number of partitions. Specify two partitions by typing `2` into the **Number of Instances** field. This option uses the `partitioned`. Specify one backup for each partition, by typing `1` into the **Number of backups** field. When using the partitioned cluster with backups the cluster schema used is the `partitioned-sync2backup`.
 The following shows the settings for the partitioned (with backup) topology:
 
  !GS6:Images^Deployment_Wizard_EDG_set-myDataGrid-2-1-Partitioned-6.5rc2.jpg!
@@ -133,7 +133,7 @@ The table might include more than one Grid Service Manager. If so, look for the 
 Depending on the type of deployment you performed, you should see that either two spaces (two replicated Data Grid instances) or four spaces (two Data Grid partitions with one backup each) were provisioned to the host running the Grid Service Containers.
 5. **If this is not the first topology** you are deploying, and you are already familiar with the client application, skip to [Running Client, Testing Notifications and Verifying Topologies|#running].
 
-(i) You deployed the the Data Grid using the Management Center and its Deployment Wizard. An alternative way deploying a single space instance can be done by using the {{SpaceInstance}} command.
+(i) You deployed the the Data Grid using the Management Center and its Deployment Wizard. An alternative way deploying a single space instance can be done by using the `SpaceInstance` command.
 
 {anchor:3}
 
@@ -144,7 +144,7 @@ In this tutorial, we provide a sample application that consists of the following
 - **A Simple Reader** that reads data directly from the Data Grid (using spaces _read_).
 - **A Notified Reader** that registers for notifications on the Data Grid and is notified when data is written by the Data Loader.
 You can run one or more reader of either or both types.
-- **An `Account` object**, defined as a .Net PONO , which represents the data in the Data Grid. It has the following fields: {{userName}}, {{accountID}} and {{balance}}.
+- **An `Account` object**, defined as a .Net PONO , which represents the data in the Data Grid. It has the following fields: `userName`, `accountID` and `balance`.
 
 ## Getting Source Code and Full Client Package
 
@@ -152,31 +152,31 @@ You can run one or more reader of either or both types.
 - Full source code for Data Loader: [DataLoader.cs|EX:Data Grid A .NET - Basic Topologies - DataLoader.cs]
 - Full source code for Simple Reader: [SimpleReader.cs|EX:Data Grid A .NET - Basic Topologies - SimpleReader.cs]
 - Full source code for Notified Reader: [NotifiedReader.cs|EX:Data Grid A .NET - Basic Topologies - NotifiedReader.cs]
-- Full source code for the {{Account}} object: [Account.cs|EX:Data Grid A .NET - Basic Topologies - Account.cs]
+- Full source code for the `Account` object: [Account.cs|EX:Data Grid A .NET - Basic Topologies - Account.cs]
 
-**The full .NET client package** can be found at the following path: {{<GigaSpaces Root>\NET vX\examples\DataGrid\}}.
+**The full .NET client package** can be found at the following path: `<GigaSpaces Root>\NET vX\examples\DataGrid\`.
 
 ## Client Operating Process (In Brief)
 
 1. When you run the Data Loader, it:
     - Connects to the Data Grid and clears it from all data.
 
-    - Creates a new {{Account}} object, with a certain {{userName}} and {{accountID}}. The Account also has a {{Balance}} field, which is obtained by calculating {{AccountID*10}}.
-    - Writes 100 {{Account}} instances with IDs 1 through 100 to the Data Grid, using a write operation.
-1. When you run a Simple Reader, it reads all the {{Account}} instances in the Data Grid, then reads them again every few seconds, until you close it.
-2. When you run a Notified Reader, it registers for notification on the {{Account}} class, and starts listening for notifications. When {{Account}} objects are written to the Data Grid, the Notified Reader immediately receives notifications from the Data Grid. The notifications include the {{Account}} objects themselves.
+    - Creates a new `Account` object, with a certain `userName` and `accountID`. The Account also has a `Balance` field, which is obtained by calculating `AccountID*10`.
+    - Writes 100 `Account` instances with IDs 1 through 100 to the Data Grid, using a write operation.
+1. When you run a Simple Reader, it reads all the `Account` instances in the Data Grid, then reads them again every few seconds, until you close it.
+2. When you run a Notified Reader, it registers for notification on the `Account` class, and starts listening for notifications. When `Account` objects are written to the Data Grid, the Notified Reader immediately receives notifications from the Data Grid. The notifications include the `Account` objects themselves.
 3. If you run more 'Simple Readers' or 'Notified Readers', they repeat step 2 or 3 above, respectively.
 
 ## How the Client Application Connects to the Data Grid
 
-The application connects to the space using the GigaSpaces {{GigaSpacesFactory.FindSpace(spaceUrl)}} method. This is a method that accepts a _space URL_, discovers the space, and returns a proxy that allows the application to work with the space. The URL is usually not defined in the client application itself, but is supplied to it as an argument when it is started.
+The application connects to the space using the GigaSpaces `GigaSpacesFactory.FindSpace(spaceUrl)` method. This is a method that accepts a _space URL_, discovers the space, and returns a proxy that allows the application to work with the space. The URL is usually not defined in the client application itself, but is supplied to it as an argument when it is started.
 
 In this tutorial, we will use a space connection URL similar to the following:
 
     jini://*/*/myDataGrid
 
 - This URL uses the Jini protocol, which enables dynamic discovery of the space (the client does not need to know which machines are participating in the Data Grid).
-- {{\*/\*/myDataGrid}} specifies that the client wants to connect to a cluster in which all the spaces are called {{myDataGrid}}, regardless of which physical machines participate in the cluster.
+- `\*/\*/myDataGrid` specifies that the client wants to connect to a cluster in which all the spaces are called `myDataGrid`, regardless of which physical machines participate in the cluster.
 - **`useLocalCache`** is an additional parameter, not shown above, which launches a local cache in the connecting application. This is necessary for the master-local and local-view topologies.
 
 (i) The URL above is used by the application to **connect** to the space (a cluster of spaces in this case), so it is called a _space connection URL_. This should not be confused with a _space start URL_, a similar form of URL which can be used to **start** a space. In this tutorial, you will not use a space start URL, rather you will start the spaces using the GS-UI, as described below.

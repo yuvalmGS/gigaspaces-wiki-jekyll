@@ -11,7 +11,7 @@ page_id: 63799401
 
 The Space Filter Demo demonstrates the different ways to [implement|Implementing and Using a Space Filter] a [space filter|Space Filters] and how to integrate it in a space.
 
-The example can be found at {{<GigaSpaces root>\Examples\SpaceFilter}}
+The example can be found at `<GigaSpaces root>\Examples\SpaceFilter`
 
 This demo shows three equivalent space filter implementations, and a console application that runs the same demo sequence three times, once per filter implementation:
 
@@ -21,7 +21,7 @@ This demo shows three equivalent space filter implementations, and a console app
 
 # Censorship Filters
 
-This demo data object is the {{Message}} class. This class contains one string property {{Content}} that holds the content of the message. The purpose of each filter, is to log certain {{Message}} related operations (Take, Write), and to censor messages that contain illegal words, before entering the space. All filters extend the {{MessageCensorship}} class, which implements the {{CensorMessage}} method that contains the censorship logic. The {{MessageCensorship}} receives an array of illegal words, and uses that to censor a message when {{CensorMessage}} is called.
+This demo data object is the `Message` class. This class contains one string property `Content` that holds the content of the message. The purpose of each filter, is to log certain `Message` related operations (Take, Write), and to censor messages that contain illegal words, before entering the space. All filters extend the `MessageCensorship` class, which implements the `CensorMessage` method that contains the censorship logic. The `MessageCensorship` receives an array of illegal words, and uses that to censor a message when `CensorMessage` is called.
 
 # Demo Sequence
 
@@ -119,11 +119,11 @@ spaceConfig.SpaceFiltersConfig = new SpaceFilterConfig[]{attributeSpaceFilterCon
 space = GigaSpacesFactory.FindSpace("/./spaceAttributeFilterDemo", spaceConfig);
 {code}
 
-In this example, we can see that the {{LogAndCensorizeWrite}} method receives an [ISpaceFilterEntry|ISpaceFilterEntry Interface] as its single parameter, and not the {{Message}} object like the {{LogTake}} method. That's because this method might need to update the value of the message when it needs to be censored. This can only be done using the {{entry.UpdateObject}} method.
+In this example, we can see that the `LogAndCensorizeWrite` method receives an [ISpaceFilterEntry|ISpaceFilterEntry Interface] as its single parameter, and not the `Message` object like the `LogTake` method. That's because this method might need to update the value of the message when it needs to be censored. This can only be done using the `entry.UpdateObject` method.
 
-Another important thing to notice is that the {{LogAndCensorizeWrite}} method first checks if the Message type  from the {{entry.ObjectType}}, can be assigned into Message, and only then gets the actual Message object. This is done to decrease the performance impact of the filter, because the evaluation of {{GetObject}} and {{UpdateObject}} is done in a lazy fashion.
+Another important thing to notice is that the `LogAndCensorizeWrite` method first checks if the Message type  from the `entry.ObjectType`, can be assigned into Message, and only then gets the actual Message object. This is done to decrease the performance impact of the filter, because the evaluation of `GetObject` and `UpdateObject` is done in a lazy fashion.
 
-This filter class implements {{IDisposable}}, to demonstrate that when a filter class implements the {{IDisposable}} interface, it is disposed of when the space shuts down.
+This filter class implements `IDisposable`, to demonstrate that when a filter class implements the `IDisposable` interface, it is disposed of when the space shuts down.
 
 {anchor:2}
 
@@ -203,7 +203,7 @@ The same structure for the filter operation method applies here as well.
 
 # Message Censorship Space Filter
 
-This filter implements the [{{ISpaceFilter}}|ISpaceFilter Interface] interface directly.
+This filter implements the [`ISpaceFilter`|ISpaceFilter Interface] interface directly.
 
 {code:java}
 public class MessageCensorshipSpaceFilter : MessageCensorship, ISpaceFilter

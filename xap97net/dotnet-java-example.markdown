@@ -16,7 +16,7 @@ page_id: 63799316
 
 {% column width=86% %}
 
-{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|{{<GigaSpaces Root>\dotnet\examples\DotNetJava}} |
+{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|`<GigaSpaces Root>\dotnet\examples\DotNetJava` |
 {% endalign %}
 
 {% endcolumn %}
@@ -46,7 +46,7 @@ Both applications:
 ## The Person Interoperable Class
 
 - The .NET naming convention is different than the Java naming convention.
-The {{\[XAP66:SpaceClass(AliasName="")\]}} attribute is used to map the .NET names to the respective Java names.
+The `\[XAP66:SpaceClass(AliasName="")\]` attribute is used to map the .NET names to the respective Java names.
 
 - The .NET class **GigaSpaces.Examples.DotnetJava.Person** is mapped to the Java class **com.gigaspaces.examples.dotnetjava.Person**.
 

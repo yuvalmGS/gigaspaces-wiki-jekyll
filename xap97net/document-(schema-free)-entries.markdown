@@ -12,9 +12,9 @@ page_id: 63799391
 
 !GRA:Images^new-in-801-banner.png|align=right!
 
-The GigaSpaces document API exposes the space as [Document Store|http://en.wikipedia.org/wiki/Document-oriented_database]. A document, which is represented by the class {{SpaceDocument}}, is essentially a collection of key-value pairs, where the keys are strings and the values are primitives, {{String}}, {{Date}}, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
+The GigaSpaces document API exposes the space as [Document Store|http://en.wikipedia.org/wiki/Document-oriented_database]. A document, which is represented by the class `SpaceDocument`, is essentially a collection of key-value pairs, where the keys are strings and the values are primitives, `String`, `Date`, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
 
-Unlike concrete objects, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic - users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the interface {{ISpaceTypeDescriptor}}.
+Unlike concrete objects, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic - users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the interface `ISpaceTypeDescriptor`.
 
 Before a certain Document instance is written to the space, its type should be introduced to the data grid. The type has a name and controls metadata such as an identifier property, a routing property and which properties are initially indexed (naturally, you can also index new properties at runtime after adding them to your documents).
 
@@ -28,11 +28,11 @@ Note that the Document type does not describe the properties themselves (except 
 
 ## Schema Evolution with Space Documents
 
-Since a {{SpaceDocument}} is completely dynamic by nature, it is very easy to change or evolve your data model without ever taking down the Space. Simply change your application code to add additional properties or remove existing ones, and you're good to go. Even better, old and new versions can co-exist since the space does not enforce any restriction with regards to the property set of documents that belong to a certain type. This is a much more lightweight model in comparison to the classic concrete object model, where a recompilation and in many cases a full space restart is required to change the data schema.
+Since a `SpaceDocument` is completely dynamic by nature, it is very easy to change or evolve your data model without ever taking down the Space. Simply change your application code to add additional properties or remove existing ones, and you're good to go. Even better, old and new versions can co-exist since the space does not enforce any restriction with regards to the property set of documents that belong to a certain type. This is a much more lightweight model in comparison to the classic concrete object model, where a recompilation and in many cases a full space restart is required to change the data schema.
 
 # Type Definition
 
-Before we start writing and reading {{SpaceDocument}} from the space, we need an **initial** schema definition of the document type.
+Before we start writing and reading `SpaceDocument` from the space, we need an **initial** schema definition of the document type.
 
 For example, suppose we're implementing an electronic commerce system, and decided we need a type called **Product** with the following properties:
 - CatalogNumber : String
@@ -64,7 +64,7 @@ Note that this code does not reflect the complete model - most of the properties
 
 # Creating and Writing Documents
 
-To create a document in the space, create a {{SpaceDocument}} object using the type name, and set the desired properties. Then write it to the space using the regular {{ISpaceProxy}} write method:
+To create a document in the space, create a `SpaceDocument` object using the type name, and set the desired properties. Then write it to the space using the regular `ISpaceProxy` write method:
 {code:java}
 public void WriteProduct1(ISpaceProxy spaceProxy)
 {
@@ -100,9 +100,9 @@ public void WriteProduct1(ISpaceProxy spaceProxy)
 
 Using generic types as nested properties (i.e IDictionary<String, Object> features) will be read as IDictionary<Object, Object> when the above document is read from the space.
 
-There are two ways to receive back a dictionary of the same generic type. One is using the {{DocumentProperties}} class instead, and the other is to use a BinaryCustom storage type for the dynamic properties.
+There are two ways to receive back a dictionary of the same generic type. One is using the `DocumentProperties` class instead, and the other is to use a BinaryCustom storage type for the dynamic properties.
 
-The {{DocumentProperties}} class extends IDictionary<String, Object> and besides being strongly typed to String keys and Object values, it provides better performance when used.
+The `DocumentProperties` class extends IDictionary<String, Object> and besides being strongly typed to String keys and Object values, it provides better performance when used.
 
 {code:java}
 public void WriteProduct2(ISpaceProxy spaceProxy)
@@ -137,7 +137,7 @@ public void WriteProduct2(ISpaceProxy spaceProxy)
 }
 {code}
 
-(+) The {{ISpaceProxy.WriteMultiple}} method can be used to write a batch of documents.
+(+) The `ISpaceProxy.WriteMultiple` method can be used to write a batch of documents.
 (!) Update semantics are the same as for concrete objects, except **partial update**, which is not currently supported.
 (!) Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviors in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
 
@@ -164,7 +164,7 @@ public SpaceDocument ReadProductByTemplate(ISpaceProxy spaceProxy)
 
 ## Sql Query
 
-You can use the [SqlQuery] to search for matching {{SpaceDocument}} entries.
+You can use the [SqlQuery] to search for matching `SpaceDocument` entries.
 
 For example: to read a document of type **Product** whose **Price** is greater than 15:
 {code:java}
@@ -221,16 +221,16 @@ public SpaceDocument[] ReadProductByMultipleIds(ISpaceProxy spaceProxy)
 }
 {code}
 
-(+) All other {{ISpaceProxy}} query operations (ReadIfExists, ReadMultiple, Take, TakeIfExists, TakeMultiple, Count, Clear) are supported for documents entries as well.
+(+) All other `ISpaceProxy` query operations (ReadIfExists, ReadMultiple, Take, TakeIfExists, TakeMultiple, Count, Clear) are supported for documents entries as well.
 (+) All other Id based operations (ReadIfExists, TakeById, TakeIfExistsById, TakeByIds) are supported for documents as well.
 (+) All overloads of those operations with timeout, transactions, modifiers etc. are supported for documents. The semantics is similar to concrete objects.
 
 # Nested Properties
 
-The {{Document}} properties' values can be either scalars (integers, strings, enumerations, etc), collections (arrays, lists), or nested properties (dictionary or an extension of dictionary, such as {{DocumentProperties}}). Values must adhere to the same restrictions as in the concrete object model (e.g. be serializable). Nested properties can be queried by using the dot ('.') notation to describe paths, as shown above.
+The `Document` properties' values can be either scalars (integers, strings, enumerations, etc), collections (arrays, lists), or nested properties (dictionary or an extension of dictionary, such as `DocumentProperties`). Values must adhere to the same restrictions as in the concrete object model (e.g. be serializable). Nested properties can be queried by using the dot ('.') notation to describe paths, as shown above.
 
-(+) It's highly recommended to use {{DocumentProperties}} for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
-(!) While it's possible to use  {{SpaceDocument}} as a property, it is probably a mistake, since it contains extra information which is not relevant for nested properties (type name, version, etc.).
+(+) It's highly recommended to use `DocumentProperties` for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
+(!) While it's possible to use  `SpaceDocument` as a property, it is probably a mistake, since it contains extra information which is not relevant for nested properties (type name, version, etc.).
 
 # Indexing
 
@@ -242,9 +242,9 @@ Since the schema is flexible and new properties might be added after the type ha
 
 # Events
 
-Event containers (both [polling container|Polling Container Component] and [notify container|Notify Container Component]) support {{SpaceDocument}} entries.
+Event containers (both [polling container|Polling Container Component] and [notify container|Notify Container Component]) support `SpaceDocument` entries.
 
-Here is a simple example of a polling event container configuration using a {{SpaceDocument}}:
+Here is a simple example of a polling event container configuration using a `SpaceDocument`:
 
 {code:java}
 [PollingEventDriven]
@@ -271,7 +271,7 @@ public class SimpleListener
 
 # FIFO
 
-FIFO support is off by default with {{SpaceDocument}} entries (as with concrete object entries). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
+FIFO support is off by default with `SpaceDocument` entries (as with concrete object entries). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
 
 {code:java}
 // Create type descriptor:
@@ -291,7 +291,7 @@ spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 
 Transactions and isolation modifier semantics is identical to the concrete object semantics.
 
-Optimistic locking is disabled by default with {{SpaceDocument}} entries (same as with concrete object). To enable it, modify the type introduction code and set the optimistic locking support. For example:
+Optimistic locking is disabled by default with `SpaceDocument` entries (same as with concrete object). To enable it, modify the type introduction code and set the optimistic locking support. For example:
 
 {code:java}
 // Create type descriptor:
@@ -311,7 +311,7 @@ spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 
 By default, the dynamic properties of the document will be deserialized fully and kept in space as an instance of their corresponding space type class. This allows indexing and nested matching against these properties. However, in some scenarios, the data kept inside the dynamic properties is not used for matching. In that case it is possible to keep these properties serialized in their binary format in the space, increasing performance and reducing memory consumption.
 
-However, the data stored in binary format will be not be visible via the management center or readable from an interoperable Java/C++ client, it will appear as binary large object to these clients and will only deserialized when a .NET client reads it. The way to specify the storage type is when constructing the type using the {{SpaceTypeDescriptorBuilder}}:
+However, the data stored in binary format will be not be visible via the management center or readable from an interoperable Java/C++ client, it will appear as binary large object to these clients and will only deserialized when a .NET client reads it. The way to specify the storage type is when constructing the type using the `SpaceTypeDescriptorBuilder`:
 {code:java}
 // Create type descriptor:
 ISpaceProxy spaceProxy = ... //Obtain a space proxy

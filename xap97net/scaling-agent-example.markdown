@@ -17,7 +17,7 @@ that monitors a deployed application, and scale it up on demand.{summary}
 
 {% column width=86% %}
 
-{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|{{<GigaSpaces Root>\Examples\ScalingAgent}} |
+{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|`<GigaSpaces Root>\Examples\ScalingAgent` |
 {% endalign %}
 
 {% endcolumn %}
@@ -43,7 +43,7 @@ the [SBA Example] first.{refer}
 
 # How the Scaling Agent Works
 
-The scaling agent periodically samples the throughput of feeds that are processed by the running application instances, and compares the average throughput per instance to a specific threshold. If the average throughput is larger than the pre-defined threshold, which is part of the processing unit configuration, the scaling agent scales up the application by starting a new GSC, and by increasing the amount of instances (see the {{ScaleUp()}} method). The sampling is done by letting the feed processor implement the {{IServiceMonitorsProvider}} interface, which exposes the public API that is used by the agent.
+The scaling agent periodically samples the throughput of feeds that are processed by the running application instances, and compares the average throughput per instance to a specific threshold. If the average throughput is larger than the pre-defined threshold, which is part of the processing unit configuration, the scaling agent scales up the application by starting a new GSC, and by increasing the amount of instances (see the `ScaleUp()` method). The sampling is done by letting the feed processor implement the `IServiceMonitorsProvider` interface, which exposes the public API that is used by the agent.
 
 ## Scaling Agent Implementation
 
@@ -190,7 +190,7 @@ public class Agent : IDisposable
 
 ## Feed Processor
 
-The processor waits for new feeds to be fed into the cluster, and acts upon such an event. Since the processor throughput needs to be monitored by the agent, the processor implements the {{IServiceMonitorsProvider}} interface to expose its throughput for external query.
+The processor waits for new feeds to be fed into the cluster, and acts upon such an event. Since the processor throughput needs to be monitored by the agent, the processor implements the `IServiceMonitorsProvider` interface to expose its throughput for external query.
 {code:java}
 [PollingEventDriven(Name = "FeedProcessor", MinConcurrentConsumers = 1, MaxConcurrentConsumers = 4)]
 public class FeedProcessor : IDisposable, IServiceMonitorsProvider
@@ -252,7 +252,7 @@ public class FeedProcessor : IDisposable, IServiceMonitorsProvider
   [..]
 }
 {code}
-The processor exposes its throughput statistics via the {{FeedProcessorTpMonitor}} class, which is a custom implementation of the {{IServiceMonitors}} interface. The interface has a string-based ID, and a name value collection that represents the monitored fields and values, and can hold any custom data. In our case, the {{FeedProcessorTpMonitor}} ID is "Feed Processor Statistics", and it has a single property "Processing TP". These strings are used by the agent to extract the throughput value.
+The processor exposes its throughput statistics via the `FeedProcessorTpMonitor` class, which is a custom implementation of the `IServiceMonitors` interface. The interface has a string-based ID, and a name value collection that represents the monitored fields and values, and can hold any custom data. In our case, the `FeedProcessorTpMonitor` ID is "Feed Processor Statistics", and it has a single property "Processing TP". These strings are used by the agent to extract the throughput value.
 {code:java}
 /// <summary>
 /// Provide throughput monitoring statistics of this service
@@ -297,12 +297,12 @@ The Feeder is a Windows application that feeds the data grid with new feeds at a
 The Scaling Agent monitors the deployed Processors and scales them up on demand. It can be run either as a deployable processing unit, or as a standalone console application. When it is deployed as a processing unit, it is automatically reliable and self healing, like any processing unit that is managed by the service grid.
 
 To simplify the deployment of the examples, there are several scripts in the example directory.
-1. First start a grid service agent by running {{<XAP.NET installation>\Bin\Gs-Agent.exe}}.
+1. First start a grid service agent by running `<XAP.NET installation>\Bin\Gs-Agent.exe`.
 2. It is then recommended to run the GigaSpaces Management center to monitor the entire service grid state.
-3. After the service grid agent is loaded, in order to deploy the data grid, run {{<XAP.NET installation>\Examples\ScalingAgent\DeploySpace.bat}}.
-4. Now run {{<XAP.NET installation>\Examples\ScalingAgent\DeployProcessor.bat}} to deploy the processor.
-5. The next step is to deploy the Scaling Agent. This can be done by running {{<XAP.NET installation>\Examples\ScalingAgent\DeployAgent.bat}}, which deploys the agent as a processing unit, or by running {{<XAP.NET installation>\Examples\ScalingAgent\RunStandaloneAgent.bat}}, which runs the agent as a standalone application.
-6. At this stage, the entire application is deployed and waiting for new feeds to be processed. Start a feeder by executing {{<XAP.NET installation>\Examples\ScalingAgent\RunFeeder.bat}}. Use the feeder user interface to specify the rate of feeding, in order to simulate different loads on the cluster.
+3. After the service grid agent is loaded, in order to deploy the data grid, run `<XAP.NET installation>\Examples\ScalingAgent\DeploySpace.bat`.
+4. Now run `<XAP.NET installation>\Examples\ScalingAgent\DeployProcessor.bat` to deploy the processor.
+5. The next step is to deploy the Scaling Agent. This can be done by running `<XAP.NET installation>\Examples\ScalingAgent\DeployAgent.bat`, which deploys the agent as a processing unit, or by running `<XAP.NET installation>\Examples\ScalingAgent\RunStandaloneAgent.bat`, which runs the agent as a standalone application.
+6. At this stage, the entire application is deployed and waiting for new feeds to be processed. Start a feeder by executing `<XAP.NET installation>\Examples\ScalingAgent\RunFeeder.bat`. Use the feeder user interface to specify the rate of feeding, in order to simulate different loads on the cluster.
 
 ## Feeder Application
 

@@ -56,7 +56,7 @@ public class ProductDocument : SpaceDocument
 
 # Registering the Extension Class
 
-If your only intention is to write/update document entries, creating the extension class is sufficient - from the space's perspective it is equivalent to a {{SpaceDocument}} instance. However, if you attempt to read/take entries from the space, the results will be {{SpaceDocument}} instances, and the cast to {{ProductDocument}} will throw an exception.
+If your only intention is to write/update document entries, creating the extension class is sufficient - from the space's perspective it is equivalent to a `SpaceDocument` instance. However, if you attempt to read/take entries from the space, the results will be `SpaceDocument` instances, and the cast to `ProductDocument` will throw an exception.
 To overcome that, we need to include the document wrapper type in the type introduction:
 
 {code:java}
@@ -75,7 +75,7 @@ This wrapper type-registration is kept in the proxy and not propagated to the se
 
 # Using the Extension Class
 
-The following code snippet demonstrate usage of the {{ProductDocument}} extensions we've created to write and read documents from the space.
+The following code snippet demonstrate usage of the `ProductDocument` extensions we've created to write and read documents from the space.
 
 {code:java}
 public void example(ISpaceProxy spaceProxy)

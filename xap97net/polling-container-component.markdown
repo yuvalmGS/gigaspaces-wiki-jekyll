@@ -6,14 +6,14 @@ page_id: 63799324
 ---
 
 {composition-setup}
-{summary}The polling container implements the {{IEventListenerContainer}} interface, and allows you to perform polling receive operations against the space.{summary}
+{summary}The polling container implements the `IEventListenerContainer` interface, and allows you to perform polling receive operations against the space.{summary}
 
 # Overview
 
 The polling event container implements the [IEventListenerContainer|Event Listener Container] interface. Its life-cycle consists of performing polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the [DataEventArrived|Event Listener Container#DataEventArrived] event is invoked. A polling event operation is mainly used when simulating Queue semantics, or when using the master-worker design pattern.
 !GRA:Images^Net_polling_cont.jpg!
 The examples in this page follow a certain pattern. Each code example has two tabs: Using EventListenerContainerFactory, and PollingEventListenerContainer Code Construction.
-The first tab demonstrates how to create and configure a polling container using the {{EventListenerContainerFactory}}, and the second tab demonstrates how to build and configure a {{PollingEventListenerContainer}} with a constructor and setting the different properties.
+The first tab demonstrates how to create and configure a polling container using the `EventListenerContainerFactory`, and the second tab demonstrates how to build and configure a `PollingEventListenerContainer` with a constructor and setting the different properties.
 
 Here is a simple example of polling event container construction:
 
@@ -42,7 +42,7 @@ public class SimpleListener
 }
 {code}
 
-Constructing the polling container that uses the {{SimpleListener}} class as the event listener, and starting it.
+Constructing the polling container that uses the `SimpleListener` class as the event listener, and starting it.
 
 {code:java}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
@@ -82,7 +82,7 @@ public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data
 {gcard}
 {gdeck}
 
-The example above performs single take operations (see [below|#Receive Operation Handler]), using the provided template, which can be any .NET object (in this case a {{Data}} object with its processed flag set to {{false}}). If the take operation succeeds (a value is returned), the {{SimpleListener.ProcessData}} method is invoked. The operations are performed on the supplied space proxy.
+The example above performs single take operations (see [below|#Receive Operation Handler]), using the provided template, which can be any .NET object (in this case a `Data` object with its processed flag set to `false`). If the take operation succeeds (a value is returned), the `SimpleListener.ProcessData` method is invoked. The operations are performed on the supplied space proxy.
 
 # Primary/Backup
 
@@ -136,7 +136,7 @@ pollingEventListenerContainer.MaxConcurrentConsumers = 5;
 {gcard}
 {gdeck}
 
-Sometimes, it is very convenient to have a listener instance per concurrent polling thread. This allows a thread-safe instance variable to be constructed, without worrying about concurrent access. In such a case, the event listener containing class should implement {{System.ICloneable}}, and the {{CloneEventListenersPerThread}} property should be set to true. Here is an example:
+Sometimes, it is very convenient to have a listener instance per concurrent polling thread. This allows a thread-safe instance variable to be constructed, without worrying about concurrent access. In such a case, the event listener containing class should implement `System.ICloneable`, and the `CloneEventListenersPerThread` property should be set to true. Here is an example:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -161,7 +161,7 @@ pollingEventListenerContainer.CloneEventListenersPerThread = true;
 
 # Static Template Definition
 
-When performing receive operations, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates, based on the actual domain model (with {{null}} values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SqlQuery|SqlQuery] in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
+When performing receive operations, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates, based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SqlQuery|SqlQuery] in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -200,7 +200,7 @@ pollingEventListenerContainer.Template = new SqlQuery<Data>("Processed = false")
 # Dynamic Template Definition
 
 When performing polling receive operations, a dynamic template can be used. A method providing a dynamic template is called before each receive operation, and can return a different object in each call.
-The event template object needs to be of IQuery<TData> type, which means if you want to use an object based template you need to wrap it with the {{ObjectQuery}} wrapper.
+The event template object needs to be of IQuery<TData> type, which means if you want to use an object based template you need to wrap it with the `ObjectQuery` wrapper.
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -290,14 +290,14 @@ public interface IReceiveOperationHandler<TData>
 XAP.NET comes with several built-in receive operation-handler implementations:
 
 ||Receive Operation Handler||Description||
-| {{TakeReceiveOperationHandler}} |Performs a single blocking Take operation, with the receive timeout. When used in conjuction with batch events, first tries to perform TakeMultiple. If no values are returned, performs a blocking Take operation, with the receive timeout.|
-| {{ReadReceiveOperationHandler}} |Performs a single blocking Read operation, with the receive timeout. When used in conjuction with batch events, first tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.|
-| {{ExclusiveReadReceiveOperationHandler}} |Performs a single Read operation, under an exclusive read lock (similar to "select for update" in databases), with the receive timeout. Exclusive read lock mimics the Take operation, without actually taking the Entry from the space. When used in conjuction with batch events, First tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.
+| `TakeReceiveOperationHandler` |Performs a single blocking Take operation, with the receive timeout. When used in conjuction with batch events, first tries to perform TakeMultiple. If no values are returned, performs a blocking Take operation, with the receive timeout.|
+| `ReadReceiveOperationHandler` |Performs a single blocking Read operation, with the receive timeout. When used in conjuction with batch events, first tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.|
+| `ExclusiveReadReceiveOperationHandler` |Performs a single Read operation, under an exclusive read lock (similar to "select for update" in databases), with the receive timeout. Exclusive read lock mimics the Take operation, without actually taking the Entry from the space. When used in conjuction with batch events, First tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.
 (!) This receive operation handler must be used within a transaction.|
 
-(i) When using the {{ExclusiveReadReceiveOperationHandler}}, or even the {{ReadReceiveOperationHandler}}, it is important to remember that the actual event still remains in the space. If the data event is not taken from the space, or one of its properties changes in order **not** to match the container template, the same data event is read again.
+(i) When using the `ExclusiveReadReceiveOperationHandler`, or even the `ReadReceiveOperationHandler`, it is important to remember that the actual event still remains in the space. If the data event is not taken from the space, or one of its properties changes in order **not** to match the container template, the same data event is read again.
 
-Here is an example of how the receive operation handler can be configured with {{ExclusiveReadReceiveOperationHandler}}:
+Here is an example of how the receive operation handler can be configured with `ExclusiveReadReceiveOperationHandler`:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -343,7 +343,7 @@ pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
 
 ## Non-Blocking Receive Handler
 
-When working with a partitioned cluster, and configuring the polling container to work against the whole cluster, blocking operations are not allowed (when the routing index is not set in the template). The default receive operation handlers support performing the receive operation in a non-blocking manner, by sleeping between non-blocking operations. For example, the {{TakeReceiveOperationHandler}} performs a non-blocking Take operation against the space, and then sleeps for a configurable amount of time. Here is an example of how it can be configured:
+When working with a partitioned cluster, and configuring the polling container to work against the whole cluster, blocking operations are not allowed (when the routing index is not set in the template). The default receive operation handlers support performing the receive operation in a non-blocking manner, by sleeping between non-blocking operations. For example, the `TakeReceiveOperationHandler` performs a non-blocking Take operation against the space, and then sleeps for a configurable amount of time. Here is an example of how it can be configured:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -391,15 +391,15 @@ pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
 {gcard}
 {gdeck}
 
-The above example uses a receive timeout of 10 seconds (10000 milliseconds). The {{TakeReceiveOperationHandler}} is configured to be non-blocking, with a non-blocking factor of 10. This means that the receive handler performs 10 non-blocking takes within 10 seconds, and sleeps the rest of the time (~1 second each time).
+The above example uses a receive timeout of 10 seconds (10000 milliseconds). The `TakeReceiveOperationHandler` is configured to be non-blocking, with a non-blocking factor of 10. This means that the receive handler performs 10 non-blocking takes within 10 seconds, and sleeps the rest of the time (~1 second each time).
 
 ## Batch Events
 
 Sometimes it is better to use batch events, for instance to improve network traffic. This is done by subscribing to the [BatchDataEventArrived event|Event Listener Container#BatchDataEventArrived]. This event receives a batch of event data objects in one invocation.
 
-A prime example is the {{TakeReceiveOperationHandler}}, which when [BatchDataEventArrived event|Event Listener Container#BatchDataEventArrived] are used, returns an array as a result of a {{TakeMultiple}} operation . The batch size is determined by the {{ReceiveBatchSize}} configuration attribute or property, it is set similiar to the above properties modifications.
+A prime example is the `TakeReceiveOperationHandler`, which when [BatchDataEventArrived event|Event Listener Container#BatchDataEventArrived] are used, returns an array as a result of a `TakeMultiple` operation . The batch size is determined by the `ReceiveBatchSize` configuration attribute or property, it is set similiar to the above properties modifications.
 
-Here is an example of batch notifications using {{ReadReceiveOperationHandler}}:
+Here is an example of batch notifications using `ReadReceiveOperationHandler`:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -451,9 +451,9 @@ pollingEventListenerContainer.Dispose();
 
 # Transaction Support
 
-Both the receive operation, and the actual event action can be configured to be performed under a transaction. Transaction support is required for example, when an exception occurs in the event listener, and the receive operation needs to be to rolled back (and the actual data event is returned to the space). Adding transaction support to the polling container is very simple. It is done by setting the {{TransactionType}} property. There are two transaction types: Distributed and Manual.
+Both the receive operation, and the actual event action can be configured to be performed under a transaction. Transaction support is required for example, when an exception occurs in the event listener, and the receive operation needs to be to rolled back (and the actual data event is returned to the space). Adding transaction support to the polling container is very simple. It is done by setting the `TransactionType` property. There are two transaction types: Distributed and Manual.
 - Distributed transaction - an embedded distributed transaction manager will be created and it will be used for creating transaction (Only one transaction manager will be created per AppDomain).
-- Manual transaction - transactions will be created by the transaction manager that is stored in the {{TransactionManager}} property. By default no transaction manager is stored and therefore, no transaction will be used. For example:
+- Manual transaction - transactions will be created by the transaction manager that is stored in the `TransactionManager` property. By default no transaction manager is stored and therefore, no transaction will be used. For example:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -564,7 +564,7 @@ public interface ITriggerOperationHandler<TData>
 }
 {code}
 
-XAP.NET comes with a built-in implementation of this interface, called {{ReadTriggerOperationHandler}}. It performs a single blocking Read operation (using the provided receive timeout), thus "peeking" into the space for relevant event data. If the Read operation returns a value, this means that there is a higher probability that the receive operation will succeed, and the transaction won't be started without a purpose. Here is how it can be configured:
+XAP.NET comes with a built-in implementation of this interface, called `ReadTriggerOperationHandler`. It performs a single blocking Read operation (using the provided receive timeout), thus "peeking" into the space for relevant event data. If the Read operation returns a value, this means that there is a higher probability that the receive operation will succeed, and the transaction won't be started without a purpose. Here is how it can be configured:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -610,7 +610,7 @@ pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
 
 ## Non-Blocking Trigger Handler
 
-The {{ReadTriggerOperationHandler}} can be set to be non-blocking, in the same way as described in [#Non-Blocking Receive Handler].
+The `ReadTriggerOperationHandler` can be set to be non-blocking, in the same way as described in [#Non-Blocking Receive Handler].
 
 # Handling Exceptions
 
@@ -700,4 +700,4 @@ public void ExceptionHandler(object sender, UserExceptionEventArgs<Data> e)
 
 # Default Values of Polling Container Configuration Parameters
 
-The default values for all of the polling container properties such as {{min-concurrent-consumers, receive-operation-handler, receive-timeout}} and others can be found in the API docs. Each property has a corresponding Default<property name> const field that sets the default value of the property.
+The default values for all of the polling container properties such as `min-concurrent-consumers, receive-operation-handler, receive-timeout` and others can be found in the API docs. Each property has a corresponding Default<property name> const field that sets the default value of the property.

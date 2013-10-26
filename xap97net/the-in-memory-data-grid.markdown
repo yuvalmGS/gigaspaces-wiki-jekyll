@@ -69,8 +69,8 @@ It supports the following options, from which you can choose:
 
 Since the Space is memory-based, it is essential to verify that it does not overflow and crash. The Space's memory can be managed and a memory overflow prevented by:
 
-- **Eviction policy**. The space supports two eviction policies: {{ALL_IN_CACHE}} and {{LRU}} (Least Recently Used). With {{LRU}}, the Space starts to evict the least used entries when it becomes full. The {{ALL_IN_CACHE}} policy never evicts anything from the Space.
-- **Memory manager**. The memory manager allows you to define numerous thresholds that control when entries are evicted (in case you use {{LRU}}), or when the space simply blocks clients from adding data to it.
+- **Eviction policy**. The space supports two eviction policies: `ALL_IN_CACHE` and `LRU` (Least Recently Used). With `LRU`, the Space starts to evict the least used entries when it becomes full. The `ALL_IN_CACHE` policy never evicts anything from the Space.
+- **Memory manager**. The memory manager allows you to define numerous thresholds that control when entries are evicted (in case you use `LRU`), or when the space simply blocks clients from adding data to it.
 Combined, these two facilities enable better control of your environment and ensure that the memory of the Space instances in your cluster do not overflow.
 
 ### Reactive Programming

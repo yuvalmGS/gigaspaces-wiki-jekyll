@@ -75,7 +75,7 @@ Global processes take into account the number of process types ([Grid Service Ma
 # Starting a Service Grid
 
 The Service Grid can be started in two fashions:
-1. **Console Application** - using {{<GSHOME>\bin\gs-agent.exe}}
+1. **Console Application** - using `<GSHOME>\bin\gs-agent.exe`
 2. **Windows Service** - using the [GigaSpaces Windows Services Manager|Service Grid Components as Windows Services] tool bundled with XAP.NET.
 
 Usually the console application is used by developers whereas the Windows service is used in production environments.
@@ -84,11 +84,11 @@ The preferable (and easiest) way to start a Service Grid is the [Grid Service Ag
 
 The following table summarized how to start each component:
 || Component || Linux (XAP) || Windows (XAP) || Windows (XAP.NET) ||
-| GSA | {{gs-agent.sh}} | {{gs-agent.bat}} | gs-agent.exe |
-| GSC | {{gsc.sh}} | {{gsc.bat}} | {{gsc.exe}} |
-| GSM | {{gsm_nolus.sh}} | {{gsm_nolus.bat}} | N\A |
-| LUS | {{startJiniLUS.sh}} | {{startJiniLUS.bat}} | {{lus.exe}} |
-| GSM + LUS | {{gsm.sh}} | {{gsm.bat}} | {{gsm.exe}} |
+| GSA | `gs-agent.sh` | `gs-agent.bat` | gs-agent.exe |
+| GSC | `gsc.sh` | `gsc.bat` | `gsc.exe` |
+| GSM | `gsm_nolus.sh` | `gsm_nolus.bat` | N\A |
+| LUS | `startJiniLUS.sh` | `startJiniLUS.bat` | `lus.exe` |
+| GSM + LUS | `gsm.sh` | `gsm.bat` | `gsm.exe` |
 
 ## GSA Parameters
 
@@ -104,7 +104,7 @@ In order to, for example, start 3 local GSCs, 2 global GSMs, and no global LUS, 
 gs-agent gsa.gsc 3 gsa.global.gsm 2 gsa.global.lus 0
 {code}
 
-In general, the {{gsa.\[process type]}} followed by a number controls the number of local processes of the specific process type that will be spawned by the GSA. The {{gsa.global.\[process type\]}} following by a number controls the number of globally managed processes of the specific process type.
+In general, the `gsa.\[process type]` followed by a number controls the number of local processes of the specific process type that will be spawned by the GSA. The `gsa.global.\[process type\]` following by a number controls the number of globally managed processes of the specific process type.
 
 ### Lookup Service Considerations
 

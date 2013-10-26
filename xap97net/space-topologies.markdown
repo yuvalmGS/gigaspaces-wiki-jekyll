@@ -50,9 +50,9 @@ GigaSpaces XAP supports the following data grid topologies:
 | **Local-View** ([view diagram|GS6:Images^dg_a_topology5.gif])
  Each client has a lightweight, embedded cache (space instance), which contains a subset of the mater space's data. The client defines which data is cached using a collection of SQL queries, and the master space pushes the matching data to the client's cache. For more information see [Local View] | Achieving maximal read performance for a predetermined subset of the data. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.|
 (i) The topologies above are provided in the GigaSpaces product as predefined cluster schemas. The schema names are:
-- Synchronous replication - {{sync-replicated}}
-- Asynchronous replication - {{async-replicated}}
-- Partitioned with backup - {{partitioned-sync2backup}}
+- Synchronous replication - `sync-replicated`
+- Asynchronous replication - `async-replicated`
+- Partitioned with backup - `partitioned-sync2backup`
 The local cache and local view topologies do not need their own schemas, because they are defined on the client side.
 
 {section-page:na}

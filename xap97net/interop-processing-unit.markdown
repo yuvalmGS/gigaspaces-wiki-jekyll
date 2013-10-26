@@ -16,9 +16,9 @@ This page assumes knowledge of creating and using [OpenSpaces Processing Unit|XA
 
 # Creating Mixed Processing Unit Deployment Structure
 
-A Mixed processing unit is basically two processing unit that should be deployed as one. Each one of the .NET and OpenSpaces processing unit part are developed independently but compiled into one deployment directory. The mixed processing unit should have the directory structure of both [.NET Processing Unit|Processing Unit Container] and [OpenSpaces Processing Unit|XAP95:The Processing Unit Structure and Configuration] under the same root directory. It should be created using a {{pu.xml}} file under {{<PU deployment dir>\META-INF\spring}} that configures the OpenSpaces processing unit and have a {{pu.interop.config}} file under the {{<PU deployment dir>}} root dir that configured the .NET Processing Unit Container. The {{pu.interop.config}} file should be configured exactly like the [pu.config|Processing Unit Container#pu.config] file (Except for the fact that is should be named pu.interop.config).
+A Mixed processing unit is basically two processing unit that should be deployed as one. Each one of the .NET and OpenSpaces processing unit part are developed independently but compiled into one deployment directory. The mixed processing unit should have the directory structure of both [.NET Processing Unit|Processing Unit Container] and [OpenSpaces Processing Unit|XAP95:The Processing Unit Structure and Configuration] under the same root directory. It should be created using a `pu.xml` file under `<PU deployment dir>\META-INF\spring` that configures the OpenSpaces processing unit and have a `pu.interop.config` file under the `<PU deployment dir>` root dir that configured the .NET Processing Unit Container. The `pu.interop.config` file should be configured exactly like the [pu.config|Processing Unit Container#pu.config] file (Except for the fact that is should be named pu.interop.config).
 
-The following should be added into the {{<PU deployment dir>\META-INF\spring\pu.xml}} file as the last tag in order to support mixed processing unit:
+The following should be added into the `<PU deployment dir>\META-INF\spring\pu.xml` file as the last tag in order to support mixed processing unit:
 
 {code:xml}
 <bean id="dotnetProcessingUnitContainer" class="org.openspaces.interop.DotnetProcessingUnitBean">

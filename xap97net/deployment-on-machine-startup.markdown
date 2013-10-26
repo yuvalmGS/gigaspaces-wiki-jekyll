@@ -13,7 +13,7 @@ Service Grid deployment can be considered something that should be done automati
 
 # Configure Grid Service Manager and Grid Service Containers
 
-In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) to start on machine startup they should be installed as windows services using [GigaSpaces Windows Service Manager|Service Grid Components as Windows Services#Windows Services Manager]. Each installed service needs to be [configured| Service Grid Components as Windows Services#Service Configuration] seperately with the appropriate lookup groups by updating the service configuration file {{"-Dcom.gs.jini_lus.groups"}} option.
+In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) to start on machine startup they should be installed as windows services using [GigaSpaces Windows Service Manager|Service Grid Components as Windows Services#Windows Services Manager]. Each installed service needs to be [configured| Service Grid Components as Windows Services#Service Configuration] seperately with the appropriate lookup groups by updating the service configuration file `"-Dcom.gs.jini_lus.groups"` option.
 
 {code:xml}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -37,7 +37,7 @@ In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) t
 The Starting State should be updated to Automatic.
 
 {info:title=Firewall environment}
-If your environment has connection problems due to firewalls see [how to set gigaSpaces over a firewall|XAP95:How to Set GigaSpaces Over a Firewall], this page is in GigaSpaces XAP java context, all the relevant described Jvm System properties should be configured inside {{<JvmCustomOptions>}} section of each service configuration file as new Option keys.
+If your environment has connection problems due to firewalls see [how to set gigaSpaces over a firewall|XAP95:How to Set GigaSpaces Over a Firewall], this page is in GigaSpaces XAP java context, all the relevant described Jvm System properties should be configured inside `<JvmCustomOptions>` section of each service configuration file as new Option keys.
 {info}
 
 # Deploy Processing Unit on Startup

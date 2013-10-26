@@ -26,15 +26,15 @@ Usually it is recommended to index properties that are used in common queries. H
 
 # Index Types
 
-The index type is determined by the **{{SpaceIndexType}}** enumeration. The index types are:
+The index type is determined by the **`SpaceIndexType`** enumeration. The index types are:
 
-**{{None}}** - No indexing is used.
-**{{Basic}}** - Basic index is used - which speeds up equality matches (equal to/not equal to).
-**{{Extended}}** - Extended index - which speeds up relative matches (bigger than/less than).
+**`None`** - No indexing is used.
+**`Basic`** - Basic index is used - which speeds up equality matches (equal to/not equal to).
+**`Extended`** - Extended index - which speeds up relative matches (bigger than/less than).
 
 # Indexing at Design-time
 
-Specifying which properties of a class are indexed is done using attributes or {{gs.xml}}.
+Specifying which properties of a class are indexed is done using attributes or `gs.xml`.
 
 {gdeck}
 {gcard:Annotations}
@@ -78,7 +78,7 @@ public class Person
 
 ## Inheritance
 
-By default, a property's index is inherited in sub classes (i.e. if a property is indexed in a super class, it is also indexed in a sub class). If you need to change the index type of a property in a subclass you can override the property and annotate it with {{\[SpaceIndex\]}} using the requested index type (to disable indexing use {{None}}).
+By default, a property's index is inherited in sub classes (i.e. if a property is indexed in a super class, it is also indexed in a sub class). If you need to change the index type of a property in a subclass you can override the property and annotate it with `\[SpaceIndex\]` using the requested index type (to disable indexing use `None`).
 
 # Indexing at Run-time
 
@@ -90,11 +90,11 @@ Indexes can be added dynamically at run-time using the GigaSpaces Management Cen
 
 An index can be defined on a nested property to improve performance of nested queries - this is highly recommended.
 
-Nested properties indexing uses an additional {{\[SpaceIndex\]}} attribute - **{{Path}}**.
+Nested properties indexing uses an additional `\[SpaceIndex\]` attribute - **`Path`**.
 
-## The {{SpaceIndex.Path}} Attribute
+## The `SpaceIndex.Path` Attribute
 
-The **{{Path}}** attribute represents the path of the property within the nested object.
+The **`Path`** attribute represents the path of the property within the nested object.
 
 Below is an example of defining an index on a nested property:
 
@@ -167,7 +167,7 @@ SqlQuery<Person> query = new SqlQuery<Person>(
 {comment}(i) For more information, see [Nested Object Queries|SQLQuery#Nested Object Query]{comment}
 
 {info:title=Nested Objects}By default, nested objects are kept in a binary form inside the space. In order to support nested matching, the relevant property should be stored as document, or as object if it is in an interoperability scenario and it has a corresponding Java class.{info}
-{info:title=Dictionary based nested properties}Note that the same indexing techniques above are also applicable to Dictionary-based nested properties, which means that in the example above the {{Info}} and {{Address}} classes could be replaced with a {{Dictionary<String,Object>}}, with the dictionary keys representing the property names.{info}
+{info:title=Dictionary based nested properties}Note that the same indexing techniques above are also applicable to Dictionary-based nested properties, which means that in the example above the `Info` and `Address` classes could be replaced with a `Dictionary<String,Object>`, with the dictionary keys representing the property names.{info}
 
 # Collection Indexing
 
@@ -272,7 +272,7 @@ An attribute can be a segment of several compound indexes, and can be indexed it
 
 Using a Compound Index that will be based on field X and field Y will improve a query evaluating **Condition C** significantly.
 
-An attribute can be a segment of several compound indexes, and can be indexed itself. Compound indexes can be only {{BASIC}} indices - they support equality based queries only. The name of the compound index is composed from the paths of its segments separated by a "+" sign.
+An attribute can be a segment of several compound indexes, and can be indexed itself. Compound indexes can be only `BASIC` indices - they support equality based queries only. The name of the compound index is composed from the paths of its segments separated by a "+" sign.
 
 The benchmark has a space with different sets of space objects data:
 
@@ -291,7 +291,7 @@ With the above scenario the Compound Index will improve the query execution dram
 
 ## Creating a Compound Index using Annotation
 
-Compound indexes can be defined using annotations. The {{CompoundSpaceIndex}} annotation should be used. The annotation is a type-level annotation.
+Compound indexes can be defined using annotations. The `CompoundSpaceIndex` annotation should be used. The annotation is a type-level annotation.
 
 Example: Below a compound index with two segments using annotations. Both are properties at the root level of the space class:
 {code:java}
@@ -338,7 +338,7 @@ SpaceTypeDescriptorBuilder descriptorBuilder = new SpaceTypeDescriptorBuilder("W
 
 # Query Execution Flow
 
-When a read, take, read multiple, or take multiple call is performed, a template is used to locate matching space objects. The template might have multiple field values - some might include values and some might not (i.e. {{null}} field values acting as wildcard). The fields that do not include values are ignored during the matching process. In addition, some class fields might be indexed and some might not be indexed.
+When a read, take, read multiple, or take multiple call is performed, a template is used to locate matching space objects. The template might have multiple field values - some might include values and some might not (i.e. `null` field values acting as wildcard). The fields that do not include values are ignored during the matching process. In addition, some class fields might be indexed and some might not be indexed.
 
 When multiple class fields are indexed, the space looks for the field value index that includes the smallest amount of matching space objects with the corresponding template field value as the index key.
 

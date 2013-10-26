@@ -20,7 +20,7 @@ IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
 IChangeResult<Account> changeResult = space.Change(idQuery, new ChangeSet().Increment("balance.euro", 5.2D), ChangeModifiers.ReturnDetailedResults);
 foreach(IChangedEntryDetails<Account> changedEntryDetails in changeResult.Results) {
   //Will get the first change which was applied to an entry, in our case we did only single increment so we will have only one change operation.
-  //The order is corresponding to the order of operation applied on the {{ChangeSet}}.
+  //The order is corresponding to the order of operation applied on the `ChangeSet`.
   IChangeOperationResult operationResult = changedEntryDetails.ChangeOperationsResults[0];
   double newValue = IncrementOperation.GetNewValue(operationResult);
   ...
@@ -39,4 +39,4 @@ Here is the full list of change operations:
 |**ChangeSet.SetInDictionary**|SetInDictionaryOperation| |
 |**ChangeSet.RemoveFromDictionary**|RemoveFromDictionaryOperation| |
 
-For the common use case you can use the [Change Extension] class which provide extension methods to {{ISpaceProxy}} which simplify the most common use cases and allow you to do simple operation such as an atomic {{AddAndGet}} operation. This extension are a syntactic sugaring on top of the above API.
+For the common use case you can use the [Change Extension] class which provide extension methods to `ISpaceProxy` which simplify the most common use cases and allow you to do simple operation such as an atomic `AddAndGet` operation. This extension are a syntactic sugaring on top of the above API.

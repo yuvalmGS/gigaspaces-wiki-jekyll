@@ -26,7 +26,7 @@ This section shows how to create a C# Console Application named **HelloWorld** w
 1. Open Microsoft Visual Studio. From the **File** menu select **New > Project**. The **New Project** dialog appears.
 2. In the **Project types** tree, select **Visual C#**, then select **Console Application** in the **Templates** list.
 3. In the **Name** test box, type **HelloWorld**. If you wish, change the default location to a path you prefer.
-4. Select **OK** to continue. Visual Studio creates the project and opens the automatically generated {{program.cs}} file.
+4. Select **OK** to continue. Visual Studio creates the project and opens the automatically generated `program.cs` file.
 
 ## Add a Reference to the GigaSpaces Core Assembly
 
@@ -37,15 +37,15 @@ This section shows how to create a C# Console Application named **HelloWorld** w
 
 # Writing the Code
 
-This section shows how to write a simple program that connects to the space, stores a {{Message}} object with some text, and retrieves it.
+This section shows how to write a simple program that connects to the space, stores a `Message` object with some text, and retrieves it.
 
 ## Creating the Message Class
 
-We want to demonstrate storing some object to the space. To do this, let's create a simple {{Message}} class with a {{Text}} property of type {{String}}.
+We want to demonstrate storing some object to the space. To do this, let's create a simple `Message` class with a `Text` property of type `String`.
 
 1. In **Solution Explorer**, right-click the **HelloWorld** project and select **Add > Class**. The **Add New Item** dialog appears.
 2. In the **Templates** list, make sure **Class** is selected. Type **Message** in the class name text box, and click **Add**. The class is added to the project and the editor displays its content.
-3. Add the following code to the {{Message}} class:
+3. Add the following code to the `Message` class:
 {code:java}
 public class Message
 {
@@ -69,17 +69,17 @@ public class Message
 
 ## Getting Started
 
-The XAP.NET API used in this example is located in the {{GigaSpaces.Core}} namespace.
-Switch to the **Program.cs** editor, and add a {{using}} statement to include {{GigaSpaces.Core}}:
+The XAP.NET API used in this example is located in the `GigaSpaces.Core` namespace.
+Switch to the **Program.cs** editor, and add a `using` statement to include `GigaSpaces.Core`:
 {code:java}
 using GigaSpaces.Core;
 {code}
 
 ## Connecting to the Space
 
-We need to establish a connection to a space which stores the object. To do this, we use the {{FindSpace}} method from a factory class called {{GigaSpacesFactory}}. This takes a URL of the requested space, and returns a space proxy of type {{ISpaceProxy}}. Since we don't have any spaces running yet, we use a special URL prefix to indicate that we want the space lookup to occur in-process, and that the searched space should be created in-process if it doesn't exist yet. The space name is **myEmbeddedSpace** (when the space and the proxy reside in the same process, the space is called an **embedded space**).
+We need to establish a connection to a space which stores the object. To do this, we use the `FindSpace` method from a factory class called `GigaSpacesFactory`. This takes a URL of the requested space, and returns a space proxy of type `ISpaceProxy`. Since we don't have any spaces running yet, we use a special URL prefix to indicate that we want the space lookup to occur in-process, and that the searched space should be created in-process if it doesn't exist yet. The space name is **myEmbeddedSpace** (when the space and the proxy reside in the same process, the space is called an **embedded space**).
 
-Edit the {{Main}} method and add the following code:
+Edit the `Main` method and add the following code:
 {code:java}
 String spaceUrl = "/./myEmbeddedSpace";
 
@@ -91,9 +91,9 @@ Console.WriteLine("*** Connected to space.");
 
 ## Storing a Message Object
 
-The next step is to create a {{Message}} object, and store it in the space. To do this, we use the {{Write}} method in the {{ISpaceProxy}} we've just created, and simply pass the object we want to store as an argument:
+The next step is to create a `Message` object, and store it in the space. To do this, we use the `Write` method in the `ISpaceProxy` we've just created, and simply pass the object we want to store as an argument:
 
-Add the following code to the {{Main}} method, after the previous code:
+Add the following code to the `Main` method, after the previous code:
 {code:java}
 // Write a message to the space:
 Message outgoingMessage = new Message("Hello World");
@@ -103,11 +103,11 @@ proxy.Write(outgoingMessage);
 
 ## Retrieving the Stored Message
 
-Finally, we want to retrieve the object from the space. To do this, we use the {{Take}} method in {{ISpaceProxy}}, which takes a template argument and searches for a matching entry in the space. If a match is found, it is removed from the space, and returned to the caller, otherwise null is returned.
+Finally, we want to retrieve the object from the space. To do this, we use the `Take` method in `ISpaceProxy`, which takes a template argument and searches for a matching entry in the space. If a match is found, it is removed from the space, and returned to the caller, otherwise null is returned.
 
-A template is an object of the type we wish to query, where the null properties are ignored and the non-null properties are matched. For example, creating a {{Message}}, and setting the {{Text}} to "Goodbye" returns null, because the space does not contain such an object. We use a new {{Message}}, without setting the {{Text}} property, which matches all possible entries of type {{Message}} (of course, we know there's currently only one in the space).
+A template is an object of the type we wish to query, where the null properties are ignored and the non-null properties are matched. For example, creating a `Message`, and setting the `Text` to "Goodbye" returns null, because the space does not contain such an object. We use a new `Message`, without setting the `Text` property, which matches all possible entries of type `Message` (of course, we know there's currently only one in the space).
 
-Add the following code to the {{Main}} method, after the previous code:
+Add the following code to the `Main` method, after the previous code:
 {code:java}
 // Take a message from the space:
 Message incomingMessage = proxy.Take(new Message());

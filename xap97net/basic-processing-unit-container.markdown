@@ -10,9 +10,9 @@ page_id: 63799338
 
 # Overview
 
-A [processing unit container|Processing Unit Container] is a component implemented by the user and deployed and managed by the service grid. XAP.NET comes with a built-in type implementation of the processing unit container called the {{BasicProcessingUnitContainer}} which provides basic implementations for common activities, and allows the user to focus on business logic and less with GigaSpaces internals.
+A [processing unit container|Processing Unit Container] is a component implemented by the user and deployed and managed by the service grid. XAP.NET comes with a built-in type implementation of the processing unit container called the `BasicProcessingUnitContainer` which provides basic implementations for common activities, and allows the user to focus on business logic and less with GigaSpaces internals.
 
-{refer}For a full example of a processing unit and a usage of the {{BasicProcessingUnitContainer}} refer to the [SBA Example].{refer}
+{refer}For a full example of a processing unit and a usage of the `BasicProcessingUnitContainer` refer to the [SBA Example].{refer}
 
 # Using The Container
 
@@ -22,9 +22,9 @@ The basic container simplifies the actual implementation of the processing unit 
 
 # Integrating The Container Into Your Project
 
-In order to use the container as part of the processing unit project, you need a configuration file, which is used to deploy the Processing Unit Container. This config file must be named {{pu.config}} and needs to be placed together with your processing unit container implementation assemblies.
+In order to use the container as part of the processing unit project, you need a configuration file, which is used to deploy the Processing Unit Container. This config file must be named `pu.config` and needs to be placed together with your processing unit container implementation assemblies.
 
-The {{pu.config}} file should be as follows:
+The `pu.config` file should be as follows:
 
 {code:xml}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -40,7 +40,7 @@ The {{pu.config}} file should be as follows:
 </configuration>
 {code}
 
-This configuration file specifies that the container that should be deployed is the {{BasicProcessingUnitContainer}}, in the same manner any other custom container implementation would have been deployed.
+This configuration file specifies that the container that should be deployed is the `BasicProcessingUnitContainer`, in the same manner any other custom container implementation would have been deployed.
 
 # Automatic Space Proxy Creation And Management
 
@@ -71,7 +71,7 @@ The following config file will cause the container to create and manage an embed
 
 # Basic Processing Unit Components
 
-There can be different user components that are part of the processing unit. Such components can be automatically generated and managed by the container by creating a class, which represent the logical component, and marking it with the \[BasicProcessingUnitComponent\] attribute. Optionally, the component can mark methods with the \[ContainerInitializing\] and \[ContainerInitialized\] which will be called when the managing basic ontainer is initializing and after it is initialized correspondigly. Moreover, it can implement the {{IDisposable}} interface which will be called once the managing container is disposing upon undeployment.
+There can be different user components that are part of the processing unit. Such components can be automatically generated and managed by the container by creating a class, which represent the logical component, and marking it with the \[BasicProcessingUnitComponent\] attribute. Optionally, the component can mark methods with the \[ContainerInitializing\] and \[ContainerInitialized\] which will be called when the managing basic ontainer is initializing and after it is initialized correspondigly. Moreover, it can implement the `IDisposable` interface which will be called once the managing container is disposing upon undeployment.
 
 Here's an example of a basic component which keeps a reference to a space proxy which is managed by the container:
 {code:java}
@@ -119,7 +119,7 @@ The container automatically detects components by scanning all the assembly (dll
 </configuration>
 {code}
 
-(!) The assembly name is the actual name and not a file path, the assembly should be part of the processing unit project output directory and be placed beside the {{pu.config}} file.
+(!) The assembly name is the actual name and not a file path, the assembly should be part of the processing unit project output directory and be placed beside the `pu.config` file.
 
 {anchor:services}
 
@@ -139,7 +139,7 @@ public class MyService : IService
 
 # Automatic Event Listener Creation And Management
 
-An [event listener container|Event Driven Architecture] is one of the most commonly used GigaSpaces components as part of a processing unit. Similarly to the other components, such event containers can be automatically detected, created and managed by the basic container. The basic container will automatically detect classes that need to be wrapped with the proper event listener container via the corresponding {{EventDriven}} attributes ({{PollingEventDriven}} or {{NotifyEventDriven}}) that mark them.
+An [event listener container|Event Driven Architecture] is one of the most commonly used GigaSpaces components as part of a processing unit. Similarly to the other components, such event containers can be automatically detected, created and managed by the basic container. The basic container will automatically detect classes that need to be wrapped with the proper event listener container via the corresponding `EventDriven` attributes (`PollingEventDriven` or `NotifyEventDriven`) that mark them.
 
 {refer}
 See [Polling Container Component|Polling Container Component] and [Notify Container Component|Notify Container Component] for more info regarding event listener containers.

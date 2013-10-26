@@ -15,7 +15,7 @@ This page demonstrates a basic event usage scenario.
 
 # Event Registration
 
-Subscribing to an event is done using an {{IDataEventSession}} with a [template|Query Template Types], an event type and a callback method. {{ISpaceProxy}} has a default data event session that can be used for subscription.
+Subscribing to an event is done using an `IDataEventSession` with a [template|Query Template Types], an event type and a callback method. `ISpaceProxy` has a default data event session that can be used for subscription.
 
 The following example demonstrates simple events usage:
 {code:java}
@@ -50,8 +50,8 @@ IEventRegistration registration = proxy.DefaultDataEventSession.AddListener(new 
                                                                             DataEventType.Write);
 {code}
 
-Any new person entries that are written to the space, trigger the event and execute the {{Space_PersonChanged}} callback method at the client side.
-The DataEventType dictates which type of events to listen for. It's a flag enum that can have more than one value -- for example, listening to {{Write}} and {{Update}} events looks like this:
+Any new person entries that are written to the space, trigger the event and execute the `Space_PersonChanged` callback method at the client side.
+The DataEventType dictates which type of events to listen for. It's a flag enum that can have more than one value -- for example, listening to `Write` and `Update` events looks like this:
 {code:java}
 IEventRegistration registration = proxy.DefaultDataEventSession.AddListener(new Person(),
                                                                             Space_PersonChanged,
@@ -63,4 +63,4 @@ When the events are no longer relevant, the registration for the events should b
 proxy.DefaultDataEventSession.RemoveListener(registration);
 {code}
 
-{refer}In most cases, using the {{DefaultDataEventSession}} is enough, however, in some scenarios the {{DataEventSession}} needs to be customized. This topic is covered in [Advance Events Scenarios|Advance Events Scenarios]{refer}
+{refer}In most cases, using the `DefaultDataEventSession` is enough, however, in some scenarios the `DataEventSession` needs to be customized. This topic is covered in [Advance Events Scenarios|Advance Events Scenarios]{refer}

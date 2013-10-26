@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799344
 ---
 
-(i) These examples can be found under the, {{<GigaSpaces Root>\Examples}} folder.
+(i) These examples can be found under the, `<GigaSpaces Root>\Examples` folder.
 
 || Example Name and Description || Example Folder ||
 | **HelloWorld**
@@ -27,7 +27,7 @@ For the Wiki page, see [.Net-Java Example|http://www.gigaspaces.com/wiki/display
 | **Data Grid**
 
 This is an advanced example that demonstrates the usage of various space topologies.
-After a chosen topology is deployed, a {{DataLoader}} application writes .NET objects that represent accounts to the cluster. Two reader applications (simple and notified) are used to read the written accounts.
+After a chosen topology is deployed, a `DataLoader` application writes .NET objects that represent accounts to the cluster. Two reader applications (simple and notified) are used to read the written accounts.
 For more details, see the [example description|http://www.gigaspaces.com/docs/dotnet6.5/examples/DataGrid/readme.html].
 For the Wiki page, see [Enterprise Data Grid Tutorial A - Basic Topologies|http://www.gigaspaces.com/wiki/display/Gs66/Enterprise+Data+Grid+Tutorial+A+-+Basic+Topologies]. |
 

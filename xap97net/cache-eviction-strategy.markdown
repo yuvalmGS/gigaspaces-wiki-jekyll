@@ -9,7 +9,7 @@ page_id: 63799310
 
 # Choosing and configuring an eviction strategy
 
-XAP.NET comes with a number of eviction strategies. To choose an eviction strategy, you'll need to configure a {{IdBasedLocalCacheConfig}} object with the desired eviction strategy builder. A {{IdBasedLocalCache}} instance can be created with this config object.
+XAP.NET comes with a number of eviction strategies. To choose an eviction strategy, you'll need to configure a `IdBasedLocalCacheConfig` object with the desired eviction strategy builder. A `IdBasedLocalCache` instance can be created with this config object.
 
 Here's a simple example of configuring a cache to use the FIFO eviction strategy, where the size limit of the cache is 50,000 entries and each time an eviction is required, 1,000 Entries are evicted:
 {code:java}
@@ -24,13 +24,13 @@ ILocalCache localCache = new GigaSpacesFactory.CreateIdBasedLocalCache(spaceProx
 ## Eviction strategies
 
 ||Strategy Builder Name||Description||
-|{{LruSegmentEvictionStrategyBuilder}} | Least recently used, used by default. |
-|{{FifoSegmentEvictionStrategyBuilder}} | First in first out, more concurrent because it doesn't need to update anything when Entries are touched inside the cache. |
-|{{LfuSegmentEvictionStrategyBuilder}} | Least frequently used. |
-|{{TimeBasedEvictionStrategyBuilder}} | Entries that weren't touched for a certain period of time are cleared. |
+|`LruSegmentEvictionStrategyBuilder` | Least recently used, used by default. |
+|`FifoSegmentEvictionStrategyBuilder` | First in first out, more concurrent because it doesn't need to update anything when Entries are touched inside the cache. |
+|`LfuSegmentEvictionStrategyBuilder` | Least frequently used. |
+|`TimeBasedEvictionStrategyBuilder` | Entries that weren't touched for a certain period of time are cleared. |
 
 Each of these strategies also contains a logic for periodic clearing; by default every 30 seconds the local cache is cleared. This behavior can be changed or turned off when constructing and configuring the specific eviction strategy builder, however it is not recommended to turn it off.
 
 # Custom eviction strategy
 
-A custom eviction strategy can be implemented. To do this, you first need to implement an eviction strategy by implementing the {{IEvictionStrategy}} interface. Then, implement a builder for it by implementing the {{ISegmentEvictionStrategyBuilder}} interface.
+A custom eviction strategy can be implemented. To do this, you first need to implement an eviction strategy by implementing the `IEvictionStrategy` interface. Then, implement a builder for it by implementing the `ISegmentEvictionStrategyBuilder` interface.

@@ -22,9 +22,9 @@ If the user does not specify a configuration, the default configuration is assum
 
 ## Basic Configuration
 
-To configure the GigaSpaces logger, you need to add a trace source configuration named {{GigaSpaces.Core}} to your configuration file ({{app.config}}/{{web.config}}). Use the {{switchValue}} argument to set the trace level to one of the following: {{Off}}, {{Critical}}, {{Error}}, {{Warning}}, {{Information}}, {{Verbose}}.  (Naturally, each level includes all its predecessors, e.g. {{Error}} includes {{Critical}} as well). Use the {{listeners}} collection to add trace listeners which handle the traced events.
+To configure the GigaSpaces logger, you need to add a trace source configuration named `GigaSpaces.Core` to your configuration file (`app.config`/`web.config`). Use the `switchValue` argument to set the trace level to one of the following: `Off`, `Critical`, `Error`, `Warning`, `Information`, `Verbose`.  (Naturally, each level includes all its predecessors, e.g. `Error` includes `Critical` as well). Use the `listeners` collection to add trace listeners which handle the traced events.
 
-The following example sets the trace level to {{Error}}, which means that only errors and critical events are processed. It also defines a single trace listener, which writes traced messages to the Windows Event Log, under a source called {{GigaSpaces.Core}}.
+The following example sets the trace level to `Error`, which means that only errors and critical events are processed. It also defines a single trace listener, which writes traced messages to the Windows Event Log, under a source called `GigaSpaces.Core`.
 
 {code:xml}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -51,19 +51,19 @@ There are several logging components split into different subjects. They should 
 
 ## Default Configuration
 
-The logger component loads the configuration during initialization. If it does not find a source element named {{GigaSpaces.Core}}, it loads a default configuration, which sets the trace level to {{Information}}, and configures an {{EventLogTraceListener}} with {{source=GigaSpaces.Core}}, (similar to the configuration shown in the basic example).
+The logger component loads the configuration during initialization. If it does not find a source element named `GigaSpaces.Core`, it loads a default configuration, which sets the trace level to `Information`, and configures an `EventLogTraceListener` with `source=GigaSpaces.Core`, (similar to the configuration shown in the basic example).
 
 (!) If the Windows Event Log does not contain the specified source, it is automatically created. However, you need administrator permissions to create a source in the Event Log. If you don't create this source, the default configuration is not used. We recommend that you use an administrator's profile the first time you use the product on a machine, to make sure the source is created. Subsequent runs do not require high level permissions.
 
 ## Advanced Configuration
 
 Here are some features/scenarios which might be useful:
-- You can use any of the built-in trace listeners offered by {{System.Diagnostics}}:
-    - {{ConsoleTraceListener}}
-    - {{TextWriterTraceListener}}
-    - {{XmlWriterTraceListener}}
-    - {{DelimitedListTraceListener}}
-    - {{EventLogTraceListener}}
+- You can use any of the built-in trace listeners offered by `System.Diagnostics`:
+    - `ConsoleTraceListener`
+    - `TextWriterTraceListener`
+    - `XmlWriterTraceListener`
+    - `DelimitedListTraceListener`
+    - `EventLogTraceListener`
 {refer}For more details, see: [http://msdn2.microsoft.com/en-us/library/4y5y10s7.aspx].{refer}
 - You can configure a trace listener with a filter to handle specific events.
 {refer}For more details, see: [http://msdn2.microsoft.com/en-us/library/system.diagnostics.eventtypefilter.aspx].{refer}

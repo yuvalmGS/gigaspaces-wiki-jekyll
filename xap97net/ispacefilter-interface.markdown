@@ -9,7 +9,7 @@ page_id: 63799397
 
 # ISpaceFilter Interface
 
-The {{ISpaceFilter}} interface implements IDisposable and consists of 3 additional methods.
+The `ISpaceFilter` interface implements IDisposable and consists of 3 additional methods.
 {code:java}
 public interface ISpaceFilter : IDisposable
 {
@@ -38,4 +38,4 @@ The FilterOperation enum specifies which space operation is being executed and a
 
 Both Process methods receive either one or two [ISpaceFilterEntry|ISpaceFilterEntry Interface] entries. These entries represent the objects in the context of the filtered operation. For example, in the case of a BeforeWrite filter operation, the space filter entry will contain the object that is being written to the space.
 
-(on) If the filter uses the proxy received by the {{Init}} method, one should be careful not to cause recursive calls. For example, if your filter is filtering Before Write operations, and inside one of the Process methods there's a call to write, an infinite loop might occur.
+(on) If the filter uses the proxy received by the `Init` method, one should be careful not to cause recursive calls. For example, if your filter is filtering Before Write operations, and inside one of the Process methods there's a call to write, an infinite loop might occur.

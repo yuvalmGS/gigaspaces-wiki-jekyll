@@ -203,15 +203,15 @@ See a fully running example of a [Scaling Agent|Scaling Agent Example] which com
 
 # Admin Construction
 
-Use {{ServiceGridAdminBuilder}} in order to create {{IServiceGridAdmin}} instances. Once working with the {{IServiceGridAdmin}} is done, its {{IServiceGridAdmin.Dispose()}} method should be called.
+Use `ServiceGridAdminBuilder` in order to create `IServiceGridAdmin` instances. Once working with the `IServiceGridAdmin` is done, its `IServiceGridAdmin.Dispose()` method should be called.
 
-The admin discovers all the advertised services from the Lookup Services. In order to define which lookup groups are used, the {{ServiceGridAdminBuilder.Groups.Add}} can be used. The lookup locators can also be used for a non-multicast-enabled environment, using {{ServiceGridAdminBuilder.Locators.Add}}. If the services started are secured, the username and password can be set on the admin as well.
+The admin discovers all the advertised services from the Lookup Services. In order to define which lookup groups are used, the `ServiceGridAdminBuilder.Groups.Add` can be used. The lookup locators can also be used for a non-multicast-enabled environment, using `ServiceGridAdminBuilder.Locators.Add`. If the services started are secured, the username and password can be set on the admin as well.
 
 # Discovery Process
 
-Once the {{IServiceGridAdmin}} is created, it starts to receive discovery events of all the advertised services/components within its lookup groups/lookup locators. Note that the events occur asynchronously, and the data model within the admin gets initialized in the background with services coming and going.
+Once the `IServiceGridAdmin` is created, it starts to receive discovery events of all the advertised services/components within its lookup groups/lookup locators. Note that the events occur asynchronously, and the data model within the admin gets initialized in the background with services coming and going.
 
-This means that just creating the {{IServiceGridAdmin}}, and calling a specific get property for a data structure, might not return what is currently deployed, and one should wait until the structures are filled. Some components have a {{WaitFor}} method that allows them to wait for a specific number of services to be up. When navigating the data model, the admin API provides its most up-to-date state of the system that it is monitoring.
+This means that just creating the `IServiceGridAdmin`, and calling a specific get property for a data structure, might not return what is currently deployed, and one should wait until the structures are filled. Some components have a `WaitFor` method that allows them to wait for a specific number of services to be up. When navigating the data model, the admin API provides its most up-to-date state of the system that it is monitoring.
 
 # Domain Model
 
@@ -381,26 +381,26 @@ void Spaces_SpaceModeChanged(object sender, SpaceModeChangedEventArgs e)
 }
 {code}
 
-Of course, we can register the same event listener on a specific {{ISpace}} topology, or event on a specific {{ISpaceInstance}}.
+Of course, we can register the same event listener on a specific `ISpace` topology, or event on a specific `ISpaceInstance`.
 
 # Details and Statistics
 
-- Some components in the Admin API can provide statistics. For example, an {{ISpaceInstance}} can provide statistics on how many times the read API was called on it. Statistics change over time, and in order to get them, either the property for the statistics can be used, or a statistics listener can be registered for statistics change events.
+- Some components in the Admin API can provide statistics. For example, an `ISpaceInstance` can provide statistics on how many times the read API was called on it. Statistics change over time, and in order to get them, either the property for the statistics can be used, or a statistics listener can be registered for statistics change events.
 
-- Details of a specific component provide information that does not change over time, but can be used to provide more information regarding the component, or to compute statistics. For example, the {{IVirtualMachine}} provides in its details, the minimum and maximum heap memory size, from which the {{IVirtualMachine}} statistics provide the currently used heap memory size. The detailed information is used to provide the percentage used in the Virtual Machine statistics.
+- Details of a specific component provide information that does not change over time, but can be used to provide more information regarding the component, or to compute statistics. For example, the `IVirtualMachine` provides in its details, the minimum and maximum heap memory size, from which the `IVirtualMachine` statistics provide the currently used heap memory size. The detailed information is used to provide the percentage used in the Virtual Machine statistics.
 
-- The Admin API also provides aggregated details and statistics. For example, {{ISpace}} provides {{ISpaceStatistics}}, allowing you to get the aggregated statistics of all the different Space Instances that belong to it.
+- The Admin API also provides aggregated details and statistics. For example, `ISpace` provides `ISpaceStatistics`, allowing you to get the aggregated statistics of all the different Space Instances that belong to it.
 
-- Each component in the Admin API that can provide statistics (either direct or aggregated statistics) implements the {{IStatisticsMonitor}} interface. The statistics monitor allows you to start or stop monitoring statistics. Monitoring for statistics is required if one wishes to register for statistics change events. The interval at which statistics are polled, is controlled using the statistics interval.
+- Each component in the Admin API that can provide statistics (either direct or aggregated statistics) implements the `IStatisticsMonitor` interface. The statistics monitor allows you to start or stop monitoring statistics. Monitoring for statistics is required if one wishes to register for statistics change events. The interval at which statistics are polled, is controlled using the statistics interval.
 
 - The statistics interval is an important event when the Admin API is not actively polling for statistics. Each call to a property of statistics only performs a remote call to the component, if the last statistics fetch happened **before** the statistics interval. This behavior means that users of the Admin API do not have to worry about "hammering" different components for statistics, since the Admin makes sure that statistics calls are cached internally for the statistics interval period.
 
-- An {{ISpaceInstance}} implements the {{IStatisticsMonitor}} interface. Calling {{StartMonitor}} and {{StopMonitor}} on it, causes monitoring of statistics to be enabled or disabled on it.
+- An `ISpaceInstance` implements the `IStatisticsMonitor` interface. Calling `StartMonitor` and `StopMonitor` on it, causes monitoring of statistics to be enabled or disabled on it.
 
-- {{ISpace}} also implements the {{IStatisticsMonitor}} interface. Calling {{StartMonitor}} on it, causes it to start monitoring all its {{ISpaceInstance}} s. If an {{ISpaceInstance}} is discovered after the the call to {{startMonitor}} occurred, it starts monitoring itself automatically. This means that if the  {{SpaceInstanceStatistics}} event was registered on the {{ISpace}}, it automatically starts to get Space Instance statistics change events for the newly discovered {{ISpaceInstance}}.
+- `ISpace` also implements the `IStatisticsMonitor` interface. Calling `StartMonitor` on it, causes it to start monitoring all its `ISpaceInstance` s. If an `ISpaceInstance` is discovered after the the call to `startMonitor` occurred, it starts monitoring itself automatically. This means that if the  `SpaceInstanceStatistics` event was registered on the `ISpace`, it automatically starts to get Space Instance statistics change events for the newly discovered `ISpaceInstance`.
 
-- {{ISpaces}} also implements the {{IStatisticsMonitor}} interface. Calling {{StartMonitor}} on it, causes it to start monitoring all the {{ISpace}} s it has (and as a result, also {{ISpaceInstance}} s, - see the paragraph above). A {{SpaceInstanceStatistics}} can also be registered on the {{ISpaces}} level as well.
+- `ISpaces` also implements the `IStatisticsMonitor` interface. Calling `StartMonitor` on it, causes it to start monitoring all the `ISpace` s it has (and as a result, also `ISpaceInstance` s, - see the paragraph above). A `SpaceInstanceStatistics` can also be registered on the `ISpaces` level as well.
 
-- The above Space level statistics behavior works in much the same way with other components. For example, {{IVirutalMachine}} and {{IVirtualMachines}}, {{ITransport}} and {{ITransports}}, {{IOperatingSystem}} and {{OperatingSystems}}.
+- The above Space level statistics behavior works in much the same way with other components. For example, `IVirutalMachine` and `IVirtualMachines`, `ITransport` and `ITransports`, `IOperatingSystem` and `OperatingSystems`.
 
-- The {{IServiceGridAdmin}} interface also implements the {{IStatisticsMonitor}} interface. Calling {{StartMonitor}} on it, causes all holders to start monitoring. These include: {{ISpaces}}, {{IVirtualMachines}}, {{ITransports}}, and {{IOperatingSystems}}.
+- The `IServiceGridAdmin` interface also implements the `IStatisticsMonitor` interface. Calling `StartMonitor` on it, causes all holders to start monitoring. These include: `ISpaces`, `IVirtualMachines`, `ITransports`, and `IOperatingSystems`.

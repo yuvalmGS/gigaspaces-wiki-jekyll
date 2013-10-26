@@ -16,7 +16,7 @@ GigaSpaces support executing tasks in a collocated Space (processing unit that s
 
 # Space Task API
 
-The {{ISpaceTask}} interface is defined as follows:
+The `ISpaceTask` interface is defined as follows:
 
 {code:java}
 public interface ISpaceTask<T>
@@ -66,7 +66,7 @@ int count = spaceProxy.Execute(new CountTask("hello world"), 2);
 
 # Distributed Space Task API (Map Reduce)
 
-A {{IDistributedSpaceTask}} is a space task that ends up executing more than once (concurrently) and returns a result that is a reduced operation of all the different execution.
+A `IDistributedSpaceTask` is a space task that ends up executing more than once (concurrently) and returns a result that is a reduced operation of all the different execution.
 
 Phase 1 - Sending the Space tasks to be executed:
 !GRA:Images^DistributedTaskExecution_phase1.jpg!
@@ -74,9 +74,9 @@ Phase 1 - Sending the Space tasks to be executed:
 Phase 2 - Getting the results back to be reduced:
 !GRA:Images^DistributedTaskExecution_phase2.jpg!
 
-The {{IDistributedSpaceTask}} interface is a composition both {{ISpaceTask}} and {{ISpaceTaskResultsReducer}} interfaces.
+The `IDistributedSpaceTask` interface is a composition both `ISpaceTask` and `ISpaceTaskResultsReducer` interfaces.
 
-The {{ISpaceTaskResultsReducer}} is defined as follows:
+The `ISpaceTaskResultsReducer` is defined as follows:
 
 {code:java}
 public interface ISpaceTaskResultsReducer<R, T>
@@ -137,7 +137,7 @@ long count = spaceProxy.Execute(new DistributedCountTask("hello world"));
 
 # Space Task Results Filter
 
-When executing a distributed space task, results arrive in an asynchronous manner and once all the results have arrived, the {{ISpaceTaskResultsReducer}} is used to reduce them. The {{ISpaceTasukResultsFilter}} can be used as a callback and filter mechanism to be invoked for each result that arrives.
+When executing a distributed space task, results arrive in an asynchronous manner and once all the results have arrived, the `ISpaceTaskResultsReducer` is used to reduce them. The `ISpaceTasukResultsFilter` can be used as a callback and filter mechanism to be invoked for each result that arrives.
 
 {code:java}
 public interface ISpaceTaskResultsFilter<T>
@@ -177,7 +177,7 @@ public enum SpaceTaskFilterDecision
 }
 {code}
 
-The filter can be used to control if a result should be used or not (the {{Skip}} decision). If we have enough results and we can move to the reduce phase (the {{Break}} decision). If we should continue accumulating results (the {{Continue}} decision). Or if we dont want to use the current result and move to the reduce phase (the {{SkipAndBreak}} decision).
+The filter can be used to control if a result should be used or not (the `Skip` decision). If we have enough results and we can move to the reduce phase (the `Break` decision). If we should continue accumulating results (the `Continue` decision). Or if we dont want to use the current result and move to the reduce phase (the `SkipAndBreak` decision).
 
 The filter can also be used as a way to be identify that results have arrived and we can do something within our application as a result of that. Note, in this case, make sure that heavy processing should be performed on a separate (probably pooled) thread.
 
@@ -223,7 +223,7 @@ public class ClearMyObjectTask : ISpaceTask<int>
 
 # Asynchronous Execution
 
-A space task can also be executed asynchronously with the corresponding {{BeginExecute}} {{EndExecute}} method. This follows the standard .NET asynchronous API, once the execution is complete the execute invoker is notified by the async result which is received from the {{BeginExecute}} method or to a supplied callback. This will be similiar to executing a task in a seperate thread, allowing to continue local process while waiting for the result to be calculated at the space nodes.
+A space task can also be executed asynchronously with the corresponding `BeginExecute` `EndExecute` method. This follows the standard .NET asynchronous API, once the execution is complete the execute invoker is notified by the async result which is received from the `BeginExecute` method or to a supplied callback. This will be similiar to executing a task in a seperate thread, allowing to continue local process while waiting for the result to be calculated at the space nodes.
 
 **Executing asynchronous space using async result**
 

@@ -126,7 +126,7 @@ It is important to note that the IMDG, although a memory-based service, is fully
 The IMDG uses the unified clustering layer, to provide a highly available and reliable service.
 
 {comment}TODO_NIV - Change to ISpaceProxy link when available.{comment}
-The main API to access the IMDG service, is the [{{ISpaceProxy}} interface|Writing Your First Application]. Please refer to the [Programmer's Guide|Programmer's Guide] for usage examples.
+The main API to access the IMDG service, is the [`ISpaceProxy` interface|Writing Your First Application]. Please refer to the [Programmer's Guide|Programmer's Guide] for usage examples.
 
 ## Messaging Grid
 
@@ -225,7 +225,7 @@ The XAP.NET API can be divided into the following parts:
 
 ## Core
 
-The core module of XAP.NET provides APIs for direct access to space. The main interface is the {{ISpaceProxy}} interface, which enables the basic interaction with the space. The core components include basic infrastructure support such as Space construction, storing and retrieving objects from the space, subscribing for notifications, etc.
+The core module of XAP.NET provides APIs for direct access to space. The main interface is the `ISpaceProxy` interface, which enables the basic interaction with the space. The core components include basic infrastructure support such as Space construction, storing and retrieving objects from the space, subscribing for notifications, etc.
 
 ## Events
 

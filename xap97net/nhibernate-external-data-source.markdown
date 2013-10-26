@@ -14,9 +14,9 @@ This page demonstrates how to use the GigaSpaces .Net NHibernate [External Data 
 
 The mirror uses the External Data Source interface in write mode, and delegates destructive space operations (write, update, take) to the database through the External Data Source implementation.
 
-(!) Before using the {{ExternalDataSource.NHibernate}} practice, compile it by calling {{<GigaSpaces Root>\Bin\Practices\ExternalDataSource\NHibernate\build.bat}}.
+(!) Before using the `ExternalDataSource.NHibernate` practice, compile it by calling `<GigaSpaces Root>\Bin\Practices\ExternalDataSource\NHibernate\build.bat`.
 
-(i) The database server used in this walkthrough is MySQL, and a database named {{dotnetpersistency}} is created in it.
+(i) The database server used in this walkthrough is MySQL, and a database named `dotnetpersistency` is created in it.
 
 # NHibernate Mapping and Configuration Files
 
@@ -24,7 +24,7 @@ The mirror uses the External Data Source interface in write mode, and delegates 
 
 ## NHibernate Session Factory Configuration File
 
-NHibernate requires a session factory that creates new sessions over the database for each operation executed on it. You can create such a session factory, either with a configuration file or by code. This walkthrough demonstrates a simple configuration file for the session factory, over a MySQL database server into a database named dotnetpersistency. These parameters are configured in the {{Connection}} string property.
+NHibernate requires a session factory that creates new sessions over the database for each operation executed on it. You can create such a session factory, either with a configuration file or by code. This walkthrough demonstrates a simple configuration file for the session factory, over a MySQL database server into a database named dotnetpersistency. These parameters are configured in the `Connection` string property.
 {code:xml}
 <?xml version="1.0" ?>
 <hibernate-configuration  xmlns="urn:nhibernate-configuration-2.2" >
@@ -49,10 +49,10 @@ NHibernate requires a session factory that creates new sessions over the databas
 
 ## NHibernate Mapping File
 
-Each persistent class requires a mapping file that defines how to map the object to and from the database. This walkthrough shows a simple {{Person}} class and its corresponding mapping file.
+Each persistent class requires a mapping file that defines how to map the object to and from the database. This walkthrough shows a simple `Person` class and its corresponding mapping file.
 {gdeck:Person Class|top}
 {gcard:Person Class}
-Our {{Person}} is defined in Assembly name entities.
+Our `Person` is defined in Assembly name entities.
 {code:java}
 namespace Entities
 {
@@ -141,11 +141,11 @@ spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 1, null, 2,
 //Starts the space with the External Data Source
 ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace?mirror=true", spaceConfig);
 {code}
-(on) {{<NHibernate config file>}} (see code box above) should point to the NHibernate session factory [configuration file|#sessionfactory].
+(on) `<NHibernate config file>` (see code box above) should point to the NHibernate session factory [configuration file|#sessionfactory].
 
-(on) It is recommended that you put all the NHibernate HBM mapping files in one directory, and point {{<NHibernate HBM files location>}} (see code box above) to that directory.
+(on) It is recommended that you put all the NHibernate HBM mapping files in one directory, and point `<NHibernate HBM files location>` (see code box above) to that directory.
 
-(!) You can also construct your own NHibernate session factory in code, and pass it to the constructor of the {{NHibernateExternalDataSource}}. In this case, there is no need to use {{SpaceConfig.ExternalDataSourceConfig.CustomProperties}}.
+(!) You can also construct your own NHibernate session factory in code, and pass it to the constructor of the `NHibernateExternalDataSource`. In this case, there is no need to use `SpaceConfig.ExternalDataSourceConfig.CustomProperties`.
 
 To start the other members of the cluster, simply change the [ClusterInfo|Processing Unit Container#ClusterInfo]:
 - Backup space of the first partition member
