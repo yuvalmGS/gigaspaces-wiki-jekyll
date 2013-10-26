@@ -17,7 +17,11 @@ GigaSpaces [Space Persistency|XAP95:Space Persistency] interface is the key midd
 
 (!) Before you begin, it is recommended to read the [Space Persistency|XAP95:Space Persistency] section.
 
-{tip}For a fully running example using the Mirror Service see {{GigaSpaces Root\XAP.NET\NET vX\Examples\StockSba}} folder.{tip}
+
+{% tip %}
+For a fully running example using the Mirror Service see {{GigaSpaces Root\XAP.NET\NET vX\Examples\StockSba}} folder.
+{% endtip %}
+
 
 # .NET Specific Settings
 

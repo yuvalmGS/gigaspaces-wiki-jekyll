@@ -28,7 +28,11 @@ There are two variations provided:
 
 In both cases, once updates are performed (objects are added/updated/removed) on the master space, the master space propagates the changes to all relevant local views and caches.
 
-{tip} Client cache is not enabled by default. {tip}
+
+{% tip %}
+ Client cache is not enabled by default.
+{% endtip %}
+
 
 # When Should You Use a Client-Side Cache?
 

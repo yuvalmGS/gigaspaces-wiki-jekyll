@@ -50,5 +50,9 @@ for (Employee employee : result) {
 
 {code}
 
-{tip}See [Parent Child Relationship] for a full usage example of the {{readByIds}} operation.
-ReadById is intended to objects with meaningful ids,if used with auto-generate="true" ids,the given object type will be ignored.{tip}
+
+{% tip %}
+See [Parent Child Relationship] for a full usage example of the {{readByIds}} operation.
+ReadById is intended to objects with meaningful ids,if used with auto-generate="true" ids,the given object type will be ignored.
+{% endtip %}
+

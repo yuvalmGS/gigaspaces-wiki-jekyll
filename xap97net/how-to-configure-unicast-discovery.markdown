@@ -37,9 +37,12 @@ For both **unicast AND multicast discovery**, use:
 (!) When the locators attribute is used in conjunction with the jini://* prefix and groups attribute, the discovery will be unicast AND multicast.
 If you want unicast only, you should disable multicast altogether.
 
-{tip}For **unicast discovery only**, you should disable multicast using **{{com.gs.multicast.enabled=false}}** system property, and use:
+
+{% tip %}
+For **unicast discovery only**, you should disable multicast using **{{com.gs.multicast.enabled=false}}** system property, and use:
 {code}jini://machine1:4174,machine2:4174/./mySpace?locators=machine1:4174,machine2:4174{code}
-{tip}
+{% endtip %}
+
 
 (i) For troubleshooting purposes you should verify that the services (spaces, GSC, GSM, processing units etc.) print correct settings for the locators while they initialize. You can turn on the relevant loggings if required.
 

@@ -86,7 +86,9 @@ Each of replication channel to the gateways can be configured with more paramete
 Here we have specified a global bulk size of 1000 but have specifically overridden it in the replication channel to Hong Kong with 100, and have a global maximum redo log capacity for both targets of 1000000.
 {refer}For more details about all the available configuration elements of the space gateway targets please refer to the [Configuring Space Gateway Targets] section.{refer}
 
-{tip}**Use the {{partitioned-sync2backup}} cluster schema**
+
+{% tip %}
+**Use the {{partitioned-sync2backup}} cluster schema**
 You should have the {{partitioned-sync2backup}} cluster schema used with the space to enable the replication to the Gateway.
 If you are not interested in having backups running but have the replication to the Gateway running, you should have ZERO as the number of backups. See below example of an sla.xml configuration you could use in such a case:
 {code}
@@ -95,7 +97,8 @@ If you are not interested in having backups running but have the replication to 
 {code}
 
 Note that when there are no backups running any failure of the primary might cause a loss of data.
-{tip}
+{% endtip %}
+
 
 # Configuring and Deploying the Gateway
 
@@ -692,8 +695,12 @@ In the above we have configured both LONDON and NEWYORK at the sources of the si
 {gcard}
 {gdeck}
 
-{tip}**Multi-Master Running example**
-The [Multi-Master running example|SBP:WAN Replication Gateway] includes a three-way setup replicating data between three sites, this example contains a spring(java) processing unit for the spaces, but the gateway components are the same.{tip}
+
+{% tip %}
+**Multi-Master Running example**
+The [Multi-Master running example|SBP:WAN Replication Gateway] includes a three-way setup replicating data between three sites, this example contains a spring(java) processing unit for the spaces, but the gateway components are the same.
+{% endtip %}
+
 
 # Filtering Replication Between Gateways
 

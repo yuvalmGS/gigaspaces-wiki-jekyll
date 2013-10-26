@@ -69,7 +69,11 @@ See the [SqlQuery] section for details about embedded entities query and indexin
 
 !GRA:Images^model_non_embed.jpg!
 
-{tip}See the [Parent Child Relationship] for an example for non-embedded relationships.{tip}
+
+{% tip %}
+See the [Parent Child Relationship] for an example for non-embedded relationships.
+{% endtip %}
+
 
 ## Embedded vs. Non Embedded Relationships
 

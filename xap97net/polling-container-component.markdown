@@ -252,7 +252,11 @@ public class ExpiredDataTemplateProvider
 {gcard}
 {gdeck}
 
-{tip}Only polling containers support dynamic templates. Notify containers do not support dynamic templates.{tip}
+
+{% tip %}
+Only polling containers support dynamic templates. Notify containers do not support dynamic templates.
+{% endtip %}
+
 
 # Receive Operation Handler
 

@@ -158,8 +158,12 @@ When working with a clustered space, one of the properties in a class is used to
 3. Otherwise, the first indexed property in alphabetical order is used.
 4. Otherwise, the first property in alphabetical order is used.
 
-Note that only one property in a class can be marked as a routing property.{tip:title=Declare the routing property explicitly}
-It's highly recommended to explicitly declare which property is the routing property, and not rely on rules 2 and onward. Relying on those rules can lead to confusing problems (e.g. the SpaceID is changed, or an index is added to a property, etc.). Explicitly declaring the routing property makes your code clearer and less error-prone. {tip}
+Note that only one property in a class can be marked as a routing property.
+
+{% tip title=Declare the routing property explicitly %}
+It's highly recommended to explicitly declare which property is the routing property, and not rely on rules 2 and onward. Relying on those rules can lead to confusing problems (e.g. the SpaceID is changed, or an index is added to a property, etc.). Explicitly declaring the routing property makes your code clearer and less error-prone.
+{% endtip %}
+
 
 # Versioning
 

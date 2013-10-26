@@ -82,7 +82,11 @@ TakeMultiple|
 
 {include:ISpaceProxy Code Snippets}
 
-{tip}The {{Clear}} and {{Clean}} operations do not remove the Space class definition from the Space. You should restart the Space to allow it to drop the class definitions.{tip}
+
+{% tip %}
+The {{Clear}} and {{Clean}} operations do not remove the Space class definition from the Space. You should restart the Space to allow it to drop the class definitions.
+{% endtip %}
+
 
 # Clustered Flag
 
@@ -171,7 +175,11 @@ In a similar manner, the read timeout and write lease can be specified.
 {gcard}
 {gdeck}
 
-{tip}See more examples for the {{ISpaceProxy}} interface usage with the [POJO Support] section.{tip}
+
+{% tip %}
+See more examples for the {{ISpaceProxy}} interface usage with the [POJO Support] section.
+{% endtip %}
+
 
 # Saving Data to the Space
 
@@ -252,7 +260,11 @@ There are various mechanisms offered by GigaSpaces XAP to access the data within
 
 Each space object includes an ID. You may read or remove objects from the space using their ID via the {{ReadByID}},{{TakeByID}},{{ReadIfExistsById}},{{TakeIfExistsById}}, {{ReadByIDs}} or the {{TakeByIDs}} operations.
 
-{tip}The {{ReadByID}} and {{ReadByIDs}} have a special performance optimization when running a [Local Cache] or [Local View].{tip}
+
+{% tip %}
+The {{ReadByID}} and {{ReadByIDs}} have a special performance optimization when running a [Local Cache] or [Local View].
+{% endtip %}
+
 
 See the [Id Queries] for details.
 
@@ -286,7 +298,11 @@ A {{Read}} operation acts like a {{ReadIfExists}} except that it will wait until
 
 In both read methods, a timeout of {{JavaSpace.NO_WAIT}} means to return immediately, with no waiting, which is equivalent to using a zero timeout. An {{IllegalArgumentException}} will be thrown if a negative timeout value is used.
 
-{tip}The {{Read}} operation default timeout is {{JavaSpace.NO_WAIT}}.{tip}
+
+{% tip %}
+The {{Read}} operation default timeout is {{JavaSpace.NO_WAIT}}.
+{% endtip %}
+
 
 # takeIfExists and take Operations
 
@@ -300,7 +316,11 @@ If you would like to take objects from the space in the same order they have bee
 
 Taking an object from the space might generate [notifications|Notify Container] to registered objects/queries.
 
-{tip}The {{take}} operation default timeout is {{JavaSpace.NO_WAIT}}.{tip}
+
+{% tip %}
+The {{take}} operation default timeout is {{JavaSpace.NO_WAIT}}.
+{% endtip %}
+
 
 # Batch Operations
 

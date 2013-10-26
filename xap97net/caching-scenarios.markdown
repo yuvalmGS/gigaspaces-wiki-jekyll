@@ -36,7 +36,11 @@ Persistence logic can either be the out-of-the-box [Hibernate external data sour
 
 The in-line cache ensures maximum performance when fetching data where the database is outside the critical path of the application transaction. (This makes more sense than it might seem: database contention is a primary source of application performance failure.)
 
-{tip}For best performance you should use the [ALL-IN-CACHE cache policy|ALL IN CACHE-Cache Policy] with the [write-behind mirror|Asynchronous Persistency with the Mirror]. This will ensure maximum hit rate when accessing the cache. With this mode, you should make sure the cache can accommodate _all_ the data you will access.{tip}
+
+{% tip %}
+For best performance you should use the [ALL-IN-CACHE cache policy|ALL IN CACHE-Cache Policy] with the [write-behind mirror|Asynchronous Persistency with the Mirror]. This will ensure maximum hit rate when accessing the cache. With this mode, you should make sure the cache can accommodate _all_ the data you will access.
+{% endtip %}
+
 
 The in-line cache mechanism is widely used with the following GigaSpaces APIs:
 - [GigaSpace API|The ISpaceProxy Interface]: GigaSpaces native Object/SQL API.
@@ -91,7 +95,11 @@ The client cache size is limited to the client process heap size. The client-sid
 - [Local Cache] - On-demand client cache loading data based on client activity. This type of client cache evicts data once the client available memory drops below a configurable value.
 - [Local View] - Pre-fetch client cache loading data based on set of SQL queries. This client cache does not evict data. This client cache is designed to be read-only and support both queries and reads based on ID.
 
-{tip}Client cache is not enabled by default.{tip}
+
+{% tip %}
+Client cache is not enabled by default.
+{% endtip %}
+
 
 ## When you should use a Client Cache?
 

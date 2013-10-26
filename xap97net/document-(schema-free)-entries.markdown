@@ -18,7 +18,11 @@ Unlike concrete objects, which force users to design a fixed data schema (in the
 
 Before a certain Document instance is written to the space, its type should be introduced to the data grid. The type has a name and controls metadata such as an identifier property, a routing property and which properties are initially indexed (naturally, you can also index new properties at runtime after adding them to your documents).
 
-{tip}The Type controls **metadata** - so only the metadata is part of the type. A document can introduce new properties at will.{tip}
+
+{% tip %}
+The Type controls **metadata** - so only the metadata is part of the type. A document can introduce new properties at will.
+{% endtip %}
+
 
 Note that the Document type does not describe the properties themselves (except for the names of the ID and Routing properties). These are completely dynamic and each instance can have a different set of properties (although in most cases Document instances of the same type are likely to have identical or similar set of properties).
 
@@ -175,7 +179,11 @@ public SpaceDocument ReadProductBySql(ISpaceProxy spaceProxy)
 }
 {code}
 
-{tip}Consider indexing properties used in queries to boost performance. {tip}
+
+{% tip %}
+Consider indexing properties used in queries to boost performance.
+{% endtip %}
+
 
 Queries on nested properties are supported. For example, to read products manufactured by **Acme**:
 {code:java}

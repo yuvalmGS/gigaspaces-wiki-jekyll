@@ -34,7 +34,11 @@ The command that loads a space needs to have this system property set. Another w
 /./mySpace?schema=cache&groups=myPrivateGroupName
 {code}
 
-{tip}If you are looking for a way to use a unicast discovery, please refer to the [How to Configure Unicast Discovery] section for more details.{tip}
+
+{% tip %}
+If you are looking for a way to use a unicast discovery, please refer to the [How to Configure Unicast Discovery] section for more details.
+{% endtip %}
+
 
 # Multicast Settings
 
@@ -79,5 +83,7 @@ The following result examples appear on the console:
 
 # Multi Network Card Configuration
 
-{tip} For details on multi-network card configuration, refer to: [How to Configure an Environment With Multiple Network-Cards (Multi-NIC)].
-{tip}
+
+{% tip %}
+ For details on multi-network card configuration, refer to: [How to Configure an Environment With Multiple Network-Cards (Multi-NIC)].
+{% endtip %}

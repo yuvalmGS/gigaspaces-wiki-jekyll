@@ -195,8 +195,11 @@ foreach (IMachine machine in admin.Machines)
 {gcard}
 {gdeck}
 
-{tip}See a fully running example of a [Scaling Agent|Scaling Agent Example] which comes with the product.
-{tip}
+
+{% tip %}
+See a fully running example of a [Scaling Agent|Scaling Agent Example] which comes with the product.
+{% endtip %}
+
 
 # Admin Construction
 
