@@ -11,9 +11,9 @@ page_id: 61867262
 GigaSpaces libraries are located under `<GigaSpaces Root>\lib`
 
 You'll find three sub directories:
-**lib/required** \- jar files that are required for any GigaSpaces application.
-**lib/optional** \- jar files which enable additional capabilities, such as servlet api and Spring CGLib support.
-**lib/platform** \- This directory contains jar files which are used by the XAP platform only.
+**lib/required** - jar files that are required for any GigaSpaces application.
+**lib/optional** - jar files which enable additional capabilities, such as servlet api and Spring CGLib support.
+**lib/platform** - This directory contains jar files which are used by the XAP platform only.
 
 # Compilation
 

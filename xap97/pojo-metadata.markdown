@@ -455,7 +455,7 @@ The Employee class uses the <reference> tag to inherit metadata from the Person 
 All the fields are written automatically into space. If the field is a reference to another object, it has to be Serializable and it will be written into space as well. Only the fields which need special space behavior need to be specified in the gs.xml file. Specify the fields which are id's, indexes or need exclusions, etc.
 {% endtip %}
 
-- **`<property`>** \- contains mapping info for a primitive type attribute of a persistent class.
+- **`<property`>** - contains mapping info for a primitive type attribute of a persistent class.
 
 {: .table .table-bordered}
 | Attribute | Description |
@@ -463,9 +463,9 @@ All the fields are written automatically into space. If the field is a reference
 | `name` | Holds the name of the persistent class attribute. |
 | `index` | Indicates which fields are indexed in the space. The first indexed member is used for hashing. Querying indexed fields speeds up read and take operations. |
 
-- **`<reference>`** \- contains mapping information for an attribute of a class that is not primitive, but references another entity object.
+- **`<reference>`** - contains mapping information for an attribute of a class that is not primitive, but references another entity object.
 
-- **`<null-value>`** \- a value that will represent a `null`. Relevant for primitive fields (int, long).
+- **`<null-value>`** - a value that will represent a `null`. Relevant for primitive fields (int, long).
 
 {% highlight java %}
 <class name="com.j_spaces.examples.hellospacepojo.Person"
@@ -475,8 +475,8 @@ All the fields are written automatically into space. If the field is a reference
 </class>
 {% endhighlight %}
 
-- **`<class-ref>`** \- contains the full qualified name of the specified class.
-- **`<id>`** \- defines whether this field value is used when generating the object ID.
+- **`<class-ref>`** - contains the full qualified name of the specified class.
+- **`<id>`** - defines whether this field value is used when generating the object ID.
 
 {: .table .table-bordered}
 | Attribute | Description |
@@ -484,28 +484,28 @@ All the fields are written automatically into space. If the field is a reference
 | `name` | Specifies a get method that allows identification of the `id` element in the space. |
 | `auto-generate` | Specifies if the object ID is generated automatically by the space when written into the space. If `false`, the field is indexed automatically, and if `true`, the field isn't indexed. |
 
-- **`<version>`** \- saves the POJO's version in the space. This must be an `int` data type field.
+- **`<version>`** - saves the POJO's version in the space. This must be an `int` data type field.
 
 {: .table .table-bordered}
 | Attribute | Description |
 |:----------|:------------|
 | `name` | Specifies a `get` method for holding the version's ID. |
 
-- **`<persist>`** \- allows you to specify whether a POJO is or isn't saved inside the space.
+- **`<persist>`** - allows you to specify whether a POJO is or isn't saved inside the space.
 
 {: .table .table-bordered}
 | Attribute | Description |
 |:----------|:------------|
 | `name` | Specifies a `get` method for holding the `persist` flag. |
 
-- **`<routing>`** \- Determines the target space for the operation with using partitioned space.
+- **`<routing>`** - Determines the target space for the operation with using partitioned space.
 
 {: .table .table-bordered}
 | Attribute | Description |
 |:----------|:------------|
 | `name` | Specifies a get method that allows identification of the `routing` element in the space. |
 
-- **`<exclude>`** \- causes the POJO field under this element to be excluded, and not be saved in the space.
+- **`<exclude>`** - causes the POJO field under this element to be excluded, and not be saved in the space.
     - If you specify a field name that exists as part of the `property` element, this field is excluded.
     - If the field name doesn't exist as part of the `property` element, this means that this field name is part of the `Person` class, and you do not want it to be saved in the space.
 

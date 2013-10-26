@@ -51,9 +51,9 @@ SpaceDocument[] documents = gigaSpace.readMultiple(
 
 The `SQLQuery` class has been enhanced with a `QueryResultType` parameter. The following options are available:
 
-- `OBJECT` \- Return java Object(s) (POJO).
-- `DOCUMENT` \- Return space document(s).
-- `DEFAULT` \- If the type is registered with a concrete java class, return an Object. Otherwise, return a document. This is the default behavior.
+- `OBJECT` - Return java Object(s) (POJO).
+- `DOCUMENT` - Return space document(s).
+- `DEFAULT` - If the type is registered with a concrete java class, return an Object. Otherwise, return a document. This is the default behavior.
 
 For example:
 

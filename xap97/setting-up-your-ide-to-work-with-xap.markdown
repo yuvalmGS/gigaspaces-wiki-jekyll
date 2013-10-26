@@ -18,7 +18,7 @@ Ensure you have JDK installed
 ------------------------------------------------
 {% endcomment %}
 
-- **Ensure you have a JDK installed** \- you will need version 1.6 or higher, latest Java 1.6 is recommended.
+- **Ensure you have a JDK installed** - you will need version 1.6 or higher, latest Java 1.6 is recommended.
 
 #### Checking your JDK version
 

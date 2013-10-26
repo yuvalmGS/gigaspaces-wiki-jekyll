@@ -37,8 +37,8 @@ The space supports two cache eviction policies: [LRU-Cache Policy](./lru-cache-p
 </os-core:space>
 {% endhighlight %}
 
-- [ALL IN CACHE-Cache Policy](./all-in-cache-cache-policy.html) \- Assumes the JVM hosting the space instance has enough heap to hold all data in memory.
-- [LRU-Cache Policy](./lru-cache-policy.html) \- Assumes the JVM hosting the space instance does not have enough heap to hold all data in memory.
+- [ALL IN CACHE-Cache Policy](./all-in-cache-cache-policy.html) - Assumes the JVM hosting the space instance has enough heap to hold all data in memory.
+- [LRU-Cache Policy](./lru-cache-policy.html) - Assumes the JVM hosting the space instance does not have enough heap to hold all data in memory.
 By default ALL IN CACHE policy is used for an in-memory data grid,and LRU-Cache Policy is used for a persistent space with [Space Persistency](./space-persistency.html) enabled.
 
 # Calculating the Available Memory
@@ -132,14 +132,14 @@ User[] evictedUsers = gigaSpace.takeMultiple(template, Integer.MAX\_VALUE, TakeM
 - It can be used only with LRU policy.
 - When using this modifier, the timeout argument in operations that allow to specify a timeout is ignored. The operations will always return immediately.
 - When using this modifier, the `take` or `clear` calls will never be propagated to the underlying database (EDS layer) when running in synchronous or asynchronous persistency mode. A `take` operation for example might return a `null` while a matching object exists in the underlying database.
-- The `TakeModifiers.EVICT_ONLY` is **ignored when used in a transactional operation** \- A `take` or `clear` in the context of a transaction will not result eviction.
+- The `TakeModifiers.EVICT_ONLY` is **ignored when used in a transactional operation** - A `take` or `clear` in the context of a transaction will not result eviction.
 
 # Exceeding Physical Memory Capacity
 
 The overall space capacity is not necessarily limited to the capacity of its physical memory. Currently there are two options for exceeding this limit:
 
-- **Using an LRU and [Space Persistency](./space-persistency.html)** \- in this mode, all the space data is kept in the database and therefore the space capacity is dependent on the database capacity rather than the memory capacity. The space maintains in memory, a partial image of the persistent view in an LRU basis.
-- **Using [Partitioned Space](./terminology---data-grid-topologies.html)** \- in this mode, the space utilizes the physical memory of multiple JVMs. This means the application using the space is able to access all the space instances transparently, as if they were a single space with higher memory capacity.
+- **Using an LRU and [Space Persistency](./space-persistency.html)** - in this mode, all the space data is kept in the database and therefore the space capacity is dependent on the database capacity rather than the memory capacity. The space maintains in memory, a partial image of the persistent view in an LRU basis.
+- **Using [Partitioned Space](./terminology---data-grid-topologies.html)** - in this mode, the space utilizes the physical memory of multiple JVMs. This means the application using the space is able to access all the space instances transparently, as if they were a single space with higher memory capacity.
 
 # Memory Manager Parameters
 

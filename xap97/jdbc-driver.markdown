@@ -321,8 +321,8 @@ Joined sub-queries are not supported.
 
 {% endgcloak %}
 
-- `sysdate` \- a keyword suggesting current time and date.
-- `rownum` \- a keyword to use in `WHERE` clauses, setting the number of rows to select.
+- `sysdate` - a keyword suggesting current time and date.
+- `rownum` - a keyword to use in `WHERE` clauses, setting the number of rows to select.
 - Select for update -- allowing the locking of rows in order to update them later.
 - Remote and embedded query processes configuration -- allows fast access to the space using embedded mode.
 - Optimistic locking.

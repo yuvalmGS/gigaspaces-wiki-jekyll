@@ -16,7 +16,7 @@ Ensure you have JDK installed
 ------------------------------------------------
 {% endcomment %}
 
-- **Ensure you have a JDK installed** \- you will need version 1.5 or higher, latest Java 1.6 is recommended.
+- **Ensure you have a JDK installed** - you will need version 1.5 or higher, latest Java 1.6 is recommended.
 
 {% panel bgColor=white|borderStyle=solid %}
 

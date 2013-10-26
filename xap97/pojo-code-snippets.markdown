@@ -169,8 +169,8 @@ The `GigaSpace.write` has a few activity modes - **With each mode the return obj
 
 - when the [WriteModifiers.UPDATE_OR_WRITE](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html) modifier is applied, the following returns:
     - For a successful operation:
-        - `LeaseContext` \- The `LeaseContext.getObject()` will return:
-            - `null` \- if a new object is inserted (write operation)
+        - `LeaseContext` - The `LeaseContext.getObject()` will return:
+            - `null` - if a new object is inserted (write operation)
             - The previous version of the object (update operation)
     - For an unsuccessful operation:
         - an
@@ -179,7 +179,7 @@ is thrown if a timeout occurred. This means the object is locked under another t
 
 - when the [WriteModifiers.WRITE_ONLY](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html) modifier is applied the following returns:
     - For a successful operation:
-        - `LeaseContext` \- Where the `LeaseContext.getObject()` will return a `null`.
+        - `LeaseContext` - Where the `LeaseContext.getObject()` will return a `null`.
     - For an unsuccessful operation:
         - an
 [EntryAlreadyInSpaceException](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/EntryAlreadyInSpaceException)
@@ -187,9 +187,9 @@ is thrown.
 
 - when the [WriteModifiers.UPDATE_ONLY](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html) modifier is applied the following returns:
     - For a successful operation:
-        - `LeaseContext` \- Where the `LeaseContext.getObject()` will return the previous version of the object.
+        - `LeaseContext` - Where the `LeaseContext.getObject()` will return the previous version of the object.
     - For an unsuccessful operation
-        - `null` \- if a timeout occurred. This means the object is locked under another transaction.
+        - `null` - if a timeout occurred. This means the object is locked under another transaction.
         - an Exception object is thrown - the options are:
             - [EntryNotInSpaceException](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/EntryNotInSpaceException)
 \- in case the object does not exist in the space.

@@ -17,30 +17,30 @@ This section explains the topologies supported by XAP - replicated, partitioned 
 
 # GigaSpaces Data Grid - Basic Terms
 
-- **Space (data grid) instance** \- an independent data storage unit. The Space is comprised of all the space instances running on the network.
+- **Space (data grid) instance** - an independent data storage unit. The Space is comprised of all the space instances running on the network.
    ![DGA-DataGrid.jpg](/attachment_files/DGA-DataGrid.jpg)
 
-- **Space** \- GigaSpaces data grid implementation. A distributed, shared, memory-based repository for objects. A space runs in a _space container_ \- this is usually transparent to the developer.
+- **Space** - GigaSpaces data grid implementation. A distributed, shared, memory-based repository for objects. A space runs in a _space container_ - this is usually transparent to the developer.
 
 ![DGA-GigaSpacesDataGrid.jpg](/attachment_files/DGA-GigaSpacesDataGrid.jpg)
 
-- **GigaSpaces Container (GSC)** \- a generic container that can run one or more [processing units](./packaging-and-deployment.html). A space instances usually runs within processing unit. The GSC is launched on each machine that participates in the space cluster, and hosts the space instances.
+- **GigaSpaces Container (GSC)** - a generic container that can run one or more [processing units](./packaging-and-deployment.html). A space instances usually runs within processing unit. The GSC is launched on each machine that participates in the space cluster, and hosts the space instances.
    ![DGA-ServiceGridDataGrid.jpg](/attachment_files/DGA-ServiceGridDataGrid.jpg)
 
 - **Remote vs. Collocated** - The Space can be remote to the application or collocated with the application. With Remote mode any space operation involves network usage. With collocated mode there is no network utilization. This mode improves the performance and latency with activities that performs space operations.
 ![remote_embedded_space_topology.jpg](/attachment_files/remote_embedded_space_topology.jpg)
 
-- **Replication** \- a relationship in which data is copied between two or more space instances, with the aim of having the same data in some or all of them.
+- **Replication** - a relationship in which data is copied between two or more space instances, with the aim of having the same data in some or all of them.
    ![DGA-Replication2.jpg](/attachment_files/DGA-Replication2.jpg)
 
-- **Synchronous replication** \- replication scheme in which space client applications are blocked until their changes are propagated to all peer spaces. This guarantees higher data consistency between space instances, at the expense of reduced performance since clients have to wait for the replication to complete before the operation is finished.
+- **Synchronous replication** - replication scheme in which space client applications are blocked until their changes are propagated to all peer spaces. This guarantees higher data consistency between space instances, at the expense of reduced performance since clients have to wait for the replication to complete before the operation is finished.
 
-- **Asynchronous replication** \- replication mode in which changes are propagated to peer space instances in the background, using separate thread(s) that the onces the are used to receive the write request from the clients. Applications clients do not have to wait for their changes to be propagated to other space instances. With asynchronous replication the client does not block until all the data has been replicated, and the space can optimize the replication by batching multiple updates into a single network call. Therefore this options performs better and allows for higher throughput. On the other hand, data is less consistent between space instances and takes longer to get propagated.
+- **Asynchronous replication** - replication mode in which changes are propagated to peer space instances in the background, using separate thread(s) that the onces the are used to receive the write request from the clients. Applications clients do not have to wait for their changes to be propagated to other space instances. With asynchronous replication the client does not block until all the data has been replicated, and the space can optimize the replication by batching multiple updates into a single network call. Therefore this options performs better and allows for higher throughput. On the other hand, data is less consistent between space instances and takes longer to get propagated.
 
-- **Partitioning** \- new data or operations on data are routed to one of several space instances (partitions). Each space instance holds a subset of the data, with no overlap. Partitioning is done according to n _routing field_ in the data object. Each object written to the space defines a routing field whose value is used to determine the partition to which the object will be sent. The space client side proxy guarantees that if two object have the same value set for the routing field they will end up in the same partition, regardless o how many partitions are running.
+- **Partitioning** - new data or operations on data are routed to one of several space instances (partitions). Each space instance holds a subset of the data, with no overlap. Partitioning is done according to n _routing field_ in the data object. Each object written to the space defines a routing field whose value is used to determine the partition to which the object will be sent. The space client side proxy guarantees that if two object have the same value set for the routing field they will end up in the same partition, regardless o how many partitions are running.
    ![DGA-Partitioning2.jpg](/attachment_files/DGA-Partitioning2.jpg)
 
-- **Topology** \- a specific configuration of space instances. For example, a replicated topology is a configuration in which all space instances replicate data between one another. In GigaSpaces, space topologies are defined by _clustering policies_ (explained in the following section).
+- **Topology** - a specific configuration of space instances. For example, a replicated topology is a configuration in which all space instances replicate data between one another. In GigaSpaces, space topologies are defined by _clustering policies_ (explained in the following section).
 
 {% info title=Replication Configuration %}
 For more details on how to configure the replication mechanisms of the Space, please refer to [this page](./replication.html) in the [Administrator's Guide](./administrator's-guide.html).

@@ -32,9 +32,9 @@ The Event Session API is the low level API for notifications. It is preferable t
 The session-based messaging API is designed with the following objectives:
 
 - **Simple and unified interfaces**
-- **Single entry point** \- users access all the event-related services from a single entry point.
-- **Extensibility** \- allows simple extensions for other types of event services, as well as other configuration parameters.
-- **Backwards compatibility** \- coexists with the existing API in a way that allows a deprecation period without duplicating the code.
+- **Single entry point** - users access all the event-related services from a single entry point.
+- **Extensibility** - allows simple extensions for other types of event services, as well as other configuration parameters.
+- **Backwards compatibility** - coexists with the existing API in a way that allows a deprecation period without duplicating the code.
 - Support for Spring bean creation/configuration.
 - Batch notification support.
 
