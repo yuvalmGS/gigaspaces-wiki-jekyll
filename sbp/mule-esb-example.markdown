@@ -90,10 +90,9 @@ public class Feeder  {
 }
 {% endhighlight %}
 
-
 ## The Feeder Service Configuration
-{toggle-cloak:id=The Feeder Service Configuration} **Click to view the Feeder Service Configuration..**
-{gcloak:The Feeder Service Configuration}
+{% togglecloak id=The Feeder Service Configuration %}**Click to view the Feeder Service Configuration..**{% endtogglecloak %}
+{% gcloak The Feeder Service Configuration %}
 Here is the Feeder Service Configuration:
 
 
@@ -122,7 +121,7 @@ Here is the Feeder Service Configuration:
 </mule>
 {% endhighlight %}
 
-{gcloak}
+{% endgcloak %}
 
 # The Verifier Service
 This service consumes Data objects with state=0 and transfer these into state=1.
@@ -143,9 +142,9 @@ public class Verifier {
 
 ## The Verifier Service Configuration
 The Verifier Service Configuration using a `polling-container` running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
-{toggle-cloak:id=The Verifier Service Configuration} **Click to view the Verifier Service Configuration..**
-{gcloak:The Verifier Service Configuration}
 
+{% togglecloak id=The Verifier Service Configuration %}**Click to view the Verifier Service Configuration..**{% endtogglecloak %}
+{% gcloak The Verifier Service Configuration %}
 
 {% highlight java %}
 <mule
@@ -186,7 +185,7 @@ The Verifier Service Configuration using a `polling-container` running in a [Non
 </mule>
 {% endhighlight %}
 
-{gcloak}
+{% endgcloak %}
 
 # The Approver Service
 This service consumes Data objects with state=1 and transfer these into state=2.
@@ -206,8 +205,9 @@ public class Approver {
 
 ## The Approver Service Configuration
 The Approver Service Configuration using a `polling-container` running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
-{toggle-cloak:id=The Approver Service Configuration} **Click to view the Approver Service Configuration..**
-{gcloak:The Approver Service Configuration}
+
+{% togglecloak %}**Click to view the Approver Service Configuration..**{% endtogglecloak %}
+{% gcloak The Approver Service Configuration %}
 
 
 {% highlight java %}
@@ -248,7 +248,7 @@ The Approver Service Configuration using a `polling-container` running in a [Non
 </mule>
 {% endhighlight %}
 
-{gcloak}
+{% endgcloak %}
 
 # Building the Example
 1. Have the correct maven bin folder (located at `\gigaspaces-xap-premium-8.0.1\tools\maven\apache-maven-3.0.2\bin`) as part of the `PATH`.
