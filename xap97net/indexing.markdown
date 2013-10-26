@@ -15,8 +15,8 @@ When a space looks for a match for a read or take operation, it iterates over no
 h1. Choosing which Properties to Index
 
 One might wonder why properties are not always indexed, or why all the properties in all the classes are not always indexed. The reason is that indexing has its downsides as well:
-* An indexed property can speed up read/take operations, but might also slow down write/update operations.
-* An indexed property consumes more resources, specifically memory footprint per entry.
+- An indexed property can speed up read/take operations, but might also slow down write/update operations.
+- An indexed property consumes more resources, specifically memory footprint per entry.
 
 h1. When to Use Indexing
 

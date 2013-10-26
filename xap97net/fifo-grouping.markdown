@@ -13,12 +13,12 @@ without having to maintain a FIFO order for all the entries in the space.
 
 h1. Overview
 The FIFO groups features is designed to allow for efficient processing of events with partial ordering constraints. To better understand FIFO groups, let's first examine the constraints of total ordering, i.e. What it takes to process events in the exact order in which they arrive. There are two elements that effectively limit the scalability of processing events with total ordering:
-* Maintaining the original order of arrival (the "natural FIFO order"), which requires the Space to maintain a central data structure (i.e. event queue) that is accessed every time an event enters the system. This can become a central bottleneck quite quickly and limit the throughput of the system.
-* Ensuring in-order processing of events. This seems quite straight forward once you maintain the natural FIFO ordering, but in many cases, you want to ensure that a certain event will not be processed until its preceding event has been fully processed. This requirement effectively means that you can only process one event at a time, constraining the event processing to a single thread.
+- Maintaining the original order of arrival (the "natural FIFO order"), which requires the Space to maintain a central data structure (i.e. event queue) that is accessed every time an event enters the system. This can become a central bottleneck quite quickly and limit the throughput of the system.
+- Ensuring in-order processing of events. This seems quite straight forward once you maintain the natural FIFO ordering, but in many cases, you want to ensure that a certain event will not be processed until its preceding event has been fully processed. This requirement effectively means that you can only process one event at a time, constraining the event processing to a single thread.
 
 In most cases, your application does not require total ordering, but rather ordering within groups of events. Let's take a flight booking system as an example. Such an system should process the bookings for each flight one by one, to avoid conflicting bookings for the same seats and ensure fairness. But it can process many flights simultaneously, since there's no relevance to the order of processing across different flights. The FIFO groups feature allows you to implement this kind of scenario easily by designating a "FIFO group" field. The value of this field indicates the unique group identifier. In the above example, this would be the flight number, so effectively your application can process many bookings simultaneously for different flights, but it will never process two bookings for the same flight simultaneously. In more generic terms, the FIFO groups capability ensures the following:
-* Within the same group, events will be processed in the order they arrived, and exclusively, meaning that only one event will be processed at a time, regardless of the number of event processors.
-* Across groups, any number of events can be processed simultaneously.
+- Within the same group, events will be processed in the order they arrived, and exclusively, meaning that only one event will be processed at a time, regardless of the number of event processors.
+- Across groups, any number of events can be processed simultaneously.
 
 {indent}!GRA:Images2^fifo-group.jpg!{indent}
 
@@ -31,14 +31,14 @@ FIFO-Grouping ('FG') enables reading/taking certain space entries in FIFO order 
 The selected group is locked until the operation is terminated- the operation transaction is committed/ aborted.  See the [Exclusivity|FIFO Grouping#Exclusivity] section for more elaborations.{note}
 
 h1. Method Of Operation
-* FG operations must be performed within transactions.
-* Any class that supports FG is logically divided to groups according to the FG designated property.
+- FG operations must be performed within transactions.
+- Any class that supports FG is logically divided to groups according to the FG designated property.
 This property must be indexed and will be automatically indexed by the system if an index definition does not exist for it.  An additional data structure is kept for this property in order to assist in traversing the different groups.
 
-* In the selecting template a null value will generally be rendered for this property which stands for bring any available group.
+- In the selecting template a null value will generally be rendered for this property which stands for bring any available group.
 An available group is any FG that matches the selection template and is not currently locked by another FG thread (see [Exclusivity|FIFO Grouping#Exclusivity] section).
 
-* If the selecting template (Pojo) has a value for a property other than the FG designated property - this property can be indexed (like for any regular read/take operation) and in addition a {{SpaceFifoGroupingIndex}} attribute can be added  to it  in order to assist in efficient traversal.
+- If the selecting template (Pojo) has a value for a property other than the FG designated property - this property can be indexed (like for any regular read/take operation) and in addition a {{SpaceFifoGroupingIndex}} attribute can be added  to it  in order to assist in efficient traversal.
 In this case the system will create a compound index that contains this property and the FG designated property.
 For example, if a polling container is responsible for all the new reservations (reservations with processingState = NEW), then it is recommended to declare a {{SpaceFifoGroupingIndex}} on the processingState property.
 This would help to achieve better performance when searching for reservations of certain flight that have processingState = NEW.
@@ -205,29 +205,29 @@ Declaring only {{SpaceFifoGroupingProperty}} or {{SpaceFifoGroupingIndex}} will 
 
 h1. Inheritance
 All property's FG declarations (both {{SpaceFifoGroupingProeprty}} and {{SpaceFifoGroupingIndex}}) are inherited in sub classes.
-* Overriding of {{SpaceFifoGroupingProperty}} is not allowed.
-* Overriding of {{SpaceFifoGroupingIndex}} is allowed in order to add more FG indexes.
+- Overriding of {{SpaceFifoGroupingProperty}} is not allowed.
+- Overriding of {{SpaceFifoGroupingIndex}} is allowed in order to add more FG indexes.
 For example, declaring {{SpaceFifoGroupingIndex(Path="a")}}, overriding in subclass and declaring {{SpaceFifoGroupingIndex(Path="b")}} will yield two FG indexes: property a index and property b index (both of type {{BASIC}} if no {{SpaceIndex}} with {{Extended}} type was declared).
 
 h1. Considerations
-* FG not supported with a Space using [LRU-Cache Policy|http://www.gigaspaces.com/wiki/display/XAP95/LRU-Cache+Policy] over [EDS|http://www.gigaspaces.com/wiki/display/XAP95/External+Data+Source].
-* Cross partitioning of groups is not supported (same limitation as in regular FIFO operations).
-* {{SpaceFifoGroupingProperty}} and {{SpaceFifoGroupingIndex}} cannot be used as dynamic indexes.
-* {{SpaceFifoGroupingProperty}} and {{SpaceFifoGroupingIndex}} cannot be used  as collection indexes.
+- FG not supported with a Space using [LRU-Cache Policy|http://www.gigaspaces.com/wiki/display/XAP95/LRU-Cache+Policy] over [EDS|http://www.gigaspaces.com/wiki/display/XAP95/External+Data+Source].
+- Cross partitioning of groups is not supported (same limitation as in regular FIFO operations).
+- {{SpaceFifoGroupingProperty}} and {{SpaceFifoGroupingIndex}} cannot be used as dynamic indexes.
+- {{SpaceFifoGroupingProperty}} and {{SpaceFifoGroupingIndex}} cannot be used  as collection indexes.
 (e.g. declaring {{SpaceFifoGroupingProperty( Path="\[*\]")}} is not allowed).
-* FIFO operation is not supported for FG template - it is ignored.
-* If the template is a SQL query template, only queries that can be performed in a single call to the space are supported (an exception is thrown).
-* FG operations must be performed under a transaction.
-* There can be only one FG property per type.
-* A FG index cannot be declared on some type's property without existence of a FG property for that type.
-* The following attributes cannot be used with the FG property/index attributes for the same property:
-** {{SpaceVersion}}
-** {{SpacePersist}}
-** {{SpaceDynamicProperties}}
-** {{SpaceExclude}}.
-** {{SpaceProperty.StorageType}} Different than OBJECT
+- FIFO operation is not supported for FG template - it is ignored.
+- If the template is a SQL query template, only queries that can be performed in a single call to the space are supported (an exception is thrown).
+- FG operations must be performed under a transaction.
+- There can be only one FG property per type.
+- A FG index cannot be declared on some type's property without existence of a FG property for that type.
+- The following attributes cannot be used with the FG property/index attributes for the same property:
+    - {{SpaceVersion}}
+    - {{SpacePersist}}
+    - {{SpaceDynamicProperties}}
+    - {{SpaceExclude}}.
+    - {{SpaceProperty.StorageType}} Different than OBJECT
 
 h1. Performance Hints
-* If an indexed-property is used in the FG template - define it as {{SpaceFifoGroupingIndex}} if footprint is not a crucial issue.
-* Since each successful operation locks a group (until its completion) there is no use in using # of threads which is greater than the # of potential groups.
-* For indexed properties (other than the {{SpaceFifoGroupingProperty}}) which are used with >, >=, < , <= conditions - the index cannot be used in the scan (because no FIFO order is maintained  in an ordered index).
+- If an indexed-property is used in the FG template - define it as {{SpaceFifoGroupingIndex}} if footprint is not a crucial issue.
+- Since each successful operation locks a group (until its completion) there is no use in using # of threads which is greater than the # of potential groups.
+- For indexed properties (other than the {{SpaceFifoGroupingProperty}}) which are used with >, >=, < , <= conditions - the index cannot be used in the scan (because no FIFO order is maintained  in an ordered index).

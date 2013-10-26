@@ -8,11 +8,11 @@ page_id: 63799417
 {summary}This section describes the architecture of the GigaSpaces XAP product.{summary}
 
 GigaSpaces XAP is built from the following sub-systems:
-* [*An SLA-Driven Container*|#SLA-Driven Container] -- provides the virtualization capabilities
-* [*A Unified Clustering Layer*|#Unified In-Memory Clustering] -- responsible for a single clustering model across all the product's functionality. This capability is built on top of the space infrastructure.
-* [*Core Middleware*|#Core Middleware] -- space-based runtime services which provide data, messaging and processing implementation.
-* [*Lightweight Application Containers*|#Lightweight Application Containers] -- application container services provide runtime support for applications.
-* [*Developers API and Components*|#Developers API and Components] -- the API layer and a component model (building blocks) for application developers.
+- [*An SLA-Driven Container*|#SLA-Driven Container] -- provides the virtualization capabilities
+- [*A Unified Clustering Layer*|#Unified In-Memory Clustering] -- responsible for a single clustering model across all the product's functionality. This capability is built on top of the space infrastructure.
+- [*Core Middleware*|#Core Middleware] -- space-based runtime services which provide data, messaging and processing implementation.
+- [*Lightweight Application Containers*|#Lightweight Application Containers] -- application container services provide runtime support for applications.
+- [*Developers API and Components*|#Developers API and Components] -- the API layer and a component model (building blocks) for application developers.
 
 Each sub-system (layer) is responsible for providing application server capabilities, and the bottom layers provide services to the upper layers. Figure 1 provides a representation of the sub-systems which compose the entire GigaSpaces XAP product.
 \\
@@ -33,10 +33,10 @@ When it comes to provisioning and monitoring large-scale systems, the ability to
 The Service Grid takes a [pre-defined application-required SLA|XAP71:Service Grid Processing Unit Container#ServiceGridProcessingUnitContainer-SLAPolicy], and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
 
 To clarify, here is an example of an application SLA:
-# Deploy 50 instances of each Processing Unit.
-# Make sure each processing unit has one backup.
-# Make sure primary and backups of the same Processing Unit are not deployed to the same VM.
-# Make sure primary and backup of the same Processing Unit are not deployed on the same physical server.
+1. Deploy 50 instances of each Processing Unit.
+2. Make sure each processing unit has one backup.
+3. Make sure primary and backups of the same Processing Unit are not deployed to the same VM.
+4. Make sure primary and backup of the same Processing Unit are not deployed on the same physical server.
 
 In this type of example, the Service Grid is responsible for making sure that one hundred Processing Units are deployed into the Service Grid cloud. Once the SLA is breached, (for example, if a machine which contains a Processing Unit fails), the Service Grid is responsible for re-provisioning all the Processing Units previously deployed on this machine into other Grid Service Containers (see definition below), in other available machines.
 
@@ -105,10 +105,10 @@ As an application server, GigaSpaces XAP provides integrated, memory-based runti
 
 h2. In-Memory Data Grid
 An In-Memory Data Grid (IMDG) is the way of storing data across a grid of memory nodes. This service provides the application with:
-# Data storage capabilities.
-# Data query capabilities - single object, multiple object and aggregated complex queries.
-# Caching semantics - the ability to retrieve information from within-memory data structures.
-# Ability to execute business logic within the data - similar to database storage procedure capabilities.
+1. Data storage capabilities.
+2. Data query capabilities - single object, multiple object and aggregated complex queries.
+3. Caching semantics - the ability to retrieve information from within-memory data structures.
+4. Ability to execute business logic within the data - similar to database storage procedure capabilities.
 
 It is important to note that the IMDG, although a memory-based service, is fully transactional, and follows the ACID (Atomicity, Concurrency, Isolation and Durability) transactional rules.
 
@@ -120,13 +120,13 @@ The main API to access the IMDG service, is the [{{ISpaceProxy}} interface|Writi
 h2. Messaging Grid
 
 The messaging grid aspect of the space, provides messaging capabilities such as:
-# Event-Driven capabilities - the ability to build event-driven processing applications. This model enables fast (in-memory-based) asynchronous modular processing, resulting in a very efficient and scalable processing paradigm.
-# Asynchronous production and consumption of information.
-# One-to-one, Many-to-One, One-to-Many and Many-to-Many relationships.
+1. Event-Driven capabilities - the ability to build event-driven processing applications. This model enables fast (in-memory-based) asynchronous modular processing, resulting in a very efficient and scalable processing paradigm.
+2. Asynchronous production and consumption of information.
+3. One-to-one, Many-to-One, One-to-Many and Many-to-Many relationships.
 {comment}TODO_NIV - Add link when available.{comment}
-# FIFO ordering.
+4. FIFO ordering.
 {comment}TODO_NIV - Add link when available.{comment}
-# Transactionality.
+5. Transactionality.
 
 The core APIs used for messaging are the [Notify Container|Notify Container Component] and [Polling Container|Polling Container Component] components. More information can be found in the [Programmer's Guide|Event Driven Architecture].
 

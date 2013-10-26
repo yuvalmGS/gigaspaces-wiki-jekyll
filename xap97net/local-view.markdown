@@ -38,9 +38,9 @@ IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views);
 
 h1. Local View Features
 The Local View is a *Read-Only* data structure. The following operations are not supported when using local view, and should be performed using a regular space proxy:
-* Any operation that creates or changes data ({{Write}}, {{WriteMultiple}}, {{Execute}}).
-* Any operation that removes data: ({{Clean}}, {{Clear}}, {{Take}}, {{TakeById}}, {{TakeMultiple}}, {{AsyncTake}}, etc.).
-* Any operation under a transaction.
+- Any operation that creates or changes data ({{Write}}, {{WriteMultiple}}, {{Execute}}).
+- Any operation that removes data: ({{Clean}}, {{Clear}}, {{Take}}, {{TakeById}}, {{TakeMultiple}}, {{AsyncTake}}, etc.).
+- Any operation under a transaction.
 
 h1. Memory Management
 Data is *never* evicted from the local view (the cache policy is hardwired to {{ALL_IN_CACHE}}). Therefore, specifying criteria that retrieves large amounts of data from the master space can cause the client to run out of memory.
@@ -55,14 +55,14 @@ h1. Synchronization
 In most cases, the local view uses replication to synchronize with the master space. Replication provides high reliability and stability.
 
 The local view reverts to notification-based synchronization, which is less reliable, when:
-* Using a view query on a type/class configured to be non-replicable.
-* Using a cluster with an Active-Active topology, or a non-clustered space.
+- Using a view query on a type/class configured to be non-replicable.
+- Using a cluster with an Active-Active topology, or a non-clustered space.
 
 h1. Synchronization Batch
 
 Changes in the server are grouped and sent to the client in batches. The following configuration settings control synchronization batching:
-* Batch Size: When the batch size reaches the configured value, the batch is sent to the client. The default is 1000 packets.
-* Batch timeout: When the oldest event in the batch reaches the configured value, the batch is sent to the client. The default is 100 milliseconds.
+- Batch Size: When the batch size reaches the configured value, the batch is sent to the client. The default is 1000 packets.
+- Batch timeout: When the oldest event in the batch reaches the configured value, the batch is sent to the client. The default is 100 milliseconds.
 
 Setting lower values for batch size and timeout reduces data staleness but increases network load, and vice versa.
 Batch settings can be configured when creating the Local View by defining a {{LocalViewConfig}} object and sending it as a variable in the {{GigaSpacesFactory.CreateLocalView}} function. For example:

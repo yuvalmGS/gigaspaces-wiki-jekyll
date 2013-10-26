@@ -23,20 +23,20 @@ The events time-line shows the deployment life cycle of all the processing units
 To filter by application, the events time line is also available in the Application tab. (see [Application View#Events time-line (per application)])
 
 h3. Life-cycle success events for each instance:
-* installation attempt: an attempt to provide a processing unit instance on an available GSC
-* instance added: a processing unit instance has successfully been instantiated on a GSC
-* instance uninstalled: a processing unit instance has been successfully removed
-* Container N/A: a processing unit instance is pending instantiation until an available GSC is discovered
+- installation attempt: an attempt to provide a processing unit instance on an available GSC
+- instance added: a processing unit instance has successfully been instantiated on a GSC
+- instance uninstalled: a processing unit instance has been successfully removed
+- Container N/A: a processing unit instance is pending instantiation until an available GSC is discovered
 
 h3. Life-cycle success events for processing unit:
-* installation succeeded: deployment of processing unit has been completed successfully (all instances instantiated)
-* installation uninstalled: undeployment of processing unit has been completed (all instances undeployed)
+- installation succeeded: deployment of processing unit has been completed successfully (all instances instantiated)
+- installation uninstalled: undeployment of processing unit has been completed (all instances undeployed)
 
 h3. Life-cycle failure events for each instance:
-* installation failed: processing unit instance has failed to instantiate
-* installation unresponsive: processing unit instance is unresponsive to "member-is-alive" attempts (suspecting failure)
-* installation crashed: processing unit instance unresponsiveness has timed-out (detected failure)
-* installation re-detected: processing unit instance was previously unresponsive but is now responsive.
+- installation failed: processing unit instance has failed to instantiate
+- installation unresponsive: processing unit instance is unresponsive to "member-is-alive" attempts (suspecting failure)
+- installation crashed: processing unit instance unresponsiveness has timed-out (detected failure)
+- installation re-detected: processing unit instance was previously unresponsive but is now responsive.
 
 !GRA:Images^events_timeline_in_dashboard.png|border=1!
 

@@ -37,10 +37,10 @@ or when using gs.xml via the {{fifo-support}} attribute on the {{class}} element
 
 The {{FifoSupport}} modes are:
 
-# *{{Off}}* - This class does not support FIFO. Attempting to execute FIFO operations will throw an exception.
-# *{{Operation}}* - FIFO support is enabled. An operation's FIFO behavior is determined by its modifiers or settings.
-# *{{All}}* - FIFO support is enabled. Any operation will be FIFO, overriding its other modifier or settings.
-# *{{Default}}* - FIFO support will be derived from the base class recursively.
+1. *{{Off}}* - This class does not support FIFO. Attempting to execute FIFO operations will throw an exception.
+2. *{{Operation}}* - FIFO support is enabled. An operation's FIFO behavior is determined by its modifiers or settings.
+3. *{{All}}* - FIFO support is enabled. Any operation will be FIFO, overriding its other modifier or settings.
+4. *{{Default}}* - FIFO support will be derived from the base class recursively.
 
 h1. Space Operations with FIFO
 
@@ -94,5 +94,5 @@ For more details see [FIFO grouping].
 h1. Limitations
 
 FIFO ordering is maintained per class per space. Therefore the following limitations should be observed:
-* Order across class inheritance is not supported - When executing a FIFO operation which involves entries of different classes, the result set is not guaranteed to be in FIFO order (however, each subset of a specific class will maintain order).
-* Order across cluster partitions is not supported - When executing a FIFO operation which involves more than one partition, the result set is not guaranteed to be in FIFO order (however, each subset of a specific partition will maintain order).
+- Order across class inheritance is not supported - When executing a FIFO operation which involves entries of different classes, the result set is not guaranteed to be in FIFO order (however, each subset of a specific class will maintain order).
+- Order across cluster partitions is not supported - When executing a FIFO operation which involves more than one partition, the result set is not guaranteed to be in FIFO order (however, each subset of a specific partition will maintain order).

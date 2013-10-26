@@ -33,8 +33,8 @@ IDataEventSession dataEventSession = proxy.CreateDataEventSession(eventSessionCo
 h2. Detecting an Event Listener Failure/Disconnection
 
 An event listener that is registered for an event might be disconnected for the following reasons:
-* The space that holds the listener registration template, is no longer available.
-* The proxy that receives the notifications can't handle the amount of incomming events, and creates a [slow consumer|XAP95:Slow Consumer] scenario, which causes the space to disconnect the listener.
+- The space that holds the listener registration template, is no longer available.
+- The proxy that receives the notifications can't handle the amount of incomming events, and creates a [slow consumer|XAP95:Slow Consumer] scenario, which causes the space to disconnect the listener.
 
 In order to detect and handle listener disconnection, the *auto renewal* mechanism can be used.
 
@@ -42,9 +42,9 @@ When adding a new listener, one of the parameters is the leaseTime. A leaseTime 
 
 The auto renewal idea is that the listener is added with a limited lease, for example 10 seconds, and the proxy automatically renews the lease before it expires. The client can register to the {{EventSessionConfig.AutoRenewalFailed}} event, and be notified if the auto renewal failed. This approach solves the following issues:
 
-* The client process terminated unexpectedly, and didn't unregister its listener. After the lease expires, the notify template is removed from the space, instead of staying alive forever.
-* If the space is no longer available, then the client is notified that it couldn't renew the listener lease.
-* If the client causes a [slow consumer|XAP95:Slow Consumer] scenario, and as a result its listener has been disconnected by the space, then the client is notified that it couldn't renew the listener lease, and it can reregister to the event.
+- The client process terminated unexpectedly, and didn't unregister its listener. After the lease expires, the notify template is removed from the space, instead of staying alive forever.
+- If the space is no longer available, then the client is notified that it couldn't renew the listener lease.
+- If the client causes a [slow consumer|XAP95:Slow Consumer] scenario, and as a result its listener has been disconnected by the space, then the client is notified that it couldn't renew the listener lease, and it can reregister to the event.
 
 *Configuring data event session with auto renewal*
 Auto renewal behavior is determined by the {{EventSessionConfig.AutoRenew}} property.

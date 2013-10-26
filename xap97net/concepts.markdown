@@ -28,9 +28,9 @@ h1. Overcoming Limitations of First-Generation Servers
 {toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
 GigaSpaces XAP and Space-Based Architecture overcome the major limitations found in first-generation application servers. These limitations can be divided into three main categories:
 
-* Complexity
-* Built on top of non-scalable architecture that creates bottlenecks
-* Not suited for many types of applications
+- Complexity
+- Built on top of non-scalable architecture that creates bottlenecks
+- Not suited for many types of applications
 
 GigaSpaces XAP provides a unique advantage in terms of scalability and performance, in addition to supporting many types of applications. The complexity is solved by providing a holistic view of the application requirements, and by not focusing only on a single aspect of the system.
 
@@ -51,12 +51,12 @@ In alternative tier-based architecture the need to use specific server implement
 h2. A Wider Range of Applications
 
 Prior generations of application servers were built for the web in the days when HTTP was purely request/response. This limited their usage in the cases of:
-* Event driven applications, where an event can be state changes or elapsed time.
-* Batch Processing and batched real-time processing
-* Parallel Processing of tasks, or more complex data-oriented tasks such as Map/Reduce.
-* Scalable stateful applications
-* Scalable AJAX web applications
-* Compute Grid
+- Event driven applications, where an event can be state changes or elapsed time.
+- Batch Processing and batched real-time processing
+- Parallel Processing of tasks, or more complex data-oriented tasks such as Map/Reduce.
+- Scalable stateful applications
+- Scalable AJAX web applications
+- Compute Grid
 
 GigaSpaces XAP supports web-enabled request/response applications, in addition to all the modern computational styles described above, and the combination of all of the above.
 {toc-zone}
@@ -82,15 +82,15 @@ h2. Space
 A Space is a logical in-memory service, which can store entries of information. {{Entry}} is a domain object. In .NET, an entry can be as simple as a [POCO|http://en.wikipedia.org/wiki/Plain_Old_CLR_Object].
 h2. Space - Basic Concepts
 The space is accessed via a programmatic interface which supports the following main verbs:
-* *Write* -- the semantics of writing a new entry of information into the space.
-* *Read* -- read the contents of a stored entry into the client side.
-* *Take* -- get the value from the space and delete its content.
-* *Notify* -- alert when the contents of an entry of interest have registered changes.
+- *Write* -- the semantics of writing a new entry of information into the space.
+- *Read* -- read the contents of a stored entry into the client side.
+- *Take* -- get the value from the space and delete its content.
+- *Notify* -- alert when the contents of an entry of interest have registered changes.
 
 The power of the space model is that the combination of the various basic APIs creates a very powerful set of interaction semantics:
-* *Write + Read* -- This combination creates caching semantics. As entries are stored within the application, memory storing and retrieving of entries is done rapidly, making space technology perfect for caching solutions.
-* *Write + Take* -- This combination is perfect for parallel processing paradigms. By having a single (or few) writer/s who write tasks into a shared space, and multiple consumers who take entries for execution from the shared location, it is very easy to create a parallel processing application. In fact, the Master/Worker pattern was invented originally in the context of Tuple Spaces, the origins behind JavaSpaces.
-* *Write/Take + Notify* -- This is a messaging paradigm. Clients are informed of information changes asynchronously once these occur.
+- *Write + Read* -- This combination creates caching semantics. As entries are stored within the application, memory storing and retrieving of entries is done rapidly, making space technology perfect for caching solutions.
+- *Write + Take* -- This combination is perfect for parallel processing paradigms. By having a single (or few) writer/s who write tasks into a shared space, and multiple consumers who take entries for execution from the shared location, it is very easy to create a parallel processing application. In fact, the Master/Worker pattern was invented originally in the context of Tuple Spaces, the origins behind JavaSpaces.
+- *Write/Take + Notify* -- This is a messaging paradigm. Clients are informed of information changes asynchronously once these occur.
 
 These capabilities are at the core of GigaSpaces XAP. This combination, plus the additional capabilities  of the basic APIs, allow synchronous and asynchronous applications to be built as the models for which first generation application servers apply. In addition, these models can be used in a wider range of applications, such as: real-time analytics, real-time batch processing, complex event-driven applications, caching scenarios, parallel processing and more.
 
@@ -106,9 +106,9 @@ h1. Clustering and Topologies
 The [space as defined previously|#Space - Concepts and Capabilities] is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a *cluster*, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
 
 The three main cluster topologies are:
-* [Replication|#Replication]
-* [Partitioned|#Partitioned]
-* [Resilient Partitioning|#Resilient Partitioning]: a combination of Replication and Partitioned.
+- [Replication|#Replication]
+- [Partitioned|#Partitioned]
+- [Resilient Partitioning|#Resilient Partitioning]: a combination of Replication and Partitioned.
 
 h2. Replication
 When two or more spaces share their entire content with one another, these spaces are fully replicated. When an entry is added into one of them, it is immediately replicated to its replica. Replication is useful to preserve high-availability of the data instances. In case one of the space instances dies, another one contains the entire information set.

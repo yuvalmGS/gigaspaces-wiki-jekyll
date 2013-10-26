@@ -105,9 +105,9 @@ h1. Starting the Spaces with NHibernate External Data Source
 
 This walkthrough demonstrates how to start the spaces with the NHibernate External Data Source from code, using a cluster in a [partitioned-sync2backup|Terminology - Data Grid Topologies] topology.
 Our cluster is 2,1 and a mirror. Therefore it consists of:
-* 2 partitioned primary spaces
-* 2 backup spaces, one for each partition
-* 1 mirror space
+- 2 partitioned primary spaces
+- 2 backup spaces, one for each partition
+- 1 mirror space
 
 h2. Starting a Cluster Member Space
 
@@ -149,15 +149,15 @@ ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace?mirror=tru
 (!) You can also construct your own NHibernate session factory in code, and pass it to the constructor of the {{NHibernateExternalDataSource}}. In this case, there is no need to use {{SpaceConfig.ExternalDataSourceConfig.CustomProperties}}.
 
 To start the other members of the cluster, simply change the [ClusterInfo|Processing Unit Container#ClusterInfo]:
-* Backup space of the first partition member
+- Backup space of the first partition member
 {code:java}
 spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 1, 1, 2, 1);
 {code}
-* Second primary space in the partitioned cluster
+- Second primary space in the partitioned cluster
 {code:java}
 spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 2, null, 2, 1);
 {code}
-* Backup space of the second partition member
+- Backup space of the second partition member
 {code:java}
 spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 2, 1, 2, 1);
 {code}

@@ -45,7 +45,7 @@ Filters are grouped by priorities, and activated by a specific operation.
 
 Filters with higher priorities are activated closer to the hook point. This means that:
 
-* Before filters (filters with lower priorities), will be activated first.
-* After filters (filters with higher priorities), will be activated first.
+- Before filters (filters with lower priorities), will be activated first.
+- After filters (filters with higher priorities), will be activated first.
 
 For example, if two filters are activated at BeforeWrite and AfterWrite operation, the filter with the higher priority is activated last at the BeforeWrite operation, and first at the AfterWrite operation. Doing that keeps this filter activation closer to the actual space operation, hence, closer to the hook point.

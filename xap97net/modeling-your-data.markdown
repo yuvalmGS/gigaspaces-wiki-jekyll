@@ -14,7 +14,7 @@ When moving from a centralized to a distributed data store, your data must be pa
 h3. Planning for Data Partitioning
 Two issues should be taken into consideration when planning the data partitioning:
 
-* *What information is stored in memory?*
+- *What information is stored in memory?*
 
 When planning the partitioning and how much memory to allocate for the application, the important factors to consider are how much the data is expected to grow over time, and how long the data is expected to available for. Estimated data storage needs should not be confused with the data structure, which is considered separately.
 
@@ -24,7 +24,7 @@ Use the following table to successfully predict the memory necessary to support 
 |Data Type A|100K|10%|2K|
 |Data Type B|200K|20%|4K|
 
-* *What are my application's use cases?*
+- *What are my application's use cases?*
 
 While you might be used to modeling your data on the logical relationship of your data items, a different approach should be adopted in the case of distributed data. The key is to avoid cross cluster relationships as much as possible. Cross cluster relationships lead to cross cluster queries and updates which are usually much less scalable and run slower than their local counterparts.
 
@@ -72,12 +72,12 @@ See the [SqlQuery] section for details about embedded entities query and indexin
 
 h2. Embedded vs. Non Embedded Relationships
 We have already seen that embedding objects is not ideal for distributed data storage systems. Other factors to consider when choosing a relationship type are:
-* Embedding means no direct access: When an entity is embedded within another entity you cannot apply CRUD operations to it directly. Instead, you need to get its root parent entity from the space via a regular query and then navigate down the object graph until you get the entity you need. This is not just a matter of convenience, it has also performance implications: whenever you want to perform CRUD operations on an embedded entity, you read the entire graph first and (if you need to also update it) you write the entire object graph back to the Space.
-* When an object is embedded, the client application receives all objects when fetching the parent object. Conversely, by using non-embedded relationships, the client application is responsible for loading all connected objects within the client application code.
+- Embedding means no direct access: When an entity is embedded within another entity you cannot apply CRUD operations to it directly. Instead, you need to get its root parent entity from the space via a regular query and then navigate down the object graph until you get the entity you need. This is not just a matter of convenience, it has also performance implications: whenever you want to perform CRUD operations on an embedded entity, you read the entire graph first and (if you need to also update it) you write the entire object graph back to the Space.
+- When an object is embedded, the client application receives all objects when fetching the parent object. Conversely, by using non-embedded relationships, the client application is responsible for loading all connected objects within the client application code.
 
 h2.  When Should Objects be Embedded?
-* Embed when an entity is meaningful only with the context of its containing object. For example, in the pet clinic application, a Pet has a meaning only when it has an Owner. A Pet in itself is meaningless without an Owner in this specific application. There is no business scenario for transferring a Pet from owner to owner or admitting a Pet to a Vet without the owner.
-* Embedding may sometimes mean duplicating your data. For example, if you want to reference a certain Visit from both the Pet and Vet class, you'll need to have duplicate Visit entries. So let's look into duplications:
-** Duplication means preferring scalability over footprint. The reason to duplicate is to avoid cluster wide transactions and in many cases it's the only way to partition your object in a scalable manner.
-** Duplication means higher memory consumption. While memory is considered a commodity and low cost today, duplication has a higher price to pay. You might have two space objects that contain the same data.
-** Duplication means more lenient consistency. When you add a Visit to a Pet and Vet for example, you need to update them both. You can do it in one (potentially distributed) transaction, or in two separate transactions, which will scale better but be less consistent. This may be sufficient for many types of applications (e.g. social networks), where losing a post, although undesired, does not incur significant damage. In contrast, this is not feasible for financial applications where every operation must be accounted for.
+- Embed when an entity is meaningful only with the context of its containing object. For example, in the pet clinic application, a Pet has a meaning only when it has an Owner. A Pet in itself is meaningless without an Owner in this specific application. There is no business scenario for transferring a Pet from owner to owner or admitting a Pet to a Vet without the owner.
+- Embedding may sometimes mean duplicating your data. For example, if you want to reference a certain Visit from both the Pet and Vet class, you'll need to have duplicate Visit entries. So let's look into duplications:
+    - Duplication means preferring scalability over footprint. The reason to duplicate is to avoid cluster wide transactions and in many cases it's the only way to partition your object in a scalable manner.
+    - Duplication means higher memory consumption. While memory is considered a commodity and low cost today, duplication has a higher price to pay. You might have two space objects that contain the same data.
+    - Duplication means more lenient consistency. When you add a Visit to a Pet and Vet for example, you need to update them both. You can do it in one (potentially distributed) transaction, or in two separate transactions, which will scale better but be less consistent. This may be sufficient for many types of applications (e.g. social networks), where losing a post, although undesired, does not incur significant damage. In contrast, this is not feasible for financial applications where every operation must be accounted for.

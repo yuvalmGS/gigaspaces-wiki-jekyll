@@ -42,16 +42,16 @@ This example includes a module that is deployed to the grid, and a domain model 
 The {{DataProcessor}} service takes the new {{Data}} objects, processes the raw data and writes them back to the space.
 
 The example solution is based on three projects:
-# Common - holds the {{Data}} object and the common interfaces
-# Feeder - holds the DataFeeder processing unit logic.
-# Processor - holds the DataProcessor processing unit logic and related classes.
+1. Common - holds the {{Data}} object and the common interfaces
+2. Feeder - holds the DataFeeder processing unit logic.
+3. Processor - holds the DataProcessor processing unit logic and related classes.
 
 !GRA:Images^dataexample architecture.jpg!
 
 h2. Application Workflow
 
-# The [DataFeeder|#datafeeder] writes non-processed {{Data}} objects into the space every second.
-# The [DataProcessor|#dataprocessor] takes non-processed {{Data}} objects, processes them, and writes the processed {{Data}} objects back to the space.
+1. The [DataFeeder|#datafeeder] writes non-processed {{Data}} objects into the space every second.
+2. The [DataProcessor|#dataprocessor] takes non-processed {{Data}} objects, processes them, and writes the processed {{Data}} objects back to the space.
 
 h1. Data Domain Model
 
@@ -92,8 +92,8 @@ public class Data
 {code}
 
 Note the attributes that are used in this object:
-* {{SpaceClass}} -- the marked object is written into a space.
-* {{SpaceRouting}} -- when using a partitioned cluster topolgy, {{Data}} objects are routed to the appropriate partitions according to the specified attribute, in this case {{type}}.
+- {{SpaceClass}} -- the marked object is written into a space.
+- {{SpaceRouting}} -- when using a partitioned cluster topolgy, {{Data}} objects are routed to the appropriate partitions according to the specified attribute, in this case {{type}}.
 
 Basically, every {{Data}} object is written to the space by the {{DataFeeder}} with the {{processed}} value set to {{false}}, which is later set to {{true}} by the {{DataProcessor}}.
 
@@ -328,9 +328,9 @@ h1. Deployment
 
 There are a few ways to deploy the Processing Units:
 
-* [Grid deployment|#grid]
-* [IDE integrated deployment|#ide]
-* [Standalone deployment|#standalone]
+- [Grid deployment|#grid]
+- [IDE integrated deployment|#ide]
+- [Standalone deployment|#standalone]
 
 {anchor:grid}
 h2. Grid Deployment
@@ -349,11 +349,11 @@ After you run the build script and the copy deployment files script, the two dir
 
 (!) Since the spaces are running inside the {{DataProcessor}}, the {{DataProcessor}} should be deployed first and the {{DataFeeder}} second. \\ \\
 
-# In the GigaSpaces Management Center, click on the tab named Deployments, Details, and then click the *Deploy new application* button (!GRA:Images^deploy button.jpg!).
+1. In the GigaSpaces Management Center, click on the tab named Deployments, Details, and then click the *Deploy new application* button (!GRA:Images^deploy button.jpg!).
 {indent}!GRA:Images^deploy picture.jpg!{indent} \\ \\
-# Now, all you need to do is type the name of the Processing Unit (identical to the name of the folder that is now in the {{deploy}} directory) in the {{Processing Unit Name}} field. Since there's an existing sla.xml with specific cluster topology, there's no need to specify the cluster topology at deploy time.
-# Now in order to deploy the {{DataFeeder}} Procesing Unit, you repeat the same processes but type {{DataFeeder}} in the {{Processing Unit Name}} field. There is no need to select a {{Cluster Schema}} or {{Number Of Instances}}, since the feeder connects to the cluster and doesn't create spaces. However, you can deploy more than one {{DataFeeder}} by changing the {{Number Of Instances}} field. \\ \\
-# Now look at the deployed processing units view and see the events firing.
+2. Now, all you need to do is type the name of the Processing Unit (identical to the name of the folder that is now in the {{deploy}} directory) in the {{Processing Unit Name}} field. Since there's an existing sla.xml with specific cluster topology, there's no need to specify the cluster topology at deploy time.
+3. Now in order to deploy the {{DataFeeder}} Procesing Unit, you repeat the same processes but type {{DataFeeder}} in the {{Processing Unit Name}} field. There is no need to select a {{Cluster Schema}} or {{Number Of Instances}}, since the feeder connects to the cluster and doesn't create spaces. However, you can deploy more than one {{DataFeeder}} by changing the {{Number Of Instances}} field. \\ \\
+4. Now look at the deployed processing units view and see the events firing.
 
 Another way to deploy the processing units will be to use GigaSpaces Command Line Interface, in this case we do not require using GigaSpaces Management Center, we deploy it in the following manner:
 

@@ -305,18 +305,18 @@ The GigaSpace interface provides simple way to perform bulk operations. You may 
 (!) To remove batch of objects without returning these back into the client use {{GigaSpace.clear(SQLQuery)}};
 
 Here are few important considerations when using the batch operations:
-* The {{readMultiple}} and {{takeMultiple}} operations boost the performance, since they perform multiple operations using one call. These methods returns the matching results in one result object back to the client. This allows the client and server to utilize the network bandwidth in an efficient manner. In some cases, these batch operations can be up to 10 times faster than multiple single based operations.
-* The {{readMultiple}} and {{takeMultiple}} operations should be handled with care, since they can return a large data set (potentially all the space data). This might cause an out of memory error in the space and client process. You should use the [GSIterator|#Space Iterator] to return the result in batches (paging) in such cases.
-* Destructive batch operations ({{takeMultiple}} , {{writeMultiple}} , {{updateMultiple}}) should be performed with transactions - this allows the client to roll back the space to its initial state prior the operation was started, in case of a failure.
-* When calling {{writeMultiple}} or {{updateMultiple}}, make sure {{null}} values are not part of the passed array.
-* When using {{writeMultiple}}, you should verify that duplicated entries (with the same ID) do not appear as part of the passed array, since the identity of the object is determined based on its {{ID}} and not based on its reference. This is extremely important with an embedded space, since {{writeMultiple}} injects the ID value into the object after the write operation (when autogenerate=false).
-* The {{readMultiple}} and {{takeMultiple}} operations *do not support timeout* operations. The simple way to achieve this is by calling the {{read}} operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
-* Exception handling - batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
-** {JavaDocOS:org/openspaces/core/WriteMultiplePartialFailureException|org.openspaces.core.WriteMultiplePartialFailureException}
-** {JavaDocOS:org/openspaces/core/WriteMultipleException|org.openspaces.core.WriteMultipleException}
-** {JavaDocOS:org/openspaces/core/ReadMultipleException|org.openspaces.core.ReadMultipleException}
-** {JavaDocOS:org/openspaces/core/TakeMultipleException|org.openspaces.core.TakeMultipleException}
-** {JavaDocOS:org/openspaces/core/ClearException|org.openspaces.core.ClearException}
+- The {{readMultiple}} and {{takeMultiple}} operations boost the performance, since they perform multiple operations using one call. These methods returns the matching results in one result object back to the client. This allows the client and server to utilize the network bandwidth in an efficient manner. In some cases, these batch operations can be up to 10 times faster than multiple single based operations.
+- The {{readMultiple}} and {{takeMultiple}} operations should be handled with care, since they can return a large data set (potentially all the space data). This might cause an out of memory error in the space and client process. You should use the [GSIterator|#Space Iterator] to return the result in batches (paging) in such cases.
+- Destructive batch operations ({{takeMultiple}} , {{writeMultiple}} , {{updateMultiple}}) should be performed with transactions - this allows the client to roll back the space to its initial state prior the operation was started, in case of a failure.
+- When calling {{writeMultiple}} or {{updateMultiple}}, make sure {{null}} values are not part of the passed array.
+- When using {{writeMultiple}}, you should verify that duplicated entries (with the same ID) do not appear as part of the passed array, since the identity of the object is determined based on its {{ID}} and not based on its reference. This is extremely important with an embedded space, since {{writeMultiple}} injects the ID value into the object after the write operation (when autogenerate=false).
+- The {{readMultiple}} and {{takeMultiple}} operations *do not support timeout* operations. The simple way to achieve this is by calling the {{read}} operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
+- Exception handling - batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
+    - {JavaDocOS:org/openspaces/core/WriteMultiplePartialFailureException|org.openspaces.core.WriteMultiplePartialFailureException}
+    - {JavaDocOS:org/openspaces/core/WriteMultipleException|org.openspaces.core.WriteMultipleException}
+    - {JavaDocOS:org/openspaces/core/ReadMultipleException|org.openspaces.core.ReadMultipleException}
+    - {JavaDocOS:org/openspaces/core/TakeMultipleException|org.openspaces.core.TakeMultipleException}
+    - {JavaDocOS:org/openspaces/core/ClearException|org.openspaces.core.ClearException}
 
 h1. Asynchronous Operations
 
@@ -539,8 +539,8 @@ A default implementation of the exception translator is automatically used, whic
 
 h2. Exception handling for Batch Operations
 Batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
-** {javadocos:org/openspaces/core/WriteMultiplePartialFailureException|org.openspaces.core.WriteMultiplePartialFailureException}
-** {javadocos:org/openspaces/core/WriteMultipleException|org.openspaces.core.WriteMultipleException}
-** {javadocos:org/openspaces/core/ReadMultipleException|org.openspaces.core.ReadMultipleException}
-** {javadocos:org/openspaces/core/TakeMultipleException|org.openspaces.core.TakeMultipleException}
-** {javadocos:org/openspaces/core/ClearException|org.openspaces.core.ClearException}
+    - {javadocos:org/openspaces/core/WriteMultiplePartialFailureException|org.openspaces.core.WriteMultiplePartialFailureException}
+    - {javadocos:org/openspaces/core/WriteMultipleException|org.openspaces.core.WriteMultipleException}
+    - {javadocos:org/openspaces/core/ReadMultipleException|org.openspaces.core.ReadMultipleException}
+    - {javadocos:org/openspaces/core/TakeMultipleException|org.openspaces.core.TakeMultipleException}
+    - {javadocos:org/openspaces/core/ClearException|org.openspaces.core.ClearException}

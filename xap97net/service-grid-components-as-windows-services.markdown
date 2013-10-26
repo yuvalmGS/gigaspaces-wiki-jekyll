@@ -15,10 +15,10 @@ In XAP.NET there are two binaries for each Grid Service component - a console ap
 h1. Benefits of Windows Services
 
 Windows Services have several advantages over standard console applications. Most notable are:
-* A service can be configured to start automatically when the machine boots, without any user logging in.
-* A service can be configured to run under predefined credentials, e.g. SYSTEM.
-* A service has no console/GUI which clutters up the desktop for no reason.
-* Windows provides standard management console, command line and API to manage services, which makes managing services a common task for system administrators.
+- A service can be configured to start automatically when the machine boots, without any user logging in.
+- A service can be configured to run under predefined credentials, e.g. SYSTEM.
+- A service has no console/GUI which clutters up the desktop for no reason.
+- Windows provides standard management console, command line and API to manage services, which makes managing services a common task for system administrators.
 
 These features can come in handy on servers running Service Grid: For example, a Grid Service Manager and Grid Service Container can be automatically started when the machine restarts, then processing units will be automatically deployed to the service grid using the Command Line Interface service.
 
@@ -28,10 +28,10 @@ h1. GigaSpaces Windows Services Manager
 
 The Windows Services management console lets users start/stop installed services and modify their properties, but does not support installing new services. This task is can be done via a command line, or during installation of an application.
 GigaSpaces XAP.NET provides a supplementary tool called *Windows Services Manager* which simplifies common administration tasks:
-* Install/uninstall instances of GigaSpaces Agent, GSM, GSC, Distributed Transaction Manager and CLI as you please.
-* Perform common operations directly from the tool, no need to switch to the Windows Console (e.g. Start, Stop, change startup type).
-* Side-by-side support for GigaSpaces Installations of different versions on the same machine.
-* Automatically creates a folder for new service instances, with an XML configuration and log files.
+- Install/uninstall instances of GigaSpaces Agent, GSM, GSC, Distributed Transaction Manager and CLI as you please.
+- Perform common operations directly from the tool, no need to switch to the Windows Console (e.g. Start, Stop, change startup type).
+- Side-by-side support for GigaSpaces Installations of different versions on the same machine.
+- Automatically creates a folder for new service instances, with an XML configuration and log files.
 
 !GRA:Images2^ServicesManager.jpg!
 The tool can be started from Start->Programs->GigaSpaces XAP.NET->Tools->Windows Services Manager.

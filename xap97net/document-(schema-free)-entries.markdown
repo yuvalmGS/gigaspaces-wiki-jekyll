@@ -29,14 +29,14 @@ h1. Type Definition
 Before we start writing and reading {{SpaceDocument}} from the space, we need an *initial* schema definition of the document type.
 
 For example, suppose we're implementing an electronic commerce system, and decided we need a type called *Product* with the following properties:
-* CatalogNumber : String
-* Category : String
-* Name : String
-* Description : String
-* Price : float
-* Features : Nested document (for example: Manufacturer=Acme, RequiresAssembly=false, weight=7.5)
-* Tags : Collection of Strings
-* Reviews : Collection of nested documents
+- CatalogNumber : String
+- Category : String
+- Name : String
+- Description : String
+- Price : float
+- Features : Nested document (for example: Manufacturer=Acme, RequiresAssembly=false, weight=7.5)
+- Tags : Collection of Strings
+- Reviews : Collection of nested documents
 
 We also decide that *CatalogNumber* will be a primary key, partitioning will be done by the *Category* property, and the properties *Name*, *Price* should be indexed since they participate in most of the queries executed. Remember, the type definition is for metadata only, so we're not concerned about *Description* and other such fields in the type definition, because Description isn't used for indexing or any other metadata.
 

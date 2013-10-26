@@ -15,9 +15,9 @@ h1. Overview
 Multiple site replication is the ability to replicate state between different deployed spaces, where each space can be also physically located in a different geographical location (also termed a different deployment site).
 
 Multiple site replication is a very common deployment topology in the following scenarios:
-* *When planning for disaster recovery* - In such cases, each of the deployment sites is located far from the other sites (e.g. a different continent so that if one site is completely destroyed or decommissioned other sites are not affected and can continue to operate normally.)
-* *For failover purposes* - When one site acts as a failover over target for another.
-* *For maintaining data locality* - for each site for performance and latency reasons. For example a global trading application that operates in multiple stock exchanges across the globe need fast access to *Global Reference Data*, or an application that's deployed on multiple data centers in the cloud with a need to access the *Users Profile Data* very quickly.
+- *When planning for disaster recovery* - In such cases, each of the deployment sites is located far from the other sites (e.g. a different continent so that if one site is completely destroyed or decommissioned other sites are not affected and can continue to operate normally.)
+- *For failover purposes* - When one site acts as a failover over target for another.
+- *For maintaining data locality* - for each site for performance and latency reasons. For example a global trading application that operates in multiple stock exchanges across the globe need fast access to *Global Reference Data*, or an application that's deployed on multiple data centers in the cloud with a need to access the *Users Profile Data* very quickly.
 
 !GRA:Images2^wan_use_cases.jpg!
 
@@ -34,8 +34,8 @@ The GigaSpaces WAN Gateway features the following:
 
 h1. Supported Toplogies
 This page will demonstrate two sample multi-site replication topologies. These are not the only supported topologies. In fact, the permutations of topologies are quite extensive, and we've chosen to demonstrate two of the more common topologies which can also serve as a basis for other topologies as required by the user:
-* Multi-master with two sites, where each site is active and updates its subset of the data.
-* Master-slave, where only one site actually updates the data while the rest either serve as a backup or use it in read only mode.
+- Multi-master with two sites, where each site is active and updates its subset of the data.
+- Master-slave, where only one site actually updates the data while the rest either serve as a backup or use it in read only mode.
 
 For both of the above topologies, replication is done in in a similar way: Each space is replicating the relevant data to its target space(s) via a local gateway which routes the data to the gateway of the target space(s) and from there to the target space. The data is being replicated asynchronously in a reliable mode, which means that even if a primary space instance fails on the source site, the backup space instance which replaces it will immediately take control and replicate the missing data along with new data that has been  generated on the newly elected primary space instance. This is very similar to the [Mirror Service|XAP95:Asynchronous Persistency with the Mirror] replication scheme. The gateway is discussed in full below.
 

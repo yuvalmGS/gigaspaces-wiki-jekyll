@@ -51,16 +51,16 @@ The Space is an In-Memory Data Grid. As such its capacity is limited to the sum 
 In many cases, you have to deal with larger portions of data, or load a subset of a larger data set, which resides in an external data source such as a relational database, into the space.
 The space supports many [persistency options|Persistency], allowing you to easily configure how it interacts with an external relational database, or a more exotic source of data.
 It supports the following options, from which you can choose:
-* Cache warm-up: load data from an external data source on startup.
-* Cache read through: read data from the external data source when it is not found in the space.
-* Cache write through: write data to the external data source when it is written to the space.
-* Cache write behind (also known as asynchronous persistency): write data to the external data source asynchronously (yet reliably) to avoid the performance penalty.
+- Cache warm-up: load data from an external data source on startup.
+- Cache read through: read data from the external data source when it is not found in the space.
+- Cache write through: write data to the external data source when it is written to the space.
+- Cache write behind (also known as asynchronous persistency): write data to the external data source asynchronously (yet reliably) to avoid the performance penalty.
 
 h3. Eviction Policy and Memory Management
 Since the Space is memory-based, it is essential to verify that it does not overflow and crash. The Space's memory can be managed and a memory overflow prevented by:
 
-* *Eviction policy*. The space supports two eviction policies: {{ALL_IN_CACHE}} and {{LRU}} (Least Recently Used). With {{LRU}}, the Space starts to evict the least used entries when it becomes full. The {{ALL_IN_CACHE}} policy never evicts anything from the Space.
-* *Memory manager*. The memory manager allows you to define numerous thresholds that control when entries are evicted (in case you use {{LRU}}), or when the space simply blocks clients from adding data to it.
+- *Eviction policy*. The space supports two eviction policies: {{ALL_IN_CACHE}} and {{LRU}} (Least Recently Used). With {{LRU}}, the Space starts to evict the least used entries when it becomes full. The {{ALL_IN_CACHE}} policy never evicts anything from the Space.
+- *Memory manager*. The memory manager allows you to define numerous thresholds that control when entries are evicted (in case you use {{LRU}}), or when the space simply blocks clients from adding data to it.
 Combined, these two facilities enable better control of your environment and ensure that the memory of the Space instances in your cluster do not overflow.
 
 h3. Reactive Programming
@@ -75,9 +75,9 @@ GigaSpaces and its Space-Based-Architecture embrace the [reactive programming|ht
 
 h1. APIs to Access the Space
 The Space supports a number of APIs to allow for maximum flexibility to Space clients when accessing the Space:
-* The core [Space API|The ISpaceProxy Interface], which is the most recommended, allows you to read objects from the Space based on various criteria, write objects to it, remove objects from it and get notified about changes made to objects. This API supports transactions.
+- The core [Space API|The ISpaceProxy Interface], which is the most recommended, allows you to read objects from the Space based on various criteria, write objects to it, remove objects from it and get notified about changes made to objects. This API supports transactions.
 {info:title=Accessing the Space from Other Languages}The code space API is also supported in [Java|XAP95:In Memory Data Grid] and [C++|XAP CPP]. This allows clients to access the space via these languages. It also supports [interoperability|Platform Interoperability in GigaSpaces] between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java{info}
-* The [Document API|Document (Schema-Free) API] allows you to develop your application in a schema-less manner. Using map-like objects, you can add attributes to data types in runtime.
+- The [Document API|Document (Schema-Free) API] allows you to develop your application in a schema-less manner. Using map-like objects, you can add attributes to data types in runtime.
 
 h1. Services on Top of the Space
 Building on top of the core API, the Space also provides [higher level services|Services on Top of the Data Grid] onto the application. These services, along with the space's basic capabilities, provide the full stack of middleware features that you can build your application with.
@@ -91,8 +91,8 @@ The basic unit of scalability in SBA is the [processing unit|Processing Unit Con
 
 h1. What's Next
 It is recommended that you read the following sections next:
-* [Space Topologies]
-* [Deploying and Interacting with the Space]
+- [Space Topologies]
+- [Deploying and Interacting with the Space]
 
 {section-page:na}
 

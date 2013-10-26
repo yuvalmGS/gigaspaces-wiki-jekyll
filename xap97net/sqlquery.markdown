@@ -38,14 +38,14 @@ This time instead of specifying the values directly in the expression we've used
 
 h1. Supported SQL Features
 GigaSpaces SqlQuery supports the following:
-* {{AND}} / {{OR}} operators to combine two or more conditions.
-* All basic logical operations to create conditions: {{=, <>, <,>, >=, <=, like, NOT like, is null, is NOT null, IN}}.
-* {{BETWEEN}} (starting 8.0.1)
-* {{ORDER BY (ASC | DESC)}} for multiple POJO properties. Supported only by readMultiple. {{ORDER BY}} supports also nested object fields.
-* {{GROUP BY}} - performs DISTINCT on the POJO properties. Supported only by readMultiple. {{GROUP BY}} supports also nested object fields.
-* {{sysdate}} - current system date and time.
-* {{rownum}} - limits the number of rows to select.
-* Sub queries.
+- {{AND}} / {{OR}} operators to combine two or more conditions.
+- All basic logical operations to create conditions: {{=, <>, <,>, >=, <=, like, NOT like, is null, is NOT null, IN}}.
+- {{BETWEEN}} (starting 8.0.1)
+- {{ORDER BY (ASC | DESC)}} for multiple POJO properties. Supported only by readMultiple. {{ORDER BY}} supports also nested object fields.
+- {{GROUP BY}} - performs DISTINCT on the POJO properties. Supported only by readMultiple. {{GROUP BY}} supports also nested object fields.
+- {{sysdate}} - current system date and time.
+- {{rownum}} - limits the number of rows to select.
+- Sub queries.
 
 h1. Indexing
 
@@ -54,8 +54,8 @@ It is highly recommended to use indexes on relevant properties to increase perfo
 h1. Blocking Operations
 
 Blocking operations (i.e. {{Read}} or {{Take}} with {{timeout}} greater than {{0}}) are supported with the following restrictions:
-* Blocking operations on a partitioned space require a routing value (broadcast is not supported). For more information see [#Routing].
-* Blocking operations on complex queries are not supported. For more information see [Simple Queries|#SimpleQueries] definition.
+- Blocking operations on a partitioned space require a routing value (broadcast is not supported). For more information see [#Routing].
+- Blocking operations on complex queries are not supported. For more information see [Simple Queries|#SimpleQueries] definition.
 
 {code:java}
 long timeout = 100000;
@@ -106,31 +106,31 @@ h3. Simple vs. Complex Queries
 Most space operations and features support any SQL query, but some support only *simple* queries and not *complex* ones.
 
 A query is considered complex if it contains one or more of the following:
-* {{NOT LIKE}}
-* {{GROUP BY}}
-* {{ORDER BY}}
-* Subqueries
-* {{OR}} (before 8.0.1)
+- {{NOT LIKE}}
+- {{GROUP BY}}
+- {{ORDER BY}}
+- Subqueries
+- {{OR}} (before 8.0.1)
 
 The following features support only simple SQL queries
-* Snapshot
-* Blocking operations
-* Notifications
-* SpaceIterator
+- Snapshot
+- Blocking operations
+- Notifications
+- SpaceIterator
 
 h3. Unsupported SQL Features
 GigaSpaces SqlQuery *does not* support the following:
-* Aggregate functions: COUNT, MAX, MIN, SUM, AVG.
-* Multiple tables select.
-* {{DISTINCT}}
-* The SQL statements: HAVING, VIEW, TRIGGERS, EXISTS, BETWEEN, NOT, CREATE USER, GRANT, REVOKE, SET PASSWORD, CONNECT USER, ON.
-* Constraints: NOT NULL, IDENTITY, UNIQUE, PRIMARY KEY, Foreign Key/REFERENCES, NO ACTION, CASCADE, SET NULL, SET DEFAULT, CHECK.
-* Set operations: Union, Minus, Union All.
-* Advanced Aggregate Functions: STDEV, STDEVP, VAR, VARP, FIRST, LAST.
-* Mathematical expressions.
-* {{LEFT OUTER JOIN}}
-* {{RIGHT OUTER JOIN}}
-* {{INNER JOIN}}
+- Aggregate functions: COUNT, MAX, MIN, SUM, AVG.
+- Multiple tables select.
+- {{DISTINCT}}
+- The SQL statements: HAVING, VIEW, TRIGGERS, EXISTS, BETWEEN, NOT, CREATE USER, GRANT, REVOKE, SET PASSWORD, CONNECT USER, ON.
+- Constraints: NOT NULL, IDENTITY, UNIQUE, PRIMARY KEY, Foreign Key/REFERENCES, NO ACTION, CASCADE, SET NULL, SET DEFAULT, CHECK.
+- Set operations: Union, Minus, Union All.
+- Advanced Aggregate Functions: STDEV, STDEVP, VAR, VARP, FIRST, LAST.
+- Mathematical expressions.
+- {{LEFT OUTER JOIN}}
+- {{RIGHT OUTER JOIN}}
+- {{INNER JOIN}}
 
 h3. Reserved Words
 The following are reserved keywords in the GigaSpaces SQL syntax:

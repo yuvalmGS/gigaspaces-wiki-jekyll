@@ -290,21 +290,21 @@ public class FeedProcessorTpMonitor : IServiceMonitors
 h1. Running the Example
 
 The example consists of the following parts:
-* Data grid
-* Feeder
-* Processor
-* Scaling Agent
+- Data grid
+- Feeder
+- Processor
+- Scaling Agent
 
 The Feeder is a Windows application that feeds the data grid with new feeds at a configurable rate. The Processor is a deployable processing unit that waits for new feeds to be fed into the data grid, in order to "process" them.
 The Scaling Agent monitors the deployed Processors and scales them up on demand. It can be run either as a deployable processing unit, or as a standalone console application. When it is deployed as a processing unit, it is automatically reliable and self healing, like any processing unit that is managed by the service grid.
 
 To simplify the deployment of the examples, there are several scripts in the example directory.
-# First start a grid service agent by running {{<XAP.NET installation>\Bin\Gs-Agent.exe}}.
-# It is then recommended to run the GigaSpaces Management center to monitor the entire service grid state.
-# After the service grid agent is loaded, in order to deploy the data grid, run {{<XAP.NET installation>\Examples\ScalingAgent\DeploySpace.bat}}.
-# Now run {{<XAP.NET installation>\Examples\ScalingAgent\DeployProcessor.bat}} to deploy the processor.
-# The next step is to deploy the Scaling Agent. This can be done by running {{<XAP.NET installation>\Examples\ScalingAgent\DeployAgent.bat}}, which deploys the agent as a processing unit, or by running {{<XAP.NET installation>\Examples\ScalingAgent\RunStandaloneAgent.bat}}, which runs the agent as a standalone application.
-# At this stage, the entire application is deployed and waiting for new feeds to be processed. Start a feeder by executing {{<XAP.NET installation>\Examples\ScalingAgent\RunFeeder.bat}}. Use the feeder user interface to specify the rate of feeding, in order to simulate different loads on the cluster.
+1. First start a grid service agent by running {{<XAP.NET installation>\Bin\Gs-Agent.exe}}.
+2. It is then recommended to run the GigaSpaces Management center to monitor the entire service grid state.
+3. After the service grid agent is loaded, in order to deploy the data grid, run {{<XAP.NET installation>\Examples\ScalingAgent\DeploySpace.bat}}.
+4. Now run {{<XAP.NET installation>\Examples\ScalingAgent\DeployProcessor.bat}} to deploy the processor.
+5. The next step is to deploy the Scaling Agent. This can be done by running {{<XAP.NET installation>\Examples\ScalingAgent\DeployAgent.bat}}, which deploys the agent as a processing unit, or by running {{<XAP.NET installation>\Examples\ScalingAgent\RunStandaloneAgent.bat}}, which runs the agent as a standalone application.
+6. At this stage, the entire application is deployed and waiting for new feeds to be processed. Start a feeder by executing {{<XAP.NET installation>\Examples\ScalingAgent\RunFeeder.bat}}. Use the feeder user interface to specify the rate of feeding, in order to simulate different loads on the cluster.
 
 h2. Feeder Application
 {indent}!GRA:Images^ScalingAgentFeeder.jpg!{indent}

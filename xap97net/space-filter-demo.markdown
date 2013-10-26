@@ -15,9 +15,9 @@ The example can be found at {{<GigaSpaces root>\Examples\SpaceFilter}}
 
 This demo shows three equivalent space filter implementations, and a console application that runs the same demo sequence three times, once per filter implementation:
 
-* [MessageCensorshipAttributeFilter|#1].
-* [MessageCensorshipMethodNamesFilter|#2].
-* [MessageCensorshipSpaceFilter|#3].
+- [MessageCensorshipAttributeFilter|#1].
+- [MessageCensorshipMethodNamesFilter|#2].
+- [MessageCensorshipSpaceFilter|#3].
 
 
 

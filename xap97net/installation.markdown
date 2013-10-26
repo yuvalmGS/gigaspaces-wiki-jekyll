@@ -21,10 +21,10 @@ Once you accept the licence agreement, you will be asked to choose a setup type.
 h2. Other Installation Options
 
 GigaSpaces XAP.NET offers more installation scenarios and customizations. For example:
-* Command-line installation.
-* Packaging XAP.NET in another installation package.
-* Side-by-side installations.
-* Using a different jvm.
+- Command-line installation.
+- Packaging XAP.NET in another installation package.
+- Side-by-side installations.
+- Using a different jvm.
 
 For more information see [Advanced Installation Scenarios|Advanced Installation Scenarios].
 

@@ -80,8 +80,8 @@ Remote:
 You can control the benchmark by changing parameters in the configuration file.
 
 The configuration file includes the following information:
-*  *<assembly>* elements. Each element defines an assembly that needs to be loaded (for custom objects).
-*  *<Benchmark>* elements. Each element defines a benchmark that will be included in the benchmark run.
+-  *<assembly>* elements. Each element defines an assembly that needs to be loaded (for custom objects).
+-  *<Benchmark>* elements. Each element defines a benchmark that will be included in the benchmark run.
 
 The Benchmark elements contain the following parameters:
 - *type* \- Define the benchmark type name. The type structure is:

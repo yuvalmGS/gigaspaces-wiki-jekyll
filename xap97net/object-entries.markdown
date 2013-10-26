@@ -21,9 +21,9 @@ By default, all public members (fields and properties) in a class are included i
 
 h2. Customizing a Specific Class
 To customize a specific class, apply a {{\[SpaceClass\]}} attribute on the class, and use {{IncludeProperties}} and/or {{IncludeFields}} to specify which members should be included in the entry. Both {{IncludeProperties}} and {{IncludeFields}} are an {{IncludeMembers}} enumeration, which can be set to one of the following:
-* {{IncludeMembers.All}} \-- all members are included.
-* {{IncludeMembers.Public}} \-- public members are included, and non-public members are excluded.
-* {{IncludeMembers.None}} \-- all members are excluded.
+- {{IncludeMembers.All}} \-- all members are included.
+- {{IncludeMembers.Public}} \-- public members are included, and non-public members are excluded.
+- {{IncludeMembers.None}} \-- all members are excluded.
 
 h4. Example 1.1 -- The default behaviour
 {code}
@@ -58,8 +58,8 @@ Starting with .NET 2.0, properties can have separate accessors for getters and s
 
 {info:title=Read-Only Properties}
 Read-only properties (getter, without setter), are included in the entry, but when the object is deserialized, the value is not restored, since there's no setter. This enables the space to be queried using such properties. There are two common scenarios for read-only properties:
-* Calculated value -- the property returns a calculated value based on other fields/properties. This isn't a problem, since no data is lost due to the 'missing' setter.
-* Access protection -- the class designer wishes to protect the property from outside changes. This is likely to be a problem, since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property, and including the field (as explained next).{info}
+- Calculated value -- the property returns a calculated value based on other fields/properties. This isn't a problem, since no data is lost due to the 'missing' setter.
+- Access protection -- the class designer wishes to protect the property from outside changes. This is likely to be a problem, since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property, and including the field (as explained next).{info}
 
 h1. Indexing
 
@@ -123,11 +123,11 @@ public String MessageID {...}
 {note} The rest of this page is still under construction. {note}
 
 
-* Queries performed with the UID are much faster, since the query mechanism can reduce the result set efficiently.
+- Queries performed with the UID are much faster, since the query mechanism can reduce the result set efficiently.
 
 There are two modes of SpaceID that are supported:
-* If you want the space to automatically generate the UID for you, specify {{\[SpaceID(AutoGenerate=true)\]}} on the property which should hold the generated ID. A SpaceID field that has AutoGenerate=true specified, must be of type {{string}}.
-* If you want the space to generate the UID using a specific property's value, specify {{\[SpaceID(AutoGenerate=false)\]}} on that property.
+- If you want the space to automatically generate the UID for you, specify {{\[SpaceID(AutoGenerate=true)\]}} on the property which should hold the generated ID. A SpaceID field that has AutoGenerate=true specified, must be of type {{string}}.
+- If you want the space to generate the UID using a specific property's value, specify {{\[SpaceID(AutoGenerate=false)\]}} on that property.
 
 The default is {{AutoGenerate=false}}. Note that only one property in a class can be marked as a SpaceID property.
 
@@ -146,10 +146,10 @@ While this generic approach solves simple scenarios easily, in some cases it is 
 h1. Routing
 
 When working with a clustered space, one of the properties in a class is used to determine the routing behaviour of that class within the cluster (i.e. how instances of that class are partitioned across the cluster's nodes). The routing property is determined according to the following rules:
-# The property marked with {{\[SpaceRouting\]}} attribute is used.
-# Otherwise, the property marked with {{\[SpaceID\]}} is used.
-# Otherwise, the first indexed property in alphabetical order is used.
-# Otherwise, the first property in alphabetical order is used.
+1. The property marked with {{\[SpaceRouting\]}} attribute is used.
+2. Otherwise, the property marked with {{\[SpaceID\]}} is used.
+3. Otherwise, the first indexed property in alphabetical order is used.
+4. Otherwise, the first property in alphabetical order is used.
 
 Note that only one property in a class can be marked as a routing property.{tip:title=Declare the routing property explicitly}
 It's highly recommended to explicitly declare which property is the routing property, and not rely on rules 2 and onward. Relying on those rules can lead to confusing problems (e.g. the SpaceID is changed, or an index is added to a property, etc.). Explicitly declaring the routing property makes your code clearer and less error-prone. {tip}

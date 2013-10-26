@@ -17,9 +17,9 @@ h1. Application Description
 Let's take a trading order management application as an example, to understand Space-Based Architecture and its application to GigaSpaces XAP. It is a classic case of an application with highly demanding scalability and latency requirements, in a stateful environment.
 
 A trading application usually consists of a data feed i.e. trade requests, which flow into the system in a standard financial format (e.g. FIX). These feeds need to be matched, with very low latency, against other trades that exist in the market. The business logic typically includes the following steps:
-# Parsing and validation (transforming text format into domain objects, and validating that they conform to certain rules).
-# Matching (querying the data store to find a matching trade, and executing the deal).
-# Routing (routing details of the deal to interested parties).
+1. Parsing and validation (transforming text format into domain objects, and validating that they conform to certain rules).
+2. Matching (querying the data store to find a matching trade, and executing the deal).
+3. Routing (routing details of the deal to interested parties).
 
 The application needs to provide a 100% guarantee that once a transaction enters the system, it will not be lost. It also needs to keep end-to-end latency (latency from the time the system receives a trade, to the time the business process ends) to a fraction of a millisecond, and ensure that this low latency is not affected by future scaling.
 
@@ -43,9 +43,9 @@ The following diagram outlines a typical architecture of an application built wi
 h3. Processing Unit
 
 At the heart of the application is the processing unit. A processing unit represents the unit of scale and failover of an application. It is built as a self-sufficient unit that can contain all the relevant components required to process a user's transaction within the same unit. This includes:
-* a messaging component required to route transactions between processing units, as well as providing a means for communication between services that are collocated within the processing unit itself.
-* business logic units, which are essentially POCOs that process events delivered from the messaging component.
-* a data component, that holds the state required for the business logic implementation.
+- a messaging component required to route transactions between processing units, as well as providing a means for communication between services that are collocated within the processing unit itself.
+- business logic units, which are essentially POCOs that process events delivered from the messaging component.
+- a data component, that holds the state required for the business logic implementation.
 
 In XAP.NET, a processing unit can be implemented imperatively (extending an abstract class) or declaratively (XML describes the processing unit components and their relations). It is also possible to extend the abstract processing unit provided in XAP.NET to create a processing unit container using your favorite IoC framework (In Java XAP a [Spring|http://www.springframework.org/] Processing Unit container is available).
 
@@ -56,13 +56,13 @@ h3. Event Containers
 Event containers are used to abstract the event processing from the event source. This abstraction enables users to build their business logic with minimal binding to the underlying event source, whether it is a space-based event source or not.
 
 Two types of event containers are available in the product:
-* [Polling|Polling Container Component] - Polls the space for entries matching the specified template.
-* [Notify|Notify Container Component] - Subscribes for notifications from the space on entries matching the specified template.
+- [Polling|Polling Container Component] - Polls the space for entries matching the specified template.
+- [Notify|Notify Container Component] - Subscribes for notifications from the space on entries matching the specified template.
 (+) The event container object model is designed to be customizable and extensible, so users can customize the behavior of those 2 containers or even create their own containers.
 
 An event container is simply a class which defines:
-* A template which will be used to match events.
-* A Method which will be used to process matching events.
+- A template which will be used to match events.
+- A Method which will be used to process matching events.
 
 For example:
 
@@ -112,16 +112,16 @@ Space is used when users want to achieve scalability and availability, while red
 
 The {{ISpaceProxy}} abstraction was designed with the following principles in mind:
 \\
-* *POCO Entries* \- the data model in JavaSpaces is an Entry. An Entry has to inherit from a specific interface ({{Entry}}). All public, non-transient fields are stored in the space. This model is quite different from modern data caching and persistence frameworks (NHibernate, ADO.NET Entity Framework, etc.), which are POCO-oriented. The POCO data model is basically a simple class with annotations that extend that model with specific meta-information such as indexes definition, persistency model, etc. The
-* *Generics support* \- users can use generics to avoid unnecessary casting and make their interaction with the space more type-safe.
+- *POCO Entries* \- the data model in JavaSpaces is an Entry. An Entry has to inherit from a specific interface ({{Entry}}). All public, non-transient fields are stored in the space. This model is quite different from modern data caching and persistence frameworks (NHibernate, ADO.NET Entity Framework, etc.), which are POCO-oriented. The POCO data model is basically a simple class with annotations that extend that model with specific meta-information such as indexes definition, persistency model, etc. The
+- *Generics support* \- users can use generics to avoid unnecessary casting and make their interaction with the space more type-safe.
 \\
-* *Overloaded methods* \- the {{ISpaceProxy}} interface uses overloaded methods, that can use defaults to reduce the amount of arguments passed in read/take/write methods.
+- *Overloaded methods* \- the {{ISpaceProxy}} interface uses overloaded methods, that can use defaults to reduce the amount of arguments passed in read/take/write methods.
 
 h3. Using the GigaSpace Component in the Context of EDA/SOA Applications
 
 The space serves several purposes in an EDA/SOA type of application:
-* *Messaging Grid* \- in this case, the space is used as a distributed transport that enables remote and local services to send and receive objects based on their content. In a typical Space-Based Architecture, the space is used to route requests/orders from the data source to the processing unit, based on a predefined affinity-key. The affinity-key is used to route the request/order to the appropriate processing unit. Since it is optimized to run in-memory, it is used also as a means to enable the workflow between the embedded POCO services.
-* *In Memory Data Grid (IMDG)* \- in this case, the space is used as a distributed object repository, that provides in-memory access to distributed data. Data can be distributed in various topologies - partitioned and replicated are the main ones. In a typical Space-Based Architecture, the space instances are collocated within each processing unit and therefore provide local access to distributed data required by POCO services running under that processing unit. The domain model is also POCO-driven. Data objects are basically objects with annotations, (which add specific metadata required by the Data Grid to mark indexed fields), the affinity-key, and whether the object should be persisted or not, as can be seen in the code snippet below:
+- *Messaging Grid* \- in this case, the space is used as a distributed transport that enables remote and local services to send and receive objects based on their content. In a typical Space-Based Architecture, the space is used to route requests/orders from the data source to the processing unit, based on a predefined affinity-key. The affinity-key is used to route the request/order to the appropriate processing unit. Since it is optimized to run in-memory, it is used also as a means to enable the workflow between the embedded POCO services.
+- *In Memory Data Grid (IMDG)* \- in this case, the space is used as a distributed object repository, that provides in-memory access to distributed data. Data can be distributed in various topologies - partitioned and replicated are the main ones. In a typical Space-Based Architecture, the space instances are collocated within each processing unit and therefore provide local access to distributed data required by POCO services running under that processing unit. The domain model is also POCO-driven. Data objects are basically objects with annotations, (which add specific metadata required by the Data Grid to mark indexed fields), the affinity-key, and whether the object should be persisted or not, as can be seen in the code snippet below:
 {code:java}
 [SpaceClass]
 public class Data
@@ -134,7 +134,7 @@ public class Data
 }
 {code}
 
-* *Processing Grid* \- a processing grid represents a particular and common use of the space for parallel transaction processing, using a master/worker pattern. In Space-Based architecture, the processing grid is implemented through a set of POCO services that serve as the workers and event containers, that trigger events from the space into and from these services. Requests/orders are processed in parallel between the different processing units, as well as within these processing units, in case there is a pool of services handling the event.
+- *Processing Grid* \- a processing grid represents a particular and common use of the space for parallel transaction processing, using a master/worker pattern. In Space-Based architecture, the processing grid is implemented through a set of POCO services that serve as the workers and event containers, that trigger events from the space into and from these services. Requests/orders are processed in parallel between the different processing units, as well as within these processing units, in case there is a pool of services handling the event.
 
 h3. Space-Based Remoting
 
@@ -145,11 +145,11 @@ The client uses the {{ExecutorRemotingProxyBuilder<T>}} to create a space-based 
 A processing unit that needs to be export a service uses the {{DomainServiceHost}}. The {{DomainServiceHost}} creates a service-delegator listener that registers for invocations. The invocation context contains information about the instance that needs to be invoked, the method and the arguments. The delegator uses this information to invoke the appropriate method on the POCO service. If the method returns a value, it captures the value and uses the space to return response Entry.
 
 *Benefits compared to RMI*:
-* *Efficiency* \- unlike RMI, space-based remoting leverages the fact that the space is the network gateway, and therefore doesn't require any additional sockets or I/O resources beyond the ones that have already been allocated to the space.
-* *Scalability* \- the client stub can point to a cluster of processing units, each containing different instances of the same service for scalability. The proxy utilizes the space clustered proxy for load-balancing of the requests between processing units.
-* *Continuous high availability* \- since the client proxy doesn't point directly to a specific server but to a space proxy, it remains valid during failover or relocation of a service, i.e. - if a service fails, the command is automatically routed to the backup processing unit. The POCO service contained in this unit immediately picks up the request and responds instead of the failed service, thus enabling smooth continuation of the request during a service failure.
-* *Loosely coupled* \- a single proxy can point to a set of service instances. This provides the flexibility of invoking methods on a single service, and performing broadcast operations, i.e. invoking multiple services at the same time, or only a single service regardless of its physical location.
-* *Synchronous/Asynchronous invocation* \- a client can choose to invoke a method and wait for a result (synchronous invocation). It can also invoke a method and pick up the result at a later stage.
+- *Efficiency* \- unlike RMI, space-based remoting leverages the fact that the space is the network gateway, and therefore doesn't require any additional sockets or I/O resources beyond the ones that have already been allocated to the space.
+- *Scalability* \- the client stub can point to a cluster of processing units, each containing different instances of the same service for scalability. The proxy utilizes the space clustered proxy for load-balancing of the requests between processing units.
+- *Continuous high availability* \- since the client proxy doesn't point directly to a specific server but to a space proxy, it remains valid during failover or relocation of a service, i.e. - if a service fails, the command is automatically routed to the backup processing unit. The POCO service contained in this unit immediately picks up the request and responds instead of the failed service, thus enabling smooth continuation of the request during a service failure.
+- *Loosely coupled* \- a single proxy can point to a set of service instances. This provides the flexibility of invoking methods on a single service, and performing broadcast operations, i.e. invoking multiple services at the same time, or only a single service regardless of its physical location.
+- *Synchronous/Asynchronous invocation* \- a client can choose to invoke a method and wait for a result (synchronous invocation). It can also invoke a method and pick up the result at a later stage.
 
 h3. SLA-Driven Container
 

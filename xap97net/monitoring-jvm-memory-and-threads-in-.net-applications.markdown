@@ -12,7 +12,7 @@ h1. Overview
 In some cases, you might want to monitor the activity of the JVM running as part of your .NET application. The [jconsole|http://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.html] is a great tool that allows you to troubleshoot the JVM internals.
 
 **To view and monitor the JVM loaded into the .NET process memory address using `jconsole`:**
-# Have the following settings as part of your {{app.config}} file:
+1. Have the following settings as part of your {{app.config}} file:
 {code:xml}
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
@@ -30,15 +30,15 @@ In some cases, you might want to monitor the activity of the JVM running as part
   </GigaSpaces>
 </configuration>
 {code}
-# Start {{jconsole}} -- jconsole is located under the bin directory of the Java home, by default it is under {{<Installation dir>\Runtime\java\bin}}
-# Once the {{jconsole}} is started, select the *Local* tab:
+2. Start {{jconsole}} -- jconsole is located under the bin directory of the Java home, by default it is under {{<Installation dir>\Runtime\java\bin}}
+3. Once the {{jconsole}} is started, select the *Local* tab:
 \\ \\
 {indent}!jcon1.JPG!{indent}
 \\ \\
-# This shows the status of the JVM running in your .NET application:
+4. This shows the status of the JVM running in your .NET application:
 \\ \\
 !jcon2.JPG!
 
 {refer}For more details on JMX and {{jconsole}}, refer to:{refer}
-* [Sun - Monitoring and Management Using JMX|http://java.sun.com/j2se/1.5.0/docs/guide/management/agent.html]
-* [Sun - Using jconsole|http://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.html]
+- [Sun - Monitoring and Management Using JMX|http://java.sun.com/j2se/1.5.0/docs/guide/management/agent.html]
+- [Sun - Using jconsole|http://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.html]

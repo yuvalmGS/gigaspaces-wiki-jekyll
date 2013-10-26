@@ -11,8 +11,8 @@ h1. Overview
 
 A Space Filter is a special hook point inside the engine that enables integration with external systems, or implementation of user defined logic. There are two ways to implement such a filter and integrate it with the space, both of which are covered in this page.
 
-* [Implementing the ISpaceFilter interface|ISpaceFilter Interface]
-* [Implementing a Space Filter using SpaceFilterOperationDelegate|SpaceFilterOperationDelegate]
+- [Implementing the ISpaceFilter interface|ISpaceFilter Interface]
+- [Implementing a Space Filter using SpaceFilterOperationDelegate|SpaceFilterOperationDelegate]
 
 {refer}For a full SpaceFilter implementation and usage demo, visit the *[Space Filter Demo]* section.{refer}
 

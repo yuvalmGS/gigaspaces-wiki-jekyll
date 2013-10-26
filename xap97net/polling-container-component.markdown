@@ -450,8 +450,8 @@ pollingEventListenerContainer.Dispose();
 h1. Transaction Support
 
 Both the receive operation, and the actual event action can be configured to be performed under a transaction. Transaction support is required for example, when an exception occurs in the event listener, and the receive operation needs to be to rolled back (and the actual data event is returned to the space). Adding transaction support to the polling container is very simple. It is done by setting the {{TransactionType}} property. There are two transaction types: Distributed and Manual.
-* Distributed transaction - an embedded distributed transaction manager will be created and it will be used for creating transaction (Only one transaction manager will be created per AppDomain).
-* Manual transaction - transactions will be created by the transaction manager that is stored in the {{TransactionManager}} property. By default no transaction manager is stored and therefore, no transaction will be used. For example:
+- Distributed transaction - an embedded distributed transaction manager will be created and it will be used for creating transaction (Only one transaction manager will be created per AppDomain).
+- Manual transaction - transactions will be created by the transaction manager that is stored in the {{TransactionManager}} property. By default no transaction manager is stored and therefore, no transaction will be used. For example:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
@@ -613,8 +613,8 @@ The {{ReadTriggerOperationHandler}} can be set to be non-blocking, in the same w
 h1. Handling Exceptions
 
 During the life-cycle of the polling container, two types of exceptions might be thrown:
-* User Exception
-* Container Exception
+- User Exception
+- Container Exception
 
 The User Exception is an exception that occurs during the invocation of the user event listener. The Container Exception is an exception that occurs anywhere else during the life-cycle of the container (e.g. during the receive or trigger operation handler).
 

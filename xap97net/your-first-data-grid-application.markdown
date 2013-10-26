@@ -21,16 +21,16 @@ h1. Setting Up the Project
 This section shows how to create a C# Console Application named *HelloWorld* with a reference to the *GigaSpaces.Core* assembly.
 
 h2. Create a Console Application Project
-# Open Microsoft Visual Studio. From the *File* menu select *New > Project*. The *New Project* dialog appears.
-# In the *Project types* tree, select *Visual C#*, then select *Console Application* in the *Templates* list.
-# In the *Name* test box, type *HelloWorld*. If you wish, change the default location to a path you prefer.
-# Select *OK* to continue. Visual Studio creates the project and opens the automatically generated {{program.cs}} file.
+1. Open Microsoft Visual Studio. From the *File* menu select *New > Project*. The *New Project* dialog appears.
+2. In the *Project types* tree, select *Visual C#*, then select *Console Application* in the *Templates* list.
+3. In the *Name* test box, type *HelloWorld*. If you wish, change the default location to a path you prefer.
+4. Select *OK* to continue. Visual Studio creates the project and opens the automatically generated {{program.cs}} file.
 
 h2. Add a Reference to the GigaSpaces Core Assembly
-# From the *Project* menu, select *Add Reference*. The *Add Reference* dialog appears.
-# Select the *Browse* tab, navigate to the XAP.NET installation folder (e.g. *C:\GigaSpaces\XAP.NET 8.0.0 x86\NET v4.0.30319*). Go into the *Bin* folder, select *GigaSpaces.Core.dll*, and click *OK*.
-## Since running .NET 4.0 side-by-side with .NET 2.0 [has limitations|http://msdn.microsoft.com/en-us/magazine/ee819091.aspx], GigaSpaces XAP.NET comes with a separate set of assemblies for .NET 2.0 and .NET 4.0. Make sure you use the one relevant for you.
-# In the *Solution Explorer*, make sure you see *GigaSpaces.Core* in the project references. There's no need to reference any other assembly.
+1. From the *Project* menu, select *Add Reference*. The *Add Reference* dialog appears.
+2. Select the *Browse* tab, navigate to the XAP.NET installation folder (e.g. *C:\GigaSpaces\XAP.NET 8.0.0 x86\NET v4.0.30319*). Go into the *Bin* folder, select *GigaSpaces.Core.dll*, and click *OK*.
+    1. Since running .NET 4.0 side-by-side with .NET 2.0 [has limitations|http://msdn.microsoft.com/en-us/magazine/ee819091.aspx], GigaSpaces XAP.NET comes with a separate set of assemblies for .NET 2.0 and .NET 4.0. Make sure you use the one relevant for you.
+3. In the *Solution Explorer*, make sure you see *GigaSpaces.Core* in the project references. There's no need to reference any other assembly.
 
 h1. Writing the Code
 
@@ -40,9 +40,9 @@ h2. Creating the Message Class
 
 We want to demonstrate storing some object to the space. To do this, let's create a simple {{Message}} class with a {{Text}} property of type {{String}}.
 
-# In *Solution Explorer*, right-click the *HelloWorld* project and select *Add > Class*. The *Add New Item* dialog appears.
-# In the *Templates* list, make sure *Class* is selected. Type *Message* in the class name text box, and click *Add*. The class is added to the project and the editor displays its content.
-# Add the following code to the {{Message}} class:
+1. In *Solution Explorer*, right-click the *HelloWorld* project and select *Add > Class*. The *Add New Item* dialog appears.
+2. In the *Templates* list, make sure *Class* is selected. Type *Message* in the class name text box, and click *Add*. The class is added to the project and the editor displays its content.
+3. Add the following code to the {{Message}} class:
 {code:java}
 public class Message
 {

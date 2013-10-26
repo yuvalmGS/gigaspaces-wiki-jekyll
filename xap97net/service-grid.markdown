@@ -46,10 +46,10 @@ Another important attribute in that context is the *lookup group*. The lookup gr
 (on) It is common to start at least two LUS instances in each Service Grid for high-availability reasons. Note that the lookup service can run in the same process with a GSM, or in standalone mode using its own process.
 
 The following services use the LUS:
-* [GigaSpaces Manager|#gsm]
-* [GigaSpaces Agent|#gsa]
-* Processing Unit Instances (actual instances of a deployed Processing Unit)
-* Space Instances (actual instances of a Space that form a topology)
+- [GigaSpaces Manager|#gsm]
+- [GigaSpaces Agent|#gsa]
+- Processing Unit Instances (actual instances of a deployed Processing Unit)
+- Space Instances (actual instances of a Space that form a topology)
 
 {anchor:gsa}
 h1. Grid Service Agent (GSA)
@@ -71,8 +71,8 @@ Global processes take into account the number of process types ([Grid Service Ma
 h1. Starting a Service Grid
 
 The Service Grid can be started in two fashions:
-# *Console Application* - using {{<GSHOME>\bin\gs-agent.exe}}
-# *Windows Service* - using the [GigaSpaces Windows Services Manager|Service Grid Components as Windows Services] tool bundled with XAP.NET.
+1. *Console Application* - using {{<GSHOME>\bin\gs-agent.exe}}
+2. *Windows Service* - using the [GigaSpaces Windows Services Manager|Service Grid Components as Windows Services] tool bundled with XAP.NET.
 
 Usually the console application is used by developers whereas the Windows service is used in production environments.
 

@@ -49,16 +49,16 @@ public class Person
 
 h3. Guidelines and Restrictions
 The following guidelines and restrictions should be followed in order to enable platform interoperability:
-* The full class name (including package\namespace) in all platforms should be identical.
+- The full class name (including package\namespace) in all platforms should be identical.
 \\ (on) Since java packages use a different naming convention than .Net namespaces, it is recommended to use the {{SpaceClass(AliasName="")}} feature to map a .Net class to the respective java class.
 \\
 \\
-* The properties/fields stored in the space in all platforms should be identical.
+- The properties/fields stored in the space in all platforms should be identical.
 \\ (i) In Java, only properties are serialized into the space. In .NET, both fields and properties are serialized, so you can mix and match them.
 \\ (on) Since java properties start with a lowercase letter, whereas .Net properties usually start with an uppercase letter, it is recommended to use the {{SpaceProperty(AliasName="")}} feature to map a property/field name from .Net to java.
 \\
 \\
-* Only the types listed in the table below are supported. If one of your fields uses a different type, you can use the class only in a homogeneous environment.
+- Only the types listed in the table below are supported. If one of your fields uses a different type, you can use the class only in a homogeneous environment.
 \\ (i) Arrays of these types are supported as well.
 \\ (i) You can also use .NET enumerations, which are treated as their underlying .NET type. Java enums are not supported.
 \\ (on) If your class contains a field whose type is not in the table, you can use {{SpaceExclude}} to exclude it from the space.
@@ -68,7 +68,7 @@ h1. Supported Types for Matching and Interoperability
 
 The following types are supported by the space for matching and interoperability:
 || CLS || C# || VB.Net || Java || Description ||
-| [System.Byte|http://msdn2.microsoft.com/en-us/library/system.byte.aspx] | {{byte}} | {{Byte}} | [byte|http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html] | 8-bit integer.^*1*^ |
+| [System.Byte|http://msdn2.microsoft.com/en-us/library/system.byte.aspx] | {{byte}} | {{Byte}} | [byte|http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html] | 8-bit integer.*<sup>1</sup>* |
 | [Nullable<Byte>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | {{byte?}}| {{Nullable(Of Byte)}} | {sunjavadoc:java/lang/Byte|java.lang.Byte} | Nullable wrapper for byte.^*1*^ |
 | [System.Int16|http://msdn2.microsoft.com/en-us/library/system.int16.aspx] | {{short}} | {{Short}} | [short|http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html] | 16-bit integer. |
 | [Nullable<Int16>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | {{short?}} | {{Nullable(Of Short)}} | {sunjavadoc:java/lang/Short|java.lang.Short} | Nullable wrapper for short. |
@@ -90,10 +90,10 @@ The following types are supported by the space for matching and interoperability
 | [System.Decimal|http://msdn2.microsoft.com/en-us/library/system.decimal.aspx]\\ [Nullable<Decimal>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | {{decimal}}\\ {{decimal?}} | {{Decimal}}\\ {{Nullable(Of Decimal)}} | {sunjavadoc:java/math/BigDecimal|java.math.BigDecimal} | A decimal number, used for high-precision calculations.^*2,4*^ |
 | [System.Guid|http://msdn2.microsoft.com/en-us/library/system.guid.aspx]\\ [Nullable<Guid>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | {{Guid}}\\ {{Guid?}} | {{Guid}}\\ {{Nullable(Of Guid)}} | {sunjavadoc:java/util/UUID|java.util.UUID} | A 128-bit integer representing a unique identifier.^*2*^ |
 | [System.Object|http://msdn2.microsoft.com/en-us/library/system.object.aspx] | {{object}} | {{Object}} | {sunjavadoc:java/lang/Object|java.lang.Object} | Any object |
-# In .Net a {{byte}} is unsigned, whereas in java a {{byte}} is signed.
-# These types can be either nullable or not nullable in .Net, whereas in java they are always nullable.
-# In .Net a {{DateTime}} is measured in ticks (=100 nanoseconds) since 1/1/0001, whereas in java a {{Date}} is a measured in milliseconds since 1/1/1970.
-# The types {{Decimal}} (.Net) and {{BigDecimal}} (java) have different precision and range (see .Net and java documentation for more details). In addition, be aware that serialization/deserialization of these types is relatively slow, compared to other numeric types. As a rule of thumb these types should not be used, unless the other numeric types presicion/range is not satisfactory.
+1. In .Net a {{byte}} is unsigned, whereas in java a {{byte}} is signed.
+2. These types can be either nullable or not nullable in .Net, whereas in java they are always nullable.
+3. In .Net a {{DateTime}} is measured in ticks (=100 nanoseconds) since 1/1/0001, whereas in java a {{Date}} is a measured in milliseconds since 1/1/1970.
+4. The types {{Decimal}} (.Net) and {{BigDecimal}} (java) have different precision and range (see .Net and java documentation for more details). In addition, be aware that serialization/deserialization of these types is relatively slow, compared to other numeric types. As a rule of thumb these types should not be used, unless the other numeric types presicion/range is not satisfactory.
 
 h1. Arrays and Collections support
 
@@ -104,6 +104,6 @@ The following collections are mapped for interoperability:
 | [System.Collections.Generic.Dictionary<K,V>|http://msdn.microsoft.com/en-us/library/xfhwa508.aspx] \\ [System.Collections.HashTable|http://msdn2.microsoft.com/en-us/library/system.collections.hashtable.aspx] \\ [System.Collections.Specialized.HybridDictionary|http://msdn2.microsoft.com/en-us/library/system.collections.specialized.hybriddictionary.aspx] \\ [System.Collections.Specialized.ListDictionary|http://msdn2.microsoft.com/en-us/library/system.collections.specialized.listdictionary.aspx] | {sunjavadoc:java/util/HashMap|java.util.HashMap} | Collection of key-value pairs. |
 | [System.Collections.Specialized.OrderedDictionary|http://msdn2.microsoft.com/en-us/library/system.collections.specialized.ordereddictionary.aspx] | {sunjavadoc:java/util/LinkedHashMap|java.util.LinkedHashMap} | Ordered collection of key-value pairs. |
 | [System.Collections.Generic.SortedDictionary<K,V>|http://msdn.microsoft.com/en-us/library/f7fta44c.aspx] | {sunjavadoc:java/util/TreeMap|java.util.TreeMap} | Sorted collection of key-value pairs. |
-| [System.Collections.Specialized.NameValueCollection|http://msdn2.microsoft.com/en-us/library/system.collections.specialized.namevaluecollection.aspx]\\ [System.Collections.Specialized.StringDictionary|http://msdn2.microsoft.com/en-us/library/system.collections.specialized.stringdictionary.aspx] | {sunjavadoc:java/util/Properties|java.util.Properties} | Collection of key-value string pairs.^*1*^ |
-# In java, the {{Properties}} type allows the user to store keys and values which are not strings.
+| [System.Collections.Specialized.NameValueCollection|http://msdn2.microsoft.com/en-us/library/system.collections.specialized.namevaluecollection.aspx]\\ [System.Collections.Specialized.StringDictionary|http://msdn2.microsoft.com/en-us/library/system.collections.specialized.stringdictionary.aspx] | {sunjavadoc:java/util/Properties|java.util.Properties} | Collection of key-value string pairs.*<sup>1</sup>* |
+1. In java, the {{Properties}} type allows the user to store keys and values which are not strings.
 

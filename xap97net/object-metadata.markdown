@@ -22,9 +22,9 @@ h1. Including/Excluding Content from the Space
 By default, all public members (fields and properties) in a class are stored in the space, whereas non-public members are ignored. Since classes are usually designed with private/protected fields and public properties wrapping them, in most cases the default behaviour is also the desired one.
 
 To change this behaviour for a specific class, apply a {{\[SpaceClass\]}} attribute on that class, and use {{IncludeProperties}} and/or {{IncludeFields}} to specify which members should be included in the space. Both {{IncludeProperties}} and {{IncludeFields}} are an {{IncludeMembers}} enumeration, which can receive the following values:
-* {{IncludeMembers.All}} \-- all members are stored.
-* {{IncludeMembers.Public}} \-- public members are stored, and non-public members are ignored
-* {{IncludeMembers.None}} \-- all members are ignored.
+- {{IncludeMembers.All}} \-- all members are stored.
+- {{IncludeMembers.Public}} \-- public members are stored, and non-public members are ignored
+- {{IncludeMembers.None}} \-- all members are ignored.
 
 h4. Example 1 -- The default behaviour
 {code}
@@ -48,8 +48,8 @@ Starting with .NET v2.0, properties can have different accessors for getters and
 
 {info:title=Read-Only Properties}
 Read-only properties (getter without setter) are stored in the space, but when the object is deserialized, the value is not restored, since there is no setter. This enables the space to be queried using such properties. There are two common scenarios for read-only properties:
-* Calculated value -- the property returns a calculated value based on other fields/properties. This isn't a problem since no data is lost due to the 'missing' setter.
-* Access protection -- the class designer wishes to protect the property from outside changes. This is probably a problem since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property and including the field (as explained next).{info}
+- Calculated value -- the property returns a calculated value based on other fields/properties. This isn't a problem since no data is lost due to the 'missing' setter.
+- Access protection -- the class designer wishes to protect the property from outside changes. This is probably a problem since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property and including the field (as explained next).{info}
 
 To change the behaviour of a specific field/property, apply a {{\[SpaceProperty\]}} to include it, or a {{\[SpaceExclude\]}} to exclude it. These settings override the class-level settings.
 
@@ -79,12 +79,12 @@ Indexing a property speeds up queries which use the property, but slows down wri
 h1. Unique Constraints
 
 When an object is stored in the space, the space generates a unique identifier and stores it along with that object. The unique identifier is commonly referred to as a Space ID or UID. In many cases, it's useful to have the object's space ID or to control it. Some examples:
-* The Space ID can be used as a uniqueness constraint, preventing logically duplicate entries from being stored in the space.
-* Queries performed with the UID are much faster, since the query mechanism can reduce the result set efficiently.
+- The Space ID can be used as a uniqueness constraint, preventing logically duplicate entries from being stored in the space.
+- Queries performed with the UID are much faster, since the query mechanism can reduce the result set efficiently.
 
 There are two modes of SpaceID that are supported:
-* If you want the space to automatically generate the UID for you, specify {{\[SpaceID(AutoGenerate=true)\]}} on the property which should hold the generated ID. A SpaceID field that has AutoGenerate=true specified, must be of type {{string}}.
-* If you want the space to generate the UID using a specific property's value, specify {{\[SpaceID(AutoGenerate=false)\]}} on that property.
+- If you want the space to automatically generate the UID for you, specify {{\[SpaceID(AutoGenerate=true)\]}} on the property which should hold the generated ID. A SpaceID field that has AutoGenerate=true specified, must be of type {{string}}.
+- If you want the space to generate the UID using a specific property's value, specify {{\[SpaceID(AutoGenerate=false)\]}} on that property.
 
 The default is {{AutoGenerate=false}}. Note that only one property in a class can be marked as a SpaceID property.
 
@@ -93,10 +93,10 @@ The default is {{AutoGenerate=false}}. Note that only one property in a class ca
 h1. Routing
 
 When working with a clustered space, one of the properties in a class is used to determine the routing behaviour of that class within the cluster (i.e. how instances of that class are partitioned across the cluster's nodes). The routing property is determined according to the following rules:
-# The property marked with {{\[SpaceRouting\]}} attribute.
-# Otherwise, the property marked with {{\[SpaceID\]}} is used.
-# Otherwise, the first indexed property in alphabetical order is used.
-# Otherwise, the first property in alphabetical order is used.
+1. The property marked with {{\[SpaceRouting\]}} attribute.
+2. Otherwise, the property marked with {{\[SpaceID\]}} is used.
+3. Otherwise, the first indexed property in alphabetical order is used.
+4. Otherwise, the first property in alphabetical order is used.
 
 Note that only one property in a class can be marked as a routing property.{tip:title=Declare the routing property explicitly}
 It's highly recommended to explicitly declare which property is the routing property, and not rely on rules 2 and onward. Relying on those rules can lead to confusing problems (e.g. the SpaceID is changed, or an index is added to a property, etc.). Explicitly declaring the routing property makes your code clearer and less error-prone. {tip}

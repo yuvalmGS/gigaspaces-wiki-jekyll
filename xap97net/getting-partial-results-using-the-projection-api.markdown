@@ -72,6 +72,6 @@ Projected properties can specify both dynamic or fixed properties and the usage 
 
 h1. Considerations
 
-# Projections are supported only for first level properties (root level). Nested properties can't be specified as part of the projection properties list.
-# You can't use a projection on [Local Cache] as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projections will only impact performance.
-# You can't use a projection to query a Local View for the same reason as Local Cache, however, you can create the local view with projection template and the Local View will be contain the objects in their projected form.
+1. Projections are supported only for first level properties (root level). Nested properties can't be specified as part of the projection properties list.
+2. You can't use a projection on [Local Cache] as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projections will only impact performance.
+3. You can't use a projection to query a Local View for the same reason as Local Cache, however, you can create the local view with projection template and the Local View will be contain the objects in their projected form.
