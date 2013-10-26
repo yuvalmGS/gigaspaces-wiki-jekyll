@@ -204,7 +204,9 @@ Click the Query button to view the Customer Data:
 The CustomerServicePort.war file includes the following jars within its `\CustomerServicePort\WEB-INF\lib` folder.
 Spring and Jetty jars should not be included since they are loaded by GigaSpaces:
 {section}
-{column}
+
+{% column %}
+
 
 
 {% highlight java %}
@@ -219,9 +221,13 @@ cxf-rt-databinding-jaxb-2.4.0.jar
 cxf-rt-frontend-jaxws-2.4.0.jar
 {% endhighlight %}
 
-{column}
 
-{column}
+{% endcolumn %}
+
+
+
+{% column %}
+
 
 
 {% highlight java %}
@@ -236,9 +242,13 @@ geronimo-servlet_3.0_spec-1.0.jar
 jaxb-impl-2.1.13.jar
 {% endhighlight %}
 
-{column}
 
-{column}
+{% endcolumn %}
+
+
+
+{% column %}
+
 
 
 {% highlight java %}
@@ -253,7 +263,9 @@ xml-resolver-1.2.jar
 xmlschema-core-2.0.jar
 {% endhighlight %}
 
-{column}
+
+{% endcolumn %}
+
 {section}
 
 # Client Application Project jars

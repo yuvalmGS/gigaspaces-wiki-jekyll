@@ -10,12 +10,20 @@ page_id: 63799383
 
 h1. Overview
 {section}
-{column}
+
+{% column %}
+
 The GigaSpaces document API exposes the space as [Document Store|http://en.wikipedia.org/wiki/Document-oriented_database]. A document, which is represented by the class {{SpaceDocument}}, is essentially collection of key-value pairs, where the keys are strings and the values are primitives, {{String}}, {{Date}}, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
-{column}
-{column}
+
+{% endcolumn %}
+
+
+{% column %}
+
 !GRA:Images2^doc_api.jpg!
-{column}
+
+{% endcolumn %}
+
 {section}
 Unlike POJOs, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic - users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the class {{SpaceTypeDescriptor}}.
 

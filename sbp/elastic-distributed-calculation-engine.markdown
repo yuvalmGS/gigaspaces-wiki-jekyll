@@ -20,7 +20,9 @@ page_id: 56427156
 
 # Overview
 {section}
-{column}
+
+{% column %}
+
 Financial services, Healthcare, Transportations,Fraud Detection, Payment systems,etc. produce reports constantly. Some of them produce reports where the data required for the report is generated over night via batch processing, and some other type of reports are produced instantly upon user request. This type of processing activity requires fast access to the raw data and the ability to utilize distributed resources available on the local environment or on the cloud.
 
 The Elastic Calculation Engine example illustrates the following:
@@ -28,10 +30,16 @@ The Elastic Calculation Engine example illustrates the following:
 2. Intelligent Map-Reduce directing calculations into distributed nodes, lowering the network traffic and lowering the load on each calculation node.
 3. Simulating lazy data load in a batch mode optimizing database access in case of a cache miss.
 4. While the calculation is going on, dynamically scaling up and down the compute/data grid. This will increase the capacity of the compute/data grid and will allow it to utilize additional CPU resources to speed up the calculation time.
-{column}
-{column}
+
+{% endcolumn %}
+
+
+{% column %}
+
 !risk_anal.jpg!
-{column}
+
+{% endcolumn %}
+
 {section}
 
 The Distributed Calcualtion Engine performs Net Present Value calculations where the Trades used for the calculation divided into several Books. These books could represent different types of Trades, different markets, different customers , etc.

@@ -16,9 +16,13 @@ In some cases when querying the space for objects, only specific properties of o
 
 {% endcolumn %}
 
-{column}
+
+{% column %}
+
 !GRA:Images2^space-projections.jpg!
-{column}
+
+{% endcolumn %}
+
 {section}
 
 h1. Specifying a Projection with your Query

@@ -76,7 +76,9 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 {% endcolumn %}
 
-{column}
+
+{% column %}
+
 
 #### Quick Links
 
@@ -98,5 +100,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 ##### • Looking for **[XAP.NET|XAP96NET:XAP.NET 9.6 Documentation Home]** or **[other versions|ALL:Choose a GigaSpaces Version]**?
 
-{column}
+
+{% endcolumn %}
+
 {section}

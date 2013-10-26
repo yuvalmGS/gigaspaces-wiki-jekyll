@@ -70,9 +70,13 @@ Have `cacheManager.cacheSessionLocally = true` when you would like multiple web 
 
 {% endcolumn %}
 
-{column}
+
+{% column %}
+
 {indent}!GRA:Images2^http-session-non-sticky.jpg!{indent}
-{column}
+
+{% endcolumn %}
+
 {section}
 
 ##### Session Failover Scenario
@@ -84,9 +88,13 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 
 {% endcolumn %}
 
-{column}
+
+{% column %}
+
 {indent}!GRA:Images2^http-session-sticky.jpg!{indent}
-{column}
+
+{% endcolumn %}
+
 {section}
 
 ### The Web Application
