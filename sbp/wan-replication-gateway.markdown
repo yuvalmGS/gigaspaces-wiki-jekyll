@@ -119,9 +119,11 @@ A client application located within the US East coast EC2 region running multipl
 
 !GRA:Images3^wan_bench1.jpg!
 
-{color:blue}Blue line{color} - The amount of data generated at the source site (EC2 EU East coast region) by the client application.
-{color:green}Green line{color}- The amount of consumed bandwidth is measured  at the target site (EC2 EU Ireland region).
-{color:red}Red line{color} - The network bandwidth.
+{% color blue %}Blue line{% endcolor %} - The amount of data generated at the source site (EC2 EU East coast region) by the client application.
+
+{% color green %}Green line{% endcolor %}- The amount of consumed bandwidth is measured  at the target site (EC2 EU Ireland region).
+
+{% color red %}Red line{% endcolor %} - The network bandwidth.
 
 !GRA:Images3^wan_bench2.jpg!
 

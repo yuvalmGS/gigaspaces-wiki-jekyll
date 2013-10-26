@@ -91,8 +91,8 @@ public class Feeder  {
 {% endhighlight %}
 
 ## The Feeder Service Configuration
-{% togglecloak id=The Feeder Service Configuration %}**Click to view the Feeder Service Configuration..**{% endtogglecloak %}
-{% gcloak The Feeder Service Configuration %}
+{% togglecloak id=the_feeder_service_configuration %}**Click to view the Feeder Service Configuration..**{% endtogglecloak %}
+{% gcloak the_feeder_service_configuration %}
 Here is the Feeder Service Configuration:
 
 
@@ -143,8 +143,8 @@ public class Verifier {
 ## The Verifier Service Configuration
 The Verifier Service Configuration using a `polling-container` running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
 
-{% togglecloak id=The Verifier Service Configuration %}**Click to view the Verifier Service Configuration..**{% endtogglecloak %}
-{% gcloak The Verifier Service Configuration %}
+{% togglecloak id=the_verifier_service_configuration %}**Click to view the Verifier Service Configuration..**{% endtogglecloak %}
+{% gcloak the_verifier_service_configuration %}
 
 {% highlight java %}
 <mule
@@ -206,8 +206,8 @@ public class Approver {
 ## The Approver Service Configuration
 The Approver Service Configuration using a `polling-container` running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
 
-{% togglecloak %}**Click to view the Approver Service Configuration..**{% endtogglecloak %}
-{% gcloak The Approver Service Configuration %}
+{% togglecloak the_approver_service_configuration %}**Click to view the Approver Service Configuration..**{% endtogglecloak %}
+{% gcloak the_approver_service_configuration %}
 
 
 {% highlight java %}
