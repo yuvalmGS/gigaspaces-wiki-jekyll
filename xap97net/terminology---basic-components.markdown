@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799398
 ---
 
-*Summary* - GigaSpaces components from a functional perspective.
+**Summary** - GigaSpaces components from a functional perspective.
 ||Basic Components|[Data Grid Topologies|Terminology - Data Grid Topologies]|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|
 
 # Basic Components
@@ -36,7 +36,7 @@ The GigaSpaces cache instance that holds data objects in memory.
 {% align center %}
 !GS6:Images^term_space.gif!
 
-~*A space holding objects*~
+~**A space holding objects**~
 {% endalign %}
 
 {% endcolumn %}
@@ -64,14 +64,14 @@ A set of methods used to read, write, take, and register for notification on obj
 {% align center %}
 !GS6:Images^term_verbs.jpg!
 
-~*A client application uses the read, write, take, update and notify methods to exchange objects and receive notifications from the space*~
+~**A client application uses the read, write, take, update and notify methods to exchange objects and receive notifications from the space**~
 {% endalign %}
 
 {% endcolumn %}
 
 {section}
 {whr}
-{comment}*Local Cache* - a space embedded within a client application to enable ...{comment}
+{comment}**Local Cache** - a space embedded within a client application to enable ...{comment}
 {comment}----------------------------
           Service Component
 ----------------------------{comment}
@@ -93,7 +93,7 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 {% align center %}
 !GS6:Images^term_service_bean.gif!
 
-~*A Service Component*~
+~**A Service Component**~
 {% endalign %}
 
 {% endcolumn %}
@@ -119,7 +119,7 @@ A combination of service components and/or an embedded space instance. This is t
 {% align center %}
 !GS6:Images^term_empty_pu.gif!
 
-~*A Processing Unit*~
+~**A Processing Unit**~
 {% endalign %}
 
 {% endcolumn %}
@@ -146,7 +146,7 @@ A deployable package which instantiates an embedded space instance, also called 
 {% align center %}
 !GS6:Images^term_pu_with_space.gif!
 
-~*A Processing Unit with an embedded space*~
+~**A Processing Unit with an embedded space**~
 {% endalign %}
 
 {% endcolumn %}
@@ -170,7 +170,7 @@ A deployable package containing one or more services. In the GigaSpaces context,
 {% align center %}
 !GS6:Images^term_pu_with_bean.gif!
 
-~*A Processing Unit containing a Service component that interacts with a space embedded in another Processing Unit*~
+~**A Processing Unit containing a Service component that interacts with a space embedded in another Processing Unit**~
 {% endalign %}
 
 {% endcolumn %}
@@ -195,7 +195,7 @@ Client application (which can also be other processing units) write objects to t
 {% align center %}
 !GS6:Images^term_pu_with_space_and_bean.gif!
 
-~*A Processing Unit with an embedded service that interacts with an embedded space*~
+~**A Processing Unit with an embedded service that interacts with an embedded space**~
 {% endalign %}
 
 {% endcolumn %}

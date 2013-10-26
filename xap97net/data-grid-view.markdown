@@ -28,23 +28,23 @@ In the screenshot below, we also provide the UID column of each object in the Sp
 SELECT uid,* FROM com.gigaspaces.sba.trading.model.TradePojo WHERE rownum < 7
 {code}
 
-Press the *"Play"* icon to execute the query. The Query is executed against the selected Space (cluster) or Space instance.
+Press the **"Play"** icon to execute the query. The Query is executed against the selected Space (cluster) or Space instance.
 If the query has too many results, use the paging at the bottom to move between them. Paging is static, meaning that these results are fetched once per execute request.
-Use the *back* and *forward* arrows to navigate between previously executed queries.
+Use the **back** and **forward** arrows to navigate between previously executed queries.
 
 !GRA:Images^query.png|border=1!
 
 # Space Types
 
 The metadata of the Types in the Space are shown by clicking on the "Types" tab. This lists all the types registered with the Space.
-Displayed for each type are: *instance count*, *notify template count*, *Space key* (index), *Space routing key*, and *indexed fields*.
+Displayed for each type are: **instance count**, **notify template count**, **Space key** (index), **Space routing key**, and **indexed fields**.
 
 !GRA:Images^data_types.png|border=1!
 
 # Object inspection
 
 Double click on a single result set in the query results table, to show the metadata and values of each result.
-Object inspection shows the *field name*, *field type*, and *field value*. For compound fields, drill down using the arrow toggles.
+Object inspection shows the **field name**, **field type**, and **field value**. For compound fields, drill down using the arrow toggles.
 For array types, the array length and toString is displayed.
 
 !GRA:Images^object_inspector_from_query_results.png|border=1!

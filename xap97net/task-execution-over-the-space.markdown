@@ -55,7 +55,7 @@ public class CountTask : ISpaceTask<int>
 (!) A space task needs to be serializable because it is being serialized and reconstructed at the node.
 (!) The assembly that contains the task needs to be in the domain of the processing unit that contains the embedded space (present at its deployment directory).
 
-*Executing the space task*
+**Executing the space task**
 
 {code:java}
 ISpaceProxy spaceProxy = // obtain a proxy to a space
@@ -126,7 +126,7 @@ public class DistributedCountTask : IDistributedSpaceTask<long, int>
 This task will execute on each one of the primary nodes in the cluster,
 it will print the message in each node and it will return the summary of the count result on each node (Equivalent to ISpaceProxy.Count(new Object()) method).
 
-*Executing the distributed task*
+**Executing the distributed task**
 
 {code:java}
 ISpaceProxy spaceProxy = // obtain a proxy to a space
@@ -225,7 +225,7 @@ public class ClearMyObjectTask : ISpaceTask<int>
 
 A space task can also be executed asynchronously with the corresponding {{BeginExecute}} {{EndExecute}} method. This follows the standard .NET asynchronous API, once the execution is complete the execute invoker is notified by the async result which is received from the {{BeginExecute}} method or to a supplied callback. This will be similiar to executing a task in a seperate thread, allowing to continue local process while waiting for the result to be calculated at the space nodes.
 
-*Executing asynchronous space using async result*
+**Executing asynchronous space using async result**
 
 {code:java}
 ISpaceProxy spaceProxy = // obtain a proxy to a space
@@ -237,7 +237,7 @@ IAsyncResult<long> asyncResult = spaceProxy.BeginExecute(new DistributedCountTas
 long count = spaceProxy.EndExecute(asyncResult);
 {code}
 
-*Executing asynchronous space using async result wait handle*
+**Executing asynchronous space using async result wait handle**
 
 {code:java}
 ISpaceProxy spaceProxy = // obtain a proxy to a space
@@ -251,7 +251,7 @@ asyncResult.AsyncWaitHandle.WaitOne();
 long count = spaceProxy.EndExecute(asyncResult);
 {code}
 
-*Executing asynchronous space using async call back and a state object*
+**Executing asynchronous space using async call back and a state object**
 
 {code:java}
 ISpaceProxy spaceProxy = // obtain a proxy to a space

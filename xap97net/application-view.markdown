@@ -42,7 +42,7 @@ For example, in the screenshot below, the feeder depends on the Space to be aliv
 
 !GRA:Images^application_dependency.png|border=1!
 
-|*Icon*|*Description*|
+|**Icon**|**Description**|
 |!GRA:Images2^segment.png!|Space Partition|
 |!GRA:Images2^segments.png!|Space Partition with backup|
 |!GRA:Images2^data.png!|Space Replica|

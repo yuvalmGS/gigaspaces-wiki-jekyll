@@ -46,7 +46,7 @@ Several {{ISpaceProxy}} instances can be defined within a single Processing Unit
 (i) {{ISpaceProxy}} simplifies most operations used with the space, but some operations still require access to {{IJSpace}}, which can be accessed through the {{ISpaceProxy}} API.
 
 {note}
-- The {{ISpaceProxy}} variable represents a remote or embedded space proxy (for a single space or clustered) and *should be constructed only* once throughout the lifetime of the application process.
+- The {{ISpaceProxy}} variable represents a remote or embedded space proxy (for a single space or clustered) and **should be constructed only** once throughout the lifetime of the application process.
 - You should treat the {{ISpaceProxy}} variable as a singleton to be shared across multiple different threads.
 - The {{ISpaceProxy}} interface is a thread safe and there is no need to create an {{ISpaceProxy}} variable per application thread.
 - In case the space has been fully terminated (no backup or primary instances running any more) the client space proxy will try to reconnect to the space up to a predefined timeout based on the [Proxy Connectivity] settings. If it fails to reconnect, an error will be displayed.
@@ -175,7 +175,7 @@ In a similar manner, the read timeout and write lease can be specified.
 
 # Saving Data to the Space
 
-The {{ISpaceProxy.Write()}} operation saves a copy of an object into the Space. The actual object passed as a parameter to the Write function is not affected by the operation. As with the Read operation, the Write operation supports default values and generic parameters. When the object to be saved already exists in the Space (objects are identified with their {{ID}}), the default behavior is to perform an *update operation*.  To change the default update operation scenario, change the update mode in the {{WriteModifiers}} enum settings to {{WriteModifiers.WRITE_ONLY}} mode.
+The {{ISpaceProxy.Write()}} operation saves a copy of an object into the Space. The actual object passed as a parameter to the Write function is not affected by the operation. As with the Read operation, the Write operation supports default values and generic parameters. When the object to be saved already exists in the Space (objects are identified with their {{ID}}), the default behavior is to perform an **update operation**.  To change the default update operation scenario, change the update mode in the {{WriteModifiers}} enum settings to {{WriteModifiers.WRITE_ONLY}} mode.
 
 When updating an object with many fields use the {{PARTIAL_UPDATE}} mode.
 
@@ -195,7 +195,7 @@ You may update selected Space object fields (delta) using the {JavaDoc6:com/giga
 
 ## How to Perform a Delta Update?
 
-When using the {{PARTIAL_UPDATE}} modifier, only enter values into the fields that *should* be updated. All other fields *should be assigned a {{null}} value*. This means that only fields which are set are sent from the client to the Space to replace the existing field's value. In case of a backup (replica) space, the primary space only replicates the updated fields (delta).
+When using the {{PARTIAL_UPDATE}} modifier, only enter values into the fields that **should** be updated. All other fields **should be assigned a {{null}} value**. This means that only fields which are set are sent from the client to the Space to replace the existing field's value. In case of a backup (replica) space, the primary space only replicates the updated fields (delta).
 
 Make sure the updated object include its ID when using this option.
 
@@ -270,7 +270,7 @@ See the [SQLQuery] for details.
 
 ## Space Iterator
 
-The {javadoc6:org/openspaces/core/IteratorBuilder|IteratorBuilder} with the {javadoc6:com/j_spaces/core/client/GSIterator|GSIterator} allows you to iterate over large amount of space objects in a *paging approach*. It avoids the need to retrieve the entire result set in one batch as the {{readMultiple}} since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side.
+The {javadoc6:org/openspaces/core/IteratorBuilder|IteratorBuilder} with the {javadoc6:com/j_spaces/core/client/GSIterator|GSIterator} allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the {{readMultiple}} since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side.
 
 See the [Paging Support with Space Iterator] for details.
 
@@ -280,7 +280,7 @@ The two forms of the {{Read}} operations query the space for an object that matc
 
 Any matching object can be returned. Successive Read requests with the same template may or may not return equivalent objects, even if no intervening modifications have been made to the Space. Each invocation of {{Read}} may return a new object even if the same object is matched in the space. If you would like to Read objects in the same order they have been written into the space you should perform the read objects in a [FIFO mode|FIFO Support].
 
-A {{ReadIfExists}} operation will return a matching object, or a {{null}} if there is currently no matching object in the space. If the only possible matches for the template have *conflicting locks* from one or more other transactions, the {{timeout}} value specifies how long the client is willing to wait for interfering transactions to settle before returning a value. If at the end of that time no value can be returned that would not interfere with transactional state, {{null}} is returned. Note that, due to the remote nature of the space, {{Read}} and {{ReadIfExists}} may throw a {{RemoteException}} if the network or server fails prior to the {{timeout}} expiration.
+A {{ReadIfExists}} operation will return a matching object, or a {{null}} if there is currently no matching object in the space. If the only possible matches for the template have **conflicting locks** from one or more other transactions, the {{timeout}} value specifies how long the client is willing to wait for interfering transactions to settle before returning a value. If at the end of that time no value can be returned that would not interfere with transactional state, {{null}} is returned. Note that, due to the remote nature of the space, {{Read}} and {{ReadIfExists}} may throw a {{RemoteException}} if the network or server fails prior to the {{timeout}} expiration.
 
 A {{Read}} operation acts like a {{ReadIfExists}} except that it will wait until a matching object is found or until transactions settle, whichever is longer, up to the timeout period.
 
@@ -290,7 +290,7 @@ In both read methods, a timeout of {{JavaSpace.NO_WAIT}} means to return immedia
 
 # takeIfExists and take Operations
 
-The {{take}} operations perform exactly like the corresponding {{read}} operations, except that the matching object is *removed* from the space on one atomic operation. Two {{take}} operations will *never return* copies of the same object, although if two equivalent objects were in the space the two {{take}} operations could return equivalent objects.
+The {{take}} operations perform exactly like the corresponding {{read}} operations, except that the matching object is **removed** from the space on one atomic operation. Two {{take}} operations will **never return** copies of the same object, although if two equivalent objects were in the space the two {{take}} operations could return equivalent objects.
 
 If a {{take}} returns a non-null value, the object has been removed from the space, possibly within a transaction. This modifies the claims to once-only retrieval: A take is considered to be successful only if all enclosing transactions commit successfully. If a {{RemoteException}} is thrown, the take may or may not have been successful. If an {{UnusableEntryException}} is thrown, the take {{removed}} the unusable object from the space. If any other exception is thrown, the take did not occur, and no object was removed from the space.
 
@@ -317,7 +317,7 @@ Here are few important considerations when using the batch operations:
 - Destructive batch operations ({{takeMultiple}} , {{writeMultiple}} , {{updateMultiple}}) should be performed with transactions - this allows the client to roll back the space to its initial state prior the operation was started, in case of a failure.
 - When calling {{writeMultiple}} or {{updateMultiple}}, make sure {{null}} values are not part of the passed array.
 - When using {{writeMultiple}}, you should verify that duplicated entries (with the same ID) do not appear as part of the passed array, since the identity of the object is determined based on its {{ID}} and not based on its reference. This is extremely important with an embedded space, since {{writeMultiple}} injects the ID value into the object after the write operation (when autogenerate=false).
-- The {{readMultiple}} and {{takeMultiple}} operations *do not support timeout* operations. The simple way to achieve this is by calling the {{read}} operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
+- The {{readMultiple}} and {{takeMultiple}} operations **do not support timeout** operations. The simple way to achieve this is by calling the {{read}} operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
 - Exception handling - batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
     - {JavaDocOS:org/openspaces/core/WriteMultiplePartialFailureException|org.openspaces.core.WriteMultiplePartialFailureException}
     - {JavaDocOS:org/openspaces/core/WriteMultipleException|org.openspaces.core.WriteMultipleException}

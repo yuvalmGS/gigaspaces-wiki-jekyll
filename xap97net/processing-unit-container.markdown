@@ -14,7 +14,7 @@ The .NET Processing Unit Container is based on the [OpenSpaces Processing Unit|X
 
 The Processing Unit Container is aware of the [cluster info|#ClusterInfo]. This allows you to write your code decoupled from cluster topologies considerations.
 
-{refer}Learn how to use the .NET Processing Unit Container in the *[SBA Example]* section.{refer}
+{refer}Learn how to use the .NET Processing Unit Container in the **[SBA Example]** section.{refer}
 
 {tip} Most users prefer to work with the [Basic Processing Unit Container], since it simplifies many common tasks associated with implementing a processing unit from scratch.
 However, if you are not familiar with processing unit and event container concepts, the basic processing unit container may be confusing. We recommend you read and experiment with the processing unit container explained below for a while, then continue to read and benefit from the basic processing unit container.

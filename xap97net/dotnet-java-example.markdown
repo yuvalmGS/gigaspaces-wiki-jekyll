@@ -35,22 +35,22 @@ There are two applications in the example: a .NET application and a Java applica
 
 Both applications:
 - Connect to an existing remote space
-- Define a Person class (*Person.cs* in .NET, *src\Person.java* in Java)
+- Define a Person class (**Person.cs** in .NET, **src\Person.java** in Java)
 - Have two modes:
     - Write mode. The application connects to a remote space, writes one Person instance to the space, and exits
     - Listener mode. The application:
-  *** Connects to a remote space
-  *** Subscribes for notifications about all changes in Person objects (a new Person will also trigger a notification)
-  *** Writes the data of the Person objects whenever they arrive
+        - Connects to a remote space
+        - Subscribes for notifications about all changes in Person objects (a new Person will also trigger a notification)
+        - Writes the data of the Person objects whenever they arrive
 
 ## The Person Interoperable Class
 
 - The .NET naming convention is different than the Java naming convention.
 The {{\[XAP66:SpaceClass(AliasName="")\]}} attribute is used to map the .NET names to the respective Java names.
 
-- The .NET class *GigaSpaces.Examples.DotnetJava.Person* is mapped to the Java class *com.gigaspaces.examples.dotnetjava.Person*.
+- The .NET class **GigaSpaces.Examples.DotnetJava.Person** is mapped to the Java class **com.gigaspaces.examples.dotnetjava.Person**.
 
-- The .NET fields/properties *SomeByte, SomeString* are mapped to the Java properties *someByte, someString*.
+- The .NET fields/properties **SomeByte, SomeString** are mapped to the Java properties **someByte, someString**.
 
 || C# || Java ||
 |{Code:java}

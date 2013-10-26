@@ -16,9 +16,9 @@ page_id: 63799328
 Multiple site replication is the ability to replicate state between different deployed spaces, where each space can be also physically located in a different geographical location (also termed a different deployment site).
 
 Multiple site replication is a very common deployment topology in the following scenarios:
-- *When planning for disaster recovery* - In such cases, each of the deployment sites is located far from the other sites (e.g. a different continent so that if one site is completely destroyed or decommissioned other sites are not affected and can continue to operate normally.)
-- *For failover purposes* - When one site acts as a failover over target for another.
-- *For maintaining data locality* - for each site for performance and latency reasons. For example a global trading application that operates in multiple stock exchanges across the globe need fast access to *Global Reference Data*, or an application that's deployed on multiple data centers in the cloud with a need to access the *Users Profile Data* very quickly.
+- **When planning for disaster recovery** - In such cases, each of the deployment sites is located far from the other sites (e.g. a different continent so that if one site is completely destroyed or decommissioned other sites are not affected and can continue to operate normally.)
+- **For failover purposes** - When one site acts as a failover over target for another.
+- **For maintaining data locality** - for each site for performance and latency reasons. For example a global trading application that operates in multiple stock exchanges across the globe need fast access to **Global Reference Data**, or an application that's deployed on multiple data centers in the cloud with a need to access the **Users Profile Data** very quickly.
 
 !GRA:Images2^wan_use_cases.jpg!
 
@@ -86,7 +86,7 @@ Each of replication channel to the gateways can be configured with more paramete
 Here we have specified a global bulk size of 1000 but have specifically overridden it in the replication channel to Hong Kong with 100, and have a global maximum redo log capacity for both targets of 1000000.
 {refer}For more details about all the available configuration elements of the space gateway targets please refer to the [Configuring Space Gateway Targets] section.{refer}
 
-{tip}*Use the {{partitioned-sync2backup}} cluster schema*
+{tip}**Use the {{partitioned-sync2backup}} cluster schema**
 You should have the {{partitioned-sync2backup}} cluster schema used with the space to enable the replication to the Gateway.
 If you are not interested in having backups running but have the replication to the Gateway running, you should have ZERO as the number of backups. See below example of an sla.xml configuration you could use in such a case:
 {code}
@@ -688,11 +688,11 @@ In this example, the gateway {{pu.xml}} is quite symmetric, the only difference 
 
 </beans>
 {code}
-In the above we have configured both LONDON and NEWYORK at the sources of the sink and as delegation target, the delegator and the sink will filter a gateway target and source if they match their local name. Using the above technique may simplify scenarios which are symmetric but it is not recommended when the scenarios are *not* symmetric as it can be unnecessarily confusing.
+In the above we have configured both LONDON and NEWYORK at the sources of the sink and as delegation target, the delegator and the sink will filter a gateway target and source if they match their local name. Using the above technique may simplify scenarios which are symmetric but it is not recommended when the scenarios are **not** symmetric as it can be unnecessarily confusing.
 {gcard}
 {gdeck}
 
-{tip}*Multi-Master Running example*
+{tip}**Multi-Master Running example**
 The [Multi-Master running example|SBP:WAN Replication Gateway] includes a three-way setup replicating data between three sites, this example contains a spring(java) processing unit for the spaces, but the gateway components are the same.{tip}
 
 # Filtering Replication Between Gateways

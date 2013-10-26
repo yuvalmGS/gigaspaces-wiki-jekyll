@@ -8,16 +8,16 @@ page_id: 63799417
 {summary}This section describes the architecture of the GigaSpaces XAP product.{summary}
 
 GigaSpaces XAP is built from the following sub-systems:
-- [*An SLA-Driven Container*|#SLA-Driven Container] -- provides the virtualization capabilities
-- [*A Unified Clustering Layer*|#Unified In-Memory Clustering] -- responsible for a single clustering model across all the product's functionality. This capability is built on top of the space infrastructure.
-- [*Core Middleware*|#Core Middleware] -- space-based runtime services which provide data, messaging and processing implementation.
-- [*Lightweight Application Containers*|#Lightweight Application Containers] -- application container services provide runtime support for applications.
-- [*Developers API and Components*|#Developers API and Components] -- the API layer and a component model (building blocks) for application developers.
+- [**An SLA-Driven Container**|#SLA-Driven Container] -- provides the virtualization capabilities
+- [**A Unified Clustering Layer**|#Unified In-Memory Clustering] -- responsible for a single clustering model across all the product's functionality. This capability is built on top of the space infrastructure.
+- [**Core Middleware**|#Core Middleware] -- space-based runtime services which provide data, messaging and processing implementation.
+- [**Lightweight Application Containers**|#Lightweight Application Containers] -- application container services provide runtime support for applications.
+- [**Developers API and Components**|#Developers API and Components] -- the API layer and a component model (building blocks) for application developers.
 
 Each sub-system (layer) is responsible for providing application server capabilities, and the bottom layers provide services to the upper layers. Figure 1 provides a representation of the sub-systems which compose the entire GigaSpaces XAP product.
 
 !GS6:Images^XAP Architecture Overview.jpg|align=center!
-{center} ~*Figure 1. Architecture overview for GigaSpaces XAP*~ {center}
+{center} ~**Figure 1. Architecture overview for GigaSpaces XAP**~ {center}
 
 # SLA-Driven Container
 
@@ -110,7 +110,7 @@ The GigaSpaces XAP solution does not require a compromise between stateless appl
 
 As an application server, GigaSpaces XAP provides integrated, memory-based runtime capabilities. The core of these capabilities is backed by the space technology - for more information, please refer to [Space - Concepts and Capabilities|Concepts#Space - Concepts and Capabilities].
 
-*The core middleware capabilities are:*
+**The core middleware capabilities are:**
 {toc-zone:type=list|location=top}
 
 ## In-Memory Data Grid
@@ -177,7 +177,7 @@ For this reason, this architecture is very powerful, as it enables applications 
 
 GigaSpaces XAP provides several default implementations as part of the product, and an additional plugin API, to enable other technology integrations.
 
-*Current implementations supported by GigaSpaces XAP*:
+**Current implementations supported by GigaSpaces XAP**:
 {toc-zone:type=list|location=top}
 
 More information on the usage of the above integrations can be found in the [Programmer's Guide].
@@ -246,4 +246,4 @@ This package contains integrations with non-XAP components. For more information
 {toc-zone}
 
 {whr}
-{refer} *Next chapter*: [Terminology]{refer}
+{refer} **Next chapter**: [Terminology]{refer}

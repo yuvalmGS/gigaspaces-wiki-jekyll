@@ -9,7 +9,7 @@ page_id: 63799337
 
 # Overview
 
-This page explains how to create a simple Hello World application using XAP.NET API. The application is very simple: connect to a space, store an entry and retrieve it. The application shown here is also available in the examples distributed with the product (from the Windows Start menu, select *Programs > GigaSpaces XAP.NET > Examples* and review the *HelloWorld* example).
+This page explains how to create a simple Hello World application using XAP.NET API. The application is very simple: connect to a space, store an entry and retrieve it. The application shown here is also available in the examples distributed with the product (from the Windows Start menu, select **Programs > GigaSpaces XAP.NET > Examples** and review the **HelloWorld** example).
 
 (i) All the instructions and code shown in this page are for C# developers. Naturally all other .NET languages (VB.NET, C++/CLI, J#, etc.) are supported as well.
 
@@ -19,21 +19,21 @@ If you haven't done so yet, please [download|http://www.gigaspaces.com/LatestPro
 
 # Setting Up the Project
 
-This section shows how to create a C# Console Application named *HelloWorld* with a reference to the *GigaSpaces.Core* assembly.
+This section shows how to create a C# Console Application named **HelloWorld** with a reference to the **GigaSpaces.Core** assembly.
 
 ## Create a Console Application Project
 
-1. Open Microsoft Visual Studio. From the *File* menu select *New > Project*. The *New Project* dialog appears.
-2. In the *Project types* tree, select *Visual C#*, then select *Console Application* in the *Templates* list.
-3. In the *Name* test box, type *HelloWorld*. If you wish, change the default location to a path you prefer.
-4. Select *OK* to continue. Visual Studio creates the project and opens the automatically generated {{program.cs}} file.
+1. Open Microsoft Visual Studio. From the **File** menu select **New > Project**. The **New Project** dialog appears.
+2. In the **Project types** tree, select **Visual C#**, then select **Console Application** in the **Templates** list.
+3. In the **Name** test box, type **HelloWorld**. If you wish, change the default location to a path you prefer.
+4. Select **OK** to continue. Visual Studio creates the project and opens the automatically generated {{program.cs}} file.
 
 ## Add a Reference to the GigaSpaces Core Assembly
 
-1. From the *Project* menu, select *Add Reference*. The *Add Reference* dialog appears.
-2. Select the *Browse* tab, navigate to the XAP.NET installation folder (e.g. *C:\GigaSpaces\XAP.NET 8.0.0 x86\NET v4.0.30319*). Go into the *Bin* folder, select *GigaSpaces.Core.dll*, and click *OK*.
+1. From the **Project** menu, select **Add Reference**. The **Add Reference** dialog appears.
+2. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\XAP.NET 8.0.0 x86\NET v4.0.30319**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
     1. Since running .NET 4.0 side-by-side with .NET 2.0 [has limitations|http://msdn.microsoft.com/en-us/magazine/ee819091.aspx], GigaSpaces XAP.NET comes with a separate set of assemblies for .NET 2.0 and .NET 4.0. Make sure you use the one relevant for you.
-3. In the *Solution Explorer*, make sure you see *GigaSpaces.Core* in the project references. There's no need to reference any other assembly.
+3. In the **Solution Explorer**, make sure you see **GigaSpaces.Core** in the project references. There's no need to reference any other assembly.
 
 # Writing the Code
 
@@ -43,8 +43,8 @@ This section shows how to write a simple program that connects to the space, sto
 
 We want to demonstrate storing some object to the space. To do this, let's create a simple {{Message}} class with a {{Text}} property of type {{String}}.
 
-1. In *Solution Explorer*, right-click the *HelloWorld* project and select *Add > Class*. The *Add New Item* dialog appears.
-2. In the *Templates* list, make sure *Class* is selected. Type *Message* in the class name text box, and click *Add*. The class is added to the project and the editor displays its content.
+1. In **Solution Explorer**, right-click the **HelloWorld** project and select **Add > Class**. The **Add New Item** dialog appears.
+2. In the **Templates** list, make sure **Class** is selected. Type **Message** in the class name text box, and click **Add**. The class is added to the project and the editor displays its content.
 3. Add the following code to the {{Message}} class:
 {code:java}
 public class Message
@@ -70,14 +70,14 @@ public class Message
 ## Getting Started
 
 The XAP.NET API used in this example is located in the {{GigaSpaces.Core}} namespace.
-Switch to the *Program.cs* editor, and add a {{using}} statement to include {{GigaSpaces.Core}}:
+Switch to the **Program.cs** editor, and add a {{using}} statement to include {{GigaSpaces.Core}}:
 {code:java}
 using GigaSpaces.Core;
 {code}
 
 ## Connecting to the Space
 
-We need to establish a connection to a space which stores the object. To do this, we use the {{FindSpace}} method from a factory class called {{GigaSpacesFactory}}. This takes a URL of the requested space, and returns a space proxy of type {{ISpaceProxy}}. Since we don't have any spaces running yet, we use a special URL prefix to indicate that we want the space lookup to occur in-process, and that the searched space should be created in-process if it doesn't exist yet. The space name is *myEmbeddedSpace* (when the space and the proxy reside in the same process, the space is called an *embedded space*).
+We need to establish a connection to a space which stores the object. To do this, we use the {{FindSpace}} method from a factory class called {{GigaSpacesFactory}}. This takes a URL of the requested space, and returns a space proxy of type {{ISpaceProxy}}. Since we don't have any spaces running yet, we use a special URL prefix to indicate that we want the space lookup to occur in-process, and that the searched space should be created in-process if it doesn't exist yet. The space name is **myEmbeddedSpace** (when the space and the proxy reside in the same process, the space is called an **embedded space**).
 
 Edit the {{Main}} method and add the following code:
 {code:java}
@@ -119,7 +119,7 @@ Console.ReadLine();
 
 # Running the Program
 
-To run the program, from the *Debug* menu, select *Start Debugging*.
+To run the program, from the **Debug** menu, select **Start Debugging**.
 
 The following shows the complete program code, with some minor modifications:
 {code:java}

@@ -68,7 +68,7 @@ SpaceConfig spaceConfig = new SpaceConfig();
 //Start a new ExternalDataSource config object
 spaceConfig.ExternalDataSourceConfig = new ExternalDataSourceConfig();
 //Start a new instance of the custom implementation and attach it to the config
-spaceConfig.ExternalDataSourceConfig.Instance = new *CustomImplementation*();
+spaceConfig.ExternalDataSourceConfig.Instance = new **CustomImplementation**();
 //if custom properties should be passed to the Init method put them here, otherwise there's no need to create a dictionary of custom properties
 spaceConfig.ExternalDataSourceConfig.CustomProperties = new Dictionary<string, string>();
 //Add custom properties to the dictionary

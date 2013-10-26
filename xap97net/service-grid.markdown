@@ -14,7 +14,7 @@ page_id: 64127758
 
 The Grid Service Manager is the component which manages the deployment and life cycle of the processing unit.
 
-When a processing unit is uploaded to the GSM (using one of GigaSpaces deployment tools: UI, CLI, API), the GSM analyzes the deployment descriptor and determines how many instances of the processing unit should be created, and which [containers|#gsc] should host them. It then ships the processing unit code to the relevant containers and instructs them to instantiate the processing unit instances. This phase in the deployment process is called *provisioning*.
+When a processing unit is uploaded to the GSM (using one of GigaSpaces deployment tools: UI, CLI, API), the GSM analyzes the deployment descriptor and determines how many instances of the processing unit should be created, and which [containers|#gsc] should host them. It then ships the processing unit code to the relevant containers and instructs them to instantiate the processing unit instances. This phase in the deployment process is called **provisioning**.
 
 Once provisioned, the GSM continuously monitors the processing unit instances to determine if they're functioning properly or not. When a certain instance fails, the GSM identifies that and re-provisions the failed instance on to another GSC, thus enforcing the processing unit's SLA.
 
@@ -44,7 +44,7 @@ Service registrations in the LUS are lease-based, and each service periodically 
 
 The Lookup Service can be configured for either a [multicast|How to Configure Multicast] or [unicast|How to Configure Unicast Discovery] environment (default is multicast).
 
-Another important attribute in that context is the *lookup group*. The lookup group is a logical grouping of all the components that belong to the same runtime cluster. Using lookup groups, you can run multiple deployments on the same physical infrastructure, without them interfering with one another. For more details please refer to [Lookup Service Configuration].
+Another important attribute in that context is the **lookup group**. The lookup group is a logical grouping of all the components that belong to the same runtime cluster. Using lookup groups, you can run multiple deployments on the same physical infrastructure, without them interfering with one another. For more details please refer to [Lookup Service Configuration].
 
 (on) It is common to start at least two LUS instances in each Service Grid for high-availability reasons. Note that the lookup service can run in the same process with a GSM, or in standalone mode using its own process.
 
@@ -70,13 +70,13 @@ The GSA manages Operating System processes. There are two types of process manag
 
 Local processes simply start the process type (for example, a [Grid Service Container|#gsc]) without taking into account any other process types running by different GSAs.
 
-Global processes take into account the number of process types ([Grid Service Manager|#gsm] for example) that are currently running by other GSAs (within the same lookup groups or lookup locators). It will automatically try and run at least X number of processes *across* all the different GSAs (with a maximum of 1 process type per GSA). If a GSA running a process type that is managed globally fails, another GSA will identify the failure and start it in order to maintain at least X number of global process types.
+Global processes take into account the number of process types ([Grid Service Manager|#gsm] for example) that are currently running by other GSAs (within the same lookup groups or lookup locators). It will automatically try and run at least X number of processes **across** all the different GSAs (with a maximum of 1 process type per GSA). If a GSA running a process type that is managed globally fails, another GSA will identify the failure and start it in order to maintain at least X number of global process types.
 
 # Starting a Service Grid
 
 The Service Grid can be started in two fashions:
-1. *Console Application* - using {{<GSHOME>\bin\gs-agent.exe}}
-2. *Windows Service* - using the [GigaSpaces Windows Services Manager|Service Grid Components as Windows Services] tool bundled with XAP.NET.
+1. **Console Application** - using {{<GSHOME>\bin\gs-agent.exe}}
+2. **Windows Service** - using the [GigaSpaces Windows Services Manager|Service Grid Components as Windows Services] tool bundled with XAP.NET.
 
 Usually the console application is used by developers whereas the Windows service is used in production environments.
 

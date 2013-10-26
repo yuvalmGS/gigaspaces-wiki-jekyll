@@ -390,7 +390,7 @@ Of course, we can register the same event listener on a specific {{ISpace}} topo
 
 - Each component in the Admin API that can provide statistics (either direct or aggregated statistics) implements the {{IStatisticsMonitor}} interface. The statistics monitor allows you to start or stop monitoring statistics. Monitoring for statistics is required if one wishes to register for statistics change events. The interval at which statistics are polled, is controlled using the statistics interval.
 
-- The statistics interval is an important event when the Admin API is not actively polling for statistics. Each call to a property of statistics only performs a remote call to the component, if the last statistics fetch happened *before* the statistics interval. This behavior means that users of the Admin API do not have to worry about "hammering" different components for statistics, since the Admin makes sure that statistics calls are cached internally for the statistics interval period.
+- The statistics interval is an important event when the Admin API is not actively polling for statistics. Each call to a property of statistics only performs a remote call to the component, if the last statistics fetch happened **before** the statistics interval. This behavior means that users of the Admin API do not have to worry about "hammering" different components for statistics, since the Admin makes sure that statistics calls are cached internally for the statistics interval period.
 
 - An {{ISpaceInstance}} implements the {{IStatisticsMonitor}} interface. Calling {{StartMonitor}} and {{StopMonitor}} on it, causes monitoring of statistics to be enabled or disabled on it.
 

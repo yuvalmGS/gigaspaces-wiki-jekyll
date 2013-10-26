@@ -35,10 +35,10 @@ public class Message
 {code}
 
 Here are the {{StorageType}} supported options:
-- *Object* - The space proxy will serialize the property value using {{PBS}} and the space will deserialize it into its java counterpart, and store it in the space as such. When the entry is read/taken from the space the property will be serialized back in the same manner.
-- *Binary* - The space proxy will serialize the property value using {{PBS}}, but the space will not deserialize it, just keep the bytes in a special Binary container in the space. When the entry is read/taken the binary content will be passed as-is back to the .NET proxy, which will deserialize it back to a .NET object.
-- *BinaryCustom* - Same as Binary, except that .NET serialization is used instead of {{PBS}} serialization.
-- *Document* - The space proxy will serialize the property value in {{PBS}} and the space will deserialize it as a {{SpaceDocument}}, and store it in the space as such. This allows matching on nested properties inside the property and to index these nested properties as well.
+- **Object** - The space proxy will serialize the property value using {{PBS}} and the space will deserialize it into its java counterpart, and store it in the space as such. When the entry is read/taken from the space the property will be serialized back in the same manner.
+- **Binary** - The space proxy will serialize the property value using {{PBS}}, but the space will not deserialize it, just keep the bytes in a special Binary container in the space. When the entry is read/taken the binary content will be passed as-is back to the .NET proxy, which will deserialize it back to a .NET object.
+- **BinaryCustom** - Same as Binary, except that .NET serialization is used instead of {{PBS}} serialization.
+- **Document** - The space proxy will serialize the property value in {{PBS}} and the space will deserialize it as a {{SpaceDocument}}, and store it in the space as such. This allows matching on nested properties inside the property and to index these nested properties as well.
 
 (!) Indexing a property with a binary or custom binary storage type is not supported. For more information about indexing see [Indexing|Indexing].
 
@@ -47,9 +47,9 @@ Here are the {{StorageType}} supported options:
 StorageType can be defined on .NET classes and C++ classes, but it currently cannot be defined on POJOs (planned for future releases).
 
 Effectively this means a POJO property is always considered as StorageType.Object.
-- *StorageType=Object* is fully interoperable across all proxy types (Java, .NET, c++).
-- *StorageType=Binary* is fully interoperable between .NET and C++, and partial interop with java (a java proxy can read the pojo, and access/modify all properties which are StorageType.Object, leaving the rest unchanged).
-- *StorageType=BinaryCustom* is currently only supported for .NET proxies, with partial interop with java and C++ as described above.
+- **StorageType=Object** is fully interoperable across all proxy types (Java, .NET, c++).
+- **StorageType=Binary** is fully interoperable between .NET and C++, and partial interop with java (a java proxy can read the pojo, and access/modify all properties which are StorageType.Object, leaving the rest unchanged).
+- **StorageType=BinaryCustom** is currently only supported for .NET proxies, with partial interop with java and C++ as described above.
 
 # Defaults
 
@@ -59,8 +59,8 @@ Any other type is assumed to be a user defined type, and its default storage typ
 
 # Performance Considerations
 
-- *Binary* is supposed to be the fastest (almost) always, because the server side doesn't need to deserialize/serialize on write/read.
-- *BinaryCustom* is somewhat slower in most cases than Binary, because {{PBS}} serialization is faster and more efficient than .NET default serialization, since .NET serialization is more generic and needs to take into account stuff that we don't (for example: we only serialize metadata on the first time, .NET does it every time...). However, on the space side, the data is still stored as a blob.
-- *Object* and *Document* serialization is usually the slowest because the space have to fully deserialize the blob and reconstruct the pojo or the document.
+- **Binary** is supposed to be the fastest (almost) always, because the server side doesn't need to deserialize/serialize on write/read.
+- **BinaryCustom** is somewhat slower in most cases than Binary, because {{PBS}} serialization is faster and more efficient than .NET default serialization, since .NET serialization is more generic and needs to take into account stuff that we don't (for example: we only serialize metadata on the first time, .NET does it every time...). However, on the space side, the data is still stored as a blob.
+- **Object** and **Document** serialization is usually the slowest because the space have to fully deserialize the blob and reconstruct the pojo or the document.
 
 Note that for common primitive types (int, string, DateTime, etc.) these performance diffs are negligible (if at all), and there's no sense in changing the default from object. As the property's payload gets bigger, it makes more sense to start tweaking it's storage type.

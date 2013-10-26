@@ -39,13 +39,13 @@ The space has a number of determining characteristics that should be configured 
 ### The Space Clustering Topology
 
 The Space can have a single instance, in which case it runs on a single Virtual Machine (VM), or multiple instances, in which case it can run on multiple VMs.
-When it has multiple instances, the Space can run in a number of [topologies|Space Topologies] which determine how the data is distributed across those VMs. In general, the data can be either *replicated*, which means it resides on all of the VMs in the cluster, or *partitioned*, which means that the data is distributed across all of the VMs, each containing a different subset of it. With a partitioned topology you can also assign one or more backup space instances for each partition.
+When it has multiple instances, the Space can run in a number of [topologies|Space Topologies] which determine how the data is distributed across those VMs. In general, the data can be either **replicated**, which means it resides on all of the VMs in the cluster, or **partitioned**, which means that the data is distributed across all of the VMs, each containing a different subset of it. With a partitioned topology you can also assign one or more backup space instances for each partition.
 
 !GRA:Images^topologies.jpg!
 
 ### Master-Local Space
 
-Regardless of the Space's topology, you can also define a [Local Cache | Client Side Caching] for space clients. The Local Cache caches space entries recently used by the client, or a predefined subset of the central space's data (often referred to as a *Continuous Query*).
+Regardless of the Space's topology, you can also define a [Local Cache | Client Side Caching] for space clients. The Local Cache caches space entries recently used by the client, or a predefined subset of the central space's data (often referred to as a **Continuous Query**).
 The data cached on the client side is kept up to date by the server. If Space client A changes a Space entry that resides in a client B's local cache, the Space makes sure to update client B's cache.
 
 ### The Replication Mode
@@ -69,8 +69,8 @@ It supports the following options, from which you can choose:
 
 Since the Space is memory-based, it is essential to verify that it does not overflow and crash. The Space's memory can be managed and a memory overflow prevented by:
 
-- *Eviction policy*. The space supports two eviction policies: {{ALL_IN_CACHE}} and {{LRU}} (Least Recently Used). With {{LRU}}, the Space starts to evict the least used entries when it becomes full. The {{ALL_IN_CACHE}} policy never evicts anything from the Space.
-- *Memory manager*. The memory manager allows you to define numerous thresholds that control when entries are evicted (in case you use {{LRU}}), or when the space simply blocks clients from adding data to it.
+- **Eviction policy**. The space supports two eviction policies: {{ALL_IN_CACHE}} and {{LRU}} (Least Recently Used). With {{LRU}}, the Space starts to evict the least used entries when it becomes full. The {{ALL_IN_CACHE}} policy never evicts anything from the Space.
+- **Memory manager**. The memory manager allows you to define numerous thresholds that control when entries are evicted (in case you use {{LRU}}), or when the space simply blocks clients from adding data to it.
 Combined, these two facilities enable better control of your environment and ensure that the memory of the Space instances in your cluster do not overflow.
 
 ### Reactive Programming

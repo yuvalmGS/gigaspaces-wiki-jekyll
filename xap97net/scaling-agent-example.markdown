@@ -32,7 +32,7 @@ that monitors a deployed application, and scale it up on demand.{summary}
 
 The [Administration and Monitoring API|Administration and Monitoring API] allows you to monitor an application's health and its resources, to enforce a specific pre-defined configurable SLA that scales the application while it is running. This ensures a deterministic response time when there is an increasing number of users accessing the system, and also ensures the high-availability and robustness of the application.
 
-The following example illustrates how you can construct a simple processing unit (*The Scaling Agent*) to monitor an application deployed into GigaSpaces, and track the load on the application. Once the average throughput per instance of the application breaches a pre-defined limit, the scaling agent reacts and performs the necessary activities to scale the application tier.
+The following example illustrates how you can construct a simple processing unit (**The Scaling Agent**) to monitor an application deployed into GigaSpaces, and track the load on the application. Once the average throughput per instance of the application breaches a pre-defined limit, the scaling agent reacts and performs the necessary activities to scale the application tier.
 
 The activities to scale up the application could be: starting a new GSC on remote machines, and starting additional application instances. In the same way, the scaling agent can be extended to scale down the application to terminate running GSCs, and reduce the amount of application instances.
 

@@ -9,7 +9,7 @@ page_id: 63799340
 
 # Overview
 
-A data unit stored in the space is called an *Entry*. However, as you've seen in [Writing Your First Application|Your First Data Grid Application], there was no entry in the code - the program simply wrote a plain .NET object to the space and then took it. The API is .NET-friendly, and supports storing & retrieving .NET objects, which are transformed into space entries under the hood. For example, when the program wrote a {{Message}} object with a {{String}} property called {{Text}}, it was actually stored as an entry, whose type name was Message, which held one string property called Text.
+A data unit stored in the space is called an **Entry**. However, as you've seen in [Writing Your First Application|Your First Data Grid Application], there was no entry in the code - the program simply wrote a plain .NET object to the space and then took it. The API is .NET-friendly, and supports storing & retrieving .NET objects, which are transformed into space entries under the hood. For example, when the program wrote a {{Message}} object with a {{String}} property called {{Text}}, it was actually stored as an entry, whose type name was Message, which held one string property called Text.
 
 Most of the time, the terms object and entry are used interchangeably, because the meaning is clear from the context, and the semantics are trivial. However, it is important to understand the difference between them. Moreover, some  features rely on applying semantics to an object to get a specific entry behavior. This page explains how objects are transformed to (and from) entries, and how that process can be controlled and customized.
 
@@ -95,7 +95,7 @@ proxy.Write(message);
 proxy.Write(message);
 {code}
 
-If you execute it, and examine the space in the GigaSpaces Management Center, you will see two different entries with the same text, even though from the .NET perspective, there's only one object. You should also see an additional column called *UID*, which is not part of our .NET object, and which contains a unique identifier that distinguishes the entries from each other. This unique identifier is commonly referred to as a *Space ID*.
+If you execute it, and examine the space in the GigaSpaces Management Center, you will see two different entries with the same text, even though from the .NET perspective, there's only one object. You should also see an additional column called **UID**, which is not part of our .NET object, and which contains a unique identifier that distinguishes the entries from each other. This unique identifier is commonly referred to as a **Space ID**.
 
 What happened behind the scenes? When a write operation executes, a new entry is created, and the properties are copied from the object to the entry. Each entry contains an additional special hidden UID property, which we ignored and left as null. When the space receives an entry to store, it verifies that there's no stored entry with the same UID, and if the UID is null, it generates a unique one. In our scenario, because the UID was ignored, the second write operation resulted in a separate entry containing the same data, with a different UID.
 
@@ -114,7 +114,7 @@ public String MessageID
 }
 {code}
 
-If you run the code from *example 2* again, you will see that the second write fails, with an {{EntryAlreayInSpaceException}}. If you examine the newly added {{MessageID}} property in the debugger, you will see that even though we didn't set it, it contains a unique identifier string.
+If you run the code from **example 2** again, you will see that the second write fails, with an {{EntryAlreayInSpaceException}}. If you examine the newly added {{MessageID}} property in the debugger, you will see that even though we didn't set it, it contains a unique identifier string.
 
 When a property is marked as {{\[SpaceID(AutoGenerate = true)\]}}, it is mapped to the entry's UID. On the first write operation the {{MessageID}} was null, so the entry UID was null, and the space generated a UID for it. Before the operation was completed, the generated UID was copied back to the {{MessageID}} property, as the debugger shows. On the second write operation, the space again creates an entry, and maps the object data to the entry, but this time the {{MessageID}} is no longer empty, so the entry UID is not empty. The space checked if the UID is unique, discovered there's another entry with the same UID and aborted the operation.
 

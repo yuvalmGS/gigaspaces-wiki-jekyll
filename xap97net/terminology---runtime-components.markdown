@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799418
 ---
 
-*Summary* - GigaSpaces components from a functional perspective.
+**Summary** - GigaSpaces components from a functional perspective.
 |[Basic Components|Terminology - Basic Components]|[Data Grid Topologies|Terminology - Data Grid Topologies]|[Space-Based Architecture|Terminology - Space-Based Architecture]||Runtime Components|
 
 # GigaSpaces Runtime and Administration Components
@@ -35,7 +35,7 @@ A container that hosts a [Processing Unit|Terminology - Basic Components#Process
 
 {% align center %}!GS6:Images^term_puc.gif!
 
-~*A Processing Unit Container*~
+~**A Processing Unit Container**~
 {% endalign %}
 
 {% endcolumn %}
@@ -64,8 +64,8 @@ A container that runs the Processing Unit inside an IDE (e.g. Visual Studio, Ecl
 {% align center %}
 !GS6:Images^term_ipuc.gif!
 
-~*An Intgrated Processing Unit Container running a Processing Unit*~
-~*inside an IDE*~
+~**An Intgrated Processing Unit Container running a Processing Unit**~
+~**inside an IDE**~
 {% endalign %}
 
 {% endcolumn %}
@@ -91,8 +91,8 @@ It enables running the processing unit within a [service grid|#Service Grid], wh
 {% align center %}
 !GS6:Images^term_gscnet.gif!
 
-~*A Service Grid Processing Unit Container running a Processing Unit*~
-~*inside an IDE*~
+~**A Service Grid Processing Unit Container running a Processing Unit**~
+~**inside an IDE**~
 {% endalign %}
 
 {% endcolumn %}
@@ -126,7 +126,7 @@ Each container can be run on a separate physical machine.
 
 {% align center %}!GS6:Images^term_empty_service_grid.gif!
 
-~*A Service Grid composed of a Grid Service Manager which manages 3 Grid Service Containers*~
+~**A Service Grid composed of a Grid Service Manager which manages 3 Grid Service Containers**~
 {% endalign %}
 
 {% endcolumn %}
@@ -153,7 +153,7 @@ A machine can run one or more GSC processes. Each GSC communicates with a manage
 
 {% align center %}!GS6:Images^term_gsc.jpg!
 
-~*Grid Service Container*~
+~**Grid Service Container**~
 {% endalign %}
 
 {% endcolumn %}
@@ -180,7 +180,7 @@ A GSM has an API for deploying/undeploying processing units. When a GSM is instr
 
 {% align center %}!GS6:Images^term_gsm.gif!
 
-~*Grid Service Manager*~
+~**Grid Service Manager**~
 {% endalign %}
 
 {% endcolumn %}
@@ -208,7 +208,7 @@ Enables the user to view and interact with the runtime components running in the
 
 {% align center %}!GS6:Images^term_management_ui.gif!
 
-~*Management UI Console*~
+~**Management UI Console**~
 {% endalign %}
 
 {% endcolumn %}

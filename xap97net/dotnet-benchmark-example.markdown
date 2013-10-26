@@ -35,7 +35,7 @@ You can customize the example and run a benchmark on customized scenarios and ob
 
 There are two options for using the benchmark:
 
-*1. Out-of-the-box benchmark.*
+**1. Out-of-the-box benchmark.**
 
 Use the Benchmark Example and customize the Benchmark run:
 - by changing the space-url to connect to the space topology that you want to check.
@@ -43,7 +43,7 @@ Use the Benchmark Example and customize the Benchmark run:
 
 For more information please read [XAP66:Out-of-the-box benchmark|#1]
 
-*2. Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.*
+**2. Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.**
 
 You can create your own benchmark by using the Benchmark Framework:
 - extending the framework's BenchmarkStandard abstact class.
@@ -61,7 +61,7 @@ The syntax of the command line for running the out-of-the-box benchmark is as fo
 {code}
 ..\..\lib\GigaSpaces.Core.Benchmarks.Launcher.exe {space-url}  {Input xml} {Results xml}
 {code}
-*space-url* - The url for finding the Space. You can control the Space topology by changing the space-url parameter.
+**space-url** - The url for finding the Space. You can control the Space topology by changing the space-url parameter.
 Examples:
 Embedded:
 {code}
@@ -71,15 +71,15 @@ Remote:
 {code}
 "jini://localhost/*/remoteBenchmarkSpace?NoWriteLease=true&groups=myGroup"
 {code}
-*Input xml* - Location of the xml file that contains the benchmark run configuration. The default is Xmls\BenchmarkPerson.xml.
+**Input xml** - Location of the xml file that contains the benchmark run configuration. The default is Xmls\BenchmarkPerson.xml.
 You can control the benchmark by changing parameters in the configuration file.
 
 The configuration file includes the following information:
--  *<assembly>* elements. Each element defines an assembly that needs to be loaded (for custom objects).
--  *<Benchmark>* elements. Each element defines a benchmark that will be included in the benchmark run.
+-  **<assembly>** elements. Each element defines an assembly that needs to be loaded (for custom objects).
+-  **<Benchmark>** elements. Each element defines a benchmark that will be included in the benchmark run.
 
 The Benchmark elements contain the following parameters:
-- *type* - Define the benchmark type name. The type structure is:
+- **type** - Define the benchmark type name. The type structure is:
 {code}
 {Benchmark type name}`2[[Object type name, Assembly name],[Adapter type name, Assembly name]], Assembly name
 {code}
@@ -91,15 +91,15 @@ GigaSpaces.Core.Benchmarks.Implementations.Basic],[GigaSpaces.Core.Benchmarks.Im
 GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.Implementations.Basic</type>
 {code}
 
-- *repeats* - Number of times to repeat the benchmark
-- *warmups* - Number of repeats that will count as warm-up repeats, which will not be taken into consideration when calculating the benchmark performance results
-- *chunks* - The batch size of the operation. Single operations use a chunk size of 0. This is relevant to multiple benchmarks, such as writemultiple
-- *executions* - Number of executions of the benchmark single operation in each repeat
-- *payload* - Use this field to manually enlarge the size of the Object (in bytes)
-- *txn-type* - Transaction type. (Available transaction types: None, Jini, Local)
-- *show-info* - Instructs detailed info to be displayed for each repeat
-- *threads* - Number of concurrent threads that will execute this benchmark
-- *Results xml* - Location of benchmarks results xml file. The default is the Results directory.
+- **repeats** - Number of times to repeat the benchmark
+- **warmups** - Number of repeats that will count as warm-up repeats, which will not be taken into consideration when calculating the benchmark performance results
+- **chunks** - The batch size of the operation. Single operations use a chunk size of 0. This is relevant to multiple benchmarks, such as writemultiple
+- **executions** - Number of executions of the benchmark single operation in each repeat
+- **payload** - Use this field to manually enlarge the size of the Object (in bytes)
+- **txn-type** - Transaction type. (Available transaction types: None, Jini, Local)
+- **show-info** - Instructs detailed info to be displayed for each repeat
+- **threads** - Number of concurrent threads that will execute this benchmark
+- **Results xml** - Location of benchmarks results xml file. The default is the Results directory.
 
 {anchor:2}
 
@@ -126,7 +126,7 @@ Develop a custom benchmark with your own code for the benchmark scenario and the
 </type>
 {code}
 
-3. For running the customized benchmark, follow the steps below in *Building and Running the Example*
+3. For running the customized benchmark, follow the steps below in **Building and Running the Example**
 
 # Building and Running the Example
 
@@ -148,7 +148,7 @@ Example command line for running an embedded benchmark run:
 
 # Example Configuration File
 
-The *Input xml* structure is the same for the two benchmark options (the Out-of-the-box benchmark and the Customized benchmark).
+The **Input xml** structure is the same for the two benchmark options (the Out-of-the-box benchmark and the Customized benchmark).
 
 (on) It is recommended that you use the {{BenchmarkPerson.xml}} file that is provided with the benchmark example, as a template.
 

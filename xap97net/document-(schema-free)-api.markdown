@@ -29,7 +29,7 @@ Unlike POJOs, which force users to design a fixed data schema (in the form of a 
 
 Before a certain Document instance is written to the space, its type should be introduced to it. The type has a name and controls metadata such as identifier property, routing property and which properties are initially indexed (naturally, you can also index new properties at runtime after adding them to your documents).
 
-{tip}The Type controls *metadata* - so only the metadata is part of the type. A document can introduce new properties at will.{tip}
+{tip}The Type controls **metadata** - so only the metadata is part of the type. A document can introduce new properties at will.{tip}
 
 Note that the Document type does not describe the properties themselves (except for the names of the ID and Routing properties). These are completely dynamic and each instance can have a different set of properties (although in most cases Document instances of the same type are likely to have identical or similar set of properties).
 
@@ -41,9 +41,9 @@ If POJO model cannot be replaced with Document model, yet some level of schema e
 
 # Type Definition
 
-Before we start writing and reading {{SpaceDocument}} from the space, we need an *initial* schema definition of the document type.
+Before we start writing and reading {{SpaceDocument}} from the space, we need an **initial** schema definition of the document type.
 
-For example, suppose we're implementing an electronic commerce system, and decided we need a type called *Product* with the following properties:
+For example, suppose we're implementing an electronic commerce system, and decided we need a type called **Product** with the following properties:
 - CatalogNumber : String
 - Category : String
 - Name : String
@@ -53,7 +53,7 @@ For example, suppose we're implementing an electronic commerce system, and decid
 - Tags : Collection of Strings
 - Reviews : Collection of nested documents
 
-We also decide that *CatalogNumber* will be a primary key, partitioning will be done by the *Category* property, and the properties *Name*, *Price* should be indexed since they participate in most of the queries executed. Remember, the type definition is for metadata only, so we're not concerned about *Description* and other such fields in the type definition, because Description isn't used for indexing or any other metadata.
+We also decide that **CatalogNumber** will be a primary key, partitioning will be done by the **Category** property, and the properties **Name**, **Price** should be indexed since they participate in most of the queries executed. Remember, the type definition is for metadata only, so we're not concerned about **Description** and other such fields in the type definition, because Description isn't used for indexing or any other metadata.
 
 The following is an example of how to introduce a new document type:
 
@@ -129,7 +129,7 @@ public void registerProductType(GigaSpace gigaspace) {
 {gcard}
 {gdeck}
 
-Note that this code does not reflect the complete model - most of the properties does not need to be introduced to the schema. Only properties with special roles (ID, Routing) are part of the schema definition. These meta model *settings cannot be changed* without restarting the space or dropping the type, clearing all its instances and reintroducing it again.
+Note that this code does not reflect the complete model - most of the properties does not need to be introduced to the schema. Only properties with special roles (ID, Routing) are part of the schema definition. These meta model **settings cannot be changed** without restarting the space or dropping the type, clearing all its instances and reintroducing it again.
 
 # Creating and Writing Documents
 
@@ -198,7 +198,7 @@ public void writeProduct2(GigaSpace gigaspace) {
 {code}
 
 (+) The {{GigaSpace.writeMultiple}} method can be used to write a batch of documents.
-(!) Update semantics are the same as POJO, except *partial update* that is not currently supported.
+(!) Update semantics are the same as POJO, except **partial update** that is not currently supported.
 (!) Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviours in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
 
 # Reading and Removing Documents
@@ -208,7 +208,7 @@ There are three types of document queries:
 ## Template Query
 
 This type of query uses a SpaceDocument with _type_ and any other set of properties values as a template for the query
-For example: Read a document of type *Product* whose *Name* is *Anvil*:
+For example: Read a document of type **Product** whose **Name** is **Anvil**:
 
 {code:java}
 public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
@@ -224,7 +224,7 @@ public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
 ## SQL Query
 
 You can use the [SQLQuery] to search for matching {{SpaceDocument}} entries.
-For example: Read a document of type *Product* whose *Price* is greater than 15:
+For example: Read a document of type **Product** whose **Price** is greater than 15:
 {code:java}
 public SpaceDocument readProductBySQL(GigaSpace gigaSpace) {
     // Create query:
@@ -239,7 +239,7 @@ public SpaceDocument readProductBySQL(GigaSpace gigaSpace) {
 
 {tip}Consider indexing properties used in queries to boost performance. {tip}
 
-Queries on nested properties are supported. For example, to read products manufactured by *Acme*:
+Queries on nested properties are supported. For example, to read products manufactured by **Acme**:
 {code:java}
 public SpaceDocument[] readProductBySQLNested(GigaSpace gigaSpace) {
     // Create query:
@@ -254,7 +254,7 @@ public SpaceDocument[] readProductBySQLNested(GigaSpace gigaSpace) {
 
 ## ID Based Query
 
-For example: Read a document of type *Product* whose ID is *hw-1234*:
+For example: Read a document of type **Product** whose ID is **hw-1234**:
 {code:java}
 public SpaceDocument readProductById(GigaSpace gigaSpace) {
     return gigaSpace.readById(new IdQuery<SpaceDocument>("Product", "hw-1234"));
@@ -286,7 +286,7 @@ The {{Document}} properties values can be either scalars (integers, strings, enu
 
 # Indexing
 
-Properties and nested paths can be [indexed|indexing] to boost queries performance. In the type registration sample above the *Name* and *Price* properties are indexed.
+Properties and nested paths can be [indexed|indexing] to boost queries performance. In the type registration sample above the **Name** and **Price** properties are indexed.
 
 Since the schema is flexible and new properties might be added after the type has been registered, it is possible to add indexes dynamically as well.
 

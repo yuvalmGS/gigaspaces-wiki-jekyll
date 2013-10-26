@@ -20,7 +20,7 @@ Dynamic properties can be used with Object as well. This provides better interop
 
 # Enabling Dynamic Properties
 
-To enable dynamic properties add a {{Dictionary<String, Object>}} property to the relevant class and decorate it with {{\[SpaceDynamicProperties\]}}. For example, the following *Person* class has two fixed properties (Name and Id), and an additional *ExtraInfo* property used to host the dynamic properties:
+To enable dynamic properties add a {{Dictionary<String, Object>}} property to the relevant class and decorate it with {{\[SpaceDynamicProperties\]}}. For example, the following **Person** class has two fixed properties (Name and Id), and an additional **ExtraInfo** property used to host the dynamic properties:
 
 {code:java}
 public class Person

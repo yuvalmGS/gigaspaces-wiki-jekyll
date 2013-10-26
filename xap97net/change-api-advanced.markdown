@@ -29,14 +29,14 @@ foreach(IChangedEntryDetails<Account> changedEntryDetails in changeResult.Result
 
 Here is the full list of change operations:
 ||ChangeSet operation||ChangeOperation class||Comment||
-|*ChangeSet.Set*|SetOperation| |
-|*ChangeSet.Unset*|UnsetOperation| |
-|*ChangeSet.Increment*|IncrementOperation| |
-|*ChangeSet.Decrement*|IncrementOperation|will be increment with negative value|
-|*ChangeSet.AddToCollection*|AddToCollectionOperation| |
-|*ChangeSet.AddRangeToCollection*|AddRangeToCollectionOperation| |
-|*ChangeSet.RemoveFromCollection*|RemoveFromCollectionOperation| |
-|*ChangeSet.SetInDictionary*|SetInDictionaryOperation| |
-|*ChangeSet.RemoveFromDictionary*|RemoveFromDictionaryOperation| |
+|**ChangeSet.Set**|SetOperation| |
+|**ChangeSet.Unset**|UnsetOperation| |
+|**ChangeSet.Increment**|IncrementOperation| |
+|**ChangeSet.Decrement**|IncrementOperation|will be increment with negative value|
+|**ChangeSet.AddToCollection**|AddToCollectionOperation| |
+|**ChangeSet.AddRangeToCollection**|AddRangeToCollectionOperation| |
+|**ChangeSet.RemoveFromCollection**|RemoveFromCollectionOperation| |
+|**ChangeSet.SetInDictionary**|SetInDictionaryOperation| |
+|**ChangeSet.RemoveFromDictionary**|RemoveFromDictionaryOperation| |
 
 For the common use case you can use the [Change Extension] class which provide extension methods to {{ISpaceProxy}} which simplify the most common use cases and allow you to do simple operation such as an atomic {{AddAndGet}} operation. This extension are a syntactic sugaring on top of the above API.

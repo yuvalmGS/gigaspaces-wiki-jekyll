@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799428
 ---
 
-*Summary* - GigaSpaces components from a functional perspective.
+**Summary** - GigaSpaces components from a functional perspective.
 |[Basic Components|Terminology - Basic Components]|[Data Grid Topologies|Terminology - Data Grid Topologies]||Space-Based Architecture|[Runtime Components|Terminology - Runtime Components]|
 
 # Space-Based Architecture
@@ -20,7 +20,7 @@ page_id: 63799428
 ---------------------------------------{comment}
 {anchor:Space Based Architecture}
 {section}
-*A Space-Based Architecture (SBA) implementation* is a set of Processing Units, with the following properties:
+**A Space-Based Architecture (SBA) implementation** is a set of Processing Units, with the following properties:
 
 - Each processing unit instances holds a [partitioned|Terminology - Data Grid Topologies#Partitioned Data Grid] space instance and one or more services that are registered on events on that specific partition. Together they form an application cluster. If the cluster is required to be highly available, each primary partition has one or more backup partitions, which run in their own processing unit instances. These instances are inactive, and become active only when their primary partition fails.
 
@@ -39,7 +39,7 @@ page_id: 63799428
 
 !GRA:Images^sba_with_backup.jpg!
 
-~*An SBA implementation, with 3 primary instances and one backup for each them, accessed by two client applications*~
+~**An SBA implementation, with 3 primary instances and one backup for each them, accessed by two client applications**~
 
 {% endalign %}
 {section}

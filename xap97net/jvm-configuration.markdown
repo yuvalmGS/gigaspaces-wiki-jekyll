@@ -20,10 +20,10 @@ GigaSpaces XAP.NET is bundled with [Oracle JDK 7 update 17|http://www.oracle.com
 
 If you haven't installed XAP.NET yet, you can instruct the installer to use an existing JVM:
 1. Start XAP.NET installation. Review and accept the license.
-2. In the *Choose Setup Type* dialog, select *Custom*, and click *Next* to continue.
-3. In the *Custom Setup* dialog, expand the *Core Components* node in the feature tree, click *Built-in Java* and select *Entire feature will be unavailable*. Click *Next* to continue.
-4. In the *Java Installation Path* groupbox, type the location of your installed Java, and click *Next* to continue.
-5. Click *Install* to start the installation process.
+2. In the **Choose Setup Type** dialog, select **Custom**, and click **Next** to continue.
+3. In the **Custom Setup** dialog, expand the **Core Components** node in the feature tree, click **Built-in Java** and select **Entire feature will be unavailable**. Click **Next** to continue.
+4. In the **Java Installation Path** groupbox, type the location of your installed Java, and click **Next** to continue.
+5. Click **Install** to start the installation process.
 
 If you've already installed XAP.NET and wish to switch to a different JVM:
 1. Edit the {{Settings.xml}} file (located in {{<XapNet>\config\Settings.xml}}).
@@ -115,7 +115,7 @@ If {{Mode}} is set to {{Custom}}, the {{<XapNet.Runtime.JavaHome>}} is ignored, 
 </JvmSettings>
 {code}
 
-*Note:* It is not recommended to define memory settings both as custom options and in the {{JvmMemory}} section, since the expected behavior is not clear.
+**Note:** It is not recommended to define memory settings both as custom options and in the {{JvmMemory}} section, since the expected behavior is not clear.
 
 ## JvmClassPath
 
@@ -167,6 +167,6 @@ java.exe -Xbootclasspath/p:C:\Foo;C:\Bar
 </JvmSettings>
 {code}
 
-Note that this alias is used to *prepend* boot class path (/p). {{java.exe}} also supports -Xbootclasspath/a, which is used to *append* boot class path. There's no alias for that in {{JvmSettings}}, but of course it can be used in the {{JvmCustomOptions}}.
+Note that this alias is used to **prepend** boot class path (/p). {{java.exe}} also supports -Xbootclasspath/a, which is used to **append** boot class path. There's no alias for that in {{JvmSettings}}, but of course it can be used in the {{JvmCustomOptions}}.
 
 {{JvmBootClassPath}} supports wildcard expansion, similar to {{JvmClassPath}}.

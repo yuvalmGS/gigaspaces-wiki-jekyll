@@ -15,7 +15,7 @@ When moving from a centralized to a distributed data store, your data must be pa
 
 Two issues should be taken into consideration when planning the data partitioning:
 
-- *What information is stored in memory?*
+- **What information is stored in memory?**
 
 When planning the partitioning and how much memory to allocate for the application, the important factors to consider are how much the data is expected to grow over time, and how long the data is expected to available for. Estimated data storage needs should not be confused with the data structure, which is considered separately.
 
@@ -25,7 +25,7 @@ Use the following table to successfully predict the memory necessary to support 
 |Data Type A|100K|10%|2K|
 |Data Type B|200K|20%|4K|
 
-- *What are my application's use cases?*
+- **What are my application's use cases?**
 
 While you might be used to modeling your data on the logical relationship of your data items, a different approach should be adopted in the case of distributed data. The key is to avoid cross cluster relationships as much as possible. Cross cluster relationships lead to cross cluster queries and updates which are usually much less scalable and run slower than their local counterparts.
 
@@ -39,7 +39,7 @@ However, if a Pet were also associated with a Vet, we could not embed the Pet in
 
 # What are Embedded and Non Embedded Relationships?
 
-*Embedded Relationships* mean that one object physically contains the associated objects and there is a *strong* lifecycle dependency between them. When the containing object is deleted, so are all of  its contained objects. With this type of object association, you ensure there is always a local transaction, since the entire object graph is stored in the same entry within the Space.
+**Embedded Relationships** mean that one object physically contains the associated objects and there is a **strong** lifecycle dependency between them. When the containing object is deleted, so are all of  its contained objects. With this type of object association, you ensure there is always a local transaction, since the entire object graph is stored in the same entry within the Space.
 
 !GRA:Images^model_embed.jpg!
 
@@ -60,12 +60,12 @@ new SqlQuery<Person>("info.salary < 15000 and info.salary >= 8000");
 Embedded Collection Query: The {{employees}} property is a collection within the {{Company}} class:
 {code}SqlQuery<Company> query =
 	new SqlQuery<Company>
-	("employees[*].children[*].name = 'Junior Doe');
+	("employees[**].children[**].name = 'Junior Doe');
 {code}
 
 See the [SqlQuery] section for details about embedded entities query and indexing.
 
-*Non Embedded Relationships* means that one object is associated with a number of other objects, so you can navigate from one object to another. However, there is no life cycle dependency between them, so if you delete the referencing object, you don't automatically delete the referenced object(s). The association is therefore manifested in storing IDs rather than storing the actual associated object itself. This type of relationship means that you don't duplicate data but you are more likely to access more than one node in the cluster when querying or updating your data.
+**Non Embedded Relationships** means that one object is associated with a number of other objects, so you can navigate from one object to another. However, there is no life cycle dependency between them, so if you delete the referencing object, you don't automatically delete the referenced object(s). The association is therefore manifested in storing IDs rather than storing the actual associated object itself. This type of relationship means that you don't duplicate data but you are more likely to access more than one node in the cluster when querying or updating your data.
 
 !GRA:Images^model_non_embed.jpg!
 

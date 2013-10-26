@@ -26,11 +26,11 @@ Usually it is recommended to index properties that are used in common queries. H
 
 # Index Types
 
-The index type is determined by the *{{SpaceIndexType}}* enumeration. The index types are:
+The index type is determined by the **{{SpaceIndexType}}** enumeration. The index types are:
 
-*{{None}}* - No indexing is used.
-*{{Basic}}* - Basic index is used - which speeds up equality matches (equal to/not equal to).
-*{{Extended}}* - Extended index - which speeds up relative matches (bigger than/less than).
+**{{None}}** - No indexing is used.
+**{{Basic}}** - Basic index is used - which speeds up equality matches (equal to/not equal to).
+**{{Extended}}** - Extended index - which speeds up relative matches (bigger than/less than).
 
 # Indexing at Design-time
 
@@ -90,11 +90,11 @@ Indexes can be added dynamically at run-time using the GigaSpaces Management Cen
 
 An index can be defined on a nested property to improve performance of nested queries - this is highly recommended.
 
-Nested properties indexing uses an additional {{\[SpaceIndex\]}} attribute - *{{Path}}*.
+Nested properties indexing uses an additional {{\[SpaceIndex\]}} attribute - **{{Path}}**.
 
 ## The {{SpaceIndex.Path}} Attribute
 
-The *{{Path}}* attribute represents the path of the property within the nested object.
+The **{{Path}}** attribute represents the path of the property within the nested object.
 
 Below is an example of defining an index on a nested property:
 
@@ -270,7 +270,7 @@ Condition C = Condition A AND Condition B = (Field X = 10 AND Field Y = 100) - h
 Using a Compound Index that will be based on field X and field Y will improve a query evaluating Condition C significantly.
 An attribute can be a segment of several compound indexes, and can be indexed itself. Compound indexes can be only BASIC indices - they support equality based queries only. The name of the compound index is composed from the paths of its segments separated by a "+" sign.
 
-Using a Compound Index that will be based on field X and field Y will improve a query evaluating *Condition C* significantly.
+Using a Compound Index that will be based on field X and field Y will improve a query evaluating **Condition C** significantly.
 
 An attribute can be a segment of several compound indexes, and can be indexed itself. Compound indexes can be only {{BASIC}} indices - they support equality based queries only. The name of the compound index is composed from the paths of its segments separated by a "+" sign.
 

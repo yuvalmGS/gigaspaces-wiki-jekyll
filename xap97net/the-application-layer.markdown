@@ -20,17 +20,17 @@ The Service Grid is responsible for taking a single copy of a Processing Unit, a
 
 In technical details, a Processing Unit is a collection of one or more assemblies and a configuration file, packaged as a single unit of scale. Assemblies are usually composed of Services and Domain objects, which are part of the application. The configuration file is used to define the relationship between the Processing Unit components.
 
-*There are several types of Processing Units*:
+**There are several types of Processing Units**:
 {comment}TODO_NIV - Change to internal link when available.{comment}
-- [*.NET* Processing Unit|Processing Units] -  has its code components in .NET, and may contain a space component.
-- [*Java* Processing Unit|XAP95:Packaging and Deployment] - has code components in Java, and may contain a space component.
-- [*Web* Processing Unit|XAP95:Web Processing Unit Container] - contains web applications. This Processing Unit can be packaged as a standard JEE WAR (Web Archive) file, and may contain a space component.
-- [*EDG* Processing Unit|XAP95:The Processing Unit Structure and Configuration#dataOnlyPUs] - contains space component(s) only.
+- [**.NET** Processing Unit|Processing Units] -  has its code components in .NET, and may contain a space component.
+- [**Java** Processing Unit|XAP95:Packaging and Deployment] - has code components in Java, and may contain a space component.
+- [**Web** Processing Unit|XAP95:Web Processing Unit Container] - contains web applications. This Processing Unit can be packaged as a standard JEE WAR (Web Archive) file, and may contain a space component.
+- [**EDG** Processing Unit|XAP95:The Processing Unit Structure and Configuration#dataOnlyPUs] - contains space component(s) only.
 
 A Processing Unit package structure is defined, based on the technology:
-- A *.NET* Processing Unit is packaged as a directory structure. For more information, please refer to the [XAP.NET Programmer's Guide|Processing Units].
-- A [*Java* Processing Unit|XAP95:The Processing Unit Structure and Configuration] is packaged usually as a JAR file, modeled after the Spring DI structure. The package can also be within a file structure based on the same structure.
-- A [*Web* Processing Unit|XAP95:Web Processing Unit Container#Deployment] is packaged as a standard JEE WAR file.
+- A **.NET** Processing Unit is packaged as a directory structure. For more information, please refer to the [XAP.NET Programmer's Guide|Processing Units].
+- A [**Java** Processing Unit|XAP95:The Processing Unit Structure and Configuration] is packaged usually as a JAR file, modeled after the Spring DI structure. The package can also be within a file structure based on the same structure.
+- A [**Web** Processing Unit|XAP95:Web Processing Unit Container#Deployment] is packaged as a standard JEE WAR file.
 
 # Data-Only Processing Unit (EDG)
 

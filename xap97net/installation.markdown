@@ -7,12 +7,12 @@ page_id: 63799366
 
 # System Requirements
 
-*Required Software:* [Microsoft .NET Framework 2.0|http://msdn.microsoft.com/en-us/netframework/aa731542.aspx] or later (including  [Microsoft .NET Framework 4.0|http://msdn.microsoft.com/en-us/netframework/aa569263.aspx]).
+**Required Software:** [Microsoft .NET Framework 2.0|http://msdn.microsoft.com/en-us/netframework/aa731542.aspx] or later (including  [Microsoft .NET Framework 4.0|http://msdn.microsoft.com/en-us/netframework/aa569263.aspx]).
 (+) Recommended: [Microsoft .NET Framework 2.0 Service Pack 2|http://www.microsoft.com/downloads/details.aspx?familyid=5B2C0358-915B-4EB5-9B1D-10E506DA9D0F&displaylang=en] or later.
 
-*Supported Operating Systems:* Any operating system supported by .NET Framework 2.0.
+**Supported Operating Systems:** Any operating system supported by .NET Framework 2.0.
 
-*64 bit support:* XAP.NET is released in two separate packages for x86 and x64. Itanium (ia64) is currently not supported. The XAP.NET x86 package can be installed on a x64 machine and run in WoW64 mode.
+**64 bit support:** XAP.NET is released in two separate packages for x86 and x64. Itanium (ia64) is currently not supported. The XAP.NET x86 package can be installed on a x64 machine and run in WoW64 mode.
 
 #  Installation
 

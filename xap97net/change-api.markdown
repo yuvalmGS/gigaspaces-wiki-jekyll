@@ -67,9 +67,9 @@ space.Change(idQuery, new ChangeSet().Increment("Balance.Euro", 5.2D));
 ## Change Path Specification
 
 Each operation in the change set acts on a specified string path. This path points to the property that needs to be changed and it has the following semantic:
-1. *First level property* - A path with no '.' character in it points to a first level property, If the property specified by this path is not part of the Object it will be treated as a dynamic property (see [Dynamic Properties]) if the object does not support dynamic properties, an exception will be generated.
-2. *Nested property* - A path that contains '.' character is considered a path to a nested property, the location process of the final property which needs to be changed is done recursively by activating the properties, specified by the split of the path using the '.' character, one at a time until reaching the targeted end property.
-3. *Nested Dictionary property* - A path that contains '.' may also point to keys inside a dictionary as, meaning the following path - 'Attributes.Color' will look for key named 'Color' if the property named 'Attribute' in the object is actually a dictionary. This affects nested properties as well.
+1. **First level property** - A path with no '.' character in it points to a first level property, If the property specified by this path is not part of the Object it will be treated as a dynamic property (see [Dynamic Properties]) if the object does not support dynamic properties, an exception will be generated.
+2. **Nested property** - A path that contains '.' character is considered a path to a nested property, the location process of the final property which needs to be changed is done recursively by activating the properties, specified by the split of the path using the '.' character, one at a time until reaching the targeted end property.
+3. **Nested Dictionary property** - A path that contains '.' may also point to keys inside a dictionary as, meaning the following path - 'Attributes.Color' will look for key named 'Color' if the property named 'Attribute' in the object is actually a dictionary. This affects nested properties as well.
 
 The following demonstrates how the path works with a dictionary property instead of concrete properties:
 {code:java}
@@ -95,19 +95,19 @@ In this case the key euro inside the dictionary behind the balance will be incre
 ## Available Change Set Operations
 
 ||Operation Name||Description||Semantics||
-|*Set*|sets a property value|sets value of the given property|
-|*Unset*|unsets a property value|If the property is a fixed property, it will be set with null (null value for primitives), if it is a dynamic property it will be removed from the dynamic properties, note that for dynamic properties this is *not* equivalent to the set operation with {{null}} value|
-|*Increment*|increase a numeric property by the given delta|This change may operate on a numeric property only (byte,short,int,long,float,double or their corresponding Boxed variation), if the property does not exists, the delta will be set as its initial state|
-|*Decrement*|decrease a numeric property by the given delta|This change may operate on a numeric property only (byte,short,int,long,float,double or their corresponding Boxed variation), if the property does not exists, the -delta will be set as its initial state|
-|*AddToCollection*|adds an item to a collection property|if the property do not exists an exception will be thrown|
-|*AddRangeToCollection*|adds a list of items to a collection property|if the property do not exists an exception will be thrown|
-|*RemoveFromCollection*|removes an item from a collection property|if the property do not exists an exception will be thrown|
-|*SetInDictionary*|Sets a key value pair in a dictionary property|if the property do not exists an exception will be thrown|
-|*RemoveFromDictionary*|removes a key and its associated value from a dictionary property|if the property do not exists an exception will be thrown|
+|**Set**|sets a property value|sets value of the given property|
+|**Unset**|unsets a property value|If the property is a fixed property, it will be set with null (null value for primitives), if it is a dynamic property it will be removed from the dynamic properties, note that for dynamic properties this is **not** equivalent to the set operation with {{null}} value|
+|**Increment**|increase a numeric property by the given delta|This change may operate on a numeric property only (byte,short,int,long,float,double or their corresponding Boxed variation), if the property does not exists, the delta will be set as its initial state|
+|**Decrement**|decrease a numeric property by the given delta|This change may operate on a numeric property only (byte,short,int,long,float,double or their corresponding Boxed variation), if the property does not exists, the -delta will be set as its initial state|
+|**AddToCollection**|adds an item to a collection property|if the property do not exists an exception will be thrown|
+|**AddRangeToCollection**|adds a list of items to a collection property|if the property do not exists an exception will be thrown|
+|**RemoveFromCollection**|removes an item from a collection property|if the property do not exists an exception will be thrown|
+|**SetInDictionary**|Sets a key value pair in a dictionary property|if the property do not exists an exception will be thrown|
+|**RemoveFromDictionary**|removes a key and its associated value from a dictionary property|if the property do not exists an exception will be thrown|
 
 # Using Change with the Embedded model
 
-With the [embedded model|Modeling your data#Embedded vs. Non-Embedded Relationships], updating (as well adding or removing) a nested collection with large number of elements *must use the change API* since the default behavior would be to replicate the entire space object and its nested collection elements from the primary to the backup (or other replica primary copies when using the sync-replicate or the async-replicated cluster schema). The Change API reduces the CPU utilization at the primary side, reduce the serialization overhead and reduce the garbage collection activity both at the primary and backup. This improves the overall system stability significantly.
+With the [embedded model|Modeling your data#Embedded vs. Non-Embedded Relationships], updating (as well adding or removing) a nested collection with large number of elements **must use the change API** since the default behavior would be to replicate the entire space object and its nested collection elements from the primary to the backup (or other replica primary copies when using the sync-replicate or the async-replicated cluster schema). The Change API reduces the CPU utilization at the primary side, reduce the serialization overhead and reduce the garbage collection activity both at the primary and backup. This improves the overall system stability significantly.
 
 # Change Result
 
@@ -285,10 +285,10 @@ Change will be delivered as a regular update notification, with the state of the
 
 The following modifiers can be used with the change operation
 
-1. *{{ChangeModifiers.ReturnDetailedResults}}* - Provide details change result containing more information about the objects that were changed, requires more network traffic.
-2. *{{ChangeModifiers.OneWay}}* - Change is executed in one way mode, which means the operation will not wait for the change operation to reach the server, the result will always be null and
+1. **{{ChangeModifiers.ReturnDetailedResults}}** - Provide details change result containing more information about the objects that were changed, requires more network traffic.
+2. **{{ChangeModifiers.OneWay}}** - Change is executed in one way mode, which means the operation will not wait for the change operation to reach the server, the result will always be null and
 there is no guarantee whether the operation succeeded or not as this mode does not guarantee any exceptions upon failure. The only guarantee is that the operation was successfully written to the local network buffer.
-3. *{{ChangeModifiers.MemoryOnlySearch}}* - Search for matching entries in cache memory only (do not use the underlying external data source). However, any changes done on the matches entries
+3. **{{ChangeModifiers.MemoryOnlySearch}}** - Search for matching entries in cache memory only (do not use the underlying external data source). However, any changes done on the matches entries
 will propagate to the underlying external data source.
 
 # Change Extension

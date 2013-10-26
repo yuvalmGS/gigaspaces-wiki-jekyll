@@ -105,8 +105,8 @@ This will create an embedded space with the additional provided custom propertie
 # Basic Container Initialization Events
 
 The container exposes some events that can be used to be notified at the different stages of the container initialization.
-*{{ContainerInitializing}}* - Triggered when the container it initializing.
-*{{ContainerInitialized}}* - Triggered once the container finished its initialization process.
+**{{ContainerInitializing}}** - Triggered when the container it initializing.
+**{{ContainerInitialized}}** - Triggered once the container finished its initialization process.
 
 Here's a simple example of using this events in a {{BasicProcessingUnitComponent}} which acts as a feeder
 {code:java}
@@ -174,28 +174,28 @@ The container exposes API for creating managed space proxies and receiving its m
 
 Here are a few samples of how to obtain managed components from the container:
 
-*Create a managed space proxy*
+**Create a managed space proxy**
 {code:java}
 BasicProcessingUnitContainer container = //Obtain a reference to the container
 
 ISpaceProxy spaceProxy = container.CreateSpaceProxy("ColocatedSpace", "/./mySpace");
 {code}
 
-*Get a managed space proxy*
+**Get a managed space proxy**
 {code:java}
 BasicProcessingUnitContainer container = //Obtain a reference to the container
 
 ISpaceProxy spaceProxy = container.GetSpaceProxy("ColocatedSpace");
 {code}
 
-*Get a managed basic processing unit component*
+**Get a managed basic processing unit component**
 {code:java}
 BasicProcessingUnitContainer container = //Obtain a reference to the container
 
 Object component = container.GetProcessingUnitComponent("Feeder");
 {code}
 
-*Get a managed event listener container*
+**Get a managed event listener container**
 {code:java}
 BasicProcessingUnitContainer container = //Obtain a reference to the container
 

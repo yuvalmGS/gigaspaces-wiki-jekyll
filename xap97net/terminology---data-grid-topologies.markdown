@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799407
 ---
 
-*Summary* - GigaSpaces components from a functional perspective.
+**Summary** - GigaSpaces components from a functional perspective.
 |[Basic Components|Terminology - Basic Components]||Data Grid Topologies|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|
 
 # Data Grid
@@ -38,7 +38,7 @@ The relations between the spaces define the [Data Grid Topology|#Data Grid Topol
 {% align center %}
 !GS6:Images^term_populated_data_grid.gif!
 
-~*A Data Grid with 3 Instances*~
+~**A Data Grid with 3 Instances**~
 {% endalign %}
 
 {% endcolumn %}
@@ -70,7 +70,7 @@ Operations that do not modify any data (e.g. read, count) are performed only on 
 {% align center %}
 !GS6:Images^term_primary_backup_text_data_grid.gif!
 
-~*A Data Grid comprised of a primary instance with one backup instance*~
+~**A Data Grid comprised of a primary instance with one backup instance**~
 {% endalign %}
 
 {% endcolumn %}
@@ -97,7 +97,7 @@ When the objects are written to this Data Grid, they are routed to the proper pa
 {% align center %}
 !GS6:Images^term_partitioned_data_grid.gif!
 
-~*A Partitioned Data Grid with 3 Instances, each holding a different set objects*~
+~**A Partitioned Data Grid with 3 Instances, each holding a different set objects**~
 
 {% endalign %}
 
@@ -126,7 +126,7 @@ The routing is based on a designated property/field inside the objects that are 
 {% align center %}
 !GS6:Images^term_routing.gif!
 
-~*Routing in a partitioned Data Grid with 3 instances*~
+~**Routing in a partitioned Data Grid with 3 instances**~
 
 {% endalign %}
 
@@ -152,7 +152,7 @@ A [partitioned Data Grid|#Partitioned Data Grid], with one or more [backup|#Prim
 {% align center %}
 !GS6:Images^term_partitioned_primary_backup_data_grid.gif!
 
-~*A Primary Backup Partitioned Data Grid: 2 partitions, each replicates to one backup instance*~
+~**A Primary Backup Partitioned Data Grid: 2 partitions, each replicates to one backup instance**~
 
 {% endalign %}
 

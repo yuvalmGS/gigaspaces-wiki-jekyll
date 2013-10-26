@@ -9,15 +9,15 @@ page_id: 63799350
 
 # Overview
 
-The *{{SqlQuery}}* class is used to query the space using SQL-like syntax. This query can be passed as a template to the Read, Take, ReadMultiple, TakeMultiple, Count and Clear operations, as well as a template when registering for notification.
+The **{{SqlQuery}}** class is used to query the space using SQL-like syntax. This query can be passed as a template to the Read, Take, ReadMultiple, TakeMultiple, Count and Clear operations, as well as a template when registering for notification.
 
 # Usage
 
-An {{SqlQuery}} is composed from the *type* of entry to query, an *expression* in a SQL syntax and optionally one or more *parameters* which provide values for the expression.
+An {{SqlQuery}} is composed from the **type** of entry to query, an **expression** in a SQL syntax and optionally one or more **parameters** which provide values for the expression.
 
 #### Example 1
 
-Read all entries of type *Person* whose *Age* is greater than or equal to *21*.
+Read all entries of type **Person** whose **Age** is greater than or equal to **21**.
 {code:java}
 Person[] persons = proxy.ReadMultiple<Person>(
     new SqlQuery<Person>("Age >= 21"));
@@ -27,7 +27,7 @@ Note that the expression is equivalent to the WHERE part of a query. The FROM pa
 
 #### Example 2
 
-Take up to *100* entries of type *Person* whose *Age* is greater than or equal to *21*, AND whose *FirstName* is *John*.
+Take up to **100** entries of type **Person** whose **Age** is greater than or equal to **21**, AND whose **FirstName** is **John**.
 {code:java}
 SqlQuery<Person> query = new SqlQuery<Person>(
     "Age >= ? AND FirstName = ?");
@@ -72,7 +72,7 @@ When running on a partitioned space, it is important to understand how routing i
 
 If the routing property is part of the criteria expression with an equality operand and without ORs, its value is used for routing.
 
-For example, suppose the routing property of *{{MyClass}}* is *{{Num}}*:
+For example, suppose the routing property of **{{MyClass}}** is **{{Num}}**:
 {code:java}
 // Execute query on partition #1
 SQLQuery<MyClass> query1 = new SQLQuery<MyClass>(
@@ -108,7 +108,7 @@ Since Enums are stored in the space as their underlying primitive type, they mus
 
 ### Simple vs. Complex Queries
 
-Most space operations and features support any SQL query, but some support only *simple* queries and not *complex* ones.
+Most space operations and features support any SQL query, but some support only **simple** queries and not **complex** ones.
 
 A query is considered complex if it contains one or more of the following:
 - {{NOT LIKE}}
@@ -125,7 +125,7 @@ The following features support only simple SQL queries
 
 ### Unsupported SQL Features
 
-GigaSpaces SqlQuery *does not* support the following:
+GigaSpaces SqlQuery **does not** support the following:
 - Aggregate functions: COUNT, MAX, MIN, SUM, AVG.
 - Multiple tables select.
 - {{DISTINCT}}

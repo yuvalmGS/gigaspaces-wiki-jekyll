@@ -9,7 +9,7 @@ page_id: 64127781
 
 # Overview
 
-There are many cases when you need to use a unicast-based services discovery. For example if you want to to use unicast with multicast (using Jini Groups), which is the default, or when *you do not have multicast enabled, or you prefer not to use multicast*.
+There are many cases when you need to use a unicast-based services discovery. For example if you want to to use unicast with multicast (using Jini Groups), which is the default, or when **you do not have multicast enabled, or you prefer not to use multicast**.
 
 In such cases, the Jini lookup discovery enables the user to discover services (spaces, GSC, GSM, processing units etc.) using unicast protocol.
 
@@ -30,14 +30,14 @@ Once the services are started with the locators settings, then any client should
 
 To lookup a Space service using the unicast protocol, add the locators SpaceURL attribute to the space URL string.
 
-For both *unicast AND multicast discovery*, use:
+For both **unicast AND multicast discovery**, use:
 
 {code}jini://*/./mySpace?locators=machine1:4174,machine2:4174&groups=gigaspaces-9.0.0-XAPPremium-ga{code}
 
 (!) When the locators attribute is used in conjunction with the jini://* prefix and groups attribute, the discovery will be unicast AND multicast.
 If you want unicast only, you should disable multicast altogether.
 
-{tip}For *unicast discovery only*, you should disable multicast using *{{com.gs.multicast.enabled=false}}* system property, and use:
+{tip}For **unicast discovery only**, you should disable multicast using **{{com.gs.multicast.enabled=false}}** system property, and use:
 {code}jini://machine1:4174,machine2:4174/./mySpace?locators=machine1:4174,machine2:4174{code}
 {tip}
 
@@ -45,18 +45,18 @@ If you want unicast only, you should disable multicast altogether.
 
 # Configuring Jini Lookup Service Unicast Port
 
-To change the lookup service port when using the Service Grid, you can use the *{{com.sun.jini.reggie.initialUnicastDiscoveryPort}}* system property. The default value is the one assigned to the {{com.gs.multicast.discoveryPort}} system property, that is 4174 with XAP 7.x.
-- Set the {{LOOKUPLOCATORS}} system property in {{<GigaSpaces Root>\bin\setenv.bat/sh}} to match the port number you defined (in this case, {{host:1234}}). That is required if you specify an explicit unicast/locators port, otherwise the service will use the default port if not set explicitly (see [*com.gs.multicast.discoveryPort system property*|Lookup Service Configuration#Multicast Settings]).
+To change the lookup service port when using the Service Grid, you can use the **{{com.sun.jini.reggie.initialUnicastDiscoveryPort}}** system property. The default value is the one assigned to the {{com.gs.multicast.discoveryPort}} system property, that is 4174 with XAP 7.x.
+- Set the {{LOOKUPLOCATORS}} system property in {{<GigaSpaces Root>\bin\setenv.bat/sh}} to match the port number you defined (in this case, {{host:1234}}). That is required if you specify an explicit unicast/locators port, otherwise the service will use the default port if not set explicitly (see [**com.gs.multicast.discoveryPort system property**|Lookup Service Configuration#Multicast Settings]).
 
 # Configuring lookup discovery intervals
 
 When a lookup service fails and is brought back online, a client (such as a GSC, space or a client with a space proxy) needs to re-discover and federate again. In order to make that happen, Jini unicast discovery must retry connections to the remote lookup service. The default unicast retry protocol provides a graduating approach, increasing the amount of time to wait before the next discovery attempts are made - upon each invocation, eventually reaching a maximum time interval over which discovery is re-tried. In this way, the network is not flooded with unicast discovery requests referencing a lookup service that may not be available for quite some time (if ever). The default time to wait between unicast retry attempts are:
 
 {code}
-long[] sleepTime = {5 * 1000, 10 * 1000, 20 * 1000,
-                                    30 * 1000, 60 * 1000,
-                                    2 * 60 * 1000, 4 * 60 * 1000,
-                                    8 * 60 * 1000, 15 * 60 * 1000};
+long[] sleepTime = {5 ** 1000, 10 ** 1000, 20 * 1000,
+                                    30 ** 1000, 60 ** 1000,
+                                    2 ** 60 ** 1000, 4 ** 60 ** 1000,
+                                    8 ** 60 ** 1000, 15 ** 60 ** 1000};
 {code}
 
 You'll max out at 15 minutes between retries. Thats a big window.

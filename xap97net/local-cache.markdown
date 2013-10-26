@@ -15,7 +15,7 @@ Local cache is a wrapper class for a space proxy, which increases performance in
 
 The {{ILocalCache}} interface implements the {{ISpaceProxy}}, and working with it is exactly the same as working with the {{ISpaceProxy}} API. Here's a simple example of creating a local cache and using it:
 
-*The data object, in this case a session object:*
+**The data object, in this case a session object:**
 {code:java}
 public class Session
 {
@@ -41,7 +41,7 @@ Important properties:
 - The session has a {{\[SpaceID\]}} property, objects without {{\[SpaceID\]}} will not be stored in the local cache.
 - When working with the local cache, it is highly recommended to have a {{\[SpaceVersion\]}} property, otherwise Entries stored in the local cache might be of older version than the ones in the space, if they were updated not through the local cache.
 
-*Creating and using a local cache:*
+**Creating and using a local cache:**
 {code:java}
 ISpaceProxy spaceProxy = // create or obtain a reference to a space proxy
 

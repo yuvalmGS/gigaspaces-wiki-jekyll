@@ -31,4 +31,4 @@ public interface ISpaceFilterEntry
 
 When using the {{ISpaceFilterEntry}}, performance issues should be taken into consideration. This interface is designed to be used in a lazy evaluation fashion. {{GetObject}} and {{UpdateObject}} are evaluated only when called, and they reduce performance. Therefore they should only be used when necessary.
 
-{refer}For a full SpaceFilter implementation and usage demo, visit the *[Space Filter Demo]* section.{refer}
+{refer}For a full SpaceFilter implementation and usage demo, visit the **[Space Filter Demo]** section.{refer}

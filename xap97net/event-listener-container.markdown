@@ -81,7 +81,7 @@ The {{DynamicMethodDataEventArrivedAdapter<TData>}} is an internal class that is
 
 Here are a few examples:
 
-*An event listening method that processes the data, and returns a processed result*
+**An event listening method that processes the data, and returns a processed result**
 {code:java}
 public class SimpleListener
 {
@@ -95,7 +95,7 @@ public class SimpleListener
 }
 {code}
 
-*An event listening method that processes the data, executes an additional space operation that is needed to enrich the data, and returns an enriched data result*
+**An event listening method that processes the data, executes an additional space operation that is needed to enrich the data, and returns an enriched data result**
 {code:java}
 public class SimpleListener
 {

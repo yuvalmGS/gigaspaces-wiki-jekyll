@@ -11,7 +11,7 @@ page_id: 63799323
 
 Template matching (a.k.a. Match by example) is a simple way to query the space - The template is a POCO of the desired entry type, and the properties which are set on the template (i.e. not null) are matched against the respective properties of entries of the same type in the space. Properties with null values are ignored (not matched).
 
-Since by convention the default constructor usually initializes all the properties to {{null}} either implicitly or explicitly, in most cases it's enough to simply set the properties which should be matched, without bothering with explicitly setting null to the other properties. Note that setting two or more properties with non-null values provides an *AND* behavior.
+Since by convention the default constructor usually initializes all the properties to {{null}} either implicitly or explicitly, in most cases it's enough to simply set the properties which should be matched, without bothering with explicitly setting null to the other properties. Note that setting two or more properties with non-null values provides an **AND** behavior.
 
 (i) It is highly recommended to index one or more of the properties used in the template to speed up the matching process. For more information see [Indexing].
 
@@ -19,16 +19,16 @@ Since by convention the default constructor usually initializes all the properti
 
 # Examples
 
-The following examples assume the default constructor of *Person* initializes all its properties to {{null}}.
+The following examples assume the default constructor of **Person** initializes all its properties to {{null}}.
 
-Read an entry of type *Person* whose *FirstName* property is *John*:
+Read an entry of type **Person** whose **FirstName** property is **John**:
 {code}
 Person template = new Person();
 template.FirstName = "John";
 Person person = spaceProxy.Read(template);
 {code}
 
-Read an entry of type *Person* whose *FirstName* is *John* and *LastName* is *Smith*:
+Read an entry of type **Person** whose **FirstName** is **John** and **LastName** is **Smith**:
 {code}
 Person template = new Person();
 template.FirstName = "John";
@@ -36,7 +36,7 @@ template.LastName = "Smith";
 Person person = spaceProxy.Read(template);
 {code}
 
-If none of the properties are set, all the entries of the type are matched. For example, to count all entries of type *Person*:
+If none of the properties are set, all the entries of the type are matched. For example, to count all entries of type **Person**:
 {code}
 int numOfPersons = spaceProxy.Count(new Person());
 {code}
@@ -53,7 +53,7 @@ GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (rega
 # Inheritance Support
 
 Template Matching support inheritance relationships, so that entries of a sub-class are visible in the context of the super class, but not the other way around.
-For example, suppose class *Citizen* extends class *Person*:
+For example, suppose class **Citizen** extends class **Person**:
 
 {code}
 spaceProxy.Write(new Person());
@@ -75,7 +75,7 @@ For more information see [Routing In Partitioned Spaces].
 
 ## Primitive Types
 
-Properties with primitive types pose a problem - a primitive type cannot be set to null. For example, suppose class *Person* has property *Age* of type *int*, and we wrote the following piece of code which writes and reads a person:
+Properties with primitive types pose a problem - a primitive type cannot be set to null. For example, suppose class **Person** has property **Age** of type **int**, and we wrote the following piece of code which writes and reads a person:
 {code}
 // Create a person and write it to the space:
 Person p1 = new Person();
@@ -85,7 +85,7 @@ spaceProxy.Write(p1);
 Person p = spaceProxy.Read(new Person());
 {code}
 
-We expect *p* to hold the person we just wrote to the space, but in fact it will be null: since *age* is primitive it is implicitly initialized to 0 (zero) and cannot be set to null either implicitly or explicitly, which means we're actually matching for Persons whose age is 0 (zero).
+We expect **p** to hold the person we just wrote to the space, but in fact it will be null: since **age** is primitive it is implicitly initialized to 0 (zero) and cannot be set to null either implicitly or explicitly, which means we're actually matching for Persons whose age is 0 (zero).
 
 To overcome this issue we can map a primitive value to null via the {{\[SpaceProperty(NullValue = ?)\]}} attribute. For example:
 {code}

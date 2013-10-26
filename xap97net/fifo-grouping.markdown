@@ -23,13 +23,13 @@ In most cases, your application does not require total ordering, but rather orde
 
 {indent}!GRA:Images2^fifo-group.jpg!{indent}
 
-The FIFO-Grouping can be used with financial systems to process *trade orders* , in healthcare systems to processes *patient medical data* , with transportation systems to process *reservations* , with airlines systems to process *flight schedule* , with billing system to processes *payments*, etc. With the flight reservation system scenario several reservations can be processed simultaneously but the reservations of a particular fight must be processed exclusively and in FIFO order.
+The FIFO-Grouping can be used with financial systems to process **trade orders** , in healthcare systems to processes **patient medical data** , with transportation systems to process **reservations** , with airlines systems to process **flight schedule** , with billing system to processes **payments**, etc. With the flight reservation system scenario several reservations can be processed simultaneously but the reservations of a particular fight must be processed exclusively and in FIFO order.
 
 # How it works?
 
 FIFO-Grouping ('FG') enables reading/taking certain space entries in FIFO order (by order of insertion), and is mainly used as an enhancement of the openspaces polling-containers.  When a property is declared with the {{SpaceFifoGroupingProperty}} attribute ('the FG designated property'), a read/take operation with the {{FIFO_GROUPING_POLL}} modifier will return all space entries that match the selection template in FIFO order. Different values of the FG property define groups of space entries that match that value - FIFO ordering exists within each group and not between different groups.
 
-{note}*Exclusivity*
+{note}**Exclusivity**
 The selected group is locked until the operation is terminated- the operation transaction is committed/ aborted.  See the [Exclusivity|FIFO Grouping#Exclusivity] section for more elaborations.{note}
 
 # Method Of Operation
@@ -50,10 +50,10 @@ This would help to achieve better performance when searching for reservations of
 # Exclusivity
 
 Once a FG operation returns with a result, the relevant group(s) is locked to other FG threads until the transaction is terminated. The locked group is the group with the value returned in the FG designated property and matching the selecting template.
-*The exclusivity rule is as follows:*
+**The exclusivity rule is as follows:**
 A group can be locked by a requesting template if no other template is locking the same FG designated property value, or - if another template is locking the same FG designated property value, the intersection between the 2 groups is null.
 
-*For example:*
+**For example:**
 Lets assume we have an Order POJO template with property named label marked with  {{SpaceFifoGroupingProperty}} attribute and property named state marked with  {{SpaceFifoGroupingIndex}} attribute .
 If polling container A got a FG with Label = "LABEL1" using an Order POJO with State property = null, no other FG thread/container will be able to access the FG designated by "LABEL1".
 If on the other hand polling container B got a FG with Label = "LABEL2" using an Order pojo with State property = 0, polling container C will be able to get FG with same label "LABEL2" using an Order pojo with State = 1, since the intersection between the groups is null. Exclusivity is released upon transaction termination.
@@ -119,7 +119,7 @@ public Person Customer { get; set; }
 ## Take
 
 Take the first entry from an available FG ({{TakeReceiveOperationHandler}}).
-*Take multiple:* take entries from available FG. No ordering between different groups. Entries of same groups may not be in adjacent positions.
+**Take multiple:** take entries from available FG. No ordering between different groups. Entries of same groups may not be in adjacent positions.
 
 ## Read
 

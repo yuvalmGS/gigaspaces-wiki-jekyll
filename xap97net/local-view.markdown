@@ -9,7 +9,7 @@ page_id: 63799395
 
 # Introduction
 
-A *Local View* is a [Client Side Cache|Client Side Caching] that maintains a subset of the master space's data. The Local View allows the client to read distributed data without performing any remote calls.
+A **Local View** is a [Client Side Cache|Client Side Caching] that maintains a subset of the master space's data. The Local View allows the client to read distributed data without performing any remote calls.
 
 Data is streamed into the client's local view based on predefined criteria (a collection of [SQLQuery] objects). These criteria are specified by the client when the local view is created.
 
@@ -38,14 +38,14 @@ IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views);
 
 # Local View Features
 
-The Local View is a *Read-Only* data structure. The following operations are not supported when using local view, and should be performed using a regular space proxy:
+The Local View is a **Read-Only** data structure. The following operations are not supported when using local view, and should be performed using a regular space proxy:
 - Any operation that creates or changes data ({{Write}}, {{WriteMultiple}}, {{Execute}}).
 - Any operation that removes data: ({{Clean}}, {{Clear}}, {{Take}}, {{TakeById}}, {{TakeMultiple}}, {{AsyncTake}}, etc.).
 - Any operation under a transaction.
 
 # Memory Management
 
-Data is *never* evicted from the local view (the cache policy is hardwired to {{ALL_IN_CACHE}}). Therefore, specifying criteria that retrieves large amounts of data from the master space can cause the client to run out of memory.
+Data is **never** evicted from the local view (the cache policy is hardwired to {{ALL_IN_CACHE}}). Therefore, specifying criteria that retrieves large amounts of data from the master space can cause the client to run out of memory.
 
 ### Preventing memory shortages
 

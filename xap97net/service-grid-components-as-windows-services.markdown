@@ -27,7 +27,7 @@ These features can come in handy on servers running Service Grid: For example, a
 # GigaSpaces Windows Services Manager
 
 The Windows Services management console lets users start/stop installed services and modify their properties, but does not support installing new services. This task is can be done via a command line, or during installation of an application.
-GigaSpaces XAP.NET provides a supplementary tool called *Windows Services Manager* which simplifies common administration tasks:
+GigaSpaces XAP.NET provides a supplementary tool called **Windows Services Manager** which simplifies common administration tasks:
 - Install/uninstall instances of GigaSpaces Agent, GSM, GSC, Distributed Transaction Manager and CLI as you please.
 - Perform common operations directly from the tool, no need to switch to the Windows Console (e.g. Start, Stop, change startup type).
 - Side-by-side support for GigaSpaces Installations of different versions on the same machine.
@@ -35,19 +35,19 @@ GigaSpaces XAP.NET provides a supplementary tool called *Windows Services Manage
 
 !GRA:Images2^ServicesManager.jpg!
 The tool can be started from Start->Programs->GigaSpaces XAP.NET->Tools->Windows Services Manager.
-(!) *Note:* This tool requires elevated permissions. Make sure you run it with appropriate permissions. If you're using Windows Vista or later and UAC is turned on, it is recommended to use 'Run As Administrator' (for more info see: http://support.microsoft.com/kb/922708)
+(!) **Note:** This tool requires elevated permissions. Make sure you run it with appropriate permissions. If you're using Windows Vista or later and UAC is turned on, it is recommended to use 'Run As Administrator' (for more info see: http://support.microsoft.com/kb/922708)
 
 # Advanced
 
 ## Service Properties
 
-To view a service properties, right-click it and select *Properties*, or simply double-click it. A dialog window with the service properties will appear.
+To view a service properties, right-click it and select **Properties**, or simply double-click it. A dialog window with the service properties will appear.
 
 ## Configuration
 
 The Service Properties window shows the name of the service configuration file. Either Click the configuration label to open the configuration file using your default XML viewer, or click the location label to open the service folder, then edit the configuration file using your favorite XML editor.
-(!) *Note:* In order for configuration changes to take effect the service needs to be stopped and restarted.
+(!) **Note:** In order for configuration changes to take effect the service needs to be stopped and restarted.
 
 ## Logging
 
-When a service is started for the first time, it creates a *log.txt* file in its folder which contains log information.
+When a service is started for the first time, it creates a **log.txt** file in its folder which contains log information.

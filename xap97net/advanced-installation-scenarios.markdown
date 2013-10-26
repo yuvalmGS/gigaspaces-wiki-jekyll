@@ -29,10 +29,10 @@ GigaSpaces XAP.NET is bundled with GigaSpaces XAP components required at runtime
 If you wish XAP.NET to use an existing XAP installation instead of creating an additional installation, follow these steps:
 
 1. Start XAP.NET installation. Review and accept the license.
-2. In the *Choose Setup Type* dialog, select *Custom* and click *Next* to continue.
-3. In the *Custom Setup* dialog, expand the *Core Components* node in the feature tree, click *Built-in XAP Runtime*, and select *Entire feature will be unavailable*. Click *Next* to continue.
-4. In the *XAP Runtime Components Installation Path* groupbox, type the location of your installed XAP, and click *Next* to continue.
-5. Click *Install* to start the installation process.
+2. In the **Choose Setup Type** dialog, select **Custom** and click **Next** to continue.
+3. In the **Custom Setup** dialog, expand the **Core Components** node in the feature tree, click **Built-in XAP Runtime**, and select **Entire feature will be unavailable**. Click **Next** to continue.
+4. In the **XAP Runtime Components Installation Path** groupbox, type the location of your installed XAP, and click **Next** to continue.
+5. Click **Install** to start the installation process.
 
 #### Q. I've already installed XAP.NET. Can I configure it to work with a different XAP location?
 
@@ -60,16 +60,16 @@ To do that:
 2. Package the installed files into a zip file (or any other compression tool you prefer).
 3. Unzip the package on the target machine(s) wherever you prefer.
 
-(!) If you plan to use XAP.NET with .NET 4.0, make sure that the *Visual C++ 2010 Redistributable Package* ([x86|http://www.microsoft.com/download/en/details.aspx?id=5555] | [x64|http://www.microsoft.com/download/en/details.aspx?id=14632]) is installed on the target machine (this is required only for manual installation - if the msi is installed the C++ redist package is installed automatically if needed).
+(!) If you plan to use XAP.NET with .NET 4.0, make sure that the **Visual C++ 2010 Redistributable Package** ([x86|http://www.microsoft.com/download/en/details.aspx?id=5555] | [x64|http://www.microsoft.com/download/en/details.aspx?id=14632]) is installed on the target machine (this is required only for manual installation - if the msi is installed the C++ redist package is installed automatically if needed).
 
 The final touch is to configure the location of XAP.NET. This can be achieved in one of the following ways:
-1. *Windows Registry:* Create a registry key named {{HKLM\SOFTWARE\GigaSpaces\XAP.NET\<version>\<clrversion>}}, with a String value named {{SettingsPath}} which points to the location of the {{Settings.xml}} file. For example, the XAP.NET v9.5 x86 setup creates the following keys:
+1. **Windows Registry:** Create a registry key named {{HKLM\SOFTWARE\GigaSpaces\XAP.NET\<version>\<clrversion>}}, with a String value named {{SettingsPath}} which points to the location of the {{Settings.xml}} file. For example, the XAP.NET v9.5 x86 setup creates the following keys:
 HKLM\SOFTWARE\GigaSpaces\XAP.NET\9.5.0.5000\CLR v2.0.50727\SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml
 HKLM\SOFTWARE\GigaSpaces\XAP.NET\9.5.0.5000\CLR v4.0.30319\SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v4.0.30319\Config\Settings.xml
 (i) Starting 8.0.3 the HKCU is supported as well, and is searched before HKLM.
-2. *Environment variable:* Create an environment variable named {{XapNet_<version>_SettingsPath}} which points to the settings file path. For example, for that same 9.5 version we would use:
+2. **Environment variable:** Create an environment variable named {{XapNet_<version>_SettingsPath}} which points to the settings file path. For example, for that same 9.5 version we would use:
 XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml.
-3. *Application configuration file*: Use the XapNetSettingsFile element to configure the location of the settings file. For example:
+3. **Application configuration file**: Use the XapNetSettingsFile element to configure the location of the settings file. For example:
 {code:xml}
 <configuration>
     <configSections>
@@ -79,7 +79,7 @@ XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Co
         <XapNetSettingsFile Path="C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml"/>
     </GigaSpaces>
 </configuration>{code}
-4. *Code:* Use the following code to set the location of the settings file at runtime:
+4. **Code:** Use the following code to set the location of the settings file at runtime:
 {code}
     GigaSpacesFactory.Configuration.XapNetSettingsFile.Path = @"C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml"
 {code}

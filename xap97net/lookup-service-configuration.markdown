@@ -9,15 +9,15 @@ page_id: 64127778
 
 # Essential Guidelines
 
-(!) *It is essential to set the* `**groups**` *and* **`locators`** *system properties in the Java process which starts the Lookup Service or Mahalo services*. This is required in order to "tell" the Jini service which groups and locators it should join, and which to serve. If these properties are not set, the Lookup Service/Mahalo uses the Jini fallback values and that impact the SLA these services serve with.
+(!) **It is essential to set the `groups` and `locators` system properties in the Java process which starts the Lookup Service or Mahalo services**. This is required in order to "tell" the Jini service which groups and locators it should join, and which to serve. If these properties are not set, the Lookup Service/Mahalo uses the Jini fallback values and that impact the SLA these services serve with.
 
-(-) *Do not have more than two Jini Lookup Services across one site* - having the {{gsInstance}} running a Jini Lookup Service embedded by default can cause problems. As a result of not have more than two Jini Lookup Services across one site, spaces do not have to deal with registering themselves into too many Jini Lookup Services, and the Space Browser's freezing behavior is reduced.
+(-) **Do not have more than two Jini Lookup Services across one site** - having the {{gsInstance}} running a Jini Lookup Service embedded by default can cause problems. As a result of not have more than two Jini Lookup Services across one site, spaces do not have to deal with registering themselves into too many Jini Lookup Services, and the Space Browser's freezing behavior is reduced.
 
-(!) *Jini groups vs. locators* - Jini groups are irrelevant when using unicast lookup discovery - they are relevant only when using multicast lookup discovery. If you have multiple spaces with the same name and you are using unicast lookup discovery, you might end up getting the wrong proxy.
+(!) **Jini groups vs. locators** - Jini groups are irrelevant when using unicast lookup discovery - they are relevant only when using multicast lookup discovery. If you have multiple spaces with the same name and you are using unicast lookup discovery, you might end up getting the wrong proxy.
 
 In such a case, make sure you have a different lookup group for each space, where each space is configured to use a specific lookup. A good practice is to have different space/service names.
 
-(i) When using multicast please review the following section *[How to Determine Whether Multicast is Available|How to Determine Whether Multicast is Available]* and [How to Configure Multicast|How to Configure Multicast].
+(i) When using multicast please review the following section **[How to Determine Whether Multicast is Available|How to Determine Whether Multicast is Available]** and [How to Configure Multicast|How to Configure Multicast].
 
 # Setting up the Lookup Service For Multicast Discovery (Using Lookup Group)
 

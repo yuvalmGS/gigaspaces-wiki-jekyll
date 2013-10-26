@@ -23,7 +23,7 @@ We suggest an approach in which applications are partitioned into self-sufficien
 
 The [Space-Based Architecture and the End of Tier-based Computing|http://www.gigaspaces.com/os_papers.html#a1] white paper describes how changes in the IT resource landscape, such as memory capacity, network speed and the emergence of powerful and new multi-core commodity hardware, and the introduction of SOA/Grid architectures, tout the promise of achieving true linearly-scalable systems at a lower cost. It introduces how a Space-Based Architecture (SBA) approach can be used as a means to transform existing tier-based applications into linearly and dynamically scalable services.
 
-GigaSpaces XAP was built to be an implementation of the theory behind these concepts, and to make the development of applications based on this model, *simple.*
+GigaSpaces XAP was built to be an implementation of the theory behind these concepts, and to make the development of applications based on this model, **simple.**
 
 # Overcoming Limitations of First-Generation Servers
 
@@ -90,15 +90,15 @@ A Space is a logical in-memory service, which can store entries of information. 
 ## Space - Basic Concepts
 
 The space is accessed via a programmatic interface which supports the following main verbs:
-- *Write* -- the semantics of writing a new entry of information into the space.
-- *Read* -- read the contents of a stored entry into the client side.
-- *Take* -- get the value from the space and delete its content.
-- *Notify* -- alert when the contents of an entry of interest have registered changes.
+- **Write** -- the semantics of writing a new entry of information into the space.
+- **Read** -- read the contents of a stored entry into the client side.
+- **Take** -- get the value from the space and delete its content.
+- **Notify** -- alert when the contents of an entry of interest have registered changes.
 
 The power of the space model is that the combination of the various basic APIs creates a very powerful set of interaction semantics:
-- *Write + Read* -- This combination creates caching semantics. As entries are stored within the application, memory storing and retrieving of entries is done rapidly, making space technology perfect for caching solutions.
-- *Write + Take* -- This combination is perfect for parallel processing paradigms. By having a single (or few) writer/s who write tasks into a shared space, and multiple consumers who take entries for execution from the shared location, it is very easy to create a parallel processing application. In fact, the Master/Worker pattern was invented originally in the context of Tuple Spaces, the origins behind JavaSpaces.
-- *Write/Take + Notify* -- This is a messaging paradigm. Clients are informed of information changes asynchronously once these occur.
+- **Write + Read** -- This combination creates caching semantics. As entries are stored within the application, memory storing and retrieving of entries is done rapidly, making space technology perfect for caching solutions.
+- **Write + Take** -- This combination is perfect for parallel processing paradigms. By having a single (or few) writer/s who write tasks into a shared space, and multiple consumers who take entries for execution from the shared location, it is very easy to create a parallel processing application. In fact, the Master/Worker pattern was invented originally in the context of Tuple Spaces, the origins behind JavaSpaces.
+- **Write/Take + Notify** -- This is a messaging paradigm. Clients are informed of information changes asynchronously once these occur.
 
 These capabilities are at the core of GigaSpaces XAP. This combination, plus the additional capabilities  of the basic APIs, allow synchronous and asynchronous applications to be built as the models for which first generation application servers apply. In addition, these models can be used in a wider range of applications, such as: real-time analytics, real-time batch processing, complex event-driven applications, caching scenarios, parallel processing and more.
 
@@ -112,7 +112,7 @@ GigaSpaces XAP extends template matching by providing semantics to query ranges 
 
 {toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
 
-The [space as defined previously|#Space - Concepts and Capabilities] is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a *cluster*, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
+The [space as defined previously|#Space - Concepts and Capabilities] is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a **cluster**, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
 
 The three main cluster topologies are:
 - [Replication|#Replication]
@@ -154,4 +154,4 @@ The common topology is of a partitioned cluster, where each partition member has
 (i) This topology is also known in GigaSpaces XAP as Partitioned-Sync2Backup.
 {toc-zone}
 {whr}
-{refer}*Next Chapter:* [A Typical SBA Application]{refer}
+{refer}**Next Chapter:** [A Typical SBA Application]{refer}
