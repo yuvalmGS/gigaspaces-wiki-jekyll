@@ -5,4 +5,4 @@ categories: XAP97NET
 page_id: 63799364
 ---
 
-{gallery}
+{% gallery %}{% endgallery %}

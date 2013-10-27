@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799380
 ---
 
-{gallery}
+{% gallery %}
 
 !IMG101.jpg!
 IMG101.jpg
@@ -105,3 +105,5 @@ IMG230.png
 
 !IMG104.png!
 IMG104.png
+
+{% endgallery %}
