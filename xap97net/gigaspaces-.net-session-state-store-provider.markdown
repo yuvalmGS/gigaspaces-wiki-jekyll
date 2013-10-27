@@ -77,7 +77,7 @@ When enabled, the `writeExceptionToEventLog` parameter instructs exceptions thro
 
 The `supportExpiredSessions` parameter, when enabled, instructs the provider to trigger `Session_End` events when a session expires.
 
-(!) If you do not need a certain method to be called when a session expires (`Time out`), it is not recommended to enable this parameter, since this creates additional load on the provider.
+{% exclamation %} If you do not need a certain method to be called when a session expires (`Time out`), it is not recommended to enable this parameter, since this creates additional load on the provider.
 
 # Deployment
 

@@ -39,7 +39,7 @@ The example using the polling container as the inbound-endpoint with each Servic
 
 Each service with this example is packaged within its own [Processing Unit|XAP8:Mule Processing Unit] and can scale independently in [dynamic manner|#Scale Dynamically].
 
-(!) The [Mule Queue Provider|XAP8:Mule Queue Provider] is not illustrated with this example. It is relevant for different use case where the Mule Services scales together with the Data-Grid and running within the same Processing Unit.
+{% exclamation %} The [Mule Queue Provider|XAP8:Mule Queue Provider] is not illustrated with this example. It is relevant for different use case where the Mule Services scales together with the Data-Grid and running within the same Processing Unit.
 
 # The Space Data Class
 The Space Data Class is the POJO used as the "Queue" to coordinate the activities between the different services. Data Objects are consumed from the Data-Grid and written back into the Data-Grid by each Service. Here is the Data Space class definition:
@@ -298,7 +298,7 @@ In order to deploy the different Processing unit comprising this example:
 {% endhighlight %}
 
 
-(!) You may find the different Processing Unit libraries under the `target` folder of each Processing Unit.
+{% exclamation %} You may find the different Processing Unit libraries under the `target` folder of each Processing Unit.
 
 Once the different processing will be deployed you should have the following displayed as part of the GS-UI:
 {indent}!GRA:Screens^mule_deploy.jpg!{indent}
@@ -349,7 +349,7 @@ The Monitor Service using the following Classes to implement the dynamic scaling
 - [org.openspaces.admin.AdminFactory|http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/AdminFactory.html] - This class should be used to access all GigaSpaces Administration classes.
 - [org.openspaces.admin.pu.ProcessingUnit|http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/pu/ProcessingUnit.html] - This class provides methods to manipulate the life cycle and mange a running Proecssing Unit. You may Increment , Decrement the amount of processing unit instances associated with this PU.
 
-(!) See the [XAP8:Administration and Monitoring API] for more details about the GigaSpaces Administration API.
+{% exclamation %} See the [XAP8:Administration and Monitoring API] for more details about the GigaSpaces Administration API.
 
 ## Deploying the Monitor Service
 In order to deploy the Monitor Service run the following:
@@ -391,7 +391,7 @@ The Monitor Service will decrement the amount of verifier instances when there w
 # Transaction Support
 You may add [transaction support|XAP8:Mule Event Container Transport#Transaction Support] to the Mule Service by adding the `distributed-tx-manager` and the `tx-support` tags. Since we are using a clustered space we will be using the [Distributed Jini Transaction Manager|XAP8:Transaction Management#Distributed Jini Transaction Manager].
 
-(!) See also the [Polling Container Transaction Support|XAP8:Polling Container#Transaction Support] for additional details.
+{% exclamation %} See also the [Polling Container Transaction Support|XAP8:Polling Container#Transaction Support] for additional details.
 
 See below example:
 

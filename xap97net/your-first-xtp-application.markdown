@@ -332,7 +332,7 @@ compile
 
 This compiles all the related projects and creates the processing unit dlls inside each project, under the `Deployment` directory. It also copies the Processing Units Deployment directory to the `<GigaSpaces Root>\Runtime\deploy` directory, which simplifies deployment through the `gs-ui`.
 
-(!) The Deployment config file (`pu.config`) should always reside under the root directory of your application.
+{% exclamation %} The Deployment config file (`pu.config`) should always reside under the root directory of your application.
 
 {% anchor deployment %}
 
@@ -362,7 +362,7 @@ After you run the build script and the copy deployment files script, the two dir
 {% endhighlight %}
 
 
-(!) Since the spaces are running inside the `DataProcessor`, the `DataProcessor` should be deployed first and the `DataFeeder` second.
+{% exclamation %} Since the spaces are running inside the `DataProcessor`, the `DataProcessor` should be deployed first and the `DataFeeder` second.
 
 1. In the GigaSpaces Management Center, click on the tab named Deployments, Details, and then click the **Deploy new application** button (!GRA:Images^deploy button.jpg!).
 {indent}!GRA:Images^deploy picture.jpg!{indent}

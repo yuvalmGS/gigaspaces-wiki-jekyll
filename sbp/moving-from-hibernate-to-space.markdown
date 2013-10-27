@@ -640,4 +640,4 @@ java -cp  ../lib/platform/jdbc/hsqldb.jar  org.hsqldb.util.DatabaseManager
 And query the database:
 {indent}!hib2space4.jpg|thumbnail!{indent}
 
-(!) You may download the full source code of the application [here|^HibernateToSpace.zip].
+{% exclamation %} You may download the full source code of the application [here|^HibernateToSpace.zip].

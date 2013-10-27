@@ -31,7 +31,7 @@ To enable the important capabilities above, you should enable multicast on machi
 {% endtip %}
 
 
-(!) In case you want to **disable the Jini Lookup Service Multicast announcements** please refer to [this|Lookup Service Configuration#Multicast Settings] section in the Wiki.
+{% exclamation %} In case you want to **disable the Jini Lookup Service Multicast announcements** please refer to [this|Lookup Service Configuration#Multicast Settings] section in the Wiki.
 
 # Configuring Multicast on Windows
 

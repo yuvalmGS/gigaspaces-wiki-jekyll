@@ -21,40 +21,40 @@ a central database to keep its data | `true (since 8.0)` |
 | `com.gs.transport_protocol.lrmi.tcp-receive-buffer-size` | Set the TCP receive Buffer size (SO_RCVBUF). | OS default |
 | `com.gs.transport_protocol.lrmi.tcp-keep-alive` | Set the TCP keep alive mode (SO_KEEPALIVE). | true |
 | `com.gs.transport_protocol.lrmi.timeout_resolution` | Resolution in percents. Timeout resolution indicates the accuracy of the request timeout.
-  (!)
+  {% exclamation %}
 Overrides `services.config` file settings. | 10 |
 | `com.gs.transport_protocol.lrmi.connect_timeout` | LRMI timout on the Socket connect. Default connect timeout in seconds is 0 - infinite timeout. By default time unit is in seconds.
-  (!)
+  {% exclamation %}
 Overrides `services.config` file settings. | 0 |
 | `com.gs.transport_protocol.lrmi.request_timeout` | Watchdog parameter - Occurs when the client sends a request to the space and doesn't get a reply for the defined timeout. By default time unit is seconds. Defaults to 30s.
-  (!)
+  {% exclamation %}
 Overrides `services.config` file settings. | 30 |
 | `com.gs.transport_protocol.lrmi.listening_timeout` | Watchdog parameter.
-  (!)
+  {% exclamation %}
 Overrides `services.config` file settings. Defaults to 5m | 300 |
 | `com.gs.transport_protocol.lrmi.idle_connection_timeout` | Watchdog parameter.
-  (!)
+  {% exclamation %}
 Overrides `services.config` file settings. Defaults to 15m. | 900 |
 | `com.gs.transport_protocol.lrmi.threadpool.idle_timeout` | LRMI thread pool idle timeout. Default is 5 min.
-  (!)
+  {% exclamation %}
 Overrides `services.config` file settings. Defaults to 15m. | 300000 |
 | `com.gs.transport_protocol.lrmi.bind-port` | Server port used for incoming client requests, or notifications from server to client. The server port is set by default to 0, which means next free port. This means that whenever GigaSpaces is launched, it allocates one of the available ports. Define a specific port value to enforce a specific port on the space server or client side. Alternatively, you can define a range of ports.
-  (!)
+  {% exclamation %}
 Overrides `services.config` file settings. | 0 |
 | `com.gs.transport_protocol.lrmi.min-threads` | The system maintains thread pool in Client and Server that manage incoming remote requests. The thread pool size is increased each time with one additional thread and shrinks when existing threads are not used for 5 minutes. This parameter specifies the minimum size of this thread pool.
-  (!)
+  {% exclamation %}
 Overrides `services.config` file settings. | 1 |
 | `com.gs.transport_protocol.lrmi.max-threads` | The system maintains thread pool in Client and Server that manage incoming remote requests. This parameter specifies the maximum size of this thread pool. You should make sure the pool max size will accommodate the maximum number of concurrent requests to the serverEndPoint. When the pool is exhausted and all threads are consumed to process incoming requests, additional requests will be blocked until existing requested processing will be completed.
-  (!)
+  {% exclamation %}
 Overrides `services.config` file settings. | 128 |
 | `com.gs.transport_protocol.lrmi.max-conn-pool` | Client connection pool maximum size to server. Starts with 1 connection.
-  (!)
+  {% exclamation %}
 Overrides `services.config` file settings. | 1024 |
 | `com.gs.transport_protocol.lrmi.selector.threads` | Maintains thread pool queue size in Client and Server that manage incoming remote requests. Once the queue sized is reached the incoming messages are blocked.
-  (!)
+  {% exclamation %}
 Overrides `services.config` file settings. | 1 |
 | `com.gs.lrmi.maxBufferSize` | Maximum size of buffer sent over the network. Each buffer sent by the LRMI layer is broken into smaller buffers according to the this parameter value.
-  (!)
+  {% exclamation %}
 Overrides `services.config` file settings. | 65536 (64k) |
 | `com.gs.lrmi.filter.factory` | Factory class that is used to load communication filter. | empty |
 | `com.gs.lrmi.filter.security.keystore` | Name of the keystore file that should be used by SSL communication filter. | empty |

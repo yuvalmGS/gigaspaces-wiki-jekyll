@@ -82,7 +82,7 @@ public class Person
 
 
 {refer}For more information about routing, see [SpaceRouting|Object Metadata#Routing] or [GS.XML Metadata].{refer}
-(!) **Note:** [Blocking read|#Blocking Read] is not supported on a clustered proxy.
+{% exclamation %} **Note:** [Blocking read|#Blocking Read] is not supported on a clustered proxy.
 
 # Improving performance
 
@@ -115,6 +115,6 @@ Assuming the space was empty and no one else is accessing the space at the same 
 
 If you're interested in reading multiple entries at once, you can use the `ReadMultiple` operation. This operation is very similiar to the `Read` operation but it returns an array of entries instead of a single result. To limit the maximum number of results use the `maxItems` argument (default is `Int32.MaxValue`).
 
-(!) Calling `ReadMultiple` operation with a large `maxItems` argument is dangerous - if the space contains many matching entries the result set will be very large, which will impact the network traffic and performance, and possibly result in an out of memory exception. for more information, see the `IReadOnlySpaceProxy.GetSpaceIterator`.
+{% exclamation %} Calling `ReadMultiple` operation with a large `maxItems` argument is dangerous - if the space contains many matching entries the result set will be very large, which will impact the network traffic and performance, and possibly result in an out of memory exception. for more information, see the `IReadOnlySpaceProxy.GetSpaceIterator`.
 
 {refer}If you're interested in guaranteeing First-In-First-Out, see [FIFO support]. {refer}

@@ -58,7 +58,7 @@ Event containers are used to abstract the event processing from the event source
 Two types of event containers are available in the product:
 - [Polling|Polling Container Component] - Polls the space for entries matching the specified template.
 - [Notify|Notify Container Component] - Subscribes for notifications from the space on entries matching the specified template.
-(+) The event container object model is designed to be customizable and extensible, so users can customize the behavior of those 2 containers or even create their own containers.
+{% plus %} The event container object model is designed to be customizable and extensible, so users can customize the behavior of those 2 containers or even create their own containers.
 
 An event container is simply a class which defines:
 - A template which will be used to match events.

@@ -152,7 +152,7 @@ notifyEventListenerContainer.Template = new SqlQuery<Data>(template, "Processed 
 
 The notify container can be configured with transaction support, so the event action can be performed under a transaction. Exceptions thrown by the event listener cause the operations performed within the listener to be rolled back automatically.
 
-(!) When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. If this behavior is required, please consider using the [Polling Event Container|Polling Container Component]. Adding transaction support to the polling container is very simple. It is done by setting the `TransactionType` property. There are two transaction types: Distributed and Manual.
+{% exclamation %} When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. If this behavior is required, please consider using the [Polling Event Container|Polling Container Component]. Adding transaction support to the polling container is very simple. It is done by setting the `TransactionType` property. There are two transaction types: Distributed and Manual.
 - Distributed transaction - an embedded distributed transaction manager will be created and it will be used for creating transaction (Only one transaction manager will be created per AppDomain).
 - Manual transaction - transactions will be created by the transaction manager that is stored in the `TransactionManager` property. By default no transaction manager is stored and therefore, no transaction will be used. For example:
 

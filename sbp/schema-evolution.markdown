@@ -74,7 +74,7 @@ See more:
 
 The space model can be evolved using a few extra fields as part of the space class, which are used in future versions of the application. When using POJOs/PONOs/POCOs, these fields include getter/setter fields that include relevant façade methods once the actual business logic requests these. When dealing with Entry space classes, you can change the fields getter/setter methods. This is because these methods are not used when getting the class metadata (when the class is introduced to the space).
 
-(!) In most cases, the placeholder fields technique is the simplest one to use. It allows you to index future fields and its impact on the deployment is minimal.
+{% exclamation %} In most cases, the placeholder fields technique is the simplest one to use. It allows you to index future fields and its impact on the deployment is minimal.
 
 # Evolving Space Schema using Externalizable Implementation
 

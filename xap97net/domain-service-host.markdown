@@ -29,7 +29,7 @@ public interface IDataProcessor
 {% endhighlight %}
 
 
-(!) The `Data` object should be `Serializable`
+{% exclamation %} The `Data` object should be `Serializable`
 
 # Implementing the Contract
 

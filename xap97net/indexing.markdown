@@ -88,7 +88,7 @@ By default, a property's index is inherited in sub classes (i.e. if a property i
 
 Indexes can be added dynamically at run-time using the GigaSpaces Management Center GUI.
 
-(!) Removing an index or changing an index type is currently not supported.
+{% exclamation %} Removing an index or changing an index type is currently not supported.
 
 # Nested Properties Indexing
 

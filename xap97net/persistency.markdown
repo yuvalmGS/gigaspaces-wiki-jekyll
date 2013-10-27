@@ -15,7 +15,7 @@ GigaSpaces [Space Persistency|XAP95:Space Persistency] interface is the key midd
 
 .NET persistency is a GigaSpaces implementation on top of Java `SpaceDataSource` and `SpaceSynchronizationEndpoint` classes.
 
-(!) Before you begin, it is recommended to read the [Space Persistency|XAP95:Space Persistency] section.
+{% exclamation %} Before you begin, it is recommended to read the [Space Persistency|XAP95:Space Persistency] section.
 
 
 {% tip %}
@@ -57,7 +57,7 @@ ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceCon
 {% endhighlight %}
 
 
-(!) Before using the `ExternalDataSource.NHibernate` practice, compile it by calling `<GigaSpaces Root>\dotnet\practices\ExternalDataSource\NHibernate\build.bat`.
+{% exclamation %} Before using the `ExternalDataSource.NHibernate` practice, compile it by calling `<GigaSpaces Root>\dotnet\practices\ExternalDataSource\NHibernate\build.bat`.
 
 (on) You can create your own NHibernate session factory and pass it to the `NHibernateExternalDataSource` constructor. In this case, there's no need to use `SpaceConfig.ExternalDataSourceConfig.CustomProperties`.
 
@@ -113,6 +113,6 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size",
 
 To create a custom implementation, implement the `GigaSpaces.Core.Persistency.ISqlDataSource` interface.
 
-(!) Before creating a custom implementation, read the following [considerations|XAP95:External Data Source].
+{% exclamation %} Before creating a custom implementation, read the following [considerations|XAP95:External Data Source].
 
 (on) See an example for the NHibernate implementation under `<GigaSpaces Root>\dotnet\practices\ExternalDataSource\NHibernate`.

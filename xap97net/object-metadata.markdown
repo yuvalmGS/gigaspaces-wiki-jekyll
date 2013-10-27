@@ -109,7 +109,7 @@ There are two modes of SpaceID that are supported:
 
 The default is `AutoGenerate=false`. Note that only one property in a class can be marked as a SpaceID property.
 
-(!) There is no need to explicitly index a field which is marked as SpaceID, because it is already indexed.
+{% exclamation %} There is no need to explicitly index a field which is marked as SpaceID, because it is already indexed.
 
 # Routing
 

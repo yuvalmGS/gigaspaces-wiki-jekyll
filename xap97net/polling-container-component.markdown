@@ -109,7 +109,7 @@ The FIFO Grouping designed to allow efficient processing of events with partial 
 # Concurrent Consumers
 
 By default, the polling event container starts a single thread that performs the receive operations and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads, the container will manage the scaling up and down of concurrent consumers automatically according to the load, however, there are a few parameters regarding this scaling logic which are described in [Auto Polling Consumer Scaling|Auto Polling Consumer Scaling]. This provides faster processing of events. However, any FIFO behavior that might be configured in the space and/or template is lost.
-(!) When using a FIFO Grouping, the FIFO order of each value is not broken. See [FIFO Grouping] page for more details.
+{% exclamation %} When using a FIFO Grouping, the FIFO order of each value is not broken. See [FIFO Grouping] page for more details.
 
 Here is an example of a polling container with 3 concurrent consumers and a maximum of 5 concurrent consumers:
 
@@ -323,7 +323,7 @@ XAP.NET comes with several built-in receive operation-handler implementations:
 | `TakeReceiveOperationHandler` |Performs a single blocking Take operation, with the receive timeout. When used in conjuction with batch events, first tries to perform TakeMultiple. If no values are returned, performs a blocking Take operation, with the receive timeout.|
 | `ReadReceiveOperationHandler` |Performs a single blocking Read operation, with the receive timeout. When used in conjuction with batch events, first tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.|
 | `ExclusiveReadReceiveOperationHandler` |Performs a single Read operation, under an exclusive read lock (similar to "select for update" in databases), with the receive timeout. Exclusive read lock mimics the Take operation, without actually taking the Entry from the space. When used in conjuction with batch events, First tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.
-(!) This receive operation handler must be used within a transaction.|
+{% exclamation %} This receive operation handler must be used within a transaction.|
 
 (i) When using the `ExclusiveReadReceiveOperationHandler`, or even the `ReadReceiveOperationHandler`, it is important to remember that the actual event still remains in the space. If the data event is not taken from the space, or one of its properties changes in order **not** to match the container template, the same data event is read again.
 

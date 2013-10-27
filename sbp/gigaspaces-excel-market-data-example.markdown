@@ -66,7 +66,7 @@ The .NET files are created in the `<Example Root>\Release` directory.
 
 # Running the Example
 
-(!) The example must be compiled before you run it (see [Building the Example|#building] above).
+{% exclamation %} The example must be compiled before you run it (see [Building the Example|#building] above).
 1. Start the GigaSpaces environment: `<Example Root>\bin\startAll.bat`.
 2. Run the GigaSpaces Management Center `(<GigaSpaces Root>\Bin\Gs-ui.exe`) to see the **`GigaSpaces.Examples.ExcelStocks.StockEntities.StockData`** instances. To view only the relevant spaces:
     1. In the top menu bar, choose **Settings** > **Discovery** > **Group management**.
@@ -96,6 +96,6 @@ The following metrics describe the scope of testing performed using the examples
 - Object sizes of up to 10K.
 - Maximum heap size of embedded Excel JVM - 64M.
 
-(!) A .NET local cache on the Excel side is not supported.
+{% exclamation %} A .NET local cache on the Excel side is not supported.
 
 {refer}Back to The [Excel that Scales Solution] section.{refer}

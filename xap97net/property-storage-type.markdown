@@ -42,7 +42,7 @@ Here are the `StorageType` supported options:
 - **BinaryCustom** - Same as Binary, except that .NET serialization is used instead of `PBS` serialization.
 - **Document** - The space proxy will serialize the property value in `PBS` and the space will deserialize it as a `SpaceDocument`, and store it in the space as such. This allows matching on nested properties inside the property and to index these nested properties as well.
 
-(!) Indexing a property with a binary or custom binary storage type is not supported. For more information about indexing see [Indexing|Indexing].
+{% exclamation %} Indexing a property with a binary or custom binary storage type is not supported. For more information about indexing see [Indexing|Indexing].
 
 # Interoperability
 

@@ -66,7 +66,7 @@ The `ClusterInfo` class holds the following information:
 | `BackupId` | 1 to the `NumberOfBackups` value, denoting the backup ID of the `InstanceId` of the current Processing Unit instance. |
 | `RunningNumber` |A running number of the cluster instance. Takes into account different topologies and provides a unique identifier (starting from `0`) of the cluster member. |
 
-(!) Defining a `null` value in one of these properties means that they are not set.
+{% exclamation %} Defining a `null` value in one of these properties means that they are not set.
 
 # Creating Your Own Processing Unit Container
 

@@ -13,7 +13,7 @@ Before you begin, make sure:
 Please note: the Excel Space Viewer supports only GigaSpaces version 6.5.1.
 - [Microsoft Office Excel 2003 with Primary Interop Assemblies|http://msdn2.microsoft.com/en-us/library/aa159923(office.11).aspx] is installed.
 
-(!) In case the Primary Interop Assemblies are not installed, install one of the following:
+{% exclamation %} In case the Primary Interop Assemblies are not installed, install one of the following:
 - For Office 2003:
     - [Microsoft Office Excel 2003 with Primary Interop Assemblies|http://msdn2.microsoft.com/en-us/library/aa159923(office.11).aspx] (requires the Office Installation CD).
     - [Redistributable Primary Interop Assemblies Package for Office 2003|http://www.microsoft.com/downloads/details.aspx?FamilyId=3C9A983A-AC14-4125-8BA0-D36D67E0F4AD&displaylang=en] (does not require the Office Installation CD).

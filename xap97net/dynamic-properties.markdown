@@ -35,7 +35,7 @@ public class Person
 {% endhighlight %}
 
 
-(+) It is recommended to use the `DocumentProperties` class to host dynamic properties.
+{% plus %} It is recommended to use the `DocumentProperties` class to host dynamic properties.
 
 # Using Dynamic Properties
 

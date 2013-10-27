@@ -211,9 +211,9 @@ public void writeProduct2(GigaSpace gigaspace) {
 {% endhighlight %}
 
 
-(+) The `GigaSpace.writeMultiple` method can be used to write a batch of documents.
-(!) Update semantics are the same as POJO, except **partial update** that is not currently supported.
-(!) Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviours in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
+{% plus %} The `GigaSpace.writeMultiple` method can be used to write a batch of documents.
+{% exclamation %} Update semantics are the same as POJO, except **partial update** that is not currently supported.
+{% exclamation %} Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviours in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
 
 # Reading and Removing Documents
 
@@ -300,17 +300,17 @@ public SpaceDocument[] readProductByMultipleIds(GigaSpace gigaSpace) {
 {% endhighlight %}
 
 
-(+) All other `GigaSpace` query operations (readIfExists, readMultiple, take, takeIfExists, takeMultiple, count, clear) are supported for documents entries as well.
-(+) All other Id based operations (readIfExists, takeById, takeIfExistsById, takeByIds) are supported for documents as well.
-(+) All overloads of those operations with timeout, transactions, modifiers etc. are supported for documents. The semantics is similar to POJOs.
+{% plus %} All other `GigaSpace` query operations (readIfExists, readMultiple, take, takeIfExists, takeMultiple, count, clear) are supported for documents entries as well.
+{% plus %} All other Id based operations (readIfExists, takeById, takeIfExistsById, takeByIds) are supported for documents as well.
+{% plus %} All overloads of those operations with timeout, transactions, modifiers etc. are supported for documents. The semantics is similar to POJOs.
 
 # Nested Properties
 
 The `Document` properties values can be either scalars (integers, strings, enumuerations, etc), collections (arrays, lists), or nested properties (Map or an extension of map, such as `DocumentProperties`). Values must adhere to the same restrictions as in the POJO model (e.g. be serializable). Nested properties can be queried by using the dot ('.') notation to describe paths, as shown above.
 
-(+) It's highly recommended to use `DocumentProperties` for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
-(!) While it's possible to use  `SpaceDocument` as a property, it is probably a mistake, since it contains extra information which is not relevant for nested properties (type name, version, etc.).
-(!) Changing nested properties in an embedded space is not safe.
+{% plus %} It's highly recommended to use `DocumentProperties` for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
+{% exclamation %} While it's possible to use  `SpaceDocument` as a property, it is probably a mistake, since it contains extra information which is not relevant for nested properties (type name, version, etc.).
+{% exclamation %} Changing nested properties in an embedded space is not safe.
 
 # Indexing
 
@@ -526,7 +526,7 @@ gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 {gcard}
 {gdeck}
 
-(!) Changing FIFO support after a type has been registered is not supported.
+{% exclamation %} Changing FIFO support after a type has been registered is not supported.
 For more information about FIFO, see the [FIFO Support|FIFO Support] page.
 
 # Transactions and Optimistic Locking
@@ -590,7 +590,7 @@ gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 {gcard}
 {gdeck}
 
-(!) Changing optimistic locking after a type has been registered is not supported.
+{% exclamation %} Changing optimistic locking after a type has been registered is not supported.
 For more information about optimistic locking, see the [Optimistic Locking|Optimistic Locking] page.
 
 # Local Cache / Local View
@@ -686,8 +686,8 @@ public class DocumentEDS
 Different document database can be used to implement the document persistency - MongoDB, CouchDB and others.
 Pojos can be persisted via document EDS as well, in the same way.
 
-(!) In order to support initialLoad of documents the relevant types must be declared in the "space" bean, so that they are registered in the space before initialLoad is invoked.
-(!) Document persistence is currently not provided by default - If needed, the External Data Source should be implemented to fit the required solution.
+{% exclamation %} In order to support initialLoad of documents the relevant types must be declared in the "space" bean, so that they are registered in the space before initialLoad is invoked.
+{% exclamation %} Document persistence is currently not provided by default - If needed, the External Data Source should be implemented to fit the required solution.
 
 # Space Filters
 

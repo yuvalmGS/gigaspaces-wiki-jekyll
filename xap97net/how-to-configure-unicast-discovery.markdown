@@ -40,7 +40,7 @@ jini://*/./mySpace?locators=machine1:4174,machine2:4174&groups=gigaspaces-9.0.0-
 {% endhighlight %}
 
 
-(!) When the locators attribute is used in conjunction with the jini://* prefix and groups attribute, the discovery will be unicast AND multicast.
+{% exclamation %} When the locators attribute is used in conjunction with the jini://* prefix and groups attribute, the discovery will be unicast AND multicast.
 If you want unicast only, you should disable multicast altogether.
 
 

@@ -15,7 +15,7 @@ Since by convention the default constructor usually initializes all the properti
 
 (i) It is highly recommended to index one or more of the properties used in the template to speed up the matching process. For more information see [Indexing].
 
-(+) If you require additional query options refer to [SQLQuery].
+{% plus %} If you require additional query options refer to [SQLQuery].
 
 # Examples
 
@@ -118,7 +118,7 @@ We've indicated that `-1` should be treated as `null` when performing template m
 
 (i) Properties of primitive types are implicitly boxed when stored in the space and unboxed when reconstructed to a POCO.
 
-(+) It is highly recommended to use the  primitive wrapper classes instead of primitives to simplify the code and avoid user errors.
+{% plus %} It is highly recommended to use the  primitive wrapper classes instead of primitives to simplify the code and avoid user errors.
 
 ## Nested Template Matching
 

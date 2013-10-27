@@ -56,7 +56,7 @@ With the above approach, you can leverage multiple network cards within the same
 {% endtip %}
 
 
-(!) For more information, see [How to Configure an Environment With Multiple Network-Cards (Multi-NIC)|XAP91:How to Configure an Environment With Multiple Network-Cards (Multi-NIC)]
+{% exclamation %} For more information, see [How to Configure an Environment With Multiple Network-Cards (Multi-NIC)|XAP91:How to Configure an Environment With Multiple Network-Cards (Multi-NIC)]
 
 # Ports
 GigaSpaces uses TCP/IP for most of its remote operations. The following components within GigaSpaces require open ports:
@@ -542,7 +542,7 @@ For applications that are using relatively large amount of third party libraries
 {% endhighlight %}
 
 
-(!) GigaSpaces is a Java-based product. .Net and C++ applications using GigaSpaces should also be aware the usage of the JVM libraries as part of the .Net and C++ client libraries.
+{% exclamation %} GigaSpaces is a Java-based product. .Net and C++ applications using GigaSpaces should also be aware the usage of the JVM libraries as part of the .Net and C++ client libraries.
 
 See the [Tuning Java Virtual Machines|XAP91:Tuning Java Virtual Machines] section and the [Java SE 6 HotSpot Virtual Machine Garbage Collection Tuning|http://java.sun.com/javase/technologies/hotspot/gc/gc_tuning_6.html] for detailed JVM tuning recommendations.
 
@@ -719,7 +719,7 @@ GigaSpaces generates some files while the system is running. You should change t
 |`com.gigaspaces.grid.gsa.config-directory`|The location of the GSA configuration files. [The GigaSpaces Agent|XAP91:The Grid Service Agent] (GSA) manages different process types. Each process type is defined within this folder in an xml file that identifies the process type by its name. |`<gigaspaces-xap root>\config\gsa`|
 |`java.util.logging.config.file`| It indicates file path to the Java logging file location. Use it to enable finest logging troubleshooting of various GigaSpaces Services. You may control this setting via the `GS_LOGGING_CONFIG_FILE_PROP` environment variable.| `<gigaspaces-xap root>\config\gs_logging.properties`|
 
-(!) The `com.gigaspaces.lib.platform.ext` and the `com.gs.pu-common` are useful to decrease the deployment time in case your processing unit **contains a lot of 3rd party jars files**. In such case, each GSC will download the processing unit jar file (along with all the jars it depends on) to its local working directory from the GSM, and in case of large deployments spanning tens or hundreds of GSCs this can be quite time consuming. In such cases you should consider **placing the jars on which your processing unit depends on** in a shared location on your network, and then point the `com.gs.pu-common` or `com.gigaspaces.lib.platform.ext` directory to this location.
+{% exclamation %} The `com.gigaspaces.lib.platform.ext` and the `com.gs.pu-common` are useful to decrease the deployment time in case your processing unit **contains a lot of 3rd party jars files**. In such case, each GSC will download the processing unit jar file (along with all the jars it depends on) to its local working directory from the GSM, and in case of large deployments spanning tens or hundreds of GSCs this can be quite time consuming. In such cases you should consider **placing the jars on which your processing unit depends on** in a shared location on your network, and then point the `com.gs.pu-common` or `com.gigaspaces.lib.platform.ext` directory to this location.
 
 # Log Files
 GigaSpaces generates log files for each running component . This includes GSA, GSC, GSM, Lookup service and client side. By default, these are created within the `<gigaspaces-xap-root>\logs` folder. After some time you might end up with a large number of files that are hard to maintain and search. You should backup old log files or delete these. You can use the [logging backup-policy|XAP91:Backing-up Files With a Custom Policy] to manage your log files.

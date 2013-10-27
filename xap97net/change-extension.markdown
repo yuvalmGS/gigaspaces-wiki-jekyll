@@ -26,7 +26,7 @@ int? newCounter = ISpaceProxy.AddAndGet(idQuery, "Counter", 1);
 {% endhighlight %}
 
 
-(!) You should use the primitive wrapper types as the operation semantic is to return null if there is no object matching the provided id query
+{% exclamation %} You should use the primitive wrapper types as the operation semantic is to return null if there is no object matching the provided id query
 
 {% info %}
 Add `using GigaSpaces.Core.Change.Extensions;` in order to have the extension methods available.

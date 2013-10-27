@@ -221,7 +221,7 @@ When using the `PARTIAL_UPDATE` modifier, only enter values into the fields that
 
 Make sure the updated object include its ID when using this option.
 
-(!) To use Delta updates you don't have to implement any special interface or have special serialization code. You can use a regular Object.
+{% exclamation %} To use Delta updates you don't have to implement any special interface or have special serialization code. You can use a regular Object.
 
 When updating an object, you can specify 0 (ZERO) as the lease time. This instructs the space to use the original lease time used when the object was written to the Space.
 
@@ -347,7 +347,7 @@ The GigaSpace interface provides simple way to perform bulk operations. You may 
 - GigaSpace.takeMultiple - Bulk take (read+remove). Returns the removed objects back to the client.
 - GigaSpace.writeMultiple - Bulk write and update.
 
-(!) To remove batch of objects without returning these back into the client use `GigaSpace.clear(SQLQuery)`;
+{% exclamation %} To remove batch of objects without returning these back into the client use `GigaSpace.clear(SQLQuery)`;
 
 Here are few important considerations when using the batch operations:
 - The `readMultiple` and `takeMultiple` operations boost the performance, since they perform multiple operations using one call. These methods returns the matching results in one result object back to the client. This allows the client and server to utilize the network bandwidth in an efficient manner. In some cases, these batch operations can be up to 10 times faster than multiple single based operations.
@@ -464,7 +464,7 @@ public class AsyncWriteTask implements Task<Integer>{
 
 As seen in the take API above, there is no need to provide a Jini transaction object for the different space operations. `GigaSpace` with the different OpenSpaces [transaction managers|Transaction Management] and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the `GigaSpace` interface joins it, using Spring's rich transaction support.
 
-(!) In order to have GigaSpace transactional, the transaction manager must be provided as a reference when constructing the GigaSpace bean. For example (using the distributed transaction manager):
+{% exclamation %} In order to have GigaSpace transactional, the transaction manager must be provided as a reference when constructing the GigaSpace bean. For example (using the distributed transaction manager):
 
 {gdeck:os_simple_space|top}
 {gcard:Namespace}

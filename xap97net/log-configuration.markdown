@@ -55,7 +55,7 @@ There are several logging components split into different subjects. They should 
 
 The logger component loads the configuration during initialization. If it does not find a source element named `GigaSpaces.Core`, it loads a default configuration, which sets the trace level to `Information`, and configures an `EventLogTraceListener` with `source=GigaSpaces.Core`, (similar to the configuration shown in the basic example).
 
-(!) If the Windows Event Log does not contain the specified source, it is automatically created. However, you need administrator permissions to create a source in the Event Log. If you don't create this source, the default configuration is not used. We recommend that you use an administrator's profile the first time you use the product on a machine, to make sure the source is created. Subsequent runs do not require high level permissions.
+{% exclamation %} If the Windows Event Log does not contain the specified source, it is automatically created. However, you need administrator permissions to create a source in the Event Log. If you don't create this source, the default configuration is not used. We recommend that you use an administrator's profile the first time you use the product on a machine, to make sure the source is created. Subsequent runs do not require high level permissions.
 
 ## Advanced Configuration
 

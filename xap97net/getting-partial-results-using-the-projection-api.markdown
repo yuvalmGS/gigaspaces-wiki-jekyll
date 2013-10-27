@@ -74,7 +74,7 @@ The projection is defined for any operation that returns data from the space. Th
 You can use projections with the [Notify Container|Notify Container Component] when subscribing to notifications, or with the [Polling Container|Polling Container Component] when consuming space objects. You can also create a [Local View] with templates or a `View` using projections. The local view will maintain the relevant objects, but with the projected data - only with the projected properties.
 Projected properties can specify both dynamic or fixed properties and the usage is the same. As a result, when providing a projected property name which is not part of the fixed properties set, it will be treated as a dynamic property. If there is no dynamic property present with that name on an object which is a result of the query - that projection property will be ignored (and no exception will be raised). Please note that a result may contain multiple objects, each with different set of properties (fixed and dynamic), each object will be treated individually when applying the projections on it.
 
-(!) Space Iterator does not support projections
+{% exclamation %} Space Iterator does not support projections
 
 # Considerations
 

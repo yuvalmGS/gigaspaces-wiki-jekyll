@@ -64,6 +64,6 @@ In order to have a processing unit deployed automatically at machine startup, Co
 
 {refer}For a full list of possible command line options refer to [Cli Command|XAP95:gs.bat - Other CLI Commands] page or run Start->Program Files->GigaSpaces XAP.NET->Tools->GigaSpaces Command Line and type help{refer}
 
-(!) The Command Line Interface lookup groups must match the Gsm in which the processing unit is deployed and it is configured in the same way as the lookup groups is configured in Gsc and Gsm.
+{% exclamation %} The Command Line Interface lookup groups must match the Gsm in which the processing unit is deployed and it is configured in the same way as the lookup groups is configured in Gsc and Gsm.
 
-(!) The Starting State should be updated to Automatic as above.
+{% exclamation %} The Starting State should be updated to Automatic as above.

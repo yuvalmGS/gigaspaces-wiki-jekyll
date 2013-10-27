@@ -143,9 +143,9 @@ public void WriteProduct2(ISpaceProxy spaceProxy)
 {% endhighlight %}
 
 
-(+) The `ISpaceProxy.WriteMultiple` method can be used to write a batch of documents.
-(!) Update semantics are the same as for concrete objects, except **partial update**, which is not currently supported.
-(!) Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviors in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
+{% plus %} The `ISpaceProxy.WriteMultiple` method can be used to write a batch of documents.
+{% exclamation %} Update semantics are the same as for concrete objects, except **partial update**, which is not currently supported.
+{% exclamation %} Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviors in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
 
 # Reading and Removing Documents
 
@@ -237,16 +237,16 @@ public SpaceDocument[] ReadProductByMultipleIds(ISpaceProxy spaceProxy)
 {% endhighlight %}
 
 
-(+) All other `ISpaceProxy` query operations (ReadIfExists, ReadMultiple, Take, TakeIfExists, TakeMultiple, Count, Clear) are supported for documents entries as well.
-(+) All other Id based operations (ReadIfExists, TakeById, TakeIfExistsById, TakeByIds) are supported for documents as well.
-(+) All overloads of those operations with timeout, transactions, modifiers etc. are supported for documents. The semantics is similar to concrete objects.
+{% plus %} All other `ISpaceProxy` query operations (ReadIfExists, ReadMultiple, Take, TakeIfExists, TakeMultiple, Count, Clear) are supported for documents entries as well.
+{% plus %} All other Id based operations (ReadIfExists, TakeById, TakeIfExistsById, TakeByIds) are supported for documents as well.
+{% plus %} All overloads of those operations with timeout, transactions, modifiers etc. are supported for documents. The semantics is similar to concrete objects.
 
 # Nested Properties
 
 The `Document` properties' values can be either scalars (integers, strings, enumerations, etc), collections (arrays, lists), or nested properties (dictionary or an extension of dictionary, such as `DocumentProperties`). Values must adhere to the same restrictions as in the concrete object model (e.g. be serializable). Nested properties can be queried by using the dot ('.') notation to describe paths, as shown above.
 
-(+) It's highly recommended to use `DocumentProperties` for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
-(!) While it's possible to use  `SpaceDocument` as a property, it is probably a mistake, since it contains extra information which is not relevant for nested properties (type name, version, etc.).
+{% plus %} It's highly recommended to use `DocumentProperties` for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
+{% exclamation %} While it's possible to use  `SpaceDocument` as a property, it is probably a mistake, since it contains extra information which is not relevant for nested properties (type name, version, etc.).
 
 # Indexing
 
@@ -305,7 +305,7 @@ spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
 
-(!) Changing FIFO support after a type has been registered is not supported.
+{% exclamation %} Changing FIFO support after a type has been registered is not supported.
 
 # Transactions and Optimistic Locking
 
@@ -327,7 +327,7 @@ spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
 
-(!) Changing optimistic locking after a type has been registered is not supported.
+{% exclamation %} Changing optimistic locking after a type has been registered is not supported.
 
 # Dynamic Properties Storage Type
 
@@ -442,8 +442,8 @@ public class DocumentEDS : ISqlDataSource
 
 Concrete objects can be persisted via document EDS as well, in the same way.
 
-(!) In order to support InitialLoad of documents the relevant types must be declared in the space config, so that they are registered in the space before InitialLoad is invoked.
-(!) Document persistence is currently not provided by default - If needed, the External Data Source should be implemented to fit the required solution.
+{% exclamation %} In order to support InitialLoad of documents the relevant types must be declared in the space config, so that they are registered in the space before InitialLoad is invoked.
+{% exclamation %} Document persistence is currently not provided by default - If needed, the External Data Source should be implemented to fit the required solution.
 
 # Advanced Options
 

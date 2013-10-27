@@ -299,7 +299,7 @@ catch(ChangeException e)
 {% endhighlight %}
 
 
-(!) In order to prevent constructor overload ambiguity, when using id query with version, the space routing property needs to be specified as well. If the object has no space routing then its space id property is the routing property and it should be used as shown in the previous example.
+{% exclamation %} In order to prevent constructor overload ambiguity, when using id query with version, the space routing property needs to be specified as well. If the object has no space routing then its space id property is the routing property and it should be used as shown in the previous example.
 
 # Change and Notifications
 

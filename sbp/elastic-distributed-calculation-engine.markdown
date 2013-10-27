@@ -70,7 +70,7 @@ The Calculating Flow includes the following:
 
 !ElasticDistributedRiskAnalysisEngine_colocated_workers.jpg!
 
-(!) When running the Elastic Calcualtion Engine on a single machine, scaling up and down will not affect the calculation time, but when running this on a grid with multiple machines, you will see better or worse calculation time when the grid scales up or down.
+{% exclamation %} When running the Elastic Calcualtion Engine on a single machine, scaling up and down will not affect the calculation time, but when running this on a grid with multiple machines, you will see better or worse calculation time when the grid scales up or down.
 
 ## Intelligent Map-Reduce
 The Elastic Calcualtion Engine uses the [ExecutorBuilder|XAP8:Task Execution over the Space#ExecutorBuilder API]. This allows executing multiple `AnalysisTasks` in a parallel manner where each Task includes a different Trade ID list to use for the calculation. Each List is sent to a relevant node where it is used to fetch the Trade data from the colocated space or to be loaded from the database.
@@ -128,7 +128,7 @@ For long calculations that consume relatively large amount of CPU time, the reco
 startAgent.bat
 {% endhighlight %}
 
-(!) You will need a machine with at least 2GB free memory to run this demo.
+{% exclamation %} You will need a machine with at least 2GB free memory to run this demo.
 3. Run the Elastic Data-Grid deploy script:
 
 

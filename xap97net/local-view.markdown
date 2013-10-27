@@ -17,7 +17,7 @@ During the local view initialization, data is loaded into the client's memory ba
 
 {indent}!GRA:Images^local_view.jpg!{indent}
 
-(+) For additional client side caching options, refer to [Client Side Caching].
+{% plus %} For additional client side caching options, refer to [Client Side Caching].
 
 # Initializing the Local View Class
 
@@ -113,4 +113,4 @@ IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views, 
 {% endhighlight %}
 
 
-(+) When the synchronization is replication-based (default), the local view is resilient to failover, which means that if a primary space fails and a backup space replaces it within the maximum disconnection duration, the local view will remain intact during the failover process. When the synchronization is notification-based this is not guaranteed since notifications might be lost during the failover process.
+{% plus %} When the synchronization is replication-based (default), the local view is resilient to failover, which means that if a primary space fails and a backup space replaces it within the maximum disconnection duration, the local view will remain intact during the failover process. When the synchronization is notification-based this is not guaranteed since notifications might be lost during the failover process.
