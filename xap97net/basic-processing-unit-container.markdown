@@ -101,7 +101,7 @@ public class MyComponent : IDisposable
 {% endhighlight %}
 
 
-(on) The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container.
+{% lampon %} The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container.
 
 The container automatically detects components by scanning all the assembly (dll) files in the processing unit's folder.
 

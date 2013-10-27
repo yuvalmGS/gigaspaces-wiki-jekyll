@@ -85,7 +85,7 @@ You need a config file, which is used to deploy the Processing Unit Container. T
 
 The `pu.config` you've created needs to be edited to point to your Processing Unit Container implementation. The file should contain the following data:
 
-(on) It is recommended to use the `pu.config` file located in `<GigaSpaces Root>\Examples\ProcessingUnit\Feeder\Deployment` as a template.
+{% lampon %} It is recommended to use the `pu.config` file located in `<GigaSpaces Root>\Examples\ProcessingUnit\Feeder\Deployment` as a template.
 
 
 {% highlight xml %}

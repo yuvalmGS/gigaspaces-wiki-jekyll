@@ -18,17 +18,17 @@ page_id: 63799408
 Getting started with GigaSpaces, terminology and concepts, screencasts, and advanced tutorials.
 {lozenge}
 
-{wbr}
+{% wbr %}
 {lozenge:title=Product Overview|link=Product Overview|color=silver|arrow=none|width=100%|icon=!9.x_doc.png!}
 Understanding GigaSpaces XAP's value proposition, architecture and components.
 {lozenge}
 
-{wbr}
+{% wbr %}
 {lozenge:title=Programmer's Guide|link=In Memory Data Grid|color=silver|arrow=none|width=100%|icon=!9.x_doc.png!}
 Developing with GigaSpaces XAP.NET -- reference documentation, foundations, APIs, configurations and more advanced topics.
 {lozenge}
 
-{wbr}
+{% wbr %}
 
 {lozenge:title=Administrator's Guide|link=Administrator's Guide|color=silver|arrow=none|width=100%|icon=!9.x_doc.png!}
 Administrating GigaSpaces XAP.NET components, including "how to", troubleshooting and reference documentation.

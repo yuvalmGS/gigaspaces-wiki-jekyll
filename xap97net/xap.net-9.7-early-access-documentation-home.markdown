@@ -18,7 +18,7 @@ page_id: 63799415
 {map:link=http://www.gigaspaces.com/wiki/display/XAP97NET/End+to+End+Scaling+Home|coords=30,81,326,131| title='End to End Scaling'}
 {imagemap}
 
-{wbr}
+{% wbr %}
 {imagemap:name=[GRA:Images2^caching.png]}
 {map:link=http://www.gigaspaces.com/wiki/display/XAP97NET/Caching+Home|coords=30,81,326,131| title='Caching'}
 {imagemap}

@@ -51,4 +51,4 @@ ISpaceProxy embeddedSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceConfi
 {% endhighlight %}
 
 
-(on) A space can have multiple space filters integrated in it. Simply create a [SpaceFilterConfig|SpaceFilterConfig Class] instance per filter, and add it to the `SpaceFiltersConfig` list.
+{% lampon %} A space can have multiple space filters integrated in it. Simply create a [SpaceFilterConfig|SpaceFilterConfig Class] instance per filter, and add it to the `SpaceFiltersConfig` list.

@@ -164,7 +164,7 @@ public class Feeder
 {% endhighlight %}
 
 
-(on) The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container
+{% lampon %} The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container
 
 # Creating a Space Proxy Programatically
 
@@ -226,7 +226,7 @@ IEventListenerContainer<Data> eventListenerContainer = container.GetEventListene
 {% endhighlight %}
 
 
-(on) For full API please read the API documentation file.
+{% lampon %} For full API please read the API documentation file.
 
 # Security
 

@@ -22,7 +22,7 @@ One might wonder why properties are not always indexed, or why all the propertie
 
 Usually it is recommended to index properties that are used in common queries. However, in some scenarios one might favor a smaller memory footprint, or faster performance for a specific query, and adding/removing an index should be considered.
 
-(on)  Remember that "Premature optimization is the root of all evil." It is always recommended to benchmark your code to get better results.
+{% lampon %}  Remember that "Premature optimization is the root of all evil." It is always recommended to benchmark your code to get better results.
 
 # Index Types
 

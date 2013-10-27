@@ -109,4 +109,4 @@ The filter initialization method parameter structure is different. It can receiv
 
 If your filter needs to do things upon termination, implement the `IDisposable` interface, and the `Dispose()` method will be invoked when the space is shutting down.
 
-(on) When your filter method needs to update the entry itself, [ISpaceFilterEntry|ISpaceFilterEntry Interface] should be used, and a call to `UpdateObject` needs to be made.
+{% lampon %} When your filter method needs to update the entry itself, [ISpaceFilterEntry|ISpaceFilterEntry Interface] should be used, and a call to `UpdateObject` needs to be made.

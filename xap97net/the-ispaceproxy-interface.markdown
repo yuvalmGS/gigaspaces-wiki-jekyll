@@ -498,7 +498,7 @@ As seen in the take API above, there is no need to provide a Jini transaction ob
 {gcard}
 {gdeck}
 
-(on) It is highly recommended to read the [transaction management chapter|http://static.springframework.org/spring/docs/3.0.x/reference/transaction.html] in the Spring reference documentation.
+{% lampon %} It is highly recommended to read the [transaction management chapter|http://static.springframework.org/spring/docs/3.0.x/reference/transaction.html] in the Spring reference documentation.
 
 ## Transaction Provider
 

@@ -176,7 +176,7 @@ The DataEventHandler attribute has two roles. The first is to mark a method to b
 - WriteLease -- the lease of the result object that is being written to the space (the default is lease forever).
 - UpdateTimeout -- if the operation is an update operation, determines how long to wait if the object is locked for updates (the default is 0).
 
-(on) The write back behavior is modified when using the `DelegateDataEventArrivedAdapter` by this attribute as well.
+{% lampon %} The write back behavior is modified when using the `DelegateDataEventArrivedAdapter` by this attribute as well.
 
 Here is a simple example:
 

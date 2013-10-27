@@ -12,7 +12,7 @@ page_id: 47218928
 
 # Writing a Hosting Application for Easy Debugging
 
-(on) If it's the first time you are running UDF of RTD, try running a simple example that only returns a value, to check that the API works in your environment.
+{% lampon %} If it's the first time you are running UDF of RTD, try running a simple example that only returns a value, to check that the API works in your environment.
 
 Writing applicative UDF/RTD:
 

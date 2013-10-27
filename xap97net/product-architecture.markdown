@@ -63,7 +63,7 @@ The Grid Service Agent (GSA) acts as a process manager that can spawn and manage
 
 Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service Managers|#gsm], [Grid Service Containers|#gsc], and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
 
-(on) Though Grid Service Manager, Grid Service Container, and other processes can be started independently, it is preferable that they will be started using the GSA, thus allowing to easily monitor and manage them.
+{% lampon %} Though Grid Service Manager, Grid Service Container, and other processes can be started independently, it is preferable that they will be started using the GSA, thus allowing to easily monitor and manage them.
 
 {% anchor gsm %}
 
