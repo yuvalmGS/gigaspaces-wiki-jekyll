@@ -25,7 +25,6 @@ Creating a local view is similar to creating an `ISpaceProxy` instance, except t
 
 
 {% highlight java %}
-
 //define names for the localView
 const String typeName1 = "com.gigaspaces.test.Alpha";
 const String typeName2 = "com.gigaspaces.test.Bravo";
@@ -35,7 +34,6 @@ View[] views = new View[] { new View(typeName1, "foo=1"), new View(typeName2, ""
 
 //Create the local view using the GigaSpacesFactory class.
 IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views);
-
 
 {% endhighlight %}
 
@@ -75,7 +73,6 @@ Setting lower values for batch size and timeout reduces data staleness but incre
 Batch settings can be configured when creating the Local View by defining a `LocalViewConfig` object and sending it as a variable in the `GigaSpacesFactory.CreateLocalView` function. For example:
 
 {% highlight java %}
-
 //Create the configuration object
 LocalViewConfig myconfig = new LocalViewConfig();
 
@@ -87,7 +84,6 @@ View[] views = new View[] { new View(typeName1, "foo=1"), new View(typeName2, ""
 
 //create the local view using the GigaSpacesFactory object and write it into an IReadOnlySpaceProxy object.
 IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views, myConfig);
-
 
 {% endhighlight %}
 
@@ -103,7 +99,6 @@ When the connection to the remote master space is restored, the local view reloa
 The maximum disconnection duration can be configured using `LocalViewConfig` object at runtime when creating the local view. (default is 1 minute). For example:
 
 {% highlight java %}
-
 //Create the configuration object
 LocalViewConfig myconfig = new LocalViewConfig();
 
@@ -115,7 +110,6 @@ View[] views = new View[] { new View(typeName1, "foo=1"), new View(typeName2, ""
 
 //create the local view using the GigaSpacesFactory object and write it into an IReadOnlySpaceProxy object.
 IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views, myConfig);
-
 {% endhighlight %}
 
 

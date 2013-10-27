@@ -18,7 +18,6 @@ The `ILocalCache` interface implements the `ISpaceProxy`, and working with it is
 **The data object, in this case a session object:**
 
 {% highlight java %}
-
 public class Session
 {
   [..]
@@ -37,7 +36,6 @@ public class Session
     set{ _version = value; }
   }
 }
-
 {% endhighlight %}
 
 
@@ -48,7 +46,6 @@ Important properties:
 **Creating and using a local cache:**
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // create or obtain a reference to a space proxy
 
 ILocalCache localCache = GigaSpacesFactory.CreateIdBasedLocalCache(spaceProxy);
@@ -69,7 +66,6 @@ object[] ids = new object[] { ... } // initialize an ids array
 object routing = ... ; // set a routing value
 IReadByIdsResult<Session> result = localCache.ReadByIds<Session>(ids, routing);
 
-
 {% endhighlight %}
 
 
@@ -78,7 +74,6 @@ The local cache also recognizes templates which are considered ID-based (A templ
 The following code is equivalent to the above but it uses templates:
 
 {% highlight java %}
-
 ...
 Session template = new Session();
 template.SessionId = // session guid
@@ -90,7 +85,6 @@ Session session = localCache.Read(template);
 
 //The Entry is present in the cache and will be read from it.
 Session otherSession = localCache.Read(template);
-
 {% endhighlight %}
 
 
@@ -118,7 +112,6 @@ The local cache can be configured before it is initialized, by supplying the con
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // create or obtain a reference to a space proxy
 
 IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
@@ -126,7 +119,6 @@ IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
 // ... adjusting the config
 
 ILocalCache localCache = GigaSpacesFactory.CreateIdBasedLocalCache(spaceProxy, cacheConfig);
-
 {% endhighlight %}
 
 
@@ -136,7 +128,6 @@ By default, the local cache stores all object types. However, in some scenarios 
 
 
 {% highlight java %}
-
 IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
 
 List<Type> cachedTypes = new List<Type>();
@@ -148,7 +139,6 @@ cachedTypes.Add(typeof(MyClass));
 cacheConfig.CachedTypes = cachedTypes;
 
 ILocalCache localCache = GigaSpacesFactory.CreateIdBasedLocalCache(spaceProxy, cacheConfig);
-
 {% endhighlight %}
 
 
@@ -164,10 +154,8 @@ Here's an example of how to obtain and interact with the cache manager:
 
 
 {% highlight java %}
-
 ILocalCache localCache = // obtain a cache
 //Clear the cache if there are more than 10,000 caches entries
 if (localCache.LocalCacheManager.CachedEntriesCount > 10000)
   localCache.LocalCacheManager.ClearLocalCache();
-
 {% endhighlight %}

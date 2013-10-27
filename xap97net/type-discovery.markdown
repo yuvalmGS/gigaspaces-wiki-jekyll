@@ -16,7 +16,6 @@ When querying the space (read/take/notify), the space returns the results to the
 By default all the `.dll` files in the current location are scanned. This can be customized using the following configuration:
 
 {% highlight xml %}
-
 <configuration>
     <configSections>
         <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core"/>
@@ -30,7 +29,6 @@ By default all the `.dll` files in the current location are scanned. This can be
         </DataTypes>
     </GigaSpaces>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -41,7 +39,6 @@ In this example the space proxy will scan `File1.dll` and all the files which ma
 To disable the assemblies scan altogether, use the following configuration:
 
 {% highlight xml %}
-
 <configuration>
     <configSections>
         <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core"/>
@@ -52,7 +49,6 @@ To disable the assemblies scan altogether, use the following configuration:
         </DataTypes>
     </GigaSpaces>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -61,8 +57,6 @@ To disable the assemblies scan altogether, use the following configuration:
 Configuration can also be set at runtime, for example:
 
 {% highlight java %}
-
 var element = new ScanAssemblyConfigurationElement { AssemblyName = "MyCompany.*.dll", NameSpace = "MyCompany.MyProject." };
 GigaSpacesFactory.Configuration.DataTypes.ScanAssemblies.Add(element);
-
 {% endhighlight %}

@@ -23,7 +23,6 @@ Here is an example of how these properties can be configured:
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven(MinConcurrentConsumers = 1, MaxConcurrentConsumers = 5, DynamicScaleSampleRate = 1000, IdleIterationsThreshold = 10, BusyIterationThreshold = 50)]
 public class SimpleListener
 {
@@ -44,14 +43,12 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.MinConcurrentConsumers = 1;
@@ -59,7 +56,6 @@ pollingEventListenerContainer.MaxConcurrentConsumers = 5;
 pollingEventListenerContainer.DynamicScaleSampleRate = 1000;
 pollingEventListenerContainer.IdleIterationsThreshold = 10;
 pollingEventListenerContainer.BusyIterationsThreshold = 50;
-
 {% endhighlight %}
 
 {gcard}

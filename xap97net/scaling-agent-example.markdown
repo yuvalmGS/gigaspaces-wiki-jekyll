@@ -51,7 +51,6 @@ The scaling agent periodically samples the throughput of feeds that are processe
 {gcard:Code}
 
 {% highlight java %}
-
 [BasicProcessingUnitComponent( Name = "Agent" )]
 public class Agent : IDisposable
 {
@@ -163,14 +162,12 @@ public class Agent : IDisposable
     _monitoredPu.WaitFor(numberOfInstances + 1, TimeSpan.FromSeconds(30));
   }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Configuration}
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -190,7 +187,6 @@ public class Agent : IDisposable
     </ProcessingUnitContainer>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 {gcard}
@@ -201,7 +197,6 @@ public class Agent : IDisposable
 The processor waits for new feeds to be fed into the cluster, and acts upon such an event. Since the processor throughput needs to be monitored by the agent, the processor implements the `IServiceMonitorsProvider` interface to expose its throughput for external query.
 
 {% highlight java %}
-
 [PollingEventDriven(Name = "FeedProcessor", MinConcurrentConsumers = 1, MaxConcurrentConsumers = 4)]
 public class FeedProcessor : IDisposable, IServiceMonitorsProvider
 {
@@ -261,13 +256,11 @@ public class FeedProcessor : IDisposable, IServiceMonitorsProvider
   }
   [..]
 }
-
 {% endhighlight %}
 
 The processor exposes its throughput statistics via the `FeedProcessorTpMonitor` class, which is a custom implementation of the `IServiceMonitors` interface. The interface has a string-based ID, and a name value collection that represents the monitored fields and values, and can hold any custom data. In our case, the `FeedProcessorTpMonitor` ID is "Feed Processor Statistics", and it has a single property "Processing TP". These strings are used by the agent to extract the throughput value.
 
 {% highlight java %}
-
 /// <summary>
 /// Provide throughput monitoring statistics of this service
 /// </summary>
@@ -297,7 +290,6 @@ public class FeedProcessorTpMonitor : IServiceMonitors
     }
   }
 }
-
 {% endhighlight %}
 
 

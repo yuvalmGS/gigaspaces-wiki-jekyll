@@ -20,7 +20,6 @@ Subscribing to an event is done using an `IDataEventSession` with a [template|Qu
 The following example demonstrates simple events usage:
 
 {% highlight java %}
-
 public class Person
 {
   private String _userId;
@@ -50,7 +49,6 @@ void Space_PersonChanged(object sender, SpaceDataEventArgs<Person> e)
 IEventRegistration registration = proxy.DefaultDataEventSession.AddListener(new Person(),
                                                                             Space_PersonChanged,
                                                                             DataEventType.Write);
-
 {% endhighlight %}
 
 
@@ -58,20 +56,16 @@ Any new person entries that are written to the space, trigger the event and exec
 The DataEventType dictates which type of events to listen for. It's a flag enum that can have more than one value -- for example, listening to `Write` and `Update` events looks like this:
 
 {% highlight java %}
-
 IEventRegistration registration = proxy.DefaultDataEventSession.AddListener(new Person(),
                                                                             Space_PersonChanged,
                                                                             DataEventType.Write | DataEventType.Update);
-
 {% endhighlight %}
 
 
 When the events are no longer relevant, the registration for the events should be removed, to reduce the load on the space.
 
 {% highlight java %}
-
 proxy.DefaultDataEventSession.RemoveListener(registration);
-
 {% endhighlight %}
 
 

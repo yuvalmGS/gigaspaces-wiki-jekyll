@@ -15,7 +15,6 @@ In some cases, you might want to monitor the activity of the JVM running as part
 1. Have the following settings as part of your `app.config` file:
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -31,7 +30,6 @@ In some cases, you might want to monitor the activity of the JVM running as part
     </JvmSettings>
   </GigaSpaces>
 </configuration>
-
 {% endhighlight %}
 
 2. Start `jconsole` -- jconsole is located under the bin directory of the Java home, by default it is under `<Installation dir>\Runtime\java\bin`

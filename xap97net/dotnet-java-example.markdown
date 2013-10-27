@@ -55,7 +55,6 @@ The `\[XAP66:SpaceClass(AliasName="")\]` attribute is used to map the .NET names
 || C# || Java ||
 |
 {% highlight java %}
-
 Using GigaSpaces.Core.Metadata;
 
 namespace GigaSpaces.Examples.DotnetJava
@@ -70,11 +69,9 @@ namespace GigaSpaces.Examples.DotnetJava
 ...
     }
 }
-
 {% endhighlight %}
 |
 {% highlight java %}
-
 package com.gigaspaces.examples.dotnetjava;
 
 public class Person
@@ -92,7 +89,6 @@ public class Person
     { _someString = value; }
 ...
 }
-
 {% endhighlight %}
 |
 For more details about .NET-Java Interoperability and designing the interoperable classes, refer to [.NET-Java Interoperability|http://www.gigaspaces.com/wiki/display/XAP66/.NET-Java+Interoperability]

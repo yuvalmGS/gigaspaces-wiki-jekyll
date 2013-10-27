@@ -14,7 +14,6 @@ An `ISpaceFilterEntry` represents an object in the context of a filter operation
 This interface consists of 2 methods and 2 properties.
 
 {% highlight java %}
-
 public interface ISpaceFilterEntry
 {
   // Gets the object type
@@ -29,7 +28,6 @@ public interface ISpaceFilterEntry
   // Gets the notify type (relevant for Notification filter operations)
   DataEventType NotifyType { get; }
 }
-
 {% endhighlight %}
 
 

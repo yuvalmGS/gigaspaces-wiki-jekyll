@@ -15,7 +15,6 @@ To control Space Class field serialization you should use the [StorageType|http:
 Example:
 
 {% highlight java %}
-
 public class Message
 {
 	private PayloadObject _payload;
@@ -34,7 +33,6 @@ public class Message
 	}
 ...
 }
-
 {% endhighlight %}
 
 

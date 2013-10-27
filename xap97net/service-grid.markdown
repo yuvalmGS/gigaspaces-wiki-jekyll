@@ -96,9 +96,7 @@ The GSA parameters control how many local process the GSA will spawn on startup 
 
 
 {% highlight java %}
-
 gs-agent gsa.gsc 2 gsa.global.gsm 2 gsa.global.lus 2
-
 {% endhighlight %}
 
 
@@ -106,9 +104,7 @@ In order to, for example, start 3 local GSCs, 2 global GSMs, and no global LUS, 
 
 
 {% highlight java %}
-
 gs-agent gsa.gsc 3 gsa.global.gsm 2 gsa.global.lus 0
-
 {% endhighlight %}
 
 
@@ -120,9 +116,7 @@ When starting a [Lookup Service|#lus] and other services in unicast mode (not mu
 
 
 {% highlight java %}
-
 gs-agent gsa.global.lus 0 gsa.lus 1
-
 {% endhighlight %}
 
 
@@ -130,9 +124,7 @@ And on machines that will not run the LUS, the following command should be used:
 
 
 {% highlight java %}
-
 gs-agent gsa.global.lus 0
-
 {% endhighlight %}
 
 

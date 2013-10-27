@@ -21,13 +21,11 @@ In order to support remoting, the first step is to define the contract between t
 
 
 {% highlight java %}
-
 public interface IDataProcessor
 {
     // Process a given Data object, returning the processed Data object.
     Data ProcessData(Data data);
 }
-
 {% endhighlight %}
 
 
@@ -39,7 +37,6 @@ Next, an implementation of this contract needs to be provided. This implementati
 
 
 {% highlight java %}
-
 [SpaceRemotingService]
 public class DataProcessor : IDataProcessor
 {
@@ -49,7 +46,6 @@ public class DataProcessor : IDataProcessor
     	return data;
     }
 }
-
 {% endhighlight %}
 
 
@@ -59,13 +55,11 @@ The next step is hosting the service in the grid. Hosting the service is done on
 
 
 {% highlight java %}
-
 [SpaceRemotingService]
 public class DataProcessor : IDataProcessor
 {
 ...
 }
-
 {% endhighlight %}
 
 
@@ -73,7 +67,6 @@ Alternatively, or when using a custom [processing unit container|Processing Unit
 
 
 {% highlight java %}
-
 public ServiceHostProcessingUnitContainer : AbstractProcessingUnitContainer
 {
     ...
@@ -85,7 +78,6 @@ public ServiceHostProcessingUnitContainer : AbstractProcessingUnitContainer
         DomainServiceHost.Host.Publish(new DataProcessor());
     }
 }
-
 {% endhighlight %}
 
 
@@ -99,13 +91,11 @@ A different lookup name can be specified by the \[SpaceRemotingService\] `Lookup
 
 
 {% highlight java %}
-
 [SpaceRemotingService(LookupName="MyDataProcessor")]
 public class DataProcessor : IDataProcessor
 {
 ...
 }
-
 {% endhighlight %}
 
 
@@ -115,9 +105,7 @@ When publishing a service it is possible to specify a list of lookup names to pu
 
 
 {% highlight java %}
-
 DomainServiceHost.Host.Publish(new DataProcessor(), "MyDataProcessor", "MySpecialDataProcessor");
-
 {% endhighlight %}
 
 
@@ -127,9 +115,7 @@ Alternatively, a service can be hosted under specific types instead of querying 
 
 
 {% highlight java %}
-
 DomainServiceHost.Host.Publish(new DataProcessor(), typeof(IDataProcessor), typeof(IMyService));
-
 {% endhighlight %}
 
 
@@ -140,11 +126,9 @@ However, it is possible to explicitly unpublish a service during the processing 
 
 
 {% highlight java %}
-
 IServiceRegistration registration = DomainServiceHost.Host.Publish(new DataProcessor());
 ...
 DomainServiceHost.Host.Unpublish(registration);
-
 {% endhighlight %}
 
 
@@ -156,7 +140,6 @@ The server side invocation aspect interface is shown below. You should implement
 
 
 {% highlight java %}
-
 public interface IServiceExecutionAspect
 {
     /// <summary>
@@ -169,7 +152,6 @@ public interface IServiceExecutionAspect
     /// <param name="service">The service the invocations refers to.</param>
     void Intercept(IInvocationInterception invocation, Object service);
 }
-
 {% endhighlight %}
 
 
@@ -177,7 +159,6 @@ Here is an example of a security aspect implemention
 
 
 {% highlight java %}
-
 public class SecurityExecutionAspect : IServiceExecutionAspect
 {
     void Intercept(IInvocationInterception invocation, Object service)
@@ -190,7 +171,6 @@ public class SecurityExecutionAspect : IServiceExecutionAspect
 
     ...
 }
-
 {% endhighlight %}
 
 
@@ -198,9 +178,7 @@ An implementation of such an aspect can be wired as follows:
 
 
 {% highlight java %}
-
 DomainServiceHost.Initialize(new ExecutionLoggingAspect(), new SecurityExecutionAspect());
-
 {% endhighlight %}
 
 

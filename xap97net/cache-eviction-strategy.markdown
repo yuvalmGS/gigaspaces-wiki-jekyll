@@ -14,14 +14,12 @@ XAP.NET comes with a number of eviction strategies. To choose an eviction strate
 Here's a simple example of configuring a cache to use the FIFO eviction strategy, where the size limit of the cache is 50,000 entries and each time an eviction is required, 1,000 Entries are evicted:
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // create or obtain a reference to a space proxy
 
 IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig ();
 cacheConfig.EvictionStrategyBuilder = new FifoSegmentEvictionStrategyBuilder(50000, 1000);
 
 ILocalCache localCache = new GigaSpacesFactory.CreateIdBasedLocalCache(spaceProxy, cacheConfig);
-
 {% endhighlight %}
 
 

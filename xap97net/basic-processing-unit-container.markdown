@@ -28,7 +28,6 @@ The `pu.config` file should be as follows:
 
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -40,7 +39,6 @@ The `pu.config` file should be as follows:
       Type="GigaSpaces.XAP.ProcessingUnit.Containers.BasicContainer.BasicProcessingUnitContainer, GigaSpaces.Core"/>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -53,7 +51,6 @@ The container can create and manage the lifecycle of space proxies, and reduces 
 The following config file will cause the container to create and manage an embedded space proxy:
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -71,7 +68,6 @@ The following config file will cause the container to create and manage an embed
     </ProcessingUnitContainer>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -84,7 +80,6 @@ There can be different user components that are part of the processing unit. Suc
 Here's an example of a basic component which keeps a reference to a space proxy which is managed by the container:
 
 {% highlight java %}
-
 [BasicProcessingUnitComponent(Name="MyComponent")]
 public class MyComponent : IDisposable
 {
@@ -103,7 +98,6 @@ public class MyComponent : IDisposable
     Console.WriteLine("MyComponent Disposing");
   }
 }
-
 {% endhighlight %}
 
 
@@ -113,7 +107,6 @@ The container automatically detects components by scanning all the assembly (dll
 
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -131,7 +124,6 @@ The container automatically detects components by scanning all the assembly (dll
     </ProcessingUnitContainer>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -145,13 +137,11 @@ One of GigaSpaces grid component capabilities is [remote services|Space Based Re
 
 
 {% highlight java %}
-
 [SpaceRemotingService]
 public class MyService : IService
 {
   [..]
 }
-
 {% endhighlight %}
 
 
@@ -167,13 +157,11 @@ See [Polling Container Component|Polling Container Component] and [Notify Contai
 
 
 {% highlight java %}
-
 [PollingEventDriven(Name="MyEventListener")]
 public class MyEventListener
 {
   [..]
 }
-
 {% endhighlight %}
 
 
@@ -182,7 +170,6 @@ An event listener container needs a space proxy that will listen for events. If 
 The following basic container config will start two space proxies and supply the colocated proxy, named MySpace, to the event listener container:
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -204,7 +191,6 @@ The following basic container config will start two space proxies and supply the
     </ProcessingUnitContainer>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -217,7 +203,6 @@ In a topology with backup spaces, it is quite common to have a business logic co
 Here's an example of monitoring logic that will start to monitor the embedded space when it becomes primary:
 
 {% highlight java %}
-
 [BasicProcessingUnitComponent(Name="MyComponent")]
 public class MyComponent : IDisposable
 {
@@ -229,48 +214,39 @@ public class MyComponent : IDisposable
     ..
   }
 }
-
 {% endhighlight %}
 
 
 The event listening method can be one of the following formats:
 
 {% highlight java %}
-
 //No parameters method
 [PostPrimary]
 public void MyEventListener()
-
 {% endhighlight %}
 
 
 
 {% highlight java %}
-
 //Single space proxy parameter
 [PostPrimary]
 public void MyEventListener(ISpaceProxy spaceProxy)
-
 {% endhighlight %}
 
 
 {% highlight java %}
-
 
 //Two parameter, space proxy and space mode
 [PostPrimary]
 public void MyEventListener(ISpaceProxy spaceProxy, SpaceMode spaceMode)
-
 {% endhighlight %}
 
 
 If there are multiple space proxies in the container, the name of the space needs to be specified to the corresponding space mode changed attribute. For example:
 
 {% highlight java %}
-
 [PostPrimary(SpaceProxyName="MySpace")]
 public void MyEventListener(ISpaceProxy spaceProxy)
-
 {% endhighlight %}
 
 

@@ -17,7 +17,6 @@ In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) t
 
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -34,15 +33,16 @@ In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) t
     </JvmSettings>
   </GigaSpaces>
 </configuration>
-
 {% endhighlight %}
 
 
 The Starting State should be updated to Automatic.
 
-{info:title=Firewall environment}
+
+{% info title=Firewall environment %}
 If your environment has connection problems due to firewalls see [how to set gigaSpaces over a firewall|XAP95:How to Set GigaSpaces Over a Firewall], this page is in GigaSpaces XAP java context, all the relevant described Jvm System properties should be configured inside `<JvmCustomOptions>` section of each service configuration file as new Option keys.
-{info}
+{% endinfo %}
+
 
 # Deploy Processing Unit on Startup
 
@@ -50,7 +50,6 @@ In order to have a processing unit deployed automatically at machine startup, Co
 
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -60,7 +59,6 @@ In order to have a processing unit deployed automatically at machine startup, Co
   <GigaSpaces.Services.Cli CommandLine="pudeploy -timeout 300000 dataprocessor"/>
   ...
 </configuration>
-
 {% endhighlight %}
 
 

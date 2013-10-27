@@ -28,7 +28,6 @@ The following code starts an embedded space, with a space filter that implements
 
 
 {% highlight java %}
-
 SpaceFilterConfig mySpaceFilterConfig = new SpaceFilterConfig();
 mySpaceFilterConfig.FilterOperations = new List<FilterOperations>(new FilterOperation[]{ FilterOperation.BeforeWrite });
 mySpaceFilterConfig.Filter = new MySpaceFilter();
@@ -38,7 +37,6 @@ spaceConfig.SpaceFiltersConfig = new List<SpaceFilterConfig>();
 spaceConfig.SpaceFiltersConfig.Add(mySpaceFilterConfig);
 
 ISpaceProxy embeddedSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceConfig);
-
 {% endhighlight %}
 
 

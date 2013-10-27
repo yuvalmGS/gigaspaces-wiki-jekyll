@@ -21,18 +21,14 @@ Navigate back to show all the Spaces, by clicking on the breadcrumb on the left.
 The Query editor supports SQL queries. For example, to query a specific class:
 
 {% highlight java %}
-
 SELECT * FROM my.company.com.MyPojo WHERE rownum < 1000
-
 {% endhighlight %}
 
 
 In the screenshot below, we also provide the UID column of each object in the Space.
 
 {% highlight java %}
-
 SELECT uid,* FROM com.gigaspaces.sba.trading.model.TradePojo WHERE rownum < 7
-
 {% endhighlight %}
 
 

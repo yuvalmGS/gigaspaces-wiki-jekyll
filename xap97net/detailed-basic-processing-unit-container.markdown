@@ -8,7 +8,11 @@ page_id: 63799322
 {composition-setup}
 {summary}Describing the built-in BasicProcessingUnitContainer which is an extension of the AbstractProcessingUnitContainer class.{summary}
 
-{info}This page coveres additional details about the BasicProcessingUnitContainer which are not covered in [Basic Processing Unit Container|Basic Processing Unit Container] page, the previous page should be read before this one.{info}
+
+{% info %}
+This page coveres additional details about the BasicProcessingUnitContainer which are not covered in [Basic Processing Unit Container|Basic Processing Unit Container] page, the previous page should be read before this one.
+{% endinfo %}
+
 
 # Configuring The Container Automatic Scanning
 
@@ -16,7 +20,6 @@ By default, the container will look for [basic processing unit components|#basic
 
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -28,7 +31,6 @@ By default, the container will look for [basic processing unit components|#basic
       </BasicContainer>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -36,7 +38,6 @@ By default, when given an assembly name to scan for components, the entire assem
 
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -52,7 +53,6 @@ By default, when given an assembly name to scan for components, the entire assem
       </BasicContainer>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -63,7 +63,6 @@ They can be configured whether to be clustered proxies or a proxy to the direct 
 
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -79,7 +78,6 @@ They can be configured whether to be clustered proxies or a proxy to the direct 
       </BasicContainer>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -92,7 +90,6 @@ In order to have a space proxy with custom property the following configuration 
 
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -112,7 +109,6 @@ In order to have a space proxy with custom property the following configuration 
       </BasicContainer>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -127,7 +123,6 @@ The container exposes some events that can be used to be notified at the differe
 Here's a simple example of using this events in a `BasicProcessingUnitComponent` which acts as a feeder
 
 {% highlight java %}
-
 [BasicProcessingUnitComponent(Name="Feeder")]
 public class Feeder
 {
@@ -166,7 +161,6 @@ public class Feeder
     Console.WriteLine("Feeder Disposed");
   }
 }
-
 {% endhighlight %}
 
 
@@ -177,7 +171,6 @@ public class Feeder
 In same cases, the `SpaceProxies` config element does not suffice in order to construct a space proxy. For instance if you want to start a space with an external data source, or some other custom properties. In these cases, the `CreateSpaceProxy` method should be used in one of the container initialization events. If this proxy is used by other components in the processing unit, it should be put in the `ContainerInitializing` event in order for it to be available for the other components when they are created, otherwise you can put it in the `ContainerInitialized` just as well. Here's a simple example of how to use the `CreateSpaceProxy`:
 
 {% highlight java %}
-
 [ContainerInitializing]
 public void Initialize(BasicProcessingUnitContainer container)
 {
@@ -188,7 +181,6 @@ public void Initialize(BasicProcessingUnitContainer container)
   //Create the proxy and let the container manage it
   ISpaceProxy spaceProxy = container.CreateSpaceProxy("MySpace", "/./mySpace?groups=$(DefaultLookupGroup)", spaceConfig);
 }
-
 {% endhighlight %}
 
 
@@ -201,44 +193,36 @@ Here are a few samples of how to obtain managed components from the container:
 **Create a managed space proxy**
 
 {% highlight java %}
-
 BasicProcessingUnitContainer container = //Obtain a reference to the container
 
 ISpaceProxy spaceProxy = container.CreateSpaceProxy("ColocatedSpace", "/./mySpace");
-
 {% endhighlight %}
 
 
 **Get a managed space proxy**
 
 {% highlight java %}
-
 BasicProcessingUnitContainer container = //Obtain a reference to the container
 
 ISpaceProxy spaceProxy = container.GetSpaceProxy("ColocatedSpace");
-
 {% endhighlight %}
 
 
 **Get a managed basic processing unit component**
 
 {% highlight java %}
-
 BasicProcessingUnitContainer container = //Obtain a reference to the container
 
 Object component = container.GetProcessingUnitComponent("Feeder");
-
 {% endhighlight %}
 
 
 **Get a managed event listener container**
 
 {% highlight java %}
-
 BasicProcessingUnitContainer container = //Obtain a reference to the container
 
 IEventListenerContainer<Data> eventListenerContainer = container.GetEventListenerContainer<Data>("DataProcessor");
-
 {% endhighlight %}
 
 

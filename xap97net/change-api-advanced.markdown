@@ -15,7 +15,6 @@ You can use this in order to know what was the affect, for instance what is the 
 
 
 {% highlight java %}
-
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
@@ -27,7 +26,6 @@ foreach(IChangedEntryDetails<Account> changedEntryDetails in changeResult.Result
   double newValue = IncrementOperation.GetNewValue(operationResult);
   ...
 }
-
 {% endhighlight %}
 
 

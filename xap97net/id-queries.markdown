@@ -17,22 +17,18 @@ When you would like to access an object using its ID for read and take operation
 
 {% highlight java %}
 
-
 [SpaceId (autoGenerate=false)]
 public String getEmployeeID() {
     return employeeID;
 }
-
 {% endhighlight %}
 
 
 To read the object back from the space using its ID and the `readById` operation:
 
 {% highlight java %}
-
 GigaSpace gigaSpace;
 Employee myEmployee = gigaSpace.readById(Employee.class , myEmployeeID , routingValue);
-
 {% endhighlight %}
 
 
@@ -41,7 +37,6 @@ Employee myEmployee = gigaSpace.readById(Employee.class , myEmployeeID , routing
 The following shows how to read multiple objects using their IDs:
 
 {% highlight java %}
-
 GigaSpace gigaSpace;
 
 // Initialize an ids array
@@ -57,7 +52,6 @@ ReadByIdsResult<Employee> result = gigaSpace.readByIds(Employee.class, ids, rout
 for (Employee employee : result) {
   // ...
 }
-
 
 {% endhighlight %}
 

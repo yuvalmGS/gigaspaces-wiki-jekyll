@@ -30,11 +30,9 @@ If the filter implements the [ISpaceFilter Interface|ISpaceFilter Interface], th
 
 
 {% highlight java %}
-
 SpaceFilterConfig mySpaceFilterConfig = new SpaceFilterConfig();
 mySpaceFilterConfig.FilterOperations = new List<FilterOperation>(new FilterOperation[]{ FilterOperation.BeforeWrite });
 mySpaceFilterConfig.Filter = new MySpaceFilter();
-
 {% endhighlight %}
 
 
@@ -46,12 +44,10 @@ Once a [SpaceFilterConfig|SpaceFilterConfig Class] is created, it needs to be us
 
 
 {% highlight java %}
-
 spaceConfig.SpaceFiltersConfig = new List<SpaceFilterConfig>();
 spaceConfig.Add(mySpaceFilterConfig);
 
 ISpaceProxy embeddedSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceConfig);
-
 {% endhighlight %}
 
 

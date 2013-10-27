@@ -37,7 +37,6 @@ The following code demonstrates how to start an embedded space with GigaSpaces N
 
 
 {% highlight java %}
-
 //Create a new space configuration object that is used to start a space
 SpaceConfig spaceConfig = new SpaceConfig();
 //Start a new ExternalDataSource config object
@@ -55,7 +54,6 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add(NHibernateExternalData
 
 //Starts the space with the External Data Source
 ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceConfig);
-
 {% endhighlight %}
 
 
@@ -72,7 +70,6 @@ The following code demonstrates how to start an embedded space with a custom .NE
 
 
 {% highlight java %}
-
 //Create a new space configuration object that is used to start a space
 SpaceConfig spaceConfig = new SpaceConfig();
 //Start a new ExternalDataSource config object
@@ -86,7 +83,6 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("[Property name]", "[P
 
 //Starts the space with the External Data Source
 ISpaceProxy persistentSpace = SpaceProxyProviderFactory.Instance.FindSpace("/./mySpace", spaceConfig);
-
 {% endhighlight %}
 
 
@@ -101,11 +97,9 @@ This can be done by adding a custom property to the `ExternalDataSourceConfig` o
 
 
 {% highlight java %}
-
 spaceConfig.ExternalDataSourceConfig.CustomProperties = new Dictionary<string, string>();
 //Add custom properties to the dictionary
 spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size", "[batch size]");
-
 {% endhighlight %}
 
 

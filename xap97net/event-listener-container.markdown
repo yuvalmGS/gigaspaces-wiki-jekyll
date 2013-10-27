@@ -24,11 +24,9 @@ Here is a simple example of event subscription:
 
 
 {% highlight java %}
-
 IEventListenerContainer<Data> container = // obtain a reference to a container
 
 container.DataEventArrived += MyEventHandler;
-
 {% endhighlight %}
 
 
@@ -36,12 +34,10 @@ The event handler method:
 
 
 {% highlight java %}
-
 void MyEventHandler(object sender, DataEventArgs<Data> e)
 {
     // handle event
 }
-
 {% endhighlight %}
 
 
@@ -57,11 +53,9 @@ Here is a simple example of event subscription:
 
 
 {% highlight java %}
-
 IEventListenerContainer<Data> container = // obtain a reference to a container
 
 container.BatchDataEventArrived += MyBatchEventHandler;
-
 {% endhighlight %}
 
 
@@ -69,13 +63,11 @@ The event handler method:
 
 
 {% highlight java %}
-
 void MyEventHandler(object sender, BatchDataEventArgs<Data> e)
 {
     Data[] batch = e.Data;
     // handle event
 }
-
 {% endhighlight %}
 
 
@@ -100,7 +92,6 @@ Here are a few examples:
 **An event listening method that processes the data, and returns a processed result**
 
 {% highlight java %}
-
 public class SimpleListener
 {
     ...
@@ -111,14 +102,12 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-
 {% endhighlight %}
 
 
 **An event listening method that processes the data, executes an additional space operation that is needed to enrich the data, and returns an enriched data result**
 
 {% highlight java %}
-
 public class SimpleListener
 {
     ...
@@ -129,7 +118,6 @@ public class SimpleListener
         //process Data here and return processed enriched data
     }
 }
-
 {% endhighlight %}
 
 
@@ -146,9 +134,7 @@ The return parameter, if not void, is the result that is written back to the spa
 For example:
 
 {% highlight java %}
-
 public EnrichedData ProcessData(Data event, ISpaceProxy proxy, ITransaction tx, SpaceDataEventArgs<object> args, IEventListenerContainer container)
-
 {% endhighlight %}
 
 
@@ -162,11 +148,9 @@ Here is a simple example:
 
 
 {% highlight java %}
-
 IEventListenerContainer<Data> container = // obtain a reference to a container
 
 container.DataEventArrived = new DelegateDataEventArrivedAdapter<Data, Data>(MyEventHandler).WriteBackDataEventHandler;
-
 {% endhighlight %}
 
 
@@ -174,12 +158,10 @@ The event handler method:
 
 
 {% highlight java %}
-
 Data MyEventHandler(IEventListenerContainer sender, DataEventArgs<Data> e)
 {
     // handle event and return processed data to be written back to the space
 }
-
 {% endhighlight %}
 
 
@@ -200,11 +182,9 @@ Here is a simple example:
 
 
 {% highlight java %}
-
 [DataEventHandler(WriteOrUpdate = false, WriteLease = 10000)]
 public EnrichedData MyEventHandler(Data data)
 {
     // handle the event
 }
-
 {% endhighlight %}

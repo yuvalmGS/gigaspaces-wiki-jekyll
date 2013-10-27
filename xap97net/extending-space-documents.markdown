@@ -24,7 +24,6 @@ Here's an example (only parts of the properties have been implemented to keep th
 
 
 {% highlight java %}
-
 public class ProductDocument : SpaceDocument
 {
     private const String TypeName = "Product";
@@ -54,7 +53,6 @@ public class ProductDocument : SpaceDocument
        set { this[PropertyPrice] = value; }
     }
 }
-
 {% endhighlight %}
 
 
@@ -65,7 +63,6 @@ To overcome that, we need to include the document wrapper type in the type intro
 
 
 {% highlight java %}
-
 public void RegisterProductType(ISpaceProxy spaceProxy)
 {
     // Create type descriptor:
@@ -75,7 +72,6 @@ public void RegisterProductType(ISpaceProxy spaceProxy)
     // Register type:
     spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptorBuilder.Create());
 }
-
 {% endhighlight %}
 
 
@@ -87,7 +83,6 @@ The following code snippet demonstrate usage of the `ProductDocument` extensions
 
 
 {% highlight java %}
-
 public void example(ISpaceProxy spaceProxy)
 {
     // Create a product document:
@@ -105,5 +100,4 @@ public void example(ISpaceProxy spaceProxy)
     // Read product document by ID:
     ProductDocument result3 = spaceProxy.ReadById(new IdQuery<ProductDocument>("Product", "hw-1234"));
 }
-
 {% endhighlight %}

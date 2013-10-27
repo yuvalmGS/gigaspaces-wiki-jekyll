@@ -20,7 +20,6 @@ An `ISpaceProxy` can be initialized directly in the code or in the `pu.config` f
 {gcard:Namespace}
 
 {% highlight xml %}
-
  <GigaSpaces.XAP>
     <ProcessingUnitContainer Type="GigaSpaces.XAP.ProcessingUnit.Containers.BasicContainer.BasicProcessingUnitContainer, GigaSpaces.Core"/>
       <BasicContainer>
@@ -31,7 +30,6 @@ An `ISpaceProxy` can be initialized directly in the code or in the `pu.config` f
         </SpaceProxies>
       </BasicContainer>
   </GigaSpaces.XAP>
-
 {% endhighlight %}
 
 {gcard}
@@ -40,9 +38,7 @@ An `ISpaceProxy` can be initialized directly in the code or in the `pu.config` f
 
 {% highlight java %}
 
-
 ISpaceProxy mySpace = GigaSpacesFactory.FindSpace("/./spaceName")
-
 
 {% endhighlight %}
 
@@ -108,7 +104,6 @@ The decision of working directly with a cluster member or against the whole clus
 {gcard:Namespace}
 
 {% highlight xml %}
-
   <GigaSpaces.XAP>
     <ProcessingUnitContainer Type="GigaSpaces.XAP.ProcessingUnit.Containers.BasicContainer.BasicProcessingUnitContainer, GigaSpaces.Core"/>
       <BasicContainer>
@@ -118,14 +113,12 @@ The decision of working directly with a cluster member or against the whole clus
         </SpaceProxies>
       </BasicContainer>
   </GigaSpaces.XAP>
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Code}
 
 {% highlight java %}
-
 //define the space configuration object
 SpaceConfig mySettings = new SpaceConfig();
 //set the clustered property to true
@@ -133,7 +126,6 @@ mySettings.ClusterInfo = true;
 
 //use the FindSpace method in the GigaSpacesFactory static class to create the ISpaceProxy object. Include the SpaceConfig object to set the ISpaceProxy as clustered.
 ISpaceProxy proxy = GigaSpacesFactory.FindSpace("/./embSpace", mySettings);
-
 
 {% endhighlight %}
 
@@ -148,7 +140,6 @@ The `ISpaceProxy` interface is implemented to provide a wide variety of options 
 
 
 {% highlight java %}
-
 public interface ISpaceProxy{
 
     // ....
@@ -158,7 +149,6 @@ public interface ISpaceProxy{
     <T> T Take(T template, long timeout) throws DataAccessException;
 
 }
-
 {% endhighlight %}
 
 
@@ -168,7 +158,6 @@ In a similar manner, the read timeout and write lease can be specified.
 {gcard:Namespace}
 
 {% highlight xml %}
-
  <GigaSpaces.XAP>
     <ProcessingUnitContainer Type="GigaSpaces.XAP.ProcessingUnit.Containers.BasicContainer.BasicProcessingUnitContainer, GigaSpaces.Core"/>
       <BasicContainer>
@@ -180,14 +169,12 @@ In a similar manner, the read timeout and write lease can be specified.
       </BasicContainer>
   </GigaSpaces.XAP>
 
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Code}
 
 {% highlight java %}
-
 
  ISpaceProxy myProxy = GigaFactory.FindSpace("spacePath");
 
@@ -196,7 +183,6 @@ In a similar manner, the read timeout and write lease can be specified.
 
 //call Take function overriding the default timeout value
     myProxy.Take(myTemplate, 10000);
-
 
 {% endhighlight %}
 
@@ -243,7 +229,6 @@ When updating an object, you can specify 0 (ZERO) as the lease time. This instru
 
 {% highlight java %}
 
-
 ISpaceProxy mySpace = GigaSpaceFactory.FindSpace("spaceURL");
 
 // initial insert with full update.
@@ -269,7 +254,6 @@ catch (EntryNotInSpaceException enise)
 {
 	// Object not in space - unsuccessful update
 }
-
 {% endhighlight %}
 
 
@@ -277,14 +261,12 @@ Alternatively, you can use the [change|Change API] operation and update specific
 
 
 {% highlight java %}
-
 IdQuery<MyClass> idQuery = new IdQuery<MyClass>(MyClass.class, "1")
 ChangeResult<MyClass> changeResult = space.change(idQuery, new ChangeSet().set("field2", "BBBB"));
 if (changeResult.getNumberOfChangedEntries() == 0)
 {
   // Object not in space - no change applied
 }
-
 {% endhighlight %}
 
 
@@ -395,7 +377,6 @@ Asynchronous `write` operation can be implemented using a [Task|Task Execution o
 {gcard:Space Class}
 
 {% highlight java %}
-
 public class MyClass implements Serializable{
 	String data;
 	Integer id;
@@ -412,14 +393,12 @@ public class MyClass implements Serializable{
 	public Integer getId() {return id;}
 	public void setId(Integer id) {this.id = id;}
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:AsyncFutureListener}
 
 {% highlight java %}
-
 public class AsyncListener implements AsyncFutureListener<MyClass>{
 	String operation;
 	public AsyncListener(String operation)
@@ -432,7 +411,6 @@ public class AsyncListener implements AsyncFutureListener<MyClass>{
 				result.getResult());
 	}
 }
-
 {% endhighlight %}
 
 {gcard}
@@ -440,37 +418,30 @@ public class AsyncListener implements AsyncFutureListener<MyClass>{
 {gcard:Async Read}
 
 {% highlight java %}
-
 GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
 AsyncFuture<MyClass> futureRead =  space.asyncRead(new MyClass(1), 10000, new AsyncListener("Read"));
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Async Take}
 
 {% highlight java %}
-
 GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
 AsyncFuture<MyClass> futureTake =  space.asyncTake(new MyClass(1), 10000, new AsyncListener("Take"));
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Async Write}
 
 {% highlight java %}
-
 GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
 MyClass obj = new MyClass(1,"AAA");
 space.execute(new AsyncWriteTask(obj));
-
 {% endhighlight %}
 
 
 
 {% highlight java %}
-
 public class AsyncWriteTask implements Task<Integer>{
 	MyClass obj;
 	public AsyncWriteTask (MyClass obj)
@@ -484,7 +455,6 @@ public class AsyncWriteTask implements Task<Integer>{
 		return 1;
 	}
 }
-
 {% endhighlight %}
 
 {gcard}
@@ -500,20 +470,17 @@ As seen in the take API above, there is no need to provide a Jini transaction ob
 {gcard:Namespace}
 
 {% highlight xml %}
-
 <os-core:space id="space" url="/./space" />
 
 <os-core:distributed-tx-manager id="transactionManager"/>
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Plain XML}
 
 {% highlight xml %}
-
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
     <property name="url" value="/./space" />
 </bean>
@@ -526,7 +493,6 @@ As seen in the take API above, there is no need to provide a Jini transaction ob
     <property name="space" ref="space" />
 	<property name="transactionManager" ref="transactionManager" />
 </bean>
-
 {% endhighlight %}
 
 {gcard}
@@ -540,14 +506,12 @@ OpenSpaces provides a pluggable transaction provider using the following interfa
 
 
 {% highlight java %}
-
 public interface TransactionProvider {
 
     Transaction getCurrentTransaction(Object transactionalContext, IJSpace space);
 
     int getCurrentTransactionIsolationLevel(Object transactionalContext);
 }
-
 {% endhighlight %}
 
 
@@ -569,18 +533,15 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 {gcard:Namespace}
 
 {% highlight xml %}
-
 <os-core:space id="space" url="/./space" />
 
 <os-core:giga-space id="gigaSpace" space="space" default-isolation="READ_COMMITTED"/>
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Plain XML}
 
 {% highlight xml %}
-
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
     <property name="url" value="/./space" />
 </bean>
@@ -589,20 +550,17 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 	<property name="space" ref="space" />
     <property name="defaultIsolationLevelName" value="READ_COMMITTED" />
 </bean>
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Code}
 
 {% highlight java %}
-
 IJSpace space = // get Space either by injection or code creation
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(space)
                           .defaultIsolationLevel(TransactionDefinition.ISOLATION_READ_COMMITTED)
                           .gigaSpace();
-
 {% endhighlight %}
 
 {gcard}
@@ -612,7 +570,6 @@ In addition, Spring allows you to define the isolation level on the transaction 
 
 
 {% highlight java %}
-
 @Transactional(readOnly = true)
 public class DefaultFooService implements FooService {
 
@@ -634,7 +591,6 @@ public class DefaultFooService implements FooService {
         // do something
     }
 }
-
 {% endhighlight %}
 
 
@@ -648,12 +604,10 @@ OpenSpaces provides a pluggable exception translator using the following interfa
 
 
 {% highlight java %}
-
 public interface ExceptionTranslator {
 
     DataAccessException translate(Throwable e);
 }
-
 {% endhighlight %}
 
 

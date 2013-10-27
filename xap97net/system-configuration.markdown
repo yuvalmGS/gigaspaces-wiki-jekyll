@@ -18,17 +18,14 @@ Like most .NET libraries, GigaSpaces XAP.NET configuration is based on [Applicat
 1. Add an Application Configuration File to your project (if your project already contains such a file skip this step):
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
 </configuration>
-
 {% endhighlight %}
 
 2. Add a definition for GigaSpaces configuration section:
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
    <configSections>
@@ -38,13 +35,11 @@ Like most .NET libraries, GigaSpaces XAP.NET configuration is based on [Applicat
       <!-- GigaSpaces Configuration settings are placed here -->
    </GigaSpaces>
 </configuration>
-
 {% endhighlight %}
 
 3. To add a system property, define a `SystemProperties` section in `GigaSpaces` section and add the desired properties names and values. The following example sets `com.gs.zones` to "foo":
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
    <configSections>
@@ -56,7 +51,6 @@ Like most .NET libraries, GigaSpaces XAP.NET configuration is based on [Applicat
       </SystemProperties>
    </GigaSpaces>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -67,11 +61,9 @@ The Xml configuration is mapped to a .NET Object model, which can be viewed and 
 The configuration is loaded into `GigaSpacesFactory.Configuration`. If there's no application configuration file the default configuration is loaded. The following example reads and modifies the configuration:
 
 {% highlight java %}
-
 String zones = GigaSpacesFactory.Configuration.SystemProperties.GetPropertyValue("com.gs.zones");
 if (zones == "foo")
     GigaSpacesFactory.Configuration.SystemProperties.SetPropertyValue("com.gs.zones", "bar");
-
 {% endhighlight %}
 
 
@@ -80,7 +72,6 @@ if (zones == "foo")
 Configuration changes must be made **before** XAP.NET is initialized. Changes made afterwards will not affect the system, and may cause an exception. The `GigaSpacesFactory.IsInitialized` property can be used to determine if XAP.NET is initialized or not. For example:
 
 {% highlight java %}
-
 String zones = GigaSpacesFactory.Configuration.SystemProperties.GetPropertyValue("com.gs.zones");
 if (zones == "foo")
 {
@@ -89,7 +80,6 @@ if (zones == "foo")
     else
         GigaSpacesFactory.Configuration.SystemProperties.SetPropertyValue("com.gs.zones", "bar");
 }
-
 {% endhighlight %}
 
 
@@ -106,19 +96,16 @@ Macros are defined in the main settings file - `<XapNetFolder>\Config\Settings.x
 Let's edit the `Settings.xml` file, define a new macro for our app called MyApp.Zones, and set its value to foo:
 
 {% highlight xml %}
-
 <Settings>
     <!-- Out-of-the-box macros were omitted for brevity.  -->
     <MyApp.Zones>foo</MyApp.Zones>
 </Settings>
-
 {% endhighlight %}
 
 
 Next we'll edit the application configuration file to use the macro instead of the static value:
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
    <configSections>
@@ -130,7 +117,6 @@ Next we'll edit the application configuration file to use the macro instead of t
       </SystemProperties>
    </GigaSpaces>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -144,7 +130,6 @@ The `GigaSpaces` configuration section contains a `BaseConfigFile` settings, whi
 
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
    <configSections>
@@ -158,7 +143,6 @@ The `GigaSpaces` configuration section contains a `BaseConfigFile` settings, whi
       </SystemProperties>
    </GigaSpaces>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -166,7 +150,6 @@ And then change the application configuration files to look like this:
 
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
     <configSections>
@@ -176,7 +159,6 @@ And then change the application configuration files to look like this:
         <BaseConfigFile Path="MyServer\MyAppSharedFolder\MyApp.config" />
     </GigaSpaces>
 </configuration>
-
 {% endhighlight %}
 
 

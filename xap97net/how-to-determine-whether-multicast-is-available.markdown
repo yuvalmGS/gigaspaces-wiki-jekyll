@@ -84,7 +84,6 @@ Reply from 127.0.0.1:5558 bytes=100 time=2.869079ms
 Reply from 127.0.0.1:5558 bytes=100 time=0.807924ms
 Reply from 127.0.0.1:5558 bytes=100 time=0.744508ms
 Reply from 127.0.0.1:5558 bytes=100 time=0.876089ms
-
 {% endhighlight %}
 
 
@@ -108,5 +107,4 @@ Received from [sender=127.0.0.1:5559] packet size: 100 bytes
 Received from [sender=127.0.0.1:5559] packet size: 100 bytes
 Received from [sender=127.0.0.1:5559] packet size: 100 bytes
 Received from [sender=127.0.0.1:5559] packet size: 100 bytes
-
 {% endhighlight %}

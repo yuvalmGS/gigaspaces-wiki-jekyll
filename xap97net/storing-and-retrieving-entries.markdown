@@ -13,7 +13,6 @@ Once you've connected to a space and obtained a `ISpaceProxy`, you can use it to
 
 
 {% highlight java %}
-
 class Person
 {
   private String _userId;
@@ -35,7 +34,6 @@ class Person
   {
   }
 }
-
 {% endhighlight %}
 
 
@@ -49,14 +47,12 @@ In order to write an entry to the space, create an object instance, populate the
 
 
 {% highlight java %}
-
 Person kermit = new Person();
 kermit.UserId = "011-1111111";
 kermit.Name = "Kermit the frog";
 
 // Write the object to the space
 proxy.Write(kermit);
-
 {% endhighlight %}
 
 
@@ -76,14 +72,12 @@ In order to retrieve an entry from the space, create an instance of the class yo
 
 
 {% highlight java %}
-
 // Create a template of a Person with a specific userId
 Person readTemplate = new Person();
 readTemplate.UserId = "011-1111111";
 
 // Reads a person from the space into readResult
 Person readResult = proxy.Read(readTemplate);
-
 {% endhighlight %}
 
 
@@ -99,14 +93,12 @@ In order to take an entry from the space, create a template as you did in the re
 
 
 {% highlight java %}
-
 // Create a template of a Person with a specific userId
 Person takeTemplate = new Person();
 takeTemplate.UserId = "011-1111111";
 
 // Takes a person from the space into takeResult
 Person takeResult = proxy.Take(takeTemplate);
-
 {% endhighlight %}
 
 

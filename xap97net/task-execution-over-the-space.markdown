@@ -20,7 +20,6 @@ The `ISpaceTask` interface is defined as follows:
 
 
 {% highlight java %}
-
 public interface ISpaceTask<T>
 {
   /// <summary>
@@ -31,7 +30,6 @@ public interface ISpaceTask<T>
   /// <returns>Computed result.</returns>
   T Execute(ISpaceProxy spaceProxy, ITransaction tx);
 }
-
 {% endhighlight %}
 
 
@@ -39,7 +37,6 @@ Here is a simple implementation of a space task that calculates the number of ob
 
 
 {% highlight java %}
-
 [Serializable]
 public class CountTask : ISpaceTask<int>
 {
@@ -56,7 +53,6 @@ public class CountTask : ISpaceTask<int>
     return spaceProxy.Count();
   }
 }
-
 {% endhighlight %}
 
 
@@ -67,12 +63,10 @@ public class CountTask : ISpaceTask<int>
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a proxy to a space
 //Execute the task on a specific node using a specified routing value (2)
 //And inserting the calculation result to count variable
 int count = spaceProxy.Execute(new CountTask("hello world"), 2);
-
 {% endhighlight %}
 
 
@@ -92,7 +86,6 @@ The `ISpaceTaskResultsReducer` is defined as follows:
 
 
 {% highlight java %}
-
 public interface ISpaceTaskResultsReducer<R, T>
 {
   /// <summary>
@@ -102,7 +95,6 @@ public interface ISpaceTaskResultsReducer<R, T>
   /// <returns>Reduced result.</returns>
   R Reduce(SpaceTaskResultsCollection<T> results);
 }
-
 {% endhighlight %}
 
 
@@ -110,7 +102,6 @@ Here is a simple example of a distributed space task that extends our previous e
 
 
 {% highlight java %}
-
 [Serializable]
 public class DistributedCountTask : IDistributedSpaceTask<long, int>
 {
@@ -139,7 +130,6 @@ public class DistributedCountTask : IDistributedSpaceTask<long, int>
     return result;
   }
 }
-
 {% endhighlight %}
 
 
@@ -150,12 +140,10 @@ it will print the message in each node and it will return the summary of the cou
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a proxy to a space
 //Execute the task on all the primary nodes with in the cluster
 //and inserting the calculation result to count variable
 long count = spaceProxy.Execute(new DistributedCountTask("hello world"));
-
 {% endhighlight %}
 
 
@@ -165,7 +153,6 @@ When executing a distributed space task, results arrive in an asynchronous manne
 
 
 {% highlight java %}
-
 public interface ISpaceTaskResultsFilter<T>
 {
   /// <summary>
@@ -201,7 +188,6 @@ public enum SpaceTaskFilterDecision
   /// </summary>
   SkipAndBreak = 3,
 }
-
 {% endhighlight %}
 
 
@@ -222,7 +208,6 @@ Here's a simple example
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a proxy to a space
 
 ITransaction tx = spaceProxy.LocalTransactionManager.Create();
@@ -249,7 +234,6 @@ public class ClearMyObjectTask : ISpaceTask<int>
     return result;
   }
 }
-
 {% endhighlight %}
 
 
@@ -261,7 +245,6 @@ A space task can also be executed asynchronously with the corresponding `BeginEx
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a proxy to a space
 //Execute the task on all the primary nodes with in the cluster
 IAsyncResult<long> asyncResult = spaceProxy.BeginExecute(new DistributedCountTask("hello world"), null /*callback*/, null /*state object*/);
@@ -269,7 +252,6 @@ IAsyncResult<long> asyncResult = spaceProxy.BeginExecute(new DistributedCountTas
 ...
 //This will block until the result execution has arrived
 long count = spaceProxy.EndExecute(asyncResult);
-
 {% endhighlight %}
 
 
@@ -277,7 +259,6 @@ long count = spaceProxy.EndExecute(asyncResult);
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a proxy to a space
 //Execute the task on all the primary nodes with in the cluster
 IAsyncResult<long> asyncResult = spaceProxy.BeginExecute(new DistributedCountTask("hello world"), null /*callback*/, null /*state object*/);
@@ -287,7 +268,6 @@ IAsyncResult<long> asyncResult = spaceProxy.BeginExecute(new DistributedCountTas
 asyncResult.AsyncWaitHandle.WaitOne();
 //Gets the actual result of the async execution
 long count = spaceProxy.EndExecute(asyncResult);
-
 {% endhighlight %}
 
 
@@ -295,7 +275,6 @@ long count = spaceProxy.EndExecute(asyncResult);
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a proxy to a space
 //Execute the task on all the primary nodes with in the cluster
 spaceProxy.BeginExecute(new DistributedCountTask("hello world"),ResultCallBack, new MyStateObject());
@@ -311,5 +290,4 @@ public void ResultCallBack<long>(IAsyncResult<long> asyncResult)
 	long count = spaceProxy.EndExecute(asyncResult);
 	...
 }
-
 {% endhighlight %}

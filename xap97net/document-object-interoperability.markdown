@@ -19,12 +19,10 @@ When working with documents the user is in charge of creating and registering th
 If the object's class is in the application's AppDomain, or the object type is already registered in the space, there's no need to register it again - the application will retrieve it automatically when it's used for the first time. For example:
 
 {% highlight java %}
-
 // Create a document template using the POJO class name:
 SpaceDocument template = new SpaceDocument(typeof(MyObject).FullName);
 // Count all entries matching the template:
 int count = spaceProxy.Count(template);
-
 {% endhighlight %}
 
 
@@ -59,7 +57,6 @@ In order to have a concrete class support dynamic properties it should have a pr
 
 
 {% highlight java %}
-
 [SpaceClass]
 public class MyObject
 {
@@ -74,7 +71,6 @@ public class MyObject
   }
 
 }
-
 {% endhighlight %}
 
 

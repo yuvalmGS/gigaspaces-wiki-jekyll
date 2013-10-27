@@ -72,7 +72,6 @@ XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Co
 3. **Application configuration file**: Use the XapNetSettingsFile element to configure the location of the settings file. For example:
 
 {% highlight xml %}
-
 <configuration>
     <configSections>
         <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core"/>
@@ -86,9 +85,7 @@ XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Co
 4. **Code:** Use the following code to set the location of the settings file at runtime:
 
 {% highlight java %}
-
     GigaSpacesFactory.Configuration.XapNetSettingsFile.Path = @"C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml"
-
 {% endhighlight %}
 
 
@@ -107,17 +104,13 @@ Yes. You can manually set the registry settings shown above to point both java a
 2. Modify the GigaSpaces section definition in `Config\Default.config` and `Config\DefaultApp.config` to specify a strong-name for GigaSpaces.Core:
 
 {% highlight java %}
-
 <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core"/>
-
 {% endhighlight %}
 
 Should be replaced it with:
 
 {% highlight java %}
-
 <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core, Version=9.5.0.5000, Culture=neutral, PublicKeyToken=94297b57ee0e4ad5"/>
-
 {% endhighlight %}
 
 (i) The `Version` should be set according to the version of XAP.NET in use (For example, if you're using XAP.NET 9.5 set the version to 9.5.0.5000).

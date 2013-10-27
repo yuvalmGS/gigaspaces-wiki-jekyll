@@ -23,14 +23,12 @@ In order to customize the behavior of an [`IDataEventSession`|http://www.gigaspa
 
 
 {% highlight java %}
-
 EventSessionConfig eventSessionConfig = new EventSessionConfig();
 //Customize the eventSessionConfig
 ...
 
 //Create a customized data event session
 IDataEventSession dataEventSession = proxy.CreateDataEventSession(eventSessionConfig);
-
 {% endhighlight %}
 
 
@@ -54,24 +52,20 @@ The auto renewal idea is that the listener is added with a limited lease, for ex
 Auto renewal behavior is determined by the `EventSessionConfig.AutoRenew` property.
 
 {% highlight java %}
-
 EventSessionConfig eventSessionConfig = new EventSessionConfig();
 eventSessionConfig.AutoRenew = true;
-
 {% endhighlight %}
 
 
 The auto renewal process uses a few parameters that dictate the timing of its behavior. These values have proper defaults, but can be altered, for example:
 
 {% highlight java %}
-
 //Auto renewal is active for 1 minute
 eventSessionConfig.AutoRenewTotalDuration = 60000;
 //Each time renew the lease for 10 seconds
 eventSessionConfig.AutoRenewLeaseDuration = 10000;
 //The network latency can reach 5 seconds, send renewal request 5 seconds before the lease expires.
 eventSessionConfig.AutoRenewRTT = 5000;
-
 {% endhighlight %}
 
 
@@ -87,12 +81,10 @@ Batch notification behavior is determined by the `EventSessionConfig.Batch` prop
 The batch notification is sent when either one of these two parameters has been reached or exceeded. Either the pending notification size has reached the `BatchSize`, or the time, in milliseconds, that elapsed from the last sent notification batch, exceeds `BatchTime`.
 
 {% highlight java %}
-
 EventSessionConfig eventSessionConfig = new EventSessionConfig();
 eventSessionConfig.Batch = true;
 //Send notifications when the batch size reached 100
 eventSessionConfig.BatchSize = 100;
 //Send notifications at maximum every 1 seconds.
 eventSessionConfig.BatchTime = 1000;
-
 {% endhighlight %}

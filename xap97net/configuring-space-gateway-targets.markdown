@@ -7,7 +7,11 @@ page_id: 63799430
 
 {summary}This page explains how to configure replication gateway targets of a space.{summary}
 {composition-setup}
-{info}This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)|Multi-Site Replication over the WAN] before reading this page.{info}
+
+{% info %}
+This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)|Multi-Site Replication over the WAN] before reading this page.
+{% endinfo %}
+
 
 # Overview
 
@@ -20,7 +24,6 @@ Here is an example of how this configuration should look:
 {gcard:Using pu.config}
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -46,7 +49,6 @@ Here is an example of how this configuration should look:
     </ProcessingUnitContainer>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 {gcard}
@@ -54,7 +56,6 @@ Here is an example of how this configuration should look:
 When using code construction for creating a space, the gateway configuration should be part of the `SpaceConfig` object that is used to create the space:
 
 {% highlight java %}
-
 SpaceConfig spaceConfig = new SpaceConfig();
 //... Configure all other space properties
 spaceConfig.GatewayConfig = new GatewayConfig();
@@ -76,7 +77,6 @@ spaceConfig.GatewayConfig.GatewayTargets.Add(hongkongTarget);
 
 BasicProcessingUnitContainer container = //... obtain container reference
 container.CreateSpaceProxy("Space", "/./myNYSpace", spaceConfig);
-
 {% endhighlight %}
 
 {gcard}

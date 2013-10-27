@@ -69,27 +69,23 @@ Specifying which property of a class is the FG property is done using attributes
 {gcard:Annotations}
 
 {% highlight java %}
-
 [SpaceClass]
 public class FlightReservation
 {
 	[SpaceFifoGroupingProperty(Path = "FlightNumber")]
     	public FlightInfo Info { get; set; }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:XML}
 
 {% highlight xml %}
-
 <gigaspaces-mapping>
     <class name="com.gigaspaces.examples.FlightReservation">
         	<fifo-grouping-property Name="Info" Path=" FlightNumber" />
     </class>
 </gigaspaces-mapping>
-
 {% endhighlight %}
 
 {gcard}
@@ -102,19 +98,16 @@ Specifying which properties of a class are a FG index is done using attributes o
 {gcard:Annotations}
 
 {% highlight java %}
-
 [SpaceFifoGroupingIndex]
 public State ProcessingState { get; set; }
 [SpaceFifoGroupingIndex(Path = "Id")]
 public Person Customer { get; set; }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:XML}
 
 {% highlight xml %}
-
 <gigaspaces-mapping>
 	<class name="com.gigaspaces.examples.FlightReservation />
 		<property name="ProcessingState">
@@ -124,7 +117,6 @@ public Person Customer { get; set; }
 			<fifo-grouping-index  Path="Id"/>
 		</property>
 </gigaspaces-mapping>
-
 {% endhighlight %}
 
 {gcard}
@@ -170,7 +162,6 @@ Here is a simple example of a polling event container construction, using FifoGr
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven]
 public class FlightReservationEventListener
 {
@@ -192,14 +183,12 @@ public class FlightReservationEventListener
 		return handler;
 	}
 }
-
 {% endhighlight %}
 
 
 Constructing the polling container that uses the `FlightReservationEventListener` class as the event listener, and starting it.
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 IEventListenerContainer<FlightReservation> eventListenerContainer = EventListenerContainerFactory.CreateContainer<FlightReservation>(spaceProxy, new FlightReservationEventListener());
 
@@ -207,14 +196,12 @@ eventListenerContainer.Start();
 
 // when needed to dispose of the container
 eventListenerContainer.Dispose()
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<FlightReservation> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 ExclusiveReadReceiveOperationHandler<FlightReservation> receiveHandler = new ExclusiveReadReceiveOperationHandler<FlightReservation>();
@@ -226,7 +213,6 @@ pollingEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAd
 
 // when needed dispose of the container
 pollingEventListenerContainer.Dispose();
-
 {% endhighlight %}
 
 
@@ -234,13 +220,11 @@ Event processing method
 
 
 {% highlight java %}
-
 public FlightReservationProcessData(IEventListenerContainer<FlightReservation> sender, DataEventArgs<FlightReservation> e)
 {
 	FlightReservation reservation = e.Data;
 	//process the reservation here and return the processed reservation
 }
-
 {% endhighlight %}
 
 {gcard}

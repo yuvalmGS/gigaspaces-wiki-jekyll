@@ -27,7 +27,6 @@ The mirror uses the External Data Source interface in write mode, and delegates 
 NHibernate requires a session factory that creates new sessions over the database for each operation executed on it. You can create such a session factory, either with a configuration file or by code. This walkthrough demonstrates a simple configuration file for the session factory, over a MySQL database server into a database named dotnetpersistency. These parameters are configured in the `Connection` string property.
 
 {% highlight xml %}
-
 <?xml version="1.0" ?>
 <hibernate-configuration  xmlns="urn:nhibernate-configuration-2.2" >
   <session-factory>
@@ -47,7 +46,6 @@ NHibernate requires a session factory that creates new sessions over the databas
 
   </session-factory>
 </hibernate-configuration>
-
 {% endhighlight %}
 
 
@@ -59,7 +57,6 @@ Each persistent class requires a mapping file that defines how to map the object
 Our `Person` is defined in Assembly name entities.
 
 {% highlight java %}
-
 namespace Entities
 {
   public class Person
@@ -89,14 +86,12 @@ namespace Entities
     public Person() { }
   }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:NHibernate Mapping File}
 
 {% highlight xml %}
-
 <?xml version="1.0"?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Entities" namespace="Entities">
   <class name="Entities.Person" table="PERSON">
@@ -106,7 +101,6 @@ namespace Entities
     <property name="Age" />
   </class>
 </hibernate-mapping>
-
 {% endhighlight %}
 
 {gcard}
@@ -125,7 +119,6 @@ Our cluster is 2,1 and a mirror. Therefore it consists of:
 The following code starts a cluster member space with the NHibernate External Data Source:
 
 {% highlight java %}
-
 //Create a new space configuration object that is used to start a space
 SpaceConfig spaceConfig = new SpaceConfig();
 //Start a new ExternalDataSource config object
@@ -154,7 +147,6 @@ spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 1, null, 2,
 
 //Starts the space with the External Data Source
 ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace?mirror=true", spaceConfig);
-
 {% endhighlight %}
 
 (on) `<NHibernate config file>` (see code box above) should point to the NHibernate session factory [configuration file|#sessionfactory].
@@ -167,25 +159,19 @@ To start the other members of the cluster, simply change the [ClusterInfo|Proces
 - Backup space of the first partition member
 
 {% highlight java %}
-
 spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 1, 1, 2, 1);
-
 {% endhighlight %}
 
 - Second primary space in the partitioned cluster
 
 {% highlight java %}
-
 spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 2, null, 2, 1);
-
 {% endhighlight %}
 
 - Backup space of the second partition member
 
 {% highlight java %}
-
 spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 2, 1, 2, 1);
-
 {% endhighlight %}
 
 
@@ -194,7 +180,6 @@ spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 2, 1, 2, 1)
 The following code starts the mirror space with the NHibernate External Data Source:
 
 {% highlight java %}
-
 //Create a new space configuration object that is used to start a space
 SpaceConfig spaceConfig = new SpaceConfig();
 //Start a new ExternalDataSource config object
@@ -221,5 +206,4 @@ spaceConfig.CustomProperties.Add("cluster-config.cache-loader.central-data-sourc
 
 //Starts the space with the External Data Source
 ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mirror-service?schema=mirror", spaceConfig);
-
 {% endhighlight %}

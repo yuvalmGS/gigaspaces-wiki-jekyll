@@ -22,10 +22,8 @@ The following should be added into the `<PU deployment dir>\META-INF\spring\pu.x
 
 
 {% highlight xml %}
-
 <bean id="dotnetProcessingUnitContainer" class="org.openspaces.interop.DotnetProcessingUnitBean">
 </bean>
-
 {% endhighlight %}
 
 
@@ -39,10 +37,8 @@ The pu.xml and .NET code should resemble the following:
 
 
 {% highlight xml %}
-
 <os-core:space id="space" url="/./interopSpace">
 </os-core:space>
-
 {% endhighlight %}
 
 
@@ -50,7 +46,6 @@ The pu.xml and .NET code should resemble the following:
 
 
 {% highlight java %}
-
 class MyInteropProcessingUnit : AbstractProcessingUnitContainer
 {
 
@@ -63,5 +58,4 @@ class MyInteropProcessingUnit : AbstractProcessingUnitContainer
 
   ...
 }
-
 {% endhighlight %}

@@ -29,7 +29,6 @@ The `AbstractProcessingUnitContainer` class implements `IDisposable`, and consis
 
 
 {% highlight java %}
-
 public abstract class AbstractProcessingUnitContainer
 {
     // Cluster information is set into this property at deploy-time.
@@ -44,7 +43,6 @@ public abstract class AbstractProcessingUnitContainer
     // Invoked by the Service Grid to terminate the processing unit container.
     virtual void Dispose();
 }
-
 {% endhighlight %}
 
 
@@ -91,7 +89,6 @@ The `pu.config` you've created needs to be edited to point to your Processing Un
 
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -104,7 +101,6 @@ The `pu.config` you've created needs to be edited to point to your Processing Un
     <ProcessingUnitContainer Type="[Assembly Qualified Name]"/>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 {toc-zone}

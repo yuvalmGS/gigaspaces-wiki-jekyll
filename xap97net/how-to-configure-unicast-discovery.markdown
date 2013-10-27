@@ -22,9 +22,7 @@ Services will use the locators property to locate the Jini Lookup Service to loo
 For example, considering the GSM(+LUS) is running on machine1:4174 and machine2:4174 machines:
 
 {% highlight xml %}
-
 <XapNet.Locators>machine1:4174,machine2:4174</XapNet.Locators>
-
 {% endhighlight %}
 
 
@@ -69,12 +67,10 @@ When a lookup service fails and is brought back online, a client (such as a GSC,
 
 
 {% highlight java %}
-
 long[] sleepTime = {5 ** 1000, 10 ** 1000, 20 * 1000,
                                     30 ** 1000, 60 ** 1000,
                                     2 ** 60 ** 1000, 4 ** 60 ** 1000,
                                     8 ** 60 ** 1000, 15 ** 60 ** 1000};
-
 {% endhighlight %}
 
 
@@ -86,17 +82,13 @@ To tune the unicast retry intervals, the `com.gigaspaces.unicast.interval` syste
 Example:
 
 {% highlight java %}
-
 com.gigaspaces.unicast.interval=5000
-
 {% endhighlight %}
 
 Will cause the LookupLocatorDiscovery utility to wait 5 seconds between retries
 
 {% highlight java %}
-
 com.gigaspaces.unicast.interval=5000,10000
-
 {% endhighlight %}
 
 Will cause the LookupLocatorDiscovery utility to first wait 5 seconds, then 10 seconds between retries. This declaration provides a graduating approach (similar in approach to the default settings).

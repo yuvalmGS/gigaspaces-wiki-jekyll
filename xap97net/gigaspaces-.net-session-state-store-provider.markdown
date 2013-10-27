@@ -16,10 +16,8 @@ The session state store provider is used by the IIS (Internet Information Servic
 Using the session-state store provider, values that need to be persisted during a user session are stored into session variables. These variables are unique in each user session. You can set and access session information from within an ASP .NET application. For example:
 
 {% highlight java %}
-
 //Assign a value to the buttonCount session variable:
 Session["buttonCount"] = 0;
-
 {% endhighlight %}
 
 
@@ -35,7 +33,6 @@ The `mode` attribute is set up in the `web.config` file (or the `machine.config`
 Configure your `web.config` file as follows:
 
 {% highlight xml %}
-
 <configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
 
   <connectionStrings>
@@ -66,7 +63,6 @@ Configure your `web.config` file as follows:
     </sessionState>
   </system.web>
 </configuration>
-
 {% endhighlight %}
 
 To use a custom provider, `mode` must be set to `Custom`, and the `providers` element must also be used.

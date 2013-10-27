@@ -23,11 +23,9 @@ Use `ISpaceProxy.Snapshot` to create a prepared template from an object template
 
 
 {% highlight java %}
-
 Person template= new Person();
 template.Age = 21;
 IPreparedTemplate<Person> preparedTemplate = proxy.Snapshot(template);
-
 {% endhighlight %}
 
 
@@ -35,11 +33,9 @@ IPreparedTemplate<Person> preparedTemplate = proxy.Snapshot(template);
 
 
 {% highlight java %}
-
 SqlQuery<Person> query = new SqlQuery<Person>(personTemplate, "Age >= ?");
 query.SetParameter(1, 21);
 IPreparedTemplate<Person> preparedTemplate = proxy.Snapshot(query);
-
 {% endhighlight %}
 
 
@@ -51,8 +47,6 @@ After creating the prepared template, it can be passed as a template to the Read
 
 
 {% highlight java %}
-
 Person person = proxy.Take(preparedTemplate);
-
 {% endhighlight %}
 

@@ -21,12 +21,10 @@ The following example demonstrates how to increase the property 'count' in a an 
 
 
 {% highlight java %}
-
 ISpaceProxy space = // ... obtain a space reference
 String id = "myID";
 IdQuery<WordCount> idQuery = new IdQuery<WordCount>(id, routing);
 space.Change(idQuery, new ChangeSet().Increment("Count", 1));
-
 {% endhighlight %}
 
 
@@ -43,7 +41,6 @@ that this change is done on a nested property. For instance:
 
 
 {% highlight java %}
-
 [SpaceClass]
 public class Account
 {
@@ -61,18 +58,15 @@ public class Balance
   public double UsDollar {get; set;}
 
 }
-
 {% endhighlight %}
 
 
 
 {% highlight java %}
-
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
 space.Change(idQuery, new ChangeSet().Increment("Balance.Euro", 5.2D));
-
 {% endhighlight %}
 
 
@@ -86,7 +80,6 @@ Each operation in the change set acts on a specified string path. This path poin
 The following demonstrates how the path works with a dictionary property instead of concrete properties:
 
 {% highlight java %}
-
 [SpaceClass]
 public class Account
 {
@@ -95,18 +88,15 @@ public class Account
   Guid getId {get; set;}
   IDictionary<String, double> Balance {get; set;}
 }
-
 {% endhighlight %}
 
 
 
 {% highlight java %}
-
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
 space.Change(idQuery, new ChangeSet().Increment("Balance.Euro", 5.2D));
-
 {% endhighlight %}
 
 
@@ -134,7 +124,6 @@ With the [embedded model|Modeling your data#Embedded vs. Non-Embedded Relationsh
 The change operations returns a `IChangeResult` object that provides information regarding the change operation affect.
 
 {% highlight java %}
-
 /// <summary>
 /// Result of a change operation.
 /// </summary>
@@ -155,13 +144,11 @@ public interface IChangeResult<T>
   /// </summary>
   int NumberOfChangedEntries { get; }
 }
-
 {% endhighlight %}
 
 
 
 {% highlight java %}
-
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
@@ -170,7 +157,6 @@ if (changeResult.NumberOfChangedEntries == 0)
 {
   // ... handle no entry found for change
 }
-
 {% endhighlight %}
 
 
@@ -183,7 +169,6 @@ The `IChangeResult` contains the `NumberOfChangedEntries` which specifies how ma
 Upon any error a `ChangeException` will be thrown containing the following details:
 
 {% highlight java %}
-
 public class ChangeException
 {
 
@@ -208,7 +193,6 @@ public class ChangeException
   public int NumOfSuccessfulChanges {get;}
 
 }
-
 {% endhighlight %}
 
 
@@ -223,13 +207,11 @@ One may apply multiple changes in one `Change` operation by setting up multiple 
 
 
 {% highlight java %}
-
 ISpaceProxy space = // ... obtain a space reference
 IdQuery<MyObject> idQuery = new IdQuery<MyObject>(id, routing);
 space.Change(idQuery, new ChangeSet().Increment("SomeIntProperty", 1)
                                      .Set("SomeStringProperty", "NewStringValue)
                                      .SetInDictionary("SomeNestedProperty.SomeDictionaryProperty", "MyKey", 2));
-
 {% endhighlight %}
 
 
@@ -241,10 +223,8 @@ By default, the change operation will not modify the existing remaining lease of
 
 
 {% highlight java %}
-
 ISpaceProxy space = // ... obtain a space reference
 space.Change(idQuery, new ChangeSet().Lease(1000)...);
-
 {% endhighlight %}
 
 
@@ -263,7 +243,6 @@ If there were no matching objects for the specified template, the operation will
 
 
 {% highlight java %}
-
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
@@ -285,7 +264,6 @@ catch(ChangeException e)
     }
   }
 }
-
 {% endhighlight %}
 
 
@@ -295,7 +273,6 @@ The `Change` operation has the same semantics as regular space `Update` operatio
 
 
 {% highlight java %}
-
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 Object routing = id; // In our case the space routing property is the space id property.
@@ -319,7 +296,6 @@ catch(ChangeException e)
     }
   }
 }
-
 {% endhighlight %}
 
 

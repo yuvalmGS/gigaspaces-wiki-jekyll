@@ -20,7 +20,6 @@ If any error occurred, you need to abort the transaction by calling `ITransactio
 Suppose we have an order processing system, and we need to validate incoming orders before they continue to be processed. Our code could look something like this:
 
 {% highlight java %}
-
 public void ProcessNewOrder(ISpaceProxy space)
 {
     // Get an order which requires processing:
@@ -33,7 +32,6 @@ public void ProcessNewOrder(ISpaceProxy space)
         space.Write(order);
     }
 }
-
 {% endhighlight %}
 
 
@@ -41,7 +39,6 @@ Naturally, this code is not safe because if something goes wrong between the Tak
 
 
 {% highlight java %}
-
 public void ProcessNewOrder(ISpaceProxy space, ITransactionManager txnManager)
 {
     // Create a transaction using the transaction manager:
@@ -68,7 +65,6 @@ public void ProcessNewOrder(ISpaceProxy space, ITransactionManager txnManager)
         }
     }
 }
-
 {% endhighlight %}
 
 
@@ -93,19 +89,15 @@ Another thing that can go wrong is that the application will hang before the tra
 You can specify a transaction timeout when the transaction is created:
 
 {% highlight java %}
-
 // Create a transaction with a 5 minute timeout:
 txnManager.Create(5 ** 60 ** 1000);
-
 {% endhighlight %}
 
 Alternatively, you can set the default transaction timeout on the transaction manager:
 
 {% highlight java %}
-
 // Set the default transactions timeout to 5 minutes:
 txnManager.DefaultLeaseTime = 5 ** 60 ** 1000;
-
 {% endhighlight %}
 
 

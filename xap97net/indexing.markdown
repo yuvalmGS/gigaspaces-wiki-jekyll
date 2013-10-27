@@ -40,7 +40,6 @@ Specifying which properties of a class are indexed is done using attributes or `
 {gcard:Annotations}
 
 {% highlight java %}
-
 [SpaceClass]
 public class Person
 {
@@ -55,7 +54,6 @@ public class Person
     [SpaceIndex(Type=SpaceIndexType.Extended)]
     public int? Age{ get; set; }
 }
-
 {% endhighlight %}
 
 {gcard}
@@ -63,7 +61,6 @@ public class Person
 
 
 {% highlight xml %}
-
 <gigaspaces-mapping>
     <class name="Gigaspaces.Examples.Person"
         persist="false" replicate="false" fifo="false" >
@@ -78,7 +75,6 @@ public class Person
         </property>
     </class>
 </gigaspaces-mapping>
-
 {% endhighlight %}
 
 {gcard}
@@ -111,7 +107,6 @@ Below is an example of defining an index on a nested property:
 
 {% highlight java %}
 
-
 [SpaceClass]
 public class Person
 {
@@ -139,14 +134,12 @@ public class Address
     private int ZipCode {get; set;}
     private String Street {get; set;}
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Multiple Indexes Annotation}
 
 {% highlight java %}
-
 
 [SpaceClass]
 public class Person
@@ -167,7 +160,6 @@ public class Person
 
 }
 
-
 {% endhighlight %}
 
 {gcard}
@@ -177,17 +169,23 @@ The following is an example of query code that automatically triggers this index
 
 
 {% highlight java %}
-
 SqlQuery<Person> query = new SqlQuery<Person>(
     "PersonalInfo.SocialSecurity<10000050L and PersonalInfo.SocialSecurity>=10000010L");
-
 {% endhighlight %}
 
 
 {comment}(i) For more information, see [Nested Object Queries|SQLQuery#Nested Object Query]{comment}
 
-{info:title=Nested Objects}By default, nested objects are kept in a binary form inside the space. In order to support nested matching, the relevant property should be stored as document, or as object if it is in an interoperability scenario and it has a corresponding Java class.{info}
-{info:title=Dictionary based nested properties}Note that the same indexing techniques above are also applicable to Dictionary-based nested properties, which means that in the example above the `Info` and `Address` classes could be replaced with a `Dictionary<String,Object>`, with the dictionary keys representing the property names.{info}
+
+{% info title=Nested Objects %}
+By default, nested objects are kept in a binary form inside the space. In order to support nested matching, the relevant property should be stored as document, or as object if it is in an interoperability scenario and it has a corresponding Java class.
+{% endinfo %}
+
+
+{% info title=Dictionary based nested properties %}
+Note that the same indexing techniques above are also applicable to Dictionary-based nested properties, which means that in the example above the `Info` and `Address` classes could be replaced with a `Dictionary<String,Object>`, with the dictionary keys representing the property names.
+{% endinfo %}
+
 
 # Collection Indexing
 
@@ -198,7 +196,6 @@ Setting an index on a Collection is done using the SpaceIndex.Path attribute whe
 The following example shows how to define an index on a List of Integers:
 
 {% highlight java %}
-
 [SpaceClass]
 public class CollectionIndexingExample
 {
@@ -212,7 +209,6 @@ public class CollectionIndexingExample
   public List<int> Numbers { get; set; }
 
 }
-
 {% endhighlight %}
 
 
@@ -220,11 +216,9 @@ The following query shows how to take advantage of the defined index:
 
 
 {% highlight java %}
-
 SqlQuery<CollectionIndexingExample> sqlQuery =
     new SqlQuery<CollectionIndexingExample>("Numbers[*] = 30");
 CollectionIndexingExample[] result = spaceProxy.ReadMultiple(sqlQuery);
-
 {% endhighlight %}
 
 
@@ -235,7 +229,6 @@ Its also possible to index a nested property within a collection.
 The following example shows how to define an index on a Book.id property, which resides in a Collection property in Author:
 
 {% highlight java %}
-
 [SpaceClass]
 public class Author
 {
@@ -256,24 +249,20 @@ public class Book
   public int? Id{ get; set; }
 
 }
-
 {% endhighlight %}
 
 
 The following query shows how to take advantage of the defined index:
 
 {% highlight java %}
-
 SqlQuery<Author> sqlQuery = new SqlQuery<Author>("Books[*].Id = 57");
 Author result = spaceProxy.Read(sqlQuery);
-
 {% endhighlight %}
 
 
 Setting an index on a Collection within a nested property is also accepted:
 
 {% highlight java %}
-
 [SpaceClass]
 public class Employee
 {
@@ -294,11 +283,14 @@ public class Information
   public List<String> PhoneNumbers{ get; set; }
 
 }
-
 {% endhighlight %}
 
 
-{info}Both \[SpaceIndex(Type=SpaceIndexType.Basic)\] and \[SpaceIndex(Type=SpaceIndexType.Extended)\] are supported.{info}
+
+{% info %}
+Both \[SpaceIndex(Type=SpaceIndexType.Basic)\] and \[SpaceIndex(Type=SpaceIndexType.Extended)\] are supported.
+{% endinfo %}
+
 
 # Compound Indexing
 
@@ -323,9 +315,7 @@ The benchmark has a space with different sets of space objects data:
 
 
 {% highlight java %}
-
 SQLQuery<Data> query = new SQLQuery<Data>(Data.class,"data1='A' and data2='B'");
-
 {% endhighlight %}
 
 
@@ -340,7 +330,6 @@ Compound indexes can be defined using annotations. The `CompoundSpaceIndex` anno
 Example: Below a compound index with two segments using annotations. Both are properties at the root level of the space class:
 
 {% highlight java %}
-
 [CompoundSpaceIndex(Paths = new[] {"IntProp", "StringProp"})]
 [CompoundSpaceIndex(Paths = new[] {"LongProp", "StringProp" })]
 public class WithCompoundIndex
@@ -351,7 +340,6 @@ public class WithCompoundIndex
      public String StringProp { get; set; }
      public long LongProp { get; set; }
 }
-
 {% endhighlight %}
 
 
@@ -361,7 +349,6 @@ A Compound Index can be defined within the gs.xml configuration file. Example: T
 
 
 {% highlight xml %}
-
 <!DOCTYPE gigaspaces-mapping PUBLIC "-//GIGASPACES//DTD GS//EN" "http://www.gigaspaces.com/dtd/9_5/gigaspaces-metadata.dtd">
 <gigaspaces-mapping>
     <class name="WithCompoundIndex" >
@@ -369,7 +356,6 @@ A Compound Index can be defined within the gs.xml configuration file. Example: T
         ...
     </class>
 </gigaspaces-mapping>
-
 {% endhighlight %}
 
 
@@ -381,14 +367,12 @@ Example:
 
 
 {% highlight xml %}
-
 SpaceTypeDescriptorBuilder descriptorBuilder = new SpaceTypeDescriptorBuilder("WithCompoundIndex");
             descriptorBuilder.AddFixedProperty("IntProp", typeof(int));
             descriptorBuilder.AddFixedProperty("StringProp", typeof(String));
             descriptorBuilder.AddFixedProperty("LongProp", typeof(long));
             descriptorBuilder.AddCompoundIndex(new []{ "IntProp", "StringProp" });
             descriptorBuilder.AddCompoundIndex(new []{ "LongProp", "StringProp" });
-
 {% endhighlight %}
 
 

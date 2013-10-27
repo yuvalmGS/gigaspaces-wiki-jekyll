@@ -21,7 +21,6 @@ The Person object:
 
 
 {% highlight java %}
-
 class Person
 {
   private string _userId;
@@ -43,13 +42,11 @@ class Person
   {
   }
 }
-
 {% endhighlight %}
 
 
 
 {% highlight java %}
-
 Person kermit = new Person();
 kermit.UserId = "011-1111111";
 kermit.Name = "Kermit the frog";
@@ -57,7 +54,6 @@ kermit.Name = "Kermit the frog";
 ISpaceProxy proxy = GigaSpacesFactory.FindSpace("/./mySpace");
 //Write the object to the space
 proxy.Write(kermit);
-
 {% endhighlight %}
 
 
@@ -67,7 +63,6 @@ Sometimes it is required to write multiple objects at once. For instance, when t
 
 
 {% highlight java %}
-
 Person kermit = new Person();
 kermit.UserId = "011-1111111";
 kermit.Name = "Kermit the frog";
@@ -79,7 +74,6 @@ missPiggy.Name = "Miss Piggy";
 Person[] persons = new Person[]{kermit, missPiggy};
 //Write the objects to the space
 proxy.WriteMultiple(persons);
-
 {% endhighlight %}
 
 
@@ -89,7 +83,6 @@ When objects that exist in the space need to be updated, the `ISpaceProxy.Write`
 
 
 {% highlight java %}
-
 Person kermit = new Person();
 kermit.UserId = "011-1111111";
 kermit.Name = "Kermit the frog";
@@ -99,14 +92,15 @@ proxy.Write(kermit);
 //Updating the name of the already existing kermit object in space
 kermit.Name = "Kermit the green frog";
 proxy.Write(kermit, WriteModifiers.WriteOrUpdate);
-
 {% endhighlight %}
 
 
-{info}
+
+{% info %}
 The modifier `WriteModifiers.UpdateOnly` can be used if the operation is only allowed to update an existing object and throw exception
 if no matching object exists in space.
-{info}
+{% endinfo %}
+
 
 # Performance optimization
 
@@ -117,9 +111,7 @@ Use this option to improve application write operation performance both with rem
 
 
 {% highlight java %}
-
 proxy.Write(kermit, WriteModifiers.WriteOrUpdate | WriteModifiers.NoReturnValue);
-
 {% endhighlight %}
 
 
@@ -136,7 +128,6 @@ When updating an object, you can specify 0 (ZERO) as the lease time. This will i
 Here is a partial update example:
 
 {% highlight java %}
-
 MyClass obj = new MyClass(){Id="1", Field1="A", Field2="B", Field3="C"};
 proxy.Write(obj);
 
@@ -150,6 +141,5 @@ obj2.Field1 = null;
 obj3.Field3 = null;
 //Partially updating the object in space, only value of Field2 will be updated.
 proxy.Write(obj2, WriteModifiers.PartialUpdate);
-
 {% endhighlight %}
 

@@ -28,7 +28,6 @@ The following example sets the trace level to `Error`, which means that only err
 
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <system.diagnostics>
@@ -43,7 +42,6 @@ The following example sets the trace level to `Error`, which means that only err
     </sources>
   </system.diagnostics>
 </configuration>
-
 
 {% endhighlight %}
 

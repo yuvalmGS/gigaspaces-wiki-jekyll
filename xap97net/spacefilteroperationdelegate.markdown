@@ -23,7 +23,6 @@ The filter itself is a class that doesn't need to implement any interface. Inste
 
 
 {% highlight java %}
-
 public class SimpleAttributeFilter
 {
   [OnFilterInit]
@@ -38,7 +37,6 @@ public class SimpleAttributeFilter
     Console.WriteLine(DateTime.Now + ": Before Write");
   }
 }
-
 {% endhighlight %}
 
 
@@ -46,13 +44,11 @@ To use this class as the filter, simply use the `AttributeSpaceFilterConfigFacto
 
 
 {% highlight java %}
-
 AttributeSpaceFilterConfigFactory filterConfigFactory = new AttributeSpaceFilterConfigFactory();
 filterConfigFactory.Filter = new SimpleAttributeFilter();
 
 // use this filter config when starting a space
 SpaceFilterConfig filterConfig = filterConfigFactory.CreateSpaceFilterConfig();
-
 {% endhighlight %}
 
 
@@ -64,7 +60,6 @@ A method name-based filter has the same basic principle as the one above. Howeve
 
 
 {% highlight java %}
-
 public class SimpleMethodNameFilter
 {
   public void Initialize()
@@ -86,7 +81,6 @@ filterConfigFactory.OnFilterInit = "Initialize";
 filterConfigFactory.BeforeWrite = "ReportBeforeWrite";
 // use this filter config when starting a space
 SpaceFilterConfig filterConfig = filterConfigFactory.CreateSpaceFilterConfig();
-
 {% endhighlight %}
 
 

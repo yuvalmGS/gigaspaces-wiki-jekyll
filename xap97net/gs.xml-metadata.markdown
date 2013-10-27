@@ -35,7 +35,6 @@ Schema definitions for the .NET GS.XML can be found in two locations
 See blow an example of `Car` class's space metadata definitions in GS.XML
 
 {% highlight java %}
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE gigaspaces-mapping SYSTEM "..\..\..\Bin\gigaspaces-metadata-net.dtd">
 <gigaspaces-mapping>
@@ -49,7 +48,6 @@ See blow an example of `Car` class's space metadata definitions in GS.XML
     <version name="VersionProperty" />
   </class>
 </gigaspaces-mapping>
-
 {% endhighlight %}
 
 
@@ -80,13 +78,11 @@ For more details, see: [Object Metadata|Object Metadata#Including/Excluding Cont
 
 
 {% highlight java %}
-
 <class name="GigaSpaces.Examples.SpaceOperations.Entities.Person" persist="false" replicate="false" fifo="false" >
 	<property name="Int_Field" null-value="-1" alias-name="int_Field" />
 	<property name="DateTime_Field" null-value="00:00:00.0000000, January 1, 0001" alias-name="dateTime_Field"/>
 	<property name="Address" alias-name="address" storage-type="Object" />
 </class>
-
 {% endhighlight %}
 
 

@@ -20,10 +20,8 @@ An `SqlQuery` is composed from the **type** of entry to query, an **expression**
 Read all entries of type **Person** whose **Age** is greater than or equal to **21**.
 
 {% highlight java %}
-
 Person[] persons = proxy.ReadMultiple<Person>(
     new SqlQuery<Person>("Age >= 21"));
-
 {% endhighlight %}
 
 
@@ -34,13 +32,11 @@ Note that the expression is equivalent to the WHERE part of a query. The FROM pa
 Take up to **100** entries of type **Person** whose **Age** is greater than or equal to **21**, AND whose **FirstName** is **John**.
 
 {% highlight java %}
-
 SqlQuery<Person> query = new SqlQuery<Person>(
     "Age >= ? AND FirstName = ?");
 query.SetParameter(1, 21);
 query.SetParameter(2, "John");
 Person[] persons = proxy.TakeMultiple<Person>(query, 100);
-
 {% endhighlight %}
 
 
@@ -70,11 +66,9 @@ Blocking operations (i.e. `Read` or `Take` with `timeout` greater than `0`) are 
 
 
 {% highlight java %}
-
 long timeout = 100000;
 MyClass result = space.Take<MyClass>(new SQLQuery<MyClass>(
     "Num > 500"), timeout);
-
 {% endhighlight %}
 
 
@@ -87,7 +81,6 @@ If the routing property is part of the criteria expression with an equality oper
 For example, suppose the routing property of **`MyClass`** is **`Num`**:
 
 {% highlight java %}
-
 // Execute query on partition #1
 SQLQuery<MyClass> query1 = new SQLQuery<MyClass>(
     "Num = 1");
@@ -101,7 +94,6 @@ SQLQuery<MyClass> query2 = new SQLQuery<MyClass>(
 // no way to tell which partitions hold matching results:
 SQLQuery<MyClass> query3 = new SQLQuery<MyClass>(
     "Num = 1 OR Name='smith'");
-
 {% endhighlight %}
 
 
@@ -110,11 +102,9 @@ Note that in `query1` the `Num` property is used both for routing and matching.
 In some scenarios we may want to execute the query on a specific partition without matching the routing property (e.g. blocking operation). Starting 8.0.1, this can be done via the `Routing` property:
 
 {% highlight java %}
-
 SQLQuery<MyClass> query = new SQLQuery<MyClass>("Num > 3");
 query.Routing = 1;
 MyClass[] result = space.ReadMultiple<MyClass>(query);
-
 {% endhighlight %}
 
 
@@ -163,12 +153,10 @@ GigaSpaces SqlQuery **does not** support the following:
 The following are reserved keywords in the GigaSpaces SQL syntax:
 
 {% highlight java %}
-
 ALTER ADD AND ASC BETWEEN BY CREATE CALL DROP DEFAULT_NULL DESC  DISTINCT END FROM GROUP IN IS LIKE
 MAX MIN NOT NULL OR ORDER SELECT SUBSTR SUM SYSDATE UPPER WHERE COUNT DELETE EXCEPTION ROWNUM INDEX
 INSERT INTO SET TABLE TO_CHAR TO_NUMBER FOR_UPDATE UPDATE UNION VALUES COMMIT ROLLBACK PRIMARY_KEY
 UID USING
-
 {% endhighlight %}
 
 
@@ -176,7 +164,5 @@ UID USING
 
 
 {% highlight java %}
-
 := || ; . ROWTYPE ~ < <= >  >= => != <> \(+\) ( ) \* / + - ? \{ \}
-
 {% endhighlight %}

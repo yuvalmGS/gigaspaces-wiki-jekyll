@@ -29,7 +29,6 @@ The demo sequence consists of: creating the relevant Space Filter, creating a [S
 
 
 {% highlight java %}
-
 // Write a simple hello message to the space - the filter will log this message to the console.
 space.Write(new Message("Hello"));
 
@@ -45,7 +44,6 @@ Console.WriteLine("Took message from space: " + space.Take(new Message()).Conten
 Console.WriteLine("Writing an object instance (Not Message), no monitor message should appear after this line");
 // This object can not be assigned into Message - the filter will not operate on this object.
 space.Write(new object());
-
 {% endhighlight %}
 
 
@@ -57,7 +55,6 @@ This filter is implemented, using an attribute to mark the filter operation meth
 
 
 {% highlight java %}
-
 public class MessageCensorshipAttributeFilter : MessageCensorship, IDisposable
 {
   [...]
@@ -108,7 +105,6 @@ public class MessageCensorshipAttributeFilter : MessageCensorship, IDisposable
     }
   }
 }
-
 {% endhighlight %}
 
 
@@ -118,7 +114,6 @@ Each space filter needs a [SpaceFilterConfig|SpaceFilterConfig Class] that defin
 
 
 {% highlight java %}
-
 //Create an attribute based space filter delegate configurer
 AttributeSpaceFilterConfigFactory attributeSpaceFilterConfigFactory = new AttributeSpaceFilterConfigFactory();
 attributeSpaceFilterConfigFactory.Filter = new MessageCensorshipAttributeFilter(IllegalWords);
@@ -127,7 +122,6 @@ spaceConfig.SpaceFiltersConfig = new SpaceFilterConfig[]{attributeSpaceFilterCon
 
 //Start a space with the configured filter
 space = GigaSpacesFactory.FindSpace("/./spaceAttributeFilterDemo", spaceConfig);
-
 {% endhighlight %}
 
 
@@ -145,7 +139,6 @@ This filter is implemented using method names to mark the filter operation metho
 
 
 {% highlight java %}
-
 public class MessageCensorshipMethodNamesFilter : MessageCensorship, IDisposable
 {
   [...]
@@ -193,7 +186,6 @@ public class MessageCensorshipMethodNamesFilter : MessageCensorship, IDisposable
     }
   }
 }
-
 {% endhighlight %}
 
 
@@ -201,7 +193,6 @@ This filter implementation is very similiar to the [attribute-based one|#Message
 
 
 {% highlight java %}
-
 //Create a method based space filter delegate configurer
 MethodNameSpaceFilterConfigFactory methodNameSpaceFilterConfigFactory = new MethodNameSpaceFilterConfigFactory();
 methodNameSpaceFilterConfigFactory.Filter = new MessageCensorshipMethodNamesFilter(IllegalWords);
@@ -213,7 +204,6 @@ spaceConfig.SpaceFiltersConfig = new SpaceFilterConfig[] { methodNameSpaceFilter
 
 //Start a space with the configured filter
 space = GigaSpacesFactory.FindSpace("/./spaceMethodFilterDemo", spaceConfig);
-
 {% endhighlight %}
 
 
@@ -227,7 +217,6 @@ This filter implements the [`ISpaceFilter`|ISpaceFilter Interface] interface dir
 
 
 {% highlight java %}
-
 public class MessageCensorshipSpaceFilter : MessageCensorship, ISpaceFilter
 {
   [..]
@@ -276,7 +265,6 @@ public class MessageCensorshipSpaceFilter : MessageCensorship, ISpaceFilter
   {
   }
 }
-
 {% endhighlight %}
 
 
@@ -286,7 +274,6 @@ When implementing [ISpaceFilter|ISpaceFilter Interface], a [SpaceFilterConfig|Sp
 
 
 {% highlight java %}
-
 //Create configuration for space filter
 SpaceFilterConfig spaceFilterConfig = new SpaceFilterConfig();
 
@@ -298,5 +285,4 @@ spaceConfig.SpaceFiltersConfig = new SpaceFilterConfig[]{spaceFilterConfig};
 
 //Start a space with the configured filter
 ISpaceProxy space = GigaSpacesFactory.FindSpace("/./spaceFilterDemo", spaceConfig);
-
 {% endhighlight %}

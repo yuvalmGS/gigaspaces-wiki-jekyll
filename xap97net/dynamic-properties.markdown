@@ -24,7 +24,6 @@ To enable dynamic properties add a `Dictionary<String, Object>` property to the 
 
 
 {% highlight java %}
-
 public class Person
 {
     public String Name { get; set; }
@@ -33,7 +32,6 @@ public class Person
     [SpaceDynamicProperties]
     public DocumentProperties ExtraInfo { get; set; }
 }
-
 {% endhighlight %}
 
 
@@ -45,7 +43,6 @@ To write an entry with dynamic properties, simply populate them in the dynamic p
 
 
 {% highlight java %}
-
 Person p = new Person();
 p.Id = 7;
 p.Name = "smith";
@@ -53,7 +50,6 @@ p.ExtraInfo = new DocumentProperties();
 p.ExtraInfo["email"] = "smith@foo.com";
 p.ExtraInfo["age"] = 30;
 space.Write(p);
-
 {% endhighlight %}
 
 
@@ -63,7 +59,6 @@ Dynamic properties can also be used for matching. For example, suppose we want t
 
 
 {% highlight java %}
-
 Person[] people = space.ReadMultiple<Person>(new SqlQuery<Person>("age > 21"));
 foreach (var person in people)
 {
@@ -71,7 +66,6 @@ foreach (var person in people)
     if (email != null)
         SendEmail(email);
 }
-
 {% endhighlight %}
 
 

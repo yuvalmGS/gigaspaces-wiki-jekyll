@@ -24,7 +24,6 @@ For the purpose of explaining the subject we'll look at a Person class (a deep c
 || C# || Java ||
 |
 {% highlight java %}
-
 using GigaSpaces.Core.Metadata;
 
 namespace MyCompany.MyProject.Entities
@@ -63,11 +62,9 @@ namespace MyCompany.MyProject.Entities
         public string Country;
     }
 }
-
 {% endhighlight %}
 |
 {% highlight java %}
-
 package com.mycompany.myproject.entities;
 
 public class Person
@@ -89,7 +86,6 @@ public class Address
     public String Street;
     public String Country;
 }
-
 
 {% endhighlight %}
 |

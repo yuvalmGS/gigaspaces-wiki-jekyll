@@ -68,7 +68,6 @@ For example:
 
 
 {% highlight java %}
-
 [NotifyEventDriven(Name="MyDataProcessor")]
 public class DataProcessor
 {
@@ -90,29 +89,24 @@ public class DataProcessor
         return data;
     }
 }
-
 {% endhighlight %}
 
 
 Activating the container can be done via code:
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = ...; // Reference to a space proxy.
 IEventListenerContainer container = EventListenerContainerFactory.CreateContainer(spaceProxy, new DataProcessor());
 container.Start();
-
 {% endhighlight %}
 
 
 Or XML:
 
 {% highlight xml %}
-
 <EventContainers>
     <add Name="MyDataProcessor" SpaceProxyName="..."/>
 </EventContainers>
-
 {% endhighlight %}
 
 
@@ -136,7 +130,6 @@ The space serves several purposes in an EDA/SOA type of application:
 - **In Memory Data Grid (IMDG)** - in this case, the space is used as a distributed object repository, that provides in-memory access to distributed data. Data can be distributed in various topologies - partitioned and replicated are the main ones. In a typical Space-Based Architecture, the space instances are collocated within each processing unit and therefore provide local access to distributed data required by POCO services running under that processing unit. The domain model is also POCO-driven. Data objects are basically objects with annotations, (which add specific metadata required by the Data Grid to mark indexed fields), the affinity-key, and whether the object should be persisted or not, as can be seen in the code snippet below:
 
 {% highlight java %}
-
 [SpaceClass]
 public class Data
 {
@@ -146,7 +139,6 @@ public class Data
     [SpaceRouting]
     public String Type { get; set; }
 }
-
 {% endhighlight %}
 
 
@@ -175,13 +167,11 @@ The following is a snippet taken from the example SLA definition section of the 
 
 
 {% highlight xml %}
-
 <os-sla:sla cluster-schema="partitioned-sync2backup" number-of-instances="2" number-of-backups="1" max-instances-per-vm="1">
     <os-sla:monitors>
         <os-sla:bean-property-monitor name="Processed Data" bean-ref="dataProcessedCounter" property-name="processedDataCount" />
     </os-sla:monitors>
 </os-sla:sla>
-
 {% endhighlight %}
 
 {toc-zone}

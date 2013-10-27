@@ -38,7 +38,11 @@ Processing units that were not deployed in the context of an application, will b
 
 Dependencies between processing units are depicted by an arrow flowing in the direction of "depends on".
 For example, in the screenshot below, the feeder depends on the Space to be alive.
-{info}For more information on processing unit dependencies, see [Application deployment and processing unit dependencies|Deploying onto the Service Grid#Application Deployment and Processing Unit Dependencies]{info}
+
+{% info %}
+For more information on processing unit dependencies, see [Application deployment and processing unit dependencies|Deploying onto the Service Grid#Application Deployment and Processing Unit Dependencies]
+{% endinfo %}
+
 
 !GRA:Images^application_dependency.png|border=1!
 
@@ -90,6 +94,10 @@ The logs view allows the user to browse the application logs, filter or search t
 
 The events time line is filtered per application chosen from the application drop-down menu.
 The events time-line shows the deployment life cycle of all the processing units belonging to this application.
-{info}For more information on the events displayed, see [Events time-line tab in dashboard view|Dashboard View#Events time-line] {info}
+
+{% info %}
+For more information on the events displayed, see [Events time-line tab in dashboard view|Dashboard View#Events time-line]
+{% endinfo %}
+
 
 !GRA:Images^events_timeline_in_application.png|border=1!

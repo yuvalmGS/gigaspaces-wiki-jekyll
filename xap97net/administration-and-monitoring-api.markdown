@@ -18,7 +18,6 @@ Before diving into the Service Grid Admin API, here are some code examples showi
 {gcard:GSA}
 
 {% highlight java %}
-
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -33,14 +32,12 @@ foreach (IGridServiceAgent gsa in admin.GridServiceAgents)
         Console.WriteLine("   -> Process [" + String.Join(",", processDetails.Command.ToArray()) + "]");
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:GSM}
 
 {% highlight java %}
-
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -50,14 +47,12 @@ foreach (IGridServiceManager gsm in admin.GridServiceManagers)
 {
     Console.WriteLine("GSM [" + gsm.Uid + "] running on Machine " + gsm.Machine.HostAddress);
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:GSC}
 
 {% highlight java %}
-
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -73,14 +68,12 @@ foreach (IGridServiceContainer gsc in admin.GridServiceContainers)
         puInstance.InstanceId + "][" + puInstance.BackupId + "]");
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Processing Unit}
 
 {% highlight java %}
-
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -116,14 +109,12 @@ foreach (IProcessingUnit processingUnit in admin.getProcessingUnits())
         }
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Space}
 
 {% highlight java %}
-
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -154,14 +145,12 @@ foreach (ISpace space in admin.Spaces)
         }
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Virtual Machine}
 
 {% highlight java %}
-
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -189,14 +178,12 @@ foreach (IVirtualMachine virtualMachine in admin.VirtualMachines)
         Console.WriteLine("   -> Space [" + spaceInstance.Uid + "]");
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Machine}
 
 {% highlight java %}
-
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -217,7 +204,6 @@ foreach (IMachine machine in admin.Machines)
         Console.WriteLine("   -> PU [" + processingUnitInstance.Uid + "]");
     }
 }
-
 {% endhighlight %}
 
 {gcard}
@@ -375,7 +361,6 @@ If we want to register, for example, for Grid Service Container additions, we ca
 
 
 {% highlight java %}
-
 admin.GridServiceContainers.GridServiceContainerAdded += HandleGridServiceContainerAdded;
 
 private void HandleGridServiceContainerAdded(object sender, GridServiceContainerEventArgs e)
@@ -383,7 +368,6 @@ private void HandleGridServiceContainerAdded(object sender, GridServiceContainer
     IGridServiceContainer gsc = e.GridServiceContainer;
     // do something here
 }
-
 {% endhighlight %}
 
 
@@ -391,7 +375,6 @@ Removals are done in a similar manner:
 
 
 {% highlight java %}
-
 admin.GridServiceContainers.GridServiceContainerRemoved += HandleGridServiceContainerRemoved;
 
 void HandleGridServiceContainerRemoved(object sender, GridServiceContainerEventArgs e)
@@ -399,7 +382,6 @@ void HandleGridServiceContainerRemoved(object sender, GridServiceContainerEventA
     IGridServiceContainer gsc = e.GridServiceContainer;
     // do something here
 }
-
 {% endhighlight %}
 
 
@@ -407,7 +389,6 @@ All other data structures use a similar API to register for events. Some might h
 
 
 {% highlight java %}
-
 admin.Spaces.SpaceModeChanged += HandleSpaceModeChanged;
 
 void Spaces_SpaceModeChanged(object sender, SpaceModeChangedEventArgs e)
@@ -417,7 +398,6 @@ void Spaces_SpaceModeChanged(object sender, SpaceModeChangedEventArgs e)
 				"changed mode from [" + e.PreviousMode + "] to [" + e.NewMode + "]");
 
 }
-
 {% endhighlight %}
 
 

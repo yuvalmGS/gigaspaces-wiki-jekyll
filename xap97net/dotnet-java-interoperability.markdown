@@ -14,7 +14,6 @@ page_id: 63799325
 || C# || Java ||
 |
 {% highlight java %}
-
 using GigaSpaces.Core.Metadata;
 
 namespace MyCompany.MyProject.Entities
@@ -31,11 +30,9 @@ namespace MyCompany.MyProject.Entities
         }
     }
 }
-
 {% endhighlight %}
 |
 {% highlight java %}
-
 package com.mycompany.myproject.entities;
 
 public class Person
@@ -50,7 +47,6 @@ public class Person
         this.name = name;
     }
 }
-
 {% endhighlight %}
 |
 

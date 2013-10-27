@@ -48,7 +48,6 @@ We want to demonstrate storing some object to the space. To do this, let's creat
 3. Add the following code to the `Message` class:
 
 {% highlight java %}
-
 public class Message
 {
     private String _text;
@@ -67,7 +66,6 @@ public class Message
         set { this._text = value; }
     }
 }
-
 {% endhighlight %}
 
 
@@ -77,9 +75,7 @@ The XAP.NET API used in this example is located in the `GigaSpaces.Core` namespa
 Switch to the **Program.cs** editor, and add a `using` statement to include `GigaSpaces.Core`:
 
 {% highlight java %}
-
 using GigaSpaces.Core;
-
 {% endhighlight %}
 
 
@@ -90,14 +86,12 @@ We need to establish a connection to a space which stores the object. To do this
 Edit the `Main` method and add the following code:
 
 {% highlight java %}
-
 String spaceUrl = "/./myEmbeddedSpace";
 
 // Connect to space:
 Console.WriteLine("*** Connecting to space using \"" + spaceUrl + "\"...");
 ISpaceProxy proxy = GigaSpacesFactory.FindSpace(spaceUrl);
 Console.WriteLine("*** Connected to space.");
-
 {% endhighlight %}
 
 
@@ -108,12 +102,10 @@ The next step is to create a `Message` object, and store it in the space. To do 
 Add the following code to the `Main` method, after the previous code:
 
 {% highlight java %}
-
 // Write a message to the space:
 Message outgoingMessage = new Message("Hello World");
 Console.WriteLine("Writing Message [" + outgoingMessage.Text + "]");
 proxy.Write(outgoingMessage);
-
 {% endhighlight %}
 
 
@@ -126,14 +118,12 @@ A template is an object of the type we wish to query, where the null properties 
 Add the following code to the `Main` method, after the previous code:
 
 {% highlight java %}
-
 // Take a message from the space:
 Message incomingMessage = proxy.Take(new Message());
 Console.WriteLine("Took Message [" + incomingMessage.Text + "]");
 
 Console.WriteLine("Press ENTER to exit.");
 Console.ReadLine();
-
 {% endhighlight %}
 
 
@@ -144,7 +134,6 @@ To run the program, from the **Debug** menu, select **Start Debugging**.
 The following shows the complete program code, with some minor modifications:
 
 {% highlight java %}
-
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -194,6 +183,5 @@ namespace HelloWorld
         }
     }
 }
-
 {% endhighlight %}
 

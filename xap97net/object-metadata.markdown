@@ -30,18 +30,14 @@ To change this behaviour for a specific class, apply a `\[SpaceClass\]` attribut
 
 
 {% highlight java %}
-
 public class Person {...}
-
 {% endhighlight %}
 
 This is actually equivalent to the following declaration:
 
 {% highlight java %}
-
 [SpaceClass(IncludeFields=IncludeMembers.Public, IncludeProperties=IncludeMembers.Public)]
 public class Person {...}
-
 {% endhighlight %}
 
 
@@ -49,21 +45,24 @@ public class Person {...}
 
 
 {% highlight java %}
-
 [SpaceClass(IncludeFields=IncludeMembers.All, IncludeProperties=IncludeMembers.None)]
 public class Person {...}
-
 {% endhighlight %}
 
 
-{info:title=Different Accessors for Properties}
-Starting with .NET v2.0, properties can have different accessors for getters and setters (e.g. public getter and private setter). In such cases, if either the getter or the setter is public, the space treats the property as public (i.e. `IncludeProperties=IncludeMembers.Public` means that this property is stored).
-{info}
 
-{info:title=Read-Only Properties}
+{% info title=Different Accessors for Properties %}
+Starting with .NET v2.0, properties can have different accessors for getters and setters (e.g. public getter and private setter). In such cases, if either the getter or the setter is public, the space treats the property as public (i.e. `IncludeProperties=IncludeMembers.Public` means that this property is stored).
+{% endinfo %}
+
+
+
+{% info title=Read-Only Properties %}
 Read-only properties (getter without setter) are stored in the space, but when the object is deserialized, the value is not restored, since there is no setter. This enables the space to be queried using such properties. There are two common scenarios for read-only properties:
 - Calculated value -- the property returns a calculated value based on other fields/properties. This isn't a problem since no data is lost due to the 'missing' setter.
-- Access protection -- the class designer wishes to protect the property from outside changes. This is probably a problem since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property and including the field (as explained next).{info}
+- Access protection -- the class designer wishes to protect the property from outside changes. This is probably a problem since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property and including the field (as explained next).
+{% endinfo %}
+
 
 To change the behaviour of a specific field/property, apply a `\[SpaceProperty\]` to include it, or a `\[SpaceExclude\]` to exclude it. These settings override the class-level settings.
 
@@ -71,13 +70,11 @@ To change the behaviour of a specific field/property, apply a `\[SpaceProperty\]
 
 
 {% highlight java %}
-
 public class Person
 {
     [SpaceExclude]
     public string Password {...}
 }
-
 {% endhighlight %}
 
 
@@ -86,18 +83,19 @@ public class Person
 If a property is commonly used in space queries, you can instruct the space to index that property for improved read performance. To do this, use the `\[SpaceIndex\]` attribute, and specify `Type=SpaceIndexType.Basic`.
 
 {% highlight java %}
-
 public class Person
 {
     [SpaceIndex(Type=SpaceIndexType.Basic)]
     public string UserID {...}
 }
-
 {% endhighlight %}
 
 
-{info:title=Indexing Pros and Cons}
-Indexing a property speeds up queries which use the property, but slows down write operations for that object (since the space needs to index the property). For that reason, indexing is off by default, and it's up to the user to decide which fields should be indexed. {info}
+
+{% info title=Indexing Pros and Cons %}
+Indexing a property speeds up queries which use the property, but slows down write operations for that object (since the space needs to index the property). For that reason, indexing is off by default, and it's up to the user to decide which fields should be indexed.
+{% endinfo %}
+
 
 # Unique Constraints
 
@@ -138,35 +136,33 @@ Note that only one property in a class can be marked as a version property, and 
 
 When a class contains a field or a property of not a nullable type, (for instance a primitive such as `int` or a struct such as `DateTime`), it is recommended to specify a null value for it that will be used when querying the space for that class. The `NullValue` attribute instructs the space to ignore this field when performing matching or partial update, when the content of the field in the template equals the defined `NullValue`.
 
-{info:title=Nullables}
+
+{% info title=Nullables %}
 It is recommended to avoid the usage of such fields and properties, and the need to define null values, by wrapping them with their corresponding Nullable, for instance Nullable<int> or Nullable<DateTime>.
-{info}
+{% endinfo %}
+
 
 To specify a null value, the field or property should be marked with the `\[SpaceProperty(NullValue = ?)\]` attribute:
 
 Example #1 - Null value on a primitive int
 
 {% highlight java %}
-
 public class Person
 {
     [SpaceProperty(NullValue = -1)]
     public int Age {...}
 }
-
 {% endhighlight %}
 
 
 Example #2 - Null value on DateTime
 
 {% highlight java %}
-
 public class Person
 {
     [SpaceProperty(NullValue = "1900-01-01T12:00:00")]
     public DateTime BornDate {...}
 }
-
 {% endhighlight %}
 
 
@@ -175,7 +171,6 @@ public class Person
 By default, the name of the class in the space is the fully-qualified class name (i.e. including namespace), and the properties/fields names in the space equal to the .NET name. In some cases, usually in interoperability scenarios, you may need to map your .NET class name and properties to different names in the space. You can do that using the `AliasName` property on `\[SpaceClass\]` and `\[SpaceProperty\]`. For example, the following .NET Person class contains mapping to an equivalent Java Person class:
 
 {% highlight java %}
-
 namespace MyCompany.MyProject
 {
     [SpaceClass(AliasName="com.mycompany.myproject.Person")]
@@ -185,7 +180,6 @@ namespace MyCompany.MyProject
         public String FirstName {...}
     }
 }
-
 {% endhighlight %}
 
 For more information, see [GigaSpaces.NET - Interoperability With Non .NET Applications|Interoperability].{note:title=AliasName and SqlQuery}
@@ -196,10 +190,8 @@ When using space SqlQuery on an object with properties which are aliased, the qu
 The space can be attached to an external data source and persist its classes through it. A certain class can be specified if it should be persisted or not. To do this, use the `\[SpaceClass(Persist=true)\]` or `\[SpaceClass(Persist=false)\]` class level attribute.
 
 {% highlight java %}
-
 [SpaceClass(Persist=false)]
 public class Person {...}
-
 {% endhighlight %}
 
 
@@ -210,10 +202,8 @@ The default is `\[SpaceClass(Persist=true)\]`.
 Some cluster toplogies have replication defined, which means that some or all of the data is replicated between the spaces. In this case, it can be specified whether each class should be replicated or not, by using the `\[SpaceClass(Replicate=true)\]` or `\[SpaceClass(Replicate=false)\]` class level attribute.
 
 {% highlight java %}
-
 [SpaceClass(Replicate=false)]
 public class Person {...}
-
 {% endhighlight %}
 
 
@@ -224,10 +214,8 @@ The default is `\[SpaceClass(Replicate=true)\]`.
 A class can be marked to operate in FIFO mode, which means that all the insert, removal and notification of this class should be done in First-in-First-out mode. It can be specified whether each class should operate in FIFO mode or not, by using the `\[SpaceClass(Fifo=true)\]` or `\[SpaceClass(Fifo=false)\]` class level attribute.
 
 {% highlight java %}
-
 [SpaceClass(Fifo=true)]
 public class Person {...}
-
 {% endhighlight %}
 
 

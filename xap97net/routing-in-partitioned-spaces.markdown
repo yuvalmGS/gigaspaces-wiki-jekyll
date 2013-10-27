@@ -22,10 +22,8 @@ In order to accomplish that a **routing property** can be defined on the entry t
 
 
 {% highlight java %}
-
 Target partition space ID =
     getRoutingPropertyValue(entry).hashCode() % (number of partitions)
-
 {% endhighlight %}
 
 

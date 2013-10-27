@@ -46,7 +46,6 @@ GigaSpaces XAP.NET tools and applications use [Java Native Interface (JNI)|http:
 To configure JVM settings, add a `GigaSpaces` section to the application configuration file:
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
    <configSections>
@@ -58,7 +57,6 @@ To configure JVM settings, add a `GigaSpaces` section to the application configu
       </JvmSettings>
    </GigaSpaces>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -69,9 +67,7 @@ The rest of this section explains and demonstrates the various JVM settings.
 The `JvmCustomOptions` section accepts a collection of custom options, similar to `java.exe` options. For example, this
 
 {% highlight java %}
-
 java.exe -XX:+AggressiveOpts
-
 {% endhighlight %}
 
 
@@ -79,13 +75,11 @@ is equivalent to
 
 
 {% highlight xml %}
-
 <JvmSettings>
    <JvmCustomOptions>
       <add Option="-XX:+AggressiveOpts"/>
    </JvmCustomOptions>
 </JvmSettings>
-
 {% endhighlight %}
 
 
@@ -100,19 +94,15 @@ The `java.exe` tool supports two mutually exclusive modes, called `-client` and 
 This option cannot be configured in `JvmCustomOptions` because it is not supported by `JNI`. Instead, `JvmDll` comes to the rescue. For example, this
 
 {% highlight java %}
-
 java.exe -server
-
 {% endhighlight %}
 
 is equivalent to
 
 {% highlight xml %}
-
 <JvmSettings>
    <JvmDll Mode="Server"/>
 </JvmSettings>
-
 {% endhighlight %}
 
 
@@ -121,11 +111,9 @@ If `Mode` is set to `Client` or `Server`, the `<XapNet.Runtime.JavaHome>` (expla
 If `Mode` is set to `Custom`, the `<XapNet.Runtime.JavaHome>` is ignored, and the location of the jvm is determined by a `Path` attribute. for example:
 
 {% highlight xml %}
-
 <JvmSettings>
    <JvmDll Mode="Custom" Path="C:\Foo\MyJvm.dll"/>
 </JvmSettings>
-
 {% endhighlight %}
 
 
@@ -133,7 +121,6 @@ If `Mode` is set to `Custom`, the `<XapNet.Runtime.JavaHome>` is ignored, and th
 
 `java.exe` provides two options to control memory allocation: -Xms determines the initial heap size, and -Xms determines the maximum heap size. The `JvmSettings` section offers an alias section called `JvmMemory`. For example:
 {% highlight xml %}
-
 <JvmSettings>
    <JvmCustomOptions>
       <add Option="-Xms512m"/>
@@ -142,7 +129,6 @@ If `Mode` is set to `Custom`, the `<XapNet.Runtime.JavaHome>` is ignored, and th
    <!-- is equivalent to -->
    <JvmMemory InitialHeapSizeInMB="512" MaximumHeapSizeInMB="1024"/>
 </JvmSettings>
-
 {% endhighlight %}
 
 
@@ -153,39 +139,31 @@ If `Mode` is set to `Custom`, the `<XapNet.Runtime.JavaHome>` is ignored, and th
 The [class path|http://java.sun.com/javase/6/docs/technotes/tools/windows/classpath.html] is the path that Java searches for classes and other resource files. It is usually specified as a semicolon-separated list of paths. The `JvmSettings` offers a more readable solution in the form of `JvmClassPath`. The following examples are equivalent:
 
 {% highlight java %}
-
 java.exe -classpath C:\Foo;C:\Bar
-
 {% endhighlight %}
 
 
 {% highlight java %}
-
 java.exe -Djava.class.path=C:\Foo;C:\Bar
-
 {% endhighlight %}
 
 
 {% highlight xml %}
-
 <JvmSettings>
    <JvmCustomOptions>
       <add Option="-Djava.class.path=C:\Foo;C:\Bar"/>
    </JvmCustomOptions>
 </JvmSettings>
-
 {% endhighlight %}
 
 
 {% highlight xml %}
-
 <JvmSettings>
    <JvmClassPath>
       <add Path="C:\Foo"/>
       <add Path="C:\Bar"/>
    </JvmClassPath>
 </JvmSettings>
-
 {% endhighlight %}
 
 
@@ -197,32 +175,26 @@ Similar to the class path, which determines the location of user classes, the bo
 
 
 {% highlight java %}
-
 java.exe -Xbootclasspath/p:C:\Foo;C:\Bar
-
 {% endhighlight %}
 
 
 {% highlight xml %}
-
 <JvmSettings>
    <JvmCustomOptions>
       <add Option="-Xbootclasspath/p:C:\Foo;C:\Bar"/>
    </JvmCustomOptions>
 </JvmSettings>
-
 {% endhighlight %}
 
 
 {% highlight xml %}
-
 <JvmSettings>
    <JvmBootClassPath>
       <add Path="C:\Foo"/>
       <add Path="C:\Bar"/>
    </JvmBootClassPath>
 </JvmSettings>
-
 {% endhighlight %}
 
 

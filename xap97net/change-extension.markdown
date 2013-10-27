@@ -19,14 +19,16 @@ Using the `AddAndGet` operation you can do that using one method call and get an
 Following is an example of incrementing a property named `Counter` inside an entry of type `WordCount`:
 
 {% highlight java %}
-
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<WordCount> idQuery = new IdQuery<WordCount>(id, routing);
 int? newCounter = ISpaceProxy.AddAndGet(idQuery, "Counter", 1);
-
 {% endhighlight %}
 
 
 (!) You should use the primitive wrapper types as the operation semantic is to return null if there is no object matching the provided id query
-{info}Add `using GigaSpaces.Core.Change.Extensions;` in order to have the extension methods available.{info}
+
+{% info %}
+Add `using GigaSpaces.Core.Change.Extensions;` in order to have the extension methods available.
+{% endinfo %}
+

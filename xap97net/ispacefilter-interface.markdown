@@ -12,7 +12,6 @@ page_id: 63799397
 The `ISpaceFilter` interface implements IDisposable and consists of 3 additional methods.
 
 {% highlight java %}
-
 public interface ISpaceFilter : IDisposable
 {
   void Init(ISpaceProxy proxy, string filterId, IDictionary<string, string> customProperties, FilterPriority priority)
@@ -34,7 +33,6 @@ public interface ISpaceFilter : IDisposable
     // performs operation when the filter is being disposed
   }
 }
-
 {% endhighlight %}
 
 

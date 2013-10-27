@@ -21,7 +21,6 @@ Here is a simple example of polling event container construction:
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -42,7 +41,6 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-
 {% endhighlight %}
 
 
@@ -50,7 +48,6 @@ Constructing the polling container that uses the `SimpleListener` class as the e
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 IEventListenerContainer<Data> eventListenerContainer = EventListenerContainerFactory.CreateContainer<Data>(spaceProxy, new SimpleListener());
 
@@ -58,14 +55,12 @@ eventListenerContainer.Start();
 
 // when needed to dispose of the container
 eventListenerContainer.Dispose()
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 PollingEventListenerContainer<Data> pollingEventListenerContainer = new PollingEventListenerContainer<Data>(spaceProxy);
@@ -75,7 +70,6 @@ pollingEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAd
 
 // when needed dispose of the container
 pollingEventListenerContainer.Dispose();
-
 {% endhighlight %}
 
 
@@ -83,17 +77,19 @@ Event processing method
 
 
 {% highlight java %}
-
 public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data> e)
 {
 	Data data = e.Data;
 	//process Data here and return processed data
 }
-
 {% endhighlight %}
 
 
-{info}[DelegateDataEventArrivedAdapter|Event Listener Container#DelegateDataEventArrivedAdapter] is a class that adapts the supplied user method to the [SpaceDataEventHandler|Event Listener Container#SpaceDataEventHandler] delegate and contains a built in logic of writing back event results to the space{info}
+
+{% info %}
+[DelegateDataEventArrivedAdapter|Event Listener Container#DelegateDataEventArrivedAdapter] is a class that adapts the supplied user method to the [SpaceDataEventHandler|Event Listener Container#SpaceDataEventHandler] delegate and contains a built in logic of writing back event results to the space
+{% endinfo %}
+
 
 {gcard}
 {gdeck}
@@ -121,7 +117,6 @@ Here is an example of a polling container with 3 concurrent consumers and a maxi
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven(MinConcurrentConsumers = 3, MaxConcurrentConsumers = 5]
 public class SimpleListener
 {
@@ -142,19 +137,16 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.MinConcurrentConsumers = 3;
 pollingEventListenerContainer.MaxConcurrentConsumers = 5;
-
 {% endhighlight %}
 
 {gcard}
@@ -166,26 +158,22 @@ Sometimes, it is very convenient to have a listener instance per concurrent poll
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven(MinConcurrentConsumers = 3, MaxConcurrentConsumers = 5, CloneEventListenersPerThread = true]
 public class SimpleListener : ICloneable
 {
  ...
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.MinConcurrentConsumers = 3;
 pollingEventListenerContainer.MaxConcurrentConsumers = 5;
 pollingEventListenerContainer.CloneEventListenersPerThread = true;
-
 {% endhighlight %}
 
 {gcard}
@@ -199,7 +187,6 @@ When performing receive operations, a template is defined, creating a virtualize
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -220,18 +207,15 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.Template = new SqlQuery<Data>("Processed = false");
-
 {% endhighlight %}
 
 {gcard}
@@ -246,7 +230,6 @@ The event template object needs to be of IQuery<TData> type, which means if you 
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -269,14 +252,12 @@ public class SimpleListener
         //process Data here
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.DynamicTemplate = new ExpiredDataTemplateProvider.GetDynamicTemplate;
@@ -294,7 +275,6 @@ public class ExpiredDataTemplateProvider
         return dynamicTemplate;
     }
 }
-
 {% endhighlight %}
 
 {gcard}
@@ -312,7 +292,6 @@ The polling receive container performs receive operations. The actual implementa
 
 
 {% highlight java %}
-
 public interface IReceiveOperationHandler<TData>
 {
     /// <summary>
@@ -335,7 +314,6 @@ public interface IReceiveOperationHandler<TData>
     /// <returns>An batch of objects that will be passed to the event listener, null result doesn't trigger an event.</returns>
     TData[] ReceiveBatch(IQuery<TData> template, ISpaceProxy proxy, ITransaction tx, long receiveTimeout, int batchSize);
 }
-
 {% endhighlight %}
 
 
@@ -355,7 +333,6 @@ Here is an example of how the receive operation handler can be configured with `
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -383,19 +360,16 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 ExclusiveReadReceiveOperationHandler<Data> receiveHandler = new ExclusiveReadReceiveOperationHandler<Data>();
 pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
-
 {% endhighlight %}
 
 {gcard}
@@ -409,7 +383,6 @@ When working with a partitioned cluster, and configuring the polling container t
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -439,21 +412,18 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 TakeReceiveOperationHandler<Data> receiveHandler = new TakeReceiveOperationHandler<Data>();
 receiveHandler.NonBlocking = true;
 receiveHandler.NonBlockingFactor = 10;
 pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
-
 {% endhighlight %}
 
 {gcard}
@@ -473,7 +443,6 @@ Here is an example of batch notifications using `ReadReceiveOperationHandler`:
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven(ReceiveBatchSize = 100)]
 public class SimpleListener
 {
@@ -501,14 +470,12 @@ public class SimpleListener
         //process batch Data here and return processed data
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 ReadReceiveOperationHandler<Data> receiveHandler = new ReadReceiveOperationHandler<Data>();
@@ -519,7 +486,6 @@ pollingEventListenerContainer.BatchDataEventArrived += new DelegateDataEventArri
 
 // when needed dispose of the container
 pollingEventListenerContainer.Dispose();
-
 {% endhighlight %}
 
 {gcard}
@@ -535,26 +501,22 @@ Both the receive operation, and the actual event action can be configured to be 
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven]
 [TransactionalEvent(TransactionType = TransactionType.Distributed)]
 public class SimpleListener
 {
  ...
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 PollingEventListenerContainer<Data> pollingEventListenerContainer = new PollingEventListenerContainer<Data>(spaceProxy);
 pollingEventListenerContainer.TransactionType = TransactionType.Distributed;
-
 {% endhighlight %}
 
 {gcard}
@@ -568,25 +530,21 @@ Here is an example how timeout value can be set with the polling container:
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven]
 [TransactionalEvent(TransactionType = TransactionType.Distributed, TransactionTimeout = 1000)]
 public class SimpleListener
 {
  ...
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.TransactionTimeout = 1000;
-
 {% endhighlight %}
 
 {gcard}
@@ -598,7 +556,6 @@ It is possible to receive a reference to the on going transaction as part of the
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven]
 [TransactionalEvent(TransactionType = TransactionType.Distributed)]
 public class SimpleListener
@@ -611,20 +568,17 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 PollingEventListenerContainer<Data> pollingEventListenerContainer = new PollingEventListenerContainer<Data>(spaceProxy);
 pollingEventListenerContainer.TransactionType = TransactionType.Distributed;
 pollingEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAdapter<Data,Data>(ProcessData).WriteBackDataEventHandler;
-
 {% endhighlight %}
 
 {gcard}
@@ -638,7 +592,6 @@ When configuring the polling event container to perform its receive operation, a
 
 
 {% highlight java %}
-
 public interface ITriggerOperationHandler<TData>
 {
     /// <summary>
@@ -664,7 +617,6 @@ public interface ITriggerOperationHandler<TData>
     /// </summary>
     bool UseTriggerAsTemplate { get; }
 }
-
 {% endhighlight %}
 
 
@@ -674,7 +626,6 @@ XAP.NET comes with a built-in implementation of this interface, called `ReadTrig
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -702,19 +653,16 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 ReadTriggerOperationHandler<Data> triggerHandler = new ReadTriggerOperationHandler<Data>();
 pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
-
 {% endhighlight %}
 
 {gcard}
@@ -742,7 +690,6 @@ Here is an example of how to subscribe to this event:
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -755,29 +702,24 @@ public class SimpleListener
 
     ...
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.ContainerExceptionOccured += ExceptionHandler;
-
 {% endhighlight %}
 
 
 {% highlight java %}
-
 public void ExceptionHandler(object sender, ContainerExceptionEventArgs e)
 {
      Console.WriteLine("Container Name: " + ((IEventListenerContainer<Data>)sender).Name);
      Console.WriteLine(e.Exception.Message);
 }
-
 {% endhighlight %}
 
 {gcard}
@@ -793,7 +735,6 @@ Here is an example of how to subscribe to this event:
 {gcard:Using EventListenerContainerFactory}
 
 {% highlight java %}
-
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -806,29 +747,24 @@ public class SimpleListener
 
     ...
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
 
 {% highlight java %}
-
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.UserExceptionOccured += ExceptionHandler;
-
 {% endhighlight %}
 
 
 {% highlight java %}
-
 public void ExceptionHandler(object sender, UserExceptionEventArgs<Data> e)
 {
      if (e.Exception is MySpecialException)
      	 e.Ignore = true;
 }
-
 {% endhighlight %}
 
 {gcard}

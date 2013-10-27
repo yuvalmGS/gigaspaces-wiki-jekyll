@@ -88,7 +88,11 @@ GigaSpaces and its Space-Based-Architecture embrace the [reactive programming|ht
 
 The Space supports a number of APIs to allow for maximum flexibility to Space clients when accessing the Space:
 - The core [Space API|The ISpaceProxy Interface], which is the most recommended, allows you to read objects from the Space based on various criteria, write objects to it, remove objects from it and get notified about changes made to objects. This API supports transactions.
-{info:title=Accessing the Space from Other Languages}The code space API is also supported in [Java|XAP95:In Memory Data Grid] and [C++|XAP CPP]. This allows clients to access the space via these languages. It also supports [interoperability|Platform Interoperability in GigaSpaces] between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java{info}
+
+{% info title=Accessing the Space from Other Languages %}
+The code space API is also supported in [Java|XAP95:In Memory Data Grid] and [C++|XAP CPP]. This allows clients to access the space via these languages. It also supports [interoperability|Platform Interoperability in GigaSpaces] between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
+{% endinfo %}
+
 - The [Document API|Document (Schema-Free) API] allows you to develop your application in a schema-less manner. Using map-like objects, you can add attributes to data types in runtime.
 
 # Services on Top of the Space

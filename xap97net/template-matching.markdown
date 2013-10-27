@@ -24,41 +24,33 @@ The following examples assume the default constructor of **Person** initializes 
 Read an entry of type **Person** whose **FirstName** property is **John**:
 
 {% highlight java %}
-
 Person template = new Person();
 template.FirstName = "John";
 Person person = spaceProxy.Read(template);
-
 {% endhighlight %}
 
 
 Read an entry of type **Person** whose **FirstName** is **John** and **LastName** is **Smith**:
 
 {% highlight java %}
-
 Person template = new Person();
 template.FirstName = "John";
 template.LastName = "Smith";
 Person person = spaceProxy.Read(template);
-
 {% endhighlight %}
 
 
 If none of the properties are set, all the entries of the type are matched. For example, to count all entries of type **Person**:
 
 {% highlight java %}
-
 int numOfPersons = spaceProxy.Count(new Person());
-
 {% endhighlight %}
 
 
 If the template class is null, all the entries in the space are matched. For example, to clear all entries from the space:
 
 {% highlight java %}
-
 spaceProxy.Clear(null);
-
 {% endhighlight %}
 
 
@@ -73,14 +65,12 @@ For example, suppose class **Citizen** extends class **Person**:
 
 
 {% highlight java %}
-
 spaceProxy.Write(new Person());
 spaceProxy.Write(new Citizen());
 // Count persons - should return 2:
 int numberOfPersons = spaceProxy.Count(new Person());
 // Count citizends - should return 1:
 int numberOfCitizens = spaceProxy.Count(new Citizen());
-
 {% endhighlight %}
 
 
@@ -98,14 +88,12 @@ For more information see [Routing In Partitioned Spaces].
 Properties with primitive types pose a problem - a primitive type cannot be set to null. For example, suppose class **Person** has property **Age** of type **int**, and we wrote the following piece of code which writes and reads a person:
 
 {% highlight java %}
-
 // Create a person and write it to the space:
 Person p1 = new Person();
 p1.Age = 30;
 spaceProxy.Write(p1);
 // Read person from space:
 Person p = spaceProxy.Read(new Person());
-
 {% endhighlight %}
 
 
@@ -114,7 +102,6 @@ We expect **p** to hold the person we just wrote to the space, but in fact it wi
 To overcome this issue we can map a primitive value to null via the `\[SpaceProperty(NullValue = ?)\]` attribute. For example:
 
 {% highlight java %}
-
 public class Person
 {
     private int age = -1;
@@ -124,7 +111,6 @@ public class Person
 
     // The rest of the class is omitted for brevity.
 }
-
 {% endhighlight %}
 
 

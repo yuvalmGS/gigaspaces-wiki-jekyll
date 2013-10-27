@@ -49,7 +49,6 @@ We also decide that **CatalogNumber** will be a primary key, partitioning will b
 The following is an example of how to introduce a new document type:
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = ... //Obtain a space proxy
 // Create type descriptor:
 SpaceTypeDescriptorBuilder typeBuilder = new SpaceTypeDescriptorBuilder("Product");
@@ -60,7 +59,6 @@ typeBuilder.AddPathIndex("Price", SpaceIndexType.Extended);
 ISpaceTypeDescriptor typeDescriptor = typeBuilder.Create();
 // Register type descriptor:
 spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
-
 {% endhighlight %}
 
 
@@ -71,7 +69,6 @@ Note that this code does not reflect the complete model - most of the properties
 To create a document in the space, create a `SpaceDocument` object using the type name, and set the desired properties. Then write it to the space using the regular `ISpaceProxy` write method:
 
 {% highlight java %}
-
 public void WriteProduct1(ISpaceProxy spaceProxy)
 {
     // 1. Create the document using the type name
@@ -102,7 +99,6 @@ public void WriteProduct1(ISpaceProxy spaceProxy)
     // 3. Write the document to the space:
     spaceProxy.write(document);
 }
-
 {% endhighlight %}
 
 
@@ -114,7 +110,6 @@ The `DocumentProperties` class extends IDictionary<String, Object> and besides b
 
 
 {% highlight java %}
-
 public void WriteProduct2(ISpaceProxy spaceProxy)
 {
     // 1. Create the document using the type name
@@ -145,7 +140,6 @@ public void WriteProduct2(ISpaceProxy spaceProxy)
     // 3. Write the document to the space:
     spaceProxy.write(document);
 }
-
 {% endhighlight %}
 
 
@@ -164,7 +158,6 @@ For example: Read a document of type **Product** whose **Name** is **Anvil**:
 
 
 {% highlight java %}
-
 public SpaceDocument ReadProductByTemplate(ISpaceProxy spaceProxy)
 {
     // Create template:
@@ -174,7 +167,6 @@ public SpaceDocument ReadProductByTemplate(ISpaceProxy spaceProxy)
     SpaceDocument result = spaceProxy.Read(template);
     return result;
 }
-
 {% endhighlight %}
 
 
@@ -185,7 +177,6 @@ You can use the [SqlQuery] to search for matching `SpaceDocument` entries.
 For example: to read a document of type **Product** whose **Price** is greater than 15:
 
 {% highlight java %}
-
 public SpaceDocument ReadProductBySql(ISpaceProxy spaceProxy)
 {
     // Create query:
@@ -195,7 +186,6 @@ public SpaceDocument ReadProductBySql(ISpaceProxy spaceProxy)
     SpaceDocument result = spaceProxy.Read(query);
     return result;
 }
-
 {% endhighlight %}
 
 
@@ -208,7 +198,6 @@ Consider indexing properties used in queries to boost performance.
 Queries on nested properties are supported. For example, to read products manufactured by **Acme**:
 
 {% highlight java %}
-
 public SpaceDocument[] ReadProductBySqlNested(ISpaceProxy spaceProxy)
 {
     // Create query:
@@ -219,7 +208,6 @@ public SpaceDocument[] ReadProductBySqlNested(ISpaceProxy spaceProxy)
     SpaceDocument[] result = spaceProxy.ReadMultiple(query, 10);
     return result;
 }
-
 {% endhighlight %}
 
 
@@ -228,12 +216,10 @@ public SpaceDocument[] ReadProductBySqlNested(ISpaceProxy spaceProxy)
 For example: Read a document of type **Product** whose ID is **hw-1234**:
 
 {% highlight java %}
-
 public SpaceDocument ReadProductById(ISpaceProxy spaceProxy)
 {
     return spaceProxy.ReadById(new IdQuery<SpaceDocument>("Product", "hw-1234"));
 }
-
 {% endhighlight %}
 
 
@@ -241,7 +227,6 @@ Queries by multiple Ids are supported. For example:
 
 
 {% highlight java %}
-
 public SpaceDocument[] ReadProductByMultipleIds(ISpaceProxy spaceProxy)
 {
     Object[] ids = new Object[] {"hw-1234", "av-9876"};
@@ -249,7 +234,6 @@ public SpaceDocument[] ReadProductByMultipleIds(ISpaceProxy spaceProxy)
         spaceProxy.ReadByIds(new IdsQuery<SpaceDocument>("Product", ids));
     return result.ResultsArray;
 }
-
 {% endhighlight %}
 
 
@@ -280,7 +264,6 @@ Here is a simple example of a polling event container configuration using a `Spa
 
 
 {% highlight java %}
-
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -301,7 +284,6 @@ public class SimpleListener
         //process Data here
     }
 }
-
 {% endhighlight %}
 
 
@@ -311,7 +293,6 @@ FIFO support is off by default with `SpaceDocument` entries (as with concrete ob
 
 
 {% highlight java %}
-
 // Create type descriptor:
 ISpaceProxy spaceProxy = ... //Obtain a space proxy
 // Create type descriptor:
@@ -321,7 +302,6 @@ typeBuilder.FifoSupport = FifoSupport.Operation;
 ISpaceTypeDescriptor typeDescriptor = typeBuilder.Create();
 // Register type descriptor:
 spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
-
 {% endhighlight %}
 
 
@@ -335,7 +315,6 @@ Optimistic locking is disabled by default with `SpaceDocument` entries (same as 
 
 
 {% highlight java %}
-
 // Create type descriptor:
 ISpaceProxy spaceProxy = ... //Obtain a space proxy
 // Create type descriptor:
@@ -345,7 +324,6 @@ typeBuilder.SupportsOptimisticLocking = true;
 ISpaceTypeDescriptor typeDescriptor = typeBuilder.Create();
 // Register type descriptor:
 spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
-
 {% endhighlight %}
 
 
@@ -358,7 +336,6 @@ By default, the dynamic properties of the document will be deserialized fully an
 However, the data stored in binary format will be not be visible via the management center or readable from an interoperable Java/C++ client, it will appear as binary large object to these clients and will only deserialized when a .NET client reads it. The way to specify the storage type is when constructing the type using the `SpaceTypeDescriptorBuilder`:
 
 {% highlight java %}
-
 // Create type descriptor:
 ISpaceProxy spaceProxy = ... //Obtain a space proxy
 // Create type descriptor:
@@ -369,7 +346,6 @@ typeBuilder.DynamicPropertiesSupport(true, StorageType.Binary);
 ISpaceTypeDescriptor typeDescriptor = typeBuilder.Create();
 // Register type descriptor:
 spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
-
 {% endhighlight %}
 
 
@@ -385,7 +361,6 @@ Example on how to implement an EDS that persists SpaceDocuments of type "Trade" 
 {gcard:Starting the Space}
 
 {% highlight java %}
-
 [ContainerInitializing]
 public void Initialize(BasicProcessingUnitContainer container)
 {
@@ -409,14 +384,12 @@ public void Initialize(BasicProcessingUnitContainer container)
   ISpaceProxy spaceProxy = container.CreateSpaceProxy(
     "MySpace", "/./MySpace", spaceConfig);
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:The EDS Implementation}
 
 {% highlight java %}
-
 public class DocumentEDS : ISqlDataSource
 {
 
@@ -462,7 +435,6 @@ public class DocumentEDS : ISqlDataSource
         //cleanup resources and close the persistency
     }
 }
-
 {% endhighlight %}
 
 {gcard}

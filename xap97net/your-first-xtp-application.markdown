@@ -55,7 +55,6 @@ The only object in our model is the `Data` object.
 
 
 {% highlight java %}
-
 [SpaceClass]
 public class Data
 {
@@ -87,7 +86,6 @@ public class Data
   }
 [..]
 }
-
 {% endhighlight %}
 
 
@@ -114,7 +112,6 @@ In this example the processor is colocated with the space that it needs to proce
 {gcard:Code}
 
 {% highlight java %}
-
 /// <summary>
 /// This class contain the processing logic, marked as polling event driven.
 /// </summary>
@@ -167,14 +164,12 @@ internal class DataProcessor : IProcessorStatisticsProvider
       [..]
   }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Configuration}
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -193,7 +188,6 @@ internal class DataProcessor : IProcessorStatisticsProvider
     </ProcessingUnitContainer>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -219,7 +213,6 @@ The data feeder is in charge of feeding the cluster with unprocessed data every 
 {gcard:Code}
 
 {% highlight java %}
-
 /// <summary>
 /// Data feeder feeds new data to the space that needs to be processed
 /// </summary>
@@ -293,14 +286,12 @@ public class DataFeeder
     [..]
   }
 }
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Configuration}
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -319,7 +310,6 @@ public class DataFeeder
     </ProcessingUnitContainer>
   </GigaSpaces.XAP>
 </configuration>
-
 {% endhighlight %}
 
 
@@ -367,10 +357,8 @@ After you run the build script and the copy deployment files script, the two dir
 
 
 {% highlight java %}
-
 <GigaSpaces Root>\Bin\Gs-Agent.exe
 <GigaSpaces Root>\Bin\Gs-ui
-
 {% endhighlight %}
 
 
@@ -386,10 +374,8 @@ Another way to deploy the processing units will be to use GigaSpaces Command Lin
 
 
 {% highlight java %}
-
 <GigaSpaces Root>\Bin\Gs-Cli.exe deploy DataProcessor
 <GigaSpaces Root>\Bin\Gs-Cli.exe deploy DataFeeder
-
 {% endhighlight %}
 
 
@@ -409,14 +395,12 @@ One option is to run the processing unit within the IDE, which should be used fo
 
 
 {% highlight java %}
-
 ProcessingUnitContainerHost processorContainerHost = new ProcessingUnitContainerHost(@"..\Processor\Deployment\DataProcessor", null, null);
 ProcessingUnitContainerHost feederContainerHost = new ProcessingUnitContainerHost(@"..\Feeder\Deployment\DataFeeder", null, null);
 
 [..]
 feederContainerHost.Dispose();
 processorContainerHost.Dispose();
-
 {% endhighlight %}
 
 
@@ -432,17 +416,13 @@ One option is to run a standalone process which will host the Processing Unit co
 The following deploys the data processor:
 
 {% highlight java %}
-
 PuInstance ..\Examples\ProcessingUnit\Processor\Deployment\DataProcessor
-
 {% endhighlight %}
 
 The following deploys the data feeder:
 
 {% highlight java %}
-
 PuInstance ..\Examples\ProcessingUnit\Feeder\Deployment\DataFeeder
-
 {% endhighlight %}
 
 

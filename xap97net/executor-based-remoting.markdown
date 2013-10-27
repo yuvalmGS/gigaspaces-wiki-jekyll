@@ -22,13 +22,11 @@ In order to support remoting, the first step is to define the contract between t
 
 
 {% highlight java %}
-
 public interface IDataProcessor
 {
     // Process a given Data object, returning the processed Data object.
     Data ProcessData(Data data);
 }
-
 {% endhighlight %}
 
 
@@ -40,7 +38,6 @@ Next, an implementation of this contract needs to be provided. This implementati
 
 
 {% highlight java %}
-
 [SpaceRemotingService]
 public class DataProcessor : IDataProcessor
 {
@@ -50,7 +47,6 @@ public class DataProcessor : IDataProcessor
     	return data;
     }
 }
-
 {% endhighlight %}
 
 
@@ -60,13 +56,11 @@ The next step is hosting the service in the grid. Hosting the service is done on
 
 
 {% highlight java %}
-
 [SpaceRemotingService]
 public class DataProcessor : IDataProcessor
 {
 ...
 }
-
 {% endhighlight %}
 
 
@@ -80,13 +74,11 @@ In order to use the exported `IDataProcessor` on the client side, the client sho
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a space proxy
 
 ExecutorRemotingProxyBuilder<IDataProcessor> proxyBuilder = new ExecutorRemotingProxyBuilder<IDataProcessor>(spaceProxy);
 
 IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
-
 {% endhighlight %}
 
 
@@ -98,14 +90,12 @@ By default, the service type full name will be used as its lookup name. However,
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a space proxy
 
 ExecutorRemotingProxyBuilder<IDataProcessor> proxyBuilder = new ExecutorRemotingProxyBuilder<IDataProcessor>(spaceProxy);
 proxyBuilder.LookupName = "MyServiceName";
 
 IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
-
 {% endhighlight %}
 
 
@@ -117,7 +107,6 @@ Many times, space remoting is done by exporting services in a space with a parti
 
 
 {% highlight java %}
-
 public interface IRemoteRoutingHandler
 {
     /// <summary>
@@ -129,7 +118,6 @@ public interface IRemoteRoutingHandler
     /// is returned, will use internal calcualtion of the routing index.</returns>
     Object ComputeRouting(SpaceRemotingInvocation invocation);
 }
-
 {% endhighlight %}
 
 
@@ -137,7 +125,6 @@ Here is a sample implementation which uses the first parameter `Data` object typ
 
 
 {% highlight java %}
-
 public class DataRemoteRoutingHandler : IRemoteRoutingHandler
 {
 
@@ -151,7 +138,6 @@ public class DataRemoteRoutingHandler : IRemoteRoutingHandler
         return null;
     }
 }
-
 {% endhighlight %}
 
 
@@ -159,14 +145,12 @@ Finally, the wiring is done in the following manner:
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a space proxy
 
 ExecutorRemotingProxyBuilder<IDataProcessor> proxyBuilder = new ExecutorRemotingProxyBuilder<IDataProcessor>(spaceProxy);
 proxyBuilder.RoutingHandler = new DataRemoteRoutingHandler();
 
 IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
-
 {% endhighlight %}
 
 
@@ -176,12 +160,10 @@ The above option of using the remote routing handler is very handy when not usin
 
 
 {% highlight java %}
-
 public interface IMyService
 {
     void DoSomething([ServiceRouting] int param1, int param2);
 }
-
 {% endhighlight %}
 
 
@@ -189,12 +171,10 @@ In the above example, the routing is done using the param1 value. When using com
 
 
 {% highlight java %}
-
 public interface IMyService {
 
     void doSomething([ServiceRouting("RoutingProperty")] Value param1, int param2);
 }
-
 {% endhighlight %}
 
 
@@ -210,7 +190,6 @@ The following code demonstrates how such service would be implemented:
 
 
 {% highlight java %}
-
 public interface ISimpleService
 {
     int Calc(int value1, int value2);
@@ -219,7 +198,6 @@ public interface ISimpleService
 
     int EndCalc(IAsyncResult asyncResult);
 }
-
 {% endhighlight %}
 
 
@@ -241,12 +219,10 @@ the service invocation parameters (if specified by the service contract) and the
 Here's a simple example of a service that supports transactions:
 
 {% highlight java %}
-
 public interface ITransactionalService
 {
     Object DoSomething(Object arg1, ITransaction tx);
 }
-
 {% endhighlight %}
 
 
@@ -259,13 +235,11 @@ This can be done by specifying a \[SpaceServiceOperation\] attribute over the on
 
 
 {% highlight java %}
-
 public interface ISimpleService
 {
     [SpaceServiceOperation(OneWay=true)]
     void Print(String msg);
 }
-
 {% endhighlight %}
 
 
@@ -280,7 +254,6 @@ Space based remoting allows you to inject different "aspects" that can wrap the 
 The client invocation aspect interface is shown below. You should implement this interface and wire it to the builder instance, as explained below:
 
 {% highlight java %}
-
 public interface IRemoteInvocationAspect
 {
     /// <summary>
@@ -292,14 +265,12 @@ public interface IRemoteInvocationAspect
     /// <param name="invocation">Object representing the invocation interception.</param>
     void Intercept(IInvocationInterception invocation);
 }
-
 {% endhighlight %}
 
 
 Here is a simple example of a client logging aspect which does not alter the result value:
 
 {% highlight java %}
-
 public class RemoteInvocationLoggingAspect : IRemoteInvocationAspect
 {
     void Intercept(IInvocationInterception invocation)
@@ -312,7 +283,6 @@ public class RemoteInvocationLoggingAspect : IRemoteInvocationAspect
         Console.WriteLine("Result :" + invocation.ResultValue);
     }
 }
-
 {% endhighlight %}
 
 
@@ -320,14 +290,12 @@ An implementation of such an aspect can be wired as follows:
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a space proxy
 
 ExecutorRemotingProxyBuilder<IDataProcessor> proxyBuilder = new ExecutorRemotingProxyBuilder<IDataProcessor>(spaceProxy);
 proxyBuilder.SetInvocationAspects(new MyLoggingAspect(), new MySecurityAspect());
 
 IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
-
 {% endhighlight %}
 
 
@@ -341,7 +309,6 @@ The server side invocation aspect interface is shown below. You should implement
 
 
 {% highlight java %}
-
 public interface IServiceExecutionAspect
 {
     /// <summary>
@@ -354,7 +321,6 @@ public interface IServiceExecutionAspect
     /// <param name="service">The service the invocations refers to.</param>
     void Intercept(IInvocationInterception invocation, Object service);
 }
-
 {% endhighlight %}
 
 
@@ -362,9 +328,7 @@ An implementation of such an aspect can be wired as follows:
 
 
 {% highlight java %}
-
 DomainServiceHost.Initialize(new MyExecutionLoggingAspect(), new MySecurityExecutionAspect());
-
 {% endhighlight %}
 
 
@@ -380,7 +344,6 @@ To create the meta arguments on the client side you should implement the followi
 
 
 {% highlight java %}
-
 public interface IMetaArgumentsHandler
 {
 
@@ -391,7 +354,6 @@ public interface IMetaArgumentsHandler
     /// <returns>meta data arguments.</returns>
     Object[] CreateMetaArguments(ISpaceRemotingInvocation invocation);
 }
-
 {% endhighlight %}
 
 
@@ -399,14 +361,12 @@ The following snippets show how to plug a custom meta arguments handler to the c
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a space proxy
 
 ExecutorRemotingProxyBuilder<IDataProcessor> proxyBuilder = new ExecutorRemotingProxyBuilder<IDataProcessor>(spaceProxy);
 proxyBuilder.MetaArgumentsHandler = new MyMetaArgumentsHandler();
 
 IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
-
 {% endhighlight %}
 
 
@@ -426,13 +386,11 @@ In order to use broadcast remoting, the executor broadcast remoting builder shou
 
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a space proxy
 
 ExecutorBroadcastRemotingProxyBuilder<IDataProcessor> proxyBuilder = new ExecutorBroadcastRemotingProxyBuilder<IDataProcessor>(spaceProxy);
 
 IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
-
 {% endhighlight %}
 
 
@@ -442,7 +400,6 @@ When broadcasting remote invocations to all active cluster members, and the remo
 
 
 {% highlight java %}
-
 public interface IRemoteResultReducer
 {
     /// <summary>
@@ -453,26 +410,22 @@ public interface IRemoteResultReducer
     /// <returns>Reduced result.</returns>
     Object Reduce(SpaceRemotingResultsCollection results, ISpaceRemotingInvocation invocation);
 }
-
 {% endhighlight %}
 
 
 Here's an example of broadcast remoting that executes a specific method of a service on all nodes and then aggregate the results to a single result:
 
 {% highlight java %}
-
 public interface ISearchService
 {
     //Search for results on the entire cluster
     IList<SearchResult> SearchFor(String keyword);
 }
-
 {% endhighlight %}
 
 The reducer implementation:
 
 {% highlight java %}
-
 public class SearchServiceReducer : IRemoteResultReducer
 {
     Object Reduce(SpaceRemotingResultsCollection results, ISpaceRemotingInvocation invocation)
@@ -495,20 +448,17 @@ public class SearchServiceReducer : IRemoteResultReducer
         return firstResult.Result;
     }
 }
-
 {% endhighlight %}
 
 The wiring is done as follows:
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a space proxy
 
 ExecutorBroadcastRemotingProxyBuilder<ISearchService> proxyBuilder = new ExecutorBroadcastRemotingProxyBuilder<ISearchService>(spaceProxy);
 proxyBuilder.ResultReducer = new SearchServiceReducer();
 
 ISearchService dataProcessorProxy = proxyBuilder.CreateProxy();
-
 {% endhighlight %}
 
 
@@ -521,7 +471,6 @@ when a single result arrives. In order to use a custom filter, one needs to plug
 
 
 {% highlight java %}
-
 public interface IRemoteResultFilter
 {
     /// <summary>
@@ -533,7 +482,6 @@ public interface IRemoteResultFilter
     /// <returns>Filter's decision</returns>
     SpaceTaskFilterDecision GetFilterDecision(SpaceRemotingFilterInfo info, ISpaceRemotingInvocation invocation);
 }
-
 {% endhighlight %}
 
 
@@ -546,19 +494,16 @@ Each time a result arrives the filter is called and the collection process is ma
 We demonstrate a filter usage by extending the previous example:
 
 {% highlight java %}
-
 public interface ISearchService
 {
     //Search for results on the entire cluster, when we have enough results return the aggregated results
     IList<SearchResult> SearchFor(String keyword, int enoughResults);
 }
-
 {% endhighlight %}
 
 The reducer implementation:
 
 {% highlight java %}
-
 public class SearchServiceReducer : IRemoteResultReducer, IRemoteResultFilter
 {
     Object Reduce(SpaceRemotingResultsCollection results, ISpaceRemotingInvocation invocation)
@@ -589,18 +534,15 @@ public class SearchServiceReducer : IRemoteResultReducer, IRemoteResultFilter
         return SpaceTaskFilterDecision.Break;
     }
 }
-
 {% endhighlight %}
 
 The wiring is done the same as above:
 
 {% highlight java %}
-
 ISpaceProxy spaceProxy = // obtain a space proxy
 
 ExecutorBroadcastRemotingProxyBuilder<ISearchService> proxyBuilder = new ExecutorBroadcastRemotingProxyBuilder<ISearchService>(spaceProxy);
 proxyBuilder.ResultReducer = new SearchServiceReducer();
 
 ISearchService dataProcessorProxy = proxyBuilder.CreateProxy();
-
 {% endhighlight %}

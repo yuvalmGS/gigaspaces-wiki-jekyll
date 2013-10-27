@@ -60,9 +60,7 @@ The structure of the [XAP66:configuration xml file|#Example configuration file] 
 The syntax of the command line for running the out-of-the-box benchmark is as follows:
 
 {% highlight java %}
-
 ..\..\lib\GigaSpaces.Core.Benchmarks.Launcher.exe {space-url}  {Input xml} {Results xml}
-
 {% endhighlight %}
 
 **space-url** - The url for finding the Space. You can control the Space topology by changing the space-url parameter.
@@ -70,17 +68,13 @@ Examples:
 Embedded:
 
 {% highlight java %}
-
 "/./benchmarkSpace?NoWriteLease=true&schema=cache&groups=myGroup"
-
 {% endhighlight %}
 
 Remote:
 
 {% highlight java %}
-
 "jini://localhost/*/remoteBenchmarkSpace?NoWriteLease=true&groups=myGroup"
-
 {% endhighlight %}
 
 **Input xml** - Location of the xml file that contains the benchmark run configuration. The default is Xmls\BenchmarkPerson.xml.
@@ -94,20 +88,16 @@ The Benchmark elements contain the following parameters:
 - **type** - Define the benchmark type name. The type structure is:
 
 {% highlight java %}
-
 {Benchmark type name}`2[[Object type name, Assembly name],[Adapter type name, Assembly name]], Assembly name
-
 {% endhighlight %}
 
 
 Example:
 
 {% highlight java %}
-
 <type>GigaSpaces.Core.Benchmarks.Implementations.Basic.ReadBenchmark`2[[GigaSpaces.Core.Benchmarks.Implementations.Basic.Objects.Person,
 GigaSpaces.Core.Benchmarks.Implementations.Basic],[GigaSpaces.Core.Benchmarks.Implementations.Basic.ObjectAdapters.PersonAdapter,
 GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.Implementations.Basic</type>
-
 {% endhighlight %}
 
 
@@ -137,7 +127,6 @@ Develop a custom benchmark with your own code for the benchmark scenario and the
 
 
 {% highlight java %}
-
 <type>GigaSpaces.Core.Benchmarks.Implementations.Basic.ReadBenchmark`2
 
 [[GigaSpaces.Core.Benchmarks.Implementations.Basic.Objects. MyObject, GigaSpaces.Core.Benchmarks.Implementations.Basic],
@@ -146,7 +135,6 @@ Develop a custom benchmark with your own code for the benchmark scenario and the
 
  GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.Implementations.Basic
 </type>
-
 {% endhighlight %}
 
 
@@ -162,19 +150,15 @@ Develop a custom benchmark with your own code for the benchmark scenario and the
 Both run scripts use the following pattern:
 
 {% highlight java %}
-
 ..\..\lib\GigaSpaces.Core.Benchmarks.Launcher.exe {space-url}  {Input xml} {Results xml}
-
 {% endhighlight %}
 
 Example command line for running an embedded benchmark run:
 
 {% highlight java %}
-
 ..\..\lib\GigaSpaces.Core.Benchmarks.Launcher.exe "/./benchmarkSpace?NoWriteLease=true&schema=cache&groups=myGroup"
 
  Xmls\BenchmarkPerson.xml Results\EmbeddedBenchmarkPersonResult.xml
-
 {% endhighlight %}
 
 
@@ -187,7 +171,6 @@ The **Input xml** structure is the same for the two benchmark options (the Out-o
 Example configuration file:
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="UTF-8"?>
 <benchmarks>
   !--Defines an additional assembly that needs to be loaded, in this case the benchmark implementation assembly
@@ -233,5 +216,4 @@ Example configuration file:
     </benchmark>
   ...
   </benchmarks>
-
 {% endhighlight %}

@@ -18,7 +18,6 @@ This page demonstrates basic space operations using a class called `Person`:
 
 
 {% highlight java %}
-
 public class Person
 {
    private String _name;
@@ -40,7 +39,6 @@ public class Person
    {
    }
 }
-
 {% endhighlight %}
 
 
@@ -52,11 +50,9 @@ Calling `Read` searches the space for a matching entry. If no match is found, th
 In some scenarios an application may need to poll the space until a matching entry is available. Instead of calling read and doing a `Thread.Sleep()` in a loop, you can use the `timeout` argument to get a blocking behaviour. For example:
 
 {% highlight java %}
-
 Person template = new Person();
 // This call will block until a matching Person is available or 10 seconds have elapsed.
 Person p = proxy.Read(template, 10000);
-
 {% endhighlight %}
 
 
@@ -71,7 +67,6 @@ In a partitioned cluster each entry is stored in a specific partition, according
 Setting the routing property is usually done using the `SpaceRouting` attribute. For example, to set the `Country` property as the routing property of the `Person` class:
 
 {% highlight java %}
-
 public class Person
 {
    ...
@@ -83,7 +78,6 @@ public class Person
    }
    ...
 }
-
 {% endhighlight %}
 
 
@@ -102,7 +96,6 @@ If a certain property is commonly used when querying the space, you can instruct
 Let's examine the following piece of code:
 
 {% highlight java %}
-
 Person p1 = new Person();
 p1.Name = "Alice";
 proxy.Write(p1);
@@ -111,7 +104,6 @@ p2.Name = "Bob";
 proxy.Write(p2);
 Person result1 = proxy.Read(new Person());
 Person result2 = proxy.Read(new Person());
-
 {% endhighlight %}
 
 
