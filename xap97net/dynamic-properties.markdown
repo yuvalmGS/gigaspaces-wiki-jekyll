@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799342
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}Using Dynamic Properties with Object entries.{summary}
 
 !GRA:Images^new-in-801-banner.png|align=right!

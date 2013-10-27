@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799389
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:page|60}Explains the concepts of the GigaSpaces In-Memory Data Grid (the Space), how to access it, and how to configure advanced capabilities, such as persistency, eviction, etc.{summary}
 
 # Overview

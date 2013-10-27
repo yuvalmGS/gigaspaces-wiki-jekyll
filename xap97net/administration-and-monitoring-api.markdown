@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799361
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}Administration and monitoring API for GigaSpaces services and components.{summary}
 
 # Overview

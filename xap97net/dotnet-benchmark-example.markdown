@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799403
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}The Benchmark Example measures the performance of several GigaSpaces .Net API operations.{summary}
 
 {section}

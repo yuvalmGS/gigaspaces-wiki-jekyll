@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799388
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}`IEventListenerContainer` is an interface that represents an abstraction for subscribing to, and receiving events over a space proxy.{summary}
 
 # Overview

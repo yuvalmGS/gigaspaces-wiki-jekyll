@@ -5,7 +5,7 @@ categories: SBP
 page_id: 56426564
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}Web Service Processing Unit{excerpt}

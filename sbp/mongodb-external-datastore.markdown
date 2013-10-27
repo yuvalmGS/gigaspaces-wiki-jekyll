@@ -5,7 +5,7 @@ categories: SBP
 page_id: 56428168
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}NoSQL Extended DataStore Implementation{excerpt}

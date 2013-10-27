@@ -5,7 +5,7 @@ categories: SBP
 page_id: 55935740
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}Moving Spring/Hibernate Application to GigaSpaces{excerpt}

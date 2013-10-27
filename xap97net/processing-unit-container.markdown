@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799327
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:page|65}Describing the .NET Processing Unit Container and how to create and deploy it.{summary}
 
 # Overview

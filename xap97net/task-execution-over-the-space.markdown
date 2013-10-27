@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799341
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:page}Space task executors allow you to easily execute grid-wide tasks on the space.{summary}
 
 # Overview

@@ -5,7 +5,7 @@ categories: SBP
 page_id: 56429998
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}Mainframe (Z/OS) based systems integration with GigaSpaces.{excerpt}

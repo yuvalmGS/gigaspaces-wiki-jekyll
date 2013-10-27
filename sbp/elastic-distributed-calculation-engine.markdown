@@ -5,7 +5,7 @@ categories: SBP
 page_id: 56427156
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}Elastic Distributed Calculation Engine implementation using Map-Reduce approach.{excerpt}

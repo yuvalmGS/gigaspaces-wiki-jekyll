@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799346
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:page|65}This example demonstrates basic usage of a .NET Processing Unit. The example contains two Processing Unit Containers; one that feeds data objects into the system, and another that reads these objects and processes them.{summary}
 
 {section}

@@ -5,7 +5,7 @@ categories: SBP
 page_id: 51119964
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}Choosing the right data-collocation deployment topology - to Collocate or not to Collocate?{summary}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.0GA**

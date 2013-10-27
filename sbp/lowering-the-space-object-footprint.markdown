@@ -5,7 +5,7 @@ categories: SBP
 page_id: 52527436
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}Lowering the Space Object Footprint - Compact Serialization Pattern{summary}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.1GA**

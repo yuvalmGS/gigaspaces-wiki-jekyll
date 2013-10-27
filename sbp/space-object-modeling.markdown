@@ -5,7 +5,7 @@ categories: SBP
 page_id: 51120319
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}Space object modelling basic rules.{summary}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.0GA**

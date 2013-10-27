@@ -5,7 +5,7 @@ categories: SBP
 page_id: 52887871
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}The Parallel Queue Pattern - High speed data processing pattern for low-latency systems{excerpt}

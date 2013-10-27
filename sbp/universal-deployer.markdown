@@ -5,7 +5,7 @@ categories: SBP
 page_id: 55937666
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}GigaSpaces Universal Deployer tool. Allows deploying composite applications without any coding.{excerpt}

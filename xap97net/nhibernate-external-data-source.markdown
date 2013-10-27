@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799299
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:page|65}A walkthrough of a common scenario for using the GigaSpaces NHibernate External Data Source.{summary}
 
 # Overview

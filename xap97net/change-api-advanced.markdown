@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 64325389
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:}This page covers the Change API more advanced scenarios.{summary}
 
 # Obtaining Change detailed results

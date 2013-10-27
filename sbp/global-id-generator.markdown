@@ -5,7 +5,7 @@ categories: SBP
 page_id: 52887597
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}Unique Global ID Generator{excerpt}

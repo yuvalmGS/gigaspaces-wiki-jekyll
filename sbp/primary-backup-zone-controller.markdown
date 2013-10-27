@@ -5,7 +5,7 @@ categories: SBP
 page_id: 55938230
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}Primary-Backup Zone Controller, allows you to specify a specific zone for primary instances and a different zone for backup instances.{excerpt}

@@ -5,7 +5,7 @@ categories: SBP
 page_id: 52528551
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}Custom Matching Implementation{excerpt}

@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799391
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}Working with Space Documents{summary}
 
 # Overview

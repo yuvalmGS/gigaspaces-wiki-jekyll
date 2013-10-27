@@ -5,7 +5,7 @@ categories: SBP
 page_id: 53379091
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}Access GgaSpaces Data-Grid via ODBC Driver{excerpt}

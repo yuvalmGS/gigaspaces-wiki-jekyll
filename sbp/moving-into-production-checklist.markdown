@@ -5,7 +5,7 @@ categories: SBP
 page_id: 52527859
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}Moving into Production Checklist{summary}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Date: December  2009

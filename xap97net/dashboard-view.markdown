@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799382
 ---
 
-{composition-setup}{summary}Main Dashboard navigation view{summary}
+{% compositionsetup %}{summary}Main Dashboard navigation view{summary}
 
 # Using the Web Dashboard
 

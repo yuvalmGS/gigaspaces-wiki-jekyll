@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799343
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:page}Executor Remoting allows you to use remote invocations of services, with the space as the transport layer using Executors.{summary}
 
 # Overview

@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799302
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}This page describes the automatic scaling policy of the polling container.{summary}
 
 By default, the [polling event container|Polling Container Component] starts a single thread that performs the receive operations, and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads. The container manages the scaling up and down of concurrent consumers automatically, according to the load.

@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799410
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}
 How to read/take a group of space entries with a common property value, in FIFO order (by order of insertion),
 without having to maintain a FIFO order for all the entries in the space.

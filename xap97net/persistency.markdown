@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799336
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {summary:page|65}Using the GigaSpaces External Data Source interface to persist data stored in the space{summary}
 

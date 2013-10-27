@@ -6,7 +6,7 @@ page_id: 63799430
 ---
 
 {summary}This page explains how to configure replication gateway targets of a space.{summary}
-{composition-setup}
+{% compositionsetup %}
 
 {% info %}
 This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)|Multi-Site Replication over the WAN] before reading this page.

@@ -5,7 +5,7 @@ categories: SBP
 page_id: 56429380
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}Trading Settlement Demo.{excerpt}

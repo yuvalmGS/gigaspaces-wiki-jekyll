@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 64127758
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:page|70}Overview of Service Grid Components{summary}
 
 {% anchor gsm %}

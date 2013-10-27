@@ -5,7 +5,7 @@ categories: SBP
 page_id: 55938209
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}Integrating GigaSpaces with External JMS Server using JTA/XA{excerpt}

@@ -5,7 +5,7 @@ categories: SBP
 page_id: 57213232
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}Observable WAN - Multi-site WAN performance detection{excerpt}

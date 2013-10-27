@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799370
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:page}The notify event container implements the `IEventListenerContainer` interface, and uses the space inheritance support for notifications, using a GigaSpaces unified event session API.{summary}
 
 # Overview

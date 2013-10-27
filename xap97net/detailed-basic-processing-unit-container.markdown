@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799322
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}Describing the built-in BasicProcessingUnitContainer which is an extension of the AbstractProcessingUnitContainer class.{summary}
 
 

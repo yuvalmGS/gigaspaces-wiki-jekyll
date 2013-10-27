@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799415
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {section}
 
 {% column width=70% %}

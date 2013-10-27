@@ -5,7 +5,7 @@ categories: SBP
 page_id: 55443590
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 
 {% tip %}
@@ -190,21 +190,21 @@ pu.download=false
 
 
 {% highlight java %}
- build dist 
+ build dist
 {% endhighlight %}
 
 3. Start a gs-agent using the provided script.
 
 
 {% highlight java %}
- gs-agent.bat 
+ gs-agent.bat
 {% endhighlight %}
 
 4. Run the ant task "deploy-processor" to deploy the processor space.
 
 
 {% highlight java %}
- build deploy-processor 
+ build deploy-processor
 {% endhighlight %}
 
  Confirm that the processor space was deployed successfully using a gs-ui session.
@@ -212,7 +212,7 @@ pu.download=false
 
 
 {% highlight java %}
- build run-feeder 
+ build run-feeder
 {% endhighlight %}
 
  You will see that the processor code that was used to process these messages by inspecting the log messages.
@@ -224,7 +224,7 @@ pu.download=false
 [gsc][2/6872]   2011-01-21 13:25:31,473 processor.1 [1]/refreshableBeans INFO
 [org.openspaces.example.helloworld.processor.Processor] - Processor PROCESSING: id [292] info[Hello ]
 [gsc][2/6872]   2011-01-21 13:25:31,476 processor.1 [1]/refreshableBeans INFO
-[org.openspaces.example.helloworld.processor.Processor] - Processor PROCESSING: id [258] info[Hello ] 
+[org.openspaces.example.helloworld.processor.Processor] - Processor PROCESSING: id [258] info[Hello ]
 {% endhighlight %}
 
 6. Make code changes to processor to simulate business logic changes. (You can use the newer version of Processor code provided in this file "<refreshable-prototype>\processor\src\org\openspaces\example\helloworld\processor\NewProcessorCode.txt".

@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 64325381
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:}This page covers the Change Extension extension methods.{summary}
 
 # Overview

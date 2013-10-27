@@ -5,7 +5,7 @@ categories: SBP
 page_id: 64323671
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 {**}Summary:** {excerpt}WAN Master-Slave replication example{excerpt}

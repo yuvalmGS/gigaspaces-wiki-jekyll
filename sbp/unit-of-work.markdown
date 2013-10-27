@@ -5,7 +5,7 @@ categories: SBP
 page_id: 54296773
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}The Unit of work Pattern - Parallel atomic ordered data processing for associated data objects{excerpt}

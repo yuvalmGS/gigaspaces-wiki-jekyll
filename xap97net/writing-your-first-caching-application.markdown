@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799409
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}This tutorial shows how an application interacts with a GigaSpaces Data Grid, clustered in either a replicated, partitioned, master-local, or local-view topology. The application either actively reads data or registers for notifications.
 {summary}
 {% anchor 1 %}

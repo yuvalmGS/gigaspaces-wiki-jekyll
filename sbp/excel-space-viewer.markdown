@@ -15,7 +15,7 @@ page_id: 47219420
 {% endtip %}
 
 {rate}
-{composition-setup}
+{% compositionsetup %}
 
 # Overview
 

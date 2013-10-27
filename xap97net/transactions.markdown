@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799304
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:page|60}GigaSpaces .Net transaction model.{summary}
 
 # Overview

@@ -5,7 +5,7 @@ categories: SBP
 page_id: 50758015
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}Mule ESB Distributed Multi Service Example{summary}
 !GRA:Images^new-in-801-banner.png|align=right!
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces

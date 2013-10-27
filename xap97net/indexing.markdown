@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799369
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary} Using indexes to improve performance. {summary}
 
 # Overview

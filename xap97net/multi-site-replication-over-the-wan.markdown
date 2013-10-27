@@ -6,7 +6,7 @@ page_id: 63799328
 ---
 
 {summary}This page explains how to establish data synchronization between multiple sites (spaces), usually used over the WAN.{summary}
-{composition-setup}
+{% compositionsetup %}
 
 
 {% info title=Licensing %}

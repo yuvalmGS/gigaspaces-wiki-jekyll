@@ -5,7 +5,7 @@ categories: SBP
 page_id: 51118939
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}Implementing the Master-Worker Pattern with GigaSpaces XAP.{summary}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.0GA**

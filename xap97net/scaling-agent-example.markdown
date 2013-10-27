@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799365
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}This example demonstrates how to harness the Service Grid Admin API to build an agent
 that monitors a deployed application, and scale it up on demand.{summary}
 

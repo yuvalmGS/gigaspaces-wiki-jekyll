@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 64127766
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:page|70}How to configure a Service Grid{summary}
 
 # Overview

@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799316
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}The .NET-Java  Example illustrates basic interoperability operations between Java and .NET space proxies.{summary}
 
 {section}

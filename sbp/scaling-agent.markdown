@@ -5,7 +5,7 @@ categories: SBP
 page_id: 51119415
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}Implementing a dynamic scalable web application with GigaSpaces XAP.{summary}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.0GA**

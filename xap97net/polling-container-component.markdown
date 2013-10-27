@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799324
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary}The polling container implements the `IEventListenerContainer` interface, and allows you to perform polling receive operations against the space.{summary}
 
 # Overview

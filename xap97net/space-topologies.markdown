@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799355
 ---
 
-{composition-setup}
+{% compositionsetup %}
 {summary:page|60}Explains the topologies and clustering mechanism of the GigaSpaces in-memory data grid (the Space){summary}
 
 # Overview

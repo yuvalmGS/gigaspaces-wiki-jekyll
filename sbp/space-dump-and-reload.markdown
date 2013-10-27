@@ -5,7 +5,7 @@ categories: SBP
 page_id: 54820920
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 {% tip %}
 **Summary:** {excerpt}Space Dump and Reload{excerpt}

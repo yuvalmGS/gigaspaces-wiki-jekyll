@@ -5,7 +5,7 @@ categories: SBP
 page_id: 59441985
 ---
 
-{composition-setup}
+{% compositionsetup %}
 
 
 {% tip %}
