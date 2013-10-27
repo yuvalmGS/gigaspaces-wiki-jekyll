@@ -100,7 +100,7 @@ The above example registers with the space for write notifications using the pro
 
 The notify event container registers for notifications only when the relevant space it is working against is in primary mode. When the space is in backup mode, no registration occurs. If the space moves from backup mode to primary mode, the container registers for notifications, and if it moved to backup mode, the registrations are canceled.
 
-(i) This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
+{% info %} This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
 
 # Template Definition
 
@@ -325,7 +325,7 @@ notifyEventListenerContainer.BatchDataEventArrived += new DelegateDataEventArriv
 
 The notify event container can register for events or notifications, and have the events delivered in a FIFO order.
 
-(i) For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [FIFO Support] section.
+{% info %} For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [FIFO Support] section.
 
 Here is an example of how FIFO events can be configured with the notify container:
 

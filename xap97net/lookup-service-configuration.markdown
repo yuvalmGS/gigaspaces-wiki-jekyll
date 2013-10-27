@@ -17,7 +17,7 @@ page_id: 64127778
 
 In such a case, make sure you have a different lookup group for each space, where each space is configured to use a specific lookup. A good practice is to have different space/service names.
 
-(i) When using multicast please review the following section **[How to Determine Whether Multicast is Available|How to Determine Whether Multicast is Available]** and [How to Configure Multicast|How to Configure Multicast].
+{% info %} When using multicast please review the following section **[How to Determine Whether Multicast is Available|How to Determine Whether Multicast is Available]** and [How to Configure Multicast|How to Configure Multicast].
 
 # Setting up the Lookup Service For Multicast Discovery (Using Lookup Group)
 
@@ -44,7 +44,7 @@ If you are looking for a way to use a unicast discovery, please refer to the [Ho
 
 # Multicast Settings
 
-(/) To support co-existence of different GigaSpaces versions, the defaults below may change between releases.
+{% oksign %} To support co-existence of different GigaSpaces versions, the defaults below may change between releases.
 
 Adjusting the lookup services multicast settings can be done using the following system properties:
 - **`com.gs.multicast.announcement`** - the multicast address that controls the lookup service announcement. The lookup service uses this address to periodically announce its existence. Defaults to `224.0.1.188`.
@@ -53,7 +53,7 @@ Adjusting the lookup services multicast settings can be done using the following
 - **`com.gs.multicast.ttl`** - The multicast packet time to live. Defaults to 3.
 - **`com.gs.multicast.enabled`** - a global property allowing you to completely enable or disable multicast in the system.
 
-(i) The two multicast addresses allow you to completely separate two different GigaSpaces installations, so lookup services won't communicate with each other (even on the wire level, which is different than the groups, which communicate on the content level).
+{% info %} The two multicast addresses allow you to completely separate two different GigaSpaces installations, so lookup services won't communicate with each other (even on the wire level, which is different than the groups, which communicate on the content level).
 
 # Troubleshooting the Discovery/Group Configuration
 

@@ -11,7 +11,7 @@ page_id: 63799345
 
 The session state store provider is used by the IIS (Internet Information Services) to supply a data store for active sessions. This implementation uses GigaSpaces as the session data storage provider.
 
-(i) See how to install the package **[below|#Installation]**.
+{% info %} See how to install the package **[below|#Installation]**.
 
 Using the session-state store provider, values that need to be persisted during a user session are stored into session variables. These variables are unique in each user session. You can set and access session information from within an ASP .NET application. For example:
 

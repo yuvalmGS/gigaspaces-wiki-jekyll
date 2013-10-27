@@ -354,7 +354,7 @@ public class ProcessorFactory implements InitializingBean{
 	public void init() throws Exception {
 		for (int i=0;i<MACHINE_CORES_AMOUNT  ;i++)
 		{
-			createProcessor(i);
+			createProcessor{% info %};
 		}
 	}
 
@@ -433,7 +433,7 @@ public class ProcessorFactory implements InitializingBean{
 	public void init() throws Exception {
 		for (int i=0;i<MACHINE_CORES_AMOUNT  ;i++)
 		{
-			createProcessor(i);
+			createProcessor{% info %};
 		}
 	}
 

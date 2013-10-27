@@ -147,13 +147,13 @@ If the amount of data you store within the space is relatively large (more than 
 ## Summary
 Here is a simple matrix you can use to determine if you should collocate your space with your business logic or not:
 ||Scenario||Collocate||Not Collocate||
-|Data model supports stickiness| (/)| |
-|Transaction takes a short time (<10ms)|(/) | |
-|Transaction takes a long time (>100ms) | |(/)|
-|Transaction uses a small data set (>1K)| | (/)|
-|Transaction uses a large data set (>100K)| (/)| |
-|Amount of data within the space <2GB| | (/)|
-|Amount of data within the space >2GB| (/)| |
+|Data model supports stickiness| {% oksign %}| |
+|Transaction takes a short time (<10ms)|{% oksign %} | |
+|Transaction takes a long time (>100ms) | |{% oksign %}|
+|Transaction uses a small data set (>1K)| | {% oksign %}|
+|Transaction uses a large data set (>100K)| {% oksign %}| |
+|Amount of data within the space <2GB| | {% oksign %}|
+|Amount of data within the space >2GB| {% oksign %}| |
 
 # Conclusion
 Choosing the right data colocation deployment topology involves several different considerations. There is no one golden rule you should follow. You should review the different considerations described above, to determine the right data colocation deployment topology that fits your application the best.

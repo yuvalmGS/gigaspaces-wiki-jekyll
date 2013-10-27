@@ -135,7 +135,7 @@ GigaSpaces XAP provides various levels of replication QoS. The highest quality i
 
 The asynchronous replication (async replication) strategy returns the call back to the client, and at the same time replicates the information into the other replica. Async replication may lose information in the case of a failure within the source space while the information has not yet been delivered to its replica. However, it does provide better performance for clients.
 
-(i) The replication QoS should be considered, based on the application requirements. The default replication policy is synchronous replication.
+{% info %} The replication QoS should be considered, based on the application requirements. The default replication policy is synchronous replication.
 
 ## Partitioned
 
@@ -153,7 +153,7 @@ Since each partition contains only a subset of the data, losing a partition can 
 
 The common topology is of a partitioned cluster, where each partition member has one or more replicas. With this topology, there is no scalability bottleneck in the amount of data that can be stored in the cluster, and each partition is fault-tolerant as it has a backup replica.
 
-(i) This topology is also known in GigaSpaces XAP as Partitioned-Sync2Backup.
+{% info %} This topology is also known in GigaSpaces XAP as Partitioned-Sync2Backup.
 {toc-zone}
 {whr}
 {refer}**Next Chapter:** [A Typical SBA Application]{refer}

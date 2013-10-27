@@ -68,8 +68,8 @@ public void storeEvenlyDistributedData(GigaSpace space, int count) {
    {
       MyData data=new MyData();
       data.setKey("key "+i);
-      // JDK 1.4 will need to use "new Integer(i)" due to the lack of autoboxing.
-      data.setRouting(i);
+      // JDK 1.4 will need to use "new Integer{% info %}" due to the lack of autoboxing.
+      data.setRouting{% info %};
       space.write(data);
    }
 }

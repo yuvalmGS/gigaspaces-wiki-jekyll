@@ -11,7 +11,7 @@ page_id: 63799337
 
 This page explains how to create a simple Hello World application using XAP.NET API. The application is very simple: connect to a space, store an entry and retrieve it. The application shown here is also available in the examples distributed with the product (from the Windows Start menu, select **Programs > GigaSpaces XAP.NET > Examples** and review the **HelloWorld** example).
 
-(i) All the instructions and code shown in this page are for C# developers. Naturally all other .NET languages (VB.NET, C++/CLI, J#, etc.) are supported as well.
+{% info %} All the instructions and code shown in this page are for C# developers. Naturally all other .NET languages (VB.NET, C++/CLI, J#, etc.) are supported as well.
 
 # Prerequisites
 

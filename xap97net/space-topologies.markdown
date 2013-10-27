@@ -53,7 +53,7 @@ GigaSpaces XAP supports the following data grid topologies:
  Each client has a lightweight, embedded cache (space instance), which is initially empty. Upon the first time data is read, it is loaded from a master space to the local cache (this is called lazy loading); the next time the same data is read, it is fetched quickly from the local cache without network access. Later on data is either updated from the master or evicted from the cache. For more information see [Local Cache]    | Boosting read performance for frequently used data. A useful rule of thumb is to use a local cache when over 80% of all operations are repetitive read operations. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc. |
 | **Local-View** ([view diagram|GS6:Images^dg_a_topology5.gif])
  Each client has a lightweight, embedded cache (space instance), which contains a subset of the mater space's data. The client defines which data is cached using a collection of SQL queries, and the master space pushes the matching data to the client's cache. For more information see [Local View] | Achieving maximal read performance for a predetermined subset of the data. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.|
-(i) The topologies above are provided in the GigaSpaces product as predefined cluster schemas. The schema names are:
+{% info %} The topologies above are provided in the GigaSpaces product as predefined cluster schemas. The schema names are:
 - Synchronous replication - `sync-replicated`
 - Asynchronous replication - `async-replicated`
 - Partitioned with backup - `partitioned-sync2backup`

@@ -126,14 +126,14 @@ The table might include more than one Grid Service Manager. If so, look for the 
 4. Click **Deploy** to deploy the cluster. Deployment status is displayed (Here for the two replicated Data Grid instances):
 
  !GS6:Images^Deployment_Wizard_EDG_InProcess-myDataGrid-2-SyncRep.JPG!
- (i) In the master-local and local-view topologies, the master cache can in principle be clustered in any topology - partitioned, replicated, etc. (or can be a single space). The master-local/local-view aspect of the topology is specified on the client side: when the client connects to the cluster or space (the master cache), it specifies if it wants to start a local cache and how this cache should operate.
+ {% info %} In the master-local and local-view topologies, the master cache can in principle be clustered in any topology - partitioned, replicated, etc. (or can be a single space). The master-local/local-view aspect of the topology is specified on the client side: when the client connects to the cluster or space (the master cache), it specifies if it wants to start a local cache and how this cache should operate.
 
  !GS6:Images^Deployment_Wizard_EDG_Provisioned-myDataGrid-2-SyncRep.JPG!
 
 Depending on the type of deployment you performed, you should see that either two spaces (two replicated Data Grid instances) or four spaces (two Data Grid partitions with one backup each) were provisioned to the host running the Grid Service Containers.
 5. **If this is not the first topology** you are deploying, and you are already familiar with the client application, skip to [Running Client, Testing Notifications and Verifying Topologies|#running].
 
-(i) You deployed the the Data Grid using the Management Center and its Deployment Wizard. An alternative way deploying a single space instance can be done by using the `SpaceInstance` command.
+{% info %} You deployed the the Data Grid using the Management Center and its Deployment Wizard. An alternative way deploying a single space instance can be done by using the `SpaceInstance` command.
 
 {% anchor 3 %}
 
@@ -179,6 +179,6 @@ In this tutorial, we will use a space connection URL similar to the following:
 - `\*/\*/myDataGrid` specifies that the client wants to connect to a cluster in which all the spaces are called `myDataGrid`, regardless of which physical machines participate in the cluster.
 - **`useLocalCache`** is an additional parameter, not shown above, which launches a local cache in the connecting application. This is necessary for the master-local and local-view topologies.
 
-(i) The URL above is used by the application to **connect** to the space (a cluster of spaces in this case), so it is called a _space connection URL_. This should not be confused with a _space start URL_, a similar form of URL which can be used to **start** a space. In this tutorial, you will not use a space start URL, rather you will start the spaces using the GS-UI, as described below.
+{% info %} The URL above is used by the application to **connect** to the space (a cluster of spaces in this case), so it is called a _space connection URL_. This should not be confused with a _space start URL_, a similar form of URL which can be used to **start** a space. In this tutorial, you will not use a space start URL, rather you will start the spaces using the GS-UI, as described below.
 
 {% anchor notif %}

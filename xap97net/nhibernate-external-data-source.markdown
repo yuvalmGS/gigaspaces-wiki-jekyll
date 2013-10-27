@@ -16,7 +16,7 @@ The mirror uses the External Data Source interface in write mode, and delegates 
 
 {% exclamation %} Before using the `ExternalDataSource.NHibernate` practice, compile it by calling `<GigaSpaces Root>\Bin\Practices\ExternalDataSource\NHibernate\build.bat`.
 
-(i) The database server used in this walkthrough is MySQL, and a database named `dotnetpersistency` is created in it.
+{% info %} The database server used in this walkthrough is MySQL, and a database named `dotnetpersistency` is created in it.
 
 # NHibernate Mapping and Configuration Files
 

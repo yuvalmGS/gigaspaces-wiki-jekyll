@@ -56,7 +56,7 @@ The problem of multicasts/broadcasts not passing the router/switch is a well kno
 
 [Wireshark (formerly Ethereal)|http://www.wireshark.org/] - accumulates years of network analyzing experience and is far more mature and known than other tools. It is a cross-platform packet sniffer/network analyzer tool (used both in Windows and Unix/Linux). It allows you to examine data from a live network, or from a capture file on disk. You can interactively browse the capture data, viewing summary and detail information for each packet. It has several powerful features, including a rich display filter language and the ability to view the reconstructed stream of a TCP session.
 
-(i) **To find TTL**, you should monitor some traffic (start-stop on the proper interface), in the monitoring log. Choose the packet you are interested in, and look at its IP layer - TTL (and other parameters) are shown.
+{% info %} **To find TTL**, you should monitor some traffic (start-stop on the proper interface), in the monitoring log. Choose the packet you are interested in, and look at its IP layer - TTL (and other parameters) are shown.
 
-(i) The **default TTL value is 3** (was 15). See [Multicast Settings|Lookup Service Configuration#LookupServiceConfiguration-MulticastSettings] section for details of how to modify that value.
+{% info %} The **default TTL value is 3** (was 15). See [Multicast Settings|Lookup Service Configuration#LookupServiceConfiguration-MulticastSettings] section for details of how to modify that value.
 

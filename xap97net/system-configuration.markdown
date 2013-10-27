@@ -67,7 +67,7 @@ if (zones == "foo")
 {% endhighlight %}
 
 
-(i) Using `GigaSpacesFactory.Configuration` requires a reference to the `System.Configuration` assembly, which is not referenced by default.
+{% info %} Using `GigaSpacesFactory.Configuration` requires a reference to the `System.Configuration` assembly, which is not referenced by default.
 
 Configuration changes must be made **before** XAP.NET is initialized. Changes made afterwards will not affect the system, and may cause an exception. The `GigaSpacesFactory.IsInitialized` property can be used to determine if XAP.NET is initialized or not. For example:
 
