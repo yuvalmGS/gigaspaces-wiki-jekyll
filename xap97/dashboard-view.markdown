@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Dashboard View
 page_id: 61867199
 ---

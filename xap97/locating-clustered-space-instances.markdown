@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Locating Clustered Space Instances
 page_id: 61867229
 ---

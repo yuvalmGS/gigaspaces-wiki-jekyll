@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Programmatically Managing the Security Directory
 page_id: 61867246
 ---

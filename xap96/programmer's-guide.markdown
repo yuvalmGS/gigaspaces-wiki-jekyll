@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Programmer's Guide
 page_id: 61867134
 ---

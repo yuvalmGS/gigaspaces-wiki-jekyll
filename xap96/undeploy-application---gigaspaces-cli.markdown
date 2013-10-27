@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  undeploy-application - GigaSpaces CLI
 page_id: 61867354
 ---

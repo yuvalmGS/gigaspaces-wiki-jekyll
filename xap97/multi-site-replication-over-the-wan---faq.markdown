@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Multi-Site Replication over the WAN - FAQ
 page_id: 61867027
 ---

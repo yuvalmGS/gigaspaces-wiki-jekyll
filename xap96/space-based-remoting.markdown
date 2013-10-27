@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Space Based Remoting
 page_id: 61867389
 ---

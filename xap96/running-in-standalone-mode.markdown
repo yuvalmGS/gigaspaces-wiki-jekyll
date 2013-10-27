@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Running in Standalone Mode
 page_id: 61867332
 ---

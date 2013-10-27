@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Packaging and Deployment
 page_id: 61867298
 ---

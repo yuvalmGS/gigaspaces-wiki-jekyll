@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Using Space Browser Tab - GigaSpaces Management Center
 page_id: 61867254
 ---

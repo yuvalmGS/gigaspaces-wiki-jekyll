@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Screenshots
 page_id: 61867234
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Querying The Space
 page_id: 61867217
 ---

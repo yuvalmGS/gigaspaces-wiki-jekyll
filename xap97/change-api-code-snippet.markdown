@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Change API Code Snippet
 page_id: 61867009
 ---

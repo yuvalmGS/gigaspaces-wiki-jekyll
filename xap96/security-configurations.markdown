@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Security Configurations
 page_id: 61867341
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Browsing JMS Queues
 page_id: 61867187
 ---

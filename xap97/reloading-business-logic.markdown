@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Reloading Business Logic
 page_id: 61867257
 ---

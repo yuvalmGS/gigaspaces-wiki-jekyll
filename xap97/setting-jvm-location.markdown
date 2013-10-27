@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Setting JVM Location
 page_id: 61867114
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Modeling and Accessing Your Data
 page_id: 61867448
 ---

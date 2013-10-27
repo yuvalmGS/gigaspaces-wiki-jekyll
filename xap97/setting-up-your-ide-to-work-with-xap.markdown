@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Setting Up your IDE to work with XAP
 page_id: 61867150
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  CPP Processing Unit
 page_id: 61867263
 ---

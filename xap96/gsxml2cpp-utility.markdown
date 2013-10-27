@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  gsxml2cpp Utility
 page_id: 61867457
 ---

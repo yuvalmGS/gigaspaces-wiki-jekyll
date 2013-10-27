@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Replication Gateway Bootstrapping Process
 page_id: 61867441
 ---

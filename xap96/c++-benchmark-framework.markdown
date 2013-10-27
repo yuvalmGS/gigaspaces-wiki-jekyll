@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  C++ Benchmark Framework
 page_id: 61867290
 ---

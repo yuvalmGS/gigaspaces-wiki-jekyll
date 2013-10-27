@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Admin Modules
 page_id: 61867082
 ---

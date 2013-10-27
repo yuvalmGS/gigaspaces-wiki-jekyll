@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  startJiniTX_Mahalo - GigaSpaces CLI
 page_id: 61867311
 ---

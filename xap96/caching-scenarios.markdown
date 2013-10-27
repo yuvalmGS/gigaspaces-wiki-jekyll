@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Caching Scenarios
 page_id: 61867125
 ---

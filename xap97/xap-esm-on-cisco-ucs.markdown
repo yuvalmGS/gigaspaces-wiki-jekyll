@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  XAP ESM on Cisco UCS
 page_id: 61867359
 ---

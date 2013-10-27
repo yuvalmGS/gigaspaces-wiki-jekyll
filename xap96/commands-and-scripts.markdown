@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Commands and Scripts
 page_id: 61867137
 ---

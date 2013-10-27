@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  gs.bat - Other CLI Commands
 page_id: 61867220
 ---

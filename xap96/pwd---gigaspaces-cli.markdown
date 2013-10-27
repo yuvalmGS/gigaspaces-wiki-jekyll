@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  pwd - GigaSpaces CLI
 page_id: 61867289
 ---

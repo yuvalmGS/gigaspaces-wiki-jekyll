@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Advanced Multi-NIC Configuration
 page_id: 61867366
 ---

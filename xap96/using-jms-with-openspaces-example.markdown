@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Using JMS with OpenSpaces Example
 page_id: 61867224
 ---

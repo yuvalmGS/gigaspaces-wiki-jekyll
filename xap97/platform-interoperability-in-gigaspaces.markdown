@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Platform Interoperability in GigaSpaces
 page_id: 61867084
 ---

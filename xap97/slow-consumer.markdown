@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Slow Consumer
 page_id: 61867424
 ---

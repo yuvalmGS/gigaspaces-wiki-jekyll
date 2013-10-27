@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  SQLQuery
 page_id: 61867326
 ---

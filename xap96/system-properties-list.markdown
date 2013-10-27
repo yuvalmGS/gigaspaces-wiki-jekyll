@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  System Properties List
 page_id: 61867284
 ---

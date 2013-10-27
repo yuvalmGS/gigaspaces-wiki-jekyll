@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Session Based Messaging API
 page_id: 61867392
 ---

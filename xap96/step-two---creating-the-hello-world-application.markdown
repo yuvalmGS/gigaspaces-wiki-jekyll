@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Step Two - Creating the Hello World Application
 page_id: 61867276
 ---

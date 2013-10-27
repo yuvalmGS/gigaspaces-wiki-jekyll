@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  jconsole - GigaSpaces CLI
 page_id: 61867281
 ---

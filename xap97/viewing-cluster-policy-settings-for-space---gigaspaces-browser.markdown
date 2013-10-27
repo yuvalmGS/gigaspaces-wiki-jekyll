@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Viewing Cluster Policy Settings for Space - GigaSpaces Browser
 page_id: 61867168
 ---

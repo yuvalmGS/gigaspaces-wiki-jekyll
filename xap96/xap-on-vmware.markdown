@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  XAP on VMWare
 page_id: 61867301
 ---

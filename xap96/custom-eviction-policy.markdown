@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Custom Eviction Policy
 page_id: 61867214
 ---

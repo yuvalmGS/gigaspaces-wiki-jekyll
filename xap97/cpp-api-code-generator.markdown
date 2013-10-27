@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  CPP API Code Generator
 page_id: 61867307
 ---

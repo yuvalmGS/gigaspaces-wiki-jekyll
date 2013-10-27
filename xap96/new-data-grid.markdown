@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  New Data Grid
 page_id: 62717993
 ---

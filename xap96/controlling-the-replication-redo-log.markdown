@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Controlling the Replication Redo Log
 page_id: 61867400
 ---

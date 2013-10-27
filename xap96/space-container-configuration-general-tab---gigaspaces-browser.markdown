@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Space Container Configuration General Tab - GigaSpaces Browser
 page_id: 61867056
 ---

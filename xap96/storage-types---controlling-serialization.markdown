@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Storage Types - Controlling Serialization
 page_id: 61867055
 ---

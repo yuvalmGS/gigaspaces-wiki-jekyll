@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  The Space Component
 page_id: 61867280
 ---

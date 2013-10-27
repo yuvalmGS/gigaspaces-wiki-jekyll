@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Programmatic API (Configurers)
 page_id: 61867066
 ---

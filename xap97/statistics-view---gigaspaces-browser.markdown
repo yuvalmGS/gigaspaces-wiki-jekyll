@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Statistics View - GigaSpaces Browser
 page_id: 61867065
 ---

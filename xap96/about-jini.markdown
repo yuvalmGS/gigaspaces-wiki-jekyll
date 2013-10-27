@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  About Jini
 page_id: 61867006
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Monitoring the Client-Side Cache
 page_id: 61867228
 ---

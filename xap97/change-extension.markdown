@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Change Extension
 page_id: 61867160
 ---

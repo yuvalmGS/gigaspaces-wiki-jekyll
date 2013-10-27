@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Externalizable Support (Deprecated)
 page_id: 61867077
 ---

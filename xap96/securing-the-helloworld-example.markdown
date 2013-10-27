@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Securing the HelloWorld example
 page_id: 61867091
 ---

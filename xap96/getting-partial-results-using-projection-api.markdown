@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Getting Partial Results Using Projection API
 page_id: 61867340
 ---

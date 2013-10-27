@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  GigaSpaces Browser Tree Panel and Configuration Panel
 page_id: 61867430
 ---

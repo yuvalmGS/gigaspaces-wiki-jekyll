@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Executor Based Remoting
 page_id: 61867379
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  classloaders
 page_id: 61867355
 ---

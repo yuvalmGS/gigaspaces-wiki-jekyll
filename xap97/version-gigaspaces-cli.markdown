@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Version GigaSpaces CLI
 page_id: 61867326
 ---

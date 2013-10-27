@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Split Brain and Primary Resolution
 page_id: 61867103
 ---

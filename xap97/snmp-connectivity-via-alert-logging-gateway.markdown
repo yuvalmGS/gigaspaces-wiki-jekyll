@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  SNMP Connectivity via Alert Logging Gateway
 page_id: 61867149
 ---

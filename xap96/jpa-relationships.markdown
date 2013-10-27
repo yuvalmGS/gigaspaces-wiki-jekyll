@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  JPA Relationships
 page_id: 61867308
 ---

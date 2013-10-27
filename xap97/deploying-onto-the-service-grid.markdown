@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Deploying onto the Service Grid
 page_id: 61867279
 ---

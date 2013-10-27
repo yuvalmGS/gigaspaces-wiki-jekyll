@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Lookup Service Configuration
 page_id: 61867197
 ---

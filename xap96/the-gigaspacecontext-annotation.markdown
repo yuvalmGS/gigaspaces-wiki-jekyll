@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  The GigaSpaceContext Annotation
 page_id: 61867000
 ---

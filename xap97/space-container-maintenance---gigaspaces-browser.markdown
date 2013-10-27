@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Space Container Maintenance - GigaSpaces Browser
 page_id: 61867051
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Step 2 - Using the Power of the Space to Scale Your Data Access Layer
 page_id: 61867275
 ---

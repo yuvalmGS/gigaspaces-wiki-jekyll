@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Parent Child Relationship
 page_id: 61867335
 ---

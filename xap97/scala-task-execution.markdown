@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Scala Task Execution
 page_id: 63078415
 ---

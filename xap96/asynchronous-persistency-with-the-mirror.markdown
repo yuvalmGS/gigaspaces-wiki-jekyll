@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Asynchronous Persistency with the Mirror
 page_id: 61867054
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Spring Security Bridge
 page_id: 61867147
 ---

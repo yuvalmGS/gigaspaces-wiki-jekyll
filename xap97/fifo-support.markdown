@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  FIFO Support
 page_id: 61867388
 ---

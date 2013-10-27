@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  XAP Order Management Tutorial
 page_id: 61867393
 ---

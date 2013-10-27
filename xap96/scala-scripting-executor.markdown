@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Scala Scripting Executor
 page_id: 63078417
 ---

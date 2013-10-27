@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  CPP API - Advanced
 page_id: 61867087
 ---

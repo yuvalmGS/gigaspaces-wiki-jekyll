@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  GigaSpaces JPA Limitations
 page_id: 61867171
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Getting Started
 page_id: 61867420
 ---

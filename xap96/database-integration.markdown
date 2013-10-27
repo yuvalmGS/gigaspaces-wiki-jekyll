@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Database Integration
 page_id: 61867029
 ---

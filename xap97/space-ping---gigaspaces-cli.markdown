@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  space ping - GigaSpaces CLI
 page_id: 61867383
 ---

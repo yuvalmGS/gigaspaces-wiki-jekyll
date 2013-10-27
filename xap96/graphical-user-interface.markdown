@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Graphical User Interface
 page_id: 61867035
 ---

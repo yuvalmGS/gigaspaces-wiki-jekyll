@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  JMS Transactions in GigaSpaces
 page_id: 61867418
 ---

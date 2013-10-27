@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  How to Set GigaSpaces Over NAT
 page_id: 61867019
 ---

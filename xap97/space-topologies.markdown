@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Space Topologies
 page_id: 61867126
 ---

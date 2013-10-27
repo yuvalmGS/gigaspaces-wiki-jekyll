@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  JMS-Space Interoperability
 page_id: 61867372
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Enhanced XAP Scala REPL
 page_id: 63078419
 ---

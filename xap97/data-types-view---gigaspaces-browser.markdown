@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Data Types View - GigaSpaces Browser
 page_id: 61867453
 ---

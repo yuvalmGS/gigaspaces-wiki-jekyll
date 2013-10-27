@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  featurepremium
 page_id: 61867123
 ---

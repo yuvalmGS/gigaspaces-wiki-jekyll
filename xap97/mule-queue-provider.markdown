@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Mule Queue Provider
 page_id: 61867390
 ---

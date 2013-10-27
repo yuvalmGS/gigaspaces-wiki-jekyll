@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Integrations
 page_id: 61867218
 ---

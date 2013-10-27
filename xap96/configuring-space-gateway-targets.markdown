@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Configuring Space Gateway Targets
 page_id: 61867070
 ---

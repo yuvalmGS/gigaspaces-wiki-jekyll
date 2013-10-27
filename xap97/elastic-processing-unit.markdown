@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Elastic Processing Unit
 page_id: 61867186
 ---

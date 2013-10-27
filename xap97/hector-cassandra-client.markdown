@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Hector Cassandra Client
 page_id: 61867325
 ---

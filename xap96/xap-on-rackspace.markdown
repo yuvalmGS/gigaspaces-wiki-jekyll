@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  XAP on Rackspace
 page_id: 61867376
 ---

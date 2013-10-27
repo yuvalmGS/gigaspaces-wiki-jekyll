@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  space clean - GigaSpaces CLI
 page_id: 61867180
 ---

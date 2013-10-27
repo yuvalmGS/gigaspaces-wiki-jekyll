@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Durable Notifications
 page_id: 61867293
 ---

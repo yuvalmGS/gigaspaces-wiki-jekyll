@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Local Cache
 page_id: 61867052
 ---

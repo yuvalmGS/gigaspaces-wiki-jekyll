@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Memcached API
 page_id: 61867350
 ---

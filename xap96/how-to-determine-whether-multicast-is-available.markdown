@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  How to Determine Whether Multicast is Available
 page_id: 61867240
 ---

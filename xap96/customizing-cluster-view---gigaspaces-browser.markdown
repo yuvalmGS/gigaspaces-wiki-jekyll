@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Customizing Cluster View - GigaSpaces Browser
 page_id: 61867426
 ---

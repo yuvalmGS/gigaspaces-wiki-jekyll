@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  CPP API Hello World Example
 page_id: 61867007
 ---

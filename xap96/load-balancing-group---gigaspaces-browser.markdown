@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Load-Balancing Group - GigaSpaces Browser
 page_id: 61867436
 ---

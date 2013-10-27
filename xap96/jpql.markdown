@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  jpql
 page_id: 61867210
 ---

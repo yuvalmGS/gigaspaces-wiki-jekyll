@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  POJO Support
 page_id: 61867112
 ---

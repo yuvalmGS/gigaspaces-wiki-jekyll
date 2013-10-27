@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Tuning Threads Usage
 page_id: 61867401
 ---

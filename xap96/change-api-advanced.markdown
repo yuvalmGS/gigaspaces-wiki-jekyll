@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Change API Advanced
 page_id: 61867447
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Object Inspector
 page_id: 61867455
 ---

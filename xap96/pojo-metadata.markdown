@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  POJO Metadata
 page_id: 61867320
 ---

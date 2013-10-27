@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  The Application Layer
 page_id: 61867196
 ---

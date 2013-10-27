@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  deploy-memcached - GigaSpaces CLI
 page_id: 61867167
 ---

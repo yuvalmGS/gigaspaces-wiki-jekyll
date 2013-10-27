@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  GigaSpaces for Hibernate ORM Users
 page_id: 61867033
 ---

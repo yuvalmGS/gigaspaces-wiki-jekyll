@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  GigaSpaces Browser Menus and Buttons
 page_id: 61867172
 ---

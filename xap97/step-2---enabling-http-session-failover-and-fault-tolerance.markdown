@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Step 2 - Enabling HTTP Session Failover and Fault Tolerance
 page_id: 61867247
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Connections View - GigaSpaces Browser
 page_id: 61867368
 ---

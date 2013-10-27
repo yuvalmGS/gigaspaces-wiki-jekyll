@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Handling Large Objects
 page_id: 61867369
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Elastic Statelful Processing Unit
 page_id: 61867348
 ---

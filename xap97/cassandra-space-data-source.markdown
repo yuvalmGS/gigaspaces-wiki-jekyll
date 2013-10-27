@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Cassandra Space Data Source
 page_id: 61867225
 ---

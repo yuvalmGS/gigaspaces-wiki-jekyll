@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Terminology - Space-Based Architecture
 page_id: 61867130
 ---

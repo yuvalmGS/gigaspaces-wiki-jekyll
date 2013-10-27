@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  POJO Code Snippets
 page_id: 61867349
 ---

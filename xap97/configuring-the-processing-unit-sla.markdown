@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Configuring the Processing Unit SLA
 page_id: 61867039
 ---

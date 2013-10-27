@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Cassandra Space Synchronization Endpoint
 page_id: 61867384
 ---

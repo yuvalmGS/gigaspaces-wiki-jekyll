@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Step Four - Scaling the Hello World Application
 page_id: 61867363
 ---

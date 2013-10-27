@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Space Container Configuration Directory Services Tab - GigaSpaces Browser
 page_id: 61867395
 ---

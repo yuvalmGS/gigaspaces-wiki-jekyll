@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Step Three - Deploying onto the Service Grid
 page_id: 61867203
 ---

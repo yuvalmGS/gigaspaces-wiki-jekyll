@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  TestPage
 page_id: 61867074
 ---

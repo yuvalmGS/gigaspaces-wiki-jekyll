@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Replication
 page_id: 61867058
 ---

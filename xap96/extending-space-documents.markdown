@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Extending Space Documents
 page_id: 61867407
 ---

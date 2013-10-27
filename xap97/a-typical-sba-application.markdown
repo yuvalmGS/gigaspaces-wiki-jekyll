@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  A Typical SBA Application
 page_id: 61867017
 ---

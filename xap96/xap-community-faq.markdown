@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  XAP-Community FAQ
 page_id: 61867415
 ---

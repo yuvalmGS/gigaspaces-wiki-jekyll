@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  OpenSpaces FAQ
 page_id: 61867192
 ---

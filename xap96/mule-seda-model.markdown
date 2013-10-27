@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Mule SEDA Model
 page_id: 61867176
 ---

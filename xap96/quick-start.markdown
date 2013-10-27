@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Quick Start
 page_id: 63079276
 ---

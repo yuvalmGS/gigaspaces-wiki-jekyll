@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Multi-Site Conflict Resolution
 page_id: 61867031
 ---

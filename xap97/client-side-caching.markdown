@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Client Side Caching
 page_id: 61867059
 ---

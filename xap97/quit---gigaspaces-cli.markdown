@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  quit - GigaSpaces CLI
 page_id: 61867414
 ---

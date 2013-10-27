@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Clustered vs Non-Clustered Proxies
 page_id: 64323585
 ---

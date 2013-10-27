@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Formatting Log Messages
 page_id: 61867207
 ---

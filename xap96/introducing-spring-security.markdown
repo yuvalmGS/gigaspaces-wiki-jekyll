@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Introducing Spring Security
 page_id: 61867231
 ---

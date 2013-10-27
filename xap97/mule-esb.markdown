@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Mule ESB
 page_id: 61867050
 ---

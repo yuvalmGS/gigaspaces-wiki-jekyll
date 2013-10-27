@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Benchmark Utility - GigaSpaces CLI
 page_id: 61867101
 ---

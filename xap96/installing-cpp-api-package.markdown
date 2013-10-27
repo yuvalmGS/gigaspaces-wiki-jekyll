@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Installing CPP API Package
 page_id: 61867219
 ---

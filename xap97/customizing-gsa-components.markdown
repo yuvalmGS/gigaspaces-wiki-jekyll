@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Customizing GSA Components
 page_id: 61867256
 ---

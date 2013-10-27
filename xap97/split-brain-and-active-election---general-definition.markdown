@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Split-Brain and Active Election - General Definition
 page_id: 61867048
 ---

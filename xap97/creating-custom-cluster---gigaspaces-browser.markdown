@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Creating Custom Cluster - GigaSpaces Browser
 page_id: 61867042
 ---

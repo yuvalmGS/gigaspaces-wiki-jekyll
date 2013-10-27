@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Step 3 - Scaling the Data Access Layer
 page_id: 61867433
 ---

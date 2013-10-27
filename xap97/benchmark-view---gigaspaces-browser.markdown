@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Benchmark View - GigaSpaces Browser
 page_id: 61867151
 ---

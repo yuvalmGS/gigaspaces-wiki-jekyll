@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Services on Top of the Data Grid
 page_id: 61867099
 ---

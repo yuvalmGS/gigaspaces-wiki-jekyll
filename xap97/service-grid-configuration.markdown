@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Service Grid Configuration
 page_id: 61867445
 ---

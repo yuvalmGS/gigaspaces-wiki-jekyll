@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Administrative Alerts
 page_id: 61867189
 ---

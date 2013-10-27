@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Consistency Level
 page_id: 61867178
 ---

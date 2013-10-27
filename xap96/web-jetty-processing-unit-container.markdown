@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Web Jetty Processing Unit Container
 page_id: 61867060
 ---

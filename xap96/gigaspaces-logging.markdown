@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  GigaSpaces Logging
 page_id: 61867375
 ---

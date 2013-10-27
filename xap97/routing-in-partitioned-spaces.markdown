@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Routing In Partitioned Spaces
 page_id: 61867285
 ---

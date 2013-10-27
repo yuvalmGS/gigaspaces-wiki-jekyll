@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Logging API
 page_id: 61867067
 ---

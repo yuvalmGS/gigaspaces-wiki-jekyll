@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Space Object ID Operations
 page_id: 61867208
 ---

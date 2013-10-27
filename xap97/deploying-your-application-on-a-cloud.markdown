@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Deploying your Application on a Cloud
 page_id: 61867098
 ---

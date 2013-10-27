@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Multi-Site Replication over the WAN
 page_id: 61867324
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Space Synchronization Endpoint API
 page_id: 61867177
 ---

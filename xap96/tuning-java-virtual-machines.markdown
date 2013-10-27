@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Tuning Java Virtual Machines
 page_id: 61867362
 ---

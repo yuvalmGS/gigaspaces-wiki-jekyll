@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  GigaSapces Management Center
 page_id: 618673591
 ---

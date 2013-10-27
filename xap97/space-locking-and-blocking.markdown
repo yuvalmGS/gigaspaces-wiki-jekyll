@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Space Locking and Blocking
 page_id: 61867268
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Troubleshooting Tools
 page_id: 61867023
 ---

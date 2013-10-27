@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Query View - GigaSpaces Browser
 page_id: 61867152
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Migration Upgrade Interoperability and Compatibility
 page_id: 61867139
 ---

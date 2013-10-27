@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Leases - Automatic Expiration
 page_id: 61867416
 ---

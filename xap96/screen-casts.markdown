@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Screen Casts
 page_id: 61867162
 ---

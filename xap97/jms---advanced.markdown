@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  JMS - Advanced
 page_id: 61867111
 ---

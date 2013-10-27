@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Aggregators
 page_id: 63078663
 ---

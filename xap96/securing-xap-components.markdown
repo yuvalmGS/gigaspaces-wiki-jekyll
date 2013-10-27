@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Securing XAP Components
 page_id: 61867300
 ---

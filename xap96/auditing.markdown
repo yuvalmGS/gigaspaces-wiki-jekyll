@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Auditing
 page_id: 61867299
 ---

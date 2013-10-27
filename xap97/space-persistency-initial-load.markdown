@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Space Persistency Initial Load
 page_id: 61867145
 ---

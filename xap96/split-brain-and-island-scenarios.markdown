@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Split Brain and Island Scenarios
 page_id: 61867140
 ---

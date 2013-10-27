@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Data Grid View
 page_id: 61867421
 ---

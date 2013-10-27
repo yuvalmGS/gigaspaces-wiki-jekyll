@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  JMS User Security
 page_id: 61867361
 ---

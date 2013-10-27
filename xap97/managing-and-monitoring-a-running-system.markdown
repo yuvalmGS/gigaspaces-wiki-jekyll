@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Managing and Monitoring a Running System
 page_id: 61867120
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Memory Management Facilities
 page_id: 61867337
 ---

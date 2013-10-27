@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Transient Entries
 page_id: 61867089
 ---

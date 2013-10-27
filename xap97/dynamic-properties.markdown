@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Dynamic Properties
 page_id: 61867452
 ---

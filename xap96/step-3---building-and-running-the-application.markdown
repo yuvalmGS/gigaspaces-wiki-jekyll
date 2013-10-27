@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Step 3 - Building and Running the Application
 page_id: 61867446
 ---

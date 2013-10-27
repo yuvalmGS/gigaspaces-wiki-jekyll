@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Map API
 page_id: 61867396
 ---

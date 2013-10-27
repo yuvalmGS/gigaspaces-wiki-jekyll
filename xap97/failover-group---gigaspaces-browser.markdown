@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Failover Group - GigaSpaces Browser
 page_id: 61867356
 ---

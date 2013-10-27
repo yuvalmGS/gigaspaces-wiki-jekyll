@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  HTTP Session Management
 page_id: 61867170
 ---

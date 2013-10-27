@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Cloud and Virtualization
 page_id: 61867411
 ---

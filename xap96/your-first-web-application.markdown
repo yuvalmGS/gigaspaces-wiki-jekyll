@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Your First Web Application
 page_id: 61867190
 ---

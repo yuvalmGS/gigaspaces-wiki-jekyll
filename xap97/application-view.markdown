@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Application View
 page_id: 61867093
 ---

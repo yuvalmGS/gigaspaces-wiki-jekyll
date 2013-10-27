@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Direct Persistency
 page_id: 61867313
 ---

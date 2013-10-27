@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Pessimistic Locking
 page_id: 61867438
 ---

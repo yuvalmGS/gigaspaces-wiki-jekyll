@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Space Filters
 page_id: 61867292
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Apache Load Balancer Agent
 page_id: 61867080
 ---

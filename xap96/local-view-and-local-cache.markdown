@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Local View and Local Cache
 page_id: 61867119
 ---

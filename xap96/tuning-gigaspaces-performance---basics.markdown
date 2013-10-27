@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Tuning GigaSpaces Performance - Basics
 page_id: 61866997
 ---

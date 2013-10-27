@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Step One - Using Processing Units for Scaling
 page_id: 61867010
 ---

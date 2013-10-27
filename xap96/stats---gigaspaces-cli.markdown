@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  stats - GigaSpaces CLI
 page_id: 61867121
 ---

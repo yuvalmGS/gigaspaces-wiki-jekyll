@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Installation Prerequisites
 page_id: 61867194
 ---

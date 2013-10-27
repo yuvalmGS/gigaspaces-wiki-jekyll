@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Space JMX Management
 page_id: 61867258
 ---

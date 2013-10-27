@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Command Line Interface (CLI) Security
 page_id: 61867110
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Web Management Console
 page_id: 61867391
 ---

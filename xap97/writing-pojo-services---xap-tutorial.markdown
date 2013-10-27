@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Writing POJO Services - XAP Tutorial
 page_id: 61867305
 ---

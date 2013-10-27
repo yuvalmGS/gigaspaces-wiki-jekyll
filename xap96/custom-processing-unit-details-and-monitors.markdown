@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Custom Processing Unit Details and Monitors
 page_id: 61867232
 ---

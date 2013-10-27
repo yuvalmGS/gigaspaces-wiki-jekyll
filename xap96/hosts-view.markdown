@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Hosts View
 page_id: 61867425
 ---

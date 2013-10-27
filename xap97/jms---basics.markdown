@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  JMS - Basics
 page_id: 61867277
 ---

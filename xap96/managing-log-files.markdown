@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Managing Log Files
 page_id: 61867061
 ---

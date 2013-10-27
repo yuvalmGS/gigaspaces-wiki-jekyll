@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  The Lookup Service
 page_id: 61867216
 ---

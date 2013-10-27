@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Terminology - Runtime Components
 page_id: 61867104
 ---

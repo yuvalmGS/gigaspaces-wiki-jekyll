@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Communication Protocol
 page_id: 61867256
 ---

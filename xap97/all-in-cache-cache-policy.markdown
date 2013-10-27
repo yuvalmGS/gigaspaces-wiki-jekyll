@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  ALL IN CACHE-Cache Policy
 page_id: 61867183
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Optimistic Locking
 page_id: 61867181
 ---

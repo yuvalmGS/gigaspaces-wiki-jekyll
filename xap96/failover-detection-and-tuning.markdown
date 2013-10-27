@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Failover Detection and Tuning
 page_id: 61867273
 ---

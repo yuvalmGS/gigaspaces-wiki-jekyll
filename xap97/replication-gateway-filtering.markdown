@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Replication Gateway Filtering
 page_id: 61867259
 ---

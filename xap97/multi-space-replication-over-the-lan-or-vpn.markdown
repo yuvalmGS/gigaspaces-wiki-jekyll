@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Multi-Space Replication over the LAN or VPN
 page_id: 61867132
 ---

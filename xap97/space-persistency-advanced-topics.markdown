@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Space Persistency Advanced Topics
 page_id: 61867063
 ---

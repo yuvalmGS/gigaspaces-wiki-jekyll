@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Constructor Based Properties
 page_id: 63078410
 ---

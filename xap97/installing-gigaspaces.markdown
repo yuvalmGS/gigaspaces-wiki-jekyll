@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Installing GigaSpaces
 page_id: 61867142
 ---

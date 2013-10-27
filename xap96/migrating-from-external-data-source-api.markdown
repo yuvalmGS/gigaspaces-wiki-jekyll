@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Migrating From External Data Source API
 page_id: 61867085
 ---

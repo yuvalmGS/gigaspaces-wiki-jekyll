@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Terminology - Data Grid Topologies
 page_id: 61867088
 ---

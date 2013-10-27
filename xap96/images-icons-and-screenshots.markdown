@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Images Icons and Screenshots
 page_id: 61867237
 ---

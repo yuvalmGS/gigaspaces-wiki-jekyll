@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Event Driven Remoting
 page_id: 61867434
 ---

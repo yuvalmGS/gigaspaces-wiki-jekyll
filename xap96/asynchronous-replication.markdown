@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Asynchronous Replication
 page_id: 61867158
 ---

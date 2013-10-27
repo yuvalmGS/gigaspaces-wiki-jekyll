@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Counters
 page_id: 61867141
 ---

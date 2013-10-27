@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Setting Classpath
 page_id: 61867262
 ---

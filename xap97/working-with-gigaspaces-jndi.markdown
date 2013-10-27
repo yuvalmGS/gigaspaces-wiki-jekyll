@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Working with GigaSpaces JNDI
 page_id: 61867319
 ---

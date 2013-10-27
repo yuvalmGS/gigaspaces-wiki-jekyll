@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Footer Links
 page_id: 61867068
 ---

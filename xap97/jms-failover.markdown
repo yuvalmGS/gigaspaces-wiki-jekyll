@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  JMS Failover
 page_id: 61867206
 ---

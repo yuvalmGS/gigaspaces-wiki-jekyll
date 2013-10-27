@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Failure Detection
 page_id: 61867419
 ---

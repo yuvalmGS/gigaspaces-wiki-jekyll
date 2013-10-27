@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Intercepting Replication Events at the Gateway
 page_id: 61867233
 ---

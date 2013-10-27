@@ -1,5 +1,5 @@
 ---
-layout: xap97
+layout: post
 title:  Networking How Tos
 page_id: 61867175
 ---

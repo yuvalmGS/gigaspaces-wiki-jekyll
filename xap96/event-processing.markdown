@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  Event Processing
 page_id: 61867213
 ---

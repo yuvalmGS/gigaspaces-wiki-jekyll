@@ -1,5 +1,5 @@
 ---
-layout: xap96
+layout: post
 title:  POJO Interaction with the Space
 page_id: 63079278
 ---
