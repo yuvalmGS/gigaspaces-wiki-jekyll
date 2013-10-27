@@ -25,7 +25,7 @@ If you would like to run the tutorial sample application, download GigaSpaces an
 
 
 {blank-line}
-[{fontsize20}Writing Your First Caching Application{fontsize20}|Your First Data Grid Application]
+[{% fontsize 20 %}Writing Your First Caching Application{% endfontsize %}|Your First Data Grid Application]
 Create your first simple Hello World caching application
 
 {% endcolumn %}
