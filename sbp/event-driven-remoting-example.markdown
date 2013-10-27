@@ -9,7 +9,7 @@ page_id: 47219276
 
 
 {% tip %}
-**Summary:** {excerpt}Event based remoting example{excerpt}
+**Summary:** {% excerpt %}Event based remoting example{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.4
 **Contents:**

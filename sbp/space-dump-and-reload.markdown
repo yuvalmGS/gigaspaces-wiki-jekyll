@@ -8,7 +8,7 @@ page_id: 54820920
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {excerpt}Space Dump and Reload{excerpt}
+**Summary:** {% excerpt %}Space Dump and Reload{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1
 **Last Update:** November 2010

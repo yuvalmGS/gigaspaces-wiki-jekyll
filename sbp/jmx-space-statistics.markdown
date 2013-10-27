@@ -7,7 +7,7 @@ page_id: 48760469
 
 
 {% tip %}
-**Summary:** {excerpt}JMX Space Statistics Agent{excerpt}
+**Summary:** {% excerpt %}JMX Space Statistics Agent{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 6.6
 **Contents:**

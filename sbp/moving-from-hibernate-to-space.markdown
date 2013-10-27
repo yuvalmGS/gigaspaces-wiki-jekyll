@@ -8,7 +8,7 @@ page_id: 55935740
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {excerpt}Moving Spring/Hibernate Application to GigaSpaces{excerpt}
+**Summary:** {% excerpt %}Moving Spring/Hibernate Application to GigaSpaces{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0
 **Last Update:** Feb 2011

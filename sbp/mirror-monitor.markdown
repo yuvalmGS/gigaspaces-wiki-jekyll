@@ -7,7 +7,7 @@ page_id: 52888463
 
 
 {% tip %}
-**Summary:** {excerpt}Mirror Service Monitoring Utility{excerpt}
+**Summary:** {% excerpt %}Mirror Service Monitoring Utility{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1
 **Last Update:** April 2010

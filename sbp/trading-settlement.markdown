@@ -8,7 +8,7 @@ page_id: 56429380
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {excerpt}Trading Settlement Demo.{excerpt}
+**Summary:** {% excerpt %}Trading Settlement Demo.{% endexcerpt %}
 **Authors**: Shay Hassidim, Deputy CTO, GigaSpaces; Norm Leitman, Sales Engineer, GigaSpaces; Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.4
 **Last Update:** Nov 2011

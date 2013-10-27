@@ -7,7 +7,7 @@ page_id: 48760404
 
 
 {% tip %}
-**Summary:** {excerpt}Implementing Priority based Queue{excerpt}
+**Summary:** {% excerpt %}Implementing Priority based Queue{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0
 **Last Update**: Feb 2011

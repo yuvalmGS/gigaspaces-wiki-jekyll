@@ -8,7 +8,7 @@ page_id: 54296773
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {excerpt}The Unit of work Pattern - Parallel atomic ordered data processing for associated data objects{excerpt}
+**Summary:** {% excerpt %}The Unit of work Pattern - Parallel atomic ordered data processing for associated data objects{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.0
 **Last Update:** Feb 2011

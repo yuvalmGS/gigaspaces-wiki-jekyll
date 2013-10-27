@@ -9,7 +9,7 @@ page_id: 55443590
 
 
 {% tip %}
-**Summary:** {excerpt}Refreshable Business Logic example.{excerpt}
+**Summary:** {% excerpt %}Refreshable Business Logic example.{% endexcerpt %}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1.3
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}

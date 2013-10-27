@@ -7,7 +7,7 @@ page_id: 47219144
 
 
 {% tip %}
-**Summary:** {excerpt}Available functionality, how to develop the integration components and how to configure, deploy and run the GigaSpaces-Excel solution.{excerpt}
+**Summary:** {% excerpt %}Available functionality, how to develop the integration components and how to configure, deploy and run the GigaSpaces-Excel solution.{% endexcerpt %}
 **Author**: Pini Cohen, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP.NET 6.6
 **Contents:**

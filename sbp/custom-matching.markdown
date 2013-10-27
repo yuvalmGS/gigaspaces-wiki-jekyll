@@ -8,7 +8,7 @@ page_id: 52528551
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {excerpt}Custom Matching Implementation{excerpt}
+**Summary:** {% excerpt %}Custom Matching Implementation{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.0
 **Last Update:** January 2010

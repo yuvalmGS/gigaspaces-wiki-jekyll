@@ -8,7 +8,7 @@ page_id: 56426564
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {excerpt}Web Service Processing Unit{excerpt}
+**Summary:** {% excerpt %}Web Service Processing Unit{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.
 **Last Update:** May 2011

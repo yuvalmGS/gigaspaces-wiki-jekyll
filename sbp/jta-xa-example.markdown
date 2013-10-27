@@ -8,7 +8,7 @@ page_id: 55938209
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {excerpt}Integrating GigaSpaces with External JMS Server using JTA/XA{excerpt}
+**Summary:** {% excerpt %}Integrating GigaSpaces with External JMS Server using JTA/XA{% endexcerpt %}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.1
 **Last Update**: April 2011

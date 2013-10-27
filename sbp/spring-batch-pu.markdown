@@ -9,7 +9,7 @@ page_id: 55937171
 
 
 {% tip %}
-**Summary:** {excerpt}GigaSpaces Spring Batch Elastic Processing Unit{excerpt}
+**Summary:** {% excerpt %}GigaSpaces Spring Batch Elastic Processing Unit{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0. Spring Batch 2.1.6.
 **Last Update:** March 2011

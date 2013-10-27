@@ -8,7 +8,7 @@ page_id: 55937666
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {excerpt}GigaSpaces Universal Deployer tool. Allows deploying composite applications without any coding.{excerpt}
+**Summary:** {% excerpt %}GigaSpaces Universal Deployer tool. Allows deploying composite applications without any coding.{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.1
 **Last Update:** April 2011

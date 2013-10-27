@@ -9,7 +9,7 @@ page_id: 54820903
 
 
 {% tip %}
-**Summary:** {excerpt}WAN Replication Gateway example.{excerpt}
+**Summary:** {% excerpt %}WAN Replication Gateway example.{% endexcerpt %}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1.2
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}

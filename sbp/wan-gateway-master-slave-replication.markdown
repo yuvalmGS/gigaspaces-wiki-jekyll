@@ -8,7 +8,7 @@ page_id: 64323671
 {% compositionsetup %}
 
 {% tip %}
-{**}Summary:** {excerpt}WAN Master-Slave replication example{excerpt}
+{**}Summary:** {% excerpt %}WAN Master-Slave replication example{% endexcerpt %}
 **Author**: Ali Hodroj, Senior Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 9.6
 {toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}

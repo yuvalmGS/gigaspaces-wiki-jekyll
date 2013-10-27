@@ -8,7 +8,7 @@ page_id: 57213232
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {excerpt}Observable WAN - Multi-site WAN performance detection{excerpt}
+**Summary:** {% excerpt %}Observable WAN - Multi-site WAN performance detection{% endexcerpt %}
 **Author**: DeWayne Filppi
 **Recently tested with GigaSpaces version**: XAP 8.0.4
 **Last Update:** March 2012

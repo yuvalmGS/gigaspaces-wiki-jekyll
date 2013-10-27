@@ -8,7 +8,7 @@ page_id: 52887597
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {excerpt}Unique Global ID Generator{excerpt}
+**Summary:** {% excerpt %}Unique Global ID Generator{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1
 **Last Update:** Jan 2011

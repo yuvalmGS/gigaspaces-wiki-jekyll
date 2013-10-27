@@ -9,7 +9,7 @@ page_id: 54821146
 
 
 {% tip %}
-**Summary:** {excerpt}This article illustrates how to integrate the Drools Rule Engine with GigaSpaces XAP{excerpt}
+**Summary:** {% excerpt %}This article illustrates how to integrate the Drools Rule Engine with GigaSpaces XAP{% endexcerpt %}
 **Author:** Jeroen Remmerswaal
 **Recently tested with GigaSpaces version**: XAP 7.1.1
 **Last Update:** December 2010
