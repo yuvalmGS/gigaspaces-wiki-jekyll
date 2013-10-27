@@ -20,7 +20,7 @@ The mirror uses the External Data Source interface in write mode, and delegates 
 
 # NHibernate Mapping and Configuration Files
 
-{anchor:sessionfactory}
+{% anchor sessionfactory %}
 
 ## NHibernate Session Factory Configuration File
 

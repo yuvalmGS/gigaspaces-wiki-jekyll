@@ -95,7 +95,7 @@ Note the attributes that are used in this object:
 
 Basically, every `Data` object is written to the space by the `DataFeeder` with the `processed` value set to `false`, which is later set to `true` by the `DataProcessor`.
 
-{anchor:dataprocessor}
+{% anchor dataprocessor %}
 
 ## DataProcessor
 
@@ -203,7 +203,7 @@ This data processor comes with an sla.xml file which define the default topology
 {refer}See [Space Based Remoting|Space Based Remoting] for more info about remoting services over the grid.{refer}
 {refer}See [Basic Processing Unit Container|Basic Processing Unit Container] for more info about the built in basic processing unit container.{refer}
 
-{anchor:datafeeder}
+{% anchor datafeeder %}
 
 ## DataFeeder
 
@@ -334,7 +334,7 @@ This compiles all the related projects and creates the processing unit dlls insi
 
 (!) The Deployment config file (`pu.config`) should always reside under the root directory of your application.
 
-{anchor:deployment}
+{% anchor deployment %}
 
 # Deployment
 
@@ -344,7 +344,7 @@ There are a few ways to deploy the Processing Units:
 - [IDE integrated deployment|#ide]
 - [Standalone deployment|#standalone]
 
-{anchor:grid}
+{% anchor grid %}
 
 ## Grid Deployment
 
@@ -387,7 +387,7 @@ Once the processing units are deployed, they will appear in the managament cente
 
 !GRA:Images^deployed dataexample.jpg!
 
-{anchor:ide}
+{% anchor ide %}
 
 ## IDE Integrated Deployment
 
@@ -407,7 +407,7 @@ processorContainerHost.Dispose();
 This will host the two processing units, processor and feeder, which reside in the specified deployment directory.
 When the host is created the hosted processing units are immidiatly created and initialized, once the host is disposed it will dispose of the hosted processing unit container.
 
-{anchor:standalone}
+{% anchor standalone %}
 
 ## Standalone Process Deployment
 

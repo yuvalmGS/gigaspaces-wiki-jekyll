@@ -72,7 +72,7 @@ Overrides `services.config` file settings. | 65536 (64k) |
 | `com.gs.embeddedQP.enabled` | Boolean value. Used at JDBC driver. If `true`, running query processor embedded within the application. | `False` |
 | `com.gs.embeddedQP.properties` | Used at JDBC driver. Properties file location. | |
 | `com.gs.env.report` | Allows you to view all the runtime configuration settings. | |
-| `com.gs.EvictionStrategy` | Local Cache property. | {anchor:standby} |
+| `com.gs.EvictionStrategy` | Local Cache property. | {% anchor standby %} |
 | `com.gs.home` | GigaSpaces home directory.
 Since 5.0 not required, if not set explicitly, it is resolved as the parent directory of the `JSpaces.jar` file. | |
 | `com.gs.jca.demo.cfname` | JCA example connection factory class name. | `eis/GigaSpacesCF` |
@@ -118,10 +118,10 @@ Since 5.0 not required, if not set explicitly, it is resolved as the parent dire
 | `com.gs.callGC` | Boolean value.
 Call garbage collection when performing eviction. This used when running in LRU cache policy and also at client side when using local cache. | `false` |
 | `com.gs.replication.disable_multicast_adaptor` | Boolean value.
-Force disabling replication multicast adaptor. | `false` {anchor:xa} |
+Force disabling replication multicast adaptor. | `false` {% anchor xa %} |
 | `com.gs.xa.failOnInvalidRollback` | Boolean value.
 When set to `false`, the `XAResource` does not throw an error when attempting to roll back a non-existing transaction or a transaction the has already been rolled back. For more details, see
-{sunjavadoc:javax/transaction/xa/XAResource|Javadoc} | `true` {anchor:maxbuffer} |  |
+{sunjavadoc:javax/transaction/xa/XAResource|Javadoc} | `true` {% anchor maxbuffer %} |  |
 | com.gs.grid.secured | Security property indicating whether the GSM and GSC should be loaded in a secured mode. (see services.config for more info). | false (non-secured) |
 | `com.gs.deploy` | The location of the deploy directory of the GSM. | `GSHOME/deploy` |
 | `com.gs.work` | The location of the work directory of the GSM and GSC. | `GSHOME/work` |

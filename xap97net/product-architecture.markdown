@@ -53,7 +53,7 @@ Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service 
 
 (on) Though Grid Service Manager, Grid Service Container, and other processes can be started independently, it is preferable that they will be started using the GSA, thus allowing to easily monitor and manage them.
 
-{anchor:gsm}
+{% anchor gsm %}
 
 ## Grid Service Manager (GSM)
 
@@ -65,7 +65,7 @@ The GSM monitors SLA breach events throughout the life-cycle of the application,
 {comment}TODO_NIV - Change to internal link when available.{comment}
 The GSM service usually contains the [Lookup Service|XAP95:Lookup Service Configuration] and the Webster codebase server as part of its standard configuration. This configuration can be changed by providing additional parameters in the GSM startup script.
 
-{anchor:gsc}
+{% anchor gsc %}
 
 ## Grid Service Container (GSC)
 

@@ -98,7 +98,7 @@ The Entries stored in the local cache might need to be evicted at some point, du
 
 {refer}Refer to [Cache Eviction Strategy|Cache Eviction Strategy] for more info.{refer}
 
-{anchor:sync}
+{% anchor sync %}
 
 # Synchronization with a remote space
 

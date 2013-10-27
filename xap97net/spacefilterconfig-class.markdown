@@ -40,7 +40,7 @@ ISpaceProxy embeddedSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceConfi
 {% endhighlight %}
 
 
-{anchor:priority}
+{% anchor priority %}
 
 ## FilterOperation and its Relevance to Priority
 

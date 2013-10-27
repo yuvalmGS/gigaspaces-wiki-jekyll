@@ -7,7 +7,7 @@ page_id: 63799318
 
 {summary}This section gives a detailed description of the GigaSpaces deployment & runtime environment.{summary}
 
-{anchor:GSRuntimeEnv}
+{% anchor GSRuntimeEnv %}
 
 # The GigaSpaces Runtime Environment
 

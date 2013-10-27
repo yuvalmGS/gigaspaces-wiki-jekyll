@@ -8,7 +8,7 @@ page_id: 64127758
 {composition-setup}
 {summary:page|70}Overview of Service Grid Components{summary}
 
-{anchor:gsm}
+{% anchor gsm %}
 
 # Grid Service Manager (GSM)
 
@@ -20,7 +20,7 @@ Once provisioned, the GSM continuously monitors the processing unit instances to
 
 (on) It is common to start two GSM instances in each Service Grid for high-availability reasons: At any given point in time, each deployed processing unit is managed by a one GSM instance, and the other GSM(s) serve as its hot standby. If the active GSM fails for some reason, one of the standbys automatically takes over and start managing and monitoring the processing units that the failed GSM managed.
 
-{anchor:gsc}
+{% anchor gsc %}
 
 # Grid Service Container (GSC)
 
@@ -32,7 +32,7 @@ The GSC can host multiple processing unit instances simultaneously. The processi
 
 It is common to start several GSCs on the same physical machine, depending on the machine CPU and memory resources. The deployment of multiple GSCs on a single or multiple machines creates a virtual Service Grid. The fact is that GSCs are providing a layer of abstraction on top of the physical layer of machines. This concept enables deployment of clusters on various deployment typologies of enterprise data centers and public clouds.
 
-{anchor:lus}
+{% anchor lus %}
 
 # The Lookup Service (LUS)
 
@@ -54,7 +54,7 @@ The following services use the LUS:
 - Processing Unit Instances (actual instances of a deployed Processing Unit)
 - Space Instances (actual instances of a Space that form a topology)
 
-{anchor:gsa}
+{% anchor gsa %}
 
 # Grid Service Agent (GSA)
 

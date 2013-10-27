@@ -69,7 +69,7 @@ GigaSpaces XAP supports web-enabled request/response applications, in addition t
 
 The space is the 'secret sauce' behind GigaSpaces XAP architecture, and it is important to understand its capabilities in order to better understand the entire Space-Based Architecture model.
 
-{anchor:tuple}
+{% anchor tuple %}
 
 ## Tuple Space
 

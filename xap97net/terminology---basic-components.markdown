@@ -18,7 +18,7 @@ page_id: 63799398
 {comment}----------------------------
           Space
 ----------------------------{comment}
-{anchor:Space}
+{% anchor Space %}
 {section}
 
 {% column width=50% %}
@@ -46,7 +46,7 @@ The GigaSpaces cache instance that holds data objects in memory.
 {comment}----------------------------
           4 Verbs
 ----------------------------{comment}
-{anchor:Execute, Read, Write, Take and Notify}
+{% anchor Execute, Read, Write, Take and Notify %}
 {section}
 
 {% column width=50% %}
@@ -75,7 +75,7 @@ A set of methods used to read, write, take, and register for notification on obj
 {comment}----------------------------
           Service Component
 ----------------------------{comment}
-{anchor:Service Component}
+{% anchor Service Component %}
 {section}
 
 {% column width=50% %}
@@ -103,7 +103,7 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 {comment}----------------------------
           Processing Unit
 ----------------------------{comment}
-{anchor:Processing Unit}
+{% anchor Processing Unit %}
 {section}
 
 {% column width=50% %}

@@ -71,7 +71,7 @@ The following config file will cause the container to create and manage an embed
 {% endhighlight %}
 
 
-{anchor:basiccomponents}
+{% anchor basiccomponents %}
 
 # Basic Processing Unit Components
 
@@ -129,7 +129,7 @@ The container automatically detects components by scanning all the assembly (dll
 
 (!) The assembly name is the actual name and not a file path, the assembly should be part of the processing unit project output directory and be placed beside the `pu.config` file.
 
-{anchor:services}
+{% anchor services %}
 
 # Automatic Remote Services Creation And Hosting
 
@@ -145,7 +145,7 @@ public class MyService : IService
 {% endhighlight %}
 
 
-{anchor:eventcontainers}
+{% anchor eventcontainers %}
 
 # Automatic Event Listener Creation And Management
 
@@ -194,7 +194,7 @@ The following basic container config will start two space proxies and supply the
 {% endhighlight %}
 
 
-{anchor:lifecycle}
+{% anchor lifecycle %}
 
 # Space Life-Cycle Events
 

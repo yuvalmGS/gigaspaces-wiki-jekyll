@@ -114,7 +114,7 @@ MyClass[] result = space.ReadMultiple<MyClass>(query);
 
 Since Enums are stored in the space as their underlying primitive type, they must be explicitly cast to that primitive type to be used with SqlQuery.
 
-{anchor:SimpleQueries}
+{% anchor SimpleQueries %}
 
 ### Simple vs. Complex Queries
 

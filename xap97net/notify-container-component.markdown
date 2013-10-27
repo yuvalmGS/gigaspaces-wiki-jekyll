@@ -482,7 +482,7 @@ notifyEventListenerContainer.IgnoreEventOnNullTake = true;
 {gcard}
 {gdeck}
 
-{anchor:SpaceDataEventArgs}
+{% anchor SpaceDataEventArgs %}
 
 # Space Data Event Args
 

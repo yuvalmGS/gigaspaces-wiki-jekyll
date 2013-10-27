@@ -13,8 +13,8 @@ page_id: 63799388
 The `IEventListenerContainer` interface is an abstraction that allows subscribing to, and receiving events from the space, where in most cases, the business logic doesn't need to be aware of the actual container implementation. The benefit of doing this, is the loose coupling between how the events are received (the different containers), and what to do with a received event (the listener). This interface has two out-of-the-box implementors: [`PollingEventListenerContainer`|Polling Container Component] and [`NotifyEventListenerContainer`|Notify Container Component].
 !GRA:Images^Net_polling_notify_cont.jpg!
 
-{anchor: DataEventArrived}
-{anchor: DataEventHandler}
+{% anchor  DataEventArrived %}
+{% anchor  DataEventHandler %}
 
 # DataEventArrived
 
@@ -43,7 +43,7 @@ void MyEventHandler(object sender, DataEventArgs<Data> e)
 
 The sender is the actual container that sent this event (Can be casted to IEventListenerContainer), the DataEventArgs contains the argument of the event, such as the event data object, the space proxy the event received from and so on.
 
-{anchor: BatchDataEventArrived}
+{% anchor  BatchDataEventArrived %}
 
 ## Batch Event
 
@@ -71,7 +71,7 @@ void MyEventHandler(object sender, BatchDataEventArgs<Data> e)
 {% endhighlight %}
 
 
-{anchor:EventListenerContainerFactory}
+{% anchor EventListenerContainerFactory %}
 
 # Event Listener Container Factory
 
@@ -81,7 +81,7 @@ One of the ways to create an event listener container is to use the `EventListen
 
 In many scenarios, the event triggers a processing operation and its result should be written or updated back to the space. Since this scenario is very common, there are two built-in adapters that adapt a user method, which has a return value, and then automatically writes (or updates) the result back to the space.
 
-{anchor:eventhandleradapter}
+{% anchor eventhandleradapter %}
 
 ## DynamicMethod DataEventArrived Adapter
 
@@ -138,7 +138,7 @@ public EnrichedData ProcessData(Data event, ISpaceProxy proxy, ITransaction tx, 
 {% endhighlight %}
 
 
-{anchor:DelegateDataEventArrivedAdapter}
+{% anchor DelegateDataEventArrivedAdapter %}
 
 ## Delegate DataEventArrived Adapter
 
@@ -167,7 +167,7 @@ Data MyEventHandler(IEventListenerContainer sender, DataEventArgs<Data> e)
 
 The result can also be an array, and the appropriate multiple operation is executed (WriteMultiple or UpdateMultiple).
 
-{anchor:DataEventHandlerAttribute}
+{% anchor DataEventHandlerAttribute %}
 
 ## DataEventHandler attribute
 

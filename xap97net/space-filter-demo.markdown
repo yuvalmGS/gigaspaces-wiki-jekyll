@@ -47,7 +47,7 @@ space.Write(new object());
 {% endhighlight %}
 
 
-{anchor:1}
+{% anchor 1 %}
 
 # Message Censorship Attribute Filter
 
@@ -131,7 +131,7 @@ Another important thing to notice is that the `LogAndCensorizeWrite` method firs
 
 This filter class implements `IDisposable`, to demonstrate that when a filter class implements the `IDisposable` interface, it is disposed of when the space shuts down.
 
-{anchor:2}
+{% anchor 2 %}
 
 # Message Censorship Method Names Filter
 
@@ -209,7 +209,7 @@ space = GigaSpacesFactory.FindSpace("/./spaceMethodFilterDemo", spaceConfig);
 
 The same structure for the filter operation method applies here as well.
 
-{anchor:3}
+{% anchor 3 %}
 
 # Message Censorship Space Filter
 

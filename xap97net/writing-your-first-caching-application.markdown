@@ -8,7 +8,7 @@ page_id: 63799409
 {composition-setup}
 {summary}This tutorial shows how an application interacts with a GigaSpaces Data Grid, clustered in either a replicated, partitioned, master-local, or local-view topology. The application either actively reads data or registers for notifications.
 {summary}
-{anchor:1}
+{% anchor 1 %}
 
 # Overview
 
@@ -77,7 +77,7 @@ The master-local and local-view topologies do not need their own schemas, becaus
 {% endtip %}
 
 
-{anchor:2}
+{% anchor 2 %}
 
 # Deploying the Data Grid
 
@@ -91,7 +91,7 @@ To start the GS-Agent, open the Windows start menu, and navigate to the GigaSpac
 
 Next, start up the GigaSpaces Management Center, from the same menu. This is an application that allows deployment and monitoring for XAP deployments.
 
-{anchor:deploying}
+{% anchor deploying %}
 
 **To deploy the Data Grid:**
 
@@ -135,7 +135,7 @@ Depending on the type of deployment you performed, you should see that either tw
 
 (i) You deployed the the Data Grid using the Management Center and its Deployment Wizard. An alternative way deploying a single space instance can be done by using the `SpaceInstance` command.
 
-{anchor:3}
+{% anchor 3 %}
 
 # The Client Application
 

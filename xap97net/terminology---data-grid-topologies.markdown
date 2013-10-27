@@ -18,7 +18,7 @@ page_id: 63799407
 {comment}----------------------------
           Data Grid
 ----------------------------{comment}
-{anchor:Data Grid}
+{% anchor Data Grid %}
 {section}
 
 {% column width=50% %}
@@ -44,14 +44,14 @@ The relations between the spaces define the [Data Grid Topology|#Data Grid Topol
 {% endcolumn %}
 
 {section}
-{anchor:Data Grid Topology}
+{% anchor Data Grid Topology %}
 
 # Data Grid Topologies
 
 {comment}----------------------------
           Primary Backup Data Grid
 ----------------------------{comment}
-{anchor:Primary Backup Data Grid}
+{% anchor Primary Backup Data Grid %}
 {section}
 
 {% column width=50% %}
@@ -79,7 +79,7 @@ Operations that do not modify any data (e.g. read, count) are performed only on 
 {comment}----------------------------
           Partitioned Data Grid
 ----------------------------{comment}
-{anchor:Partitioned Data Grid}
+{% anchor Partitioned Data Grid %}
 {section}
 
 {% column width=50% %}
@@ -107,7 +107,7 @@ When the objects are written to this Data Grid, they are routed to the proper pa
 {comment}----------------------------
           Routing
 ----------------------------{comment}
-{anchor:Routing}
+{% anchor Routing %}
 {section}
 
 {% column width=50% %}
@@ -136,7 +136,7 @@ The routing is based on a designated property/field inside the objects that are 
 {comment}--------------------------------------------------
           Primary Backup Partitioned Data Grid
 --------------------------------------------------{comment}
-{anchor:Primary Backup Partitioned Data Grid}
+{% anchor Primary Backup Partitioned Data Grid %}
 {section}
 
 {% column width=50% %}

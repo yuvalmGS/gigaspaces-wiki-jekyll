@@ -12,7 +12,7 @@ page_id: 63799320
 
 This page explains how to configure jvm settings for XAP.NET applications. In general, the development phase of a XAP.NET application does not require meddling with jvm settings as the defaults are usually satisfactory. In later testing and production phases, however, it is sometimes required to customize the default configuration.
 
-{anchor:JvmLocation}
+{% anchor JvmLocation %}
 
 # Jvm Location
 
@@ -35,7 +35,7 @@ Many systems define an environment variable called JAVA_HOME which points to the
 {% endtip %}
 
 
-{anchor:JvmSettings}
+{% anchor JvmSettings %}
 
 # Jvm Settings
 
