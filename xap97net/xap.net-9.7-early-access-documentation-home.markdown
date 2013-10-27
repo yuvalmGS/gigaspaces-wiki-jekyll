@@ -14,14 +14,15 @@ page_id: 63799415
 
 # XAP.NET 9.7 Documentation
 
-{imagemap:name=[GRA:Images2^scaling.png]}
-{map:link=http://www.gigaspaces.com/wiki/display/XAP97NET/End+to+End+Scaling+Home|coords=30,81,326,131| title='End to End Scaling'}
-{imagemap}
+{% imagemap name=[scaling.png] %}
+{% map link=http://www.gigaspaces.com/wiki/display/XAP97NET/End+to+End+Scaling+Home|coords=30,81,326,131|title=End to End Scaling %}
+{% endimagemap %}
 
 {% wbr %}
-{imagemap:name=[GRA:Images2^caching.png]}
-{map:link=http://www.gigaspaces.com/wiki/display/XAP97NET/Caching+Home|coords=30,81,326,131| title='Caching'}
-{imagemap}
+
+{% imagemap name=[caching.png] %}
+{% map link=http://www.gigaspaces.com/wiki/display/XAP97NET/Caching+Home|coords=30,81,326,131|title=Caching %}
+{% endimagemap %}
 
 {% endcolumn %}
 

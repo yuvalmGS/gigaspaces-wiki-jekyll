@@ -4,7 +4,7 @@ title:  Nav Bar
 page_id: 61867323
 ---
 
-{%comment%}
+{% comment %}
 {% section %}
 {% align center %}
 

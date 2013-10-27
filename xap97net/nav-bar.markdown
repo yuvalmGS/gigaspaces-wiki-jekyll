@@ -5,14 +5,18 @@ categories: XAP97NET
 page_id: 63799331
 ---
 
-{wnavpanel2:  }
+{wnavpanel2:}
 {section}
-{center}
-{imagemap:name=[GRA:Images2^download_banner.jpg]}
-{map:link=http://www.gigaspaces.com/LatestProductVersion|coords=12,42,151,111| title='Download the Latest GA Release'|shape='rect'}
-{map:link=[RN:GigaSpaces 9.7.X Early Access]|coords=166,43,305,109| title='Download the Latest Developer Builds'|shape='rect'}
-{imagemap}
-{center}
+
+{% align center %}
+
+{% imagemap name=[download_banner.jpg] %}
+{% map link=http://www.gigaspaces.com/LatestProductVersion|coords=12,42,151,111|title=Download the Latest GA Release|shape=rect %}
+{% map link=http://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+9.7.X+Early+Access|coords=166,43,305,109|title=Download the Latest Developer Builds|shape=rect}
+{% endimagemap %}
+
+{% endalign %}
+
 {section}
 
 {wnavpanel2}
@@ -25,6 +29,3 @@ page_id: 63799331
 {book-tree:Programmer's Guide}
 {book-tree:Administrator's Guide}
 {wnavpanel2}
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{comment}
