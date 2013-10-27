@@ -13,7 +13,7 @@ A data unit stored in the space is called an **Entry**. However, as you've seen 
 
 Most of the time, the terms object and entry are used interchangeably, because the meaning is clear from the context, and the semantics are trivial. However, it is important to understand the difference between them. Moreover, some  features rely on applying semantics to an object to get a specific entry behavior. This page explains how objects are transformed to (and from) entries, and how that process can be controlled and customized.
 
-{% info %} A new GigaSpaces developer is not required to fully understand all the terms and concepts in this page at once. If it feels like too much new stuff, just make sure you get the basic idea from each section, and move on to other topics. Later on, when you have a better grasp of the framework, and you need more information about a specific feature, come back to this page to learn more.
+{% infosign %} A new GigaSpaces developer is not required to fully understand all the terms and concepts in this page at once. If it feels like too much new stuff, just make sure you get the basic idea from each section, and move on to other topics. Later on, when you have a better grasp of the framework, and you need more information about a specific feature, come back to this page to learn more.
 
 # Including/Excluding Data from an Entry
 
@@ -173,9 +173,9 @@ Each public property/field in the object is mapped to a property of the same nam
 
 While this generic approach solves simple scenarios easily, in some cases it is not enough. For example, you may want to exclude a specific property from being stored in the space, or specify that a certain property should be indexed for faster performance. For that end, you can use a set of .NET attributes to control how an object is mapped to an entry. If you don't want to (or can't) use XAP.NET attributes in your code, you can create an xml file that defines those behaviors, commonly called `gs.xml`.
 
-{% info %} Since working with .NET attributes is usually simpler and easier thant working with external xml files, this page demonstrates all the features using attributes. However, every feature shown here can also be implemented using `gs.xml`.
+{% infosign %} Since working with .NET attributes is usually simpler and easier thant working with external xml files, this page demonstrates all the features using attributes. However, every feature shown here can also be implemented using `gs.xml`.
 
-{% info %} Mapping a .NET object to a space entry does not involve .NET serialization, which means that the `\[Serializable\]` indication is not required, and in fact ignored. Even so, it is a good design practice to mark all objects stored in the space as `\[Serializable\]`, to keep in-line with .NET standards.
+{% infosign %} Mapping a .NET object to a space entry does not involve .NET serialization, which means that the `\[Serializable\]` indication is not required, and in fact ignored. Even so, it is a good design practice to mark all objects stored in the space as `\[Serializable\]`, to keep in-line with .NET standards.
 
 # Routing
 

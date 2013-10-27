@@ -47,7 +47,7 @@ ISpaceProxy mySpace = GigaSpacesFactory.FindSpace("/./spaceName")
 
 Several `ISpaceProxy` instances can be defined within a single Processing Unit, each with its own properties.
 
-{% info %} `ISpaceProxy` simplifies most operations used with the space, but some operations still require access to `IJSpace`, which can be accessed through the `ISpaceProxy` API.
+{% infosign %} `ISpaceProxy` simplifies most operations used with the space, but some operations still require access to `IJSpace`, which can be accessed through the `ISpaceProxy` API.
 
 {% note %}
 - The `ISpaceProxy` variable represents a remote or embedded space proxy (for a single space or clustered) and **should be constructed only** once throughout the lifetime of the application process.

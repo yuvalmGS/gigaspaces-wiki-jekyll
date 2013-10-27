@@ -64,7 +64,7 @@ public class DataProcessor : IDataProcessor
 {% endhighlight %}
 
 
-{% info %} Hosting services is done on a Processing Unit that starts an embedded space.
+{% infosign %} Hosting services is done on a Processing Unit that starts an embedded space.
 
 {refer}For more details regarding service hosting please refer to [Domain Service Host|Domain Service Host]{refer}
 

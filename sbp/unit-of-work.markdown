@@ -218,7 +218,7 @@ public class UOWFeederMain {
 			for (int j = 0; j < burstSize; j++) {
 				UOWMessage m = new UOWMessage();
 				m.setData("AA");
-				m.setId{% info %};
+				m.setId(i);
 				int group = i % groupsCount;
 				m.setGroup(group + "");
 				m.setBuketId(group % bucketsCount);
@@ -386,7 +386,7 @@ public class UOWProcessorFactory implements UOWProcessorService{
     	if (clusterInfo!=null) partitionID=clusterInfo.getInstanceId();
     	System.out.println(">>>>> Partition ID:"+ partitionID + " - starting "+ bucketConfig.getBucketsCount() + " polling containers <<<<<<");
 		for (int i = 0; i < bucketConfig.getBucketsCount(); i++) {
-			createProcessor{% info %};
+			createProcessor(i);
 		}
 	}
 

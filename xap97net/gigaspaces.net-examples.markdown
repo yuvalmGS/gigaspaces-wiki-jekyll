@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799344
 ---
 
-{% info %} These examples can be found under the, `<GigaSpaces Root>\Examples` folder.
+{% infosign %} These examples can be found under the, `<GigaSpaces Root>\Examples` folder.
 
 || Example Name and Description || Example Folder ||
 | **HelloWorld**

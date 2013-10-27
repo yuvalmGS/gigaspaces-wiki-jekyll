@@ -58,15 +58,15 @@ The following guidelines and restrictions should be followed in order to enable 
 
 
 - The properties/fields stored in the space in all platforms should be identical.
- {% info %} In Java, only properties are serialized into the space. In .NET, both fields and properties are serialized, so you can mix and match them.
+ {% infosign %} In Java, only properties are serialized into the space. In .NET, both fields and properties are serialized, so you can mix and match them.
  {% lampon %} Since java properties start with a lowercase letter, whereas .Net properties usually start with an uppercase letter, it is recommended to use the `SpaceProperty(AliasName="")` feature to map a property/field name from .Net to java.
 
 
 - Only the types listed in the table below are supported. If one of your fields uses a different type, you can use the class only in a homogeneous environment.
- {% info %} Arrays of these types are supported as well.
- {% info %} You can also use .NET enumerations, which are treated as their underlying .NET type. Java enums are not supported.
+ {% infosign %} Arrays of these types are supported as well.
+ {% infosign %} You can also use .NET enumerations, which are treated as their underlying .NET type. Java enums are not supported.
  {% lampon %} If your class contains a field whose type is not in the table, you can use `SpaceExclude` to exclude it from the space.
- {% info %} Some of the types have different charactaristics in .NET and Java (signed\unsigned, nullable\not nullable, precision, etc.) This can lead to runtime exceptions (e.g. trying to store `null` in a .NET structure) or unexpected results (e.g. copying values between signed and unsigned fields).
+ {% infosign %} Some of the types have different charactaristics in .NET and Java (signed\unsigned, nullable\not nullable, precision, etc.) This can lead to runtime exceptions (e.g. trying to store `null` in a .NET structure) or unexpected results (e.g. copying values between signed and unsigned fields).
 
 # Supported Types for Matching and Interoperability
 

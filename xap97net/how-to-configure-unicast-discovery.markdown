@@ -13,7 +13,7 @@ There are many cases when you need to use a unicast-based services discovery. Fo
 
 In such cases, the Jini lookup discovery enables the user to discover services (spaces, GSC, GSM, processing units etc.) using unicast protocol.
 
-{% info %} Please refer to the [Lookup Service Configuration] or the [Networking How Tos] section for more details.
+{% infosign %} Please refer to the [Lookup Service Configuration] or the [Networking How Tos] section for more details.
 
 # Configuring the lookup locators property
 
@@ -54,7 +54,7 @@ jini://machine1:4174,machine2:4174/./mySpace?locators=machine1:4174,machine2:417
 {% endtip %}
 
 
-{% info %} For troubleshooting purposes you should verify that the services (spaces, GSC, GSM, processing units etc.) print correct settings for the locators while they initialize. You can turn on the relevant loggings if required.
+{% infosign %} For troubleshooting purposes you should verify that the services (spaces, GSC, GSM, processing units etc.) print correct settings for the locators while they initialize. You can turn on the relevant loggings if required.
 
 # Configuring Jini Lookup Service Unicast Port
 

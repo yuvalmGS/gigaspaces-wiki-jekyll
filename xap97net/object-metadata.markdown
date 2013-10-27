@@ -15,7 +15,7 @@ However, in many cases this generic approach is not enough. For example, you may
 
 If you don't want to (or can't) use XAP.NET attributes in your classes code, you can create an xml file that defines those behaviours, commonly called `gs.xml`.
 
-{% info %} Since working with attributes is usually simpler and easier, this page demonstrates all the features using attributes. However, every feature shown here can also be achieved using `[gs.xml|GS.XML Metadata]`.
+{% infosign %} Since working with attributes is usually simpler and easier, this page demonstrates all the features using attributes. However, every feature shown here can also be achieved using `[gs.xml|GS.XML Metadata]`.
 
 # Including/Excluding Content from the Space
 

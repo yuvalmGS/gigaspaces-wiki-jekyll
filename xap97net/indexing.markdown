@@ -176,7 +176,7 @@ SqlQuery<Person> query = new SqlQuery<Person>(
 
 
 {% comment %}
-{% info %} For more information, see [Nested Object Queries|SQLQuery#Nested Object Query]
+{% infosign %} For more information, see [Nested Object Queries|SQLQuery#Nested Object Query]
 {% endcomment %}
 
 
@@ -388,4 +388,4 @@ When multiple class fields are indexed, the space looks for the field value inde
 
 The smallest set of space objects is the list of objects to perform the matching against (matching candidates). Once the candidates space object list has been constructed, it is scanned to locate space objects that fully match the given template - i.e. all non-null template fields match the corresponding space object fields.
 
-{% info %} Class fields that are not indexed are not used to construct the candidates list.
+{% infosign %} Class fields that are not indexed are not used to construct the candidates list.

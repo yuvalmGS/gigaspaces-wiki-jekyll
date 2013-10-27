@@ -50,7 +50,7 @@ To clarify, here is an example of an application SLA:
 
 In this type of example, the Service Grid is responsible for making sure that one hundred Processing Units are deployed into the Service Grid cloud. Once the SLA is breached, (for example, if a machine which contains a Processing Unit fails), the Service Grid is responsible for re-provisioning all the Processing Units previously deployed on this machine into other Grid Service Containers (see definition below), in other available machines.
 
-{% info %} Note: The logical separation between multiple Service Grid instances is defined by a Lookup Group. A lookup group is a logical name associated with each Service Grid component. This is the prime way of separating between multiple Service Grid clusters run on the same network.
+{% infosign %} Note: The logical separation between multiple Service Grid instances is defined by a Lookup Group. A lookup group is a logical name associated with each Service Grid component. This is the prime way of separating between multiple Service Grid clusters run on the same network.
 
 ## Grid Service Agent (GSA)
 
@@ -72,7 +72,7 @@ Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service 
 The [Grid Service Manager (GSM)|XAP95:The Grid Service Manager], is a special infrastructure service, responsible for managing the Service Grid containers. The GSM accepts user deployment and undeployment requests, and provisions the Service Grid cloud accordingly.
 The GSM monitors SLA breach events throughout the life-cycle of the application, and is responsible for taking corrective actions, once SLAs are breached.
 
-{% info %} It is common to start two instances of GSM services within each Service Grid cloud, for high-availability reasons.
+{% infosign %} It is common to start two instances of GSM services within each Service Grid cloud, for high-availability reasons.
 
 
 {% comment %}

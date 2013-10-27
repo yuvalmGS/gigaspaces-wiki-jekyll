@@ -89,15 +89,15 @@ public class MyDistributedTask implements
       IRemoteJSpaceAdmin spaceAdmin = (IRemoteJSpaceAdmin) ijs.getAdmin();
       SpaceRuntimeInfo rtInfo = spaceAdmin.getRuntimeInfo();
       for (int i = 0; i < rtInfo.m_ClassNames.size(); i++) {
-        String className = rtInfo.m_ClassNames.get{% info %};
-        Integer count = rtInfo.m_NumOFEntries.get{% info %};
+        String className = rtInfo.m_ClassNames.get(i);
+        Integer count = rtInfo.m_NumOFEntries.get(i);
 
         System.out.println(System.currentTimeMillis()
                            + "Partition: " + clusterInfo.getInstanceId()
                            + " ClassName: " + className + ", Number of entries: "
                            + count);
 
-        totalCount += rtInfo.m_NumOFEntries.get{% info %};
+        totalCount += rtInfo.m_NumOFEntries.get(i);
       }
 
       System.out.println(System.currentTimeMillis()
@@ -200,11 +200,11 @@ public class DataProcessorService implements IDataProcessor {
       IRemoteJSpaceAdmin spaceAdmin = (IRemoteJSpaceAdmin) ijs.getAdmin();
       SpaceRuntimeInfo rtInfo = spaceAdmin.getRuntimeInfo();
       for (int i = 0; i < rtInfo.m_ClassNames.size(); i++) {
-        String className = rtInfo.m_ClassNames.get{% info %};
-        Integer count = rtInfo.m_NumOFEntries.get{% info %};
+        String className = rtInfo.m_ClassNames.get(i);
+        Integer count = rtInfo.m_NumOFEntries.get(i);
         System.out.println("ClassName: " + className
                            + ", number of entries: " + count);
-        totalCount += rtInfo.m_NumOFEntries.get{% info %};
+        totalCount += rtInfo.m_NumOFEntries.get(i);
       }
       pc.setCount(totalCount);
       pc.setPartitionId(clusterInfo.getInstanceId());
