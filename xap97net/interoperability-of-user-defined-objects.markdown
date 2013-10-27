@@ -22,7 +22,9 @@ A deep class is defined as a class in which, at least one of its fields is a use
 For the purpose of explaining the subject we'll look at a Person class (a deep class)
 
 || C# || Java ||
-|{Code}
+|
+{% highlight java %}
+
 using GigaSpaces.Core.Metadata;
 
 namespace MyCompany.MyProject.Entities
@@ -61,7 +63,11 @@ namespace MyCompany.MyProject.Entities
         public string Country;
     }
 }
-{Code}|{Code}
+
+{% endhighlight %}
+|
+{% highlight java %}
+
 package com.mycompany.myproject.entities;
 
 public class Person
@@ -84,5 +90,7 @@ public class Address
     public String Country;
 }
 
-{Code}|
+
+{% endhighlight %}
+|
 

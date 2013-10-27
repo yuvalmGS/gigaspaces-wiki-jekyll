@@ -16,7 +16,9 @@ The returned object is a copy of the entry stored in the space, which means that
 
 This page demonstrates basic space operations using a class called `Person`:
 
-{code:java}
+
+{% highlight java %}
+
 public class Person
 {
    private String _name;
@@ -38,7 +40,9 @@ public class Person
    {
    }
 }
-{code}
+
+{% endhighlight %}
+
 
 {refer}See also the [Object Metadata] and [GS.XML Metadata] sections for details about the GigaSpaces class decorations you may specify.{refer}
 
@@ -46,11 +50,15 @@ public class Person
 
 Calling `Read` searches the space for a matching entry. If no match is found, the call returns immediatly with null.
 In some scenarios an application may need to poll the space until a matching entry is available. Instead of calling read and doing a `Thread.Sleep()` in a loop, you can use the `timeout` argument to get a blocking behaviour. For example:
-{code:java}
+
+{% highlight java %}
+
 Person template = new Person();
 // This call will block until a matching Person is available or 10 seconds have elapsed.
 Person p = proxy.Read(template, 10000);
-{code}
+
+{% endhighlight %}
+
 
 If the space contains a Person when the call is executed, it will return immediately. If the space does not contain a Person, the call will block until someone writes a Person to the space, or until the timeout has elapsed (in which case null is returned).
 Calling `Read` without a timeout argument will use the default value stored in `ISpaceProxy.DefaultTimeout`, which is zero by default.
@@ -61,7 +69,9 @@ Calling `Read` with a timeout argument ignores `ISpaceProxy.DefaultTimeout`.
 In a partitioned cluster each entry is stored in a specific partition, according to its routing property. When reading from such a cluster, if the routing property is specified in the template, the read request is sent directly to the relevant partition (which may or may not contain a match). If the routing property is not specified, the read request is broadcasted to all the cluster members, looking for a match. Naturally queries which include the routing property are more efficient (no broadcast means less network traffic) and faster (the proxy does not have to wait for a response from multiple members).
 
 Setting the routing property is usually done using the `SpaceRouting` attribute. For example, to set the `Country` property as the routing property of the `Person` class:
-{code:java}
+
+{% highlight java %}
+
 public class Person
 {
    ...
@@ -73,7 +83,9 @@ public class Person
    }
    ...
 }
-{code}
+
+{% endhighlight %}
+
 
 {refer}For more information about routing, see [SpaceRouting|Object Metadata#Routing] or [GS.XML Metadata].{refer}
 (!) **Note:** [Blocking read|#Blocking Read] is not supported on a clustered proxy.
@@ -88,7 +100,9 @@ If a certain property is commonly used when querying the space, you can instruct
 # When a Template Matches More Than One Entry
 
 Let's examine the following piece of code:
-{code:java}
+
+{% highlight java %}
+
 Person p1 = new Person();
 p1.Name = "Alice";
 proxy.Write(p1);
@@ -97,7 +111,9 @@ p2.Name = "Bob";
 proxy.Write(p2);
 Person result1 = proxy.Read(new Person());
 Person result2 = proxy.Read(new Person());
-{code}
+
+{% endhighlight %}
+
 
 Assuming the space was empty and no one else is accessing the space at the same time:
 **Q)** What's in result1?

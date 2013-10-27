@@ -14,7 +14,9 @@ page_id: 63799322
 
 By default, the container will look for [basic processing unit components|#basiccomponents], [remote service|#services] and [event listener container|#eventcontainers] and instantiate and manage these components if found. This behavior can be enabled or disabled by configuring the container in the following manner:
 
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -26,11 +28,15 @@ By default, the container will look for [basic processing unit components|#basic
       </BasicContainer>
   </GigaSpaces.XAP>
 </configuration>
-{code}
+
+{% endhighlight %}
+
 
 By default, when given an assembly name to scan for components, the entire assembly will be scanned. It is possible to specify a certain namespace inside an assembly that should be scanned for components instead of the entire assembly, this can be configured as follows:
 
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -46,14 +52,18 @@ By default, when given an assembly name to scan for components, the entire assem
       </BasicContainer>
   </GigaSpaces.XAP>
 </configuration>
-{code}
+
+{% endhighlight %}
+
 
 # Configuring Managed Space Proxies
 
 The space proxies which are created and managed by the container can be configured regarding their cluster state.
 They can be configured whether to be clustered proxies or a proxy to the direct cluster member. Moreover, they can be configured whether they should be created as part of a cluster by being aware to the cluster info the container received at deploy time, or being created as a single space. Both of these configurations are only relevant for space proxies which are embedded and not remote.
 
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -69,7 +79,9 @@ They can be configured whether to be clustered proxies or a proxy to the direct 
       </BasicContainer>
   </GigaSpaces.XAP>
 </configuration>
-{code}
+
+{% endhighlight %}
+
 
 This configuration file will create a container with two embedded spaces, one will not be aware to the cluster info which the container received, and as a result will be a single embedded space not part of any cluster.
 The second proxy will be embedded and part of the cluster which was specified by the cluster info, moreover, the proxy that is kept in the container under MyClusteredSpace name will be a proxy to the entire cluster and not just the direct cluster member that this container created.
@@ -78,7 +90,9 @@ The default values for these properties are `Direct` for `Mode` and `true` for `
 
 In order to have a space proxy with custom property the following configuration block should be used:
 
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -98,7 +112,9 @@ In order to have a space proxy with custom property the following configuration 
       </BasicContainer>
   </GigaSpaces.XAP>
 </configuration>
-{code}
+
+{% endhighlight %}
+
 
 This will create an embedded space with the additional provided custom properties.
 
@@ -109,7 +125,9 @@ The container exposes some events that can be used to be notified at the differe
 **`ContainerInitialized`** - Triggered once the container finished its initialization process.
 
 Here's a simple example of using this events in a `BasicProcessingUnitComponent` which acts as a feeder
-{code:java}
+
+{% highlight java %}
+
 [BasicProcessingUnitComponent(Name="Feeder")]
 public class Feeder
 {
@@ -148,14 +166,18 @@ public class Feeder
     Console.WriteLine("Feeder Disposed");
   }
 }
-{code}
+
+{% endhighlight %}
+
 
 (on) The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container
 
 # Creating a Space Proxy Programatically
 
 In same cases, the `SpaceProxies` config element does not suffice in order to construct a space proxy. For instance if you want to start a space with an external data source, or some other custom properties. In these cases, the `CreateSpaceProxy` method should be used in one of the container initialization events. If this proxy is used by other components in the processing unit, it should be put in the `ContainerInitializing` event in order for it to be available for the other components when they are created, otherwise you can put it in the `ContainerInitialized` just as well. Here's a simple example of how to use the `CreateSpaceProxy`:
-{code:java}
+
+{% highlight java %}
+
 [ContainerInitializing]
 public void Initialize(BasicProcessingUnitContainer container)
 {
@@ -166,7 +188,9 @@ public void Initialize(BasicProcessingUnitContainer container)
   //Create the proxy and let the container manage it
   ISpaceProxy spaceProxy = container.CreateSpaceProxy("MySpace", "/./mySpace?groups=$(DefaultLookupGroup)", spaceConfig);
 }
-{code}
+
+{% endhighlight %}
+
 
 # Basic Container Programatic API
 
@@ -175,32 +199,48 @@ The container exposes API for creating managed space proxies and receiving its m
 Here are a few samples of how to obtain managed components from the container:
 
 **Create a managed space proxy**
-{code:java}
+
+{% highlight java %}
+
 BasicProcessingUnitContainer container = //Obtain a reference to the container
 
 ISpaceProxy spaceProxy = container.CreateSpaceProxy("ColocatedSpace", "/./mySpace");
-{code}
+
+{% endhighlight %}
+
 
 **Get a managed space proxy**
-{code:java}
+
+{% highlight java %}
+
 BasicProcessingUnitContainer container = //Obtain a reference to the container
 
 ISpaceProxy spaceProxy = container.GetSpaceProxy("ColocatedSpace");
-{code}
+
+{% endhighlight %}
+
 
 **Get a managed basic processing unit component**
-{code:java}
+
+{% highlight java %}
+
 BasicProcessingUnitContainer container = //Obtain a reference to the container
 
 Object component = container.GetProcessingUnitComponent("Feeder");
-{code}
+
+{% endhighlight %}
+
 
 **Get a managed event listener container**
-{code:java}
+
+{% highlight java %}
+
 BasicProcessingUnitContainer container = //Obtain a reference to the container
 
 IEventListenerContainer<Data> eventListenerContainer = container.GetEventListenerContainer<Data>("DataProcessor");
-{code}
+
+{% endhighlight %}
+
 
 (on) For full API please read the API documentation file.
 

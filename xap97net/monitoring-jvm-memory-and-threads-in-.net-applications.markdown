@@ -13,7 +13,9 @@ In some cases, you might want to monitor the activity of the JVM running as part
 
 **To view and monitor the JVM loaded into the .NET process memory address using `jconsole`:**
 1. Have the following settings as part of your `app.config` file:
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -29,7 +31,9 @@ In some cases, you might want to monitor the activity of the JVM running as part
     </JvmSettings>
   </GigaSpaces>
 </configuration>
-{code}
+
+{% endhighlight %}
+
 2. Start `jconsole` -- jconsole is located under the bin directory of the Java home, by default it is under `<Installation dir>\Runtime\java\bin`
 3. Once the `jconsole` is started, select the **Local** tab:
 

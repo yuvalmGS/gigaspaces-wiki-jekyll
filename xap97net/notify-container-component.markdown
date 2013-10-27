@@ -19,7 +19,9 @@ Here is a simple example of polling event container construction:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -40,11 +42,15 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-{code}
+
+{% endhighlight %}
+
 
 Constructing the notify container that uses the `SimpleListener` class as the event listener, and starting it.
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 IEventListenerContainer<Data> eventListenerContainer = EventListenerContainerFactory.CreateContainer<Data>(spaceProxy, new SimpleListener());
 
@@ -52,10 +58,14 @@ eventListenerContainer.Start();
 
 // when needed dispose of the container
 eventListenerContainer.Dispose()
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = new NotifyEventListenerContainer<Data>(spaceProxy);
@@ -65,17 +75,23 @@ notifyEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAda
 
 // when needed dispose of the container
 notifyEventListenerContainer.Dispose();
-{code}
+
+{% endhighlight %}
+
 
 Event processing method
 
-{code:java}
+
+{% highlight java %}
+
 public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data> e)
 {
 	Data data = e.Data;
 	//process Data here and return processed data
 }
-{code}
+
+{% endhighlight %}
+
 
 {info}[DelegateDataEventArrivedAdapter|Event Listener Container#DelegateDataEventArrivedAdapter] is a class that adapts the supplied user method to the [DataEventHandler|Event Listener Container#DataEventHandler] delegate, and contains a built in logic of writing back event results to the space{info}
 
@@ -96,7 +112,9 @@ When performing receive operations, a template is defined, creating a virtualize
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -119,16 +137,22 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 Data template = new Data();
 template.Processed = false;
 notifyEventListenerContainer.Template = new SqlQuery<Data>(template, "Processed = ?");
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -142,22 +166,30 @@ The notify container can be configured with transaction support, so the event ac
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven]
 [TransactionalEvent(TransactionType = TransactionType.Distributed)]
 public class SimpleListener
 {
  ...
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = new NotifyEventListenerContainer<Data>(spaceProxy);
 notifyEventListenerContainer.TransactionType = TransactionType.Distributed;
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -165,7 +197,9 @@ It is possible to receive a reference to the on going transaction as part of the
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven]
 [TransactionalEvent(TransactionType = TransactionType.Distributed)]
 public class SimpleListener
@@ -178,16 +212,22 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = new NotifyEventListenerContainer<Data>(spaceProxy);
 notifyEventListenerContainer.TransactionType = TransactionType.Distributed;
 notifyEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAdapter<Data,Data>(ProcessData).WriteBackDataEventHandler;
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -199,7 +239,9 @@ The notify container allows you to mask which operations performed against the s
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven(NotifyType = DataEventType.Write | DataEventType.Update)]
 public class SimpleListener
 {
@@ -220,14 +262,20 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 notifyEventListenerContainer.NotifyType = DataEventType.Write | DataEventType.Update;
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -239,7 +287,9 @@ Below is an example of batching, where if the number of notifications has passed
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -273,10 +323,14 @@ public class SimpleListener
         //process batch Data here and return processed data
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 EventSessionConfig sessionConfig = new EventSessionConfig();
@@ -285,7 +339,9 @@ sessionConfig.BatchSize = 10;
 sessionConfig.BatchTime = 5000;
 notifyEventListenerContainer.EventSessionConfig = sessionConfig;
 notifyEventListenerContainer.BatchDataEventArrived += new DelegateDataEventArrivedAdapter<Data,Data[]>(ProcessData).WriteBackBatchDataEventHandler;
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -299,7 +355,9 @@ Here is an example of how FIFO events can be configured with the notify containe
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -331,16 +389,22 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 EventSessionConfig sessionConfig = new EventSessionConfig();
 sessionConfig.Fifo = true;
 notifyEventListenerContainer.EventSessionConfig = sessionConfig;
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -352,7 +416,9 @@ Here is an example of how Durable Notifications can be configured with the notif
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -384,16 +450,22 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 EventSessionConfig sessionConfig = new EventSessionConfig();
 sessionConfig.DurableNotifications = true;
 notifyEventListenerContainer.EventSessionConfig = sessionConfig;
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -405,7 +477,9 @@ Here is how the notify container can be configured:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven(PerformTakeOnNotify = true, IgnoreEventOnNullTake = true)]
 public class SimpleListener
 {
@@ -426,15 +500,21 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 notifyEventListenerContainer.PerformTakeOnNotify = true;
 notifyEventListenerContainer.IgnoreEventOnNullTake = true;
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -446,7 +526,9 @@ The notify container uses GigaSpaces [data event session API|Space Events] under
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -468,10 +550,14 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = new NotifyEventListenerContainer<Data>(spaceProxy);
@@ -481,18 +567,24 @@ notifyEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAda
 
 // when needed dispose of the container
 notifyEventListenerContainer.Dispose();
-{code}
+
+{% endhighlight %}
+
 
 Event processing method
 
-{code:java}
+
+{% highlight java %}
+
 public Data ProcessData(IEventListenerContainer sender, DataEventArgs<Data> e)
 {
     SpaceDataEventArgs eventArgs = (SpaceDataEventArgs)e.CustomEventArgs;
 	Data data = e.Data;
 	//process Data here and return processed data
 }
-{code}
+
+{% endhighlight %}
+
 
 {info}[DelegateDataEventArrivedAdapter|Event Listener Container#DelegateDataEventArrivedAdapter] is a class that adapts the supplied user method to the [DataEventHandler|Event Listener Container#DataEventHandler] delegate, and contains a built-in logic of writing event results back to the space{info}
 
@@ -509,7 +601,9 @@ Here is how the notify container can be configured:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven(QueuedEventHandling = true, QueuedEventHandlersPoolSize = 3)]
 public class SimpleListener
 {
@@ -530,15 +624,21 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 notifyEventListenerContainer.QueuedEventHandling = true;
 notifyEventListenerContainer.QueuedEventHandlersPoolSize = 3;
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -546,22 +646,30 @@ Sometimes, it is very convenient to have a listener instance per concurrent queu
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven(QueuedEventHandling = true, QueuedEventHandlersPoolSize = 3, CloneEventListenersPerThread = true]
 public class SimpleListener : ICloneable
 {
  ...
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 notifyEventListenerContainer.QueuedEventHandling = true;
 notifyEventListenerContainer.QueuedEventHandlersPoolSize = 3;
 notifyEventListenerContainer.CloneEventListenersPerThread = true;
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -581,7 +689,9 @@ Here is an example of how to subscribe to this event:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -594,21 +704,31 @@ public class SimpleListener
 
     ...
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 notifyEventListenerContainer.ContainerExceptionOccured += ExceptionHandler;
-{code}
-{code:java}
+
+{% endhighlight %}
+
+
+{% highlight java %}
+
 public void ExceptionHandler(object sender, ContainerExceptionEventArgs e)
 {
      Console.WriteLine("Container Name: " + ((IEventListenerContainer<Data>)sender).Name);
      Console.WriteLine(e.Exception.Message);
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -620,7 +740,9 @@ Here is an example of how to subscribe to this event:
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -633,21 +755,31 @@ public class SimpleListener
 
     ...
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NotifyEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 notifyEventListenerContainer.UserExceptionOccured += ExceptionHandler;
-{code}
-{code:java}
+
+{% endhighlight %}
+
+
+{% highlight java %}
+
 public void ExceptionHandler(object sender, UserExceptionEventArgs<Data> e)
 {
      if (e.Exception is MySpecialException)
      	 e.Ignore = true;
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 

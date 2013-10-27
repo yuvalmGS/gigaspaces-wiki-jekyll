@@ -19,14 +19,22 @@ Navigate back to show all the Spaces, by clicking on the breadcrumb on the left.
 # Query Editor
 
 The Query editor supports SQL queries. For example, to query a specific class:
-{code}
+
+{% highlight java %}
+
 SELECT * FROM my.company.com.MyPojo WHERE rownum < 1000
-{code}
+
+{% endhighlight %}
+
 
 In the screenshot below, we also provide the UID column of each object in the Space.
-{code}
+
+{% highlight java %}
+
 SELECT uid,* FROM com.gigaspaces.sba.trading.model.TradePojo WHERE rownum < 7
-{code}
+
+{% endhighlight %}
+
 
 Press the **"Play"** icon to execute the query. The Query is executed against the selected Space (cluster) or Space instance.
 If the query has too many results, use the paging at the bottom to move between them. Paging is static, meaning that these results are fetched once per execute request.

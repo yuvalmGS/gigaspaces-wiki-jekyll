@@ -64,7 +64,9 @@ Run the following at the receiver machine:
 `admin multicastTest -receiver -ba localhost -verbose`
 
 The sender should display the following:
-{code:java}<GigaSpaces Root>\bin\gs>admin multicastTest -sender -ba localhost  -verbose
+
+{% highlight java %}
+<GigaSpaces Root>\bin\gs>admin multicastTest -sender -ba localhost  -verbose
 JAVA_HOME environment variable is set to D:\JDK\jdk1.5.0_04 in "<GigaSpaces Root>\bin\setenv.bat"
 Environment set successfully from c:\GigaSpacesXAP6.0\bin..
 Starting Multicast-Sender...
@@ -82,10 +84,14 @@ Reply from 127.0.0.1:5558 bytes=100 time=2.869079ms
 Reply from 127.0.0.1:5558 bytes=100 time=0.807924ms
 Reply from 127.0.0.1:5558 bytes=100 time=0.744508ms
 Reply from 127.0.0.1:5558 bytes=100 time=0.876089ms
-{code}
+
+{% endhighlight %}
+
 
 The receiver should display the following:
-{code:java}<GigaSpaces Root>\bin\gs>admin multicastTest -receiver -ba localhost  -verbose
+
+{% highlight java %}
+<GigaSpaces Root>\bin\gs>admin multicastTest -receiver -ba localhost  -verbose
 JAVA_HOME environment variable is set to D:\JDK\jdk1.5.0_04 in "<GigaSpaces Root>\bin\setenv.bat"
 Environment set successfully from c:\GigaSpacesXAP6.0\bin..
 Starting Multicast-Receiver...
@@ -102,4 +108,5 @@ Received from [sender=127.0.0.1:5559] packet size: 100 bytes
 Received from [sender=127.0.0.1:5559] packet size: 100 bytes
 Received from [sender=127.0.0.1:5559] packet size: 100 bytes
 Received from [sender=127.0.0.1:5559] packet size: 100 bytes
-{code}
+
+{% endhighlight %}

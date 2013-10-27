@@ -46,22 +46,34 @@ However, if a Pet were also associated with a Vet, we could not embed the Pet in
 ### Data Access for Embedded Relationships
 
 Embedded Object Query: The `info` property is an object within the `Person` class:
-{code}
+
+{% highlight java %}
+
 SqlQuery<Person> query = new SqlQuery<Person>
 	("info.socialSecurity < ? and info.socialSecurity >= ?");
-{code}
+
+{% endhighlight %}
+
 
 Embedded Map Query: The `info` property is a Map within the `Person` class:
-{code}
+
+{% highlight java %}
+
 SqlQuery<Person> query =
 new SqlQuery<Person>("info.salary < 15000 and info.salary >= 8000");
-{code}
+
+{% endhighlight %}
+
 
 Embedded Collection Query: The `employees` property is a collection within the `Company` class:
-{code}SqlQuery<Company> query =
+
+{% highlight java %}
+SqlQuery<Company> query =
 	new SqlQuery<Company>
 	("employees[**].children[**].name = 'Junior Doe');
-{code}
+
+{% endhighlight %}
+
 
 See the [SqlQuery] section for details about embedded entities query and indexing.
 

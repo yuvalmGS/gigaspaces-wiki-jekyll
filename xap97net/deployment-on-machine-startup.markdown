@@ -15,7 +15,9 @@ Service Grid deployment can be considered something that should be done automati
 
 In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) to start on machine startup they should be installed as windows services using [GigaSpaces Windows Service Manager|Service Grid Components as Windows Services#Windows Services Manager]. Each installed service needs to be [configured| Service Grid Components as Windows Services#Service Configuration] seperately with the appropriate lookup groups by updating the service configuration file `"-Dcom.gs.jini_lus.groups"` option.
 
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -32,7 +34,9 @@ In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) t
     </JvmSettings>
   </GigaSpaces>
 </configuration>
-{code}
+
+{% endhighlight %}
+
 
 The Starting State should be updated to Automatic.
 
@@ -44,7 +48,9 @@ If your environment has connection problems due to firewalls see [how to set gig
 
 In order to have a processing unit deployed automatically at machine startup, Command Line Interface service can be used. The service can be configured to start with a given command line by updating its configuration file. For example, the following configuration will deploy a processing unit named dataprocessor after a timeout of 300000 miliseconds (5 minutes) has passed. The timeout should be used because there's no garantee which windows service will be started first, therefore, the timeout should reflect the amount of time that it should take for all the Gsm's and Gsc's to load. If a processing unit of that name is already deployed in the service grid, the deployment request will be ignored.
 
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -54,7 +60,9 @@ In order to have a processing unit deployed automatically at machine startup, Co
   <GigaSpaces.Services.Cli CommandLine="pudeploy -timeout 300000 dataprocessor"/>
   ...
 </configuration>
-{code}
+
+{% endhighlight %}
+
 
 {refer}For a full list of possible command line options refer to [Cli Command|XAP95:gs.bat - Other CLI Commands] page or run Start->Program Files->GigaSpaces XAP.NET->Tools->GigaSpaces Command Line and type help{refer}
 

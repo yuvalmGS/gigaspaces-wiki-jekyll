@@ -22,20 +22,28 @@ The `IEventListenerContainer` interface exposes the `DataEventArrived` event, wh
 
 Here is a simple example of event subscription:
 
-{code:java}
+
+{% highlight java %}
+
 IEventListenerContainer<Data> container = // obtain a reference to a container
 
 container.DataEventArrived += MyEventHandler;
-{code}
+
+{% endhighlight %}
+
 
 The event handler method:
 
-{code:java}
+
+{% highlight java %}
+
 void MyEventHandler(object sender, DataEventArgs<Data> e)
 {
     // handle event
 }
-{code}
+
+{% endhighlight %}
+
 
 The sender is the actual container that sent this event (Can be casted to IEventListenerContainer), the DataEventArgs contains the argument of the event, such as the event data object, the space proxy the event received from and so on.
 
@@ -47,21 +55,29 @@ Sometimes it is better to use batch events, for instance to improve network traf
 
 Here is a simple example of event subscription:
 
-{code:java}
+
+{% highlight java %}
+
 IEventListenerContainer<Data> container = // obtain a reference to a container
 
 container.BatchDataEventArrived += MyBatchEventHandler;
-{code}
+
+{% endhighlight %}
+
 
 The event handler method:
 
-{code:java}
+
+{% highlight java %}
+
 void MyEventHandler(object sender, BatchDataEventArgs<Data> e)
 {
     Data[] batch = e.Data;
     // handle event
 }
-{code}
+
+{% endhighlight %}
+
 
 {anchor:EventListenerContainerFactory}
 
@@ -82,7 +98,9 @@ The `DynamicMethodDataEventArrivedAdapter<TData>` is an internal class that is u
 Here are a few examples:
 
 **An event listening method that processes the data, and returns a processed result**
-{code:java}
+
+{% highlight java %}
+
 public class SimpleListener
 {
     ...
@@ -93,10 +111,14 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-{code}
+
+{% endhighlight %}
+
 
 **An event listening method that processes the data, executes an additional space operation that is needed to enrich the data, and returns an enriched data result**
-{code:java}
+
+{% highlight java %}
+
 public class SimpleListener
 {
     ...
@@ -107,7 +129,9 @@ public class SimpleListener
         //process Data here and return processed enriched data
     }
 }
-{code}
+
+{% endhighlight %}
+
 
 The user methods can receive different parameters and be either a void method, or return a result. The parameters can be between 0 to 5 and must follow a certain order:
 
@@ -120,9 +144,13 @@ The user methods can receive different parameters and be either a void method, o
 The return parameter, if not void, is the result that is written back to the space (when the result is not null).
 
 For example:
-{code:java}
+
+{% highlight java %}
+
 public EnrichedData ProcessData(Data event, ISpaceProxy proxy, ITransaction tx, SpaceDataEventArgs<object> args, IEventListenerContainer container)
-{code}
+
+{% endhighlight %}
+
 
 {anchor:DelegateDataEventArrivedAdapter}
 
@@ -132,20 +160,28 @@ The `DelegateDataEventArrivedAdapter<TData, TResult>` receives a delegate to a m
 
 Here is a simple example:
 
-{code:java}
+
+{% highlight java %}
+
 IEventListenerContainer<Data> container = // obtain a reference to a container
 
 container.DataEventArrived = new DelegateDataEventArrivedAdapter<Data, Data>(MyEventHandler).WriteBackDataEventHandler;
-{code}
+
+{% endhighlight %}
+
 
 The event handler method:
 
-{code:java}
+
+{% highlight java %}
+
 Data MyEventHandler(IEventListenerContainer sender, DataEventArgs<Data> e)
 {
     // handle event and return processed data to be written back to the space
 }
-{code}
+
+{% endhighlight %}
+
 
 The result can also be an array, and the appropriate multiple operation is executed (WriteMultiple or UpdateMultiple).
 
@@ -162,10 +198,13 @@ The DataEventHandler attribute has two roles. The first is to mark a method to b
 
 Here is a simple example:
 
-{code:java}
+
+{% highlight java %}
+
 [DataEventHandler(WriteOrUpdate = false, WriteLease = 10000)]
 public EnrichedData MyEventHandler(Data data)
 {
     // handle the event
 }
-{code}
+
+{% endhighlight %}

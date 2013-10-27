@@ -55,7 +55,9 @@ From the space's perspective, a replication from one space to a target gateway i
 
 The following snippet shows how to configure a space that resides in New York to replicate to two other spaces, one in London and one in Hong Kong:
 
-{code:xml}
+
+{% highlight xml %}
+
 <SpaceProxies>
    <add Name="Space" Url="/./myNYSpace">
       <Gateway LocalGatewayName="NEWYORK">
@@ -66,11 +68,15 @@ The following snippet shows how to configure a space that resides in New York to
       </Gateway>
    </add>
 </SpaceProxies>
-{code}
+
+{% endhighlight %}
+
 
 Each of replication channel to the gateways can be configured with more parameters, such parameters can applied to all gateways or specifically per gateway, for example:
 
-{code:xml}
+
+{% highlight xml %}
+
 <SpaceProxies>
   <add Name="Space" Url="/./myNYSpace">
      <Gateway LocalGatewayName="NEWYORK" BulkSize="1000" MaxRedoLogCapacity="1000000">
@@ -81,7 +87,9 @@ Each of replication channel to the gateways can be configured with more paramete
      </Gateway>
   </add>
 </SpaceProxies>
-{code}
+
+{% endhighlight %}
+
 
 Here we have specified a global bulk size of 1000 but have specifically overridden it in the replication channel to Hong Kong with 100, and have a global maximum redo log capacity for both targets of 1000000.
 {refer}For more details about all the available configuration elements of the space gateway targets please refer to the [Configuring Space Gateway Targets] section.{refer}
@@ -91,10 +99,14 @@ Here we have specified a global bulk size of 1000 but have specifically overridd
 **Use the `partitioned-sync2backup` cluster schema**
 You should have the `partitioned-sync2backup` cluster schema used with the space to enable the replication to the Gateway.
 If you are not interested in having backups running but have the replication to the Gateway running, you should have ZERO as the number of backups. See below example of an sla.xml configuration you could use in such a case:
-{code}
+
+{% highlight java %}
+
 <os-sla:sla cluster-schema="partitioned-sync2backup" number-of-instances="1" number-of-backups="0">
 </os-sla:sla>
-{code}
+
+{% endhighlight %}
+
 
 Note that when there are no backups running any failure of the primary might cause a loss of data.
 {% endtip %}
@@ -114,7 +126,9 @@ The different gateway components needs to locate each other across the different
 
 Following the above example, here we demonstrate how to configure the local gateway processing unit in New York, which needs to send replication to London and Hong Kong and also receive replication from these two sites.
 
-{code:xml}
+
+{% highlight xml %}
+
 <os-gateway:delegator id="delegator"
   local-gateway-name="NEWYORK" gateway-lookups="gatewayLookups">
   <os-gateway:delegations>
@@ -146,7 +160,9 @@ Following the above example, here we demonstrate how to configure the local gate
 </os-gateway:lookups>
 <!--The above ports and host names are randomly selected and
 have no meaning, all sites could designate the same ports as well-->
-{code}
+
+{% endhighlight %}
+
 
 In the above example we see that both the sink and delegator needs a reference to the gateway lookup configuration, and that's because both components are using this configuration to locate the relevant component or to register themselves. They use their local gateway name to identify themselves to the lookup configuration, where they should be registered and where they should look for their targets.
 
@@ -160,7 +176,9 @@ A gateway and a [Mirror Service|XAP95:Asynchronous Persistency with the Mirror] 
 ## Gateway and Distributed Transactions
 
 In order to preserve distributed transactions atomicity (distributed transactions consolidation) the following property should be added to the space configuration:
-{code:xml}
+
+{% highlight xml %}
+
 <SpaceProxies>
   <add Name="Space" Url="/./localSpace" gateway-targets="gatewayTargets">
     <Properties>
@@ -168,7 +186,9 @@ In order to preserve distributed transactions atomicity (distributed transaction
     </Properties>
   </add>
 </SpaceProxies>
-{code}
+
+{% endhighlight %}
+
 
 As specified in the example above, it is required to set the "cluster-config.groups.group.repl-policy.processing-type" property to "multi-source".
 
@@ -182,7 +202,9 @@ Please note that while waiting for the pieces of a distributed transaction to ar
 
 The following example demonstrates how to set the timeout for waiting for distributed transaction data to arrive. It is also possible to set the amount of new operations to perform before processing data individually for each participant:
 
-{code:xml}
+
+{% highlight xml %}
+
 <os-gateway:sink id="sink" local-gateway-name="NEWYORK"
   gateway-lookups="gatewayLookups"
   local-space-url="jini://*/*/myNYSpace">
@@ -194,7 +216,9 @@ The following example demonstrates how to set the timeout for waiting for distri
      dist-tx-wait-timeout-millis="10000"
      dist-tx-wait-for-opers="20" />
 </os-gateway:sink>
-{code}
+
+{% endhighlight %}
+
 
 Distributed transaction participants data will be processed individually if 10 seconds have passed and not all of the participants data  has arrived or if 20 new operations were executed after the distributed transaction.
 
@@ -215,7 +239,9 @@ In this case, New York's site will be the active site while London and Hong Kong
 Like all GigaSpaces Processing Units, the configuration details of each of the above components is placed in a `pu.xml` file. Here are the contents of the files for each of the components:
 {gdeck}
 {gcard:New York Space}
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -244,10 +270,14 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   </GigaSpaces.XAP>
 </configuration>
 
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:New York Gateway}
-{code:xml}
+
+{% highlight xml %}
+
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -293,10 +323,14 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   <!-- The above ports and host names are randomly selected and has no meaning,
        all sites could designate the same ports as well-->
 </beans>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:London Space}
-{code:xml}
+
+{% highlight xml %}
+
 
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
@@ -322,10 +356,14 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   </GigaSpaces.XAP>
 </configuration>
 
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:London Gateway}
-{code:xml}
+
+{% highlight xml %}
+
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -368,10 +406,14 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
        the sink will only register itself in the lookup service and no delegator
        exists so there is no need to find a remote gateway -->
 </beans>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Hong Kong Space}
-{code:xml}
+
+{% highlight xml %}
+
 
 <configuration>
   <configSections>
@@ -396,10 +438,14 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   </GigaSpaces.XAP>
 </configuration>
 
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Hong Kong Gateway}
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:context="http://www.springframework.org/schema/context"
@@ -446,7 +492,9 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
          exists so there is no need to find a remote gateway -->
 
 </beans>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -463,7 +511,9 @@ With the example below we will have only New York and London as the two active s
 Here are the contents of the files for each of the components:
 {gdeck}
 {gcard:New York Space}
-{code:xml}
+
+{% highlight xml %}
+
 <configuration>
   <configSections>
     <section name="GigaSpaces.XAP" type="GigaSpaces.XAP.Configuration.GigaSpacesXAPConfiguration,
@@ -490,10 +540,14 @@ Here are the contents of the files for each of the components:
   </GigaSpaces.XAP>
 </configuration>
 
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:New York Gateway}
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -545,10 +599,14 @@ Here are the contents of the files for each of the components:
             all sites could designate the same ports as well-->
 
 </beans>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:London Space}
-{code:xml}
+
+{% highlight xml %}
+
 <configuration>
   <configSections>
     <section name="GigaSpaces.XAP" type="GigaSpaces.XAP.Configuration.GigaSpacesXAPConfiguration,
@@ -575,10 +633,14 @@ Here are the contents of the files for each of the components:
   </GigaSpaces.XAP>
 </configuration>
 
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:London Gateway}
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -629,11 +691,15 @@ Here are the contents of the files for each of the components:
             all sites could designate the same ports as well-->
 
 </beans>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Symmetric Gateway Config}
 In this example, the gateway `pu.xml` is quite symmetric, the only difference is the local gateway name and the target gateway name. In such cases, it may be more convenient to create a single gateway `pu.xml` and use place holders to override the relevant properties at deploy time by injecting values for these properties:
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
@@ -690,7 +756,9 @@ In this example, the gateway `pu.xml` is quite symmetric, the only difference is
             all sites could designate the same ports as well-->
 
 </beans>
-{code}
+
+{% endhighlight %}
+
 In the above we have configured both LONDON and NEWYORK at the sources of the sink and as delegation target, the delegator and the sink will filter a gateway target and source if they match their local name. Using the above technique may simplify scenarios which are symmetric but it is not recommended when the scenarios are **not** symmetric as it can be unnecessarily confusing.
 {gcard}
 {gdeck}

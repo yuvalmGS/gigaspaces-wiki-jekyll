@@ -21,7 +21,9 @@ The scaling is managed by a single consumer, which is considered as the main con
 Here is an example of how these properties can be configured:
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [PollingEventDriven(MinConcurrentConsumers = 1, MaxConcurrentConsumers = 5, DynamicScaleSampleRate = 1000, IdleIterationsThreshold = 10, BusyIterationThreshold = 50)]
 public class SimpleListener
 {
@@ -42,10 +44,14 @@ public class SimpleListener
         //process Data here and return processed data
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.MinConcurrentConsumers = 1;
@@ -53,7 +59,9 @@ pollingEventListenerContainer.MaxConcurrentConsumers = 5;
 pollingEventListenerContainer.DynamicScaleSampleRate = 1000;
 pollingEventListenerContainer.IdleIterationsThreshold = 10;
 pollingEventListenerContainer.BusyIterationsThreshold = 50;
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 

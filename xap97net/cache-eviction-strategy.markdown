@@ -12,14 +12,18 @@ page_id: 63799310
 XAP.NET comes with a number of eviction strategies. To choose an eviction strategy, you'll need to configure a `IdBasedLocalCacheConfig` object with the desired eviction strategy builder. A `IdBasedLocalCache` instance can be created with this config object.
 
 Here's a simple example of configuring a cache to use the FIFO eviction strategy, where the size limit of the cache is 50,000 entries and each time an eviction is required, 1,000 Entries are evicted:
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // create or obtain a reference to a space proxy
 
 IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig ();
 cacheConfig.EvictionStrategyBuilder = new FifoSegmentEvictionStrategyBuilder(50000, 1000);
 
 ILocalCache localCache = new GigaSpacesFactory.CreateIdBasedLocalCache(spaceProxy, cacheConfig);
-{code}
+
+{% endhighlight %}
+
 
 ## Eviction strategies
 

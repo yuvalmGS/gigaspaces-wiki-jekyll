@@ -16,7 +16,9 @@ Before diving into the Service Grid Admin API, here are some code examples showi
 
 {gdeck:admin_test|top}
 {gcard:GSA}
-{code:java}
+
+{% highlight java %}
+
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -31,10 +33,14 @@ foreach (IGridServiceAgent gsa in admin.GridServiceAgents)
         Console.WriteLine("   -> Process [" + String.Join(",", processDetails.Command.ToArray()) + "]");
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:GSM}
-{code:java}
+
+{% highlight java %}
+
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -44,10 +50,14 @@ foreach (IGridServiceManager gsm in admin.GridServiceManagers)
 {
     Console.WriteLine("GSM [" + gsm.Uid + "] running on Machine " + gsm.Machine.HostAddress);
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:GSC}
-{code:java}
+
+{% highlight java %}
+
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -63,10 +73,14 @@ foreach (IGridServiceContainer gsc in admin.GridServiceContainers)
         puInstance.InstanceId + "][" + puInstance.BackupId + "]");
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Processing Unit}
-{code:java}
+
+{% highlight java %}
+
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -102,10 +116,14 @@ foreach (IProcessingUnit processingUnit in admin.getProcessingUnits())
         }
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Space}
-{code:java}
+
+{% highlight java %}
+
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -136,10 +154,14 @@ foreach (ISpace space in admin.Spaces)
         }
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Virtual Machine}
-{code:java}
+
+{% highlight java %}
+
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -167,10 +189,14 @@ foreach (IVirtualMachine virtualMachine in admin.VirtualMachines)
         Console.WriteLine("   -> Space [" + spaceInstance.Uid + "]");
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Machine}
-{code:java}
+
+{% highlight java %}
+
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -191,7 +217,9 @@ foreach (IMachine machine in admin.Machines)
         Console.WriteLine("   -> PU [" + processingUnitInstance.Uid + "]");
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -345,7 +373,9 @@ There are two ways the Service Grid Admin API can be used to access information 
 
 If we want to register, for example, for Grid Service Container additions, we can use the following code (note, removing the event listener is not shown here for clarity):
 
-{code:java}
+
+{% highlight java %}
+
 admin.GridServiceContainers.GridServiceContainerAdded += HandleGridServiceContainerAdded;
 
 private void HandleGridServiceContainerAdded(object sender, GridServiceContainerEventArgs e)
@@ -353,11 +383,15 @@ private void HandleGridServiceContainerAdded(object sender, GridServiceContainer
     IGridServiceContainer gsc = e.GridServiceContainer;
     // do something here
 }
-{code}
+
+{% endhighlight %}
+
 
 Removals are done in a similar manner:
 
-{code:java}
+
+{% highlight java %}
+
 admin.GridServiceContainers.GridServiceContainerRemoved += HandleGridServiceContainerRemoved;
 
 void HandleGridServiceContainerRemoved(object sender, GridServiceContainerEventArgs e)
@@ -365,11 +399,15 @@ void HandleGridServiceContainerRemoved(object sender, GridServiceContainerEventA
     IGridServiceContainer gsc = e.GridServiceContainer;
     // do something here
 }
-{code}
+
+{% endhighlight %}
+
 
 All other data structures use a similar API to register for events. Some might have specific events that go beyond just additions and removals, but they still use the same model. For example, here is how we can register for Space Mode change events across all currently running Space topologies and Space Instances:
 
-{code:java}
+
+{% highlight java %}
+
 admin.Spaces.SpaceModeChanged += HandleSpaceModeChanged;
 
 void Spaces_SpaceModeChanged(object sender, SpaceModeChangedEventArgs e)
@@ -379,7 +417,9 @@ void Spaces_SpaceModeChanged(object sender, SpaceModeChangedEventArgs e)
 				"changed mode from [" + e.PreviousMode + "] to [" + e.NewMode + "]");
 
 }
-{code}
+
+{% endhighlight %}
+
 
 Of course, we can register the same event listener on a specific `ISpace` topology, or event on a specific `ISpaceInstance`.
 

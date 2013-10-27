@@ -22,7 +22,9 @@ Let's create a type-safe document wrapper for the **Product** type described in 
 
 Here's an example (only parts of the properties have been implemented to keep the example short):
 
-{code:java}
+
+{% highlight java %}
+
 public class ProductDocument : SpaceDocument
 {
     private const String TypeName = "Product";
@@ -52,14 +54,18 @@ public class ProductDocument : SpaceDocument
        set { this[PropertyPrice] = value; }
     }
 }
-{code}
+
+{% endhighlight %}
+
 
 # Registering the Extension Class
 
 If your only intention is to write/update document entries, creating the extension class is sufficient - from the space's perspective it is equivalent to a `SpaceDocument` instance. However, if you attempt to read/take entries from the space, the results will be `SpaceDocument` instances, and the cast to `ProductDocument` will throw an exception.
 To overcome that, we need to include the document wrapper type in the type introduction:
 
-{code:java}
+
+{% highlight java %}
+
 public void RegisterProductType(ISpaceProxy spaceProxy)
 {
     // Create type descriptor:
@@ -69,7 +75,9 @@ public void RegisterProductType(ISpaceProxy spaceProxy)
     // Register type:
     spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptorBuilder.Create());
 }
-{code}
+
+{% endhighlight %}
+
 
 This wrapper type-registration is kept in the proxy and not propagated to the server, so that from the server's perspective this is still a virtual document type with no affiliated Concrete object class.
 
@@ -77,7 +85,9 @@ This wrapper type-registration is kept in the proxy and not propagated to the se
 
 The following code snippet demonstrate usage of the `ProductDocument` extensions we've created to write and read documents from the space.
 
-{code:java}
+
+{% highlight java %}
+
 public void example(ISpaceProxy spaceProxy)
 {
     // Create a product document:
@@ -95,4 +105,5 @@ public void example(ISpaceProxy spaceProxy)
     // Read product document by ID:
     ProductDocument result3 = spaceProxy.ReadById(new IdQuery<ProductDocument>("Product", "hw-1234"));
 }
-{code}
+
+{% endhighlight %}

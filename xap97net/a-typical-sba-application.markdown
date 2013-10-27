@@ -66,7 +66,9 @@ An event container is simply a class which defines:
 
 For example:
 
-{code:Java}
+
+{% highlight java %}
+
 [NotifyEventDriven(Name="MyDataProcessor")]
 public class DataProcessor
 {
@@ -88,21 +90,31 @@ public class DataProcessor
         return data;
     }
 }
-{code}
+
+{% endhighlight %}
+
 
 Activating the container can be done via code:
-{code:Java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = ...; // Reference to a space proxy.
 IEventListenerContainer container = EventListenerContainerFactory.CreateContainer(spaceProxy, new DataProcessor());
 container.Start();
-{code}
+
+{% endhighlight %}
+
 
 Or XML:
-{code:xml}
+
+{% highlight xml %}
+
 <EventContainers>
     <add Name="MyDataProcessor" SpaceProxyName="..."/>
 </EventContainers>
-{code}
+
+{% endhighlight %}
+
 
 ### The ISpaceProxy Core Middleware Component
 
@@ -122,7 +134,9 @@ The `ISpaceProxy` abstraction was designed with the following principles in mind
 The space serves several purposes in an EDA/SOA type of application:
 - **Messaging Grid** - in this case, the space is used as a distributed transport that enables remote and local services to send and receive objects based on their content. In a typical Space-Based Architecture, the space is used to route requests/orders from the data source to the processing unit, based on a predefined affinity-key. The affinity-key is used to route the request/order to the appropriate processing unit. Since it is optimized to run in-memory, it is used also as a means to enable the workflow between the embedded POCO services.
 - **In Memory Data Grid (IMDG)** - in this case, the space is used as a distributed object repository, that provides in-memory access to distributed data. Data can be distributed in various topologies - partitioned and replicated are the main ones. In a typical Space-Based Architecture, the space instances are collocated within each processing unit and therefore provide local access to distributed data required by POCO services running under that processing unit. The domain model is also POCO-driven. Data objects are basically objects with annotations, (which add specific metadata required by the Data Grid to mark indexed fields), the affinity-key, and whether the object should be persisted or not, as can be seen in the code snippet below:
-{code:java}
+
+{% highlight java %}
+
 [SpaceClass]
 public class Data
 {
@@ -132,7 +146,9 @@ public class Data
     [SpaceRouting]
     public String Type { get; set; }
 }
-{code}
+
+{% endhighlight %}
+
 
 - **Processing Grid** - a processing grid represents a particular and common use of the space for parallel transaction processing, using a master/worker pattern. In Space-Based architecture, the processing grid is implemented through a set of POCO services that serve as the workers and event containers, that trigger events from the space into and from these services. Requests/orders are processed in parallel between the different processing units, as well as within these processing units, in case there is a pool of services handling the event.
 
@@ -157,13 +173,17 @@ A processing unit that needs to be export a service uses the `DomainServiceHost`
 An [OpenSpaces SLA Driven Container|XAP97NET:Basic Processing Unit Container] that allows you to deploy a processing unit over a dynamic pool of machines, is available through an SLA-driven container, formerly known as the Grid Service Containers - GSCs. The SLA-driven containers are .NET processes that provide a hosting environment for a running processing unit. The Grid Service Manager (GSM) is used to manage the deployment of the processing unit, based on SLA. The SLA definition is part of the processing unit configuration, and is normally named `sla.xml`. The SLA definition defines: the number of PU instances that need to be running at a given point of time, the scaling policy, the failover policy based on CPU, and memory or application-specific measurement. !GS6:Images^intro6a.jpg|align=center!
 The following is a snippet taken from the example SLA definition section of the processing unit Spring configuration:
 
-{code:xml}
+
+{% highlight xml %}
+
 <os-sla:sla cluster-schema="partitioned-sync2backup" number-of-instances="2" number-of-backups="1" max-instances-per-vm="1">
     <os-sla:monitors>
         <os-sla:bean-property-monitor name="Processed Data" bean-ref="dataProcessedCounter" property-name="processedDataCount" />
     </os-sla:monitors>
 </os-sla:sla>
-{code}
+
+{% endhighlight %}
+
 {toc-zone}
 {whr}
 {refer}**Next Chapter:** [Database Integration]{refer}

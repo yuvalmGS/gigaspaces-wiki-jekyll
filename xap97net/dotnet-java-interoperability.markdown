@@ -12,7 +12,9 @@ page_id: 63799325
 # Designing Interoperable Classes
 
 || C# || Java ||
-|{Code}
+|
+{% highlight java %}
+
 using GigaSpaces.Core.Metadata;
 
 namespace MyCompany.MyProject.Entities
@@ -29,7 +31,11 @@ namespace MyCompany.MyProject.Entities
         }
     }
 }
-{Code}|{Code}
+
+{% endhighlight %}
+|
+{% highlight java %}
+
 package com.mycompany.myproject.entities;
 
 public class Person
@@ -44,7 +50,9 @@ public class Person
         this.name = name;
     }
 }
-{Code}|
+
+{% endhighlight %}
+|
 
 ### Guidelines and Restrictions
 

@@ -70,7 +70,9 @@ HKLM\SOFTWARE\GigaSpaces\XAP.NET\9.5.0.5000\CLR v4.0.30319\SettingsPath=C:\GigaS
 2. **Environment variable:** Create an environment variable named `XapNet_<version>_SettingsPath` which points to the settings file path. For example, for that same 9.5 version we would use:
 XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml.
 3. **Application configuration file**: Use the XapNetSettingsFile element to configure the location of the settings file. For example:
-{code:xml}
+
+{% highlight xml %}
+
 <configuration>
     <configSections>
         <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core"/>
@@ -78,11 +80,17 @@ XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Co
     <GigaSpaces>
         <XapNetSettingsFile Path="C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml"/>
     </GigaSpaces>
-</configuration>{code}
+</configuration>
+{% endhighlight %}
+
 4. **Code:** Use the following code to set the location of the settings file at runtime:
-{code}
+
+{% highlight java %}
+
     GigaSpacesFactory.Configuration.XapNetSettingsFile.Path = @"C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml"
-{code}
+
+{% endhighlight %}
+
 
 #### Q. I need to minimize the installation size. Can I use a shared folder on a server to store part of the installation?
 
@@ -97,11 +105,19 @@ Yes. You can manually set the registry settings shown above to point both java a
     1. `Bin\GigaSpaces.Core.dll`
     2. `Bin\GigaSpaces.NetToJava.dll`
 2. Modify the GigaSpaces section definition in `Config\Default.config` and `Config\DefaultApp.config` to specify a strong-name for GigaSpaces.Core:
-{code}
+
+{% highlight java %}
+
 <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core"/>
-{code}
+
+{% endhighlight %}
+
 Should be replaced it with:
-{code}
+
+{% highlight java %}
+
 <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core, Version=9.5.0.5000, Culture=neutral, PublicKeyToken=94297b57ee0e4ad5"/>
-{code}
+
+{% endhighlight %}
+
 (i) The `Version` should be set according to the version of XAP.NET in use (For example, if you're using XAP.NET 9.5 set the version to 9.5.0.5000).

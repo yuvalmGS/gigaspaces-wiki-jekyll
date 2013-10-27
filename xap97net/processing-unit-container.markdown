@@ -27,7 +27,9 @@ However, if you are not familiar with processing unit and event container concep
 
 The `AbstractProcessingUnitContainer` class implements `IDisposable`, and consists of one additional method and two properties:
 
-{code:java}
+
+{% highlight java %}
+
 public abstract class AbstractProcessingUnitContainer
 {
     // Cluster information is set into this property at deploy-time.
@@ -42,7 +44,9 @@ public abstract class AbstractProcessingUnitContainer
     // Invoked by the Service Grid to terminate the processing unit container.
     virtual void Dispose();
 }
-{code}
+
+{% endhighlight %}
+
 
 The Processing Unit Container lifecycle consists only of these two methods: `Initialize` is called when the Processing Unit Container is constructed, and `Dispose` is called when it is removed. Before the initialization, the ClusterInfo and Properties are set with the deploy-time data.
 
@@ -85,7 +89,9 @@ The `pu.config` you've created needs to be edited to point to your Processing Un
 
 (on) It is recommended to use the `pu.config` file located in `<GigaSpaces Root>\Examples\ProcessingUnit\Feeder\Deployment` as a template.
 
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -98,7 +104,9 @@ The `pu.config` you've created needs to be edited to point to your Processing Un
     <ProcessingUnitContainer Type="[Assembly Qualified Name]"/>
   </GigaSpaces.XAP>
 </configuration>
-{code}
+
+{% endhighlight %}
+
 {toc-zone}
 
 {refer}It is possible to create a processing unit of mixed languages, for instance part Java, part .NET. This topic is covered in [Interop Processing Unit|Interop Processing Unit] page.{refer}

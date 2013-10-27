@@ -58,19 +58,31 @@ The structure of the [XAP66:configuration xml file|#Example configuration file] 
 # Option 1: Out-of-the-box Benchmark
 
 The syntax of the command line for running the out-of-the-box benchmark is as follows:
-{code}
+
+{% highlight java %}
+
 ..\..\lib\GigaSpaces.Core.Benchmarks.Launcher.exe {space-url}  {Input xml} {Results xml}
-{code}
+
+{% endhighlight %}
+
 **space-url** - The url for finding the Space. You can control the Space topology by changing the space-url parameter.
 Examples:
 Embedded:
-{code}
+
+{% highlight java %}
+
 "/./benchmarkSpace?NoWriteLease=true&schema=cache&groups=myGroup"
-{code}
+
+{% endhighlight %}
+
 Remote:
-{code}
+
+{% highlight java %}
+
 "jini://localhost/*/remoteBenchmarkSpace?NoWriteLease=true&groups=myGroup"
-{code}
+
+{% endhighlight %}
+
 **Input xml** - Location of the xml file that contains the benchmark run configuration. The default is Xmls\BenchmarkPerson.xml.
 You can control the benchmark by changing parameters in the configuration file.
 
@@ -80,16 +92,24 @@ The configuration file includes the following information:
 
 The Benchmark elements contain the following parameters:
 - **type** - Define the benchmark type name. The type structure is:
-{code}
+
+{% highlight java %}
+
 {Benchmark type name}`2[[Object type name, Assembly name],[Adapter type name, Assembly name]], Assembly name
-{code}
+
+{% endhighlight %}
+
 
 Example:
-{code}
+
+{% highlight java %}
+
 <type>GigaSpaces.Core.Benchmarks.Implementations.Basic.ReadBenchmark`2[[GigaSpaces.Core.Benchmarks.Implementations.Basic.Objects.Person,
 GigaSpaces.Core.Benchmarks.Implementations.Basic],[GigaSpaces.Core.Benchmarks.Implementations.Basic.ObjectAdapters.PersonAdapter,
 GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.Implementations.Basic</type>
-{code}
+
+{% endhighlight %}
+
 
 - **repeats** - Number of times to repeat the benchmark
 - **warmups** - Number of repeats that will count as warm-up repeats, which will not be taken into consideration when calculating the benchmark performance results
@@ -115,7 +135,9 @@ Develop a custom benchmark with your own code for the benchmark scenario and the
 - Adjust the configuration parameters in the input xml file:
 - Type your object definition
 
-{code}
+
+{% highlight java %}
+
 <type>GigaSpaces.Core.Benchmarks.Implementations.Basic.ReadBenchmark`2
 
 [[GigaSpaces.Core.Benchmarks.Implementations.Basic.Objects. MyObject, GigaSpaces.Core.Benchmarks.Implementations.Basic],
@@ -124,7 +146,9 @@ Develop a custom benchmark with your own code for the benchmark scenario and the
 
  GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.Implementations.Basic
 </type>
-{code}
+
+{% endhighlight %}
+
 
 3. For running the customized benchmark, follow the steps below in **Building and Running the Example**
 
@@ -136,15 +160,23 @@ Develop a custom benchmark with your own code for the benchmark scenario and the
 - The results are stored in a results folder. There are two results files: an excel file which includes a summary of the results, and an xml with more detailed results.
 
 Both run scripts use the following pattern:
-{code}
+
+{% highlight java %}
+
 ..\..\lib\GigaSpaces.Core.Benchmarks.Launcher.exe {space-url}  {Input xml} {Results xml}
-{code}
+
+{% endhighlight %}
+
 Example command line for running an embedded benchmark run:
-{code}
+
+{% highlight java %}
+
 ..\..\lib\GigaSpaces.Core.Benchmarks.Launcher.exe "/./benchmarkSpace?NoWriteLease=true&schema=cache&groups=myGroup"
 
  Xmls\BenchmarkPerson.xml Results\EmbeddedBenchmarkPersonResult.xml
-{code}
+
+{% endhighlight %}
+
 
 # Example Configuration File
 
@@ -153,7 +185,9 @@ The **Input xml** structure is the same for the two benchmark options (the Out-o
 (on) It is recommended that you use the `BenchmarkPerson.xml` file that is provided with the benchmark example, as a template.
 
 Example configuration file:
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="UTF-8"?>
 <benchmarks>
   !--Defines an additional assembly that needs to be loaded, in this case the benchmark implementation assembly
@@ -199,4 +233,5 @@ Example configuration file:
     </benchmark>
   ...
   </benchmarks>
-{code}
+
+{% endhighlight %}

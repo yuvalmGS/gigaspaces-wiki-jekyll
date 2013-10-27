@@ -46,7 +46,9 @@ We want to demonstrate storing some object to the space. To do this, let's creat
 1. In **Solution Explorer**, right-click the **HelloWorld** project and select **Add > Class**. The **Add New Item** dialog appears.
 2. In the **Templates** list, make sure **Class** is selected. Type **Message** in the class name text box, and click **Add**. The class is added to the project and the editor displays its content.
 3. Add the following code to the `Message` class:
-{code:java}
+
+{% highlight java %}
+
 public class Message
 {
     private String _text;
@@ -65,41 +67,55 @@ public class Message
         set { this._text = value; }
     }
 }
-{code}
+
+{% endhighlight %}
+
 
 ## Getting Started
 
 The XAP.NET API used in this example is located in the `GigaSpaces.Core` namespace.
 Switch to the **Program.cs** editor, and add a `using` statement to include `GigaSpaces.Core`:
-{code:java}
+
+{% highlight java %}
+
 using GigaSpaces.Core;
-{code}
+
+{% endhighlight %}
+
 
 ## Connecting to the Space
 
 We need to establish a connection to a space which stores the object. To do this, we use the `FindSpace` method from a factory class called `GigaSpacesFactory`. This takes a URL of the requested space, and returns a space proxy of type `ISpaceProxy`. Since we don't have any spaces running yet, we use a special URL prefix to indicate that we want the space lookup to occur in-process, and that the searched space should be created in-process if it doesn't exist yet. The space name is **myEmbeddedSpace** (when the space and the proxy reside in the same process, the space is called an **embedded space**).
 
 Edit the `Main` method and add the following code:
-{code:java}
+
+{% highlight java %}
+
 String spaceUrl = "/./myEmbeddedSpace";
 
 // Connect to space:
 Console.WriteLine("*** Connecting to space using \"" + spaceUrl + "\"...");
 ISpaceProxy proxy = GigaSpacesFactory.FindSpace(spaceUrl);
 Console.WriteLine("*** Connected to space.");
-{code}
+
+{% endhighlight %}
+
 
 ## Storing a Message Object
 
 The next step is to create a `Message` object, and store it in the space. To do this, we use the `Write` method in the `ISpaceProxy` we've just created, and simply pass the object we want to store as an argument:
 
 Add the following code to the `Main` method, after the previous code:
-{code:java}
+
+{% highlight java %}
+
 // Write a message to the space:
 Message outgoingMessage = new Message("Hello World");
 Console.WriteLine("Writing Message [" + outgoingMessage.Text + "]");
 proxy.Write(outgoingMessage);
-{code}
+
+{% endhighlight %}
+
 
 ## Retrieving the Stored Message
 
@@ -108,21 +124,27 @@ Finally, we want to retrieve the object from the space. To do this, we use the `
 A template is an object of the type we wish to query, where the null properties are ignored and the non-null properties are matched. For example, creating a `Message`, and setting the `Text` to "Goodbye" returns null, because the space does not contain such an object. We use a new `Message`, without setting the `Text` property, which matches all possible entries of type `Message` (of course, we know there's currently only one in the space).
 
 Add the following code to the `Main` method, after the previous code:
-{code:java}
+
+{% highlight java %}
+
 // Take a message from the space:
 Message incomingMessage = proxy.Take(new Message());
 Console.WriteLine("Took Message [" + incomingMessage.Text + "]");
 
 Console.WriteLine("Press ENTER to exit.");
 Console.ReadLine();
-{code}
+
+{% endhighlight %}
+
 
 # Running the Program
 
 To run the program, from the **Debug** menu, select **Start Debugging**.
 
 The following shows the complete program code, with some minor modifications:
-{code:java}
+
+{% highlight java %}
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -172,4 +194,6 @@ namespace HelloWorld
         }
     }
 }
-{code}
+
+{% endhighlight %}
+

@@ -18,7 +18,9 @@ GigaSpaces support executing tasks in a collocated Space (processing unit that s
 
 The `ISpaceTask` interface is defined as follows:
 
-{code:java}
+
+{% highlight java %}
+
 public interface ISpaceTask<T>
 {
   /// <summary>
@@ -29,11 +31,15 @@ public interface ISpaceTask<T>
   /// <returns>Computed result.</returns>
   T Execute(ISpaceProxy spaceProxy, ITransaction tx);
 }
-{code}
+
+{% endhighlight %}
+
 
 Here is a simple implementation of a space task that calculates the number of objects on a single node and prints a message at the single node output.
 
-{code:java}
+
+{% highlight java %}
+
 [Serializable]
 public class CountTask : ISpaceTask<int>
 {
@@ -50,19 +56,25 @@ public class CountTask : ISpaceTask<int>
     return spaceProxy.Count();
   }
 }
-{code}
+
+{% endhighlight %}
+
 
 (!) A space task needs to be serializable because it is being serialized and reconstructed at the node.
 (!) The assembly that contains the task needs to be in the domain of the processing unit that contains the embedded space (present at its deployment directory).
 
 **Executing the space task**
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // obtain a proxy to a space
 //Execute the task on a specific node using a specified routing value (2)
 //And inserting the calculation result to count variable
 int count = spaceProxy.Execute(new CountTask("hello world"), 2);
-{code}
+
+{% endhighlight %}
+
 
 # Distributed Space Task API (Map Reduce)
 
@@ -78,7 +90,9 @@ The `IDistributedSpaceTask` interface is a composition both `ISpaceTask` and `IS
 
 The `ISpaceTaskResultsReducer` is defined as follows:
 
-{code:java}
+
+{% highlight java %}
+
 public interface ISpaceTaskResultsReducer<R, T>
 {
   /// <summary>
@@ -88,11 +102,15 @@ public interface ISpaceTaskResultsReducer<R, T>
   /// <returns>Reduced result.</returns>
   R Reduce(SpaceTaskResultsCollection<T> results);
 }
-{code}
+
+{% endhighlight %}
+
 
 Here is a simple example of a distributed space task that extends our previous example:
 
-{code:java}
+
+{% highlight java %}
+
 [Serializable]
 public class DistributedCountTask : IDistributedSpaceTask<long, int>
 {
@@ -121,25 +139,33 @@ public class DistributedCountTask : IDistributedSpaceTask<long, int>
     return result;
   }
 }
-{code}
+
+{% endhighlight %}
+
 
 This task will execute on each one of the primary nodes in the cluster,
 it will print the message in each node and it will return the summary of the count result on each node (Equivalent to ISpaceProxy.Count(new Object()) method).
 
 **Executing the distributed task**
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // obtain a proxy to a space
 //Execute the task on all the primary nodes with in the cluster
 //and inserting the calculation result to count variable
 long count = spaceProxy.Execute(new DistributedCountTask("hello world"));
-{code}
+
+{% endhighlight %}
+
 
 # Space Task Results Filter
 
 When executing a distributed space task, results arrive in an asynchronous manner and once all the results have arrived, the `ISpaceTaskResultsReducer` is used to reduce them. The `ISpaceTasukResultsFilter` can be used as a callback and filter mechanism to be invoked for each result that arrives.
 
-{code:java}
+
+{% highlight java %}
+
 public interface ISpaceTaskResultsFilter<T>
 {
   /// <summary>
@@ -175,7 +201,9 @@ public enum SpaceTaskFilterDecision
   /// </summary>
   SkipAndBreak = 3,
 }
-{code}
+
+{% endhighlight %}
+
 
 The filter can be used to control if a result should be used or not (the `Skip` decision). If we have enough results and we can move to the reduce phase (the `Break` decision). If we should continue accumulating results (the `Continue` decision). Or if we dont want to use the current result and move to the reduce phase (the `SkipAndBreak` decision).
 
@@ -192,7 +220,9 @@ The transaction creation, commit and abort normally should be done at the client
 
 Here's a simple example
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // obtain a proxy to a space
 
 ITransaction tx = spaceProxy.LocalTransactionManager.Create();
@@ -219,7 +249,9 @@ public class ClearMyObjectTask : ISpaceTask<int>
     return result;
   }
 }
-{code}
+
+{% endhighlight %}
+
 
 # Asynchronous Execution
 
@@ -227,7 +259,9 @@ A space task can also be executed asynchronously with the corresponding `BeginEx
 
 **Executing asynchronous space using async result**
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // obtain a proxy to a space
 //Execute the task on all the primary nodes with in the cluster
 IAsyncResult<long> asyncResult = spaceProxy.BeginExecute(new DistributedCountTask("hello world"), null /*callback*/, null /*state object*/);
@@ -235,11 +269,15 @@ IAsyncResult<long> asyncResult = spaceProxy.BeginExecute(new DistributedCountTas
 ...
 //This will block until the result execution has arrived
 long count = spaceProxy.EndExecute(asyncResult);
-{code}
+
+{% endhighlight %}
+
 
 **Executing asynchronous space using async result wait handle**
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // obtain a proxy to a space
 //Execute the task on all the primary nodes with in the cluster
 IAsyncResult<long> asyncResult = spaceProxy.BeginExecute(new DistributedCountTask("hello world"), null /*callback*/, null /*state object*/);
@@ -249,11 +287,15 @@ IAsyncResult<long> asyncResult = spaceProxy.BeginExecute(new DistributedCountTas
 asyncResult.AsyncWaitHandle.WaitOne();
 //Gets the actual result of the async execution
 long count = spaceProxy.EndExecute(asyncResult);
-{code}
+
+{% endhighlight %}
+
 
 **Executing asynchronous space using async call back and a state object**
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // obtain a proxy to a space
 //Execute the task on all the primary nodes with in the cluster
 spaceProxy.BeginExecute(new DistributedCountTask("hello world"),ResultCallBack, new MyStateObject());
@@ -269,4 +311,5 @@ public void ResultCallBack<long>(IAsyncResult<long> asyncResult)
 	long count = spaceProxy.EndExecute(asyncResult);
 	...
 }
-{code}
+
+{% endhighlight %}

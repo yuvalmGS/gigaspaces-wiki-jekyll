@@ -14,10 +14,14 @@ The session state store provider is used by the IIS (Internet Information Servic
 (i) See how to install the package **[below|#Installation]**.
 
 Using the session-state store provider, values that need to be persisted during a user session are stored into session variables. These variables are unique in each user session. You can set and access session information from within an ASP .NET application. For example:
-{code:java}
+
+{% highlight java %}
+
 //Assign a value to the buttonCount session variable:
 Session["buttonCount"] = 0;
-{code}
+
+{% endhighlight %}
+
 
 # Installation
 
@@ -29,7 +33,9 @@ Session state implementations can be configured by setting the `mode` attribute 
 {refer}For more details, see: [msdn; Session-State Modes|http://msdn2.microsoft.com/en-us/library/ms178586.aspx].{refer}
 The `mode` attribute is set up in the `web.config` file (or the `machine.config` file). The `machine.config` file is located in `c:Microsoft.NET\Frameworkconfig\machine.config`.
 Configure your `web.config` file as follows:
-{code:xml}
+
+{% highlight xml %}
+
 <configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
 
   <connectionStrings>
@@ -60,7 +66,9 @@ Configure your `web.config` file as follows:
     </sessionState>
   </system.web>
 </configuration>
-{code}
+
+{% endhighlight %}
+
 To use a custom provider, `mode` must be set to `Custom`, and the `providers` element must also be used.
 {refer}For more details, see the [sessionState|http://msdn2.microsoft.com/en-us/library/h6bb9cz9.aspx] element.{refer}
 {refer}[Learn how to to implement a session state store provider|http://msdn2.microsoft.com/en-us/library/ms178587.aspx].{refer}

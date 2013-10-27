@@ -16,7 +16,9 @@ Local cache is a wrapper class for a space proxy, which increases performance in
 The `ILocalCache` interface implements the `ISpaceProxy`, and working with it is exactly the same as working with the `ISpaceProxy` API. Here's a simple example of creating a local cache and using it:
 
 **The data object, in this case a session object:**
-{code:java}
+
+{% highlight java %}
+
 public class Session
 {
   [..]
@@ -35,14 +37,18 @@ public class Session
     set{ _version = value; }
   }
 }
-{code}
+
+{% endhighlight %}
+
 
 Important properties:
 - The session has a `\[SpaceID\]` property, objects without `\[SpaceID\]` will not be stored in the local cache.
 - When working with the local cache, it is highly recommended to have a `\[SpaceVersion\]` property, otherwise Entries stored in the local cache might be of older version than the ones in the space, if they were updated not through the local cache.
 
 **Creating and using a local cache:**
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // create or obtain a reference to a space proxy
 
 ILocalCache localCache = GigaSpacesFactory.CreateIdBasedLocalCache(spaceProxy);
@@ -63,12 +69,16 @@ object[] ids = new object[] { ... } // initialize an ids array
 object routing = ... ; // set a routing value
 IReadByIdsResult<Session> result = localCache.ReadByIds<Session>(ids, routing);
 
-{code}
+
+{% endhighlight %}
+
 
 The local cache also recognizes templates which are considered ID-based (A template that is matched against the `SpaceID` property only), and it optimizes the performance for such templates in the same fashion as the `ReadById` operation does.
 
 The following code is equivalent to the above but it uses templates:
-{code:java}
+
+{% highlight java %}
+
 ...
 Session template = new Session();
 template.SessionId = // session guid
@@ -80,7 +90,9 @@ Session session = localCache.Read(template);
 
 //The Entry is present in the cache and will be read from it.
 Session otherSession = localCache.Read(template);
-{code}
+
+{% endhighlight %}
+
 
 If the supplied template is not ID-based, for instance an `SqlQuery`, then the Entry will be read from the underlying space proxy without first going through the local cache.
 
@@ -104,7 +116,9 @@ Once an Entry is loaded into the cache, it is kept synchronized with the remote 
 
 The local cache can be configured before it is initialized, by supplying the constructor with a custom `IdBasedLocalCacheConfig` object. The most common configuration option is the [eviction strategy|Cache Eviction Strategy].
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // create or obtain a reference to a space proxy
 
 IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
@@ -112,13 +126,17 @@ IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
 // ... adjusting the config
 
 ILocalCache localCache = GigaSpacesFactory.CreateIdBasedLocalCache(spaceProxy, cacheConfig);
-{code}
+
+{% endhighlight %}
+
 
 ## Cached Types
 
 By default, the local cache stores all object types. However, in some scenarios it may be required to store only specific types in the local cache, while working with the other types by proxy only. It is possible to specify explicitly which types will be cached, by putting the desired types in the `IdBasedLocalCacheConfig.CachedTypes` list property. For example:
 
-{code:java}
+
+{% highlight java %}
+
 IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
 
 List<Type> cachedTypes = new List<Type>();
@@ -130,7 +148,9 @@ cachedTypes.Add(typeof(MyClass));
 cacheConfig.CachedTypes = cachedTypes;
 
 ILocalCache localCache = GigaSpacesFactory.CreateIdBasedLocalCache(spaceProxy, cacheConfig);
-{code}
+
+{% endhighlight %}
+
 
 Cached types support inheritance, so there's no need to explicitly add all the types if they derive from one another. Using the `Object` type will cache everything.
 
@@ -142,9 +162,12 @@ going through the proxy in case of cache miss, evicting entries and more.
 
 Here's an example of how to obtain and interact with the cache manager:
 
-{code:java}
+
+{% highlight java %}
+
 ILocalCache localCache = // obtain a cache
 //Clear the cache if there are more than 10,000 caches entries
 if (localCache.LocalCacheManager.CachedEntriesCount > 10000)
   localCache.LocalCacheManager.ClearLocalCache();
-{code}
+
+{% endhighlight %}

@@ -19,12 +19,16 @@ The change API supports transactions in the same way the other space operation s
 
 The following example demonstrates how to increase the property 'count' in a an object of type 'WordCount' with id 'the' by one.
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy space = // ... obtain a space reference
 String id = "myID";
 IdQuery<WordCount> idQuery = new IdQuery<WordCount>(id, routing);
 space.Change(idQuery, new ChangeSet().Increment("Count", 1));
-{code}
+
+{% endhighlight %}
+
 
 # The Query Template
 
@@ -37,7 +41,9 @@ The `ChangeSet` contains a predefined set of operations that can be invoked to a
 Each specified change may operate on any level of properties of the specified object, this is defined by specifying the path to the property that needs to be changed where '.' in the path specifies
 that this change is done on a nested property. For instance:
 
-{code:java}
+
+{% highlight java %}
+
 [SpaceClass]
 public class Account
 {
@@ -55,14 +61,20 @@ public class Balance
   public double UsDollar {get; set;}
 
 }
-{code}
 
-{code:java}
+{% endhighlight %}
+
+
+
+{% highlight java %}
+
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
 space.Change(idQuery, new ChangeSet().Increment("Balance.Euro", 5.2D));
-{code}
+
+{% endhighlight %}
+
 
 ## Change Path Specification
 
@@ -72,7 +84,9 @@ Each operation in the change set acts on a specified string path. This path poin
 3. **Nested Dictionary property** - A path that contains '.' may also point to keys inside a dictionary as, meaning the following path - 'Attributes.Color' will look for key named 'Color' if the property named 'Attribute' in the object is actually a dictionary. This affects nested properties as well.
 
 The following demonstrates how the path works with a dictionary property instead of concrete properties:
-{code:java}
+
+{% highlight java %}
+
 [SpaceClass]
 public class Account
 {
@@ -81,14 +95,20 @@ public class Account
   Guid getId {get; set;}
   IDictionary<String, double> Balance {get; set;}
 }
-{code}
 
-{code:java}
+{% endhighlight %}
+
+
+
+{% highlight java %}
+
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
 space.Change(idQuery, new ChangeSet().Increment("Balance.Euro", 5.2D));
-{code}
+
+{% endhighlight %}
+
 
 In this case the key euro inside the dictionary behind the balance will be increased by 5.2.
 
@@ -112,7 +132,9 @@ With the [embedded model|Modeling your data#Embedded vs. Non-Embedded Relationsh
 # Change Result
 
 The change operations returns a `IChangeResult` object that provides information regarding the change operation affect.
-{code:java}
+
+{% highlight java %}
+
 /// <summary>
 /// Result of a change operation.
 /// </summary>
@@ -133,9 +155,13 @@ public interface IChangeResult<T>
   /// </summary>
   int NumberOfChangedEntries { get; }
 }
-{code}
 
-{code:java}
+{% endhighlight %}
+
+
+
+{% highlight java %}
+
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
@@ -144,7 +170,9 @@ if (changeResult.NumberOfChangedEntries == 0)
 {
   // ... handle no entry found for change
 }
-{code}
+
+{% endhighlight %}
+
 
 The `IChangeResult` contains the `NumberOfChangedEntries` which specifies how many objects where changed by this operation where 0 means none were changed. The `Results` property gives further details about the objects that were actually changes by providing a collection which gives details for each of the objects that were changed, such as their id and version after the change took affect. By default, in order to reduce network overhead, calling the Results will throw `NotSupportedException`. In order to get the more detailed result, the `ChangeModifiers.ReturnDetailedResults` should be passed to the `Change` operation.
 
@@ -153,7 +181,9 @@ The `IChangeResult` contains the `NumberOfChangedEntries` which specifies how ma
 # ChangeException
 
 Upon any error a `ChangeException` will be thrown containing the following details:
-{code:java}
+
+{% highlight java %}
+
 public class ChangeException
 {
 
@@ -178,7 +208,9 @@ public class ChangeException
   public int NumOfSuccessfulChanges {get;}
 
 }
-{code}
+
+{% endhighlight %}
+
 
 The `NumSuccesfullChanges` property contains the number of entries that were successfully changed.
 The `SuccesfullChanges` property contains details for objects that were successfully changed just like the `IChangeResult.Results` property. This property can only be used if the change operation was executed using the `ChangeModifiers.ReturnDetailedResults` modifier.
@@ -189,13 +221,17 @@ The `Errors` property contains general failure reason for executing the change o
 
 One may apply multiple changes in one `Change` operation by setting up multiple operation in the change set, this is done simply by chaining changes as follows:
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy space = // ... obtain a space reference
 IdQuery<MyObject> idQuery = new IdQuery<MyObject>(id, routing);
 space.Change(idQuery, new ChangeSet().Increment("SomeIntProperty", 1)
                                      .Set("SomeStringProperty", "NewStringValue)
                                      .SetInDictionary("SomeNestedProperty.SomeDictionaryProperty", "MyKey", 2));
-{code}
+
+{% endhighlight %}
+
 
 The changes will applied to the object sequentially (and atomically) keeping the order applied on the `ChangeSet`.
 
@@ -203,10 +239,14 @@ The changes will applied to the object sequentially (and atomically) keeping the
 
 By default, the change operation will not modify the existing remaining lease of the changed entries. In order to change the lease, the new lease should be specified on the `ChangeSet` using the `lease` operation.
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy space = // ... obtain a space reference
 space.Change(idQuery, new ChangeSet().Lease(1000)...);
-{code}
+
+{% endhighlight %}
+
 
 The lease can be changed as part of other changes applied to the object, as well as having the `ChangeSet` include only the lease modification without any property changes.
 The lease time specified will override the existing lease with the new value relative to the current time while ignoring the current lease.
@@ -221,7 +261,9 @@ current thread context. In that case, all objects which are not locked will be c
 
 If there were no matching objects for the specified template, the operation will return immediately without waiting for the timeout to elapse. This is similar to the `(Read/Take)IfExists` operation semantic.
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
@@ -243,13 +285,17 @@ catch(ChangeException e)
     }
   }
 }
-{code}
+
+{% endhighlight %}
+
 
 # Change and Optimistic Locking
 
 The `Change` operation has the same semantics as regular space `Update` operation when it comes to [Optimistic Locking]. It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
 
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 Object routing = id; // In our case the space routing property is the space id property.
@@ -273,7 +319,9 @@ catch(ChangeException e)
     }
   }
 }
-{code}
+
+{% endhighlight %}
+
 
 (!) In order to prevent constructor overload ambiguity, when using id query with version, the space routing property needs to be specified as well. If the object has no space routing then its space id property is the routing property and it should be used as shown in the previous example.
 

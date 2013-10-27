@@ -38,7 +38,9 @@ Specifying which properties of a class are indexed is done using attributes or `
 
 {gdeck}
 {gcard:Annotations}
-{code:java}
+
+{% highlight java %}
+
 [SpaceClass]
 public class Person
 {
@@ -53,11 +55,15 @@ public class Person
     [SpaceIndex(Type=SpaceIndexType.Extended)]
     public int? Age{ get; set; }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:XML}
 
-{code:xml}
+
+{% highlight xml %}
+
 <gigaspaces-mapping>
     <class name="Gigaspaces.Examples.Person"
         persist="false" replicate="false" fifo="false" >
@@ -72,7 +78,9 @@ public class Person
         </property>
     </class>
 </gigaspaces-mapping>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -100,7 +108,9 @@ Below is an example of defining an index on a nested property:
 
 {gdeck:example|top}
 {gcard:Single Index Annotation}
-{code:java}
+
+{% highlight java %}
+
 
 [SpaceClass]
 public class Person
@@ -129,10 +139,14 @@ public class Address
     private int ZipCode {get; set;}
     private String Street {get; set;}
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Multiple Indexes Annotation}
-{code:java}
+
+{% highlight java %}
+
 
 [SpaceClass]
 public class Person
@@ -153,16 +167,22 @@ public class Person
 
 }
 
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
 The following is an example of query code that automatically triggers this index:
 
-{code:java}
+
+{% highlight java %}
+
 SqlQuery<Person> query = new SqlQuery<Person>(
     "PersonalInfo.SocialSecurity<10000050L and PersonalInfo.SocialSecurity>=10000010L");
-{code}
+
+{% endhighlight %}
+
 
 {comment}(i) For more information, see [Nested Object Queries|SQLQuery#Nested Object Query]{comment}
 
@@ -176,7 +196,9 @@ An index can be defined on a Collection property (such as List). Setting such an
 Setting an index on a Collection is done using the SpaceIndex.Path attribute where a Collection property should be followed by "\[\*\]".
 
 The following example shows how to define an index on a List of Integers:
-{code:java}
+
+{% highlight java %}
+
 [SpaceClass]
 public class CollectionIndexingExample
 {
@@ -190,22 +212,30 @@ public class CollectionIndexingExample
   public List<int> Numbers { get; set; }
 
 }
-{code}
+
+{% endhighlight %}
+
 
 The following query shows how to take advantage of the defined index:
 
-{code:java}
+
+{% highlight java %}
+
 SqlQuery<CollectionIndexingExample> sqlQuery =
     new SqlQuery<CollectionIndexingExample>("Numbers[*] = 30");
 CollectionIndexingExample[] result = spaceProxy.ReadMultiple(sqlQuery);
-{code}
+
+{% endhighlight %}
+
 
 ### Nested property within a Collection
 
 Its also possible to index a nested property within a collection.
 
 The following example shows how to define an index on a Book.id property, which resides in a Collection property in Author:
-{code:java}
+
+{% highlight java %}
+
 [SpaceClass]
 public class Author
 {
@@ -226,16 +256,24 @@ public class Book
   public int? Id{ get; set; }
 
 }
-{code}
+
+{% endhighlight %}
+
 
 The following query shows how to take advantage of the defined index:
-{code:java}
+
+{% highlight java %}
+
 SqlQuery<Author> sqlQuery = new SqlQuery<Author>("Books[*].Id = 57");
 Author result = spaceProxy.Read(sqlQuery);
-{code}
+
+{% endhighlight %}
+
 
 Setting an index on a Collection within a nested property is also accepted:
-{code:java}
+
+{% highlight java %}
+
 [SpaceClass]
 public class Employee
 {
@@ -256,7 +294,9 @@ public class Information
   public List<String> PhoneNumbers{ get; set; }
 
 }
-{code}
+
+{% endhighlight %}
+
 
 {info}Both \[SpaceIndex(Type=SpaceIndexType.Basic)\] and \[SpaceIndex(Type=SpaceIndexType.Extended)\] are supported.{info}
 
@@ -281,9 +321,13 @@ The benchmark has a space with different sets of space objects data:
 |data2 = 'B' |100,000| 110,000 | 200,000 |
 |data1 = 'A' AND data2 = 'B' |1000 | 10,000 | 100,000|
 
-{code}
+
+{% highlight java %}
+
 SQLQuery<Data> query = new SQLQuery<Data>(Data.class,"data1='A' and data2='B'");
-{code}
+
+{% endhighlight %}
+
 
 With the above scenario the Compound Index will improve the query execution dramatically. See below comparison for a query execution time when comparing a Compound Index to a single or two indexed properties space class with the different data set scenarios.
 
@@ -294,7 +338,9 @@ With the above scenario the Compound Index will improve the query execution dram
 Compound indexes can be defined using annotations. The `CompoundSpaceIndex` annotation should be used. The annotation is a type-level annotation.
 
 Example: Below a compound index with two segments using annotations. Both are properties at the root level of the space class:
-{code:java}
+
+{% highlight java %}
+
 [CompoundSpaceIndex(Paths = new[] {"IntProp", "StringProp"})]
 [CompoundSpaceIndex(Paths = new[] {"LongProp", "StringProp" })]
 public class WithCompoundIndex
@@ -305,13 +351,17 @@ public class WithCompoundIndex
      public String StringProp { get; set; }
      public long LongProp { get; set; }
 }
-{code}
+
+{% endhighlight %}
+
 
 ## Creating a Compound Index using gs.xml
 
 A Compound Index can be defined within the gs.xml configuration file. Example: The following a gs.xml describing a Class named WithCompoundIndex having a compound index composed from two segments:
 
-{code:xml}
+
+{% highlight xml %}
+
 <!DOCTYPE gigaspaces-mapping PUBLIC "-//GIGASPACES//DTD GS//EN" "http://www.gigaspaces.com/dtd/9_5/gigaspaces-metadata.dtd">
 <gigaspaces-mapping>
     <class name="WithCompoundIndex" >
@@ -319,7 +369,9 @@ A Compound Index can be defined within the gs.xml configuration file. Example: T
         ...
     </class>
 </gigaspaces-mapping>
-{code}
+
+{% endhighlight %}
+
 
 ## Creating a Compound Indexing for a Space Document
 
@@ -327,14 +379,18 @@ You can add a Compound Space Index to a space Document.
 
 Example:
 
-{code:xml}
+
+{% highlight xml %}
+
 SpaceTypeDescriptorBuilder descriptorBuilder = new SpaceTypeDescriptorBuilder("WithCompoundIndex");
             descriptorBuilder.AddFixedProperty("IntProp", typeof(int));
             descriptorBuilder.AddFixedProperty("StringProp", typeof(String));
             descriptorBuilder.AddFixedProperty("LongProp", typeof(long));
             descriptorBuilder.AddCompoundIndex(new []{ "IntProp", "StringProp" });
             descriptorBuilder.AddCompoundIndex(new []{ "LongProp", "StringProp" });
-{code}
+
+{% endhighlight %}
+
 
 # Query Execution Flow
 

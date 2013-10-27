@@ -63,7 +63,9 @@ The following is an example of how to introduce a new document type:
 
 {gdeck:os_simple_space|top}
 {gcard:Spring Namespace Configuration}
-{code:xml}
+
+{% highlight xml %}
+
 <os-core:space id="space" url="/./space" >
       <os-core:space-type type-name="Product" >
 		<os-core:id property="CatalogNumber"/>
@@ -74,10 +76,14 @@ The following is an example of how to introduce a new document type:
 </os-core:space>
 <os-core:giga-space id="gigaSpace" space="space"/>
 
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Plain Spring XML}
-{code:xml}
+
+{% highlight xml %}
+
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
     <property name="url" value="/./space" />
     <property name="spaceTypes" >
@@ -114,10 +120,14 @@ The following is an example of how to introduce a new document type:
    	      </list>
         </property>
 </bean>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Code}
-{code:java}
+
+{% highlight java %}
+
 public void registerProductType(GigaSpace gigaspace) {
     // Create type descriptor:
     SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
@@ -129,7 +139,9 @@ public void registerProductType(GigaSpace gigaspace) {
     // Register type:
     gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -138,7 +150,9 @@ Note that this code does not reflect the complete model - most of the properties
 # Creating and Writing Documents
 
 To create a document create a `Map<String,Object>` with the requested properties, create a `SpaceDocument` object using the type name and properties, and write it to the space using the regular `GigaSpace` write method:
-{code:java}
+
+{% highlight java %}
+
 public void writeProduct1(GigaSpace gigaspace) {
     // 1. Create the properties:
     Map<String, Object> properties = new HashMap<String, Object>();
@@ -169,11 +183,15 @@ public void writeProduct1(GigaSpace gigaspace) {
     // 3. Write the document to the space:
     gigaspace.write(document);
 }
-{code}
+
+{% endhighlight %}
+
 
 Another way is to use the `DocumentProperties` class provided, which extends HashMap to provide fluent coding:
 
-{code:java}
+
+{% highlight java %}
+
 public void writeProduct2(GigaSpace gigaspace) {
     // 1. Create the properties:
     DocumentProperties properties = new DocumentProperties()
@@ -199,7 +217,9 @@ public void writeProduct2(GigaSpace gigaspace) {
     // 3. Write the document to the space:
     gigaspace.write(document);
 }
-{code}
+
+{% endhighlight %}
+
 
 (+) The `GigaSpace.writeMultiple` method can be used to write a batch of documents.
 (!) Update semantics are the same as POJO, except **partial update** that is not currently supported.
@@ -214,7 +234,9 @@ There are three types of document queries:
 This type of query uses a SpaceDocument with _type_ and any other set of properties values as a template for the query
 For example: Read a document of type **Product** whose **Name** is **Anvil**:
 
-{code:java}
+
+{% highlight java %}
+
 public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
     // Create template:
     SpaceDocument template = new SpaceDocument("Product");
@@ -223,13 +245,17 @@ public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
     SpaceDocument result = gigaSpace.read(template);
     return result;
 }
-{code}
+
+{% endhighlight %}
+
 
 ## SQL Query
 
 You can use the [SQLQuery] to search for matching `SpaceDocument` entries.
 For example: Read a document of type **Product** whose **Price** is greater than 15:
-{code:java}
+
+{% highlight java %}
+
 public SpaceDocument readProductBySQL(GigaSpace gigaSpace) {
     // Create query:
     SQLQuery<SpaceDocument> query =
@@ -239,7 +265,9 @@ public SpaceDocument readProductBySQL(GigaSpace gigaSpace) {
     SpaceDocument result = gigaSpace.read(query);
     return result;
 }
-{code}
+
+{% endhighlight %}
+
 
 
 {% tip %}
@@ -248,7 +276,9 @@ Consider indexing properties used in queries to boost performance.
 
 
 Queries on nested properties are supported. For example, to read products manufactured by **Acme**:
-{code:java}
+
+{% highlight java %}
+
 public SpaceDocument[] readProductBySQLNested(GigaSpace gigaSpace) {
     // Create query:
     SQLQuery<SpaceDocument> query =
@@ -258,27 +288,37 @@ public SpaceDocument[] readProductBySQLNested(GigaSpace gigaSpace) {
     SpaceDocument[] result = gigaSpace.readMultiple(query, 10);
     return result;
 }
-{code}
+
+{% endhighlight %}
+
 
 ## ID Based Query
 
 For example: Read a document of type **Product** whose ID is **hw-1234**:
-{code:java}
+
+{% highlight java %}
+
 public SpaceDocument readProductById(GigaSpace gigaSpace) {
     return gigaSpace.readById(new IdQuery<SpaceDocument>("Product", "hw-1234"));
 }
-{code}
+
+{% endhighlight %}
+
 
 Queries by multiple Ids are supported. For example:
 
-{code:java}
+
+{% highlight java %}
+
 public SpaceDocument[] readProductByMultipleIds(GigaSpace gigaSpace) {
     Object[] ids = new Object[] {"hw-1234", "av-9876"};
     ReadByIdsResult<SpaceDocument> result =
         gigaSpace.readByIds(new IdsQuery<SpaceDocument>("Product", ids));
     return result.getResultsArray();
 }
-{code}
+
+{% endhighlight %}
+
 
 (+) All other `GigaSpace` query operations (readIfExists, readMultiple, take, takeIfExists, takeMultiple, count, clear) are supported for documents entries as well.
 (+) All other Id based operations (readIfExists, takeById, takeIfExistsById, takeByIds) are supported for documents as well.
@@ -308,7 +348,9 @@ Here is a simple example of a polling event container configuration using a `Doc
 
 {gdeck:os_simple_space|top}
 {gcard:Annotation}
-{code:xml}
+
+{% highlight xml %}
+
 <!-- Enable scan for OpenSpaces and Spring components -->
 <context:component-scan base-package="com.mycompany"/>
 
@@ -325,9 +367,13 @@ Here is a simple example of a polling event container configuration using a `Doc
 </os-core:space>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
-{code}
 
-{code:java}
+{% endhighlight %}
+
+
+
+{% highlight java %}
+
 @EventDriven @Polling
 public class SimpleListener {
 
@@ -343,10 +389,14 @@ public class SimpleListener {
         //process Data here
     }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Namespace}
-{code:xml}
+
+{% highlight xml %}
+
 <os-core:space id="space" url="/./space" >
   <os-core:space-type type-name="Product" >
 		<os-core:id property="CatalogNumber"/>
@@ -379,10 +429,14 @@ public class SimpleListener {
         </os-events:annotation-adapter>
     </os-events:listener>
 </os-events:polling-container>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Plain XML}
-{code:xml}
+
+{% highlight xml %}
+
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
     <property name="url" value="/./space" />
 </bean>
@@ -415,10 +469,14 @@ public class SimpleListener {
     	</bean>
     </property>
 </bean>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Code}
-{code:java}
+
+{% highlight java %}
+
 GigaSpace gigaSpace = // either create the GigaSpace or get it by injection
 
 SpaceDocument template = new SpaceDocument("Product");
@@ -434,7 +492,9 @@ SimplePollingEventListenerContainer pollingEventListenerContainer = new SimplePo
 
 // when needed dispose of the notification container
 pollingEventListenerContainer.destroy();
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -444,7 +504,9 @@ pollingEventListenerContainer.destroy();
 
 {gdeck:os_simple_space|top}
 {gcard:Spring Namespace Configuration}
-{code:xml}
+
+{% highlight xml %}
+
 <os-core:space id="space" url="/./space" >
     <os-core:space-type type-name="Product" fifo-support="OPERATION" >
 		<!-- other properties definition -->
@@ -452,10 +514,14 @@ pollingEventListenerContainer.destroy();
 </os-core:space>
 <os-core:giga-space id="gigaSpace" space="space"/>
 
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Plain Spring XML}
-{code:xml}
+
+{% highlight xml %}
+
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
     <property name="url" value="/./space" />
     <property name="spaceTypes" >
@@ -475,10 +541,14 @@ pollingEventListenerContainer.destroy();
         <property name="fifoSupport" value="OPERATION"/>
 
 </bean>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Code}
-{code:java}
+
+{% highlight java %}
+
 // Create type descriptor:
 SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
     // Other type descriptor settings.
@@ -486,7 +556,9 @@ SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
     .create();
 // Register type:
 gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -501,7 +573,9 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 
 {gdeck:os_simple_space|top}
 {gcard:Spring Namespace Configuration}
-{code:xml}
+
+{% highlight xml %}
+
 <os-core:space id="space" url="/./space" />
       <os-core:space-type type-name="Product" optimistic-lock="true" >
 		<!-- other properties definition -->
@@ -509,10 +583,14 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 </os-core:space>
 <os-core:giga-space id="gigaSpace" space="space"/>
 
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Plain Spring XML}
-{code:xml}
+
+{% highlight xml %}
+
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
     <property name="url" value="/./space" />
     <property name="spaceTypes" >
@@ -532,10 +610,14 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
         <!-- other properties definition -->
         <property name="optimisticLock" value="true"/>
 </bean>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Code}
-{code:java}
+
+{% highlight java %}
+
 // Create type descriptor:
 SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
     // Other type descriptor settings.
@@ -543,7 +625,9 @@ SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
     .create();
 // Register type:
 gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
-{code}
+
+{% endhighlight %}
+
 
 {gcard}
 {gdeck}
@@ -564,7 +648,9 @@ Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
 
 {gdeck:example|top}
 {gcard:Configuration}
-{code:xml}
+
+{% highlight xml %}
+
 <bean id="documentDataSource" class="com.test.DocumentEDS"/>
 
 <os-core:space id="space" url="/./space" schema="persistent" external-data-source="documentDataSource">
@@ -578,11 +664,15 @@ Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
         </props>
     </os-core:properties>
 </os-core:space>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 
 {gcard:The EDS Implementation}
-{code:title=The EDS Implementation}
+
+{% highlight java %}
+
 package com.test;
 
 public class DocumentEDS
@@ -633,7 +723,9 @@ public class DocumentEDS
     }
 
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 

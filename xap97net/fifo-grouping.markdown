@@ -67,23 +67,31 @@ When a FG template locks a group, its first entry is locked under a transaction 
 Specifying which property of a class is the FG property is done using attributes or gs.xml.
 {gdeck}
 {gcard:Annotations}
-{code:java}
+
+{% highlight java %}
+
 [SpaceClass]
 public class FlightReservation
 {
 	[SpaceFifoGroupingProperty(Path = "FlightNumber")]
     	public FlightInfo Info { get; set; }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:XML}
-{code:xml}
+
+{% highlight xml %}
+
 <gigaspaces-mapping>
     <class name="com.gigaspaces.examples.FlightReservation">
         	<fifo-grouping-property Name="Info" Path=" FlightNumber" />
     </class>
 </gigaspaces-mapping>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -92,15 +100,21 @@ public class FlightReservation
 Specifying which properties of a class are a FG index is done using attributes or gs.xml.
 {gdeck}
 {gcard:Annotations}
-{code:java}
+
+{% highlight java %}
+
 [SpaceFifoGroupingIndex]
 public State ProcessingState { get; set; }
 [SpaceFifoGroupingIndex(Path = "Id")]
 public Person Customer { get; set; }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:XML}
-{code:xml}
+
+{% highlight xml %}
+
 <gigaspaces-mapping>
 	<class name="com.gigaspaces.examples.FlightReservation />
 		<property name="ProcessingState">
@@ -110,7 +124,9 @@ public Person Customer { get; set; }
 			<fifo-grouping-index  Path="Id"/>
 		</property>
 </gigaspaces-mapping>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -136,7 +152,11 @@ read entries from available FG. No ordering between different groups. Entries of
 ## Using READ/TAKE modifiers
 
 To execute read/take operations with FG, use the `TakeModifiers.FifoGroupingPoll` modifier. For example:
-{code:java}proxy.Take<FlightReservation>(new FlightReservation(), transaction, timeout, TakeModifiers.FifoGroupingPoll);{code}
+
+{% highlight java %}
+proxy.Take<FlightReservation>(new FlightReservation(), transaction, timeout, TakeModifiers.FifoGroupingPoll);
+{% endhighlight %}
+
 If class FlightReservation isn't declared with a FG property, an exception will be thrown.
 
 ## Using Polling container
@@ -148,7 +168,9 @@ Here is a simple example of a polling event container construction, using FifoGr
 
 {gdeck:os_simple_space|top}
 {gcard:Using EventListenerContainerFactory}
-{code:java}
+
+{% highlight java %}
+
 [PollingEventDriven]
 public class FlightReservationEventListener
 {
@@ -170,10 +192,14 @@ public class FlightReservationEventListener
 		return handler;
 	}
 }
-{code}
+
+{% endhighlight %}
+
 
 Constructing the polling container that uses the `FlightReservationEventListener` class as the event listener, and starting it.
-{code:java}
+
+{% highlight java %}
+
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 IEventListenerContainer<FlightReservation> eventListenerContainer = EventListenerContainerFactory.CreateContainer<FlightReservation>(spaceProxy, new FlightReservationEventListener());
 
@@ -181,10 +207,14 @@ eventListenerContainer.Start();
 
 // when needed to dispose of the container
 eventListenerContainer.Dispose()
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:PollingEventListenerContainer Code Construction}
-{code:java}
+
+{% highlight java %}
+
 PollingEventListenerContainer<FlightReservation> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 ExclusiveReadReceiveOperationHandler<FlightReservation> receiveHandler = new ExclusiveReadReceiveOperationHandler<FlightReservation>();
@@ -196,17 +226,23 @@ pollingEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAd
 
 // when needed dispose of the container
 pollingEventListenerContainer.Dispose();
-{code}
+
+{% endhighlight %}
+
 
 Event processing method
 
-{code:java}
+
+{% highlight java %}
+
 public FlightReservationProcessData(IEventListenerContainer<FlightReservation> sender, DataEventArgs<FlightReservation> e)
 {
 	FlightReservation reservation = e.Data;
 	//process the reservation here and return the processed reservation
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 

@@ -28,21 +28,33 @@ To customize a specific class, apply a `\[SpaceClass\]` attribute on the class, 
 
 #### Example 1.1 -- The default behaviour
 
-{code}
+
+{% highlight java %}
+
 public class Person {...}
-{code}
+
+{% endhighlight %}
+
 This is actually equivalent to the following declaration:
-{code}
+
+{% highlight java %}
+
 [SpaceClass(IncludeFields=IncludeMembers.Public, IncludeProperties=IncludeMembers.Public)]
 public class Person {...}
-{code}
+
+{% endhighlight %}
+
 
 #### Example 1.2 -- To exclude all properties and include all fields, even private ones:
 
-{code}
+
+{% highlight java %}
+
 [SpaceClass(IncludeFields=IncludeMembers.All, IncludeProperties=IncludeMembers.None)]
 public class Person {...}
-{code}
+
+{% endhighlight %}
+
 
 ## Customizing a Specific Member
 
@@ -50,13 +62,17 @@ To customize a specific field/property, apply a `\[SpaceProperty\]` to include i
 
 #### Example 1.3 -- Storing all the Person properties except the Password property
 
-{code}
+
+{% highlight java %}
+
 public class Person
 {
     [SpaceExclude]
     public String Password {...}
 }
-{code}
+
+{% endhighlight %}
+
 
 {info:title=Properties with Separate Accessors}
 Starting with .NET 2.0, properties can have separate accessors for getters and setters (e.g. public getter and private setter). In such cases, if either the getter or the setter is public, the property is considered public (i.e. setting `IncludeProperties=IncludeMembers.Public` includes the property in the entry). {info}
@@ -69,13 +85,17 @@ Read-only properties (getter, without setter), are included in the entry, but wh
 # Indexing
 
 If a property is used frequently when quering the space, you can instruct the space to index it for faster retrieval, by using the `\[SpaceProperty\]` attribute, and specifing `Index=SpaceIndexType.Basic`. For example:
-{code}
+
+{% highlight java %}
+
 public class Person
 {
     [SpaceProperty(Index=SpaceIndexType.Basic)]
     public String UserID {...}
 }
-{code}
+
+{% endhighlight %}
+
 
 {info:title=Indexing Pros and Cons}
 Indexing a property speeds up queries which include the property, but slows down write operations for that object (since the space needs to index the property). For that reason, indexing is off by default, and it's up to the user to decide which fields should be indexed. {info}
@@ -88,12 +108,16 @@ Examine the following piece of code:
 
 #### Example 2
 
-{code:java}
+
+{% highlight java %}
+
 Message message = new Message();
 message.Text = "Same Same, But Different";
 proxy.Write(message);
 proxy.Write(message);
-{code}
+
+{% endhighlight %}
+
 
 If you execute it, and examine the space in the GigaSpaces Management Center, you will see two different entries with the same text, even though from the .NET perspective, there's only one object. You should also see an additional column called **UID**, which is not part of our .NET object, and which contains a unique identifier that distinguishes the entries from each other. This unique identifier is commonly referred to as a **Space ID**.
 
@@ -104,7 +128,9 @@ So how do we utilize the Space ID?
 ## Exposing Generated Space ID
 
 Let's add the following piece of code -- the `Message` class:
-{code:java}
+
+{% highlight java %}
+
 private String _messageID;
 [SpaceID(AutoGenerate = true)]
 public String MessageID
@@ -112,7 +138,9 @@ public String MessageID
     get { return _messageID; }
     set { _messageID = value; }
 }
-{code}
+
+{% endhighlight %}
+
 
 If you run the code from **example 2** again, you will see that the second write fails, with an `EntryAlreayInSpaceException`. If you examine the newly added `MessageID` property in the debugger, you will see that even though we didn't set it, it contains a unique identifier string.
 
@@ -123,10 +151,14 @@ Next, we'll see how to make the space use the object when generating the UID.
 ## Controlling the Generated Space ID
 
 Modify the `SpaceID` declaration from `true` to `false`:
-{code:java}
+
+{% highlight java %}
+
 [SpaceID(AutoGenerate = false)]
 public String MessageID {...}
-{code}
+
+{% endhighlight %}
+
 
 {note} The rest of this page is still under construction. {note}
 
@@ -183,28 +215,38 @@ To specify a null value, the field or property should be marked with the `\[Spac
 
 #### Example 3.1 - Null value on a primitive int
 
-{code}
+
+{% highlight java %}
+
 public class Person
 {
     [SpaceProperty(NullValue = -1)]
     public int Age {...}
 }
-{code}
+
+{% endhighlight %}
+
 
 #### Example 3.2 - Null value on DateTime
 
-{code}
+
+{% highlight java %}
+
 public class Person
 {
     [SpaceProperty(NullValue = "1900-01-01T12:00:00")]
     public DateTime BornDate {...}
 }
-{code}
+
+{% endhighlight %}
+
 
 # Mapping
 
 By default, the name of the class in the space is the fully-qualified class name (i.e. including namespace), and the properties/fields names in the space equal to the .NET name. In some cases, usually in interoperability scenarios, you may need to map your .NET class name and properties to different names in the space. You can do that using the `AliasName` property on `\[SpaceClass\]` and `\[SpaceProperty\]`. For example, the following .NET Person class contains mapping to an equivalent Java Person class:
-{code}
+
+{% highlight java %}
+
 namespace MyCompany.MyProject
 {
     [SpaceClass(AliasName="com.mycompany.myproject.Person")]
@@ -214,7 +256,9 @@ namespace MyCompany.MyProject
         public String FirstName {...}
     }
 }
-{code}
+
+{% endhighlight %}
+
 For more information, see [GigaSpaces.NET - Interoperability With Non .NET Applications|Interoperability].{note:title=AliasName and SqlQuery}
 When using space SqlQuery on an object with properties which are aliased, the query text needs to use the aliased property names. For more information about SqlQuery, see [GigaSpaces.NET - Sql Query|SqlQuery].{note}
 
@@ -222,26 +266,38 @@ When using space SqlQuery on an object with properties which are aliased, the qu
 
 The space can be attached to an external data source, and persist its classes through it. It can be specified whether a certain class should be persisted or not. To do this, use the `\[SpaceClass(Persist=true)\]` or `\[SpaceClass(Persist=false)\]` class level attribute. The default is `\[SpaceClass(Persist=true)\]`.
 
-{code}
+
+{% highlight java %}
+
 [SpaceClass(Persist=false)]
 public class Person {...}
-{code}
+
+{% endhighlight %}
+
 
 # Replication
 
 Some cluster toplogies have replication defined, which means that some or all of the data is replicated between the spaces. In this case, it can be specified whether each class should be replicated or not, by using the `\[SpaceClass(Replicate=true)\]` or `\[SpaceClass(Replicate=false)\]` class level attribute. The default is `\[SpaceClass(Replicate=true)\]`.
 
-{code}
+
+{% highlight java %}
+
 [SpaceClass(Replicate=false)]
 public class Person {...}
-{code}
+
+{% endhighlight %}
+
 
 # FIFO
 
 A class can be marked to operate in FIFO mode, which means that all the inserts, removals and notifications of this class should be done in First-in-First-out mode. It can be specified whether each class should operate in FIFO mode or not, by using the `\[SpaceClass(Fifo=true)\]` or `\[SpaceClass(Fifo=false)\]` class level attribute. The default is `\[SpaceClass(Fifo=false)\]`.
 
-{code}
+
+{% highlight java %}
+
 [SpaceClass(Fifo=true)]
 public class Person {...}
-{code}
+
+{% endhighlight %}
+
 

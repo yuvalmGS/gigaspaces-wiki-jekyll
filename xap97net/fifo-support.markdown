@@ -17,23 +17,31 @@ The default space behavior is non-FIFO. The reason is that FIFO support comes at
 
 Setting FIFO support for a class can be done via the `FifoSupport` property on the `\[SpaceClass\]` attribute:
 
-{code:java}
+
+{% highlight java %}
+
 [SpaceClass(FifoSupport = FifoSupport.Operation)]
 public class Person
 {
     ...
 }
-{code}
+
+{% endhighlight %}
+
 
 or when using gs.xml via the `fifo-support` attribute on the `class` element:
 
-{code:xml}
+
+{% highlight xml %}
+
 <gigaspaces-mapping>
     <class name="GigaSpaces.Examples.Person" fifo-support="operation">
         ...
     </class>
 </gigaspaces-mapping>
-{code}
+
+{% endhighlight %}
+
 
 The `FifoSupport` modes are:
 
@@ -47,9 +55,13 @@ The `FifoSupport` modes are:
 ## Query Operations with FIFO
 
 To execute Read/Take operations with FIFO, use `ReadModifiers.Fifo` / `TakeModifiers.Fifo` respectively. For example:
-{code:java}
+
+{% highlight java %}
+
 Person result = space.Take(new Person(), transaction, timeout, TakeModifiers.FIFO);
-{code}
+
+{% endhighlight %}
+
 If class `Person` is not set to support FIFO, an exception will be thrown.
 
 ## Read with FIFO
@@ -75,7 +87,9 @@ For example, if a transactional polling container consumes data and throws an ex
 # Events with FIFO
 
 When registering for events, use `EventSessionConfig.Fifo` to instruct the space that events should be sent to the client in FIFO order. For example:
-{code:java}
+
+{% highlight java %}
+
 // Create an event session configuration with FIFO:
 EventSessionConfig sessionConfig = new EventSessionConfig();
 sessionConfig.Fifo = true;
@@ -83,7 +97,9 @@ sessionConfig.Fifo = true;
 IDataEventSession session = space.CreateDataEventSession(sessionConfig);
 // Subscribe to an event:
 session.AddListener(new Person(), new EventHandler<SpaceDataEventArgs<Person>>(OnPersonEvent));
-{code}
+
+{% endhighlight %}
+
 
 (i) When using FIFO the client will use a single thread to invoke the listener callback method, so the events are both received and processed in FIFO order (i.e. if the client receives an event but the callback method haven't finished processing the previous event, the new event will be blocked until the previous one finishes). This is contrary to non-FIFO events, which are forwarded to the callback method as soon as they arrive, and thus might invoke the callback methods in parallel via multiple threads.
 (!) Registering for FIFO notifications on a class that was not FIFO-enabled will throw an exception.

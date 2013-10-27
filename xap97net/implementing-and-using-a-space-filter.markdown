@@ -28,11 +28,15 @@ A [SpaceFilterConfig|SpaceFilterConfig Class] can be created in two ways, depend
 
 If the filter implements the [ISpaceFilter Interface|ISpaceFilter Interface], then a [SpaceFilterConfig|SpaceFilterConfig Class] needs to be created for it, and each operation that needs to be filtered should be added to the `FilterOperations` list, as in the following code:
 
-{code:java}
+
+{% highlight java %}
+
 SpaceFilterConfig mySpaceFilterConfig = new SpaceFilterConfig();
 mySpaceFilterConfig.FilterOperations = new List<FilterOperation>(new FilterOperation[]{ FilterOperation.BeforeWrite });
 mySpaceFilterConfig.Filter = new MySpaceFilter();
-{code}
+
+{% endhighlight %}
+
 
 #### Implementing a Space Filter using SpaceFilterOperationDelegate
 
@@ -40,11 +44,15 @@ If the filter is based on the [SpaceFilterOperationDelegate|SpaceFilterOperation
 
 Once a [SpaceFilterConfig|SpaceFilterConfig Class] is created, it needs to be used when starting the space.
 
-{code:java}
+
+{% highlight java %}
+
 spaceConfig.SpaceFiltersConfig = new List<SpaceFilterConfig>();
 spaceConfig.Add(mySpaceFilterConfig);
 
 ISpaceProxy embeddedSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceConfig);
-{code}
+
+{% endhighlight %}
+
 
 (on) A space can have multiple space filters integrated in it. Simply create a [SpaceFilterConfig|SpaceFilterConfig Class] instance per filter, and add it to the `SpaceFiltersConfig` list.

@@ -53,7 +53,9 @@ The example solution is based on three projects:
 
 The only object in our model is the `Data` object.
 
-{code:java}
+
+{% highlight java %}
+
 [SpaceClass]
 public class Data
 {
@@ -85,7 +87,9 @@ public class Data
   }
 [..]
 }
-{code}
+
+{% endhighlight %}
+
 
 Note the attributes that are used in this object:
 - `SpaceClass` -- the marked object is written into a space.
@@ -108,7 +112,9 @@ In this example the processor is colocated with the space that it needs to proce
 
 {gdeck:dataprocessor|top}
 {gcard:Code}
-{code:java}
+
+{% highlight java %}
+
 /// <summary>
 /// This class contain the processing logic, marked as polling event driven.
 /// </summary>
@@ -161,10 +167,14 @@ internal class DataProcessor : IProcessorStatisticsProvider
       [..]
   }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Configuration}
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -183,7 +193,9 @@ internal class DataProcessor : IProcessorStatisticsProvider
     </ProcessingUnitContainer>
   </GigaSpaces.XAP>
 </configuration>
-{code}
+
+{% endhighlight %}
+
 
 We configure a single colocated space specified by the Url of the space, in our case "/./dataExampleSpace" (embedded space url). Since there's only one managed space proxy in the basic container, the data processor polling container will operate using that proxy.
 {gcard}
@@ -205,7 +217,9 @@ The data feeder is in charge of feeding the cluster with unprocessed data every 
 
 {gdeck:datafeeder|top}
 {gcard:Code}
-{code:java}
+
+{% highlight java %}
+
 /// <summary>
 /// Data feeder feeds new data to the space that needs to be processed
 /// </summary>
@@ -279,10 +293,14 @@ public class DataFeeder
     [..]
   }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Configuration}
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -301,7 +319,9 @@ public class DataFeeder
     </ProcessingUnitContainer>
   </GigaSpaces.XAP>
 </configuration>
-{code}
+
+{% endhighlight %}
+
 
 We configure a remote proxy to the cluster which is used by the feeder in order to feed unprocessed data into the cluster and to execute a remote service to obtain processing statistics
 {gcard}
@@ -314,7 +334,11 @@ The `Feed()` method does the actual work, by creating a new `Data` object with r
 This example includes `compile.bat` script.
 
 From the `<Example Root>` directory (`<GigaSpaces Root>\Examples\ProcessingUnit`), call:
-{code}compile{code}
+
+{% highlight java %}
+compile
+{% endhighlight %}
+
 
 This compiles all the related projects and creates the processing unit dlls inside each project, under the `Deployment` directory. It also copies the Processing Units Deployment directory to the `<GigaSpaces Root>\Runtime\deploy` directory, which simplifies deployment through the `gs-ui`.
 
@@ -341,10 +365,14 @@ The `pu.config` resides in the `Deployment\DataFeeder(\Processor)` directory of 
 
 After you run the build script and the copy deployment files script, the two directories are copied to the `<GigaSpaces Root>\Runtime\deploy` directory. This example runs in a partitioned cluster with two primary spaces and one backup space for each partition, you need to run Grid Service Agent which will start and manage one Grid Service Manager (GSM) and two Grid Service Containers (GSC), and then start the GigaSpaces Management Center.
 
-{code}
+
+{% highlight java %}
+
 <GigaSpaces Root>\Bin\Gs-Agent.exe
 <GigaSpaces Root>\Bin\Gs-ui
-{code}
+
+{% endhighlight %}
+
 
 (!) Since the spaces are running inside the `DataProcessor`, the `DataProcessor` should be deployed first and the `DataFeeder` second.
 
@@ -356,10 +384,14 @@ After you run the build script and the copy deployment files script, the two dir
 
 Another way to deploy the processing units will be to use GigaSpaces Command Line Interface, in this case we do not require using GigaSpaces Management Center, we deploy it in the following manner:
 
-{code}
+
+{% highlight java %}
+
 <GigaSpaces Root>\Bin\Gs-Cli.exe deploy DataProcessor
 <GigaSpaces Root>\Bin\Gs-Cli.exe deploy DataFeeder
-{code}
+
+{% endhighlight %}
+
 
 ### Application Domain (AppDomain)
 
@@ -375,14 +407,18 @@ Once the processing units are deployed, they will appear in the managament cente
 
 One option is to run the processing unit within the IDE, which should be used for debug purposes only since it is not deployed and managed by the service grid. The example contains one project named PUDebugExecuter, that shows how to start the processing unit projects within the IDE. It uses a class named `ProcessingUnitContainerHost` to host the processing unit container and manage its life cycle, it does so in the following manner:
 
-{code:java}
+
+{% highlight java %}
+
 ProcessingUnitContainerHost processorContainerHost = new ProcessingUnitContainerHost(@"..\Processor\Deployment\DataProcessor", null, null);
 ProcessingUnitContainerHost feederContainerHost = new ProcessingUnitContainerHost(@"..\Feeder\Deployment\DataFeeder", null, null);
 
 [..]
 feederContainerHost.Dispose();
 processorContainerHost.Dispose();
-{code}
+
+{% endhighlight %}
+
 
 This will host the two processing units, processor and feeder, which reside in the specified deployment directory.
 When the host is created the hosted processing units are immidiatly created and initialized, once the host is disposed it will dispose of the hosted processing unit container.
@@ -394,12 +430,20 @@ When the host is created the hosted processing units are immidiatly created and 
 One option is to run a standalone process which will host the Processing Unit container. Like above, this should be used for debug purposes only since it is not deployed and managed by the service grid. This is done simply by calling the following commands from your `<GigaSpaces Root>\Bin` directory:
 
 The following deploys the data processor:
-{code}
+
+{% highlight java %}
+
 PuInstance ..\Examples\ProcessingUnit\Processor\Deployment\DataProcessor
-{code}
+
+{% endhighlight %}
+
 The following deploys the data feeder:
-{code}
+
+{% highlight java %}
+
 PuInstance ..\Examples\ProcessingUnit\Feeder\Deployment\DataFeeder
-{code}
+
+{% endhighlight %}
+
 
 Each command creates the standalone process and hosts the `DataProcessor` or `DataFeeder` Processing Units.

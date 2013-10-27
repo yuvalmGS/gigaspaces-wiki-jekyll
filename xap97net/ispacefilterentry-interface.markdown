@@ -12,7 +12,9 @@ page_id: 63799423
 An `ISpaceFilterEntry` represents an object in the context of a filter operation, and allows you to interact with it.
 
 This interface consists of 2 methods and 2 properties.
-{code:java}
+
+{% highlight java %}
+
 public interface ISpaceFilterEntry
 {
   // Gets the object type
@@ -27,7 +29,9 @@ public interface ISpaceFilterEntry
   // Gets the notify type (relevant for Notification filter operations)
   DataEventType NotifyType { get; }
 }
-{code}
+
+{% endhighlight %}
+
 
 When using the `ISpaceFilterEntry`, performance issues should be taken into consideration. This interface is designed to be used in a lazy evaluation fashion. `GetObject` and `UpdateObject` are evaluated only when called, and they reduce performance. Therefore they should only be used when necessary.
 

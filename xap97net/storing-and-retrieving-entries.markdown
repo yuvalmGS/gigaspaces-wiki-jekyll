@@ -11,7 +11,9 @@ page_id: 63799306
 
 Once you've connected to a space and obtained a `ISpaceProxy`, you can use it to store entries in the space and retrieve them, retrieve entries stored by other clients, and so on. An entry can be any .NET object (it does not have to inherit/implement and base class or interface). This page demonstrates basic space operations using a simple class called `Person`:
 
-{code:java}
+
+{% highlight java %}
+
 class Person
 {
   private String _userId;
@@ -33,7 +35,9 @@ class Person
   {
   }
 }
-{code}
+
+{% endhighlight %}
+
 
 # Storing an Entry - Write
 
@@ -43,14 +47,18 @@ Entries can be stored in the space using the `Write` method. A write operation s
 
 In order to write an entry to the space, create an object instance, populate the relevant properties/fields, then use the `Write` operation to store the object in the space:
 
-{code:java}
+
+{% highlight java %}
+
 Person kermit = new Person();
 kermit.UserId = "011-1111111";
 kermit.Name = "Kermit the frog";
 
 // Write the object to the space
 proxy.Write(kermit);
-{code}
+
+{% endhighlight %}
+
 
 {refer}See full details in [Writing and Updating Entries|Writing and Updating Entries]{refer}
 {comment}
@@ -66,14 +74,18 @@ The returned object is a copy of the entry stored in the space, which means that
 
 In order to retrieve an entry from the space, create an instance of the class you wish to retrieve, populate the properties/fields you wish to match by (null properties/fields will be ignored), then use the `Read` operation to retrieve the entry from the space:
 
-{code:java}
+
+{% highlight java %}
+
 // Create a template of a Person with a specific userId
 Person readTemplate = new Person();
 readTemplate.UserId = "011-1111111";
 
 // Reads a person from the space into readResult
 Person readResult = proxy.Read(readTemplate);
-{code}
+
+{% endhighlight %}
+
 
 {refer}See full details in [Reading Entries|Reading Entries]{refer}
 
@@ -85,14 +97,18 @@ Using the `Read` operation does not affect the space - the read entry remains in
 
 In order to take an entry from the space, create a template as you did in the read operation, then use the `Take` operation to retrieve and remove the entry from the space:
 
-{code:java}
+
+{% highlight java %}
+
 // Create a template of a Person with a specific userId
 Person takeTemplate = new Person();
 takeTemplate.UserId = "011-1111111";
 
 // Takes a person from the space into takeResult
 Person takeResult = proxy.Take(takeTemplate);
-{code}
+
+{% endhighlight %}
+
 
 # Cluster routing
 

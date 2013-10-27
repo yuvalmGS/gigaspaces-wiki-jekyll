@@ -25,7 +25,9 @@ The mirror uses the External Data Source interface in write mode, and delegates 
 ## NHibernate Session Factory Configuration File
 
 NHibernate requires a session factory that creates new sessions over the database for each operation executed on it. You can create such a session factory, either with a configuration file or by code. This walkthrough demonstrates a simple configuration file for the session factory, over a MySQL database server into a database named dotnetpersistency. These parameters are configured in the `Connection` string property.
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" ?>
 <hibernate-configuration  xmlns="urn:nhibernate-configuration-2.2" >
   <session-factory>
@@ -45,7 +47,9 @@ NHibernate requires a session factory that creates new sessions over the databas
 
   </session-factory>
 </hibernate-configuration>
-{code}
+
+{% endhighlight %}
+
 
 ## NHibernate Mapping File
 
@@ -53,7 +57,9 @@ Each persistent class requires a mapping file that defines how to map the object
 {gdeck:Person Class|top}
 {gcard:Person Class}
 Our `Person` is defined in Assembly name entities.
-{code:java}
+
+{% highlight java %}
+
 namespace Entities
 {
   public class Person
@@ -83,10 +89,14 @@ namespace Entities
     public Person() { }
   }
 }
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:NHibernate Mapping File}
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0"?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Entities" namespace="Entities">
   <class name="Entities.Person" table="PERSON">
@@ -96,7 +106,9 @@ namespace Entities
     <property name="Age" />
   </class>
 </hibernate-mapping>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 
@@ -111,7 +123,9 @@ Our cluster is 2,1 and a mirror. Therefore it consists of:
 ## Starting a Cluster Member Space
 
 The following code starts a cluster member space with the NHibernate External Data Source:
-{code:java}
+
+{% highlight java %}
+
 //Create a new space configuration object that is used to start a space
 SpaceConfig spaceConfig = new SpaceConfig();
 //Start a new ExternalDataSource config object
@@ -140,7 +154,9 @@ spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 1, null, 2,
 
 //Starts the space with the External Data Source
 ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace?mirror=true", spaceConfig);
-{code}
+
+{% endhighlight %}
+
 (on) `<NHibernate config file>` (see code box above) should point to the NHibernate session factory [configuration file|#sessionfactory].
 
 (on) It is recommended that you put all the NHibernate HBM mapping files in one directory, and point `<NHibernate HBM files location>` (see code box above) to that directory.
@@ -149,22 +165,36 @@ ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace?mirror=tru
 
 To start the other members of the cluster, simply change the [ClusterInfo|Processing Unit Container#ClusterInfo]:
 - Backup space of the first partition member
-{code:java}
+
+{% highlight java %}
+
 spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 1, 1, 2, 1);
-{code}
+
+{% endhighlight %}
+
 - Second primary space in the partitioned cluster
-{code:java}
+
+{% highlight java %}
+
 spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 2, null, 2, 1);
-{code}
+
+{% endhighlight %}
+
 - Backup space of the second partition member
-{code:java}
+
+{% highlight java %}
+
 spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 2, 1, 2, 1);
-{code}
+
+{% endhighlight %}
+
 
 ## Starting the Mirror Space
 
 The following code starts the mirror space with the NHibernate External Data Source:
-{code:java}
+
+{% highlight java %}
+
 //Create a new space configuration object that is used to start a space
 SpaceConfig spaceConfig = new SpaceConfig();
 //Start a new ExternalDataSource config object
@@ -191,4 +221,5 @@ spaceConfig.CustomProperties.Add("cluster-config.cache-loader.central-data-sourc
 
 //Starts the space with the External Data Source
 ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mirror-service?schema=mirror", spaceConfig);
-{code}
+
+{% endhighlight %}

@@ -21,14 +21,18 @@ Every time an event occurs in a space, which matches the given template and even
 
 In order to customize the behavior of an [`IDataEventSession`|http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_IDataEventSession.htm], a new one needs to be created, using a specific [`DataEventConfig` |http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_EventSessionConfig.htm] that configures the behavior. This section describes different scenarios, and how to address them, by customizing the data event session
 
-{code:java}
+
+{% highlight java %}
+
 EventSessionConfig eventSessionConfig = new EventSessionConfig();
 //Customize the eventSessionConfig
 ...
 
 //Create a customized data event session
 IDataEventSession dataEventSession = proxy.CreateDataEventSession(eventSessionConfig);
-{code}
+
+{% endhighlight %}
+
 
 ## Detecting an Event Listener Failure/Disconnection
 
@@ -48,20 +52,28 @@ The auto renewal idea is that the listener is added with a limited lease, for ex
 
 **Configuring data event session with auto renewal**
 Auto renewal behavior is determined by the `EventSessionConfig.AutoRenew` property.
-{code:java}
+
+{% highlight java %}
+
 EventSessionConfig eventSessionConfig = new EventSessionConfig();
 eventSessionConfig.AutoRenew = true;
-{code}
+
+{% endhighlight %}
+
 
 The auto renewal process uses a few parameters that dictate the timing of its behavior. These values have proper defaults, but can be altered, for example:
-{code:java}
+
+{% highlight java %}
+
 //Auto renewal is active for 1 minute
 eventSessionConfig.AutoRenewTotalDuration = 60000;
 //Each time renew the lease for 10 seconds
 eventSessionConfig.AutoRenewLeaseDuration = 10000;
 //The network latency can reach 5 seconds, send renewal request 5 seconds before the lease expires.
 eventSessionConfig.AutoRenewRTT = 5000;
-{code}
+
+{% endhighlight %}
+
 
 ## Managing High Notifications Throughput
 
@@ -73,11 +85,14 @@ It is possible to reduce network traffic, and concurrent threads that handle not
 Batch notification behavior is determined by the `EventSessionConfig.Batch` property, in conjuction with the `EventSessionConfig.BatchSize` and `EventSessionConfig.BatchTime` properties.
 
 The batch notification is sent when either one of these two parameters has been reached or exceeded. Either the pending notification size has reached the `BatchSize`, or the time, in milliseconds, that elapsed from the last sent notification batch, exceeds `BatchTime`.
-{code:java}
+
+{% highlight java %}
+
 EventSessionConfig eventSessionConfig = new EventSessionConfig();
 eventSessionConfig.Batch = true;
 //Send notifications when the batch size reached 100
 eventSessionConfig.BatchSize = 100;
 //Send notifications at maximum every 1 seconds.
 eventSessionConfig.BatchTime = 1000;
-{code}
+
+{% endhighlight %}

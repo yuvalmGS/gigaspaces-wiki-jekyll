@@ -39,7 +39,9 @@ The bootstrap is initiated on the local gateway sink of the space's site that ne
 3. At the bootstrap target site there should be a gateway sink configured with the bootstrap source gateway as one of its sources and there should be a delegator to that source.
 4. At the bootstrap source site there should be a gateway sink (no need to configure the bootstrap target as a source if it is not supposed to replicate into the source site), and there should be a delegator from the source site to the target site.
 5. The gateway sink at the bootstrapping site needs to be configured with `requires-bootstrap=true`, it should look as follows:
-{code:xml}
+
+{% highlight xml %}
+
 <os-gateway:sink id="sink" local-gateway-name="NEWYORK"
   gateway-lookups="gatewayLookups"
   local-space-url="jini://*/*/myNYSpace" requires-bootstrap="true">
@@ -48,29 +50,39 @@ The bootstrap is initiated on the local gateway sink of the space's site that ne
     <os-gateway:source name="HONGKONG" />
   </os-gateway:sources>
 </os-gateway:sink>
-{code}
+
+{% endhighlight %}
+
 
 After meting the condition specified in the previous, the bootstrap should be initiated using the [Admin API|Administration and Monitoring API].
 Following is an example of how to bootstrap New-York from London:
-{code:java}
+
+{% highlight java %}
+
 //Create an admin to the local environment
 IServiceGridAdmin admin =  new ServiceGridAdminBuilder().CreateAdmin();
 IGateway newyorkGateway = admin.Gateways.WaitFor("NEWYORK");
 IGatewaySinkSource londonSinkSource = newyorkGateway.WaitForSinkSource("LONDON");
 IBootstrapResult bootstrapResult = londonSinkSource.BootstrapFromGatewayAndWait(TimeSpan.FromSeconds(3600));
-{code}
+
+{% endhighlight %}
+
 
 The bootstrap method will block until the bootstrap is completed and the result will specify whether the bootstrap completed successfully or some error occurred, such as timeout.
 
 When a gateway sink is started with `requires-bootstrap` state, it will not be open for incoming replication until a bootstrap was initiated, which means remote sites spaces incoming replication channels will be disconnected. It is possible to enable incoming replication to a gateway sink in that state without initiating a bootstrap by calling the `enableIncomingReplication`. For example:
-{code:java}
+
+{% highlight java %}
+
 //Create an admin to the local environment
 IServiceGridAdmin admin =  new ServiceGridAdminBuilder().CreateAdmin();
 IGateway newyorkGateway = admin.Gateways.WaitFor("NEWYORK");
 IGatewaySink sink = newyorkGateway.WaitForSink("LONDON");
 sink.EnableIncomingReplication();
 
-{code}
+
+{% endhighlight %}
+
 
 Once a gateway sink has executed a bootstrap process or the `enableIncomingReplication` was called, it cannot execute a bootstrap process again because it is already open for incoming replication.
 

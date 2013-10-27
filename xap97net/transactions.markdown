@@ -18,7 +18,9 @@ If any error occurred, you need to abort the transaction by calling `ITransactio
 # Usage
 
 Suppose we have an order processing system, and we need to validate incoming orders before they continue to be processed. Our code could look something like this:
-{code:java}
+
+{% highlight java %}
+
 public void ProcessNewOrder(ISpaceProxy space)
 {
     // Get an order which requires processing:
@@ -31,11 +33,15 @@ public void ProcessNewOrder(ISpaceProxy space)
         space.Write(order);
     }
 }
-{code}
+
+{% endhighlight %}
+
 
 Naturally, this code is not safe because if something goes wrong between the Take and Write operations the order is lost. We can use transactions to make it safer:
 
-{code:java}
+
+{% highlight java %}
+
 public void ProcessNewOrder(ISpaceProxy space, ITransactionManager txnManager)
 {
     // Create a transaction using the transaction manager:
@@ -62,7 +68,9 @@ public void ProcessNewOrder(ISpaceProxy space, ITransactionManager txnManager)
         }
     }
 }
-{code}
+
+{% endhighlight %}
+
 
 Let's look at the changes we've made:
 1. The method now receives an additional argument which is a transaction manager, which is used to create a transaction.
@@ -83,15 +91,23 @@ In previous versions, users had to choose between using the distributed and loca
 Another thing that can go wrong is that the application will hang before the transaction is committed or aborted, which means that entries that were affected by the transactions are locked away from other users. The solution to that is to create the transaction with a timeout - when the timeout expires the transaction is automatically rolled back and all entries are released.
 
 You can specify a transaction timeout when the transaction is created:
-{code:java}
+
+{% highlight java %}
+
 // Create a transaction with a 5 minute timeout:
 txnManager.Create(5 ** 60 ** 1000);
-{code}
+
+{% endhighlight %}
+
 Alternatively, you can set the default transaction timeout on the transaction manager:
-{code:java}
+
+{% highlight java %}
+
 // Set the default transactions timeout to 5 minutes:
 txnManager.DefaultLeaseTime = 5 ** 60 ** 1000;
-{code}
+
+{% endhighlight %}
+
 
 # Isolation Levels
 

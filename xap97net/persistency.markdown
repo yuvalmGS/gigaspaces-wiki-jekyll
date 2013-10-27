@@ -35,7 +35,9 @@ You can either use GigaSpaces NHibernate implementation, or create a custom impl
 {gcard:GigaSpaces NHibernate SQL Data Source Implementation}
 The following code demonstrates how to start an embedded space with GigaSpaces NHibernate `SqlDataSource` implementation as its External Data Source.
 
-{code:java}
+
+{% highlight java %}
+
 //Create a new space configuration object that is used to start a space
 SpaceConfig spaceConfig = new SpaceConfig();
 //Start a new ExternalDataSource config object
@@ -53,7 +55,9 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add(NHibernateExternalData
 
 //Starts the space with the External Data Source
 ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceConfig);
-{code}
+
+{% endhighlight %}
+
 
 (!) Before using the `ExternalDataSource.NHibernate` practice, compile it by calling `<GigaSpaces Root>\dotnet\practices\ExternalDataSource\NHibernate\build.bat`.
 
@@ -66,7 +70,9 @@ A custom .NET `SqlDataSource` implementation can be used as well.
 
 The following code demonstrates how to start an embedded space with a custom .NET `SqlDataSource` implementation as its External Data Source.
 
-{code:java}
+
+{% highlight java %}
+
 //Create a new space configuration object that is used to start a space
 SpaceConfig spaceConfig = new SpaceConfig();
 //Start a new ExternalDataSource config object
@@ -80,7 +86,9 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("[Property name]", "[P
 
 //Starts the space with the External Data Source
 ISpaceProxy persistentSpace = SpaceProxyProviderFactory.Instance.FindSpace("/./mySpace", spaceConfig);
-{code}
+
+{% endhighlight %}
+
 
 {gcard}
 {gdeck}
@@ -91,11 +99,15 @@ The number of objects passed between the .Net `IDataEnumerator` (Part of the `IS
 
 This can be done by adding a custom property to the `ExternalDataSourceConfig` object.
 
-{code:java}
+
+{% highlight java %}
+
 spaceConfig.ExternalDataSourceConfig.CustomProperties = new Dictionary<string, string>();
 //Add custom properties to the dictionary
 spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size", "[batch size]");
-{code}
+
+{% endhighlight %}
+
 
 ## Server Side Logging
 

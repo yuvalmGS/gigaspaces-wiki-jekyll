@@ -18,7 +18,9 @@ replication related parameters per gateway or for all gateways.
 Here is an example of how this configuration should look:
 {gdeck}
 {gcard:Using pu.config}
-{code:xml}
+
+{% highlight xml %}
+
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -44,11 +46,15 @@ Here is an example of how this configuration should look:
     </ProcessingUnitContainer>
   </GigaSpaces.XAP>
 </configuration>
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gcard:Code Construction}
 When using code construction for creating a space, the gateway configuration should be part of the `SpaceConfig` object that is used to create the space:
-{code:java}
+
+{% highlight java %}
+
 SpaceConfig spaceConfig = new SpaceConfig();
 //... Configure all other space properties
 spaceConfig.GatewayConfig = new GatewayConfig();
@@ -70,7 +76,9 @@ spaceConfig.GatewayConfig.GatewayTargets.Add(hongkongTarget);
 
 BasicProcessingUnitContainer container = //... obtain container reference
 container.CreateSpaceProxy("Space", "/./myNYSpace", spaceConfig);
-{code}
+
+{% endhighlight %}
+
 {gcard}
 {gdeck}
 

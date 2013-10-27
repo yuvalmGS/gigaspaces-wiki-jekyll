@@ -21,7 +21,9 @@ There are two ways to use the `SpaceFilterOperationDelegate`:
 
 The filter itself is a class that doesn't need to implement any interface. Instead, the filter methods are marked with specific attributes.
 
-{code:java}
+
+{% highlight java %}
+
 public class SimpleAttributeFilter
 {
   [OnFilterInit]
@@ -36,17 +38,23 @@ public class SimpleAttributeFilter
     Console.WriteLine(DateTime.Now + ": Before Write");
   }
 }
-{code}
+
+{% endhighlight %}
+
 
 To use this class as the filter, simply use the `AttributeSpaceFilterConfigFactory` to create a [SpaceFilterConfig|SpaceFilterConfig Class] instance, and use when starting a space [integrated with the space filter|Implementing and Using a Space Filter#Integrating the Space Filter with a space].
 
-{code:java}
+
+{% highlight java %}
+
 AttributeSpaceFilterConfigFactory filterConfigFactory = new AttributeSpaceFilterConfigFactory();
 filterConfigFactory.Filter = new SimpleAttributeFilter();
 
 // use this filter config when starting a space
 SpaceFilterConfig filterConfig = filterConfigFactory.CreateSpaceFilterConfig();
-{code}
+
+{% endhighlight %}
+
 
 The `AttributeSpaceFilterConfigFactory` creates a [SpaceFilterConfig|SpaceFilterConfig Class] instance, using a fully constructed `SpaceFilterOperationDelegate` as its Filter instance. The `SpaceFilterOperationDelegate` acts as the [ISpaceFilter|ISpaceFilter Interface] implementation, and delegates the filter operation to the `SpaceAttributeFilter` instance.
 
@@ -54,7 +62,9 @@ The `AttributeSpaceFilterConfigFactory` creates a [SpaceFilterConfig|SpaceFilter
 
 A method name-based filter has the same basic principle as the one above. However, instead of using attributes to mark the method, the method names are specified by properties.
 
-{code:java}
+
+{% highlight java %}
+
 public class SimpleMethodNameFilter
 {
   public void Initialize()
@@ -76,7 +86,9 @@ filterConfigFactory.OnFilterInit = "Initialize";
 filterConfigFactory.BeforeWrite = "ReportBeforeWrite";
 // use this filter config when starting a space
 SpaceFilterConfig filterConfig = filterConfigFactory.CreateSpaceFilterConfig();
-{code}
+
+{% endhighlight %}
+
 
 # How the SpaceFilterOperationDelegate Works
 

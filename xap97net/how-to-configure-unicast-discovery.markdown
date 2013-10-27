@@ -20,9 +20,13 @@ In such cases, the Jini lookup discovery enables the user to discover services (
 Services will use the locators property to locate the Jini Lookup Service to lookup other services registered on it. The locators property is configured using the `XapNet.Locators` macro or the `com.gs.jini_lus.locators` system property. By default it is left blank. It accepts a comma separated list of `host:port`. This list should include the hosts (and ports) where the Jini Lookup Service (or GSM) is running. The default port is 4174.
 
 For example, considering the GSM(+LUS) is running on machine1:4174 and machine2:4174 machines:
-{code:title=Settings.xml}
+
+{% highlight xml %}
+
 <XapNet.Locators>machine1:4174,machine2:4174</XapNet.Locators>
-{code}
+
+{% endhighlight %}
+
 
 # Locating services using locators
 
@@ -32,7 +36,11 @@ To lookup a Space service using the unicast protocol, add the locators SpaceURL 
 
 For both **unicast AND multicast discovery**, use:
 
-{code}jini://*/./mySpace?locators=machine1:4174,machine2:4174&groups=gigaspaces-9.0.0-XAPPremium-ga{code}
+
+{% highlight java %}
+jini://*/./mySpace?locators=machine1:4174,machine2:4174&groups=gigaspaces-9.0.0-XAPPremium-ga
+{% endhighlight %}
+
 
 (!) When the locators attribute is used in conjunction with the jini://* prefix and groups attribute, the discovery will be unicast AND multicast.
 If you want unicast only, you should disable multicast altogether.
@@ -40,7 +48,11 @@ If you want unicast only, you should disable multicast altogether.
 
 {% tip %}
 For **unicast discovery only**, you should disable multicast using **`com.gs.multicast.enabled=false`** system property, and use:
-{code}jini://machine1:4174,machine2:4174/./mySpace?locators=machine1:4174,machine2:4174{code}
+
+{% highlight java %}
+jini://machine1:4174,machine2:4174/./mySpace?locators=machine1:4174,machine2:4174
+{% endhighlight %}
+
 {% endtip %}
 
 
@@ -55,12 +67,16 @@ To change the lookup service port when using the Service Grid, you can use the *
 
 When a lookup service fails and is brought back online, a client (such as a GSC, space or a client with a space proxy) needs to re-discover and federate again. In order to make that happen, Jini unicast discovery must retry connections to the remote lookup service. The default unicast retry protocol provides a graduating approach, increasing the amount of time to wait before the next discovery attempts are made - upon each invocation, eventually reaching a maximum time interval over which discovery is re-tried. In this way, the network is not flooded with unicast discovery requests referencing a lookup service that may not be available for quite some time (if ever). The default time to wait between unicast retry attempts are:
 
-{code}
+
+{% highlight java %}
+
 long[] sleepTime = {5 ** 1000, 10 ** 1000, 20 * 1000,
                                     30 ** 1000, 60 ** 1000,
                                     2 ** 60 ** 1000, 4 ** 60 ** 1000,
                                     8 ** 60 ** 1000, 15 ** 60 ** 1000};
-{code}
+
+{% endhighlight %}
+
 
 You'll max out at 15 minutes between retries. Thats a big window.
 The retry logic only begins once the discovered lookup service is discarded.
@@ -68,13 +84,21 @@ The retry logic only begins once the discovered lookup service is discarded.
 To tune the unicast retry intervals, the `com.gigaspaces.unicast.interval` system property is used to control the behavior of this LookupLocatorDiscovery utility. A comma separated list of values defining the intervals to wait between subsequent retries. Values are declared in milliseconds.
 
 Example:
-{code}
+
+{% highlight java %}
+
 com.gigaspaces.unicast.interval=5000
-{code}
+
+{% endhighlight %}
+
 Will cause the LookupLocatorDiscovery utility to wait 5 seconds between retries
-{code}
+
+{% highlight java %}
+
 com.gigaspaces.unicast.interval=5000,10000
-{code}
+
+{% endhighlight %}
+
 Will cause the LookupLocatorDiscovery utility to first wait 5 seconds, then 10 seconds between retries. This declaration provides a graduating approach (similar in approach to the default settings).
 
 You will need to set this property to take affect for GSM and GSC startup. You should see a similar log message to "Set unicast interval to 5000".

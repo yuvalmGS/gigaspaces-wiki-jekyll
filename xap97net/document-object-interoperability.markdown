@@ -17,12 +17,16 @@ GigaSpaces offers interoperability between documents and concrete objects via sp
 When working with documents the user is in charge of creating and registering the space type descriptor manually before writing/reading documents. When working with concrete objects the system implicitly generates a space type descriptor for the object's class using attributes or `gs.xml` files when the class is used for the first time. In order to inter-operate, the same type descriptor should be used for both concrete objects and documents.
 
 If the object's class is in the application's AppDomain, or the object type is already registered in the space, there's no need to register it again - the application will retrieve it automatically when it's used for the first time. For example:
-{code:java}
+
+{% highlight java %}
+
 // Create a document template using the POJO class name:
 SpaceDocument template = new SpaceDocument(typeof(MyObject).FullName);
 // Count all entries matching the template:
 int count = spaceProxy.Count(template);
-{code}
+
+{% endhighlight %}
+
 
 If the object's class is not available in the classpath or server, the application will throw an exception indicating there's no type descriptor registered for the specified type. In that case, it is possible to manually create a matching type descriptor using the `SpaceTypeDescriptorBuilder` and register it in the space. However, that's not recommended since it essentially requires you to duplicate all the concrete object settings and maintain them if the object class changes.
 
@@ -53,7 +57,9 @@ Respectively, to support multiple ids queries, use the `IdsQuery` with the corre
 By default, type descriptors created from concrete object classes do not support dynamic properties. If a document of such a type with a property that is not defined in the object will be written to the space, an exception will be thrown indicating the property is not defined in the type and the type does not support dynamic properties.
 In order to have a concrete class support dynamic properties it should have a property decorated with the \[SpaceDynamicProperties\] and the type of that property must be either DocumentProperties, Dictionary<String, Object> or IDictionary<String, Object>.
 
-{code:java}
+
+{% highlight java %}
+
 [SpaceClass]
 public class MyObject
 {
@@ -68,7 +74,9 @@ public class MyObject
   }
 
 }
-{code}
+
+{% endhighlight %}
+
 
 The storage type of the dynamic properties can be explicitly set in the attribute \[SpaceDynamicProperties(StorageType=StorageType.Binary)\] (the default is StorageType.Object).
 {refer}For more details about storage type refer to [Property Storage Type]{refer}

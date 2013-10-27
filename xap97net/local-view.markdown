@@ -23,7 +23,9 @@ During the local view initialization, data is loaded into the client's memory ba
 
 Creating a local view is similar to creating an `ISpaceProxy` instance, except the space should be wrapped with a local view before exposing it as an `ISpaceProxy`. The local view is configured in code using `IReadOnlySpaceProxy`. For example:
 
-{code:java}
+
+{% highlight java %}
+
 //define names for the localView
 const String typeName1 = "com.gigaspaces.test.Alpha";
 const String typeName2 = "com.gigaspaces.test.Bravo";
@@ -34,7 +36,9 @@ View[] views = new View[] { new View(typeName1, "foo=1"), new View(typeName2, ""
 //Create the local view using the GigaSpacesFactory class.
 IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views);
 
-{code}
+
+{% endhighlight %}
+
 
 # Local View Features
 
@@ -69,7 +73,9 @@ Changes in the server are grouped and sent to the client in batches. The followi
 
 Setting lower values for batch size and timeout reduces data staleness but increases network load, and vice versa.
 Batch settings can be configured when creating the Local View by defining a `LocalViewConfig` object and sending it as a variable in the `GigaSpacesFactory.CreateLocalView` function. For example:
-{code:java}
+
+{% highlight java %}
+
 //Create the configuration object
 LocalViewConfig myconfig = new LocalViewConfig();
 
@@ -82,7 +88,9 @@ View[] views = new View[] { new View(typeName1, "foo=1"), new View(typeName2, ""
 //create the local view using the GigaSpacesFactory object and write it into an IReadOnlySpaceProxy object.
 IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views, myConfig);
 
-{code}
+
+{% endhighlight %}
+
 
 # Recovering From Disconnection
 
@@ -93,7 +101,9 @@ If the disconnection duration exceeds the maximum disconnection duration, the lo
 When the connection to the remote master space is restored, the local view reloads all its data from the master space (same as in the initialization process) before restoring the state to connected, ensuring the local view is consistent when it is accessed.
 
 The maximum disconnection duration can be configured using `LocalViewConfig` object at runtime when creating the local view. (default is 1 minute). For example:
-{code:java}
+
+{% highlight java %}
+
 //Create the configuration object
 LocalViewConfig myconfig = new LocalViewConfig();
 
@@ -105,6 +115,8 @@ View[] views = new View[] { new View(typeName1, "foo=1"), new View(typeName2, ""
 
 //create the local view using the GigaSpacesFactory object and write it into an IReadOnlySpaceProxy object.
 IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views, myConfig);
-{code}
+
+{% endhighlight %}
+
 
 (+) When the synchronization is replication-based (default), the local view is resilient to failover, which means that if a primary space fails and a backup space replaces it within the maximum disconnection duration, the local view will remain intact during the failover process. When the synchronization is notification-based this is not guaranteed since notifications might be lost during the failover process.

@@ -30,9 +30,13 @@ While the `%USERNAME%` will be replaced after installation with the version numb
 set `LOOKUPGROUPS="gigaspaces-7.0XAPga"`.
 
 The command that loads a space needs to have this system property set. Another way of doing it instead of setting the `com.gs.jini_lus.groups` system property, is to set the Space URL groups attribute, e.g.:
-{code:java}
+
+{% highlight java %}
+
 /./mySpace?schema=cache&groups=myPrivateGroupName
-{code}
+
+{% endhighlight %}
+
 
 
 {% tip %}
@@ -59,7 +63,9 @@ Using the [list LUS |list - GigaSpaces CLI#list-6.0-ListsallactiveJiniLookupServ
 `<GigaSpaces Root>\bin\gs.bat/sh` list lus
 
 The following result examples appear on the console:
-{code:java}
+
+{% highlight java %}
+
 -----------------------------------------------------------------------
 -- Discovered Lookup Service at host [ 192.168.10.233 ].
 -- Lookup Service registered to the following jini groups:
@@ -79,7 +85,9 @@ The following result examples appear on the console:
                  Service Class: com.j_spaces.core.client.JSpaceProxy | 6f05db92-187f-4e26-b52d-ec32d3d4723c
                  Service Class: com.sun.jini.reggie.ConstrainableRegistrarProxy | d3e7e224-9b46-4782-a902-
                  e4e64c11ca95
-{code}
+
+{% endhighlight %}
+
 
 # Multi Network Card Configuration
 

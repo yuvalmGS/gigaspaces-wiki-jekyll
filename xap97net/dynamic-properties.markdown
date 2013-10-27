@@ -22,7 +22,9 @@ Dynamic properties can be used with Object as well. This provides better interop
 
 To enable dynamic properties add a `Dictionary<String, Object>` property to the relevant class and decorate it with `\[SpaceDynamicProperties\]`. For example, the following **Person** class has two fixed properties (Name and Id), and an additional **ExtraInfo** property used to host the dynamic properties:
 
-{code:java}
+
+{% highlight java %}
+
 public class Person
 {
     public String Name { get; set; }
@@ -31,7 +33,9 @@ public class Person
     [SpaceDynamicProperties]
     public DocumentProperties ExtraInfo { get; set; }
 }
-{code}
+
+{% endhighlight %}
+
 
 (+) It is recommended to use the `DocumentProperties` class to host dynamic properties.
 
@@ -39,7 +43,9 @@ public class Person
 
 To write an entry with dynamic properties, simply populate them in the dynamic properties property. For example:
 
-{code:java}
+
+{% highlight java %}
+
 Person p = new Person();
 p.Id = 7;
 p.Name = "smith";
@@ -47,13 +53,17 @@ p.ExtraInfo = new DocumentProperties();
 p.ExtraInfo["email"] = "smith@foo.com";
 p.ExtraInfo["age"] = 30;
 space.Write(p);
-{code}
+
+{% endhighlight %}
+
 
 When the entry is read from the space the dynamic properties will be stored in the DocumentProperties reference annotated with `SpaceDynamicProperties`.
 
 Dynamic properties can also be used for matching. For example, suppose we want to get all persons who are not minors (defined here as those less than twenty-one years of age) and email them something:
 
-{code:java}
+
+{% highlight java %}
+
 Person[] people = space.ReadMultiple<Person>(new SqlQuery<Person>("age > 21"));
 foreach (var person in people)
 {
@@ -61,7 +71,9 @@ foreach (var person in people)
     if (email != null)
         SendEmail(email);
 }
-{code}
+
+{% endhighlight %}
+
 
 Note that:
 - The query expression refers to 'age', not 'ExtraInfo.age' - the space recognizes that the ExtraInfo property is decorated with \[SpaceDynamicProperties\] and treats the dynamic properties as if they were regular properties of the Person class.

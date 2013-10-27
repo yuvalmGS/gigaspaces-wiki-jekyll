@@ -10,7 +10,9 @@ page_id: 63799397
 # ISpaceFilter Interface
 
 The `ISpaceFilter` interface implements IDisposable and consists of 3 additional methods.
-{code:java}
+
+{% highlight java %}
+
 public interface ISpaceFilter : IDisposable
 {
   void Init(ISpaceProxy proxy, string filterId, IDictionary<string, string> customProperties, FilterPriority priority)
@@ -32,7 +34,9 @@ public interface ISpaceFilter : IDisposable
     // performs operation when the filter is being disposed
   }
 }
-{code}
+
+{% endhighlight %}
+
 
 The FilterOperation enum specifies which space operation is being executed and at which stage. For example, a write operation will result in two filter Process method calls, one before the write is executed (BeforeWrite) and one after the write is executed (AfterWrite). These give the filter two hook points to intervene in the process.
 

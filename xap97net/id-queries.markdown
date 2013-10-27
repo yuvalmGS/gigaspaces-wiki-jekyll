@@ -14,24 +14,34 @@ The space can be queried for entries using [Template Matching] or [SQLQuery], bu
 # Reading an Entry By ID
 
 When you would like to access an object using its ID for read and take operations you should first specify the ID field. You can specify it via `@SpaceId (autogenerate=false)` annotation:
-{code}
+
+{% highlight java %}
+
 
 [SpaceId (autoGenerate=false)]
 public String getEmployeeID() {
     return employeeID;
 }
-{code}
+
+{% endhighlight %}
+
 
 To read the object back from the space using its ID and the `readById` operation:
-{code}
+
+{% highlight java %}
+
 GigaSpace gigaSpace;
 Employee myEmployee = gigaSpace.readById(Employee.class , myEmployeeID , routingValue);
-{code}
+
+{% endhighlight %}
+
 
 # Reading Multiple Entries by IDs
 
 The following shows how to read multiple objects using their IDs:
-{code}
+
+{% highlight java %}
+
 GigaSpace gigaSpace;
 
 // Initialize an ids array
@@ -48,7 +58,9 @@ for (Employee employee : result) {
   // ...
 }
 
-{code}
+
+{% endhighlight %}
+
 
 
 {% tip %}

@@ -18,23 +18,31 @@ An `SqlQuery` is composed from the **type** of entry to query, an **expression**
 #### Example 1
 
 Read all entries of type **Person** whose **Age** is greater than or equal to **21**.
-{code:java}
+
+{% highlight java %}
+
 Person[] persons = proxy.ReadMultiple<Person>(
     new SqlQuery<Person>("Age >= 21"));
-{code}
+
+{% endhighlight %}
+
 
 Note that the expression is equivalent to the WHERE part of a query. The FROM part is derived from the generic argument of the `SqlQuery` class, and the SELECT part is not needed since the result is a fully-formed object.
 
 #### Example 2
 
 Take up to **100** entries of type **Person** whose **Age** is greater than or equal to **21**, AND whose **FirstName** is **John**.
-{code:java}
+
+{% highlight java %}
+
 SqlQuery<Person> query = new SqlQuery<Person>(
     "Age >= ? AND FirstName = ?");
 query.SetParameter(1, 21);
 query.SetParameter(2, "John");
 Person[] persons = proxy.TakeMultiple<Person>(query, 100);
-{code}
+
+{% endhighlight %}
+
 
 This time instead of specifying the values directly in the expression we've used question marks to denote expression variables and parameters to specify the values for those variables.
 
@@ -60,11 +68,15 @@ Blocking operations (i.e. `Read` or `Take` with `timeout` greater than `0`) are 
 - Blocking operations on a partitioned space require a routing value (broadcast is not supported). For more information see [#Routing].
 - Blocking operations on complex queries are not supported. For more information see [Simple Queries|#SimpleQueries] definition.
 
-{code:java}
+
+{% highlight java %}
+
 long timeout = 100000;
 MyClass result = space.Take<MyClass>(new SQLQuery<MyClass>(
     "Num > 500"), timeout);
-{code}
+
+{% endhighlight %}
+
 
 # Routing
 
@@ -73,7 +85,9 @@ When running on a partitioned space, it is important to understand how routing i
 If the routing property is part of the criteria expression with an equality operand and without ORs, its value is used for routing.
 
 For example, suppose the routing property of **`MyClass`** is **`Num`**:
-{code:java}
+
+{% highlight java %}
+
 // Execute query on partition #1
 SQLQuery<MyClass> query1 = new SQLQuery<MyClass>(
     "Num = 1");
@@ -87,16 +101,22 @@ SQLQuery<MyClass> query2 = new SQLQuery<MyClass>(
 // no way to tell which partitions hold matching results:
 SQLQuery<MyClass> query3 = new SQLQuery<MyClass>(
     "Num = 1 OR Name='smith'");
-{code}
+
+{% endhighlight %}
+
 
 Note that in `query1` the `Num` property is used both for routing and matching.
 
 In some scenarios we may want to execute the query on a specific partition without matching the routing property (e.g. blocking operation). Starting 8.0.1, this can be done via the `Routing` property:
-{code:java}
+
+{% highlight java %}
+
 SQLQuery<MyClass> query = new SQLQuery<MyClass>("Num > 3");
 query.Routing = 1;
 MyClass[] result = space.ReadMultiple<MyClass>(query);
-{code}
+
+{% endhighlight %}
+
 
 # Limitations
 
@@ -141,15 +161,22 @@ GigaSpaces SqlQuery **does not** support the following:
 ### Reserved Words
 
 The following are reserved keywords in the GigaSpaces SQL syntax:
-{code}
+
+{% highlight java %}
+
 ALTER ADD AND ASC BETWEEN BY CREATE CALL DROP DEFAULT_NULL DESC  DISTINCT END FROM GROUP IN IS LIKE
 MAX MIN NOT NULL OR ORDER SELECT SUBSTR SUM SYSDATE UPPER WHERE COUNT DELETE EXCEPTION ROWNUM INDEX
 INSERT INTO SET TABLE TO_CHAR TO_NUMBER FOR_UPDATE UPDATE UNION VALUES COMMIT ROLLBACK PRIMARY_KEY
 UID USING
-{code}
+
+{% endhighlight %}
+
 
 ### Reserved Separators and Operators:
 
-{code}
+
+{% highlight java %}
+
 := || ; . ROWTYPE ~ < <= >  >= => != <> \(+\) ( ) \* / + - ? \{ \}
-{code}
+
+{% endhighlight %}

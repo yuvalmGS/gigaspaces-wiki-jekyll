@@ -22,29 +22,45 @@ Since by convention the default constructor usually initializes all the properti
 The following examples assume the default constructor of **Person** initializes all its properties to `null`.
 
 Read an entry of type **Person** whose **FirstName** property is **John**:
-{code}
+
+{% highlight java %}
+
 Person template = new Person();
 template.FirstName = "John";
 Person person = spaceProxy.Read(template);
-{code}
+
+{% endhighlight %}
+
 
 Read an entry of type **Person** whose **FirstName** is **John** and **LastName** is **Smith**:
-{code}
+
+{% highlight java %}
+
 Person template = new Person();
 template.FirstName = "John";
 template.LastName = "Smith";
 Person person = spaceProxy.Read(template);
-{code}
+
+{% endhighlight %}
+
 
 If none of the properties are set, all the entries of the type are matched. For example, to count all entries of type **Person**:
-{code}
+
+{% highlight java %}
+
 int numOfPersons = spaceProxy.Count(new Person());
-{code}
+
+{% endhighlight %}
+
 
 If the template class is null, all the entries in the space are matched. For example, to clear all entries from the space:
-{code}
+
+{% highlight java %}
+
 spaceProxy.Clear(null);
-{code}
+
+{% endhighlight %}
+
 
 # Indexes
 
@@ -55,14 +71,18 @@ GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (rega
 Template Matching support inheritance relationships, so that entries of a sub-class are visible in the context of the super class, but not the other way around.
 For example, suppose class **Citizen** extends class **Person**:
 
-{code}
+
+{% highlight java %}
+
 spaceProxy.Write(new Person());
 spaceProxy.Write(new Citizen());
 // Count persons - should return 2:
 int numberOfPersons = spaceProxy.Count(new Person());
 // Count citizends - should return 1:
 int numberOfCitizens = spaceProxy.Count(new Citizen());
-{code}
+
+{% endhighlight %}
+
 
 (i) Since all classes extends `Object`, a template of type `Object` will match all the entries in the space.
 
@@ -76,19 +96,25 @@ For more information see [Routing In Partitioned Spaces].
 ## Primitive Types
 
 Properties with primitive types pose a problem - a primitive type cannot be set to null. For example, suppose class **Person** has property **Age** of type **int**, and we wrote the following piece of code which writes and reads a person:
-{code}
+
+{% highlight java %}
+
 // Create a person and write it to the space:
 Person p1 = new Person();
 p1.Age = 30;
 spaceProxy.Write(p1);
 // Read person from space:
 Person p = spaceProxy.Read(new Person());
-{code}
+
+{% endhighlight %}
+
 
 We expect **p** to hold the person we just wrote to the space, but in fact it will be null: since **age** is primitive it is implicitly initialized to 0 (zero) and cannot be set to null either implicitly or explicitly, which means we're actually matching for Persons whose age is 0 (zero).
 
 To overcome this issue we can map a primitive value to null via the `\[SpaceProperty(NullValue = ?)\]` attribute. For example:
-{code}
+
+{% highlight java %}
+
 public class Person
 {
     private int age = -1;
@@ -98,7 +124,9 @@ public class Person
 
     // The rest of the class is omitted for brevity.
 }
-{code}
+
+{% endhighlight %}
+
 
 We've indicated that `-1` should be treated as `null` when performing template matching, and initialized age to `-1` so users of Person class need not set it explicitly whenever they use it. For more information refer to [Object Metadata].
 

@@ -33,7 +33,9 @@ Schema definitions for the .NET GS.XML can be found in two locations
 # GS.XML Example
 
 See blow an example of `Car` class's space metadata definitions in GS.XML
-{code}
+
+{% highlight java %}
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE gigaspaces-mapping SYSTEM "..\..\..\Bin\gigaspaces-metadata-net.dtd">
 <gigaspaces-mapping>
@@ -47,7 +49,9 @@ See blow an example of `Car` class's space metadata definitions in GS.XML
     <version name="VersionProperty" />
   </class>
 </gigaspaces-mapping>
-{code}
+
+{% endhighlight %}
+
 
 # XML Elements
 
@@ -74,13 +78,17 @@ For more details, see: [Object Metadata|Object Metadata#Including/Excluding Cont
 | `alias-name` | Defines the name the field will have when stored to the space. |
 | `storage-type` | Defines the storage format the field will have once stored to the space. See [this|Property Storage Type] page for details|
 
-{code}
+
+{% highlight java %}
+
 <class name="GigaSpaces.Examples.SpaceOperations.Entities.Person" persist="false" replicate="false" fifo="false" >
 	<property name="Int_Field" null-value="-1" alias-name="int_Field" />
 	<property name="DateTime_Field" null-value="00:00:00.0000000, January 1, 0001" alias-name="dateTime_Field"/>
 	<property name="Address" alias-name="address" storage-type="Object" />
 </class>
-{code}
+
+{% endhighlight %}
+
 
 - `**<id>**` - Defines whether this field can used as the objects unique identifier. The value is used when generating the object UID in the space.
 || Attribute || Description ||

@@ -20,10 +20,14 @@ A Mixed processing unit is basically two processing unit that should be deployed
 
 The following should be added into the `<PU deployment dir>\META-INF\spring\pu.xml` file as the last tag in order to support mixed processing unit:
 
-{code:xml}
+
+{% highlight xml %}
+
 <bean id="dotnetProcessingUnitContainer" class="org.openspaces.interop.DotnetProcessingUnitBean">
 </bean>
-{code}
+
+{% endhighlight %}
+
 
 # Sharing The Same Space
 
@@ -33,14 +37,20 @@ The pu.xml and .NET code should resemble the following:
 
 ## OpenSpaces pu.xml space construction related part:
 
-{code:xml}
+
+{% highlight xml %}
+
 <os-core:space id="space" url="/./interopSpace">
 </os-core:space>
-{code}
+
+{% endhighlight %}
+
 
 ## .NET Processing Unit Container code space construction related part
 
-{code:java}
+
+{% highlight java %}
+
 class MyInteropProcessingUnit : AbstractProcessingUnitContainer
 {
 
@@ -53,4 +63,5 @@ class MyInteropProcessingUnit : AbstractProcessingUnitContainer
 
   ...
 }
-{code}
+
+{% endhighlight %}
