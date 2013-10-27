@@ -753,14 +753,18 @@ In some cases, there can be data that should not be replicated between the sites
 Bootstrapping a site from another site is a process in which one site space is starting fresh and it is being populated with the data of another site space. This can be useful after a very long disconnection where the replication redo-log in the source spaces that replicates to this site was dropped due to breaching capacity limitations, and the disconnected site should start fresh. Other reasons may be an explicit planned downtime due-to some maintenance of one site which lead to a complete system bootstrap once restarted.
 {refer}For full details of how to enable the bootstrap mechanism refer to [Replication Gateway Bootstrapping Process|Replication Gateway Bootstrapping Process]{refer}
 
-{comment}
+
+{% comment %}
+
 
 # Adding and Removing Sites
 
 Adding and removing a site without down time is done by applying the [Hot Deploy|Deploying onto the Service Grid#DeployingontotheServiceGrid-HotDeploy] method on the space PU.
 - For a Gateway PUs, the process is pretty straightforward. Since they are stateless, their `pu.xml` can be simply updated and they can be undeployed and redeployed with the new added sites or removed sites relevant configuration in a regular fashion.
 - A space, however, is stateful. Redeploying it entirely will cause downtime and loss of data (if no database initial load is configured). Therefore the [Hot Deploy|Deploying onto the Service Grid#DeployingontotheServiceGrid-HotDeploy] method should be used. Roughly speaking, while the space is up, its `pu.xml` should be updated reflecting the new gateway replication topology state (addition or removal of sites) and then this `pu.xml` should be copied into the GSM's #deployment directories, overriding the existing `pu.xml` of the space processing unit of the current deployment. Then a manual restart of space instances should be performed, going over each partition, restarting its backup, waiting for it to perform full recovery from the primary (now it should be with the updated`pu.xml` configuration) and then restarting the primary instance which will be replaced by the updated backup and will become a backup after restart.
-{comment}
+
+{% endcomment %}
+
 
 # Read More
 

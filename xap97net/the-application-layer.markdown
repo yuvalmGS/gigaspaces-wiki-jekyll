@@ -13,7 +13,11 @@ A module in SBA is called a Processing Unit. This is the smallest unit for cross
 
 # Processing Unit
 
-{comment}TODO_NIV - Change to internal link when available.{comment}
+
+{% comment %}
+TODO_NIV - Change to internal link when available.
+{% endcomment %}
+
 A [Processing Unit|XAP95:Packaging and Deployment] is the unit of scale. It is an application component, provided by the application developer, which is deployed to be run on several GSC instances.
 
 The Service Grid is responsible for taking a single copy of a Processing Unit, and creating several instances on multiple GSCs.
@@ -21,7 +25,11 @@ The Service Grid is responsible for taking a single copy of a Processing Unit, a
 In technical details, a Processing Unit is a collection of one or more assemblies and a configuration file, packaged as a single unit of scale. Assemblies are usually composed of Services and Domain objects, which are part of the application. The configuration file is used to define the relationship between the Processing Unit components.
 
 **There are several types of Processing Units**:
-{comment}TODO_NIV - Change to internal link when available.{comment}
+
+{% comment %}
+TODO_NIV - Change to internal link when available.
+{% endcomment %}
+
 - [**.NET** Processing Unit|Processing Units] -  has its code components in .NET, and may contain a space component.
 - [**Java** Processing Unit|XAP95:Packaging and Deployment] - has code components in Java, and may contain a space component.
 - [**Web** Processing Unit|XAP95:Web Processing Unit Container] - contains web applications. This Processing Unit can be packaged as a standard JEE WAR (Web Archive) file, and may contain a space component.

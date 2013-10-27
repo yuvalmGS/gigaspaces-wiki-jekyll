@@ -49,12 +49,12 @@ Several `ISpaceProxy` instances can be defined within a single Processing Unit, 
 
 (i) `ISpaceProxy` simplifies most operations used with the space, but some operations still require access to `IJSpace`, which can be accessed through the `ISpaceProxy` API.
 
-{note}
+{% note %}
 - The `ISpaceProxy` variable represents a remote or embedded space proxy (for a single space or clustered) and **should be constructed only** once throughout the lifetime of the application process.
 - You should treat the `ISpaceProxy` variable as a singleton to be shared across multiple different threads.
 - The `ISpaceProxy` interface is a thread safe and there is no need to create an `ISpaceProxy` variable per application thread.
 - In case the space has been fully terminated (no backup or primary instances running any more) the client space proxy will try to reconnect to the space up to a predefined timeout based on the [Proxy Connectivity] settings. If it fails to reconnect, an error will be displayed.
-{note}
+{% endnote %}
 
 # Operations
 

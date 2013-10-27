@@ -10,14 +10,22 @@ page_id: 63799407
 
 # Data Grid
 
-{comment}=========================================
+
+{% comment %}
+=========================================
 
          Data Grid
 
-========================================={comment}
-{comment}----------------------------
+=========================================
+{% endcomment %}
+
+
+{% comment %}
+----------------------------
           Data Grid
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {% anchor Data Grid %}
 {section}
 
@@ -48,9 +56,13 @@ The relations between the spaces define the [Data Grid Topology|#Data Grid Topol
 
 # Data Grid Topologies
 
-{comment}----------------------------
+
+{% comment %}
+----------------------------
           Primary Backup Data Grid
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {% anchor Primary Backup Data Grid %}
 {section}
 
@@ -76,9 +88,13 @@ Operations that do not modify any data (e.g. read, count) are performed only on 
 {% endcolumn %}
 
 {section}
-{comment}----------------------------
+
+{% comment %}
+----------------------------
           Partitioned Data Grid
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {% anchor Partitioned Data Grid %}
 {section}
 
@@ -104,9 +120,13 @@ When the objects are written to this Data Grid, they are routed to the proper pa
 {% endcolumn %}
 
 {section}
-{comment}----------------------------
+
+{% comment %}
+----------------------------
           Routing
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {% anchor Routing %}
 {section}
 
@@ -133,9 +153,13 @@ The routing is based on a designated property/field inside the objects that are 
 {% endcolumn %}
 
 {section}
-{comment}--------------------------------------------------
+
+{% comment %}
+--------------------------------------------------
           Primary Backup Partitioned Data Grid
---------------------------------------------------{comment}
+--------------------------------------------------
+{% endcomment %}
+
 {% anchor Primary Backup Partitioned Data Grid %}
 {section}
 

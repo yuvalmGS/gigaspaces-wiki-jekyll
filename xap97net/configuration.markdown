@@ -12,7 +12,11 @@ GigaSpaces XAP.NET installer enables developers to start evaluating and using th
 That said, usually at some point there's a need to tweak the configuration. The following aspects can be configured:
 
 - **System Behavior** - First and foremost, the XAP system itself can be customized via a large collection of system properties. Many aspects of the system (e.g. timeouts, ports, batch sizes, etc.) are controlled be system properties which can be overridden in several ways. To learn more about configuring processing units refer to the [System Configuration] section.
-{comment}# **Structure**{comment}
+
+{% comment %}
+# **Structure**
+{% endcomment %}
+
 
 - **Processing Units** - The Service Grid uses an xml descriptor called **pu.config** to deploy processing units. To learn more about configuring processing units refer to the [Processing Units] section.
 

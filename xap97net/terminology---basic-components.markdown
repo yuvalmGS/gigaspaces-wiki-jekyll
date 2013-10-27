@@ -10,14 +10,22 @@ page_id: 63799398
 
 # Basic Components
 
-{comment}=========================================
+
+{% comment %}
+=========================================
 
          Basic Components
 
-========================================={comment}
-{comment}----------------------------
+=========================================
+{% endcomment %}
+
+
+{% comment %}
+----------------------------
           Space
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {% anchor Space %}
 {section}
 
@@ -43,9 +51,13 @@ The GigaSpaces cache instance that holds data objects in memory.
 
 {section}
 {whr}
-{comment}----------------------------
+
+{% comment %}
+----------------------------
           4 Verbs
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {% anchor Execute, Read, Write, Take and Notify %}
 {section}
 
@@ -71,10 +83,18 @@ A set of methods used to read, write, take, and register for notification on obj
 
 {section}
 {whr}
-{comment}**Local Cache** - a space embedded within a client application to enable ...{comment}
-{comment}----------------------------
+
+{% comment %}
+**Local Cache** - a space embedded within a client application to enable ...
+{% endcomment %}
+
+
+{% comment %}
+----------------------------
           Service Component
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {% anchor Service Component %}
 {section}
 
@@ -100,9 +120,13 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 
 {section}
 {whr}
-{comment}----------------------------
+
+{% comment %}
+----------------------------
           Processing Unit
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {% anchor Processing Unit %}
 {section}
 
@@ -128,9 +152,13 @@ A combination of service components and/or an embedded space instance. This is t
 
 # Common Processing Unit Configurations
 
-{comment}----------------------------
+
+{% comment %}
+----------------------------
           PU with an embedded space
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {section}
 
 {% column width=50% %}
@@ -152,9 +180,13 @@ A deployable package which instantiates an embedded space instance, also called 
 {% endcolumn %}
 
 {section}
-{comment}----------------------------
+
+{% comment %}
+----------------------------
           PU with services
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {section}
 
 {% column width=50% %}
@@ -176,9 +208,13 @@ A deployable package containing one or more services. In the GigaSpaces context,
 {% endcolumn %}
 
 {section}
-{comment}----------------------------
+
+{% comment %}
+----------------------------
           SBA PU
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {section}
 
 {% column width=50% %}

@@ -10,14 +10,22 @@ page_id: 63799428
 
 # Space-Based Architecture
 
-{comment}=========================================
+
+{% comment %}
+=========================================
 
          Space Based Architecture
 
-========================================={comment}
-{comment}---------------------------------------
+=========================================
+{% endcomment %}
+
+
+{% comment %}
+---------------------------------------
           Space Based Architecture
----------------------------------------{comment}
+---------------------------------------
+{% endcomment %}
+
 {% anchor Space Based Architecture %}
 {section}
 **A Space-Based Architecture (SBA) implementation** is a set of Processing Units, with the following properties:

@@ -6,7 +6,11 @@ page_id: 63799320
 ---
 
 {summary}JVM Settings Configuration Section.{summary}
-{comment}!GRA:Images^NewinXAP66.gif|align=right!{comment}
+
+{% comment %}
+!GRA:Images^NewinXAP66.gif|align=right!
+{% endcomment %}
+
 
 # Overview
 

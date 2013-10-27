@@ -57,9 +57,13 @@ proxy.Write(kermit);
 
 
 {refer}See full details in [Writing and Updating Entries|Writing and Updating Entries]{refer}
-{comment}
+
+{% comment %}
+
 {refer}See how to [connect to a space|Connecting to a Space]{refer}
-{comment}
+
+{% endcomment %}
+
 
 # Retrieving an Entry - Read
 

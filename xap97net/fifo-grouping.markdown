@@ -29,8 +29,10 @@ The FIFO-Grouping can be used with financial systems to process **trade orders**
 
 FIFO-Grouping ('FG') enables reading/taking certain space entries in FIFO order (by order of insertion), and is mainly used as an enhancement of the openspaces polling-containers.  When a property is declared with the `SpaceFifoGroupingProperty` attribute ('the FG designated property'), a read/take operation with the `FIFO_GROUPING_POLL` modifier will return all space entries that match the selection template in FIFO order. Different values of the FG property define groups of space entries that match that value - FIFO ordering exists within each group and not between different groups.
 
-{note}**Exclusivity**
-The selected group is locked until the operation is terminated- the operation transaction is committed/ aborted.  See the [Exclusivity|FIFO Grouping#Exclusivity] section for more elaborations.{note}
+{% note %}
+**Exclusivity**
+The selected group is locked until the operation is terminated- the operation transaction is committed/ aborted.  See the [Exclusivity|FIFO Grouping#Exclusivity] section for more elaborations.
+{% endnote %}
 
 # Method Of Operation
 
@@ -45,7 +47,10 @@ An available group is any FG that matches the selection template and is not curr
 In this case the system will create a compound index that contains this property and the FG designated property.
 For example, if a polling container is responsible for all the new reservations (reservations with processingState = NEW), then it is recommended to declare a `SpaceFifoGroupingIndex` on the processingState property.
 This would help to achieve better performance when searching for reservations of certain flight that have processingState = NEW.
-{note}`SpaceFifoGroupingIndex` has its toll in footprint.{note}
+
+{% note %}
+`SpaceFifoGroupingIndex` has its toll in footprint.
+{% endnote %}
 
 # Exclusivity
 

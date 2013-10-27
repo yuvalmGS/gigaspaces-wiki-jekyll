@@ -12,14 +12,22 @@ page_id: 63799418
 
 # Processing Unit Container
 
-{comment}=====================================
+
+{% comment %}
+=====================================
 
         Runtime and Administration Components
 
-======================================{comment}
-{comment}-------------------------------------------------
+======================================
+{% endcomment %}
+
+
+{% comment %}
+-------------------------------------------------
           Processing Unit Container
--------------------------------------------------{comment}
+-------------------------------------------------
+{% endcomment %}
+
 {% anchor Processing Unit Container %}
 {section}
 
@@ -44,9 +52,13 @@ A container that hosts a [Processing Unit|Terminology - Basic Components#Process
 
 # Types of Processing Unit Containers
 
-{comment}----------------------------
+
+{% comment %}
+----------------------------
           IPUC
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {section}
 
 {% column width=50% %}
@@ -71,9 +83,13 @@ A container that runs the Processing Unit inside an IDE (e.g. Visual Studio, Ecl
 {% endcolumn %}
 
 {section}
-{comment}----------------------------
+
+{% comment %}
+----------------------------
           GSC
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {% anchor SGPUC %}
 {section}
 
@@ -99,9 +115,13 @@ It enables running the processing unit within a [service grid|#Service Grid], wh
 
 {section}
 {whr}
-{comment}-------------------------------------------------
+
+{% comment %}
+-------------------------------------------------
           Service Grid
--------------------------------------------------{comment}
+-------------------------------------------------
+{% endcomment %}
+
 {% anchor Service Grid %}
 {section}
 
@@ -132,9 +152,13 @@ Each container can be run on a separate physical machine.
 {% endcolumn %}
 
 {section}
-{comment}----------------------------
+
+{% comment %}
+----------------------------
           GSC
-----------------------------{comment}
+----------------------------
+{% endcomment %}
+
 {% anchor GSC %}
 {section}
 
@@ -159,9 +183,13 @@ A machine can run one or more GSC processes. Each GSC communicates with a manage
 {% endcolumn %}
 
 {section}
-{comment}-------------------------------------------------
+
+{% comment %}
+-------------------------------------------------
           Grid Service Manager
--------------------------------------------------{comment}
+-------------------------------------------------
+{% endcomment %}
+
 {% anchor GSM %}
 {section}
 
@@ -186,9 +214,13 @@ A GSM has an API for deploying/undeploying processing units. When a GSM is instr
 {% endcolumn %}
 
 {section}
-{comment}-------------------------------------------------
+
+{% comment %}
+-------------------------------------------------
           Management UI
--------------------------------------------------{comment}
+-------------------------------------------------
+{% endcomment %}
+
 {% anchor Management UI %}
 {section}
 

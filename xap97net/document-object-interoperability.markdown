@@ -42,7 +42,11 @@ Template query result types are determined by the template class - if the templa
 The `SqlQuery` class has a `QueryResultType` settings which can be set at construction. The following options are available:
 - `Object` - Return .NET Object(s).
 - `Document` - Return space document(s).
-{comment}* `NOT_SET` - If the type is registered with a concrete java class, return an Object. Otherwise, return a document. This is the default behavior.{comment}
+
+{% comment %}
+* `NOT_SET` - If the type is registered with a concrete java class, return an Object. Otherwise, return a document. This is the default behavior.
+{% endcomment %}
+
 
 ## ID Based Query
 

@@ -174,7 +174,11 @@ SqlQuery<Person> query = new SqlQuery<Person>(
 {% endhighlight %}
 
 
-{comment}(i) For more information, see [Nested Object Queries|SQLQuery#Nested Object Query]{comment}
+
+{% comment %}
+(i) For more information, see [Nested Object Queries|SQLQuery#Nested Object Query]
+{% endcomment %}
+
 
 
 {% info title=Nested Objects %}

@@ -25,7 +25,11 @@ SBA does not deny the use of a database, but suggests a more natural role for it
 
 In a high performance transactional system, we would like the transaction to be bound to space resources only, and the update of the backing database be done after the transaction is complete, asynchronous to the transaction. The synchronization between the in-memory system of record and the database, should be reliable as well.
 
-{comment}TODO_NIV - Change to internal link when available.{comment}
+
+{% comment %}
+TODO_NIV - Change to internal link when available.
+{% endcomment %}
+
 GigaSpaces XAP provides a Mirror Service as a means to achieve [reliable asynchronous persistency|XAP95:Asynchronous Persistency with the Mirror].
 
 The typical cluster topology is of reliable partitioning (partitions with backups) connected to the mirror service, which persists to the database.

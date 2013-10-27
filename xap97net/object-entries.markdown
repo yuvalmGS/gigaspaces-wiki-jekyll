@@ -153,7 +153,9 @@ public String MessageID {...}
 {% endhighlight %}
 
 
-{note} The rest of this page is still under construction. {note}
+{% note %}
+The rest of this page is still under construction.
+{% endnote %}
 
 - Queries performed with the UID are much faster, since the query mechanism can reduce the result set efficiently.
 

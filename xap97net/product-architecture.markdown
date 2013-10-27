@@ -22,7 +22,11 @@ Each sub-system (layer) is responsible for providing application server capabili
 # SLA-Driven Container
 
 {toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
-{comment}TODO_NIV - Change to internal link when available.{comment}
+
+{% comment %}
+TODO_NIV - Change to internal link when available.
+{% endcomment %}
+
 An SLA-Driven Container, also known as the [Service Grid|XAP71:Service Grid Processing Unit Container], is responsible for abstracting the physical characteristics of the host machines from the application deployment.
 
 The Service Grid is simply a set of runtime container processes deployed on multiple physical machines, which together form a virtual runtime cloud.  Once the cloud is formed, applications can be deployed for execution across the cloud, without a need to define specific host machine characteristics.
@@ -31,7 +35,11 @@ In addition, as its name implies, the Service Level Guarantee and management is 
 
 When it comes to provisioning and monitoring large-scale systems, the ability to specifically define the location of each node in the cluster becomes very laborious.
 
-{comment}TODO_NIV - Change to internal link when available.{comment}
+
+{% comment %}
+TODO_NIV - Change to internal link when available.
+{% endcomment %}
+
 The Service Grid takes a [pre-defined application-required SLA|XAP71:Service Grid Processing Unit Container#ServiceGridProcessingUnitContainer-SLAPolicy], and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
 
 To clarify, here is an example of an application SLA:
@@ -46,7 +54,11 @@ In this type of example, the Service Grid is responsible for making sure that on
 
 ## Grid Service Agent (GSA)
 
-{comment}TODO_NIV - Change to internal link when available.{comment}
+
+{% comment %}
+TODO_NIV - Change to internal link when available.
+{% endcomment %}
+
 The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [Grid Service Manager|XAP95:The Grid Service Manager] and [Grid Service Container|XAP95:The Grid Service Container].
 
 Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service Managers|#gsm], [Grid Service Containers|#gsc], and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
@@ -62,7 +74,11 @@ The GSM monitors SLA breach events throughout the life-cycle of the application,
 
 (i) It is common to start two instances of GSM services within each Service Grid cloud, for high-availability reasons.
 
-{comment}TODO_NIV - Change to internal link when available.{comment}
+
+{% comment %}
+TODO_NIV - Change to internal link when available.
+{% endcomment %}
+
 The GSM service usually contains the [Lookup Service|XAP95:Lookup Service Configuration] and the Webster codebase server as part of its standard configuration. This configuration can be changed by providing additional parameters in the GSM startup script.
 
 {% anchor gsc %}
@@ -73,7 +89,11 @@ A Grid Service Container (GSC) is a container which hosts Processing Units (see 
 
 Another aspect of a GSC is its ability to host Processing Units. The GSC uses AppDomains to make sure that various Processing Units are isolated from one another within the same GSC.
 
-{comment}TODO_NIV - Change to internal link when available.{comment}
+
+{% comment %}
+TODO_NIV - Change to internal link when available.
+{% endcomment %}
+
 It is common to start several GSCs on the same physical machine, depending on the machine CPU and memory resources.
 The deployment of multiple GSCs on a single machine creates a virtual Service Grid. The fact is that GSCs are providing a layer of abstraction on top of the physical layer of hosts. This concept enables deployment of clusters on various deployment topologies of enterprise data centers and public clouds.
 {toc-zone}
@@ -125,7 +145,11 @@ It is important to note that the IMDG, although a memory-based service, is fully
 
 The IMDG uses the unified clustering layer, to provide a highly available and reliable service.
 
-{comment}TODO_NIV - Change to ISpaceProxy link when available.{comment}
+
+{% comment %}
+TODO_NIV - Change to ISpaceProxy link when available.
+{% endcomment %}
+
 The main API to access the IMDG service, is the [`ISpaceProxy` interface|Writing Your First Application]. Please refer to the [Programmer's Guide|Programmer's Guide] for usage examples.
 
 ## Messaging Grid
@@ -134,9 +158,17 @@ The messaging grid aspect of the space, provides messaging capabilities such as:
 1. Event-Driven capabilities - the ability to build event-driven processing applications. This model enables fast (in-memory-based) asynchronous modular processing, resulting in a very efficient and scalable processing paradigm.
 2. Asynchronous production and consumption of information.
 3. One-to-one, Many-to-One, One-to-Many and Many-to-Many relationships.
-{comment}TODO_NIV - Add link when available.{comment}
+
+{% comment %}
+TODO_NIV - Add link when available.
+{% endcomment %}
+
 4. FIFO ordering.
-{comment}TODO_NIV - Add link when available.{comment}
+
+{% comment %}
+TODO_NIV - Add link when available.
+{% endcomment %}
+
 5. Transactionality.
 
 The core APIs used for messaging are the [Notify Container|Notify Container Component] and [Polling Container|Polling Container Component] components. More information can be found in the [Programmer's Guide|Event Driven Architecture].
