@@ -44,7 +44,6 @@ The master-slave topology configuration is simply implemented through delegators
 {gcard:New York Space}
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
@@ -77,7 +76,6 @@ The master-slave topology configuration is simply implemented through delegators
 </beans>
 
 
-
 {% endhighlight %}
 
 {gcard}
@@ -85,7 +83,6 @@ The master-slave topology configuration is simply implemented through delegators
 {gcard:New York Gateway}
 
 {% highlight xml %}
-
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -110,14 +107,12 @@ The master-slave topology configuration is simply implemented through delegators
 </beans>
 
 
-
 {% endhighlight %}
 
 {gcard}
 {gcard:London Space}
 
 {% highlight xml %}
-
 
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -146,14 +141,12 @@ The master-slave topology configuration is simply implemented through delegators
 
 </beans>
 
-
 {% endhighlight %}
 
 {gcard}
 {gcard:London Gateway}
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -179,14 +172,12 @@ The master-slave topology configuration is simply implemented through delegators
 </beans>
 
 
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Hong Kong Space}
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
@@ -214,14 +205,12 @@ The master-slave topology configuration is simply implemented through delegators
 	<os-remoting:annotation-support />
 
 </beans>
-
 {% endhighlight %}
 
 {gcard}
 {gcard:Hong Kong Gateway}
 
 {% highlight xml %}
-
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -245,7 +234,6 @@ The master-slave topology configuration is simply implemented through delegators
     </os-gateway:lookups>
 
 </beans>
-
 
 
 {% endhighlight %}

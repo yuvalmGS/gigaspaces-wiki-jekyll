@@ -39,7 +39,6 @@ Some relevant code from the example is in the following sections.
 
 
 {% highlight java %}
-
 package com.gigaspaces.domain;
 
 import com.gigaspaces.annotation.pojo.SpaceId;
@@ -90,7 +89,6 @@ public class Product extends MultiClusterEnabled {
 
 
 {% highlight java %}
-
 package com.gigaspaces.domain;
 
 public abstract class MultiClusterEnabled {

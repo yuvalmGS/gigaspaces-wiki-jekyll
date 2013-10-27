@@ -61,7 +61,6 @@ To connect to a space:
 
 {% highlight java %}
     <protocol>://<host name>:<port>/<container name>/<space name>?<properties>
-
 {% endhighlight %}
 
     {indent}!Connect1.JPG!{indent}

@@ -33,7 +33,6 @@ A Data generator utility class has a `createCurrencyGroups()` method that genera
 
 
 {% highlight java %}
-
 static String currencies[] = { "AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD",
 "BDT","BGN","BHD","BIF","BMD","BND","BOB","BRL","BSD","BTN",
 	"BWP","BYR","BZD","CAD","CVE","DZD","EUR","GBP","INR","KHR",

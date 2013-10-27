@@ -338,7 +338,6 @@ Order deny,allow
 Deny from all
 Allow from 127.0.0.1
 </Location>
-
 {% endhighlight %}
 
 

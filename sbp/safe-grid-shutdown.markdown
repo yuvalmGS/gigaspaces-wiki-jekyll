@@ -41,7 +41,6 @@ The sample code below is meant to illustrate how the Admin API can be used to di
 
 
 {% highlight java %}
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -317,7 +316,6 @@ public class GridShutdown {
 		}
 	}
 }
-
 {% endhighlight %}
 
 {gcard}

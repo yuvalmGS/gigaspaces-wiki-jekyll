@@ -123,7 +123,6 @@ pu.xml snippet below shows how MyTrigger is configured on the polling container,
 			</os-events:annotation-adapter>
 		</os-events:listener>
 	</os-events:polling-container>
-
 {% endhighlight %}
 
 

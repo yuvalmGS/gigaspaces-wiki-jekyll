@@ -34,7 +34,6 @@ In this approach, application writes the objects into cluster with a limited Lea
 
 
 {% highlight java %}
-
 // connect to the space using its URL
 IJSpace space = new UrlSpaceConfigurer(url).space();
 // use gigaspace wrapper to for simpler API
@@ -94,7 +93,6 @@ Another alternative to saving the Lease is to retrieve the objects that can be e
 
 
 {% highlight java %}
-
 //Retrieve all processed low priority orders and expire the lease
 Order template = new Order();
 
@@ -179,7 +177,6 @@ Some relavent code from the example,
         The Evictor bean
     -->
 	<bean id="evictor" class="com.gigaspaces.eviction.Evictor"/>
-
 {% endhighlight %}
 
 {gcard}
@@ -187,7 +184,6 @@ Some relavent code from the example,
 
 
 {% highlight java %}
-
 public class EvictionTrigger implements TriggerOperationHandler {
 
 ...
@@ -220,7 +216,6 @@ public class EvictionTrigger implements TriggerOperationHandler {
 
 
 {% highlight java %}
-
 public class Evictor {
 
 ...
@@ -352,7 +347,6 @@ Some relevant code from the example,
 
 
 {% highlight java %}
-
 public class EvictionManager implements InitializingBean, NotificationListener {
 
 ...
@@ -366,7 +360,6 @@ public void afterPropertiesSet() throws Exception {
 public void handleNotification(Notification n, Object handback) {
 
 }
-
 {% endhighlight %}
 
 {gcard}
@@ -374,7 +367,6 @@ public void handleNotification(Notification n, Object handback) {
 
 
 {% highlight java %}
-
 package com.gigaspaces.domain;
 
 import java.util.HashMap;
@@ -443,7 +435,6 @@ public class Watermark {
 
 
 {% highlight java %}
-
 private void setJVMUsageThreshold() throws RuntimeException {
 
 	// Get Memory MXBean
@@ -485,7 +476,6 @@ private void setJVMUsageThreshold() throws RuntimeException {
 		}
 	}
 }
-
 {% endhighlight %}
 
 {gcard}
@@ -493,7 +483,6 @@ private void setJVMUsageThreshold() throws RuntimeException {
 
 
 {% highlight java %}
-
 // Update the Watermark object to indicate eviction is in progress
 wMark.setEvictionInProgress(true);
 gs.write(wMark, Lease.FOREVER, 5000, UpdateModifiers.UPDATE_OR_WRITE);
@@ -562,7 +551,6 @@ wMark.setEvictionStatistics(wMarkStatistics);
 
 wMark.setEvictionInProgress(false);
 gs.write(wMark, Lease.FOREVER, 5000, UpdateModifiers.UPDATE_OR_WRITE);
-
 {% endhighlight %}
 
 {gcard}

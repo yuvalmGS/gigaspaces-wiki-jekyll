@@ -40,7 +40,6 @@ This example includes:
 {gcard:Atomikos Configuration}
 
 {% highlight xml %}
-
 <!-- Construct Atomikos UserTransactionManager, needed to configure Spring -->
 <bean id="atomikosTransactionManager" class="com.atomikos.icatch.jta.UserTransactionManager"
 	init-method="init" destroy-method="close">
@@ -61,14 +60,12 @@ This example includes:
 		<ref local="atomikosUserTransaction" />
 	</property>
 </bean>
-
 {% endhighlight %}
 
 {gcard}
 {gcard:JMS Configuration}
 
 {% highlight xml %}
-
 <!-- creates an activemq xa connection factory using the amq namespace -->
 <bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQXAConnectionFactory">
         <property name="brokerURL"><value>tcp://localhost:61616</value></property>
@@ -91,14 +88,12 @@ This example includes:
 	<property name="connectionFactory" ref="connectionFactory" />
 	<property name="sessionTransacted" value="true" />
 </bean>
-
 {% endhighlight %}
 
 {gcard}
 {gcard:GigaSpaces Configuration}
 
 {% highlight xml %}
-
 <!-- A bean representing a space (an IJSpace implementation). -->
 <os-core:space id="space" url="/./processorSpace" />
 
@@ -137,7 +132,6 @@ This example includes:
 	<property name="jmsTemplate" ref="jmsTemplate" />
 	<property name="queue" ref="queue"/>
 </bean>
-
 {% endhighlight %}
 
 {gcard}
@@ -337,7 +331,7 @@ public class Message  {
 
 
 {% highlight java %}
- build copy-libs 
+ build copy-libs
 {% endhighlight %}
 
 
@@ -370,7 +364,7 @@ build deploy-processor
 
 
 {% highlight java %}
- build run-feeder 
+ build run-feeder
 {% endhighlight %}
 
 14. If you check GigaSpaces logs, you will notice that the Message-0 (id=0) is Rolled back and all other messages are processed successfully and sent to JMS server.
@@ -383,7 +377,7 @@ build deploy-processor
 
 
 {% highlight java %}
- build jms-client 
+ build jms-client
 {% endhighlight %}
 
 
