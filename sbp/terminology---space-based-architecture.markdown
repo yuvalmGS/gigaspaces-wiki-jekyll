@@ -9,14 +9,22 @@ page_id: 63799428
 |[Basic Components|Terminology - Basic Components]|[Data Grid Topologies|Terminology - Data Grid Topologies]||Space-Based Architecture|[Runtime Components|Terminology - Runtime Components]|
 
 # Space-Based Architecture
-{comment}=========================================
+
+{% comment %}
+=========================================
 
          Space Based Architecture
 
-========================================={comment}
-{comment}---------------------------------------
+=========================================
+{% endcomment %}
+
+
+{% comment %}
+---------------------------------------
           Space Based Architecture
----------------------------------------{comment}
+---------------------------------------
+{% endcomment %}
+
 
 {% anchor Space Based Architecture %}
 

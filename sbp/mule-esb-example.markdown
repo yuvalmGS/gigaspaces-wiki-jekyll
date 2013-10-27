@@ -303,9 +303,13 @@ In order to deploy the different Processing unit comprising this example:
 Once the different processing will be deployed you should have the following displayed as part of the GS-UI:
 {indent}!GRA:Screens^mule_deploy.jpg!{indent}
 {indent}!GRA:Screens^mule_grid.jpg!{indent}
-{comment}
+
+{% comment %}
+
 {indent}!GRA:Screens^mule_grid.jpg|height=50%,width=50%!{indent}
-{comment}
+
+{% endcomment %}
+
 
 You may check the statistics you review the Write and Take operations called by the different Services when interacting with the Data-Grid.
 
@@ -313,9 +317,13 @@ You may check the statistics you review the Write and Take operations called by 
 You may have multiple instances of each service running. Running multiple instances of the Feeder service will push more Data objects into the Space. Running multiple services of the Approver or Verifier will consume relevant objects faster.
 {indent}!GRA:Images^mule_example_flow2.jpg!{indent}
 In order to increase the amount of the deployed services (Feeder, Approver or Verifier) , select the relevant processing unit and click the Increase button. See example below:
-{comment}
+
+{% comment %}
+
 {indent}!GRA:Screens^mule_scale_manual.jpg|height=50%,width=50%!{indent}
-{comment}
+
+{% endcomment %}
+
 {indent}!GRA:Screens^mule_scale_manual.jpg!{indent}
 A new instance of the relevant service will be created at of the existing running GSCs.
 

@@ -108,7 +108,11 @@ Below is a transformer program, that transforms a class with two attributes into
 
 The migration process can also be optimized by running multiple threads that handle the migration of different space classes in parallel.
 
-{comment}Data migration can be done using the space underlying Entry representation -- the `ExternalEntry`. A simple migration program can transform data stored in the space from one schema to a new schema, and create it in a new space that is used by the new version of the application. {comment}
+
+{% comment %}
+Data migration can be done using the space underlying Entry representation -- the `ExternalEntry`. A simple migration program can transform data stored in the space from one schema to a new schema, and create it in a new space that is used by the new version of the application.
+{% endcomment %}
+
 
 ## Schema Evolution Example
 

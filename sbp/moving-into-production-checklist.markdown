@@ -40,7 +40,7 @@ Examples:
 
 {% highlight java %}
 export NIC_ADDR=10.10.10.100
-./gs-agent.sh & 
+./gs-agent.sh &
 {% endhighlight %}
 
 
@@ -142,7 +142,7 @@ To configure the GigaSpaces runtime components (GSA,GSC,GSM,LUS) to use unicast 
 
 {% highlight java %}
 export LOOKUPLOCATORS=MachineA,MachineB
-./gs-agent.sh & 
+./gs-agent.sh &
 {% endhighlight %}
 
 
@@ -151,13 +151,15 @@ To configure the GigaSpaces runtime components (GSA,GSC,GSM,LUS) to use multicas
 
 {% highlight java %}
 export LOOKUPGROUPS=Group1,Group2
-./gs-agent.sh & 
+./gs-agent.sh &
 {% endhighlight %}
 
 
 When running multiple systems on the same network infrastructure, you should isolate these by having a dedicated set of lookup services (and  GSC/GSM) for each system. Each should have different locators/groups settings.
 
-{comment}
+
+{% comment %}
+
 
 {% tip %}
 By default every GigaSpaces component (Client, Lookup Service, GSC, GSM) look for a lookup service using the multicast discovery protocol. This has some overhead. If you would like to avoid this overhead (both on the client side and Lookup Service, GSC, GSM), you should disable the multicast discovery using the following system property:
@@ -166,7 +168,9 @@ By default every GigaSpaces component (Client, Lookup Service, GSC, GSM) look fo
 In such a case, make sure clients have their lookup locators set correctly to have the lookup service machine names or IP listed.
 {% endtip %}
 
-{comment}
+
+{% endcomment %}
+
 
 ## Space URL Examples
 See below for examples of [Space URL|XAP91:Space URL]s you should be familiar with:
@@ -509,7 +513,7 @@ To capture the detailed information about garbage collection and how it is perfo
 
 
 {% highlight java %}
--verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/path/to/log/directory/gc-log-file.log 
+-verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/path/to/log/directory/gc-log-file.log
 {% endhighlight %}
 
 Modify the path and file names appropriately. You will need to use a different file name for each invocation in order to not overwrite the files from multiple processes.
@@ -650,7 +654,9 @@ The component that is responsible to scale the IMDG at runtime is called the Ela
 When using the [Elastic Processing Unit|XAP91:Elastic Processing Unit], instances will be continuously rebalanced across all available machines.
 {% endtip %}
 
-{comment}
+
+{% comment %}
+
 
 ## Manual Rebalancing
 Production machines may be restarted every few days, may fail abnormally and then restarted, or new machines may be started and added to the grid. To allow even distribution of primary IMDG instances or to simply stretch the running instances across all available machines manually, you may use the [Rebalancing utility|^Rebalance.zip]. The utility spreads primary and backup IMDG instances evenly across all the machines running GSCs. See full details how to run this utility, within the readme at the [Rebalance.zip|^Rebalance.zip].
@@ -667,7 +673,9 @@ GigaSpaces rebalancing allows you to have total control on which logical partiti
 GigaSpaces can adjust the high-availability SLA dynamically to cope with the current system memory resources. This means that if there is not sufficient memory capacity to instantiate all the backup instances, GigaSpaces will relax the SLA in runtime to allow the system to continue and run. Once the system identifies that there are enough resources to accommodate all the backups, it will start the missing backups automatically.
 
 The number of logical partitions is determined at deploy time, but the amount of hosting containers may be modified in runtime by adding or removing containers, automatically (based on SLA) or manually. When the ESM is used to deploy the IMDG, GigaSpaces calculates the number of logical partitions during the deploy time based on the IMDG SLA. When the ESM is not being used to deploy the IMDG, GigaSpaces does not provide a default value for the number of logical partitions, so you should provide such. You can pick any number that you may find relevant for your system. Usually, it will be a number that will match the amount of initial containers you have multiply with a scaling factor - a number that determines how much the IMDG might need to expand its capacity without any downtime. This allows the IMDG to scale while the client application is running.
-{comment}
+
+{% endcomment %}
+
 
 # Storage Type - Controling Serialization
 
