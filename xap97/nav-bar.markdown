@@ -34,7 +34,8 @@ page_id: 61867323
 
 {% comment %}
 ### Offline Documentation|main
-{% color #666666 %}Download latest offline documentation
-  in HTML format:{% endcolor %}
+{% color #666666 %} Download latest offline documentation
+  in HTML format:
+{% endcolor %}
 [xap-8.0-documentation.zip](http://www.gigaspaces.com/docs/manual/xap-8.0-documentation.zip) (15MB)
 {% endcomment %}
