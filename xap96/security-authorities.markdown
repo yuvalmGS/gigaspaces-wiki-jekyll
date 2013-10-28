@@ -13,7 +13,7 @@ There are four categories of user authorities. These categories allow the flexib
 
 # System Authority
 
-The **System Authority** consists of two privileges and defines the distinction between a user who is allowed to define roles and a user which is only allowed to assign user's to predefined roles. 
+The **System Authority** consists of two privileges and defines the distinction between a user who is allowed to define roles and a user which is only allowed to assign user's to predefined roles.
 In general, one can have both management capabilities, but in some organizations this separation may be required.
 
 {: .table .table-bordered}
@@ -23,7 +23,7 @@ In general, one can have both management capabilities, but in some organizations
 
 # Grid Authority
 
-The **Grid Authority** consists of privileges for managing the Grid and its Services (GSMs, GSCs, Processing Units). 
+The **Grid Authority** consists of privileges for managing the Grid and its Services (GSMs, GSCs, Processing Units).
 
 {: .table .table-bordered}
 | Provision PU | Deploy, Un-deploy of processing units |
@@ -48,7 +48,7 @@ The **Space Authority** consists of privileges for operation on space (stored) d
 | Alter | Register type descriptor, Clean and Drop-Class operations |
 | Execute | Execute tasks |
 
-When you grant a privilege you are allowing the user to perform the operation on the space. If you wish to restrict the operation to certain classes, a 'Class-Filter' may be defined. 
+When you grant a privilege you are allowing the user to perform the operation on the space. If you wish to restrict the operation to certain classes, a 'Class-Filter' may be defined.
 
 #### Restricting of privileges
 
@@ -56,7 +56,7 @@ A 'Class-Filter' **allows** or **denies** operations on certain classes based on
 
 #### Class-Filter matching using Hierarchy
 
-When performing a matching operation (e.g. space read), a template is supplied. Matches can be returned also from subclasses of this template. 
+When performing a matching operation (e.g. space read), a template is supplied. Matches can be returned also from subclasses of this template.
 Take for example, the following hierarchy:
 
 - Shape
@@ -74,7 +74,7 @@ But, when you **deny** a Class more caution should be taken. If you **deny** a `
 
 # Monitor Authority
 
-The **Monitor Authority** consists of privileges for monitoring the Grid and its Processing Units. 
+The **Monitor Authority** consists of privileges for monitoring the Grid and its Processing Units.
 Note that the monitoring is secured only by the 'tooling' (CLI/UI).
 
 {: .table .table-bordered}

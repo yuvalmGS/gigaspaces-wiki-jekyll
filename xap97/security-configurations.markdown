@@ -10,7 +10,7 @@ page_id: 61867341
 
 The security components (GSA, GSM, GSC and Processing Unit) can each have their own security configuration. As such, you can have different security behaviors even between Processing Units. But, all have one common concept: all configurations are declared using properties (either located in a properties file or part of the components properties).
 
-The security implementation dictates the properties needed for configuration. For example, if you consider the out-of-the-box file-based security implementation, you can either rely on the defaults or configure the file location, password encoders, etc. 
+The security implementation dictates the properties needed for configuration. For example, if you consider the out-of-the-box file-based security implementation, you can either rely on the defaults or configure the file location, password encoders, etc.
 
 When a secured component is started, it looks for the security configuration properties in order to instantiate the security implementation.
 
@@ -53,13 +53,13 @@ For a standalone space, the default Space security configuration file is `<Space
 
 #### Configure using a System property
 
-An alternative to the +component's+ security property file, is the System Property override. 
+An alternative to the +component's+ security property file, is the System Property override.
 
 {% highlight java %}
 -Dcom.gs.security.properties-file = my-security.properties
 {% endhighlight %}
 
-By setting `-Dcom.gs.security.properties-file` the property file will be located as a direct path, a resource in the classpath or in the classpath under `config/security`. 
+By setting `-Dcom.gs.security.properties-file` the property file will be located as a direct path, a resource in the classpath or in the classpath under `config/security`.
 
 Since System Properties are JVM level, any Processing Unit deployed within a GSC will also benefit from this configuration. But, if security configurations were provided as part of the `pu.properties` they will be used instead.
 

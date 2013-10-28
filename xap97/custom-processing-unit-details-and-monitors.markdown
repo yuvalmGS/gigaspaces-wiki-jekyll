@@ -5,7 +5,7 @@ page_id: 61867232
 ---
 
 {% compositionsetup %}
-{% summary page %}Processing units can expose custom details and monitors{% endsummary %} 
+{% summary page %}Processing units can expose custom details and monitors{% endsummary %}
 
 A Processing Unit can implement the `ServiceDetailsProvider` and `ServiceMonitorsProvider` interfaces to expose information to calling APIs or to be viewable in the web-UI.
 
@@ -83,7 +83,7 @@ public class AdminTest {
 }
 {% endhighlight %}
 
-# Custom Properties in the Web Based Dashboard 
+# Custom Properties in the Web Based Dashboard
 
 ![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
 

@@ -16,7 +16,7 @@ With this approach there is one Master cluster storing the entire data in-memory
 
 Any read operations conducted at each site by the local users will be served first from the local cache. If the data had not been loaded into the local cache, it is read from the master cache (over the WAN) and loaded into the local cache. The next read operation for the same data item will not require any remote call to the master cache cluster.
 
-Write/update/delete operations will be conducted against the remote master cache in a synchronous manner. This means they will suffer from the latency between the local site and the remote master cache since they are fully acknowledged when the master cache will be fully committing these.  
+Write/update/delete operations will be conducted against the remote master cache in a synchronous manner. This means they will suffer from the latency between the local site and the remote master cache since they are fully acknowledged when the master cache will be fully committing these.
 
 {% tip %}
 For more advanced WAN based topologies see the [Multi-Site Replication over the WAN](/xap96/multi-site-replication-over-the-wan.html) section.

@@ -15,7 +15,7 @@ page_id: 61867414
 The `quit` command ends the CLI session.
 
 {% tip %}
-A shortcut for this command is `q`. 
+A shortcut for this command is `q`.
 {% endtip %}
 
 # Options

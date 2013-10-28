@@ -19,9 +19,9 @@ An important distinction between Cluster View and the Container Tree is that the
 
 The Cluster View is divided into four main areas:
 
-- **Cluster tree** -- at the top of the tree is the cluster node (![spaceTreeIcon.gif](/attachment_files/spaceTreeIcon.gif)), each representing a space listed in the cluster configuration file. 
+- **Cluster tree** -- at the top of the tree is the cluster node (![spaceTreeIcon.gif](/attachment_files/spaceTreeIcon.gif)), each representing a space listed in the cluster configuration file.
 
-{% oksign %} Each cluster node (![GMC_space_OperationsClusterNode_icon_6.5.jpg](/attachment_files/GMC_space_OperationsClusterNode_icon_6.5.jpg)), which allows you to view all cluster information in one node (for more details, see [below](#Viewing Information for Entire Cluster)). 
+{% oksign %} Each cluster node (![GMC_space_OperationsClusterNode_icon_6.5.jpg](/attachment_files/GMC_space_OperationsClusterNode_icon_6.5.jpg)), which allows you to view all cluster information in one node (for more details, see [below](#Viewing Information for Entire Cluster)).
 
 - **Visual display** -- this area changes according to your selection in the tree. When you select the cluster node, the visual display shows the groups in the cluster.
 
@@ -42,7 +42,7 @@ When you select a group node, the display shows the spaces in the node. When you
 
 ## Viewing Information for Entire Cluster
 
-The **Operations** cluster node (![GMC_space_OperationsClusterNode_icon_6.5.jpg](/attachment_files/GMC_space_OperationsClusterNode_icon_6.5.jpg)) allows you to view all classes, data, statistics, transactions, and connections for the entire cluster under a single node. 
+The **Operations** cluster node (![GMC_space_OperationsClusterNode_icon_6.5.jpg](/attachment_files/GMC_space_OperationsClusterNode_icon_6.5.jpg)) allows you to view all classes, data, statistics, transactions, and connections for the entire cluster under a single node.
 
 {% indent %}
 ![GMC_space_cluster_OperationsNodeTree_6.5.jpg](/attachment_files/GMC_space_cluster_OperationsNodeTree_6.5.jpg)

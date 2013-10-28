@@ -25,7 +25,7 @@ The example writes 10000 parent-child graphs into the space. Two types of graphs
 - 5 graphs with the following values for the child objects: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`.
 - 9955 graphs with the following values for the child objects: `0`, `10`, `20`, `30`, `40`, `50`, `60`, `70`, `80`, `90`.
 
-![parent_child.JPG](/attachment_files/parent_child.JPG) 
+![parent_child.JPG](/attachment_files/parent_child.JPG)
 The example demonstrates a simple approach locating all the parent objects that have two child objects with values of `1` and `2` -- effectively a join operation using ID operations. This will return 5 matching graphs.
 
 {% tip %}
@@ -46,14 +46,14 @@ import com.gigaspaces.metadata.index.SpaceIndexType;
 
 @SpaceClass
 public class Child {
-	
+
 	private String parentID;
 	private Long data;
 	private String id;
 
 	public Child(){}
-	
-	public Child(String id, String _parentID) 
+
+	public Child(String id, String _parentID)
 	{
 		this.parentID = _parentID;
 		this.id = id;
@@ -72,7 +72,7 @@ public class Child {
 	public void setData(Long data) {
 		this.data= data;
 	}
-	
+
 	@SpaceId (autoGenerate = false)
 	public String getId() {
 		return id;
@@ -81,7 +81,7 @@ public class Child {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
+
 	@SpaceIndex(type=SpaceIndexType.BASIC)
 	@SpaceRouting
 	public String getParentID() {
@@ -120,7 +120,7 @@ public class Parent  {
 	private transient Child children[];
 	private Long data;
 	private String id;
-	
+
 	static final String ChildClassName = Child.class.getName();
 
 	public Parent() {
@@ -130,9 +130,9 @@ public class Parent  {
 		this.id = id;
 	}
 
-	public String _getChildrenDetails(GigaSpace space) throws 
-		RemoteException, 
-		TransactionException, 
+	public String _getChildrenDetails(GigaSpace space) throws
+		RemoteException,
+		TransactionException,
 		UnusableEntryException
 	{
 		String ret="";
@@ -142,12 +142,12 @@ public class Parent  {
 			ret = ret + childs[i].toString() + " | ";
 		}
 		return ret;
-		
+
 	}
 
-	public Child[] _getChildren(GigaSpace space) throws 
-		RemoteException, 
-		TransactionException, 
+	public Child[] _getChildren(GigaSpace space) throws
+		RemoteException,
+		TransactionException,
 		UnusableEntryException
 	{
 		if (children == null)
@@ -157,7 +157,7 @@ public class Parent  {
 		}
 		return children;
 	}
-	
+
 	public String _getChildrenIDs()
 	{
 		String res ="";
@@ -194,7 +194,7 @@ public class Parent  {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
+
 }
 {% endhighlight %}
 
@@ -229,11 +229,11 @@ public class ParentChildMain {
 			System.out.println("Write " + max_graphs+ " parent/child graphs.\nWe will have 2 types of graphs:" +
 					"\n" +  matching_graphs+
 						" graphs that got the following values for the child objects:0,1,2,3,4,5,6,7,8,9" +
-					"\nand another "  +(max_graphs - matching_graphs) + 
+					"\nand another "  +(max_graphs - matching_graphs) +
 						" graphs with the following values for the child objects:0,10,20,30,40,50,60,70,80,90");
-			
+
 			go();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		}
@@ -250,11 +250,11 @@ public class ParentChildMain {
 						_children[j].setData(new Long(j));
 					else
 						_children[j].setData (new Long(j * 10));
-						
+
 					_childrenIDs[j] = _children[j].getId();
 				}
 				parent.setChildrenIDs (_childrenIDs);
-				
+
 				space.write(parent);
 				space.writeMultiple(_children);
 			}
@@ -268,7 +268,7 @@ public class ParentChildMain {
 	static void findMatchingGraph(long value1, long value2) throws Exception
 	{
 		System.out.println("-----------------------------------------------------------------");
-		System.out.println("Find all the parent objects that got 2 child objects with values " + 
+		System.out.println("Find all the parent objects that got 2 child objects with values " +
 			value1 +" and " + value2+ "");
 		System.out.println("Both child objects have the same parent object");
 		Long startTime = System.nanoTime();
@@ -277,31 +277,31 @@ public class ParentChildMain {
 
 		Object childrenResults2[] = findChildrenByValue(new Long(value2));
 		Set<String> parentIDs2 = getParentIDsSet(childrenResults2);
-		
+
 		Set<String> resultSet = AND(parentIDs1, parentIDs2);
 
 		Parent parents[] = getParentsfromIDs(resultSet);
 		Long endTime = System.nanoTime();
 		System.out.println(" --->> Found " + parents.length +
 			" matching Parent objects in " + (double)(((double)endTime - (double)startTime)/1000) + " micro second");
-		
+
 		for (int i = 0; i < parents.length; i++) {
 			System.out.println("Found Parent Object:" + parents[i]
 					+ " - ID:" + parents[i].getId() + " - His children objects are:\n\t"
 					+ parents[i]._getChildrenDetails(space));
 		}
-		
+
 	}
-		
-	static public Object[] findChildrenByValue(Long value) throws 
-		RemoteException, 
-		TransactionException, 
+
+	static public Object[] findChildrenByValue(Long value) throws
+		RemoteException,
+		TransactionException,
 		UnusableEntryException {
 		Child childTemplate = new Child();
 		childTemplate.setData(value);
 		return space.readMultiple(childTemplate , Integer.MAX_VALUE);
 	}
-	
+
 	static public Set<String> getParentIDsSet(Object entries[]) {
 		HashSet<String> result = new HashSet<String>();
 		for (int i = 0; i < entries.length; i++) {
@@ -309,16 +309,16 @@ public class ParentChildMain {
 		}
 		return result;
 	}
-	
-	static public Parent[] getParentsfromIDs(Set ids) throws 
-		UnusableEntryException, 
-		RemoteException, 
+
+	static public Parent[] getParentsfromIDs(Set ids) throws
+		UnusableEntryException,
+		RemoteException,
 		TransactionException
 	{
 		ReadByIdsResult<Parent> parentObjResult = space.readByIds(Parent.class,ids.toArray());
 		return parentObjResult.getResultsArray();
 	}
-	
+
 	// find union between set1 and set2
 	static public Set<String> AND(Set<String> set1, Set<String> set2) {
 		HashSet<String> result = new HashSet<String>(set1);
@@ -340,14 +340,14 @@ Find all the parent objects that got 2 child objects with values 1 and 2
 Both child objects have the same parent object
  --->> Found 5 matching Parent objects in 623.38 micro second
 Found Parent Object:com.j_spaces.examples.parentchild.Parent@335053 - ID:8000 - His children objects are:
-	ID:8000_0 data:0 | ID:8000_1 data:1 | ID:8000_2 data:2 | .... 
+	ID:8000_0 data:0 | ID:8000_1 data:1 | ID:8000_2 data:2 | ....
 Found Parent Object:com.j_spaces.examples.parentchild.Parent@1c0cd80 - ID:0 - His children objects are:
-	ID:0_0 data:0 | ID:0_1 data:1 | ID:0_2 data:2 | ... 
+	ID:0_0 data:0 | ID:0_1 data:1 | ID:0_2 data:2 | ...
 Found Parent Object:com.j_spaces.examples.parentchild.Parent@f3c5c4 - ID:6000 - His children objects are:
 	ID:6000_0 data:0 | ID:6000_1 data:1 | ID:6000_2 data:2 | ...
 Found Parent Object:com.j_spaces.examples.parentchild.Parent@3ce725 - ID:4000 - His children objects are:
-	ID:4000_0 data:0 | ID:4000_1 data:1 | ID:4000_2 data:2 | ...  
+	ID:4000_0 data:0 | ID:4000_1 data:1 | ID:4000_2 data:2 | ...
 Found Parent Object:com.j_spaces.examples.parentchild.Parent@6b6ac8 - ID:2000 - His children objects are:
-	ID:2000_0 data:0 | ID:2000_1 data:1 | ID:2000_2 data:2 | ...  
+	ID:2000_0 data:0 | ID:2000_1 data:1 | ID:2000_2 data:2 | ...
 {% endhighlight %}
 

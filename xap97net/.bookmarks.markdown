@@ -1,0 +1,14 @@
+---
+layout: xap97net
+title:  .bookmarks
+categories: XAP97NET
+page_id: 63799301
+---
+
+
+{% info title=XAP.NET 6.6 Documentation Recent bookmarks in null  %}
+This page is a container for all the bookmarks in this space. Do not delete or move it or you will lose all your bookmarks.
+[Bookmarks in XAP.NET 6.6 Documentation|http://www.gigaspaces.com/wiki/spaces/space-bookmarks.action?spaceKey=XAP97NET] | [Links for  XAP.NET 6.6 Documentation|http://www.gigaspaces.com/wiki/spaces/space-bookmarks.action?mode=bookmarksfor&spaceKey=XAP97NET]
+{% endinfo %}
+
+{bookmarks:max=15}

@@ -42,7 +42,7 @@ You can load 1TB data into a Data-Grid in less than 30 min by having each partit
 
 # Parallel Load
 
-By default each Data-Grid primary partition loading its relevant data from the database (parallel load) and from there replicated to the backup instances. 
+By default each Data-Grid primary partition loading its relevant data from the database (parallel load) and from there replicated to the backup instances.
 ![eds_initial_load.jpg](/attachment_files/eds_initial_load.jpg)
 
 All irrelevant objects are filtered out during the data load process. You may optimize this activity by instructing each Data-Grid primary instance to a load-specific data set from the database via a custom query you may construct during the initial load phase.

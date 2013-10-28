@@ -15,7 +15,7 @@ Note that in such a configuration, the different spaces defined as partitions ar
 
 # Defining a Routing Property
 
-**Partitioning** is used when the total data set is too big to be stored in a single space, and we want to divide the data into two or more groups (partitions). In order to do that, the proxy needs to know how to partition the data, i.e. which entry belongs in which partition. 
+**Partitioning** is used when the total data set is too big to be stored in a single space, and we want to divide the data into two or more groups (partitions). In order to do that, the proxy needs to know how to partition the data, i.e. which entry belongs in which partition.
 
 In order to accomplish that a **routing property** can be defined on the entry type. When the proxy is asked to write an entry, it uses the entry's routing property's hash code to determine the relevant partition for it:
 
@@ -40,7 +40,7 @@ However, note that all objects with a given routing value will be stored on the 
 
 # Writing New Objects with a Collocated Business Logic
 
-When writing new objects from a collocated business logic with a partitioned space, the routing field must "match" the collocated space instance. 
+When writing new objects from a collocated business logic with a partitioned space, the routing field must "match" the collocated space instance.
 
 See [Writing New Objects from a Collocated Business Logic](/xap96/clustered-vs-non-clustered-proxies.html#Writing New Objects from a Collocated Business Logic) for details.
 

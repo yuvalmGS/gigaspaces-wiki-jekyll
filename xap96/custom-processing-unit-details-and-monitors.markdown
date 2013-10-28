@@ -5,7 +5,7 @@ page_id: 61867232
 ---
 
 {% compositionsetup %}
-{% summary page %}Processing units can expose custom details and monitors{% endsummary %} 
+{% summary page %}Processing units can expose custom details and monitors{% endsummary %}
 
 A Processing Unit can implement the `ServiceDetailsProvider` and `ServiceMonitorsProvider` interfaces to expose information to calling APIs or to be viewable in the web-UI.
 
@@ -83,11 +83,11 @@ public class AdminTest {
 }
 {% endhighlight %}
 
-# Custom Properties in the Web Based Dashboard 
+# Custom Properties in the Web Based Dashboard
 
 ![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
 
-For the service monitors to be shown in the [web based dashboard](/xap96/web-management-console.html), a bean class which is declared in your [processing unit's `pu.xml`](/xap96/configuring-processing-unit-elements.html) should extend one or both of the `CustomServiceDetails` and `CustomServiceMonitors` interfaces. The system will expose the data provided by these interface via the admin API and the web based dashboard. 
+For the service monitors to be shown in the [web based dashboard](/xap96/web-management-console.html), a bean class which is declared in your [processing unit's `pu.xml`](/xap96/configuring-processing-unit-elements.html) should extend one or both of the `CustomServiceDetails` and `CustomServiceMonitors` interfaces. The system will expose the data provided by these interface via the admin API and the web based dashboard.
 `CustomServiceDetails` and `CustomServiceMonitors` must have same id. Both of them must have default constructor.
 
 The `String` keys of the `ServiceMonitors.getMonitors()` `Map` are shown in the web based dashboard as custom properties (e.g. "successfully processed", "failed to process", "pending processing").

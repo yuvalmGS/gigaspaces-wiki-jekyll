@@ -17,7 +17,7 @@ In some cases when querying the space for objects, only specific properties of t
 {% endcolumn %}
 {% endsection %}
 
-	 	 
+
 
 # Specifying a Projection with your Query
 
@@ -50,14 +50,14 @@ SQLQuery<Person> query = new SQLQuery<Person>(Person.class,"").
 Person result[] = gigaSpace.readMultiple(query);
 
 IdsQuery<Person> idsQuery = new IdsQuery<Person>(Person.class, new Long[]{id1,id2}).
-		setProjections("firstName", "lastName");		
+		setProjections("firstName", "lastName");
 Person result[] = space.readByIds(idsQuery).getResultsArray();
 {% endhighlight %}
 
 The [SpaceDocument](./document-api.html) support projections as well:
 
 {% highlight java %}
-SQLQuery<SpaceDocument> docQuery = new SQLQuery<SpaceDocument>(Person.class.getName() ,"", 
+SQLQuery<SpaceDocument> docQuery = new SQLQuery<SpaceDocument>(Person.class.getName() ,"",
 	QueryResultType.DOCUMENT).setProjections("firstName", "lastName");
 SpaceDocument docresult[] = gigaSpace.readMultiple(docQuery);
 {% endhighlight %}

@@ -16,7 +16,7 @@ Displays the specified spaces's configuration details: space configuration, cont
 
 You can view the configuration details of spaces in a specific container (see the options below) -- specifying a container URL prints a numbered list of all the spaces in that container, and you can choose a space to view by its number, or `all` (view all spaces).
 
-Specifying a URL of a clustered space prints a list of all spaces in the cluster, and you can choose a space to view by its number, or `all` (view all spaces). 
+Specifying a URL of a clustered space prints a list of all spaces in the cluster, and you can choose a space to view by its number, or `all` (view all spaces).
 
 {% tip %}
 Using `-c` (or `-cluster`) with a URL of a clustered space displays configuration details of **all** cluster members.

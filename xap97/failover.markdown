@@ -9,22 +9,22 @@ page_id: 61867403
 
 # Overview
 
-Failover is the mechanism used to route user operations to alternate spaces in case the target space (of the original operation) fails. 
+Failover is the mechanism used to route user operations to alternate spaces in case the target space (of the original operation) fails.
 
-The component responsible for failover in GigaSpaces is the clustered proxy. When an operation on a space fails, the clustered proxy tries to locate an available and active space member. If it finds such a space, it re-invokes the operation on that space member, otherwise it throws the original exception. 
+The component responsible for failover in GigaSpaces is the clustered proxy. When an operation on a space fails, the clustered proxy tries to locate an available and active space member. If it finds such a space, it re-invokes the operation on that space member, otherwise it throws the original exception.
 
-# Failover and Recovery Process 
+# Failover and Recovery Process
 
 Failover and Recovery process includes the following steps (we assume spaces deployed using the SLA driven container (GSC and GSM):
 
 1. Backup identifies that the primary space is not available and moving itself to a primary mode. For information on speeding up this step refer to [Failure Detection](./failure-detection.html).
 2. Space proxy router discovers the new primary space and routs the request to it. For information on speeding up this step refer to [Proxy Connectivity](./proxy-connectivity.html).
-3. GSM identifies the backup space is missing and provision new space into existing GSC - preferably empty GSC or based on predefined SLA. You can tune this step by modifying the GSM settings. 
-4. Backup started. It is looking for the look service and register itself. 
-5. Backup identifies that a primary space exists (goes through primary election process) and moves itself into backup mode. If there are multiple GSMs and bad network or wrong locators configuration -- you might end up here with split-brain scenario where you have multiple primaries running. 
-6. Backup read existing space objects from the primary space (aka memory recovery). This might take some time with few million space objects. GigaSpaces using multiple threads with this activity. You can tune this by modifying the recovery batch size and also the amount of recovery threads. 
+3. GSM identifies the backup space is missing and provision new space into existing GSC - preferably empty GSC or based on predefined SLA. You can tune this step by modifying the GSM settings.
+4. Backup started. It is looking for the look service and register itself.
+5. Backup identifies that a primary space exists (goes through primary election process) and moves itself into backup mode. If there are multiple GSMs and bad network or wrong locators configuration -- you might end up here with split-brain scenario where you have multiple primaries running.
+6. Backup read existing space objects from the primary space (aka memory recovery). This might take some time with few million space objects. GigaSpaces using multiple threads with this activity. You can tune this by modifying the recovery batch size and also the amount of recovery threads.
 7. Primary clears its redo log (During the above step) and starts to accumulate incoming destructive events (write , update , take) within its redo log. This is one of the reasons why the redo log size can have limited size in many cases. You can use the redo-log-capacity to configure the redo-log size. For example: If the recovery takes 30 sec and the client performs 1000 destructive operations/sec -- your redo log size can be 30,000.
-8. Backup completes reading space objects from primary. 
+8. Backup completes reading space objects from primary.
 9. Primary replicates redo log content to the backup (via the async replication channel) -- In this point backup getting also sycn replication events from primary. You can control the redo log replication speed using the async replication batch size.
 10. Once the redo replication completed -- Recovery done. Backup is ready to act as a primary.
 

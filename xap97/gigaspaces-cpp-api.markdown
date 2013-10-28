@@ -200,8 +200,8 @@ When using transactions, the following basic operations should be conducted:
 
 There are two types of transaction managers and their respective types of transactions:
 
-- **Local** \- for operations over a single space instance
-- **Distributed** \- for operations that span over multiple spaces
+- **Local** - for operations over a single space instance
+- **Distributed** - for operations that span over multiple spaces
 
 When working with only a single space instance, the Local Transaction (Manager) should be used. When working with a clustered topology, and performing operations that span over several cluster members, the Distributed Transaction (Manager) should be used.
 Note, this can be avoided when working with the SBA model, where each cluster member works only with its local space instance.

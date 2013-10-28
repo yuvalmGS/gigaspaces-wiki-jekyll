@@ -12,7 +12,7 @@ The directory provides the means for managing users and roles. User and role inf
 
 ![security-seq5.PNG](/attachment_files/security-seq5.PNG)
 
-The `SecurityManager` access the directory for authenticating the user. The authentication process retrieves the user credentials and permissions. On the other hand, you need some tool to access the directory for managing the users/roles. It can be as simple as SQL statements modifying records in a database. 
+The `SecurityManager` access the directory for authenticating the user. The authentication process retrieves the user credentials and permissions. On the other hand, you need some tool to access the directory for managing the users/roles. It can be as simple as SQL statements modifying records in a database.
 
 Our default _**file-based security implementation**_ uses a local file. Using the UI with the default security, you can add, modify, associate, remove users and roles which are saved to this local file. The UI calls upon the `DirectoryManager` implementation to perform these actions.
 
@@ -20,13 +20,13 @@ In general, if you are using the UI and the default file-based security than you
 
 # Accessing the directory
 
-The directory has clear distinction between user management and role management. For each there is an associated authority that can be granted to a user. For example, you may grant a user an authority to manage users but at the same time deny role management. 
+The directory has clear distinction between user management and role management. For each there is an associated authority that can be granted to a user. For example, you may grant a user an authority to manage users but at the same time deny role management.
 
 The default user which can access the default file-based security implementation is **`admin/admin`**. Note that this is specific to the implementation. You can remove `admin` after first log-in to the directory, but make sure to declare a new user with **`MANAGE_USERS`** and/or **`MANAGE_ROLES`** authorities.
 
 # User Management
 
-The `[DirectoryManager](http://www.gigaspaces.com/docs/JavaDoc8.0/com/gigaspaces/security/directory/DirectoryManager.html)` interface provides a means to managing users using the `[UserManager](http://www.gigaspaces.com/docs/JavaDoc8.0/com/gigaspaces/security/directory/UserManager.html)` API. Access should be granted only to users with **`MANAGE_USERS`** authority. 
+The `[DirectoryManager](http://www.gigaspaces.com/docs/JavaDoc8.0/com/gigaspaces/security/directory/DirectoryManager.html)` interface provides a means to managing users using the `[UserManager](http://www.gigaspaces.com/docs/JavaDoc8.0/com/gigaspaces/security/directory/UserManager.html)` API. Access should be granted only to users with **`MANAGE_USERS`** authority.
 
 The `[UserManager](http://www.gigaspaces.com/docs/JavaDoc8.0/com/gigaspaces/security/directory/UserManager.html)` interface has simple methods for declaring users:
 

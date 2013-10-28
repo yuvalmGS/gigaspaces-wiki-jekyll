@@ -46,14 +46,14 @@ The conflict resolver implementation should be an extension of "com.gigaspaces.c
 
 {% highlight xml %}
 <!-- gateway Sink component -->
-<os-gateway:sink id="sink" local-gateway-name="NEW-YORK" gateway-lookups="gatewayLookups" 
+<os-gateway:sink id="sink" local-gateway-name="NEW-YORK" gateway-lookups="gatewayLookups"
           local-space-url="jini://*/*/localSpace">
   <os-gateway:sources>
     <os-gateway:source name="LONDON" />
   </os-gateway:sources>
 
   <!-- Sink error handling configuration -->
-  <os-gateway:error-handling conflict-resolver="conflictResolver" max-retries-on-tx-lock="5" 
+  <os-gateway:error-handling conflict-resolver="conflictResolver" max-retries-on-tx-lock="5"
      tx-lock-retry-interval="100" />
 
 </os-gateway:sink>
@@ -163,7 +163,7 @@ londonGigaSpace.write(person);               // This operation will cause a conf
 londonGigaSpace.takeById(Person.class, 5);   // No conflict..
 
 // This operation will cause a conflict..
-londonGigaSpace.write(personToUpdate, Lease.FOREVER, 0, UpdateModifiers.UPDATE_ONLY); 
+londonGigaSpace.write(personToUpdate, Lease.FOREVER, 0, UpdateModifiers.UPDATE_ONLY);
 
 ptm.commit(status);
 {% endhighlight %}
@@ -178,14 +178,14 @@ public class MyConflictResolver extends com.gigaspaces.cluster.replication.gatew
 
     // conflict.getOperation() contains three operations.. write, take and update.
     for (DataConflictOperation operation : conflict.getOperations()) {
-      
+
       // Abort write operations or operations which didn't cause a conflict..
       // Note that the take operation didn't cause a conflict and yet we can abort it.
       if (operation.getOperationType() == OperationType.WRITE || !operation.hasConflict()) {
         operation.abort();
 
       // Override conflicting update operations..
-      } else if (operation.getOperationType() == OperationType.UPDATE || operation.getOperationType() == 
+      } else if (operation.getOperationType() == OperationType.UPDATE || operation.getOperationType() ==
               OperationType.PARTIAL_UPDATE) {
         if (operation.supportsOverride())
           operation.override();
@@ -258,7 +258,7 @@ public class MyConflictResolver extends com.gigaspaces.cluster.replication.gatew
   public void onRegisterTypeDescriptorConflict(String sourceGatewayName, RegisterTypeDescriptorConflict conflict) {
     // Do something useful with the conflict..
   }
-    
+
   @Override
   public void onAddIndexConflict(String sourceGatewayName, AddIndexConflict conflict) {
     // Do something useful with the conflict..

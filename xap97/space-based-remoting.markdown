@@ -24,7 +24,7 @@ The OpenSpaces API supports two types of remoting, distinguished by the underlyi
 
 # Choosing the Correct Remoting Mechanism
 
-This section explains when you should choose to use each of the remoting implementations. Note that as far as the calling code is concerned, the choice between the implementations is transparent and requires only configuration changes. 
+This section explains when you should choose to use each of the remoting implementations. Note that as far as the calling code is concerned, the choice between the implementations is transparent and requires only configuration changes.
 
 In most cases, you should choose [Executor Based Remoting](./executor-based-remoting.html). It is based on the GigaSpaces [Task Executors](./task-execution-over-the-space.html) feature, which means that it executes the method invocation by submitting a special kind of task which executes on the space side by calling the invoked service. It allows for synchronous and asynchronous invocation, map/reduce style invocations and transparent invocation failover.
 

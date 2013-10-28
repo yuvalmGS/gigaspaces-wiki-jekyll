@@ -21,7 +21,7 @@ GigaSpaces space and client components open different ports in various situation
 |RMI registry Retries |Used as an alternative directory service.| `com.gigaspaces.system.registryRetries` System property|Default is 20.|
 |Webster listening port|Internal web service used as part of the application deployment process. |`com.gigaspaces.start.httpPort` System property|9813|
 
-- When starting a space and providing the port as part of the URL - i.e. `java://localhost:PORT/container/space` \- the specified port will be used both for the RMI registry listener and also for the container to register into the RMI registry.
+- When starting a space and providing the port as part of the URL - i.e. `java://localhost:PORT/container/space` - the specified port will be used both for the RMI registry listener and also for the container to register into the RMI registry.
 - The Jini Lookup Service uses unicast and multicast announcements and requests.
 - The **multicast** discovery protocol uses ports 4170.
 - You can **completely disable multicast announcement traffic**. Refer to the [Lookup Service Configuration](/xap96/lookup-service-configuration.html) or [Setting GigaSpaces Over Firewall](/xap96/how-to-set-gigaspaces-over-a-firewall.html) sections for more details.
@@ -29,7 +29,7 @@ GigaSpaces space and client components open different ports in various situation
 
 {% comment %}
 | Webster | linux: `NO_HTTP` Windows: `noHTTP` | `0` | `\-Dcom.gigaspaces.start.httpPort=0 \-Dcom.gigaspaces.start.httpServerRetries=20`
-   | [How to Control the Used Ports^webster.xml](How to Control the Used Ports^webster.xml) | Additional properties can also be overridden (for example: `httpServerRetries`, `hostAddress`)
+   | [How to Control the Used Ports](webster.xml) | Additional properties can also be overridden (for example: `httpServerRetries`, `hostAddress`)
 
    `httpServerRetries` retries N-1 consecutive ports if the initial port is used (relevant if the initial port is different than zero). Default is 20.
    |

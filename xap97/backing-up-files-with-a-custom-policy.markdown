@@ -16,24 +16,24 @@ A null backup policy acts as a placeholder for a 'do-nothing' behavior. Used whe
 
 # Delete Backup Policy
 
-A backup policy that deletes any file which is older than the specified period, but keeps at least as many of the specified backup files. 
+A backup policy that deletes any file which is older than the specified period, but keeps at least as many of the specified backup files.
 
 By default, a file is kept for a 30 day period. After 30 days, the file is deleted; Unless if there are less than 10 backup files available. In other words, maintain a history of 10 files, even if there was nothing logged for more than 30 days.
 
-These properties can be configured either by modifying the logging configuration file: 
+These properties can be configured either by modifying the logging configuration file:
 
 {% highlight java %}
-com.gigaspaces.logger.RollingFileHandler.backup-policy = com.gigaspaces.logger.DeleteBackupPolicy 
-com.gigaspaces.logger.DeleteBackupPolicy.period = 30 
+com.gigaspaces.logger.RollingFileHandler.backup-policy = com.gigaspaces.logger.DeleteBackupPolicy
+com.gigaspaces.logger.DeleteBackupPolicy.period = 30
 com.gigaspaces.logger.DeleteBackupPolicy.backup = 10
 {% endhighlight %}
 
 or by use of a system property override:
 
 {% highlight java %}
--Dcom.gigaspaces.logger.DeleteBackupPolicy.[property-name]=[property-value] 
+-Dcom.gigaspaces.logger.DeleteBackupPolicy.[property-name]=[property-value]
 
-For example: 
+For example:
 -Dcom.gigaspaces.logger.DeleteBackupPolicy.period=30
 {% endhighlight %}
 

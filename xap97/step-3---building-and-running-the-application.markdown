@@ -6,21 +6,21 @@ page_id: 61867446
 
 {% summary %}This step shows how to build, package and deploy the application while taking advatage of XAP's dynamic load balancing capabilities and the Space as a highly HttpSession store{% endsummary %}
 
-# Before You Begin 
+# Before You Begin
 
-We recommend that you do the following before starting this step of the Tutorial: 
+We recommend that you do the following before starting this step of the Tutorial:
 
 - Follow [Step 1](./step-1---adjusting-your-jpa-domain-model-to-the-xap-jpa-implementation.html) of this tutorial
 - Follow [Step 2](./step-2---using-the-power-of-the-space-to-scale-your-data-access-layer.html) of this tutorial
 
-# Building the Example Application 
+# Building the Example Application
 
-The application sources and build scripts can be downloaded [here](/attachment_files/petclinic.zip). This application uses a Maven build script, so you need to make sure you're connected to the internet when you first run it to allow Maven to download all the dependencies.  
+The application sources and build scripts can be downloaded [here](/attachment_files/petclinic.zip). This application uses a Maven build script, so you need to make sure you're connected to the internet when you first run it to allow Maven to download all the dependencies.
 
-To build the example you should follow the following steps: 
+To build the example you should follow the following steps:
 
 - Download and unzip the [application sources](/attachment_files/petclinic.zip)
-- Download and install [GigaSpaces XAP 9.5 Premium Edition](http://www.gigaspaces.com/LatestProductVersion). 
+- Download and install [GigaSpaces XAP 9.5 Premium Edition](http://www.gigaspaces.com/LatestProductVersion).
 - Install the Gigaspaces Maven Plugin as described [here](./maven-plugin.html). Please take note of the GigaSpaces build number in the console output, e.g.:
 
 {% highlight java %}
@@ -33,24 +33,24 @@ D:\GS-Releases\gigaspaces-xap-premium-9.5.0-ga\tools\maven>installmavenrep.bat
 {% endhighlight %}
 
 - cd to the root directory of the application
-- Edit the value of the `gsVersion` property in the `pom.xml` file at the root directory to reflect the GigaSpaces build you're using (this is the build number that the Maven plugin installation script outputs to the console when invoked). 
-For example, if you are using GigaSpaces XAP 8.0.2 you should modify the `pom.xml` to have: 
+- Edit the value of the `gsVersion` property in the `pom.xml` file at the root directory to reflect the GigaSpaces build you're using (this is the build number that the Maven plugin installation script outputs to the console when invoked).
+For example, if you are using GigaSpaces XAP 8.0.2 you should modify the `pom.xml` to have:
 
 {% highlight java %}
 <gsVersion>8.0.2</gsVersion>
 {% endhighlight %}
 
-- Run the following Maven command: 
+- Run the following Maven command:
 
 {% highlight java %}
 mvn package
 {% endhighlight %}
 
-This will download the application's decencies, compile the sources and package the processor processing unit and the web application. 
+This will download the application's decencies, compile the sources and package the processor processing unit and the web application.
 
-# Deploying the Example Application 
+# Deploying the Example Application
 
-To deploy the application, you should do the following: 
+To deploy the application, you should do the following:
 
 - Start a [GigaSpaces Agent](./service-grid.html#gsa)
 - Run the following Maven command from the application's root directory:
@@ -59,9 +59,9 @@ To deploy the application, you should do the following:
 mvn os:deploy
 {% endhighlight %}
 
-# Creating Sample Data 
+# Creating Sample Data
 
-To have an initial sample data set to work with, simply click the "Create Dummy Data" link in the welcome page of the application. This will create a number of `Owner` s, `Pet` s and `Vet` s that you can work with to experience the application's functionality. 
+To have an initial sample data set to work with, simply click the "Create Dummy Data" link in the welcome page of the application. This will create a number of `Owner` s, `Pet` s and `Vet` s that you can work with to experience the application's functionality.
 
 ![dummy-data.png](/attachment_files/dummy-data.png)
 
@@ -75,7 +75,7 @@ To monitor  the application, start the GigaSpaces UI using the `<GigaSpaces root
 
 Please refer to [this page](./step-2---enabling-http-session-failover-and-fault-tolerance.html) for directions on how to enable `HttpSession` high availability for the web application.
 
-# Configuring Dynamic Load Balancing 
+# Configuring Dynamic Load Balancing
 
 Please refer to [this page](./step-3---scaling-the-data-access-layer.html) for directions on how to enable `HttpSession` high availability for the web application.
 

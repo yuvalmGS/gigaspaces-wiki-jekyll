@@ -8,7 +8,7 @@ page_id: 61867199
 
 # Using the Web Dashboard
 
-Once you've passed the login screen, you will enter the main dashboard screen. The dashboard gives you a single click view of the entire cluster, including alerts on various problematic conditions. Please refer the image below and the call-outs in it for more details: 
+Once you've passed the login screen, you will enter the main dashboard screen. The dashboard gives you a single click view of the entire cluster, including alerts on various problematic conditions. Please refer the image below and the call-outs in it for more details:
 
 ![dashboard803_9_6.png](/attachment_files/dashboard803_9_6.png)
 
@@ -33,14 +33,14 @@ At the bottom panel of the web dashboard, the events time line is displayed upon
 The events time-line shows the deployment life cycle of all the processing units.
 To filter by application, the events time line is also available in the Application tab. (see [Application View#Events time-line (per application)](/xap96/application-view.html#Events time-line (per application)))
 
-### Life-cycle success events for each instance: 
+### Life-cycle success events for each instance:
 
 - installation attempt : an attempt to provision a processing unit instance on an available GSC
 - instance added: a processing unit instance has successfully been instantiated on a GSC
 - instance uninstalled: a processing unit instance has been successfully removed
 - Container N/A: a processing unit instance is pending instantiation until an available GSC is discovered
 
-### Life-cycle success events for processing unit: 
+### Life-cycle success events for processing unit:
 
 - installation succeeded: deployment of processing unit has been completed successfully (all instances instantiated)
 - installation uninstalled: undeployment of processing unit has been completed (all instances undeployed)

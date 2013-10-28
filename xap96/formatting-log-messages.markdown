@@ -18,17 +18,17 @@ The `LogRecord` passed to the `Formatter` is converted to a string, as specified
 
 #### Placeholders
 
-The format is simply a string, which can contain any character including line-break characters. GigaSpaces provides several placeholders that can be added to the message.  
-  
-0 - Date object  
-1 - Class name  
-2 - Method name  
-3 - Log Level  
-4 - Logger name  
-5 - Message  
-6 - Context (processing unit, GSC, etc)  
-7 - Thread name  
-  
+The format is simply a string, which can contain any character including line-break characters. GigaSpaces provides several placeholders that can be added to the message.
+
+0 - Date object
+1 - Class name
+2 - Method name
+3 - Log Level
+4 - Logger name
+5 - Message
+6 - Context (processing unit, GSC, etc)
+7 - Thread name
+
 #### The default format
 
 By default, the logging configuration file comes with the following as the default format:

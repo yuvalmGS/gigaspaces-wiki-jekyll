@@ -4,7 +4,7 @@ title:  Cloud and Virtualization
 page_id: 61867411
 ---
 
-This section describes the XAP integrations with various cloud and virtualization vendors. 
+This section describes the XAP integrations with various cloud and virtualization vendors.
 
 [XAP on EC2](CCF:CCF4XAP Documentation Home)
 [XAP on Rackspace](/xap96/xap-on-rackspace.html)

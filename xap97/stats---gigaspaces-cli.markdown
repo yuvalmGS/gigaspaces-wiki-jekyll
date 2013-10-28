@@ -32,7 +32,7 @@ None.
 # Example
 
     gs> stats
-    
+
     User : nuser
     Home directory :  GigaSpacesXAP6.0ServiceGridbin
     Login time : Mon Jan 30 12:02:59 GMT+02:00 2006

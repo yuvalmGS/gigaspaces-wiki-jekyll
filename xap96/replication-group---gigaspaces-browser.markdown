@@ -19,7 +19,7 @@ See the [Replication](/xap96/replication.html) section for details.
 
 # Synchronous Replication
 
-![Replication Group2GigaSpaces Browser.jpg](/attachment_files/Replication Group2GigaSpaces Browser.jpg) 
+![Replication Group2GigaSpaces Browser.jpg](/attachment_files/Replication Group2GigaSpaces Browser.jpg)
 
 # Asynchronous Replication
 
@@ -35,7 +35,7 @@ The Transmission Policies tab of the Group Members Attribute window allows you t
 The Transmission Replication Policy Matrix allows you to define the replication relationships between group cluster space members. By clicking the relevant checkbox in the table you can define which space will be the replication target for the space.
 You can define transmission policy for this replication by checking take, write and notify. To activate the **Sync on Commit** operation, check the Sync on Commit box.
 
-# Filters/recovery options 
+# Filters/recovery options
 
 The Filters/Recovery tab of the Group Members Attribute window allows a filter class name to be defined that will be activated at the time of replication. This filter class will contain your business logic to enable/disable the replication process.
 

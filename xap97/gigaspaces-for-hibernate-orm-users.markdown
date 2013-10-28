@@ -48,7 +48,7 @@ You can very easily replace your existing Hibernate cache provider, typically EH
 
 **Benefits:**
 
-- **Powerful distributed cache** \- multiple clients, each client's updates can be accessed by all other clients
+- **Powerful distributed cache** - multiple clients, each client's updates can be accessed by all other clients
 - **Effortless integration** using Spring
 
 {% infosign %} To learn how to do this, see [How to Switch Your Second-Level Cache Provider to GigaSpaces](#step1) below.
@@ -64,7 +64,7 @@ If you need to scale up your database, you can use GigaSpaces as an In-Memory Da
 - **Database scalability** through partitioning and data distribution - enables higher data volumes and higher throughput with low latency
 - **Better decoupling** between your application and the database - no need to hard-wire Hibernate and database concepts into your code and runtime environment
 - **Event-driven** model enables notifications when data is modified
-- **Database access can be synchronous or asynchronous** \- the [GigaSpaces Mirror Service](./asynchronous-persistency-with-the-mirror.html) allows data to be persisted to the database asynchronously, without a performance penalty
+- **Database access can be synchronous or asynchronous** - the [GigaSpaces Mirror Service](./asynchronous-persistency-with-the-mirror.html) allows data to be persisted to the database asynchronously, without a performance penalty
 
 {% infosign %} To learn how to do this, see the [Moving from Hibernate to Space](http://wiki.gigaspaces.com/wiki/display/SBP/Moving+from+Hibernate+to+Space) best practice.
 
@@ -74,7 +74,7 @@ To gain ultimate scalability for your application, you can package your business
 
 This approach is called Space Based Architecture, and the way to achieve it is the Spring-based OpenSpaces platform, which allows you to deploy your application as a set of services encased in a Processing Unit.
 
- 
+
 {% refer %}To learn more about Space-Based Architecture and its implications, read our white paper, [The Scalability Revolution: From Dead End to Open Road](http://www.gigaspaces.com/WhitePapers).{% endrefer %}
 
 {% refer %}To learn more about OpenSpaces, see the [OpenSpaces](./product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) section in this online help.{% endrefer %}

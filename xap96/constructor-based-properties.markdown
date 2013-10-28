@@ -7,7 +7,7 @@ page_id: 63078410
 {% compositionsetup %}
 {% summary page|65 %}Immutable properties support - Constructor Based Properties.{% endsummary %}
 
-# Overview 
+# Overview
 
 The `com.gigaspaces.annotation.pojo.SpaceClassConstructor` annotation on a constructor will cause the data class properties analysis to be based on properties found in the constructor (instead of getters/setters). This allows data class properties to be immutable.
 
@@ -19,8 +19,8 @@ Following is an example of such data class.
 package org.openspaces.scala.example.data
 import scala.beans.BeanProperty
 
-/* 
- * This imports enhanced space annotations such as @SpaceId, @SpaceRouting, etc... 
+/*
+ * This imports enhanced space annotations such as @SpaceId, @SpaceRouting, etc...
  * with a @beanGetter annotation attached to them so annotations will be attached to the generated getter method.
  */
 import org.openspaces.scala.core.aliases.annotation._
@@ -30,8 +30,8 @@ import org.openspaces.scala.core.aliases.annotation._
  * This allows the pojo properties to remain immutable as demonstrated below.
  */
 case class Data @SpaceClassConstructor() (
-                
-  @BeanProperty                
+
+  @BeanProperty
   @SpaceId
   @SpaceProperty(nullValue = "-1")
   id: Long = -1,
@@ -44,7 +44,7 @@ case class Data @SpaceClassConstructor() (
   @BeanProperty
   data: String = null
 
-) 
+)
 {% endhighlight %}
 
 # Considerations

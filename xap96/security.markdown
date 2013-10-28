@@ -39,10 +39,10 @@ GigaSpaces Main Security Features:
     - System , Monitor , Grid , Data-Grid Authorities
 - Spring Based Security support
     - LDAP Authenticating
-    - Database Authenticating 
-- Custom Security 
+    - Database Authenticating
+- Custom Security
     - Kerberos Authenticating
-- Data-Grid operations Auditing 
+- Data-Grid operations Auditing
 - SSL Transport Layer security
 - UI, CLI and API Security Tools
 

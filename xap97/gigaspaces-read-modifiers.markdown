@@ -16,7 +16,7 @@ GigaSpaces `ReadModifiers` class (see [Javadoc](http://www.gigaspaces.com/docs/J
 
 Four main types of modifiers can be used:
 
-- `REPEATABLE_READ` \- default modifier
+- `REPEATABLE_READ` - default modifier
 - `DIRTY_READ`
 - `READ_COMMITTED`
 - `EXCLUSIVE_READ_LOCK`

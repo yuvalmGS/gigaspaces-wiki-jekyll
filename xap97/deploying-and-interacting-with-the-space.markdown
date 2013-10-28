@@ -497,7 +497,7 @@ Person[] multipleResults2 = gigaSpace.takeMultiple(query, 50);
 ## Ordering of Results
 
 The Space matches the stored object with the template to return a result. Matched objects are stored in the Space and returned from it in no particular order. However you can use [FIFO ordering](./fifo-support.html) or the `ORDER BY` statement to control the ordering.
- 
+
 
 {% endtoczone %}
 

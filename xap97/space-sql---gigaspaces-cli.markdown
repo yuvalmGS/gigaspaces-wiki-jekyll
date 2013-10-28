@@ -28,5 +28,5 @@ You can query spaces in a specific container (see the options below) -- specifyi
 
 # Example
 
-    space sql -url rmi://localhost:10098/mySpace_container/mySpace -query select uid,* from com.j_spaces.examples.benchmark.messages.Message 
+    space sql -url rmi://localhost:10098/mySpace_container/mySpace -query select uid,* from com.j_spaces.examples.benchmark.messages.Message
     WHERE rownum<10

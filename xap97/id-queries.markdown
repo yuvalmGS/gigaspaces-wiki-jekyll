@@ -21,7 +21,7 @@ public String getEmployeeID() {
 }
 {% endhighlight %}
 
-or via the gs.xml configuration: 
+or via the gs.xml configuration:
 
 {% highlight java %}
 <id name="employeeID" auto-generate="false" />

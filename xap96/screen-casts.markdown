@@ -4,7 +4,7 @@ title:  Screen Casts
 page_id: 61867162
 ---
 
-## To view one of the videos, click it on the right hand side of the player    
+## To view one of the videos, click it on the right hand side of the player
 
 <object width="746" height="413"><param name="movie" value="http://www.youtube.com/cp/vjVQa1PpcFPzFN2RjRCagUZwtMXOt4I7IrrAihMlnoY="></param><embed src="http://www.youtube.com/cp/vjVQa1PpcFPzFN2RjRCagUZwtMXOt4I7IrrAihMlnoY=" type="application/x-shockwave-flash" width="746" height="413"></embed></object>
 
