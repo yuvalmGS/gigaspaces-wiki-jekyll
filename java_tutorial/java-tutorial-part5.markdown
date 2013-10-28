@@ -353,7 +353,7 @@ public void registerPollingListener() {
 When you run this code you should see that the PU deployed onto the IMDG is processing the event, changes the status of the payment to PROCESSED and writes the event back into the space. The client then will receive an event because it has registered a listener that listens for processed payment events.
 
 #### Deploy a PU with the WEB Admin UI
-There is complete example available of PU on GitHub. You can download, build and deploy this example. Here is an example how you deploy a PU with the WEB admin UI:
+There is complete example available of  aPU on GitHub. You can download, build and deploy this example. Here is an example how you deploy a PU with the WEB admin UI:
 
 {%section%}
 {%column%}
@@ -385,7 +385,7 @@ Statistics
 {%endcolumn%}
 {%endsection%}
 
-Example code is provided on GitHub.{linkinnew:https://github.com/Gigaspaces/xap-tutorial}Try it out !GRA:Images3^tryit.jpg!{linkinnew}
+{%try%}https://github.com/Gigaspaces/xap-tutorial{%endtry%}
 
 #### Failover and Scalability
 One of our non functional requirements for our online payment system is that it is highly available and it can handle a large amount of concurrent transactions. This can be accomplish in a couple of ways. We can deploy the PU with multiple concurrent threads and or multiple PU instances on top of the grid.
