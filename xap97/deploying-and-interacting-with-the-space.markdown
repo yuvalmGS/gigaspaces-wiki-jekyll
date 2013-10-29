@@ -79,7 +79,7 @@ The last two ways of instantiating a space are from within your own application,
 
 ## Deploying a Space onto the Service Grid Infrastructure
 
-The service grid infrastructure is composed of one or more [GigaSpaces Containers](./the-grid-service-container.html) (GSCs) and at least one [GigaSpaces Manager](./the-grid-service-manager.html) (GSM). When deploying onto the service grid, the deployment tool you use connects to the GSM and instructs it to provision Space instances to the running GSCs, based on the deployment details (Space topology, number of instances, etc.).
+The service grid infrastructure is composed of one or more [GigaSpaces Containers](./the-grid-service-container.html) (GSCs) and at least one [GigaSpaces Manager](./the-grid-service-manager.html). When deploying onto the service grid, the deployment tool you use connects to the GSM and instructs it to provision Space instances to the running GSCs, based on the deployment details (Space topology, number of instances, etc.).
 After starting the appropriate amount of GSCs and GSMs in your cluster (note that as of version 7.0 you can use [The Grid Service Agent](./the-grid-service-agent.html) for this), there are a number of tools that can be used to deploy a Space onto the service grid:
 
 - [Using the Management UI](#app)

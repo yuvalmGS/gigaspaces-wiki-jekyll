@@ -195,7 +195,7 @@ When your application is modeled as a Processing Unit, scaling it is as simple a
 
 #### Partitioning and Routing
 
-As mentioned earlier, scaling is done by making sure each Processing Unit instance runs independently of the other instances (you may recall the car wash analogy from [step one of this tutorial](./step-one-using-processing-units-for-scaling.html). This is done by making sure that the data that is needed to perform a certain business operation, resides in the same Processing Unit instance that does the actual processing (this is called data affinity). This in turn guarantees two things - latency is kept at a fixed minimum, and is not related to the number of processing unit instances that are used by the application.
+As mentioned earlier, scaling is done by making sure each Processing Unit instance runs independently of the other instances (you may recall the car wash analogy from [step one of this tutorial](./step-one---using-processing-units-for-scaling.html). This is done by making sure that the data that is needed to perform a certain business operation, resides in the same Processing Unit instance that does the actual processing (this is called data affinity). This in turn guarantees two things - latency is kept at a fixed minimum, and is not related to the number of processing unit instances that are used by the application.
 This is achieved by dividing the application data into partitions (each partition resides on a separate Processing Unit instance, in the form of a space), and intelligently distributing the data to these partitions. The business logic services deployed on each instance, operate only on the partition local to them, i.e. the one collocated in the same Processing Unit instance. This ensures extremely low latency, because data is kept in memory. It also ensures linear scalability when increasing the number of Processing Unit instances - see Figure 7 below.
 
 {% align center %}![Partition.jpg](/attachment_files/Partition.jpg)
@@ -272,7 +272,7 @@ The GSA, by default, will start 2 local Grid Service Containers, and manage a gl
 
 **The GigaSpaces Agent**
 
-[The GigaSpaces Agent (GSA)](./the-gigaspaces-agent.html) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as the Grid Service Manager (aka [The GigaSpaces Manager](./the-gigaspaces-manager.html)), the Grid Service Container (aka [The GigaSpaces Container](./the-gigaspaces-container.html)), and Lookup Service.
+[The GigaSpaces Agent (GSA)](./service-grid.html#gsa) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as the Grid Service Manager (aka [The GigaSpaces Manager](./the-gigaspaces-manager.html)), the Grid Service Container (aka [The GigaSpaces Container](./the-gigaspaces-container.html)), and Lookup Service.
 
 {% endpanel %}
 {% endgcloak %}
