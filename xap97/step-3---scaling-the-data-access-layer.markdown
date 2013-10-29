@@ -62,7 +62,7 @@ page_id: 61867433
 
 We recommend that you go through the following steps before you begin this tutorial:
 
-- [Download GigaSpaces and set up your development environment](Setting Up Your IDE to Work With GigaSpaces)  - needed to run the sample application described in this tutorial.
+- [Download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaSpaces.html)  - needed to run the sample application described in this tutorial.
 - [Step 1 - Deploying Your Web Application to the GigaSpaces Environment](./step-1---deploying-your-web-application-to-the-gigaspaces-environment.html) - needed to understand how your web application can be deployed to the GigaSpaces environment and benefit from it.
 - [Step 2 - Enabling HTTP Session Failover & Fault Tolerance](./step-2---enabling-http-session-failover-and-fault-tolerance.html) - If you're interested in transparent failover and fault tolerance for your HTTP session.
 {% endsection %}
@@ -215,7 +215,7 @@ When opening this page in a web browser, it looks as follows:
 # Building the Example
 
 ![Play arrow green.bmp](/attachment_files/Play arrow green.bmp) **Steps to build the application:**
-The first thing you need to do if you haven't already done so, is [Download GigaSpaces and set up your development environment](Setting Up Your IDE to Work With GigaSpaces).
+The first thing you need to do if you haven't already done so, is [Download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html).
 Next, you should open a shell / command prompt window in the example directory, and type the following:
 `build.(sh/bat) dist`
 You should an output similar to the following:

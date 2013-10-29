@@ -52,7 +52,7 @@ The simplest way to start a node with GigaSpaces is to invoke the GSA from the G
 
 In order to create a data grid, you need to first deploy it onto the GigaSpaces cluster. It's actually fairly easy to write some code that can connect to an existing data grid, or deploy a new one if the datagrid doesn't exist.
 
-First, make sure your application's classpath includes the includes the [GigaSpaces runtime libraries](Setting classpath). In short, include all jars under `<XAP installation root>/lib/required` in your classpath. Then, connect to the datagrid. In the GigaSpace lingo, a data grid is called a _Space_, and a data grid node is called a _Space Instance_. The space is hosted within a _Processing Unit_, which is the GigaSpaces unit of deployment. The following snippets shows how to connect to an existing data grid or deploy a new one if such does not exist.
+First, make sure your application's classpath includes the includes the [GigaSpaces runtime libraries](./setting-classpath.html). In short, include all jars under `<XAP installation root>/lib/required` in your classpath. Then, connect to the datagrid. In the GigaSpace lingo, a data grid is called a _Space_, and a data grid node is called a _Space Instance_. The space is hosted within a _Processing Unit_, which is the GigaSpaces unit of deployment. The following snippets shows how to connect to an existing data grid or deploy a new one if such does not exist.
 
 Creating and deploying an Elastic Data Grid
 

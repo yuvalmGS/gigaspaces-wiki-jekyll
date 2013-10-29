@@ -15,12 +15,12 @@ We recommend that you do the following before starting this step of the Tutorial
 
 # Building the Example Application
 
-The application sources and build scripts can be downloaded [here](/attachment_files/petclinic.zip). This application uses a Maven build script, so you need to make sure you're connected to the internet when you first run it to allow Maven to download all the dependencies.
+The application sources and build scripts can be downloaded [here](https://github.com/Gigaspaces/PetClinic). This application uses a Maven build script, so you need to make sure you're connected to the internet when you first run it to allow Maven to download all the dependencies.
 
 To build the example you should follow the following steps:
 
-- Download and unzip the [application sources](/attachment_files/petclinic.zip)
-- Download and install [GigaSpaces XAP 9.5 Premium Edition](http://www.gigaspaces.com/LatestProductVersion).
+- Download and unzip the [application sources](https://github.com/Gigaspaces/PetClinic)
+- Download and install [GigaSpaces XAP Premium Edition](http://www.gigaspaces.com/LatestProductVersion).
 - Install the Gigaspaces Maven Plugin as described [here](./maven-plugin.html). Please take note of the GigaSpaces build number in the console output, e.g.:
 
 {% highlight java %}
