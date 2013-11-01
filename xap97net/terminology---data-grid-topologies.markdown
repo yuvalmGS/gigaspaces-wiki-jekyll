@@ -37,7 +37,7 @@ A set of space instances, typically running within their respective processing u
 The space instances are connected to each other to form a space cluster.
 The relations between the spaces define the [Data Grid Topology|#Data Grid Topology].
 
-~Key Sentence: A set of connected space instances holding objects form a space cluster~
+{% sub %}Key Sentence: A set of connected space instances holding objects form a space cluster{% endsub %}
 
 {% endcolumn %}
 
@@ -46,7 +46,7 @@ The relations between the spaces define the [Data Grid Topology|#Data Grid Topol
 {% align center %}
 !GS6:Images^term_populated_data_grid.gif!
 
-~**A Data Grid with 3 Instances**~
+{% sub %}**A Data Grid with 3 Instances**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
@@ -73,7 +73,7 @@ The relations between the spaces define the [Data Grid Topology|#Data Grid Topol
 A Data Grid with a primary instance and one or more backup instances.
 Operations that do not modify any data (e.g. read, count) are performed only on the primary instance. Operations that modify data, sometimes called destructive operations (e.g. write, take) are performed on the primary instance and are are replicated to the backup instance either synchronously or asynchronously.
 
-~Key Sentence: Objects in primary instance are replicated to its backup instance/s~
+{% sub %}Key Sentence: Objects in primary instance are replicated to its backup instance/s{% endsub %}
 
 {% endcolumn %}
 
@@ -82,7 +82,7 @@ Operations that do not modify any data (e.g. read, count) are performed only on 
 {% align center %}
 !GS6:Images^term_primary_backup_text_data_grid.gif!
 
-~**A Data Grid comprised of a primary instance with one backup instance**~
+{% sub %}**A Data Grid comprised of a primary instance with one backup instance**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
@@ -113,7 +113,7 @@ When the objects are written to this Data Grid, they are routed to the proper pa
 {% align center %}
 !GS6:Images^term_partitioned_data_grid.gif!
 
-~**A Partitioned Data Grid with 3 Instances, each holding a different set objects**~
+{% sub %}**A Partitioned Data Grid with 3 Instances, each holding a different set objects**{% endsub %}
 
 {% endalign %}
 
@@ -137,7 +137,7 @@ When the objects are written to this Data Grid, they are routed to the proper pa
 The mechanism that is in charge of routing the objects into and out of the corresponding partitions.
 The routing is based on a designated property/field inside the objects that are written to the space, and is termed _Routing Index_ or _Routing Property_.
 
-~Key sentence: Routing the mechanism that determines how object will be partitioned.~
+{% sub %}Key sentence: Routing the mechanism that determines how object will be partitioned.{% endsub %}
 
 {% endcolumn %}
 
@@ -146,7 +146,7 @@ The routing is based on a designated property/field inside the objects that are 
 {% align center %}
 !GS6:Images^term_routing.gif!
 
-~**Routing in a partitioned Data Grid with 3 instances**~
+{% sub %}**Routing in a partitioned Data Grid with 3 instances**{% endsub %}
 
 {% endalign %}
 
@@ -176,7 +176,7 @@ A [partitioned Data Grid|#Partitioned Data Grid], with one or more [backup|#Prim
 {% align center %}
 !GS6:Images^term_partitioned_primary_backup_data_grid.gif!
 
-~**A Primary Backup Partitioned Data Grid: 2 partitions, each replicates to one backup instance**~
+{% sub %}**A Primary Backup Partitioned Data Grid: 2 partitions, each replicates to one backup instance**{% endsub %}
 
 {% endalign %}
 

@@ -35,7 +35,7 @@ page_id: 63799398
 
 The GigaSpaces cache instance that holds data objects in memory.
 
-~Key sentence: The space holds your data objects.~
+{% sub %}Key sentence: The space holds your data objects.{% endsub %}
 
 {% endcolumn %}
 
@@ -44,7 +44,8 @@ The GigaSpaces cache instance that holds data objects in memory.
 {% align center %}
 !GS6:Images^term_space.gif!
 
-~**A space holding objects**~
+{% sub %}**A space holding objects**{% endsub %}
+
 {% endalign %}
 
 {% endcolumn %}
@@ -67,7 +68,7 @@ The GigaSpaces cache instance that holds data objects in memory.
 
 A set of methods used to read, write, take, and register for notification on objects that are stored in the space. Execute allows sending Tasks to be executed within the space. Read and Take critera can be specified via a query or a template (an example object).
 
-~Key sentence: Interaction with the space is done using the read, write, update, take and notify methods.~
+{% sub %}Key sentence: Interaction with the space is done using the read, write, update, take and notify methods.{% endsub %}
 
 {% endcolumn %}
 
@@ -76,7 +77,7 @@ A set of methods used to read, write, take, and register for notification on obj
 {% align center %}
 !GS6:Images^term_verbs.jpg!
 
-~**A client application uses the read, write, take, update and notify methods to exchange objects and receive notifications from the space**~
+{% sub %}**A client application uses the read, write, take, update and notify methods to exchange objects and receive notifications from the space**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
@@ -104,7 +105,7 @@ A set of methods used to read, write, take, and register for notification on obj
 
 An application component that interacts with the space (using read, write, take, etc.), and implements a certain functionality.
 Java people sometimes refer to it as a Service Bean, but it does not have to be a [Java Bean|http://en.wikipedia.org/wiki/JavaBean].
-~Key sentence: The service component interacts with the space to implement your application's logic.~
+{% sub %}Key sentence: The service component interacts with the space to implement your application's logic.{% endsub %}
 
 {% endcolumn %}
 
@@ -113,7 +114,7 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 {% align center %}
 !GS6:Images^term_service_bean.gif!
 
-~**A Service Component**~
+{% sub %}**A Service Component**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
@@ -143,7 +144,7 @@ A combination of service components and/or an embedded space instance. This is t
 {% align center %}
 !GS6:Images^term_empty_pu.gif!
 
-~**A Processing Unit**~
+{% sub %}**A Processing Unit**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
@@ -174,7 +175,7 @@ A deployable package which instantiates an embedded space instance, also called 
 {% align center %}
 !GS6:Images^term_pu_with_space.gif!
 
-~**A Processing Unit with an embedded space**~
+{% sub %}**A Processing Unit with an embedded space**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
@@ -202,7 +203,7 @@ A deployable package containing one or more services. In the GigaSpaces context,
 {% align center %}
 !GS6:Images^term_pu_with_bean.gif!
 
-~**A Processing Unit containing a Service component that interacts with a space embedded in another Processing Unit**~
+{% sub %}**A Processing Unit containing a Service component that interacts with a space embedded in another Processing Unit**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
@@ -231,7 +232,7 @@ Client application (which can also be other processing units) write objects to t
 {% align center %}
 !GS6:Images^term_pu_with_space_and_bean.gif!
 
-~**A Processing Unit with an embedded service that interacts with an embedded space**~
+{% sub %}**A Processing Unit with an embedded service that interacts with an embedded space**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
