@@ -23,7 +23,11 @@ When a deploying a data grid, primary and backup instances will be provisioned i
 
 In some cases you would like to determine the primary and backup instances location in an explicit manner. A simple approach would be to use zones, having one specific zone to host the primary instances and another zone to host the backup instances. These zones do not determine specific physical machines to host the primary/backup instances, but logical group of GSCs associated with a specific zone once started. Usually, the zone might reflect machines located in specific different racks or different data centers that are nearby havign very fast and reliable connectivity in between.
 
-{indent}!GRA:Images2^PrimaryBackupZoneController.jpg!{indent}
+
+{% indent %}
+!GRA:Images2^PrimaryBackupZoneController.jpg!
+{% endindent %}
+
 
 ## When the Primary-Backup Zone Controller should be used?
 Having primary and backup instances on different remote sites that are far away from each other is not a recommended approach with read/write applications. The Primary-Backup Zone Controller approach intended to be used with read mostly scenarios (80% read) where the latency between the sites is extremely low (below one-two milliseconds) with high bandwidth capacity. Primary and backup instances should be located within the same LAN with high speed connectivity and high capacity bandwidth to allow the primary replicate data as fast as it can to the backup to minimize the replication overhead on the application behavior.

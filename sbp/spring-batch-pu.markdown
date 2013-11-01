@@ -49,10 +49,18 @@ Spring Batch provides reusable functions that are essential in processing large 
 Logging, Tracing, Transaction management, Job processing statistics, Job restart, Job skip, resource management, etc.
 
 The Spring Batch [runtime environment|http://static.springsource.org/spring-batch/reference/html/configureJob.html] includes the following main components:
-{indent}!spring_batch_RuntimeEnvironment.jpg!{indent}
+
+{% indent %}
+!spring_batch_RuntimeEnvironment.jpg!
+{% endindent %}
+
 
 Spring Batch support both [sequential and conditional flows|http://static.springsource.org/spring-batch/reference/html/configureStep.html]. This allows building flexible batch processing systems.
-{indent}!spring_batch_SequentialAndConditionalFlows.jpg!{indent}
+
+{% indent %}
+!spring_batch_SequentialAndConditionalFlows.jpg!
+{% endindent %}
+
 
 ## Spring Batch Usage Scenarios
 A typical batch program generally reads a large number of records from a database, file, or queue, processes the data in some fashion, and then writes back data in a modified form. Spring Batch automates this basic batch iteration, providing the capability to process similar transactions as a set, typically in an offline environment without any user interaction. Batch jobs are part of most IT projects and Spring Batch is the only open source framework that provides a robust, enterprise-scale solution.
@@ -67,17 +75,29 @@ Polling Container and Spring Batch approach should be used when the processing a
 
 # GigaSpaces Spring Batch PU Architecture
 The Spring Batch PU encapsulates all the required components to run a Spring Batch instance:
-{indent}!spring_batch_PU_archi.jpg!{indent}
+
+{% indent %}
+!spring_batch_PU_archi.jpg!
+{% endindent %}
+
 
 The Spring Batch PU supports the Round Robin Workers mode and the Dedicated Workers mode.
 
 ## Round Robin Worker
 With the Round Robin Worker mode a Spring Batch PU instance will be consuming requests from all the space partitions in round robin manner.
-{indent}!spring_batch_RoundRobinWorker.jpg!{indent}
+
+{% indent %}
+!spring_batch_RoundRobinWorker.jpg!
+{% endindent %}
+
 
 ## Dedicated Worker
 With the Dedicated Worker mode a Spring Batch PU instance will be consuming requests from a dedicated specific space partition.
-{indent}!spring_batch_DedicatedWorker.jpg!{indent}
+
+{% indent %}
+!spring_batch_DedicatedWorker.jpg!
+{% endindent %}
+
 
 # The Spring Batch PU Implementation
 The Spring Batch PU implementation includes the following components:

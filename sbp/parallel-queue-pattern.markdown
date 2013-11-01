@@ -23,13 +23,21 @@ When building [low latency systems|http://en.wikipedia.org/wiki/High_frequency_t
 Such a requirement would be relevant with algorithmic trading engines , Order Management Systems , Market Data processing system , High Speed inventory systems, etc.
 
 GigaSpaces introduce the ability to partition data in memory across multiple data-grid partitions. This provides the ability to scale the system, but it does not ensure fast data processing in the correct order. You should add another component that allows the system to "slice" each partition into virtual queues or several buckets. The polling container consuming data in a FIFO manner is the missing required component.
-{indent}!GRA:Images^par_q2.jpg!{indent}
+
+{% indent %}
+!GRA:Images^par_q2.jpg!
+{% endindent %}
+
 Having multiple polling containers running collocated with each partition allows us to scale at the partition level, forming set of "virtual queues", that consume data pushed into the partition in a parallel manner, but also in the correct order. The amount of polling containers will be usually the **number of machine cores**. This will optimize the ability to use the machine CPUs in the most efficient manner.
 
 With our example we will simulate a simple Order Management processing system where Orders are sent into the system. An order might have 5 states (state 1-5) where these should be processed in the correct order by a "processor". Different Orders (from different clients) should be processed in parallel, but requests associated with the same order MUST be processed in the exact order they have submitted by the end point client.
 
 Here is an example for the latency duration for the Order request processing time:
-{indent}!GRA:Images^par_q1.jpg!{indent}
+
+{% indent %}
+!GRA:Images^par_q1.jpg!
+{% endindent %}
+
 The above results retrived when running the Data-Grid with 4 partitions with a backup.
 
 
@@ -63,13 +71,25 @@ The `bucketId` is calculated using the following formula:
 {gdeck:RunningExample|top}
 {gcard:Running the Order Processor}
 You can run the Data-Grid with the collocated Order Processor within your IDE using the following configuration:
-{indent}!GRA:Images^par_q4.jpg!{indent}
+
+{% indent %}
+!GRA:Images^par_q4.jpg!
+{% endindent %}
+
 Here is a configuration for a data-grid with 2 partitions that will be running the polling containers:
-{indent}!GRA:Images^par_q5.jpg!{indent}
+
+{% indent %}
+!GRA:Images^par_q5.jpg!
+{% endindent %}
+
 {gcard}
 {gcard:Running the Feeder}
 You can run the Feeder within your IDE using the following configuration:
-{indent}!GRA:Images^par_q3.jpg!{indent}
+
+{% indent %}
+!GRA:Images^par_q3.jpg!
+{% endindent %}
+
 {gcard}
 {gdeck}
 

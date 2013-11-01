@@ -38,7 +38,11 @@ With the compact serialization pattern:
 - You serialize/de-serialize all indexed fields as usual (have the `writeExternal` , `readExternal` implementation to write and read these into the stream).
 - After reading the object from the space you should de-serialize the byte array data (unpack).
 
-{indent}!GRA:Images^bin_ser.jpg!{indent}
+
+{% indent %}
+!GRA:Images^bin_ser.jpg!
+{% endindent %}
+
 
 When the object is written to the space:
 - The non-indexed fields are compacted and serialized into the same field (as a byte array).

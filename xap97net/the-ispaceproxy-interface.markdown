@@ -12,7 +12,11 @@ page_id: 63799326
 
 The `ISpaceProxy` interface is ideal for connecting to data stored in the Space. The `ISpaceProxy` interface is used to interact with the Space, allowing both read and write actions. An `ISpaceProxy` is initialized using the `GigaSpacesFactor` static class object.
 
-{indent}!GRA:Images2^space_basic_operations91.jpg|thumbnail!{indent}
+
+{% indent %}
+!GRA:Images2^space_basic_operations91.jpg|thumbnail!
+{% endindent %}
+
 
 An `ISpaceProxy` can be initialized directly in the code or in the `pu.config` file in XML format. To define an `ISpaceProxy`:
 

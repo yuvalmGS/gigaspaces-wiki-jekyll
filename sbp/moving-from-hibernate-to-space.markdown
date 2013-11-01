@@ -618,17 +618,33 @@ On linux run the following command:
 
 
 - Once the Data-Grid, Mirror and the application will be deployed you should see the following within the GS-UI:
-{indent}!hib2space1.jpg|thumbnail!{indent}
+
+{% indent %}
+!hib2space1.jpg|thumbnail!
+{% endindent %}
+
 
 - You can start the web application and register users:
-{indent}!hib2space3.jpg|thumbnail!{indent}
+
+{% indent %}
+!hib2space3.jpg|thumbnail!
+{% endindent %}
+
 
 Each registered user data will be stored within the space and also be persist into the database.
 
 - To view the data within the space click the Data Types , select the User class and click Query:
-{indent}!hib2space2.jpg|thumbnail!{indent}
+
+{% indent %}
+!hib2space2.jpg|thumbnail!
+{% endindent %}
+
 This will display the Query view with the User objects data stored within the space:
-{indent}!hib2space5.jpg|thumbnail!{indent}
+
+{% indent %}
+!hib2space5.jpg|thumbnail!
+{% endindent %}
+
 
 - To view the data within the database, start the database UI :
 
@@ -638,6 +654,10 @@ java -cp  ../lib/platform/jdbc/hsqldb.jar  org.hsqldb.util.DatabaseManager
 {% endhighlight %}
 
 And query the database:
-{indent}!hib2space4.jpg|thumbnail!{indent}
+
+{% indent %}
+!hib2space4.jpg|thumbnail!
+{% endindent %}
+
 
 {% exclamation %} You may download the full source code of the application [here|^HibernateToSpace.zip].

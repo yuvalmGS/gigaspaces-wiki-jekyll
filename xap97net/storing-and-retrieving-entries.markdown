@@ -41,7 +41,11 @@ class Person
 
 Entries can be stored in the space using the `Write` method. A write operation stores a copy of the given object in the space (which means that changing the object after the write operation will not affect the entry in the space).
 
-{indent}!GRA:Images^space_write.jpg!{indent}
+
+{% indent %}
+!GRA:Images^space_write.jpg!
+{% endindent %}
+
 
 In order to write an entry to the space, create an object instance, populate the relevant properties/fields, then use the `Write` operation to store the object in the space:
 
@@ -70,7 +74,11 @@ proxy.Write(kermit);
 Entries can be retrieved from the space using the `Read` method. A read operation queries the space for an entry matching the provided [template|Query Template Types], and returns a copy of that entry (or null, if no match is found).
 The returned object is a copy of the entry stored in the space, which means that changing the returned object does not affect the entry stored in the space.
 
-{indent}!GRA:Images^space_read.jpg!{indent}
+
+{% indent %}
+!GRA:Images^space_read.jpg!
+{% endindent %}
+
 
 In order to retrieve an entry from the space, create an instance of the class you wish to retrieve, populate the properties/fields you wish to match by (null properties/fields will be ignored), then use the `Read` operation to retrieve the entry from the space:
 
@@ -91,7 +99,11 @@ Person readResult = proxy.Read(readTemplate);
 
 Using the `Read` operation does not affect the space - the read entry remains in storage. The `Take` method can be used to retrieve and remove the entry from the space. This operation is very similiar to the `Read`.
 
-{indent}!GRA:Images^space_take.jpg!{indent}
+
+{% indent %}
+!GRA:Images^space_take.jpg!
+{% endindent %}
+
 
 In order to take an entry from the space, create a template as you did in the read operation, then use the `Take` operation to retrieve and remove the entry from the space:
 

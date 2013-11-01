@@ -374,7 +374,11 @@ After you run the build script and the copy deployment files script, the two dir
 {% exclamation %} Since the spaces are running inside the `DataProcessor`, the `DataProcessor` should be deployed first and the `DataFeeder` second.
 
 1. In the GigaSpaces Management Center, click on the tab named Deployments, Details, and then click the **Deploy new application** button (!GRA:Images^deploy button.jpg!).
-{indent}!GRA:Images^deploy picture.jpg!{indent}
+
+{% indent %}
+!GRA:Images^deploy picture.jpg!
+{% endindent %}
+
 2. Now, all you need to do is type the name of the Processing Unit (identical to the name of the folder that is now in the `deploy` directory) in the `Processing Unit Name` field. Since there's an existing sla.xml with specific cluster topology, there's no need to specify the cluster topology at deploy time.
 3. Now in order to deploy the `DataFeeder` Procesing Unit, you repeat the same processes but type `DataFeeder` in the `Processing Unit Name` field. There is no need to select a `Cluster Schema` or `Number Of Instances`, since the feeder connects to the cluster and doesn't create spaces. However, you can deploy more than one `DataFeeder` by changing the `Number Of Instances` field.
 4. Now look at the deployed processing units view and see the events firing.

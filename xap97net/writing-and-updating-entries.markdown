@@ -11,7 +11,11 @@ page_id: 63799399
 
 Objects are written to the space using the `ISpaceProxy.Write` method. A write operation inserts a copy of the given object to the space, hence, any changes made to the object after the write operation do not affect the object in the space.
 
-{indent}!space_write.jpg!{indent}
+
+{% indent %}
+!space_write.jpg!
+{% endindent %}
+
 
 # Writing a Single Object
 

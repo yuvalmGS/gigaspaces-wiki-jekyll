@@ -20,7 +20,11 @@ It's becoming increasingly important for organizations to share HTTP session dat
 
 The following image depicts a common use case where there are multiple data centers connected across the WAN, and each is running a different type of web server.
 
-{indent}!httpSessionSharing1.jpg!{indent}
+
+{% indent %}
+!httpSessionSharing1.jpg!
+{% endindent %}
+
 
 The GigaSpaces Global HTTP Session Sharing architecture allows users to deploy their web application across these multiple data centers where the session is shared in real-time and in a transparent manner. The HTTP session is also backed by a data grid cluster within each data center for fault tolerance and high-availability.
 
@@ -51,11 +55,19 @@ There is no need to change the web application or plug in any custom code in ord
 
 The below diagram shows a more detailed view of the IMDG deployment. In this case, there are multiple partitions for high scalability, as well as backup instances for redundancy. The WAN Gateway is also deployed and shows replication to each remote site.
 
-{indent}!httpSessionSharing2.jpg!{indent}
+
+{% indent %}
+!httpSessionSharing2.jpg!
+{% endindent %}
+
 
 The end-to-end path between the 2 data center nodes includes the servlet and Shiro filters, and the IMDG with local cache and WAN Gateway.
 
-{indent}!httpSessionSharing3.jpg!{indent}
+
+{% indent %}
+!httpSessionSharing3.jpg!
+{% endindent %}
+
 
 ### Load-Balancing Scenarios
 
@@ -73,7 +85,11 @@ Have `cacheManager.cacheSessionLocally = true` when you would like multiple web 
 
 {% column %}
 
-{indent}!GRA:Images2^http-session-non-sticky.jpg!{indent}
+
+{% indent %}
+!GRA:Images2^http-session-non-sticky.jpg!
+{% endindent %}
+
 
 {% endcolumn %}
 
@@ -91,7 +107,11 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 
 {% column %}
 
-{indent}!GRA:Images2^http-session-sticky.jpg!{indent}
+
+{% indent %}
+!GRA:Images2^http-session-sticky.jpg!
+{% endindent %}
+
 
 {% endcolumn %}
 
@@ -274,17 +294,33 @@ The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblo
 The URL above assumes the Web Server configured to use port 8080.
 {% endnote %}
 
-{indent}!httpSessionSharing4.jpg!{indent}
+
+{% indent %}
+!httpSessionSharing4.jpg!
+{% endindent %}
+
 5. Set some values for the Session Name and Attribute and click the **Update Session** button.
 6. View the session within the space via the GS-UI. Click the Data-Types icon , click the `org.openspaces.sessions.shiro.SpaceSession` class and Click the query button. The Query view will be displayed. You can double click any of the sessions and drill into the attributes map within the session to view the session attributes:
-{indent}!httpSessionSharing5.jpg|thumbnail!{indent}
+
+{% indent %}
+!httpSessionSharing5.jpg|thumbnail!
+{% endindent %}
+
 
 ### Multi-Web Servers Deployment
 
 ##### Multiple Tabs
 You may share the HTTP session between different web servers. To test this on your local environment you can install multiple web servers, deploy the web application and have your browser access the same application via the same browser. See the below example:
-{indent}!httpSessionSharing8.jpg|thumbnail!{indent}
-{indent}!httpSessionSharing9.jpg|thumbnail!{indent}
+
+{% indent %}
+!httpSessionSharing8.jpg|thumbnail!
+{% endindent %}
+
+
+{% indent %}
+!httpSessionSharing9.jpg|thumbnail!
+{% endindent %}
+
 Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the space.
 
 {% note %}
@@ -347,12 +383,20 @@ The `127.0.0.1` IP should be replaced with appropriate IP addresses of the machi
 {% endnote %}
 
 5. Once you have the space running, Websphere running, Tomcat running, and Apache httpd configured, restart the Apache http. On windows you can use its service.
-{indent}!httpSessionSharing7.jpg|thumbnail!{indent}
+
+{% indent %}
+!httpSessionSharing7.jpg|thumbnail!
+{% endindent %}
+
 6. Once you performed the above steps, access the following URL:
 http://127.0.0.1:8888/HttpSession
 You should have the web application running. Any access to the web application will be routed between Websphere and Tomcat. You can check this by accessing the Apache httpd balancer console:
 http://127.0.0.1:8888/balancer-manager
-{indent}!httpSessionSharing6.jpg|thumbnail!{indent}
+
+{% indent %}
+!httpSessionSharing6.jpg|thumbnail!
+{% endindent %}
+
 You can shutdown Websphere or Tomcat and later restart these. Your web application will not lose its session data.
 
 ### Multi-Site Deployment

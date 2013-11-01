@@ -29,11 +29,23 @@ The Processing Unit configuration should follow the basic standards that compris
 ##  The Data Colocation Deployment Topologies
 When deploying the processing unit, one of the following data colocation deployment topologies can be used:
 - Pure business logic - the state is stored within another processing unit deployed separately. Multiple instances of the business logic can be deployed and scaled dynamically.
-{indent}!GRA:Images^pu_with_bean.gif!{indent}
+
+{% indent %}
+!GRA:Images^pu_with_bean.gif!
+{% endindent %}
+
 - Space instance(s) - these are deployed using one of the built-in cluster topologies (replicated, partitioned or partitioned-replicated) or a custom topology.
-{indent}!GRA:Images^pu_with_space.gif!{indent}
+
+{% indent %}
+!GRA:Images^pu_with_space.gif!
+{% endindent %}
+
 - Business logic and colocated space instance(s) - the business logic accesses only the colocated spaces or remote space instances running within another processing instance (or running as part of different processing unit). You can deploy these using any of the built-in cluster topologies.
-{indent}!GRA:Images^pu_with_space_and_bean.gif!{indent}
+
+{% indent %}
+!GRA:Images^pu_with_space_and_bean.gif!
+{% endindent %}
+
 - Business logic with a local cache - this scenario is relevant for read-mostly cases, where some of the data is cached at the client side.
 
 There are no remote calls involved when the business logic interacts only with its colocated space. Remote calls would be involved in the case where the business logic accesses remote spaces explicitly (with a space proxy configured in a clustered mode), and when the colocated space is configured to have a replica (backup) space. In this case (the replica space), every destructive operation (write, update, take) triggers a replication event that transports the colocated space changes to the replica space(s). Data replication can be done synchronously (which impacts performance), or asynchronously (which does not affect performance).
@@ -63,7 +75,11 @@ To solve this bottleneck, the processing unit allows you to **colocate** the bus
 {% column width=50% %}
 
 Collocated Mode - The Task Executor-Step 1:
-{indent}!GRA:Images^DistributedTaskExecution_phase1.jpg!{indent}
+
+{% indent %}
+!GRA:Images^DistributedTaskExecution_phase1.jpg!
+{% endindent %}
+
 
 {% endcolumn %}
 
@@ -71,7 +87,11 @@ Collocated Mode - The Task Executor-Step 1:
 {% column width=50% %}
 
 Collocated Mode - The Task Executor-Step 2:
-{indent}!GRA:Images^DistributedTaskExecution_phase2.jpg!{indent}
+
+{% indent %}
+!GRA:Images^DistributedTaskExecution_phase2.jpg!
+{% endindent %}
+
 
 {% endcolumn %}
 
@@ -86,7 +106,11 @@ In this case, it makes better sense to have the data and business logic running 
 {% column width=50% %}
 
 Non-Collocated Mode - The Master Worker Pattern-Step 1:
-{indent}!GRA:Images^master_worker_rr1.jpg!{indent}
+
+{% indent %}
+!GRA:Images^master_worker_rr1.jpg!
+{% endindent %}
+
 
 {% endcolumn %}
 
@@ -94,7 +118,11 @@ Non-Collocated Mode - The Master Worker Pattern-Step 1:
 {% column width=50% %}
 
 Non-Collocated Mode - The Master Worker Pattern-Step 2:
-{indent}!GRA:Images^master_worker_rr2.jpg!{indent}
+
+{% indent %}
+!GRA:Images^master_worker_rr2.jpg!
+{% endindent %}
+
 
 {% endcolumn %}
 

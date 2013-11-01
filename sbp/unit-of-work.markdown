@@ -60,7 +60,11 @@ With the above scenario requests 1, 3 and 4 should be processed as one atomic op
 4. Transaction is committed.
 5. Other groups are processes in-parallel by other polling containers.
 
-{indent}!GRA:Images2^uow_1.jpg!{indent}
+
+{% indent %}
+!GRA:Images2^uow_1.jpg!
+{% endindent %}
+
 
 # UOW Example
 
@@ -73,9 +77,17 @@ You can [download|^uow.zip] eclipse project with example source code, running sc
 {gdeck:RunningExample|top}
 {gcard:Running the UOWProcessor within your IDE}
 You can run the UOW Data-Grid with the collocated `UOWProcessor` within your IDE using the following configuration:
-{indent}!GRA:Images^uow_3.jpg!{indent}
+
+{% indent %}
+!GRA:Images^uow_3.jpg!
+{% endindent %}
+
 Here is a configuration for a UOW Data-Grid with 2 partitions:
-{indent}!GRA:Images^uow_2.jpg!{indent}
+
+{% indent %}
+!GRA:Images^uow_2.jpg!
+{% endindent %}
+
 {gcard}
 
 {gcard:Deploying the UOWProcessor into the Service Grid}
@@ -99,7 +111,11 @@ This will deploy the UOW Data-Grid with 2 partitions and a backup.
 {gcard}
 {gcard:Running the UOWFeeder}
 You can run the `UOWFeeder` within your IDE using the following configuration:
-{indent}!GRA:Images^uow_4.jpg!{indent}
+
+{% indent %}
+!GRA:Images^uow_4.jpg!
+{% endindent %}
+
 or using the following:
 
 

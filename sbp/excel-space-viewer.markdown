@@ -40,7 +40,11 @@ The Space Viewer toolbar includes the following options:
 - **[Configure View|#Changing Existing View]** -- allows you to edit and customize existing views
 - **Refresh results** -- refreshes the view or views with updated data
 
-{indent}!Toolbar3.JPG!{indent}
+
+{% indent %}
+!Toolbar3.JPG!
+{% endindent %}
+
 
 ## Creating New View
 
@@ -51,7 +55,11 @@ The **Create View** option allows you to create a view of space data inside your
 - The **Undisplayable Columns** area lists fields that belong to this class, but can't be displayed in Excel (usually user-defined fields).
 - The **Selected Columns** area displays the fields you choose to display in this view. Use the arrow buttons (for example: !arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpg!) allow you to organize the fields in the order in which they will appear in the final view.
 
-{indent}!ConfigureView2.JPG!{indent}
+
+{% indent %}
+!ConfigureView2.JPG!
+{% endindent %}
+
 
 - It is possible to connect to any running space in your network.
 To connect to a space:
@@ -63,7 +71,12 @@ To connect to a space:
     <protocol>://<host name>:<port>/<container name>/<space name>?<properties>
 {% endhighlight %}
 
-    {indent}!Connect1.JPG!{indent}
+
+
+{% indent %}
+!Connect1.JPG!
+{% endindent %}
+
 - The **Customize the Selection** button opens the [#Customize the Selection] window.
 
 {% anchor create %}
@@ -74,7 +87,11 @@ To create a new view:
 4. If you want to narrow your view to more specific results (by querying your class fields), click the **Customize the Selection** button (see [**Customize the Selection**|#Customize the Selection]).
 {% infosign %} This step is optional. If you want to generate the view with all the existing entries of the selected type in the space, proceed to the next step.
     1. On the left side of the Customize the Selection window, click the class field you want to query. (For example, the **Age** field is selected below.)
-{indent}!CustomizeTheSelection1.JPG!{indent}
+
+{% indent %}
+!CustomizeTheSelection1.JPG!
+{% endindent %}
+
     2. The selected field appears on the right, under **WHERE**. You can now select the desired expression and value, and choose to sort your results in an ascending or descending manner.
     3. When you've finished selecting, press **Save**.
     4. Your query syntax is shown in the **SQL** area. Under the **SQL** box, the number of instances (the query's result) is displayed.
@@ -104,7 +121,11 @@ By clicking a field, the top right pane is enabled with customization options fo
 Pressing **Save** saves the query for this field.
 
 The **SQL** area at the bottom displays the query syntax in SQL. After pressing **Save** on the right, the number of instances found as a result of this query is displayed under the **SQL** area (this is also the number of rows that will appear in this column). You can refresh this result using the refresh button ( !ExcelRefresh.jpg!).
-{indent}!CustomizeTheSelection1.JPG!{indent}
+
+{% indent %}
+!CustomizeTheSelection1.JPG!
+{% endindent %}
+
 
 ## Changing Existing View
 
@@ -138,14 +159,26 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 2. Run the `GigaSpacesViewerSetup.msi` file.
  {% exclamation %} If the .NET Framework is not installed on your machine, the system opens a dialog asking whether you want to install it. In this case, select **Yes** and proceed with the installation. After you finish installing, reopen the `GigaSpacesViewerSetup.msi` file and continue the procedure below.
 3. The Excel Space Viewer Setup Wizard is displayed:
-{indent}!ExcelSpaceViewer_setup_1.jpg!{indent}
+
+{% indent %}
+!ExcelSpaceViewer_setup_1.jpg!
+{% endindent %}
+
 4. In the Select Installation Folder window, browse to the desired installation folder. Choose whether you want the Excel Space Viewer to be used by you only, or by other users:
-{indent}!ExcelSpaceViewer_setup_2.jpg!{indent}
+
+{% indent %}
+!ExcelSpaceViewer_setup_2.jpg!
+{% endindent %}
+
 5. In the Confirm Installation window, click **Next**.
 6. Wait for the installation to complete and click **Next**, then click **Close**.
 7. Open Excel.
 8. A new toolbar appears in the top left:
-{indent}!Toolbar4.JPG!{indent}
+
+{% indent %}
+!Toolbar4.JPG!
+{% endindent %}
+
 
 # Troubleshooting
 

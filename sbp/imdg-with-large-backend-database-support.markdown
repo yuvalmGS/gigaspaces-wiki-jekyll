@@ -41,7 +41,11 @@ Here is the full query execution strategy:
     - Load data in order - first into the partition with the highest amount of free memory.
     - Optional - check with other partitions if they access the database to avoid concurrent database access.
 
-{indent}!GRA:Images^imdg_eviction_large_db.jpg!{indent}
+
+{% indent %}
+!GRA:Images^imdg_eviction_large_db.jpg!
+{% endindent %}
+
 
 ## Data Eviction Options
 To control the data within the space should evict it. Evicting data from the space can be done using the following options:

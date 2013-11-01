@@ -20,7 +20,11 @@ page_id: 56426564
 # Overview
 This example illustrates a simple web service packaged as a WAR using [Apache CXF|http://cxf.apache.org] 2.4. Web service is also interacting with a space and performing read and write operations on behalf of the client.
 
-{indent}!web_service_pu.jpg!{indent}
+
+{% indent %}
+!web_service_pu.jpg!
+{% endindent %}
+
 
 For simplicity:
 - Space is collocated with the web service.
@@ -180,9 +184,17 @@ All calls were successful
 ### SOAP UI
 You can use the [SOAP UI|http://www.soapui.org] to test the web service.
 Writing a Custmer object:
-{indent}!soap_ui1.jpg!{indent}
+
+{% indent %}
+!soap_ui1.jpg!
+{% endindent %}
+
 Reading a Custmer object:
-{indent}!soap_ui2.jpg!{indent}
+
+{% indent %}
+!soap_ui2.jpg!
+{% endindent %}
+
 
 The Server will have the following output:
 
@@ -196,9 +208,17 @@ found 1 Customers matching the name:Smith
 
 ## Checking the Data within the Space
 When the client application running sucessfuly you will be able to see the Customer data within the space using the GS-UI.
-{indent}!web_serv_ui1.jpg|thumbnail!{indent}
+
+{% indent %}
+!web_serv_ui1.jpg|thumbnail!
+{% endindent %}
+
 Click the Query button to view the Customer Data:
-{indent}!web_serv_ui2.jpg|thumbnail!{indent}
+
+{% indent %}
+!web_serv_ui2.jpg|thumbnail!
+{% endindent %}
+
 
 # WAR file jars
 The CustomerServicePort.war file includes the following jars within its `\CustomerServicePort\WEB-INF\lib` folder.

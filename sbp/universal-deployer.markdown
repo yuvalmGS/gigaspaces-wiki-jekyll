@@ -29,7 +29,11 @@ Starting with XAP 9 you may use the **Deployment Dependencies API** to specify t
 ## Dependency Based Deployment
 The GUD allows you to specify for each deployed PU its dependency PU list. The dependent PU will be deployed after all its PUs dependencies will be fully deployed. The mechanism is recursive; if any of these PUs depends on other PU(s), these will be deployed before the top level dependent PU is deployed. This ensures the deploy order will have the entire PUs deployed in the correct order.
 
-{indent}!universantDeploy_depen.jpg!{indent}
+
+{% indent %}
+!universantDeploy_depen.jpg!
+{% endindent %}
+
 
 To describe the above deploy plan the GUD should have the following config file:
 

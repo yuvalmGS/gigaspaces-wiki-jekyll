@@ -33,7 +33,11 @@ Here are the example components:
 - A Verifier Service consuming state=0 objects and moving these into state=1
 - An Approver Service consuming state=1 objects and moving these into state=2
 - A Monitor Service used to Scale Up and Down the Verifier Service in a Dynamic Manner.
-{indent}!GRA:Images^mule_example_flow1.jpg!{indent}
+
+{% indent %}
+!GRA:Images^mule_example_flow1.jpg!
+{% endindent %}
+
 
 The example using the polling container as the inbound-endpoint with each Service and a space connector as the outbound-endpoint where a state field within the [Data|#The Space Data Class] object acts as the workflow "Queue".
 
@@ -301,12 +305,24 @@ In order to deploy the different Processing unit comprising this example:
 {% exclamation %} You may find the different Processing Unit libraries under the `target` folder of each Processing Unit.
 
 Once the different processing will be deployed you should have the following displayed as part of the GS-UI:
-{indent}!GRA:Screens^mule_deploy.jpg!{indent}
-{indent}!GRA:Screens^mule_grid.jpg!{indent}
+
+{% indent %}
+!GRA:Screens^mule_deploy.jpg!
+{% endindent %}
+
+
+{% indent %}
+!GRA:Screens^mule_grid.jpg!
+{% endindent %}
+
 
 {% comment %}
 
-{indent}!GRA:Screens^mule_grid.jpg|height=50%,width=50%!{indent}
+
+{% indent %}
+!GRA:Screens^mule_grid.jpg|height=50%,width=50%!
+{% endindent %}
+
 
 {% endcomment %}
 
@@ -315,16 +331,28 @@ You may check the statistics you review the Write and Take operations called by 
 
 # Scale Manually
 You may have multiple instances of each service running. Running multiple instances of the Feeder service will push more Data objects into the Space. Running multiple services of the Approver or Verifier will consume relevant objects faster.
-{indent}!GRA:Images^mule_example_flow2.jpg!{indent}
+
+{% indent %}
+!GRA:Images^mule_example_flow2.jpg!
+{% endindent %}
+
 In order to increase the amount of the deployed services (Feeder, Approver or Verifier) , select the relevant processing unit and click the Increase button. See example below:
 
 {% comment %}
 
-{indent}!GRA:Screens^mule_scale_manual.jpg|height=50%,width=50%!{indent}
+
+{% indent %}
+!GRA:Screens^mule_scale_manual.jpg|height=50%,width=50%!
+{% endindent %}
+
 
 {% endcomment %}
 
-{indent}!GRA:Screens^mule_scale_manual.jpg!{indent}
+
+{% indent %}
+!GRA:Screens^mule_scale_manual.jpg!
+{% endindent %}
+
 A new instance of the relevant service will be created at of the existing running GSCs.
 
 # Scale Dynamically
@@ -369,7 +397,11 @@ To see how the Verifier Service scale up, deploy the Feeder with 2 instances:
 {% endhighlight %}
 
 The Monitor Service will increment the amount of verifier instances when there will be 50 ,100, 150 and 200 Data objects with `state=0` within the IMDG.
-{indent}!GRA:Images^mule_scale_u.jpg!{indent}
+
+{% indent %}
+!GRA:Images^mule_scale_u.jpg!
+{% endindent %}
+
 You can Query the IMDG via the Query view for Data objects with `state=0` using the following Query:
 
 
@@ -386,7 +418,11 @@ To scale Down the verifier Service undeploy the Feeder PU.
 {% endhighlight %}
 
 The Monitor Service will decrement the amount of verifier instances when there will be 50 ,40 30 and 20 Data objects with `state=0` within the IMDG.
-{indent}!GRA:Images^mule_scale_d.jpg!{indent}
+
+{% indent %}
+!GRA:Images^mule_scale_d.jpg!
+{% endindent %}
+
 
 # Transaction Support
 You may add [transaction support|XAP8:Mule Event Container Transport#Transaction Support] to the Mule Service by adding the `distributed-tx-manager` and the `tx-support` tags. Since we are using a clustered space we will be using the [Distributed Jini Transaction Manager|XAP8:Transaction Management#Distributed Jini Transaction Manager].

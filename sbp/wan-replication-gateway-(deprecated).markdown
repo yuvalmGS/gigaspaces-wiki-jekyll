@@ -26,7 +26,11 @@ This is a simple order processing example based on GigaSpaces maven basic-async-
 
 # Mirror Gateway - One way
 
-{indent}!rep_over_wan_MirrorGatewayOneway.jpg!{indent}
+
+{% indent %}
+!rep_over_wan_MirrorGatewayOneway.jpg!
+{% endindent %}
+
 
 # Source Code
 

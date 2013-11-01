@@ -28,7 +28,11 @@ If you would like to perform hardware maintenance activities without shutting do
 
 The [Space Dump Utility|^spacedump.zip] copies the data currently stored within the IMDG and saves it into an embedded DB file used by a temporary space. Later, once you would like to reload the data back into the IMDG, the utility performs the procedure in a reverse manner, by reading the data from the file and copy it back into the IMDG.
 
-{indent}!GRA:Images^spaceDumpReload.jpg!{indent}
+
+{% indent %}
+!GRA:Images^spaceDumpReload.jpg!
+{% endindent %}
+
 
 The Space Dump utility uses a temporary persistent space approach with the [space copy API|http://www.gigaspaces.com/docs/JavaDoc7.1/com/j_spaces/core/admin/IRemoteJSpaceAdmin.html#spaceCopy]. This allows the utility to consume all the data from every IMDG partition and push it into a file. To reload the data from the file, the temporary space is started, loading the data from the file, and then the data is copied back into the relevant IMDG partition. If the IMDG is running backup spaces, these are restarted to allow them to recover their data from their relevant primary instance.
 

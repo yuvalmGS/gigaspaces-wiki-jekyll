@@ -53,11 +53,23 @@ The .NET files are created in the `<Example Root>\Release` directory.
 
 1. In Excel, go to **Tools** > **add ins** > **automation**.
 2. Scroll down to **GigaSpaces.Examples.ExcelStocks.Operations.StockOperations**, select it and click **OK**.
-{indent}!automation.JPG!{indent}
+
+{% indent %}
+!automation.JPG!
+{% endindent %}
+
 3. You might get a dialog at this point about mscoree.dll. Click No to this dialog (Yes will delete the add-in from the list).
-{indent}!mscoree_dll.JPG!{indent}
+
+{% indent %}
+!mscoree_dll.JPG!
+{% endindent %}
+
 4. Click **OK** in the Add-ins dialog.
-{indent}!add-ins.JPG!{indent}
+
+{% indent %}
+!add-ins.JPG!
+{% endindent %}
+
 
 ## Opening .NET Solution with Microsoft Visual Studio
 

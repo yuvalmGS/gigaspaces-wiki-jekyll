@@ -31,7 +31,11 @@ In both cases, the business logic will be invoked with a collocated space.
 
 1. Download the [example|Map-Reduce Pattern - Executors Example^ExecutorExample.zip] and extract the zip file. Open your IDE and import the project files.
 2. Set the project libraries to have the correct GigaSpaces libraries location. Make sure your project libraries list will include all the libraries located at `gigaspaces-xap\lib\required`.
-{indent}!project_libraries.jpg|thumbnail!{indent}
+
+{% indent %}
+!project_libraries.jpg|thumbnail!
+{% endindent %}
+
 
 # Executors Task Example
 {toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
@@ -246,7 +250,11 @@ Log file: C:\gigaspaces-xap-premium-7.1.2-ga\logs\2010-12-17~14.14-gigaspaces-se
 
 
 You can view the space operations statistics by running the `\gigaspaces-xap\bin\gs-ui`:
-{indent}!exe_example_stats.jpg|thumbnail!{indent}
+
+{% indent %}
+!exe_example_stats.jpg|thumbnail!
+{% endindent %}
+
 {toc-zone}
 
 # Service Executors Example
@@ -504,5 +512,9 @@ Log file: C:\gigaspaces-xap-premium-7.1.2-ga\logs\2010-12-17~14.12-gigaspaces-se
 
 
 You can view the space operations statistics by running the `\gigaspaces-xap\bin\gs-ui`:
-{indent}!exe_example_stats.jpg|thumbnail!{indent}
+
+{% indent %}
+!exe_example_stats.jpg|thumbnail!
+{% endindent %}
+
 {toc-zone}

@@ -314,10 +314,18 @@ To simplify the deployment of the examples, there are several scripts in the exa
 
 ## Feeder Application
 
-{indent}!GRA:Images^ScalingAgentFeeder.jpg!{indent}
+
+{% indent %}
+!GRA:Images^ScalingAgentFeeder.jpg!
+{% endindent %}
+
 
 ## Agent Application
 
-{indent}!GRA:Images^ScalingAgentConsole.jpg!{indent}
+
+{% indent %}
+!GRA:Images^ScalingAgentConsole.jpg!
+{% endindent %}
+
 
 {rate}
