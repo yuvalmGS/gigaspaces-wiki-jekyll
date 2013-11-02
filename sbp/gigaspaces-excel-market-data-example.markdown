@@ -57,19 +57,19 @@ The .NET files are created in the `<Example Root>\Release` directory.
 2. Scroll down to **GigaSpaces.Examples.ExcelStocks.Operations.StockOperations**, select it and click **OK**.
 
 {% indent %}
-!automation.JPG!
+depanimageautomation.JPGtengahimage/attachment_files/sbp/automation.JPGbelakangimage
 {% endindent %}
 
 3. You might get a dialog at this point about mscoree.dll. Click No to this dialog (Yes will delete the add-in from the list).
 
 {% indent %}
-!mscoree_dll.JPG!
+depanimagemscoree_dll.JPGtengahimage/attachment_files/sbp/mscoree_dll.JPGbelakangimage
 {% endindent %}
 
 4. Click **OK** in the Add-ins dialog.
 
 {% indent %}
-!add-ins.JPG!
+depanimageadd-ins.JPGtengahimage/attachment_files/sbp/add-ins.JPGbelakangimage
 {% endindent %}
 
 

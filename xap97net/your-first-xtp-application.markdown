@@ -17,7 +17,7 @@ page_id: 63799346
 
 {% column width=86% %}
 
-{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|`<GigaSpaces Root>\Examples\ProcessingUnit` |
+{% align center %}||depanimagewiki_icon_folder.giftengahimage/attachment_files/xap97net/wiki_icon_folder.gifbelakangimage||Example Root|`<GigaSpaces Root>\Examples\ProcessingUnit` |
 {% endalign %}
 
 {% endcolumn %}
@@ -43,7 +43,7 @@ The example solution is based on three projects:
 2. Feeder - holds the DataFeeder processing unit logic.
 3. Processor - holds the DataProcessor processing unit logic and related classes.
 
-!GRA:Images^dataexample architecture.jpg!
+depanimagedataexample architecture.jpgtengahimage/attachment_files/xap97net/dataexample architecture.jpgbelakangimage
 
 ## Application Workflow
 
@@ -377,10 +377,10 @@ After you run the build script and the copy deployment files script, the two dir
 
 {% exclamation %} Since the spaces are running inside the `DataProcessor`, the `DataProcessor` should be deployed first and the `DataFeeder` second.
 
-1. In the GigaSpaces Management Center, click on the tab named Deployments, Details, and then click the **Deploy new application** button (!GRA:Images^deploy button.jpg!).
+1. In the GigaSpaces Management Center, click on the tab named Deployments, Details, and then click the **Deploy new application** button (depanimagedeploy button.jpgtengahimage/attachment_files/xap97net/deploy button.jpgbelakangimage).
 
 {% indent %}
-!GRA:Images^deploy picture.jpg!
+depanimagedeploy picture.jpgtengahimage/attachment_files/xap97net/deploy picture.jpgbelakangimage
 {% endindent %}
 
 2. Now, all you need to do is type the name of the Processing Unit (identical to the name of the folder that is now in the `deploy` directory) in the `Processing Unit Name` field. Since there's an existing sla.xml with specific cluster topology, there's no need to specify the cluster topology at deploy time.
@@ -402,7 +402,7 @@ Each processing unit instance is deployed in a seperate isolated AppDomain with 
 
 Once the processing units are deployed, they will appear in the managament center and the different components can be monitored:
 
-!GRA:Images^deployed dataexample.jpg!
+depanimagedeployed dataexample.jpgtengahimage/attachment_files/xap97net/deployed dataexample.jpgbelakangimage
 
 {% anchor ide %}
 

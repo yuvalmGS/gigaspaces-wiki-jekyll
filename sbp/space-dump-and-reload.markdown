@@ -32,7 +32,7 @@ The [Space Dump Utility|^spacedump.zip] copies the data currently stored within 
 
 
 {% indent %}
-!GRA:Images^spaceDumpReload.jpg!
+depanimagespaceDumpReload.jpgtengahimage/attachment_files/sbp/spaceDumpReload.jpgbelakangimage
 {% endindent %}
 
 

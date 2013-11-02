@@ -45,7 +45,7 @@ page_id: 63799428
 
 {% align center %}
 
-!GRA:Images^sba_with_backup.jpg!
+depanimagesba_with_backup.jpgtengahimage/attachment_files/sbp/sba_with_backup.jpgbelakangimage
 
 {% sub %}**An SBA implementation, with 3 primary instances and one backup for each them, accessed by two client applications**{% endsub %}
 

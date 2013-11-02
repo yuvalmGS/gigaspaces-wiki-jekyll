@@ -58,7 +58,7 @@ See below an example of an object footprint using a 32 and 64 Bit JVM using diff
 
 
 {% indent %}
-!footprint_bench7.1.2.jpg!
+depanimagefootprint_bench7.1.2.jpgtengahimage/attachment_files/sbp/footprint_bench7.1.2.jpgbelakangimage
 {% endindent %}
 
 
@@ -143,7 +143,7 @@ The machines run Linux 64 bit OS. Allocating 6GB per JVM as the max heap size fo
 
 
 {% indent %}
-!GRA:Images^capacity_planning1.jpg!
+depanimagecapacity_planning1.jpgtengahimage/attachment_files/sbp/capacity_planning1.jpgbelakangimage
 {% endindent %}
 
 Figure 1: 2 Machines Topology - five IMDG Instances per GSC, total 64GB RAM
@@ -152,7 +152,7 @@ Having a maximum of 40 GSCs hosting the IMDG, means you might want to have half 
 
 
 {% indent %}
-!GRA:Images^capacity_planning2.jpg!
+depanimagecapacity_planning2.jpgtengahimage/attachment_files/sbp/capacity_planning2.jpgbelakangimage
 {% endindent %}
 
 Figure 2: 10 Machines Topology - one IMDG Instance per GSC, total 320GB RAM

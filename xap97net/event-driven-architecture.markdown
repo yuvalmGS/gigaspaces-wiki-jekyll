@@ -6,4 +6,4 @@ page_id: 63799329
 ---
 
 
-!GRA:Images^Net_polling_notify_cont.jpg!
+depanimageNet_polling_notify_cont.jpgtengahimage/attachment_files/xap97net/Net_polling_notify_cont.jpgbelakangimage

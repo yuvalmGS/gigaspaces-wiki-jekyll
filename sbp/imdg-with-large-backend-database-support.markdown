@@ -45,7 +45,7 @@ Here is the full query execution strategy:
 
 
 {% indent %}
-!GRA:Images^imdg_eviction_large_db.jpg!
+depanimageimdg_eviction_large_db.jpgtengahimage/attachment_files/sbp/imdg_eviction_large_db.jpgbelakangimage
 {% endindent %}
 
 

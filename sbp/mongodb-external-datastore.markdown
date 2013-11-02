@@ -31,7 +31,7 @@ The mirror project is held on github in the [best practices|https://github.com/G
 # How the NoSQL EDS implementations work?
 The GigaSpaces XAP external datastore is used by two kinds of processing units: a stateful processing unit (which represents the data grid) and a mirror processing unit (whose sole purpose is to use an external datastore via write-through to persist data.)
 
-!noSQL-EDS.jpg!
+depanimagenoSQL-EDS.jpgtengahimage/attachment_files/sbp/noSQL-EDS.jpgbelakangimage
 There are two phases of an EDS: writethrough persistence and initial load. The writethrough phase is what writes the data from the data grid to the backend data store; the initial load phase is run on datagrid startup, to load the data from the external data store into the data grid.
 
 ## Configuring the Mirror

@@ -12,7 +12,7 @@ page_id: 63799304
 # Overview
 
 GigaSpaces .Net provides an explicit transaction management programing model. It allows developers to easily write transactional code with the lowest overhead possible while minimizing the amount of hand-crafted code and separating it from the application hosting environment and instance management. This section presents the programming model and its main features.
-!GRA:Images^tx_manager.jpg!
+depanimagetx_manager.jpgtengahimage/attachment_files/xap97net/tx_manager.jpgbelakangimage
 With the GigaSpaces .Net transaction model the developer is responsible for explicitly starting and managing the transaction. You obtain an object representing the underlying space transaction by calling `GigaSpacesFactory.CreateDistributedTransactionManager`.  This call returns an implementation of the `ITransactionManager` interface used to create the transaction using the `ITransactionManager.Create()` call. This return `ITransaction` object that should be used with every space operations that participant with the transaction. Once you would like to commit the transaction call the `ITransaction.Commit()`.
 If any error occurred, you need to abort the transaction by calling `ITransaction.Abort()`. To clean up the transaction resources call the `ITransaction.Dispose()`.
 

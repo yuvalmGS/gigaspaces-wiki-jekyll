@@ -11,11 +11,11 @@ page_id: 63799300
 
 # Overview
 
-!GRA:Images2^new-in-805-ribbon.png|align=right!
+depanimagenew-in-805-ribbon.pngtengahimage/attachment_files/xap97net/new-in-805-ribbon.pngbelakangimage
 The Applications Module allow users to manage and monitor XAP applications.
 It offers a wide set of functionality from deployment to verification, monitoring and log tracing.
 
-!GRA:Images2^apps_explained.png!
+depanimageapps_explained.pngtengahimage/attachment_files/xap97net/apps_explained.pngbelakangimage
 
 # The Application Map
 
@@ -24,17 +24,17 @@ It allow the user to compare the plan with the actual deployment in any given mo
 
 ### Overview
 
-!GRA:Images2^app_map_explained.png!
+depanimageapp_map_explained.pngtengahimage/attachment_files/xap97net/app_map_explained.pngbelakangimage
 
 ### Understanding the processing unit display
 
 The application map depicts a shape per each processing unit
-!GRA:Images2^pu.jpg!
+depanimagepu.jpgtengahimage/attachment_files/xap97net/pu.jpgbelakangimage
 
 It shows the deployment and dependencies between each processing unit, belonging to the chosen "application" from the drop-down menu.
 Processing units that were not deployed in the context of an application, will be shown under "Unassigned Services".
 
-!GRA:Images^unassigned_selection.jpg|border=1!
+depanimageunassigned_selection.jpgtengahimage/attachment_files/xap97net/unassigned_selection.jpgbelakangimage
 
 ### Processing Unit dependencies
 
@@ -46,19 +46,19 @@ For more information on processing unit dependencies, see [Application deploymen
 {% endinfo %}
 
 
-!GRA:Images^application_dependency.png|border=1!
+depanimageapplication_dependency.pngtengahimage/attachment_files/xap97net/application_dependency.pngbelakangimage
 
 |**Icon**|**Description**|
-|!GRA:Images2^segment.png!|Space Partition|
-|!GRA:Images2^segments.png!|Space Partition with backup|
-|!GRA:Images2^data.png!|Space Replica|
-|!GRA:Images2^process.png!|Processing (Business Logic)|
-|!GRA:Images2^pipe.png!|Event Container (Messaging)|
-|!GRA:Images2^world.png!|Web application|
+|depanimagesegment.pngtengahimage/attachment_files/xap97net/segment.pngbelakangimage|Space Partition|
+|depanimagesegments.pngtengahimage/attachment_files/xap97net/segments.pngbelakangimage|Space Partition with backup|
+|depanimagedata.pngtengahimage/attachment_files/xap97net/data.pngbelakangimage|Space Replica|
+|depanimageprocess.pngtengahimage/attachment_files/xap97net/process.pngbelakangimage|Processing (Business Logic)|
+|depanimagepipe.pngtengahimage/attachment_files/xap97net/pipe.pngbelakangimage|Event Container (Messaging)|
+|depanimageworld.pngtengahimage/attachment_files/xap97net/world.pngbelakangimage|Web application|
 
 ### Contextual Actions
 
-!GRA:Images2^actions_explained.png!
+depanimageactions_explained.pngtengahimage/attachment_files/xap97net/actions_explained.pngbelakangimage
 
 # The Monitoring view
 
@@ -66,12 +66,12 @@ The monitoring view, allows the user to monitor the performance of a the selecte
 
 ### Understanding the widgets
 
-!GRA:Images2^metrics_explained.png!
+depanimagemetrics_explained.pngtengahimage/attachment_files/xap97net/metrics_explained.pngbelakangimage
 
 # The Infrastructure view
 
 The infrastructure view allows the user to verify the application's topology. It maps the processing unit instances to hosts, providing some basic information about each host.
-!GRA:Images2^infra_explained.png!
+depanimageinfra_explained.pngtengahimage/attachment_files/xap97net/infra_explained.pngbelakangimage
 
 # The Services view
 
@@ -79,18 +79,18 @@ The services view allows the user to get information at the processing unit inst
 
 ### Comparing Instances
 
-!GRA:Images2^services_explained.png!
+depanimageservices_explained.pngtengahimage/attachment_files/xap97net/services_explained.pngbelakangimage
 
 ### Service Instance Details
 
-!GRA:Images2^details_explained.png!
+depanimagedetails_explained.pngtengahimage/attachment_files/xap97net/details_explained.pngbelakangimage
 
 ### Contextual Actions
 
 # The Logs view
 
 The logs view allows the user to browse the application logs, filter or search them.
-!GRA:Images2^logs_explained.png!
+depanimagelogs_explained.pngtengahimage/attachment_files/xap97net/logs_explained.pngbelakangimage
 
 # Events time-line (per application)
 
@@ -102,4 +102,4 @@ For more information on the events displayed, see [Events time-line tab in dashb
 {% endinfo %}
 
 
-!GRA:Images^events_timeline_in_application.png|border=1!
+depanimageevents_timeline_in_application.pngtengahimage/attachment_files/xap97net/events_timeline_in_application.pngbelakangimage

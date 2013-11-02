@@ -46,11 +46,11 @@ The Event Driven Remoting allows you to:
 2. Load the example into your IDE (eclipse or your favorite Java development environment).
 3. Edit the project to include the correct GigaSpaces libraries location.
 4. Setup the Service PU run configuration:
-!event_remot3.jpg!
-!event_remot4.jpg!
+depanimageevent_remot3.jpgtengahimage/attachment_files/sbp/event_remot3.jpgbelakangimage
+depanimageevent_remot4.jpgtengahimage/attachment_files/sbp/event_remot4.jpgbelakangimage
 5. Setup the Client PU run configuration:
-!event_remot1.jpg!
-!event_remot2.jpg!
+depanimageevent_remot1.jpgtengahimage/attachment_files/sbp/event_remot1.jpgbelakangimage
+depanimageevent_remot2.jpgtengahimage/attachment_files/sbp/event_remot2.jpgbelakangimage
 6. Run the Service PU
 7. Run the Client PU. This will invoke the service to that will immediately return and after 10 seconds will receive the result.
 
@@ -62,7 +62,7 @@ To allow the client to invoke the service and immediately return the actual dial
 - The Service is writing back a Response object.
 - The client takes the Response object.
 
-!async_remot1.jpg!
+depanimageasync_remot1.jpgtengahimage/attachment_files/sbp/async_remot1.jpgbelakangimage
 
 ## Sample Client Output
 

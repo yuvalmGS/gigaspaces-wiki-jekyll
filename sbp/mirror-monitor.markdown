@@ -78,12 +78,12 @@ The example assumes that space is deployed before the mirror,if you require othe
 # Viewing the Mirror Statistics
 To view the Statistics gathered by the Mirror monitor:
 1. Start the JConsole via the Gigaspaces Mangament Console for the Mirror Service:
-!GRA:Screens^mirror_monitor2.jpg!
+depanimagemirror_monitor2.jpgtengahimage/attachment_files/sbp/mirror_monitor2.jpgbelakangimage
 
 2. Move into the MBeans Tab and select the com.gigaspaces.util.mirror.monitor:
-!GRA:Screens^mirror_monitor3.jpg!
+depanimagemirror_monitor3.jpgtengahimage/attachment_files/sbp/mirror_monitor3.jpgbelakangimage
 
 3.Select the Mirror Stats->Attributes:
-!GRA:Screens^mirror_monitor.jpg!
+depanimagemirror_monitor.jpgtengahimage/attachment_files/sbp/mirror_monitor.jpgbelakangimage
 
 Double clicking any of the values, will display a graph that will be refreshed automatically. Without having the graph displayed, you will have to click the Refresh button manually to see the most updated values for each statistic.

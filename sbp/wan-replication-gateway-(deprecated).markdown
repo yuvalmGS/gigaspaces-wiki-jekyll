@@ -30,7 +30,7 @@ This is a simple order processing example based on GigaSpaces maven basic-async-
 
 
 {% indent %}
-!rep_over_wan_MirrorGatewayOneway.jpg!
+depanimagerep_over_wan_MirrorGatewayOneway.jpgtengahimage/attachment_files/sbp/rep_over_wan_MirrorGatewayOneway.jpgbelakangimage
 {% endindent %}
 
 
@@ -310,7 +310,7 @@ mvn package -DskipTests
 5. Start a gs-ui instance.
 6. Run gs-agent-SiteA and gs-agent-SiteB scripts on appropriate machines.
 This will start GSA, GSM, LUS and 2 GSC's for SiteA with SiteA zone and GSA, GSM, LUS and 3 GSC's for SiteB with SiteB zone. Hosts tab in gs-ui will look like something below after you add the appropriate groups and locators in gs-ui,
-!after_gsa_start.jpg!
+depanimageafter_gsa_start.jpgtengahimage/attachment_files/sbp/after_gsa_start.jpgbelakangimage
 7. Deploy the SiteA space cluster (2,1) by running deploy-SiteA script from <multi-cluster-example> directory.
 8. Deploy the SiteB space cluster (3,1) using following,
 
@@ -329,7 +329,7 @@ mvn os:deploy -Dgroups=SiteB -Dlocators=192.168.2.100:14165 -Dmodule=mirror
 {% endhighlight %}
 
 10. Ensure that the spaces are mirror are available in gs-ui. Space Browser tab after everything is deployed will look like below,
-!after_deploying_everything.jpg!
+depanimageafter_deploying_everything.jpgtengahimage/attachment_files/sbp/after_deploying_everything.jpgbelakangimage
 11. For running the clients you need the common jar in the maven repo. Install the common jar using following,
 
 

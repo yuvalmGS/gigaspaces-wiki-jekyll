@@ -15,7 +15,7 @@ The `ISpaceProxy` interface is ideal for connecting to data stored in the Space.
 
 
 {% indent %}
-!GRA:Images2^space_basic_operations91.jpg|thumbnail!
+depanimagespace_basic_operations91.jpgtengahimage/attachment_files/xap97net/space_basic_operations91.jpgbelakangimage
 {% endindent %}
 
 
@@ -392,7 +392,7 @@ The GigaSpace interface supports asynchronous (non-blocking) read and asynchrono
 
 Alternatively, asyncRead and asyncTake also accept an implementation of [AsyncFutureListener<T>|http://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/async/AsyncFutureListener.html], which will have its [onResult(AsyncFuture<T>)|http://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/async/AsyncFutureListener.html#onResult(com.gigaspaces.async.AsyncResult)] method called when the result has been populated. This does not affect the return type of the Future<T>, but provides an additional mechanism for handling the asynchronous response.
 
-!GRA:Images2^async_operations.jpg!
+depanimageasync_operations.jpgtengahimage/attachment_files/xap97net/async_operations.jpgbelakangimage
 
 Asynchronous `write` operation can be implemented using a [Task|Task Execution over the Space], where the `Task` implementation include a write operation. With this approach the `Task` is sent to the space and executed in an asynchronous manner. The write operation itself will be completed once both the primary and the backup will acknowledge the operation. This activity will be performed as a background activity from the client perspective.
 

@@ -21,7 +21,7 @@ In some cases when querying the space for objects, only specific properties of o
 
 {% column %}
 
-!GRA:Images2^space-projections.jpg!
+depanimagespace-projections.jpgtengahimage/attachment_files/xap97net/space-projections.jpgbelakangimage
 
 {% endcolumn %}
 

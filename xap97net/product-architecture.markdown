@@ -18,7 +18,7 @@ GigaSpaces XAP is built from the following sub-systems:
 
 Each sub-system (layer) is responsible for providing application server capabilities, and the bottom layers provide services to the upper layers. Figure 1 provides a representation of the sub-systems which compose the entire GigaSpaces XAP product.
 
-!GS6:Images^XAP Architecture Overview.jpg|align=center!
+depanimageXAP Architecture Overview.jpgtengahimage/attachment_files/xap97net/XAP Architecture Overview.jpgbelakangimage
 {% align center %} {% sub %}**Figure 1. Architecture overview for GigaSpaces XAP**{% endsub %} {% endalign %}
 
 # SLA-Driven Container

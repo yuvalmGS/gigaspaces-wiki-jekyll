@@ -37,7 +37,7 @@ The following image depicts a common use case where there are multiple data cent
 
 
 {% indent %}
-!httpSessionSharing1.jpg!
+depanimagehttpSessionSharing1.jpgtengahimage/attachment_files/sbp/httpSessionSharing1.jpgbelakangimage
 {% endindent %}
 
 
@@ -72,7 +72,7 @@ The below diagram shows a more detailed view of the IMDG deployment. In this cas
 
 
 {% indent %}
-!httpSessionSharing2.jpg!
+depanimagehttpSessionSharing2.jpgtengahimage/attachment_files/sbp/httpSessionSharing2.jpgbelakangimage
 {% endindent %}
 
 
@@ -80,7 +80,7 @@ The end-to-end path between the 2 data center nodes includes the servlet and Shi
 
 
 {% indent %}
-!httpSessionSharing3.jpg!
+depanimagehttpSessionSharing3.jpgtengahimage/attachment_files/sbp/httpSessionSharing3.jpgbelakangimage
 {% endindent %}
 
 
@@ -103,7 +103,7 @@ Have `cacheManager.cacheSessionLocally = true` when you would like multiple web 
 
 
 {% indent %}
-!GRA:Images2^http-session-non-sticky.jpg!
+depanimagehttp-session-non-sticky.jpgtengahimage/attachment_files/sbp/http-session-non-sticky.jpgbelakangimage
 {% endindent %}
 
 
@@ -126,7 +126,7 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 
 
 {% indent %}
-!GRA:Images2^http-session-sticky.jpg!
+depanimagehttp-session-sticky.jpgtengahimage/attachment_files/sbp/http-session-sticky.jpgbelakangimage
 {% endindent %}
 
 
@@ -313,14 +313,14 @@ The URL above assumes the Web Server configured to use port 8080.
 
 
 {% indent %}
-!httpSessionSharing4.jpg!
+depanimagehttpSessionSharing4.jpgtengahimage/attachment_files/sbp/httpSessionSharing4.jpgbelakangimage
 {% endindent %}
 
 5. Set some values for the Session Name and Attribute and click the **Update Session** button.
 6. View the session within the space via the GS-UI. Click the Data-Types icon , click the `org.openspaces.sessions.shiro.SpaceSession` class and Click the query button. The Query view will be displayed. You can double click any of the sessions and drill into the attributes map within the session to view the session attributes:
 
 {% indent %}
-!httpSessionSharing5.jpg|thumbnail!
+depanimagehttpSessionSharing5.jpgtengahimage/attachment_files/sbp/httpSessionSharing5.jpgbelakangimage
 {% endindent %}
 
 
@@ -330,12 +330,12 @@ The URL above assumes the Web Server configured to use port 8080.
 You may share the HTTP session between different web servers. To test this on your local environment you can install multiple web servers, deploy the web application and have your browser access the same application via the same browser. See the below example:
 
 {% indent %}
-!httpSessionSharing8.jpg|thumbnail!
+depanimagehttpSessionSharing8.jpgtengahimage/attachment_files/sbp/httpSessionSharing8.jpgbelakangimage
 {% endindent %}
 
 
 {% indent %}
-!httpSessionSharing9.jpg|thumbnail!
+depanimagehttpSessionSharing9.jpgtengahimage/attachment_files/sbp/httpSessionSharing9.jpgbelakangimage
 {% endindent %}
 
 Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the space.
@@ -402,7 +402,7 @@ The `127.0.0.1` IP should be replaced with appropriate IP addresses of the machi
 5. Once you have the space running, Websphere running, Tomcat running, and Apache httpd configured, restart the Apache http. On windows you can use its service.
 
 {% indent %}
-!httpSessionSharing7.jpg|thumbnail!
+depanimagehttpSessionSharing7.jpgtengahimage/attachment_files/sbp/httpSessionSharing7.jpgbelakangimage
 {% endindent %}
 
 6. Once you performed the above steps, access the following URL:
@@ -411,7 +411,7 @@ You should have the web application running. Any access to the web application w
 http://127.0.0.1:8888/balancer-manager
 
 {% indent %}
-!httpSessionSharing6.jpg|thumbnail!
+depanimagehttpSessionSharing6.jpgtengahimage/attachment_files/sbp/httpSessionSharing6.jpgbelakangimage
 {% endindent %}
 
 You can shutdown Websphere or Tomcat and later restart these. Your web application will not lose its session data.

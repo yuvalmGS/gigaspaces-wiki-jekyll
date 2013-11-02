@@ -64,7 +64,7 @@ With the above scenario requests 1, 3 and 4 should be processed as one atomic op
 
 
 {% indent %}
-!GRA:Images2^uow_1.jpg!
+depanimageuow_1.jpgtengahimage/attachment_files/sbp/uow_1.jpgbelakangimage
 {% endindent %}
 
 
@@ -83,13 +83,13 @@ You can [download|^uow.zip] eclipse project with example source code, running sc
 You can run the UOW Data-Grid with the collocated `UOWProcessor` within your IDE using the following configuration:
 
 {% indent %}
-!GRA:Images^uow_3.jpg!
+depanimageuow_3.jpgtengahimage/attachment_files/sbp/uow_3.jpgbelakangimage
 {% endindent %}
 
 Here is a configuration for a UOW Data-Grid with 2 partitions:
 
 {% indent %}
-!GRA:Images^uow_2.jpg!
+depanimageuow_2.jpgtengahimage/attachment_files/sbp/uow_2.jpgbelakangimage
 {% endindent %}
 
 {% endtabcontent %}
@@ -121,7 +121,7 @@ This will deploy the UOW Data-Grid with 2 partitions and a backup.
 You can run the `UOWFeeder` within your IDE using the following configuration:
 
 {% indent %}
-!GRA:Images^uow_4.jpg!
+depanimageuow_4.jpgtengahimage/attachment_files/sbp/uow_4.jpgbelakangimage
 {% endindent %}
 
 or using the following:

@@ -27,7 +27,7 @@ In some cases you would like to determine the primary and backup instances locat
 
 
 {% indent %}
-!GRA:Images2^PrimaryBackupZoneController.jpg!
+depanimagePrimaryBackupZoneController.jpgtengahimage/attachment_files/sbp/PrimaryBackupZoneController.jpgbelakangimage
 {% endindent %}
 
 

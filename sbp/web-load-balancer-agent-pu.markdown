@@ -26,7 +26,7 @@ GigaSpaces can host JEE Web Applications in a Grid Service Container using Jetty
 
 GigaSpaces provides an example in the `tools` folder of the product that shows how to proactively inform an Apache load-balancer about the endpoints so that it can be dynamically refreshed upon change of the topology.
 
-!GRA:Images3^WebLoadBalancerAgentPU.jpg!
+depanimageWebLoadBalancerAgentPU.jpgtengahimage/attachment_files/sbp/WebLoadBalancerAgentPU.jpgbelakangimage
 
 This page describes how to create a Web Load Balancer Agent as a Processing Unit that utilizes the GigaSpaces [Administration and Monitoring API|XAP96:Administration and Monitoring API]. This will mean the Web Load Balancer Agent will run within the GigaSpaces service grid, and thus will become fault-tolerant.
 

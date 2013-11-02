@@ -24,7 +24,7 @@ This example illustrates a simple web service packaged as a WAR using [Apache CX
 
 
 {% indent %}
-!web_service_pu.jpg!
+depanimageweb_service_pu.jpgtengahimage/attachment_files/sbp/web_service_pu.jpgbelakangimage
 {% endindent %}
 
 
@@ -188,13 +188,13 @@ You can use the [SOAP UI|http://www.soapui.org] to test the web service.
 Writing a Custmer object:
 
 {% indent %}
-!soap_ui1.jpg!
+depanimagesoap_ui1.jpgtengahimage/attachment_files/sbp/soap_ui1.jpgbelakangimage
 {% endindent %}
 
 Reading a Custmer object:
 
 {% indent %}
-!soap_ui2.jpg!
+depanimagesoap_ui2.jpgtengahimage/attachment_files/sbp/soap_ui2.jpgbelakangimage
 {% endindent %}
 
 
@@ -212,13 +212,13 @@ found 1 Customers matching the name:Smith
 When the client application running sucessfuly you will be able to see the Customer data within the space using the GS-UI.
 
 {% indent %}
-!web_serv_ui1.jpg|thumbnail!
+depanimageweb_serv_ui1.jpgtengahimage/attachment_files/sbp/web_serv_ui1.jpgbelakangimage
 {% endindent %}
 
 Click the Query button to view the Customer Data:
 
 {% indent %}
-!web_serv_ui2.jpg|thumbnail!
+depanimageweb_serv_ui2.jpgtengahimage/attachment_files/sbp/web_serv_ui2.jpgbelakangimage
 {% endindent %}
 
 

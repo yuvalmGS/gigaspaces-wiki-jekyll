@@ -632,7 +632,7 @@ mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.cli
 Start monitoring the JVM Tenured pool in JConsole and GSC logs. After few seconds you will see that the memory thresohold is breached and eviction logic will trigger and clear the old `Order` objects from space. Once the memory usage reached the eviction stop limit, eviction logic stops. You will see that the orders flow into the space constantly and the eviction logic triggers as and when needed making this a self healing application.
 
 Below is a screenshot of Tenured pool of the JVM,
-!HeapUsageGraph.png!
+depanimageHeapUsageGraph.pngtengahimage/attachment_files/sbp/HeapUsageGraph.pngbelakangimage
 
 # Important Considerations
 

@@ -13,7 +13,7 @@ page_id: 63799389
 
 This section describes the GigaSpaces In-Memory Data Grid (IMDG or the Space) implementation, also known as the Space. The Space enables your application to read data from it, and write data to it in various ways. It also deals with various configuration aspects, such as space topologies, persistency to an external data source and memory management facilities.
 
-!GRA:Images2^archi_imdg.jpg!
+depanimagearchi_imdg.jpgtengahimage/attachment_files/xap97net/archi_imdg.jpgbelakangimage
 
 # Key Use Cases for the Space
 
@@ -43,7 +43,7 @@ The space has a number of determining characteristics that should be configured 
 The Space can have a single instance, in which case it runs on a single Virtual Machine (VM), or multiple instances, in which case it can run on multiple VMs.
 When it has multiple instances, the Space can run in a number of [topologies|Space Topologies] which determine how the data is distributed across those VMs. In general, the data can be either **replicated**, which means it resides on all of the VMs in the cluster, or **partitioned**, which means that the data is distributed across all of the VMs, each containing a different subset of it. With a partitioned topology you can also assign one or more backup space instances for each partition.
 
-!GRA:Images^topologies.jpg!
+depanimagetopologies.jpgtengahimage/attachment_files/xap97net/topologies.jpgbelakangimage
 
 ### Master-Local Space
 

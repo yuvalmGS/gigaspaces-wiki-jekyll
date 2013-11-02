@@ -44,7 +44,7 @@ The Space Viewer toolbar includes the following options:
 
 
 {% indent %}
-!Toolbar3.JPG!
+depanimageToolbar3.JPGtengahimage/attachment_files/sbp/Toolbar3.JPGbelakangimage
 {% endindent %}
 
 
@@ -55,11 +55,11 @@ The **Create View** option allows you to create a view of space data inside your
 - The **Work with Class** drop-down menu allows you to select which space class you would like to view.
 - The **Available Columns** area lists all fields in this class.
 - The **Undisplayable Columns** area lists fields that belong to this class, but can't be displayed in Excel (usually user-defined fields).
-- The **Selected Columns** area displays the fields you choose to display in this view. Use the arrow buttons (for example: !arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpg!) allow you to organize the fields in the order in which they will appear in the final view.
+- The **Selected Columns** area displays the fields you choose to display in this view. Use the arrow buttons (for example: depanimagearrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpgtengahimage/attachment_files/sbp/arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpgbelakangimage) allow you to organize the fields in the order in which they will appear in the final view.
 
 
 {% indent %}
-!ConfigureView2.JPG!
+depanimageConfigureView2.JPGtengahimage/attachment_files/sbp/ConfigureView2.JPGbelakangimage
 {% endindent %}
 
 
@@ -76,7 +76,7 @@ To connect to a space:
 
 
 {% indent %}
-!Connect1.JPG!
+depanimageConnect1.JPGtengahimage/attachment_files/sbp/Connect1.JPGbelakangimage
 {% endindent %}
 
 - The **Customize the Selection** button opens the [#Customize the Selection] window.
@@ -85,13 +85,13 @@ To connect to a space:
 To create a new view:
 1. Click the **Create View** option in the Space Viewer toolbar. The Create View window is opened.
 2. Make sure you are connected to a space.
-3. Use the arrow buttons ( !arrowExcel.jpg!) to move columns from the **Available Columns** area to the **Selected Columns** area.
+3. Use the arrow buttons ( depanimagearrowExcel.jpgtengahimage/attachment_files/sbp/arrowExcel.jpgbelakangimage) to move columns from the **Available Columns** area to the **Selected Columns** area.
 4. If you want to narrow your view to more specific results (by querying your class fields), click the **Customize the Selection** button (see [**Customize the Selection**|#Customize the Selection]).
 {% infosign %} This step is optional. If you want to generate the view with all the existing entries of the selected type in the space, proceed to the next step.
     1. On the left side of the Customize the Selection window, click the class field you want to query. (For example, the **Age** field is selected below.)
 
 {% indent %}
-!CustomizeTheSelection1.JPG!
+depanimageCustomizeTheSelection1.JPGtengahimage/attachment_files/sbp/CustomizeTheSelection1.JPGbelakangimage
 {% endindent %}
 
     2. The selected field appears on the right, under **WHERE**. You can now select the desired expression and value, and choose to sort your results in an ascending or descending manner.
@@ -102,7 +102,7 @@ To create a new view:
 5. In the Create View window, Click **OK**.
 6. Your selection is displayed in the spreadsheet:
 
- !ExcelSheet1.JPG!
+ depanimageExcelSheet1.JPGtengahimage/attachment_files/sbp/ExcelSheet1.JPGbelakangimage
 
 
 {% infosign %} This view displays the selections you made in the Create View and Customize the Selection windows. The view is constantly refreshed (according to the last refresh rate you defined.).
@@ -122,10 +122,10 @@ By clicking a field, the top right pane is enabled with customization options fo
 
 Pressing **Save** saves the query for this field.
 
-The **SQL** area at the bottom displays the query syntax in SQL. After pressing **Save** on the right, the number of instances found as a result of this query is displayed under the **SQL** area (this is also the number of rows that will appear in this column). You can refresh this result using the refresh button ( !ExcelRefresh.jpg!).
+The **SQL** area at the bottom displays the query syntax in SQL. After pressing **Save** on the right, the number of instances found as a result of this query is displayed under the **SQL** area (this is also the number of rows that will appear in this column). You can refresh this result using the refresh button ( depanimageExcelRefresh.jpgtengahimage/attachment_files/sbp/ExcelRefresh.jpgbelakangimage).
 
 {% indent %}
-!CustomizeTheSelection1.JPG!
+depanimageCustomizeTheSelection1.JPGtengahimage/attachment_files/sbp/CustomizeTheSelection1.JPGbelakangimage
 {% endindent %}
 
 
@@ -164,13 +164,13 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 3. The Excel Space Viewer Setup Wizard is displayed:
 
 {% indent %}
-!ExcelSpaceViewer_setup_1.jpg!
+depanimageExcelSpaceViewer_setup_1.jpgtengahimage/attachment_files/sbp/ExcelSpaceViewer_setup_1.jpgbelakangimage
 {% endindent %}
 
 4. In the Select Installation Folder window, browse to the desired installation folder. Choose whether you want the Excel Space Viewer to be used by you only, or by other users:
 
 {% indent %}
-!ExcelSpaceViewer_setup_2.jpg!
+depanimageExcelSpaceViewer_setup_2.jpgtengahimage/attachment_files/sbp/ExcelSpaceViewer_setup_2.jpgbelakangimage
 {% endindent %}
 
 5. In the Confirm Installation window, click **Next**.
@@ -179,7 +179,7 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 8. A new toolbar appears in the top left:
 
 {% indent %}
-!Toolbar4.JPG!
+depanimageToolbar4.JPGtengahimage/attachment_files/sbp/Toolbar4.JPGbelakangimage
 {% endindent %}
 
 

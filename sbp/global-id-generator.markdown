@@ -38,7 +38,7 @@ The following example includes a custom global unique ID generator PU and a clie
 - Support persisting the `IdCounterEntry` object within a database. This allows the `IdCounterEntry` object to be loaded from a database in case the Unique Global ID Generator PU is fully re-started.
 - Once a Unique Global ID Generator is deployed, a `IdObjectInitializer` is created and generates the `IdCounterEntry` object within the Unique Global ID Generator space. Only one `IdCounterEntry` will be created.
 
-!id_generator.jpg!
+depanimageid_generator.jpgtengahimage/attachment_files/sbp/id_generator.jpgbelakangimage
 
 # Using the ID Generator
 To use the ID Generator you should:

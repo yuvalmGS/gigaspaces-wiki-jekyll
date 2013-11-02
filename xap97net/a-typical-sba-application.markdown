@@ -26,13 +26,13 @@ The application needs to provide a 100% guarantee that once a transaction enters
 
 # Application Design
 
-The first step in building such an application with SBA, is to define its business logic components as independent services - Enrichment Service (parsing and validation), Order Book Service (matching and execution), and Reconciliation Service (routing): !GS6:Images^intro1a.jpg|align=center!
+The first step in building such an application with SBA, is to define its business logic components as independent services - Enrichment Service (parsing and validation), Order Book Service (matching and execution), and Reconciliation Service (routing): depanimageintro1a.jpgtengahimage/attachment_files/xap97net/intro1a.jpgbelakangimage
 
 To reduce the latency overhead of communication between these services, they are all collocated in a single Virtual Machine (VM). To eliminate the network overhead of communication with the messaging and data tiers, Messaging Grid and Data Grid instances are both collocated in the same VM. All the interaction with all the services is done purely in-process, bringing I/O overhead to a minimum, in both the data and messaging layers.
 
 
-This collocated unit of work (which includes business logic, messaging and data) is called a Processing Unit. Because the Processing Unit encompasses all application tiers, it represents the application's full latency path. And because everything occurs in-process, latency is reduced to an absolute minimum. !GS6:Images^intro2a.jpg|align=center!
-Scaling is achieved simply by adding more Processing Units and spreading the load among them. Scaling does not affect latency, because the application's complexity does not increase. Each transaction is still routed to a single Processing Unit, which handles the entire business transaction in-process, with the same minimal level of latency. !GS6:Images^intro3a.jpg|align=center!
+This collocated unit of work (which includes business logic, messaging and data) is called a Processing Unit. Because the Processing Unit encompasses all application tiers, it represents the application's full latency path. And because everything occurs in-process, latency is reduced to an absolute minimum. depanimageintro2a.jpgtengahimage/attachment_files/xap97net/intro2a.jpgbelakangimage
+Scaling is achieved simply by adding more Processing Units and spreading the load among them. Scaling does not affect latency, because the application's complexity does not increase. Each transaction is still routed to a single Processing Unit, which handles the entire business transaction in-process, with the same minimal level of latency. depanimageintro3a.jpgtengahimage/attachment_files/xap97net/intro3a.jpgbelakangimage
 We can see that the trading application guarantees both minimal latency and linear scalability - something that would be impossible with a tier-based, best-of-breed approach (in other words, with separate products to manage business logic, data and messaging).
 
 
@@ -40,7 +40,7 @@ We can see that the trading application guarantees both minimal latency and line
 
 {% toczone minLevel=3|maxLevel=3|type=flat|separator=pipe|location=top %}
 
-The following diagram outlines a typical architecture of an application built with OpenSpaces: !GS6:Images^intro4a.jpg|align=center!
+The following diagram outlines a typical architecture of an application built with OpenSpaces: depanimageintro4a.jpgtengahimage/attachment_files/xap97net/intro4a.jpgbelakangimage
 
 ### Processing Unit
 
@@ -168,7 +168,7 @@ A processing unit that needs to be export a service uses the `DomainServiceHost`
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-An [OpenSpaces SLA Driven Container|XAP97NET:Basic Processing Unit Container] that allows you to deploy a processing unit over a dynamic pool of machines, is available through an SLA-driven container, formerly known as the Grid Service Containers - GSCs. The SLA-driven containers are .NET processes that provide a hosting environment for a running processing unit. The Grid Service Manager (GSM) is used to manage the deployment of the processing unit, based on SLA. The SLA definition is part of the processing unit configuration, and is normally named `sla.xml`. The SLA definition defines: the number of PU instances that need to be running at a given point of time, the scaling policy, the failover policy based on CPU, and memory or application-specific measurement. !GS6:Images^intro6a.jpg|align=center!
+An [OpenSpaces SLA Driven Container|XAP97NET:Basic Processing Unit Container] that allows you to deploy a processing unit over a dynamic pool of machines, is available through an SLA-driven container, formerly known as the Grid Service Containers - GSCs. The SLA-driven containers are .NET processes that provide a hosting environment for a running processing unit. The Grid Service Manager (GSM) is used to manage the deployment of the processing unit, based on SLA. The SLA definition is part of the processing unit configuration, and is normally named `sla.xml`. The SLA definition defines: the number of PU instances that need to be running at a given point of time, the scaling policy, the failover policy based on CPU, and memory or application-specific measurement. depanimageintro6a.jpgtengahimage/attachment_files/xap97net/intro6a.jpgbelakangimage
 The following is a snippet taken from the example SLA definition section of the processing unit Spring configuration:
 
 

@@ -21,7 +21,7 @@ page_id: 56428286
 # Overview
 
 This [WAN Gateway|XAP91:Multi-Site Replication over the WAN] example includes PU folders with config files for a [Multi-Master|XAP91:Multi-Site Replication over the WAN#Multi-Master Topology] topology that includes 3 sites: DE , RU , US. Each site have an independent cluster and a Gateway.
-!GRA:Images2^wan_example1.jpg!
+depanimagewan_example1.jpgtengahimage/attachment_files/sbp/wan_example1.jpgbelakangimage
 
 You will find folders for the following PUs:
 - wan-gateway-DE - Deployed into **DE** zone, using the **DE** lookup group and a lookup service listening on port 4366.
@@ -32,7 +32,7 @@ You will find folders for the following PUs:
 - wan-space-US - Deployed into **US** zone, using the **US** lookup group and a lookup service listening on port 4266.
 
 The internal architecture of the setup includes a clustered space and a Gateway, where each Gateway includes a Delegator and a Sink:
-!GRA:Images2^wan_example2.jpg|thumbnail!
+depanimagewan_example2.jpgtengahimage/attachment_files/sbp/wan_example2.jpgbelakangimage
 
 # Installing the Example
 1. Download the [WAN_Gateway_example.zip|WAN Replication Gateway^WAN_Gateway_example.zip]. It includes two folders: **deploy** and **scripts**.
@@ -65,29 +65,29 @@ You will find within the `scripts` folder running scripts to start [Grid Service
 # Viewing the Clusters
 - Start the `\gigaspaces-xap-premium-8.0.X-ga\bin\GS-UI.bat/sh`.
 - Once you deployed make sure you enable the relevant groups within the GS-UI:
-!GRA:Images2^wan_example3.jpg!
+depanimagewan_example3.jpgtengahimage/attachment_files/sbp/wan_example3.jpgbelakangimage
 
 You should check all Groups:
-!GRA:Images2^wan_example4.jpg!
+depanimagewan_example4.jpgtengahimage/attachment_files/sbp/wan_example4.jpgbelakangimage
 
 You should see this:
-!GRA:Images2^wan_example5.jpg|thumbnail!
+depanimagewan_example5.jpgtengahimage/attachment_files/sbp/wan_example5.jpgbelakangimage
 
 Once deployed successfully you should see this:
-!GRA:Images2^wan_example6.jpg|thumbnail!
+depanimagewan_example6.jpgtengahimage/attachment_files/sbp/wan_example6.jpgbelakangimage
 
 # Testing the WAN Gateway Replication
 You can test the setup by using the [benchmark utility|XAP91:Benchmark View - GigaSpaces Browser] comes with the GS-UI. Move the one of the Clusters Benchmark icon and click the Start Button:
-!GRA:Images2^wan_example7.jpg|thumbnail!
+depanimagewan_example7.jpgtengahimage/attachment_files/sbp/wan_example7.jpgbelakangimage
 
 You will see all spaces **Object Count** across all clusters by clicking the **Spaces icon** on the Space Browser Tab. You should see identical number of objects (5000) for all members:
-!GRA:Images2^wan_example8.jpg|thumbnail!
+depanimagewan_example8.jpgtengahimage/attachment_files/sbp/wan_example8.jpgbelakangimage
 
 You can remove objects from each space cluster by selecting the **Take operation** and click Start:
-!GRA:Images2^wan_example9.jpg|thumbnail!
+depanimagewan_example9.jpgtengahimage/attachment_files/sbp/wan_example9.jpgbelakangimage
 
 You will see the Object Count changing having zero object count for each space:
-!GRA:Images2^wan_example10.jpg|thumbnail!
+depanimagewan_example10.jpgtengahimage/attachment_files/sbp/wan_example10.jpgbelakangimage
 
 # Replication Throughput Capacity
 
@@ -119,7 +119,7 @@ With the following benchmark we have 2 sites; one located in the US East coast E
 
 A client application located within the US East coast EC2 region running multiple threads perform continuous write operation to a clustered space in the same region. The space cluster within the US East coast EC2 region has a WAN Gateway configured , replicating data to a clustered space running within the EC2 EU Ireland region via a Gateway running within the same region.
 
-!GRA:Images3^wan_bench1.jpg!
+depanimagewan_bench1.jpgtengahimage/attachment_files/sbp/wan_bench1.jpgbelakangimage
 
 {% color blue %}Blue line{% endcolor %} - The amount of data generated at the source site (EC2 EU East coast region) by the client application.
 
@@ -127,7 +127,7 @@ A client application located within the US East coast EC2 region running multipl
 
 {% color red %}Red line{% endcolor %} - The network bandwidth.
 
-!GRA:Images3^wan_bench2.jpg!
+depanimagewan_bench2.jpgtengahimage/attachment_files/sbp/wan_bench2.jpgbelakangimage
 
 Up to 16 client threads at the client application, the utilized bandwidth at the target site is increasing. Once the maximum bandwidth has been consumed, no matter how many client threads will be writing data to the source space, the target site bandwidth consumption will stay the same.
 

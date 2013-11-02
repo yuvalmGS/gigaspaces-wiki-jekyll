@@ -9,7 +9,7 @@ page_id: 50758015
 
 {% summary %}Mule ESB Distributed Multi Service Example{% endsummary %}
 
-!GRA:Images^new-in-801-banner.png|align=right!
+depanimagenew-in-801-banner.pngtengahimage/attachment_files/sbp/new-in-801-banner.pngbelakangimage
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using Mule:**3.1.0**
 Using XAP:**8.0.1**
@@ -37,7 +37,7 @@ Here are the example components:
 - A Monitor Service used to Scale Up and Down the Verifier Service in a Dynamic Manner.
 
 {% indent %}
-!GRA:Images^mule_example_flow1.jpg!
+depanimagemule_example_flow1.jpgtengahimage/attachment_files/sbp/mule_example_flow1.jpgbelakangimage
 {% endindent %}
 
 
@@ -309,12 +309,12 @@ In order to deploy the different Processing unit comprising this example:
 Once the different processing will be deployed you should have the following displayed as part of the GS-UI:
 
 {% indent %}
-!GRA:Screens^mule_deploy.jpg!
+depanimagemule_deploy.jpgtengahimage/attachment_files/sbp/mule_deploy.jpgbelakangimage
 {% endindent %}
 
 
 {% indent %}
-!GRA:Screens^mule_grid.jpg!
+depanimagemule_grid.jpgtengahimage/attachment_files/sbp/mule_grid.jpgbelakangimage
 {% endindent %}
 
 
@@ -322,7 +322,7 @@ Once the different processing will be deployed you should have the following dis
 
 
 {% indent %}
-!GRA:Screens^mule_grid.jpg|height=50%,width=50%!
+depanimagemule_grid.jpgtengahimage/attachment_files/sbp/mule_grid.jpgbelakangimage
 {% endindent %}
 
 
@@ -335,7 +335,7 @@ You may check the statistics you review the Write and Take operations called by 
 You may have multiple instances of each service running. Running multiple instances of the Feeder service will push more Data objects into the Space. Running multiple services of the Approver or Verifier will consume relevant objects faster.
 
 {% indent %}
-!GRA:Images^mule_example_flow2.jpg!
+depanimagemule_example_flow2.jpgtengahimage/attachment_files/sbp/mule_example_flow2.jpgbelakangimage
 {% endindent %}
 
 In order to increase the amount of the deployed services (Feeder, Approver or Verifier) , select the relevant processing unit and click the Increase button. See example below:
@@ -344,7 +344,7 @@ In order to increase the amount of the deployed services (Feeder, Approver or Ve
 
 
 {% indent %}
-!GRA:Screens^mule_scale_manual.jpg|height=50%,width=50%!
+depanimagemule_scale_manual.jpgtengahimage/attachment_files/sbp/mule_scale_manual.jpgbelakangimage
 {% endindent %}
 
 
@@ -352,7 +352,7 @@ In order to increase the amount of the deployed services (Feeder, Approver or Ve
 
 
 {% indent %}
-!GRA:Screens^mule_scale_manual.jpg!
+depanimagemule_scale_manual.jpgtengahimage/attachment_files/sbp/mule_scale_manual.jpgbelakangimage
 {% endindent %}
 
 A new instance of the relevant service will be created at of the existing running GSCs.
@@ -401,7 +401,7 @@ To see how the Verifier Service scale up, deploy the Feeder with 2 instances:
 The Monitor Service will increment the amount of verifier instances when there will be 50 ,100, 150 and 200 Data objects with `state=0` within the IMDG.
 
 {% indent %}
-!GRA:Images^mule_scale_u.jpg!
+depanimagemule_scale_u.jpgtengahimage/attachment_files/sbp/mule_scale_u.jpgbelakangimage
 {% endindent %}
 
 You can Query the IMDG via the Query view for Data objects with `state=0` using the following Query:
@@ -422,7 +422,7 @@ To scale Down the verifier Service undeploy the Feeder PU.
 The Monitor Service will decrement the amount of verifier instances when there will be 50 ,40 30 and 20 Data objects with `state=0` within the IMDG.
 
 {% indent %}
-!GRA:Images^mule_scale_d.jpg!
+depanimagemule_scale_d.jpgtengahimage/attachment_files/sbp/mule_scale_d.jpgbelakangimage
 {% endindent %}
 
 

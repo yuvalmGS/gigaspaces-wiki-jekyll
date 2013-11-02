@@ -339,7 +339,7 @@ SQLQuery<Data> query = new SQLQuery<Data>(Data.class,"data1='A' and data2='B'");
 
 With the above scenario the Compound Index will improve the query execution dramatically. See below comparison for a query execution time when comparing a Compound Index to a single or two indexed properties space class with the different data set scenarios.
 
-!GRA:Images3^compu_index_bench.jpg!
+depanimagecompu_index_bench.jpgtengahimage/attachment_files/xap97net/compu_index_bench.jpgbelakangimage
 
 ## Creating a Compound Index using Annotation
 

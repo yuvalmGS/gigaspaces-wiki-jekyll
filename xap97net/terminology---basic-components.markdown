@@ -43,7 +43,7 @@ The GigaSpaces cache instance that holds data objects in memory.
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_space.gif!
+depanimageterm_space.giftengahimage/attachment_files/xap97net/term_space.gifbelakangimage
 
 {% sub %}**A space holding objects**{% endsub %}
 
@@ -78,7 +78,7 @@ A set of methods used to read, write, take, and register for notification on obj
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_verbs.jpg!
+depanimageterm_verbs.jpgtengahimage/attachment_files/xap97net/term_verbs.jpgbelakangimage
 
 {% sub %}**A client application uses the read, write, take, update and notify methods to exchange objects and receive notifications from the space**{% endsub %}
 {% endalign %}
@@ -117,7 +117,7 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_service_bean.gif!
+depanimageterm_service_bean.giftengahimage/attachment_files/xap97net/term_service_bean.gifbelakangimage
 
 {% sub %}**A Service Component**{% endsub %}
 {% endalign %}
@@ -149,7 +149,7 @@ A combination of service components and/or an embedded space instance. This is t
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_empty_pu.gif!
+depanimageterm_empty_pu.giftengahimage/attachment_files/xap97net/term_empty_pu.gifbelakangimage
 
 {% sub %}**A Processing Unit**{% endsub %}
 {% endalign %}
@@ -180,7 +180,7 @@ A deployable package which instantiates an embedded space instance, also called 
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_pu_with_space.gif!
+depanimageterm_pu_with_space.giftengahimage/attachment_files/xap97net/term_pu_with_space.gifbelakangimage
 
 {% sub %}**A Processing Unit with an embedded space**{% endsub %}
 {% endalign %}
@@ -208,7 +208,7 @@ A deployable package containing one or more services. In the GigaSpaces context,
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_pu_with_bean.gif!
+depanimageterm_pu_with_bean.giftengahimage/attachment_files/xap97net/term_pu_with_bean.gifbelakangimage
 
 {% sub %}**A Processing Unit containing a Service component that interacts with a space embedded in another Processing Unit**{% endsub %}
 {% endalign %}
@@ -237,7 +237,7 @@ Client application (which can also be other processing units) write objects to t
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_pu_with_space_and_bean.gif!
+depanimageterm_pu_with_space_and_bean.giftengahimage/attachment_files/xap97net/term_pu_with_space_and_bean.gifbelakangimage
 
 {% sub %}**A Processing Unit with an embedded service that interacts with an embedded space**{% endsub %}
 {% endalign %}

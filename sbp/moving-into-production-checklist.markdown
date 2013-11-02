@@ -100,7 +100,7 @@ The [GigaSpaces LRMI|XAP91:Communication Protocol] uses two independent resource
 
 
 {% indent %}
-!GRA:Images2^lrmi_archi2.jpg|thumbnail!
+depanimagelrmi_archi2.jpgtengahimage/attachment_files/sbp/lrmi_archi2.jpgbelakangimage
 {% endindent %}
 
 
@@ -244,7 +244,7 @@ A good number for the amount of GSCs a machine should host would be **half of th
 
 ## Configuring the Runtime Environment
 
-!GRA:Icons^newin71-star.jpg|align=left!
+depanimagenewin71-star.jpgtengahimage/attachment_files/sbp/newin71-star.jpgbelakangimage
 JVM parameters (system properties, heap settings etc.) that are shared between all components are best set using the `EXT_JAVA_OPTIONS` environment variable. However, starting from 7.1.1, specific GSA JVM parameters can be easily passed using `GSA_JAVA_OPTIONS` that will be appended to `EXT_JAVA_OPTIONS`. If `GSA_JAVA_OPTIONS` is not defined, the system will behave as in 7.1.0. As a good practice, one can add all components' environment variables ( `GSA_JAVA_OPTIONS`, `GSM_JAVA_OPTIONS`, `GSC_JAVA_OPTIONS`, `LUS_JAVA_OPTIONS`) within the GSA script, or in a wrapper script and the values will be passed to corresponding components.
 
 
@@ -407,7 +407,7 @@ The lookup service runs by default as a standalone JVM process started by the GS
 The [GigaSpaces Zone|XAP91:Configuring the Processing Unit SLA#Deployment Requirements - Hosts, Zones and Machine Utilization] allows you to "label" a running GSC(s) before starting it. The GigaSpaces **Zone** should be used to isolate applications and a Data-Grid running on the same network. It has been designed to allow users to deploy a processing unit into specific set of GSCs where all these **sharing the same set of LUSs and GSMs**.
 
 The **Zone** property can be used for example to deploy your Data-Grid into a specific GSC(s) labeled with specific zone(s). The zone is specified prior to the GSC startup, and cannot be changed once the GSC has been started.
-!GRA:Images^zones.jpg|thumbnail!
+depanimagezones.jpgtengahimage/attachment_files/sbp/zones.jpgbelakangimage
 
 
 {% tip %}
@@ -656,10 +656,10 @@ GigaSpaces supports automatic discovery, rebalancing (aka Dynamic Redistribution
 
 The logical partitions may initially run on certain containers, and later get relocated to other containers (started after the data grid has been deployed) on other machines, thus allowing the system to expand and increase its memory and CPU capacity while the application is still running. The number of logical partitions and replicas per partition should be determined at deployment time.  The number of containers hosting the IMDG instances may be changed at runtime.
 
-!GRA:Images^rebalance_util.jpg!
+depanimagerebalance_util.jpgtengahimage/attachment_files/sbp/rebalance_util.jpgbelakangimage
 
 The component that is responsible to scale the IMDG at runtime is called the Elastic Service Manager (ESM) and it is used with the [Elastic Processing Unit|XAP91:Elastic Processing Unit]:
-!GRA:Images^flow.gif!
+depanimageflow.giftengahimage/attachment_files/sbp/flow.gifbelakangimage
 
 
 {% tip %}
@@ -697,17 +697,17 @@ When a client application accessing a remote space (using a clustered topology o
 {% inittab %}
 
 {% tabcontent Object Mode %}
-!GRA:Images2^storage-type-object.jpg!
+depanimagestorage-type-object.jpgtengahimage/attachment_files/sbp/storage-type-object.jpgbelakangimage
 {% endtabcontent %}
 
 
 {% tabcontent Binary Mode %}
-!GRA:Images2^storage-type-binary.jpg!
+depanimagestorage-type-binary.jpgtengahimage/attachment_files/sbp/storage-type-binary.jpgbelakangimage
 {% endtabcontent %}
 
 
 {% tabcontent Compressed Mode %}
-!GRA:Images2^storage-type-compressed.jpg!
+depanimagestorage-type-compressed.jpgtengahimage/attachment_files/sbp/storage-type-compressed.jpgbelakangimage
 {% endtabcontent %}
 
 {% endinittab %}

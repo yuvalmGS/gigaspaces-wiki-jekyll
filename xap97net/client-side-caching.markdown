@@ -14,10 +14,10 @@ page_id: 63799376
 GigaSpaces supports client side caching of space data within the client application's memory. Client-side caching implements a two-layer cache architecture where the first layer is stored locally, within the client's memory, and the second layer is stored within the remote master space. The remote master space may be used with any of the supported deployment topologies.
 
 **In-line cache with a client cache**:
-!GRA:Images^in-line_cache-local-cache.jpg!
+depanimagein-line_cache-local-cache.jpgtengahimage/attachment_files/xap97net/in-line_cache-local-cache.jpgbelakangimage
 
 **Side cache with a client cache**:
-!GRA:Images^side-cache-local-cache.jpg!
+depanimageside-cache-local-cache.jpgtengahimage/attachment_files/xap97net/side-cache-local-cache.jpgbelakangimage
 
 The client-side cache size is limited to the heap size of the client application's memory.
 
@@ -42,7 +42,7 @@ Client-side cache should be used when the application performs repetitive read o
 
 In some cases where the relevant dataset size fits a single JVM (64 Bit JVM may also be utilized), the data may be maintained in multiple locations (JVMs) having it collocated to the application code (client or a service) as demonstrated below:
 
-!GRA:Images2^local-cache-real-life.jpg!
+depanimagelocal-cache-real-life.jpgtengahimage/attachment_files/xap97net/local-cache-real-life.jpgbelakangimage
 
 With the above architecture the client and the remote service has a local cache/view proxy that maintains a dataset that was distributed across the different partitions. In this scenario, readbyId or readByIds calls are VERY fast since they are actually local calls (semi-reference object access) that do not involve network utilization.
 

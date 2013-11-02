@@ -19,7 +19,7 @@ that monitors a deployed application, and scale it up on demand.{% endsummary %}
 
 {% column width=86% %}
 
-{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|`<GigaSpaces Root>\Examples\ScalingAgent` |
+{% align center %}||depanimagewiki_icon_folder.giftengahimage/attachment_files/xap97net/wiki_icon_folder.gifbelakangimage||Example Root|`<GigaSpaces Root>\Examples\ScalingAgent` |
 {% endalign %}
 
 {% endcolumn %}
@@ -41,7 +41,7 @@ The activities to scale up the application could be: starting a new GSC on remot
 {% refer %}This page assumes knowledge of the processing unit concept. If you are unfamilar with it, please refer to
 the [SBA Example] first.{% endrefer %}
 
-{% align center %}!GRA:Images^scaling agent .net.jpg!{% endalign %}
+{% align center %}depanimagescaling agent .net.jpgtengahimage/attachment_files/xap97net/scaling agent .net.jpgbelakangimage{% endalign %}
 
 # How the Scaling Agent Works
 
@@ -324,7 +324,7 @@ To simplify the deployment of the examples, there are several scripts in the exa
 
 
 {% indent %}
-!GRA:Images^ScalingAgentFeeder.jpg!
+depanimageScalingAgentFeeder.jpgtengahimage/attachment_files/xap97net/ScalingAgentFeeder.jpgbelakangimage
 {% endindent %}
 
 
@@ -332,7 +332,7 @@ To simplify the deployment of the examples, there are several scripts in the exa
 
 
 {% indent %}
-!GRA:Images^ScalingAgentConsole.jpg!
+depanimageScalingAgentConsole.jpgtengahimage/attachment_files/xap97net/ScalingAgentConsole.jpgbelakangimage
 {% endindent %}
 
 

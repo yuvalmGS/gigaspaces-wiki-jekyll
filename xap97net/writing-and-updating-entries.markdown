@@ -15,7 +15,7 @@ Objects are written to the space using the `ISpaceProxy.Write` method. A write o
 
 
 {% indent %}
-!space_write.jpg!
+depanimagespace_write.jpgtengahimage/attachment_files/xap97net/space_write.jpgbelakangimage
 {% endindent %}
 
 

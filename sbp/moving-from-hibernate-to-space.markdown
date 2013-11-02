@@ -32,10 +32,10 @@ Moving Spring/Hibernate application to GigaSpaces involves the following basic s
 # Architecture Change
 
 The procedure described below will move a standard Spring/Hibernate application that is using the following architecture:
-!GS6:Images^Hibernate with EhCache.jpg!
+depanimageHibernate with EhCache.jpgtengahimage/attachment_files/sbp/Hibernate with EhCache.jpgbelakangimage
 
 To use the following architecture where the Data-Grid placed in-line between the application and the database:
-!GRA:Images^Hibernate_DataGrid_mirror.jpg!
+depanimageHibernate_DataGrid_mirror.jpgtengahimage/attachment_files/sbp/Hibernate_DataGrid_mirror.jpgbelakangimage
 
 # Spring bean Configuration File
 The existing application Spring bean Configuration file will be modified to:
@@ -640,14 +640,14 @@ On linux run the following command:
 - Once the Data-Grid, Mirror and the application will be deployed you should see the following within the GS-UI:
 
 {% indent %}
-!hib2space1.jpg|thumbnail!
+depanimagehib2space1.jpgtengahimage/attachment_files/sbp/hib2space1.jpgbelakangimage
 {% endindent %}
 
 
 - You can start the web application and register users:
 
 {% indent %}
-!hib2space3.jpg|thumbnail!
+depanimagehib2space3.jpgtengahimage/attachment_files/sbp/hib2space3.jpgbelakangimage
 {% endindent %}
 
 
@@ -656,13 +656,13 @@ Each registered user data will be stored within the space and also be persist in
 - To view the data within the space click the Data Types , select the User class and click Query:
 
 {% indent %}
-!hib2space2.jpg|thumbnail!
+depanimagehib2space2.jpgtengahimage/attachment_files/sbp/hib2space2.jpgbelakangimage
 {% endindent %}
 
 This will display the Query view with the User objects data stored within the space:
 
 {% indent %}
-!hib2space5.jpg|thumbnail!
+depanimagehib2space5.jpgtengahimage/attachment_files/sbp/hib2space5.jpgbelakangimage
 {% endindent %}
 
 
@@ -676,7 +676,7 @@ java -cp  ../lib/platform/jdbc/hsqldb.jar  org.hsqldb.util.DatabaseManager
 And query the database:
 
 {% indent %}
-!hib2space4.jpg|thumbnail!
+depanimagehib2space4.jpgtengahimage/attachment_files/sbp/hib2space4.jpgbelakangimage
 {% endindent %}
 
 

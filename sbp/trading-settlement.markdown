@@ -63,7 +63,7 @@ The monitor is a thread that periodically counts the number of matched deal obje
 
 The [mirror service|http://www.gigaspaces.com/wiki/display/XAP8/Asynchronous+Persistency+with+the+Mirror] provides reliable asynchronous persistence to a HSQL database through a hibernate interface.
 
-!SA-Architecture.png!
+depanimageSA-Architecture.pngtengahimage/attachment_files/sbp/SA-Architecture.pngbelakangimage
 
 # Processing Unit Relationships and Events
 
@@ -75,7 +75,7 @@ You can step through the demo code in your favorite IDE by deploying the target 
 
 Deal matching uses a [polling container|http://www.gigaspaces.com/wiki/display/XAP8/Polling+Container] and [transactions|http://www.gigaspaces.com/wiki/display/XAP8/Transaction+Management].
 
-!SA-PUs.png!
+depanimageSA-PUs.pngtengahimage/attachment_files/sbp/SA-PUs.pngbelakangimage
 
 # Key Features
 

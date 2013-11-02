@@ -20,7 +20,7 @@ The [Master-Worker Pattern|http://books.google.com/books?id=9cV3TbahjW0C&pg=PA15
 
 
 {% indent %}
-!GRA:Images^the_master_worker.jpg!
+depanimagethe_master_worker.jpgtengahimage/attachment_files/sbp/the_master_worker.jpgbelakangimage
 {% endindent %}
 
 
@@ -58,7 +58,7 @@ With the Random Workers approach, each worker can consume `Request` objects from
 Step 1:
 
 {% indent %}
-!GRA:Images^master_worker_rr1.jpg!
+depanimagemaster_worker_rr1.jpgtengahimage/attachment_files/sbp/master_worker_rr1.jpgbelakangimage
 {% endindent %}
 
 
@@ -70,7 +70,7 @@ Step 1:
 Step 2:
 
 {% indent %}
-!GRA:Images^master_worker_rr2.jpg!
+depanimagemaster_worker_rr2.jpgtengahimage/attachment_files/sbp/master_worker_rr2.jpgbelakangimage
 {% endindent %}
 
 
@@ -309,7 +309,7 @@ With this approach, each new worker is assigned a specific ID and consumes `Requ
 Step 1:
 
 {% indent %}
-!GRA:Images^master_worker_de1.jpg!
+depanimagemaster_worker_de1.jpgtengahimage/attachment_files/sbp/master_worker_de1.jpgbelakangimage
 {% endindent %}
 
 
@@ -321,7 +321,7 @@ Step 1:
 Step 2:
 
 {% indent %}
-!GRA:Images^master_worker_de2.jpg!
+depanimagemaster_worker_de2.jpgtengahimage/attachment_files/sbp/master_worker_de2.jpgbelakangimage
 {% endindent %}
 
 

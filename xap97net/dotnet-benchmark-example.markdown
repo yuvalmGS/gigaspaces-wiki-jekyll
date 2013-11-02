@@ -18,7 +18,7 @@ page_id: 63799403
 
 {% column width=86% %}
 
-{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|`<GigaSpaces Root>\Examples\Benchmark` |
+{% align center %}||depanimagewiki_icon_folder.giftengahimage/attachment_files/xap97net/wiki_icon_folder.gifbelakangimage||Example Root|`<GigaSpaces Root>\Examples\Benchmark` |
 {% endalign %}
 
 {% endcolumn %}

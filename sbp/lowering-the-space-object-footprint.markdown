@@ -42,7 +42,7 @@ With the compact serialization pattern:
 
 
 {% indent %}
-!GRA:Images^bin_ser.jpg!
+depanimagebin_ser.jpgtengahimage/attachment_files/sbp/bin_ser.jpgbelakangimage
 {% endindent %}
 
 

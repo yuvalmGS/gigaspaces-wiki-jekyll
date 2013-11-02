@@ -25,7 +25,7 @@ In most cases, your application does not require total ordering, but rather orde
 
 
 {% indent %}
-!GRA:Images2^fifo-group.jpg!
+depanimagefifo-group.jpgtengahimage/attachment_files/xap97net/fifo-group.jpgbelakangimage
 {% endindent %}
 
 

@@ -35,7 +35,7 @@ In both cases, the business logic will be invoked with a collocated space.
 2. Set the project libraries to have the correct GigaSpaces libraries location. Make sure your project libraries list will include all the libraries located at `gigaspaces-xap\lib\required`.
 
 {% indent %}
-!project_libraries.jpg|thumbnail!
+depanimageproject_libraries.jpgtengahimage/attachment_files/sbp/project_libraries.jpgbelakangimage
 {% endindent %}
 
 
@@ -45,9 +45,9 @@ In both cases, the business logic will be invoked with a collocated space.
 The example will illustrate a simple map-reduce implementation.
 
 A client writing some Account objects into the Data Grid. Later it will calculate the average balance for all the Accounts via a `DistributedTask` that is sent to each partition to be executed:
-!GRA:Images^DistributedTaskExecution_phase1.jpg!
+depanimageDistributedTaskExecution_phase1.jpgtengahimage/attachment_files/sbp/DistributedTaskExecution_phase1.jpgbelakangimage
 The Task will read all the Account objects at the collocated partition and calculate the average balance for these objects and return the result back to the client. The results sent from each partition back to the client will be aggregated (via the `DistributedTask` reducer implementation at the client side) and the final result will be displayed.
-!GRA:Images^DistributedTaskExecution_phase2.jpg!
+depanimageDistributedTaskExecution_phase2.jpgtengahimage/attachment_files/sbp/DistributedTaskExecution_phase2.jpgbelakangimage
 
 The example code will have the following implemented:
 - Task
@@ -152,8 +152,8 @@ public void onResult(AsyncResult<Integer> result) {
 ### Deploying the Space
 Using IDE:
 Set your IDe to have the Following:
-!GRA:Screens^exec_ide1.jpg!
-!GRA:Screens^exec_ide2.jpg!
+depanimageexec_ide1.jpgtengahimage/attachment_files/sbp/exec_ide1.jpgbelakangimage
+depanimageexec_ide2.jpgtengahimage/attachment_files/sbp/exec_ide2.jpgbelakangimage
 Click **Run**. This will start the clustered space within your IDE.
 
 Using CLI:
@@ -255,7 +255,7 @@ Log file: C:\gigaspaces-xap-premium-7.1.2-ga\logs\2010-12-17~14.14-gigaspaces-se
 You can view the space operations statistics by running the `\gigaspaces-xap\bin\gs-ui`:
 
 {% indent %}
-!exe_example_stats.jpg|thumbnail!
+depanimageexe_example_stats.jpgtengahimage/attachment_files/sbp/exe_example_stats.jpgbelakangimage
 {% endindent %}
 
 {% endtoczone %}
@@ -264,9 +264,9 @@ You can view the space operations statistics by running the `\gigaspaces-xap\bin
 
 {% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 The example will have a clustered space with a collocated service running. A client will be invoking the service:
-!GRA:Images^Executor1.jpg!
+depanimageExecutor1.jpgtengahimage/attachment_files/sbp/Executor1.jpgbelakangimage
 The results created at each partition will be sent to the client. These will be aggregated via the reducer implementation at the client side and displayed:
-!GRA:Images^Executor2.jpg!
+depanimageExecutor2.jpgtengahimage/attachment_files/sbp/Executor2.jpgbelakangimage
 
 This example illustrates simple Service Executors usage in **Synchronous** mode and **Asynchronous** mode.
 Your code should have the following implemented:
@@ -427,8 +427,8 @@ System.out.println(new Time(System.currentTimeMillis()) + " - Client got Result:
 ### Deploying the Space and Services
 Using IDE:
 Set your IDe to have the Following:
-!GRA:Screens^exec_ide1.jpg!
-!GRA:Screens^exec_ide2.jpg!
+depanimageexec_ide1.jpgtengahimage/attachment_files/sbp/exec_ide1.jpgbelakangimage
+depanimageexec_ide2.jpgtengahimage/attachment_files/sbp/exec_ide2.jpgbelakangimage
 Click **Run**. This will start the clustered space and the Services within your IDE.
 
 Using CLI:
@@ -518,7 +518,7 @@ Log file: C:\gigaspaces-xap-premium-7.1.2-ga\logs\2010-12-17~14.12-gigaspaces-se
 You can view the space operations statistics by running the `\gigaspaces-xap\bin\gs-ui`:
 
 {% indent %}
-!exe_example_stats.jpg|thumbnail!
+depanimageexe_example_stats.jpgtengahimage/attachment_files/sbp/exe_example_stats.jpgbelakangimage
 {% endindent %}
 
 {% endtoczone %}

@@ -37,7 +37,7 @@ Such custom business logic might be useful when comparing vector data (2 dimensi
 # Vector Compare Example
 The following example illustrates a business logic implementation used to query for vector data (an array of Integer values), using the [Euclidean distance|http://en.wikipedia.org/wiki/Euclidean_distance] formula:
 
-{% panel %}!GRA:Images^EuclideanDistance.jpg!{% endpanel %}
+{% panel %}depanimageEuclideanDistance.jpgtengahimage/attachment_files/sbp/EuclideanDistance.jpgbelakangimage{% endpanel %}
 
 The object that holds the array implements the [Comparable|http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html] interface. The Space class has a getter method for this field indexing, using the `EXTENDED` index. The actual query involves indexed fields for several sample data points within the vector, together with the custom field:
 
@@ -61,7 +61,7 @@ SQLQuery<Vector> query= new SQLQuery<Vector>(Vector.class ,
 
 Here is an example of a target vector, and a matching vector found using the custom matching implementation illustrated below:
 
-{% panel %}!GRA:Images^custommatching.jpg!{% endpanel %}
+{% panel %}depanimagecustommatching.jpgtengahimage/attachment_files/sbp/custommatching.jpgbelakangimage{% endpanel %}
 
 
 {% tip %}

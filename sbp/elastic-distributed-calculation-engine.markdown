@@ -39,7 +39,7 @@ The Elastic Calculation Engine example illustrates the following:
 
 {% column %}
 
-!risk_anal.jpg!
+depanimagerisk_anal.jpgtengahimage/attachment_files/sbp/risk_anal.jpgbelakangimage
 
 {% endcolumn %}
 
@@ -71,7 +71,7 @@ The Calculating Flow includes the following:
 - [#The AnalysisTask] is executed. Once completed, an intermediate result is sent back to the client. If the requested Trade cannot be found within the space, it is loaded from the database.
 -  The client aggregating the results retrieved from all the calculations nodes and reducing it to four numbers. These four numbers represent books.
 
-!ElasticDistributedRiskAnalysisEngine_colocated_workers.jpg!
+depanimageElasticDistributedRiskAnalysisEngine_colocated_workers.jpgtengahimage/attachment_files/sbp/ElasticDistributedRiskAnalysisEngine_colocated_workers.jpgbelakangimage
 
 {% exclamation %} When running the Elastic Calcualtion Engine on a single machine, scaling up and down will not affect the calculation time, but when running this on a grid with multiple machines, you will see better or worse calculation time when the grid scales up or down.
 
@@ -104,7 +104,7 @@ public void calculateNPV(double rate , Trade trade) {
 
 
 The above can be described using the following formula:
-!NPV_formula.jpg!
+depanimageNPV_formula.jpgtengahimage/attachment_files/sbp/NPV_formula.jpgbelakangimage
 
 ## The NPVResultsReducer
 The `NPVResultsReducer` receives the NPV calculation for each book from each calculation node (partition) and reduces it into a list of NPV values for each book (four values).
@@ -120,7 +120,7 @@ The [Elastic Processing Unit|XAP8:Elastic Processing Unit] is used to deploy the
 # Remote Calculations
 For long calculations that consume relatively large amount of CPU time, the recommended approach to implement distributed calculations is the [Master-Worker Pattern]. The approach suggested with the Master-Worker pattern should be used when the calculation time is relativity very long where the data access time can't be considered as overhead.
 
-!ElasticDistributedRiskAnalysisEngine_remote_workers.jpg!
+depanimageElasticDistributedRiskAnalysisEngine_remote_workers.jpgtengahimage/attachment_files/sbp/ElasticDistributedRiskAnalysisEngine_remote_workers.jpgbelakangimage
 
 # Running the Demo
 1. Download the [ElasticCalculationEngine.zip|Elastic Distributed Calculation Engine^ElasticCalculationEngine.zip] and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and **edit** the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.

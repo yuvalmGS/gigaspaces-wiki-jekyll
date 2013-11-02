@@ -45,7 +45,7 @@ Entries can be stored in the space using the `Write` method. A write operation s
 
 
 {% indent %}
-!GRA:Images^space_write.jpg!
+depanimagespace_write.jpgtengahimage/attachment_files/xap97net/space_write.jpgbelakangimage
 {% endindent %}
 
 
@@ -78,7 +78,7 @@ The returned object is a copy of the entry stored in the space, which means that
 
 
 {% indent %}
-!GRA:Images^space_read.jpg!
+depanimagespace_read.jpgtengahimage/attachment_files/xap97net/space_read.jpgbelakangimage
 {% endindent %}
 
 
@@ -103,7 +103,7 @@ Using the `Read` operation does not affect the space - the read entry remains in
 
 
 {% indent %}
-!GRA:Images^space_take.jpg!
+depanimagespace_take.jpgtengahimage/attachment_files/xap97net/space_take.jpgbelakangimage
 {% endindent %}
 
 

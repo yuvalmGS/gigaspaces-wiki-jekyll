@@ -10,7 +10,7 @@ page_id: 63799320
 
 
 {% comment %}
-!GRA:Images^NewinXAP66.gif|align=right!
+depanimageNewinXAP66.giftengahimage/attachment_files/xap97net/NewinXAP66.gifbelakangimage
 {% endcomment %}
 
 

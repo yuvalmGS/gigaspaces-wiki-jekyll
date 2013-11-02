@@ -36,14 +36,14 @@ Thinking in terms of traditional relationships ("one to one", "one to many" and 
 If an entity is associated with several containers (parent entities), it can't be embedded within the containing entity. It might be also impossible to store it with all of its containers on the same partition.
 
 In the [Pet Clinic application|http://www.openspaces.org/display/DAE/GigaSpaces+PetClinic], a Pet is only associated with an Owner. We can therefore store each Pet with its owner on the same partition. We can even embed the Pet object within the physical Owner entry.
-!GRA:Images2^petclinic_class_model.gif!
+depanimagepetclinic_class_model.giftengahimage/attachment_files/xap97net/petclinic_class_model.gifbelakangimage
 However, if a Pet were also associated with a Vet, we could not embed the Pet in the Vet physical entry (without duplicating each Pet entry) and could not store the Pet and the pet's Vet in the same partition.
 
 # What are Embedded and Non Embedded Relationships?
 
 **Embedded Relationships** mean that one object physically contains the associated objects and there is a **strong** lifecycle dependency between them. When the containing object is deleted, so are all of  its contained objects. With this type of object association, you ensure there is always a local transaction, since the entire object graph is stored in the same entry within the Space.
 
-!GRA:Images^model_embed.jpg!
+depanimagemodel_embed.jpgtengahimage/attachment_files/xap97net/model_embed.jpgbelakangimage
 
 ### Data Access for Embedded Relationships
 
@@ -76,7 +76,7 @@ See the [SqlQuery] section for details about embedded entities query and indexin
 
 **Non Embedded Relationships** means that one object is associated with a number of other objects, so you can navigate from one object to another. However, there is no life cycle dependency between them, so if you delete the referencing object, you don't automatically delete the referenced object(s). The association is therefore manifested in storing IDs rather than storing the actual associated object itself. This type of relationship means that you don't duplicate data but you are more likely to access more than one node in the cluster when querying or updating your data.
 
-!GRA:Images^model_non_embed.jpg!
+depanimagemodel_non_embed.jpgtengahimage/attachment_files/xap97net/model_non_embed.jpgbelakangimage
 
 
 {% tip %}

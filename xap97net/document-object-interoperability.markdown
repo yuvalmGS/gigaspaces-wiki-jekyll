@@ -8,7 +8,7 @@ page_id: 63799412
 
 {% summary %}Interoperability between Concrete Object and Document space entries{% endsummary %}
 
-!GRA:Images^new-in-801-banner.png|align=right!
+depanimagenew-in-801-banner.pngtengahimage/attachment_files/xap97net/new-in-801-banner.pngbelakangimage
 
 # Overview
 

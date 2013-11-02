@@ -20,7 +20,7 @@ page_id: 64323671
 # Overview
 
 The WAN Gateway provides a simple way of creating a master-slave topology enabling data from one XAP site to be replicated to one or more remote sites. For instance, given three clusters in New York, London, and Hong Kong, with New York being the master and the remaining two acting as slaves, any updates to the New York space will propagate to both London and Hong Kong asynchronously. The sample processing units and configuration provided below are intended as an example of implementing a single-master/multi-slave topology across three sites: New York (US), London (GB), and Hong Kong (HK) where each site has an independent cluster and a Gateway.
-!WAN_masterslave.png|width=616,height=326!
+depanimageWAN_masterslave.pngtengahimage/attachment_files/sbp/WAN_masterslave.pngbelakangimage
 
 The demo is configured to start three space instances across three clusters. While the three clusters run on your local machine, they are demarcated by zones and different lookup service ports as follows:
 || Gateway/Space || Zone || Lookup Service Port ||
@@ -31,7 +31,7 @@ The demo is configured to start three space instances across three clusters. Whi
 | wan-gateway-GB | GB | 4366 |
 | wan-space-GB | GB | 4366 |
 The internal architecture of the setup includes a clustered space and a Gateway, such that the master site (US) only configures delegators while the slave sites (GB, HK) only configure sinks (click the thumbnail to enlarge):
-!WAN_masterslave_arch.png|thumbnail!
+depanimageWAN_masterslave_arch.pngtengahimage/attachment_files/sbp/WAN_masterslave_arch.pngbelakangimage
 
 As a result of this topology setup, the following scenario will take place once updates are written to the New York space:
 
@@ -273,22 +273,22 @@ The `scripts` folder contains the necessary scripts to start the [Grid Service A
 
 - Start the GigaSpaces Management Center and configure the appropriate lookup groups through the "Group Management" dialog.
 - Once all clusters are up and running, you will need to enable the relative groups:
-!group_management_dialog.jpg!
+depanimagegroup_management_dialog.jpgtengahimage/attachment_files/sbp/group_management_dialog.jpgbelakangimage
 
 Check to enable all three advertised groups for each site:
-!groups_selection_dialog.jpg!
+depanimagegroups_selection_dialog.jpgtengahimage/attachment_files/sbp/groups_selection_dialog.jpgbelakangimage
 
 As a result, you should see the service grid components for each site displayed under the "Hosts" tree as follows:
-!masterslave_hosts_view.png|thumbnail!
+depanimagemasterslave_hosts_view.pngtengahimage/attachment_files/sbp/masterslave_hosts_view.pngbelakangimage
 Once The deployAll.bat/sh script finishes running, you should be able to see all three sites deployed as follows:
-!pu_deployments.jpg|thumbnail!
+depanimagepu_deployments.jpgtengahimage/attachment_files/sbp/pu_deployments.jpgbelakangimage
 
 If you are using the GS-WEBUI, you can also view the site topology through the "Data Grids > Gateways" view as the following:
-!webui_gw_topology.png|thumbnail!
+depanimagewebui_gw_topology.pngtengahimage/attachment_files/sbp/webui_gw_topology.pngbelakangimage
 
 # Testing Master-Slave Replication
 
 You can test the setup by using the [benchmark utility|XAP91:Benchmark View - GigaSpaces Browser] comes with the GS-UI. Select the US Benchmark icons and click Start to begin writing objects to the space:
-!masterslave_space_write.png|thumbnail!
+depanimagemasterslave_space_write.pngtengahimage/attachment_files/sbp/masterslave_space_write.pngbelakangimage
 Click the Spaces icon on the Space Browser Tab to get a global view of all spaces. As objects are being written, you should see replication occurring across both HK and GB sites until there are 5000 objects in each space:
-!masterslave_space_count.png|thumbnail!
+depanimagemasterslave_space_count.pngtengahimage/attachment_files/sbp/masterslave_space_count.pngbelakangimage

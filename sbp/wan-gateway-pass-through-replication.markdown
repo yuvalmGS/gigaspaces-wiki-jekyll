@@ -22,7 +22,7 @@ page_id: 59441985
 
 The WAN Gateway allows for the implementation of a pass-through replication topology across clusters of space instances. In this architecture, a site may act as an intermediary for delegating replication requests across two or more other sites. For instance, given three clusters in New York, London, and Hong Kong, there might be bandwidth or connectivity issues between Hong Kong and New York, thereby requiring London to be used as a pass through site. Such replication behavior may be specified through the use of the indirect delegation feature. The sample processing units and configuration provided below are intended as an example of implementing a pass through topology across three sites: New York (US), London (GB), and Hong Kong (HK) where each site has an independent cluster and a Gateway.
 
-!WAN_passthrough.jpg!
+depanimageWAN_passthrough.jpgtengahimage/attachment_files/sbp/WAN_passthrough.jpgbelakangimage
 
 The demo is configured to start three space instances across three clusters. While the three clusters run on your local machine, they are demarcated by zones and different lookup service ports as follows:
 
@@ -37,7 +37,7 @@ The demo is configured to start three space instances across three clusters. Whi
 
 
 The internal architecture of the setup includes a clustered space and a Gateway, where each Gateway includes a Delegator and a Sink (click the thumbnail to enlarge):
-!WAN_passthrough_arch.jpg|thumbnail!
+depanimageWAN_passthrough_arch.jpgtengahimage/attachment_files/sbp/WAN_passthrough_arch.jpgbelakangimage
 
 As a result of indirect delegation, the following scenario will take place once updates are written to the New York space:
 
@@ -297,24 +297,24 @@ The `scripts` folder contains the necessary scripts to start the [Grid Service A
 # Viewing the Clusters
 - Start the GigaSpaces Management Center and configure the appropriate lookup groups through the "Group Management" dialog.
 - Once all clusters are up and running, you will need to enable the relative groups:
-!group_management_dialog.jpg!
+depanimagegroup_management_dialog.jpgtengahimage/attachment_files/sbp/group_management_dialog.jpgbelakangimage
 
 Check to enable all three advertised groups for each site:
-!groups_selection_dialog.jpg!
+depanimagegroups_selection_dialog.jpgtengahimage/attachment_files/sbp/groups_selection_dialog.jpgbelakangimage
 
 As a result, you should see the service grid components for each site displayed under the "Hosts" tree as follows:
-!service_grid.jpg|thumbnail!
+depanimageservice_grid.jpgtengahimage/attachment_files/sbp/service_grid.jpgbelakangimage
 
 Once The deployAll.bat/sh script finishes running, you should be able to see all three sites deployed as follows:
-!pu_deployments.jpg|thumbnail!
+depanimagepu_deployments.jpgtengahimage/attachment_files/sbp/pu_deployments.jpgbelakangimage
 
 # Testing Pass Through Replication
 You can test the setup by using the [benchmark utility|XAP91:Benchmark View - GigaSpaces Browser] comes with the GS-UI. Select one of the HK or US Benchmark icons and click Start to begin writing objects to the space:
-!space_write.jpg|thumbnail!
+depanimagespace_write.jpgtengahimage/attachment_files/sbp/space_write.jpgbelakangimage
 
 Click the Spaces icon on the Space Browser Tab to get a global view of all spaces. As objects are being written, you should see replication occurring across both HK and US sites until there are 5000 objects in each space. Notice that since the GB site is a pass through, the object count should remain zero:
-!space_object_count.jpg|thumbnail!
+depanimagespace_object_count.jpgtengahimage/attachment_files/sbp/space_object_count.jpgbelakangimage
 
 You can also utilize the Take operation and click Start to remove objects from either the HK or US space. As a result, you will see the object count reaching zero across both HK and US as the pass through replication is taking place:
-!object_count_zero.jpg|thumbnail!
+depanimageobject_count_zero.jpgtengahimage/attachment_files/sbp/object_count_zero.jpgbelakangimage
 

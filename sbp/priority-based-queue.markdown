@@ -106,7 +106,7 @@ This is a [Priority based queue example|^PriorityBasedQueue.zip] - It includes 2
 
 With this example we have one Master thread and two worker threads.
 
-!prior_q.jpg!
+depanimageprior_q.jpgtengahimage/attachment_files/sbp/prior_q.jpgbelakangimage
 
 This demo can be modified to have:
 - Different amount of queues

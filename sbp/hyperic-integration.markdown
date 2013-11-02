@@ -27,7 +27,7 @@ In order to use the plugin on an hyperic agent you have to prepare this agent to
 
 In order to use the plugin you'll have to configure a GigaSpaces platform. Indeed as a correct defined GigaSpaces cluster discovery relies on lookup groups and/or lookup locators the plugin won't be able to auto-discover your infrastructure without these parameters.
 
-!hyperic_new_platform.png!
+depanimagehyperic_new_platform.pngtengahimage/attachment_files/sbp/hyperic_new_platform.pngbelakangimage
 
 On the hyperic new platform page select
 1. The platform type to be GigaSpaces XAP Grid.
@@ -38,7 +38,7 @@ On the hyperic new platform page select
 
 Once the platform is created you should be able to configure it:
 
-!hyperic_platform_conf.png!
+depanimagehyperic_platform_conf.pngtengahimage/attachment_files/sbp/hyperic_platform_conf.pngbelakangimage
 
 Click on the _Edit_ button in the _Configuration Properties_ panel.
 

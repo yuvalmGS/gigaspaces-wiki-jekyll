@@ -42,7 +42,7 @@ A container that hosts a [Processing Unit|Terminology - Basic Components#Process
 
 {% column width=30% %}
 
-{% align center %}!GS6:Images^term_puc.gif!
+{% align center %}depanimageterm_puc.giftengahimage/attachment_files/xap97net/term_puc.gifbelakangimage
 
 {% sub %}**A Processing Unit Container**{% endsub %}
 {% endalign %}
@@ -75,7 +75,7 @@ A container that runs the Processing Unit inside an IDE (e.g. Visual Studio, Ecl
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_ipuc.gif!
+depanimageterm_ipuc.giftengahimage/attachment_files/xap97net/term_ipuc.gifbelakangimage
 
 {% sub %}**An Intgrated Processing Unit Container running a Processing Unit**{% endsub %}
 {% sub %}**inside an IDE**{% endsub %}
@@ -107,7 +107,7 @@ It enables running the processing unit within a [service grid|#Service Grid], wh
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_gscnet.gif!
+depanimageterm_gscnet.giftengahimage/attachment_files/xap97net/term_gscnet.gifbelakangimage
 
 {% sub %}**A Service Grid Processing Unit Container running a Processing Unit**{% endsub %}
 {% sub %}**inside an IDE**{% endsub %}
@@ -148,7 +148,7 @@ Each container can be run on a separate physical machine.
 
 
 
-{% align center %}!GS6:Images^term_empty_service_grid.gif!
+{% align center %}depanimageterm_empty_service_grid.giftengahimage/attachment_files/xap97net/term_empty_service_grid.gifbelakangimage
 
 {% sub %}**A Service Grid composed of a Grid Service Manager which manages 3 Grid Service Containers**{% endsub %}
 {% endalign %}
@@ -180,7 +180,7 @@ A machine can run one or more GSC processes. Each GSC communicates with a manage
 
 {% column width=30% %}
 
-{% align center %}!GS6:Images^term_gsc.jpg!
+{% align center %}depanimageterm_gsc.jpgtengahimage/attachment_files/xap97net/term_gsc.jpgbelakangimage
 
 {% sub %}**Grid Service Container**{% endsub %}
 {% endalign %}
@@ -212,7 +212,7 @@ A GSM has an API for deploying/undeploying processing units. When a GSM is instr
 
 {% column width=30% %}
 
-{% align center %}!GS6:Images^term_gsm.gif!
+{% align center %}depanimageterm_gsm.giftengahimage/attachment_files/xap97net/term_gsm.gifbelakangimage
 
 {% sub %}**Grid Service Manager**{% endsub %}
 {% endalign %}
@@ -245,7 +245,7 @@ Enables the user to view and interact with the runtime components running in the
 {% column width=30% %}
 
 
-{% align center %}!GS6:Images^term_management_ui.gif!
+{% align center %}depanimageterm_management_ui.giftengahimage/attachment_files/xap97net/term_management_ui.gifbelakangimage
 
 {% sub %}**Management UI Console**{% endsub %}
 {% endalign %}

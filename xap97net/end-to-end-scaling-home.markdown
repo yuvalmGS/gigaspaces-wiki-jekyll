@@ -43,7 +43,7 @@ Administrating GigaSpaces XAP.NET components, including "how to", troubleshootin
 
 # Quick Links
 
-[!XAP95:XAP 9.0 Documentation Home^training_banner.png!|http://www.gigaspaces.com/content/gigaspaces-training]
+[depanimagetraining_banner.pngtengahimage/attachment_files/training_banner.pngbelakangimage|http://www.gigaspaces.com/content/gigaspaces-training]
 
 ##### &bull; [What's New in 9.0.X|RN:What's New in GigaSpaces 9.0.X]
 

@@ -33,7 +33,7 @@ The GUD allows you to specify for each deployed PU its dependency PU list. The d
 
 
 {% indent %}
-!universantDeploy_depen.jpg!
+depanimageuniversantDeploy_depen.jpgtengahimage/attachment_files/sbp/universantDeploy_depen.jpgbelakangimage
 {% endindent %}
 
 

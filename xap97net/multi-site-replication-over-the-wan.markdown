@@ -25,7 +25,7 @@ Multiple site replication is a very common deployment topology in the following 
 - **For failover purposes** - When one site acts as a failover over target for another.
 - **For maintaining data locality** - for each site for performance and latency reasons. For example a global trading application that operates in multiple stock exchanges across the globe need fast access to **Global Reference Data**, or an application that's deployed on multiple data centers in the cloud with a need to access the **Users Profile Data** very quickly.
 
-!GRA:Images2^wan_use_cases.jpg!
+depanimagewan_use_cases.jpgtengahimage/attachment_files/xap97net/wan_use_cases.jpgbelakangimage
 
 ## WAN Gateway Features
 
@@ -47,10 +47,10 @@ This page will demonstrate two sample multi-site replication topologies. These a
 
 For both of the above topologies, replication is done in in a similar way: Each space is replicating the relevant data to its target space(s) via a local gateway which routes the data to the gateway of the target space(s) and from there to the target space. The data is being replicated asynchronously in a reliable mode, which means that even if a primary space instance fails on the source site, the backup space instance which replaces it will immediately take control and replicate the missing data along with new data that has been  generated on the newly elected primary space instance. This is very similar to the [Mirror Service|XAP95:Asynchronous Persistency with the Mirror] replication scheme. The gateway is discussed in full below.
 
-!GRA:Images2^wan_how_it_works.jpg!
+depanimagewan_how_it_works.jpgtengahimage/attachment_files/xap97net/wan_how_it_works.jpgbelakangimage
 
 Replication may use Hub & Spoke, Ring, Hierarchical or Pass-Through architecture:
-!GRA:Images2^wan_topologies.jpg!
+depanimagewan_topologies.jpgtengahimage/attachment_files/xap97net/wan_topologies.jpgbelakangimage
 
 # Configuring a Space With Gateway Targets
 
@@ -115,7 +115,7 @@ Note that when there are no backups running any failure of the primary might cau
 
 A gateway needs to be deployed locally as a spring(java) based processing unit in each site, and is composed of two different components: The delegator and the sink. The delegator is in charge of delegating outgoing replication from the local site to a remote gateway and the sink is in charge of dispatching incoming replication from remote sites into the local space.
 
-!GRA:Images2^wan_gatway_archi.jpg!
+depanimagewan_gatway_archi.jpgtengahimage/attachment_files/xap97net/wan_gatway_archi.jpgbelakangimage
 
 ## Gateway Lookup
 
@@ -229,7 +229,7 @@ Note that by setting the "cluster-config.groups.group.repl-policy.processing-typ
 
 With this architecture, we have a master-slave topology where all data is being manipulated in one site, and two other sites are reading the data but not updating it. In other words, the "other sites" - the slaves - should not replicate data to the other gateways.
 
-!GRA:Images2^wan_master_slave.jpg!
+depanimagewan_master_slave.jpgtengahimage/attachment_files/xap97net/wan_master_slave.jpgbelakangimage
 
 In this case, New York's site will be the active site while London and Hong Kong will be the passive sites. As explained before, being passive does not necessarily means no work is done in these sites. However, in terms of replication over the WAN, these sites should not replicate to the other sites and usually should not alter data replicated from other sites because it may cause conflicts.
 
@@ -501,7 +501,7 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 With this architecture, we will have a multi-master topology where data is being generated and manipulated in all sites.
 
-!GRA:Images2^wan_multi_master.jpg!
+depanimagewan_multi_master.jpgtengahimage/attachment_files/xap97net/wan_multi_master.jpgbelakangimage
 
 We will demonstrate this using two sites but any number of sites is supported in the same manner. In a master-slave topology, each site should try to modify different subsets of the data as much as possible because many conflicts can occur if multiple sites are changing the same space entries at the same time. Such conflict can be resolved using a conflict resolver which will be discussed fully at [Multi-Site Conflict Resolution|XAP95:Multi-Site Conflict Resolution].
 

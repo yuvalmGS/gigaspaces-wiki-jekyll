@@ -45,7 +45,7 @@ The relations between the spaces define the [Data Grid Topology|#Data Grid Topol
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_populated_data_grid.gif!
+depanimageterm_populated_data_grid.giftengahimage/attachment_files/xap97net/term_populated_data_grid.gifbelakangimage
 
 {% sub %}**A Data Grid with 3 Instances**{% endsub %}
 {% endalign %}
@@ -83,7 +83,7 @@ Operations that do not modify any data (e.g. read, count) are performed only on 
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_primary_backup_text_data_grid.gif!
+depanimageterm_primary_backup_text_data_grid.giftengahimage/attachment_files/xap97net/term_primary_backup_text_data_grid.gifbelakangimage
 
 {% sub %}**A Data Grid comprised of a primary instance with one backup instance**{% endsub %}
 {% endalign %}
@@ -115,7 +115,7 @@ When the objects are written to this Data Grid, they are routed to the proper pa
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_partitioned_data_grid.gif!
+depanimageterm_partitioned_data_grid.giftengahimage/attachment_files/xap97net/term_partitioned_data_grid.gifbelakangimage
 
 {% sub %}**A Partitioned Data Grid with 3 Instances, each holding a different set objects**{% endsub %}
 
@@ -149,7 +149,7 @@ The routing is based on a designated property/field inside the objects that are 
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_routing.gif!
+depanimageterm_routing.giftengahimage/attachment_files/xap97net/term_routing.gifbelakangimage
 
 {% sub %}**Routing in a partitioned Data Grid with 3 instances**{% endsub %}
 
@@ -180,7 +180,7 @@ A [partitioned Data Grid|#Partitioned Data Grid], with one or more [backup|#Prim
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_partitioned_primary_backup_data_grid.gif!
+depanimageterm_partitioned_primary_backup_data_grid.giftengahimage/attachment_files/xap97net/term_partitioned_primary_backup_data_grid.gifbelakangimage
 
 {% sub %}**A Primary Backup Partitioned Data Grid: 2 partitions, each replicates to one backup instance**{% endsub %}
 

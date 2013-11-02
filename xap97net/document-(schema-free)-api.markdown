@@ -22,7 +22,7 @@ The GigaSpaces document API exposes the space as [Document Store|http://en.wikip
 
 {% column %}
 
-!GRA:Images2^doc_api.jpg!
+depanimagedoc_api.jpgtengahimage/attachment_files/xap97net/doc_api.jpgbelakangimage
 
 {% endcolumn %}
 

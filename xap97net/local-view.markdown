@@ -19,7 +19,7 @@ During the local view initialization, data is loaded into the client's memory ba
 
 
 {% indent %}
-!GRA:Images^local_view.jpg!
+depanimagelocal_view.jpgtengahimage/attachment_files/xap97net/local_view.jpgbelakangimage
 {% endindent %}
 
 

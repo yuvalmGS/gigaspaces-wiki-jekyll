@@ -53,14 +53,14 @@ Logging, Tracing, Transaction management, Job processing statistics, Job restart
 The Spring Batch [runtime environment|http://static.springsource.org/spring-batch/reference/html/configureJob.html] includes the following main components:
 
 {% indent %}
-!spring_batch_RuntimeEnvironment.jpg!
+depanimagespring_batch_RuntimeEnvironment.jpgtengahimage/attachment_files/sbp/spring_batch_RuntimeEnvironment.jpgbelakangimage
 {% endindent %}
 
 
 Spring Batch support both [sequential and conditional flows|http://static.springsource.org/spring-batch/reference/html/configureStep.html]. This allows building flexible batch processing systems.
 
 {% indent %}
-!spring_batch_SequentialAndConditionalFlows.jpg!
+depanimagespring_batch_SequentialAndConditionalFlows.jpgtengahimage/attachment_files/sbp/spring_batch_SequentialAndConditionalFlows.jpgbelakangimage
 {% endindent %}
 
 
@@ -79,7 +79,7 @@ Polling Container and Spring Batch approach should be used when the processing a
 The Spring Batch PU encapsulates all the required components to run a Spring Batch instance:
 
 {% indent %}
-!spring_batch_PU_archi.jpg!
+depanimagespring_batch_PU_archi.jpgtengahimage/attachment_files/sbp/spring_batch_PU_archi.jpgbelakangimage
 {% endindent %}
 
 
@@ -89,7 +89,7 @@ The Spring Batch PU supports the Round Robin Workers mode and the Dedicated Work
 With the Round Robin Worker mode a Spring Batch PU instance will be consuming requests from all the space partitions in round robin manner.
 
 {% indent %}
-!spring_batch_RoundRobinWorker.jpg!
+depanimagespring_batch_RoundRobinWorker.jpgtengahimage/attachment_files/sbp/spring_batch_RoundRobinWorker.jpgbelakangimage
 {% endindent %}
 
 
@@ -97,7 +97,7 @@ With the Round Robin Worker mode a Spring Batch PU instance will be consuming re
 With the Dedicated Worker mode a Spring Batch PU instance will be consuming requests from a dedicated specific space partition.
 
 {% indent %}
-!spring_batch_DedicatedWorker.jpg!
+depanimagespring_batch_DedicatedWorker.jpgtengahimage/attachment_files/sbp/spring_batch_DedicatedWorker.jpgbelakangimage
 {% endindent %}
 
 

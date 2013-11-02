@@ -13,7 +13,7 @@ page_id: 63799343
 
 Executor based remoting uses [Executors|Task Execution over the Space] to implement remoting capabilities on top of the space. Executor based remoting allows for direct invocation of services, both in synchronous and an asynchronous manner as well as broadcast capabilities. Executor remoting works with services that are exposed within a processing unit that started a collocated space.
 
-!GRA:Images^Executor.jpg!
+depanimageExecutor.jpgtengahimage/attachment_files/xap97net/Executor.jpgbelakangimage
 
 {% refer %}For a full SBA example demonstrating remote services usage please refer to the [Data Example|.NET Processing Unit Data Example]{% endrefer %}
 
@@ -378,10 +378,10 @@ The way to access the meta arguments on the server side is to configure a [serve
 When using executor remoting, a remote invocation can be broadcasted to all active (primary) cluster members. Each Service instance is invoked and return a result to its called which in turn reduce these and pass the final result to the application.
 
 The First phase involves the Service invocation:
-!GRA:Images^Executor1.jpg!
+depanimageExecutor1.jpgtengahimage/attachment_files/xap97net/Executor1.jpgbelakangimage
 
 The Second phase involves reducing the results retrieved from the Services:
-!GRA:Images^Executor2.jpg!
+depanimageExecutor2.jpgtengahimage/attachment_files/xap97net/Executor2.jpgbelakangimage
 
 In order to use broadcast remoting, the executor broadcast remoting builder should be used:
 

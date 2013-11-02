@@ -10,7 +10,7 @@ page_id: 63799342
 {% summary %}Using Dynamic Properties with Object entries.{% endsummary %}
 
 
-!GRA:Images^new-in-801-banner.png|align=right!
+depanimagenew-in-801-banner.pngtengahimage/attachment_files/xap97net/new-in-801-banner.pngbelakangimage
 
 # Overview
 

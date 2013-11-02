@@ -36,7 +36,7 @@ There are various architectural options moving Data From Mainframe (Z/OS) DB2 to
 ### Event Publishing
 DB2 Event publishing programs read source database changes from the database logs and makes the same available to consuming applications(in delimited, XML format or direct to database tables). When publishing messages, these can be available via IBM Websphere MQ.
 
-!GRA:Images3^db2-delta-server.jpg!
+depanimagedb2-delta-server.jpgtengahimage/attachment_files/sbp/db2-delta-server.jpgbelakangimage
 
 One of the main differences between SQL/Q Replication is the usage of staging tables by SQL replication. Both do use the Q Capture and Q Apply programs, however Q replication has a step wherein the committed changes are immediately sent over to a Websphere Message Q.
 
@@ -115,7 +115,7 @@ Allows the IMDG to pull data from Mainframe via a public interfaces (web service
 
 [JCICS|http://publib.boulder.ibm.com/infocenter/cicsts/v3r1/index.jsp?topic=%2Fcom.ibm.cics.ts31.doc%2Fdfhpj%2Ftopics%2Fdfhpjlp.htm] (provided by CICS) is the Java equivalent of the EXEC CICS application programming interface (API) that you would use with other CICS supported languages, such as COBOL. It allows you to access CICS resources and integrate your Java programs with programs written in other languages. Most of the functions of the EXEC CICS API are supported. For a description of the JCICS API, see [The JCICS class library|http://publib.boulder.ibm.com/infocenter/cicsts/v3r1/topic/com.ibm.cics.ts31.doc/dfhpj/topics/dfhpjl9.htm#dfhpjl9]. You may leverage JCICS to allow Java application and native (COBOL) programs running on the mainframe. You may use GigaSpaces IMDG notifications and update the mainframe applications with every change within the IMDG in a transparent manner.
 
-!mainframeIntegration.jpg!
+depanimagemainframeIntegration.jpgtengahimage/attachment_files/sbp/mainframeIntegration.jpgbelakangimage
 
 References:
 - The [official Redbook on JVM Server|http://www.redbooks.ibm.com/abstracts/sg248038.html?Open] that explains how to deploy applications to a JVM Server on the Mainframe.
