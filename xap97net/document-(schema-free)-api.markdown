@@ -44,7 +44,7 @@ Note that the Document type does not describe the properties themselves (except 
 
 Since a `SpaceDocument` is completely dynamic by nature, it is very easy to change or evolve your data model without ever taking down the Space. Simply change your application code to add additional properties or remove existing ones, and you're good to go. Even better, old and new versions can co-exist since the space does not enforce any restriction with regards to the property set of documents that belong to a certain type. This is a much more lightweight model in comparison to the classic POJO model, where a recompilation and in many cases a full space restart is required to change the data schema.
 
-If POJO model cannot be replaced with Document model, yet some level of schema evolution is desired within the POJO model, [Dynamic Properties| Dynamic Properties] can be used.
+If POJO model cannot be replaced with Document model, yet some level of schema evolution is desired within the POJO model, [Dynamic Properties|Dynamic Properties] can be used.
 
 # Type Definition
 

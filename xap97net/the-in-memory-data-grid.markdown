@@ -47,7 +47,7 @@ depanimagetopologies.jpgtengahimage/attachment_files/xap97net/topologies.jpgbela
 
 ### Master-Local Space
 
-Regardless of the Space's topology, you can also define a [Local Cache | Client Side Caching] for space clients. The Local Cache caches space entries recently used by the client, or a predefined subset of the central space's data (often referred to as a **Continuous Query**).
+Regardless of the Space's topology, you can also define a [Local Cache|Client Side Caching] for space clients. The Local Cache caches space entries recently used by the client, or a predefined subset of the central space's data (often referred to as a **Continuous Query**).
 The data cached on the client side is kept up to date by the server. If Space client A changes a Space entry that resides in a client B's local cache, the Space makes sure to update client B's cache.
 
 ### The Replication Mode
@@ -78,11 +78,11 @@ Combined, these two facilities enable better control of your environment and ens
 ### Reactive Programming
 
 GigaSpaces and its Space-Based-Architecture embrace the depanlinkreactive programmingtengahlinkhttp://en.wikipedia.org/wiki/Reactive_programmingbelakanglink approach. Reactive programming with GigaSpaces includes:
-- [Data Event Listener | Event Listener Container]: [Polling Container | Polling Container Component], [Notify Container | Notify Container Component]
-- [Local View and Local Cache | Client Side Caching]
+- [Data Event Listener|Event Listener Container]: [Polling Container|Polling Container Component], [Notify Container|Notify Container Component]
+- [Local View and Local Cache|Client Side Caching]
 - [Task Execution over the Space]
 - [Asynchronous Operations|The GigaSpace Interface#Asynchronous Operations]
-- [Drools Rule Engine Integration|SBP: Drools Rule Engine Integration]: Available from a 3rd party.
+- [Drools Rule Engine Integration|SBP:Drools Rule Engine Integration]: Available from a 3rd party.
 
 {% endtoczone %}
 

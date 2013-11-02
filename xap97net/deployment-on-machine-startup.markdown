@@ -15,7 +15,7 @@ Service Grid deployment can be considered something that should be done automati
 
 # Configure Grid Service Manager and Grid Service Containers
 
-In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) to start on machine startup they should be installed as windows services using [GigaSpaces Windows Service Manager|Service Grid Components as Windows Services#Windows Services Manager]. Each installed service needs to be [configured| Service Grid Components as Windows Services#Service Configuration] seperately with the appropriate lookup groups by updating the service configuration file `"-Dcom.gs.jini_lus.groups"` option.
+In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) to start on machine startup they should be installed as windows services using [GigaSpaces Windows Service Manager|Service Grid Components as Windows Services#Windows Services Manager]. Each installed service needs to be [configured|Service Grid Components as Windows Services#Service Configuration] seperately with the appropriate lookup groups by updating the service configuration file `"-Dcom.gs.jini_lus.groups"` option.
 
 
 {% highlight xml %}
