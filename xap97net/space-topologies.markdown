@@ -59,5 +59,5 @@ GigaSpaces XAP supports the following data grid topologies:
 - Partitioned with backup - `partitioned-sync2backup`
 The local cache and local view topologies do not need their own schemas, because they are defined on the client side.
 
-{section-page:na}
+
 {children}

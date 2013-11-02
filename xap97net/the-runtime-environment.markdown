@@ -38,4 +38,3 @@ Finally, the **GSA** ([Grid Service Agent|Service Grid#gsa]) component is used t
 
 All of the above components are fully manageable from the GigaSpaces management interfaces such as the [UI|Graphical User Interface], CLI and [Admin API|Administration and Monitoring API].
 
-{section-page:na}
