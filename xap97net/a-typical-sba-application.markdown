@@ -182,5 +182,5 @@ The following is a snippet taken from the example SLA definition section of the 
 
 {% endtoczone %}
 
-{whr}
+{% whr %}
 {% refer %}**Next Chapter:** [Database Integration]{% endrefer %}

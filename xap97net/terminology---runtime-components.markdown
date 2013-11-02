@@ -117,7 +117,7 @@ It enables running the processing unit within a [service grid|#Service Grid], wh
 
 {% endsection %}
 
-{whr}
+{% whr %}
 
 {% comment %}
 -------------------------------------------------

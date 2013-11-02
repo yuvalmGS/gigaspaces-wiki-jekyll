@@ -291,5 +291,5 @@ This package contains integrations with non-XAP components. For more information
 {% endtoczone %}
 
 
-{whr}
+{% whr %}
 {% refer %} **Next chapter**: [Terminology]{% endrefer %}

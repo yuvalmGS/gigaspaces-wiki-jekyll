@@ -53,7 +53,7 @@ The GigaSpaces cache instance that holds data objects in memory.
 
 {% endsection %}
 
-{whr}
+{% whr %}
 
 {% comment %}
 ----------------------------
@@ -87,7 +87,7 @@ A set of methods used to read, write, take, and register for notification on obj
 
 {% endsection %}
 
-{whr}
+{% whr %}
 
 {% comment %}
 **Local Cache** - a space embedded within a client application to enable ...
@@ -126,7 +126,7 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 
 {% endsection %}
 
-{whr}
+{% whr %}
 
 {% comment %}
 ----------------------------
