@@ -128,5 +128,3 @@ The SpaceRouting is determined by the `[\[SpaceRouting\]|Object Metadata#SpaceRo
 
 {% refer %}SpaceRouting consideration in [Write and Update operation|Writing and Updating Entries]{% endrefer %}
 {% refer %}SpaceRouting consideration in [Read operation|Reading Entries]{% endrefer %}
-
-{toc-zone}

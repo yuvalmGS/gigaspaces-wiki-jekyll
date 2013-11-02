@@ -40,7 +40,8 @@ In both cases, the business logic will be invoked with a collocated space.
 
 
 # Executors Task Example
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
+
+{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 The example will illustrate a simple map-reduce implementation.
 
 A client writing some Account objects into the Data Grid. Later it will calculate the average balance for all the Accounts via a `DistributedTask` that is sent to each partition to be executed:
@@ -257,10 +258,11 @@ You can view the space operations statistics by running the `\gigaspaces-xap\bin
 !exe_example_stats.jpg|thumbnail!
 {% endindent %}
 
-{toc-zone}
+{% endtoczone %}
 
 # Service Executors Example
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
+
+{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 The example will have a clustered space with a collocated service running. A client will be invoking the service:
 !GRA:Images^Executor1.jpg!
 The results created at each partition will be sent to the client. These will be aggregated via the reducer implementation at the client side and displayed:
@@ -519,4 +521,4 @@ You can view the space operations statistics by running the `\gigaspaces-xap\bin
 !exe_example_stats.jpg|thumbnail!
 {% endindent %}
 
-{toc-zone}
+{% endtoczone %}

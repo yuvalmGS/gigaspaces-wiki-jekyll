@@ -38,7 +38,7 @@ We can see that the trading application guarantees both minimal latency and line
 
 # Application Structure
 
-{toc-zone:minLevel=3|maxLevel=3|type=flat|separator=pipe|location=top}
+{% toczone minLevel=3|maxLevel=3|type=flat|separator=pipe|location=top %}
 
 The following diagram outlines a typical architecture of an application built with OpenSpaces: !GS6:Images^intro4a.jpg|align=center!
 
@@ -180,6 +180,7 @@ The following is a snippet taken from the example SLA definition section of the 
 </os-sla:sla>
 {% endhighlight %}
 
-{toc-zone}
+{% endtoczone %}
+
 {whr}
 {% refer %}**Next Chapter:** [Database Integration]{% endrefer %}

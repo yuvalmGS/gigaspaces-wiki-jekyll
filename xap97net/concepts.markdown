@@ -29,7 +29,7 @@ GigaSpaces XAP was built to be an implementation of the theory behind these conc
 
 # Overcoming Limitations of First-Generation Servers
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 GigaSpaces XAP and Space-Based Architecture overcome the major limitations found in first-generation application servers. These limitations can be divided into three main categories:
 
 - Complexity
@@ -63,12 +63,12 @@ Prior generations of application servers were built for the web in the days when
 - Compute Grid
 
 GigaSpaces XAP supports web-enabled request/response applications, in addition to all the modern computational styles described above, and the combination of all of the above.
-{toc-zone}
+{% endtoczone %}
+
 
 # Space - Concepts and Capabilities
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
-
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 The space is the 'secret sauce' behind GigaSpaces XAP architecture, and it is important to understand its capabilities in order to better understand the entire Space-Based Architecture model.
 
 {% anchor tuple %}
@@ -110,12 +110,12 @@ In traditional relational databases retrieving data is synonym with SQL. While t
 GigaSpaces XAP extends template matching by providing semantics to query ranges on information as well. For additional information, please refer to the [SQLQuery API|SQLQuery] in the Programmer's Guide.
 {% endtip %}
 
-{toc-zone}
+{% endtoczone %}
+
 
 # Clustering and Topologies
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
-
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 The [space as defined previously|#Space - Concepts and Capabilities] is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a **cluster**, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
 
 The three main cluster topologies are:
@@ -156,6 +156,7 @@ Since each partition contains only a subset of the data, losing a partition can 
 The common topology is of a partitioned cluster, where each partition member has one or more replicas. With this topology, there is no scalability bottleneck in the amount of data that can be stored in the cluster, and each partition is fault-tolerant as it has a backup replica.
 
 {% infosign %} This topology is also known in GigaSpaces XAP as Partitioned-Sync2Backup.
-{toc-zone}
+{% endtoczone %}
+
 {whr}
 {% refer %}**Next Chapter:** [A Typical SBA Application]{% endrefer %}

@@ -24,7 +24,7 @@ This section includes basic and advanced code examples for using the GigaSpaces-
 
 # Basic Examples
 
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
+{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 ## HelloUDF -- Performing Excel Functions in Space
 
@@ -650,7 +650,7 @@ namespace TickInfo
 {% endhighlight %}
 
 
-{toc-zone}
+{% endtoczone %}
 
 # What's Next?
 

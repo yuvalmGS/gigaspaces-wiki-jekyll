@@ -23,7 +23,8 @@ Each sub-system (layer) is responsible for providing application server capabili
 
 # SLA-Driven Container
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
+
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 
 {% comment %}
 TODO_NIV - Change to internal link when available.
@@ -98,11 +99,13 @@ TODO_NIV - Change to internal link when available.
 
 It is common to start several GSCs on the same physical machine, depending on the machine CPU and memory resources.
 The deployment of multiple GSCs on a single machine creates a virtual Service Grid. The fact is that GSCs are providing a layer of abstraction on top of the physical layer of hosts. This concept enables deployment of clusters on various deployment topologies of enterprise data centers and public clouds.
-{toc-zone}
+{% endtoczone %}
+
 
 # Unified In-Memory Clustering
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
+
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 The role of clustering in GigaSpaces XAP is to provide scaling, load-balancing and high-availability. The main difference between GigaSpaces XAP and other clustering alternatives, is the use of a single clustering model for all middleware core capabilities. This means that the data and the services collocated with it, are equally available. An example of how useful this is, is that when a primary node fails, and another node acts as its backup, both application components, i.e. data and messaging, become active at the same time.
 
 The ability to support a unified clustering model is a direct result of the underlying space-based clustering model. For more information on the concept of space, please refer to [Space - Concepts and Capabilities|Concepts#Space - Concepts and Capabilities].
@@ -126,14 +129,18 @@ The key challenge with HA is state management. The typical solution for servers 
 As GigaSpaces XAP has distributed shared memory capabilities, it is very simple and efficient to preserve high availability of stateful applications. The application state is replicated into backup nodes, resulting in immediate recovery in cases of fail-over and high-performance high-availability.
 
 The GigaSpaces XAP solution does not require a compromise between stateless application complexity, performance and resiliency.
-{toc-zone}
+{% endtoczone %}
+
 
 # Core Middleware
 
 As an application server, GigaSpaces XAP provides integrated, memory-based runtime capabilities. The core of these capabilities is backed by the space technology - for more information, please refer to [Space - Concepts and Capabilities|Concepts#Space - Concepts and Capabilities].
 
-**The core middleware capabilities are:**
-{toc-zone:type=list|location=top}
+**The core middleware capabilities
+are:**
+
+{% toczone type=list|location=top %}
+
 
 ## In-Memory Data Grid
 
@@ -198,11 +205,12 @@ The process is widely known as map/reduce, and is used extensively by companies 
 ### Business Logic Hosting
 
 Another aspect of processing is business logic hosting. This is covered in Lightweight Application Containers below.
-{toc-zone}
+{% endtoczone %}
+
 
 # Lightweight Application Containers
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
+
 Lightweight application containers provide a business logic execution environment at the node level. They also translate SBA semantics and services to the relevant container development framework implementation.
 
 The Grid Service Container (GSC) is responsible for providing Grid capabilities, whereas the lightweight container implementation is responsible at the single VM level.
@@ -212,8 +220,9 @@ For this reason, this architecture is very powerful, as it enables applications 
 GigaSpaces XAP provides several default implementations as part of the product, and an additional plugin API, to enable other technology integrations.
 
 **Current implementations supported by GigaSpaces XAP**:
-{toc-zone:type=list|location=top}
 
+
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 More information on the usage of the above integrations can be found in the [Programmer's Guide].
 
 ## .NET  - Abstract container
@@ -245,11 +254,13 @@ The [integration with the Jetty web container|XAP95:Web Jetty Processing Unit Co
 ## Mule
 
 Mule is a very popular open source Enterprise Services Bus implementation in Java. The [Mule container integration|XAP95:Mule ESB] allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
-{toc-zone}
+{% endtoczone %}
+
 
 # Developers API and Components
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
+
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 
 ## Overview
 
@@ -277,7 +288,8 @@ Remoting can be viewed as the alternative to Web Services or WCF, as it provides
 
 This package contains integrations with non-XAP components. For more information please refer to the Programmers Guide.
 
-{toc-zone}
+{% endtoczone %}
+
 
 {whr}
 {% refer %} **Next chapter**: [Terminology]{% endrefer %}

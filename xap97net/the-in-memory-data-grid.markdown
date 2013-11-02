@@ -35,7 +35,8 @@ The [Caching Scenarios] describes the different caching options supported by Gig
 # Characteristics of a Space
 
 The space has a number of determining characteristics that should be configured when it is created, as described below:
-{toc-zone:minLevel=1|maxLevel=3|type=list|separator=pipe|location=top}
+
+{% toczone minLevel=1|maxLevel=3|type=list|separator=pipe|location=top %}
 
 ### The Space Clustering Topology
 
@@ -83,7 +84,7 @@ GigaSpaces and its Space-Based-Architecture embrace the [reactive programming|ht
 - [Asynchronous Operations|The GigaSpace Interface#Asynchronous Operations]
 - [Drools Rule Engine Integration|SBP: Drools Rule Engine Integration]: Available from a 3rd party.
 
-{toc-zone}
+{% endtoczone %}
 
 # APIs to Access the Space
 

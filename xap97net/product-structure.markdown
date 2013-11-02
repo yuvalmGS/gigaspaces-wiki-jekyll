@@ -12,7 +12,8 @@ page_id: 63799358
 # Overview
 
 XAP .NET comes as a standalone product, that includes the following basic artifacts:
-{toc-zone:type=list|location=top}
+
+{% toczone type=list|location=top %}
 
 # Product Directory Structure
 
@@ -52,4 +53,4 @@ The installer creates useful shortcuts in the start menu.
 {% endindent %}
 
 
-{toc-zone}
+{% endtoczone %}

@@ -20,7 +20,7 @@ A [processing unit container|Processing Unit Container] is a component implement
 
 The basic container simplifies the actual implementation of the processing unit by managing on its own GigaSpaces related components which are commonly used when developing application which are deployed into the grid.
 
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
+{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 # Integrating The Container Into Your Project
 
@@ -253,7 +253,7 @@ public void MyEventListener(ISpaceProxy spaceProxy)
 
 
 When registering for the \[BeforePrimary\] or \[BeforeBackup\], special care should be taken. The event handling of these listeners will **delay the space instance life cycle completion** for a co-located space instance - i.e., a primary space instance will be blocked from fully becoming a primary space until it completes all the invocations of the \[BeforePrimary\] subscribers. There is no guarantee for receiving a corresponding Before event always prior to a Post event. When the processing unit starts, the event subscription is asynchronous to the space instance active election; in this case it is quite reasonable not to receive the Before events and only to receive the Post events.
-{toc-zone}
+{% endtoczone %}
 
 {% refer %}
 For more details about the Basic Processing Unit Container please refer to the [Detailed Basic Processing Unit Container|Detailed Basic Processing Unit Container] page.

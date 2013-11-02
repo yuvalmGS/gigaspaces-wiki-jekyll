@@ -38,7 +38,7 @@ The Event Driven Remoting allows you to:
 - Calling Future.get() is a synchronous call
 - Is designed for long-running computation requests
 
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
+{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 ## Installing and Running the example
 
@@ -95,3 +95,4 @@ Processing unit(s) started successfully
 2011-11-08 09:11:57.985 SimpleServiceImpl - Request Number:2 called!
 {% endhighlight %}
 
+{% endtoczone %}

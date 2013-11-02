@@ -25,7 +25,7 @@ For a fully running example using the Mirror Service see `GigaSpaces Root\XAP.NE
 
 # .NET Specific Settings
 
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
+{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 ## Creating a Space with ExternalDataSource
 
@@ -113,7 +113,7 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size",
 
 {% refer %}To enable the .NET `ExternalDataSource` adapter logging, refer to the [GigaSpaces Logging|XAP95:GigaSpaces Logging#GigaSpacesLoggers] section.{% endrefer %}
 
-{toc-zone}
+{% endtoczone %}
 
 # Creating Custom ExternalDataSource Implementation
 

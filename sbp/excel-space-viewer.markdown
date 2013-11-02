@@ -134,7 +134,8 @@ The **SQL** area at the bottom displays the query syntax in SQL. After pressing 
 The **Configure View** option allows you to make changes to existing views. If you have a few views in the same spreadsheet, click anywhere in the relevant view and then click **Configure View**.
 
 The Configure View window already includes your previously selected options, and you are free to change them as you like.
-{toc-zone}
+
+{% toczone minLevel=1|maxLevel=1|type=flat|separator=pipe|location=top %}
 
 # Installation
 
@@ -199,3 +200,5 @@ Running the installation file (`GigaSpacesViewerSetup.msi`) and selecting **Add*
 1. Open Excel
 2. Click **Help** > **About Excel** > **Disabled Items**
 3. Highlight the **mscorlib.dll** item and click **Enable**
+
+{% endtoczone %}

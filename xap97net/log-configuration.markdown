@@ -9,7 +9,7 @@ page_id: 63799400
 
 # Logging and Tracing
 
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
+{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 GigaSpaces XAP.NET components use the tracing mechanism for logging/tracing, built-in with the .NET framework. This gives the user, control over tracing behavior using the standard .NET configuration schema. Users can:
 - configure the level of events which are traced
@@ -73,4 +73,4 @@ Here are some features/scenarios which might be useful:
 {% refer %}For more details, see:
 - [http://msdn2.microsoft.com/EN-US/library/aa480464.aspx]
 - [http://msdn2.microsoft.com/en-us/library/ms228989.aspx]{% endrefer %}
-{toc-zone}
+{% endtoczone %}

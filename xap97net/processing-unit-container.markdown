@@ -71,7 +71,7 @@ The `ClusterInfo` class holds the following information:
 
 # Creating Your Own Processing Unit Container
 
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
+{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 ## Step 1 -- Create the Processing Unit Container
 
@@ -104,7 +104,7 @@ The `pu.config` you've created needs to be edited to point to your Processing Un
 </configuration>
 {% endhighlight %}
 
-{toc-zone}
+{% endtoczone %}
 
 {% refer %}It is possible to create a processing unit of mixed languages, for instance part Java, part .NET. This topic is covered in [Interop Processing Unit|Interop Processing Unit] page.{% endrefer %}
 
