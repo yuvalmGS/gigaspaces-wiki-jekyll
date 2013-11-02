@@ -15,31 +15,21 @@ page_id: 61867365
 Getting started with GigaSpaces, terminology and concepts, screencasts, and advanced tutorials.
 {% endlozenge %}
 
-{% wbr %}
-
 {% lozenge title=Product Overview|link=./product-overview.html|arrow=none|color=silver|width=100%|icon=/attachment_files/9.x_doc.png %}
 Technical high-level view of GigaSpaces XAP; overview, architecture and components.
 {% endlozenge %}
-
-{% wbr %}
 
 {% lozenge title=Programmer's Guide|link=./programmer's-guide.html|arrow=none|color=silver|width=100%|icon=/attachment_files/9.x_doc.png %}
 Developing with GigaSpaces XAP -- reference documentation, foundations, APIs, configurations and more advanced topics.
 {% endlozenge %}
 
-{% wbr %}
-
 {% lozenge title=Administrator's Guide|link=./administrator's-guide.html|arrow=none|color=silver|width=100%|icon=/attachment_files/9.x_doc.png %}
 Administrating GigaSpaces XAP components, including "how to", troubleshooting and reference documentation.
 {% endlozenge %}
 
-{% wbr %}
-
 {% lozenge title=Solutions and Best Practices|link=http://wiki.gigaspaces.com/wiki/display/SBP/Solutions+and+Best+Practices+Home|color=silver|arrow=none|width=100%|icon=/attachment_files/Key.png %}
 Some of the best practices for GigaSpaces applications
 {% endlozenge %}
-
-{% wbr %}
 
 {% endcolumn %}
 

@@ -14,25 +14,27 @@ page_id: 63799426
 
 # XAP.NET 9.0 End to End Scaling Documentation
 
-{lozenge:title=Quick Start Guide|link=Quick Start Guide|color=silver|arrow=none|width=100%|icon=!flag.png!}
+{% lozenge title=Quick Start Guide|link=Quick Start Guide|color=silver|arrow=none|width=100%|icon=/attachment_files/flag.png %}
 Getting started with GigaSpaces, terminology and concepts, screencasts, and advanced tutorials.
-{lozenge}
+{% endlozenge %}
 
 {% wbr %}
-{lozenge:title=Product Overview|link=Product Overview|color=silver|arrow=none|width=100%|icon=!9.x_doc.png!}
+
+{% lozenge title=Product Overview|link=Product Overview|color=silver|arrow=none|width=100%|icon=/attachment_files/9.x_doc.png %}
 Understanding GigaSpaces XAP's value proposition, architecture and components.
-{lozenge}
+{% endlozenge %}
 
 {% wbr %}
-{lozenge:title=Programmer's Guide|link=Programmer's Guide|color=silver|arrow=none|width=100%|icon=!9.x_doc.png!}
+
+{% lozenge title=Programmer's Guide|link=Programmer's Guide|color=silver|arrow=none|width=100%|icon=/attachment_files/9.x_doc.png %}
 Developing with GigaSpaces XAP.NET -- reference documentation, foundations, APIs, configurations and more advanced topics.
-{lozenge}
+{% endlozenge %}
 
 {% wbr %}
 
-{lozenge:title=Administrator's Guide|link=Administrator's Guide|color=silver|arrow=none|width=100%|icon=!9.x_doc.png!}
+{% lozenge title=Administrator's Guide|link=Administrator's Guide|color=silver|arrow=none|width=100%|icon=/attachment_files/9.x_doc.png %}
 Administrating GigaSpaces XAP.NET components, including "how to", troubleshooting and reference documentation.
-{lozenge}
+{% endlozenge %}
 
 {% endcolumn %}
 
