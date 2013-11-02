@@ -11,38 +11,38 @@ page_id: 63799344
 | **HelloWorld**
 
 This example demonstrates simple GigaSpaces .Net API usage.
-For more details, see the [example description|http://www.gigaspaces.com/docs/dotnet6.5/examples/HelloWorld/readme.html]. |
-[<GigaSpaces Root>\dotnet\examples\HelloWorld|http://www.gigaspaces.com/docs/dotnet6.5/examples/HelloWorld] |
+For more details, see the depanlinkexample descriptiontengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/HelloWorld/readme.htmlbelakanglink. |
+depanlink<GigaSpaces Root>\dotnet\examples\HelloWorldtengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/HelloWorldbelakanglink |
 | **SpaceTutorial**
 
 This example demonstrates how to perform common tasks using the GigaSpaces.NET API.
-For more details, see the [example description|http://www.gigaspaces.com/docs/dotnet6.5/examples/SpaceTutorial/readme.html]. |
-[<GigaSpaces Root>\dotnet\examples\SpaceTutorial|http://www.gigaspaces.com/docs/dotnet6.5/examples/SpaceTutorial] |
+For more details, see the depanlinkexample descriptiontengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/SpaceTutorial/readme.htmlbelakanglink. |
+depanlink<GigaSpaces Root>\dotnet\examples\SpaceTutorialtengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/SpaceTutorialbelakanglink |
 | **DotNetJava**
 
 This example illustrates basic interoperability operations between Java and .NET space proxies.
-For more details, see the [example description|http://www.gigaspaces.com/docs/dotnet6.5/examples/DotNetJava/readme.html].
-For the Wiki page, see [.Net-Java Example|http://www.gigaspaces.com/wiki/display/XAP97NET/.Net-Java+Example]. |
-[<GigaSpaces Root>\dotnet\examples\DotNetJava|http://www.gigaspaces.com/docs/dotnet6.5/examples/DotNetJava] |
+For more details, see the depanlinkexample descriptiontengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/DotNetJava/readme.htmlbelakanglink.
+For the Wiki page, see depanlink.Net-Java Exampletengahlinkhttp://www.gigaspaces.com/wiki/display/XAP97NET/.Net-Java+Examplebelakanglink. |
+depanlink<GigaSpaces Root>\dotnet\examples\DotNetJavatengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/DotNetJavabelakanglink |
 | **Data Grid**
 
 This is an advanced example that demonstrates the usage of various space topologies.
 After a chosen topology is deployed, a `DataLoader` application writes .NET objects that represent accounts to the cluster. Two reader applications (simple and notified) are used to read the written accounts.
-For more details, see the [example description|http://www.gigaspaces.com/docs/dotnet6.5/examples/DataGrid/readme.html].
-For the Wiki page, see [Enterprise Data Grid Tutorial A - Basic Topologies|http://www.gigaspaces.com/wiki/display/Gs66/Enterprise+Data+Grid+Tutorial+A+-+Basic+Topologies]. |
+For more details, see the depanlinkexample descriptiontengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/DataGrid/readme.htmlbelakanglink.
+For the Wiki page, see depanlinkEnterprise Data Grid Tutorial A - Basic Topologiestengahlinkhttp://www.gigaspaces.com/wiki/display/Gs66/Enterprise+Data+Grid+Tutorial+A+-+Basic+Topologiesbelakanglink. |
 
 
-[<GigaSpaces Root>\dotnet\examples\DataGrid|http://www.gigaspaces.com/docs/dotnet6.5/examples/DataGrid] |
+depanlink<GigaSpaces Root>\dotnet\examples\DataGridtengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/DataGridbelakanglink |
 | **Benchmark**
 
 This example measures the performance of several GigaSpaces .Net API operations.
-For more details, see the [example description|http://www.gigaspaces.com/docs/dotnet6.5/examples/Benchmark/readme.html].
-For the Wiki page, see [.NET Benchmark Example]|[<GigaSpaces Root>\dotnet\examples\Benchmark|http://www.gigaspaces.com/docs/dotnet6.5/examples/Benchmark] |
+For more details, see the depanlinkexample descriptiontengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/Benchmark/readme.htmlbelakanglink.
+For the Wiki page, see [.NET Benchmark Example]|depanlink<GigaSpaces Root>\dotnet\examples\Benchmarktengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/Benchmarkbelakanglink |
 | **Processing Unit**
 
 The Processing Unit example demonstrates how to implement a basic processing unit and the different ways of deploying it.
-For more details, see the [example description|http://www.gigaspaces.com/docs/dotnet6.5/examples/ProcessingUnit/readme.html].
-For the Wiki page, see [.NET Processing Unit Data Example|http://www.gigaspaces.com/wiki/display/XAP97NET/.NET+Processing+Unit+Data+Example]. |
+For more details, see the depanlinkexample descriptiontengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/ProcessingUnit/readme.htmlbelakanglink.
+For the Wiki page, see depanlink.NET Processing Unit Data Exampletengahlinkhttp://www.gigaspaces.com/wiki/display/XAP97NET/.NET+Processing+Unit+Data+Examplebelakanglink. |
 
 
-[<GigaSpaces Root>\dotnet\examples\ProcessingUnit|http://www.gigaspaces.com/docs/dotnet6.5/examples/ProcessingUnit] |
+depanlink<GigaSpaces Root>\dotnet\examples\ProcessingUnittengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/ProcessingUnitbelakanglink |

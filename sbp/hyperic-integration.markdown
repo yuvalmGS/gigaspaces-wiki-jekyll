@@ -7,7 +7,7 @@ page_id: 57212965
 
 # Overview
 
-[Hyperic|http://www.hyperic.com/] is a global monitoring system and this page describes a quick GigaSpaces integration that I made during a consulting session.
+depanlinkHyperictengahlinkhttp://www.hyperic.com/belakanglink is a global monitoring system and this page describes a quick GigaSpaces integration that I made during a consulting session.
 The plugin uses the GigaSpaces Admin API to perform the monitoring of a global system.
 The plugin is offered as open source as part of OpenSpaces community.
 
@@ -52,7 +52,7 @@ _The plugin is currently delivering some very basic features and has to be impro
 
 # Building the plugin
 
-If you wish to enhance the plugin, fix bugs or just review the source code, you can [download the source code|https://github.com/Gigaspaces/bestpractices] from _GigaSpaces Solutions and Best Practices GitHub repository_ and build it yourself.
+If you wish to enhance the plugin, fix bugs or just review the source code, you can depanlinkdownload the source codetengahlinkhttps://github.com/Gigaspaces/bestpracticesbelakanglink from _GigaSpaces Solutions and Best Practices GitHub repository_ and build it yourself.
 Plugin package uses maven but requires a few Hyperic artifacts that are not available in public repositories. In order to build the plugin you'll first have to add them to your repository:
 
 - Run the following commands:

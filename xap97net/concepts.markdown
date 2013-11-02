@@ -17,13 +17,13 @@ For this reason, these application servers focused mainly on resource management
 
 # Space-Based Architecture
 
-A detailed description of the model and the theory that led to the inception of GigaSpaces XAP as a next-generation development and runtime platform, as the means to achieve scalability in a high-throughput, stateful environment, is provided in the following white paper: [The Scalability Revolution: From Dead End to Open Road|http://www.gigaspaces.com/os_papers.html#scalrev].
+A detailed description of the model and the theory that led to the inception of GigaSpaces XAP as a next-generation development and runtime platform, as the means to achieve scalability in a high-throughput, stateful environment, is provided in the following white paper: depanlinkThe Scalability Revolution: From Dead End to Open Roadtengahlinkhttp://www.gigaspaces.com/os_papers.html#scalrevbelakanglink.
 
 In "The Scalability Revolution", we define scalability as the ability to increase an application's working capacity while retaining data and logic consistency, latency, and the application code - and show that inherent scalability barriers represent a dead end for today's tier-based business-critical applications. In order to survive, today's applications must achieve linear scalability, and the only valid way to do so, is to switch from a tier-based model to a new architectural approach - partitioned applications.
 
 We suggest an approach in which applications are partitioned into self-sufficient Processing Units, and present Space-Based Architecture (SBA) as a practical implementation of this approach. We demonstrate that SBA guarantees both linear scalability and simplicity for designers, developers and administrators - transforming scalability from dead end to open road.
 
-The [Space-Based Architecture and the End of Tier-based Computing|http://www.gigaspaces.com/os_papers.html#a1] white paper describes how changes in the IT resource landscape, such as memory capacity, network speed and the emergence of powerful and new multi-core commodity hardware, and the introduction of SOA/Grid architectures, tout the promise of achieving true linearly-scalable systems at a lower cost. It introduces how a Space-Based Architecture (SBA) approach can be used as a means to transform existing tier-based applications into linearly and dynamically scalable services.
+The depanlinkSpace-Based Architecture and the End of Tier-based Computingtengahlinkhttp://www.gigaspaces.com/os_papers.html#a1belakanglink white paper describes how changes in the IT resource landscape, such as memory capacity, network speed and the emergence of powerful and new multi-core commodity hardware, and the introduction of SOA/Grid architectures, tout the promise of achieving true linearly-scalable systems at a lower cost. It introduces how a Space-Based Architecture (SBA) approach can be used as a means to transform existing tier-based applications into linearly and dynamically scalable services.
 
 GigaSpaces XAP was built to be an implementation of the theory behind these concepts, and to make the development of applications based on this model, **simple.**
 
@@ -77,7 +77,7 @@ The space is the 'secret sauce' behind GigaSpaces XAP architecture, and it is im
 
 Tuple Space is a different paradigm for inter-process communication, based on sharing information tuples instead of the alternate message passing paradigm.
 
-Linda language, developed by David Gelernter and Nicholas Carriero at Yale University, was the first implementation of Tuple Spaces. Later on, the [JavaSpaces specification|http://www.sun.com/software/jini/specs/js2_0.pdf] was defined as part of [Sun's Jini specification|http://www.sun.com/software/jini/specs/].
+Linda language, developed by David Gelernter and Nicholas Carriero at Yale University, was the first implementation of Tuple Spaces. Later on, the depanlinkJavaSpaces specificationtengahlinkhttp://www.sun.com/software/jini/specs/js2_0.pdfbelakanglink was defined as part of depanlinkSun's Jini specificationtengahlinkhttp://www.sun.com/software/jini/specs/belakanglink.
 
 GigaSpaces initial product version was a commercial implementation to the JavaSpaces specification, and the Java kernel API of the product still implements the JavaSpaces specification.
 
@@ -87,7 +87,7 @@ This section describes the capabilities of the space, and how a combination of t
 
 ## Space
 
-A Space is a logical in-memory service, which can store entries of information. `Entry` is a domain object. In .NET, an entry can be as simple as a [POCO|http://en.wikipedia.org/wiki/Plain_Old_CLR_Object].
+A Space is a logical in-memory service, which can store entries of information. `Entry` is a domain object. In .NET, an entry can be as simple as a depanlinkPOCOtengahlinkhttp://en.wikipedia.org/wiki/Plain_Old_CLR_Objectbelakanglink.
 
 ## Space - Basic Concepts
 

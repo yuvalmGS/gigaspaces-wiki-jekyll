@@ -25,7 +25,7 @@ The following example shows how to embed GigaSpaces Data Grid using this model.
 
 ## Acquiring and Installing XAP
 
-Acquiring XAP is simple: download an archive from the [Current Releases|http://www.gigaspaces.com/LatestProductVersion] page.
+Acquiring XAP is simple: download an archive from the depanlinkCurrent Releasestengahlinkhttp://www.gigaspaces.com/LatestProductVersionbelakanglink page.
 
 Installation of XAP is just as easy as getting XAP is: since it's a simple archive, unzip it into a directory of your choice.
 
@@ -98,7 +98,7 @@ You can also use a simple helper utility (DataGridConnectionUtility) that combin
 
 
 {% tip %}
-A The DataGridConnectionUtility class [is available on Github|https://github.com/Gigaspaces/bestpractices/blob/master/plains/src/main/java/org/openspaces/plains/datagrid/DataGridConnectionUtility.java], in the "plains" project.
+A The DataGridConnectionUtility class depanlinkis available on Githubtengahlinkhttps://github.com/Gigaspaces/bestpractices/blob/master/plains/src/main/java/org/openspaces/plains/datagrid/DataGridConnectionUtility.javabelakanglink, in the "plains" project.
 {% endtip %}
 
 With this class in the classpath, getting a datagrid reference is as simple as:

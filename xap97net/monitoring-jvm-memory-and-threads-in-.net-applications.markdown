@@ -11,7 +11,7 @@ page_id: 63799356
 
 # Overview
 
-In some cases, you might want to monitor the activity of the JVM running as part of your .NET application. The [jconsole|http://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.html] is a great tool that allows you to troubleshoot the JVM internals.
+In some cases, you might want to monitor the activity of the JVM running as part of your .NET application. The depanlinkjconsoletengahlinkhttp://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.htmlbelakanglink is a great tool that allows you to troubleshoot the JVM internals.
 
 **To view and monitor the JVM loaded into the .NET process memory address using `jconsole`:**
 1. Have the following settings as part of your `app.config` file:
@@ -48,5 +48,5 @@ depanimagejcon1.jpgtengahimage/attachment_files/xap97net/jcon1.jpgbelakangimage
 depanimagejcon2.jpgtengahimage/attachment_files/xap97net/jcon2.jpgbelakangimage
 
 {% refer %}For more details on JMX and `jconsole`, refer to:{% endrefer %}
-- [Sun - Monitoring and Management Using JMX|http://java.sun.com/j2se/1.5.0/docs/guide/management/agent.html]
-- [Sun - Using jconsole|http://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.html]
+- depanlinkSun - Monitoring and Management Using JMXtengahlinkhttp://java.sun.com/j2se/1.5.0/docs/guide/management/agent.htmlbelakanglink
+- depanlinkSun - Using jconsoletengahlinkhttp://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.htmlbelakanglink

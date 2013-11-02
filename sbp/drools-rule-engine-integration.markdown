@@ -22,13 +22,13 @@ page_id: 54821146
 
 # Overview
 
-A rule engine is a component specialized in the execution of business rules. There are dedicated algorithms for such engines, such as the [RETE algorithm|http://en.wikipedia.org/wiki/Rete_algorithm], which is optimized for efficiency, concurrency and speed. As such a rule engine is capable of processing large volumes of data, and therefore, an integration with GigaSpaces would combine the best of two worlds.
+A rule engine is a component specialized in the execution of business rules. There are dedicated algorithms for such engines, such as the depanlinkRETE algorithmtengahlinkhttp://en.wikipedia.org/wiki/Rete_algorithmbelakanglink, which is optimized for efficiency, concurrency and speed. As such a rule engine is capable of processing large volumes of data, and therefore, an integration with GigaSpaces would combine the best of two worlds.
 
 depanimagedroolsRuleEngineIntegration.jpgtengahimage/attachment_files/sbp/droolsRuleEngineIntegration.jpgbelakangimage
 
 This article demonstrates how to integrate a rules engine called Drools (also known as JBoss Rules) with GigaSpaces. A working example is provided as part of this article. In the next sections a technical description is given on how the integration works. It will go into detail of all the classes used, how they interact and should be accessed from another system. You will find that the GigaSpaces data grid is used for storing the business rules, event containers for pre-compiling rulesets in an asynchronous manner, and that Remoting Services can be used for invocations of the rule-engine.
 
-Click [here|http://gigaspaces.com/wiki/download/attachments/54821146/SpaceEnabledDrools.zip] to download a working code sample that uses [JBoss Drools 5|http://www.jboss.org/drools].
+Click depanlinkheretengahlinkhttp://gigaspaces.com/wiki/download/attachments/54821146/SpaceEnabledDrools.zipbelakanglink to download a working code sample that uses depanlinkJBoss Drools 5tengahlinkhttp://www.jboss.org/droolsbelakanglink.
 
 # Modules
 

@@ -23,23 +23,23 @@ page_id: 52528551
 
 Usually you index and execute queries using primitive fields (long, float, string, etc). The fields may be within the root level of the space object, or embedded within [nested objects|XAP91:SQLQuery#Nested Object Query] within the space object. You may construct a query using a template object or SQL to specify the criteria you would like to use when the matching phase is performed within the space when looking for the relevant objects.
 
-In some cases you might want to use a custom data type with a custom business logic to find matching objects within the space, rather the usual [primitive data type|http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html] comparison. To allow the space to invoke your business logic when the matching process is conducted, the [Comparable|http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html] interface should be implemented for a class that stores the data you would like to use with your custom business logic.
+In some cases you might want to use a custom data type with a custom business logic to find matching objects within the space, rather the usual depanlinkprimitive data typetengahlinkhttp://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.htmlbelakanglink comparison. To allow the space to invoke your business logic when the matching process is conducted, the depanlinkComparabletengahlinkhttp://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.htmlbelakanglink interface should be implemented for a class that stores the data you would like to use with your custom business logic.
 
 {% tip %}
-The [Comparable|http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html] implementation should not be done for the space class itself, but for one of its fields.
+The depanlinkComparabletengahlinkhttp://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.htmlbelakanglink implementation should not be done for the space class itself, but for one of its fields.
 {% endtip %}
 
 
-Such custom business logic might be useful when comparing vector data (2 dimensional Cartesian space). These may represent sound, maps, pictures or any other 2 or 3 dimensional artifacts. You may use this technique to query data based on any other mathematical or financial related formulas such as [Time value of money|http://en.wikipedia.org/wiki/Time_value_of_money] like Present Value of a Cash Flow Series, Future Value of a Cash Flow Series, etc. Other areas where such custom matching is relevant, are Pattern recognition, Sequence analysis, Surveillance, Forensic, Social network behavior etc.
+Such custom business logic might be useful when comparing vector data (2 dimensional Cartesian space). These may represent sound, maps, pictures or any other 2 or 3 dimensional artifacts. You may use this technique to query data based on any other mathematical or financial related formulas such as depanlinkTime value of moneytengahlinkhttp://en.wikipedia.org/wiki/Time_value_of_moneybelakanglink like Present Value of a Cash Flow Series, Future Value of a Cash Flow Series, etc. Other areas where such custom matching is relevant, are Pattern recognition, Sequence analysis, Surveillance, Forensic, Social network behavior etc.
 
 {% exclamation %} In some cases, you may index the data to speed up the custom matching process. To enable this, you should index the field so that its class implements the `Comparable` interface using the `EXTENDED` index type as part of the space class. See the [Indexing|XAP91:Indexing] page for additional information about how to enable the `EXTENDED` index. Indexing the custom type field **should be used carefully since it does not support** a `Comparable.compareTo` implementation that performs relative-based matching, as demonstrated by the following example.
 
 # Vector Compare Example
-The following example illustrates a business logic implementation used to query for vector data (an array of Integer values), using the [Euclidean distance|http://en.wikipedia.org/wiki/Euclidean_distance] formula:
+The following example illustrates a business logic implementation used to query for vector data (an array of Integer values), using the depanlinkEuclidean distancetengahlinkhttp://en.wikipedia.org/wiki/Euclidean_distancebelakanglink formula:
 
 {% panel %}depanimageEuclideanDistance.jpgtengahimage/attachment_files/sbp/EuclideanDistance.jpgbelakangimage{% endpanel %}
 
-The object that holds the array implements the [Comparable|http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html] interface. The Space class has a getter method for this field indexing, using the `EXTENDED` index. The actual query involves indexed fields for several sample data points within the vector, together with the custom field:
+The object that holds the array implements the depanlinkComparabletengahlinkhttp://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.htmlbelakanglink interface. The Space class has a getter method for this field indexing, using the `EXTENDED` index. The actual query involves indexed fields for several sample data points within the vector, together with the custom field:
 
 
 {% highlight java %}

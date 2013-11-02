@@ -11,7 +11,7 @@ page_id: 63799405
 
 GigaSpaces PBS (Portable Binary Serialization) is the underlying technology used to serialize and transport non Java objects from the client side to the space side. It is highly optimized serialization technology allowing a .Net or C++ client to communicate with the space in very efficiency manner.
 
-To control Space Class field serialization you should use the [StorageType|http://www.gigaspaces.com/docs/dotnetdocs8.0/html/T_GigaSpaces_Core_Metadata_StorageType.htm] attribute.
+To control Space Class field serialization you should use the depanlinkStorageTypetengahlinkhttp://www.gigaspaces.com/docs/dotnetdocs8.0/html/T_GigaSpaces_Core_Metadata_StorageType.htmbelakanglink attribute.
 Example:
 
 {% highlight java %}

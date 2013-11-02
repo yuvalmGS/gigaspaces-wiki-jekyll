@@ -29,7 +29,7 @@ The Grid Service Container provides an isolated runtime for one (or more) proces
 
 The GSC can be perceived as a node on the grid, which is controlled by [The Grid Service Manager|#gsm]. The GSM provides commands of deployment and un-deployment of the Processing Unit instances into the GSC. The GSC reports its status to the GSM.
 
-The GSC can host multiple processing unit instances simultaneously. The processing unit instances are isolated from each other using separate [Class loaders|http://en.wikipedia.org/wiki/Java_Classloader] (in java) or [AppDomains|http://en.wikipedia.org/wiki/Appdomain] (in .NET).
+The GSC can host multiple processing unit instances simultaneously. The processing unit instances are isolated from each other using separate depanlinkClass loaderstengahlinkhttp://en.wikipedia.org/wiki/Java_Classloaderbelakanglink (in java) or depanlinkAppDomainstengahlinkhttp://en.wikipedia.org/wiki/Appdomainbelakanglink (in .NET).
 
 It is common to start several GSCs on the same physical machine, depending on the machine CPU and memory resources. The deployment of multiple GSCs on a single or multiple machines creates a virtual Service Grid. The fact is that GSCs are providing a layer of abstraction on top of the physical layer of machines. This concept enables deployment of clusters on various deployment typologies of enterprise data centers and public clouds.
 

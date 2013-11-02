@@ -52,7 +52,7 @@ Integer myNextID = idGenerator.generateId();
 {% endhighlight %}
 
 {% info %}
-The `SpaceBasedIdGenerator` using [Spring Transactions|http://static.springsource.org/spring/docs/2.0.x/reference/transaction.html] to update the `IdCounterEntry` object.
+The `SpaceBasedIdGenerator` using depanlinkSpring Transactionstengahlinkhttp://static.springsource.org/spring/docs/2.0.x/reference/transaction.htmlbelakanglink to update the `IdCounterEntry` object.
 {% endinfo %}
 
 # The ID Generator Components

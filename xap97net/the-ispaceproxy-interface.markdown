@@ -388,9 +388,9 @@ Here are few important considerations when using the batch operations:
 
 # Asynchronous Operations
 
-The GigaSpace interface supports asynchronous (non-blocking) read and asynchronous take operations through the GigaSpace interface. Both return a [Future<T>|http://download.oracle.com/javase/6/docs/api/java/util/concurrent/Future.html] object, where T is the type of the object the request returns. Future<T>.get() can be used to query the object to see if a result has been returned or not.
+The GigaSpace interface supports asynchronous (non-blocking) read and asynchronous take operations through the GigaSpace interface. Both return a depanlinkFuture<T>tengahlinkhttp://download.oracle.com/javase/6/docs/api/java/util/concurrent/Future.htmlbelakanglink object, where T is the type of the object the request returns. Future<T>.get() can be used to query the object to see if a result has been returned or not.
 
-Alternatively, asyncRead and asyncTake also accept an implementation of [AsyncFutureListener<T>|http://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/async/AsyncFutureListener.html], which will have its [onResult(AsyncFuture<T>)|http://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/async/AsyncFutureListener.html#onResult(com.gigaspaces.async.AsyncResult)] method called when the result has been populated. This does not affect the return type of the Future<T>, but provides an additional mechanism for handling the asynchronous response.
+Alternatively, asyncRead and asyncTake also accept an implementation of depanlinkAsyncFutureListener<T>tengahlinkhttp://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/async/AsyncFutureListener.htmlbelakanglink, which will have its depanlinkonResult(AsyncFuture<T>)tengahlinkhttp://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/async/AsyncFutureListener.html#onResult(com.gigaspaces.async.AsyncResult)belakanglink method called when the result has been populated. This does not affect the return type of the Future<T>, but provides an additional mechanism for handling the asynchronous response.
 
 depanimageasync_operations.jpgtengahimage/attachment_files/xap97net/async_operations.jpgbelakangimage
 
@@ -539,7 +539,7 @@ As seen in the take API above, there is no need to provide a Jini transaction ob
 {% endinittab %}
 
 
-{% lampon %} It is highly recommended to read the [transaction management chapter|http://static.springframework.org/spring/docs/3.0.x/reference/transaction.html] in the Spring reference documentation.
+{% lampon %} It is highly recommended to read the depanlinktransaction management chaptertengahlinkhttp://static.springframework.org/spring/docs/3.0.x/reference/transaction.htmlbelakanglink in the Spring reference documentation.
 
 ## Transaction Provider
 
@@ -647,7 +647,7 @@ In the above example, any operation performed using `GigaSpace` in the `updateFo
 
 # Exception Hierarchy
 
-OpenSpaces is built on top of the Spring [consistent exception hierarchy|http://static.springframework.org/spring/docs/2.0.x/reference/dao.html#dao-exceptions] by translating all of the different JavaSpaces exceptions and GigaSpaces exceptions into runtime exceptions, consistent with the Spring exception hierarchy. All the different exceptions exist in the `org.openspaces.core` package.
+OpenSpaces is built on top of the Spring depanlinkconsistent exception hierarchytengahlinkhttp://static.springframework.org/spring/docs/2.0.x/reference/dao.html#dao-exceptionsbelakanglink by translating all of the different JavaSpaces exceptions and GigaSpaces exceptions into runtime exceptions, consistent with the Spring exception hierarchy. All the different exceptions exist in the `org.openspaces.core` package.
 
 OpenSpaces provides a pluggable exception translator using the following interface:
 

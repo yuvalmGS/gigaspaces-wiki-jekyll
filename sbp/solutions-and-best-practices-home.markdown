@@ -44,7 +44,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |[Parallel Queue Pattern]| Advanced |Messaging based pattern. Can be used when moving from **J2EE JMS Service Activator Aggregator Strategy/MDB** into XAP.|
 |[Unit Of Work]| Advanced |Messaging based pattern. Can be used when moving from **J2EE JMS** Unit of Order into XAP.|
 |[Drools Rule Engine Integration]| Advanced | Scaling business rule management system based application.|
-|[Spring Batch PU]| Advanced | Complex Batch Processing using [Spring Batch|http://static.springsource.org/spring-batch].|
+|[Spring Batch PU]| Advanced | Complex Batch Processing using depanlinkSpring Batchtengahlinkhttp://static.springsource.org/spring-batchbelakanglink.|
 |[JTA-XA Example] | Advanced | Integrating GigaSpaces with an external JMS Server using XA. Atomikos is used as the JTA Transaction provider. Apache ActiveMQ is used as a the JMS provider.|
 
 # Setup Production Environment
@@ -59,7 +59,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |[WAN Gateway Pass Through Replication]| Beginner | Example for implementing a pass through WAN replication topology.|
 |[WAN Gateway Master Slave Replication]| Beginner | Example for implementing a single-master/multi-slave replication topology.|
 |[Primary-Backup Zone Controller]|Beginner | Using Zones to control Data-Grid primary/backup instances location.|
-|[RESTful Admin API|http://www.openspaces.org/display/RES/Project+Documentation]| Beginner | Using web services to monitor and administrate GigaSpaces.|
+|depanlinkRESTful Admin APItengahlinkhttp://www.openspaces.org/display/RES/Project+Documentationbelakanglink| Beginner | Using web services to monitor and administrate GigaSpaces.|
 |[JMX Space Statistics]| Beginner | Using JMX to expose space statistics.|
 |[Space Dump and Reload]| Beginner | Using the administration API to dump the space data into a file and reload it back.|
 |[Scaling Agent]| Beginner | Using the administration API to scale web applications. Can be used when moving **J2EE Web applications** into XAP elastic Web Container.|
@@ -92,13 +92,13 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 ##### • [Solutions and Best Practices|SBP:Solutions and Best Practices Home]
 
-##### • [Forum|http://ask.gigaspaces.org/]
+##### • depanlinkForumtengahlinkhttp://ask.gigaspaces.org/belakanglink
 
-##### • [Downloads|http://www.gigaspaces.com/LatestProductVersion]
+##### • depanlinkDownloadstengahlinkhttp://www.gigaspaces.com/LatestProductVersionbelakanglink
 
-##### • [Blog|http://blog.gigaspaces.com/]
+##### • depanlinkBlogtengahlinkhttp://blog.gigaspaces.com/belakanglink
 
-##### • [White Papers|http://www.gigaspaces.com/os_papers.html]
+##### • depanlinkWhite Paperstengahlinkhttp://www.gigaspaces.com/os_papers.htmlbelakanglink
 
 ##### • Looking for **[XAP.NET|XAP96NET:XAP.NET 9.6 Documentation Home]** or **[other versions|ALL:Choose a GigaSpaces Version]**?
 

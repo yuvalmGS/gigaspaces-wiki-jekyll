@@ -6,8 +6,8 @@ page_id: 63799387
 ---
 
 {wnavpanel2:Additional Resources}
-- [XAP Application Server|http://www.gigaspaces.com/xap]
-- [XAP Data Grid|http://www.gigaspaces.com/xap]
-- [XAP for Cloud Computing|http://www.gigaspaces.com/cloud]
-- [XAP J2EE Support|http://www.gigaspaces.com/j2ee]
+- depanlinkXAP Application Servertengahlinkhttp://www.gigaspaces.com/xapbelakanglink
+- depanlinkXAP Data Gridtengahlinkhttp://www.gigaspaces.com/xapbelakanglink
+- depanlinkXAP for Cloud Computingtengahlinkhttp://www.gigaspaces.com/cloudbelakanglink
+- depanlinkXAP J2EE Supporttengahlinkhttp://www.gigaspaces.com/j2eebelakanglink
 {wnavpanel2}

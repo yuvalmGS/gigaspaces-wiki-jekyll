@@ -62,7 +62,7 @@ To do that:
 2. Package the installed files into a zip file (or any other compression tool you prefer).
 3. Unzip the package on the target machine(s) wherever you prefer.
 
-{% exclamation %} If you plan to use XAP.NET with .NET 4.0, make sure that the **Visual C++ 2010 Redistributable Package** ([x86|http://www.microsoft.com/download/en/details.aspx?id=5555] | [x64|http://www.microsoft.com/download/en/details.aspx?id=14632]) is installed on the target machine (this is required only for manual installation - if the msi is installed the C++ redist package is installed automatically if needed).
+{% exclamation %} If you plan to use XAP.NET with .NET 4.0, make sure that the **Visual C++ 2010 Redistributable Package** (depanlinkx86tengahlinkhttp://www.microsoft.com/download/en/details.aspx?id=5555belakanglink | depanlinkx64tengahlinkhttp://www.microsoft.com/download/en/details.aspx?id=14632belakanglink) is installed on the target machine (this is required only for manual installation - if the msi is installed the C++ redist package is installed automatically if needed).
 
 The final touch is to configure the location of XAP.NET. This can be achieved in one of the following ways:
 1. **Windows Registry:** Create a registry key named `HKLM\SOFTWARE\GigaSpaces\XAP.NET\<version>\<clrversion>`, with a String value named `SettingsPath` which points to the location of the `Settings.xml` file. For example, the XAP.NET v9.5 x86 setup creates the following keys:

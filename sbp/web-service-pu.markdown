@@ -20,7 +20,7 @@ page_id: 56426564
 {rate}
 
 # Overview
-This example illustrates a simple web service packaged as a WAR using [Apache CXF|http://cxf.apache.org] 2.4. Web service is also interacting with a space and performing read and write operations on behalf of the client.
+This example illustrates a simple web service packaged as a WAR using depanlinkApache CXFtengahlinkhttp://cxf.apache.orgbelakanglink 2.4. Web service is also interacting with a space and performing read and write operations on behalf of the client.
 
 
 {% indent %}
@@ -32,7 +32,7 @@ For simplicity:
 - Space is collocated with the web service.
 - Example does not include HTTP Load balancer and Load balancer Agent.
 
-The example is based on the [sample|http://cxf.apache.org/docs/sample-projects.html] found within the CXF package under the `\apache-cxf-2.4.0\samples\wsdl_first` folder. This sample shows how to build and call a web service using a given WSDL (also called Contract First).
+The example is based on the depanlinksampletengahlinkhttp://cxf.apache.org/docs/sample-projects.htmlbelakanglink found within the CXF package under the `\apache-cxf-2.4.0\samples\wsdl_first` folder. This sample shows how to build and call a web service using a given WSDL (also called Contract First).
 
 # What the Sample Web Service is Doing?
 The web service performs the following space operations:
@@ -150,7 +150,7 @@ The client application:
 - Call the `CustomerServiceImpl.getCustomersByName (String name)`.
 
 ## Running the Client
-You may test the web service using a client application running as a standalone Java application, Spring Application or via [SOAP UI|http://www.soapui.org].
+You may test the web service using a client application running as a standalone Java application, Spring Application or via depanlinkSOAP UItengahlinkhttp://www.soapui.orgbelakanglink.
 
 ### Standalone Java Application
 The `com.example.customerservice.client.CustomerServiceClient` can be used as a standalone Java application to invoke the service. Run the `main` to run the client:
@@ -184,7 +184,7 @@ All calls were successful
 
 
 ### SOAP UI
-You can use the [SOAP UI|http://www.soapui.org] to test the web service.
+You can use the depanlinkSOAP UItengahlinkhttp://www.soapui.orgbelakanglink to test the web service.
 Writing a Custmer object:
 
 {% indent %}

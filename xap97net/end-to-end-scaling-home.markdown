@@ -43,7 +43,7 @@ Administrating GigaSpaces XAP.NET components, including "how to", troubleshootin
 
 # Quick Links
 
-[depanimagetraining_banner.pngtengahimage/attachment_files/training_banner.pngbelakangimage|http://www.gigaspaces.com/content/gigaspaces-training]
+depanlinkdepanimagetraining_banner.pngtengahimage/attachment_files/training_banner.pngbelakangimagetengahlinkhttp://www.gigaspaces.com/content/gigaspaces-trainingbelakanglink
 
 ##### &bull; [What's New in 9.0.X|RN:What's New in GigaSpaces 9.0.X]
 
@@ -55,15 +55,15 @@ Administrating GigaSpaces XAP.NET components, including "how to", troubleshootin
 
 ##### &bull; [Solutions and Best Practices|SBP:Solutions and Best Practices Home]
 
-##### &bull; [Forum|http://forum.openspaces.org/forum.jspa?forumID=175]
+##### &bull; depanlinkForumtengahlinkhttp://forum.openspaces.org/forum.jspa?forumID=175belakanglink
 
-##### &bull; [Customer Support Portal|http://www.gigaspaces.com/supportcenter]
+##### &bull; depanlinkCustomer Support Portaltengahlinkhttp://www.gigaspaces.com/supportcenterbelakanglink
 
-##### &bull; [Training Programs|http://www.gigaspaces.com/content/gigaspaces-training]
+##### &bull; depanlinkTraining Programstengahlinkhttp://www.gigaspaces.com/content/gigaspaces-trainingbelakanglink
 
-##### &bull; [Blog|http://blog.gigaspaces.com/]
+##### &bull; depanlinkBlogtengahlinkhttp://blog.gigaspaces.com/belakanglink
 
-##### &bull; [White Papers|http://www.gigaspaces.com/os_papers.html]
+##### &bull; depanlinkWhite Paperstengahlinkhttp://www.gigaspaces.com/os_papers.htmlbelakanglink
 
 ##### &bull; Looking for **[**XAP**|XAP95:9.0 Documentation Home]** or **[**other versions**|ALL:Choose a GigaSpaces Version]**?
 

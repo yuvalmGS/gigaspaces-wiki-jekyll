@@ -70,7 +70,7 @@ The Side cache scenario is widely used with the following GigaSpaces APIs:
 - [GigaSpace API|The ISpaceProxy Interface] - GigaSpaces native Object/SQL API.
 - [Map API|The GigaMap Interface] - GigaSpaces Key/Value (JCache/Hashtable) API.
 - [JDBC API|JDBC Driver] - GigaSpaces native JDBC driver.
-- [memcached API|The Memcached API] - Using any memcached client ([Java|http://code.google.com/p/xmemcached] , C# , C , C++..). See [memcached libraries page|http://code.google.com/p/memcached/wiki/Clients] for the different programming languages supporting the memcached protocol that may be used with GigaSpaces server memcached implementation.
+- [memcached API|The Memcached API] - Using any memcached client (depanlinkJavatengahlinkhttp://code.google.com/p/xmemcachedbelakanglink , C# , C , C++..). See depanlinkmemcached libraries pagetengahlinkhttp://code.google.com/p/memcached/wiki/Clientsbelakanglink for the different programming languages supporting the memcached protocol that may be used with GigaSpaces server memcached implementation.
 - [Hibernate|GigaSpaces for Hibernate ORM Users] - Leveraging GigaSpaces as Hibernate 2nd Level Cache.
 
 ## When you should use a side cache?

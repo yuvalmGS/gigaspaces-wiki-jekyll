@@ -21,12 +21,12 @@ page_id: 56428168
 {rate}
 
 # Overview
-One of the challenges in using an in-memory data grid is that it's an ideal representation of data that's often held in a non-relational database. GigaSpaces XAP has a [write-behind persistence mechanism|http://www.gigaspaces.com/wiki/display/XAP8/External+Data+Source] built-in that's designed for relational databases (so when you write a data item into the data grid, it gets replicated to the backend database automatically), but you might instead want to replicate to a different data storage mechanism altogether, such as [MongoDB|http://mongodb.org] or [Cassandra|http://cassandra.apache.org].
+One of the challenges in using an in-memory data grid is that it's an ideal representation of data that's often held in a non-relational database. GigaSpaces XAP has a depanlinkwrite-behind persistence mechanismtengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/External+Data+Sourcebelakanglink built-in that's designed for relational databases (so when you write a data item into the data grid, it gets replicated to the backend database automatically), but you might instead want to replicate to a different data storage mechanism altogether, such as depanlinkMongoDBtengahlinkhttp://mongodb.orgbelakanglink or depanlinkCassandratengahlinkhttp://cassandra.apache.orgbelakanglink.
 
 The mirror-parent project is meant to collect various external datastore implementations. As of September 2011, implementations include Cassandra and MongoDB, with slight feature differences between them (which will be discussed); however, the implementations work for the general case and illustrate a pattern that can be customized as needed.
 
 # Getting the project
-The mirror project is held on github in the [best practices|https://github.com/Gigaspaces/bestpractices] project. This is an umbrella repository; the specific project is in the mirror-parent directory under the root directory.
+The mirror project is held on github in the depanlinkbest practicestengahlinkhttps://github.com/Gigaspaces/bestpracticesbelakanglink project. This is an umbrella repository; the specific project is in the mirror-parent directory under the root directory.
 
 # How the NoSQL EDS implementations work?
 The GigaSpaces XAP external datastore is used by two kinds of processing units: a stateful processing unit (which represents the data grid) and a mirror processing unit (whose sole purpose is to use an external datastore via write-through to persist data.)
@@ -119,6 +119,6 @@ The example configuration as described shows the MongoDB configuration. One aspe
 
 # Cassandra Specifics
 
-Cassandra configuration can be seen in the [test project resources|https://github.com/Gigaspaces/bestpractices/tree/master/mirror-parent/cassandra/cassandra-common/src/test/resources].
+Cassandra configuration can be seen in the depanlinktest project resourcestengahlinkhttps://github.com/Gigaspaces/bestpractices/tree/master/mirror-parent/cassandra/cassandra-common/src/test/resourcesbelakanglink.
 
 Cassandra has some issues with the SpaceDocument loading mechanism, primarily because a key attribute is difficult to determine in the EDS (we're looking for a clean API workaround for this.) However, POJO support is fully operational.

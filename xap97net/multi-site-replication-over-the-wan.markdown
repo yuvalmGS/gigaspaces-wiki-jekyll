@@ -12,7 +12,7 @@ page_id: 63799328
 
 
 {% info title=Licensing %}
-The Gateway requires a separate license in addition to the GigaSpaces commercial license. Please contact [GigaSpaces Customer Support|http://www.gigaspaces.com/content/customer-support-services] for more details.
+The Gateway requires a separate license in addition to the GigaSpaces commercial license. Please contact depanlinkGigaSpaces Customer Supporttengahlinkhttp://www.gigaspaces.com/content/customer-support-servicesbelakanglink for more details.
 {% endinfo %}
 
 

@@ -49,7 +49,7 @@ At the heart of the application is the processing unit. A processing unit repres
 - business logic units, which are essentially POCOs that process events delivered from the messaging component.
 - a data component, that holds the state required for the business logic implementation.
 
-In XAP.NET, a processing unit can be implemented imperatively (extending an abstract class) or declaratively (XML describes the processing unit components and their relations). It is also possible to extend the abstract processing unit provided in XAP.NET to create a processing unit container using your favorite IoC framework (In Java XAP a [Spring|http://www.springframework.org/] Processing Unit container is available).
+In XAP.NET, a processing unit can be implemented imperatively (extending an abstract class) or declaratively (XML describes the processing unit components and their relations). It is also possible to extend the abstract processing unit provided in XAP.NET to create a processing unit container using your favorite IoC framework (In Java XAP a depanlinkSpringtengahlinkhttp://www.springframework.org/belakanglink Processing Unit container is available).
 
 {% anchor event_containers %}
 

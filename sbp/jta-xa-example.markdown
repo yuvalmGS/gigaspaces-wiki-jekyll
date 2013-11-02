@@ -25,7 +25,7 @@ page_id: 55938209
 Integrating GigaSpaces with an external JMS Servers is demonstrated in this page. This example shows how GigaSpaces event container can process events and send JMS messages to a external JMS server all under one distributed transaction.
 
 {% note %}
- Use of distributed transactions is done as a demonstration. Use this with caution, in production applications this can be expensive and have a performance penalty. Well known patterns like [Idempotent Receiver|http://www.eaipatterns.com/IdempotentReceiver.html] are potential alternatives to distributed transactions.
+ Use of distributed transactions is done as a demonstration. Use this with caution, in production applications this can be expensive and have a performance penalty. Well known patterns like depanlinkIdempotent Receivertengahlinkhttp://www.eaipatterns.com/IdempotentReceiver.htmlbelakanglink are potential alternatives to distributed transactions.
 {% endnote %}
 
 
@@ -338,8 +338,8 @@ public class Message  {
 
 ## Running the example
 
-1. Download Apache ActiveMQ from [here|http://activemq.apache.org/download.html].
-2. Download Atomikos TransactionEssentials from [here|http://www.atomikos.com/Main/TransactionsEssentialsDownloadForm].
+1. Download Apache ActiveMQ from depanlinkheretengahlinkhttp://activemq.apache.org/download.htmlbelakanglink.
+2. Download Atomikos TransactionEssentials from depanlinkheretengahlinkhttp://www.atomikos.com/Main/TransactionsEssentialsDownloadFormbelakanglink.
 3. Extract the depanlinkexampletengahlink/attachment_files/sbp/helloworld-jta.zipbelakanglink archive into a folder (calling it <helloworld-jta>). Modify the setDevEnv.bat and build.properties files to have proper paths for GigaSpaces home, Java home, ActiveMQ home and Atomikos home. Also modify the NIC_ADDR and locators variable to have proper IP address.
 4. Open a command shell and navigate to <helloworld-jta> folder.
 5. Run `setDevEnv.bat` script in <helloworld-jta> folder, to set the environment variables.

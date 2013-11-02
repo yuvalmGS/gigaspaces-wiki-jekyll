@@ -34,7 +34,7 @@ The sample code below is meant to illustrate how the Admin API can be used to di
 
 
 {% note %}
- This example uses multicast to discover the service grid components. For unicast discovery, you can use the  [addLocator()|http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/AdminFactory.html#addLocator(java.lang.String)] method with a LUS address.
+ This example uses multicast to discover the service grid components. For unicast discovery, you can use the  depanlinkaddLocator()tengahlinkhttp://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/AdminFactory.html#addLocator(java.lang.String)belakanglink method with a LUS address.
 {% endnote %}
 
 

@@ -77,7 +77,7 @@ Combined, these two facilities enable better control of your environment and ens
 
 ### Reactive Programming
 
-GigaSpaces and its Space-Based-Architecture embrace the [reactive programming|http://en.wikipedia.org/wiki/Reactive_programming] approach. Reactive programming with GigaSpaces includes:
+GigaSpaces and its Space-Based-Architecture embrace the depanlinkreactive programmingtengahlinkhttp://en.wikipedia.org/wiki/Reactive_programmingbelakanglink approach. Reactive programming with GigaSpaces includes:
 - [Data Event Listener | Event Listener Container]: [Polling Container | Polling Container Component], [Notify Container | Notify Container Component]
 - [Local View and Local Cache | Client Side Caching]
 - [Task Execution over the Space]

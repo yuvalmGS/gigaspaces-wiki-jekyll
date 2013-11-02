@@ -375,9 +375,9 @@ The Monitor Service includes the following properties:
 |period| Duration in ms before the next check will be triggered|2000|
 
 The Monitor Service using the following Classes to implement the dynamic scaling behavior:
-- [org.openspaces.admin.Admin|http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/Admin.html] -  The main interface for accessing Admin API. Created using the AdminFactory class. It provides access to the main elements in the Admin API and in GigaSpaces such as the GridServiceAgents, LookupServices, GridServiceManagers, GridServiceContainers, ProcessingUnits, and Spaces.
-- [org.openspaces.admin.AdminFactory|http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/AdminFactory.html] - This class should be used to access all GigaSpaces Administration classes.
-- [org.openspaces.admin.pu.ProcessingUnit|http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/pu/ProcessingUnit.html] - This class provides methods to manipulate the life cycle and mange a running Proecssing Unit. You may Increment , Decrement the amount of processing unit instances associated with this PU.
+- depanlinkorg.openspaces.admin.Admintengahlinkhttp://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/Admin.htmlbelakanglink -  The main interface for accessing Admin API. Created using the AdminFactory class. It provides access to the main elements in the Admin API and in GigaSpaces such as the GridServiceAgents, LookupServices, GridServiceManagers, GridServiceContainers, ProcessingUnits, and Spaces.
+- depanlinkorg.openspaces.admin.AdminFactorytengahlinkhttp://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/AdminFactory.htmlbelakanglink - This class should be used to access all GigaSpaces Administration classes.
+- depanlinkorg.openspaces.admin.pu.ProcessingUnittengahlinkhttp://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/pu/ProcessingUnit.htmlbelakanglink - This class provides methods to manipulate the life cycle and mange a running Proecssing Unit. You may Increment , Decrement the amount of processing unit instances associated with this PU.
 
 {% exclamation %} See the [XAP8:Administration and Monitoring API] for more details about the GigaSpaces Administration API.
 

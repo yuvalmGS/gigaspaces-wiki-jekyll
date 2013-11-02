@@ -59,7 +59,7 @@ The space writes a notification to the Microsoft Excel RTD (Real-Time Data) serv
 - [RTDSample example|RTD and UDF Examples - GigaSpaces-Excel Integration#RTDSample -- Loading Data from Space to Excel] (advanced)
 - [Writing Your First UDF Application|Writing Your First RTD or UDF Application]{% endrefer %}
 
-{% refer %}For details on building Excel Real-Time Data components in Visual Basic .NET, see the [Microsoft website|http://msdn2.microsoft.com/en-us/library/aa140061(office.10).aspx].{% endrefer %}
+{% refer %}For details on building Excel Real-Time Data components in Visual Basic .NET, see the depanlinkMicrosoft websitetengahlinkhttp://msdn2.microsoft.com/en-us/library/aa140061(office.10).aspxbelakanglink.{% endrefer %}
 
 # What's Next?
 

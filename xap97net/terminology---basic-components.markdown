@@ -109,7 +109,7 @@ depanimageterm_verbs.jpgtengahimage/attachment_files/xap97net/term_verbs.jpgbela
 #### Service Component
 
 An application component that interacts with the space (using read, write, take, etc.), and implements a certain functionality.
-Java people sometimes refer to it as a Service Bean, but it does not have to be a [Java Bean|http://en.wikipedia.org/wiki/JavaBean].
+Java people sometimes refer to it as a Service Bean, but it does not have to be a depanlinkJava Beantengahlinkhttp://en.wikipedia.org/wiki/JavaBeanbelakanglink.
 {% sub %}Key sentence: The service component interacts with the space to implement your application's logic.{% endsub %}
 
 {% endcolumn %}

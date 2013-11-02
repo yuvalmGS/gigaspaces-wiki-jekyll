@@ -22,7 +22,7 @@ page_id: 56429380
 # Overview
 This is a demo of a trading settlement system.  Settlement occurs after a trade, and involves the delivery of securities for payment between one party and another.  Because the demo operates in real-time, it can be expanded to provide risk management or be integrated with a rules engine for complex event processing (CEP).
 
-Due to the speed at which markets move today, reliable risk assessment requires the ability to analyze trades and their impact on a portfolio in as close to real-time as possible.  In addition, having a [straight-through processing|http://en.wikipedia.org/wiki/Straight-through_processing] capability provides major benefits for risk and cost reduction. This demo illustrates how such minimum-latency systems can be built and we do so with the entire tier-based architecture built on GigaSpaces, including the following components:
+Due to the speed at which markets move today, reliable risk assessment requires the ability to analyze trades and their impact on a portfolio in as close to real-time as possible.  In addition, having a depanlinkstraight-through processingtengahlinkhttp://en.wikipedia.org/wiki/Straight-through_processingbelakanglink capability provides major benefits for risk and cost reduction. This demo illustrates how such minimum-latency systems can be built and we do so with the entire tier-based architecture built on GigaSpaces, including the following components:
 - Data tier
 - Business logic execution tier
 - Messaging tier
@@ -50,7 +50,7 @@ Blotter clients connect to the servlet through HTTP.  The blotter displays user 
 
 The feeder generates random trade objects and places them into the space.
 
-The [grid topology|http://www.gigaspaces.com/wiki/display/XAP8/Terminology+-+Data+Grid+Topologies] for the event processing engine consists of 2 partitions with backup instances.
+The depanlinkgrid topologytengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/Terminology+-+Data+Grid+Topologiesbelakanglink for the event processing engine consists of 2 partitions with backup instances.
 
 It receives an event when an unprocessed trade is placed in the space and starts a transaction.  The transaction consists of several operations:
 - For an unprocessed trade, query the space to see if there is a matching trade.
@@ -61,19 +61,19 @@ The messaging processor receives events when deals are matched and generates an 
 
 The monitor is a thread that periodically counts the number of matched deal objects in the space.  If this number exceeds 50, it will scale the grid up.  The grid will be scaled down if this number falls below 50.
 
-The [mirror service|http://www.gigaspaces.com/wiki/display/XAP8/Asynchronous+Persistency+with+the+Mirror] provides reliable asynchronous persistence to a HSQL database through a hibernate interface.
+The depanlinkmirror servicetengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/Asynchronous+Persistency+with+the+Mirrorbelakanglink provides reliable asynchronous persistence to a HSQL database through a hibernate interface.
 
 depanimageSA-Architecture.pngtengahimage/attachment_files/sbp/SA-Architecture.pngbelakangimage
 
 # Processing Unit Relationships and Events
 
-The feeder, web servlet, monitor, messaging and mirror are deployed as [Processing Units (PUs)|http://www.gigaspaces.com/wiki/display/XAP8/A+Typical+SBA+Application].
+The feeder, web servlet, monitor, messaging and mirror are deployed as depanlinkProcessing Units (PUs)tengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/A+Typical+SBA+Applicationbelakanglink.
 
-The event processing engine is deployed as an [_Elastic_ PU|http://www.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit] with [replication|http://www.gigaspaces.com/wiki/display/XAP8/Replication].  The elasticity enables the grid to scale up or down based on user-defined metrics.  In this case, we use the number of trade objects in the space, which is counted by the monitor PU.  When this exceeds 50, memory capacity is increased through the [admin API|http://www.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API+Security].  This causes new [processing containers|http://www.gigaspaces.com/wiki/display/XAP8/The+Grid+Service+Container] to be provisioned and the Elastic PUs to be rebalanced across the new nodes.  Scaling down is the reverse process.
+The event processing engine is deployed as an depanlink_Elastic_ PUtengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unitbelakanglink with depanlinkreplicationtengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/Replicationbelakanglink.  The elasticity enables the grid to scale up or down based on user-defined metrics.  In this case, we use the number of trade objects in the space, which is counted by the monitor PU.  When this exceeds 50, memory capacity is increased through the depanlinkadmin APItengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API+Securitybelakanglink.  This causes new depanlinkprocessing containerstengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/The+Grid+Service+Containerbelakanglink to be provisioned and the Elastic PUs to be rebalanced across the new nodes.  Scaling down is the reverse process.
 
-You can step through the demo code in your favorite IDE by deploying the target processing unit(s) in an [Integrated Processing Unit Container|http://www.gigaspaces.com/wiki/display/XAP8/Deploying+and+Running+the+Processing+Unit].
+You can step through the demo code in your favorite IDE by deploying the target processing unit(s) in an depanlinkIntegrated Processing Unit Containertengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/Deploying+and+Running+the+Processing+Unitbelakanglink.
 
-Deal matching uses a [polling container|http://www.gigaspaces.com/wiki/display/XAP8/Polling+Container] and [transactions|http://www.gigaspaces.com/wiki/display/XAP8/Transaction+Management].
+Deal matching uses a depanlinkpolling containertengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/Polling+Containerbelakanglink and depanlinktransactionstengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/Transaction+Managementbelakanglink.
 
 depanimageSA-PUs.pngtengahimage/attachment_files/sbp/SA-PUs.pngbelakangimage
 
@@ -145,10 +145,10 @@ pu.scale(new ManualCapacityScaleConfigurer()
 {% endhighlight %}
 
 
-Click [here|http://www.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit#ElasticProcessingUnit-MaximumMemoryCapacity] to see how the number of processing containers is dynamically calculated based on the amount of memory.
+Click depanlinkheretengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit#ElasticProcessingUnit-MaximumMemoryCapacitybelakanglink to see how the number of processing containers is dynamically calculated based on the amount of memory.
 
 ## Space Document
-A [document store|http://www.gigaspaces.com/wiki/display/XAP8/Document+(Schema-Free)+API] is used for saving matched deals.  This document contains the following items:
+A depanlinkdocument storetengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/Document+(Schema-Free)+APIbelakanglink is used for saving matched deals.  This document contains the following items:
 - Deal ID
 - Routing string
 - Buy-side party
@@ -229,7 +229,7 @@ The trade and matched deal objects are persisted to the HSQL database through Hi
 
 
 ## Web Session Management
-HTTP Sessions are maintained in the space and a copy is also kept in a [local cache|http://www.gigaspaces.com/wiki/display/XAP8/Client+Side+Caching], with 1 object per client.  Sessions are accessed using the following:
+HTTP Sessions are maintained in the space and a copy is also kept in a depanlinklocal cachetengahlinkhttp://www.gigaspaces.com/wiki/display/XAP8/Client+Side+Cachingbelakanglink, with 1 object per client.  Sessions are accessed using the following:
 
 
 {% highlight java %}

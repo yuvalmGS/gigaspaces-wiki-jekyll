@@ -35,7 +35,7 @@ Thinking in terms of traditional relationships ("one to one", "one to many" and 
 
 If an entity is associated with several containers (parent entities), it can't be embedded within the containing entity. It might be also impossible to store it with all of its containers on the same partition.
 
-In the [Pet Clinic application|http://www.openspaces.org/display/DAE/GigaSpaces+PetClinic], a Pet is only associated with an Owner. We can therefore store each Pet with its owner on the same partition. We can even embed the Pet object within the physical Owner entry.
+In the depanlinkPet Clinic applicationtengahlinkhttp://www.openspaces.org/display/DAE/GigaSpaces+PetClinicbelakanglink, a Pet is only associated with an Owner. We can therefore store each Pet with its owner on the same partition. We can even embed the Pet object within the physical Owner entry.
 depanimagepetclinic_class_model.giftengahimage/attachment_files/xap97net/petclinic_class_model.gifbelakangimage
 However, if a Pet were also associated with a Vet, we could not embed the Pet in the Vet physical entry (without duplicating each Pet entry) and could not store the Pet and the pet's Vet in the same partition.
 

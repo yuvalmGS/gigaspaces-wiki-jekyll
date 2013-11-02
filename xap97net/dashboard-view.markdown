@@ -17,7 +17,7 @@ depanimagedashboard803.pngtengahimage/attachment_files/xap97net/dashboard803.png
 
 # Alerts panel
 
-The Alerts panel displays XAP Alert groups (Alerts are grouped by correlation key) for more details see [Administrative Alerts|http://www.gigaspaces.com/wiki/display/XAP9/Administrative+Alerts]
+The Alerts panel displays XAP Alert groups (Alerts are grouped by correlation key) for more details see depanlinkAdministrative Alertstengahlinkhttp://www.gigaspaces.com/wiki/display/XAP9/Administrative+Alertsbelakanglink
 
 depanimagedashboard_explained.pngtengahimage/attachment_files/xap97net/dashboard_explained.pngbelakangimage
 

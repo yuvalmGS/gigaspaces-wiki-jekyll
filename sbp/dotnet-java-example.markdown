@@ -98,7 +98,7 @@ public class Person
 }
 {% endhighlight %}
 |
-For more details about .NET-Java Interoperability and designing the interoperable classes, refer to [.NET-Java Interoperability|http://www.gigaspaces.com/wiki/display/XAP66/.NET-Java+Interoperability]
+For more details about .NET-Java Interoperability and designing the interoperable classes, refer to depanlink.NET-Java Interoperabilitytengahlinkhttp://www.gigaspaces.com/wiki/display/XAP66/.NET-Java+Interoperabilitybelakanglink
 
 # Building and Running the Example
 1. Build the .NET application, using compileC#.bat (You can also build the DotNetJavaDemo.sln from Visual Studio).

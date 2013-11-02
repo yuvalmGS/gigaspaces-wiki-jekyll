@@ -40,7 +40,7 @@ The mirroring service is one-way only - from the space cluster to the database o
 
 ### External Data Source Integration
 
-GigaSpaces XAP provides open interfaces to external data source integration. The default implementation of these interfaces is database integration using [NHibernate|http://nhforge.org/Default.aspx]. For implementation details please refer to [Integration with Other Data Sources |Integration with Other Data Sources] in the Programmer's Guide.
+GigaSpaces XAP provides open interfaces to external data source integration. The default implementation of these interfaces is database integration using depanlinkNHibernatetengahlinkhttp://nhforge.org/Default.aspxbelakanglink. For implementation details please refer to [Integration with Other Data Sources |Integration with Other Data Sources] in the Programmer's Guide.
 
 These interfaces are used by the space to store and retrieve data from external data sources (e.g. databases).
 

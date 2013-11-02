@@ -7,7 +7,7 @@ page_id: 56430569
 
 {% compositionsetup %}
 
-{% summary page|60 %}Global HTTP Session Sharing allows transparent session replication between remote sites and session sharing between different application servers in real-time. The solution uses the [Shiro Session Manager library|http://shiro.apache.org/session-management.html]{% endsummary %}
+{% summary page|60 %}Global HTTP Session Sharing allows transparent session replication between remote sites and session sharing between different application servers in real-time. The solution uses the depanlinkShiro Session Manager librarytengahlinkhttp://shiro.apache.org/session-management.htmlbelakanglink{% endsummary %}
 
 # Global HTTP Session Sharing - Massive Web Application Scaling
 
@@ -253,7 +253,7 @@ See the [deploy-space|XAP9:deploy-space GigaSpaces CLI] command for details.
 
 
 ### The WAN Gateway
-The [WAN Gateway|XAP9:Multi-Site Replication over the WAN] should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway|http://www.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gateway] best practice for an example of how a multi-master Gateway architecture can be deployed.
+The [WAN Gateway|XAP9:Multi-Site Replication over the WAN] should be deployed using your preferred replication topography, such as multi-master or master-slave. See the depanlinkWAN Replication Gatewaytengahlinkhttp://www.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gatewaybelakanglink best practice for an example of how a multi-master Gateway architecture can be deployed.
 
 ### Other configuration options
 
@@ -346,8 +346,8 @@ When deploying the web application WAR file please make sure the web app context
 
 
 ### Load-Balancer
-Another option would be to use a load-balancer such as the [apache httpd|http://httpd.apache.org] and configure it to load-balance the web requests between the different web servers. Here is a simple setup:
-1. Install [apache httpd|http://httpd.apache.org].
+Another option would be to use a load-balancer such as the depanlinkapache httpdtengahlinkhttp://httpd.apache.orgbelakanglink and configure it to load-balance the web requests between the different web servers. Here is a simple setup:
+1. Install depanlinkapache httpdtengahlinkhttp://httpd.apache.orgbelakanglink.
 2. Create a file named `HttpSession.conf` located at <Apache HTTPD 2.2 root>\conf\gigaspaces
 3. Place the following within the `HttpSession.conf` file. The `BalancerMember` should be mapped to different URLs of your web servers instances. With the example below we have Tomcat using port 8080 and Websphere using port 9080.
 

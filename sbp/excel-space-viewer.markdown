@@ -145,9 +145,9 @@ The Configure View window already includes your previously selected options, and
 - GigaSpaces 6.5 GA.
 .Net product is unzipped.
 JSHOMEDIR is configured.
-For more details see [Installing GigaSpaces|http://www.gigaspaces.com/wiki/display/XAP66/Building+Your+First+.NET+Application#BuildingYourFirst.NETApplication-InstallingGigaSpaces] section.
+For more details see depanlinkInstalling GigaSpacestengahlinkhttp://www.gigaspaces.com/wiki/display/XAP66/Building+Your+First+.NET+Application#BuildingYourFirst.NETApplication-InstallingGigaSpacesbelakanglink section.
 - A [JDK 1.5|XAP66:Installing GigaSpaces#Prior to Installation]
-- The [.NET Framework|http://msdn2.microsoft.com/en-us/netframework/aa569263.aspx]
+- The depanlink.NET Frameworktengahlinkhttp://msdn2.microsoft.com/en-us/netframework/aa569263.aspxbelakanglink
 - Microsoft Office 2003
 
 # Supported Office Versions

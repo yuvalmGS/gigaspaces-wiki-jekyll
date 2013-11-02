@@ -241,7 +241,7 @@ Much like the .NET Abstract Container, the [C++ container|XAP95:CPP Processing U
 
 ## Java - Spring Container
 
-The Spring framework container integration is built-in to XAP, and provides the ability to take advantage of [Spring framework|http://www.springframework.org/about] components, programming model and capabilities.
+The Spring framework container integration is built-in to XAP, and provides the ability to take advantage of depanlinkSpring frameworktengahlinkhttp://www.springframework.org/aboutbelakanglink components, programming model and capabilities.
 
 The Spring framework provides very elegant abstractions, which makes it very easy to build layered and decoupled applications.
 

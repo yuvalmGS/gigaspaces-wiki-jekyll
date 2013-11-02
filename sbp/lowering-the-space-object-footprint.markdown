@@ -357,4 +357,4 @@ resBFE.unpack(); // this deserialize the binary data into the object fields
 
 
 # References
-The [PackRat|http://www.openspaces.org/display/PRT/PackRat] project allows you to use the compact serialization pattern via simple annotations.
+The depanlinkPackRattengahlinkhttp://www.openspaces.org/display/PRT/PackRatbelakanglink project allows you to use the compact serialization pattern via simple annotations.

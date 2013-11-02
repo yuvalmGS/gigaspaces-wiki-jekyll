@@ -16,7 +16,7 @@ Date: August 2009
 {rate}
 
 # Overview
-The [Master-Worker Pattern|http://books.google.com/books?id=9cV3TbahjW0C&pg=PA153&lpg=PA153&dq=JavaSpaces+Master-Worker+Pattern&source=bl&ots=1l_DQmEGNl&sig=IU2UTbG-xytamrby2r5yaJLnAkk&hl=en&ei=lm6RSo-dGJXjlAeYqOWjDA&sa=X&oi=book_result&ct=result&resnum=1#v=onepage&q=JavaSpaces%20Master-Worker%20Pattern&f=false] (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a `Master` and multiple `Workers`.
+The depanlinkMaster-Worker Patterntengahlinkhttp://books.google.com/books?id=9cV3TbahjW0C&pg=PA153&lpg=PA153&dq=JavaSpaces+Master-Worker+Pattern&source=bl&ots=1l_DQmEGNl&sig=IU2UTbG-xytamrby2r5yaJLnAkk&hl=en&ei=lm6RSo-dGJXjlAeYqOWjDA&sa=X&oi=book_result&ct=result&resnum=1#v=onepage&q=JavaSpaces%20Master-Worker%20Pattern&f=falsebelakanglink (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a `Master` and multiple `Workers`.
 
 
 {% indent %}
@@ -618,6 +618,6 @@ Deploying the Workers PU:
 
 
 # References
-- [JavaSpaces Principles, Patterns, and Practice: Chapter 11|http://java.sun.com/developer/Books/JavaSpaces/chapter11.html]
-- [Blog post:How to Implement my Processor? - The Polling Container Benchmark|http://blog.gigaspaces.com/2008/10/03/how-to-implement-my-processor-the-polling-container-benchmark]
+- depanlinkJavaSpaces Principles, Patterns, and Practice: Chapter 11tengahlinkhttp://java.sun.com/developer/Books/JavaSpaces/chapter11.htmlbelakanglink
+- depanlinkBlog post:How to Implement my Processor? - The Polling Container Benchmarktengahlinkhttp://blog.gigaspaces.com/2008/10/03/how-to-implement-my-processor-the-polling-container-benchmarkbelakanglink
 
