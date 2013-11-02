@@ -31,7 +31,7 @@ Task Execution provides a fine-grained API for performing ad-hoc parallel execut
 
 Task execution comes in two flavors:
 
-- Java Tasks* - In this mode you can pass Java code from the client to the cluster to be executed on the data grid nodes. The code is dynamically introduced to the server nodes classpath.
+- Java Tasks - In this mode you can pass Java code from the client to the cluster to be executed on the data grid nodes. The code is dynamically introduced to the server nodes classpath.
 - Dynamic language tasks - Tasks can be defined using one of the dynamic languages supported by the JVM (JSR-223) and be compiled and executed on the fly. In this part of the tutorial we will not cover Dynamic language tasks.
 
 {%learn%}/xap97/dynamic-language-tasks.html{%endlearn%}
@@ -39,7 +39,7 @@ Task execution comes in two flavors:
 
 Java Tasks can be more efficient in terms of performance and tend to be more type-safe then dynamic tasks. Dynamic tasks on the other hand can be changed more frequently without causing class version conflicts and are more concise given the nature of dynamic languages..
 
-{%info%}Tasks :
+{%info%}Tasks
 - execute in a "broadcast" mode on all the primary cluster members concurrently and reduced to a single result on the client side.
 - can execute directly on a specific cluster member using typical routing declarations.
 - are completely dynamic both in terms of content and class definitions (the task class definition does not have to be defined within the space classpath).{%endinfo%}

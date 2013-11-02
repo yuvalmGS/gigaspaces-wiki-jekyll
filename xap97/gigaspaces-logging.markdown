@@ -24,7 +24,7 @@ The default configuration file is located under:
 
 # Logging Level
 
-The [logging level](http://java.sun.com/j2se/1.4.2/docs/api/java/util/logging/Level.html) class defines a set of standard logging levels that can be used to control logging output. The logging level are ordered and are specified by ordered integers/constants.
+The [logging level](http://docs.oracle.com/javase/1.4.2/docs/api/java/util/logging/Level.html) class defines a set of standard logging levels that can be used to control logging output. The logging level are ordered and are specified by ordered integers/constants.
 
 {% tip %}
 Enabling logging at a given level also enables logging at all higher levels.
@@ -150,7 +150,7 @@ com.gigaspaces.core.classloadercache.level = INFO
 {% endhighlight %}
 
 GigaSpaces applications are running as part of a GigaSpaces runtime container and packaged using the structure described [here](./the-processing-unit-structure-and-configuration.html).
-Application jars/classes are packaged in different folders and some of the classes could be loaded as part of GigaSpaces container (GSC's). There are multiple class loaders involved when an application is running. More information about the class loaders and their hierarchy is [here](./the-processing-unit-structure-and-configuration.html#Class Loaders).
+Application jars/classes are packaged in different folders and some of the classes could be loaded as part of GigaSpaces container (GSC's). There are multiple class loaders involved when an application is running. More information about the class loaders and their hierarchy is [here](./the-processing-unit-structure-and-configuration.html).
 {% endtabcontent %}
 {% tabcontent Space %}
 
@@ -270,7 +270,7 @@ com.sun.jini.mahalo.startup.level = INFO
 com.sun.jini.mahalo.destroy.level = INFO
 {% endhighlight %}
 
-Logger for Jini Distributed Transaction manager, more information [here](./transaction-management.html#DistributedJiniTransactionManager).
+Logger for Jini Distributed Transaction manager, more information [here](./transaction-management.html).
 
 ### SpaceURL, SpaceValidator, SpaceURLParser
 
@@ -467,7 +467,7 @@ GigaSpaces out of the box configures logging with two log Handlers,
 - `java.util.logging.**ConsoleHandler**`: A simple handler for writing formatted output to System.err (level is set to ALL)
 - `com.gigaspaces.logger.**RollingFileHandler**`: A handler that writes formatted output to a file that rolls over if a certain policy is triggered. see [Managing Log Files](./managing-log-files.html)
 
-Java util logging supports other handlers. MemoryHandler, SocketHandler or any other handler can be used instead of the above. More information about handlers is [here](http://download.oracle.com/javase/1.4.2/docs/guide/util/logging/overview.html#1.5). You can also use one of the [open source logging frameworks](http://java-source.net/open-source/logging) that support java.util.logging.
+Java util logging supports other handlers. MemoryHandler, SocketHandler or any other handler can be used instead of the above. More information about handlers is [here](http://docs.oracle.com/javase/1.4.2/docs/guide/util/logging/overview.html). You can also use one of the [open source logging frameworks](http://java-source.net/open-source/logging) that support java.util.logging.
 
 # Formatters
 
