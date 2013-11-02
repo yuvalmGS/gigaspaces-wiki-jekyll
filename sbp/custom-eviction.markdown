@@ -124,7 +124,7 @@ Eviction logic will be defined as listener logic. Eviction candidates will be se
 
 Another variation of this approach is listener logic will wait for a command object (something like a close of business day event). When this command object is written into space eviction logic starts and cleans up data.
 
-Attached is an [example|^PollingEvictor.zip] that uses a polling container for eviction of Orders.
+Attached is an depanlinkexampletengahlink/attachment_files/sbp/PollingEvictor.zipbelakanglink that uses a polling container for eviction of Orders.
 
 In this simplistic example (created using hello-world example included in the product distribution),
 
@@ -257,7 +257,7 @@ This example is using Maven for packaging and build.
 {% endnote %}
 
 
-Extract the [example|^PollingEvictor.zip] archive into a folder. Navigate to the folder
+Extract the depanlinkexampletengahlink/attachment_files/sbp/PollingEvictor.zipbelakanglink archive into a folder. Navigate to the folder
 
 Run maven clean using following command
 
@@ -309,7 +309,7 @@ Some advantages with this approach are,
 - Lets you effectively utilize all the available memory in GigaSpaces cluster.
 - Notification based instead of querying the cluster for types/counts.
 
-Attached is an [example|^MyCustomEvictor.zip] that uses Memory Notification feature for triggering eviction logic.
+Attached is an depanlinkexampletengahlink/attachment_files/sbp/MyCustomEvictor.zipbelakanglink that uses Memory Notification feature for triggering eviction logic.
 
 In this simplistic example (created using hello-world example included in the product distribution),
 
@@ -588,7 +588,7 @@ This example is using Maven for packaging and build.
 {% endnote %}
 
 
-Extract the [example|^MyCustomEvictor.zip] archive into a folder. Navigate to the folder
+Extract the depanlinkexampletengahlink/attachment_files/sbp/MyCustomEvictor.zipbelakanglink archive into a folder. Navigate to the folder
 
 Run maven clean using following command
 

@@ -486,7 +486,7 @@ java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb
 This will start an HSQL database used with the Spring Batch PU.
 
 ## Create the Spring Batch PU
-- Download and extract the [Spring Batch PU example|^SpringBatch.zip] into an empty folder.
+- Download and extract the depanlinkSpring Batch PU exampletengahlink/attachment_files/sbp/SpringBatch.zipbelakanglink into an empty folder.
 - Create a new folder named `SpringBatchPU` under the `gigaspaces-xap-premium\deploy` folder.
 - Copy the example **bin folder** content into the `gigaspaces-xap-premium\deploy\SpringBatchPU` folder.
 

@@ -44,7 +44,7 @@ The above results retrived when running the Data-Grid with 4 partitions with a b
 
 
 {% tip %}
-You can [download|^ParallelQueue.zip] the Order Management Processor code used with this example.
+You can depanlinkdownloadtengahlink/attachment_files/sbp/ParallelQueue.zipbelakanglink the Order Management Processor code used with this example.
 {% endtip %}
 
 

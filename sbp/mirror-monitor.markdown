@@ -44,7 +44,7 @@ The Mirror Monitor includes the following:
 
 # How to use the Mirror Monitor?
 In order to use the Mirror Monitor with your application you should:
-1. Download the [Mirror Monitor project|^MirrorMonitor.zip].
+1. Download the depanlinkMirror Monitor projecttengahlink/attachment_files/sbp/MirrorMonitor.zipbelakanglink.
 2. Add the Mirror Monitor classes into your Mirror PU.
 3. Change the Mirror pu.xml configuration to have this:
 

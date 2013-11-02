@@ -671,7 +671,7 @@ When using the [Elastic Processing Unit|XAP91:Elastic Processing Unit], instance
 
 
 ## Manual Rebalancing
-Production machines may be restarted every few days, may fail abnormally and then restarted, or new machines may be started and added to the grid. To allow even distribution of primary IMDG instances or to simply stretch the running instances across all available machines manually, you may use the [Rebalancing utility|^Rebalance.zip]. The utility spreads primary and backup IMDG instances evenly across all the machines running GSCs. See full details how to run this utility, within the readme at the [Rebalance.zip|^Rebalance.zip].
+Production machines may be restarted every few days, may fail abnormally and then restarted, or new machines may be started and added to the grid. To allow even distribution of primary IMDG instances or to simply stretch the running instances across all available machines manually, you may use the depanlinkRebalancing utilitytengahlink/attachment_files/sbp/Rebalance.zipbelakanglink. The utility spreads primary and backup IMDG instances evenly across all the machines running GSCs. See full details how to run this utility, within the readme at the depanlinkRebalance.ziptengahlink/attachment_files/sbp/Rebalance.zipbelakanglink.
 
 ## How GigaSpaces rebalancing works?
 GigaSpaces runtime environments differentiates between a Container (GSC) or **Grid Node** that is running within a single JVM instance and an **IMDG Node**, also called a logical partition. A partition has one primary instance and zero or more backup instances.

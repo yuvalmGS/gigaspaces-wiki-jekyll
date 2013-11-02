@@ -533,8 +533,8 @@ public class UserDAOSpaceImpl implements UserDAO {
 
 # Deploying the Data-Grid and the Application
 To deploy the Data-Grid and the web Application into the [GigaSpaces runtime enviroment|XAP91:The Runtime Environment] perform the following:
-- Download the [3rd party libraries|^3rd_party_libraries.zip] package, and extract it into the `\gigaspaces-xap\lib\optional\pu-common` folder.
-- Download the [application.war|^application.war] , [myDataGrid.jar|^myDataGrid.jar] and the [myMirror.jar|^myMirror.jar].
+- Download the depanlink3rd party librariestengahlink/attachment_files/sbp/3rd_party_libraries.zipbelakanglink package, and extract it into the `\gigaspaces-xap\lib\optional\pu-common` folder.
+- Download the depanlinkapplication.wartengahlink/attachment_files/sbp/application.warbelakanglink , depanlinkmyDataGrid.jartengahlink/attachment_files/sbp/myDataGrid.jarbelakanglink and the depanlinkmyMirror.jartengahlink/attachment_files/sbp/myMirror.jarbelakanglink.
 - Start the [GigaSpaces agent|XAP91:The Grid Service Agent]:
 On windows run the following command:
 
@@ -680,4 +680,4 @@ depanimagehib2space4.jpgtengahimage/attachment_files/sbp/hib2space4.jpgbelakangi
 {% endindent %}
 
 
-{% exclamation %} You may download the full source code of the application [here|^HibernateToSpace.zip].
+{% exclamation %} You may download the full source code of the application depanlinkheretengahlink/attachment_files/sbp/HibernateToSpace.zipbelakanglink.

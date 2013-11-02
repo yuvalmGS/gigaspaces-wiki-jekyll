@@ -43,7 +43,7 @@ The Primary-Backup Zone Controller can be deployed as a PU or run as a stand-alo
 
 The example below will show how to use the Primary-Backup Zone Controller to place all primary instances on Zone A and all backup instances on Zone B. We will start GSCs with 3 zones, deploy a data-grid and use the Primary-Backup Zone Controller to execute the relocation activity.
 
-1. Download the [Primary-Backup Zone Controller|^PrimaryBackupZoneController.zip] and extract it into an empty folder. You will find the source under thr `src` folder and the compiled code under the `bin` folder.
+1. Download the depanlinkPrimary-Backup Zone Controllertengahlink/attachment_files/sbp/PrimaryBackupZoneController.zipbelakanglink and extract it into an empty folder. You will find the source under thr `src` folder and the compiled code under the `bin` folder.
 
 2. Start LUS and GSM:
 

@@ -28,7 +28,7 @@ If you would like to perform hardware maintenance activities without shutting do
 {% endtip %}
 
 
-The [Space Dump Utility|^spacedump.zip] copies the data currently stored within the IMDG and saves it into an embedded DB file used by a temporary space. Later, once you would like to reload the data back into the IMDG, the utility performs the procedure in a reverse manner, by reading the data from the file and copy it back into the IMDG.
+The depanlinkSpace Dump Utilitytengahlink/attachment_files/sbp/spacedump.zipbelakanglink copies the data currently stored within the IMDG and saves it into an embedded DB file used by a temporary space. Later, once you would like to reload the data back into the IMDG, the utility performs the procedure in a reverse manner, by reading the data from the file and copy it back into the IMDG.
 
 
 {% indent %}
@@ -40,7 +40,7 @@ The Space Dump utility uses a temporary persistent space approach with the [spac
 
 # The Space Dump Utility
 To run the Space Dump Utility:
-1. Download the [Space Dump Utility|^spacedump.zip].
+1. Download the depanlinkSpace Dump Utilitytengahlink/attachment_files/sbp/spacedump.zipbelakanglink.
 2. Run the utility - The Space Dump Utility accept the following arguments:
 
 

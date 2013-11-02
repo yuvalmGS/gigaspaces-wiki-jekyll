@@ -48,7 +48,7 @@ Yes. Edit the `Settings.xml` file (located in `<ProductRoot>\Config`) and change
 Yes. From the command line, type the following:
 `C:\>msiexec /i GigaSpaces-XAP.NET-9.0.0.5000-GA-x86.msi /quiet`
 
-{% plus %} For more information about installing msi packages from command line, see [http://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspx]).
+{% plus %} For more information about installing msi packages from command line, see depanlinkhttp://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspxtengahlinkhttp://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspxbelakanglink.
 
 # Manual configuration without setup
 

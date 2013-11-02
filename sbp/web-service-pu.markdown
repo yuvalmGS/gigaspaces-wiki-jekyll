@@ -40,8 +40,8 @@ The web service performs the following space operations:
 - Read Customer objects from the space - See the `com.example.customerservice.server.CustomerServiceImpl.getCustomersByName (String name)`.
 
 # Running the Web Service
-1. Download the [Web Service WAR file|^CustomerServicePort.war].
-2. Download the [Web Service project|^WebServicePU.zip]. This includes the entire source code for the client and the web service.
+1. Download the depanlinkWeb Service WAR filetengahlink/attachment_files/sbp/CustomerServicePort.warbelakanglink.
+2. Download the depanlinkWeb Service projecttengahlink/attachment_files/sbp/WebServicePU.zipbelakanglink. This includes the entire source code for the client and the web service.
 3. Setup the application project class path libraries. See the [Client Application Project jars|#Client Application Project jars] for details.
 4. Start GigaSpaces agent.
 

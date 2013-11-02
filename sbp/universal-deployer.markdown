@@ -68,7 +68,7 @@ The GUD support the following command line arguments:
 # Running the GUD
 
 ## Install the GUD
-- Download the [GigaSpaces Universal Deployer|^GSUniversalDeployer.zip] and extract it into an empty folder.
+- Download the depanlinkGigaSpaces Universal Deployertengahlink/attachment_files/sbp/GSUniversalDeployer.zipbelakanglink and extract it into an empty folder.
 - Edit the `runGSUniversalDeployer.bat` or `runGSUniversalDeployer.sh` to include the correct parameters.
 
 Here an exmaple how you should run the GUD:

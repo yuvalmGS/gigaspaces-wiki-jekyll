@@ -21,7 +21,7 @@ Date: March 2011
 # Overview
 GigaSpaces [XAP8:Mule ESB] OpenSpaces comes with comprehensive support for Mule 3.1.0. It allows you to use the [Space as a Mule external transport|XAP8:Mule Event Container Transport], enabling receiving and dispatching of POJO messages over the Space.
 
-This [example|^Mule_Multi_service_Example.zip] illustrates distributed multi services mule application. The different mule services construct a simple workflow, where each service passes its outbound data into the next service in line via the Space. Each Service can run in a different machine(s) and [scale dynamically|#Scale Dynamically] or [manualy|#Scale Manually] in a different manner.
+This depanlinkexampletengahlink/attachment_files/sbp/Mule_Multi_service_Example.zipbelakanglink illustrates distributed multi services mule application. The different mule services construct a simple workflow, where each service passes its outbound data into the next service in line via the Space. Each Service can run in a different machine(s) and [scale dynamically|#Scale Dynamically] or [manualy|#Scale Manually] in a different manner.
 
 
 {% tip %}
@@ -269,7 +269,7 @@ Unix:
 \gigaspaces-xap-premium-8.0.1\tools\maven>installmavenrep.sh
 {% endhighlight %}
 
-3. Download the [example package|^Mule_Multi_service_Example.zip] and extract it into `Gigaspaces Root\tools\maven`. Once extracted you will have the following folders under `Gigaspaces Root\tools\maven\my-app`:
+3. Download the depanlinkexample packagetengahlink/attachment_files/sbp/Mule_Multi_service_Example.zipbelakanglink and extract it into `Gigaspaces Root\tools\maven`. Once extracted you will have the following folders under `Gigaspaces Root\tools\maven\my-app`:
 - common
 - feeder
 - approver
@@ -496,7 +496,7 @@ See below example:
 - The receive-timeout , commit and abort timeout , lookup-timeout , duration and round-trip-time parameters are in millisecond units.{warning}
 
 # Libraries Required
-The [attached libraries|^mule-jars.zip] should be located at your `GigaSpaces Root\lib\platform\mule` folder before deploying the example. See below fill list of the libraries required to run this example:
+The depanlinkattached librariestengahlink/attachment_files/sbp/mule-jars.zipbelakanglink should be located at your `GigaSpaces Root\lib\platform\mule` folder before deploying the example. See below fill list of the libraries required to run this example:
 
 
 {% highlight java %}

@@ -26,7 +26,7 @@ There are couple of approaches you could use to identify these partitions: [task
 
 # Using a Task Executor
 
-The [first example|^GetMinLoadPartition-TaskExecutors.zip] shows an implementation of DistributedTask that can be used in scenarios where you want to run ad-hoc queries. Usage instructions are similar to the Task Executors Example. Business logic does not have to be on the cluster, it is dynamically transported to the server side and executed remotely.
+The depanlinkfirst exampletengahlink/attachment_files/sbp/GetMinLoadPartition-TaskExecutors.zipbelakanglink shows an implementation of DistributedTask that can be used in scenarios where you want to run ad-hoc queries. Usage instructions are similar to the Task Executors Example. Business logic does not have to be on the cluster, it is dynamically transported to the server side and executed remotely.
 
 Example is trying to find a partition with least number of objects and uses GigaSpaces SpaceRuntimeInfo API to get the count of objects. This API is lot faster compared to the count API and is preferred way of getting object counts.
 
@@ -153,7 +153,7 @@ public class MyDistributedTask implements
 
 # Using an Executor Service
 
-Another [example|^GetMinLoadPartition-ExecutorService.zip] shows an implementation using Executor Service. This approach should be used when this functionality is intrinsic part of the system and not needed on ad-hoc basis. Usage instructions are similar to the [Executor Service Example|Map-Reduce Pattern - Executors Example#ExecutorsExample-ServiceExecutorsExample].
+Another depanlinkexampletengahlink/attachment_files/sbp/GetMinLoadPartition-ExecutorService.zipbelakanglink shows an implementation using Executor Service. This approach should be used when this functionality is intrinsic part of the system and not needed on ad-hoc basis. Usage instructions are similar to the [Executor Service Example|Map-Reduce Pattern - Executors Example#ExecutorsExample-ServiceExecutorsExample].
 
 In this example, we're trying to find the partition with the least number of objects, using GigaSpaces' SpaceRuntimeInfo API to get the count of objects. This API is lot faster than the count API and is the preferred way of getting object counts.
 

@@ -302,7 +302,7 @@ When using a [Secure GigaSpaces cluster|XAP9:Securing your Data] you can pass se
 
 ## Single-Site Deployment
 The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish....).
-1. Download the [HttpSession.war|^HttpSession.war].
+1. Download the depanlinkHttpSession.wartengahlinkHttpSession.warbelakanglink.
 2. Deploy a space named **sessionSpace**. You can start the `GigaSpaces root/bin/gsInstance.sh/bat` for a single instance space or deploy a clustered space using the command line or GS-UI.
 3. Deploy the HttpSession.war into Tomcat (or any other app server).
 4. Start your browser and access the web application via the following URL: http://localhost:8080/HttpSession
@@ -440,7 +440,7 @@ sessionDAO.activeSessionsCacheName = jini://*/*/wanSpaceUS?useLocalCache&groups=
 Global HTTP session sharing works only when your application is deployed as a non-root context. It is relying on browser cookies for identifying user session, specifically JSESSIONID cookie. Cookies are generated at a context name per host level. This way all the links on the page are referring to the same cookie/user session.
 
 ##### WebSphere Application Server HttpSessionIdReuse Custom Property
-When using the Global HTTP session sharing with WebSphere Application Server , please enable the [HttpSessionIdReuse|http://pic.dhe.ibm.com/infocenter/wasinfo/v7r0/index.jsp?topic=%2Fcom.ibm.websphere.express.doc%2Finfo%2Fexp%2Fae%2Frprs_custom_properties.html] custom property. In a multi-JVM environment that is not configured for session persistence setting this property to true enables the session manager to use the same session information for all of a user's requests even if the Web applications that are handling these requests are governed by different JVMs.
+When using the Global HTTP session sharing with WebSphere Application Server , please enable the depanlinkHttpSessionIdReusetengahlinkhttp://pic.dhe.ibm.com/infocenter/wasinfo/v7r0/index.jsp?topic=%2Fcom.ibm.websphere.express.doc%2Finfo%2Fexp%2Fae%2Frprs_custom_properties.htmlbelakanglink custom property. In a multi-JVM environment that is not configured for session persistence setting this property to true enables the session manager to use the same session information for all of a user's requests even if the Web applications that are handling these requests are governed by different JVMs.
 
 ##### Transient Attribute
 An attribute specified as **transient** would not be shared and its content will not be stored within the IMDG. Your code should be modified to have this as a regular attribute that can be serialized.

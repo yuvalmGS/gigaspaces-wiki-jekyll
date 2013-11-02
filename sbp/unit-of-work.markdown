@@ -73,7 +73,7 @@ depanimageuow_1.jpgtengahimage/attachment_files/sbp/uow_1.jpgbelakangimage
 ##  Running the Example
 
 {% tip %}
-You can [download|^uow.zip] eclipse project with example source code, running scripts and configuration.
+You can depanlinkdownloadtengahlink/attachment_files/sbp/uow.zipbelakanglink eclipse project with example source code, running scripts and configuration.
 {% endtip %}
 
 

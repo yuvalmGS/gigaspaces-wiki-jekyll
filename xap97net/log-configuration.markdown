@@ -66,11 +66,11 @@ Here are some features/scenarios which might be useful:
     - `XmlWriterTraceListener`
     - `DelimitedListTraceListener`
     - `EventLogTraceListener`
-{% refer %}For more details, see: [http://msdn2.microsoft.com/en-us/library/4y5y10s7.aspx].{% endrefer %}
+{% refer %}For more details, see: depanlinkhttp://msdn2.microsoft.com/en-us/library/4y5y10s7.aspxtengahlinkhttp://msdn2.microsoft.com/en-us/library/4y5y10s7.aspxbelakanglink.{% endrefer %}
 - You can configure a trace listener with a filter to handle specific events.
-{% refer %}For more details, see: [http://msdn2.microsoft.com/en-us/library/system.diagnostics.eventtypefilter.aspx].{% endrefer %}
+{% refer %}For more details, see: depanlinkhttp://msdn2.microsoft.com/en-us/library/system.diagnostics.eventtypefilter.aspxtengahlinkhttp://msdn2.microsoft.com/en-us/library/system.diagnostics.eventtypefilter.aspxbelakanglink.{% endrefer %}
 - You can implement a custom trace listener to handle traced events in a desired manner (e-mail, SMS, custom log, etc.). If you are planning to do this, we recommend that you examine the implementation of custom trace listeners provided in Microsoft's Logging Application Block as a reference.
 {% refer %}For more details, see:
-- [http://msdn2.microsoft.com/EN-US/library/aa480464.aspx]
-- [http://msdn2.microsoft.com/en-us/library/ms228989.aspx]{% endrefer %}
+- depanlinkhttp://msdn2.microsoft.com/EN-US/library/aa480464.aspxtengahlinkhttp://msdn2.microsoft.com/EN-US/library/aa480464.aspxbelakanglink
+- depanlinkhttp://msdn2.microsoft.com/en-us/library/ms228989.aspxtengahlinkhttp://msdn2.microsoft.com/en-us/library/ms228989.aspxbelakanglink{% endrefer %}
 {% endtoczone %}

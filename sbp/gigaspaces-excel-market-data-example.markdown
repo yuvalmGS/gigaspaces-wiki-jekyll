@@ -29,7 +29,7 @@ The example demonstrates the following:
 - Running Excel spreadsheets that show a view of the stock market data, and are updated almost in realtime; to show changes and updates in the market data.
 - Building and using Excel RTD and UDF components.
 
-{% lampon %} **[Download the example|^ExcelStocks.zip]** and extract it into your `<GigaSpaces Root>\Examples` directory.
+{% lampon %} **depanlinkDownload the exampletengahlink/attachment_files/sbp/ExcelStocks.zipbelakanglink** and extract it into your `<GigaSpaces Root>\Examples` directory.
 
 {% refer %}Getting Started with RTD and UDF? See the [Writing Your First RTD/UDF Application|Writing Your First RTD or UDF Application] section.{% endrefer %}
 

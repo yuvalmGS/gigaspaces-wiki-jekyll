@@ -33,7 +33,7 @@ The scaling agent sample periodically the amount of HTTP requests served by the 
 
 
 {% tip %}
-The [WebScale.zip|^WebScale.zip] includes the source and configuration described below.
+The depanlinkWebScale.ziptengahlink/attachment_files/sbp/WebScale.zipbelakanglink includes the source and configuration described below.
 {% endtip %}
 
 

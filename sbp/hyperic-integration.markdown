@@ -19,7 +19,7 @@ In order to use the plugin on an hyperic agent you have to prepare this agent to
 1. Copy the GigaSpaces required jar files (_JSHOMEDIR/lib/required_) to the following agent folder: _agent-4.6/bundles/agent-4.6/pdk/lib/gs_ (you'll have to create the gs folder).
 2. Upgrade the agent JVM to a 1.6 version
 3. Restart the agent
-4. Connect to the Hyperic server console with admin account and go to the plugin manager. Install the GigaSpaces plugin ([hyperic-gs-plugin.jar|^hyperic-gs-plugin.jar])
+4. Connect to the Hyperic server console with admin account and go to the plugin manager. Install the GigaSpaces plugin (depanlinkhyperic-gs-plugin.jartengahlink/attachment_files/sbp/hyperic-gs-plugin.jarbelakanglink)
 
 # Usage
 

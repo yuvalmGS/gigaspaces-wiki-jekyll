@@ -14,7 +14,7 @@ page_id: 64127787
 Multicast is the delivery of information to a group of destinations simultaneously, using the most efficient strategy to deliver messages over each link of the network only once, and create copies only when the links to the destinations split.
 
 The word "multicast" is typically used to refer to IP Multicast, the implementation of the multicast concept on the IP routing level, where routers create optimal spanning tree distribution paths for datagrams sent to a multicast destination address in realtime. However, there are also other implementations of the multicast distribution strategy listed below.
-(Source - wikipedia: [http://en.wikipedia.org/wiki/Multicast]).
+(Source - wikipedia: depanlinkhttp://en.wikipedia.org/wiki/Multicasttengahlinkhttp://en.wikipedia.org/wiki/Multicastbelakanglink).
 
 GigaSpaces uses multicast in the following cases:
 - [When deploying onto the service grid|Deploying onto the Service Grid] GigaSpaces XAP uses multicast to discover the [Lookup Service|Lookup Service Configuration ], and register their proxies.
