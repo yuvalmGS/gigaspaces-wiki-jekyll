@@ -16,8 +16,10 @@ The Service Grid Admin API provides a way to administer and monitor all of GigaS
 
 Before diving into the Service Grid Admin API, here are some code examples showing how the API can be used to display information on the currently deployed services/components:
 
-{gdeck:admin_test|top}
-{gcard:GSA}
+
+{% inittab admin_test|top %}
+
+{% tabcontent GSA %}
 
 {% highlight java %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
@@ -36,8 +38,10 @@ foreach (IGridServiceAgent gsa in admin.GridServiceAgents)
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:GSM}
+{% endtabcontent %}
+
+
+{% tabcontent GSM %}
 
 {% highlight java %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
@@ -51,8 +55,10 @@ foreach (IGridServiceManager gsm in admin.GridServiceManagers)
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:GSC}
+{% endtabcontent %}
+
+
+{% tabcontent GSC %}
 
 {% highlight java %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
@@ -72,8 +78,10 @@ foreach (IGridServiceContainer gsc in admin.GridServiceContainers)
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Processing Unit}
+{% endtabcontent %}
+
+
+{% tabcontent Processing Unit %}
 
 {% highlight java %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
@@ -113,8 +121,10 @@ foreach (IProcessingUnit processingUnit in admin.getProcessingUnits())
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Space}
+{% endtabcontent %}
+
+
+{% tabcontent Space %}
 
 {% highlight java %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
@@ -149,8 +159,10 @@ foreach (ISpace space in admin.Spaces)
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Virtual Machine}
+{% endtabcontent %}
+
+
+{% tabcontent Virtual Machine %}
 
 {% highlight java %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
@@ -182,8 +194,10 @@ foreach (IVirtualMachine virtualMachine in admin.VirtualMachines)
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Machine}
+{% endtabcontent %}
+
+
+{% tabcontent Machine %}
 
 {% highlight java %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
@@ -208,8 +222,10 @@ foreach (IMachine machine in admin.Machines)
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 
 {% tip %}

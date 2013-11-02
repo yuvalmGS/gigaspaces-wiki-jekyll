@@ -39,25 +39,31 @@ A GigaSpaces node is best facilitated through the use of a service called the "[
 
 The simplest way to start a node with GigaSpaces is just to invoke the GSA in the GigaSpaces home directory, preferably in its own command shell (although you can easily start a background process with `start` or `nohup` if desired):
 
-{gdeck:deckName1|top}
-{gcard:Windows}
+
+{% inittab deckName1|top %}
+
+{% tabcontent Windows %}
 
 
 {% highlight java %}
 .\gs-agent.bat
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:Linux}
+
+
+{% tabcontent Linux %}
 
 
 {% highlight java %}
 ./gs-agent.sh
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Connecting to a Data Grid
 

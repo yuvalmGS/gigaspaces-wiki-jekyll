@@ -43,8 +43,10 @@ The existing application Spring bean Configuration file will be modified to:
 - Add a Spring Configuration file for the Data-Grid (Data-Grid PU).
 - Add a Spring Configuration file for the Mirror (Mirror PU).
 
-{gdeck:SpringbeanConfigurationFile|top}
-{gcard:Hibernate spring bean configuration file}
+
+{% inittab SpringbeanConfigurationFile|top %}
+
+{% tabcontent Hibernate spring bean configuration file %}
 
 
 {% highlight java %}
@@ -89,8 +91,10 @@ The existing application Spring bean Configuration file will be modified to:
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:GigsSpaces spring bean configuration file}
+{% endtabcontent %}
+
+
+{% tabcontent GigsSpaces spring bean configuration file %}
 
 ## The Application spring bean configuration file
 The {myUserSpaceDAO}} includs the GigaSpaces DAO.
@@ -292,8 +296,10 @@ The {myUserSpaceDAO}} includs the GigaSpaces DAO.
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # The POJO Class
 The POJO Class will be modified to include:
@@ -302,8 +308,10 @@ The POJO Class will be modified to include:
 - Indexed fields
 - Other Space class metadata decorations
 
-{gdeck:ThePOJOClass|top}
-{gcard:Hibernate POJO Class}
+
+{% inittab ThePOJOClass|top %}
+
+{% tabcontent Hibernate POJO Class %}
 
 
 {% highlight java %}
@@ -358,8 +366,10 @@ public class User {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:GigsSpaces POJO Class}
+{% endtabcontent %}
+
+
+{% tabcontent GigsSpaces POJO Class %}
 
 
 {% highlight java %}
@@ -419,8 +429,10 @@ public class User {
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # UserDAO interface
 The UserDAO interface remains as is:
@@ -441,8 +453,10 @@ public interface UserDAO {
 
 # The DAO Implementation
 The DAO implementation should be modified to use the [GigaSpace interface|XAP91:The GigaSpace Interface] to access the data grid instead of using the `HibernateTemplate` that is accessing the database. The `GigaSpace` interface simialr methods to the `HibernateTemplate` to write and [Query|XAP91:SQLQuery] for objects.
-{gdeck:DAOImplemenation|top}
-{gcard:Hibernate DAO Implemenation}
+
+{% inittab DAOImplemenation|top %}
+
+{% tabcontent Hibernate DAO Implemenation %}
 
 
 {% highlight java %}
@@ -470,9 +484,11 @@ public class UserDAOImpl implements UserDAO {
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:GigsSpaces DAO Implemenation}
+
+
+{% tabcontent GigsSpaces DAO Implemenation %}
 
 
 {% highlight java %}
@@ -508,8 +524,10 @@ public class UserDAOSpaceImpl implements UserDAO {
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Deploying the Data-Grid and the Application
 To deploy the Data-Grid and the web Application into the [GigaSpaces runtime enviroment|XAP91:The Runtime Environment] perform the following:

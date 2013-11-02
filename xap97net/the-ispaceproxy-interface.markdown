@@ -21,8 +21,10 @@ The `ISpaceProxy` interface is ideal for connecting to data stored in the Space.
 
 An `ISpaceProxy` can be initialized directly in the code or in the `pu.config` file in XML format. To define an `ISpaceProxy`:
 
-{gdeck:os_simple_space|top}
-{gcard:Namespace}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Namespace %}
 
 {% highlight xml %}
  <GigaSpaces.XAP>
@@ -37,9 +39,11 @@ An `ISpaceProxy` can be initialized directly in the code or in the `pu.config` f
   </GigaSpaces.XAP>
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:Code}
+
+
+{% tabcontent Code %}
 
 {% highlight java %}
 
@@ -47,8 +51,10 @@ ISpaceProxy mySpace = GigaSpacesFactory.FindSpace("/./spaceName")
 
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 Several `ISpaceProxy` instances can be defined within a single Processing Unit, each with its own properties.
 
@@ -105,8 +111,10 @@ Many times, especially when working with a Processing Unit that starts an embedd
 
 The decision of working directly with a cluster member or against the whole cluster is done in the `ISpaceProxy` level. The `GigaSpacesFactory` provides a clustered flag with the following logic as the default value: If the space is started in embedded mode (for example, `/./space`), the clustered flag is set to `false`. When the space is looked up in a remote protocol (Jini or RMI), the clustered flag is set to `true`. In addition to automatically setting the flag, the flag can be set explicitly. To configure a clustered proxy:
 
-{gdeck:os_simple_space|top}
-{gcard:Namespace}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Namespace %}
 
 {% highlight xml %}
   <GigaSpaces.XAP>
@@ -120,8 +128,10 @@ The decision of working directly with a cluster member or against the whole clus
   </GigaSpaces.XAP>
 {% endhighlight %}
 
-{gcard}
-{gcard:Code}
+{% endtabcontent %}
+
+
+{% tabcontent Code %}
 
 {% highlight java %}
 //define the space configuration object
@@ -134,8 +144,10 @@ ISpaceProxy proxy = GigaSpacesFactory.FindSpace("/./embSpace", mySettings);
 
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 The above example shows a typical scenario where the clustered flag is used. Within a Processing Unit, an application might need to access both the cluster member and the whole cluster directly.
 
@@ -159,8 +171,10 @@ public interface ISpaceProxy{
 
 In a similar manner, the read timeout and write lease can be specified.
 
-{gdeck:os_simple_space|top}
-{gcard:Namespace}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Namespace %}
 
 {% highlight xml %}
  <GigaSpaces.XAP>
@@ -176,8 +190,10 @@ In a similar manner, the read timeout and write lease can be specified.
 
 {% endhighlight %}
 
-{gcard}
-{gcard:Code}
+{% endtabcontent %}
+
+
+{% tabcontent Code %}
 
 {% highlight java %}
 
@@ -191,8 +207,10 @@ In a similar manner, the read timeout and write lease can be specified.
 
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 
 {% tip %}
@@ -378,8 +396,10 @@ Alternatively, asyncRead and asyncTake also accept an implementation of [AsyncFu
 
 Asynchronous `write` operation can be implemented using a [Task|Task Execution over the Space], where the `Task` implementation include a write operation. With this approach the `Task` is sent to the space and executed in an asynchronous manner. The write operation itself will be completed once both the primary and the backup will acknowledge the operation. This activity will be performed as a background activity from the client perspective.
 
-{gdeck:async_operations|top}
-{gcard:Space Class}
+
+{% inittab async_operations|top %}
+
+{% tabcontent Space Class %}
 
 {% highlight java %}
 public class MyClass implements Serializable{
@@ -400,8 +420,10 @@ public class MyClass implements Serializable{
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:AsyncFutureListener}
+{% endtabcontent %}
+
+
+{% tabcontent AsyncFutureListener %}
 
 {% highlight java %}
 public class AsyncListener implements AsyncFutureListener<MyClass>{
@@ -418,25 +440,31 @@ public class AsyncListener implements AsyncFutureListener<MyClass>{
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:Async Read}
+
+
+{% tabcontent Async Read %}
 
 {% highlight java %}
 GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
 AsyncFuture<MyClass> futureRead =  space.asyncRead(new MyClass(1), 10000, new AsyncListener("Read"));
 {% endhighlight %}
 
-{gcard}
-{gcard:Async Take}
+{% endtabcontent %}
+
+
+{% tabcontent Async Take %}
 
 {% highlight java %}
 GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
 AsyncFuture<MyClass> futureTake =  space.asyncTake(new MyClass(1), 10000, new AsyncListener("Take"));
 {% endhighlight %}
 
-{gcard}
-{gcard:Async Write}
+{% endtabcontent %}
+
+
+{% tabcontent Async Write %}
 
 {% highlight java %}
 GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
@@ -462,8 +490,10 @@ public class AsyncWriteTask implements Task<Integer>{
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Declarative Transactions
 
@@ -471,8 +501,10 @@ As seen in the take API above, there is no need to provide a Jini transaction ob
 
 {% exclamation %} In order to have GigaSpace transactional, the transaction manager must be provided as a reference when constructing the GigaSpace bean. For example (using the distributed transaction manager):
 
-{gdeck:os_simple_space|top}
-{gcard:Namespace}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Namespace %}
 
 {% highlight xml %}
 <os-core:space id="space" url="/./space" />
@@ -482,8 +514,10 @@ As seen in the take API above, there is no need to provide a Jini transaction ob
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 {% endhighlight %}
 
-{gcard}
-{gcard:Plain XML}
+{% endtabcontent %}
+
+
+{% tabcontent Plain XML %}
 
 {% highlight xml %}
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
@@ -500,8 +534,10 @@ As seen in the take API above, there is no need to provide a Jini transaction ob
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 {% lampon %} It is highly recommended to read the [transaction management chapter|http://static.springframework.org/spring/docs/3.0.x/reference/transaction.html] in the Spring reference documentation.
 
@@ -534,8 +570,10 @@ gigaSpace.getSpace().take(obj, gigaSpace.getCurrentTransaction(), 1000);
 
 GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED` and `REPEATABLE_READ` (default). When using `GigaSpace`, the default isolation level that it will perform under can be defined in the following manner:
 
-{gdeck:os_simple_space|top}
-{gcard:Namespace}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Namespace %}
 
 {% highlight xml %}
 <os-core:space id="space" url="/./space" />
@@ -543,8 +581,10 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 <os-core:giga-space id="gigaSpace" space="space" default-isolation="READ_COMMITTED"/>
 {% endhighlight %}
 
-{gcard}
-{gcard:Plain XML}
+{% endtabcontent %}
+
+
+{% tabcontent Plain XML %}
 
 {% highlight xml %}
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
@@ -557,8 +597,10 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:Code}
+{% endtabcontent %}
+
+
+{% tabcontent Code %}
 
 {% highlight java %}
 IJSpace space = // get Space either by injection or code creation
@@ -568,8 +610,10 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space)
                           .gigaSpace();
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 In addition, Spring allows you to define the isolation level on the transaction definition itself:
 

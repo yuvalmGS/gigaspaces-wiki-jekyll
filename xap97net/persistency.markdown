@@ -31,8 +31,10 @@ For a fully running example using the Mirror Service see `GigaSpaces Root\XAP.NE
 
 You can either use GigaSpaces NHibernate implementation, or create a custom implementation:
 
-{gdeck:pu implementation type|top}
-{gcard:GigaSpaces NHibernate SQL Data Source Implementation}
+
+{% inittab pu implementation type|top %}
+
+{% tabcontent GigaSpaces NHibernate SQL Data Source Implementation %}
 The following code demonstrates how to start an embedded space with GigaSpaces NHibernate `SqlDataSource` implementation as its External Data Source.
 
 
@@ -62,8 +64,10 @@ ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceCon
 {% lampon %} You can create your own NHibernate session factory and pass it to the `NHibernateExternalDataSource` constructor. In this case, there's no need to use `SpaceConfig.ExternalDataSourceConfig.CustomProperties`.
 
 {% refer %} For a demonstration of how to start a partitioned-sync2backup cluster with asynchronous NHibernate persistency, refer to the [NHibernate External Data Source] section.{% endrefer %}
-{gcard}
-{gcard:Custom SQL Data Source Implementation}
+{% endtabcontent %}
+
+
+{% tabcontent Custom SQL Data Source Implementation %}
 A custom .NET `SqlDataSource` implementation can be used as well.
 
 The following code demonstrates how to start an embedded space with a custom .NET `SqlDataSource` implementation as its External Data Source.
@@ -86,8 +90,10 @@ ISpaceProxy persistentSpace = SpaceProxyProviderFactory.Instance.FindSpace("/./m
 {% endhighlight %}
 
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Advanced Options
 

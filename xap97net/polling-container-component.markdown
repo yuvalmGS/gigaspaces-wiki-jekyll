@@ -19,8 +19,10 @@ The first tab demonstrates how to create and configure a polling container using
 
 Here is a simple example of polling event container construction:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven]
@@ -59,8 +61,10 @@ eventListenerContainer.Start();
 eventListenerContainer.Dispose()
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
@@ -93,8 +97,10 @@ public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data
 {% endinfo %}
 
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 The example above performs single take operations (see [below|#Receive Operation Handler]), using the provided template, which can be any .NET object (in this case a `Data` object with its processed flag set to `false`). If the take operation succeeds (a value is returned), the `SimpleListener.ProcessData` method is invoked. The operations are performed on the supplied space proxy.
 
@@ -115,8 +121,10 @@ By default, the polling event container starts a single thread that performs the
 
 Here is an example of a polling container with 3 concurrent consumers and a maximum of 5 concurrent consumers:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven(MinConcurrentConsumers = 3, MaxConcurrentConsumers = 5]
@@ -141,8 +149,10 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -151,13 +161,17 @@ pollingEventListenerContainer.MinConcurrentConsumers = 3;
 pollingEventListenerContainer.MaxConcurrentConsumers = 5;
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 Sometimes, it is very convenient to have a listener instance per concurrent polling thread. This allows a thread-safe instance variable to be constructed, without worrying about concurrent access. In such a case, the event listener containing class should implement `System.ICloneable`, and the `CloneEventListenersPerThread` property should be set to true. Here is an example:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven(MinConcurrentConsumers = 3, MaxConcurrentConsumers = 5, CloneEventListenersPerThread = true]
@@ -167,8 +181,10 @@ public class SimpleListener : ICloneable
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -178,15 +194,19 @@ pollingEventListenerContainer.MaxConcurrentConsumers = 5;
 pollingEventListenerContainer.CloneEventListenersPerThread = true;
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Static Template Definition
 
 When performing receive operations, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates, based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SqlQuery|SqlQuery] in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven]
@@ -211,8 +231,10 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -220,16 +242,20 @@ PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or
 pollingEventListenerContainer.Template = new SqlQuery<Data>("Processed = false");
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Dynamic Template Definition
 
 When performing polling receive operations, a dynamic template can be used. A method providing a dynamic template is called before each receive operation, and can return a different object in each call.
 The event template object needs to be of IQuery<TData> type, which means if you want to use an object based template you need to wrap it with the `ObjectQuery` wrapper.
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven]
@@ -256,8 +282,10 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -279,8 +307,10 @@ public class ExpiredDataTemplateProvider
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 
 {% tip %}
@@ -331,8 +361,10 @@ XAP.NET comes with several built-in receive operation-handler implementations:
 
 Here is an example of how the receive operation handler can be configured with `ExclusiveReadReceiveOperationHandler`:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven]
@@ -364,8 +396,10 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -374,15 +408,19 @@ ExclusiveReadReceiveOperationHandler<Data> receiveHandler = new ExclusiveReadRec
 pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Non-Blocking Receive Handler
 
 When working with a partitioned cluster, and configuring the polling container to work against the whole cluster, blocking operations are not allowed (when the routing index is not set in the template). The default receive operation handlers support performing the receive operation in a non-blocking manner, by sleeping between non-blocking operations. For example, the `TakeReceiveOperationHandler` performs a non-blocking Take operation against the space, and then sleeps for a configurable amount of time. Here is an example of how it can be configured:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven]
@@ -416,8 +454,10 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -428,8 +468,10 @@ receiveHandler.NonBlockingFactor = 10;
 pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 The above example uses a receive timeout of 10 seconds (10000 milliseconds). The `TakeReceiveOperationHandler` is configured to be non-blocking, with a non-blocking factor of 10. This means that the receive handler performs 10 non-blocking takes within 10 seconds, and sleeps the rest of the time (~1 second each time).
 
@@ -441,8 +483,10 @@ A prime example is the `TakeReceiveOperationHandler`, which when [BatchDataEvent
 
 Here is an example of batch notifications using `ReadReceiveOperationHandler`:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven(ReceiveBatchSize = 100)]
@@ -474,8 +518,10 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -490,8 +536,10 @@ pollingEventListenerContainer.BatchDataEventArrived += new DelegateDataEventArri
 pollingEventListenerContainer.Dispose();
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Transaction Support
 
@@ -499,8 +547,10 @@ Both the receive operation, and the actual event action can be configured to be 
 - Distributed transaction - an embedded distributed transaction manager will be created and it will be used for creating transaction (Only one transaction manager will be created per AppDomain).
 - Manual transaction - transactions will be created by the transaction manager that is stored in the `TransactionManager` property. By default no transaction manager is stored and therefore, no transaction will be used. For example:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven]
@@ -511,8 +561,10 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
@@ -521,15 +573,19 @@ PollingEventListenerContainer<Data> pollingEventListenerContainer = new PollingE
 pollingEventListenerContainer.TransactionType = TransactionType.Distributed;
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 When using transactions with the polling container, special care should be taken with timeout values. Transactions started by the polling container can have a timeout value associated with them (if this is not set, it defaults to the default timeout value of the transaction manager). If setting a specific timeout value, make sure the timeout value is higher than the timeout value for blocking operations, and includes the expected execution time of the associated listener.
 
 Here is an example how timeout value can be set with the polling container:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven]
@@ -540,8 +596,10 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -549,13 +607,17 @@ PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or
 pollingEventListenerContainer.TransactionTimeout = 1000;
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 It is possible to receive a reference to the on going transaction as part of the event handling method, if for instance, the event handling is doing some extra space operations which should be executed under the same transaction context and rolled back upon failure. This is done be adding a transaction parameter to the event handler method. For example:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven]
@@ -572,8 +634,10 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
@@ -583,8 +647,10 @@ pollingEventListenerContainer.TransactionType = TransactionType.Distributed;
 pollingEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAdapter<Data,Data>(ProcessData).WriteBackDataEventHandler;
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 {% refer %}The order of parameters of the event handling method is strict, please refer to [Dynamic Data Event Handler Adapter|Event Listener Container#eventhandleradapter] for more information about it.{% endrefer %}
 
@@ -624,8 +690,10 @@ public interface ITriggerOperationHandler<TData>
 
 XAP.NET comes with a built-in implementation of this interface, called `ReadTriggerOperationHandler`. It performs a single blocking Read operation (using the provided receive timeout), thus "peeking" into the space for relevant event data. If the Read operation returns a value, this means that there is a higher probability that the receive operation will succeed, and the transaction won't be started without a purpose. Here is how it can be configured:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven]
@@ -657,8 +725,10 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -667,8 +737,10 @@ ReadTriggerOperationHandler<Data> triggerHandler = new ReadTriggerOperationHandl
 pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Non-Blocking Trigger Handler
 
@@ -688,8 +760,10 @@ It is possible to be notified when a container exception occured, by subscribing
 
 Here is an example of how to subscribe to this event:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven]
@@ -706,8 +780,10 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -724,8 +800,10 @@ public void ExceptionHandler(object sender, ContainerExceptionEventArgs e)
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Subscribing to User Exception Occured Event
 
@@ -733,8 +811,10 @@ It is possible to be notified when a user exception occured, by subscribing to t
 
 Here is an example of how to subscribe to this event:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven]
@@ -751,8 +831,10 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -769,8 +851,10 @@ public void ExceptionHandler(object sender, UserExceptionEventArgs<Data> e)
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Default Values of Polling Container Configuration Parameters
 

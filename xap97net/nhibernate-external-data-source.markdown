@@ -53,8 +53,10 @@ NHibernate requires a session factory that creates new sessions over the databas
 ## NHibernate Mapping File
 
 Each persistent class requires a mapping file that defines how to map the object to and from the database. This walkthrough shows a simple `Person` class and its corresponding mapping file.
-{gdeck:Person Class|top}
-{gcard:Person Class}
+
+{% inittab Person Class|top %}
+
+{% tabcontent Person Class %}
 Our `Person` is defined in Assembly name entities.
 
 {% highlight java %}
@@ -89,8 +91,10 @@ namespace Entities
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:NHibernate Mapping File}
+{% endtabcontent %}
+
+
+{% tabcontent NHibernate Mapping File %}
 
 {% highlight xml %}
 <?xml version="1.0"?>
@@ -104,8 +108,10 @@ namespace Entities
 </hibernate-mapping>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Starting the Spaces with NHibernate External Data Source
 

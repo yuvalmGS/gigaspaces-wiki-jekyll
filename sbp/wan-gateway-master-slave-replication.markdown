@@ -40,8 +40,10 @@ As a result of this topology setup, the following scenario will take place once 
 # Configuring Master-Slave Replication
 
 The master-slave topology configuration is simply implemented through delegators on the master (New York) and a sink on each slave (London, Hong Kong). In this case, New York's site will be the active site while London and  Hong Kong will be the passive sites. While the slave sites are passive,  this does not necessarily mean that no work is done in these sites. However, in  terms of replication over the WAN, these sites should not replicate to  the other sites and usually should not alter data replicated from other  sites because it may cause conflicts:
-{gdeck}
-{gcard:New York Space}
+
+{% inittab %}
+
+{% tabcontent New York Space %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,9 +80,11 @@ The master-slave topology configuration is simply implemented through delegators
 
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
+
  
-{gcard:New York Gateway}
+
+{% tabcontent New York Gateway %}
 
 {% highlight xml %}
 
@@ -109,8 +113,10 @@ The master-slave topology configuration is simply implemented through delegators
 
 {% endhighlight %}
 
-{gcard}
-{gcard:London Space}
+{% endtabcontent %}
+
+
+{% tabcontent London Space %}
 
 {% highlight xml %}
 
@@ -143,8 +149,10 @@ The master-slave topology configuration is simply implemented through delegators
 
 {% endhighlight %}
 
-{gcard}
-{gcard:London Gateway}
+{% endtabcontent %}
+
+
+{% tabcontent London Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -174,8 +182,10 @@ The master-slave topology configuration is simply implemented through delegators
 
 {% endhighlight %}
 
-{gcard}
-{gcard:Hong Kong Space}
+{% endtabcontent %}
+
+
+{% tabcontent Hong Kong Space %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -207,8 +217,10 @@ The master-slave topology configuration is simply implemented through delegators
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:Hong Kong Gateway}
+{% endtabcontent %}
+
+
+{% tabcontent Hong Kong Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -238,8 +250,10 @@ The master-slave topology configuration is simply implemented through delegators
 
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Installing and Running the Example
 

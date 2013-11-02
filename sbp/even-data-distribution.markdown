@@ -53,8 +53,10 @@ However, if one groupId consists of a much larger set than another, note that al
 
 For perfectly distributed data that isn't naturally partitioned (i.e., something that doesn't have a groupId analog, from the example above), it's possible to use a routing field that is an ascending integer. For example:
 
-{gdeck}
-{gcard:storeEvenlyDistributedData}
+
+{% inittab %}
+
+{% tabcontent storeEvenlyDistributedData %}
 
 
 {% highlight java %}
@@ -76,8 +78,10 @@ public void storeEvenlyDistributedData(GigaSpace space, int count) {
 ...
 {% endhighlight %}
 
-{gcard}
-{gcard:MyData}
+{% endtabcontent %}
+
+
+{% tabcontent MyData %}
 
 
 {% highlight java %}
@@ -100,7 +104,9 @@ public class MyData {
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 This is not especially efficient for remote task execution (because it doesn't naturally group related data) but does provide an even distribution across partitions, if that's what you need.

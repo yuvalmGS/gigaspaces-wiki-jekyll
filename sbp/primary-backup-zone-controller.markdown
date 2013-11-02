@@ -44,28 +44,36 @@ The example below will show how to use the Primary-Backup Zone Controller to pla
 1. Download the [Primary-Backup Zone Controller|^PrimaryBackupZoneController.zip] and extract it into an empty folder. You will find the source under thr `src` folder and the compiled code under the `bin` folder.
 
 2. Start LUS and GSM:
-{gdeck:1|top}
-{gcard:Windows}
+
+{% inittab 1|top %}
+
+{% tabcontent Windows %}
 
 
 {% highlight java %}
 gs-agent gsa.gsc 0 gsa.lus 1 gsa.gsm 1
 {% endhighlight %}
 
-{gcard}
-{gcard:Linux}
+{% endtabcontent %}
+
+
+{% tabcontent Linux %}
 
 
 {% highlight java %}
 ./gs-agent.sh gsa.gsc 0 gsa.lus 1 gsa.gsm 1
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 3. Start Zone A:
-{gdeck:3|top}
-{gcard:Windows}
+
+{% inittab 3|top %}
+
+{% tabcontent Windows %}
 
 
 {% highlight java %}
@@ -73,8 +81,10 @@ set GSC_JAVA_OPTIONS=-Dcom.gs.zones="A"
 gs-agent gsa.gsc 2 gsa.lus 0 gsa.gsm 0
 {% endhighlight %}
 
-{gcard}
-{gcard:Linux}
+{% endtabcontent %}
+
+
+{% tabcontent Linux %}
 
 
 {% highlight java %}
@@ -82,12 +92,16 @@ export GSC_JAVA_OPTIONS=-Dcom.gs.zones="A"
 ./gs-agent.sh gsa.gsc 2 gsa.lus 0 gsa.gsm 0
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 4. Start Zone B:
-{gdeck:4|top}
-{gcard:Windows}
+
+{% inittab 4|top %}
+
+{% tabcontent Windows %}
 
 
 {% highlight java %}
@@ -95,8 +109,10 @@ set GSC_JAVA_OPTIONS=-Dcom.gs.zones="B"
 gs-agent gsa.gsc 2 gsa.lus 0 gsa.gsm 0
 {% endhighlight %}
 
-{gcard}
-{gcard:Linux}
+{% endtabcontent %}
+
+
+{% tabcontent Linux %}
 
 
 {% highlight java %}
@@ -104,12 +120,16 @@ export GSC_JAVA_OPTIONS=-Dcom.gs.zones="B"
 ./gs-agent.sh gsa.gsc 2 gsa.lus 0 gsa.gsm 0
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 5. Start Zone C:
-{gdeck:5|top}
-{gcard:Windows}
+
+{% inittab 5|top %}
+
+{% tabcontent Windows %}
 
 
 {% highlight java %}
@@ -117,8 +137,10 @@ set GSC_JAVA_OPTIONS=-Dcom.gs.zones="C"
 gs-agent 0 gsa.gsc 2 gsa.lus 0 gsa.gsm 0
 {% endhighlight %}
 
-{gcard}
-{gcard:Linux}
+{% endtabcontent %}
+
+
+{% tabcontent Linux %}
 
 
 {% highlight java %}
@@ -126,32 +148,42 @@ export GSC_JAVA_OPTIONS=-Dcom.gs.zones="C"
 ./gs-agent.sh gsa.gsc 2 gsa.lus 0 gsa.gsm 0
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 6. Deploy a Data-Grid:
-{gdeck:6|top}
-{gcard:Windows}
+
+{% inittab 6|top %}
+
+{% tabcontent Windows %}
 
 
 {% highlight java %}
 gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,1 mySpace
 {% endhighlight %}
 
-{gcard}
-{gcard:Linux}
+{% endtabcontent %}
+
+
+{% tabcontent Linux %}
 
 
 {% highlight java %}
 ./gs.sh deploy-space -cluster schema=partitioned-sync2backup total_members=2,1 mySpace
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 7. Run the Primary-Backup Zone Controller utility:
-{gdeck:7|top}
-{gcard:Windows}
+
+{% inittab 7|top %}
+
+{% tabcontent Windows %}
 
 
 {% highlight java %}
@@ -160,8 +192,10 @@ set JARS=%GS_JARS%;.\bin
 java %JARS% -DpuName=mySpace -DprimaryZone=A -DbackupZone=B -Dlocators=127.0.0.1 com.gigaspaces.admin.PrimaryBackupController
 {% endhighlight %}
 
-{gcard}
-{gcard:Linux}
+{% endtabcontent %}
+
+
+{% tabcontent Linux %}
 
 
 {% highlight java %}
@@ -171,8 +205,10 @@ export JARS=$GS_JARS:./bin
 java $JARS -DpuName=mySpace -DprimaryZone=A -DbackupZone=B -Dlocators=127.0.0.1 com.gigaspaces.admin.PrimaryBackupController
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Deploying the Primary-Backup Zone Controller as a PU
 When deploying the Primary-Backup Zone Controller utility as a PU the PU configuration includes the following:

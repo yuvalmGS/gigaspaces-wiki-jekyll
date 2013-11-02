@@ -74,8 +74,10 @@ With the above scenario requests 1, 3 and 4 should be processed as one atomic op
 You can [download|^uow.zip] eclipse project with example source code, running scripts and configuration.
 {% endtip %}
 
-{gdeck:RunningExample|top}
-{gcard:Running the UOWProcessor within your IDE}
+
+{% inittab RunningExample|top %}
+
+{% tabcontent Running the UOWProcessor within your IDE %}
 You can run the UOW Data-Grid with the collocated `UOWProcessor` within your IDE using the following configuration:
 
 {% indent %}
@@ -88,9 +90,11 @@ Here is a configuration for a UOW Data-Grid with 2 partitions:
 !GRA:Images^uow_2.jpg!
 {% endindent %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:Deploying the UOWProcessor into the Service Grid}
+
+
+{% tabcontent Deploying the UOWProcessor into the Service Grid %}
 Instead of running the UOWProcessor within your IDE, you can deploy it into the Service Grid.
 1. Edit the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` variable as your machine IP and the `GS_HOME` variable as the GigaSpaces root folder.
 2. Start the Service-Grid
@@ -108,8 +112,10 @@ deployUOW.bat
 {% endhighlight %}
 
 This will deploy the UOW Data-Grid with 2 partitions and a backup.
-{gcard}
-{gcard:Running the UOWFeeder}
+{% endtabcontent %}
+
+
+{% tabcontent Running the UOWFeeder %}
 You can run the `UOWFeeder` within your IDE using the following configuration:
 
 {% indent %}
@@ -123,8 +129,10 @@ or using the following:
 runClient.bat
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Example Code and Configuration
 
@@ -132,8 +140,10 @@ runClient.bat
 The bucket count configured via the UOW Data-Grid pu.xml using the BucketConfiguration Bean
 {% endtip %}
 
-{gdeck:example|top}
-{gcard:The UOWMessage Class}
+
+{% inittab example|top %}
+
+{% tabcontent The UOWMessage Class %}
 
 
 {% highlight java %}
@@ -189,8 +199,10 @@ public class UOWMessage {
 {% endhighlight %}
 
 
-{gcard}
-{gcard:The UOWFeeder}
+{% endtabcontent %}
+
+
+{% tabcontent The UOWFeeder %}
 
 The `buketId` is calculated using the following:
 
@@ -254,8 +266,10 @@ public class UOWFeederMain {
 {% endhighlight %}
 
 
-{gcard}
-{gcard:The UOWProcessorService}
+{% endtabcontent %}
+
+
+{% tabcontent The UOWProcessorService %}
 
 
 {% highlight java %}
@@ -267,8 +281,10 @@ public interface UOWProcessorService {
 {% endhighlight %}
 
 
-{gcard}
-{gcard:The UOWProcessor}
+{% endtabcontent %}
+
+
+{% tabcontent The UOWProcessor %}
 
 
 {% highlight java %}
@@ -357,9 +373,11 @@ public class UOWProcessor {
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:The UOWProcessorFactory}
+
+
+{% tabcontent The UOWProcessorFactory %}
 
 
 {% highlight java %}
@@ -419,9 +437,11 @@ public class UOWProcessorFactory implements UOWProcessorService{
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:The UOW Data-Grid pu.xml }
+
+
+{% tabcontent The UOW Data-Grid pu.xml  %}
 
 
 {% highlight java %}
@@ -462,8 +482,10 @@ public class UOWProcessorFactory implements UOWProcessorService{
 {% endhighlight %}
 
 
-{gcard}
-{gcard:The BucketConfiguration}
+{% endtabcontent %}
+
+
+{% tabcontent The BucketConfiguration %}
 
 
 {% highlight java %}
@@ -482,6 +504,8 @@ public class BucketConfiguration {
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gdeck}
+
+{% endinittab %}
+

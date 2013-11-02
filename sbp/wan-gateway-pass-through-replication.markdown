@@ -48,8 +48,10 @@ As a result of indirect delegation, the following scenario will take place once 
 
 The pass-through topology configuration is implemented through delegators across Hong-Kong and New York that are routed via London. This is achieved by setting the delegate-through property to London for delegation targets in Hong-Kong and New York. Notice that the in the HK and US do not need to have gateway lookups against each other in their configuration:
 
-{gdeck}
-{gcard:New York Space}
+
+{% inittab %}
+
+{% tabcontent New York Space %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -85,8 +87,10 @@ The pass-through topology configuration is implemented through delegators across
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:New York Gateway}
+{% endtabcontent %}
+
+
+{% tabcontent New York Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -121,8 +125,10 @@ The pass-through topology configuration is implemented through delegators across
 
 {% endhighlight %}
 
-{gcard}
-{gcard:London Space}
+{% endtabcontent %}
+
+
+{% tabcontent London Space %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -158,8 +164,10 @@ The pass-through topology configuration is implemented through delegators across
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:London Gateway}
+{% endtabcontent %}
+
+
+{% tabcontent London Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -194,8 +202,10 @@ The pass-through topology configuration is implemented through delegators across
 
 {% endhighlight %}
 
-{gcard}
-{gcard:Hong Kong Space}
+{% endtabcontent %}
+
+
+{% tabcontent Hong Kong Space %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -232,8 +242,10 @@ The pass-through topology configuration is implemented through delegators across
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:Hong Kong Gateway}
+{% endtabcontent %}
+
+
+{% tabcontent Hong Kong Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -264,8 +276,10 @@ The pass-through topology configuration is implemented through delegators across
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Installing and Running the Example
 1. Download the [WAN_Replication_PassThrough.zip|^WAN_Replication_PassThrough.zip]. It includes two folders: **deploy** and **scripts**.

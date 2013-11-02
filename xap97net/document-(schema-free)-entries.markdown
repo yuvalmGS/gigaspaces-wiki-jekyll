@@ -359,8 +359,10 @@ The External Data Source is supported for space documents, however, if the EDS i
 
 Example on how to implement an EDS that persists SpaceDocuments of type "Trade" and start a space in a basic processing unit container with the EDS and known Trade type descriptors:
 
-{gdeck:example|top}
-{gcard:Starting the Space}
+
+{% inittab example|top %}
+
+{% tabcontent Starting the Space %}
 
 {% highlight java %}
 [ContainerInitializing]
@@ -388,8 +390,10 @@ public void Initialize(BasicProcessingUnitContainer container)
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The EDS Implementation}
+{% endtabcontent %}
+
+
+{% tabcontent The EDS Implementation %}
 
 {% highlight java %}
 public class DocumentEDS : ISqlDataSource
@@ -439,8 +443,10 @@ public class DocumentEDS : ISqlDataSource
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 Concrete objects can be persisted via document EDS as well, in the same way.
 

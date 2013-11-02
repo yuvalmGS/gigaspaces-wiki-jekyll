@@ -22,8 +22,10 @@ and that gateway is in charge of dispatching the replication to the relevant par
 replication related parameters per gateway or for all gateways.
 
 Here is an example of how this configuration should look:
-{gdeck}
-{gcard:Using pu.config}
+
+{% inittab %}
+
+{% tabcontent Using pu.config %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -53,8 +55,10 @@ Here is an example of how this configuration should look:
 </configuration>
 {% endhighlight %}
 
-{gcard}
-{gcard:Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent Code Construction %}
 When using code construction for creating a space, the gateway configuration should be part of the `SpaceConfig` object that is used to create the space:
 
 {% highlight java %}
@@ -81,8 +85,10 @@ BasicProcessingUnitContainer container = //... obtain container reference
 container.CreateSpaceProxy("Space", "/./myNYSpace", spaceConfig);
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 Each configuration can be configured for all gateways or specifically per each gateway as seen in the above example, max-redo-log-capacity is configured for all gateways while bulk-size is specifically overridden in the configuration of HONGKONG gateway target. A recommended reading regarding the replication redo-log is [Controlling the Replication Redo Log|XAP95:Controlling the Replication Redo Log].
 

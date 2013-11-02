@@ -55,8 +55,10 @@ The `SpaceBasedIdGenerator` using [Spring Transactions|http://static.springsourc
 
 # The ID Generator Components
 The following should be used to enable the ID Generator:
-{gdeck:IDGeneratorComponents|top}
-{gcard:ID Generator PU}
+
+{% inittab IDGeneratorComponents|top %}
+
+{% tabcontent ID Generator PU %}
 This is ID Generator `pu.xml`:
 
 
@@ -100,8 +102,10 @@ This is ID Generator `pu.xml`:
 {% endhighlight %}
 
 
-{gcard}
-{gcard:The Client}
+{% endtabcontent %}
+
+
+{% tabcontent The Client %}
 The following should be added to your PU `pu.xml` used to deploy the client application:
 
 
@@ -117,5 +121,6 @@ The following should be added to your PU `pu.xml` used to deploy the client appl
 <bean id="idGenerator" class="com.gigaspaces.idgenerator.client.SpaceBasedIdGenerator"/>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}

@@ -64,8 +64,10 @@ We also decide that **CatalogNumber** will be a primary key, partitioning will b
 
 The following is an example of how to introduce a new document type:
 
-{gdeck:os_simple_space|top}
-{gcard:Spring Namespace Configuration}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Spring Namespace Configuration %}
 
 {% highlight xml %}
 <os-core:space id="space" url="/./space" >
@@ -80,8 +82,10 @@ The following is an example of how to introduce a new document type:
 
 {% endhighlight %}
 
-{gcard}
-{gcard:Plain Spring XML}
+{% endtabcontent %}
+
+
+{% tabcontent Plain Spring XML %}
 
 {% highlight xml %}
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
@@ -122,8 +126,10 @@ The following is an example of how to introduce a new document type:
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:Code}
+{% endtabcontent %}
+
+
+{% tabcontent Code %}
 
 {% highlight java %}
 public void registerProductType(GigaSpace gigaspace) {
@@ -139,8 +145,10 @@ public void registerProductType(GigaSpace gigaspace) {
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 Note that this code does not reflect the complete model - most of the properties does not need to be introduced to the schema. Only properties with special roles (ID, Routing) are part of the schema definition. These meta model **settings cannot be changed** without restarting the space or dropping the type, clearing all its instances and reintroducing it again.
 
@@ -329,8 +337,10 @@ Event containers (both [polling container] and [notify container]) support Space
 
 Here is a simple example of a polling event container configuration using a `Document`:
 
-{gdeck:os_simple_space|top}
-{gcard:Annotation}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Annotation %}
 
 {% highlight xml %}
 <!-- Enable scan for OpenSpaces and Spring components -->
@@ -371,8 +381,10 @@ public class SimpleListener {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Namespace}
+{% endtabcontent %}
+
+
+{% tabcontent Namespace %}
 
 {% highlight xml %}
 <os-core:space id="space" url="/./space" >
@@ -409,8 +421,10 @@ public class SimpleListener {
 </os-events:polling-container>
 {% endhighlight %}
 
-{gcard}
-{gcard:Plain XML}
+{% endtabcontent %}
+
+
+{% tabcontent Plain XML %}
 
 {% highlight xml %}
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
@@ -447,8 +461,10 @@ public class SimpleListener {
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:Code}
+{% endtabcontent %}
+
+
+{% tabcontent Code %}
 
 {% highlight java %}
 GigaSpace gigaSpace = // either create the GigaSpace or get it by injection
@@ -468,15 +484,19 @@ SimplePollingEventListenerContainer pollingEventListenerContainer = new SimplePo
 pollingEventListenerContainer.destroy();
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # FIFO
 
 [FIFO support] is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
 
-{gdeck:os_simple_space|top}
-{gcard:Spring Namespace Configuration}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Spring Namespace Configuration %}
 
 {% highlight xml %}
 <os-core:space id="space" url="/./space" >
@@ -488,8 +508,10 @@ pollingEventListenerContainer.destroy();
 
 {% endhighlight %}
 
-{gcard}
-{gcard:Plain Spring XML}
+{% endtabcontent %}
+
+
+{% tabcontent Plain Spring XML %}
 
 {% highlight xml %}
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
@@ -513,8 +535,10 @@ pollingEventListenerContainer.destroy();
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:Code}
+{% endtabcontent %}
+
+
+{% tabcontent Code %}
 
 {% highlight java %}
 // Create type descriptor:
@@ -526,8 +550,10 @@ SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
 gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 {% exclamation %} Changing FIFO support after a type has been registered is not supported.
 For more information about FIFO, see the [FIFO Support|FIFO Support] page.
@@ -538,8 +564,10 @@ Transactions and isolation modifiers semantics is identical to the POJO semantic
 
 Optimistic locking is disabled by default with `Document` entries (same as with POJO). To enable it, modify the type introduction code and set the optimistic locking support. For example:
 
-{gdeck:os_simple_space|top}
-{gcard:Spring Namespace Configuration}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Spring Namespace Configuration %}
 
 {% highlight xml %}
 <os-core:space id="space" url="/./space" />
@@ -551,8 +579,10 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 
 {% endhighlight %}
 
-{gcard}
-{gcard:Plain Spring XML}
+{% endtabcontent %}
+
+
+{% tabcontent Plain Spring XML %}
 
 {% highlight xml %}
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
@@ -576,8 +606,10 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:Code}
+{% endtabcontent %}
+
+
+{% tabcontent Code %}
 
 {% highlight java %}
 // Create type descriptor:
@@ -590,8 +622,10 @@ gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 {% exclamation %} Changing optimistic locking after a type has been registered is not supported.
 For more information about optimistic locking, see the [Optimistic Locking|Optimistic Locking] page.
@@ -607,8 +641,10 @@ If you intend to use local cache or local view in a mixed POJO-Document environm
 External Data Source is supported for space documents.
 Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
 
-{gdeck:example|top}
-{gcard:Configuration}
+
+{% inittab example|top %}
+
+{% tabcontent Configuration %}
 
 {% highlight xml %}
 <bean id="documentDataSource" class="com.test.DocumentEDS"/>
@@ -626,9 +662,11 @@ Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
 </os-core:space>
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:The EDS Implementation}
+
+
+{% tabcontent The EDS Implementation %}
 
 {% highlight java %}
 package com.test;
@@ -683,8 +721,10 @@ public class DocumentEDS
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 Different document database can be used to implement the document persistency - MongoDB, CouchDB and others.
 Pojos can be persisted via document EDS as well, in the same way.

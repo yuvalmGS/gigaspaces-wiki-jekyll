@@ -30,8 +30,10 @@ When building your application in Scala, the configuration and packaging will st
 
 Find below code and configuration for the Helloworld application written completely in Scala.
 
-{gdeck:Scala Helloworld Example}
-{gcard:Scala Data Model}
+
+{% inittab Scala Helloworld Example %}
+
+{% tabcontent Scala Data Model %}
 
 
 {% highlight java %}
@@ -54,8 +56,10 @@ case class Message(
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Scala Polling Container Bean}
+{% endtabcontent %}
+
+
+{% tabcontent Scala Polling Container Bean %}
 
 
 {% highlight java %}
@@ -81,8 +85,10 @@ class Processor {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Scala Feeder}
+{% endtabcontent %}
+
+
+{% tabcontent Scala Feeder %}
 
 
 {% highlight java %}
@@ -132,8 +138,10 @@ object Feeder {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Scala Helloworld pu.xml}
+{% endtabcontent %}
+
+
+{% tabcontent Scala Helloworld pu.xml %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -177,8 +185,10 @@ object Feeder {
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Using Scala Interpreter
 

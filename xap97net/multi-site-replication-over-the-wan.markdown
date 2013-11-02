@@ -234,8 +234,10 @@ With this architecture, we have a master-slave topology where all data is being 
 In this case, New York's site will be the active site while London and Hong Kong will be the passive sites. As explained before, being passive does not necessarily means no work is done in these sites. However, in terms of replication over the WAN, these sites should not replicate to the other sites and usually should not alter data replicated from other sites because it may cause conflicts.
 
 Like all GigaSpaces Processing Units, the configuration details of each of the above components is placed in a `pu.xml` file. Here are the contents of the files for each of the components:
-{gdeck}
-{gcard:New York Space}
+
+{% inittab %}
+
+{% tabcontent New York Space %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -268,8 +270,10 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {% endhighlight %}
 
-{gcard}
-{gcard:New York Gateway}
+{% endtabcontent %}
+
+
+{% tabcontent New York Gateway %}
 
 {% highlight xml %}
 
@@ -319,8 +323,10 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:London Space}
+{% endtabcontent %}
+
+
+{% tabcontent London Space %}
 
 {% highlight xml %}
 
@@ -350,8 +356,10 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {% endhighlight %}
 
-{gcard}
-{gcard:London Gateway}
+{% endtabcontent %}
+
+
+{% tabcontent London Gateway %}
 
 {% highlight xml %}
 
@@ -398,8 +406,10 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:Hong Kong Space}
+{% endtabcontent %}
+
+
+{% tabcontent Hong Kong Space %}
 
 {% highlight xml %}
 
@@ -428,8 +438,10 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {% endhighlight %}
 
-{gcard}
-{gcard:Hong Kong Gateway}
+{% endtabcontent %}
+
+
+{% tabcontent Hong Kong Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -480,8 +492,10 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Multi-Master Topology
 
@@ -494,8 +508,10 @@ We will demonstrate this using two sites but any number of sites is supported in
 With the example below we will have only New York and London as the two active sites.
 
 Here are the contents of the files for each of the components:
-{gdeck}
-{gcard:New York Space}
+
+{% inittab %}
+
+{% tabcontent New York Space %}
 
 {% highlight xml %}
 <configuration>
@@ -526,8 +542,10 @@ Here are the contents of the files for each of the components:
 
 {% endhighlight %}
 
-{gcard}
-{gcard:New York Gateway}
+{% endtabcontent %}
+
+
+{% tabcontent New York Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -583,8 +601,10 @@ Here are the contents of the files for each of the components:
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:London Space}
+{% endtabcontent %}
+
+
+{% tabcontent London Space %}
 
 {% highlight xml %}
 <configuration>
@@ -615,8 +635,10 @@ Here are the contents of the files for each of the components:
 
 {% endhighlight %}
 
-{gcard}
-{gcard:London Gateway}
+{% endtabcontent %}
+
+
+{% tabcontent London Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -671,8 +693,10 @@ Here are the contents of the files for each of the components:
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:Symmetric Gateway Config}
+{% endtabcontent %}
+
+
+{% tabcontent Symmetric Gateway Config %}
 In this example, the gateway `pu.xml` is quite symmetric, the only difference is the local gateway name and the target gateway name. In such cases, it may be more convenient to create a single gateway `pu.xml` and use place holders to override the relevant properties at deploy time by injecting values for these properties:
 
 {% highlight xml %}
@@ -735,8 +759,10 @@ In this example, the gateway `pu.xml` is quite symmetric, the only difference is
 {% endhighlight %}
 
 In the above we have configured both LONDON and NEWYORK at the sources of the sink and as delegation target, the delegator and the sink will filter a gateway target and source if they match their local name. Using the above technique may simplify scenarios which are symmetric but it is not recommended when the scenarios are **not** symmetric as it can be unnecessarily confusing.
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 
 {% tip %}

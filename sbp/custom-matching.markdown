@@ -69,8 +69,10 @@ To scale the system you should deploy the space using the [partitioned cluster s
 
 See **The Application** tab for the full query usage. This allows the `Comparable.compareTo` implementation to be performed on a smaller candidate subset of objects.
 
-{gdeck:example|top}
-{gcard:The Comparable implementation}
+
+{% inittab example|top %}
+
+{% tabcontent The Comparable implementation %}
 
 
 {% highlight java %}
@@ -141,8 +143,10 @@ public class VectorData implements Serializable, Comparable <VectorData>{
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Space Class}
+{% endtabcontent %}
+
+
+{% tabcontent The Space Class %}
 
 
 {% highlight java %}
@@ -201,8 +205,10 @@ public class Vector {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Application}
+{% endtabcontent %}
+
+
+{% tabcontent The Application %}
 
 
 {% highlight java %}
@@ -267,5 +273,6 @@ static int[] getRandomVector()
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}

@@ -36,8 +36,10 @@ This example includes:
 
 ## Source Code
 
-{gdeck:Processor pu.xml}
-{gcard:Atomikos Configuration}
+
+{% inittab Processor pu.xml %}
+
+{% tabcontent Atomikos Configuration %}
 
 {% highlight xml %}
 <!-- Construct Atomikos UserTransactionManager, needed to configure Spring -->
@@ -62,8 +64,10 @@ This example includes:
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:JMS Configuration}
+{% endtabcontent %}
+
+
+{% tabcontent JMS Configuration %}
 
 {% highlight xml %}
 <!-- creates an activemq xa connection factory using the amq namespace -->
@@ -90,8 +94,10 @@ This example includes:
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:GigaSpaces Configuration}
+{% endtabcontent %}
+
+
+{% tabcontent GigaSpaces Configuration %}
 
 {% highlight xml %}
 <!-- A bean representing a space (an IJSpace implementation). -->
@@ -134,13 +140,17 @@ This example includes:
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 **Processor Bean and Message Bean definitions**
 
-{gdeck:Java Code}
-{gcard:Processor bean definition}
+
+{% inittab Java Code %}
+
+{% tabcontent Processor bean definition %}
 
 
 {% highlight java %}
@@ -245,8 +255,10 @@ public class Processor implements InitializingBean {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Message bean definition}
+{% endtabcontent %}
+
+
+{% tabcontent Message bean definition %}
 
 
 {% highlight java %}
@@ -317,8 +329,10 @@ public class Message  {
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Running the example
 

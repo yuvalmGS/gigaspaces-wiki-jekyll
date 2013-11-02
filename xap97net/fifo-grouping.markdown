@@ -76,8 +76,10 @@ When a FG template locks a group, its first entry is locked under a transaction 
 # Setting the FIFO Grouping property
 
 Specifying which property of a class is the FG property is done using attributes or gs.xml.
-{gdeck}
-{gcard:Annotations}
+
+{% inittab %}
+
+{% tabcontent Annotations %}
 
 {% highlight java %}
 [SpaceClass]
@@ -88,8 +90,10 @@ public class FlightReservation
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:XML}
+{% endtabcontent %}
+
+
+{% tabcontent XML %}
 
 {% highlight xml %}
 <gigaspaces-mapping>
@@ -99,14 +103,18 @@ public class FlightReservation
 </gigaspaces-mapping>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Setting FIFO Grouping index
 
 Specifying which properties of a class are a FG index is done using attributes or gs.xml.
-{gdeck}
-{gcard:Annotations}
+
+{% inittab %}
+
+{% tabcontent Annotations %}
 
 {% highlight java %}
 [SpaceFifoGroupingIndex]
@@ -115,8 +123,10 @@ public State ProcessingState { get; set; }
 public Person Customer { get; set; }
 {% endhighlight %}
 
-{gcard}
-{gcard:XML}
+{% endtabcontent %}
+
+
+{% tabcontent XML %}
 
 {% highlight xml %}
 <gigaspaces-mapping>
@@ -130,8 +140,10 @@ public Person Customer { get; set; }
 </gigaspaces-mapping>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Working Patterns
 
@@ -169,8 +181,10 @@ to instruct the space that events should be sent to the client in FIFO order (gr
 
 Here is a simple example of a polling event container construction, using FifoGrouping:
 
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven]
@@ -209,8 +223,10 @@ eventListenerContainer.Start();
 eventListenerContainer.Dispose()
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<FlightReservation> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -238,8 +254,10 @@ public FlightReservationProcessData(IEventListenerContainer<FlightReservation> s
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # SpaceIndex Attribute
 

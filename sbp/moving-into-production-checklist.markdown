@@ -247,8 +247,10 @@ A good number for the amount of GSCs a machine should host would be **half of th
 !GRA:Icons^newin71-star.jpg|align=left!
 JVM parameters (system properties, heap settings etc.) that are shared between all components are best set using the `EXT_JAVA_OPTIONS` environment variable. However, starting from 7.1.1, specific GSA JVM parameters can be easily passed using `GSA_JAVA_OPTIONS` that will be appended to `EXT_JAVA_OPTIONS`. If `GSA_JAVA_OPTIONS` is not defined, the system will behave as in 7.1.0. As a good practice, one can add all components' environment variables ( `GSA_JAVA_OPTIONS`, `GSM_JAVA_OPTIONS`, `GSC_JAVA_OPTIONS`, `LUS_JAVA_OPTIONS`) within the GSA script, or in a wrapper script and the values will be passed to corresponding components.
 
-{gdeck}
-{gcard:Linux}
+
+{% inittab %}
+
+{% tabcontent Linux %}
 
 
 {% highlight java %}
@@ -262,9 +264,11 @@ export LUS_JAVA_OPTIONS='-Xmx1024m'
 . ./gs-agent.sh
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:Windows}
+
+
+{% tabcontent Windows %}
 
 
 {% highlight java %}
@@ -278,8 +282,10 @@ export LUS_JAVA_OPTIONS='-Xmx1024m'
 call gs-agent.bat
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Running Multiple Groups
 You may have a set of LUS/GSM managing GSCs associated to a specific group. Let's assume you would like to "break" your network into 2 groups. Here is how you should start the GigaSpaces runtime environment:
@@ -687,17 +693,25 @@ The number of logical partitions is determined at deploy time, but the amount of
 
 When a client application accessing a remote space (using a clustered topology or non-clustered) the data is serialized and sent over the network to the relevant JVM hosting the target space partition. The serialization involves some overhead. The [Storage Type|XAP91:Storage Types - Controlling Serialization] decoration allows you to control the serialization behavior when non-primitive fields used with your space class.
 
-{gdeck}
-{gcard:Object Mode}
+
+{% inittab %}
+
+{% tabcontent Object Mode %}
 !GRA:Images2^storage-type-object.jpg!
-{gcard}
-{gcard:Binary Mode}
+{% endtabcontent %}
+
+
+{% tabcontent Binary Mode %}
 !GRA:Images2^storage-type-binary.jpg!
-{gcard}
-{gcard:Compressed Mode}
+{% endtabcontent %}
+
+
+{% tabcontent Compressed Mode %}
 !GRA:Images2^storage-type-compressed.jpg!
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## OBJECT Storage Type
 The `OBJECT` (default) serialization mode (called also native) performs serialization of all non-primitive fields at the client side, and then de-serialize these at the space side before stored within the space.

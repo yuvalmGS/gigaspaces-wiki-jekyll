@@ -32,8 +32,10 @@ Click [here|http://www.gigaspaces.com/wiki/download/attachments/54820978/eAuctio
 
 # Usage
 
-{gdeck:Configuration and Usage}
-{gcard:Spring Configuration}
+
+{% inittab Configuration and Usage %}
+
+{% tabcontent Spring Configuration %}
 Here's an example Processing Unit XML configuration that demonstrates how to configure the Web Load Balancer Agent.  It consists of four parts:
 a) The `webLayerLoadBalancerListener`-bean which will use a handle to the b) Admin API to monitor c) a given list of Processing Units, by means of the `monitoredProcessingUnits`-property, to see if a scale-up or scale-down event occurs on. If such an event occurs, it is handed over to a d) Load Balancer Agent for taking the right measurements. You can see this is delegated to the `ApacheLoadBalancerAgent` class by means of the `loadBalancerAgent` property of the `webLayerLoadBalancerListener`-bean.
 
@@ -62,8 +64,10 @@ a) The `webLayerLoadBalancerListener`-bean which will use a handle to the b) Adm
 
 
 More details on the `WebLayerLoadBalancerListener` and the `ApacheLoadBalancerAgent` can be found on the next panels.
-{gcard}
-{gcard:WebLayerLoadBalancerListener}
+{% endtabcontent %}
+
+
+{% tabcontent WebLayerLoadBalancerListener %}
 The `WebLayerLoadBalancerListener` component is capable of monitoring a list of Web Processing Units and will react upon a scale up or scale down event by communicating with a Load Balancer Agent. The main piece of code that accomplishes this can be shown as follows and uses a lifecycle-listener for the Processing Unit component of the Admin API:
 
 
@@ -119,8 +123,10 @@ public interface LoadBalancerAgent {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:ApacheLoadBalancerAgent}
+{% endtabcontent %}
+
+
+{% tabcontent ApacheLoadBalancerAgent %}
 As an example an component called `ApacheLoadBalancerAgent` is provided that can communicate with the Apache Load Balancer, in a very similar fashion as the loadbalancer-agent that can be found under the `tools`-folder.
 
 A snippet of the code is provided below for your information, containing the methods that are called when a Processing Unit instance is added or removed.
@@ -176,5 +182,6 @@ public class ApacheLoadBalancerAgent implements LoadBalancerAgent, Runnable {
     }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}

@@ -49,8 +49,10 @@ The scaling agent periodically samples the throughput of feeds that are processe
 
 ## Scaling Agent Implementation
 
-{gdeck:scalingagent|top}
-{gcard:Code}
+
+{% inittab scalingagent|top %}
+
+{% tabcontent Code %}
 
 {% highlight java %}
 [BasicProcessingUnitComponent( Name = "Agent" )]
@@ -166,8 +168,10 @@ public class Agent : IDisposable
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Configuration}
+{% endtabcontent %}
+
+
+{% tabcontent Configuration %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -191,8 +195,10 @@ public class Agent : IDisposable
 </configuration>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Feed Processor
 

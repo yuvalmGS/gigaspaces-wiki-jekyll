@@ -109,8 +109,10 @@ The different attributes will be used to create and configure the polling contai
 
 In this example the processor is colocated with the space that it needs to process data from, therefore achieving high performance because the processor and the space reside in the same process. This cluster topology is built by a simple matter of configuration of the basic processing unit container which is detailed below.
 
-{gdeck:dataprocessor|top}
-{gcard:Code}
+
+{% inittab dataprocessor|top %}
+
+{% tabcontent Code %}
 
 {% highlight java %}
 /// <summary>
@@ -167,8 +169,10 @@ internal class DataProcessor : IProcessorStatisticsProvider
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Configuration}
+{% endtabcontent %}
+
+
+{% tabcontent Configuration %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -193,8 +197,10 @@ internal class DataProcessor : IProcessorStatisticsProvider
 
 
 We configure a single colocated space specified by the Url of the space, in our case "/./dataExampleSpace" (embedded space url). Since there's only one managed space proxy in the basic container, the data processor polling container will operate using that proxy.
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## SLA File
 
@@ -210,8 +216,10 @@ This data processor comes with an sla.xml file which define the default topology
 
 The data feeder is in charge of feeding the cluster with unprocessed data every second. It does so by creating new `Data` objects with a random type and random information, and writes it to the cluster.
 
-{gdeck:datafeeder|top}
-{gcard:Code}
+
+{% inittab datafeeder|top %}
+
+{% tabcontent Code %}
 
 {% highlight java %}
 /// <summary>
@@ -289,8 +297,10 @@ public class DataFeeder
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Configuration}
+{% endtabcontent %}
+
+
+{% tabcontent Configuration %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -315,8 +325,10 @@ public class DataFeeder
 
 
 We configure a remote proxy to the cluster which is used by the feeder in order to feed unprocessed data into the cluster and to execute a remote service to obtain processing statistics
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 The `Feed()` method does the actual work, by creating a new `Data` object with random data in an unprocessed state every second, and feeds it to the cluster. Additionaly every number of iterations it displays the statistics of processing of a certain type by executing a remote service which the processors expose. It does so by using an [Executor based remoting proxy|Executor Based Remoting] to the remote service which is hosted in the grid.
 

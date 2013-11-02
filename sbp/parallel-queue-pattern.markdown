@@ -68,8 +68,10 @@ The `bucketId` is calculated using the following formula:
 
 
 ##  Running the Example
-{gdeck:RunningExample|top}
-{gcard:Running the Order Processor}
+
+{% inittab RunningExample|top %}
+
+{% tabcontent Running the Order Processor %}
 You can run the Data-Grid with the collocated Order Processor within your IDE using the following configuration:
 
 {% indent %}
@@ -82,20 +84,26 @@ Here is a configuration for a data-grid with 2 partitions that will be running t
 !GRA:Images^par_q5.jpg!
 {% endindent %}
 
-{gcard}
-{gcard:Running the Feeder}
+{% endtabcontent %}
+
+
+{% tabcontent Running the Feeder %}
 You can run the Feeder within your IDE using the following configuration:
 
 {% indent %}
 !GRA:Images^par_q3.jpg!
 {% endindent %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Example Code and Configuration
-{gdeck:example|top}
-{gcard: The Order Class}
+
+{% inittab example|top %}
+
+{% tabcontent  The Order Class %}
 
 
 {% highlight java %}
@@ -183,8 +191,10 @@ public class Order {
 {% endhighlight %}
 
 
-{gcard}
-{gcard: The Feeder}
+{% endtabcontent %}
+
+
+{% tabcontent  The Feeder %}
 
 
 {% highlight java %}
@@ -247,8 +257,10 @@ public class Feeder implements Runnable{
 {% endhighlight %}
 
 
-{gcard}
-{gcard: The Processor}
+{% endtabcontent %}
+
+
+{% tabcontent  The Processor %}
 
 
 {% highlight java %}
@@ -282,8 +294,10 @@ public class Processor implements SpaceDataEventListener<Order>{
 {% endhighlight %}
 
 
-{gcard}
-{gcard: The Data-Grid pu.xml }
+{% endtabcontent %}
+
+
+{% tabcontent  The Data-Grid pu.xml  %}
 
 
 {% highlight java %}
@@ -320,8 +334,10 @@ public class Processor implements SpaceDataEventListener<Order>{
 {% endhighlight %}
 
 
-{gcard}
-{gcard: The ProcessorFactory - None TX}
+{% endtabcontent %}
+
+
+{% tabcontent  The ProcessorFactory - None TX %}
 
 
 {% highlight java %}
@@ -387,9 +403,11 @@ public class ProcessorFactory implements InitializingBean{
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard: The ProcessorFactory - TX}
+
+
+{% tabcontent  The ProcessorFactory - TX %}
 
 
 {% highlight java %}
@@ -467,5 +485,6 @@ public class ProcessorFactory implements InitializingBean{
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}

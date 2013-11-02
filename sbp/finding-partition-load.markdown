@@ -28,8 +28,10 @@ The [first example|^GetMinLoadPartition-TaskExecutors.zip] shows an implementati
 
 Example is trying to find a partition with least number of objects and uses GigaSpaces SpaceRuntimeInfo API to get the count of objects. This API is lot faster compared to the count API and is preferred way of getting object counts.
 
-{gdeck:Task Executor Example}
-{gcard:Client Code}
+
+{% inittab Task Executor Example %}
+
+{% tabcontent Client Code %}
 
 
 {% highlight java %}
@@ -50,8 +52,10 @@ try {
 ...
 {% endhighlight %}
 
-{gcard}
-{gcard:Task Implementation}
+{% endtabcontent %}
+
+
+{% tabcontent Task Implementation %}
 
 
 {% highlight java %}
@@ -138,8 +142,10 @@ public class MyDistributedTask implements
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 {% anchor serviceexecutor %}
 
@@ -149,8 +155,10 @@ Another [example|^GetMinLoadPartition-ExecutorService.zip] shows an implementati
 
 In this example, we're trying to find the partition with the least number of objects, using GigaSpaces' SpaceRuntimeInfo API to get the count of objects. This API is lot faster than the count API and is the preferred way of getting object counts.
 
-{gdeck:Executor Service}
-{gcard:Service Interface}
+
+{% inittab Executor Service %}
+
+{% tabcontent Service Interface %}
 The Service Interface includes only one method, used to invoke the Service method in Synchronous mode:
 
 
@@ -161,8 +169,10 @@ public interface IDataProcessor {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Service Implementation}
+{% endtabcontent %}
+
+
+{% tabcontent Service Implementation %}
 The Service Implementation includes business logic to determine the load (in this case number of objects in the partition):
 
 
@@ -216,8 +226,10 @@ public class DataProcessorService implements IDataProcessor {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Reducer}
+{% endtabcontent %}
+
+
+{% tabcontent Reducer %}
 The Result Reducer applies the additional logic (finding the partition with the least number of objects, in this case).
 
 
@@ -248,8 +260,10 @@ public class DataProcessorServiceReducer implements RemoteResultReducer<Partitio
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Client}
+{% endtabcontent %}
+
+
+{% tabcontent The Client %}
 This is how a client might invoke the service:
 
 
@@ -263,5 +277,6 @@ dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcessor>(
 PartitionCount result = dataProcessor.processData();
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}

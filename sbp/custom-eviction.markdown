@@ -134,8 +134,10 @@ In this simplistic example (created using hello-world example included in the pr
 
 Some relavent code from the example,
 
-{gdeck:Polling Evictor Example}
-{gcard:Configuring Eviction logic in pu.xml}
+
+{% inittab Polling Evictor Example %}
+
+{% tabcontent Configuring Eviction logic in pu.xml %}
 
 {% highlight xml %}
 	<!--
@@ -179,8 +181,10 @@ Some relavent code from the example,
 	<bean id="evictor" class="com.gigaspaces.eviction.Evictor"/>
 {% endhighlight %}
 
-{gcard}
-{gcard:Trigger Receive Operation Handler}
+{% endtabcontent %}
+
+
+{% tabcontent Trigger Receive Operation Handler %}
 
 
 {% highlight java %}
@@ -211,8 +215,10 @@ public class EvictionTrigger implements TriggerOperationHandler {
 	}
 {% endhighlight %}
 
-{gcard}
-{gcard:Evictor}
+{% endtabcontent %}
+
+
+{% tabcontent Evictor %}
 
 
 {% highlight java %}
@@ -234,8 +240,10 @@ public class Evictor {
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ### Running the example
 
@@ -314,8 +322,10 @@ In this simplistic example (created using hello-world example included in the pr
 
 Some relevant code from the example,
 
-{gdeck:Memory Notification Example}
-{gcard:Configuring Eviction logic in pu.xml}
+
+{% inittab Memory Notification Example %}
+
+{% tabcontent Configuring Eviction logic in pu.xml %}
 
 {% highlight xml %}
 <bean id="ec" class="com.gigaspaces.domain.EvictionConfig">
@@ -342,8 +352,10 @@ Some relevant code from the example,
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:Eviction Manager}
+{% endtabcontent %}
+
+
+{% tabcontent Eviction Manager %}
 
 
 {% highlight java %}
@@ -362,8 +374,10 @@ public void handleNotification(Notification n, Object handback) {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Watermark Object}
+{% endtabcontent %}
+
+
+{% tabcontent Watermark Object %}
 
 
 {% highlight java %}
@@ -430,8 +444,10 @@ public class Watermark {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Registering for JVM usage Threshold}
+{% endtabcontent %}
+
+
+{% tabcontent Registering for JVM usage Threshold %}
 
 
 {% highlight java %}
@@ -478,8 +494,10 @@ private void setJVMUsageThreshold() throws RuntimeException {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Eviction Logic}
+{% endtabcontent %}
+
+
+{% tabcontent Eviction Logic %}
 
 
 {% highlight java %}
@@ -553,8 +571,10 @@ wMark.setEvictionInProgress(false);
 gs.write(wMark, Lease.FOREVER, 5000, UpdateModifiers.UPDATE_OR_WRITE);
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ### Running the example
 

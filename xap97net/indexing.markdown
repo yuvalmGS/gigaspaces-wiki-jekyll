@@ -38,8 +38,10 @@ The index type is determined by the **`SpaceIndexType`** enumeration. The index 
 
 Specifying which properties of a class are indexed is done using attributes or `gs.xml`.
 
-{gdeck}
-{gcard:Annotations}
+
+{% inittab %}
+
+{% tabcontent Annotations %}
 
 {% highlight java %}
 [SpaceClass]
@@ -58,8 +60,10 @@ public class Person
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:XML}
+{% endtabcontent %}
+
+
+{% tabcontent XML %}
 
 
 {% highlight xml %}
@@ -79,8 +83,10 @@ public class Person
 </gigaspaces-mapping>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Inheritance
 
@@ -104,8 +110,10 @@ The **`Path`** attribute represents the path of the property within the nested o
 
 Below is an example of defining an index on a nested property:
 
-{gdeck:example|top}
-{gcard:Single Index Annotation}
+
+{% inittab example|top %}
+
+{% tabcontent Single Index Annotation %}
 
 {% highlight java %}
 
@@ -138,8 +146,10 @@ public class Address
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Multiple Indexes Annotation}
+{% endtabcontent %}
+
+
+{% tabcontent Multiple Indexes Annotation %}
 
 {% highlight java %}
 
@@ -164,8 +174,10 @@ public class Person
 
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 The following is an example of query code that automatically triggers this index:
 

@@ -116,8 +116,10 @@ The Spring Batch PU implementation includes the following components:
 |SpaceJob| Spring Batch Job. Includes a Spring batch Step with a tasklet using the SpaceItemReader,SpaceItemWriter,SpaceItemProcessor.|
 
 Components implemenation:
-{gdeck:SpringBatchPU|top}
-{gcard:Spring Batch PU}
+
+{% inittab SpringBatchPU|top %}
+
+{% tabcontent Spring Batch PU %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -180,9 +182,11 @@ Components implemenation:
 </beans>
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:Item Base}
+
+
+{% tabcontent Item Base %}
 
 
 {% highlight java %}
@@ -228,9 +232,11 @@ public class ItemBase {
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:ItemRequest}
+
+
+{% tabcontent ItemRequest %}
 
 
 {% highlight java %}
@@ -244,9 +250,11 @@ public class ItemRequest extends ItemBase{
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:ItemResult}
+
+
+{% tabcontent ItemResult %}
 
 
 {% highlight java %}
@@ -255,9 +263,11 @@ public class ItemResult  extends ItemBase{
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:SpaceItemReader}
+
+
+{% tabcontent SpaceItemReader %}
 
 
 {% highlight java %}
@@ -342,9 +352,11 @@ public class SpaceItemReader<T> implements ItemReader<T>, InitializingBean  {
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:SpaceItemProcessor}
+
+
+{% tabcontent SpaceItemProcessor %}
 
 
 {% highlight java %}
@@ -368,9 +380,11 @@ public class SpaceItemProcessor<I,O>  implements ItemProcessor<I,O>{
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:SpaceItemWriter}
+
+
+{% tabcontent SpaceItemWriter %}
 
 
 {% highlight java %}
@@ -391,9 +405,11 @@ public class SpaceItemWriter<T> implements ItemWriter<T> , InitializingBean  {
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:JobRunner}
+
+
+{% tabcontent JobRunner %}
 
 
 {% highlight java %}
@@ -448,8 +464,10 @@ public class JobRunner implements ApplicationContextAware,InitializingBean ,Disp
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Spring Batch PU Example
 To run the Spring Batch PU Example exectue the following steps:

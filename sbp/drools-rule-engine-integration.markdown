@@ -36,8 +36,10 @@ The example project is based on a Maven project structure and has four submodule
 - RulesShared - A library with code that is shared between the other modules.
 - RulesSpace - Contains code for a Processing Unit that has an embedded space containing the business rules data and logic to load, unload, compile and execute them.
 
-{gdeck:Modules}
-{gcard:Loading Rules}
+
+{% inittab Modules %}
+
+{% tabcontent Loading Rules %}
 Before being able to execute any business rule, the system first needs to load a set of rules into the space. This means reading rules files from disk, converting them into Java objects and then writing them to a space. Inside this space (called rules-space) is a polling container that will pick up and precompile the new rules so they are ready to be used.
 
 The main loader class is called GigaSpacesRulesLoader. When started, it reads its configuration from a Spring Framework context file. Next is an example snippet of such a configuration:
@@ -113,8 +115,10 @@ public interface IRulesLoadingService
 
 
 And on the server side the implementation is provided that will write new rule-objects into the rule space, which is called RulesLoadingServiceImpl.
-{gcard}
-{gcard:Compiling Rules}
+{% endtabcontent %}
+
+
+{% tabcontent Compiling Rules %}
 Once the rule loader has written the new rule objects into the rule space, a polling container (called RulesCompiler) will pick them up. It is triggered on the creation of a new RuleSet object and automatically reads the associated DroolsRule and DroolsDslDefinition objects along with it. It then creates a new Drools KnowledgeBuilder which is capable of validating all the rules.
 
 !stdflow.JPG!
@@ -126,8 +130,10 @@ The initial state is 'unprocessed'. When there is a validation error, the state 
 
 The RuleSet object's state is updated accordingly and the object is updated in the space. When the state was set to 'compiled', the RuleSet object will now also include the compiled versions of all rules in the form of Drools KnowledgePackages.
 
-{gcard}
-{gcard:Executing Rules}
+{% endtabcontent %}
+
+
+{% tabcontent Executing Rules %}
 Rules execution can be done in a number of ways. The typical method is done by using Remoting Services. GigaSpaces Remoting is highly available, reliable and scalable by using automatic failover and allowing for grid computing patterns like Master/Worker and Map/Reduce.
 
 For a remoting service the following need to be established:
@@ -166,15 +172,19 @@ Finally, the cached object is used to create a new Drools stateless knowledge se
 
 The result of the call is a (possibly updated) set of fact objects.
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Use Cases
 
 Below is a short explanation on a number of typical use-cases, where the combination between GigaSpaces and a rules engine such as Drools form a great symbiosis:
 
-{gdeck:Use Cases}
-{gcard:Data validation}
+
+{% inittab Use Cases %}
+
+{% tabcontent Data validation %}
 
 One of the main applications of a rules engine is to use it for validation of data and service invocations. GigaSpaces supports a good integration point that is sensible and easy to use :
 
@@ -250,8 +260,10 @@ public enum DroolsOperationContext {
 Notes:
 - In the above example the DroolsOperationContext values are passed as "context-values" to the rules engine. A single set of rules can therefore be customized for the operation under which the invocation occurred.
 
-{gcard}
-{gcard:Service validation}
+{% endtabcontent %}
+
+
+{% tabcontent Service validation %}
 GigaSpaces allows seamless integration with AOP libraries like AspectJ. Service invocations to a GigaSpaces Remoting Service can therefore be automatically wrapped in calls to the RuleExecutionService.
 
 An example of such a generic aspect could look like the following:
@@ -331,8 +343,10 @@ public @interface Droolable {
 {% endhighlight %}
 
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Final Notes
 

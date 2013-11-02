@@ -78,8 +78,10 @@ Step 2:
 
 {% endsection %}
 
-{gdeck:Random Workers approach|top}
-{gcard:The Master}
+
+{% inittab Random Workers approach|top %}
+
+{% tabcontent The Master %}
 
 
 {% highlight java %}
@@ -132,8 +134,10 @@ public class Master {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Worker}
+{% endtabcontent %}
+
+
+{% tabcontent The Worker %}
 
 
 {% highlight java %}
@@ -173,8 +177,10 @@ public class Worker {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Worker PU config}
+{% endtabcontent %}
+
+
+{% tabcontent The Worker PU config %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -201,8 +207,10 @@ public class Worker {
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:The Base Space Class}
+{% endtabcontent %}
+
+
+{% tabcontent The Base Space Class %}
 
 
 {% highlight java %}
@@ -240,8 +248,10 @@ public class Base {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Request Class}
+{% endtabcontent %}
+
+
+{% tabcontent The Request Class %}
 
 
 {% highlight java %}
@@ -252,8 +262,10 @@ public class Request extends Base{
 }
 {% endhighlight %}
 
-{gcard}
-{gcard: The Result Class}
+{% endtabcontent %}
+
+
+{% tabcontent  The Result Class %}
 
 
 {% highlight java %}
@@ -264,8 +276,10 @@ public class Result extends Base {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Deployment Commands}
+{% endtabcontent %}
+
+
+{% tabcontent Deployment Commands %}
 Deploying the clustered space PU:
 
 
@@ -280,8 +294,10 @@ Deploying the Workers PU:
 >gs deploy -cluster total_members=4 MasterWorker.jar
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Example 2 - Designated Workers
 With this approach, each new worker is assigned a specific ID and consumes `Request` objects from a designated partition. In this case, the worker runs in blocking mode. The `Request` object routing field is populated with the partition ID, with the Polling Container template, and is also populated by the `Master` application before it is written into the partitioned clustered space.
@@ -320,8 +336,10 @@ With this approach the number of `Workers` should be greater than or equal to th
 
 
 See below how the Designated Workers approach should be implemented:
-{gdeck:Designated Workers approach|top}
-{gcard:The Master}
+
+{% inittab Designated Workers approach|top %}
+
+{% tabcontent The Master %}
 
 
 {% highlight java %}
@@ -386,8 +404,10 @@ public class Master {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Worker }
+{% endtabcontent %}
+
+
+{% tabcontent The Worker  %}
 
 
 {% highlight java %}
@@ -467,8 +487,10 @@ public class Worker implements ClusterInfoAware{
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Worker PU config}
+{% endtabcontent %}
+
+
+{% tabcontent The Worker PU config %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -495,8 +517,10 @@ public class Worker implements ClusterInfoAware{
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:The Base Space Class}
+{% endtabcontent %}
+
+
+{% tabcontent The Base Space Class %}
 
 
 {% highlight java %}
@@ -542,8 +566,10 @@ public class Base {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Request Class}
+{% endtabcontent %}
+
+
+{% tabcontent The Request Class %}
 
 
 {% highlight java %}
@@ -554,8 +580,10 @@ public class Request extends Base{
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Result Class}
+{% endtabcontent %}
+
+
+{% tabcontent The Result Class %}
 
 
 {% highlight java %}
@@ -566,8 +594,10 @@ public class Result extends Base {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Deployment Commands}
+{% endtabcontent %}
+
+
+{% tabcontent Deployment Commands %}
 Deploying the clustered space PU:
 
 
@@ -582,8 +612,10 @@ Deploying the Workers PU:
 >gs deploy -cluster total_members=4 MasterWorker.jar
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # References
 - [JavaSpaces Principles, Patterns, and Practice: Chapter 11|http://java.sun.com/developer/Books/JavaSpaces/chapter11.html]

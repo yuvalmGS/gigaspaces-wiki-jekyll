@@ -36,8 +36,10 @@ The sample code below is meant to illustrate how the Admin API can be used to di
 {% endnote %}
 
 
-{gdeck:Clean Shutdown Example}
-{gcard:Grid Shutdown Code}
+
+{% inittab Clean Shutdown Example %}
+
+{% tabcontent Grid Shutdown Code %}
 
 
 {% highlight java %}
@@ -318,8 +320,10 @@ public class GridShutdown {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:shutdown.properties}
+{% endtabcontent %}
+
+
+{% tabcontent shutdown.properties %}
 
 {% highlight xml %}
 lookupgroups = MyGroup
@@ -337,5 +341,7 @@ numberOfGSAgents = 1
 transactionTimeout = 1000
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+

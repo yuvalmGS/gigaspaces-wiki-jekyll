@@ -63,8 +63,10 @@ public class Processor implements InitializingBean, DisposableBean {
 
 pu.xml for the processor is now split into two parts. Space is defined in the pu.xml and refreshable business logic is defined as part of the refreshable-beans.xml file. You will also need a pu.properties file to disable the pu download.
 
-{gdeck:Spring Configuration}
-{gcard:pu.xml}
+
+{% inittab Spring Configuration %}
+
+{% tabcontent pu.xml %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -117,8 +119,10 @@ pu.xml for the processor is now split into two parts. Space is defined in the pu
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:refreshable-beans.xml}
+{% endtabcontent %}
+
+
+{% tabcontent refreshable-beans.xml %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -172,16 +176,20 @@ pu.xml for the processor is now split into two parts. Space is defined in the pu
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:pu.properties}
+{% endtabcontent %}
+
+
+{% tabcontent pu.properties %}
 
 
 {% highlight java %}
 pu.download=false
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Running the Example
 

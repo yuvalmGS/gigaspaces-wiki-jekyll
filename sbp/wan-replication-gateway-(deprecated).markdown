@@ -38,8 +38,10 @@ Some relevant code from the example is in the following sections.
 
 ## Data Model
 
-{gdeck:Data Model}
-{gcard:Product Class}
+
+{% inittab Data Model %}
+
+{% tabcontent Product Class %}
 
 
 {% highlight java %}
@@ -88,8 +90,10 @@ public class Product extends MultiClusterEnabled {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:MultiClusterEnabled Class}
+{% endtabcontent %}
+
+
+{% tabcontent MultiClusterEnabled Class %}
 
 
 {% highlight java %}
@@ -109,13 +113,17 @@ public abstract class MultiClusterEnabled {
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 ## Mirror Definition
 
-{gdeck:Mirror}
-{gcard:Mirror pu.xml}
+
+{% inittab Mirror %}
+
+{% tabcontent Mirror pu.xml %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -153,8 +161,10 @@ public abstract class MultiClusterEnabled {
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:MyExternalDataSource Implementation}
+{% endtabcontent %}
+
+
+{% tabcontent MyExternalDataSource Implementation %}
 
 
 {% highlight java %}
@@ -259,8 +269,10 @@ public class MyExternalDataSource implements BulkDataPersister, ManagedDataSourc
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
+
 
 # Running the example
 
