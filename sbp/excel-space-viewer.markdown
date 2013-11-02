@@ -11,7 +11,9 @@ page_id: 47219420
 **Author**: Pini Cohen, GigaSpaces
 **Recently tested with GigaSpaces version**: GigaSpaces 6.5 GA (build 2352)
 **Contents:**
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
 {rate}

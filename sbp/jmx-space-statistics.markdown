@@ -11,7 +11,9 @@ page_id: 48760469
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 6.6
 **Contents:**
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
 {rate}

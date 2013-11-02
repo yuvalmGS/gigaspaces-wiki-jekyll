@@ -12,7 +12,9 @@ page_id: 58098677
 **Summary:** {% excerpt %}This article illustrates how to use TriggerOperationHandler{% endexcerpt %}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 9.0.0
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 
 {% endtip %}
 

@@ -11,7 +11,9 @@ page_id: 47219410
 **Author**: Pini Cohen, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP.NET 6.6
 **Contents:**
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
 {rate}

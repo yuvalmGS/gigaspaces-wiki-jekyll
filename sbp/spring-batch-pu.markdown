@@ -13,7 +13,9 @@ page_id: 55937171
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0. Spring Batch 2.1.6.
 **Last Update:** March 2011
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
 

@@ -13,7 +13,9 @@ page_id: 56429998
 **Recently tested with GigaSpaces version**: XAP 9
 **Creation Update:** Dec 2011
 **Last Update:** Sep 2013
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
 {rate}

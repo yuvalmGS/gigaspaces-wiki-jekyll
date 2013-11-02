@@ -10,7 +10,9 @@ page_id: 48236956
 {% column width=70% %}
 
 This section contains GigaSpaces usage patterns, best practices and solutions. Each best practice is listed with the author/origin, and the GigaSpaces product version that it was tested against.
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 
 # Data Access Patterns
 || Best Practice || Level || Description||

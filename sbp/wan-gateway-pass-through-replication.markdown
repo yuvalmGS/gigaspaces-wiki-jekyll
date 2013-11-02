@@ -12,7 +12,9 @@ page_id: 59441985
 **Summary:** {% excerpt %}WAN Pass Through replication example{% endexcerpt %}
 **Author**: Ali Hodroj, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.7
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
 

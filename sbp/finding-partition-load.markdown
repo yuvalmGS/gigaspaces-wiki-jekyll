@@ -11,7 +11,9 @@ page_id: 54297314
 **Summary:** {% excerpt %}This page describes two ways to determine the partition load in a Gigaspaces grid programmatically.{% endexcerpt %}
 **Author**: Joe Ottinger, Technology Evangelist, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1.2
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
 

@@ -13,7 +13,9 @@ page_id: 49414729
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1
 **Last Update:** Dec 2010
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
 {rate}

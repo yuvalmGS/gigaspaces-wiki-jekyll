@@ -12,7 +12,9 @@ page_id: 64325420
 **Summary:** {% excerpt %}This article illustrates an approache that can be used to perform a clean shutdown mechanism by waiting for all asynchronous persistence to finish before killing Grid Service Containers.{% endexcerpt %}
 **Author**: Ali Hodroj, Senior Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 9.6.0
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
 

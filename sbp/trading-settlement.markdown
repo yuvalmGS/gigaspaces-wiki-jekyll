@@ -12,7 +12,9 @@ page_id: 56429380
 **Authors**: Shay Hassidim, Deputy CTO, GigaSpaces; Norm Leitman, Sales Engineer, GigaSpaces; Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.4
 **Last Update:** Nov 2011
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
 {rate}

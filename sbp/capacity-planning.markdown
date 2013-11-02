@@ -10,7 +10,9 @@ page_id: 50759531
 **Summary:** {% excerpt %}Capacity Planning - voodoo or simple math?{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Contents:**
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
 {rate}
