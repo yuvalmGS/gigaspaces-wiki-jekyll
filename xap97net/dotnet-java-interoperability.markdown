@@ -75,7 +75,7 @@ The following guidelines and restrictions should be followed in order to enable 
 The following types are supported by the space for matching and interoperability:
 || CLS || C# || VB.Net || Java || Description ||
 | [System.Byte|http://msdn2.microsoft.com/en-us/library/system.byte.aspx] | `byte` | `Byte` | [byte|http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html] | 8-bit integer.**<sup>1</sup>** |
-| [Nullable<Byte>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | `byte?`| `Nullable(Of Byte)` | {sunjavadoc:java/lang/Byte|java.lang.Byte} | Nullable wrapper for byte.^**1**^ |
+| [Nullable<Byte>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | `byte?`| `Nullable(Of Byte)` | {sunjavadoc:java/lang/Byte|java.lang.Byte} | Nullable wrapper for byte.**<sup>1</sup>** |
 | [System.Int16|http://msdn2.microsoft.com/en-us/library/system.int16.aspx] | `short` | `Short` | [short|http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html] | 16-bit integer. |
 | [Nullable<Int16>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | `short?` | `Nullable(Of Short)` | {sunjavadoc:java/lang/Short|java.lang.Short} | Nullable wrapper for short. |
 | [System.Int32|http://msdn2.microsoft.com/en-us/library/system.int32.aspx] | `int` | `Integer` | [int|http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html] | 32-bit integer. |
@@ -92,9 +92,9 @@ The following types are supported by the space for matching and interoperability
 | [Nullable<Char>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | `char?` | `Nullable(Of Char)` | {sunjavadoc:java/lang/Character|java.lang.Character} | Nullable wrapper for char. |
 | [System.String|http://msdn2.microsoft.com/en-us/library/system.string.aspx] | `string` | `String` | {sunjavadoc:java/lang/String|java.lang.String} | An immutable, fixed-length string of Unicode characters. |
 
-| [System.DateTime|http://msdn2.microsoft.com/en-us/library/system.datetime.aspx] [Nullable<DateTime>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | `DateTime` `DateTime?` | `DateTime` `Nullable(Of DateTime)`| {sunjavadoc:java/util/Date|java.util.Date} | An instant in time, typically expressed as a date and time of day.^**2,3**^ |
-| [System.Decimal|http://msdn2.microsoft.com/en-us/library/system.decimal.aspx] [Nullable<Decimal>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | `decimal` `decimal?` | `Decimal` `Nullable(Of Decimal)` | {sunjavadoc:java/math/BigDecimal|java.math.BigDecimal} | A decimal number, used for high-precision calculations.^**2,4**^ |
-| [System.Guid|http://msdn2.microsoft.com/en-us/library/system.guid.aspx] [Nullable<Guid>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | `Guid` `Guid?` | `Guid` `Nullable(Of Guid)` | {sunjavadoc:java/util/UUID|java.util.UUID} | A 128-bit integer representing a unique identifier.^**2**^ |
+| [System.DateTime|http://msdn2.microsoft.com/en-us/library/system.datetime.aspx] [Nullable<DateTime>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | `DateTime` `DateTime?` | `DateTime` `Nullable(Of DateTime)`| {sunjavadoc:java/util/Date|java.util.Date} | An instant in time, typically expressed as a date and time of day.**<sup>2,3</sup>** |
+| [System.Decimal|http://msdn2.microsoft.com/en-us/library/system.decimal.aspx] [Nullable<Decimal>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | `decimal` `decimal?` | `Decimal` `Nullable(Of Decimal)` | {sunjavadoc:java/math/BigDecimal|java.math.BigDecimal} | A decimal number, used for high-precision calculations.**<sup>2,4</sup>** |
+| [System.Guid|http://msdn2.microsoft.com/en-us/library/system.guid.aspx] [Nullable<Guid>|http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx] | `Guid` `Guid?` | `Guid` `Nullable(Of Guid)` | {sunjavadoc:java/util/UUID|java.util.UUID} | A 128-bit integer representing a unique identifier.**<sup>2</sup>** |
 | [System.Object|http://msdn2.microsoft.com/en-us/library/system.object.aspx] | `object` | `Object` | {sunjavadoc:java/lang/Object|java.lang.Object} | Any object |
 1. In .Net a `byte` is unsigned, whereas in java a `byte` is signed.
 2. These types can be either nullable or not nullable in .Net, whereas in java they are always nullable.
