@@ -123,7 +123,7 @@ For long calculations that consume relatively large amount of CPU time, the reco
 depanimageElasticDistributedRiskAnalysisEngine_remote_workers.jpgtengahimage/attachment_files/sbp/ElasticDistributedRiskAnalysisEngine_remote_workers.jpgbelakangimage
 
 # Running the Demo
-1. Download the [ElasticCalculationEngine.zip|Elastic Distributed Calculation Engine^ElasticCalculationEngine.zip] and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and **edit** the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.
+1. Download the depanlinkElasticCalculationEngine.ziptengahlink/attachment_files/sbp/ElasticCalculationEngine.zipbelakanglink and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and **edit** the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.
 2. Start the GigaSpaces agent by running the following:
 
 

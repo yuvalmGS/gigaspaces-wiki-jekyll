@@ -42,7 +42,7 @@ The Event Driven Remoting allows you to:
 
 ## Installing and Running the example
 
-1. Download the [example|Event Driven Remoting Example^event_remoting_Example.zip] package and unzip it under your <GigaSpaces Root>\examples folder.
+1. Download the depanlinkexampletengahlink/attachment_files/sbp/event_remoting_Example.zipbelakanglink package and unzip it under your <GigaSpaces Root>\examples folder.
 2. Load the example into your IDE (eclipse or your favorite Java development environment).
 3. Edit the project to include the correct GigaSpaces libraries location.
 4. Setup the Service PU run configuration:

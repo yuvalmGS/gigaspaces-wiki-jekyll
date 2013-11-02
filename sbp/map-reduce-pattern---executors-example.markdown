@@ -31,7 +31,7 @@ In both cases, the business logic will be invoked with a collocated space.
 
 # Installing the Example
 
-1. Download the [example|Map-Reduce Pattern - Executors Example^ExecutorExample.zip] and extract the zip file. Open your IDE and import the project files.
+1. Download the depanlinkexampletengahlink/attachment_files/sbp/ExecutorExample.zipbelakanglink and extract the zip file. Open your IDE and import the project files.
 2. Set the project libraries to have the correct GigaSpaces libraries location. Make sure your project libraries list will include all the libraries located at `gigaspaces-xap\lib\required`.
 
 {% indent %}

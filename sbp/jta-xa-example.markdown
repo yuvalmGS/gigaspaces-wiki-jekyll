@@ -340,7 +340,7 @@ public class Message  {
 
 1. Download Apache ActiveMQ from [here|http://activemq.apache.org/download.html].
 2. Download Atomikos TransactionEssentials from [here|http://www.atomikos.com/Main/TransactionsEssentialsDownloadForm].
-3. Extract the [example|JTA-XA Example^helloworld-jta.zip] archive into a folder (calling it <helloworld-jta>). Modify the setDevEnv.bat and build.properties files to have proper paths for GigaSpaces home, Java home, ActiveMQ home and Atomikos home. Also modify the NIC_ADDR and locators variable to have proper IP address.
+3. Extract the depanlinkexampletengahlink/attachment_files/sbp/helloworld-jta.zipbelakanglink archive into a folder (calling it <helloworld-jta>). Modify the setDevEnv.bat and build.properties files to have proper paths for GigaSpaces home, Java home, ActiveMQ home and Atomikos home. Also modify the NIC_ADDR and locators variable to have proper IP address.
 4. Open a command shell and navigate to <helloworld-jta> folder.
 5. Run `setDevEnv.bat` script in <helloworld-jta> folder, to set the environment variables.
 6. Copy the required jars to the <helloworld-jta>\lib folder using the `copy-libs` ant task provided.

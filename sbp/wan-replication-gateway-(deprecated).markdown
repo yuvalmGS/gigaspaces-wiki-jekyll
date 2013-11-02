@@ -286,7 +286,7 @@ Example was tested using a single machine with ip address, 192.168.2.100 and Loo
 {% endnote %}
 
 
-1. Extract the [example|WAN Replication Gateway (Deprecated)^multi-cluster.zip] archive into a folder. Navigate to the folder (calling it <multi-cluster-example>) and open a command shell. Modify the setDevEnv-SiteA.bat/sh and setDevEnv-SiteB.bat/sh files to have proper paths for GigaSpaces home and Java home. Also modify the NIC_ADDR variable to have proper ip address for each site.
+1. Extract the depanlinkexampletengahlink/attachment_files/sbp/multi-cluster.zipbelakanglink archive into a folder. Navigate to the folder (calling it <multi-cluster-example>) and open a command shell. Modify the setDevEnv-SiteA.bat/sh and setDevEnv-SiteB.bat/sh files to have proper paths for GigaSpaces home and Java home. Also modify the NIC_ADDR variable to have proper ip address for each site.
 2. Run setDevEnv-SiteA script to set the environment variables.
 
 {% tip %}

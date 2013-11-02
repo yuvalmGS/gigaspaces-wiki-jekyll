@@ -71,7 +71,7 @@ The compact serialization pattern involves creation the following methods:
 The `BinaryOutputStream` contains various method to serialize all java's primitive type, their Object wrappers and arrays forms in a compacted mode. `BinaryInputStream` is its counterpart for deserialization. Your `pack` and `unpack` methods will be using an instance of those classes.
 
 # Example
-With the [attached example|Lowering the Space Object Footprint^BinaryCompaction.zip] we have a space class with 37 fields.
+With the depanlinkattached exampletengahlink/attachment_files/sbp/BinaryCompaction.zipbelakanglink we have a space class with 37 fields.
 - 1 Integer data type field (indexed used for queries).
 - 12 String fields
 - 12 Long fields

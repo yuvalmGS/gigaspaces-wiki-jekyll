@@ -238,7 +238,7 @@ jetty.sessions.spaceUrl=jini://**/**/settlementSpace?useLocalCache
 
 
 # Running the Demo
-1. **Download** the [TradingSettlement.zip|Trading Settlement^TradingSettlement.zip] file and **extract** it into an empty folder.
+1. **Download** the depanlinkTradingSettlement.ziptengahlink/attachment_files/sbp/TradingSettlement.zipbelakanglink file and **extract** it into an empty folder.
 2. **Move** into the settlement-app folder.
 3. **Rename** the files ending in **.at** to **.bat**.
 4. **Edit** setExampleEnv.bat and change JAVA_HOME and JSHOMEDIR.

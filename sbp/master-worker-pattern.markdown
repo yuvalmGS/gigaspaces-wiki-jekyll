@@ -44,7 +44,7 @@ The following sections include code samples and configuration that illustrate th
 
 
 {% tip %}
-We invite you to [download|Master-Worker Pattern^MasterWorker.zip] the code examples and configuration files used with this article.
+We invite you to depanlinkdownloadtengahlink/attachment_files/sbp/MasterWorker.zipbelakanglink the code examples and configuration files used with this article.
 {% endtip %}
 
 

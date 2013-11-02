@@ -61,7 +61,7 @@ See the [Custom Eviction|Custom Eviction#Eviction Strategies] section for detail
 
 # Example
 
-With the [attached example|IMDG with Large Backend Database Support^LargeDBLRUSpace.zip] the clustered space has 600 objects in memory:
+With the depanlinkattached exampletengahlink/attachment_files/sbp/LargeDBLRUSpace.zipbelakanglink the clustered space has 600 objects in memory:
 - 100 object loaded into partition 1.
 - 200 object loaded into partition 2.
 - 300 object loaded into partition 3.

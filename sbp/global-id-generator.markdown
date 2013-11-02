@@ -26,7 +26,7 @@ GigaSpaces generates a unique global ID when writing new objects using its built
 
 
 {% tip %}
-You can [download|Global ID Generator^GlobalIDGenerator.zip] the custom Unique Global ID Generator source code used with this example.
+You can depanlinkdownloadtengahlink/attachment_files/sbp/GlobalIDGenerator.zipbelakanglink the custom Unique Global ID Generator source code used with this example.
 {% endtip %}
 
 

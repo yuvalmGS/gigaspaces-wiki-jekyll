@@ -35,7 +35,7 @@ The internal architecture of the setup includes a clustered space and a Gateway,
 depanimagewan_example2.jpgtengahimage/attachment_files/sbp/wan_example2.jpgbelakangimage
 
 # Installing the Example
-1. Download the [WAN_Gateway_example.zip|WAN Replication Gateway^WAN_Gateway_example.zip]. It includes two folders: **deploy** and **scripts**.
+1. Download the depanlinkWAN_Gateway_example.ziptengahlink/attachment_files/sbp/WAN_Gateway_example.zipbelakanglink. It includes two folders: **deploy** and **scripts**.
 2. Please extract the file and and copy the content of the **deploy folder** into `\gigaspaces-xap-premium-8.0.X-ga\deploy` folder. It should looks like this:
 
 
