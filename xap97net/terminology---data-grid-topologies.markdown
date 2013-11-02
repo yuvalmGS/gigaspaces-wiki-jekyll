@@ -36,7 +36,7 @@ page_id: 63799407
 
 A set of space instances, typically running within their respective processing unit instances.
 The space instances are connected to each other to form a space cluster.
-The relations between the spaces define the [Data Grid Topology|#Data Grid Topology].
+The relations between the spaces define the depanlinkData Grid Topologytengahlink#Data Grid Topologybelakanglink.
 
 {% sub %}Key Sentence: A set of connected space instances holding objects form a space cluster{% endsub %}
 
@@ -108,7 +108,7 @@ depanimageterm_primary_backup_text_data_grid.giftengahimage/attachment_files/xap
 
 When the Data Grid needs to hold large amounts of data, it is possible to partition the data across multiple instances.
 Each Data Grid instance (partition) holds a different subset of the objects in the Data Grid.
-When the objects are written to this Data Grid, they are routed to the proper partition, according to a predefined property in the object that acts as the [routing|#Routing] index.
+When the objects are written to this Data Grid, they are routed to the proper partition, according to a predefined property in the object that acts as the depanlinkroutingtengahlink#Routingbelakanglink index.
 
 {% endcolumn %}
 
@@ -173,7 +173,7 @@ depanimageterm_routing.giftengahimage/attachment_files/xap97net/term_routing.gif
 
 #### Primary Backup Partitioned Data Grid
 
-A [partitioned Data Grid|#Partitioned Data Grid], with one or more [backup|#Primary Backup Data Grid] instances for each partition. Each of the Data Grid instances (partitions) holds a different subset of the objects in the Data Grid, and replicates this subset to its backup instance/s.
+A depanlinkpartitioned Data Gridtengahlink#Partitioned Data Gridbelakanglink, with one or more depanlinkbackuptengahlink#Primary Backup Data Gridbelakanglink instances for each partition. Each of the Data Grid instances (partitions) holds a different subset of the objects in the Data Grid, and replicates this subset to its backup instance/s.
 
 {% endcolumn %}
 

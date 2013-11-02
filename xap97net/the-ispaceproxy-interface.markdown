@@ -70,7 +70,7 @@ Several `ISpaceProxy` instances can be defined within a single Processing Unit, 
 # Operations
 
 The {javadocos:/docs/dotnetdocs9.5/|ISpaceProxy} interface includes the following main operations:
-||[Id Based operations|ID Queries]||[Batch operations|#Batch Operations]||[Asynchronous operations|#Asynchronous Operations]||Data Count operations||
+||[Id Based operations|ID Queries]||depanlinkBatch operationstengahlink#Batch Operationsbelakanglink||depanlinkAsynchronous operationstengahlink#Asynchronous Operationsbelakanglink||Data Count operations||
 |[ReadById|ID Queries#Reading an Object using its ID]
 TakeById
 [ReadByIds|ID Queries#Reading Multiple Objects using their IDs]
@@ -374,7 +374,7 @@ The GigaSpace interface provides simple way to perform bulk operations. You may 
 
 Here are few important considerations when using the batch operations:
 - The `readMultiple` and `takeMultiple` operations boost the performance, since they perform multiple operations using one call. These methods returns the matching results in one result object back to the client. This allows the client and server to utilize the network bandwidth in an efficient manner. In some cases, these batch operations can be up to 10 times faster than multiple single based operations.
-- The `readMultiple` and `takeMultiple` operations should be handled with care, since they can return a large data set (potentially all the space data). This might cause an out of memory error in the space and client process. You should use the [GSIterator|#Space Iterator] to return the result in batches (paging) in such cases.
+- The `readMultiple` and `takeMultiple` operations should be handled with care, since they can return a large data set (potentially all the space data). This might cause an out of memory error in the space and client process. You should use the depanlinkGSIteratortengahlink#Space Iteratorbelakanglink to return the result in batches (paging) in such cases.
 - Destructive batch operations (`takeMultiple` , `writeMultiple` , `updateMultiple`) should be performed with transactions - this allows the client to roll back the space to its initial state prior the operation was started, in case of a failure.
 - When calling `writeMultiple` or `updateMultiple`, make sure `null` values are not part of the passed array.
 - When using `writeMultiple`, you should verify that duplicated entries (with the same ID) do not appear as part of the passed array, since the identity of the object is determined based on its `ID` and not based on its reference. This is extremely important with an embedded space, since `writeMultiple` injects the ID value into the object after the write operation (when autogenerate=false).

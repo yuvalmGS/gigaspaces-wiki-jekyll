@@ -15,9 +15,9 @@ The example can be found at `<GigaSpaces root>\Examples\SpaceFilter`
 
 This demo shows three equivalent space filter implementations, and a console application that runs the same demo sequence three times, once per filter implementation:
 
-- [MessageCensorshipAttributeFilter|#1].
-- [MessageCensorshipMethodNamesFilter|#2].
-- [MessageCensorshipSpaceFilter|#3].
+- depanlinkMessageCensorshipAttributeFiltertengahlink#1belakanglink.
+- depanlinkMessageCensorshipMethodNamesFiltertengahlink#2belakanglink.
+- depanlinkMessageCensorshipSpaceFiltertengahlink#3belakanglink.
 
 # Censorship Filters
 
@@ -189,7 +189,7 @@ public class MessageCensorshipMethodNamesFilter : MessageCensorship, IDisposable
 {% endhighlight %}
 
 
-This filter implementation is very similiar to the [attribute-based one|#Message Censorship Attribute Filter], except that there are no marker attributes. The method that needs to be invoked according to the filter operation, is specified by name when creating the [MethodNameSpaceFilterConfigFactory|SpaceFilterOperationDelegate#Method name based implementation] that creates the [SpaceFilterConfig|SpaceFilterConfig Class] for this filter.
+This filter implementation is very similiar to the depanlinkattribute-based onetengahlink#Message Censorship Attribute Filterbelakanglink, except that there are no marker attributes. The method that needs to be invoked according to the filter operation, is specified by name when creating the [MethodNameSpaceFilterConfigFactory|SpaceFilterOperationDelegate#Method name based implementation] that creates the [SpaceFilterConfig|SpaceFilterConfig Class] for this filter.
 
 
 {% highlight java %}

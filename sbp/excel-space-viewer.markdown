@@ -24,11 +24,11 @@ page_id: 47219420
 The Excel space viewer allows you to create customized views of data for spaces running in your network, and to configure existing views. The displayed data is constantly updated in the Excel spreadsheet.
 
 Links:
-- **[Using the Excel Space Viewer|#Using Excel Space Viewer]** -- allows you to connect to a Space, create and customize a new and existing views
-- **[Prerequisites|#Prerequisites]** -- prerequisites
-- **[Supported Office Versions|#Supported Office Versions]** -- a list of the Supported Office Versions
-- **[Installing the Excel Space Viewer|#Installing the Excel Space Viewer]** -- running the installing of the Excel Space Viewer
-- **[Troubleshooting|#Troubleshooting]** -- troubleshooting
+- **depanlinkUsing the Excel Space Viewertengahlink#Using Excel Space Viewerbelakanglink** -- allows you to connect to a Space, create and customize a new and existing views
+- **depanlinkPrerequisitestengahlink#Prerequisitesbelakanglink** -- prerequisites
+- **depanlinkSupported Office Versionstengahlink#Supported Office Versionsbelakanglink** -- a list of the Supported Office Versions
+- **depanlinkInstalling the Excel Space Viewertengahlink#Installing the Excel Space Viewerbelakanglink** -- running the installing of the Excel Space Viewer
+- **depanlinkTroubleshootingtengahlink#Troubleshootingbelakanglink** -- troubleshooting
 
 # Using Excel Space Viewer
 
@@ -38,8 +38,8 @@ The Excel Space Viewer allows you to create views of data to a certain space cla
 
 {% infosign %} It is possible to create several views in the same spreadsheet. All views can display data for the same space, or for different spaces. If you are displaying data for a different space, you need to connect to that space before creating an additional view.
 The Space Viewer toolbar includes the following options:
-- **[Create View|#Creating New View]** -- allows you to create and customize a new view
-- **[Configure View|#Changing Existing View]** -- allows you to edit and customize existing views
+- **depanlinkCreate Viewtengahlink#Creating New Viewbelakanglink** -- allows you to create and customize a new view
+- **depanlinkConfigure Viewtengahlink#Changing Existing Viewbelakanglink** -- allows you to edit and customize existing views
 - **Refresh results** -- refreshes the view or views with updated data
 
 
@@ -86,7 +86,7 @@ To create a new view:
 1. Click the **Create View** option in the Space Viewer toolbar. The Create View window is opened.
 2. Make sure you are connected to a space.
 3. Use the arrow buttons ( depanimagearrowExcel.jpgtengahimage/attachment_files/sbp/arrowExcel.jpgbelakangimage) to move columns from the **Available Columns** area to the **Selected Columns** area.
-4. If you want to narrow your view to more specific results (by querying your class fields), click the **Customize the Selection** button (see [**Customize the Selection**|#Customize the Selection]).
+4. If you want to narrow your view to more specific results (by querying your class fields), click the **Customize the Selection** button (see depanlink**Customize the Selection**tengahlink#Customize the Selectionbelakanglink).
 {% infosign %} This step is optional. If you want to generate the view with all the existing entries of the selected type in the space, proceed to the next step.
     1. On the left side of the Customize the Selection window, click the class field you want to query. (For example, the **Age** field is selected below.)
 

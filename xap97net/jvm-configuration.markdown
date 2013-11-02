@@ -45,7 +45,7 @@ Many systems define an environment variable called JAVA_HOME which points to the
 
 # Jvm Settings
 
-Unlike .NET applications, which are compiled to executable files, java applications are compiled to `.class` or `.jar` files which are executed using the [Java Application Launcher| http://java.sun.com/javase/6/docs/technotes/tools/windows/java.html] (`java.exe`) tool. This tool supports various options which control the way the application is executed, such as memory allocation, garbage collection and more.
+Unlike .NET applications, which are compiled to executable files, java applications are compiled to `.class` or `.jar` files which are executed using the depanlinkJava Application Launchertengahlinkhttp://java.sun.com/javase/6/docs/technotes/tools/windows/java.htmlbelakanglink (`java.exe`) tool. This tool supports various options which control the way the application is executed, such as memory allocation, garbage collection and more.
 
 GigaSpaces XAP.NET tools and applications use depanlinkJava Native Interface (JNI)tengahlinkhttp://java.sun.com/javase/6/docs/technotes/guides/jni/index.htmlbelakanglink instead of `java.exe` to launch the JVM and execute java code, and use the Application Configuration File to load JVM settings.
 

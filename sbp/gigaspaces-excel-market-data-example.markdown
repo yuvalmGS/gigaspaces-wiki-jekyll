@@ -80,7 +80,7 @@ depanimageadd-ins.JPGtengahimage/attachment_files/sbp/add-ins.JPGbelakangimage
 
 # Running the Example
 
-{% exclamation %} The example must be compiled before you run it (see [Building the Example|#building] above).
+{% exclamation %} The example must be compiled before you run it (see depanlinkBuilding the Exampletengahlink#buildingbelakanglink above).
 1. Start the GigaSpaces environment: `<Example Root>\bin\startAll.bat`.
 2. Run the GigaSpaces Management Center `(<GigaSpaces Root>\Bin\Gs-ui.exe`) to see the **`GigaSpaces.Examples.ExcelStocks.StockEntities.StockData`** instances. To view only the relevant spaces:
     1. In the top menu bar, choose **Settings** > **Discovery** > **Group management**.

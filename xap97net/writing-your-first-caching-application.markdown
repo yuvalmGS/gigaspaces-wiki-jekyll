@@ -133,7 +133,7 @@ The table might include more than one Grid Service Manager. If so, look for the 
  depanimageDeployment_Wizard_EDG_Provisioned-myDataGrid-2-SyncRep.jpgtengahimage/attachment_files/xap97net/Deployment_Wizard_EDG_Provisioned-myDataGrid-2-SyncRep.jpgbelakangimage
 
 Depending on the type of deployment you performed, you should see that either two spaces (two replicated Data Grid instances) or four spaces (two Data Grid partitions with one backup each) were provisioned to the host running the Grid Service Containers.
-5. **If this is not the first topology** you are deploying, and you are already familiar with the client application, skip to [Running Client, Testing Notifications and Verifying Topologies|#running].
+5. **If this is not the first topology** you are deploying, and you are already familiar with the client application, skip to depanlinkRunning Client, Testing Notifications and Verifying Topologiestengahlink#runningbelakanglink.
 
 {% infosign %} You deployed the the Data Grid using the Management Center and its Deployment Wizard. An alternative way deploying a single space instance can be done by using the `SpaceInstance` command.
 

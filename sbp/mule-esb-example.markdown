@@ -21,11 +21,11 @@ Date: March 2011
 # Overview
 GigaSpaces [XAP8:Mule ESB] OpenSpaces comes with comprehensive support for Mule 3.1.0. It allows you to use the [Space as a Mule external transport|XAP8:Mule Event Container Transport], enabling receiving and dispatching of POJO messages over the Space.
 
-This depanlinkexampletengahlink/attachment_files/sbp/Mule_Multi_service_Example.zipbelakanglink illustrates distributed multi services mule application. The different mule services construct a simple workflow, where each service passes its outbound data into the next service in line via the Space. Each Service can run in a different machine(s) and [scale dynamically|#Scale Dynamically] or [manualy|#Scale Manually] in a different manner.
+This depanlinkexampletengahlink/attachment_files/sbp/Mule_Multi_service_Example.zipbelakanglink illustrates distributed multi services mule application. The different mule services construct a simple workflow, where each service passes its outbound data into the next service in line via the Space. Each Service can run in a different machine(s) and depanlinkscale dynamicallytengahlink#Scale Dynamicallybelakanglink or depanlinkmanualytengahlink#Scale Manuallybelakanglink in a different manner.
 
 
 {% tip %}
-Make sure you have the [libraries required|#Libraries Required] located at the correct location before running the example.
+Make sure you have the depanlinklibraries requiredtengahlink#Libraries Requiredbelakanglink located at the correct location before running the example.
 {% endtip %}
 
 
@@ -41,9 +41,9 @@ depanimagemule_example_flow1.jpgtengahimage/attachment_files/sbp/mule_example_fl
 {% endindent %}
 
 
-The example using the polling container as the inbound-endpoint with each Service and a space connector as the outbound-endpoint where a state field within the [Data|#The Space Data Class] object acts as the workflow "Queue".
+The example using the polling container as the inbound-endpoint with each Service and a space connector as the outbound-endpoint where a state field within the depanlinkDatatengahlink#The Space Data Classbelakanglink object acts as the workflow "Queue".
 
-Each service with this example is packaged within its own [Processing Unit|XAP8:Mule Processing Unit] and can scale independently in [dynamic manner|#Scale Dynamically].
+Each service with this example is packaged within its own [Processing Unit|XAP8:Mule Processing Unit] and can scale independently in depanlinkdynamic mannertengahlink#Scale Dynamicallybelakanglink.
 
 {% exclamation %} The [Mule Queue Provider|XAP8:Mule Queue Provider] is not illustrated with this example. It is relevant for different use case where the Mule Services scales together with the Data-Grid and running within the same Processing Unit.
 
@@ -288,7 +288,7 @@ Once the example libraries will be successfully created, you will be able to dep
 
 # Deploying the Example
 In order to deploy the different Processing unit comprising this example:
-- Make sure you have the [libraries required|#Libraries Required] located at the correct location.
+- Make sure you have the depanlinklibraries requiredtengahlink#Libraries Requiredbelakanglink located at the correct location.
 - Start at least one GSM and several GSCs in the same machine on multiple different machines.
 - Use the following commands to deploy the Processing unit libraries:
 

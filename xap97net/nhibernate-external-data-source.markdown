@@ -156,7 +156,7 @@ spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 1, null, 2,
 ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace?mirror=true", spaceConfig);
 {% endhighlight %}
 
-{% lampon %} `<NHibernate config file>` (see code box above) should point to the NHibernate session factory [configuration file|#sessionfactory].
+{% lampon %} `<NHibernate config file>` (see code box above) should point to the NHibernate session factory depanlinkconfiguration filetengahlink#sessionfactorybelakanglink.
 
 {% lampon %} It is recommended that you put all the NHibernate HBM mapping files in one directory, and point `<NHibernate HBM files location>` (see code box above) to that directory.
 

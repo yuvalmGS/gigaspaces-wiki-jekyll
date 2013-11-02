@@ -16,8 +16,8 @@ The `SpaceFilterConfig` is used to start a space integrated with a space filter.
 | `IsActiveWhenBackup` | States if this filter is active when the space is in backup mode. |
 | `IsSecurityFilter` | States if this filter is a security filter. |
 | `ShutdownSpaceOnInitFailure` | States if the space should shutdown on filter init failure. |
-| `Priority` | The filter's [priority|#priority]. |
-| `FilterOperations` | The list of [operations|#priority] to be filtered. |
+| `Priority` | The filter's depanlinkprioritytengahlink#prioritybelakanglink. |
+| `FilterOperations` | The list of depanlinkoperationstengahlink#prioritybelakanglink to be filtered. |
 | `CustomProperties` | List of properties to be passed to the filter on initialization. |
 | `Enabled` | Is this filter enabled. |
 | `Filter` | The filter itself (an instance implementing ISpaceFilter). |

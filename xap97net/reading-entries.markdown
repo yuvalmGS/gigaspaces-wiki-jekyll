@@ -84,7 +84,7 @@ public class Person
 
 
 {% refer %}For more information about routing, see [SpaceRouting|Object Metadata#Routing] or [GS.XML Metadata].{% endrefer %}
-{% exclamation %} **Note:** [Blocking read|#Blocking Read] is not supported on a clustered proxy.
+{% exclamation %} **Note:** depanlinkBlocking readtengahlink#Blocking Readbelakanglink is not supported on a clustered proxy.
 
 # Improving performance
 

@@ -102,7 +102,7 @@ public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data
 {% endinittab %}
 
 
-The example above performs single take operations (see [below|#Receive Operation Handler]), using the provided template, which can be any .NET object (in this case a `Data` object with its processed flag set to `false`). If the take operation succeeds (a value is returned), the `SimpleListener.ProcessData` method is invoked. The operations are performed on the supplied space proxy.
+The example above performs single take operations (see depanlinkbelowtengahlink#Receive Operation Handlerbelakanglink), using the provided template, which can be any .NET object (in this case a `Data` object with its processed flag set to `false`). If the take operation succeeds (a value is returned), the `SimpleListener.ProcessData` method is invoked. The operations are performed on the supplied space proxy.
 
 # Primary/Backup
 

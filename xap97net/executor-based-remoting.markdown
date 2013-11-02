@@ -371,7 +371,7 @@ IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 {% endhighlight %}
 
 
-The way to access the meta arguments on the server side is to configure a [server side execution aspect|#serverExecutionApect] by implementing the `ServiceExecutionAspect` and wiring it on the server side as shown [above|#serverExecutionApect]. To access the meta arguments, you should call `SpaceRemotingInvocation.MetaArguments` on the `invocation` argument provided to the server side aspect.
+The way to access the meta arguments on the server side is to configure a depanlinkserver side execution aspecttengahlink#serverExecutionApectbelakanglink by implementing the `ServiceExecutionAspect` and wiring it on the server side as shown depanlinkabovetengahlink#serverExecutionApectbelakanglink. To access the meta arguments, you should call `SpaceRemotingInvocation.MetaArguments` on the `invocation` argument provided to the server side aspect.
 
 # Broadcast Remoting
 

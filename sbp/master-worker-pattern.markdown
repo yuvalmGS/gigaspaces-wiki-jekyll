@@ -38,7 +38,7 @@ When there is one space (with or without a backup) used by the `Master` and `Wor
 
 When running multiple `Workers`, processing is load-balanced across all the workers in an even manner. When there is a large amount of activity, you might need to run a partitioned space to allow the space layer to store a large number of `Request` objects (there will always be a small number of `Result` objects in the space), and to cope with a large number of `Workers`. This makes sure that your system can scale, and the space layer does not act as a bottleneck.
 
-When running the space in clustered partitioned mode, you cannot run the workers in blocking mode without assigning a value to the `Request` object routing field. The [Designated Workers approach|#Example 2 - Designated Workers] allows you to run the workers against a partitioned space, in blocking mode.
+When running the space in clustered partitioned mode, you cannot run the workers in blocking mode without assigning a value to the `Request` object routing field. The depanlinkDesignated Workers approachtengahlink#Example 2 - Designated Workersbelakanglink allows you to run the workers against a partitioned space, in blocking mode.
 
 The following sections include code samples and configuration that illustrate the Master-Worker implementation via Polling Containers, using the Random Workers and Designated Workers approach.
 

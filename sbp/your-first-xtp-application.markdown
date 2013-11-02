@@ -38,7 +38,7 @@ This example demonstrates a simple processing unit architecture project -- a com
 
 # Architecture
 
-This example includes a module that is deployed to the grid, and a domain model that consists of `Data` objects. The [DataFeeder|#datafeeder] module runs within a [Basic Processing Unit Container|Basic Processing Unit Container] and writes `Data` objects with raw data into the remote space. The space is actually embedded within the other Processing Unit Container, which runs the [DataProcessor|#dataprocessor] module.
+This example includes a module that is deployed to the grid, and a domain model that consists of `Data` objects. The depanlinkDataFeedertengahlink#datafeederbelakanglink module runs within a [Basic Processing Unit Container|Basic Processing Unit Container] and writes `Data` objects with raw data into the remote space. The space is actually embedded within the other Processing Unit Container, which runs the depanlinkDataProcessortengahlink#dataprocessorbelakanglink module.
 
 The `DataProcessor` service takes the new `Data` objects, processes the raw data and writes them back to the space.
 
@@ -51,8 +51,8 @@ depanimagedataexample architecture.jpgtengahimage/attachment_files/sbp/dataexamp
 
 ## Application Workflow
 
-1. The [DataFeeder|#datafeeder] writes non-processed `Data` objects into the space every second.
-2. The [DataProcessor|#dataprocessor] takes non-processed `Data` objects, processes them, and writes the processed `Data` objects back to the space.
+1. The depanlinkDataFeedertengahlink#datafeederbelakanglink writes non-processed `Data` objects into the space every second.
+2. The depanlinkDataProcessortengahlink#dataprocessorbelakanglink takes non-processed `Data` objects, processes them, and writes the processed `Data` objects back to the space.
 
 # Data Domain Model
 
@@ -361,9 +361,9 @@ This compiles all the related projects and creates the processing unit dlls insi
 
 There are a few ways to deploy the Processing Units:
 
-- [Grid deployment|#grid]
-- [IDE integrated deployment|#ide]
-- [Standalone deployment|#standalone]
+- depanlinkGrid deploymenttengahlink#gridbelakanglink
+- depanlinkIDE integrated deploymenttengahlink#idebelakanglink
+- depanlinkStandalone deploymenttengahlink#standalonebelakanglink
 
 {% anchor grid %}
 

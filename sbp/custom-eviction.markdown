@@ -302,7 +302,7 @@ Start monitoring the GSC logs. After about a minute you will see that the evicti
 
 ## Using the JVM Memory Notification API
 
-Another strategy used by some of the very complex GigaSpaces applications is to rely on the JVM Memory Notification API. Java 5 introduced [MemoryPoolMXBean| http://download.oracle.com/javase/1.5.0/docs/api/java/lang/management/MemoryPoolMXBean.html] API and this API lets you register for usage threshold notifications.
+Another strategy used by some of the very complex GigaSpaces applications is to rely on the JVM Memory Notification API. Java 5 introduced depanlinkMemoryPoolMXBeantengahlinkhttp://download.oracle.com/javase/1.5.0/docs/api/java/lang/management/MemoryPoolMXBean.htmlbelakanglink API and this API lets you register for usage threshold notifications.
 An application can define custom eviction logic and register this functionality to be triggered when the usage exceeds the threshold.
 
 Some advantages with this approach are,

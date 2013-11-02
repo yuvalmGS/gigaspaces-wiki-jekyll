@@ -20,7 +20,7 @@ page_id: 54297314
 # Overview
 When using a GigaSpaces cluster as a task queue there are times you will need to determine how the space instances are loaded. This could be to determine where you can route the next task (minimum load partition/instance) or where you want to launch more processors (heavily loaded partition/instance).
 
-There are couple of approaches you could use to identify these partitions: [task executors|#taskexecutor] and an [executor service|#serviceexecutor]. You can also see the [Executors example|Map-Reduce Pattern - Executors Example] page for other similar examples.
+There are couple of approaches you could use to identify these partitions: depanlinktask executorstengahlink#taskexecutorbelakanglink and an depanlinkexecutor servicetengahlink#serviceexecutorbelakanglink. You can also see the [Executors example|Map-Reduce Pattern - Executors Example] page for other similar examples.
 
 {% anchor taskexecutor %}
 

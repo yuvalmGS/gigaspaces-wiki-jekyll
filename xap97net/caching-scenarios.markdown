@@ -17,7 +17,7 @@ GigaSpaces IMDG supports three kinds of caching mechanisms. Using GigaSpaces IMD
 - Less load on the database layer: Since the cache will isolate the database from the application somewhat, you will have less contention generated at the database layer.
 - Continuous High-Availability: Zero downtime of your data access layer with the ability to survive system failures without any data loss.
 
-The main supported caching mechanisms are the [in-line cache|#In-line Cache] and the [side cache|#Side Cache].
+The main supported caching mechanisms are the depanlinkin-line cachetengahlink#In-line Cachebelakanglink and the depanlinkside cachetengahlink#Side Cachebelakanglink.
 
 Both the In-line cache and the Side cache support the common deployment toplogies: [replicated|Terminology - Data Grid Topologies#Primary Backup Data Grid], [partitioned|Terminology - Data Grid Topologies#Partitioned Data Grid] and [primary-backup partitioned|Terminology - Data Grid Topologies#Primary Backup Partitioned Data Grid].
 

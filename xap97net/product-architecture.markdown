@@ -10,11 +10,11 @@ page_id: 63799417
 
 
 GigaSpaces XAP is built from the following sub-systems:
-- [**An SLA-Driven Container**|#SLA-Driven Container] -- provides the virtualization capabilities
-- [**A Unified Clustering Layer**|#Unified In-Memory Clustering] -- responsible for a single clustering model across all the product's functionality. This capability is built on top of the space infrastructure.
-- [**Core Middleware**|#Core Middleware] -- space-based runtime services which provide data, messaging and processing implementation.
-- [**Lightweight Application Containers**|#Lightweight Application Containers] -- application container services provide runtime support for applications.
-- [**Developers API and Components**|#Developers API and Components] -- the API layer and a component model (building blocks) for application developers.
+- depanlink**An SLA-Driven Container**tengahlink#SLA-Driven Containerbelakanglink -- provides the virtualization capabilities
+- depanlink**A Unified Clustering Layer**tengahlink#Unified In-Memory Clusteringbelakanglink -- responsible for a single clustering model across all the product's functionality. This capability is built on top of the space infrastructure.
+- depanlink**Core Middleware**tengahlink#Core Middlewarebelakanglink -- space-based runtime services which provide data, messaging and processing implementation.
+- depanlink**Lightweight Application Containers**tengahlink#Lightweight Application Containersbelakanglink -- application container services provide runtime support for applications.
+- depanlink**Developers API and Components**tengahlink#Developers API and Componentsbelakanglink -- the API layer and a component model (building blocks) for application developers.
 
 Each sub-system (layer) is responsible for providing application server capabilities, and the bottom layers provide services to the upper layers. Figure 1 provides a representation of the sub-systems which compose the entire GigaSpaces XAP product.
 
@@ -64,7 +64,7 @@ TODO_NIV - Change to internal link when available.
 
 The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [Grid Service Manager|XAP95:The Grid Service Manager] and [Grid Service Container|XAP95:The Grid Service Container].
 
-Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service Managers|#gsm], [Grid Service Containers|#gsc], and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
+Usually, a single GSA is run per machine. The GSA allows to spawn depanlinkGrid Service Managerstengahlink#gsmbelakanglink, depanlinkGrid Service Containerstengahlink#gscbelakanglink, and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
 
 {% lampon %} Though Grid Service Manager, Grid Service Container, and other processes can be started independently, it is preferable that they will be started using the GSA, thus allowing to easily monitor and manage them.
 

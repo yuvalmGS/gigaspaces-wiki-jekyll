@@ -18,7 +18,7 @@ This page coveres additional details about the BasicProcessingUnitContainer whic
 
 # Configuring The Container Automatic Scanning
 
-By default, the container will look for [basic processing unit components|#basiccomponents], [remote service|#services] and [event listener container|#eventcontainers] and instantiate and manage these components if found. This behavior can be enabled or disabled by configuring the container in the following manner:
+By default, the container will look for depanlinkbasic processing unit componentstengahlink#basiccomponentsbelakanglink, depanlinkremote servicetengahlink#servicesbelakanglink and depanlinkevent listener containertengahlink#eventcontainersbelakanglink and instantiate and manage these components if found. This behavior can be enabled or disabled by configuring the container in the following manner:
 
 
 {% highlight xml %}

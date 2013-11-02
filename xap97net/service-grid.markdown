@@ -15,7 +15,7 @@ page_id: 64127758
 
 The Grid Service Manager is the component which manages the deployment and life cycle of the processing unit.
 
-When a processing unit is uploaded to the GSM (using one of GigaSpaces deployment tools: UI, CLI, API), the GSM analyzes the deployment descriptor and determines how many instances of the processing unit should be created, and which [containers|#gsc] should host them. It then ships the processing unit code to the relevant containers and instructs them to instantiate the processing unit instances. This phase in the deployment process is called **provisioning**.
+When a processing unit is uploaded to the GSM (using one of GigaSpaces deployment tools: UI, CLI, API), the GSM analyzes the deployment descriptor and determines how many instances of the processing unit should be created, and which depanlinkcontainerstengahlink#gscbelakanglink should host them. It then ships the processing unit code to the relevant containers and instructs them to instantiate the processing unit instances. This phase in the deployment process is called **provisioning**.
 
 Once provisioned, the GSM continuously monitors the processing unit instances to determine if they're functioning properly or not. When a certain instance fails, the GSM identifies that and re-provisions the failed instance on to another GSC, thus enforcing the processing unit's SLA.
 
@@ -25,9 +25,9 @@ Once provisioned, the GSM continuously monitors the processing unit instances to
 
 # Grid Service Container (GSC)
 
-The Grid Service Container provides an isolated runtime for one (or more) processing unit instance, and exposes its state to the [GSM|#gsm].
+The Grid Service Container provides an isolated runtime for one (or more) processing unit instance, and exposes its state to the depanlinkGSMtengahlink#gsmbelakanglink.
 
-The GSC can be perceived as a node on the grid, which is controlled by [The Grid Service Manager|#gsm]. The GSM provides commands of deployment and un-deployment of the Processing Unit instances into the GSC. The GSC reports its status to the GSM.
+The GSC can be perceived as a node on the grid, which is controlled by depanlinkThe Grid Service Managertengahlink#gsmbelakanglink. The GSM provides commands of deployment and un-deployment of the Processing Unit instances into the GSC. The GSC reports its status to the GSM.
 
 The GSC can host multiple processing unit instances simultaneously. The processing unit instances are isolated from each other using separate depanlinkClass loaderstengahlinkhttp://en.wikipedia.org/wiki/Java_Classloaderbelakanglink (in java) or depanlinkAppDomainstengahlinkhttp://en.wikipedia.org/wiki/Appdomainbelakanglink (in .NET).
 
@@ -50,8 +50,8 @@ Another important attribute in that context is the **lookup group**. The lookup 
 {% lampon %} It is common to start at least two LUS instances in each Service Grid for high-availability reasons. Note that the lookup service can run in the same process with a GSM, or in standalone mode using its own process.
 
 The following services use the LUS:
-- [GigaSpaces Manager|#gsm]
-- [GigaSpaces Agent|#gsa]
+- depanlinkGigaSpaces Managertengahlink#gsmbelakanglink
+- depanlinkGigaSpaces Agenttengahlink#gsabelakanglink
 - Processing Unit Instances (actual instances of a deployed Processing Unit)
 - Space Instances (actual instances of a Space that form a topology)
 
@@ -59,9 +59,9 @@ The following services use the LUS:
 
 # Grid Service Agent (GSA)
 
-The Grid Service Agent (GSA) is a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [The Grid Service Manager|#gsm], [The Grid Service Container|#gsc], and [The Lookup Service|#lus]. Typically, the GSA is started with the hosting machine's startup. Using the agent, you can bootstrap the entire cluster very easily, and start and stop additional GSCs, GSMs and lookup services at will.
+The Grid Service Agent (GSA) is a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as depanlinkThe Grid Service Managertengahlink#gsmbelakanglink, depanlinkThe Grid Service Containertengahlink#gscbelakanglink, and depanlinkThe Lookup Servicetengahlink#lusbelakanglink. Typically, the GSA is started with the hosting machine's startup. Using the agent, you can bootstrap the entire cluster very easily, and start and stop additional GSCs, GSMs and lookup services at will.
 
-Usually, a single GSA is run per machine. If you're setting up multiple Service Grids separated by [Lookup Groups or Locators|#lus]), you'll probably start a GSA per machine per group.
+Usually, a single GSA is run per machine. If you're setting up multiple Service Grids separated by depanlinkLookup Groups or Locatorstengahlink#lusbelakanglink), you'll probably start a GSA per machine per group.
 
 The GSA exposes the ability to start, restart, and kill a process either using the [Administration and Monitoring API] or the GigaSpaces UI.
 
@@ -69,9 +69,9 @@ The GSA exposes the ability to start, restart, and kill a process either using t
 
 The GSA manages Operating System processes. There are two types of process management, local and global.
 
-Local processes simply start the process type (for example, a [Grid Service Container|#gsc]) without taking into account any other process types running by different GSAs.
+Local processes simply start the process type (for example, a depanlinkGrid Service Containertengahlink#gscbelakanglink) without taking into account any other process types running by different GSAs.
 
-Global processes take into account the number of process types ([Grid Service Manager|#gsm] for example) that are currently running by other GSAs (within the same lookup groups or lookup locators). It will automatically try and run at least X number of processes **across** all the different GSAs (with a maximum of 1 process type per GSA). If a GSA running a process type that is managed globally fails, another GSA will identify the failure and start it in order to maintain at least X number of global process types.
+Global processes take into account the number of process types (depanlinkGrid Service Managertengahlink#gsmbelakanglink for example) that are currently running by other GSAs (within the same lookup groups or lookup locators). It will automatically try and run at least X number of processes **across** all the different GSAs (with a maximum of 1 process type per GSA). If a GSA running a process type that is managed globally fails, another GSA will identify the failure and start it in order to maintain at least X number of global process types.
 
 # Starting a Service Grid
 
@@ -93,7 +93,7 @@ The following table summarized how to start each component:
 
 ## GSA Parameters
 
-The GSA parameters control how many local process the GSA will spawn on startup (per process type), and the number of globally managed process the GSA will maintain (in cooperation with other GSAs) (per process type). By default, the GSA is started with 2 local [Grid Service Container|#gsc]s, and manage 2 global [Grid Service Manager|#gsm] and 2 global [Lookup Service|#lus]. This is the equivalent of starting the GSA with the following parameters:
+The GSA parameters control how many local process the GSA will spawn on startup (per process type), and the number of globally managed process the GSA will maintain (in cooperation with other GSAs) (per process type). By default, the GSA is started with 2 local depanlinkGrid Service Containertengahlink#gscbelakanglinks, and manage 2 global depanlinkGrid Service Managertengahlink#gsmbelakanglink and 2 global depanlinkLookup Servicetengahlink#lusbelakanglink. This is the equivalent of starting the GSA with the following parameters:
 
 
 {% highlight java %}
@@ -113,7 +113,7 @@ In general, the `gsa.\[process type]` followed by a number controls the number o
 
 ### Lookup Service Considerations
 
-When starting a [Lookup Service|#lus] and other services in unicast mode (not multicast), it means that specific machines will be the ones that will run the [Lookup Service|#lus]. This means that on the machines running the LUS, the following command will be used (assuming other defaults are used for GSM and GSC):
+When starting a depanlinkLookup Servicetengahlink#lusbelakanglink and other services in unicast mode (not multicast), it means that specific machines will be the ones that will run the depanlinkLookup Servicetengahlink#lusbelakanglink. This means that on the machines running the LUS, the following command will be used (assuming other defaults are used for GSM and GSC):
 
 
 {% highlight java %}

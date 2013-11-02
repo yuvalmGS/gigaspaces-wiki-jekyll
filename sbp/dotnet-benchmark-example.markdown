@@ -46,7 +46,7 @@ Use the Benchmark Example and customize the Benchmark run:
 - by changing the space-url to connect to the space topology that you want to check.
 - by configuring the input xml file and changing configuration parameters.
 
-For more information please read [XAP66:Out-of-the-box benchmark|#1]
+For more information please read depanlinkXAP66:Out-of-the-box benchmarktengahlink#1belakanglink
 
 **2. Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.**
 
@@ -54,9 +54,9 @@ You can create your own benchmark by using the Benchmark Framework:
 - extending the framework's BenchmarkStandard abstact class.
 - using the framework's interfaces: IBenchmarkContainer, IBenchmarkObjectAdapter.
 
-For more information please read [XAP66:Develop a custom benchmark|#2]
+For more information please read depanlinkXAP66:Develop a custom benchmarktengahlink#2belakanglink
 
-The structure of the [XAP66:configuration xml file|#Example configuration file] is the same for the two benchmark options.
+The structure of the depanlinkXAP66:configuration xml filetengahlink#Example configuration filebelakanglink is the same for the two benchmark options.
 
 {% anchor 1 %}
 

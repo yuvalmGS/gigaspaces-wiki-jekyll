@@ -42,7 +42,7 @@ The web service performs the following space operations:
 # Running the Web Service
 1. Download the depanlinkWeb Service WAR filetengahlink/attachment_files/sbp/CustomerServicePort.warbelakanglink.
 2. Download the depanlinkWeb Service projecttengahlink/attachment_files/sbp/WebServicePU.zipbelakanglink. This includes the entire source code for the client and the web service.
-3. Setup the application project class path libraries. See the [Client Application Project jars|#Client Application Project jars] for details.
+3. Setup the application project class path libraries. See the depanlinkClient Application Project jarstengahlink#Client Application Project jarsbelakanglink for details.
 4. Start GigaSpaces agent.
 
 
@@ -64,7 +64,7 @@ gs deploy CustomerServicePort.war
 java com.example.customerservice.client.CustomerServiceClient
 {% endhighlight %}
 
-See the [The Client Application|#The Client Application] for details.
+See the depanlinkThe Client Applicationtengahlink#The Client Applicationbelakanglink for details.
 
 # Web Service Configuration
 The WAR file includes the web service configuration. It is placed within `\CustomerServicePort\WEB-INF\cxf-servlet.xml`.

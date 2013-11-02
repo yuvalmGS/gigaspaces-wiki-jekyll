@@ -116,12 +116,12 @@ GigaSpaces XAP extends template matching by providing semantics to query ranges 
 # Clustering and Topologies
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
-The [space as defined previously|#Space - Concepts and Capabilities] is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a **cluster**, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
+The depanlinkspace as defined previouslytengahlink#Space - Concepts and Capabilitiesbelakanglink is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a **cluster**, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
 
 The three main cluster topologies are:
-- [Replication|#Replication]
-- [Partitioned|#Partitioned]
-- [Resilient Partitioning|#Resilient Partitioning]: a combination of Replication and Partitioned.
+- depanlinkReplicationtengahlink#Replicationbelakanglink
+- depanlinkPartitionedtengahlink#Partitionedbelakanglink
+- depanlinkResilient Partitioningtengahlink#Resilient Partitioningbelakanglink: a combination of Replication and Partitioned.
 
 ## Replication
 

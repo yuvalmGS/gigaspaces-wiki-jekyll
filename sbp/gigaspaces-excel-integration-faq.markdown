@@ -14,8 +14,8 @@ The following FAQs deal with the GigaSpaces Excel Integration solutions.
 
 # General FAQs
 
-- [What are the **Prerequisites**?|#Prerequisites]
-- [Why does the Space Viewer toolbar not show up in Excel?|#The Space Viewer toolbar does not show up in Excel]
+- depanlinkWhat are the **Prerequisites**?tengahlink#Prerequisitesbelakanglink
+- depanlinkWhy does the Space Viewer toolbar not show up in Excel?tengahlink#The Space Viewer toolbar does not show up in Excelbelakanglink
 
 {include:Prerequisites - GigaSpaces-Excel Integration}
 

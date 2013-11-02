@@ -99,8 +99,8 @@ depanimageterm_ipuc.giftengahimage/attachment_files/xap97net/term_ipuc.gifbelaka
 
 #### Service Grid Processing Unit Container (AKA SLA Driven Container)
 
-A Processing Unit Container which runs within a [Grid Service Container|#GSC].
-It enables running the processing unit within a [service grid|#Service Grid], which provides self-healing and SLA capabilities to components deployed on it.
+A Processing Unit Container which runs within a depanlinkGrid Service Containertengahlink#GSCbelakanglink.
+It enables running the processing unit within a depanlinkservice gridtengahlink#Service Gridbelakanglink, which provides self-healing and SLA capabilities to components deployed on it.
 
 {% endcolumn %}
 
@@ -134,7 +134,7 @@ depanimageterm_gscnet.giftengahimage/attachment_files/xap97net/term_gscnet.gifbe
 # Service Grid
 
 
-A set of [Grid Service Containers (GSC)|#GSC] managed by a [Grid Service Manager (GSM)|#GSM].
+A set of depanlinkGrid Service Containers (GSC)tengahlink#GSCbelakanglink managed by a depanlinkGrid Service Manager (GSM)tengahlink#GSMbelakanglink.
 The containers host various deployments of [Processing Units|Terminology - Basic Components#Processing Unit], [Data Grid|Terminology - Data Grid Topologies].
 Each container can be run on a separate physical machine.
 
@@ -171,8 +171,8 @@ Each container can be run on a separate physical machine.
 
 #### Grid Service Container (GSC)
 
-A [Service Grid|#Service Grid] component which hosts [Processing Unit|Terminology - Basic Components#Processing Unit] instances.
-A machine can run one or more GSC processes. Each GSC communicates with a manager component ([GSM|#GSM]). The GSC receives requests to start/stop a processing unit instance, and sends information about the machine which runs it (OS, processor architecture, current memory and CPU stats), the software installed on it and the status of processing unit instances currently running on it.
+A depanlinkService Gridtengahlink#Service Gridbelakanglink component which hosts [Processing Unit|Terminology - Basic Components#Processing Unit] instances.
+A machine can run one or more GSC processes. Each GSC communicates with a manager component (depanlinkGSMtengahlink#GSMbelakanglink). The GSC receives requests to start/stop a processing unit instance, and sends information about the machine which runs it (OS, processor architecture, current memory and CPU stats), the software installed on it and the status of processing unit instances currently running on it.
 
 {% sub %}Key sentence: A set of managed containers hosting different Processing Unit Instances{% endsub %}
 
@@ -203,7 +203,7 @@ A machine can run one or more GSC processes. Each GSC communicates with a manage
 
 #### Grid Service Manager (GSM)
 
-A [Service Grid|#Service Grid] component which manages a set of [Grid Service Containers (GSC)|#GSC].
+A depanlinkService Gridtengahlink#Service Gridbelakanglink component which manages a set of depanlinkGrid Service Containers (GSC)tengahlink#GSCbelakanglink.
 A GSM has an API for deploying/undeploying processing units. When a GSM is instructed to deploy a Processing Unit, it allocates an appropriate, available GSC and tells that GSC to run an instance of that processing unit. It then continues to monitor that the GSC is alive and the SLA is not breached.
 
 {% sub %}Key sentence: A GSM manages all the running containers in the network and deploys processing units to them.{% endsub %}
