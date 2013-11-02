@@ -254,7 +254,7 @@ Properties and nested paths can be [indexed|indexing] to boost queries performan
 
 Since the schema is flexible and new properties might be added after the type has been registered, it is possible to add indexes dynamically as well.
 
-{refer}For more information about indexing, see the [Indexing|Indexing] page.{refer}
+{% refer %}For more information about indexing, see the [Indexing|Indexing] page.{% endrefer %}
 
 # Events
 
@@ -349,7 +349,7 @@ spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
 
-{refer}For more info on storage types, please refer to [Property Storage Type]{refer}
+{% refer %}For more info on storage types, please refer to [Property Storage Type]{% endrefer %}
 
 # Persistency
 

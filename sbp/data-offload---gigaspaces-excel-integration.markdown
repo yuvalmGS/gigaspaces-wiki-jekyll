@@ -37,4 +37,4 @@ If you need the data displayed in your spreadsheet to be constantly updated, you
 
 # What's Next?
 
-{refer}[Try another pattern|Excel that Scales Solution]{refer}
+{% refer %}[Try another pattern|Excel that Scales Solution]{% endrefer %}

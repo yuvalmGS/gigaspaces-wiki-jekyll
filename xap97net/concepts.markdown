@@ -156,4 +156,4 @@ The common topology is of a partitioned cluster, where each partition member has
 {% infosign %} This topology is also known in GigaSpaces XAP as Partitioned-Sync2Backup.
 {toc-zone}
 {whr}
-{refer}**Next Chapter:** [A Typical SBA Application]{refer}
+{% refer %}**Next Chapter:** [A Typical SBA Application]{% endrefer %}

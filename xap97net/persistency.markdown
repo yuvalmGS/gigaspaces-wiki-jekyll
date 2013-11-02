@@ -61,7 +61,7 @@ ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceCon
 
 {% lampon %} You can create your own NHibernate session factory and pass it to the `NHibernateExternalDataSource` constructor. In this case, there's no need to use `SpaceConfig.ExternalDataSourceConfig.CustomProperties`.
 
-{refer} For a demonstration of how to start a partitioned-sync2backup cluster with asynchronous NHibernate persistency, refer to the [NHibernate External Data Source] section.{refer}
+{% refer %} For a demonstration of how to start a partitioned-sync2backup cluster with asynchronous NHibernate persistency, refer to the [NHibernate External Data Source] section.{% endrefer %}
 {gcard}
 {gcard:Custom SQL Data Source Implementation}
 A custom .NET `SqlDataSource` implementation can be used as well.
@@ -105,7 +105,7 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size",
 
 ## Server Side Logging
 
-{refer}To enable the .NET `ExternalDataSource` adapter logging, refer to the [GigaSpaces Logging|XAP95:GigaSpaces Logging#GigaSpacesLoggers] section.{refer}
+{% refer %}To enable the .NET `ExternalDataSource` adapter logging, refer to the [GigaSpaces Logging|XAP95:GigaSpaces Logging#GigaSpacesLoggers] section.{% endrefer %}
 
 {toc-zone}
 

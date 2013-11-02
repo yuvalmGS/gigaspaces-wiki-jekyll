@@ -162,7 +162,7 @@ if (changeResult.NumberOfChangedEntries == 0)
 
 The `IChangeResult` contains the `NumberOfChangedEntries` which specifies how many objects where changed by this operation where 0 means none were changed. The `Results` property gives further details about the objects that were actually changes by providing a collection which gives details for each of the objects that were changed, such as their id and version after the change took affect. By default, in order to reduce network overhead, calling the Results will throw `NotSupportedException`. In order to get the more detailed result, the `ChangeModifiers.ReturnDetailedResults` should be passed to the `Change` operation.
 
-{refer}For more information please refer to [Change API Advanced]{refer}
+{% refer %}For more information please refer to [Change API Advanced]{% endrefer %}
 
 # ChangeException
 

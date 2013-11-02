@@ -18,7 +18,7 @@ GigaSpaces XAP.NET components use the tracing mechanism for logging/tracing, bui
 
 If the user does not specify a configuration, the default configuration is assumed.
 
-{refer}GigaSpaces XAP.NET contains some of the GigaSpaces XAP components. Its logging level needs to be configured seperately -- this is described in [GigaSpaces XAP Logging|XAP95:GigaSpaces Logging]{refer}.
+{% refer %}GigaSpaces XAP.NET contains some of the GigaSpaces XAP components. Its logging level needs to be configured seperately -- this is described in [GigaSpaces XAP Logging|XAP95:GigaSpaces Logging]{% endrefer %}.
 
 ## Basic Configuration
 
@@ -66,11 +66,11 @@ Here are some features/scenarios which might be useful:
     - `XmlWriterTraceListener`
     - `DelimitedListTraceListener`
     - `EventLogTraceListener`
-{refer}For more details, see: [http://msdn2.microsoft.com/en-us/library/4y5y10s7.aspx].{refer}
+{% refer %}For more details, see: [http://msdn2.microsoft.com/en-us/library/4y5y10s7.aspx].{% endrefer %}
 - You can configure a trace listener with a filter to handle specific events.
-{refer}For more details, see: [http://msdn2.microsoft.com/en-us/library/system.diagnostics.eventtypefilter.aspx].{refer}
+{% refer %}For more details, see: [http://msdn2.microsoft.com/en-us/library/system.diagnostics.eventtypefilter.aspx].{% endrefer %}
 - You can implement a custom trace listener to handle traced events in a desired manner (e-mail, SMS, custom log, etc.). If you are planning to do this, we recommend that you examine the implementation of custom trace listeners provided in Microsoft's Logging Application Block as a reference.
-{refer}For more details, see:
+{% refer %}For more details, see:
 - [http://msdn2.microsoft.com/EN-US/library/aa480464.aspx]
-- [http://msdn2.microsoft.com/en-us/library/ms228989.aspx]{refer}
+- [http://msdn2.microsoft.com/en-us/library/ms228989.aspx]{% endrefer %}
 {toc-zone}

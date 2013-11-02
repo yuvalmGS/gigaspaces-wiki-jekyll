@@ -584,7 +584,7 @@ pollingEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAd
 {gcard}
 {gdeck}
 
-{refer}The order of parameters of the event handling method is strict, please refer to [Dynamic Data Event Handler Adapter|Event Listener Container#eventhandleradapter] for more information about it.{refer}
+{% refer %}The order of parameters of the event handling method is strict, please refer to [Dynamic Data Event Handler Adapter|Event Listener Container#eventhandleradapter] for more information about it.{% endrefer %}
 
 # Trigger Receive Operation
 

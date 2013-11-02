@@ -45,6 +45,6 @@ In some cases, you might want to monitor the activity of the JVM running as part
 
 !jcon2.JPG!
 
-{refer}For more details on JMX and `jconsole`, refer to:{refer}
+{% refer %}For more details on JMX and `jconsole`, refer to:{% endrefer %}
 - [Sun - Monitoring and Management Using JMX|http://java.sun.com/j2se/1.5.0/docs/guide/management/agent.html]
 - [Sun - Using jconsole|http://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.html]

@@ -91,7 +91,7 @@ Each of replication channel to the gateways can be configured with more paramete
 
 
 Here we have specified a global bulk size of 1000 but have specifically overridden it in the replication channel to Hong Kong with 100, and have a global maximum redo log capacity for both targets of 1000000.
-{refer}For more details about all the available configuration elements of the space gateway targets please refer to the [Configuring Space Gateway Targets] section.{refer}
+{% refer %}For more details about all the available configuration elements of the space gateway targets please refer to the [Configuring Space Gateway Targets] section.{% endrefer %}
 
 
 {% tip %}
@@ -162,7 +162,7 @@ have no meaning, all sites could designate the same ports as well-->
 In the above example we see that both the sink and delegator needs a reference to the gateway lookup configuration, and that's because both components are using this configuration to locate the relevant component or to register themselves. They use their local gateway name to identify themselves to the lookup configuration, where they should be registered and where they should look for their targets.
 
 The delegator and sink components are actually isolated and can even be deployed in separate processing units but the most simple deployment would be to bundle theses two together. However, in some cases you might want to separate this into two or more machines due to system loads or other reasons.
-{refer}For full details and available configuration please refer to [Replication Gateway Components|XAP95:Replication Gateway Components]{refer}
+{% refer %}For full details and available configuration please refer to [Replication Gateway Components|XAP95:Replication Gateway Components]{% endrefer %}
 
 ## Gateway and the Mirror Service
 
@@ -746,12 +746,12 @@ The [Multi-Master running example|SBP:WAN Replication Gateway] includes a three-
 # Filtering Replication Between Gateways
 
 In some cases, there can be data that should not be replicated between the sites but should still be replicated locally to the backup or a mirror service. Hence, specifying the object is not replicated does not fit. Since a replication channel to a gateway is like any other replication channel, a custom [Replication Filter|XAP95:Cluster Replication Filters] at the source space can be used to filter the relevant data from being sent to the target gateway. This filtering should be based on the replication target name in order to identify that the replication filter is called for the correct outgoing replication to the gateway.
-{refer}For full details and example please refer to [Replication Gateway Filtering|XAP95:Replication Gateway Filtering]{refer}
+{% refer %}For full details and example please refer to [Replication Gateway Filtering|XAP95:Replication Gateway Filtering]{% endrefer %}
 
 # Bootstrap One Site From Another Site
 
 Bootstrapping a site from another site is a process in which one site space is starting fresh and it is being populated with the data of another site space. This can be useful after a very long disconnection where the replication redo-log in the source spaces that replicates to this site was dropped due to breaching capacity limitations, and the disconnected site should start fresh. Other reasons may be an explicit planned downtime due-to some maintenance of one site which lead to a complete system bootstrap once restarted.
-{refer}For full details of how to enable the bootstrap mechanism refer to [Replication Gateway Bootstrapping Process|Replication Gateway Bootstrapping Process]{refer}
+{% refer %}For full details of how to enable the bootstrap mechanism refer to [Replication Gateway Bootstrapping Process|Replication Gateway Bootstrapping Process]{% endrefer %}
 
 
 {% comment %}

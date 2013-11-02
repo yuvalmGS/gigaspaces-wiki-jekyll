@@ -12,7 +12,7 @@ page_id: 47219379
 
 This section shows you how to write your first RTD or UDF application using the GigaSpaces-Excel integration.
 
-{refer}See some basic and advanced code examples for [working with UDF and RTD|RTD and UDF Examples - GigaSpaces-Excel Integration].{refer}
+{% refer %}See some basic and advanced code examples for [working with UDF and RTD|RTD and UDF Examples - GigaSpaces-Excel Integration].{% endrefer %}
 
 {include: Prerequisites - GigaSpaces-Excel Integration}
 
@@ -41,5 +41,5 @@ This section shows you how to write your first RTD or UDF application using the 
 
 # What's Next?
 
-{refer}See the [GigaSpaces-Excel Market-Data Example].{refer}
-{refer}Back to The [Excel that Scales Solution] section.{refer}
+{% refer %}See the [GigaSpaces-Excel Market-Data Example].{% endrefer %}
+{% refer %}Back to The [Excel that Scales Solution] section.{% endrefer %}

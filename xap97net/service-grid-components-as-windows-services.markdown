@@ -22,7 +22,7 @@ Windows Services have several advantages over standard console applications. Mos
 
 These features can come in handy on servers running Service Grid: For example, a Grid Service Manager and Grid Service Container can be automatically started when the machine restarts, then processing units will be automatically deployed to the service grid using the Command Line Interface service.
 
-{refer}See [Deployment on Machine Startup|Deployment on Machine Startup] to learn how to start service grid and deploy processing units automatically on machine startup{refer}
+{% refer %}See [Deployment on Machine Startup|Deployment on Machine Startup] to learn how to start service grid and deploy processing units automatically on machine startup{% endrefer %}
 
 # GigaSpaces Windows Services Manager
 

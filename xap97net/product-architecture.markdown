@@ -278,4 +278,4 @@ This package contains integrations with non-XAP components. For more information
 {toc-zone}
 
 {whr}
-{refer} **Next chapter**: [Terminology]{refer}
+{% refer %} **Next chapter**: [Terminology]{% endrefer %}

@@ -7,7 +7,7 @@ page_id: 63799325
 
 {summary}This page is focused on designing interoperable classes manually, and some related advanced features.{summary}
 
-{refer}The [.Net-Java Example] demonstrates many .NET-Java interoperability features.{refer}
+{% refer %}The [.Net-Java Example] demonstrates many .NET-Java interoperability features.{% endrefer %}
 
 # Designing Interoperable Classes
 

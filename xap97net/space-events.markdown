@@ -69,4 +69,4 @@ proxy.DefaultDataEventSession.RemoveListener(registration);
 {% endhighlight %}
 
 
-{refer}In most cases, using the `DefaultDataEventSession` is enough, however, in some scenarios the `DataEventSession` needs to be customized. This topic is covered in [Advance Events Scenarios|Advance Events Scenarios]{refer}
+{% refer %}In most cases, using the `DefaultDataEventSession` is enough, however, in some scenarios the `DataEventSession` needs to be customized. This topic is covered in [Advance Events Scenarios|Advance Events Scenarios]{% endrefer %}

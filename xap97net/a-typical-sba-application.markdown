@@ -180,4 +180,4 @@ The following is a snippet taken from the example SLA definition section of the 
 
 {toc-zone}
 {whr}
-{refer}**Next Chapter:** [Database Integration]{refer}
+{% refer %}**Next Chapter:** [Database Integration]{% endrefer %}

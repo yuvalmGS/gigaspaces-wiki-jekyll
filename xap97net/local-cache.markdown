@@ -96,7 +96,7 @@ Since the cache needs to investigate the template to decide whether it is consid
 
 The Entries stored in the local cache might need to be evicted at some point, due to size limitations, time limitations, etc. This behavior is determined by the eviction strategy the cache has been configured to work with. XAP.NET comes with a few built-in eviction strategies -- LRU (Last Recently Used), which is the default strategy, FIFO, LFU, and more. Eviction strategy is a pluggable component that can also be implemented with custom behavior.
 
-{refer}Refer to [Cache Eviction Strategy|Cache Eviction Strategy] for more info.{refer}
+{% refer %}Refer to [Cache Eviction Strategy|Cache Eviction Strategy] for more info.{% endrefer %}
 
 {% anchor sync %}
 

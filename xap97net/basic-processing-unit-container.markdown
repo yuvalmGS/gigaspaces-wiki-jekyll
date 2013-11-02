@@ -12,7 +12,7 @@ page_id: 63799338
 
 A [processing unit container|Processing Unit Container] is a component implemented by the user and deployed and managed by the service grid. XAP.NET comes with a built-in type implementation of the processing unit container called the `BasicProcessingUnitContainer` which provides basic implementations for common activities, and allows the user to focus on business logic and less with GigaSpaces internals.
 
-{refer}For a full example of a processing unit and a usage of the `BasicProcessingUnitContainer` refer to the [SBA Example].{refer}
+{% refer %}For a full example of a processing unit and a usage of the `BasicProcessingUnitContainer` refer to the [SBA Example].{% endrefer %}
 
 # Using The Container
 
@@ -151,9 +151,9 @@ public class MyService : IService
 
 An [event listener container|Event Driven Architecture] is one of the most commonly used GigaSpaces components as part of a processing unit. Similarly to the other components, such event containers can be automatically detected, created and managed by the basic container. The basic container will automatically detect classes that need to be wrapped with the proper event listener container via the corresponding `EventDriven` attributes (`PollingEventDriven` or `NotifyEventDriven`) that mark them.
 
-{refer}
+{% refer %}
 See [Polling Container Component|Polling Container Component] and [Notify Container Component|Notify Container Component] for more info regarding event listener containers.
-{refer}
+{% endrefer %}
 
 
 {% highlight java %}
@@ -253,6 +253,6 @@ public void MyEventListener(ISpaceProxy spaceProxy)
 When registering for the \[BeforePrimary\] or \[BeforeBackup\], special care should be taken. The event handling of these listeners will **delay the space instance life cycle completion** for a co-located space instance - i.e., a primary space instance will be blocked from fully becoming a primary space until it completes all the invocations of the \[BeforePrimary\] subscribers. There is no guarantee for receiving a corresponding Before event always prior to a Post event. When the processing unit starts, the event subscription is asynchronous to the space instance active election; in this case it is quite reasonable not to receive the Before events and only to receive the Post events.
 {toc-zone}
 
-{refer}
+{% refer %}
 For more details about the Basic Processing Unit Container please refer to the [Detailed Basic Processing Unit Container|Detailed Basic Processing Unit Container] page.
-{refer}
+{% endrefer %}

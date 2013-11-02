@@ -14,7 +14,7 @@ Executor based remoting uses [Executors|Task Execution over the Space] to implem
 
 !GRA:Images^Executor.jpg!
 
-{refer}For a full SBA example demonstrating remote services usage please refer to the [Data Example|.NET Processing Unit Data Example]{refer}
+{% refer %}For a full SBA example demonstrating remote services usage please refer to the [Data Example|.NET Processing Unit Data Example]{% endrefer %}
 
 # Defining the Contract
 
@@ -66,7 +66,7 @@ public class DataProcessor : IDataProcessor
 
 {% infosign %} Hosting services is done on a Processing Unit that starts an embedded space.
 
-{refer}For more details regarding service hosting please refer to [Domain Service Host|Domain Service Host]{refer}
+{% refer %}For more details regarding service hosting please refer to [Domain Service Host|Domain Service Host]{% endrefer %}
 
 # Using the Service on the Client Side
 
@@ -99,7 +99,7 @@ IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 {% endhighlight %}
 
 
-{refer}Learn how to host a service under specific lookup names in [Domain Service Host|Domain Service Host#Service Lookup Name]{refer}
+{% refer %}Learn how to host a service under specific lookup names in [Domain Service Host|Domain Service Host#Service Lookup Name]{% endrefer %}
 
 ## Remote Routing Handler
 

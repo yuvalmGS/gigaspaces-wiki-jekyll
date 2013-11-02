@@ -14,7 +14,7 @@ The .NET Processing Unit Container is based on the [OpenSpaces Processing Unit|X
 
 The Processing Unit Container is aware of the [cluster info|#ClusterInfo]. This allows you to write your code decoupled from cluster topologies considerations.
 
-{refer}Learn how to use the .NET Processing Unit Container in the **[SBA Example]** section.{refer}
+{% refer %}Learn how to use the .NET Processing Unit Container in the **[SBA Example]** section.{% endrefer %}
 
 
 {% tip %}
@@ -105,14 +105,14 @@ The `pu.config` you've created needs to be edited to point to your Processing Un
 
 {toc-zone}
 
-{refer}It is possible to create a processing unit of mixed languages, for instance part Java, part .NET. This topic is covered in [Interop Processing Unit|Interop Processing Unit] page.{refer}
+{% refer %}It is possible to create a processing unit of mixed languages, for instance part Java, part .NET. This topic is covered in [Interop Processing Unit|Interop Processing Unit] page.{% endrefer %}
 
 # SLA Definition
 
 In order to define the service layer agreement of your processing unit, an SLA file needs to be created.
 That file should be named `sla.xml`, and should be placed in the root directory of the processing unit.
 
-{refer}Read about SLA in [Service Grid Processing Unit Container|XAP97NET:Basic Processing Unit Container].{refer}
+{% refer %}Read about SLA in [Service Grid Processing Unit Container|XAP97NET:Basic Processing Unit Container].{% endrefer %}
 
 # Deployment
 

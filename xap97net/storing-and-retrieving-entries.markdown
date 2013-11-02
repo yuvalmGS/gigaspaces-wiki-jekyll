@@ -60,11 +60,11 @@ proxy.Write(kermit);
 {% endhighlight %}
 
 
-{refer}See full details in [Writing and Updating Entries|Writing and Updating Entries]{refer}
+{% refer %}See full details in [Writing and Updating Entries|Writing and Updating Entries]{% endrefer %}
 
 {% comment %}
 
-{refer}See how to [connect to a space|Connecting to a Space]{refer}
+{% refer %}See how to [connect to a space|Connecting to a Space]{% endrefer %}
 
 {% endcomment %}
 
@@ -93,7 +93,7 @@ Person readResult = proxy.Read(readTemplate);
 {% endhighlight %}
 
 
-{refer}See full details in [Reading Entries|Reading Entries]{refer}
+{% refer %}See full details in [Reading Entries|Reading Entries]{% endrefer %}
 
 # Retrieving and Removing an Entry - Take
 
@@ -124,7 +124,7 @@ All operations are done through a proxy to a space, that proxy can also be a pro
 
 The SpaceRouting is determined by the `[\[SpaceRouting\]|Object Metadata#SpaceRouting]` attribute or using a [gs.xml|GS.XML Metadata].
 
-{refer}SpaceRouting consideration in [Write and Update operation|Writing and Updating Entries]{refer}
-{refer}SpaceRouting consideration in [Read operation|Reading Entries]{refer}
+{% refer %}SpaceRouting consideration in [Write and Update operation|Writing and Updating Entries]{% endrefer %}
+{% refer %}SpaceRouting consideration in [Read operation|Reading Entries]{% endrefer %}
 
 {toc-zone}

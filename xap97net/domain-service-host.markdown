@@ -12,8 +12,8 @@ page_id: 63799411
 
 The domain service host is used to host services within the hosting processing unit domain which are exposed for remote invocation. A service is an implementation of one or more interfaces which acts upon the service contract. Each service can be hosted by publishing it through the domain service host later to be invoked by a remote client.
 
-{refer}To learn how to create a remote proxy to the service please refer to [Executor Based Remoting|Executor Based Remoting]{refer}
-{refer}For a full SBA example demonstrating remote services usage please refer to the [SBA Example]{refer}
+{% refer %}To learn how to create a remote proxy to the service please refer to [Executor Based Remoting|Executor Based Remoting]{% endrefer %}
+{% refer %}For a full SBA example demonstrating remote services usage please refer to the [SBA Example]{% endrefer %}
 
 # Defining the Contract
 

@@ -199,9 +199,9 @@ We configure a single colocated space specified by the Url of the space, in our 
 
 This data processor comes with an sla.xml file which define the default topology, which in our case is a cluster of 2 primaries and a single backup per primary. This can be override at deploy time or by editing the sla.xml file that resides in the data processor deployment directory.
 
-{refer}See [Event Driven Architecture|Event Driven Architecture] for more info about event listening abstraction.{refer}
-{refer}See [Space Based Remoting|Space Based Remoting] for more info about remoting services over the grid.{refer}
-{refer}See [Basic Processing Unit Container|Basic Processing Unit Container] for more info about the built in basic processing unit container.{refer}
+{% refer %}See [Event Driven Architecture|Event Driven Architecture] for more info about event listening abstraction.{% endrefer %}
+{% refer %}See [Space Based Remoting|Space Based Remoting] for more info about remoting services over the grid.{% endrefer %}
+{% refer %}See [Basic Processing Unit Container|Basic Processing Unit Container] for more info about the built in basic processing unit container.{% endrefer %}
 
 {% anchor datafeeder %}
 

@@ -29,7 +29,7 @@ The example demonstrates the following:
 
 {% lampon %} **[Download the example|^ExcelStocks.zip]** and extract it into your `<GigaSpaces Root>\Examples` directory.
 
-{refer}Getting Started with RTD and UDF? See the [Writing Your First RTD/UDF Application|Writing Your First RTD or UDF Application] section.{refer}
+{% refer %}Getting Started with RTD and UDF? See the [Writing Your First RTD/UDF Application|Writing Your First RTD or UDF Application] section.{% endrefer %}
 
 {include:Prerequisites - GigaSpaces-Excel Integration}
 
@@ -110,4 +110,4 @@ The following metrics describe the scope of testing performed using the examples
 
 {% exclamation %} A .NET local cache on the Excel side is not supported.
 
-{refer}Back to The [Excel that Scales Solution] section.{refer}
+{% refer %}Back to The [Excel that Scales Solution] section.{% endrefer %}

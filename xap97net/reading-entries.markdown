@@ -12,7 +12,7 @@ page_id: 63799307
 Entries can be retrieved from the space using the `Read` method. A read operation queries the space for an entry matching the provided [template|Query Template Types], and returns a copy of that entry (or null, if no match is found).
 The returned object is a copy of the entry stored in the space, which means that changing the returned object does not affect the entry stored in the space.
 
-{refer}See [Storing and Retrieving Entries|Storing and Retrieving Entries#Retrieving an Entry - Read] for basic reading demonstration.{refer}
+{% refer %}See [Storing and Retrieving Entries|Storing and Retrieving Entries#Retrieving an Entry - Read] for basic reading demonstration.{% endrefer %}
 
 This page demonstrates basic space operations using a class called `Person`:
 
@@ -42,7 +42,7 @@ public class Person
 {% endhighlight %}
 
 
-{refer}See also the [Object Metadata] and [GS.XML Metadata] sections for details about the GigaSpaces class decorations you may specify.{refer}
+{% refer %}See also the [Object Metadata] and [GS.XML Metadata] sections for details about the GigaSpaces class decorations you may specify.{% endrefer %}
 
 # Blocking Read
 
@@ -81,15 +81,15 @@ public class Person
 {% endhighlight %}
 
 
-{refer}For more information about routing, see [SpaceRouting|Object Metadata#Routing] or [GS.XML Metadata].{refer}
+{% refer %}For more information about routing, see [SpaceRouting|Object Metadata#Routing] or [GS.XML Metadata].{% endrefer %}
 {% exclamation %} **Note:** [Blocking read|#Blocking Read] is not supported on a clustered proxy.
 
 # Improving performance
 
 If a certain property is commonly used when querying the space, you can instruct the space to index it for faster retrieval. Moreover, if one of the object's properties is marked as `SpaceID` and is used in the template, the matching mechanism will recognize it and use it to optimize the search.
 
-{refer}See also [Unique Constraints|Object Metadata#Unique Constraints]. {refer}
-{refer}See also [Indexing|Object Metadata#Indexing]. {refer}
+{% refer %}See also [Unique Constraints|Object Metadata#Unique Constraints]. {% endrefer %}
+{% refer %}See also [Indexing|Object Metadata#Indexing]. {% endrefer %}
 
 # When a Template Matches More Than One Entry
 
@@ -117,4 +117,4 @@ If you're interested in reading multiple entries at once, you can use the `ReadM
 
 {% exclamation %} Calling `ReadMultiple` operation with a large `maxItems` argument is dangerous - if the space contains many matching entries the result set will be very large, which will impact the network traffic and performance, and possibly result in an out of memory exception. for more information, see the `IReadOnlySpaceProxy.GetSpaceIterator`.
 
-{refer}If you're interested in guaranteeing First-In-First-Out, see [FIFO support]. {refer}
+{% refer %}If you're interested in guaranteeing First-In-First-Out, see [FIFO support]. {% endrefer %}

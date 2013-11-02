@@ -79,4 +79,4 @@ public class MyObject
 
 
 The storage type of the dynamic properties can be explicitly set in the attribute \[SpaceDynamicProperties(StorageType=StorageType.Binary)\] (the default is StorageType.Object).
-{refer}For more details about storage type refer to [Property Storage Type]{refer}
+{% refer %}For more details about storage type refer to [Property Storage Type]{% endrefer %}
