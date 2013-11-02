@@ -27,7 +27,8 @@ page_id: 63799407
 {% endcomment %}
 
 {% anchor Data Grid %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -51,7 +52,8 @@ The relations between the spaces define the [Data Grid Topology|#Data Grid Topol
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
+
 {% anchor Data Grid Topology %}
 
 # Data Grid Topologies
@@ -64,7 +66,8 @@ The relations between the spaces define the [Data Grid Topology|#Data Grid Topol
 {% endcomment %}
 
 {% anchor Primary Backup Data Grid %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -87,7 +90,7 @@ Operations that do not modify any data (e.g. read, count) are performed only on 
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 {% comment %}
 ----------------------------
@@ -96,7 +99,8 @@ Operations that do not modify any data (e.g. read, count) are performed only on 
 {% endcomment %}
 
 {% anchor Partitioned Data Grid %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -119,7 +123,7 @@ When the objects are written to this Data Grid, they are routed to the proper pa
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 {% comment %}
 ----------------------------
@@ -128,7 +132,8 @@ When the objects are written to this Data Grid, they are routed to the proper pa
 {% endcomment %}
 
 {% anchor Routing %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -152,7 +157,7 @@ The routing is based on a designated property/field inside the objects that are 
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 {% comment %}
 --------------------------------------------------
@@ -161,7 +166,8 @@ The routing is based on a designated property/field inside the objects that are 
 {% endcomment %}
 
 {% anchor Primary Backup Partitioned Data Grid %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -182,7 +188,7 @@ A [partitioned Data Grid|#Partitioned Data Grid], with one or more [backup|#Prim
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 
 |[Basic Components|Terminology - Basic Components]||Data Grid Topologies|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|

@@ -6,7 +6,8 @@ page_id: 63799408
 ---
 
 {% compositionsetup %}
-{section}
+
+{% section %}
 
 {% column width=70% %}
 
@@ -63,4 +64,4 @@ Administrating GigaSpaces XAP.NET components, including "how to", troubleshootin
 
 {% endcolumn %}
 
-{section}
+{% endsection %}

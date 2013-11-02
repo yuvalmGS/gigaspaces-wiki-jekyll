@@ -6,7 +6,8 @@ page_id: 63799415
 ---
 
 {% compositionsetup %}
-{section}
+
+{% section %}
 
 {% column width=70% %}
 
@@ -54,4 +55,4 @@ page_id: 63799415
 
 {% endcolumn %}
 
-{section}
+{% endsection %}

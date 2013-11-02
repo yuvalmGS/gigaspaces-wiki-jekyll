@@ -8,7 +8,7 @@ page_id: 63799403
 {% compositionsetup %}
 {summary}The Benchmark Example measures the performance of several GigaSpaces .Net API operations.{summary}
 
-{section}
+{% section %}
 
 {% column width=7% %}
 
@@ -29,7 +29,7 @@ page_id: 63799403
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 # Overview
 

@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799424
 ---
 
-{section}
+{% section %}
 If you would like to run the tutorial sample application, download GigaSpaces and set up your development environment.
 
 {% column width=10% %}
@@ -30,9 +30,9 @@ Create your first simple Hello World caching application
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
-{section}
+{% section %}
 
 {% column width=10% %}
 
@@ -56,4 +56,4 @@ A kitchen sink demonstration of all the major features in GigaSpaces XAP.NET
 
 {% endcolumn %}
 
-{section}
+{% endsection %}

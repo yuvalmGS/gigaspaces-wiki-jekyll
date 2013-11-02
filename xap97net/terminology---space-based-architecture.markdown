@@ -27,7 +27,8 @@ page_id: 63799428
 {% endcomment %}
 
 {% anchor Space Based Architecture %}
-{section}
+
+{% section %}
 **A Space-Based Architecture (SBA) implementation** is a set of Processing Units, with the following properties:
 
 - Each processing unit instances holds a [partitioned|Terminology - Data Grid Topologies#Partitioned Data Grid] space instance and one or more services that are registered on events on that specific partition. Together they form an application cluster. If the cluster is required to be highly available, each primary partition has one or more backup partitions, which run in their own processing unit instances. These instances are inactive, and become active only when their primary partition fails.
@@ -50,6 +51,6 @@ page_id: 63799428
 {% sub %}**An SBA implementation, with 3 primary instances and one backup for each them, accessed by two client applications**{% endsub %}
 
 {% endalign %}
-{section}
+{% endsection %}
 
 |[Basic Components|Terminology - Basic Components]|[Data Grid Topologies|Terminology - Data Grid Topologies]||Space-Based Architecture|[Runtime Components|Terminology - Runtime Components]|

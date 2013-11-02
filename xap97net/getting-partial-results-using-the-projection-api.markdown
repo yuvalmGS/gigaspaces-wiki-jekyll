@@ -9,7 +9,7 @@ page_id: 63799308
 
 # Overview
 
-{section}
+{% section %}
 
 {% column width=40 %}
 
@@ -23,7 +23,7 @@ In some cases when querying the space for objects, only specific properties of o
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 # Specifying a Projection with your Query
 

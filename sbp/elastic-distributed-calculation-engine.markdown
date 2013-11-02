@@ -19,7 +19,8 @@ page_id: 56427156
 {rate}
 
 # Overview
-{section}
+
+{% section %}
 
 {% column %}
 
@@ -40,7 +41,7 @@ The Elastic Calculation Engine example illustrates the following:
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 The Distributed Calcualtion Engine performs Net Present Value calculations where the Trades used for the calculation divided into several Books. These books could represent different types of Trades, different markets, different customers , etc.
 

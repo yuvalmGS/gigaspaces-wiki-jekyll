@@ -70,7 +70,8 @@ Often this occurs because of the data access layer, which cannot feed data quick
 This is known as a starvation scenario.
 
 To solve this bottleneck, the processing unit allows you to **colocate** the business logic and data; both data and business logic are hosted within the same process, sharing the same memory space. Colocating business logic and data can be done statically (user service associated with a colocated space), or dynamically (via [Service Executors |Map-Reduce Pattern - Executors Example#Service Executors Example] or [Task Executors|Map-Reduce Pattern - Executors Example#Executors Task Example]).
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -95,13 +96,14 @@ Collocated Mode - The Task Executor-Step 2:
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 ### CPU Starvation
 In other cases, the bottleneck is not data access, but in the amount of time it takes to process the incoming data (a.k.a. the CPU bound scenario). In this scenario, there is no problem with accessing the data and handing it to the business logic that needs to process it. However, there is a need to run the business logic across as many CPUs and machines as possible, to fully take advantage of the resources over the network.
 
 In this case, it makes better sense to have the data and business logic running in separate processing units, each with its own SLA and scaling requirements. In this case, the business logic may use the [Master-Worker Pattern], having the actual business logic running separately and independently from the space processing unit.
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -126,7 +128,8 @@ Non-Collocated Mode - The Master Worker Pattern-Step 2:
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
+
 GigaSpaces allows you to build your business logic without having to take the final deployment topology into consideration. The code can be designed, implemented and unit-tested using a single, embedded space colocated with the business logic on your development or testing environment. The same code can then be deployed across a production system involving hundreds of machines having hundreds of spaces with the business logic and data in separated spaces, ultimately processing millions of data items per second with a sub-millisecond latency.
 
 So the question is: to colocate or not to colocate?

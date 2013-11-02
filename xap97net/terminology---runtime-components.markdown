@@ -29,7 +29,8 @@ page_id: 63799418
 {% endcomment %}
 
 {% anchor Processing Unit Container %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -48,7 +49,7 @@ A container that hosts a [Processing Unit|Terminology - Basic Components#Process
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 # Types of Processing Unit Containers
 
@@ -59,7 +60,7 @@ A container that hosts a [Processing Unit|Terminology - Basic Components#Process
 ----------------------------
 {% endcomment %}
 
-{section}
+{% section %}
 
 {% column width=50% %}
 
@@ -82,7 +83,7 @@ A container that runs the Processing Unit inside an IDE (e.g. Visual Studio, Ecl
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 {% comment %}
 ----------------------------
@@ -91,7 +92,8 @@ A container that runs the Processing Unit inside an IDE (e.g. Visual Studio, Ecl
 {% endcomment %}
 
 {% anchor SGPUC %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -113,7 +115,8 @@ It enables running the processing unit within a [service grid|#Service Grid], wh
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
+
 {whr}
 
 {% comment %}
@@ -123,7 +126,8 @@ It enables running the processing unit within a [service grid|#Service Grid], wh
 {% endcomment %}
 
 {% anchor Service Grid %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -151,7 +155,7 @@ Each container can be run on a separate physical machine.
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 {% comment %}
 ----------------------------
@@ -160,7 +164,8 @@ Each container can be run on a separate physical machine.
 {% endcomment %}
 
 {% anchor GSC %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -182,7 +187,7 @@ A machine can run one or more GSC processes. Each GSC communicates with a manage
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 {% comment %}
 -------------------------------------------------
@@ -191,7 +196,8 @@ A machine can run one or more GSC processes. Each GSC communicates with a manage
 {% endcomment %}
 
 {% anchor GSM %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -213,7 +219,7 @@ A GSM has an API for deploying/undeploying processing units. When a GSM is instr
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 {% comment %}
 -------------------------------------------------
@@ -222,7 +228,8 @@ A GSM has an API for deploying/undeploying processing units. When a GSM is instr
 {% endcomment %}
 
 {% anchor Management UI %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -245,7 +252,7 @@ Enables the user to view and interact with the runtime components running in the
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 
 

@@ -223,7 +223,8 @@ Click the Query button to view the Customer Data:
 # WAR file jars
 The CustomerServicePort.war file includes the following jars within its `\CustomerServicePort\WEB-INF\lib` folder.
 Spring and Jetty jars should not be included since they are loaded by GigaSpaces:
-{section}
+
+{% section %}
 
 {% column %}
 
@@ -286,7 +287,7 @@ xmlschema-core-2.0.jar
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 # Client Application Project jars
 The Client project should include the following libraries:

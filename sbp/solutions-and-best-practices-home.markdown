@@ -5,7 +5,7 @@ categories: SBP
 page_id: 48236956
 ---
 
-{section}
+{% section %}
 
 {% column width=70% %}
 
@@ -103,4 +103,4 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 {% endcolumn %}
 
-{section}
+{% endsection %}

@@ -9,7 +9,7 @@ page_id: 63799365
 {summary}This example demonstrates how to harness the Service Grid Admin API to build an agent
 that monitors a deployed application, and scale it up on demand.{summary}
 
-{section}
+{% section %}
 
 {% column width=7% %}
 
@@ -26,7 +26,7 @@ that monitors a deployed application, and scale it up on demand.{summary}
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 # Overview
 

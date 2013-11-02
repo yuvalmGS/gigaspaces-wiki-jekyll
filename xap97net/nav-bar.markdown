@@ -6,7 +6,8 @@ page_id: 63799331
 ---
 
 {wnavpanel2:}
-{section}
+
+{% section %}
 
 {% align center %}
 
@@ -17,7 +18,7 @@ page_id: 63799331
 
 {% endalign %}
 
-{section}
+{% endsection %}
 
 {wnavpanel2}
 {wnavpanel2:Search XAP.NET 9.7|main}

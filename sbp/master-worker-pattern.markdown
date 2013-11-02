@@ -48,7 +48,8 @@ We invite you to [download|Master-Worker Pattern^MasterWorker.zip] the code exam
 
 # Example 1 - Random Workers
 With the Random Workers approach, each worker can consume `Request` objects from **every** space partition. In this case, the non-blocking mode is used. The workers scan the partitions in a round-robin fashion for a `Request` object to consume and execute. With this approach, there might be a small delay until the workers consume a `Request` object. This approach might generate some chatting over the network, since the workers connect to all existing partitions to look for `Request` objects to consume and in case none is found, wait for some time and then try again.
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -73,7 +74,7 @@ Step 2:
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 {gdeck:Random Workers approach|top}
 {gcard:The Master}
@@ -282,7 +283,8 @@ Deploying the Workers PU:
 
 # Example 2 - Designated Workers
 With this approach, each new worker is assigned a specific ID and consumes `Request` objects from a designated partition. In this case, the worker runs in blocking mode. The `Request` object routing field is populated with the partition ID, with the Polling Container template, and is also populated by the `Master` application before it is written into the partitioned clustered space.
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -307,7 +309,7 @@ Step 2:
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 
 {% tip %}

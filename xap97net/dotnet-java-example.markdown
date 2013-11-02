@@ -8,7 +8,7 @@ page_id: 63799316
 {% compositionsetup %}
 {summary}The .NET-Java  Example illustrates basic interoperability operations between Java and .NET space proxies.{summary}
 
-{section}
+{% section %}
 
 {% column width=7% %}
 
@@ -25,7 +25,7 @@ page_id: 63799316
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 # Overview
 

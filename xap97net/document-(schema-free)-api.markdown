@@ -10,7 +10,7 @@ page_id: 63799383
 
 # Overview
 
-{section}
+{% section %}
 
 {% column %}
 
@@ -24,7 +24,8 @@ The GigaSpaces document API exposes the space as [Document Store|http://en.wikip
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
+
 Unlike POJOs, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic - users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the class `SpaceTypeDescriptor`.
 
 Before a certain Document instance is written to the space, its type should be introduced to it. The type has a name and controls metadata such as identifier property, routing property and which properties are initially indexed (naturally, you can also index new properties at runtime after adding them to your documents).

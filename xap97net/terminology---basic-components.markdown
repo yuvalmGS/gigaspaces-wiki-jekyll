@@ -27,7 +27,8 @@ page_id: 63799398
 {% endcomment %}
 
 {% anchor Space %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -50,7 +51,8 @@ The GigaSpaces cache instance that holds data objects in memory.
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
+
 {whr}
 
 {% comment %}
@@ -60,7 +62,8 @@ The GigaSpaces cache instance that holds data objects in memory.
 {% endcomment %}
 
 {% anchor Execute, Read, Write, Take and Notify %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -82,7 +85,8 @@ A set of methods used to read, write, take, and register for notification on obj
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
+
 {whr}
 
 {% comment %}
@@ -97,7 +101,8 @@ A set of methods used to read, write, take, and register for notification on obj
 {% endcomment %}
 
 {% anchor Service Component %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -119,7 +124,8 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
+
 {whr}
 
 {% comment %}
@@ -129,7 +135,8 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 {% endcomment %}
 
 {% anchor Processing Unit %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -149,7 +156,7 @@ A combination of service components and/or an embedded space instance. This is t
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 # Common Processing Unit Configurations
 
@@ -160,7 +167,7 @@ A combination of service components and/or an embedded space instance. This is t
 ----------------------------
 {% endcomment %}
 
-{section}
+{% section %}
 
 {% column width=50% %}
 
@@ -180,7 +187,7 @@ A deployable package which instantiates an embedded space instance, also called 
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 {% comment %}
 ----------------------------
@@ -188,7 +195,7 @@ A deployable package which instantiates an embedded space instance, also called 
 ----------------------------
 {% endcomment %}
 
-{section}
+{% section %}
 
 {% column width=50% %}
 
@@ -208,7 +215,7 @@ A deployable package containing one or more services. In the GigaSpaces context,
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 {% comment %}
 ----------------------------
@@ -216,7 +223,7 @@ A deployable package containing one or more services. In the GigaSpaces context,
 ----------------------------
 {% endcomment %}
 
-{section}
+{% section %}
 
 {% column width=50% %}
 
@@ -237,7 +244,7 @@ Client application (which can also be other processing units) write objects to t
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 
 ||Basic Components|[Data Grid Topologies|Terminology - Data Grid Topologies]|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|

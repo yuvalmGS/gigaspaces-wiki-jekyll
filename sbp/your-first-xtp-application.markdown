@@ -8,7 +8,7 @@ page_id: 63799346
 {% compositionsetup %}
 {summary:page|65}This example demonstrates basic usage of a .NET Processing Unit. The example contains two Processing Unit Containers; one that feeds data objects into the system, and another that reads these objects and processes them.{summary}
 
-{section}
+{% section %}
 
 {% column width=7% %}
 
@@ -29,7 +29,7 @@ page_id: 63799346
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 # Overview
 

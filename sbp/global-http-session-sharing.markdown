@@ -74,7 +74,8 @@ The end-to-end path between the 2 data center nodes includes the servlet and Shi
 The GigaSpaces Global HTTP Session Sharing support two Load-Balancing scenarios:
 
 ##### Session Sharing Scenario
-{section}
+
+{% section %}
 
 {% column width=40% %}
 
@@ -93,10 +94,11 @@ Have `cacheManager.cacheSessionLocally = true` when you would like multiple web 
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 ##### Session Failover Scenario
-{section}
+
+{% section %}
 
 {% column width=40% %}
 
@@ -115,7 +117,7 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 ### The Web Application
 
