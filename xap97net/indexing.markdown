@@ -6,7 +6,9 @@ page_id: 63799369
 ---
 
 {% compositionsetup %}
-{summary} Using indexes to improve performance. {summary}
+
+{% summary %} Using indexes to improve performance. {% endsummary %}
+
 
 # Overview
 

@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799350
 ---
 
-{summary}Querying the space using SqlQuery{summary}
+
+{% summary %}Querying the space using SqlQuery{% endsummary %}
+
 
 # Overview
 

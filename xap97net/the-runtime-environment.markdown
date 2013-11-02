@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799318
 ---
 
-{summary}This section gives a detailed description of the GigaSpaces deployment & runtime environment.{summary}
+
+{% summary %}This section gives a detailed description of the GigaSpaces deployment & runtime environment.{% endsummary %}
+
 
 {% anchor GSRuntimeEnv %}
 

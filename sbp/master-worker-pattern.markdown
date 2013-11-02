@@ -6,7 +6,9 @@ page_id: 51118939
 ---
 
 {% compositionsetup %}
-{summary}Implementing the Master-Worker Pattern with GigaSpaces XAP.{summary}
+
+{% summary %}Implementing the Master-Worker Pattern with GigaSpaces XAP.{% endsummary %}
+
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.0GA**
 JDK:**Sun JDK 1.6**

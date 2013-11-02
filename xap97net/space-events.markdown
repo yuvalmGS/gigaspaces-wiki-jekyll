@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799367
 ---
 
-{summary}Registering to Space events{summary}
+
+{% summary %}Registering to Space events{% endsummary %}
+
 
 # Overview
 

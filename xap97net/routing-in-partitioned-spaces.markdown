@@ -6,7 +6,8 @@ page_id: 63799357
 ---
 
 {% compositionsetup %}
-{summary:page|60}Understanding how space operations behave in a partitioned environment.{summary}
+
+{% summary page|60 %}Understanding how space operations behave in a partitioned environment.{% endsummary %}
 
 # Overview
 

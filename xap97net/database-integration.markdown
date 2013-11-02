@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799360
 ---
 
-{summary}This section describes Database Integration in SBA{summary}
+
+{% summary %}This section describes Database Integration in SBA{% endsummary %}
+
 
 # Overview
 

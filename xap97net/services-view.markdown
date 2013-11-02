@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799373
 ---
 
-{% compositionsetup %}{summary}Physical and logical resources{summary}
+{% compositionsetup %}
+{% summary %}Physical and logical resources{% endsummary %}
+
 
 # The Services View
 

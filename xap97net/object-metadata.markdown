@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799371
 ---
 
-{summary}Customizing object behaviour using space metadata attributes. {summary}
+
+{% summary %}Customizing object behaviour using space metadata attributes. {% endsummary %}
+
 
 # Overview
 

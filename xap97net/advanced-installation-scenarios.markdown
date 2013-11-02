@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799333
 ---
 
-{summary}Common Questions and Answers about XAP.NET installations.{summary}
+
+{% summary %}Common Questions and Answers about XAP.NET installations.{% endsummary %}
+
 
 # Overview
 

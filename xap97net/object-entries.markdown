@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799340
 ---
 
-{summary} Understanding the semantics of Space Entries and .NET Objects{summary}
+
+{% summary %} Understanding the semantics of Space Entries and .NET Objects{% endsummary %}
+
 
 # Overview
 

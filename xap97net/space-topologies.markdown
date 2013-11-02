@@ -6,7 +6,8 @@ page_id: 63799355
 ---
 
 {% compositionsetup %}
-{summary:page|60}Explains the topologies and clustering mechanism of the GigaSpaces in-memory data grid (the Space){summary}
+
+{% summary page|60 %}Explains the topologies and clustering mechanism of the GigaSpaces in-memory data grid (the Space){% endsummary %}
 
 # Overview
 

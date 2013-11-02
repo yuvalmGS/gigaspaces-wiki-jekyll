@@ -6,7 +6,9 @@ page_id: 51119415
 ---
 
 {% compositionsetup %}
-{summary}Implementing a dynamic scalable web application with GigaSpaces XAP.{summary}
+
+{% summary %}Implementing a dynamic scalable web application with GigaSpaces XAP.{% endsummary %}
+
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.0GA**
 JDK:**Sun JDK 1.6**

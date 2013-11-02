@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799325
 ---
 
-{summary}This page is focused on designing interoperable classes manually, and some related advanced features.{summary}
+
+{% summary %}This page is focused on designing interoperable classes manually, and some related advanced features.{% endsummary %}
+
 
 {% refer %}The [.Net-Java Example] demonstrates many .NET-Java interoperability features.{% endrefer %}
 

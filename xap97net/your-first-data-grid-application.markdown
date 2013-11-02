@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799337
 ---
 
-{summary}Writing your first XAP.NET application {summary}
+
+{% summary %}Writing your first XAP.NET application {% endsummary %}
+
 
 # Overview
 

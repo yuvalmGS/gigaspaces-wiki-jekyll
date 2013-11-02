@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799372
 ---
 
-{summary}Extending the SpaceDocument class{summary}
+
+{% summary %}Extending the SpaceDocument class{% endsummary %}
+
 !GRA:Images^new-in-801-banner.png|align=right!
 
 # Overview

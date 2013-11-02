@@ -5,7 +5,8 @@ categories: SBP
 page_id: 47219279
 ---
 
-{summary:page|65}Using the calculation offload pattern.{summary}
+{% summary page|65 %}Using the calculation offload pattern.{% endsummary %}
+
 {rate}
 
 # Overview

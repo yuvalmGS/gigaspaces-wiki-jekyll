@@ -6,7 +6,8 @@ page_id: 63799341
 ---
 
 {% compositionsetup %}
-{summary:page}Space task executors allow you to easily execute grid-wide tasks on the space.{summary}
+
+{% summary page %}Space task executors allow you to easily execute grid-wide tasks on the space.{% endsummary %}
 
 # Overview
 

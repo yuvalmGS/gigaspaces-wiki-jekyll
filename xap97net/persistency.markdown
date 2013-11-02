@@ -7,7 +7,7 @@ page_id: 63799336
 
 {% compositionsetup %}
 
-{summary:page|65}Using the GigaSpaces External Data Source interface to persist data stored in the space{summary}
+{% summary page|65 %}Using the GigaSpaces External Data Source interface to persist data stored in the space{% endsummary %}
 
 # Overview
 

@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 64127778
 ---
 
-{summary}Defining group names and unicast Locators for Jini Services; searching for available lookup services in the network.{summary}
+
+{% summary %}Defining group names and unicast Locators for Jini Services; searching for available lookup services in the network.{% endsummary %}
+
 
 # Essential Guidelines
 

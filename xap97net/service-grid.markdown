@@ -6,7 +6,8 @@ page_id: 64127758
 ---
 
 {% compositionsetup %}
-{summary:page|70}Overview of Service Grid Components{summary}
+
+{% summary page|70 %}Overview of Service Grid Components{% endsummary %}
 
 {% anchor gsm %}
 

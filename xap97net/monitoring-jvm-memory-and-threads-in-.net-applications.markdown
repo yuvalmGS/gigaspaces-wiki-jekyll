@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799356
 ---
 
-{summary}Monitoring JVM memory and threads in .Net Applications, when troubleshooting application memory and thread consumption. {summary}
+
+{% summary %}Monitoring JVM memory and threads in .Net Applications, when troubleshooting application memory and thread consumption. {% endsummary %}
+
 
 # Overview
 

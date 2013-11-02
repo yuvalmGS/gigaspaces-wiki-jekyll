@@ -6,7 +6,8 @@ page_id: 63799327
 ---
 
 {% compositionsetup %}
-{summary:page|65}Describing the .NET Processing Unit Container and how to create and deploy it.{summary}
+
+{% summary page|65 %}Describing the .NET Processing Unit Container and how to create and deploy it.{% endsummary %}
 
 # Overview
 

@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 64127781
 ---
 
-{summary}The section explains How to Configure and use Unicast Discovery.{summary}
+
+{% summary %}The section explains How to Configure and use Unicast Discovery.{% endsummary %}
+
 
 # Overview
 

@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799305
 ---
 
-{summary}Querying the space using a Prepared Template{summary}
+
+{% summary %}Querying the space using a Prepared Template{% endsummary %}
+
 
 # Overview
 

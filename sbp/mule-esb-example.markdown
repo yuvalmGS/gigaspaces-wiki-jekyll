@@ -6,7 +6,9 @@ page_id: 50758015
 ---
 
 {% compositionsetup %}
-{summary}Mule ESB Distributed Multi Service Example{summary}
+
+{% summary %}Mule ESB Distributed Multi Service Example{% endsummary %}
+
 !GRA:Images^new-in-801-banner.png|align=right!
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using Mule:**3.1.0**

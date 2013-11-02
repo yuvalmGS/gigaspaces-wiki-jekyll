@@ -6,8 +6,10 @@ page_id: 63799409
 ---
 
 {% compositionsetup %}
-{summary}This tutorial shows how an application interacts with a GigaSpaces Data Grid, clustered in either a replicated, partitioned, master-local, or local-view topology. The application either actively reads data or registers for notifications.
-{summary}
+
+{% summary %}This tutorial shows how an application interacts with a GigaSpaces Data Grid, clustered in either a replicated, partitioned, master-local, or local-view topology. The application either actively reads data or registers for notifications.
+{% endsummary %}
+
 {% anchor 1 %}
 
 # Overview

@@ -6,7 +6,8 @@ page_id: 63799343
 ---
 
 {% compositionsetup %}
-{summary:page}Executor Remoting allows you to use remote invocations of services, with the space as the transport layer using Executors.{summary}
+
+{% summary page %}Executor Remoting allows you to use remote invocations of services, with the space as the transport layer using Executors.{% endsummary %}
 
 # Overview
 

@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799414
 ---
 
-{summary}Creating and deploying a multi language processing unit{summary}
+
+{% summary %}Creating and deploying a multi language processing unit{% endsummary %}
+
 
 # Overview
 

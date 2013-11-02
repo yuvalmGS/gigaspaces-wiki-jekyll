@@ -6,7 +6,9 @@ page_id: 63799388
 ---
 
 {% compositionsetup %}
-{summary}`IEventListenerContainer` is an interface that represents an abstraction for subscribing to, and receiving events over a space proxy.{summary}
+
+{% summary %}`IEventListenerContainer` is an interface that represents an abstraction for subscribing to, and receiving events over a space proxy.{% endsummary %}
+
 
 # Overview
 

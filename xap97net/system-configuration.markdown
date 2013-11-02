@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799332
 ---
 
-{summary}Using System Properties to configure XAP.NET{summary}
+
+{% summary %}Using System Properties to configure XAP.NET{% endsummary %}
+
 
 # Overview
 

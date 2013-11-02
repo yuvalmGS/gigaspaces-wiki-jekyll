@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799429
 ---
 
-{summary}A Typical Space-Based Application {summary}
+
+{% summary %}A Typical Space-Based Application {% endsummary %}
+
 
 # Overview
 

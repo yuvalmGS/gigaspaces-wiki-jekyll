@@ -6,7 +6,8 @@ page_id: 63799299
 ---
 
 {% compositionsetup %}
-{summary:page|65}A walkthrough of a common scenario for using the GigaSpaces NHibernate External Data Source.{summary}
+
+{% summary page|65 %}A walkthrough of a common scenario for using the GigaSpaces NHibernate External Data Source.{% endsummary %}
 
 # Overview
 

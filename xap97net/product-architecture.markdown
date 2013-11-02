@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799417
 ---
 
-{summary}This section describes the architecture of the GigaSpaces XAP product.{summary}
+
+{% summary %}This section describes the architecture of the GigaSpaces XAP product.{% endsummary %}
+
 
 GigaSpaces XAP is built from the following sub-systems:
 - [**An SLA-Driven Container**|#SLA-Driven Container] -- provides the virtualization capabilities

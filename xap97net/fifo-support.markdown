@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799377
 ---
 
-{summary}How to get entries in the same order in which they were written to the space.{summary}
+
+{% summary %}How to get entries in the same order in which they were written to the space.{% endsummary %}
+
 
 # Overview
 

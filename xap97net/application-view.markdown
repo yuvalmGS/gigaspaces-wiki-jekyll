@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799300
 ---
 
-{% compositionsetup %}{summary}Applications and Processing unit dependency view{summary}
+{% compositionsetup %}
+{% summary %}Applications and Processing unit dependency view{% endsummary %}
+
 
 # Overview
 

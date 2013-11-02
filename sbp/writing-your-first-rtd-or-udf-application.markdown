@@ -5,7 +5,7 @@ categories: SBP
 page_id: 47219379
 ---
 
-{summary:page|65}Writing your first RTD/UDF application using the GigaSpaces-Excel integration.{summary}
+{% summary page|65 %}Writing your first RTD/UDF application using the GigaSpaces-Excel integration.{% endsummary %}
 {rate}
 
 # Overview

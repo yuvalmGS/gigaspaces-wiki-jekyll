@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799412
 ---
 
-{summary}Interoperability between Concrete Object and Document space entries{summary}
+
+{% summary %}Interoperability between Concrete Object and Document space entries{% endsummary %}
+
 !GRA:Images^new-in-801-banner.png|align=right!
 
 # Overview

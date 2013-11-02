@@ -6,7 +6,9 @@ page_id: 63799383
 ---
 
 {% compositionsetup %}
-{summary}Working with Space Documents{summary}
+
+{% summary %}Working with Space Documents{% endsummary %}
+
 
 # Overview
 

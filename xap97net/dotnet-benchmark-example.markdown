@@ -6,7 +6,9 @@ page_id: 63799403
 ---
 
 {% compositionsetup %}
-{summary}The Benchmark Example measures the performance of several GigaSpaces .Net API operations.{summary}
+
+{% summary %}The Benchmark Example measures the performance of several GigaSpaces .Net API operations.{% endsummary %}
+
 
 {% section %}
 

@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799393
 ---
 
-{summary}How to implement deep (complex) interoperable classes.{summary}
+
+{% summary %}How to implement deep (complex) interoperable classes.{% endsummary %}
+
 
 # Overview
 

@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799430
 ---
 
-{summary}This page explains how to configure replication gateway targets of a space.{summary}
+
+{% summary %}This page explains how to configure replication gateway targets of a space.{% endsummary %}
+
 {% compositionsetup %}
 
 {% info %}

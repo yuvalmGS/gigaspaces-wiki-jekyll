@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799390
 ---
 
-{summary}The web management console is a new user interface for XAP allowing users to deploy, manage and monitor their Processing Units and Applications{summary}
+
+{% summary %}The web management console is a new user interface for XAP allowing users to deploy, manage and monitor their Processing Units and Applications{% endsummary %}
+
 
 # Overview
 

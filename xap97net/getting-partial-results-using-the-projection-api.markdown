@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799308
 ---
 
-{summary}This page describes how you can obtain partial results when querying the space to improve application performance and reduce memory footprint.{summary}
+
+{% summary %}This page describes how you can obtain partial results when querying the space to improve application performance and reduce memory footprint.{% endsummary %}
+
 
 # Overview
 

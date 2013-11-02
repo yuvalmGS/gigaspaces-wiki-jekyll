@@ -6,7 +6,9 @@ page_id: 52527436
 ---
 
 {% compositionsetup %}
-{summary}Lowering the Space Object Footprint - Compact Serialization Pattern{summary}
+
+{% summary %}Lowering the Space Object Footprint - Compact Serialization Pattern{% endsummary %}
+
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.1GA**
 JDK:**Sun JDK 1.6**

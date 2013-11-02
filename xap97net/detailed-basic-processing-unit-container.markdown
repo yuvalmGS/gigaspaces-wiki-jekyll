@@ -6,7 +6,9 @@ page_id: 63799322
 ---
 
 {% compositionsetup %}
-{summary}Describing the built-in BasicProcessingUnitContainer which is an extension of the AbstractProcessingUnitContainer class.{summary}
+
+{% summary %}Describing the built-in BasicProcessingUnitContainer which is an extension of the AbstractProcessingUnitContainer class.{% endsummary %}
+
 
 
 {% info %}

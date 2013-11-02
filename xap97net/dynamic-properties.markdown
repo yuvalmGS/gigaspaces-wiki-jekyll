@@ -6,7 +6,9 @@ page_id: 63799342
 ---
 
 {% compositionsetup %}
-{summary}Using Dynamic Properties with Object entries.{summary}
+
+{% summary %}Using Dynamic Properties with Object entries.{% endsummary %}
+
 
 !GRA:Images^new-in-801-banner.png|align=right!
 

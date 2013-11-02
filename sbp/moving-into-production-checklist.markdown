@@ -6,7 +6,9 @@ page_id: 52527859
 ---
 
 {% compositionsetup %}
-{summary}Moving into Production Checklist{summary}
+
+{% summary %}Moving into Production Checklist{% endsummary %}
+
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Date: December  2009
 Latest Date: Feb 2011

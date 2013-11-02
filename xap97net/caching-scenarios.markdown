@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799385
 ---
 
-{summary}GigaSpaces IMDG supports three different caching mechanisms: in-line cache, side cache and client cache.{summary}
+
+{% summary %}GigaSpaces IMDG supports three different caching mechanisms: in-line cache, side cache and client cache.{% endsummary %}
+
 
 # Overview
 

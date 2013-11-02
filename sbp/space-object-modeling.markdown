@@ -6,7 +6,9 @@ page_id: 51120319
 ---
 
 {% compositionsetup %}
-{summary}Space object modelling basic rules.{summary}
+
+{% summary %}Space object modelling basic rules.{% endsummary %}
+
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.0GA**
 JDK:**Sun JDK 1.6**

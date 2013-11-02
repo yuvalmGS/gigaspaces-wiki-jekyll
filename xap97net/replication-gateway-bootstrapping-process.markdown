@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799425
 ---
 
-{summary}This page is about bootstrapping a site from another site across gateways.{summary}
+
+{% summary %}This page is about bootstrapping a site from another site across gateways.{% endsummary %}
+
 
 {% info %}
 This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)|Multi-Site Replication over the WAN] before reading this page.

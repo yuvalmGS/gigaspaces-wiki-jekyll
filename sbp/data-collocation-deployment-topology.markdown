@@ -6,7 +6,9 @@ page_id: 51119964
 ---
 
 {% compositionsetup %}
-{summary}Choosing the right data-collocation deployment topology - to Collocate or not to Collocate?{summary}
+
+{% summary %}Choosing the right data-collocation deployment topology - to Collocate or not to Collocate?{% endsummary %}
+
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.0GA**
 JDK:**Sun JDK 1.6**

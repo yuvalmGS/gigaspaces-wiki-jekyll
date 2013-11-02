@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799358
 ---
 
-{summary}This section describes the XAP.NET product structure{summary}
+
+{% summary %}This section describes the XAP.NET product structure{% endsummary %}
+
 
 # Overview
 

@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799345
 ---
 
-{summary:page|60}How to use the .Net GigaSpaces Session State Store Provider implementation. {summary}
+{% summary page|60 %}How to use the .Net GigaSpaces Session State Store Provider implementation. {% endsummary %}
 
 # Overview
 

@@ -6,7 +6,8 @@ page_id: 63799411
 ---
 
 {% compositionsetup %}
-{summary:page}Domain service host is used to host services within the hosting processing unit domain which are exposed for remote invocation.{summary}
+
+{% summary page %}Domain service host is used to host services within the hosting processing unit domain which are exposed for remote invocation.{% endsummary %}
 
 # Overview
 

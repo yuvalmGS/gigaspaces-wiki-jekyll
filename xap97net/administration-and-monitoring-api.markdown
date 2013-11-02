@@ -6,7 +6,9 @@ page_id: 63799361
 ---
 
 {% compositionsetup %}
-{summary}Administration and monitoring API for GigaSpaces services and components.{summary}
+
+{% summary %}Administration and monitoring API for GigaSpaces services and components.{% endsummary %}
+
 
 # Overview
 

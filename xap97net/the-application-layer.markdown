@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799378
 ---
 
-{summary}This section describes the GigaSpaces Application Layer.{summary}
+
+{% summary %}This section describes the GigaSpaces Application Layer.{% endsummary %}
+
 
 Each XAP.NET application is composed of one or more scalable modules, and contains one or more business logic code components, domain model objects (entries), in-memory data storage, messaging, and event processing code.
 

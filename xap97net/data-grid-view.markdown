@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799321
 ---
 
-{% compositionsetup %}{summary}Cluster wide queries or single Space instance queries on your data{summary}
+{% compositionsetup %}
+{% summary %}Cluster wide queries or single Space instance queries on your data{% endsummary %}
+
 
 The Data Grid view provides Space and Space instance navigation, for querying data and viewing class metadata.
 Select a "Space" or press the arrow to drill down into the Space instances of each Space (cluster).

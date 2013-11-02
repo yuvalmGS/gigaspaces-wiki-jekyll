@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 63799320
 ---
 
-{summary}JVM Settings Configuration Section.{summary}
+
+{% summary %}JVM Settings Configuration Section.{% endsummary %}
+
 
 {% comment %}
 !GRA:Images^NewinXAP66.gif|align=right!

@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 64127791
 ---
 
-{summary}Used to determine whether multicast is available.{summary}
+
+{% summary %}Used to determine whether multicast is available.{% endsummary %}
+
 
 # Syntax
 

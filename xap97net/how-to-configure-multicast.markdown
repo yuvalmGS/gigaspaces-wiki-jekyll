@@ -5,7 +5,9 @@ categories: XAP97NET
 page_id: 64127787
 ---
 
-{summary}Enabling multicast on Linux and windows. {summary}
+
+{% summary %}Enabling multicast on Linux and windows. {% endsummary %}
+
 
 # Overview
 
