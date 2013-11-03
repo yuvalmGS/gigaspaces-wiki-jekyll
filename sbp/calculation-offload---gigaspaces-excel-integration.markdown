@@ -27,7 +27,7 @@ Using this pattern is divided into 4 main steps:
 
 As a first step, you need to load your data from its current source to the space.
 
-GigaSpaces provides [OpenSpaces|XAP66:Product Architecture#ProductArchitecture-OpenSpacesAPIandComponents] as its main API. However, it is also possible to load data from different types of applications transparently, using different connectors implemented by GigaSpaces:
+GigaSpaces provides depanlinkOpenSpacestengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP66/Product+Architecture#ProductArchitecture-OpenSpacesAPIandComponentsbelakanglink as its main API. However, it is also possible to load data from different types of applications transparently, using different connectors implemented by GigaSpaces:
 - For messaging-based applications, refer to the depanlinkJMStengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP66/JMSbelakanglink section.
 - If your application is an external data source (like a database), refer to the depanlinkPersistencytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP66/Persistencybelakanglink section.
 
@@ -35,7 +35,7 @@ GigaSpaces provides [OpenSpaces|XAP66:Product Architecture#ProductArchitecture-O
 
 After you've loaded your data to the space, you need to implement the algorithm which performs the calculation in the space, thus removing the load from Excel.
 
-To do this, you need to write a set of [Processing Units|XAP66:Processing Unit] into the space, which perform the calculation.
+To do this, you need to write a set of depanlinkProcessing Unitstengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP66/Processing+Unitbelakanglink into the space, which perform the calculation.
 
 ## 3 -- Implementing Start Trigger and Passing Parameters
 

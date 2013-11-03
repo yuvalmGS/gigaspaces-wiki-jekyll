@@ -66,7 +66,7 @@ depanimageConfigureView2.JPGtengahimage/attachment_files/sbp/ConfigureView2.JPGb
 - It is possible to connect to any running space in your network.
 To connect to a space:
     1. Click the **Connect** button.
-    1. In the Connect to Space dialog box, type the [space URL|XAP66:Space URL]. The general format of the space URL is:
+    1. In the Connect to Space dialog box, type the depanlinkspace URLtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP66/Space+URLbelakanglink. The general format of the space URL is:
 
 
 {% highlight java %}
@@ -146,7 +146,7 @@ The Configure View window already includes your previously selected options, and
 .Net product is unzipped.
 JSHOMEDIR is configured.
 For more details see depanlinkInstalling GigaSpacestengahlinkhttp://www.gigaspaces.com/wiki/display/XAP66/Building+Your+First+.NET+Application#BuildingYourFirst.NETApplication-InstallingGigaSpacesbelakanglink section.
-- A [JDK 1.5|XAP66:Installing GigaSpaces#Prior to Installation]
+- A depanlinkJDK 1.5tengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP66/Installing+GigaSpaces#Prior+to+Installationbelakanglink
 - The depanlink.NET Frameworktengahlinkhttp://msdn2.microsoft.com/en-us/netframework/aa569263.aspxbelakanglink
 - Microsoft Office 2003
 

@@ -19,7 +19,7 @@ Date: March 2011
 {rate}
 
 # Overview
-GigaSpaces depanlinkMule ESBtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Mule+ESBbelakanglink OpenSpaces comes with comprehensive support for Mule 3.1.0. It allows you to use the [Space as a Mule external transport|XAP8:Mule Event Container Transport], enabling receiving and dispatching of POJO messages over the Space.
+GigaSpaces depanlinkMule ESBtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Mule+ESBbelakanglink OpenSpaces comes with comprehensive support for Mule 3.1.0. It allows you to use the depanlinkSpace as a Mule external transporttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Event+Container+Transportbelakanglink, enabling receiving and dispatching of POJO messages over the Space.
 
 This depanlinkexampletengahlink/attachment_files/sbp/Mule_Multi_service_Example.zipbelakanglink illustrates distributed multi services mule application. The different mule services construct a simple workflow, where each service passes its outbound data into the next service in line via the Space. Each Service can run in a different machine(s) and depanlinkscale dynamicallytengahlink#Scale Dynamicallybelakanglink or depanlinkmanualytengahlink#Scale Manuallybelakanglink in a different manner.
 
@@ -43,9 +43,9 @@ depanimagemule_example_flow1.jpgtengahimage/attachment_files/sbp/mule_example_fl
 
 The example using the polling container as the inbound-endpoint with each Service and a space connector as the outbound-endpoint where a state field within the depanlinkDatatengahlink#The Space Data Classbelakanglink object acts as the workflow "Queue".
 
-Each service with this example is packaged within its own [Processing Unit|XAP8:Mule Processing Unit] and can scale independently in depanlinkdynamic mannertengahlink#Scale Dynamicallybelakanglink.
+Each service with this example is packaged within its own depanlinkProcessing Unittengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Processing+Unitbelakanglink and can scale independently in depanlinkdynamic mannertengahlink#Scale Dynamicallybelakanglink.
 
-{% exclamation %} The [Mule Queue Provider|XAP8:Mule Queue Provider] is not illustrated with this example. It is relevant for different use case where the Mule Services scales together with the Data-Grid and running within the same Processing Unit.
+{% exclamation %} The depanlinkMule Queue Providertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Queue+Providerbelakanglink is not illustrated with this example. It is relevant for different use case where the Mule Services scales together with the Data-Grid and running within the same Processing Unit.
 
 # The Space Data Class
 The Space Data Class is the POJO used as the "Queue" to coordinate the activities between the different services. Data Objects are consumed from the Data-Grid and written back into the Data-Grid by each Service. Here is the Data Space class definition:
@@ -147,7 +147,7 @@ public class Verifier {
 
 
 ## The Verifier Service Configuration
-The Verifier Service Configuration using a `polling-container` running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
+The Verifier Service Configuration using a `polling-container` running in a depanlinkNone-Blocking modetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container#Non-Blocking+Receive+Handlerbelakanglink. This allows the Service to consume Data objects from any partition.
 
 {% togglecloak id=the_verifier_service_configuration %}**Click to view the Verifier Service Configuration..**{% endtogglecloak %}
 {% gcloak the_verifier_service_configuration %}
@@ -210,7 +210,7 @@ public class Approver {
 
 
 ## The Approver Service Configuration
-The Approver Service Configuration using a `polling-container` running in a [None-Blocking mode|XAP8:Polling Container#Non-Blocking Receive Handler]. This allows the Service to consume Data objects from any partition.
+The Approver Service Configuration using a `polling-container` running in a depanlinkNone-Blocking modetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container#Non-Blocking+Receive+Handlerbelakanglink. This allows the Service to consume Data objects from any partition.
 
 {% togglecloak the_approver_service_configuration %}**Click to view the Approver Service Configuration..**{% endtogglecloak %}
 {% gcloak the_approver_service_configuration %}
@@ -427,9 +427,9 @@ depanimagemule_scale_d.jpgtengahimage/attachment_files/sbp/mule_scale_d.jpgbelak
 
 
 # Transaction Support
-You may add [transaction support|XAP8:Mule Event Container Transport#Transaction Support] to the Mule Service by adding the `distributed-tx-manager` and the `tx-support` tags. Since we are using a clustered space we will be using the [Distributed Jini Transaction Manager|XAP8:Transaction Management#Distributed Jini Transaction Manager].
+You may add depanlinktransaction supporttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Event+Container+Transport#Transaction+Supportbelakanglink to the Mule Service by adding the `distributed-tx-manager` and the `tx-support` tags. Since we are using a clustered space we will be using the [Distributed Jini Transaction Manager|XAP8:Transaction Management#Distributed Jini Transaction Manager].
 
-{% exclamation %} See also the [Polling Container Transaction Support|XAP8:Polling Container#Transaction Support] for additional details.
+{% exclamation %} See also the depanlinkPolling Container Transaction Supporttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container#Transaction+Supportbelakanglink for additional details.
 
 See below example:
 

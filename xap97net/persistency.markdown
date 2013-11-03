@@ -11,11 +11,11 @@ page_id: 63799336
 
 # Overview
 
-GigaSpaces [Space Persistency|XAP95:Space Persistency] interface is the key middleware connection link for loading and storing data to and from persistent data sources.
+GigaSpaces depanlinkSpace Persistencytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/Space+Persistencybelakanglink interface is the key middleware connection link for loading and storing data to and from persistent data sources.
 
 .NET persistency is a GigaSpaces implementation on top of Java `SpaceDataSource` and `SpaceSynchronizationEndpoint` classes.
 
-{% exclamation %} Before you begin, it is recommended to read the [Space Persistency|XAP95:Space Persistency] section.
+{% exclamation %} Before you begin, it is recommended to read the depanlinkSpace Persistencytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/Space+Persistencybelakanglink section.
 
 
 {% tip %}
@@ -111,7 +111,7 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size",
 
 ## Server Side Logging
 
-{% refer %}To enable the .NET `ExternalDataSource` adapter logging, refer to the [GigaSpaces Logging|XAP95:GigaSpaces Logging#GigaSpacesLoggers] section.{% endrefer %}
+{% refer %}To enable the .NET `ExternalDataSource` adapter logging, refer to the depanlinkGigaSpaces Loggingtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/GigaSpaces+Logging#GigaSpacesLoggersbelakanglink section.{% endrefer %}
 
 {% endtoczone %}
 
@@ -119,6 +119,6 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size",
 
 To create a custom implementation, implement the `GigaSpaces.Core.Persistency.ISqlDataSource` interface.
 
-{% exclamation %} Before creating a custom implementation, read the following [considerations|XAP95:External Data Source].
+{% exclamation %} Before creating a custom implementation, read the following depanlinkconsiderationstengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/External+Data+Sourcebelakanglink.
 
 {% lampon %} See an example for the NHibernate implementation under `<GigaSpaces Root>\dotnet\practices\ExternalDataSource\NHibernate`.

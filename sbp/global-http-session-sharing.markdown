@@ -214,7 +214,7 @@ securityManager.sessionManager.sessionValidationScheduler = $sessionValidationSc
 
 
 {% tip %}
-The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Space URL|XAP9:Space URL] to the IMDG deployed within your site.
+The `sessionDAO.activeSessionsCacheName` parameter should include a standard depanlinkSpace URLtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP9/Space+URLbelakanglink to the IMDG deployed within your site.
 {% endtip %}
 
 
@@ -248,12 +248,12 @@ gs deploy-space sessionSpace
 
 
 {% tip %}
-See the [deploy-space|XAP9:deploy-space GigaSpaces CLI] command for details.
+See the depanlinkdeploy-spacetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP9/deploy-space+GigaSpaces+CLIbelakanglink command for details.
 {% endtip %}
 
 
 ### The WAN Gateway
-The [WAN Gateway|XAP9:Multi-Site Replication over the WAN] should be deployed using your preferred replication topography, such as multi-master or master-slave. See the depanlinkWAN Replication Gatewaytengahlinkhttp://www.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gatewaybelakanglink best practice for an example of how a multi-master Gateway architecture can be deployed.
+The depanlinkWAN Gatewaytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP9/Multi-Site+Replication+over+the+WANbelakanglink should be deployed using your preferred replication topography, such as multi-master or master-slave. See the depanlinkWAN Replication Gatewaytengahlinkhttp://www.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gatewaybelakanglink best practice for an example of how a multi-master Gateway architecture can be deployed.
 
 ### Other configuration options
 
@@ -287,7 +287,7 @@ Session manager uses XStream libraries for serializing session data to XML. XStr
 
 ##### Secured GigaSpaces cluster
 
-When using a [Secure GigaSpaces cluster|XAP9:Securing your Data] you can pass security credentials using following parameters in `shiro.ini` file,
+When using a depanlinkSecure GigaSpaces clustertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP9/Securing+your+Databelakanglink you can pass security credentials using following parameters in `shiro.ini` file,
 
 
 

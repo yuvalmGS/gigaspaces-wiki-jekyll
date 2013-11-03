@@ -16,7 +16,7 @@ Date: September 2009
 {rate}
 
 # Overview
-The [Administration and Monitoring API|XAP8:Administration and Monitoring API] allows you to monitor the application health and its resources to enforce a specific pre-defined configurable SLA that will scale the application while it is running. This ensures deterministic response time when there is increasing amount of users accessing the system and the high-availability and robustness of the application.
+The depanlinkAdministration and Monitoring APItengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+APIbelakanglink allows you to monitor the application health and its resources to enforce a specific pre-defined configurable SLA that will scale the application while it is running. This ensures deterministic response time when there is increasing amount of users accessing the system and the high-availability and robustness of the application.
 depanimagescaling_agent.jpgtengahimage/attachment_files/sbp/scaling_agent.jpgbelakangimage
 The following example illustrates how you can construct a simple processing unit (**The Scaling Agent**) to monitor a web application deployed into GigaSpaces and track the web requests routed to the web application. Once the total average amount of the HTTP requests served by the current running web application instances breach a pre-defined upper or lower limit, the scaling agent will react and perform the necessary activities to scale the web application tier (add or remove instances).
 

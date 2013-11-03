@@ -21,11 +21,11 @@ page_id: 55935740
 
 # Overview
 The following example is based on the standard depanlinkSpring Hibernate Integration tutorialtengahlinkhttp://www.vaannila.com/spring/spring-hibernate-integration-1.htmlbelakanglink.
-In this best practice you will see how to modify an existing simple spring/hibernate application to leverage GigaSpaces as the [in-memory Data-grid|XAP91:The In-Memory Data Grid] and the application server hosting both the [web application|XAP91:Web Application Support] and the data in-memory. The Hibernate persistency settings will still be leveraged by [GigaSpaces Hibernate External Data Source|XAP91:Hibernate External Data Source] storing the data in-memory into a database in an [asynchronous manner|XAP91:Asynchronous Persistency with the Mirror].
+In this best practice you will see how to modify an existing simple spring/hibernate application to leverage GigaSpaces as the depanlinkin-memory Data-gridtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+In-Memory+Data+Gridbelakanglink and the application server hosting both the [web application|XAP91:Web Application Support] and the data in-memory. The Hibernate persistency settings will still be leveraged by [GigaSpaces Hibernate External Data Source|XAP91:Hibernate External Data Source] storing the data in-memory into a database in an [asynchronous manner|XAP91:Asynchronous Persistency with the Mirror].
 
 Moving Spring/Hibernate application to GigaSpaces involves the following basic steps:
 1. Spring bean Configuration file changes
-2. [POJO Class|XAP91:POJO Support] changes
+2. depanlinkPOJO Classtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/POJO+Supportbelakanglink changes
 3. DAO implementation changes
 4. Deploying the data-grid and the Spring based web application into GigaSpaces
 
@@ -454,7 +454,7 @@ public interface UserDAO {
 
 
 # The DAO Implementation
-The DAO implementation should be modified to use the [GigaSpace interface|XAP91:The GigaSpace Interface] to access the data grid instead of using the `HibernateTemplate` that is accessing the database. The `GigaSpace` interface simialr methods to the `HibernateTemplate` to write and [Query|XAP91:SQLQuery] for objects.
+The DAO implementation should be modified to use the depanlinkGigaSpace interfacetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+GigaSpace+Interfacebelakanglink to access the data grid instead of using the `HibernateTemplate` that is accessing the database. The `GigaSpace` interface simialr methods to the `HibernateTemplate` to write and [Query|XAP91:SQLQuery] for objects.
 
 {% inittab DAOImplemenation|top %}
 
@@ -532,10 +532,10 @@ public class UserDAOSpaceImpl implements UserDAO {
 
 
 # Deploying the Data-Grid and the Application
-To deploy the Data-Grid and the web Application into the [GigaSpaces runtime enviroment|XAP91:The Runtime Environment] perform the following:
+To deploy the Data-Grid and the web Application into the depanlinkGigaSpaces runtime enviromenttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Runtime+Environmentbelakanglink perform the following:
 - Download the depanlink3rd party librariestengahlink/attachment_files/sbp/3rd_party_libraries.zipbelakanglink package, and extract it into the `\gigaspaces-xap\lib\optional\pu-common` folder.
 - Download the depanlinkapplication.wartengahlink/attachment_files/sbp/application.warbelakanglink , depanlinkmyDataGrid.jartengahlink/attachment_files/sbp/myDataGrid.jarbelakanglink and the depanlinkmyMirror.jartengahlink/attachment_files/sbp/myMirror.jarbelakanglink.
-- Start the [GigaSpaces agent|XAP91:The Grid Service Agent]:
+- Start the depanlinkGigaSpaces agenttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agentbelakanglink:
 On windows run the following command:
 
 

@@ -21,11 +21,11 @@ page_id: 54298007
 # Overview
 GigaSpaces being an in memory grid, is limited by the amount of memory allocated to the JVM's that make the cluster. Applications that are built using GigaSpaces and use it as a run time environment should be designed to work with this constraint. This article shows common strategies GigaSpaces applications use for Evicting old objects and make room for new data.
 
-GigaSpaces supports two cache policies, [LRU|XAP8:LRU-Cache Policy] and [ALL_IN_CACHE|XAP8:ALL IN CACHE-Cache Policy]. GigaSpace evicts data only in the [LRU|XAP8:LRU-Cache Policy] mode, where "oldest" objects are evicted from memory when the configured thresholds are reached.
+GigaSpaces supports two cache policies, depanlinkLRUtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/LRU-Cache+Policybelakanglink and [ALL_IN_CACHE|XAP8:ALL IN CACHE-Cache Policy]. GigaSpace evicts data only in the depanlinkLRUtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/LRU-Cache+Policybelakanglink mode, where "oldest" objects are evicted from memory when the configured thresholds are reached.
 
-As the name suggests LRU is "least recently used" data and any data written first into the space become a candidate for eviction when there is no more room in the JVM. This policy works well for [Side Cache scenarios|XAP8:Caching Scenarios#CachingScenarios-SideCache] where the purpose of GigaSpaces is to cache frequently used data.
+As the name suggests LRU is "least recently used" data and any data written first into the space become a candidate for eviction when there is no more room in the JVM. This policy works well for depanlinkSide Cache scenariostengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Caching+Scenarios#CachingScenarios-SideCachebelakanglink where the purpose of GigaSpaces is to cache frequently used data.
 
-For some applications LRU based eviction is not suitable. Examples include, applications that cache reference data which should always be in the space. applications that want some data to be always in space irrespective of when it is written as this data has higher SLA requirements and need to be readily available. For these scenarios, [ALL_IN_CACHE|XAP8:ALL IN CACHE-Cache Policy] is more appropriate. In these scenarios, application can adopt one of the strategies mentioned below and not run out of memory and cause MemoryShortageExceptions.
+For some applications LRU based eviction is not suitable. Examples include, applications that cache reference data which should always be in the space. applications that want some data to be always in space irrespective of when it is written as this data has higher SLA requirements and need to be readily available. For these scenarios, depanlinkALL_IN_CACHEtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/ALL+IN+CACHE-Cache+Policybelakanglink is more appropriate. In these scenarios, application can adopt one of the strategies mentioned below and not run out of memory and cause MemoryShortageExceptions.
 
 # Eviction Strategies
 
@@ -118,9 +118,9 @@ This approach is most suitable for application which have fluctuating data loads
 
 ## Using a Polling Container
 
-Sometimes applications data usage is based on the age of the data. After end of a business day any data for that day is not needed by the application and can be evicted. Applications like these use a [polling container|XAP8:Polling Container] to perform eviction logic.
+Sometimes applications data usage is based on the age of the data. After end of a business day any data for that day is not needed by the application and can be evicted. Applications like these use a depanlinkpolling containertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Containerbelakanglink to perform eviction logic.
 
-Eviction logic will be defined as listener logic. Eviction candidates will be selected using a [Trigger Receive Handler|XAP8:Polling Container#PollingContainer-TriggerReceiveOperation] feature which will modify the query dynamically for each invocation.
+Eviction logic will be defined as listener logic. Eviction candidates will be selected using a depanlinkTrigger Receive Handlertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container#PollingContainer-TriggerReceiveOperationbelakanglink feature which will modify the query dynamically for each invocation.
 
 Another variation of this approach is listener logic will wait for a command object (something like a close of business day event). When this command object is written into space eviction logic starts and cleans up data.
 
@@ -252,7 +252,7 @@ public class Evictor {
 
 {% note %}
 This example is using Maven for packaging and build.
-- Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
+- Please depanlinkinstall the OpenSpaces Maven plugintengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin#MavenPlugin-Installationbelakanglink before you run this example.
 - Please update the GigaSpaces and Spring versions to appropriate versions in the pom.xml file.
 {% endnote %}
 
@@ -583,7 +583,7 @@ gs.write(wMark, Lease.FOREVER, 5000, UpdateModifiers.UPDATE_OR_WRITE);
 
 {% note %}
 This example is using Maven for packaging and build.
-- Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
+- Please depanlinkinstall the OpenSpaces Maven plugintengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin#MavenPlugin-Installationbelakanglink before you run this example.
 - Please update the GigaSpaces and Spring versions to appropriate versions in the pom.xml file.
 {% endnote %}
 
@@ -650,11 +650,11 @@ depanimageHeapUsageGraph.pngtengahimage/attachment_files/sbp/HeapUsageGraph.pngb
 
 Applications using External Data Source Integration will need some changes to the eviction functionality. Because of EDS integration the take/clear will remove the data from the database also which might not be intended.
 
-In cases where the Space is using [LRU|XAP8:LRU-Cache Policy] mode,
-- Take or clear operation can be triggered using the [TakeModifiers.EVICT_ONLY|XAP8:LRU-Cache Policy#LRU-CachePolicy-ExplicitEvictionofObjectsfromtheSpace] which will remove the data only from space and not from the DB.
+In cases where the Space is using depanlinkLRUtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/LRU-Cache+Policybelakanglink mode,
+- Take or clear operation can be triggered using the depanlinkTakeModifiers.EVICT_ONLYtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/LRU-Cache+Policy#LRU-CachePolicy-ExplicitEvictionofObjectsfromtheSpacebelakanglink which will remove the data only from space and not from the DB.
 
-In [ALL_IN_CACHE|XAP8:ALL IN CACHE-Cache Policy] mode,
+In depanlinkALL_IN_CACHEtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/ALL+IN+CACHE-Cache+Policybelakanglink mode,
 - Take or clear operations will remove the data from space and database (in read-write mode), you should use
-    - Lease expiration option to remove the entries from the space and free up memory. When you restart the cluster, expired data will get loaded again and fill up the entire cluster. In order to avaoid this you have to propogate the lease information into the DB (using the [@SpaceLease|XAP8:POJO Metadata] property).
+    - Lease expiration option to remove the entries from the space and free up memory. When you restart the cluster, expired data will get loaded again and fill up the entire cluster. In order to avaoid this you have to propogate the lease information into the DB (using the depanlink@SpaceLeasetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/POJO+Metadatabelakanglink property).
     Objects which are cleared from the space using Lease expiration are not loaded automatically when someone queries for them, you will need to build custom functionality to retrieve this data.
     - Custom EDS mechanism that intercepts the eviction requests and stops propogating them into DB.

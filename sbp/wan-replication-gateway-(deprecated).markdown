@@ -280,7 +280,7 @@ public class MyExternalDataSource implements BulkDataPersister, ManagedDataSourc
 
 
 {% note %}
- This example is using Maven for packaging and build. Please [install the OpenSpaces Maven plugin|XAP8:Maven Plugin#MavenPlugin-Installation] before you run this example.
+ This example is using Maven for packaging and build. Please depanlinkinstall the OpenSpaces Maven plugintengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin#MavenPlugin-Installationbelakanglink before you run this example.
 Some instructions below might use windows syntax please use appropriate **nix syntax if you are running the example in a **nix machine.
 Example was tested using a single machine with ip address, 192.168.2.100 and Lookup Server ports for SiteA and SiteB as 14164 and 14165 respectively. Please modify these corresponding to your environment.
 {% endnote %}

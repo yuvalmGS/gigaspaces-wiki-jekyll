@@ -22,7 +22,7 @@ page_id: 47219276
 
 # Overview
 
-OpenSpaces provides the ability to perform service method invocations on remote services, using the space as the transport layer. You may use the [Event Driven Remoting|XAP8:Event Driven Remoting] and [Executor Based Remoting|XAP8:Executor Based Remoting].
+OpenSpaces provides the ability to perform service method invocations on remote services, using the space as the transport layer. You may use the depanlinkEvent Driven Remotingtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Event+Driven+Remotingbelakanglink and [Executor Based Remoting|XAP8:Executor Based Remoting].
 
 The benefits of using the Event Driven Remoting Compared to the Executor Based Remoting:
 - Service and Data can be located in different locations.

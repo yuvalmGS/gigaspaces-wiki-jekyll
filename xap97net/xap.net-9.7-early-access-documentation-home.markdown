@@ -31,13 +31,13 @@ page_id: 63799415
 
 # Quick Links
 
-##### &bull; [What's New in 9.7.X|RN:What's New in GigaSpaces 9.7.X]
+##### &bull; depanlinkWhat's New in 9.7.Xtengahlinkhttp://wiki.gigaspaces.com/wiki/display/RN/What's+New+in+GigaSpaces+9.7.Xbelakanglink
 
-##### &bull; [9.7.X Release Notes|RN:GigaSpaces XAP 9.7.X Release Notes]
+##### &bull; depanlink9.7.X Release Notestengahlinkhttp://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+XAP+9.7.X+Release+Notesbelakanglink
 
-##### &bull; [Upgrading from Previous Versions|RN:Upgrading to 9.7.X]
+##### &bull; depanlinkUpgrading from Previous Versionstengahlinkhttp://wiki.gigaspaces.com/wiki/display/RN/Upgrading+to+9.7.Xbelakanglink
 
-##### &bull; [API Documentation|API:API Documentation Portal]
+##### &bull; depanlinkAPI Documentationtengahlinkhttp://wiki.gigaspaces.com/wiki/display/API/API+Documentation+Portalbelakanglink
 
 ##### &bull; depanlinkSolutions and Best Practices Hometengahlink/sbp/index.htmlbelakanglink
 
@@ -51,7 +51,7 @@ page_id: 63799415
 
 ##### &bull; depanlinkWhite Paperstengahlinkhttp://www.gigaspaces.com/os_papers.htmlbelakanglink
 
-##### &bull; Looking for **depanlinkXAP 9.7 Documentation Hometengahlink/xap97/index.htmlbelakanglink** or **[**other versions**|ALL:Choose a GigaSpaces Version]**?
+##### &bull; Looking for **depanlinkXAP 9.7 Documentation Hometengahlink/xap97/index.htmlbelakanglink** or **depanlink**other versions**tengahlinkhttp://wiki.gigaspaces.com/wiki/display/ALL/Choose+a+GigaSpaces+Versionbelakanglink**?
 
 {% endcolumn %}
 

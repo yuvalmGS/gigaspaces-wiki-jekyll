@@ -22,7 +22,7 @@ This page explains how to configure jvm settings for XAP.NET applications. In ge
 
 # Jvm Location
 
-GigaSpaces XAP.NET is bundled with depanlinkOracle JDK 7 update 17tengahlinkhttp://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.htmlbelakanglink, aiming to save .NET users the hassle of downloading and installing Java. However, it is quite simple to bind it to a different JVM (For a list of supported JVMs refer to [Supported Platforms|XAP95:Supported Platforms]).
+GigaSpaces XAP.NET is bundled with depanlinkOracle JDK 7 update 17tengahlinkhttp://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.htmlbelakanglink, aiming to save .NET users the hassle of downloading and installing Java. However, it is quite simple to bind it to a different JVM (For a list of supported JVMs refer to depanlinkSupported Platformstengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/Supported+Platformsbelakanglink).
 
 If you haven't installed XAP.NET yet, you can instruct the installer to use an existing JVM:
 1. Start XAP.NET installation. Review and accept the license.

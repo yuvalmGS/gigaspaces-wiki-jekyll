@@ -13,7 +13,7 @@ The plugin is offered as open source as part of OpenSpaces community.
 
 # Installation
 
-As the GigaSpaces plugin uses the [Administration and Monitoring API|XAP8:Administration and Monitoring API] (a.k.a. Admin API) a single Hyperic agent will be used to monitor the whole cluster. Indeed GigaSpaces is a very dynamic platform and a classical Hyperic installation based on an agent monitoring the processes on his physical (or virtual) machine won't work well, a given processing unit could be unavailable on a machine because the GSM decided to deploy it somewhere else.
+As the GigaSpaces plugin uses the depanlinkAdministration and Monitoring APItengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+APIbelakanglink (a.k.a. Admin API) a single Hyperic agent will be used to monitor the whole cluster. Indeed GigaSpaces is a very dynamic platform and a classical Hyperic installation based on an agent monitoring the processes on his physical (or virtual) machine won't work well, a given processing unit could be unavailable on a machine because the GSM decided to deploy it somewhere else.
 
 In order to use the plugin on an hyperic agent you have to prepare this agent to be 'GigaSpaces ready'.
 1. Copy the GigaSpaces required jar files (_JSHOMEDIR/lib/required_) to the following agent folder: _agent-4.6/bundles/agent-4.6/pdk/lib/gs_ (you'll have to create the gs folder).

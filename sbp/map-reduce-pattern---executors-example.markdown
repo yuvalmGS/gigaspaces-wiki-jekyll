@@ -22,10 +22,10 @@ page_id: 49414729
 
 # Overview
 
-The depanlinkMap-Reducetengahlinkhttp://en.wikipedia.org/wiki/MapReducebelakanglink pattern is a popular pattern used in distributed systems to process data in parallel. This depanlinkexampletengahlink/attachment_files/sbp/ExecutorExample.zipbelakanglink illustrates the usage of [Executors Remoting|XAP8:Executor Based Remoting] (Service Executors) and [Task Executors|XAP8:Task Execution over the Space] to execute your business logic on a remote process that is collocated with a space in a parallel manner.
+The depanlinkMap-Reducetengahlinkhttp://en.wikipedia.org/wiki/MapReducebelakanglink pattern is a popular pattern used in distributed systems to process data in parallel. This depanlinkexampletengahlink/attachment_files/sbp/ExecutorExample.zipbelakanglink illustrates the usage of depanlinkExecutors Remotingtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Executor+Based+Remotingbelakanglink (Service Executors) and [Task Executors|XAP8:Task Execution over the Space] to execute your business logic on a remote process that is collocated with a space in a parallel manner.
 
-- The [Executors Remoting|XAP8:Executor Based Remoting] should be used when you would like to export service method(s) for remote clients to be invoked.
-- The [Task Executors|XAP8:Task Execution over the Space] should be used when you would like to transport business logic to the server side to be executed remotely.
+- The depanlinkExecutors Remotingtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Executor+Based+Remotingbelakanglink should be used when you would like to export service method(s) for remote clients to be invoked.
+- The depanlinkTask Executorstengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Task+Execution+over+the+Spacebelakanglink should be used when you would like to transport business logic to the server side to be executed remotely.
 
 In both cases, the business logic will be invoked with a collocated space.
 

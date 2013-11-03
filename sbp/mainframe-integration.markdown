@@ -97,7 +97,7 @@ Summary: the mirror service serves as a coordinator that provides not only acces
 
 The ability to deploy web services acting as gateways to the data/business logic hosted within GigaSpaces is important.  This functionality allows every new component or legacy component to interact with the system. The GigaSpaces container may run a set of web services, and can scale these dynamically.
 
-These may be the backbone of the entire system to access backend data and services. The web layer can have its own [cache|XAP91:Client Side Caching] running within the web application. This speeds up access to reused data by having it as part of the application memory address avoiding the need to perform remote access to the IMDG.
+These may be the backbone of the entire system to access backend data and services. The web layer can have its own depanlinkcachetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Client+Side+Cachingbelakanglink running within the web application. This speeds up access to reused data by having it as part of the application memory address avoiding the need to perform remote access to the IMDG.
 
 ## Multi-Tenancy
 
@@ -109,7 +109,7 @@ GigaSpaces can be used with Mainframe using the following:
 
 ## GigaSpaces External Data Source
 
-Allows the IMDG to pull data from Mainframe via a public interfaces (web services for example) through the [IMDG EDS API|XAP91:External Data Source API]. Once there is a cache miss or once the IMDG is started, the IMDG accesses the Mainframe and fetch relevant data. The IMDG can push any changes done back to the Mainframe in a synchronous or asynchronous manner.
+Allows the IMDG to pull data from Mainframe via a public interfaces (web services for example) through the depanlinkIMDG EDS APItengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/External+Data+Source+APIbelakanglink. Once there is a cache miss or once the IMDG is started, the IMDG accesses the Mainframe and fetch relevant data. The IMDG can push any changes done back to the Mainframe in a synchronous or asynchronous manner.
 
 ## JCICS
 
@@ -131,7 +131,7 @@ Connect into a known messaging broker (IBM MQ) within the existing system, consu
 
 ## Mule ESB
 
-Leverage depanlinkMF Mule integrationtengahlinkhttp://www.mulesoft.com/webinar-getting-mainframe-30-minutesbelakanglink and [GigaSpaces Mule|XAP91:Mule ESB] support to have these to communicate with each other.
+Leverage depanlinkMF Mule integrationtengahlinkhttp://www.mulesoft.com/webinar-getting-mainframe-30-minutesbelakanglink and depanlinkGigaSpaces Muletengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Mule+ESBbelakanglink support to have these to communicate with each other.
 
 ## WebMethods EntireX
 

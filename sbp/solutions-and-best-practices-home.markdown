@@ -84,11 +84,11 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 #### Quick Links
 
-##### • [9.6.X Release Notes|RN:GigaSpaces XAP 9.6.X Release Notes]
+##### • depanlink9.6.X Release Notestengahlinkhttp://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+XAP+9.6.X+Release+Notesbelakanglink
 
-##### • [What's new in XAP 9.6.X|RN:What's New in GigaSpaces 9.6.X]
+##### • depanlinkWhat's new in XAP 9.6.Xtengahlinkhttp://wiki.gigaspaces.com/wiki/display/RN/What's+New+in+GigaSpaces+9.6.Xbelakanglink
 
-##### • [API Documentation|API:API Documentation Portal]
+##### • depanlinkAPI Documentationtengahlinkhttp://wiki.gigaspaces.com/wiki/display/API/API+Documentation+Portalbelakanglink
 
 ##### • depanlinkSolutions and Best Practices Hometengahlink/sbp/index.htmlbelakanglink
 
@@ -100,7 +100,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 ##### • depanlinkWhite Paperstengahlinkhttp://www.gigaspaces.com/os_papers.htmlbelakanglink
 
-##### • Looking for **[XAP.NET|XAP96NET:XAP.NET 9.6 Documentation Home]** or **[other versions|ALL:Choose a GigaSpaces Version]**?
+##### • Looking for **depanlinkXAP.NETtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP96NET/XAP.NET+9.6+Documentation+Homebelakanglink** or **[other versions|ALL:Choose a GigaSpaces Version]**?
 
 
 {% endcolumn %}

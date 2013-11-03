@@ -38,7 +38,7 @@ The GigaSpaces Spring Batch PU provides:
 -- Continuous High-Availability.
 
 - Scalability
--- [Elastic|XAP8:Elastic Processing Unit] and Dynamic scalability of the Spring batch PU instances.
+-- depanlinkElastictengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unitbelakanglink and Dynamic scalability of the Spring batch PU instances.
 
 # Spring Batch Introduction
 depanlinkSpring Batchtengahlinkhttp://static.springsource.org/spring-batchbelakanglink is a lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.

@@ -32,7 +32,7 @@ In a high performance transactional system, we would like the transaction to be 
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-GigaSpaces XAP provides a Mirror Service as a means to achieve [reliable asynchronous persistency|XAP95:Asynchronous Persistency with the Mirror].
+GigaSpaces XAP provides a Mirror Service as a means to achieve depanlinkreliable asynchronous persistencytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/Asynchronous+Persistency+with+the+Mirrorbelakanglink.
 
 The typical cluster topology is of reliable partitioning (partitions with backups) connected to the mirror service, which persists to the database.
 

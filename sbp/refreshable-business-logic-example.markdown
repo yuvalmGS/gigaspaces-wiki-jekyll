@@ -20,7 +20,7 @@ page_id: 55443590
 
 # Overview
 
-Service Reloading [page|XAP8:Reloading Business Logic] explains how Refreshable context can be used to reload business logic. Find a modified version of Helloworld example which is included in the GigaSpaces installation configured for refreshable business logic.
+Service Reloading depanlinkpagetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Reloading+Business+Logicbelakanglink explains how Refreshable context can be used to reload business logic. Find a modified version of Helloworld example which is included in the GigaSpaces installation configured for refreshable business logic.
 
 # Source Code
 

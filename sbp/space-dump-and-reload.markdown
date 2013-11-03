@@ -24,7 +24,7 @@ When running a system using an in-memory data grid (IMDG), you may need to dump 
 
 
 {% tip %}
-If you would like to perform hardware maintenance activities without shutting down the system you can use a [rolling upgrade technique|XAP71:Deploying onto the Service Grid#HotDeploy].
+If you would like to perform hardware maintenance activities without shutting down the system you can use a depanlinkrolling upgrade techniquetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP71/Deploying+onto+the+Service+Grid#HotDeploybelakanglink.
 {% endtip %}
 
 

@@ -308,12 +308,12 @@ The Service Grid Admin Domain Model has representation to the main actors at dif
 - Register for Space Instance replication status change events (for all Space Instances that are part of the Space).
 - Get aggregated Space statistics.
 - Register for aggregated Space statistics events (if monitoring).
-- Get a clustered [GigaSpace|XAP95:The GigaSpace Interface] to perform Space operations.|
+- Get a clustered depanlinkGigaSpacetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/The+GigaSpace+Interfacebelakanglink to perform Space operations.|
 |SpaceInstance|An actual instance of a Space that is part of a topology (cluster), usually running within a Processing Unit Instance.|* Get its Space Mode (primary or backup).
 - Register for Space Mode change events.
 - Get its replication targets.
 - Register for replication status change events.
-- Get a direct [GigaSpace|XAP95:The GigaSpace Interface] to perform Space operations.
+- Get a direct depanlinkGigaSpacetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/The+GigaSpace+Interfacebelakanglink to perform Space operations.
 - Get Space Instance statistics.
 - Register for Space Instance statistics (if monitoring).|
 |Spaces|Holds all the currently running Spaces.|* Get all the currently running Spaces.

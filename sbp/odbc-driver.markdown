@@ -34,7 +34,7 @@ GigaSpaces Data-Grid support standard data access API. One of them is the depanl
 
 # Create a new user
 Create a new user "user" and password "password" and grant it all access privileges.
-See [GigaSpaces Management Center Security|XAP8:GigaSpaces Management Center (UI) Security] for instructions.
+See depanlinkGigaSpaces Management Center Securitytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/GigaSpaces+Management+Center+(UI)+Securitybelakanglink for instructions.
 
 # Deploy a Secured Space
 - Click  the  "Deploy In-Memory Data Grid" button (top left, second button) in the UI.

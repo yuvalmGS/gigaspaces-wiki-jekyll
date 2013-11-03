@@ -263,7 +263,7 @@ The master-slave topology configuration is simply implemented through delegators
 2. Please extract the file and and copy the content of the **deploy** folder into `\<GIGASPACES_HOME>\deploy` folder.
 3. Extract the `scripts` folder to an arbitrary location and edit the `setExampleEnv.bat/sh` script to include correct values for `NIC_ADDR` as the machine IP and `JSHOMEDIR` as the GigaSpaces root folder location.
 
-The `scripts` folder contains the necessary scripts to start the [Grid Service Agent|XAP91:The Grid Service Agent] for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:
+The `scripts` folder contains the necessary scripts to start the depanlinkGrid Service Agenttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agentbelakanglink for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:
 1. Run `startAgent-GB.bat/sh` or to start GB site.
 2. Run `startAgent-HK.bat/sh` to start HK site.
 3. Run `startAgent-US.bat/sh` to start US site.
@@ -288,7 +288,7 @@ depanimagewebui_gw_topology.pngtengahimage/attachment_files/sbp/webui_gw_topolog
 
 # Testing Master-Slave Replication
 
-You can test the setup by using the [benchmark utility|XAP91:Benchmark View - GigaSpaces Browser] comes with the GS-UI. Select the US Benchmark icons and click Start to begin writing objects to the space:
+You can test the setup by using the depanlinkbenchmark utilitytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Benchmark+View+-+GigaSpaces+Browserbelakanglink comes with the GS-UI. Select the US Benchmark icons and click Start to begin writing objects to the space:
 depanimagemasterslave_space_write.pngtengahimage/attachment_files/sbp/masterslave_space_write.pngbelakangimage
 Click the Spaces icon on the Space Browser Tab to get a global view of all spaces. As objects are being written, you should see replication occurring across both HK and GB sites until there are 5000 objects in each space:
 depanimagemasterslave_space_count.pngtengahimage/attachment_files/sbp/masterslave_space_count.pngbelakangimage
