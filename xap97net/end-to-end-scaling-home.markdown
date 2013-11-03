@@ -11,8 +11,6 @@ page_id: 63799426
 
 {% column width=70% %}
 
-{space-num-version-code:hsize=1|prefix=XAP.NET|suffix=Documentation}
-
 # XAP.NET 9.0 End to End Scaling Documentation
 
 {% lozenge title=Quick Start Guide|link=Quick Start Guide|color=silver|arrow=none|width=100%|icon=/attachment_files/flag.png %}

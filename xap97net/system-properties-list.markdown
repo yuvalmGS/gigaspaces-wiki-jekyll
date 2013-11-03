@@ -7,7 +7,7 @@ page_id: 63799375
 
 # System Properties List
 
-{% refer %}Refer to the {javadoc6:com/j_spaces/kernel/SystemProperties|SystemProperties} class for more details.{% endrefer %}
+{% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc9.6/com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}
 || Property name  || Description || Default value  ||
 | `com.gs.active_election.timeout` | Defines the sleep timeout between iterations in the Active election algorithm | 1000 msec |
 | `com.gs.replication.disable-duplicate-filtering` | Disables the duplication filtering mechanism used to avoid double processing of packets after recovery. | false |

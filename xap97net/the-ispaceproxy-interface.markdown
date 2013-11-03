@@ -219,7 +219,7 @@ When updating an existing object in the space, you may need the object's value b
 
 # Performing a Delta Update
 
-You may update selected Space object fields (delta) using the {JavaDoc6:com/gigaspaces/client/WriteModifiers|WriteModifiers.PARTIAL_UPDATE} modifier. This option is useful when having objects with large number of fields where you would like to update only few of the space object fields. This optimizes the network utilization and avoids serializing/de-serializing the entire object fields when interacting with a remote space.
+You may update selected Space object fields (delta) using the [WriteModifiers.PARTIAL_UPDATE](http://www.gigaspaces.com/docs/JavaDoc9.6/com/gigaspaces/client/WriteModifiers.html) modifier. This option is useful when having objects with large number of fields where you would like to update only few of the space object fields. This optimizes the network utilization and avoids serializing/de-serializing the entire object fields when interacting with a remote space.
 
 ## How to Perform a Delta Update?
 
@@ -301,7 +301,7 @@ See the [SQLQuery](./sqlquery.html) for details.
 
 ## Space Iterator
 
-The {javadoc6:org/openspaces/core/IteratorBuilder|IteratorBuilder} with the {javadoc6:com/j_spaces/core/client/GSIterator|GSIterator} allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the `readMultiple` since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side.
+The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc9.6/com/j_spaces/core/client/GSIterator.html) allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the `readMultiple` since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side.
 
 See the [Paging Support with Space Iterator](/xap97/paging-support-with-space-iterator.html) for details.
 

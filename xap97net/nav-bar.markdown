@@ -20,13 +20,16 @@ page_id: 63799331
 
 {% endsection %}
 
-{wnavpanel2}
-{wnavpanel2:Search XAP.NET 9.7|main}
-{livesearch:spaceKey=XAP97NET}
-{wnavpanel2}
-{wnavpanel2:Browse XAP.NET 9.7}
-{book-tree:Quick Start Guide}
-{book-tree:Product Overview}
-{book-tree:Programmer's Guide}
-{book-tree:Administrator's Guide}
-{wnavpanel2}
+### Search XAP.NET 9.7
+
+<section id="search-results" style="display: none;">
+  <p>Search results</p>
+  <div class="entries"></div>
+</section>
+
+
+### Browse XAP.NET 9.7
+[Quick Start Guide](./quick-start-guide.html)
+[Product Overview](./product-overview.html)
+[Programmer's Guide](./programmer's-guide.html)
+[Administrator's Guide](./administrator's-guide.html)

@@ -11,8 +11,6 @@ page_id: 63799415
 
 {% column width=70% %}
 
-{space-num-version-code:hsize=1|prefix=XAP.NET|suffix=Documentation}
-
 # XAP.NET 9.7 Documentation
 
 {% imagemap name=[scaling.png] %}
