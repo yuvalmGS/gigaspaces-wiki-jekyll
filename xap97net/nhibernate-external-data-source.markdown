@@ -49,7 +49,6 @@ NHibernate requires a session factory that creates new sessions over the databas
 </hibernate-configuration>
 {% endhighlight %}
 
-
 ## NHibernate Mapping File
 
 Each persistent class requires a mapping file that defines how to map the object to and from the database. This walkthrough shows a simple `Person` class and its corresponding mapping file.
@@ -93,7 +92,6 @@ namespace Entities
 
 {% endtabcontent %}
 
-
 {% tabcontent NHibernate Mapping File %}
 
 {% highlight xml %}
@@ -111,7 +109,6 @@ namespace Entities
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 # Starting the Spaces with NHibernate External Data Source
 
@@ -180,7 +177,6 @@ spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 2, null, 2,
 {% highlight java %}
 spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 2, 1, 2, 1);
 {% endhighlight %}
-
 
 ## Starting the Mirror Space
 

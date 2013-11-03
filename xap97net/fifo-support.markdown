@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799377
 ---
 
-
 {% summary %}How to get entries in the same order in which they were written to the space.{% endsummary %}
-
 
 # Overview
 
@@ -19,7 +17,6 @@ The default space behavior is non-FIFO. The reason is that FIFO support comes at
 
 Setting FIFO support for a class can be done via the `FifoSupport` property on the `\[SpaceClass\]` attribute:
 
-
 {% highlight java %}
 [SpaceClass(FifoSupport = FifoSupport.Operation)]
 public class Person
@@ -28,9 +25,7 @@ public class Person
 }
 {% endhighlight %}
 
-
 or when using gs.xml via the `fifo-support` attribute on the `class` element:
-
 
 {% highlight xml %}
 <gigaspaces-mapping>
@@ -39,7 +34,6 @@ or when using gs.xml via the `fifo-support` attribute on the `class` element:
     </class>
 </gigaspaces-mapping>
 {% endhighlight %}
-
 
 The `FifoSupport` modes are:
 
@@ -93,7 +87,6 @@ IDataEventSession session = space.CreateDataEventSession(sessionConfig);
 // Subscribe to an event:
 session.AddListener(new Person(), new EventHandler<SpaceDataEventArgs<Person>>(OnPersonEvent));
 {% endhighlight %}
-
 
 {% infosign %} When using FIFO the client will use a single thread to invoke the listener callback method, so the events are both received and processed in FIFO order (i.e. if the client receives an event but the callback method haven't finished processing the previous event, the new event will be blocked until the previous one finishes). This is contrary to non-FIFO events, which are forwarded to the callback method as soon as they arrive, and thus might invoke the callback methods in parallel via multiple threads.
 {% exclamation %} Registering for FIFO notifications on a class that was not FIFO-enabled will throw an exception.

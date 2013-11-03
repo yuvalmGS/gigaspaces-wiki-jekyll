@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799334
 ---
 
-
 {% summary %}How to query the space using entry ID{% endsummary %}
-
 
 # Overview
 
@@ -25,14 +23,12 @@ public String getEmployeeID() {
 }
 {% endhighlight %}
 
-
 To read the object back from the space using its ID and the `readById` operation:
 
 {% highlight java %}
 GigaSpace gigaSpace;
 Employee myEmployee = gigaSpace.readById(Employee.class , myEmployeeID , routingValue);
 {% endhighlight %}
-
 
 # Reading Multiple Entries by IDs
 
@@ -56,8 +52,6 @@ for (Employee employee : result) {
 }
 
 {% endhighlight %}
-
-
 
 {% tip %}
 See [Parent Child Relationship](/xap97/parent-child-relationship.html) for a full usage example of the `readByIds` operation.

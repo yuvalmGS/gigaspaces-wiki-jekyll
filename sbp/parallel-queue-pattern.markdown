@@ -42,11 +42,9 @@ Here is an example for the latency duration for the Order request processing tim
 
 The above results retrived when running the Data-Grid with 4 partitions with a backup.
 
-
 {% tip %}
 You can [download](/attachment_files/sbp/ParallelQueue.zip) the Order Management Processor code used with this example.
 {% endtip %}
-
 
 # The Order Management Processor Example
 
@@ -63,11 +61,9 @@ The following example illustrates a simple Order management processor that inclu
 
 The `bucketId` is calculated using the following formula:
 
-
 {% highlight java %}
 (first char of Symbol hashcode) % (# of machine cores)
 {% endhighlight %}
-
 
 ##  Running the Example
 
@@ -88,7 +84,6 @@ Here is a configuration for a data-grid with 2 partitions that will be running t
 
 {% endtabcontent %}
 
-
 {% tabcontent Running the Feeder %}
 You can run the Feeder within your IDE using the following configuration:
 
@@ -100,13 +95,11 @@ You can run the Feeder within your IDE using the following configuration:
 
 {% endinittab %}
 
-
 ## Example Code and Configuration
 
 {% inittab example|top %}
 
 {% tabcontent  The Order Class %}
-
 
 {% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
@@ -192,12 +185,9 @@ public class Order {
 }
 {% endhighlight %}
 
-
 {% endtabcontent %}
 
-
 {% tabcontent  The Feeder %}
-
 
 {% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
@@ -258,12 +248,9 @@ public class Feeder implements Runnable{
 }
 {% endhighlight %}
 
-
 {% endtabcontent %}
 
-
 {% tabcontent  The Processor %}
-
 
 {% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
@@ -295,12 +282,9 @@ public class Processor implements SpaceDataEventListener<Order>{
 }
 {% endhighlight %}
 
-
 {% endtabcontent %}
 
-
 {% tabcontent  The Data-Grid pu.xml  %}
-
 
 {% highlight java %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -335,12 +319,9 @@ public class Processor implements SpaceDataEventListener<Order>{
 </beans>
 {% endhighlight %}
 
-
 {% endtabcontent %}
 
-
 {% tabcontent  The ProcessorFactory - None TX %}
-
 
 {% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
@@ -407,10 +388,7 @@ public class ProcessorFactory implements InitializingBean{
 
 {% endtabcontent %}
 
-
-
 {% tabcontent  The ProcessorFactory - TX %}
-
 
 {% highlight java %}
 package com.gigaspaces.examples.parallelqueue;

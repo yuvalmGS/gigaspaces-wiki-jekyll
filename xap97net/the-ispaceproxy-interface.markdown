@@ -13,14 +13,11 @@ page_id: 63799326
 
 The `ISpaceProxy` interface is ideal for connecting to data stored in the Space. The `ISpaceProxy` interface is used to interact with the Space, allowing both read and write actions. An `ISpaceProxy` is initialized using the `GigaSpacesFactor` static class object.
 
-
 {% indent %}
 ![space_basic_operations91.jpg](/attachment_files/xap97net/space_basic_operations91.jpg)
 {% endindent %}
 
-
 An `ISpaceProxy` can be initialized directly in the code or in the `pu.config` file in XML format. To define an `ISpaceProxy`:
-
 
 {% inittab os_simple_space|top %}
 
@@ -41,8 +38,6 @@ An `ISpaceProxy` can be initialized directly in the code or in the `pu.config` f
 
 {% endtabcontent %}
 
-
-
 {% tabcontent Code %}
 
 {% highlight java %}
@@ -54,7 +49,6 @@ ISpaceProxy mySpace = GigaSpacesFactory.FindSpace("/./spaceName")
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 Several `ISpaceProxy` instances can be defined within a single Processing Unit, each with its own properties.
 
@@ -97,11 +91,9 @@ TakeMultiple|
 
 {include:ISpaceProxy Code Snippets}
 
-
 {% tip %}
 The `Clear` and `Clean` operations do not remove the Space class definition from the Space. You should restart the Space to allow it to drop the class definitions.
 {% endtip %}
-
 
 # Clustered Flag
 
@@ -110,7 +102,6 @@ When starting an embedded space with a cluster topology, or when looking up a re
 Many times, especially when working with a Processing Unit that starts an embedded space, operations against the space should be performed directly on the cluster member. This is a core concept of SBA and Processing Unit, where most, if not all operations should be performed in-memory without leaving the processing unit boundaries when a Processing Unit starts an embedded space.
 
 The decision of working directly with a cluster member or against the whole cluster is done in the `ISpaceProxy` level. The `GigaSpacesFactory` provides a clustered flag with the following logic as the default value: If the space is started in embedded mode (for example, `/./space`), the clustered flag is set to `false`. When the space is looked up in a remote protocol (Jini or RMI), the clustered flag is set to `true`. In addition to automatically setting the flag, the flag can be set explicitly. To configure a clustered proxy:
-
 
 {% inittab os_simple_space|top %}
 
@@ -130,7 +121,6 @@ The decision of working directly with a cluster member or against the whole clus
 
 {% endtabcontent %}
 
-
 {% tabcontent Code %}
 
 {% highlight java %}
@@ -148,13 +138,11 @@ ISpaceProxy proxy = GigaSpacesFactory.FindSpace("/./embSpace", mySettings);
 
 {% endinittab %}
 
-
 The above example shows a typical scenario where the clustered flag is used. Within a Processing Unit, an application might need to access both the cluster member and the whole cluster directly.
 
 # Using Generics and Default Values in the ISpaceProxy object
 
 The `ISpaceProxy` interface is implemented to provide a wide variety of options for reading data. By receiving and returning a generic parameter, the function provides the capability to read all types of objects in the Space. By implementing many overriding functions, you can take advantage of the in-built default values, or choose to specify your own values according to your own needs. In the Take function below, you can choose to override the timeout value, or use the default value of `0` and not specify a timeout value at all.
-
 
 {% highlight java %}
 public interface ISpaceProxy{
@@ -168,9 +156,7 @@ public interface ISpaceProxy{
 }
 {% endhighlight %}
 
-
 In a similar manner, the read timeout and write lease can be specified.
-
 
 {% inittab os_simple_space|top %}
 
@@ -192,7 +178,6 @@ In a similar manner, the read timeout and write lease can be specified.
 
 {% endtabcontent %}
 
-
 {% tabcontent Code %}
 
 {% highlight java %}
@@ -211,12 +196,9 @@ In a similar manner, the read timeout and write lease can be specified.
 
 {% endinittab %}
 
-
-
 {% tip %}
 See more examples for the `ISpaceProxy` interface usage with the [POJO Support](/xap97/pojo-support.html) section.
 {% endtip %}
-
 
 # Saving Data to the Space
 
@@ -279,9 +261,7 @@ catch (EntryNotInSpaceException enise)
 }
 {% endhighlight %}
 
-
 Alternatively, you can use the [change](./change-api.html) operation and update specific fields or even nested fields or modify collections and maps without having to supply the entire collection or map upon such update. The following `change` operation example is equivalent to the previous partial update operation.
-
 
 {% highlight java %}
 IdQuery<MyClass> idQuery = new IdQuery<MyClass>(MyClass.class, "1")
@@ -292,7 +272,6 @@ if (changeResult.getNumberOfChangedEntries() == 0)
 }
 {% endhighlight %}
 
-
 # Data Access
 
 There are various mechanisms offered by GigaSpaces XAP to access the data within the space:
@@ -301,11 +280,9 @@ There are various mechanisms offered by GigaSpaces XAP to access the data within
 
 Each space object includes an ID. You may read or remove objects from the space using their ID via the `ReadByID`,`TakeByID`,`ReadIfExistsById`,`TakeIfExistsById`, `ReadByIDs` or the `TakeByIDs` operations.
 
-
 {% tip %}
 The `ReadByID` and `ReadByIDs` have a special performance optimization when running a [Local Cache](./local-cache.html) or [Local View](./local-view.html).
 {% endtip %}
-
 
 See the [Id Queries](./id-queries.html) for details.
 
@@ -339,11 +316,9 @@ A `Read` operation acts like a `ReadIfExists` except that it will wait until a m
 
 In both read methods, a timeout of `JavaSpace.NO_WAIT` means to return immediately, with no waiting, which is equivalent to using a zero timeout. An `IllegalArgumentException` will be thrown if a negative timeout value is used.
 
-
 {% tip %}
 The `Read` operation default timeout is `JavaSpace.NO_WAIT`.
 {% endtip %}
-
 
 # takeIfExists and take Operations
 
@@ -357,11 +332,9 @@ If you would like to take objects from the space in the same order they have bee
 
 Taking an object from the space might generate [notifications](/xap97/notify-container.html) to registered objects/queries.
 
-
 {% tip %}
 The `take` operation default timeout is `JavaSpace.NO_WAIT`.
 {% endtip %}
-
 
 # Batch Operations
 
@@ -396,7 +369,6 @@ Alternatively, asyncRead and asyncTake also accept an implementation of [AsyncFu
 
 Asynchronous `write` operation can be implemented using a [Task](./task-execution-over-the-space.html), where the `Task` implementation include a write operation. With this approach the `Task` is sent to the space and executed in an asynchronous manner. The write operation itself will be completed once both the primary and the backup will acknowledge the operation. This activity will be performed as a background activity from the client perspective.
 
-
 {% inittab async_operations|top %}
 
 {% tabcontent Space Class %}
@@ -422,7 +394,6 @@ public class MyClass implements Serializable{
 
 {% endtabcontent %}
 
-
 {% tabcontent AsyncFutureListener %}
 
 {% highlight java %}
@@ -442,8 +413,6 @@ public class AsyncListener implements AsyncFutureListener<MyClass>{
 
 {% endtabcontent %}
 
-
-
 {% tabcontent Async Read %}
 
 {% highlight java %}
@@ -452,7 +421,6 @@ AsyncFuture<MyClass> futureRead =  space.asyncRead(new MyClass(1), 10000, new As
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent Async Take %}
 
@@ -463,7 +431,6 @@ AsyncFuture<MyClass> futureTake =  space.asyncTake(new MyClass(1), 10000, new As
 
 {% endtabcontent %}
 
-
 {% tabcontent Async Write %}
 
 {% highlight java %}
@@ -471,8 +438,6 @@ GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer("jini://*/*/sp
 MyClass obj = new MyClass(1,"AAA");
 space.execute(new AsyncWriteTask(obj));
 {% endhighlight %}
-
-
 
 {% highlight java %}
 public class AsyncWriteTask implements Task<Integer>{
@@ -494,13 +459,11 @@ public class AsyncWriteTask implements Task<Integer>{
 
 {% endinittab %}
 
-
 # Declarative Transactions
 
 As seen in the take API above, there is no need to provide a Jini transaction object for the different space operations. `GigaSpace` with the different OpenSpaces [transaction managers](/xap97/transaction-management.html) and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the `GigaSpace` interface joins it, using Spring's rich transaction support.
 
 {% exclamation %} In order to have GigaSpace transactional, the transaction manager must be provided as a reference when constructing the GigaSpace bean. For example (using the distributed transaction manager):
-
 
 {% inittab os_simple_space|top %}
 
@@ -515,7 +478,6 @@ As seen in the take API above, there is no need to provide a Jini transaction ob
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent Plain XML %}
 
@@ -538,13 +500,11 @@ As seen in the take API above, there is no need to provide a Jini transaction ob
 
 {% endinittab %}
 
-
 {% lampon %} It is highly recommended to read the [transaction management chapter](http://static.springframework.org/spring/docs/3.0.x/reference/transaction.html) in the Spring reference documentation.
 
 ## Transaction Provider
 
 OpenSpaces provides a pluggable transaction provider using the following interface:
-
 
 {% highlight java %}
 public interface TransactionProvider {
@@ -555,21 +515,17 @@ public interface TransactionProvider {
 }
 {% endhighlight %}
 
-
 OpenSpaces comes with a default transaction provider implementation, which uses Spring and its transaction manager in order to obtain the currently running transactions and automatically use them under transactional operations.
 
 `GigaSpace` allows access to the current running transaction using the transaction provider. The following code example shows how the take operation can be performed using `IJspace` (users normally won't be required to do so):
-
 
 {% highlight java %}
 gigaSpace.getSpace().take(obj, gigaSpace.getCurrentTransaction(), 1000);
 {% endhighlight %}
 
-
 # Transaction Isolation Level
 
 GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED` and `REPEATABLE_READ` (default). When using `GigaSpace`, the default isolation level that it will perform under can be defined in the following manner:
-
 
 {% inittab os_simple_space|top %}
 
@@ -582,7 +538,6 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent Plain XML %}
 
@@ -599,7 +554,6 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 
 {% endtabcontent %}
 
-
 {% tabcontent Code %}
 
 {% highlight java %}
@@ -614,9 +568,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space)
 
 {% endinittab %}
 
-
 In addition, Spring allows you to define the isolation level on the transaction definition itself:
-
 
 {% highlight java %}
 @Transactional(readOnly = true)
@@ -642,7 +594,6 @@ public class DefaultFooService implements FooService {
 }
 {% endhighlight %}
 
-
 In the above example, any operation performed using `GigaSpace` in the `updateFoo` method automatically works under the `READ_COMMITTED` isolation level.
 
 # Exception Hierarchy
@@ -651,14 +602,12 @@ OpenSpaces is built on top of the Spring [consistent exception hierarchy](http:/
 
 OpenSpaces provides a pluggable exception translator using the following interface:
 
-
 {% highlight java %}
 public interface ExceptionTranslator {
 
     DataAccessException translate(Throwable e);
 }
 {% endhighlight %}
-
 
 A default implementation of the exception translator is automatically used, which translates most of the relevant exceptions into either Spring data access exceptions, or concrete OpenSpaces runtime exceptions (in the `org.openspaces.core` package).
 

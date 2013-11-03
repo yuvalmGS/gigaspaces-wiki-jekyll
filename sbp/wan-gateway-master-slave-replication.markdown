@@ -16,7 +16,6 @@ page_id: 64323671
 
 {% endtip %}
 
-
 # Overview
 
 The WAN Gateway provides a simple way of creating a master-slave topology enabling data from one XAP site to be replicated to one or more remote sites. For instance, given three clusters in New York, London, and Hong Kong, with New York being the master and the remaining two acting as slaves, any updates to the New York space will propagate to both London and Hong Kong asynchronously. The sample processing units and configuration provided below are intended as an example of implementing a single-master/multi-slave topology across three sites: New York (US), London (GB), and Hong Kong (HK) where each site has an independent cluster and a Gateway.
@@ -79,7 +78,6 @@ The master-slave topology configuration is simply implemented through delegators
 	</os-gateway:targets>
 </beans>
 
-
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -112,11 +110,9 @@ The master-slave topology configuration is simply implemented through delegators
 
 </beans>
 
-
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent London Space %}
 
@@ -153,7 +149,6 @@ The master-slave topology configuration is simply implemented through delegators
 
 {% endtabcontent %}
 
-
 {% tabcontent London Gateway %}
 
 {% highlight xml %}
@@ -181,11 +176,9 @@ The master-slave topology configuration is simply implemented through delegators
 
 </beans>
 
-
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent Hong Kong Space %}
 
@@ -221,7 +214,6 @@ The master-slave topology configuration is simply implemented through delegators
 
 {% endtabcontent %}
 
-
 {% tabcontent Hong Kong Gateway %}
 
 {% highlight xml %}
@@ -249,13 +241,11 @@ The master-slave topology configuration is simply implemented through delegators
 
 </beans>
 
-
 {% endhighlight %}
 
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 # Installing and Running the Example
 

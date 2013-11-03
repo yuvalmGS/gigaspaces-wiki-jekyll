@@ -35,7 +35,6 @@ public class Message
 }
 {% endhighlight %}
 
-
 Here are the `StorageType` supported options:
 - **Object** - The space proxy will serialize the property value using `PBS` and the space will deserialize it into its java counterpart, and store it in the space as such. When the entry is read/taken from the space the property will be serialized back in the same manner.
 - **Binary** - The space proxy will serialize the property value using `PBS`, but the space will not deserialize it, just keep the bytes in a special Binary container in the space. When the entry is read/taken the binary content will be passed as-is back to the .NET proxy, which will deserialize it back to a .NET object.

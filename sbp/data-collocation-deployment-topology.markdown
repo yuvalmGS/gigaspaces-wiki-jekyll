@@ -30,6 +30,7 @@ The Processing Unit configuration should follow the basic standards that compris
 
 ##  The Data Colocation Deployment Topologies
 When deploying the processing unit, one of the following data colocation deployment topologies can be used:
+
 - Pure business logic - the state is stored within another processing unit deployed separately. Multiple instances of the business logic can be deployed and scaled dynamically.
 
 {% indent %}
@@ -59,6 +60,7 @@ Historically, software systems scaled by adding more hardware. These ran more so
 
 ## How can I Scale my Application?
 The concept of the OpenSpaces Processing Unit was designed around scalability, and the Processing Unit is the unit of scale. Adding scalability, then, is a matter of running more processing units on the any machine participating in the XAP cluster. The application can be scaled by:
+
 - Running multiple consumers concurrently within the same process (when using the polling container).
 - Running multiple processing unit instances concurrently within the same machine.
 - Running multiple processing unit instances across multiple machines that are running concurrently, and utilizing your compute resources over the network (a.k.a. the grid).
@@ -83,9 +85,7 @@ Collocated Mode - The Task Executor-Step 1:
 ![DistributedTaskExecution_phase1.jpg](/attachment_files/sbp/DistributedTaskExecution_phase1.jpg)
 {% endindent %}
 
-
 {% endcolumn %}
-
 
 {% column width=50% %}
 
@@ -94,7 +94,6 @@ Collocated Mode - The Task Executor-Step 2:
 {% indent %}
 ![DistributedTaskExecution_phase2.jpg](/attachment_files/sbp/DistributedTaskExecution_phase2.jpg)
 {% endindent %}
-
 
 {% endcolumn %}
 
@@ -115,9 +114,7 @@ Non-Collocated Mode - The Master Worker Pattern-Step 1:
 ![master_worker_rr1.jpg](/attachment_files/sbp/master_worker_rr1.jpg)
 {% endindent %}
 
-
 {% endcolumn %}
-
 
 {% column width=50% %}
 
@@ -126,7 +123,6 @@ Non-Collocated Mode - The Master Worker Pattern-Step 2:
 {% indent %}
 ![master_worker_rr2.jpg](/attachment_files/sbp/master_worker_rr2.jpg)
 {% endindent %}
-
 
 {% endcolumn %}
 

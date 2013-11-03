@@ -9,7 +9,6 @@ page_id: 63799302
 
 {% summary %}This page describes the automatic scaling policy of the polling container.{% endsummary %}
 
-
 By default, the [polling event container](./polling-container-component.html) starts a single thread that performs the receive operations, and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads. The container manages the scaling up and down of concurrent consumers automatically, according to the load.
 There are 5 parameters that control the scaling behavior:
 ||Parameter Name|| Description || Default ||
@@ -51,7 +50,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -67,6 +65,5 @@ pollingEventListenerContainer.BusyIterationsThreshold = 50;
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 Since there is no asynchronous process that monitors the load, but one of the consumers does so, when altering the default parameters a few things should be kept in mind. The amount of time that it takes to detect that a spawning of an additional consumer is needed is the average event processing time ** the `DynamicScaleSampleRate` . If the processing time is very long, you might want to reduce the `DynamicScaleSampleRate`. On the other hand, it takes `ReceiveTimeout` ** `IdleIterationsThreshold` amount of time to detect an idle consumer. If the `ReceiveTimeout` is long, obviously it increases the idle consumer detection time. As a rule of thumb, it is more important to scale up quickly rather than to scale down quickly, so altering the parameters should be planned towards faster scaling up.

@@ -7,7 +7,6 @@ page_id: 54820978
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}This article illustrates creating a Web Load Balancer Agent as a processing unit{% endexcerpt %}
 **Author:** Jeroen Remmerswaal, Tricode
@@ -18,7 +17,6 @@ page_id: 54820978
 {% toc minLevel=1|maxLevel=2|type=flat|separator=pipe %}
 
 {% endtip %}
-
 
 # Overview
 
@@ -34,13 +32,11 @@ Click [here](http://www.gigaspaces.com/wiki/download/attachments/54820978/eAucti
 
 # Usage
 
-
 {% inittab Configuration and Usage %}
 
 {% tabcontent Spring Configuration %}
 Here's an example Processing Unit XML configuration that demonstrates how to configure the Web Load Balancer Agent.  It consists of four parts:
 a) The `webLayerLoadBalancerListener`-bean which will use a handle to the b) Admin API to monitor c) a given list of Processing Units, by means of the `monitoredProcessingUnits`-property, to see if a scale-up or scale-down event occurs on. If such an event occurs, it is handed over to a d) Load Balancer Agent for taking the right measurements. You can see this is delegated to the `ApacheLoadBalancerAgent` class by means of the `loadBalancerAgent` property of the `webLayerLoadBalancerListener`-bean.
-
 
 {% highlight java %}
 <beans>
@@ -64,14 +60,11 @@ a) The `webLayerLoadBalancerListener`-bean which will use a handle to the b) Adm
 </beans>
 {% endhighlight %}
 
-
 More details on the `WebLayerLoadBalancerListener` and the `ApacheLoadBalancerAgent` can be found on the next panels.
 {% endtabcontent %}
 
-
 {% tabcontent WebLayerLoadBalancerListener %}
 The `WebLayerLoadBalancerListener` component is capable of monitoring a list of Web Processing Units and will react upon a scale up or scale down event by communicating with a Load Balancer Agent. The main piece of code that accomplishes this can be shown as follows and uses a lifecycle-listener for the Processing Unit component of the Admin API:
-
 
 {% highlight java %}
 public class WebLayerLoadBalancerListener {
@@ -112,10 +105,7 @@ public class WebLayerLoadBalancerListener {
 }
 {% endhighlight %}
 
-
 A custom Load Balancer Agent needs to implement this `LoadBalancerAgent` interface:
-
-
 
 {% highlight java %}
 public interface LoadBalancerAgent {
@@ -127,13 +117,10 @@ public interface LoadBalancerAgent {
 
 {% endtabcontent %}
 
-
 {% tabcontent ApacheLoadBalancerAgent %}
 As an example an component called `ApacheLoadBalancerAgent` is provided that can communicate with the Apache Load Balancer, in a very similar fashion as the loadbalancer-agent that can be found under the `tools`-folder.
 
 A snippet of the code is provided below for your information, containing the methods that are called when a Processing Unit instance is added or removed.
-
-
 
 {% highlight java %}
 public class ApacheLoadBalancerAgent implements LoadBalancerAgent, Runnable {

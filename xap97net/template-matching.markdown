@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799323
 ---
 
-
 {% summary %}How to query the space using Template Matching{% endsummary %}
-
 
 # Overview
 
@@ -31,7 +29,6 @@ template.FirstName = "John";
 Person person = spaceProxy.Read(template);
 {% endhighlight %}
 
-
 Read an entry of type **Person** whose **FirstName** is **John** and **LastName** is **Smith**:
 
 {% highlight java %}
@@ -41,20 +38,17 @@ template.LastName = "Smith";
 Person person = spaceProxy.Read(template);
 {% endhighlight %}
 
-
 If none of the properties are set, all the entries of the type are matched. For example, to count all entries of type **Person**:
 
 {% highlight java %}
 int numOfPersons = spaceProxy.Count(new Person());
 {% endhighlight %}
 
-
 If the template class is null, all the entries in the space are matched. For example, to clear all entries from the space:
 
 {% highlight java %}
 spaceProxy.Clear(null);
 {% endhighlight %}
-
 
 # Indexes
 
@@ -65,7 +59,6 @@ GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (rega
 Template Matching support inheritance relationships, so that entries of a sub-class are visible in the context of the super class, but not the other way around.
 For example, suppose class **Citizen** extends class **Person**:
 
-
 {% highlight java %}
 spaceProxy.Write(new Person());
 spaceProxy.Write(new Citizen());
@@ -74,7 +67,6 @@ int numberOfPersons = spaceProxy.Count(new Person());
 // Count citizends - should return 1:
 int numberOfCitizens = spaceProxy.Count(new Citizen());
 {% endhighlight %}
-
 
 {% infosign %} Since all classes extends `Object`, a template of type `Object` will match all the entries in the space.
 
@@ -98,7 +90,6 @@ spaceProxy.Write(p1);
 Person p = spaceProxy.Read(new Person());
 {% endhighlight %}
 
-
 We expect **p** to hold the person we just wrote to the space, but in fact it will be null: since **age** is primitive it is implicitly initialized to 0 (zero) and cannot be set to null either implicitly or explicitly, which means we're actually matching for Persons whose age is 0 (zero).
 
 To overcome this issue we can map a primitive value to null via the `\[SpaceProperty(NullValue = ?)\]` attribute. For example:
@@ -114,7 +105,6 @@ public class Person
     // The rest of the class is omitted for brevity.
 }
 {% endhighlight %}
-
 
 We've indicated that `-1` should be treated as `null` when performing template matching, and initialized age to `-1` so users of Person class need not set it explicitly whenever they use it. For more information refer to [Object Metadata](./object-metadata.html).
 

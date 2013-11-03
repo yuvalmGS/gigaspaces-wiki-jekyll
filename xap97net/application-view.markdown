@@ -8,7 +8,6 @@ page_id: 63799300
 {% compositionsetup %}
 {% summary %}Applications and Processing unit dependency view{% endsummary %}
 
-
 # Overview
 
 ![new-in-805-ribbon.png](/attachment_files/xap97net/new-in-805-ribbon.png)
@@ -44,7 +43,6 @@ For example, in the screenshot below, the feeder depends on the Space to be aliv
 {% info %}
 For more information on processing unit dependencies, see [Application deployment and processing unit dependencies](/xap97/deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependencies)
 {% endinfo %}
-
 
 ![application_dependency.png](/attachment_files/xap97net/application_dependency.png)
 
@@ -100,6 +98,5 @@ The events time-line shows the deployment life cycle of all the processing units
 {% info %}
 For more information on the events displayed, see [Events time-line tab in dashboard view](./dashboard-view.html#Events time-line)
 {% endinfo %}
-
 
 ![events_timeline_in_application.png](/attachment_files/xap97net/events_timeline_in_application.png)

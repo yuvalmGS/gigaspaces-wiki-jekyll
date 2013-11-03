@@ -10,7 +10,6 @@ page_id: 63799398
 
 # Basic Components
 
-
 {% comment %}
 =========================================
 
@@ -18,7 +17,6 @@ page_id: 63799398
 
 =========================================
 {% endcomment %}
-
 
 {% comment %}
 ----------------------------
@@ -93,7 +91,6 @@ A set of methods used to read, write, take, and register for notification on obj
 **Local Cache** - a space embedded within a client application to enable ...
 {% endcomment %}
 
-
 {% comment %}
 ----------------------------
           Service Component
@@ -159,7 +156,6 @@ A combination of service components and/or an embedded space instance. This is t
 {% endsection %}
 
 # Common Processing Unit Configurations
-
 
 {% comment %}
 ----------------------------
@@ -245,6 +241,5 @@ Client application (which can also be other processing units) write objects to t
 {% endcolumn %}
 
 {% endsection %}
-
 
 ||Basic Components|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|

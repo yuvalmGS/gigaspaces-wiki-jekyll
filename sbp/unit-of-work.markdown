@@ -24,22 +24,22 @@ GigaSpaces Unit of Work (UOW) enables a stand-alone message producer to group me
 
 The UOW can be used with financial systems to process **trade orders** , in healthcare systems to processes **patient medical data** , with transportation systems to process **reservations** , with airlines systems to process **flight schedule** , with billing system to processes **payments**, etc.
 
-
 {% tip %}
 Starting with XAP 9 you may use the **FIFO Grouping** to implement the Unit of Work model. See the [FIFO Grouping](http://wiki.gigaspaces.com/wiki/display/XAP9/FIFO+Grouping) for details.
 {% endtip %}
-
 
 # GigaSpaces FIFO and UOW
 While the [FIFO](http://wiki.gigaspaces.com/wiki/display/XAP8/FIFO+Support) mode provides ordered object consumption, it does so in a very strict sense. It defines an order between space objects based on the time they were written into the space. FIFO does not take into account consuming associated objects as one atomic operation. UOW allows a polling container to process a group of associated objects in the order they have been written in parallel to other processing groups. Multiple polling containers handle different groups concurrently, each group items processed in a FIFO fashion.
 
 # When can the GigaSpaces Unit of Work be used?
 GigaSpaces UOW can be used in the following cases:
+
 - When having **many consumers**, each should handle a different group (number of groups may be unlimited) where the processing of the items within the group should be done in an ordered fashion as **one atomic operation**.
 - When having **multiple producers**, where data from each producer may be associated with different groups (number of groups may be unlimited) where the processing of the items within the group should be done in an ordered fashion as **one atomic operation**.
 
 # Example use case
 Here is a simple scenario illustrates the Unit of Work usage:
+
 1. Client A starts an Order ID 1 and submits a request to buy $1000 worth of shares of IBM
 2. Client A starts an Order ID 2 and submits a request to buy $1000 worth of shares of MSFT
 3. Client A resumes Order ID 1 and submits a request to increase the purchase of IBM request by $500
@@ -49,6 +49,7 @@ Here is a simple scenario illustrates the Unit of Work usage:
 With the above scenario requests 1, 3 and 4 should be processed as one atomic operation where requests 2 and 5 can be processed in parallel but also as one atomic operation.
 
 # How is the GigaSpaces Unit of Work configured?
+
 - Multiple polling containers running in the following mode are started:
 -- Using `SingleTakeReceiveOperationHandler`.
 -- Using one concurrent consumer thread.
@@ -56,17 +57,15 @@ With the above scenario requests 1, 3 and 4 should be processed as one atomic op
 -- Template set with a different `bucketId` for each polling container - This ensures **no contention** or **race conditions** will be generated.
 -- Using Local Transaction Manager.
 - The polling container `SpaceDataEvent` implementation flow:
-1. Transaction started and an object at the top of the FIFO chain is taken.
-2. To consume the entire group, a `takeMultiple` is called using a template with the group identity set. The objects are retrieved in FIFO fashion (in order).
-3. Group is processed.
-4. Transaction is committed.
-5. Other groups are processes in-parallel by other polling containers.
-
+		1. Transaction started and an object at the top of the FIFO chain is taken.
+		2. To consume the entire group, a `takeMultiple` is called using a template with the group identity set. The objects are retrieved in FIFO fashion (in order).
+		3. Group is processed.
+		4. Transaction is committed.
+		5. Other groups are processes in-parallel by other polling containers.
 
 {% indent %}
 ![uow_1.jpg](/attachment_files/sbp/uow_1.jpg)
 {% endindent %}
-
 
 # UOW Example
 
@@ -75,7 +74,6 @@ With the above scenario requests 1, 3 and 4 should be processed as one atomic op
 {% tip %}
 You can [download](/attachment_files/sbp/uow.zip) eclipse project with example source code, running scripts and configuration.
 {% endtip %}
-
 
 {% inittab RunningExample|top %}
 
@@ -94,13 +92,11 @@ Here is a configuration for a UOW Data-Grid with 2 partitions:
 
 {% endtabcontent %}
 
-
-
 {% tabcontent Deploying the UOWProcessor into the Service Grid %}
 Instead of running the UOWProcessor within your IDE, you can deploy it into the Service Grid.
+
 1. Edit the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` variable as your machine IP and the `GS_HOME` variable as the GigaSpaces root folder.
 2. Start the Service-Grid
-
 
 {% highlight java %}
 runAgent.bat
@@ -108,14 +104,12 @@ runAgent.bat
 
 3. Deploy the UOWProcessor PU
 
-
 {% highlight java %}
 deployUOW.bat
 {% endhighlight %}
 
 This will deploy the UOW Data-Grid with 2 partitions and a backup.
 {% endtabcontent %}
-
 
 {% tabcontent Running the UOWFeeder %}
 You can run the `UOWFeeder` within your IDE using the following configuration:
@@ -126,7 +120,6 @@ You can run the `UOWFeeder` within your IDE using the following configuration:
 
 or using the following:
 
-
 {% highlight java %}
 runClient.bat
 {% endhighlight %}
@@ -135,18 +128,15 @@ runClient.bat
 
 {% endinittab %}
 
-
 ## Example Code and Configuration
 
 {% tip %}
 The bucket count configured via the UOW Data-Grid pu.xml using the BucketConfiguration Bean
 {% endtip %}
 
-
 {% inittab example|top %}
 
 {% tabcontent The UOWMessage Class %}
-
 
 {% highlight java %}
 package com.giagspaces.patterns.uow;
@@ -200,21 +190,15 @@ public class UOWMessage {
 }
 {% endhighlight %}
 
-
 {% endtabcontent %}
-
 
 {% tabcontent The UOWFeeder %}
 
 The `buketId` is calculated using the following:
 
-
 {% highlight java %}
 group % bucketsCount
 {% endhighlight %}
-
-
-
 
 {% highlight java %}
 package com.giagspaces.patterns.uow;
@@ -267,12 +251,9 @@ public class UOWFeederMain {
 }
 {% endhighlight %}
 
-
 {% endtabcontent %}
 
-
 {% tabcontent The UOWProcessorService %}
-
 
 {% highlight java %}
 package com.giagspaces.patterns.uow;
@@ -282,12 +263,9 @@ public interface UOWProcessorService {
 }
 {% endhighlight %}
 
-
 {% endtabcontent %}
 
-
 {% tabcontent The UOWProcessor %}
-
 
 {% highlight java %}
 package com.giagspaces.patterns.uow;
@@ -377,10 +355,7 @@ public class UOWProcessor {
 
 {% endtabcontent %}
 
-
-
 {% tabcontent The UOWProcessorFactory %}
-
 
 {% highlight java %}
 @RemotingService
@@ -441,10 +416,7 @@ public class UOWProcessorFactory implements UOWProcessorService{
 
 {% endtabcontent %}
 
-
-
 {% tabcontent The UOW Data-Grid pu.xml  %}
-
 
 {% highlight java %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -483,12 +455,9 @@ public class UOWProcessorFactory implements UOWProcessorService{
 </beans>
 {% endhighlight %}
 
-
 {% endtabcontent %}
 
-
 {% tabcontent The BucketConfiguration %}
-
 
 {% highlight java %}
 package com.giagspaces.patterns.uow;
@@ -507,7 +476,6 @@ public class BucketConfiguration {
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% endinittab %}
 

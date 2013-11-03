@@ -33,11 +33,9 @@ This section explains the topologies supported by XAP: Replicated, partitioned a
 - **Partitioning**: New data or operations on data are routed to one of several space instances (partitions). Each space instance holds a subset of the data, with no overlap. Partitioning is done according to the _routing field_ in the data object. Each object written to the space defines a routing field whose value is used to determine the partition to which the object will be sent. The space client side proxy guarantees that if two objects have the same value set for the routing field they will end up in the same partition, regardless of how many partitions are running. ![DGA-Partitioning2.jpg](/attachment_files/xap97net/DGA-Partitioning2.jpg)
 - **Topology**: A specific configuration of space instances. For example, a replicated topology is a configuration in which all space instances replicate data between one another. In GigaSpaces, space topologies are defined by _clustering policies_ (see below).
 
-
 {% info title=Replication Configuration %}
 For more details on how to configure the replication mechanisms of the Space, refer to [Replication](/xap97/replication.html) in the [Administrator's Guide](./administrator's-guide.html).
 {% endinfo %}
-
 
 # Data Grid Topologies
 
@@ -59,6 +57,5 @@ GigaSpaces XAP supports the following data grid topologies:
 - Asynchronous replication - `async-replicated`
 - Partitioned with backup - `partitioned-sync2backup`
 The local cache and local view topologies do not need their own schemas, because they are defined on the client side.
-
 
 {children}

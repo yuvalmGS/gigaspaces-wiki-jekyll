@@ -17,7 +17,6 @@ That said, usually at some point there's a need to tweak the configuration. The 
 # **Structure**
 {% endcomment %}
 
-
 - **Processing Units** - The Service Grid uses an xml descriptor called **pu.config** to deploy processing units. To learn more about configuring processing units refer to the [Processing Units](./processing-units.html) section.
 
 - **Logs** - Both XAP.NET and XAP use logs to expose information about the system behavior. To learn more about configuring logs refer to the [Log Configuration](./log-configuration.html) section.

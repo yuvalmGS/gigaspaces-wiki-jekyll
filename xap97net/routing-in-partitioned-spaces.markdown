@@ -21,12 +21,10 @@ Note that in such a configuration, the different spaces defined as partitions ar
 
 In order to accomplish that a **routing property** can be defined on the entry type. When the proxy is asked to write an entry it uses the entry's routing property value hash code to determine the relevant partition for it:
 
-
 {% highlight java %}
 Target partition space ID =
     getRoutingPropertyValue(entry).hashCode() % (number of partitions)
 {% endhighlight %}
-
 
 The routing property can be explicitly set using the \[`SpaceRouting`\] attribute for [Object entries](./object-metadata.html) or via the `SpaceTypeDescriptorBuilder` for [document entries](./document-(schema-free)-entries.html). If the routing property is not explicitly set, the space id property is used for routing. If the space id property is not defined, the first indexed property (alphabetically) is used for routing, otherwise the first property (alphabetically) is used for routing.
 

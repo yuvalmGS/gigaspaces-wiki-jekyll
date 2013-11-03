@@ -12,7 +12,6 @@ page_id: 63799418
 
 # Processing Unit Container
 
-
 {% comment %}
 =====================================
 
@@ -20,7 +19,6 @@ page_id: 63799418
 
 ======================================
 {% endcomment %}
-
 
 {% comment %}
 -------------------------------------------------
@@ -52,7 +50,6 @@ A container that hosts a [Processing Unit](./terminology---basic-components.html
 {% endsection %}
 
 # Types of Processing Unit Containers
-
 
 {% comment %}
 ----------------------------
@@ -133,7 +130,6 @@ It enables running the processing unit within a [service grid](#Service Grid), w
 
 # Service Grid
 
-
 A set of [Grid Service Containers (GSC)](#GSC) managed by a [Grid Service Manager (GSM)](#GSM).
 The containers host various deployments of [Processing Units](./terminology---basic-components.html#Processing Unit), [Data Grid](./terminology---data-grid-topologies.html).
 Each container can be run on a separate physical machine.
@@ -143,10 +139,6 @@ Each container can be run on a separate physical machine.
 {% endcolumn %}
 
 {% column width=30% %}
-
-
-
-
 
 {% align center %}![term_empty_service_grid.gif](/attachment_files/xap97net/term_empty_service_grid.gif)
 
@@ -244,7 +236,6 @@ Enables the user to view and interact with the runtime components running in the
 
 {% column width=30% %}
 
-
 {% align center %}![term_management_ui.gif](/attachment_files/xap97net/term_management_ui.gif)
 
 {% sub %}**Management UI Console**{% endsub %}
@@ -253,7 +244,5 @@ Enables the user to view and interact with the runtime components running in the
 {% endcolumn %}
 
 {% endsection %}
-
-
 
 |[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)||Runtime Components|

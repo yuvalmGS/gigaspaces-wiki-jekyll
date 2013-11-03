@@ -29,7 +29,6 @@ In some cases you might want to use a custom data type with a custom business lo
 The [Comparable](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html) implementation should not be done for the space class itself, but for one of its fields.
 {% endtip %}
 
-
 Such custom business logic might be useful when comparing vector data (2 dimensional Cartesian space). These may represent sound, maps, pictures or any other 2 or 3 dimensional artifacts. You may use this technique to query data based on any other mathematical or financial related formulas such as [Time value of money](http://en.wikipedia.org/wiki/Time_value_of_money) like Present Value of a Cash Flow Series, Future Value of a Cash Flow Series, etc. Other areas where such custom matching is relevant, are Pattern recognition, Sequence analysis, Surveillance, Forensic, Social network behavior etc.
 
 {% exclamation %} In some cases, you may index the data to speed up the custom matching process. To enable this, you should index the field so that its class implements the `Comparable` interface using the `EXTENDED` index type as part of the space class. See the [Indexing](http://wiki.gigaspaces.com/wiki/display/XAP91/Indexing) page for additional information about how to enable the `EXTENDED` index. Indexing the custom type field **should be used carefully since it does not support** a `Comparable.compareTo` implementation that performs relative-based matching, as demonstrated by the following example.
@@ -40,7 +39,6 @@ The following example illustrates a business logic implementation used to query 
 {% panel %}![EuclideanDistance.jpg](/attachment_files/sbp/EuclideanDistance.jpg){% endpanel %}
 
 The object that holds the array implements the [Comparable](http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Comparable.html) interface. The Space class has a getter method for this field indexing, using the `EXTENDED` index. The actual query involves indexed fields for several sample data points within the vector, together with the custom field:
-
 
 {% highlight java %}
 SQLQuery<Vector> query= new SQLQuery<Vector>(Vector.class ,
@@ -58,24 +56,19 @@ SQLQuery<Vector> query= new SQLQuery<Vector>(Vector.class ,
 		"AND vectordata <= ?");
 {% endhighlight %}
 
-
 Here is an example of a target vector, and a matching vector found using the custom matching implementation illustrated below:
 
 {% panel %}![custommatching.jpg](/attachment_files/sbp/custommatching.jpg){% endpanel %}
-
 
 {% tip %}
 To scale the system you should deploy the space using the [partitioned cluster schema](http://wiki.gigaspaces.com/wiki/display/XAP91/Terminology+-+Data+Grid+Topologies). This will allow queries (i.e. matching) to be executed across all the partitions in parallel, speeding up the query execution time.
 {% endtip %}
 
-
 See **The Application** tab for the full query usage. This allows the `Comparable.compareTo` implementation to be performed on a smaller candidate subset of objects.
-
 
 {% inittab example|top %}
 
 {% tabcontent The Comparable implementation %}
-
 
 {% highlight java %}
 import java.io.Serializable;
@@ -147,9 +140,7 @@ public class VectorData implements Serializable, Comparable <VectorData>{
 
 {% endtabcontent %}
 
-
 {% tabcontent The Space Class %}
-
 
 {% highlight java %}
 import com.gigaspaces.annotation.pojo.SpaceClass;
@@ -209,9 +200,7 @@ public class Vector {
 
 {% endtabcontent %}
 
-
 {% tabcontent The Application %}
-
 
 {% highlight java %}
 static Random rand = new Random();

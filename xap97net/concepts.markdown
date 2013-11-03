@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799386
 ---
 
-
 {% summary %}This section describes the main concepts underlying GigaSpaces XAP.{% endsummary %}
-
 
 GigaSpaces XAP (pronounced zap) is a scale-out application server. Developers and architects who are looking to develop Windows or web-based, transactional applications, with high-throughput, low-latency and scalability, may want to use it to build their next generation class of applications.
 
@@ -65,7 +63,6 @@ Prior generations of application servers were built for the web in the days when
 GigaSpaces XAP supports web-enabled request/response applications, in addition to all the modern computational styles described above, and the combination of all of the above.
 {% endtoczone %}
 
-
 # Space - Concepts and Capabilities
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
@@ -104,14 +101,12 @@ The power of the space model is that the combination of the various basic APIs c
 
 These capabilities are at the core of GigaSpaces XAP. This combination, plus the additional capabilities  of the basic APIs, allow synchronous and asynchronous applications to be built as the models for which first generation application servers apply. In addition, these models can be used in a wider range of applications, such as: real-time analytics, real-time batch processing, complex event-driven applications, caching scenarios, parallel processing and more.
 
-
 {% tip title=Template Matching %}
 In traditional relational databases retrieving data is synonym with SQL. While the space supports retrieving data via SQL-like queries, it offers an alternative, lightweight approach called Template Matching. The application creates a template object -- the class of the template object defines which type of objects the application wants to read (for example, a template of class `Message` will return `Message` objects), and the template object's properties are used as retrieval criteria. If a template property has a value, objects are only retrieved if they have the same value for that property. If properties in the template are null, they are ignored.
 GigaSpaces XAP extends template matching by providing semantics to query ranges on information as well. For additional information, please refer to the [SQLQuery API](./sqlquery.html) in the Programmer's Guide.
 {% endtip %}
 
 {% endtoczone %}
-
 
 # Clustering and Topologies
 

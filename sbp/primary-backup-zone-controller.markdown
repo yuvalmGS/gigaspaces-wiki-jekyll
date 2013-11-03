@@ -25,11 +25,9 @@ When a deploying a data grid, primary and backup instances will be provisioned i
 
 In some cases you would like to determine the primary and backup instances location in an explicit manner. A simple approach would be to use zones, having one specific zone to host the primary instances and another zone to host the backup instances. These zones do not determine specific physical machines to host the primary/backup instances, but logical group of GSCs associated with a specific zone once started. Usually, the zone might reflect machines located in specific different racks or different data centers that are nearby havign very fast and reliable connectivity in between.
 
-
 {% indent %}
 ![PrimaryBackupZoneController.jpg](/attachment_files/sbp/PrimaryBackupZoneController.jpg)
 {% endindent %}
-
 
 ## When the Primary-Backup Zone Controller should be used?
 Having primary and backup instances on different remote sites that are far away from each other is not a recommended approach with read/write applications. The Primary-Backup Zone Controller approach intended to be used with read mostly scenarios (80% read) where the latency between the sites is extremely low (below one-two milliseconds) with high bandwidth capacity. Primary and backup instances should be located within the same LAN with high speed connectivity and high capacity bandwidth to allow the primary replicate data as fast as it can to the backup to minimize the replication overhead on the application behavior.
@@ -51,16 +49,13 @@ The example below will show how to use the Primary-Backup Zone Controller to pla
 
 {% tabcontent Windows %}
 
-
 {% highlight java %}
 gs-agent gsa.gsc 0 gsa.lus 1 gsa.gsm 1
 {% endhighlight %}
 
 {% endtabcontent %}
 
-
 {% tabcontent Linux %}
-
 
 {% highlight java %}
 ./gs-agent.sh gsa.gsc 0 gsa.lus 1 gsa.gsm 1
@@ -70,13 +65,11 @@ gs-agent gsa.gsc 0 gsa.lus 1 gsa.gsm 1
 
 {% endinittab %}
 
-
 3. Start Zone A:
 
 {% inittab 3|top %}
 
 {% tabcontent Windows %}
-
 
 {% highlight java %}
 set GSC_JAVA_OPTIONS=-Dcom.gs.zones="A"
@@ -85,9 +78,7 @@ gs-agent gsa.gsc 2 gsa.lus 0 gsa.gsm 0
 
 {% endtabcontent %}
 
-
 {% tabcontent Linux %}
-
 
 {% highlight java %}
 export GSC_JAVA_OPTIONS=-Dcom.gs.zones="A"
@@ -98,13 +89,11 @@ export GSC_JAVA_OPTIONS=-Dcom.gs.zones="A"
 
 {% endinittab %}
 
-
 4. Start Zone B:
 
 {% inittab 4|top %}
 
 {% tabcontent Windows %}
-
 
 {% highlight java %}
 set GSC_JAVA_OPTIONS=-Dcom.gs.zones="B"
@@ -113,9 +102,7 @@ gs-agent gsa.gsc 2 gsa.lus 0 gsa.gsm 0
 
 {% endtabcontent %}
 
-
 {% tabcontent Linux %}
-
 
 {% highlight java %}
 export GSC_JAVA_OPTIONS=-Dcom.gs.zones="B"
@@ -126,13 +113,11 @@ export GSC_JAVA_OPTIONS=-Dcom.gs.zones="B"
 
 {% endinittab %}
 
-
 5. Start Zone C:
 
 {% inittab 5|top %}
 
 {% tabcontent Windows %}
-
 
 {% highlight java %}
 set GSC_JAVA_OPTIONS=-Dcom.gs.zones="C"
@@ -141,9 +126,7 @@ gs-agent 0 gsa.gsc 2 gsa.lus 0 gsa.gsm 0
 
 {% endtabcontent %}
 
-
 {% tabcontent Linux %}
-
 
 {% highlight java %}
 export GSC_JAVA_OPTIONS=-Dcom.gs.zones="C"
@@ -154,13 +137,11 @@ export GSC_JAVA_OPTIONS=-Dcom.gs.zones="C"
 
 {% endinittab %}
 
-
 6. Deploy a Data-Grid:
 
 {% inittab 6|top %}
 
 {% tabcontent Windows %}
-
 
 {% highlight java %}
 gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,1 mySpace
@@ -168,9 +149,7 @@ gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,1 mySpac
 
 {% endtabcontent %}
 
-
 {% tabcontent Linux %}
-
 
 {% highlight java %}
 ./gs.sh deploy-space -cluster schema=partitioned-sync2backup total_members=2,1 mySpace
@@ -180,13 +159,11 @@ gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,1 mySpac
 
 {% endinittab %}
 
-
 7. Run the Primary-Backup Zone Controller utility:
 
 {% inittab 7|top %}
 
 {% tabcontent Windows %}
-
 
 {% highlight java %}
 call c:\gigaspaces-xap-root\bin\setenv.bat
@@ -196,9 +173,7 @@ java %JARS% -DpuName=mySpace -DprimaryZone=A -DbackupZone=B -Dlocators=127.0.0.1
 
 {% endtabcontent %}
 
-
 {% tabcontent Linux %}
-
 
 {% highlight java %}
 JSHOMEDIR=`dirname $0`/../gigaspaces-xap-root; export JSHOMEDIR
@@ -211,10 +186,8 @@ java $JARS -DpuName=mySpace -DprimaryZone=A -DbackupZone=B -Dlocators=127.0.0.1 
 
 {% endinittab %}
 
-
 ## Deploying the Primary-Backup Zone Controller as a PU
 When deploying the Primary-Backup Zone Controller utility as a PU the PU configuration includes the following:
-
 
 {% highlight java %}
 <bean id="PrimaryBackupController" class="com.gigaspaces.admin.PrimaryBackupController" >

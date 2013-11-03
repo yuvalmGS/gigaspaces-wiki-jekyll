@@ -7,7 +7,6 @@ page_id: 54820903
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}WAN Replication Gateway example.{% endexcerpt %}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
@@ -16,7 +15,6 @@ page_id: 54820903
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
 {% endtip %}
-
 
 # Overview
 
@@ -28,11 +26,9 @@ This is a simple order processing example based on GigaSpaces maven basic-async-
 
 # Mirror Gateway - One way
 
-
 {% indent %}
 ![rep_over_wan_MirrorGatewayOneway.jpg](/attachment_files/sbp/rep_over_wan_MirrorGatewayOneway.jpg)
 {% endindent %}
-
 
 # Source Code
 
@@ -40,11 +36,9 @@ Some relevant code from the example is in the following sections.
 
 ## Data Model
 
-
 {% inittab Data Model %}
 
 {% tabcontent Product Class %}
-
 
 {% highlight java %}
 package com.gigaspaces.domain;
@@ -94,9 +88,7 @@ public class Product extends MultiClusterEnabled {
 
 {% endtabcontent %}
 
-
 {% tabcontent MultiClusterEnabled Class %}
-
 
 {% highlight java %}
 package com.gigaspaces.domain;
@@ -119,9 +111,7 @@ public abstract class MultiClusterEnabled {
 
 {% endinittab %}
 
-
 ## Mirror Definition
-
 
 {% inittab Mirror %}
 
@@ -165,9 +155,7 @@ public abstract class MultiClusterEnabled {
 
 {% endtabcontent %}
 
-
 {% tabcontent MyExternalDataSource Implementation %}
-
 
 {% highlight java %}
 package com.gigaspaces.datasource;
@@ -275,16 +263,13 @@ public class MyExternalDataSource implements BulkDataPersister, ManagedDataSourc
 
 {% endinittab %}
 
-
 # Running the example
-
 
 {% note %}
  This example is using Maven for packaging and build. Please [install the OpenSpaces Maven plugin](http://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin#MavenPlugin-Installation) before you run this example.
 Some instructions below might use windows syntax please use appropriate **nix syntax if you are running the example in a **nix machine.
 Example was tested using a single machine with ip address, 192.168.2.100 and Lookup Server ports for SiteA and SiteB as 14164 and 14165 respectively. Please modify these corresponding to your environment.
 {% endnote %}
-
 
 1. Extract the [example](/attachment_files/sbp/multi-cluster.zip) archive into a folder. Navigate to the folder (calling it <multi-cluster-example>) and open a command shell. Modify the setDevEnv-SiteA.bat/sh and setDevEnv-SiteB.bat/sh files to have proper paths for GigaSpaces home and Java home. Also modify the NIC_ADDR variable to have proper ip address for each site.
 2. Run setDevEnv-SiteA script to set the environment variables.
@@ -295,13 +280,11 @@ Make sure you change the `pom.xml` <gsVersion> paramter to use the GigaSpaces re
 
 3. Run maven clean using following command
 
-
 {% highlight java %}
 mvn clean
 {% endhighlight %}
 
 4. Run maven package (skip the tests) using following command
-
 
 {% highlight java %}
 mvn package -DskipTests
@@ -314,14 +297,12 @@ This will start GSA, GSM, LUS and 2 GSC's for SiteA with SiteA zone and GSA, GSM
 7. Deploy the SiteA space cluster (2,1) by running deploy-SiteA script from <multi-cluster-example> directory.
 8. Deploy the SiteB space cluster (3,1) using following,
 
-
 {% highlight java %}
 cd <multi-cluster-example>\processor
 mvn os:deploy -Dsla=../config/SiteB-sla.xml -Dgroups=SiteB -Dlocators=192.168.2.100:14165 -Dmodule=processor
 {% endhighlight %}
 
 9. Deploy the mirror using following,
-
 
 {% highlight java %}
 cd <multi-cluster-example>\mirror
@@ -332,14 +313,12 @@ mvn os:deploy -Dgroups=SiteB -Dlocators=192.168.2.100:14165 -Dmodule=mirror
 ![after_deploying_everything.jpg](/attachment_files/sbp/after_deploying_everything.jpg)
 11. For running the clients you need the common jar in the maven repo. Install the common jar using following,
 
-
 {% highlight java %}
 cd <multi-cluster-example>\common
 mvn install
 {% endhighlight %}
 
 12. Create products (in SiteB) by running `WriteProducts` client using following,
-
 
 {% highlight java %}
 cd <multi-cluster-example>\feeder
@@ -349,7 +328,6 @@ mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.cli
 
 13. You will notice Products are available on the SiteA as well.
 14. Write new orders into the system using `WriteOrders` client using following,
-
 
 {% highlight java %}
 mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.client.WriteOrders"

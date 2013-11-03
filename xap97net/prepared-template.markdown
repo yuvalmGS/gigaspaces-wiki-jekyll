@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799305
 ---
 
-
 {% summary %}Querying the space using a Prepared Template{% endsummary %}
-
 
 # Overview
 
@@ -23,16 +21,13 @@ Use `ISpaceProxy.Snapshot` to create a prepared template from an object template
 
 #### Creating a prepared template from an object
 
-
 {% highlight java %}
 Person template= new Person();
 template.Age = 21;
 IPreparedTemplate<Person> preparedTemplate = proxy.Snapshot(template);
 {% endhighlight %}
 
-
 #### Creating a prepared template from SqlQuery
-
 
 {% highlight java %}
 SqlQuery<Person> query = new SqlQuery<Person>(personTemplate, "Age >= ?");
@@ -40,13 +35,11 @@ query.SetParameter(1, 21);
 IPreparedTemplate<Person> preparedTemplate = proxy.Snapshot(query);
 {% endhighlight %}
 
-
 {% exclamation %} Using the `ISpaceProxy.Snapshot` method with complex SQL queries is not supported. For more information see [simple SQL queries](./sqlquery.html#Simple SqlQuery).
 
 After creating the prepared template, it can be passed as a template to the Read, Take, ReadMultiple, TakeMultiple, Count and Clear operations, as well as a template when registering for notification.
 
 #### Taking an object from the space using the prepared template
-
 
 {% highlight java %}
 Person person = proxy.Take(preparedTemplate);

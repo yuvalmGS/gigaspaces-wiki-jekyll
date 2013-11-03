@@ -9,7 +9,6 @@ page_id: 63799338
 
 {% summary %}Describing the built-in BasicProcessingUnitContainer which is an extension of the AbstractProcessingUnitContainer class.{% endsummary %}
 
-
 # Overview
 
 A [processing unit container](./processing-unit-container.html) is a component implemented by the user and deployed and managed by the service grid. XAP.NET comes with a built-in type implementation of the processing unit container called the `BasicProcessingUnitContainer` which provides basic implementations for common activities, and allows the user to focus on business logic and less with GigaSpaces internals.
@@ -28,7 +27,6 @@ In order to use the container as part of the processing unit project, you need a
 
 The `pu.config` file should be as follows:
 
-
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
@@ -42,7 +40,6 @@ The `pu.config` file should be as follows:
   </GigaSpaces.XAP>
 </configuration>
 {% endhighlight %}
-
 
 This configuration file specifies that the container that should be deployed is the `BasicProcessingUnitContainer`, in the same manner any other custom container implementation would have been deployed.
 
@@ -71,7 +68,6 @@ The following config file will cause the container to create and manage an embed
   </GigaSpaces.XAP>
 </configuration>
 {% endhighlight %}
-
 
 {% anchor basiccomponents %}
 
@@ -102,11 +98,9 @@ public class MyComponent : IDisposable
 }
 {% endhighlight %}
 
-
 {% lampon %} The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container.
 
 The container automatically detects components by scanning all the assembly (dll) files in the processing unit's folder.
-
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -128,7 +122,6 @@ The container automatically detects components by scanning all the assembly (dll
 </configuration>
 {% endhighlight %}
 
-
 {% exclamation %} The assembly name is the actual name and not a file path, the assembly should be part of the processing unit project output directory and be placed beside the `pu.config` file.
 
 {% anchor services %}
@@ -137,7 +130,6 @@ The container automatically detects components by scanning all the assembly (dll
 
 One of GigaSpaces grid component capabilities is [remote services](./space-based-remoting.html), which can be hosted in the grid. The basic container automatically detects , creates, hosts and manages such services' life cycle. This is done by marking the remote service with the \[SpaceRemotingService\] attribute.
 
-
 {% highlight java %}
 [SpaceRemotingService]
 public class MyService : IService
@@ -145,7 +137,6 @@ public class MyService : IService
   [..]
 }
 {% endhighlight %}
-
 
 {% anchor eventcontainers %}
 
@@ -157,7 +148,6 @@ An [event listener container](./event-driven-architecture.html) is one of the mo
 See [Polling Container Component](./polling-container-component.html) and [Notify Container Component](./notify-container-component.html) for more info regarding event listener containers.
 {% endrefer %}
 
-
 {% highlight java %}
 [PollingEventDriven(Name="MyEventListener")]
 public class MyEventListener
@@ -165,7 +155,6 @@ public class MyEventListener
   [..]
 }
 {% endhighlight %}
-
 
 An event listener container needs a space proxy that will listen for events. If the basic container is managing a single proxy then that proxy will be supplied to the event listener container. If more than one proxy exists, then the proxy name needs to be specified in the configuration file for that specific event listener container.
 
@@ -195,7 +184,6 @@ The following basic container config will start two space proxies and supply the
 </configuration>
 {% endhighlight %}
 
-
 {% anchor lifecycle %}
 
 # Space Life-Cycle Events
@@ -218,7 +206,6 @@ public class MyComponent : IDisposable
 }
 {% endhighlight %}
 
-
 The event listening method can be one of the following formats:
 
 {% highlight java %}
@@ -227,14 +214,11 @@ The event listening method can be one of the following formats:
 public void MyEventListener()
 {% endhighlight %}
 
-
-
 {% highlight java %}
 //Single space proxy parameter
 [PostPrimary]
 public void MyEventListener(ISpaceProxy spaceProxy)
 {% endhighlight %}
-
 
 {% highlight java %}
 
@@ -243,14 +227,12 @@ public void MyEventListener(ISpaceProxy spaceProxy)
 public void MyEventListener(ISpaceProxy spaceProxy, SpaceMode spaceMode)
 {% endhighlight %}
 
-
 If there are multiple space proxies in the container, the name of the space needs to be specified to the corresponding space mode changed attribute. For example:
 
 {% highlight java %}
 [PostPrimary(SpaceProxyName="MySpace")]
 public void MyEventListener(ISpaceProxy spaceProxy)
 {% endhighlight %}
-
 
 When registering for the \[BeforePrimary\] or \[BeforeBackup\], special care should be taken. The event handling of these listeners will **delay the space instance life cycle completion** for a co-located space instance - i.e., a primary space instance will be blocked from fully becoming a primary space until it completes all the invocations of the \[BeforePrimary\] subscribers. There is no guarantee for receiving a corresponding Before event always prior to a Post event. When the processing unit starts, the event subscription is asynchronous to the space instance active election; in this case it is quite reasonable not to receive the Before events and only to receive the Post events.
 {% endtoczone %}

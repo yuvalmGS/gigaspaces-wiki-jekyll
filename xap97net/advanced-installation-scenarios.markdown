@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799333
 ---
 
-
 {% summary %}Common Questions and Answers about XAP.NET installations.{% endsummary %}
-
 
 # Overview
 
@@ -89,7 +87,6 @@ XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Co
 {% highlight java %}
     GigaSpacesFactory.Configuration.XapNetSettingsFile.Path = @"C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml"
 {% endhighlight %}
-
 
 #### Q. I need to minimize the installation size. Can I use a shared folder on a server to store part of the installation?
 

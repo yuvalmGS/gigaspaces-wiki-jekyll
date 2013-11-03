@@ -31,7 +31,6 @@ After a chosen topology is deployed, a `DataLoader` application writes .NET obje
 For more details, see the [example description](http://www.gigaspaces.com/docs/dotnet6.5/examples/DataGrid/readme.html).
 For the Wiki page, see [Enterprise Data Grid Tutorial A - Basic Topologies](http://www.gigaspaces.com/wiki/display/Gs66/Enterprise+Data+Grid+Tutorial+A+-+Basic+Topologies). |
 
-
 [<GigaSpaces Root>\dotnet\examples\DataGrid](http://www.gigaspaces.com/docs/dotnet6.5/examples/DataGrid) |
 | **Benchmark**
 
@@ -43,6 +42,5 @@ For the Wiki page, see [.NET Benchmark Example](./dotnet-benchmark-example.html)
 The Processing Unit example demonstrates how to implement a basic processing unit and the different ways of deploying it.
 For more details, see the [example description](http://www.gigaspaces.com/docs/dotnet6.5/examples/ProcessingUnit/readme.html).
 For the Wiki page, see [.NET Processing Unit Data Example](http://www.gigaspaces.com/wiki/display/XAP97NET/.NET+Processing+Unit+Data+Example). |
-
 
 [<GigaSpaces Root>\dotnet\examples\ProcessingUnit](http://www.gigaspaces.com/docs/dotnet6.5/examples/ProcessingUnit) |

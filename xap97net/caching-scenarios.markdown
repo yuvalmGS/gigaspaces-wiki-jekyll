@@ -5,13 +5,12 @@ categories: XAP97NET
 page_id: 63799385
 ---
 
-
 {% summary %}GigaSpaces IMDG supports three different caching mechanisms: in-line cache, side cache and client cache.{% endsummary %}
-
 
 # Overview
 
 GigaSpaces IMDG supports three kinds of caching mechanisms. Using GigaSpaces IMDG as a cache provides you the following benefits:
+
 - Low latency: In-Memory Data access time without any disk usage.
 - Data access layer elasticity: Scale out/up on demand to leverage additional machine resources.
 - Less load on the database layer: Since the cache will isolate the database from the application somewhat, you will have less contention generated at the database layer.
@@ -31,6 +30,7 @@ With this mechanism, the IMDG is the system of record. The database data is load
 ![in-line-cache.jpg](/attachment_files/xap97net/in-line-cache.jpg)
 
 The in-line cache is implemented using the following configurations:
+
 - Read-through and Write-through: For persisting the cache data synchronously.
 - Write-behind - Mirror: For persisting the cache data asynchronously.
 
@@ -38,13 +38,12 @@ Persistence logic can either be the out-of-the-box [NHibernate External Data Sou
 
 The in-line cache ensures maximum performance when fetching data where the database is outside the critical path of the application transaction. (This makes more sense than it might seem: database contention is a primary source of application performance failure.)
 
-
 {% tip %}
 For best performance you should use the [ALL-IN-CACHE cache policy](/xap97/all-in-cache-cache-policy.html) with the [write-behind mirror](/xap97/asynchronous-persistency-with-the-mirror.html). This will ensure maximum hit rate when accessing the cache. With this mode, you should make sure the cache can accommodate _all_ the data you will access.
 {% endtip %}
 
-
 The in-line cache mechanism is widely used with the following GigaSpaces APIs:
+
 - [GigaSpace API](./the-ispaceproxy-interface.html): GigaSpaces native Object/SQL API.
 - [The GigaMap Interface]: GigaSpaces Key/Value (JCache/Hashtable) API.
 
@@ -97,11 +96,9 @@ The client cache size is limited to the client process heap size. The client-sid
 - [Local Cache](./local-cache.html) - On-demand client cache loading data based on client activity. This type of client cache evicts data once the client available memory drops below a configurable value.
 - [Local View](./local-view.html) - Pre-fetch client cache loading data based on set of SQL queries. This client cache does not evict data. This client cache is designed to be read-only and support both queries and reads based on ID.
 
-
 {% tip %}
 Client cache is not enabled by default.
 {% endtip %}
-
 
 ## When you should use a Client Cache?
 

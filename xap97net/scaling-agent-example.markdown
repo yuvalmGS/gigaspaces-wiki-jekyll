@@ -10,7 +10,6 @@ page_id: 63799365
 {% summary %}This example demonstrates how to harness the Service Grid Admin API to build an agent
 that monitors a deployed application, and scale it up on demand.{% endsummary %}
 
-
 {% section %}
 
 {% column width=7% %}
@@ -48,7 +47,6 @@ the [SBA Example] first.{% endrefer %}
 The scaling agent periodically samples the throughput of feeds that are processed by the running application instances, and compares the average throughput per instance to a specific threshold. If the average throughput is larger than the pre-defined threshold, which is part of the processing unit configuration, the scaling agent scales up the application by starting a new GSC, and by increasing the amount of instances (see the `ScaleUp()` method). The sampling is done by letting the feed processor implement the `IServiceMonitorsProvider` interface, which exposes the public API that is used by the agent.
 
 ## Scaling Agent Implementation
-
 
 {% inittab scalingagent|top %}
 
@@ -170,7 +168,6 @@ public class Agent : IDisposable
 
 {% endtabcontent %}
 
-
 {% tabcontent Configuration %}
 
 {% highlight xml %}
@@ -198,7 +195,6 @@ public class Agent : IDisposable
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 ## Feed Processor
 
@@ -300,7 +296,6 @@ public class FeedProcessorTpMonitor : IServiceMonitors
 }
 {% endhighlight %}
 
-
 # Running the Example
 
 The example consists of the following parts:
@@ -322,18 +317,14 @@ To simplify the deployment of the examples, there are several scripts in the exa
 
 ## Feeder Application
 
-
 {% indent %}
 ![ScalingAgentFeeder.jpg](/attachment_files/xap97net/ScalingAgentFeeder.jpg)
 {% endindent %}
 
-
 ## Agent Application
-
 
 {% indent %}
 ![ScalingAgentConsole.jpg](/attachment_files/xap97net/ScalingAgentConsole.jpg)
 {% endindent %}
-
 
 {rate}

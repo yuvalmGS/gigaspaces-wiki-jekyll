@@ -40,7 +40,6 @@ See [GigaSpaces Management Center Security](http://wiki.gigaspaces.com/wiki/disp
 - Click  the  "Deploy In-Memory Data Grid" button (top left, second button) in the UI.
 - In the dialog  select the following properties:
 
-
 {% highlight java %}
 DataGrid Name : mySpace
 Space Schema : default
@@ -55,7 +54,6 @@ And deploy the space.
 - Download and install the ODBC-JDBC bridge from http://uda.openlinksw.com/odbc/st/odbc-jdbc-bridge-st.
 - Set the following environment variables in your system:
 
-
 {% highlight java %}
 PATH=<Your Java Install directory>\jre\bin\server;%PATH%
 CLASSPATH=<GigaSpaces root>lib\required\commons-logging.jar;
@@ -63,15 +61,12 @@ CLASSPATH=<GigaSpaces root>lib\required\commons-logging.jar;
 <GigaSpaces root>\lib\required\spring.jar
 {% endhighlight %}
 
-
 - Create a new OpenLink ODBC datasource with the following properties:
-
 
 {% highlight java %}
 JDBC Driver : com.j_spaces.jdbc.driver.GDriver
 URL String: jdbc:gigaspaces:url:jini://*/*/mySpace
 User name  User name : user, Password: password
 {% endhighlight %}
-
 
 You can test the connection using the openlink sample application at `Program Files\OpenLink Software\UDA\Samples\Odbc`

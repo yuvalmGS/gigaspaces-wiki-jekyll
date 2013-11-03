@@ -5,7 +5,6 @@ categories: SBP
 page_id: 47219410
 ---
 
-
 {% tip %}
 **Summary:** {% excerpt %}Basic and advanced code examples for using RTD and UDF with the GigaSpaces-Excel integration.{% endexcerpt %}
 **Author**: Pini Cohen, GigaSpaces
@@ -27,8 +26,6 @@ This section includes basic and advanced code examples for using the GigaSpaces-
 {% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 ## HelloUDF -- Performing Excel Functions in Space
-
-
 
 {% highlight java %}
 using System;
@@ -145,10 +142,7 @@ namespace HelloUDF
 }
 {% endhighlight %}
 
-
 ## HelloRTD -- Loading Data from Space to Excel
-
-
 
 {% highlight java %}
 using System;
@@ -325,10 +319,7 @@ namespace HelloRTD
 }
 {% endhighlight %}
 
-
 ## HelloMsg
-
-
 
 {% highlight java %}
 using System.Text;
@@ -382,10 +373,7 @@ namespace HelloCommon
 }
 {% endhighlight %}
 
-
 ## RTDSample -- Loading Data from Space to Excel
-
-
 
 {% highlight java %}
 using System;
@@ -578,10 +566,7 @@ namespace GSStreamer
 }
 {% endhighlight %}
 
-
 ## TickInfo
-
-
 
 {% highlight java %}
 using System;
@@ -648,7 +633,6 @@ namespace TickInfo
     }
 }
 {% endhighlight %}
-
 
 {% endtoczone %}
 

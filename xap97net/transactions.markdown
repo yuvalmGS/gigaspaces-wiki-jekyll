@@ -35,9 +35,7 @@ public void ProcessNewOrder(ISpaceProxy space)
 }
 {% endhighlight %}
 
-
 Naturally, this code is not safe because if something goes wrong between the Take and Write operations the order is lost. We can use transactions to make it safer:
-
 
 {% highlight java %}
 public void ProcessNewOrder(ISpaceProxy space, ITransactionManager txnManager)
@@ -68,7 +66,6 @@ public void ProcessNewOrder(ISpaceProxy space, ITransactionManager txnManager)
 }
 {% endhighlight %}
 
-
 Let's look at the changes we've made:
 1. The method now receives an additional argument which is a transaction manager, which is used to create a transaction.
 2. The transaction is created in a **using** block, to ensure it is automatically disposed when done.
@@ -77,11 +74,9 @@ Let's look at the changes we've made:
 
 Last but not least, we now need to provide a transaction manager when invoking **ProcessNewOrder()**. This can be done by invoking `GigaSpacesFactory.CreateDistributedTransactionManager()`. Of course there's no need to create a transaction manager each time we create a transaction, which is why we left it out of the method. Usually the transaction manager is created once upon application initialization and used throughout the application.
 
-
 {% tip title=Distributed vs. Local transaction manager %}
 In previous versions, users had to choose between using the distributed and local transaction manager, since the distributed manager was slower and the local did not support multiple partitions. The 8.0 release includes significant improvements in the distributed manager which makes this choice redundant. The local transaction manager has been deprecated and will be removed in future versions.
 {% endtip %}
-
 
 # Timeout
 
@@ -100,7 +95,6 @@ Alternatively, you can set the default transaction timeout on the transaction ma
 // Set the default transactions timeout to 5 minutes:
 txnManager.DefaultLeaseTime = 5 ** 60 ** 1000;
 {% endhighlight %}
-
 
 # Isolation Levels
 

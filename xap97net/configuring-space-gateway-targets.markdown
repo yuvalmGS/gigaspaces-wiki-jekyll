@@ -5,7 +5,6 @@ categories: XAP97NET
 page_id: 63799430
 ---
 
-
 {% summary %}This page explains how to configure replication gateway targets of a space.{% endsummary %}
 
 {% compositionsetup %}
@@ -13,7 +12,6 @@ page_id: 63799430
 {% info %}
 This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
 {% endinfo %}
-
 
 # Overview
 
@@ -57,7 +55,6 @@ Here is an example of how this configuration should look:
 
 {% endtabcontent %}
 
-
 {% tabcontent Code Construction %}
 When using code construction for creating a space, the gateway configuration should be part of the `SpaceConfig` object that is used to create the space:
 
@@ -88,7 +85,6 @@ container.CreateSpaceProxy("Space", "/./myNYSpace", spaceConfig);
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 Each configuration can be configured for all gateways or specifically per each gateway as seen in the above example, max-redo-log-capacity is configured for all gateways while bulk-size is specifically overridden in the configuration of HONGKONG gateway target. A recommended reading regarding the replication redo-log is [Controlling the Replication Redo Log](http://wiki.gigaspaces.com/wiki/display/XAP95/Controlling+the+Replication+Redo+Log).
 

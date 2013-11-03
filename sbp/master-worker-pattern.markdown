@@ -18,11 +18,9 @@ Date: August 2009
 # Overview
 The [Master-Worker Pattern](http://books.google.com/books?id=9cV3TbahjW0C&pg=PA153&lpg=PA153&dq=JavaSpaces+Master-Worker+Pattern&source=bl&ots=1l_DQmEGNl&sig=IU2UTbG-xytamrby2r5yaJLnAkk&hl=en&ei=lm6RSo-dGJXjlAeYqOWjDA&sa=X&oi=book_result&ct=result&resnum=1#v=onepage&q=JavaSpaces%20Master-Worker%20Pattern&f=false) (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a `Master` and multiple `Workers`.
 
-
 {% indent %}
 ![the_master_worker.jpg](/attachment_files/sbp/the_master_worker.jpg)
 {% endindent %}
-
 
 In GigaSpaces XAP, you can implement the Master-Worker pattern using several methods:
 - [Task Executors](./map-reduce-pattern---executors-example.html) - best for a scenario where the processing activity is collocated with the data (the data is stored within the same space as the tasks being executed).
@@ -42,11 +40,9 @@ When running the space in clustered partitioned mode, you cannot run the workers
 
 The following sections include code samples and configuration that illustrate the Master-Worker implementation via Polling Containers, using the Random Workers and Designated Workers approach.
 
-
 {% tip %}
 We invite you to [download](/attachment_files/sbp/MasterWorker.zip) the code examples and configuration files used with this article.
 {% endtip %}
-
 
 # Example 1 - Random Workers
 With the Random Workers approach, each worker can consume `Request` objects from **every** space partition. In this case, the non-blocking mode is used. The workers scan the partitions in a round-robin fashion for a `Request` object to consume and execute. With this approach, there might be a small delay until the workers consume a `Request` object. This approach might generate some chatting over the network, since the workers connect to all existing partitions to look for `Request` objects to consume and in case none is found, wait for some time and then try again.
@@ -61,9 +57,7 @@ Step 1:
 ![master_worker_rr1.jpg](/attachment_files/sbp/master_worker_rr1.jpg)
 {% endindent %}
 
-
 {% endcolumn %}
-
 
 {% column width=50% %}
 
@@ -73,16 +67,13 @@ Step 2:
 ![master_worker_rr2.jpg](/attachment_files/sbp/master_worker_rr2.jpg)
 {% endindent %}
 
-
 {% endcolumn %}
 
 {% endsection %}
 
-
 {% inittab Random Workers approach|top %}
 
 {% tabcontent The Master %}
-
 
 {% highlight java %}
 public class Master {
@@ -136,9 +127,7 @@ public class Master {
 
 {% endtabcontent %}
 
-
 {% tabcontent The Worker %}
-
 
 {% highlight java %}
 @EventDriven @Polling (concurrentConsumers=2)
@@ -179,7 +168,6 @@ public class Worker {
 
 {% endtabcontent %}
 
-
 {% tabcontent The Worker PU config %}
 
 {% highlight xml %}
@@ -209,9 +197,7 @@ public class Worker {
 
 {% endtabcontent %}
 
-
 {% tabcontent The Base Space Class %}
-
 
 {% highlight java %}
 @SpaceClass
@@ -250,9 +236,7 @@ public class Base {
 
 {% endtabcontent %}
 
-
 {% tabcontent The Request Class %}
-
 
 {% highlight java %}
 @SpaceClass
@@ -264,9 +248,7 @@ public class Request extends Base{
 
 {% endtabcontent %}
 
-
 {% tabcontent  The Result Class %}
-
 
 {% highlight java %}
 @SpaceClass
@@ -278,17 +260,14 @@ public class Result extends Base {
 
 {% endtabcontent %}
 
-
 {% tabcontent Deployment Commands %}
 Deploying the clustered space PU:
-
 
 {% highlight java %}
 >gs deploy-space -cluster schema=partitioned total_members=2 mySpace
 {% endhighlight %}
 
 Deploying the Workers PU:
-
 
 {% highlight java %}
 >gs deploy -cluster total_members=4 MasterWorker.jar
@@ -297,7 +276,6 @@ Deploying the Workers PU:
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 # Example 2 - Designated Workers
 With this approach, each new worker is assigned a specific ID and consumes `Request` objects from a designated partition. In this case, the worker runs in blocking mode. The `Request` object routing field is populated with the partition ID, with the Polling Container template, and is also populated by the `Master` application before it is written into the partitioned clustered space.
@@ -312,9 +290,7 @@ Step 1:
 ![master_worker_de1.jpg](/attachment_files/sbp/master_worker_de1.jpg)
 {% endindent %}
 
-
 {% endcolumn %}
-
 
 {% column width=50% %}
 
@@ -324,23 +300,19 @@ Step 2:
 ![master_worker_de2.jpg](/attachment_files/sbp/master_worker_de2.jpg)
 {% endindent %}
 
-
 {% endcolumn %}
 
 {% endsection %}
 
-
 {% tip %}
 With this approach the number of `Workers` should be greater than or equal to the number of partitions.
 {% endtip %}
-
 
 See below how the Designated Workers approach should be implemented:
 
 {% inittab Designated Workers approach|top %}
 
 {% tabcontent The Master %}
-
 
 {% highlight java %}
 public class Master {
@@ -406,9 +378,7 @@ public class Master {
 
 {% endtabcontent %}
 
-
 {% tabcontent The Worker  %}
-
 
 {% highlight java %}
 @EventDriven @Polling (concurrentConsumers=1)
@@ -489,7 +459,6 @@ public class Worker implements ClusterInfoAware{
 
 {% endtabcontent %}
 
-
 {% tabcontent The Worker PU config %}
 
 {% highlight xml %}
@@ -519,9 +488,7 @@ public class Worker implements ClusterInfoAware{
 
 {% endtabcontent %}
 
-
 {% tabcontent The Base Space Class %}
-
 
 {% highlight java %}
 @SpaceClass
@@ -568,9 +535,7 @@ public class Base {
 
 {% endtabcontent %}
 
-
 {% tabcontent The Request Class %}
-
 
 {% highlight java %}
 @SpaceClass
@@ -582,9 +547,7 @@ public class Request extends Base{
 
 {% endtabcontent %}
 
-
 {% tabcontent The Result Class %}
-
 
 {% highlight java %}
 @SpaceClass
@@ -596,17 +559,14 @@ public class Result extends Base {
 
 {% endtabcontent %}
 
-
 {% tabcontent Deployment Commands %}
 Deploying the clustered space PU:
-
 
 {% highlight java %}
 >gs deploy-space -cluster schema=partitioned total_members=2 mySpace
 {% endhighlight %}
 
 Deploying the Workers PU:
-
 
 {% highlight java %}
 >gs deploy -cluster total_members=4 MasterWorker.jar
@@ -615,7 +575,6 @@ Deploying the Workers PU:
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 # References
 - [JavaSpaces Principles, Patterns, and Practice: Chapter 11](http://java.sun.com/developer/Books/JavaSpaces/chapter11.html)

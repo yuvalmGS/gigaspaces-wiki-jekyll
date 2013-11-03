@@ -54,7 +54,6 @@ The example solution is based on three projects:
 
 The only object in our model is the `Data` object.
 
-
 {% highlight java %}
 [SpaceClass]
 public class Data
@@ -89,7 +88,6 @@ public class Data
 }
 {% endhighlight %}
 
-
 Note the attributes that are used in this object:
 - `SpaceClass` -- the marked object is written into a space.
 - `SpaceRouting` -- when using a partitioned cluster topolgy, `Data` objects are routed to the appropriate partitions according to the specified attribute, in this case `type`.
@@ -108,7 +106,6 @@ The actual work is done by a [Polling Container](./polling-container-component.h
 The different attributes will be used to create and configure the polling container that will trigger the data event and invoke the `ProcessData` method which represents the business logic. The polling container is aware of the mode the space is in, and it will only work when the space is in Primary mode. Additionally the processor as being published as a [remote service](./space-based-remoting.html), therefore it needs to implement a service contract, in our case it implements the common interface `IProcessorStatisticsProvider`, which will later be remotely invoked by the feeder to display statistics of the processor.
 
 In this example the processor is colocated with the space that it needs to process data from, therefore achieving high performance because the processor and the space reside in the same process. This cluster topology is built by a simple matter of configuration of the basic processing unit container which is detailed below.
-
 
 {% inittab dataprocessor|top %}
 
@@ -171,7 +168,6 @@ internal class DataProcessor : IProcessorStatisticsProvider
 
 {% endtabcontent %}
 
-
 {% tabcontent Configuration %}
 
 {% highlight xml %}
@@ -195,12 +191,10 @@ internal class DataProcessor : IProcessorStatisticsProvider
 </configuration>
 {% endhighlight %}
 
-
 We configure a single colocated space specified by the Url of the space, in our case "/./dataExampleSpace" (embedded space url). Since there's only one managed space proxy in the basic container, the data processor polling container will operate using that proxy.
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 ## SLA File
 
@@ -215,7 +209,6 @@ This data processor comes with an sla.xml file which define the default topology
 ## DataFeeder
 
 The data feeder is in charge of feeding the cluster with unprocessed data every second. It does so by creating new `Data` objects with a random type and random information, and writes it to the cluster.
-
 
 {% inittab datafeeder|top %}
 
@@ -299,7 +292,6 @@ public class DataFeeder
 
 {% endtabcontent %}
 
-
 {% tabcontent Configuration %}
 
 {% highlight xml %}
@@ -323,12 +315,10 @@ public class DataFeeder
 </configuration>
 {% endhighlight %}
 
-
 We configure a remote proxy to the cluster which is used by the feeder in order to feed unprocessed data into the cluster and to execute a remote service to obtain processing statistics
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 The `Feed()` method does the actual work, by creating a new `Data` object with random data in an unprocessed state every second, and feeds it to the cluster. Additionaly every number of iterations it displays the statistics of processing of a certain type by executing a remote service which the processors expose. It does so by using an [Executor based remoting proxy](./executor-based-remoting.html) to the remote service which is hosted in the grid.
 
@@ -341,7 +331,6 @@ From the `<Example Root>` directory (`<GigaSpaces Root>\Examples\ProcessingUnit`
 {% highlight java %}
 compile
 {% endhighlight %}
-
 
 This compiles all the related projects and creates the processing unit dlls inside each project, under the `Deployment` directory. It also copies the Processing Units Deployment directory to the `<GigaSpaces Root>\Runtime\deploy` directory, which simplifies deployment through the `gs-ui`.
 
@@ -368,12 +357,10 @@ The `pu.config` resides in the `Deployment\DataFeeder(\Processor)` directory of 
 
 After you run the build script and the copy deployment files script, the two directories are copied to the `<GigaSpaces Root>\Runtime\deploy` directory. This example runs in a partitioned cluster with two primary spaces and one backup space for each partition, you need to run Grid Service Agent which will start and manage one Grid Service Manager (GSM) and two Grid Service Containers (GSC), and then start the GigaSpaces Management Center.
 
-
 {% highlight java %}
 <GigaSpaces Root>\Bin\Gs-Agent.exe
 <GigaSpaces Root>\Bin\Gs-ui
 {% endhighlight %}
-
 
 {% exclamation %} Since the spaces are running inside the `DataProcessor`, the `DataProcessor` should be deployed first and the `DataFeeder` second.
 
@@ -389,12 +376,10 @@ After you run the build script and the copy deployment files script, the two dir
 
 Another way to deploy the processing units will be to use GigaSpaces Command Line Interface, in this case we do not require using GigaSpaces Management Center, we deploy it in the following manner:
 
-
 {% highlight java %}
 <GigaSpaces Root>\Bin\Gs-Cli.exe deploy DataProcessor
 <GigaSpaces Root>\Bin\Gs-Cli.exe deploy DataFeeder
 {% endhighlight %}
-
 
 ### Application Domain (AppDomain)
 
@@ -410,7 +395,6 @@ Once the processing units are deployed, they will appear in the managament cente
 
 One option is to run the processing unit within the IDE, which should be used for debug purposes only since it is not deployed and managed by the service grid. The example contains one project named PUDebugExecuter, that shows how to start the processing unit projects within the IDE. It uses a class named `ProcessingUnitContainerHost` to host the processing unit container and manage its life cycle, it does so in the following manner:
 
-
 {% highlight java %}
 ProcessingUnitContainerHost processorContainerHost = new ProcessingUnitContainerHost(@"..\Processor\Deployment\DataProcessor", null, null);
 ProcessingUnitContainerHost feederContainerHost = new ProcessingUnitContainerHost(@"..\Feeder\Deployment\DataFeeder", null, null);
@@ -419,7 +403,6 @@ ProcessingUnitContainerHost feederContainerHost = new ProcessingUnitContainerHos
 feederContainerHost.Dispose();
 processorContainerHost.Dispose();
 {% endhighlight %}
-
 
 This will host the two processing units, processor and feeder, which reside in the specified deployment directory.
 When the host is created the hosted processing units are immidiatly created and initialized, once the host is disposed it will dispose of the hosted processing unit container.
@@ -441,6 +424,5 @@ The following deploys the data feeder:
 {% highlight java %}
 PuInstance ..\Examples\ProcessingUnit\Feeder\Deployment\DataFeeder
 {% endhighlight %}
-
 
 Each command creates the standalone process and hosts the `DataProcessor` or `DataFeeder` Processing Units.

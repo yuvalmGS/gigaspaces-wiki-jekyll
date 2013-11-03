@@ -5,16 +5,13 @@ categories: XAP97NET
 page_id: 63799378
 ---
 
-
 {% summary %}This section describes the GigaSpaces Application Layer.{% endsummary %}
-
 
 Each XAP.NET application is composed of one or more scalable modules, and contains one or more business logic code components, domain model objects (entries), in-memory data storage, messaging, and event processing code.
 
 A module in SBA is called a Processing Unit. This is the smallest unit for cross-cluster scaling. This unit is used for design, development, testing, packaging and deployment.
 
 # Processing Unit
-
 
 {% comment %}
 TODO_NIV - Change to internal link when available.

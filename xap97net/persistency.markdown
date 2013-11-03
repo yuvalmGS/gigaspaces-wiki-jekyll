@@ -17,11 +17,9 @@ GigaSpaces [Space Persistency](http://wiki.gigaspaces.com/wiki/display/XAP95/Spa
 
 {% exclamation %} Before you begin, it is recommended to read the [Space Persistency](http://wiki.gigaspaces.com/wiki/display/XAP95/Space+Persistency) section.
 
-
 {% tip %}
 For a fully running example using the Mirror Service see `GigaSpaces Root\XAP.NET\NET vX\Examples\StockSba` folder.
 {% endtip %}
-
 
 # .NET Specific Settings
 
@@ -31,12 +29,10 @@ For a fully running example using the Mirror Service see `GigaSpaces Root\XAP.NE
 
 You can either use GigaSpaces NHibernate implementation, or create a custom implementation:
 
-
 {% inittab pu implementation type|top %}
 
 {% tabcontent GigaSpaces NHibernate SQL Data Source Implementation %}
 The following code demonstrates how to start an embedded space with GigaSpaces NHibernate `SqlDataSource` implementation as its External Data Source.
-
 
 {% highlight java %}
 //Create a new space configuration object that is used to start a space
@@ -58,7 +54,6 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add(NHibernateExternalData
 ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceConfig);
 {% endhighlight %}
 
-
 {% exclamation %} Before using the `ExternalDataSource.NHibernate` practice, compile it by calling `<GigaSpaces Root>\dotnet\practices\ExternalDataSource\NHibernate\build.bat`.
 
 {% lampon %} You can create your own NHibernate session factory and pass it to the `NHibernateExternalDataSource` constructor. In this case, there's no need to use `SpaceConfig.ExternalDataSourceConfig.CustomProperties`.
@@ -66,12 +61,10 @@ ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceCon
 {% refer %} For a demonstration of how to start a partitioned-sync2backup cluster with asynchronous NHibernate persistency, refer to the [NHibernate External Data Source](./nhibernate-external-data-source.html) section.{% endrefer %}
 {% endtabcontent %}
 
-
 {% tabcontent Custom SQL Data Source Implementation %}
 A custom .NET `SqlDataSource` implementation can be used as well.
 
 The following code demonstrates how to start an embedded space with a custom .NET `SqlDataSource` implementation as its External Data Source.
-
 
 {% highlight java %}
 //Create a new space configuration object that is used to start a space
@@ -89,11 +82,9 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("[Property name]", "[P
 ISpaceProxy persistentSpace = SpaceProxyProviderFactory.Instance.FindSpace("/./mySpace", spaceConfig);
 {% endhighlight %}
 
-
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 ## Advanced Options
 
@@ -101,13 +92,11 @@ The number of objects passed between the .Net `IDataEnumerator` (Part of the `IS
 
 This can be done by adding a custom property to the `ExternalDataSourceConfig` object.
 
-
 {% highlight java %}
 spaceConfig.ExternalDataSourceConfig.CustomProperties = new Dictionary<string, string>();
 //Add custom properties to the dictionary
 spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size", "[batch size]");
 {% endhighlight %}
-
 
 ## Server Side Logging
 

@@ -9,7 +9,6 @@ page_id: 63799383
 
 {% summary %}Working with Space Documents{% endsummary %}
 
-
 # Overview
 
 {% section %}
@@ -32,11 +31,9 @@ Unlike POJOs, which force users to design a fixed data schema (in the form of a 
 
 Before a certain Document instance is written to the space, its type should be introduced to it. The type has a name and controls metadata such as identifier property, routing property and which properties are initially indexed (naturally, you can also index new properties at runtime after adding them to your documents).
 
-
 {% tip %}
 The Type controls **metadata** - so only the metadata is part of the type. A document can introduce new properties at will.
 {% endtip %}
-
 
 Note that the Document type does not describe the properties themselves (except for the names of the ID and Routing properties). These are completely dynamic and each instance can have a different set of properties (although in most cases Document instances of the same type are likely to have identical or similar set of properties).
 
@@ -64,7 +61,6 @@ We also decide that **CatalogNumber** will be a primary key, partitioning will b
 
 The following is an example of how to introduce a new document type:
 
-
 {% inittab os_simple_space|top %}
 
 {% tabcontent Spring Namespace Configuration %}
@@ -83,7 +79,6 @@ The following is an example of how to introduce a new document type:
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent Plain Spring XML %}
 
@@ -128,7 +123,6 @@ The following is an example of how to introduce a new document type:
 
 {% endtabcontent %}
 
-
 {% tabcontent Code %}
 
 {% highlight java %}
@@ -148,7 +142,6 @@ public void registerProductType(GigaSpace gigaspace) {
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 Note that this code does not reflect the complete model - most of the properties does not need to be introduced to the schema. Only properties with special roles (ID, Routing) are part of the schema definition. These meta model **settings cannot be changed** without restarting the space or dropping the type, clearing all its instances and reintroducing it again.
 
@@ -189,9 +182,7 @@ public void writeProduct1(GigaSpace gigaspace) {
 }
 {% endhighlight %}
 
-
 Another way is to use the `DocumentProperties` class provided, which extends HashMap to provide fluent coding:
-
 
 {% highlight java %}
 public void writeProduct2(GigaSpace gigaspace) {
@@ -221,7 +212,6 @@ public void writeProduct2(GigaSpace gigaspace) {
 }
 {% endhighlight %}
 
-
 {% plus %} The `GigaSpace.writeMultiple` method can be used to write a batch of documents.
 {% exclamation %} Update semantics are the same as POJO, except **partial update** that is not currently supported.
 {% exclamation %} Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviours in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
@@ -235,7 +225,6 @@ There are three types of document queries:
 This type of query uses a SpaceDocument with _type_ and any other set of properties values as a template for the query
 For example: Read a document of type **Product** whose **Name** is **Anvil**:
 
-
 {% highlight java %}
 public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
     // Create template:
@@ -246,7 +235,6 @@ public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
     return result;
 }
 {% endhighlight %}
-
 
 ## SQL Query
 
@@ -265,12 +253,9 @@ public SpaceDocument readProductBySQL(GigaSpace gigaSpace) {
 }
 {% endhighlight %}
 
-
-
 {% tip %}
 Consider indexing properties used in queries to boost performance.
 {% endtip %}
-
 
 Queries on nested properties are supported. For example, to read products manufactured by **Acme**:
 
@@ -286,7 +271,6 @@ public SpaceDocument[] readProductBySQLNested(GigaSpace gigaSpace) {
 }
 {% endhighlight %}
 
-
 ## ID Based Query
 
 For example: Read a document of type **Product** whose ID is **hw-1234**:
@@ -297,9 +281,7 @@ public SpaceDocument readProductById(GigaSpace gigaSpace) {
 }
 {% endhighlight %}
 
-
 Queries by multiple Ids are supported. For example:
-
 
 {% highlight java %}
 public SpaceDocument[] readProductByMultipleIds(GigaSpace gigaSpace) {
@@ -309,7 +291,6 @@ public SpaceDocument[] readProductByMultipleIds(GigaSpace gigaSpace) {
     return result.getResultsArray();
 }
 {% endhighlight %}
-
 
 {% plus %} All other `GigaSpace` query operations (readIfExists, readMultiple, take, takeIfExists, takeMultiple, count, clear) are supported for documents entries as well.
 {% plus %} All other Id based operations (readIfExists, takeById, takeIfExistsById, takeByIds) are supported for documents as well.
@@ -337,7 +318,6 @@ Event containers (both [polling container](/xap97/polling-container.html) and [n
 
 Here is a simple example of a polling event container configuration using a `Document`:
 
-
 {% inittab os_simple_space|top %}
 
 {% tabcontent Annotation %}
@@ -361,8 +341,6 @@ Here is a simple example of a polling event container configuration using a `Doc
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
 
-
-
 {% highlight java %}
 @EventDriven @Polling
 public class SimpleListener {
@@ -382,7 +360,6 @@ public class SimpleListener {
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent Namespace %}
 
@@ -423,7 +400,6 @@ public class SimpleListener {
 
 {% endtabcontent %}
 
-
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
@@ -463,7 +439,6 @@ public class SimpleListener {
 
 {% endtabcontent %}
 
-
 {% tabcontent Code %}
 
 {% highlight java %}
@@ -488,11 +463,9 @@ pollingEventListenerContainer.destroy();
 
 {% endinittab %}
 
-
 # FIFO
 
 [FIFO support](./fifo-support.html) is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
-
 
 {% inittab os_simple_space|top %}
 
@@ -509,7 +482,6 @@ pollingEventListenerContainer.destroy();
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent Plain Spring XML %}
 
@@ -537,7 +509,6 @@ pollingEventListenerContainer.destroy();
 
 {% endtabcontent %}
 
-
 {% tabcontent Code %}
 
 {% highlight java %}
@@ -554,7 +525,6 @@ gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 
 {% endinittab %}
 
-
 {% exclamation %} Changing FIFO support after a type has been registered is not supported.
 For more information about FIFO, see the [FIFO Support](./fifo-support.html) page.
 
@@ -563,7 +533,6 @@ For more information about FIFO, see the [FIFO Support](./fifo-support.html) pag
 Transactions and isolation modifiers semantics is identical to the POJO semantics. For more information about transactions, see the [Transaction Management](/xap97/transaction-management.html) page.
 
 Optimistic locking is disabled by default with `Document` entries (same as with POJO). To enable it, modify the type introduction code and set the optimistic locking support. For example:
-
 
 {% inittab os_simple_space|top %}
 
@@ -580,7 +549,6 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent Plain Spring XML %}
 
@@ -608,7 +576,6 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 
 {% endtabcontent %}
 
-
 {% tabcontent Code %}
 
 {% highlight java %}
@@ -621,11 +588,9 @@ SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
 gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
-
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 {% exclamation %} Changing optimistic locking after a type has been registered is not supported.
 For more information about optimistic locking, see the [Optimistic Locking](/xap97/optimistic-locking.html) page.
@@ -640,7 +605,6 @@ If you intend to use local cache or local view in a mixed POJO-Document environm
 
 External Data Source is supported for space documents.
 Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
-
 
 {% inittab example|top %}
 
@@ -663,8 +627,6 @@ Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
 {% endhighlight %}
 
 {% endtabcontent %}
-
-
 
 {% tabcontent The EDS Implementation %}
 
@@ -724,7 +686,6 @@ public class DocumentEDS
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 Different document database can be used to implement the document persistency - MongoDB, CouchDB and others.
 Pojos can be persisted via document EDS as well, in the same way.

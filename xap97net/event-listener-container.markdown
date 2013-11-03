@@ -9,7 +9,6 @@ page_id: 63799388
 
 {% summary %}`IEventListenerContainer` is an interface that represents an abstraction for subscribing to, and receiving events over a space proxy.{% endsummary %}
 
-
 # Overview
 
 The `IEventListenerContainer` interface is an abstraction that allows subscribing to, and receiving events from the space, where in most cases, the business logic doesn't need to be aware of the actual container implementation. The benefit of doing this, is the loose coupling between how the events are received (the different containers), and what to do with a received event (the listener). This interface has two out-of-the-box implementors: [`PollingEventListenerContainer`](./polling-container-component.html) and [`NotifyEventListenerContainer`](./notify-container-component.html).
@@ -24,16 +23,13 @@ The `IEventListenerContainer` interface exposes the `DataEventArrived` event, wh
 
 Here is a simple example of event subscription:
 
-
 {% highlight java %}
 IEventListenerContainer<Data> container = // obtain a reference to a container
 
 container.DataEventArrived += MyEventHandler;
 {% endhighlight %}
 
-
 The event handler method:
-
 
 {% highlight java %}
 void MyEventHandler(object sender, DataEventArgs<Data> e)
@@ -41,7 +37,6 @@ void MyEventHandler(object sender, DataEventArgs<Data> e)
     // handle event
 }
 {% endhighlight %}
-
 
 The sender is the actual container that sent this event (Can be casted to IEventListenerContainer), the DataEventArgs contains the argument of the event, such as the event data object, the space proxy the event received from and so on.
 
@@ -53,16 +48,13 @@ Sometimes it is better to use batch events, for instance to improve network traf
 
 Here is a simple example of event subscription:
 
-
 {% highlight java %}
 IEventListenerContainer<Data> container = // obtain a reference to a container
 
 container.BatchDataEventArrived += MyBatchEventHandler;
 {% endhighlight %}
 
-
 The event handler method:
-
 
 {% highlight java %}
 void MyEventHandler(object sender, BatchDataEventArgs<Data> e)
@@ -71,7 +63,6 @@ void MyEventHandler(object sender, BatchDataEventArgs<Data> e)
     // handle event
 }
 {% endhighlight %}
-
 
 {% anchor EventListenerContainerFactory %}
 
@@ -106,7 +97,6 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-
 **An event listening method that processes the data, executes an additional space operation that is needed to enrich the data, and returns an enriched data result**
 
 {% highlight java %}
@@ -121,7 +111,6 @@ public class SimpleListener
     }
 }
 {% endhighlight %}
-
 
 The user methods can receive different parameters and be either a void method, or return a result. The parameters can be between 0 to 5 and must follow a certain order:
 
@@ -139,7 +128,6 @@ For example:
 public EnrichedData ProcessData(Data event, ISpaceProxy proxy, ITransaction tx, SpaceDataEventArgs<object> args, IEventListenerContainer container)
 {% endhighlight %}
 
-
 {% anchor DelegateDataEventArrivedAdapter %}
 
 ## Delegate DataEventArrived Adapter
@@ -148,16 +136,13 @@ The `DelegateDataEventArrivedAdapter<TData, TResult>` receives a delegate to a m
 
 Here is a simple example:
 
-
 {% highlight java %}
 IEventListenerContainer<Data> container = // obtain a reference to a container
 
 container.DataEventArrived = new DelegateDataEventArrivedAdapter<Data, Data>(MyEventHandler).WriteBackDataEventHandler;
 {% endhighlight %}
 
-
 The event handler method:
-
 
 {% highlight java %}
 Data MyEventHandler(IEventListenerContainer sender, DataEventArgs<Data> e)
@@ -165,7 +150,6 @@ Data MyEventHandler(IEventListenerContainer sender, DataEventArgs<Data> e)
     // handle event and return processed data to be written back to the space
 }
 {% endhighlight %}
-
 
 The result can also be an array, and the appropriate multiple operation is executed (WriteMultiple or UpdateMultiple).
 
@@ -181,7 +165,6 @@ The DataEventHandler attribute has two roles. The first is to mark a method to b
 {% lampon %} The write back behavior is modified when using the `DelegateDataEventArrivedAdapter` by this attribute as well.
 
 Here is a simple example:
-
 
 {% highlight java %}
 [DataEventHandler(WriteOrUpdate = false, WriteLease = 10000)]

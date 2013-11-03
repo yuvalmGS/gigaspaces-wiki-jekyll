@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799308
 ---
 
-
 {% summary %}This page describes how you can obtain partial results when querying the space to improve application performance and reduce memory footprint.{% endsummary %}
-
 
 # Overview
 
@@ -48,7 +46,6 @@ Long id = //... obtain the space object ID.
 Person result = space.Read<Person>(new IdQuery<Person>(id) {Projections = new []{"FirstName", "LastName"});
 {% endhighlight %}
 
-
 With the above example a specific Person is being read but only its 'FirstName' and 'LastName' will contains values and all the other properties will contain a `null` value.
 
 You may use the same approach with the `SqlQuery` or `IdsQuery`:
@@ -61,14 +58,12 @@ IdsQuery<Person> idsQuery = new IdsQuery<Person>(new Long[]{id1,id2}) {Projectio
 Person result[] = space.ReadByIds(idsQuery).ResultsArray;
 {% endhighlight %}
 
-
 The [SpaceDocument](./document-(schema-free)-entries.html) support projections as well:
 
 {% highlight java %}
 SqlQuery<SpaceDocument> docQuery = new SqlQuery<SpaceDocument>(typeof(Person).Name ,"") {Projections = new []{"FirstName", "LastName"};
 SpaceDocument docresult[] = space.ReadMultiple(docQuery);
 {% endhighlight %}
-
 
 # Supported Operations
 

@@ -5,7 +5,5 @@ categories: XAP97NET
 page_id: 64127776
 ---
 
-
 {% summary %}Instructions for getting specific things related to networking done.{% endsummary %}
-
 

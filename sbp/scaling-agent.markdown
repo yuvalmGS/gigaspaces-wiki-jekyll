@@ -22,23 +22,18 @@ The following example illustrates how you can construct a simple processing unit
 
 The activities to scale up the application (add more instances) could be starting a new GSC on remote machines and starting additional web application instances. In the same manner the scaling agent can scale down the application to terminate running GSCs and reduce the amount of web the application instances.
 
-
 {% tip %}
 See the [Mule ESB Example](./mule-esb-example.html#Scale Dynamically) for an advanced usage of the Administration and Monitoring API
 {% endtip %}
 
-
 # How the Scaling Agent works?
 The scaling agent sample periodically the amount of HTTP requests served by the running web application instances and compares the total amount of recent requests with the current ones (`getAverageRequests`). If the average amount of requests is larger than the maximum amount of Requests Per Instance threshold (which has been pre-defined as part of the processing unit configuration) the scaling agent scales up the application by starting a new GSC and increasing the amount of instances (see the `scaleUp()` method).
-
 
 {% tip %}
 The [WebScale.zip](/attachment_files/sbp/WebScale.zip) includes the source and configuration described below.
 {% endtip %}
 
-
 ## The Scaling Agent Implementation
-
 
 {% highlight java %}
 package com.gigaspaces.examples.webscale;
@@ -147,7 +142,6 @@ Total [" + totalRequests + "] Previous Total [" + previousTotalRequests + "]");
 }
 {% endhighlight %}
 
-
 ## The Scaling Agent PU Configuration
 
 {% highlight xml %}
@@ -167,5 +161,4 @@ Total [" + totalRequests + "] Previous Total [" + previousTotalRequests + "]");
 
 </beans>
 {% endhighlight %}
-
 

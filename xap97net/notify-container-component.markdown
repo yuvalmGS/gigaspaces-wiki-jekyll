@@ -18,7 +18,6 @@ The first tab demonstrates how to create and configure a notify container using 
 
 Here is a simple example of polling event container construction:
 
-
 {% inittab os_simple_space|top %}
 
 {% tabcontent Using EventListenerContainerFactory %}
@@ -46,9 +45,7 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-
 Constructing the notify container that uses the `SimpleListener` class as the event listener, and starting it.
-
 
 {% highlight java %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
@@ -61,7 +58,6 @@ eventListenerContainer.Dispose()
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
@@ -77,9 +73,7 @@ notifyEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAda
 notifyEventListenerContainer.Dispose();
 {% endhighlight %}
 
-
 Event processing method
-
 
 {% highlight java %}
 public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data> e)
@@ -89,17 +83,13 @@ public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data
 }
 {% endhighlight %}
 
-
-
 {% info %}
 [DelegateDataEventArrivedAdapter](./event-listener-container.html#DelegateDataEventArrivedAdapter) is a class that adapts the supplied user method to the [DataEventHandler](./event-listener-container.html#DataEventHandler) delegate, and contains a built in logic of writing back event results to the space
 {% endinfo %}
 
-
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 The above example registers with the space for write notifications using the provided template, which can be any .NET object (in this case a `Data` object with its processed flag set to `false`). If a notification occurs, the `SimpleListener` is invoked. Registration for notifications is performed on the supplied space proxy.
 
@@ -112,7 +102,6 @@ The notify event container registers for notifications only when the relevant sp
 # Template Definition
 
 When performing receive operations, a template is defined, creating a virtualized subset of data in the space, matching it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SqlQuery](./sqlquery.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
-
 
 {% inittab os_simple_space|top %}
 
@@ -145,7 +134,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -160,7 +148,6 @@ notifyEventListenerContainer.Template = new SqlQuery<Data>(template, "Processed 
 
 {% endinittab %}
 
-
 # Transaction Support
 
 The notify container can be configured with transaction support, so the event action can be performed under a transaction. Exceptions thrown by the event listener cause the operations performed within the listener to be rolled back automatically.
@@ -168,7 +155,6 @@ The notify container can be configured with transaction support, so the event ac
 {% exclamation %} When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. If this behavior is required, please consider using the [Polling Event Container](./polling-container-component.html). Adding transaction support to the polling container is very simple. It is done by setting the `TransactionType` property. There are two transaction types: Distributed and Manual.
 - Distributed transaction - an embedded distributed transaction manager will be created and it will be used for creating transaction (Only one transaction manager will be created per AppDomain).
 - Manual transaction - transactions will be created by the transaction manager that is stored in the `TransactionManager` property. By default no transaction manager is stored and therefore, no transaction will be used. For example:
-
 
 {% inittab os_simple_space|top %}
 
@@ -185,7 +171,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -199,9 +184,7 @@ notifyEventListenerContainer.TransactionType = TransactionType.Distributed;
 
 {% endinittab %}
 
-
 It is possible to receive a reference to the on going transaction as part of the event handling method, if for instance, the event handling is doing some extra space operations which should be executed under the same transaction context and rolled back upon failure. This is done be adding a transaction parameter to the event handler method. For example:
-
 
 {% inittab os_simple_space|top %}
 
@@ -224,7 +207,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -239,13 +221,11 @@ notifyEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAda
 
 {% endinittab %}
 
-
 {% refer %}The order of parameters of the event handling method is strict, please refer to [Dynamic Data Event Handler Adapter](./event-listener-container.html#eventhandleradapter) for more information about it.{% endrefer %}
 
 # Masking Notifications
 
 The notify container allows you to mask which operations performed against the space, should cause notifications. By default (if none is defined), notifications are sent for write operations. The operations are: `write` (an entry matching the template has been written to the space), `update` (an entry matching the template has been updated in the Space), `take` (an entry matching the template has been taken from the Space), `lease expiration` (an entry matching the template lease has been expired), and `all`. Here is an example of the notify container configured to trigger notifications for both write and update operations:
-
 
 {% inittab os_simple_space|top %}
 
@@ -276,7 +256,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -289,13 +268,11 @@ notifyEventListenerContainer.NotifyType = DataEventType.Write | DataEventType.Up
 
 {% endinittab %}
 
-
 # Batch Events
 
 The notify container, through the unified event API, allows batching of notifications. Batching causes the space to accumulate the notifications, and once a certain amount of time has passed or a certain size is reached, causes the events to be raised to the client. Batching is very useful when working with a remote space, since it reduces the network roundtrip operations. Moreover, when using Batch notification, it is possible (but not mandatory) to work with the [BatchDataEventArrived](./event-listener-container.html#BatchDataEventArrived) instead, and handle a batch of notifications at once.
 
 Below is an example of batching, where if the number of notifications has passed 10, or the time passed is 5 seconds (since the last batch was sent), a batch of notifications is sent to the client:
-
 
 {% inittab os_simple_space|top %}
 
@@ -339,7 +316,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -357,7 +333,6 @@ notifyEventListenerContainer.BatchDataEventArrived += new DelegateDataEventArriv
 
 {% endinittab %}
 
-
 # FIFO Events
 
 The notify event container can register for events or notifications, and have the events delivered in a FIFO order.
@@ -365,7 +340,6 @@ The notify event container can register for events or notifications, and have th
 {% infosign %} For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [FIFO Support](./fifo-support.html) section.
 
 Here is an example of how FIFO events can be configured with the notify container:
-
 
 {% inittab os_simple_space|top %}
 
@@ -407,7 +381,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -422,13 +395,11 @@ notifyEventListenerContainer.EventSessionConfig = sessionConfig;
 
 {% endinittab %}
 
-
 # Durable Notifications
 
 Durable notifications allows configuring the notify container to withstand failover and short network disconnections with no notifications lost.
 
 Here is an example of how Durable Notifications can be configured with the notify container:
-
 
 {% inittab os_simple_space|top %}
 
@@ -470,7 +441,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -485,13 +455,11 @@ notifyEventListenerContainer.EventSessionConfig = sessionConfig;
 
 {% endinittab %}
 
-
 # Take on Notify
 
 The notify event container can be configured to automatically perform a take on the notification data event. It can also be further configured to filter out events if the take operation returned `null`. (This usually happens when several clients receive this event, and only one succeeds with the take.)
 
 Here is how the notify container can be configured:
-
 
 {% inittab os_simple_space|top %}
 
@@ -522,7 +490,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -536,13 +503,11 @@ notifyEventListenerContainer.IgnoreEventOnNullTake = true;
 
 {% endinittab %}
 
-
 {% anchor SpaceDataEventArgs %}
 
 # Space Data Event Args
 
 The notify container uses GigaSpaces [data event session API](./space-events.html) under the hood. When a notification is triggered, it contains SpaceDataEventArgs, which holds more information about the notification itself, such as the template and the DataEventType (e.g. was this notification triggered by a write or an update operation?). When using the notify container, it is possible to receive that additional information as a parameter of the event listener method:
-
 
 {% inittab os_simple_space|top %}
 
@@ -574,7 +539,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -589,9 +553,7 @@ notifyEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAda
 notifyEventListenerContainer.Dispose();
 {% endhighlight %}
 
-
 Event processing method
-
 
 {% highlight java %}
 public Data ProcessData(IEventListenerContainer sender, DataEventArgs<Data> e)
@@ -602,17 +564,13 @@ public Data ProcessData(IEventListenerContainer sender, DataEventArgs<Data> e)
 }
 {% endhighlight %}
 
-
-
 {% info %}
 [DelegateDataEventArrivedAdapter](./event-listener-container.html#DelegateDataEventArrivedAdapter) is a class that adapts the supplied user method to the [DataEventHandler](./event-listener-container.html#DataEventHandler) delegate, and contains a built-in logic of writing event results back to the space
 {% endinfo %}
 
-
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 # Queued Event Handling
 
@@ -621,7 +579,6 @@ When a notification is received, it occurs asynchronously in a separate thread. 
 When this feature is enabled, each event that is received is put into a queue, and the notifiying thread is released immediately. The queue is processed by a different thread or threads. Doing this keeps the proxy resource pool free. The number of threads that are processing the events together, can be determined using the `QueuedEventHandlersPoolSize` property. The queue size limit is configured using the `QueuedEventsSizeLimitProperty`. When the limit is reached, the notify thread blocks until it can insert the event into the queue. This is done in order to avoid the client running out of memory when it process events too slowly, and the queue keeps accumulating.
 
 Here is how the notify container can be configured:
-
 
 {% inittab os_simple_space|top %}
 
@@ -652,7 +609,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -666,9 +622,7 @@ notifyEventListenerContainer.QueuedEventHandlersPoolSize = 3;
 
 {% endinittab %}
 
-
 Sometimes, it is very convenient to have a listener instance per concurrent queue processing thread. This allows a thread-safe instance variable to be constructed without worrying about concurrent access. In such a case, the event listener containing class should implement `System.ICloneable`, and the `CloneEventListenersPerThread` property should be set to true. Here is an example:
-
 
 {% inittab os_simple_space|top %}
 
@@ -684,7 +638,6 @@ public class SimpleListener : ICloneable
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -699,7 +652,6 @@ notifyEventListenerContainer.CloneEventListenersPerThread = true;
 
 {% endinittab %}
 
-
 # Handling Exceptions
 
 During the life-cycle of the polling container, two types of exceptions might be thrown:
@@ -713,7 +665,6 @@ A User Exception is an exception that occurs during the invocation of the user e
 It is possible to be notified when a container exception occured, by subscribing to the ContainerExceptionOccured event, and get a reference to the exception.
 
 Here is an example of how to subscribe to this event:
-
 
 {% inittab os_simple_space|top %}
 
@@ -736,7 +687,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -744,7 +694,6 @@ NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or o
 
 notifyEventListenerContainer.ContainerExceptionOccured += ExceptionHandler;
 {% endhighlight %}
-
 
 {% highlight java %}
 public void ExceptionHandler(object sender, ContainerExceptionEventArgs e)
@@ -758,13 +707,11 @@ public void ExceptionHandler(object sender, ContainerExceptionEventArgs e)
 
 {% endinittab %}
 
-
 ## Subscribing to the UserExceptionOccured Event
 
 It is possible to be notified when a user exception occured, by subscribing to the UserExceptionOccured event. This arguments of this event contain the entire DataEventArgs of the original DataEventArrived. By default, any event that is thrown inside the event listener scope, results in transaction rollback if the container is set to be transactional. This can be overriden if the user exception handler sets the event state to: ignored.
 
 Here is an example of how to subscribe to this event:
-
 
 {% inittab os_simple_space|top %}
 
@@ -787,7 +734,6 @@ public class SimpleListener
 
 {% endtabcontent %}
 
-
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
 {% highlight java %}
@@ -795,7 +741,6 @@ NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or o
 
 notifyEventListenerContainer.UserExceptionOccured += ExceptionHandler;
 {% endhighlight %}
-
 
 {% highlight java %}
 public void ExceptionHandler(object sender, UserExceptionEventArgs<Data> e)
@@ -808,7 +753,6 @@ public void ExceptionHandler(object sender, UserExceptionEventArgs<Data> e)
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 # Default Values of Notify Container Configuration Parameters
 

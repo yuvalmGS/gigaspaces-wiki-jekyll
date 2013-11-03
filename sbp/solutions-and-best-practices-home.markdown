@@ -13,7 +13,6 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
-
 # Data Access Patterns
 || Best Practice || Level || Description||
 |[Moving from Hibernate to Space](./moving-from-hibernate-to-space.html) | Beginner | Moving from Database Centric into In-Memory Model. Can be used when moving from **J2EE Session Bean** into XAP.|
@@ -78,9 +77,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 {% endcolumn %}
 
-
 {% column %}
-
 
 #### Quick Links
 
@@ -101,7 +98,6 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 ##### • [White Papers](http://www.gigaspaces.com/os_papers.html)
 
 ##### • Looking for **[XAP.NET](http://wiki.gigaspaces.com/wiki/display/XAP96NET/XAP.NET+9.6+Documentation+Home)** or **[other versions|ALL:Choose a GigaSpaces Version]**?
-
 
 {% endcolumn %}
 

@@ -21,7 +21,6 @@ There are two ways to use the `SpaceFilterOperationDelegate`:
 
 The filter itself is a class that doesn't need to implement any interface. Instead, the filter methods are marked with specific attributes.
 
-
 {% highlight java %}
 public class SimpleAttributeFilter
 {
@@ -39,9 +38,7 @@ public class SimpleAttributeFilter
 }
 {% endhighlight %}
 
-
 To use this class as the filter, simply use the `AttributeSpaceFilterConfigFactory` to create a [SpaceFilterConfig](./spacefilterconfig-class.html) instance, and use when starting a space [integrated with the space filter](./implementing-and-using-a-space-filter.html#Integrating the Space Filter with a space).
-
 
 {% highlight java %}
 AttributeSpaceFilterConfigFactory filterConfigFactory = new AttributeSpaceFilterConfigFactory();
@@ -51,13 +48,11 @@ filterConfigFactory.Filter = new SimpleAttributeFilter();
 SpaceFilterConfig filterConfig = filterConfigFactory.CreateSpaceFilterConfig();
 {% endhighlight %}
 
-
 The `AttributeSpaceFilterConfigFactory` creates a [SpaceFilterConfig](./spacefilterconfig-class.html) instance, using a fully constructed `SpaceFilterOperationDelegate` as its Filter instance. The `SpaceFilterOperationDelegate` acts as the [ISpaceFilter](./ispacefilter-interface.html) implementation, and delegates the filter operation to the `SpaceAttributeFilter` instance.
 
 # Method Name-Based Implementation
 
 A method name-based filter has the same basic principle as the one above. However, instead of using attributes to mark the method, the method names are specified by properties.
-
 
 {% highlight java %}
 public class SimpleMethodNameFilter
@@ -82,7 +77,6 @@ filterConfigFactory.BeforeWrite = "ReportBeforeWrite";
 // use this filter config when starting a space
 SpaceFilterConfig filterConfig = filterConfigFactory.CreateSpaceFilterConfig();
 {% endhighlight %}
-
 
 # How the SpaceFilterOperationDelegate Works
 

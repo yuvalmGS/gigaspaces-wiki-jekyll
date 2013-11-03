@@ -8,7 +8,6 @@ page_id: 63799382
 {% compositionsetup %}
 {% summary %}Main Dashboard navigation view{% endsummary %}
 
-
 # Using the Web Dashboard
 
 The main dashboard screen appears immediately after logging into the management console. The dashboard gives you a single click view of the entire cluster, including alerts on various problematic conditions.

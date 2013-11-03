@@ -13,7 +13,6 @@ page_id: 64325389
 By default, the change result will only contain the number of entries which were changed during the operation. In order to get more details (requires more network traffic) the ChangeModifiers.ReturnDetailedResults should be used. When using this modifier the result will contain the list of entries which were changed including the change affect that took place on each entry.
 You can use this in order to know what was the affect, for instance what is the value of a numeric property after the increment operation was applied on it.
 
-
 {% highlight java %}
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
@@ -27,7 +26,6 @@ foreach(IChangedEntryDetails<Account> changedEntryDetails in changeResult.Result
   ...
 }
 {% endhighlight %}
-
 
 Here is the full list of change operations:
 ||ChangeSet operation||ChangeOperation class||Comment||

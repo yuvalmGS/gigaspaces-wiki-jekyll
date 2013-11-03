@@ -7,7 +7,6 @@ page_id: 56428283
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}This article presents common Scala integration scenarios on top of XAP.{% endexcerpt %}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
@@ -16,7 +15,6 @@ page_id: 56428283
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
 {% endtip %}
-
 
 # Overview
 
@@ -32,11 +30,9 @@ When building your application in Scala, the configuration and packaging will st
 
 Find below code and configuration for the Helloworld application written completely in Scala.
 
-
 {% inittab Scala Helloworld Example %}
 
 {% tabcontent Scala Data Model %}
-
 
 {% highlight java %}
 package org.openspaces.example.helloworld.common
@@ -60,9 +56,7 @@ case class Message(
 
 {% endtabcontent %}
 
-
 {% tabcontent Scala Polling Container Bean %}
-
 
 {% highlight java %}
 package org.openspaces.example.helloworld.processor
@@ -89,9 +83,7 @@ class Processor {
 
 {% endtabcontent %}
 
-
 {% tabcontent Scala Feeder %}
-
 
 {% highlight java %}
 package org.openspaces.example.helloworld.feeder
@@ -142,7 +134,6 @@ object Feeder {
 
 {% endtabcontent %}
 
-
 {% tabcontent Scala Helloworld pu.xml %}
 
 {% highlight xml %}
@@ -190,7 +181,6 @@ object Feeder {
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 # Using Scala Interpreter
 

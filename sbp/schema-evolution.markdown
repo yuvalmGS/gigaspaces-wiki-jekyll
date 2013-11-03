@@ -5,7 +5,6 @@ categories: SBP
 page_id: 48236978
 ---
 
-
 {% tip %}
 **Summary:** {% excerpt %}The space schema can be evolved using codebase downloading and Java extensions, or an explicit data migration process.{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
@@ -37,8 +36,6 @@ See the [Document Support](http://wiki.gigaspaces.com/wiki/display/XAP91/Documen
 
 With this approach you should have a "static portion" and a "dynamic portion" to the space object. The static portion will be using regular POJO primitive fields and the dynamic portion will be using a Map data type. The map keys would be indexed to allow you to query these "dynamic fields" once used. See:
 
-
-
 {% highlight java %}
 See example below:
 public class MyClass {
@@ -66,7 +63,6 @@ public class MyClass {
 
 }
 {% endhighlight %}
-
 
 See more:
 - [Matching Nested Maps](http://wiki.gigaspaces.com/wiki/display/XAP91/SQLQuery#MatchingNestedMaps)
@@ -110,14 +106,11 @@ Below is a transformer program, that transforms a class with two attributes into
 
 The migration process can also be optimized by running multiple threads that handle the migration of different space classes in parallel.
 
-
 {% comment %}
 Data migration can be done using the space underlying Entry representation -- the `ExternalEntry`. A simple migration program can transform data stored in the space from one schema to a new schema, and create it in a new space that is used by the new version of the application.
 {% endcomment %}
 
-
 ## Schema Evolution Example
-
 
 {% highlight java %}
 package com.j_spaces.transformer;

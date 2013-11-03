@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 64127781
 ---
 
-
 {% summary %}The section explains How to Configure and use Unicast Discovery.{% endsummary %}
-
 
 # Overview
 
@@ -27,7 +25,6 @@ For example, considering the GSM(+LUS) is running on machine1:4174 and machine2:
 <XapNet.Locators>machine1:4174,machine2:4174</XapNet.Locators>
 {% endhighlight %}
 
-
 # Locating services using locators
 
 Once the services are started with the locators settings, then any client should be able to find a service, using unicast discovery.
@@ -36,15 +33,12 @@ To lookup a Space service using the unicast protocol, add the locators SpaceURL 
 
 For both **unicast AND multicast discovery**, use:
 
-
 {% highlight java %}
 jini://*/./mySpace?locators=machine1:4174,machine2:4174&groups=gigaspaces-9.0.0-XAPPremium-ga
 {% endhighlight %}
 
-
 {% exclamation %} When the locators attribute is used in conjunction with the jini://* prefix and groups attribute, the discovery will be unicast AND multicast.
 If you want unicast only, you should disable multicast altogether.
-
 
 {% tip %}
 For **unicast discovery only**, you should disable multicast using **`com.gs.multicast.enabled=false`** system property, and use:
@@ -54,7 +48,6 @@ jini://machine1:4174,machine2:4174/./mySpace?locators=machine1:4174,machine2:417
 {% endhighlight %}
 
 {% endtip %}
-
 
 {% infosign %} For troubleshooting purposes you should verify that the services (spaces, GSC, GSM, processing units etc.) print correct settings for the locators while they initialize. You can turn on the relevant loggings if required.
 
@@ -67,14 +60,12 @@ To change the lookup service port when using the Service Grid, you can use the *
 
 When a lookup service fails and is brought back online, a client (such as a GSC, space or a client with a space proxy) needs to re-discover and federate again. In order to make that happen, Jini unicast discovery must retry connections to the remote lookup service. The default unicast retry protocol provides a graduating approach, increasing the amount of time to wait before the next discovery attempts are made - upon each invocation, eventually reaching a maximum time interval over which discovery is re-tried. In this way, the network is not flooded with unicast discovery requests referencing a lookup service that may not be available for quite some time (if ever). The default time to wait between unicast retry attempts are:
 
-
 {% highlight java %}
 long[] sleepTime = {5 ** 1000, 10 ** 1000, 20 * 1000,
                                     30 ** 1000, 60 ** 1000,
                                     2 ** 60 ** 1000, 4 ** 60 ** 1000,
                                     8 ** 60 ** 1000, 15 ** 60 ** 1000};
 {% endhighlight %}
-
 
 You'll max out at 15 minutes between retries. Thats a big window.
 The retry logic only begins once the discovered lookup service is discarded.

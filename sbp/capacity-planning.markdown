@@ -5,7 +5,6 @@ categories: SBP
 page_id: 50759531
 ---
 
-
 {% tip %}
 **Summary:** {% excerpt %}Capacity Planning - voodoo or simple math?{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
@@ -59,11 +58,9 @@ See below an example of an object footprint using a 32 and 64 Bit JVM using diff
 |3 - String+Integer+Long	|533	|1002	|680|
 |4 - String+Integer+Long+Double	|571	|1026	|691|
 
-
 {% indent %}
 ![footprint_bench7.1.2.jpg](/attachment_files/sbp/footprint_bench7.1.2.jpg)
 {% endindent %}
-
 
 - Test conducted using GigaSpaces XAP 7.1.2.
 - All objects values are different.
@@ -71,17 +68,13 @@ See below an example of an object footprint using a 32 and 64 Bit JVM using diff
 - Footprint measured in Bytes.
 - Basic Index type is used. An Extended Index type will have an additional footprint (20%) compared to a Basic Index type.
 
-
 {% tip %}
 You may decrease the raw object footprint (not the indexes footprint) using the [GigaSpaces Serialization API](./lowering-the-space-object-footprint.html)
 {% endtip %}
 
-
-
 {% tip %}
 You can reduce the JVM memory footprint using the `-XX:+UseCompressedOops` JVM option. It is part of the JDK6u14 and JDK7. See more details here: [http://wikis.sun.com/display/HotSpotInternals/CompressedOops](http://wikis.sun.com/display/HotSpotInternals/CompressedOops). It is highly recommended to use the latest JDK release when using this option.
 {% endtip %}
-
 
 # Active Clients vs. Cores vs. Heap Size
 Since the IMDG kernel is a highly multi-threaded process, it has a relatively large number of active threads handling incoming requests. These requests could come from remote clients or collocated clients. Here are a few examples:
@@ -105,29 +98,21 @@ The number of GSCs per machine you need initially, is calculated based on the ma
 
 Here are a few basic formulas you can use:
 
-
 {% highlight java %}
 Amount of GSCs per Machine = Amount of Total Machine Cores/2
 {% endhighlight %}
-
-
 
 {% highlight java %}
 Total Amount of GSC = Amount of GSCs per Machine X Initial amount of Machines
 {% endhighlight %}
 
-
-
 {% highlight java %}
 GSC max heap Size = min (6, (Machine RAM Size * 0.8) / Amount of GSCs per Machine))
 {% endhighlight %}
 
-
-
 {% highlight java %}
 Amount of Data-Grid Partitions = Total Amount of GSC X Scaling Growth Rate / 2
 {% endhighlight %}
-
 
 Where:
 
@@ -146,7 +131,6 @@ With our example, we initially have 2 machines used to run our IMDG application.
 
 The machines run Linux 64 bit OS. Allocating 6GB per JVM as the max heap size for the GSC, results in 5 GSCs per machine - i.e. 10 GSCs initially across 2 machines. Once we use all the machines our full budget allows us, we will have 50 GSCs.
 
-
 {% indent %}
 ![capacity_planning1.jpg](/attachment_files/sbp/capacity_planning1.jpg)
 {% endindent %}
@@ -154,7 +138,6 @@ The machines run Linux 64 bit OS. Allocating 6GB per JVM as the max heap size fo
 Figure 1: 2 Machines Topology - five IMDG Instances per GSC, total 64GB RAM
 
 Having a maximum of 40 GSCs hosting the IMDG, means you might want to have half of them (20 GSCs) running primary IMDG instances and the other half running backup instances. This number is used as the number of partitions the IMDG is deployed with - this means that with the 2 machines we have initially, 10 GSCs host 40 IMDG instances. Later, as needed, these IMDG instances will be relocated to new GSCs that are started on new machines. Each machine will start 4 GSCs that will join the GigaSpaces grid and will allow the administrator to manually or automatically expand the capacity of the IMDG while the application is running.
-
 
 {% indent %}
 ![capacity_planning2.jpg](/attachment_files/sbp/capacity_planning2.jpg)

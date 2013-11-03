@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799337
 ---
 
-
 {% summary %}Writing your first XAP.NET application {% endsummary %}
-
 
 # Overview
 
@@ -70,7 +68,6 @@ public class Message
 }
 {% endhighlight %}
 
-
 ## Getting Started
 
 The XAP.NET API used in this example is located in the `GigaSpaces.Core` namespace.
@@ -79,7 +76,6 @@ Switch to the **Program.cs** editor, and add a `using` statement to include `Gig
 {% highlight java %}
 using GigaSpaces.Core;
 {% endhighlight %}
-
 
 ## Connecting to the Space
 
@@ -96,7 +92,6 @@ ISpaceProxy proxy = GigaSpacesFactory.FindSpace(spaceUrl);
 Console.WriteLine("*** Connected to space.");
 {% endhighlight %}
 
-
 ## Storing a Message Object
 
 The next step is to create a `Message` object, and store it in the space. To do this, we use the `Write` method in the `ISpaceProxy` we've just created, and simply pass the object we want to store as an argument:
@@ -109,7 +104,6 @@ Message outgoingMessage = new Message("Hello World");
 Console.WriteLine("Writing Message [" + outgoingMessage.Text + "]");
 proxy.Write(outgoingMessage);
 {% endhighlight %}
-
 
 ## Retrieving the Stored Message
 
@@ -127,7 +121,6 @@ Console.WriteLine("Took Message [" + incomingMessage.Text + "]");
 Console.WriteLine("Press ENTER to exit.");
 Console.ReadLine();
 {% endhighlight %}
-
 
 # Running the Program
 

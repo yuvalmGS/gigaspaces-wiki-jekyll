@@ -5,7 +5,6 @@ categories: SBP
 page_id: 47219420
 ---
 
-
 {% tip %}
 **Summary:** {% excerpt %}The Excel space viewer allows you to create customized views of data for spaces running in your network.{% endexcerpt %}
 **Author**: Pini Cohen, GigaSpaces
@@ -42,11 +41,9 @@ The Space Viewer toolbar includes the following options:
 - **[Configure View](#Changing Existing View)** -- allows you to edit and customize existing views
 - **Refresh results** -- refreshes the view or views with updated data
 
-
 {% indent %}
 ![Toolbar3.JPG](/attachment_files/sbp/Toolbar3.JPG)
 {% endindent %}
-
 
 ## Creating New View
 
@@ -57,23 +54,18 @@ The **Create View** option allows you to create a view of space data inside your
 - The **Undisplayable Columns** area lists fields that belong to this class, but can't be displayed in Excel (usually user-defined fields).
 - The **Selected Columns** area displays the fields you choose to display in this view. Use the arrow buttons (for example: ![arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpg](/attachment_files/sbp/arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpg)) allow you to organize the fields in the order in which they will appear in the final view.
 
-
 {% indent %}
 ![ConfigureView2.JPG](/attachment_files/sbp/ConfigureView2.JPG)
 {% endindent %}
-
 
 - It is possible to connect to any running space in your network.
 To connect to a space:
     1. Click the **Connect** button.
     1. In the Connect to Space dialog box, type the [space URL](http://wiki.gigaspaces.com/wiki/display/XAP66/Space+URL). The general format of the space URL is:
 
-
 {% highlight java %}
     <protocol>://<host name>:<port>/<container name>/<space name>?<properties>
 {% endhighlight %}
-
-
 
 {% indent %}
 ![Connect1.JPG](/attachment_files/sbp/Connect1.JPG)
@@ -104,7 +96,6 @@ To create a new view:
 
  ![ExcelSheet1.JPG](/attachment_files/sbp/ExcelSheet1.JPG)
 
-
 {% infosign %} This view displays the selections you made in the Create View and Customize the Selection windows. The view is constantly refreshed (according to the last refresh rate you defined.).
 
 {% infosign %} You can use all Excel capabilities on this list, such as column sorting and list. However, **column sorting is not saved when you update your view**.
@@ -127,7 +118,6 @@ The **SQL** area at the bottom displays the query syntax in SQL. After pressing 
 {% indent %}
 ![CustomizeTheSelection1.JPG](/attachment_files/sbp/CustomizeTheSelection1.JPG)
 {% endindent %}
-
 
 ## Changing Existing View
 
@@ -181,7 +171,6 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 {% indent %}
 ![Toolbar4.JPG](/attachment_files/sbp/Toolbar4.JPG)
 {% endindent %}
-
 
 # Troubleshooting
 

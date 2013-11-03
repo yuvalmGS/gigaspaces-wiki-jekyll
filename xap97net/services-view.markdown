@@ -8,7 +8,6 @@ page_id: 63799373
 {% compositionsetup %}
 {% summary %}Physical and logical resources{% endsummary %}
 
-
 # The Services View
 
 Click the services tab at the top left to view the services screen. This screen enables you to monitor the physical and logical resources of your cluster. The physical resources includes the hosts and virtual machines, and the logical resources includes the deployed processing units, spaces and web applications.

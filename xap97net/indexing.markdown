@@ -9,7 +9,6 @@ page_id: 63799369
 
 {% summary %} Using indexes to improve performance. {% endsummary %}
 
-
 # Overview
 
 When a space looks for a match for a read or take operation, it iterates over non-null values in the template, looking for matches in the space. This process can be time consuming, especially when there are many potential matches. To improve performance, it is possible to index one or more properties. The space maintains additional data for indexed properties, which shortens the time required to determine a match, thus improving performance.
@@ -38,7 +37,6 @@ The index type is determined by the **`SpaceIndexType`** enumeration. The index 
 
 Specifying which properties of a class are indexed is done using attributes or `gs.xml`.
 
-
 {% inittab %}
 
 {% tabcontent Annotations %}
@@ -62,9 +60,7 @@ public class Person
 
 {% endtabcontent %}
 
-
 {% tabcontent XML %}
-
 
 {% highlight xml %}
 <gigaspaces-mapping>
@@ -87,7 +83,6 @@ public class Person
 
 {% endinittab %}
 
-
 ## Inheritance
 
 By default, a property's index is inherited in sub classes (i.e. if a property is indexed in a super class, it is also indexed in a sub class). If you need to change the index type of a property in a subclass you can override the property and annotate it with `\[SpaceIndex\]` using the requested index type (to disable indexing use `None`).
@@ -109,7 +104,6 @@ Nested properties indexing uses an additional `\[SpaceIndex\]` attribute - **`Pa
 The **`Path`** attribute represents the path of the property within the nested object.
 
 Below is an example of defining an index on a nested property:
-
 
 {% inittab example|top %}
 
@@ -148,7 +142,6 @@ public class Address
 
 {% endtabcontent %}
 
-
 {% tabcontent Multiple Indexes Annotation %}
 
 {% highlight java %}
@@ -178,32 +171,24 @@ public class Person
 
 {% endinittab %}
 
-
 The following is an example of query code that automatically triggers this index:
-
 
 {% highlight java %}
 SqlQuery<Person> query = new SqlQuery<Person>(
     "PersonalInfo.SocialSecurity<10000050L and PersonalInfo.SocialSecurity>=10000010L");
 {% endhighlight %}
 
-
-
 {% comment %}
 {% infosign %} For more information, see [Nested Object Queries](./sqlquery.html#Nested Object Query)
 {% endcomment %}
-
-
 
 {% info title=Nested Objects %}
 By default, nested objects are kept in a binary form inside the space. In order to support nested matching, the relevant property should be stored as document, or as object if it is in an interoperability scenario and it has a corresponding Java class.
 {% endinfo %}
 
-
 {% info title=Dictionary based nested properties %}
 Note that the same indexing techniques above are also applicable to Dictionary-based nested properties, which means that in the example above the `Info` and `Address` classes could be replaced with a `Dictionary<String,Object>`, with the dictionary keys representing the property names.
 {% endinfo %}
-
 
 # Collection Indexing
 
@@ -229,16 +214,13 @@ public class CollectionIndexingExample
 }
 {% endhighlight %}
 
-
 The following query shows how to take advantage of the defined index:
-
 
 {% highlight java %}
 SqlQuery<CollectionIndexingExample> sqlQuery =
     new SqlQuery<CollectionIndexingExample>("Numbers[*] = 30");
 CollectionIndexingExample[] result = spaceProxy.ReadMultiple(sqlQuery);
 {% endhighlight %}
-
 
 ### Nested property within a Collection
 
@@ -269,14 +251,12 @@ public class Book
 }
 {% endhighlight %}
 
-
 The following query shows how to take advantage of the defined index:
 
 {% highlight java %}
 SqlQuery<Author> sqlQuery = new SqlQuery<Author>("Books[*].Id = 57");
 Author result = spaceProxy.Read(sqlQuery);
 {% endhighlight %}
-
 
 Setting an index on a Collection within a nested property is also accepted:
 
@@ -303,12 +283,9 @@ public class Information
 }
 {% endhighlight %}
 
-
-
 {% info %}
 Both \[SpaceIndex(Type=SpaceIndexType.Basic)\] and \[SpaceIndex(Type=SpaceIndexType.Extended)\] are supported.
 {% endinfo %}
-
 
 # Compound Indexing
 
@@ -331,11 +308,9 @@ The benchmark has a space with different sets of space objects data:
 |data2 = 'B' |100,000| 110,000 | 200,000 |
 |data1 = 'A' AND data2 = 'B' |1000 | 10,000 | 100,000|
 
-
 {% highlight java %}
 SQLQuery<Data> query = new SQLQuery<Data>(Data.class,"data1='A' and data2='B'");
 {% endhighlight %}
-
 
 With the above scenario the Compound Index will improve the query execution dramatically. See below comparison for a query execution time when comparing a Compound Index to a single or two indexed properties space class with the different data set scenarios.
 
@@ -360,11 +335,9 @@ public class WithCompoundIndex
 }
 {% endhighlight %}
 
-
 ## Creating a Compound Index using gs.xml
 
 A Compound Index can be defined within the gs.xml configuration file. Example: The following a gs.xml describing a Class named WithCompoundIndex having a compound index composed from two segments:
-
 
 {% highlight xml %}
 <!DOCTYPE gigaspaces-mapping PUBLIC "-//GIGASPACES//DTD GS//EN" "http://www.gigaspaces.com/dtd/9_5/gigaspaces-metadata.dtd">
@@ -376,13 +349,11 @@ A Compound Index can be defined within the gs.xml configuration file. Example: T
 </gigaspaces-mapping>
 {% endhighlight %}
 
-
 ## Creating a Compound Indexing for a Space Document
 
 You can add a Compound Space Index to a space Document.
 
 Example:
-
 
 {% highlight xml %}
 SpaceTypeDescriptorBuilder descriptorBuilder = new SpaceTypeDescriptorBuilder("WithCompoundIndex");
@@ -392,7 +363,6 @@ SpaceTypeDescriptorBuilder descriptorBuilder = new SpaceTypeDescriptorBuilder("W
             descriptorBuilder.AddCompoundIndex(new []{ "IntProp", "StringProp" });
             descriptorBuilder.AddCompoundIndex(new []{ "LongProp", "StringProp" });
 {% endhighlight %}
-
 
 # Query Execution Flow
 

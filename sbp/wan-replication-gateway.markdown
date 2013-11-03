@@ -7,7 +7,6 @@ page_id: 56428286
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}WAN Replication Gateway example.{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO GigaSpaces
@@ -16,7 +15,6 @@ page_id: 56428286
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
 {% endtip %}
-
 
 # Overview
 
@@ -37,7 +35,6 @@ The internal architecture of the setup includes a clustered space and a Gateway,
 # Installing the Example
 1. Download the [WAN_Gateway_example.zip](/attachment_files/sbp/WAN_Gateway_example.zip). It includes two folders: **deploy** and **scripts**.
 2. Please extract the file and and copy the content of the **deploy folder** into `\gigaspaces-xap-premium-8.0.X-ga\deploy` folder. It should looks like this:
-
 
 {% highlight java %}
 Directory of D:\gigaspaces-xap-premium-8.0.3-ga\deploy
@@ -103,11 +100,9 @@ The total TP a gateway can push out into remote sites depends on:
 
 The total TP will be:
 
-
 {% highlight java %}
 Total TP = (Partition TP X Partitions count X Distribution X Network Speed)+ Replication Meta data size / Replication Frequency
 {% endhighlight %}
-
 
 If we have 10 IMDG partitions, each sending 5000 objects/sec 1K size to the GW with a replication frequency of 10 replication cycles per/sec (100 ms delay between each replication cycle , i.e. 1000 operations per batch) with even distribution (1) and network speed between the sites is 10 requests/sec (i.e. 100 ms latency) the Total TP we will have is: (10 X 5000 X 1 X 10) / 10 = 50,000 objects per second. = 50M per second
  

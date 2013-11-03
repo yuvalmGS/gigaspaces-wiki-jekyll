@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799309
 ---
 
-
 {% summary %}How to model application data for in-memory data grid{% endsummary %}
-
 
 # Moving from Centralized to Distributed Data Model
 
@@ -54,14 +52,12 @@ SqlQuery<Person> query = new SqlQuery<Person>
 	("info.socialSecurity < ? and info.socialSecurity >= ?");
 {% endhighlight %}
 
-
 Embedded Map Query: The `info` property is a Map within the `Person` class:
 
 {% highlight java %}
 SqlQuery<Person> query =
 new SqlQuery<Person>("info.salary < 15000 and info.salary >= 8000");
 {% endhighlight %}
-
 
 Embedded Collection Query: The `employees` property is a collection within the `Company` class:
 
@@ -71,18 +67,15 @@ SqlQuery<Company> query =
 	("employees[**].children[**].name = 'Junior Doe');
 {% endhighlight %}
 
-
 See the [SqlQuery](./sqlquery.html) section for details about embedded entities query and indexing.
 
 **Non Embedded Relationships** means that one object is associated with a number of other objects, so you can navigate from one object to another. However, there is no life cycle dependency between them, so if you delete the referencing object, you don't automatically delete the referenced object(s). The association is therefore manifested in storing IDs rather than storing the actual associated object itself. This type of relationship means that you don't duplicate data but you are more likely to access more than one node in the cluster when querying or updating your data.
 
 ![model_non_embed.jpg](/attachment_files/xap97net/model_non_embed.jpg)
 
-
 {% tip %}
 See the [Parent Child Relationship](/xap97/parent-child-relationship.html) for an example for non-embedded relationships.
 {% endtip %}
-
 
 ## Embedded vs. Non Embedded Relationships
 

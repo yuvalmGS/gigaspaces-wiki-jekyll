@@ -26,7 +26,6 @@ To configure the GigaSpaces logger, you need to add a trace source configuration
 
 The following example sets the trace level to `Error`, which means that only errors and critical events are processed. It also defines a single trace listener, which writes traced messages to the Windows Event Log, under a source called `GigaSpaces.Core`.
 
-
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
@@ -44,7 +43,6 @@ The following example sets the trace level to `Error`, which means that only err
 </configuration>
 
 {% endhighlight %}
-
 
 There are several logging components split into different subjects. They should be configured in the same way, but using a different source name. The available components are:
 

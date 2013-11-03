@@ -16,7 +16,6 @@ page_id: 54297314
 
 {% endtip %}
 
-
 # Overview
 When using a GigaSpaces cluster as a task queue there are times you will need to determine how the space instances are loaded. This could be to determine where you can route the next task (minimum load partition/instance) or where you want to launch more processors (heavily loaded partition/instance).
 
@@ -30,11 +29,9 @@ The [first example](/attachment_files/sbp/GetMinLoadPartition-TaskExecutors.zip)
 
 Example is trying to find a partition with least number of objects and uses GigaSpaces SpaceRuntimeInfo API to get the count of objects. This API is lot faster compared to the count API and is preferred way of getting object counts.
 
-
 {% inittab Task Executor Example %}
 
 {% tabcontent Client Code %}
-
 
 {% highlight java %}
 ...
@@ -56,9 +53,7 @@ try {
 
 {% endtabcontent %}
 
-
 {% tabcontent Task Implementation %}
-
 
 {% highlight java %}
 import java.rmi.RemoteException;
@@ -148,7 +143,6 @@ public class MyDistributedTask implements
 
 {% endinittab %}
 
-
 {% anchor serviceexecutor %}
 
 # Using an Executor Service
@@ -157,13 +151,10 @@ Another [example](/attachment_files/sbp/GetMinLoadPartition-ExecutorService.zip)
 
 In this example, we're trying to find the partition with the least number of objects, using GigaSpaces' SpaceRuntimeInfo API to get the count of objects. This API is lot faster than the count API and is the preferred way of getting object counts.
 
-
 {% inittab Executor Service %}
 
 {% tabcontent Service Interface %}
 The Service Interface includes only one method, used to invoke the Service method in Synchronous mode:
-
-
 
 {% highlight java %}
 public interface IDataProcessor {
@@ -173,10 +164,8 @@ public interface IDataProcessor {
 
 {% endtabcontent %}
 
-
 {% tabcontent Service Implementation %}
 The Service Implementation includes business logic to determine the load (in this case number of objects in the partition):
-
 
 {% highlight java %}
 import java.rmi.RemoteException;
@@ -230,10 +219,8 @@ public class DataProcessorService implements IDataProcessor {
 
 {% endtabcontent %}
 
-
 {% tabcontent Reducer %}
 The Result Reducer applies the additional logic (finding the partition with the least number of objects, in this case).
-
 
 {% highlight java %}
 import org.openspaces.remoting.RemoteResultReducer;
@@ -264,10 +251,8 @@ public class DataProcessorServiceReducer implements RemoteResultReducer<Partitio
 
 {% endtabcontent %}
 
-
 {% tabcontent The Client %}
 This is how a client might invoke the service:
-
 
 {% highlight java %}
 space = new UrlSpaceConfigurer("jini://*/*/space").space();

@@ -28,7 +28,6 @@ Integrating GigaSpaces with an external JMS Servers is demonstrated in this page
  Use of distributed transactions is done as a demonstration. Use this with caution, in production applications this can be expensive and have a performance penalty. Well known patterns like [Idempotent Receiver](http://www.eaipatterns.com/IdempotentReceiver.html) are potential alternatives to distributed transactions.
 {% endnote %}
 
-
 This example includes:
 - GigaSpaces updates and JMS message creation are done transactionally so as to avoid duplicate processing/data loss.
 - Apache ActiveMQ is used as a the JMS provider.
@@ -37,7 +36,6 @@ This example includes:
 - To demonstrate the XA transaction it rollbacks messages with 100 modulo. You will notice that these messages will never appear in the JMS queue and are rolled back on GigaSpaces server.
 
 ## Source Code
-
 
 {% inittab Processor pu.xml %}
 
@@ -68,7 +66,6 @@ This example includes:
 
 {% endtabcontent %}
 
-
 {% tabcontent JMS Configuration %}
 
 {% highlight xml %}
@@ -97,7 +94,6 @@ This example includes:
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent GigaSpaces Configuration %}
 
@@ -146,14 +142,11 @@ This example includes:
 
 {% endinittab %}
 
-
 **Processor Bean and Message Bean definitions**
-
 
 {% inittab Java Code %}
 
 {% tabcontent Processor bean definition %}
-
 
 {% highlight java %}
 package org.openspaces.example.helloworld.processor;
@@ -259,9 +252,7 @@ public class Processor implements InitializingBean {
 
 {% endtabcontent %}
 
-
 {% tabcontent Message bean definition %}
-
 
 {% highlight java %}
 package org.openspaces.example.helloworld.common;
@@ -335,7 +326,6 @@ public class Message  {
 
 {% endinittab %}
 
-
 ## Running the example
 
 1. Download Apache ActiveMQ from [here](http://activemq.apache.org/download.html).
@@ -345,11 +335,9 @@ public class Message  {
 5. Run `setDevEnv.bat` script in <helloworld-jta> folder, to set the environment variables.
 6. Copy the required jars to the <helloworld-jta>\lib folder using the `copy-libs` ant task provided.
 
-
 {% highlight java %}
  build copy-libs
 {% endhighlight %}
-
 
 {% note %}
  Example was tested using following product versions,
@@ -359,11 +347,9 @@ public class Message  {
 If you are using different versions please make sure all the equivalent jars are reflected in `copy-libs` ant task
 {% endnote %}
 
-
 7. Start a gs-ui instance using `gs-ui.bat` script in <helloworld-jta> folder.
 8. Run `gs-agent.bat`  <helloworld-jta> folder, to start the GigaSpaces components (GSA,GSM, LUS, GSM).
 9. Start the ActiveMQ process using <ActiveMQHome>`\bin\activemq.bat` script.
-
 
 {% note %}
 If ActiveMQ is running on another server, please remember to update the brokerURL in `pu.xml`
@@ -371,13 +357,11 @@ If ActiveMQ is running on another server, please remember to update the brokerUR
 
 10. Deploy the processorSpace cluster by running `deploy-processor` ant task.
 
-
 {% highlight java %}
 build deploy-processor
 {% endhighlight %}
 
 13. Run the feeder process using `run-feeder` ant task.
-
 
 {% highlight java %}
  build run-feeder
@@ -391,11 +375,9 @@ build deploy-processor
 
 15. You can validate the JMS messages received by the Queue using a test JMS client included. You can run the client using `jms-client` ant task.
 
-
 {% highlight java %}
  build jms-client
 {% endhighlight %}
-
 
 ## References
 

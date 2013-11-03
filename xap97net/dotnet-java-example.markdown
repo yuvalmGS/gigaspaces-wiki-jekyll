@@ -9,7 +9,6 @@ page_id: 63799316
 
 {% summary %}The .NET-Java  Example illustrates basic interoperability operations between Java and .NET space proxies.{% endsummary %}
 
-
 {% section %}
 
 {% column width=7% %}

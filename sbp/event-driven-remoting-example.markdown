@@ -7,7 +7,6 @@ page_id: 47219276
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}Event based remoting example{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
@@ -66,8 +65,6 @@ To allow the client to invoke the service and immediately return the actual dial
 
 ## Sample Client Output
 
-
-
 {% highlight java %}
 EventRemotingClient: I am being constructed.
 2011-11-08 09:11:46,871  INFO [org.openspaces.pu.container.integrated.IntegratedProcessingUnitContainer] -
@@ -83,9 +80,7 @@ Processing unit(s) started successfully
 ---------------------------------------------------
 {% endhighlight %}
 
-
 ## Sample Service Output
-
 
 {% highlight java %}
 SimpleServiceImpl constructed...

@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799367
 ---
 
-
 {% summary %}Registering to Space events{% endsummary %}
-
 
 # Overview
 
@@ -53,7 +51,6 @@ IEventRegistration registration = proxy.DefaultDataEventSession.AddListener(new 
                                                                             DataEventType.Write);
 {% endhighlight %}
 
-
 Any new person entries that are written to the space, trigger the event and execute the `Space_PersonChanged` callback method at the client side.
 The DataEventType dictates which type of events to listen for. It's a flag enum that can have more than one value -- for example, listening to `Write` and `Update` events looks like this:
 
@@ -63,12 +60,10 @@ IEventRegistration registration = proxy.DefaultDataEventSession.AddListener(new 
                                                                             DataEventType.Write | DataEventType.Update);
 {% endhighlight %}
 
-
 When the events are no longer relevant, the registration for the events should be removed, to reduce the load on the space.
 
 {% highlight java %}
 proxy.DefaultDataEventSession.RemoveListener(registration);
 {% endhighlight %}
-
 
 {% refer %}In most cases, using the `DefaultDataEventSession` is enough, however, in some scenarios the `DataEventSession` needs to be customized. This topic is covered in [Advance Events Scenarios](./advance-events-scenarios.html){% endrefer %}

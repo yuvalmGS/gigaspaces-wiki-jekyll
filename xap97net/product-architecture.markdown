@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799417
 ---
 
-
 {% summary %}This section describes the architecture of the GigaSpaces XAP product.{% endsummary %}
-
 
 GigaSpaces XAP is built from the following sub-systems:
 - [**An SLA-Driven Container**](#SLA-Driven Container) -- provides the virtualization capabilities
@@ -23,7 +21,6 @@ Each sub-system (layer) is responsible for providing application server capabili
 
 # SLA-Driven Container
 
-
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 
 {% comment %}
@@ -37,7 +34,6 @@ The Service Grid is simply a set of runtime container processes deployed on mult
 In addition, as its name implies, the Service Level Guarantee and management is an essential part of this sub-system's responsibilities.
 
 When it comes to provisioning and monitoring large-scale systems, the ability to specifically define the location of each node in the cluster becomes very laborious.
-
 
 {% comment %}
 TODO_NIV - Change to internal link when available.
@@ -56,7 +52,6 @@ In this type of example, the Service Grid is responsible for making sure that on
 {% infosign %} Note: The logical separation between multiple Service Grid instances is defined by a Lookup Group. A lookup group is a logical name associated with each Service Grid component. This is the prime way of separating between multiple Service Grid clusters run on the same network.
 
 ## Grid Service Agent (GSA)
-
 
 {% comment %}
 TODO_NIV - Change to internal link when available.
@@ -77,7 +72,6 @@ The GSM monitors SLA breach events throughout the life-cycle of the application,
 
 {% infosign %} It is common to start two instances of GSM services within each Service Grid cloud, for high-availability reasons.
 
-
 {% comment %}
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
@@ -92,7 +86,6 @@ A Grid Service Container (GSC) is a container which hosts Processing Units (see 
 
 Another aspect of a GSC is its ability to host Processing Units. The GSC uses AppDomains to make sure that various Processing Units are isolated from one another within the same GSC.
 
-
 {% comment %}
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
@@ -101,9 +94,7 @@ It is common to start several GSCs on the same physical machine, depending on th
 The deployment of multiple GSCs on a single machine creates a virtual Service Grid. The fact is that GSCs are providing a layer of abstraction on top of the physical layer of hosts. This concept enables deployment of clusters on various deployment topologies of enterprise data centers and public clouds.
 {% endtoczone %}
 
-
 # Unified In-Memory Clustering
-
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 The role of clustering in GigaSpaces XAP is to provide scaling, load-balancing and high-availability. The main difference between GigaSpaces XAP and other clustering alternatives, is the use of a single clustering model for all middleware core capabilities. This means that the data and the services collocated with it, are equally available. An example of how useful this is, is that when a primary node fails, and another node acts as its backup, both application components, i.e. data and messaging, become active at the same time.
@@ -131,7 +122,6 @@ As GigaSpaces XAP has distributed shared memory capabilities, it is very simple 
 The GigaSpaces XAP solution does not require a compromise between stateless application complexity, performance and resiliency.
 {% endtoczone %}
 
-
 # Core Middleware
 
 As an application server, GigaSpaces XAP provides integrated, memory-based runtime capabilities. The core of these capabilities is backed by the space technology - for more information, please refer to [Space - Concepts and Capabilities](./concepts.html#Space - Concepts and Capabilities).
@@ -140,7 +130,6 @@ As an application server, GigaSpaces XAP provides integrated, memory-based runti
 are:**
 
 {% toczone type=list|location=top %}
-
 
 ## In-Memory Data Grid
 
@@ -153,7 +142,6 @@ An In-Memory Data Grid (IMDG) is the way of storing data across a grid of memory
 It is important to note that the IMDG, although a memory-based service, is fully transactional, and follows the ACID (Atomicity, Concurrency, Isolation and Durability) transactional rules.
 
 The IMDG uses the unified clustering layer, to provide a highly available and reliable service.
-
 
 {% comment %}
 TODO_NIV - Change to ISpaceProxy link when available.
@@ -207,9 +195,7 @@ The process is widely known as map/reduce, and is used extensively by companies 
 Another aspect of processing is business logic hosting. This is covered in Lightweight Application Containers below.
 {% endtoczone %}
 
-
 # Lightweight Application Containers
-
 
 Lightweight application containers provide a business logic execution environment at the node level. They also translate SBA semantics and services to the relevant container development framework implementation.
 
@@ -220,7 +206,6 @@ For this reason, this architecture is very powerful, as it enables applications 
 GigaSpaces XAP provides several default implementations as part of the product, and an additional plugin API, to enable other technology integrations.
 
 **Current implementations supported by GigaSpaces XAP**:
-
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 More information on the usage of the above integrations can be found in the [Programmer's Guide](./programmer's-guide.html).
@@ -256,9 +241,7 @@ The [integration with the Jetty web container](http://wiki.gigaspaces.com/wiki/d
 Mule is a very popular open source Enterprise Services Bus implementation in Java. The [Mule container integration](http://wiki.gigaspaces.com/wiki/display/XAP95/Mule+ESB) allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
 {% endtoczone %}
 
-
 # Developers API and Components
-
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 
@@ -289,7 +272,6 @@ Remoting can be viewed as the alternative to Web Services or WCF, as it provides
 This package contains integrations with non-XAP components. For more information please refer to the Programmers Guide.
 
 {% endtoczone %}
-
 
 {% whr %}
 {% refer %} **Next chapter**: [Terminology](./terminology.html){% endrefer %}

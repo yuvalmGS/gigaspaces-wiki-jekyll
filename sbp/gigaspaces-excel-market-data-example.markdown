@@ -5,7 +5,6 @@ categories: SBP
 page_id: 47219542
 ---
 
-
 {% tip %}
 **Summary:** {% excerpt %}This example shows the usage of Microsoft Excel spreadsheets and GigaSpaces XAP for working with stock market data. It also demonstrates the building of Excel RTD and UDF components in C# .NET.{% endexcerpt %}
 **Author**: Pini Cohen, GigaSpaces
@@ -71,7 +70,6 @@ The .NET files are created in the `<Example Root>\Release` directory.
 {% indent %}
 ![add-ins.JPG](/attachment_files/sbp/add-ins.JPG)
 {% endindent %}
-
 
 ## Opening .NET Solution with Microsoft Visual Studio
 

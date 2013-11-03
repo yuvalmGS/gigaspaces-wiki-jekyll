@@ -24,11 +24,9 @@ When writing objects into the space, you may need to generate a global unique ID
 
 GigaSpaces generates a unique global ID when writing new objects using its built-in internal ID generator utility used when enabling the `auto-generate` ID property. Still, you may want to have your own custom global unique ID generator.
 
-
 {% tip %}
 You can [download](/attachment_files/sbp/GlobalIDGenerator.zip) the custom Unique Global ID Generator source code used with this example.
 {% endtip %}
-
 
 The following example includes a custom global unique ID generator PU and a client side utility. The Unique Global ID Generator features the following:
 - Spring based configured.
@@ -62,7 +60,6 @@ The following should be used to enable the ID Generator:
 
 {% tabcontent ID Generator PU %}
 This is ID Generator `pu.xml`:
-
 
 {% highlight java %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -103,13 +100,10 @@ This is ID Generator `pu.xml`:
 </beans>
 {% endhighlight %}
 
-
 {% endtabcontent %}
-
 
 {% tabcontent The Client %}
 The following should be added to your PU `pu.xml` used to deploy the client application:
-
 
 {% highlight java %}
 <context:component-scan base-package="com.gigaspaces.idgenerator.client" />

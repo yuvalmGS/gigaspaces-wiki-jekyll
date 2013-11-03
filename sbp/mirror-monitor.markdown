@@ -5,7 +5,6 @@ categories: SBP
 page_id: 52888463
 ---
 
-
 {% tip %}
 **Summary:** {% excerpt %}Mirror Service Monitoring Utility{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
@@ -48,8 +47,6 @@ In order to use the Mirror Monitor with your application you should:
 2. Add the Mirror Monitor classes into your Mirror PU.
 3. Change the Mirror pu.xml configuration to have this:
 
-
-
 {% highlight java %}
 <bean id="hibernateDataSource" class="com.gigaspaces.util.mirror.monitor.Mirror">
 	        <property name="sessionFactory" ref="sessionFactory"/>
@@ -61,7 +58,6 @@ In order to use the Mirror Monitor with your application you should:
 
 <os-core:space id="mirror" url="/./mirror-service" schema="mirror" external-data-source="hibernateDataSource" />
 {% endhighlight %}
-
 
 Properties List:
 ||Property||Description||Default Value||

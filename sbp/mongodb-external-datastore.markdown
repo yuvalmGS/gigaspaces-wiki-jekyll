@@ -37,7 +37,6 @@ There are two phases of an EDS: writethrough persistence and initial load. The w
 ## Configuring the Mirror
 To use a custom EDS with the mirror space, all you have to do is declare the EDS via Spring, and configure the mirror space to use the EDS, as shown in the MongoDB EDS configuration from the tests:
 
-
 {% highlight java %}
     <!-- BEGIN mongo config -->
     <mongo:mongo id="mongo" host="localhost" port="27017">
@@ -69,14 +68,11 @@ To use a custom EDS with the mirror space, all you have to do is declare the EDS
     </os-core:mirror>
 {% endhighlight %}
 
-
 The important facets here are the `mongoEDS` bean declaration, and the `external-data-source` attribute of the space. Assuming you have a MongoDB instance running on localhost (as the MongoDB configuration above shows), this would instantiate a mirror space, prepared for all write-through activity.
 
 ## Configuring the Data-Grid
 
 The data grid uses the EDS for reads. If no initial load is desired, configuring the data grid for mirroring is enough; otherwise, you'll replicate the EDS declaration for the data grid declaration as well, which yields the following configuration:
-
-
 
 {% highlight java %}
 <!-- BEGIN mongo config -->

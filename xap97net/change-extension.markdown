@@ -25,7 +25,6 @@ IdQuery<WordCount> idQuery = new IdQuery<WordCount>(id, routing);
 int? newCounter = ISpaceProxy.AddAndGet(idQuery, "Counter", 1);
 {% endhighlight %}
 
-
 {% exclamation %} You should use the primitive wrapper types as the operation semantic is to return null if there is no object matching the provided id query
 
 {% info %}

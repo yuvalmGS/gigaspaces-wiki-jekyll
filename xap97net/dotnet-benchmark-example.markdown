@@ -9,7 +9,6 @@ page_id: 63799403
 
 {% summary %}The Benchmark Example measures the performance of several GigaSpaces .Net API operations.{% endsummary %}
 
-
 {% section %}
 
 {% column width=7% %}
@@ -93,7 +92,6 @@ The Benchmark elements contain the following parameters:
 {Benchmark type name}`2[[Object type name, Assembly name],[Adapter type name, Assembly name]], Assembly name
 {% endhighlight %}
 
-
 Example:
 
 {% highlight java %}
@@ -101,7 +99,6 @@ Example:
 GigaSpaces.Core.Benchmarks.Implementations.Basic],[GigaSpaces.Core.Benchmarks.Implementations.Basic.ObjectAdapters.PersonAdapter,
 GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.Implementations.Basic</type>
 {% endhighlight %}
-
 
 - **repeats** - Number of times to repeat the benchmark
 - **warmups** - Number of repeats that will count as warm-up repeats, which will not be taken into consideration when calculating the benchmark performance results
@@ -127,7 +124,6 @@ Develop a custom benchmark with your own code for the benchmark scenario and the
 - Adjust the configuration parameters in the input xml file:
 - Type your object definition
 
-
 {% highlight java %}
 <type>GigaSpaces.Core.Benchmarks.Implementations.Basic.ReadBenchmark`2
 
@@ -138,7 +134,6 @@ Develop a custom benchmark with your own code for the benchmark scenario and the
  GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.Implementations.Basic
 </type>
 {% endhighlight %}
-
 
 3. For running the customized benchmark, follow the steps below in **Building and Running the Example**
 
@@ -162,7 +157,6 @@ Example command line for running an embedded benchmark run:
 
  Xmls\BenchmarkPerson.xml Results\EmbeddedBenchmarkPersonResult.xml
 {% endhighlight %}
-
 
 # Example Configuration File
 

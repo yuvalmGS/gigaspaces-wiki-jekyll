@@ -5,16 +5,13 @@ categories: XAP97NET
 page_id: 63799328
 ---
 
-
 {% summary %}This page explains how to establish data synchronization between multiple sites (spaces), usually used over the WAN.{% endsummary %}
 
 {% compositionsetup %}
 
-
 {% info title=Licensing %}
 The Gateway requires a separate license in addition to the GigaSpaces commercial license. Please contact [GigaSpaces Customer Support](http://www.gigaspaces.com/content/customer-support-services) for more details.
 {% endinfo %}
-
 
 # Overview
 
@@ -60,7 +57,6 @@ From the space's perspective, a replication from one space to a target gateway i
 
 The following snippet shows how to configure a space that resides in New York to replicate to two other spaces, one in London and one in Hong Kong:
 
-
 {% highlight xml %}
 <SpaceProxies>
    <add Name="Space" Url="/./myNYSpace">
@@ -74,9 +70,7 @@ The following snippet shows how to configure a space that resides in New York to
 </SpaceProxies>
 {% endhighlight %}
 
-
 Each of replication channel to the gateways can be configured with more parameters, such parameters can applied to all gateways or specifically per gateway, for example:
-
 
 {% highlight xml %}
 <SpaceProxies>
@@ -91,10 +85,8 @@ Each of replication channel to the gateways can be configured with more paramete
 </SpaceProxies>
 {% endhighlight %}
 
-
 Here we have specified a global bulk size of 1000 but have specifically overridden it in the replication channel to Hong Kong with 100, and have a global maximum redo log capacity for both targets of 1000000.
 {% refer %}For more details about all the available configuration elements of the space gateway targets please refer to the [Configuring Space Gateway Targets](./configuring-space-gateway-targets.html) section.{% endrefer %}
-
 
 {% tip %}
 **Use the `partitioned-sync2backup` cluster schema**
@@ -106,10 +98,8 @@ If you are not interested in having backups running but have the replication to 
 </os-sla:sla>
 {% endhighlight %}
 
-
 Note that when there are no backups running any failure of the primary might cause a loss of data.
 {% endtip %}
-
 
 # Configuring and Deploying the Gateway
 
@@ -124,7 +114,6 @@ The different gateway components needs to locate each other across the different
 ## Gateway Basic Configuration
 
 Following the above example, here we demonstrate how to configure the local gateway processing unit in New York, which needs to send replication to London and Hong Kong and also receive replication from these two sites.
-
 
 {% highlight xml %}
 <os-gateway:delegator id="delegator"
@@ -160,7 +149,6 @@ Following the above example, here we demonstrate how to configure the local gate
 have no meaning, all sites could designate the same ports as well-->
 {% endhighlight %}
 
-
 In the above example we see that both the sink and delegator needs a reference to the gateway lookup configuration, and that's because both components are using this configuration to locate the relevant component or to register themselves. They use their local gateway name to identify themselves to the lookup configuration, where they should be registered and where they should look for their targets.
 
 The delegator and sink components are actually isolated and can even be deployed in separate processing units but the most simple deployment would be to bundle theses two together. However, in some cases you might want to separate this into two or more machines due to system loads or other reasons.
@@ -184,7 +172,6 @@ In order to preserve distributed transactions atomicity (distributed transaction
 </SpaceProxies>
 {% endhighlight %}
 
-
 As specified in the example above, it is required to set the "cluster-config.groups.group.repl-policy.processing-type" property to "multi-source".
 
 Distributed transaction consolidation is done by waiting for all the transaction participants data before processing is done by the Sink component.
@@ -196,7 +183,6 @@ In order to prevent this potential delay, it is possible to set a timeout parame
 Please note that while waiting for the pieces of a distributed transaction to arrive at the sink, replication isn't waiting but keeping the data flow and preventing from conflicts to happen.
 
 The following example demonstrates how to set the timeout for waiting for distributed transaction data to arrive. It is also possible to set the amount of new operations to perform before processing data individually for each participant:
-
 
 {% highlight xml %}
 <os-gateway:sink id="sink" local-gateway-name="NEWYORK"
@@ -212,18 +198,15 @@ The following example demonstrates how to set the timeout for waiting for distri
 </os-gateway:sink>
 {% endhighlight %}
 
-
 Distributed transaction participants data will be processed individually if 10 seconds have passed and not all of the participants data  has arrived or if 20 new operations were executed after the distributed transaction.
 
 ||Attribute|Default Value||
 |dist-tx-wait-timeout-millis|60000 milliseconds|
 |dist-tx-wait-for-opers|unlimited (-1 = unlimited)|
 
-
 {% info %}
 Note that by setting the "cluster-config.groups.group.repl-policy.processing-type" property to "multi-source" all reliable asynchronous replication targets for that space will work in distributed transaction consolidation mode (For example, a Mirror would be in distributed transaction consolidation mode as well.)
 {% endinfo %}
-
 
 # Master-Slave Topology
 
@@ -271,7 +254,6 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent New York Gateway %}
 
@@ -325,7 +307,6 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {% endtabcontent %}
 
-
 {% tabcontent London Space %}
 
 {% highlight xml %}
@@ -357,7 +338,6 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent London Gateway %}
 
@@ -408,7 +388,6 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {% endtabcontent %}
 
-
 {% tabcontent Hong Kong Space %}
 
 {% highlight xml %}
@@ -439,7 +418,6 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent Hong Kong Gateway %}
 
@@ -496,7 +474,6 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {% endinittab %}
 
-
 # Multi-Master Topology
 
 With this architecture, we will have a multi-master topology where data is being generated and manipulated in all sites.
@@ -543,7 +520,6 @@ Here are the contents of the files for each of the components:
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent New York Gateway %}
 
@@ -603,7 +579,6 @@ Here are the contents of the files for each of the components:
 
 {% endtabcontent %}
 
-
 {% tabcontent London Space %}
 
 {% highlight xml %}
@@ -636,7 +611,6 @@ Here are the contents of the files for each of the components:
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent London Gateway %}
 
@@ -694,7 +668,6 @@ Here are the contents of the files for each of the components:
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent Symmetric Gateway Config %}
 In this example, the gateway `pu.xml` is quite symmetric, the only difference is the local gateway name and the target gateway name. In such cases, it may be more convenient to create a single gateway `pu.xml` and use place holders to override the relevant properties at deploy time by injecting values for these properties:
@@ -763,13 +736,10 @@ In the above we have configured both LONDON and NEWYORK at the sources of the si
 
 {% endinittab %}
 
-
-
 {% tip %}
 **Multi-Master Running example**
 The [Multi-Master running example](/sbp/wan-replication-gateway.html) includes a three-way setup replicating data between three sites, this example contains a spring(java) processing unit for the spaces, but the gateway components are the same.
 {% endtip %}
-
 
 # Filtering Replication Between Gateways
 
@@ -781,9 +751,7 @@ In some cases, there can be data that should not be replicated between the sites
 Bootstrapping a site from another site is a process in which one site space is starting fresh and it is being populated with the data of another site space. This can be useful after a very long disconnection where the replication redo-log in the source spaces that replicates to this site was dropped due to breaching capacity limitations, and the disconnected site should start fresh. Other reasons may be an explicit planned downtime due-to some maintenance of one site which lead to a complete system bootstrap once restarted.
 {% refer %}For full details of how to enable the bootstrap mechanism refer to [Replication Gateway Bootstrapping Process](./replication-gateway-bootstrapping-process.html){% endrefer %}
 
-
 {% comment %}
-
 
 # Adding and Removing Sites
 
@@ -792,7 +760,6 @@ Adding and removing a site without down time is done by applying the [Hot Deploy
 - A space, however, is stateful. Redeploying it entirely will cause downtime and loss of data (if no database initial load is configured). Therefore the [Hot Deploy](/xap97/deploying-onto-the-service-grid.html#DeployingontotheServiceGrid-HotDeploy) method should be used. Roughly speaking, while the space is up, its `pu.xml` should be updated reflecting the new gateway replication topology state (addition or removal of sites) and then this `pu.xml` should be copied into the GSM's #deployment directories, overriding the existing `pu.xml` of the space processing unit of the current deployment. Then a manual restart of space instances should be performed, going over each partition, restarting its backup, waiting for it to perform full recovery from the primary (now it should be with the updated`pu.xml` configuration) and then restarting the primary instance which will be replaced by the updated backup and will become a backup after restart.
 
 {% endcomment %}
-
 
 # Read More
 

@@ -10,7 +10,6 @@ page_id: 63799407
 
 # Data Grid
 
-
 {% comment %}
 =========================================
 
@@ -18,7 +17,6 @@ page_id: 63799407
 
 =========================================
 {% endcomment %}
-
 
 {% comment %}
 ----------------------------
@@ -57,7 +55,6 @@ The relations between the spaces define the [Data Grid Topology](#Data Grid Topo
 {% anchor Data Grid Topology %}
 
 # Data Grid Topologies
-
 
 {% comment %}
 ----------------------------
@@ -189,6 +186,5 @@ A [partitioned Data Grid](#Partitioned Data Grid), with one or more [backup](#Pr
 {% endcolumn %}
 
 {% endsection %}
-
 
 |[Basic Components](./terminology---basic-components.html)||Data Grid Topologies|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|

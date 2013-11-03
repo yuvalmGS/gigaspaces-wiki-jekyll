@@ -35,11 +35,9 @@ It's becoming increasingly important for organizations to share HTTP session dat
 
 The following image depicts a common use case where there are multiple data centers connected across the WAN, and each is running a different type of web server.
 
-
 {% indent %}
 ![httpSessionSharing1.jpg](/attachment_files/sbp/httpSessionSharing1.jpg)
 {% endindent %}
-
 
 The GigaSpaces Global HTTP Session Sharing architecture allows users to deploy their web application across these multiple data centers where the session is shared in real-time and in a transparent manner. The HTTP session is also backed by a data grid cluster within each data center for fault tolerance and high-availability.
 
@@ -70,19 +68,15 @@ There is no need to change the web application or plug in any custom code in ord
 
 The below diagram shows a more detailed view of the IMDG deployment. In this case, there are multiple partitions for high scalability, as well as backup instances for redundancy. The WAN Gateway is also deployed and shows replication to each remote site.
 
-
 {% indent %}
 ![httpSessionSharing2.jpg](/attachment_files/sbp/httpSessionSharing2.jpg)
 {% endindent %}
 
-
 The end-to-end path between the 2 data center nodes includes the servlet and Shiro filters, and the IMDG with local cache and WAN Gateway.
-
 
 {% indent %}
 ![httpSessionSharing3.jpg](/attachment_files/sbp/httpSessionSharing3.jpg)
 {% endindent %}
-
 
 ### Load-Balancing Scenarios
 
@@ -98,14 +92,11 @@ Have `cacheManager.cacheSessionLocally = true` when you would like multiple web 
 
 {% endcolumn %}
 
-
 {% column %}
-
 
 {% indent %}
 ![http-session-non-sticky.jpg](/attachment_files/sbp/http-session-non-sticky.jpg)
 {% endindent %}
-
 
 {% endcolumn %}
 
@@ -121,14 +112,11 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 
 {% endcolumn %}
 
-
 {% column %}
-
 
 {% indent %}
 ![http-session-sticky.jpg](/attachment_files/sbp/http-session-sticky.jpg)
 {% endindent %}
-
 
 {% endcolumn %}
 
@@ -137,8 +125,6 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 ### The Web Application
 
 The web application requires a couple of configuration changes to the web.xml file in order to include the Shiro filter:
-
-
 
 {% highlight java %}
 <web-app>
@@ -165,16 +151,11 @@ The web application requires a couple of configuration changes to the web.xml fi
 </web-app>
 {% endhighlight %}
 
-
-
 {% note %}
 The **ShiroFilter** must be the first filter defined.
 {% endnote %}
 
-
 The `shiro.ini` file needs to be placed within the WEB-INF folder and to define parameters for the session manager for it to be able to access GigaSpaces:
-
-
 
 {% highlight java %}
 [main]
@@ -211,24 +192,19 @@ sessionValidationScheduler.sessionManager = $sessionManager
 securityManager.sessionManager.sessionValidationScheduler = $sessionValidationScheduler
 {% endhighlight %}
 
-
-
 {% tip %}
 The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Space URL](http://wiki.gigaspaces.com/wiki/display/XAP9/Space+URL) to the IMDG deployed within your site.
 {% endtip %}
-
 
 ### Web Application Libraries
 
 The web application should include the following libraries within its \WEB-INF\lib  file folder:
 aopalliance-1.0.jar, commons-beanutils-1.8.3.jar, commons-collections-2.1.1.jar, gs-runtime.jar, gs-session-manager-2.0-b103.jar, jcl-over-slf4j-1.6.4.jar, log4j-1.2.16.jar, shiro-all-1.3.0-317b.jar, slf4j-api-1.6.4.jar, slf4j-log4j12-1.6.4.jar, xmlbeans-2.2.0.jar, xmlpull-1.1.3.1.jar, xpp3_min-1.1.4c.jar and xstream-1.4.2.jar.
 
-
 {% note %}
 The gs-runtime.jar should be replaced with the relevant GigaSpaces gs-runtime.jar matching your environment.
 Use appropriate version of gs-session-manager-<version>.jar (example uses version 2.0-b103 version)
 {% endnote %}
-
 
 ### GigaSpaces In Memory Data Grid (IMDG)
 GigaSpaces IMDG should be deployed using your favorite topology (replicated and/or partitioned, static or elastic) and include a reference to a WAN Gateway.
@@ -240,17 +216,13 @@ aopalliance-1.0.jar, commons-beanutils-1.8.3.jar, commons-collections-2.1.1.jar,
 
 To deploy the IMDG start the GigaSpaces agent using the `gs-agent` and run the following:
 
-
 {% highlight java %}
 gs deploy-space sessionSpace
 {% endhighlight %}
 
-
-
 {% tip %}
 See the [deploy-space](http://wiki.gigaspaces.com/wiki/display/XAP9/deploy-space+GigaSpaces+CLI) command for details.
 {% endtip %}
-
 
 ### The WAN Gateway
 The [WAN Gateway](http://wiki.gigaspaces.com/wiki/display/XAP9/Multi-Site+Replication+over+the+WAN) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](http://www.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gateway) best practice for an example of how a multi-master Gateway architecture can be deployed.
@@ -261,17 +233,12 @@ The [WAN Gateway](http://wiki.gigaspaces.com/wiki/display/XAP9/Multi-Site+Replic
 
 There are cases when applications store session data which is not defined as serializable. To support non-serializable session data you can configure the session manager to serializable session to XML by defining following parameter in `shiro.ini` file mentioned above,
 
-
-
 {% highlight java %}
 # Session serializationType - JAVA/XML (default JAVA)
 cacheManager.serializationType = XML
 {% endhighlight %}
 
-
 Session manager uses XStream libraries for serializing session data to XML. XStream serialization can be further customized, application can configure GigaSpaces session manager to use Refection Converter for Externalizable classes and register custom converters. Following two parameters in `shiro.ini` file can help in customizing serialization,
-
-
 
 {% highlight java %}
 # When using Externalizable classes with customized serialization and want to stick to serialization based on Reflection enable this option
@@ -284,19 +251,15 @@ Session manager uses XStream libraries for serializing session data to XML. XStr
 # cacheManager.converterNameList = org.openspaces.xtreme.converter.XmlCalendarConverter
 {% endhighlight %}
 
-
 ##### Secured GigaSpaces cluster
 
 When using a [Secure GigaSpaces cluster](http://wiki.gigaspaces.com/wiki/display/XAP9/Securing+your+Data) you can pass security credentials using following parameters in `shiro.ini` file,
-
-
 
 {% highlight java %}
 # When using secured GigaSpace cluster, pass the credentials here
 # cacheManager.username = gs
 # cacheManager.password = gs
 {% endhighlight %}
-
 
 # Http Session Web Application Example
 
@@ -311,7 +274,6 @@ The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblo
 The URL above assumes the Web Server configured to use port 8080.
 {% endnote %}
 
-
 {% indent %}
 ![httpSessionSharing4.jpg](/attachment_files/sbp/httpSessionSharing4.jpg)
 {% endindent %}
@@ -323,7 +285,6 @@ The URL above assumes the Web Server configured to use port 8080.
 ![httpSessionSharing5.jpg](/attachment_files/sbp/httpSessionSharing5.jpg)
 {% endindent %}
 
-
 ### Multi-Web Servers Deployment
 
 ##### Multiple Tabs
@@ -332,7 +293,6 @@ You may share the HTTP session between different web servers. To test this on yo
 {% indent %}
 ![httpSessionSharing8.jpg](/attachment_files/sbp/httpSessionSharing8.jpg)
 {% endindent %}
-
 
 {% indent %}
 ![httpSessionSharing9.jpg](/attachment_files/sbp/httpSessionSharing9.jpg)
@@ -344,13 +304,11 @@ Hit the Refresh button when switching between the tabs. The session data will be
 When deploying the web application WAR file please make sure the web app context will be identical.
 {% endnote %}
 
-
 ### Load-Balancer
 Another option would be to use a load-balancer such as the [apache httpd](http://httpd.apache.org) and configure it to load-balance the web requests between the different web servers. Here is a simple setup:
 1. Install [apache httpd](http://httpd.apache.org).
 2. Create a file named `HttpSession.conf` located at <Apache HTTPD 2.2 root>\conf\gigaspaces
 3. Place the following within the `HttpSession.conf` file. The `BalancerMember` should be mapped to different URLs of your web servers instances. With the example below we have Tomcat using port 8080 and Websphere using port 9080.
-
 
 {% highlight java %}
 <VirtualHost *:8888>
@@ -364,14 +322,11 @@ Another option would be to use a load-balancer such as the [apache httpd](http:/
 </VirtualHost>
 {% endhighlight %}
 
-
 {% note %}
  The `127.0.0.1` IP should be replaced with IP addresses of the machine(s)/port(s) of WebSphere/Tomcat instances.
 {% endnote %}
 
-
 4. Configure the `<Apache2.2 HTTPD root>\conf\httpd.conf` to have the following:
-
 
 {% highlight java %}
 Include "/tools/Apache2.2/conf/gigaspaces/*.conf"
@@ -392,7 +347,6 @@ Deny from all
 Allow from 127.0.0.1
 </Location>
 {% endhighlight %}
-
 
 {% note %}
 The `/tools/Apache2.2` folder name should be replaced with your correct Apache httpd location.
@@ -420,19 +374,15 @@ You can shutdown Websphere or Tomcat and later restart these. Your web applicati
 When deploying the [multi-site example](./wan-replication-gateway.html) you should change the `shiro.ini` for each site to match the local site Space URL. For example,
 to connect to the DE space you should have the web application use a `shiro.ini` with the following:
 
-
 {% highlight java %}
 sessionDAO.activeSessionsCacheName = jini://*/*/wanSpaceDE?useLocalCache&groups=DE
 {% endhighlight %}
 
-
 To connect to the US space you should have the web application use a `shiro.ini` with the following:
-
 
 {% highlight java %}
 sessionDAO.activeSessionsCacheName = jini://*/*/wanSpaceUS?useLocalCache&groups=US
 {% endhighlight %}
-
 
 # Other Considerations
 

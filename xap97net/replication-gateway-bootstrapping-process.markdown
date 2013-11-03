@@ -5,14 +5,11 @@ categories: XAP97NET
 page_id: 63799425
 ---
 
-
 {% summary %}This page is about bootstrapping a site from another site across gateways.{% endsummary %}
-
 
 {% info %}
 This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
 {% endinfo %}
-
 
 # Overview
 
@@ -57,7 +54,6 @@ The bootstrap is initiated on the local gateway sink of the space's site that ne
 </os-gateway:sink>
 {% endhighlight %}
 
-
 After meting the condition specified in the previous, the bootstrap should be initiated using the [Admin API](./administration-and-monitoring-api.html).
 Following is an example of how to bootstrap New-York from London:
 
@@ -68,7 +64,6 @@ IGateway newyorkGateway = admin.Gateways.WaitFor("NEWYORK");
 IGatewaySinkSource londonSinkSource = newyorkGateway.WaitForSinkSource("LONDON");
 IBootstrapResult bootstrapResult = londonSinkSource.BootstrapFromGatewayAndWait(TimeSpan.FromSeconds(3600));
 {% endhighlight %}
-
 
 The bootstrap method will block until the bootstrap is completed and the result will specify whether the bootstrap completed successfully or some error occurred, such as timeout.
 
@@ -82,7 +77,6 @@ IGatewaySink sink = newyorkGateway.WaitForSink("LONDON");
 sink.EnableIncomingReplication();
 
 {% endhighlight %}
-
 
 Once a gateway sink has executed a bootstrap process or the `enableIncomingReplication` was called, it cannot execute a bootstrap process again because it is already open for incoming replication.
 

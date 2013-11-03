@@ -22,8 +22,6 @@ If you would like to run the tutorial sample application, download GigaSpaces an
 
 {% column width=110% %}
 
-
-
 {blank-line}
 [{% fontsize 20 %}Writing Your First Caching Application{% endfontsize %}](./your-first-data-grid-application.html)
 Create your first simple Hello World caching application
@@ -47,8 +45,6 @@ Create your first simple Hello World caching application
 {% endcolumn %}
 
 {% column width=110% %}
-
-
 
 {blank-line}
 [{fontsize20}The Full Space Based Architecture Example{fontsize20}](./your-first-xtp-application.html)

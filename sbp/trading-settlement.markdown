@@ -82,8 +82,6 @@ Deal matching uses a [polling container](http://www.gigaspaces.com/wiki/display/
 ## Event Processing for Trade Matching
 Trade matching for deals is based on the following fields: trading party, counter-party, instrument, matched flag, and buy/sell flag.  A polling container receives an event for each unprocessed trade in the space, and the matching process is done by transaction.
 
-
-
 {% highlight java %}
 @EventDriven @Polling(gigaSpace = "gigaSpace") @TransactionalEvent(transactionManager="transactionManager")
 public class TradeMatchingProcessor {
@@ -107,10 +105,8 @@ public class TradeMatchingProcessor {
 	}
 {% endhighlight %}
 
-
 ## Data Partitioning
 In a partitioned space, data is routed to a particular partition based on a routing property.  Here we use a hash based on the trading party and counter-party.  This provides data affinity so that trades between these parties are located in the same space, which minimizes latency.
-
 
 {% highlight java %}
 @SpaceClass
@@ -129,12 +125,9 @@ public String getRouting() {
 }
 {% endhighlight %}
 
-
 ## Scaling the Elastic Processing Unit (EPU)
 
 When the number of trade objects in the space equals 50, the memory available for processing containers is increased from 128MB to 256MB.
-
-
 
 {% highlight java %}
 pu = admin.getProcessingUnits().waitFor("settlement-app-components", 5,TimeUnit.SECONDS);
@@ -143,7 +136,6 @@ pu.scale(new ManualCapacityScaleConfigurer()
         .create());
         );
 {% endhighlight %}
-
 
 Click [here](http://www.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit#ElasticProcessingUnit-MaximumMemoryCapacity) to see how the number of processing containers is dynamically calculated based on the amount of memory.
 
@@ -156,7 +148,6 @@ A [document store](http://www.gigaspaces.com/wiki/display/XAP8/Document+(Schema-
 - MatchedDeal object
 
 The document properties are _get_ and _set_ with code like this:
-
 
 {% highlight java %}
 public class MatchedDeal extends SpaceDocument {
@@ -172,10 +163,8 @@ public class MatchedDeal extends SpaceDocument {
 }
 {% endhighlight %}
 
-
 ## Data Access Object (DAO)
 The below interface defines how to interact with the space.
-
 
 {% highlight java %}
 public interface SettlementAppDAO {
@@ -195,10 +184,8 @@ public interface SettlementAppDAO {
 }
 {% endhighlight %}
 
-
 ## Database Table Mapping
 The trade and matched deal objects are persisted to the HSQL database through Hibernate.  An example of the Hibernate mapping is below.
-
 
 {% highlight java %}
 <hibernate-mapping>
@@ -227,15 +214,12 @@ The trade and matched deal objects are persisted to the HSQL database through Hi
 ............
 {% endhighlight %}
 
-
 ## Web Session Management
 HTTP Sessions are maintained in the space and a copy is also kept in a [local cache](http://www.gigaspaces.com/wiki/display/XAP8/Client+Side+Caching), with 1 object per client.  Sessions are accessed using the following:
-
 
 {% highlight java %}
 jetty.sessions.spaceUrl=jini://**/**/settlementSpace?useLocalCache
 {% endhighlight %}
-
 
 # Running the Demo
 1. **Download** the [TradingSettlement.zip](/attachment_files/sbp/TradingSettlement.zip) file and **extract** it into an empty folder.

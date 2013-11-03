@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799360
 ---
 
-
 {% summary %}This section describes Database Integration in SBA{% endsummary %}
-
 
 # Overview
 
@@ -27,7 +25,6 @@ SBA does not deny the use of a database, but suggests a more natural role for it
 
 In a high performance transactional system, we would like the transaction to be bound to space resources only, and the update of the backing database be done after the transaction is complete, asynchronous to the transaction. The synchronization between the in-memory system of record and the database, should be reliable as well.
 
-
 {% comment %}
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
@@ -43,7 +40,6 @@ The mirroring service is one-way only - from the space cluster to the database o
 GigaSpaces XAP provides open interfaces to external data source integration. The default implementation of these interfaces is database integration using [NHibernate](http://nhforge.org/Default.aspx). For implementation details please refer to [Integration with Other Data Sources] in the Programmer's Guide.
 
 These interfaces are used by the space to store and retrieve data from external data sources (e.g. databases).
-
 
 {% tip title=About Memory Volatility %}
 One of the common questions when it comes to memory as a critical system of record, is its volatility. There is no doubt that in-memory storage is much faster than disk storage, however, how can we guarantee information completeness if the data is stored in memory?

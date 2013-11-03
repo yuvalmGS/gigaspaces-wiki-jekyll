@@ -26,7 +26,6 @@ A filter is integrated into a space upon creation of that space, and each space 
 
 The following code starts an embedded space, with a space filter that implements `ISpaceFilter`:
 
-
 {% highlight java %}
 SpaceFilterConfig mySpaceFilterConfig = new SpaceFilterConfig();
 mySpaceFilterConfig.FilterOperations = new List<FilterOperations>(new FilterOperation[]{ FilterOperation.BeforeWrite });
@@ -38,7 +37,6 @@ spaceConfig.SpaceFiltersConfig.Add(mySpaceFilterConfig);
 
 ISpaceProxy embeddedSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceConfig);
 {% endhighlight %}
-
 
 {% anchor priority %}
 

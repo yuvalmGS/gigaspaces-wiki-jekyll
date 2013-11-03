@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799395
 ---
 
-
 {% summary %} A Local View allows the client application to cache specific data based on client's criteria at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}
-
 
 # Introduction
 
@@ -17,18 +15,15 @@ Data is streamed into the client's local view based on predefined criteria (a co
 
 During the local view initialization, data is loaded into the client's memory based on the view criteria. Afterwards, the local view is continuously updated by the master space asynchronously; any operation executed on the master space that affects an entry which matches the view criteria is automatically propagated to the client.
 
-
 {% indent %}
 ![local_view.jpg](/attachment_files/xap97net/local_view.jpg)
 {% endindent %}
-
 
 {% plus %} For additional client side caching options, refer to [Client Side Caching](./client-side-caching.html).
 
 # Initializing the Local View Class
 
 Creating a local view is similar to creating an `ISpaceProxy` instance, except the space should be wrapped with a local view before exposing it as an `ISpaceProxy`. The local view is configured in code using `IReadOnlySpaceProxy`. For example:
-
 
 {% highlight java %}
 //define names for the localView
@@ -42,7 +37,6 @@ View[] views = new View[] { new View(typeName1, "foo=1"), new View(typeName2, ""
 IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views);
 
 {% endhighlight %}
-
 
 # Local View Features
 
@@ -93,7 +87,6 @@ IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views, 
 
 {% endhighlight %}
 
-
 # Recovering From Disconnection
 
 When the connection between a local view and remote master space is disrupted, the local view starts trying to reconnect with the remote space.
@@ -117,6 +110,5 @@ View[] views = new View[] { new View(typeName1, "foo=1"), new View(typeName2, ""
 //create the local view using the GigaSpacesFactory object and write it into an IReadOnlySpaceProxy object.
 IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(proxy, views, myConfig);
 {% endhighlight %}
-
 
 {% plus %} When the synchronization is replication-based (default), the local view is resilient to failover, which means that if a primary space fails and a backup space replaces it within the maximum disconnection duration, the local view will remain intact during the failover process. When the synchronization is notification-based this is not guaranteed since notifications might be lost during the failover process.

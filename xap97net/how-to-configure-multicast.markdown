@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 64127787
 ---
 
-
 {% summary %}Enabling multicast on Linux and windows. {% endsummary %}
-
 
 # Overview
 
@@ -20,18 +18,15 @@ GigaSpaces uses multicast in the following cases:
 - [When deploying onto the service grid](/xap97/deploying-onto-the-service-grid.html) GigaSpaces XAP uses multicast to discover the [Lookup Service](./lookup-service-configuration.html), and register their proxies.
 - Clients use multicast to discover the [Lookup Service Configuration](./lookup-service-configuration.html) and look up a matching service proxy (such as the space).
 
-
 {% tip title=What should I do in order to determine if multicast is enabled on my environment? %}
 Refer to the [How to Determine Whether Multicast is Available](./how-to-determine-whether-multicast-is-available.html) section for more details.
 {% endtip %}
-
 
 To enable the important capabilities above, you should enable multicast on machines running clients, spaces or services.
 {% tip title=What should I do if I can't enable multicast? %}
 - If you cannot enable multicast in your environment, you can use unicast discovery to allow services and clients to locate the Lookup Service.
 - Space cluster replication uses unicast by default. You should use multicast replication when having more than 10 clients acting as replica spaces per target space.
 {% endtip %}
-
 
 {% exclamation %} In case you want to **disable the Jini Lookup Service Multicast announcements** please refer to [this](./lookup-service-configuration.html#Multicast Settings) section in the Wiki.
 
@@ -52,7 +47,6 @@ To enable multicasting from a token ring on a Windows® 2000 workstation to any 
 The **[multicast Time-To-Live (TTL)](http://en.wikipedia.org/wiki/Time_to_live)** value specifies the number of routers (hops) that multicast traffic is permitted to pass through before expiring on the network. For each router (hop), the original specified TTL is decremented by one (1). When its TTL reaches a value of zero (0), each multicast datagram expires and is no longer forwarded through the network to other subnets.
 
 The problem of multicasts/broadcasts not passing the router/switch is a well known issue - most routers (Cisco, 3Com, etc) have multicast forwarding disabled by default - otherwise the networks will be flooded with packets coming from very distant locations. To get it delivered all over the globe takes below 30 hops, so TTL 20 means delivery to more than half of it. It is very common that network experts in large networks hate the flooding problem caused by multicasts/broadcasts sent with the large TTL, and block it.
-
 
 # Packet Sniffer/Network Analyzer Tool
 

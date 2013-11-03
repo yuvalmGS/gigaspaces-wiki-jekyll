@@ -9,13 +9,11 @@ page_id: 63799361
 
 {% summary %}Administration and monitoring API for GigaSpaces services and components.{% endsummary %}
 
-
 # Overview
 
 The Service Grid Admin API provides a way to administer and monitor all of GigaSpaces services and components, using a simple API. The API provides information and the ability to operate on the currently running Service Grid Agents, Service Grid Managers, Service Grid Containers, Lookup Services, Processing Units and Spaces.
 
 Before diving into the Service Grid Admin API, here are some code examples showing how the API can be used to display information on the currently deployed services/components:
-
 
 {% inittab admin_test|top %}
 
@@ -40,7 +38,6 @@ foreach (IGridServiceAgent gsa in admin.GridServiceAgents)
 
 {% endtabcontent %}
 
-
 {% tabcontent GSM %}
 
 {% highlight java %}
@@ -56,7 +53,6 @@ foreach (IGridServiceManager gsm in admin.GridServiceManagers)
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent GSC %}
 
@@ -79,7 +75,6 @@ foreach (IGridServiceContainer gsc in admin.GridServiceContainers)
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent Processing Unit %}
 
@@ -123,7 +118,6 @@ foreach (IProcessingUnit processingUnit in admin.getProcessingUnits())
 
 {% endtabcontent %}
 
-
 {% tabcontent Space %}
 
 {% highlight java %}
@@ -161,7 +155,6 @@ foreach (ISpace space in admin.Spaces)
 
 {% endtabcontent %}
 
-
 {% tabcontent Virtual Machine %}
 
 {% highlight java %}
@@ -196,7 +189,6 @@ foreach (IVirtualMachine virtualMachine in admin.VirtualMachines)
 
 {% endtabcontent %}
 
-
 {% tabcontent Machine %}
 
 {% highlight java %}
@@ -226,12 +218,9 @@ foreach (IMachine machine in admin.Machines)
 
 {% endinittab %}
 
-
-
 {% tip %}
 See a fully running example of a [Scaling Agent](./scaling-agent-example.html) which comes with the product.
 {% endtip %}
-
 
 # Admin Construction
 
@@ -372,11 +361,11 @@ The Service Grid Admin Domain Model has representation to the main actors at dif
 # Accessing the Domain Model
 
 There are two ways the Service Grid Admin API can be used to access information the Admin API can provide:
+
 - Call specific properties for the data, and enumerate over them (as shown in the example at the top of the page).
 - Register for specific events using the Service Grid Admin API. Events are handled by different components of the Admin API in similar manner. We will take one of them and use it as a reference example.
 
 If we want to register, for example, for Grid Service Container additions, we can use the following code (note, removing the event listener is not shown here for clarity):
-
 
 {% highlight java %}
 admin.GridServiceContainers.GridServiceContainerAdded += HandleGridServiceContainerAdded;
@@ -388,9 +377,7 @@ private void HandleGridServiceContainerAdded(object sender, GridServiceContainer
 }
 {% endhighlight %}
 
-
 Removals are done in a similar manner:
-
 
 {% highlight java %}
 admin.GridServiceContainers.GridServiceContainerRemoved += HandleGridServiceContainerRemoved;
@@ -402,9 +389,7 @@ void HandleGridServiceContainerRemoved(object sender, GridServiceContainerEventA
 }
 {% endhighlight %}
 
-
 All other data structures use a similar API to register for events. Some might have specific events that go beyond just additions and removals, but they still use the same model. For example, here is how we can register for Space Mode change events across all currently running Space topologies and Space Instances:
-
 
 {% highlight java %}
 admin.Spaces.SpaceModeChanged += HandleSpaceModeChanged;
@@ -417,7 +402,6 @@ void Spaces_SpaceModeChanged(object sender, SpaceModeChangedEventArgs e)
 
 }
 {% endhighlight %}
-
 
 Of course, we can register the same event listener on a specific `ISpace` topology, or event on a specific `ISpaceInstance`.
 

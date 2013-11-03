@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799358
 ---
 
-
 {% summary %}This section describes the XAP.NET product structure{% endsummary %}
-
 
 # Overview
 
@@ -35,22 +33,18 @@ The product directory structure as follows (see Figure 1):
 - **NET v4.0.30319** -- Contains XAP.NET for .NET 4.0 (Same structure as NET v2.0.50727)
 - **Runtime** -- Contains the Java part of the product as well as an embedded Java installation.
 
-
 {% indent %}
 ![XapNetProductStructure_806.jpg](/attachment_files/xap97net/XapNetProductStructure_806.jpg)
 {% sub %}**Figure 1. product directory structure**{% endsub %}
 {% endindent %}
 
-
 # Start Menu Links
 
 The installer creates useful shortcuts in the start menu.
-
 
 {% indent %}
 ![XapNetStartMenu_806.jpg](/attachment_files/xap97net/XapNetStartMenu_806.jpg)
 {% sub %}**Figure 2. Shortcuts added to the Start Menu**{% endsub %}
 {% endindent %}
-
 
 {% endtoczone %}

@@ -73,11 +73,9 @@ The cluster schema supported are:
 - A-Synchronous replication - async_replicated
 - Partitioned with backup - partitioned-sync2backup
 
-
 {% tip %}
 The master-local and local-view topologies do not need their own schemas, because the local cache is defined on the client side.
 {% endtip %}
-
 
 {% anchor 2 %}
 

@@ -50,7 +50,6 @@ See blow an example of `Car` class's space metadata definitions in GS.XML
 </gigaspaces-mapping>
 {% endhighlight %}
 
-
 # XML Elements
 
 ### Class Level Elements
@@ -76,7 +75,6 @@ For more details, see: [Object Metadata](./object-metadata.html#Including/Exclud
 | `alias-name` | Defines the name the field will have when stored to the space. |
 | `storage-type` | Defines the storage format the field will have once stored to the space. See [this](./property-storage-type.html) page for details|
 
-
 {% highlight java %}
 <class name="GigaSpaces.Examples.SpaceOperations.Entities.Person" persist="false" replicate="false" fifo="false" >
 	<property name="Int_Field" null-value="-1" alias-name="int_Field" />
@@ -84,7 +82,6 @@ For more details, see: [Object Metadata](./object-metadata.html#Including/Exclud
 	<property name="Address" alias-name="address" storage-type="Object" />
 </class>
 {% endhighlight %}
-
 
 - `**<id>**` - Defines whether this field can used as the objects unique identifier. The value is used when generating the object UID in the space.
 || Attribute || Description ||

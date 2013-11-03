@@ -115,5 +115,3 @@ It is recommended that you read the following sections next:
 - [Space Topologies](./space-topologies.html)
 - [Deploying and Interacting with the Space](./deploying-and-interacting-with-the-space.html)
 
-
-

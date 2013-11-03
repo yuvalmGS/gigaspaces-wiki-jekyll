@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799356
 ---
 
-
 {% summary %}Monitoring JVM memory and threads in .Net Applications, when troubleshooting application memory and thread consumption. {% endsummary %}
-
 
 # Overview
 
@@ -37,11 +35,9 @@ In some cases, you might want to monitor the activity of the JVM running as part
 2. Start `jconsole` -- jconsole is located under the bin directory of the Java home, by default it is under `<Installation dir>\Runtime\java\bin`
 3. Once the `jconsole` is started, select the **Local** tab:
 
-
 {% indent %}
 ![jcon1.jpg](/attachment_files/xap97net/jcon1.jpg)
 {% endindent %}
-
 
 4. This shows the status of the JVM running in your .NET application:
 

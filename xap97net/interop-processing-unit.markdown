@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799414
 ---
 
-
 {% summary %}Creating and deploying a multi language processing unit{% endsummary %}
-
 
 # Overview
 
@@ -22,12 +20,10 @@ A Mixed processing unit is basically two processing unit that should be deployed
 
 The following should be added into the `<PU deployment dir>\META-INF\spring\pu.xml` file as the last tag in order to support mixed processing unit:
 
-
 {% highlight xml %}
 <bean id="dotnetProcessingUnitContainer" class="org.openspaces.interop.DotnetProcessingUnitBean">
 </bean>
 {% endhighlight %}
-
 
 # Sharing The Same Space
 
@@ -37,15 +33,12 @@ The pu.xml and .NET code should resemble the following:
 
 ## OpenSpaces pu.xml space construction related part:
 
-
 {% highlight xml %}
 <os-core:space id="space" url="/./interopSpace">
 </os-core:space>
 {% endhighlight %}
 
-
 ## .NET Processing Unit Container code space construction related part
-
 
 {% highlight java %}
 class MyInteropProcessingUnit : AbstractProcessingUnitContainer

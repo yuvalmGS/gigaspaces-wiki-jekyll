@@ -8,7 +8,6 @@ page_id: 63799321
 {% compositionsetup %}
 {% summary %}Cluster wide queries or single Space instance queries on your data{% endsummary %}
 
-
 The Data Grid view provides Space and Space instance navigation, for querying data and viewing class metadata.
 Select a "Space" or press the arrow to drill down into the Space instances of each Space (cluster).
 
@@ -26,13 +25,11 @@ The Query editor supports SQL queries. For example, to query a specific class:
 SELECT * FROM my.company.com.MyPojo WHERE rownum < 1000
 {% endhighlight %}
 
-
 In the screenshot below, we also provide the UID column of each object in the Space.
 
 {% highlight java %}
 SELECT uid,* FROM com.gigaspaces.sba.trading.model.TradePojo WHERE rownum < 7
 {% endhighlight %}
-
 
 Press the **"Play"** icon to execute the query. The Query is executed against the selected Space (cluster) or Space instance.
 If the query has too many results, use the paging at the bottom to move between them. Paging is static, meaning that these results are fetched once per execute request.

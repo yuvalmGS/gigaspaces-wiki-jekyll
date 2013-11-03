@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799332
 ---
 
-
 {% summary %}Using System Properties to configure XAP.NET{% endsummary %}
-
 
 # Overview
 
@@ -55,7 +53,6 @@ Like most .NET libraries, GigaSpaces XAP.NET configuration is based on [Applicat
 </configuration>
 {% endhighlight %}
 
-
 # Reading and changing configuration at runtime
 
 The Xml configuration is mapped to a .NET Object model, which can be viewed and changed at runtime. This can be useful for logging the configuration settings, setting a specific configuration based on some business logic, etc.
@@ -67,7 +64,6 @@ String zones = GigaSpacesFactory.Configuration.SystemProperties.GetPropertyValue
 if (zones == "foo")
     GigaSpacesFactory.Configuration.SystemProperties.SetPropertyValue("com.gs.zones", "bar");
 {% endhighlight %}
-
 
 {% infosign %} Using `GigaSpacesFactory.Configuration` requires a reference to the `System.Configuration` assembly, which is not referenced by default.
 
@@ -83,7 +79,6 @@ if (zones == "foo")
         GigaSpacesFactory.Configuration.SystemProperties.SetPropertyValue("com.gs.zones", "bar");
 }
 {% endhighlight %}
-
 
 In addition, the `GigaSpacesFactory.Initialize()` method can be used to initialize XAP.NET explicitly and finalize changes (this is optional - if not called explicitly, this method will be called implicitly by GigaSpaces automatically when needed).
 
@@ -104,7 +99,6 @@ Let's edit the `Settings.xml` file, define a new macro for our app called MyApp.
 </Settings>
 {% endhighlight %}
 
-
 Next we'll edit the application configuration file to use the macro instead of the static value:
 
 {% highlight xml %}
@@ -121,7 +115,6 @@ Next we'll edit the application configuration file to use the macro instead of t
 </configuration>
 {% endhighlight %}
 
-
 GigaSpaces automatically scans property values for macros and replaces them with macro values.
 
 # Base Configuration Files
@@ -129,7 +122,6 @@ GigaSpaces automatically scans property values for macros and replaces them with
 Continuing the previous example, say we want to add more system properties to be shared by all applications. Instead of having to edit each application configuration file, we prefer a single configuration file which contains shared settings. This is where Base Configuration Files come handy.
 
 The `GigaSpaces` configuration section contains a `BaseConfigFile` settings, which can be used to specify the location of a configuration file using the same schema which contains additional configuration that should be loaded. For example, We could put a configuration file called MyApp.config in a shared folder on a server which looks like this:
-
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -147,9 +139,7 @@ The `GigaSpaces` configuration section contains a `BaseConfigFile` settings, whi
 </configuration>
 {% endhighlight %}
 
-
 And then change the application configuration files to look like this:
-
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -162,7 +152,6 @@ And then change the application configuration files to look like this:
     </GigaSpaces>
 </configuration>
 {% endhighlight %}
-
 
 ### Overriding settings from a base configuration
 

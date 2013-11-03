@@ -7,7 +7,6 @@ page_id: 59441985
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}WAN Pass Through replication example{% endexcerpt %}
 **Author**: Ali Hodroj, GigaSpaces
@@ -16,7 +15,6 @@ page_id: 59441985
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
 {% endtip %}
-
 
 # Overview
 
@@ -34,8 +32,6 @@ The demo is configured to start three space instances across three clusters. Whi
 |wan-gateway-GB|GB|4366|
 |wan-space-GB|GB|4366|
 
-
-
 The internal architecture of the setup includes a clustered space and a Gateway, where each Gateway includes a Delegator and a Sink (click the thumbnail to enlarge):
 ![WAN_passthrough_arch.jpg](/attachment_files/sbp/WAN_passthrough_arch.jpg)
 
@@ -49,7 +45,6 @@ As a result of indirect delegation, the following scenario will take place once 
 # Configuring Indirect Delegation
 
 The pass-through topology configuration is implemented through delegators across Hong-Kong and New York that are routed via London. This is achieved by setting the delegate-through property to London for delegation targets in Hong-Kong and New York. Notice that the in the HK and US do not need to have gateway lookups against each other in their configuration:
-
 
 {% inittab %}
 
@@ -91,7 +86,6 @@ The pass-through topology configuration is implemented through delegators across
 
 {% endtabcontent %}
 
-
 {% tabcontent New York Gateway %}
 
 {% highlight xml %}
@@ -124,11 +118,9 @@ The pass-through topology configuration is implemented through delegators across
 
 </beans>
 
-
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent London Space %}
 
@@ -168,7 +160,6 @@ The pass-through topology configuration is implemented through delegators across
 
 {% endtabcontent %}
 
-
 {% tabcontent London Gateway %}
 
 {% highlight xml %}
@@ -205,7 +196,6 @@ The pass-through topology configuration is implemented through delegators across
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent Hong Kong Space %}
 
@@ -246,7 +236,6 @@ The pass-through topology configuration is implemented through delegators across
 
 {% endtabcontent %}
 
-
 {% tabcontent Hong Kong Gateway %}
 
 {% highlight xml %}
@@ -281,7 +270,6 @@ The pass-through topology configuration is implemented through delegators across
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 # Installing and Running the Example
 1. Download the [WAN_Replication_PassThrough.zip](/attachment_files/sbp/WAN_Replication_PassThrough.zip). It includes two folders: **deploy** and **scripts**.

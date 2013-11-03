@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799325
 ---
 
-
 {% summary %}This page is focused on designing interoperable classes manually, and some related advanced features.{% endsummary %}
-
 
 {% refer %}The [.Net-Java Example](./dotnet-java-example.html) demonstrates many .NET-Java interoperability features.{% endrefer %}
 
@@ -58,11 +56,9 @@ The following guidelines and restrictions should be followed in order to enable 
 - The full class name (including package\namespace) in all platforms should be identical.
  {% lampon %} Since java packages use a different naming convention than .Net namespaces, it is recommended to use the `SpaceClass(AliasName="")` feature to map a .Net class to the respective java class.
 
-
 - The properties/fields stored in the space in all platforms should be identical.
  {% infosign %} In Java, only properties are serialized into the space. In .NET, both fields and properties are serialized, so you can mix and match them.
  {% lampon %} Since java properties start with a lowercase letter, whereas .Net properties usually start with an uppercase letter, it is recommended to use the `SpaceProperty(AliasName="")` feature to map a property/field name from .Net to java.
-
 
 - Only the types listed in the table below are supported. If one of your fields uses a different type, you can use the class only in a homogeneous environment.
  {% infosign %} Arrays of these types are supported as well.

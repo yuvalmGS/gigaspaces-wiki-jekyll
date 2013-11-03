@@ -5,14 +5,11 @@ categories: XAP97NET
 page_id: 63799306
 ---
 
-
 {% summary %}Storing entry in a space, retrieving entry from a space{% endsummary %}
-
 
 # Overview
 
 Once you've connected to a space and obtained a `ISpaceProxy`, you can use it to store entries in the space and retrieve them, retrieve entries stored by other clients, and so on. An entry can be any .NET object (it does not have to inherit/implement and base class or interface). This page demonstrates basic space operations using a simple class called `Person`:
-
 
 {% highlight java %}
 class Person
@@ -38,19 +35,15 @@ class Person
 }
 {% endhighlight %}
 
-
 # Storing an Entry - Write
 
 Entries can be stored in the space using the `Write` method. A write operation stores a copy of the given object in the space (which means that changing the object after the write operation will not affect the entry in the space).
-
 
 {% indent %}
 ![space_write.jpg](/attachment_files/xap97net/space_write.jpg)
 {% endindent %}
 
-
 In order to write an entry to the space, create an object instance, populate the relevant properties/fields, then use the `Write` operation to store the object in the space:
-
 
 {% highlight java %}
 Person kermit = new Person();
@@ -61,7 +54,6 @@ kermit.Name = "Kermit the frog";
 proxy.Write(kermit);
 {% endhighlight %}
 
-
 {% refer %}See full details in [Writing and Updating Entries](./writing-and-updating-entries.html){% endrefer %}
 
 {% comment %}
@@ -70,20 +62,16 @@ proxy.Write(kermit);
 
 {% endcomment %}
 
-
 # Retrieving an Entry - Read
 
 Entries can be retrieved from the space using the `Read` method. A read operation queries the space for an entry matching the provided [Query Template Types], and returns a copy of that entry (or null, if no match is found).
 The returned object is a copy of the entry stored in the space, which means that changing the returned object does not affect the entry stored in the space.
 
-
 {% indent %}
 ![space_read.jpg](/attachment_files/xap97net/space_read.jpg)
 {% endindent %}
 
-
 In order to retrieve an entry from the space, create an instance of the class you wish to retrieve, populate the properties/fields you wish to match by (null properties/fields will be ignored), then use the `Read` operation to retrieve the entry from the space:
-
 
 {% highlight java %}
 // Create a template of a Person with a specific userId
@@ -94,21 +82,17 @@ readTemplate.UserId = "011-1111111";
 Person readResult = proxy.Read(readTemplate);
 {% endhighlight %}
 
-
 {% refer %}See full details in [Reading Entries](./reading-entries.html){% endrefer %}
 
 # Retrieving and Removing an Entry - Take
 
 Using the `Read` operation does not affect the space - the read entry remains in storage. The `Take` method can be used to retrieve and remove the entry from the space. This operation is very similiar to the `Read`.
 
-
 {% indent %}
 ![space_take.jpg](/attachment_files/xap97net/space_take.jpg)
 {% endindent %}
 
-
 In order to take an entry from the space, create a template as you did in the read operation, then use the `Take` operation to retrieve and remove the entry from the space:
-
 
 {% highlight java %}
 // Create a template of a Person with a specific userId
@@ -118,7 +102,6 @@ takeTemplate.UserId = "011-1111111";
 // Takes a person from the space into takeResult
 Person takeResult = proxy.Take(takeTemplate);
 {% endhighlight %}
-
 
 # Cluster routing
 

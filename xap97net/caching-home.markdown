@@ -19,7 +19,6 @@ page_id: 63799408
 Getting started with GigaSpaces, terminology and concepts, screencasts, and advanced tutorials.
 {% endlozenge %}
 
-
 {% lozenge title=Product Overview|link=Product Overview|color=silver|arrow=none|width=100%|icon=/attachment_files/9.x_doc.png %}
 Understanding GigaSpaces XAP's value proposition, architecture and components.
 {% endlozenge %}

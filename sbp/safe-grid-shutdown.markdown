@@ -7,7 +7,6 @@ page_id: 64325420
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}This article illustrates an approache that can be used to perform a clean shutdown mechanism by waiting for all asynchronous persistence to finish before killing Grid Service Containers.{% endexcerpt %}
 **Author**: Ali Hodroj, Senior Solutions Architect, GigaSpaces
@@ -16,7 +15,6 @@ page_id: 64325420
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
 {% endtip %}
-
 
 {rate}
 
@@ -32,17 +30,13 @@ If the redo logs are not flushed after a specific timeout, an E-mail alert is se
 # Application
 The sample code below is meant to illustrate how the Admin API can be used to discover Grid Service Containers, Spaces, and Mirrors in order to check the replication statistics.
 
-
 {% note %}
  This example uses multicast to discover the service grid components. For unicast discovery, you can use the  [addLocator()](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/AdminFactory.html#addLocator(java.lang.String)) method with a LUS address.
 {% endnote %}
 
-
-
 {% inittab Clean Shutdown Example %}
 
 {% tabcontent Grid Shutdown Code %}
-
 
 {% highlight java %}
 import java.io.FileInputStream;
@@ -323,7 +317,6 @@ public class GridShutdown {
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent shutdown.properties %}
 

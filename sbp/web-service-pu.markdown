@@ -22,13 +22,12 @@ page_id: 56426564
 # Overview
 This example illustrates a simple web service packaged as a WAR using [Apache CXF](http://cxf.apache.org) 2.4. Web service is also interacting with a space and performing read and write operations on behalf of the client.
 
-
 {% indent %}
 ![web_service_pu.jpg](/attachment_files/sbp/web_service_pu.jpg)
 {% endindent %}
 
-
 For simplicity:
+
 - Space is collocated with the web service.
 - Example does not include HTTP Load balancer and Load balancer Agent.
 
@@ -36,15 +35,16 @@ The example is based on the [sample](http://cxf.apache.org/docs/sample-projects.
 
 # What the Sample Web Service is Doing?
 The web service performs the following space operations:
+
 - Write a Customer object into the space - See the `com.example.customerservice.server.CustomerServiceImpl.updateCustomer (Customer customer)`.
 - Read Customer objects from the space - See the `com.example.customerservice.server.CustomerServiceImpl.getCustomersByName (String name)`.
 
 # Running the Web Service
+
 1. Download the [Web Service WAR file](/attachment_files/sbp/CustomerServicePort.war).
 2. Download the [Web Service project](/attachment_files/sbp/WebServicePU.zip). This includes the entire source code for the client and the web service.
 3. Setup the application project class path libraries. See the [Client Application Project jars](#Client Application Project jars) for details.
 4. Start GigaSpaces agent.
-
 
 {% highlight java %}
 gs-agent
@@ -52,13 +52,11 @@ gs-agent
 
 5. Deploy the WAR file. You may use the GS-UI or the CLI.
 
-
 {% highlight java %}
 gs deploy CustomerServicePort.war
 {% endhighlight %}
 
 6. Run the Client application.
-
 
 {% highlight java %}
 java com.example.customerservice.client.CustomerServiceClient
@@ -69,11 +67,11 @@ See the [The Client Application](#The Client Application) for details.
 # Web Service Configuration
 The WAR file includes the web service configuration. It is placed within `\CustomerServicePort\WEB-INF\cxf-servlet.xml`.
 The configuration includes:
+
 - The Space bean.
 - The GigaSpace bean. It is injected into the Service implementation automatically via the `@GigaSpaceContext` annotation.
 - The Service implementation.
 - The endpoint Configuration.
-
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -111,16 +109,12 @@ The configuration includes:
 </beans>
 {% endhighlight %}
 
-
-
 {% note %}
 There is no `pu.xml` used with this war. cxf-servlet.xml has all the required configuration.
 {% endnote %}
 
-
 # Space Proxy Injection into the Service
 The space proxy injected into the `com.example.customerservice.server.CustomerServiceImpl` using `@GigaSpaceContext` annotation:
-
 
 {% highlight java %}
 public class CustomerServiceImpl implements CustomerService , InitializingBean{
@@ -128,7 +122,6 @@ public class CustomerServiceImpl implements CustomerService , InitializingBean{
     @GigaSpaceContext
     GigaSpace space;
 {% endhighlight %}
-
 
 # WSDL Contract
 The WSDL used by the web service includes following:
@@ -141,11 +134,11 @@ The WSDL used by the web service includes following:
 </wsdl:service>
 {% endhighlight %}
 
-
 WSDL is packaged in the CustomerServicePort.war file as `\WEB-INF\CustomerService.wsdl`.
 
 # The Client Application
 The client application:
+
 - Call the `CustomerServiceImpl.updateCustomer (Customer customer)`.
 - Call the `CustomerServiceImpl.getCustomersByName (String name)`.
 
@@ -155,25 +148,20 @@ You may test the web service using a client application running as a standalone 
 ### Standalone Java Application
 The `com.example.customerservice.client.CustomerServiceClient` can be used as a standalone Java application to invoke the service. Run the `main` to run the client:
 
-
 {% highlight java %}
 java com.example.customerservice.client.CustomerServiceClient
 {% endhighlight %}
-
 
 ### Spring Application
 The `com.example.customerservice.client.CustomerServiceSpringClient` can be used as a Spring client application to invoke the service. The `\resources\client-applicationContext.xml` used as the client application context. Make sure you have the `resources` folder as part of the client classpath when running the client.
 Run the `main` to run the client:
 
-
 {% highlight java %}
 com.example.customerservice.client.CustomerServiceSpringClient
 {% endhighlight %}
 
-
 ## Expected Output
 When running the client application you should get the following output:
-
 
 {% highlight java %}
 Updating Customer info named:Smith
@@ -181,7 +169,6 @@ Reading customer named:Smith
 Found 1 customers with Name:Smith
 All calls were successful
 {% endhighlight %}
-
 
 ### SOAP UI
 You can use the [SOAP UI](http://www.soapui.org) to test the web service.
@@ -197,16 +184,13 @@ Reading a Custmer object:
 ![soap_ui2.jpg](/attachment_files/sbp/soap_ui2.jpg)
 {% endindent %}
 
-
 The Server will have the following output:
-
 
 {% highlight java %}
 >>>>>>> update request was received
 >>>>>>> Customer written into the space
 found 1 Customers matching the name:Smith
 {% endhighlight %}
-
 
 ## Checking the Data within the Space
 When the client application running sucessfuly you will be able to see the Customer data within the space using the GS-UI.
@@ -221,7 +205,6 @@ Click the Query button to view the Customer Data:
 ![web_serv_ui2.jpg](/attachment_files/sbp/web_serv_ui2.jpg)
 {% endindent %}
 
-
 # WAR file jars
 The CustomerServicePort.war file includes the following jars within its `\CustomerServicePort\WEB-INF\lib` folder.
 Spring and Jetty jars should not be included since they are loaded by GigaSpaces:
@@ -229,8 +212,6 @@ Spring and Jetty jars should not be included since they are loaded by GigaSpaces
 {% section %}
 
 {% column %}
-
-
 
 {% highlight java %}
 aopalliance-1.0.jar
@@ -244,14 +225,9 @@ cxf-rt-databinding-jaxb-2.4.0.jar
 cxf-rt-frontend-jaxws-2.4.0.jar
 {% endhighlight %}
 
-
 {% endcolumn %}
 
-
-
 {% column %}
-
-
 
 {% highlight java %}
 cxf-rt-frontend-simple-2.4.0.jar
@@ -265,14 +241,9 @@ geronimo-servlet_3.0_spec-1.0.jar
 jaxb-impl-2.1.13.jar
 {% endhighlight %}
 
-
 {% endcolumn %}
 
-
-
 {% column %}
-
-
 
 {% highlight java %}
 junit-4.7.jar
@@ -286,13 +257,13 @@ xml-resolver-1.2.jar
 xmlschema-core-2.0.jar
 {% endhighlight %}
 
-
 {% endcolumn %}
 
 {% endsection %}
 
 # Client Application Project jars
 The Client project should include the following libraries:
+
 - All jars within the `GigaSpaces root/lib/platform/jetty` folder.
 - All jars within the `GigaSpaces root/lib/required` folder.
 - All jars within the `GigaSpaces root/lib/optional/spring` folder.

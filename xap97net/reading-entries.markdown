@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799307
 ---
 
-
 {% summary %}Reading entries from the space{% endsummary %}
-
 
 # Overview
 
@@ -17,7 +15,6 @@ The returned object is a copy of the entry stored in the space, which means that
 {% refer %}See [Storing and Retrieving Entries](./storing-and-retrieving-entries.html#Retrieving an Entry - Read) for basic reading demonstration.{% endrefer %}
 
 This page demonstrates basic space operations using a class called `Person`:
-
 
 {% highlight java %}
 public class Person
@@ -43,7 +40,6 @@ public class Person
 }
 {% endhighlight %}
 
-
 {% refer %}See also the [Object Metadata](./object-metadata.html) and [GS.XML Metadata](./gs.xml-metadata.html) sections for details about the GigaSpaces class decorations you may specify.{% endrefer %}
 
 # Blocking Read
@@ -56,7 +52,6 @@ Person template = new Person();
 // This call will block until a matching Person is available or 10 seconds have elapsed.
 Person p = proxy.Read(template, 10000);
 {% endhighlight %}
-
 
 If the space contains a Person when the call is executed, it will return immediately. If the space does not contain a Person, the call will block until someone writes a Person to the space, or until the timeout has elapsed (in which case null is returned).
 Calling `Read` without a timeout argument will use the default value stored in `ISpaceProxy.DefaultTimeout`, which is zero by default.
@@ -82,7 +77,6 @@ public class Person
 }
 {% endhighlight %}
 
-
 {% refer %}For more information about routing, see [SpaceRouting](./object-metadata.html#Routing) or [GS.XML Metadata](./gs.xml-metadata.html).{% endrefer %}
 {% exclamation %} **Note:** [Blocking read](#Blocking Read) is not supported on a clustered proxy.
 
@@ -107,7 +101,6 @@ proxy.Write(p2);
 Person result1 = proxy.Read(new Person());
 Person result2 = proxy.Read(new Person());
 {% endhighlight %}
-
 
 Assuming the space was empty and no one else is accessing the space at the same time:
 **Q)** What's in result1?

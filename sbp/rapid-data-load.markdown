@@ -7,7 +7,6 @@ page_id: 51118632
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}This article illustrates the usage of Task Executors to rapidly load data into the In-Memory-Data-Grid{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
@@ -33,7 +32,6 @@ Here is a simple example: we have 3 types of Space Classes:
 ## The createCurrencyGroups
 A Data generator utility class has a `createCurrencyGroups()` method that generates a Hash Map that groups currencies that belong to the same partition using the Currency String hashcode - here is a simple implementation of such a method:
 
-
 {% highlight java %}
 static String currencies[] = { "AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD",
 "BDT","BGN","BHD","BIF","BMD","BND","BOB","BRL","BSD","BTN",
@@ -56,13 +54,10 @@ public static void createCurrencyGroups(int maxPartitions) {
 }
 {% endhighlight %}
 
-
 With the above implementation, we generate several lists of currencies, all of these are maintained within `currencyGroups` - one for each partition.
 
 ## The getRandomCurrency
 The Data generator also has the `getRandomCurrency` method that returns a random currency, based on a given partition - it uses the currencyGroups we created above:
-
-
 
 {% highlight java %}
 public static String getRandomCurrency(int partition) {
@@ -76,12 +71,10 @@ public static String getRandomCurrency(int partition) {
 }
 {% endhighlight %}
 
-
 The getRandomCurrency is used with our data generator utility.
 
 ## The LoaderRequest
 The LoaderRequest execute method implementation generates an array of the requested type and writes it using one method call (writeMultiple) into its collocated space:
-
 
 {% highlight java %}
 public class LoaderRequest implements DistributedTask<String, String>{
@@ -204,10 +197,8 @@ public class LoaderRequest implements DistributedTask<String, String>{
 }
 {% endhighlight %}
 
-
 ## The Client Application
 The client application creates a `LoaderRequest` object and executes it, one for each space Class, where in reality all these `LoaderRequest` objects are sent in parallel to all running partitions to be executed. This is how you have these 3 types of objects loaded into all partitions simultaneously:
-
 
 {% highlight java %}
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space").space()).gigaSpace();
@@ -218,5 +209,4 @@ String result1 = future1.get();
 String result2 = future2.get();
 String result3 = future3.get();
 {% endhighlight %}
-
 

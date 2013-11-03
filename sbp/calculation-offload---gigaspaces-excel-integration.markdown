@@ -29,6 +29,7 @@ Using this pattern is divided into 4 main steps:
 As a first step, you need to load your data from its current source to the space.
 
 GigaSpaces provides [OpenSpaces](http://wiki.gigaspaces.com/wiki/display/XAP66/Product+Architecture#ProductArchitecture-OpenSpacesAPIandComponents) as its main API. However, it is also possible to load data from different types of applications transparently, using different connectors implemented by GigaSpaces:
+
 - For messaging-based applications, refer to the [JMS](http://wiki.gigaspaces.com/wiki/display/XAP66/JMS) section.
 - If your application is an external data source (like a database), refer to the [Persistency](http://wiki.gigaspaces.com/wiki/display/XAP66/Persistency) section.
 
@@ -45,6 +46,7 @@ After you've implemented Processing Units to perform the calculation, you need t
 Using Microsoft Excel UDF (User-Defined Functions), Excel writes an Entry to the space instructing the Processing Units to begin working.
 
 {% refer %}**Learn how to do this**:
+
 - [HelloUDF example](./rtd-and-udf-examples---gigaspaces-excel-integration.html#HelloUDF -- Performing Excel Functions in Space) (basic)
 - [UDFSample example](./rtd-and-udf-examples---gigaspaces-excel-integration.html#UDFSample -- Performing Excel Functions in Space) (advanced)
 - [Writing Your First UDF Application](./writing-your-first-rtd-or-udf-application.html){% endrefer %}
@@ -56,6 +58,7 @@ In the last step, you need to implement a finish trigger in the space, which tel
 The space writes a notification to the Microsoft Excel RTD (Real-Time Data) server, which in turn notifies Excel that the space has finished calculating.
 
 {% refer %}**Learn how to do this**:
+
 - [HelloRTD example](./rtd-and-udf-examples---gigaspaces-excel-integration.html#HelloRTD -- Loading Data from Space to Excel) (basic)
 - [RTDSample example](./rtd-and-udf-examples---gigaspaces-excel-integration.html#RTDSample -- Loading Data from Space to Excel) (advanced)
 - [Writing Your First UDF Application](./writing-your-first-rtd-or-udf-application.html){% endrefer %}

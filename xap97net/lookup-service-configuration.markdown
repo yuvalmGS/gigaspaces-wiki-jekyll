@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 64127778
 ---
 
-
 {% summary %}Defining group names and unicast Locators for Jini Services; searching for available lookup services in the network.{% endsummary %}
-
 
 # Essential Guidelines
 
@@ -37,12 +35,9 @@ The command that loads a space needs to have this system property set. Another w
 /./mySpace?schema=cache&groups=myPrivateGroupName
 {% endhighlight %}
 
-
-
 {% tip %}
 If you are looking for a way to use a unicast discovery, please refer to the [How to Configure Unicast Discovery](./how-to-configure-unicast-discovery.html) section for more details.
 {% endtip %}
-
 
 # Multicast Settings
 
@@ -86,9 +81,7 @@ The following result examples appear on the console:
                  e4e64c11ca95
 {% endhighlight %}
 
-
 # Multi Network Card Configuration
-
 
 {% tip %}
  For details on multi-network card configuration, refer to: [How to Configure an Environment With Multiple Network-Cards (Multi-NIC)](/xap97/how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).html).

@@ -36,7 +36,6 @@ The Elastic Calculation Engine example illustrates the following:
 
 {% endcolumn %}
 
-
 {% column %}
 
 ![risk_anal.jpg](/attachment_files/sbp/risk_anal.jpg)
@@ -87,7 +86,6 @@ The `AnalysisTask` include the following:
 ## The Net Present Value (NPV) Calculation
 The Net Present Value calculation calculates the NPV for 6 years. It is using the following code:
 
-
 {% highlight java %}
 public void calculateNPV(double rate , Trade trade) {
     double disc = 1.0/(1.0+(double)(rate/100));
@@ -101,7 +99,6 @@ public void calculateNPV(double rate , Trade trade) {
     trade.setNPV(NPV);
 }
 {% endhighlight %}
-
 
 The above can be described using the following formula:
 ![NPV_formula.jpg](/attachment_files/sbp/NPV_formula.jpg)
@@ -126,14 +123,12 @@ For long calculations that consume relatively large amount of CPU time, the reco
 1. Download the [ElasticCalculationEngine.zip](/attachment_files/sbp/ElasticCalculationEngine.zip) and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and **edit** the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.
 2. Start the GigaSpaces agent by running the following:
 
-
 {% highlight java %}
 startAgent.bat
 {% endhighlight %}
 
 {% exclamation %} You will need a machine with at least 2GB free memory to run this demo.
 3. Run the Elastic Data-Grid deploy script:
-
 
 {% highlight java %}
 deployDataGrid.bat
@@ -142,7 +137,6 @@ deployDataGrid.bat
 This will deploy the data grid/compute grid and will later allow you to scale it. Whenever you would like to scale the data grid/compute grid just **hit Enter**. Running the deploy script again will initiate the scaling cycle again for the existing running data grid/compute grid.
 4. Run the Ealstic Worker deploy script:
 
-
 {% highlight java %}
 deployWorker.bat
 {% endhighlight %}
@@ -150,13 +144,11 @@ deployWorker.bat
 This will deploy the Worker PU into the Service Grid.
 5. Run the client invoking the Colocated calculations (this will be using the Task):
 
-
 {% highlight java %}
 runClientExecutor.bat
 {% endhighlight %}
 
 6. Run the client invoking the Remote calculations (this will be using the workers):
-
 
 {% highlight java %}
 runClientMasterWorker.bat
@@ -164,7 +156,6 @@ runClientMasterWorker.bat
 
 The client will run the calculation repeatedly for 10,000 Trades where each cycle will use different rates (2%, 3%, 4%, 5%, 6%, 7%, 8%). To stop the client hit CTRL + C.
 7. To scale the worker run the following:
-
 
 {% highlight java %}
 ScaleWorker.bat
@@ -176,7 +167,6 @@ ScaleWorker.bat
 You may run the Calcualtion Engine within eclipse by using the StartCluster main class. It will start a clustered space. You can use this to debug the `AnalysisTask` when executed at the space side.
 
 ## Expected Output
-
 
 {% highlight java %}
 \ElasticRiskAnalysisDemo>set NIC_ADDR=127.0.0.1
@@ -217,9 +207,6 @@ About to scale data-grid memory capacity from 1024.0 MB to 256 MB
 2011-06-23 15:10:00,398  INFO [Deployer] - >> Total Memory used:256.0 MB - Progress:100.0 % done - Total Containers:2
 2011-06-23 15:10:02,400  INFO [Deployer] - Data-Grid Memory capacity change done! - Time to scale system:46 seconds
 {% endhighlight %}
-
-
-
 
 {% highlight java %}
 Time to calculate Net present value for 10000 Trades using 2.0 % rate:41 ms

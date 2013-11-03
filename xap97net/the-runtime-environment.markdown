@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799318
 ---
 
-
 {% summary %}This section gives a detailed description of the GigaSpaces deployment & runtime environment.{% endsummary %}
-
 
 {% anchor GSRuntimeEnv %}
 
@@ -21,7 +19,6 @@ Once packaged, a processing unit is deployed onto the GigaSpaces runtime environ
 {% info %}
 When developing your processing unit, you can [run and debug the processing unit within your IDE](/xap97/running-and-debugging-within-your-ide.html). You will typically deploy it to the GigaSpaces runtime environment when it's ready for production or when you want to run it in the real-life runtime environment
 {% endinfo %}
-
 
 # Service Grid Architecture
 

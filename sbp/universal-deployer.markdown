@@ -22,23 +22,18 @@ page_id: 55937666
 # Overview
 The GigaSpaces Universal Deployer (GUD) allows deploying the different supported processing units ([Space PU](http://wiki.gigaspaces.com/wiki/display/XAP8/Deploying+and+Interacting+with+the+Space), [Regular PU|XAP8:Packaging and Deployment], [Elastic PU|XAP8:Elastic Processing Unit], [memCache PU|XAP8:The Memcached API] or [Web PU|XAP8:Web Processing Unit Container]) via a simple configuration file. The GUD support dependency based deployment allowing multiple processing units to be deployed as one atomic process (e.g composite application).
 
-
 {% tip %}
 Starting with XAP 9 you may use the **Deployment Dependencies API** to specify the deployment order. See the [Application Deployment and Processing Unit Dependencies](http://wiki.gigaspaces.com/wiki/display/XAP9/Deploying+onto+the+Service+Grid#Application+Deployment+and+Processing+Unit+Dependencies) for details.
 {% endtip %}
 
-
 ## Dependency Based Deployment
 The GUD allows you to specify for each deployed PU its dependency PU list. The dependent PU will be deployed after all its PUs dependencies will be fully deployed. The mechanism is recursive; if any of these PUs depends on other PU(s), these will be deployed before the top level dependent PU is deployed. This ensures the deploy order will have the entire PUs deployed in the correct order.
-
 
 {% indent %}
 ![universantDeploy_depen.jpg](/attachment_files/sbp/universantDeploy_depen.jpg)
 {% endindent %}
 
-
 To describe the above deploy plan the GUD should have the following config file:
-
 
 {% highlight java %}
 A [B,C] -file myA_PU.jar
@@ -49,7 +44,6 @@ E [] -file myE_PU.jar
 F [] -file myF_PU.jar
 G [] -file myG_PU.jar
 {% endhighlight %}
-
 
 With the above config the PUs will be deployed in the following order: F, D, E, G, C, B, A.
 
@@ -73,22 +67,18 @@ The GUD support the following command line arguments:
 
 Here an exmaple how you should run the GUD:
 
-
 {% highlight java %}
 java com.gigaspaces.admin.GSUniversalDeployer -config c:\\puList.txt -locators 127.0.0.1 -abortDeployOnFailure true
 {% endhighlight %}
 
-
 ## GUD Configuration File
 The universal Deployer configuration file may include multiple lines with the following format:
-
 
 {% highlight java %}
 PU Name [Dependent PU List] deploy options
 {% endhighlight %}
 
 Example:
-
 
 {% highlight java %}
 mySpace [] -type space -cluster schema=partitioned-sync2backup total_members=2,1
@@ -99,7 +89,6 @@ C [F,E] -elastic eagerCapacity -user xxx -password yyyy -properties embed://prop
 D [] -cluster total_members=2 -user xxx -password yyyy -properties file://d:/temp/context.properties
 E [] -cluster total_members=2 -user xxx -password yyyy -zones zone1,zone2
 {% endhighlight %}
-
 
 ## GUD Configuration File Options
 Each GUD configuration file line supports the following options:

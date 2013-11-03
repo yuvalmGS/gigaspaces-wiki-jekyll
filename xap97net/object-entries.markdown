@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799340
 ---
 
-
 {% summary %} Understanding the semantics of Space Entries and .NET Objects{% endsummary %}
-
 
 # Overview
 
@@ -30,7 +28,6 @@ To customize a specific class, apply a `\[SpaceClass\]` attribute on the class, 
 
 #### Example 1.1 -- The default behaviour
 
-
 {% highlight java %}
 public class Person {...}
 {% endhighlight %}
@@ -42,22 +39,18 @@ This is actually equivalent to the following declaration:
 public class Person {...}
 {% endhighlight %}
 
-
 #### Example 1.2 -- To exclude all properties and include all fields, even private ones:
-
 
 {% highlight java %}
 [SpaceClass(IncludeFields=IncludeMembers.All, IncludeProperties=IncludeMembers.None)]
 public class Person {...}
 {% endhighlight %}
 
-
 ## Customizing a Specific Member
 
 To customize a specific field/property, apply a `\[SpaceProperty\]` to include it, or a `\[SpaceExclude\]` to exclude it. These settings override the class-level settings.
 
 #### Example 1.3 -- Storing all the Person properties except the Password property
-
 
 {% highlight java %}
 public class Person
@@ -67,20 +60,15 @@ public class Person
 }
 {% endhighlight %}
 
-
-
 {% info title=Properties with Separate Accessors %}
 Starting with .NET 2.0, properties can have separate accessors for getters and setters (e.g. public getter and private setter). In such cases, if either the getter or the setter is public, the property is considered public (i.e. setting `IncludeProperties=IncludeMembers.Public` includes the property in the entry).
 {% endinfo %}
-
-
 
 {% info title=Read-Only Properties %}
 Read-only properties (getter, without setter), are included in the entry, but when the object is deserialized, the value is not restored, since there's no setter. This enables the space to be queried using such properties. There are two common scenarios for read-only properties:
 - Calculated value -- the property returns a calculated value based on other fields/properties. This isn't a problem, since no data is lost due to the 'missing' setter.
 - Access protection -- the class designer wishes to protect the property from outside changes. This is likely to be a problem, since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property, and including the field (as explained next).
 {% endinfo %}
-
 
 # Indexing
 
@@ -94,12 +82,9 @@ public class Person
 }
 {% endhighlight %}
 
-
-
 {% info title=Indexing Pros and Cons %}
 Indexing a property speeds up queries which include the property, but slows down write operations for that object (since the space needs to index the property). For that reason, indexing is off by default, and it's up to the user to decide which fields should be indexed.
 {% endinfo %}
-
 
 # Object ID vs. Entry ID
 
@@ -109,14 +94,12 @@ Examine the following piece of code:
 
 #### Example 2
 
-
 {% highlight java %}
 Message message = new Message();
 message.Text = "Same Same, But Different";
 proxy.Write(message);
 proxy.Write(message);
 {% endhighlight %}
-
 
 If you execute it, and examine the space in the GigaSpaces Management Center, you will see two different entries with the same text, even though from the .NET perspective, there's only one object. You should also see an additional column called **UID**, which is not part of our .NET object, and which contains a unique identifier that distinguishes the entries from each other. This unique identifier is commonly referred to as a **Space ID**.
 
@@ -138,7 +121,6 @@ public String MessageID
 }
 {% endhighlight %}
 
-
 If you run the code from **example 2** again, you will see that the second write fails, with an `EntryAlreayInSpaceException`. If you examine the newly added `MessageID` property in the debugger, you will see that even though we didn't set it, it contains a unique identifier string.
 
 When a property is marked as `\[SpaceID(AutoGenerate = true)\]`, it is mapped to the entry's UID. On the first write operation the `MessageID` was null, so the entry UID was null, and the space generated a UID for it. Before the operation was completed, the generated UID was copied back to the `MessageID` property, as the debugger shows. On the second write operation, the space again creates an entry, and maps the object data to the entry, but this time the `MessageID` is no longer empty, so the entry UID is not empty. The space checked if the UID is unique, discovered there's another entry with the same UID and aborted the operation.
@@ -153,7 +135,6 @@ Modify the `SpaceID` declaration from `true` to `false`:
 [SpaceID(AutoGenerate = false)]
 public String MessageID {...}
 {% endhighlight %}
-
 
 {% note %}
 The rest of this page is still under construction.
@@ -193,7 +174,6 @@ Note that only one property in a class can be marked as a routing property.
 It's highly recommended to explicitly declare which property is the routing property, and not rely on rules 2 and onward. Relying on those rules can lead to confusing problems (e.g. the SpaceID is changed, or an index is added to a property, etc.). Explicitly declaring the routing property makes your code clearer and less error-prone.
 {% endtip %}
 
-
 # Versioning
 
 The space can keep track of an object's version (i.e. how many times it was written/updated in the space), and provide optimistic concurrency using that version information. For that reason, the space needs to store the object's version in some property in the object. To specify that a property should be used for versioning, mark it with a `\[SpaceVersion\]` attribute. If no property is marked as a space version, the space does not store version information for that class.
@@ -204,16 +184,13 @@ Note that only one property in a class can be marked as a version property, and 
 
 When a class contains a field or a property of not a nullable type, (for instance a primitive such as `int` or a struct such as `DateTime`), it is recommended to specify a null value for it that will be used when querying the space for that class. The `NullValue` attribute instructs the space to ignore this field, when performing matching or partial update, when the content of the field in the template equals the defined `NullValue`.
 
-
 {% info title=Nullables %}
 It is recommended that you avoid the usage of such fields and properties, and the need to define null values, by wrapping them with their corresponding Nullable, for instance Nullable<int> or Nullable<DateTime>.
 {% endinfo %}
 
-
 To specify a null value, the field or property should be marked with the `\[SpaceProperty(NullValue = ?)\]` attribute:
 
 #### Example 3.1 - Null value on a primitive int
-
 
 {% highlight java %}
 public class Person
@@ -223,9 +200,7 @@ public class Person
 }
 {% endhighlight %}
 
-
 #### Example 3.2 - Null value on DateTime
-
 
 {% highlight java %}
 public class Person
@@ -234,7 +209,6 @@ public class Person
     public DateTime BornDate {...}
 }
 {% endhighlight %}
-
 
 # Mapping
 
@@ -258,37 +232,30 @@ For more information, see [GigaSpaces.NET - Interoperability With Non .NET Appli
 When using space SqlQuery on an object with properties which are aliased, the query text needs to use the aliased property names. For more information about SqlQuery, see [GigaSpaces.NET - Sql Query](./sqlquery.html).
 {% endnote %}
 
-
 # Persistency
 
 The space can be attached to an external data source, and persist its classes through it. It can be specified whether a certain class should be persisted or not. To do this, use the `\[SpaceClass(Persist=true)\]` or `\[SpaceClass(Persist=false)\]` class level attribute. The default is `\[SpaceClass(Persist=true)\]`.
-
 
 {% highlight java %}
 [SpaceClass(Persist=false)]
 public class Person {...}
 {% endhighlight %}
 
-
 # Replication
 
 Some cluster toplogies have replication defined, which means that some or all of the data is replicated between the spaces. In this case, it can be specified whether each class should be replicated or not, by using the `\[SpaceClass(Replicate=true)\]` or `\[SpaceClass(Replicate=false)\]` class level attribute. The default is `\[SpaceClass(Replicate=true)\]`.
-
 
 {% highlight java %}
 [SpaceClass(Replicate=false)]
 public class Person {...}
 {% endhighlight %}
 
-
 # FIFO
 
 A class can be marked to operate in FIFO mode, which means that all the inserts, removals and notifications of this class should be done in First-in-First-out mode. It can be specified whether each class should operate in FIFO mode or not, by using the `\[SpaceClass(Fifo=true)\]` or `\[SpaceClass(Fifo=false)\]` class level attribute. The default is `\[SpaceClass(Fifo=false)\]`.
-
 
 {% highlight java %}
 [SpaceClass(Fifo=true)]
 public class Person {...}
 {% endhighlight %}
-
 

@@ -39,11 +39,9 @@ A GigaSpaces node is best facilitated through the use of a service called the "[
 
 The simplest way to start a node with GigaSpaces is just to invoke the GSA in the GigaSpaces home directory, preferably in its own command shell (although you can easily start a background process with `start` or `nohup` if desired):
 
-
 {% inittab deckName1|top %}
 
 {% tabcontent Windows %}
-
 
 {% highlight java %}
 .\gs-agent.bat
@@ -51,10 +49,7 @@ The simplest way to start a node with GigaSpaces is just to invoke the GSA in th
 
 {% endtabcontent %}
 
-
-
 {% tabcontent Linux %}
-
 
 {% highlight java %}
 ./gs-agent.sh
@@ -64,7 +59,6 @@ The simplest way to start a node with GigaSpaces is just to invoke the GSA in th
 
 {% endinittab %}
 
-
 ## Connecting to a Data Grid
 
 It's actually fairly easy to write some code that can connect to an existing datagrid, and deploy a new one if the datagrid doesn't exist.
@@ -72,7 +66,6 @@ It's actually fairly easy to write some code that can connect to an existing dat
 First, make sure the [classpath](http://wiki.gigaspaces.com/wiki/display/XAP91/Setting+classpath) includes the GigaSpaces runtime. Then, connect to the datagrid. The following snippets shows how to create and deploy an Elastic Data Grid and how to find an existing data Data Grid service.
 
 Creating and deploying an Elastic Data Grid
-
 
 {% highlight java %}
         Admin admin = new AdminFactory().createAdmin();
@@ -82,10 +75,7 @@ Creating and deploying an Elastic Data Grid
         admin.close();
 {% endhighlight %}
 
-
 Getting a reference to an existing DataGrid instance
-
-
 
 {% highlight java %}
      UrlSpaceConfigurer configurer =
@@ -93,9 +83,7 @@ Getting a reference to an existing DataGrid instance
       IJSpace space = configurer.space();
 {% endhighlight %}
 
-
 You can also use a simple helper utility (DataGridConnectionUtility) that combines the two. It first look for a DataGrid instance and if one doesn't exist it will create a new one; it's trivial to alter the `getSpace()` method to increase the number of nodes or even scale dynamically as required.
-
 
 {% tip %}
 A The DataGridConnectionUtility class [is available on Github](https://github.com/Gigaspaces/bestpractices/blob/master/plains/src/main/java/org/openspaces/plains/datagrid/DataGridConnectionUtility.java), in the "plains" project.
@@ -103,12 +91,9 @@ A The DataGridConnectionUtility class [is available on Github](https://github.co
 
 With this class in the classpath, getting a datagrid reference is as simple as:
 
-
-
 {% highlight java %}
 GigaSpace space=DataGridConnectionUtility.getSpace("myGrid");
 {% endhighlight %}
-
 
 ## Further reading:
 - [Modeling and Accessing Your Data](http://wiki.gigaspaces.com/wiki/display/XAP91/Modeling+and+Accessing+Your+Data)

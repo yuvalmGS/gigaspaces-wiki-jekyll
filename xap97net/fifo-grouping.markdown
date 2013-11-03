@@ -12,7 +12,6 @@ How to read/take a group of space entries with a common property value, in FIFO 
 without having to maintain a FIFO order for all the entries in the space.
 {% endsummary %}
 
-
 # Overview
 
 The FIFO groups features is designed to allow for efficient processing of events with partial ordering constraints. To better understand FIFO groups, let's first examine the constraints of total ordering, i.e. What it takes to process events in the exact order in which they arrive. There are two elements that effectively limit the scalability of processing events with total ordering:
@@ -23,11 +22,9 @@ In most cases, your application does not require total ordering, but rather orde
 - Within the same group, events will be processed in the order they arrived, and exclusively, meaning that only one event will be processed at a time, regardless of the number of event processors.
 - Across groups, any number of events can be processed simultaneously.
 
-
 {% indent %}
 ![fifo-group.jpg](/attachment_files/xap97net/fifo-group.jpg)
 {% endindent %}
-
 
 The FIFO-Grouping can be used with financial systems to process **trade orders** , in healthcare systems to processes **patient medical data** , with transportation systems to process **reservations** , with airlines systems to process **flight schedule** , with billing system to processes **payments**, etc. With the flight reservation system scenario several reservations can be processed simultaneously but the reservations of a particular fight must be processed exclusively and in FIFO order.
 
@@ -92,7 +89,6 @@ public class FlightReservation
 
 {% endtabcontent %}
 
-
 {% tabcontent XML %}
 
 {% highlight xml %}
@@ -106,7 +102,6 @@ public class FlightReservation
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 # Setting FIFO Grouping index
 
@@ -125,7 +120,6 @@ public Person Customer { get; set; }
 
 {% endtabcontent %}
 
-
 {% tabcontent XML %}
 
 {% highlight xml %}
@@ -143,7 +137,6 @@ public Person Customer { get; set; }
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 # Working Patterns
 
@@ -181,7 +174,6 @@ to instruct the space that events should be sent to the client in FIFO order (gr
 
 Here is a simple example of a polling event container construction, using FifoGrouping:
 
-
 {% inittab os_simple_space|top %}
 
 {% tabcontent Using EventListenerContainerFactory %}
@@ -210,7 +202,6 @@ public class FlightReservationEventListener
 }
 {% endhighlight %}
 
-
 Constructing the polling container that uses the `FlightReservationEventListener` class as the event listener, and starting it.
 
 {% highlight java %}
@@ -224,7 +215,6 @@ eventListenerContainer.Dispose()
 {% endhighlight %}
 
 {% endtabcontent %}
-
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
@@ -242,9 +232,7 @@ pollingEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAd
 pollingEventListenerContainer.Dispose();
 {% endhighlight %}
 
-
 Event processing method
-
 
 {% highlight java %}
 public FlightReservationProcessData(IEventListenerContainer<FlightReservation> sender, DataEventArgs<FlightReservation> e)
@@ -257,7 +245,6 @@ public FlightReservationProcessData(IEventListenerContainer<FlightReservation> s
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 # SpaceIndex Attribute
 

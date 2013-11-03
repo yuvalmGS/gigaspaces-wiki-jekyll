@@ -17,17 +17,14 @@ The Processing Unit Container is aware of the [cluster info](#ClusterInfo). This
 
 {% refer %}Learn how to use the .NET Processing Unit Container in the **[SBA Example]** section.{% endrefer %}
 
-
 {% tip %}
  Most users prefer to work with the [Basic Processing Unit Container](./basic-processing-unit-container.html), since it simplifies many common tasks associated with implementing a processing unit from scratch.
 However, if you are not familiar with processing unit and event container concepts, the basic processing unit container may be confusing. We recommend you read and experiment with the processing unit container explained below for a while, then continue to read and benefit from the basic processing unit container.
 {% endtip %}
 
-
 # AbstractProcessingUnitContainer class
 
 The `AbstractProcessingUnitContainer` class implements `IDisposable`, and consists of one additional method and two properties:
-
 
 {% highlight java %}
 public abstract class AbstractProcessingUnitContainer
@@ -45,7 +42,6 @@ public abstract class AbstractProcessingUnitContainer
     virtual void Dispose();
 }
 {% endhighlight %}
-
 
 The Processing Unit Container lifecycle consists only of these two methods: `Initialize` is called when the Processing Unit Container is constructed, and `Dispose` is called when it is removed. Before the initialization, the ClusterInfo and Properties are set with the deploy-time data.
 
@@ -87,7 +83,6 @@ You need a config file, which is used to deploy the Processing Unit Container. T
 The `pu.config` you've created needs to be edited to point to your Processing Unit Container implementation. The file should contain the following data:
 
 {% lampon %} It is recommended to use the `pu.config` file located in `<GigaSpaces Root>\Examples\ProcessingUnit\Feeder\Deployment` as a template.
-
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>

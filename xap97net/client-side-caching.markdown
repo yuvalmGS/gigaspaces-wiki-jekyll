@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799376
 ---
 
-
 {% summary %} A client application may run a local cache (near cache), which caches data in the client application's local memory. Gigaspaces provides two options for interacting with a client-side cache: local cache and local view. Both the local cache and local view allow the client application to cache specific or recently used data within client JVM. The data is also updated automatically by the space when necessary. The local cache is ideal for situations where higher flexibility is required, while the local view is designed for more rigid and predefined, static data.{% endsummary %}
-
 
 # Introduction
 
@@ -30,11 +28,9 @@ There are two variations provided:
 
 In both cases, once updates are performed (objects are added/updated/removed) on the master space, the master space propagates the changes to all relevant local views and caches.
 
-
 {% tip %}
  Client cache is not enabled by default.
 {% endtip %}
-
 
 # When Should You Use a Client-Side Cache?
 

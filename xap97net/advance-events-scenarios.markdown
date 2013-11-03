@@ -5,9 +5,7 @@ categories: XAP97NET
 page_id: 63799413
 ---
 
-
 {% summary %}Advance events scenarios{% endsummary %}
-
 
 # Overview
 
@@ -23,7 +21,6 @@ Every time an event occurs in a space, which matches the given template and even
 
 In order to customize the behavior of an [`IDataEventSession`](http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_IDataEventSession.htm), a new one needs to be created, using a specific [`DataEventConfig` ](http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_EventSessionConfig.htm) that configures the behavior. This section describes different scenarios, and how to address them, by customizing the data event session
 
-
 {% highlight java %}
 EventSessionConfig eventSessionConfig = new EventSessionConfig();
 //Customize the eventSessionConfig
@@ -33,10 +30,10 @@ EventSessionConfig eventSessionConfig = new EventSessionConfig();
 IDataEventSession dataEventSession = proxy.CreateDataEventSession(eventSessionConfig);
 {% endhighlight %}
 
-
 ## Detecting an Event Listener Failure/Disconnection
 
 An event listener that is registered for an event might be disconnected for the following reasons:
+
 - The space that holds the listener registration template, is no longer available.
 - The proxy that receives the notifications can't handle the amount of incomming events, and creates a [slow consumer](http://wiki.gigaspaces.com/wiki/display/XAP95/Slow+Consumer) scenario, which causes the space to disconnect the listener.
 
@@ -58,7 +55,6 @@ EventSessionConfig eventSessionConfig = new EventSessionConfig();
 eventSessionConfig.AutoRenew = true;
 {% endhighlight %}
 
-
 The auto renewal process uses a few parameters that dictate the timing of its behavior. These values have proper defaults, but can be altered, for example:
 
 {% highlight java %}
@@ -69,7 +65,6 @@ eventSessionConfig.AutoRenewLeaseDuration = 10000;
 //The network latency can reach 5 seconds, send renewal request 5 seconds before the lease expires.
 eventSessionConfig.AutoRenewRTT = 5000;
 {% endhighlight %}
-
 
 ## Managing High Notifications Throughput
 

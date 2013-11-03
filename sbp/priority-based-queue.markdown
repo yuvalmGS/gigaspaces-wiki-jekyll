@@ -5,7 +5,6 @@ categories: SBP
 page_id: 48760404
 ---
 
-
 {% tip %}
 **Summary:** {% excerpt %}Implementing Priority based Queue{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
@@ -27,8 +26,6 @@ You can query for all objects which got their priority bigger than X (`priority 
 
 See below example code:
 
-
-
 {% highlight java %}
 GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer(spaceURL)).gigaSpace();
 String queryStr = "priority>" + priorityMin + " and priority<"+ priorityMax;
@@ -43,10 +40,7 @@ while (true) {
 }
 {% endhighlight %}
 
-
 The Order Class will have the **Priority** indexed:
-
-
 
 {% highlight java %}
 import com.gigaspaces.annotation.pojo.SpaceClass;
@@ -97,10 +91,10 @@ public class Order {
 }
 {% endhighlight %}
 
-
 # Example
 
 This is a [Priority based queue example](/attachment_files/sbp/PriorityBasedQueue.zip) - It includes 2 parts:
+
 -- Master - Write Orders into the space with a random priority (1-9)
 -- Worker - Consume Orders from the space where the consumption order is based on their priority value.
 
@@ -122,7 +116,6 @@ To run:
 4. Run the `com.gigaspaces.examples.priorityq.PriorityQueueExample` main.
 
 Expected output:
-
 
 {% highlight java %}
 Welcome to GigaSpaces Priority Based Queue Example

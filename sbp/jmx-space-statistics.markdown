@@ -5,7 +5,6 @@ categories: SBP
 page_id: 48760469
 ---
 
-
 {% tip %}
 **Summary:** {% excerpt %}JMX Space Statistics Agent{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
@@ -24,6 +23,7 @@ The [attached example](/attachment_files/sbp/JMXSTAT.zip) illustrates usage of t
 This example supports both clustered and single space. For clustered space the report will include statistics for all cluster space members.
 
 The report will include the following columns:
+
 -- Time
 -- Space Container
 -- Space Host Name
@@ -46,19 +46,15 @@ Download the [example](/attachment_files/sbp/JMXSTAT.zip) and unzip it to an emp
 
 To run the example:
 
-
 {% highlight java %}
 java -classpath ./;JSpaces.jar com.jmxutil.JMXSpaceStats jini://*/*/space space_stats.txt 10000
 {% endhighlight %}
 
-
 Example usage options:
-
 
 {% highlight java %}
 java com.jmxutil.JMXSpaceStats space_url logfile sampling_duration
 {% endhighlight %}
-
 
 The example works both with JDK 1.5 and JDK 1.6.
 

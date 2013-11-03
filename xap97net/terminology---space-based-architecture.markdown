@@ -10,7 +10,6 @@ page_id: 63799428
 
 # Space-Based Architecture
 
-
 {% comment %}
 =========================================
 
@@ -18,7 +17,6 @@ page_id: 63799428
 
 =========================================
 {% endcomment %}
-
 
 {% comment %}
 ---------------------------------------
@@ -44,7 +42,6 @@ page_id: 63799428
 - Full monitoring and management during runtime are available through the [Management UI](./terminology---runtime-components.html#Management UI).
 
 {% align center %}
-
 
 ![sba_with_backup.jpg](/attachment_files/xap97net/sba_with_backup.jpg)
 

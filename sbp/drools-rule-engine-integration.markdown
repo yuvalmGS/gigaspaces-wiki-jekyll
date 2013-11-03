@@ -7,7 +7,6 @@ page_id: 54821146
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}This article illustrates how to integrate the Drools Rule Engine with GigaSpaces XAP{% endexcerpt %}
 **Author:** Jeroen Remmerswaal
@@ -18,7 +17,6 @@ page_id: 54821146
 {% toc minLevel=1|maxLevel=2|type=flat|separator=pipe %}
 
 {% endtip %}
-
 
 # Overview
 
@@ -38,7 +36,6 @@ The example project is based on a Maven project structure and has four submodule
 - RulesShared - A library with code that is shared between the other modules.
 - RulesSpace - Contains code for a Processing Unit that has an embedded space containing the business rules data and logic to load, unload, compile and execute them.
 
-
 {% inittab Modules %}
 
 {% tabcontent Loading Rules %}
@@ -56,7 +53,6 @@ The main loader class is called GigaSpacesRulesLoader. When started, it reads it
 </bean>
 {% endhighlight %}
 
-
 This piece of configuration tells the rules loader to load an XML ruleset file called testruleset.xml and place all rules defined in that set under ruleset name 'Test'.
 
 Here is a testruleset.xml file example:
@@ -72,9 +68,7 @@ Here is a testruleset.xml file example:
 </change-set>
 {% endhighlight %}
 
-
 As you can see, the file contains resources. Each resource points to an actual Drools rule file (DRL/DSLR), or a Drools DSL file. Next is an example of such a Drools rule file:
-
 
 {% highlight java %}
 import com.tricode.gigaspaces.rules.shared.fact.*;
@@ -87,7 +81,6 @@ then
    Logger.getLogger("rulesspace").info($h1.getName() + ":" + $h1.getWhen());
 end
 {% endhighlight %}
-
 
 Each file can contain multiple rules. When the rules loader reads these rules files, it converts their contents to a Java byte array (this is a small optimization because the Drools KnowledgeBuilder does not accept Strings).
 
@@ -105,8 +98,6 @@ The rules loader uses a GigaSpaces remoting service to load the rules into the s
 
 The interface has the following contract:
 
-
-
 {% highlight java %}
 public interface IRulesLoadingService
     void loadRuleset(@Routing("getProjectName") DroolsRuleset ruleSet);
@@ -115,10 +106,8 @@ public interface IRulesLoadingService
 }
 {% endhighlight %}
 
-
 And on the server side the implementation is provided that will write new rule-objects into the rule space, which is called RulesLoadingServiceImpl.
 {% endtabcontent %}
-
 
 {% tabcontent Compiling Rules %}
 Once the rule loader has written the new rule objects into the rule space, a polling container (called RulesCompiler) will pick them up. It is triggered on the creation of a new RuleSet object and automatically reads the associated DroolsRule and DroolsDslDefinition objects along with it. It then creates a new Drools KnowledgeBuilder which is capable of validating all the rules.
@@ -134,15 +123,12 @@ The RuleSet object's state is updated accordingly and the object is updated in t
 
 {% endtabcontent %}
 
-
 {% tabcontent Executing Rules %}
 Rules execution can be done in a number of ways. The typical method is done by using Remoting Services. GigaSpaces Remoting is highly available, reliable and scalable by using automatic failover and allowing for grid computing patterns like Master/Worker and Map/Reduce.
 
 For a remoting service the following need to be established:
 
 - A contract, in our case an interface called IRulesExecutionService.
-
-
 
 {% highlight java %}
 interface IRulesExecutionService {
@@ -151,16 +137,12 @@ interface IRulesExecutionService {
 }
 {% endhighlight %}
 
-
 - A client using the stub to the interface. This value is automatically injected by use of a proxy, which exists in a few flavors in GigaSpaces, for example ExecutorProxy.
-
-
 
 {% highlight java %}
 @ExecutorProxy
 private IRulesExecutionService rulesExecutionService;
 {% endhighlight %}
-
 
 When a client invokes it, the name of the project, the name(s) of the ruleset(s) to execute, an optional map of globals and finally the facts that will be used in the rules will be specified.
 
@@ -178,11 +160,9 @@ The result of the call is a (possibly updated) set of fact objects.
 
 {% endinittab %}
 
-
 # Use Cases
 
 Below is a short explanation on a number of typical use-cases, where the combination between GigaSpaces and a rules engine such as Drools form a great symbiosis:
-
 
 {% inittab Use Cases %}
 
@@ -198,8 +178,6 @@ Examples:
 3. When validation rule X is not valid, I want the transaction to roll back and throw an exception.
 
 A filter to achieve this are simple to write and involves the Space-Filter framework. An example can be found below:
-
-
 
 {% highlight java %}
 @Component
@@ -258,18 +236,15 @@ public enum DroolsOperationContext {
 }
 {% endhighlight %}
 
-
 Notes:
 - In the above example the DroolsOperationContext values are passed as "context-values" to the rules engine. A single set of rules can therefore be customized for the operation under which the invocation occurred.
 
 {% endtabcontent %}
 
-
 {% tabcontent Service validation %}
 GigaSpaces allows seamless integration with AOP libraries like AspectJ. Service invocations to a GigaSpaces Remoting Service can therefore be automatically wrapped in calls to the RuleExecutionService.
 
 An example of such a generic aspect could look like the following:
-
 
 {% highlight java %}
 @Aspect
@@ -313,10 +288,7 @@ public class DroolsAspect {
 }
 {% endhighlight %}
 
-
 In the above Around-Advice it can be seen that the rules-engine will only be invoked for service-methods that have the @Droolable annotation, like this:
-
-
 
 {% highlight java %}
 @RemotingService
@@ -331,10 +303,7 @@ public class RulesTestService implements {
 }
 {% endhighlight %}
 
-
 The Droolable annotation itself is defined as follows:
-
-
 
 {% highlight java %}
 @Retention(RetentionPolicy.RUNTIME)
@@ -344,11 +313,9 @@ public @interface Droolable {
 }
 {% endhighlight %}
 
-
 {% endtabcontent %}
 
 {% endinittab %}
-
 
 # Final Notes
 

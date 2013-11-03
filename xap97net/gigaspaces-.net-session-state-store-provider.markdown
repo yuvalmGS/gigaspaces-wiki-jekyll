@@ -20,7 +20,6 @@ Using the session-state store provider, values that need to be persisted during 
 Session["buttonCount"] = 0;
 {% endhighlight %}
 
-
 # Installation
 
 To use this practice, compile the reference: `<GigaSpaces Root>\Bin\GigaSpaces.Practices.HttpSessionProvider.dll` through Visual Studio, using the solution located at `<GigaSpaces Root>\Practices\HttpSessionProvider\GigaSpaces.Practices.HttpSessionProvider.sln`.
