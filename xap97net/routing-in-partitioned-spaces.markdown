@@ -38,7 +38,7 @@ In some scenarios, the data model does not require sophisticated partitioning, a
 
 # Writing To A Partitioned Space
 
-As explained above in [#Defining a Routing Property], when a proxy is asked to write an entry it extracts the routing property value to determine the relevant partition id and forwards the entry to that partition. If the routing property value is null an exception will be thrown indicating the proxy cannot write the entry because it does not know the target partition.
+As explained above in depanlinkDefining a Routing Propertytengahlink#Defining a Routing Propertybelakanglink, when a proxy is asked to write an entry it extracts the routing property value to determine the relevant partition id and forwards the entry to that partition. If the routing property value is null an exception will be thrown indicating the proxy cannot write the entry because it does not know the target partition.
 
 When an entry is being updated, the proxy uses the routing property to route the update request to the relevant partition.
 

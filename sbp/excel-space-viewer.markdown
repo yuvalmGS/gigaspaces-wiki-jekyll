@@ -79,7 +79,7 @@ To connect to a space:
 depanimageConnect1.JPGtengahimage/attachment_files/sbp/Connect1.JPGbelakangimage
 {% endindent %}
 
-- The **Customize the Selection** button opens the [#Customize the Selection] window.
+- The **Customize the Selection** button opens the depanlinkCustomize the Selectiontengahlink#Customize the Selectionbelakanglink window.
 
 {% anchor create %}
 To create a new view:

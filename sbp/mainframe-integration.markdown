@@ -49,7 +49,7 @@ With the architecture described above any updates conducted directly against DB2
 
 {% tip %}
 **Running Demo**
-For a running demo of the Delta Server architecture please contact [support@gigaspaces.com|mailto:support@gigaspaces.com?subject=Delta Server Demo for DB2&body=I'm interested with a demo of the Delta Server architecture for DB2...].
+For a running demo of the Delta Server architecture please contact depanlinksupport@gigaspaces.comtengahlinkmailto:support@gigaspaces.com?subject=Delta Server Demo for DB2&body=I'm interested with a demo of the Delta Server architecture for DB2...belakanglink.
 {% endtip %}
 
 

@@ -744,7 +744,7 @@ pollingEventListenerContainer.ReceiveOperationHandler = receiveHandler;
 
 ## Non-Blocking Trigger Handler
 
-The `ReadTriggerOperationHandler` can be set to be non-blocking, in the same way as described in [#Non-Blocking Receive Handler].
+The `ReadTriggerOperationHandler` can be set to be non-blocking, in the same way as described in depanlinkNon-Blocking Receive Handlertengahlink#Non-Blocking Receive Handlerbelakanglink.
 
 # Handling Exceptions
 
