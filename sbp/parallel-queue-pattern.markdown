@@ -20,14 +20,14 @@ page_id: 52887871
 {rate}
 
 # Overview
-When building depanlinklow latency systemstengahlinkhttp://en.wikipedia.org/wiki/High_frequency_tradingbelakanglink, a critical requirement of such systems is to be able to process the incoming data as fast as they can, but also to do that in the exact order the request has been submitted into the system. The system can't process requests associated with the same Order in parallel, but in the exact order these has been created at the client side.
+When building [low latency systems](http://en.wikipedia.org/wiki/High_frequency_trading), a critical requirement of such systems is to be able to process the incoming data as fast as they can, but also to do that in the exact order the request has been submitted into the system. The system can't process requests associated with the same Order in parallel, but in the exact order these has been created at the client side.
 
 Such a requirement would be relevant with algorithmic trading engines , Order Management Systems , Market Data processing system , High Speed inventory systems, etc.
 
 GigaSpaces introduce the ability to partition data in memory across multiple data-grid partitions. This provides the ability to scale the system, but it does not ensure fast data processing in the correct order. You should add another component that allows the system to "slice" each partition into virtual queues or several buckets. The polling container consuming data in a FIFO manner is the missing required component.
 
 {% indent %}
-depanimagepar_q2.jpgtengahimage/attachment_files/sbp/par_q2.jpgbelakangimage
+![par_q2.jpg](/attachment_files/sbp/par_q2.jpg)
 {% endindent %}
 
 Having multiple polling containers running collocated with each partition allows us to scale at the partition level, forming set of "virtual queues", that consume data pushed into the partition in a parallel manner, but also in the correct order. The amount of polling containers will be usually the **number of machine cores**. This will optimize the ability to use the machine CPUs in the most efficient manner.
@@ -37,14 +37,14 @@ With our example we will simulate a simple Order Management processing system wh
 Here is an example for the latency duration for the Order request processing time:
 
 {% indent %}
-depanimagepar_q1.jpgtengahimage/attachment_files/sbp/par_q1.jpgbelakangimage
+![par_q1.jpg](/attachment_files/sbp/par_q1.jpg)
 {% endindent %}
 
 The above results retrived when running the Data-Grid with 4 partitions with a backup.
 
 
 {% tip %}
-You can depanlinkdownloadtengahlink/attachment_files/sbp/ParallelQueue.zipbelakanglink the Order Management Processor code used with this example.
+You can [download](/attachment_files/sbp/ParallelQueue.zip) the Order Management Processor code used with this example.
 {% endtip %}
 
 
@@ -77,13 +77,13 @@ The `bucketId` is calculated using the following formula:
 You can run the Data-Grid with the collocated Order Processor within your IDE using the following configuration:
 
 {% indent %}
-depanimagepar_q4.jpgtengahimage/attachment_files/sbp/par_q4.jpgbelakangimage
+![par_q4.jpg](/attachment_files/sbp/par_q4.jpg)
 {% endindent %}
 
 Here is a configuration for a data-grid with 2 partitions that will be running the polling containers:
 
 {% indent %}
-depanimagepar_q5.jpgtengahimage/attachment_files/sbp/par_q5.jpgbelakangimage
+![par_q5.jpg](/attachment_files/sbp/par_q5.jpg)
 {% endindent %}
 
 {% endtabcontent %}
@@ -93,7 +93,7 @@ depanimagepar_q5.jpgtengahimage/attachment_files/sbp/par_q5.jpgbelakangimage
 You can run the Feeder within your IDE using the following configuration:
 
 {% indent %}
-depanimagepar_q3.jpgtengahimage/attachment_files/sbp/par_q3.jpgbelakangimage
+![par_q3.jpg](/attachment_files/sbp/par_q3.jpg)
 {% endindent %}
 
 {% endtabcontent %}

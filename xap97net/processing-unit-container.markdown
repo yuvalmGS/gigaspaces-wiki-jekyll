@@ -11,15 +11,15 @@ page_id: 63799327
 
 # Overview
 
-The .NET Processing Unit Container is based on the depanlinkOpenSpaces Processing Unittengahlink./processing-units.htmlbelakanglink, and allows you to write a .NET component that can be managed by the service grid.
+The .NET Processing Unit Container is based on the [OpenSpaces Processing Unit](./processing-units.html), and allows you to write a .NET component that can be managed by the service grid.
 
-The Processing Unit Container is aware of the depanlinkcluster infotengahlink#ClusterInfobelakanglink. This allows you to write your code decoupled from cluster topologies considerations.
+The Processing Unit Container is aware of the [cluster info](#ClusterInfo). This allows you to write your code decoupled from cluster topologies considerations.
 
-{% refer %}Learn how to use the .NET Processing Unit Container in the **ajepaaaSBA Exampleajepbbb** section.{% endrefer %}
+{% refer %}Learn how to use the .NET Processing Unit Container in the **[SBA Example]** section.{% endrefer %}
 
 
 {% tip %}
- Most users prefer to work with the depanlinkBasic Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink, since it simplifies many common tasks associated with implementing a processing unit from scratch.
+ Most users prefer to work with the [Basic Processing Unit Container](./basic-processing-unit-container.html), since it simplifies many common tasks associated with implementing a processing unit from scratch.
 However, if you are not familiar with processing unit and event container concepts, the basic processing unit container may be confusing. We recommend you read and experiment with the processing unit container explained below for a while, then continue to read and benefit from the basic processing unit container.
 {% endtip %}
 
@@ -106,17 +106,17 @@ The `pu.config` you've created needs to be edited to point to your Processing Un
 
 {% endtoczone %}
 
-{% refer %}It is possible to create a processing unit of mixed languages, for instance part Java, part .NET. This topic is covered in depanlinkInterop Processing Unittengahlink./interop-processing-unit.htmlbelakanglink page.{% endrefer %}
+{% refer %}It is possible to create a processing unit of mixed languages, for instance part Java, part .NET. This topic is covered in [Interop Processing Unit](./interop-processing-unit.html) page.{% endrefer %}
 
 # SLA Definition
 
 In order to define the service layer agreement of your processing unit, an SLA file needs to be created.
 That file should be named `sla.xml`, and should be placed in the root directory of the processing unit.
 
-{% refer %}Read about SLA in depanlinkService Grid Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink.{% endrefer %}
+{% refer %}Read about SLA in [Service Grid Processing Unit Container](./basic-processing-unit-container.html).{% endrefer %}
 
 # Deployment
 
-There are several ways to deploy the Processing Unit Container into the Service Grid. Are all detailed extensively in the depanlink.NET Processing Unit Data Exampletengahlink./your-first-xtp-application.html#Deploymentbelakanglink section.
+There are several ways to deploy the Processing Unit Container into the Service Grid. Are all detailed extensively in the [.NET Processing Unit Data Example](./your-first-xtp-application.html#Deployment) section.
 
 The most straightforward way is to use the GigaSpaces Management Center for deployment.

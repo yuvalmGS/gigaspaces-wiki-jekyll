@@ -45,7 +45,7 @@ Entries can be stored in the space using the `Write` method. A write operation s
 
 
 {% indent %}
-depanimagespace_write.jpgtengahimage/attachment_files/xap97net/space_write.jpgbelakangimage
+![space_write.jpg](/attachment_files/xap97net/space_write.jpg)
 {% endindent %}
 
 
@@ -62,23 +62,23 @@ proxy.Write(kermit);
 {% endhighlight %}
 
 
-{% refer %}See full details in depanlinkWriting and Updating Entriestengahlink./writing-and-updating-entries.htmlbelakanglink{% endrefer %}
+{% refer %}See full details in [Writing and Updating Entries](./writing-and-updating-entries.html){% endrefer %}
 
 {% comment %}
 
-{% refer %}See how to ajepaaaConnecting to a Spaceajepbbb{% endrefer %}
+{% refer %}See how to [Connecting to a Space]{% endrefer %}
 
 {% endcomment %}
 
 
 # Retrieving an Entry - Read
 
-Entries can be retrieved from the space using the `Read` method. A read operation queries the space for an entry matching the provided ajepaaaQuery Template Typesajepbbb, and returns a copy of that entry (or null, if no match is found).
+Entries can be retrieved from the space using the `Read` method. A read operation queries the space for an entry matching the provided [Query Template Types], and returns a copy of that entry (or null, if no match is found).
 The returned object is a copy of the entry stored in the space, which means that changing the returned object does not affect the entry stored in the space.
 
 
 {% indent %}
-depanimagespace_read.jpgtengahimage/attachment_files/xap97net/space_read.jpgbelakangimage
+![space_read.jpg](/attachment_files/xap97net/space_read.jpg)
 {% endindent %}
 
 
@@ -95,7 +95,7 @@ Person readResult = proxy.Read(readTemplate);
 {% endhighlight %}
 
 
-{% refer %}See full details in depanlinkReading Entriestengahlink./reading-entries.htmlbelakanglink{% endrefer %}
+{% refer %}See full details in [Reading Entries](./reading-entries.html){% endrefer %}
 
 # Retrieving and Removing an Entry - Take
 
@@ -103,7 +103,7 @@ Using the `Read` operation does not affect the space - the read entry remains in
 
 
 {% indent %}
-depanimagespace_take.jpgtengahimage/attachment_files/xap97net/space_take.jpgbelakangimage
+![space_take.jpg](/attachment_files/xap97net/space_take.jpg)
 {% endindent %}
 
 
@@ -124,7 +124,7 @@ Person takeResult = proxy.Take(takeTemplate);
 
 All operations are done through a proxy to a space, that proxy can also be a proxy to a cluster of spaces where each space holds a certain partition of the data of all the cluster, this is known as the partitioned cluster topology. Each new object that is stored in the cluster is routed to a specific partition (space), this partition is determined by the hashcode of the SpaceRouting field or property. Routing an object to a specific partition allows fast retrieval afterwards. Instead of searching for the object in each one of the spaces in the cluster, the proxy can query a specific space with in the cluster using the SpaceRouting field or property.
 
-The SpaceRouting is determined by the `ajepaaa\depanlinkSpaceRouting\ajepbbbtengahlink./object-metadata.html#SpaceRoutingbelakanglink` attribute or using a depanlinkgs.xmltengahlink./gs.xml-metadata.htmlbelakanglink.
+The SpaceRouting is determined by the `[\[SpaceRouting\]](./object-metadata.html#SpaceRouting)` attribute or using a [gs.xml](./gs.xml-metadata.html).
 
-{% refer %}SpaceRouting consideration in depanlinkWrite and Update operationtengahlink./writing-and-updating-entries.htmlbelakanglink{% endrefer %}
-{% refer %}SpaceRouting consideration in depanlinkRead operationtengahlink./reading-entries.htmlbelakanglink{% endrefer %}
+{% refer %}SpaceRouting consideration in [Write and Update operation](./writing-and-updating-entries.html){% endrefer %}
+{% refer %}SpaceRouting consideration in [Read operation](./reading-entries.html){% endrefer %}

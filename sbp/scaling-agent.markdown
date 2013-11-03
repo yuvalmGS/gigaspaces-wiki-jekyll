@@ -16,15 +16,15 @@ Date: September 2009
 {rate}
 
 # Overview
-The depanlinkAdministration and Monitoring APItengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+APIbelakanglink allows you to monitor the application health and its resources to enforce a specific pre-defined configurable SLA that will scale the application while it is running. This ensures deterministic response time when there is increasing amount of users accessing the system and the high-availability and robustness of the application.
-depanimagescaling_agent.jpgtengahimage/attachment_files/sbp/scaling_agent.jpgbelakangimage
+The [Administration and Monitoring API](http://wiki.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API) allows you to monitor the application health and its resources to enforce a specific pre-defined configurable SLA that will scale the application while it is running. This ensures deterministic response time when there is increasing amount of users accessing the system and the high-availability and robustness of the application.
+![scaling_agent.jpg](/attachment_files/sbp/scaling_agent.jpg)
 The following example illustrates how you can construct a simple processing unit (**The Scaling Agent**) to monitor a web application deployed into GigaSpaces and track the web requests routed to the web application. Once the total average amount of the HTTP requests served by the current running web application instances breach a pre-defined upper or lower limit, the scaling agent will react and perform the necessary activities to scale the web application tier (add or remove instances).
 
 The activities to scale up the application (add more instances) could be starting a new GSC on remote machines and starting additional web application instances. In the same manner the scaling agent can scale down the application to terminate running GSCs and reduce the amount of web the application instances.
 
 
 {% tip %}
-See the depanlinkMule ESB Exampletengahlink./mule-esb-example.html#Scale Dynamicallybelakanglink for an advanced usage of the Administration and Monitoring API
+See the [Mule ESB Example](./mule-esb-example.html#Scale Dynamically) for an advanced usage of the Administration and Monitoring API
 {% endtip %}
 
 
@@ -33,7 +33,7 @@ The scaling agent sample periodically the amount of HTTP requests served by the 
 
 
 {% tip %}
-The depanlinkWebScale.ziptengahlink/attachment_files/sbp/WebScale.zipbelakanglink includes the source and configuration described below.
+The [WebScale.zip](/attachment_files/sbp/WebScale.zip) includes the source and configuration described below.
 {% endtip %}
 
 

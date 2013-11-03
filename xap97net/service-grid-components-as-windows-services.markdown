@@ -24,7 +24,7 @@ Windows Services have several advantages over standard console applications. Mos
 
 These features can come in handy on servers running Service Grid: For example, a Grid Service Manager and Grid Service Container can be automatically started when the machine restarts, then processing units will be automatically deployed to the service grid using the Command Line Interface service.
 
-{% refer %}See depanlinkDeployment on Machine Startuptengahlink./deployment-on-machine-startup.htmlbelakanglink to learn how to start service grid and deploy processing units automatically on machine startup{% endrefer %}
+{% refer %}See [Deployment on Machine Startup](./deployment-on-machine-startup.html) to learn how to start service grid and deploy processing units automatically on machine startup{% endrefer %}
 
 # GigaSpaces Windows Services Manager
 
@@ -35,7 +35,7 @@ GigaSpaces XAP.NET provides a supplementary tool called **Windows Services Manag
 - Side-by-side support for GigaSpaces Installations of different versions on the same machine.
 - Automatically creates a folder for new service instances, with an XML configuration and log files.
 
-depanimageServicesManager.jpgtengahimage/attachment_files/xap97net/ServicesManager.jpgbelakangimage
+![ServicesManager.jpg](/attachment_files/xap97net/ServicesManager.jpg)
 The tool can be started from Start->Programs->GigaSpaces XAP.NET->Tools->Windows Services Manager.
 {% exclamation %} **Note:** This tool requires elevated permissions. Make sure you run it with appropriate permissions. If you're using Windows Vista or later and UAC is turned on, it is recommended to use 'Run As Administrator' (for more info see: http://support.microsoft.com/kb/922708)
 

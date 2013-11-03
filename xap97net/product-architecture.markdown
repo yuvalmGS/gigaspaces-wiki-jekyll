@@ -10,15 +10,15 @@ page_id: 63799417
 
 
 GigaSpaces XAP is built from the following sub-systems:
-- depanlink**An SLA-Driven Container**tengahlink#SLA-Driven Containerbelakanglink -- provides the virtualization capabilities
-- depanlink**A Unified Clustering Layer**tengahlink#Unified In-Memory Clusteringbelakanglink -- responsible for a single clustering model across all the product's functionality. This capability is built on top of the space infrastructure.
-- depanlink**Core Middleware**tengahlink#Core Middlewarebelakanglink -- space-based runtime services which provide data, messaging and processing implementation.
-- depanlink**Lightweight Application Containers**tengahlink#Lightweight Application Containersbelakanglink -- application container services provide runtime support for applications.
-- depanlink**Developers API and Components**tengahlink#Developers API and Componentsbelakanglink -- the API layer and a component model (building blocks) for application developers.
+- [**An SLA-Driven Container**](#SLA-Driven Container) -- provides the virtualization capabilities
+- [**A Unified Clustering Layer**](#Unified In-Memory Clustering) -- responsible for a single clustering model across all the product's functionality. This capability is built on top of the space infrastructure.
+- [**Core Middleware**](#Core Middleware) -- space-based runtime services which provide data, messaging and processing implementation.
+- [**Lightweight Application Containers**](#Lightweight Application Containers) -- application container services provide runtime support for applications.
+- [**Developers API and Components**](#Developers API and Components) -- the API layer and a component model (building blocks) for application developers.
 
 Each sub-system (layer) is responsible for providing application server capabilities, and the bottom layers provide services to the upper layers. Figure 1 provides a representation of the sub-systems which compose the entire GigaSpaces XAP product.
 
-depanimageXAP Architecture Overview.jpgtengahimage/attachment_files/xap97net/XAP Architecture Overview.jpgbelakangimage
+![XAP Architecture Overview.jpg](/attachment_files/xap97net/XAP Architecture Overview.jpg)
 {% align center %} {% sub %}**Figure 1. Architecture overview for GigaSpaces XAP**{% endsub %} {% endalign %}
 
 # SLA-Driven Container
@@ -30,7 +30,7 @@ depanimageXAP Architecture Overview.jpgtengahimage/attachment_files/xap97net/XAP
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-An SLA-Driven Container, also known as the depanlinkService Gridtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP71/Service+Grid+Processing+Unit+Containerbelakanglink, is responsible for abstracting the physical characteristics of the host machines from the application deployment.
+An SLA-Driven Container, also known as the [Service Grid](http://wiki.gigaspaces.com/wiki/display/XAP71/Service+Grid+Processing+Unit+Container), is responsible for abstracting the physical characteristics of the host machines from the application deployment.
 
 The Service Grid is simply a set of runtime container processes deployed on multiple physical machines, which together form a virtual runtime cloud.  Once the cloud is formed, applications can be deployed for execution across the cloud, without a need to define specific host machine characteristics.
 
@@ -43,7 +43,7 @@ When it comes to provisioning and monitoring large-scale systems, the ability to
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The Service Grid takes a depanlinkpre-defined application-required SLAtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP71/Service+Grid+Processing+Unit+Container#ServiceGridProcessingUnitContainer-SLAPolicybelakanglink, and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
+The Service Grid takes a [pre-defined application-required SLA](http://wiki.gigaspaces.com/wiki/display/XAP71/Service+Grid+Processing+Unit+Container#ServiceGridProcessingUnitContainer-SLAPolicy), and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
 
 To clarify, here is an example of an application SLA:
 1. Deploy 50 instances of each Processing Unit.
@@ -62,9 +62,9 @@ In this type of example, the Service Grid is responsible for making sure that on
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as depanlinkGrid Service Managertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Managerbelakanglink and [Grid Service Container|XAP95:The Grid Service Container].
+The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [Grid Service Manager](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Manager) and [Grid Service Container|XAP95:The Grid Service Container].
 
-Usually, a single GSA is run per machine. The GSA allows to spawn depanlinkGrid Service Managerstengahlink#gsmbelakanglink, depanlinkGrid Service Containerstengahlink#gscbelakanglink, and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
+Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service Managers](#gsm), [Grid Service Containers](#gsc), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
 
 {% lampon %} Though Grid Service Manager, Grid Service Container, and other processes can be started independently, it is preferable that they will be started using the GSA, thus allowing to easily monitor and manage them.
 
@@ -72,7 +72,7 @@ Usually, a single GSA is run per machine. The GSA allows to spawn depanlinkGrid 
 
 ## Grid Service Manager (GSM)
 
-The depanlinkGrid Service Manager (GSM)tengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Managerbelakanglink, is a special infrastructure service, responsible for managing the Service Grid containers. The GSM accepts user deployment and undeployment requests, and provisions the Service Grid cloud accordingly.
+The [Grid Service Manager (GSM)](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Manager), is a special infrastructure service, responsible for managing the Service Grid containers. The GSM accepts user deployment and undeployment requests, and provisions the Service Grid cloud accordingly.
 The GSM monitors SLA breach events throughout the life-cycle of the application, and is responsible for taking corrective actions, once SLAs are breached.
 
 {% infosign %} It is common to start two instances of GSM services within each Service Grid cloud, for high-availability reasons.
@@ -82,7 +82,7 @@ The GSM monitors SLA breach events throughout the life-cycle of the application,
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The GSM service usually contains the depanlinkLookup Servicetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/Lookup+Service+Configurationbelakanglink and the Webster codebase server as part of its standard configuration. This configuration can be changed by providing additional parameters in the GSM startup script.
+The GSM service usually contains the [Lookup Service](http://wiki.gigaspaces.com/wiki/display/XAP95/Lookup+Service+Configuration) and the Webster codebase server as part of its standard configuration. This configuration can be changed by providing additional parameters in the GSM startup script.
 
 {% anchor gsc %}
 
@@ -108,7 +108,7 @@ The deployment of multiple GSCs on a single machine creates a virtual Service Gr
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 The role of clustering in GigaSpaces XAP is to provide scaling, load-balancing and high-availability. The main difference between GigaSpaces XAP and other clustering alternatives, is the use of a single clustering model for all middleware core capabilities. This means that the data and the services collocated with it, are equally available. An example of how useful this is, is that when a primary node fails, and another node acts as its backup, both application components, i.e. data and messaging, become active at the same time.
 
-The ability to support a unified clustering model is a direct result of the underlying space-based clustering model. For more information on the concept of space, please refer to depanlinkSpace - Concepts and Capabilitiestengahlink./concepts.html#Space - Concepts and Capabilitiesbelakanglink.
+The ability to support a unified clustering model is a direct result of the underlying space-based clustering model. For more information on the concept of space, please refer to [Space - Concepts and Capabilities](./concepts.html#Space - Concepts and Capabilities).
 
 ## Scaling
 
@@ -134,7 +134,7 @@ The GigaSpaces XAP solution does not require a compromise between stateless appl
 
 # Core Middleware
 
-As an application server, GigaSpaces XAP provides integrated, memory-based runtime capabilities. The core of these capabilities is backed by the space technology - for more information, please refer to depanlinkSpace - Concepts and Capabilitiestengahlink./concepts.html#Space - Concepts and Capabilitiesbelakanglink.
+As an application server, GigaSpaces XAP provides integrated, memory-based runtime capabilities. The core of these capabilities is backed by the space technology - for more information, please refer to [Space - Concepts and Capabilities](./concepts.html#Space - Concepts and Capabilities).
 
 **The core middleware capabilities
 are:**
@@ -159,7 +159,7 @@ The IMDG uses the unified clustering layer, to provide a highly available and re
 TODO_NIV - Change to ISpaceProxy link when available.
 {% endcomment %}
 
-The main API to access the IMDG service, is the depanlinkWriting Your First Applicationtengahlink./your-first-data-grid-application.htmlbelakanglink. Please refer to the depanlinkProgrammer's Guidetengahlink./programmer's-guide.htmlbelakanglink for usage examples.
+The main API to access the IMDG service, is the [Writing Your First Application](./your-first-data-grid-application.html). Please refer to the [Programmer's Guide](./programmer's-guide.html) for usage examples.
 
 ## Messaging Grid
 
@@ -180,7 +180,7 @@ TODO_NIV - Add link when available.
 
 5. Transactionality.
 
-The core APIs used for messaging are the depanlinkNotify Containertengahlink./notify-container-component.htmlbelakanglink and depanlinkPolling Containertengahlink./polling-container-component.htmlbelakanglink components. More information can be found in the depanlinkProgrammer's Guidetengahlink./event-driven-architecture.htmlbelakanglink.
+The core APIs used for messaging are the [Notify Container](./notify-container-component.html) and [Polling Container](./polling-container-component.html) components. More information can be found in the [Programmer's Guide](./event-driven-architecture.html).
 
 ## Processing Services
 
@@ -223,7 +223,7 @@ GigaSpaces XAP provides several default implementations as part of the product, 
 
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
-More information on the usage of the above integrations can be found in the depanlinkProgrammer's Guidetengahlink./programmer's-guide.htmlbelakanglink.
+More information on the usage of the above integrations can be found in the [Programmer's Guide](./programmer's-guide.html).
 
 ## .NET  - Abstract container
 
@@ -233,27 +233,27 @@ This allows .NET SBA applications  to run business services and .NET code, collo
 
 ## .NET  - Basic container
 
-The depanlinkBasic Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink extends the Abstract Container and simplifies tasks commonly used in processing units, such as starting an embedded space, hosting a service, activating an event container, etc.
+The [Basic Processing Unit Container](./basic-processing-unit-container.html) extends the Abstract Container and simplifies tasks commonly used in processing units, such as starting an embedded space, hosting a service, activating an event container, etc.
 
 ## C++ Container
 
-Much like the .NET Abstract Container, the depanlinkC++ containertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/CPP+Processing+Unitbelakanglink provides a native C++ runtime environment for [C++ SBA|XAP95:XAP CPP] applications.
+Much like the .NET Abstract Container, the [C++ container](http://wiki.gigaspaces.com/wiki/display/XAP95/CPP+Processing+Unit) provides a native C++ runtime environment for [C++ SBA|XAP95:XAP CPP] applications.
 
 ## Java - Spring Container
 
-The Spring framework container integration is built-in to XAP, and provides the ability to take advantage of depanlinkSpring frameworktengahlinkhttp://www.springframework.org/aboutbelakanglink components, programming model and capabilities.
+The Spring framework container integration is built-in to XAP, and provides the ability to take advantage of [Spring framework](http://www.springframework.org/about) components, programming model and capabilities.
 
 The Spring framework provides very elegant abstractions, which makes it very easy to build layered and decoupled applications.
 
 ## Jetty Web Container
 
-Jetty is a very popular web container, which provides support for JEE depanlinkweb containertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/Web+Processing+Unit+Containerbelakanglink specification services such as: Servlet, JavaServer Pages, JavaServer Faces, and others.
+Jetty is a very popular web container, which provides support for JEE [web container](http://wiki.gigaspaces.com/wiki/display/XAP95/Web+Processing+Unit+Container) specification services such as: Servlet, JavaServer Pages, JavaServer Faces, and others.
 
-The depanlinkintegration with the Jetty web containertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/Web+Jetty+Processing+Unit+Containerbelakanglink, allows you to run JEE web applications (.war files) on top of GigaSpaces XAP.
+The [integration with the Jetty web container](http://wiki.gigaspaces.com/wiki/display/XAP95/Web+Jetty+Processing+Unit+Container), allows you to run JEE web applications (.war files) on top of GigaSpaces XAP.
 
 ## Mule
 
-Mule is a very popular open source Enterprise Services Bus implementation in Java. The depanlinkMule container integrationtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/Mule+ESBbelakanglink allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
+Mule is a very popular open source Enterprise Services Bus implementation in Java. The [Mule container integration](http://wiki.gigaspaces.com/wiki/display/XAP95/Mule+ESB) allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
 {% endtoczone %}
 
 
@@ -276,7 +276,7 @@ The core module of XAP.NET provides APIs for direct access to space. The main in
 
 The events module is built on top of the core module, and provides POCO-based event processing components through the event containers. The event module enables simple construction of event-driven applications.
 
-The events module includes components for simplified EDA/Service Bus development. These components allow depanlinkunified event-handlingtengahlink./space-events.htmlbelakanglink and provide two mechanisms for event-generation: a depanlinkpolling containertengahlink./polling-container-component.htmlbelakanglink uses polling received operations against the space, and a depanlinknotify containertengahlink./notify-container-component.htmlbelakanglink which uses the space's built-in notification support.
+The events module includes components for simplified EDA/Service Bus development. These components allow [unified event-handling](./space-events.html) and provide two mechanisms for event-generation: a [polling container](./polling-container-component.html) uses polling received operations against the space, and a [notify container](./notify-container-component.html) which uses the space's built-in notification support.
 
 ## Remoting and Service Virtualization
 
@@ -292,4 +292,4 @@ This package contains integrations with non-XAP components. For more information
 
 
 {% whr %}
-{% refer %} **Next chapter**: depanlinkTerminologytengahlink./terminology.htmlbelakanglink{% endrefer %}
+{% refer %} **Next chapter**: [Terminology](./terminology.html){% endrefer %}

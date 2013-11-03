@@ -11,7 +11,7 @@ page_id: 63799345
 
 The session state store provider is used by the IIS (Internet Information Services) to supply a data store for active sessions. This implementation uses GigaSpaces as the session data storage provider.
 
-{% infosign %} See how to install the package **depanlinkbelowtengahlink#Installationbelakanglink**.
+{% infosign %} See how to install the package **[below](#Installation)**.
 
 Using the session-state store provider, values that need to be persisted during a user session are stored into session variables. These variables are unique in each user session. You can set and access session information from within an ASP .NET application. For example:
 
@@ -28,7 +28,7 @@ To use this practice, compile the reference: `<GigaSpaces Root>\Bin\GigaSpaces.P
 # Configuration
 
 Session state implementations can be configured by setting the `mode` attribute to a valid `SessionStateMode sessionState` element in your application configuration.
-{% refer %}For more details, see: depanlinkmsdn; Session-State Modestengahlinkhttp://msdn2.microsoft.com/en-us/library/ms178586.aspxbelakanglink.{% endrefer %}
+{% refer %}For more details, see: [msdn; Session-State Modes](http://msdn2.microsoft.com/en-us/library/ms178586.aspx).{% endrefer %}
 The `mode` attribute is set up in the `web.config` file (or the `machine.config` file). The `machine.config` file is located in `c:Microsoft.NET\Frameworkconfig\machine.config`.
 Configure your `web.config` file as follows:
 
@@ -66,8 +66,8 @@ Configure your `web.config` file as follows:
 {% endhighlight %}
 
 To use a custom provider, `mode` must be set to `Custom`, and the `providers` element must also be used.
-{% refer %}For more details, see the depanlinksessionStatetengahlinkhttp://msdn2.microsoft.com/en-us/library/h6bb9cz9.aspxbelakanglink element.{% endrefer %}
-{% refer %}depanlinkLearn how to to implement a session state store providertengahlinkhttp://msdn2.microsoft.com/en-us/library/ms178587.aspxbelakanglink.{% endrefer %}
+{% refer %}For more details, see the [sessionState](http://msdn2.microsoft.com/en-us/library/h6bb9cz9.aspx) element.{% endrefer %}
+{% refer %}[Learn how to to implement a session state store provider](http://msdn2.microsoft.com/en-us/library/ms178587.aspx).{% endrefer %}
 
 # Exceptions
 

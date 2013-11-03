@@ -42,7 +42,7 @@ With the compact serialization pattern:
 
 
 {% indent %}
-depanimagebin_ser.jpgtengahimage/attachment_files/sbp/bin_ser.jpgbelakangimage
+![bin_ser.jpg](/attachment_files/sbp/bin_ser.jpg)
 {% endindent %}
 
 
@@ -71,7 +71,7 @@ The compact serialization pattern involves creation the following methods:
 The `BinaryOutputStream` contains various method to serialize all java's primitive type, their Object wrappers and arrays forms in a compacted mode. `BinaryInputStream` is its counterpart for deserialization. Your `pack` and `unpack` methods will be using an instance of those classes.
 
 # Example
-With the depanlinkattached exampletengahlink/attachment_files/sbp/BinaryCompaction.zipbelakanglink we have a space class with 37 fields.
+With the [attached example](/attachment_files/sbp/BinaryCompaction.zip) we have a space class with 37 fields.
 - 1 Integer data type field (indexed used for queries).
 - 12 String fields
 - 12 Long fields
@@ -357,4 +357,4 @@ resBFE.unpack(); // this deserialize the binary data into the object fields
 
 
 # References
-The depanlinkPackRattengahlinkhttp://www.openspaces.org/display/PRT/PackRatbelakanglink project allows you to use the compact serialization pattern via simple annotations.
+The [PackRat](http://www.openspaces.org/display/PRT/PackRat) project allows you to use the compact serialization pattern via simple annotations.

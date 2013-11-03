@@ -12,8 +12,8 @@ page_id: 63799388
 
 # Overview
 
-The `IEventListenerContainer` interface is an abstraction that allows subscribing to, and receiving events from the space, where in most cases, the business logic doesn't need to be aware of the actual container implementation. The benefit of doing this, is the loose coupling between how the events are received (the different containers), and what to do with a received event (the listener). This interface has two out-of-the-box implementors: depanlink`PollingEventListenerContainer`tengahlink./polling-container-component.htmlbelakanglink and depanlink`NotifyEventListenerContainer`tengahlink./notify-container-component.htmlbelakanglink.
-depanimageNet_polling_notify_cont.jpgtengahimage/attachment_files/xap97net/Net_polling_notify_cont.jpgbelakangimage
+The `IEventListenerContainer` interface is an abstraction that allows subscribing to, and receiving events from the space, where in most cases, the business logic doesn't need to be aware of the actual container implementation. The benefit of doing this, is the loose coupling between how the events are received (the different containers), and what to do with a received event (the listener). This interface has two out-of-the-box implementors: [`PollingEventListenerContainer`](./polling-container-component.html) and [`NotifyEventListenerContainer`](./notify-container-component.html).
+![Net_polling_notify_cont.jpg](/attachment_files/xap97net/Net_polling_notify_cont.jpg)
 
 {% anchor  DataEventArrived %}
 {% anchor  DataEventHandler %}
@@ -77,7 +77,7 @@ void MyEventHandler(object sender, BatchDataEventArgs<Data> e)
 
 # Event Listener Container Factory
 
-One of the ways to create an event listener container is to use the `EventListenerContainerFactory.CreateContainer` method. The factory creates a container from a supplied listener class, which is marked with attributes that are used to configure and create the container. This is demonstrated in the depanlinkPolling Container Component pagetengahlink./polling-container-component.htmlbelakanglink and the depanlinkNotify Container Component pagetengahlink./notify-container-component.htmlbelakanglink.
+One of the ways to create an event listener container is to use the `EventListenerContainerFactory.CreateContainer` method. The factory creates a container from a supplied listener class, which is marked with attributes that are used to configure and create the container. This is demonstrated in the [Polling Container Component page](./polling-container-component.html) and the [Notify Container Component page](./notify-container-component.html).
 
 # Data Event Handler Adapters
 
@@ -87,7 +87,7 @@ In many scenarios, the event triggers a processing operation and its result shou
 
 ## DynamicMethod DataEventArrived Adapter
 
-The `DynamicMethodDataEventArrivedAdapter<TData>` is an internal class that is used by the `EventListenerContainerFactory`. This class dynamically creates a wrapper method over user methods that are marked with the depanlinkDataEventHandler attributetengahlink#DataEventHandlerAttributebelakanglink. If the user method has a return value which is not null, the wrapper is automatically written to the space, with configurable parameters (see  depanlinkDataEventHandler attributetengahlink#DataEventHandlerAttributebelakanglink). This adapter gives you the ability to write the event listening method receiving only the parameters that you need.
+The `DynamicMethodDataEventArrivedAdapter<TData>` is an internal class that is used by the `EventListenerContainerFactory`. This class dynamically creates a wrapper method over user methods that are marked with the [DataEventHandler attribute](#DataEventHandlerAttribute). If the user method has a return value which is not null, the wrapper is automatically written to the space, with configurable parameters (see  [DataEventHandler attribute](#DataEventHandlerAttribute)). This adapter gives you the ability to write the event listening method receiving only the parameters that you need.
 
 Here are a few examples:
 
@@ -128,7 +128,7 @@ The user methods can receive different parameters and be either a void method, o
 - The first parameter is the event data.
 - The second parameter is the space proxy the event arrived from.
 - The third parameter is a transaction if the event is executed within a transaction context.
-- The fourth parameter is the custom event args that each container creates (for example, see depanlinkNotify Container SpaceDataEventArgstengahlink./notify-container-component.html#SpaceDataEventArgsbelakanglink).
+- The fourth parameter is the custom event args that each container creates (for example, see [Notify Container SpaceDataEventArgs](./notify-container-component.html#SpaceDataEventArgs)).
 - The fifth parameter is the `IEventListenerContainer` that triggered this event.
 
 The return parameter, if not void, is the result that is written back to the space (when the result is not null).
@@ -144,7 +144,7 @@ public EnrichedData ProcessData(Data event, ISpaceProxy proxy, ITransaction tx, 
 
 ## Delegate DataEventArrived Adapter
 
-The `DelegateDataEventArrivedAdapter<TData, TResult>` receives a delegate to a method that receives similar event args as the `DataEventHandler`, but also returns a result of type `TResult`. If the result is not null, it is automatically written to the space, with configurable parameters (see depanlinkDataEventHandler attributetengahlink#DataEventHandlerAttributebelakanglink). After the adapter is created, its `WriteBackDataEventHandler` method adapts the supplied method, while adding the write back logic, and it can be used as the delegate when subscribing to the depanlinkDataEventArrived eventtengahlink#DataEventArrivedbelakanglink.
+The `DelegateDataEventArrivedAdapter<TData, TResult>` receives a delegate to a method that receives similar event args as the `DataEventHandler`, but also returns a result of type `TResult`. If the result is not null, it is automatically written to the space, with configurable parameters (see [DataEventHandler attribute](#DataEventHandlerAttribute)). After the adapter is created, its `WriteBackDataEventHandler` method adapts the supplied method, while adding the write back logic, and it can be used as the delegate when subscribing to the [DataEventArrived event](#DataEventArrived).
 
 Here is a simple example:
 
@@ -173,7 +173,7 @@ The result can also be an array, and the appropriate multiple operation is execu
 
 ## DataEventHandler attribute
 
-The DataEventHandler attribute has two roles. The first is to mark a method to be subscribed to the depanlinkDataEventArrived eventtengahlink#DataEventArrivedbelakanglink, when using the depanlinkEventListenerContainerFactorytengahlink#EventListenerContainerFactorybelakanglink. The second role is to determine the write back behavior of the marked method result. This behavior has three configurable parameters:
+The DataEventHandler attribute has two roles. The first is to mark a method to be subscribed to the [DataEventArrived event](#DataEventArrived), when using the [EventListenerContainerFactory](#EventListenerContainerFactory). The second role is to determine the write back behavior of the marked method result. This behavior has three configurable parameters:
 - WriteOrUpdate -- states whether to write or update the result back to the space, or only to write, which means if there's a matching object in the space to the result object, an `EntryAlreadyInSpaceException` is thrown (the default is true).
 - WriteLease -- the lease of the result object that is being written to the space (the default is lease forever).
 - UpdateTimeout -- if the operation is an update operation, determines how long to wait if the object is locked for updates (the default is 0).

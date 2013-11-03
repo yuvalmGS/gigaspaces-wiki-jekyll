@@ -100,13 +100,13 @@ public class Order {
 
 # Example
 
-This is a depanlinkPriority based queue exampletengahlink/attachment_files/sbp/PriorityBasedQueue.zipbelakanglink - It includes 2 parts:
+This is a [Priority based queue example](/attachment_files/sbp/PriorityBasedQueue.zip) - It includes 2 parts:
 -- Master - Write Orders into the space with a random priority (1-9)
 -- Worker - Consume Orders from the space where the consumption order is based on their priority value.
 
 With this example we have one Master thread and two worker threads.
 
-depanimageprior_q.jpgtengahimage/attachment_files/sbp/prior_q.jpgbelakangimage
+![prior_q.jpg](/attachment_files/sbp/prior_q.jpg)
 
 This demo can be modified to have:
 - Different amount of queues
@@ -116,7 +116,7 @@ Worker 2 : priorities 4-6 - Mid priories orders
 Worker 3 : priorities 7-9 - Low priories orders
 
 To run:
-1. Extract depanlinkthe attachedtengahlink/attachment_files/sbp/PriorityBasedQueue.zipbelakanglink.
+1. Extract [the attached](/attachment_files/sbp/PriorityBasedQueue.zip).
 2. Load the example project into your IDE.
 3. Set the project classpath to include GigaSpaces jars located under `\gigaspaces-xap\lib\required` folder.
 4. Run the `com.gigaspaces.examples.priorityq.PriorityQueueExample` main.

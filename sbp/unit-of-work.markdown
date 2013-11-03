@@ -26,12 +26,12 @@ The UOW can be used with financial systems to process **trade orders** , in heal
 
 
 {% tip %}
-Starting with XAP 9 you may use the **FIFO Grouping** to implement the Unit of Work model. See the depanlinkFIFO Groupingtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP9/FIFO+Groupingbelakanglink for details.
+Starting with XAP 9 you may use the **FIFO Grouping** to implement the Unit of Work model. See the [FIFO Grouping](http://wiki.gigaspaces.com/wiki/display/XAP9/FIFO+Grouping) for details.
 {% endtip %}
 
 
 # GigaSpaces FIFO and UOW
-While the depanlinkFIFOtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/FIFO+Supportbelakanglink mode provides ordered object consumption, it does so in a very strict sense. It defines an order between space objects based on the time they were written into the space. FIFO does not take into account consuming associated objects as one atomic operation. UOW allows a polling container to process a group of associated objects in the order they have been written in parallel to other processing groups. Multiple polling containers handle different groups concurrently, each group items processed in a FIFO fashion.
+While the [FIFO](http://wiki.gigaspaces.com/wiki/display/XAP8/FIFO+Support) mode provides ordered object consumption, it does so in a very strict sense. It defines an order between space objects based on the time they were written into the space. FIFO does not take into account consuming associated objects as one atomic operation. UOW allows a polling container to process a group of associated objects in the order they have been written in parallel to other processing groups. Multiple polling containers handle different groups concurrently, each group items processed in a FIFO fashion.
 
 # When can the GigaSpaces Unit of Work be used?
 GigaSpaces UOW can be used in the following cases:
@@ -64,7 +64,7 @@ With the above scenario requests 1, 3 and 4 should be processed as one atomic op
 
 
 {% indent %}
-depanimageuow_1.jpgtengahimage/attachment_files/sbp/uow_1.jpgbelakangimage
+![uow_1.jpg](/attachment_files/sbp/uow_1.jpg)
 {% endindent %}
 
 
@@ -73,7 +73,7 @@ depanimageuow_1.jpgtengahimage/attachment_files/sbp/uow_1.jpgbelakangimage
 ##  Running the Example
 
 {% tip %}
-You can depanlinkdownloadtengahlink/attachment_files/sbp/uow.zipbelakanglink eclipse project with example source code, running scripts and configuration.
+You can [download](/attachment_files/sbp/uow.zip) eclipse project with example source code, running scripts and configuration.
 {% endtip %}
 
 
@@ -83,13 +83,13 @@ You can depanlinkdownloadtengahlink/attachment_files/sbp/uow.zipbelakanglink ecl
 You can run the UOW Data-Grid with the collocated `UOWProcessor` within your IDE using the following configuration:
 
 {% indent %}
-depanimageuow_3.jpgtengahimage/attachment_files/sbp/uow_3.jpgbelakangimage
+![uow_3.jpg](/attachment_files/sbp/uow_3.jpg)
 {% endindent %}
 
 Here is a configuration for a UOW Data-Grid with 2 partitions:
 
 {% indent %}
-depanimageuow_2.jpgtengahimage/attachment_files/sbp/uow_2.jpgbelakangimage
+![uow_2.jpg](/attachment_files/sbp/uow_2.jpg)
 {% endindent %}
 
 {% endtabcontent %}
@@ -121,7 +121,7 @@ This will deploy the UOW Data-Grid with 2 partitions and a backup.
 You can run the `UOWFeeder` within your IDE using the following configuration:
 
 {% indent %}
-depanimageuow_4.jpgtengahimage/attachment_files/sbp/uow_4.jpgbelakangimage
+![uow_4.jpg](/attachment_files/sbp/uow_4.jpg)
 {% endindent %}
 
 or using the following:

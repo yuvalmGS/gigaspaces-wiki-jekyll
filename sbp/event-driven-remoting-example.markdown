@@ -22,7 +22,7 @@ page_id: 47219276
 
 # Overview
 
-OpenSpaces provides the ability to perform service method invocations on remote services, using the space as the transport layer. You may use the depanlinkEvent Driven Remotingtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Event+Driven+Remotingbelakanglink and [Executor Based Remoting|XAP8:Executor Based Remoting].
+OpenSpaces provides the ability to perform service method invocations on remote services, using the space as the transport layer. You may use the [Event Driven Remoting](http://wiki.gigaspaces.com/wiki/display/XAP8/Event+Driven+Remoting) and [Executor Based Remoting|XAP8:Executor Based Remoting].
 
 The benefits of using the Event Driven Remoting Compared to the Executor Based Remoting:
 - Service and Data can be located in different locations.
@@ -42,15 +42,15 @@ The Event Driven Remoting allows you to:
 
 ## Installing and Running the example
 
-1. Download the depanlinkexampletengahlink/attachment_files/sbp/event_remoting_Example.zipbelakanglink package and unzip it under your <GigaSpaces Root>\examples folder.
+1. Download the [example](/attachment_files/sbp/event_remoting_Example.zip) package and unzip it under your <GigaSpaces Root>\examples folder.
 2. Load the example into your IDE (eclipse or your favorite Java development environment).
 3. Edit the project to include the correct GigaSpaces libraries location.
 4. Setup the Service PU run configuration:
-depanimageevent_remot3.jpgtengahimage/attachment_files/sbp/event_remot3.jpgbelakangimage
-depanimageevent_remot4.jpgtengahimage/attachment_files/sbp/event_remot4.jpgbelakangimage
+![event_remot3.jpg](/attachment_files/sbp/event_remot3.jpg)
+![event_remot4.jpg](/attachment_files/sbp/event_remot4.jpg)
 5. Setup the Client PU run configuration:
-depanimageevent_remot1.jpgtengahimage/attachment_files/sbp/event_remot1.jpgbelakangimage
-depanimageevent_remot2.jpgtengahimage/attachment_files/sbp/event_remot2.jpgbelakangimage
+![event_remot1.jpg](/attachment_files/sbp/event_remot1.jpg)
+![event_remot2.jpg](/attachment_files/sbp/event_remot2.jpg)
 6. Run the Service PU
 7. Run the Client PU. This will invoke the service to that will immediately return and after 10 seconds will receive the result.
 
@@ -62,7 +62,7 @@ To allow the client to invoke the service and immediately return the actual dial
 - The Service is writing back a Response object.
 - The client takes the Response object.
 
-depanimageasync_remot1.jpgtengahimage/attachment_files/sbp/async_remot1.jpgbelakangimage
+![async_remot1.jpg](/attachment_files/sbp/async_remot1.jpg)
 
 ## Sample Client Output
 

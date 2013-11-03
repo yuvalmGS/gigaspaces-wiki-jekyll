@@ -16,13 +16,13 @@ page_id: 63799383
 
 {% column %}
 
-The GigaSpaces document API exposes the space as depanlinkDocument Storetengahlinkhttp://en.wikipedia.org/wiki/Document-oriented_databasebelakanglink. A document, which is represented by the class `SpaceDocument`, is essentially collection of key-value pairs, where the keys are strings and the values are primitives, `String`, `Date`, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
+The GigaSpaces document API exposes the space as [Document Store](http://en.wikipedia.org/wiki/Document-oriented_database). A document, which is represented by the class `SpaceDocument`, is essentially collection of key-value pairs, where the keys are strings and the values are primitives, `String`, `Date`, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
 
 {% endcolumn %}
 
 {% column %}
 
-depanimagedoc_api.jpgtengahimage/attachment_files/xap97net/doc_api.jpgbelakangimage
+![doc_api.jpg](/attachment_files/xap97net/doc_api.jpg)
 
 {% endcolumn %}
 
@@ -44,7 +44,7 @@ Note that the Document type does not describe the properties themselves (except 
 
 Since a `SpaceDocument` is completely dynamic by nature, it is very easy to change or evolve your data model without ever taking down the Space. Simply change your application code to add additional properties or remove existing ones, and you're good to go. Even better, old and new versions can co-exist since the space does not enforce any restriction with regards to the property set of documents that belong to a certain type. This is a much more lightweight model in comparison to the classic POJO model, where a recompilation and in many cases a full space restart is required to change the data schema.
 
-If POJO model cannot be replaced with Document model, yet some level of schema evolution is desired within the POJO model, depanlinkDynamic Propertiestengahlink./dynamic-properties.htmlbelakanglink can be used.
+If POJO model cannot be replaced with Document model, yet some level of schema evolution is desired within the POJO model, [Dynamic Properties](./dynamic-properties.html) can be used.
 
 # Type Definition
 
@@ -250,7 +250,7 @@ public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
 
 ## SQL Query
 
-You can use the depanlinkSQLQuerytengahlink./sqlquery.htmlbelakanglink to search for matching `SpaceDocument` entries.
+You can use the [SQLQuery](./sqlquery.html) to search for matching `SpaceDocument` entries.
 For example: Read a document of type **Product** whose **Price** is greater than 15:
 
 {% highlight java %}
@@ -325,15 +325,15 @@ The `Document` properties values can be either scalars (integers, strings, enumu
 
 # Indexing
 
-Properties and nested paths can be depanlinkindexedtengahlink./indexing.htmlbelakanglink to boost queries performance. In the type registration sample above the **Name** and **Price** properties are indexed.
+Properties and nested paths can be [indexed](./indexing.html) to boost queries performance. In the type registration sample above the **Name** and **Price** properties are indexed.
 
 Since the schema is flexible and new properties might be added after the type has been registered, it is possible to add indexes dynamically as well.
 
-For more information about indexing, see the depanlinkIndexingtengahlink./indexing.htmlbelakanglink page.
+For more information about indexing, see the [Indexing](./indexing.html) page.
 
 # Events
 
-Event containers (both depanlinkpolling containertengahlink/xap97/polling-container.htmlbelakanglink and depanlinknotify containertengahlink/xap97/notify-container.htmlbelakanglink) support Space `Document` entries.
+Event containers (both [polling container](/xap97/polling-container.html) and [notify container](/xap97/notify-container.html)) support Space `Document` entries.
 
 Here is a simple example of a polling event container configuration using a `Document`:
 
@@ -491,7 +491,7 @@ pollingEventListenerContainer.destroy();
 
 # FIFO
 
-depanlinkFIFO supporttengahlink./fifo-support.htmlbelakanglink is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
+[FIFO support](./fifo-support.html) is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
 
 
 {% inittab os_simple_space|top %}
@@ -556,11 +556,11 @@ gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 
 
 {% exclamation %} Changing FIFO support after a type has been registered is not supported.
-For more information about FIFO, see the depanlinkFIFO Supporttengahlink./fifo-support.htmlbelakanglink page.
+For more information about FIFO, see the [FIFO Support](./fifo-support.html) page.
 
 # Transactions and Optimistic Locking
 
-Transactions and isolation modifiers semantics is identical to the POJO semantics. For more information about transactions, see the depanlinkTransaction Managementtengahlink/xap97/transaction-management.htmlbelakanglink page.
+Transactions and isolation modifiers semantics is identical to the POJO semantics. For more information about transactions, see the [Transaction Management](/xap97/transaction-management.html) page.
 
 Optimistic locking is disabled by default with `Document` entries (same as with POJO). To enable it, modify the type introduction code and set the optimistic locking support. For example:
 
@@ -628,13 +628,13 @@ gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 
 
 {% exclamation %} Changing optimistic locking after a type has been registered is not supported.
-For more information about optimistic locking, see the depanlinkOptimistic Lockingtengahlink/xap97/optimistic-locking.htmlbelakanglink page.
+For more information about optimistic locking, see the [Optimistic Locking](/xap97/optimistic-locking.html) page.
 
 # Local Cache / Local View
 
-depanlinkLocal Viewtengahlink./local-view.htmlbelakanglink and depanlinkLocal Cachetengahlink./local-cache.htmlbelakanglink are supported for Documents. By default, the `SpaceDocument` instance is stored in the cache which speeds up query performance since the data does not need to be transformed from internal structure to `SpaceDocument`.
+[Local View](./local-view.html) and [Local Cache](./local-cache.html) are supported for Documents. By default, the `SpaceDocument` instance is stored in the cache which speeds up query performance since the data does not need to be transformed from internal structure to `SpaceDocument`.
 
-If you intend to use local cache or local view in a mixed POJO-Document environment, please refer to depanlinkDocument-POJO Interoperabilitytengahlink/xap97/document-pojo-interoperability.htmlbelakanglink.
+If you intend to use local cache or local view in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](/xap97/document-pojo-interoperability.html).
 
 # Persistency
 
@@ -736,13 +736,13 @@ Pojos can be persisted via document EDS as well, in the same way.
 
 Space Filter are supported for space documents.
 
-If you intend to use space filters in a mixed POJO-Document environment, please refer to depanlinkDocument-POJO Interoperabilitytengahlink/xap97/document-pojo-interoperability.htmlbelakanglink.
+If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](/xap97/document-pojo-interoperability.html).
 
 # Space Replication Filters
 
 Space Replication Filter are supported for space documents.
 
-If you intend to use space filters in a mixed POJO-Document environment, please refer to depanlinkDocument-POJO Interoperabilitytengahlink/xap97/document-pojo-interoperability.htmlbelakanglink.
+If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](/xap97/document-pojo-interoperability.html).
 
 # Advanced Options
 

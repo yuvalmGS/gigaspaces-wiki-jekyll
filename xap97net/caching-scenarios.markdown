@@ -17,9 +17,9 @@ GigaSpaces IMDG supports three kinds of caching mechanisms. Using GigaSpaces IMD
 - Less load on the database layer: Since the cache will isolate the database from the application somewhat, you will have less contention generated at the database layer.
 - Continuous High-Availability: Zero downtime of your data access layer with the ability to survive system failures without any data loss.
 
-The main supported caching mechanisms are the depanlinkin-line cachetengahlink#In-line Cachebelakanglink and the depanlinkside cachetengahlink#Side Cachebelakanglink.
+The main supported caching mechanisms are the [in-line cache](#In-line Cache) and the [side cache](#Side Cache).
 
-Both the In-line cache and the Side cache support the common deployment toplogies: depanlinkreplicatedtengahlink./terminology---data-grid-topologies.html#Primary Backup Data Gridbelakanglink, depanlinkpartitionedtengahlink./terminology---data-grid-topologies.html#Partitioned Data Gridbelakanglink and depanlinkprimary-backup partitionedtengahlink./terminology---data-grid-topologies.html#Primary Backup Partitioned Data Gridbelakanglink.
+Both the In-line cache and the Side cache support the common deployment toplogies: [replicated](./terminology---data-grid-topologies.html#Primary Backup Data Grid), [partitioned](./terminology---data-grid-topologies.html#Partitioned Data Grid) and [primary-backup partitioned](./terminology---data-grid-topologies.html#Primary Backup Partitioned Data Grid).
 
 # In-line Cache
 
@@ -28,31 +28,31 @@ With this mechanism, the IMDG is the system of record. The database data is load
 - When running in `ALL-IN-CACHE` cache policy mode, all data is loaded from the database into the cache once it is started.
 - When running in `LRU` cache policy mode, a subset of the data is loaded from the database into the cache when it is started. Data is evicted from the cache based on available memory or a maximum amount of cache objects. Once there is a cache miss, the cache looks for the data within the underlying data-source. If matching data is found, it is loaded into the cache and delivered to the application.
 
-depanimagein-line-cache.jpgtengahimage/attachment_files/xap97net/in-line-cache.jpgbelakangimage
+![in-line-cache.jpg](/attachment_files/xap97net/in-line-cache.jpg)
 
 The in-line cache is implemented using the following configurations:
 - Read-through and Write-through: For persisting the cache data synchronously.
 - Write-behind - Mirror: For persisting the cache data asynchronously.
 
-Persistence logic can either be the out-of-the-box depanlinkNHibernate External Data Sourcetengahlink./nhibernate-external-data-source.htmlbelakanglink or any custom persistence logic that implements the depanlinkexternal data source interfacestengahlink/xap97/external-data-source-api.htmlbelakanglink.
+Persistence logic can either be the out-of-the-box [NHibernate External Data Source](./nhibernate-external-data-source.html) or any custom persistence logic that implements the [external data source interfaces](/xap97/external-data-source-api.html).
 
 The in-line cache ensures maximum performance when fetching data where the database is outside the critical path of the application transaction. (This makes more sense than it might seem: database contention is a primary source of application performance failure.)
 
 
 {% tip %}
-For best performance you should use the depanlinkALL-IN-CACHE cache policytengahlink/xap97/all-in-cache-cache-policy.htmlbelakanglink with the depanlinkwrite-behind mirrortengahlink/xap97/asynchronous-persistency-with-the-mirror.htmlbelakanglink. This will ensure maximum hit rate when accessing the cache. With this mode, you should make sure the cache can accommodate _all_ the data you will access.
+For best performance you should use the [ALL-IN-CACHE cache policy](/xap97/all-in-cache-cache-policy.html) with the [write-behind mirror](/xap97/asynchronous-persistency-with-the-mirror.html). This will ensure maximum hit rate when accessing the cache. With this mode, you should make sure the cache can accommodate _all_ the data you will access.
 {% endtip %}
 
 
 The in-line cache mechanism is widely used with the following GigaSpaces APIs:
-- depanlinkGigaSpace APItengahlink./the-ispaceproxy-interface.htmlbelakanglink: GigaSpaces native Object/SQL API.
-- ajepaaaThe GigaMap Interfaceajepbbb: GigaSpaces Key/Value (JCache/Hashtable) API.
+- [GigaSpace API](./the-ispaceproxy-interface.html): GigaSpaces native Object/SQL API.
+- [The GigaMap Interface]: GigaSpaces Key/Value (JCache/Hashtable) API.
 
 ## When you should use an in-line cache?
 
 An in-line cache is very useful when:
 - The total size of data stored within the database (or any other external data source) is equal or less than the amount of data stored in memory. Ideally, you'd use the `ALL_IN_CACHE` cache policy mode.
-- The original data model of the data within the database (or any other external data source) is similar to the data model of the objects in memory. The ajepaaaexternal data sourceajepbbb will work very well: the data will be loaded automatically from the database into the cache and every change to the data in the cache will be propagated to the database behind the scenes.
+- The original data model of the data within the database (or any other external data source) is similar to the data model of the objects in memory. The [external data source] will work very well: the data will be loaded automatically from the database into the cache and every change to the data in the cache will be propagated to the database behind the scenes.
 
 # Side Cache
 
@@ -64,20 +64,20 @@ With this mechanism, the application is responsible for maintaining the data in 
 - The application writes it into the cache.
 4. The next time the application attempts to fetch the same object, it will be read from the cache - unless the object has been expired or evicted.
 
-depanimageside_cache.jpgtengahimage/attachment_files/xap97net/side_cache.jpgbelakangimage
+![side_cache.jpg](/attachment_files/xap97net/side_cache.jpg)
 
 The Side cache scenario is widely used with the following GigaSpaces APIs:
-- depanlinkGigaSpace APItengahlink./the-ispaceproxy-interface.htmlbelakanglink - GigaSpaces native Object/SQL API.
-- ajepaaaThe GigaMap Interfaceajepbbb - GigaSpaces Key/Value (JCache/Hashtable) API.
-- depanlinkJDBC APItengahlink/xap97/jdbc-driver.htmlbelakanglink - GigaSpaces native JDBC driver.
-- depanlinkThe Memcached APItengahlink/xap97/memcached-api.htmlbelakanglink - Using any memcached client (depanlinkJavatengahlinkhttp://code.google.com/p/xmemcachedbelakanglink , C# , C , C++..). See depanlinkmemcached libraries pagetengahlinkhttp://code.google.com/p/memcached/wiki/Clientsbelakanglink for the different programming languages supporting the memcached protocol that may be used with GigaSpaces server memcached implementation.
-- depanlinkHibernatetengahlink/xap97/gigaspaces-for-hibernate-orm-users.htmlbelakanglink - Leveraging GigaSpaces as Hibernate 2nd Level Cache.
+- [GigaSpace API](./the-ispaceproxy-interface.html) - GigaSpaces native Object/SQL API.
+- [The GigaMap Interface] - GigaSpaces Key/Value (JCache/Hashtable) API.
+- [JDBC API](/xap97/jdbc-driver.html) - GigaSpaces native JDBC driver.
+- [The Memcached API](/xap97/memcached-api.html) - Using any memcached client ([Java](http://code.google.com/p/xmemcached) , C# , C , C++..). See [memcached libraries page](http://code.google.com/p/memcached/wiki/Clients) for the different programming languages supporting the memcached protocol that may be used with GigaSpaces server memcached implementation.
+- [Hibernate](/xap97/gigaspaces-for-hibernate-orm-users.html) - Leveraging GigaSpaces as Hibernate 2nd Level Cache.
 
 ## When you should use a side cache?
 
 A side cache is very useful when:
 - The total amount of data stored in the database (or any other external data source) is relatively much higher than the amount of data stored in-memory. In such a case, you should be running in `LRU` cache policy mode.
-- The original data model of the data within the database (or any other external data source) is very different than the data model of the objects in-memory. In such a case the built-in ajepaaaExternal Data Sourceajepbbb may not work well, but customized mapping logic should be implemented at the client application side to load data from the database and push it into the cache.
+- The original data model of the data within the database (or any other external data source) is very different than the data model of the objects in-memory. In such a case the built-in [External Data Source] may not work well, but customized mapping logic should be implemented at the client application side to load data from the database and push it into the cache.
 
 # Client Cache
 
@@ -87,15 +87,15 @@ When using client cache, you use a two-layered cache architecture: The first lay
 
 ##### In-line cache with a client cache:
 
-depanimagein-line_cache-local-cache.jpgtengahimage/attachment_files/xap97net/in-line_cache-local-cache.jpgbelakangimage
+![in-line_cache-local-cache.jpg](/attachment_files/xap97net/in-line_cache-local-cache.jpg)
 
 ##### Side cache with a client cache:
 
-depanimageside-cache-local-cache.jpgtengahimage/attachment_files/xap97net/side-cache-local-cache.jpgbelakangimage
+![side-cache-local-cache.jpg](/attachment_files/xap97net/side-cache-local-cache.jpg)
 
 The client cache size is limited to the client process heap size. The client-side cache is updated automaticaly once the master copy of the object within the IMDG is updated. The client cache can be implemented using the following configurations:
-- depanlinkLocal Cachetengahlink./local-cache.htmlbelakanglink - On-demand client cache loading data based on client activity. This type of client cache evicts data once the client available memory drops below a configurable value.
-- depanlinkLocal Viewtengahlink./local-view.htmlbelakanglink - Pre-fetch client cache loading data based on set of SQL queries. This client cache does not evict data. This client cache is designed to be read-only and support both queries and reads based on ID.
+- [Local Cache](./local-cache.html) - On-demand client cache loading data based on client activity. This type of client cache evicts data once the client available memory drops below a configurable value.
+- [Local View](./local-view.html) - Pre-fetch client cache loading data based on set of SQL queries. This client cache does not evict data. This client cache is designed to be read-only and support both queries and reads based on ID.
 
 
 {% tip %}
@@ -111,16 +111,16 @@ Client side cache should be used when most of the application activities (above 
 
 When running the cache in LRU cache policy mode, you may need to expire or evict the cache data. This will make sure you will not load the cache with unnecessary data. Another reason to expire or evict the cache data is to make sure the memory allocated for the cache (JVM heap size) can accommodate the most valuable objects your applications needs.
 
-depanimagequery-service.jpgtengahimage/attachment_files/xap97net/query-service.jpgbelakangimage
+![query-service.jpg](/attachment_files/xap97net/query-service.jpg)
 
 Here are the options you may use to refresh the cache:
-- Eviction - You may configure the space to evict data by running in depanlinkLRU eviction policytengahlink/xap97/lru-cache-policy.htmlbelakanglink.
+- Eviction - You may configure the space to evict data by running in [LRU eviction policy](/xap97/lru-cache-policy.html).
 - Lease expiration - You may write objects into the space with a specific time to live (lease duration).
 - Programmatic expiration - You may expire the object using:
 -- `net.jini.core.lease.Lease.cancel()` - You can get the Lease object as a result of a write operation for a new object.
 -- `GigaSpace.write` operation for an existing object (update) using a short lease time. See the {javadocos:org/openspaces/core/GigaSpace|GigaSpace} interface write operation for details.
--- Take operation with depanlinkTakeModifiers.EVICT_ONLY modetengahlink/xap97/lru-cache-policy.html#Explicit Eviction of Objects from the Spacebelakanglink. See the {javadocos:org/openspaces/core/GigaSpace|GigaSpace} interface take operation for details.
+-- Take operation with [TakeModifiers.EVICT_ONLY mode](/xap97/lru-cache-policy.html#Explicit Eviction of Objects from the Space). See the {javadocos:org/openspaces/core/GigaSpace|GigaSpace} interface take operation for details.
 - Periodic refresh - You may push data into the cache in a periodic manner via a timer. The Timer will be fetching relevant data that was recently updated within the database and pushing it into the cache.
 - Refresh data using a Queue - Any updates made to the database are also written to a queue. Refresher client consumes the messages on the queue and applies these changes to space.
 
-depanimagequeue-refresh.pngtengahimage/attachment_files/xap97net/queue-refresh.pngbelakangimage
+![queue-refresh.png](/attachment_files/xap97net/queue-refresh.png)

@@ -41,4 +41,4 @@ Here is the full list of change operations:
 |**ChangeSet.SetInDictionary**|SetInDictionaryOperation| |
 |**ChangeSet.RemoveFromDictionary**|RemoveFromDictionaryOperation| |
 
-For the common use case you can use the depanlinkChange Extensiontengahlink./change-extension.htmlbelakanglink class which provide extension methods to `ISpaceProxy` which simplify the most common use cases and allow you to do simple operation such as an atomic `AddAndGet` operation. This extension are a syntactic sugaring on top of the above API.
+For the common use case you can use the [Change Extension](./change-extension.html) class which provide extension methods to `ISpaceProxy` which simplify the most common use cases and allow you to do simple operation such as an atomic `AddAndGet` operation. This extension are a syntactic sugaring on top of the above API.

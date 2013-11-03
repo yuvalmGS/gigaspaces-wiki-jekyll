@@ -19,7 +19,7 @@ page_id: 64127778
 
 In such a case, make sure you have a different lookup group for each space, where each space is configured to use a specific lookup. A good practice is to have different space/service names.
 
-{% infosign %} When using multicast please review the following section **depanlinkHow to Determine Whether Multicast is Availabletengahlink./how-to-determine-whether-multicast-is-available.htmlbelakanglink** and depanlinkHow to Configure Multicasttengahlink./how-to-configure-multicast.htmlbelakanglink.
+{% infosign %} When using multicast please review the following section **[How to Determine Whether Multicast is Available](./how-to-determine-whether-multicast-is-available.html)** and [How to Configure Multicast](./how-to-configure-multicast.html).
 
 # Setting up the Lookup Service For Multicast Discovery (Using Lookup Group)
 
@@ -40,7 +40,7 @@ The command that loads a space needs to have this system property set. Another w
 
 
 {% tip %}
-If you are looking for a way to use a unicast discovery, please refer to the depanlinkHow to Configure Unicast Discoverytengahlink./how-to-configure-unicast-discovery.htmlbelakanglink section for more details.
+If you are looking for a way to use a unicast discovery, please refer to the [How to Configure Unicast Discovery](./how-to-configure-unicast-discovery.html) section for more details.
 {% endtip %}
 
 
@@ -59,7 +59,7 @@ Adjusting the lookup services multicast settings can be done using the following
 
 # Troubleshooting the Discovery/Group Configuration
 
-Using the depanlinklist LUStengahlink/xap97/list---gigaspaces-cli.html#list-6.0-ListsallactiveJiniLookupServiceinstancesandtheirattributesbelakanglink CLI option, run from `<GigaSpaces Root>\bin\gs.bat/sh`, you can search for available Jini Lookup Services in the network.
+Using the [list LUS](/xap97/list---gigaspaces-cli.html#list-6.0-ListsallactiveJiniLookupServiceinstancesandtheirattributes) CLI option, run from `<GigaSpaces Root>\bin\gs.bat/sh`, you can search for available Jini Lookup Services in the network.
 `<GigaSpaces Root>\bin\gs.bat/sh` list lus
 
 The following result examples appear on the console:
@@ -91,5 +91,5 @@ The following result examples appear on the console:
 
 
 {% tip %}
- For details on multi-network card configuration, refer to: depanlinkHow to Configure an Environment With Multiple Network-Cards (Multi-NIC)tengahlink/xap97/how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).htmlbelakanglink.
+ For details on multi-network card configuration, refer to: [How to Configure an Environment With Multiple Network-Cards (Multi-NIC)](/xap97/how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).html).
 {% endtip %}

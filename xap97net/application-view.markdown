@@ -11,11 +11,11 @@ page_id: 63799300
 
 # Overview
 
-depanimagenew-in-805-ribbon.pngtengahimage/attachment_files/xap97net/new-in-805-ribbon.pngbelakangimage
+![new-in-805-ribbon.png](/attachment_files/xap97net/new-in-805-ribbon.png)
 The Applications Module allow users to manage and monitor XAP applications.
 It offers a wide set of functionality from deployment to verification, monitoring and log tracing.
 
-depanimageapps_explained.pngtengahimage/attachment_files/xap97net/apps_explained.pngbelakangimage
+![apps_explained.png](/attachment_files/xap97net/apps_explained.png)
 
 # The Application Map
 
@@ -24,17 +24,17 @@ It allow the user to compare the plan with the actual deployment in any given mo
 
 ### Overview
 
-depanimageapp_map_explained.pngtengahimage/attachment_files/xap97net/app_map_explained.pngbelakangimage
+![app_map_explained.png](/attachment_files/xap97net/app_map_explained.png)
 
 ### Understanding the processing unit display
 
 The application map depicts a shape per each processing unit
-depanimagepu.jpgtengahimage/attachment_files/xap97net/pu.jpgbelakangimage
+![pu.jpg](/attachment_files/xap97net/pu.jpg)
 
 It shows the deployment and dependencies between each processing unit, belonging to the chosen "application" from the drop-down menu.
 Processing units that were not deployed in the context of an application, will be shown under "Unassigned Services".
 
-depanimageunassigned_selection.jpgtengahimage/attachment_files/xap97net/unassigned_selection.jpgbelakangimage
+![unassigned_selection.jpg](/attachment_files/xap97net/unassigned_selection.jpg)
 
 ### Processing Unit dependencies
 
@@ -42,23 +42,23 @@ Dependencies between processing units are depicted by an arrow flowing in the di
 For example, in the screenshot below, the feeder depends on the Space to be alive.
 
 {% info %}
-For more information on processing unit dependencies, see depanlinkApplication deployment and processing unit dependenciestengahlink/xap97/deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependenciesbelakanglink
+For more information on processing unit dependencies, see [Application deployment and processing unit dependencies](/xap97/deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependencies)
 {% endinfo %}
 
 
-depanimageapplication_dependency.pngtengahimage/attachment_files/xap97net/application_dependency.pngbelakangimage
+![application_dependency.png](/attachment_files/xap97net/application_dependency.png)
 
 |**Icon**|**Description**|
-|depanimagesegment.pngtengahimage/attachment_files/xap97net/segment.pngbelakangimage|Space Partition|
-|depanimagesegments.pngtengahimage/attachment_files/xap97net/segments.pngbelakangimage|Space Partition with backup|
-|depanimagedata.pngtengahimage/attachment_files/xap97net/data.pngbelakangimage|Space Replica|
-|depanimageprocess.pngtengahimage/attachment_files/xap97net/process.pngbelakangimage|Processing (Business Logic)|
-|depanimagepipe.pngtengahimage/attachment_files/xap97net/pipe.pngbelakangimage|Event Container (Messaging)|
-|depanimageworld.pngtengahimage/attachment_files/xap97net/world.pngbelakangimage|Web application|
+|![segment.png](/attachment_files/xap97net/segment.png)|Space Partition|
+|![segments.png](/attachment_files/xap97net/segments.png)|Space Partition with backup|
+|![data.png](/attachment_files/xap97net/data.png)|Space Replica|
+|![process.png](/attachment_files/xap97net/process.png)|Processing (Business Logic)|
+|![pipe.png](/attachment_files/xap97net/pipe.png)|Event Container (Messaging)|
+|![world.png](/attachment_files/xap97net/world.png)|Web application|
 
 ### Contextual Actions
 
-depanimageactions_explained.pngtengahimage/attachment_files/xap97net/actions_explained.pngbelakangimage
+![actions_explained.png](/attachment_files/xap97net/actions_explained.png)
 
 # The Monitoring view
 
@@ -66,12 +66,12 @@ The monitoring view, allows the user to monitor the performance of a the selecte
 
 ### Understanding the widgets
 
-depanimagemetrics_explained.pngtengahimage/attachment_files/xap97net/metrics_explained.pngbelakangimage
+![metrics_explained.png](/attachment_files/xap97net/metrics_explained.png)
 
 # The Infrastructure view
 
 The infrastructure view allows the user to verify the application's topology. It maps the processing unit instances to hosts, providing some basic information about each host.
-depanimageinfra_explained.pngtengahimage/attachment_files/xap97net/infra_explained.pngbelakangimage
+![infra_explained.png](/attachment_files/xap97net/infra_explained.png)
 
 # The Services view
 
@@ -79,18 +79,18 @@ The services view allows the user to get information at the processing unit inst
 
 ### Comparing Instances
 
-depanimageservices_explained.pngtengahimage/attachment_files/xap97net/services_explained.pngbelakangimage
+![services_explained.png](/attachment_files/xap97net/services_explained.png)
 
 ### Service Instance Details
 
-depanimagedetails_explained.pngtengahimage/attachment_files/xap97net/details_explained.pngbelakangimage
+![details_explained.png](/attachment_files/xap97net/details_explained.png)
 
 ### Contextual Actions
 
 # The Logs view
 
 The logs view allows the user to browse the application logs, filter or search them.
-depanimagelogs_explained.pngtengahimage/attachment_files/xap97net/logs_explained.pngbelakangimage
+![logs_explained.png](/attachment_files/xap97net/logs_explained.png)
 
 # Events time-line (per application)
 
@@ -98,8 +98,8 @@ The events time line is filtered per application chosen from the application dro
 The events time-line shows the deployment life cycle of all the processing units belonging to this application.
 
 {% info %}
-For more information on the events displayed, see depanlinkEvents time-line tab in dashboard viewtengahlink./dashboard-view.html#Events time-linebelakanglink
+For more information on the events displayed, see [Events time-line tab in dashboard view](./dashboard-view.html#Events time-line)
 {% endinfo %}
 
 
-depanimageevents_timeline_in_application.pngtengahimage/attachment_files/xap97net/events_timeline_in_application.pngbelakangimage
+![events_timeline_in_application.png](/attachment_files/xap97net/events_timeline_in_application.png)

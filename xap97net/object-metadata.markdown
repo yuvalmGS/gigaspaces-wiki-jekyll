@@ -17,13 +17,13 @@ However, in many cases this generic approach is not enough. For example, you may
 
 If you don't want to (or can't) use XAP.NET attributes in your classes code, you can create an xml file that defines those behaviours, commonly called `gs.xml`.
 
-{% infosign %} Since working with attributes is usually simpler and easier, this page demonstrates all the features using attributes. However, every feature shown here can also be achieved using `depanlinkgs.xmltengahlink./gs.xml-metadata.htmlbelakanglink`.
+{% infosign %} Since working with attributes is usually simpler and easier, this page demonstrates all the features using attributes. However, every feature shown here can also be achieved using `[gs.xml](./gs.xml-metadata.html)`.
 
 # Including/Excluding Content from the Space
 
 By default, all public members (fields and properties) in a class are stored in the space, whereas non-public members are ignored. Since classes are usually designed with private/protected fields and public properties wrapping them, in most cases the default behaviour is also the desired one.
 
-To change this behaviour for a specific class, apply a `\ajepaaaSpaceClass\ajepbbb` attribute on that class, and use `IncludeProperties` and/or `IncludeFields` to specify which members should be included in the space. Both `IncludeProperties` and `IncludeFields` are an `IncludeMembers` enumeration, which can receive the following values:
+To change this behaviour for a specific class, apply a `\[SpaceClass\]` attribute on that class, and use `IncludeProperties` and/or `IncludeFields` to specify which members should be included in the space. Both `IncludeProperties` and `IncludeFields` are an `IncludeMembers` enumeration, which can receive the following values:
 - `IncludeMembers.All` \-- all members are stored.
 - `IncludeMembers.Public` \-- public members are stored, and non-public members are ignored
 - `IncludeMembers.None` \-- all members are ignored.
@@ -66,7 +66,7 @@ Read-only properties (getter without setter) are stored in the space, but when t
 {% endinfo %}
 
 
-To change the behaviour of a specific field/property, apply a `\ajepaaaSpaceProperty\ajepbbb` to include it, or a `\ajepaaaSpaceExclude\ajepbbb` to exclude it. These settings override the class-level settings.
+To change the behaviour of a specific field/property, apply a `\[SpaceProperty\]` to include it, or a `\[SpaceExclude\]` to exclude it. These settings override the class-level settings.
 
 #### Example 3 -- Storing all the Person properties except the Password property
 
@@ -82,7 +82,7 @@ public class Person
 
 # Indexing
 
-If a property is commonly used in space queries, you can instruct the space to index that property for improved read performance. To do this, use the `\ajepaaaSpaceIndex\ajepbbb` attribute, and specify `Type=SpaceIndexType.Basic`.
+If a property is commonly used in space queries, you can instruct the space to index that property for improved read performance. To do this, use the `\[SpaceIndex\]` attribute, and specify `Type=SpaceIndexType.Basic`.
 
 {% highlight java %}
 public class Person
@@ -106,8 +106,8 @@ When an object is stored in the space, the space generates a unique identifier a
 - Queries performed with the UID are much faster, since the query mechanism can reduce the result set efficiently.
 
 There are two modes of SpaceID that are supported:
-- If you want the space to automatically generate the UID for you, specify `\ajepaaaSpaceID(AutoGenerate=true)\ajepbbb` on the property which should hold the generated ID. A SpaceID field that has AutoGenerate=true specified, must be of type `string`.
-- If you want the space to generate the UID using a specific property's value, specify `\ajepaaaSpaceID(AutoGenerate=false)\ajepbbb` on that property.
+- If you want the space to automatically generate the UID for you, specify `\[SpaceID(AutoGenerate=true)\]` on the property which should hold the generated ID. A SpaceID field that has AutoGenerate=true specified, must be of type `string`.
+- If you want the space to generate the UID using a specific property's value, specify `\[SpaceID(AutoGenerate=false)\]` on that property.
 
 The default is `AutoGenerate=false`. Note that only one property in a class can be marked as a SpaceID property.
 
@@ -116,8 +116,8 @@ The default is `AutoGenerate=false`. Note that only one property in a class can 
 # Routing
 
 When working with a clustered space, one of the properties in a class is used to determine the routing behaviour of that class within the cluster (i.e. how instances of that class are partitioned across the cluster's nodes). The routing property is determined according to the following rules:
-1. The property marked with `\ajepaaaSpaceRouting\ajepbbb` attribute.
-2. Otherwise, the property marked with `\ajepaaaSpaceID\ajepbbb` is used.
+1. The property marked with `\[SpaceRouting\]` attribute.
+2. Otherwise, the property marked with `\[SpaceID\]` is used.
 3. Otherwise, the first indexed property in alphabetical order is used.
 4. Otherwise, the first property in alphabetical order is used.
 
@@ -130,7 +130,7 @@ It's highly recommended to explicitly declare which property is the routing prop
 
 # Versioning
 
-The space can keep track of an object's version (i.e. how many times it was written/updated in the space), and provide optimistic concurrency using that version information. For that end, the space needs to store the object's version in some property in the object. To specify that a property should be used for versioning, mark it with a `\ajepaaaSpaceVersion\ajepbbb` attribute. If no property is marked as a space version, the space does not store version information for that class.
+The space can keep track of an object's version (i.e. how many times it was written/updated in the space), and provide optimistic concurrency using that version information. For that end, the space needs to store the object's version in some property in the object. To specify that a property should be used for versioning, mark it with a `\[SpaceVersion\]` attribute. If no property is marked as a space version, the space does not store version information for that class.
 
 Note that only one property in a class can be marked as a version property, and it must be of type `int`.
 
@@ -144,7 +144,7 @@ It is recommended to avoid the usage of such fields and properties, and the need
 {% endinfo %}
 
 
-To specify a null value, the field or property should be marked with the `\ajepaaaSpaceProperty(NullValue = ?)\ajepbbb` attribute:
+To specify a null value, the field or property should be marked with the `\[SpaceProperty(NullValue = ?)\]` attribute:
 
 Example #1 - Null value on a primitive int
 
@@ -170,7 +170,7 @@ public class Person
 
 # Mapping
 
-By default, the name of the class in the space is the fully-qualified class name (i.e. including namespace), and the properties/fields names in the space equal to the .NET name. In some cases, usually in interoperability scenarios, you may need to map your .NET class name and properties to different names in the space. You can do that using the `AliasName` property on `\ajepaaaSpaceClass\ajepbbb` and `\ajepaaaSpaceProperty\ajepbbb`. For example, the following .NET Person class contains mapping to an equivalent Java Person class:
+By default, the name of the class in the space is the fully-qualified class name (i.e. including namespace), and the properties/fields names in the space equal to the .NET name. In some cases, usually in interoperability scenarios, you may need to map your .NET class name and properties to different names in the space. You can do that using the `AliasName` property on `\[SpaceClass\]` and `\[SpaceProperty\]`. For example, the following .NET Person class contains mapping to an equivalent Java Person class:
 
 {% highlight java %}
 namespace MyCompany.MyProject
@@ -184,16 +184,16 @@ namespace MyCompany.MyProject
 }
 {% endhighlight %}
 
-For more information, see depanlinkGigaSpaces.NET - Interoperability With Non .NET Applicationstengahlink./interoperability.htmlbelakanglink.
+For more information, see [GigaSpaces.NET - Interoperability With Non .NET Applications](./interoperability.html).
 
 {% note title=AliasName and SqlQuery %}
-When using space SqlQuery on an object with properties which are aliased, the query text needs to use the aliased property names. For more information about SqlQuery, see depanlinkGigaSpaces.NET - Sql Querytengahlink./sqlquery.htmlbelakanglink.
+When using space SqlQuery on an object with properties which are aliased, the query text needs to use the aliased property names. For more information about SqlQuery, see [GigaSpaces.NET - Sql Query](./sqlquery.html).
 {% endnote %}
 
 
 # Persistency
 
-The space can be attached to an external data source and persist its classes through it. A certain class can be specified if it should be persisted or not. To do this, use the `\ajepaaaSpaceClass(Persist=true)\ajepbbb` or `\ajepaaaSpaceClass(Persist=false)\ajepbbb` class level attribute.
+The space can be attached to an external data source and persist its classes through it. A certain class can be specified if it should be persisted or not. To do this, use the `\[SpaceClass(Persist=true)\]` or `\[SpaceClass(Persist=false)\]` class level attribute.
 
 {% highlight java %}
 [SpaceClass(Persist=false)]
@@ -201,11 +201,11 @@ public class Person {...}
 {% endhighlight %}
 
 
-The default is `\ajepaaaSpaceClass(Persist=true)\ajepbbb`.
+The default is `\[SpaceClass(Persist=true)\]`.
 
 # Replication
 
-Some cluster toplogies have replication defined, which means that some or all of the data is replicated between the spaces. In this case, it can be specified whether each class should be replicated or not, by using the `\ajepaaaSpaceClass(Replicate=true)\ajepbbb` or `\ajepaaaSpaceClass(Replicate=false)\ajepbbb` class level attribute.
+Some cluster toplogies have replication defined, which means that some or all of the data is replicated between the spaces. In this case, it can be specified whether each class should be replicated or not, by using the `\[SpaceClass(Replicate=true)\]` or `\[SpaceClass(Replicate=false)\]` class level attribute.
 
 {% highlight java %}
 [SpaceClass(Replicate=false)]
@@ -213,11 +213,11 @@ public class Person {...}
 {% endhighlight %}
 
 
-The default is `\ajepaaaSpaceClass(Replicate=true)\ajepbbb`.
+The default is `\[SpaceClass(Replicate=true)\]`.
 
 # FIFO
 
-A class can be marked to operate in FIFO mode, which means that all the insert, removal and notification of this class should be done in First-in-First-out mode. It can be specified whether each class should operate in FIFO mode or not, by using the `\ajepaaaSpaceClass(Fifo=true)\ajepbbb` or `\ajepaaaSpaceClass(Fifo=false)\ajepbbb` class level attribute.
+A class can be marked to operate in FIFO mode, which means that all the insert, removal and notification of this class should be done in First-in-First-out mode. It can be specified whether each class should operate in FIFO mode or not, by using the `\[SpaceClass(Fifo=true)\]` or `\[SpaceClass(Fifo=false)\]` class level attribute.
 
 {% highlight java %}
 [SpaceClass(Fifo=true)]
@@ -225,4 +225,4 @@ public class Person {...}
 {% endhighlight %}
 
 
-The default is `\ajepaaaSpaceClass(Fifo=false)\ajepbbb`.
+The default is `\[SpaceClass(Fifo=false)\]`.

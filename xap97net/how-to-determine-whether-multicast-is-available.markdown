@@ -11,7 +11,7 @@ page_id: 64127791
 
 # Syntax
 
-`gs> admin multicastTest ajepaaavariableajepaaavariableajepbbbajepbbb`
+`gs> admin multicastTest [variable[variable]]`
 
 # Description
 
@@ -28,7 +28,7 @@ It is still possible that multicast does not work outside the tested host.
 
 {% tip %}
 Make sure your network and machines running GigaSpaces are configured to have multicast enabled.
-See the depanlinkHow to Configure Multicasttengahlink./how-to-configure-multicast.htmlbelakanglink section for details on how to enable multicast.
+See the [How to Configure Multicast](./how-to-configure-multicast.html) section for details on how to enable multicast.
 {% endtip %}
 
 
@@ -38,13 +38,13 @@ This multicast utility serves to check multicast communication between sender an
 
 
 {% tip %}
-For multi-homed network card machine use `multicastTest -sender -ba \ajepaaanetwork card IPajepbbb`.
+For multi-homed network card machine use `multicastTest -sender -ba \[network card IP]`.
 {% endtip %}
 
 
 
 {% tip %}
-To configure Jini in a multi network environment see the depanlinkMulti Network Card Configuration Sectiontengahlink/xap97/how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).htmlbelakanglink.
+To configure Jini in a multi network environment see the [Multi Network Card Configuration Section](/xap97/how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).html).
 {% endtip %}
 
 

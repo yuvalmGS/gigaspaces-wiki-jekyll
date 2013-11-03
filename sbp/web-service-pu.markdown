@@ -20,11 +20,11 @@ page_id: 56426564
 {rate}
 
 # Overview
-This example illustrates a simple web service packaged as a WAR using depanlinkApache CXFtengahlinkhttp://cxf.apache.orgbelakanglink 2.4. Web service is also interacting with a space and performing read and write operations on behalf of the client.
+This example illustrates a simple web service packaged as a WAR using [Apache CXF](http://cxf.apache.org) 2.4. Web service is also interacting with a space and performing read and write operations on behalf of the client.
 
 
 {% indent %}
-depanimageweb_service_pu.jpgtengahimage/attachment_files/sbp/web_service_pu.jpgbelakangimage
+![web_service_pu.jpg](/attachment_files/sbp/web_service_pu.jpg)
 {% endindent %}
 
 
@@ -32,7 +32,7 @@ For simplicity:
 - Space is collocated with the web service.
 - Example does not include HTTP Load balancer and Load balancer Agent.
 
-The example is based on the depanlinksampletengahlinkhttp://cxf.apache.org/docs/sample-projects.htmlbelakanglink found within the CXF package under the `\apache-cxf-2.4.0\samples\wsdl_first` folder. This sample shows how to build and call a web service using a given WSDL (also called Contract First).
+The example is based on the [sample](http://cxf.apache.org/docs/sample-projects.html) found within the CXF package under the `\apache-cxf-2.4.0\samples\wsdl_first` folder. This sample shows how to build and call a web service using a given WSDL (also called Contract First).
 
 # What the Sample Web Service is Doing?
 The web service performs the following space operations:
@@ -40,9 +40,9 @@ The web service performs the following space operations:
 - Read Customer objects from the space - See the `com.example.customerservice.server.CustomerServiceImpl.getCustomersByName (String name)`.
 
 # Running the Web Service
-1. Download the depanlinkWeb Service WAR filetengahlink/attachment_files/sbp/CustomerServicePort.warbelakanglink.
-2. Download the depanlinkWeb Service projecttengahlink/attachment_files/sbp/WebServicePU.zipbelakanglink. This includes the entire source code for the client and the web service.
-3. Setup the application project class path libraries. See the depanlinkClient Application Project jarstengahlink#Client Application Project jarsbelakanglink for details.
+1. Download the [Web Service WAR file](/attachment_files/sbp/CustomerServicePort.war).
+2. Download the [Web Service project](/attachment_files/sbp/WebServicePU.zip). This includes the entire source code for the client and the web service.
+3. Setup the application project class path libraries. See the [Client Application Project jars](#Client Application Project jars) for details.
 4. Start GigaSpaces agent.
 
 
@@ -64,7 +64,7 @@ gs deploy CustomerServicePort.war
 java com.example.customerservice.client.CustomerServiceClient
 {% endhighlight %}
 
-See the depanlinkThe Client Applicationtengahlink#The Client Applicationbelakanglink for details.
+See the [The Client Application](#The Client Application) for details.
 
 # Web Service Configuration
 The WAR file includes the web service configuration. It is placed within `\CustomerServicePort\WEB-INF\cxf-servlet.xml`.
@@ -150,7 +150,7 @@ The client application:
 - Call the `CustomerServiceImpl.getCustomersByName (String name)`.
 
 ## Running the Client
-You may test the web service using a client application running as a standalone Java application, Spring Application or via depanlinkSOAP UItengahlinkhttp://www.soapui.orgbelakanglink.
+You may test the web service using a client application running as a standalone Java application, Spring Application or via [SOAP UI](http://www.soapui.org).
 
 ### Standalone Java Application
 The `com.example.customerservice.client.CustomerServiceClient` can be used as a standalone Java application to invoke the service. Run the `main` to run the client:
@@ -184,17 +184,17 @@ All calls were successful
 
 
 ### SOAP UI
-You can use the depanlinkSOAP UItengahlinkhttp://www.soapui.orgbelakanglink to test the web service.
+You can use the [SOAP UI](http://www.soapui.org) to test the web service.
 Writing a Custmer object:
 
 {% indent %}
-depanimagesoap_ui1.jpgtengahimage/attachment_files/sbp/soap_ui1.jpgbelakangimage
+![soap_ui1.jpg](/attachment_files/sbp/soap_ui1.jpg)
 {% endindent %}
 
 Reading a Custmer object:
 
 {% indent %}
-depanimagesoap_ui2.jpgtengahimage/attachment_files/sbp/soap_ui2.jpgbelakangimage
+![soap_ui2.jpg](/attachment_files/sbp/soap_ui2.jpg)
 {% endindent %}
 
 
@@ -212,13 +212,13 @@ found 1 Customers matching the name:Smith
 When the client application running sucessfuly you will be able to see the Customer data within the space using the GS-UI.
 
 {% indent %}
-depanimageweb_serv_ui1.jpgtengahimage/attachment_files/sbp/web_serv_ui1.jpgbelakangimage
+![web_serv_ui1.jpg](/attachment_files/sbp/web_serv_ui1.jpg)
 {% endindent %}
 
 Click the Query button to view the Customer Data:
 
 {% indent %}
-depanimageweb_serv_ui2.jpgtengahimage/attachment_files/sbp/web_serv_ui2.jpgbelakangimage
+![web_serv_ui2.jpg](/attachment_files/sbp/web_serv_ui2.jpg)
 {% endindent %}
 
 

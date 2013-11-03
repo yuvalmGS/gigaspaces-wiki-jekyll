@@ -6,7 +6,7 @@ page_id: 63799407
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.
-|depanlinkBasic Componentstengahlink./terminology---basic-components.htmlbelakanglink||Data Grid Topologies|depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink|depanlinkRuntime Componentstengahlink./terminology---runtime-components.htmlbelakanglink|
+|[Basic Components](./terminology---basic-components.html)||Data Grid Topologies|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|
 
 # Data Grid
 
@@ -36,7 +36,7 @@ page_id: 63799407
 
 A set of space instances, typically running within their respective processing unit instances.
 The space instances are connected to each other to form a space cluster.
-The relations between the spaces define the depanlinkData Grid Topologytengahlink#Data Grid Topologybelakanglink.
+The relations between the spaces define the [Data Grid Topology](#Data Grid Topology).
 
 {% sub %}Key Sentence: A set of connected space instances holding objects form a space cluster{% endsub %}
 
@@ -45,7 +45,7 @@ The relations between the spaces define the depanlinkData Grid Topologytengahlin
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_populated_data_grid.giftengahimage/attachment_files/xap97net/term_populated_data_grid.gifbelakangimage
+![term_populated_data_grid.gif](/attachment_files/xap97net/term_populated_data_grid.gif)
 
 {% sub %}**A Data Grid with 3 Instances**{% endsub %}
 {% endalign %}
@@ -83,7 +83,7 @@ Operations that do not modify any data (e.g. read, count) are performed only on 
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_primary_backup_text_data_grid.giftengahimage/attachment_files/xap97net/term_primary_backup_text_data_grid.gifbelakangimage
+![term_primary_backup_text_data_grid.gif](/attachment_files/xap97net/term_primary_backup_text_data_grid.gif)
 
 {% sub %}**A Data Grid comprised of a primary instance with one backup instance**{% endsub %}
 {% endalign %}
@@ -108,14 +108,14 @@ depanimageterm_primary_backup_text_data_grid.giftengahimage/attachment_files/xap
 
 When the Data Grid needs to hold large amounts of data, it is possible to partition the data across multiple instances.
 Each Data Grid instance (partition) holds a different subset of the objects in the Data Grid.
-When the objects are written to this Data Grid, they are routed to the proper partition, according to a predefined property in the object that acts as the depanlinkroutingtengahlink#Routingbelakanglink index.
+When the objects are written to this Data Grid, they are routed to the proper partition, according to a predefined property in the object that acts as the [routing](#Routing) index.
 
 {% endcolumn %}
 
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_partitioned_data_grid.giftengahimage/attachment_files/xap97net/term_partitioned_data_grid.gifbelakangimage
+![term_partitioned_data_grid.gif](/attachment_files/xap97net/term_partitioned_data_grid.gif)
 
 {% sub %}**A Partitioned Data Grid with 3 Instances, each holding a different set objects**{% endsub %}
 
@@ -149,7 +149,7 @@ The routing is based on a designated property/field inside the objects that are 
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_routing.giftengahimage/attachment_files/xap97net/term_routing.gifbelakangimage
+![term_routing.gif](/attachment_files/xap97net/term_routing.gif)
 
 {% sub %}**Routing in a partitioned Data Grid with 3 instances**{% endsub %}
 
@@ -173,14 +173,14 @@ depanimageterm_routing.giftengahimage/attachment_files/xap97net/term_routing.gif
 
 #### Primary Backup Partitioned Data Grid
 
-A depanlinkpartitioned Data Gridtengahlink#Partitioned Data Gridbelakanglink, with one or more depanlinkbackuptengahlink#Primary Backup Data Gridbelakanglink instances for each partition. Each of the Data Grid instances (partitions) holds a different subset of the objects in the Data Grid, and replicates this subset to its backup instance/s.
+A [partitioned Data Grid](#Partitioned Data Grid), with one or more [backup](#Primary Backup Data Grid) instances for each partition. Each of the Data Grid instances (partitions) holds a different subset of the objects in the Data Grid, and replicates this subset to its backup instance/s.
 
 {% endcolumn %}
 
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_partitioned_primary_backup_data_grid.giftengahimage/attachment_files/xap97net/term_partitioned_primary_backup_data_grid.gifbelakangimage
+![term_partitioned_primary_backup_data_grid.gif](/attachment_files/xap97net/term_partitioned_primary_backup_data_grid.gif)
 
 {% sub %}**A Primary Backup Partitioned Data Grid: 2 partitions, each replicates to one backup instance**{% endsub %}
 
@@ -191,4 +191,4 @@ depanimageterm_partitioned_primary_backup_data_grid.giftengahimage/attachment_fi
 {% endsection %}
 
 
-|depanlinkBasic Componentstengahlink./terminology---basic-components.htmlbelakanglink||Data Grid Topologies|depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink|depanlinkRuntime Componentstengahlink./terminology---runtime-components.htmlbelakanglink|
+|[Basic Components](./terminology---basic-components.html)||Data Grid Topologies|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|

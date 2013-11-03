@@ -16,17 +16,17 @@ Date: August 2009
 {rate}
 
 # Overview
-The depanlinkMaster-Worker Patterntengahlinkhttp://books.google.com/books?id=9cV3TbahjW0C&pg=PA153&lpg=PA153&dq=JavaSpaces+Master-Worker+Pattern&source=bl&ots=1l_DQmEGNl&sig=IU2UTbG-xytamrby2r5yaJLnAkk&hl=en&ei=lm6RSo-dGJXjlAeYqOWjDA&sa=X&oi=book_result&ct=result&resnum=1#v=onepage&q=JavaSpaces%20Master-Worker%20Pattern&f=falsebelakanglink (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a `Master` and multiple `Workers`.
+The [Master-Worker Pattern](http://books.google.com/books?id=9cV3TbahjW0C&pg=PA153&lpg=PA153&dq=JavaSpaces+Master-Worker+Pattern&source=bl&ots=1l_DQmEGNl&sig=IU2UTbG-xytamrby2r5yaJLnAkk&hl=en&ei=lm6RSo-dGJXjlAeYqOWjDA&sa=X&oi=book_result&ct=result&resnum=1#v=onepage&q=JavaSpaces%20Master-Worker%20Pattern&f=false) (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a `Master` and multiple `Workers`.
 
 
 {% indent %}
-depanimagethe_master_worker.jpgtengahimage/attachment_files/sbp/the_master_worker.jpgbelakangimage
+![the_master_worker.jpg](/attachment_files/sbp/the_master_worker.jpg)
 {% endindent %}
 
 
 In GigaSpaces XAP, you can implement the Master-Worker pattern using several methods:
-- depanlinkTask Executorstengahlink./map-reduce-pattern---executors-example.htmlbelakanglink - best for a scenario where the processing activity is collocated with the data (the data is stored within the same space as the tasks being executed).
-- depanlinkPolling Containerstengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Containerbelakanglink - in this case the processing activity runs in a separate machine/VM from the space. This approach should be used when the processing activity consumes a relatively large amount of CPU and takes a large amount of time. It might also be relevant if the actual data required for the processing is not stored within the space, or the time it takes to retrieve the required data from the space is much shorter than the time it takes to complete the processing.
+- [Task Executors](./map-reduce-pattern---executors-example.html) - best for a scenario where the processing activity is collocated with the data (the data is stored within the same space as the tasks being executed).
+- [Polling Containers](http://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container) - in this case the processing activity runs in a separate machine/VM from the space. This approach should be used when the processing activity consumes a relatively large amount of CPU and takes a large amount of time. It might also be relevant if the actual data required for the processing is not stored within the space, or the time it takes to retrieve the required data from the space is much shorter than the time it takes to complete the processing.
 
 # Implementing Master-Worker in XAP using Polling Containers
 
@@ -38,13 +38,13 @@ When there is one space (with or without a backup) used by the `Master` and `Wor
 
 When running multiple `Workers`, processing is load-balanced across all the workers in an even manner. When there is a large amount of activity, you might need to run a partitioned space to allow the space layer to store a large number of `Request` objects (there will always be a small number of `Result` objects in the space), and to cope with a large number of `Workers`. This makes sure that your system can scale, and the space layer does not act as a bottleneck.
 
-When running the space in clustered partitioned mode, you cannot run the workers in blocking mode without assigning a value to the `Request` object routing field. The depanlinkDesignated Workers approachtengahlink#Example 2 - Designated Workersbelakanglink allows you to run the workers against a partitioned space, in blocking mode.
+When running the space in clustered partitioned mode, you cannot run the workers in blocking mode without assigning a value to the `Request` object routing field. The [Designated Workers approach](#Example 2 - Designated Workers) allows you to run the workers against a partitioned space, in blocking mode.
 
 The following sections include code samples and configuration that illustrate the Master-Worker implementation via Polling Containers, using the Random Workers and Designated Workers approach.
 
 
 {% tip %}
-We invite you to depanlinkdownloadtengahlink/attachment_files/sbp/MasterWorker.zipbelakanglink the code examples and configuration files used with this article.
+We invite you to [download](/attachment_files/sbp/MasterWorker.zip) the code examples and configuration files used with this article.
 {% endtip %}
 
 
@@ -58,7 +58,7 @@ With the Random Workers approach, each worker can consume `Request` objects from
 Step 1:
 
 {% indent %}
-depanimagemaster_worker_rr1.jpgtengahimage/attachment_files/sbp/master_worker_rr1.jpgbelakangimage
+![master_worker_rr1.jpg](/attachment_files/sbp/master_worker_rr1.jpg)
 {% endindent %}
 
 
@@ -70,7 +70,7 @@ depanimagemaster_worker_rr1.jpgtengahimage/attachment_files/sbp/master_worker_rr
 Step 2:
 
 {% indent %}
-depanimagemaster_worker_rr2.jpgtengahimage/attachment_files/sbp/master_worker_rr2.jpgbelakangimage
+![master_worker_rr2.jpg](/attachment_files/sbp/master_worker_rr2.jpg)
 {% endindent %}
 
 
@@ -309,7 +309,7 @@ With this approach, each new worker is assigned a specific ID and consumes `Requ
 Step 1:
 
 {% indent %}
-depanimagemaster_worker_de1.jpgtengahimage/attachment_files/sbp/master_worker_de1.jpgbelakangimage
+![master_worker_de1.jpg](/attachment_files/sbp/master_worker_de1.jpg)
 {% endindent %}
 
 
@@ -321,7 +321,7 @@ depanimagemaster_worker_de1.jpgtengahimage/attachment_files/sbp/master_worker_de
 Step 2:
 
 {% indent %}
-depanimagemaster_worker_de2.jpgtengahimage/attachment_files/sbp/master_worker_de2.jpgbelakangimage
+![master_worker_de2.jpg](/attachment_files/sbp/master_worker_de2.jpg)
 {% endindent %}
 
 
@@ -618,6 +618,6 @@ Deploying the Workers PU:
 
 
 # References
-- depanlinkJavaSpaces Principles, Patterns, and Practice: Chapter 11tengahlinkhttp://java.sun.com/developer/Books/JavaSpaces/chapter11.htmlbelakanglink
-- depanlinkBlog post:How to Implement my Processor? - The Polling Container Benchmarktengahlinkhttp://blog.gigaspaces.com/2008/10/03/how-to-implement-my-processor-the-polling-container-benchmarkbelakanglink
+- [JavaSpaces Principles, Patterns, and Practice: Chapter 11](http://java.sun.com/developer/Books/JavaSpaces/chapter11.html)
+- [Blog post:How to Implement my Processor? - The Polling Container Benchmark](http://blog.gigaspaces.com/2008/10/03/how-to-implement-my-processor-the-polling-container-benchmark)
 

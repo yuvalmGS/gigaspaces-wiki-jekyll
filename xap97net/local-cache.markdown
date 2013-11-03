@@ -42,8 +42,8 @@ public class Session
 
 
 Important properties:
-- The session has a `\ajepaaaSpaceID\ajepbbb` property, objects without `\ajepaaaSpaceID\ajepbbb` will not be stored in the local cache.
-- When working with the local cache, it is highly recommended to have a `\ajepaaaSpaceVersion\ajepbbb` property, otherwise Entries stored in the local cache might be of older version than the ones in the space, if they were updated not through the local cache.
+- The session has a `\[SpaceID\]` property, objects without `\[SpaceID\]` will not be stored in the local cache.
+- When working with the local cache, it is highly recommended to have a `\[SpaceVersion\]` property, otherwise Entries stored in the local cache might be of older version than the ones in the space, if they were updated not through the local cache.
 
 **Creating and using a local cache:**
 
@@ -98,7 +98,7 @@ Since the cache needs to investigate the template to decide whether it is consid
 
 The Entries stored in the local cache might need to be evicted at some point, due to size limitations, time limitations, etc. This behavior is determined by the eviction strategy the cache has been configured to work with. XAP.NET comes with a few built-in eviction strategies -- LRU (Last Recently Used), which is the default strategy, FIFO, LFU, and more. Eviction strategy is a pluggable component that can also be implemented with custom behavior.
 
-{% refer %}Refer to depanlinkCache Eviction Strategytengahlink./cache-eviction-strategy.htmlbelakanglink for more info.{% endrefer %}
+{% refer %}Refer to [Cache Eviction Strategy](./cache-eviction-strategy.html) for more info.{% endrefer %}
 
 {% anchor sync %}
 
@@ -106,11 +106,11 @@ The Entries stored in the local cache might need to be evicted at some point, du
 
 Once an Entry is loaded into the cache, it is kept synchronized with the remote space by registering for notifications for changes that affect Entries stored in the cache. The state of the internal local cache is updated according to these notifications. This synchronization is done asynchronously, behind the scenes.
 - This behavior can be turned of by setting the `SynchronizeWithRemoteSpace` configuration property to false.
-- When working with local cache, it is highly recommended to have a `\ajepaaaSpaceVersion\ajepbbb` property, otherwise Entries stored in the local cache may be of an older version than the ones in the space, if they were updated not through the local cache.
+- When working with local cache, it is highly recommended to have a `\[SpaceVersion\]` property, otherwise Entries stored in the local cache may be of an older version than the ones in the space, if they were updated not through the local cache.
 
 # Configuring the local cache
 
-The local cache can be configured before it is initialized, by supplying the constructor with a custom `IdBasedLocalCacheConfig` object. The most common configuration option is the depanlinkeviction strategytengahlink./cache-eviction-strategy.htmlbelakanglink.
+The local cache can be configured before it is initialized, by supplying the constructor with a custom `IdBasedLocalCacheConfig` object. The most common configuration option is the [eviction strategy](./cache-eviction-strategy.html).
 
 
 {% highlight java %}

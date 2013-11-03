@@ -16,7 +16,7 @@ If you would like to run the tutorial sample application, download GigaSpaces an
 
 {blank-line}
 {blank-line}
-{% align center %}depanlinkdepanimagebutton2.jpgtengahimage/attachment_files/xap97net/button2.jpgbelakangimagetengahlink./your-first-data-grid-application.htmlbelakanglink{% endalign %}
+{% align center %}[![button2.jpg](/attachment_files/xap97net/button2.jpg)](./your-first-data-grid-application.html){% endalign %}
 
 {% endcolumn %}
 
@@ -25,7 +25,7 @@ If you would like to run the tutorial sample application, download GigaSpaces an
 
 
 {blank-line}
-depanlink{% fontsize 20 %}Writing Your First Caching Application{% endfontsize %}tengahlink./your-first-data-grid-application.htmlbelakanglink
+[{% fontsize 20 %}Writing Your First Caching Application{% endfontsize %}](./your-first-data-grid-application.html)
 Create your first simple Hello World caching application
 
 {% endcolumn %}
@@ -42,7 +42,7 @@ Create your first simple Hello World caching application
 
 {blank-line}
 {blank-line}
-{% align center %}depanlinkdepanimagedataexamplesmall.jpgtengahimage/attachment_files/xap97net/dataexamplesmall.jpgbelakangimagetengahlink./your-first-xtp-application.htmlbelakanglink{% endalign %}
+{% align center %}[![dataexamplesmall.jpg](/attachment_files/xap97net/dataexamplesmall.jpg)](./your-first-xtp-application.html){% endalign %}
 
 {% endcolumn %}
 
@@ -51,7 +51,7 @@ Create your first simple Hello World caching application
 
 
 {blank-line}
-depanlink{fontsize20}The Full Space Based Architecture Example{fontsize20}tengahlink./your-first-xtp-application.htmlbelakanglink
+[{fontsize20}The Full Space Based Architecture Example{fontsize20}](./your-first-xtp-application.html)
 A kitchen sink demonstration of all the major features in GigaSpaces XAP.NET
 
 {% endcolumn %}

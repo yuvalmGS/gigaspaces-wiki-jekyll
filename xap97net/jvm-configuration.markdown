@@ -10,7 +10,7 @@ page_id: 63799320
 
 
 {% comment %}
-depanimageNewinXAP66.giftengahimage/attachment_files/xap97net/NewinXAP66.gifbelakangimage
+![NewinXAP66.gif](/attachment_files/xap97net/NewinXAP66.gif)
 {% endcomment %}
 
 
@@ -22,7 +22,7 @@ This page explains how to configure jvm settings for XAP.NET applications. In ge
 
 # Jvm Location
 
-GigaSpaces XAP.NET is bundled with depanlinkOracle JDK 7 update 17tengahlinkhttp://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.htmlbelakanglink, aiming to save .NET users the hassle of downloading and installing Java. However, it is quite simple to bind it to a different JVM (For a list of supported JVMs refer to depanlinkSupported Platformstengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/Supported+Platformsbelakanglink).
+GigaSpaces XAP.NET is bundled with [Oracle JDK 7 update 17](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html), aiming to save .NET users the hassle of downloading and installing Java. However, it is quite simple to bind it to a different JVM (For a list of supported JVMs refer to [Supported Platforms](http://wiki.gigaspaces.com/wiki/display/XAP95/Supported+Platforms)).
 
 If you haven't installed XAP.NET yet, you can instruct the installer to use an existing JVM:
 1. Start XAP.NET installation. Review and accept the license.
@@ -45,9 +45,9 @@ Many systems define an environment variable called JAVA_HOME which points to the
 
 # Jvm Settings
 
-Unlike .NET applications, which are compiled to executable files, java applications are compiled to `.class` or `.jar` files which are executed using the depanlinkJava Application Launchertengahlinkhttp://java.sun.com/javase/6/docs/technotes/tools/windows/java.htmlbelakanglink (`java.exe`) tool. This tool supports various options which control the way the application is executed, such as memory allocation, garbage collection and more.
+Unlike .NET applications, which are compiled to executable files, java applications are compiled to `.class` or `.jar` files which are executed using the [Java Application Launcher](http://java.sun.com/javase/6/docs/technotes/tools/windows/java.html) (`java.exe`) tool. This tool supports various options which control the way the application is executed, such as memory allocation, garbage collection and more.
 
-GigaSpaces XAP.NET tools and applications use depanlinkJava Native Interface (JNI)tengahlinkhttp://java.sun.com/javase/6/docs/technotes/guides/jni/index.htmlbelakanglink instead of `java.exe` to launch the JVM and execute java code, and use the Application Configuration File to load JVM settings.
+GigaSpaces XAP.NET tools and applications use [Java Native Interface (JNI)](http://java.sun.com/javase/6/docs/technotes/guides/jni/index.html) instead of `java.exe` to launch the JVM and execute java code, and use the Application Configuration File to load JVM settings.
 
 To configure JVM settings, add a `GigaSpaces` section to the application configuration file:
 
@@ -142,7 +142,7 @@ If `Mode` is set to `Custom`, the `<XapNet.Runtime.JavaHome>` is ignored, and th
 
 ## JvmClassPath
 
-The depanlinkclass pathtengahlinkhttp://java.sun.com/javase/6/docs/technotes/tools/windows/classpath.htmlbelakanglink is the path that Java searches for classes and other resource files. It is usually specified as a semicolon-separated list of paths. The `JvmSettings` offers a more readable solution in the form of `JvmClassPath`. The following examples are equivalent:
+The [class path](http://java.sun.com/javase/6/docs/technotes/tools/windows/classpath.html) is the path that Java searches for classes and other resource files. It is usually specified as a semicolon-separated list of paths. The `JvmSettings` offers a more readable solution in the form of `JvmClassPath`. The following examples are equivalent:
 
 {% highlight java %}
 java.exe -classpath C:\Foo;C:\Bar

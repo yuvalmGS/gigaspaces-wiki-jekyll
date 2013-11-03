@@ -6,7 +6,7 @@ page_id: 63799418
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.
-|depanlinkBasic Componentstengahlink./terminology---basic-components.htmlbelakanglink|depanlinkData Grid Topologiestengahlink./terminology---data-grid-topologies.htmlbelakanglink|depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink||Runtime Components|
+|[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)||Runtime Components|
 
 # GigaSpaces Runtime and Administration Components
 
@@ -34,7 +34,7 @@ page_id: 63799418
 
 {% column width=50% %}
 
-A container that hosts a depanlinkProcessing Unittengahlink./terminology---basic-components.html#Processing Unitbelakanglink.
+A container that hosts a [Processing Unit](./terminology---basic-components.html#Processing Unit).
 
 {% sub %}Key sentence: The Processing Unit can run only inside a hosting Processing Unit Container.{% endsub %}
 
@@ -42,7 +42,7 @@ A container that hosts a depanlinkProcessing Unittengahlink./terminology---basic
 
 {% column width=30% %}
 
-{% align center %}depanimageterm_puc.giftengahimage/attachment_files/xap97net/term_puc.gifbelakangimage
+{% align center %}![term_puc.gif](/attachment_files/xap97net/term_puc.gif)
 
 {% sub %}**A Processing Unit Container**{% endsub %}
 {% endalign %}
@@ -75,7 +75,7 @@ A container that runs the Processing Unit inside an IDE (e.g. Visual Studio, Ecl
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_ipuc.giftengahimage/attachment_files/xap97net/term_ipuc.gifbelakangimage
+![term_ipuc.gif](/attachment_files/xap97net/term_ipuc.gif)
 
 {% sub %}**An Intgrated Processing Unit Container running a Processing Unit**{% endsub %}
 {% sub %}**inside an IDE**{% endsub %}
@@ -99,15 +99,15 @@ depanimageterm_ipuc.giftengahimage/attachment_files/xap97net/term_ipuc.gifbelaka
 
 #### Service Grid Processing Unit Container (AKA SLA Driven Container)
 
-A Processing Unit Container which runs within a depanlinkGrid Service Containertengahlink#GSCbelakanglink.
-It enables running the processing unit within a depanlinkservice gridtengahlink#Service Gridbelakanglink, which provides self-healing and SLA capabilities to components deployed on it.
+A Processing Unit Container which runs within a [Grid Service Container](#GSC).
+It enables running the processing unit within a [service grid](#Service Grid), which provides self-healing and SLA capabilities to components deployed on it.
 
 {% endcolumn %}
 
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_gscnet.giftengahimage/attachment_files/xap97net/term_gscnet.gifbelakangimage
+![term_gscnet.gif](/attachment_files/xap97net/term_gscnet.gif)
 
 {% sub %}**A Service Grid Processing Unit Container running a Processing Unit**{% endsub %}
 {% sub %}**inside an IDE**{% endsub %}
@@ -134,8 +134,8 @@ depanimageterm_gscnet.giftengahimage/attachment_files/xap97net/term_gscnet.gifbe
 # Service Grid
 
 
-A set of depanlinkGrid Service Containers (GSC)tengahlink#GSCbelakanglink managed by a depanlinkGrid Service Manager (GSM)tengahlink#GSMbelakanglink.
-The containers host various deployments of depanlinkProcessing Unitstengahlink./terminology---basic-components.html#Processing Unitbelakanglink, depanlinkData Gridtengahlink./terminology---data-grid-topologies.htmlbelakanglink.
+A set of [Grid Service Containers (GSC)](#GSC) managed by a [Grid Service Manager (GSM)](#GSM).
+The containers host various deployments of [Processing Units](./terminology---basic-components.html#Processing Unit), [Data Grid](./terminology---data-grid-topologies.html).
 Each container can be run on a separate physical machine.
 
 {% sub %}Key sentence: A set of managed containers hosting Processing Unit Deployments{% endsub %}
@@ -148,7 +148,7 @@ Each container can be run on a separate physical machine.
 
 
 
-{% align center %}depanimageterm_empty_service_grid.giftengahimage/attachment_files/xap97net/term_empty_service_grid.gifbelakangimage
+{% align center %}![term_empty_service_grid.gif](/attachment_files/xap97net/term_empty_service_grid.gif)
 
 {% sub %}**A Service Grid composed of a Grid Service Manager which manages 3 Grid Service Containers**{% endsub %}
 {% endalign %}
@@ -171,8 +171,8 @@ Each container can be run on a separate physical machine.
 
 #### Grid Service Container (GSC)
 
-A depanlinkService Gridtengahlink#Service Gridbelakanglink component which hosts depanlinkProcessing Unittengahlink./terminology---basic-components.html#Processing Unitbelakanglink instances.
-A machine can run one or more GSC processes. Each GSC communicates with a manager component (depanlinkGSMtengahlink#GSMbelakanglink). The GSC receives requests to start/stop a processing unit instance, and sends information about the machine which runs it (OS, processor architecture, current memory and CPU stats), the software installed on it and the status of processing unit instances currently running on it.
+A [Service Grid](#Service Grid) component which hosts [Processing Unit](./terminology---basic-components.html#Processing Unit) instances.
+A machine can run one or more GSC processes. Each GSC communicates with a manager component ([GSM](#GSM)). The GSC receives requests to start/stop a processing unit instance, and sends information about the machine which runs it (OS, processor architecture, current memory and CPU stats), the software installed on it and the status of processing unit instances currently running on it.
 
 {% sub %}Key sentence: A set of managed containers hosting different Processing Unit Instances{% endsub %}
 
@@ -180,7 +180,7 @@ A machine can run one or more GSC processes. Each GSC communicates with a manage
 
 {% column width=30% %}
 
-{% align center %}depanimageterm_gsc.jpgtengahimage/attachment_files/xap97net/term_gsc.jpgbelakangimage
+{% align center %}![term_gsc.jpg](/attachment_files/xap97net/term_gsc.jpg)
 
 {% sub %}**Grid Service Container**{% endsub %}
 {% endalign %}
@@ -203,7 +203,7 @@ A machine can run one or more GSC processes. Each GSC communicates with a manage
 
 #### Grid Service Manager (GSM)
 
-A depanlinkService Gridtengahlink#Service Gridbelakanglink component which manages a set of depanlinkGrid Service Containers (GSC)tengahlink#GSCbelakanglink.
+A [Service Grid](#Service Grid) component which manages a set of [Grid Service Containers (GSC)](#GSC).
 A GSM has an API for deploying/undeploying processing units. When a GSM is instructed to deploy a Processing Unit, it allocates an appropriate, available GSC and tells that GSC to run an instance of that processing unit. It then continues to monitor that the GSC is alive and the SLA is not breached.
 
 {% sub %}Key sentence: A GSM manages all the running containers in the network and deploys processing units to them.{% endsub %}
@@ -212,7 +212,7 @@ A GSM has an API for deploying/undeploying processing units. When a GSM is instr
 
 {% column width=30% %}
 
-{% align center %}depanimageterm_gsm.giftengahimage/attachment_files/xap97net/term_gsm.gifbelakangimage
+{% align center %}![term_gsm.gif](/attachment_files/xap97net/term_gsm.gif)
 
 {% sub %}**Grid Service Manager**{% endsub %}
 {% endalign %}
@@ -245,7 +245,7 @@ Enables the user to view and interact with the runtime components running in the
 {% column width=30% %}
 
 
-{% align center %}depanimageterm_management_ui.giftengahimage/attachment_files/xap97net/term_management_ui.gifbelakangimage
+{% align center %}![term_management_ui.gif](/attachment_files/xap97net/term_management_ui.gif)
 
 {% sub %}**Management UI Console**{% endsub %}
 {% endalign %}
@@ -256,4 +256,4 @@ Enables the user to view and interact with the runtime components running in the
 
 
 
-|depanlinkBasic Componentstengahlink./terminology---basic-components.htmlbelakanglink|depanlinkData Grid Topologiestengahlink./terminology---data-grid-topologies.htmlbelakanglink|depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink||Runtime Components|
+|[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)||Runtime Components|

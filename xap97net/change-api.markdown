@@ -13,7 +13,7 @@ page_id: 63799419
 The `ISpaceProxy.Change` and the `ChangeSet` allows updating existing objects in space, by specifying only the required change instead of passing the entire updated object. Thus reducing required network traffic between the client and the space, and the network traffic generated from replicating the changes between the space instances (e.g between the primary space instance and its backup). Moreover, using this API also can prevent the need of reading the existing object prior to the change operation because the change operation can specify how to change the existing property without knowing its current value. For instance, implementing atomic counters can be done by increasing a counter property of an integer property by some delta. Another example would be to add a value to a collection and so on.
 The change API supports transactions in the same way the other space operation supports it.
 
-depanimagechange-api.jpgtengahimage/attachment_files/xap97net/change-api.jpgbelakangimage
+![change-api.jpg](/attachment_files/xap97net/change-api.jpg)
 
 # Basic Usage Example
 
@@ -30,7 +30,7 @@ space.Change(idQuery, new ChangeSet().Increment("Count", 1));
 
 # The Query Template
 
-The change operation may receive any depanlinkquery templatetengahlink./querying-the-space.htmlbelakanglink for matching a single or multiple objects that needs to be changed by the operation.
+The change operation may receive any [query template](./querying-the-space.html) for matching a single or multiple objects that needs to be changed by the operation.
 
 # The Change Set
 
@@ -73,7 +73,7 @@ space.Change(idQuery, new ChangeSet().Increment("Balance.Euro", 5.2D));
 ## Change Path Specification
 
 Each operation in the change set acts on a specified string path. This path points to the property that needs to be changed and it has the following semantic:
-1. **First level property** - A path with no '.' character in it points to a first level property, If the property specified by this path is not part of the Object it will be treated as a dynamic property (see depanlinkDynamic Propertiestengahlink./dynamic-properties.htmlbelakanglink) if the object does not support dynamic properties, an exception will be generated.
+1. **First level property** - A path with no '.' character in it points to a first level property, If the property specified by this path is not part of the Object it will be treated as a dynamic property (see [Dynamic Properties](./dynamic-properties.html)) if the object does not support dynamic properties, an exception will be generated.
 2. **Nested property** - A path that contains '.' character is considered a path to a nested property, the location process of the final property which needs to be changed is done recursively by activating the properties, specified by the split of the path using the '.' character, one at a time until reaching the targeted end property.
 3. **Nested Dictionary property** - A path that contains '.' may also point to keys inside a dictionary as, meaning the following path - 'Attributes.Color' will look for key named 'Color' if the property named 'Attribute' in the object is actually a dictionary. This affects nested properties as well.
 
@@ -117,7 +117,7 @@ In this case the key euro inside the dictionary behind the balance will be incre
 
 # Using Change with the Embedded model
 
-With the depanlinkembedded modeltengahlink./modeling-your-data.html#Embedded vs. Non-Embedded Relationshipsbelakanglink, updating (as well adding or removing) a nested collection with large number of elements **must use the change API** since the default behavior would be to replicate the entire space object and its nested collection elements from the primary to the backup (or other replica primary copies when using the sync-replicate or the async-replicated cluster schema). The Change API reduces the CPU utilization at the primary side, reduce the serialization overhead and reduce the garbage collection activity both at the primary and backup. This improves the overall system stability significantly.
+With the [embedded model](./modeling-your-data.html#Embedded vs. Non-Embedded Relationships), updating (as well adding or removing) a nested collection with large number of elements **must use the change API** since the default behavior would be to replicate the entire space object and its nested collection elements from the primary to the backup (or other replica primary copies when using the sync-replicate or the async-replicated cluster schema). The Change API reduces the CPU utilization at the primary side, reduce the serialization overhead and reduce the garbage collection activity both at the primary and backup. This improves the overall system stability significantly.
 
 # Change Result
 
@@ -162,7 +162,7 @@ if (changeResult.NumberOfChangedEntries == 0)
 
 The `IChangeResult` contains the `NumberOfChangedEntries` which specifies how many objects where changed by this operation where 0 means none were changed. The `Results` property gives further details about the objects that were actually changes by providing a collection which gives details for each of the objects that were changed, such as their id and version after the change took affect. By default, in order to reduce network overhead, calling the Results will throw `NotSupportedException`. In order to get the more detailed result, the `ChangeModifiers.ReturnDetailedResults` should be passed to the `Change` operation.
 
-{% refer %}For more information please refer to depanlinkChange API Advancedtengahlink./change-api-advanced.htmlbelakanglink{% endrefer %}
+{% refer %}For more information please refer to [Change API Advanced](./change-api-advanced.html){% endrefer %}
 
 # ChangeException
 
@@ -269,7 +269,7 @@ catch(ChangeException e)
 
 # Change and Optimistic Locking
 
-The `Change` operation has the same semantics as regular space `Update` operation when it comes to depanlinkOptimistic Lockingtengahlink/xap97/optimistic-locking.htmlbelakanglink. It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
+The `Change` operation has the same semantics as regular space `Update` operation when it comes to [Optimistic Locking](/xap97/optimistic-locking.html). It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
 
 
 {% highlight java %}
@@ -317,7 +317,7 @@ will propagate to the underlying external data source.
 
 # Change Extension
 
-See depanlinkChange Extensiontengahlink./change-extension.htmlbelakanglink which provide utility methods for common usage patterns.
+See [Change Extension](./change-extension.html) which provide utility methods for common usage patterns.
 
 # Considerations
 

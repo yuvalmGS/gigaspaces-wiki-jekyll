@@ -20,12 +20,12 @@ page_id: 53379091
 {rate}
 
 # Overview
-GigaSpaces Data-Grid support standard data access API. One of them is the depanlinkJDBC Drivertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/JDBC+Driverbelakanglink. Using the JDBC API and ODBC-JDBC bridge such as the one comes from depanlinkOpen Link Softwaretengahlinkhttp://uda.openlinksw.combelakanglink, you can use standard ODBC API to access the GigaSpaces Data-Grid.
+GigaSpaces Data-Grid support standard data access API. One of them is the [JDBC Driver](http://wiki.gigaspaces.com/wiki/display/XAP8/JDBC+Driver). Using the JDBC API and ODBC-JDBC bridge such as the one comes from [Open Link Software](http://uda.openlinksw.com), you can use standard ODBC API to access the GigaSpaces Data-Grid.
 
 # GigaSpaces Installation
 - You can download Gigaspaces java version from http://www.gigaspaces.com/LatestProductVersion.
 - Unzip the downloaded file into a directory on your local machine. (Note: make sure the directory path does not have any spaces). This directory will be referred as <GigaSpaces root> in further instructions.
-- Download and install the latest version of depanlinkJava JDKtengahlinkhttp://java.sun.com/javase/downloads/widget/jdk6.jspbelakanglink.
+- Download and install the latest version of [Java JDK](http://java.sun.com/javase/downloads/widget/jdk6.jsp).
 - Set a `JAVA_HOME` variable to the path where you have installed the JDK.
 
 # GigaSpaces Configuration
@@ -34,7 +34,7 @@ GigaSpaces Data-Grid support standard data access API. One of them is the depanl
 
 # Create a new user
 Create a new user "user" and password "password" and grant it all access privileges.
-See depanlinkGigaSpaces Management Center Securitytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/GigaSpaces+Management+Center+(UI)+Securitybelakanglink for instructions.
+See [GigaSpaces Management Center Security](http://wiki.gigaspaces.com/wiki/display/XAP8/GigaSpaces+Management+Center+(UI)+Security) for instructions.
 
 # Deploy a Secured Space
 - Click  the  "Deploy In-Memory Data Grid" button (top left, second button) in the UI.

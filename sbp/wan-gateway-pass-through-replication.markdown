@@ -22,7 +22,7 @@ page_id: 59441985
 
 The WAN Gateway allows for the implementation of a pass-through replication topology across clusters of space instances. In this architecture, a site may act as an intermediary for delegating replication requests across two or more other sites. For instance, given three clusters in New York, London, and Hong Kong, there might be bandwidth or connectivity issues between Hong Kong and New York, thereby requiring London to be used as a pass through site. Such replication behavior may be specified through the use of the indirect delegation feature. The sample processing units and configuration provided below are intended as an example of implementing a pass through topology across three sites: New York (US), London (GB), and Hong Kong (HK) where each site has an independent cluster and a Gateway.
 
-depanimageWAN_passthrough.jpgtengahimage/attachment_files/sbp/WAN_passthrough.jpgbelakangimage
+![WAN_passthrough.jpg](/attachment_files/sbp/WAN_passthrough.jpg)
 
 The demo is configured to start three space instances across three clusters. While the three clusters run on your local machine, they are demarcated by zones and different lookup service ports as follows:
 
@@ -37,7 +37,7 @@ The demo is configured to start three space instances across three clusters. Whi
 
 
 The internal architecture of the setup includes a clustered space and a Gateway, where each Gateway includes a Delegator and a Sink (click the thumbnail to enlarge):
-depanimageWAN_passthrough_arch.jpgtengahimage/attachment_files/sbp/WAN_passthrough_arch.jpgbelakangimage
+![WAN_passthrough_arch.jpg](/attachment_files/sbp/WAN_passthrough_arch.jpg)
 
 As a result of indirect delegation, the following scenario will take place once updates are written to the New York space:
 
@@ -284,11 +284,11 @@ The pass-through topology configuration is implemented through delegators across
 
 
 # Installing and Running the Example
-1. Download the depanlinkWAN_Replication_PassThrough.ziptengahlink/attachment_files/sbp/WAN_Replication_PassThrough.zipbelakanglink. It includes two folders: **deploy** and **scripts**.
+1. Download the [WAN_Replication_PassThrough.zip](/attachment_files/sbp/WAN_Replication_PassThrough.zip). It includes two folders: **deploy** and **scripts**.
 2. Please extract the file and and copy the content of the **deploy** folder into `\<GIGASPACES_HOME>\deploy` folder.
 3. Extract the `scripts` folder to an arbitrary location and edit the `setExampleEnv.bat/sh` script to include correct values for `NIC_ADDR` as the machine IP and `JSHOMEDIR` as the GigaSpaces root folder location.
 
-The `scripts` folder contains the necessary scripts to start the depanlinkGrid Service Agenttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agentbelakanglink for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:
+The `scripts` folder contains the necessary scripts to start the [Grid Service Agent](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agent) for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:
 1. Run `startAgent-GB.bat/sh` or to start GB site.
 2. Run `startAgent-HK.bat/sh` to start HK site.
 3. Run `startAgent-US.bat/sh` to start US site.
@@ -297,24 +297,24 @@ The `scripts` folder contains the necessary scripts to start the depanlinkGrid S
 # Viewing the Clusters
 - Start the GigaSpaces Management Center and configure the appropriate lookup groups through the "Group Management" dialog.
 - Once all clusters are up and running, you will need to enable the relative groups:
-depanimagegroup_management_dialog.jpgtengahimage/attachment_files/sbp/group_management_dialog.jpgbelakangimage
+![group_management_dialog.jpg](/attachment_files/sbp/group_management_dialog.jpg)
 
 Check to enable all three advertised groups for each site:
-depanimagegroups_selection_dialog.jpgtengahimage/attachment_files/sbp/groups_selection_dialog.jpgbelakangimage
+![groups_selection_dialog.jpg](/attachment_files/sbp/groups_selection_dialog.jpg)
 
 As a result, you should see the service grid components for each site displayed under the "Hosts" tree as follows:
-depanimageservice_grid.jpgtengahimage/attachment_files/sbp/service_grid.jpgbelakangimage
+![service_grid.jpg](/attachment_files/sbp/service_grid.jpg)
 
 Once The deployAll.bat/sh script finishes running, you should be able to see all three sites deployed as follows:
-depanimagepu_deployments.jpgtengahimage/attachment_files/sbp/pu_deployments.jpgbelakangimage
+![pu_deployments.jpg](/attachment_files/sbp/pu_deployments.jpg)
 
 # Testing Pass Through Replication
-You can test the setup by using the depanlinkbenchmark utilitytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Benchmark+View+-+GigaSpaces+Browserbelakanglink comes with the GS-UI. Select one of the HK or US Benchmark icons and click Start to begin writing objects to the space:
-depanimagespace_write.jpgtengahimage/attachment_files/sbp/space_write.jpgbelakangimage
+You can test the setup by using the [benchmark utility](http://wiki.gigaspaces.com/wiki/display/XAP91/Benchmark+View+-+GigaSpaces+Browser) comes with the GS-UI. Select one of the HK or US Benchmark icons and click Start to begin writing objects to the space:
+![space_write.jpg](/attachment_files/sbp/space_write.jpg)
 
 Click the Spaces icon on the Space Browser Tab to get a global view of all spaces. As objects are being written, you should see replication occurring across both HK and US sites until there are 5000 objects in each space. Notice that since the GB site is a pass through, the object count should remain zero:
-depanimagespace_object_count.jpgtengahimage/attachment_files/sbp/space_object_count.jpgbelakangimage
+![space_object_count.jpg](/attachment_files/sbp/space_object_count.jpg)
 
 You can also utilize the Take operation and click Start to remove objects from either the HK or US space. As a result, you will see the object count reaching zero across both HK and US as the pass through replication is taking place:
-depanimageobject_count_zero.jpgtengahimage/attachment_files/sbp/object_count_zero.jpgbelakangimage
+![object_count_zero.jpg](/attachment_files/sbp/object_count_zero.jpg)
 

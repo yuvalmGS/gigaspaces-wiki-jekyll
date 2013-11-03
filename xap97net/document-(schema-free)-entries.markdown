@@ -12,9 +12,9 @@ page_id: 63799391
 
 # Overview
 
-depanimagenew-in-801-banner.pngtengahimage/attachment_files/xap97net/new-in-801-banner.pngbelakangimage
+![new-in-801-banner.png](/attachment_files/xap97net/new-in-801-banner.png)
 
-The GigaSpaces document API exposes the space as depanlinkDocument Storetengahlinkhttp://en.wikipedia.org/wiki/Document-oriented_databasebelakanglink. A document, which is represented by the class `SpaceDocument`, is essentially a collection of key-value pairs, where the keys are strings and the values are primitives, `String`, `Date`, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
+The GigaSpaces document API exposes the space as [Document Store](http://en.wikipedia.org/wiki/Document-oriented_database). A document, which is represented by the class `SpaceDocument`, is essentially a collection of key-value pairs, where the keys are strings and the values are primitives, `String`, `Date`, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
 
 Unlike concrete objects, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic - users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the interface `ISpaceTypeDescriptor`.
 
@@ -174,7 +174,7 @@ public SpaceDocument ReadProductByTemplate(ISpaceProxy spaceProxy)
 
 ## Sql Query
 
-You can use the depanlinkSqlQuerytengahlink./sqlquery.htmlbelakanglink to search for matching `SpaceDocument` entries.
+You can use the [SqlQuery](./sqlquery.html) to search for matching `SpaceDocument` entries.
 
 For example: to read a document of type **Product** whose **Price** is greater than 15:
 
@@ -252,15 +252,15 @@ The `Document` properties' values can be either scalars (integers, strings, enum
 
 # Indexing
 
-Properties and nested paths can be depanlinkindexedtengahlink./indexing.htmlbelakanglink to boost queries performance. In the type registration sample above, the **Name** and **Price** properties are indexed.
+Properties and nested paths can be [indexed](./indexing.html) to boost queries performance. In the type registration sample above, the **Name** and **Price** properties are indexed.
 
 Since the schema is flexible and new properties might be added after the type has been registered, it is possible to add indexes dynamically as well.
 
-{% refer %}For more information about indexing, see the depanlinkIndexingtengahlink./indexing.htmlbelakanglink page.{% endrefer %}
+{% refer %}For more information about indexing, see the [Indexing](./indexing.html) page.{% endrefer %}
 
 # Events
 
-Event containers (both depanlinkpolling containertengahlink./polling-container-component.htmlbelakanglink and depanlinknotify containertengahlink./notify-container-component.htmlbelakanglink) support `SpaceDocument` entries.
+Event containers (both [polling container](./polling-container-component.html) and [notify container](./notify-container-component.html)) support `SpaceDocument` entries.
 
 Here is a simple example of a polling event container configuration using a `SpaceDocument`:
 
@@ -351,7 +351,7 @@ spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
 
-{% refer %}For more info on storage types, please refer to depanlinkProperty Storage Typetengahlink./property-storage-type.htmlbelakanglink{% endrefer %}
+{% refer %}For more info on storage types, please refer to [Property Storage Type](./property-storage-type.html){% endrefer %}
 
 # Persistency
 

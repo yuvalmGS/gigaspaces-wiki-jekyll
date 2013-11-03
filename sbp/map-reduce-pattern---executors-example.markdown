@@ -22,20 +22,20 @@ page_id: 49414729
 
 # Overview
 
-The depanlinkMap-Reducetengahlinkhttp://en.wikipedia.org/wiki/MapReducebelakanglink pattern is a popular pattern used in distributed systems to process data in parallel. This depanlinkexampletengahlink/attachment_files/sbp/ExecutorExample.zipbelakanglink illustrates the usage of depanlinkExecutors Remotingtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Executor+Based+Remotingbelakanglink (Service Executors) and [Task Executors|XAP8:Task Execution over the Space] to execute your business logic on a remote process that is collocated with a space in a parallel manner.
+The [Map-Reduce](http://en.wikipedia.org/wiki/MapReduce) pattern is a popular pattern used in distributed systems to process data in parallel. This [example](/attachment_files/sbp/ExecutorExample.zip) illustrates the usage of [Executors Remoting](http://wiki.gigaspaces.com/wiki/display/XAP8/Executor+Based+Remoting) (Service Executors) and [Task Executors|XAP8:Task Execution over the Space] to execute your business logic on a remote process that is collocated with a space in a parallel manner.
 
-- The depanlinkExecutors Remotingtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Executor+Based+Remotingbelakanglink should be used when you would like to export service method(s) for remote clients to be invoked.
-- The depanlinkTask Executorstengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Task+Execution+over+the+Spacebelakanglink should be used when you would like to transport business logic to the server side to be executed remotely.
+- The [Executors Remoting](http://wiki.gigaspaces.com/wiki/display/XAP8/Executor+Based+Remoting) should be used when you would like to export service method(s) for remote clients to be invoked.
+- The [Task Executors](http://wiki.gigaspaces.com/wiki/display/XAP8/Task+Execution+over+the+Space) should be used when you would like to transport business logic to the server side to be executed remotely.
 
 In both cases, the business logic will be invoked with a collocated space.
 
 # Installing the Example
 
-1. Download the depanlinkexampletengahlink/attachment_files/sbp/ExecutorExample.zipbelakanglink and extract the zip file. Open your IDE and import the project files.
+1. Download the [example](/attachment_files/sbp/ExecutorExample.zip) and extract the zip file. Open your IDE and import the project files.
 2. Set the project libraries to have the correct GigaSpaces libraries location. Make sure your project libraries list will include all the libraries located at `gigaspaces-xap\lib\required`.
 
 {% indent %}
-depanimageproject_libraries.jpgtengahimage/attachment_files/sbp/project_libraries.jpgbelakangimage
+![project_libraries.jpg](/attachment_files/sbp/project_libraries.jpg)
 {% endindent %}
 
 
@@ -45,9 +45,9 @@ depanimageproject_libraries.jpgtengahimage/attachment_files/sbp/project_librarie
 The example will illustrate a simple map-reduce implementation.
 
 A client writing some Account objects into the Data Grid. Later it will calculate the average balance for all the Accounts via a `DistributedTask` that is sent to each partition to be executed:
-depanimageDistributedTaskExecution_phase1.jpgtengahimage/attachment_files/sbp/DistributedTaskExecution_phase1.jpgbelakangimage
+![DistributedTaskExecution_phase1.jpg](/attachment_files/sbp/DistributedTaskExecution_phase1.jpg)
 The Task will read all the Account objects at the collocated partition and calculate the average balance for these objects and return the result back to the client. The results sent from each partition back to the client will be aggregated (via the `DistributedTask` reducer implementation at the client side) and the final result will be displayed.
-depanimageDistributedTaskExecution_phase2.jpgtengahimage/attachment_files/sbp/DistributedTaskExecution_phase2.jpgbelakangimage
+![DistributedTaskExecution_phase2.jpg](/attachment_files/sbp/DistributedTaskExecution_phase2.jpg)
 
 The example code will have the following implemented:
 - Task
@@ -152,8 +152,8 @@ public void onResult(AsyncResult<Integer> result) {
 ### Deploying the Space
 Using IDE:
 Set your IDe to have the Following:
-depanimageexec_ide1.jpgtengahimage/attachment_files/sbp/exec_ide1.jpgbelakangimage
-depanimageexec_ide2.jpgtengahimage/attachment_files/sbp/exec_ide2.jpgbelakangimage
+![exec_ide1.jpg](/attachment_files/sbp/exec_ide1.jpg)
+![exec_ide2.jpg](/attachment_files/sbp/exec_ide2.jpg)
 Click **Run**. This will start the clustered space within your IDE.
 
 Using CLI:
@@ -255,7 +255,7 @@ Log file: C:\gigaspaces-xap-premium-7.1.2-ga\logs\2010-12-17~14.14-gigaspaces-se
 You can view the space operations statistics by running the `\gigaspaces-xap\bin\gs-ui`:
 
 {% indent %}
-depanimageexe_example_stats.jpgtengahimage/attachment_files/sbp/exe_example_stats.jpgbelakangimage
+![exe_example_stats.jpg](/attachment_files/sbp/exe_example_stats.jpg)
 {% endindent %}
 
 {% endtoczone %}
@@ -264,9 +264,9 @@ depanimageexe_example_stats.jpgtengahimage/attachment_files/sbp/exe_example_stat
 
 {% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 The example will have a clustered space with a collocated service running. A client will be invoking the service:
-depanimageExecutor1.jpgtengahimage/attachment_files/sbp/Executor1.jpgbelakangimage
+![Executor1.jpg](/attachment_files/sbp/Executor1.jpg)
 The results created at each partition will be sent to the client. These will be aggregated via the reducer implementation at the client side and displayed:
-depanimageExecutor2.jpgtengahimage/attachment_files/sbp/Executor2.jpgbelakangimage
+![Executor2.jpg](/attachment_files/sbp/Executor2.jpg)
 
 This example illustrates simple Service Executors usage in **Synchronous** mode and **Asynchronous** mode.
 Your code should have the following implemented:
@@ -427,8 +427,8 @@ System.out.println(new Time(System.currentTimeMillis()) + " - Client got Result:
 ### Deploying the Space and Services
 Using IDE:
 Set your IDe to have the Following:
-depanimageexec_ide1.jpgtengahimage/attachment_files/sbp/exec_ide1.jpgbelakangimage
-depanimageexec_ide2.jpgtengahimage/attachment_files/sbp/exec_ide2.jpgbelakangimage
+![exec_ide1.jpg](/attachment_files/sbp/exec_ide1.jpg)
+![exec_ide2.jpg](/attachment_files/sbp/exec_ide2.jpg)
 Click **Run**. This will start the clustered space and the Services within your IDE.
 
 Using CLI:
@@ -518,7 +518,7 @@ Log file: C:\gigaspaces-xap-premium-7.1.2-ga\logs\2010-12-17~14.12-gigaspaces-se
 You can view the space operations statistics by running the `\gigaspaces-xap\bin\gs-ui`:
 
 {% indent %}
-depanimageexe_example_stats.jpgtengahimage/attachment_files/sbp/exe_example_stats.jpgbelakangimage
+![exe_example_stats.jpg](/attachment_files/sbp/exe_example_stats.jpg)
 {% endindent %}
 
 {% endtoczone %}

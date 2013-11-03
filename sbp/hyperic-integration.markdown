@@ -7,19 +7,19 @@ page_id: 57212965
 
 # Overview
 
-depanlinkHyperictengahlinkhttp://www.hyperic.com/belakanglink is a global monitoring system and this page describes a quick GigaSpaces integration that I made during a consulting session.
+[Hyperic](http://www.hyperic.com/) is a global monitoring system and this page describes a quick GigaSpaces integration that I made during a consulting session.
 The plugin uses the GigaSpaces Admin API to perform the monitoring of a global system.
 The plugin is offered as open source as part of OpenSpaces community.
 
 # Installation
 
-As the GigaSpaces plugin uses the depanlinkAdministration and Monitoring APItengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+APIbelakanglink (a.k.a. Admin API) a single Hyperic agent will be used to monitor the whole cluster. Indeed GigaSpaces is a very dynamic platform and a classical Hyperic installation based on an agent monitoring the processes on his physical (or virtual) machine won't work well, a given processing unit could be unavailable on a machine because the GSM decided to deploy it somewhere else.
+As the GigaSpaces plugin uses the [Administration and Monitoring API](http://wiki.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API) (a.k.a. Admin API) a single Hyperic agent will be used to monitor the whole cluster. Indeed GigaSpaces is a very dynamic platform and a classical Hyperic installation based on an agent monitoring the processes on his physical (or virtual) machine won't work well, a given processing unit could be unavailable on a machine because the GSM decided to deploy it somewhere else.
 
 In order to use the plugin on an hyperic agent you have to prepare this agent to be 'GigaSpaces ready'.
 1. Copy the GigaSpaces required jar files (_JSHOMEDIR/lib/required_) to the following agent folder: _agent-4.6/bundles/agent-4.6/pdk/lib/gs_ (you'll have to create the gs folder).
 2. Upgrade the agent JVM to a 1.6 version
 3. Restart the agent
-4. Connect to the Hyperic server console with admin account and go to the plugin manager. Install the GigaSpaces plugin (depanlinkhyperic-gs-plugin.jartengahlink/attachment_files/sbp/hyperic-gs-plugin.jarbelakanglink)
+4. Connect to the Hyperic server console with admin account and go to the plugin manager. Install the GigaSpaces plugin ([hyperic-gs-plugin.jar](/attachment_files/sbp/hyperic-gs-plugin.jar))
 
 # Usage
 
@@ -27,7 +27,7 @@ In order to use the plugin on an hyperic agent you have to prepare this agent to
 
 In order to use the plugin you'll have to configure a GigaSpaces platform. Indeed as a correct defined GigaSpaces cluster discovery relies on lookup groups and/or lookup locators the plugin won't be able to auto-discover your infrastructure without these parameters.
 
-depanimagehyperic_new_platform.pngtengahimage/attachment_files/sbp/hyperic_new_platform.pngbelakangimage
+![hyperic_new_platform.png](/attachment_files/sbp/hyperic_new_platform.png)
 
 On the hyperic new platform page select
 1. The platform type to be GigaSpaces XAP Grid.
@@ -38,7 +38,7 @@ On the hyperic new platform page select
 
 Once the platform is created you should be able to configure it:
 
-depanimagehyperic_platform_conf.pngtengahimage/attachment_files/sbp/hyperic_platform_conf.pngbelakangimage
+![hyperic_platform_conf.png](/attachment_files/sbp/hyperic_platform_conf.png)
 
 Click on the _Edit_ button in the _Configuration Properties_ panel.
 
@@ -52,7 +52,7 @@ _The plugin is currently delivering some very basic features and has to be impro
 
 # Building the plugin
 
-If you wish to enhance the plugin, fix bugs or just review the source code, you can depanlinkdownload the source codetengahlinkhttps://github.com/Gigaspaces/bestpracticesbelakanglink from _GigaSpaces Solutions and Best Practices GitHub repository_ and build it yourself.
+If you wish to enhance the plugin, fix bugs or just review the source code, you can [download the source code](https://github.com/Gigaspaces/bestpractices) from _GigaSpaces Solutions and Best Practices GitHub repository_ and build it yourself.
 Plugin package uses maven but requires a few Hyperic artifacts that are not available in public repositories. In order to build the plugin you'll first have to add them to your repository:
 
 - Run the following commands:

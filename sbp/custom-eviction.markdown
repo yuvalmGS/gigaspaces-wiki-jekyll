@@ -21,11 +21,11 @@ page_id: 54298007
 # Overview
 GigaSpaces being an in memory grid, is limited by the amount of memory allocated to the JVM's that make the cluster. Applications that are built using GigaSpaces and use it as a run time environment should be designed to work with this constraint. This article shows common strategies GigaSpaces applications use for Evicting old objects and make room for new data.
 
-GigaSpaces supports two cache policies, depanlinkLRUtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/LRU-Cache+Policybelakanglink and [ALL_IN_CACHE|XAP8:ALL IN CACHE-Cache Policy]. GigaSpace evicts data only in the depanlinkLRUtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/LRU-Cache+Policybelakanglink mode, where "oldest" objects are evicted from memory when the configured thresholds are reached.
+GigaSpaces supports two cache policies, [LRU](http://wiki.gigaspaces.com/wiki/display/XAP8/LRU-Cache+Policy) and [ALL_IN_CACHE](http://wiki.gigaspaces.com/wiki/display/XAP8/ALL+IN+CACHE-Cache+Policy). GigaSpace evicts data only in the [LRU](http://wiki.gigaspaces.com/wiki/display/XAP8/LRU-Cache+Policy) mode, where "oldest" objects are evicted from memory when the configured thresholds are reached.
 
-As the name suggests LRU is "least recently used" data and any data written first into the space become a candidate for eviction when there is no more room in the JVM. This policy works well for depanlinkSide Cache scenariostengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Caching+Scenarios#CachingScenarios-SideCachebelakanglink where the purpose of GigaSpaces is to cache frequently used data.
+As the name suggests LRU is "least recently used" data and any data written first into the space become a candidate for eviction when there is no more room in the JVM. This policy works well for [Side Cache scenarios](http://wiki.gigaspaces.com/wiki/display/XAP8/Caching+Scenarios#CachingScenarios-SideCache) where the purpose of GigaSpaces is to cache frequently used data.
 
-For some applications LRU based eviction is not suitable. Examples include, applications that cache reference data which should always be in the space. applications that want some data to be always in space irrespective of when it is written as this data has higher SLA requirements and need to be readily available. For these scenarios, depanlinkALL_IN_CACHEtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/ALL+IN+CACHE-Cache+Policybelakanglink is more appropriate. In these scenarios, application can adopt one of the strategies mentioned below and not run out of memory and cause MemoryShortageExceptions.
+For some applications LRU based eviction is not suitable. Examples include, applications that cache reference data which should always be in the space. applications that want some data to be always in space irrespective of when it is written as this data has higher SLA requirements and need to be readily available. For these scenarios, [ALL_IN_CACHE](http://wiki.gigaspaces.com/wiki/display/XAP8/ALL+IN+CACHE-Cache+Policy) is more appropriate. In these scenarios, application can adopt one of the strategies mentioned below and not run out of memory and cause MemoryShortageExceptions.
 
 # Eviction Strategies
 
@@ -118,13 +118,13 @@ This approach is most suitable for application which have fluctuating data loads
 
 ## Using a Polling Container
 
-Sometimes applications data usage is based on the age of the data. After end of a business day any data for that day is not needed by the application and can be evicted. Applications like these use a depanlinkpolling containertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Containerbelakanglink to perform eviction logic.
+Sometimes applications data usage is based on the age of the data. After end of a business day any data for that day is not needed by the application and can be evicted. Applications like these use a [polling container](http://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container) to perform eviction logic.
 
-Eviction logic will be defined as listener logic. Eviction candidates will be selected using a depanlinkTrigger Receive Handlertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container#PollingContainer-TriggerReceiveOperationbelakanglink feature which will modify the query dynamically for each invocation.
+Eviction logic will be defined as listener logic. Eviction candidates will be selected using a [Trigger Receive Handler](http://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container#PollingContainer-TriggerReceiveOperation) feature which will modify the query dynamically for each invocation.
 
 Another variation of this approach is listener logic will wait for a command object (something like a close of business day event). When this command object is written into space eviction logic starts and cleans up data.
 
-Attached is an depanlinkexampletengahlink/attachment_files/sbp/PollingEvictor.zipbelakanglink that uses a polling container for eviction of Orders.
+Attached is an [example](/attachment_files/sbp/PollingEvictor.zip) that uses a polling container for eviction of Orders.
 
 In this simplistic example (created using hello-world example included in the product distribution),
 
@@ -252,12 +252,12 @@ public class Evictor {
 
 {% note %}
 This example is using Maven for packaging and build.
-- Please depanlinkinstall the OpenSpaces Maven plugintengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin#MavenPlugin-Installationbelakanglink before you run this example.
+- Please [install the OpenSpaces Maven plugin](http://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin#MavenPlugin-Installation) before you run this example.
 - Please update the GigaSpaces and Spring versions to appropriate versions in the pom.xml file.
 {% endnote %}
 
 
-Extract the depanlinkexampletengahlink/attachment_files/sbp/PollingEvictor.zipbelakanglink archive into a folder. Navigate to the folder
+Extract the [example](/attachment_files/sbp/PollingEvictor.zip) archive into a folder. Navigate to the folder
 
 Run maven clean using following command
 
@@ -302,14 +302,14 @@ Start monitoring the GSC logs. After about a minute you will see that the evicti
 
 ## Using the JVM Memory Notification API
 
-Another strategy used by some of the very complex GigaSpaces applications is to rely on the JVM Memory Notification API. Java 5 introduced depanlinkMemoryPoolMXBeantengahlinkhttp://download.oracle.com/javase/1.5.0/docs/api/java/lang/management/MemoryPoolMXBean.htmlbelakanglink API and this API lets you register for usage threshold notifications.
+Another strategy used by some of the very complex GigaSpaces applications is to rely on the JVM Memory Notification API. Java 5 introduced [MemoryPoolMXBean](http://download.oracle.com/javase/1.5.0/docs/api/java/lang/management/MemoryPoolMXBean.html) API and this API lets you register for usage threshold notifications.
 An application can define custom eviction logic and register this functionality to be triggered when the usage exceeds the threshold.
 
 Some advantages with this approach are,
 - Lets you effectively utilize all the available memory in GigaSpaces cluster.
 - Notification based instead of querying the cluster for types/counts.
 
-Attached is an depanlinkexampletengahlink/attachment_files/sbp/MyCustomEvictor.zipbelakanglink that uses Memory Notification feature for triggering eviction logic.
+Attached is an [example](/attachment_files/sbp/MyCustomEvictor.zip) that uses Memory Notification feature for triggering eviction logic.
 
 In this simplistic example (created using hello-world example included in the product distribution),
 
@@ -583,12 +583,12 @@ gs.write(wMark, Lease.FOREVER, 5000, UpdateModifiers.UPDATE_OR_WRITE);
 
 {% note %}
 This example is using Maven for packaging and build.
-- Please depanlinkinstall the OpenSpaces Maven plugintengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin#MavenPlugin-Installationbelakanglink before you run this example.
+- Please [install the OpenSpaces Maven plugin](http://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin#MavenPlugin-Installation) before you run this example.
 - Please update the GigaSpaces and Spring versions to appropriate versions in the pom.xml file.
 {% endnote %}
 
 
-Extract the depanlinkexampletengahlink/attachment_files/sbp/MyCustomEvictor.zipbelakanglink archive into a folder. Navigate to the folder
+Extract the [example](/attachment_files/sbp/MyCustomEvictor.zip) archive into a folder. Navigate to the folder
 
 Run maven clean using following command
 
@@ -632,29 +632,27 @@ mvn exec:java -Dexec.classpathScope=compile -Dexec.mainClass="com.gigaspaces.cli
 Start monitoring the JVM Tenured pool in JConsole and GSC logs. After few seconds you will see that the memory thresohold is breached and eviction logic will trigger and clear the old `Order` objects from space. Once the memory usage reached the eviction stop limit, eviction logic stops. You will see that the orders flow into the space constantly and the eviction logic triggers as and when needed making this a self healing application.
 
 Below is a screenshot of Tenured pool of the JVM,
-depanimageHeapUsageGraph.pngtengahimage/attachment_files/sbp/HeapUsageGraph.pngbelakangimage
+![HeapUsageGraph.png](/attachment_files/sbp/HeapUsageGraph.png)
 
 # Important Considerations
 
 - Defining a Eviction Start Threshold value that is proportionate to data load rates of the application and gives enough time for eviction logic. If eviction is not given enough time, application might reach Write Block Percentage which will result into  Memory Shortage Exceptions making things worse. Perform some tests and tune this threshold to fit your needs.
-
 - When evicting data, evict data in small batches. Evicting large number of objects using a clear or take operations will sometimes overwhelm the JVM and trigger GC logic and might result application pauses.
-
 - Don't overdo eviction and evict everything. Define a Eviction Stop Threshold value and leave important data in space for faster access. Eviction limit can either be count of objects, ratio of number of objects left in space or available memory. Example above uses available memory but you could one of the above options.
-
 - Maintaining Statistics can help in troubleshooting. Example above stores the statistics as part of the Watermark object.
-
 - Identifying memory usage of a space partition becomes tricky once more than one space partition shares the same GSC. JVM Memory Notification API strategy as described above may not work in those scenarios, you will need to build additional functionality to identify other cluster members and coordinate eviction across cluster members in order to make this work.
 
 # External Data Source (EDS) Considerations
 
 Applications using External Data Source Integration will need some changes to the eviction functionality. Because of EDS integration the take/clear will remove the data from the database also which might not be intended.
 
-In cases where the Space is using depanlinkLRUtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/LRU-Cache+Policybelakanglink mode,
-- Take or clear operation can be triggered using the depanlinkTakeModifiers.EVICT_ONLYtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/LRU-Cache+Policy#LRU-CachePolicy-ExplicitEvictionofObjectsfromtheSpacebelakanglink which will remove the data only from space and not from the DB.
+In cases where the Space is using [LRU](http://wiki.gigaspaces.com/wiki/display/XAP8/LRU-Cache+Policy) mode,
 
-In depanlinkALL_IN_CACHEtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/ALL+IN+CACHE-Cache+Policybelakanglink mode,
+- Take or clear operation can be triggered using the [TakeModifiers.EVICT_ONLY](http://wiki.gigaspaces.com/wiki/display/XAP8/LRU-Cache+Policy#LRU-CachePolicy-ExplicitEvictionofObjectsfromtheSpace) which will remove the data only from space and not from the DB.
+
+In [ALL_IN_CACHE](http://wiki.gigaspaces.com/wiki/display/XAP8/ALL+IN+CACHE-Cache+Policy) mode,
+
 - Take or clear operations will remove the data from space and database (in read-write mode), you should use
-    - Lease expiration option to remove the entries from the space and free up memory. When you restart the cluster, expired data will get loaded again and fill up the entire cluster. In order to avaoid this you have to propogate the lease information into the DB (using the depanlink@SpaceLeasetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/POJO+Metadatabelakanglink property).
+    - Lease expiration option to remove the entries from the space and free up memory. When you restart the cluster, expired data will get loaded again and fill up the entire cluster. In order to avaoid this you have to propogate the lease information into the DB (using the [@SpaceLease](http://wiki.gigaspaces.com/wiki/display/XAP8/POJO+Metadata) property).
     Objects which are cleared from the space using Lease expiration are not loaded automatically when someone queries for them, you will need to build custom functionality to retrieve this data.
     - Custom EDS mechanism that intercepts the eviction requests and stops propogating them into DB.

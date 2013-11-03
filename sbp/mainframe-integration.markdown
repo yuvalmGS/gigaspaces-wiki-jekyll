@@ -31,12 +31,12 @@ GigaSpaces' ability to deploy, manage and scale services along with the data (th
 There are various architectural options moving Data From Mainframe (Z/OS) DB2 to GigaSpaces XAP IMDG:
 
 ### Replication
-depanlinkIBM® InfoSphere® Data Replicationtengahlinkhttp://www-03.ibm.com/software/products/us/en/infodatareplbelakanglink (aka IBM QRep) replicates information between heterogeneous data stores in near real time. It provides replication with transactional integrity to support database migration, application consolidation, warehousing, master data management, business analytics and data quality processes. DB2 Replication programs read the source database recovery logs continuously and apply them to target data source (i.e. databases). This can be achieved via either SQL Replication or Queue Replication.
+[IBM® InfoSphere® Data Replication](http://www-03.ibm.com/software/products/us/en/infodatarepl) (aka IBM QRep) replicates information between heterogeneous data stores in near real time. It provides replication with transactional integrity to support database migration, application consolidation, warehousing, master data management, business analytics and data quality processes. DB2 Replication programs read the source database recovery logs continuously and apply them to target data source (i.e. databases). This can be achieved via either SQL Replication or Queue Replication.
 
 ### Event Publishing
 DB2 Event publishing programs read source database changes from the database logs and makes the same available to consuming applications(in delimited, XML format or direct to database tables). When publishing messages, these can be available via IBM Websphere MQ.
 
-depanimagedb2-delta-server.jpgtengahimage/attachment_files/sbp/db2-delta-server.jpgbelakangimage
+![db2-delta-server.jpg](/attachment_files/sbp/db2-delta-server.jpg)
 
 One of the main differences between SQL/Q Replication is the usage of staging tables by SQL replication. Both do use the Q Capture and Q Apply programs, however Q replication has a step wherein the committed changes are immediately sent over to a Websphere Message Q.
 
@@ -49,13 +49,13 @@ With the architecture described above any updates conducted directly against DB2
 
 {% tip %}
 **Running Demo**
-For a running demo of the Delta Server architecture please contact depanlinksupport@gigaspaces.comtengahlinkmailto:support@gigaspaces.com?subject=Delta Server Demo for DB2&body=I'm interested with a demo of the Delta Server architecture for DB2...belakanglink.
+For a running demo of the Delta Server architecture please contact [support@gigaspaces.com](mailto:support@gigaspaces.com?subject=Delta Server Demo for DB2&body=I'm interested with a demo of the Delta Server architecture for DB2...).
 {% endtip %}
 
 
 References:
-- depanlinkReplication and Event Publishing documentationtengahlinkhttp://publib.boulder.ibm.com/infocenter/db2luw/v10r5/index.jsp?topic=%2Fcom.ibm.swg.im.iis.db.prod.repl.nav.doc%2Fdochome%2Fiiyrcnav_dochome.htmlbelakanglink.
-- Examples and details about IBM QRep can be found on this depanlinkSolution Brieftengahlinkhttp://public.dhe.ibm.com/common/ssi/ecm/en/ims14394usen/IMS14394USEN.PDFbelakanglink.
+- [Replication and Event Publishing documentation](http://publib.boulder.ibm.com/infocenter/db2luw/v10r5/index.jsp?topic=%2Fcom.ibm.swg.im.iis.db.prod.repl.nav.doc%2Fdochome%2Fiiyrcnav_dochome.html).
+- Examples and details about IBM QRep can be found on this [Solution Brief](http://public.dhe.ibm.com/common/ssi/ecm/en/ims14394usen/IMS14394USEN.PDF).
 
 # GigaSpaces Intelligent Mainframe Front-end Architecture
 GigaSpaces XAP provides an extremely flexible persistence layer (known as the mirror service) that enables transparent communication between the GigaSpaces IMDG and virtually any type of back-end application or database system.
@@ -97,7 +97,7 @@ Summary: the mirror service serves as a coordinator that provides not only acces
 
 The ability to deploy web services acting as gateways to the data/business logic hosted within GigaSpaces is important.  This functionality allows every new component or legacy component to interact with the system. The GigaSpaces container may run a set of web services, and can scale these dynamically.
 
-These may be the backbone of the entire system to access backend data and services. The web layer can have its own depanlinkcachetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Client+Side+Cachingbelakanglink running within the web application. This speeds up access to reused data by having it as part of the application memory address avoiding the need to perform remote access to the IMDG.
+These may be the backbone of the entire system to access backend data and services. The web layer can have its own [cache](http://wiki.gigaspaces.com/wiki/display/XAP91/Client+Side+Caching) running within the web application. This speeds up access to reused data by having it as part of the application memory address avoiding the need to perform remote access to the IMDG.
 
 ## Multi-Tenancy
 
@@ -109,17 +109,17 @@ GigaSpaces can be used with Mainframe using the following:
 
 ## GigaSpaces External Data Source
 
-Allows the IMDG to pull data from Mainframe via a public interfaces (web services for example) through the depanlinkIMDG EDS APItengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/External+Data+Source+APIbelakanglink. Once there is a cache miss or once the IMDG is started, the IMDG accesses the Mainframe and fetch relevant data. The IMDG can push any changes done back to the Mainframe in a synchronous or asynchronous manner.
+Allows the IMDG to pull data from Mainframe via a public interfaces (web services for example) through the [IMDG EDS API](http://wiki.gigaspaces.com/wiki/display/XAP91/External+Data+Source+API). Once there is a cache miss or once the IMDG is started, the IMDG accesses the Mainframe and fetch relevant data. The IMDG can push any changes done back to the Mainframe in a synchronous or asynchronous manner.
 
 ## JCICS
 
-depanlinkJCICStengahlinkhttp://publib.boulder.ibm.com/infocenter/cicsts/v3r1/index.jsp?topic=%2Fcom.ibm.cics.ts31.doc%2Fdfhpj%2Ftopics%2Fdfhpjlp.htmbelakanglink (provided by CICS) is the Java equivalent of the EXEC CICS application programming interface (API) that you would use with other CICS supported languages, such as COBOL. It allows you to access CICS resources and integrate your Java programs with programs written in other languages. Most of the functions of the EXEC CICS API are supported. For a description of the JCICS API, see depanlinkThe JCICS class librarytengahlinkhttp://publib.boulder.ibm.com/infocenter/cicsts/v3r1/topic/com.ibm.cics.ts31.doc/dfhpj/topics/dfhpjl9.htm#dfhpjl9belakanglink. You may leverage JCICS to allow Java application and native (COBOL) programs running on the mainframe. You may use GigaSpaces IMDG notifications and update the mainframe applications with every change within the IMDG in a transparent manner.
+[JCICS](http://publib.boulder.ibm.com/infocenter/cicsts/v3r1/index.jsp?topic=%2Fcom.ibm.cics.ts31.doc%2Fdfhpj%2Ftopics%2Fdfhpjlp.htm) (provided by CICS) is the Java equivalent of the EXEC CICS application programming interface (API) that you would use with other CICS supported languages, such as COBOL. It allows you to access CICS resources and integrate your Java programs with programs written in other languages. Most of the functions of the EXEC CICS API are supported. For a description of the JCICS API, see [The JCICS class library](http://publib.boulder.ibm.com/infocenter/cicsts/v3r1/topic/com.ibm.cics.ts31.doc/dfhpj/topics/dfhpjl9.htm#dfhpjl9). You may leverage JCICS to allow Java application and native (COBOL) programs running on the mainframe. You may use GigaSpaces IMDG notifications and update the mainframe applications with every change within the IMDG in a transparent manner.
 
-depanimagemainframeIntegration.jpgtengahimage/attachment_files/sbp/mainframeIntegration.jpgbelakangimage
+![mainframeIntegration.jpg](/attachment_files/sbp/mainframeIntegration.jpg)
 
 References:
-- The depanlinkofficial Redbook on JVM Servertengahlinkhttp://www.redbooks.ibm.com/abstracts/sg248038.html?Openbelakanglink that explains how to deploy applications to a JVM Server on the Mainframe.
-- depanlinkSample JCICS programstengahlinkhttp://www.redbooks.ibm.com/abstracts/sg245275.html?Openbelakanglink - A COBOL program invokes the Java program (JVMPool or JVMServer) using the EXEC CICS LINK PROGRAM API and passes in a CommArea or a Channel which is a mechanism to send data to the Java program.
+- The [official Redbook on JVM Server](http://www.redbooks.ibm.com/abstracts/sg248038.html?Open) that explains how to deploy applications to a JVM Server on the Mainframe.
+- [Sample JCICS programs](http://www.redbooks.ibm.com/abstracts/sg245275.html?Open) - A COBOL program invokes the Java program (JVMPool or JVMServer) using the EXEC CICS LINK PROGRAM API and passes in a CommArea or a Channel which is a mechanism to send data to the Java program.
 
 ## Web Services
 
@@ -131,7 +131,7 @@ Connect into a known messaging broker (IBM MQ) within the existing system, consu
 
 ## Mule ESB
 
-Leverage depanlinkMF Mule integrationtengahlinkhttp://www.mulesoft.com/webinar-getting-mainframe-30-minutesbelakanglink and depanlinkGigaSpaces Muletengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Mule+ESBbelakanglink support to have these to communicate with each other.
+Leverage [MF Mule integration](http://www.mulesoft.com/webinar-getting-mainframe-30-minutes) and [GigaSpaces Mule](http://wiki.gigaspaces.com/wiki/display/XAP91/Mule+ESB) support to have these to communicate with each other.
 
 ## WebMethods EntireX
 

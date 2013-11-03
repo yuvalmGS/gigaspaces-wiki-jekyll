@@ -11,7 +11,7 @@ page_id: 63799405
 
 GigaSpaces PBS (Portable Binary Serialization) is the underlying technology used to serialize and transport non Java objects from the client side to the space side. It is highly optimized serialization technology allowing a .Net or C++ client to communicate with the space in very efficiency manner.
 
-To control Space Class field serialization you should use the depanlinkStorageTypetengahlinkhttp://www.gigaspaces.com/docs/dotnetdocs8.0/html/T_GigaSpaces_Core_Metadata_StorageType.htmbelakanglink attribute.
+To control Space Class field serialization you should use the [StorageType](http://www.gigaspaces.com/docs/dotnetdocs8.0/html/T_GigaSpaces_Core_Metadata_StorageType.htm) attribute.
 Example:
 
 {% highlight java %}
@@ -42,7 +42,7 @@ Here are the `StorageType` supported options:
 - **BinaryCustom** - Same as Binary, except that .NET serialization is used instead of `PBS` serialization.
 - **Document** - The space proxy will serialize the property value in `PBS` and the space will deserialize it as a `SpaceDocument`, and store it in the space as such. This allows matching on nested properties inside the property and to index these nested properties as well.
 
-{% exclamation %} Indexing a property with a binary or custom binary storage type is not supported. For more information about indexing see depanlinkIndexingtengahlink./indexing.htmlbelakanglink.
+{% exclamation %} Indexing a property with a binary or custom binary storage type is not supported. For more information about indexing see [Indexing](./indexing.html).
 
 # Interoperability
 

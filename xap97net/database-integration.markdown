@@ -32,7 +32,7 @@ In a high performance transactional system, we would like the transaction to be 
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-GigaSpaces XAP provides a Mirror Service as a means to achieve depanlinkreliable asynchronous persistencytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/Asynchronous+Persistency+with+the+Mirrorbelakanglink.
+GigaSpaces XAP provides a Mirror Service as a means to achieve [reliable asynchronous persistency](http://wiki.gigaspaces.com/wiki/display/XAP95/Asynchronous+Persistency+with+the+Mirror).
 
 The typical cluster topology is of reliable partitioning (partitions with backups) connected to the mirror service, which persists to the database.
 
@@ -40,7 +40,7 @@ The mirroring service is one-way only - from the space cluster to the database o
 
 ### External Data Source Integration
 
-GigaSpaces XAP provides open interfaces to external data source integration. The default implementation of these interfaces is database integration using depanlinkNHibernatetengahlinkhttp://nhforge.org/Default.aspxbelakanglink. For implementation details please refer to ajepaaaIntegration with Other Data Sourcesajepbbb in the Programmer's Guide.
+GigaSpaces XAP provides open interfaces to external data source integration. The default implementation of these interfaces is database integration using [NHibernate](http://nhforge.org/Default.aspx). For implementation details please refer to [Integration with Other Data Sources] in the Programmer's Guide.
 
 These interfaces are used by the space to store and retrieve data from external data sources (e.g. databases).
 
@@ -51,4 +51,4 @@ In order to preserve data, it is common topology to make sure that each memory c
 {% endtip %}
 
 {% whr %}
-{% refer %}**Next chapter:** depanlinkProduct Architecturetengahlink./product-architecture.htmlbelakanglink{% endrefer %}
+{% refer %}**Next chapter:** [Product Architecture](./product-architecture.html){% endrefer %}

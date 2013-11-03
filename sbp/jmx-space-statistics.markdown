@@ -20,7 +20,7 @@ page_id: 48760469
 
 # Overview
 
-The depanlinkattached exampletengahlink/attachment_files/sbp/JMXSTAT.zipbelakanglink illustrates usage of the JMX API, getting the JVM statistics and the Space statistics. The example collects statistics and generates a consolidated report of the space and its JVM activity.
+The [attached example](/attachment_files/sbp/JMXSTAT.zip) illustrates usage of the JMX API, getting the JVM statistics and the Space statistics. The example collects statistics and generates a consolidated report of the space and its JVM activity.
 This example supports both clustered and single space. For clustered space the report will include statistics for all cluster space members.
 
 The report will include the following columns:
@@ -42,7 +42,7 @@ The report will include the following columns:
 You may view the report using any spread sheet tool, graph the statistics and find correlations between the space activity and the JVM behavior.
 
 To install the example:
-Download the depanlinkexampletengahlink/attachment_files/sbp/JMXSTAT.zipbelakanglink and unzip it to an empty folder.
+Download the [example](/attachment_files/sbp/JMXSTAT.zip) and unzip it to an empty folder.
 
 To run the example:
 

@@ -20,7 +20,7 @@ page_id: 55443590
 
 # Overview
 
-Service Reloading depanlinkpagetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Reloading+Business+Logicbelakanglink explains how Refreshable context can be used to reload business logic. Find a modified version of Helloworld example which is included in the GigaSpaces installation configured for refreshable business logic.
+Service Reloading [page](http://wiki.gigaspaces.com/wiki/display/XAP8/Reloading+Business+Logic) explains how Refreshable context can be used to reload business logic. Find a modified version of Helloworld example which is included in the GigaSpaces installation configured for refreshable business logic.
 
 # Source Code
 
@@ -195,7 +195,7 @@ pu.download=false
 
 # Running the Example
 
-1. Extract the depanlinkexampletengahlink/attachment_files/sbp/refreshable-prototype.zipbelakanglink archive into a folder. Navigate to the folder (calling it <refreshable-prototype>), modify the setDevEnv.bat file to have proper paths for GigaSpaces home, Java home and Ant home. Also modify the NIC_ADDR variable to have proper ip address. Run the startShell.bat script. This will open a command window.
+1. Extract the [example](/attachment_files/sbp/refreshable-prototype.zip) archive into a folder. Navigate to the folder (calling it <refreshable-prototype>), modify the setDevEnv.bat file to have proper paths for GigaSpaces home, Java home and Ant home. Also modify the NIC_ADDR variable to have proper ip address. Run the startShell.bat script. This will open a command window.
 2. Build the example to use your GigaSpaces and Java versions using following,
 
 

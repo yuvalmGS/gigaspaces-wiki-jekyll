@@ -25,6 +25,7 @@ Another important deployment decision is to calculate the maximum number of In-M
 The IMDG instances could fail and relocate themselves to another machine automatically. They can relocate as a result of an SLA (Service-Level-Agreement) event (for example - CPU and memory utilization breach), or they can relocate, based on manual intervention by an administrator. This IMDG "mobility" is a critical capability that, beyond providing the application with the ability to scale dynamically and self-heal itself, can avoid over provisioning and unnecessary over budgeting of your hardware. You can start small, and grow as needed with your hardware utilization. The capacity planning should take this fact into consideration.
 
 This article deals with the following capacity planning issues:
+
 1. How to calculate the footprint of your objects when stored within the IMDG?
 2. What is the balance between the amount of active clients, machine cores, and the IMDG process heap size?
 3. How should the number of IMDG Partitions be calculated? We demonstrate how this should be done using 2 examples.
@@ -33,6 +34,7 @@ Please note that there is no need to specify the maximum number of partitions fo
 
 # The Object Footprint within the IMDG
 The object footprint within the IMDG is determined, based on:
+
 - The original object size - the number of object fields and their content size.
 - The JVM type (32 or 64 bit) - a 64 bit JVM might consume more memory due to the pointer address size.
 - The number of indexed fields - every indexed value means another copy of the value within the index list.
@@ -40,6 +42,7 @@ The object footprint within the IMDG is determined, based on:
 - The object UID size - the UID is a string-based field, and consumes about 35 characters. You might have the object UID based on your own unique ID.
 
 The best way to determine the exact footprint is via a simple test that allows you to perform some extrapolation when running the application in production. Here is how you should calculate the footprint:
+
 1. Start a single IMDG instance.
 2. Take a measurement of the free memory.
 3. Write a sample number of objects into the IMDG (have a decent number of objects written - 100,000 is a good number).
@@ -58,7 +61,7 @@ See below an example of an object footprint using a 32 and 64 Bit JVM using diff
 
 
 {% indent %}
-depanimagefootprint_bench7.1.2.jpgtengahimage/attachment_files/sbp/footprint_bench7.1.2.jpgbelakangimage
+![footprint_bench7.1.2.jpg](/attachment_files/sbp/footprint_bench7.1.2.jpg)
 {% endindent %}
 
 
@@ -70,18 +73,19 @@ depanimagefootprint_bench7.1.2.jpgtengahimage/attachment_files/sbp/footprint_ben
 
 
 {% tip %}
-You may decrease the raw object footprint (not the indexes footprint) using the depanlinkGigaSpaces Serialization APItengahlink./lowering-the-space-object-footprint.htmlbelakanglink
+You may decrease the raw object footprint (not the indexes footprint) using the [GigaSpaces Serialization API](./lowering-the-space-object-footprint.html)
 {% endtip %}
 
 
 
 {% tip %}
-You can reduce the JVM memory footprint using the `-XX:+UseCompressedOops` JVM option. It is part of the JDK6u14 and JDK7. See more details here: depanlinkhttp://wikis.sun.com/display/HotSpotInternals/CompressedOopstengahlinkhttp://wikis.sun.com/display/HotSpotInternals/CompressedOopsbelakanglink. It is highly recommended to use the latest JDK release when using this option.
+You can reduce the JVM memory footprint using the `-XX:+UseCompressedOops` JVM option. It is part of the JDK6u14 and JDK7. See more details here: [http://wikis.sun.com/display/HotSpotInternals/CompressedOops](http://wikis.sun.com/display/HotSpotInternals/CompressedOops). It is highly recommended to use the latest JDK release when using this option.
 {% endtip %}
 
 
 # Active Clients vs. Cores vs. Heap Size
 Since the IMDG kernel is a highly multi-threaded process, it has a relatively large number of active threads handling incoming requests. These requests could come from remote clients or collocated clients. Here are a few examples:
+
 - any remote call involves a thread at the IMDG side that handles the request.
 - a notification delivery might involve multiple threads sending events to registered clients.
 - any destructive operation (write, update, take) also triggers a replication event that is handled via a dedicated replication channel, which is using a dedicated thread to handle the replication request to the backup IMDG instance.
@@ -126,6 +130,7 @@ Amount of Data-Grid Partitions = Total Amount of GSC X Scaling Growth Rate / 2
 
 
 Where:
+
 - Number of Total Machine Cores - the total number of cores the machine is running. For a quad-core with 2 CPUs (Duo) machine this value is 8.
 - Number of Data-Grid Partitions - this is the number of IMDG Partitions you need to set when deploying.
 - GSC max heap Size - JVM Xmx value
@@ -143,7 +148,7 @@ The machines run Linux 64 bit OS. Allocating 6GB per JVM as the max heap size fo
 
 
 {% indent %}
-depanimagecapacity_planning1.jpgtengahimage/attachment_files/sbp/capacity_planning1.jpgbelakangimage
+![capacity_planning1.jpg](/attachment_files/sbp/capacity_planning1.jpg)
 {% endindent %}
 
 Figure 1: 2 Machines Topology - five IMDG Instances per GSC, total 64GB RAM
@@ -152,7 +157,7 @@ Having a maximum of 40 GSCs hosting the IMDG, means you might want to have half 
 
 
 {% indent %}
-depanimagecapacity_planning2.jpgtengahimage/attachment_files/sbp/capacity_planning2.jpgbelakangimage
+![capacity_planning2.jpg](/attachment_files/sbp/capacity_planning2.jpg)
 {% endindent %}
 
 Figure 2: 10 Machines Topology - one IMDG Instance per GSC, total 320GB RAM
@@ -168,11 +173,13 @@ Still, you must have some value for the maximum number of IMDG partitions when d
 
 Here is a simple example you might use:
 An application using 3 types of classes to store its data within the IMDG.
+
 - Class A - object average size is 1KB
 - Class B - object average size is 10KB
 - Class C - object average size is 100KB
 
 The application needs to generate 1 million objects for each type of class during its life cycle:
+
 - Class A - total memory needed = 1KB X 1M = 1GB
 - Class B - total memory needed = 10KB X 1M = 10GB
 - Class C - total memory needed = 100KB X 1M = 100GB

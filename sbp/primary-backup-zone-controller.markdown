@@ -27,14 +27,14 @@ In some cases you would like to determine the primary and backup instances locat
 
 
 {% indent %}
-depanimagePrimaryBackupZoneController.jpgtengahimage/attachment_files/sbp/PrimaryBackupZoneController.jpgbelakangimage
+![PrimaryBackupZoneController.jpg](/attachment_files/sbp/PrimaryBackupZoneController.jpg)
 {% endindent %}
 
 
 ## When the Primary-Backup Zone Controller should be used?
 Having primary and backup instances on different remote sites that are far away from each other is not a recommended approach with read/write applications. The Primary-Backup Zone Controller approach intended to be used with read mostly scenarios (80% read) where the latency between the sites is extremely low (below one-two milliseconds) with high bandwidth capacity. Primary and backup instances should be located within the same LAN with high speed connectivity and high capacity bandwidth to allow the primary replicate data as fast as it can to the backup to minimize the replication overhead on the application behavior.
 
-When there is a requirement to leverage remote sites for disaster recovery or remote clients access - most systems will have their data grid primary and backup instances (using synchronous mode) within the same LAN (Master data grid) with another grid and its data-grid (not sharing the same lookup service and GSM with the master data grid) running as a slave data grid where the depanlinkWAN Replication Gatewaytengahlink./wan-replication-gateway.htmlbelakanglink used to replicate data between the Master and Slave Data-Grid asynchronously. With multi-master architecture the WAN Replication Gateway may run a conflict resolver to handle concurrent updates of the same object in both sites.
+When there is a requirement to leverage remote sites for disaster recovery or remote clients access - most systems will have their data grid primary and backup instances (using synchronous mode) within the same LAN (Master data grid) with another grid and its data-grid (not sharing the same lookup service and GSM with the master data grid) running as a slave data grid where the [WAN Replication Gateway](./wan-replication-gateway.html) used to replicate data between the Master and Slave Data-Grid asynchronously. With multi-master architecture the WAN Replication Gateway may run a conflict resolver to handle concurrent updates of the same object in both sites.
 
 ## Controlling Primary/Backup Location
 The Primary-Backup Zone Controller can be deployed as a PU or run as a stand-alone utility. It allows you to specify a specific zone for primary instances and a different zone for backup instances. Once the Primary-Backup Zone Controller deployed/started it relocates all the primary instances into GSCs associated with the primary zone and later relocates all the backup instances into GSCs associated with the backup zone. The Primary-Backup Zone Controller periodically checks the status of the deployed data grid and relocates relevant instances as needed.
@@ -43,7 +43,7 @@ The Primary-Backup Zone Controller can be deployed as a PU or run as a stand-alo
 
 The example below will show how to use the Primary-Backup Zone Controller to place all primary instances on Zone A and all backup instances on Zone B. We will start GSCs with 3 zones, deploy a data-grid and use the Primary-Backup Zone Controller to execute the relocation activity.
 
-1. Download the depanlinkPrimary-Backup Zone Controllertengahlink/attachment_files/sbp/PrimaryBackupZoneController.zipbelakanglink and extract it into an empty folder. You will find the source under thr `src` folder and the compiled code under the `bin` folder.
+1. Download the [Primary-Backup Zone Controller](/attachment_files/sbp/PrimaryBackupZoneController.zip) and extract it into an empty folder. You will find the source under thr `src` folder and the compiled code under the `bin` folder.
 
 2. Start LUS and GSM:
 

@@ -15,13 +15,13 @@ page_id: 63799415
 
 # XAP.NET 9.7 Documentation
 
-{% imagemap name=ajepaaascaling.pngajepbbb %}
+{% imagemap name=[scaling.png] %}
 {% map link=http://www.gigaspaces.com/wiki/display/XAP97NET/End+to+End+Scaling+Home|coords=30,81,326,131|title=End to End Scaling %}
 {% endimagemap %}
 
 {% wbr %}
 
-{% imagemap name=ajepaaacaching.pngajepbbb %}
+{% imagemap name=[caching.png] %}
 {% map link=http://www.gigaspaces.com/wiki/display/XAP97NET/Caching+Home|coords=30,81,326,131|title=Caching %}
 {% endimagemap %}
 
@@ -31,27 +31,27 @@ page_id: 63799415
 
 # Quick Links
 
-##### &bull; depanlinkWhat's New in 9.7.Xtengahlinkhttp://wiki.gigaspaces.com/wiki/display/RN/What's+New+in+GigaSpaces+9.7.Xbelakanglink
+##### &bull; [What's New in 9.7.X](http://wiki.gigaspaces.com/wiki/display/RN/What's+New+in+GigaSpaces+9.7.X)
 
-##### &bull; depanlink9.7.X Release Notestengahlinkhttp://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+XAP+9.7.X+Release+Notesbelakanglink
+##### &bull; [9.7.X Release Notes](http://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+XAP+9.7.X+Release+Notes)
 
-##### &bull; depanlinkUpgrading from Previous Versionstengahlinkhttp://wiki.gigaspaces.com/wiki/display/RN/Upgrading+to+9.7.Xbelakanglink
+##### &bull; [Upgrading from Previous Versions](http://wiki.gigaspaces.com/wiki/display/RN/Upgrading+to+9.7.X)
 
-##### &bull; depanlinkAPI Documentationtengahlinkhttp://wiki.gigaspaces.com/wiki/display/API/API+Documentation+Portalbelakanglink
+##### &bull; [API Documentation](http://wiki.gigaspaces.com/wiki/display/API/API+Documentation+Portal)
 
-##### &bull; depanlinkSolutions and Best Practices Hometengahlink/sbp/index.htmlbelakanglink
+##### &bull; [Solutions and Best Practices Home](/sbp/index.html)
 
-##### &bull; depanlinkForumtengahlinkhttp://ask.gigaspaces.org/belakanglink
+##### &bull; [Forum](http://ask.gigaspaces.org/)
 
-##### &bull; depanlinkCustomer Support Portaltengahlinkhttp://www.gigaspaces.com/supportcenterbelakanglink
+##### &bull; [Customer Support Portal](http://www.gigaspaces.com/supportcenter)
 
-##### &bull; depanlinkTraining Programstengahlinkhttp://www.gigaspaces.com/content/gigaspaces-trainingbelakanglink
+##### &bull; [Training Programs](http://www.gigaspaces.com/content/gigaspaces-training)
 
-##### &bull; depanlinkBlogtengahlinkhttp://blog.gigaspaces.com/belakanglink
+##### &bull; [Blog](http://blog.gigaspaces.com/)
 
-##### &bull; depanlinkWhite Paperstengahlinkhttp://www.gigaspaces.com/os_papers.htmlbelakanglink
+##### &bull; [White Papers](http://www.gigaspaces.com/os_papers.html)
 
-##### &bull; Looking for **depanlinkXAP 9.7 Documentation Hometengahlink/xap97/index.htmlbelakanglink** or **depanlink**other versions**tengahlinkhttp://wiki.gigaspaces.com/wiki/display/ALL/Choose+a+GigaSpaces+Versionbelakanglink**?
+##### &bull; Looking for **[XAP 9.7 Documentation Home](/xap97/index.html)** or **[**other versions**](http://wiki.gigaspaces.com/wiki/display/ALL/Choose+a+GigaSpaces+Version)**?
 
 {% endcolumn %}
 

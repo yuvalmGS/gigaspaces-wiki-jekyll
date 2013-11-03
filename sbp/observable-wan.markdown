@@ -23,12 +23,12 @@ page_id: 57213232
 # Overview
 With the introduction of the Gigaspaces multi-site replication feature, keeping different Gigaspaces deployments in sync is easy.  However, detecting and anticipating communication problems between sites where it counts (at the application level), isn't so easy.  This solution/pattern uses some simple concepts and components to enable easy, flexible monitoring of the replication performance from multiple sites.
 
-The basic idea is to write timestamps into spaces that are being replicated using the multi-site mechanism. The timestamps then flow from site to site, intermingled with application domain objects.  Each site then polls it's site for timestamps arriving from remote sites.  From information in the timestamp, as well as noticing when the timestamp arrives, a picture of replication performance can be deduced.  Each site then maintains a global replication status object with 3 states: up, down, and degraded.  Interested parties can attach event listeners to state changes on the replication status object.  Refer to my recent blog depanlinkposttengahlinkhttp://blog.gigaspaces.com/2012/02/27/assured-wan-replication-with-latency-measuresbelakanglink for more detail.
+The basic idea is to write timestamps into spaces that are being replicated using the multi-site mechanism. The timestamps then flow from site to site, intermingled with application domain objects.  Each site then polls it's site for timestamps arriving from remote sites.  From information in the timestamp, as well as noticing when the timestamp arrives, a picture of replication performance can be deduced.  Each site then maintains a global replication status object with 3 states: up, down, and degraded.  Interested parties can attach event listeners to state changes on the replication status object.  Refer to my recent blog [post](http://blog.gigaspaces.com/2012/02/27/assured-wan-replication-with-latency-measures) for more detail.
 
-{% align center %}depanimageobservablewan.pngtengahimage/attachment_files/sbp/observablewan.pngbelakangimage{% endalign %}
+{% align center %}![observablewan.png](/attachment_files/sbp/observablewan.png){% endalign %}
 
 # Getting the project
-The mirror project is held on github in the depanlinkbest practicestengahlinkhttps://github.com/Gigaspaces/bestpracticesbelakanglink project. This is an umbrella repository; the specific project is in the observable-wan directory under the root directory.
+The mirror project is held on github in the [best practices](https://github.com/Gigaspaces/bestpractices) project. This is an umbrella repository; the specific project is in the observable-wan directory under the root directory.
 
 ## Building the project
 

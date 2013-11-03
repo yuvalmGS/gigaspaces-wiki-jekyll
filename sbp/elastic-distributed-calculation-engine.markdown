@@ -29,7 +29,7 @@ page_id: 56427156
 Financial services, Healthcare, Transportations,Fraud Detection, Payment systems,etc. produce reports constantly. Some of them produce reports where the data required for the report is generated over night via batch processing, and some other type of reports are produced instantly upon user request. This type of processing activity requires fast access to the raw data and the ability to utilize distributed resources available on the local environment or on the cloud.
 
 The Elastic Calculation Engine example illustrates the following:
-1. Calculating **Net present value** (depanlinkNPVtengahlinkhttp://en.wikipedia.org/wiki/Net_present_valuebelakanglink) for large amounts of trades in real time using an In-Memory Data Grid.
+1. Calculating **Net present value** ([NPV](http://en.wikipedia.org/wiki/Net_present_value)) for large amounts of trades in real time using an In-Memory Data Grid.
 2. Intelligent Map-Reduce directing calculations into distributed nodes, lowering the network traffic and lowering the load on each calculation node.
 3. Simulating lazy data load in a batch mode optimizing database access in case of a cache miss.
 4. While the calculation is going on, dynamically scaling up and down the compute/data grid. This will increase the capacity of the compute/data grid and will allow it to utilize additional CPU resources to speed up the calculation time.
@@ -39,7 +39,7 @@ The Elastic Calculation Engine example illustrates the following:
 
 {% column %}
 
-depanimagerisk_anal.jpgtengahimage/attachment_files/sbp/risk_anal.jpgbelakangimage
+![risk_anal.jpg](/attachment_files/sbp/risk_anal.jpg)
 
 {% endcolumn %}
 
@@ -67,16 +67,16 @@ Calculations can be deployed colocated with the data or seperatly.
 ## The Calculating Flow
 
 The Calculating Flow includes the following:
-- A client, splitting a list of Trade IDs into multiple batches. Each Batch is sent into the calculation node (space partition) via a depanlinkAnalysisTasktengahlink#The AnalysisTaskbelakanglink that implements the depanlinkTask Interfacetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Task+Execution+over+the+Spacebelakanglink. Each calculation node stores a subset of the Trade data.
-- depanlinkThe AnalysisTasktengahlink#The AnalysisTaskbelakanglink is executed. Once completed, an intermediate result is sent back to the client. If the requested Trade cannot be found within the space, it is loaded from the database.
+- A client, splitting a list of Trade IDs into multiple batches. Each Batch is sent into the calculation node (space partition) via a [AnalysisTask](#The AnalysisTask) that implements the [Task Interface](http://wiki.gigaspaces.com/wiki/display/XAP8/Task+Execution+over+the+Space). Each calculation node stores a subset of the Trade data.
+- [The AnalysisTask](#The AnalysisTask) is executed. Once completed, an intermediate result is sent back to the client. If the requested Trade cannot be found within the space, it is loaded from the database.
 -  The client aggregating the results retrieved from all the calculations nodes and reducing it to four numbers. These four numbers represent books.
 
-depanimageElasticDistributedRiskAnalysisEngine_colocated_workers.jpgtengahimage/attachment_files/sbp/ElasticDistributedRiskAnalysisEngine_colocated_workers.jpgbelakangimage
+![ElasticDistributedRiskAnalysisEngine_colocated_workers.jpg](/attachment_files/sbp/ElasticDistributedRiskAnalysisEngine_colocated_workers.jpg)
 
 {% exclamation %} When running the Elastic Calcualtion Engine on a single machine, scaling up and down will not affect the calculation time, but when running this on a grid with multiple machines, you will see better or worse calculation time when the grid scales up or down.
 
 ## Intelligent Map-Reduce
-The Elastic Calcualtion Engine uses the depanlinkExecutorBuildertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Task+Execution+over+the+Space#ExecutorBuilder+APIbelakanglink. This allows executing multiple `AnalysisTasks` in a parallel manner where each Task includes a different Trade ID list to use for the calculation. Each List is sent to a relevant node where it is used to fetch the Trade data from the colocated space or to be loaded from the database.
+The Elastic Calcualtion Engine uses the [ExecutorBuilder](http://wiki.gigaspaces.com/wiki/display/XAP8/Task+Execution+over+the+Space#ExecutorBuilder+API). This allows executing multiple `AnalysisTasks` in a parallel manner where each Task includes a different Trade ID list to use for the calculation. Each List is sent to a relevant node where it is used to fetch the Trade data from the colocated space or to be loaded from the database.
 
 ## The AnalysisTask
 The `AnalysisTask` include the following:
@@ -104,7 +104,7 @@ public void calculateNPV(double rate , Trade trade) {
 
 
 The above can be described using the following formula:
-depanimageNPV_formula.jpgtengahimage/attachment_files/sbp/NPV_formula.jpgbelakangimage
+![NPV_formula.jpg](/attachment_files/sbp/NPV_formula.jpg)
 
 ## The NPVResultsReducer
 The `NPVResultsReducer` receives the NPV calculation for each book from each calculation node (partition) and reduces it into a list of NPV values for each book (four values).
@@ -115,15 +115,15 @@ The Trade Space class stores the following items:
 - CacheFlowData - The cache flow data for Year 0 through Year 5.
 
 ## Elasticity
-The depanlinkElastic Processing Unittengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unitbelakanglink is used to deploy the data/compute grid and scale it dynamically. This allows you to increase the capacity of the data grid and leverage additional CPU resources for the calculation activity. With this demo, the user changes the capacity using a scale command that instructs the data/compute grid to increase its capacity (this in turn starts additional containers and rebalances the data/compute grid) or decrease its capacity (by terminating containers and rebalancing).
+The [Elastic Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit) is used to deploy the data/compute grid and scale it dynamically. This allows you to increase the capacity of the data grid and leverage additional CPU resources for the calculation activity. With this demo, the user changes the capacity using a scale command that instructs the data/compute grid to increase its capacity (this in turn starts additional containers and rebalances the data/compute grid) or decrease its capacity (by terminating containers and rebalancing).
 
 # Remote Calculations
-For long calculations that consume relatively large amount of CPU time, the recommended approach to implement distributed calculations is the depanlinkMaster-Worker Patterntengahlink./master-worker-pattern.htmlbelakanglink. The approach suggested with the Master-Worker pattern should be used when the calculation time is relativity very long where the data access time can't be considered as overhead.
+For long calculations that consume relatively large amount of CPU time, the recommended approach to implement distributed calculations is the [Master-Worker Pattern](./master-worker-pattern.html). The approach suggested with the Master-Worker pattern should be used when the calculation time is relativity very long where the data access time can't be considered as overhead.
 
-depanimageElasticDistributedRiskAnalysisEngine_remote_workers.jpgtengahimage/attachment_files/sbp/ElasticDistributedRiskAnalysisEngine_remote_workers.jpgbelakangimage
+![ElasticDistributedRiskAnalysisEngine_remote_workers.jpg](/attachment_files/sbp/ElasticDistributedRiskAnalysisEngine_remote_workers.jpg)
 
 # Running the Demo
-1. Download the depanlinkElasticCalculationEngine.ziptengahlink/attachment_files/sbp/ElasticCalculationEngine.zipbelakanglink and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and **edit** the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.
+1. Download the [ElasticCalculationEngine.zip](/attachment_files/sbp/ElasticCalculationEngine.zip) and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and **edit** the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.
 2. Start the GigaSpaces agent by running the following:
 
 

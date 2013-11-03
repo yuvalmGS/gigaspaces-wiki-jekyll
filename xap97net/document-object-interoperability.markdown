@@ -8,7 +8,7 @@ page_id: 63799412
 
 {% summary %}Interoperability between Concrete Object and Document space entries{% endsummary %}
 
-depanimagenew-in-801-banner.pngtengahimage/attachment_files/xap97net/new-in-801-banner.pngbelakangimage
+![new-in-801-banner.png](/attachment_files/xap97net/new-in-801-banner.png)
 
 # Overview
 
@@ -59,7 +59,7 @@ Respectively, to support multiple ids queries, use the `IdsQuery` with the corre
 # Dynamic Properties
 
 By default, type descriptors created from concrete object classes do not support dynamic properties. If a document of such a type with a property that is not defined in the object will be written to the space, an exception will be thrown indicating the property is not defined in the type and the type does not support dynamic properties.
-In order to have a concrete class support dynamic properties it should have a property decorated with the \ajepaaaSpaceDynamicProperties\ajepbbb and the type of that property must be either DocumentProperties, Dictionary<String, Object> or IDictionary<String, Object>.
+In order to have a concrete class support dynamic properties it should have a property decorated with the \[SpaceDynamicProperties\] and the type of that property must be either DocumentProperties, Dictionary<String, Object> or IDictionary<String, Object>.
 
 
 {% highlight java %}
@@ -80,5 +80,5 @@ public class MyObject
 {% endhighlight %}
 
 
-The storage type of the dynamic properties can be explicitly set in the attribute \ajepaaaSpaceDynamicProperties(StorageType=StorageType.Binary)\ajepbbb (the default is StorageType.Object).
-{% refer %}For more details about storage type refer to depanlinkProperty Storage Typetengahlink./property-storage-type.htmlbelakanglink{% endrefer %}
+The storage type of the dynamic properties can be explicitly set in the attribute \[SpaceDynamicProperties(StorageType=StorageType.Binary)\] (the default is StorageType.Object).
+{% refer %}For more details about storage type refer to [Property Storage Type](./property-storage-type.html){% endrefer %}

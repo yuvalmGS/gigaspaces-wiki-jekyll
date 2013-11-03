@@ -22,7 +22,7 @@ page_id: 55937171
 {rate}
 
 # Overview
-depanlinkBatch processingtengahlinkhttp://en.wikipedia.org/wiki/Batch_processingbelakanglink involves usually complex flows using conditional or sequential steps. This involves relatively large CPU cycles and IO access. In such case the data access time required for the processing is relatively small compared to the processing/IO activities duration time.
+[Batch processing](http://en.wikipedia.org/wiki/Batch_processing) involves usually complex flows using conditional or sequential steps. This involves relatively large CPU cycles and IO access. In such case the data access time required for the processing is relatively small compared to the processing/IO activities duration time.
 
 To allow batch processing systems to leverage available resources on the network/cloud, the batch processing system should be able to scale in a dynamic manner across multiple machines.
 
@@ -38,10 +38,10 @@ The GigaSpaces Spring Batch PU provides:
 -- Continuous High-Availability.
 
 - Scalability
--- depanlinkElastictengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unitbelakanglink and Dynamic scalability of the Spring batch PU instances.
+-- [Elastic](http://wiki.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit) and Dynamic scalability of the Spring batch PU instances.
 
 # Spring Batch Introduction
-depanlinkSpring Batchtengahlinkhttp://static.springsource.org/spring-batchbelakanglink is a lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.
+[Spring Batch](http://static.springsource.org/spring-batch) is a lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.
 Spring Batch builds upon the productivity, POJO-based development approach, and general ease of use capabilities people have come to know from the Spring Framework, while making it easy for developers to access and leverage more advance enterprise services when necessary.
 Spring Batch is not a scheduling framework.
 There are many good enterprise schedulers available in both the commercial and open source spaces such as Quartz, Tivoli, Control-M, etc.
@@ -50,17 +50,17 @@ It is intended to work in conjunction with a scheduler, not replace a scheduler.
 Spring Batch provides reusable functions that are essential in processing large volumes of records, including:
 Logging, Tracing, Transaction management, Job processing statistics, Job restart, Job skip, resource management, etc.
 
-The Spring Batch depanlinkruntime environmenttengahlinkhttp://static.springsource.org/spring-batch/reference/html/configureJob.htmlbelakanglink includes the following main components:
+The Spring Batch [runtime environment](http://static.springsource.org/spring-batch/reference/html/configureJob.html) includes the following main components:
 
 {% indent %}
-depanimagespring_batch_RuntimeEnvironment.jpgtengahimage/attachment_files/sbp/spring_batch_RuntimeEnvironment.jpgbelakangimage
+![spring_batch_RuntimeEnvironment.jpg](/attachment_files/sbp/spring_batch_RuntimeEnvironment.jpg)
 {% endindent %}
 
 
-Spring Batch support both depanlinksequential and conditional flowstengahlinkhttp://static.springsource.org/spring-batch/reference/html/configureStep.htmlbelakanglink. This allows building flexible batch processing systems.
+Spring Batch support both [sequential and conditional flows](http://static.springsource.org/spring-batch/reference/html/configureStep.html). This allows building flexible batch processing systems.
 
 {% indent %}
-depanimagespring_batch_SequentialAndConditionalFlows.jpgtengahimage/attachment_files/sbp/spring_batch_SequentialAndConditionalFlows.jpgbelakangimage
+![spring_batch_SequentialAndConditionalFlows.jpg](/attachment_files/sbp/spring_batch_SequentialAndConditionalFlows.jpg)
 {% endindent %}
 
 
@@ -68,7 +68,7 @@ depanimagespring_batch_SequentialAndConditionalFlows.jpgtengahimage/attachment_f
 A typical batch program generally reads a large number of records from a database, file, or queue, processes the data in some fashion, and then writes back data in a modified form. Spring Batch automates this basic batch iteration, providing the capability to process similar transactions as a set, typically in an offline environment without any user interaction. Batch jobs are part of most IT projects and Spring Batch is the only open source framework that provides a robust, enterprise-scale solution.
 
 # GigaSpaces Spring Batch PU
-In GigaSpaces XAP, you can implement the depanlinkMaster-Worker patterntengahlink./master-worker-pattern.htmlbelakanglink using several methods:
+In GigaSpaces XAP, you can implement the [Master-Worker pattern](./master-worker-pattern.html) using several methods:
 - Task Executors - Best for scenarios where the processing activity is collocated with the data. Designed for low latency situations.
 - Polling Containers - A remote consumer/worker component used with simple processing scenarios.
 - Spring Batch - A remote consumer/worker component used with complex processing scenarios. Leveraging Spring Bach Framework to manage flows.
@@ -79,7 +79,7 @@ Polling Container and Spring Batch approach should be used when the processing a
 The Spring Batch PU encapsulates all the required components to run a Spring Batch instance:
 
 {% indent %}
-depanimagespring_batch_PU_archi.jpgtengahimage/attachment_files/sbp/spring_batch_PU_archi.jpgbelakangimage
+![spring_batch_PU_archi.jpg](/attachment_files/sbp/spring_batch_PU_archi.jpg)
 {% endindent %}
 
 
@@ -89,7 +89,7 @@ The Spring Batch PU supports the Round Robin Workers mode and the Dedicated Work
 With the Round Robin Worker mode a Spring Batch PU instance will be consuming requests from all the space partitions in round robin manner.
 
 {% indent %}
-depanimagespring_batch_RoundRobinWorker.jpgtengahimage/attachment_files/sbp/spring_batch_RoundRobinWorker.jpgbelakangimage
+![spring_batch_RoundRobinWorker.jpg](/attachment_files/sbp/spring_batch_RoundRobinWorker.jpg)
 {% endindent %}
 
 
@@ -97,7 +97,7 @@ depanimagespring_batch_RoundRobinWorker.jpgtengahimage/attachment_files/sbp/spri
 With the Dedicated Worker mode a Spring Batch PU instance will be consuming requests from a dedicated specific space partition.
 
 {% indent %}
-depanimagespring_batch_DedicatedWorker.jpgtengahimage/attachment_files/sbp/spring_batch_DedicatedWorker.jpgbelakangimage
+![spring_batch_DedicatedWorker.jpg](/attachment_files/sbp/spring_batch_DedicatedWorker.jpg)
 {% endindent %}
 
 
@@ -108,9 +108,9 @@ The Spring Batch PU implementation includes the following components:
 |ItemRequest| A Request class. Generated by the Master and consumed by the SpaceItemReader.|
 |ItemResult| A Result class. Generated by the SpaceItemProcessor and consumed by the Master.|
 |JobRunner| Spring Batch JobRunner Bean|
-|SpaceItemReader| depanlinkorg.springframework.batch.item.ItemReadertengahlinkhttp://static.springsource.org/spring-batch/apidocs/org/springframework/batch/item/ItemReader.htmlbelakanglink implemenation|
-|SpaceItemProcessor| depanlinkorg.springframework.batch.item.ItemProcessortengahlinkhttp://static.springsource.org/spring-batch/apidocs/org/springframework/batch/item/ItemProcessor.htmlbelakanglink implemenation|
-|SpaceItemWriter| depanlinkorg.springframework.batch.item.ItemWritertengahlinkhttp://static.springsource.org/spring-batch/apidocs/org/springframework/batch/item/ItemWriter.htmlbelakanglink implemenation|
+|SpaceItemReader| [org.springframework.batch.item.ItemReader](http://static.springsource.org/spring-batch/apidocs/org/springframework/batch/item/ItemReader.html) implemenation|
+|SpaceItemProcessor| [org.springframework.batch.item.ItemProcessor](http://static.springsource.org/spring-batch/apidocs/org/springframework/batch/item/ItemProcessor.html) implemenation|
+|SpaceItemWriter| [org.springframework.batch.item.ItemWriter](http://static.springsource.org/spring-batch/apidocs/org/springframework/batch/item/ItemWriter.html) implemenation|
 |JobRepository| Spring Batch JobRepository Bean.|
 |JobLauncher| Spring Batch JobLauncher Bean.|
 |JobRunner| JobRepository Bean. Encapsulates the JobLauncher. Initiaites the proecssing activity.|
@@ -486,7 +486,7 @@ java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb
 This will start an HSQL database used with the Spring Batch PU.
 
 ## Create the Spring Batch PU
-- Download and extract the depanlinkSpring Batch PU exampletengahlink/attachment_files/sbp/SpringBatch.zipbelakanglink into an empty folder.
+- Download and extract the [Spring Batch PU example](/attachment_files/sbp/SpringBatch.zip) into an empty folder.
 - Create a new folder named `SpringBatchPU` under the `gigaspaces-xap-premium\deploy` folder.
 - Copy the example **bin folder** content into the `gigaspaces-xap-premium\deploy\SpringBatchPU` folder.
 

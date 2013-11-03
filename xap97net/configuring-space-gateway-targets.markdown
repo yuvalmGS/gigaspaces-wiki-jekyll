@@ -11,7 +11,7 @@ page_id: 63799430
 {% compositionsetup %}
 
 {% info %}
-This page assume prior knowledge of multi-site replication, please refer to depanlinkMulti-Site Replication (WAN)tengahlink./multi-site-replication-over-the-wan.htmlbelakanglink before reading this page.
+This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
 {% endinfo %}
 
 
@@ -90,7 +90,7 @@ container.CreateSpaceProxy("Space", "/./myNYSpace", spaceConfig);
 {% endinittab %}
 
 
-Each configuration can be configured for all gateways or specifically per each gateway as seen in the above example, max-redo-log-capacity is configured for all gateways while bulk-size is specifically overridden in the configuration of HONGKONG gateway target. A recommended reading regarding the replication redo-log is depanlinkControlling the Replication Redo Logtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/Controlling+the+Replication+Redo+Logbelakanglink.
+Each configuration can be configured for all gateways or specifically per each gateway as seen in the above example, max-redo-log-capacity is configured for all gateways while bulk-size is specifically overridden in the configuration of HONGKONG gateway target. A recommended reading regarding the replication redo-log is [Controlling the Replication Redo Log](http://wiki.gigaspaces.com/wiki/display/XAP95/Controlling+the+Replication+Redo+Log).
 
 # Configurable Parameters
 
@@ -101,4 +101,4 @@ Each configuration can be configured for all gateways or specifically per each g
 |MaxRedoLogCapacity|Specifies the maximum number of packets that should be held in the redo-log for a replication gateway (-1 means unlimited) | 100,000,000 |
 |OnRedoLogCapacityExceeded| `DropOldest` will result in dropping the oldest packet in the redo-log once the capacity is exceeded, `BlockOperations` will result in blocking all new replicated operations by denying such new operation by throwing an exception to the operation invoker. | `DropOldest` |
 
-If one of the gateway targets name matches the local-gateway-name, it will be filtered and removed from the list at deploy time. This may be helpful for creating symmetric configuration which is demonstrated at depanlinkMulti-Site Replication (WAN)tengahlink./multi-site-replication-over-the-wan.htmlbelakanglink page.
+If one of the gateway targets name matches the local-gateway-name, it will be filtered and removed from the list at deploy time. This may be helpful for creating symmetric configuration which is demonstrated at [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) page.

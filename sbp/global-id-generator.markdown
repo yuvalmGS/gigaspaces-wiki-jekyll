@@ -26,7 +26,7 @@ GigaSpaces generates a unique global ID when writing new objects using its built
 
 
 {% tip %}
-You can depanlinkdownloadtengahlink/attachment_files/sbp/GlobalIDGenerator.zipbelakanglink the custom Unique Global ID Generator source code used with this example.
+You can [download](/attachment_files/sbp/GlobalIDGenerator.zip) the custom Unique Global ID Generator source code used with this example.
 {% endtip %}
 
 
@@ -38,7 +38,7 @@ The following example includes a custom global unique ID generator PU and a clie
 - Support persisting the `IdCounterEntry` object within a database. This allows the `IdCounterEntry` object to be loaded from a database in case the Unique Global ID Generator PU is fully re-started.
 - Once a Unique Global ID Generator is deployed, a `IdObjectInitializer` is created and generates the `IdCounterEntry` object within the Unique Global ID Generator space. Only one `IdCounterEntry` will be created.
 
-depanimageid_generator.jpgtengahimage/attachment_files/sbp/id_generator.jpgbelakangimage
+![id_generator.jpg](/attachment_files/sbp/id_generator.jpg)
 
 # Using the ID Generator
 To use the ID Generator you should:
@@ -52,7 +52,7 @@ Integer myNextID = idGenerator.generateId();
 {% endhighlight %}
 
 {% info %}
-The `SpaceBasedIdGenerator` using depanlinkSpring Transactionstengahlinkhttp://static.springsource.org/spring/docs/2.0.x/reference/transaction.htmlbelakanglink to update the `IdCounterEntry` object.
+The `SpaceBasedIdGenerator` using [Spring Transactions](http://static.springsource.org/spring/docs/2.0.x/reference/transaction.html) to update the `IdCounterEntry` object.
 {% endinfo %}
 
 # The ID Generator Components

@@ -58,13 +58,13 @@ GigaSpaces SqlQuery supports the following:
 
 # Indexing
 
-It is highly recommended to use indexes on relevant properties to increase performance. For more information see depanlinkIndexingtengahlink./indexing.htmlbelakanglink.
+It is highly recommended to use indexes on relevant properties to increase performance. For more information see [Indexing](./indexing.html).
 
 # Blocking Operations
 
 Blocking operations (i.e. `Read` or `Take` with `timeout` greater than `0`) are supported with the following restrictions:
-- Blocking operations on a partitioned space require a routing value (broadcast is not supported). For more information see depanlinkRoutingtengahlink#Routingbelakanglink.
-- Blocking operations on complex queries are not supported. For more information see depanlinkSimple Queriestengahlink#SimpleQueriesbelakanglink definition.
+- Blocking operations on a partitioned space require a routing value (broadcast is not supported). For more information see [Routing](#Routing).
+- Blocking operations on complex queries are not supported. For more information see [Simple Queries](#SimpleQueries) definition.
 
 
 {% highlight java %}

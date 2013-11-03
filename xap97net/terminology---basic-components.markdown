@@ -6,7 +6,7 @@ page_id: 63799398
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.
-||Basic Components|depanlinkData Grid Topologiestengahlink./terminology---data-grid-topologies.htmlbelakanglink|depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink|depanlinkRuntime Componentstengahlink./terminology---runtime-components.htmlbelakanglink|
+||Basic Components|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|
 
 # Basic Components
 
@@ -43,7 +43,7 @@ The GigaSpaces cache instance that holds data objects in memory.
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_space.giftengahimage/attachment_files/xap97net/term_space.gifbelakangimage
+![term_space.gif](/attachment_files/xap97net/term_space.gif)
 
 {% sub %}**A space holding objects**{% endsub %}
 
@@ -78,7 +78,7 @@ A set of methods used to read, write, take, and register for notification on obj
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_verbs.jpgtengahimage/attachment_files/xap97net/term_verbs.jpgbelakangimage
+![term_verbs.jpg](/attachment_files/xap97net/term_verbs.jpg)
 
 {% sub %}**A client application uses the read, write, take, update and notify methods to exchange objects and receive notifications from the space**{% endsub %}
 {% endalign %}
@@ -109,7 +109,7 @@ depanimageterm_verbs.jpgtengahimage/attachment_files/xap97net/term_verbs.jpgbela
 #### Service Component
 
 An application component that interacts with the space (using read, write, take, etc.), and implements a certain functionality.
-Java people sometimes refer to it as a Service Bean, but it does not have to be a depanlinkJava Beantengahlinkhttp://en.wikipedia.org/wiki/JavaBeanbelakanglink.
+Java people sometimes refer to it as a Service Bean, but it does not have to be a [Java Bean](http://en.wikipedia.org/wiki/JavaBean).
 {% sub %}Key sentence: The service component interacts with the space to implement your application's logic.{% endsub %}
 
 {% endcolumn %}
@@ -117,7 +117,7 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_service_bean.giftengahimage/attachment_files/xap97net/term_service_bean.gifbelakangimage
+![term_service_bean.gif](/attachment_files/xap97net/term_service_bean.gif)
 
 {% sub %}**A Service Component**{% endsub %}
 {% endalign %}
@@ -142,14 +142,14 @@ depanimageterm_service_bean.giftengahimage/attachment_files/xap97net/term_servic
 
 #### Processing Unit
 
-A combination of service components and/or an embedded space instance. This is the fundamental unit of deployment in GigaSpaces XAP. The Processing Unit itself runs within a depanlinkProcessing Unit Containertengahlink./terminology---runtime-components.html#Processing Unit Containerbelakanglink, and is typically deployed onto the depanlinkService Gridtengahlink./terminology---runtime-components.html#Service Gridbelakanglink.
+A combination of service components and/or an embedded space instance. This is the fundamental unit of deployment in GigaSpaces XAP. The Processing Unit itself runs within a [Processing Unit Container](./terminology---runtime-components.html#Processing Unit Container), and is typically deployed onto the [Service Grid](./terminology---runtime-components.html#Service Grid).
 
 {% endcolumn %}
 
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_empty_pu.giftengahimage/attachment_files/xap97net/term_empty_pu.gifbelakangimage
+![term_empty_pu.gif](/attachment_files/xap97net/term_empty_pu.gif)
 
 {% sub %}**A Processing Unit**{% endsub %}
 {% endalign %}
@@ -173,14 +173,14 @@ depanimageterm_empty_pu.giftengahimage/attachment_files/xap97net/term_empty_pu.g
 
 #### Processing Unit configured with an embedded space
 
-A deployable package which instantiates an embedded space instance, also called a data grid instance. A set of embedded space instances that run within the processing units typically form a depanlinkData Gridtengahlink./terminology---data-grid-topologies.htmlbelakanglink.
+A deployable package which instantiates an embedded space instance, also called a data grid instance. A set of embedded space instances that run within the processing units typically form a [Data Grid](./terminology---data-grid-topologies.html).
 
 {% endcolumn %}
 
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_pu_with_space.giftengahimage/attachment_files/xap97net/term_pu_with_space.gifbelakangimage
+![term_pu_with_space.gif](/attachment_files/xap97net/term_pu_with_space.gif)
 
 {% sub %}**A Processing Unit with an embedded space**{% endsub %}
 {% endalign %}
@@ -208,7 +208,7 @@ A deployable package containing one or more services. In the GigaSpaces context,
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_pu_with_bean.giftengahimage/attachment_files/xap97net/term_pu_with_bean.gifbelakangimage
+![term_pu_with_bean.gif](/attachment_files/xap97net/term_pu_with_bean.gif)
 
 {% sub %}**A Processing Unit containing a Service component that interacts with a space embedded in another Processing Unit**{% endsub %}
 {% endalign %}
@@ -229,7 +229,7 @@ depanimageterm_pu_with_bean.giftengahimage/attachment_files/xap97net/term_pu_wit
 
 #### Processing Unit configured with embedded space and embedded services
 
-A deployable, independent, scalable unit, which is the building block of depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink.
+A deployable, independent, scalable unit, which is the building block of [Space-Based Architecture](./terminology---space-based-architecture.html).
 Client application (which can also be other processing units) write objects to the space, and the procesing unit which contains this space consumes these objects or is notified about them and triggeres a related services.
 
 {% endcolumn %}
@@ -237,7 +237,7 @@ Client application (which can also be other processing units) write objects to t
 {% column width=30% %}
 
 {% align center %}
-depanimageterm_pu_with_space_and_bean.giftengahimage/attachment_files/xap97net/term_pu_with_space_and_bean.gifbelakangimage
+![term_pu_with_space_and_bean.gif](/attachment_files/xap97net/term_pu_with_space_and_bean.gif)
 
 {% sub %}**A Processing Unit with an embedded service that interacts with an embedded space**{% endsub %}
 {% endalign %}
@@ -247,4 +247,4 @@ depanimageterm_pu_with_space_and_bean.giftengahimage/attachment_files/xap97net/t
 {% endsection %}
 
 
-||Basic Components|depanlinkData Grid Topologiestengahlink./terminology---data-grid-topologies.htmlbelakanglink|depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink|depanlinkRuntime Componentstengahlink./terminology---runtime-components.htmlbelakanglink|
+||Basic Components|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|

@@ -11,7 +11,7 @@ page_id: 63799299
 
 # Overview
 
-This page demonstrates how to use the GigaSpaces .Net NHibernate depanlinkExternal Data Sourcetengahlink./persistency.htmlbelakanglink in a common scenario: a cluster topology with a mirror. This is asynchronous persistency, which means that the operation against the cluster members is persisted to the database in an asynchronous manner. Each cluster member uses the External Data Source in read-only mode. Therefore it only reads data from the External Data Source, and each write operation is replicated to the mirror space.
+This page demonstrates how to use the GigaSpaces .Net NHibernate [External Data Source](./persistency.html) in a common scenario: a cluster topology with a mirror. This is asynchronous persistency, which means that the operation against the cluster members is persisted to the database in an asynchronous manner. Each cluster member uses the External Data Source in read-only mode. Therefore it only reads data from the External Data Source, and each write operation is replicated to the mirror space.
 
 The mirror uses the External Data Source interface in write mode, and delegates destructive space operations (write, update, take) to the database through the External Data Source implementation.
 
@@ -42,7 +42,7 @@ NHibernate requires a session factory that creates new sessions over the databas
     <!--Disabled the validation of your persistent classes, allows using .Net properties and not getters and setters on your fields-->
     <property name="use_proxy_validator">false</property>
     <!--This will create the tables in the database for your persistent classes according to the mapping file.-->
-    <depanimage--If the tables are already created this will recreate them and clear the datatengahimage/attachment_files/xap97net/--If the tables are already created this will recreate them and clear the databelakangimage-->
+    <![--If the tables are already created this will recreate them and clear the data](/attachment_files/xap97net/--If the tables are already created this will recreate them and clear the data)-->
     <property name="hbm2ddl.auto">create</property>
 
   </session-factory>
@@ -115,7 +115,7 @@ namespace Entities
 
 # Starting the Spaces with NHibernate External Data Source
 
-This walkthrough demonstrates how to start the spaces with the NHibernate External Data Source from code, using a cluster in a depanlinkpartitioned-sync2backuptengahlink./terminology---data-grid-topologies.htmlbelakanglink topology.
+This walkthrough demonstrates how to start the spaces with the NHibernate External Data Source from code, using a cluster in a [partitioned-sync2backup](./terminology---data-grid-topologies.html) topology.
 Our cluster is 2,1 and a mirror. Therefore it consists of:
 - 2 partitioned primary spaces
 - 2 backup spaces, one for each partition
@@ -156,13 +156,13 @@ spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 1, null, 2,
 ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace?mirror=true", spaceConfig);
 {% endhighlight %}
 
-{% lampon %} `<NHibernate config file>` (see code box above) should point to the NHibernate session factory depanlinkconfiguration filetengahlink#sessionfactorybelakanglink.
+{% lampon %} `<NHibernate config file>` (see code box above) should point to the NHibernate session factory [configuration file](#sessionfactory).
 
 {% lampon %} It is recommended that you put all the NHibernate HBM mapping files in one directory, and point `<NHibernate HBM files location>` (see code box above) to that directory.
 
 {% exclamation %} You can also construct your own NHibernate session factory in code, and pass it to the constructor of the `NHibernateExternalDataSource`. In this case, there is no need to use `SpaceConfig.ExternalDataSourceConfig.CustomProperties`.
 
-To start the other members of the cluster, simply change the depanlinkClusterInfotengahlink./processing-unit-container.html#ClusterInfobelakanglink:
+To start the other members of the cluster, simply change the [ClusterInfo](./processing-unit-container.html#ClusterInfo):
 - Backup space of the first partition member
 
 {% highlight java %}

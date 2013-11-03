@@ -20,22 +20,22 @@ page_id: 55935740
 {rate}
 
 # Overview
-The following example is based on the standard depanlinkSpring Hibernate Integration tutorialtengahlinkhttp://www.vaannila.com/spring/spring-hibernate-integration-1.htmlbelakanglink.
-In this best practice you will see how to modify an existing simple spring/hibernate application to leverage GigaSpaces as the depanlinkin-memory Data-gridtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+In-Memory+Data+Gridbelakanglink and the application server hosting both the [web application|XAP91:Web Application Support] and the data in-memory. The Hibernate persistency settings will still be leveraged by [GigaSpaces Hibernate External Data Source|XAP91:Hibernate External Data Source] storing the data in-memory into a database in an [asynchronous manner|XAP91:Asynchronous Persistency with the Mirror].
+The following example is based on the standard [Spring Hibernate Integration tutorial](http://www.vaannila.com/spring/spring-hibernate-integration-1.html).
+In this best practice you will see how to modify an existing simple spring/hibernate application to leverage GigaSpaces as the [in-memory Data-grid](http://wiki.gigaspaces.com/wiki/display/XAP91/The+In-Memory+Data+Grid) and the application server hosting both the [web application|XAP91:Web Application Support] and the data in-memory. The Hibernate persistency settings will still be leveraged by [GigaSpaces Hibernate External Data Source|XAP91:Hibernate External Data Source] storing the data in-memory into a database in an [asynchronous manner|XAP91:Asynchronous Persistency with the Mirror].
 
 Moving Spring/Hibernate application to GigaSpaces involves the following basic steps:
 1. Spring bean Configuration file changes
-2. depanlinkPOJO Classtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/POJO+Supportbelakanglink changes
+2. [POJO Class](http://wiki.gigaspaces.com/wiki/display/XAP91/POJO+Support) changes
 3. DAO implementation changes
 4. Deploying the data-grid and the Spring based web application into GigaSpaces
 
 # Architecture Change
 
 The procedure described below will move a standard Spring/Hibernate application that is using the following architecture:
-depanimageHibernate with EhCache.jpgtengahimage/attachment_files/sbp/Hibernate with EhCache.jpgbelakangimage
+![Hibernate with EhCache.jpg](/attachment_files/sbp/Hibernate with EhCache.jpg)
 
 To use the following architecture where the Data-Grid placed in-line between the application and the database:
-depanimageHibernate_DataGrid_mirror.jpgtengahimage/attachment_files/sbp/Hibernate_DataGrid_mirror.jpgbelakangimage
+![Hibernate_DataGrid_mirror.jpg](/attachment_files/sbp/Hibernate_DataGrid_mirror.jpg)
 
 # Spring bean Configuration File
 The existing application Spring bean Configuration file will be modified to:
@@ -454,7 +454,7 @@ public interface UserDAO {
 
 
 # The DAO Implementation
-The DAO implementation should be modified to use the depanlinkGigaSpace interfacetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+GigaSpace+Interfacebelakanglink to access the data grid instead of using the `HibernateTemplate` that is accessing the database. The `GigaSpace` interface simialr methods to the `HibernateTemplate` to write and [Query|XAP91:SQLQuery] for objects.
+The DAO implementation should be modified to use the [GigaSpace interface](http://wiki.gigaspaces.com/wiki/display/XAP91/The+GigaSpace+Interface) to access the data grid instead of using the `HibernateTemplate` that is accessing the database. The `GigaSpace` interface simialr methods to the `HibernateTemplate` to write and [Query|XAP91:SQLQuery] for objects.
 
 {% inittab DAOImplemenation|top %}
 
@@ -532,10 +532,10 @@ public class UserDAOSpaceImpl implements UserDAO {
 
 
 # Deploying the Data-Grid and the Application
-To deploy the Data-Grid and the web Application into the depanlinkGigaSpaces runtime enviromenttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Runtime+Environmentbelakanglink perform the following:
-- Download the depanlink3rd party librariestengahlink/attachment_files/sbp/3rd_party_libraries.zipbelakanglink package, and extract it into the `\gigaspaces-xap\lib\optional\pu-common` folder.
-- Download the depanlinkapplication.wartengahlink/attachment_files/sbp/application.warbelakanglink , depanlinkmyDataGrid.jartengahlink/attachment_files/sbp/myDataGrid.jarbelakanglink and the depanlinkmyMirror.jartengahlink/attachment_files/sbp/myMirror.jarbelakanglink.
-- Start the depanlinkGigaSpaces agenttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agentbelakanglink:
+To deploy the Data-Grid and the web Application into the [GigaSpaces runtime enviroment](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Runtime+Environment) perform the following:
+- Download the [3rd party libraries](/attachment_files/sbp/3rd_party_libraries.zip) package, and extract it into the `\gigaspaces-xap\lib\optional\pu-common` folder.
+- Download the [application.war](/attachment_files/sbp/application.war) , [myDataGrid.jar](/attachment_files/sbp/myDataGrid.jar) and the [myMirror.jar](/attachment_files/sbp/myMirror.jar).
+- Start the [GigaSpaces agent](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agent):
 On windows run the following command:
 
 
@@ -640,14 +640,14 @@ On linux run the following command:
 - Once the Data-Grid, Mirror and the application will be deployed you should see the following within the GS-UI:
 
 {% indent %}
-depanimagehib2space1.jpgtengahimage/attachment_files/sbp/hib2space1.jpgbelakangimage
+![hib2space1.jpg](/attachment_files/sbp/hib2space1.jpg)
 {% endindent %}
 
 
 - You can start the web application and register users:
 
 {% indent %}
-depanimagehib2space3.jpgtengahimage/attachment_files/sbp/hib2space3.jpgbelakangimage
+![hib2space3.jpg](/attachment_files/sbp/hib2space3.jpg)
 {% endindent %}
 
 
@@ -656,13 +656,13 @@ Each registered user data will be stored within the space and also be persist in
 - To view the data within the space click the Data Types , select the User class and click Query:
 
 {% indent %}
-depanimagehib2space2.jpgtengahimage/attachment_files/sbp/hib2space2.jpgbelakangimage
+![hib2space2.jpg](/attachment_files/sbp/hib2space2.jpg)
 {% endindent %}
 
 This will display the Query view with the User objects data stored within the space:
 
 {% indent %}
-depanimagehib2space5.jpgtengahimage/attachment_files/sbp/hib2space5.jpgbelakangimage
+![hib2space5.jpg](/attachment_files/sbp/hib2space5.jpg)
 {% endindent %}
 
 
@@ -676,8 +676,8 @@ java -cp  ../lib/platform/jdbc/hsqldb.jar  org.hsqldb.util.DatabaseManager
 And query the database:
 
 {% indent %}
-depanimagehib2space4.jpgtengahimage/attachment_files/sbp/hib2space4.jpgbelakangimage
+![hib2space4.jpg](/attachment_files/sbp/hib2space4.jpg)
 {% endindent %}
 
 
-{% exclamation %} You may download the full source code of the application depanlinkheretengahlink/attachment_files/sbp/HibernateToSpace.zipbelakanglink.
+{% exclamation %} You may download the full source code of the application [here](/attachment_files/sbp/HibernateToSpace.zip).

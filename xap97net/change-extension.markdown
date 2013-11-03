@@ -10,7 +10,7 @@ page_id: 64325381
 
 # Overview
 
-The `ChangeExtension` provides extension methods of `ISpaceProxy` on top of the depanlinkChange APItengahlink./change-api.htmlbelakanglink that simplify the common use cases of the `Change` operation.
+The `ChangeExtension` provides extension methods of `ISpaceProxy` on top of the [Change API](./change-api.html) that simplify the common use cases of the `Change` operation.
 
 # Add and Get operation
 

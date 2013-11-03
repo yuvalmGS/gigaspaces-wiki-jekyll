@@ -17,13 +17,13 @@ For this reason, these application servers focused mainly on resource management
 
 # Space-Based Architecture
 
-A detailed description of the model and the theory that led to the inception of GigaSpaces XAP as a next-generation development and runtime platform, as the means to achieve scalability in a high-throughput, stateful environment, is provided in the following white paper: depanlinkThe Scalability Revolution: From Dead End to Open Roadtengahlinkhttp://www.gigaspaces.com/os_papers.html#scalrevbelakanglink.
+A detailed description of the model and the theory that led to the inception of GigaSpaces XAP as a next-generation development and runtime platform, as the means to achieve scalability in a high-throughput, stateful environment, is provided in the following white paper: [The Scalability Revolution: From Dead End to Open Road](http://www.gigaspaces.com/os_papers.html#scalrev).
 
 In "The Scalability Revolution", we define scalability as the ability to increase an application's working capacity while retaining data and logic consistency, latency, and the application code - and show that inherent scalability barriers represent a dead end for today's tier-based business-critical applications. In order to survive, today's applications must achieve linear scalability, and the only valid way to do so, is to switch from a tier-based model to a new architectural approach - partitioned applications.
 
 We suggest an approach in which applications are partitioned into self-sufficient Processing Units, and present Space-Based Architecture (SBA) as a practical implementation of this approach. We demonstrate that SBA guarantees both linear scalability and simplicity for designers, developers and administrators - transforming scalability from dead end to open road.
 
-The depanlinkSpace-Based Architecture and the End of Tier-based Computingtengahlinkhttp://www.gigaspaces.com/os_papers.html#a1belakanglink white paper describes how changes in the IT resource landscape, such as memory capacity, network speed and the emergence of powerful and new multi-core commodity hardware, and the introduction of SOA/Grid architectures, tout the promise of achieving true linearly-scalable systems at a lower cost. It introduces how a Space-Based Architecture (SBA) approach can be used as a means to transform existing tier-based applications into linearly and dynamically scalable services.
+The [Space-Based Architecture and the End of Tier-based Computing](http://www.gigaspaces.com/os_papers.html#a1) white paper describes how changes in the IT resource landscape, such as memory capacity, network speed and the emergence of powerful and new multi-core commodity hardware, and the introduction of SOA/Grid architectures, tout the promise of achieving true linearly-scalable systems at a lower cost. It introduces how a Space-Based Architecture (SBA) approach can be used as a means to transform existing tier-based applications into linearly and dynamically scalable services.
 
 GigaSpaces XAP was built to be an implementation of the theory behind these concepts, and to make the development of applications based on this model, **simple.**
 
@@ -77,7 +77,7 @@ The space is the 'secret sauce' behind GigaSpaces XAP architecture, and it is im
 
 Tuple Space is a different paradigm for inter-process communication, based on sharing information tuples instead of the alternate message passing paradigm.
 
-Linda language, developed by David Gelernter and Nicholas Carriero at Yale University, was the first implementation of Tuple Spaces. Later on, the depanlinkJavaSpaces specificationtengahlinkhttp://www.sun.com/software/jini/specs/js2_0.pdfbelakanglink was defined as part of depanlinkSun's Jini specificationtengahlinkhttp://www.sun.com/software/jini/specs/belakanglink.
+Linda language, developed by David Gelernter and Nicholas Carriero at Yale University, was the first implementation of Tuple Spaces. Later on, the [JavaSpaces specification](http://www.sun.com/software/jini/specs/js2_0.pdf) was defined as part of [Sun's Jini specification](http://www.sun.com/software/jini/specs/).
 
 GigaSpaces initial product version was a commercial implementation to the JavaSpaces specification, and the Java kernel API of the product still implements the JavaSpaces specification.
 
@@ -87,7 +87,7 @@ This section describes the capabilities of the space, and how a combination of t
 
 ## Space
 
-A Space is a logical in-memory service, which can store entries of information. `Entry` is a domain object. In .NET, an entry can be as simple as a depanlinkPOCOtengahlinkhttp://en.wikipedia.org/wiki/Plain_Old_CLR_Objectbelakanglink.
+A Space is a logical in-memory service, which can store entries of information. `Entry` is a domain object. In .NET, an entry can be as simple as a [POCO](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object).
 
 ## Space - Basic Concepts
 
@@ -107,7 +107,7 @@ These capabilities are at the core of GigaSpaces XAP. This combination, plus the
 
 {% tip title=Template Matching %}
 In traditional relational databases retrieving data is synonym with SQL. While the space supports retrieving data via SQL-like queries, it offers an alternative, lightweight approach called Template Matching. The application creates a template object -- the class of the template object defines which type of objects the application wants to read (for example, a template of class `Message` will return `Message` objects), and the template object's properties are used as retrieval criteria. If a template property has a value, objects are only retrieved if they have the same value for that property. If properties in the template are null, they are ignored.
-GigaSpaces XAP extends template matching by providing semantics to query ranges on information as well. For additional information, please refer to the depanlinkSQLQuery APItengahlink./sqlquery.htmlbelakanglink in the Programmer's Guide.
+GigaSpaces XAP extends template matching by providing semantics to query ranges on information as well. For additional information, please refer to the [SQLQuery API](./sqlquery.html) in the Programmer's Guide.
 {% endtip %}
 
 {% endtoczone %}
@@ -116,12 +116,12 @@ GigaSpaces XAP extends template matching by providing semantics to query ranges 
 # Clustering and Topologies
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
-The depanlinkspace as defined previouslytengahlink#Space - Concepts and Capabilitiesbelakanglink is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a **cluster**, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
+The [space as defined previously](#Space - Concepts and Capabilities) is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a **cluster**, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
 
 The three main cluster topologies are:
-- depanlinkReplicationtengahlink#Replicationbelakanglink
-- depanlinkPartitionedtengahlink#Partitionedbelakanglink
-- depanlinkResilient Partitioningtengahlink#Resilient Partitioningbelakanglink: a combination of Replication and Partitioned.
+- [Replication](#Replication)
+- [Partitioned](#Partitioned)
+- [Resilient Partitioning](#Resilient Partitioning): a combination of Replication and Partitioned.
 
 ## Replication
 
@@ -159,4 +159,4 @@ The common topology is of a partitioned cluster, where each partition member has
 {% endtoczone %}
 
 {% whr %}
-{% refer %}**Next Chapter:** depanlinkA Typical SBA Applicationtengahlink./a-typical-sba-application.htmlbelakanglink{% endrefer %}
+{% refer %}**Next Chapter:** [A Typical SBA Application](./a-typical-sba-application.html){% endrefer %}

@@ -18,24 +18,24 @@ The following list should provide you with the main activities to be done prior 
 
 # Sharing Grid Management Services Infrastructure
 There are numerous ways allowing different systems/applications/groups to share the same pool of servers (in development or production environment) on the network.  A non-exhaustive list of some of the options is delineated below:
-1. Outside of GigaSpaces:  Dedicated hardware for each group, each set of servers runs an independent GigaSpaces runtime environment (aka Service Grid) without sharing the same server between different groups.  This naïve approach is good for simple or temporary scenarios. In this case each GigaSpaces runtime environment is isolated from each other using depanlinkdifferent LOOKUPLOCATORStengahlink#Running Multiple Locatorsbelakanglink or depanlinkdifferent LOOKUPGROUPStengahlink#Running Multiple Groupsbelakanglink value.
+1. Outside of GigaSpaces:  Dedicated hardware for each group, each set of servers runs an independent GigaSpaces runtime environment (aka Service Grid) without sharing the same server between different groups.  This naïve approach is good for simple or temporary scenarios. In this case each GigaSpaces runtime environment is isolated from each other using [different LOOKUPLOCATORS](#Running Multiple Locators) or [different LOOKUPGROUPS](#Running Multiple Groups) value.
 
-2. depanlinkUsing Multiple Zonestengahlink#Running Multiple Zonesbelakanglink:  A single GigaSpaces runtime environment spans all servers, where each group of GigaSpaces containers (across several machines) are labeled with a specific Zone.  You may have multiple Zones used by different containers on the same server. For example, have on server A two containers labeled with zoneX and four containers labeled with zoneY and on server B two containers labeled with zoneX and four containers labeled with zoneY.
+2. [Using Multiple Zones](#Running Multiple Zones):  A single GigaSpaces runtime environment spans all servers, where each group of GigaSpaces containers (across several machines) are labeled with a specific Zone.  You may have multiple Zones used by different containers on the same server. For example, have on server A two containers labeled with zoneX and four containers labeled with zoneY and on server B two containers labeled with zoneX and four containers labeled with zoneY.
 At deployment time, application services (aka processing Unit) are deployed using a specific Zone. This instructs the system to provision the services into the corresponding containers.  Use of multiple Zones breaks logically the runtime environment into different segments.
 
-3. depanlinkUsing Multiple Lookup Groups (multicast lookup discovery)tengahlink#Running Multiple Groupsbelakanglink:  All servers running multiple GigaSpaces runtime environments, where each GigaSpaces container using a specific Lookup Group when registering with the Lookup Service.  At deployment time, application services (aka processing Unit) are deployed using a specific lookup group. Use of multiple lookup group breaks logically the Infrastructure into different segments. The Lookup Group value controlled via the `LOOKUPGROUPS` environment variable. When using this option you should make sure multicast is enabled on all machines.
+3. [Using Multiple Lookup Groups (multicast lookup discovery)](#Running Multiple Groups):  All servers running multiple GigaSpaces runtime environments, where each GigaSpaces container using a specific Lookup Group when registering with the Lookup Service.  At deployment time, application services (aka processing Unit) are deployed using a specific lookup group. Use of multiple lookup group breaks logically the Infrastructure into different segments. The Lookup Group value controlled via the `LOOKUPGROUPS` environment variable. When using this option you should make sure multicast is enabled on all machines.
 
-4. depanlinkUsing Multiple Lookup Locators (unicast lookup discovery)tengahlink#Running Multiple Locatorsbelakanglink: All servers running multiple GigaSpaces runtime environments, where each GigaSpaces container using a specific Lookup locator when registering with the Lookup Service.  At deployment time, application services (aka processing Unit) are deployed using a specific lookup locator. Use of multiple lookup locators breaks logically the Infrastructure into different segments. If you have multiple lookup services running on the same server, each will use a different listening port. You may control this port using the `com.sun.jini.reggie.initialUnicastDiscoveryPort` system property. The Lookup Locators value controlled via the `LOOKUPLOCATORS` environment variable.
+4. [Using Multiple Lookup Locators (unicast lookup discovery)](#Running Multiple Locators): All servers running multiple GigaSpaces runtime environments, where each GigaSpaces container using a specific Lookup locator when registering with the Lookup Service.  At deployment time, application services (aka processing Unit) are deployed using a specific lookup locator. Use of multiple lookup locators breaks logically the Infrastructure into different segments. If you have multiple lookup services running on the same server, each will use a different listening port. You may control this port using the `com.sun.jini.reggie.initialUnicastDiscoveryPort` system property. The Lookup Locators value controlled via the `LOOKUPLOCATORS` environment variable.
 
 5. Using a shared GigaSpaces runtime environment: A single GigaSpaces runtime environment spans all servers, with no use of Zones or Lookup Groups/Locators.   Application services share the servers and allocation done in a random manner without using any pre-defined segmentation.
 
 For any of the above options, GigaSpaces exposes the ability to control a deployed application service in run-time, such that new application service instances can be created or existing instances can be relocated.   This tight operational control enables even more creative resource sharing possibilities.
 
 Devising the appropriate resource sharing strategy for your system should consider the breadth of operational requirements and application services' characteristics. For example, two applications with variable load may run into trouble running on a fixed-size shared environment if peak loads coincide.
-GigaSpaces provides consultancy services for the environement planning stage that addresses the above as well as other considerations impacting your environment. For more information see depanlinkGigaPro Servicestengahlinkhttp://www.gigaspaces.com/content/gigapro-full-services-offering-xap-customersbelakanglink
+GigaSpaces provides consultancy services for the environement planning stage that addresses the above as well as other considerations impacting your environment. For more information see [GigaPro Services](http://www.gigaspaces.com/content/gigapro-full-services-offering-xap-customers)
 
 # Binding the Process into a Machine IP Address
-In many cases, the machines that are running GigaSpaces (i.e., a GSA, GSM, or GSC), or running GigaSpaces client applications (e.g., web servers or standalone JVM/.Net/CPP processes) have multiple network cards with multiple IP addresses. To make sure that the GigaSpaces processes or the GigaSpaces client application processes bind themselves to the correct IP addresses - accessible from another machines - you should use the `NIC_ADDR` environment variable, or the depanlinkjava.rmi.server.hostnametengahlinkhttp://java.sun.com/j2se/1.4.2/docs/guide/rmi/javarmiproperties.htmlbelakanglink system property. Both should be set to the IP of the machine (one of them in case of a machine with multiple IP addresses). Without having this environment/property specified, in some cases, a client process is not able to be notified of events generated by the GigaSpaces runtime environment or the space.
+In many cases, the machines that are running GigaSpaces (i.e., a GSA, GSM, or GSC), or running GigaSpaces client applications (e.g., web servers or standalone JVM/.Net/CPP processes) have multiple network cards with multiple IP addresses. To make sure that the GigaSpaces processes or the GigaSpaces client application processes bind themselves to the correct IP addresses - accessible from another machines - you should use the `NIC_ADDR` environment variable, or the [java.rmi.server.hostname](http://java.sun.com/j2se/1.4.2/docs/guide/rmi/javarmiproperties.html) system property. Both should be set to the IP of the machine (one of them in case of a machine with multiple IP addresses). Without having this environment/property specified, in some cases, a client process is not able to be notified of events generated by the GigaSpaces runtime environment or the space.
 
 Examples:
 
@@ -58,17 +58,17 @@ With the above approach, you can leverage multiple network cards within the same
 {% endtip %}
 
 
-{% exclamation %} For more information, see depanlinkHow to Configure an Environment With Multiple Network-Cards (Multi-NIC)tengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/How+to+Configure+an+Environment+With+Multiple+Network-Cards+(Multi-NIC)belakanglink
+{% exclamation %} For more information, see [How to Configure an Environment With Multiple Network-Cards (Multi-NIC)](http://wiki.gigaspaces.com/wiki/display/XAP91/How+to+Configure+an+Environment+With+Multiple+Network-Cards+(Multi-NIC))
 
 # Ports
 GigaSpaces uses TCP/IP for most of its remote operations. The following components within GigaSpaces require open ports:
 
 || Service || Description || Configuration Property|| Default value ||Comment||
-|depanlinkLookup Service listening porttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Lookup+Servicebelakanglink |Used as part of the lookup discovery protocol.|`com.sun.jini.reggie.initialUnicastDiscoveryPort` System property|XAP 6: **4162**{% wbr %}XAP 7: **4164**{% wbr %}XAP 8: **4166**| |
-|depanlinkLRMI listening porttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Communication+Protocolbelakanglink|Used with client-space and space-space communication. |`com.gs.transport_protocol.lrmi.bind-port` System property. |variable, random| |
+|[Lookup Service listening port](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Lookup+Service) |Used as part of the lookup discovery protocol.|`com.sun.jini.reggie.initialUnicastDiscoveryPort` System property|XAP 6: **4162**{% wbr %}XAP 7: **4164**{% wbr %}XAP 8: **4166**| |
+|[LRMI listening port](http://wiki.gigaspaces.com/wiki/display/XAP91/Communication+Protocol)|Used with client-space and space-space communication. |`com.gs.transport_protocol.lrmi.bind-port` System property. |variable, random| |
 |RMI registry listening port |Used as an alternative directory service.| `com.gigaspaces.system.registryPort` System property|10098 and above.| |
 |Webster listening port|Internal web service used as part of the application deployment process. |`com.gigaspaces.start.httpPort` System property|9813| |
-|depanlinkWeb UI Agenttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Web+Management+Consolebelakanglink|GigaSpaces Dashboard Web Application. | `com.gs.webui.port` System property|8099| |
+|[Web UI Agent](http://wiki.gigaspaces.com/wiki/display/XAP91/Web+Management+Console)|GigaSpaces Dashboard Web Application. | `com.gs.webui.port` System property|8099| |
 
 Here are examples of how to set different LRMI listening ports for the GS-UI, and another set of ports for the GSA/GSC/GSM/Lookup Service:
 
@@ -96,11 +96,11 @@ When there are several GSCs running on the same machine, or several servers runn
 
 # Client LRMI Connection Pool and Server LRMI Connection Thread Pool
 
-The depanlinkGigaSpaces LRMItengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Communication+Protocolbelakanglink uses two independent resource pools working collaboratively allowing a client to communicate with a server in a scalable manner. The client connection pool is configured via the `com.gs.transport_protocol.lrmi.max-conn-pool` and a server connection thread pool is configured via the `com.gs.transport_protocol.lrmi.max-threads`, both should be configured on the server side as system properties. You may configure these two pools' sizes and their resource timeouts to provide maximum throughput and low latency when a client communicates with a server. The default LRMI behavior will open a different connection at the client side and start a connection thread at the server side, once a multithreaded client accesses a server component. All client connections may be shared between all the client threads when communicating with the server. All server side connection threads may be shared between all client connections.
+The [GigaSpaces LRMI](http://wiki.gigaspaces.com/wiki/display/XAP91/Communication+Protocol) uses two independent resource pools working collaboratively allowing a client to communicate with a server in a scalable manner. The client connection pool is configured via the `com.gs.transport_protocol.lrmi.max-conn-pool` and a server connection thread pool is configured via the `com.gs.transport_protocol.lrmi.max-threads`, both should be configured on the server side as system properties. You may configure these two pools' sizes and their resource timeouts to provide maximum throughput and low latency when a client communicates with a server. The default LRMI behavior will open a different connection at the client side and start a connection thread at the server side, once a multithreaded client accesses a server component. All client connections may be shared between all the client threads when communicating with the server. All server side connection threads may be shared between all client connections.
 
 
 {% indent %}
-depanimagelrmi_archi2.jpgtengahimage/attachment_files/sbp/lrmi_archi2.jpgbelakangimage
+![lrmi_archi2.jpg](/attachment_files/sbp/lrmi_archi2.jpg)
 {% endindent %}
 
 
@@ -132,12 +132,12 @@ The LRMI connection thread pool is a server side component. It is in charge of e
 
 
 {% tip %}
-In some cases you might need to increase the LRMI Connection thread pool maximum size. Without this tuning activity, the system might hang in case there would be large amount of concurrent access. See the depanlinkLRMI Configurationtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Communication+Protocol#LRMI+Configurationbelakanglink for details about the GigaSpaces Communication Protocol options. Using a value as **1024** for the LRMI Connection Thread Pool should be sufficient for most large scale systems.
+In some cases you might need to increase the LRMI Connection thread pool maximum size. Without this tuning activity, the system might hang in case there would be large amount of concurrent access. See the [LRMI Configuration](http://wiki.gigaspaces.com/wiki/display/XAP91/Communication+Protocol#LRMI+Configuration) for details about the GigaSpaces Communication Protocol options. Using a value as **1024** for the LRMI Connection Thread Pool should be sufficient for most large scale systems.
 {% endtip %}
 
 
 # Lookup Locators and Groups
-A space (or any other service, such as a GSC or GSM) publishes (or registers/exports) itself within the depanlinkLookup Servicetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Lookup+Servicebelakanglink. The lookup service acts as the system directory service. The lookup service (aka service proxy) keeps information about each service, such as its location and its exposed remote methods. Every client or service needs to discover a lookup service as part of its bootstrap process.
+A space (or any other service, such as a GSC or GSM) publishes (or registers/exports) itself within the [Lookup Service](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Lookup+Service). The lookup service acts as the system directory service. The lookup service (aka service proxy) keeps information about each service, such as its location and its exposed remote methods. Every client or service needs to discover a lookup service as part of its bootstrap process.
 
 There are 2 main options for how to discover a lookup service:
 - **Via locator(s)** - Unicast Discovery mode. With this option a specific IP (or hostname) used indicating the machine running the lookup service. This option can be used when multicast communication is disabled on the network, or when you want to avoid the overhead involved with the multicast discovery.
@@ -179,7 +179,7 @@ In such a case, make sure clients have their lookup locators set correctly to ha
 
 
 ## Space URL Examples
-See below for examples of depanlinkSpace URLtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Space+URLbelakanglinks you should be familiar with:
+See below for examples of [Space URL](http://wiki.gigaspaces.com/wiki/display/XAP91/Space+URL)s you should be familiar with:
 - "jini://localhost/*/space" - this space URL means that the client is trying to discover the lookup service on the localhost, together with discovering it on the network via multicast (enabled by default).
 
 - "jini://localhost/*/space?locators=host,host2" - this space URL means that together with searching for the lookup service on the localhost or the network, we are looking for it on host1 and host2. We call this unicast lookup discovery.
@@ -225,7 +225,7 @@ Here is a simple confguration you should place within your pu.xml to disable the
 
 
 # The Runtime Environment - GSA, LUS, GSM and GSCs
-In a dynamic environment where you want to start depanlinkGSCstengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Containerbelakanglink and [GSMs|XAP91:The Grid Service Manager] remotely, manually or dynamically, the [GSA|XAP91:The Grid Service Agent] is the only component you should have running on the machine that is hosting the [GigaSpaces runtime environment|XAP91:The Runtime Environment]. This lightweight service acts as an agent and starts a GSC/GSM/LUS when needed.
+In a dynamic environment where you want to start [GSCs](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Container) and [GSMs|XAP91:The Grid Service Manager] remotely, manually or dynamically, the [GSA|XAP91:The Grid Service Agent] is the only component you should have running on the machine that is hosting the [GigaSpaces runtime environment|XAP91:The Runtime Environment]. This lightweight service acts as an agent and starts a GSC/GSM/LUS when needed.
 
 You should plan the initial number of GSCs and GSMs based on the application memory footprint, and the amount of processing you might need. The most basic deployment should include 2 GSMs (running on different machines), 2 Lookup services (running on different machines), and 2 GSCs (running on each machine). These host your Data-Grid or any other application components (services, web servers, Mirror) that you deploy.
 
@@ -244,7 +244,7 @@ A good number for the amount of GSCs a machine should host would be **half of th
 
 ## Configuring the Runtime Environment
 
-depanimagenewin71-star.jpgtengahimage/attachment_files/sbp/newin71-star.jpgbelakangimage
+![newin71-star.jpg](/attachment_files/sbp/newin71-star.jpg)
 JVM parameters (system properties, heap settings etc.) that are shared between all components are best set using the `EXT_JAVA_OPTIONS` environment variable. However, starting from 7.1.1, specific GSA JVM parameters can be easily passed using `GSA_JAVA_OPTIONS` that will be appended to `EXT_JAVA_OPTIONS`. If `GSA_JAVA_OPTIONS` is not defined, the system will behave as in 7.1.0. As a good practice, one can add all components' environment variables ( `GSA_JAVA_OPTIONS`, `GSM_JAVA_OPTIONS`, `GSC_JAVA_OPTIONS`, `LUS_JAVA_OPTIONS`) within the GSA script, or in a wrapper script and the values will be passed to corresponding components.
 
 
@@ -404,10 +404,10 @@ On top of the Lookup service, there is also an alternative way to export the spa
 The lookup service runs by default as a standalone JVM process started by the GSA. You can also embed it to run together with the GSM. In general, you should run 2 lookup services per system. Running more than 2 lookup services may cause an overhead, due to the chatting and heartbeat mechanism performed between the services and the lookup service, to signal the existence of the service.
 
 # Zones
-The depanlinkGigaSpaces Zonetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Configuring+the+Processing+Unit+SLA#Deployment+Requirements+-+Hosts,+Zones+and+Machine+Utilizationbelakanglink allows you to "label" a running GSC(s) before starting it. The GigaSpaces **Zone** should be used to isolate applications and a Data-Grid running on the same network. It has been designed to allow users to deploy a processing unit into specific set of GSCs where all these **sharing the same set of LUSs and GSMs**.
+The [GigaSpaces Zone](http://wiki.gigaspaces.com/wiki/display/XAP91/Configuring+the+Processing+Unit+SLA#Deployment+Requirements+-+Hosts,+Zones+and+Machine+Utilization) allows you to "label" a running GSC(s) before starting it. The GigaSpaces **Zone** should be used to isolate applications and a Data-Grid running on the same network. It has been designed to allow users to deploy a processing unit into specific set of GSCs where all these **sharing the same set of LUSs and GSMs**.
 
 The **Zone** property can be used for example to deploy your Data-Grid into a specific GSC(s) labeled with specific zone(s). The zone is specified prior to the GSC startup, and cannot be changed once the GSC has been started.
-depanimagezones.jpgtengahimage/attachment_files/sbp/zones.jpgbelakangimage
+![zones.jpg](/attachment_files/sbp/zones.jpg)
 
 
 {% tip %}
@@ -467,12 +467,12 @@ In order to estimate the amount of total RAM and CPU required for your applicati
 - Active Clients vs. Cores vs. Heap Size.
 - The number of space partitions and backups.
 
-The depanlinkCapacity Planningtengahlink./capacity-planning.htmlbelakanglink section provides a detailed explanation how to estimate the resources required.
+The [Capacity Planning](./capacity-planning.html) section provides a detailed explanation how to estimate the resources required.
 
 # PU Packaging and CLASSPATH
 
 ## User PU Application Libraries
-A depanlinkProcessing Unittengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Processing+Unit+Structure+and+Configurationbelakanglink JAR file, or a [Web Application|XAP91:Web Jetty Processing Unit Container] WAR file should include within its lib folder, all the necessary JARs required for the application. Resource files should be placed within one of the JAR files within the PU JAR, located under the lib folder. In addition, the PU JAR should include the pu.xml within the `META-INF\spring` folder.
+A [Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Processing+Unit+Structure+and+Configuration) JAR file, or a [Web Application|XAP91:Web Jetty Processing Unit Container] WAR file should include within its lib folder, all the necessary JARs required for the application. Resource files should be placed within one of the JAR files within the PU JAR, located under the lib folder. In addition, the PU JAR should include the pu.xml within the `META-INF\spring` folder.
 In order to close LRMI threads when closing application,please use:LRMIManager.shutdown().
 
 ## Data-Grid PU Libraries
@@ -535,7 +535,7 @@ Modify the path and file names appropriately. You will need to use a different f
 {include:COM7:JConsoleJMapWarning}
 
 ## Soft References LRU Policy
-In the attempt to provide the highest level of performance possible, GigaSpaces takes advantage of features in the Java language that allows for effective caching in the face of memory demands. In particular, the depanlinkSoftReferencetengahlinkhttp://docs.oracle.com/javase/6/docs/api/java/lang/ref/SoftReference.htmlbelakanglink class is used to store data up until there is a need for explicit garbage collection, at which point the data stored in soft references will be collected if possible. The system default is 1000, which represents the amount of time (in milliseconds) they will survive past their last reference. `-XX:SoftRefLRUPolicyMSPerMB` is the parameter that allows you to determine how much data is cached by allowing the JVM to control how long it endures; A recommended setting this value to **500** in active, dynamic systems:
+In the attempt to provide the highest level of performance possible, GigaSpaces takes advantage of features in the Java language that allows for effective caching in the face of memory demands. In particular, the [SoftReference](http://docs.oracle.com/javase/6/docs/api/java/lang/ref/SoftReference.html) class is used to store data up until there is a need for explicit garbage collection, at which point the data stored in soft references will be collected if possible. The system default is 1000, which represents the amount of time (in milliseconds) they will survive past their last reference. `-XX:SoftRefLRUPolicyMSPerMB` is the parameter that allows you to determine how much data is cached by allowing the JVM to control how long it endures; A recommended setting this value to **500** in active, dynamic systems:
 
 
 {% highlight java %}
@@ -556,10 +556,10 @@ For applications that are using relatively large amount of third party libraries
 
 {% exclamation %} GigaSpaces is a Java-based product. .Net and C++ applications using GigaSpaces should also be aware the usage of the JVM libraries as part of the .Net and C++ client libraries.
 
-See the depanlinkTuning Java Virtual Machinestengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Tuning+Java+Virtual+Machinesbelakanglink section and the depanlinkJava SE 6 HotSpot Virtual Machine Garbage Collection Tuningtengahlinkhttp://java.sun.com/javase/technologies/hotspot/gc/gc_tuning_6.htmlbelakanglink for detailed JVM tuning recommendations.
+See the [Tuning Java Virtual Machines](http://wiki.gigaspaces.com/wiki/display/XAP91/Tuning+Java+Virtual+Machines) section and the [Java SE 6 HotSpot Virtual Machine Garbage Collection Tuning](http://java.sun.com/javase/technologies/hotspot/gc/gc_tuning_6.html) for detailed JVM tuning recommendations.
 
 # Space Memory Management
-The Space supports two depanlinkMemory Managementtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Memory+Management+Facilitiesbelakanglink modes:
+The Space supports two [Memory Management](http://wiki.gigaspaces.com/wiki/display/XAP91/Memory+Management+Facilities) modes:
 - `ALL_IN_CACHE` - this assumes all application data is stored within the space.
 - `LRU` - this assumes some of the application data is stored within the space, and all the rest is stored in some external data source.
 
@@ -586,7 +586,7 @@ When running with `ALL_IN_CACHE`, you should make sure the default memory manage
 
 
 # Local Cache
-The depanlinklocal cachetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Local+Cachebelakanglink is used as a client side cache that stores objects the client application reads from the space. It speeds up repeated read operations of the same object. The `readById`/`readByIds` operation has a special optimization with a local cache that speeds up the retrieval time of the object from the local cache, in the case that it is already cached. The local cache evicts objects once a threshold is met. When there is a client application with a large heap size, you might want to configure the local cache eviction parameters to control the eviction behavior:
+The [local cache](http://wiki.gigaspaces.com/wiki/display/XAP91/Local+Cache) is used as a client side cache that stores objects the client application reads from the space. It speeds up repeated read operations of the same object. The `readById`/`readByIds` operation has a special optimization with a local cache that speeds up the retrieval time of the object from the local cache, in the case that it is already cached. The local cache evicts objects once a threshold is met. When there is a client application with a large heap size, you might want to configure the local cache eviction parameters to control the eviction behavior:
 
 
 
@@ -656,14 +656,14 @@ GigaSpaces supports automatic discovery, rebalancing (aka Dynamic Redistribution
 
 The logical partitions may initially run on certain containers, and later get relocated to other containers (started after the data grid has been deployed) on other machines, thus allowing the system to expand and increase its memory and CPU capacity while the application is still running. The number of logical partitions and replicas per partition should be determined at deployment time.  The number of containers hosting the IMDG instances may be changed at runtime.
 
-depanimagerebalance_util.jpgtengahimage/attachment_files/sbp/rebalance_util.jpgbelakangimage
+![rebalance_util.jpg](/attachment_files/sbp/rebalance_util.jpg)
 
-The component that is responsible to scale the IMDG at runtime is called the Elastic Service Manager (ESM) and it is used with the depanlinkElastic Processing Unittengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Elastic+Processing+Unitbelakanglink:
-depanimageflow.giftengahimage/attachment_files/sbp/flow.gifbelakangimage
+The component that is responsible to scale the IMDG at runtime is called the Elastic Service Manager (ESM) and it is used with the [Elastic Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP91/Elastic+Processing+Unit):
+![flow.gif](/attachment_files/sbp/flow.gif)
 
 
 {% tip %}
-When using the depanlinkElastic Processing Unittengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Elastic+Processing+Unitbelakanglink, instances will be continuously rebalanced across all available machines.
+When using the [Elastic Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP91/Elastic+Processing+Unit), instances will be continuously rebalanced across all available machines.
 {% endtip %}
 
 
@@ -671,7 +671,7 @@ When using the depanlinkElastic Processing Unittengahlinkhttp://wiki.gigaspaces.
 
 
 ## Manual Rebalancing
-Production machines may be restarted every few days, may fail abnormally and then restarted, or new machines may be started and added to the grid. To allow even distribution of primary IMDG instances or to simply stretch the running instances across all available machines manually, you may use the depanlinkRebalancing utilitytengahlink/attachment_files/sbp/Rebalance.zipbelakanglink. The utility spreads primary and backup IMDG instances evenly across all the machines running GSCs. See full details how to run this utility, within the readme at the depanlinkRebalance.ziptengahlink/attachment_files/sbp/Rebalance.zipbelakanglink.
+Production machines may be restarted every few days, may fail abnormally and then restarted, or new machines may be started and added to the grid. To allow even distribution of primary IMDG instances or to simply stretch the running instances across all available machines manually, you may use the [Rebalancing utility](/attachment_files/sbp/Rebalance.zip). The utility spreads primary and backup IMDG instances evenly across all the machines running GSCs. See full details how to run this utility, within the readme at the [Rebalance.zip](/attachment_files/sbp/Rebalance.zip).
 
 ## How GigaSpaces rebalancing works?
 GigaSpaces runtime environments differentiates between a Container (GSC) or **Grid Node** that is running within a single JVM instance and an **IMDG Node**, also called a logical partition. A partition has one primary instance and zero or more backup instances.
@@ -691,23 +691,23 @@ The number of logical partitions is determined at deploy time, but the amount of
 
 # Storage Type - Controling Serialization
 
-When a client application accessing a remote space (using a clustered topology or non-clustered) the data is serialized and sent over the network to the relevant JVM hosting the target space partition. The serialization involves some overhead. The depanlinkStorage Typetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Storage+Types+-+Controlling+Serializationbelakanglink decoration allows you to control the serialization behavior when non-primitive fields used with your space class.
+When a client application accessing a remote space (using a clustered topology or non-clustered) the data is serialized and sent over the network to the relevant JVM hosting the target space partition. The serialization involves some overhead. The [Storage Type](http://wiki.gigaspaces.com/wiki/display/XAP91/Storage+Types+-+Controlling+Serialization) decoration allows you to control the serialization behavior when non-primitive fields used with your space class.
 
 
 {% inittab %}
 
 {% tabcontent Object Mode %}
-depanimagestorage-type-object.jpgtengahimage/attachment_files/sbp/storage-type-object.jpgbelakangimage
+![storage-type-object.jpg](/attachment_files/sbp/storage-type-object.jpg)
 {% endtabcontent %}
 
 
 {% tabcontent Binary Mode %}
-depanimagestorage-type-binary.jpgtengahimage/attachment_files/sbp/storage-type-binary.jpgbelakangimage
+![storage-type-binary.jpg](/attachment_files/sbp/storage-type-binary.jpg)
 {% endtabcontent %}
 
 
 {% tabcontent Compressed Mode %}
-depanimagestorage-type-compressed.jpgtengahimage/attachment_files/sbp/storage-type-compressed.jpgbelakangimage
+![storage-type-compressed.jpg](/attachment_files/sbp/storage-type-compressed.jpg)
 {% endtabcontent %}
 
 {% endinittab %}
@@ -725,7 +725,7 @@ When running with this mode, the collections within the space object are seriali
 
 You may control the Storage type at the space level, class level or field level.
 
-See the depanlinkControlling Serializationtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Storage+Types+-+Controlling+Serializationbelakanglink for more details.
+See the [Controlling Serialization](http://wiki.gigaspaces.com/wiki/display/XAP91/Storage+Types+-+Controlling+Serialization) for more details.
 
 # Runtime Files Location
 GigaSpaces generates some files while the system is running. You should change the location of the generated files location using the following system properties. See below how:
@@ -736,18 +736,18 @@ GigaSpaces generates some files while the system is running. You should change t
 |`user.home`|The location of system defaults config. Used by the GS-UI, and runtime system components.| |
 |`com.gigaspaces.lib.platform.ext` | PUs shared classloader libraries folder. PU jars located within this folder loaded once into the **JVM system classloader** and shared between all the PU instnaces classloaders within the GSC. In most cases this is a better option than the `com.gs.pu-common` for JDBC drivers and other 3rd party libraries. This is useful option when you  want multiple processing units to share the same 3rd party jar files and do not want to repackage the processing unit jar whenever one of these 3rd party jars changes.| `<gigaspaces-xap root>\lib\platform\ext`|
 |`com.gs.pu-common`|The location of common classes used across multiple processing units. The libraries located within this folder **loaded into each PU instance classloader** (and not into the system classloader as with the `com.gigaspaces.lib.platform.ext`. |`<gigaspaces-xap root>\lib\optional\pu-common`|
-|`com.gigaspaces.grid.gsa.config-directory`|The location of the GSA configuration files. depanlinkThe GigaSpaces Agenttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agentbelakanglink (GSA) manages different process types. Each process type is defined within this folder in an xml file that identifies the process type by its name. |`<gigaspaces-xap root>\config\gsa`|
+|`com.gigaspaces.grid.gsa.config-directory`|The location of the GSA configuration files. [The GigaSpaces Agent](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agent) (GSA) manages different process types. Each process type is defined within this folder in an xml file that identifies the process type by its name. |`<gigaspaces-xap root>\config\gsa`|
 |`java.util.logging.config.file`| It indicates file path to the Java logging file location. Use it to enable finest logging troubleshooting of various GigaSpaces Services. You may control this setting via the `GS_LOGGING_CONFIG_FILE_PROP` environment variable.| `<gigaspaces-xap root>\config\gs_logging.properties`|
 
 {% exclamation %} The `com.gigaspaces.lib.platform.ext` and the `com.gs.pu-common` are useful to decrease the deployment time in case your processing unit **contains a lot of 3rd party jars files**. In such case, each GSC will download the processing unit jar file (along with all the jars it depends on) to its local working directory from the GSM, and in case of large deployments spanning tens or hundreds of GSCs this can be quite time consuming. In such cases you should consider **placing the jars on which your processing unit depends on** in a shared location on your network, and then point the `com.gs.pu-common` or `com.gigaspaces.lib.platform.ext` directory to this location.
 
 # Log Files
-GigaSpaces generates log files for each running component . This includes GSA, GSC, GSM, Lookup service and client side. By default, these are created within the `<gigaspaces-xap-root>\logs` folder. After some time you might end up with a large number of files that are hard to maintain and search. You should backup old log files or delete these. You can use the depanlinklogging backup-policytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Backing-up+Files+With+a+Custom+Policybelakanglink to manage your log files.
+GigaSpaces generates log files for each running component . This includes GSA, GSC, GSM, Lookup service and client side. By default, these are created within the `<gigaspaces-xap-root>\logs` folder. After some time you might end up with a large number of files that are hard to maintain and search. You should backup old log files or delete these. You can use the [logging backup-policy](http://wiki.gigaspaces.com/wiki/display/XAP91/Backing-up+Files+With+a+Custom+Policy) to manage your log files.
 
 # Hardware Selection
 The general rule when selecting the HW to run GigaSpaces would be: The faster the better. Multi-core machines with large amount of memory would be most cost effective since these will allow GigaSpaces to provide ultimate performance leveraging large JVM heap size handling simultaneous requests with minimal thread context switch overhead.
 
-Running production systems with 30G-50G heap size is doable with some JVM tuning when leveraging multi-core machines. The recommended HW is depanlinkIntel® Xeon® Processor 5600 Seriestengahlinkhttp://ark.intel.com/ProductCollection.aspx?series=47915belakanglink. Here is an example for depanlinkrecommended server configurationtengahlinkhttp://www.cisco.com/en/US/products/ps10280/prod_models_comparison.htmlbelakanglink:
+Running production systems with 30G-50G heap size is doable with some JVM tuning when leveraging multi-core machines. The recommended HW is [Intel® Xeon® Processor 5600 Series](http://ark.intel.com/ProductCollection.aspx?series=47915). Here is an example for [recommended server configuration](http://www.cisco.com/en/US/products/ps10280/prod_models_comparison.html):
 
 ||Model||Cisco UCS B200 M2 Blade Server||Cisco UCS B250 M2 Extended Memory Blade Server||
 |Processor Sockets|2|2|
@@ -765,7 +765,7 @@ Running production systems with 30G-50G heap size is doable with some JVM tuning
 Since most of the application activities are conducted in-memory, the CPU speed impacts your application performance fairly drastically. You might have a machine with plenty of CPU cores, but a slow CPU clock speed, which eventually slows down the application or the Data-Grid response time. So as a basic rule, pick the fastest CPU you can find. Since the Data-Grid itself and its container are highly multi-threaded components, it is important to use machines with more than a single core to host the GSC to run your Data-Grid or application. A good number for the amount of GSCs per machine is half of the total number of cores.
 
 ## Disk
-Prior to XAP 7.1, GigaSpaces Data-Grid did not overflow to a disk, and does not require a large disk space to operate.  Still, log files are generated, and for these you need at least 100M of free disk size per machine running GSC(s). Make sure you delete old log files or move them to some backup location. XAP Data-Grid may overflow data to disk when there is a long replication disconnection or delay, the location of the work directory should be on a local storage at each node in order to make this replication back log data always available to the node, this storage should have enough space to store the replication back log as explained in depanlinkControlling the Replication Redo Logtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Controlling+the+Replication+Redo+Logbelakanglink page.
+Prior to XAP 7.1, GigaSpaces Data-Grid did not overflow to a disk, and does not require a large disk space to operate.  Still, log files are generated, and for these you need at least 100M of free disk size per machine running GSC(s). Make sure you delete old log files or move them to some backup location. XAP Data-Grid may overflow data to disk when there is a long replication disconnection or delay, the location of the work directory should be on a local storage at each node in order to make this replication back log data always available to the node, this storage should have enough space to store the replication back log as explained in [Controlling the Replication Redo Log](http://wiki.gigaspaces.com/wiki/display/XAP91/Controlling+the+Replication+Redo+Log) page.
 
 # OS Considerations
 In general, GigaSpaces runs on every OS supporting the JVM technology (Windows, Linux, Solaris, AIX, HP, etc). No special OS tuning is required for most of the applications. See below for OS tuning recommendations that most of the applications running on GigaSpaces might need.

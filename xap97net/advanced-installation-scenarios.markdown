@@ -17,11 +17,11 @@ GigaSpaces XAP.NET takes advantage of several runtime components from GigaSpaces
 
 #### Q. Can I install XAP.NET using an existing java installation?
 
-Yes. See depanlinkJvm Configurationtengahlink./jvm-configuration.html#JvmLocationbelakanglink for more information.
+Yes. See [Jvm Configuration](./jvm-configuration.html#JvmLocation) for more information.
 
 #### Q. I've already installed XAP.NET. Can I configure it to work with a different java version or location?
 
-Yes. See depanlinkJvm Configurationtengahlink./jvm-configuration.html#JvmLocationbelakanglink for more information.
+Yes. See [Jvm Configuration](./jvm-configuration.html#JvmLocation) for more information.
 
 # Customizing XAP
 
@@ -48,7 +48,7 @@ Yes. Edit the `Settings.xml` file (located in `<ProductRoot>\Config`) and change
 Yes. From the command line, type the following:
 `C:\>msiexec /i GigaSpaces-XAP.NET-9.0.0.5000-GA-x86.msi /quiet`
 
-{% plus %} For more information about installing msi packages from command line, see depanlinkhttp://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspxtengahlinkhttp://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspxbelakanglink.
+{% plus %} For more information about installing msi packages from command line, see [http://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspx](http://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspx).
 
 # Manual configuration without setup
 
@@ -62,7 +62,7 @@ To do that:
 2. Package the installed files into a zip file (or any other compression tool you prefer).
 3. Unzip the package on the target machine(s) wherever you prefer.
 
-{% exclamation %} If you plan to use XAP.NET with .NET 4.0, make sure that the **Visual C++ 2010 Redistributable Package** (depanlinkx86tengahlinkhttp://www.microsoft.com/download/en/details.aspx?id=5555belakanglink | depanlinkx64tengahlinkhttp://www.microsoft.com/download/en/details.aspx?id=14632belakanglink) is installed on the target machine (this is required only for manual installation - if the msi is installed the C++ redist package is installed automatically if needed).
+{% exclamation %} If you plan to use XAP.NET with .NET 4.0, make sure that the **Visual C++ 2010 Redistributable Package** ([x86](http://www.microsoft.com/download/en/details.aspx?id=5555) | [x64](http://www.microsoft.com/download/en/details.aspx?id=14632)) is installed on the target machine (this is required only for manual installation - if the msi is installed the C++ redist package is installed automatically if needed).
 
 The final touch is to configure the location of XAP.NET. This can be achieved in one of the following ways:
 1. **Windows Registry:** Create a registry key named `HKLM\SOFTWARE\GigaSpaces\XAP.NET\<version>\<clrversion>`, with a String value named `SettingsPath` which points to the location of the `Settings.xml` file. For example, the XAP.NET v9.5 x86 setup creates the following keys:

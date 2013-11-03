@@ -12,7 +12,7 @@ page_id: 47219379
 
 This section shows you how to write your first RTD or UDF application using the GigaSpaces-Excel integration.
 
-{% refer %}See some basic and advanced code examples for depanlinkworking with UDF and RTDtengahlink./rtd-and-udf-examples---gigaspaces-excel-integration.htmlbelakanglink.{% endrefer %}
+{% refer %}See some basic and advanced code examples for [working with UDF and RTD](./rtd-and-udf-examples---gigaspaces-excel-integration.html).{% endrefer %}
 
 {include: Prerequisites - GigaSpaces-Excel Integration}
 
@@ -28,18 +28,18 @@ This section shows you how to write your first RTD or UDF application using the 
 6. Build the projects.
 7. Make sure `GigaSpaces.Core.dll` and `GigaSpaces.NetToJava.dll` exist in your `Release` folder.
 8. Run the following command from the `Release` folder:
-    `%WinDir%\Microsoft.NET\Framework\v2.0.50727\RegAsm.exe \ajepaaaMY_RTD_CLASSNAME\ajepbbb.dll /Codebase`
-9. Save the depanlinkexcel.exe.configtengahlinkexcel.exe.configbelakanglink file in your Excel runtime folder. For example: `C:\Program Files\Microsoft Office\OFFICE11`
+    `%WinDir%\Microsoft.NET\Framework\v2.0.50727\RegAsm.exe \[MY_RTD_CLASSNAME\].dll /Codebase`
+9. Save the [excel.exe.config](excel.exe.config) file in your Excel runtime folder. For example: `C:\Program Files\Microsoft Office\OFFICE11`
 10. Open Excel.
 11. To add the UDF function:
     1. In Excel, go to **Tools** > **add ins** > **automation**.
-    2. Scroll down to **\ajepaaaMY_UDF_CLASSNAME\ajepbbb**, select it and click **OK**. You might get a dialog at this point about mscoree.dll. Click No to this dialog (Yes will delete the add-in from the list).
+    2. Scroll down to **\[MY_UDF_CLASSNAME\]**, select it and click **OK**. You might get a dialog at this point about mscoree.dll. Click No to this dialog (Yes will delete the add-in from the list).
 12. Start a space: `<GigaSpaces Root>\Bin\Gs-ui.exe`.
-13. To call a UDF, click the **Function** icon, and look for the **\ajepaaaMY_UDF_CLASSNAME\ajepbbb** functions.
+13. To call a UDF, click the **Function** icon, and look for the **\[MY_UDF_CLASSNAME\]** functions.
 - To call a RTD, write in any Excel cell:
-    `=RTD("ajepaaaMY PROG IDajepbbb",,ajepaaaMY PARAMETERSajepbbb)`
+    `=RTD("[MY PROG ID]",,[MY PARAMETERS])`
 
 # What's Next?
 
-{% refer %}See the depanlinkGigaSpaces-Excel Market-Data Exampletengahlink./gigaspaces-excel-market-data-example.htmlbelakanglink.{% endrefer %}
-{% refer %}Back to The depanlinkExcel that Scales Solutiontengahlink./excel-that-scales-solution.htmlbelakanglink section.{% endrefer %}
+{% refer %}See the [GigaSpaces-Excel Market-Data Example](./gigaspaces-excel-market-data-example.html).{% endrefer %}
+{% refer %}Back to The [Excel that Scales Solution](./excel-that-scales-solution.html) section.{% endrefer %}

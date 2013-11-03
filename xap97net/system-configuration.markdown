@@ -11,11 +11,11 @@ page_id: 63799332
 
 # Overview
 
-GigaSpaces XAP.NET offers a collection of system properties which can be used to tweak the system's behavior. For a list of system properties refer to depanlinkSystem Properties Listtengahlink./system-properties-list.htmlbelakanglink. This page discusses various options of defining and overriding system properties configuration.
+GigaSpaces XAP.NET offers a collection of system properties which can be used to tweak the system's behavior. For a list of system properties refer to [System Properties List](./system-properties-list.html). This page discusses various options of defining and overriding system properties configuration.
 
 # Using Application Configuration File
 
-Like most .NET libraries, GigaSpaces XAP.NET configuration is based on depanlinkApplication Configuration Filestengahlinkhttp://msdn.microsoft.com/en-us/library/ms229689(VS.80).aspxbelakanglink. To set system properties via the configuration file:
+Like most .NET libraries, GigaSpaces XAP.NET configuration is based on [Application Configuration Files](http://msdn.microsoft.com/en-us/library/ms229689(VS.80).aspx). To set system properties via the configuration file:
 
 1. Add an Application Configuration File to your project (if your project already contains such a file skip this step):
 

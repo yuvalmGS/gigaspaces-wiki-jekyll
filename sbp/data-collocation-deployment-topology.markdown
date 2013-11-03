@@ -16,13 +16,13 @@ Date: September 2009
 {rate}
 
 # The ABCs of the Processing Unit
-GigaSpaces XAP includes a universal grid-based runtime environment for real-time extreme transaction processing (XTP) for Java, C++ and .Net applications. The runtime environment includes a Service Level Agreement-based container called a depanlinkGSCtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Containerbelakanglink, in which you are able to deploy business logic and stateful data.
+GigaSpaces XAP includes a universal grid-based runtime environment for real-time extreme transaction processing (XTP) for Java, C++ and .Net applications. The runtime environment includes a Service Level Agreement-based container called a [GSC](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Container), in which you are able to deploy business logic and stateful data.
 
 When your business logic and its state are managed by the GigaSpaces runtime components, they are able to self-heal in the case of a failure via the continuous high-availability mechanism of the system. They can dynamically scale themselves by configuration or by a programmable API - all out-of-the-box.
 
-The actual deployment is done via a dedicated service called the depanlinkGSMtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Managerbelakanglink, which is responsible for the deployment process and for enforcing the pre-defined SLA (if any) throughout the lifecycle of the application.
+The actual deployment is done via a dedicated service called the [GSM](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Manager), which is responsible for the deployment process and for enforcing the pre-defined SLA (if any) throughout the lifecycle of the application.
 
-The application code running within the GSC should be compiled, packaged into a library, and deployed via the relevant deploy command/API/UI. The GSM is responsible for pushing the application libraries into all the machines running the GSC at deployment, when scaling the system, or when there is a failure that requires the system to use a new available GSC. Once the application libraries have been deployed to the GSC, the container loads the application, initializes it, and then starts the application. You can use external parameters in the deployment and get the status of the business logic and its state via the relevant depanlinkadministration APItengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Administration+and+Monitoring+APIbelakanglink, or the provided administration tools.
+The application code running within the GSC should be compiled, packaged into a library, and deployed via the relevant deploy command/API/UI. The GSM is responsible for pushing the application libraries into all the machines running the GSC at deployment, when scaling the system, or when there is a failure that requires the system to use a new available GSC. Once the application libraries have been deployed to the GSC, the container loads the application, initializes it, and then starts the application. You can use external parameters in the deployment and get the status of the business logic and its state via the relevant [administration API](http://wiki.gigaspaces.com/wiki/display/XAP91/Administration+and+Monitoring+API), or the provided administration tools.
 
 Since the GSC and its GSM manager include "sensors" that allow the behavior of the hosted processing units to be monitored, additional business logic instances may be instantiated on other GSCs running on other machines. This is done to cope with the additional increasing incoming requests, or to enlarge the capacity of the running spaces to store more data in-memory.
 
@@ -33,19 +33,19 @@ When deploying the processing unit, one of the following data colocation deploym
 - Pure business logic - the state is stored within another processing unit deployed separately. Multiple instances of the business logic can be deployed and scaled dynamically.
 
 {% indent %}
-depanimagepu_with_bean.giftengahimage/attachment_files/sbp/pu_with_bean.gifbelakangimage
+![pu_with_bean.gif](/attachment_files/sbp/pu_with_bean.gif)
 {% endindent %}
 
 - Space instance(s) - these are deployed using one of the built-in cluster topologies (replicated, partitioned or partitioned-replicated) or a custom topology.
 
 {% indent %}
-depanimagepu_with_space.giftengahimage/attachment_files/sbp/pu_with_space.gifbelakangimage
+![pu_with_space.gif](/attachment_files/sbp/pu_with_space.gif)
 {% endindent %}
 
 - Business logic and colocated space instance(s) - the business logic accesses only the colocated spaces or remote space instances running within another processing instance (or running as part of different processing unit). You can deploy these using any of the built-in cluster topologies.
 
 {% indent %}
-depanimagepu_with_space_and_bean.giftengahimage/attachment_files/sbp/pu_with_space_and_bean.gifbelakangimage
+![pu_with_space_and_bean.gif](/attachment_files/sbp/pu_with_space_and_bean.gif)
 {% endindent %}
 
 - Business logic with a local cache - this scenario is relevant for read-mostly cases, where some of the data is cached at the client side.
@@ -71,7 +71,7 @@ Often this occurs because of the data access layer, which cannot feed data quick
 
 This is known as a starvation scenario.
 
-To solve this bottleneck, the processing unit allows you to **colocate** the business logic and data; both data and business logic are hosted within the same process, sharing the same memory space. Colocating business logic and data can be done statically (user service associated with a colocated space), or dynamically (via depanlinkService Executorstengahlink./map-reduce-pattern---executors-example.html#Service Executors Examplebelakanglink or depanlinkTask Executorstengahlink./map-reduce-pattern---executors-example.html#Executors Task Examplebelakanglink).
+To solve this bottleneck, the processing unit allows you to **colocate** the business logic and data; both data and business logic are hosted within the same process, sharing the same memory space. Colocating business logic and data can be done statically (user service associated with a colocated space), or dynamically (via [Service Executors](./map-reduce-pattern---executors-example.html#Service Executors Example) or [Task Executors](./map-reduce-pattern---executors-example.html#Executors Task Example)).
 
 {% section %}
 
@@ -80,7 +80,7 @@ To solve this bottleneck, the processing unit allows you to **colocate** the bus
 Collocated Mode - The Task Executor-Step 1:
 
 {% indent %}
-depanimageDistributedTaskExecution_phase1.jpgtengahimage/attachment_files/sbp/DistributedTaskExecution_phase1.jpgbelakangimage
+![DistributedTaskExecution_phase1.jpg](/attachment_files/sbp/DistributedTaskExecution_phase1.jpg)
 {% endindent %}
 
 
@@ -92,7 +92,7 @@ depanimageDistributedTaskExecution_phase1.jpgtengahimage/attachment_files/sbp/Di
 Collocated Mode - The Task Executor-Step 2:
 
 {% indent %}
-depanimageDistributedTaskExecution_phase2.jpgtengahimage/attachment_files/sbp/DistributedTaskExecution_phase2.jpgbelakangimage
+![DistributedTaskExecution_phase2.jpg](/attachment_files/sbp/DistributedTaskExecution_phase2.jpg)
 {% endindent %}
 
 
@@ -103,7 +103,7 @@ depanimageDistributedTaskExecution_phase2.jpgtengahimage/attachment_files/sbp/Di
 ### CPU Starvation
 In other cases, the bottleneck is not data access, but in the amount of time it takes to process the incoming data (a.k.a. the CPU bound scenario). In this scenario, there is no problem with accessing the data and handing it to the business logic that needs to process it. However, there is a need to run the business logic across as many CPUs and machines as possible, to fully take advantage of the resources over the network.
 
-In this case, it makes better sense to have the data and business logic running in separate processing units, each with its own SLA and scaling requirements. In this case, the business logic may use the depanlinkMaster-Worker Patterntengahlink./master-worker-pattern.htmlbelakanglink, having the actual business logic running separately and independently from the space processing unit.
+In this case, it makes better sense to have the data and business logic running in separate processing units, each with its own SLA and scaling requirements. In this case, the business logic may use the [Master-Worker Pattern](./master-worker-pattern.html), having the actual business logic running separately and independently from the space processing unit.
 
 {% section %}
 
@@ -112,7 +112,7 @@ In this case, it makes better sense to have the data and business logic running 
 Non-Collocated Mode - The Master Worker Pattern-Step 1:
 
 {% indent %}
-depanimagemaster_worker_rr1.jpgtengahimage/attachment_files/sbp/master_worker_rr1.jpgbelakangimage
+![master_worker_rr1.jpg](/attachment_files/sbp/master_worker_rr1.jpg)
 {% endindent %}
 
 
@@ -124,7 +124,7 @@ depanimagemaster_worker_rr1.jpgtengahimage/attachment_files/sbp/master_worker_rr
 Non-Collocated Mode - The Master Worker Pattern-Step 2:
 
 {% indent %}
-depanimagemaster_worker_rr2.jpgtengahimage/attachment_files/sbp/master_worker_rr2.jpgbelakangimage
+![master_worker_rr2.jpg](/attachment_files/sbp/master_worker_rr2.jpg)
 {% endindent %}
 
 
@@ -168,7 +168,7 @@ If the amount of data used for each business logic transaction involves a small 
 If the amount of data used for each business logic transaction involves a large amount of objects with a relatively large size, colocating the data and the business logic would boost the application performance dramatically.
 
 #### 4. What is the time it takes to process the incoming events?
-When a processing unit hosting your business logic has the space colocated as well, no remote calls or serialization calls are involved when the business logic accesses its colocated data. If the time spent executing the business logic ("task" calculation time) is much longer than the time it takes for the business logic to: retrieve the task from the space, write back the result, or read the required data from the space, it might be logical to run the business logic as a standalone processing unit, separately from the space (i.e. use the depanlinkMaster-Worker Patterntengahlink./master-worker-pattern.htmlbelakanglink).
+When a processing unit hosting your business logic has the space colocated as well, no remote calls or serialization calls are involved when the business logic accesses its colocated data. If the time spent executing the business logic ("task" calculation time) is much longer than the time it takes for the business logic to: retrieve the task from the space, write back the result, or read the required data from the space, it might be logical to run the business logic as a standalone processing unit, separately from the space (i.e. use the [Master-Worker Pattern](./master-worker-pattern.html)).
 
 As a rule of thumb, a good ratio for running the business logic separately from the space would be 1:10 or more - i.e. if the average time for performing the three basic space remote calls required to retrieve the object from the space (take, read, write) is ~1 ms, and the time it takes to perform the relevant business logic (unrelated to the space) is ~10 ms, it would be wise to run the business logic as a standalone processing unit. If the ratio is less than 1:10, you should consider colocating the business logic with the data.
 

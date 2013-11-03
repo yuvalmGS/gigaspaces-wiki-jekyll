@@ -20,17 +20,17 @@ page_id: 54820903
 
 # Overview
 
-Mirror Gateway Synchronization can be used to synchronize operations conducted at one local site with data in a remote site or another cluster instance as explained in the ajepaaaSBP:Clusters Over WAN#MirrorGatewaySynchronizationajepbbb page. This example demonstrates how this can be done using a custom external dataSource implementation running on the mirror.
+Mirror Gateway Synchronization can be used to synchronize operations conducted at one local site with data in a remote site or another cluster instance as explained in the [SBP:Clusters Over WAN#MirrorGatewaySynchronization] page. This example demonstrates how this can be done using a custom external dataSource implementation running on the mirror.
 
 This is a simple order processing example based on GigaSpaces maven basic-async-persistency template. Product objects in the space maintain available quantity information. New orders coming into the system reduce the number of available products. Example shows how you can synchronize the available Product information across two clusters using a Mirror Gateway.
 
-{% exclamation %} The GigaSpaces WAN Gateway, a solution for synchronizing multiple clusters over the WAN can be found at depanlinkMulti-Site Replication over the WANtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Multi-Site+Replication+over+the+WANbelakanglink.
+{% exclamation %} The GigaSpaces WAN Gateway, a solution for synchronizing multiple clusters over the WAN can be found at [Multi-Site Replication over the WAN](http://wiki.gigaspaces.com/wiki/display/XAP8/Multi-Site+Replication+over+the+WAN).
 
 # Mirror Gateway - One way
 
 
 {% indent %}
-depanimagerep_over_wan_MirrorGatewayOneway.jpgtengahimage/attachment_files/sbp/rep_over_wan_MirrorGatewayOneway.jpgbelakangimage
+![rep_over_wan_MirrorGatewayOneway.jpg](/attachment_files/sbp/rep_over_wan_MirrorGatewayOneway.jpg)
 {% endindent %}
 
 
@@ -280,13 +280,13 @@ public class MyExternalDataSource implements BulkDataPersister, ManagedDataSourc
 
 
 {% note %}
- This example is using Maven for packaging and build. Please depanlinkinstall the OpenSpaces Maven plugintengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin#MavenPlugin-Installationbelakanglink before you run this example.
+ This example is using Maven for packaging and build. Please [install the OpenSpaces Maven plugin](http://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin#MavenPlugin-Installation) before you run this example.
 Some instructions below might use windows syntax please use appropriate **nix syntax if you are running the example in a **nix machine.
 Example was tested using a single machine with ip address, 192.168.2.100 and Lookup Server ports for SiteA and SiteB as 14164 and 14165 respectively. Please modify these corresponding to your environment.
 {% endnote %}
 
 
-1. Extract the depanlinkexampletengahlink/attachment_files/sbp/multi-cluster.zipbelakanglink archive into a folder. Navigate to the folder (calling it <multi-cluster-example>) and open a command shell. Modify the setDevEnv-SiteA.bat/sh and setDevEnv-SiteB.bat/sh files to have proper paths for GigaSpaces home and Java home. Also modify the NIC_ADDR variable to have proper ip address for each site.
+1. Extract the [example](/attachment_files/sbp/multi-cluster.zip) archive into a folder. Navigate to the folder (calling it <multi-cluster-example>) and open a command shell. Modify the setDevEnv-SiteA.bat/sh and setDevEnv-SiteB.bat/sh files to have proper paths for GigaSpaces home and Java home. Also modify the NIC_ADDR variable to have proper ip address for each site.
 2. Run setDevEnv-SiteA script to set the environment variables.
 
 {% tip %}
@@ -310,7 +310,7 @@ mvn package -DskipTests
 5. Start a gs-ui instance.
 6. Run gs-agent-SiteA and gs-agent-SiteB scripts on appropriate machines.
 This will start GSA, GSM, LUS and 2 GSC's for SiteA with SiteA zone and GSA, GSM, LUS and 3 GSC's for SiteB with SiteB zone. Hosts tab in gs-ui will look like something below after you add the appropriate groups and locators in gs-ui,
-depanimageafter_gsa_start.jpgtengahimage/attachment_files/sbp/after_gsa_start.jpgbelakangimage
+![after_gsa_start.jpg](/attachment_files/sbp/after_gsa_start.jpg)
 7. Deploy the SiteA space cluster (2,1) by running deploy-SiteA script from <multi-cluster-example> directory.
 8. Deploy the SiteB space cluster (3,1) using following,
 
@@ -329,7 +329,7 @@ mvn os:deploy -Dgroups=SiteB -Dlocators=192.168.2.100:14165 -Dmodule=mirror
 {% endhighlight %}
 
 10. Ensure that the spaces are mirror are available in gs-ui. Space Browser tab after everything is deployed will look like below,
-depanimageafter_deploying_everything.jpgtengahimage/attachment_files/sbp/after_deploying_everything.jpgbelakangimage
+![after_deploying_everything.jpg](/attachment_files/sbp/after_deploying_everything.jpg)
 11. For running the clients you need the common jar in the maven repo. Install the common jar using following,
 
 

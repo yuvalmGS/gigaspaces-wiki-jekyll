@@ -19,7 +19,7 @@ that monitors a deployed application, and scale it up on demand.{% endsummary %}
 
 {% column width=86% %}
 
-{% align center %}||depanimagewiki_icon_folder.giftengahimage/attachment_files/xap97net/wiki_icon_folder.gifbelakangimage||Example Root|`<GigaSpaces Root>\Examples\ScalingAgent` |
+{% align center %}||![wiki_icon_folder.gif](/attachment_files/xap97net/wiki_icon_folder.gif)||Example Root|`<GigaSpaces Root>\Examples\ScalingAgent` |
 {% endalign %}
 
 {% endcolumn %}
@@ -32,16 +32,16 @@ that monitors a deployed application, and scale it up on demand.{% endsummary %}
 
 # Overview
 
-The depanlinkAdministration and Monitoring APItengahlink./administration-and-monitoring-api.htmlbelakanglink allows you to monitor an application's health and its resources, to enforce a specific pre-defined configurable SLA that scales the application while it is running. This ensures a deterministic response time when there is an increasing number of users accessing the system, and also ensures the high-availability and robustness of the application.
+The [Administration and Monitoring API](./administration-and-monitoring-api.html) allows you to monitor an application's health and its resources, to enforce a specific pre-defined configurable SLA that scales the application while it is running. This ensures a deterministic response time when there is an increasing number of users accessing the system, and also ensures the high-availability and robustness of the application.
 
 The following example illustrates how you can construct a simple processing unit (**The Scaling Agent**) to monitor an application deployed into GigaSpaces, and track the load on the application. Once the average throughput per instance of the application breaches a pre-defined limit, the scaling agent reacts and performs the necessary activities to scale the application tier.
 
 The activities to scale up the application could be: starting a new GSC on remote machines, and starting additional application instances. In the same way, the scaling agent can be extended to scale down the application to terminate running GSCs, and reduce the amount of application instances.
 
 {% refer %}This page assumes knowledge of the processing unit concept. If you are unfamilar with it, please refer to
-the ajepaaaSBA Exampleajepbbb first.{% endrefer %}
+the [SBA Example] first.{% endrefer %}
 
-{% align center %}depanimagescaling agent .net.jpgtengahimage/attachment_files/xap97net/scaling agent .net.jpgbelakangimage{% endalign %}
+{% align center %}![scaling agent .net.jpg](/attachment_files/xap97net/scaling agent .net.jpg){% endalign %}
 
 # How the Scaling Agent Works
 
@@ -324,7 +324,7 @@ To simplify the deployment of the examples, there are several scripts in the exa
 
 
 {% indent %}
-depanimageScalingAgentFeeder.jpgtengahimage/attachment_files/xap97net/ScalingAgentFeeder.jpgbelakangimage
+![ScalingAgentFeeder.jpg](/attachment_files/xap97net/ScalingAgentFeeder.jpg)
 {% endindent %}
 
 
@@ -332,7 +332,7 @@ depanimageScalingAgentFeeder.jpgtengahimage/attachment_files/xap97net/ScalingAge
 
 
 {% indent %}
-depanimageScalingAgentConsole.jpgtengahimage/attachment_files/xap97net/ScalingAgentConsole.jpgbelakangimage
+![ScalingAgentConsole.jpg](/attachment_files/xap97net/ScalingAgentConsole.jpg)
 {% endindent %}
 
 

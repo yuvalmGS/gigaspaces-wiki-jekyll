@@ -9,7 +9,7 @@ page_id: 50758015
 
 {% summary %}Mule ESB Distributed Multi Service Example{% endsummary %}
 
-depanimagenew-in-801-banner.pngtengahimage/attachment_files/sbp/new-in-801-banner.pngbelakangimage
+![new-in-801-banner.png](/attachment_files/sbp/new-in-801-banner.png)
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using Mule:**3.1.0**
 Using XAP:**8.0.1**
@@ -19,13 +19,13 @@ Date: March 2011
 {rate}
 
 # Overview
-GigaSpaces depanlinkMule ESBtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Mule+ESBbelakanglink OpenSpaces comes with comprehensive support for Mule 3.1.0. It allows you to use the depanlinkSpace as a Mule external transporttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Event+Container+Transportbelakanglink, enabling receiving and dispatching of POJO messages over the Space.
+GigaSpaces [Mule ESB](http://wiki.gigaspaces.com/wiki/display/XAP8/Mule+ESB) OpenSpaces comes with comprehensive support for Mule 3.1.0. It allows you to use the [Space as a Mule external transport](http://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Event+Container+Transport), enabling receiving and dispatching of POJO messages over the Space.
 
-This depanlinkexampletengahlink/attachment_files/sbp/Mule_Multi_service_Example.zipbelakanglink illustrates distributed multi services mule application. The different mule services construct a simple workflow, where each service passes its outbound data into the next service in line via the Space. Each Service can run in a different machine(s) and depanlinkscale dynamicallytengahlink#Scale Dynamicallybelakanglink or depanlinkmanualytengahlink#Scale Manuallybelakanglink in a different manner.
+This [example](/attachment_files/sbp/Mule_Multi_service_Example.zip) illustrates distributed multi services mule application. The different mule services construct a simple workflow, where each service passes its outbound data into the next service in line via the Space. Each Service can run in a different machine(s) and [scale dynamically](#Scale Dynamically) or [manualy](#Scale Manually) in a different manner.
 
 
 {% tip %}
-Make sure you have the depanlinklibraries requiredtengahlink#Libraries Requiredbelakanglink located at the correct location before running the example.
+Make sure you have the [libraries required](#Libraries Required) located at the correct location before running the example.
 {% endtip %}
 
 
@@ -37,15 +37,15 @@ Here are the example components:
 - A Monitor Service used to Scale Up and Down the Verifier Service in a Dynamic Manner.
 
 {% indent %}
-depanimagemule_example_flow1.jpgtengahimage/attachment_files/sbp/mule_example_flow1.jpgbelakangimage
+![mule_example_flow1.jpg](/attachment_files/sbp/mule_example_flow1.jpg)
 {% endindent %}
 
 
-The example using the polling container as the inbound-endpoint with each Service and a space connector as the outbound-endpoint where a state field within the depanlinkDatatengahlink#The Space Data Classbelakanglink object acts as the workflow "Queue".
+The example using the polling container as the inbound-endpoint with each Service and a space connector as the outbound-endpoint where a state field within the [Data](#The Space Data Class) object acts as the workflow "Queue".
 
-Each service with this example is packaged within its own depanlinkProcessing Unittengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Processing+Unitbelakanglink and can scale independently in depanlinkdynamic mannertengahlink#Scale Dynamicallybelakanglink.
+Each service with this example is packaged within its own [Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Processing+Unit) and can scale independently in [dynamic manner](#Scale Dynamically).
 
-{% exclamation %} The depanlinkMule Queue Providertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Queue+Providerbelakanglink is not illustrated with this example. It is relevant for different use case where the Mule Services scales together with the Data-Grid and running within the same Processing Unit.
+{% exclamation %} The [Mule Queue Provider](http://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Queue+Provider) is not illustrated with this example. It is relevant for different use case where the Mule Services scales together with the Data-Grid and running within the same Processing Unit.
 
 # The Space Data Class
 The Space Data Class is the POJO used as the "Queue" to coordinate the activities between the different services. Data Objects are consumed from the Data-Grid and written back into the Data-Grid by each Service. Here is the Data Space class definition:
@@ -147,7 +147,7 @@ public class Verifier {
 
 
 ## The Verifier Service Configuration
-The Verifier Service Configuration using a `polling-container` running in a depanlinkNone-Blocking modetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container#Non-Blocking+Receive+Handlerbelakanglink. This allows the Service to consume Data objects from any partition.
+The Verifier Service Configuration using a `polling-container` running in a [None-Blocking mode](http://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container#Non-Blocking+Receive+Handler). This allows the Service to consume Data objects from any partition.
 
 {% togglecloak id=the_verifier_service_configuration %}**Click to view the Verifier Service Configuration..**{% endtogglecloak %}
 {% gcloak the_verifier_service_configuration %}
@@ -210,7 +210,7 @@ public class Approver {
 
 
 ## The Approver Service Configuration
-The Approver Service Configuration using a `polling-container` running in a depanlinkNone-Blocking modetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container#Non-Blocking+Receive+Handlerbelakanglink. This allows the Service to consume Data objects from any partition.
+The Approver Service Configuration using a `polling-container` running in a [None-Blocking mode](http://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container#Non-Blocking+Receive+Handler). This allows the Service to consume Data objects from any partition.
 
 {% togglecloak the_approver_service_configuration %}**Click to view the Approver Service Configuration..**{% endtogglecloak %}
 {% gcloak the_approver_service_configuration %}
@@ -258,7 +258,7 @@ The Approver Service Configuration using a `polling-container` running in a depa
 
 # Building the Example
 1. Have the correct maven bin folder (located at `\gigaspaces-xap-premium-8.0.1\tools\maven\apache-maven-3.0.2\bin`) as part of the `PATH`.
-2. Have the GigaSpaces maven plug-in installed. See the depanlinkMaven Plugintengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Pluginbelakanglink for instructions how to install it.
+2. Have the GigaSpaces maven plug-in installed. See the [Maven Plugin](http://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin) for instructions how to install it.
 In general to install the GigaSpaces maven plug-in you should run the following:
 
 
@@ -269,7 +269,7 @@ Unix:
 \gigaspaces-xap-premium-8.0.1\tools\maven>installmavenrep.sh
 {% endhighlight %}
 
-3. Download the depanlinkexample packagetengahlink/attachment_files/sbp/Mule_Multi_service_Example.zipbelakanglink and extract it into `Gigaspaces Root\tools\maven`. Once extracted you will have the following folders under `Gigaspaces Root\tools\maven\my-app`:
+3. Download the [example package](/attachment_files/sbp/Mule_Multi_service_Example.zip) and extract it into `Gigaspaces Root\tools\maven`. Once extracted you will have the following folders under `Gigaspaces Root\tools\maven\my-app`:
 - common
 - feeder
 - approver
@@ -288,7 +288,7 @@ Once the example libraries will be successfully created, you will be able to dep
 
 # Deploying the Example
 In order to deploy the different Processing unit comprising this example:
-- Make sure you have the depanlinklibraries requiredtengahlink#Libraries Requiredbelakanglink located at the correct location.
+- Make sure you have the [libraries required](#Libraries Required) located at the correct location.
 - Start at least one GSM and several GSCs in the same machine on multiple different machines.
 - Use the following commands to deploy the Processing unit libraries:
 
@@ -309,12 +309,12 @@ In order to deploy the different Processing unit comprising this example:
 Once the different processing will be deployed you should have the following displayed as part of the GS-UI:
 
 {% indent %}
-depanimagemule_deploy.jpgtengahimage/attachment_files/sbp/mule_deploy.jpgbelakangimage
+![mule_deploy.jpg](/attachment_files/sbp/mule_deploy.jpg)
 {% endindent %}
 
 
 {% indent %}
-depanimagemule_grid.jpgtengahimage/attachment_files/sbp/mule_grid.jpgbelakangimage
+![mule_grid.jpg](/attachment_files/sbp/mule_grid.jpg)
 {% endindent %}
 
 
@@ -322,7 +322,7 @@ depanimagemule_grid.jpgtengahimage/attachment_files/sbp/mule_grid.jpgbelakangima
 
 
 {% indent %}
-depanimagemule_grid.jpgtengahimage/attachment_files/sbp/mule_grid.jpgbelakangimage
+![mule_grid.jpg](/attachment_files/sbp/mule_grid.jpg)
 {% endindent %}
 
 
@@ -335,7 +335,7 @@ You may check the statistics you review the Write and Take operations called by 
 You may have multiple instances of each service running. Running multiple instances of the Feeder service will push more Data objects into the Space. Running multiple services of the Approver or Verifier will consume relevant objects faster.
 
 {% indent %}
-depanimagemule_example_flow2.jpgtengahimage/attachment_files/sbp/mule_example_flow2.jpgbelakangimage
+![mule_example_flow2.jpg](/attachment_files/sbp/mule_example_flow2.jpg)
 {% endindent %}
 
 In order to increase the amount of the deployed services (Feeder, Approver or Verifier) , select the relevant processing unit and click the Increase button. See example below:
@@ -344,7 +344,7 @@ In order to increase the amount of the deployed services (Feeder, Approver or Ve
 
 
 {% indent %}
-depanimagemule_scale_manual.jpgtengahimage/attachment_files/sbp/mule_scale_manual.jpgbelakangimage
+![mule_scale_manual.jpg](/attachment_files/sbp/mule_scale_manual.jpg)
 {% endindent %}
 
 
@@ -352,7 +352,7 @@ depanimagemule_scale_manual.jpgtengahimage/attachment_files/sbp/mule_scale_manua
 
 
 {% indent %}
-depanimagemule_scale_manual.jpgtengahimage/attachment_files/sbp/mule_scale_manual.jpgbelakangimage
+![mule_scale_manual.jpg](/attachment_files/sbp/mule_scale_manual.jpg)
 {% endindent %}
 
 A new instance of the relevant service will be created at of the existing running GSCs.
@@ -375,11 +375,11 @@ The Monitor Service includes the following properties:
 |period| Duration in ms before the next check will be triggered|2000|
 
 The Monitor Service using the following Classes to implement the dynamic scaling behavior:
-- depanlinkorg.openspaces.admin.Admintengahlinkhttp://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/Admin.htmlbelakanglink -  The main interface for accessing Admin API. Created using the AdminFactory class. It provides access to the main elements in the Admin API and in GigaSpaces such as the GridServiceAgents, LookupServices, GridServiceManagers, GridServiceContainers, ProcessingUnits, and Spaces.
-- depanlinkorg.openspaces.admin.AdminFactorytengahlinkhttp://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/AdminFactory.htmlbelakanglink - This class should be used to access all GigaSpaces Administration classes.
-- depanlinkorg.openspaces.admin.pu.ProcessingUnittengahlinkhttp://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/pu/ProcessingUnit.htmlbelakanglink - This class provides methods to manipulate the life cycle and mange a running Proecssing Unit. You may Increment , Decrement the amount of processing unit instances associated with this PU.
+- [org.openspaces.admin.Admin](http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/Admin.html) -  The main interface for accessing Admin API. Created using the AdminFactory class. It provides access to the main elements in the Admin API and in GigaSpaces such as the GridServiceAgents, LookupServices, GridServiceManagers, GridServiceContainers, ProcessingUnits, and Spaces.
+- [org.openspaces.admin.AdminFactory](http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/AdminFactory.html) - This class should be used to access all GigaSpaces Administration classes.
+- [org.openspaces.admin.pu.ProcessingUnit](http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/pu/ProcessingUnit.html) - This class provides methods to manipulate the life cycle and mange a running Proecssing Unit. You may Increment , Decrement the amount of processing unit instances associated with this PU.
 
-{% exclamation %} See the depanlinkAdministration and Monitoring APItengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+APIbelakanglink for more details about the GigaSpaces Administration API.
+{% exclamation %} See the [Administration and Monitoring API](http://wiki.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API) for more details about the GigaSpaces Administration API.
 
 ## Deploying the Monitor Service
 In order to deploy the Monitor Service run the following:
@@ -401,7 +401,7 @@ To see how the Verifier Service scale up, deploy the Feeder with 2 instances:
 The Monitor Service will increment the amount of verifier instances when there will be 50 ,100, 150 and 200 Data objects with `state=0` within the IMDG.
 
 {% indent %}
-depanimagemule_scale_u.jpgtengahimage/attachment_files/sbp/mule_scale_u.jpgbelakangimage
+![mule_scale_u.jpg](/attachment_files/sbp/mule_scale_u.jpg)
 {% endindent %}
 
 You can Query the IMDG via the Query view for Data objects with `state=0` using the following Query:
@@ -422,14 +422,14 @@ To scale Down the verifier Service undeploy the Feeder PU.
 The Monitor Service will decrement the amount of verifier instances when there will be 50 ,40 30 and 20 Data objects with `state=0` within the IMDG.
 
 {% indent %}
-depanimagemule_scale_d.jpgtengahimage/attachment_files/sbp/mule_scale_d.jpgbelakangimage
+![mule_scale_d.jpg](/attachment_files/sbp/mule_scale_d.jpg)
 {% endindent %}
 
 
 # Transaction Support
-You may add depanlinktransaction supporttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Event+Container+Transport#Transaction+Supportbelakanglink to the Mule Service by adding the `distributed-tx-manager` and the `tx-support` tags. Since we are using a clustered space we will be using the [Distributed Jini Transaction Manager|XAP8:Transaction Management#Distributed Jini Transaction Manager].
+You may add [transaction support](http://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Event+Container+Transport#Transaction+Support) to the Mule Service by adding the `distributed-tx-manager` and the `tx-support` tags. Since we are using a clustered space we will be using the [Distributed Jini Transaction Manager|XAP8:Transaction Management#Distributed Jini Transaction Manager].
 
-{% exclamation %} See also the depanlinkPolling Container Transaction Supporttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container#Transaction+Supportbelakanglink for additional details.
+{% exclamation %} See also the [Polling Container Transaction Support](http://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container#Transaction+Support) for additional details.
 
 See below example:
 
@@ -496,7 +496,7 @@ See below example:
 - The receive-timeout , commit and abort timeout , lookup-timeout , duration and round-trip-time parameters are in millisecond units.{warning}
 
 # Libraries Required
-The depanlinkattached librariestengahlink/attachment_files/sbp/mule-jars.zipbelakanglink should be located at your `GigaSpaces Root\lib\platform\mule` folder before deploying the example. See below fill list of the libraries required to run this example:
+The [attached libraries](/attachment_files/sbp/mule-jars.zip) should be located at your `GigaSpaces Root\lib\platform\mule` folder before deploying the example. See below fill list of the libraries required to run this example:
 
 
 {% highlight java %}

@@ -11,11 +11,11 @@ page_id: 63799343
 
 # Overview
 
-Executor based remoting uses depanlinkExecutorstengahlink./task-execution-over-the-space.htmlbelakanglink to implement remoting capabilities on top of the space. Executor based remoting allows for direct invocation of services, both in synchronous and an asynchronous manner as well as broadcast capabilities. Executor remoting works with services that are exposed within a processing unit that started a collocated space.
+Executor based remoting uses [Executors](./task-execution-over-the-space.html) to implement remoting capabilities on top of the space. Executor based remoting allows for direct invocation of services, both in synchronous and an asynchronous manner as well as broadcast capabilities. Executor remoting works with services that are exposed within a processing unit that started a collocated space.
 
-depanimageExecutor.jpgtengahimage/attachment_files/xap97net/Executor.jpgbelakangimage
+![Executor.jpg](/attachment_files/xap97net/Executor.jpg)
 
-{% refer %}For a full SBA example demonstrating remote services usage please refer to the ajepaaa.NET Processing Unit Data Exampleajepbbb{% endrefer %}
+{% refer %}For a full SBA example demonstrating remote services usage please refer to the [.NET Processing Unit Data Example]{% endrefer %}
 
 # Defining the Contract
 
@@ -53,7 +53,7 @@ public class DataProcessor : IDataProcessor
 
 # Hosting the Service in the Grid
 
-The next step is hosting the service in the grid. Hosting the service is done on the server side within a processing unit that hosts the service, when using the depanlinkBasic Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink, all types which have the \ajepaaaSpaceRemotingService\ajepbbb attribute, will automatically be created and hosted:
+The next step is hosting the service in the grid. Hosting the service is done on the server side within a processing unit that hosts the service, when using the [Basic Processing Unit Container](./basic-processing-unit-container.html), all types which have the \[SpaceRemotingService\] attribute, will automatically be created and hosted:
 
 
 {% highlight java %}
@@ -67,7 +67,7 @@ public class DataProcessor : IDataProcessor
 
 {% infosign %} Hosting services is done on a Processing Unit that starts an embedded space.
 
-{% refer %}For more details regarding service hosting please refer to depanlinkDomain Service Hosttengahlink./domain-service-host.htmlbelakanglink{% endrefer %}
+{% refer %}For more details regarding service hosting please refer to [Domain Service Host](./domain-service-host.html){% endrefer %}
 
 # Using the Service on the Client Side
 
@@ -100,7 +100,7 @@ IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 {% endhighlight %}
 
 
-{% refer %}Learn how to host a service under specific lookup names in depanlinkDomain Service Hosttengahlink./domain-service-host.html#Service Lookup Namebelakanglink{% endrefer %}
+{% refer %}Learn how to host a service under specific lookup names in [Domain Service Host](./domain-service-host.html#Service Lookup Name){% endrefer %}
 
 ## Remote Routing Handler
 
@@ -157,7 +157,7 @@ IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 
 ## Routing Attribute
 
-The above option of using the remote routing handler is very handy when not using attributes. If no routing handler is specified, the default routing handler will be used which is attributed based. It uses the \ajepaaaServiceRouting\ajepbbb attribute in order to define which of the parameters control the routing. Here is an example:
+The above option of using the remote routing handler is very handy when not using attributes. If no routing handler is specified, the default routing handler will be used which is attributed based. It uses the \[ServiceRouting\] attribute in order to define which of the parameters control the routing. Here is an example:
 
 
 {% highlight java %}
@@ -232,7 +232,7 @@ When using broadcast with executor remoting, a distributed transaction must be u
 # One Way Invocation
 
 Some invocations might be one way, which means that the client executes some kind of a service operation and he does not require a return value or even a guarantee of successful execution. For instance, print something at the service console.
-This can be done by specifying a \ajepaaaSpaceServiceOperation\ajepbbb attribute over the one way operation, demonstrated in the following example:
+This can be done by specifying a \[SpaceServiceOperation\] attribute over the one way operation, demonstrated in the following example:
 
 
 {% highlight java %}
@@ -371,17 +371,17 @@ IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 {% endhighlight %}
 
 
-The way to access the meta arguments on the server side is to configure a depanlinkserver side execution aspecttengahlink#serverExecutionApectbelakanglink by implementing the `ServiceExecutionAspect` and wiring it on the server side as shown depanlinkabovetengahlink#serverExecutionApectbelakanglink. To access the meta arguments, you should call `SpaceRemotingInvocation.MetaArguments` on the `invocation` argument provided to the server side aspect.
+The way to access the meta arguments on the server side is to configure a [server side execution aspect](#serverExecutionApect) by implementing the `ServiceExecutionAspect` and wiring it on the server side as shown [above](#serverExecutionApect). To access the meta arguments, you should call `SpaceRemotingInvocation.MetaArguments` on the `invocation` argument provided to the server side aspect.
 
 # Broadcast Remoting
 
 When using executor remoting, a remote invocation can be broadcasted to all active (primary) cluster members. Each Service instance is invoked and return a result to its called which in turn reduce these and pass the final result to the application.
 
 The First phase involves the Service invocation:
-depanimageExecutor1.jpgtengahimage/attachment_files/xap97net/Executor1.jpgbelakangimage
+![Executor1.jpg](/attachment_files/xap97net/Executor1.jpg)
 
 The Second phase involves reducing the results retrieved from the Services:
-depanimageExecutor2.jpgtengahimage/attachment_files/xap97net/Executor2.jpgbelakangimage
+![Executor2.jpg](/attachment_files/xap97net/Executor2.jpg)
 
 In order to use broadcast remoting, the executor broadcast remoting builder should be used:
 

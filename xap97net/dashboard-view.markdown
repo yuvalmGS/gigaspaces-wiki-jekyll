@@ -13,19 +13,19 @@ page_id: 63799382
 
 The main dashboard screen appears immediately after logging into the management console. The dashboard gives you a single click view of the entire cluster, including alerts on various problematic conditions.
 
-depanimagedashboard803.pngtengahimage/attachment_files/xap97net/dashboard803.pngbelakangimage
+![dashboard803.png](/attachment_files/xap97net/dashboard803.png)
 
 # Alerts panel
 
-The Alerts panel displays XAP Alert groups (Alerts are grouped by correlation key) for more details see depanlinkAdministrative Alertstengahlinkhttp://www.gigaspaces.com/wiki/display/XAP9/Administrative+Alertsbelakanglink
+The Alerts panel displays XAP Alert groups (Alerts are grouped by correlation key) for more details see [Administrative Alerts](http://www.gigaspaces.com/wiki/display/XAP9/Administrative+Alerts)
 
-depanimagedashboard_explained.pngtengahimage/attachment_files/xap97net/dashboard_explained.pngbelakangimage
+![dashboard_explained.png](/attachment_files/xap97net/dashboard_explained.png)
 
 # Events time-line panel
 
 Click the _Events_ tag to view the bottom panel of the web dashboard, to view the events time line.
 The events time-line shows the deployment life cycle of all the processing units.
-To filter by application, the events time line is also available in the Application tab. (see depanlinkApplication View#Events time-line (per application)tengahlink./application-view.html#Events time-line (per application)belakanglink)
+To filter by application, the events time line is also available in the Application tab. (see [Application View#Events time-line (per application)](./application-view.html#Events time-line (per application)))
 
 ### Life-cycle success events for each instance:
 
@@ -46,8 +46,8 @@ To filter by application, the events time line is also available in the Applicat
 - installation crashed: processing unit instance unresponsiveness has timed-out (detected failure)
 - installation re-detected: processing unit instance was previously unresponsive but is now responsive.
 
-depanimageevents_timeline_in_dashboard.pngtengahimage/attachment_files/xap97net/events_timeline_in_dashboard.pngbelakangimage
+![events_timeline_in_dashboard.png](/attachment_files/xap97net/events_timeline_in_dashboard.png)
 
 Click each event to get a tooltip with more information.
 
-depanimagetimeline_event_tool_tip.pngtengahimage/attachment_files/xap97net/timeline_event_tool_tip.pngbelakangimage
+![timeline_event_tool_tip.png](/attachment_files/xap97net/timeline_event_tool_tip.png)

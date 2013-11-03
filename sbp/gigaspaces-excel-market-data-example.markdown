@@ -29,9 +29,9 @@ The example demonstrates the following:
 - Running Excel spreadsheets that show a view of the stock market data, and are updated almost in realtime; to show changes and updates in the market data.
 - Building and using Excel RTD and UDF components.
 
-{% lampon %} **depanlinkDownload the exampletengahlink/attachment_files/sbp/ExcelStocks.zipbelakanglink** and extract it into your `<GigaSpaces Root>\Examples` directory.
+{% lampon %} **[Download the example](/attachment_files/sbp/ExcelStocks.zip)** and extract it into your `<GigaSpaces Root>\Examples` directory.
 
-{% refer %}Getting Started with RTD and UDF? See the depanlinkWriting Your First RTD/UDF Applicationtengahlink./writing-your-first-rtd-or-udf-application.htmlbelakanglink section.{% endrefer %}
+{% refer %}Getting Started with RTD and UDF? See the [Writing Your First RTD/UDF Application](./writing-your-first-rtd-or-udf-application.html) section.{% endrefer %}
 
 {include:Prerequisites - GigaSpaces-Excel Integration}
 
@@ -57,19 +57,19 @@ The .NET files are created in the `<Example Root>\Release` directory.
 2. Scroll down to **GigaSpaces.Examples.ExcelStocks.Operations.StockOperations**, select it and click **OK**.
 
 {% indent %}
-depanimageautomation.JPGtengahimage/attachment_files/sbp/automation.JPGbelakangimage
+![automation.JPG](/attachment_files/sbp/automation.JPG)
 {% endindent %}
 
 3. You might get a dialog at this point about mscoree.dll. Click No to this dialog (Yes will delete the add-in from the list).
 
 {% indent %}
-depanimagemscoree_dll.JPGtengahimage/attachment_files/sbp/mscoree_dll.JPGbelakangimage
+![mscoree_dll.JPG](/attachment_files/sbp/mscoree_dll.JPG)
 {% endindent %}
 
 4. Click **OK** in the Add-ins dialog.
 
 {% indent %}
-depanimageadd-ins.JPGtengahimage/attachment_files/sbp/add-ins.JPGbelakangimage
+![add-ins.JPG](/attachment_files/sbp/add-ins.JPG)
 {% endindent %}
 
 
@@ -80,7 +80,7 @@ depanimageadd-ins.JPGtengahimage/attachment_files/sbp/add-ins.JPGbelakangimage
 
 # Running the Example
 
-{% exclamation %} The example must be compiled before you run it (see depanlinkBuilding the Exampletengahlink#buildingbelakanglink above).
+{% exclamation %} The example must be compiled before you run it (see [Building the Example](#building) above).
 1. Start the GigaSpaces environment: `<Example Root>\bin\startAll.bat`.
 2. Run the GigaSpaces Management Center `(<GigaSpaces Root>\Bin\Gs-ui.exe`) to see the **`GigaSpaces.Examples.ExcelStocks.StockEntities.StockData`** instances. To view only the relevant spaces:
     1. In the top menu bar, choose **Settings** > **Discovery** > **Group management**.
@@ -112,4 +112,4 @@ The following metrics describe the scope of testing performed using the examples
 
 {% exclamation %} A .NET local cache on the Excel side is not supported.
 
-{% refer %}Back to The depanlinkExcel that Scales Solutiontengahlink./excel-that-scales-solution.htmlbelakanglink section.{% endrefer %}
+{% refer %}Back to The [Excel that Scales Solution](./excel-that-scales-solution.html) section.{% endrefer %}

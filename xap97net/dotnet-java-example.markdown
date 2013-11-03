@@ -18,7 +18,7 @@ page_id: 63799316
 
 {% column width=86% %}
 
-{% align center %}||depanimagewiki_icon_folder.giftengahimage/attachment_files/xap97net/wiki_icon_folder.gifbelakangimage||Example Root|`<GigaSpaces Root>\dotnet\examples\DotNetJava` |
+{% align center %}||![wiki_icon_folder.gif](/attachment_files/xap97net/wiki_icon_folder.gif)||Example Root|`<GigaSpaces Root>\dotnet\examples\DotNetJava` |
 {% endalign %}
 
 {% endcolumn %}
@@ -48,7 +48,7 @@ Both applications:
 ## The Person Interoperable Class
 
 - The .NET naming convention is different than the Java naming convention.
-The `\ajepaaaSpaceClass(AliasName="")\ajepbbb` attribute is used to map the .NET names to the respective Java names.
+The `\[SpaceClass(AliasName="")\]` attribute is used to map the .NET names to the respective Java names.
 
 - The .NET class **GigaSpaces.Examples.DotnetJava.Person** is mapped to the Java class **com.gigaspaces.examples.dotnetjava.Person**.
 
@@ -93,7 +93,7 @@ public class Person
 }
 {% endhighlight %}
 |
-For more details about .NET-Java Interoperability and designing the interoperable classes, refer to depanlink.NET-Java Interoperabilitytengahlinkhttp://www.gigaspaces.com/wiki/display/XAP66/.NET-Java+Interoperabilitybelakanglink
+For more details about .NET-Java Interoperability and designing the interoperable classes, refer to [.NET-Java Interoperability](http://www.gigaspaces.com/wiki/display/XAP66/.NET-Java+Interoperability)
 
 # Building and Running the Example
 

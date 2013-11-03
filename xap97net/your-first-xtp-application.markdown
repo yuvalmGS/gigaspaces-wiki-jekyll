@@ -17,7 +17,7 @@ page_id: 63799346
 
 {% column width=86% %}
 
-{% align center %}||depanimagewiki_icon_folder.giftengahimage/attachment_files/xap97net/wiki_icon_folder.gifbelakangimage||Example Root|`<GigaSpaces Root>\Examples\ProcessingUnit` |
+{% align center %}||![wiki_icon_folder.gif](/attachment_files/xap97net/wiki_icon_folder.gif)||Example Root|`<GigaSpaces Root>\Examples\ProcessingUnit` |
 {% endalign %}
 
 {% endcolumn %}
@@ -30,11 +30,11 @@ page_id: 63799346
 
 # Overview
 
-This example demonstrates a simple processing unit architecture project -- a complete SBA application that can easily scale. It demonstrates a usage of GigaSpaces's SBA related components, such as depanlinkEvent Listener Containertengahlink./event-driven-architecture.htmlbelakanglink, depanlinkSpace Based Remotingtengahlink./space-based-remoting.htmlbelakanglink and the depanlinkBasic Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink.
+This example demonstrates a simple processing unit architecture project -- a complete SBA application that can easily scale. It demonstrates a usage of GigaSpaces's SBA related components, such as [Event Listener Container](./event-driven-architecture.html), [Space Based Remoting](./space-based-remoting.html) and the [Basic Processing Unit Container](./basic-processing-unit-container.html).
 
 # Architecture
 
-This example includes a module that is deployed to the grid, and a domain model that consists of `Data` objects. The depanlinkDataFeedertengahlink#datafeederbelakanglink module runs within a depanlinkBasic Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink and writes `Data` objects with raw data into the remote space. The space is actually embedded within the other Processing Unit Container, which runs the depanlinkDataProcessortengahlink#dataprocessorbelakanglink module.
+This example includes a module that is deployed to the grid, and a domain model that consists of `Data` objects. The [DataFeeder](#datafeeder) module runs within a [Basic Processing Unit Container](./basic-processing-unit-container.html) and writes `Data` objects with raw data into the remote space. The space is actually embedded within the other Processing Unit Container, which runs the [DataProcessor](#dataprocessor) module.
 
 The `DataProcessor` service takes the new `Data` objects, processes the raw data and writes them back to the space.
 
@@ -43,12 +43,12 @@ The example solution is based on three projects:
 2. Feeder - holds the DataFeeder processing unit logic.
 3. Processor - holds the DataProcessor processing unit logic and related classes.
 
-depanimagedataexample architecture.jpgtengahimage/attachment_files/xap97net/dataexample architecture.jpgbelakangimage
+![dataexample architecture.jpg](/attachment_files/xap97net/dataexample architecture.jpg)
 
 ## Application Workflow
 
-1. The depanlinkDataFeedertengahlink#datafeederbelakanglink writes non-processed `Data` objects into the space every second.
-2. The depanlinkDataProcessortengahlink#dataprocessorbelakanglink takes non-processed `Data` objects, processes them, and writes the processed `Data` objects back to the space.
+1. The [DataFeeder](#datafeeder) writes non-processed `Data` objects into the space every second.
+2. The [DataProcessor](#dataprocessor) takes non-processed `Data` objects, processes them, and writes the processed `Data` objects back to the space.
 
 # Data Domain Model
 
@@ -101,11 +101,11 @@ Basically, every `Data` object is written to the space by the `DataFeeder` with 
 ## DataProcessor
 
 The data processor module consists of one class named `DataProcessor` which contains the processing business logic.
-The `DataProcessor` class is created upon deployment of the data processor processing unit project which will be created and managed within a depanlinkBasic Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink.
+The `DataProcessor` class is created upon deployment of the data processor processing unit project which will be created and managed within a [Basic Processing Unit Container](./basic-processing-unit-container.html).
 
-The actual work is done by a depanlinkPolling Containertengahlink./polling-container-component.htmlbelakanglink and the `DataProcessor`. The polling container provider the abstraction for data event that triggers the business logic by taking the unprocessed `Data` objects from the space and executes the `DataProcessor.ProcessData` method on it. Then it writes the processed data back to the space.
+The actual work is done by a [Polling Container](./polling-container-component.html) and the `DataProcessor`. The polling container provider the abstraction for data event that triggers the business logic by taking the unprocessed `Data` objects from the space and executes the `DataProcessor.ProcessData` method on it. Then it writes the processed data back to the space.
 
-The different attributes will be used to create and configure the polling container that will trigger the data event and invoke the `ProcessData` method which represents the business logic. The polling container is aware of the mode the space is in, and it will only work when the space is in Primary mode. Additionally the processor as being published as a depanlinkremote servicetengahlink./space-based-remoting.htmlbelakanglink, therefore it needs to implement a service contract, in our case it implements the common interface `IProcessorStatisticsProvider`, which will later be remotely invoked by the feeder to display statistics of the processor.
+The different attributes will be used to create and configure the polling container that will trigger the data event and invoke the `ProcessData` method which represents the business logic. The polling container is aware of the mode the space is in, and it will only work when the space is in Primary mode. Additionally the processor as being published as a [remote service](./space-based-remoting.html), therefore it needs to implement a service contract, in our case it implements the common interface `IProcessorStatisticsProvider`, which will later be remotely invoked by the feeder to display statistics of the processor.
 
 In this example the processor is colocated with the space that it needs to process data from, therefore achieving high performance because the processor and the space reside in the same process. This cluster topology is built by a simple matter of configuration of the basic processing unit container which is detailed below.
 
@@ -206,9 +206,9 @@ We configure a single colocated space specified by the Url of the space, in our 
 
 This data processor comes with an sla.xml file which define the default topology, which in our case is a cluster of 2 primaries and a single backup per primary. This can be override at deploy time or by editing the sla.xml file that resides in the data processor deployment directory.
 
-{% refer %}See depanlinkEvent Driven Architecturetengahlink./event-driven-architecture.htmlbelakanglink for more info about event listening abstraction.{% endrefer %}
-{% refer %}See depanlinkSpace Based Remotingtengahlink./space-based-remoting.htmlbelakanglink for more info about remoting services over the grid.{% endrefer %}
-{% refer %}See depanlinkBasic Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink for more info about the built in basic processing unit container.{% endrefer %}
+{% refer %}See [Event Driven Architecture](./event-driven-architecture.html) for more info about event listening abstraction.{% endrefer %}
+{% refer %}See [Space Based Remoting](./space-based-remoting.html) for more info about remoting services over the grid.{% endrefer %}
+{% refer %}See [Basic Processing Unit Container](./basic-processing-unit-container.html) for more info about the built in basic processing unit container.{% endrefer %}
 
 {% anchor datafeeder %}
 
@@ -330,7 +330,7 @@ We configure a remote proxy to the cluster which is used by the feeder in order 
 {% endinittab %}
 
 
-The `Feed()` method does the actual work, by creating a new `Data` object with random data in an unprocessed state every second, and feeds it to the cluster. Additionaly every number of iterations it displays the statistics of processing of a certain type by executing a remote service which the processors expose. It does so by using an depanlinkExecutor based remoting proxytengahlink./executor-based-remoting.htmlbelakanglink to the remote service which is hosted in the grid.
+The `Feed()` method does the actual work, by creating a new `Data` object with random data in an unprocessed state every second, and feeds it to the cluster. Additionaly every number of iterations it displays the statistics of processing of a certain type by executing a remote service which the processors expose. It does so by using an [Executor based remoting proxy](./executor-based-remoting.html) to the remote service which is hosted in the grid.
 
 # Building the Example
 
@@ -353,9 +353,9 @@ This compiles all the related projects and creates the processing unit dlls insi
 
 There are a few ways to deploy the Processing Units:
 
-- depanlinkGrid deploymenttengahlink#gridbelakanglink
-- depanlinkIDE integrated deploymenttengahlink#idebelakanglink
-- depanlinkStandalone deploymenttengahlink#standalonebelakanglink
+- [Grid deployment](#grid)
+- [IDE integrated deployment](#ide)
+- [Standalone deployment](#standalone)
 
 {% anchor grid %}
 
@@ -377,10 +377,10 @@ After you run the build script and the copy deployment files script, the two dir
 
 {% exclamation %} Since the spaces are running inside the `DataProcessor`, the `DataProcessor` should be deployed first and the `DataFeeder` second.
 
-1. In the GigaSpaces Management Center, click on the tab named Deployments, Details, and then click the **Deploy new application** button (depanimagedeploy button.jpgtengahimage/attachment_files/xap97net/deploy button.jpgbelakangimage).
+1. In the GigaSpaces Management Center, click on the tab named Deployments, Details, and then click the **Deploy new application** button (![deploy button.jpg](/attachment_files/xap97net/deploy button.jpg)).
 
 {% indent %}
-depanimagedeploy picture.jpgtengahimage/attachment_files/xap97net/deploy picture.jpgbelakangimage
+![deploy picture.jpg](/attachment_files/xap97net/deploy picture.jpg)
 {% endindent %}
 
 2. Now, all you need to do is type the name of the Processing Unit (identical to the name of the folder that is now in the `deploy` directory) in the `Processing Unit Name` field. Since there's an existing sla.xml with specific cluster topology, there's no need to specify the cluster topology at deploy time.
@@ -402,7 +402,7 @@ Each processing unit instance is deployed in a seperate isolated AppDomain with 
 
 Once the processing units are deployed, they will appear in the managament center and the different components can be monitored:
 
-depanimagedeployed dataexample.jpgtengahimage/attachment_files/xap97net/deployed dataexample.jpgbelakangimage
+![deployed dataexample.jpg](/attachment_files/xap97net/deployed dataexample.jpg)
 
 {% anchor ide %}
 

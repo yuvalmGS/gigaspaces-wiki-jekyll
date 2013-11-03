@@ -7,7 +7,7 @@ page_id: 56430569
 
 {% compositionsetup %}
 
-{% summary page|60 %}Global HTTP Session Sharing allows transparent session replication between remote sites and session sharing between different application servers in real-time. The solution uses the depanlinkShiro Session Manager librarytengahlinkhttp://shiro.apache.org/session-management.htmlbelakanglink{% endsummary %}
+{% summary page|60 %}Global HTTP Session Sharing allows transparent session replication between remote sites and session sharing between different application servers in real-time. The solution uses the [Shiro Session Manager library](http://shiro.apache.org/session-management.html){% endsummary %}
 
 # Global HTTP Session Sharing - Massive Web Application Scaling
 
@@ -37,7 +37,7 @@ The following image depicts a common use case where there are multiple data cent
 
 
 {% indent %}
-depanimagehttpSessionSharing1.jpgtengahimage/attachment_files/sbp/httpSessionSharing1.jpgbelakangimage
+![httpSessionSharing1.jpg](/attachment_files/sbp/httpSessionSharing1.jpg)
 {% endindent %}
 
 
@@ -55,7 +55,7 @@ GigaSpaces Global HTTP Session Management features the following:
 - **Transparent Session sharing** between any App/Web server - Any JEE app/web server (WebSphere , Weblogic , JBoss , Tomcat , Jetty , GlassFish...) may share their HTTP session with each other.
 - **Application elasticity** - Support **session replication** across different App/Web applications located within the same or different data-centers/clouds allowing the application to scale dynamically without any downtime.
 - **Unlimited number of sessions and concurrent users** support - Sub-millisecond session data access by using GigaSpaces In-Memory-Data-Grid.
-- **Session replication over the WAN** support - Utilizing GigaSpaces depanlinkMulti-Site Replication over the WANtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP9/Multi-Site+Replication+over+the+WANbelakanglink technology.
+- **Session replication over the WAN** support - Utilizing GigaSpaces [Multi-Site Replication over the WAN](http://wiki.gigaspaces.com/wiki/display/XAP9/Multi-Site+Replication+over+the+WAN) technology.
 - HTTP Session **data access scalability** - Session data can utilize any of the supported In-Memory-Data-Grid topologies ; replicated , partitioned , with and without local cache.
 - **Transparent App/Web Failover** - Allow app server restart without any session data loss.
 - Any session data type attribute support - **Primitive and Non-Primitive** (collections, user defined types) attributes supported.
@@ -72,7 +72,7 @@ The below diagram shows a more detailed view of the IMDG deployment. In this cas
 
 
 {% indent %}
-depanimagehttpSessionSharing2.jpgtengahimage/attachment_files/sbp/httpSessionSharing2.jpgbelakangimage
+![httpSessionSharing2.jpg](/attachment_files/sbp/httpSessionSharing2.jpg)
 {% endindent %}
 
 
@@ -80,7 +80,7 @@ The end-to-end path between the 2 data center nodes includes the servlet and Shi
 
 
 {% indent %}
-depanimagehttpSessionSharing3.jpgtengahimage/attachment_files/sbp/httpSessionSharing3.jpgbelakangimage
+![httpSessionSharing3.jpg](/attachment_files/sbp/httpSessionSharing3.jpg)
 {% endindent %}
 
 
@@ -103,7 +103,7 @@ Have `cacheManager.cacheSessionLocally = true` when you would like multiple web 
 
 
 {% indent %}
-depanimagehttp-session-non-sticky.jpgtengahimage/attachment_files/sbp/http-session-non-sticky.jpgbelakangimage
+![http-session-non-sticky.jpg](/attachment_files/sbp/http-session-non-sticky.jpg)
 {% endindent %}
 
 
@@ -126,7 +126,7 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 
 
 {% indent %}
-depanimagehttp-session-sticky.jpgtengahimage/attachment_files/sbp/http-session-sticky.jpgbelakangimage
+![http-session-sticky.jpg](/attachment_files/sbp/http-session-sticky.jpg)
 {% endindent %}
 
 
@@ -214,7 +214,7 @@ securityManager.sessionManager.sessionValidationScheduler = $sessionValidationSc
 
 
 {% tip %}
-The `sessionDAO.activeSessionsCacheName` parameter should include a standard depanlinkSpace URLtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP9/Space+URLbelakanglink to the IMDG deployed within your site.
+The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Space URL](http://wiki.gigaspaces.com/wiki/display/XAP9/Space+URL) to the IMDG deployed within your site.
 {% endtip %}
 
 
@@ -248,12 +248,12 @@ gs deploy-space sessionSpace
 
 
 {% tip %}
-See the depanlinkdeploy-spacetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP9/deploy-space+GigaSpaces+CLIbelakanglink command for details.
+See the [deploy-space](http://wiki.gigaspaces.com/wiki/display/XAP9/deploy-space+GigaSpaces+CLI) command for details.
 {% endtip %}
 
 
 ### The WAN Gateway
-The depanlinkWAN Gatewaytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP9/Multi-Site+Replication+over+the+WANbelakanglink should be deployed using your preferred replication topography, such as multi-master or master-slave. See the depanlinkWAN Replication Gatewaytengahlinkhttp://www.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gatewaybelakanglink best practice for an example of how a multi-master Gateway architecture can be deployed.
+The [WAN Gateway](http://wiki.gigaspaces.com/wiki/display/XAP9/Multi-Site+Replication+over+the+WAN) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](http://www.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gateway) best practice for an example of how a multi-master Gateway architecture can be deployed.
 
 ### Other configuration options
 
@@ -287,7 +287,7 @@ Session manager uses XStream libraries for serializing session data to XML. XStr
 
 ##### Secured GigaSpaces cluster
 
-When using a depanlinkSecure GigaSpaces clustertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP9/Securing+your+Databelakanglink you can pass security credentials using following parameters in `shiro.ini` file,
+When using a [Secure GigaSpaces cluster](http://wiki.gigaspaces.com/wiki/display/XAP9/Securing+your+Data) you can pass security credentials using following parameters in `shiro.ini` file,
 
 
 
@@ -302,7 +302,7 @@ When using a depanlinkSecure GigaSpaces clustertengahlinkhttp://wiki.gigaspaces.
 
 ## Single-Site Deployment
 The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish....).
-1. Download the depanlinkHttpSession.wartengahlinkHttpSession.warbelakanglink.
+1. Download the [HttpSession.war](HttpSession.war).
 2. Deploy a space named **sessionSpace**. You can start the `GigaSpaces root/bin/gsInstance.sh/bat` for a single instance space or deploy a clustered space using the command line or GS-UI.
 3. Deploy the HttpSession.war into Tomcat (or any other app server).
 4. Start your browser and access the web application via the following URL: http://localhost:8080/HttpSession
@@ -313,14 +313,14 @@ The URL above assumes the Web Server configured to use port 8080.
 
 
 {% indent %}
-depanimagehttpSessionSharing4.jpgtengahimage/attachment_files/sbp/httpSessionSharing4.jpgbelakangimage
+![httpSessionSharing4.jpg](/attachment_files/sbp/httpSessionSharing4.jpg)
 {% endindent %}
 
 5. Set some values for the Session Name and Attribute and click the **Update Session** button.
 6. View the session within the space via the GS-UI. Click the Data-Types icon , click the `org.openspaces.sessions.shiro.SpaceSession` class and Click the query button. The Query view will be displayed. You can double click any of the sessions and drill into the attributes map within the session to view the session attributes:
 
 {% indent %}
-depanimagehttpSessionSharing5.jpgtengahimage/attachment_files/sbp/httpSessionSharing5.jpgbelakangimage
+![httpSessionSharing5.jpg](/attachment_files/sbp/httpSessionSharing5.jpg)
 {% endindent %}
 
 
@@ -330,12 +330,12 @@ depanimagehttpSessionSharing5.jpgtengahimage/attachment_files/sbp/httpSessionSha
 You may share the HTTP session between different web servers. To test this on your local environment you can install multiple web servers, deploy the web application and have your browser access the same application via the same browser. See the below example:
 
 {% indent %}
-depanimagehttpSessionSharing8.jpgtengahimage/attachment_files/sbp/httpSessionSharing8.jpgbelakangimage
+![httpSessionSharing8.jpg](/attachment_files/sbp/httpSessionSharing8.jpg)
 {% endindent %}
 
 
 {% indent %}
-depanimagehttpSessionSharing9.jpgtengahimage/attachment_files/sbp/httpSessionSharing9.jpgbelakangimage
+![httpSessionSharing9.jpg](/attachment_files/sbp/httpSessionSharing9.jpg)
 {% endindent %}
 
 Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the space.
@@ -346,8 +346,8 @@ When deploying the web application WAR file please make sure the web app context
 
 
 ### Load-Balancer
-Another option would be to use a load-balancer such as the depanlinkapache httpdtengahlinkhttp://httpd.apache.orgbelakanglink and configure it to load-balance the web requests between the different web servers. Here is a simple setup:
-1. Install depanlinkapache httpdtengahlinkhttp://httpd.apache.orgbelakanglink.
+Another option would be to use a load-balancer such as the [apache httpd](http://httpd.apache.org) and configure it to load-balance the web requests between the different web servers. Here is a simple setup:
+1. Install [apache httpd](http://httpd.apache.org).
 2. Create a file named `HttpSession.conf` located at <Apache HTTPD 2.2 root>\conf\gigaspaces
 3. Place the following within the `HttpSession.conf` file. The `BalancerMember` should be mapped to different URLs of your web servers instances. With the example below we have Tomcat using port 8080 and Websphere using port 9080.
 
@@ -402,7 +402,7 @@ The `127.0.0.1` IP should be replaced with appropriate IP addresses of the machi
 5. Once you have the space running, Websphere running, Tomcat running, and Apache httpd configured, restart the Apache http. On windows you can use its service.
 
 {% indent %}
-depanimagehttpSessionSharing7.jpgtengahimage/attachment_files/sbp/httpSessionSharing7.jpgbelakangimage
+![httpSessionSharing7.jpg](/attachment_files/sbp/httpSessionSharing7.jpg)
 {% endindent %}
 
 6. Once you performed the above steps, access the following URL:
@@ -411,13 +411,13 @@ You should have the web application running. Any access to the web application w
 http://127.0.0.1:8888/balancer-manager
 
 {% indent %}
-depanimagehttpSessionSharing6.jpgtengahimage/attachment_files/sbp/httpSessionSharing6.jpgbelakangimage
+![httpSessionSharing6.jpg](/attachment_files/sbp/httpSessionSharing6.jpg)
 {% endindent %}
 
 You can shutdown Websphere or Tomcat and later restart these. Your web application will not lose its session data.
 
 ### Multi-Site Deployment
-When deploying the depanlinkmulti-site exampletengahlink./wan-replication-gateway.htmlbelakanglink you should change the `shiro.ini` for each site to match the local site Space URL. For example,
+When deploying the [multi-site example](./wan-replication-gateway.html) you should change the `shiro.ini` for each site to match the local site Space URL. For example,
 to connect to the DE space you should have the web application use a `shiro.ini` with the following:
 
 
@@ -440,7 +440,7 @@ sessionDAO.activeSessionsCacheName = jini://*/*/wanSpaceUS?useLocalCache&groups=
 Global HTTP session sharing works only when your application is deployed as a non-root context. It is relying on browser cookies for identifying user session, specifically JSESSIONID cookie. Cookies are generated at a context name per host level. This way all the links on the page are referring to the same cookie/user session.
 
 ##### WebSphere Application Server HttpSessionIdReuse Custom Property
-When using the Global HTTP session sharing with WebSphere Application Server , please enable the depanlinkHttpSessionIdReusetengahlinkhttp://pic.dhe.ibm.com/infocenter/wasinfo/v7r0/index.jsp?topic=%2Fcom.ibm.websphere.express.doc%2Finfo%2Fexp%2Fae%2Frprs_custom_properties.htmlbelakanglink custom property. In a multi-JVM environment that is not configured for session persistence setting this property to true enables the session manager to use the same session information for all of a user's requests even if the Web applications that are handling these requests are governed by different JVMs.
+When using the Global HTTP session sharing with WebSphere Application Server , please enable the [HttpSessionIdReuse](http://pic.dhe.ibm.com/infocenter/wasinfo/v7r0/index.jsp?topic=%2Fcom.ibm.websphere.express.doc%2Finfo%2Fexp%2Fae%2Frprs_custom_properties.html) custom property. In a multi-JVM environment that is not configured for session persistence setting this property to true enables the session manager to use the same session information for all of a user's requests even if the Web applications that are handling these requests are governed by different JVMs.
 
 ##### Transient Attribute
 An attribute specified as **transient** would not be shared and its content will not be stored within the IMDG. Your code should be modified to have this as a regular attribute that can be serialized.

@@ -12,13 +12,13 @@ page_id: 63799322
 
 
 {% info %}
-This page coveres additional details about the BasicProcessingUnitContainer which are not covered in depanlinkBasic Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink page, the previous page should be read before this one.
+This page coveres additional details about the BasicProcessingUnitContainer which are not covered in [Basic Processing Unit Container](./basic-processing-unit-container.html) page, the previous page should be read before this one.
 {% endinfo %}
 
 
 # Configuring The Container Automatic Scanning
 
-By default, the container will look for depanlinkbasic processing unit componentstengahlink#basiccomponentsbelakanglink, depanlinkremote servicetengahlink#servicesbelakanglink and depanlinkevent listener containertengahlink#eventcontainersbelakanglink and instantiate and manage these components if found. This behavior can be enabled or disabled by configuring the container in the following manner:
+By default, the container will look for [basic processing unit components](#basiccomponents), [remote service](#services) and [event listener container](#eventcontainers) and instantiate and manage these components if found. This behavior can be enabled or disabled by configuring the container in the following manner:
 
 
 {% highlight xml %}
@@ -166,7 +166,7 @@ public class Feeder
 {% endhighlight %}
 
 
-{% lampon %} The method which has one of the attributes \ajepaaaContainerInitialized\ajepbbb or \ajepaaaContainerInitializing\ajepbbb can have zero arguments or one argument which will be injected with the managing container
+{% lampon %} The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container
 
 # Creating a Space Proxy Programatically
 
@@ -232,4 +232,4 @@ IEventListenerContainer<Data> eventListenerContainer = container.GetEventListene
 
 # Security
 
-When the processing unit is deployed with injected security properties (Using the Management Center or the depanlinkService Grid admin apitengahlink./administration-and-monitoring-api.htmlbelakanglink), the basic processing unit container will automatically attach this security context to all the proxies that it manages. Both for proxies that are created automatically from the configuration and proxies that are created programatically using the container `CreateSpaceProxy` method.
+When the processing unit is deployed with injected security properties (Using the Management Center or the [Service Grid admin api](./administration-and-monitoring-api.html)), the basic processing unit container will automatically attach this security context to all the proxies that it manages. Both for proxies that are created automatically from the configuration and proxies that are created programatically using the container `CreateSpaceProxy` method.

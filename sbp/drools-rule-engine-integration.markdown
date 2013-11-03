@@ -22,13 +22,13 @@ page_id: 54821146
 
 # Overview
 
-A rule engine is a component specialized in the execution of business rules. There are dedicated algorithms for such engines, such as the depanlinkRETE algorithmtengahlinkhttp://en.wikipedia.org/wiki/Rete_algorithmbelakanglink, which is optimized for efficiency, concurrency and speed. As such a rule engine is capable of processing large volumes of data, and therefore, an integration with GigaSpaces would combine the best of two worlds.
+A rule engine is a component specialized in the execution of business rules. There are dedicated algorithms for such engines, such as the [RETE algorithm](http://en.wikipedia.org/wiki/Rete_algorithm), which is optimized for efficiency, concurrency and speed. As such a rule engine is capable of processing large volumes of data, and therefore, an integration with GigaSpaces would combine the best of two worlds.
 
-depanimagedroolsRuleEngineIntegration.jpgtengahimage/attachment_files/sbp/droolsRuleEngineIntegration.jpgbelakangimage
+![droolsRuleEngineIntegration.jpg](/attachment_files/sbp/droolsRuleEngineIntegration.jpg)
 
 This article demonstrates how to integrate a rules engine called Drools (also known as JBoss Rules) with GigaSpaces. A working example is provided as part of this article. In the next sections a technical description is given on how the integration works. It will go into detail of all the classes used, how they interact and should be accessed from another system. You will find that the GigaSpaces data grid is used for storing the business rules, event containers for pre-compiling rulesets in an asynchronous manner, and that Remoting Services can be used for invocations of the rule-engine.
 
-Click depanlinkheretengahlinkhttp://gigaspaces.com/wiki/download/attachments/54821146/SpaceEnabledDrools.zipbelakanglink to download a working code sample that uses depanlinkJBoss Drools 5tengahlinkhttp://www.jboss.org/droolsbelakanglink.
+Click [here](http://gigaspaces.com/wiki/download/attachments/54821146/SpaceEnabledDrools.zip) to download a working code sample that uses [JBoss Drools 5](http://www.jboss.org/drools).
 
 # Modules
 
@@ -92,7 +92,7 @@ end
 Each file can contain multiple rules. When the rules loader reads these rules files, it converts their contents to a Java byte array (this is a small optimization because the Drools KnowledgeBuilder does not accept Strings).
 
 The rules are converted into the following data model structure:
-depanimagecomponentmodel.JPGtengahimage/attachment_files/sbp/componentmodel.JPGbelakangimage
+![componentmodel.JPG](/attachment_files/sbp/componentmodel.JPG)
 
 The DroolsRuleset is the main entity. It contains a project name (to keep rulesets separated between projects), a ruleset name, a precompiled version of the ruleset (called a KnowledgePackage and is empty by default), a status, a collection of DSL definitions and a collection of rules. By default the status will be 'unprocessed', but this is changed when the rule is compiled by the RulesCompiler in the space.
 
@@ -101,7 +101,7 @@ Each one of the DroolsDslDefinition entities resembles a DSL entry from the rule
 Each one of the DroolsRule entities resembles a DRL entry from the ruleset XML file that was read by the rules loader. It contains a ruleSetId (that points to the associated ruleset), a project name (an optimization for routing of the data in the space), the DRL/DSLR content as a byte array and a field to determine the content type (i.e. DRL or DSLR).
 
 The rules loader uses a GigaSpaces remoting service to load the rules into the space. This service is based on an interface called IRulesLoadingService:
-depanimageirulesloadingservice.jpgtengahimage/attachment_files/sbp/irulesloadingservice.jpgbelakangimage
+![irulesloadingservice.jpg](/attachment_files/sbp/irulesloadingservice.jpg)
 
 The interface has the following contract:
 
@@ -123,10 +123,10 @@ And on the server side the implementation is provided that will write new rule-o
 {% tabcontent Compiling Rules %}
 Once the rule loader has written the new rule objects into the rule space, a polling container (called RulesCompiler) will pick them up. It is triggered on the creation of a new RuleSet object and automatically reads the associated DroolsRule and DroolsDslDefinition objects along with it. It then creates a new Drools KnowledgeBuilder which is capable of validating all the rules.
 
-depanimagestdflow.JPGtengahimage/attachment_files/sbp/stdflow.JPGbelakangimage
+![stdflow.JPG](/attachment_files/sbp/stdflow.JPG)
 
 The result of the validation is a state change of the RuleSet object, see next image for the state diagram:
-depanimagestdflow2.jpgtengahimage/attachment_files/sbp/stdflow2.jpgbelakangimage
+![stdflow2.jpg](/attachment_files/sbp/stdflow2.jpg)
 
 The initial state is 'unprocessed'. When there is a validation error, the state changes to 'exception'. When there is no error, the state is changed to 'compiled'.
 
@@ -170,7 +170,7 @@ Upon invocation of an execute method, this class will try to load a DroolsContex
 
 Finally, the cached object is used to create a new Drools stateless knowledge session. If needed, the passed globals are added to the session and then there is a call to the main execute-method with the given facts as argument.
 
-depanimagestdflow3.jpgtengahimage/attachment_files/sbp/stdflow3.jpgbelakangimage
+![stdflow3.jpg](/attachment_files/sbp/stdflow3.jpg)
 
 The result of the call is a (possibly updated) set of fact objects.
 

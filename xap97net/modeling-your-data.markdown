@@ -35,15 +35,15 @@ Thinking in terms of traditional relationships ("one to one", "one to many" and 
 
 If an entity is associated with several containers (parent entities), it can't be embedded within the containing entity. It might be also impossible to store it with all of its containers on the same partition.
 
-In the depanlinkPet Clinic applicationtengahlinkhttp://www.openspaces.org/display/DAE/GigaSpaces+PetClinicbelakanglink, a Pet is only associated with an Owner. We can therefore store each Pet with its owner on the same partition. We can even embed the Pet object within the physical Owner entry.
-depanimagepetclinic_class_model.giftengahimage/attachment_files/xap97net/petclinic_class_model.gifbelakangimage
+In the [Pet Clinic application](http://www.openspaces.org/display/DAE/GigaSpaces+PetClinic), a Pet is only associated with an Owner. We can therefore store each Pet with its owner on the same partition. We can even embed the Pet object within the physical Owner entry.
+![petclinic_class_model.gif](/attachment_files/xap97net/petclinic_class_model.gif)
 However, if a Pet were also associated with a Vet, we could not embed the Pet in the Vet physical entry (without duplicating each Pet entry) and could not store the Pet and the pet's Vet in the same partition.
 
 # What are Embedded and Non Embedded Relationships?
 
 **Embedded Relationships** mean that one object physically contains the associated objects and there is a **strong** lifecycle dependency between them. When the containing object is deleted, so are all of  its contained objects. With this type of object association, you ensure there is always a local transaction, since the entire object graph is stored in the same entry within the Space.
 
-depanimagemodel_embed.jpgtengahimage/attachment_files/xap97net/model_embed.jpgbelakangimage
+![model_embed.jpg](/attachment_files/xap97net/model_embed.jpg)
 
 ### Data Access for Embedded Relationships
 
@@ -72,15 +72,15 @@ SqlQuery<Company> query =
 {% endhighlight %}
 
 
-See the depanlinkSqlQuerytengahlink./sqlquery.htmlbelakanglink section for details about embedded entities query and indexing.
+See the [SqlQuery](./sqlquery.html) section for details about embedded entities query and indexing.
 
 **Non Embedded Relationships** means that one object is associated with a number of other objects, so you can navigate from one object to another. However, there is no life cycle dependency between them, so if you delete the referencing object, you don't automatically delete the referenced object(s). The association is therefore manifested in storing IDs rather than storing the actual associated object itself. This type of relationship means that you don't duplicate data but you are more likely to access more than one node in the cluster when querying or updating your data.
 
-depanimagemodel_non_embed.jpgtengahimage/attachment_files/xap97net/model_non_embed.jpgbelakangimage
+![model_non_embed.jpg](/attachment_files/xap97net/model_non_embed.jpg)
 
 
 {% tip %}
-See the depanlinkParent Child Relationshiptengahlink/xap97/parent-child-relationship.htmlbelakanglink for an example for non-embedded relationships.
+See the [Parent Child Relationship](/xap97/parent-child-relationship.html) for an example for non-embedded relationships.
 {% endtip %}
 
 

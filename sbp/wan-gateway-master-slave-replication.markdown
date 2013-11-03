@@ -20,7 +20,7 @@ page_id: 64323671
 # Overview
 
 The WAN Gateway provides a simple way of creating a master-slave topology enabling data from one XAP site to be replicated to one or more remote sites. For instance, given three clusters in New York, London, and Hong Kong, with New York being the master and the remaining two acting as slaves, any updates to the New York space will propagate to both London and Hong Kong asynchronously. The sample processing units and configuration provided below are intended as an example of implementing a single-master/multi-slave topology across three sites: New York (US), London (GB), and Hong Kong (HK) where each site has an independent cluster and a Gateway.
-depanimageWAN_masterslave.pngtengahimage/attachment_files/sbp/WAN_masterslave.pngbelakangimage
+![WAN_masterslave.png](/attachment_files/sbp/WAN_masterslave.png)
 
 The demo is configured to start three space instances across three clusters. While the three clusters run on your local machine, they are demarcated by zones and different lookup service ports as follows:
 || Gateway/Space || Zone || Lookup Service Port ||
@@ -31,7 +31,7 @@ The demo is configured to start three space instances across three clusters. Whi
 | wan-gateway-GB | GB | 4366 |
 | wan-space-GB | GB | 4366 |
 The internal architecture of the setup includes a clustered space and a Gateway, such that the master site (US) only configures delegators while the slave sites (GB, HK) only configure sinks (click the thumbnail to enlarge):
-depanimageWAN_masterslave_arch.pngtengahimage/attachment_files/sbp/WAN_masterslave_arch.pngbelakangimage
+![WAN_masterslave_arch.png](/attachment_files/sbp/WAN_masterslave_arch.png)
 
 As a result of this topology setup, the following scenario will take place once updates are written to the New York space:
 
@@ -259,11 +259,11 @@ The master-slave topology configuration is simply implemented through delegators
 
 # Installing and Running the Example
 
-1. Download the depanlinkWAN_Replication_MasterSlave.ziptengahlink/attachment_files/sbp/WAN_Replication_MasterSlave.zipbelakanglink archive. It includes two folders: **deploy** and **scripts**.
+1. Download the [WAN_Replication_MasterSlave.zip](/attachment_files/sbp/WAN_Replication_MasterSlave.zip) archive. It includes two folders: **deploy** and **scripts**.
 2. Please extract the file and and copy the content of the **deploy** folder into `\<GIGASPACES_HOME>\deploy` folder.
 3. Extract the `scripts` folder to an arbitrary location and edit the `setExampleEnv.bat/sh` script to include correct values for `NIC_ADDR` as the machine IP and `JSHOMEDIR` as the GigaSpaces root folder location.
 
-The `scripts` folder contains the necessary scripts to start the depanlinkGrid Service Agenttengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agentbelakanglink for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:
+The `scripts` folder contains the necessary scripts to start the [Grid Service Agent](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agent) for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:
 1. Run `startAgent-GB.bat/sh` or to start GB site.
 2. Run `startAgent-HK.bat/sh` to start HK site.
 3. Run `startAgent-US.bat/sh` to start US site.
@@ -273,22 +273,22 @@ The `scripts` folder contains the necessary scripts to start the depanlinkGrid S
 
 - Start the GigaSpaces Management Center and configure the appropriate lookup groups through the "Group Management" dialog.
 - Once all clusters are up and running, you will need to enable the relative groups:
-depanimagegroup_management_dialog.jpgtengahimage/attachment_files/sbp/group_management_dialog.jpgbelakangimage
+![group_management_dialog.jpg](/attachment_files/sbp/group_management_dialog.jpg)
 
 Check to enable all three advertised groups for each site:
-depanimagegroups_selection_dialog.jpgtengahimage/attachment_files/sbp/groups_selection_dialog.jpgbelakangimage
+![groups_selection_dialog.jpg](/attachment_files/sbp/groups_selection_dialog.jpg)
 
 As a result, you should see the service grid components for each site displayed under the "Hosts" tree as follows:
-depanimagemasterslave_hosts_view.pngtengahimage/attachment_files/sbp/masterslave_hosts_view.pngbelakangimage
+![masterslave_hosts_view.png](/attachment_files/sbp/masterslave_hosts_view.png)
 Once The deployAll.bat/sh script finishes running, you should be able to see all three sites deployed as follows:
-depanimagepu_deployments.jpgtengahimage/attachment_files/sbp/pu_deployments.jpgbelakangimage
+![pu_deployments.jpg](/attachment_files/sbp/pu_deployments.jpg)
 
 If you are using the GS-WEBUI, you can also view the site topology through the "Data Grids > Gateways" view as the following:
-depanimagewebui_gw_topology.pngtengahimage/attachment_files/sbp/webui_gw_topology.pngbelakangimage
+![webui_gw_topology.png](/attachment_files/sbp/webui_gw_topology.png)
 
 # Testing Master-Slave Replication
 
-You can test the setup by using the depanlinkbenchmark utilitytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Benchmark+View+-+GigaSpaces+Browserbelakanglink comes with the GS-UI. Select the US Benchmark icons and click Start to begin writing objects to the space:
-depanimagemasterslave_space_write.pngtengahimage/attachment_files/sbp/masterslave_space_write.pngbelakangimage
+You can test the setup by using the [benchmark utility](http://wiki.gigaspaces.com/wiki/display/XAP91/Benchmark+View+-+GigaSpaces+Browser) comes with the GS-UI. Select the US Benchmark icons and click Start to begin writing objects to the space:
+![masterslave_space_write.png](/attachment_files/sbp/masterslave_space_write.png)
 Click the Spaces icon on the Space Browser Tab to get a global view of all spaces. As objects are being written, you should see replication occurring across both HK and GB sites until there are 5000 objects in each space:
-depanimagemasterslave_space_count.pngtengahimage/attachment_files/sbp/masterslave_space_count.pngbelakangimage
+![masterslave_space_count.png](/attachment_files/sbp/masterslave_space_count.png)

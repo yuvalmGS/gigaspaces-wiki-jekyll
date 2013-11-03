@@ -229,7 +229,7 @@ foreach (IMachine machine in admin.Machines)
 
 
 {% tip %}
-See a fully running example of a depanlinkScaling Agenttengahlink./scaling-agent-example.htmlbelakanglink which comes with the product.
+See a fully running example of a [Scaling Agent](./scaling-agent-example.html) which comes with the product.
 {% endtip %}
 
 
@@ -250,12 +250,12 @@ This means that just creating the `IServiceGridAdmin`, and calling a specific ge
 The Service Grid Admin Domain Model has representation to the main actors at different GigaSpaces levels. They include:
 
 ||Name||Description||Main Operations||
-|GridServiceAgent|A process manager that manages Service Grid processes such as GSM, GSC and LUS. More info depanlinkheretengahlink./service-grid.html#gsabelakanglink.|* Allows you to list all the currently managed processes.
+|GridServiceAgent|A process manager that manages Service Grid processes such as GSM, GSC and LUS. More info [here](./service-grid.html#gsa).|* Allows you to list all the currently managed processes.
 - Start processes (GSM, GSC, LUS).|
 |GridServiceAgents|Holds all the currently discovered Grid Service Agents.|* Get all the currently discovered Grid Service Agents.
 - Wait for X number of Grid Service Agents to be up.
 - Register for Grid Service Agent addition (discovery) and removals events.|
-|GridServiceManager|Managing Processing Unit deployments and Grid Service Containers. More info depanlinkheretengahlink./service-grid.html#gsmbelakanglink.|* Deploy Processing Units.
+|GridServiceManager|Managing Processing Unit deployments and Grid Service Containers. More info [here](./service-grid.html#gsm).|* Deploy Processing Units.
 - Deploy pure Space Processing Units.
 - Get the Grid Service Agent Managing it.
 - Restart itself (if managed by a Grid Service Agent).
@@ -265,12 +265,12 @@ The Service Grid Admin Domain Model has representation to the main actors at dif
 - Get all the currently discovered Grid Service Managers.
 - Wait for X number of Grid Service Managers to be up.
 - Register for Grid Service Manager addition (discovery) and removals events.|
-|GridServiceContainer|Container hosting Processing Unit Instances deployed from the GSM. More info depanlinkheretengahlink./service-grid.html#gscbelakanglink.|* List currently running Processing Units Instances.
+|GridServiceContainer|Container hosting Processing Unit Instances deployed from the GSM. More info [here](./service-grid.html#gsc).|* List currently running Processing Units Instances.
 - Register for Processing Unit Instance additions and removals events.|
 |GridServiceContainers|Holds all the currently discovered Grid Service Containers.|* Get all the currently discovered Grid Service Containers.
 - Wait for X number of Grid Service Containers to be up.
 - Register for Grid Service Container addition (discovery) and removals events.|
-|LookupService|A registry of services (GSM, GSC, Space Instances, Processing Unit Instances) that can be lookup up using it. More info depanlinkheretengahlink./service-grid.html#lusbelakanglink.|* Get the Lookup Groups and Locator it was started with.|
+|LookupService|A registry of services (GSM, GSC, Space Instances, Processing Unit Instances) that can be lookup up using it. More info [here](./service-grid.html#lus).|* Get the Lookup Groups and Locator it was started with.|
 |LookupServices|Holds all the currently discovered Lookup Services.|* Get all the currently discovered Lookup Services.
 - Wait for X number of Lookup Services to be up.
 - Register for Lookup Service addition (discovery) and removals events.|
@@ -308,12 +308,12 @@ The Service Grid Admin Domain Model has representation to the main actors at dif
 - Register for Space Instance replication status change events (for all Space Instances that are part of the Space).
 - Get aggregated Space statistics.
 - Register for aggregated Space statistics events (if monitoring).
-- Get a clustered depanlinkGigaSpacetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/The+GigaSpace+Interfacebelakanglink to perform Space operations.|
+- Get a clustered [GigaSpace](http://wiki.gigaspaces.com/wiki/display/XAP95/The+GigaSpace+Interface) to perform Space operations.|
 |SpaceInstance|An actual instance of a Space that is part of a topology (cluster), usually running within a Processing Unit Instance.|* Get its Space Mode (primary or backup).
 - Register for Space Mode change events.
 - Get its replication targets.
 - Register for replication status change events.
-- Get a direct depanlinkGigaSpacetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/The+GigaSpace+Interfacebelakanglink to perform Space operations.
+- Get a direct [GigaSpace](http://wiki.gigaspaces.com/wiki/display/XAP95/The+GigaSpace+Interface) to perform Space operations.
 - Get Space Instance statistics.
 - Register for Space Instance statistics (if monitoring).|
 |Spaces|Holds all the currently running Spaces.|* Get all the currently running Spaces.

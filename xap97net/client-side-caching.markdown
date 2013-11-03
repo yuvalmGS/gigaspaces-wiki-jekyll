@@ -14,10 +14,10 @@ page_id: 63799376
 GigaSpaces supports client side caching of space data within the client application's memory. Client-side caching implements a two-layer cache architecture where the first layer is stored locally, within the client's memory, and the second layer is stored within the remote master space. The remote master space may be used with any of the supported deployment topologies.
 
 **In-line cache with a client cache**:
-depanimagein-line_cache-local-cache.jpgtengahimage/attachment_files/xap97net/in-line_cache-local-cache.jpgbelakangimage
+![in-line_cache-local-cache.jpg](/attachment_files/xap97net/in-line_cache-local-cache.jpg)
 
 **Side cache with a client cache**:
-depanimageside-cache-local-cache.jpgtengahimage/attachment_files/xap97net/side-cache-local-cache.jpgbelakangimage
+![side-cache-local-cache.jpg](/attachment_files/xap97net/side-cache-local-cache.jpg)
 
 The client-side cache size is limited to the heap size of the client application's memory.
 
@@ -25,8 +25,8 @@ The client-side cache is updated automatically when the master copy of the objec
 
 There are two variations provided:
 
-• depanlinkLocal Cachetengahlink./local-cache.htmlbelakanglink - This client side cache maintains any object used by the application. The cache data is loaded on demand (lazily), based on the client application's read activities.
-• depanlinkLocal Viewtengahlink./local-view.htmlbelakanglink - This client side cache maintains a specific subset of the entire data, and client side cache is populated when the client application is started.
+• [Local Cache](./local-cache.html) - This client side cache maintains any object used by the application. The cache data is loaded on demand (lazily), based on the client application's read activities.
+• [Local View](./local-view.html) - This client side cache maintains a specific subset of the entire data, and client side cache is populated when the client application is started.
 
 In both cases, once updates are performed (objects are added/updated/removed) on the master space, the master space propagates the changes to all relevant local views and caches.
 
@@ -42,7 +42,7 @@ Client-side cache should be used when the application performs repetitive read o
 
 In some cases where the relevant dataset size fits a single JVM (64 Bit JVM may also be utilized), the data may be maintained in multiple locations (JVMs) having it collocated to the application code (client or a service) as demonstrated below:
 
-depanimagelocal-cache-real-life.jpgtengahimage/attachment_files/xap97net/local-cache-real-life.jpgbelakangimage
+![local-cache-real-life.jpg](/attachment_files/xap97net/local-cache-real-life.jpg)
 
 With the above architecture the client and the remote service has a local cache/view proxy that maintains a dataset that was distributed across the different partitions. In this scenario, readbyId or readByIds calls are VERY fast since they are actually local calls (semi-reference object access) that do not involve network utilization.
 

@@ -13,8 +13,8 @@ page_id: 63799411
 
 The domain service host is used to host services within the hosting processing unit domain which are exposed for remote invocation. A service is an implementation of one or more interfaces which acts upon the service contract. Each service can be hosted by publishing it through the domain service host later to be invoked by a remote client.
 
-{% refer %}To learn how to create a remote proxy to the service please refer to depanlinkExecutor Based Remotingtengahlink./executor-based-remoting.htmlbelakanglink{% endrefer %}
-{% refer %}For a full SBA example demonstrating remote services usage please refer to the ajepaaaSBA Exampleajepbbb{% endrefer %}
+{% refer %}To learn how to create a remote proxy to the service please refer to [Executor Based Remoting](./executor-based-remoting.html){% endrefer %}
+{% refer %}For a full SBA example demonstrating remote services usage please refer to the [SBA Example]{% endrefer %}
 
 # Defining the Contract
 
@@ -52,7 +52,7 @@ public class DataProcessor : IDataProcessor
 
 # Hosting the Service in the Grid
 
-The next step is hosting the service in the grid. Hosting the service is done on the server side within a processing unit that hosts the service, when using the depanlinkBasic Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink, all types which has the \ajepaaaSpaceRemotingService\ajepbbb attribute, will automatically be created and hosted:
+The next step is hosting the service in the grid. Hosting the service is done on the server side within a processing unit that hosts the service, when using the [Basic Processing Unit Container](./basic-processing-unit-container.html), all types which has the \[SpaceRemotingService\] attribute, will automatically be created and hosted:
 
 
 {% highlight java %}
@@ -64,7 +64,7 @@ public class DataProcessor : IDataProcessor
 {% endhighlight %}
 
 
-Alternatively, or when using a custom depanlinkprocessing unit containertengahlink./processing-unit-container.htmlbelakanglink, a service can be directly hosted using the `DomainServiceHost.Host.Publish`
+Alternatively, or when using a custom [processing unit container](./processing-unit-container.html), a service can be directly hosted using the `DomainServiceHost.Host.Publish`
 
 
 {% highlight java %}
@@ -88,7 +88,7 @@ By default, the service will be published under the interfaces it implements, it
 
 ## Service Attribute
 
-A different lookup name can be specified by the \ajepaaaSpaceRemotingService\ajepbbb `LookupName` property:
+A different lookup name can be specified by the \[SpaceRemotingService\] `LookupName` property:
 
 
 {% highlight java %}

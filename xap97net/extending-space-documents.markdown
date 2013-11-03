@@ -8,17 +8,17 @@ page_id: 63799372
 
 {% summary %}Extending the SpaceDocument class{% endsummary %}
 
-depanimagenew-in-801-banner.pngtengahimage/attachment_files/xap97net/new-in-801-banner.pngbelakangimage
+![new-in-801-banner.png](/attachment_files/xap97net/new-in-801-banner.png)
 
 # Overview
 
 While documents provide us with a dynamic schema, they force us to give up .NET type-safety for working with typeless key-value pairs. GigaSpaces supports extending the SpaceDocument class to provide a type-safe wrapper for documents which is much easier to code with, while maintaining the dynamic schema.
 
-{% plus %} Do not confuse this with depanlinkDocument-Object interoperabilitytengahlink./document-object-interoperability.htmlbelakanglink, which is a different feature.
+{% plus %} Do not confuse this with [Document-Object interoperability](./document-object-interoperability.html), which is a different feature.
 
 # Creating the Extension Class
 
-Let's create a type-safe document wrapper for the **Product** type described in the depanlinkDocument Supporttengahlink./document-(schema-free)-entries.htmlbelakanglink page. The extensions are:
+Let's create a type-safe document wrapper for the **Product** type described in the [Document Support](./document-(schema-free)-entries.html) page. The extensions are:
 - Provide a parameterless constructor, since the type name is fixed.
 - Provide type-safe properties, but instead of using private fields to store/retrieve the values, use the index operator of the SpaceDocument class.
 

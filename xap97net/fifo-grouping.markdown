@@ -25,7 +25,7 @@ In most cases, your application does not require total ordering, but rather orde
 
 
 {% indent %}
-depanimagefifo-group.jpgtengahimage/attachment_files/xap97net/fifo-group.jpgbelakangimage
+![fifo-group.jpg](/attachment_files/xap97net/fifo-group.jpg)
 {% endindent %}
 
 
@@ -37,7 +37,7 @@ FIFO-Grouping ('FG') enables reading/taking certain space entries in FIFO order 
 
 {% note %}
 **Exclusivity**
-The selected group is locked until the operation is terminated- the operation transaction is committed/ aborted.  See the depanlinkExclusivitytengahlink./fifo-grouping.html#Exclusivitybelakanglink section for more elaborations.
+The selected group is locked until the operation is terminated- the operation transaction is committed/ aborted.  See the [Exclusivity](./fifo-grouping.html#Exclusivity) section for more elaborations.
 {% endnote %}
 
 # Method Of Operation
@@ -47,7 +47,7 @@ The selected group is locked until the operation is terminated- the operation tr
 This property must be indexed and will be automatically indexed by the system if an index definition does not exist for it.  An additional data structure is kept for this property in order to assist in traversing the different groups.
 
 - In the selecting template a null value will generally be rendered for this property which stands for bring any available group.
-An available group is any FG that matches the selection template and is not currently locked by another FG thread (see depanlinkExclusivitytengahlink./fifo-grouping.html#Exclusivitybelakanglink section).
+An available group is any FG that matches the selection template and is not currently locked by another FG thread (see [Exclusivity](./fifo-grouping.html#Exclusivity) section).
 
 - If the selecting template (Pojo) has a value for a property other than the FG designated property - this property can be indexed (like for any regular read/take operation) and in addition a `SpaceFifoGroupingIndex` attribute can be added  to it  in order to assist in efficient traversal.
 In this case the system will create a compound index that contains this property and the FG designated property.
@@ -273,11 +273,11 @@ For example, declaring `SpaceFifoGroupingIndex(Path="a")`, overriding in subclas
 
 # Considerations
 
-- FG not supported with a Space using depanlinkLRU-Cache Policytengahlinkhttp://www.gigaspaces.com/wiki/display/XAP95/LRU-Cache+Policybelakanglink over depanlinkEDStengahlinkhttp://www.gigaspaces.com/wiki/display/XAP95/External+Data+Sourcebelakanglink.
+- FG not supported with a Space using [LRU-Cache Policy](http://www.gigaspaces.com/wiki/display/XAP95/LRU-Cache+Policy) over [EDS](http://www.gigaspaces.com/wiki/display/XAP95/External+Data+Source).
 - Cross partitioning of groups is not supported (same limitation as in regular FIFO operations).
 - `SpaceFifoGroupingProperty` and `SpaceFifoGroupingIndex` cannot be used as dynamic indexes.
 - `SpaceFifoGroupingProperty` and `SpaceFifoGroupingIndex` cannot be used  as collection indexes.
-(e.g. declaring `SpaceFifoGroupingProperty( Path="\ajepaaa*\ajepbbb")` is not allowed).
+(e.g. declaring `SpaceFifoGroupingProperty( Path="\[*\]")` is not allowed).
 - FIFO operation is not supported for FG template - it is ignored.
 - If the template is a SQL query template, only queries that can be performed in a single call to the space are supported (an exception is thrown).
 - FG operations must be performed under a transaction.

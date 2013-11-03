@@ -13,7 +13,7 @@ page_id: 63799341
 
 GigaSpaces support executing tasks in a collocated Space (processing unit that started an embedded Space). Space tasks can be executed either directly on a specific cluster member using typical routing value. Space tasks can also be distributed, which means it is executed in a "broadcast" mode on all the primary cluster members concurrently and reduced to a single result on the client side, which is also known as the map reduce pattern which is used in many applications that does parallel processing. Space tasks are dynamic in terms of content, it contains user code that will be executed at the Space as is.
 
-depanimageExecutors_task_flow_basic.jpgtengahimage/attachment_files/xap97net/Executors_task_flow_basic.jpgbelakangimage
+![Executors_task_flow_basic.jpg](/attachment_files/xap97net/Executors_task_flow_basic.jpg)
 
 # Space Task API
 
@@ -76,10 +76,10 @@ int count = spaceProxy.Execute(new CountTask("hello world"), 2);
 A `IDistributedSpaceTask` is a space task that ends up executing more than once (concurrently) and returns a result that is a reduced operation of all the different execution.
 
 Phase 1 - Sending the Space tasks to be executed:
-depanimageDistributedTaskExecution_phase1.jpgtengahimage/attachment_files/xap97net/DistributedTaskExecution_phase1.jpgbelakangimage
+![DistributedTaskExecution_phase1.jpg](/attachment_files/xap97net/DistributedTaskExecution_phase1.jpg)
 
 Phase 2 - Getting the results back to be reduced:
-depanimageDistributedTaskExecution_phase2.jpgtengahimage/attachment_files/xap97net/DistributedTaskExecution_phase2.jpgbelakangimage
+![DistributedTaskExecution_phase2.jpg](/attachment_files/xap97net/DistributedTaskExecution_phase2.jpg)
 
 The `IDistributedSpaceTask` interface is a composition both `ISpaceTask` and `ISpaceTaskResultsReducer` interfaces.
 

@@ -24,23 +24,23 @@ When running a system using an in-memory data grid (IMDG), you may need to dump 
 
 
 {% tip %}
-If you would like to perform hardware maintenance activities without shutting down the system you can use a depanlinkrolling upgrade techniquetengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP71/Deploying+onto+the+Service+Grid#HotDeploybelakanglink.
+If you would like to perform hardware maintenance activities without shutting down the system you can use a [rolling upgrade technique](http://wiki.gigaspaces.com/wiki/display/XAP71/Deploying+onto+the+Service+Grid#HotDeploy).
 {% endtip %}
 
 
-The depanlinkSpace Dump Utilitytengahlink/attachment_files/sbp/spacedump.zipbelakanglink copies the data currently stored within the IMDG and saves it into an embedded DB file used by a temporary space. Later, once you would like to reload the data back into the IMDG, the utility performs the procedure in a reverse manner, by reading the data from the file and copy it back into the IMDG.
+The [Space Dump Utility](/attachment_files/sbp/spacedump.zip) copies the data currently stored within the IMDG and saves it into an embedded DB file used by a temporary space. Later, once you would like to reload the data back into the IMDG, the utility performs the procedure in a reverse manner, by reading the data from the file and copy it back into the IMDG.
 
 
 {% indent %}
-depanimagespaceDumpReload.jpgtengahimage/attachment_files/sbp/spaceDumpReload.jpgbelakangimage
+![spaceDumpReload.jpg](/attachment_files/sbp/spaceDumpReload.jpg)
 {% endindent %}
 
 
-The Space Dump utility uses a temporary persistent space approach with the depanlinkspace copy APItengahlinkhttp://www.gigaspaces.com/docs/JavaDoc7.1/com/j_spaces/core/admin/IRemoteJSpaceAdmin.html#spaceCopybelakanglink. This allows the utility to consume all the data from every IMDG partition and push it into a file. To reload the data from the file, the temporary space is started, loading the data from the file, and then the data is copied back into the relevant IMDG partition. If the IMDG is running backup spaces, these are restarted to allow them to recover their data from their relevant primary instance.
+The Space Dump utility uses a temporary persistent space approach with the [space copy API](http://www.gigaspaces.com/docs/JavaDoc7.1/com/j_spaces/core/admin/IRemoteJSpaceAdmin.html#spaceCopy). This allows the utility to consume all the data from every IMDG partition and push it into a file. To reload the data from the file, the temporary space is started, loading the data from the file, and then the data is copied back into the relevant IMDG partition. If the IMDG is running backup spaces, these are restarted to allow them to recover their data from their relevant primary instance.
 
 # The Space Dump Utility
 To run the Space Dump Utility:
-1. Download the depanlinkSpace Dump Utilitytengahlink/attachment_files/sbp/spacedump.zipbelakanglink.
+1. Download the [Space Dump Utility](/attachment_files/sbp/spacedump.zip).
 2. Run the utility - The Space Dump Utility accept the following arguments:
 
 

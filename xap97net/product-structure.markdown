@@ -37,7 +37,7 @@ The product directory structure as follows (see Figure 1):
 
 
 {% indent %}
-depanimageXapNetProductStructure_806.jpgtengahimage/attachment_files/xap97net/XapNetProductStructure_806.jpgbelakangimage
+![XapNetProductStructure_806.jpg](/attachment_files/xap97net/XapNetProductStructure_806.jpg)
 {% sub %}**Figure 1. product directory structure**{% endsub %}
 {% endindent %}
 
@@ -48,7 +48,7 @@ The installer creates useful shortcuts in the start menu.
 
 
 {% indent %}
-depanimageXapNetStartMenu_806.jpgtengahimage/attachment_files/xap97net/XapNetStartMenu_806.jpgbelakangimage
+![XapNetStartMenu_806.jpg](/attachment_files/xap97net/XapNetStartMenu_806.jpg)
 {% sub %}**Figure 2. Shortcuts added to the Start Menu**{% endsub %}
 {% endindent %}
 

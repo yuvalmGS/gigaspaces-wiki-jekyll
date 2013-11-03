@@ -43,29 +43,29 @@ Administrating GigaSpaces XAP.NET components, including "how to", troubleshootin
 
 # Quick Links
 
-depanlinkdepanimagetraining_banner.pngtengahimage/attachment_files/training_banner.pngbelakangimagetengahlinkhttp://www.gigaspaces.com/content/gigaspaces-trainingbelakanglink
+[![training_banner.png](/attachment_files/training_banner.png)](http://www.gigaspaces.com/content/gigaspaces-training)
 
-##### &bull; depanlinkWhat's New in 9.0.Xtengahlinkhttp://wiki.gigaspaces.com/wiki/display/RN/What's+New+in+GigaSpaces+9.0.Xbelakanglink
+##### &bull; [What's New in 9.0.X](http://wiki.gigaspaces.com/wiki/display/RN/What's+New+in+GigaSpaces+9.0.X)
 
-##### &bull; depanlink9.0.X Release Notestengahlinkhttp://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+XAP+9.0.X+Release+Notesbelakanglink
+##### &bull; [9.0.X Release Notes](http://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+XAP+9.0.X+Release+Notes)
 
-##### &bull; depanlinkUpgrading from Previous Versionstengahlinkhttp://wiki.gigaspaces.com/wiki/display/RN/Upgrading+to+9.0.Xbelakanglink
+##### &bull; [Upgrading from Previous Versions](http://wiki.gigaspaces.com/wiki/display/RN/Upgrading+to+9.0.X)
 
-##### &bull; depanlinkAPI Documentationtengahlinkhttp://wiki.gigaspaces.com/wiki/display/API/API+Documentation+Portalbelakanglink
+##### &bull; [API Documentation](http://wiki.gigaspaces.com/wiki/display/API/API+Documentation+Portal)
 
-##### &bull; depanlinkSolutions and Best Practices Hometengahlink/sbp/index.htmlbelakanglink
+##### &bull; [Solutions and Best Practices Home](/sbp/index.html)
 
-##### &bull; depanlinkForumtengahlinkhttp://forum.openspaces.org/forum.jspa?forumID=175belakanglink
+##### &bull; [Forum](http://forum.openspaces.org/forum.jspa?forumID=175)
 
-##### &bull; depanlinkCustomer Support Portaltengahlinkhttp://www.gigaspaces.com/supportcenterbelakanglink
+##### &bull; [Customer Support Portal](http://www.gigaspaces.com/supportcenter)
 
-##### &bull; depanlinkTraining Programstengahlinkhttp://www.gigaspaces.com/content/gigaspaces-trainingbelakanglink
+##### &bull; [Training Programs](http://www.gigaspaces.com/content/gigaspaces-training)
 
-##### &bull; depanlinkBlogtengahlinkhttp://blog.gigaspaces.com/belakanglink
+##### &bull; [Blog](http://blog.gigaspaces.com/)
 
-##### &bull; depanlinkWhite Paperstengahlinkhttp://www.gigaspaces.com/os_papers.htmlbelakanglink
+##### &bull; [White Papers](http://www.gigaspaces.com/os_papers.html)
 
-##### &bull; Looking for **depanlink**XAP**tengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP95/9.0+Documentation+Homebelakanglink** or **[**other versions**|ALL:Choose a GigaSpaces Version]**?
+##### &bull; Looking for **[**XAP**](http://wiki.gigaspaces.com/wiki/display/XAP95/9.0+Documentation+Home)** or **[**other versions**|ALL:Choose a GigaSpaces Version]**?
 
 {% endcolumn %}
 

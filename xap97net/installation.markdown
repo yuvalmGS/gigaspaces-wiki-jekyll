@@ -7,8 +7,8 @@ page_id: 63799366
 
 # System Requirements
 
-**Required Software:** depanlinkMicrosoft .NET Framework 2.0tengahlinkhttp://msdn.microsoft.com/en-us/netframework/aa731542.aspxbelakanglink or later (including  depanlinkMicrosoft .NET Framework 4.0tengahlinkhttp://msdn.microsoft.com/en-us/netframework/aa569263.aspxbelakanglink).
-{% plus %} Recommended: depanlinkMicrosoft .NET Framework 2.0 Service Pack 2tengahlinkhttp://www.microsoft.com/downloads/details.aspx?familyid=5B2C0358-915B-4EB5-9B1D-10E506DA9D0F&displaylang=enbelakanglink or later.
+**Required Software:** [Microsoft .NET Framework 2.0](http://msdn.microsoft.com/en-us/netframework/aa731542.aspx) or later (including  [Microsoft .NET Framework 4.0](http://msdn.microsoft.com/en-us/netframework/aa569263.aspx)).
+{% plus %} Recommended: [Microsoft .NET Framework 2.0 Service Pack 2](http://www.microsoft.com/downloads/details.aspx?familyid=5B2C0358-915B-4EB5-9B1D-10E506DA9D0F&displaylang=en) or later.
 
 **Supported Operating Systems:** Any operating system supported by .NET Framework 2.0.
 
@@ -28,5 +28,5 @@ GigaSpaces XAP.NET offers more installation scenarios and customizations. For ex
 - Side-by-side installations.
 - Using a different jvm.
 
-For more information see depanlinkAdvanced Installation Scenariostengahlink./advanced-installation-scenarios.htmlbelakanglink.
+For more information see [Advanced Installation Scenarios](./advanced-installation-scenarios.html).
 

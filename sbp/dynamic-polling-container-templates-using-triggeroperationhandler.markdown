@@ -26,7 +26,7 @@ Polling Container is one of the most powerful and commonly used feature of GigaS
 
 There are always use cases where you need dynamic templates. Some examples include, process messages that are older than an hour or process an order only after all the items in an order are in the space or process the messages in a certain order. Each of these examples need a query that will not have all the parameters at configuration time. TriggerOperationsHandler helps in achieving this behavior easily.
 
-The depanlinkPolling Containertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP9/Polling+Containerbelakanglink shows where `TriggerOperationsHandler` fits into the Polling Container Life Cycle. Polling Container invokes the `TriggerOperationsHandler.triggerReceive()` method before invoking the `ReceiveHandler` which does the actual take and this is the perfect extension point where you can customize or modify the template.
+The [Polling Container](http://wiki.gigaspaces.com/wiki/display/XAP9/Polling+Container) shows where `TriggerOperationsHandler` fits into the Polling Container Life Cycle. Polling Container invokes the `TriggerOperationsHandler.triggerReceive()` method before invoking the `ReceiveHandler` which does the actual take and this is the perfect extension point where you can customize or modify the template.
 
 # Example
 
@@ -131,6 +131,6 @@ pu.xml snippet below shows how MyTrigger is configured on the polling container,
 Notice the clustered proxy being passed to MyTrigger as a property.
 
 # Getting the project
-Example project is held on github in the depanlinkbestpracticestengahlinkhttps://github.com/Gigaspaces/bestpracticesbelakanglink project. This is an umbrella repository; the specific project is in the depanlinkhelloTriggerHandlertengahlinkhttps://github.com/Gigaspaces/bestpractices/tree/master/helloTriggerHandlerbelakanglink directory under the root.
+Example project is held on github in the [bestpractices](https://github.com/Gigaspaces/bestpractices) project. This is an umbrella repository; the specific project is in the [helloTriggerHandler](https://github.com/Gigaspaces/bestpractices/tree/master/helloTriggerHandler) directory under the root.
 
 You can run this example just as how you would run helloworld example using the included ant build scripts. Be sure to use a cluster with at least 2 partitions when testing this.

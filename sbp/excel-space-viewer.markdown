@@ -24,11 +24,11 @@ page_id: 47219420
 The Excel space viewer allows you to create customized views of data for spaces running in your network, and to configure existing views. The displayed data is constantly updated in the Excel spreadsheet.
 
 Links:
-- **depanlinkUsing the Excel Space Viewertengahlink#Using Excel Space Viewerbelakanglink** -- allows you to connect to a Space, create and customize a new and existing views
-- **depanlinkPrerequisitestengahlink#Prerequisitesbelakanglink** -- prerequisites
-- **depanlinkSupported Office Versionstengahlink#Supported Office Versionsbelakanglink** -- a list of the Supported Office Versions
-- **depanlinkInstalling the Excel Space Viewertengahlink#Installing the Excel Space Viewerbelakanglink** -- running the installing of the Excel Space Viewer
-- **depanlinkTroubleshootingtengahlink#Troubleshootingbelakanglink** -- troubleshooting
+- **[Using the Excel Space Viewer](#Using Excel Space Viewer)** -- allows you to connect to a Space, create and customize a new and existing views
+- **[Prerequisites](#Prerequisites)** -- prerequisites
+- **[Supported Office Versions](#Supported Office Versions)** -- a list of the Supported Office Versions
+- **[Installing the Excel Space Viewer](#Installing the Excel Space Viewer)** -- running the installing of the Excel Space Viewer
+- **[Troubleshooting](#Troubleshooting)** -- troubleshooting
 
 # Using Excel Space Viewer
 
@@ -38,13 +38,13 @@ The Excel Space Viewer allows you to create views of data to a certain space cla
 
 {% infosign %} It is possible to create several views in the same spreadsheet. All views can display data for the same space, or for different spaces. If you are displaying data for a different space, you need to connect to that space before creating an additional view.
 The Space Viewer toolbar includes the following options:
-- **depanlinkCreate Viewtengahlink#Creating New Viewbelakanglink** -- allows you to create and customize a new view
-- **depanlinkConfigure Viewtengahlink#Changing Existing Viewbelakanglink** -- allows you to edit and customize existing views
+- **[Create View](#Creating New View)** -- allows you to create and customize a new view
+- **[Configure View](#Changing Existing View)** -- allows you to edit and customize existing views
 - **Refresh results** -- refreshes the view or views with updated data
 
 
 {% indent %}
-depanimageToolbar3.JPGtengahimage/attachment_files/sbp/Toolbar3.JPGbelakangimage
+![Toolbar3.JPG](/attachment_files/sbp/Toolbar3.JPG)
 {% endindent %}
 
 
@@ -55,18 +55,18 @@ The **Create View** option allows you to create a view of space data inside your
 - The **Work with Class** drop-down menu allows you to select which space class you would like to view.
 - The **Available Columns** area lists all fields in this class.
 - The **Undisplayable Columns** area lists fields that belong to this class, but can't be displayed in Excel (usually user-defined fields).
-- The **Selected Columns** area displays the fields you choose to display in this view. Use the arrow buttons (for example: depanimagearrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpgtengahimage/attachment_files/sbp/arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpgbelakangimage) allow you to organize the fields in the order in which they will appear in the final view.
+- The **Selected Columns** area displays the fields you choose to display in this view. Use the arrow buttons (for example: ![arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpg](/attachment_files/sbp/arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpg)) allow you to organize the fields in the order in which they will appear in the final view.
 
 
 {% indent %}
-depanimageConfigureView2.JPGtengahimage/attachment_files/sbp/ConfigureView2.JPGbelakangimage
+![ConfigureView2.JPG](/attachment_files/sbp/ConfigureView2.JPG)
 {% endindent %}
 
 
 - It is possible to connect to any running space in your network.
 To connect to a space:
     1. Click the **Connect** button.
-    1. In the Connect to Space dialog box, type the depanlinkspace URLtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP66/Space+URLbelakanglink. The general format of the space URL is:
+    1. In the Connect to Space dialog box, type the [space URL](http://wiki.gigaspaces.com/wiki/display/XAP66/Space+URL). The general format of the space URL is:
 
 
 {% highlight java %}
@@ -76,22 +76,22 @@ To connect to a space:
 
 
 {% indent %}
-depanimageConnect1.JPGtengahimage/attachment_files/sbp/Connect1.JPGbelakangimage
+![Connect1.JPG](/attachment_files/sbp/Connect1.JPG)
 {% endindent %}
 
-- The **Customize the Selection** button opens the depanlinkCustomize the Selectiontengahlink#Customize the Selectionbelakanglink window.
+- The **Customize the Selection** button opens the [Customize the Selection](#Customize the Selection) window.
 
 {% anchor create %}
 To create a new view:
 1. Click the **Create View** option in the Space Viewer toolbar. The Create View window is opened.
 2. Make sure you are connected to a space.
-3. Use the arrow buttons ( depanimagearrowExcel.jpgtengahimage/attachment_files/sbp/arrowExcel.jpgbelakangimage) to move columns from the **Available Columns** area to the **Selected Columns** area.
-4. If you want to narrow your view to more specific results (by querying your class fields), click the **Customize the Selection** button (see depanlink**Customize the Selection**tengahlink#Customize the Selectionbelakanglink).
+3. Use the arrow buttons ( ![arrowExcel.jpg](/attachment_files/sbp/arrowExcel.jpg)) to move columns from the **Available Columns** area to the **Selected Columns** area.
+4. If you want to narrow your view to more specific results (by querying your class fields), click the **Customize the Selection** button (see [**Customize the Selection**](#Customize the Selection)).
 {% infosign %} This step is optional. If you want to generate the view with all the existing entries of the selected type in the space, proceed to the next step.
     1. On the left side of the Customize the Selection window, click the class field you want to query. (For example, the **Age** field is selected below.)
 
 {% indent %}
-depanimageCustomizeTheSelection1.JPGtengahimage/attachment_files/sbp/CustomizeTheSelection1.JPGbelakangimage
+![CustomizeTheSelection1.JPG](/attachment_files/sbp/CustomizeTheSelection1.JPG)
 {% endindent %}
 
     2. The selected field appears on the right, under **WHERE**. You can now select the desired expression and value, and choose to sort your results in an ascending or descending manner.
@@ -102,7 +102,7 @@ depanimageCustomizeTheSelection1.JPGtengahimage/attachment_files/sbp/CustomizeTh
 5. In the Create View window, Click **OK**.
 6. Your selection is displayed in the spreadsheet:
 
- depanimageExcelSheet1.JPGtengahimage/attachment_files/sbp/ExcelSheet1.JPGbelakangimage
+ ![ExcelSheet1.JPG](/attachment_files/sbp/ExcelSheet1.JPG)
 
 
 {% infosign %} This view displays the selections you made in the Create View and Customize the Selection windows. The view is constantly refreshed (according to the last refresh rate you defined.).
@@ -122,10 +122,10 @@ By clicking a field, the top right pane is enabled with customization options fo
 
 Pressing **Save** saves the query for this field.
 
-The **SQL** area at the bottom displays the query syntax in SQL. After pressing **Save** on the right, the number of instances found as a result of this query is displayed under the **SQL** area (this is also the number of rows that will appear in this column). You can refresh this result using the refresh button ( depanimageExcelRefresh.jpgtengahimage/attachment_files/sbp/ExcelRefresh.jpgbelakangimage).
+The **SQL** area at the bottom displays the query syntax in SQL. After pressing **Save** on the right, the number of instances found as a result of this query is displayed under the **SQL** area (this is also the number of rows that will appear in this column). You can refresh this result using the refresh button ( ![ExcelRefresh.jpg](/attachment_files/sbp/ExcelRefresh.jpg)).
 
 {% indent %}
-depanimageCustomizeTheSelection1.JPGtengahimage/attachment_files/sbp/CustomizeTheSelection1.JPGbelakangimage
+![CustomizeTheSelection1.JPG](/attachment_files/sbp/CustomizeTheSelection1.JPG)
 {% endindent %}
 
 
@@ -145,9 +145,9 @@ The Configure View window already includes your previously selected options, and
 - GigaSpaces 6.5 GA.
 .Net product is unzipped.
 JSHOMEDIR is configured.
-For more details see depanlinkInstalling GigaSpacestengahlinkhttp://www.gigaspaces.com/wiki/display/XAP66/Building+Your+First+.NET+Application#BuildingYourFirst.NETApplication-InstallingGigaSpacesbelakanglink section.
-- A depanlinkJDK 1.5tengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP66/Installing+GigaSpaces#Prior+to+Installationbelakanglink
-- The depanlink.NET Frameworktengahlinkhttp://msdn2.microsoft.com/en-us/netframework/aa569263.aspxbelakanglink
+For more details see [Installing GigaSpaces](http://www.gigaspaces.com/wiki/display/XAP66/Building+Your+First+.NET+Application#BuildingYourFirst.NETApplication-InstallingGigaSpaces) section.
+- A [JDK 1.5](http://wiki.gigaspaces.com/wiki/display/XAP66/Installing+GigaSpaces#Prior+to+Installation)
+- The [.NET Framework](http://msdn2.microsoft.com/en-us/netframework/aa569263.aspx)
 - Microsoft Office 2003
 
 # Supported Office Versions
@@ -158,19 +158,19 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 # Installing the Excel Space Viewer
 
 **To install and run the Excel space viewer**:
-1. {% lampon %} **Download the depanlinkExcel Space Viewer Installationtengahlink/attachment_files/sbp/GigaSpacesViewerSetup.zipbelakanglink** file and extract it.
+1. {% lampon %} **Download the [Excel Space Viewer Installation](/attachment_files/sbp/GigaSpacesViewerSetup.zip)** file and extract it.
 2. Run the `GigaSpacesViewerSetup.msi` file.
  {% exclamation %} If the .NET Framework is not installed on your machine, the system opens a dialog asking whether you want to install it. In this case, select **Yes** and proceed with the installation. After you finish installing, reopen the `GigaSpacesViewerSetup.msi` file and continue the procedure below.
 3. The Excel Space Viewer Setup Wizard is displayed:
 
 {% indent %}
-depanimageExcelSpaceViewer_setup_1.jpgtengahimage/attachment_files/sbp/ExcelSpaceViewer_setup_1.jpgbelakangimage
+![ExcelSpaceViewer_setup_1.jpg](/attachment_files/sbp/ExcelSpaceViewer_setup_1.jpg)
 {% endindent %}
 
 4. In the Select Installation Folder window, browse to the desired installation folder. Choose whether you want the Excel Space Viewer to be used by you only, or by other users:
 
 {% indent %}
-depanimageExcelSpaceViewer_setup_2.jpgtengahimage/attachment_files/sbp/ExcelSpaceViewer_setup_2.jpgbelakangimage
+![ExcelSpaceViewer_setup_2.jpg](/attachment_files/sbp/ExcelSpaceViewer_setup_2.jpg)
 {% endindent %}
 
 5. In the Confirm Installation window, click **Next**.
@@ -179,7 +179,7 @@ depanimageExcelSpaceViewer_setup_2.jpgtengahimage/attachment_files/sbp/ExcelSpac
 8. A new toolbar appears in the top left:
 
 {% indent %}
-depanimageToolbar4.JPGtengahimage/attachment_files/sbp/Toolbar4.JPGbelakangimage
+![Toolbar4.JPG](/attachment_files/sbp/Toolbar4.JPG)
 {% endindent %}
 
 

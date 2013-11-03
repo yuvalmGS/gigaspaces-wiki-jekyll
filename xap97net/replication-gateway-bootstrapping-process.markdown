@@ -10,7 +10,7 @@ page_id: 63799425
 
 
 {% info %}
-This page assume prior knowledge of multi-site replication, please refer to depanlinkMulti-Site Replication (WAN)tengahlink./multi-site-replication-over-the-wan.htmlbelakanglink before reading this page.
+This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
 {% endinfo %}
 
 
@@ -26,14 +26,14 @@ The bootstrap target site gateway sink will locate the gateway sink of the boots
 
 All the changes that are done in the bootstrap source site during this copy process are accumulated at the replication redo-log and will be sent via the bootstrap source site delegator to the bootstrap target site sink once the copy stage is complete. During the bootstrap copy stage, the gateway sink which is being bootstrapped will not be available for replication, and all the remote sites local spaces will have a disconnected replication channel to that gateway sink.
 
-depanimagewan-bootstrap-copy.jpgtengahimage/attachment_files/xap97net/wan-bootstrap-copy.jpgbelakangimage
+![wan-bootstrap-copy.jpg](/attachment_files/xap97net/wan-bootstrap-copy.jpg)
 1. NY Sink initiates bootstrap process from the London GW
 2. The NY London GW sends the requests to the London Sink over the WAN
 3. The London Sink start reading data from the local London cluster
 4. The London sink sends the data to the NY London GW
 5. The GW sends it to the sink which pushes it to the local NY cluster
 
-depanimagewan-bootstrap-sync.jpgtengahimage/attachment_files/xap97net/wan-bootstrap-sync.jpgbelakangimage
+![wan-bootstrap-sync.jpg](/attachment_files/xap97net/wan-bootstrap-sync.jpg)
 
 # Initiating a Bootstrap
 
@@ -58,7 +58,7 @@ The bootstrap is initiated on the local gateway sink of the space's site that ne
 {% endhighlight %}
 
 
-After meting the condition specified in the previous, the bootstrap should be initiated using the depanlinkAdmin APItengahlink./administration-and-monitoring-api.htmlbelakanglink.
+After meting the condition specified in the previous, the bootstrap should be initiated using the [Admin API](./administration-and-monitoring-api.html).
 Following is an example of how to bootstrap New-York from London:
 
 {% highlight java %}

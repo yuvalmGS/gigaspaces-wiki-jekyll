@@ -18,7 +18,7 @@ page_id: 63799403
 
 {% column width=86% %}
 
-{% align center %}||depanimagewiki_icon_folder.giftengahimage/attachment_files/xap97net/wiki_icon_folder.gifbelakangimage||Example Root|`<GigaSpaces Root>\Examples\Benchmark` |
+{% align center %}||![wiki_icon_folder.gif](/attachment_files/xap97net/wiki_icon_folder.gif)||Example Root|`<GigaSpaces Root>\Examples\Benchmark` |
 {% endalign %}
 
 {% endcolumn %}
@@ -43,7 +43,7 @@ Use the Benchmark Example and customize the Benchmark run:
 - by changing the space-url to connect to the space topology that you want to check.
 - by configuring the input xml file and changing configuration parameters.
 
-For more information please read depanlinkXAP66:Out-of-the-box benchmarktengahlink#1belakanglink
+For more information please read [XAP66:Out-of-the-box benchmark](#1)
 
 **2. Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.**
 
@@ -51,9 +51,9 @@ You can create your own benchmark by using the Benchmark Framework:
 - extending the framework's BenchmarkStandard abstact class.
 - using the framework's interfaces: IBenchmarkContainer, IBenchmarkObjectAdapter.
 
-For more information please read depanlinkXAP66:Develop a custom benchmarktengahlink#2belakanglink
+For more information please read [XAP66:Develop a custom benchmark](#2)
 
-The structure of the depanlinkXAP66:configuration xml filetengahlink#Example configuration filebelakanglink is the same for the two benchmark options.
+The structure of the [XAP66:configuration xml file](#Example configuration file) is the same for the two benchmark options.
 
 {% anchor 1 %}
 

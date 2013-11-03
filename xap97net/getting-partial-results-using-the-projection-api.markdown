@@ -21,7 +21,7 @@ In some cases when querying the space for objects, only specific properties of o
 
 {% column %}
 
-depanimagespace-projections.jpgtengahimage/attachment_files/xap97net/space-projections.jpgbelakangimage
+![space-projections.jpg](/attachment_files/xap97net/space-projections.jpg)
 
 {% endcolumn %}
 
@@ -29,7 +29,7 @@ depanimagespace-projections.jpgtengahimage/attachment_files/xap97net/space-proje
 
 # Specifying a Projection with your Query
 
-Projections are supported using a depanlinkSqlQuerytengahlink./sqlquery.htmlbelakanglink or depanlinkID Queriestengahlink./id-queries.htmlbelakanglink. Below is a simple example that demonstrates reading a `Person` object where only the 'FirstName' and 'LastName' properties are returned with the query result array. All other `Person` properties will not be returned:
+Projections are supported using a [SqlQuery](./sqlquery.html) or [ID Queries](./id-queries.html). Below is a simple example that demonstrates reading a `Person` object where only the 'FirstName' and 'LastName' properties are returned with the query result array. All other `Person` properties will not be returned:
 
 {% highlight java %}
 public class Person
@@ -62,7 +62,7 @@ Person result[] = space.ReadByIds(idsQuery).ResultsArray;
 {% endhighlight %}
 
 
-The depanlinkSpaceDocumenttengahlink./document-(schema-free)-entries.htmlbelakanglink support projections as well:
+The [SpaceDocument](./document-(schema-free)-entries.html) support projections as well:
 
 {% highlight java %}
 SqlQuery<SpaceDocument> docQuery = new SqlQuery<SpaceDocument>(typeof(Person).Name ,"") {Projections = new []{"FirstName", "LastName"};
@@ -73,7 +73,7 @@ SpaceDocument docresult[] = space.ReadMultiple(docQuery);
 # Supported Operations
 
 The projection is defined for any operation that returns data from the space. Therefore ID Based or Query based operations support projections. You can use projections with `Read`,`Take`,`ReadById`,`TakeById`,`ReadMultiple` and `TakeMultiple` operations. When performing a `Take` operation with projections, the entire object will be removed from the space, but the result returned to the user will contain only the projected properties.
-You can use projections with the depanlinkNotify Containertengahlink./notify-container-component.htmlbelakanglink when subscribing to notifications, or with the depanlinkPolling Containertengahlink./polling-container-component.htmlbelakanglink when consuming space objects. You can also create a depanlinkLocal Viewtengahlink./local-view.htmlbelakanglink with templates or a `View` using projections. The local view will maintain the relevant objects, but with the projected data - only with the projected properties.
+You can use projections with the [Notify Container](./notify-container-component.html) when subscribing to notifications, or with the [Polling Container](./polling-container-component.html) when consuming space objects. You can also create a [Local View](./local-view.html) with templates or a `View` using projections. The local view will maintain the relevant objects, but with the projected data - only with the projected properties.
 Projected properties can specify both dynamic or fixed properties and the usage is the same. As a result, when providing a projected property name which is not part of the fixed properties set, it will be treated as a dynamic property. If there is no dynamic property present with that name on an object which is a result of the query - that projection property will be ignored (and no exception will be raised). Please note that a result may contain multiple objects, each with different set of properties (fixed and dynamic), each object will be treated individually when applying the projections on it.
 
 {% exclamation %} Space Iterator does not support projections
@@ -81,5 +81,5 @@ Projected properties can specify both dynamic or fixed properties and the usage 
 # Considerations
 
 1. Projections are supported only for first level properties (root level). Nested properties can't be specified as part of the projection properties list.
-2. You can't use a projection on depanlinkLocal Cachetengahlink./local-cache.htmlbelakanglink as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projections will only impact performance.
+2. You can't use a projection on [Local Cache](./local-cache.html) as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projections will only impact performance.
 3. You can't use a projection to query a Local View for the same reason as Local Cache, however, you can create the local view with projection template and the Local View will be contain the objects in their projected form.

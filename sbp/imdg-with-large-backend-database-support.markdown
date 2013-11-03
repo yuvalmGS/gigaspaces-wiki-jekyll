@@ -45,7 +45,7 @@ Here is the full query execution strategy:
 
 
 {% indent %}
-depanimageimdg_eviction_large_db.jpgtengahimage/attachment_files/sbp/imdg_eviction_large_db.jpgbelakangimage
+![imdg_eviction_large_db.jpg](/attachment_files/sbp/imdg_eviction_large_db.jpg)
 {% endindent %}
 
 
@@ -57,11 +57,11 @@ To control the data within the space should evict it. Evicting data from the spa
 -- Using a Polling Container query the data frequently.
 -- Using the JVM Memory Notification API.
 
-See the depanlinkCustom Evictiontengahlink./custom-eviction.html#Eviction Strategiesbelakanglink section for details.
+See the [Custom Eviction](./custom-eviction.html#Eviction Strategies) section for details.
 
 # Example
 
-With the depanlinkattached exampletengahlink/attachment_files/sbp/LargeDBLRUSpace.zipbelakanglink the clustered space has 600 objects in memory:
+With the [attached example](/attachment_files/sbp/LargeDBLRUSpace.zip) the clustered space has 600 objects in memory:
 - 100 object loaded into partition 1.
 - 200 object loaded into partition 2.
 - 300 object loaded into partition 3.

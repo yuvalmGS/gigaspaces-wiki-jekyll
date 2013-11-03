@@ -11,8 +11,8 @@ page_id: 63799370
 
 # Overview
 
-The notify event container implements the depanlinkIEventListenerContainertengahlink./event-listener-container.htmlbelakanglink interface, and uses the space inheritance support for notifications, using a GigaSpaces data event session API. If a notification occurs, the depanlinkDataEventArrivedtengahlink./event-listener-container.html#DataEventArrivedbelakanglink event is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
-depanimageNet_notify_cont.jpgtengahimage/attachment_files/xap97net/Net_notify_cont.jpgbelakangimage
+The notify event container implements the [IEventListenerContainer](./event-listener-container.html) interface, and uses the space inheritance support for notifications, using a GigaSpaces data event session API. If a notification occurs, the [DataEventArrived](./event-listener-container.html#DataEventArrived) event is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
+![Net_notify_cont.jpg](/attachment_files/xap97net/Net_notify_cont.jpg)
 The examples in this page follow a certain pattern -- each code example has two tabs: Using EventListenerContainerFactory and NotifyEventListenerContainer Code Construction.
 The first tab demonstrates how to create and configure a notify container using the `EventListenerContainerFactory`, and the second tab demonstrates how to build and configure a `NotifyEventListenerContainer` with a constructor and setting the different properties.
 
@@ -92,7 +92,7 @@ public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data
 
 
 {% info %}
-depanlinkDelegateDataEventArrivedAdaptertengahlink./event-listener-container.html#DelegateDataEventArrivedAdapterbelakanglink is a class that adapts the supplied user method to the depanlinkDataEventHandlertengahlink./event-listener-container.html#DataEventHandlerbelakanglink delegate, and contains a built in logic of writing back event results to the space
+[DelegateDataEventArrivedAdapter](./event-listener-container.html#DelegateDataEventArrivedAdapter) is a class that adapts the supplied user method to the [DataEventHandler](./event-listener-container.html#DataEventHandler) delegate, and contains a built in logic of writing back event results to the space
 {% endinfo %}
 
 
@@ -111,7 +111,7 @@ The notify event container registers for notifications only when the relevant sp
 
 # Template Definition
 
-When performing receive operations, a template is defined, creating a virtualized subset of data in the space, matching it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of depanlinkSqlQuerytengahlink./sqlquery.htmlbelakanglink in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
+When performing receive operations, a template is defined, creating a virtualized subset of data in the space, matching it. GigaSpaces supports templates based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SqlQuery](./sqlquery.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
 
 {% inittab os_simple_space|top %}
@@ -165,7 +165,7 @@ notifyEventListenerContainer.Template = new SqlQuery<Data>(template, "Processed 
 
 The notify container can be configured with transaction support, so the event action can be performed under a transaction. Exceptions thrown by the event listener cause the operations performed within the listener to be rolled back automatically.
 
-{% exclamation %} When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. If this behavior is required, please consider using the depanlinkPolling Event Containertengahlink./polling-container-component.htmlbelakanglink. Adding transaction support to the polling container is very simple. It is done by setting the `TransactionType` property. There are two transaction types: Distributed and Manual.
+{% exclamation %} When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. If this behavior is required, please consider using the [Polling Event Container](./polling-container-component.html). Adding transaction support to the polling container is very simple. It is done by setting the `TransactionType` property. There are two transaction types: Distributed and Manual.
 - Distributed transaction - an embedded distributed transaction manager will be created and it will be used for creating transaction (Only one transaction manager will be created per AppDomain).
 - Manual transaction - transactions will be created by the transaction manager that is stored in the `TransactionManager` property. By default no transaction manager is stored and therefore, no transaction will be used. For example:
 
@@ -240,7 +240,7 @@ notifyEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAda
 {% endinittab %}
 
 
-{% refer %}The order of parameters of the event handling method is strict, please refer to depanlinkDynamic Data Event Handler Adaptertengahlink./event-listener-container.html#eventhandleradapterbelakanglink for more information about it.{% endrefer %}
+{% refer %}The order of parameters of the event handling method is strict, please refer to [Dynamic Data Event Handler Adapter](./event-listener-container.html#eventhandleradapter) for more information about it.{% endrefer %}
 
 # Masking Notifications
 
@@ -292,7 +292,7 @@ notifyEventListenerContainer.NotifyType = DataEventType.Write | DataEventType.Up
 
 # Batch Events
 
-The notify container, through the unified event API, allows batching of notifications. Batching causes the space to accumulate the notifications, and once a certain amount of time has passed or a certain size is reached, causes the events to be raised to the client. Batching is very useful when working with a remote space, since it reduces the network roundtrip operations. Moreover, when using Batch notification, it is possible (but not mandatory) to work with the depanlinkBatchDataEventArrivedtengahlink./event-listener-container.html#BatchDataEventArrivedbelakanglink instead, and handle a batch of notifications at once.
+The notify container, through the unified event API, allows batching of notifications. Batching causes the space to accumulate the notifications, and once a certain amount of time has passed or a certain size is reached, causes the events to be raised to the client. Batching is very useful when working with a remote space, since it reduces the network roundtrip operations. Moreover, when using Batch notification, it is possible (but not mandatory) to work with the [BatchDataEventArrived](./event-listener-container.html#BatchDataEventArrived) instead, and handle a batch of notifications at once.
 
 Below is an example of batching, where if the number of notifications has passed 10, or the time passed is 5 seconds (since the last batch was sent), a batch of notifications is sent to the client:
 
@@ -362,7 +362,7 @@ notifyEventListenerContainer.BatchDataEventArrived += new DelegateDataEventArriv
 
 The notify event container can register for events or notifications, and have the events delivered in a FIFO order.
 
-{% infosign %} For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the depanlinkFIFO Supporttengahlink./fifo-support.htmlbelakanglink section.
+{% infosign %} For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [FIFO Support](./fifo-support.html) section.
 
 Here is an example of how FIFO events can be configured with the notify container:
 
@@ -541,7 +541,7 @@ notifyEventListenerContainer.IgnoreEventOnNullTake = true;
 
 # Space Data Event Args
 
-The notify container uses GigaSpaces depanlinkdata event session APItengahlink./space-events.htmlbelakanglink under the hood. When a notification is triggered, it contains SpaceDataEventArgs, which holds more information about the notification itself, such as the template and the DataEventType (e.g. was this notification triggered by a write or an update operation?). When using the notify container, it is possible to receive that additional information as a parameter of the event listener method:
+The notify container uses GigaSpaces [data event session API](./space-events.html) under the hood. When a notification is triggered, it contains SpaceDataEventArgs, which holds more information about the notification itself, such as the template and the DataEventType (e.g. was this notification triggered by a write or an update operation?). When using the notify container, it is possible to receive that additional information as a parameter of the event listener method:
 
 
 {% inittab os_simple_space|top %}
@@ -605,7 +605,7 @@ public Data ProcessData(IEventListenerContainer sender, DataEventArgs<Data> e)
 
 
 {% info %}
-depanlinkDelegateDataEventArrivedAdaptertengahlink./event-listener-container.html#DelegateDataEventArrivedAdapterbelakanglink is a class that adapts the supplied user method to the depanlinkDataEventHandlertengahlink./event-listener-container.html#DataEventHandlerbelakanglink delegate, and contains a built-in logic of writing event results back to the space
+[DelegateDataEventArrivedAdapter](./event-listener-container.html#DelegateDataEventArrivedAdapter) is a class that adapts the supplied user method to the [DataEventHandler](./event-listener-container.html#DataEventHandler) delegate, and contains a built-in logic of writing event results back to the space
 {% endinfo %}
 
 
