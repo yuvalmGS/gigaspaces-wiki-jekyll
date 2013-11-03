@@ -90,7 +90,7 @@ Clear
 Take
 TakeMultiple|
 
-{include:ISpaceProxy Code Snippets}
+{% include ispaceproxy-code-snippets.markdown %}
 
 {% tip %}
 The `Clear` and `Clean` operations do not remove the Space class definition from the Space. You should restart the Space to allow it to drop the class definitions.

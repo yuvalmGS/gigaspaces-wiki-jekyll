@@ -6,7 +6,7 @@ page_id: 64325389
 ---
 
 {% compositionsetup %}
-{summary:}This page covers the Change API more advanced scenarios.{summary}
+{% summary %}This page covers the Change API more advanced scenarios.{% endsummary %}
 
 # Obtaining Change detailed results
 

@@ -6,7 +6,7 @@ page_id: 64325381
 ---
 
 {% compositionsetup %}
-{summary:}This page covers the Change Extension extension methods.{summary}
+{% summary %}This page covers the Change Extension extension methods.{% endsummary %}
 
 # Overview
 

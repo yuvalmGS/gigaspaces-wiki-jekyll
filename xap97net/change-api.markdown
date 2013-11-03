@@ -6,7 +6,7 @@ page_id: 63799419
 ---
 
 {% compositionsetup %}
-{summary:}This page covers the Change API, its usage and behavior.{summary}
+{% summary %}This page covers the Change API, its usage and behavior.{% endsummary %}
 
 # Overview
 
