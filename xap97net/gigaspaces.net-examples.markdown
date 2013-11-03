@@ -37,7 +37,7 @@ depanlink<GigaSpaces Root>\dotnet\examples\DataGridtengahlinkhttp://www.gigaspac
 
 This example measures the performance of several GigaSpaces .Net API operations.
 For more details, see the depanlinkexample descriptiontengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/Benchmark/readme.htmlbelakanglink.
-For the Wiki page, see [.NET Benchmark Example]|depanlink<GigaSpaces Root>\dotnet\examples\Benchmarktengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/Benchmarkbelakanglink |
+For the Wiki page, see depanlink.NET Benchmark Exampletengahlink./dotnet-benchmark-example.htmlbelakanglink|depanlink<GigaSpaces Root>\dotnet\examples\Benchmarktengahlinkhttp://www.gigaspaces.com/docs/dotnet6.5/examples/Benchmarkbelakanglink |
 | **Processing Unit**
 
 The Processing Unit example demonstrates how to implement a basic processing unit and the different ways of deploying it.

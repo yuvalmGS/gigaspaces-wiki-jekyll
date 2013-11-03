@@ -58,7 +58,7 @@ See blow an example of `Car` class's space metadata definitions in GS.XML
 - `**<class>**` -- a `class` element encapsulates metadata information of a concrete class. The below table shows the available attributes for the Class element.
 || Attribute || Description ||
 | `name` | (Required) Contains the full qualified name of the specified class. There can only be one `class` element defined per class. |
-| `persist` | This property indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this property persists objects of this type. {% refer %}For more details, refer to the [.NET Persistency] section. {% endrefer %} |
+| `persist` | This property indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this property persists objects of this type. {% refer %}For more details, refer to the depanlink.NET Persistencytengahlink./persistency.htmlbelakanglink section. {% endrefer %} |
 | `fifo` | Indicates whether the POJO should be saved in FIFO order in the space. To enable FIFO-based notifications and take operations, this annotation should be `true`. {% refer %}For more details, refer to the [FIFO operations|FIFO Support] section.{% endrefer %} |
 | `replicate` | Valid only in cluster toplogies that have replication defined. In this case, it specifies whether each class should be replicated or not |
 | `include-properties` |Gives the ability to expose or hide properties from the space (default is public).
