@@ -268,7 +268,7 @@ MyClass[] result = gigaspace.readMultiple(query);
 
 # Regular Expressions
 
-You can query the space using the SQL `like` operator or [Java Regular Expression](http://docs.oracle.com/javase/1.5.0/docs/api/index.html?java/util/regex/Pattern) Query syntax.
+You can query the space using the SQL `like` operator or [Java Regular Expression](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/regex/Pattern.html) Query syntax.
 
 When using the SQL `like` operator you may use the following:
 `%` - match any string of any length (including zero length)
