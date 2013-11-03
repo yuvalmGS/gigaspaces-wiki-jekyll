@@ -65,7 +65,7 @@ Administrating GigaSpaces XAP.NET components, including "how to", troubleshootin
 
 ##### &bull; [White Papers](http://www.gigaspaces.com/os_papers.html)
 
-##### &bull; Looking for **[**XAP**](http://wiki.gigaspaces.com/wiki/display/XAP95/9.0+Documentation+Home)** or **[**other versions**|ALL:Choose a GigaSpaces Version]**?
+##### &bull; Looking for **[XAP](http://wiki.gigaspaces.com/wiki/display/XAP95/9.0+Documentation+Home)** or **[other versions](http://wiki.gigaspaces.com/wiki/display/ALL/Choose+a+GigaSpaces+Version)**?
 
 {% endcolumn %}
 

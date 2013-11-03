@@ -18,8 +18,6 @@ page_id: 56428168
 
 {% endtip %}
 
-{rate}
-
 # Overview
 One of the challenges in using an in-memory data grid is that it's an ideal representation of data that's often held in a non-relational database. GigaSpaces XAP has a [write-behind persistence mechanism](http://www.gigaspaces.com/wiki/display/XAP8/External+Data+Source) built-in that's designed for relational databases (so when you write a data item into the data grid, it gets replicated to the backend database automatically), but you might instead want to replicate to a different data storage mechanism altogether, such as [MongoDB](http://mongodb.org) or [Cassandra](http://cassandra.apache.org).
 

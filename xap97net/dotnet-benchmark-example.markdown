@@ -43,7 +43,7 @@ Use the Benchmark Example and customize the Benchmark run:
 - by changing the space-url to connect to the space topology that you want to check.
 - by configuring the input xml file and changing configuration parameters.
 
-For more information please read [XAP66:Out-of-the-box benchmark](#1)
+For more information please read [Out-of-the-box benchmark](http://wiki.gigaspaces.com/wiki/display/XAP66/Out-of-the-box+benchmark#1)
 
 **2. Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.**
 
@@ -52,9 +52,9 @@ You can create your own benchmark by using the Benchmark Framework:
 - extending the framework's BenchmarkStandard abstact class.
 - using the framework's interfaces: IBenchmarkContainer, IBenchmarkObjectAdapter.
 
-For more information please read [XAP66:Develop a custom benchmark](#2)
+For more information please read [Develop a custom benchmark](http://wiki.gigaspaces.com/wiki/display/XAP66/Develop+a+custom+benchmark#2)
 
-The structure of the [XAP66:configuration xml file](#Example configuration file) is the same for the two benchmark options.
+The structure of the [configuration xml file](http://wiki.gigaspaces.com/wiki/display/XAP66/configuration+xml+file#Example+configuration+file) is the same for the two benchmark options.
 
 {% anchor 1 %}
 

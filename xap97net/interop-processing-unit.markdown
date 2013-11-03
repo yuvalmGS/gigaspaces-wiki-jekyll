@@ -12,7 +12,7 @@ page_id: 63799414
 It is possible to create a processing unit which is part .NET part Java and part C++.
 This page assumes knowledge of creating and using [OpenSpaces Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Processing+Unit+Structure+and+Configuration) and creating and using [.NET Processing Unit Container|Processing Unit Container]. It will cover how to properly create deployment files and directory structure for a mixed processing unit.
 
-{% refer %}C++ processing unit is based on [OpenSpaces Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Processing+Unit+Structure+and+Configuration) and therefore treated the same, see [CPP Processing Unit|XAP95:CPP Processing Unit] for related information.{% endrefer %}
+{% refer %}C++ processing unit is based on [OpenSpaces Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Processing+Unit+Structure+and+Configuration) and therefore treated the same, see [CPP Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP95/CPP+Processing+Unit) for related information.{% endrefer %}
 
 # Creating Mixed Processing Unit Deployment Structure
 

@@ -17,8 +17,6 @@ page_id: 55937171
 
 {% endtip %}
 
-{rate}
-
 # Overview
 [Batch processing](http://en.wikipedia.org/wiki/Batch_processing) involves usually complex flows using conditional or sequential steps. This involves relatively large CPU cycles and IO access. In such case the data access time required for the processing is relatively small compared to the processing/IO activities duration time.
 

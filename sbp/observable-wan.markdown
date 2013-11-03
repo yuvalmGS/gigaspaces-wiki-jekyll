@@ -18,8 +18,6 @@ page_id: 57213232
 
 {% endtip %}
 
-{rate}
-
 # Overview
 With the introduction of the Gigaspaces multi-site replication feature, keeping different Gigaspaces deployments in sync is easy.  However, detecting and anticipating communication problems between sites where it counts (at the application level), isn't so easy.  This solution/pattern uses some simple concepts and components to enable easy, flexible monitoring of the replication performance from multiple sites.
 

@@ -15,8 +15,6 @@ page_id: 48236978
 
 {% endtip %}
 
-{rate}
-
 # Overview
 
 Developing software is a never ending process. There is never a final version or a last release. This means you may need to deploy new versions of the application, where the space classes model have been modified to accommodate changes required by the updates business logic of the application or changes required by the database schema. In many cases, the changes involves new space classes, or changing the model of existing space classes -- removing some fields or changing the inheritance structure.
@@ -26,7 +24,7 @@ GigaSpaces supports addition of new space classes while the system is running ou
 The following sections describe the recommended options to evolve the space schema.
 
 # Schema-less Model - Document Model
-A `SpaceDocument` is completely dynamic model artifact you can write into the space and read back into the application. It allows you to change or evolve your data model without ever taking down the Space. Change your application code to add additional properties or remove existing ones, and you're good to go. In addition, **old and new versions of the same Entity model can co-exist** since the space does not enforce any restriction with regards to the property set of `SpaceDocuments` belong to a certain type. `SpaceDocument` can be [mapped to a POJO](http://wiki.gigaspaces.com/wiki/display/XAP91/Document-POJO+Interoperability) during runtime allowing the application leverage POJO and evolve these as neeeded. You can also make the `SpaceDocument` type safe by [Extending SpaceDocument|XAP91:Extending Space Documents].
+A `SpaceDocument` is completely dynamic model artifact you can write into the space and read back into the application. It allows you to change or evolve your data model without ever taking down the Space. Change your application code to add additional properties or remove existing ones, and you're good to go. In addition, **old and new versions of the same Entity model can co-exist** since the space does not enforce any restriction with regards to the property set of `SpaceDocuments` belong to a certain type. `SpaceDocument` can be [mapped to a POJO](http://wiki.gigaspaces.com/wiki/display/XAP91/Document-POJO+Interoperability) during runtime allowing the application leverage POJO and evolve these as neeeded. You can also make the `SpaceDocument` type safe by [Extending SpaceDocument](http://wiki.gigaspaces.com/wiki/display/XAP91/Extending+Space+Documents).
 
 ![document_arch.jpg](/attachment_files/sbp/document_arch.jpg)
 

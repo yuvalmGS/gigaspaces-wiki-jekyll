@@ -16,8 +16,6 @@ page_id: 58098677
 
 {% endtip %}
 
-{rate}
-
 # Overview
 
 Polling Container is one of the most powerful and commonly used feature of GigaSpaces when processing data. To recap polling container performs a polling receive operation against the space, if a receive operation succeeds (a value is returned from the receive operation), the Data Event Listener is invoked with the event. The receive operation is performed using a static template. For most use cases a static template or a static SQL query (parameters are constant) is sufficient, examples include, receive any Order that is marked as "UN_PROCESSED", receive any Order where customer name is like "VIPCustomer", etc.

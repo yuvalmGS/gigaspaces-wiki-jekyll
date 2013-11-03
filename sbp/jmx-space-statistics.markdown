@@ -15,8 +15,6 @@ page_id: 48760469
 
 {% endtip %}
 
-{rate}
-
 # Overview
 
 The [attached example](/attachment_files/sbp/JMXSTAT.zip) illustrates usage of the JMX API, getting the JVM statistics and the Space statistics. The example collects statistics and generates a consolidated report of the space and its JVM activity.

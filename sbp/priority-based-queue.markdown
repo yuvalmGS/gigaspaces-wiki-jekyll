@@ -16,8 +16,6 @@ page_id: 48760404
 
 {% endtip %}
 
-{rate}
-
 # Overview
 
 To implement a Priority based Queue you should use the `Take` operation with `SQLQuery` having the priority field used as part of the query. This field should use the `EXTENDED` index type.

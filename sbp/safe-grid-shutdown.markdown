@@ -16,8 +16,6 @@ page_id: 64325420
 
 {% endtip %}
 
-{rate}
-
 # Problem
 Shutting down an entire cluster in GigaSpaces XAP is usually done through the "gsa shutdown" command in the [gsa - GigaSpaces CLI](/xap97/gsa---gigaspaces-cli.html). However, in cases of a space asynchronously replicating to a persistent store ([Asynchronous Persistency with the Mirror](/xap97/asynchronous-persistency-with-the-mirror.html)) or a remote grid ([Multi-Site Replication over the WAN](/xap97net/multi-site-replication-over-the-wan.html)), the gsa shutdown workflow does not wait for replication redo logs to completely flush before killing the child GSC processes. Since replication redo logs are almost always stored in memory, this could lead to a situation where pending space changes do not make it to an external data store or cluster.
 

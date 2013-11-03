@@ -18,7 +18,7 @@ page_id: 56428286
 
 # Overview
 
-This [WAN Gateway](http://wiki.gigaspaces.com/wiki/display/XAP91/Multi-Site+Replication+over+the+WAN) example includes PU folders with config files for a [Multi-Master|XAP91:Multi-Site Replication over the WAN#Multi-Master Topology] topology that includes 3 sites: DE , RU , US. Each site have an independent cluster and a Gateway.
+This [WAN Gateway](http://wiki.gigaspaces.com/wiki/display/XAP91/Multi-Site+Replication+over+the+WAN) example includes PU folders with config files for a [Multi-Master](http://wiki.gigaspaces.com/wiki/display/XAP91/Multi-Site+Replication+over+the+WAN#Multi-Master Topology) topology that includes 3 sites: DE , RU , US. Each site have an independent cluster and a Gateway.
 ![wan_example1.jpg](/attachment_files/sbp/wan_example1.jpg)
 
 You will find folders for the following PUs:

@@ -17,10 +17,8 @@ page_id: 55937666
 
 {% endtip %}
 
-{rate}
-
 # Overview
-The GigaSpaces Universal Deployer (GUD) allows deploying the different supported processing units ([Space PU](http://wiki.gigaspaces.com/wiki/display/XAP8/Deploying+and+Interacting+with+the+Space), [Regular PU|XAP8:Packaging and Deployment], [Elastic PU|XAP8:Elastic Processing Unit], [memCache PU|XAP8:The Memcached API] or [Web PU|XAP8:Web Processing Unit Container]) via a simple configuration file. The GUD support dependency based deployment allowing multiple processing units to be deployed as one atomic process (e.g composite application).
+The GigaSpaces Universal Deployer (GUD) allows deploying the different supported processing units ([Space PU](http://wiki.gigaspaces.com/wiki/display/XAP8/Deploying+and+Interacting+with+the+Space), [Regular PU](http://wiki.gigaspaces.com/wiki/display/XAP8/Packaging+and+Deployment), [Elastic PU](http://wiki.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit), [memCache PU](http://wiki.gigaspaces.com/wiki/display/XAP8/The+Memcached+API) or [Web PU](http://wiki.gigaspaces.com/wiki/display/XAP8/Web Processing Unit Container)) via a simple configuration file. The GUD support dependency based deployment allowing multiple processing units to be deployed as one atomic process (e.g composite application).
 
 {% tip %}
 Starting with XAP 9 you may use the **Deployment Dependencies API** to specify the deployment order. See the [Application Deployment and Processing Unit Dependencies](http://wiki.gigaspaces.com/wiki/display/XAP9/Deploying+onto+the+Service+Grid#Application+Deployment+and+Processing+Unit+Dependencies) for details.

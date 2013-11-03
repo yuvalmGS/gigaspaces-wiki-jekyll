@@ -13,7 +13,6 @@ page_id: 52527436
 Using XAP:**7.1GA**
 JDK:**Sun JDK 1.6**
 Date: July 2009
-{rate}
 
 # Overview
 By default, when using the GigaSpaces Java API, the space stores space object fields as is. No data compaction, or compression is done while the object is transported across the network or when stored within the space.

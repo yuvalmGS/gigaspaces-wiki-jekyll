@@ -17,8 +17,6 @@ page_id: 56429380
 
 {% endtip %}
 
-{rate}
-
 # Overview
 This is a demo of a trading settlement system.  Settlement occurs after a trade, and involves the delivery of securities for payment between one party and another.  Because the demo operates in real-time, it can be expanded to provide risk management or be integrated with a rules engine for complex event processing (CEP).
 

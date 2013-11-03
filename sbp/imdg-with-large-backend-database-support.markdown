@@ -14,8 +14,6 @@ page_id: 55935416
 
 {% endtip %}
 
-{rate}
-
 # Overview
 
 When having an application using a very large backend database leveraging the IMDG, caching a subset of the application data, while running on-going data eviction policy with read-through policy (i.e. LRU cache policy mode with External-Data-Source used), the main requirement is to **access the database in the most optimal manner** when performing queries against the IMDG.

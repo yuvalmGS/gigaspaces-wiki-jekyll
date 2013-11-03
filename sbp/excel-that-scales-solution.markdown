@@ -15,8 +15,6 @@ page_id: 47219144
 
 {% endtip %}
 
-{rate}
-
 # Overview
 
 This section gets you started with the Excel integration by understanding its available functionality, how to develop the integration components and how to configure, deploy and run the solution.

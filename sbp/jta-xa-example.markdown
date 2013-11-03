@@ -18,8 +18,6 @@ page_id: 55938209
 
 {% endtip %}
 
-{rate}
-
 # Overview
 
 Integrating GigaSpaces with an external JMS Servers is demonstrated in this page. This example shows how GigaSpaces event container can process events and send JMS messages to a external JMS server all under one distributed transaction.

@@ -17,8 +17,6 @@ page_id: 52887597
 
 {% endtip %}
 
-{rate}
-
 # Overview
 When writing objects into the space, you may need to generate a global unique ID for your space objects. The ID will be used later to fetch the object based on its ID via the readById/readByIds methods, or associate it with another object by placing the object ID as a field value within another object.
 

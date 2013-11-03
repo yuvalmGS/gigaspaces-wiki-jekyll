@@ -16,7 +16,6 @@ Using XAP:**8.0.1**
 JDK:**Sun JDK 1.6**
 Updated by: Rafi Pinto, R&D Solutions developer, GigaSpaces
 Date: March 2011
-{rate}
 
 # Overview
 GigaSpaces [Mule ESB](http://wiki.gigaspaces.com/wiki/display/XAP8/Mule+ESB) OpenSpaces comes with comprehensive support for Mule 3.1.0. It allows you to use the [Space as a Mule external transport](http://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Event+Container+Transport), enabling receiving and dispatching of POJO messages over the Space.
@@ -462,10 +461,12 @@ See below example:
 </mule>
 {% endhighlight %}
 
-{warning}Time based Parameters Units:
+{% warning %}
+Time based Parameters Units:
 
 - The **default-timeout** parameter and the **custom-transaction timeout** parameter are in second units.
-- The receive-timeout , commit and abort timeout , lookup-timeout , duration and round-trip-time parameters are in millisecond units.{warning}
+- The receive-timeout , commit and abort timeout , lookup-timeout , duration and round-trip-time parameters are in millisecond units.
+{% endwarning %}
 
 # Libraries Required
 The [attached libraries](/attachment_files/sbp/mule-jars.zip) should be located at your `GigaSpaces Root\lib\platform\mule` folder before deploying the example. See below fill list of the libraries required to run this example:

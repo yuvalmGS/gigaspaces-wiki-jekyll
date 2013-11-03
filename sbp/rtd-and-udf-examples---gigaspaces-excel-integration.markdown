@@ -15,8 +15,6 @@ page_id: 47219410
 
 {% endtip %}
 
-{rate}
-
 # Overview
 
 This section includes basic and advanced code examples for using the GigaSpaces-Excel integration with Microsoft Excel User-Defined Functions (UDF) and Real-Time Data (RTD).

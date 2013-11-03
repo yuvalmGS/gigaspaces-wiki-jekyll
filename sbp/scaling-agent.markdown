@@ -13,7 +13,6 @@ page_id: 51119415
 Using XAP:**7.0GA**
 JDK:**Sun JDK 1.6**
 Date: September 2009
-{rate}
 
 # Overview
 The [Administration and Monitoring API](http://wiki.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API) allows you to monitor the application health and its resources to enforce a specific pre-defined configurable SLA that will scale the application while it is running. This ensures deterministic response time when there is increasing amount of users accessing the system and the high-availability and robustness of the application.

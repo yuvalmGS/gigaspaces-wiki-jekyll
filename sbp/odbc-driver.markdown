@@ -17,8 +17,6 @@ page_id: 53379091
 
 {% endtip %}
 
-{rate}
-
 # Overview
 GigaSpaces Data-Grid support standard data access API. One of them is the [JDBC Driver](http://wiki.gigaspaces.com/wiki/display/XAP8/JDBC+Driver). Using the JDBC API and ODBC-JDBC bridge such as the one comes from [Open Link Software](http://uda.openlinksw.com), you can use standard ODBC API to access the GigaSpaces Data-Grid.
 

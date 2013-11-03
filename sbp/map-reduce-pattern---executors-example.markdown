@@ -17,11 +17,9 @@ page_id: 49414729
 
 {% endtip %}
 
-{rate}
-
 # Overview
 
-The [Map-Reduce](http://en.wikipedia.org/wiki/MapReduce) pattern is a popular pattern used in distributed systems to process data in parallel. This [example](/attachment_files/sbp/ExecutorExample.zip) illustrates the usage of [Executors Remoting](http://wiki.gigaspaces.com/wiki/display/XAP8/Executor+Based+Remoting) (Service Executors) and [Task Executors|XAP8:Task Execution over the Space] to execute your business logic on a remote process that is collocated with a space in a parallel manner.
+The [Map-Reduce](http://en.wikipedia.org/wiki/MapReduce) pattern is a popular pattern used in distributed systems to process data in parallel. This [example](/attachment_files/sbp/ExecutorExample.zip) illustrates the usage of [Executors Remoting](http://wiki.gigaspaces.com/wiki/display/XAP8/Executor+Based+Remoting) (Service Executors) and [Task Executors](http://wiki.gigaspaces.com/wiki/display/XAP8/Task+Execution+over+the+Space) to execute your business logic on a remote process that is collocated with a space in a parallel manner.
 
 - The [Executors Remoting](http://wiki.gigaspaces.com/wiki/display/XAP8/Executor+Based+Remoting) should be used when you would like to export service method(s) for remote clients to be invoked.
 - The [Task Executors](http://wiki.gigaspaces.com/wiki/display/XAP8/Task+Execution+over+the+Space) should be used when you would like to transport business logic to the server side to be executed remotely.

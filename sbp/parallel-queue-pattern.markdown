@@ -17,8 +17,6 @@ page_id: 52887871
 
 {% endtip %}
 
-{rate}
-
 # Overview
 When building [low latency systems](http://en.wikipedia.org/wiki/High_frequency_trading), a critical requirement of such systems is to be able to process the incoming data as fast as they can, but also to do that in the exact order the request has been submitted into the system. The system can't process requests associated with the same Order in parallel, but in the exact order these has been created at the client side.
 

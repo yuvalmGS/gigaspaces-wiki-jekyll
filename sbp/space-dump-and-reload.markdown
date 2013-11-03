@@ -17,8 +17,6 @@ page_id: 54820920
 
 {% endtip %}
 
-{rate}
-
 # Space Dump and Reload
 When running a system using an in-memory data grid (IMDG), you may need to dump the data stored within the IMDG into a file and later reload it back. This might happen when you would like to copy the IMDG data from one system to another or when you would like to shutdown the system to perform some maintenance procedures or when you would like to upgrade the GigaSpaces release.
 

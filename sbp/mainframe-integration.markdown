@@ -18,8 +18,6 @@ page_id: 56429998
 
 {% endtip %}
 
-{rate}
-
 # Overview
 Mainframe (Z/OS) based systems running COBOL programs are legacy systems in many organizations. These are planned to be replaced with low cost commodity servers running Java or .Net based systems, saving the cost of the expensive mainframe MIPS and COBOL-based development.
 

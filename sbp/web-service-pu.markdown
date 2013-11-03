@@ -17,8 +17,6 @@ page_id: 56426564
 
 {% endtip %}
 
-{rate}
-
 # Overview
 This example illustrates a simple web service packaged as a WAR using [Apache CXF](http://cxf.apache.org) 2.4. Web service is also interacting with a space and performing read and write operations on behalf of the client.
 

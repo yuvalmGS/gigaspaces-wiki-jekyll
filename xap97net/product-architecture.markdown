@@ -59,7 +59,7 @@ In this type of example, the Service Grid is responsible for making sure that on
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [Grid Service Manager](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Manager) and [Grid Service Container|XAP95:The Grid Service Container].
+The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [Grid Service Manager](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Manager) and [Grid Service Container](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Container).
 
 Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service Managers](#gsm), [Grid Service Containers](#gsc), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
 
@@ -226,7 +226,7 @@ The [Basic Processing Unit Container](./basic-processing-unit-container.html) ex
 
 ## C++ Container
 
-Much like the .NET Abstract Container, the [C++ container](http://wiki.gigaspaces.com/wiki/display/XAP95/CPP+Processing+Unit) provides a native C++ runtime environment for [C++ SBA|XAP95:XAP CPP] applications.
+Much like the .NET Abstract Container, the [C++ container](http://wiki.gigaspaces.com/wiki/display/XAP95/CPP+Processing+Unit) provides a native C++ runtime environment for [C++ SBA](http://wiki.gigaspaces.com/wiki/display/XAP95/XAP+CPP) applications.
 
 ## Java - Spring Container
 

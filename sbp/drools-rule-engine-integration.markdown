@@ -86,7 +86,7 @@ end
 Each file can contain multiple rules. When the rules loader reads these rules files, it converts their contents to a Java byte array (this is a small optimization because the Drools KnowledgeBuilder does not accept Strings).
 
 The rules are converted into the following data model structure:
-![componentmodel.JPG](/attachment_files/sbp/componentmodel.JPG)
+![componentmodel.jpg](/attachment_files/sbp/componentmodel.jpg)
 
 The DroolsRuleset is the main entity. It contains a project name (to keep rulesets separated between projects), a ruleset name, a precompiled version of the ruleset (called a KnowledgePackage and is empty by default), a status, a collection of DSL definitions and a collection of rules. By default the status will be 'unprocessed', but this is changed when the rule is compiled by the RulesCompiler in the space.
 
@@ -113,7 +113,7 @@ And on the server side the implementation is provided that will write new rule-o
 {% tabcontent Compiling Rules %}
 Once the rule loader has written the new rule objects into the rule space, a polling container (called RulesCompiler) will pick them up. It is triggered on the creation of a new RuleSet object and automatically reads the associated DroolsRule and DroolsDslDefinition objects along with it. It then creates a new Drools KnowledgeBuilder which is capable of validating all the rules.
 
-![stdflow.JPG](/attachment_files/sbp/stdflow.JPG)
+![stdflow.jpg](/attachment_files/sbp/stdflow.jpg)
 
 The result of the validation is a state change of the RuleSet object, see next image for the state diagram:
 ![stdflow2.jpg](/attachment_files/sbp/stdflow2.jpg)

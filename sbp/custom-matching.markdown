@@ -17,8 +17,6 @@ page_id: 52528551
 
 {% endtip %}
 
-{rate}
-
 # Overview
 
 Usually you index and execute queries using primitive fields (long, float, string, etc). The fields may be within the root level of the space object, or embedded within [nested objects](http://wiki.gigaspaces.com/wiki/display/XAP91/SQLQuery#Nested+Object+Query) within the space object. You may construct a query using a template object or SQL to specify the criteria you would like to use when the matching phase is performed within the space when looking for the relevant objects.

@@ -97,7 +97,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 ##### • [White Papers](http://www.gigaspaces.com/os_papers.html)
 
-##### • Looking for **[XAP.NET](http://wiki.gigaspaces.com/wiki/display/XAP96NET/XAP.NET+9.6+Documentation+Home)** or **[other versions|ALL:Choose a GigaSpaces Version]**?
+##### • Looking for **[XAP.NET](http://wiki.gigaspaces.com/wiki/display/XAP96NET/XAP.NET+9.6+Documentation+Home)** or **[other versions](http://wiki.gigaspaces.com/wiki/display/ALL/Choose a GigaSpaces Version)**?
 
 {% endcolumn %}
 

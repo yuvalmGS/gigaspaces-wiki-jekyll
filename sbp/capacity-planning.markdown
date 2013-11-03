@@ -14,8 +14,6 @@ page_id: 50759531
 
 {% endtip %}
 
-{rate}
-
 # Capacity Planning - Voodoo or Simple Math?
 Planning the number of machines your application requires, is one of the most important tasks you need to do before moving into production and making your application available to your customers/users. Typically, this is a task you need to do in the early stages of the project in order to budget for hardware and relevant software products your system will use. At a minimum, this involves estimating the number of CPUs and cores plus the memory each machine must have.
 

@@ -18,8 +18,6 @@ page_id: 56427156
 
 {% endtip %}
 
-{rate}
-
 # Overview
 
 {% section %}

@@ -7,8 +7,6 @@ page_id: 47219279
 
 {% summary page|65 %}Using the calculation offload pattern.{% endsummary %}
 
-{rate}
-
 # Overview
 
 In this pattern, all Excel functions and calculations are performed **by the space** (on the server side) asynchronously. This allows you to use Excel regularly, where calculations are performed on the space side simultaneously, until the calculation is finished; then, Excel is notified and the data is displayed in the spreadsheet.

@@ -15,7 +15,6 @@ page_id: 47219420
 
 {% endtip %}
 
-{rate}
 {% compositionsetup %}
 
 # Overview
@@ -44,7 +43,7 @@ The Space Viewer toolbar includes the following options:
 - **Refresh results** -- refreshes the view or views with updated data
 
 {% indent %}
-![Toolbar3.JPG](/attachment_files/sbp/Toolbar3.JPG)
+![Toolbar3.jpg](/attachment_files/sbp/Toolbar3.jpg)
 {% endindent %}
 
 ## Creating New View
@@ -55,10 +54,10 @@ The **Create View** option allows you to create a view of space data inside your
 - The **Work with Class** drop-down menu allows you to select which space class you would like to view.
 - The **Available Columns** area lists all fields in this class.
 - The **Undisplayable Columns** area lists fields that belong to this class, but can't be displayed in Excel (usually user-defined fields).
-- The **Selected Columns** area displays the fields you choose to display in this view. Use the arrow buttons (for example: ![arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpg](/attachment_files/sbp/arrowExcel.jpg!) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: !excelUpArrow.jpg)) allow you to organize the fields in the order in which they will appear in the final view.
+- The **Selected Columns** area displays the fields you choose to display in this view. Use the arrow buttons (for example: ![arrowExcel.jpg](/attachment_files/sbp/arrowExcel.jpg)) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: ![excelUpArrow.jpg](/attachment_files/sbp/arrowExcel.jpg)) to move columns back and forth. The buttons with two arrows (for example: ) move all of the columns from one area to the other. The up and down arrows on the right (for example: ![excelUpArrow.jpg](/attachment_files/sbp/arrowExcel.jpg)) allow you to organize the fields in the order in which they will appear in the final view.
 
 {% indent %}
-![ConfigureView2.JPG](/attachment_files/sbp/ConfigureView2.JPG)
+![ConfigureView2.jpg](/attachment_files/sbp/ConfigureView2.jpg)
 {% endindent %}
 
 - It is possible to connect to any running space in your network.
@@ -71,7 +70,7 @@ To connect to a space:
 {% endhighlight %}
 
 {% indent %}
-![Connect1.JPG](/attachment_files/sbp/Connect1.JPG)
+![Connect1.jpg](/attachment_files/sbp/Connect1.jpg)
 {% endindent %}
 
 - The **Customize the Selection** button opens the [Customize the Selection](#Customize the Selection) window.
@@ -87,7 +86,7 @@ To create a new view:
     1. On the left side of the Customize the Selection window, click the class field you want to query. (For example, the **Age** field is selected below.)
 
 {% indent %}
-![CustomizeTheSelection1.JPG](/attachment_files/sbp/CustomizeTheSelection1.JPG)
+![CustomizeTheSelection1.jpg](/attachment_files/sbp/CustomizeTheSelection1.jpg)
 {% endindent %}
 
     2. The selected field appears on the right, under **WHERE**. You can now select the desired expression and value, and choose to sort your results in an ascending or descending manner.
@@ -99,7 +98,7 @@ To create a new view:
 5. In the Create View window, Click **OK**.
 6. Your selection is displayed in the spreadsheet:
 
- ![ExcelSheet1.JPG](/attachment_files/sbp/ExcelSheet1.JPG)
+ ![ExcelSheet1.jpg](/attachment_files/sbp/ExcelSheet1.jpg)
 
 {% infosign %} This view displays the selections you made in the Create View and Customize the Selection windows. The view is constantly refreshed (according to the last refresh rate you defined.).
 
@@ -122,7 +121,7 @@ Pressing **Save** saves the query for this field.
 The **SQL** area at the bottom displays the query syntax in SQL. After pressing **Save** on the right, the number of instances found as a result of this query is displayed under the **SQL** area (this is also the number of rows that will appear in this column). You can refresh this result using the refresh button ( ![ExcelRefresh.jpg](/attachment_files/sbp/ExcelRefresh.jpg)).
 
 {% indent %}
-![CustomizeTheSelection1.JPG](/attachment_files/sbp/CustomizeTheSelection1.JPG)
+![CustomizeTheSelection1.jpg](/attachment_files/sbp/CustomizeTheSelection1.jpg)
 {% endindent %}
 
 ## Changing Existing View
@@ -180,7 +179,7 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 8. A new toolbar appears in the top left:
 
 {% indent %}
-![Toolbar4.JPG](/attachment_files/sbp/Toolbar4.JPG)
+![Toolbar4.jpg](/attachment_files/sbp/Toolbar4.jpg)
 {% endindent %}
 
 # Troubleshooting

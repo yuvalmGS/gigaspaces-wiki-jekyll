@@ -12,7 +12,6 @@ page_id: 52527859
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Date: December  2009
 Latest Date: Feb 2011
-{rate}
 
 The following list should provide you with the main activities to be done prior moving your system into production. Reviewing this list and executing the relevant recommendations should result in a stable environment with a low probability of unexpected behavior or failures that are result of a GigaSpaces environment misconfiguration.
 
@@ -193,7 +192,7 @@ Here is a simple confguration you should place within your pu.xml to disable the
 {% endhighlight %}
 
 # The Runtime Environment - GSA, LUS, GSM and GSCs
-In a dynamic environment where you want to start [GSCs](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Container) and [GSMs|XAP91:The Grid Service Manager] remotely, manually or dynamically, the [GSA|XAP91:The Grid Service Agent] is the only component you should have running on the machine that is hosting the [GigaSpaces runtime environment|XAP91:The Runtime Environment]. This lightweight service acts as an agent and starts a GSC/GSM/LUS when needed.
+In a dynamic environment where you want to start [GSCs](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Container) and [GSMs|XAP91:The Grid Service Manager] remotely, manually or dynamically, the [GSA](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agent) is the only component you should have running on the machine that is hosting the [GigaSpaces runtime environment](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Runtime+Environment). This lightweight service acts as an agent and starts a GSC/GSM/LUS when needed.
 
 You should plan the initial number of GSCs and GSMs based on the application memory footprint, and the amount of processing you might need. The most basic deployment should include 2 GSMs (running on different machines), 2 Lookup services (running on different machines), and 2 GSCs (running on each machine). These host your Data-Grid or any other application components (services, web servers, Mirror) that you deploy.
 
@@ -412,7 +411,7 @@ The [Capacity Planning](./capacity-planning.html) section provides a detailed ex
 # PU Packaging and CLASSPATH
 
 ## User PU Application Libraries
-A [Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Processing+Unit+Structure+and+Configuration) JAR file, or a [Web Application|XAP91:Web Jetty Processing Unit Container] WAR file should include within its lib folder, all the necessary JARs required for the application. Resource files should be placed within one of the JAR files within the PU JAR, located under the lib folder. In addition, the PU JAR should include the pu.xml within the `META-INF\spring` folder.
+A [Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Processing+Unit+Structure+and+Configuration) JAR file, or a [Web Application](http://wiki.gigaspaces.com/wiki/display/XAP91/Web+Jetty+Processing+Unit+Container) WAR file should include within its lib folder, all the necessary JARs required for the application. Resource files should be placed within one of the JAR files within the PU JAR, located under the lib folder. In addition, the PU JAR should include the pu.xml within the `META-INF\spring` folder.
 In order to close LRMI threads when closing application,please use:LRMIManager.shutdown().
 
 ## Data-Grid PU Libraries
@@ -461,7 +460,7 @@ To capture the detailed information about garbage collection and how it is perfo
 Modify the path and file names appropriately. You will need to use a different file name for each invocation in order to not overwrite the files from multiple processes.
 {% endtip %}
 
-{include:COM7:JConsoleJMapWarning}
+{% include /COM7/jconsolejmapwarning.markdown %}
 
 ## Soft References LRU Policy
 In the attempt to provide the highest level of performance possible, GigaSpaces takes advantage of features in the Java language that allows for effective caching in the face of memory demands. In particular, the [SoftReference](http://docs.oracle.com/javase/6/docs/api/java/lang/ref/SoftReference.html) class is used to store data up until there is a need for explicit garbage collection, at which point the data stored in soft references will be collected if possible. The system default is 1000, which represents the amount of time (in milliseconds) they will survive past their last reference. `-XX:SoftRefLRUPolicyMSPerMB` is the parameter that allows you to determine how much data is cached by allowing the JVM to control how long it endures; A recommended setting this value to **500** in active, dynamic systems:

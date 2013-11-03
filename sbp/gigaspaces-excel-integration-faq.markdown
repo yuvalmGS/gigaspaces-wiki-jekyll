@@ -6,7 +6,6 @@ page_id: 47219033
 ---
 
 {% summary page|65 %}Frequently asked questions about the GigaSpaces-Excel integration.{% endsummary %}
-{rate}
 
 # Overview
 
@@ -17,7 +16,7 @@ The following FAQs deal with the GigaSpaces Excel Integration solutions.
 - [What are the **Prerequisites**?](#Prerequisites)
 - [Why does the Space Viewer toolbar not show up in Excel?](#The Space Viewer toolbar does not show up in Excel)
 
-{include:Prerequisites - GigaSpaces-Excel Integration}
+{% include /sbp/prerequisites---gigaspaces-excel-integration.markdown %}
 
 # The Space Viewer toolbar does not show up in Excel
 

@@ -17,8 +17,6 @@ page_id: 55938230
 
 {% endtip %}
 
-{rate}
-
 # Overview
 
 When a deploying a data grid, primary and backup instances will be provisioned in an arbitrary manner across the available machines running GSA/GSCs. You don't have a control where these will be physically located as the primary election mechanism determines the primary and backup instances location at the deploy time (first instance per partition elected as the primary).

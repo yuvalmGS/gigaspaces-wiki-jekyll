@@ -13,7 +13,6 @@ page_id: 51120319
 Using XAP:**7.0GA**
 JDK:**Sun JDK 1.6**
 Date: October  2009
-{rate}
 
 When constructing the space classes and their relationship, and having persistency turned on, you should design the space classes to follow a few basic rules. The rules are mostly relevant when having associations between different objects, and when the database tables include foreign and primary key relations that need to be mapped to objects in memory.
 

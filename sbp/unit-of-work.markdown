@@ -17,8 +17,6 @@ page_id: 54296773
 
 {% endtip %}
 
-{rate}
-
 # GigaSpaces Unit of Work
 GigaSpaces Unit of Work (UOW) enables a stand-alone message producer to group messages into a single unit such that those messages can be handled in order - similar to a FIFO queue localized within a transaction. This single unit is called a Unit-of-work and requires that all messages from that unit be processed **sequentially in the order** they were created (within the unit of work). Other units can be processes in parallel. This approach maximize the system performance and its scalability and allows it to processes vast amount of data consuming memory and CPU resources in a very optimal manner.
 

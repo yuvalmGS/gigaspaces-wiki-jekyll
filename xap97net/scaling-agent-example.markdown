@@ -329,4 +329,3 @@ To simplify the deployment of the examples, there are several scripts in the exa
 ![ScalingAgentConsole.jpg](/attachment_files/xap97net/ScalingAgentConsole.jpg)
 {% endindent %}
 
-{rate}
