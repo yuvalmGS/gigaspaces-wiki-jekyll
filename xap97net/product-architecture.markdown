@@ -108,7 +108,7 @@ The deployment of multiple GSCs on a single machine creates a virtual Service Gr
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 The role of clustering in GigaSpaces XAP is to provide scaling, load-balancing and high-availability. The main difference between GigaSpaces XAP and other clustering alternatives, is the use of a single clustering model for all middleware core capabilities. This means that the data and the services collocated with it, are equally available. An example of how useful this is, is that when a primary node fails, and another node acts as its backup, both application components, i.e. data and messaging, become active at the same time.
 
-The ability to support a unified clustering model is a direct result of the underlying space-based clustering model. For more information on the concept of space, please refer to [Space - Concepts and Capabilities|Concepts#Space - Concepts and Capabilities].
+The ability to support a unified clustering model is a direct result of the underlying space-based clustering model. For more information on the concept of space, please refer to depanlinkSpace - Concepts and Capabilitiestengahlink./concepts.html#Space - Concepts and Capabilitiesbelakanglink.
 
 ## Scaling
 
@@ -134,7 +134,7 @@ The GigaSpaces XAP solution does not require a compromise between stateless appl
 
 # Core Middleware
 
-As an application server, GigaSpaces XAP provides integrated, memory-based runtime capabilities. The core of these capabilities is backed by the space technology - for more information, please refer to [Space - Concepts and Capabilities|Concepts#Space - Concepts and Capabilities].
+As an application server, GigaSpaces XAP provides integrated, memory-based runtime capabilities. The core of these capabilities is backed by the space technology - for more information, please refer to depanlinkSpace - Concepts and Capabilitiestengahlink./concepts.html#Space - Concepts and Capabilitiesbelakanglink.
 
 **The core middleware capabilities
 are:**
@@ -159,7 +159,7 @@ The IMDG uses the unified clustering layer, to provide a highly available and re
 TODO_NIV - Change to ISpaceProxy link when available.
 {% endcomment %}
 
-The main API to access the IMDG service, is the [`ISpaceProxy` interface|Writing Your First Application]. Please refer to the [Programmer's Guide|Programmer's Guide] for usage examples.
+The main API to access the IMDG service, is the depanlinkWriting Your First Applicationtengahlink./your-first-data-grid-application.htmlbelakanglink. Please refer to the depanlinkProgrammer's Guidetengahlink./programmer's-guide.htmlbelakanglink for usage examples.
 
 ## Messaging Grid
 
@@ -180,7 +180,7 @@ TODO_NIV - Add link when available.
 
 5. Transactionality.
 
-The core APIs used for messaging are the [Notify Container|Notify Container Component] and [Polling Container|Polling Container Component] components. More information can be found in the [Programmer's Guide|Event Driven Architecture].
+The core APIs used for messaging are the depanlinkNotify Containertengahlink./notify-container-component.htmlbelakanglink and depanlinkPolling Containertengahlink./polling-container-component.htmlbelakanglink components. More information can be found in the depanlinkProgrammer's Guidetengahlink./event-driven-architecture.htmlbelakanglink.
 
 ## Processing Services
 
@@ -233,7 +233,7 @@ This allows .NET SBA applications  to run business services and .NET code, collo
 
 ## .NET  - Basic container
 
-The [Basic Processing Unit Container|Basic Processing Unit Container] extends the Abstract Container and simplifies tasks commonly used in processing units, such as starting an embedded space, hosting a service, activating an event container, etc.
+The depanlinkBasic Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink extends the Abstract Container and simplifies tasks commonly used in processing units, such as starting an embedded space, hosting a service, activating an event container, etc.
 
 ## C++ Container
 
@@ -276,7 +276,7 @@ The core module of XAP.NET provides APIs for direct access to space. The main in
 
 The events module is built on top of the core module, and provides POCO-based event processing components through the event containers. The event module enables simple construction of event-driven applications.
 
-The events module includes components for simplified EDA/Service Bus development. These components allow [unified event-handling|Space Events] and provide two mechanisms for event-generation: a [polling container|Polling Container Component] uses polling received operations against the space, and a [notify container|Notify Container Component] which uses the space's built-in notification support.
+The events module includes components for simplified EDA/Service Bus development. These components allow depanlinkunified event-handlingtengahlink./space-events.htmlbelakanglink and provide two mechanisms for event-generation: a depanlinkpolling containertengahlink./polling-container-component.htmlbelakanglink uses polling received operations against the space, and a depanlinknotify containertengahlink./notify-container-component.htmlbelakanglink which uses the space's built-in notification support.
 
 ## Remoting and Service Virtualization
 

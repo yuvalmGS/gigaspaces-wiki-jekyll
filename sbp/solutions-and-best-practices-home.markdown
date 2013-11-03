@@ -53,9 +53,9 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |depanlinkUniversal Deployertengahlink./universal-deployer.htmlbelakanglink |Beginner | Allows deploying composite applications. Support multiple processing unit dependency based deployment.|
 |depanlinkData-Collocation Deployment Topologytengahlink./data-collocation-deployment-topology.htmlbelakanglink| Beginner | Considerations which topology to choose when deploying both business logic and data into the Grid.|
 |depanlinkMirror Monitortengahlink./mirror-monitor.htmlbelakanglink| Beginner | Monitoring asynchronous persistency behavior in real time using JMX.|
-|[Safe Grid Shutdown|Safe Grid Shutdown]| Beginner | Cleanly shutting down the grid after all async replication operations are committed.|
+|depanlinkSafe Grid Shutdowntengahlink./safe-grid-shutdown.htmlbelakanglink| Beginner | Cleanly shutting down the grid after all async replication operations are committed.|
 |depanlinkHyperic integrationtengahlink./hyperic-integration.htmlbelakanglink| Beginner | Hyperic monitoring integration example.|
-|[Clusters Over WAN|WAN Replication Gateway]| Beginner | Example for WAN replication implementation.|
+|depanlinkClusters Over WANtengahlink./wan-replication-gateway.htmlbelakanglink| Beginner | Example for WAN replication implementation.|
 |depanlinkWAN Gateway Pass Through Replicationtengahlink./wan-gateway-pass-through-replication.htmlbelakanglink| Beginner | Example for implementing a pass through WAN replication topology.|
 |depanlinkWAN Gateway Master Slave Replicationtengahlink./wan-gateway-master-slave-replication.htmlbelakanglink| Beginner | Example for implementing a single-master/multi-slave replication topology.|
 |depanlinkPrimary-Backup Zone Controllertengahlink./primary-backup-zone-controller.htmlbelakanglink|Beginner | Using Zones to control Data-Grid primary/backup instances location.|

@@ -31,7 +31,7 @@ The example demonstrates the following:
 
 {% lampon %} **depanlinkDownload the exampletengahlink/attachment_files/sbp/ExcelStocks.zipbelakanglink** and extract it into your `<GigaSpaces Root>\Examples` directory.
 
-{% refer %}Getting Started with RTD and UDF? See the [Writing Your First RTD/UDF Application|Writing Your First RTD or UDF Application] section.{% endrefer %}
+{% refer %}Getting Started with RTD and UDF? See the depanlinkWriting Your First RTD/UDF Applicationtengahlink./writing-your-first-rtd-or-udf-application.htmlbelakanglink section.{% endrefer %}
 
 {include:Prerequisites - GigaSpaces-Excel Integration}
 

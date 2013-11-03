@@ -17,8 +17,8 @@ The word "multicast" is typically used to refer to IP Multicast, the implementat
 (Source - wikipedia: depanlinkhttp://en.wikipedia.org/wiki/Multicasttengahlinkhttp://en.wikipedia.org/wiki/Multicastbelakanglink).
 
 GigaSpaces uses multicast in the following cases:
-- [When deploying onto the service grid|Deploying onto the Service Grid] GigaSpaces XAP uses multicast to discover the [Lookup Service|Lookup Service Configuration ], and register their proxies.
-- Clients use multicast to discover the [Lookup Service|Lookup Service Configuration ] and look up a matching service proxy (such as the space).
+- depanlinkWhen deploying onto the service gridtengahlink/xap97/deploying-onto-the-service-grid.htmlbelakanglink GigaSpaces XAP uses multicast to discover the depanlinkLookup Servicetengahlink./lookup-service-configuration.htmlbelakanglink, and register their proxies.
+- Clients use multicast to discover the depanlinkLookup Service Configurationtengahlink./lookup-service-configuration.htmlbelakanglink and look up a matching service proxy (such as the space).
 
 
 {% tip title=What should I do in order to determine if multicast is enabled on my environment? %}
@@ -33,7 +33,7 @@ To enable the important capabilities above, you should enable multicast on machi
 {% endtip %}
 
 
-{% exclamation %} In case you want to **disable the Jini Lookup Service Multicast announcements** please refer to [this|Lookup Service Configuration#Multicast Settings] section in the Wiki.
+{% exclamation %} In case you want to **disable the Jini Lookup Service Multicast announcements** please refer to depanlinkthistengahlink./lookup-service-configuration.html#Multicast Settingsbelakanglink section in the Wiki.
 
 # Configuring Multicast on Windows
 
@@ -60,5 +60,5 @@ depanlinkWireshark (formerly Ethereal)tengahlinkhttp://www.wireshark.org/belakan
 
 {% infosign %} **To find TTL**, you should monitor some traffic (start-stop on the proper interface), in the monitoring log. Choose the packet you are interested in, and look at its IP layer - TTL (and other parameters) are shown.
 
-{% infosign %} The **default TTL value is 3** (was 15). See [Multicast Settings|Lookup Service Configuration#LookupServiceConfiguration-MulticastSettings] section for details of how to modify that value.
+{% infosign %} The **default TTL value is 3** (was 15). See depanlinkMulticast Settingstengahlink./lookup-service-configuration.html#LookupServiceConfiguration-MulticastSettingsbelakanglink section for details of how to modify that value.
 

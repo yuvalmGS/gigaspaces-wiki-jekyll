@@ -6,7 +6,7 @@ page_id: 63799398
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.
-||Basic Components|[Data Grid Topologies|Terminology - Data Grid Topologies]|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|
+||Basic Components|depanlinkData Grid Topologiestengahlink./terminology---data-grid-topologies.htmlbelakanglink|depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink|depanlinkRuntime Componentstengahlink./terminology---runtime-components.htmlbelakanglink|
 
 # Basic Components
 
@@ -142,7 +142,7 @@ depanimageterm_service_bean.giftengahimage/attachment_files/xap97net/term_servic
 
 #### Processing Unit
 
-A combination of service components and/or an embedded space instance. This is the fundamental unit of deployment in GigaSpaces XAP. The Processing Unit itself runs within a [Processing Unit Container|Terminology - Runtime Components#Processing Unit Container], and is typically deployed onto the [Service Grid|Terminology - Runtime Components#Service Grid].
+A combination of service components and/or an embedded space instance. This is the fundamental unit of deployment in GigaSpaces XAP. The Processing Unit itself runs within a depanlinkProcessing Unit Containertengahlink./terminology---runtime-components.html#Processing Unit Containerbelakanglink, and is typically deployed onto the depanlinkService Gridtengahlink./terminology---runtime-components.html#Service Gridbelakanglink.
 
 {% endcolumn %}
 
@@ -173,7 +173,7 @@ depanimageterm_empty_pu.giftengahimage/attachment_files/xap97net/term_empty_pu.g
 
 #### Processing Unit configured with an embedded space
 
-A deployable package which instantiates an embedded space instance, also called a data grid instance. A set of embedded space instances that run within the processing units typically form a [Data Grid|Terminology - Data Grid Topologies].
+A deployable package which instantiates an embedded space instance, also called a data grid instance. A set of embedded space instances that run within the processing units typically form a depanlinkData Gridtengahlink./terminology---data-grid-topologies.htmlbelakanglink.
 
 {% endcolumn %}
 
@@ -229,7 +229,7 @@ depanimageterm_pu_with_bean.giftengahimage/attachment_files/xap97net/term_pu_wit
 
 #### Processing Unit configured with embedded space and embedded services
 
-A deployable, independent, scalable unit, which is the building block of [Space-Based Architecture|Terminology - Space-Based Architecture].
+A deployable, independent, scalable unit, which is the building block of depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink.
 Client application (which can also be other processing units) write objects to the space, and the procesing unit which contains this space consumes these objects or is notified about them and triggeres a related services.
 
 {% endcolumn %}
@@ -247,4 +247,4 @@ depanimageterm_pu_with_space_and_bean.giftengahimage/attachment_files/xap97net/t
 {% endsection %}
 
 
-||Basic Components|[Data Grid Topologies|Terminology - Data Grid Topologies]|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|
+||Basic Components|depanlinkData Grid Topologiestengahlink./terminology---data-grid-topologies.htmlbelakanglink|depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink|depanlinkRuntime Componentstengahlink./terminology---runtime-components.htmlbelakanglink|

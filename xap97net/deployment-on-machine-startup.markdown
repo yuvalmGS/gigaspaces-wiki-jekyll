@@ -11,11 +11,11 @@ page_id: 63799348
 
 # Overview
 
-Service Grid deployment can be considered something that should be done automatically, without user intervention, moreover, if a server machine crashes and reboots, the Service Grid and deployed processing unit should restart and redeploy when the machines restarts. All of these can be acoomplished using GigaSpaces Windows Services Manager and the different [Service Grid components as windows services|Service Grid Components as Windows Services]. This page demonstrate how to configure a server machine to start its service grid components and deploy processing units upon machine startup.
+Service Grid deployment can be considered something that should be done automatically, without user intervention, moreover, if a server machine crashes and reboots, the Service Grid and deployed processing unit should restart and redeploy when the machines restarts. All of these can be acoomplished using GigaSpaces Windows Services Manager and the different depanlinkService Grid components as windows servicestengahlink./service-grid-components-as-windows-services.htmlbelakanglink. This page demonstrate how to configure a server machine to start its service grid components and deploy processing units upon machine startup.
 
 # Configure Grid Service Manager and Grid Service Containers
 
-In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) to start on machine startup they should be installed as windows services using [GigaSpaces Windows Service Manager|Service Grid Components as Windows Services#Windows Services Manager]. Each installed service needs to be [configured|Service Grid Components as Windows Services#Service Configuration] seperately with the appropriate lookup groups by updating the service configuration file `"-Dcom.gs.jini_lus.groups"` option.
+In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) to start on machine startup they should be installed as windows services using depanlinkGigaSpaces Windows Service Managertengahlink./service-grid-components-as-windows-services.html#Windows Services Managerbelakanglink. Each installed service needs to be depanlinkconfiguredtengahlink./service-grid-components-as-windows-services.html#Service Configurationbelakanglink seperately with the appropriate lookup groups by updating the service configuration file `"-Dcom.gs.jini_lus.groups"` option.
 
 
 {% highlight xml %}

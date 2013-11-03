@@ -30,7 +30,7 @@ space.Change(idQuery, new ChangeSet().Increment("Count", 1));
 
 # The Query Template
 
-The change operation may receive any [query template|Querying The Space] for matching a single or multiple objects that needs to be changed by the operation.
+The change operation may receive any depanlinkquery templatetengahlink./querying-the-space.htmlbelakanglink for matching a single or multiple objects that needs to be changed by the operation.
 
 # The Change Set
 
@@ -117,7 +117,7 @@ In this case the key euro inside the dictionary behind the balance will be incre
 
 # Using Change with the Embedded model
 
-With the [embedded model|Modeling your data#Embedded vs. Non-Embedded Relationships], updating (as well adding or removing) a nested collection with large number of elements **must use the change API** since the default behavior would be to replicate the entire space object and its nested collection elements from the primary to the backup (or other replica primary copies when using the sync-replicate or the async-replicated cluster schema). The Change API reduces the CPU utilization at the primary side, reduce the serialization overhead and reduce the garbage collection activity both at the primary and backup. This improves the overall system stability significantly.
+With the depanlinkembedded modeltengahlink./modeling-your-data.html#Embedded vs. Non-Embedded Relationshipsbelakanglink, updating (as well adding or removing) a nested collection with large number of elements **must use the change API** since the default behavior would be to replicate the entire space object and its nested collection elements from the primary to the backup (or other replica primary copies when using the sync-replicate or the async-replicated cluster schema). The Change API reduces the CPU utilization at the primary side, reduce the serialization overhead and reduce the garbage collection activity both at the primary and backup. This improves the overall system stability significantly.
 
 # Change Result
 

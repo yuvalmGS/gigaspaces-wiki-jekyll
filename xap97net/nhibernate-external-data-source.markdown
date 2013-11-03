@@ -11,7 +11,7 @@ page_id: 63799299
 
 # Overview
 
-This page demonstrates how to use the GigaSpaces .Net NHibernate [External Data Source|Persistency] in a common scenario: a cluster topology with a mirror. This is asynchronous persistency, which means that the operation against the cluster members is persisted to the database in an asynchronous manner. Each cluster member uses the External Data Source in read-only mode. Therefore it only reads data from the External Data Source, and each write operation is replicated to the mirror space.
+This page demonstrates how to use the GigaSpaces .Net NHibernate depanlinkExternal Data Sourcetengahlink./persistency.htmlbelakanglink in a common scenario: a cluster topology with a mirror. This is asynchronous persistency, which means that the operation against the cluster members is persisted to the database in an asynchronous manner. Each cluster member uses the External Data Source in read-only mode. Therefore it only reads data from the External Data Source, and each write operation is replicated to the mirror space.
 
 The mirror uses the External Data Source interface in write mode, and delegates destructive space operations (write, update, take) to the database through the External Data Source implementation.
 
@@ -115,7 +115,7 @@ namespace Entities
 
 # Starting the Spaces with NHibernate External Data Source
 
-This walkthrough demonstrates how to start the spaces with the NHibernate External Data Source from code, using a cluster in a [partitioned-sync2backup|Terminology - Data Grid Topologies] topology.
+This walkthrough demonstrates how to start the spaces with the NHibernate External Data Source from code, using a cluster in a depanlinkpartitioned-sync2backuptengahlink./terminology---data-grid-topologies.htmlbelakanglink topology.
 Our cluster is 2,1 and a mirror. Therefore it consists of:
 - 2 partitioned primary spaces
 - 2 backup spaces, one for each partition
@@ -162,7 +162,7 @@ ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace?mirror=tru
 
 {% exclamation %} You can also construct your own NHibernate session factory in code, and pass it to the constructor of the `NHibernateExternalDataSource`. In this case, there is no need to use `SpaceConfig.ExternalDataSourceConfig.CustomProperties`.
 
-To start the other members of the cluster, simply change the [ClusterInfo|Processing Unit Container#ClusterInfo]:
+To start the other members of the cluster, simply change the depanlinkClusterInfotengahlink./processing-unit-container.html#ClusterInfobelakanglink:
 - Backup space of the first partition member
 
 {% highlight java %}

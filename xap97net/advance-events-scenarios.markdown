@@ -11,11 +11,11 @@ page_id: 63799413
 
 # Overview
 
-While in most cases, using the `DefaultDataEventSession` as desribed in the [Space Events|Space Events] page is enough to get the job done, in some cases it is not enough. For instance if you want a mechanism that detects that an event listener is no longer active due to space failure, or to make sure that if the client proxy terminates unexpectedly, the listener resources are cleaned up in the space. All of these, and more, are covered in this page.
+While in most cases, using the `DefaultDataEventSession` as desribed in the depanlinkSpace Eventstengahlink./space-events.htmlbelakanglink page is enough to get the job done, in some cases it is not enough. For instance if you want a mechanism that detects that an event listener is no longer active due to space failure, or to make sure that if the client proxy terminates unexpectedly, the listener resources are cleaned up in the space. All of these, and more, are covered in this page.
 
 # Event Mechanism in General
 
-Event registration is done using a supplied [template|Query Template Types], and a callback method. The registration notify template can be stored in one or more spaces, depending on the template and cluster topology.
+Event registration is done using a supplied ajepaaaQuery Template Typesajepbbb, and a callback method. The registration notify template can be stored in one or more spaces, depending on the template and cluster topology.
 
 Every time an event occurs in a space, which matches the given template and event type in that space, the event is triggered at the proxy, which activates the callback method. What happens if the space or the proxy is no longer available? What happens if the proxy can't manage the events overload? These issues can be addressed by customizing a data event session, with appropriate behaviors to handle these issues.
 

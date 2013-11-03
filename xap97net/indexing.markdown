@@ -190,7 +190,7 @@ SqlQuery<Person> query = new SqlQuery<Person>(
 
 
 {% comment %}
-{% infosign %} For more information, see [Nested Object Queries|SQLQuery#Nested Object Query]
+{% infosign %} For more information, see depanlinkNested Object Queriestengahlink./sqlquery.html#Nested Object Querybelakanglink
 {% endcomment %}
 
 

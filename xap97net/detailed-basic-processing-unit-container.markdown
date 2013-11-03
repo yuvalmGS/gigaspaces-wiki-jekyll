@@ -12,7 +12,7 @@ page_id: 63799322
 
 
 {% info %}
-This page coveres additional details about the BasicProcessingUnitContainer which are not covered in [Basic Processing Unit Container|Basic Processing Unit Container] page, the previous page should be read before this one.
+This page coveres additional details about the BasicProcessingUnitContainer which are not covered in depanlinkBasic Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink page, the previous page should be read before this one.
 {% endinfo %}
 
 
@@ -232,4 +232,4 @@ IEventListenerContainer<Data> eventListenerContainer = container.GetEventListene
 
 # Security
 
-When the processing unit is deployed with injected security properties (Using the Management Center or the [Service Grid admin api|Administration and Monitoring API]), the basic processing unit container will automatically attach this security context to all the proxies that it manages. Both for proxies that are created automatically from the configuration and proxies that are created programatically using the container `CreateSpaceProxy` method.
+When the processing unit is deployed with injected security properties (Using the Management Center or the depanlinkService Grid admin apitengahlink./administration-and-monitoring-api.htmlbelakanglink), the basic processing unit container will automatically attach this security context to all the proxies that it manages. Both for proxies that are created automatically from the configuration and proxies that are created programatically using the container `CreateSpaceProxy` method.

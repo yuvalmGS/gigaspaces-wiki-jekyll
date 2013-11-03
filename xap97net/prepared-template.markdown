@@ -41,7 +41,7 @@ IPreparedTemplate<Person> preparedTemplate = proxy.Snapshot(query);
 {% endhighlight %}
 
 
-{% exclamation %} Using the `ISpaceProxy.Snapshot` method with complex SQL queries is not supported. For more information see [simple SQL queries|SqlQuery#Simple SqlQuery].
+{% exclamation %} Using the `ISpaceProxy.Snapshot` method with complex SQL queries is not supported. For more information see depanlinksimple SQL queriestengahlink./sqlquery.html#Simple SqlQuerybelakanglink.
 
 After creating the prepared template, it can be passed as a template to the Read, Take, ReadMultiple, TakeMultiple, Count and Clear operations, as well as a template when registering for notification.
 

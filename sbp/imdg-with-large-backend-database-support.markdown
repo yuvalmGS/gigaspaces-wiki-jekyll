@@ -57,7 +57,7 @@ To control the data within the space should evict it. Evicting data from the spa
 -- Using a Polling Container query the data frequently.
 -- Using the JVM Memory Notification API.
 
-See the [Custom Eviction|Custom Eviction#Eviction Strategies] section for details.
+See the depanlinkCustom Evictiontengahlink./custom-eviction.html#Eviction Strategiesbelakanglink section for details.
 
 # Example
 

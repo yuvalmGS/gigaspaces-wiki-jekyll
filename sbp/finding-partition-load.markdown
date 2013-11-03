@@ -20,7 +20,7 @@ page_id: 54297314
 # Overview
 When using a GigaSpaces cluster as a task queue there are times you will need to determine how the space instances are loaded. This could be to determine where you can route the next task (minimum load partition/instance) or where you want to launch more processors (heavily loaded partition/instance).
 
-There are couple of approaches you could use to identify these partitions: depanlinktask executorstengahlink#taskexecutorbelakanglink and an depanlinkexecutor servicetengahlink#serviceexecutorbelakanglink. You can also see the [Executors example|Map-Reduce Pattern - Executors Example] page for other similar examples.
+There are couple of approaches you could use to identify these partitions: depanlinktask executorstengahlink#taskexecutorbelakanglink and an depanlinkexecutor servicetengahlink#serviceexecutorbelakanglink. You can also see the depanlinkExecutors exampletengahlink./map-reduce-pattern---executors-example.htmlbelakanglink page for other similar examples.
 
 {% anchor taskexecutor %}
 
@@ -153,7 +153,7 @@ public class MyDistributedTask implements
 
 # Using an Executor Service
 
-Another depanlinkexampletengahlink/attachment_files/sbp/GetMinLoadPartition-ExecutorService.zipbelakanglink shows an implementation using Executor Service. This approach should be used when this functionality is intrinsic part of the system and not needed on ad-hoc basis. Usage instructions are similar to the [Executor Service Example|Map-Reduce Pattern - Executors Example#ExecutorsExample-ServiceExecutorsExample].
+Another depanlinkexampletengahlink/attachment_files/sbp/GetMinLoadPartition-ExecutorService.zipbelakanglink shows an implementation using Executor Service. This approach should be used when this functionality is intrinsic part of the system and not needed on ad-hoc basis. Usage instructions are similar to the depanlinkExecutor Service Exampletengahlink./map-reduce-pattern---executors-example.html#ExecutorsExample-ServiceExecutorsExamplebelakanglink.
 
 In this example, we're trying to find the partition with the least number of objects, using GigaSpaces' SpaceRuntimeInfo API to get the count of objects. This API is lot faster than the count API and is the preferred way of getting object counts.
 

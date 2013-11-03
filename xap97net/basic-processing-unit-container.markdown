@@ -12,7 +12,7 @@ page_id: 63799338
 
 # Overview
 
-A [processing unit container|Processing Unit Container] is a component implemented by the user and deployed and managed by the service grid. XAP.NET comes with a built-in type implementation of the processing unit container called the `BasicProcessingUnitContainer` which provides basic implementations for common activities, and allows the user to focus on business logic and less with GigaSpaces internals.
+A depanlinkprocessing unit containertengahlink./processing-unit-container.htmlbelakanglink is a component implemented by the user and deployed and managed by the service grid. XAP.NET comes with a built-in type implementation of the processing unit container called the `BasicProcessingUnitContainer` which provides basic implementations for common activities, and allows the user to focus on business logic and less with GigaSpaces internals.
 
 {% refer %}For a full example of a processing unit and a usage of the `BasicProcessingUnitContainer` refer to the ajepaaaSBA Exampleajepbbb.{% endrefer %}
 
@@ -135,7 +135,7 @@ The container automatically detects components by scanning all the assembly (dll
 
 # Automatic Remote Services Creation And Hosting
 
-One of GigaSpaces grid component capabilities is [remote services|Space Based Remoting], which can be hosted in the grid. The basic container automatically detects , creates, hosts and manages such services' life cycle. This is done by marking the remote service with the \[SpaceRemotingService\] attribute.
+One of GigaSpaces grid component capabilities is depanlinkremote servicestengahlink./space-based-remoting.htmlbelakanglink, which can be hosted in the grid. The basic container automatically detects , creates, hosts and manages such services' life cycle. This is done by marking the remote service with the \ajepaaaSpaceRemotingService\ajepbbb attribute.
 
 
 {% highlight java %}
@@ -151,10 +151,10 @@ public class MyService : IService
 
 # Automatic Event Listener Creation And Management
 
-An [event listener container|Event Driven Architecture] is one of the most commonly used GigaSpaces components as part of a processing unit. Similarly to the other components, such event containers can be automatically detected, created and managed by the basic container. The basic container will automatically detect classes that need to be wrapped with the proper event listener container via the corresponding `EventDriven` attributes (`PollingEventDriven` or `NotifyEventDriven`) that mark them.
+An depanlinkevent listener containertengahlink./event-driven-architecture.htmlbelakanglink is one of the most commonly used GigaSpaces components as part of a processing unit. Similarly to the other components, such event containers can be automatically detected, created and managed by the basic container. The basic container will automatically detect classes that need to be wrapped with the proper event listener container via the corresponding `EventDriven` attributes (`PollingEventDriven` or `NotifyEventDriven`) that mark them.
 
 {% refer %}
-See [Polling Container Component|Polling Container Component] and [Notify Container Component|Notify Container Component] for more info regarding event listener containers.
+See depanlinkPolling Container Componenttengahlink./polling-container-component.htmlbelakanglink and depanlinkNotify Container Componenttengahlink./notify-container-component.htmlbelakanglink for more info regarding event listener containers.
 {% endrefer %}
 
 
@@ -256,5 +256,5 @@ When registering for the \ajepaaaBeforePrimary\ajepbbb or \ajepaaaBeforeBackup\a
 {% endtoczone %}
 
 {% refer %}
-For more details about the Basic Processing Unit Container please refer to the [Detailed Basic Processing Unit Container|Detailed Basic Processing Unit Container] page.
+For more details about the Basic Processing Unit Container please refer to the depanlinkDetailed Basic Processing Unit Containertengahlink./detailed-basic-processing-unit-container.htmlbelakanglink page.
 {% endrefer %}

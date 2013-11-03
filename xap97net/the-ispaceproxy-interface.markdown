@@ -70,10 +70,10 @@ Several `ISpaceProxy` instances can be defined within a single Processing Unit, 
 # Operations
 
 The {javadocos:/docs/dotnetdocs9.5/|ISpaceProxy} interface includes the following main operations:
-||[Id Based operations|ID Queries]||depanlinkBatch operationstengahlink#Batch Operationsbelakanglink||depanlinkAsynchronous operationstengahlink#Asynchronous Operationsbelakanglink||Data Count operations||
-|[ReadById|ID Queries#Reading an Object using its ID]
+||depanlinkId Based operationstengahlink./id-queries.htmlbelakanglink||depanlinkBatch operationstengahlink#Batch Operationsbelakanglink||depanlinkAsynchronous operationstengahlink#Asynchronous Operationsbelakanglink||Data Count operations||
+|depanlinkReadByIdtengahlink./id-queries.html#Reading an Object using its IDbelakanglink
 TakeById
-[ReadByIds|ID Queries#Reading Multiple Objects using their IDs]
+depanlinkReadByIdstengahlink./id-queries.html#Reading Multiple Objects using their IDsbelakanglink
 TakeByIds
 ReadIfExistsById
 TakeIfExistsById|ReadMultiple
@@ -85,11 +85,11 @@ BeginTake
 EndExecute
 EndTake|Count
 
-||[Data Query operations|SQLQuery]||Data Insert and Update operations||[Business logic execution operations|Task Execution over the Space]||Data removal operations||
+||depanlinkData Query operationstengahlink./sqlquery.htmlbelakanglink||Data Insert and Update operations||depanlinkBusiness logic execution operationstengahlink./task-execution-over-the-space.htmlbelakanglink||Data removal operations||
 |Read
 ReadMultiple
-[GetSpaceIterator|Paging Support with Space Iterator]|Write
-WriteMultiple [change|Change API] |Execute
+depanlinkGetSpaceIteratortengahlink/xap97/paging-support-with-space-iterator.htmlbelakanglink|Write
+WriteMultiple depanlinkchangetengahlink./change-api.htmlbelakanglink |Execute
 executorBuilder|Clean
 Clear
 Take
@@ -224,11 +224,11 @@ The `ISpaceProxy.Write()` operation saves a copy of an object into the Space. Th
 
 When updating an object with many fields use the `PARTIAL_UPDATE` mode.
 
-When performing a Write operation you may provide a lease (time to live) duration (in milliseconds time unit) for the object. The Write invocation returns a [Lease|Leases - Automatic Expiration] object allowing you to cancel or renew the object lease. When the lease expires, the object is removed from the Space. The default lease duration is `FOREVER`. An `IllegalArgumentException` is thrown if the lease time requested is negative.
+When performing a Write operation you may provide a lease (time to live) duration (in milliseconds time unit) for the object. The Write invocation returns a depanlinkLeasetengahlink/xap97/leases---automatic-expiration.htmlbelakanglink object allowing you to cancel or renew the object lease. When the lease expires, the object is removed from the Space. The default lease duration is `FOREVER`. An `IllegalArgumentException` is thrown if the lease time requested is negative.
 
 If a Write returns without throwing an exception, that object is committed to the Space, possibly within a transaction. When the Write operation throws an exception, the exception type and message must be considered in order to know whether the object was successfully committed to the Space or not. For example, the `EntryAlreadyInSpaceException` when using write with a `WriteOnly` modifier means the object was not committed, as it already exists in the Space.
 
-Writing an object into a space might generate [notifications|Notify Container] to registered objects.
+Writing an object into a space might generate depanlinknotificationstengahlink/xap97/notify-container.htmlbelakanglink to registered objects.
 
 ## Returning Previous Value
 
@@ -280,7 +280,7 @@ catch (EntryNotInSpaceException enise)
 {% endhighlight %}
 
 
-Alternatively, you can use the [change|Change API] operation and update specific fields or even nested fields or modify collections and maps without having to supply the entire collection or map upon such update. The following `change` operation example is equivalent to the previous partial update operation.
+Alternatively, you can use the depanlinkchangetengahlink./change-api.htmlbelakanglink operation and update specific fields or even nested fields or modify collections and maps without having to supply the entire collection or map upon such update. The following `change` operation example is equivalent to the previous partial update operation.
 
 
 {% highlight java %}
@@ -331,7 +331,7 @@ See the depanlinkPaging Support with Space Iteratortengahlink/xap97/paging-suppo
 
 The two forms of the `Read` operations query the space for an object that matches the template/depanlinkSQLQuerytengahlink./sqlquery.htmlbelakanglink provided. If a match is found, a copy of the matching object is returned. If no match is found, `null` is returned. Passing a `null` reference as the template will match any object.
 
-Any matching object can be returned. Successive Read requests with the same template may or may not return equivalent objects, even if no intervening modifications have been made to the Space. Each invocation of `Read` may return a new object even if the same object is matched in the space. If you would like to Read objects in the same order they have been written into the space you should perform the read objects in a [FIFO mode|FIFO Support].
+Any matching object can be returned. Successive Read requests with the same template may or may not return equivalent objects, even if no intervening modifications have been made to the Space. Each invocation of `Read` may return a new object even if the same object is matched in the space. If you would like to Read objects in the same order they have been written into the space you should perform the read objects in a depanlinkFIFO modetengahlink./fifo-support.htmlbelakanglink.
 
 A `ReadIfExists` operation will return a matching object, or a `null` if there is currently no matching object in the space. If the only possible matches for the template have **conflicting locks** from one or more other transactions, the `timeout` value specifies how long the client is willing to wait for interfering transactions to settle before returning a value. If at the end of that time no value can be returned that would not interfere with transactional state, `null` is returned. Note that, due to the remote nature of the space, `Read` and `ReadIfExists` may throw a `RemoteException` if the network or server fails prior to the `timeout` expiration.
 
@@ -353,9 +353,9 @@ If a `take` returns a non-null value, the object has been removed from the space
 
 With a `RemoteException`, an object can be removed from a space and yet never returned to the client that performed the take, thus losing the object in between. In circumstances in which this is unacceptable, the take can be wrapped inside a transaction that is committed by the client when it has the requested object in hand.
 
-If you would like to take objects from the space in the same order they have been written into the space you should perform the take objects in a [FIFO mode|FIFO Support].
+If you would like to take objects from the space in the same order they have been written into the space you should perform the take objects in a depanlinkFIFO modetengahlink./fifo-support.htmlbelakanglink.
 
-Taking an object from the space might generate [notifications|Notify Container] to registered objects/queries.
+Taking an object from the space might generate depanlinknotificationstengahlink/xap97/notify-container.htmlbelakanglink to registered objects/queries.
 
 
 {% tip %}
@@ -394,7 +394,7 @@ Alternatively, asyncRead and asyncTake also accept an implementation of depanlin
 
 depanimageasync_operations.jpgtengahimage/attachment_files/xap97net/async_operations.jpgbelakangimage
 
-Asynchronous `write` operation can be implemented using a [Task|Task Execution over the Space], where the `Task` implementation include a write operation. With this approach the `Task` is sent to the space and executed in an asynchronous manner. The write operation itself will be completed once both the primary and the backup will acknowledge the operation. This activity will be performed as a background activity from the client perspective.
+Asynchronous `write` operation can be implemented using a depanlinkTasktengahlink./task-execution-over-the-space.htmlbelakanglink, where the `Task` implementation include a write operation. With this approach the `Task` is sent to the space and executed in an asynchronous manner. The write operation itself will be completed once both the primary and the backup will acknowledge the operation. This activity will be performed as a background activity from the client perspective.
 
 
 {% inittab async_operations|top %}
@@ -497,7 +497,7 @@ public class AsyncWriteTask implements Task<Integer>{
 
 # Declarative Transactions
 
-As seen in the take API above, there is no need to provide a Jini transaction object for the different space operations. `GigaSpace` with the different OpenSpaces [transaction managers|Transaction Management] and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the `GigaSpace` interface joins it, using Spring's rich transaction support.
+As seen in the take API above, there is no need to provide a Jini transaction object for the different space operations. `GigaSpace` with the different OpenSpaces depanlinktransaction managerstengahlink/xap97/transaction-management.htmlbelakanglink and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the `GigaSpace` interface joins it, using Spring's rich transaction support.
 
 {% exclamation %} In order to have GigaSpace transactional, the transaction manager must be provided as a reference when constructing the GigaSpace bean. For example (using the distributed transaction manager):
 

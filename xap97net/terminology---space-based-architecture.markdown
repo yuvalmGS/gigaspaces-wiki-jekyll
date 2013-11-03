@@ -6,7 +6,7 @@ page_id: 63799428
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.
-|[Basic Components|Terminology - Basic Components]|[Data Grid Topologies|Terminology - Data Grid Topologies]||Space-Based Architecture|[Runtime Components|Terminology - Runtime Components]|
+|depanlinkBasic Componentstengahlink./terminology---basic-components.htmlbelakanglink|depanlinkData Grid Topologiestengahlink./terminology---data-grid-topologies.htmlbelakanglink||Space-Based Architecture|depanlinkRuntime Componentstengahlink./terminology---runtime-components.htmlbelakanglink|
 
 # Space-Based Architecture
 
@@ -31,7 +31,7 @@ page_id: 63799428
 {% section %}
 **A Space-Based Architecture (SBA) implementation** is a set of Processing Units, with the following properties:
 
-- Each processing unit instances holds a [partitioned|Terminology - Data Grid Topologies#Partitioned Data Grid] space instance and one or more services that are registered on events on that specific partition. Together they form an application cluster. If the cluster is required to be highly available, each primary partition has one or more backup partitions, which run in their own processing unit instances. These instances are inactive, and become active only when their primary partition fails.
+- Each processing unit instances holds a depanlinkpartitionedtengahlink./terminology---data-grid-topologies.html#Partitioned Data Gridbelakanglink space instance and one or more services that are registered on events on that specific partition. Together they form an application cluster. If the cluster is required to be highly available, each primary partition has one or more backup partitions, which run in their own processing unit instances. These instances are inactive, and become active only when their primary partition fails.
 
 - Each Processing Unit instance handles only the data sent to the space partition it runs.
 
@@ -39,9 +39,9 @@ page_id: 63799428
 
 - The system can be scaled by simply increasing the number of space partitions and their corresponding processing unit instances.
 
-- When deployed onto the [Service Grid|Terminology - Runtime Components#Service Grid], self-healing and SLA capabilities are added.
+- When deployed onto the depanlinkService Gridtengahlink./terminology---runtime-components.html#Service Gridbelakanglink, self-healing and SLA capabilities are added.
 
-- Full monitoring and management during runtime are available through the [Management UI|Terminology - Runtime Components#Management UI].
+- Full monitoring and management during runtime are available through the depanlinkManagement UItengahlink./terminology---runtime-components.html#Management UIbelakanglink.
 
 {% align center %}
 
@@ -53,4 +53,4 @@ depanimagesba_with_backup.jpgtengahimage/attachment_files/xap97net/sba_with_back
 {% endalign %}
 {% endsection %}
 
-|[Basic Components|Terminology - Basic Components]|[Data Grid Topologies|Terminology - Data Grid Topologies]||Space-Based Architecture|[Runtime Components|Terminology - Runtime Components]|
+|depanlinkBasic Componentstengahlink./terminology---basic-components.htmlbelakanglink|depanlinkData Grid Topologiestengahlink./terminology---data-grid-topologies.htmlbelakanglink||Space-Based Architecture|depanlinkRuntime Componentstengahlink./terminology---runtime-components.htmlbelakanglink|

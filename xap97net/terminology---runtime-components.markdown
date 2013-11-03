@@ -6,7 +6,7 @@ page_id: 63799418
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.
-|[Basic Components|Terminology - Basic Components]|[Data Grid Topologies|Terminology - Data Grid Topologies]|[Space-Based Architecture|Terminology - Space-Based Architecture]||Runtime Components|
+|depanlinkBasic Componentstengahlink./terminology---basic-components.htmlbelakanglink|depanlinkData Grid Topologiestengahlink./terminology---data-grid-topologies.htmlbelakanglink|depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink||Runtime Components|
 
 # GigaSpaces Runtime and Administration Components
 
@@ -34,7 +34,7 @@ page_id: 63799418
 
 {% column width=50% %}
 
-A container that hosts a [Processing Unit|Terminology - Basic Components#Processing Unit].
+A container that hosts a depanlinkProcessing Unittengahlink./terminology---basic-components.html#Processing Unitbelakanglink.
 
 {% sub %}Key sentence: The Processing Unit can run only inside a hosting Processing Unit Container.{% endsub %}
 
@@ -135,7 +135,7 @@ depanimageterm_gscnet.giftengahimage/attachment_files/xap97net/term_gscnet.gifbe
 
 
 A set of depanlinkGrid Service Containers (GSC)tengahlink#GSCbelakanglink managed by a depanlinkGrid Service Manager (GSM)tengahlink#GSMbelakanglink.
-The containers host various deployments of [Processing Units|Terminology - Basic Components#Processing Unit], [Data Grid|Terminology - Data Grid Topologies].
+The containers host various deployments of depanlinkProcessing Unitstengahlink./terminology---basic-components.html#Processing Unitbelakanglink, depanlinkData Gridtengahlink./terminology---data-grid-topologies.htmlbelakanglink.
 Each container can be run on a separate physical machine.
 
 {% sub %}Key sentence: A set of managed containers hosting Processing Unit Deployments{% endsub %}
@@ -171,7 +171,7 @@ Each container can be run on a separate physical machine.
 
 #### Grid Service Container (GSC)
 
-A depanlinkService Gridtengahlink#Service Gridbelakanglink component which hosts [Processing Unit|Terminology - Basic Components#Processing Unit] instances.
+A depanlinkService Gridtengahlink#Service Gridbelakanglink component which hosts depanlinkProcessing Unittengahlink./terminology---basic-components.html#Processing Unitbelakanglink instances.
 A machine can run one or more GSC processes. Each GSC communicates with a manager component (depanlinkGSMtengahlink#GSMbelakanglink). The GSC receives requests to start/stop a processing unit instance, and sends information about the machine which runs it (OS, processor architecture, current memory and CPU stats), the software installed on it and the status of processing unit instances currently running on it.
 
 {% sub %}Key sentence: A set of managed containers hosting different Processing Unit Instances{% endsub %}
@@ -256,4 +256,4 @@ Enables the user to view and interact with the runtime components running in the
 
 
 
-|[Basic Components|Terminology - Basic Components]|[Data Grid Topologies|Terminology - Data Grid Topologies]|[Space-Based Architecture|Terminology - Space-Based Architecture]||Runtime Components|
+|depanlinkBasic Componentstengahlink./terminology---basic-components.htmlbelakanglink|depanlinkData Grid Topologiestengahlink./terminology---data-grid-topologies.htmlbelakanglink|depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink||Runtime Components|

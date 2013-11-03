@@ -62,18 +62,18 @@ proxy.Write(kermit);
 {% endhighlight %}
 
 
-{% refer %}See full details in [Writing and Updating Entries|Writing and Updating Entries]{% endrefer %}
+{% refer %}See full details in depanlinkWriting and Updating Entriestengahlink./writing-and-updating-entries.htmlbelakanglink{% endrefer %}
 
 {% comment %}
 
-{% refer %}See how to [connect to a space|Connecting to a Space]{% endrefer %}
+{% refer %}See how to ajepaaaConnecting to a Spaceajepbbb{% endrefer %}
 
 {% endcomment %}
 
 
 # Retrieving an Entry - Read
 
-Entries can be retrieved from the space using the `Read` method. A read operation queries the space for an entry matching the provided [template|Query Template Types], and returns a copy of that entry (or null, if no match is found).
+Entries can be retrieved from the space using the `Read` method. A read operation queries the space for an entry matching the provided ajepaaaQuery Template Typesajepbbb, and returns a copy of that entry (or null, if no match is found).
 The returned object is a copy of the entry stored in the space, which means that changing the returned object does not affect the entry stored in the space.
 
 
@@ -95,7 +95,7 @@ Person readResult = proxy.Read(readTemplate);
 {% endhighlight %}
 
 
-{% refer %}See full details in [Reading Entries|Reading Entries]{% endrefer %}
+{% refer %}See full details in depanlinkReading Entriestengahlink./reading-entries.htmlbelakanglink{% endrefer %}
 
 # Retrieving and Removing an Entry - Take
 
@@ -124,7 +124,7 @@ Person takeResult = proxy.Take(takeTemplate);
 
 All operations are done through a proxy to a space, that proxy can also be a proxy to a cluster of spaces where each space holds a certain partition of the data of all the cluster, this is known as the partitioned cluster topology. Each new object that is stored in the cluster is routed to a specific partition (space), this partition is determined by the hashcode of the SpaceRouting field or property. Routing an object to a specific partition allows fast retrieval afterwards. Instead of searching for the object in each one of the spaces in the cluster, the proxy can query a specific space with in the cluster using the SpaceRouting field or property.
 
-The SpaceRouting is determined by the `ajepaaa\[SpaceRouting\ajepbbb|Object Metadata#SpaceRouting]` attribute or using a [gs.xml|GS.XML Metadata].
+The SpaceRouting is determined by the `ajepaaa\depanlinkSpaceRouting\ajepbbbtengahlink./object-metadata.html#SpaceRoutingbelakanglink` attribute or using a depanlinkgs.xmltengahlink./gs.xml-metadata.htmlbelakanglink.
 
-{% refer %}SpaceRouting consideration in [Write and Update operation|Writing and Updating Entries]{% endrefer %}
-{% refer %}SpaceRouting consideration in [Read operation|Reading Entries]{% endrefer %}
+{% refer %}SpaceRouting consideration in depanlinkWrite and Update operationtengahlink./writing-and-updating-entries.htmlbelakanglink{% endrefer %}
+{% refer %}SpaceRouting consideration in depanlinkRead operationtengahlink./reading-entries.htmlbelakanglink{% endrefer %}

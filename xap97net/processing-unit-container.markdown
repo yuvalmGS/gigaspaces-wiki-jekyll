@@ -106,7 +106,7 @@ The `pu.config` you've created needs to be edited to point to your Processing Un
 
 {% endtoczone %}
 
-{% refer %}It is possible to create a processing unit of mixed languages, for instance part Java, part .NET. This topic is covered in [Interop Processing Unit|Interop Processing Unit] page.{% endrefer %}
+{% refer %}It is possible to create a processing unit of mixed languages, for instance part Java, part .NET. This topic is covered in depanlinkInterop Processing Unittengahlink./interop-processing-unit.htmlbelakanglink page.{% endrefer %}
 
 # SLA Definition
 
@@ -117,6 +117,6 @@ That file should be named `sla.xml`, and should be placed in the root directory 
 
 # Deployment
 
-There are several ways to deploy the Processing Unit Container into the Service Grid. Are all detailed extensively in the [.NET Processing Unit Data Example|Your First XTP Application#Deployment] section.
+There are several ways to deploy the Processing Unit Container into the Service Grid. Are all detailed extensively in the depanlink.NET Processing Unit Data Exampletengahlink./your-first-xtp-application.html#Deploymentbelakanglink section.
 
 The most straightforward way is to use the GigaSpaces Management Center for deployment.

@@ -417,7 +417,7 @@ depanimagehttpSessionSharing6.jpgtengahimage/attachment_files/sbp/httpSessionSha
 You can shutdown Websphere or Tomcat and later restart these. Your web application will not lose its session data.
 
 ### Multi-Site Deployment
-When deploying the [multi-site example|WAN Replication Gateway] you should change the `shiro.ini` for each site to match the local site Space URL. For example,
+When deploying the depanlinkmulti-site exampletengahlink./wan-replication-gateway.htmlbelakanglink you should change the `shiro.ini` for each site to match the local site Space URL. For example,
 to connect to the DE space you should have the web application use a `shiro.ini` with the following:
 
 

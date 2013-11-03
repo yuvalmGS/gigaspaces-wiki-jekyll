@@ -70,7 +70,7 @@ depanimagefootprint_bench7.1.2.jpgtengahimage/attachment_files/sbp/footprint_ben
 
 
 {% tip %}
-You may decrease the raw object footprint (not the indexes footprint) using the [GigaSpaces Serialization API|Lowering the Space Object Footprint]
+You may decrease the raw object footprint (not the indexes footprint) using the depanlinkGigaSpaces Serialization APItengahlink./lowering-the-space-object-footprint.htmlbelakanglink
 {% endtip %}
 
 

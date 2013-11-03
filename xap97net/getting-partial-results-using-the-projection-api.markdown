@@ -62,7 +62,7 @@ Person result[] = space.ReadByIds(idsQuery).ResultsArray;
 {% endhighlight %}
 
 
-The [SpaceDocument|Document (Schema-Free) Entries] support projections as well:
+The depanlinkSpaceDocumenttengahlink./document-(schema-free)-entries.htmlbelakanglink support projections as well:
 
 {% highlight java %}
 SqlQuery<SpaceDocument> docQuery = new SqlQuery<SpaceDocument>(typeof(Person).Name ,"") {Projections = new []{"FirstName", "LastName"};
@@ -73,7 +73,7 @@ SpaceDocument docresult[] = space.ReadMultiple(docQuery);
 # Supported Operations
 
 The projection is defined for any operation that returns data from the space. Therefore ID Based or Query based operations support projections. You can use projections with `Read`,`Take`,`ReadById`,`TakeById`,`ReadMultiple` and `TakeMultiple` operations. When performing a `Take` operation with projections, the entire object will be removed from the space, but the result returned to the user will contain only the projected properties.
-You can use projections with the [Notify Container|Notify Container Component] when subscribing to notifications, or with the [Polling Container|Polling Container Component] when consuming space objects. You can also create a [Local View] with templates or a `View` using projections. The local view will maintain the relevant objects, but with the projected data - only with the projected properties.
+You can use projections with the depanlinkNotify Containertengahlink./notify-container-component.htmlbelakanglink when subscribing to notifications, or with the depanlinkPolling Containertengahlink./polling-container-component.htmlbelakanglink when consuming space objects. You can also create a depanlinkLocal Viewtengahlink./local-view.htmlbelakanglink with templates or a `View` using projections. The local view will maintain the relevant objects, but with the projected data - only with the projected properties.
 Projected properties can specify both dynamic or fixed properties and the usage is the same. As a result, when providing a projected property name which is not part of the fixed properties set, it will be treated as a dynamic property. If there is no dynamic property present with that name on an object which is a result of the query - that projection property will be ignored (and no exception will be raised). Please note that a result may contain multiple objects, each with different set of properties (fixed and dynamic), each object will be treated individually when applying the projections on it.
 
 {% exclamation %} Space Iterator does not support projections

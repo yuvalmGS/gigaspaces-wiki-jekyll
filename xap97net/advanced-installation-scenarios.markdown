@@ -17,11 +17,11 @@ GigaSpaces XAP.NET takes advantage of several runtime components from GigaSpaces
 
 #### Q. Can I install XAP.NET using an existing java installation?
 
-Yes. See [Jvm Configuration|Jvm Configuration#JvmLocation] for more information.
+Yes. See depanlinkJvm Configurationtengahlink./jvm-configuration.html#JvmLocationbelakanglink for more information.
 
 #### Q. I've already installed XAP.NET. Can I configure it to work with a different java version or location?
 
-Yes. See [Jvm Configuration|Jvm Configuration#JvmLocation] for more information.
+Yes. See depanlinkJvm Configurationtengahlink./jvm-configuration.html#JvmLocationbelakanglink for more information.
 
 # Customizing XAP
 

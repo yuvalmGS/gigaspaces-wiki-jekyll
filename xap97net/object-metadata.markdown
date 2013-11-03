@@ -17,7 +17,7 @@ However, in many cases this generic approach is not enough. For example, you may
 
 If you don't want to (or can't) use XAP.NET attributes in your classes code, you can create an xml file that defines those behaviours, commonly called `gs.xml`.
 
-{% infosign %} Since working with attributes is usually simpler and easier, this page demonstrates all the features using attributes. However, every feature shown here can also be achieved using `[gs.xml|GS.XML Metadata]`.
+{% infosign %} Since working with attributes is usually simpler and easier, this page demonstrates all the features using attributes. However, every feature shown here can also be achieved using `depanlinkgs.xmltengahlink./gs.xml-metadata.htmlbelakanglink`.
 
 # Including/Excluding Content from the Space
 
@@ -184,10 +184,10 @@ namespace MyCompany.MyProject
 }
 {% endhighlight %}
 
-For more information, see [GigaSpaces.NET - Interoperability With Non .NET Applications|Interoperability].
+For more information, see depanlinkGigaSpaces.NET - Interoperability With Non .NET Applicationstengahlink./interoperability.htmlbelakanglink.
 
 {% note title=AliasName and SqlQuery %}
-When using space SqlQuery on an object with properties which are aliased, the query text needs to use the aliased property names. For more information about SqlQuery, see [GigaSpaces.NET - Sql Query|SqlQuery].
+When using space SqlQuery on an object with properties which are aliased, the query text needs to use the aliased property names. For more information about SqlQuery, see depanlinkGigaSpaces.NET - Sql Querytengahlink./sqlquery.htmlbelakanglink.
 {% endnote %}
 
 

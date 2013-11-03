@@ -11,11 +11,11 @@ page_id: 63799343
 
 # Overview
 
-Executor based remoting uses [Executors|Task Execution over the Space] to implement remoting capabilities on top of the space. Executor based remoting allows for direct invocation of services, both in synchronous and an asynchronous manner as well as broadcast capabilities. Executor remoting works with services that are exposed within a processing unit that started a collocated space.
+Executor based remoting uses depanlinkExecutorstengahlink./task-execution-over-the-space.htmlbelakanglink to implement remoting capabilities on top of the space. Executor based remoting allows for direct invocation of services, both in synchronous and an asynchronous manner as well as broadcast capabilities. Executor remoting works with services that are exposed within a processing unit that started a collocated space.
 
 depanimageExecutor.jpgtengahimage/attachment_files/xap97net/Executor.jpgbelakangimage
 
-{% refer %}For a full SBA example demonstrating remote services usage please refer to the [Data Example|.NET Processing Unit Data Example]{% endrefer %}
+{% refer %}For a full SBA example demonstrating remote services usage please refer to the ajepaaa.NET Processing Unit Data Exampleajepbbb{% endrefer %}
 
 # Defining the Contract
 
@@ -53,7 +53,7 @@ public class DataProcessor : IDataProcessor
 
 # Hosting the Service in the Grid
 
-The next step is hosting the service in the grid. Hosting the service is done on the server side within a processing unit that hosts the service, when using the [Basic Processing Unit Container|Basic Processing Unit Container], all types which have the \[SpaceRemotingService\] attribute, will automatically be created and hosted:
+The next step is hosting the service in the grid. Hosting the service is done on the server side within a processing unit that hosts the service, when using the depanlinkBasic Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink, all types which have the \ajepaaaSpaceRemotingService\ajepbbb attribute, will automatically be created and hosted:
 
 
 {% highlight java %}
@@ -67,7 +67,7 @@ public class DataProcessor : IDataProcessor
 
 {% infosign %} Hosting services is done on a Processing Unit that starts an embedded space.
 
-{% refer %}For more details regarding service hosting please refer to [Domain Service Host|Domain Service Host]{% endrefer %}
+{% refer %}For more details regarding service hosting please refer to depanlinkDomain Service Hosttengahlink./domain-service-host.htmlbelakanglink{% endrefer %}
 
 # Using the Service on the Client Side
 
@@ -100,7 +100,7 @@ IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 {% endhighlight %}
 
 
-{% refer %}Learn how to host a service under specific lookup names in [Domain Service Host|Domain Service Host#Service Lookup Name]{% endrefer %}
+{% refer %}Learn how to host a service under specific lookup names in depanlinkDomain Service Hosttengahlink./domain-service-host.html#Service Lookup Namebelakanglink{% endrefer %}
 
 ## Remote Routing Handler
 

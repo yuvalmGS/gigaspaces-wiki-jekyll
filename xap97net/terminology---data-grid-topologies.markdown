@@ -6,7 +6,7 @@ page_id: 63799407
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.
-|[Basic Components|Terminology - Basic Components]||Data Grid Topologies|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|
+|depanlinkBasic Componentstengahlink./terminology---basic-components.htmlbelakanglink||Data Grid Topologies|depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink|depanlinkRuntime Componentstengahlink./terminology---runtime-components.htmlbelakanglink|
 
 # Data Grid
 
@@ -191,4 +191,4 @@ depanimageterm_partitioned_primary_backup_data_grid.giftengahimage/attachment_fi
 {% endsection %}
 
 
-|[Basic Components|Terminology - Basic Components]||Data Grid Topologies|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|
+|depanlinkBasic Componentstengahlink./terminology---basic-components.htmlbelakanglink||Data Grid Topologies|depanlinkSpace-Based Architecturetengahlink./terminology---space-based-architecture.htmlbelakanglink|depanlinkRuntime Componentstengahlink./terminology---runtime-components.htmlbelakanglink|

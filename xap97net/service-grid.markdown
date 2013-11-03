@@ -43,7 +43,7 @@ Note that the Lookup service is primarily used for establishing the initial conn
 
 Service registrations in the LUS are lease-based, and each service periodically renews its lease. That way, if a service hangs or disconnects from the LUS, its registration will be cancelled when the lease expires.
 
-The Lookup Service can be configured for either a [multicast|How to Configure Multicast] or [unicast|How to Configure Unicast Discovery] environment (default is multicast).
+The Lookup Service can be configured for either a depanlinkmulticasttengahlink./how-to-configure-multicast.htmlbelakanglink or depanlinkunicasttengahlink./how-to-configure-unicast-discovery.htmlbelakanglink environment (default is multicast).
 
 Another important attribute in that context is the **lookup group**. The lookup group is a logical grouping of all the components that belong to the same runtime cluster. Using lookup groups, you can run multiple deployments on the same physical infrastructure, without them interfering with one another. For more details please refer to depanlinkLookup Service Configurationtengahlink./lookup-service-configuration.htmlbelakanglink.
 
@@ -77,11 +77,11 @@ Global processes take into account the number of process types (depanlinkGrid Se
 
 The Service Grid can be started in two fashions:
 1. **Console Application** - using `<GSHOME>\bin\gs-agent.exe`
-2. **Windows Service** - using the [GigaSpaces Windows Services Manager|Service Grid Components as Windows Services] tool bundled with XAP.NET.
+2. **Windows Service** - using the depanlinkGigaSpaces Windows Services Managertengahlink./service-grid-components-as-windows-services.htmlbelakanglink tool bundled with XAP.NET.
 
 Usually the console application is used by developers whereas the Windows service is used in production environments.
 
-The preferable (and easiest) way to start a Service Grid is the [Grid Service Agent (GSA)|Service Grid#gsa]. However, each of the components can be started manually.
+The preferable (and easiest) way to start a Service Grid is the depanlinkGrid Service Agent (GSA)tengahlink./service-grid.html#gsabelakanglink. However, each of the components can be started manually.
 
 The following table summarized how to start each component:
 || Component || Linux (XAP) || Windows (XAP) || Windows (XAP.NET) ||

@@ -30,7 +30,7 @@ There are two main problems that the GigaSpaces-Excel solution is relevant for:
 
 | ** You are working with a **very large amount of data**, which **causes Excel to slow down or freeze*
 - However, **you need only a portion of your data to be displayed** in Excel at a time
-- You need the spreadsheet to be **updated constantly** | depanimageblue_arrow2.jpgtengahimage/attachment_files/sbp/blue_arrow2.jpgbelakangimage | **[Data offload|Data Offload - GigaSpaces-Excel Integration]** |
+- You need the spreadsheet to be **updated constantly** | depanimageblue_arrow2.jpgtengahimage/attachment_files/sbp/blue_arrow2.jpgbelakangimage | **depanlinkData offloadtengahlink./data-offload---gigaspaces-excel-integration.htmlbelakanglink** |
 | ** You are **performing very complex calculations**, or a **large amount of calculations* in Excel
-- These calculations are **costly** -- they **cause Excel to slow down or freeze**; or **slow down other applications** | depanimageblue_arrow2.jpgtengahimage/attachment_files/sbp/blue_arrow2.jpgbelakangimage | **[Calculation offload|Calculation Offload - GigaSpaces-Excel Integration]** |
+- These calculations are **costly** -- they **cause Excel to slow down or freeze**; or **slow down other applications** | depanimageblue_arrow2.jpgtengahimage/attachment_files/sbp/blue_arrow2.jpgbelakangimage | **depanlinkCalculation offloadtengahlink./calculation-offload---gigaspaces-excel-integration.htmlbelakanglink** |
 

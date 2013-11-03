@@ -24,7 +24,7 @@ The activities to scale up the application (add more instances) could be startin
 
 
 {% tip %}
-See the [Mule ESB Example|Mule ESB Example#Scale Dynamically] for an advanced usage of the Administration and Monitoring API
+See the depanlinkMule ESB Exampletengahlink./mule-esb-example.html#Scale Dynamicallybelakanglink for an advanced usage of the Administration and Monitoring API
 {% endtip %}
 
 

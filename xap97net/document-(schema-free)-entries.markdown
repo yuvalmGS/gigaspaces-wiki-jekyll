@@ -252,15 +252,15 @@ The `Document` properties' values can be either scalars (integers, strings, enum
 
 # Indexing
 
-Properties and nested paths can be [indexed|indexing] to boost queries performance. In the type registration sample above, the **Name** and **Price** properties are indexed.
+Properties and nested paths can be depanlinkindexedtengahlink./indexing.htmlbelakanglink to boost queries performance. In the type registration sample above, the **Name** and **Price** properties are indexed.
 
 Since the schema is flexible and new properties might be added after the type has been registered, it is possible to add indexes dynamically as well.
 
-{% refer %}For more information about indexing, see the [Indexing|Indexing] page.{% endrefer %}
+{% refer %}For more information about indexing, see the depanlinkIndexingtengahlink./indexing.htmlbelakanglink page.{% endrefer %}
 
 # Events
 
-Event containers (both [polling container|Polling Container Component] and [notify container|Notify Container Component]) support `SpaceDocument` entries.
+Event containers (both depanlinkpolling containertengahlink./polling-container-component.htmlbelakanglink and depanlinknotify containertengahlink./notify-container-component.htmlbelakanglink) support `SpaceDocument` entries.
 
 Here is a simple example of a polling event container configuration using a `SpaceDocument`:
 

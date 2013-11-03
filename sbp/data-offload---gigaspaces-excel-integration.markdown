@@ -34,8 +34,8 @@ This can be done using the **depanlinkExcel Space Viewertengahlink./excel-space-
 
 ## 3 -- Defining Refresh Policy
 
-If you need the data displayed in your spreadsheet to be constantly updated, you can do this using the depanlinkExcel Space Viewertengahlink./excel-space-viewer.htmlbelakanglink. Simply define the required refresh rate in milliseconds in the [New View|Excel Space Viewer#Creating New View] or [Configure View|Excel Space Viewer#Changing Existing View] window. Excel in turn loads the updated data from the space according to the specified refresh rate.
+If you need the data displayed in your spreadsheet to be constantly updated, you can do this using the depanlinkExcel Space Viewertengahlink./excel-space-viewer.htmlbelakanglink. Simply define the required refresh rate in milliseconds in the depanlinkNew Viewtengahlink./excel-space-viewer.html#Creating New Viewbelakanglink or depanlinkConfigure Viewtengahlink./excel-space-viewer.html#Changing Existing Viewbelakanglink window. Excel in turn loads the updated data from the space according to the specified refresh rate.
 
 # What's Next?
 
-{% refer %}[Try another pattern|Excel that Scales Solution]{% endrefer %}
+{% refer %}depanlinkTry another patterntengahlink./excel-that-scales-solution.htmlbelakanglink{% endrefer %}

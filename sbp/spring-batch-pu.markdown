@@ -68,7 +68,7 @@ depanimagespring_batch_SequentialAndConditionalFlows.jpgtengahimage/attachment_f
 A typical batch program generally reads a large number of records from a database, file, or queue, processes the data in some fashion, and then writes back data in a modified form. Spring Batch automates this basic batch iteration, providing the capability to process similar transactions as a set, typically in an offline environment without any user interaction. Batch jobs are part of most IT projects and Spring Batch is the only open source framework that provides a robust, enterprise-scale solution.
 
 # GigaSpaces Spring Batch PU
-In GigaSpaces XAP, you can implement the [Master-Worker pattern|Master-Worker Pattern] using several methods:
+In GigaSpaces XAP, you can implement the depanlinkMaster-Worker patterntengahlink./master-worker-pattern.htmlbelakanglink using several methods:
 - Task Executors - Best for scenarios where the processing activity is collocated with the data. Designed for low latency situations.
 - Polling Containers - A remote consumer/worker component used with simple processing scenarios.
 - Spring Batch - A remote consumer/worker component used with complex processing scenarios. Leveraging Spring Bach Framework to manage flows.

@@ -58,8 +58,8 @@ In XAP.NET, a processing unit can be implemented imperatively (extending an abst
 Event containers are used to abstract the event processing from the event source. This abstraction enables users to build their business logic with minimal binding to the underlying event source, whether it is a space-based event source or not.
 
 Two types of event containers are available in the product:
-- [Polling|Polling Container Component] - Polls the space for entries matching the specified template.
-- [Notify|Notify Container Component] - Subscribes for notifications from the space on entries matching the specified template.
+- depanlinkPollingtengahlink./polling-container-component.htmlbelakanglink - Polls the space for entries matching the specified template.
+- depanlinkNotifytengahlink./notify-container-component.htmlbelakanglink - Subscribes for notifications from the space on entries matching the specified template.
 {% plus %} The event container object model is designed to be customizable and extensible, so users can customize the behavior of those 2 containers or even create their own containers.
 
 An event container is simply a class which defines:
@@ -114,7 +114,7 @@ Or XML:
 
 ### The ISpaceProxy Core Middleware Component
 
-The `ISpaceProxy` component is a .NET POCO driven abstraction of the JavaSpaces specification. JavaSpaces is a service specification. It provides a distributed object exchange/coordination mechanism (which might or might not be persistent) for objects. It can be used to store the system state and implement distributed algorithms. In a space, all communication partners (peers) communicate by sharing states. It is an implementation of the [Tuple spaces idea|Concepts#tuple].
+The `ISpaceProxy` component is a .NET POCO driven abstraction of the JavaSpaces specification. JavaSpaces is a service specification. It provides a distributed object exchange/coordination mechanism (which might or might not be persistent) for objects. It can be used to store the system state and implement distributed algorithms. In a space, all communication partners (peers) communicate by sharing states. It is an implementation of the depanlinkTuple spaces ideatengahlink./concepts.html#tuplebelakanglink.
 
 Space is used when users want to achieve scalability and availability, while reducing the complexity of the overall system. Processes perform simple operations to write new objects into a space, take objects from a space, or read (make a copy of) objects from a space.
 
@@ -148,7 +148,7 @@ public class Data
 
 ### Space-Based Remoting
 
-[Space-Based Remoting|Space Based Remoting] allows for POCO services that are collocated within a specific processing unit to be exposed to remote clients, like any other RMI or RPC service.
+depanlinkSpace-Based Remotingtengahlink./space-based-remoting.htmlbelakanglink allows for POCO services that are collocated within a specific processing unit to be exposed to remote clients, like any other RMI or RPC service.
 
 The client uses the `ExecutorRemotingProxyBuilder<T>` to create a space-based dynamic proxy for the service T. The client uses the proxy to invoke methods on the appropriate service instance. The proxy captures the invocation, extracts information on the service-instance, the method-name, and arguments, and invokes a service request on the space using that information. It then blocks for a response, which can be either a successful result or an exception thrown by the remote service.
 

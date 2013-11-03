@@ -59,11 +59,11 @@ See blow an example of `Car` class's space metadata definitions in GS.XML
 || Attribute || Description ||
 | `name` | (Required) Contains the full qualified name of the specified class. There can only be one `class` element defined per class. |
 | `persist` | This property indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this property persists objects of this type. {% refer %}For more details, refer to the depanlink.NET Persistencytengahlink./persistency.htmlbelakanglink section. {% endrefer %} |
-| `fifo` | Indicates whether the POJO should be saved in FIFO order in the space. To enable FIFO-based notifications and take operations, this annotation should be `true`. {% refer %}For more details, refer to the [FIFO operations|FIFO Support] section.{% endrefer %} |
+| `fifo` | Indicates whether the POJO should be saved in FIFO order in the space. To enable FIFO-based notifications and take operations, this annotation should be `true`. {% refer %}For more details, refer to the depanlinkFIFO operationstengahlink./fifo-support.htmlbelakanglink section.{% endrefer %} |
 | `replicate` | Valid only in cluster toplogies that have replication defined. In this case, it specifies whether each class should be replicated or not |
 | `include-properties` |Gives the ability to expose or hide properties from the space (default is public).
-For more details, see: [Object Metadata|Object Metadata#Including/Excluding Content from the Space] |
-| `include-fields` |Gives the ability to expose or hide fields from the space (default is public) {% refer %}For more details, see: [Object Metadata|Object Metadata#Including/Excluding Content from the Space]{% endrefer %} |
+For more details, see: depanlinkObject Metadatatengahlink./object-metadata.html#Including/Excluding Content from the Spacebelakanglink |
+| `include-fields` |Gives the ability to expose or hide fields from the space (default is public) {% refer %}For more details, see: depanlinkObject Metadatatengahlink./object-metadata.html#Including/Excluding Content from the Spacebelakanglink{% endrefer %} |
 | `alias-name` |Gives the ability to map a .NET class name (including namespace) to a space class name |
 
 ### Field Level Elements
@@ -74,7 +74,7 @@ For more details, see: [Object Metadata|Object Metadata#Including/Excluding Cont
 | `index` | Indicates if the field is indexed in the space. |
 | `null-value` | Represents a `null` value for the current field. Applicable mainly for primitive type fields that does not have explicit null vallue. |
 | `alias-name` | Defines the name the field will have when stored to the space. |
-| `storage-type` | Defines the storage format the field will have once stored to the space. See [this|Property Storage Type] page for details|
+| `storage-type` | Defines the storage format the field will have once stored to the space. See depanlinkthistengahlink./property-storage-type.htmlbelakanglink page for details|
 
 
 {% highlight java %}

@@ -98,7 +98,7 @@ Since the cache needs to investigate the template to decide whether it is consid
 
 The Entries stored in the local cache might need to be evicted at some point, due to size limitations, time limitations, etc. This behavior is determined by the eviction strategy the cache has been configured to work with. XAP.NET comes with a few built-in eviction strategies -- LRU (Last Recently Used), which is the default strategy, FIFO, LFU, and more. Eviction strategy is a pluggable component that can also be implemented with custom behavior.
 
-{% refer %}Refer to [Cache Eviction Strategy|Cache Eviction Strategy] for more info.{% endrefer %}
+{% refer %}Refer to depanlinkCache Eviction Strategytengahlink./cache-eviction-strategy.htmlbelakanglink for more info.{% endrefer %}
 
 {% anchor sync %}
 
@@ -110,7 +110,7 @@ Once an Entry is loaded into the cache, it is kept synchronized with the remote 
 
 # Configuring the local cache
 
-The local cache can be configured before it is initialized, by supplying the constructor with a custom `IdBasedLocalCacheConfig` object. The most common configuration option is the [eviction strategy|Cache Eviction Strategy].
+The local cache can be configured before it is initialized, by supplying the constructor with a custom `IdBasedLocalCacheConfig` object. The most common configuration option is the depanlinkeviction strategytengahlink./cache-eviction-strategy.htmlbelakanglink.
 
 
 {% highlight java %}

@@ -11,7 +11,7 @@ page_id: 63799395
 
 # Introduction
 
-A **Local View** is a [Client Side Cache|Client Side Caching] that maintains a subset of the master space's data. The Local View allows the client to read distributed data without performing any remote calls.
+A **Local View** is a depanlinkClient Side Cachetengahlink./client-side-caching.htmlbelakanglink that maintains a subset of the master space's data. The Local View allows the client to read distributed data without performing any remote calls.
 
 Data is streamed into the client's local view based on predefined criteria (a collection of depanlinkSQLQuerytengahlink./sqlquery.htmlbelakanglink objects). These criteria are specified by the client when the local view is created.
 
@@ -59,7 +59,7 @@ Data is **never** evicted from the local view (the cache policy is hardwired to 
 
 As data is stored in the client application's memory, care must be taken to ensure that the application's memory is sufficient to maintain the data. Certain scenarios can result in a memory shortage. If you create multiple local views in the same client or your local view query is too broad, the application could run out of memory and the `MemoryShortageException` will be thrown.
 
-To overcome this either refine the local view queries to cache less data or increase the underlying JVM's memory, as explained in [Jvm Configuration|Jvm Configuration].
+To overcome this either refine the local view queries to cache less data or increase the underlying JVM's memory, as explained in depanlinkJvm Configurationtengahlink./jvm-configuration.htmlbelakanglink.
 
 # Synchronization
 

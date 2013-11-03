@@ -22,7 +22,7 @@ This section explains the topologies supported by XAP: Replicated, partitioned a
 - **Space (data grid) instance**: an independent data storage unit. The Space is comprised of all the space instances running on the network. depanimageDGA-DataGrid.jpgtengahimage/attachment_files/xap97net/DGA-DataGrid.jpgbelakangimage
 - **Space**: GigaSpaces data grid implementation. A distributed, shared, memory-based repository for objects. A space runs in a _space container_ which is usually transparent to the developer.
 depanimageDGA-GigaSpacesDataGrid.jpgtengahimage/attachment_files/xap97net/DGA-GigaSpacesDataGrid.jpgbelakangimage
-- **GigaSpaces Container (GSC)**: a generic container that can run one or more [processing units|Packaging and Deployment]. A space instance usually runs within a processing unit. The GSC is launched on each machine that participates in the space cluster, and hosts the space instances. depanimageDGA-ServiceGridDataGrid.jpgtengahimage/attachment_files/xap97net/DGA-ServiceGridDataGrid.jpgbelakangimage
+- **GigaSpaces Container (GSC)**: a generic container that can run one or more depanlinkprocessing unitstengahlink./packaging-and-deployment.htmlbelakanglink. A space instance usually runs within a processing unit. The GSC is launched on each machine that participates in the space cluster, and hosts the space instances. depanimageDGA-ServiceGridDataGrid.jpgtengahimage/attachment_files/xap97net/DGA-ServiceGridDataGrid.jpgbelakangimage
 - **Remote vs. Collocated**: The Space can be remote to the application or collocated with the application. With Remote mode any space operation will involve network usage. With collocated mode, there is no network utilization. This mode improves the performance and latency with activities that performs space operations.
 depanimageremote_embedded_space_topology.jpgtengahimage/attachment_files/xap97net/remote_embedded_space_topology.jpgbelakangimage
 - **Replication**: A relationship in which data is copied between two or more space instances, with the aim of having the same data in some or all of them. depanimageDGA-Replication2.jpgtengahimage/attachment_files/xap97net/DGA-Replication2.jpgbelakangimage
@@ -35,7 +35,7 @@ depanimageremote_embedded_space_topology.jpgtengahimage/attachment_files/xap97ne
 
 
 {% info title=Replication Configuration %}
-For more details on how to configure the replication mechanisms of the Space, refer to [Replication|Replication] in the [Administrator's Guide].
+For more details on how to configure the replication mechanisms of the Space, refer to depanlinkReplicationtengahlink/xap97/replication.htmlbelakanglink in the depanlinkAdministrator's Guidetengahlink./administrator's-guide.htmlbelakanglink.
 {% endinfo %}
 
 
@@ -44,15 +44,15 @@ For more details on how to configure the replication mechanisms of the Space, re
 GigaSpaces XAP supports the following data grid topologies:
 
 || Topology and Description || Common Use || Options ||
-| **Replicated** ([view diagram|dg_a_topology2a.gif])
+| **Replicated** (ajepaaadg_a_topology2a.gifajepbbb)
  Two or more space instances with replication between them. | Allowing two or more applications to work with their own dedicated data store, while working on the same data as the other applications. Also allows for load distribution between multiple space instances in read-intensive scenarios. | * Replication can be synchronous (slower but with better consistency) or asynchronous (faster but less reliable, as it does not guarantee consistency and immediate replication).
 - Space instances can run on the same memory as the application (embedded - allows faster read access) or in a separate process (remote - allows multiple applications to use the space, easier management). |
-| **Partitioned** ([view diagram|dg_a_topology3.gif])
+| **Partitioned** (ajepaaadg_a_topology3.gifajepbbb)
  Data and operations are split between two or more space instances (partitions) according to a routing field defined in the data. | Allows the In-Memory Data Grid to hold large volumes of data, even if it is larger than the memory of a single machine, by splitting the data across several partitions. | * With/without backup space instance for each partition.
 - Business logic can be collocated with each partition and act on the data of the local partition. This is one of the principles of the SBA paradigm |
-| **Local Cache** ([view diagram|dg_a_topology4.gif])
+| **Local Cache** (ajepaaadg_a_topology4.gifajepbbb)
  Each client has a lightweight, embedded cache (space instance), which is initially empty. Upon the first time data is read, it is loaded from a master space to the local cache (this is called lazy loading); the next time the same data is read, it is fetched quickly from the local cache without network access. Later on data is either updated from the master or evicted from the cache. For more information see depanlinkLocal Cachetengahlink./local-cache.htmlbelakanglink    | Boosting read performance for frequently used data. A useful rule of thumb is to use a local cache when over 80% of all operations are repetitive read operations. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc. |
-| **Local-View** ([view diagram|dg_a_topology5.gif])
+| **Local-View** (ajepaaadg_a_topology5.gifajepbbb)
  Each client has a lightweight, embedded cache (space instance), which contains a subset of the mater space's data. The client defines which data is cached using a collection of SQL queries, and the master space pushes the matching data to the client's cache. For more information see depanlinkLocal Viewtengahlink./local-view.htmlbelakanglink | Achieving maximal read performance for a predetermined subset of the data. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.|
 {% infosign %} The topologies above are provided in the GigaSpaces product as predefined cluster schemas. The schema names are:
 - Synchronous replication - `sync-replicated`

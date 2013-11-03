@@ -13,7 +13,7 @@ page_id: 47219279
 
 In this pattern, all Excel functions and calculations are performed **by the space** (on the server side) asynchronously. This allows you to use Excel regularly, where calculations are performed on the space side simultaneously, until the calculation is finished; then, Excel is notified and the data is displayed in the spreadsheet.
 
-This pattern is based on the [GigaSpaces master-worker pattern|Master-Worker Pattern], and allows you to offload complex logic from Excel spreadsheets to run in parallel on the GigaSpaces cluster collocated with the data.
+This pattern is based on the depanlinkGigaSpaces master-worker patterntengahlink./master-worker-pattern.htmlbelakanglink, and allows you to offload complex logic from Excel spreadsheets to run in parallel on the GigaSpaces cluster collocated with the data.
 
 A typical use-case for this pattern is a Value at Risk (VAR) calculation. The Excel user initiates a command to start a VAR calculation with specific parameters. This command is updated in the space using UDF. Once the command arrives, multiple Processing Units (PU) or spaces workers "pick up" the VAR task, execute it in parallel, and return the completed calculation result to the space (for example, with the status `done`). The completed results are then pushed to the Excel spreadsheet using RTD, which "listens" for a specific notification (for example, objects with status `done`); thus completing the workflow.
 
@@ -44,9 +44,9 @@ After you've implemented Processing Units to perform the calculation, you need t
 Using Microsoft Excel UDF (User-Defined Functions), Excel writes an Entry to the space instructing the Processing Units to begin working.
 
 {% refer %}**Learn how to do this**:
-- [HelloUDF example|RTD and UDF Examples - GigaSpaces-Excel Integration#HelloUDF -- Performing Excel Functions in Space] (basic)
-- [UDFSample example|RTD and UDF Examples - GigaSpaces-Excel Integration#UDFSample -- Performing Excel Functions in Space] (advanced)
-- [Writing Your First UDF Application|Writing Your First RTD or UDF Application]{% endrefer %}
+- depanlinkHelloUDF exampletengahlink./rtd-and-udf-examples---gigaspaces-excel-integration.html#HelloUDF -- Performing Excel Functions in Spacebelakanglink (basic)
+- depanlinkUDFSample exampletengahlink./rtd-and-udf-examples---gigaspaces-excel-integration.html#UDFSample -- Performing Excel Functions in Spacebelakanglink (advanced)
+- depanlinkWriting Your First UDF Applicationtengahlink./writing-your-first-rtd-or-udf-application.htmlbelakanglink{% endrefer %}
 
 ## 4 -- Implementing Finish Trigger
 
@@ -55,13 +55,13 @@ In the last step, you need to implement a finish trigger in the space, which tel
 The space writes a notification to the Microsoft Excel RTD (Real-Time Data) server, which in turn notifies Excel that the space has finished calculating.
 
 {% refer %}**Learn how to do this**:
-- [HelloRTD example|RTD and UDF Examples - GigaSpaces-Excel Integration#HelloRTD -- Loading Data from Space to Excel] (basic)
-- [RTDSample example|RTD and UDF Examples - GigaSpaces-Excel Integration#RTDSample -- Loading Data from Space to Excel] (advanced)
-- [Writing Your First UDF Application|Writing Your First RTD or UDF Application]{% endrefer %}
+- depanlinkHelloRTD exampletengahlink./rtd-and-udf-examples---gigaspaces-excel-integration.html#HelloRTD -- Loading Data from Space to Excelbelakanglink (basic)
+- depanlinkRTDSample exampletengahlink./rtd-and-udf-examples---gigaspaces-excel-integration.html#RTDSample -- Loading Data from Space to Excelbelakanglink (advanced)
+- depanlinkWriting Your First UDF Applicationtengahlink./writing-your-first-rtd-or-udf-application.htmlbelakanglink{% endrefer %}
 
 {% refer %}For details on building Excel Real-Time Data components in Visual Basic .NET, see the depanlinkMicrosoft websitetengahlinkhttp://msdn2.microsoft.com/en-us/library/aa140061(office.10).aspxbelakanglink.{% endrefer %}
 
 # What's Next?
 
-{% refer %}[See the full example|GigaSpaces-Excel Market-Data Example]{% endrefer %}
-{% refer %}[Try another pattern|Excel that Scales Solution]{% endrefer %}
+{% refer %}depanlinkSee the full exampletengahlink./gigaspaces-excel-market-data-example.htmlbelakanglink{% endrefer %}
+{% refer %}depanlinkTry another patterntengahlink./excel-that-scales-solution.htmlbelakanglink{% endrefer %}

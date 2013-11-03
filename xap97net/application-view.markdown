@@ -42,7 +42,7 @@ Dependencies between processing units are depicted by an arrow flowing in the di
 For example, in the screenshot below, the feeder depends on the Space to be alive.
 
 {% info %}
-For more information on processing unit dependencies, see [Application deployment and processing unit dependencies|Deploying onto the Service Grid#Application Deployment and Processing Unit Dependencies]
+For more information on processing unit dependencies, see depanlinkApplication deployment and processing unit dependenciestengahlink/xap97/deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependenciesbelakanglink
 {% endinfo %}
 
 
@@ -98,7 +98,7 @@ The events time line is filtered per application chosen from the application dro
 The events time-line shows the deployment life cycle of all the processing units belonging to this application.
 
 {% info %}
-For more information on the events displayed, see [Events time-line tab in dashboard view|Dashboard View#Events time-line]
+For more information on the events displayed, see depanlinkEvents time-line tab in dashboard viewtengahlink./dashboard-view.html#Events time-linebelakanglink
 {% endinfo %}
 
 

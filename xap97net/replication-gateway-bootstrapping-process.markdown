@@ -10,7 +10,7 @@ page_id: 63799425
 
 
 {% info %}
-This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)|Multi-Site Replication over the WAN] before reading this page.
+This page assume prior knowledge of multi-site replication, please refer to depanlinkMulti-Site Replication (WAN)tengahlink./multi-site-replication-over-the-wan.htmlbelakanglink before reading this page.
 {% endinfo %}
 
 
@@ -58,7 +58,7 @@ The bootstrap is initiated on the local gateway sink of the space's site that ne
 {% endhighlight %}
 
 
-After meting the condition specified in the previous, the bootstrap should be initiated using the [Admin API|Administration and Monitoring API].
+After meting the condition specified in the previous, the bootstrap should be initiated using the depanlinkAdmin APItengahlink./administration-and-monitoring-api.htmlbelakanglink.
 Following is an example of how to bootstrap New-York from London:
 
 {% highlight java %}

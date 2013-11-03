@@ -12,7 +12,7 @@ page_id: 63799324
 
 # Overview
 
-The polling event container implements the [IEventListenerContainer|Event Listener Container] interface. Its life-cycle consists of performing polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the [DataEventArrived|Event Listener Container#DataEventArrived] event is invoked. A polling event operation is mainly used when simulating Queue semantics, or when using the master-worker design pattern.
+The polling event container implements the depanlinkIEventListenerContainertengahlink./event-listener-container.htmlbelakanglink interface. Its life-cycle consists of performing polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the depanlinkDataEventArrivedtengahlink./event-listener-container.html#DataEventArrivedbelakanglink event is invoked. A polling event operation is mainly used when simulating Queue semantics, or when using the master-worker design pattern.
 depanimageNet_polling_cont.jpgtengahimage/attachment_files/xap97net/Net_polling_cont.jpgbelakangimage
 The examples in this page follow a certain pattern. Each code example has two tabs: Using EventListenerContainerFactory, and PollingEventListenerContainer Code Construction.
 The first tab demonstrates how to create and configure a polling container using the `EventListenerContainerFactory`, and the second tab demonstrates how to build and configure a `PollingEventListenerContainer` with a constructor and setting the different properties.
@@ -93,7 +93,7 @@ public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data
 
 
 {% info %}
-[DelegateDataEventArrivedAdapter|Event Listener Container#DelegateDataEventArrivedAdapter] is a class that adapts the supplied user method to the [SpaceDataEventHandler|Event Listener Container#SpaceDataEventHandler] delegate and contains a built in logic of writing back event results to the space
+depanlinkDelegateDataEventArrivedAdaptertengahlink./event-listener-container.html#DelegateDataEventArrivedAdapterbelakanglink is a class that adapts the supplied user method to the depanlinkSpaceDataEventHandlertengahlink./event-listener-container.html#SpaceDataEventHandlerbelakanglink delegate and contains a built in logic of writing back event results to the space
 {% endinfo %}
 
 
@@ -116,7 +116,7 @@ The FIFO Grouping designed to allow efficient processing of events with partial 
 
 # Concurrent Consumers
 
-By default, the polling event container starts a single thread that performs the receive operations and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads, the container will manage the scaling up and down of concurrent consumers automatically according to the load, however, there are a few parameters regarding this scaling logic which are described in [Auto Polling Consumer Scaling|Auto Polling Consumer Scaling]. This provides faster processing of events. However, any FIFO behavior that might be configured in the space and/or template is lost.
+By default, the polling event container starts a single thread that performs the receive operations and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads, the container will manage the scaling up and down of concurrent consumers automatically according to the load, however, there are a few parameters regarding this scaling logic which are described in depanlinkAuto Polling Consumer Scalingtengahlink./auto-polling-consumer-scaling.htmlbelakanglink. This provides faster processing of events. However, any FIFO behavior that might be configured in the space and/or template is lost.
 {% exclamation %} When using a FIFO Grouping, the FIFO order of each value is not broken. See depanlinkFIFO Groupingtengahlink./fifo-grouping.htmlbelakanglink page for more details.
 
 Here is an example of a polling container with 3 concurrent consumers and a maximum of 5 concurrent consumers:
@@ -201,7 +201,7 @@ pollingEventListenerContainer.CloneEventListenersPerThread = true;
 
 # Static Template Definition
 
-When performing receive operations, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates, based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SqlQuery|SqlQuery] in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
+When performing receive operations, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates, based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of depanlinkSqlQuerytengahlink./sqlquery.htmlbelakanglink in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
 
 {% inittab os_simple_space|top %}
@@ -477,9 +477,9 @@ The above example uses a receive timeout of 10 seconds (10000 milliseconds). The
 
 ## Batch Events
 
-Sometimes it is better to use batch events, for instance to improve network traffic. This is done by subscribing to the [BatchDataEventArrived event|Event Listener Container#BatchDataEventArrived]. This event receives a batch of event data objects in one invocation.
+Sometimes it is better to use batch events, for instance to improve network traffic. This is done by subscribing to the depanlinkBatchDataEventArrived eventtengahlink./event-listener-container.html#BatchDataEventArrivedbelakanglink. This event receives a batch of event data objects in one invocation.
 
-A prime example is the `TakeReceiveOperationHandler`, which when [BatchDataEventArrived event|Event Listener Container#BatchDataEventArrived] are used, returns an array as a result of a `TakeMultiple` operation . The batch size is determined by the `ReceiveBatchSize` configuration attribute or property, it is set similiar to the above properties modifications.
+A prime example is the `TakeReceiveOperationHandler`, which when depanlinkBatchDataEventArrived eventtengahlink./event-listener-container.html#BatchDataEventArrivedbelakanglink are used, returns an array as a result of a `TakeMultiple` operation . The batch size is determined by the `ReceiveBatchSize` configuration attribute or property, it is set similiar to the above properties modifications.
 
 Here is an example of batch notifications using `ReadReceiveOperationHandler`:
 
@@ -652,7 +652,7 @@ pollingEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAd
 {% endinittab %}
 
 
-{% refer %}The order of parameters of the event handling method is strict, please refer to [Dynamic Data Event Handler Adapter|Event Listener Container#eventhandleradapter] for more information about it.{% endrefer %}
+{% refer %}The order of parameters of the event handling method is strict, please refer to depanlinkDynamic Data Event Handler Adaptertengahlink./event-listener-container.html#eventhandleradapterbelakanglink for more information about it.{% endrefer %}
 
 # Trigger Receive Operation
 

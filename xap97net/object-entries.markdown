@@ -11,7 +11,7 @@ page_id: 63799340
 
 # Overview
 
-A data unit stored in the space is called an **Entry**. However, as you've seen in [Writing Your First Application|Your First Data Grid Application], there was no entry in the code - the program simply wrote a plain .NET object to the space and then took it. The API is .NET-friendly, and supports storing & retrieving .NET objects, which are transformed into space entries under the hood. For example, when the program wrote a `Message` object with a `String` property called `Text`, it was actually stored as an entry, whose type name was Message, which held one string property called Text.
+A data unit stored in the space is called an **Entry**. However, as you've seen in depanlinkWriting Your First Applicationtengahlink./your-first-data-grid-application.htmlbelakanglink, there was no entry in the code - the program simply wrote a plain .NET object to the space and then took it. The API is .NET-friendly, and supports storing & retrieving .NET objects, which are transformed into space entries under the hood. For example, when the program wrote a `Message` object with a `String` property called `Text`, it was actually stored as an entry, whose type name was Message, which held one string property called Text.
 
 Most of the time, the terms object and entry are used interchangeably, because the meaning is clear from the context, and the semantics are trivial. However, it is important to understand the difference between them. Moreover, some  features rely on applying semantics to an object to get a specific entry behavior. This page explains how objects are transformed to (and from) entries, and how that process can be controlled and customized.
 
@@ -252,10 +252,10 @@ namespace MyCompany.MyProject
 }
 {% endhighlight %}
 
-For more information, see [GigaSpaces.NET - Interoperability With Non .NET Applications|Interoperability].
+For more information, see depanlinkGigaSpaces.NET - Interoperability With Non .NET Applicationstengahlink./interoperability.htmlbelakanglink.
 
 {% note title=AliasName and SqlQuery %}
-When using space SqlQuery on an object with properties which are aliased, the query text needs to use the aliased property names. For more information about SqlQuery, see [GigaSpaces.NET - Sql Query|SqlQuery].
+When using space SqlQuery on an object with properties which are aliased, the query text needs to use the aliased property names. For more information about SqlQuery, see depanlinkGigaSpaces.NET - Sql Querytengahlink./sqlquery.htmlbelakanglink.
 {% endnote %}
 
 

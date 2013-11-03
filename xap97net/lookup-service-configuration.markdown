@@ -19,7 +19,7 @@ page_id: 64127778
 
 In such a case, make sure you have a different lookup group for each space, where each space is configured to use a specific lookup. A good practice is to have different space/service names.
 
-{% infosign %} When using multicast please review the following section **[How to Determine Whether Multicast is Available|How to Determine Whether Multicast is Available]** and [How to Configure Multicast|How to Configure Multicast].
+{% infosign %} When using multicast please review the following section **depanlinkHow to Determine Whether Multicast is Availabletengahlink./how-to-determine-whether-multicast-is-available.htmlbelakanglink** and depanlinkHow to Configure Multicasttengahlink./how-to-configure-multicast.htmlbelakanglink.
 
 # Setting up the Lookup Service For Multicast Discovery (Using Lookup Group)
 
@@ -59,7 +59,7 @@ Adjusting the lookup services multicast settings can be done using the following
 
 # Troubleshooting the Discovery/Group Configuration
 
-Using the [list LUS|list - GigaSpaces CLI#list-6.0-ListsallactiveJiniLookupServiceinstancesandtheirattributes] CLI option, run from `<GigaSpaces Root>\bin\gs.bat/sh`, you can search for available Jini Lookup Services in the network.
+Using the depanlinklist LUStengahlink/xap97/list---gigaspaces-cli.html#list-6.0-ListsallactiveJiniLookupServiceinstancesandtheirattributesbelakanglink CLI option, run from `<GigaSpaces Root>\bin\gs.bat/sh`, you can search for available Jini Lookup Services in the network.
 `<GigaSpaces Root>\bin\gs.bat/sh` list lus
 
 The following result examples appear on the console:

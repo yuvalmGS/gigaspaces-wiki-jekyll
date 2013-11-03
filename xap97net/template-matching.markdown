@@ -58,7 +58,7 @@ spaceProxy.Clear(null);
 
 # Indexes
 
-GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (regardless whether the space is persistent or not) that maintains a hash and btree like indexes for each indexed Space Class attribute. If you store a large number of Space objects from the same class type in the space, consider defining one or more indexes for attributes used with [template matching|Template Matching] or [SQL Query|SQLQuery]. Defining indexes will improve the `Read/Take/ReadMultiple/TakeMultiple/Clear/Count` operations response time significantly. Remember, indexes impact `Write` and `Take` operations response time, so choose your indexed fields carefully - each index has an overhead. For more information see [Indexing].
+GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (regardless whether the space is persistent or not) that maintains a hash and btree like indexes for each indexed Space Class attribute. If you store a large number of Space objects from the same class type in the space, consider defining one or more indexes for attributes used with depanlinktemplate matchingtengahlink./template-matching.htmlbelakanglink or depanlinkSQL Querytengahlink./sqlquery.htmlbelakanglink. Defining indexes will improve the `Read/Take/ReadMultiple/TakeMultiple/Clear/Count` operations response time significantly. Remember, indexes impact `Write` and `Take` operations response time, so choose your indexed fields carefully - each index has an overhead. For more information see depanlinkIndexingtengahlink./indexing.htmlbelakanglink.
 
 # Inheritance Support
 

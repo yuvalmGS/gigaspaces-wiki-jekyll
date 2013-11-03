@@ -17,7 +17,7 @@ This page explains how to create a simple Hello World application using XAP.NET 
 
 # Prerequisites
 
-If you haven't done so yet, please depanlinkdownloadtengahlinkhttp://www.gigaspaces.com/LatestProductVersionbelakanglink and [install|Installing XAP.NET] GigaSpaces XAP.NET.
+If you haven't done so yet, please depanlinkdownloadtengahlinkhttp://www.gigaspaces.com/LatestProductVersionbelakanglink and depanlinkinstalltengahlink./installing-xap.net.htmlbelakanglink GigaSpaces XAP.NET.
 
 # Setting Up the Project
 
