@@ -250,7 +250,7 @@ public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
 
 ## SQL Query
 
-You can use the [SQLQuery] to search for matching `SpaceDocument` entries.
+You can use the depanlinkSQLQuerytengahlink./sqlquery.htmlbelakanglink to search for matching `SpaceDocument` entries.
 For example: Read a document of type **Product** whose **Price** is greater than 15:
 
 {% highlight java %}
@@ -333,7 +333,7 @@ For more information about indexing, see the [Indexing|Indexing] page.
 
 # Events
 
-Event containers (both [polling container] and [notify container]) support Space `Document` entries.
+Event containers (both depanlinkpolling containertengahlink/xap97/polling-container.htmlbelakanglink and depanlinknotify containertengahlink/xap97/notify-container.htmlbelakanglink) support Space `Document` entries.
 
 Here is a simple example of a polling event container configuration using a `Document`:
 
@@ -491,7 +491,7 @@ pollingEventListenerContainer.destroy();
 
 # FIFO
 
-[FIFO support] is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
+depanlinkFIFO supporttengahlink./fifo-support.htmlbelakanglink is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
 
 
 {% inittab os_simple_space|top %}
@@ -632,7 +632,7 @@ For more information about optimistic locking, see the [Optimistic Locking|Optim
 
 # Local Cache / Local View
 
-[Local View] and [Local Cache] are supported for Documents. By default, the `SpaceDocument` instance is stored in the cache which speeds up query performance since the data does not need to be transformed from internal structure to `SpaceDocument`.
+depanlinkLocal Viewtengahlink./local-view.htmlbelakanglink and depanlinkLocal Cachetengahlink./local-cache.htmlbelakanglink are supported for Documents. By default, the `SpaceDocument` instance is stored in the cache which speeds up query performance since the data does not need to be transformed from internal structure to `SpaceDocument`.
 
 If you intend to use local cache or local view in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability|Document-POJO Interoperability].
 

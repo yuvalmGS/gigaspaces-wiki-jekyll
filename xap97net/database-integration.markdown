@@ -51,4 +51,4 @@ In order to preserve data, it is common topology to make sure that each memory c
 {% endtip %}
 
 {% whr %}
-{% refer %}**Next chapter:** [Product Architecture]{% endrefer %}
+{% refer %}**Next chapter:** depanlinkProduct Architecturetengahlink./product-architecture.htmlbelakanglink{% endrefer %}

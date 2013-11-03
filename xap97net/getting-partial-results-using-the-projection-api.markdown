@@ -29,7 +29,7 @@ depanimagespace-projections.jpgtengahimage/attachment_files/xap97net/space-proje
 
 # Specifying a Projection with your Query
 
-Projections are supported using a [SqlQuery] or [ID Queries]. Below is a simple example that demonstrates reading a `Person` object where only the 'FirstName' and 'LastName' properties are returned with the query result array. All other `Person` properties will not be returned:
+Projections are supported using a depanlinkSqlQuerytengahlink./sqlquery.htmlbelakanglink or depanlinkID Queriestengahlink./id-queries.htmlbelakanglink. Below is a simple example that demonstrates reading a `Person` object where only the 'FirstName' and 'LastName' properties are returned with the query result array. All other `Person` properties will not be returned:
 
 {% highlight java %}
 public class Person
@@ -81,5 +81,5 @@ Projected properties can specify both dynamic or fixed properties and the usage 
 # Considerations
 
 1. Projections are supported only for first level properties (root level). Nested properties can't be specified as part of the projection properties list.
-2. You can't use a projection on [Local Cache] as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projections will only impact performance.
+2. You can't use a projection on depanlinkLocal Cachetengahlink./local-cache.htmlbelakanglink as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projections will only impact performance.
 3. You can't use a projection to query a Local View for the same reason as Local Cache, however, you can create the local view with projection template and the Local View will be contain the objects in their projected form.

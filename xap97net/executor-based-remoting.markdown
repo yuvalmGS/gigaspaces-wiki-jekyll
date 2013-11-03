@@ -157,7 +157,7 @@ IDataProcessor dataProcessorProxy = proxyBuilder.CreateProxy();
 
 ## Routing Attribute
 
-The above option of using the remote routing handler is very handy when not using attributes. If no routing handler is specified, the default routing handler will be used which is attributed based. It uses the \[ServiceRouting\] attribute in order to define which of the parameters control the routing. Here is an example:
+The above option of using the remote routing handler is very handy when not using attributes. If no routing handler is specified, the default routing handler will be used which is attributed based. It uses the \ajepaaaServiceRouting\ajepbbb attribute in order to define which of the parameters control the routing. Here is an example:
 
 
 {% highlight java %}
@@ -232,7 +232,7 @@ When using broadcast with executor remoting, a distributed transaction must be u
 # One Way Invocation
 
 Some invocations might be one way, which means that the client executes some kind of a service operation and he does not require a return value or even a guarantee of successful execution. For instance, print something at the service console.
-This can be done by specifying a \[SpaceServiceOperation\] attribute over the one way operation, demonstrated in the following example:
+This can be done by specifying a \ajepaaaSpaceServiceOperation\ajepbbb attribute over the one way operation, demonstrated in the following example:
 
 
 {% highlight java %}

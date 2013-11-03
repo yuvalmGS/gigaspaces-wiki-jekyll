@@ -118,7 +118,7 @@ The Trade Space class stores the following items:
 The [Elastic Processing Unit|XAP8:Elastic Processing Unit] is used to deploy the data/compute grid and scale it dynamically. This allows you to increase the capacity of the data grid and leverage additional CPU resources for the calculation activity. With this demo, the user changes the capacity using a scale command that instructs the data/compute grid to increase its capacity (this in turn starts additional containers and rebalances the data/compute grid) or decrease its capacity (by terminating containers and rebalancing).
 
 # Remote Calculations
-For long calculations that consume relatively large amount of CPU time, the recommended approach to implement distributed calculations is the [Master-Worker Pattern]. The approach suggested with the Master-Worker pattern should be used when the calculation time is relativity very long where the data access time can't be considered as overhead.
+For long calculations that consume relatively large amount of CPU time, the recommended approach to implement distributed calculations is the depanlinkMaster-Worker Patterntengahlink./master-worker-pattern.htmlbelakanglink. The approach suggested with the Master-Worker pattern should be used when the calculation time is relativity very long where the data access time can't be considered as overhead.
 
 depanimageElasticDistributedRiskAnalysisEngine_remote_workers.jpgtengahimage/attachment_files/sbp/ElasticDistributedRiskAnalysisEngine_remote_workers.jpgbelakangimage
 

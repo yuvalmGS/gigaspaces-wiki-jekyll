@@ -25,7 +25,7 @@ depanimagedashboard_explained.pngtengahimage/attachment_files/xap97net/dashboard
 
 Click the _Events_ tag to view the bottom panel of the web dashboard, to view the events time line.
 The events time-line shows the deployment life cycle of all the processing units.
-To filter by application, the events time line is also available in the Application tab. (see [Application View#Events time-line (per application)])
+To filter by application, the events time line is also available in the Application tab. (see depanlinkApplication View#Events time-line (per application)tengahlink./application-view.html#Events time-line (per application)belakanglink)
 
 ### Life-cycle success events for each instance:
 

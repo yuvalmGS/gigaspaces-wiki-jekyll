@@ -45,7 +45,7 @@ Service registrations in the LUS are lease-based, and each service periodically 
 
 The Lookup Service can be configured for either a [multicast|How to Configure Multicast] or [unicast|How to Configure Unicast Discovery] environment (default is multicast).
 
-Another important attribute in that context is the **lookup group**. The lookup group is a logical grouping of all the components that belong to the same runtime cluster. Using lookup groups, you can run multiple deployments on the same physical infrastructure, without them interfering with one another. For more details please refer to [Lookup Service Configuration].
+Another important attribute in that context is the **lookup group**. The lookup group is a logical grouping of all the components that belong to the same runtime cluster. Using lookup groups, you can run multiple deployments on the same physical infrastructure, without them interfering with one another. For more details please refer to depanlinkLookup Service Configurationtengahlink./lookup-service-configuration.htmlbelakanglink.
 
 {% lampon %} It is common to start at least two LUS instances in each Service Grid for high-availability reasons. Note that the lookup service can run in the same process with a GSM, or in standalone mode using its own process.
 
@@ -63,7 +63,7 @@ The Grid Service Agent (GSA) is a process manager that can spawn and manage Serv
 
 Usually, a single GSA is run per machine. If you're setting up multiple Service Grids separated by depanlinkLookup Groups or Locatorstengahlink#lusbelakanglink), you'll probably start a GSA per machine per group.
 
-The GSA exposes the ability to start, restart, and kill a process either using the [Administration and Monitoring API] or the GigaSpaces UI.
+The GSA exposes the ability to start, restart, and kill a process either using the depanlinkAdministration and Monitoring APItengahlink./administration-and-monitoring-api.htmlbelakanglink or the GigaSpaces UI.
 
 ## Process Management
 
@@ -109,7 +109,7 @@ gs-agent gsa.gsc 3 gsa.global.gsm 2 gsa.global.lus 0
 {% endhighlight %}
 
 
-In general, the `gsa.\[process type]` followed by a number controls the number of local processes of the specific process type that will be spawned by the GSA. The `gsa.global.\[process type\]` following by a number controls the number of globally managed processes of the specific process type.
+In general, the `gsa.\ajepaaaprocess typeajepbbb` followed by a number controls the number of local processes of the specific process type that will be spawned by the GSA. The `gsa.global.\ajepaaaprocess type\ajepbbb` following by a number controls the number of globally managed processes of the specific process type.
 
 ### Lookup Service Considerations
 
@@ -129,4 +129,4 @@ gs-agent gsa.global.lus 0
 {% endhighlight %}
 
 
-For instructions on how to configure service grid components refer to [Service Grid Configuration].
+For instructions on how to configure service grid components refer to depanlinkService Grid Configurationtengahlink./service-grid-configuration.htmlbelakanglink.

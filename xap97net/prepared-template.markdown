@@ -11,7 +11,7 @@ page_id: 63799305
 
 # Overview
 
-When executing a query operation on the space, there's an overhead incurred by translating the query to an internal representation (in object templates the properties values are extracted using reflection, in [SQLQuery] the expression string is parsed to an expression tree). If the same query is executed over and over again without modification, that overhead can be removed by using **prepared templates**.
+When executing a query operation on the space, there's an overhead incurred by translating the query to an internal representation (in object templates the properties values are extracted using reflection, in depanlinkSQLQuerytengahlink./sqlquery.htmlbelakanglink the expression string is parsed to an expression tree). If the same query is executed over and over again without modification, that overhead can be removed by using **prepared templates**.
 
 The `ISpaceProxy` interface provides a method called `Snapshot` which receives a template or query , translates it to an internal XAP query structure and returns a reference to that structure as `IPreparedTemplate<T>`. That reference can then be used with any of the proxy's query operations to execute queries on the space in a more efficient manner, since there's no need to translate or parse the query.
 
@@ -19,7 +19,7 @@ The `ISpaceProxy` interface provides a method called `Snapshot` which receives a
 
 # Usage
 
-Use `ISpaceProxy.Snapshot` to create a prepared template from an object template or a [SqlQuery].
+Use `ISpaceProxy.Snapshot` to create a prepared template from an object template or a depanlinkSqlQuerytengahlink./sqlquery.htmlbelakanglink.
 
 #### Creating a prepared template from an object
 

@@ -30,7 +30,7 @@ GigaSpaces IMDG supports a variety of caching scenarios. Using GigaSpaces IMDG a
 - Less load on the database layer: Since the cache will offload the database, you will have less contention generated at the database layer.
 - Continuous High-Availability: Zero downtime of your data access layer with the ability to survive system failures without any data loss.
 
-The [Caching Scenarios] describes the different caching options supported by GigaSpaces.
+The depanlinkCaching Scenariostengahlink./caching-scenarios.htmlbelakanglink describes the different caching options supported by GigaSpaces.
 
 # Characteristics of a Space
 
@@ -80,7 +80,7 @@ Combined, these two facilities enable better control of your environment and ens
 GigaSpaces and its Space-Based-Architecture embrace the depanlinkreactive programmingtengahlinkhttp://en.wikipedia.org/wiki/Reactive_programmingbelakanglink approach. Reactive programming with GigaSpaces includes:
 - [Data Event Listener|Event Listener Container]: [Polling Container|Polling Container Component], [Notify Container|Notify Container Component]
 - [Local View and Local Cache|Client Side Caching]
-- [Task Execution over the Space]
+- depanlinkTask Execution over the Spacetengahlink./task-execution-over-the-space.htmlbelakanglink
 - [Asynchronous Operations|The GigaSpace Interface#Asynchronous Operations]
 - [Drools Rule Engine Integration|SBP:Drools Rule Engine Integration]: Available from a 3rd party.
 
@@ -112,8 +112,8 @@ The basic unit of scalability in SBA is the [processing unit|Processing Unit Con
 # What's Next
 
 It is recommended that you read the following sections next:
-- [Space Topologies]
-- [Deploying and Interacting with the Space]
+- depanlinkSpace Topologiestengahlink./space-topologies.htmlbelakanglink
+- depanlinkDeploying and Interacting with the Spacetengahlink./deploying-and-interacting-with-the-space.htmlbelakanglink
 
 
 

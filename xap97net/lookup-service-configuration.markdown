@@ -40,7 +40,7 @@ The command that loads a space needs to have this system property set. Another w
 
 
 {% tip %}
-If you are looking for a way to use a unicast discovery, please refer to the [How to Configure Unicast Discovery] section for more details.
+If you are looking for a way to use a unicast discovery, please refer to the depanlinkHow to Configure Unicast Discoverytengahlink./how-to-configure-unicast-discovery.htmlbelakanglink section for more details.
 {% endtip %}
 
 
@@ -91,5 +91,5 @@ The following result examples appear on the console:
 
 
 {% tip %}
- For details on multi-network card configuration, refer to: [How to Configure an Environment With Multiple Network-Cards (Multi-NIC)].
+ For details on multi-network card configuration, refer to: depanlinkHow to Configure an Environment With Multiple Network-Cards (Multi-NIC)tengahlink/xap97/how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).htmlbelakanglink.
 {% endtip %}

@@ -159,4 +159,4 @@ The common topology is of a partitioned cluster, where each partition member has
 {% endtoczone %}
 
 {% whr %}
-{% refer %}**Next Chapter:** [A Typical SBA Application]{% endrefer %}
+{% refer %}**Next Chapter:** depanlinkA Typical SBA Applicationtengahlink./a-typical-sba-application.htmlbelakanglink{% endrefer %}

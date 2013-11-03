@@ -64,7 +64,7 @@ Several `ISpaceProxy` instances can be defined within a single Processing Unit, 
 - The `ISpaceProxy` variable represents a remote or embedded space proxy (for a single space or clustered) and **should be constructed only** once throughout the lifetime of the application process.
 - You should treat the `ISpaceProxy` variable as a singleton to be shared across multiple different threads.
 - The `ISpaceProxy` interface is a thread safe and there is no need to create an `ISpaceProxy` variable per application thread.
-- In case the space has been fully terminated (no backup or primary instances running any more) the client space proxy will try to reconnect to the space up to a predefined timeout based on the [Proxy Connectivity] settings. If it fails to reconnect, an error will be displayed.
+- In case the space has been fully terminated (no backup or primary instances running any more) the client space proxy will try to reconnect to the space up to a predefined timeout based on the depanlinkProxy Connectivitytengahlink/xap97/proxy-connectivity.htmlbelakanglink settings. If it fails to reconnect, an error will be displayed.
 {% endnote %}
 
 # Operations
@@ -214,7 +214,7 @@ In a similar manner, the read timeout and write lease can be specified.
 
 
 {% tip %}
-See more examples for the `ISpaceProxy` interface usage with the [POJO Support] section.
+See more examples for the `ISpaceProxy` interface usage with the depanlinkPOJO Supporttengahlink/xap97/pojo-support.htmlbelakanglink section.
 {% endtip %}
 
 
@@ -303,33 +303,33 @@ Each space object includes an ID. You may read or remove objects from the space 
 
 
 {% tip %}
-The `ReadByID` and `ReadByIDs` have a special performance optimization when running a [Local Cache] or [Local View].
+The `ReadByID` and `ReadByIDs` have a special performance optimization when running a depanlinkLocal Cachetengahlink./local-cache.htmlbelakanglink or depanlinkLocal Viewtengahlink./local-view.htmlbelakanglink.
 {% endtip %}
 
 
-See the [Id Queries] for details.
+See the depanlinkId Queriestengahlink./id-queries.htmlbelakanglink for details.
 
 ## Template Based
 
 The template is an object of the desired entry type, and the properties which are set on the template (i.e. not null) are matched against the respective properties of entries of the same type in the space. Properties with null values are ignored (not matched).
 
-See the [Template Matching] for details.
+See the depanlinkTemplate Matchingtengahlink./template-matching.htmlbelakanglink for details.
 
 ## SQL Based
 
-The [SQLQuery] class is used to query the space using SQL-like syntax. The query statement includes only the `WHERE` clause. The selection aspect of a SQL statement is embedded in other parameters for a SQL query.
+The depanlinkSQLQuerytengahlink./sqlquery.htmlbelakanglink class is used to query the space using SQL-like syntax. The query statement includes only the `WHERE` clause. The selection aspect of a SQL statement is embedded in other parameters for a SQL query.
 
-See the [SQLQuery] for details.
+See the depanlinkSQLQuerytengahlink./sqlquery.htmlbelakanglink for details.
 
 ## Space Iterator
 
 The {javadoc6:org/openspaces/core/IteratorBuilder|IteratorBuilder} with the {javadoc6:com/j_spaces/core/client/GSIterator|GSIterator} allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the `readMultiple` since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side.
 
-See the [Paging Support with Space Iterator] for details.
+See the depanlinkPaging Support with Space Iteratortengahlink/xap97/paging-support-with-space-iterator.htmlbelakanglink for details.
 
 # ReadIfExists and Read Operations
 
-The two forms of the `Read` operations query the space for an object that matches the template/[SQLQuery] provided. If a match is found, a copy of the matching object is returned. If no match is found, `null` is returned. Passing a `null` reference as the template will match any object.
+The two forms of the `Read` operations query the space for an object that matches the template/depanlinkSQLQuerytengahlink./sqlquery.htmlbelakanglink provided. If a match is found, a copy of the matching object is returned. If no match is found, `null` is returned. Passing a `null` reference as the template will match any object.
 
 Any matching object can be returned. Successive Read requests with the same template may or may not return equivalent objects, even if no intervening modifications have been made to the Space. Each invocation of `Read` may return a new object even if the same object is matched in the space. If you would like to Read objects in the same order they have been written into the space you should perform the read objects in a [FIFO mode|FIFO Support].
 

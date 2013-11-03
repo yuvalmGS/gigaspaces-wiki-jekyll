@@ -277,7 +277,7 @@ For example, declaring `SpaceFifoGroupingIndex(Path="a")`, overriding in subclas
 - Cross partitioning of groups is not supported (same limitation as in regular FIFO operations).
 - `SpaceFifoGroupingProperty` and `SpaceFifoGroupingIndex` cannot be used as dynamic indexes.
 - `SpaceFifoGroupingProperty` and `SpaceFifoGroupingIndex` cannot be used  as collection indexes.
-(e.g. declaring `SpaceFifoGroupingProperty( Path="\[*\]")` is not allowed).
+(e.g. declaring `SpaceFifoGroupingProperty( Path="\ajepaaa*\ajepbbb")` is not allowed).
 - FIFO operation is not supported for FG template - it is ignored.
 - If the template is a SQL query template, only queries that can be performed in a single call to the space are supported (an exception is thrown).
 - FG operations must be performed under a transaction.

@@ -73,7 +73,7 @@ space.Change(idQuery, new ChangeSet().Increment("Balance.Euro", 5.2D));
 ## Change Path Specification
 
 Each operation in the change set acts on a specified string path. This path points to the property that needs to be changed and it has the following semantic:
-1. **First level property** - A path with no '.' character in it points to a first level property, If the property specified by this path is not part of the Object it will be treated as a dynamic property (see [Dynamic Properties]) if the object does not support dynamic properties, an exception will be generated.
+1. **First level property** - A path with no '.' character in it points to a first level property, If the property specified by this path is not part of the Object it will be treated as a dynamic property (see depanlinkDynamic Propertiestengahlink./dynamic-properties.htmlbelakanglink) if the object does not support dynamic properties, an exception will be generated.
 2. **Nested property** - A path that contains '.' character is considered a path to a nested property, the location process of the final property which needs to be changed is done recursively by activating the properties, specified by the split of the path using the '.' character, one at a time until reaching the targeted end property.
 3. **Nested Dictionary property** - A path that contains '.' may also point to keys inside a dictionary as, meaning the following path - 'Attributes.Color' will look for key named 'Color' if the property named 'Attribute' in the object is actually a dictionary. This affects nested properties as well.
 
@@ -162,7 +162,7 @@ if (changeResult.NumberOfChangedEntries == 0)
 
 The `IChangeResult` contains the `NumberOfChangedEntries` which specifies how many objects where changed by this operation where 0 means none were changed. The `Results` property gives further details about the objects that were actually changes by providing a collection which gives details for each of the objects that were changed, such as their id and version after the change took affect. By default, in order to reduce network overhead, calling the Results will throw `NotSupportedException`. In order to get the more detailed result, the `ChangeModifiers.ReturnDetailedResults` should be passed to the `Change` operation.
 
-{% refer %}For more information please refer to [Change API Advanced]{% endrefer %}
+{% refer %}For more information please refer to depanlinkChange API Advancedtengahlink./change-api-advanced.htmlbelakanglink{% endrefer %}
 
 # ChangeException
 
@@ -269,7 +269,7 @@ catch(ChangeException e)
 
 # Change and Optimistic Locking
 
-The `Change` operation has the same semantics as regular space `Update` operation when it comes to [Optimistic Locking]. It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
+The `Change` operation has the same semantics as regular space `Update` operation when it comes to depanlinkOptimistic Lockingtengahlink/xap97/optimistic-locking.htmlbelakanglink. It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
 
 
 {% highlight java %}
@@ -317,7 +317,7 @@ will propagate to the underlying external data source.
 
 # Change Extension
 
-See [Change Extension] which provide utility methods for common usage patterns.
+See depanlinkChange Extensiontengahlink./change-extension.htmlbelakanglink which provide utility methods for common usage patterns.
 
 # Considerations
 

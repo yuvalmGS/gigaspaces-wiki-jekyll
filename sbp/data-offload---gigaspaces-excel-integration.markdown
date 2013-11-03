@@ -30,11 +30,11 @@ GigaSpaces provides [OpenSpaces|XAP66:Product Architecture#ProductArchitecture-O
 
 After you've loaded your data to the space, you need to load the portion you want to work with into your Excel spreadsheet. A SQL query is performed on the space, thus separating the specified data from all the data and loading it into the spreadsheet.
 
-This can be done using the **[Excel Space Viewer]**, which allows you to perform queries on the space and display the data in the spreadsheet.
+This can be done using the **depanlinkExcel Space Viewertengahlink./excel-space-viewer.htmlbelakanglink**, which allows you to perform queries on the space and display the data in the spreadsheet.
 
 ## 3 -- Defining Refresh Policy
 
-If you need the data displayed in your spreadsheet to be constantly updated, you can do this using the [Excel Space Viewer]. Simply define the required refresh rate in milliseconds in the [New View|Excel Space Viewer#Creating New View] or [Configure View|Excel Space Viewer#Changing Existing View] window. Excel in turn loads the updated data from the space according to the specified refresh rate.
+If you need the data displayed in your spreadsheet to be constantly updated, you can do this using the depanlinkExcel Space Viewertengahlink./excel-space-viewer.htmlbelakanglink. Simply define the required refresh rate in milliseconds in the [New View|Excel Space Viewer#Creating New View] or [Configure View|Excel Space Viewer#Changing Existing View] window. Excel in turn loads the updated data from the space according to the specified refresh rate.
 
 # What's Next?
 

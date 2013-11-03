@@ -11,7 +11,7 @@ page_id: 64127791
 
 # Syntax
 
-`gs> admin multicastTest [variable[variable]]`
+`gs> admin multicastTest ajepaaavariableajepaaavariableajepbbbajepbbb`
 
 # Description
 
@@ -28,7 +28,7 @@ It is still possible that multicast does not work outside the tested host.
 
 {% tip %}
 Make sure your network and machines running GigaSpaces are configured to have multicast enabled.
-See the [How to Configure Multicast] section for details on how to enable multicast.
+See the depanlinkHow to Configure Multicasttengahlink./how-to-configure-multicast.htmlbelakanglink section for details on how to enable multicast.
 {% endtip %}
 
 
@@ -38,7 +38,7 @@ This multicast utility serves to check multicast communication between sender an
 
 
 {% tip %}
-For multi-homed network card machine use `multicastTest -sender -ba \[network card IP]`.
+For multi-homed network card machine use `multicastTest -sender -ba \ajepaaanetwork card IPajepbbb`.
 {% endtip %}
 
 

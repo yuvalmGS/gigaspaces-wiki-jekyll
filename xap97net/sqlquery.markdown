@@ -58,7 +58,7 @@ GigaSpaces SqlQuery supports the following:
 
 # Indexing
 
-It is highly recommended to use indexes on relevant properties to increase performance. For more information see [Indexing].
+It is highly recommended to use indexes on relevant properties to increase performance. For more information see depanlinkIndexingtengahlink./indexing.htmlbelakanglink.
 
 # Blocking Operations
 

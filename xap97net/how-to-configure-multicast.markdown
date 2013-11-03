@@ -22,7 +22,7 @@ GigaSpaces uses multicast in the following cases:
 
 
 {% tip title=What should I do in order to determine if multicast is enabled on my environment? %}
-Refer to the [How to Determine Whether Multicast is Available] section for more details.
+Refer to the depanlinkHow to Determine Whether Multicast is Availabletengahlink./how-to-determine-whether-multicast-is-available.htmlbelakanglink section for more details.
 {% endtip %}
 
 

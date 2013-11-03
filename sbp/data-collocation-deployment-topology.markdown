@@ -103,7 +103,7 @@ depanimageDistributedTaskExecution_phase2.jpgtengahimage/attachment_files/sbp/Di
 ### CPU Starvation
 In other cases, the bottleneck is not data access, but in the amount of time it takes to process the incoming data (a.k.a. the CPU bound scenario). In this scenario, there is no problem with accessing the data and handing it to the business logic that needs to process it. However, there is a need to run the business logic across as many CPUs and machines as possible, to fully take advantage of the resources over the network.
 
-In this case, it makes better sense to have the data and business logic running in separate processing units, each with its own SLA and scaling requirements. In this case, the business logic may use the [Master-Worker Pattern], having the actual business logic running separately and independently from the space processing unit.
+In this case, it makes better sense to have the data and business logic running in separate processing units, each with its own SLA and scaling requirements. In this case, the business logic may use the depanlinkMaster-Worker Patterntengahlink./master-worker-pattern.htmlbelakanglink, having the actual business logic running separately and independently from the space processing unit.
 
 {% section %}
 
@@ -168,7 +168,7 @@ If the amount of data used for each business logic transaction involves a small 
 If the amount of data used for each business logic transaction involves a large amount of objects with a relatively large size, colocating the data and the business logic would boost the application performance dramatically.
 
 #### 4. What is the time it takes to process the incoming events?
-When a processing unit hosting your business logic has the space colocated as well, no remote calls or serialization calls are involved when the business logic accesses its colocated data. If the time spent executing the business logic ("task" calculation time) is much longer than the time it takes for the business logic to: retrieve the task from the space, write back the result, or read the required data from the space, it might be logical to run the business logic as a standalone processing unit, separately from the space (i.e. use the [Master-Worker Pattern]).
+When a processing unit hosting your business logic has the space colocated as well, no remote calls or serialization calls are involved when the business logic accesses its colocated data. If the time spent executing the business logic ("task" calculation time) is much longer than the time it takes for the business logic to: retrieve the task from the space, write back the result, or read the required data from the space, it might be logical to run the business logic as a standalone processing unit, separately from the space (i.e. use the depanlinkMaster-Worker Patterntengahlink./master-worker-pattern.htmlbelakanglink).
 
 As a rule of thumb, a good ratio for running the business logic separately from the space would be 1:10 or more - i.e. if the average time for performing the three basic space remote calls required to retrieve the object from the space (take, read, write) is ~1 ms, and the time it takes to perform the relevant business logic (unrelated to the space) is ~10 ms, it would be wise to run the business logic as a standalone processing unit. If the ratio is less than 1:10, you should consider colocating the business logic with the data.
 

@@ -174,7 +174,7 @@ public SpaceDocument ReadProductByTemplate(ISpaceProxy spaceProxy)
 
 ## Sql Query
 
-You can use the [SqlQuery] to search for matching `SpaceDocument` entries.
+You can use the depanlinkSqlQuerytengahlink./sqlquery.htmlbelakanglink to search for matching `SpaceDocument` entries.
 
 For example: to read a document of type **Product** whose **Price** is greater than 15:
 
@@ -351,7 +351,7 @@ spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
 
-{% refer %}For more info on storage types, please refer to [Property Storage Type]{% endrefer %}
+{% refer %}For more info on storage types, please refer to depanlinkProperty Storage Typetengahlink./property-storage-type.htmlbelakanglink{% endrefer %}
 
 # Persistency
 

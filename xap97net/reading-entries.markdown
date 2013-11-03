@@ -44,7 +44,7 @@ public class Person
 {% endhighlight %}
 
 
-{% refer %}See also the [Object Metadata] and [GS.XML Metadata] sections for details about the GigaSpaces class decorations you may specify.{% endrefer %}
+{% refer %}See also the depanlinkObject Metadatatengahlink./object-metadata.htmlbelakanglink and depanlinkGS.XML Metadatatengahlink./gs.xml-metadata.htmlbelakanglink sections for details about the GigaSpaces class decorations you may specify.{% endrefer %}
 
 # Blocking Read
 
@@ -119,4 +119,4 @@ If you're interested in reading multiple entries at once, you can use the `ReadM
 
 {% exclamation %} Calling `ReadMultiple` operation with a large `maxItems` argument is dangerous - if the space contains many matching entries the result set will be very large, which will impact the network traffic and performance, and possibly result in an out of memory exception. for more information, see the `IReadOnlySpaceProxy.GetSpaceIterator`.
 
-{% refer %}If you're interested in guaranteeing First-In-First-Out, see [FIFO support]. {% endrefer %}
+{% refer %}If you're interested in guaranteeing First-In-First-Out, see depanlinkFIFO supporttengahlink./fifo-support.htmlbelakanglink. {% endrefer %}

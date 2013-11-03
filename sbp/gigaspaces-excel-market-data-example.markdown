@@ -112,4 +112,4 @@ The following metrics describe the scope of testing performed using the examples
 
 {% exclamation %} A .NET local cache on the Excel side is not supported.
 
-{% refer %}Back to The [Excel that Scales Solution] section.{% endrefer %}
+{% refer %}Back to The depanlinkExcel that Scales Solutiontengahlink./excel-that-scales-solution.htmlbelakanglink section.{% endrefer %}

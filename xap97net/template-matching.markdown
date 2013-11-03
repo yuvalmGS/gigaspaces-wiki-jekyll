@@ -15,9 +15,9 @@ Template matching (a.k.a. Match by example) is a simple way to query the space -
 
 Since by convention the default constructor usually initializes all the properties to `null` either implicitly or explicitly, in most cases it's enough to simply set the properties which should be matched, without bothering with explicitly setting null to the other properties. Note that setting two or more properties with non-null values provides an **AND** behavior.
 
-{% infosign %} It is highly recommended to index one or more of the properties used in the template to speed up the matching process. For more information see [Indexing].
+{% infosign %} It is highly recommended to index one or more of the properties used in the template to speed up the matching process. For more information see depanlinkIndexingtengahlink./indexing.htmlbelakanglink.
 
-{% plus %} If you require additional query options refer to [SQLQuery].
+{% plus %} If you require additional query options refer to depanlinkSQLQuerytengahlink./sqlquery.htmlbelakanglink.
 
 # Examples
 
@@ -81,7 +81,7 @@ int numberOfCitizens = spaceProxy.Count(new Citizen());
 # Partitioned cluster
 
 When querying a partitioned cluster using a template, it is possible to use the routing property to control whether the query is broadcasted to the entire cluster or executed against a specific partition.
-For more information see [Routing In Partitioned Spaces].
+For more information see depanlinkRouting In Partitioned Spacestengahlink./routing-in-partitioned-spaces.htmlbelakanglink.
 
 # Considerations
 
@@ -101,7 +101,7 @@ Person p = spaceProxy.Read(new Person());
 
 We expect **p** to hold the person we just wrote to the space, but in fact it will be null: since **age** is primitive it is implicitly initialized to 0 (zero) and cannot be set to null either implicitly or explicitly, which means we're actually matching for Persons whose age is 0 (zero).
 
-To overcome this issue we can map a primitive value to null via the `\[SpaceProperty(NullValue = ?)\]` attribute. For example:
+To overcome this issue we can map a primitive value to null via the `\ajepaaaSpaceProperty(NullValue = ?)\ajepbbb` attribute. For example:
 
 {% highlight java %}
 public class Person
@@ -116,7 +116,7 @@ public class Person
 {% endhighlight %}
 
 
-We've indicated that `-1` should be treated as `null` when performing template matching, and initialized age to `-1` so users of Person class need not set it explicitly whenever they use it. For more information refer to [Object Metadata].
+We've indicated that `-1` should be treated as `null` when performing template matching, and initialized age to `-1` so users of Person class need not set it explicitly whenever they use it. For more information refer to depanlinkObject Metadatatengahlink./object-metadata.htmlbelakanglink.
 
 {% infosign %} Properties of primitive types are implicitly boxed when stored in the space and unboxed when reconstructed to a POCO.
 
@@ -124,4 +124,4 @@ We've indicated that `-1` should be treated as `null` when performing template m
 
 ## Nested Template Matching
 
-Nested template matching is not supported - to match nested properties, collections and arrays use [SQLQuery].
+Nested template matching is not supported - to match nested properties, collections and arrays use depanlinkSQLQuerytengahlink./sqlquery.htmlbelakanglink.

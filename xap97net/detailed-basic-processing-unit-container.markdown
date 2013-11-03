@@ -166,7 +166,7 @@ public class Feeder
 {% endhighlight %}
 
 
-{% lampon %} The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container
+{% lampon %} The method which has one of the attributes \ajepaaaContainerInitialized\ajepbbb or \ajepaaaContainerInitializing\ajepbbb can have zero arguments or one argument which will be injected with the managing container
 
 # Creating a Space Proxy Programatically
 

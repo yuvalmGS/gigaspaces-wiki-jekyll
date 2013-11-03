@@ -72,7 +72,7 @@ SqlQuery<Company> query =
 {% endhighlight %}
 
 
-See the [SqlQuery] section for details about embedded entities query and indexing.
+See the depanlinkSqlQuerytengahlink./sqlquery.htmlbelakanglink section for details about embedded entities query and indexing.
 
 **Non Embedded Relationships** means that one object is associated with a number of other objects, so you can navigate from one object to another. However, there is no life cycle dependency between them, so if you delete the referencing object, you don't automatically delete the referenced object(s). The association is therefore manifested in storing IDs rather than storing the actual associated object itself. This type of relationship means that you don't duplicate data but you are more likely to access more than one node in the cluster when querying or updating your data.
 
@@ -80,7 +80,7 @@ depanimagemodel_non_embed.jpgtengahimage/attachment_files/xap97net/model_non_emb
 
 
 {% tip %}
-See the [Parent Child Relationship] for an example for non-embedded relationships.
+See the depanlinkParent Child Relationshiptengahlink/xap97/parent-child-relationship.htmlbelakanglink for an example for non-embedded relationships.
 {% endtip %}
 
 

@@ -12,7 +12,7 @@ page_id: 63799396
 This page describes the usage of GS.XML to define space objects metadata.
 GS.XML is an XML file that contains the space type's metadata definitions. The metadata definitions available using the XML are equivalent to attribute-based space metadata functionality. The main advantage of using the GS.XML file for the space metadata definitions, is that the data model remains unchanged when used in the space. Data objects can have independent space metadata definitions that have no impact on the objects' code.
 
-{% refer %}For more info about space metadata definitions, refer to [Object Metadata]{% endrefer %}
+{% refer %}For more info about space metadata definitions, refer to depanlinkObject Metadatatengahlink./object-metadata.htmlbelakanglink{% endrefer %}
 
 # GS.XML File Naming and Location
 

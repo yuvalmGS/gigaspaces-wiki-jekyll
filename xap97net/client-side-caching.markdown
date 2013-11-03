@@ -25,8 +25,8 @@ The client-side cache is updated automatically when the master copy of the objec
 
 There are two variations provided:
 
-• [Local Cache] - This client side cache maintains any object used by the application. The cache data is loaded on demand (lazily), based on the client application's read activities.
-• [Local View] - This client side cache maintains a specific subset of the entire data, and client side cache is populated when the client application is started.
+• depanlinkLocal Cachetengahlink./local-cache.htmlbelakanglink - This client side cache maintains any object used by the application. The cache data is loaded on demand (lazily), based on the client application's read activities.
+• depanlinkLocal Viewtengahlink./local-view.htmlbelakanglink - This client side cache maintains a specific subset of the entire data, and client side cache is populated when the client application is started.
 
 In both cases, once updates are performed (objects are added/updated/removed) on the master space, the master space propagates the changes to all relevant local views and caches.
 

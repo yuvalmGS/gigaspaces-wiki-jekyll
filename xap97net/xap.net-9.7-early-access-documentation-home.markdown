@@ -15,13 +15,13 @@ page_id: 63799415
 
 # XAP.NET 9.7 Documentation
 
-{% imagemap name=[scaling.png] %}
+{% imagemap name=ajepaaascaling.pngajepbbb %}
 {% map link=http://www.gigaspaces.com/wiki/display/XAP97NET/End+to+End+Scaling+Home|coords=30,81,326,131|title=End to End Scaling %}
 {% endimagemap %}
 
 {% wbr %}
 
-{% imagemap name=[caching.png] %}
+{% imagemap name=ajepaaacaching.pngajepbbb %}
 {% map link=http://www.gigaspaces.com/wiki/display/XAP97NET/Caching+Home|coords=30,81,326,131|title=Caching %}
 {% endimagemap %}
 

@@ -223,7 +223,7 @@ GigaSpaces XAP provides several default implementations as part of the product, 
 
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
-More information on the usage of the above integrations can be found in the [Programmer's Guide].
+More information on the usage of the above integrations can be found in the depanlinkProgrammer's Guidetengahlink./programmer's-guide.htmlbelakanglink.
 
 ## .NET  - Abstract container
 
@@ -292,4 +292,4 @@ This package contains integrations with non-XAP components. For more information
 
 
 {% whr %}
-{% refer %} **Next chapter**: [Terminology]{% endrefer %}
+{% refer %} **Next chapter**: depanlinkTerminologytengahlink./terminology.htmlbelakanglink{% endrefer %}

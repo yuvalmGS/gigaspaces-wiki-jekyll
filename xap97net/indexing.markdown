@@ -90,7 +90,7 @@ public class Person
 
 ## Inheritance
 
-By default, a property's index is inherited in sub classes (i.e. if a property is indexed in a super class, it is also indexed in a sub class). If you need to change the index type of a property in a subclass you can override the property and annotate it with `\[SpaceIndex\]` using the requested index type (to disable indexing use `None`).
+By default, a property's index is inherited in sub classes (i.e. if a property is indexed in a super class, it is also indexed in a sub class). If you need to change the index type of a property in a subclass you can override the property and annotate it with `\ajepaaaSpaceIndex\ajepbbb` using the requested index type (to disable indexing use `None`).
 
 # Indexing at Run-time
 
@@ -102,7 +102,7 @@ Indexes can be added dynamically at run-time using the GigaSpaces Management Cen
 
 An index can be defined on a nested property to improve performance of nested queries - this is highly recommended.
 
-Nested properties indexing uses an additional `\[SpaceIndex\]` attribute - **`Path`**.
+Nested properties indexing uses an additional `\ajepaaaSpaceIndex\ajepbbb` attribute - **`Path`**.
 
 ## The `SpaceIndex.Path` Attribute
 
@@ -209,7 +209,7 @@ Note that the same indexing techniques above are also applicable to Dictionary-b
 
 An index can be defined on a Collection property (such as List). Setting such an index means that each of the Collection's items is indexed.
 
-Setting an index on a Collection is done using the SpaceIndex.Path attribute where a Collection property should be followed by "\[\*\]".
+Setting an index on a Collection is done using the SpaceIndex.Path attribute where a Collection property should be followed by "\ajepaaa\*\ajepbbb".
 
 The following example shows how to define an index on a List of Integers:
 
@@ -306,7 +306,7 @@ public class Information
 
 
 {% info %}
-Both \[SpaceIndex(Type=SpaceIndexType.Basic)\] and \[SpaceIndex(Type=SpaceIndexType.Extended)\] are supported.
+Both \ajepaaaSpaceIndex(Type=SpaceIndexType.Basic)\ajepbbb and \ajepaaaSpaceIndex(Type=SpaceIndexType.Extended)\ajepbbb are supported.
 {% endinfo %}
 
 

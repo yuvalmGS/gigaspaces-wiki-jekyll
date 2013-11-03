@@ -656,4 +656,4 @@ namespace TickInfo
 
 {% refer %}[Write Your First RTD/UDF Application|Writing Your First RTD or UDF Application]{% endrefer %}
 {% refer %}[See the Market-Data Example|GigaSpaces-Excel Market-Data Example]{% endrefer %}
-{% refer %}Back to The [Excel that Scales Solution] section{% endrefer %}
+{% refer %}Back to The depanlinkExcel that Scales Solutiontengahlink./excel-that-scales-solution.htmlbelakanglink section{% endrefer %}

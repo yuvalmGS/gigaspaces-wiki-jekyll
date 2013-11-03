@@ -112,12 +112,12 @@ The polling event container performs receive operations only when the relevant s
 
 # FIFO Grouping
 
-The FIFO Grouping designed to allow efficient processing of events with partial ordering constraints. Instead of maintaining a FIFO queue per class type, it lets you have a higher level of granularity by having FIFO queue maintained according to a specific value of a specific property. For more details see [FIFO grouping].
+The FIFO Grouping designed to allow efficient processing of events with partial ordering constraints. Instead of maintaining a FIFO queue per class type, it lets you have a higher level of granularity by having FIFO queue maintained according to a specific value of a specific property. For more details see depanlinkFIFO groupingtengahlink./fifo-grouping.htmlbelakanglink.
 
 # Concurrent Consumers
 
 By default, the polling event container starts a single thread that performs the receive operations and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads, the container will manage the scaling up and down of concurrent consumers automatically according to the load, however, there are a few parameters regarding this scaling logic which are described in [Auto Polling Consumer Scaling|Auto Polling Consumer Scaling]. This provides faster processing of events. However, any FIFO behavior that might be configured in the space and/or template is lost.
-{% exclamation %} When using a FIFO Grouping, the FIFO order of each value is not broken. See [FIFO Grouping] page for more details.
+{% exclamation %} When using a FIFO Grouping, the FIFO order of each value is not broken. See depanlinkFIFO Groupingtengahlink./fifo-grouping.htmlbelakanglink page for more details.
 
 Here is an example of a polling container with 3 concurrent consumers and a maximum of 5 concurrent consumers:
 

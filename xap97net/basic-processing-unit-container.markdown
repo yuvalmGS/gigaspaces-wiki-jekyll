@@ -14,7 +14,7 @@ page_id: 63799338
 
 A [processing unit container|Processing Unit Container] is a component implemented by the user and deployed and managed by the service grid. XAP.NET comes with a built-in type implementation of the processing unit container called the `BasicProcessingUnitContainer` which provides basic implementations for common activities, and allows the user to focus on business logic and less with GigaSpaces internals.
 
-{% refer %}For a full example of a processing unit and a usage of the `BasicProcessingUnitContainer` refer to the [SBA Example].{% endrefer %}
+{% refer %}For a full example of a processing unit and a usage of the `BasicProcessingUnitContainer` refer to the ajepaaaSBA Exampleajepbbb.{% endrefer %}
 
 # Using The Container
 
@@ -77,7 +77,7 @@ The following config file will cause the container to create and manage an embed
 
 # Basic Processing Unit Components
 
-There can be different user components that are part of the processing unit. Such components can be automatically generated and managed by the container by creating a class, which represent the logical component, and marking it with the \[BasicProcessingUnitComponent\] attribute. Optionally, the component can mark methods with the \[ContainerInitializing\] and \[ContainerInitialized\] which will be called when the managing basic ontainer is initializing and after it is initialized correspondigly. Moreover, it can implement the `IDisposable` interface which will be called once the managing container is disposing upon undeployment.
+There can be different user components that are part of the processing unit. Such components can be automatically generated and managed by the container by creating a class, which represent the logical component, and marking it with the \ajepaaaBasicProcessingUnitComponent\ajepbbb attribute. Optionally, the component can mark methods with the \ajepaaaContainerInitializing\ajepbbb and \ajepaaaContainerInitialized\ajepbbb which will be called when the managing basic ontainer is initializing and after it is initialized correspondigly. Moreover, it can implement the `IDisposable` interface which will be called once the managing container is disposing upon undeployment.
 
 Here's an example of a basic component which keeps a reference to a space proxy which is managed by the container:
 
@@ -103,7 +103,7 @@ public class MyComponent : IDisposable
 {% endhighlight %}
 
 
-{% lampon %} The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container.
+{% lampon %} The method which has one of the attributes \ajepaaaContainerInitialized\ajepbbb or \ajepaaaContainerInitializing\ajepbbb can have zero arguments or one argument which will be injected with the managing container.
 
 The container automatically detects components by scanning all the assembly (dll) files in the processing unit's folder.
 
@@ -200,7 +200,7 @@ The following basic container config will start two space proxies and supply the
 
 # Space Life-Cycle Events
 
-In a topology with backup spaces, it is quite common to have a business logic co-located with an embedded space instance, that should be activated only when the embedded space instance mode is primary. The built-in event listener container work that way; they only start to operate when the co-located embedded space becomes primary. It is quite common to have different custom logic that should be notified upon space mode change events and act accordingly (for instance, start some monitoring process of the co-located space instance). The container will detect automatically methods marked with a space mode changed attribute (\[PostPrimary\], \[BeforePrimary\], \[PostBackup\] and \[BeforeBackup\]) and it will invoke these methods once the space instance mode is changed.
+In a topology with backup spaces, it is quite common to have a business logic co-located with an embedded space instance, that should be activated only when the embedded space instance mode is primary. The built-in event listener container work that way; they only start to operate when the co-located embedded space becomes primary. It is quite common to have different custom logic that should be notified upon space mode change events and act accordingly (for instance, start some monitoring process of the co-located space instance). The container will detect automatically methods marked with a space mode changed attribute (\ajepaaaPostPrimary\ajepbbb, \ajepaaaBeforePrimary\ajepbbb, \ajepaaaPostBackup\ajepbbb and \ajepaaaBeforeBackup\ajepbbb) and it will invoke these methods once the space instance mode is changed.
 
 Here's an example of monitoring logic that will start to monitor the embedded space when it becomes primary:
 
@@ -252,7 +252,7 @@ public void MyEventListener(ISpaceProxy spaceProxy)
 {% endhighlight %}
 
 
-When registering for the \[BeforePrimary\] or \[BeforeBackup\], special care should be taken. The event handling of these listeners will **delay the space instance life cycle completion** for a co-located space instance - i.e., a primary space instance will be blocked from fully becoming a primary space until it completes all the invocations of the \[BeforePrimary\] subscribers. There is no guarantee for receiving a corresponding Before event always prior to a Post event. When the processing unit starts, the event subscription is asynchronous to the space instance active election; in this case it is quite reasonable not to receive the Before events and only to receive the Post events.
+When registering for the \ajepaaaBeforePrimary\ajepbbb or \ajepaaaBeforeBackup\ajepbbb, special care should be taken. The event handling of these listeners will **delay the space instance life cycle completion** for a co-located space instance - i.e., a primary space instance will be blocked from fully becoming a primary space until it completes all the invocations of the \ajepaaaBeforePrimary\ajepbbb subscribers. There is no guarantee for receiving a corresponding Before event always prior to a Post event. When the processing unit starts, the event subscription is asynchronous to the space instance active election; in this case it is quite reasonable not to receive the Before events and only to receive the Post events.
 {% endtoczone %}
 
 {% refer %}
