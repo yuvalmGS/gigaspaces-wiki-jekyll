@@ -50,6 +50,7 @@ Another important attribute in that context is the **lookup group**. The lookup 
 {% lampon %} It is common to start at least two LUS instances in each Service Grid for high-availability reasons. Note that the lookup service can run in the same process with a GSM, or in standalone mode using its own process.
 
 The following services use the LUS:
+
 - [GigaSpaces Manager](#gsm)
 - [GigaSpaces Agent](#gsa)
 - Processing Unit Instances (actual instances of a deployed Processing Unit)

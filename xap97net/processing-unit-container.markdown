@@ -50,6 +50,7 @@ The Processing Unit Container lifecycle consists only of these two methods: `Ini
 One of the core ideas of the Processing Unit is the determination of the deployment topology in deploy-time. Therefore, when building a Processing Unit, there is almost no need to be aware of the actual cluster topology the Processing Unit is deployed under.
 
 {% infosign %} There are two aspects that are important to remember when building a Processing Unit, for it to be cluster topology-independent:
+
 - Define a routing index on the domain model written to the space, so the partitioned topology can work.
 - When working directly against a cluster member, make sure you don't perform operations against the backup member.
 

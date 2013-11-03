@@ -31,6 +31,7 @@ Click [here](http://gigaspaces.com/wiki/download/attachments/54821146/SpaceEnabl
 # Modules
 
 The example project is based on a Maven project structure and has four submodules:
+
 - RulesClient - Contains only a single class that demonstrates how a client would access the rules engine. See the 'Executing rules' section for details.
 - RulesLoader - Contains code for a Processing Unit that (at startup) loads business rules into the space.
 - RulesShared - A library with code that is shared between the other modules.
@@ -237,6 +238,7 @@ public enum DroolsOperationContext {
 {% endhighlight %}
 
 Notes:
+
 - In the above example the DroolsOperationContext values are passed as "context-values" to the rules engine. A single set of rules can therefore be customized for the operation under which the invocation occurred.
 
 {% endtabcontent %}
@@ -328,5 +330,6 @@ Some rule-engines like Yasu also have the ability to access a standardized persi
 ## Parallel execution
 
 A RETE network which is created out of a set of rules itself is not designed for parallel execution over multiple machines. It can at best make use of multi-core processors on a single machine. If rulesets need to be defined that can be executed in a parallel way the following considerations are useful:
+
 - Decrease and partition the data-set that the rule-engine needs to use for execution, and use Map/Reduce style operations using task-execution or Executor Driven Remoting for parallel execution.
 - Break up several rule-engine executions into separate executions and use Event Containers for chaining the various calls. This will make more efficient use of your resources.

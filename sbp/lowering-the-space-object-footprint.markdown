@@ -19,6 +19,7 @@ Date: July 2009
 By default, when using the GigaSpaces Java API, the space stores space object fields as is. No data compaction, or compression is done while the object is transported across the network or when stored within the space.
 
 {% note %}
+
 - The Compressed Storage Type compressing non-primitive fields using the zip utilities. It is different than the compact serialization pattern.
 - The Binary Storage Type store non-primitive fields within the space as it in its byte array form. It does not compress or reduce the footprint of the data as the compact pattern. It avoid the need to introduce nested space object data type to the space JVM and the need to de-serialize these at the space side. The Binary Storage Type may improve the performance when the space object store large collection.
 - The C++ and .Net API objects data does go through some compaction when sent across the network.
@@ -27,6 +28,7 @@ By default, when using the GigaSpaces Java API, the space stores space object fi
 With the Compact Serialization pattern you may reduce the space object memory footprint when stored within the data grid. This allows you to store more space objects per memory unit. This pattern works very well when the space object includes large number of numerical values as it is storing these in more optimal data type.
 
 The basic idea of the compact serialization pattern is simple: Total control on the format of the space object data while transported over the network and when stored within the space. This technique:
+
 - Compacts the object payload data when transported over the network and when stored in memory.
 - Avoids the de-serialization involved when space object written to the space from a remote client (for non primitive fields such as user defined classes or collection field)
 - Avoids the de-serialization replicated to a backup space(s)
@@ -34,6 +36,7 @@ The basic idea of the compact serialization pattern is simple: Total control on 
 
 # The Basic Flow
 With the compact serialization pattern:
+
 - Before you write the object you serialize all non indexed fields (payload data) into one byte array field using the GigaSpaces serialization API (pack).
 - You serialize/de-serialize all indexed fields as usual (have the `writeExternal` , `readExternal` implementation to write and read these into the stream).
 - After reading the object from the space you should de-serialize the byte array data (unpack).
@@ -43,11 +46,13 @@ With the compact serialization pattern:
 {% endindent %}
 
 When the object is written to the space:
+
 - The non-indexed fields are compacted and serialized into the same field (as a byte array).
 - All the indexed fields + the byte array are serialized as usual via the `writeExternal` call.
 - The object with arrives in the space, de-serialized, indexed fields stored as usual and the byte array field stored as is.
 
 When the object is read from the space:
+
 - The read template undergoes the same actions as when writing an object to the space
 - The matching object is serialized and sent to the client.
 - When the matching object arrives the client side is it de-serialized, and the byte array data is de-serialized and expand (in a lazy manner).
@@ -68,6 +73,7 @@ The `BinaryOutputStream` contains various method to serialize all java's primiti
 
 # Example
 With the [attached example](/attachment_files/sbp/BinaryCompaction.zip) we have a space class with 37 fields.
+
 - 1 Integer data type field (indexed used for queries).
 - 12 String fields
 - 12 Long fields
@@ -83,6 +89,7 @@ To run this example copy the example package zip into \GigaSpaces Root\examples\
 Our example involves a space class that will be modified to follow the compact serialization pattern.
 
 The original class includes:
+
 - One Integer indexed field.
 - 12 String type non indexed fields declared as space class fields
 - 12 Long type non indexed fields declared as space class fields
@@ -124,6 +131,7 @@ public class SimpleEntry {
 
 ## The BinaryFormatEntry class
 The modified class that implements the compact serialization pattern includes:
+
 - Using the `@SpaceClass(includeProperties=IncludeProperties.EXPLICIT)` decoration - this allows you to control which fields will be Space class fields explicitly.
 - One Integer indexed field.
 - One byte array field declared as a space class field.

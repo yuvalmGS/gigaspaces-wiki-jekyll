@@ -50,6 +50,7 @@ The in-line cache mechanism is widely used with the following GigaSpaces APIs:
 ## When you should use an in-line cache?
 
 An in-line cache is very useful when:
+
 - The total size of data stored within the database (or any other external data source) is equal or less than the amount of data stored in memory. Ideally, you'd use the `ALL_IN_CACHE` cache policy mode.
 - The original data model of the data within the database (or any other external data source) is similar to the data model of the objects in memory. The [external data source] will work very well: the data will be loaded automatically from the database into the cache and every change to the data in the cache will be propagated to the database behind the scenes.
 
@@ -59,6 +60,7 @@ With this mechanism, the application is responsible for maintaining the data in 
 1. The application attempts to read an object from the cache.
 2. If the object is found within the cache, the application uses it.
 3. If the object isn't found within the cache:
+
 - The application fetches it from the database.
 - The application writes it into the cache.
 4. The next time the application attempts to fetch the same object, it will be read from the cache - unless the object has been expired or evicted.
@@ -66,6 +68,7 @@ With this mechanism, the application is responsible for maintaining the data in 
 ![side_cache.jpg](/attachment_files/xap97net/side_cache.jpg)
 
 The Side cache scenario is widely used with the following GigaSpaces APIs:
+
 - [GigaSpace API](./the-ispaceproxy-interface.html) - GigaSpaces native Object/SQL API.
 - [The GigaMap Interface] - GigaSpaces Key/Value (JCache/Hashtable) API.
 - [JDBC API](/xap97/jdbc-driver.html) - GigaSpaces native JDBC driver.
@@ -75,6 +78,7 @@ The Side cache scenario is widely used with the following GigaSpaces APIs:
 ## When you should use a side cache?
 
 A side cache is very useful when:
+
 - The total amount of data stored in the database (or any other external data source) is relatively much higher than the amount of data stored in-memory. In such a case, you should be running in `LRU` cache policy mode.
 - The original data model of the data within the database (or any other external data source) is very different than the data model of the objects in-memory. In such a case the built-in [External Data Source] may not work well, but customized mapping logic should be implemented at the client application side to load data from the database and push it into the cache.
 
@@ -93,6 +97,7 @@ When using client cache, you use a two-layered cache architecture: The first lay
 ![side-cache-local-cache.jpg](/attachment_files/xap97net/side-cache-local-cache.jpg)
 
 The client cache size is limited to the client process heap size. The client-side cache is updated automaticaly once the master copy of the object within the IMDG is updated. The client cache can be implemented using the following configurations:
+
 - [Local Cache](./local-cache.html) - On-demand client cache loading data based on client activity. This type of client cache evicts data once the client available memory drops below a configurable value.
 - [Local View](./local-view.html) - Pre-fetch client cache loading data based on set of SQL queries. This client cache does not evict data. This client cache is designed to be read-only and support both queries and reads based on ID.
 
@@ -111,6 +116,7 @@ When running the cache in LRU cache policy mode, you may need to expire or evict
 ![query-service.jpg](/attachment_files/xap97net/query-service.jpg)
 
 Here are the options you may use to refresh the cache:
+
 - Eviction - You may configure the space to evict data by running in [LRU eviction policy](/xap97/lru-cache-policy.html).
 - Lease expiration - You may write objects into the space with a specific time to live (lease duration).
 - Programmatic expiration - You may expire the object using:

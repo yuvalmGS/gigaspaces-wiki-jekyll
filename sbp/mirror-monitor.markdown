@@ -31,11 +31,13 @@ The Mirror Monitor extends the built-in openspaces `DefaultHibernateExternalData
 The Mirror Monitor using the GigaSpaces [Administration and Monitoring API](http://wiki.gigaspaces.com/wiki/display/XAP91/Administration+and+Monitoring+API) to receive information about the current status of the replication redo log size of all the IMDG primary instances. When having multiple partitions for the IMDG, the redo log value exposed is a sum of all the IMDG primary instances current replication redo log size.
 
 This utility collecting stats about:
+
 - Write, Update, Take operations count executed by the Mirror.
 - Write, Update, Take operations current throughput executed by the Mirror.
 - Redo log size accumulated at the primary spaces.
 
 The Mirror Monitor includes the following:
+
 - `IMirrorStats` Interface - required for the JMX MBean.
 - `MirrorStats` - JMX MBean exposing the statistics collected.
 - `Mirror` - extends the `DefaultHibernateExternalDataSource` , and calculates the current Mirror Write/Update/Remove speed.

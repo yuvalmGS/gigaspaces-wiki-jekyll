@@ -24,6 +24,7 @@ This example shows the usage of Microsoft Excel spreadsheets and GigaSpaces XAP 
 The example follows a common capital market use-case of managing market data flows. The market data flows are "wired" into the GigaSpaces XAP cluster, and Excel is notified of changes in the market data metrics.
 
 The example demonstrates the following:
+
 - Running GigaSpaces XAP with up-to-date stock market data.
 - Running Excel spreadsheets that show a view of the stock market data, and are updated almost in realtime; to show changes and updates in the market data.
 - Building and using Excel RTD and UDF components.
@@ -37,6 +38,7 @@ The example demonstrates the following:
 # Example Structure
 
 The example contains a few projects:
+
 - The **`StockEntities`** project defines the `StockData` object, which stocks the market data with updated information.
 - The **`StockQuote`** project is in charge of notifying the Excel workbook of changes in the stock market data. `StockQuote` is an Excel RTD server. It receives GigaSpaces events when the stock market data is updated, and in turn notifies Excel of changes.
 - The **`StockOperations`** project is an Excel UDF (User-Defined Function). It returns the "Open" value of a Stock Symbol.
@@ -88,6 +90,7 @@ The .NET files are created in the `<Example Root>\Release` directory.
 # Example Scripts
 
 The example includes the following scripts:
+
 - **`compile.bat`** - compiles the .NET components.
 - **`startAll.bat`** - runs the feeder process that starts an embedded space and fills the space with stock market data updates. These updates trigger RTD calls, and are presented in realtime in the open Excel workbook.
 
@@ -101,6 +104,7 @@ The example includes the following scripts:
 # Tested Performance Metrics
 
 The following metrics describe the scope of testing performed using the examples from above. The solution is known to be working with these numbers. It should be noted that these metrics are not an upper boundary. It is recommended that any deviation beyond these numbers first be verified with GigaSpaces PM and/or RND.
+
 - Excel 2003 clients
 - Up to 50 concurrent remote Excel clients (5 machines, 10 clients on each machine).
 - Up to 200 space-related Excel cells (RTD) in a single spreadsheet.

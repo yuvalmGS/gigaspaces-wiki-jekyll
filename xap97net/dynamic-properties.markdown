@@ -65,6 +65,7 @@ foreach (var person in people)
 {% endhighlight %}
 
 Note that:
+
 - The query expression refers to 'age', not 'ExtraInfo.age' - the space recognizes that the ExtraInfo property is decorated with \[SpaceDynamicProperties\] and treats the dynamic properties as if they were regular properties of the Person class.
 - Since 'age' and 'email' are dynamic properties, there's no guarantee that they will exist in a given Person entry. The semantic for non-existent property is as if its value is null, which allows us to ignore it in the query expression and simply check for null before sending the email.
 - Dynamic properties can be indexed similar to fixed properties. For more info see [Indexing](./indexing.html).

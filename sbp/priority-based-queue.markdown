@@ -103,6 +103,7 @@ With this example we have one Master thread and two worker threads.
 ![prior_q.jpg](/attachment_files/sbp/prior_q.jpg)
 
 This demo can be modified to have:
+
 - Different amount of queues
 - Different amount of workers that deals with different queue. For example - queue with high priority Orders will have more workers than low priority Orders:
 Worker 1 : priorities 1-3 - High priories orders

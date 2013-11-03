@@ -104,5 +104,6 @@ For more details see [FIFO grouping](./fifo-grouping.html).
 # Limitations
 
 FIFO ordering is maintained per class per space. Therefore the following limitations should be observed:
+
 - Order across class inheritance is not supported - When executing a FIFO operation which involves entries of different classes, the result set is not guaranteed to be in FIFO order (however, each subset of a specific class will maintain order).
 - Order across cluster partitions is not supported - When executing a FIFO operation which involves more than one partition, the result set is not guaranteed to be in FIFO order (however, each subset of a specific partition will maintain order).

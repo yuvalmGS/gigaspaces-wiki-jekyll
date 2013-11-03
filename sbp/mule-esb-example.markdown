@@ -28,6 +28,7 @@ Make sure you have the [libraries required](#Libraries Required) located at the 
 {% endtip %}
 
 Here are the example components:
+
 - A Data-Grid with 2 partitions and one backup for each partition.
 - A Feeder pushing Data objects with state=0 into the space.
 - A Verifier Service consuming state=0 objects and moving these into state=1
@@ -257,6 +258,7 @@ Unix:
 {% endhighlight %}
 
 3. Download the [example package](/attachment_files/sbp/Mule_Multi_service_Example.zip) and extract it into `Gigaspaces Root\tools\maven`. Once extracted you will have the following folders under `Gigaspaces Root\tools\maven\my-app`:
+
 - common
 - feeder
 - approver
@@ -273,6 +275,7 @@ Once the example libraries will be successfully created, you will be able to dep
 
 # Deploying the Example
 In order to deploy the different Processing unit comprising this example:
+
 - Make sure you have the [libraries required](#Libraries Required) located at the correct location.
 - Start at least one GSM and several GSCs in the same machine on multiple different machines.
 - Use the following commands to deploy the Processing unit libraries:
@@ -350,6 +353,7 @@ The Monitor Service includes the following properties:
 |period| Duration in ms before the next check will be triggered|2000|
 
 The Monitor Service using the following Classes to implement the dynamic scaling behavior:
+
 - [org.openspaces.admin.Admin](http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/Admin.html) -  The main interface for accessing Admin API. Created using the AdminFactory class. It provides access to the main elements in the Admin API and in GigaSpaces such as the GridServiceAgents, LookupServices, GridServiceManagers, GridServiceContainers, ProcessingUnits, and Spaces.
 - [org.openspaces.admin.AdminFactory](http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/AdminFactory.html) - This class should be used to access all GigaSpaces Administration classes.
 - [org.openspaces.admin.pu.ProcessingUnit](http://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/pu/ProcessingUnit.html) - This class provides methods to manipulate the life cycle and mange a running Proecssing Unit. You may Increment , Decrement the amount of processing unit instances associated with this PU.
@@ -458,6 +462,7 @@ See below example:
 {% endhighlight %}
 
 {warning}Time based Parameters Units:
+
 - The **default-timeout** parameter and the **custom-transaction timeout** parameter are in second units.
 - The receive-timeout , commit and abort timeout , lookup-timeout , duration and round-trip-time parameters are in millisecond units.{warning}
 

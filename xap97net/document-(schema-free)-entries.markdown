@@ -34,6 +34,7 @@ Since a `SpaceDocument` is completely dynamic by nature, it is very easy to chan
 Before we start writing and reading `SpaceDocument` from the space, we need an **initial** schema definition of the document type.
 
 For example, suppose we're implementing an electronic commerce system, and decided we need a type called **Product** with the following properties:
+
 - CatalogNumber : String
 - Category : String
 - Name : String

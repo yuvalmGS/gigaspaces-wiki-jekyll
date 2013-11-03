@@ -283,6 +283,7 @@ The `scripts` folder contains the necessary scripts to start the [Grid Service A
 4. Run `deployAll.bat/sh` file to deploy all the processing units listed above.
 
 # Viewing the Clusters
+
 - Start the GigaSpaces Management Center and configure the appropriate lookup groups through the "Group Management" dialog.
 - Once all clusters are up and running, you will need to enable the relative groups:
 ![group_management_dialog.jpg](/attachment_files/sbp/group_management_dialog.jpg)

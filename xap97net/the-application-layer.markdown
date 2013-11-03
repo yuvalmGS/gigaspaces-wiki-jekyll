@@ -35,6 +35,7 @@ TODO_NIV - Change to internal link when available.
 - [**EDG** Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Processing+Unit+Structure+and+Configuration#dataOnlyPUs) - contains space component(s) only.
 
 A Processing Unit package structure is defined, based on the technology:
+
 - A **.NET** Processing Unit is packaged as a directory structure. For more information, please refer to the [XAP.NET Programmer's Guide](./processing-units.html).
 - A [**Java** Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Processing+Unit+Structure+and+Configuration) is packaged usually as a JAR file, modeled after the Spring DI structure. The package can also be within a file structure based on the same structure.
 - A [**Web** Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP95/Web+Processing+Unit+Container#Deployment) is packaged as a standard JEE WAR file.

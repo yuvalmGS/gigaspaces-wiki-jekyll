@@ -14,6 +14,7 @@ An [ISpaceFilter](./ispacefilter-interface.html) implementation that acts as an 
 Using it, dismisses the need to implement the `ISpaceFilter` interface, and gives a more declarative filtering method.
 
 There are two ways to use the `SpaceFilterOperationDelegate`:
+
 - Attribute-based implementation.
 - Method name-based implementation.
 
@@ -87,6 +88,7 @@ The supplied method parameters (e.g. in the code example above, the `ReportBefor
 - A no parameter method callback - e.g. `ReportBeforeWrite()`.
 - A single parameter: the parameter can either be an [ISpaceFilterEntry](./ispacefilterentry-interface.html), or the actual template object wrapped by the entry.
 {% infosign %} Note, if using actual types, this delegate filters out all the types that are not assignable to it - e.g. `ReportBeforeWrite(ISpaceFilterEntry entry)`, or `ReportBeforeWrite(SimpleMessage message)`.
+
 - Two parameters: the first one maps to the previous option, the second one is the `FilterOperation` - e.g. `ReportBeforeWrite(SimpleMessage message, FilterOperation operation)`.
 - Three parameters: the first two map to the previous option, the third one is a `SecurityContext` - e.g.  `ReportBeforeWrite(SimpleMessage message, FilterOperation operation, SecurityContext securityContext)`.
 
@@ -95,6 +97,7 @@ Some filter operations have two entries, and therefore have a similiar, but diff
 - A no parameter method callback - e.g. `ReportAfterUpdate()`
 - A single parameter: the parameter can either be an [ISpaceFilterEntry](./ispacefilterentry-interface.html) or the actual template object wrapped by the entry.
 {% infosign %} Note, if using actual types, this delegate filters out all the types that are not assignable to it - e.g. `ReportAfterUpdate(ISpaceFilterEntry entry)`, or `ReportAfterUpdate(SimpleMessage message)`.
+
 - Two parameters: the first one maps to the previous option, the second is the same as the first one, since multiple entries always have two entries (mainly for update operations).
 - Three parameters: the first two map to the previous option, the third one is the `FilterOperation`.
 - Four parameters: the first three map to the previous option, the fourth one is a `SecurityContext`.

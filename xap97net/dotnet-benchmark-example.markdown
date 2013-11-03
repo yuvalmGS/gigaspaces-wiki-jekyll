@@ -39,6 +39,7 @@ There are two options for using the benchmark:
 **1. Out-of-the-box benchmark.**
 
 Use the Benchmark Example and customize the Benchmark run:
+
 - by changing the space-url to connect to the space topology that you want to check.
 - by configuring the input xml file and changing configuration parameters.
 
@@ -47,6 +48,7 @@ For more information please read [XAP66:Out-of-the-box benchmark](#1)
 **2. Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.**
 
 You can create your own benchmark by using the Benchmark Framework:
+
 - extending the framework's BenchmarkStandard abstact class.
 - using the framework's interfaces: IBenchmarkContainer, IBenchmarkObjectAdapter.
 
@@ -82,10 +84,12 @@ Remote:
 You can control the benchmark by changing parameters in the configuration file.
 
 The configuration file includes the following information:
+
 -  **<assembly>** elements. Each element defines an assembly that needs to be loaded (for custom objects).
 -  **<Benchmark>** elements. Each element defines a benchmark that will be included in the benchmark run.
 
 The Benchmark elements contain the following parameters:
+
 - **type** - Define the benchmark type name. The type structure is:
 
 {% highlight java %}
@@ -117,10 +121,12 @@ GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.I
 Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.
 
 1. Use the Benchmark Framework:
+
 - write space operation classes, by extending the framework's BenchmarkStandard abstact class, and using the framework's interfaces: IBenchmarkContainer, IBenchmarkObjectAdapter.
 - write your own object, or use the Person (Benchmark\Objects\Person.cs) and the PersonAdapter (Benchmark\ObjectAdapters\PersonAdapter.cs) as a template.
 
 2. Prepare the inputs for your benchmark run:
+
 - Adjust the configuration parameters in the input xml file:
 - Type your object definition
 

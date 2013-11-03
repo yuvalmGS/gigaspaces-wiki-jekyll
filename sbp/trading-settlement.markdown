@@ -23,6 +23,7 @@ page_id: 56429380
 This is a demo of a trading settlement system.  Settlement occurs after a trade, and involves the delivery of securities for payment between one party and another.  Because the demo operates in real-time, it can be expanded to provide risk management or be integrated with a rules engine for complex event processing (CEP).
 
 Due to the speed at which markets move today, reliable risk assessment requires the ability to analyze trades and their impact on a portfolio in as close to real-time as possible.  In addition, having a [straight-through processing](http://en.wikipedia.org/wiki/Straight-through_processing) capability provides major benefits for risk and cost reduction. This demo illustrates how such minimum-latency systems can be built and we do so with the entire tier-based architecture built on GigaSpaces, including the following components:
+
 - Data tier
 - Business logic execution tier
 - Messaging tier
@@ -30,12 +31,14 @@ Due to the speed at which markets move today, reliable risk assessment requires 
 - Database persistence tier
 
 It is designed to be real-time, mission-critical and provide:
+
 - Scalability
 - Elasticity
 - High availability
 - Low latency
 
 The following GigaSpaces features are utilized:
+
 - Remoting
 - Events
 - Event Processing
@@ -53,6 +56,7 @@ The feeder generates random trade objects and places them into the space.
 The [grid topology](http://www.gigaspaces.com/wiki/display/XAP8/Terminology+-+Data+Grid+Topologies) for the event processing engine consists of 2 partitions with backup instances.
 
 It receives an event when an unprocessed trade is placed in the space and starts a transaction.  The transaction consists of several operations:
+
 - For an unprocessed trade, query the space to see if there is a matching trade.
 - If a matching trade is found, create a deal object and write it to the space.  Set the matched flag for both the unprocessed trade and the matching trade to true.
 - Set the unprocessed trade to processed.
@@ -141,6 +145,7 @@ Click [here](http://www.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit
 
 ## Space Document
 A [document store](http://www.gigaspaces.com/wiki/display/XAP8/Document+(Schema-Free)+API) is used for saving matched deals.  This document contains the following items:
+
 - Deal ID
 - Routing string
 - Buy-side party

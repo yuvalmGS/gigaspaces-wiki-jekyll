@@ -55,6 +55,7 @@ Several `ISpaceProxy` instances can be defined within a single Processing Unit, 
 {% infosign %} `ISpaceProxy` simplifies most operations used with the space, but some operations still require access to `IJSpace`, which can be accessed through the `ISpaceProxy` API.
 
 {% note %}
+
 - The `ISpaceProxy` variable represents a remote or embedded space proxy (for a single space or clustered) and **should be constructed only** once throughout the lifetime of the application process.
 - You should treat the `ISpaceProxy` variable as a singleton to be shared across multiple different threads.
 - The `ISpaceProxy` interface is a thread safe and there is no need to create an `ISpaceProxy` variable per application thread.
@@ -339,6 +340,7 @@ The `take` operation default timeout is `JavaSpace.NO_WAIT`.
 # Batch Operations
 
 The GigaSpace interface provides simple way to perform bulk operations. You may read or write large amount of objects in one call. The batch operations can be called using the following:
+
 - GigaSpace.readMultiple - Bulk read.
 - GigaSpace.takeMultiple - Bulk take (read+remove). Returns the removed objects back to the client.
 - GigaSpace.writeMultiple - Bulk write and update.
@@ -346,6 +348,7 @@ The GigaSpace interface provides simple way to perform bulk operations. You may 
 {% exclamation %} To remove batch of objects without returning these back into the client use `GigaSpace.clear(SQLQuery)`;
 
 Here are few important considerations when using the batch operations:
+
 - The `readMultiple` and `takeMultiple` operations boost the performance, since they perform multiple operations using one call. These methods returns the matching results in one result object back to the client. This allows the client and server to utilize the network bandwidth in an efficient manner. In some cases, these batch operations can be up to 10 times faster than multiple single based operations.
 - The `readMultiple` and `takeMultiple` operations should be handled with care, since they can return a large data set (potentially all the space data). This might cause an out of memory error in the space and client process. You should use the [GSIterator](#Space Iterator) to return the result in batches (paging) in such cases.
 - Destructive batch operations (`takeMultiple` , `writeMultiple` , `updateMultiple`) should be performed with transactions - this allows the client to roll back the space to its initial state prior the operation was started, in case of a failure.

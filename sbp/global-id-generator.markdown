@@ -29,6 +29,7 @@ You can [download](/attachment_files/sbp/GlobalIDGenerator.zip) the custom Uniqu
 {% endtip %}
 
 The following example includes a custom global unique ID generator PU and a client side utility. The Unique Global ID Generator features the following:
+
 - Spring based configured.
 - Store the last generated ID within a space object (`IdCounterEntry`).
 - Provides range of IDs to a client application. This avoids the need to perform read and update space operations with each generated ID.

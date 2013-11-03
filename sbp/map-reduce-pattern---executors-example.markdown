@@ -48,6 +48,7 @@ The Task will read all the Account objects at the collocated partition and calcu
 ![DistributedTaskExecution_phase2.jpg](/attachment_files/sbp/DistributedTaskExecution_phase2.jpg)
 
 The example code will have the following implemented:
+
 - Task
 - Client
 

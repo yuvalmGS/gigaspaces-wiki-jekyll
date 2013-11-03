@@ -53,6 +53,7 @@ public class Person
 ### Guidelines and Restrictions
 
 The following guidelines and restrictions should be followed in order to enable platform interoperability:
+
 - The full class name (including package\namespace) in all platforms should be identical.
  {% lampon %} Since java packages use a different naming convention than .Net namespaces, it is recommended to use the `SpaceClass(AliasName="")` feature to map a .Net class to the respective java class.
 

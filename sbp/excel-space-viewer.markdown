@@ -23,6 +23,7 @@ page_id: 47219420
 The Excel space viewer allows you to create customized views of data for spaces running in your network, and to configure existing views. The displayed data is constantly updated in the Excel spreadsheet.
 
 Links:
+
 - **[Using the Excel Space Viewer](#Using Excel Space Viewer)** -- allows you to connect to a Space, create and customize a new and existing views
 - **[Prerequisites](#Prerequisites)** -- prerequisites
 - **[Supported Office Versions](#Supported Office Versions)** -- a list of the Supported Office Versions
@@ -37,6 +38,7 @@ The Excel Space Viewer allows you to create views of data to a certain space cla
 
 {% infosign %} It is possible to create several views in the same spreadsheet. All views can display data for the same space, or for different spaces. If you are displaying data for a different space, you need to connect to that space before creating an additional view.
 The Space Viewer toolbar includes the following options:
+
 - **[Create View](#Creating New View)** -- allows you to create and customize a new view
 - **[Configure View](#Changing Existing View)** -- allows you to edit and customize existing views
 - **Refresh results** -- refreshes the view or views with updated data
@@ -48,6 +50,7 @@ The Space Viewer toolbar includes the following options:
 ## Creating New View
 
 The **Create View** option allows you to create a view of space data inside your Excel spreadsheet, and to customize your selection according to your requirements.
+
 - The **Connected to** drop-down menu displays the space URL of the space you are currently connected to.
 - The **Work with Class** drop-down menu allows you to select which space class you would like to view.
 - The **Available Columns** area lists all fields in this class.
@@ -106,6 +109,7 @@ The Customize the Selection window allows you to perform queries on a certain fi
 
 The top left pane is listing all the class fields. At the top of this list is the class name (in the example below: **GigaSpacesViewer.Person**).
 By clicking a field, the top right pane is enabled with customization options for that field.
+
 - The **WHERE** statement is displayed, under which is the name of the selected field in bold.
 - The **Expression** drop-down menu allows you to select the expression for this query (such as larger than, equals to for integer fields; and like for string fields).
 - The **Value** drop-down menu allows you to select the value for your query.
@@ -132,10 +136,12 @@ The Configure View window already includes your previously selected options, and
 # Prerequisites
 
 **Before you begin, make sure the following are installed**:
+
 - GigaSpaces 6.5 GA.
 .Net product is unzipped.
 JSHOMEDIR is configured.
 For more details see [Installing GigaSpaces](http://www.gigaspaces.com/wiki/display/XAP66/Building+Your+First+.NET+Application#BuildingYourFirst.NETApplication-InstallingGigaSpaces) section.
+
 - A [JDK 1.5](http://wiki.gigaspaces.com/wiki/display/XAP66/Installing+GigaSpaces#Prior+to+Installation)
 - The [.NET Framework](http://msdn2.microsoft.com/en-us/netframework/aa569263.aspx)
 - Microsoft Office 2003
@@ -143,6 +149,7 @@ For more details see [Installing GigaSpaces](http://www.gigaspaces.com/wiki/disp
 # Supported Office Versions
 
 The Excel Space Viewer has been tested with the following editions of Microsoft Office 2003:
+
 - Microsoft Office Small Business Edition 2003
 
 # Installing the Excel Space Viewer
@@ -181,6 +188,7 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 The Excel Space Viewer is installed on a laptop PC. It is working OK but after a few days, the Space Viewer toolbar does not appear in Excel.
 
 Running the installation file (`GigaSpacesViewerSetup.msi`) and selecting **Add**/**Remove**/**Repair** works fine, but the toolbar still doesn't show up in Excel.
+
 - **Operating system** -- Microsoft Windows XP Professional, Version - 5.1.2600 Service Pack 2 Build 2600
 - **Office version** -- Microsoft Office Small Business Edition 2003, Office version: 11.0.8169
 

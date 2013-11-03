@@ -15,10 +15,12 @@ without having to maintain a FIFO order for all the entries in the space.
 # Overview
 
 The FIFO groups features is designed to allow for efficient processing of events with partial ordering constraints. To better understand FIFO groups, let's first examine the constraints of total ordering, i.e. What it takes to process events in the exact order in which they arrive. There are two elements that effectively limit the scalability of processing events with total ordering:
+
 - Maintaining the original order of arrival (the "natural FIFO order"), which requires the Space to maintain a central data structure (i.e. event queue) that is accessed every time an event enters the system. This can become a central bottleneck quite quickly and limit the throughput of the system.
 - Ensuring in-order processing of events. This seems quite straight forward once you maintain the natural FIFO ordering, but in many cases, you want to ensure that a certain event will not be processed until its preceding event has been fully processed. This requirement effectively means that you can only process one event at a time, constraining the event processing to a single thread.
 
 In most cases, your application does not require total ordering, but rather ordering within groups of events. Let's take a flight booking system as an example. Such an system should process the bookings for each flight one by one, to avoid conflicting bookings for the same seats and ensure fairness. But it can process many flights simultaneously, since there's no relevance to the order of processing across different flights. The FIFO groups feature allows you to implement this kind of scenario easily by designating a "FIFO group" field. The value of this field indicates the unique group identifier. In the above example, this would be the flight number, so effectively your application can process many bookings simultaneously for different flights, but it will never process two bookings for the same flight simultaneously. In more generic terms, the FIFO groups capability ensures the following:
+
 - Within the same group, events will be processed in the order they arrived, and exclusively, meaning that only one event will be processed at a time, regardless of the number of event processors.
 - Across groups, any number of events can be processed simultaneously.
 
@@ -254,6 +256,7 @@ Declaring only `SpaceFifoGroupingProperty` or `SpaceFifoGroupingIndex` will yiel
 # Inheritance
 
 All property's FG declarations (both `SpaceFifoGroupingProeprty` and `SpaceFifoGroupingIndex`) are inherited in sub classes.
+
 - Overriding of `SpaceFifoGroupingProperty` is not allowed.
 - Overriding of `SpaceFifoGroupingIndex` is allowed in order to add more FG indexes.
 For example, declaring `SpaceFifoGroupingIndex(Path="a")`, overriding in subclass and declaring `SpaceFifoGroupingIndex(Path="b")` will yield two FG indexes: property a index and property b index (both of type `BASIC` if no `SpaceIndex` with `Extended` type was declared).
@@ -265,6 +268,7 @@ For example, declaring `SpaceFifoGroupingIndex(Path="a")`, overriding in subclas
 - `SpaceFifoGroupingProperty` and `SpaceFifoGroupingIndex` cannot be used as dynamic indexes.
 - `SpaceFifoGroupingProperty` and `SpaceFifoGroupingIndex` cannot be used  as collection indexes.
 (e.g. declaring `SpaceFifoGroupingProperty( Path="\[*\]")` is not allowed).
+
 - FIFO operation is not supported for FG template - it is ignored.
 - If the template is a SQL query template, only queries that can be performed in a single call to the space are supported (an exception is thrown).
 - FG operations must be performed under a transaction.

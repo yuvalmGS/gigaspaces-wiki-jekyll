@@ -35,6 +35,7 @@ The .NET-Java  Example illustrates basic interoperability operations between Jav
 There are two applications in the example: a .NET application and a Java application.
 
 Both applications:
+
 - Connect to an existing remote space
 - Define a Person class (**Person.cs** in .NET, **src\Person.java** in Java)
 - Have two modes:

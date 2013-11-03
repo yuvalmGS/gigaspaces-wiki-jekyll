@@ -6,6 +6,7 @@ page_id: 63799387
 ---
 
 {wnavpanel2:Additional Resources}
+
 - [XAP Application Server](http://www.gigaspaces.com/xap)
 - [XAP Data Grid](http://www.gigaspaces.com/xap)
 - [XAP for Cloud Computing](http://www.gigaspaces.com/cloud)

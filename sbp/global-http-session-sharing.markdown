@@ -12,6 +12,7 @@ page_id: 56430569
 # Global HTTP Session Sharing - Massive Web Application Scaling
 
 It's becoming increasingly important for organizations to share HTTP session data across multiple data centers, multiple web server instances or different types of web servers. Here are few scenarios where HTTP session sharing is required:
+
 - **Multiple different Web servers running your web application** - You may be porting your application from one web server to another and there will be a period of time when both types of servers need to be active in production.
 - **Web Application is broken into multiple modules** - When applications are modularized such that different functionalities are deployed across multiple server instances. For example, you may have login, basic info, check-in and shopping functionalities split into separate modules and deployed individually across different servers for manageability or scalability. In order for the user to be presented with a single, seamless, and transparent application, session data needs to be shared between all the servers.
 - **Reduce Web application memory footprint** - The web application storing all session within the web application process heap, consuming large amount of memory. Having the session stored within a remote process will reduce web application utilization avoiding garbage collocation and long pauses.
@@ -48,6 +49,7 @@ With this solution, there is no need to deploy a database to store the session, 
 GigaSpaces Global HTTP Session Management designed to deliver the application maximum performance with ZERO application code changes.
 
 GigaSpaces Global HTTP Session Management features the following:
+
 - **Reduce App/Web server memory footprint** storing the session within a remote JVM.
 - **No code changes required** to share the session with other remote Web/App servers - Support **Serialized and Non-Serialized** Session attributes. Your attributes do not need to implement Serializable or Externalizable interface.
 - **Transparent Session sharing** between any App/Web server - Any JEE app/web server (WebSphere , Weblogic , JBoss , Tomcat , Jetty , GlassFish...) may share their HTTP session with each other.
@@ -210,6 +212,7 @@ Use appropriate version of gs-session-manager-<version>.jar (example uses versio
 GigaSpaces IMDG should be deployed using your favorite topology (replicated and/or partitioned, static or elastic) and include a reference to a WAN Gateway.
 
 Before deploying regular IMDG:
+
 - Create a **lib** folder under \gigaspaces-xap-premium-X\deploy\templates\datagrid\
 - Copy the following jars located within the HttpSession.war\WEB-INF\lib into \gigaspaces-xap-premium-X\deploy\templates\datagrid\lib folder:
 aopalliance-1.0.jar, commons-beanutils-1.8.3.jar, commons-collections-2.1.1.jar, gs-runtime.jar, gs-session-manager-2.0-b103.jar, jcl-over-slf4j-1.6.4.jar, log4j-1.2.16.jar, shiro-all-1.3.0-317b.jar, slf4j-api-1.6.4.jar, slf4j-log4j12-1.6.4.jar, xmlbeans-2.2.0.jar, xmlpull-1.1.3.1.jar, xpp3_min-1.1.4c.jar and xstream-1.4.2.jar.

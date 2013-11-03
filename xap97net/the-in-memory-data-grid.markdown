@@ -25,6 +25,7 @@ This means that all or major parts of your application's data are stored in the 
 ### The Space as a cache
 
 GigaSpaces IMDG supports a variety of caching scenarios. Using GigaSpaces IMDG as a cache or as a system of record provides the following benefits:
+
 - Low latency: In-Memory Data access time without any disk usage.
 - Data access layer elasticity: Scale out/up on demand to leverage additional machine resources.
 - Less load on the database layer: Since the cache will offload the database, you will have less contention generated at the database layer.
@@ -62,6 +63,7 @@ The Space is an In-Memory Data Grid. As such its capacity is limited to the sum 
 In many cases, you have to deal with larger portions of data, or load a subset of a larger data set, which resides in an external data source such as a relational database, into the space.
 The space supports many [persistency options](./persistency.html), allowing you to easily configure how it interacts with an external relational database, or a more exotic source of data.
 It supports the following options, from which you can choose:
+
 - Cache warm-up: load data from an external data source on startup.
 - Cache read through: read data from the external data source when it is not found in the space.
 - Cache write through: write data to the external data source when it is written to the space.
@@ -78,6 +80,7 @@ Combined, these two facilities enable better control of your environment and ens
 ### Reactive Programming
 
 GigaSpaces and its Space-Based-Architecture embrace the [reactive programming](http://en.wikipedia.org/wiki/Reactive_programming) approach. Reactive programming with GigaSpaces includes:
+
 - [Data Event Listener](./event-listener-container.html): [Polling Container](./polling-container-component.html), [Notify Container](./notify-container-component.html)
 - [Local View and Local Cache](./client-side-caching.html)
 - [Task Execution over the Space](./task-execution-over-the-space.html)
@@ -89,6 +92,7 @@ GigaSpaces and its Space-Based-Architecture embrace the [reactive programming](h
 # APIs to Access the Space
 
 The Space supports a number of APIs to allow for maximum flexibility to Space clients when accessing the Space:
+
 - The core [Space API](./the-ispaceproxy-interface.html), which is the most recommended, allows you to read objects from the Space based on various criteria, write objects to it, remove objects from it and get notified about changes made to objects. This API supports transactions.
 
 {% info title=Accessing the Space from Other Languages %}
@@ -112,6 +116,7 @@ The basic unit of scalability in SBA is the [processing unit](./processing-unit-
 # What's Next
 
 It is recommended that you read the following sections next:
+
 - [Space Topologies](./space-topologies.html)
 - [Deploying and Interacting with the Space](./deploying-and-interacting-with-the-space.html)
 

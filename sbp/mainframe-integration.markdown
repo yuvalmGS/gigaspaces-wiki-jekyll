@@ -52,6 +52,7 @@ For a running demo of the Delta Server architecture please contact [support@giga
 {% endtip %}
 
 References:
+
 - [Replication and Event Publishing documentation](http://publib.boulder.ibm.com/infocenter/db2luw/v10r5/index.jsp?topic=%2Fcom.ibm.swg.im.iis.db.prod.repl.nav.doc%2Fdochome%2Fiiyrcnav_dochome.html).
 - Examples and details about IBM QRep can be found on this [Solution Brief](http://public.dhe.ibm.com/common/ssi/ecm/en/ims14394usen/IMS14394USEN.PDF).
 
@@ -112,6 +113,7 @@ Allows the IMDG to pull data from Mainframe via a public interfaces (web service
 ![mainframeIntegration.jpg](/attachment_files/sbp/mainframeIntegration.jpg)
 
 References:
+
 - The [official Redbook on JVM Server](http://www.redbooks.ibm.com/abstracts/sg248038.html?Open) that explains how to deploy applications to a JVM Server on the Mainframe.
 - [Sample JCICS programs](http://www.redbooks.ibm.com/abstracts/sg245275.html?Open) - A COBOL program invokes the Java program (JVMPool or JVMServer) using the EXEC CICS LINK PROGRAM API and passes in a CommArea or a Channel which is a mechanism to send data to the Java program.
 

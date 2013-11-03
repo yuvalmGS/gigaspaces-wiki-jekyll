@@ -80,6 +80,7 @@ See the [Parent Child Relationship](/xap97/parent-child-relationship.html) for a
 ## Embedded vs. Non Embedded Relationships
 
 We have already seen that embedding objects is not ideal for distributed data storage systems. Other factors to consider when choosing a relationship type are:
+
 - Embedding means no direct access: When an entity is embedded within another entity you cannot apply CRUD operations to it directly. Instead, you need to get its root parent entity from the space via a regular query and then navigate down the object graph until you get the entity you need. This is not just a matter of convenience, it has also performance implications: whenever you want to perform CRUD operations on an embedded entity, you read the entire graph first and (if you need to also update it) you write the entire object graph back to the Space.
 - When an object is embedded, the client application receives all objects when fetching the parent object. Conversely, by using non-embedded relationships, the client application is responsible for loading all connected objects within the client application code.
 

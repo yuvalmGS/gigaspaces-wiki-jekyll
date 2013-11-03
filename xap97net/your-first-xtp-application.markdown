@@ -89,6 +89,7 @@ public class Data
 {% endhighlight %}
 
 Note the attributes that are used in this object:
+
 - `SpaceClass` -- the marked object is written into a space.
 - `SpaceRouting` -- when using a partitioned cluster topolgy, `Data` objects are routed to the appropriate partitions according to the specified attribute, in this case `type`.
 

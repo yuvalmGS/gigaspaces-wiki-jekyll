@@ -22,6 +22,7 @@ This [WAN Gateway](http://wiki.gigaspaces.com/wiki/display/XAP91/Multi-Site+Repl
 ![wan_example1.jpg](/attachment_files/sbp/wan_example1.jpg)
 
 You will find folders for the following PUs:
+
 - wan-gateway-DE - Deployed into **DE** zone, using the **DE** lookup group and a lookup service listening on port 4366.
 - wan-gateway-RU - Deployed into **RU** zone, using the **RU** lookup group and a lookup service listening on port 4166.
 - wan-gateway-US - Deployed into **US** zone, using the **US** lookup group and a lookup service listening on port 4266.
@@ -60,6 +61,7 @@ You will find within the `scripts` folder running scripts to start [Grid Service
 4. Run `deployAll.bat/sh` file to deploy all the PUs listed above.
 
 # Viewing the Clusters
+
 - Start the `\gigaspaces-xap-premium-8.0.X-ga\bin\GS-UI.bat/sh`.
 - Once you deployed make sure you enable the relevant groups within the GS-UI:
 ![wan_example3.jpg](/attachment_files/sbp/wan_example3.jpg)
@@ -89,6 +91,7 @@ You will see the Object Count changing having zero object count for each space:
 # Replication Throughput Capacity
 
 The total TP a gateway can push out into remote sites depends on:
+
 - Network speed
 - Partition count
 - Partition activity Distribution

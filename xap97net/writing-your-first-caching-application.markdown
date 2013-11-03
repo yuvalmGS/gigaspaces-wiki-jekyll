@@ -44,6 +44,7 @@ In GigaSpaces, a _cluster_ is a grouping of several spaces running in one or mor
 A **_cluster group_** is a logical collection of cluster members, which defines how these members interact. The only way to define relationships between clustered spaces in GigaSpaces, is to add them to a group and define policies. A cluster can contain several, possibly overlapping groups, each of which defines some relations between some cluster members - this provides much flexibility in cluster configuration.
 
 A GigaSpaces cluster group can have one or more of the following policies:
+
 - **Replication Policy** - defines replication between two or more spaces in the cluster, and replication options such as synchronous/asynchronous and replication direction.
 - **Load Balancing Policy** - because user requests are submitted to the entire cluster, there is a need to distribute the requests between cluster members. The load balancing policy defines an algorithm according to which requests are routed to different members. For example, in a replicated topology, requests are divided evenly between cluster members; in a partitioned topology they are routed according to the partitioning key.
 - **Failover Policy** - defines what happens when a cluster member fails. Operations on the cluster member can be transparently routed to another member in the group, or to another cluster group.
@@ -55,20 +56,25 @@ A **_cluster schema_** defines the cluster schema type. GigaSpaces provides pred
 || Topology and Description || Common Use || Options ||
 | **Replicated** ([dg_a_topology2a.gif])
  Two or more space instances with replication between them. | Allowing two or more applications to work with their own dedicated data store, while working on the same data as the other applications. | * Replication can be synchronous (slower but guarantees consistency) or asynchronous (fast but less reliable, as it does not guarantee identical content).
+
 - Space instances can run within the application (embedded - allows faster read access) or as a separate process (remote - allows multiple applications to use the space, easier management).
 - **In this tutorial:** two remote spaces, synchronous replication. |
 | **Partitioned** ([dg_a_topology3.gif])
  Data and operations are split between two spaces (partitions) according to an index field defined in the data. An algorithm, defined in the Load-Balancing Policy, maps values of the index field to specific partitions. | Allows the In-Memory Data Grid to hold a large volume of data, even if it is larger than the memory of a single machine, by splitting the data into several partitions. | * Several routing algorithms to chose from.
+
 - With/without backup space for each partition.
 - **In this tutorial:** Two spaces, hash-based routing, with backup. |
 | **Master-Local** ([dg_a_topology4.gif])
  Each application has a lightweight, embedded cache, which is initially empty. The first time data is read, it is loaded from a master cache to the local cache (lazy load); the next time the same data is read, it is loaded quickly from the local cache. Later on data is either updated from the master or evicted from the cache.     | Boosting read performance for frequently used data. A useful rule of thumb is to use a local cache when over 80% of all operations are read operations. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.
+
 - **In this tutorial:** The master cache comprises two spaces in a partitioned topology. |
 | **Local-View** ([dg_a_topology5.gif])
  Similar to master-local, except that data is pushed to the local cache. The application defines a filter, using a spaces _read template_ or an SQL query, and data matching the filter is streamed to the cache from the master cache. | Achieving maximal read performance for a predetermined subset of data. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.
+
 - **In this tutorial:** The master cache comprises two spaces in a partitioned topology. |
 
 The cluster schema supported are:
+
 - Synchronous replication - sync_replicated
 - A-Synchronous replication - async_replicated
 - Partitioned with backup - partitioned-sync2backup
@@ -140,15 +146,18 @@ Depending on the type of deployment you performed, you should see that either tw
 # The Client Application
 
 In this tutorial, we provide a sample application that consists of the following components:
+
 - **A Data Loader** that writes data to the Data Grid.
 - **A Simple Reader** that reads data directly from the Data Grid (using spaces _read_).
 - **A Notified Reader** that registers for notifications on the Data Grid and is notified when data is written by the Data Loader.
 You can run one or more reader of either or both types.
+
 - **An `Account` object**, defined as a .Net PONO , which represents the data in the Data Grid. It has the following fields: `userName`, `accountID` and `balance`.
 
 ## Getting Source Code and Full Client Package
 
 **The source code** of all three components, and the scripts used to run them, remains the same for all Data Grid topologies described above. To view the source code, use the links below:
+
 - Full source code for Data Loader: [DataLoader.cs](http://wiki.gigaspaces.com/wiki/display/EX/Data+Grid+A+.NET+-+Basic+Topologies+-+DataLoader.cs)
 - Full source code for Simple Reader: [SimpleReader.cs](http://wiki.gigaspaces.com/wiki/display/EX/Data+Grid+A+.NET+-+Basic+Topologies+-+SimpleReader.cs)
 - Full source code for Notified Reader: [NotifiedReader.cs](http://wiki.gigaspaces.com/wiki/display/EX/Data+Grid+A+.NET+-+Basic+Topologies+-+NotifiedReader.cs)

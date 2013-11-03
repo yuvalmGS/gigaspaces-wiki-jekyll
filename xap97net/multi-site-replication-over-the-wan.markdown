@@ -18,6 +18,7 @@ The Gateway requires a separate license in addition to the GigaSpaces commercial
 Multiple site replication is the ability to replicate state between different deployed spaces, where each space can be also physically located in a different geographical location (also termed a different deployment site).
 
 Multiple site replication is a very common deployment topology in the following scenarios:
+
 - **When planning for disaster recovery** - In such cases, each of the deployment sites is located far from the other sites (e.g. a different continent so that if one site is completely destroyed or decommissioned other sites are not affected and can continue to operate normally.)
 - **For failover purposes** - When one site acts as a failover over target for another.
 - **For maintaining data locality** - for each site for performance and latency reasons. For example a global trading application that operates in multiple stock exchanges across the globe need fast access to **Global Reference Data**, or an application that's deployed on multiple data centers in the cloud with a need to access the **Users Profile Data** very quickly.
@@ -27,6 +28,7 @@ Multiple site replication is a very common deployment topology in the following 
 ## WAN Gateway Features
 
 The GigaSpaces WAN Gateway features the following:
+
 - Optimized bandwidth and WAN connection usage - With the GigaSpaces WAN Gateway every site using one connection when interacting with remote sites.
 - Total Data consistency and no data lost - Due-to its unique architecture where the WAN Gateway is totally stateless no data lose will ever happen. Transactions at the local site are replicate in atomic manner to the remote sites.
 - Conflict resolution support - GigaSpaces will identify data conflicts and allow you to decide to override the local copy with the remote replicated copy, reject the remote replicated copy or merge the local and the remote copy.
@@ -39,6 +41,7 @@ The GigaSpaces WAN Gateway features the following:
 # Supported Toplogies
 
 This page will demonstrate two sample multi-site replication topologies. These are not the only supported topologies. In fact, the permutations of topologies are quite extensive, and we've chosen to demonstrate two of the more common topologies which can also serve as a basis for other topologies as required by the user:
+
 - Multi-master with two sites, where each site is active and updates its subset of the data.
 - Master-slave, where only one site actually updates the data while the rest either serve as a backup or use it in read only mode.
 
@@ -756,6 +759,7 @@ Bootstrapping a site from another site is a process in which one site space is s
 # Adding and Removing Sites
 
 Adding and removing a site without down time is done by applying the [Hot Deploy](/xap97/deploying-onto-the-service-grid.html#DeployingontotheServiceGrid-HotDeploy) method on the space PU.
+
 - For a Gateway PUs, the process is pretty straightforward. Since they are stateless, their `pu.xml` can be simply updated and they can be undeployed and redeployed with the new added sites or removed sites relevant configuration in a regular fashion.
 - A space, however, is stateful. Redeploying it entirely will cause downtime and loss of data (if no database initial load is configured). Therefore the [Hot Deploy](/xap97/deploying-onto-the-service-grid.html#DeployingontotheServiceGrid-HotDeploy) method should be used. Roughly speaking, while the space is up, its `pu.xml` should be updated reflecting the new gateway replication topology state (addition or removal of sites) and then this `pu.xml` should be copied into the GSM's #deployment directories, overriding the existing `pu.xml` of the space processing unit of the current deployment. Then a manual restart of space instances should be performed, going over each partition, restarting its backup, waiting for it to perform full recovery from the primary (now it should be with the updated`pu.xml` configuration) and then restarting the primary instance which will be replaced by the updated backup and will become a backup after restart.
 

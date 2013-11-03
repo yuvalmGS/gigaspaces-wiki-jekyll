@@ -25,6 +25,7 @@ page_id: 55937171
 To allow batch processing systems to leverage available resources on the network/cloud, the batch processing system should be able to scale in a dynamic manner across multiple machines.
 
 The GigaSpaces Spring Batch PU provides:
+
 - Enhanced performance:
 -- Distributed parallel processing.
 -- Distributed Task execution partitioning.
@@ -65,6 +66,7 @@ A typical batch program generally reads a large number of records from a databas
 
 # GigaSpaces Spring Batch PU
 In GigaSpaces XAP, you can implement the [Master-Worker pattern](./master-worker-pattern.html) using several methods:
+
 - Task Executors - Best for scenarios where the processing activity is collocated with the data. Designed for low latency situations.
 - Polling Containers - A remote consumer/worker component used with simple processing scenarios.
 - Spring Batch - A remote consumer/worker component used with complex processing scenarios. Leveraging Spring Bach Framework to manage flows.
@@ -455,6 +457,7 @@ java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb
 This will start an HSQL database used with the Spring Batch PU.
 
 ## Create the Spring Batch PU
+
 - Download and extract the [Spring Batch PU example](/attachment_files/sbp/SpringBatch.zip) into an empty folder.
 - Create a new folder named `SpringBatchPU` under the `gigaspaces-xap-premium\deploy` folder.
 - Copy the example **bin folder** content into the `gigaspaces-xap-premium\deploy\SpringBatchPU` folder.

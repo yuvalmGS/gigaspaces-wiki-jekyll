@@ -40,6 +40,7 @@ Template query result types are determined by the template class - if the templa
 ## Sql Query
 
 The `SqlQuery` class has a `QueryResultType` settings which can be set at construction. The following options are available:
+
 - `Object` - Return .NET Object(s).
 - `Document` - Return space document(s).
 

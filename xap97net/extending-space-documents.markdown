@@ -18,6 +18,7 @@ While documents provide us with a dynamic schema, they force us to give up .NET 
 # Creating the Extension Class
 
 Let's create a type-safe document wrapper for the **Product** type described in the [Document Support](./document-(schema-free)-entries.html) page. The extensions are:
+
 - Provide a parameterless constructor, since the type name is fixed.
 - Provide type-safe properties, but instead of using private fields to store/retrieve the values, use the index operator of the SpaceDocument class.
 

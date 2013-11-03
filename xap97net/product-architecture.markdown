@@ -8,6 +8,7 @@ page_id: 63799417
 {% summary %}This section describes the architecture of the GigaSpaces XAP product.{% endsummary %}
 
 GigaSpaces XAP is built from the following sub-systems:
+
 - [**An SLA-Driven Container**](#SLA-Driven Container) -- provides the virtualization capabilities
 - [**A Unified Clustering Layer**](#Unified In-Memory Clustering) -- responsible for a single clustering model across all the product's functionality. This capability is built on top of the space infrastructure.
 - [**Core Middleware**](#Core Middleware) -- space-based runtime services which provide data, messaging and processing implementation.

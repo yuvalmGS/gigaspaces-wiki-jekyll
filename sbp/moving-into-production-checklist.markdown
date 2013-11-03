@@ -118,6 +118,7 @@ In some cases you might need to increase the LRMI Connection thread pool maximum
 A space (or any other service, such as a GSC or GSM) publishes (or registers/exports) itself within the [Lookup Service](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Lookup+Service). The lookup service acts as the system directory service. The lookup service (aka service proxy) keeps information about each service, such as its location and its exposed remote methods. Every client or service needs to discover a lookup service as part of its bootstrap process.
 
 There are 2 main options for how to discover a lookup service:
+
 - **Via locator(s)** - Unicast Discovery mode. With this option a specific IP (or hostname) used indicating the machine running the lookup service. This option can be used when multicast communication is disabled on the network, or when you want to avoid the overhead involved with the multicast discovery.
 - **Via group(s)** - Multicast Discovery mode. relevant **only when the network supports multicast**. This is a "tag" you assign to the lookup.  Clients that want to register with this lookup service, or search for a service proxy, need to use this specific group when discovering the lookup service.
 
@@ -150,6 +151,7 @@ In such a case, make sure clients have their lookup locators set correctly to ha
 
 ## Space URL Examples
 See below for examples of [Space URL](http://wiki.gigaspaces.com/wiki/display/XAP91/Space+URL)s you should be familiar with:
+
 - "jini://localhost/*/space" - this space URL means that the client is trying to discover the lookup service on the localhost, together with discovering it on the network via multicast (enabled by default).
 
 - "jini://localhost/*/space?locators=host,host2" - this space URL means that together with searching for the lookup service on the localhost or the network, we are looking for it on host1 and host2. We call this unicast lookup discovery.
@@ -195,6 +197,7 @@ In a dynamic environment where you want to start [GSCs](http://wiki.gigaspaces.c
 You should plan the initial number of GSCs and GSMs based on the application memory footprint, and the amount of processing you might need. The most basic deployment should include 2 GSMs (running on different machines), 2 Lookup services (running on different machines), and 2 GSCs (running on each machine). These host your Data-Grid or any other application components (services, web servers, Mirror) that you deploy.
 
 In general, the total amount of GSCs you are running across the machines that host the system depends on:
+
 - The amount of data you want to store in memory.
 - The JVM maximum heap size.
 - The processing requirements.
@@ -394,6 +397,7 @@ Note that with XAP 7.1.1 new variables provided that allows you to set different
 
 # Capacity Planning
 In order to estimate the amount of total RAM and CPU required for your application, you should take the following into consideration:
+
 - The Object Footprint within the space.
 - Active Clients vs. Cores vs. Heap Size.
 - The number of space partitions and backups.
@@ -476,10 +480,12 @@ See the [Tuning Java Virtual Machines](http://wiki.gigaspaces.com/wiki/display/X
 
 # Space Memory Management
 The Space supports two [Memory Management](http://wiki.gigaspaces.com/wiki/display/XAP91/Memory+Management+Facilities) modes:
+
 - `ALL_IN_CACHE` - this assumes all application data is stored within the space.
 - `LRU` - this assumes some of the application data is stored within the space, and all the rest is stored in some external data source.
 
 When running with `ALL_IN_CACHE`, the memory management:
+
 - Stops clients from writing data into the space once the JVM utilized memory crosses the WRITE threshold (percentage of the heap max size).
 - Throws a `MemoryShortageExecption` back to the client once the JVM utilized memory crosses the `high_watermark_percentage` threshold.
 
@@ -681,10 +687,12 @@ Alternatively, you should have the following files updated:
 
 {% highlight java %}
 /etc/security/limits.conf
+
 - soft    nofile          32768
 - hard    nofile          32768
 
 /etc/security/limits.d/90-nproc.conf
+
 - soft nproc 32768
 {% endhighlight %}
 

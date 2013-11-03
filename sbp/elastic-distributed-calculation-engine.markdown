@@ -66,6 +66,7 @@ Calculations can be deployed colocated with the data or seperatly.
 ## The Calculating Flow
 
 The Calculating Flow includes the following:
+
 - A client, splitting a list of Trade IDs into multiple batches. Each Batch is sent into the calculation node (space partition) via a [AnalysisTask](#The AnalysisTask) that implements the [Task Interface](http://wiki.gigaspaces.com/wiki/display/XAP8/Task+Execution+over+the+Space). Each calculation node stores a subset of the Trade data.
 - [The AnalysisTask](#The AnalysisTask) is executed. Once completed, an intermediate result is sent back to the client. If the requested Trade cannot be found within the space, it is loaded from the database.
 -  The client aggregating the results retrieved from all the calculations nodes and reducing it to four numbers. These four numbers represent books.
@@ -79,6 +80,7 @@ The Elastic Calcualtion Engine uses the [ExecutorBuilder](http://wiki.gigaspaces
 
 ## The AnalysisTask
 The `AnalysisTask` include the following:
+
 - `execute` method - invoked on each partition. It returns a sum of all of the calculated NPV values for all the trades found within the partition devided by books. The demo assumes there are four books.
 - `getTradesFromDB` method  - used to load missing Trade objects from the database. Since this demo does not include a running live database the Trade  data is generated via random data.
 - `calculateNPV` method - called by the execute method to calculate the Net present value for the Trade.
@@ -108,6 +110,7 @@ The `NPVResultsReducer` receives the NPV calculation for each book from each cal
 
 ## The Trade
 The Trade Space class stores the following items:
+
 - id - The Trade ID.
 - CacheFlowData - The cache flow data for Year 0 through Year 5.
 

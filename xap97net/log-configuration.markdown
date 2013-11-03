@@ -12,6 +12,7 @@ page_id: 63799400
 {% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 GigaSpaces XAP.NET components use the tracing mechanism for logging/tracing, built-in with the .NET framework. This gives the user, control over tracing behavior using the standard .NET configuration schema. Users can:
+
 - configure the level of events which are traced
 - assign one or more trace listeners which route the events to a logging facility
 - implement custom trace listeners to integrate GigaSpaces events with the application events, and more.
@@ -58,6 +59,7 @@ The logger component loads the configuration during initialization. If it does n
 ## Advanced Configuration
 
 Here are some features/scenarios which might be useful:
+
 - You can use any of the built-in trace listeners offered by `System.Diagnostics`:
     - `ConsoleTraceListener`
     - `TextWriterTraceListener`
@@ -65,10 +67,13 @@ Here are some features/scenarios which might be useful:
     - `DelimitedListTraceListener`
     - `EventLogTraceListener`
 {% refer %}For more details, see: [http://msdn2.microsoft.com/en-us/library/4y5y10s7.aspx](http://msdn2.microsoft.com/en-us/library/4y5y10s7.aspx).{% endrefer %}
+
 - You can configure a trace listener with a filter to handle specific events.
 {% refer %}For more details, see: [http://msdn2.microsoft.com/en-us/library/system.diagnostics.eventtypefilter.aspx](http://msdn2.microsoft.com/en-us/library/system.diagnostics.eventtypefilter.aspx).{% endrefer %}
+
 - You can implement a custom trace listener to handle traced events in a desired manner (e-mail, SMS, custom log, etc.). If you are planning to do this, we recommend that you examine the implementation of custom trace listeners provided in Microsoft's Logging Application Block as a reference.
 {% refer %}For more details, see:
+
 - [http://msdn2.microsoft.com/EN-US/library/aa480464.aspx](http://msdn2.microsoft.com/EN-US/library/aa480464.aspx)
 - [http://msdn2.microsoft.com/en-us/library/ms228989.aspx](http://msdn2.microsoft.com/en-us/library/ms228989.aspx){% endrefer %}
 {% endtoczone %}

@@ -22,6 +22,7 @@ By default, all public members (fields and properties) in a class are included i
 ## Customizing a Specific Class
 
 To customize a specific class, apply a `\[SpaceClass\]` attribute on the class, and use `IncludeProperties` and/or `IncludeFields` to specify which members should be included in the entry. Both `IncludeProperties` and `IncludeFields` are an `IncludeMembers` enumeration, which can be set to one of the following:
+
 - `IncludeMembers.All` \-- all members are included.
 - `IncludeMembers.Public` \-- public members are included, and non-public members are excluded.
 - `IncludeMembers.None` \-- all members are excluded.
@@ -66,6 +67,7 @@ Starting with .NET 2.0, properties can have separate accessors for getters and s
 
 {% info title=Read-Only Properties %}
 Read-only properties (getter, without setter), are included in the entry, but when the object is deserialized, the value is not restored, since there's no setter. This enables the space to be queried using such properties. There are two common scenarios for read-only properties:
+
 - Calculated value -- the property returns a calculated value based on other fields/properties. This isn't a problem, since no data is lost due to the 'missing' setter.
 - Access protection -- the class designer wishes to protect the property from outside changes. This is likely to be a problem, since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property, and including the field (as explained next).
 {% endinfo %}
@@ -143,6 +145,7 @@ The rest of this page is still under construction.
 - Queries performed with the UID are much faster, since the query mechanism can reduce the result set efficiently.
 
 There are two modes of SpaceID that are supported:
+
 - If you want the space to automatically generate the UID for you, specify `\[SpaceID(AutoGenerate=true)\]` on the property which should hold the generated ID. A SpaceID field that has AutoGenerate=true specified, must be of type `string`.
 - If you want the space to generate the UID using a specific property's value, specify `\[SpaceID(AutoGenerate=false)\]` on that property.
 

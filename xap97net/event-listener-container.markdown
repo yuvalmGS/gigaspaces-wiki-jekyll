@@ -158,6 +158,7 @@ The result can also be an array, and the appropriate multiple operation is execu
 ## DataEventHandler attribute
 
 The DataEventHandler attribute has two roles. The first is to mark a method to be subscribed to the [DataEventArrived event](#DataEventArrived), when using the [EventListenerContainerFactory](#EventListenerContainerFactory). The second role is to determine the write back behavior of the marked method result. This behavior has three configurable parameters:
+
 - WriteOrUpdate -- states whether to write or update the result back to the space, or only to write, which means if there's a matching object in the space to the result object, an `EntryAlreadyInSpaceException` is thrown (the default is true).
 - WriteLease -- the lease of the result object that is being written to the space (the default is lease forever).
 - UpdateTimeout -- if the operation is an update operation, determines how long to wait if the object is locked for updates (the default is 0).

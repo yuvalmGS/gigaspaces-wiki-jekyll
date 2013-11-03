@@ -53,6 +53,7 @@ In alternative tier-based architecture the need to use specific server implement
 ## A Wider Range of Applications
 
 Prior generations of application servers were built for the web in the days when HTTP was purely request/response. This limited their usage in the cases of:
+
 - Event driven applications, where an event can be state changes or elapsed time.
 - Batch Processing and batched real-time processing
 - Parallel Processing of tasks, or more complex data-oriented tasks such as Map/Reduce.
@@ -89,12 +90,14 @@ A Space is a logical in-memory service, which can store entries of information. 
 ## Space - Basic Concepts
 
 The space is accessed via a programmatic interface which supports the following main verbs:
+
 - **Write** -- the semantics of writing a new entry of information into the space.
 - **Read** -- read the contents of a stored entry into the client side.
 - **Take** -- get the value from the space and delete its content.
 - **Notify** -- alert when the contents of an entry of interest have registered changes.
 
 The power of the space model is that the combination of the various basic APIs creates a very powerful set of interaction semantics:
+
 - **Write + Read** -- This combination creates caching semantics. As entries are stored within the application, memory storing and retrieving of entries is done rapidly, making space technology perfect for caching solutions.
 - **Write + Take** -- This combination is perfect for parallel processing paradigms. By having a single (or few) writer/s who write tasks into a shared space, and multiple consumers who take entries for execution from the shared location, it is very easy to create a parallel processing application. In fact, the Master/Worker pattern was invented originally in the context of Tuple Spaces, the origins behind JavaSpaces.
 - **Write/Take + Notify** -- This is a messaging paradigm. Clients are informed of information changes asynchronously once these occur.
@@ -114,6 +117,7 @@ GigaSpaces XAP extends template matching by providing semantics to query ranges 
 The [space as defined previously](#Space - Concepts and Capabilities) is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a **cluster**, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
 
 The three main cluster topologies are:
+
 - [Replication](#Replication)
 - [Partitioned](#Partitioned)
 - [Resilient Partitioning](#Resilient Partitioning): a combination of Replication and Partitioned.

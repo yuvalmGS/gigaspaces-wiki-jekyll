@@ -22,6 +22,7 @@ If you don't want to (or can't) use XAP.NET attributes in your classes code, you
 By default, all public members (fields and properties) in a class are stored in the space, whereas non-public members are ignored. Since classes are usually designed with private/protected fields and public properties wrapping them, in most cases the default behaviour is also the desired one.
 
 To change this behaviour for a specific class, apply a `\[SpaceClass\]` attribute on that class, and use `IncludeProperties` and/or `IncludeFields` to specify which members should be included in the space. Both `IncludeProperties` and `IncludeFields` are an `IncludeMembers` enumeration, which can receive the following values:
+
 - `IncludeMembers.All` \-- all members are stored.
 - `IncludeMembers.Public` \-- public members are stored, and non-public members are ignored
 - `IncludeMembers.None` \-- all members are ignored.
@@ -52,6 +53,7 @@ Starting with .NET v2.0, properties can have different accessors for getters and
 
 {% info title=Read-Only Properties %}
 Read-only properties (getter without setter) are stored in the space, but when the object is deserialized, the value is not restored, since there is no setter. This enables the space to be queried using such properties. There are two common scenarios for read-only properties:
+
 - Calculated value -- the property returns a calculated value based on other fields/properties. This isn't a problem since no data is lost due to the 'missing' setter.
 - Access protection -- the class designer wishes to protect the property from outside changes. This is probably a problem since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property and including the field (as explained next).
 {% endinfo %}
@@ -87,10 +89,12 @@ Indexing a property speeds up queries which use the property, but slows down wri
 # Unique Constraints
 
 When an object is stored in the space, the space generates a unique identifier and stores it along with that object. The unique identifier is commonly referred to as a Space ID or UID. In many cases, it's useful to have the object's space ID or to control it. Some examples:
+
 - The Space ID can be used as a uniqueness constraint, preventing logically duplicate entries from being stored in the space.
 - Queries performed with the UID are much faster, since the query mechanism can reduce the result set efficiently.
 
 There are two modes of SpaceID that are supported:
+
 - If you want the space to automatically generate the UID for you, specify `\[SpaceID(AutoGenerate=true)\]` on the property which should hold the generated ID. A SpaceID field that has AutoGenerate=true specified, must be of type `string`.
 - If you want the space to generate the UID using a specific property's value, specify `\[SpaceID(AutoGenerate=false)\]` on that property.
 

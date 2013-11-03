@@ -49,6 +49,7 @@ You can [download](/attachment_files/sbp/ParallelQueue.zip) the Order Management
 # The Order Management Processor Example
 
 The following example illustrates a simple Order management processor that includes the following artifacts:
+
 - **The Order Class** - This represents an Order request. An order includes a _Symbol_ , _requestType_, _id_ , _orderId_ and a _bucketId_ field.
 -- The `orderId` field used to partition the Order requests (its getter method annotated with `@SpaceRouting`) between the partitions.
 -- The `id` used as the space object ID (its getter annotated with `@SpaceID`).

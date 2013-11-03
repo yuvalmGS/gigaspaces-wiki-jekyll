@@ -23,12 +23,14 @@ page_id: 53379091
 GigaSpaces Data-Grid support standard data access API. One of them is the [JDBC Driver](http://wiki.gigaspaces.com/wiki/display/XAP8/JDBC+Driver). Using the JDBC API and ODBC-JDBC bridge such as the one comes from [Open Link Software](http://uda.openlinksw.com), you can use standard ODBC API to access the GigaSpaces Data-Grid.
 
 # GigaSpaces Installation
+
 - You can download Gigaspaces java version from http://www.gigaspaces.com/LatestProductVersion.
 - Unzip the downloaded file into a directory on your local machine. (Note: make sure the directory path does not have any spaces). This directory will be referred as <GigaSpaces root> in further instructions.
 - Download and install the latest version of [Java JDK](http://java.sun.com/javase/downloads/widget/jdk6.jsp).
 - Set a `JAVA_HOME` variable to the path where you have installed the JDK.
 
 # GigaSpaces Configuration
+
 - Start the GigaSpaces Agent by running <GigaSpaces root>\bin\gs-agent.bat(bat).
 - Start the management UI by running <GigaSpaces root>\bin\gs-ui.sh(bat).
 
@@ -37,6 +39,7 @@ Create a new user "user" and password "password" and grant it all access privile
 See [GigaSpaces Management Center Security](http://wiki.gigaspaces.com/wiki/display/XAP8/GigaSpaces+Management+Center+(UI)+Security) for instructions.
 
 # Deploy a Secured Space
+
 - Click  the  "Deploy In-Memory Data Grid" button (top left, second button) in the UI.
 - In the dialog  select the following properties:
 
@@ -51,6 +54,7 @@ Cluster Schema <None>
 And deploy the space.
 
 # ODBC-JDBC bridge
+
 - Download and install the ODBC-JDBC bridge from http://uda.openlinksw.com/odbc/st/odbc-jdbc-bridge-st.
 - Set the following environment variables in your system:
 

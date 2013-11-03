@@ -24,6 +24,7 @@ page_id: 47219276
 OpenSpaces provides the ability to perform service method invocations on remote services, using the space as the transport layer. You may use the [Event Driven Remoting](http://wiki.gigaspaces.com/wiki/display/XAP8/Event+Driven+Remoting) and [Executor Based Remoting|XAP8:Executor Based Remoting].
 
 The benefits of using the Event Driven Remoting Compared to the Executor Based Remoting:
+
 - Service and Data can be located in different locations.
 - Service can be shut down without impacting the Data.
 
@@ -32,6 +33,7 @@ The downside using Event Driven Remoting is performance and scalability. Since i
 # Event Driven Remoting Example
 
 The Event Driven Remoting allows you to:
+
 - Immediately returns a 'Future'
 - Allows the client to determine when to get the results
 - Calling Future.get() is a synchronous call
@@ -56,6 +58,7 @@ The Event Driven Remoting allows you to:
 ## The Flow
 
 To allow the client to invoke the service and immediately return the actual dialog between the client and the service done via request/response space objects. The service business logic is executed in the background, and when completed returns the result back to the client:
+
 - Client is writing a Request object to the space.
 - The Request object is taken by the service (using a polling container).
 - The Service is writing back a Response object.

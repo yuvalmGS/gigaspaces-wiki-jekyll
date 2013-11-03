@@ -36,6 +36,7 @@ This section shows you how to write your first RTD or UDF application using the 
     2. Scroll down to **\[MY_UDF_CLASSNAME\]**, select it and click **OK**. You might get a dialog at this point about mscoree.dll. Click No to this dialog (Yes will delete the add-in from the list).
 12. Start a space: `<GigaSpaces Root>\Bin\Gs-ui.exe`.
 13. To call a UDF, click the **Function** icon, and look for the **\[MY_UDF_CLASSNAME\]** functions.
+
 - To call a RTD, write in any Excel cell:
     `=RTD("[MY PROG ID]",,[MY PARAMETERS])`
 

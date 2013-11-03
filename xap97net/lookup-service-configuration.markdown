@@ -44,6 +44,7 @@ If you are looking for a way to use a unicast discovery, please refer to the [Ho
 {% oksign %} To support co-existence of different GigaSpaces versions, the defaults below may change between releases.
 
 Adjusting the lookup services multicast settings can be done using the following system properties:
+
 - **`com.gs.multicast.announcement`** - the multicast address that controls the lookup service announcement. The lookup service uses this address to periodically announce its existence. Defaults to `224.0.1.188`.
 - **`com.gs.multicast.request`** - the multicast address that controls the request of clients (when started) to available lookup services. Defaults to `224.0.1.187`.
 - **`com.gs.multicast.discoveryPort`** - the port used during discovery for multicast requests. Defaults to `4174`. Note that in case the property `com.sun.jini.reggie.initialUnicastDiscoveryPort` system property is not defined it is also used as the default post for unicast requests.

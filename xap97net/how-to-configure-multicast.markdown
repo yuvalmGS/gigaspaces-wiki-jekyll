@@ -15,6 +15,7 @@ The word "multicast" is typically used to refer to IP Multicast, the implementat
 (Source - wikipedia: [http://en.wikipedia.org/wiki/Multicast](http://en.wikipedia.org/wiki/Multicast)).
 
 GigaSpaces uses multicast in the following cases:
+
 - [When deploying onto the service grid](/xap97/deploying-onto-the-service-grid.html) GigaSpaces XAP uses multicast to discover the [Lookup Service](./lookup-service-configuration.html), and register their proxies.
 - Clients use multicast to discover the [Lookup Service Configuration](./lookup-service-configuration.html) and look up a matching service proxy (such as the space).
 
@@ -24,6 +25,7 @@ Refer to the [How to Determine Whether Multicast is Available](./how-to-determin
 
 To enable the important capabilities above, you should enable multicast on machines running clients, spaces or services.
 {% tip title=What should I do if I can't enable multicast? %}
+
 - If you cannot enable multicast in your environment, you can use unicast discovery to allow services and clients to locate the Lookup Service.
 - Space cluster replication uses unicast by default. You should use multicast replication when having more than 10 clients acting as replica spaces per target space.
 {% endtip %}

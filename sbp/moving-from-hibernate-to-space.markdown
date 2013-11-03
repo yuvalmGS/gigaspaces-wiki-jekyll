@@ -39,6 +39,7 @@ To use the following architecture where the Data-Grid placed in-line between the
 
 # Spring bean Configuration File
 The existing application Spring bean Configuration file will be modified to:
+
 - Remove the usage of database at the application layer.
 - Use the GigaSpaces DAO implementation instead of the original Hibernate DAO implementation.
 - Use Data Grid (space) as the data access layer instead of the database.
@@ -299,6 +300,7 @@ The {myUserSpaceDAO}} includs the GigaSpaces DAO.
 
 # The POJO Class
 The POJO Class will be modified to include:
+
 - SpaceID field
 - Routing field
 - Indexed fields
@@ -515,6 +517,7 @@ public class UserDAOSpaceImpl implements UserDAO {
 
 # Deploying the Data-Grid and the Application
 To deploy the Data-Grid and the web Application into the [GigaSpaces runtime enviroment](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Runtime+Environment) perform the following:
+
 - Download the [3rd party libraries](/attachment_files/sbp/3rd_party_libraries.zip) package, and extract it into the `\gigaspaces-xap\lib\optional\pu-common` folder.
 - Download the [application.war](/attachment_files/sbp/application.war) , [myDataGrid.jar](/attachment_files/sbp/myDataGrid.jar) and the [myMirror.jar](/attachment_files/sbp/myMirror.jar).
 - Start the [GigaSpaces agent](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agent):
@@ -537,6 +540,7 @@ java -cp ../lib/platform/jdbc/hsqldb.jar org.hsqldb.Server -database.0 file:mydb
 {% endhighlight %}
 
 Once the agent is up and running call the deploy commands.
+
 - Deploy the Data-grid using:
 
 {% highlight java %}

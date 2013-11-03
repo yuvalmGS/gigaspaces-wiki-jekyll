@@ -43,6 +43,7 @@ This time instead of specifying the values directly in the expression we've used
 # Supported SQL Features
 
 GigaSpaces SqlQuery supports the following:
+
 - `AND` / `OR` operators to combine two or more conditions.
 - All basic logical operations to create conditions: `=, <>, <,>, >=, <=, like, NOT like, is null, is NOT null, IN`.
 - `BETWEEN` (starting 8.0.1)
@@ -59,6 +60,7 @@ It is highly recommended to use indexes on relevant properties to increase perfo
 # Blocking Operations
 
 Blocking operations (i.e. `Read` or `Take` with `timeout` greater than `0`) are supported with the following restrictions:
+
 - Blocking operations on a partitioned space require a routing value (broadcast is not supported). For more information see [Routing](#Routing).
 - Blocking operations on complex queries are not supported. For more information see [Simple Queries](#SimpleQueries) definition.
 
@@ -115,6 +117,7 @@ Since Enums are stored in the space as their underlying primitive type, they mus
 Most space operations and features support any SQL query, but some support only **simple** queries and not **complex** ones.
 
 A query is considered complex if it contains one or more of the following:
+
 - `NOT LIKE`
 - `GROUP BY`
 - `ORDER BY`
@@ -122,6 +125,7 @@ A query is considered complex if it contains one or more of the following:
 - `OR` (before 8.0.1)
 
 The following features support only simple SQL queries
+
 - Snapshot
 - Blocking operations
 - Notifications
@@ -130,6 +134,7 @@ The following features support only simple SQL queries
 ### Unsupported SQL Features
 
 GigaSpaces SqlQuery **does not** support the following:
+
 - Aggregate functions: COUNT, MAX, MIN, SUM, AVG.
 - Multiple tables select.
 - `DISTINCT`

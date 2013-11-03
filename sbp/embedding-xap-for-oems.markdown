@@ -96,6 +96,7 @@ GigaSpace space=DataGridConnectionUtility.getSpace("myGrid");
 {% endhighlight %}
 
 ## Further reading:
+
 - [Modeling and Accessing Your Data](http://wiki.gigaspaces.com/wiki/display/XAP91/Modeling+and+Accessing+Your+Data)
 - [Deploying and Interacting with the Space](http://wiki.gigaspaces.com/wiki/display/XAP91/Deploying+and+Interacting+with+the+Space)
 

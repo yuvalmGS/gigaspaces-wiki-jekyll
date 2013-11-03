@@ -39,6 +39,7 @@ public class Session
 {% endhighlight %}
 
 Important properties:
+
 - The session has a `\[SpaceID\]` property, objects without `\[SpaceID\]` will not be stored in the local cache.
 - When working with the local cache, it is highly recommended to have a `\[SpaceVersion\]` property, otherwise Entries stored in the local cache might be of older version than the ones in the space, if they were updated not through the local cache.
 
@@ -100,6 +101,7 @@ The Entries stored in the local cache might need to be evicted at some point, du
 # Synchronization with a remote space
 
 Once an Entry is loaded into the cache, it is kept synchronized with the remote space by registering for notifications for changes that affect Entries stored in the cache. The state of the internal local cache is updated according to these notifications. This synchronization is done asynchronously, behind the scenes.
+
 - This behavior can be turned of by setting the `SynchronizeWithRemoteSpace` configuration property to false.
 - When working with local cache, it is highly recommended to have a `\[SpaceVersion\]` property, otherwise Entries stored in the local cache may be of an older version than the ones in the space, if they were updated not through the local cache.
 

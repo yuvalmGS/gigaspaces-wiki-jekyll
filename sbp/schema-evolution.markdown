@@ -65,6 +65,7 @@ public class MyClass {
 {% endhighlight %}
 
 See more:
+
 - [Matching Nested Maps](http://wiki.gigaspaces.com/wiki/display/XAP91/SQLQuery#MatchingNestedMaps)
 - [Nested Object Indexing](http://wiki.gigaspaces.com/wiki/display/XAP91/Indexing#Nestedpropertiesindexing)
 

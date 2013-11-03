@@ -21,10 +21,12 @@ There are two options you may use: a **Hibernate-based model** and a **Space-bas
 
 # The Hibernate-Based Object Model
 When you have an object graph object model with collections or references association (using Hibernate OneToMany, ManyToOne), you can use the Hibernate model to load these objects into the space. There are some important considerations when using this approach:
+
 - You should use the DefaultExternalDataSource.
 - The footprint utilization is high since you might end up loading the same object more than once into the space JVM. This can happen in the following cases:
 1. When the loaded objects are regular space objects (in case you wrote these also as space objects) and also an embedded object within another space object.
 2. When you have the same object referenced from more than one space object.
+
 - The initial-load phase is relatively slow (mostly due to the duplicated objects).
 - Data should be fully loaded from the database - only **Eager mode** is supported. Lazy fetching is not supported.
 - You might end up having data inconsistency problems due to the duplicated objects in memory.
