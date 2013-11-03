@@ -134,6 +134,7 @@ So the question is: to colocate or not to colocate?
 
 # To Colocate or not to Colocate?
 When designing your system deployment strategy, you should take a decision about colocating or not colocating your business logic with its state (your application data). This means you should take the following into consideration:
+
 1. Is your business logic designed to process incoming data events without accessing data located in remote other space partitions?
 2. Is your data model able to support stickiness, meaning that it can be routed to the same logical partition, based on its content?
 3. How big is the data used by a single business logic transaction?

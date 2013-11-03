@@ -93,6 +93,7 @@ The following types are supported by the space for matching and interoperability
 | [System.Decimal](http://msdn2.microsoft.com/en-us/library/system.decimal.aspx) [Nullable<Decimal>](http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx) | `decimal` `decimal?` | `Decimal` `Nullable(Of Decimal)` | {sunjavadoc:java/math/BigDecimal|java.math.BigDecimal} | A decimal number, used for high-precision calculations.**<sup>2,4</sup>** |
 | [System.Guid](http://msdn2.microsoft.com/en-us/library/system.guid.aspx) [Nullable<Guid>](http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx) | `Guid` `Guid?` | `Guid` `Nullable(Of Guid)` | {sunjavadoc:java/util/UUID|java.util.UUID} | A 128-bit integer representing a unique identifier.**<sup>2</sup>** |
 | [System.Object](http://msdn2.microsoft.com/en-us/library/system.object.aspx) | `object` | `Object` | {sunjavadoc:java/lang/Object|java.lang.Object} | Any object |
+
 1. In .Net a `byte` is unsigned, whereas in java a `byte` is signed.
 2. These types can be either nullable or not nullable in .Net, whereas in java they are always nullable.
 3. In .Net a `DateTime` is measured in ticks (=100 nanoseconds) since 1/1/0001, whereas in java a `Date` is a measured in milliseconds since 1/1/1970.
@@ -108,5 +109,6 @@ The following collections are mapped for interoperability:
 | [System.Collections.Specialized.OrderedDictionary](http://msdn2.microsoft.com/en-us/library/system.collections.specialized.ordereddictionary.aspx) | {sunjavadoc:java/util/LinkedHashMap|java.util.LinkedHashMap} | Ordered collection of key-value pairs. |
 | [System.Collections.Generic.SortedDictionary<K,V>](http://msdn.microsoft.com/en-us/library/f7fta44c.aspx) | {sunjavadoc:java/util/TreeMap|java.util.TreeMap} | Sorted collection of key-value pairs. |
 | [System.Collections.Specialized.NameValueCollection](http://msdn2.microsoft.com/en-us/library/system.collections.specialized.namevaluecollection.aspx) [System.Collections.Specialized.StringDictionary](http://msdn2.microsoft.com/en-us/library/system.collections.specialized.stringdictionary.aspx) | {sunjavadoc:java/util/Properties|java.util.Properties} | Collection of key-value string pairs.**<sup>1</sup>** |
+
 1. In java, the `Properties` type allows the user to store keys and values which are not strings.
 

@@ -174,6 +174,7 @@ One of the main applications of a rules engine is to use it for validation of da
 Any operation of any object in the memory data grid can be intercepted using a Space Filter, and can thus be validated using the rules engine. This means the rules can be made context-aware, so that they can see under which operation the data had been changed.
 
 Examples:
+
 1. I want to validate field X on object Y when it is 'written'
 2. Value X for object Y is required when it is 'updated'
 3. When validation rule X is not valid, I want the transaction to roll back and throw an exception.

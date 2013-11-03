@@ -105,6 +105,7 @@ The default is `AutoGenerate=false`. Note that only one property in a class can 
 # Routing
 
 When working with a clustered space, one of the properties in a class is used to determine the routing behaviour of that class within the cluster (i.e. how instances of that class are partitioned across the cluster's nodes). The routing property is determined according to the following rules:
+
 1. The property marked with `\[SpaceRouting\]` attribute.
 2. Otherwise, the property marked with `\[SpaceID\]` is used.
 3. Otherwise, the first indexed property in alphabetical order is used.

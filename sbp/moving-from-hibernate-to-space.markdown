@@ -24,6 +24,7 @@ The following example is based on the standard [Spring Hibernate Integration tut
 In this best practice you will see how to modify an existing simple spring/hibernate application to leverage GigaSpaces as the [in-memory Data-grid](http://wiki.gigaspaces.com/wiki/display/XAP91/The+In-Memory+Data+Grid) and the application server hosting both the [web application|XAP91:Web Application Support] and the data in-memory. The Hibernate persistency settings will still be leveraged by [GigaSpaces Hibernate External Data Source|XAP91:Hibernate External Data Source] storing the data in-memory into a database in an [asynchronous manner|XAP91:Asynchronous Persistency with the Mirror].
 
 Moving Spring/Hibernate application to GigaSpaces involves the following basic steps:
+
 1. Spring bean Configuration file changes
 2. [POJO Class](http://wiki.gigaspaces.com/wiki/display/XAP91/POJO+Support) changes
 3. DAO implementation changes

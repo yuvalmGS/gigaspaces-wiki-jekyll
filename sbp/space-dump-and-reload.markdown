@@ -36,6 +36,7 @@ The Space Dump utility uses a temporary persistent space approach with the [spac
 
 # The Space Dump Utility
 To run the Space Dump Utility:
+
 1. Download the [Space Dump Utility](/attachment_files/sbp/spacedump.zip).
 2. Run the utility - The Space Dump Utility accept the following arguments:
 

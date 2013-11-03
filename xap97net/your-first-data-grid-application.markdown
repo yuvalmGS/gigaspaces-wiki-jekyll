@@ -33,6 +33,7 @@ This section shows how to create a C# Console Application named **HelloWorld** w
 1. From the **Project** menu, select **Add Reference**. The **Add Reference** dialog appears.
 2. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\XAP.NET 8.0.0 x86\NET v4.0.30319**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
     1. Since running .NET 4.0 side-by-side with .NET 2.0 [has limitations](http://msdn.microsoft.com/en-us/magazine/ee819091.aspx), GigaSpaces XAP.NET comes with a separate set of assemblies for .NET 2.0 and .NET 4.0. Make sure you use the one relevant for you.
+
 3. In the **Solution Explorer**, make sure you see **GigaSpaces.Core** in the project references. There's no need to reference any other assembly.
 
 # Writing the Code

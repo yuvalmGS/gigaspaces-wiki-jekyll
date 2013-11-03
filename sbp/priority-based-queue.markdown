@@ -111,6 +111,7 @@ Worker 2 : priorities 4-6 - Mid priories orders
 Worker 3 : priorities 7-9 - Low priories orders
 
 To run:
+
 1. Extract [the attached](/attachment_files/sbp/PriorityBasedQueue.zip).
 2. Load the example project into your IDE.
 3. Set the project classpath to include GigaSpaces jars located under `\gigaspaces-xap\lib\required` folder.

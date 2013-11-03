@@ -25,10 +25,12 @@ This section shows you how to write your first RTD or UDF application using the 
 5. Office runtime:
     - For Excel 2003 - in the **COM** tab, add the **Microsoft Office 11.0 Object Library**.
     - For Excel 2007 - in the **COM** tab, add the **Microsoft Office 12.0 Object Library**.
+
 6. Build the projects.
 7. Make sure `GigaSpaces.Core.dll` and `GigaSpaces.NetToJava.dll` exist in your `Release` folder.
 8. Run the following command from the `Release` folder:
     `%WinDir%\Microsoft.NET\Framework\v2.0.50727\RegAsm.exe \[MY_RTD_CLASSNAME\].dll /Codebase`
+
 9. Save the [excel.exe.config](excel.exe.config) file in your Excel runtime folder. For example: `C:\Program Files\Microsoft Office\OFFICE11`
 10. Open Excel.
 11. To add the UDF function:

@@ -22,6 +22,7 @@ This page explains how to configure jvm settings for XAP.NET applications. In ge
 GigaSpaces XAP.NET is bundled with [Oracle JDK 7 update 17](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html), aiming to save .NET users the hassle of downloading and installing Java. However, it is quite simple to bind it to a different JVM (For a list of supported JVMs refer to [Supported Platforms](http://wiki.gigaspaces.com/wiki/display/XAP95/Supported+Platforms)).
 
 If you haven't installed XAP.NET yet, you can instruct the installer to use an existing JVM:
+
 1. Start XAP.NET installation. Review and accept the license.
 2. In the **Choose Setup Type** dialog, select **Custom**, and click **Next** to continue.
 3. In the **Custom Setup** dialog, expand the **Core Components** node in the feature tree, click **Built-in Java** and select **Entire feature will be unavailable**. Click **Next** to continue.
@@ -29,6 +30,7 @@ If you haven't installed XAP.NET yet, you can instruct the installer to use an e
 5. Click **Install** to start the installation process.
 
 If you've already installed XAP.NET and wish to switch to a different JVM:
+
 1. Edit the `Settings.xml` file (located in `<XapNet>\config\Settings.xml`).
 2. Locate the `<XapNet.Runtime.JavaHome>` node and change its value to the location of the JVM you wish to use.
 

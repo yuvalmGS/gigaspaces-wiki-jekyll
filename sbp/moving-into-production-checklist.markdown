@@ -18,6 +18,7 @@ The following list should provide you with the main activities to be done prior 
 
 # Sharing Grid Management Services Infrastructure
 There are numerous ways allowing different systems/applications/groups to share the same pool of servers (in development or production environment) on the network.  A non-exhaustive list of some of the options is delineated below:
+
 1. Outside of GigaSpaces:  Dedicated hardware for each group, each set of servers runs an independent GigaSpaces runtime environment (aka Service Grid) without sharing the same server between different groups.  This naïve approach is good for simple or temporary scenarios. In this case each GigaSpaces runtime environment is isolated from each other using [different LOOKUPLOCATORS](#Running Multiple Locators) or [different LOOKUPGROUPS](#Running Multiple Groups) value.
 
 2. [Using Multiple Zones](#Running Multiple Zones):  A single GigaSpaces runtime environment spans all servers, where each group of GigaSpaces containers (across several machines) are labeled with a specific Zone.  You may have multiple Zones used by different containers on the same server. For example, have on server A two containers labeled with zoneX and four containers labeled with zoneY and on server B two containers labeled with zoneX and four containers labeled with zoneY.
@@ -249,6 +250,7 @@ call gs-agent.bat
 
 ## Running Multiple Groups
 You may have a set of LUS/GSM managing GSCs associated to a specific group. Let's assume you would like to "break" your network into 2 groups. Here is how you should start the GigaSpaces runtime environment:
+
 1. Run gs-agent starting LUS/GSM with GroupX:
 
 {% highlight java %}
@@ -293,6 +295,7 @@ gs deploy-space -cluster schema=partitioned total_members=2 spaceY
 
 ## Running Multiple Locators
 You may have a set of LUS/GSM managing GSCs associated to a specific locaator. Let's assume you would like to "break" your network into 2 groups using different lookup locators. Here is how you should start the GigaSpaces runtime environment:
+
 1. Run gs-agent starting LUS/GSM with a lookup service listening on port 8888:
 
 {% highlight java %}
@@ -358,6 +361,7 @@ You should make sure you have an adequate number of GSCs running, prior to deplo
 {% endtip %}
 
 To use Zones when deploying your PU you should:
+
 1. Start the GSC using the `com.gs.zones` system property. Example:
 
 {% highlight java %}
@@ -373,6 +377,7 @@ gs deploy -zones webZone myWar.war
 
 ## Running Multiple Zones
 You may have a set of LUS/GSM managing multiple zones (recommended) or have a separate LUS/GSM set per zone. In such a case (set of LUS/GSM managing multiple zones) you should run these in the following manner:
+
 1. Run gs-agent on the machines you want to have the LUS/GSM:
 
 {% highlight java %}

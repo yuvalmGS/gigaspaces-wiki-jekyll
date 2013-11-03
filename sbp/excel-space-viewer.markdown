@@ -78,6 +78,7 @@ To connect to a space:
 
 {% anchor create %}
 To create a new view:
+
 1. Click the **Create View** option in the Space Viewer toolbar. The Create View window is opened.
 2. Make sure you are connected to a space.
 3. Use the arrow buttons ( ![arrowExcel.jpg](/attachment_files/sbp/arrowExcel.jpg)) to move columns from the **Available Columns** area to the **Selected Columns** area.
@@ -94,6 +95,7 @@ To create a new view:
     4. Your query syntax is shown in the **SQL** area. Under the **SQL** box, the number of instances (the query's result) is displayed.
     5. Repeat steps 1-4 for any additional fields you'd like to query.
     6. Click **OK**.
+
 5. In the Create View window, Click **OK**.
 6. Your selection is displayed in the spreadsheet:
 
@@ -155,9 +157,11 @@ The Excel Space Viewer has been tested with the following editions of Microsoft 
 # Installing the Excel Space Viewer
 
 **To install and run the Excel space viewer**:
+
 1. {% lampon %} **Download the [Excel Space Viewer Installation](/attachment_files/sbp/GigaSpacesViewerSetup.zip)** file and extract it.
 2. Run the `GigaSpacesViewerSetup.msi` file.
  {% exclamation %} If the .NET Framework is not installed on your machine, the system opens a dialog asking whether you want to install it. In this case, select **Yes** and proceed with the installation. After you finish installing, reopen the `GigaSpacesViewerSetup.msi` file and continue the procedure below.
+
 3. The Excel Space Viewer Setup Wizard is displayed:
 
 {% indent %}

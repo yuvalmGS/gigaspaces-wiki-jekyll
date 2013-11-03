@@ -24,6 +24,7 @@ When you have an object graph object model with collections or references associ
 
 - You should use the DefaultExternalDataSource.
 - The footprint utilization is high since you might end up loading the same object more than once into the space JVM. This can happen in the following cases:
+
 1. When the loaded objects are regular space objects (in case you wrote these also as space objects) and also an embedded object within another space object.
 2. When you have the same object referenced from more than one space object.
 

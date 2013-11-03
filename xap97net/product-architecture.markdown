@@ -43,6 +43,7 @@ TODO_NIV - Change to internal link when available.
 The Service Grid takes a [pre-defined application-required SLA](http://wiki.gigaspaces.com/wiki/display/XAP71/Service+Grid+Processing+Unit+Container#ServiceGridProcessingUnitContainer-SLAPolicy), and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
 
 To clarify, here is an example of an application SLA:
+
 1. Deploy 50 instances of each Processing Unit.
 2. Make sure each processing unit has one backup.
 3. Make sure primary and backups of the same Processing Unit are not deployed to the same VM.
@@ -135,6 +136,7 @@ are:**
 ## In-Memory Data Grid
 
 An In-Memory Data Grid (IMDG) is the way of storing data across a grid of memory nodes. This service provides the application with:
+
 1. Data storage capabilities.
 2. Data query capabilities - single object, multiple object and aggregated complex queries.
 3. Caching semantics - the ability to retrieve information from within-memory data structures.
@@ -153,6 +155,7 @@ The main API to access the IMDG service, is the [Writing Your First Application]
 ## Messaging Grid
 
 The messaging grid aspect of the space, provides messaging capabilities such as:
+
 1. Event-Driven capabilities - the ability to build event-driven processing applications. This model enables fast (in-memory-based) asynchronous modular processing, resulting in a very efficient and scalable processing paradigm.
 2. Asynchronous production and consumption of information.
 3. One-to-one, Many-to-One, One-to-Many and Many-to-Many relationships.

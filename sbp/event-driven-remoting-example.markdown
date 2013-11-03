@@ -49,9 +49,11 @@ The Event Driven Remoting allows you to:
 4. Setup the Service PU run configuration:
 ![event_remot3.jpg](/attachment_files/sbp/event_remot3.jpg)
 ![event_remot4.jpg](/attachment_files/sbp/event_remot4.jpg)
+
 5. Setup the Client PU run configuration:
 ![event_remot1.jpg](/attachment_files/sbp/event_remot1.jpg)
 ![event_remot2.jpg](/attachment_files/sbp/event_remot2.jpg)
+
 6. Run the Service PU
 7. Run the Client PU. This will invoke the service to that will immediately return and after 10 seconds will receive the result.
 

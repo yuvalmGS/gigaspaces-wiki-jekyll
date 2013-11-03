@@ -45,6 +45,7 @@ The Mirror Monitor includes the following:
 
 # How to use the Mirror Monitor?
 In order to use the Mirror Monitor with your application you should:
+
 1. Download the [Mirror Monitor project](/attachment_files/sbp/MirrorMonitor.zip).
 2. Add the Mirror Monitor classes into your Mirror PU.
 3. Change the Mirror pu.xml configuration to have this:
@@ -75,6 +76,7 @@ The example assumes that space is deployed before the mirror,if you require othe
 
 # Viewing the Mirror Statistics
 To view the Statistics gathered by the Mirror monitor:
+
 1. Start the JConsole via the Gigaspaces Mangament Console for the Mirror Service:
 ![mirror_monitor2.jpg](/attachment_files/sbp/mirror_monitor2.jpg)
 

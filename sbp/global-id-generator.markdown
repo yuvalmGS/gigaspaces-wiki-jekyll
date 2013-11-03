@@ -41,6 +41,7 @@ The following example includes a custom global unique ID generator PU and a clie
 
 # Using the ID Generator
 To use the ID Generator you should:
+
 1. Deploy the ID Generator PU using the pu.xml below. You should deploy it using **one partition and a backup**.
 2. With your application, inject a `SpaceBasedIdGenerator` Bean. You should have it with every application instance.
 3. With your client application call the following when you need a unique global ID:

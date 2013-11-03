@@ -246,6 +246,7 @@ The Approver Service Configuration using a `polling-container` running in a [Non
 {% endgcloak %}
 
 # Building the Example
+
 1. Have the correct maven bin folder (located at `\gigaspaces-xap-premium-8.0.1\tools\maven\apache-maven-3.0.2\bin`) as part of the `PATH`.
 2. Have the GigaSpaces maven plug-in installed. See the [Maven Plugin](http://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin) for instructions how to install it.
 In general to install the GigaSpaces maven plug-in you should run the following:

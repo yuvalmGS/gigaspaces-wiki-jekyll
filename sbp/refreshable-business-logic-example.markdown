@@ -205,6 +205,7 @@ pu.download=false
 {% endhighlight %}
 
  Confirm that the processor space was deployed successfully using a gs-ui session.
+
 5. Run the ant task "run-feeder" to load data into the space. This will put 1000 `Data` objects into the space.
 
 {% highlight java %}
@@ -224,6 +225,7 @@ pu.download=false
 
 6. Make code changes to processor to simulate business logic changes. (You can use the newer version of Processor code provided in this file "<refreshable-prototype>\processor\src\org\openspaces\example\helloworld\processor\NewProcessorCode.txt".
  This version modifies the processor to log new messages to simulate business logic change).
+
 7. Run the ant task "build copy-processor-classes" to copy the new version of Processor bean to appropriate GigaSpaces folders.
 8. Run the refresh client using `refresh.bat` to reload the new classes. If everything worked fine you should see messages similar to below on the gs-agent window (or space logs),
 

@@ -227,6 +227,7 @@ jetty.sessions.spaceUrl=jini://**/**/settlementSpace?useLocalCache
 {% endhighlight %}
 
 # Running the Demo
+
 1. **Download** the [TradingSettlement.zip](/attachment_files/sbp/TradingSettlement.zip) file and **extract** it into an empty folder.
 2. **Move** into the settlement-app folder.
 3. **Rename** the files ending in **.at** to **.bat**.
@@ -245,6 +246,7 @@ jetty.sessions.spaceUrl=jini://**/**/settlementSpace?useLocalCache
     - **deploy-monitor.bat**
     - **deploy-mirror.bat**
     - **deploy-blotter.bat** (could take up to 10 minutes to deploy)
+
 9. **Connect** to the blotter (gwt-dealsBlotter processing unit) using your browser (http://127.0.0.1:8080/gwt-dealsBlotter/).
 10. **Log in** with username that matches this format:  <any characters>@<trading entity> where <trading entity> = bank1 or cust1 or bank2 or cust2, etc.  For example, username = 123@bank1.  Password can be any characters.
 11. **Start** the application by clicking on the Administration tab and then clicking Start Feeder. You can Speed up the feeder rate by decreasing the refresh Interval to 1000 and clicking the Start Feeder.

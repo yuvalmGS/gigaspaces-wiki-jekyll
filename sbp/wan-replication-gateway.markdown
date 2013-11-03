@@ -34,6 +34,7 @@ The internal architecture of the setup includes a clustered space and a Gateway,
 ![wan_example2.jpg](/attachment_files/sbp/wan_example2.jpg)
 
 # Installing the Example
+
 1. Download the [WAN_Gateway_example.zip](/attachment_files/sbp/WAN_Gateway_example.zip). It includes two folders: **deploy** and **scripts**.
 2. Please extract the file and and copy the content of the **deploy folder** into `\gigaspaces-xap-premium-8.0.X-ga\deploy` folder. It should looks like this:
 
@@ -55,6 +56,7 @@ Directory of D:\gigaspaces-xap-premium-8.0.3-ga\deploy
 
 # Running the Example
 You will find within the `scripts` folder running scripts to start [Grid Service Agent](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agent) for each site and a deploy script for all sites. This will allow you to run the entire setup on one machine to test. Here are the steps to run the example:
+
 1. Run `startAgent-DE.bat/sh` or to start DE site.
 2. Run `startAgent-RU.bat/sh` to start RU site.
 3. Run `startAgent-US.bat/sh` to start US site.

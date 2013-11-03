@@ -294,6 +294,7 @@ mvn package -DskipTests
 6. Run gs-agent-SiteA and gs-agent-SiteB scripts on appropriate machines.
 This will start GSA, GSM, LUS and 2 GSC's for SiteA with SiteA zone and GSA, GSM, LUS and 3 GSC's for SiteB with SiteB zone. Hosts tab in gs-ui will look like something below after you add the appropriate groups and locators in gs-ui,
 ![after_gsa_start.jpg](/attachment_files/sbp/after_gsa_start.jpg)
+
 7. Deploy the SiteA space cluster (2,1) by running deploy-SiteA script from <multi-cluster-example> directory.
 8. Deploy the SiteB space cluster (3,1) using following,
 

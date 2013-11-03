@@ -67,6 +67,7 @@ space.Change(idQuery, new ChangeSet().Increment("Balance.Euro", 5.2D));
 ## Change Path Specification
 
 Each operation in the change set acts on a specified string path. This path points to the property that needs to be changed and it has the following semantic:
+
 1. **First level property** - A path with no '.' character in it points to a first level property, If the property specified by this path is not part of the Object it will be treated as a dynamic property (see [Dynamic Properties](./dynamic-properties.html)) if the object does not support dynamic properties, an exception will be generated.
 2. **Nested property** - A path that contains '.' character is considered a path to a nested property, the location process of the final property which needs to be changed is done recursively by activating the properties, specified by the split of the path using the '.' character, one at a time until reaching the targeted end property.
 3. **Nested Dictionary property** - A path that contains '.' may also point to keys inside a dictionary as, meaning the following path - 'Attributes.Color' will look for key named 'Color' if the property named 'Attribute' in the object is actually a dictionary. This affects nested properties as well.
@@ -219,6 +220,7 @@ The above example will set the lease of the changed object to be one second from
 
 A timeout can be passed to the `change` operation, this timeout will only be used if any of the objects that needs to be changed is locked under a transaction which is not from the
 current thread context. In that case, all objects which are not locked will be changed and the operation will block until either one of the two happens, which ever comes first:
+
 1. the transaction lock is released - in that case the the change operation will be applied on the objects that were locked but now available.
 2. the timeout elapsed - the change operation will return with an exception. Like all other failures, the exception will be a `ChangeException` which will contain the successful changes, and all the objects that remained locked when the timeout elapsed will be part of the `FailedChanges` property of the exception, each with a failure reason of `OperationTimeoutException`.
 
@@ -291,6 +293,7 @@ The following modifiers can be used with the change operation
 1. **`ChangeModifiers.ReturnDetailedResults`** - Provide details change result containing more information about the objects that were changed, requires more network traffic.
 2. **`ChangeModifiers.OneWay`** - Change is executed in one way mode, which means the operation will not wait for the change operation to reach the server, the result will always be null and
 there is no guarantee whether the operation succeeded or not as this mode does not guarantee any exceptions upon failure. The only guarantee is that the operation was successfully written to the local network buffer.
+
 3. **`ChangeModifiers.MemoryOnlySearch`** - Search for matching entries in cache memory only (do not use the underlying external data source). However, any changes done on the matches entries
 will propagate to the underlying external data source.
 

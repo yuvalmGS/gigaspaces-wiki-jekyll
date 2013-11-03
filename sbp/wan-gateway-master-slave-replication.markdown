@@ -254,6 +254,7 @@ The master-slave topology configuration is simply implemented through delegators
 3. Extract the `scripts` folder to an arbitrary location and edit the `setExampleEnv.bat/sh` script to include correct values for `NIC_ADDR` as the machine IP and `JSHOMEDIR` as the GigaSpaces root folder location.
 
 The `scripts` folder contains the necessary scripts to start the [Grid Service Agent](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agent) for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:
+
 1. Run `startAgent-GB.bat/sh` or to start GB site.
 2. Run `startAgent-HK.bat/sh` to start HK site.
 3. Run `startAgent-US.bat/sh` to start US site.

@@ -14,6 +14,7 @@ page_id: 47219052
 In this pattern, all data is stored in the space (on the server side). Excel in turn loads only the relevant data each time and displays it in the spreadsheet. This removes the load from Excel, which is sometimes unable to cope with such large amounts of data, and, if required, updates the displayed data without delay.
 
 Using this pattern is divided into 4 main steps:
+
 1. [Loading all your data to the space](#1 -- Loading Data to Space).
 2. [Loading a subset of your data to the Excel spreadsheet](#2 -- Loading Data Subset to Excel).
 3. If required: [Defining a refresh policy](#3 -- Defining Refresh Policy).

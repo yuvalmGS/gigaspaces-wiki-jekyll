@@ -33,12 +33,14 @@ But when performing queries, using `readMultiple` with a template or SQLQuery fi
 The main motivation with the solution proposed below, is to have better control when a space partition accessing the database. The space is inspected prior retrieving the data leveraging the ability to count matching objects to a given query very fast (via the in-memory indexes the space maintains). If there are adequate amount of matching objects, the client accessing the relevant space partition(s) and retrieving the data from the space without accessing the database.
 
 Here is the full query execution strategy:
+
 1. Check matching object count per partition for a given query.
 2. If there are enough objects within the clustered space:
     - If one partition has sufficient amount of objects use it and retrieve objects only from this partition
     - If there are multiple partitions with sufficient amount of objects:
         - Retrieve in parallel data from the partitions which have enough objects (from the ones with the highest amount of matching objects first).
         - Max objects parameter used to query the partition will match the object count to avoid database access.
+
 3. If there are no enough objects within the clustered space:
     - Load data in order - first into the partition with the highest amount of free memory.
     - Optional - check with other partitions if they access the database to avoid concurrent database access.

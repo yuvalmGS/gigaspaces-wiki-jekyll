@@ -249,6 +249,7 @@ The results created at each partition will be sent to the client. These will be 
 
 This example illustrates simple Service Executors usage in **Synchronous** mode and **Asynchronous** mode.
 Your code should have the following implemented:
+
 1. Service Interface
 2. Service Implementation
 3. Service Result Reducer (Client Side)

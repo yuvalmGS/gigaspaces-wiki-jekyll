@@ -16,6 +16,7 @@ The plugin is offered as open source as part of OpenSpaces community.
 As the GigaSpaces plugin uses the [Administration and Monitoring API](http://wiki.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API) (a.k.a. Admin API) a single Hyperic agent will be used to monitor the whole cluster. Indeed GigaSpaces is a very dynamic platform and a classical Hyperic installation based on an agent monitoring the processes on his physical (or virtual) machine won't work well, a given processing unit could be unavailable on a machine because the GSM decided to deploy it somewhere else.
 
 In order to use the plugin on an hyperic agent you have to prepare this agent to be 'GigaSpaces ready'.
+
 1. Copy the GigaSpaces required jar files (_JSHOMEDIR/lib/required_) to the following agent folder: _agent-4.6/bundles/agent-4.6/pdk/lib/gs_ (you'll have to create the gs folder).
 2. Upgrade the agent JVM to a 1.6 version
 3. Restart the agent
@@ -30,6 +31,7 @@ In order to use the plugin you'll have to configure a GigaSpaces platform. Indee
 ![hyperic_new_platform.png](/attachment_files/sbp/hyperic_new_platform.png)
 
 On the hyperic new platform page select
+
 1. The platform type to be GigaSpaces XAP Grid.
 2. In Agent Connection select the agent that you prepared for GigaSpaces monitoring (Cf. Installation).
 3. IP Address is not used by the plugin, Hyperic requires a valid one however so you can put any address (the one of the hyperic server if you like).

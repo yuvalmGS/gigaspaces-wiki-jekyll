@@ -39,6 +39,7 @@ This example includes a module that is deployed to the grid, and a domain model 
 The `DataProcessor` service takes the new `Data` objects, processes the raw data and writes them back to the space.
 
 The example solution is based on three projects:
+
 1. Common - holds the `Data` object and the common interfaces
 2. Feeder - holds the DataFeeder processing unit logic.
 3. Processor - holds the DataProcessor processing unit logic and related classes.

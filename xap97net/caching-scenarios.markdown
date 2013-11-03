@@ -57,12 +57,14 @@ An in-line cache is very useful when:
 # Side Cache
 
 With this mechanism, the application is responsible for maintaining the data in the cache. Here is the flow, identical to other cache products:
+
 1. The application attempts to read an object from the cache.
 2. If the object is found within the cache, the application uses it.
 3. If the object isn't found within the cache:
 
 - The application fetches it from the database.
 - The application writes it into the cache.
+
 4. The next time the application attempts to fetch the same object, it will be read from the cache - unless the object has been expired or evicted.
 
 ![side_cache.jpg](/attachment_files/xap97net/side_cache.jpg)

@@ -342,6 +342,7 @@ public class Message  {
 
 {% note %}
  Example was tested using following product versions,
+
 1. GigaSpaces - **8.0.1**
 2. Apache ActiveMQ - **5.5**
 3. Atomikos TransactionEssentials - **3.7.0**

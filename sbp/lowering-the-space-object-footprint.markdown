@@ -61,6 +61,7 @@ When the object is read from the space:
 Using the compact serialization pattern can reduce the object footprint when stored within the space in drastic manner. As much as you will have more fields as part of the space object serialized using the GigaSpaces Serialization API, the memory footprint overhead will be smaller compared to the default serialization mode.
 
 The compact serialization pattern involves creation the following methods:
+
 1. `pack` method - Packs the object data into one field. Serialize the non-Indexed fields into the byte array.
 2. `unpack` method - Unpacks the object data into one field. De-serialize the non-Indexed fields from the byte array.
 3. `writeExternal` method - Serialize the object data. Required for the `Externalizable` implementation. Serialize the indexed fields and the byte array.

@@ -268,6 +268,7 @@ When using a [Secure GigaSpaces cluster](http://wiki.gigaspaces.com/wiki/display
 
 ## Single-Site Deployment
 The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish....).
+
 1. Download the [HttpSession.war](HttpSession.war).
 2. Deploy a space named **sessionSpace**. You can start the `GigaSpaces root/bin/gsInstance.sh/bat` for a single instance space or deploy a clustered space using the command line or GS-UI.
 3. Deploy the HttpSession.war into Tomcat (or any other app server).
@@ -309,6 +310,7 @@ When deploying the web application WAR file please make sure the web app context
 
 ### Load-Balancer
 Another option would be to use a load-balancer such as the [apache httpd](http://httpd.apache.org) and configure it to load-balance the web requests between the different web servers. Here is a simple setup:
+
 1. Install [apache httpd](http://httpd.apache.org).
 2. Create a file named `HttpSession.conf` located at <Apache HTTPD 2.2 root>\conf\gigaspaces
 3. Place the following within the `HttpSession.conf` file. The `BalancerMember` should be mapped to different URLs of your web servers instances. With the example below we have Tomcat using port 8080 and Websphere using port 9080.

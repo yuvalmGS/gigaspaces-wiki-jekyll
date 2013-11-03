@@ -24,6 +24,7 @@ The bootstrap target site gateway sink will locate the gateway sink of the boots
 All the changes that are done in the bootstrap source site during this copy process are accumulated at the replication redo-log and will be sent via the bootstrap source site delegator to the bootstrap target site sink once the copy stage is complete. During the bootstrap copy stage, the gateway sink which is being bootstrapped will not be available for replication, and all the remote sites local spaces will have a disconnected replication channel to that gateway sink.
 
 ![wan-bootstrap-copy.jpg](/attachment_files/xap97net/wan-bootstrap-copy.jpg)
+
 1. NY Sink initiates bootstrap process from the London GW
 2. The NY London GW sends the requests to the London Sink over the WAN
 3. The London Sink start reading data from the local London cluster
@@ -37,6 +38,7 @@ All the changes that are done in the bootstrap source site during this copy proc
 Unlike regular space recovery, where a backup or replicated space performs a recovery, a bootstrap has much more implications and therefore it is an administrative command executed by the user on demand.
 
 The bootstrap is initiated on the local gateway sink of the space's site that needs to be bootstrapped for another site's space. The following conditions should be held before initiating a bootstrap:
+
 1. The space that is being bootstrapped should be first cleared of all data, a recommended way to do so is by redeploying that local space (any entry which is not cleared will not be updated during the copy stage of the bootstrap process, it will be skipped).
 2. The space that is being bootstrapped should not be active during the bootstrap copy stage, which means it should not update the incoming data during the bootstrap stage. It is up to the user to make sure this condition is held.
 3. At the bootstrap target site there should be a gateway sink configured with the bootstrap source gateway as one of its sources and there should be a delegator to that source.

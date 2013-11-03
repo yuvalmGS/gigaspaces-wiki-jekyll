@@ -137,6 +137,7 @@ The table might include more than one Grid Service Manager. If so, look for the 
  ![Deployment_Wizard_EDG_Provisioned-myDataGrid-2-SyncRep.jpg](/attachment_files/xap97net/Deployment_Wizard_EDG_Provisioned-myDataGrid-2-SyncRep.jpg)
 
 Depending on the type of deployment you performed, you should see that either two spaces (two replicated Data Grid instances) or four spaces (two Data Grid partitions with one backup each) were provisioned to the host running the Grid Service Containers.
+
 5. **If this is not the first topology** you are deploying, and you are already familiar with the client application, skip to [Running Client, Testing Notifications and Verifying Topologies](#running).
 
 {% infosign %} You deployed the the Data Grid using the Management Center and its Deployment Wizard. An alternative way deploying a single space instance can be done by using the `SpaceInstance` command.
@@ -172,6 +173,7 @@ You can run one or more reader of either or both types.
 
     - Creates a new `Account` object, with a certain `userName` and `accountID`. The Account also has a `Balance` field, which is obtained by calculating `AccountID*10`.
     - Writes 100 `Account` instances with IDs 1 through 100 to the Data Grid, using a write operation.
+
 1. When you run a Simple Reader, it reads all the `Account` instances in the Data Grid, then reads them again every few seconds, until you close it.
 2. When you run a Notified Reader, it registers for notification on the `Account` class, and starts listening for notifications. When `Account` objects are written to the Data Grid, the Notified Reader immediately receives notifications from the Data Grid. The notifications include the `Account` objects themselves.
 3. If you run more 'Simple Readers' or 'Notified Readers', they repeat step 2 or 3 above, respectively.

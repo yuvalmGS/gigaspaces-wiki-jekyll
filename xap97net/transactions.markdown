@@ -67,6 +67,7 @@ public void ProcessNewOrder(ISpaceProxy space, ITransactionManager txnManager)
 {% endhighlight %}
 
 Let's look at the changes we've made:
+
 1. The method now receives an additional argument which is a transaction manager, which is used to create a transaction.
 2. The transaction is created in a **using** block, to ensure it is automatically disposed when done.
 3. The business logic code is wrapped in a **try-catch** block, and we've added a **commit** upon successful execution and **abort** if an exception occurred.

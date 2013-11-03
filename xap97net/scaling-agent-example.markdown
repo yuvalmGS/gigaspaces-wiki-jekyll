@@ -309,6 +309,7 @@ The Feeder is a Windows application that feeds the data grid with new feeds at a
 The Scaling Agent monitors the deployed Processors and scales them up on demand. It can be run either as a deployable processing unit, or as a standalone console application. When it is deployed as a processing unit, it is automatically reliable and self healing, like any processing unit that is managed by the service grid.
 
 To simplify the deployment of the examples, there are several scripts in the example directory.
+
 1. First start a grid service agent by running `<XAP.NET installation>\Bin\Gs-Agent.exe`.
 2. It is then recommended to run the GigaSpaces Management center to monitor the entire service grid state.
 3. After the service grid agent is loaded, in order to deploy the data grid, run `<XAP.NET installation>\Examples\ScalingAgent\DeploySpace.bat`.

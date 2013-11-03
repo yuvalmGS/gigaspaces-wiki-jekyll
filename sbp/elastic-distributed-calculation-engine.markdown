@@ -29,6 +29,7 @@ page_id: 56427156
 Financial services, Healthcare, Transportations,Fraud Detection, Payment systems,etc. produce reports constantly. Some of them produce reports where the data required for the report is generated over night via batch processing, and some other type of reports are produced instantly upon user request. This type of processing activity requires fast access to the raw data and the ability to utilize distributed resources available on the local environment or on the cloud.
 
 The Elastic Calculation Engine example illustrates the following:
+
 1. Calculating **Net present value** ([NPV](http://en.wikipedia.org/wiki/Net_present_value)) for large amounts of trades in real time using an In-Memory Data Grid.
 2. Intelligent Map-Reduce directing calculations into distributed nodes, lowering the network traffic and lowering the load on each calculation node.
 3. Simulating lazy data load in a batch mode optimizing database access in case of a cache miss.
@@ -123,6 +124,7 @@ For long calculations that consume relatively large amount of CPU time, the reco
 ![ElasticDistributedRiskAnalysisEngine_remote_workers.jpg](/attachment_files/sbp/ElasticDistributedRiskAnalysisEngine_remote_workers.jpg)
 
 # Running the Demo
+
 1. Download the [ElasticCalculationEngine.zip](/attachment_files/sbp/ElasticCalculationEngine.zip) and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and **edit** the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.
 2. Start the GigaSpaces agent by running the following:
 
@@ -131,6 +133,7 @@ startAgent.bat
 {% endhighlight %}
 
 {% exclamation %} You will need a machine with at least 2GB free memory to run this demo.
+
 3. Run the Elastic Data-Grid deploy script:
 
 {% highlight java %}
@@ -138,6 +141,7 @@ deployDataGrid.bat
 {% endhighlight %}
 
 This will deploy the data grid/compute grid and will later allow you to scale it. Whenever you would like to scale the data grid/compute grid just **hit Enter**. Running the deploy script again will initiate the scaling cycle again for the existing running data grid/compute grid.
+
 4. Run the Ealstic Worker deploy script:
 
 {% highlight java %}
@@ -145,6 +149,7 @@ deployWorker.bat
 {% endhighlight %}
 
 This will deploy the Worker PU into the Service Grid.
+
 5. Run the client invoking the Colocated calculations (this will be using the Task):
 
 {% highlight java %}
@@ -158,12 +163,14 @@ runClientMasterWorker.bat
 {% endhighlight %}
 
 The client will run the calculation repeatedly for 10,000 Trades where each cycle will use different rates (2%, 3%, 4%, 5%, 6%, 7%, 8%). To stop the client hit CTRL + C.
+
 7. To scale the worker run the following:
 
 {% highlight java %}
 ScaleWorker.bat
 {% endhighlight %}
  and follow the instructions.
+
 8. To Scale the Data-Grid following Hit Enter at the command running the `deployDataGrid.bat`.
 
 ## Running within eclipse
