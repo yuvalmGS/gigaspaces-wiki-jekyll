@@ -708,4 +708,4 @@ If you intend to use space filters in a mixed POJO-Document environment, please 
 
 # Advanced Options
 
-{children}
+{% children %}

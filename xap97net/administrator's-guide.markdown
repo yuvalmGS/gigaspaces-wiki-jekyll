@@ -17,4 +17,4 @@ After reading this guide, administrators and operators will be able to set up, v
 
 ## High Level Topics
 
-{children}
+{% children %}

@@ -768,4 +768,4 @@ Adding and removing a site without down time is done by applying the [Hot Deploy
 # Read More
 
 The following pages in this section provide more details on the Multi-Site Replication module:
-{children}
+{% children %}

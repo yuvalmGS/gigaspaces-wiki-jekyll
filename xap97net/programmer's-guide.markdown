@@ -13,4 +13,4 @@ This guide is written for application developers who wish to build scaled-out ap
 
 ## High Level Topics
 
-{children}
+{% children %}

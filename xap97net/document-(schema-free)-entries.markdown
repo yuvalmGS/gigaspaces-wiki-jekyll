@@ -430,4 +430,4 @@ Concrete objects can be persisted via document EDS as well, in the same way.
 
 # Advanced Options
 
-{children}
+{% children %}
