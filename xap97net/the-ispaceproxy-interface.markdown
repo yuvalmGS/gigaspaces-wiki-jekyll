@@ -64,7 +64,7 @@ Several `ISpaceProxy` instances can be defined within a single Processing Unit, 
 
 # Operations
 
-The {javadocos:/docs/dotnetdocs9.5/|ISpaceProxy} interface includes the following main operations:
+The [ISpaceProxy](http://www.gigaspaces.com/docs/JavaDocOS//docs/dotnetdocs9.5/) interface includes the following main operations:
 ||[Id Based operations](./id-queries.html)||[Batch operations](#Batch Operations)||[Asynchronous operations](#Asynchronous Operations)||Data Count operations||
 |[ReadById](./id-queries.html#Reading an Object using its ID)
 TakeById
@@ -356,11 +356,11 @@ Here are few important considerations when using the batch operations:
 - When using `writeMultiple`, you should verify that duplicated entries (with the same ID) do not appear as part of the passed array, since the identity of the object is determined based on its `ID` and not based on its reference. This is extremely important with an embedded space, since `writeMultiple` injects the ID value into the object after the write operation (when autogenerate=false).
 - The `readMultiple` and `takeMultiple` operations **do not support timeout** operations. The simple way to achieve this is by calling the `read` operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
 - Exception handling - batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
-    - {JavaDocOS:org/openspaces/core/WriteMultiplePartialFailureException|org.openspaces.core.WriteMultiplePartialFailureException}
-    - {JavaDocOS:org/openspaces/core/WriteMultipleException|org.openspaces.core.WriteMultipleException}
-    - {JavaDocOS:org/openspaces/core/ReadMultipleException|org.openspaces.core.ReadMultipleException}
-    - {JavaDocOS:org/openspaces/core/TakeMultipleException|org.openspaces.core.TakeMultipleException}
-    - {JavaDocOS:org/openspaces/core/ClearException|org.openspaces.core.ClearException}
+    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultiplePartialFailureException)
+    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultipleException)
+    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ReadMultipleException)
+    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/TakeMultipleException)
+    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ClearException)
 
 # Asynchronous Operations
 
@@ -617,8 +617,8 @@ A default implementation of the exception translator is automatically used, whic
 ## Exception handling for Batch Operations
 
 Batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
-    - {javadocos:org/openspaces/core/WriteMultiplePartialFailureException|org.openspaces.core.WriteMultiplePartialFailureException}
-    - {javadocos:org/openspaces/core/WriteMultipleException|org.openspaces.core.WriteMultipleException}
-    - {javadocos:org/openspaces/core/ReadMultipleException|org.openspaces.core.ReadMultipleException}
-    - {javadocos:org/openspaces/core/TakeMultipleException|org.openspaces.core.TakeMultipleException}
-    - {javadocos:org/openspaces/core/ClearException|org.openspaces.core.ClearException}
+    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultiplePartialFailureException)
+    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultipleException)
+    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ReadMultipleException)
+    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/TakeMultipleException)
+    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ClearException)
