@@ -13,12 +13,12 @@ page_id: 61867286
 # XAP 9.6 Documentation Home
 
 {% imagemap name=[scaling.png] %}
-{% map link=http://www.gigaspaces.com/wiki/display/XAP96/Elastic+Application+Platform+Home|coords=30,81,326,131|title=End to End Scaling %}
+{% map link=./xap-9.7-documentation-home.html|coords=30,81,326,131|title=End to End Scaling %}
 {% endimagemap %}
 
 {% wbr %}
 {% imagemap name=[caching.png] %}
-{% map link=http://www.gigaspaces.com/wiki/display/XAP96/In-Memory+Data+Grid+Home|coords=30,81,326,131|title=Caching %}
+{% map link=./in-memory-data-grid-home.html|coords=30,81,326,131|title=Caching %}
 {% endimagemap %}
 {% wbr %}
 

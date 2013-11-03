@@ -270,7 +270,7 @@ txn->commit();
 The GSIterator provides the ability to exhaustively read through all of the Entries from a space that match one or more templates. GSIterator is based on JavaSpaces Iterator\***
 
 {% c %}
-[OBS:JavaSpaces Iterator](OBS:JavaSpaces Iterator)
+[JavaSpaces Iterator](http://wiki.gigaspaces.com/wiki/display/OBS/JavaSpaces+Iterator)
 {% endc %}
 .
 

@@ -74,7 +74,7 @@ To gain ultimate scalability for your application, you can package your business
 
 This approach is called Space Based Architecture, and the way to achieve it is the Spring-based OpenSpaces platform, which allows you to deploy your application as a set of services encased in a Processing Unit.
 
-{% refer %}**To get started with SBA and Open Spaces** see our [eXtreme Application Platform Tutorial](GS6:Extreme Application Platform Tutorial).{% endrefer %}
+{% refer %}**To get started with SBA and Open Spaces** see our [eXtreme Application Platform Tutorial](http://wiki.gigaspaces.com/wiki/display/GS6/Extreme+Application+Platform+Tutorial).{% endrefer %}
 
 {% refer %}To learn more about Space-Based Architecture and its implications, read our white paper, [The Scalability Revolution: From Dead End to Open Road](http://www.gigaspaces.com/WhitePapers).{% endrefer %}
 

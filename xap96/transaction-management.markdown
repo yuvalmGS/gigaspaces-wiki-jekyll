@@ -244,7 +244,7 @@ When using Jini based transactions, a timeout value can be set for both the comm
 
 {% info %}
 Local Jini Transaction Manager was deprecated in 8.0. Use [Distributed Jini Transaction Manager](#Distributed Jini Transaction Manager) instead.
-Please refer to the [documentation of release 7.1](XAP71:Transaction Management#LocalJiniTransactionManager) if you're not using XAP 8.0.
+Please refer to the [documentation of release 7.1](http://wiki.gigaspaces.com/wiki/display/XAP71/Transaction+Management#LocalJiniTransactionManager) if you're not using XAP 8.0.
 {% endinfo %}
 
 # Renewing Transactions

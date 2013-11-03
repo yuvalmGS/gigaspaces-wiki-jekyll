@@ -149,14 +149,15 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 The XAP data grid requires a number of components to be deployed and started successfully, such as the [lookup service](./the-lookup-service.html), the [grid service container](./the-grid-service-container.html) and the [grid service manager](./the-grid-service-manager.html). The simplest way to start all of these components is to fire up a [grid service agent](./the-grid-service-agent.html) on every machine you wish to run a data grid node on.
 The agent is responsible for bootstrapping the GigaSpaces cluster environment implicitly, and starting all of the required components. All agents use a peer to peer communication between one another to ensure a successful cluster wide startup of all infrastructure components.
 
-Once all agents have started, you can issue a few simple API calls from within your application code to bootstrap the data grid and interact with it, by using the [GigaSpaces Elastic Middleware](XAP95:Elastic Processing Unit) capabilties.
+Once all agents have started, you can issue a few simple API calls from within your application code to bootstrap the data grid and interact with it, by using the [GigaSpaces Elastic Middleware](http://wiki.gigaspaces.com/wiki/display/XAP95/Elastic+Processing+Unit) capabilties.
 These API calls will provision a data grid on the GigaSpaces cluster based on the capacity and other SLA requirements specified in the API calls.
 
 The following example shows how to run the GigaSpaces Data Grid within your application.
 
 #### Running the GigaSpaces XAP Data Grid
 
-A GigaSpaces node is best facilitated through the use of a service called the "[Grid Service Agent](XAP95:The Grid Service Agent)", or GSA.
+A GigaSpaces node is best facilitated through the use of a service called the "[Grid Service Agent](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid Service+Agent
+)", or GSA.
 The simplest way to start a node with GigaSpaces is to invoke the GSA from the GigaSpaces bin directory, preferably in its own command shell (although you can easily start a background process with `start` or `nohup` if desired):
 
 {% inittab deck01|top %}

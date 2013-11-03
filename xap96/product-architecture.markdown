@@ -95,7 +95,7 @@ The [integration with the Jetty web container](/xap96/web-jetty-processing-unit-
 
 The .NET SBA application takes advantage of the ability to run business services and .NET code, colocated with the data stored within the space.
 
-The [.NET container](XAP96NET:Programmer's Guide) bridges the technical gap and provides a native .NET experience for .NET applications.
+The [.NET container](/xap97net/programmer's-guide.html) bridges the technical gap and provides a native .NET experience for .NET applications.
 
 ## C++ Container
 

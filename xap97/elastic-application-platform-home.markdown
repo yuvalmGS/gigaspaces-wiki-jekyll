@@ -47,7 +47,7 @@ Some of the best practices for GigaSpaces applications
 - [Forum](http://forum.openspaces.org/forum.jspa?forumID=175)
 - [Customer Support Portal](http://www.gigaspaces.com/supportcenter)
 - [Blog](http://blog.gigaspaces.com/)
-- Looking for **[XAP.NET](XAP96NET:XAP.NET 9.6 Documentation Home)** or **[other versions](http://wiki.gigaspaces.com/wiki/display/ALL/Choose+a+GigaSpaces+Version)**?
+- Looking for **[XAP.NET](/xap97net/index.html)** or **[other versions](http://wiki.gigaspaces.com/wiki/display/ALL/Choose+a+GigaSpaces+Version)**?
 {% endcolumn %}
 {% endsection %}
 

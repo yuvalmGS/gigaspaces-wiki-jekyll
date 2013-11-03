@@ -77,7 +77,7 @@ Additional info about GigaSpaces proxy can be found [here](./proxy-connectivity.
 ### .Net API
 
 The logging configuration file includes declarations of the loggers available at the bridge between .NET and Java.
-For more details, refer to the [.NET Logging and Tracing](XAP96NET:Log Configuration) section.
+For more details, refer to the [.NET Logging and Tracing](/xap97net/log-configuration.html) section.
 
 {% highlight java %}
 com.gigaspaces.externaldatasource.dotnet.level = INFO
