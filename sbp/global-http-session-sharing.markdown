@@ -55,7 +55,7 @@ GigaSpaces Global HTTP Session Management features the following:
 - **Transparent Session sharing** between any App/Web server - Any JEE app/web server (WebSphere , Weblogic , JBoss , Tomcat , Jetty , GlassFish...) may share their HTTP session with each other.
 - **Application elasticity** - Support **session replication** across different App/Web applications located within the same or different data-centers/clouds allowing the application to scale dynamically without any downtime.
 - **Unlimited number of sessions and concurrent users** support - Sub-millisecond session data access by using GigaSpaces In-Memory-Data-Grid.
-- **Session replication over the WAN** support - Utilizing GigaSpaces [XAP9:Multi-Site Replication over the WAN] technology.
+- **Session replication over the WAN** support - Utilizing GigaSpaces depanlinkMulti-Site Replication over the WANtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP9/Multi-Site+Replication+over+the+WANbelakanglink technology.
 - HTTP Session **data access scalability** - Session data can utilize any of the supported In-Memory-Data-Grid topologies ; replicated , partitioned , with and without local cache.
 - **Transparent App/Web Failover** - Allow app server restart without any session data loss.
 - Any session data type attribute support - **Primitive and Non-Primitive** (collections, user defined types) attributes supported.

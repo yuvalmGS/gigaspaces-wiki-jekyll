@@ -48,7 +48,7 @@ Both applications:
 ## The Person Interoperable Class
 
 - The .NET naming convention is different than the Java naming convention.
-The `\[XAP66:SpaceClass(AliasName="")\]` attribute is used to map the .NET names to the respective Java names.
+The `\ajepaaaSpaceClass(AliasName="")\ajepbbb` attribute is used to map the .NET names to the respective Java names.
 
 - The .NET class **GigaSpaces.Examples.DotnetJava.Person** is mapped to the Java class **com.gigaspaces.examples.dotnetjava.Person**.
 

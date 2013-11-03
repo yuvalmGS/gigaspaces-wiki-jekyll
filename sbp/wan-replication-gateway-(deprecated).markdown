@@ -24,7 +24,7 @@ Mirror Gateway Synchronization can be used to synchronize operations conducted a
 
 This is a simple order processing example based on GigaSpaces maven basic-async-persistency template. Product objects in the space maintain available quantity information. New orders coming into the system reduce the number of available products. Example shows how you can synchronize the available Product information across two clusters using a Mirror Gateway.
 
-{% exclamation %} The GigaSpaces WAN Gateway, a solution for synchronizing multiple clusters over the WAN can be found at [XAP8:Multi-Site Replication over the WAN].
+{% exclamation %} The GigaSpaces WAN Gateway, a solution for synchronizing multiple clusters over the WAN can be found at depanlinkMulti-Site Replication over the WANtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Multi-Site+Replication+over+the+WANbelakanglink.
 
 # Mirror Gateway - One way
 

@@ -263,4 +263,4 @@ jetty.sessions.spaceUrl=jini://**/**/settlementSpace?useLocalCache
 13. You can scale the application down by clicking on the Administration tab and then clicking on Clear Trades.
 
 # Questions and Feedback
-[mailto:nleitman@gigaspaces.com]
+depanlinknleitman@gigaspaces.comtengahlinkmailto:nleitman@gigaspaces.combelakanglink

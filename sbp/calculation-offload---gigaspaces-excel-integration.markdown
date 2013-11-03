@@ -28,8 +28,8 @@ Using this pattern is divided into 4 main steps:
 As a first step, you need to load your data from its current source to the space.
 
 GigaSpaces provides [OpenSpaces|XAP66:Product Architecture#ProductArchitecture-OpenSpacesAPIandComponents] as its main API. However, it is also possible to load data from different types of applications transparently, using different connectors implemented by GigaSpaces:
-- For messaging-based applications, refer to the [XAP66:JMS] section.
-- If your application is an external data source (like a database), refer to the [XAP66:Persistency] section.
+- For messaging-based applications, refer to the depanlinkJMStengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP66/JMSbelakanglink section.
+- If your application is an external data source (like a database), refer to the depanlinkPersistencytengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP66/Persistencybelakanglink section.
 
 ## 2 -- Implementing Algorithm
 

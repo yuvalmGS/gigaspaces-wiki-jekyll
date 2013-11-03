@@ -19,7 +19,7 @@ Date: March 2011
 {rate}
 
 # Overview
-GigaSpaces [XAP8:Mule ESB] OpenSpaces comes with comprehensive support for Mule 3.1.0. It allows you to use the [Space as a Mule external transport|XAP8:Mule Event Container Transport], enabling receiving and dispatching of POJO messages over the Space.
+GigaSpaces depanlinkMule ESBtengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Mule+ESBbelakanglink OpenSpaces comes with comprehensive support for Mule 3.1.0. It allows you to use the [Space as a Mule external transport|XAP8:Mule Event Container Transport], enabling receiving and dispatching of POJO messages over the Space.
 
 This depanlinkexampletengahlink/attachment_files/sbp/Mule_Multi_service_Example.zipbelakanglink illustrates distributed multi services mule application. The different mule services construct a simple workflow, where each service passes its outbound data into the next service in line via the Space. Each Service can run in a different machine(s) and depanlinkscale dynamicallytengahlink#Scale Dynamicallybelakanglink or depanlinkmanualytengahlink#Scale Manuallybelakanglink in a different manner.
 
@@ -258,7 +258,7 @@ The Approver Service Configuration using a `polling-container` running in a [Non
 
 # Building the Example
 1. Have the correct maven bin folder (located at `\gigaspaces-xap-premium-8.0.1\tools\maven\apache-maven-3.0.2\bin`) as part of the `PATH`.
-2. Have the GigaSpaces maven plug-in installed. See the [XAP8:Maven Plugin] for instructions how to install it.
+2. Have the GigaSpaces maven plug-in installed. See the depanlinkMaven Plugintengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Pluginbelakanglink for instructions how to install it.
 In general to install the GigaSpaces maven plug-in you should run the following:
 
 
@@ -379,7 +379,7 @@ The Monitor Service using the following Classes to implement the dynamic scaling
 - depanlinkorg.openspaces.admin.AdminFactorytengahlinkhttp://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/AdminFactory.htmlbelakanglink - This class should be used to access all GigaSpaces Administration classes.
 - depanlinkorg.openspaces.admin.pu.ProcessingUnittengahlinkhttp://www.gigaspaces.com/docs/JavaDocOS7.0/org/openspaces/admin/pu/ProcessingUnit.htmlbelakanglink - This class provides methods to manipulate the life cycle and mange a running Proecssing Unit. You may Increment , Decrement the amount of processing unit instances associated with this PU.
 
-{% exclamation %} See the [XAP8:Administration and Monitoring API] for more details about the GigaSpaces Administration API.
+{% exclamation %} See the depanlinkAdministration and Monitoring APItengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+APIbelakanglink for more details about the GigaSpaces Administration API.
 
 ## Deploying the Monitor Service
 In order to deploy the Monitor Service run the following:

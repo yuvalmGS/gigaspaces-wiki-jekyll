@@ -20,7 +20,7 @@ page_id: 53379091
 {rate}
 
 # Overview
-GigaSpaces Data-Grid support standard data access API. One of them is the [XAP8:JDBC Driver]. Using the JDBC API and ODBC-JDBC bridge such as the one comes from depanlinkOpen Link Softwaretengahlinkhttp://uda.openlinksw.combelakanglink, you can use standard ODBC API to access the GigaSpaces Data-Grid.
+GigaSpaces Data-Grid support standard data access API. One of them is the depanlinkJDBC Drivertengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP8/JDBC+Driverbelakanglink. Using the JDBC API and ODBC-JDBC bridge such as the one comes from depanlinkOpen Link Softwaretengahlinkhttp://uda.openlinksw.combelakanglink, you can use standard ODBC API to access the GigaSpaces Data-Grid.
 
 # GigaSpaces Installation
 - You can download Gigaspaces java version from http://www.gigaspaces.com/LatestProductVersion.

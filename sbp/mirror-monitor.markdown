@@ -29,7 +29,7 @@ The Mirror Monitor utility gathers statistics about the Mirror Service behavior 
 
 The Mirror Monitor extends the built-in openspaces `DefaultHibernateExternalDataSource`, and collects statistics about the activities the mirror performs. You may log these statistics into a log file or/and access these by using the JMX API.
 
-The Mirror Monitor using the GigaSpaces [XAP91:Administration and Monitoring API] to receive information about the current status of the replication redo log size of all the IMDG primary instances. When having multiple partitions for the IMDG, the redo log value exposed is a sum of all the IMDG primary instances current replication redo log size.
+The Mirror Monitor using the GigaSpaces depanlinkAdministration and Monitoring APItengahlinkhttp://wiki.gigaspaces.com/wiki/display/XAP91/Administration+and+Monitoring+APIbelakanglink to receive information about the current status of the replication redo log size of all the IMDG primary instances. When having multiple partitions for the IMDG, the redo log value exposed is a sum of all the IMDG primary instances current replication redo log size.
 
 This utility collecting stats about:
 - Write, Update, Take operations count executed by the Mirror.
