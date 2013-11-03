@@ -259,7 +259,7 @@ The master-slave topology configuration is simply implemented through delegators
 
 # Installing and Running the Example
 
-1. Download the [^WAN_Replication_MasterSlave.zip] archive. It includes two folders: **deploy** and **scripts**.
+1. Download the depanlinkWAN_Replication_MasterSlave.ziptengahlink/attachment_files/sbp/WAN_Replication_MasterSlave.zipbelakanglink archive. It includes two folders: **deploy** and **scripts**.
 2. Please extract the file and and copy the content of the **deploy** folder into `\<GIGASPACES_HOME>\deploy` folder.
 3. Extract the `scripts` folder to an arbitrary location and edit the `setExampleEnv.bat/sh` script to include correct values for `NIC_ADDR` as the machine IP and `JSHOMEDIR` as the GigaSpaces root folder location.
 
