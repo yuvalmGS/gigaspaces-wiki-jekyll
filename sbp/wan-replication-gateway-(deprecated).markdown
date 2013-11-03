@@ -20,7 +20,7 @@ page_id: 54820903
 
 # Overview
 
-Mirror Gateway Synchronization can be used to synchronize operations conducted at one local site with data in a remote site or another cluster instance as explained in the [Clusters Over WAN|SBP:Clusters Over WAN#MirrorGatewaySynchronization] page. This example demonstrates how this can be done using a custom external dataSource implementation running on the mirror.
+Mirror Gateway Synchronization can be used to synchronize operations conducted at one local site with data in a remote site or another cluster instance as explained in the ajepaaaSBP:Clusters Over WAN#MirrorGatewaySynchronizationajepbbb page. This example demonstrates how this can be done using a custom external dataSource implementation running on the mirror.
 
 This is a simple order processing example based on GigaSpaces maven basic-async-persistency template. Product objects in the space maintain available quantity information. New orders coming into the system reduce the number of available products. Example shows how you can synchronize the available Product information across two clusters using a Mirror Gateway.
 

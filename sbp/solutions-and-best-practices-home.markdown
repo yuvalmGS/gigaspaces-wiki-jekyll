@@ -90,7 +90,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 ##### • [API Documentation|API:API Documentation Portal]
 
-##### • [Solutions and Best Practices|SBP:Solutions and Best Practices Home]
+##### • depanlinkSolutions and Best Practices Hometengahlink/sbp/index.htmlbelakanglink
 
 ##### • depanlinkForumtengahlinkhttp://ask.gigaspaces.org/belakanglink
 

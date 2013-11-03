@@ -767,7 +767,7 @@ In the above we have configured both LONDON and NEWYORK at the sources of the si
 
 {% tip %}
 **Multi-Master Running example**
-The [Multi-Master running example|SBP:WAN Replication Gateway] includes a three-way setup replicating data between three sites, this example contains a spring(java) processing unit for the spaces, but the gateway components are the same.
+The depanlinkMulti-Master running exampletengahlink/sbp/wan-replication-gateway.htmlbelakanglink includes a three-way setup replicating data between three sites, this example contains a spring(java) processing unit for the spaces, but the gateway components are the same.
 {% endtip %}
 
 

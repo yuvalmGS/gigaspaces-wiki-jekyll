@@ -39,7 +39,7 @@ page_id: 63799415
 
 ##### &bull; [API Documentation|API:API Documentation Portal]
 
-##### &bull; [Solutions and Best Practices|SBP:Solutions and Best Practices Home]
+##### &bull; depanlinkSolutions and Best Practices Hometengahlink/sbp/index.htmlbelakanglink
 
 ##### &bull; depanlinkForumtengahlinkhttp://ask.gigaspaces.org/belakanglink
 
@@ -51,7 +51,7 @@ page_id: 63799415
 
 ##### &bull; depanlinkWhite Paperstengahlinkhttp://www.gigaspaces.com/os_papers.htmlbelakanglink
 
-##### &bull; Looking for **[**XAP**|XAP97:XAP 9.7 Documentation Home]** or **[**other versions**|ALL:Choose a GigaSpaces Version]**?
+##### &bull; Looking for **depanlinkXAP 9.7 Documentation Hometengahlink/xap97/index.htmlbelakanglink** or **[**other versions**|ALL:Choose a GigaSpaces Version]**?
 
 {% endcolumn %}
 

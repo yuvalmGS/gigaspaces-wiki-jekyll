@@ -82,7 +82,7 @@ GigaSpaces and its Space-Based-Architecture embrace the depanlinkreactive progra
 - depanlinkLocal View and Local Cachetengahlink./client-side-caching.htmlbelakanglink
 - depanlinkTask Execution over the Spacetengahlink./task-execution-over-the-space.htmlbelakanglink
 - depanlinkAsynchronous Operationstengahlink/xap97/the-gigaspace-interface.html#Asynchronous Operationsbelakanglink
-- [Drools Rule Engine Integration|SBP:Drools Rule Engine Integration]: Available from a 3rd party.
+- depanlinkDrools Rule Engine Integrationtengahlink/sbp/drools-rule-engine-integration.htmlbelakanglink: Available from a 3rd party.
 
 {% endtoczone %}
 

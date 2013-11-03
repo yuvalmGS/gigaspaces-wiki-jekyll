@@ -53,7 +53,7 @@ depanlinkdepanimagetraining_banner.pngtengahimage/attachment_files/training_bann
 
 ##### &bull; [API Documentation|API:API Documentation Portal]
 
-##### &bull; [Solutions and Best Practices|SBP:Solutions and Best Practices Home]
+##### &bull; depanlinkSolutions and Best Practices Hometengahlink/sbp/index.htmlbelakanglink
 
 ##### &bull; depanlinkForumtengahlinkhttp://forum.openspaces.org/forum.jspa?forumID=175belakanglink
 

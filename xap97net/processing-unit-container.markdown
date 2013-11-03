@@ -11,7 +11,7 @@ page_id: 63799327
 
 # Overview
 
-The .NET Processing Unit Container is based on the [OpenSpaces Processing Unit|XAP97NET:Processing Units], and allows you to write a .NET component that can be managed by the service grid.
+The .NET Processing Unit Container is based on the depanlinkOpenSpaces Processing Unittengahlink./processing-units.htmlbelakanglink, and allows you to write a .NET component that can be managed by the service grid.
 
 The Processing Unit Container is aware of the depanlinkcluster infotengahlink#ClusterInfobelakanglink. This allows you to write your code decoupled from cluster topologies considerations.
 
@@ -113,7 +113,7 @@ The `pu.config` you've created needs to be edited to point to your Processing Un
 In order to define the service layer agreement of your processing unit, an SLA file needs to be created.
 That file should be named `sla.xml`, and should be placed in the root directory of the processing unit.
 
-{% refer %}Read about SLA in [Service Grid Processing Unit Container|XAP97NET:Basic Processing Unit Container].{% endrefer %}
+{% refer %}Read about SLA in depanlinkService Grid Processing Unit Containertengahlink./basic-processing-unit-container.htmlbelakanglink.{% endrefer %}
 
 # Deployment
 
