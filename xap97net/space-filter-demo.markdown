@@ -5,8 +5,6 @@ categories: XAP97NET
 page_id: 63799401
 ---
 
-{edit-subjects}
-
 # Overview
 
 The Space Filter Demo demonstrates the different ways to [implement](./implementing-and-using-a-space-filter.html) a [space filter](./space-filters.html) and how to integrate it in a space.

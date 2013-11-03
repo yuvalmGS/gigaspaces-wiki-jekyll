@@ -5,8 +5,6 @@ categories: XAP97NET
 page_id: 63799349
 ---
 
-{edit-subjects}
-
 # Overview
 
 A Space Filter is a special hook point inside the engine that enables integration with external systems, or implementation of user defined logic. There are two ways to implement such a filter and integrate it with the space, both of which are covered in this page.

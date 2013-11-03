@@ -5,8 +5,6 @@ categories: XAP97NET
 page_id: 63799397
 ---
 
-{edit-subjects}
-
 # ISpaceFilter Interface
 
 The `ISpaceFilter` interface implements IDisposable and consists of 3 additional methods.

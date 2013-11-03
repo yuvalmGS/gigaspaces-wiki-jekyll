@@ -5,8 +5,6 @@ categories: XAP97NET
 page_id: 63799317
 ---
 
-{edit-subjects}
-
 # Overview
 
 An [ISpaceFilter](./ispacefilter-interface.html) implementation that acts as an adapter, delegating the execution of the filter life-cycle methods and specific operation, to pluggable reflection-based methods.

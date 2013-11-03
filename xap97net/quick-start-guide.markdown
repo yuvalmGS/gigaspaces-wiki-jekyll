@@ -14,15 +14,15 @@ If you would like to run the tutorial sample application, download GigaSpaces an
 
 {% column width=30% %}
 
-{blank-line}
-{blank-line}
+<br/>
+<br/>
 {% align center %}[![button2.jpg](/attachment_files/xap97net/button2.jpg)](./your-first-data-grid-application.html){% endalign %}
 
 {% endcolumn %}
 
 {% column width=110% %}
 
-{blank-line}
+<br/>
 [{% fontsize 20 %}Writing Your First Caching Application{% endfontsize %}](./your-first-data-grid-application.html)
 Create your first simple Hello World caching application
 
@@ -38,15 +38,15 @@ Create your first simple Hello World caching application
 
 {% column width=30% %}
 
-{blank-line}
-{blank-line}
+<br/>
+<br/>
 {% align center %}[![dataexamplesmall.jpg](/attachment_files/xap97net/dataexamplesmall.jpg)](./your-first-xtp-application.html){% endalign %}
 
 {% endcolumn %}
 
 {% column width=110% %}
 
-{blank-line}
+<br/>
 [{fontsize20}The Full Space Based Architecture Example{fontsize20}](./your-first-xtp-application.html)
 A kitchen sink demonstration of all the major features in GigaSpaces XAP.NET
 

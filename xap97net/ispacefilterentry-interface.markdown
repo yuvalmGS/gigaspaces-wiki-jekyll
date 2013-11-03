@@ -5,8 +5,6 @@ categories: XAP97NET
 page_id: 63799423
 ---
 
-{edit-subjects}
-
 # ISpaceFilterEntry interface
 
 An `ISpaceFilterEntry` represents an object in the context of a filter operation, and allows you to interact with it.

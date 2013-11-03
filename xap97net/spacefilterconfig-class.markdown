@@ -5,8 +5,6 @@ categories: XAP97NET
 page_id: 63799362
 ---
 
-{edit-subjects}
-
 # SpaceFilterConfig
 
 The `SpaceFilterConfig` is used to start a space integrated with a space filter.
