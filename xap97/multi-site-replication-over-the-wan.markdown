@@ -739,7 +739,7 @@ In the above we have configured both LONDON and NEWYORK at the sources of the si
 
 {% tip %}
 **Multi-Master Running example**
-The [Multi-Master running example](http://wiki.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gateway) includes a three-way setup replicating data between three sites.
+The [Multi-Master running example](/sbp/wan-replication-gateway.html) includes a three-way setup replicating data between three sites.
 {% endtip %}
 
 # Filtering Replication Between Gateways
@@ -763,5 +763,5 @@ The topology might change during runtime, for instance a new site can be added a
 The following pages in this section provide more details on the Multi-Site Replication module:
 {% children %}
 
-- [Replication Throughput Capacity](http://wiki.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gateway#Replication Throughput Capacity)
-- [WAN Gateway Replication Benchmark](http://wiki.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gateway#WAN Gateway Replication Benchmark)
+- [Replication Throughput Capacity](/sbp/wan-replication-gateway.html#Replication Throughput Capacity)
+- [WAN Gateway Replication Benchmark](/sbp/wan-replication-gateway.html#WAN Gateway Replication Benchmark)

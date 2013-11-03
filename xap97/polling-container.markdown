@@ -615,7 +615,7 @@ public class SimpleListener {
 
 ## Non-Blocking Receive Handler
 
-When working with a partitioned cluster and configuring the remote polling container to work against the [whole cluster](./the-gigaspace-interface.html#Clustered Flag), blocking operations (take with a timeout>0) are not allowed (when the routing field is not set on the template or SQLQuery). The default receive operation handlers support performing the receive operation in a non-blocking manner, by sleeping between non-blocking operations. For example, the `SingleTakeReceiveOperationHandler` performs a non-blocking take operation against the space and then sleeps for a configurable amount of time. A classic scenario where the Non-Blocking mode would be used is the [Master-Worker Pattern](http://wiki.gigaspaces.com/wiki/display/SBP/Master-Worker+Pattern).
+When working with a partitioned cluster and configuring the remote polling container to work against the [whole cluster](./the-gigaspace-interface.html#Clustered Flag), blocking operations (take with a timeout>0) are not allowed (when the routing field is not set on the template or SQLQuery). The default receive operation handlers support performing the receive operation in a non-blocking manner, by sleeping between non-blocking operations. For example, the `SingleTakeReceiveOperationHandler` performs a non-blocking take operation against the space and then sleeps for a configurable amount of time. A classic scenario where the Non-Blocking mode would be used is the [Master-Worker Pattern](/sbp/master-worker-pattern.html).
 
 {% section %}
 {% column width=50% %}
@@ -1187,7 +1187,7 @@ public class SimpleListener {
 {% endinittab %}
 
 {% tip %}
-Learn more using about `TriggerOperationsHandler` using an example application on the [Best Practices wiki](http://wiki.gigaspaces.com/wiki/display/SBP/Dynamic+Polling+Container+Templates+using+TriggerOperationHandler)
+Learn more using about `TriggerOperationsHandler` using an example application on the [Best Practices wiki](/sbp/dynamic-polling-container-templates-using-triggeroperationhandler.html)
 {% endtip %}
 
 # Default Values of Polling Container Configuration Parameters

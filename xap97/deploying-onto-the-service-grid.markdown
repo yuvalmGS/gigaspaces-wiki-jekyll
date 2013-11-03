@@ -18,7 +18,7 @@ Deploying your processing unit to the [service grid](./the-runtime-environment.h
 - Automatic machine provisioning and dynamic SLA enforcement: Elastic Processing Units are a new type of [Processing Unit](./packaging-and-deployment.html). Elastic PUs provision machines and start [GigaSpaces Containers](./the-grid-service-container.html) automatically based on the processing units' Memory and CPU requirements. When the available machines do not meet the requirements, the manager provisions new machines and balances the Processing Unit deployment across machines. This also occurs when a machine fails, or when the requirements changes while the application is running.
 
 {% tip %}
-You can use the [GigaSpaces Universal Deployer](http://wiki.gigaspaces.com/wiki/display/SBP/Universal+Deployer) to deploy complex multi processing unit applications.
+You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.
 {% endtip %}
 
 # The Deployment Process

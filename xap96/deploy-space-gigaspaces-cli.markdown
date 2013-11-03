@@ -32,11 +32,11 @@ A Space only Processing Unit can be easily deployed onto the Service Grid.
 | `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security](/xap96/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
 {% tip %}
-You may use the [GigaSpaces Universal Deployer](http://wiki.gigaspaces.com/wiki/display/SBP/Universal+Deployer) to deploy complex multi processing unit applications.
+You may use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.
 {% endtip %}
 
 {% tip %}
- You may use the [Primary-Backup Zone Controller](http://wiki.gigaspaces.com/wiki/display/SBP/Primary-Backup+Zone+Controller) to deploy primary and backup instances on different zones.
+ You may use the [Primary-Backup Zone Controller](/sbp/primary-backup-zone-controller.html) to deploy primary and backup instances on different zones.
 {% endtip %}
 
 # Example

@@ -33,7 +33,7 @@ Deploys a [memcached-enabled space](./memcached-api.html), which exposes the [me
 | `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security](./command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
 {% tip %}
-You can use the [GigaSpaces Universal Deployer](http://wiki.gigaspaces.com/wiki/display/SBP/Universal+Deployer) to deploy complex multi processing unit applications.
+You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.
 {% endtip %}
 
 # Example

@@ -510,7 +510,7 @@ All the fields are written automatically into space. If the field is a reference
     - If the field name doesn't exist as part of the `property` element, this means that this field name is part of the `Person` class, and you do not want it to be saved in the space.
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Dynamic Partitioning](http://wiki.gigaspaces.com/wiki/display/SBP/Moving+into+Production+Checklist#Rebalancing - Dynamic Repartitioning) section.
+For details about scaling a running space cluster **in runtime** see the [Dynamic Partitioning](/sbp/moving-into-production-checklist.html#Rebalancing - Dynamic Repartitioning) section.
 {% endtip %}
 
 {% endtoczone %}

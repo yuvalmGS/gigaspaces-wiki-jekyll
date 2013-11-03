@@ -27,7 +27,7 @@ Developing with GigaSpaces XAP -- reference documentation, foundations, APIs, co
 Administrating GigaSpaces XAP components, including "how to", troubleshooting and reference documentation.
 {% endlozenge %}
 
-{% lozenge title=Solutions and Best Practices|link=http://wiki.gigaspaces.com/wiki/display/SBP/Solutions+and+Best+Practices+Home|color=silver|arrow=none|width=100%|icon=/attachment_files/Key.png %}
+{% lozenge title=Solutions and Best Practices|link=/sbp/solutions-and-best-practices-home.html|color=silver|arrow=none|width=100%|icon=/attachment_files/Key.png %}
 Some of the best practices for GigaSpaces applications
 {% endlozenge %}
 
@@ -43,7 +43,7 @@ Some of the best practices for GigaSpaces applications
 - [Upgrading from Previous Versions](http://wiki.gigaspaces.com/wiki/display/RN/Upgrading+to+9.6.X)
 - [9.6.X Release Notes](http://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+XAP+9.6.X+Release+Notes)
 - [API Documentation](http://wiki.gigaspaces.com/wiki/display/API/API+Documentation+Portal)
-- [Solutions and Best Practices](http://wiki.gigaspaces.com/wiki/display/SBP/Solutions+and+Best+Practices+Home)
+- [Solutions and Best Practices](/sbp/solutions-and-best-practices-home.html)
 - [Forum](http://forum.openspaces.org/forum.jspa?forumID=175)
 - [Customer Support Portal](http://www.gigaspaces.com/supportcenter)
 - [Blog](http://blog.gigaspaces.com/)

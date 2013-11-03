@@ -157,7 +157,7 @@ If you won't have enough GSCs we will distribute the primary or backup instances
 If you will increase the amount of GSCs after the initial deploy you will have to "re-balance" the system - meaning; distribute all the primaries across all the GSCs. You may perform this activity via API or automatically by using the ESM. Rebalancing the instances will increase the capacity of the data-grid (more GSCs hosting the data-grid).
 The rebalance concept is based on the assumption that you had initially more partitions that GSCs. We call the ratio between partitions to GSCs the scaling factor; meaning how much your data-grid can expand itself without any shutdown and without increasing the amount of partitions.
 Example: you start with 4 GSCs and 20 partitions with backups (40 instances) which means each GSC will host initially 10 instances and may end up with 40 GSCs (after one or more re-balance operations) where each will host a single instance. With this example we have increased the capacity of the data grid to be 10 times larger without downtime while the amount of partitions remain the same.
-See the [capacity planning](http://wiki.gigaspaces.com/wiki/display/SBP/Capacity+Planning) for more details.
+See the [capacity planning](/sbp/capacity-planning.html) for more details.
 {% endtip %}
 
 Here is an example of setting the `max-instances-per-vm` parameter:
@@ -243,7 +243,7 @@ When a processing unit does start an embedded space with a backup topology, the 
 In the above case, the primary and the backup will not run on the same zone. If the primary of partition 1 was started on zone1, then the backup of partition 1 will be started on zone2. This comes very handy when defining rack aware deployments.
 
 {% tip %}
-You may use the [Primary-Backup Zone Controller](http://wiki.gigaspaces.com/wiki/display/SBP/Primary-Backup+Zone+Controller) to deploy primary and backup instances on specific different zones.
+You may use the [Primary-Backup Zone Controller](/sbp/primary-backup-zone-controller.html) to deploy primary and backup instances on specific different zones.
 {% endtip %}
 
 # Total Max Instances Per VM
@@ -456,7 +456,7 @@ You can also define SLA deployment requirements on per processing unit instance 
 
 The above example verifies that the **first instance** is deployed to a specific machine (specified by its IP address), and its **second instance** for the same partition is deployed to a different machine. All instances share the "general" requirements of CPU and memory. The first instance **might be** the primary and the second might be the backup, but there is no guarantee these will remain primary/backup as these are runtime properties and might change during the life-cycle of the clustered space. The activation property of the space (primary or backup) is determined once the instance is deployed and is not controlled by the GSM but as part of the primary election process.
 
-To control the location of the primary and backup instances during the life-cycle of the clustered space you should use the [Primary-Backup Zone Controller best practice](http://wiki.gigaspaces.com/wiki/display/SBP/Primary-Backup+Zone+Controller).
+To control the location of the primary and backup instances during the life-cycle of the clustered space you should use the [Primary-Backup Zone Controller best practice](/sbp/primary-backup-zone-controller.html).
 
 {% note %}
 When using instance level SLA, max-instances settings do not apply (or any cluster level setting).

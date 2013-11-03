@@ -39,7 +39,7 @@ Note, since version 7.0, the required mule jar files can also be placed within t
 
 #### Packaging for Mule example
 
-In the [Mule ESB example](http://wiki.gigaspaces.com/wiki/display/SBP/Mule+ESB+Example), the following jars are required and should be placed under <GigaSpaces Root>\lib\platform\mule
+In the [Mule ESB example](/sbp/mule-esb-example.html), the following jars are required and should be placed under <GigaSpaces Root>\lib\platform\mule
 
 {% highlight java %}
 commons-beanutils-1.8.0.jar

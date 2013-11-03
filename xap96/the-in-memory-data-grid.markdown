@@ -81,7 +81,7 @@ GigaSpaces and its Space-Based-Architecture embrace the [reactive programming](h
 - [Mule ESB Integration](/xap96/mule-esb.html)
 - [Task Execution over the Space](/xap96/task-execution-over-the-space.html)
 - [Asynchronous Operations](/xap96/the-gigaspace-interface.html#Asynchronous Operations)
-- [Drools Rule Engine Integration](http://wiki.gigaspaces.com/wiki/display/SBP/Drools+Rule+Engine+Integration) - Available from a 3rd party.
+- [Drools Rule Engine Integration](/sbp/drools-rule-engine-integration.html) - Available from a 3rd party.
 
 {% endtoczone %}
 

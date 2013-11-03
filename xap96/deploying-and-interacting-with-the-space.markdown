@@ -198,7 +198,7 @@ ProcessingUnit pu = gsm.deploy(
 {% endhighlight %}
 
 {% tip %}
-You can use the [GigaSpaces Universal Deployer](http://wiki.gigaspaces.com/wiki/display/SBP/Universal+Deployer) to deploy complex multi processing unit applications.
+You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.
 {% endtip %}
 
 ## Creating and Deploying a Processing Unit onto the Service Grid Infrastructure

@@ -239,6 +239,6 @@ Following are some space/space container MBeans **Operations** settings you can 
 
 # Getting Space Statistics using the JMX API
 
-See [example of JMX API usage](http://wiki.gigaspaces.com/wiki/display/SBP/JMX+Space+Statistics).
+See [example of JMX API usage](/sbp/jmx-space-statistics.html).
 
 \*\*\*Link required

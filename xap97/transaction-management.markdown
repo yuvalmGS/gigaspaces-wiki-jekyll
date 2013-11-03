@@ -371,7 +371,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gig
 {% exclamation %} XA transactions should be carefully considered. The overhead of managing a 2PC transaction over two or more resources is often times a performance killer.
 
 {% tip %}
-See the [JTA-XA Example](http://wiki.gigaspaces.com/wiki/display/SBP/JTA-XA+Example) for fully running demonstration how to integrate GigaSpaces with an external JMS Server.
+See the [JTA-XA Example](/sbp/jta-xa-example.html) for fully running demonstration how to integrate GigaSpaces with an external JMS Server.
 {% endtip %}
 
 # Multiple Transaction Managers

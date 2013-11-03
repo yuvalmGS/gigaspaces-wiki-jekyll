@@ -220,7 +220,7 @@ You may view Mirror and its replication statistics via the [GigaSpaces Managemen
 {% endindent %}
 
 {% tip %}
-See also the [Mirror Monitor JMX utility](http://wiki.gigaspaces.com/wiki/display/SBP/Mirror+Monitor) for graphical mirror service monitoring via JMX
+See also the [Mirror Monitor JMX utility](/sbp/mirror-monitor.html) for graphical mirror service monitoring via JMX
 {% endtip %}
 
 # Advanced Information & Operations

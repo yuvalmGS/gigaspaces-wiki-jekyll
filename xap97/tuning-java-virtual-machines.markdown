@@ -60,7 +60,7 @@ For application VMs, if you are not using shared memory and you are using remote
     -XX:+DisableExplicitGC
 
 {% tip %}
-For more details, see [Moving into Production Checklist JVM Tuning](http://wiki.gigaspaces.com/wiki/display/SBP/Moving+into+Production+Checklist).
+For more details, see [Moving into Production Checklist JVM Tuning](/sbp/moving-into-production-checklist.html).
 {% endtip %}
 
 ## Remote GC

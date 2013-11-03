@@ -14,7 +14,7 @@ The service reloading feature allows you to reload business logic (Spring beans)
 {% infosign %} Service Reloading only works when downloading the processing unit to the GSC is disabled (pu.download deploy property should be set to false). For more information on how to do it, see [this page](./deploying-onto-the-service-grid.html#distributionToGSCs).
    For service reloading to work, common classes have to be copied to the <GigaSpacesRoot>/lib/platform/ext folder
 
-An example that demonstrates this is provided in the Solutions and Best Practices [Refreshable Business Logic Example page](http://wiki.gigaspaces.com/wiki/display/SBP/Refreshable+Business+Logic+Example).
+An example that demonstrates this is provided in the Solutions and Best Practices [Refreshable Business Logic Example page](/sbp/refreshable-business-logic-example.html).
 
 # Configuring Reloadable Business Logic
 

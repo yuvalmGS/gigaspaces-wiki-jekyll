@@ -11,7 +11,7 @@ page_id: 61867092
 To perform a simple system testing you should use the `gsInstance.bat` script on windows or `gsInstance.sh` script on linux.
 
 {% tip %}
-To setup a production environment see the [Moving into Production Checklist](http://wiki.gigaspaces.com/wiki/display/SBP/Moving+into+Production+Checklist).
+To setup a production environment see the [Moving into Production Checklist](/sbp/moving-into-production-checklist.html).
 {% endtip %}
 
 # Verifying Local Installation

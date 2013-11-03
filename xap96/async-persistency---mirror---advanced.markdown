@@ -132,7 +132,7 @@ In some cases you may need to asynchronously persist data both into a relational
 
 In such a case you may need to have multiple mirrors. In order to implement this, you should have one base mirror (for example the Hibernate Space Persistency) and extend it to include the extra functionality you may need.
 
-See the [Mirror Monitor](http://wiki.gigaspaces.com/wiki/display/SBP/Mirror+Monitor) for a simple example how such approach should be implemented.
+See the [Mirror Monitor](/sbp/mirror-monitor.html) for a simple example how such approach should be implemented.
 
 # Handling Mirror Exceptions
 
