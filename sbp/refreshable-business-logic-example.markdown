@@ -8,9 +8,9 @@ page_id: 55443590
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}Refreshable Business Logic example.{% endexcerpt %}
-**Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 7.1.3
+**Summary:** {% excerpt %}Refreshable Business Logic example.{% endexcerpt %}<br/>
+**Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 7.1.3<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

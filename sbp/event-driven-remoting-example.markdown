@@ -8,10 +8,10 @@ page_id: 47219276
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}Event based remoting example{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 8.0.4
-**Contents:**
+**Summary:** {% excerpt %}Event based remoting example{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 8.0.4<br/>
+**Contents:**<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

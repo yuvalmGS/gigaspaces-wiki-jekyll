@@ -6,10 +6,10 @@ page_id: 47219410
 ---
 
 {% tip %}
-**Summary:** {% excerpt %}Basic and advanced code examples for using RTD and UDF with the GigaSpaces-Excel integration.{% endexcerpt %}
-**Author**: Pini Cohen, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP.NET 6.6
-**Contents:**
+**Summary:** {% excerpt %}Basic and advanced code examples for using RTD and UDF with the GigaSpaces-Excel integration.{% endexcerpt %}<br/>
+**Author**: Pini Cohen, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP.NET 6.6<br/>
+**Contents:**<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

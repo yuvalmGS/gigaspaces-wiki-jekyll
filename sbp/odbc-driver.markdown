@@ -8,10 +8,10 @@ page_id: 53379091
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}Access GgaSpaces Data-Grid via ODBC Driver{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 7.1
-**Last Update:** April 2010
+**Summary:** {% excerpt %}Access GgaSpaces Data-Grid via ODBC Driver{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 7.1<br/>
+**Last Update:** April 2010<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

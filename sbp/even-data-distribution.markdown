@@ -8,9 +8,9 @@ page_id: 54297306
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}This page covers some of the concepts to consider when partitioning data. It does not replace the load-balancing pages, where the concept is explored in greater detail, but provides a slightly higher-level view.{% endexcerpt %}
-**Author**: Joe Ottinger, Technology Evangelist, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 7.1.2
+**Summary:** {% excerpt %}This page covers some of the concepts to consider when partitioning data. It does not replace the load-balancing pages, where the concept is explored in greater detail, but provides a slightly higher-level view.{% endexcerpt %}<br/>
+**Author**: Joe Ottinger, Technology Evangelist, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 7.1.2<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

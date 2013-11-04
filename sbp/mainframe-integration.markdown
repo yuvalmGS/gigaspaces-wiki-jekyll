@@ -8,11 +8,11 @@ page_id: 56429998
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}Mainframe (Z/OS) based systems integration with GigaSpaces.{% endexcerpt %}
-**Authors**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 9
-**Creation Update:** Dec 2011
-**Last Update:** Sep 2013
+**Summary:** {% excerpt %}Mainframe (Z/OS) based systems integration with GigaSpaces.{% endexcerpt %}<br/>
+**Authors**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 9<br/>
+**Creation Update:** Dec 2011<br/>
+**Last Update:** Sep 2013<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

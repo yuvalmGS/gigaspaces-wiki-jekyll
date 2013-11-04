@@ -6,10 +6,10 @@ page_id: 47219420
 ---
 
 {% tip %}
-**Summary:** {% excerpt %}The Excel space viewer allows you to create customized views of data for spaces running in your network.{% endexcerpt %}
-**Author**: Pini Cohen, GigaSpaces
-**Recently tested with GigaSpaces version**: GigaSpaces 6.5 GA (build 2352)
-**Contents:**
+**Summary:** {% excerpt %}The Excel space viewer allows you to create customized views of data for spaces running in your network.{% endexcerpt %}<br/>
+**Author**: Pini Cohen, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: GigaSpaces 6.5 GA (build 2352)<br/>
+**Contents:**<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
@@ -64,14 +64,12 @@ The **Create View** option allows you to create a view of space data inside your
 To connect to a space:
     1. Click the **Connect** button.
     1. In the Connect to Space dialog box, type the [space URL](http://wiki.gigaspaces.com/wiki/display/XAP66/Space+URL). The general format of the space URL is:
-
-{% highlight java %}
-    <protocol>://<host name>:<port>/<container name>/<space name>?<properties>
-{% endhighlight %}
-
-{% indent %}
-![Connect1.jpg](/attachment_files/sbp/Connect1.jpg)
-{% endindent %}
+    {% highlight java %}
+        <protocol>://<host name>:<port>/<container name>/<space name>?<properties>
+    {% endhighlight %}
+    {% indent %}
+    ![Connect1.jpg](/attachment_files/sbp/Connect1.jpg)
+    {% endindent %}
 
 - The **Customize the Selection** button opens the [Customize the Selection](#Customize the Selection) window.
 
@@ -84,11 +82,9 @@ To create a new view:
 4. If you want to narrow your view to more specific results (by querying your class fields), click the **Customize the Selection** button (see [**Customize the Selection**](#Customize the Selection)).
 {% infosign %} This step is optional. If you want to generate the view with all the existing entries of the selected type in the space, proceed to the next step.
     1. On the left side of the Customize the Selection window, click the class field you want to query. (For example, the **Age** field is selected below.)
-
-{% indent %}
-![CustomizeTheSelection1.jpg](/attachment_files/sbp/CustomizeTheSelection1.jpg)
-{% endindent %}
-
+    {% indent %}
+    ![CustomizeTheSelection1.jpg](/attachment_files/sbp/CustomizeTheSelection1.jpg)
+    {% endindent %}
     2. The selected field appears on the right, under **WHERE**. You can now select the desired expression and value, and choose to sort your results in an ascending or descending manner.
     3. When you've finished selecting, press **Save**.
     4. Your query syntax is shown in the **SQL** area. Under the **SQL** box, the number of instances (the query's result) is displayed.
@@ -97,8 +93,7 @@ To create a new view:
 
 5. In the Create View window, Click **OK**.
 6. Your selection is displayed in the spreadsheet:
-
- ![ExcelSheet1.jpg](/attachment_files/sbp/ExcelSheet1.jpg)
+![ExcelSheet1.jpg](/attachment_files/sbp/ExcelSheet1.jpg)
 
 {% infosign %} This view displays the selections you made in the Create View and Customize the Selection windows. The view is constantly refreshed (according to the last refresh rate you defined.).
 

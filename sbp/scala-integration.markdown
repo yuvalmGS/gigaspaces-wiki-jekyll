@@ -8,9 +8,9 @@ page_id: 56428283
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}This article presents common Scala integration scenarios on top of XAP.{% endexcerpt %}
-**Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 8.0.3
+**Summary:** {% excerpt %}This article presents common Scala integration scenarios on top of XAP.{% endexcerpt %}<br/>
+**Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 8.0.3<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

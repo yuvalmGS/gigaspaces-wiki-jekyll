@@ -8,11 +8,11 @@ page_id: 54820978
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}This article illustrates creating a Web Load Balancer Agent as a processing unit{% endexcerpt %}
-**Author:** Jeroen Remmerswaal, Tricode
-**Recently tested with GigaSpaces version**: XAP 7.1.1
-**Last Update:** November 2010
-**Contents:**
+**Summary:** {% excerpt %}This article illustrates creating a Web Load Balancer Agent as a processing unit{% endexcerpt %}<br/>
+**Author:** Jeroen Remmerswaal, Tricode<br/>
+**Recently tested with GigaSpaces version**: XAP 7.1.1<br/>
+**Last Update:** November 2010<br/>
+**Contents:**<br/>
 
 {% toc minLevel=1|maxLevel=2|type=flat|separator=pipe %}
 

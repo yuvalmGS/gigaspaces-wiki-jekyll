@@ -6,9 +6,9 @@ page_id: 55935416
 ---
 
 {% tip %}
-{**}Summary:** {% excerpt %}Very Large Backend database/IMDG support. Query IMDG with on going data eviction.{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 8.0
+{**}Summary:** {% excerpt %}Very Large Backend database/IMDG support. Query IMDG with on going data eviction.{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 8.0<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

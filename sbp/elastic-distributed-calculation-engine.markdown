@@ -8,11 +8,11 @@ page_id: 56427156
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}Elastic Distributed Calculation Engine implementation using Map-Reduce approach.{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 8.0.3
-**Last Update:** Sep 2011
-**Contents:**
+**Summary:** {% excerpt %}Elastic Distributed Calculation Engine implementation using Map-Reduce approach.{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 8.0.3<br/>
+**Last Update:** Sep 2011<br/>
+**Contents:**<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
@@ -46,9 +46,11 @@ The Elastic Calculation Engine example illustrates the following:
 The Distributed Calcualtion Engine performs Net Present Value calculations where the Trades used for the calculation divided into several Books. These books could represent different types of Trades, different markets, different customers , etc.
 
 # Colocated vs. Remote Calculations
-Calculations can be deployed colocated with the data or seperatly.
+Calculations can be deployed colocated with the data or separately.
 
-||Functionality ||Colocated Calculations||Remote Calculations||
+{: .table .table-bordered}
+|Functionality|Colocated Calculations|Remote Calculations|
+|:------------|:--------------------:|:-----------------:|
 |Calculation impact on data grid node CPU utilization|Yes. Controlled. |No|
 |Calculation impact on Data Grid node memory utilization|Yes. Controlled. |No|
 |"Bad Calculation" may cause Data-Grid instability|Yes. Each node recovers independently|No|
@@ -125,50 +127,34 @@ For long calculations that consume relatively large amount of CPU time, the reco
 
 1. Download the [ElasticCalculationEngine.zip](/attachment_files/sbp/ElasticCalculationEngine.zip) and extract it into an empty folder. Move into the ElasticRiskAnalysisDemo folder and **edit** the `setExampleEnv.bat` to include correct values for the `NIC_ADDR` and the `GS_HOME` variables.
 2. Start the GigaSpaces agent by running the following:
-
 {% highlight java %}
 startAgent.bat
 {% endhighlight %}
-
 {% exclamation %} You will need a machine with at least 2GB free memory to run this demo.
-
 3. Run the Elastic Data-Grid deploy script:
-
 {% highlight java %}
 deployDataGrid.bat
 {% endhighlight %}
-
 This will deploy the data grid/compute grid and will later allow you to scale it. Whenever you would like to scale the data grid/compute grid just **hit Enter**. Running the deploy script again will initiate the scaling cycle again for the existing running data grid/compute grid.
-
 4. Run the Ealstic Worker deploy script:
-
 {% highlight java %}
 deployWorker.bat
 {% endhighlight %}
-
 This will deploy the Worker PU into the Service Grid.
-
 5. Run the client invoking the Colocated calculations (this will be using the Task):
-
 {% highlight java %}
 runClientExecutor.bat
 {% endhighlight %}
-
 6. Run the client invoking the Remote calculations (this will be using the workers):
-
 {% highlight java %}
 runClientMasterWorker.bat
 {% endhighlight %}
-
 The client will run the calculation repeatedly for 10,000 Trades where each cycle will use different rates (2%, 3%, 4%, 5%, 6%, 7%, 8%). To stop the client hit CTRL + C.
-
 7. To scale the worker run the following:
-
 {% highlight java %}
 ScaleWorker.bat
 {% endhighlight %}
  and follow the instructions.
-
 8. To Scale the Data-Grid following Hit Enter at the command running the `deployDataGrid.bat`.
 
 ## Running within eclipse

@@ -8,10 +8,10 @@ page_id: 55938230
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}Primary-Backup Zone Controller, allows you to specify a specific zone for primary instances and a different zone for backup instances.{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 8.0
-**Last Update:** April 2011
+**Summary:** {% excerpt %}Primary-Backup Zone Controller, allows you to specify a specific zone for primary instances and a different zone for backup instances.{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 8.0<br/>
+**Last Update:** April 2011<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

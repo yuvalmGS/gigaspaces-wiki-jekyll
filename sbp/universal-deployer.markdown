@@ -8,10 +8,10 @@ page_id: 55937666
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}GigaSpaces Universal Deployer tool. Allows deploying composite applications without any coding.{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 8.0.1
-**Last Update:** April 2011
+**Summary:** {% excerpt %}GigaSpaces Universal Deployer tool. Allows deploying composite applications without any coding.{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 8.0.1<br/>
+**Last Update:** April 2011<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
@@ -50,7 +50,10 @@ In case of a deployment failure, you may specify an abort strategy. In case of u
 
 # GUD Command Line Options
 The GUD support the following command line arguments:
-||Switch||Description||Options||Default||
+
+{: .table .table-bordered}
+|Switch|Description|Options|Default|
+|Switch|Description|Options|Default|
 |-command|deploy or undeploy PU listed at the config file location| deploy , undeploy| deploy|
 |-config|GUD config file location| | |
 |-locators|lookup service locators| | |
@@ -91,7 +94,10 @@ E [] -cluster total_members=2 -user xxx -password yyyy -zones zone1,zone2
 
 ## GUD Configuration File Options
 Each GUD configuration file line supports the following options:
-||Switch||Description||Options||Default||
+
+{: .table .table-bordered}
+|Switch|Description|Options|Default|
+|:-----|:----------|:------|:------|
 |-file| PU file. You may have .zip , .jar , .war file deployed.| | |
 |-type|PU Type|Regular,Space,memccache|Regular|
 |-timeout| Timeout to abort the deploy process. If the deploy proecss is not completed within this timeframe, undeploy process will be initiated. | | 120 seconds|

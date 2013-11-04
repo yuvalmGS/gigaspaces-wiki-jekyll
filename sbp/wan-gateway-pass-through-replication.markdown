@@ -8,9 +8,9 @@ page_id: 59441985
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}WAN Pass Through replication example{% endexcerpt %}
-**Author**: Ali Hodroj, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 8.0.7
+**Summary:** {% excerpt %}WAN Pass Through replication example{% endexcerpt %}<br/>
+**Author**: Ali Hodroj, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 8.0.7<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
@@ -24,7 +24,9 @@ The WAN Gateway allows for the implementation of a pass-through replication topo
 
 The demo is configured to start three space instances across three clusters. While the three clusters run on your local machine, they are demarcated by zones and different lookup service ports as follows:
 
-||Gateway/Space||Zone||Lookup Service Port||
+{: .table .table-bordered}
+|Gateway/Space|Zone|Lookup Service Port|
+|:------------|:--:|:-----------------:|
 |wan-gateway-HK|HK|4166|
 |wan-space-HK|HK|4166|
 |wan-gateway-US|US|4266|
@@ -287,17 +289,14 @@ The `scripts` folder contains the necessary scripts to start the [Grid Service A
 # Viewing the Clusters
 
 - Start the GigaSpaces Management Center and configure the appropriate lookup groups through the "Group Management" dialog.
-- Once all clusters are up and running, you will need to enable the relative groups:
-![group_management_dialog.jpg](/attachment_files/sbp/group_management_dialog.jpg)
-
-Check to enable all three advertised groups for each site:
-![groups_selection_dialog.jpg](/attachment_files/sbp/groups_selection_dialog.jpg)
-
-As a result, you should see the service grid components for each site displayed under the "Hosts" tree as follows:
-![service_grid.jpg](/attachment_files/sbp/service_grid.jpg)
-
-Once The deployAll.bat/sh script finishes running, you should be able to see all three sites deployed as follows:
-![pu_deployments.jpg](/attachment_files/sbp/pu_deployments.jpg)
+- Once all clusters are up and running, you will need to enable the relative groups:<br/>
+![group_management_dialog.jpg](/attachment_files/sbp/group_management_dialog.jpg)<br/>
+Check to enable all three advertised groups for each site:<br/>
+![groups_selection_dialog.jpg](/attachment_files/sbp/groups_selection_dialog.jpg)<br/>
+As a result, you should see the service grid components for each site displayed under the "Hosts" tree as follows:<br/>
+![service_grid.jpg](/attachment_files/sbp/service_grid.jpg)<br/>
+Once The deployAll.bat/sh script finishes running, you should be able to see all three sites deployed as follows:<br/>
+![pu_deployments.jpg](/attachment_files/sbp/pu_deployments.jpg)<br/>
 
 # Testing Pass Through Replication
 You can test the setup by using the [benchmark utility](http://wiki.gigaspaces.com/wiki/display/XAP91/Benchmark+View+-+GigaSpaces+Browser) comes with the GS-UI. Select one of the HK or US Benchmark icons and click Start to begin writing objects to the space:

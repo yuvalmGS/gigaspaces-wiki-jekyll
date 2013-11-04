@@ -14,7 +14,10 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
 # Data Access Patterns
-|| Best Practice || Level || Description||
+
+{: .table .table-bordered}
+| Best Practice | Level | Description |
+|:--------------|:------|:------------|
 |[Moving from Hibernate to Space](./moving-from-hibernate-to-space.html) | Beginner | Moving from Database Centric into In-Memory Model. Can be used when moving from **J2EE Session Bean** into XAP.|
 |[Finding Partition Load](./finding-partition-load.html)| Beginner | Monitoring Data Grid partitions in real time.|
 |[Even Data Distribution](./even-data-distribution.html)| Beginner | Technique to ensure even data load-balancing with partitioned IMDG.|
@@ -34,7 +37,10 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |[Scala Integration](./scala-integration.html) | Advanced| Common Scala integration scenarios on top of XAP. |
 
 # Parallel Processing & Messaging Patterns
-|| Best Practice || Level || Description||
+
+{: .table .table-bordered}
+| Best Practice | Level | Description |
+|:--------------|:------|:------------|
 |[Map-Reduce Pattern - Executors Example](./map-reduce-pattern---executors-example.html)| Beginner | Implementing Task Executors and Service Executors to perform parallel queries or parallel processing across multiple IMDG partitions. Can be used when moving from **J2EE EJB**/RMI/IIOP into XAP.|
 |[Master-Worker Pattern](./master-worker-pattern.html)| Beginner | Grid computing pattern. Implementing distributed processing across multiple workers deployed into the Grid. |
 |[Event Driven Remoting Example](./event-driven-remoting-example.html)| Beginner | Request-Response pattern. Implementing asynchronous remove service invocation. Can be used when moving from **J2EE MDB** into XAP.|
@@ -47,7 +53,10 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |[JTA-XA Example](./jta-xa-example.html) | Advanced | Integrating GigaSpaces with an external JMS Server using XA. Atomikos is used as the JTA Transaction provider. Apache ActiveMQ is used as a the JMS provider.|
 
 # Setup Production Environment
-|| Best Practice || Level ||Description||
+
+{: .table .table-bordered}
+| Best Practice | Level | Description |
+|:--------------|:------|:------------|
 |[Embedding XAP for OEMs](./embedding-xap-for-oems.html)| Beginner | A quick and simple example of how an OEM might embed GigaSpaces XAP for customer use.|
 |[Universal Deployer](./universal-deployer.html) |Beginner | Allows deploying composite applications. Support multiple processing unit dependency based deployment.|
 |[Data-Collocation Deployment Topology](./data-collocation-deployment-topology.html)| Beginner | Considerations which topology to choose when deploying both business logic and data into the Grid.|
@@ -68,7 +77,10 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |[Refreshable Business Logic Example](./refreshable-business-logic-example.html)| Advanced | Using the administration API to reload new application code (hot deploy) while the application is running.|
 
 # Solutions
-|| Best Practice || Level ||Description||
+
+{: .table .table-bordered}
+| Best Practice | Level | Description |
+|:--------------|:------|:------------|
 |[Elastic Distributed Calculation Engine](./elastic-distributed-calculation-engine.html)|Advanced| Elastic Distributed Calculation Engine implementation using Map-Reduce approach.|
 |[Trading Settlement](./trading-settlement.html) |Advanced| A trading settlement system where the entire tier-based architecture is built on GigaSpaces.|
 |[Mainframe Integration](./mainframe-integration.html) |Advanced| GigaSpaces XAP can simplify the migration effort from mainframe based systems and reduce the cost of the legacy applications. GigaSpaces XAP act as a front-end layer for mainframe based systems may boost the system performance and improve the overall system response time on peak load.|

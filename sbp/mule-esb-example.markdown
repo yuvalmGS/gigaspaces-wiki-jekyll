@@ -10,12 +10,12 @@ page_id: 50758015
 {% summary %}Mule ESB Distributed Multi Service Example{% endsummary %}
 
 ![new-in-801-banner.png](/attachment_files/sbp/new-in-801-banner.png)
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-Using Mule:**3.1.0**
-Using XAP:**8.0.1**
-JDK:**Sun JDK 1.6**
-Updated by: Rafi Pinto, R&D Solutions developer, GigaSpaces
-Date: March 2011
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+Using Mule:**3.1.0**<br/>
+Using XAP:**8.0.1**<br/>
+JDK:**Sun JDK 1.6**<br/>
+Updated by: Rafi Pinto, R&D Solutions developer, GigaSpaces<br/>
+Date: March 2011<br/>
 
 # Overview
 GigaSpaces [Mule ESB](http://wiki.gigaspaces.com/wiki/display/XAP8/Mule+ESB) OpenSpaces comes with comprehensive support for Mule 3.1.0. It allows you to use the [Space as a Mule external transport](http://wiki.gigaspaces.com/wiki/display/XAP8/Mule+Event+Container+Transport), enabling receiving and dispatching of POJO messages over the Space.
@@ -341,7 +341,10 @@ In many cases you might want to scale the mule services in a dynamic manner. Dyn
 The example includes a special processing Unit - The `Monitor` PU. This service monitors Data objects within the space with a specific state field value and increase/decrease the amount of the relevant Service instances while the system is running. You may run for example several `Feeder` instances to push more Data objects into the IMDG. In order there would not be generated a backlog of too many Data objects with `state=0` the `Monitor` Service will increase the amount of `Verifier` services. Once there is small amount of Data objects with `state=0` the `Monitor` service will decrease the amount of `Verifier` services instances running to maintain only one `Verifier` service instance running.
 
 The Monitor Service includes the following properties:
-||Property Name||Description||Default Value||
+
+{: .table .table-bordered}
+|Property Name|Description|Default Value|
+|:------------|:----------|:------------|
 |monitoredPU| Service Name to Monitor and Scale dynamically |my-app-verifier|
 |highLimit| When to Scale Up. Once the Average amount of Data Objects will be above this value, the amount of monitored services will be increased by one. |50|
 |lowLimit| When to Scale Down. Once the Average amount of Data Objects will be below this value, the amount of monitored services will be decreased by one.|10|

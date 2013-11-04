@@ -9,10 +9,10 @@ page_id: 52527436
 
 {% summary %}Lowering the Space Object Footprint - Compact Serialization Pattern{% endsummary %}
 
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-Using XAP:**7.1GA**
-JDK:**Sun JDK 1.6**
-Date: July 2009
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+Using XAP:**7.1GA**<br/>
+JDK:**Sun JDK 1.6**<br/>
+Date: July 2009<br/>
 
 # Overview
 By default, when using the GigaSpaces Java API, the space stores space object fields as is. No data compaction, or compression is done while the object is transported across the network or when stored within the space.
