@@ -13,4 +13,4 @@ The primary people who can benefit from this guide, are architects and developer
 
 ## Chapters in this Guide
 
-{children:depth=2}
+{% children %}

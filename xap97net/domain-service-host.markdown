@@ -6,19 +6,19 @@ page_id: 63799411
 ---
 
 {% compositionsetup %}
-{summary:page}Domain service host is used to host services within the hosting processing unit domain which are exposed for remote invocation.{summary}
+
+{% summary page %}Domain service host is used to host services within the hosting processing unit domain which are exposed for remote invocation.{% endsummary %}
 
 # Overview
 
 The domain service host is used to host services within the hosting processing unit domain which are exposed for remote invocation. A service is an implementation of one or more interfaces which acts upon the service contract. Each service can be hosted by publishing it through the domain service host later to be invoked by a remote client.
 
-{refer}To learn how to create a remote proxy to the service please refer to [Executor Based Remoting|Executor Based Remoting]{refer}
-{refer}For a full SBA example demonstrating remote services usage please refer to the [SBA Example]{refer}
+{% refer %}To learn how to create a remote proxy to the service please refer to [Executor Based Remoting](./executor-based-remoting.html){% endrefer %}
+{% refer %}For a full SBA example demonstrating remote services usage please refer to the [SBA Example]{% endrefer %}
 
 # Defining the Contract
 
 In order to support remoting, the first step is to define the contract between the client and the server. In our case, the contract is a simple interface. Here is an example:
-
 
 {% highlight java %}
 public interface IDataProcessor
@@ -28,13 +28,11 @@ public interface IDataProcessor
 }
 {% endhighlight %}
 
-
 {% exclamation %} The `Data` object should be `Serializable`
 
 # Implementing the Contract
 
 Next, an implementation of this contract needs to be provided. This implementation will "live" on the server side. Here is a sample implementation:
-
 
 {% highlight java %}
 [SpaceRemotingService]
@@ -48,11 +46,9 @@ public class DataProcessor : IDataProcessor
 }
 {% endhighlight %}
 
-
 # Hosting the Service in the Grid
 
-The next step is hosting the service in the grid. Hosting the service is done on the server side within a processing unit that hosts the service, when using the [Basic Processing Unit Container|Basic Processing Unit Container], all types which has the \[SpaceRemotingService\] attribute, will automatically be created and hosted:
-
+The next step is hosting the service in the grid. Hosting the service is done on the server side within a processing unit that hosts the service, when using the [Basic Processing Unit Container](./basic-processing-unit-container.html), all types which has the \[SpaceRemotingService\] attribute, will automatically be created and hosted:
 
 {% highlight java %}
 [SpaceRemotingService]
@@ -62,9 +58,7 @@ public class DataProcessor : IDataProcessor
 }
 {% endhighlight %}
 
-
-Alternatively, or when using a custom [processing unit container|Processing Unit Container], a service can be directly hosted using the `DomainServiceHost.Host.Publish`
-
+Alternatively, or when using a custom [processing unit container](./processing-unit-container.html), a service can be directly hosted using the `DomainServiceHost.Host.Publish`
 
 {% highlight java %}
 public ServiceHostProcessingUnitContainer : AbstractProcessingUnitContainer
@@ -80,7 +74,6 @@ public ServiceHostProcessingUnitContainer : AbstractProcessingUnitContainer
 }
 {% endhighlight %}
 
-
 # Service Lookup Name
 
 By default, the service will be published under the interfaces it implements, its lookup names will be the full name of the interfaces types it implements. In some scenarios it may be needed to specify a different lookup name, for instance, when there are two hosted services that implement the same interface. There are a few options to specify a different lookup name. When choosing one of the following options for alternative lookup name, the service will only be hosted under the alternative lookup names overriding the default behavior of investigating which interfaces the provided service implements.
@@ -88,7 +81,6 @@ By default, the service will be published under the interfaces it implements, it
 ## Service Attribute
 
 A different lookup name can be specified by the \[SpaceRemotingService\] `LookupName` property:
-
 
 {% highlight java %}
 [SpaceRemotingService(LookupName="MyDataProcessor")]
@@ -98,32 +90,26 @@ public class DataProcessor : IDataProcessor
 }
 {% endhighlight %}
 
-
 ## Publish Lookup Names
 
 When publishing a service it is possible to specify a list of lookup names to publish it under as part of the `Publish` method arguments:
-
 
 {% highlight java %}
 DomainServiceHost.Host.Publish(new DataProcessor(), "MyDataProcessor", "MySpecialDataProcessor");
 {% endhighlight %}
 
-
 ## Publish For Specific Types
 
 Alternatively, a service can be hosted under specific types instead of querying all the interfaces it implements, This can be achieved with the `Publish` method as well:
-
 
 {% highlight java %}
 DomainServiceHost.Host.Publish(new DataProcessor(), typeof(IDataProcessor), typeof(IMyService));
 {% endhighlight %}
 
-
 # Unpublishing a Service
 
 Once the processing unit that hosts the service is unloaded, all the services within that pu are also removed.
 However, it is possible to explicitly unpublish a service during the processing unit life cycle if needed, this is done by the `Unpublish` method, with the specific registration of the service that we want to unpublish.
-
 
 {% highlight java %}
 IServiceRegistration registration = DomainServiceHost.Host.Publish(new DataProcessor());
@@ -131,13 +117,11 @@ IServiceRegistration registration = DomainServiceHost.Host.Publish(new DataProce
 DomainServiceHost.Host.Unpublish(registration);
 {% endhighlight %}
 
-
 # Execution Aspects
 
 Space based remoting allows you to inject different "aspects" that can wrap the invocation of a remote method on the client side, as well as wrapping the execution of an invocation on the server side. The different aspect can add custom logic to the execution, for instance, loggings or security.
 
 The server side invocation aspect interface is shown below. You should implement this interface and wire it to the `DomainServiceHost` (this is the component that is responsible for hosting and exposing your service to remote clients):
-
 
 {% highlight java %}
 public interface IServiceExecutionAspect
@@ -154,9 +138,7 @@ public interface IServiceExecutionAspect
 }
 {% endhighlight %}
 
-
 Here is an example of a security aspect implemention
-
 
 {% highlight java %}
 public class SecurityExecutionAspect : IServiceExecutionAspect
@@ -173,14 +155,11 @@ public class SecurityExecutionAspect : IServiceExecutionAspect
 }
 {% endhighlight %}
 
-
 An implementation of such an aspect can be wired as follows:
-
 
 {% highlight java %}
 DomainServiceHost.Initialize(new ExecutionLoggingAspect(), new SecurityExecutionAspect());
 {% endhighlight %}
-
 
 The different execution aspects can be wired only once, and that is when the DomainServiceHost is initialized, which means before publishing any service in it.
 

@@ -12,35 +12,42 @@ page_id: 52887871
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.0
 **Last Update:** Feb 2011
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
-{rate}
-
 # Overview
-When building [low latency systems|http://en.wikipedia.org/wiki/High_frequency_trading], a critical requirement of such systems is to be able to process the incoming data as fast as they can, but also to do that in the exact order the request has been submitted into the system. The system can't process requests associated with the same Order in parallel, but in the exact order these has been created at the client side.
+When building [low latency systems](http://en.wikipedia.org/wiki/High_frequency_trading), a critical requirement of such systems is to be able to process the incoming data as fast as they can, but also to do that in the exact order the request has been submitted into the system. The system can't process requests associated with the same Order in parallel, but in the exact order these has been created at the client side.
 
 Such a requirement would be relevant with algorithmic trading engines , Order Management Systems , Market Data processing system , High Speed inventory systems, etc.
 
 GigaSpaces introduce the ability to partition data in memory across multiple data-grid partitions. This provides the ability to scale the system, but it does not ensure fast data processing in the correct order. You should add another component that allows the system to "slice" each partition into virtual queues or several buckets. The polling container consuming data in a FIFO manner is the missing required component.
-{indent}!GRA:Images^par_q2.jpg!{indent}
+
+{% indent %}
+![par_q2.jpg](/attachment_files/sbp/par_q2.jpg)
+{% endindent %}
+
 Having multiple polling containers running collocated with each partition allows us to scale at the partition level, forming set of "virtual queues", that consume data pushed into the partition in a parallel manner, but also in the correct order. The amount of polling containers will be usually the **number of machine cores**. This will optimize the ability to use the machine CPUs in the most efficient manner.
 
 With our example we will simulate a simple Order Management processing system where Orders are sent into the system. An order might have 5 states (state 1-5) where these should be processed in the correct order by a "processor". Different Orders (from different clients) should be processed in parallel, but requests associated with the same order MUST be processed in the exact order they have submitted by the end point client.
 
 Here is an example for the latency duration for the Order request processing time:
-{indent}!GRA:Images^par_q1.jpg!{indent}
+
+{% indent %}
+![par_q1.jpg](/attachment_files/sbp/par_q1.jpg)
+{% endindent %}
+
 The above results retrived when running the Data-Grid with 4 partitions with a backup.
 
-
 {% tip %}
-You can [download|^ParallelQueue.zip] the Order Management Processor code used with this example.
+You can [download](/attachment_files/sbp/ParallelQueue.zip) the Order Management Processor code used with this example.
 {% endtip %}
-
 
 # The Order Management Processor Example
 
 The following example illustrates a simple Order management processor that includes the following artifacts:
+
 - **The Order Class** - This represents an Order request. An order includes a _Symbol_ , _requestType_, _id_ , _orderId_ and a _bucketId_ field.
 -- The `orderId` field used to partition the Order requests (its getter method annotated with `@SpaceRouting`) between the partitions.
 -- The `id` used as the space object ID (its getter annotated with `@SpaceID`).
@@ -53,30 +60,45 @@ The following example illustrates a simple Order management processor that inclu
 
 The `bucketId` is calculated using the following formula:
 
-
 {% highlight java %}
 (first char of Symbol hashcode) % (# of machine cores)
 {% endhighlight %}
 
-
 ##  Running the Example
-{gdeck:RunningExample|top}
-{gcard:Running the Order Processor}
+
+{% inittab RunningExample|top %}
+
+{% tabcontent Running the Order Processor %}
 You can run the Data-Grid with the collocated Order Processor within your IDE using the following configuration:
-{indent}!GRA:Images^par_q4.jpg!{indent}
+
+{% indent %}
+![par_q4.jpg](/attachment_files/sbp/par_q4.jpg)
+{% endindent %}
+
 Here is a configuration for a data-grid with 2 partitions that will be running the polling containers:
-{indent}!GRA:Images^par_q5.jpg!{indent}
-{gcard}
-{gcard:Running the Feeder}
+
+{% indent %}
+![par_q5.jpg](/attachment_files/sbp/par_q5.jpg)
+{% endindent %}
+
+{% endtabcontent %}
+
+{% tabcontent Running the Feeder %}
 You can run the Feeder within your IDE using the following configuration:
-{indent}!GRA:Images^par_q3.jpg!{indent}
-{gcard}
-{gdeck}
+
+{% indent %}
+![par_q3.jpg](/attachment_files/sbp/par_q3.jpg)
+{% endindent %}
+
+{% endtabcontent %}
+
+{% endinittab %}
 
 ## Example Code and Configuration
-{gdeck:example|top}
-{gcard: The Order Class}
 
+{% inittab example|top %}
+
+{% tabcontent  The Order Class %}
 
 {% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
@@ -162,10 +184,9 @@ public class Order {
 }
 {% endhighlight %}
 
+{% endtabcontent %}
 
-{gcard}
-{gcard: The Feeder}
-
+{% tabcontent  The Feeder %}
 
 {% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
@@ -226,10 +247,9 @@ public class Feeder implements Runnable{
 }
 {% endhighlight %}
 
+{% endtabcontent %}
 
-{gcard}
-{gcard: The Processor}
-
+{% tabcontent  The Processor %}
 
 {% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
@@ -261,10 +281,9 @@ public class Processor implements SpaceDataEventListener<Order>{
 }
 {% endhighlight %}
 
+{% endtabcontent %}
 
-{gcard}
-{gcard: The Data-Grid pu.xml }
-
+{% tabcontent  The Data-Grid pu.xml  %}
 
 {% highlight java %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -299,10 +318,9 @@ public class Processor implements SpaceDataEventListener<Order>{
 </beans>
 {% endhighlight %}
 
+{% endtabcontent %}
 
-{gcard}
-{gcard: The ProcessorFactory - None TX}
-
+{% tabcontent  The ProcessorFactory - None TX %}
 
 {% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
@@ -367,10 +385,9 @@ public class ProcessorFactory implements InitializingBean{
 }
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard: The ProcessorFactory - TX}
-
+{% tabcontent  The ProcessorFactory - TX %}
 
 {% highlight java %}
 package com.gigaspaces.examples.parallelqueue;
@@ -447,5 +464,6 @@ public class ProcessorFactory implements InitializingBean{
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}

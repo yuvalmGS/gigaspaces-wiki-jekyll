@@ -6,10 +6,9 @@ page_id: 63799398
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.
-||Basic Components|[Data Grid Topologies|Terminology - Data Grid Topologies]|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|
+||Basic Components|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|
 
 # Basic Components
-
 
 {% comment %}
 =========================================
@@ -19,7 +18,6 @@ page_id: 63799398
 =========================================
 {% endcomment %}
 
-
 {% comment %}
 ----------------------------
           Space
@@ -27,7 +25,8 @@ page_id: 63799398
 {% endcomment %}
 
 {% anchor Space %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -35,22 +34,24 @@ page_id: 63799398
 
 The GigaSpaces cache instance that holds data objects in memory.
 
-~Key sentence: The space holds your data objects.~
+{% sub %}Key sentence: The space holds your data objects.{% endsub %}
 
 {% endcolumn %}
 
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_space.gif!
+![term_space.gif](/attachment_files/xap97net/term_space.gif)
 
-~**A space holding objects**~
+{% sub %}**A space holding objects**{% endsub %}
+
 {% endalign %}
 
 {% endcolumn %}
 
-{section}
-{whr}
+{% endsection %}
+
+{% whr %}
 
 {% comment %}
 ----------------------------
@@ -59,7 +60,8 @@ The GigaSpaces cache instance that holds data objects in memory.
 {% endcomment %}
 
 {% anchor Execute, Read, Write, Take and Notify %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
@@ -67,27 +69,27 @@ The GigaSpaces cache instance that holds data objects in memory.
 
 A set of methods used to read, write, take, and register for notification on objects that are stored in the space. Execute allows sending Tasks to be executed within the space. Read and Take critera can be specified via a query or a template (an example object).
 
-~Key sentence: Interaction with the space is done using the read, write, update, take and notify methods.~
+{% sub %}Key sentence: Interaction with the space is done using the read, write, update, take and notify methods.{% endsub %}
 
 {% endcolumn %}
 
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_verbs.jpg!
+![term_verbs.jpg](/attachment_files/xap97net/term_verbs.jpg)
 
-~**A client application uses the read, write, take, update and notify methods to exchange objects and receive notifications from the space**~
+{% sub %}**A client application uses the read, write, take, update and notify methods to exchange objects and receive notifications from the space**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
 
-{section}
-{whr}
+{% endsection %}
+
+{% whr %}
 
 {% comment %}
 **Local Cache** - a space embedded within a client application to enable ...
 {% endcomment %}
-
 
 {% comment %}
 ----------------------------
@@ -96,30 +98,32 @@ A set of methods used to read, write, take, and register for notification on obj
 {% endcomment %}
 
 {% anchor Service Component %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
 #### Service Component
 
 An application component that interacts with the space (using read, write, take, etc.), and implements a certain functionality.
-Java people sometimes refer to it as a Service Bean, but it does not have to be a [Java Bean|http://en.wikipedia.org/wiki/JavaBean].
-~Key sentence: The service component interacts with the space to implement your application's logic.~
+Java people sometimes refer to it as a Service Bean, but it does not have to be a [Java Bean](http://en.wikipedia.org/wiki/JavaBean).
+{% sub %}Key sentence: The service component interacts with the space to implement your application's logic.{% endsub %}
 
 {% endcolumn %}
 
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_service_bean.gif!
+![term_service_bean.gif](/attachment_files/xap97net/term_service_bean.gif)
 
-~**A Service Component**~
+{% sub %}**A Service Component**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
 
-{section}
-{whr}
+{% endsection %}
+
+{% whr %}
 
 {% comment %}
 ----------------------------
@@ -128,30 +132,30 @@ Java people sometimes refer to it as a Service Bean, but it does not have to be 
 {% endcomment %}
 
 {% anchor Processing Unit %}
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
 #### Processing Unit
 
-A combination of service components and/or an embedded space instance. This is the fundamental unit of deployment in GigaSpaces XAP. The Processing Unit itself runs within a [Processing Unit Container|Terminology - Runtime Components#Processing Unit Container], and is typically deployed onto the [Service Grid|Terminology - Runtime Components#Service Grid].
+A combination of service components and/or an embedded space instance. This is the fundamental unit of deployment in GigaSpaces XAP. The Processing Unit itself runs within a [Processing Unit Container](./terminology---runtime-components.html#Processing Unit Container), and is typically deployed onto the [Service Grid](./terminology---runtime-components.html#Service Grid).
 
 {% endcolumn %}
 
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_empty_pu.gif!
+![term_empty_pu.gif](/attachment_files/xap97net/term_empty_pu.gif)
 
-~**A Processing Unit**~
+{% sub %}**A Processing Unit**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 # Common Processing Unit Configurations
-
 
 {% comment %}
 ----------------------------
@@ -159,27 +163,27 @@ A combination of service components and/or an embedded space instance. This is t
 ----------------------------
 {% endcomment %}
 
-{section}
+{% section %}
 
 {% column width=50% %}
 
 #### Processing Unit configured with an embedded space
 
-A deployable package which instantiates an embedded space instance, also called a data grid instance. A set of embedded space instances that run within the processing units typically form a [Data Grid|Terminology - Data Grid Topologies].
+A deployable package which instantiates an embedded space instance, also called a data grid instance. A set of embedded space instances that run within the processing units typically form a [Data Grid](./terminology---data-grid-topologies.html).
 
 {% endcolumn %}
 
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_pu_with_space.gif!
+![term_pu_with_space.gif](/attachment_files/xap97net/term_pu_with_space.gif)
 
-~**A Processing Unit with an embedded space**~
+{% sub %}**A Processing Unit with an embedded space**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 {% comment %}
 ----------------------------
@@ -187,7 +191,7 @@ A deployable package which instantiates an embedded space instance, also called 
 ----------------------------
 {% endcomment %}
 
-{section}
+{% section %}
 
 {% column width=50% %}
 
@@ -200,14 +204,14 @@ A deployable package containing one or more services. In the GigaSpaces context,
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_pu_with_bean.gif!
+![term_pu_with_bean.gif](/attachment_files/xap97net/term_pu_with_bean.gif)
 
-~**A Processing Unit containing a Service component that interacts with a space embedded in another Processing Unit**~
+{% sub %}**A Processing Unit containing a Service component that interacts with a space embedded in another Processing Unit**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 {% comment %}
 ----------------------------
@@ -215,13 +219,13 @@ A deployable package containing one or more services. In the GigaSpaces context,
 ----------------------------
 {% endcomment %}
 
-{section}
+{% section %}
 
 {% column width=50% %}
 
 #### Processing Unit configured with embedded space and embedded services
 
-A deployable, independent, scalable unit, which is the building block of [Space-Based Architecture|Terminology - Space-Based Architecture].
+A deployable, independent, scalable unit, which is the building block of [Space-Based Architecture](./terminology---space-based-architecture.html).
 Client application (which can also be other processing units) write objects to the space, and the procesing unit which contains this space consumes these objects or is notified about them and triggeres a related services.
 
 {% endcolumn %}
@@ -229,14 +233,13 @@ Client application (which can also be other processing units) write objects to t
 {% column width=30% %}
 
 {% align center %}
-!GS6:Images^term_pu_with_space_and_bean.gif!
+![term_pu_with_space_and_bean.gif](/attachment_files/xap97net/term_pu_with_space_and_bean.gif)
 
-~**A Processing Unit with an embedded service that interacts with an embedded space**~
+{% sub %}**A Processing Unit with an embedded service that interacts with an embedded space**{% endsub %}
 {% endalign %}
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
-
-||Basic Components|[Data Grid Topologies|Terminology - Data Grid Topologies]|[Space-Based Architecture|Terminology - Space-Based Architecture]|[Runtime Components|Terminology - Runtime Components]|
+||Basic Components|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|

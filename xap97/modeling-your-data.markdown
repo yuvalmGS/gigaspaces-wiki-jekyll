@@ -90,7 +90,7 @@ An hybrid approach of the Parent-First and Child-First involves having both the 
 
 Many times you have an existing application that has been evolved around a database as its sole system of record. In such a case you might be using Hibernate (or some other mapping layer) to bridge between the Object model your application is using and the relational model the database is using. In some other cases you might be using JDBC API to access the database.
 
-To leverage the space data modeling approach you will need to adapt your existing application entities to use the right data access routines. The Entity class should be modified to leverage the space data model and API. When the application using Hibernate for example, the changes can be done in a relatively transparent manner to the application itself. The [Moving from Hibernate to Space](http://wiki.gigaspaces.com/wiki/display/SBP/Moving+from+Hibernate+to+Space) provides simple guide how to perform these changes at the Data Access Objects (DAO). You might be able to automate this process via auto-code generation or byte code manipulation.
+To leverage the space data modeling approach you will need to adapt your existing application entities to use the right data access routines. The Entity class should be modified to leverage the space data model and API. When the application using Hibernate for example, the changes can be done in a relatively transparent manner to the application itself. The [Moving from Hibernate to Space](/sbp/moving-from-hibernate-to-space.html) provides simple guide how to perform these changes at the Data Access Objects (DAO). You might be able to automate this process via auto-code generation or byte code manipulation.
 
 # The Author and the Book Example
 

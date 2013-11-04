@@ -5,15 +5,16 @@ categories: XAP97NET
 page_id: 63799300
 ---
 
-{% compositionsetup %}{summary}Applications and Processing unit dependency view{summary}
+{% compositionsetup %}
+{% summary %}Applications and Processing unit dependency view{% endsummary %}
 
 # Overview
 
-!GRA:Images2^new-in-805-ribbon.png|align=right!
+![new-in-805-ribbon.png](/attachment_files/xap97net/new-in-805-ribbon.png)
 The Applications Module allow users to manage and monitor XAP applications.
 It offers a wide set of functionality from deployment to verification, monitoring and log tracing.
 
-!GRA:Images2^apps_explained.png!
+![apps_explained.png](/attachment_files/xap97net/apps_explained.png)
 
 # The Application Map
 
@@ -22,17 +23,17 @@ It allow the user to compare the plan with the actual deployment in any given mo
 
 ### Overview
 
-!GRA:Images2^app_map_explained.png!
+![app_map_explained.png](/attachment_files/xap97net/app_map_explained.png)
 
 ### Understanding the processing unit display
 
 The application map depicts a shape per each processing unit
-!GRA:Images2^pu.jpg!
+![pu.jpg](/attachment_files/xap97net/pu.jpg)
 
 It shows the deployment and dependencies between each processing unit, belonging to the chosen "application" from the drop-down menu.
 Processing units that were not deployed in the context of an application, will be shown under "Unassigned Services".
 
-!GRA:Images^unassigned_selection.jpg|border=1!
+![unassigned_selection.jpg](/attachment_files/xap97net/unassigned_selection.jpg)
 
 ### Processing Unit dependencies
 
@@ -40,23 +41,22 @@ Dependencies between processing units are depicted by an arrow flowing in the di
 For example, in the screenshot below, the feeder depends on the Space to be alive.
 
 {% info %}
-For more information on processing unit dependencies, see [Application deployment and processing unit dependencies|Deploying onto the Service Grid#Application Deployment and Processing Unit Dependencies]
+For more information on processing unit dependencies, see [Application deployment and processing unit dependencies](/xap97/deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependencies)
 {% endinfo %}
 
-
-!GRA:Images^application_dependency.png|border=1!
+![application_dependency.png](/attachment_files/xap97net/application_dependency.png)
 
 |**Icon**|**Description**|
-|!GRA:Images2^segment.png!|Space Partition|
-|!GRA:Images2^segments.png!|Space Partition with backup|
-|!GRA:Images2^data.png!|Space Replica|
-|!GRA:Images2^process.png!|Processing (Business Logic)|
-|!GRA:Images2^pipe.png!|Event Container (Messaging)|
-|!GRA:Images2^world.png!|Web application|
+|![segment.png](/attachment_files/xap97net/segment.png)|Space Partition|
+|![segments.png](/attachment_files/xap97net/segments.png)|Space Partition with backup|
+|![data.png](/attachment_files/xap97net/data.png)|Space Replica|
+|![process.png](/attachment_files/xap97net/process.png)|Processing (Business Logic)|
+|![pipe.png](/attachment_files/xap97net/pipe.png)|Event Container (Messaging)|
+|![world.png](/attachment_files/xap97net/world.png)|Web application|
 
 ### Contextual Actions
 
-!GRA:Images2^actions_explained.png!
+![actions_explained.png](/attachment_files/xap97net/actions_explained.png)
 
 # The Monitoring view
 
@@ -64,12 +64,12 @@ The monitoring view, allows the user to monitor the performance of a the selecte
 
 ### Understanding the widgets
 
-!GRA:Images2^metrics_explained.png!
+![metrics_explained.png](/attachment_files/xap97net/metrics_explained.png)
 
 # The Infrastructure view
 
 The infrastructure view allows the user to verify the application's topology. It maps the processing unit instances to hosts, providing some basic information about each host.
-!GRA:Images2^infra_explained.png!
+![infra_explained.png](/attachment_files/xap97net/infra_explained.png)
 
 # The Services view
 
@@ -77,18 +77,18 @@ The services view allows the user to get information at the processing unit inst
 
 ### Comparing Instances
 
-!GRA:Images2^services_explained.png!
+![services_explained.png](/attachment_files/xap97net/services_explained.png)
 
 ### Service Instance Details
 
-!GRA:Images2^details_explained.png!
+![details_explained.png](/attachment_files/xap97net/details_explained.png)
 
 ### Contextual Actions
 
 # The Logs view
 
 The logs view allows the user to browse the application logs, filter or search them.
-!GRA:Images2^logs_explained.png!
+![logs_explained.png](/attachment_files/xap97net/logs_explained.png)
 
 # Events time-line (per application)
 
@@ -96,8 +96,7 @@ The events time line is filtered per application chosen from the application dro
 The events time-line shows the deployment life cycle of all the processing units belonging to this application.
 
 {% info %}
-For more information on the events displayed, see [Events time-line tab in dashboard view|Dashboard View#Events time-line]
+For more information on the events displayed, see [Events time-line tab in dashboard view](./dashboard-view.html#Events time-line)
 {% endinfo %}
 
-
-!GRA:Images^events_timeline_in_application.png|border=1!
+![events_timeline_in_application.png](/attachment_files/xap97net/events_timeline_in_application.png)

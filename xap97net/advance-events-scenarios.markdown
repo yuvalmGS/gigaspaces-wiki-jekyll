@@ -5,22 +5,21 @@ categories: XAP97NET
 page_id: 63799413
 ---
 
-{summary}Advance events scenarios{summary}
+{% summary %}Advance events scenarios{% endsummary %}
 
 # Overview
 
-While in most cases, using the `DefaultDataEventSession` as desribed in the [Space Events|Space Events] page is enough to get the job done, in some cases it is not enough. For instance if you want a mechanism that detects that an event listener is no longer active due to space failure, or to make sure that if the client proxy terminates unexpectedly, the listener resources are cleaned up in the space. All of these, and more, are covered in this page.
+While in most cases, using the `DefaultDataEventSession` as desribed in the [Space Events](./space-events.html) page is enough to get the job done, in some cases it is not enough. For instance if you want a mechanism that detects that an event listener is no longer active due to space failure, or to make sure that if the client proxy terminates unexpectedly, the listener resources are cleaned up in the space. All of these, and more, are covered in this page.
 
 # Event Mechanism in General
 
-Event registration is done using a supplied [template|Query Template Types], and a callback method. The registration notify template can be stored in one or more spaces, depending on the template and cluster topology.
+Event registration is done using a supplied [Query Template Types], and a callback method. The registration notify template can be stored in one or more spaces, depending on the template and cluster topology.
 
 Every time an event occurs in a space, which matches the given template and event type in that space, the event is triggered at the proxy, which activates the callback method. What happens if the space or the proxy is no longer available? What happens if the proxy can't manage the events overload? These issues can be addressed by customizing a data event session, with appropriate behaviors to handle these issues.
 
 # Customizing DataEventSession Behavior
 
-In order to customize the behavior of an [`IDataEventSession`|http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_IDataEventSession.htm], a new one needs to be created, using a specific [`DataEventConfig` |http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_EventSessionConfig.htm] that configures the behavior. This section describes different scenarios, and how to address them, by customizing the data event session
-
+In order to customize the behavior of an [`IDataEventSession`](http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_IDataEventSession.htm), a new one needs to be created, using a specific [`DataEventConfig` ](http://www.gigaspaces.com/docs/dotnetdocs6.6/html/T_GigaSpaces_Core_Events_EventSessionConfig.htm) that configures the behavior. This section describes different scenarios, and how to address them, by customizing the data event session
 
 {% highlight java %}
 EventSessionConfig eventSessionConfig = new EventSessionConfig();
@@ -31,12 +30,12 @@ EventSessionConfig eventSessionConfig = new EventSessionConfig();
 IDataEventSession dataEventSession = proxy.CreateDataEventSession(eventSessionConfig);
 {% endhighlight %}
 
-
 ## Detecting an Event Listener Failure/Disconnection
 
 An event listener that is registered for an event might be disconnected for the following reasons:
+
 - The space that holds the listener registration template, is no longer available.
-- The proxy that receives the notifications can't handle the amount of incomming events, and creates a [slow consumer|XAP95:Slow Consumer] scenario, which causes the space to disconnect the listener.
+- The proxy that receives the notifications can't handle the amount of incomming events, and creates a [slow consumer](http://wiki.gigaspaces.com/wiki/display/XAP95/Slow+Consumer) scenario, which causes the space to disconnect the listener.
 
 In order to detect and handle listener disconnection, the **auto renewal** mechanism can be used.
 
@@ -46,7 +45,7 @@ The auto renewal idea is that the listener is added with a limited lease, for ex
 
 - The client process terminated unexpectedly, and didn't unregister its listener. After the lease expires, the notify template is removed from the space, instead of staying alive forever.
 - If the space is no longer available, then the client is notified that it couldn't renew the listener lease.
-- If the client causes a [slow consumer|XAP95:Slow Consumer] scenario, and as a result its listener has been disconnected by the space, then the client is notified that it couldn't renew the listener lease, and it can reregister to the event.
+- If the client causes a [slow consumer](http://wiki.gigaspaces.com/wiki/display/XAP95/Slow+Consumer) scenario, and as a result its listener has been disconnected by the space, then the client is notified that it couldn't renew the listener lease, and it can reregister to the event.
 
 **Configuring data event session with auto renewal**
 Auto renewal behavior is determined by the `EventSessionConfig.AutoRenew` property.
@@ -55,7 +54,6 @@ Auto renewal behavior is determined by the `EventSessionConfig.AutoRenew` proper
 EventSessionConfig eventSessionConfig = new EventSessionConfig();
 eventSessionConfig.AutoRenew = true;
 {% endhighlight %}
-
 
 The auto renewal process uses a few parameters that dictate the timing of its behavior. These values have proper defaults, but can be altered, for example:
 
@@ -68,10 +66,9 @@ eventSessionConfig.AutoRenewLeaseDuration = 10000;
 eventSessionConfig.AutoRenewRTT = 5000;
 {% endhighlight %}
 
-
 ## Managing High Notifications Throughput
 
-When a notification is sent from the space to the client, the callback method is executed inside a thread that belongs to the resource pool of the proxy. As a result, this thread is occupied until the callback method returns. As a good practice, it is recommended to create the callback method that returns as fast as possible, otherwise the resources pool of the proxy can be choked, and cause a [slow consumer|XAP95:Slow Consumer] scenario. If the notifications should trigger a long running job, it is better to put this job in a queue, and handle it in a client thread later on.
+When a notification is sent from the space to the client, the callback method is executed inside a thread that belongs to the resource pool of the proxy. As a result, this thread is occupied until the callback method returns. As a good practice, it is recommended to create the callback method that returns as fast as possible, otherwise the resources pool of the proxy can be choked, and cause a [slow consumer](http://wiki.gigaspaces.com/wiki/display/XAP95/Slow+Consumer) scenario. If the notifications should trigger a long running job, it is better to put this job in a queue, and handle it in a client thread later on.
 
 It is possible to reduce network traffic, and concurrent threads that handle notifications, by using the batch notification mechanism. Instead of sending each notification separately, notifications are grouped together in the space, and sent as one batch.
 

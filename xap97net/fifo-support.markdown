@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799377
 ---
 
-{summary}How to get entries in the same order in which they were written to the space.{summary}
+{% summary %}How to get entries in the same order in which they were written to the space.{% endsummary %}
 
 # Overview
 
@@ -17,7 +17,6 @@ The default space behavior is non-FIFO. The reason is that FIFO support comes at
 
 Setting FIFO support for a class can be done via the `FifoSupport` property on the `\[SpaceClass\]` attribute:
 
-
 {% highlight java %}
 [SpaceClass(FifoSupport = FifoSupport.Operation)]
 public class Person
@@ -26,9 +25,7 @@ public class Person
 }
 {% endhighlight %}
 
-
 or when using gs.xml via the `fifo-support` attribute on the `class` element:
-
 
 {% highlight xml %}
 <gigaspaces-mapping>
@@ -37,7 +34,6 @@ or when using gs.xml via the `fifo-support` attribute on the `class` element:
     </class>
 </gigaspaces-mapping>
 {% endhighlight %}
-
 
 The `FifoSupport` modes are:
 
@@ -92,7 +88,6 @@ IDataEventSession session = space.CreateDataEventSession(sessionConfig);
 session.AddListener(new Person(), new EventHandler<SpaceDataEventArgs<Person>>(OnPersonEvent));
 {% endhighlight %}
 
-
 {% infosign %} When using FIFO the client will use a single thread to invoke the listener callback method, so the events are both received and processed in FIFO order (i.e. if the client receives an event but the callback method haven't finished processing the previous event, the new event will be blocked until the previous one finishes). This is contrary to non-FIFO events, which are forwarded to the callback method as soon as they arrive, and thus might invoke the callback methods in parallel via multiple threads.
 {% exclamation %} Registering for FIFO notifications on a class that was not FIFO-enabled will throw an exception.
 
@@ -104,10 +99,11 @@ When a space includes FIFO-enabled classes and is defined as persistent, the per
 
 The FIFO Grouping designed to allow efficient processing of events with partial ordering constraints.
 Instead of maintaining a FIFO queue per class type, it lets you have a higher level of granularity by having FIFO queue maintained according to a specific value of a specific property.
-For more details see [FIFO grouping].
+For more details see [FIFO grouping](./fifo-grouping.html).
 
 # Limitations
 
 FIFO ordering is maintained per class per space. Therefore the following limitations should be observed:
+
 - Order across class inheritance is not supported - When executing a FIFO operation which involves entries of different classes, the result set is not guaranteed to be in FIFO order (however, each subset of a specific class will maintain order).
 - Order across cluster partitions is not supported - When executing a FIFO operation which involves more than one partition, the result set is not guaranteed to be in FIFO order (however, each subset of a specific partition will maintain order).

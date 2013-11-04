@@ -5,16 +5,15 @@ categories: SBP
 page_id: 47219410
 ---
 
-
 {% tip %}
 **Summary:** {% excerpt %}Basic and advanced code examples for using RTD and UDF with the GigaSpaces-Excel integration.{% endexcerpt %}
 **Author**: Pini Cohen, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP.NET 6.6
 **Contents:**
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{% endtip %}
 
-{rate}
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
+{% endtip %}
 
 # Overview
 
@@ -22,11 +21,9 @@ This section includes basic and advanced code examples for using the GigaSpaces-
 
 # Basic Examples
 
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
+{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 ## HelloUDF -- Performing Excel Functions in Space
-
-
 
 {% highlight java %}
 using System;
@@ -143,10 +140,7 @@ namespace HelloUDF
 }
 {% endhighlight %}
 
-
 ## HelloRTD -- Loading Data from Space to Excel
-
-
 
 {% highlight java %}
 using System;
@@ -323,10 +317,7 @@ namespace HelloRTD
 }
 {% endhighlight %}
 
-
 ## HelloMsg
-
-
 
 {% highlight java %}
 using System.Text;
@@ -380,10 +371,7 @@ namespace HelloCommon
 }
 {% endhighlight %}
 
-
 ## RTDSample -- Loading Data from Space to Excel
-
-
 
 {% highlight java %}
 using System;
@@ -576,10 +564,7 @@ namespace GSStreamer
 }
 {% endhighlight %}
 
-
 ## TickInfo
-
-
 
 {% highlight java %}
 using System;
@@ -647,11 +632,10 @@ namespace TickInfo
 }
 {% endhighlight %}
 
-
-{toc-zone}
+{% endtoczone %}
 
 # What's Next?
 
-{refer}[Write Your First RTD/UDF Application|Writing Your First RTD or UDF Application]{refer}
-{refer}[See the Market-Data Example|GigaSpaces-Excel Market-Data Example]{refer}
-{refer}Back to The [Excel that Scales Solution] section{refer}
+{% refer %}[Write Your First RTD/UDF Application](./writing-your-first-rtd-or-udf-application.html){% endrefer %}
+{% refer %}[See the Market-Data Example](./gigaspaces-excel-market-data-example.html){% endrefer %}
+{% refer %}Back to The [Excel that Scales Solution](./excel-that-scales-solution.html) section{% endrefer %}

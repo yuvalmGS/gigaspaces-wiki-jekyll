@@ -6,12 +6,13 @@ page_id: 63799304
 ---
 
 {% compositionsetup %}
-{summary:page|60}GigaSpaces .Net transaction model.{summary}
+
+{% summary page|60 %}GigaSpaces .Net transaction model.{% endsummary %}
 
 # Overview
 
 GigaSpaces .Net provides an explicit transaction management programing model. It allows developers to easily write transactional code with the lowest overhead possible while minimizing the amount of hand-crafted code and separating it from the application hosting environment and instance management. This section presents the programming model and its main features.
-!GRA:Images^tx_manager.jpg!
+![tx_manager.jpg](/attachment_files/xap97net/tx_manager.jpg)
 With the GigaSpaces .Net transaction model the developer is responsible for explicitly starting and managing the transaction. You obtain an object representing the underlying space transaction by calling `GigaSpacesFactory.CreateDistributedTransactionManager`.  This call returns an implementation of the `ITransactionManager` interface used to create the transaction using the `ITransactionManager.Create()` call. This return `ITransaction` object that should be used with every space operations that participant with the transaction. Once you would like to commit the transaction call the `ITransaction.Commit()`.
 If any error occurred, you need to abort the transaction by calling `ITransaction.Abort()`. To clean up the transaction resources call the `ITransaction.Dispose()`.
 
@@ -34,9 +35,7 @@ public void ProcessNewOrder(ISpaceProxy space)
 }
 {% endhighlight %}
 
-
 Naturally, this code is not safe because if something goes wrong between the Take and Write operations the order is lost. We can use transactions to make it safer:
-
 
 {% highlight java %}
 public void ProcessNewOrder(ISpaceProxy space, ITransactionManager txnManager)
@@ -67,8 +66,8 @@ public void ProcessNewOrder(ISpaceProxy space, ITransactionManager txnManager)
 }
 {% endhighlight %}
 
-
 Let's look at the changes we've made:
+
 1. The method now receives an additional argument which is a transaction manager, which is used to create a transaction.
 2. The transaction is created in a **using** block, to ensure it is automatically disposed when done.
 3. The business logic code is wrapped in a **try-catch** block, and we've added a **commit** upon successful execution and **abort** if an exception occurred.
@@ -76,11 +75,9 @@ Let's look at the changes we've made:
 
 Last but not least, we now need to provide a transaction manager when invoking **ProcessNewOrder()**. This can be done by invoking `GigaSpacesFactory.CreateDistributedTransactionManager()`. Of course there's no need to create a transaction manager each time we create a transaction, which is why we left it out of the method. Usually the transaction manager is created once upon application initialization and used throughout the application.
 
-
 {% tip title=Distributed vs. Local transaction manager %}
 In previous versions, users had to choose between using the distributed and local transaction manager, since the distributed manager was slower and the local did not support multiple partitions. The 8.0 release includes significant improvements in the distributed manager which makes this choice redundant. The local transaction manager has been deprecated and will be removed in future versions.
 {% endtip %}
-
 
 # Timeout
 
@@ -99,7 +96,6 @@ Alternatively, you can set the default transaction timeout on the transaction ma
 // Set the default transactions timeout to 5 minutes:
 txnManager.DefaultLeaseTime = 5 ** 60 ** 1000;
 {% endhighlight %}
-
 
 # Isolation Levels
 

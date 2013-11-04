@@ -66,7 +66,7 @@ If you need to scale up your database, you can use GigaSpaces as an In-Memory Da
 - **Event-driven** model enables notifications when data is modified
 - **Database access can be synchronous or asynchronous** - the [GigaSpaces Mirror Service](./asynchronous-persistency-with-the-mirror.html) allows data to be persisted to the database asynchronously, without a performance penalty
 
-{% infosign %} To learn how to do this, see the [Moving from Hibernate to Space](http://wiki.gigaspaces.com/wiki/display/SBP/Moving+from+Hibernate+to+Space) best practice.
+{% infosign %} To learn how to do this, see the [Moving from Hibernate to Space](/sbp/moving-from-hibernate-to-space.html) best practice.
 
 ## Beyond the Data Grid: Scaling Out Your Application Using Space-Based Architecture
 
@@ -332,7 +332,7 @@ This topology consists of two or more space instances with replication between t
 - For the application components that are write mostly (above 50% write/remove/update), you should **not use hibernate API directly** , but move into the [GigaSpace  Interface](./the-gigaspace-interface.html) and use the [Mirror service](./asynchronous-persistency-with-the-mirror.html) (if you still want to persist the data). In this case you can leverage [SQLQuery](./sqlquery.html) or [Task Executors](./task-execution-over-the-space.html) for complex distributed activities. In this case you should use remote partitioned space topology.
 
 {% tip %}
-See the [Moving from Hibernate to Space](http://wiki.gigaspaces.com/wiki/display/SBP/Moving+from+Hibernate+to+Space) best practice for step by step instructions moving from Hibernate based application to GigaSpaces Data-Grid as the data access layer.
+See the [Moving from Hibernate to Space](/sbp/moving-from-hibernate-to-space.html) best practice for step by step instructions moving from Hibernate based application to GigaSpaces Data-Grid as the data access layer.
 {% endtip %}
 
 ## Settings GigaSpaces local cache with Hibernate Second Level Cache

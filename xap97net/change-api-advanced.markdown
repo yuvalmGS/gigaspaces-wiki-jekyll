@@ -6,13 +6,12 @@ page_id: 64325389
 ---
 
 {% compositionsetup %}
-{summary:}This page covers the Change API more advanced scenarios.{summary}
+{% summary %}This page covers the Change API more advanced scenarios.{% endsummary %}
 
 # Obtaining Change detailed results
 
 By default, the change result will only contain the number of entries which were changed during the operation. In order to get more details (requires more network traffic) the ChangeModifiers.ReturnDetailedResults should be used. When using this modifier the result will contain the list of entries which were changed including the change affect that took place on each entry.
 You can use this in order to know what was the affect, for instance what is the value of a numeric property after the increment operation was applied on it.
-
 
 {% highlight java %}
 ISpaceProxy space = // ... obtain a space reference
@@ -28,7 +27,6 @@ foreach(IChangedEntryDetails<Account> changedEntryDetails in changeResult.Result
 }
 {% endhighlight %}
 
-
 Here is the full list of change operations:
 ||ChangeSet operation||ChangeOperation class||Comment||
 |**ChangeSet.Set**|SetOperation| |
@@ -41,4 +39,4 @@ Here is the full list of change operations:
 |**ChangeSet.SetInDictionary**|SetInDictionaryOperation| |
 |**ChangeSet.RemoveFromDictionary**|RemoveFromDictionaryOperation| |
 
-For the common use case you can use the [Change Extension] class which provide extension methods to `ISpaceProxy` which simplify the most common use cases and allow you to do simple operation such as an atomic `AddAndGet` operation. This extension are a syntactic sugaring on top of the above API.
+For the common use case you can use the [Change Extension](./change-extension.html) class which provide extension methods to `ISpaceProxy` which simplify the most common use cases and allow you to do simple operation such as an atomic `AddAndGet` operation. This extension are a syntactic sugaring on top of the above API.

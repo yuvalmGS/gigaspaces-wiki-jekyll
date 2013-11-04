@@ -6,10 +6,11 @@ page_id: 63799365
 ---
 
 {% compositionsetup %}
-{summary}This example demonstrates how to harness the Service Grid Admin API to build an agent
-that monitors a deployed application, and scale it up on demand.{summary}
 
-{section}
+{% summary %}This example demonstrates how to harness the Service Grid Admin API to build an agent
+that monitors a deployed application, and scale it up on demand.{% endsummary %}
+
+{% section %}
 
 {% column width=7% %}
 
@@ -17,7 +18,7 @@ that monitors a deployed application, and scale it up on demand.{summary}
 
 {% column width=86% %}
 
-{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|`<GigaSpaces Root>\Examples\ScalingAgent` |
+{% align center %}||![wiki_icon_folder.gif](/attachment_files/xap97net/wiki_icon_folder.gif)||Example Root|`<GigaSpaces Root>\Examples\ScalingAgent` |
 {% endalign %}
 
 {% endcolumn %}
@@ -26,20 +27,20 @@ that monitors a deployed application, and scale it up on demand.{summary}
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 # Overview
 
-The [Administration and Monitoring API|Administration and Monitoring API] allows you to monitor an application's health and its resources, to enforce a specific pre-defined configurable SLA that scales the application while it is running. This ensures a deterministic response time when there is an increasing number of users accessing the system, and also ensures the high-availability and robustness of the application.
+The [Administration and Monitoring API](./administration-and-monitoring-api.html) allows you to monitor an application's health and its resources, to enforce a specific pre-defined configurable SLA that scales the application while it is running. This ensures a deterministic response time when there is an increasing number of users accessing the system, and also ensures the high-availability and robustness of the application.
 
 The following example illustrates how you can construct a simple processing unit (**The Scaling Agent**) to monitor an application deployed into GigaSpaces, and track the load on the application. Once the average throughput per instance of the application breaches a pre-defined limit, the scaling agent reacts and performs the necessary activities to scale the application tier.
 
 The activities to scale up the application could be: starting a new GSC on remote machines, and starting additional application instances. In the same way, the scaling agent can be extended to scale down the application to terminate running GSCs, and reduce the amount of application instances.
 
-{refer}This page assumes knowledge of the processing unit concept. If you are unfamilar with it, please refer to
-the [SBA Example] first.{refer}
+{% refer %}This page assumes knowledge of the processing unit concept. If you are unfamilar with it, please refer to
+the [SBA Example] first.{% endrefer %}
 
-{% align center %}!GRA:Images^scaling agent .net.jpg!{% endalign %}
+{% align center %}![scaling agent .net.jpg](/attachment_files/xap97net/scaling agent .net.jpg){% endalign %}
 
 # How the Scaling Agent Works
 
@@ -47,8 +48,9 @@ The scaling agent periodically samples the throughput of feeds that are processe
 
 ## Scaling Agent Implementation
 
-{gdeck:scalingagent|top}
-{gcard:Code}
+{% inittab scalingagent|top %}
+
+{% tabcontent Code %}
 
 {% highlight java %}
 [BasicProcessingUnitComponent( Name = "Agent" )]
@@ -164,8 +166,9 @@ public class Agent : IDisposable
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Configuration}
+{% endtabcontent %}
+
+{% tabcontent Configuration %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -189,8 +192,9 @@ public class Agent : IDisposable
 </configuration>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 ## Feed Processor
 
@@ -292,10 +296,10 @@ public class FeedProcessorTpMonitor : IServiceMonitors
 }
 {% endhighlight %}
 
-
 # Running the Example
 
 The example consists of the following parts:
+
 - Data grid
 - Feeder
 - Processor
@@ -305,6 +309,7 @@ The Feeder is a Windows application that feeds the data grid with new feeds at a
 The Scaling Agent monitors the deployed Processors and scales them up on demand. It can be run either as a deployable processing unit, or as a standalone console application. When it is deployed as a processing unit, it is automatically reliable and self healing, like any processing unit that is managed by the service grid.
 
 To simplify the deployment of the examples, there are several scripts in the example directory.
+
 1. First start a grid service agent by running `<XAP.NET installation>\Bin\Gs-Agent.exe`.
 2. It is then recommended to run the GigaSpaces Management center to monitor the entire service grid state.
 3. After the service grid agent is loaded, in order to deploy the data grid, run `<XAP.NET installation>\Examples\ScalingAgent\DeploySpace.bat`.
@@ -314,10 +319,13 @@ To simplify the deployment of the examples, there are several scripts in the exa
 
 ## Feeder Application
 
-{indent}!GRA:Images^ScalingAgentFeeder.jpg!{indent}
+{% indent %}
+![ScalingAgentFeeder.jpg](/attachment_files/xap97net/ScalingAgentFeeder.jpg)
+{% endindent %}
 
 ## Agent Application
 
-{indent}!GRA:Images^ScalingAgentConsole.jpg!{indent}
+{% indent %}
+![ScalingAgentConsole.jpg](/attachment_files/xap97net/ScalingAgentConsole.jpg)
+{% endindent %}
 
-{rate}

@@ -5,5 +5,4 @@ categories: XAP97NET
 page_id: 63799329
 ---
 
-{section-page:na}
-!GRA:Images^Net_polling_notify_cont.jpg!
+![Net_polling_notify_cont.jpg](/attachment_files/xap97net/Net_polling_notify_cont.jpg)

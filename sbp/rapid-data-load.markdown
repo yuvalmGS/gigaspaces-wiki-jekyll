@@ -7,21 +7,20 @@ page_id: 51118632
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}This article illustrates the usage of Task Executors to rapidly load data into the In-Memory-Data-Grid{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.0
 **Last Update:** July 2009
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
-{rate}
-
 # Overview
-In some cases you might need to load data into the data grid in a very fast manner. This is mostly needed as part of your development phase or unit tests. You might not have a fast database on hand to load data, from using the [HibernateExternalDataSource|XAP8:External Data Source Initial Load] implementation, or it might be easier for you to create a data generator utility that simulates the real life data your application needs. A simple technique to load data very rapidly into the data grid, is to use a [DistributedTask|XAP8:Executor Based Remoting] implementation that generates the data and writes it into the collocated space. The generated data is constructed in such a way that its routing field value "matches" the collocated space.
+In some cases you might need to load data into the data grid in a very fast manner. This is mostly needed as part of your development phase or unit tests. You might not have a fast database on hand to load data, from using the [HibernateExternalDataSource](http://wiki.gigaspaces.com/wiki/display/XAP8/External+Data+Source+Initial+Load) implementation, or it might be easier for you to create a data generator utility that simulates the real life data your application needs. A simple technique to load data very rapidly into the data grid, is to use a [DistributedTask](http://wiki.gigaspaces.com/wiki/display/XAP8/Executor+Based+Remoting) implementation that generates the data and writes it into the collocated space. The generated data is constructed in such a way that its routing field value "matches" the collocated space.
 
-!GRA:Images^rapid_data_load.jpg!
+![rapid_data_load.jpg](/attachment_files/sbp/rapid_data_load.jpg)
 The Distributed Task is executed for each Space class you have, allowing you to load data in a parallel manner across all partitions (this is in fact 2 dimensional parallel data load).
 
 # Example
@@ -30,7 +29,6 @@ Here is a simple example: we have 3 types of Space Classes:
 
 ## The createCurrencyGroups
 A Data generator utility class has a `createCurrencyGroups()` method that generates a Hash Map that groups currencies that belong to the same partition using the Currency String hashcode - here is a simple implementation of such a method:
-
 
 {% highlight java %}
 static String currencies[] = { "AFN","ALL","AMD","ANG","AOA","ARS","AUD","AWG","AZN","BAM","BBD",
@@ -54,13 +52,10 @@ public static void createCurrencyGroups(int maxPartitions) {
 }
 {% endhighlight %}
 
-
 With the above implementation, we generate several lists of currencies, all of these are maintained within `currencyGroups` - one for each partition.
 
 ## The getRandomCurrency
 The Data generator also has the `getRandomCurrency` method that returns a random currency, based on a given partition - it uses the currencyGroups we created above:
-
-
 
 {% highlight java %}
 public static String getRandomCurrency(int partition) {
@@ -74,12 +69,10 @@ public static String getRandomCurrency(int partition) {
 }
 {% endhighlight %}
 
-
 The getRandomCurrency is used with our data generator utility.
 
 ## The LoaderRequest
 The LoaderRequest execute method implementation generates an array of the requested type and writes it using one method call (writeMultiple) into its collocated space:
-
 
 {% highlight java %}
 public class LoaderRequest implements DistributedTask<String, String>{
@@ -202,10 +195,8 @@ public class LoaderRequest implements DistributedTask<String, String>{
 }
 {% endhighlight %}
 
-
 ## The Client Application
 The client application creates a `LoaderRequest` object and executes it, one for each space Class, where in reality all these `LoaderRequest` objects are sent in parallel to all running partitions to be executed. This is how you have these 3 types of objects loaded into all partitions simultaneously:
-
 
 {% highlight java %}
 GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space").space()).gigaSpace();
@@ -216,5 +207,4 @@ String result1 = future1.get();
 String result2 = future2.get();
 String result3 = future3.get();
 {% endhighlight %}
-
 

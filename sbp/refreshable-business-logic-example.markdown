@@ -7,24 +7,22 @@ page_id: 55443590
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}Refreshable Business Logic example.{% endexcerpt %}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1.3
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{% endtip %}
 
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
+{% endtip %}
 
 # Overview
 
-Service Reloading [page|XAP8:Reloading Business Logic] explains how Refreshable context can be used to reload business logic. Find a modified version of Helloworld example which is included in the GigaSpaces installation configured for refreshable business logic.
+Service Reloading [page](http://wiki.gigaspaces.com/wiki/display/XAP8/Reloading+Business+Logic) explains how Refreshable context can be used to reload business logic. Find a modified version of Helloworld example which is included in the GigaSpaces installation configured for refreshable business logic.
 
 # Source Code
 
 Processor code from the Helloworld example is modified to implement Spring InitializingBean and DisplosableBean interfaces.
-
-
 
 {% highlight java %}
 public class Processor implements InitializingBean, DisposableBean {
@@ -60,11 +58,11 @@ public class Processor implements InitializingBean, DisposableBean {
 }
 {% endhighlight %}
 
-
 pu.xml for the processor is now split into two parts. Space is defined in the pu.xml and refreshable business logic is defined as part of the refreshable-beans.xml file. You will also need a pu.properties file to disable the pu download.
 
-{gdeck:Spring Configuration}
-{gcard:pu.xml}
+{% inittab Spring Configuration %}
+
+{% tabcontent pu.xml %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -117,8 +115,9 @@ pu.xml for the processor is now split into two parts. Space is defined in the pu
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:refreshable-beans.xml}
+{% endtabcontent %}
+
+{% tabcontent refreshable-beans.xml %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -172,22 +171,22 @@ pu.xml for the processor is now split into two parts. Space is defined in the pu
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:pu.properties}
+{% endtabcontent %}
 
+{% tabcontent pu.properties %}
 
 {% highlight java %}
 pu.download=false
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 # Running the Example
 
-1. Extract the [example|^refreshable-prototype.zip] archive into a folder. Navigate to the folder (calling it <refreshable-prototype>), modify the setDevEnv.bat file to have proper paths for GigaSpaces home, Java home and Ant home. Also modify the NIC_ADDR variable to have proper ip address. Run the startShell.bat script. This will open a command window.
+1. Extract the [example](/attachment_files/sbp/refreshable-prototype.zip) archive into a folder. Navigate to the folder (calling it <refreshable-prototype>), modify the setDevEnv.bat file to have proper paths for GigaSpaces home, Java home and Ant home. Also modify the NIC_ADDR variable to have proper ip address. Run the startShell.bat script. This will open a command window.
 2. Build the example to use your GigaSpaces and Java versions using following,
-
 
 {% highlight java %}
  build dist
@@ -195,28 +194,25 @@ pu.download=false
 
 3. Start a gs-agent using the provided script.
 
-
 {% highlight java %}
  gs-agent.bat
 {% endhighlight %}
 
 4. Run the ant task "deploy-processor" to deploy the processor space.
 
-
 {% highlight java %}
  build deploy-processor
 {% endhighlight %}
 
  Confirm that the processor space was deployed successfully using a gs-ui session.
-5. Run the ant task "run-feeder" to load data into the space. This will put 1000 `Data` objects into the space.
 
+5. Run the ant task "run-feeder" to load data into the space. This will put 1000 `Data` objects into the space.
 
 {% highlight java %}
  build run-feeder
 {% endhighlight %}
 
  You will see that the processor code that was used to process these messages by inspecting the log messages.
-
 
 {% highlight java %}
  [gsc][2/6872]   2011-01-21 13:25:31,470 processor.1 [1]/refreshableBeans INFO
@@ -229,9 +225,9 @@ pu.download=false
 
 6. Make code changes to processor to simulate business logic changes. (You can use the newer version of Processor code provided in this file "<refreshable-prototype>\processor\src\org\openspaces\example\helloworld\processor\NewProcessorCode.txt".
  This version modifies the processor to log new messages to simulate business logic change).
+
 7. Run the ant task "build copy-processor-classes" to copy the new version of Processor bean to appropriate GigaSpaces folders.
 8. Run the refresh client using `refresh.bat` to reload the new classes. If everything worked fine you should see messages similar to below on the gs-agent window (or space logs),
-
 
 {% highlight java %}
 [gsc][1/12464]  2011-01-21 13:30:29,971 processor.2 [1]/refreshableBeans INFO
@@ -249,7 +245,6 @@ pu.download=false
 {% endhighlight %}
 
 9. Run the feeder again and this time the `Data` should be processed using newer version of Processor Logic and log messages in the gs-agent window (or space logs) will look like below,
-
 
 {% highlight java %}
  [gsc][2/6872]   2011-01-21 13:31:21,906 processor.1 [1]/refreshableBeans INFO

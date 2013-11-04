@@ -6,9 +6,10 @@ page_id: 63799302
 ---
 
 {% compositionsetup %}
-{summary}This page describes the automatic scaling policy of the polling container.{summary}
 
-By default, the [polling event container|Polling Container Component] starts a single thread that performs the receive operations, and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads. The container manages the scaling up and down of concurrent consumers automatically, according to the load.
+{% summary %}This page describes the automatic scaling policy of the polling container.{% endsummary %}
+
+By default, the [polling event container](./polling-container-component.html) starts a single thread that performs the receive operations, and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads. The container manages the scaling up and down of concurrent consumers automatically, according to the load.
 There are 5 parameters that control the scaling behavior:
 ||Parameter Name|| Description || Default ||
 | MinConcurrentConsumers  | Minimum number of consumers that wait and process events. | 1 |
@@ -19,8 +20,10 @@ There are 5 parameters that control the scaling behavior:
 
 The scaling is managed by a single consumer, which is considered as the main consumer. There is always at least one active consumer, therefore the main consumer is always alive. After the `DynamicScaleSampleRate` number of iterations, the main consumer checks if all the other consumers are busy. A consumer is considered busy if it processed an event in the last `BusyIterationsThreshold` number of iterations. If all the consumers are busy, and the active number of consumers is less than the `MaxConcurrentConsumers`, a new consumer is spawned. If there is a consumer which is not busy, the main consumer checks if there is a need to scale down the number of consumers. It does so by iterating over all the active consumers, and checking if one of them is idle. A consumer is considered idle if for the last `IdleIterationsThreshold` number of iterations, it did not process a single event. If there is at least one consumer which is idle, then one (and only one) of the currently idle consumers is stopped.
 Here is an example of how these properties can be configured:
-{gdeck:os_simple_space|top}
-{gcard:Using EventListenerContainerFactory}
+
+{% inittab os_simple_space|top %}
+
+{% tabcontent Using EventListenerContainerFactory %}
 
 {% highlight java %}
 [PollingEventDriven(MinConcurrentConsumers = 1, MaxConcurrentConsumers = 5, DynamicScaleSampleRate = 1000, IdleIterationsThreshold = 10, BusyIterationThreshold = 50)]
@@ -45,8 +48,9 @@ public class SimpleListener
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:PollingEventListenerContainer Code Construction}
+{% endtabcontent %}
+
+{% tabcontent PollingEventListenerContainer Code Construction %}
 
 {% highlight java %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
@@ -58,7 +62,8 @@ pollingEventListenerContainer.IdleIterationsThreshold = 10;
 pollingEventListenerContainer.BusyIterationsThreshold = 50;
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 Since there is no asynchronous process that monitors the load, but one of the consumers does so, when altering the default parameters a few things should be kept in mind. The amount of time that it takes to detect that a spawning of an additional consumer is needed is the average event processing time ** the `DynamicScaleSampleRate` . If the processing time is very long, you might want to reduce the `DynamicScaleSampleRate`. On the other hand, it takes `ReceiveTimeout` ** `IdleIterationsThreshold` amount of time to detect an idle consumer. If the `ReceiveTimeout` is long, obviously it increases the idle consumer detection time. As a rule of thumb, it is more important to scale up quickly rather than to scale down quickly, so altering the parameters should be planned towards faster scaling up.

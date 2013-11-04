@@ -92,10 +92,15 @@ $(document).ready(function () {
 
     function googleSearch(settings) {
 
+        var query = $('#q').val() || "";
+        if (query.trim() == "") return; 
+
         // If no parameters are supplied to the function,
         // it takes its defaults from the config object above:
         settings = $.extend({}, config, settings);
-        settings.term = $('#q').val();
+
+        settings.term = query; 
+        
         
         //todo: tmp
         /*

@@ -13,21 +13,21 @@ page_id: 55938209
 **Recently tested with GigaSpaces version**: XAP 8.0.1
 **Last Update**: April 2011
 **Contents:**
-{toc:minLevel=1|maxLevel=2|type=flat|separator=pipe}
-{% endtip %}
 
-{rate}
+{% toc minLevel=1|maxLevel=2|type=flat|separator=pipe %}
+
+{% endtip %}
 
 # Overview
 
 Integrating GigaSpaces with an external JMS Servers is demonstrated in this page. This example shows how GigaSpaces event container can process events and send JMS messages to a external JMS server all under one distributed transaction.
 
 {% note %}
- Use of distributed transactions is done as a demonstration. Use this with caution, in production applications this can be expensive and have a performance penalty. Well known patterns like [Idempotent Receiver|http://www.eaipatterns.com/IdempotentReceiver.html] are potential alternatives to distributed transactions.
+ Use of distributed transactions is done as a demonstration. Use this with caution, in production applications this can be expensive and have a performance penalty. Well known patterns like [Idempotent Receiver](http://www.eaipatterns.com/IdempotentReceiver.html) are potential alternatives to distributed transactions.
 {% endnote %}
 
-
 This example includes:
+
 - GigaSpaces updates and JMS message creation are done transactionally so as to avoid duplicate processing/data loss.
 - Apache ActiveMQ is used as a the JMS provider.
 - Atomikos is used as the JTA Transaction provider and uses XA protocol.
@@ -36,8 +36,9 @@ This example includes:
 
 ## Source Code
 
-{gdeck:Processor pu.xml}
-{gcard:Atomikos Configuration}
+{% inittab Processor pu.xml %}
+
+{% tabcontent Atomikos Configuration %}
 
 {% highlight xml %}
 <!-- Construct Atomikos UserTransactionManager, needed to configure Spring -->
@@ -62,8 +63,9 @@ This example includes:
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:JMS Configuration}
+{% endtabcontent %}
+
+{% tabcontent JMS Configuration %}
 
 {% highlight xml %}
 <!-- creates an activemq xa connection factory using the amq namespace -->
@@ -90,8 +92,9 @@ This example includes:
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:GigaSpaces Configuration}
+{% endtabcontent %}
+
+{% tabcontent GigaSpaces Configuration %}
 
 {% highlight xml %}
 <!-- A bean representing a space (an IJSpace implementation). -->
@@ -134,14 +137,15 @@ This example includes:
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 **Processor Bean and Message Bean definitions**
 
-{gdeck:Java Code}
-{gcard:Processor bean definition}
+{% inittab Java Code %}
 
+{% tabcontent Processor bean definition %}
 
 {% highlight java %}
 package org.openspaces.example.helloworld.processor;
@@ -245,9 +249,9 @@ public class Processor implements InitializingBean {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Message bean definition}
+{% endtabcontent %}
 
+{% tabcontent Message bean definition %}
 
 {% highlight java %}
 package org.openspaces.example.helloworld.common;
@@ -317,37 +321,35 @@ public class Message  {
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 ## Running the example
 
-1. Download Apache ActiveMQ from [here|http://activemq.apache.org/download.html].
-2. Download Atomikos TransactionEssentials from [here|http://www.atomikos.com/Main/TransactionsEssentialsDownloadForm].
-3. Extract the [example|JTA-XA Example^helloworld-jta.zip] archive into a folder (calling it <helloworld-jta>). Modify the setDevEnv.bat and build.properties files to have proper paths for GigaSpaces home, Java home, ActiveMQ home and Atomikos home. Also modify the NIC_ADDR and locators variable to have proper IP address.
+1. Download Apache ActiveMQ from [here](http://activemq.apache.org/download.html).
+2. Download Atomikos TransactionEssentials from [here](http://www.atomikos.com/Main/TransactionsEssentialsDownloadForm).
+3. Extract the [example](/attachment_files/sbp/helloworld-jta.zip) archive into a folder (calling it <helloworld-jta>). Modify the setDevEnv.bat and build.properties files to have proper paths for GigaSpaces home, Java home, ActiveMQ home and Atomikos home. Also modify the NIC_ADDR and locators variable to have proper IP address.
 4. Open a command shell and navigate to <helloworld-jta> folder.
 5. Run `setDevEnv.bat` script in <helloworld-jta> folder, to set the environment variables.
 6. Copy the required jars to the <helloworld-jta>\lib folder using the `copy-libs` ant task provided.
-
 
 {% highlight java %}
  build copy-libs
 {% endhighlight %}
 
-
 {% note %}
  Example was tested using following product versions,
+
 1. GigaSpaces - **8.0.1**
 2. Apache ActiveMQ - **5.5**
 3. Atomikos TransactionEssentials - **3.7.0**
 If you are using different versions please make sure all the equivalent jars are reflected in `copy-libs` ant task
 {% endnote %}
 
-
 7. Start a gs-ui instance using `gs-ui.bat` script in <helloworld-jta> folder.
 8. Run `gs-agent.bat`  <helloworld-jta> folder, to start the GigaSpaces components (GSA,GSM, LUS, GSM).
 9. Start the ActiveMQ process using <ActiveMQHome>`\bin\activemq.bat` script.
-
 
 {% note %}
 If ActiveMQ is running on another server, please remember to update the brokerURL in `pu.xml`
@@ -355,13 +357,11 @@ If ActiveMQ is running on another server, please remember to update the brokerUR
 
 10. Deploy the processorSpace cluster by running `deploy-processor` ant task.
 
-
 {% highlight java %}
 build deploy-processor
 {% endhighlight %}
 
 13. Run the feeder process using `run-feeder` ant task.
-
 
 {% highlight java %}
  build run-feeder
@@ -375,11 +375,9 @@ build deploy-processor
 
 15. You can validate the JMS messages received by the Queue using a test JMS client included. You can run the client using `jms-client` ant task.
 
-
 {% highlight java %}
  build jms-client
 {% endhighlight %}
-
 
 ## References
 

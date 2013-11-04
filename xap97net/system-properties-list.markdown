@@ -7,7 +7,7 @@ page_id: 63799375
 
 # System Properties List
 
-{refer}Refer to the {javadoc6:com/j_spaces/kernel/SystemProperties|SystemProperties} class for more details.{refer}
+{% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc9.6/com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}
 || Property name  || Description || Default value  ||
 | `com.gs.active_election.timeout` | Defines the sleep timeout between iterations in the Active election algorithm | 1000 msec |
 | `com.gs.replication.disable-duplicate-filtering` | Disables the duplication filtering mechanism used to avoid double processing of packets after recovery. | false |
@@ -112,8 +112,8 @@ Since 5.0 not required, if not set explicitly, it is resolved as the parent dire
 | `com.gs.filters.statistics.enabled` | Used by the space schema. | |
 | `com.gs.cluster.cache-loader.external-data-source` | Used by the cluster schemas for the `CacheLoader`. | |
 | `com.gs.cluster.cache-loader.shared-data-source` | Used by the cluster schemas for the `CacheLoader`. | |
-| `com.gs.cluster.livenessMonitorFrequency` | Defines the frequency in which liveness of 'live' members in a cluster is monitored. See [Viewing Clustered Space Status|XAP95:Viewing Clustered Space Status] for more details. | Default 10000 ms&nbsp; |
-| `com.gs.cluster.livenessDetectorFrequency` | Defines the frequency in which liveness of members in a cluster is detected. See [Viewing Clustered Space Status|XAP95:Viewing Clustered Space Status] | Default 5000 ms |
+| `com.gs.cluster.livenessMonitorFrequency` | Defines the frequency in which liveness of 'live' members in a cluster is monitored. See [Viewing Clustered Space Status](http://wiki.gigaspaces.com/wiki/display/XAP95/Viewing+Clustered+Space+Status) for more details. | Default 10000 ms&nbsp; |
+| `com.gs.cluster.livenessDetectorFrequency` | Defines the frequency in which liveness of members in a cluster is detected. See [Viewing Clustered Space Status](http://wiki.gigaspaces.com/wiki/display/XAP95/Viewing+Clustered+Space+Status) | Default 5000 ms |
 | `com.gs.number_implicit_indexs` | Used by default space schema. | the default number of implicit indexes: for `MemorySpace = 2`, `PersistentSpace = 1` |
 | `com.gs.callGC` | Boolean value.
 Call garbage collection when performing eviction. This used when running in LRU cache policy and also at client side when using local cache. | `false` |
@@ -121,7 +121,7 @@ Call garbage collection when performing eviction. This used when running in LRU 
 Force disabling replication multicast adaptor. | `false` {% anchor xa %} |
 | `com.gs.xa.failOnInvalidRollback` | Boolean value.
 When set to `false`, the `XAResource` does not throw an error when attempting to roll back a non-existing transaction or a transaction the has already been rolled back. For more details, see
-{sunjavadoc:javax/transaction/xa/XAResource|Javadoc} | `true` {% anchor maxbuffer %} |  |
+[Javadoc](http://docs.oracle.com/javase/1.5.0/docs/api/javax/transaction/xa/XAResource.html) | `true` {% anchor maxbuffer %} |  |
 | com.gs.grid.secured | Security property indicating whether the GSM and GSC should be loaded in a secured mode. (see services.config for more info). | false (non-secured) |
 | `com.gs.deploy` | The location of the deploy directory of the GSM. | `GSHOME/deploy` |
 | `com.gs.work` | The location of the work directory of the GSM and GSC. | `GSHOME/work` |

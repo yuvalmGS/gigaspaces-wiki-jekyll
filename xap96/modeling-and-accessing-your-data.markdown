@@ -23,4 +23,4 @@ XAP promotes openness and interoperability, supporting common interfaces for acc
 - [Memcached API](/xap96/memcached-api.html)
 - [C++ API](/xap96/xap-cpp.html)
 - [REST API](/xap96/rest-api.html)
-- [.Net API](XAP96NET:)
+- [.Net API](/xap97net/index.html)

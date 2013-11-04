@@ -6,27 +6,28 @@ page_id: 52527436
 ---
 
 {% compositionsetup %}
-{summary}Lowering the Space Object Footprint - Compact Serialization Pattern{summary}
+
+{% summary %}Lowering the Space Object Footprint - Compact Serialization Pattern{% endsummary %}
+
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.1GA**
 JDK:**Sun JDK 1.6**
 Date: July 2009
-{rate}
 
 # Overview
 By default, when using the GigaSpaces Java API, the space stores space object fields as is. No data compaction, or compression is done while the object is transported across the network or when stored within the space.
 
-
 {% note %}
+
 - The Compressed Storage Type compressing non-primitive fields using the zip utilities. It is different than the compact serialization pattern.
 - The Binary Storage Type store non-primitive fields within the space as it in its byte array form. It does not compress or reduce the footprint of the data as the compact pattern. It avoid the need to introduce nested space object data type to the space JVM and the need to de-serialize these at the space side. The Binary Storage Type may improve the performance when the space object store large collection.
 - The C++ and .Net API objects data does go through some compaction when sent across the network.
 {% endnote %}
 
-
 With the Compact Serialization pattern you may reduce the space object memory footprint when stored within the data grid. This allows you to store more space objects per memory unit. This pattern works very well when the space object includes large number of numerical values as it is storing these in more optimal data type.
 
 The basic idea of the compact serialization pattern is simple: Total control on the format of the space object data while transported over the network and when stored within the space. This technique:
+
 - Compacts the object payload data when transported over the network and when stored in memory.
 - Avoids the de-serialization involved when space object written to the space from a remote client (for non primitive fields such as user defined classes or collection field)
 - Avoids the de-serialization replicated to a backup space(s)
@@ -34,18 +35,23 @@ The basic idea of the compact serialization pattern is simple: Total control on 
 
 # The Basic Flow
 With the compact serialization pattern:
+
 - Before you write the object you serialize all non indexed fields (payload data) into one byte array field using the GigaSpaces serialization API (pack).
 - You serialize/de-serialize all indexed fields as usual (have the `writeExternal` , `readExternal` implementation to write and read these into the stream).
 - After reading the object from the space you should de-serialize the byte array data (unpack).
 
-{indent}!GRA:Images^bin_ser.jpg!{indent}
+{% indent %}
+![bin_ser.jpg](/attachment_files/sbp/bin_ser.jpg)
+{% endindent %}
 
 When the object is written to the space:
+
 - The non-indexed fields are compacted and serialized into the same field (as a byte array).
 - All the indexed fields + the byte array are serialized as usual via the `writeExternal` call.
 - The object with arrives in the space, de-serialized, indexed fields stored as usual and the byte array field stored as is.
 
 When the object is read from the space:
+
 - The read template undergoes the same actions as when writing an object to the space
 - The matching object is serialized and sent to the client.
 - When the matching object arrives the client side is it de-serialized, and the byte array data is de-serialized and expand (in a lazy manner).
@@ -54,6 +60,7 @@ When the object is read from the space:
 Using the compact serialization pattern can reduce the object footprint when stored within the space in drastic manner. As much as you will have more fields as part of the space object serialized using the GigaSpaces Serialization API, the memory footprint overhead will be smaller compared to the default serialization mode.
 
 The compact serialization pattern involves creation the following methods:
+
 1. `pack` method - Packs the object data into one field. Serialize the non-Indexed fields into the byte array.
 2. `unpack` method - Unpacks the object data into one field. De-serialize the non-Indexed fields from the byte array.
 3. `writeExternal` method - Serialize the object data. Required for the `Externalizable` implementation. Serialize the indexed fields and the byte array.
@@ -65,7 +72,8 @@ The compact serialization pattern involves creation the following methods:
 The `BinaryOutputStream` contains various method to serialize all java's primitive type, their Object wrappers and arrays forms in a compacted mode. `BinaryInputStream` is its counterpart for deserialization. Your `pack` and `unpack` methods will be using an instance of those classes.
 
 # Example
-With the [attached example|Lowering the Space Object Footprint^BinaryCompaction.zip] we have a space class with 37 fields.
+With the [attached example](/attachment_files/sbp/BinaryCompaction.zip) we have a space class with 37 fields.
+
 - 1 Integer data type field (indexed used for queries).
 - 12 String fields
 - 12 Long fields
@@ -81,6 +89,7 @@ To run this example copy the example package zip into \GigaSpaces Root\examples\
 Our example involves a space class that will be modified to follow the compact serialization pattern.
 
 The original class includes:
+
 - One Integer indexed field.
 - 12 String type non indexed fields declared as space class fields
 - 12 Long type non indexed fields declared as space class fields
@@ -88,7 +97,6 @@ The original class includes:
 - Getter and Setter methods for the above fields
 
 The original class looks like this:
-
 
 {% highlight java %}
 @SpaceClass
@@ -121,9 +129,9 @@ public class SimpleEntry {
 	}
 {% endhighlight %}
 
-
 ## The BinaryFormatEntry class
 The modified class that implements the compact serialization pattern includes:
+
 - Using the `@SpaceClass(includeProperties=IncludeProperties.EXPLICIT)` decoration - this allows you to control which fields will be Space class fields explicitly.
 - One Integer indexed field.
 - One byte array field declared as a space class field.
@@ -135,7 +143,6 @@ The modified class that implements the compact serialization pattern includes:
 - `Externalizable` implementation - `writeExternal` and `readExternal` methods
 
 The modified class looks like this:
-
 
 {% highlight java %}
 @SpaceClass(includeProperties=IncludeProperties.EXPLICIT)
@@ -188,11 +195,8 @@ public class BinaryFormatEntry implements Externalizable {
 }
 {% endhighlight %}
 
-
 ## The pack method
 The `pack` method serializes the object non indexed data. It is called explicitly before calling the space write operation. This method serialize the object data by placing the data into the byte array field. Null values fields indication stored within one field. The `BinaryOutputStream` utility class is used to write the compacted data into the byte array.
-
-
 
 {% highlight java %}
 public void pack() throws Exception
@@ -210,11 +214,8 @@ public void pack() throws Exception
 }
 {% endhighlight %}
 
-
 ## The unpack method
 This method de-serialize the object data by extracting the data from the byte array field and populating the fields with their corresponding values. `null` values fields are non-populated.  This method is called after calling the space read operation. The `BinaryOutputStream` utility class is used to read the compacted data and place it into the relevant field.
-
-
 
 {% highlight java %}
 public void unpack() throws Exception
@@ -234,11 +235,8 @@ public void unpack() throws Exception
 }
 {% endhighlight %}
 
-
 ## The writeExternal method
 The `writeExternal` method serializes the object data into the output stream.  The object data involves a field indicates which fields have `null` value, the indexed fields and a byte array field that includes all non indexed fields data (created by the `pack` method). The `writeExternal` assumes the `pack` method has been called explicitly prior the space write method call that initiated the `writeExternal` call.
-
-
 
 {% highlight java %}
 public void writeExternal(ObjectOutput out) throws IOException {
@@ -257,11 +255,8 @@ public void writeExternal(ObjectOutput out) throws IOException {
 }
 {% endhighlight %}
 
-
 ## The readExternal method
 The `readExternal` method essentially performs the opposite of the what the `writeExternal` method is doing. This methods populates the indexed fields data and the byte array field data. Later, the remaining fields will be populated once the `unpack` method will be called.
-
-
 
 {% highlight java %}
 public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
@@ -282,11 +277,8 @@ public void readExternal(ObjectInput in) throws IOException, ClassNotFoundExcept
 }
 {% endhighlight %}
 
-
 ## The checkNulls method
 This method goes through the indexed fields and the byte array field and place into a `short` data type field an indication for the ones with null value using a bit map.
-
-
 
 {% highlight java %}
 private short checkNulls() {
@@ -301,10 +293,8 @@ private short checkNulls() {
 }
 {% endhighlight %}
 
-
 ## The getnulls method
 This method goes through all class non indexed fields (the ones that their data is stored within the byte array) and place into a `long` data type field indication for the ones with null value using a bit map.
-
 
 {% highlight java %}
 private long getnulls()
@@ -321,10 +311,8 @@ private long getnulls()
 }
 {% endhighlight %}
 
-
 ## The Factory method
 The example using a factory method called `generateBinaryFormatEntry` to create the space object. Once it has been populated , its `pack` method is called.
-
 
 {% highlight java %}
 private BinaryFormatEntry generateBinaryFormatEntry(int id){
@@ -334,10 +322,8 @@ private BinaryFormatEntry generateBinaryFormatEntry(int id){
 }
 {% endhighlight %}
 
-
 ## Writing and Reading the Object from the space
 The following code snipped illustrates how the copact serialized object is written into the space and read from the space:
-
 
 {% highlight java %}
 GigaSpace _gigaspace;
@@ -349,6 +335,5 @@ BinaryFormatEntry resBFE = (BinaryFormatEntry)_gigaspace.read(templateBFE, 0);
 resBFE.unpack(); // this deserialize the binary data into the object fields
 {% endhighlight %}
 
-
 # References
-The [PackRat|http://www.openspaces.org/display/PRT/PackRat] project allows you to use the compact serialization pattern via simple annotations.
+The [PackRat](http://www.openspaces.org/display/PRT/PackRat) project allows you to use the compact serialization pattern via simple annotations.

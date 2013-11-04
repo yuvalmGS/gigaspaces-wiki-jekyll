@@ -11,26 +11,27 @@ page_id: 54297314
 **Summary:** {% excerpt %}This page describes two ways to determine the partition load in a Gigaspaces grid programmatically.{% endexcerpt %}
 **Author**: Joe Ottinger, Technology Evangelist, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1.2
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{% endtip %}
 
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
+{% endtip %}
 
 # Overview
 When using a GigaSpaces cluster as a task queue there are times you will need to determine how the space instances are loaded. This could be to determine where you can route the next task (minimum load partition/instance) or where you want to launch more processors (heavily loaded partition/instance).
 
-There are couple of approaches you could use to identify these partitions: [task executors|#taskexecutor] and an [executor service|#serviceexecutor]. You can also see the [Executors example|Map-Reduce Pattern - Executors Example] page for other similar examples.
+There are couple of approaches you could use to identify these partitions: [task executors](#taskexecutor) and an [executor service](#serviceexecutor). You can also see the [Executors example](./map-reduce-pattern---executors-example.html) page for other similar examples.
 
 {% anchor taskexecutor %}
 
 # Using a Task Executor
 
-The [first example|^GetMinLoadPartition-TaskExecutors.zip] shows an implementation of DistributedTask that can be used in scenarios where you want to run ad-hoc queries. Usage instructions are similar to the Task Executors Example. Business logic does not have to be on the cluster, it is dynamically transported to the server side and executed remotely.
+The [first example](/attachment_files/sbp/GetMinLoadPartition-TaskExecutors.zip) shows an implementation of DistributedTask that can be used in scenarios where you want to run ad-hoc queries. Usage instructions are similar to the Task Executors Example. Business logic does not have to be on the cluster, it is dynamically transported to the server side and executed remotely.
 
 Example is trying to find a partition with least number of objects and uses GigaSpaces SpaceRuntimeInfo API to get the count of objects. This API is lot faster compared to the count API and is preferred way of getting object counts.
 
-{gdeck:Task Executor Example}
-{gcard:Client Code}
+{% inittab Task Executor Example %}
 
+{% tabcontent Client Code %}
 
 {% highlight java %}
 ...
@@ -50,9 +51,9 @@ try {
 ...
 {% endhighlight %}
 
-{gcard}
-{gcard:Task Implementation}
+{% endtabcontent %}
 
+{% tabcontent Task Implementation %}
 
 {% highlight java %}
 import java.rmi.RemoteException;
@@ -138,22 +139,22 @@ public class MyDistributedTask implements
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 {% anchor serviceexecutor %}
 
 # Using an Executor Service
 
-Another [example|^GetMinLoadPartition-ExecutorService.zip] shows an implementation using Executor Service. This approach should be used when this functionality is intrinsic part of the system and not needed on ad-hoc basis. Usage instructions are similar to the [Executor Service Example|Map-Reduce Pattern - Executors Example#ExecutorsExample-ServiceExecutorsExample].
+Another [example](/attachment_files/sbp/GetMinLoadPartition-ExecutorService.zip) shows an implementation using Executor Service. This approach should be used when this functionality is intrinsic part of the system and not needed on ad-hoc basis. Usage instructions are similar to the [Executor Service Example](./map-reduce-pattern---executors-example.html#ExecutorsExample-ServiceExecutorsExample).
 
 In this example, we're trying to find the partition with the least number of objects, using GigaSpaces' SpaceRuntimeInfo API to get the count of objects. This API is lot faster than the count API and is the preferred way of getting object counts.
 
-{gdeck:Executor Service}
-{gcard:Service Interface}
+{% inittab Executor Service %}
+
+{% tabcontent Service Interface %}
 The Service Interface includes only one method, used to invoke the Service method in Synchronous mode:
-
-
 
 {% highlight java %}
 public interface IDataProcessor {
@@ -161,10 +162,10 @@ public interface IDataProcessor {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Service Implementation}
-The Service Implementation includes business logic to determine the load (in this case number of objects in the partition):
+{% endtabcontent %}
 
+{% tabcontent Service Implementation %}
+The Service Implementation includes business logic to determine the load (in this case number of objects in the partition):
 
 {% highlight java %}
 import java.rmi.RemoteException;
@@ -216,10 +217,10 @@ public class DataProcessorService implements IDataProcessor {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Reducer}
-The Result Reducer applies the additional logic (finding the partition with the least number of objects, in this case).
+{% endtabcontent %}
 
+{% tabcontent Reducer %}
+The Result Reducer applies the additional logic (finding the partition with the least number of objects, in this case).
 
 {% highlight java %}
 import org.openspaces.remoting.RemoteResultReducer;
@@ -248,10 +249,10 @@ public class DataProcessorServiceReducer implements RemoteResultReducer<Partitio
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Client}
-This is how a client might invoke the service:
+{% endtabcontent %}
 
+{% tabcontent The Client %}
+This is how a client might invoke the service:
 
 {% highlight java %}
 space = new UrlSpaceConfigurer("jini://*/*/space").space();
@@ -263,5 +264,6 @@ dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcessor>(
 PartitionCount result = dataProcessor.processData();
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}

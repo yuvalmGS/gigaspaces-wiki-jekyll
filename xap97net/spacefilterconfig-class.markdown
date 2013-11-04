@@ -5,8 +5,6 @@ categories: XAP97NET
 page_id: 63799362
 ---
 
-{edit-subjects}
-
 # SpaceFilterConfig
 
 The `SpaceFilterConfig` is used to start a space integrated with a space filter.
@@ -16,8 +14,8 @@ The `SpaceFilterConfig` is used to start a space integrated with a space filter.
 | `IsActiveWhenBackup` | States if this filter is active when the space is in backup mode. |
 | `IsSecurityFilter` | States if this filter is a security filter. |
 | `ShutdownSpaceOnInitFailure` | States if the space should shutdown on filter init failure. |
-| `Priority` | The filter's [priority|#priority]. |
-| `FilterOperations` | The list of [operations|#priority] to be filtered. |
+| `Priority` | The filter's [priority](#priority). |
+| `FilterOperations` | The list of [operations](#priority) to be filtered. |
 | `CustomProperties` | List of properties to be passed to the filter on initialization. |
 | `Enabled` | Is this filter enabled. |
 | `Filter` | The filter itself (an instance implementing ISpaceFilter). |
@@ -25,7 +23,6 @@ The `SpaceFilterConfig` is used to start a space integrated with a space filter.
 A filter is integrated into a space upon creation of that space, and each space filter that integrates with a space needs a `SpaceFilterConfig` instance that defines it.
 
 The following code starts an embedded space, with a space filter that implements `ISpaceFilter`:
-
 
 {% highlight java %}
 SpaceFilterConfig mySpaceFilterConfig = new SpaceFilterConfig();
@@ -38,7 +35,6 @@ spaceConfig.SpaceFiltersConfig.Add(mySpaceFilterConfig);
 
 ISpaceProxy embeddedSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceConfig);
 {% endhighlight %}
-
 
 {% anchor priority %}
 

@@ -7,8 +7,8 @@ page_id: 63799366
 
 # System Requirements
 
-**Required Software:** [Microsoft .NET Framework 2.0|http://msdn.microsoft.com/en-us/netframework/aa731542.aspx] or later (including  [Microsoft .NET Framework 4.0|http://msdn.microsoft.com/en-us/netframework/aa569263.aspx]).
-{% plus %} Recommended: [Microsoft .NET Framework 2.0 Service Pack 2|http://www.microsoft.com/downloads/details.aspx?familyid=5B2C0358-915B-4EB5-9B1D-10E506DA9D0F&displaylang=en] or later.
+**Required Software:** [Microsoft .NET Framework 2.0](http://msdn.microsoft.com/en-us/netframework/aa731542.aspx) or later (including  [Microsoft .NET Framework 4.0](http://msdn.microsoft.com/en-us/netframework/aa569263.aspx)).
+{% plus %} Recommended: [Microsoft .NET Framework 2.0 Service Pack 2](http://www.microsoft.com/downloads/details.aspx?familyid=5B2C0358-915B-4EB5-9B1D-10E506DA9D0F&displaylang=en) or later.
 
 **Supported Operating Systems:** Any operating system supported by .NET Framework 2.0.
 
@@ -23,10 +23,11 @@ Once you accept the licence agreement, you will be asked to choose a setup type.
 ## Other Installation Options
 
 GigaSpaces XAP.NET offers more installation scenarios and customizations. For example:
+
 - Command-line installation.
 - Packaging XAP.NET in another installation package.
 - Side-by-side installations.
 - Using a different jvm.
 
-For more information see [Advanced Installation Scenarios|Advanced Installation Scenarios].
+For more information see [Advanced Installation Scenarios](./advanced-installation-scenarios.html).
 

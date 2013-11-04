@@ -5,16 +5,15 @@ categories: XAP97NET
 page_id: 63799348
 ---
 
-{summary}Service Grid deployment using Windows Services{summary}
+{% summary %}Service Grid deployment using Windows Services{% endsummary %}
 
 # Overview
 
-Service Grid deployment can be considered something that should be done automatically, without user intervention, moreover, if a server machine crashes and reboots, the Service Grid and deployed processing unit should restart and redeploy when the machines restarts. All of these can be acoomplished using GigaSpaces Windows Services Manager and the different [Service Grid components as windows services|Service Grid Components as Windows Services]. This page demonstrate how to configure a server machine to start its service grid components and deploy processing units upon machine startup.
+Service Grid deployment can be considered something that should be done automatically, without user intervention, moreover, if a server machine crashes and reboots, the Service Grid and deployed processing unit should restart and redeploy when the machines restarts. All of these can be acoomplished using GigaSpaces Windows Services Manager and the different [Service Grid components as windows services](./service-grid-components-as-windows-services.html). This page demonstrate how to configure a server machine to start its service grid components and deploy processing units upon machine startup.
 
 # Configure Grid Service Manager and Grid Service Containers
 
-In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) to start on machine startup they should be installed as windows services using [GigaSpaces Windows Service Manager|Service Grid Components as Windows Services#Windows Services Manager]. Each installed service needs to be [configured| Service Grid Components as Windows Services#Service Configuration] seperately with the appropriate lookup groups by updating the service configuration file `"-Dcom.gs.jini_lus.groups"` option.
-
+In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) to start on machine startup they should be installed as windows services using [GigaSpaces Windows Service Manager](./service-grid-components-as-windows-services.html#Windows Services Manager). Each installed service needs to be [configured](./service-grid-components-as-windows-services.html#Service Configuration) seperately with the appropriate lookup groups by updating the service configuration file `"-Dcom.gs.jini_lus.groups"` option.
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -35,19 +34,15 @@ In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) t
 </configuration>
 {% endhighlight %}
 
-
 The Starting State should be updated to Automatic.
 
-
 {% info title=Firewall environment %}
-If your environment has connection problems due to firewalls see [how to set gigaSpaces over a firewall|XAP95:How to Set GigaSpaces Over a Firewall], this page is in GigaSpaces XAP java context, all the relevant described Jvm System properties should be configured inside `<JvmCustomOptions>` section of each service configuration file as new Option keys.
+If your environment has connection problems due to firewalls see [how to set gigaSpaces over a firewall](http://wiki.gigaspaces.com/wiki/display/XAP95/How+to+Set+GigaSpaces+Over+a+Firewall), this page is in GigaSpaces XAP java context, all the relevant described Jvm System properties should be configured inside `<JvmCustomOptions>` section of each service configuration file as new Option keys.
 {% endinfo %}
-
 
 # Deploy Processing Unit on Startup
 
 In order to have a processing unit deployed automatically at machine startup, Command Line Interface service can be used. The service can be configured to start with a given command line by updating its configuration file. For example, the following configuration will deploy a processing unit named dataprocessor after a timeout of 300000 miliseconds (5 minutes) has passed. The timeout should be used because there's no garantee which windows service will be started first, therefore, the timeout should reflect the amount of time that it should take for all the Gsm's and Gsc's to load. If a processing unit of that name is already deployed in the service grid, the deployment request will be ignored.
-
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -61,8 +56,7 @@ In order to have a processing unit deployed automatically at machine startup, Co
 </configuration>
 {% endhighlight %}
 
-
-{refer}For a full list of possible command line options refer to [Cli Command|XAP95:gs.bat - Other CLI Commands] page or run Start->Program Files->GigaSpaces XAP.NET->Tools->GigaSpaces Command Line and type help{refer}
+{% refer %}For a full list of possible command line options refer to [Cli Command](http://wiki.gigaspaces.com/wiki/display/XAP95/gs.bat+-+Other+CLI+Commands) page or run Start->Program Files->GigaSpaces XAP.NET->Tools->GigaSpaces Command Line and type help{% endrefer %}
 
 {% exclamation %} The Command Line Interface lookup groups must match the Gsm in which the processing unit is deployed and it is configured in the same way as the lookup groups is configured in Gsc and Gsm.
 

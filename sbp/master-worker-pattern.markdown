@@ -6,21 +6,25 @@ page_id: 51118939
 ---
 
 {% compositionsetup %}
-{summary}Implementing the Master-Worker Pattern with GigaSpaces XAP.{summary}
+
+{% summary %}Implementing the Master-Worker Pattern with GigaSpaces XAP.{% endsummary %}
+
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.0GA**
 JDK:**Sun JDK 1.6**
 Date: August 2009
-{rate}
 
 # Overview
-The [Master-Worker Pattern|http://books.google.com/books?id=9cV3TbahjW0C&pg=PA153&lpg=PA153&dq=JavaSpaces+Master-Worker+Pattern&source=bl&ots=1l_DQmEGNl&sig=IU2UTbG-xytamrby2r5yaJLnAkk&hl=en&ei=lm6RSo-dGJXjlAeYqOWjDA&sa=X&oi=book_result&ct=result&resnum=1#v=onepage&q=JavaSpaces%20Master-Worker%20Pattern&f=false] (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a `Master` and multiple `Workers`.
+The [Master-Worker Pattern](http://books.google.com/books?id=9cV3TbahjW0C&pg=PA153&lpg=PA153&dq=JavaSpaces+Master-Worker+Pattern&source=bl&ots=1l_DQmEGNl&sig=IU2UTbG-xytamrby2r5yaJLnAkk&hl=en&ei=lm6RSo-dGJXjlAeYqOWjDA&sa=X&oi=book_result&ct=result&resnum=1#v=onepage&q=JavaSpaces%20Master-Worker%20Pattern&f=false) (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a `Master` and multiple `Workers`.
 
-{indent}!GRA:Images^the_master_worker.jpg!{indent}
+{% indent %}
+![the_master_worker.jpg](/attachment_files/sbp/the_master_worker.jpg)
+{% endindent %}
 
 In GigaSpaces XAP, you can implement the Master-Worker pattern using several methods:
-- [Task Executors|Map-Reduce Pattern - Executors Example] - best for a scenario where the processing activity is collocated with the data (the data is stored within the same space as the tasks being executed).
-- [Polling Containers|XAP8:Polling Container] - in this case the processing activity runs in a separate machine/VM from the space. This approach should be used when the processing activity consumes a relatively large amount of CPU and takes a large amount of time. It might also be relevant if the actual data required for the processing is not stored within the space, or the time it takes to retrieve the required data from the space is much shorter than the time it takes to complete the processing.
+
+- [Task Executors](./map-reduce-pattern---executors-example.html) - best for a scenario where the processing activity is collocated with the data (the data is stored within the same space as the tasks being executed).
+- [Polling Containers](http://wiki.gigaspaces.com/wiki/display/XAP8/Polling+Container) - in this case the processing activity runs in a separate machine/VM from the space. This approach should be used when the processing activity consumes a relatively large amount of CPU and takes a large amount of time. It might also be relevant if the actual data required for the processing is not stored within the space, or the time it takes to retrieve the required data from the space is much shorter than the time it takes to complete the processing.
 
 # Implementing Master-Worker in XAP using Polling Containers
 
@@ -32,40 +36,44 @@ When there is one space (with or without a backup) used by the `Master` and `Wor
 
 When running multiple `Workers`, processing is load-balanced across all the workers in an even manner. When there is a large amount of activity, you might need to run a partitioned space to allow the space layer to store a large number of `Request` objects (there will always be a small number of `Result` objects in the space), and to cope with a large number of `Workers`. This makes sure that your system can scale, and the space layer does not act as a bottleneck.
 
-When running the space in clustered partitioned mode, you cannot run the workers in blocking mode without assigning a value to the `Request` object routing field. The [Designated Workers approach|#Example 2 - Designated Workers] allows you to run the workers against a partitioned space, in blocking mode.
+When running the space in clustered partitioned mode, you cannot run the workers in blocking mode without assigning a value to the `Request` object routing field. The [Designated Workers approach](#Example 2 - Designated Workers) allows you to run the workers against a partitioned space, in blocking mode.
 
 The following sections include code samples and configuration that illustrate the Master-Worker implementation via Polling Containers, using the Random Workers and Designated Workers approach.
 
-
 {% tip %}
-We invite you to [download|Master-Worker Pattern^MasterWorker.zip] the code examples and configuration files used with this article.
+We invite you to [download](/attachment_files/sbp/MasterWorker.zip) the code examples and configuration files used with this article.
 {% endtip %}
-
 
 # Example 1 - Random Workers
 With the Random Workers approach, each worker can consume `Request` objects from **every** space partition. In this case, the non-blocking mode is used. The workers scan the partitions in a round-robin fashion for a `Request` object to consume and execute. With this approach, there might be a small delay until the workers consume a `Request` object. This approach might generate some chatting over the network, since the workers connect to all existing partitions to look for `Request` objects to consume and in case none is found, wait for some time and then try again.
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
 Step 1:
-{indent}!GRA:Images^master_worker_rr1.jpg!{indent}
+
+{% indent %}
+![master_worker_rr1.jpg](/attachment_files/sbp/master_worker_rr1.jpg)
+{% endindent %}
 
 {% endcolumn %}
-
 
 {% column width=50% %}
 
 Step 2:
-{indent}!GRA:Images^master_worker_rr2.jpg!{indent}
+
+{% indent %}
+![master_worker_rr2.jpg](/attachment_files/sbp/master_worker_rr2.jpg)
+{% endindent %}
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
-{gdeck:Random Workers approach|top}
-{gcard:The Master}
+{% inittab Random Workers approach|top %}
 
+{% tabcontent The Master %}
 
 {% highlight java %}
 public class Master {
@@ -117,9 +125,9 @@ public class Master {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Worker}
+{% endtabcontent %}
 
+{% tabcontent The Worker %}
 
 {% highlight java %}
 @EventDriven @Polling (concurrentConsumers=2)
@@ -158,8 +166,9 @@ public class Worker {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Worker PU config}
+{% endtabcontent %}
+
+{% tabcontent The Worker PU config %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -186,9 +195,9 @@ public class Worker {
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:The Base Space Class}
+{% endtabcontent %}
 
+{% tabcontent The Base Space Class %}
 
 {% highlight java %}
 @SpaceClass
@@ -225,9 +234,9 @@ public class Base {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Request Class}
+{% endtabcontent %}
 
+{% tabcontent The Request Class %}
 
 {% highlight java %}
 @SpaceClass
@@ -237,9 +246,9 @@ public class Request extends Base{
 }
 {% endhighlight %}
 
-{gcard}
-{gcard: The Result Class}
+{% endtabcontent %}
 
+{% tabcontent  The Result Class %}
 
 {% highlight java %}
 @SpaceClass
@@ -249,10 +258,10 @@ public class Result extends Base {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Deployment Commands}
-Deploying the clustered space PU:
+{% endtabcontent %}
 
+{% tabcontent Deployment Commands %}
+Deploying the clustered space PU:
 
 {% highlight java %}
 >gs deploy-space -cluster schema=partitioned total_members=2 mySpace
@@ -260,45 +269,50 @@ Deploying the clustered space PU:
 
 Deploying the Workers PU:
 
-
 {% highlight java %}
 >gs deploy -cluster total_members=4 MasterWorker.jar
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 # Example 2 - Designated Workers
 With this approach, each new worker is assigned a specific ID and consumes `Request` objects from a designated partition. In this case, the worker runs in blocking mode. The `Request` object routing field is populated with the partition ID, with the Polling Container template, and is also populated by the `Master` application before it is written into the partitioned clustered space.
-{section}
+
+{% section %}
 
 {% column width=50% %}
 
 Step 1:
-{indent}!GRA:Images^master_worker_de1.jpg!{indent}
+
+{% indent %}
+![master_worker_de1.jpg](/attachment_files/sbp/master_worker_de1.jpg)
+{% endindent %}
 
 {% endcolumn %}
-
 
 {% column width=50% %}
 
 Step 2:
-{indent}!GRA:Images^master_worker_de2.jpg!{indent}
+
+{% indent %}
+![master_worker_de2.jpg](/attachment_files/sbp/master_worker_de2.jpg)
+{% endindent %}
 
 {% endcolumn %}
 
-{section}
-
+{% endsection %}
 
 {% tip %}
 With this approach the number of `Workers` should be greater than or equal to the number of partitions.
 {% endtip %}
 
-
 See below how the Designated Workers approach should be implemented:
-{gdeck:Designated Workers approach|top}
-{gcard:The Master}
 
+{% inittab Designated Workers approach|top %}
+
+{% tabcontent The Master %}
 
 {% highlight java %}
 public class Master {
@@ -362,9 +376,9 @@ public class Master {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Worker }
+{% endtabcontent %}
 
+{% tabcontent The Worker  %}
 
 {% highlight java %}
 @EventDriven @Polling (concurrentConsumers=1)
@@ -443,8 +457,9 @@ public class Worker implements ClusterInfoAware{
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Worker PU config}
+{% endtabcontent %}
+
+{% tabcontent The Worker PU config %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -471,9 +486,9 @@ public class Worker implements ClusterInfoAware{
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:The Base Space Class}
+{% endtabcontent %}
 
+{% tabcontent The Base Space Class %}
 
 {% highlight java %}
 @SpaceClass
@@ -518,9 +533,9 @@ public class Base {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Request Class}
+{% endtabcontent %}
 
+{% tabcontent The Request Class %}
 
 {% highlight java %}
 @SpaceClass
@@ -530,9 +545,9 @@ public class Request extends Base{
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:The Result Class}
+{% endtabcontent %}
 
+{% tabcontent The Result Class %}
 
 {% highlight java %}
 @SpaceClass
@@ -542,10 +557,10 @@ public class Result extends Base {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Deployment Commands}
-Deploying the clustered space PU:
+{% endtabcontent %}
 
+{% tabcontent Deployment Commands %}
+Deploying the clustered space PU:
 
 {% highlight java %}
 >gs deploy-space -cluster schema=partitioned total_members=2 mySpace
@@ -553,15 +568,16 @@ Deploying the clustered space PU:
 
 Deploying the Workers PU:
 
-
 {% highlight java %}
 >gs deploy -cluster total_members=4 MasterWorker.jar
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 # References
-- [JavaSpaces Principles, Patterns, and Practice: Chapter 11|http://java.sun.com/developer/Books/JavaSpaces/chapter11.html]
-- [Blog post:How to Implement my Processor? - The Polling Container Benchmark|http://blog.gigaspaces.com/2008/10/03/how-to-implement-my-processor-the-polling-container-benchmark]
+
+- [JavaSpaces Principles, Patterns, and Practice: Chapter 11](http://java.sun.com/developer/Books/JavaSpaces/chapter11.html)
+- [Blog post:How to Implement my Processor? - The Polling Container Benchmark](http://blog.gigaspaces.com/2008/10/03/how-to-implement-my-processor-the-polling-container-benchmark)
 

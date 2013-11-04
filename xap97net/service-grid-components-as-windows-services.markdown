@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799352
 ---
 
-{summary}Installing and managing Service Grid Components as Windows Services{summary}
+{% summary %}Installing and managing Service Grid Components as Windows Services{% endsummary %}
 
 # Overview
 
@@ -15,6 +15,7 @@ In XAP.NET there are two binaries for each Grid Service component - a console ap
 # Benefits of Windows Services
 
 Windows Services have several advantages over standard console applications. Most notable are:
+
 - A service can be configured to start automatically when the machine boots, without any user logging in.
 - A service can be configured to run under predefined credentials, e.g. SYSTEM.
 - A service has no console/GUI which clutters up the desktop for no reason.
@@ -22,18 +23,19 @@ Windows Services have several advantages over standard console applications. Mos
 
 These features can come in handy on servers running Service Grid: For example, a Grid Service Manager and Grid Service Container can be automatically started when the machine restarts, then processing units will be automatically deployed to the service grid using the Command Line Interface service.
 
-{refer}See [Deployment on Machine Startup|Deployment on Machine Startup] to learn how to start service grid and deploy processing units automatically on machine startup{refer}
+{% refer %}See [Deployment on Machine Startup](./deployment-on-machine-startup.html) to learn how to start service grid and deploy processing units automatically on machine startup{% endrefer %}
 
 # GigaSpaces Windows Services Manager
 
 The Windows Services management console lets users start/stop installed services and modify their properties, but does not support installing new services. This task is can be done via a command line, or during installation of an application.
 GigaSpaces XAP.NET provides a supplementary tool called **Windows Services Manager** which simplifies common administration tasks:
+
 - Install/uninstall instances of GigaSpaces Agent, GSM, GSC, Distributed Transaction Manager and CLI as you please.
 - Perform common operations directly from the tool, no need to switch to the Windows Console (e.g. Start, Stop, change startup type).
 - Side-by-side support for GigaSpaces Installations of different versions on the same machine.
 - Automatically creates a folder for new service instances, with an XML configuration and log files.
 
-!GRA:Images2^ServicesManager.jpg!
+![ServicesManager.jpg](/attachment_files/xap97net/ServicesManager.jpg)
 The tool can be started from Start->Programs->GigaSpaces XAP.NET->Tools->Windows Services Manager.
 {% exclamation %} **Note:** This tool requires elevated permissions. Make sure you run it with appropriate permissions. If you're using Windows Vista or later and UAC is turned on, it is recommended to use 'Run As Administrator' (for more info see: http://support.microsoft.com/kb/922708)
 

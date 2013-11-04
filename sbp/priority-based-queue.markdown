@@ -5,17 +5,16 @@ categories: SBP
 page_id: 48760404
 ---
 
-
 {% tip %}
 **Summary:** {% excerpt %}Implementing Priority based Queue{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0
 **Last Update**: Feb 2011
 **Contents:**
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{% endtip %}
 
-{rate}
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
+{% endtip %}
 
 # Overview
 
@@ -24,8 +23,6 @@ To implement a Priority based Queue you should use the `Take` operation with `SQ
 You can query for all objects which got their priority bigger than X (`priority > X`) or query for objects based on a range (`Y > priority > X`). In both cases the objects will be taken from the space in an orderly manner based on their field values.
 
 See below example code:
-
-
 
 {% highlight java %}
 GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer(spaceURL)).gigaSpace();
@@ -41,10 +38,7 @@ while (true) {
 }
 {% endhighlight %}
 
-
 The Order Class will have the **Priority** indexed:
-
-
 
 {% highlight java %}
 import com.gigaspaces.annotation.pojo.SpaceClass;
@@ -95,18 +89,19 @@ public class Order {
 }
 {% endhighlight %}
 
-
 # Example
 
-This is a [Priority based queue example|^PriorityBasedQueue.zip] - It includes 2 parts:
+This is a [Priority based queue example](/attachment_files/sbp/PriorityBasedQueue.zip) - It includes 2 parts:
+
 -- Master - Write Orders into the space with a random priority (1-9)
 -- Worker - Consume Orders from the space where the consumption order is based on their priority value.
 
 With this example we have one Master thread and two worker threads.
 
-!prior_q.jpg!
+![prior_q.jpg](/attachment_files/sbp/prior_q.jpg)
 
 This demo can be modified to have:
+
 - Different amount of queues
 - Different amount of workers that deals with different queue. For example - queue with high priority Orders will have more workers than low priority Orders:
 Worker 1 : priorities 1-3 - High priories orders
@@ -114,13 +109,13 @@ Worker 2 : priorities 4-6 - Mid priories orders
 Worker 3 : priorities 7-9 - Low priories orders
 
 To run:
-1. Extract [the attached|^PriorityBasedQueue.zip].
+
+1. Extract [the attached](/attachment_files/sbp/PriorityBasedQueue.zip).
 2. Load the example project into your IDE.
 3. Set the project classpath to include GigaSpaces jars located under `\gigaspaces-xap\lib\required` folder.
 4. Run the `com.gigaspaces.examples.priorityq.PriorityQueueExample` main.
 
 Expected output:
-
 
 {% highlight java %}
 Welcome to GigaSpaces Priority Based Queue Example

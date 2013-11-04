@@ -6,12 +6,13 @@ page_id: 51120319
 ---
 
 {% compositionsetup %}
-{summary}Space object modelling basic rules.{summary}
+
+{% summary %}Space object modelling basic rules.{% endsummary %}
+
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 Using XAP:**7.0GA**
 JDK:**Sun JDK 1.6**
 Date: October  2009
-{rate}
 
 When constructing the space classes and their relationship, and having persistency turned on, you should design the space classes to follow a few basic rules. The rules are mostly relevant when having associations between different objects, and when the database tables include foreign and primary key relations that need to be mapped to objects in memory.
 
@@ -19,10 +20,13 @@ There are two options you may use: a **Hibernate-based model** and a **Space-bas
 
 # The Hibernate-Based Object Model
 When you have an object graph object model with collections or references association (using Hibernate OneToMany, ManyToOne), you can use the Hibernate model to load these objects into the space. There are some important considerations when using this approach:
+
 - You should use the DefaultExternalDataSource.
 - The footprint utilization is high since you might end up loading the same object more than once into the space JVM. This can happen in the following cases:
+
 1. When the loaded objects are regular space objects (in case you wrote these also as space objects) and also an embedded object within another space object.
 2. When you have the same object referenced from more than one space object.
+
 - The initial-load phase is relatively slow (mostly due to the duplicated objects).
 - Data should be fully loaded from the database - only **Eager mode** is supported. Lazy fetching is not supported.
 - You might end up having data inconsistency problems due to the duplicated objects in memory.
@@ -47,7 +51,6 @@ If you want to optimize the memory footprint, and avoid duplicated objects in me
 ## Example
 
 The Parent Class:
-
 
 {% highlight java %}
 @Entity
@@ -87,9 +90,7 @@ public class Parent
 }
 {% endhighlight %}
 
-
 The Child Class:
-
 
 {% highlight java %}
 public class Child implements Serializable {
@@ -109,9 +110,7 @@ public class Child implements Serializable {
 }
 {% endhighlight %}
 
-
 The Data access layer:
-
 
 {% highlight java %}
 public Child loadChild(int childId) {
@@ -119,9 +118,6 @@ public Child loadChild(int childId) {
 	return child;
 }
 {% endhighlight %}
-
-
-
 
 {% highlight java %}
 @Transactional
@@ -132,7 +128,6 @@ if (entity.getId() == null) {
 gigaSpace.write(entity);
 }
 {% endhighlight %}
-
 
 In both cases, you can implement object navigation (myObject.getA().getB()). You just need to make sure that the collections/references object load is supported.
 

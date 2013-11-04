@@ -6,7 +6,8 @@ page_id: 63799369
 ---
 
 {% compositionsetup %}
-{summary} Using indexes to improve performance. {summary}
+
+{% summary %} Using indexes to improve performance. {% endsummary %}
 
 # Overview
 
@@ -15,6 +16,7 @@ When a space looks for a match for a read or take operation, it iterates over no
 # Choosing which Properties to Index
 
 One might wonder why properties are not always indexed, or why all the properties in all the classes are not always indexed. The reason is that indexing has its downsides as well:
+
 - An indexed property can speed up read/take operations, but might also slow down write/update operations.
 - An indexed property consumes more resources, specifically memory footprint per entry.
 
@@ -36,8 +38,9 @@ The index type is determined by the **`SpaceIndexType`** enumeration. The index 
 
 Specifying which properties of a class are indexed is done using attributes or `gs.xml`.
 
-{gdeck}
-{gcard:Annotations}
+{% inittab %}
+
+{% tabcontent Annotations %}
 
 {% highlight java %}
 [SpaceClass]
@@ -56,9 +59,9 @@ public class Person
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:XML}
+{% endtabcontent %}
 
+{% tabcontent XML %}
 
 {% highlight xml %}
 <gigaspaces-mapping>
@@ -77,8 +80,9 @@ public class Person
 </gigaspaces-mapping>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 ## Inheritance
 
@@ -102,8 +106,9 @@ The **`Path`** attribute represents the path of the property within the nested o
 
 Below is an example of defining an index on a nested property:
 
-{gdeck:example|top}
-{gcard:Single Index Annotation}
+{% inittab example|top %}
+
+{% tabcontent Single Index Annotation %}
 
 {% highlight java %}
 
@@ -136,8 +141,9 @@ public class Address
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Multiple Indexes Annotation}
+{% endtabcontent %}
+
+{% tabcontent Multiple Indexes Annotation %}
 
 {% highlight java %}
 
@@ -162,34 +168,28 @@ public class Person
 
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 The following is an example of query code that automatically triggers this index:
-
 
 {% highlight java %}
 SqlQuery<Person> query = new SqlQuery<Person>(
     "PersonalInfo.SocialSecurity<10000050L and PersonalInfo.SocialSecurity>=10000010L");
 {% endhighlight %}
 
-
-
 {% comment %}
-{% infosign %} For more information, see [Nested Object Queries|SQLQuery#Nested Object Query]
+{% infosign %} For more information, see [Nested Object Queries](./sqlquery.html#Nested Object Query)
 {% endcomment %}
-
-
 
 {% info title=Nested Objects %}
 By default, nested objects are kept in a binary form inside the space. In order to support nested matching, the relevant property should be stored as document, or as object if it is in an interoperability scenario and it has a corresponding Java class.
 {% endinfo %}
 
-
 {% info title=Dictionary based nested properties %}
 Note that the same indexing techniques above are also applicable to Dictionary-based nested properties, which means that in the example above the `Info` and `Address` classes could be replaced with a `Dictionary<String,Object>`, with the dictionary keys representing the property names.
 {% endinfo %}
-
 
 # Collection Indexing
 
@@ -215,16 +215,13 @@ public class CollectionIndexingExample
 }
 {% endhighlight %}
 
-
 The following query shows how to take advantage of the defined index:
-
 
 {% highlight java %}
 SqlQuery<CollectionIndexingExample> sqlQuery =
     new SqlQuery<CollectionIndexingExample>("Numbers[*] = 30");
 CollectionIndexingExample[] result = spaceProxy.ReadMultiple(sqlQuery);
 {% endhighlight %}
-
 
 ### Nested property within a Collection
 
@@ -255,14 +252,12 @@ public class Book
 }
 {% endhighlight %}
 
-
 The following query shows how to take advantage of the defined index:
 
 {% highlight java %}
 SqlQuery<Author> sqlQuery = new SqlQuery<Author>("Books[*].Id = 57");
 Author result = spaceProxy.Read(sqlQuery);
 {% endhighlight %}
-
 
 Setting an index on a Collection within a nested property is also accepted:
 
@@ -289,12 +284,9 @@ public class Information
 }
 {% endhighlight %}
 
-
-
 {% info %}
 Both \[SpaceIndex(Type=SpaceIndexType.Basic)\] and \[SpaceIndex(Type=SpaceIndexType.Extended)\] are supported.
 {% endinfo %}
-
 
 # Compound Indexing
 
@@ -317,15 +309,13 @@ The benchmark has a space with different sets of space objects data:
 |data2 = 'B' |100,000| 110,000 | 200,000 |
 |data1 = 'A' AND data2 = 'B' |1000 | 10,000 | 100,000|
 
-
 {% highlight java %}
 SQLQuery<Data> query = new SQLQuery<Data>(Data.class,"data1='A' and data2='B'");
 {% endhighlight %}
 
-
 With the above scenario the Compound Index will improve the query execution dramatically. See below comparison for a query execution time when comparing a Compound Index to a single or two indexed properties space class with the different data set scenarios.
 
-!GRA:Images3^compu_index_bench.jpg!
+![compu_index_bench.jpg](/attachment_files/xap97net/compu_index_bench.jpg)
 
 ## Creating a Compound Index using Annotation
 
@@ -346,11 +336,9 @@ public class WithCompoundIndex
 }
 {% endhighlight %}
 
-
 ## Creating a Compound Index using gs.xml
 
 A Compound Index can be defined within the gs.xml configuration file. Example: The following a gs.xml describing a Class named WithCompoundIndex having a compound index composed from two segments:
-
 
 {% highlight xml %}
 <!DOCTYPE gigaspaces-mapping PUBLIC "-//GIGASPACES//DTD GS//EN" "http://www.gigaspaces.com/dtd/9_5/gigaspaces-metadata.dtd">
@@ -362,13 +350,11 @@ A Compound Index can be defined within the gs.xml configuration file. Example: T
 </gigaspaces-mapping>
 {% endhighlight %}
 
-
 ## Creating a Compound Indexing for a Space Document
 
 You can add a Compound Space Index to a space Document.
 
 Example:
-
 
 {% highlight xml %}
 SpaceTypeDescriptorBuilder descriptorBuilder = new SpaceTypeDescriptorBuilder("WithCompoundIndex");
@@ -378,7 +364,6 @@ SpaceTypeDescriptorBuilder descriptorBuilder = new SpaceTypeDescriptorBuilder("W
             descriptorBuilder.AddCompoundIndex(new []{ "IntProp", "StringProp" });
             descriptorBuilder.AddCompoundIndex(new []{ "LongProp", "StringProp" });
 {% endhighlight %}
-
 
 # Query Execution Flow
 

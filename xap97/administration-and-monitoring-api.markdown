@@ -15,7 +15,7 @@ The Admin API provides a way to administer and monitor all of GigaSpaces service
 ![archi_manag.jpg](/attachment_files/archi_manag.jpg)
 
 {% tip %}
-You can use the [GigaSpaces Universal Deployer](http://wiki.gigaspaces.com/wiki/display/SBP/Universal+Deployer) to deploy complex multi processing unit applications.
+You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.
 {% endtip %}
 
 Before diving into the Admin API, here are some code examples showing how the Admin API can be used to display information on the of currently deployed services / components:
@@ -170,7 +170,7 @@ for (Machine machine : admin.getMachines()) {
 {% endinittab %}
 
 {% tip %}
-See a fully running example of a [Scaling Agent](http://wiki.gigaspaces.com/wiki/display/SBP/Scaling+Agent) as part of the Solutions & Best Practices section.
+See a fully running example of a [Scaling Agent](/sbp/scaling-agent.html) as part of the Solutions & Best Practices section.
 
 Please also check out this webinar about this API's capabilities and features:
 {% admindeepdive %}

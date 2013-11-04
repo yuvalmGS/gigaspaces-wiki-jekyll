@@ -5,13 +5,14 @@ categories: XAP97NET
 page_id: 63799356
 ---
 
-{summary}Monitoring JVM memory and threads in .Net Applications, when troubleshooting application memory and thread consumption. {summary}
+{% summary %}Monitoring JVM memory and threads in .Net Applications, when troubleshooting application memory and thread consumption. {% endsummary %}
 
 # Overview
 
-In some cases, you might want to monitor the activity of the JVM running as part of your .NET application. The [jconsole|http://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.html] is a great tool that allows you to troubleshoot the JVM internals.
+In some cases, you might want to monitor the activity of the JVM running as part of your .NET application. The [jconsole](http://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.html) is a great tool that allows you to troubleshoot the JVM internals.
 
 **To view and monitor the JVM loaded into the .NET process memory address using `jconsole`:**
+
 1. Have the following settings as part of your `app.config` file:
 
 {% highlight xml %}
@@ -35,12 +36,15 @@ In some cases, you might want to monitor the activity of the JVM running as part
 2. Start `jconsole` -- jconsole is located under the bin directory of the Java home, by default it is under `<Installation dir>\Runtime\java\bin`
 3. Once the `jconsole` is started, select the **Local** tab:
 
-{indent}!jcon1.JPG!{indent}
+{% indent %}
+![jcon1.jpg](/attachment_files/xap97net/jcon1.jpg)
+{% endindent %}
 
 4. This shows the status of the JVM running in your .NET application:
 
-!jcon2.JPG!
+![jcon2.jpg](/attachment_files/xap97net/jcon2.jpg)
 
-{refer}For more details on JMX and `jconsole`, refer to:{refer}
-- [Sun - Monitoring and Management Using JMX|http://java.sun.com/j2se/1.5.0/docs/guide/management/agent.html]
-- [Sun - Using jconsole|http://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.html]
+{% refer %}For more details on JMX and `jconsole`, refer to:{% endrefer %}
+
+- [Sun - Monitoring and Management Using JMX](http://java.sun.com/j2se/1.5.0/docs/guide/management/agent.html)
+- [Sun - Using jconsole](http://java.sun.com/j2se/1.5.0/docs/guide/management/jconsole.html)

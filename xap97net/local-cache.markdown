@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799431
 ---
 
-{summary}Local cache storage over a space proxy{summary}
+{% summary %}Local cache storage over a space proxy{% endsummary %}
 
 # Overview
 
@@ -38,8 +38,8 @@ public class Session
 }
 {% endhighlight %}
 
-
 Important properties:
+
 - The session has a `\[SpaceID\]` property, objects without `\[SpaceID\]` will not be stored in the local cache.
 - When working with the local cache, it is highly recommended to have a `\[SpaceVersion\]` property, otherwise Entries stored in the local cache might be of older version than the ones in the space, if they were updated not through the local cache.
 
@@ -68,7 +68,6 @@ IReadByIdsResult<Session> result = localCache.ReadByIds<Session>(ids, routing);
 
 {% endhighlight %}
 
-
 The local cache also recognizes templates which are considered ID-based (A template that is matched against the `SpaceID` property only), and it optimizes the performance for such templates in the same fashion as the `ReadById` operation does.
 
 The following code is equivalent to the above but it uses templates:
@@ -87,7 +86,6 @@ Session session = localCache.Read(template);
 Session otherSession = localCache.Read(template);
 {% endhighlight %}
 
-
 If the supplied template is not ID-based, for instance an `SqlQuery`, then the Entry will be read from the underlying space proxy without first going through the local cache.
 
 Since the cache needs to investigate the template to decide whether it is considered ID-based template, this imposes some performance impact on the query instead of using the `ReadById` method.
@@ -96,20 +94,20 @@ Since the cache needs to investigate the template to decide whether it is consid
 
 The Entries stored in the local cache might need to be evicted at some point, due to size limitations, time limitations, etc. This behavior is determined by the eviction strategy the cache has been configured to work with. XAP.NET comes with a few built-in eviction strategies -- LRU (Last Recently Used), which is the default strategy, FIFO, LFU, and more. Eviction strategy is a pluggable component that can also be implemented with custom behavior.
 
-{refer}Refer to [Cache Eviction Strategy|Cache Eviction Strategy] for more info.{refer}
+{% refer %}Refer to [Cache Eviction Strategy](./cache-eviction-strategy.html) for more info.{% endrefer %}
 
 {% anchor sync %}
 
 # Synchronization with a remote space
 
 Once an Entry is loaded into the cache, it is kept synchronized with the remote space by registering for notifications for changes that affect Entries stored in the cache. The state of the internal local cache is updated according to these notifications. This synchronization is done asynchronously, behind the scenes.
+
 - This behavior can be turned of by setting the `SynchronizeWithRemoteSpace` configuration property to false.
 - When working with local cache, it is highly recommended to have a `\[SpaceVersion\]` property, otherwise Entries stored in the local cache may be of an older version than the ones in the space, if they were updated not through the local cache.
 
 # Configuring the local cache
 
-The local cache can be configured before it is initialized, by supplying the constructor with a custom `IdBasedLocalCacheConfig` object. The most common configuration option is the [eviction strategy|Cache Eviction Strategy].
-
+The local cache can be configured before it is initialized, by supplying the constructor with a custom `IdBasedLocalCacheConfig` object. The most common configuration option is the [eviction strategy](./cache-eviction-strategy.html).
 
 {% highlight java %}
 ISpaceProxy spaceProxy = // create or obtain a reference to a space proxy
@@ -121,11 +119,9 @@ IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
 ILocalCache localCache = GigaSpacesFactory.CreateIdBasedLocalCache(spaceProxy, cacheConfig);
 {% endhighlight %}
 
-
 ## Cached Types
 
 By default, the local cache stores all object types. However, in some scenarios it may be required to store only specific types in the local cache, while working with the other types by proxy only. It is possible to specify explicitly which types will be cached, by putting the desired types in the `IdBasedLocalCacheConfig.CachedTypes` list property. For example:
-
 
 {% highlight java %}
 IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
@@ -141,7 +137,6 @@ cacheConfig.CachedTypes = cachedTypes;
 ILocalCache localCache = GigaSpacesFactory.CreateIdBasedLocalCache(spaceProxy, cacheConfig);
 {% endhighlight %}
 
-
 Cached types support inheritance, so there's no need to explicitly add all the types if they derive from one another. Using the `Object` type will cache everything.
 
 # Local Cache Manager
@@ -151,7 +146,6 @@ When using the manager different operations can be done, such as clearing the ca
 going through the proxy in case of cache miss, evicting entries and more.
 
 Here's an example of how to obtain and interact with the cache manager:
-
 
 {% highlight java %}
 ILocalCache localCache = // obtain a cache

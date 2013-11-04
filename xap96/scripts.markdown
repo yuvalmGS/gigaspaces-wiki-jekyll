@@ -31,6 +31,6 @@ The `<gigaspaces root>/bin` folder includes several scripts for windows and linu
 - gs-focalserver.bat/sh - an old script used to run a server that is consolidating data from multiple JMX servers. It is there for backward compatibility.
 
 {% tip %}
-You can use the [GigaSpaces Universal Deployer](http://wiki.gigaspaces.com/wiki/display/SBP/Universal+Deployer) to deploy complex multi processing unit applications.
+You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.
 {% endtip %}
 

@@ -5,29 +5,30 @@ categories: XAP97NET
 page_id: 63799328
 ---
 
-{summary}This page explains how to establish data synchronization between multiple sites (spaces), usually used over the WAN.{summary}
+{% summary %}This page explains how to establish data synchronization between multiple sites (spaces), usually used over the WAN.{% endsummary %}
+
 {% compositionsetup %}
 
-
 {% info title=Licensing %}
-The Gateway requires a separate license in addition to the GigaSpaces commercial license. Please contact [GigaSpaces Customer Support|http://www.gigaspaces.com/content/customer-support-services] for more details.
+The Gateway requires a separate license in addition to the GigaSpaces commercial license. Please contact [GigaSpaces Customer Support](http://www.gigaspaces.com/content/customer-support-services) for more details.
 {% endinfo %}
-
 
 # Overview
 
 Multiple site replication is the ability to replicate state between different deployed spaces, where each space can be also physically located in a different geographical location (also termed a different deployment site).
 
 Multiple site replication is a very common deployment topology in the following scenarios:
+
 - **When planning for disaster recovery** - In such cases, each of the deployment sites is located far from the other sites (e.g. a different continent so that if one site is completely destroyed or decommissioned other sites are not affected and can continue to operate normally.)
 - **For failover purposes** - When one site acts as a failover over target for another.
 - **For maintaining data locality** - for each site for performance and latency reasons. For example a global trading application that operates in multiple stock exchanges across the globe need fast access to **Global Reference Data**, or an application that's deployed on multiple data centers in the cloud with a need to access the **Users Profile Data** very quickly.
 
-!GRA:Images2^wan_use_cases.jpg!
+![wan_use_cases.jpg](/attachment_files/xap97net/wan_use_cases.jpg)
 
 ## WAN Gateway Features
 
 The GigaSpaces WAN Gateway features the following:
+
 - Optimized bandwidth and WAN connection usage - With the GigaSpaces WAN Gateway every site using one connection when interacting with remote sites.
 - Total Data consistency and no data lost - Due-to its unique architecture where the WAN Gateway is totally stateless no data lose will ever happen. Transactions at the local site are replicate in atomic manner to the remote sites.
 - Conflict resolution support - GigaSpaces will identify data conflicts and allow you to decide to override the local copy with the remote replicated copy, reject the remote replicated copy or merge the local and the remote copy.
@@ -40,15 +41,16 @@ The GigaSpaces WAN Gateway features the following:
 # Supported Toplogies
 
 This page will demonstrate two sample multi-site replication topologies. These are not the only supported topologies. In fact, the permutations of topologies are quite extensive, and we've chosen to demonstrate two of the more common topologies which can also serve as a basis for other topologies as required by the user:
+
 - Multi-master with two sites, where each site is active and updates its subset of the data.
 - Master-slave, where only one site actually updates the data while the rest either serve as a backup or use it in read only mode.
 
-For both of the above topologies, replication is done in in a similar way: Each space is replicating the relevant data to its target space(s) via a local gateway which routes the data to the gateway of the target space(s) and from there to the target space. The data is being replicated asynchronously in a reliable mode, which means that even if a primary space instance fails on the source site, the backup space instance which replaces it will immediately take control and replicate the missing data along with new data that has been  generated on the newly elected primary space instance. This is very similar to the [Mirror Service|XAP95:Asynchronous Persistency with the Mirror] replication scheme. The gateway is discussed in full below.
+For both of the above topologies, replication is done in in a similar way: Each space is replicating the relevant data to its target space(s) via a local gateway which routes the data to the gateway of the target space(s) and from there to the target space. The data is being replicated asynchronously in a reliable mode, which means that even if a primary space instance fails on the source site, the backup space instance which replaces it will immediately take control and replicate the missing data along with new data that has been  generated on the newly elected primary space instance. This is very similar to the [Mirror Service](http://wiki.gigaspaces.com/wiki/display/XAP95/Asynchronous+Persistency+with+the+Mirror) replication scheme. The gateway is discussed in full below.
 
-!GRA:Images2^wan_how_it_works.jpg!
+![wan_how_it_works.jpg](/attachment_files/xap97net/wan_how_it_works.jpg)
 
 Replication may use Hub & Spoke, Ring, Hierarchical or Pass-Through architecture:
-!GRA:Images2^wan_topologies.jpg!
+![wan_topologies.jpg](/attachment_files/xap97net/wan_topologies.jpg)
 
 # Configuring a Space With Gateway Targets
 
@@ -57,7 +59,6 @@ A replication from one space to the another is basically a replication from a sp
 From the space's perspective, a replication from one space to a target gateway is like any other replication channel (e.g mirror, backup...) and the backlog and confirmation state of the replication channel to the target gateway is kept in the source space. As a result, the gateway is stateless as far as holding the replication state is concerned, and only the source space is in charge of the replication progress and state. Each gateway has a unique logical name which usually corresponds to physical site name (e.g. "London" or "New York"). This name is used by remote spaces that are replicating to this space via its local gateway.
 
 The following snippet shows how to configure a space that resides in New York to replicate to two other spaces, one in London and one in Hong Kong:
-
 
 {% highlight xml %}
 <SpaceProxies>
@@ -72,9 +73,7 @@ The following snippet shows how to configure a space that resides in New York to
 </SpaceProxies>
 {% endhighlight %}
 
-
 Each of replication channel to the gateways can be configured with more parameters, such parameters can applied to all gateways or specifically per gateway, for example:
-
 
 {% highlight xml %}
 <SpaceProxies>
@@ -89,10 +88,8 @@ Each of replication channel to the gateways can be configured with more paramete
 </SpaceProxies>
 {% endhighlight %}
 
-
 Here we have specified a global bulk size of 1000 but have specifically overridden it in the replication channel to Hong Kong with 100, and have a global maximum redo log capacity for both targets of 1000000.
-{refer}For more details about all the available configuration elements of the space gateway targets please refer to the [Configuring Space Gateway Targets] section.{refer}
-
+{% refer %}For more details about all the available configuration elements of the space gateway targets please refer to the [Configuring Space Gateway Targets](./configuring-space-gateway-targets.html) section.{% endrefer %}
 
 {% tip %}
 **Use the `partitioned-sync2backup` cluster schema**
@@ -104,16 +101,14 @@ If you are not interested in having backups running but have the replication to 
 </os-sla:sla>
 {% endhighlight %}
 
-
 Note that when there are no backups running any failure of the primary might cause a loss of data.
 {% endtip %}
-
 
 # Configuring and Deploying the Gateway
 
 A gateway needs to be deployed locally as a spring(java) based processing unit in each site, and is composed of two different components: The delegator and the sink. The delegator is in charge of delegating outgoing replication from the local site to a remote gateway and the sink is in charge of dispatching incoming replication from remote sites into the local space.
 
-!GRA:Images2^wan_gatway_archi.jpg!
+![wan_gatway_archi.jpg](/attachment_files/xap97net/wan_gatway_archi.jpg)
 
 ## Gateway Lookup
 
@@ -122,7 +117,6 @@ The different gateway components needs to locate each other across the different
 ## Gateway Basic Configuration
 
 Following the above example, here we demonstrate how to configure the local gateway processing unit in New York, which needs to send replication to London and Hong Kong and also receive replication from these two sites.
-
 
 {% highlight xml %}
 <os-gateway:delegator id="delegator"
@@ -158,15 +152,14 @@ Following the above example, here we demonstrate how to configure the local gate
 have no meaning, all sites could designate the same ports as well-->
 {% endhighlight %}
 
-
 In the above example we see that both the sink and delegator needs a reference to the gateway lookup configuration, and that's because both components are using this configuration to locate the relevant component or to register themselves. They use their local gateway name to identify themselves to the lookup configuration, where they should be registered and where they should look for their targets.
 
 The delegator and sink components are actually isolated and can even be deployed in separate processing units but the most simple deployment would be to bundle theses two together. However, in some cases you might want to separate this into two or more machines due to system loads or other reasons.
-{refer}For full details and available configuration please refer to [Replication Gateway Components|XAP95:Replication Gateway Components]{refer}
+{% refer %}For full details and available configuration please refer to [Replication Gateway Components](http://wiki.gigaspaces.com/wiki/display/XAP95/Replication+Gateway+Components){% endrefer %}
 
 ## Gateway and the Mirror Service
 
-A gateway and a [Mirror Service|XAP95:Asynchronous Persistency with the Mirror] are two different components which can co-exist together without any effect on each other. A gateway is just another reliable asynchronous target. Due to this fact, we will not discuss or demonstrate mirror service along side with a gateway because they do not contradict each other or require any special configuration when used in the same space cluster.
+A gateway and a [Mirror Service](http://wiki.gigaspaces.com/wiki/display/XAP95/Asynchronous+Persistency+with+the+Mirror) are two different components which can co-exist together without any effect on each other. A gateway is just another reliable asynchronous target. Due to this fact, we will not discuss or demonstrate mirror service along side with a gateway because they do not contradict each other or require any special configuration when used in the same space cluster.
 
 ## Gateway and Distributed Transactions
 
@@ -182,7 +175,6 @@ In order to preserve distributed transactions atomicity (distributed transaction
 </SpaceProxies>
 {% endhighlight %}
 
-
 As specified in the example above, it is required to set the "cluster-config.groups.group.repl-policy.processing-type" property to "multi-source".
 
 Distributed transaction consolidation is done by waiting for all the transaction participants data before processing is done by the Sink component.
@@ -194,7 +186,6 @@ In order to prevent this potential delay, it is possible to set a timeout parame
 Please note that while waiting for the pieces of a distributed transaction to arrive at the sink, replication isn't waiting but keeping the data flow and preventing from conflicts to happen.
 
 The following example demonstrates how to set the timeout for waiting for distributed transaction data to arrive. It is also possible to set the amount of new operations to perform before processing data individually for each participant:
-
 
 {% highlight xml %}
 <os-gateway:sink id="sink" local-gateway-name="NEWYORK"
@@ -210,30 +201,29 @@ The following example demonstrates how to set the timeout for waiting for distri
 </os-gateway:sink>
 {% endhighlight %}
 
-
 Distributed transaction participants data will be processed individually if 10 seconds have passed and not all of the participants data  has arrived or if 20 new operations were executed after the distributed transaction.
 
 ||Attribute|Default Value||
 |dist-tx-wait-timeout-millis|60000 milliseconds|
 |dist-tx-wait-for-opers|unlimited (-1 = unlimited)|
 
-
 {% info %}
 Note that by setting the "cluster-config.groups.group.repl-policy.processing-type" property to "multi-source" all reliable asynchronous replication targets for that space will work in distributed transaction consolidation mode (For example, a Mirror would be in distributed transaction consolidation mode as well.)
 {% endinfo %}
-
 
 # Master-Slave Topology
 
 With this architecture, we have a master-slave topology where all data is being manipulated in one site, and two other sites are reading the data but not updating it. In other words, the "other sites" - the slaves - should not replicate data to the other gateways.
 
-!GRA:Images2^wan_master_slave.jpg!
+![wan_master_slave.jpg](/attachment_files/xap97net/wan_master_slave.jpg)
 
 In this case, New York's site will be the active site while London and Hong Kong will be the passive sites. As explained before, being passive does not necessarily means no work is done in these sites. However, in terms of replication over the WAN, these sites should not replicate to the other sites and usually should not alter data replicated from other sites because it may cause conflicts.
 
 Like all GigaSpaces Processing Units, the configuration details of each of the above components is placed in a `pu.xml` file. Here are the contents of the files for each of the components:
-{gdeck}
-{gcard:New York Space}
+
+{% inittab %}
+
+{% tabcontent New York Space %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -266,8 +256,9 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {% endhighlight %}
 
-{gcard}
-{gcard:New York Gateway}
+{% endtabcontent %}
+
+{% tabcontent New York Gateway %}
 
 {% highlight xml %}
 
@@ -317,8 +308,9 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:London Space}
+{% endtabcontent %}
+
+{% tabcontent London Space %}
 
 {% highlight xml %}
 
@@ -348,8 +340,9 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {% endhighlight %}
 
-{gcard}
-{gcard:London Gateway}
+{% endtabcontent %}
+
+{% tabcontent London Gateway %}
 
 {% highlight xml %}
 
@@ -396,8 +389,9 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:Hong Kong Space}
+{% endtabcontent %}
+
+{% tabcontent Hong Kong Space %}
 
 {% highlight xml %}
 
@@ -426,8 +420,9 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 
 {% endhighlight %}
 
-{gcard}
-{gcard:Hong Kong Gateway}
+{% endtabcontent %}
+
+{% tabcontent Hong Kong Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -478,22 +473,25 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 # Multi-Master Topology
 
 With this architecture, we will have a multi-master topology where data is being generated and manipulated in all sites.
 
-!GRA:Images2^wan_multi_master.jpg!
+![wan_multi_master.jpg](/attachment_files/xap97net/wan_multi_master.jpg)
 
-We will demonstrate this using two sites but any number of sites is supported in the same manner. In a master-slave topology, each site should try to modify different subsets of the data as much as possible because many conflicts can occur if multiple sites are changing the same space entries at the same time. Such conflict can be resolved using a conflict resolver which will be discussed fully at [Multi-Site Conflict Resolution|XAP95:Multi-Site Conflict Resolution].
+We will demonstrate this using two sites but any number of sites is supported in the same manner. In a master-slave topology, each site should try to modify different subsets of the data as much as possible because many conflicts can occur if multiple sites are changing the same space entries at the same time. Such conflict can be resolved using a conflict resolver which will be discussed fully at [Multi-Site Conflict Resolution](http://wiki.gigaspaces.com/wiki/display/XAP95/Multi-Site+Conflict+Resolution).
 
 With the example below we will have only New York and London as the two active sites.
 
 Here are the contents of the files for each of the components:
-{gdeck}
-{gcard:New York Space}
+
+{% inittab %}
+
+{% tabcontent New York Space %}
 
 {% highlight xml %}
 <configuration>
@@ -524,8 +522,9 @@ Here are the contents of the files for each of the components:
 
 {% endhighlight %}
 
-{gcard}
-{gcard:New York Gateway}
+{% endtabcontent %}
+
+{% tabcontent New York Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -581,8 +580,9 @@ Here are the contents of the files for each of the components:
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:London Space}
+{% endtabcontent %}
+
+{% tabcontent London Space %}
 
 {% highlight xml %}
 <configuration>
@@ -613,8 +613,9 @@ Here are the contents of the files for each of the components:
 
 {% endhighlight %}
 
-{gcard}
-{gcard:London Gateway}
+{% endtabcontent %}
+
+{% tabcontent London Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -669,8 +670,9 @@ Here are the contents of the files for each of the components:
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:Symmetric Gateway Config}
+{% endtabcontent %}
+
+{% tabcontent Symmetric Gateway Config %}
 In this example, the gateway `pu.xml` is quite symmetric, the only difference is the local gateway name and the target gateway name. In such cases, it may be more convenient to create a single gateway `pu.xml` and use place holders to override the relevant properties at deploy time by injecting values for these properties:
 
 {% highlight xml %}
@@ -733,40 +735,37 @@ In this example, the gateway `pu.xml` is quite symmetric, the only difference is
 {% endhighlight %}
 
 In the above we have configured both LONDON and NEWYORK at the sources of the sink and as delegation target, the delegator and the sink will filter a gateway target and source if they match their local name. Using the above technique may simplify scenarios which are symmetric but it is not recommended when the scenarios are **not** symmetric as it can be unnecessarily confusing.
-{gcard}
-{gdeck}
+{% endtabcontent %}
 
+{% endinittab %}
 
 {% tip %}
 **Multi-Master Running example**
-The [Multi-Master running example|SBP:WAN Replication Gateway] includes a three-way setup replicating data between three sites, this example contains a spring(java) processing unit for the spaces, but the gateway components are the same.
+The [Multi-Master running example](/sbp/wan-replication-gateway.html) includes a three-way setup replicating data between three sites, this example contains a spring(java) processing unit for the spaces, but the gateway components are the same.
 {% endtip %}
-
 
 # Filtering Replication Between Gateways
 
-In some cases, there can be data that should not be replicated between the sites but should still be replicated locally to the backup or a mirror service. Hence, specifying the object is not replicated does not fit. Since a replication channel to a gateway is like any other replication channel, a custom [Replication Filter|XAP95:Cluster Replication Filters] at the source space can be used to filter the relevant data from being sent to the target gateway. This filtering should be based on the replication target name in order to identify that the replication filter is called for the correct outgoing replication to the gateway.
-{refer}For full details and example please refer to [Replication Gateway Filtering|XAP95:Replication Gateway Filtering]{refer}
+In some cases, there can be data that should not be replicated between the sites but should still be replicated locally to the backup or a mirror service. Hence, specifying the object is not replicated does not fit. Since a replication channel to a gateway is like any other replication channel, a custom [Replication Filter](http://wiki.gigaspaces.com/wiki/display/XAP95/Cluster+Replication+Filters) at the source space can be used to filter the relevant data from being sent to the target gateway. This filtering should be based on the replication target name in order to identify that the replication filter is called for the correct outgoing replication to the gateway.
+{% refer %}For full details and example please refer to [Replication Gateway Filtering](http://wiki.gigaspaces.com/wiki/display/XAP95/Replication+Gateway+Filtering){% endrefer %}
 
 # Bootstrap One Site From Another Site
 
 Bootstrapping a site from another site is a process in which one site space is starting fresh and it is being populated with the data of another site space. This can be useful after a very long disconnection where the replication redo-log in the source spaces that replicates to this site was dropped due to breaching capacity limitations, and the disconnected site should start fresh. Other reasons may be an explicit planned downtime due-to some maintenance of one site which lead to a complete system bootstrap once restarted.
-{refer}For full details of how to enable the bootstrap mechanism refer to [Replication Gateway Bootstrapping Process|Replication Gateway Bootstrapping Process]{refer}
-
+{% refer %}For full details of how to enable the bootstrap mechanism refer to [Replication Gateway Bootstrapping Process](./replication-gateway-bootstrapping-process.html){% endrefer %}
 
 {% comment %}
 
-
 # Adding and Removing Sites
 
-Adding and removing a site without down time is done by applying the [Hot Deploy|Deploying onto the Service Grid#DeployingontotheServiceGrid-HotDeploy] method on the space PU.
+Adding and removing a site without down time is done by applying the [Hot Deploy](/xap97/deploying-onto-the-service-grid.html#DeployingontotheServiceGrid-HotDeploy) method on the space PU.
+
 - For a Gateway PUs, the process is pretty straightforward. Since they are stateless, their `pu.xml` can be simply updated and they can be undeployed and redeployed with the new added sites or removed sites relevant configuration in a regular fashion.
-- A space, however, is stateful. Redeploying it entirely will cause downtime and loss of data (if no database initial load is configured). Therefore the [Hot Deploy|Deploying onto the Service Grid#DeployingontotheServiceGrid-HotDeploy] method should be used. Roughly speaking, while the space is up, its `pu.xml` should be updated reflecting the new gateway replication topology state (addition or removal of sites) and then this `pu.xml` should be copied into the GSM's #deployment directories, overriding the existing `pu.xml` of the space processing unit of the current deployment. Then a manual restart of space instances should be performed, going over each partition, restarting its backup, waiting for it to perform full recovery from the primary (now it should be with the updated`pu.xml` configuration) and then restarting the primary instance which will be replaced by the updated backup and will become a backup after restart.
+- A space, however, is stateful. Redeploying it entirely will cause downtime and loss of data (if no database initial load is configured). Therefore the [Hot Deploy](/xap97/deploying-onto-the-service-grid.html#DeployingontotheServiceGrid-HotDeploy) method should be used. Roughly speaking, while the space is up, its `pu.xml` should be updated reflecting the new gateway replication topology state (addition or removal of sites) and then this `pu.xml` should be copied into the GSM's #deployment directories, overriding the existing `pu.xml` of the space processing unit of the current deployment. Then a manual restart of space instances should be performed, going over each partition, restarting its backup, waiting for it to perform full recovery from the primary (now it should be with the updated`pu.xml` configuration) and then restarting the primary instance which will be replaced by the updated backup and will become a backup after restart.
 
 {% endcomment %}
-
 
 # Read More
 
 The following pages in this section provide more details on the Multi-Site Replication module:
-{children}
+{% children %}

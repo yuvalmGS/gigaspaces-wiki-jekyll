@@ -5,4 +5,4 @@ categories: XAP97NET
 page_id: 63799379
 ---
 
-{include:Installation}
+{% include /xap97net/installation.markdown %}

@@ -6,9 +6,10 @@ page_id: 63799316
 ---
 
 {% compositionsetup %}
-{summary}The .NET-Java  Example illustrates basic interoperability operations between Java and .NET space proxies.{summary}
 
-{section}
+{% summary %}The .NET-Java  Example illustrates basic interoperability operations between Java and .NET space proxies.{% endsummary %}
+
+{% section %}
 
 {% column width=7% %}
 
@@ -16,7 +17,7 @@ page_id: 63799316
 
 {% column width=86% %}
 
-{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|`<GigaSpaces Root>\dotnet\examples\DotNetJava` |
+{% align center %}||![wiki_icon_folder.gif](/attachment_files/xap97net/wiki_icon_folder.gif)||Example Root|`<GigaSpaces Root>\dotnet\examples\DotNetJava` |
 {% endalign %}
 
 {% endcolumn %}
@@ -25,7 +26,7 @@ page_id: 63799316
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 # Overview
 
@@ -34,6 +35,7 @@ The .NET-Java  Example illustrates basic interoperability operations between Jav
 There are two applications in the example: a .NET application and a Java application.
 
 Both applications:
+
 - Connect to an existing remote space
 - Define a Person class (**Person.cs** in .NET, **src\Person.java** in Java)
 - Have two modes:
@@ -46,7 +48,7 @@ Both applications:
 ## The Person Interoperable Class
 
 - The .NET naming convention is different than the Java naming convention.
-The `\[XAP66:SpaceClass(AliasName="")\]` attribute is used to map the .NET names to the respective Java names.
+The `\[SpaceClass(AliasName="")\]` attribute is used to map the .NET names to the respective Java names.
 
 - The .NET class **GigaSpaces.Examples.DotnetJava.Person** is mapped to the Java class **com.gigaspaces.examples.dotnetjava.Person**.
 
@@ -91,7 +93,7 @@ public class Person
 }
 {% endhighlight %}
 |
-For more details about .NET-Java Interoperability and designing the interoperable classes, refer to [.NET-Java Interoperability|http://www.gigaspaces.com/wiki/display/XAP66/.NET-Java+Interoperability]
+For more details about .NET-Java Interoperability and designing the interoperable classes, refer to [.NET-Java Interoperability](http://www.gigaspaces.com/wiki/display/XAP66/.NET-Java+Interoperability)
 
 # Building and Running the Example
 

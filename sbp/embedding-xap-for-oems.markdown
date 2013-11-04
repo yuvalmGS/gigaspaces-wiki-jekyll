@@ -6,16 +6,17 @@ page_id: 56429827
 ---
 
 {% compositionsetup %}
-{summary:page}Explains how to deploy and manage a [Data Grid|XAP91:The In-Memory Data Grid], catering to quick OEM installation.{summary}
+
+{% summary page %}Explains how to deploy and manage a [Data Grid](http://wiki.gigaspaces.com/wiki/display/XAP91/The+In-Memory+Data+Grid), catering to quick OEM installation.{% endsummary %}
 
 GigaSpaces XAP can be used as a self contained application platform in which case your application would be contained (embedded) within the GigaSpaces application container. GigaSpaces XAP can also be embedded within external application processes. This section describe the steps required to embed GigaSpaces within external application processes.
 
 # General Description
 
-Embedding GigaSpaces cluster can be as simple as starting the [GigaSpaces Agent|XAP91:The Grid Service Agent] in each machine.
+Embedding GigaSpaces cluster can be as simple as starting the [GigaSpaces Agent](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agent) in each machine.
 The agent is responsible for bootstrapping the GigaSpaces cluster environment implicitly. The agent uses a peer to peer communication between themselves to ensure that the environment is up and running also in an  event of a failure.
 
-Once the agent get started you can start using the [GigaSpaces Elastic middleware|XAP91:Elastic Processing Unit] directly from your application.
+Once the agent get started you can start using the [GigaSpaces Elastic middleware](http://wiki.gigaspaces.com/wiki/display/XAP91/Elastic+Processing+Unit) directly from your application.
 The Elastic Middleware automatically provision itself on the GigaSpaces cluster based on the capacity and other SLA requirements.
 
 The following example shows how to embed GigaSpaces Data Grid using this model.
@@ -24,7 +25,7 @@ The following example shows how to embed GigaSpaces Data Grid using this model.
 
 ## Acquiring and Installing XAP
 
-Acquiring XAP is simple: download an archive from the [Current Releases|http://www.gigaspaces.com/LatestProductVersion] page.
+Acquiring XAP is simple: download an archive from the [Current Releases](http://www.gigaspaces.com/LatestProductVersion) page.
 
 Installation of XAP is just as easy as getting XAP is: since it's a simple archive, unzip it into a directory of your choice.
 
@@ -34,38 +35,37 @@ In a UNIX environment, you might install it into `/usr/local/`, which would resu
 
 ## Running the GigaSpaces Agent
 
-A GigaSpaces node is best facilitated through the use of a service called the "[Grid Service Agent|XAP91:The Grid Service Agent]," or GSA.
+A GigaSpaces node is best facilitated through the use of a service called the "[Grid Service Agent](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agent)," or GSA.
 
 The simplest way to start a node with GigaSpaces is just to invoke the GSA in the GigaSpaces home directory, preferably in its own command shell (although you can easily start a background process with `start` or `nohup` if desired):
 
-{gdeck:deckName1|top}
-{gcard:Windows}
+{% inittab deckName1|top %}
 
+{% tabcontent Windows %}
 
 {% highlight java %}
 .\gs-agent.bat
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:Linux}
-
+{% tabcontent Linux %}
 
 {% highlight java %}
 ./gs-agent.sh
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 ## Connecting to a Data Grid
 
 It's actually fairly easy to write some code that can connect to an existing datagrid, and deploy a new one if the datagrid doesn't exist.
 
-First, make sure the [classpath|XAP91:Setting classpath] includes the GigaSpaces runtime. Then, connect to the datagrid. The following snippets shows how to create and deploy an Elastic Data Grid and how to find an existing data Data Grid service.
+First, make sure the [classpath](http://wiki.gigaspaces.com/wiki/display/XAP91/Setting+classpath) includes the GigaSpaces runtime. Then, connect to the datagrid. The following snippets shows how to create and deploy an Elastic Data Grid and how to find an existing data Data Grid service.
 
 Creating and deploying an Elastic Data Grid
-
 
 {% highlight java %}
         Admin admin = new AdminFactory().createAdmin();
@@ -75,10 +75,7 @@ Creating and deploying an Elastic Data Grid
         admin.close();
 {% endhighlight %}
 
-
 Getting a reference to an existing DataGrid instance
-
-
 
 {% highlight java %}
      UrlSpaceConfigurer configurer =
@@ -86,24 +83,20 @@ Getting a reference to an existing DataGrid instance
       IJSpace space = configurer.space();
 {% endhighlight %}
 
-
 You can also use a simple helper utility (DataGridConnectionUtility) that combines the two. It first look for a DataGrid instance and if one doesn't exist it will create a new one; it's trivial to alter the `getSpace()` method to increase the number of nodes or even scale dynamically as required.
 
-
 {% tip %}
-A The DataGridConnectionUtility class [is available on Github|https://github.com/Gigaspaces/bestpractices/blob/master/plains/src/main/java/org/openspaces/plains/datagrid/DataGridConnectionUtility.java], in the "plains" project.
+A The DataGridConnectionUtility class [is available on Github](https://github.com/Gigaspaces/bestpractices/blob/master/plains/src/main/java/org/openspaces/plains/datagrid/DataGridConnectionUtility.java), in the "plains" project.
 {% endtip %}
 
 With this class in the classpath, getting a datagrid reference is as simple as:
-
-
 
 {% highlight java %}
 GigaSpace space=DataGridConnectionUtility.getSpace("myGrid");
 {% endhighlight %}
 
-
 ## Further reading:
-- [Modeling and Accessing Your Data|XAP91:Modeling and Accessing Your Data]
-- [Deploying and Interacting with the Space|XAP91:Deploying and Interacting with the Space]
+
+- [Modeling and Accessing Your Data](http://wiki.gigaspaces.com/wiki/display/XAP91/Modeling+and+Accessing+Your+Data)
+- [Deploying and Interacting with the Space](http://wiki.gigaspaces.com/wiki/display/XAP91/Deploying+and+Interacting+with+the+Space)
 

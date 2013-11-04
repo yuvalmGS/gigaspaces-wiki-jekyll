@@ -5,29 +5,30 @@ categories: XAP97NET
 page_id: 63799417
 ---
 
-{summary}This section describes the architecture of the GigaSpaces XAP product.{summary}
+{% summary %}This section describes the architecture of the GigaSpaces XAP product.{% endsummary %}
 
 GigaSpaces XAP is built from the following sub-systems:
-- [**An SLA-Driven Container**|#SLA-Driven Container] -- provides the virtualization capabilities
-- [**A Unified Clustering Layer**|#Unified In-Memory Clustering] -- responsible for a single clustering model across all the product's functionality. This capability is built on top of the space infrastructure.
-- [**Core Middleware**|#Core Middleware] -- space-based runtime services which provide data, messaging and processing implementation.
-- [**Lightweight Application Containers**|#Lightweight Application Containers] -- application container services provide runtime support for applications.
-- [**Developers API and Components**|#Developers API and Components] -- the API layer and a component model (building blocks) for application developers.
+
+- [**An SLA-Driven Container**](#SLA-Driven Container) -- provides the virtualization capabilities
+- [**A Unified Clustering Layer**](#Unified In-Memory Clustering) -- responsible for a single clustering model across all the product's functionality. This capability is built on top of the space infrastructure.
+- [**Core Middleware**](#Core Middleware) -- space-based runtime services which provide data, messaging and processing implementation.
+- [**Lightweight Application Containers**](#Lightweight Application Containers) -- application container services provide runtime support for applications.
+- [**Developers API and Components**](#Developers API and Components) -- the API layer and a component model (building blocks) for application developers.
 
 Each sub-system (layer) is responsible for providing application server capabilities, and the bottom layers provide services to the upper layers. Figure 1 provides a representation of the sub-systems which compose the entire GigaSpaces XAP product.
 
-!GS6:Images^XAP Architecture Overview.jpg|align=center!
-{% align center %} ~**Figure 1. Architecture overview for GigaSpaces XAP**~ {% endalign %}
+![XAP Architecture Overview.jpg](/attachment_files/xap97net/XAP Architecture Overview.jpg)
+{% align center %} {% sub %}**Figure 1. Architecture overview for GigaSpaces XAP**{% endsub %} {% endalign %}
 
 # SLA-Driven Container
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 
 {% comment %}
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-An SLA-Driven Container, also known as the [Service Grid|XAP71:Service Grid Processing Unit Container], is responsible for abstracting the physical characteristics of the host machines from the application deployment.
+An SLA-Driven Container, also known as the [Service Grid](http://wiki.gigaspaces.com/wiki/display/XAP71/Service+Grid+Processing+Unit+Container), is responsible for abstracting the physical characteristics of the host machines from the application deployment.
 
 The Service Grid is simply a set of runtime container processes deployed on multiple physical machines, which together form a virtual runtime cloud.  Once the cloud is formed, applications can be deployed for execution across the cloud, without a need to define specific host machine characteristics.
 
@@ -35,14 +36,14 @@ In addition, as its name implies, the Service Level Guarantee and management is 
 
 When it comes to provisioning and monitoring large-scale systems, the ability to specifically define the location of each node in the cluster becomes very laborious.
 
-
 {% comment %}
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The Service Grid takes a [pre-defined application-required SLA|XAP71:Service Grid Processing Unit Container#ServiceGridProcessingUnitContainer-SLAPolicy], and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
+The Service Grid takes a [pre-defined application-required SLA](http://wiki.gigaspaces.com/wiki/display/XAP71/Service+Grid+Processing+Unit+Container#ServiceGridProcessingUnitContainer-SLAPolicy), and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
 
 To clarify, here is an example of an application SLA:
+
 1. Deploy 50 instances of each Processing Unit.
 2. Make sure each processing unit has one backup.
 3. Make sure primary and backups of the same Processing Unit are not deployed to the same VM.
@@ -54,14 +55,13 @@ In this type of example, the Service Grid is responsible for making sure that on
 
 ## Grid Service Agent (GSA)
 
-
 {% comment %}
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [Grid Service Manager|XAP95:The Grid Service Manager] and [Grid Service Container|XAP95:The Grid Service Container].
+The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [Grid Service Manager](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Manager) and [Grid Service Container](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Container).
 
-Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service Managers|#gsm], [Grid Service Containers|#gsc], and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
+Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service Managers](#gsm), [Grid Service Containers](#gsc), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
 
 {% lampon %} Though Grid Service Manager, Grid Service Container, and other processes can be started independently, it is preferable that they will be started using the GSA, thus allowing to easily monitor and manage them.
 
@@ -69,17 +69,16 @@ Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service 
 
 ## Grid Service Manager (GSM)
 
-The [Grid Service Manager (GSM)|XAP95:The Grid Service Manager], is a special infrastructure service, responsible for managing the Service Grid containers. The GSM accepts user deployment and undeployment requests, and provisions the Service Grid cloud accordingly.
+The [Grid Service Manager (GSM)](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Manager), is a special infrastructure service, responsible for managing the Service Grid containers. The GSM accepts user deployment and undeployment requests, and provisions the Service Grid cloud accordingly.
 The GSM monitors SLA breach events throughout the life-cycle of the application, and is responsible for taking corrective actions, once SLAs are breached.
 
 {% infosign %} It is common to start two instances of GSM services within each Service Grid cloud, for high-availability reasons.
-
 
 {% comment %}
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The GSM service usually contains the [Lookup Service|XAP95:Lookup Service Configuration] and the Webster codebase server as part of its standard configuration. This configuration can be changed by providing additional parameters in the GSM startup script.
+The GSM service usually contains the [Lookup Service](http://wiki.gigaspaces.com/wiki/display/XAP95/Lookup+Service+Configuration) and the Webster codebase server as part of its standard configuration. This configuration can be changed by providing additional parameters in the GSM startup script.
 
 {% anchor gsc %}
 
@@ -89,21 +88,20 @@ A Grid Service Container (GSC) is a container which hosts Processing Units (see 
 
 Another aspect of a GSC is its ability to host Processing Units. The GSC uses AppDomains to make sure that various Processing Units are isolated from one another within the same GSC.
 
-
 {% comment %}
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
 It is common to start several GSCs on the same physical machine, depending on the machine CPU and memory resources.
 The deployment of multiple GSCs on a single machine creates a virtual Service Grid. The fact is that GSCs are providing a layer of abstraction on top of the physical layer of hosts. This concept enables deployment of clusters on various deployment topologies of enterprise data centers and public clouds.
-{toc-zone}
+{% endtoczone %}
 
 # Unified In-Memory Clustering
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 The role of clustering in GigaSpaces XAP is to provide scaling, load-balancing and high-availability. The main difference between GigaSpaces XAP and other clustering alternatives, is the use of a single clustering model for all middleware core capabilities. This means that the data and the services collocated with it, are equally available. An example of how useful this is, is that when a primary node fails, and another node acts as its backup, both application components, i.e. data and messaging, become active at the same time.
 
-The ability to support a unified clustering model is a direct result of the underlying space-based clustering model. For more information on the concept of space, please refer to [Space - Concepts and Capabilities|Concepts#Space - Concepts and Capabilities].
+The ability to support a unified clustering model is a direct result of the underlying space-based clustering model. For more information on the concept of space, please refer to [Space - Concepts and Capabilities](./concepts.html#Space - Concepts and Capabilities).
 
 ## Scaling
 
@@ -124,18 +122,21 @@ The key challenge with HA is state management. The typical solution for servers 
 As GigaSpaces XAP has distributed shared memory capabilities, it is very simple and efficient to preserve high availability of stateful applications. The application state is replicated into backup nodes, resulting in immediate recovery in cases of fail-over and high-performance high-availability.
 
 The GigaSpaces XAP solution does not require a compromise between stateless application complexity, performance and resiliency.
-{toc-zone}
+{% endtoczone %}
 
 # Core Middleware
 
-As an application server, GigaSpaces XAP provides integrated, memory-based runtime capabilities. The core of these capabilities is backed by the space technology - for more information, please refer to [Space - Concepts and Capabilities|Concepts#Space - Concepts and Capabilities].
+As an application server, GigaSpaces XAP provides integrated, memory-based runtime capabilities. The core of these capabilities is backed by the space technology - for more information, please refer to [Space - Concepts and Capabilities](./concepts.html#Space - Concepts and Capabilities).
 
-**The core middleware capabilities are:**
-{toc-zone:type=list|location=top}
+**The core middleware capabilities
+are:**
+
+{% toczone type=list|location=top %}
 
 ## In-Memory Data Grid
 
 An In-Memory Data Grid (IMDG) is the way of storing data across a grid of memory nodes. This service provides the application with:
+
 1. Data storage capabilities.
 2. Data query capabilities - single object, multiple object and aggregated complex queries.
 3. Caching semantics - the ability to retrieve information from within-memory data structures.
@@ -145,16 +146,16 @@ It is important to note that the IMDG, although a memory-based service, is fully
 
 The IMDG uses the unified clustering layer, to provide a highly available and reliable service.
 
-
 {% comment %}
 TODO_NIV - Change to ISpaceProxy link when available.
 {% endcomment %}
 
-The main API to access the IMDG service, is the [`ISpaceProxy` interface|Writing Your First Application]. Please refer to the [Programmer's Guide|Programmer's Guide] for usage examples.
+The main API to access the IMDG service, is the [Writing Your First Application](./your-first-data-grid-application.html). Please refer to the [Programmer's Guide](./programmer's-guide.html) for usage examples.
 
 ## Messaging Grid
 
 The messaging grid aspect of the space, provides messaging capabilities such as:
+
 1. Event-Driven capabilities - the ability to build event-driven processing applications. This model enables fast (in-memory-based) asynchronous modular processing, resulting in a very efficient and scalable processing paradigm.
 2. Asynchronous production and consumption of information.
 3. One-to-one, Many-to-One, One-to-Many and Many-to-Many relationships.
@@ -171,7 +172,7 @@ TODO_NIV - Add link when available.
 
 5. Transactionality.
 
-The core APIs used for messaging are the [Notify Container|Notify Container Component] and [Polling Container|Polling Container Component] components. More information can be found in the [Programmer's Guide|Event Driven Architecture].
+The core APIs used for messaging are the [Notify Container](./notify-container-component.html) and [Polling Container](./polling-container-component.html) components. More information can be found in the [Programmer's Guide](./event-driven-architecture.html).
 
 ## Processing Services
 
@@ -196,11 +197,10 @@ The process is widely known as map/reduce, and is used extensively by companies 
 ### Business Logic Hosting
 
 Another aspect of processing is business logic hosting. This is covered in Lightweight Application Containers below.
-{toc-zone}
+{% endtoczone %}
 
 # Lightweight Application Containers
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
 Lightweight application containers provide a business logic execution environment at the node level. They also translate SBA semantics and services to the relevant container development framework implementation.
 
 The Grid Service Container (GSC) is responsible for providing Grid capabilities, whereas the lightweight container implementation is responsible at the single VM level.
@@ -210,9 +210,9 @@ For this reason, this architecture is very powerful, as it enables applications 
 GigaSpaces XAP provides several default implementations as part of the product, and an additional plugin API, to enable other technology integrations.
 
 **Current implementations supported by GigaSpaces XAP**:
-{toc-zone:type=list|location=top}
 
-More information on the usage of the above integrations can be found in the [Programmer's Guide].
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
+More information on the usage of the above integrations can be found in the [Programmer's Guide](./programmer's-guide.html).
 
 ## .NET  - Abstract container
 
@@ -222,32 +222,32 @@ This allows .NET SBA applications  to run business services and .NET code, collo
 
 ## .NET  - Basic container
 
-The [Basic Processing Unit Container|Basic Processing Unit Container] extends the Abstract Container and simplifies tasks commonly used in processing units, such as starting an embedded space, hosting a service, activating an event container, etc.
+The [Basic Processing Unit Container](./basic-processing-unit-container.html) extends the Abstract Container and simplifies tasks commonly used in processing units, such as starting an embedded space, hosting a service, activating an event container, etc.
 
 ## C++ Container
 
-Much like the .NET Abstract Container, the [C++ container|XAP95:CPP Processing Unit] provides a native C++ runtime environment for [C++ SBA|XAP95:XAP CPP] applications.
+Much like the .NET Abstract Container, the [C++ container](http://wiki.gigaspaces.com/wiki/display/XAP95/CPP+Processing+Unit) provides a native C++ runtime environment for [C++ SBA](http://wiki.gigaspaces.com/wiki/display/XAP95/XAP+CPP) applications.
 
 ## Java - Spring Container
 
-The Spring framework container integration is built-in to XAP, and provides the ability to take advantage of [Spring framework|http://www.springframework.org/about] components, programming model and capabilities.
+The Spring framework container integration is built-in to XAP, and provides the ability to take advantage of [Spring framework](http://www.springframework.org/about) components, programming model and capabilities.
 
 The Spring framework provides very elegant abstractions, which makes it very easy to build layered and decoupled applications.
 
 ## Jetty Web Container
 
-Jetty is a very popular web container, which provides support for JEE [web container|XAP95:Web Processing Unit Container] specification services such as: Servlet, JavaServer Pages, JavaServer Faces, and others.
+Jetty is a very popular web container, which provides support for JEE [web container](http://wiki.gigaspaces.com/wiki/display/XAP95/Web+Processing+Unit+Container) specification services such as: Servlet, JavaServer Pages, JavaServer Faces, and others.
 
-The [integration with the Jetty web container|XAP95:Web Jetty Processing Unit Container], allows you to run JEE web applications (.war files) on top of GigaSpaces XAP.
+The [integration with the Jetty web container](http://wiki.gigaspaces.com/wiki/display/XAP95/Web+Jetty+Processing+Unit+Container), allows you to run JEE web applications (.war files) on top of GigaSpaces XAP.
 
 ## Mule
 
-Mule is a very popular open source Enterprise Services Bus implementation in Java. The [Mule container integration|XAP95:Mule ESB] allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
-{toc-zone}
+Mule is a very popular open source Enterprise Services Bus implementation in Java. The [Mule container integration](http://wiki.gigaspaces.com/wiki/display/XAP95/Mule+ESB) allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
+{% endtoczone %}
 
 # Developers API and Components
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 
 ## Overview
 
@@ -263,7 +263,7 @@ The core module of XAP.NET provides APIs for direct access to space. The main in
 
 The events module is built on top of the core module, and provides POCO-based event processing components through the event containers. The event module enables simple construction of event-driven applications.
 
-The events module includes components for simplified EDA/Service Bus development. These components allow [unified event-handling|Space Events] and provide two mechanisms for event-generation: a [polling container|Polling Container Component] uses polling received operations against the space, and a [notify container|Notify Container Component] which uses the space's built-in notification support.
+The events module includes components for simplified EDA/Service Bus development. These components allow [unified event-handling](./space-events.html) and provide two mechanisms for event-generation: a [polling container](./polling-container-component.html) uses polling received operations against the space, and a [notify container](./notify-container-component.html) which uses the space's built-in notification support.
 
 ## Remoting and Service Virtualization
 
@@ -275,7 +275,7 @@ Remoting can be viewed as the alternative to Web Services or WCF, as it provides
 
 This package contains integrations with non-XAP components. For more information please refer to the Programmers Guide.
 
-{toc-zone}
+{% endtoczone %}
 
-{whr}
-{refer} **Next chapter**: [Terminology]{refer}
+{% whr %}
+{% refer %} **Next chapter**: [Terminology](./terminology.html){% endrefer %}

@@ -137,7 +137,7 @@ The Id Generator functionality is part of the processor module. It consists of t
 The Id generator implementation is quite straight forward. Since all the partitions are part of the same space, it is the natural context for storing the Id counter.
 The initializer (`IdObjectInitializer`) writes the counter only to the primary node of the first partition of the space when the application starts.
 Whenever the Clinic service needs a new unique Id, it invokes the `IdGeneratorImpl.generateId()` that gets a range of IDs from the space whenever it is out of IDs and returns  the current Id from the range and increment the counter by one.
-You can find more details on the cluster wide Id Generator pattern [here](http://wiki.gigaspaces.com/wiki/display/SBP/Global+ID+Generator).
+You can find more details on the cluster wide Id Generator pattern [here](/sbp/global-id-generator.html).
 
 {% highlight java %}
 ...

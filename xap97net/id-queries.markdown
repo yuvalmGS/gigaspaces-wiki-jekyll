@@ -5,11 +5,11 @@ categories: XAP97NET
 page_id: 63799334
 ---
 
-{summary}How to query the space using entry ID{summary}
+{% summary %}How to query the space using entry ID{% endsummary %}
 
 # Overview
 
-The space can be queried for entries using [Template Matching] or [SQLQuery], but sometimes we know the exact id of the entry we need and prefer a faster solution. This is where id-based queries come handy.
+The space can be queried for entries using [Template Matching](./template-matching.html) or [SQLQuery](./sqlquery.html), but sometimes we know the exact id of the entry we need and prefer a faster solution. This is where id-based queries come handy.
 
 # Reading an Entry By ID
 
@@ -23,14 +23,12 @@ public String getEmployeeID() {
 }
 {% endhighlight %}
 
-
 To read the object back from the space using its ID and the `readById` operation:
 
 {% highlight java %}
 GigaSpace gigaSpace;
 Employee myEmployee = gigaSpace.readById(Employee.class , myEmployeeID , routingValue);
 {% endhighlight %}
-
 
 # Reading Multiple Entries by IDs
 
@@ -55,10 +53,8 @@ for (Employee employee : result) {
 
 {% endhighlight %}
 
-
-
 {% tip %}
-See [Parent Child Relationship] for a full usage example of the `readByIds` operation.
+See [Parent Child Relationship](/xap97/parent-child-relationship.html) for a full usage example of the `readByIds` operation.
 ReadById is intended to objects with meaningful ids,if used with auto-generate="true" ids,the given object type will be ignored.
 {% endtip %}
 

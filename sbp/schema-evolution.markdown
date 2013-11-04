@@ -5,16 +5,15 @@ categories: SBP
 page_id: 48236978
 ---
 
-
 {% tip %}
 **Summary:** {% excerpt %}The space schema can be evolved using codebase downloading and Java extensions, or an explicit data migration process.{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 7.1
 **Contents:**
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{% endtip %}
 
-{rate}
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
+{% endtip %}
 
 # Overview
 
@@ -25,17 +24,15 @@ GigaSpaces supports addition of new space classes while the system is running ou
 The following sections describe the recommended options to evolve the space schema.
 
 # Schema-less Model - Document Model
-A `SpaceDocument` is completely dynamic model artifact you can write into the space and read back into the application. It allows you to change or evolve your data model without ever taking down the Space. Change your application code to add additional properties or remove existing ones, and you're good to go. In addition, **old and new versions of the same Entity model can co-exist** since the space does not enforce any restriction with regards to the property set of `SpaceDocuments` belong to a certain type. `SpaceDocument` can be [mapped to a POJO|XAP91:Document-POJO Interoperability] during runtime allowing the application leverage POJO and evolve these as neeeded. You can also make the `SpaceDocument` type safe by [Extending SpaceDocument|XAP91:Extending Space Documents].
+A `SpaceDocument` is completely dynamic model artifact you can write into the space and read back into the application. It allows you to change or evolve your data model without ever taking down the Space. Change your application code to add additional properties or remove existing ones, and you're good to go. In addition, **old and new versions of the same Entity model can co-exist** since the space does not enforce any restriction with regards to the property set of `SpaceDocuments` belong to a certain type. `SpaceDocument` can be [mapped to a POJO](http://wiki.gigaspaces.com/wiki/display/XAP91/Document-POJO+Interoperability) during runtime allowing the application leverage POJO and evolve these as neeeded. You can also make the `SpaceDocument` type safe by [Extending SpaceDocument](http://wiki.gigaspaces.com/wiki/display/XAP91/Extending+Space+Documents).
 
-!GRA:Images^document_arch.jpg|thumbnail!
+![document_arch.jpg](/attachment_files/sbp/document_arch.jpg)
 
-See the [Document Support|XAP91:Document (Schema-Free) API] for details.
+See the [Document Support](http://wiki.gigaspaces.com/wiki/display/XAP91/Document+(Schema-Free)+API) for details.
 
 # Evolving Space Schema using a Map Field
 
 With this approach you should have a "static portion" and a "dynamic portion" to the space object. The static portion will be using regular POJO primitive fields and the dynamic portion will be using a Map data type. The map keys would be indexed to allow you to query these "dynamic fields" once used. See:
-
-
 
 {% highlight java %}
 See example below:
@@ -65,10 +62,10 @@ public class MyClass {
 }
 {% endhighlight %}
 
-
 See more:
-- [Matching Nested Maps|XAP91:SQLQuery#MatchingNestedMaps]
-- [Nested Object Indexing|XAP91:Indexing#Nestedpropertiesindexing]
+
+- [Matching Nested Maps](http://wiki.gigaspaces.com/wiki/display/XAP91/SQLQuery#MatchingNestedMaps)
+- [Nested Object Indexing](http://wiki.gigaspaces.com/wiki/display/XAP91/Indexing#Nestedpropertiesindexing)
 
 # Evolving Space Schema using Placeholder Fields
 
@@ -108,14 +105,11 @@ Below is a transformer program, that transforms a class with two attributes into
 
 The migration process can also be optimized by running multiple threads that handle the migration of different space classes in parallel.
 
-
 {% comment %}
 Data migration can be done using the space underlying Entry representation -- the `ExternalEntry`. A simple migration program can transform data stored in the space from one schema to a new schema, and create it in a new space that is used by the new version of the application.
 {% endcomment %}
 
-
 ## Schema Evolution Example
-
 
 {% highlight java %}
 package com.j_spaces.transformer;

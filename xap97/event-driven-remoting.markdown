@@ -13,7 +13,7 @@ Event Driven remoting is characterized by the nature of how the client communica
 
 {% tip %}
 **Running Example**
-You may find an Event Driven Remoting example in the [Event Driven Remoting Example best practice](http://wiki.gigaspaces.com/wiki/display/SBP/Event+Driven+Remoting+Example) section.
+You may find an Event Driven Remoting example in the [Event Driven Remoting Example best practice](/sbp/event-driven-remoting-example.html) section.
 {% endtip %}
 
 # Defining the Contract

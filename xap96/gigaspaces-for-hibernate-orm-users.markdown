@@ -66,7 +66,7 @@ If you need to scale up your database, you can use GigaSpaces as an In-Memory Da
 - **Event-driven** model enables notifications when data is modified
 - **Database access can be synchronous or asynchronous** - the [GigaSpaces Mirror Service](/xap96/asynchronous-persistency-with-the-mirror.html) allows data to be persisted to the database asynchronously, without a performance penalty
 
-{% infosign %} To learn how to do this, see the [Moving from Hibernate to Space](http://wiki.gigaspaces.com/wiki/display/SBP/Moving+from+Hibernate+to+Space) best practice.
+{% infosign %} To learn how to do this, see the [Moving from Hibernate to Space](/sbp/moving-from-hibernate-to-space.html) best practice.
 
 ## Beyond the Data Grid: Scaling Out Your Application Using Space-Based Architecture
 
@@ -74,7 +74,7 @@ To gain ultimate scalability for your application, you can package your business
 
 This approach is called Space Based Architecture, and the way to achieve it is the Spring-based OpenSpaces platform, which allows you to deploy your application as a set of services encased in a Processing Unit.
 
-{% refer %}**To get started with SBA and Open Spaces** see our [eXtreme Application Platform Tutorial](GS6:Extreme Application Platform Tutorial).{% endrefer %}
+{% refer %}**To get started with SBA and Open Spaces** see our [eXtreme Application Platform Tutorial](http://wiki.gigaspaces.com/wiki/display/GS6/Extreme+Application+Platform+Tutorial).{% endrefer %}
 
 {% refer %}To learn more about Space-Based Architecture and its implications, read our white paper, [The Scalability Revolution: From Dead End to Open Road](http://www.gigaspaces.com/WhitePapers).{% endrefer %}
 
@@ -333,7 +333,7 @@ This topology consists of two or more space instances with replication between t
 - For the application components that are write mostly (above 50% write/remove/update), you should **not use hibernate API directly** , but move into the [GigaSpace  Interface](/xap96/the-gigaspace-interface.html) and use the [Mirror service](/xap96/asynchronous-persistency-with-the-mirror.html) (if you still want to persist the data). In this case you can leverage [SQLQuery](/xap96/sqlquery.html) or [Task Executors](/xap96/task-execution-over-the-space.html) for complex distributed activities. In this case you should use remote partitioned space topology.
 
 {% tip %}
-See the [Moving from Hibernate to Space](http://wiki.gigaspaces.com/wiki/display/SBP/Moving+from+Hibernate+to+Space) best practice for step by step instructions moving from Hibernate based application to GigaSpaces Data-Grid as the data access layer.
+See the [Moving from Hibernate to Space](/sbp/moving-from-hibernate-to-space.html) best practice for step by step instructions moving from Hibernate based application to GigaSpaces Data-Grid as the data access layer.
 {% endtip %}
 
 ## Settings GigaSpaces local cache with Hibernate Second Level Cache

@@ -6,7 +6,8 @@ page_id: 64127766
 ---
 
 {% compositionsetup %}
-{summary:page|70}How to configure a Service Grid{summary}
+
+{% summary page|70 %}How to configure a Service Grid{% endsummary %}
 
 # Overview
 

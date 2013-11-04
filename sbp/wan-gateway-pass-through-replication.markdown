@@ -7,20 +7,20 @@ page_id: 59441985
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}WAN Pass Through replication example{% endexcerpt %}
 **Author**: Ali Hodroj, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.7
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{% endtip %}
 
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
+{% endtip %}
 
 # Overview
 
 The WAN Gateway allows for the implementation of a pass-through replication topology across clusters of space instances. In this architecture, a site may act as an intermediary for delegating replication requests across two or more other sites. For instance, given three clusters in New York, London, and Hong Kong, there might be bandwidth or connectivity issues between Hong Kong and New York, thereby requiring London to be used as a pass through site. Such replication behavior may be specified through the use of the indirect delegation feature. The sample processing units and configuration provided below are intended as an example of implementing a pass through topology across three sites: New York (US), London (GB), and Hong Kong (HK) where each site has an independent cluster and a Gateway.
 
-!WAN_passthrough.jpg!
+![WAN_passthrough.jpg](/attachment_files/sbp/WAN_passthrough.jpg)
 
 The demo is configured to start three space instances across three clusters. While the three clusters run on your local machine, they are demarcated by zones and different lookup service ports as follows:
 
@@ -32,10 +32,8 @@ The demo is configured to start three space instances across three clusters. Whi
 |wan-gateway-GB|GB|4366|
 |wan-space-GB|GB|4366|
 
-
-
 The internal architecture of the setup includes a clustered space and a Gateway, where each Gateway includes a Delegator and a Sink (click the thumbnail to enlarge):
-!WAN_passthrough_arch.jpg|thumbnail!
+![WAN_passthrough_arch.jpg](/attachment_files/sbp/WAN_passthrough_arch.jpg)
 
 As a result of indirect delegation, the following scenario will take place once updates are written to the New York space:
 
@@ -48,8 +46,9 @@ As a result of indirect delegation, the following scenario will take place once 
 
 The pass-through topology configuration is implemented through delegators across Hong-Kong and New York that are routed via London. This is achieved by setting the delegate-through property to London for delegation targets in Hong-Kong and New York. Notice that the in the HK and US do not need to have gateway lookups against each other in their configuration:
 
-{gdeck}
-{gcard:New York Space}
+{% inittab %}
+
+{% tabcontent New York Space %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -85,8 +84,9 @@ The pass-through topology configuration is implemented through delegators across
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:New York Gateway}
+{% endtabcontent %}
+
+{% tabcontent New York Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -118,11 +118,11 @@ The pass-through topology configuration is implemented through delegators across
 
 </beans>
 
-
 {% endhighlight %}
 
-{gcard}
-{gcard:London Space}
+{% endtabcontent %}
+
+{% tabcontent London Space %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -158,8 +158,9 @@ The pass-through topology configuration is implemented through delegators across
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:London Gateway}
+{% endtabcontent %}
+
+{% tabcontent London Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -194,8 +195,9 @@ The pass-through topology configuration is implemented through delegators across
 
 {% endhighlight %}
 
-{gcard}
-{gcard:Hong Kong Space}
+{% endtabcontent %}
+
+{% tabcontent Hong Kong Space %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -232,8 +234,9 @@ The pass-through topology configuration is implemented through delegators across
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gcard:Hong Kong Gateway}
+{% endtabcontent %}
+
+{% tabcontent Hong Kong Gateway %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -264,41 +267,45 @@ The pass-through topology configuration is implemented through delegators across
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 # Installing and Running the Example
-1. Download the [WAN_Replication_PassThrough.zip|^WAN_Replication_PassThrough.zip]. It includes two folders: **deploy** and **scripts**.
+
+1. Download the [WAN_Replication_PassThrough.zip](/attachment_files/sbp/WAN_Replication_PassThrough.zip). It includes two folders: **deploy** and **scripts**.
 2. Please extract the file and and copy the content of the **deploy** folder into `\<GIGASPACES_HOME>\deploy` folder.
 3. Extract the `scripts` folder to an arbitrary location and edit the `setExampleEnv.bat/sh` script to include correct values for `NIC_ADDR` as the machine IP and `JSHOMEDIR` as the GigaSpaces root folder location.
 
-The `scripts` folder contains the necessary scripts to start the [Grid Service Agent|XAP91:The Grid Service Agent] for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:
+The `scripts` folder contains the necessary scripts to start the [Grid Service Agent](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agent) for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:
+
 1. Run `startAgent-GB.bat/sh` or to start GB site.
 2. Run `startAgent-HK.bat/sh` to start HK site.
 3. Run `startAgent-US.bat/sh` to start US site.
 4. Run `deployAll.bat/sh` file to deploy all the processing units listed above.
 
 # Viewing the Clusters
+
 - Start the GigaSpaces Management Center and configure the appropriate lookup groups through the "Group Management" dialog.
 - Once all clusters are up and running, you will need to enable the relative groups:
-!group_management_dialog.jpg!
+![group_management_dialog.jpg](/attachment_files/sbp/group_management_dialog.jpg)
 
 Check to enable all three advertised groups for each site:
-!groups_selection_dialog.jpg!
+![groups_selection_dialog.jpg](/attachment_files/sbp/groups_selection_dialog.jpg)
 
 As a result, you should see the service grid components for each site displayed under the "Hosts" tree as follows:
-!service_grid.jpg|thumbnail!
+![service_grid.jpg](/attachment_files/sbp/service_grid.jpg)
 
 Once The deployAll.bat/sh script finishes running, you should be able to see all three sites deployed as follows:
-!pu_deployments.jpg|thumbnail!
+![pu_deployments.jpg](/attachment_files/sbp/pu_deployments.jpg)
 
 # Testing Pass Through Replication
-You can test the setup by using the [benchmark utility|XAP91:Benchmark View - GigaSpaces Browser] comes with the GS-UI. Select one of the HK or US Benchmark icons and click Start to begin writing objects to the space:
-!space_write.jpg|thumbnail!
+You can test the setup by using the [benchmark utility](http://wiki.gigaspaces.com/wiki/display/XAP91/Benchmark+View+-+GigaSpaces+Browser) comes with the GS-UI. Select one of the HK or US Benchmark icons and click Start to begin writing objects to the space:
+![space_write.jpg](/attachment_files/sbp/space_write.jpg)
 
 Click the Spaces icon on the Space Browser Tab to get a global view of all spaces. As objects are being written, you should see replication occurring across both HK and US sites until there are 5000 objects in each space. Notice that since the GB site is a pass through, the object count should remain zero:
-!space_object_count.jpg|thumbnail!
+![space_object_count.jpg](/attachment_files/sbp/space_object_count.jpg)
 
 You can also utilize the Take operation and click Start to remove objects from either the HK or US space. As a result, you will see the object count reaching zero across both HK and US as the pass through replication is taking place:
-!object_count_zero.jpg|thumbnail!
+![object_count_zero.jpg](/attachment_files/sbp/object_count_zero.jpg)
 

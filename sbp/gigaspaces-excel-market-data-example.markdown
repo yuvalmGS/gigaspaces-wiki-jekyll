@@ -5,16 +5,15 @@ categories: SBP
 page_id: 47219542
 ---
 
-
 {% tip %}
 **Summary:** {% excerpt %}This example shows the usage of Microsoft Excel spreadsheets and GigaSpaces XAP for working with stock market data. It also demonstrates the building of Excel RTD and UDF components in C# .NET.{% endexcerpt %}
 **Author**: Pini Cohen, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP.NET 6.6
 **Contents:**
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{% endtip %}
 
-{rate}
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
+{% endtip %}
 
 # Overview
 
@@ -23,19 +22,21 @@ This example shows the usage of Microsoft Excel spreadsheets and GigaSpaces XAP 
 The example follows a common capital market use-case of managing market data flows. The market data flows are "wired" into the GigaSpaces XAP cluster, and Excel is notified of changes in the market data metrics.
 
 The example demonstrates the following:
+
 - Running GigaSpaces XAP with up-to-date stock market data.
 - Running Excel spreadsheets that show a view of the stock market data, and are updated almost in realtime; to show changes and updates in the market data.
 - Building and using Excel RTD and UDF components.
 
-{% lampon %} **[Download the example|^ExcelStocks.zip]** and extract it into your `<GigaSpaces Root>\Examples` directory.
+{% lampon %} **[Download the example](/attachment_files/sbp/ExcelStocks.zip)** and extract it into your `<GigaSpaces Root>\Examples` directory.
 
-{refer}Getting Started with RTD and UDF? See the [Writing Your First RTD/UDF Application|Writing Your First RTD or UDF Application] section.{refer}
+{% refer %}Getting Started with RTD and UDF? See the [Writing Your First RTD/UDF Application](./writing-your-first-rtd-or-udf-application.html) section.{% endrefer %}
 
-{include:Prerequisites - GigaSpaces-Excel Integration}
+{% include /sbp/prerequisites---gigaspaces-excel-integration.markdown %}
 
 # Example Structure
 
 The example contains a few projects:
+
 - The **`StockEntities`** project defines the `StockData` object, which stocks the market data with updated information.
 - The **`StockQuote`** project is in charge of notifying the Excel workbook of changes in the stock market data. `StockQuote` is an Excel RTD server. It receives GigaSpaces events when the stock market data is updated, and in turn notifies Excel of changes.
 - The **`StockOperations`** project is an Excel UDF (User-Defined Function). It returns the "Open" value of a Stock Symbol.
@@ -53,11 +54,22 @@ The .NET files are created in the `<Example Root>\Release` directory.
 
 1. In Excel, go to **Tools** > **add ins** > **automation**.
 2. Scroll down to **GigaSpaces.Examples.ExcelStocks.Operations.StockOperations**, select it and click **OK**.
-{indent}!automation.JPG!{indent}
+
+{% indent %}
+![automation.jpg](/attachment_files/sbp/automation.jpg)
+{% endindent %}
+
 3. You might get a dialog at this point about mscoree.dll. Click No to this dialog (Yes will delete the add-in from the list).
-{indent}!mscoree_dll.JPG!{indent}
+
+{% indent %}
+![mscoree_dll.jpg](/attachment_files/sbp/mscoree_dll.jpg)
+{% endindent %}
+
 4. Click **OK** in the Add-ins dialog.
-{indent}!add-ins.JPG!{indent}
+
+{% indent %}
+![add-ins.jpg](/attachment_files/sbp/add-ins.jpg)
+{% endindent %}
 
 ## Opening .NET Solution with Microsoft Visual Studio
 
@@ -66,16 +78,19 @@ The .NET files are created in the `<Example Root>\Release` directory.
 
 # Running the Example
 
-{% exclamation %} The example must be compiled before you run it (see [Building the Example|#building] above).
+{% exclamation %} The example must be compiled before you run it (see [Building the Example](#building) above).
+
 1. Start the GigaSpaces environment: `<Example Root>\bin\startAll.bat`.
 2. Run the GigaSpaces Management Center `(<GigaSpaces Root>\Bin\Gs-ui.exe`) to see the **`GigaSpaces.Examples.ExcelStocks.StockEntities.StockData`** instances. To view only the relevant spaces:
     1. In the top menu bar, choose **Settings** > **Discovery** > **Group management**.
     2. Select only the **Excel** group, unselect all the rest.
+
 3. Open the Excel file `<Example Root>\Chart.xls`.
 
 # Example Scripts
 
 The example includes the following scripts:
+
 - **`compile.bat`** - compiles the .NET components.
 - **`startAll.bat`** - runs the feeder process that starts an embedded space and fills the space with stock market data updates. These updates trigger RTD calls, and are presented in realtime in the open Excel workbook.
 
@@ -89,6 +104,7 @@ The example includes the following scripts:
 # Tested Performance Metrics
 
 The following metrics describe the scope of testing performed using the examples from above. The solution is known to be working with these numbers. It should be noted that these metrics are not an upper boundary. It is recommended that any deviation beyond these numbers first be verified with GigaSpaces PM and/or RND.
+
 - Excel 2003 clients
 - Up to 50 concurrent remote Excel clients (5 machines, 10 clients on each machine).
 - Up to 200 space-related Excel cells (RTD) in a single spreadsheet.
@@ -98,4 +114,4 @@ The following metrics describe the scope of testing performed using the examples
 
 {% exclamation %} A .NET local cache on the Excel side is not supported.
 
-{refer}Back to The [Excel that Scales Solution] section.{refer}
+{% refer %}Back to The [Excel that Scales Solution](./excel-that-scales-solution.html) section.{% endrefer %}

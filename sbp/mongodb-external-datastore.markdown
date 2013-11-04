@@ -13,28 +13,27 @@ page_id: 56428168
 **Recently tested with GigaSpaces version**: XAP 8.0.3
 **Last Update:** September 2011
 **Contents:**
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
+
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
 {% endtip %}
 
-{rate}
-
 # Overview
-One of the challenges in using an in-memory data grid is that it's an ideal representation of data that's often held in a non-relational database. GigaSpaces XAP has a [write-behind persistence mechanism|http://www.gigaspaces.com/wiki/display/XAP8/External+Data+Source] built-in that's designed for relational databases (so when you write a data item into the data grid, it gets replicated to the backend database automatically), but you might instead want to replicate to a different data storage mechanism altogether, such as [MongoDB|http://mongodb.org] or [Cassandra|http://cassandra.apache.org].
+One of the challenges in using an in-memory data grid is that it's an ideal representation of data that's often held in a non-relational database. GigaSpaces XAP has a [write-behind persistence mechanism](http://www.gigaspaces.com/wiki/display/XAP8/External+Data+Source) built-in that's designed for relational databases (so when you write a data item into the data grid, it gets replicated to the backend database automatically), but you might instead want to replicate to a different data storage mechanism altogether, such as [MongoDB](http://mongodb.org) or [Cassandra](http://cassandra.apache.org).
 
 The mirror-parent project is meant to collect various external datastore implementations. As of September 2011, implementations include Cassandra and MongoDB, with slight feature differences between them (which will be discussed); however, the implementations work for the general case and illustrate a pattern that can be customized as needed.
 
 # Getting the project
-The mirror project is held on github in the [best practices|https://github.com/Gigaspaces/bestpractices] project. This is an umbrella repository; the specific project is in the mirror-parent directory under the root directory.
+The mirror project is held on github in the [best practices](https://github.com/Gigaspaces/bestpractices) project. This is an umbrella repository; the specific project is in the mirror-parent directory under the root directory.
 
 # How the NoSQL EDS implementations work?
 The GigaSpaces XAP external datastore is used by two kinds of processing units: a stateful processing unit (which represents the data grid) and a mirror processing unit (whose sole purpose is to use an external datastore via write-through to persist data.)
 
-!noSQL-EDS.jpg!
+![noSQL-EDS.jpg](/attachment_files/sbp/noSQL-EDS.jpg)
 There are two phases of an EDS: writethrough persistence and initial load. The writethrough phase is what writes the data from the data grid to the backend data store; the initial load phase is run on datagrid startup, to load the data from the external data store into the data grid.
 
 ## Configuring the Mirror
 To use a custom EDS with the mirror space, all you have to do is declare the EDS via Spring, and configure the mirror space to use the EDS, as shown in the MongoDB EDS configuration from the tests:
-
 
 {% highlight java %}
     <!-- BEGIN mongo config -->
@@ -67,14 +66,11 @@ To use a custom EDS with the mirror space, all you have to do is declare the EDS
     </os-core:mirror>
 {% endhighlight %}
 
-
 The important facets here are the `mongoEDS` bean declaration, and the `external-data-source` attribute of the space. Assuming you have a MongoDB instance running on localhost (as the MongoDB configuration above shows), this would instantiate a mirror space, prepared for all write-through activity.
 
 ## Configuring the Data-Grid
 
 The data grid uses the EDS for reads. If no initial load is desired, configuring the data grid for mirroring is enough; otherwise, you'll replicate the EDS declaration for the data grid declaration as well, which yields the following configuration:
-
-
 
 {% highlight java %}
 <!-- BEGIN mongo config -->
@@ -117,6 +113,6 @@ The example configuration as described shows the MongoDB configuration. One aspe
 
 # Cassandra Specifics
 
-Cassandra configuration can be seen in the [test project resources|https://github.com/Gigaspaces/bestpractices/tree/master/mirror-parent/cassandra/cassandra-common/src/test/resources].
+Cassandra configuration can be seen in the [test project resources](https://github.com/Gigaspaces/bestpractices/tree/master/mirror-parent/cassandra/cassandra-common/src/test/resources).
 
 Cassandra has some issues with the SpaceDocument loading mechanism, primarily because a key attribute is difficult to determine in the EDS (we're looking for a clean API workaround for this.) However, POJO support is fully operational.

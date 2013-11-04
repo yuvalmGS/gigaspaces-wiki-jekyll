@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799337
 ---
 
-{summary}Writing your first XAP.NET application {summary}
+{% summary %}Writing your first XAP.NET application {% endsummary %}
 
 # Overview
 
@@ -15,7 +15,7 @@ This page explains how to create a simple Hello World application using XAP.NET 
 
 # Prerequisites
 
-If you haven't done so yet, please [download|http://www.gigaspaces.com/LatestProductVersion] and [install|Installing XAP.NET] GigaSpaces XAP.NET.
+If you haven't done so yet, please [download](http://www.gigaspaces.com/LatestProductVersion) and [install](./installing-xap.net.html) GigaSpaces XAP.NET.
 
 # Setting Up the Project
 
@@ -32,7 +32,8 @@ This section shows how to create a C# Console Application named **HelloWorld** w
 
 1. From the **Project** menu, select **Add Reference**. The **Add Reference** dialog appears.
 2. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\XAP.NET 8.0.0 x86\NET v4.0.30319**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
-    1. Since running .NET 4.0 side-by-side with .NET 2.0 [has limitations|http://msdn.microsoft.com/en-us/magazine/ee819091.aspx], GigaSpaces XAP.NET comes with a separate set of assemblies for .NET 2.0 and .NET 4.0. Make sure you use the one relevant for you.
+    1. Since running .NET 4.0 side-by-side with .NET 2.0 [has limitations](http://msdn.microsoft.com/en-us/magazine/ee819091.aspx), GigaSpaces XAP.NET comes with a separate set of assemblies for .NET 2.0 and .NET 4.0. Make sure you use the one relevant for you.
+
 3. In the **Solution Explorer**, make sure you see **GigaSpaces.Core** in the project references. There's no need to reference any other assembly.
 
 # Writing the Code
@@ -68,7 +69,6 @@ public class Message
 }
 {% endhighlight %}
 
-
 ## Getting Started
 
 The XAP.NET API used in this example is located in the `GigaSpaces.Core` namespace.
@@ -77,7 +77,6 @@ Switch to the **Program.cs** editor, and add a `using` statement to include `Gig
 {% highlight java %}
 using GigaSpaces.Core;
 {% endhighlight %}
-
 
 ## Connecting to the Space
 
@@ -94,7 +93,6 @@ ISpaceProxy proxy = GigaSpacesFactory.FindSpace(spaceUrl);
 Console.WriteLine("*** Connected to space.");
 {% endhighlight %}
 
-
 ## Storing a Message Object
 
 The next step is to create a `Message` object, and store it in the space. To do this, we use the `Write` method in the `ISpaceProxy` we've just created, and simply pass the object we want to store as an argument:
@@ -107,7 +105,6 @@ Message outgoingMessage = new Message("Hello World");
 Console.WriteLine("Writing Message [" + outgoingMessage.Text + "]");
 proxy.Write(outgoingMessage);
 {% endhighlight %}
-
 
 ## Retrieving the Stored Message
 
@@ -125,7 +122,6 @@ Console.WriteLine("Took Message [" + incomingMessage.Text + "]");
 Console.WriteLine("Press ENTER to exit.");
 Console.ReadLine();
 {% endhighlight %}
-
 
 # Running the Program
 

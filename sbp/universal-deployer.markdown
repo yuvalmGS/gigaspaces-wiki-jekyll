@@ -12,27 +12,26 @@ page_id: 55937666
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.1
 **Last Update:** April 2011
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{% endtip %}
 
-{rate}
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
+{% endtip %}
 
 # Overview
-The GigaSpaces Universal Deployer (GUD) allows deploying the different supported processing units ([Space PU|XAP8:Deploying and Interacting with the Space], [Regular PU|XAP8:Packaging and Deployment], [Elastic PU|XAP8:Elastic Processing Unit], [memCache PU|XAP8:The Memcached API] or [Web PU|XAP8:Web Processing Unit Container]) via a simple configuration file. The GUD support dependency based deployment allowing multiple processing units to be deployed as one atomic process (e.g composite application).
-
+The GigaSpaces Universal Deployer (GUD) allows deploying the different supported processing units ([Space PU](http://wiki.gigaspaces.com/wiki/display/XAP8/Deploying+and+Interacting+with+the+Space), [Regular PU](http://wiki.gigaspaces.com/wiki/display/XAP8/Packaging+and+Deployment), [Elastic PU](http://wiki.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit), [memCache PU](http://wiki.gigaspaces.com/wiki/display/XAP8/The+Memcached+API) or [Web PU](http://wiki.gigaspaces.com/wiki/display/XAP8/Web Processing Unit Container)) via a simple configuration file. The GUD support dependency based deployment allowing multiple processing units to be deployed as one atomic process (e.g composite application).
 
 {% tip %}
-Starting with XAP 9 you may use the **Deployment Dependencies API** to specify the deployment order. See the [Application Deployment and Processing Unit Dependencies|XAP9:Deploying onto the Service Grid#Application Deployment and Processing Unit Dependencies] for details.
+Starting with XAP 9 you may use the **Deployment Dependencies API** to specify the deployment order. See the [Application Deployment and Processing Unit Dependencies](http://wiki.gigaspaces.com/wiki/display/XAP9/Deploying+onto+the+Service+Grid#Application+Deployment+and+Processing+Unit+Dependencies) for details.
 {% endtip %}
-
 
 ## Dependency Based Deployment
 The GUD allows you to specify for each deployed PU its dependency PU list. The dependent PU will be deployed after all its PUs dependencies will be fully deployed. The mechanism is recursive; if any of these PUs depends on other PU(s), these will be deployed before the top level dependent PU is deployed. This ensures the deploy order will have the entire PUs deployed in the correct order.
 
-{indent}!universantDeploy_depen.jpg!{indent}
+{% indent %}
+![universantDeploy_depen.jpg](/attachment_files/sbp/universantDeploy_depen.jpg)
+{% endindent %}
 
 To describe the above deploy plan the GUD should have the following config file:
-
 
 {% highlight java %}
 A [B,C] -file myA_PU.jar
@@ -43,7 +42,6 @@ E [] -file myE_PU.jar
 F [] -file myF_PU.jar
 G [] -file myG_PU.jar
 {% endhighlight %}
-
 
 With the above config the PUs will be deployed in the following order: F, D, E, G, C, B, A.
 
@@ -62,27 +60,24 @@ The GUD support the following command line arguments:
 # Running the GUD
 
 ## Install the GUD
-- Download the [GigaSpaces Universal Deployer|^GSUniversalDeployer.zip] and extract it into an empty folder.
+
+- Download the [GigaSpaces Universal Deployer](/attachment_files/sbp/GSUniversalDeployer.zip) and extract it into an empty folder.
 - Edit the `runGSUniversalDeployer.bat` or `runGSUniversalDeployer.sh` to include the correct parameters.
 
 Here an exmaple how you should run the GUD:
-
 
 {% highlight java %}
 java com.gigaspaces.admin.GSUniversalDeployer -config c:\\puList.txt -locators 127.0.0.1 -abortDeployOnFailure true
 {% endhighlight %}
 
-
 ## GUD Configuration File
 The universal Deployer configuration file may include multiple lines with the following format:
-
 
 {% highlight java %}
 PU Name [Dependent PU List] deploy options
 {% endhighlight %}
 
 Example:
-
 
 {% highlight java %}
 mySpace [] -type space -cluster schema=partitioned-sync2backup total_members=2,1
@@ -93,7 +88,6 @@ C [F,E] -elastic eagerCapacity -user xxx -password yyyy -properties embed://prop
 D [] -cluster total_members=2 -user xxx -password yyyy -properties file://d:/temp/context.properties
 E [] -cluster total_members=2 -user xxx -password yyyy -zones zone1,zone2
 {% endhighlight %}
-
 
 ## GUD Configuration File Options
 Each GUD configuration file line supports the following options:
@@ -112,7 +106,7 @@ Each GUD configuration file line supports the following options:
 |-max-instances-per-machine number      | Set the SLA number of instances per machine|Numeric value | |
 |-max-instances-per-zone |Set the SLA number of instances per zone |zone/number| |
 |-zones | Set the SLA zone requirements | | |
-|-elastic | Deploy the PU as an [Elastic PU|XAP8:Elastic Processing Unit]. You should have the ESM started when using this option.| manualCapacity,eagerCapacity | |
+|-elastic | Deploy the PU as an [Elastic PU](http://wiki.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit). You should have the ESM started when using this option.| manualCapacity,eagerCapacity | |
 |-highlyAvailable | Used with a Stale-full Elastic PU. Start backup instances. Specifies if the space should duplicate each information on two different machines.|true,false|true|
 |-memoryCapacityPerContainer |Used with an Elastic PU. Specifies the the heap size per container (operating system process). |Numeric value with a Memory Unit. Memory units supported: m for MB,g for GB|32m|
 |-maxMemoryCapacity |Used with an Elastic PU. Specifies the estimated **maximum** total memory capacity used with this processing unit. |Numeric value with a Memory Unit. Memory units supported: m for MB,g for GB|256m|

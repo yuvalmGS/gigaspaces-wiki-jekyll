@@ -7,14 +7,14 @@ page_id: 56428283
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}This article presents common Scala integration scenarios on top of XAP.{% endexcerpt %}
 **Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0.3
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{% endtip %}
 
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
+{% endtip %}
 
 # Overview
 
@@ -24,15 +24,15 @@ Scala programs run on the Java VM, are byte code compatible with Java so you can
 
 # Scala Helloworld examples
 
-There are many possible permutations for integrating Java and Scala applications, you may have mixture of Java and Scala code or pure Scala code that you want to run on top of GigaSpaces. [Hello World in Scala|http://www.openspaces.org/display/SCL/Hello+World+in+Scala] OpenSpaces project ports the GigaSpaces XAP standard helloworld example application for common Scala integration scenarios. Use this as a reference for how to integrate your Scala applications with GigaSpaces.
+There are many possible permutations for integrating Java and Scala applications, you may have mixture of Java and Scala code or pure Scala code that you want to run on top of GigaSpaces. [Hello World in Scala](http://www.openspaces.org/display/SCL/Hello+World+in+Scala) OpenSpaces project ports the GigaSpaces XAP standard helloworld example application for common Scala integration scenarios. Use this as a reference for how to integrate your Scala applications with GigaSpaces.
 
 When building your application in Scala, the configuration and packaging will still be like Java application.
 
 Find below code and configuration for the Helloworld application written completely in Scala.
 
-{gdeck:Scala Helloworld Example}
-{gcard:Scala Data Model}
+{% inittab Scala Helloworld Example %}
 
+{% tabcontent Scala Data Model %}
 
 {% highlight java %}
 package org.openspaces.example.helloworld.common
@@ -54,9 +54,9 @@ case class Message(
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Scala Polling Container Bean}
+{% endtabcontent %}
 
+{% tabcontent Scala Polling Container Bean %}
 
 {% highlight java %}
 package org.openspaces.example.helloworld.processor
@@ -81,9 +81,9 @@ class Processor {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Scala Feeder}
+{% endtabcontent %}
 
+{% tabcontent Scala Feeder %}
 
 {% highlight java %}
 package org.openspaces.example.helloworld.feeder
@@ -132,8 +132,9 @@ object Feeder {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Scala Helloworld pu.xml}
+{% endtabcontent %}
+
+{% tabcontent Scala Helloworld pu.xml %}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -177,12 +178,13 @@ object Feeder {
 </beans>
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 # Using Scala Interpreter
 
-Scala also comes with an interpreter ([REPL|http://www.scala-lang.org/node/2097]) which can be handy for development and testing. It is an interactive "shell" for writing Scala expressions and programs.
+Scala also comes with an interpreter ([REPL](http://www.scala-lang.org/node/2097)) which can be handy for development and testing. It is an interactive "shell" for writing Scala expressions and programs.
 
-Interestingly, REPL can also be embedded in your application which is discussed in detail by Josh Suereth  [here|http://suereth.blogspot.com/2009/04/embedding-scala-interpreter.html] and by Vassil Dichev [here|http://speaking-my-language.blogspot.com/2009/11/embedded-scala-interpreter.html]. Running REPL in your application is a useful trick which is theoretically possible but the ramifications of doing this on top of GigaSpaces are unknown. It is not recommended to run Scala on top of GigaSpaces using this approach.
+Interestingly, REPL can also be embedded in your application which is discussed in detail by Josh Suereth  [here](http://suereth.blogspot.com/2009/04/embedding-scala-interpreter.html) and by Vassil Dichev [here](http://speaking-my-language.blogspot.com/2009/11/embedded-scala-interpreter.html). Running REPL in your application is a useful trick which is theoretically possible but the ramifications of doing this on top of GigaSpaces are unknown. It is not recommended to run Scala on top of GigaSpaces using this approach.
 

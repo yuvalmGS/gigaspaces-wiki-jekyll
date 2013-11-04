@@ -6,34 +6,34 @@ page_id: 63799383
 ---
 
 {% compositionsetup %}
-{summary}Working with Space Documents{summary}
+
+{% summary %}Working with Space Documents{% endsummary %}
 
 # Overview
 
-{section}
+{% section %}
 
 {% column %}
 
-The GigaSpaces document API exposes the space as [Document Store|http://en.wikipedia.org/wiki/Document-oriented_database]. A document, which is represented by the class `SpaceDocument`, is essentially collection of key-value pairs, where the keys are strings and the values are primitives, `String`, `Date`, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
+The GigaSpaces document API exposes the space as [Document Store](http://en.wikipedia.org/wiki/Document-oriented_database). A document, which is represented by the class `SpaceDocument`, is essentially collection of key-value pairs, where the keys are strings and the values are primitives, `String`, `Date`, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
 
 {% endcolumn %}
 
 {% column %}
 
-!GRA:Images2^doc_api.jpg!
+![doc_api.jpg](/attachment_files/xap97net/doc_api.jpg)
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
+
 Unlike POJOs, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic - users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the class `SpaceTypeDescriptor`.
 
 Before a certain Document instance is written to the space, its type should be introduced to it. The type has a name and controls metadata such as identifier property, routing property and which properties are initially indexed (naturally, you can also index new properties at runtime after adding them to your documents).
 
-
 {% tip %}
 The Type controls **metadata** - so only the metadata is part of the type. A document can introduce new properties at will.
 {% endtip %}
-
 
 Note that the Document type does not describe the properties themselves (except for the names of the ID and Routing properties). These are completely dynamic and each instance can have a different set of properties (although in most cases Document instances of the same type are likely to have identical or similar set of properties).
 
@@ -41,13 +41,14 @@ Note that the Document type does not describe the properties themselves (except 
 
 Since a `SpaceDocument` is completely dynamic by nature, it is very easy to change or evolve your data model without ever taking down the Space. Simply change your application code to add additional properties or remove existing ones, and you're good to go. Even better, old and new versions can co-exist since the space does not enforce any restriction with regards to the property set of documents that belong to a certain type. This is a much more lightweight model in comparison to the classic POJO model, where a recompilation and in many cases a full space restart is required to change the data schema.
 
-If POJO model cannot be replaced with Document model, yet some level of schema evolution is desired within the POJO model, [Dynamic Properties| Dynamic Properties] can be used.
+If POJO model cannot be replaced with Document model, yet some level of schema evolution is desired within the POJO model, [Dynamic Properties](./dynamic-properties.html) can be used.
 
 # Type Definition
 
 Before we start writing and reading `SpaceDocument` from the space, we need an **initial** schema definition of the document type.
 
 For example, suppose we're implementing an electronic commerce system, and decided we need a type called **Product** with the following properties:
+
 - CatalogNumber : String
 - Category : String
 - Name : String
@@ -61,8 +62,9 @@ We also decide that **CatalogNumber** will be a primary key, partitioning will b
 
 The following is an example of how to introduce a new document type:
 
-{gdeck:os_simple_space|top}
-{gcard:Spring Namespace Configuration}
+{% inittab os_simple_space|top %}
+
+{% tabcontent Spring Namespace Configuration %}
 
 {% highlight xml %}
 <os-core:space id="space" url="/./space" >
@@ -77,8 +79,9 @@ The following is an example of how to introduce a new document type:
 
 {% endhighlight %}
 
-{gcard}
-{gcard:Plain Spring XML}
+{% endtabcontent %}
+
+{% tabcontent Plain Spring XML %}
 
 {% highlight xml %}
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
@@ -119,8 +122,9 @@ The following is an example of how to introduce a new document type:
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:Code}
+{% endtabcontent %}
+
+{% tabcontent Code %}
 
 {% highlight java %}
 public void registerProductType(GigaSpace gigaspace) {
@@ -136,8 +140,9 @@ public void registerProductType(GigaSpace gigaspace) {
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 Note that this code does not reflect the complete model - most of the properties does not need to be introduced to the schema. Only properties with special roles (ID, Routing) are part of the schema definition. These meta model **settings cannot be changed** without restarting the space or dropping the type, clearing all its instances and reintroducing it again.
 
@@ -178,9 +183,7 @@ public void writeProduct1(GigaSpace gigaspace) {
 }
 {% endhighlight %}
 
-
 Another way is to use the `DocumentProperties` class provided, which extends HashMap to provide fluent coding:
-
 
 {% highlight java %}
 public void writeProduct2(GigaSpace gigaspace) {
@@ -210,7 +213,6 @@ public void writeProduct2(GigaSpace gigaspace) {
 }
 {% endhighlight %}
 
-
 {% plus %} The `GigaSpace.writeMultiple` method can be used to write a batch of documents.
 {% exclamation %} Update semantics are the same as POJO, except **partial update** that is not currently supported.
 {% exclamation %} Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviours in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
@@ -224,7 +226,6 @@ There are three types of document queries:
 This type of query uses a SpaceDocument with _type_ and any other set of properties values as a template for the query
 For example: Read a document of type **Product** whose **Name** is **Anvil**:
 
-
 {% highlight java %}
 public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
     // Create template:
@@ -236,10 +237,9 @@ public SpaceDocument readProductByTemplate(GigaSpace gigaSpace) {
 }
 {% endhighlight %}
 
-
 ## SQL Query
 
-You can use the [SQLQuery] to search for matching `SpaceDocument` entries.
+You can use the [SQLQuery](./sqlquery.html) to search for matching `SpaceDocument` entries.
 For example: Read a document of type **Product** whose **Price** is greater than 15:
 
 {% highlight java %}
@@ -254,12 +254,9 @@ public SpaceDocument readProductBySQL(GigaSpace gigaSpace) {
 }
 {% endhighlight %}
 
-
-
 {% tip %}
 Consider indexing properties used in queries to boost performance.
 {% endtip %}
-
 
 Queries on nested properties are supported. For example, to read products manufactured by **Acme**:
 
@@ -275,7 +272,6 @@ public SpaceDocument[] readProductBySQLNested(GigaSpace gigaSpace) {
 }
 {% endhighlight %}
 
-
 ## ID Based Query
 
 For example: Read a document of type **Product** whose ID is **hw-1234**:
@@ -286,9 +282,7 @@ public SpaceDocument readProductById(GigaSpace gigaSpace) {
 }
 {% endhighlight %}
 
-
 Queries by multiple Ids are supported. For example:
-
 
 {% highlight java %}
 public SpaceDocument[] readProductByMultipleIds(GigaSpace gigaSpace) {
@@ -298,7 +292,6 @@ public SpaceDocument[] readProductByMultipleIds(GigaSpace gigaSpace) {
     return result.getResultsArray();
 }
 {% endhighlight %}
-
 
 {% plus %} All other `GigaSpace` query operations (readIfExists, readMultiple, take, takeIfExists, takeMultiple, count, clear) are supported for documents entries as well.
 {% plus %} All other Id based operations (readIfExists, takeById, takeIfExistsById, takeByIds) are supported for documents as well.
@@ -314,20 +307,21 @@ The `Document` properties values can be either scalars (integers, strings, enumu
 
 # Indexing
 
-Properties and nested paths can be [indexed|indexing] to boost queries performance. In the type registration sample above the **Name** and **Price** properties are indexed.
+Properties and nested paths can be [indexed](./indexing.html) to boost queries performance. In the type registration sample above the **Name** and **Price** properties are indexed.
 
 Since the schema is flexible and new properties might be added after the type has been registered, it is possible to add indexes dynamically as well.
 
-For more information about indexing, see the [Indexing|Indexing] page.
+For more information about indexing, see the [Indexing](./indexing.html) page.
 
 # Events
 
-Event containers (both [polling container] and [notify container]) support Space `Document` entries.
+Event containers (both [polling container](/xap97/polling-container.html) and [notify container](/xap97/notify-container.html)) support Space `Document` entries.
 
 Here is a simple example of a polling event container configuration using a `Document`:
 
-{gdeck:os_simple_space|top}
-{gcard:Annotation}
+{% inittab os_simple_space|top %}
+
+{% tabcontent Annotation %}
 
 {% highlight xml %}
 <!-- Enable scan for OpenSpaces and Spring components -->
@@ -348,8 +342,6 @@ Here is a simple example of a polling event container configuration using a `Doc
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
 
-
-
 {% highlight java %}
 @EventDriven @Polling
 public class SimpleListener {
@@ -368,8 +360,9 @@ public class SimpleListener {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:Namespace}
+{% endtabcontent %}
+
+{% tabcontent Namespace %}
 
 {% highlight xml %}
 <os-core:space id="space" url="/./space" >
@@ -406,8 +399,9 @@ public class SimpleListener {
 </os-events:polling-container>
 {% endhighlight %}
 
-{gcard}
-{gcard:Plain XML}
+{% endtabcontent %}
+
+{% tabcontent Plain XML %}
 
 {% highlight xml %}
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
@@ -444,8 +438,9 @@ public class SimpleListener {
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:Code}
+{% endtabcontent %}
+
+{% tabcontent Code %}
 
 {% highlight java %}
 GigaSpace gigaSpace = // either create the GigaSpace or get it by injection
@@ -465,15 +460,17 @@ SimplePollingEventListenerContainer pollingEventListenerContainer = new SimplePo
 pollingEventListenerContainer.destroy();
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 # FIFO
 
-[FIFO support] is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
+[FIFO support](./fifo-support.html) is off by default with `Document` entries (same as with POJO). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
 
-{gdeck:os_simple_space|top}
-{gcard:Spring Namespace Configuration}
+{% inittab os_simple_space|top %}
+
+{% tabcontent Spring Namespace Configuration %}
 
 {% highlight xml %}
 <os-core:space id="space" url="/./space" >
@@ -485,8 +482,9 @@ pollingEventListenerContainer.destroy();
 
 {% endhighlight %}
 
-{gcard}
-{gcard:Plain Spring XML}
+{% endtabcontent %}
+
+{% tabcontent Plain Spring XML %}
 
 {% highlight xml %}
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
@@ -510,8 +508,9 @@ pollingEventListenerContainer.destroy();
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:Code}
+{% endtabcontent %}
+
+{% tabcontent Code %}
 
 {% highlight java %}
 // Create type descriptor:
@@ -523,20 +522,22 @@ SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
 gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 {% exclamation %} Changing FIFO support after a type has been registered is not supported.
-For more information about FIFO, see the [FIFO Support|FIFO Support] page.
+For more information about FIFO, see the [FIFO Support](./fifo-support.html) page.
 
 # Transactions and Optimistic Locking
 
-Transactions and isolation modifiers semantics is identical to the POJO semantics. For more information about transactions, see the [Transaction Management|Transaction Management] page.
+Transactions and isolation modifiers semantics is identical to the POJO semantics. For more information about transactions, see the [Transaction Management](/xap97/transaction-management.html) page.
 
 Optimistic locking is disabled by default with `Document` entries (same as with POJO). To enable it, modify the type introduction code and set the optimistic locking support. For example:
 
-{gdeck:os_simple_space|top}
-{gcard:Spring Namespace Configuration}
+{% inittab os_simple_space|top %}
+
+{% tabcontent Spring Namespace Configuration %}
 
 {% highlight xml %}
 <os-core:space id="space" url="/./space" />
@@ -548,8 +549,9 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 
 {% endhighlight %}
 
-{gcard}
-{gcard:Plain Spring XML}
+{% endtabcontent %}
+
+{% tabcontent Plain Spring XML %}
 
 {% highlight xml %}
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
@@ -573,8 +575,9 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 </bean>
 {% endhighlight %}
 
-{gcard}
-{gcard:Code}
+{% endtabcontent %}
+
+{% tabcontent Code %}
 
 {% highlight java %}
 // Create type descriptor:
@@ -586,26 +589,27 @@ SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder("Product")
 gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
+{% endtabcontent %}
 
-{gcard}
-{gdeck}
+{% endinittab %}
 
 {% exclamation %} Changing optimistic locking after a type has been registered is not supported.
-For more information about optimistic locking, see the [Optimistic Locking|Optimistic Locking] page.
+For more information about optimistic locking, see the [Optimistic Locking](/xap97/optimistic-locking.html) page.
 
 # Local Cache / Local View
 
-[Local View] and [Local Cache] are supported for Documents. By default, the `SpaceDocument` instance is stored in the cache which speeds up query performance since the data does not need to be transformed from internal structure to `SpaceDocument`.
+[Local View](./local-view.html) and [Local Cache](./local-cache.html) are supported for Documents. By default, the `SpaceDocument` instance is stored in the cache which speeds up query performance since the data does not need to be transformed from internal structure to `SpaceDocument`.
 
-If you intend to use local cache or local view in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability|Document-POJO Interoperability].
+If you intend to use local cache or local view in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](/xap97/document-pojo-interoperability.html).
 
 # Persistency
 
 External Data Source is supported for space documents.
 Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
 
-{gdeck:example|top}
-{gcard:Configuration}
+{% inittab example|top %}
+
+{% tabcontent Configuration %}
 
 {% highlight xml %}
 <bean id="documentDataSource" class="com.test.DocumentEDS"/>
@@ -623,9 +627,9 @@ Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
 </os-core:space>
 {% endhighlight %}
 
-{gcard}
+{% endtabcontent %}
 
-{gcard:The EDS Implementation}
+{% tabcontent The EDS Implementation %}
 
 {% highlight java %}
 package com.test;
@@ -680,8 +684,9 @@ public class DocumentEDS
 }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}
 
 Different document database can be used to implement the document persistency - MongoDB, CouchDB and others.
 Pojos can be persisted via document EDS as well, in the same way.
@@ -693,14 +698,14 @@ Pojos can be persisted via document EDS as well, in the same way.
 
 Space Filter are supported for space documents.
 
-If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability|Document-POJO Interoperability].
+If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](/xap97/document-pojo-interoperability.html).
 
 # Space Replication Filters
 
 Space Replication Filter are supported for space documents.
 
-If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability|Document-POJO Interoperability].
+If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](/xap97/document-pojo-interoperability.html).
 
 # Advanced Options
 
-{children}
+{% children %}

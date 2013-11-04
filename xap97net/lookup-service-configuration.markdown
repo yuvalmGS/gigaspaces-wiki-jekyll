@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 64127778
 ---
 
-{summary}Defining group names and unicast Locators for Jini Services; searching for available lookup services in the network.{summary}
+{% summary %}Defining group names and unicast Locators for Jini Services; searching for available lookup services in the network.{% endsummary %}
 
 # Essential Guidelines
 
@@ -17,7 +17,7 @@ page_id: 64127778
 
 In such a case, make sure you have a different lookup group for each space, where each space is configured to use a specific lookup. A good practice is to have different space/service names.
 
-{% infosign %} When using multicast please review the following section **[How to Determine Whether Multicast is Available|How to Determine Whether Multicast is Available]** and [How to Configure Multicast|How to Configure Multicast].
+{% infosign %} When using multicast please review the following section **[How to Determine Whether Multicast is Available](./how-to-determine-whether-multicast-is-available.html)** and [How to Configure Multicast](./how-to-configure-multicast.html).
 
 # Setting up the Lookup Service For Multicast Discovery (Using Lookup Group)
 
@@ -35,18 +35,16 @@ The command that loads a space needs to have this system property set. Another w
 /./mySpace?schema=cache&groups=myPrivateGroupName
 {% endhighlight %}
 
-
-
 {% tip %}
-If you are looking for a way to use a unicast discovery, please refer to the [How to Configure Unicast Discovery] section for more details.
+If you are looking for a way to use a unicast discovery, please refer to the [How to Configure Unicast Discovery](./how-to-configure-unicast-discovery.html) section for more details.
 {% endtip %}
-
 
 # Multicast Settings
 
 {% oksign %} To support co-existence of different GigaSpaces versions, the defaults below may change between releases.
 
 Adjusting the lookup services multicast settings can be done using the following system properties:
+
 - **`com.gs.multicast.announcement`** - the multicast address that controls the lookup service announcement. The lookup service uses this address to periodically announce its existence. Defaults to `224.0.1.188`.
 - **`com.gs.multicast.request`** - the multicast address that controls the request of clients (when started) to available lookup services. Defaults to `224.0.1.187`.
 - **`com.gs.multicast.discoveryPort`** - the port used during discovery for multicast requests. Defaults to `4174`. Note that in case the property `com.sun.jini.reggie.initialUnicastDiscoveryPort` system property is not defined it is also used as the default post for unicast requests.
@@ -57,7 +55,7 @@ Adjusting the lookup services multicast settings can be done using the following
 
 # Troubleshooting the Discovery/Group Configuration
 
-Using the [list LUS |list - GigaSpaces CLI#list-6.0-ListsallactiveJiniLookupServiceinstancesandtheirattributes] CLI option, run from `<GigaSpaces Root>\bin\gs.bat/sh`, you can search for available Jini Lookup Services in the network.
+Using the [list LUS](/xap97/list---gigaspaces-cli.html#list-6.0-ListsallactiveJiniLookupServiceinstancesandtheirattributes) CLI option, run from `<GigaSpaces Root>\bin\gs.bat/sh`, you can search for available Jini Lookup Services in the network.
 `<GigaSpaces Root>\bin\gs.bat/sh` list lus
 
 The following result examples appear on the console:
@@ -84,10 +82,8 @@ The following result examples appear on the console:
                  e4e64c11ca95
 {% endhighlight %}
 
-
 # Multi Network Card Configuration
 
-
 {% tip %}
- For details on multi-network card configuration, refer to: [How to Configure an Environment With Multiple Network-Cards (Multi-NIC)].
+ For details on multi-network card configuration, refer to: [How to Configure an Environment With Multiple Network-Cards (Multi-NIC)](/xap97/how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).html).
 {% endtip %}

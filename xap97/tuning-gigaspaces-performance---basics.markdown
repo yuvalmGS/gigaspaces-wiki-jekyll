@@ -85,7 +85,7 @@ If you access the space from a single JVM, or access it a large number of times 
 # Distribute Data and User Requests among Several Partitions
 
 A single machine is always limited in the amount of data and user requests it can handle.
-You can use [Data-Partitioning](./data-partitioning.html) to distribute the data and the calculation colocated with each partition. In more advanced scenarios you should use the [Master-Worker pattern](http://wiki.gigaspaces.com/wiki/display/SBP/Master-Worker+Pattern) to distribute the data and the calculation in a different ratio.
+You can use [Data-Partitioning](./data-partitioning.html) to distribute the data and the calculation colocated with each partition. In more advanced scenarios you should use the [Master-Worker pattern](/sbp/master-worker-pattern.html) to distribute the data and the calculation in a different ratio.
 
 # Memory Usage Considerations
 

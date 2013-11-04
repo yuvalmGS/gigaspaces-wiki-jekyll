@@ -5,13 +5,13 @@ categories: XAP97NET
 page_id: 63799345
 ---
 
-{summary:page|60}How to use the .Net GigaSpaces Session State Store Provider implementation. {summary}
+{% summary page|60 %}How to use the .Net GigaSpaces Session State Store Provider implementation. {% endsummary %}
 
 # Overview
 
 The session state store provider is used by the IIS (Internet Information Services) to supply a data store for active sessions. This implementation uses GigaSpaces as the session data storage provider.
 
-{% infosign %} See how to install the package **[below|#Installation]**.
+{% infosign %} See how to install the package **[below](#Installation)**.
 
 Using the session-state store provider, values that need to be persisted during a user session are stored into session variables. These variables are unique in each user session. You can set and access session information from within an ASP .NET application. For example:
 
@@ -20,7 +20,6 @@ Using the session-state store provider, values that need to be persisted during 
 Session["buttonCount"] = 0;
 {% endhighlight %}
 
-
 # Installation
 
 To use this practice, compile the reference: `<GigaSpaces Root>\Bin\GigaSpaces.Practices.HttpSessionProvider.dll` through Visual Studio, using the solution located at `<GigaSpaces Root>\Practices\HttpSessionProvider\GigaSpaces.Practices.HttpSessionProvider.sln`.
@@ -28,7 +27,7 @@ To use this practice, compile the reference: `<GigaSpaces Root>\Bin\GigaSpaces.P
 # Configuration
 
 Session state implementations can be configured by setting the `mode` attribute to a valid `SessionStateMode sessionState` element in your application configuration.
-{refer}For more details, see: [msdn; Session-State Modes|http://msdn2.microsoft.com/en-us/library/ms178586.aspx].{refer}
+{% refer %}For more details, see: [msdn; Session-State Modes](http://msdn2.microsoft.com/en-us/library/ms178586.aspx).{% endrefer %}
 The `mode` attribute is set up in the `web.config` file (or the `machine.config` file). The `machine.config` file is located in `c:Microsoft.NET\Frameworkconfig\machine.config`.
 Configure your `web.config` file as follows:
 
@@ -66,8 +65,8 @@ Configure your `web.config` file as follows:
 {% endhighlight %}
 
 To use a custom provider, `mode` must be set to `Custom`, and the `providers` element must also be used.
-{refer}For more details, see the [sessionState|http://msdn2.microsoft.com/en-us/library/h6bb9cz9.aspx] element.{refer}
-{refer}[Learn how to to implement a session state store provider|http://msdn2.microsoft.com/en-us/library/ms178587.aspx].{refer}
+{% refer %}For more details, see the [sessionState](http://msdn2.microsoft.com/en-us/library/h6bb9cz9.aspx) element.{% endrefer %}
+{% refer %}[Learn how to to implement a session state store provider](http://msdn2.microsoft.com/en-us/library/ms178587.aspx).{% endrefer %}
 
 # Exceptions
 

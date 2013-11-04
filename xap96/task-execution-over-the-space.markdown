@@ -14,7 +14,7 @@ OpenSpaces comes with support for executing tasks in a collocated asynchronous m
 ![Executors_task_flow_basic.jpg](/attachment_files/Executors_task_flow_basic.jpg)
 
 {% tip %}
-The following [example](http://wiki.gigaspaces.com/wiki/display/SBP/Map-Reduce+Pattern+-+Executors+Example) demonstrates how to use the task execution API
+The following [example](/sbp/map-reduce-pattern---executors-example.html) demonstrates how to use the task execution API
 {% endtip %}
 
 # Task API
@@ -319,7 +319,7 @@ In the above case, there are several tasks that are "added" to the `ExecutorBuil
 The `ExecutorBuilder` can also be passed an optional `AsyncResultFilter` if the reducer also implements it.
 
 {% tip %}
-See the [Elastic Distributed Risk Analysis Engine](http://wiki.gigaspaces.com/wiki/display/SBP/Elastic+Distributed+Calculation+Engine) for a full `ExecutorBuilder` API example.
+See the [Elastic Distributed Risk Analysis Engine](/sbp/elastic-distributed-calculation-engine.html) for a full `ExecutorBuilder` API example.
 {% endtip %}
 
 # Space Injection

@@ -6,27 +6,25 @@ page_id: 63799327
 ---
 
 {% compositionsetup %}
-{summary:page|65}Describing the .NET Processing Unit Container and how to create and deploy it.{summary}
+
+{% summary page|65 %}Describing the .NET Processing Unit Container and how to create and deploy it.{% endsummary %}
 
 # Overview
 
-The .NET Processing Unit Container is based on the [OpenSpaces Processing Unit|XAP97NET:Processing Units], and allows you to write a .NET component that can be managed by the service grid.
+The .NET Processing Unit Container is based on the [OpenSpaces Processing Unit](./processing-units.html), and allows you to write a .NET component that can be managed by the service grid.
 
-The Processing Unit Container is aware of the [cluster info|#ClusterInfo]. This allows you to write your code decoupled from cluster topologies considerations.
+The Processing Unit Container is aware of the [cluster info](#ClusterInfo). This allows you to write your code decoupled from cluster topologies considerations.
 
-{refer}Learn how to use the .NET Processing Unit Container in the **[SBA Example]** section.{refer}
-
+{% refer %}Learn how to use the .NET Processing Unit Container in the **[SBA Example]** section.{% endrefer %}
 
 {% tip %}
- Most users prefer to work with the [Basic Processing Unit Container], since it simplifies many common tasks associated with implementing a processing unit from scratch.
+ Most users prefer to work with the [Basic Processing Unit Container](./basic-processing-unit-container.html), since it simplifies many common tasks associated with implementing a processing unit from scratch.
 However, if you are not familiar with processing unit and event container concepts, the basic processing unit container may be confusing. We recommend you read and experiment with the processing unit container explained below for a while, then continue to read and benefit from the basic processing unit container.
 {% endtip %}
-
 
 # AbstractProcessingUnitContainer class
 
 The `AbstractProcessingUnitContainer` class implements `IDisposable`, and consists of one additional method and two properties:
-
 
 {% highlight java %}
 public abstract class AbstractProcessingUnitContainer
@@ -45,7 +43,6 @@ public abstract class AbstractProcessingUnitContainer
 }
 {% endhighlight %}
 
-
 The Processing Unit Container lifecycle consists only of these two methods: `Initialize` is called when the Processing Unit Container is constructed, and `Dispose` is called when it is removed. Before the initialization, the ClusterInfo and Properties are set with the deploy-time data.
 
 # ClusterInfo
@@ -53,6 +50,7 @@ The Processing Unit Container lifecycle consists only of these two methods: `Ini
 One of the core ideas of the Processing Unit is the determination of the deployment topology in deploy-time. Therefore, when building a Processing Unit, there is almost no need to be aware of the actual cluster topology the Processing Unit is deployed under.
 
 {% infosign %} There are two aspects that are important to remember when building a Processing Unit, for it to be cluster topology-independent:
+
 - Define a routing index on the domain model written to the space, so the partitioned topology can work.
 - When working directly against a cluster member, make sure you don't perform operations against the backup member.
 
@@ -70,7 +68,7 @@ The `ClusterInfo` class holds the following information:
 
 # Creating Your Own Processing Unit Container
 
-{toc-zone:minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top}
+{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 ## Step 1 -- Create the Processing Unit Container
 
@@ -87,7 +85,6 @@ The `pu.config` you've created needs to be edited to point to your Processing Un
 
 {% lampon %} It is recommended to use the `pu.config` file located in `<GigaSpaces Root>\Examples\ProcessingUnit\Feeder\Deployment` as a template.
 
-
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
@@ -103,19 +100,19 @@ The `pu.config` you've created needs to be edited to point to your Processing Un
 </configuration>
 {% endhighlight %}
 
-{toc-zone}
+{% endtoczone %}
 
-{refer}It is possible to create a processing unit of mixed languages, for instance part Java, part .NET. This topic is covered in [Interop Processing Unit|Interop Processing Unit] page.{refer}
+{% refer %}It is possible to create a processing unit of mixed languages, for instance part Java, part .NET. This topic is covered in [Interop Processing Unit](./interop-processing-unit.html) page.{% endrefer %}
 
 # SLA Definition
 
 In order to define the service layer agreement of your processing unit, an SLA file needs to be created.
 That file should be named `sla.xml`, and should be placed in the root directory of the processing unit.
 
-{refer}Read about SLA in [Service Grid Processing Unit Container|XAP97NET:Basic Processing Unit Container].{refer}
+{% refer %}Read about SLA in [Service Grid Processing Unit Container](./basic-processing-unit-container.html).{% endrefer %}
 
 # Deployment
 
-There are several ways to deploy the Processing Unit Container into the Service Grid. Are all detailed extensively in the [.NET Processing Unit Data Example|Your First XTP Application#Deployment] section.
+There are several ways to deploy the Processing Unit Container into the Service Grid. Are all detailed extensively in the [.NET Processing Unit Data Example](./your-first-xtp-application.html#Deployment) section.
 
 The most straightforward way is to use the GigaSpaces Management Center for deployment.

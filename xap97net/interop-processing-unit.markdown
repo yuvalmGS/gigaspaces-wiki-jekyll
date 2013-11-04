@@ -5,27 +5,25 @@ categories: XAP97NET
 page_id: 63799414
 ---
 
-{summary}Creating and deploying a multi language processing unit{summary}
+{% summary %}Creating and deploying a multi language processing unit{% endsummary %}
 
 # Overview
 
 It is possible to create a processing unit which is part .NET part Java and part C++.
-This page assumes knowledge of creating and using [OpenSpaces Processing Unit|XAP95:The Processing Unit Structure and Configuration] and creating and using [.NET Processing Unit Container|Processing Unit Container]. It will cover how to properly create deployment files and directory structure for a mixed processing unit.
+This page assumes knowledge of creating and using [OpenSpaces Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Processing+Unit+Structure+and+Configuration) and creating and using [.NET Processing Unit Container|Processing Unit Container]. It will cover how to properly create deployment files and directory structure for a mixed processing unit.
 
-{refer}C++ processing unit is based on [OpenSpaces Processing Unit|XAP95:The Processing Unit Structure and Configuration] and therefore treated the same, see [CPP Processing Unit|XAP95:CPP Processing Unit] for related information.{refer}
+{% refer %}C++ processing unit is based on [OpenSpaces Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Processing+Unit+Structure+and+Configuration) and therefore treated the same, see [CPP Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP95/CPP+Processing+Unit) for related information.{% endrefer %}
 
 # Creating Mixed Processing Unit Deployment Structure
 
-A Mixed processing unit is basically two processing unit that should be deployed as one. Each one of the .NET and OpenSpaces processing unit part are developed independently but compiled into one deployment directory. The mixed processing unit should have the directory structure of both [.NET Processing Unit|Processing Unit Container] and [OpenSpaces Processing Unit|XAP95:The Processing Unit Structure and Configuration] under the same root directory. It should be created using a `pu.xml` file under `<PU deployment dir>\META-INF\spring` that configures the OpenSpaces processing unit and have a `pu.interop.config` file under the `<PU deployment dir>` root dir that configured the .NET Processing Unit Container. The `pu.interop.config` file should be configured exactly like the [pu.config|Processing Unit Container#pu.config] file (Except for the fact that is should be named pu.interop.config).
+A Mixed processing unit is basically two processing unit that should be deployed as one. Each one of the .NET and OpenSpaces processing unit part are developed independently but compiled into one deployment directory. The mixed processing unit should have the directory structure of both [.NET Processing Unit](./processing-unit-container.html) and [OpenSpaces Processing Unit](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Processing+Unit+Structure+and+Configuration) under the same root directory. It should be created using a `pu.xml` file under `<PU deployment dir>\META-INF\spring` that configures the OpenSpaces processing unit and have a `pu.interop.config` file under the `<PU deployment dir>` root dir that configured the .NET Processing Unit Container. The `pu.interop.config` file should be configured exactly like the [pu.config|Processing Unit Container#pu.config] file (Except for the fact that is should be named pu.interop.config).
 
 The following should be added into the `<PU deployment dir>\META-INF\spring\pu.xml` file as the last tag in order to support mixed processing unit:
-
 
 {% highlight xml %}
 <bean id="dotnetProcessingUnitContainer" class="org.openspaces.interop.DotnetProcessingUnitBean">
 </bean>
 {% endhighlight %}
-
 
 # Sharing The Same Space
 
@@ -35,15 +33,12 @@ The pu.xml and .NET code should resemble the following:
 
 ## OpenSpaces pu.xml space construction related part:
 
-
 {% highlight xml %}
 <os-core:space id="space" url="/./interopSpace">
 </os-core:space>
 {% endhighlight %}
 
-
 ## .NET Processing Unit Container code space construction related part
-
 
 {% highlight java %}
 class MyInteropProcessingUnit : AbstractProcessingUnitContainer

@@ -6,9 +6,10 @@ page_id: 63799403
 ---
 
 {% compositionsetup %}
-{summary}The Benchmark Example measures the performance of several GigaSpaces .Net API operations.{summary}
 
-{section}
+{% summary %}The Benchmark Example measures the performance of several GigaSpaces .Net API operations.{% endsummary %}
+
+{% section %}
 
 {% column width=7% %}
 
@@ -16,7 +17,7 @@ page_id: 63799403
 
 {% column width=86% %}
 
-{% align center %}||!GRA:Images^wiki_icon_folder.gif!||Example Root|`<GigaSpaces Root>\Examples\Benchmark` |
+{% align center %}||![wiki_icon_folder.gif](/attachment_files/xap97net/wiki_icon_folder.gif)||Example Root|`<GigaSpaces Root>\Examples\Benchmark` |
 {% endalign %}
 
 {% endcolumn %}
@@ -25,7 +26,7 @@ page_id: 63799403
 
 {% endcolumn %}
 
-{section}
+{% endsection %}
 
 # Overview
 
@@ -38,20 +39,22 @@ There are two options for using the benchmark:
 **1. Out-of-the-box benchmark.**
 
 Use the Benchmark Example and customize the Benchmark run:
+
 - by changing the space-url to connect to the space topology that you want to check.
 - by configuring the input xml file and changing configuration parameters.
 
-For more information please read [XAP66:Out-of-the-box benchmark|#1]
+For more information please read [Out-of-the-box benchmark](http://wiki.gigaspaces.com/wiki/display/XAP66/Out-of-the-box+benchmark#1)
 
 **2. Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.**
 
 You can create your own benchmark by using the Benchmark Framework:
+
 - extending the framework's BenchmarkStandard abstact class.
 - using the framework's interfaces: IBenchmarkContainer, IBenchmarkObjectAdapter.
 
-For more information please read [XAP66:Develop a custom benchmark|#2]
+For more information please read [Develop a custom benchmark](http://wiki.gigaspaces.com/wiki/display/XAP66/Develop+a+custom+benchmark#2)
 
-The structure of the [XAP66:configuration xml file|#Example configuration file] is the same for the two benchmark options.
+The structure of the [configuration xml file](http://wiki.gigaspaces.com/wiki/display/XAP66/configuration+xml+file#Example+configuration+file) is the same for the two benchmark options.
 
 {% anchor 1 %}
 
@@ -81,16 +84,17 @@ Remote:
 You can control the benchmark by changing parameters in the configuration file.
 
 The configuration file includes the following information:
+
 -  **<assembly>** elements. Each element defines an assembly that needs to be loaded (for custom objects).
 -  **<Benchmark>** elements. Each element defines a benchmark that will be included in the benchmark run.
 
 The Benchmark elements contain the following parameters:
+
 - **type** - Define the benchmark type name. The type structure is:
 
 {% highlight java %}
 {Benchmark type name}`2[[Object type name, Assembly name],[Adapter type name, Assembly name]], Assembly name
 {% endhighlight %}
-
 
 Example:
 
@@ -99,7 +103,6 @@ Example:
 GigaSpaces.Core.Benchmarks.Implementations.Basic],[GigaSpaces.Core.Benchmarks.Implementations.Basic.ObjectAdapters.PersonAdapter,
 GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.Implementations.Basic</type>
 {% endhighlight %}
-
 
 - **repeats** - Number of times to repeat the benchmark
 - **warmups** - Number of repeats that will count as warm-up repeats, which will not be taken into consideration when calculating the benchmark performance results
@@ -118,13 +121,14 @@ GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.I
 Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.
 
 1. Use the Benchmark Framework:
+
 - write space operation classes, by extending the framework's BenchmarkStandard abstact class, and using the framework's interfaces: IBenchmarkContainer, IBenchmarkObjectAdapter.
 - write your own object, or use the Person (Benchmark\Objects\Person.cs) and the PersonAdapter (Benchmark\ObjectAdapters\PersonAdapter.cs) as a template.
 
 2. Prepare the inputs for your benchmark run:
+
 - Adjust the configuration parameters in the input xml file:
 - Type your object definition
-
 
 {% highlight java %}
 <type>GigaSpaces.Core.Benchmarks.Implementations.Basic.ReadBenchmark`2
@@ -136,7 +140,6 @@ Develop a custom benchmark with your own code for the benchmark scenario and the
  GigaSpaces.Core.Benchmarks.Implementations.Basic]], GigaSpaces.Core.Benchmarks.Implementations.Basic
 </type>
 {% endhighlight %}
-
 
 3. For running the customized benchmark, follow the steps below in **Building and Running the Example**
 
@@ -160,7 +163,6 @@ Example command line for running an embedded benchmark run:
 
  Xmls\BenchmarkPerson.xml Results\EmbeddedBenchmarkPersonResult.xml
 {% endhighlight %}
-
 
 # Example Configuration File
 

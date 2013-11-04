@@ -5,4 +5,4 @@ categories: XAP97NET
 page_id: 64127773
 ---
 
-{include:Processing Units}
+{% include /xap97net/processing-units.markdown %}

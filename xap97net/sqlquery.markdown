@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799350
 ---
 
-{summary}Querying the space using SqlQuery{summary}
+{% summary %}Querying the space using SqlQuery{% endsummary %}
 
 # Overview
 
@@ -24,7 +24,6 @@ Person[] persons = proxy.ReadMultiple<Person>(
     new SqlQuery<Person>("Age >= 21"));
 {% endhighlight %}
 
-
 Note that the expression is equivalent to the WHERE part of a query. The FROM part is derived from the generic argument of the `SqlQuery` class, and the SELECT part is not needed since the result is a fully-formed object.
 
 #### Example 2
@@ -39,12 +38,12 @@ query.SetParameter(2, "John");
 Person[] persons = proxy.TakeMultiple<Person>(query, 100);
 {% endhighlight %}
 
-
 This time instead of specifying the values directly in the expression we've used question marks to denote expression variables and parameters to specify the values for those variables.
 
 # Supported SQL Features
 
 GigaSpaces SqlQuery supports the following:
+
 - `AND` / `OR` operators to combine two or more conditions.
 - All basic logical operations to create conditions: `=, <>, <,>, >=, <=, like, NOT like, is null, is NOT null, IN`.
 - `BETWEEN` (starting 8.0.1)
@@ -56,21 +55,20 @@ GigaSpaces SqlQuery supports the following:
 
 # Indexing
 
-It is highly recommended to use indexes on relevant properties to increase performance. For more information see [Indexing].
+It is highly recommended to use indexes on relevant properties to increase performance. For more information see [Indexing](./indexing.html).
 
 # Blocking Operations
 
 Blocking operations (i.e. `Read` or `Take` with `timeout` greater than `0`) are supported with the following restrictions:
-- Blocking operations on a partitioned space require a routing value (broadcast is not supported). For more information see [#Routing].
-- Blocking operations on complex queries are not supported. For more information see [Simple Queries|#SimpleQueries] definition.
 
+- Blocking operations on a partitioned space require a routing value (broadcast is not supported). For more information see [Routing](#Routing).
+- Blocking operations on complex queries are not supported. For more information see [Simple Queries](#SimpleQueries) definition.
 
 {% highlight java %}
 long timeout = 100000;
 MyClass result = space.Take<MyClass>(new SQLQuery<MyClass>(
     "Num > 500"), timeout);
 {% endhighlight %}
-
 
 # Routing
 
@@ -96,7 +94,6 @@ SQLQuery<MyClass> query3 = new SQLQuery<MyClass>(
     "Num = 1 OR Name='smith'");
 {% endhighlight %}
 
-
 Note that in `query1` the `Num` property is used both for routing and matching.
 
 In some scenarios we may want to execute the query on a specific partition without matching the routing property (e.g. blocking operation). Starting 8.0.1, this can be done via the `Routing` property:
@@ -106,7 +103,6 @@ SQLQuery<MyClass> query = new SQLQuery<MyClass>("Num > 3");
 query.Routing = 1;
 MyClass[] result = space.ReadMultiple<MyClass>(query);
 {% endhighlight %}
-
 
 # Limitations
 
@@ -121,6 +117,7 @@ Since Enums are stored in the space as their underlying primitive type, they mus
 Most space operations and features support any SQL query, but some support only **simple** queries and not **complex** ones.
 
 A query is considered complex if it contains one or more of the following:
+
 - `NOT LIKE`
 - `GROUP BY`
 - `ORDER BY`
@@ -128,6 +125,7 @@ A query is considered complex if it contains one or more of the following:
 - `OR` (before 8.0.1)
 
 The following features support only simple SQL queries
+
 - Snapshot
 - Blocking operations
 - Notifications
@@ -136,6 +134,7 @@ The following features support only simple SQL queries
 ### Unsupported SQL Features
 
 GigaSpaces SqlQuery **does not** support the following:
+
 - Aggregate functions: COUNT, MAX, MIN, SUM, AVG.
 - Multiple tables select.
 - `DISTINCT`
@@ -159,9 +158,7 @@ INSERT INTO SET TABLE TO_CHAR TO_NUMBER FOR_UPDATE UPDATE UNION VALUES COMMIT RO
 UID USING
 {% endhighlight %}
 
-
 ### Reserved Separators and Operators:
-
 
 {% highlight java %}
 := || ; . ROWTYPE ~ < <= >  >= => != <> \(+\) ( ) \* / + - ? \{ \}

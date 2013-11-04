@@ -5,19 +5,17 @@ categories: XAP97NET
 page_id: 63799401
 ---
 
-{edit-subjects}
-
 # Overview
 
-The Space Filter Demo demonstrates the different ways to [implement|Implementing and Using a Space Filter] a [space filter|Space Filters] and how to integrate it in a space.
+The Space Filter Demo demonstrates the different ways to [implement](./implementing-and-using-a-space-filter.html) a [space filter](./space-filters.html) and how to integrate it in a space.
 
 The example can be found at `<GigaSpaces root>\Examples\SpaceFilter`
 
 This demo shows three equivalent space filter implementations, and a console application that runs the same demo sequence three times, once per filter implementation:
 
-- [MessageCensorshipAttributeFilter|#1].
-- [MessageCensorshipMethodNamesFilter|#2].
-- [MessageCensorshipSpaceFilter|#3].
+- [MessageCensorshipAttributeFilter](#1).
+- [MessageCensorshipMethodNamesFilter](#2).
+- [MessageCensorshipSpaceFilter](#3).
 
 # Censorship Filters
 
@@ -25,8 +23,7 @@ This demo data object is the `Message` class. This class contains one string pro
 
 # Demo Sequence
 
-The demo sequence consists of: creating the relevant Space Filter, creating a [SpaceFilterConfig|SpaceFilterConfig Class] to configure the filter, starting a space with the filter integrated in it, and executing a short sequence of writing and taking Message objects into and from the space.
-
+The demo sequence consists of: creating the relevant Space Filter, creating a [SpaceFilterConfig](./spacefilterconfig-class.html) to configure the filter, starting a space with the filter integrated in it, and executing a short sequence of writing and taking Message objects into and from the space.
 
 {% highlight java %}
 // Write a simple hello message to the space - the filter will log this message to the console.
@@ -46,13 +43,11 @@ Console.WriteLine("Writing an object instance (Not Message), no monitor message 
 space.Write(new object());
 {% endhighlight %}
 
-
 {% anchor 1 %}
 
 # Message Censorship Attribute Filter
 
-This filter is implemented, using an attribute to mark the filter operation methods. This filter is based on the [Attribute-based SpaceFilterOperationDelegate|SpaceFilterOperationDelegate#Attribute based implementation]
-
+This filter is implemented, using an attribute to mark the filter operation methods. This filter is based on the [Attribute-based SpaceFilterOperationDelegate](./spacefilteroperationdelegate.html#Attribute based implementation)
 
 {% highlight java %}
 public class MessageCensorshipAttributeFilter : MessageCensorship, IDisposable
@@ -107,11 +102,9 @@ public class MessageCensorshipAttributeFilter : MessageCensorship, IDisposable
 }
 {% endhighlight %}
 
+The different attributes are used to mark which method needs to be invoked, according to the different filter operations. The parameters that the method signature contains, must be of a specific [structure](./spacefilteroperationdelegate.html#How does it work).
 
-The different attributes are used to mark which method needs to be invoked, according to the different filter operations. The parameters that the method signature contains, must be of a specific [structure|SpaceFilterOperationDelegate#How does it work].
-
-Each space filter needs a [SpaceFilterConfig|SpaceFilterConfig Class] that defines it in order to integrate in a space. The attribute-based filter uses the [AttributeSpaceFilterConfigFactory|SpaceFilterOperationDelegate#Attribute based implementation].
-
+Each space filter needs a [SpaceFilterConfig](./spacefilterconfig-class.html) that defines it in order to integrate in a space. The attribute-based filter uses the [AttributeSpaceFilterConfigFactory](./spacefilteroperationdelegate.html#Attribute based implementation).
 
 {% highlight java %}
 //Create an attribute based space filter delegate configurer
@@ -124,8 +117,7 @@ spaceConfig.SpaceFiltersConfig = new SpaceFilterConfig[]{attributeSpaceFilterCon
 space = GigaSpacesFactory.FindSpace("/./spaceAttributeFilterDemo", spaceConfig);
 {% endhighlight %}
 
-
-In this example, we can see that the `LogAndCensorizeWrite` method receives an [ISpaceFilterEntry|ISpaceFilterEntry Interface] as its single parameter, and not the `Message` object like the `LogTake` method. That's because this method might need to update the value of the message when it needs to be censored. This can only be done using the `entry.UpdateObject` method.
+In this example, we can see that the `LogAndCensorizeWrite` method receives an [ISpaceFilterEntry](./ispacefilterentry-interface.html) as its single parameter, and not the `Message` object like the `LogTake` method. That's because this method might need to update the value of the message when it needs to be censored. This can only be done using the `entry.UpdateObject` method.
 
 Another important thing to notice is that the `LogAndCensorizeWrite` method first checks if the Message type  from the `entry.ObjectType`, can be assigned into Message, and only then gets the actual Message object. This is done to decrease the performance impact of the filter, because the evaluation of `GetObject` and `UpdateObject` is done in a lazy fashion.
 
@@ -135,8 +127,7 @@ This filter class implements `IDisposable`, to demonstrate that when a filter cl
 
 # Message Censorship Method Names Filter
 
-This filter is implemented using method names to mark the filter operation methods. This filter is based on the [Method name-based SpaceFilterOperationDelegate|SpaceFilterOperationDelegate#Method name based implementation].
-
+This filter is implemented using method names to mark the filter operation methods. This filter is based on the [Method name-based SpaceFilterOperationDelegate](./spacefilteroperationdelegate.html#Method name based implementation).
 
 {% highlight java %}
 public class MessageCensorshipMethodNamesFilter : MessageCensorship, IDisposable
@@ -188,9 +179,7 @@ public class MessageCensorshipMethodNamesFilter : MessageCensorship, IDisposable
 }
 {% endhighlight %}
 
-
-This filter implementation is very similiar to the [attribute-based one|#Message Censorship Attribute Filter], except that there are no marker attributes. The method that needs to be invoked according to the filter operation, is specified by name when creating the [MethodNameSpaceFilterConfigFactory|SpaceFilterOperationDelegate#Method name based implementation] that creates the [SpaceFilterConfig|SpaceFilterConfig Class] for this filter.
-
+This filter implementation is very similiar to the [attribute-based one](#Message Censorship Attribute Filter), except that there are no marker attributes. The method that needs to be invoked according to the filter operation, is specified by name when creating the [MethodNameSpaceFilterConfigFactory](./spacefilteroperationdelegate.html#Method name based implementation) that creates the [SpaceFilterConfig](./spacefilterconfig-class.html) for this filter.
 
 {% highlight java %}
 //Create a method based space filter delegate configurer
@@ -206,15 +195,13 @@ spaceConfig.SpaceFiltersConfig = new SpaceFilterConfig[] { methodNameSpaceFilter
 space = GigaSpacesFactory.FindSpace("/./spaceMethodFilterDemo", spaceConfig);
 {% endhighlight %}
 
-
 The same structure for the filter operation method applies here as well.
 
 {% anchor 3 %}
 
 # Message Censorship Space Filter
 
-This filter implements the [`ISpaceFilter`|ISpaceFilter Interface] interface directly.
-
+This filter implements the [`ISpaceFilter`](./ispacefilter-interface.html) interface directly.
 
 {% highlight java %}
 public class MessageCensorshipSpaceFilter : MessageCensorship, ISpaceFilter
@@ -267,11 +254,9 @@ public class MessageCensorshipSpaceFilter : MessageCensorship, ISpaceFilter
 }
 {% endhighlight %}
 
-
 All the filter operations are represented by the operation parameter in the Process method. A switch on the operation, delegates the operation to the corresponding filtering action.
 
-When implementing [ISpaceFilter|ISpaceFilter Interface], a [SpaceFilterConfig|SpaceFilterConfig Class] needs to be created, and each filter operation that should be filtered, needs to be specified in it.
-
+When implementing [ISpaceFilter](./ispacefilter-interface.html), a [SpaceFilterConfig](./spacefilterconfig-class.html) needs to be created, and each filter operation that should be filtered, needs to be specified in it.
 
 {% highlight java %}
 //Create configuration for space filter

@@ -7,16 +7,16 @@ page_id: 54820978
 
 {% compositionsetup %}
 
-
 {% tip %}
 **Summary:** {% excerpt %}This article illustrates creating a Web Load Balancer Agent as a processing unit{% endexcerpt %}
 **Author:** Jeroen Remmerswaal, Tricode
 **Recently tested with GigaSpaces version**: XAP 7.1.1
 **Last Update:** November 2010
 **Contents:**
-{toc:minLevel=1|maxLevel=2|type=flat|separator=pipe}
-{% endtip %}
 
+{% toc minLevel=1|maxLevel=2|type=flat|separator=pipe %}
+
+{% endtip %}
 
 # Overview
 
@@ -24,19 +24,19 @@ GigaSpaces can host JEE Web Applications in a Grid Service Container using Jetty
 
 GigaSpaces provides an example in the `tools` folder of the product that shows how to proactively inform an Apache load-balancer about the endpoints so that it can be dynamically refreshed upon change of the topology.
 
-!GRA:Images3^WebLoadBalancerAgentPU.jpg!
+![WebLoadBalancerAgentPU.jpg](/attachment_files/sbp/WebLoadBalancerAgentPU.jpg)
 
-This page describes how to create a Web Load Balancer Agent as a Processing Unit that utilizes the GigaSpaces [Administration and Monitoring API|XAP96:Administration and Monitoring API]. This will mean the Web Load Balancer Agent will run within the GigaSpaces service grid, and thus will become fault-tolerant.
+This page describes how to create a Web Load Balancer Agent as a Processing Unit that utilizes the GigaSpaces [Administration and Monitoring API](/xap97/administration-and-monitoring-api.html). This will mean the Web Load Balancer Agent will run within the GigaSpaces service grid, and thus will become fault-tolerant.
 
-Click [here|http://www.gigaspaces.com/wiki/download/attachments/54820978/eAuctionWebLoadBalancer.zip] to download a working code sample that uses the Apache Load Balancer as an example. The example is simple to extend so it can incorporate other load balancers as well.
+Click [here](http://www.gigaspaces.com/wiki/download/attachments/54820978/eAuctionWebLoadBalancer.zip) to download a working code sample that uses the Apache Load Balancer as an example. The example is simple to extend so it can incorporate other load balancers as well.
 
 # Usage
 
-{gdeck:Configuration and Usage}
-{gcard:Spring Configuration}
+{% inittab Configuration and Usage %}
+
+{% tabcontent Spring Configuration %}
 Here's an example Processing Unit XML configuration that demonstrates how to configure the Web Load Balancer Agent.  It consists of four parts:
 a) The `webLayerLoadBalancerListener`-bean which will use a handle to the b) Admin API to monitor c) a given list of Processing Units, by means of the `monitoredProcessingUnits`-property, to see if a scale-up or scale-down event occurs on. If such an event occurs, it is handed over to a d) Load Balancer Agent for taking the right measurements. You can see this is delegated to the `ApacheLoadBalancerAgent` class by means of the `loadBalancerAgent` property of the `webLayerLoadBalancerListener`-bean.
-
 
 {% highlight java %}
 <beans>
@@ -60,12 +60,11 @@ a) The `webLayerLoadBalancerListener`-bean which will use a handle to the b) Adm
 </beans>
 {% endhighlight %}
 
-
 More details on the `WebLayerLoadBalancerListener` and the `ApacheLoadBalancerAgent` can be found on the next panels.
-{gcard}
-{gcard:WebLayerLoadBalancerListener}
-The `WebLayerLoadBalancerListener` component is capable of monitoring a list of Web Processing Units and will react upon a scale up or scale down event by communicating with a Load Balancer Agent. The main piece of code that accomplishes this can be shown as follows and uses a lifecycle-listener for the Processing Unit component of the Admin API:
+{% endtabcontent %}
 
+{% tabcontent WebLayerLoadBalancerListener %}
+The `WebLayerLoadBalancerListener` component is capable of monitoring a list of Web Processing Units and will react upon a scale up or scale down event by communicating with a Load Balancer Agent. The main piece of code that accomplishes this can be shown as follows and uses a lifecycle-listener for the Processing Unit component of the Admin API:
 
 {% highlight java %}
 public class WebLayerLoadBalancerListener {
@@ -106,10 +105,7 @@ public class WebLayerLoadBalancerListener {
 }
 {% endhighlight %}
 
-
 A custom Load Balancer Agent needs to implement this `LoadBalancerAgent` interface:
-
-
 
 {% highlight java %}
 public interface LoadBalancerAgent {
@@ -119,13 +115,12 @@ public interface LoadBalancerAgent {
 }
 {% endhighlight %}
 
-{gcard}
-{gcard:ApacheLoadBalancerAgent}
+{% endtabcontent %}
+
+{% tabcontent ApacheLoadBalancerAgent %}
 As an example an component called `ApacheLoadBalancerAgent` is provided that can communicate with the Apache Load Balancer, in a very similar fashion as the loadbalancer-agent that can be found under the `tools`-folder.
 
 A snippet of the code is provided below for your information, containing the methods that are called when a Processing Unit instance is added or removed.
-
-
 
 {% highlight java %}
 public class ApacheLoadBalancerAgent implements LoadBalancerAgent, Runnable {
@@ -176,5 +171,6 @@ public class ApacheLoadBalancerAgent implements LoadBalancerAgent, Runnable {
     }
 {% endhighlight %}
 
-{gcard}
-{gdeck}
+{% endtabcontent %}
+
+{% endinittab %}

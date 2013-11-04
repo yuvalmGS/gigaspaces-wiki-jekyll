@@ -5,15 +5,14 @@ categories: SBP
 page_id: 55935416
 ---
 
-
 {% tip %}
 {**}Summary:** {% excerpt %}Very Large Backend database/IMDG support. Query IMDG with on going data eviction.{% endexcerpt %}
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces
 **Recently tested with GigaSpaces version**: XAP 8.0
-{toc:minLevel=1|maxLevel=1|type=flat|separator=pipe}
-{% endtip %}
 
-{rate}
+{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
+
+{% endtip %}
 
 # Overview
 
@@ -22,6 +21,7 @@ When having an application using a very large backend database leveraging the IM
 When using `readById` or `readByIds` operations looking for a single specific object(s), that cannot be found within the IMDG (a cache miss), the database access is very minimal. Only one raw is retrieved from the database per object lookup activity via the space External Data Source (EDS) implementation.
 
 But when performing queries, using `readMultiple` with a template or SQLQuery filter, that return a result set that may involve relatively large amount of objects, with an IMDG running in LRU cache policy mode, the probability accessing the database retrieving large amount of data is very high:
+
 - When using `readMultiple` having `Integer.MAX_VALUE` as the `max_objects` parameter, every partition will access the database (parallel database access). This may overload the database.
 - When using `readMultiple` having `max_objects` < `Integer.MAX_VALUE` the database might be accessed even if there are enough objects matching the query criteria across all the space partitions.
 - When loading data from database data eviction process may be triggered. This may impact the performance.
@@ -31,31 +31,37 @@ But when performing queries, using `readMultiple` with a template or SQLQuery fi
 The main motivation with the solution proposed below, is to have better control when a space partition accessing the database. The space is inspected prior retrieving the data leveraging the ability to count matching objects to a given query very fast (via the in-memory indexes the space maintains). If there are adequate amount of matching objects, the client accessing the relevant space partition(s) and retrieving the data from the space without accessing the database.
 
 Here is the full query execution strategy:
+
 1. Check matching object count per partition for a given query.
 2. If there are enough objects within the clustered space:
     - If one partition has sufficient amount of objects use it and retrieve objects only from this partition
     - If there are multiple partitions with sufficient amount of objects:
         - Retrieve in parallel data from the partitions which have enough objects (from the ones with the highest amount of matching objects first).
         - Max objects parameter used to query the partition will match the object count to avoid database access.
+
 3. If there are no enough objects within the clustered space:
     - Load data in order - first into the partition with the highest amount of free memory.
     - Optional - check with other partitions if they access the database to avoid concurrent database access.
 
-{indent}!GRA:Images^imdg_eviction_large_db.jpg!{indent}
+{% indent %}
+![imdg_eviction_large_db.jpg](/attachment_files/sbp/imdg_eviction_large_db.jpg)
+{% endindent %}
 
 ## Data Eviction Options
 To control the data within the space should evict it. Evicting data from the space can be done using the following options:
+
 - LRU Cache policy - The simplest way to evict data based on available memory. Built-in option.
 - Lease - Space objects expire based on TTL specified once the object is written into the space.
 - Custom eviction implementation:
 -- Using a Polling Container query the data frequently.
 -- Using the JVM Memory Notification API.
 
-See the [Custom Eviction|Custom Eviction#Eviction Strategies] section for details.
+See the [Custom Eviction](./custom-eviction.html#Eviction Strategies) section for details.
 
 # Example
 
-With the [attached example|IMDG with Large Backend Database Support^LargeDBLRUSpace.zip] the clustered space has 600 objects in memory:
+With the [attached example](/attachment_files/sbp/LargeDBLRUSpace.zip) the clustered space has 600 objects in memory:
+
 - 100 object loaded into partition 1.
 - 200 object loaded into partition 2.
 - 300 object loaded into partition 3.
@@ -63,6 +69,7 @@ With the [attached example|IMDG with Large Backend Database Support^LargeDBLRUSp
 The clustered space using a dummy External Data Source. it does not leveraging any database. It prints a message when the space needs to access the database to retrieve data.
 
 The client performs 3 types of queries:
+
 - Query for 50 matching objects - This will return objects from a single partition only without accessing the database.
 - Query for 500 matching objects - This will return objects from multiple partitions without accessing the database.
 - Query for 700 matching objects - Load data from the database and return objects from all partitions.

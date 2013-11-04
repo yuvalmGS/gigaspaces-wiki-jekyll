@@ -6,11 +6,10 @@ page_id: 63799415
 ---
 
 {% compositionsetup %}
-{section}
+
+{% section %}
 
 {% column width=70% %}
-
-{space-num-version-code:hsize=1|prefix=XAP.NET|suffix=Documentation}
 
 # XAP.NET 9.7 Documentation
 
@@ -30,28 +29,28 @@ page_id: 63799415
 
 # Quick Links
 
-##### &bull; [What's New in 9.7.X|RN:What's New in GigaSpaces 9.7.X]
+##### &bull; [What's New in 9.7.X](http://wiki.gigaspaces.com/wiki/display/RN/What's+New+in+GigaSpaces+9.7.X)
 
-##### &bull; [9.7.X Release Notes|RN:GigaSpaces XAP 9.7.X Release Notes]
+##### &bull; [9.7.X Release Notes](http://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+XAP+9.7.X+Release+Notes)
 
-##### &bull; [Upgrading from Previous Versions|RN:Upgrading to 9.7.X]
+##### &bull; [Upgrading from Previous Versions](http://wiki.gigaspaces.com/wiki/display/RN/Upgrading+to+9.7.X)
 
-##### &bull; [API Documentation|API:API Documentation Portal]
+##### &bull; [API Documentation](http://wiki.gigaspaces.com/wiki/display/API/API+Documentation+Portal)
 
-##### &bull; [Solutions and Best Practices|SBP:Solutions and Best Practices Home]
+##### &bull; [Solutions and Best Practices Home](/sbp/index.html)
 
-##### &bull; [Forum|http://ask.gigaspaces.org/]
+##### &bull; [Forum](http://ask.gigaspaces.org/)
 
-##### &bull; [Customer Support Portal|http://www.gigaspaces.com/supportcenter]
+##### &bull; [Customer Support Portal](http://www.gigaspaces.com/supportcenter)
 
-##### &bull; [Training Programs|http://www.gigaspaces.com/content/gigaspaces-training]
+##### &bull; [Training Programs](http://www.gigaspaces.com/content/gigaspaces-training)
 
-##### &bull; [Blog|http://blog.gigaspaces.com/]
+##### &bull; [Blog](http://blog.gigaspaces.com/)
 
-##### &bull; [White Papers|http://www.gigaspaces.com/os_papers.html]
+##### &bull; [White Papers](http://www.gigaspaces.com/os_papers.html)
 
-##### &bull; Looking for **[**XAP**|XAP97:XAP 9.7 Documentation Home]** or **[**other versions**|ALL:Choose a GigaSpaces Version]**?
+##### &bull; Looking for **[XAP 9.7 Documentation Home](/xap97/index.html)** or **[**other versions**](http://wiki.gigaspaces.com/wiki/display/ALL/Choose+a+GigaSpaces+Version)**?
 
 {% endcolumn %}
 
-{section}
+{% endsection %}

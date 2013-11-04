@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 64127791
 ---
 
-{summary}Used to determine whether multicast is available.{summary}
+{% summary %}Used to determine whether multicast is available.{% endsummary %}
 
 # Syntax
 
@@ -17,34 +17,26 @@ The admin `multicastTest` utility is used to determine whether multicast is avai
 
 It determines whether a multicast socket can be created and a request announcement can be sent.
 
-
 {% tip %}
 It is still possible that multicast does not work outside the tested host.
 {% endtip %}
 
-
-
 {% tip %}
 Make sure your network and machines running GigaSpaces are configured to have multicast enabled.
-See the [How to Configure Multicast] section for details on how to enable multicast.
+See the [How to Configure Multicast](./how-to-configure-multicast.html) section for details on how to enable multicast.
 {% endtip %}
-
 
 This multicast utility serves to check multicast communication between sender and receiver running on different machines. You should run this utility from two different shells, where one should run from the sender machine and the other from the receiver machine. The sender machine should display the round trip reply time from all receiver machines. If multicast is configured properly on your machine and network, you should see the following message in your sender machine:
 
 `Reply from 192.138.120.56:5558 bytes=100 time=1.539ms`
 
-
 {% tip %}
 For multi-homed network card machine use `multicastTest -sender -ba \[network card IP]`.
 {% endtip %}
 
-
-
 {% tip %}
-To configure Jini in a multi network environment see the [Multi Network Card Configuration Section|How to Configure an Environment With Multiple Network-Cards (Multi-NIC)].
+To configure Jini in a multi network environment see the [Multi Network Card Configuration Section](/xap97/how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).html).
 {% endtip %}
-
 
 # Options
 
@@ -85,7 +77,6 @@ Reply from 127.0.0.1:5558 bytes=100 time=0.807924ms
 Reply from 127.0.0.1:5558 bytes=100 time=0.744508ms
 Reply from 127.0.0.1:5558 bytes=100 time=0.876089ms
 {% endhighlight %}
-
 
 The receiver should display the following:
 

@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799381
 ---
 
-{summary:page|65}Controlling data type discovery{summary}
+{% summary page|65 %}Controlling data type discovery{% endsummary %}
 
 # Overview
 
@@ -31,7 +31,6 @@ By default all the `.dll` files in the current location are scanned. This can be
 </configuration>
 {% endhighlight %}
 
-
 In this example the space proxy will scan `File1.dll` and all the files which match the `MyCompany.\*.dll` pattern. In addition, only types whose namespace starts with "MyCompany.MyProject." will be scanned in the `MyCompany.\*.dll` files.
 
 ## Disabling assemblies scan
@@ -50,7 +49,6 @@ To disable the assemblies scan altogether, use the following configuration:
     </GigaSpaces>
 </configuration>
 {% endhighlight %}
-
 
 ## Configuring at Runtime
 

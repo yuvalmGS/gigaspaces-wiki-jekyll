@@ -5,7 +5,7 @@ categories: XAP97NET
 page_id: 63799386
 ---
 
-{summary}This section describes the main concepts underlying GigaSpaces XAP.{summary}
+{% summary %}This section describes the main concepts underlying GigaSpaces XAP.{% endsummary %}
 
 GigaSpaces XAP (pronounced zap) is a scale-out application server. Developers and architects who are looking to develop Windows or web-based, transactional applications, with high-throughput, low-latency and scalability, may want to use it to build their next generation class of applications.
 
@@ -15,19 +15,19 @@ For this reason, these application servers focused mainly on resource management
 
 # Space-Based Architecture
 
-A detailed description of the model and the theory that led to the inception of GigaSpaces XAP as a next-generation development and runtime platform, as the means to achieve scalability in a high-throughput, stateful environment, is provided in the following white paper: [The Scalability Revolution: From Dead End to Open Road|http://www.gigaspaces.com/os_papers.html#scalrev].
+A detailed description of the model and the theory that led to the inception of GigaSpaces XAP as a next-generation development and runtime platform, as the means to achieve scalability in a high-throughput, stateful environment, is provided in the following white paper: [The Scalability Revolution: From Dead End to Open Road](http://www.gigaspaces.com/os_papers.html#scalrev).
 
 In "The Scalability Revolution", we define scalability as the ability to increase an application's working capacity while retaining data and logic consistency, latency, and the application code - and show that inherent scalability barriers represent a dead end for today's tier-based business-critical applications. In order to survive, today's applications must achieve linear scalability, and the only valid way to do so, is to switch from a tier-based model to a new architectural approach - partitioned applications.
 
 We suggest an approach in which applications are partitioned into self-sufficient Processing Units, and present Space-Based Architecture (SBA) as a practical implementation of this approach. We demonstrate that SBA guarantees both linear scalability and simplicity for designers, developers and administrators - transforming scalability from dead end to open road.
 
-The [Space-Based Architecture and the End of Tier-based Computing|http://www.gigaspaces.com/os_papers.html#a1] white paper describes how changes in the IT resource landscape, such as memory capacity, network speed and the emergence of powerful and new multi-core commodity hardware, and the introduction of SOA/Grid architectures, tout the promise of achieving true linearly-scalable systems at a lower cost. It introduces how a Space-Based Architecture (SBA) approach can be used as a means to transform existing tier-based applications into linearly and dynamically scalable services.
+The [Space-Based Architecture and the End of Tier-based Computing](http://www.gigaspaces.com/os_papers.html#a1) white paper describes how changes in the IT resource landscape, such as memory capacity, network speed and the emergence of powerful and new multi-core commodity hardware, and the introduction of SOA/Grid architectures, tout the promise of achieving true linearly-scalable systems at a lower cost. It introduces how a Space-Based Architecture (SBA) approach can be used as a means to transform existing tier-based applications into linearly and dynamically scalable services.
 
 GigaSpaces XAP was built to be an implementation of the theory behind these concepts, and to make the development of applications based on this model, **simple.**
 
 # Overcoming Limitations of First-Generation Servers
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 GigaSpaces XAP and Space-Based Architecture overcome the major limitations found in first-generation application servers. These limitations can be divided into three main categories:
 
 - Complexity
@@ -53,6 +53,7 @@ In alternative tier-based architecture the need to use specific server implement
 ## A Wider Range of Applications
 
 Prior generations of application servers were built for the web in the days when HTTP was purely request/response. This limited their usage in the cases of:
+
 - Event driven applications, where an event can be state changes or elapsed time.
 - Batch Processing and batched real-time processing
 - Parallel Processing of tasks, or more complex data-oriented tasks such as Map/Reduce.
@@ -61,12 +62,11 @@ Prior generations of application servers were built for the web in the days when
 - Compute Grid
 
 GigaSpaces XAP supports web-enabled request/response applications, in addition to all the modern computational styles described above, and the combination of all of the above.
-{toc-zone}
+{% endtoczone %}
 
 # Space - Concepts and Capabilities
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
-
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 The space is the 'secret sauce' behind GigaSpaces XAP architecture, and it is important to understand its capabilities in order to better understand the entire Space-Based Architecture model.
 
 {% anchor tuple %}
@@ -75,7 +75,7 @@ The space is the 'secret sauce' behind GigaSpaces XAP architecture, and it is im
 
 Tuple Space is a different paradigm for inter-process communication, based on sharing information tuples instead of the alternate message passing paradigm.
 
-Linda language, developed by David Gelernter and Nicholas Carriero at Yale University, was the first implementation of Tuple Spaces. Later on, the [JavaSpaces specification|http://www.sun.com/software/jini/specs/js2_0.pdf] was defined as part of [Sun's Jini specification|http://www.sun.com/software/jini/specs/].
+Linda language, developed by David Gelernter and Nicholas Carriero at Yale University, was the first implementation of Tuple Spaces. Later on, the [JavaSpaces specification](http://www.sun.com/software/jini/specs/js2_0.pdf) was defined as part of [Sun's Jini specification](http://www.sun.com/software/jini/specs/).
 
 GigaSpaces initial product version was a commercial implementation to the JavaSpaces specification, and the Java kernel API of the product still implements the JavaSpaces specification.
 
@@ -85,41 +85,42 @@ This section describes the capabilities of the space, and how a combination of t
 
 ## Space
 
-A Space is a logical in-memory service, which can store entries of information. `Entry` is a domain object. In .NET, an entry can be as simple as a [POCO|http://en.wikipedia.org/wiki/Plain_Old_CLR_Object].
+A Space is a logical in-memory service, which can store entries of information. `Entry` is a domain object. In .NET, an entry can be as simple as a [POCO](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object).
 
 ## Space - Basic Concepts
 
 The space is accessed via a programmatic interface which supports the following main verbs:
+
 - **Write** -- the semantics of writing a new entry of information into the space.
 - **Read** -- read the contents of a stored entry into the client side.
 - **Take** -- get the value from the space and delete its content.
 - **Notify** -- alert when the contents of an entry of interest have registered changes.
 
 The power of the space model is that the combination of the various basic APIs creates a very powerful set of interaction semantics:
+
 - **Write + Read** -- This combination creates caching semantics. As entries are stored within the application, memory storing and retrieving of entries is done rapidly, making space technology perfect for caching solutions.
 - **Write + Take** -- This combination is perfect for parallel processing paradigms. By having a single (or few) writer/s who write tasks into a shared space, and multiple consumers who take entries for execution from the shared location, it is very easy to create a parallel processing application. In fact, the Master/Worker pattern was invented originally in the context of Tuple Spaces, the origins behind JavaSpaces.
 - **Write/Take + Notify** -- This is a messaging paradigm. Clients are informed of information changes asynchronously once these occur.
 
 These capabilities are at the core of GigaSpaces XAP. This combination, plus the additional capabilities  of the basic APIs, allow synchronous and asynchronous applications to be built as the models for which first generation application servers apply. In addition, these models can be used in a wider range of applications, such as: real-time analytics, real-time batch processing, complex event-driven applications, caching scenarios, parallel processing and more.
 
-
 {% tip title=Template Matching %}
 In traditional relational databases retrieving data is synonym with SQL. While the space supports retrieving data via SQL-like queries, it offers an alternative, lightweight approach called Template Matching. The application creates a template object -- the class of the template object defines which type of objects the application wants to read (for example, a template of class `Message` will return `Message` objects), and the template object's properties are used as retrieval criteria. If a template property has a value, objects are only retrieved if they have the same value for that property. If properties in the template are null, they are ignored.
-GigaSpaces XAP extends template matching by providing semantics to query ranges on information as well. For additional information, please refer to the [SQLQuery API|SQLQuery] in the Programmer's Guide.
+GigaSpaces XAP extends template matching by providing semantics to query ranges on information as well. For additional information, please refer to the [SQLQuery API](./sqlquery.html) in the Programmer's Guide.
 {% endtip %}
 
-{toc-zone}
+{% endtoczone %}
 
 # Clustering and Topologies
 
-{toc-zone:location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe}
-
-The [space as defined previously|#Space - Concepts and Capabilities] is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a **cluster**, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
+{% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
+The [space as defined previously](#Space - Concepts and Capabilities) is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a **cluster**, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
 
 The three main cluster topologies are:
-- [Replication|#Replication]
-- [Partitioned|#Partitioned]
-- [Resilient Partitioning|#Resilient Partitioning]: a combination of Replication and Partitioned.
+
+- [Replication](#Replication)
+- [Partitioned](#Partitioned)
+- [Resilient Partitioning](#Resilient Partitioning): a combination of Replication and Partitioned.
 
 ## Replication
 
@@ -154,6 +155,7 @@ Since each partition contains only a subset of the data, losing a partition can 
 The common topology is of a partitioned cluster, where each partition member has one or more replicas. With this topology, there is no scalability bottleneck in the amount of data that can be stored in the cluster, and each partition is fault-tolerant as it has a backup replica.
 
 {% infosign %} This topology is also known in GigaSpaces XAP as Partitioned-Sync2Backup.
-{toc-zone}
-{whr}
-{refer}**Next Chapter:** [A Typical SBA Application]{refer}
+{% endtoczone %}
+
+{% whr %}
+{% refer %}**Next Chapter:** [A Typical SBA Application](./a-typical-sba-application.html){% endrefer %}

@@ -16,6 +16,6 @@ OpenSpaces Mule integration also [enhances the Mule SEDA model](./mule-seda-mode
 
 Last, a Mule application can be [packaged and run as a Processing Unit](./mule-processing-unit.html) within one of the OpenSpaces Processing Unit containers -- most importantly the SLA-driven container.
 
-{% exclamation %} See the [Distributed Multi Mule service example](http://wiki.gigaspaces.com/wiki/display/SBP/Mule+ESB+Example) for a best practice approach when designing your Mule based application.
+{% exclamation %} See the [Distributed Multi Mule service example](/sbp/mule-esb-example.html) for a best practice approach when designing your Mule based application.
 {% children %}
 
