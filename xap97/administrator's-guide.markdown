@@ -12,10 +12,9 @@ The primary focus of the Administrator's Guide, is to provide both a basic, as w
 
 After reading this guide, administrators and operators will be able to set up, validate, configure, monitor and troubleshoot various aspects of the GigaSpaces XAP platform.
 
-<<<<<<< HEAD
-=======
+
 {% exclamation %} Note that this guide is specific to XAP administrators. For instructions for XAP.NET administrators, please refer to the [XAP.NET Administrator's Guide](/xap97net/administrator's-guide.html).
->>>>>>> 53be77cf3b5a76ff3105d85a9d0a5e6df1a1e416
+
 
 ## High Level Topics
 
