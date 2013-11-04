@@ -328,4 +328,4 @@ OpenSpaces comes with an event adapter that allows you to delegate the execution
 {% endtabcontent %}
 {% endinittab %}
 
-The default task executor uses Spring's `SimpleAsyncTaskExecutor` which creates a thread for each execution. Other [Task Executors](http://static.springframework.org/spring/docs/2.0.x/reference/scheduling.html#scheduling-task-executor) can be used by setting it on the `taskExecutor` property.
+The default task executor uses Spring's `SimpleAsyncTaskExecutor` which creates a thread for each execution. Other [Task Executors](http://docs.spring.io/spring/docs/2.0.x/reference/scheduling.html) can be used by setting it on the `taskExecutor` property.

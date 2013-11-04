@@ -77,7 +77,7 @@ Additional info about GigaSpaces proxy can be found [here](./proxy-connectivity.
 ### .Net API
 
 The logging configuration file includes declarations of the loggers available at the bridge between .NET and Java.
-For more details, refer to the [.NET Logging and Tracing](XAP96NET:Log Configuration) section.
+
 
 {% highlight java %}
 com.gigaspaces.externaldatasource.dotnet.level = INFO
@@ -185,7 +185,7 @@ com.gigaspaces.persistent.shared_iterator.level = INFO
 org.hibernate.level = WARNING
 {% endhighlight %}
 
-GigaSpaces persistence options are explained [here](./persistency.html). One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here](./hibernate-external-data-source.html).
+GigaSpaces persistence options are explained [here](./persistency.html). One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here](./hibernate-space-persistency.html).
 
 ### Space Query
 
@@ -245,7 +245,7 @@ When cluster uses partitioned topology, data is partitioned across multiple inst
 com.gigaspaces.cluster.active_election.level = INFO
 {% endhighlight %}
 
-When multiple instances (primary/backup(s)), Active Election process is used by cluster members to determine which member acts as a primary. Additional information regarding active election process is [here](./active-election-and-avoiding-split-brain-scenarios.html).
+When multiple instances (primary/backup(s)), Active Election process is used by cluster members to determine which member acts as a primary. Additional information regarding active election process is [here](./split-brain-and-primary-resolution.html).
 
 ### POJO
 

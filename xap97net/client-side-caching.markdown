@@ -12,6 +12,8 @@ page_id: 63799376
 GigaSpaces supports client side caching of space data within the client application's memory. Client-side caching implements a two-layer cache architecture where the first layer is stored locally, within the client's memory, and the second layer is stored within the remote master space. The remote master space may be used with any of the supported deployment topologies.
 
 **In-line cache with a client cache**:
+![in-line_cache-local-cache.jpg](/attachment_files/xap97net/in-line_cache-local-cache.jpg);
+
 !GRA:Images^in-line_cache-local-cache.jpg!
 
 **Side cache with a client cache**:
