@@ -304,7 +304,8 @@ An attribute can be a segment of several compound indexes, and can be indexed it
 
 The benchmark has a space with different sets of space objects data:
 
-||Condition||Scenario 1 matching objects||Scenario 2 matching objects||Scenario 3 matching objects||
+{: .table .table-bordered}
+|Condition|Scenario 1 matching objects|Scenario 2 matching objects|Scenario 3 matching objects|
 |data1 = 'A' |401,000| 410,000 | 400,000 |
 |data2 = 'B' |100,000| 110,000 | 200,000 |
 |data1 = 'A' AND data2 = 'B' |1000 | 10,000 | 100,000|

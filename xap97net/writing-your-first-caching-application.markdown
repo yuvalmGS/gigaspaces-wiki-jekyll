@@ -53,25 +53,11 @@ A **_cluster schema_** defines the cluster schema type. GigaSpaces provides pred
 
 ## Data Grid Topologies Shown in this Tutorial
 
-|| Topology and Description || Common Use || Options ||
-| **Replicated** ([dg_a_topology2a.gif])
- Two or more space instances with replication between them. | Allowing two or more applications to work with their own dedicated data store, while working on the same data as the other applications. | * Replication can be synchronous (slower but guarantees consistency) or asynchronous (fast but less reliable, as it does not guarantee identical content).
-
-- Space instances can run within the application (embedded - allows faster read access) or as a separate process (remote - allows multiple applications to use the space, easier management).
-- **In this tutorial:** two remote spaces, synchronous replication. |
-| **Partitioned** ([dg_a_topology3.gif])
- Data and operations are split between two spaces (partitions) according to an index field defined in the data. An algorithm, defined in the Load-Balancing Policy, maps values of the index field to specific partitions. | Allows the In-Memory Data Grid to hold a large volume of data, even if it is larger than the memory of a single machine, by splitting the data into several partitions. | * Several routing algorithms to chose from.
-
-- With/without backup space for each partition.
-- **In this tutorial:** Two spaces, hash-based routing, with backup. |
-| **Master-Local** ([dg_a_topology4.gif])
- Each application has a lightweight, embedded cache, which is initially empty. The first time data is read, it is loaded from a master cache to the local cache (lazy load); the next time the same data is read, it is loaded quickly from the local cache. Later on data is either updated from the master or evicted from the cache.     | Boosting read performance for frequently used data. A useful rule of thumb is to use a local cache when over 80% of all operations are read operations. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.
-
-- **In this tutorial:** The master cache comprises two spaces in a partitioned topology. |
-| **Local-View** ([dg_a_topology5.gif])
- Similar to master-local, except that data is pushed to the local cache. The application defines a filter, using a spaces _read template_ or an SQL query, and data matching the filter is streamed to the cache from the master cache. | Achieving maximal read performance for a predetermined subset of data. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.
-
-- **In this tutorial:** The master cache comprises two spaces in a partitioned topology. |
+| Topology and Description | Common Use | Options |
+| **Replicated** ([dg_a_topology2a.gif])<br/>Two or more space instances with replication between them. | Allowing two or more applications to work with their own dedicated data store, while working on the same data as the other applications. | * Replication can be synchronous (slower but guarantees consistency) or asynchronous (fast but less reliable, as it does not guarantee identical content).<br/><br/>- Space instances can run within the application (embedded - allows faster read access) or as a separate process (remote - allows multiple applications to use the space, easier management).<br/>- **In this tutorial:** two remote spaces, synchronous replication. |
+| **Partitioned** ([dg_a_topology3.gif])<br/>Data and operations are split between two spaces (partitions) according to an index field defined in the data. An algorithm, defined in the Load-Balancing Policy, maps values of the index field to specific partitions. | Allows the In-Memory Data Grid to hold a large volume of data, even if it is larger than the memory of a single machine, by splitting the data into several partitions. | * Several routing algorithms to chose from.<br/><br/>- With/without backup space for each partition.<br/>- **In this tutorial:** Two spaces, hash-based routing, with backup. |
+| **Master-Local** ([dg_a_topology4.gif])<br/>Each application has a lightweight, embedded cache, which is initially empty. The first time data is read, it is loaded from a master cache to the local cache (lazy load); the next time the same data is read, it is loaded quickly from the local cache. Later on data is either updated from the master or evicted from the cache.     | Boosting read performance for frequently used data. A useful rule of thumb is to use a local cache when over 80% of all operations are read operations. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.<br/><br/>- **In this tutorial:** The master cache comprises two spaces in a partitioned topology. |
+| **Local-View** ([dg_a_topology5.gif])<br/>Similar to master-local, except that data is pushed to the local cache. The application defines a filter, using a spaces _read template_ or an SQL query, and data matching the filter is streamed to the cache from the master cache. | Achieving maximal read performance for a predetermined subset of data. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.<br/><br/>- **In this tutorial:** The master cache comprises two spaces in a partitioned topology. |
 
 The cluster schema supported are:
 

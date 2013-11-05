@@ -9,7 +9,8 @@ page_id: 63799362
 
 The `SpaceFilterConfig` is used to start a space integrated with a space filter.
 
-||Name||Description||
+{: .table .table-bordered}
+|Name|Description|
 | `Name` | The name of the space filter. |
 | `IsActiveWhenBackup` | States if this filter is active when the space is in backup mode. |
 | `IsSecurityFilter` | States if this filter is a security filter. |

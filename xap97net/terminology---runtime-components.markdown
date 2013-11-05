@@ -6,7 +6,7 @@ page_id: 63799418
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.
-|[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)||Runtime Components|
+\|[Basic Components](./terminology---basic-components.html)\|[Data Grid Topologies](./terminology---data-grid-topologies.html)\|[Space-Based Architecture](./terminology---space-based-architecture.html)\|Runtime Components\|
 
 # GigaSpaces Runtime and Administration Components
 
@@ -245,4 +245,4 @@ Enables the user to view and interact with the runtime components running in the
 
 {% endsection %}
 
-|[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)||Runtime Components|
+\|[Basic Components](./terminology---basic-components.html)\|[Data Grid Topologies](./terminology---data-grid-topologies.html)\|[Space-Based Architecture](./terminology---space-based-architecture.html)\|Runtime Components\|

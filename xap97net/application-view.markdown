@@ -46,7 +46,9 @@ For more information on processing unit dependencies, see [Application deploymen
 
 ![application_dependency.png](/attachment_files/xap97net/application_dependency.png)
 
+{: .table .table-bordered}
 |**Icon**|**Description**|
+|:------:|:--------------|
 |![segment.png](/attachment_files/xap97net/segment.png)|Space Partition|
 |![segments.png](/attachment_files/xap97net/segments.png)|Space Partition with backup|
 |![data.png](/attachment_files/xap97net/data.png)|Space Replica|

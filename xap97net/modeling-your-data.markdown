@@ -21,7 +21,8 @@ When planning the partitioning and how much memory to allocate for the applicati
 
 Use the following table to successfully predict the memory necessary to support your application:
 
-||Data item||Estimated Quantity||Expected Growth||Estimated Object Size||
+{: .table .table-bordered}
+|Data item|Estimated Quantity|Expected Growth|Estimated Object Size|
 |Data Type A|100K|10%|2K|
 |Data Type B|200K|20%|4K|
 

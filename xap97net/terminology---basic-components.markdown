@@ -6,7 +6,8 @@ page_id: 63799398
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.
-||Basic Components|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|
+
+\|Basic Components\|[Data Grid Topologies](./terminology---data-grid-topologies.html)\|[Space-Based Architecture](./terminology---space-based-architecture.html)\|[Runtime Components](./terminology---runtime-components.html)\|
 
 # Basic Components
 
@@ -242,4 +243,4 @@ Client application (which can also be other processing units) write objects to t
 
 {% endsection %}
 
-||Basic Components|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|
+\|Basic Components\|[Data Grid Topologies](./terminology---data-grid-topologies.html)\|[Space-Based Architecture](./terminology---space-based-architecture.html)\|[Runtime Components](./terminology---runtime-components.html)\|

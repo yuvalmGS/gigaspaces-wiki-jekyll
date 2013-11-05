@@ -56,7 +56,8 @@ One of the core ideas of the Processing Unit is the determination of the deploym
 
 The `ClusterInfo` class holds the following information:
 
-||Name||Description||
+{: .table .table-bordered}
+|Name|Description|
 | `Schema` | The cluster topology. |
 | `NumberOfInstances` |The number of primary instances this cluster holds. |
 | `NumberOfBackups` |The number of backups per primary instance.|

@@ -324,10 +324,12 @@ public interface IReceiveOperationHandler<TData>
 
 XAP.NET comes with several built-in receive operation-handler implementations:
 
-||Receive Operation Handler||Description||
+{: .table .table-bordered}
+|Receive Operation Handler|Description|
 | `TakeReceiveOperationHandler` |Performs a single blocking Take operation, with the receive timeout. When used in conjuction with batch events, first tries to perform TakeMultiple. If no values are returned, performs a blocking Take operation, with the receive timeout.|
 | `ReadReceiveOperationHandler` |Performs a single blocking Read operation, with the receive timeout. When used in conjuction with batch events, first tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.|
 | `ExclusiveReadReceiveOperationHandler` |Performs a single Read operation, under an exclusive read lock (similar to "select for update" in databases), with the receive timeout. Exclusive read lock mimics the Take operation, without actually taking the Entry from the space. When used in conjuction with batch events, First tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.
+
 {% exclamation %} This receive operation handler must be used within a transaction.|
 
 {% infosign %} When using the `ExclusiveReadReceiveOperationHandler`, or even the `ReadReceiveOperationHandler`, it is important to remember that the actual event still remains in the space. If the data event is not taken from the space, or one of its properties changes in order **not** to match the container template, the same data event is read again.

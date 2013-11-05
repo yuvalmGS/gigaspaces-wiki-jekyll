@@ -17,7 +17,7 @@ page_id: 63799316
 
 {% column width=86% %}
 
-{% align center %}||![wiki_icon_folder.gif](/attachment_files/xap97net/wiki_icon_folder.gif)||Example Root|`<GigaSpaces Root>\dotnet\examples\DotNetJava` |
+{% align center %}\|![wiki_icon_folder.gif](/attachment_files/xap97net/wiki_icon_folder.gif)\|Example Root\|`<GigaSpaces Root>\dotnet\examples\DotNetJava` \|
 {% endalign %}
 
 {% endcolumn %}
@@ -54,45 +54,11 @@ The `\[SpaceClass(AliasName="")\]` attribute is used to map the .NET names to th
 
 - The .NET fields/properties **SomeByte, SomeString** are mapped to the Java properties **someByte, someString**.
 
-|| C# || Java ||
-|
-{% highlight java %}
-Using GigaSpaces.Core.Metadata;
+{: .table .table-bordered}
+| C# | Java |
+|:---|:-----|
+|`Using GigaSpaces.Core.Metadata;`<br/><br/>`namespace GigaSpaces.Examples.DotnetJava`<br/>`{`<br/>`    [SpaceClass(AliasName = "com.gigaspaces.examples.dotnetjava.Person")]`<br/>`    public class Person`<br/>`    {`<br/>`    [SpaceProperty(AliasName="someByte")]`<br/>`    public Nullable<byte> SomeByte;`<br/>`    [SpaceProperty(AliasName = "someString")]`<br/>`    public string SomeString;`<br/>`...`<br/>`    }`<br/>`}`|`package com.gigaspaces.examples.dotnetjava;`<br/><br/>`public class Person`<br/>`{`<br/>`    private Byte _someByte;`<br/>`    public Byte getSomeByte()`<br/>`    { return _someByte; }`<br/>`    public void setSomeByte(Byte value)`<br/>`    { _someByte = value; }`<br/><br/>`    private String _someString;`<br/>`    public String getSomeString()`<br/>`    { return _someString; }`<br/>`    public void setSomeString(String value)`<br/>`    { _someString = value; }`<br/>`...`<br/>`}`|
 
-namespace GigaSpaces.Examples.DotnetJava
-{
-    [SpaceClass(AliasName = "com.gigaspaces.examples.dotnetjava.Person")]
-    public class Person
-    {
-    [SpaceProperty(AliasName="someByte")]
-    public Nullable<byte> SomeByte;
-    [SpaceProperty(AliasName = "someString")]
-    public string SomeString;
-...
-    }
-}
-{% endhighlight %}
-|
-{% highlight java %}
-package com.gigaspaces.examples.dotnetjava;
-
-public class Person
-{
-    private Byte _someByte;
-    public Byte getSomeByte()
-    { return _someByte; }
-    public void setSomeByte(Byte value)
-    { _someByte = value; }
-
-    private String _someString;
-    public String getSomeString()
-    { return _someString; }
-    public void setSomeString(String value)
-    { _someString = value; }
-...
-}
-{% endhighlight %}
-|
 For more details about .NET-Java Interoperability and designing the interoperable classes, refer to [.NET-Java Interoperability](http://www.gigaspaces.com/wiki/display/XAP66/.NET-Java+Interoperability)
 
 # Building and Running the Example

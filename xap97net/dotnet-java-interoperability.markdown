@@ -11,44 +11,11 @@ page_id: 63799325
 
 # Designing Interoperable Classes
 
-|| C# || Java ||
-|
-{% highlight java %}
-using GigaSpaces.Core.Metadata;
-
-namespace MyCompany.MyProject.Entities
-{
-    [SpaceClass(AliasName="com.mycompany.myproject.entities.Person")]
-    public class Person
-    {
-        private string _name;
-        [SpaceProperty(AliasName="name")]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-    }
-}
-{% endhighlight %}
-|
-{% highlight java %}
-package com.mycompany.myproject.entities;
-
-public class Person
-{
-    private String name;
-    public String getName()
-    {
-        return this.name;
-    }
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-}
-{% endhighlight %}
-|
+{: .table .table-bordered}
+| C# | Java |
+|:---|:-----|
+|`using GigaSpaces.Core.Metadata;`<br/><br/>`namespace MyCompany.MyProject.Entities`<br/>`{`<br/>`    [SpaceClass(AliasName="com.mycompany.myproject.entities.Person")]`<br/>`    public class Person`<br/>`    {`<br/>`        private string _name;`<br/>`        [SpaceProperty(AliasName="name")]`<br/>`        public string Name`<br/>`        {`<br/>`            get { return this._name; }`<br/>`            set { this._name = value; }`<br/>`        }`<br/>`    }`<br/>`}`
+|`package com.mycompany.myproject.entities;`<br/><br/>`public class Person`<br/>`{`<br/>`    private String name;`<br/>`    public String getName()`<br/>`    {`<br/>`        return this.name;`<br/>`    }`<br/>`    public void setName(String name)`<br/>`    {`<br/>`        this.name = name;`<br/>`    }`<br/>`}`|
 
 ### Guidelines and Restrictions
 
@@ -70,7 +37,10 @@ The following guidelines and restrictions should be followed in order to enable 
 # Supported Types for Matching and Interoperability
 
 The following types are supported by the space for matching and interoperability:
-|| CLS || C# || VB.Net || Java || Description ||
+
+{: .table .table-bordered}
+| CLS | C# | VB.Net | Java | Description |
+|:----|:---|:-------|:-----|:------------|
 | [System.Byte](http://msdn2.microsoft.com/en-us/library/system.byte.aspx) | `byte` | `Byte` | [byte](http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html) | 8-bit integer.**<sup>1</sup>** |
 | [Nullable<Byte>](http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx) | `byte?`| `Nullable(Of Byte)` | [java.lang.Byte](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Byte.html) | Nullable wrapper for byte.**<sup>1</sup>** |
 | [System.Int16](http://msdn2.microsoft.com/en-us/library/system.int16.aspx) | `short` | `Short` | [short](http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html) | 16-bit integer. |
@@ -88,7 +58,6 @@ The following types are supported by the space for matching and interoperability
 | [System.Char](http://msdn2.microsoft.com/en-us/library/system.char.aspx) | `char` | `Char` | [char](http://java.sun.com/docs/books/tutorial/java/nutsandbolts/datatypes.html)   | A Unicode  character (16 bits). |
 | [Nullable<Char>](http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx) | `char?` | `Nullable(Of Char)` | [java.lang.Character](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/Character.html) | Nullable wrapper for char. |
 | [System.String](http://msdn2.microsoft.com/en-us/library/system.string.aspx) | `string` | `String` | [java.lang.String](http://docs.oracle.com/javase/1.5.0/docs/api/java/lang/String.html) | An immutable, fixed-length string of Unicode characters. |
-
 | [System.DateTime](http://msdn2.microsoft.com/en-us/library/system.datetime.aspx) [Nullable<DateTime>](http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx) | `DateTime` `DateTime?` | `DateTime` `Nullable(Of DateTime)`| [java.util.Date](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Date.html) | An instant in time, typically expressed as a date and time of day.**<sup>2,3</sup>** |
 | [System.Decimal](http://msdn2.microsoft.com/en-us/library/system.decimal.aspx) [Nullable<Decimal>](http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx) | `decimal` `decimal?` | `Decimal` `Nullable(Of Decimal)` | [java.math.BigDecimal](http://docs.oracle.com/javase/1.5.0/docs/api/java/math/BigDecimal.html) | A decimal number, used for high-precision calculations.**<sup>2,4</sup>** |
 | [System.Guid](http://msdn2.microsoft.com/en-us/library/system.guid.aspx) [Nullable<Guid>](http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx) | `Guid` `Guid?` | `Guid` `Nullable(Of Guid)` | [java.util.UUID](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/UUID.html) | A 128-bit integer representing a unique identifier.**<sup>2</sup>** |
@@ -102,7 +71,10 @@ The following types are supported by the space for matching and interoperability
 # Arrays and Collections support
 
 The following collections are mapped for interoperability:
-|| .Net || Java || Description ||
+
+{: .table .table-bordered}
+| .Net | Java | Description |
+|:-----|:-----|:------------|
 | `T\[\]` | `E\[\]` | Fixed-size arrays of elements. |
 | [System.Collections.Generic.List<T>](http://msdn.microsoft.com/en-us/library/6sh2ey19.aspx)  [System.Collections.ArrayList](http://msdn2.microsoft.com/en-us/library/system.collections.arraylist.aspx)  [System.Collections.Specialized.StringCollection](http://msdn2.microsoft.com/en-us/library/system.collections.specialized.stringcollection.aspx) | [java.util.ArrayList ](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) | Ordered list of elements. |
 | [System.Collections.Generic.Dictionary<K,V>](http://msdn.microsoft.com/en-us/library/xfhwa508.aspx)  [System.Collections.HashTable](http://msdn2.microsoft.com/en-us/library/system.collections.hashtable.aspx)  [System.Collections.Specialized.HybridDictionary](http://msdn2.microsoft.com/en-us/library/system.collections.specialized.hybriddictionary.aspx)  [System.Collections.Specialized.ListDictionary](http://msdn2.microsoft.com/en-us/library/system.collections.specialized.listdictionary.aspx) | [java.util.HashMap](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/HashMap.html) | Collection of key-value pairs. |
