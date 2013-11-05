@@ -8,7 +8,7 @@ page_id: 61867355
 # Overview
 {%section%}
 {%column width=75% %}
-A new Release of Gigaspace's XAP platform has been released. Version 9.6 is a minor relaese. Below you will find all relevent information.
+A new release of Gigaspace's XAP platform has been released. Version 9.6 is a minor relaese. Below you will find all relevent information.
 {%endcolumn%}
 {%column width=20% %}
 <img src="/attachment_files/gs/gs.png" width="100" height="100">
