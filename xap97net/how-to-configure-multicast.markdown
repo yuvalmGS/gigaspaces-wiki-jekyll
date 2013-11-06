@@ -24,8 +24,8 @@ Refer to the [How to Determine Whether Multicast is Available](./how-to-determin
 {% endtip %}
 
 To enable the important capabilities above, you should enable multicast on machines running clients, spaces or services.
-{% tip title=What should I do if I can't enable multicast? %}
 
+{% tip title=What should I do if I can't enable multicast? %}
 - If you cannot enable multicast in your environment, you can use unicast discovery to allow services and clients to locate the Lookup Service.
 - Space cluster replication uses unicast by default. You should use multicast replication when having more than 10 clients acting as replica spaces per target space.
 {% endtip %}

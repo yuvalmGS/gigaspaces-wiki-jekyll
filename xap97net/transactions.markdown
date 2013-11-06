@@ -100,7 +100,9 @@ txnManager.DefaultLeaseTime = 5 ** 60 ** 1000;
 # Isolation Levels
 
 When performing read operations with transactions the transaction isolation level can be set by using the  Read Modifiers:
-||  Modifier || Description || Comment||
+
+{: .table .table-bordered}
+| Modifier | Description | Comment |
 |RepeatableRead | Allows read operations to have visibility of entities that are not write-locked or exclusively-locked by active transactions. | This modifier cannot be used together with: DirtyRead, ReadCommitted|
 |DirtyRead | Allows non-transactional read operations to have full visibility of the entities in the space, including entities that are exclusively-locked. | This modifier cannot be used together with: RepeatableRead, ReadCommitted|
 |ExclusiveReadLock | Allows read operations to have exclusive visibility of entities that are not locked by active transactions. |  |

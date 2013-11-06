@@ -110,4 +110,5 @@ All operations are done through a proxy to a space, that proxy can also be a pro
 The SpaceRouting is determined by the `[\[SpaceRouting\]](./object-metadata.html#SpaceRouting)` attribute or using a [gs.xml](./gs.xml-metadata.html).
 
 {% refer %}SpaceRouting consideration in [Write and Update operation](./writing-and-updating-entries.html){% endrefer %}
+
 {% refer %}SpaceRouting consideration in [Read operation](./reading-entries.html){% endrefer %}

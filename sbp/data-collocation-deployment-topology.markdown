@@ -175,7 +175,10 @@ If the amount of data you store within the space is relatively large (more than 
 
 ## Summary
 Here is a simple matrix you can use to determine if you should collocate your space with your business logic or not:
-||Scenario||Collocate||Not Collocate||
+
+{: .table .table-bordered}
+|Scenario|Collocate|Not Collocate|
+|:-------|:-------:|:-----------:|
 |Data model supports stickiness| {% oksign %}| |
 |Transaction takes a short time (<10ms)|{% oksign %} | |
 |Transaction takes a long time (>100ms) | |{% oksign %}|

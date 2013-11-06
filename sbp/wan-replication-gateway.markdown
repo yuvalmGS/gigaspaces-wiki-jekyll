@@ -8,9 +8,9 @@ page_id: 56428286
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}WAN Replication Gateway example.{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 8.0.3
+**Summary:** {% excerpt %}WAN Replication Gateway example.{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 8.0.3<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

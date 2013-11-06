@@ -6,7 +6,7 @@ page_id: 63799407
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.
-|[Basic Components](./terminology---basic-components.html)||Data Grid Topologies|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|
+\|[Basic Components](./terminology---basic-components.html)\|\|Data Grid Topologies\|[Space-Based Architecture](./terminology---space-based-architecture.html)\|[Runtime Components](./terminology---runtime-components.html)\|
 
 # Data Grid
 
@@ -187,4 +187,4 @@ A [partitioned Data Grid](#Partitioned Data Grid), with one or more [backup](#Pr
 
 {% endsection %}
 
-|[Basic Components](./terminology---basic-components.html)||Data Grid Topologies|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|
+\|[Basic Components](./terminology---basic-components.html)\|Data Grid Topologies\|[Space-Based Architecture](./terminology---space-based-architecture.html)\|[Runtime Components](./terminology---runtime-components.html)\|

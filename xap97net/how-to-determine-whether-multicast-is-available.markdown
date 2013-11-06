@@ -40,7 +40,8 @@ To configure Jini in a multi network environment see the [Multi Network Card Con
 
 # Options
 
-|| Option || Description || Value Format ||
+{: .table .table-bordered}
+| Option | Description | Value Format |
 | `sender` / `receiver` | Specifies whether you are the sender or the receiver -- `-sender` is used by the source machine, and `-receiver` is used by each target machine. | |
 | `ba` | Binding address. Useful for multihomed hosts. | `localhost` |
 | `ma` | Multicast address. | |

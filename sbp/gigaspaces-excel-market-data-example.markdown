@@ -6,10 +6,10 @@ page_id: 47219542
 ---
 
 {% tip %}
-**Summary:** {% excerpt %}This example shows the usage of Microsoft Excel spreadsheets and GigaSpaces XAP for working with stock market data. It also demonstrates the building of Excel RTD and UDF components in C# .NET.{% endexcerpt %}
-**Author**: Pini Cohen, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP.NET 6.6
-**Contents:**
+**Summary:** {% excerpt %}This example shows the usage of Microsoft Excel spreadsheets and GigaSpaces XAP for working with stock market data. It also demonstrates the building of Excel RTD and UDF components in C# .NET.{% endexcerpt %}<br/>
+**Author**: Pini Cohen, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP.NET 6.6<br/>
+**Contents:**<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

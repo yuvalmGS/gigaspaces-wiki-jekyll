@@ -6,10 +6,10 @@ page_id: 48236978
 ---
 
 {% tip %}
-**Summary:** {% excerpt %}The space schema can be evolved using codebase downloading and Java extensions, or an explicit data migration process.{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 7.1
-**Contents:**
+**Summary:** {% excerpt %}The space schema can be evolved using codebase downloading and Java extensions, or an explicit data migration process.{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 7.1<br/>
+**Contents:**<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

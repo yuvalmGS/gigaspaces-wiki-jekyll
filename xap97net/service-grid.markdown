@@ -86,7 +86,9 @@ Usually the console application is used by developers whereas the Windows servic
 The preferable (and easiest) way to start a Service Grid is the [Grid Service Agent (GSA)](./service-grid.html#gsa). However, each of the components can be started manually.
 
 The following table summarized how to start each component:
-|| Component || Linux (XAP) || Windows (XAP) || Windows (XAP.NET) ||
+
+{: .table .table-bordered}
+| Component | Linux (XAP) | Windows (XAP) | Windows (XAP.NET) |
 | GSA | `gs-agent.sh` | `gs-agent.bat` | gs-agent.exe |
 | GSC | `gsc.sh` | `gsc.bat` | `gsc.exe` |
 | GSM | `gsm_nolus.sh` | `gsm_nolus.bat` | N\A |

@@ -9,9 +9,9 @@ page_id: 52527859
 
 {% summary %}Moving into Production Checklist{% endsummary %}
 
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-Date: December  2009
-Latest Date: Feb 2011
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+Date: December  2009<br/>
+Latest Date: Feb 2011<br/>
 
 The following list should provide you with the main activities to be done prior moving your system into production. Reviewing this list and executing the relevant recommendations should result in a stable environment with a low probability of unexpected behavior or failures that are result of a GigaSpaces environment misconfiguration.
 
@@ -57,7 +57,9 @@ With the above approach, you can leverage multiple network cards within the same
 # Ports
 GigaSpaces uses TCP/IP for most of its remote operations. The following components within GigaSpaces require open ports:
 
-|| Service || Description || Configuration Property|| Default value ||Comment||
+{: .table .table-bordered}
+| Service | Description | Configuration Property | Default value |Comment|
+|:--------|:------------|:-----------------------|:--------------|:------|
 |[Lookup Service listening port](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Lookup+Service) |Used as part of the lookup discovery protocol.|`com.sun.jini.reggie.initialUnicastDiscoveryPort` System property|XAP 6: **4162**{% wbr %}XAP 7: **4164**{% wbr %}XAP 8: **4166**| |
 |[LRMI listening port](http://wiki.gigaspaces.com/wiki/display/XAP91/Communication+Protocol)|Used with client-space and space-space communication. |`com.gs.transport_protocol.lrmi.bind-port` System property. |variable, random| |
 |RMI registry listening port |Used as an alternative directory service.| `com.gigaspaces.system.registryPort` System property|10098 and above.| |
@@ -296,53 +298,41 @@ gs deploy-space -cluster schema=partitioned total_members=2 spaceY
 You may have a set of LUS/GSM managing GSCs associated to a specific locaator. Let's assume you would like to "break" your network into 2 groups using different lookup locators. Here is how you should start the GigaSpaces runtime environment:
 
 1. Run gs-agent starting LUS/GSM with a lookup service listening on port 8888:
-
 {% highlight java %}
 export LUS_JAVA_OPTIONS=-Dcom.sun.jini.reggie.initialUnicastDiscoveryPort=8888
 export LOOKUPLOCATORS=127.0.0.1:8888
 export EXT_JAVA_OPTIONS=-Dcom.gs.multicast.enabled=false
 gs-agent.sh gsa.global.lus 0 gsa.lus 1 gsa.global.gsm 0 gsa.gsm 1 gsa.gsc 0
 {% endhighlight %}
-
 2. Run gs-agent that will start GSCs using the lookup listening on port 8888 (4 GGCs with this example):
-
 {% highlight java %}
 export LOOKUPLOCATORS=127.0.0.1:8888
 export EXT_JAVA_OPTIONS=-Dcom.gs.multicast.enabled=false
 gs-agent.sh gsa.global.lus 0 gsa.lus 0 gsa.global.gsm 0 gsa.gsm 0 gsa.gsc 4
 {% endhighlight %}
-
 3. Run gs-agent starting LUS/GSM with a lookup service listening on port 9999:
-
 {% highlight java %}
 export LUS_JAVA_OPTIONS=-Dcom.sun.jini.reggie.initialUnicastDiscoveryPort=9999
 export LOOKUPLOCATORS=127.0.0.1:8888
 export EXT_JAVA_OPTIONS=-Dcom.gs.multicast.enabled=false
 gs-agent.sh gsa.global.lus 0 gsa.lus 1 gsa.global.gsm 0 gsa.gsm 1 gsa.gsc 0
 {% endhighlight %}
-
 4. Run gs-agent that will start GSCs using the lookup listening on port 9999 (2 GGCs with this example):
-
 {% highlight java %}
 export LOOKUPLOCATORS=127.0.0.1:9999
 export EXT_JAVA_OPTIONS=-Dcom.gs.multicast.enabled=false
 gs-agent.sh gsa.global.lus 0 gsa.lus 0 gsa.global.gsm 0 gsa.gsm 0 gsa.gsc 2
 {% endhighlight %}
-
 5. Deploy a space using lookup listening on port 8888
-
 {% highlight java %}
 export LOOKUPLOCATORS=127.0.0.1:8888
 gs deploy-space -cluster schema=partitioned total_members=4 spaceX
 {% endhighlight %}
-
 6. Deploy a space using lookup listening on port 9999
-
 {% highlight java %}
 export LOOKUPLOCATORS=127.0.0.1:9999
 gs deploy-space -cluster schema=partitioned total_members=2 spaceY
 {% endhighlight %}
-
 {% tip %}
 On top of the Lookup service, there is also an alternative way to export the space proxy - it is done via the RMI registry (JNDI). It is started by default within any JVM running a GSC/GSM. By default, the port used is 10098 and above. This option should be used only in special cases where somehow there is no way to use the default lookup service. Since this is the usual RMI registry, it suffers from known problems, such as being non-distributed, non-highly-available, etc.
 {% endtip %}
@@ -378,20 +368,15 @@ gs deploy -zones webZone myWar.war
 You may have a set of LUS/GSM managing multiple zones (recommended) or have a separate LUS/GSM set per zone. In such a case (set of LUS/GSM managing multiple zones) you should run these in the following manner:
 
 1. Run gs-agent on the machines you want to have the LUS/GSM:
-
 {% highlight java %}
 gs-agent.sh gsa.global.lus 0 gsa.lus 1 gsa.global.gsm 0 gsa.gsm 1 gsa.gsc 0
 {% endhighlight %}
-
 2. Run gs-agent that will start GSCs with zoneX (4 GGCs with this example):
-
 {% highlight java %}
 export EXT_JAVA_OPTIONS=-Dcom.gs.zones=zoneX ${EXT_JAVA_OPTIONS}
 gs-agent.sh gsa.global.lus 0 gsa.lus 0 gsa.global.gsm 0 gsa.gsm 0 gsa.gsc 4
 {% endhighlight %}
-
 3. Run gs-agent that will start GSCs with zoneY (2 GGCs with this example):
-
 {% highlight java %}
 export EXT_JAVA_OPTIONS=-Dcom.gs.zones=zoneY ${EXT_JAVA_OPTIONS}
 gs-agent.sh gsa.global.lus 0 gsa.lus 0 gsa.global.gsm 0 gsa.gsm 0 gsa.gsc 2
@@ -633,7 +618,10 @@ See the [Controlling Serialization](http://wiki.gigaspaces.com/wiki/display/XAP9
 
 # Runtime Files Location
 GigaSpaces generates some files while the system is running. You should change the location of the generated files location using the following system properties. See below how:
-|| System Property || Description || Default ||
+
+{: .table .table-bordered}
+| System Property | Description | Default |
+|:----------------|:------------|:--------|
 |`com.gigaspaces.logger.RollingFileHandler.filename-pattern`|The location of log files and their file pattern.| `<gigaspaces-xap root>\logs`|
 |`com.gs.deploy`|The location of the deploy directory of the GSM. |`<gigaspaces-xap root>\deploy`|
 |`com.gs.work`|The location of the work directory of the GSM and GSC. Due to the fact that this directory is critical to the system proper function, it should be set to a local storage in order to avoid failure in case of network failure when a remote storage is used.|`<gigaspaces-xap root>\work`|
@@ -653,7 +641,9 @@ The general rule when selecting the HW to run GigaSpaces would be: The faster th
 
 Running production systems with 30G-50G heap size is doable with some JVM tuning when leveraging multi-core machines. The recommended HW is [Intel® Xeon® Processor 5600 Series](http://ark.intel.com/ProductCollection.aspx?series=47915). Here is an example for [recommended server configuration](http://www.cisco.com/en/US/products/ps10280/prod_models_comparison.html):
 
-||Model||Cisco UCS B200 M2 Blade Server||Cisco UCS B250 M2 Extended Memory Blade Server||
+{: .table .table-bordered}
+|Model|Cisco UCS B200 M2 Blade Server|Cisco UCS B250 M2 Extended Memory Blade Server|
+|:----|:----------------------------:|:--------------------------------------------:|
 |Processor Sockets|2|2|
 |Processors Supported|Intel Xeon processor 5600 Series|Intel Xeon processor 5600 Series|
 |Memory Capacity|12 DIMMs; up to 192 GB|48 DIMMs; up to 384 GB|

@@ -85,6 +85,7 @@ The supplied method parameters (e.g. in the code example above, the `ReportBefor
 
 - A no parameter method callback - e.g. `ReportBeforeWrite()`.
 - A single parameter: the parameter can either be an [ISpaceFilterEntry](./ispacefilterentry-interface.html), or the actual template object wrapped by the entry.
+
 {% infosign %} Note, if using actual types, this delegate filters out all the types that are not assignable to it - e.g. `ReportBeforeWrite(ISpaceFilterEntry entry)`, or `ReportBeforeWrite(SimpleMessage message)`.
 
 - Two parameters: the first one maps to the previous option, the second one is the `FilterOperation` - e.g. `ReportBeforeWrite(SimpleMessage message, FilterOperation operation)`.
@@ -94,6 +95,7 @@ Some filter operations have two entries, and therefore have a similiar, but diff
 
 - A no parameter method callback - e.g. `ReportAfterUpdate()`
 - A single parameter: the parameter can either be an [ISpaceFilterEntry](./ispacefilterentry-interface.html) or the actual template object wrapped by the entry.
+
 {% infosign %} Note, if using actual types, this delegate filters out all the types that are not assignable to it - e.g. `ReportAfterUpdate(ISpaceFilterEntry entry)`, or `ReportAfterUpdate(SimpleMessage message)`.
 
 - Two parameters: the first one maps to the previous option, the second is the same as the first one, since multiple entries always have two entries (mainly for update operations).

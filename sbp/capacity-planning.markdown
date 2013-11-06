@@ -6,9 +6,9 @@ page_id: 50759531
 ---
 
 {% tip %}
-**Summary:** {% excerpt %}Capacity Planning - voodoo or simple math?{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Contents:**
+**Summary:** {% excerpt %}Capacity Planning - voodoo or simple math?{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Contents:**<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
@@ -49,7 +49,9 @@ This test gives you a very good understanding of the object footprint within the
 
 See below an example of an object footprint using a 32 and 64 Bit JVM using different amount of indexes. The numbers below may vary based on the actual Object data and indexes values.
 
-||Indexes	||Footprint 32 Bit JVM - Windows||Footprint 64 Bit JVM - Linux||Footprint 64 Bit JVM - UseCompressedOops - Linux||
+{: .table .table-bordered}
+|Indexes	|Footprint 32 Bit JVM - Windows|Footprint 64 Bit JVM - Linux|Footprint 64 Bit JVM - UseCompressedOops - Linux|
+|:--|:----|:-----------------------------|:----------------------------------------------------------------------------|
 |0	|331	|306	|308|
 |1 - String	|456	|705	|493|
 |2 - String+Integer	|493	|989	|671|

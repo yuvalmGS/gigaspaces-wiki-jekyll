@@ -103,9 +103,13 @@ Person result2 = proxy.Read(new Person());
 {% endhighlight %}
 
 Assuming the space was empty and no one else is accessing the space at the same time:
+
 **Q)** What's in result1?
+
 **A)** The result could be either Alice or Bob - the space does not guarantee order.
+
 **Q)** What's in result2?
+
 **A)** The result could be either Alice or Bob - the space does not guarantee order, and since read operations do not affect the space, a previous read does not affect the next read.
 
 If you're interested in reading multiple entries at once, you can use the `ReadMultiple` operation. This operation is very similiar to the `Read` operation but it returns an array of entries instead of a single result. To limit the maximum number of results use the `maxItems` argument (default is `Int32.MaxValue`).

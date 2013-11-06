@@ -6,11 +6,11 @@ page_id: 52888463
 ---
 
 {% tip %}
-**Summary:** {% excerpt %}Mirror Service Monitoring Utility{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 7.1
-**Last Update:** April 2010
-**Contents:**
+**Summary:** {% excerpt %}Mirror Service Monitoring Utility{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 7.1<br/>
+**Last Update:** April 2010<br/>
+**Contents:**<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
@@ -61,7 +61,9 @@ In order to use the Mirror Monitor with your application you should:
 {% endhighlight %}
 
 Properties List:
-||Property||Description||Default Value||
+
+{: .table .table-bordered}
+|Property|Description|Default Value|
 |spaceName|Space Name to monitor|mySpace|
 |sessionFactory|Hibernate Session|sessionFactory|
 |ide|Should be true of Mirror running within the IDE. Should be used in Development mode.|false|
@@ -75,13 +77,13 @@ The example assumes that space is deployed before the mirror,if you require othe
 # Viewing the Mirror Statistics
 To view the Statistics gathered by the Mirror monitor:
 
-1. Start the JConsole via the Gigaspaces Mangament Console for the Mirror Service:
+1. Start the JConsole via the Gigaspaces Mangament Console for the Mirror Service: <br/>
 ![mirror_monitor2.jpg](/attachment_files/sbp/mirror_monitor2.jpg)
 
-2. Move into the MBeans Tab and select the com.gigaspaces.util.mirror.monitor:
+2. Move into the MBeans Tab and select the com.gigaspaces.util.mirror.monitor: <br/>
 ![mirror_monitor3.jpg](/attachment_files/sbp/mirror_monitor3.jpg)
 
-3.Select the Mirror Stats->Attributes:
+3. Select the Mirror Stats->Attributes: <br/>
 ![mirror_monitor.jpg](/attachment_files/sbp/mirror_monitor.jpg)
 
 Double clicking any of the values, will display a graph that will be refreshed automatically. Without having the graph displayed, you will have to click the Refresh button manually to see the most updated values for each statistic.

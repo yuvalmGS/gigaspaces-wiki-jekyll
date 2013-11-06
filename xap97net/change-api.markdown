@@ -96,7 +96,9 @@ In this case the key euro inside the dictionary behind the balance will be incre
 
 ## Available Change Set Operations
 
-||Operation Name||Description||Semantics||
+{: .table .table-bordered}
+|Operation Name|Description|Semantics|
+|:-------------|:----------|:--------|
 |**Set**|sets a property value|sets value of the given property|
 |**Unset**|unsets a property value|If the property is a fixed property, it will be set with null (null value for primitives), if it is a dynamic property it will be removed from the dynamic properties, note that for dynamic properties this is **not** equivalent to the set operation with `null` value|
 |**Increment**|increase a numeric property by the given delta|This change may operate on a numeric property only (byte,short,int,long,float,double or their corresponding Boxed variation), if the property does not exists, the delta will be set as its initial state|

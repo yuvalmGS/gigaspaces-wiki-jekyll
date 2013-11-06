@@ -8,9 +8,9 @@ page_id: 64323671
 {% compositionsetup %}
 
 {% tip %}
-{**}Summary:** {% excerpt %}WAN Master-Slave replication example{% endexcerpt %}
-**Author**: Ali Hodroj, Senior Solutions Architect, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 9.6
+**Summary:** {% excerpt %}WAN Master-Slave replication example{% endexcerpt %}<br/>
+**Author**: Ali Hodroj, Senior Solutions Architect, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 9.6<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
@@ -22,13 +22,17 @@ The WAN Gateway provides a simple way of creating a master-slave topology enabli
 ![WAN_masterslave.png](/attachment_files/sbp/WAN_masterslave.png)
 
 The demo is configured to start three space instances across three clusters. While the three clusters run on your local machine, they are demarcated by zones and different lookup service ports as follows:
-|| Gateway/Space || Zone || Lookup Service Port ||
+
+{: .table .table-bordered}
+| Gateway/Space | Zone | Lookup Service Port |
+|:--------------|:----:|:-------------------:|
 | wan-gateway-HK | HK | 4166 |
 | wan-space-HK | HK | 4166 |
 | wan-gateway-US | US | 4266 |
 | wan-space-US | US | 4266 |
 | wan-gateway-GB | GB | 4366 |
 | wan-space-GB | GB | 4366 |
+
 The internal architecture of the setup includes a clustered space and a Gateway, such that the master site (US) only configures delegators while the slave sites (GB, HK) only configure sinks (click the thumbnail to enlarge):
 ![WAN_masterslave_arch.png](/attachment_files/sbp/WAN_masterslave_arch.png)
 

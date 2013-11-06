@@ -53,25 +53,12 @@ A **_cluster schema_** defines the cluster schema type. GigaSpaces provides pred
 
 ## Data Grid Topologies Shown in this Tutorial
 
-|| Topology and Description || Common Use || Options ||
-| **Replicated** ([dg_a_topology2a.gif])
- Two or more space instances with replication between them. | Allowing two or more applications to work with their own dedicated data store, while working on the same data as the other applications. | * Replication can be synchronous (slower but guarantees consistency) or asynchronous (fast but less reliable, as it does not guarantee identical content).
-
-- Space instances can run within the application (embedded - allows faster read access) or as a separate process (remote - allows multiple applications to use the space, easier management).
-- **In this tutorial:** two remote spaces, synchronous replication. |
-| **Partitioned** ([dg_a_topology3.gif])
- Data and operations are split between two spaces (partitions) according to an index field defined in the data. An algorithm, defined in the Load-Balancing Policy, maps values of the index field to specific partitions. | Allows the In-Memory Data Grid to hold a large volume of data, even if it is larger than the memory of a single machine, by splitting the data into several partitions. | * Several routing algorithms to chose from.
-
-- With/without backup space for each partition.
-- **In this tutorial:** Two spaces, hash-based routing, with backup. |
-| **Master-Local** ([dg_a_topology4.gif])
- Each application has a lightweight, embedded cache, which is initially empty. The first time data is read, it is loaded from a master cache to the local cache (lazy load); the next time the same data is read, it is loaded quickly from the local cache. Later on data is either updated from the master or evicted from the cache.     | Boosting read performance for frequently used data. A useful rule of thumb is to use a local cache when over 80% of all operations are read operations. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.
-
-- **In this tutorial:** The master cache comprises two spaces in a partitioned topology. |
-| **Local-View** ([dg_a_topology5.gif])
- Similar to master-local, except that data is pushed to the local cache. The application defines a filter, using a spaces _read template_ or an SQL query, and data matching the filter is streamed to the cache from the master cache. | Achieving maximal read performance for a predetermined subset of data. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.
-
-- **In this tutorial:** The master cache comprises two spaces in a partitioned topology. |
+{: .table .table-bordered}
+| Topology and Description | Common Use | Options |
+| **Replicated** (![dg_a_topology2a.gif](/attachment_files/xap97net/dg_a_topology2a.gif))<br/>Two or more space instances with replication between them. | Allowing two or more applications to work with their own dedicated data store, while working on the same data as the other applications. | * Replication can be synchronous (slower but guarantees consistency) or asynchronous (fast but less reliable, as it does not guarantee identical content).<br/><br/>- Space instances can run within the application (embedded - allows faster read access) or as a separate process (remote - allows multiple applications to use the space, easier management).<br/>- **In this tutorial:** two remote spaces, synchronous replication. |
+| **Partitioned** (![dg_a_topology3.gif](/attachment_files/xap97net/dg_a_topology3.gif))<br/>Data and operations are split between two spaces (partitions) according to an index field defined in the data. An algorithm, defined in the Load-Balancing Policy, maps values of the index field to specific partitions. | Allows the In-Memory Data Grid to hold a large volume of data, even if it is larger than the memory of a single machine, by splitting the data into several partitions. | * Several routing algorithms to chose from.<br/><br/>- With/without backup space for each partition.<br/>- **In this tutorial:** Two spaces, hash-based routing, with backup. |
+| **Master-Local** (![dg_a_topology4.gif](/attachment_files/xap97net/dg_a_topology4.gif))<br/>Each application has a lightweight, embedded cache, which is initially empty. The first time data is read, it is loaded from a master cache to the local cache (lazy load); the next time the same data is read, it is loaded quickly from the local cache. Later on data is either updated from the master or evicted from the cache.     | Boosting read performance for frequently used data. A useful rule of thumb is to use a local cache when over 80% of all operations are read operations. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.<br/><br/>- **In this tutorial:** The master cache comprises two spaces in a partitioned topology. |
+| **Local-View** (![dg_a_topology5.gif](/attachment_files/xap97net/dg_a_topology5.gif))<br/>Similar to master-local, except that data is pushed to the local cache. The application defines a filter, using a spaces _read template_ or an SQL query, and data matching the filter is streamed to the cache from the master cache. | Achieving maximal read performance for a predetermined subset of data. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.<br/><br/>- **In this tutorial:** The master cache comprises two spaces in a partitioned topology. |
 
 The cluster schema supported are:
 
@@ -91,7 +78,7 @@ Now that you have a little background about the GigaSpaces Data Grid and the top
 
 To deploy the Data Grid instances, you will run a GigaSpaces Agent (a "GSA"), which starts a lookup service ("LUS"), a management service ("GSM"), and two generic container instances ("GSCs") by default. In real deployment environments, physical machines will normally run a subset of these services; for example, most physical participants in a cluster will run a single GSC through the agent but not a GSM or LUS.
 
-// ![net-gsagent-startmenu.gif](/attachment_files/xap97net/net-gsagent-startmenu.gif)
+![net-gsagent-startmenu.gif](/attachment_files/xap97net/net-gsagent-startmenu.gif)
 
 To start the GS-Agent, open the Windows start menu, and navigate to the GigaSpaces XAP .NET submenu. In it, you will find another set of submenus associated with .Net 2.0 and .Net 4.0. Within one of those, select the GigaSpaces Agent menu item and run it; this will open up a shell window and execute the GSA, which itself will start up a number of other services.
 
@@ -112,7 +99,7 @@ The following page showing the Data Grid attribute fields is displayed:
 1. In the **Data Grid Name** field, type the name `myDataGrid` as shown above. This name represents the Data Grid you are deploying in the Management Center. This name will be given to all spaces in the cluster. Remember this space name - you will use it when running the client application and connecting to the Data Grid.
 2. In the **Space Schema** field, leave the space schema as **default**. This field allows you to specify whether the space instances in the cluster should be persistent (data automatically persisted to a database) or not. You will not use persistency in this tutorial.
 3. In this page of the wizard you will define the Data Grid topology by filling the **Cluster Info** area, do one of the following:
-    - **If you want to deploy the Data Grid in a _replicated topology_**, From the **Cluster schema** drop-down menu, select the **sync_replicated* option. This option uses the `sync_replicated`, which has synchronous replication between all cluster members. This option refers to a single space or a cluster of spaces (in one of several common topologies) with no backup.
+    - **If you want to deploy the Data Grid in a _replicated topology_**, From the **Cluster schema** drop-down menu, select the **sync_replicated** option. This option uses the `sync_replicated`, which has synchronous replication between all cluster members. This option refers to a single space or a cluster of spaces (in one of several common topologies) with no backup.
         - Select the number of spaces (Data Grid instances) in your replicated cluster. Deploy a cluster with 2 spaces, by typing the number `2` into **Number of Instances** field.
 The following shows the settings for the replicated topology:
 
@@ -132,6 +119,7 @@ The table might include more than one Grid Service Manager. If so, look for the 
 4. Click **Deploy** to deploy the cluster. Deployment status is displayed (Here for the two replicated Data Grid instances):
 
  ![Deployment_Wizard_EDG_InProcess-myDataGrid-2-SyncRep.jpg](/attachment_files/xap97net/Deployment_Wizard_EDG_InProcess-myDataGrid-2-SyncRep.jpg)
+
  {% infosign %} In the master-local and local-view topologies, the master cache can in principle be clustered in any topology - partitioned, replicated, etc. (or can be a single space). The master-local/local-view aspect of the topology is specified on the client side: when the client connects to the cluster or space (the master cache), it specifies if it wants to start a local cache and how this cache should operate.
 
  ![Deployment_Wizard_EDG_Provisioned-myDataGrid-2-SyncRep.jpg](/attachment_files/xap97net/Deployment_Wizard_EDG_Provisioned-myDataGrid-2-SyncRep.jpg)
@@ -170,13 +158,11 @@ You can run one or more reader of either or both types.
 
 1. When you run the Data Loader, it:
     - Connects to the Data Grid and clears it from all data.
-
     - Creates a new `Account` object, with a certain `userName` and `accountID`. The Account also has a `Balance` field, which is obtained by calculating `AccountID*10`.
     - Writes 100 `Account` instances with IDs 1 through 100 to the Data Grid, using a write operation.
-
-1. When you run a Simple Reader, it reads all the `Account` instances in the Data Grid, then reads them again every few seconds, until you close it.
-2. When you run a Notified Reader, it registers for notification on the `Account` class, and starts listening for notifications. When `Account` objects are written to the Data Grid, the Notified Reader immediately receives notifications from the Data Grid. The notifications include the `Account` objects themselves.
-3. If you run more 'Simple Readers' or 'Notified Readers', they repeat step 2 or 3 above, respectively.
+2. When you run a Simple Reader, it reads all the `Account` instances in the Data Grid, then reads them again every few seconds, until you close it.
+3. When you run a Notified Reader, it registers for notification on the `Account` class, and starts listening for notifications. When `Account` objects are written to the Data Grid, the Notified Reader immediately receives notifications from the Data Grid. The notifications include the `Account` objects themselves.
+4. If you run more 'Simple Readers' or 'Notified Readers', they repeat step 2 or 3 above, respectively.
 
 ## How the Client Application Connects to the Data Grid
 

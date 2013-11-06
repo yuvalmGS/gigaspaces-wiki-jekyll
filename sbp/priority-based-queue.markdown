@@ -6,11 +6,11 @@ page_id: 48760404
 ---
 
 {% tip %}
-**Summary:** {% excerpt %}Implementing Priority based Queue{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 8.0
-**Last Update**: Feb 2011
-**Contents:**
+**Summary:** {% excerpt %}Implementing Priority based Queue{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 8.0<br/>
+**Last Update**: Feb 2011<br/>
+**Contents:**<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

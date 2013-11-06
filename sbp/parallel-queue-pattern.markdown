@@ -8,10 +8,10 @@ page_id: 52887871
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}The Parallel Queue Pattern - High speed data processing pattern for low-latency systems{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 8.0.0
-**Last Update:** Feb 2011
+**Summary:** {% excerpt %}The Parallel Queue Pattern - High speed data processing pattern for low-latency systems{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 8.0.0<br/>
+**Last Update:** Feb 2011<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

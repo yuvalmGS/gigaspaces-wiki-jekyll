@@ -90,7 +90,9 @@ Each configuration can be configured for all gateways or specifically per each g
 
 # Configurable Parameters
 
-||Property||Description||Default||
+{: .table .table-bordered}
+|Property|Description|Default|
+|:-------|:----------|:------|
 |BulkSize|Specifies the size of each replication bulk in terms of replication packets| 100 packets |
 |PendingOperationThreshold|Specifies the threshold of number of packets that are pending replication that once breached, a replication bulk will be transmitted | 100 packets |
 |IdleTimeThreshold|Specifies the maximum time to wait since the last time a replication bulk was transmitted, once elapsed, a replication bulk will be transmitted even if the `pending-operation-threshold` is not reached| 1000 miliseconds |

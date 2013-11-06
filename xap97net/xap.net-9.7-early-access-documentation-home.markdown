@@ -49,7 +49,7 @@ page_id: 63799415
 
 ##### &bull; [White Papers](http://www.gigaspaces.com/os_papers.html)
 
-##### &bull; Looking for **[XAP 9.7 Documentation Home](/xap97/index.html)** or **[**other versions**](http://wiki.gigaspaces.com/wiki/display/ALL/Choose+a+GigaSpaces+Version)**?
+##### &bull; Looking for **[XAP 9.7 Documentation Home](/xap97/index.html)** or **[other versions](http://wiki.gigaspaces.com/wiki/display/ALL/Choose+a+GigaSpaces+Version)**?
 
 {% endcolumn %}
 

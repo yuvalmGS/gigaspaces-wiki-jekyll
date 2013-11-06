@@ -28,7 +28,10 @@ foreach(IChangedEntryDetails<Account> changedEntryDetails in changeResult.Result
 {% endhighlight %}
 
 Here is the full list of change operations:
-||ChangeSet operation||ChangeOperation class||Comment||
+
+{: .table .table-bordered}
+|ChangeSet operation|ChangeOperation class|Comment|
+|:------------------|:--------------------|:------|
 |**ChangeSet.Set**|SetOperation| |
 |**ChangeSet.Unset**|UnsetOperation| |
 |**ChangeSet.Increment**|IncrementOperation| |

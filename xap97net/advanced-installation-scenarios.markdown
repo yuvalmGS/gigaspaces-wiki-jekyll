@@ -69,12 +69,9 @@ The final touch is to configure the location of XAP.NET. This can be achieved in
 HKLM\SOFTWARE\GigaSpaces\XAP.NET\9.5.0.5000\CLR v2.0.50727\SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml
 HKLM\SOFTWARE\GigaSpaces\XAP.NET\9.5.0.5000\CLR v4.0.30319\SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v4.0.30319\Config\Settings.xml
 {% infosign %} Starting 8.0.3 the HKCU is supported as well, and is searched before HKLM.
-
 2. **Environment variable:** Create an environment variable named `XapNet_<version>_SettingsPath` which points to the settings file path. For example, for that same 9.5 version we would use:
 XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml.
-
 3. **Application configuration file**: Use the XapNetSettingsFile element to configure the location of the settings file. For example:
-
 {% highlight xml %}
 <configuration>
     <configSections>
@@ -85,9 +82,7 @@ XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Co
     </GigaSpaces>
 </configuration>
 {% endhighlight %}
-
 4. **Code:** Use the following code to set the location of the settings file at runtime:
-
 {% highlight java %}
     GigaSpacesFactory.Configuration.XapNetSettingsFile.Path = @"C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml"
 {% endhighlight %}

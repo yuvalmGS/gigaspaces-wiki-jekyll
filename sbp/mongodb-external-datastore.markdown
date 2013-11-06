@@ -8,11 +8,11 @@ page_id: 56428168
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}NoSQL Extended DataStore Implementation{% endexcerpt %}
-**Author**: Joseph Ottinger, Uri Cohen, Shay Hassidim
-**Recently tested with GigaSpaces version**: XAP 8.0.3
-**Last Update:** September 2011
-**Contents:**
+**Summary:** {% excerpt %}NoSQL Extended DataStore Implementation{% endexcerpt %}<br/>
+**Author**: Joseph Ottinger, Uri Cohen, Shay Hassidim<br/>
+**Recently tested with GigaSpaces version**: XAP 8.0.3<br/>
+**Last Update:** September 2011<br/>
+**Contents:**<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

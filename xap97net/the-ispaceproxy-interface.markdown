@@ -65,30 +65,14 @@ Several `ISpaceProxy` instances can be defined within a single Processing Unit, 
 # Operations
 
 The [ISpaceProxy](http://www.gigaspaces.com/docs/JavaDocOS//docs/dotnetdocs9.5/) interface includes the following main operations:
-||[Id Based operations](./id-queries.html)||[Batch operations](#Batch Operations)||[Asynchronous operations](#Asynchronous Operations)||Data Count operations||
-|[ReadById](./id-queries.html#Reading an Object using its ID)
-TakeById
-[ReadByIds](./id-queries.html#Reading Multiple Objects using their IDs)
-TakeByIds
-ReadIfExistsById
-TakeIfExistsById|ReadMultiple
-TakeMultiple
-WriteMultiple
-ReadByIds
-TakeByIds|BeginExecute
-BeginTake
-EndExecute
-EndTake|Count
 
-||[Data Query operations](./sqlquery.html)||Data Insert and Update operations||[Business logic execution operations](./task-execution-over-the-space.html)||Data removal operations||
-|Read
-ReadMultiple
-[GetSpaceIterator](/xap97/paging-support-with-space-iterator.html)|Write
-WriteMultiple [change](./change-api.html) |Execute
-executorBuilder|Clean
-Clear
-Take
-TakeMultiple|
+{: .table .table-bordered}
+|[Id Based operations](./id-queries.html)|[Batch operations](#Batch Operations)|[Asynchronous operations](#Asynchronous Operations)|Data Count operations|
+|[ReadById](./id-queries.html#Reading an Object using its ID)<br/>TakeById<br/>[ReadByIds](./id-queries.html#Reading Multiple Objects using their IDs)<br/>TakeByIds<br/>ReadIfExistsById<br/>TakeIfExistsById|ReadMultiple<br/>TakeMultiple<br/>WriteMultiple<br/>ReadByIds<br/>TakeByIds|BeginExecute<br/>BeginTake<br/>EndExecute<br/>EndTake|Count|
+
+{: .table .table-bordered}
+|[Data Query operations](./sqlquery.html)|Data Insert and Update operations|[Business logic execution operations](./task-execution-over-the-space.html)|Data removal operations|
+|Read<br/>ReadMultiple<br/>[GetSpaceIterator](/xap97/paging-support-with-space-iterator.html)|Write<br/>WriteMultiple [change](./change-api.html) |Execute<br/>executorBuilder|Clean<br/>Clear<br/>Take<br/>TakeMultiple|
 
 {% include ispaceproxy-code-snippets.markdown %}
 
@@ -617,8 +601,9 @@ A default implementation of the exception translator is automatically used, whic
 ## Exception handling for Batch Operations
 
 Batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
-    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultiplePartialFailureException)
-    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultipleException)
-    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ReadMultipleException)
-    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/TakeMultipleException)
-    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ClearException)
+
+- [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultiplePartialFailureException)
+- [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultipleException)
+- [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ReadMultipleException)
+- [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/TakeMultipleException)
+- [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ClearException)

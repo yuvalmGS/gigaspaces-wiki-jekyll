@@ -5,8 +5,6 @@ categories: XAP97NET
 page_id: 63799331
 ---
 
-{wnavpanel2:}
-
 {% section %}
 
 {% align center %}

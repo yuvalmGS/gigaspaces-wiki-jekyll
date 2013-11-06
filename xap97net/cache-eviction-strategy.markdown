@@ -24,7 +24,9 @@ ILocalCache localCache = new GigaSpacesFactory.CreateIdBasedLocalCache(spaceProx
 
 ## Eviction strategies
 
-||Strategy Builder Name||Description||
+{: .table .table-bordered}
+|Strategy Builder Name|Description|
+|:--------------------|:----------|
 |`LruSegmentEvictionStrategyBuilder` | Least recently used, used by default. |
 |`FifoSegmentEvictionStrategyBuilder` | First in first out, more concurrent because it doesn't need to update anything when Entries are touched inside the cache. |
 |`LfuSegmentEvictionStrategyBuilder` | Least frequently used. |

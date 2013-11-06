@@ -8,11 +8,11 @@ page_id: 55938209
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}Integrating GigaSpaces with External JMS Server using JTA/XA{% endexcerpt %}
-**Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 8.0.1
-**Last Update**: April 2011
-**Contents:**
+**Summary:** {% excerpt %}Integrating GigaSpaces with External JMS Server using JTA/XA{% endexcerpt %}<br/>
+**Author**: Shravan (Sean) Kumar, Solutions Architect, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 8.0.1<br/>
+**Last Update**: April 2011<br/>
+**Contents:**<br/>
 
 {% toc minLevel=1|maxLevel=2|type=flat|separator=pipe %}
 
@@ -333,55 +333,42 @@ public class Message  {
 4. Open a command shell and navigate to <helloworld-jta> folder.
 5. Run `setDevEnv.bat` script in <helloworld-jta> folder, to set the environment variables.
 6. Copy the required jars to the <helloworld-jta>\lib folder using the `copy-libs` ant task provided.
-
 {% highlight java %}
  build copy-libs
 {% endhighlight %}
-
 {% note %}
  Example was tested using following product versions,
-
 1. GigaSpaces - **8.0.1**
 2. Apache ActiveMQ - **5.5**
 3. Atomikos TransactionEssentials - **3.7.0**
 If you are using different versions please make sure all the equivalent jars are reflected in `copy-libs` ant task
 {% endnote %}
-
 7. Start a gs-ui instance using `gs-ui.bat` script in <helloworld-jta> folder.
 8. Run `gs-agent.bat`  <helloworld-jta> folder, to start the GigaSpaces components (GSA,GSM, LUS, GSM).
 9. Start the ActiveMQ process using <ActiveMQHome>`\bin\activemq.bat` script.
-
 {% note %}
 If ActiveMQ is running on another server, please remember to update the brokerURL in `pu.xml`
 {% endnote %}
-
 10. Deploy the processorSpace cluster by running `deploy-processor` ant task.
-
 {% highlight java %}
 build deploy-processor
 {% endhighlight %}
-
 13. Run the feeder process using `run-feeder` ant task.
-
 {% highlight java %}
  build run-feeder
 {% endhighlight %}
-
 14. If you check GigaSpaces logs, you will notice that the Message-0 (id=0) is Rolled back and all other messages are processed successfully and sent to JMS server.
-
 {% note %}
  Message-0 (id=0) will keep going back to Polling container logic because the space update and JMS message both are rolled back. This is intentionally done, to demonstrate XA.
 {% endnote %}
-
 15. You can validate the JMS messages received by the Queue using a test JMS client included. You can run the client using `jms-client` ant task.
-
 {% highlight java %}
  build jms-client
 {% endhighlight %}
 
 ## References
 
-- JTA/XA support information, http://www.gigaspaces.com/wiki/display/XAP71/Transaction+Management#TransactionManagement-XA%2FJTASupport.
+- JTA/XA support information, [http://www.gigaspaces.com/wiki/display/XAP71/Transaction+Management#TransactionManagement-XA%2FJTASupport](http://www.gigaspaces.com/wiki/display/XAP71/Transaction+Management#TransactionManagement-XA%2FJTASupport).
 - XA transactions using Spring, http://www.javaworld.com/javaworld/jw-04-2007/jw-04-xa.html.
 - Distributed transactions in Spring, with and without XA, http://www.javaworld.com/javaworld/jw-01-2009/jw-01-spring-transactions.html.
 - Atomikos TransactionEssentials Spring Integration information, http://www.atomikos.com/Documentation/SpringIntegration.

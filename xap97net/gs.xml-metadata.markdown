@@ -28,7 +28,7 @@ The files can be named as follows:
 
 Schema definitions for the .NET GS.XML can be found in two locations
 1)	Web: http://www.gigaspaces.com/dtd/6_5/gigaspaces-metadata-net.dtd
-2)	Local: under <install Dir>\ Bin\gigaspaces-metadata-net.dtd
+2)	Local: under \<install Dir\>\ Bin\gigaspaces-metadata-net.dtd
 
 # GS.XML Example
 
@@ -43,7 +43,7 @@ See blow an example of `Car` class's space metadata definitions in GS.XML
     <routing name="CarType"/>
     <property name="CarId" null-value="-1" />
     <property name="Make" index="basic" />
-    <property name="ManufacturingDate" null-value="1900-01-01T12:00:00" index="basic/>
+    <property name="ManufacturingDate" null-value="1900-01-01T12:00:00" index="basic" />
     <exclude name="MaintenanceBook" />
     <version name="VersionProperty" />
   </class>
@@ -55,7 +55,9 @@ See blow an example of `Car` class's space metadata definitions in GS.XML
 ### Class Level Elements
 
 - `**<class>**` -- a `class` element encapsulates metadata information of a concrete class. The below table shows the available attributes for the Class element.
-|| Attribute || Description ||
+
+{: .table .table-bordered}
+| Attribute | Description |
 | `name` | (Required) Contains the full qualified name of the specified class. There can only be one `class` element defined per class. |
 | `persist` | This property indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this property persists objects of this type. {% refer %}For more details, refer to the [.NET Persistency](./persistency.html) section. {% endrefer %} |
 | `fifo` | Indicates whether the POJO should be saved in FIFO order in the space. To enable FIFO-based notifications and take operations, this annotation should be `true`. {% refer %}For more details, refer to the [FIFO operations](./fifo-support.html) section.{% endrefer %} |
@@ -68,7 +70,9 @@ For more details, see: [Object Metadata](./object-metadata.html#Including/Exclud
 ### Field Level Elements
 
 - `**<property>**` - contains metadata information for a class's field.
-|| Attribute || Description ||
+
+{: .table .table-bordered}
+| Attribute | Description |
 | `name` | (Required) Maps to the relevant class's field name. |
 | `index` | Indicates if the field is indexed in the space. |
 | `null-value` | Represents a `null` value for the current field. Applicable mainly for primitive type fields that does not have explicit null vallue. |
@@ -84,18 +88,26 @@ For more details, see: [Object Metadata](./object-metadata.html#Including/Exclud
 {% endhighlight %}
 
 - `**<id>**` - Defines whether this field can used as the objects unique identifier. The value is used when generating the object UID in the space.
-|| Attribute || Description ||
+
+{: .table .table-bordered}
+| Attribute | Description |
 | `name` | (Required) Maps to the relevant class's field name. |
 | `auto-generate` | Specifies if the object UID is generated automatically by the space when written into the space. If `false`, the UID will be generated using the field value, and if `true`, the field should be left null and the auto generated UID will be stored in it once written to the space. |
 
 - `**<version>**` - Uses for optimistic concurrency, as the field that contains the objects version in the space. This must be an `int` data type field.
-|| Attribute || Description ||
+
+{: .table .table-bordered}
+| Attribute | Description |
 | `name` | (Required) Maps to the relevant class's field name. |
 
 - `**<routing>**` - Defines the field the will be used by the load balancing mechanism to calculate the routing track.
-|| Attribute || Description ||
+
+{: .table .table-bordered}
+| Attribute | Description |
 | `name` | (Required) Maps to the relevant class's field name. |
 
 - `**<exclude>**` - A filed marked as Exclude will not be stored into the space.
-|| Attribute || Description ||
+
+{: .table .table-bordered}
+| Attribute | Description |
 | `name` | (Required) Maps to the relevant class's field name. |

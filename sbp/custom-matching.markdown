@@ -8,10 +8,10 @@ page_id: 52528551
 {% compositionsetup %}
 
 {% tip %}
-**Summary:** {% excerpt %}Custom Matching Implementation{% endexcerpt %}
-**Author**: Shay Hassidim, Deputy CTO, GigaSpaces
-**Recently tested with GigaSpaces version**: XAP 7.0
-**Last Update:** January 2010
+**Summary:** {% excerpt %}Custom Matching Implementation{% endexcerpt %}<br/>
+**Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
+**Recently tested with GigaSpaces version**: XAP 7.0<br/>
+**Last Update:** January 2010<br/>
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
