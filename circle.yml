@@ -1,0 +1,25 @@
+## Customize the test machine
+machine:
+  # Version of ruby to use
+  ruby:
+    version:
+      1.9.3
+
+checkout:
+  post:
+    - rm -rf ./_site
+
+## Customize dependencies
+dependencies:
+  override:
+    - bundle install: 
+        timeout: 300 # fail if command has no output for 5 minutes
+    - bundle exec jekyll build:
+        timeout: 300 # fail if command has no output for 5 minutes
+
+## Customize deployment commands
+deployment:
+  production:
+    branch: master
+    commands:
+      - bundle exec s3_website push --headless
