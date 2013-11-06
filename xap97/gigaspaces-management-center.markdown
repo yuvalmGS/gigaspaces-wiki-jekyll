@@ -14,4 +14,4 @@ page_id: 618673591
 
 {% include /COM/about-gigaspaces-management-center.markdown %}
 
-{% include ./using-space-browser-tab---gigaspaces-management-center.markdown %}
+{% include xap97/using-space-browser-tab---gigaspaces-management-center.markdown %}

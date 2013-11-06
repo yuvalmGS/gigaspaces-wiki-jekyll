@@ -373,7 +373,7 @@ The [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/Gi
 |:--|:--|:--|:--|
 |read{% wbr %}readMultiple{% wbr %}[iterator](./paging-support-with-space-iterator.html)|write{% wbr %}writeMultiple{% wbr %}   [change](./change-api.html) |execute{% wbr %}executorBuilder|clean{% wbr %}clear{% wbr %}take{% wbr %}takeMultiple|
 
-{% include ./pojo-code-snippets.markdown %}
+{% include xap97/pojo-code-snippets.markdown %}
 
 {% tip %}
 The `clear` and `clean` operations does not remove the space class definition from the space. You should restart the space to allow it to drop the class definitions.

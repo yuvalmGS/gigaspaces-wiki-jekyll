@@ -10,7 +10,7 @@ The **Spaces** node includes:
 - Space container nodes (![container.gif](/attachment_files/container.gif)) that hold spaces (![spaceTreeIcon.gif](/attachment_files/spaceTreeIcon.gif)). Container nodes allow you to manage space containers -- shutting down the container, creating a space under it, and more.
 - Space nodes (![spaceTreeIcon.gif](/attachment_files/spaceTreeIcon.gif)) allow you to manage spaces -- starting or stopping, destroying, cleaning the space, and more. Each space node includes different views under it, that allow you to manage it further.
 
-{% togglecloak id=1 %}See screenshot... 
+{% togglecloak id=1 %}See screenshot...{% endtogglecloak %} 
 
 {% gcloak 1 %}
 {% panel bgColor=white|borderStyle=none %}

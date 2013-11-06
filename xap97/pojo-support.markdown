@@ -151,6 +151,6 @@ Non-Indexed fields that are not used for queries should be placed within a user 
 [Indexing](./indexing.html) is **critical** for good performance over large spaces. Don't forget to index properly with the @SpaceIndex(type=SpaceIndexType.BASIC) or @SpaceIndex(type=SpaceIndexType.EXTENDED) annotation or use the gs.xml equivalent.
 {% endtip %}
 
-{% include ./pojo-code-snippets.markdown %}
+{% include xap97/pojo-code-snippets.markdown %}
 {% whr %}
 {% refer %}**Next subchapter:** [POJO Metadata](./pojo-metadata.html) - This section deals with the annotations and gs.xml mapping file, troubleshooting procedures, considerations, UID generation and usage, as well as frequently used code snippets.{% endrefer %}

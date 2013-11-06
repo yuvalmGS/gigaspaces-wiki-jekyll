@@ -74,7 +74,7 @@ The [ISpaceProxy](http://www.gigaspaces.com/docs/JavaDocOS//docs/dotnetdocs9.5/)
 |[Data Query operations](./sqlquery.html)|Data Insert and Update operations|[Business logic execution operations](./task-execution-over-the-space.html)|Data removal operations|
 |Read<br/>ReadMultiple<br/>[GetSpaceIterator](/xap97/paging-support-with-space-iterator.html)|Write<br/>WriteMultiple [change](./change-api.html) |Execute<br/>executorBuilder|Clean<br/>Clear<br/>Take<br/>TakeMultiple|
 
-{% include ispaceproxy-code-snippets.markdown %}
+{ include ispaceproxy-code-snippets.markdown }
 
 {% tip %}
 The `Clear` and `Clean` operations do not remove the Space class definition from the Space. You should restart the Space to allow it to drop the class definitions.

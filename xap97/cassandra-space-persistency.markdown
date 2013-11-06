@@ -30,8 +30,8 @@ For further details about the persistency APIs used see [Space Persistency](./sp
 
 # Cassandra Space Data Source
 
-{% include ./cassandra-space-data-source.markdown %}
+{% include xap97/cassandra-space-data-source.markdown %}
 
 # Cassandra Space Synchronization Endpoint
 
-{% include ./cassandra-space-synchronization-endpoint.markdown %}
+{% include xap97/cassandra-space-synchronization-endpoint.markdown %}

@@ -62,7 +62,7 @@ See below tested JVMs:
 
 # .NET Interface
 
-{% include /xap96net/installation.markdown %}
+{% include /xap97net/installation.markdown %}
 
 # C++ Interface
 

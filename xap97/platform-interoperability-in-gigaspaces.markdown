@@ -36,10 +36,10 @@ There are pros and cons for each alternative. Here are some points to help you d
 
 {% inittab interop %}
 {% tabcontent Writing Interoperable Classes %}
-{% include .net/net---java-interoperability.markdown %}
+{ include /xap97net/net---java-interoperability.markdown }
 {% endtabcontent %}
 {% tabcontent Code Generator %}
-{% include ./cpp-api-code-generator.markdown %}
+{% include xap97/cpp-api-code-generator.markdown %}
 {% endtabcontent %}
 {% endinittab %}
 
