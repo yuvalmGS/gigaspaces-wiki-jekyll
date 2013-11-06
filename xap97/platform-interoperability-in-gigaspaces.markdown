@@ -36,10 +36,14 @@ There are pros and cons for each alternative. Here are some points to help you d
 
 {% inittab interop %}
 {% tabcontent Writing Interoperable Classes %}
-{ include /xap97net/net---java-interoperability.markdown }
+Please refer to the [interoperability section in our XAP.NET documentation](/xap97net/dotnet-java-interoperability.html).
+
+
 {% endtabcontent %}
 {% tabcontent Code Generator %}
-{% include xap97/cpp-api-code-generator.markdown %}
+Please refer to the [C++ Code Generation Guidelines](/xap97/cpp-api-code-generator.html).
+
+
 {% endtabcontent %}
 {% endinittab %}
 
