@@ -12,10 +12,16 @@ checkout:
 ## Customize dependencies
 dependencies:
   override:
-    - bundle install: 
+    - gem install jekyll: 
         timeout: 300 # fail if command has no output for 5 minutes
-    - bundle exec jekyll build:
+    - gem install s3_website:
         timeout: 300 # fail if command has no output for 5 minutes
+    - jekyll build:
+        timeout: 300 # fail if command has no output for 5 minutes
+
+test:
+  override:
+    - echo "No tests are needed, this is a static website :)"
 
 ## Customize deployment commands
 deployment:
