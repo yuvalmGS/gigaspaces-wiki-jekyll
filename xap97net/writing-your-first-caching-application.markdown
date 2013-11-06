@@ -119,6 +119,7 @@ The table might include more than one Grid Service Manager. If so, look for the 
 4. Click **Deploy** to deploy the cluster. Deployment status is displayed (Here for the two replicated Data Grid instances):
 
  ![Deployment_Wizard_EDG_InProcess-myDataGrid-2-SyncRep.jpg](/attachment_files/xap97net/Deployment_Wizard_EDG_InProcess-myDataGrid-2-SyncRep.jpg)
+
  {% infosign %} In the master-local and local-view topologies, the master cache can in principle be clustered in any topology - partitioned, replicated, etc. (or can be a single space). The master-local/local-view aspect of the topology is specified on the client side: when the client connects to the cluster or space (the master cache), it specifies if it wants to start a local cache and how this cache should operate.
 
  ![Deployment_Wizard_EDG_Provisioned-myDataGrid-2-SyncRep.jpg](/attachment_files/xap97net/Deployment_Wizard_EDG_Provisioned-myDataGrid-2-SyncRep.jpg)
