@@ -86,7 +86,7 @@ $(document).ready(function () {
         else {
             // No results were found for this search.
             resultsDiv.empty();
-            $('<p>', {html:"<h3 class=\"searchNoResult\">Oops, we couldn't find what you were looking for. Try rephrasing your search</h3>"}).hide().appendTo(resultsDiv).fadeIn();        
+            $('<p>', {html:"<div style=\"height:500px\"><h3 class=\"searchNoResult\">Oops, we couldn't find what you were looking for. Try rephrasing your search</h3></div>"}).hide().appendTo(resultsDiv).fadeIn();        
         }
     }
 
