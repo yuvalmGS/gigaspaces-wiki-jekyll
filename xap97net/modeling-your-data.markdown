@@ -36,6 +36,7 @@ If an entity is associated with several containers (parent entities), it can't b
 
 In the [Pet Clinic application](http://www.openspaces.org/display/DAE/GigaSpaces+PetClinic), a Pet is only associated with an Owner. We can therefore store each Pet with its owner on the same partition. We can even embed the Pet object within the physical Owner entry.
 ![petclinic_class_model.gif](/attachment_files/xap97net/petclinic_class_model.gif)
+
 However, if a Pet were also associated with a Vet, we could not embed the Pet in the Vet physical entry (without duplicating each Pet entry) and could not store the Pet and the pet's Vet in the same partition.
 
 # What are Embedded and Non Embedded Relationships?

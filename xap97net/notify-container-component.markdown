@@ -12,8 +12,11 @@ page_id: 63799370
 # Overview
 
 The notify event container implements the [IEventListenerContainer](./event-listener-container.html) interface, and uses the space inheritance support for notifications, using a GigaSpaces data event session API. If a notification occurs, the [DataEventArrived](./event-listener-container.html#DataEventArrived) event is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
+
 ![Net_notify_cont.jpg](/attachment_files/xap97net/Net_notify_cont.jpg)
+
 The examples in this page follow a certain pattern -- each code example has two tabs: Using EventListenerContainerFactory and NotifyEventListenerContainer Code Construction.
+
 The first tab demonstrates how to create and configure a notify container using the `EventListenerContainerFactory`, and the second tab demonstrates how to build and configure a `NotifyEventListenerContainer` with a constructor and setting the different properties.
 
 Here is a simple example of polling event container construction:

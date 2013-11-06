@@ -14,8 +14,7 @@ page_id: 63799325
 {: .table .table-bordered}
 | C# | Java |
 |:---|:-----|
-|`using GigaSpaces.Core.Metadata;`<br/><br/>`namespace MyCompany.MyProject.Entities`<br/>`{`<br/>`    [SpaceClass(AliasName="com.mycompany.myproject.entities.Person")]`<br/>`    public class Person`<br/>`    {`<br/>`        private string _name;`<br/>`        [SpaceProperty(AliasName="name")]`<br/>`        public string Name`<br/>`        {`<br/>`            get { return this._name; }`<br/>`            set { this._name = value; }`<br/>`        }`<br/>`    }`<br/>`}`
-|`package com.mycompany.myproject.entities;`<br/><br/>`public class Person`<br/>`{`<br/>`    private String name;`<br/>`    public String getName()`<br/>`    {`<br/>`        return this.name;`<br/>`    }`<br/>`    public void setName(String name)`<br/>`    {`<br/>`        this.name = name;`<br/>`    }`<br/>`}`|
+|`using GigaSpaces.Core.Metadata;`<br/><br/>`namespace MyCompany.MyProject.Entities`<br/>`{`<br/>`    [SpaceClass(AliasName="com.mycompany.myproject.entities.Person")]`<br/>`    public class Person`<br/>`    {`<br/>`        private string _name;`<br/>`        [SpaceProperty(AliasName="name")]`<br/>`        public string Name`<br/>`        {`<br/>`            get { return this._name; }`<br/>`            set { this._name = value; }`<br/>`        }`<br/>`    }`<br/>`}`|`package com.mycompany.myproject.entities;`<br/><br/>`public class Person`<br/>`{`<br/>`    private String name;`<br/>`    public String getName()`<br/>`    {`<br/>`        return this.name;`<br/>`    }`<br/>`    public void setName(String name)`<br/>`    {`<br/>`        this.name = name;`<br/>`    }`<br/>`}`|
 
 ### Guidelines and Restrictions
 

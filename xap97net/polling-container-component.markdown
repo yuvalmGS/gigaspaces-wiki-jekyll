@@ -12,8 +12,11 @@ page_id: 63799324
 # Overview
 
 The polling event container implements the [IEventListenerContainer](./event-listener-container.html) interface. Its life-cycle consists of performing polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the [DataEventArrived](./event-listener-container.html#DataEventArrived) event is invoked. A polling event operation is mainly used when simulating Queue semantics, or when using the master-worker design pattern.
+
 ![Net_polling_cont.jpg](/attachment_files/xap97net/Net_polling_cont.jpg)
+
 The examples in this page follow a certain pattern. Each code example has two tabs: Using EventListenerContainerFactory, and PollingEventListenerContainer Code Construction.
+
 The first tab demonstrates how to create and configure a polling container using the `EventListenerContainerFactory`, and the second tab demonstrates how to build and configure a `PollingEventListenerContainer` with a constructor and setting the different properties.
 
 Here is a simple example of polling event container construction:
@@ -106,6 +109,7 @@ The FIFO Grouping designed to allow efficient processing of events with partial 
 # Concurrent Consumers
 
 By default, the polling event container starts a single thread that performs the receive operations and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads, the container will manage the scaling up and down of concurrent consumers automatically according to the load, however, there are a few parameters regarding this scaling logic which are described in [Auto Polling Consumer Scaling](./auto-polling-consumer-scaling.html). This provides faster processing of events. However, any FIFO behavior that might be configured in the space and/or template is lost.
+
 {% exclamation %} When using a FIFO Grouping, the FIFO order of each value is not broken. See [FIFO Grouping](./fifo-grouping.html) page for more details.
 
 Here is an example of a polling container with 3 concurrent consumers and a maximum of 5 concurrent consumers:

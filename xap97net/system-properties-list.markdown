@@ -14,8 +14,7 @@ page_id: 63799375
 | `com.gs.active_election.timeout` | Defines the sleep timeout between iterations in the Active election algorithm | 1000 msec |
 | `com.gs.replication.disable-duplicate-filtering` | Disables the duplication filtering mechanism used to avoid double processing of packets after recovery. | false |
 | `com.gs.cluster.cache-loader.external-data-source` | Boolean property. Must be set to `true` when working with external data source | `true (since 8.0)` |
-| `com.gs.cluster.cache-loader.central-data-source` | Boolean property. Must be set to `true` when the cluster uses external data source and
-a central database to keep its data | `true (since 8.0)` |
+| `com.gs.cluster.cache-loader.central-data-source` | Boolean property. Must be set to `true` when the cluster uses external data source and a central database to keep its data | `true (since 8.0)` |
 | `com.gs.transport_protocol.lrmi.classloading` | Enables lrmi dynamic class loading. | true |
 | `com.gs.transport_protocol.lrmi.classloading.import` | Enables importing of classes using lrmi dynamic class loading. | true |
 | `com.gs.transport_protocol.lrmi.classloading.export` | Enables exporting of classes using lrmi dynamic class loading. | true |
@@ -27,8 +26,7 @@ a central database to keep its data | `true (since 8.0)` |
 | `com.gs.transport_protocol.lrmi.request_timeout` | Watchdog parameter - Occurs when the client sends a request to the space and doesn't get a reply for the defined timeout. By default time unit is seconds. Defaults to 30s.<br/>{% exclamation %}Overrides `services.config` file settings. | 30 |
 | `com.gs.transport_protocol.lrmi.listening_timeout` | Watchdog parameter.<br/>{% exclamation %}Overrides `services.config` file settings. Defaults to 5m | 300 |
 | `com.gs.transport_protocol.lrmi.idle_connection_timeout` | Watchdog parameter.<br/>{% exclamation %}Overrides `services.config` file settings. Defaults to 15m. | 900 |
-| `com.gs.transport_protocol.lrmi.threadpool.idle_timeout` | LRMI thread pool idle timeout. Default is 5 min.<br/>{% exclamation %}
-Overrides `services.config` file settings. Defaults to 15m. | 300000 |
+| `com.gs.transport_protocol.lrmi.threadpool.idle_timeout` | LRMI thread pool idle timeout. Default is 5 min.<br/>{% exclamation %} Overrides `services.config` file settings. Defaults to 15m. | 300000 |
 | `com.gs.transport_protocol.lrmi.bind-port` | Server port used for incoming client requests, or notifications from server to client. The server port is set by default to 0, which means next free port. This means that whenever GigaSpaces is launched, it allocates one of the available ports. Define a specific port value to enforce a specific port on the space server or client side. Alternatively, you can define a range of ports.<br/>{% exclamation %}Overrides `services.config` file settings. | 0 |
 | `com.gs.transport_protocol.lrmi.min-threads` | The system maintains thread pool in Client and Server that manage incoming remote requests. The thread pool size is increased each time with one additional thread and shrinks when existing threads are not used for 5 minutes. This parameter specifies the minimum size of this thread pool.<br/>{% exclamation %}Overrides `services.config` file settings. | 1 |
 | `com.gs.transport_protocol.lrmi.max-threads` | The system maintains thread pool in Client and Server that manage incoming remote requests. This parameter specifies the maximum size of this thread pool. You should make sure the pool max size will accommodate the maximum number of concurrent requests to the serverEndPoint. When the pool is exhausted and all threads are consumed to process incoming requests, additional requests will be blocked until existing requested processing will be completed.<br/>{% exclamation %}Overrides `services.config` file settings. | 128 |
@@ -94,13 +92,10 @@ Since 5.0 not required, if not set explicitly, it is resolved as the parent dire
 | `com.gs.cluster.livenessMonitorFrequency` | Defines the frequency in which liveness of 'live' members in a cluster is monitored. See [Viewing Clustered Space Status](http://wiki.gigaspaces.com/wiki/display/XAP95/Viewing+Clustered+Space+Status) for more details. | Default 10000 ms&nbsp; |
 | `com.gs.cluster.livenessDetectorFrequency` | Defines the frequency in which liveness of members in a cluster is detected. See [Viewing Clustered Space Status](http://wiki.gigaspaces.com/wiki/display/XAP95/Viewing+Clustered+Space+Status) | Default 5000 ms |
 | `com.gs.number_implicit_indexs` | Used by default space schema. | the default number of implicit indexes: for `MemorySpace = 2`, `PersistentSpace = 1` |
-| `com.gs.callGC` | Boolean value.
-Call garbage collection when performing eviction. This used when running in LRU cache policy and also at client side when using local cache. | `false` |
+| `com.gs.callGC` | Boolean value.<br/>Call garbage collection when performing eviction. This used when running in LRU cache policy and also at client side when using local cache. | `false` |
 | `com.gs.replication.disable_multicast_adaptor` | Boolean value.
 Force disabling replication multicast adaptor. | `false` {% anchor xa %} |
-| `com.gs.xa.failOnInvalidRollback` | Boolean value.
-When set to `false`, the `XAResource` does not throw an error when attempting to roll back a non-existing transaction or a transaction the has already been rolled back. For more details, see
-[Javadoc](http://docs.oracle.com/javase/1.5.0/docs/api/javax/transaction/xa/XAResource.html) | `true` {% anchor maxbuffer %} |  |
+| `com.gs.xa.failOnInvalidRollback` | Boolean value.<br/>When set to `false`, the `XAResource` does not throw an error when attempting to roll back a non-existing transaction or a transaction the has already been rolled back. For more details, see<br/>[Javadoc](http://docs.oracle.com/javase/1.5.0/docs/api/javax/transaction/xa/XAResource.html) | `true` {% anchor maxbuffer %} |  |
 | com.gs.grid.secured | Security property indicating whether the GSM and GSC should be loaded in a secured mode. (see services.config for more info). | false (non-secured) |
 | `com.gs.deploy` | The location of the deploy directory of the GSM. | `GSHOME/deploy` |
 | `com.gs.work` | The location of the work directory of the GSM and GSC. | `GSHOME/work` |
