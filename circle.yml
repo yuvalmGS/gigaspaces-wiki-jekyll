@@ -12,11 +12,9 @@ checkout:
 ## Customize dependencies
 dependencies:
   override:
-    - gem install jekyll: 
+    - bundle install: 
         timeout: 300 # fail if command has no output for 5 minutes
-    - gem install s3_website:
-        timeout: 300 # fail if command has no output for 5 minutes
-    - jekyll build:
+    - bundle exec jekyll build:
         timeout: 300 # fail if command has no output for 5 minutes
 
 test:
