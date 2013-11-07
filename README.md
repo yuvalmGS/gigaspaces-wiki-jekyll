@@ -71,22 +71,38 @@ The following table contains a list of available plugins and simple example for 
 
 |Plugin Name|Description|Example Usage|Parameters|
 |:----------|:----------|:------------|:---------|
-|Align||||
-|Anchor||||
-|Background Color||||
-|Children||||
-|Cloack||||
-|Color||||
-|Comment||||
-|Exclamation||||
-|Fontsize||||
-|Indent||||
-|xxx||||
-|xxx||||
-|xxx||||
-|xxx||||
-|xxx||||
-
-
-
-|Column||||
+|align||||
+|anchor||||
+|background Color||||
+|children||||
+|cloack||||
+|color||||
+|comment||||
+|exclamation||||
+|fontsize||||
+|indent||||
+|info||||
+|infosign||||
+|lampoff||||
+|lampon||||
+|learn||||
+|lozenge||||
+|minus||||
+|next||||
+|note||||
+|oksign||||
+|panel||||
+|plus||||
+|question||||
+|quote||||
+|redirect||||
+|refer||||
+|remove||||
+|section||||
+|star||||
+|summary||||
+|tabs||||
+|tip||||
+|warning||||
+|wbr||||
+|whr||||
