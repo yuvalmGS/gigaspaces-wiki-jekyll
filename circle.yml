@@ -13,9 +13,9 @@ checkout:
 dependencies:
   override:
     - bundle install: 
-        timeout: 300 # fail if command has no output for 5 minutes
+        timeout: 600 # fail if command has no output for 10 minutes
     - bundle exec jekyll build:
-        timeout: 300 # fail if command has no output for 5 minutes
+        timeout: 600 # fail if command has no output for 10 minutes
 
 test:
   override:
