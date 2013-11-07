@@ -36,7 +36,7 @@ Configuration file: /Users/uri1803/dev/gigaspaces-wiki-jekyll/_config.yml
 * Point your browser to [http://localhost:4000](). You should see the documentation portal home page. 
 
 ## Continuous Deployment 
-This website is hosted on AWS S3. Every push to this reposiroty triggers a build process (currently we use the excellent [Circle CI](http://circleci.com) conitnuous integration service), at the end which the generated website is pushed to S3 using the [s3_website](https://github.com/laurilehmijoki/s3_website) library. The CircleCI configuration is located at in the file [circle.yml]. 
+This website is hosted on AWS S3. Every push to this reposiroty triggers a build process (currently we use the excellent [Circle CI](http://circleci.com) conitnuous integration service), at the end which the generated website is pushed to S3 using the [s3_website](https://github.com/laurilehmijoki/s3_website) library. The Circle CI configuration is located at in the file [`circle.yml`](circle.yml). 
 
 ## Authoring Guidelines 
 * We use [Markdown](http://daringfireball.net/projects/markdown) as markup language for all the documentation pages. Please refer to [the markdown syntax guide](http://daringfireball.net/projects/markdown/syntax) for more details. That also means that all files should have the `.markdown` extension. 
@@ -67,9 +67,26 @@ You don't need to refer to other elements if such exist.
 * HTML snippets: Markdown supports direct HTML injection, so you can always embed a complete html snippet to the page in case there's some formatting, markup or element that is not supported (e.g. embedding a slideshare deck). 
 
 ## Available Markup Helpers (Jekyll Plugins) 
-The following table contains a list of available plugins and simple example for how to use each within markdown files. 
+The following table contains a list of available plugins and simple example for how to use each within markdown files. This is not an exhaustive list and contains only the main and most commonly used plugins, the entire set of plugins can be found in the [`_plugins`](_plugins) directory, and usage samples for all plugins can be found within the documentation pages. 
 
 |Plugin Name|Description|Example Usage|Parameters|
 |:----------|:----------|:------------|:---------|
-|||||
-|||||
+|Align||||
+|Anchor||||
+|Background Color||||
+|Children||||
+|Cloack||||
+|Color||||
+|Comment||||
+|Exclamation||||
+|Fontsize||||
+|Indent||||
+|xxx||||
+|xxx||||
+|xxx||||
+|xxx||||
+|xxx||||
+
+
+
+|Column||||
