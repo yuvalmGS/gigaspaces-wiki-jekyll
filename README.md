@@ -100,7 +100,7 @@ The following table contains a list of available plugins and simple example for 
 |remove||||
 |section||||
 |star||||
-|summary||||
+|summary|Creates a summary section at the top of the page. The section will include the text in the markup help, and shotcut links to all h1 titles in the page (every title which is prefixed by a single `#` sign)|{% summary %}Simple API to monitor and administer GigaSpaces services and components.{% endsummary %}|NA|
 |tabs||||
 |tip||||
 |warning||||
