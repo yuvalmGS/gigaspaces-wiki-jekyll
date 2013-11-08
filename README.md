@@ -36,9 +36,11 @@ Configuration file: /Users/uri1803/dev/gigaspaces-wiki-jekyll/_config.yml
 * Point your browser to [http://localhost:4000](). You should see the documentation portal home page. 
 
 ## Continuous Deployment 
+
 This website is hosted on AWS S3. Every push to this reposiroty triggers a build process (currently we use the excellent [Circle CI](http://circleci.com) conitnuous integration service), at the end which the generated website is pushed to S3 using the [s3_website](https://github.com/laurilehmijoki/s3_website) library. The Circle CI configuration is located at in the file [`circle.yml`](circle.yml). 
 
 ## Authoring Guidelines 
+
 * We use [Markdown](http://daringfireball.net/projects/markdown) as markup language for all the documentation pages. Please refer to [the markdown syntax guide](http://daringfireball.net/projects/markdown/syntax) for more details. That also means that all files should have the `.markdown` extension. 
 * All pages should start with a [yaml front matter](http://jekyllrb.com/docs/frontmatter/), which basically looks like this (See one of the existing pages under xap97 or xap97net for a full example):
 
@@ -69,40 +71,83 @@ You don't need to refer to other elements if such exist.
 ## Available Markup Helpers (Jekyll Plugins) 
 The following table contains a list of available plugins and simple example for how to use each within markdown files. This is not an exhaustive list and contains only the main and most commonly used plugins, the entire set of plugins can be found in the [`_plugins`](_plugins) directory, and usage samples for all plugins can be found within the documentation pages. 
 
-|Plugin Name|Description|Example Usage|Parameters|
-|:----------|:----------|:------------|:---------|
-|align||||
-|anchor||||
-|background Color||||
-|children||||
-|cloack||||
-|color||||
-|comment||||
-|exclamation||||
-|fontsize||||
-|indent||||
-|info||||
-|infosign||||
-|lampoff||||
-|lampon||||
-|learn||||
-|lozenge||||
-|minus||||
-|next||||
-|note||||
-|oksign||||
-|panel||||
-|plus||||
-|question||||
-|quote||||
-|redirect||||
-|refer||||
-|remove||||
-|section||||
-|star||||
-|summary|Creates a summary section at the top of the page. The section will include the text in the markup help, and shotcut links to all h1 titles in the page (every title which is prefixed by a single `#` sign)|{% summary %}Simple API to monitor and administer GigaSpaces services and components.{% endsummary %}|NA|
-|tabs||||
-|tip||||
-|warning||||
-|wbr||||
-|whr||||
+##### `align`
+
+##### `anchor`
+
+##### `bgcolor`
+
+##### `children`
+
+##### `cloack`
+
+##### `color`
+
+##### `comment`
+
+##### `currentversion`
+
+##### `exclamation`
+
+##### `fontsize`
+
+##### `indent`
+
+##### `info`
+
+##### `infosign`
+
+##### `lampoff`
+
+##### `latestxaprelease`
+
+##### `lampon`
+
+##### `learn`
+
+##### `lozenge`
+
+##### `minus`
+
+##### `next`
+
+##### `note`
+
+##### `oksign`
+
+##### `panel`
+
+##### `plus`
+
+##### `question`
+
+##### `quote`
+
+##### `redirect`
+
+##### `refer`
+
+##### `remove`
+
+##### `section`
+
+##### `summary`
+Creates a summary section at the top of the page. The section will include the text in the markup help, and shotcut links to all h1 titles in the page (every title which is prefixed by a single `#` sign)
+Usage: 
+```
+{% summary %}this is a page summry {% endsummary %}
+```
+Parameters: None
+
+##### `star`
+
+##### `tabs`
+
+##### `tip`
+
+##### `warning`
+
+##### `wbr`
+
+##### `whr`
+
