@@ -138,7 +138,7 @@ Creates a summary section at the top of the page. The section will include the t
 
  * __Usage__: 
 ```
-{% summary %}this is a page summry {% endsummary %}
+{% summary %}This is a page summary.{% endsummary %}
 ```
  * __Parameters__: None
 
