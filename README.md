@@ -71,67 +71,69 @@ You don't need to refer to other elements if such exist.
 ## Available Markup Helpers (Jekyll Plugins) 
 The following table contains a list of available plugins and simple example for how to use each within markdown files. This is not an exhaustive list and contains only the main and most commonly used plugins, the entire set of plugins can be found in the [`_plugins`](_plugins) directory, and usage samples for all plugins can be found within the documentation pages. 
 
-##### `align`
+* `align`
 
-##### `anchor`
+* `anchor`
 
-##### `bgcolor`
+* `bgcolor`
 
-##### `children`
+* `children`
 
-##### `cloack`
+* `cloack`
 
-##### `color`
+* `color`
 
-##### `comment`
+* `comment`
 
-##### `currentversion`
+* `currentversion`
 
-##### `exclamation`
+* `exclamation`
 
-##### `fontsize`
+* `fontsize`
 
-##### `indent`
+* `indent`
 
-##### `info`
+* `info`
 
-##### `infosign`
+* `infosign`
 
-##### `lampoff`
+* `lampoff`
 
-##### `latestxaprelease`
+* `latestxaprelease`
 
-##### `lampon`
+* `lampon`
 
-##### `learn`
+* `learn`
 
-##### `lozenge`
+* `lozenge`
 
-##### `minus`
+* `minus`
 
-##### `next`
+* `next`
 
-##### `note`
+* `note`
 
-##### `oksign`
+* `oksign`
 
-##### `panel`
+* `panel`
 
-##### `plus`
+* `plus`
 
-##### `question`
+* `question`
 
-##### `quote`
+* `quote`
 
-##### `redirect`
+* `redirect`
 
-##### `refer`
+* `refer`
 
-##### `remove`
+* `remove`
 
-##### `section`
+* `section`
 
-##### `summary`
+* `star`
+
+* `summary` 
 Creates a summary section at the top of the page. The section will include the text in the markup help, and shotcut links to all h1 titles in the page (every title which is prefixed by a single `#` sign)
 Usage: 
 ```
@@ -139,15 +141,13 @@ Usage:
 ```
 Parameters: None
 
-##### `star`
+* `tabs`
 
-##### `tabs`
+* `tip`
 
-##### `tip`
+* `warning`
 
-##### `warning`
+* `wbr`
 
-##### `wbr`
-
-##### `whr`
+* `whr`
 
