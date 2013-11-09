@@ -128,7 +128,7 @@ The attributes will be mapped to the AuditRecord column family in Cassandra. Not
 
 It is possible to override this default behavior by providing a custom implementation.
 
-{%learn%}/xap97/cassandra-space-synchronization-endpoint.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/cassandra-space-synchronization-endpoint.html{%endlearn%}
 
 
 

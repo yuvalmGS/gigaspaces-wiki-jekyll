@@ -58,8 +58,8 @@ The processing unit is built as an extension of the [Spring](http://www.springfr
 
 There are basically two main types of event containers:
 
-- [Polling](./polling-container.html)
-- [Notify](./notify-container.html)
+- [Polling]({%latestjavaurl%}/polling-container.html)
+- [Notify]({% latestjavaurl  %}/notify-container.html)
 
 Event containers are used to abstract the event processing from the event source. This abstraction enables users to build their business logic with minimal binding to the underlying event source, whether it is a space-based event source, or a JMS event source, etc.
 
@@ -99,7 +99,7 @@ public class DataProcessor {
 
 ### The GigaSpace Core Middleware Component
 
-The [GigaSpace](./the-gigaspace-interface.html) component is a POJO driven abstraction of the JavaSpaces specification. JavaSpaces is a service specification. It provides a distributed object exchange/coordination mechanism (which might or might not be persistent) for Java objects. It can be used to store the system state and implement distributed algorithms. In a space, all communication partners (peers) communicate by sharing states. It is an implementation of the [Tuple spaces idea](./concepts.html#tuple).
+The [GigaSpace]({% latestjavaurl  %}/the-gigaspace-interface.html) component is a POJO driven abstraction of the JavaSpaces specification. JavaSpaces is a service specification. It provides a distributed object exchange/coordination mechanism (which might or might not be persistent) for Java objects. It can be used to store the system state and implement distributed algorithms. In a space, all communication partners (peers) communicate by sharing states. It is an implementation of the [Tuple spaces idea](./concepts.html#tuple).
 
 JavaSpaces is used when someone wants to achieve scalability and availability, while reducing the complexity of the overall system. Processes perform simple operations to write new objects into a space, take objects from a space, or read (make a copy of) objects from a space.
 
@@ -141,7 +141,7 @@ public class Data {
 
 ### Space-Based Remoting
 
-[Space-Based Remoting](./space-based-remoting.html) allows for POJO services that are collocated within a specific processing unit to be exposed to remote clients, like any other RMI service. Spring provides a generic framework for exposing and invoking POJO-based services. OpenSpaces utilizes the Spring remoting framework to enable POJO services to expose themselves through the space, as illustrated in the diagram below:
+[Space-Based Remoting]({%latestjavaurl%}/space-based-remoting.html) allows for POJO services that are collocated within a specific processing unit to be exposed to remote clients, like any other RMI service. Spring provides a generic framework for exposing and invoking POJO-based services. OpenSpaces utilizes the Spring remoting framework to enable POJO services to expose themselves through the space, as illustrated in the diagram below:
 ![intro5.jpg](/attachment_files/intro5.jpg)
 The client uses the `SpaceRemotingProxyFactoryBean` to create a space-based dynamic proxy for the service. The client uses the proxy to invoke methods on the appropriate service instance. The proxy captures the invocation, and creates a generic command Entry with the information on the service-instance, the method-name, and arguments; and calls the space write operation to send the command to the service implementation, followed by a blocking take for the response.
 
@@ -157,7 +157,7 @@ A service that needs to be exported uses the `SpaceRemotingServiceExporter` to e
 
 ### SLA-Driven Container
 
-An [OpenSpaces SLA Driven Container](./the-processing-unit-structure-and-configuration.html) that allows you to deploy a processing unit over a dynamic pool of machines, is available through an SLA-driven container, formerly known as the Grid Service Containers - GSCs. The SLA-driven containers are Java processes that provide a hosting environment for a running processing unit. The Grid Service Manager (GSM) is used to manage the deployment of the processing unit, based on SLA. The SLA definition is part of the processing unit configuration, and is normally named `pu.xml`. The SLA definition defines: the number of PU instances that need to be running at a given point of time, the scaling policy, the failover policy based on CPU, and memory or application-specific measurement.
+An [OpenSpaces SLA Driven Container]({% latestjavaurl  %}/the-processing-unit-structure-and-configuration.html) that allows you to deploy a processing unit over a dynamic pool of machines, is available through an SLA-driven container, formerly known as the Grid Service Containers - GSCs. The SLA-driven containers are Java processes that provide a hosting environment for a running processing unit. The Grid Service Manager (GSM) is used to manage the deployment of the processing unit, based on SLA. The SLA definition is part of the processing unit configuration, and is normally named `pu.xml`. The SLA definition defines: the number of PU instances that need to be running at a given point of time, the scaling policy, the failover policy based on CPU, and memory or application-specific measurement.
 ![intro6a.jpg](/attachment_files/intro6a.jpg)
 The following is a snippet taken from the example SLA definition section of the processing unit Spring configuration:
 

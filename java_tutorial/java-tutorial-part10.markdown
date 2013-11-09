@@ -86,7 +86,7 @@ Note that the monitoring is secured only by the 'tooling' (CLI/UI).
 |Monitor PU	 |Monitoring of Processing Units (classes, connections, statistics, etc.)|
 {%endindent%}
 
-{%learn%}/xap97/security-authorities.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/security-authorities.html{%endlearn%}
 
 
 # Managing Roles
@@ -133,7 +133,7 @@ Display Roles
 {%endsection%}
 You may have noticed that you can assign fine grained access control for space operations (read/write/etc) per space class(slide 4).
 
-{%learn%}/xap97/gigaspaces-management-center-(ui)-security{%endlearn%}
+{%learn%}{%latestjavaurl%}/gigaspaces-management-center-(ui)-security{%endlearn%}
 
 
 # Managing Users
@@ -201,7 +201,7 @@ private Role createRole() {
 {% endtabcontent  %}
 {% endinittab %}
 
-{%learn%}/xap97/gigaspaces-management-center-(ui)-security{%endlearn%}
+{%learn%}{%latestjavaurl%}/gigaspaces-management-center-(ui)-security{%endlearn%}
 
 
 # Securing XAP Components
@@ -264,7 +264,7 @@ public void setupSpace()
 
 
 
-{%learn%}/xap97/securing-your-data.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/securing-your-data.html{%endlearn%}
 
 
 
@@ -280,18 +280,18 @@ Grid Security is enabled in XAP by setting a global system property. This system
 
 This property affects the GSA, GSM, GSC and standalone PU instances with a space.
 
-{%learn%}/xap97/securing-the-grid-services.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/securing-the-grid-services.html{%endlearn%}
 
 
 
 ### Transport Security
 The transport layer can be secured using an SSL communication filter.
 
-{%learn%}/xap97/securing-the-transport-layer-(using-ssl).html{%endlearn%}
+{%learn%}{%latestjavaurl%}/securing-the-transport-layer-(using-ssl).html{%endlearn%}
 
 
 
-{%info%}This concludes this tutorial. For more detailed information of the XAP platform and its API please consult the [Programmers Guide](/xap97/programmer's-guide.html) {%endinfo%}
+{%info%}This concludes this tutorial. For more detailed information of the XAP platform and its API please consult the [Programmers Guide]({%latestjavaurl%}/programmer's-guide.html) {%endinfo%}
 
 
 {%comment%}

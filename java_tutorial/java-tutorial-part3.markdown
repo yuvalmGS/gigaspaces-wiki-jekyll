@@ -34,7 +34,7 @@ Task execution comes in two flavors:
 - Java Tasks - In this mode you can pass Java code from the client to the cluster to be executed on the data grid nodes. The code is dynamically introduced to the server nodes classpath.
 - Dynamic language tasks - Tasks can be defined using one of the dynamic languages supported by the JVM (JSR-223) and be compiled and executed on the fly. In this part of the tutorial we will not cover Dynamic language tasks.
 
-{%learn%}/xap97/dynamic-language-tasks.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/dynamic-language-tasks.html{%endlearn%}
 
 
 Java Tasks can be more efficient in terms of performance and tend to be more type-safe then dynamic tasks. Dynamic tasks on the other hand can be changed more frequently without causing class version conflicts and are more concise given the nature of dynamic languages..
@@ -129,7 +129,7 @@ public void executeTaskWithRouting() throws InterruptedException, ExecutionExcep
 
 There are other options available for task routing
 .
-{%learn%}/xap97/task-execution-over-the-space.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/task-execution-over-the-space.html{%endlearn%}
 
 
 
@@ -190,13 +190,13 @@ By default, the task is broadcasted to all primary nodes. You can also execute a
 
 XAP provides out of the box Aggregator Tasks.
 
-{%learn%}/xap97/aggregators.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/aggregators.html{%endlearn%}
 
 
 #### ExecutorBuilder
 The executor builder allows to combine several task executions (both distributed ones and non distributed ones) into a seemingly single execution (with a reduce phase).
 
-{%learn%}/xap97/task-execution-overthe-space.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/task-execution-overthe-space.html{%endlearn%}
 
 
 
@@ -276,7 +276,7 @@ public class RemoteService {
 }
 {%endhighlight%}
 
-{%learn%}/xap97/space-based-remoting.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/space-based-remoting.html{%endlearn%}
 
 
 

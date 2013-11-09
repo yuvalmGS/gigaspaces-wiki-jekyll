@@ -32,7 +32,7 @@ The Polling Container is the equivalent of a point to point paradigm. Unlike the
 # Archive Container
 The archive container is a mechanism built on top of a polling container to transfer historical data into Big-Data storage (for example Cassandra). The typical scenario is when streaming vast number of raw events through the Space, enriching them and then moving them to a Big-Data storage. Typically, there is no intention of keeping them in the space nor querying them in the space.
 
-{%learn%}/xap97/archive-container.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/archive-container.html{%endlearn%}
 
  
 
@@ -135,7 +135,7 @@ public class AuditListener {
 
 By default all events will trigger the notification. In our example we are restricting the events to be received by using the {{@NotifyType}} annotation. In our example we are only interested in write and update events. 
 
-{%learn%}/xap97/event-processing.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/event-processing.html{%endlearn%}
 
 # FIFO Support
 Sometimes it is necessary to process events in the order the way they have been created. By default events are not ordered. XAP supports FIFO (First In, First Out) processing of events.  To enable FIFO operations you can turn on FIFO support for classes which will participate in such operations.    
@@ -152,7 +152,7 @@ public class Payment implements Serializable {
 }
 {%endhighlight%}
 
-{%learn%}/xap97/fifi-support.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/fifi-support.html{%endlearn%}
 
 
 
@@ -162,7 +162,7 @@ public class Payment implements Serializable {
 # JMS
 In addition to the polling containers you can also use a JMS facade on top of the space to deliver events. The JMS facade is designed to enable integration with external feeders that cannot or were not designed to work with the space based API. 
 
-{%learn%}/xap97/jms-basics.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/jms-basics.html{%endlearn%}
 
  
 
@@ -174,7 +174,7 @@ The Master-Worker Pattern (sometimes called the Master-Slave or the Map-Reduce p
 In GigaSpaces XAP, you can implement the Master-Worker pattern using several methods:
 
 - [Task Executors](http://wiki.gigaspaces.com/wiki/display/SBP/Map-Reduce+Pattern+-+Executors+Example) - best for a scenario where the processing activity is collocated with the data (the data is stored within the same space as the tasks being executed).
-- [Polling Containers](/xap97/polling-container.html) - in this case the processing activity runs in a separate machine/VM from the space. This approach should be used when the processing activity consumes a relatively large amount of CPU and takes a large amount of time. It might also be relevant if the actual data required for the processing is not stored within the space, or the time it takes to retrieve the required data from the space is much shorter than the time it takes to complete the processing.
+- [Polling Containers]({%latestjavaurl%}/polling-container.html) - in this case the processing activity runs in a separate machine/VM from the space. This approach should be used when the processing activity consumes a relatively large amount of CPU and takes a large amount of time. It might also be relevant if the actual data required for the processing is not stored within the space, or the time it takes to retrieve the required data from the space is much shorter than the time it takes to complete the processing.
 
 {%endcolumn%}
 {%column width=20% %}
