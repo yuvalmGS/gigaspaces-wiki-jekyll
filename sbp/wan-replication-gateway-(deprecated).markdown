@@ -22,7 +22,7 @@ Mirror Gateway Synchronization can be used to synchronize operations conducted a
 
 This is a simple order processing example based on GigaSpaces maven basic-async-persistency template. Product objects in the space maintain available quantity information. New orders coming into the system reduce the number of available products. Example shows how you can synchronize the available Product information across two clusters using a Mirror Gateway.
 
-{% exclamation %} The GigaSpaces WAN Gateway, a solution for synchronizing multiple clusters over the WAN can be found at [Multi-Site Replication over the WAN](http://wiki.gigaspaces.com/wiki/display/XAP8/Multi-Site+Replication+over+the+WAN).
+{% exclamation %} The GigaSpaces WAN Gateway, a solution for synchronizing multiple clusters over the WAN can be found at [Multi-Site Replication over the WAN]({%latestjavaurl%}/Multi-Site+Replication+over+the+WAN).
 
 # Mirror Gateway - One way
 
@@ -266,7 +266,7 @@ public class MyExternalDataSource implements BulkDataPersister, ManagedDataSourc
 # Running the example
 
 {% note %}
- This example is using Maven for packaging and build. Please [install the OpenSpaces Maven plugin](http://wiki.gigaspaces.com/wiki/display/XAP8/Maven+Plugin#MavenPlugin-Installation) before you run this example.
+ This example is using Maven for packaging and build. Please [install the OpenSpaces Maven plugin]({%latestjavaurl%}/Maven+Plugin#MavenPlugin-Installation) before you run this example.
 Some instructions below might use windows syntax please use appropriate **nix syntax if you are running the example in a **nix machine.
 Example was tested using a single machine with ip address, 192.168.2.100 and Lookup Server ports for SiteA and SiteB as 14164 and 14165 respectively. Please modify these corresponding to your environment.
 {% endnote %}

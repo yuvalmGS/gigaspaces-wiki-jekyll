@@ -26,16 +26,16 @@ Using this pattern is divided into 4 main steps:
 
 As a first step, you need to load your data from its current source to the space.
 
-GigaSpaces provides [OpenSpaces](http://wiki.gigaspaces.com/wiki/display/XAP66/Product+Architecture#ProductArchitecture-OpenSpacesAPIandComponents) as its main API. However, it is also possible to load data from different types of applications transparently, using different connectors implemented by GigaSpaces:
+GigaSpaces provides [OpenSpaces]({%latestjavaurl%}/product-architecture#ProductArchitecture-OpenSpacesAPIandComponents) as its main API. However, it is also possible to load data from different types of applications transparently, using different connectors implemented by GigaSpaces:
 
-- For messaging-based applications, refer to the [JMS](http://wiki.gigaspaces.com/wiki/display/XAP66/JMS) section.
-- If your application is an external data source (like a database), refer to the [Persistency](http://wiki.gigaspaces.com/wiki/display/XAP66/Persistency) section.
+- For messaging-based applications, refer to the [JMS]({%latestjavaurl%}/JMS---Basics.html) section.
+- If your application is an external data source (like a database), refer to the [Persistency]({%latestjavaurl%}/persistency.html) section.
 
 ## 2 -- Implementing Algorithm
 
 After you've loaded your data to the space, you need to implement the algorithm which performs the calculation in the space, thus removing the load from Excel.
 
-To do this, you need to write a set of [Processing Units](http://wiki.gigaspaces.com/wiki/display/XAP66/Processing+Unit) into the space, which perform the calculation.
+To do this, you need to write a set of [Processing Units]({%latestjavaurl%}/processing-unit.html) into the space, which perform the calculation.
 
 ## 3 -- Implementing Start Trigger and Passing Parameters
 

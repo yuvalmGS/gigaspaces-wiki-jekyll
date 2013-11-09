@@ -22,7 +22,7 @@ Polling Container is one of the most powerful and commonly used feature of GigaS
 
 There are always use cases where you need dynamic templates. Some examples include, process messages that are older than an hour or process an order only after all the items in an order are in the space or process the messages in a certain order. Each of these examples need a query that will not have all the parameters at configuration time. TriggerOperationsHandler helps in achieving this behavior easily.
 
-The [Polling Container](http://wiki.gigaspaces.com/wiki/display/XAP9/Polling+Container) shows where `TriggerOperationsHandler` fits into the Polling Container Life Cycle. Polling Container invokes the `TriggerOperationsHandler.triggerReceive()` method before invoking the `ReceiveHandler` which does the actual take and this is the perfect extension point where you can customize or modify the template.
+The [Polling Container]({%latestjavaurl%}/Polling-Container.html) shows where `TriggerOperationsHandler` fits into the Polling Container Life Cycle. Polling Container invokes the `TriggerOperationsHandler.triggerReceive()` method before invoking the `ReceiveHandler` which does the actual take and this is the perfect extension point where you can customize or modify the template.
 
 # Example
 

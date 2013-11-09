@@ -51,7 +51,7 @@ Blotter clients connect to the servlet through HTTP.  The blotter displays user 
 
 The feeder generates random trade objects and places them into the space.
 
-The [grid topology](http://www.gigaspaces.com/wiki/display/XAP8/Terminology+-+Data+Grid+Topologies) for the event processing engine consists of 2 partitions with backup instances.
+The [grid topology](/product_overview/Terminology---Data-Grid-Topologies.html) for the event processing engine consists of 2 partitions with backup instances.
 
 It receives an event when an unprocessed trade is placed in the space and starts a transaction.  The transaction consists of several operations:
 
@@ -63,19 +63,19 @@ The messaging processor receives events when deals are matched and generates an 
 
 The monitor is a thread that periodically counts the number of matched deal objects in the space.  If this number exceeds 50, it will scale the grid up.  The grid will be scaled down if this number falls below 50.
 
-The [mirror service](http://www.gigaspaces.com/wiki/display/XAP8/Asynchronous+Persistency+with+the+Mirror) provides reliable asynchronous persistence to a HSQL database through a hibernate interface.
+The [mirror service]({%latestjavaurl%}/Asynchronous-Persistency-with-the-Mirror.html) provides reliable asynchronous persistence to a HSQL database through a hibernate interface.
 
 ![SA-Architecture.png](/attachment_files/sbp/SA-Architecture.png)
 
 # Processing Unit Relationships and Events
 
-The feeder, web servlet, monitor, messaging and mirror are deployed as [Processing Units (PUs)](http://www.gigaspaces.com/wiki/display/XAP8/A+Typical+SBA+Application).
+The feeder, web servlet, monitor, messaging and mirror are deployed as [Processing Units (PUs)]({%latestjavaurl%}/A-Typical-SBA-Application.html).
 
-The event processing engine is deployed as an [_Elastic_ PU](http://www.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit) with [replication](http://www.gigaspaces.com/wiki/display/XAP8/Replication).  The elasticity enables the grid to scale up or down based on user-defined metrics.  In this case, we use the number of trade objects in the space, which is counted by the monitor PU.  When this exceeds 50, memory capacity is increased through the [admin API](http://www.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API+Security).  This causes new [processing containers](http://www.gigaspaces.com/wiki/display/XAP8/The+Grid+Service+Container) to be provisioned and the Elastic PUs to be rebalanced across the new nodes.  Scaling down is the reverse process.
+The event processing engine is deployed as an [_Elastic_ PU]({%latestjavaurl%}/Elastic-Processing-Unit.html) with [replication]({%latestjavaurl%}/Replication.html).  The elasticity enables the grid to scale up or down based on user-defined metrics.  In this case, we use the number of trade objects in the space, which is counted by the monitor PU.  When this exceeds 50, memory capacity is increased through the [admin API](http://www.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API+Security).  This causes new [processing containers](http://www.gigaspaces.com/wiki/display/XAP8/The+Grid+Service+Container) to be provisioned and the Elastic PUs to be rebalanced across the new nodes.  Scaling down is the reverse process.
 
-You can step through the demo code in your favorite IDE by deploying the target processing unit(s) in an [Integrated Processing Unit Container](http://www.gigaspaces.com/wiki/display/XAP8/Deploying+and+Running+the+Processing+Unit).
+You can step through the demo code in your favorite IDE by deploying the target processing unit(s) in an [Integrated Processing Unit Container]({%latestjavaurl%}/Deploying-and-Running-the-Processing-Unit.html).
 
-Deal matching uses a [polling container](http://www.gigaspaces.com/wiki/display/XAP8/Polling+Container) and [transactions](http://www.gigaspaces.com/wiki/display/XAP8/Transaction+Management).
+Deal matching uses a [polling container]({%latestjavaurl%}/Polling-Container.html) and [transactions]({%latestjavaurl%}/Transaction-Management.html).
 
 ![SA-PUs.png](/attachment_files/sbp/SA-PUs.png)
 
@@ -139,10 +139,10 @@ pu.scale(new ManualCapacityScaleConfigurer()
         );
 {% endhighlight %}
 
-Click [here](http://www.gigaspaces.com/wiki/display/XAP8/Elastic+Processing+Unit#ElasticProcessingUnit-MaximumMemoryCapacity) to see how the number of processing containers is dynamically calculated based on the amount of memory.
+Click [here]({%latestjavaurl%}/Elastic-Processing-Unit.html#ElasticProcessingUnit-MaximumMemoryCapacity) to see how the number of processing containers is dynamically calculated based on the amount of memory.
 
 ## Space Document
-A [document store](http://www.gigaspaces.com/wiki/display/XAP8/Document+(Schema-Free)+API) is used for saving matched deals.  This document contains the following items:
+A [document store]({%latestjavaurl%}/Document-(Schema-Free)-API.html) is used for saving matched deals.  This document contains the following items:
 
 - Deal ID
 - Routing string
@@ -218,7 +218,7 @@ The trade and matched deal objects are persisted to the HSQL database through Hi
 {% endhighlight %}
 
 ## Web Session Management
-HTTP Sessions are maintained in the space and a copy is also kept in a [local cache](http://www.gigaspaces.com/wiki/display/XAP8/Client+Side+Caching), with 1 object per client.  Sessions are accessed using the following:
+HTTP Sessions are maintained in the space and a copy is also kept in a [local cache]({%latestjavaurl%}/Client-Side-Caching.html), with 1 object per client.  Sessions are accessed using the following:
 
 {% highlight java %}
 jetty.sessions.spaceUrl=jini://**/**/settlementSpace?useLocalCache
