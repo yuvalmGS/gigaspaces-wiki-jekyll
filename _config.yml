@@ -6,3 +6,4 @@ pygments: true
 latest_xap_release: "9.7"
 base_javadoc_url: "http://www.gigaspaces.com/docs/JavaDoc%{version}/index.html?%{fqcn}.html"
 base_scaladoc_url: "http://www.gigaspaces.com/docs/scaladocs%{version}/#%{fqcn}"
+base_dotnetdoc_url: "http://www.gigaspaces.com/docs/dotnetdocs%{version}/html/T_%{fqcn}.htm"

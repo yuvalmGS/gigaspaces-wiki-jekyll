@@ -56,8 +56,7 @@ title:  About Jini
 You don't need to refer to other elements if such exist. 
 * XAP versions: each XAP version is placed under its own directory. For example, XAP 9.7 is placed under `xap97` and XAP.NET 9.7 is placed under `xap97net`. 
 * Images and other attached files: all images should placed under the directory `attachement_files`. Images and files that are shared between version should be placed at the root of this folder, images specific to a certain version (that you don't expect to be relevant to future versions) should be placed under a directory that has the same name (e.g. `xap97`). 
-* API documentation links: TBD 
-* Special markup helpers (summary section, code blocks, tabbed views, tips, info box, warning box, etc.) are described below. 
+* Special markup helpers (summary section, documentation links, code blocks, tabbed views, tips, info box, warning box, etc.) are described below. 
 * Tables can be created using the following syntax: 
 
 ```
@@ -87,6 +86,8 @@ The following table contains a list of available plugins and simple example for 
 
 * `currentversion`
 
+* `dotnetdoc`
+
 * `exclamation`
 
 * `fontsize`
@@ -96,6 +97,8 @@ The following table contains a list of available plugins and simple example for 
 * `info`
 
 * `infosign`
+
+* `javadoc`
 
 * `lampoff`
 
@@ -128,6 +131,8 @@ The following table contains a list of available plugins and simple example for 
 * `refer`
 
 * `remove`
+
+* `scaladoc`
 
 * `section`
 
