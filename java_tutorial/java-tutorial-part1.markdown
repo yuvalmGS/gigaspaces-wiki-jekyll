@@ -48,7 +48,7 @@ String url ="jini://*/*/xapTutorialSpace";
 
 You can configure the Space URL with several options.
 
-{%learn%}/xap97/space-url.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/space-url.html{%endlearn%}
 
 
 When a client connects to a space, a proxy is created that holds a connection which implements the space API. All client interaction is performed through this proxy.
@@ -62,8 +62,7 @@ In both cases, updates are performed (objects are added/updated/removed) on the 
 
 These two scenarios are only applicable for remote clients.
 
-{%learn%}/xap97/client-side-caching.html{%endlearn%}
-
+{%learn%}{%latestjavaurl%}/client-side-caching.html{%endlearn%}
 
 
 
@@ -113,7 +112,7 @@ The space generates a unique identifier (UID) for every object in one of the fol
 #### Compound SpaceId
 You might need to construct a space id that will be comprised from a user defined class rather than using a Numeric or String type field. In such a case your user defined class used as the SpaceId data type must implement the toString , hashCode and equals methods. The compound ID class must implement a toString method that return a unique String for each ID.
 
-{%learn%}/xap97/space-object-id.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/space-object-id.html{%endlearn%}
 
 
 #### Defining Routing
@@ -123,7 +122,7 @@ Partitioning is used when the total number of objects is too big to be stored in
 
 {%info%}The routing attribute can be explicitly set using the @SpaceRouting annotation for POJO entries or via the SpaceTypeDescriptorBuilder for document entries. If the routing attribute is not explicitly set, the space id attribute is used for routing. If the space id attribute is not defined, the first indexed attribute (alphabetically) is used for routing, otherwise the first attribute (alphabetically) is used for routing.{%endinfo%}
 
-{%learn%}/xap97/data-partitioning.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/data-partitioning.html{%endlearn%}
 
 
 
@@ -172,7 +171,7 @@ Only properties with special roles like ID and Routing are part of the schema de
 
 {%info%}It is possible to write a POJO to the space and read it back as a document, and vice versa. This scenario is useful when you want to read or modify POJO objects without loading the concrete java classes.{%endinfo%}
 
-{%learn%}/xap97/document-pojo-interoperability.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/document-pojo-interoperability.html{%endlearn%}
 
 
 
@@ -234,7 +233,7 @@ public void writeOnlyWithLease() {
 
 In this example, we are writing an object to the space with zero delay, 10 seconds to live and write only if the object does not already exist in the space. If the object already exists, an exception will be thrown.
 
-{%learn%}/xap97/the-gigaspace-interface.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/the-gigaspace-interface.html{%endlearn%}
 
 
 #### Updating an object in space
@@ -260,7 +259,7 @@ public void ChangeSet() {
 
 There are several other change operations available; 'increment', 'decrement', 'addToCollection', 'removeFromCollection' etc.
 
-{%learn%}/xap97/change-api.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/change-api.html{%endlearn%}
 
 # Querying the Space
 
@@ -379,7 +378,7 @@ public User[] findUsersByGroup() {
 
 There are several additional query options available. For example you can query Nested Maps by key,query with Regular Expression, Enum attributes and others.
 
-{%learn%}/xap97/sqlquery.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/sqlquery.html{%endlearn%}
 
 
 #### Query returning partial results
@@ -421,7 +420,7 @@ public SpaceDocument[] readProductsBySQL() {
 }
 {%endhighlight%}
 
-{%learn%}/xap97/document-api.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/document-api.html{%endlearn%}
 
 
 
@@ -551,12 +550,12 @@ SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Dow' AND cred
 
 There are several additional indexing options available. For example you can index nested attributes, Nested Maps, Collections, nested attributes within a Collection, free text search and others.
 
-{%learn%}/xap97/indexing.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/indexing.html{%endlearn%}
 
 # Other Data Access API's
 XAP provides a JDBC Driver, JPA API, MAP and Memcached API's.
 
-{%learn%}/xap97/other-data-access-apis.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/other-data-access-apis.html{%endlearn%}
 
 
 

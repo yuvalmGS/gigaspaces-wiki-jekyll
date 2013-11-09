@@ -4,7 +4,7 @@ title:  Supported Platforms
 page_id: 61867183
 ---
 
-{%summary%} Supported Platforms for XAP 9.6.X release {%endsummary%}
+{%summary%} Supported Platforms for XAP 9.7.X release {%endsummary%}
 
 # Overview
 
@@ -19,16 +19,16 @@ The list below represents only the platforms that have been tested by GigaSpaces
 # Mixing XAP Versions
 The following is supported:
 
-- Runtime backward compatibility: Starting from GigaSpaces 7.1, GigaSpaces Space instances are backward compatible with Space clients across major versions. That means that clients running on version 8.0, 9.0 or 9.1 are compatible with Space instances running on version 9.6.
-- Binary compatibility: applications built using 8.0.x or higher run without any code changes on a clean 9.6.x installation.
-- Servers (GSMs, GSCs and Space instances) running on any future service pack of version 9.6 (e.g. 9.6.1) are guaranteed to work with older service packs of that version (e.g. 9.6.0).
+- Runtime backward compatibility: Starting from GigaSpaces 7.1, GigaSpaces Space instances are backward compatible with Space clients across major versions. That means that clients running on version 8.0, 9.0 or 9.1 are compatible with Space instances running on version 9.7.
+- Binary compatibility: applications built using 8.0.x or higher run without any code changes on a clean 9.7.x installation.
+- Servers (GSMs, GSCs and Space instances) running on any future service pack of version 9.7 (e.g. 9.7.1) are guaranteed to work with older service packs of that version (e.g. 9.7.0).
 
 
 # Tested & Certified Platforms
 
 Recommended and Certified Environment
 
-GigaSpaces recommends that customers upgrade to a fully-supported environment, such as the latest GigaSpaces XAP 9.6.x and the latest *Java 1.6/1.7 SDK.
+GigaSpaces recommends that customers upgrade to a fully-supported environment, such as the latest GigaSpaces XAP 9.7.x and the latest *Java 1.6/1.7 SDK.
 GigaSpaces is being tested with (32bit and 64bit JVMs):
 
 - Windows 2008 Server SP2
@@ -67,7 +67,7 @@ Supported Operating Systems: Any operating system supported by .NET Framework 2.
 ### Installation
 GigaSpaces XAP.NET is packaged as a standard Windows Installer package (.msi file). To start the installation simply double-click the msi file, and the installation wizard will pop up and guide you through the installation process.
 
-Once you accept the licence agreement, you will be asked to choose a setup type. Select 'Complete' to install all the features in the default path (C:\GigaSpaces\XAP.NET 9.6.0). Selecting 'Custom' will allow you to customize the installation path, which features will be installed, and more.
+Once you accept the licence agreement, you will be asked to choose a setup type. Select 'Complete' to install all the features in the default path (C:\GigaSpaces\XAP.NET 9.7.0). Selecting 'Custom' will allow you to customize the installation path, which features will be installed, and more.
 
 ### Other Installation Options
 GigaSpaces XAP.NET offers more installation scenarios and customizations. For example:
@@ -91,7 +91,7 @@ The current supported platforms and compilers are:
 
 
 # Integrations with 3rd Party Products
-The following products/projects were tested and certified using GigaSpaces 9.6:
+The following products/projects were tested and certified using GigaSpaces 9.7:
 
 - Spring 3.1.3.RELEASE
 - Hibernate version 3.6.1.Final

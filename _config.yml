@@ -3,6 +3,11 @@ markdown: kramdown
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 pygments: true
+
 latest_xap_release: "9.7"
+latest_java_url: "/xap97"
+
+latest_net_url: "/xap97net"
+
 base_javadoc_url: "http://www.gigaspaces.com/docs/JavaDoc%{version}/index.html?%{fqcn}.html"
 base_scaladoc_url: "http://www.gigaspaces.com/docs/scaladocs%{version}/#%{fqcn}"

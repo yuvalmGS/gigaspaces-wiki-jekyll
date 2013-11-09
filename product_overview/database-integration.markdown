@@ -24,7 +24,7 @@ SBA does not deny the use of a database, but suggests a more natural role for it
 
 In a high performance transactional system, we would like the transaction to be bound to space resources only, and the update of the backing database be done after the transaction is complete, asynchronous to the transaction. The synchronization between the in-memory system of record and the database, should be reliable as well.
 
-GigaSpaces XAP provides a Mirror Service as a means to achieve [reliable asynchronous persistency](./asynchronous-persistency-with-the-mirror.html).
+GigaSpaces XAP provides a Mirror Service as a means to achieve [reliable asynchronous persistency]({%latestjavaurl%}/asynchronous-persistency-with-the-mirror.html).
 
 The typical cluster topology is of reliable partitioning (partitions with backups) connected to the mirror service, which persists to the database.
 
@@ -32,7 +32,7 @@ The mirroring service is one-way only - from the space cluster to the database o
 
 ### Data Source Integration
 
-GigaSpaces XAP provides two extension points (`SpaceDataSource`/`SpaceSynchronizationEndpoint` to data source integration. GigaSpaces provides a built-in [Hibernate](./hibernate-space-persistency.html) implementation of these extensions. For implementation details please refer to [Space Persistency APIs Implementation ](./space-persistency.html) in the Programmer's Guide.
+GigaSpaces XAP provides two extension points (`SpaceDataSource`/`SpaceSynchronizationEndpoint` to data source integration. GigaSpaces provides a built-in [Hibernate]({%latestjavaurl%}/hibernate-space-persistency.html) implementation of these extensions. For implementation details please refer to [Space Persistency APIs Implementation ]({%latestjavaurl%}/space-persistency.html) in the Programmer's Guide.
 
 These extension points are used by the space to store and retrieve data from data sources (e.g. databases).
 

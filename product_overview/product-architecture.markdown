@@ -34,7 +34,7 @@ The OpenSpaces API is divided into four parts:
 
 ## Core API
 
-The core package of OpenSpaces provides APIs for direct access to a data grid, internally referred to as a "space." The main interface is the GigaSpace, which enables the basic interaction with the data grid. The core components include basic infrastructure support such as [Space](./the-space-component.html) construction, simplified API using the [GigaSpace](./the-gigaspace-interface.html) interface including [Transaction Management](./transaction-management.html) and declarative transaction support. Core components also include support for [Map/Cache](./map-api.html) construction and a simplified API using [GigaMap](./map-api.html).
+The core package of OpenSpaces provides APIs for direct access to a data grid, internally referred to as a "space." The main interface is the GigaSpace, which enables the basic interaction with the data grid. The core components include basic infrastructure support such as [Space]({%latestjavaurl%}/the-space-component.html) construction, simplified API using the [GigaSpace]({%latestjavaurl%}/the-gigaspace-interface.html) interface including [Transaction Management]({%latestjavaurl%}/transaction-management.html) and declarative transaction support. Core components also include support for [Map/Cache]({%latestjavaurl%}/map-api.html) construction and a simplified API using [GigaMap]({%latestjavaurl%}/map-api.html).
 
 ## Events
 
@@ -42,11 +42,11 @@ The events package is built on top of the core package, and provides simple obje
 
 Another alternative for events is the usage of JMS 1.1 on top of GigaSpaces, which is supported within the product and is recommended for client applications integrating with SBA applications.
 
-The events module includes components for simplified EDA/Service Bus development. These components allow [unified event-handling](./data-event-listener.html) and provide two mechanisms for event-generation: a [Polling Container](./polling-container.html) uses polling received operations against the space, and a [Notify Container](./notify-container.html) which uses the space's built-in notification support.
+The events module includes components for simplified EDA/Service Bus development. These components allow [unified event-handling]({%latestjavaurl%}/data-event-listener.html) and provide two mechanisms for event-generation: a [Polling Container]({%latestjavaurl%}/polling-container.html) uses polling received operations against the space, and a [Notify Container]({%latestjavaurl%}/notify-container.html) which uses the space's built-in notification support.
 
 ## Space Based Remoting
 
-The [Remoting](./space-based-remoting.html) package provides capabilities for clients to access remote services. Remoting in GigaSpaces XAP is implemented on top of the data grid's clustering model, which provides location transparency, fail-over, and performance to remote service invocations. OpenSpaces implements [remoting](./space-based-remoting.html), using the space as the transport layer, similar to [other Spring remoting components](http://static.springframework.org/spring/docs/3.0.x/reference/remoting.html).
+The [Remoting]({%latestjavaurl%}/space-based-remoting.html) package provides capabilities for clients to access remote services. Remoting in GigaSpaces XAP is implemented on top of the data grid's clustering model, which provides location transparency, fail-over, and performance to remote service invocations. OpenSpaces implements [remoting]({%latestjavaurl%}/space-based-remoting.html), using the space as the transport layer, similar to [other Spring remoting components](http://static.springframework.org/spring/docs/3.0.x/reference/remoting.html).
 
 Remoting can be viewed as the alternative to Java EE Session Beans, or Java RMI, as it provides all of their capabilities as well as supporting synchronous and asynchronous invocations, and dynamic scripting languages - enabling you to use Groovy or Ruby in your space-based applications.
 
@@ -77,7 +77,7 @@ GigaSpaces XAP provides several default implementations as part of the product, 
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 
-More information on the usage of the above integrations can be found in the [Programmer's Guide](./programmer's-guide.html).
+More information on the usage of the above integrations can be found in the [Programmer's Guide]({%latestjavaurl%}/programmer's-guide.html).
 
 ## Spring Container
 
@@ -87,23 +87,23 @@ The Spring framework provides very elegant abstractions, which makes it very eas
 
 ## Jetty Web Container
 
-Jetty is a very popular web container, which provides support for JEE [web container](./web-processing-unit-container.html) specification services such as: Servlet, JavaServer Pages, JavaServer Faces, and others.
+Jetty is a very popular web container, which provides support for JEE [web container]({%latestjavaurl%}/web-processing-unit-container.html) specification services such as: Servlet, JavaServer Pages, JavaServer Faces, and others.
 
-The [integration with the Jetty web container](./web-jetty-processing-unit-container.html), allows you to run JEE web applications (.war files) in GigaSpaces XAP.
+The [integration with the Jetty web container]({%latestjavaurl%}/web-jetty-processing-unit-container.html), allows you to run JEE web applications (.war files) in GigaSpaces XAP.
 
 ## Microsoft .NET container
 
 The .NET SBA application takes advantage of the ability to run business services and .NET code, colocated with the data stored within the space.
 
-The [.NET container](/xap97net/programmer's-guide.html) bridges the technical gap and provides a native .NET experience for .NET applications.
+The [.NET container]({%latestneturl%}/programmer's-guide.html) bridges the technical gap and provides a native .NET experience for .NET applications.
 
 ## C++ Container
 
-Much like the .NET container, the [CPP Processing Unit](./cpp-processing-unit.html) provides a native C++ runtime environment for C++ SBA applications.
+Much like the .NET container, the [CPP Processing Unit]({%latestjavaurl%}/cpp-processing-unit.html) provides a native C++ runtime environment for C++ SBA applications.
 
 ## Mule
 
-Mule is a popular open source Enterprise Services Bus implementation in Java. The [Mule container integration](./mule-esb.html) allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
+Mule is a popular open source Enterprise Services Bus implementation in Java. The [Mule container integration]({%latestjavaurl%}/mule-esb.html) allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
 
 {% endtoczone %}
 
@@ -136,7 +136,7 @@ It is important to note that the IMDG, although a memory-based service, is fully
 
 The IMDG uses the unified clustering layer, to provide a highly available and reliable service.
 
-The main API to access the IMDG service, is the [`GigaSpace` interface](./the-gigaspace-interface.html). In addition, one can use the Map API (using the [GigaMap interface](./map-api.html)) to access the IMDG. Please refer to the [Programmer's Guide](./programmer's-guide.html) for usage examples.
+The main API to access the IMDG service, is the [`GigaSpace` interface]({%latestjavaurl%}/the-gigaspace-interface.html). In addition, one can use the Map API (using the [GigaMap interface]({%latestjavaurl%}/map-api.html)) to access the IMDG. Please refer to the [Programmer's Guide]({%latestjavaurl%}/programmer's-guide.html) for usage examples.
 
 ## Messaging Grid
 
@@ -145,10 +145,10 @@ The messaging grid aspect of the space provides messaging capabilities such as:
 1. Event-Driven capabilities - the ability to build event-driven processing applications. This model enables fast (in-memory-based) asynchronous modular processing, resulting in a very efficient and scalable processing paradigm.
 1. Asynchronous production and consumption of information.
 1. One-to-one, Many-to-One, One-to-Many and Many-to-Many relationships.
-1. [FIFO](./fifo-support.html) ordering.
-1. [Transaction Management](./transaction-management.html).
+1. [FIFO]({%latestjavaurl%}/fifo-support.html) ordering.
+1. [Transaction Management]({%latestjavaurl%}/transaction-management.html).
 
-The core APIs used for messaging are the OpenSpaces [Notify](./notify-container.html) and [Polling](./polling-container.html) Containers. In addition, there is a [JMS 1.1 implementation](./jms-api-support.html) available to be used with existing applications. More information can be found in the [Messaging and Events](./messaging-support.html) section.
+The core APIs used for messaging are the OpenSpaces [Notify]({%latestjavaurl%}/notify-container.html) and [Polling]({%latestjavaurl%}/polling-container.html) Containers. In addition, there is a [JMS 1.1 implementation]({%latestjavaurl%}/jms-api-support.html) available to be used with existing applications. More information can be found in the [Messaging and Events]({%latestjavaurl%}/messaging-support.html) section.
 
 ## Processing Services
 
@@ -265,11 +265,11 @@ In this type of example, the Deployment Infrastructure is responsible for making
 
 ## Grid Service Agent (GSA)
 
-The [Grid Service Agent (GSA)](./the-grid-service-agent.html) acts as a process manager that can spawn and manage Deployment Infrastructure processes (Operating System level processes) such as [Grid Service Manager](./the-grid-service-manager.html) and [Grid Service Container](./the-grid-service-container.html).
+The [Grid Service Agent (GSA)]({%latestjavaurl%}/the-grid-service-agent.html) acts as a process manager that can spawn and manage Deployment Infrastructure processes (Operating System level processes) such as [Grid Service Manager]({%latestjavaurl%}/the-grid-service-manager.html) and [Grid Service Container]({%latestjavaurl%}/the-grid-service-container.html).
 
-Usually, a single GSA is deployed on each individual machine. The GSA spawns [Grid Service Managers](./the-grid-service-manager.html), [Grid Service Containers](./the-grid-service-container.html), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
+Usually, a single GSA is deployed on each individual machine. The GSA spawns [Grid Service Managers]({%latestjavaurl%}/the-grid-service-manager.html), [Grid Service Containers]({%latestjavaurl%}/the-grid-service-container.html), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
 
-{% lampon %} Though [Grid Service Manager](./the-grid-service-manager.html), [Grid Service Container](./the-grid-service-container.html), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
+{% lampon %} Though [Grid Service Manager]({%latestjavaurl%}/the-grid-service-manager.html), [Grid Service Container]({%latestjavaurl%}/the-grid-service-container.html), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
 
 {% anchor gsm %}
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  XAP 9.6 Release Notes
+title:  XAP 9.7 Release Notes
 page_id: 61867355
 ---
 
@@ -8,7 +8,7 @@ page_id: 61867355
 # Overview
 {%section%}
 {%column width=75% %}
-A new release of Gigaspace's XAP platform has been released. Version 9.6 is a minor relaese. Below you will find all relevent information.
+A new release of Gigaspace's XAP platform has been released. Version 9.7 is a minor relaese. Below you will find all relevent information.
 {%endcolumn%}
 {%column width=20% %}
 <img src="/attachment_files/gs/gs.png" width="100" height="100">
@@ -25,7 +25,7 @@ A new release of Gigaspace's XAP platform has been released. Version 9.6 is a mi
 {%align left%}**Whats new**{%endalign%}
 {%endcolumn%}
 {%column width=40% %}
-{%align left%}{%learn%}/release_notes/xap96/whats-new.html{%endlearn%}{%endalign%}
+{%align left%}{%learn%}./whats-new.html{%endlearn%}{%endalign%}
 {%endcolumn%}
 {%endsection%}
 {%endpanel%}
@@ -39,7 +39,7 @@ A new release of Gigaspace's XAP platform has been released. Version 9.6 is a mi
 {%align left%}**New Features**{%endalign%}
 {%endcolumn%}
 {%column width=40% %}
-{%align left%}{%learn%}/release_notes/xap96/new-features.html{%endlearn%}{%endalign%}
+{%align left%}{%learn%}./new-features.html{%endlearn%}{%endalign%}
 {%endcolumn%}
 {%endsection%}
 {%endpanel%}
@@ -53,7 +53,7 @@ A new release of Gigaspace's XAP platform has been released. Version 9.6 is a mi
 {%align left%}**Fixed Issues**{%endalign%}
 {%endcolumn%}
 {%column width=40% %}
-{%align left%}{%learn%}/release_notes/xap96/fixed-issues.html{%endlearn%}{%endalign%}
+{%align left%}{%learn%}./fixed-issues.html{%endlearn%}{%endalign%}
 {%endcolumn%}
 {%endsection%}
 {%endpanel%}
@@ -66,7 +66,7 @@ A new release of Gigaspace's XAP platform has been released. Version 9.6 is a mi
 {%align left%}**Supported Platforms**{%endalign%}
 {%endcolumn%}
 {%column width=40% %}
-{%align left%}{%learn%}/release_notes/xap96/supported-platforms.html{%endlearn%}{%endalign%}
+{%align left%}{%learn%}./supported-platforms.html{%endlearn%}{%endalign%}
 {%endcolumn%}
 {%endsection%}
 {%endpanel%}
@@ -79,7 +79,7 @@ A new release of Gigaspace's XAP platform has been released. Version 9.6 is a mi
 {%align left%}**Known Issues**{%endalign%}
 {%endcolumn%}
 {%column width=40% %}
-{%align left%}{%learn%}/release_notes/xap96/nown-issues.html{%endlearn%}{%endalign%}
+{%align left%}{%learn%}./known-issues.html{%endlearn%}{%endalign%}
 {%endcolumn%}
 {%endsection%}
 {%endpanel%}
@@ -92,7 +92,7 @@ A new release of Gigaspace's XAP platform has been released. Version 9.6 is a mi
 {%align left%}**Deprecated Functionality**{%endalign%}
 {%endcolumn%}
 {%column width=40% %}
-{%align left%}{%learn%}/release_notes/xap96/deprecation.html{%endlearn%}{%endalign%}
+{%align left%}{%learn%}./deprecation.html{%endlearn%}{%endalign%}
 {%endcolumn%}
 {%endsection%}
 {%endpanel%}
@@ -105,7 +105,7 @@ A new release of Gigaspace's XAP platform has been released. Version 9.6 is a mi
 {%align left%}**Backward Compatability**{%endalign%}
 {%endcolumn%}
 {%column width=40% %}
-{%align left%}{%learn%}/release_notes/xap96/backward-compatibility.html{%endlearn%}{%endalign%}
+{%align left%}{%learn%}./backward-compatibility.html{%endlearn%}{%endalign%}
 {%endcolumn%}
 {%endsection%}
 {%endpanel%}
@@ -115,10 +115,10 @@ A new release of Gigaspace's XAP platform has been released. Version 9.6 is a mi
 {% panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
 {%section%}
 {%column width=50% %}
-{%align left%}**Upgrading**{%endalign%}
+{%align left%}**Upgrading from older version**{%endalign%}
 {%endcolumn%}
 {%column width=40% %}
-{%align left%}{%learn%}/release_notes/xap96/upgrading.html{%endlearn%}{%endalign%}
+{%align left%}{%learn%}./upgrading.html{%endlearn%}{%endalign%}
 {%endcolumn%}
 {%endsection%}
 {%endpanel%}
