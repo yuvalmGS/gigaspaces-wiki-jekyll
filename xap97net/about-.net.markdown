@@ -7,7 +7,7 @@ page_id: 63799335
 
 # About GigaSpaces
 
-GigaSpaces is a platform that is targeted for scaling out stateful applications in a high performance low latency environment. It is based on the GigaSpaces space-based runtime for delivering core middleware components. The primary model for ensuring the linear scalability of an application running on GigaSpaces relies on [Space Based Architecture](http://wiki.gigaspaces.com/wiki/display/XAP66/Concepts#Concepts-SpaceBasedArchitecture) as the primary design pattern.
+GigaSpaces is a platform that is targeted for scaling out stateful applications in a high performance low latency environment. It is based on the GigaSpaces space-based runtime for delivering core middleware components. The primary model for ensuring the linear scalability of an application running on GigaSpaces relies on [Space Based Architecture](/product_overview/Concepts.html#Concepts-SpaceBasedArchitecture) as the primary design pattern.
 
 The core of GigaSpaces is the _**space**_ -- a middleware infrastructure, collocated with the business process services. The space uses the [JavaSpaces API](/product_overview/Concepts.html#Concepts-TupleSpace) as its primary API, with four methods: [Read()](/product_overview/Concepts.html#Concepts-SpaceBasicConcepts), [Write()](/product_overview/Concepts.html#Concepts-SpaceBasicConcepts), [Take()](/product_overview/Concepts.html#Concepts-SpaceBasicConcepts), and [Notify()](/product_overview/Concepts.html#Concepts-SpaceBasicConcepts).
 

@@ -45,7 +45,7 @@ This page will demonstrate two sample multi-site replication topologies. These a
 - Multi-master with two sites, where each site is active and updates its subset of the data.
 - Master-slave, where only one site actually updates the data while the rest either serve as a backup or use it in read only mode.
 
-For both of the above topologies, replication is done in in a similar way: Each space is replicating the relevant data to its target space(s) via a local gateway which routes the data to the gateway of the target space(s) and from there to the target space. The data is being replicated asynchronously in a reliable mode, which means that even if a primary space instance fails on the source site, the backup space instance which replaces it will immediately take control and replicate the missing data along with new data that has been  generated on the newly elected primary space instance. This is very similar to the [Mirror Service](http://wiki.gigaspaces.com/wiki/display/XAP95/Asynchronous+Persistency+with+the+Mirror) replication scheme. The gateway is discussed in full below.
+For both of the above topologies, replication is done in in a similar way: Each space is replicating the relevant data to its target space(s) via a local gateway which routes the data to the gateway of the target space(s) and from there to the target space. The data is being replicated asynchronously in a reliable mode, which means that even if a primary space instance fails on the source site, the backup space instance which replaces it will immediately take control and replicate the missing data along with new data that has been  generated on the newly elected primary space instance. This is very similar to the [Mirror Service]({%latestjavaurl%}/Asynchronous-Persistency-with-the-Mirror.html) replication scheme. The gateway is discussed in full below.
 
 ![wan_how_it_works.jpg](/attachment_files/xap97net/wan_how_it_works.jpg)
 
@@ -155,11 +155,11 @@ have no meaning, all sites could designate the same ports as well-->
 In the above example we see that both the sink and delegator needs a reference to the gateway lookup configuration, and that's because both components are using this configuration to locate the relevant component or to register themselves. They use their local gateway name to identify themselves to the lookup configuration, where they should be registered and where they should look for their targets.
 
 The delegator and sink components are actually isolated and can even be deployed in separate processing units but the most simple deployment would be to bundle theses two together. However, in some cases you might want to separate this into two or more machines due to system loads or other reasons.
-{% refer %}For full details and available configuration please refer to [Replication Gateway Components](http://wiki.gigaspaces.com/wiki/display/XAP95/Replication+Gateway+Components){% endrefer %}
+{% refer %}For full details and available configuration please refer to [Replication Gateway Components]({%latestjavaurl%}/Replication-Gateway-Components.html){% endrefer %}
 
 ## Gateway and the Mirror Service
 
-A gateway and a [Mirror Service](http://wiki.gigaspaces.com/wiki/display/XAP95/Asynchronous+Persistency+with+the+Mirror) are two different components which can co-exist together without any effect on each other. A gateway is just another reliable asynchronous target. Due to this fact, we will not discuss or demonstrate mirror service along side with a gateway because they do not contradict each other or require any special configuration when used in the same space cluster.
+A gateway and a [Mirror Service]({%latestjavaurl%}/Asynchronous-Persistency-with-the-Mirror.html) are two different components which can co-exist together without any effect on each other. A gateway is just another reliable asynchronous target. Due to this fact, we will not discuss or demonstrate mirror service along side with a gateway because they do not contradict each other or require any special configuration when used in the same space cluster.
 
 ## Gateway and Distributed Transactions
 
@@ -484,7 +484,7 @@ With this architecture, we will have a multi-master topology where data is being
 
 ![wan_multi_master.jpg](/attachment_files/xap97net/wan_multi_master.jpg)
 
-We will demonstrate this using two sites but any number of sites is supported in the same manner. In a master-slave topology, each site should try to modify different subsets of the data as much as possible because many conflicts can occur if multiple sites are changing the same space entries at the same time. Such conflict can be resolved using a conflict resolver which will be discussed fully at [Multi-Site Conflict Resolution](http://wiki.gigaspaces.com/wiki/display/XAP95/Multi-Site+Conflict+Resolution).
+We will demonstrate this using two sites but any number of sites is supported in the same manner. In a master-slave topology, each site should try to modify different subsets of the data as much as possible because many conflicts can occur if multiple sites are changing the same space entries at the same time. Such conflict can be resolved using a conflict resolver which will be discussed fully at [Multi-Site Conflict Resolution]({%latestjavaurl%}/Multi-Site-Conflict-Resolution.html).
 
 With the example below we will have only New York and London as the two active sites.
 
@@ -747,8 +747,8 @@ The [Multi-Master running example](/sbp/wan-replication-gateway.html) includes a
 
 # Filtering Replication Between Gateways
 
-In some cases, there can be data that should not be replicated between the sites but should still be replicated locally to the backup or a mirror service. Hence, specifying the object is not replicated does not fit. Since a replication channel to a gateway is like any other replication channel, a custom [Replication Filter](http://wiki.gigaspaces.com/wiki/display/XAP95/Cluster+Replication+Filters) at the source space can be used to filter the relevant data from being sent to the target gateway. This filtering should be based on the replication target name in order to identify that the replication filter is called for the correct outgoing replication to the gateway.
-{% refer %}For full details and example please refer to [Replication Gateway Filtering](http://wiki.gigaspaces.com/wiki/display/XAP95/Replication+Gateway+Filtering){% endrefer %}
+In some cases, there can be data that should not be replicated between the sites but should still be replicated locally to the backup or a mirror service. Hence, specifying the object is not replicated does not fit. Since a replication channel to a gateway is like any other replication channel, a custom [Replication Filter]({%latestjavaurl%}/Cluster-Replication-Filters.html) at the source space can be used to filter the relevant data from being sent to the target gateway. This filtering should be based on the replication target name in order to identify that the replication filter is called for the correct outgoing replication to the gateway.
+{% refer %}For full details and example please refer to [Replication Gateway Filtering]({%latestjavaurl%}/Replication-Gateway-Filtering.html){% endrefer %}
 
 # Bootstrap One Site From Another Site
 
@@ -759,10 +759,10 @@ Bootstrapping a site from another site is a process in which one site space is s
 
 # Adding and Removing Sites
 
-Adding and removing a site without down time is done by applying the [Hot Deploy](/xap97/deploying-onto-the-service-grid.html#DeployingontotheServiceGrid-HotDeploy) method on the space PU.
+Adding and removing a site without down time is done by applying the [Hot Deploy]({%latestjavaurl%}/deploying-onto-the-service-grid.html#DeployingontotheServiceGrid-HotDeploy) method on the space PU.
 
 - For a Gateway PUs, the process is pretty straightforward. Since they are stateless, their `pu.xml` can be simply updated and they can be undeployed and redeployed with the new added sites or removed sites relevant configuration in a regular fashion.
-- A space, however, is stateful. Redeploying it entirely will cause downtime and loss of data (if no database initial load is configured). Therefore the [Hot Deploy](/xap97/deploying-onto-the-service-grid.html#DeployingontotheServiceGrid-HotDeploy) method should be used. Roughly speaking, while the space is up, its `pu.xml` should be updated reflecting the new gateway replication topology state (addition or removal of sites) and then this `pu.xml` should be copied into the GSM's #deployment directories, overriding the existing `pu.xml` of the space processing unit of the current deployment. Then a manual restart of space instances should be performed, going over each partition, restarting its backup, waiting for it to perform full recovery from the primary (now it should be with the updated`pu.xml` configuration) and then restarting the primary instance which will be replaced by the updated backup and will become a backup after restart.
+- A space, however, is stateful. Redeploying it entirely will cause downtime and loss of data (if no database initial load is configured). Therefore the [Hot Deploy]({%latestjavaurl%}/deploying-onto-the-service-grid.html#DeployingontotheServiceGrid-HotDeploy) method should be used. Roughly speaking, while the space is up, its `pu.xml` should be updated reflecting the new gateway replication topology state (addition or removal of sites) and then this `pu.xml` should be copied into the GSM's #deployment directories, overriding the existing `pu.xml` of the space processing unit of the current deployment. Then a manual restart of space instances should be performed, going over each partition, restarting its backup, waiting for it to perform full recovery from the primary (now it should be with the updated`pu.xml` configuration) and then restarting the primary instance which will be replaced by the updated backup and will become a backup after restart.
 
 {% endcomment %}
 

@@ -59,7 +59,7 @@ Several `ISpaceProxy` instances can be defined within a single Processing Unit, 
 - The `ISpaceProxy` variable represents a remote or embedded space proxy (for a single space or clustered) and **should be constructed only** once throughout the lifetime of the application process.
 - You should treat the `ISpaceProxy` variable as a singleton to be shared across multiple different threads.
 - The `ISpaceProxy` interface is a thread safe and there is no need to create an `ISpaceProxy` variable per application thread.
-- In case the space has been fully terminated (no backup or primary instances running any more) the client space proxy will try to reconnect to the space up to a predefined timeout based on the [Proxy Connectivity](/xap97/proxy-connectivity.html) settings. If it fails to reconnect, an error will be displayed.
+- In case the space has been fully terminated (no backup or primary instances running any more) the client space proxy will try to reconnect to the space up to a predefined timeout based on the [Proxy Connectivity]({%latestjavaurl%}/proxy-connectivity.html) settings. If it fails to reconnect, an error will be displayed.
 {% endnote %}
 
 # Operations
@@ -72,7 +72,7 @@ The [ISpaceProxy](http://www.gigaspaces.com/docs/JavaDocOS//docs/dotnetdocs9.5/)
 
 {: .table .table-bordered}
 |[Data Query operations](./sqlquery.html)|Data Insert and Update operations|[Business logic execution operations](./task-execution-over-the-space.html)|Data removal operations|
-|Read<br/>ReadMultiple<br/>[GetSpaceIterator](/xap97/paging-support-with-space-iterator.html)|Write<br/>WriteMultiple [change](./change-api.html) |Execute<br/>executorBuilder|Clean<br/>Clear<br/>Take<br/>TakeMultiple|
+|Read<br/>ReadMultiple<br/>[GetSpaceIterator]({%latestjavaurl%}/paging-support-with-space-iterator.html)|Write<br/>WriteMultiple [change](./change-api.html) |Execute<br/>executorBuilder|Clean<br/>Clear<br/>Take<br/>TakeMultiple|
 
 { include ispaceproxy-code-snippets.markdown }
 
@@ -182,7 +182,7 @@ In a similar manner, the read timeout and write lease can be specified.
 {% endinittab %}
 
 {% tip %}
-See more examples for the `ISpaceProxy` interface usage with the [POJO Support](/xap97/pojo-support.html) section.
+See more examples for the `ISpaceProxy` interface usage with the [POJO Support]({%latestjavaurl%}/pojo-support.html) section.
 {% endtip %}
 
 # Saving Data to the Space
@@ -191,11 +191,11 @@ The `ISpaceProxy.Write()` operation saves a copy of an object into the Space. Th
 
 When updating an object with many fields use the `PARTIAL_UPDATE` mode.
 
-When performing a Write operation you may provide a lease (time to live) duration (in milliseconds time unit) for the object. The Write invocation returns a [Lease](/xap97/leases---automatic-expiration.html) object allowing you to cancel or renew the object lease. When the lease expires, the object is removed from the Space. The default lease duration is `FOREVER`. An `IllegalArgumentException` is thrown if the lease time requested is negative.
+When performing a Write operation you may provide a lease (time to live) duration (in milliseconds time unit) for the object. The Write invocation returns a [Lease]({%latestjavaurl%}/leases---automatic-expiration.html) object allowing you to cancel or renew the object lease. When the lease expires, the object is removed from the Space. The default lease duration is `FOREVER`. An `IllegalArgumentException` is thrown if the lease time requested is negative.
 
 If a Write returns without throwing an exception, that object is committed to the Space, possibly within a transaction. When the Write operation throws an exception, the exception type and message must be considered in order to know whether the object was successfully committed to the Space or not. For example, the `EntryAlreadyInSpaceException` when using write with a `WriteOnly` modifier means the object was not committed, as it already exists in the Space.
 
-Writing an object into a space might generate [notifications](/xap97/notify-container.html) to registered objects.
+Writing an object into a space might generate [notifications]({%latestjavaurl%}/notify-container.html) to registered objects.
 
 ## Returning Previous Value
 
@@ -287,7 +287,7 @@ See the [SQLQuery](./sqlquery.html) for details.
 
 The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc9.6/com/j_spaces/core/client/GSIterator.html) allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the `readMultiple` since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side.
 
-See the [Paging Support with Space Iterator](/xap97/paging-support-with-space-iterator.html) for details.
+See the [Paging Support with Space Iterator]({%latestjavaurl%}/paging-support-with-space-iterator.html) for details.
 
 # ReadIfExists and Read Operations
 
@@ -315,7 +315,7 @@ With a `RemoteException`, an object can be removed from a space and yet never re
 
 If you would like to take objects from the space in the same order they have been written into the space you should perform the take objects in a [FIFO mode](./fifo-support.html).
 
-Taking an object from the space might generate [notifications](/xap97/notify-container.html) to registered objects/queries.
+Taking an object from the space might generate [notifications]({%latestjavaurl%}/notify-container.html) to registered objects/queries.
 
 {% tip %}
 The `take` operation default timeout is `JavaSpace.NO_WAIT`.
@@ -448,7 +448,7 @@ public class AsyncWriteTask implements Task<Integer>{
 
 # Declarative Transactions
 
-As seen in the take API above, there is no need to provide a Jini transaction object for the different space operations. `GigaSpace` with the different OpenSpaces [transaction managers](/xap97/transaction-management.html) and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the `GigaSpace` interface joins it, using Spring's rich transaction support.
+As seen in the take API above, there is no need to provide a Jini transaction object for the different space operations. `GigaSpace` with the different OpenSpaces [transaction managers]({%latestjavaurl%}/transaction-management.html) and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the `GigaSpace` interface joins it, using Spring's rich transaction support.
 
 {% exclamation %} In order to have GigaSpace transactional, the transaction manager must be provided as a reference when constructing the GigaSpace bean. For example (using the distributed transaction manager):
 

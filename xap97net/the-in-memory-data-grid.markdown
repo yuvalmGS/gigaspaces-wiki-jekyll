@@ -84,7 +84,7 @@ GigaSpaces and its Space-Based-Architecture embrace the [reactive programming](h
 - [Data Event Listener](./event-listener-container.html): [Polling Container](./polling-container-component.html), [Notify Container](./notify-container-component.html)
 - [Local View and Local Cache](./client-side-caching.html)
 - [Task Execution over the Space](./task-execution-over-the-space.html)
-- [Asynchronous Operations](/xap97/the-gigaspace-interface.html#Asynchronous Operations)
+- [Asynchronous Operations]({%latestjavaurl%}/the-gigaspace-interface.html#Asynchronous Operations)
 - [Drools Rule Engine Integration](/sbp/drools-rule-engine-integration.html): Available from a 3rd party.
 
 {% endtoczone %}
@@ -96,14 +96,14 @@ The Space supports a number of APIs to allow for maximum flexibility to Space cl
 - The core [Space API](./the-ispaceproxy-interface.html), which is the most recommended, allows you to read objects from the Space based on various criteria, write objects to it, remove objects from it and get notified about changes made to objects. This API supports transactions.
 
 {% info title=Accessing the Space from Other Languages %}
-The code space API is also supported in [Java](http://wiki.gigaspaces.com/wiki/display/XAP95/In+Memory+Data+Grid) and [C++|XAP CPP]. This allows clients to access the space via these languages. It also supports [interoperability|Platform Interoperability in GigaSpaces] between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
+The code space API is also supported in [Java]({%latestjavaurl%}/In-Memory-Data-Grid.html) and [C++|XAP CPP]. This allows clients to access the space via these languages. It also supports [interoperability|Platform Interoperability in GigaSpaces] between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
 {% endinfo %}
 
 - The [Document API](./document-(schema-free)-api.html) allows you to develop your application in a schema-less manner. Using map-like objects, you can add attributes to data types in runtime.
 
 # Services on Top of the Space
 
-Building on top of the core API, the Space also provides [higher level services](/xap97/services-on-top-of-the-data-grid.html) onto the application. These services, along with the space's basic capabilities, provide the full stack of middleware features that you can build your application with.
+Building on top of the core API, the Space also provides [higher level services]({%latestjavaurl%}services-on-top-of-the-data-grid.html) onto the application. These services, along with the space's basic capabilities, provide the full stack of middleware features that you can build your application with.
 [The Task Execution API](./task-execution-over-the-space.html) allows you send your code to the space and execute it on one or more  nodes in parallel, accessing the space data on each node locally.
 [Messaging and Events] use the core API's operations and abstract your code from all the low level details involved in handling the event, such as event registration with the space, transaction initiation, etc. This has the benefit of abstracting your code from the lower level API and allows it to focus on your business logic and the application behavior.
 [Space-Based Remoting](./space-based-remoting.html) allows you to use the space's messaging and code execution capabilities to enable application clients to invoke space side services transparently, using an application specific interface. Using the space as the transport mechanism for the remote calls, allows for location transparency, high availability and parallel execution of the calls, without changing the client code.

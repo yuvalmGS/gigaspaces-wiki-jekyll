@@ -35,7 +35,7 @@ For multi-homed network card machine use `multicastTest -sender -ba \[network ca
 {% endtip %}
 
 {% tip %}
-To configure Jini in a multi network environment see the [Multi Network Card Configuration Section](/xap97/how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).html).
+To configure Jini in a multi network environment see the [Multi Network Card Configuration Section]({%latestjavaurl%}/how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).html).
 {% endtip %}
 
 # Options
