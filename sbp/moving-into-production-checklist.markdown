@@ -329,10 +329,12 @@ export LOOKUPLOCATORS=127.0.0.1:8888
 gs deploy-space -cluster schema=partitioned total_members=4 spaceX
 {% endhighlight %}
 6. Deploy a space using lookup listening on port 9999
+
 {% highlight java %}
 export LOOKUPLOCATORS=127.0.0.1:9999
 gs deploy-space -cluster schema=partitioned total_members=2 spaceY
 {% endhighlight %}
+
 {% tip %}
 On top of the Lookup service, there is also an alternative way to export the space proxy - it is done via the RMI registry (JNDI). It is started by default within any JVM running a GSC/GSM. By default, the port used is 10098 and above. This option should be used only in special cases where somehow there is no way to use the default lookup service. Since this is the usual RMI registry, it suffers from known problems, such as being non-distributed, non-highly-available, etc.
 {% endtip %}
