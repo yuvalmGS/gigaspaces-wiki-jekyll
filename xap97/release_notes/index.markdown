@@ -16,109 +16,41 @@ A new release of Gigaspace's XAP platform has been released. Version 9.7 is a mi
 {%endsection%}
 
 
+# XAP 9.7.1
 
-{%comment%} =========================Whats new   {%endcomment%}
+[What's new](./whats-new.html)
 
-{% panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
-{%section%}
-{%column width=50% %}
-{%align left%}**Whats new**{%endalign%}
-{%endcolumn%}
-{%column width=40% %}
-{%align left%}{%learn%}./whats-new.html{%endlearn%}{%endalign%}
-{%endcolumn%}
-{%endsection%}
-{%endpanel%}
+[New Features](./new-features.html)
 
+[Resolved Issues](./fixed-issues.html)
 
-{%comment%} ========================= New Features   {%endcomment%}
+[Supported Platforms](./fixed-issues.html)
 
-{% panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
-{%section%}
-{%column width=50% %}
-{%align left%}**New Features**{%endalign%}
-{%endcolumn%}
-{%column width=40% %}
-{%align left%}{%learn%}./new-features.html{%endlearn%}{%endalign%}
-{%endcolumn%}
-{%endsection%}
-{%endpanel%}
+[Known Issues](./Known-issues.html)
+
+[Deprecated Functionality](./deprecation.html)
+
+[Backward Compatibility](./backward-compatibility.html)
+
+[Upgrading](./upgrading.html.html)
 
 
-{%comment%} ========================= Fixed Issues   {%endcomment%}
 
-{% panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
-{%section%}
-{%column width=50% %}
-{%align left%}**Fixed Issues**{%endalign%}
-{%endcolumn%}
-{%column width=40% %}
-{%align left%}{%learn%}./fixed-issues.html{%endlearn%}{%endalign%}
-{%endcolumn%}
-{%endsection%}
-{%endpanel%}
+# XAP 9.7.0
 
-{%comment%} ========================= Supported Platforms   {%endcomment%}
+[What's new](./whats-new.html)
 
-{% panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
-{%section%}
-{%column width=50% %}
-{%align left%}**Supported Platforms**{%endalign%}
-{%endcolumn%}
-{%column width=40% %}
-{%align left%}{%learn%}./supported-platforms.html{%endlearn%}{%endalign%}
-{%endcolumn%}
-{%endsection%}
-{%endpanel%}
+[New Features](./new-features.html)
 
-{%comment%} ========================= Known Issues   {%endcomment%}
+[Resolved Issues](./fixed-issues.html)
 
-{% panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
-{%section%}
-{%column width=50% %}
-{%align left%}**Known Issues**{%endalign%}
-{%endcolumn%}
-{%column width=40% %}
-{%align left%}{%learn%}./known-issues.html{%endlearn%}{%endalign%}
-{%endcolumn%}
-{%endsection%}
-{%endpanel%}
+[Supported Platforms](./fixed-issues.html)
 
-{%comment%} ========================= Deprecation   {%endcomment%}
+[Known Issues](./Known-issues.html)
 
-{% panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
-{%section%}
-{%column width=50% %}
-{%align left%}**Deprecated Functionality**{%endalign%}
-{%endcolumn%}
-{%column width=40% %}
-{%align left%}{%learn%}./deprecation.html{%endlearn%}{%endalign%}
-{%endcolumn%}
-{%endsection%}
-{%endpanel%}
+[Deprecated Functionality](./deprecation.html)
 
-{%comment%} ========================= Backward Compatability   {%endcomment%}
+[Backward Compatibility](./backward-compatibility.html)
 
-{% panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
-{%section%}
-{%column width=50% %}
-{%align left%}**Backward Compatability**{%endalign%}
-{%endcolumn%}
-{%column width=40% %}
-{%align left%}{%learn%}./backward-compatibility.html{%endlearn%}{%endalign%}
-{%endcolumn%}
-{%endsection%}
-{%endpanel%}
+[Upgrading](./upgrading.html.html)
 
-{%comment%} ========================= Migration  {%endcomment%}
-
-{% panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
-{%section%}
-{%column width=50% %}
-{%align left%}**Upgrading from older version**{%endalign%}
-{%endcolumn%}
-{%column width=40% %}
-{%align left%}{%learn%}./upgrading.html{%endlearn%}{%endalign%}
-{%endcolumn%}
-{%endsection%}
-{%endpanel%}

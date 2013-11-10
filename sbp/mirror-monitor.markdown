@@ -17,7 +17,7 @@ page_id: 52888463
 {% endtip %}
 
 # Overview
-The Mirror Service is an essential component when persisting your data into the enterprise database. The [Mirror Service]({%latestjavaurl%}/Asynchronous+Persistency+with+the+Mirror) delegates the IMDG activities into the database in a reliable asynchronous manner, allowing the application to access the data stored in-memory without having the database as part of the critical path of the transaction. When using the Mirror Service, the database performance and availability would not impact the application response time.
+The Mirror Service is an essential component when persisting your data into the enterprise database. The [Mirror Service]({%latestjavaurl%}/Asynchronous-Persistency-with-the-Mirror.html) delegates the IMDG activities into the database in a reliable asynchronous manner, allowing the application to access the data stored in-memory without having the database as part of the critical path of the transaction. When using the Mirror Service, the database performance and availability would not impact the application response time.
 
 The Mirror Service behavior is important for the stability of the application and the consistency of the data within the Database. With large scale application, you might want to monitor the Mirror Service behavior in real time. This means reacting in a timely fashion in case there is a need to intervene with its activity or related components that interacts with the Mirror Service (IMDG, Database).
 
@@ -26,7 +26,7 @@ The Mirror Monitor utility gathers statistics about the Mirror Service behavior 
 
 The Mirror Monitor extends the built-in openspaces `DefaultHibernateExternalDataSource`, and collects statistics about the activities the mirror performs. You may log these statistics into a log file or/and access these by using the JMX API.
 
-The Mirror Monitor using the GigaSpaces [Administration and Monitoring API]({%latestjavaurl%}/Administration+and+Monitoring+API) to receive information about the current status of the replication redo log size of all the IMDG primary instances. When having multiple partitions for the IMDG, the redo log value exposed is a sum of all the IMDG primary instances current replication redo log size.
+The Mirror Monitor using the GigaSpaces [Administration and Monitoring API]({%latestjavaurl%}/Administration-and-Monitoring-API.html) to receive information about the current status of the replication redo log size of all the IMDG primary instances. When having multiple partitions for the IMDG, the redo log value exposed is a sum of all the IMDG primary instances current replication redo log size.
 
 This utility collecting stats about:
 

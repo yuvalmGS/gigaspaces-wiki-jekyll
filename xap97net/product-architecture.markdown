@@ -28,7 +28,7 @@ Each sub-system (layer) is responsible for providing application server capabili
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-An SLA-Driven Container, also known as the [Service Grid]({%latestjavaurl%}/Service-Grid-Processing-Unit-Container.html), is responsible for abstracting the physical characteristics of the host machines from the application deployment.
+An SLA-Driven Container, also known as the [Service Grid]({{ page.url | remove: 'net' }}/Service-Grid.html#gsc), is responsible for abstracting the physical characteristics of the host machines from the application deployment.
 
 The Service Grid is simply a set of runtime container processes deployed on multiple physical machines, which together form a virtual runtime cloud.  Once the cloud is formed, applications can be deployed for execution across the cloud, without a need to define specific host machine characteristics.
 
@@ -40,7 +40,7 @@ When it comes to provisioning and monitoring large-scale systems, the ability to
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The Service Grid takes a [pre-defined application-required SLA]({%latestjavaurl%}/Service-Grid-Processing-Unit-Container.html#ServiceGridProcessingUnitContainer-SLAPolicy), and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
+The Service Grid takes a [pre-defined application-required SLA]({{ page.url | remove: 'net' }}//Service-Grid.html), and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
 
 To clarify, here is an example of an application SLA:
 
@@ -69,7 +69,7 @@ Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service 
 
 ## Grid Service Manager (GSM)
 
-The [Grid Service Manager (GSM)]({%latestjavaurl%}/The-Grid-Service-Manager.html), is a special infrastructure service, responsible for managing the Service Grid containers. The GSM accepts user deployment and undeployment requests, and provisions the Service Grid cloud accordingly.
+The [Grid Service Manager (GSM)]({{ page.url | remove: 'net' }}/Service-grid.html#gsa), is a special infrastructure service, responsible for managing the Service Grid containers. The GSM accepts user deployment and undeployment requests, and provisions the Service Grid cloud accordingly.
 The GSM monitors SLA breach events throughout the life-cycle of the application, and is responsible for taking corrective actions, once SLAs are breached.
 
 {% infosign %} It is common to start two instances of GSM services within each Service Grid cloud, for high-availability reasons.
@@ -78,7 +78,7 @@ The GSM monitors SLA breach events throughout the life-cycle of the application,
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The GSM service usually contains the [Lookup Service]({%latestjavaurl%}/Lookup-Service-Configuration.html) and the Webster codebase server as part of its standard configuration. This configuration can be changed by providing additional parameters in the GSM startup script.
+The GSM service usually contains the [Lookup Service]({{ page.url | remove: 'net' }}/Service-grid.html#lus) and the Webster codebase server as part of its standard configuration. This configuration can be changed by providing additional parameters in the GSM startup script.
 
 {% anchor gsc %}
 

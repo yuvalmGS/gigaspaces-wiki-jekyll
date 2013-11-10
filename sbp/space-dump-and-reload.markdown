@@ -21,7 +21,7 @@ page_id: 54820920
 When running a system using an in-memory data grid (IMDG), you may need to dump the data stored within the IMDG into a file and later reload it back. This might happen when you would like to copy the IMDG data from one system to another or when you would like to shutdown the system to perform some maintenance procedures or when you would like to upgrade the GigaSpaces release.
 
 {% tip %}
-If you would like to perform hardware maintenance activities without shutting down the system you can use a [rolling upgrade technique]({%latestjavaurl%}/Deploying+onto+the+Service+Grid#HotDeploy).
+If you would like to perform hardware maintenance activities without shutting down the system you can use a [rolling upgrade technique]({%latestjavaurl%}/Deploying-onto-the-Service-Grid.html#HotDeploy).
 {% endtip %}
 
 The [Space Dump Utility](/attachment_files/sbp/spacedump.zip) copies the data currently stored within the IMDG and saves it into an embedded DB file used by a temporary space. Later, once you would like to reload the data back into the IMDG, the utility performs the procedure in a reverse manner, by reading the data from the file and copy it back into the IMDG.

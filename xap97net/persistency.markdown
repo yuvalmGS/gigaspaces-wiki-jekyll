@@ -15,7 +15,7 @@ GigaSpaces [Space Persistency]({%latestjavaurl%}/Space-Persistency.html) interfa
 
 .NET persistency is a GigaSpaces implementation on top of Java `SpaceDataSource` and `SpaceSynchronizationEndpoint` classes.
 
-{% exclamation %} Before you begin, it is recommended to read the [Space Persistency]({%latestjavaurl%}/Space-Persistency.html) section.
+{% exclamation %} Before you begin, it is recommended to read the [Space Persistency]({{ page.url | remove: 'net' }}/Space-Persistency.html) section.
 
 {% tip %}
 For a fully running example using the Mirror Service see `GigaSpaces Root\XAP.NET\NET vX\Examples\StockSba` folder.
@@ -108,6 +108,6 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size",
 
 To create a custom implementation, implement the `GigaSpaces.Core.Persistency.ISqlDataSource` interface.
 
-{% exclamation %} Before creating a custom implementation, read the following [considerations]({%latestjavaurl%}/External-Data-Source.html).
+{% exclamation %} Before creating a custom implementation, read the following [considerations]({{ page.url | remove: 'net' }}/Space-Data-Source-API.html).
 
 {% lampon %} See an example for the NHibernate implementation under `<GigaSpaces Root>\dotnet\practices\ExternalDataSource\NHibernate`.

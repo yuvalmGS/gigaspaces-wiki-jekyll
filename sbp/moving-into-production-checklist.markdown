@@ -467,7 +467,7 @@ For applications that are using relatively large amount of third party libraries
 
 {% exclamation %} GigaSpaces is a Java-based product. .Net and C++ applications using GigaSpaces should also be aware the usage of the JVM libraries as part of the .Net and C++ client libraries.
 
-See the [Tuning Java Virtual Machines]({%latestjavaurl%}/Tuning+Java+Virtual+Machines) section and the [Java SE 6 HotSpot Virtual Machine Garbage Collection Tuning](http://java.sun.com/javase/technologies/hotspot/gc/gc_tuning_6.html) for detailed JVM tuning recommendations.
+See the [Tuning Java Virtual Machines]({%latestjavaurl%}/Tuning-Java-Virtual-Machines.html) section and the [Java SE 6 HotSpot Virtual Machine Garbage Collection Tuning](http://java.sun.com/javase/technologies/hotspot/gc/gc_tuning_6.html) for detailed JVM tuning recommendations.
 
 # Space Memory Management
 The Space supports two [Memory Management]({%latestjavaurl%}/Memory-Management-Facilities.html) modes:

@@ -28,7 +28,7 @@ A `SpaceDocument` is completely dynamic model artifact you can write into the sp
 
 ![document_arch.jpg](/attachment_files/sbp/document_arch.jpg)
 
-See the [Document Support]({%latestjavaurl%}/Document-(Schema-Free)-API.html) for details.
+See the [Document Support]({%latestjavaurl%}/Document-API.html) for details.
 
 # Evolving Space Schema using a Map Field
 

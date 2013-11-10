@@ -125,7 +125,7 @@ Connect into a known messaging broker (IBM MQ) within the existing system, consu
 
 ## Mule ESB
 
-Leverage [MF Mule integration](http://www.mulesoft.com/webinar-getting-mainframe-30-minutes) and [GigaSpaces Mule]({%latestjavaurl%}/Mule-ESB.html) support to have these to communicate with each other.
+Leverage [MF Mule integration](http://www.mulesoft.com) and [GigaSpaces Mule]({%latestjavaurl%}/Mule-ESB.html) support to have these to communicate with each other.
 
 ## WebMethods EntireX
 

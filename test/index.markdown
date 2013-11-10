@@ -15,8 +15,6 @@ page_id: 61867355
 {%learn%}/xap97/qsg-part-9.html{%endlearn%}
 
 
-{%gist /croffler/c6acf31bc9f23dc921eb %}
-
 # Indent
 
 
