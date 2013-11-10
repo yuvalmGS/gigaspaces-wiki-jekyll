@@ -149,7 +149,7 @@ sessionValidationScheduler.sessionManager = $sessionManager
 securityManager.sessionManager.sessionValidationScheduler = $sessionValidationScheduler
 {% endhighlight %}
 
-{% tip %}The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Space URL](http://wiki.gigaspaces.com/wiki/display/XAP9/Space+URL) to the IMDG deployed within your site.{% endtip %}
+{% tip %}The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Space URL]({%latestjavaurl%}/Space-URL.html) to the IMDG deployed within your site.{% endtip %}
 
 ### Web Application Libraries
 
@@ -173,11 +173,11 @@ To deploy the IMDG start the GigaSpaces agent using the `gs-agent` and run the f
 
 		gs deploy-space sessionSpace
 
-{% tip %}See the [deploy-space](http://wiki.gigaspaces.com/wiki/display/XAP9/deploy-space+GigaSpaces+CLI) command for details.{% endtip %}
+{% tip %}See the [deploy-space]({%latestjavaurl%}/deploy-space+GigaSpaces+CLI) command for details.{% endtip %}
 
 ### The WAN Gateway
 
-The [WAN Gateway](http://wiki.gigaspaces.com/wiki/display/XAP9/Multi-Site+Replication+over+the+WAN) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](http://www.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gateway) best practice for an example of how a multi-master Gateway architecture can be deployed.
+The [WAN Gateway]({%latestjavaurl%}/Multi-Site+Replication+over+the+WAN) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](./WAN+Replication+Gateway) best practice for an example of how a multi-master Gateway architecture can be deployed.
 
 ### Other configuration options
 
@@ -202,7 +202,7 @@ Session manager uses XStream libraries for serializing session data to XML. XStr
 
 ##### Secured GigaSpaces cluster
 
-When using a [Secure GigaSpaces cluster](http://wiki.gigaspaces.com/wiki/display/XAP9/Securing+your+Data) you can pass security credentials using following parameters in `shiro.ini` file,
+When using a [Secure GigaSpaces cluster]({%latestjavaurl%}/Securing-your-Data.html) you can pass security credentials using following parameters in `shiro.ini` file,
 
 		# When using secured GigaSpace cluster, pass the credentials here
 		# cacheManager.username = gs
@@ -214,7 +214,7 @@ When using a [Secure GigaSpaces cluster](http://wiki.gigaspaces.com/wiki/display
 
 The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish....).
 
-1. Download the [HttpSession.war](http://wiki.gigaspaces.com/wiki/download/attachments/56430569/HttpSession.war?version=2).
+1. Download the [HttpSession.war]({%latestjavaurl%}/attachments/56430569/HttpSession.war?version=2).
 1. Deploy a space named **sessionSpace**. You can start the `GigaSpaces root/bin/gsInstance.sh/bat` for a single instance space or deploy a clustered space using the command line or GS-UI.
 1. Deploy the HttpSession.war into Tomcat (or any other app server).
 1. Start your browser and access the web application via the following URL: http://localhost:8080/HttpSession
@@ -297,7 +297,7 @@ You can shutdown Websphere or Tomcat and later restart these. Your web applicati
 
 ### Multi-Site Deployment
 
-When deploying the [multi-site example](http://wiki.gigaspaces.com/wiki/display/SBP/WAN+Replication+Gateway) you should change the `shiro.ini` for each site to match the local site Space URL. For example,
+When deploying the [multi-site example](./WAN+Replication+Gateway) you should change the `shiro.ini` for each site to match the local site Space URL. For example,
 to connect to the DE space you should have the web application use a `shiro.ini` with the following:
 
 		sessionDAO.activeSessionsCacheName = jini://*/*/wanSpaceDE?useLocalCache&groups=DE

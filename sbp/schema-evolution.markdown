@@ -24,11 +24,11 @@ GigaSpaces supports addition of new space classes while the system is running ou
 The following sections describe the recommended options to evolve the space schema.
 
 # Schema-less Model - Document Model
-A `SpaceDocument` is completely dynamic model artifact you can write into the space and read back into the application. It allows you to change or evolve your data model without ever taking down the Space. Change your application code to add additional properties or remove existing ones, and you're good to go. In addition, **old and new versions of the same Entity model can co-exist** since the space does not enforce any restriction with regards to the property set of `SpaceDocuments` belong to a certain type. `SpaceDocument` can be [mapped to a POJO](http://wiki.gigaspaces.com/wiki/display/XAP91/Document-POJO+Interoperability) during runtime allowing the application leverage POJO and evolve these as neeeded. You can also make the `SpaceDocument` type safe by [Extending SpaceDocument](http://wiki.gigaspaces.com/wiki/display/XAP91/Extending+Space+Documents).
+A `SpaceDocument` is completely dynamic model artifact you can write into the space and read back into the application. It allows you to change or evolve your data model without ever taking down the Space. Change your application code to add additional properties or remove existing ones, and you're good to go. In addition, **old and new versions of the same Entity model can co-exist** since the space does not enforce any restriction with regards to the property set of `SpaceDocuments` belong to a certain type. `SpaceDocument` can be [mapped to a POJO]({%latestjavaurl%}/Document-POJO-Interoperability.html) during runtime allowing the application leverage POJO and evolve these as neeeded. You can also make the `SpaceDocument` type safe by [Extending SpaceDocument]({%latestjavaurl%}/Extending-Space-Documents.html).
 
 ![document_arch.jpg](/attachment_files/sbp/document_arch.jpg)
 
-See the [Document Support](http://wiki.gigaspaces.com/wiki/display/XAP91/Document+(Schema-Free)+API) for details.
+See the [Document Support]({%latestjavaurl%}/Document-(Schema-Free)-API.html) for details.
 
 # Evolving Space Schema using a Map Field
 
@@ -64,8 +64,8 @@ public class MyClass {
 
 See more:
 
-- [Matching Nested Maps](http://wiki.gigaspaces.com/wiki/display/XAP91/SQLQuery#MatchingNestedMaps)
-- [Nested Object Indexing](http://wiki.gigaspaces.com/wiki/display/XAP91/Indexing#Nestedpropertiesindexing)
+- [Matching Nested Maps]({%latestjavaurl%}/SQLQuery.html#MatchingNestedMaps)
+- [Nested Object Indexing]({%latestjavaurl%}/Indexing.html#Nestedpropertiesindexing)
 
 # Evolving Space Schema using Placeholder Fields
 

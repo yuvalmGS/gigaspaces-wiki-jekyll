@@ -34,12 +34,12 @@ The in-line cache is implemented using the following configurations:
 - Read-through and Write-through: For persisting the cache data synchronously.
 - Write-behind - Mirror: For persisting the cache data asynchronously.
 
-Persistence logic can either be the out-of-the-box [NHibernate External Data Source](./nhibernate-external-data-source.html) or any custom persistence logic that implements the [external data source interfaces](/xap97/external-data-source-api.html).
+Persistence logic can either be the out-of-the-box [NHibernate External Data Source](./nhibernate-external-data-source.html) or any custom persistence logic that implements the [external data source interfaces]({%latestjavaurl%}/external-data-source-api.html).
 
 The in-line cache ensures maximum performance when fetching data where the database is outside the critical path of the application transaction. (This makes more sense than it might seem: database contention is a primary source of application performance failure.)
 
 {% tip %}
-For best performance you should use the [ALL-IN-CACHE cache policy](/xap97/all-in-cache-cache-policy.html) with the [write-behind mirror](/xap97/asynchronous-persistency-with-the-mirror.html). This will ensure maximum hit rate when accessing the cache. With this mode, you should make sure the cache can accommodate _all_ the data you will access.
+For best performance you should use the [ALL-IN-CACHE cache policy]({%latestjavaurl%}/all-in-cache-cache-policy.html) with the [write-behind mirror]({%latestjavaurl%}/asynchronous-persistency-with-the-mirror.html). This will ensure maximum hit rate when accessing the cache. With this mode, you should make sure the cache can accommodate _all_ the data you will access.
 {% endtip %}
 
 The in-line cache mechanism is widely used with the following GigaSpaces APIs:
@@ -73,9 +73,9 @@ The Side cache scenario is widely used with the following GigaSpaces APIs:
 
 - [GigaSpace API](./the-ispaceproxy-interface.html) - GigaSpaces native Object/SQL API.
 - [The GigaMap Interface] - GigaSpaces Key/Value (JCache/Hashtable) API.
-- [JDBC API](/xap97/jdbc-driver.html) - GigaSpaces native JDBC driver.
-- [The Memcached API](/xap97/memcached-api.html) - Using any memcached client ([Java](http://code.google.com/p/xmemcached) , C# , C , C++..). See [memcached libraries page](http://code.google.com/p/memcached/wiki/Clients) for the different programming languages supporting the memcached protocol that may be used with GigaSpaces server memcached implementation.
-- [Hibernate](/xap97/gigaspaces-for-hibernate-orm-users.html) - Leveraging GigaSpaces as Hibernate 2nd Level Cache.
+- [JDBC API]({%latestjavaurl%}/jdbc-driver.html) - GigaSpaces native JDBC driver.
+- [The Memcached API]({%latestjavaurl%}/memcached-api.html) - Using any memcached client ([Java](http://code.google.com/p/xmemcached) , C# , C , C++..). See [memcached libraries page](http://code.google.com/p/memcached/wiki/Clients) for the different programming languages supporting the memcached protocol that may be used with GigaSpaces server memcached implementation.
+- [Hibernate]({%latestjavaurl%}/gigaspaces-for-hibernate-orm-users.html) - Leveraging GigaSpaces as Hibernate 2nd Level Cache.
 
 ## When you should use a side cache?
 
@@ -119,12 +119,12 @@ When running the cache in LRU cache policy mode, you may need to expire or evict
 
 Here are the options you may use to refresh the cache:
 
-- Eviction - You may configure the space to evict data by running in [LRU eviction policy](/xap97/lru-cache-policy.html).
+- Eviction - You may configure the space to evict data by running in [LRU eviction policy]({%latestjavaurl%}/lru-cache-policy.html).
 - Lease expiration - You may write objects into the space with a specific time to live (lease duration).
 - Programmatic expiration - You may expire the object using:
 -- `net.jini.core.lease.Lease.cancel()` - You can get the Lease object as a result of a write operation for a new object.
 -- `GigaSpace.write` operation for an existing object (update) using a short lease time. See the [GigaSpace](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/GigaSpace) interface write operation for details.
--- Take operation with [TakeModifiers.EVICT_ONLY mode](/xap97/lru-cache-policy.html#Explicit Eviction of Objects from the Space). See the [GigaSpace](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/GigaSpace) interface take operation for details.
+-- Take operation with [TakeModifiers.EVICT_ONLY mode]({%latestjavaurl%}/lru-cache-policy.html#Explicit Eviction of Objects from the Space). See the [GigaSpace](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/GigaSpace) interface take operation for details.
 - Periodic refresh - You may push data into the cache in a periodic manner via a timer. The Timer will be fetching relevant data that was recently updated within the database and pushing it into the cache.
 - Refresh data using a Queue - Any updates made to the database are also written to a queue. Refresher client consumes the messages on the queue and applies these changes to space.
 

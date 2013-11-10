@@ -97,9 +97,9 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 ##### • [What's new in XAP 9.6.X](http://wiki.gigaspaces.com/wiki/display/RN/What's+New+in+GigaSpaces+9.6.X)
 
-##### • [API Documentation](http://wiki.gigaspaces.com/wiki/display/API/API+Documentation+Portal)
+##### • [API Documentation](/api_documentation/api-documentation.html)
 
-##### • [Solutions and Best Practices Home](/sbp/index.html)
+##### • [Solutions and Best Practices Home](./index.html)
 
 ##### • [Forum](http://ask.gigaspaces.org/)
 
@@ -109,7 +109,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 ##### • [White Papers](http://www.gigaspaces.com/os_papers.html)
 
-##### • Looking for **[XAP.NET](http://wiki.gigaspaces.com/wiki/display/XAP96NET/XAP.NET+9.6+Documentation+Home)** or **[other versions](http://wiki.gigaspaces.com/wiki/display/ALL/Choose a GigaSpaces Version)**?
+##### • Looking for **[XAP.NET]({%latestneturl%})
 
 {% endcolumn %}
 

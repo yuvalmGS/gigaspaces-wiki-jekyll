@@ -18,7 +18,7 @@ page_id: 56428286
 
 # Overview
 
-This [WAN Gateway](http://wiki.gigaspaces.com/wiki/display/XAP91/Multi-Site+Replication+over+the+WAN) example includes PU folders with config files for a [Multi-Master](http://wiki.gigaspaces.com/wiki/display/XAP91/Multi-Site+Replication+over+the+WAN#Multi-Master Topology) topology that includes 3 sites: DE , RU , US. Each site have an independent cluster and a Gateway.
+This [WAN Gateway]({%latestjavaurl%}/Multi-Site-Replication-over-the-WAN.html) example includes PU folders with config files for a [Multi-Master]({%latestjavaurl%}/Multi-Site-Replication-over-the-WAN.html#Multi-Master Topology) topology that includes 3 sites: DE , RU , US. Each site have an independent cluster and a Gateway.
 ![wan_example1.jpg](/attachment_files/sbp/wan_example1.jpg)
 
 You will find folders for the following PUs:
@@ -55,7 +55,7 @@ Directory of D:\gigaspaces-xap-premium-8.0.3-ga\deploy
 3. Please move into the `scripts` folder and edit the `setExampleEnv.bat/sh` to include correct values for `NIC_ADDR` as the machine IP and `GS_HOME` to have Gigaspaces root folder location.
 
 # Running the Example
-You will find within the `scripts` folder running scripts to start [Grid Service Agent](http://wiki.gigaspaces.com/wiki/display/XAP91/The+Grid+Service+Agent) for each site and a deploy script for all sites. This will allow you to run the entire setup on one machine to test. Here are the steps to run the example:
+You will find within the `scripts` folder running scripts to start [Grid Service Agent]({%latestjavaurl%}/The-Grid-Service-Agent.html) for each site and a deploy script for all sites. This will allow you to run the entire setup on one machine to test. Here are the steps to run the example:
 
 1. Run `startAgent-DE.bat/sh` or to start DE site.
 2. Run `startAgent-RU.bat/sh` to start RU site.
@@ -78,7 +78,7 @@ Once deployed successfully you should see this:
 ![wan_example6.jpg](/attachment_files/sbp/wan_example6.jpg)
 
 # Testing the WAN Gateway Replication
-You can test the setup by using the [benchmark utility](http://wiki.gigaspaces.com/wiki/display/XAP91/Benchmark+View+-+GigaSpaces+Browser) comes with the GS-UI. Move the one of the Clusters Benchmark icon and click the Start Button:
+You can test the setup by using the [benchmark utility]({%latestjavaurl%}/Benchmark-View---GigaSpaces-Browser.html) comes with the GS-UI. Move the one of the Clusters Benchmark icon and click the Start Button:
 ![wan_example7.jpg](/attachment_files/sbp/wan_example7.jpg)
 
 You will see all spaces **Object Count** across all clusters by clicking the **Spaces icon** on the Space Browser Tab. You should see identical number of objects (5000) for all members:

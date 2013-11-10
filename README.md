@@ -52,6 +52,7 @@ title:  About Jini
 ...
 ---
 ```
+
  * `layout` refers to the page layout, which essentially determins the HTML elemenets that wrap the page content. The appropriate layout for every documentation page is `post`. 
  * `title` is the page title, as will appear in the page itself and the table of contents. 
  You don't need to refer to other elements if such exist. 

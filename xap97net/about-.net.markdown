@@ -7,9 +7,9 @@ page_id: 63799335
 
 # About GigaSpaces
 
-GigaSpaces is a platform that is targeted for scaling out stateful applications in a high performance low latency environment. It is based on the GigaSpaces space-based runtime for delivering core middleware components. The primary model for ensuring the linear scalability of an application running on GigaSpaces relies on [Space Based Architecture](http://wiki.gigaspaces.com/wiki/display/XAP66/Concepts#Concepts-SpaceBasedArchitecture) as the primary design pattern.
+GigaSpaces is a platform that is targeted for scaling out stateful applications in a high performance low latency environment. It is based on the GigaSpaces space-based runtime for delivering core middleware components. The primary model for ensuring the linear scalability of an application running on GigaSpaces relies on [Space Based Architecture](/product_overview/Concepts.html#Concepts-SpaceBasedArchitecture) as the primary design pattern.
 
-The core of GigaSpaces is the _**space**_ -- a middleware infrastructure, collocated with the business process services. The space uses the [JavaSpaces API](http://wiki.gigaspaces.com/wiki/display/XAP66/Concepts#Concepts-TupleSpace) as its primary API, with four methods: [Read()](http://wiki.gigaspaces.com/wiki/display/XAP66/Concepts#Concepts-SpaceBasicConcepts), [Write()](http://wiki.gigaspaces.com/wiki/display/XAP66/Concepts#Concepts-SpaceBasicConcepts), [Take()](http://wiki.gigaspaces.com/wiki/display/XAP66/Concepts#Concepts-SpaceBasicConcepts), and [Notify()](http://wiki.gigaspaces.com/wiki/display/XAP66/Concepts#Concepts-SpaceBasicConcepts).
+The core of GigaSpaces is the _**space**_ -- a middleware infrastructure, collocated with the business process services. The space uses the [JavaSpaces API](/product_overview/Concepts.html#Concepts-TupleSpace) as its primary API, with four methods: [Read()](/product_overview/Concepts.html#Concepts-SpaceBasicConcepts), [Write()](/product_overview/Concepts.html#Concepts-SpaceBasicConcepts), [Take()](/product_overview/Concepts.html#Concepts-SpaceBasicConcepts), and [Notify()](/product_overview/Concepts.html#Concepts-SpaceBasicConcepts).
 
 # Using JavaSpaces Through Native .NET API
 
@@ -25,7 +25,7 @@ Unmatched levels of high-throughput and low-latency are achieved through the sol
 
 ## Plain Old .Net Objects
 
-The [Space-Based .NET API] is a .NET equivalent of the [POJO](http://wiki.gigaspaces.com/wiki/display/XAP66/POJO+Support) in the Java world. Using the PONO provides a consistent programming model across the two different languages. It is a declarative and non-intrusive way to map existing domain model objects into the space using .NET attributes. Finally, using PONOs is simple -- API appears in pure a .NET library, in a native format.
+The [Space-Based .NET API] is a .NET equivalent of the [POJO]({%latestjavaurl%}/POJO-Support.html) in the Java world. Using the PONO provides a consistent programming model across the two different languages. It is a declarative and non-intrusive way to map existing domain model objects into the space using .NET attributes. Finally, using PONOs is simple -- API appears in pure a .NET library, in a native format.
 
 ## PBS
 

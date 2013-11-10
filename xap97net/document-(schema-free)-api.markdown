@@ -315,7 +315,7 @@ For more information about indexing, see the [Indexing](./indexing.html) page.
 
 # Events
 
-Event containers (both [polling container](/xap97/polling-container.html) and [notify container](/xap97/notify-container.html)) support Space `Document` entries.
+Event containers (both [polling container]({%latestjavaurl%}/polling-container.html) and [notify container]({%latestjavaurl%}/notify-container.html)) support Space `Document` entries.
 
 Here is a simple example of a polling event container configuration using a `Document`:
 
@@ -531,7 +531,7 @@ For more information about FIFO, see the [FIFO Support](./fifo-support.html) pag
 
 # Transactions and Optimistic Locking
 
-Transactions and isolation modifiers semantics is identical to the POJO semantics. For more information about transactions, see the [Transaction Management](/xap97/transaction-management.html) page.
+Transactions and isolation modifiers semantics is identical to the POJO semantics. For more information about transactions, see the [Transaction Management]({%latestjavaurl%}/transaction-management.html) page.
 
 Optimistic locking is disabled by default with `Document` entries (same as with POJO). To enable it, modify the type introduction code and set the optimistic locking support. For example:
 
@@ -594,13 +594,13 @@ gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 {% endinittab %}
 
 {% exclamation %} Changing optimistic locking after a type has been registered is not supported.
-For more information about optimistic locking, see the [Optimistic Locking](/xap97/optimistic-locking.html) page.
+For more information about optimistic locking, see the [Optimistic Locking]({%latestjavaurl%}/optimistic-locking.html) page.
 
 # Local Cache / Local View
 
 [Local View](./local-view.html) and [Local Cache](./local-cache.html) are supported for Documents. By default, the `SpaceDocument` instance is stored in the cache which speeds up query performance since the data does not need to be transformed from internal structure to `SpaceDocument`.
 
-If you intend to use local cache or local view in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](/xap97/document-pojo-interoperability.html).
+If you intend to use local cache or local view in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability]({%latestjavaurl%}/document-pojo-interoperability.html).
 
 # Persistency
 
@@ -698,13 +698,13 @@ Pojos can be persisted via document EDS as well, in the same way.
 
 Space Filter are supported for space documents.
 
-If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](/xap97/document-pojo-interoperability.html).
+If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability]({%latestjavaurl%}/document-pojo-interoperability.html).
 
 # Space Replication Filters
 
 Space Replication Filter are supported for space documents.
 
-If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](/xap97/document-pojo-interoperability.html).
+If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability]({%latestjavaurl%}/document-pojo-interoperability.html).
 
 # Advanced Options
 

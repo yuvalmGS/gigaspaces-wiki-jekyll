@@ -21,10 +21,10 @@ Using this pattern is divided into 4 main steps:
 
 As a first step, you need to load all your data from its current source to the space.
 
-GigaSpaces provides [OpenSpaces](http://wiki.gigaspaces.com/wiki/display/XAP66/Product+Architecture#ProductArchitecture-OpenSpacesAPIandComponents) as its main API. However, it is also possible to load data from different types of applications transparently, using different connectors implemented by GigaSpaces:
+GigaSpaces provides [OpenSpaces](/product_overview/product-Architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) as its main API. However, it is also possible to load data from different types of applications transparently, using different connectors implemented by GigaSpaces:
 
-- For messaging-based applications, refer to the [JMS](http://wiki.gigaspaces.com/wiki/display/XAP66/JMS) section.
-- If your application is an external data source (like a database), refer to the [External Data Source](http://wiki.gigaspaces.com/wiki/display/XAP66/External+Data+Source) section.
+- For messaging-based applications, refer to the [JMS]({%latestjavaurl%}/JMS---Basics.html) section.
+- If your application is an external data source (like a database), refer to the [External Data Source]({%latestjavaurl%}/External-Data-Source.html) section.
 
 ## 2 -- Loading Data Subset to Excel
 

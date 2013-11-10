@@ -28,7 +28,7 @@ Each sub-system (layer) is responsible for providing application server capabili
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-An SLA-Driven Container, also known as the [Service Grid](http://wiki.gigaspaces.com/wiki/display/XAP71/Service+Grid+Processing+Unit+Container), is responsible for abstracting the physical characteristics of the host machines from the application deployment.
+An SLA-Driven Container, also known as the [Service Grid]({%latestjavaurl%}/Service-Grid-Processing-Unit-Container.html), is responsible for abstracting the physical characteristics of the host machines from the application deployment.
 
 The Service Grid is simply a set of runtime container processes deployed on multiple physical machines, which together form a virtual runtime cloud.  Once the cloud is formed, applications can be deployed for execution across the cloud, without a need to define specific host machine characteristics.
 
@@ -40,7 +40,7 @@ When it comes to provisioning and monitoring large-scale systems, the ability to
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The Service Grid takes a [pre-defined application-required SLA](http://wiki.gigaspaces.com/wiki/display/XAP71/Service+Grid+Processing+Unit+Container#ServiceGridProcessingUnitContainer-SLAPolicy), and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
+The Service Grid takes a [pre-defined application-required SLA]({%latestjavaurl%}/Service-Grid-Processing-Unit-Container.html#ServiceGridProcessingUnitContainer-SLAPolicy), and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
 
 To clarify, here is an example of an application SLA:
 
@@ -59,7 +59,7 @@ In this type of example, the Service Grid is responsible for making sure that on
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [Grid Service Manager](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Manager) and [Grid Service Container](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Container).
+The Grid Service Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [Grid Service Manager]({%latestjavaurl%}/The-Grid-Service-Manager.html) and [Grid Service Container]({%latestjavaurl%}/The-Grid-Service-Container.html).
 
 Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service Managers](#gsm), [Grid Service Containers](#gsc), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
 
@@ -69,7 +69,7 @@ Usually, a single GSA is run per machine. The GSA allows to spawn [Grid Service 
 
 ## Grid Service Manager (GSM)
 
-The [Grid Service Manager (GSM)](http://wiki.gigaspaces.com/wiki/display/XAP95/The+Grid+Service+Manager), is a special infrastructure service, responsible for managing the Service Grid containers. The GSM accepts user deployment and undeployment requests, and provisions the Service Grid cloud accordingly.
+The [Grid Service Manager (GSM)]({%latestjavaurl%}/The-Grid-Service-Manager.html), is a special infrastructure service, responsible for managing the Service Grid containers. The GSM accepts user deployment and undeployment requests, and provisions the Service Grid cloud accordingly.
 The GSM monitors SLA breach events throughout the life-cycle of the application, and is responsible for taking corrective actions, once SLAs are breached.
 
 {% infosign %} It is common to start two instances of GSM services within each Service Grid cloud, for high-availability reasons.
@@ -78,7 +78,7 @@ The GSM monitors SLA breach events throughout the life-cycle of the application,
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The GSM service usually contains the [Lookup Service](http://wiki.gigaspaces.com/wiki/display/XAP95/Lookup+Service+Configuration) and the Webster codebase server as part of its standard configuration. This configuration can be changed by providing additional parameters in the GSM startup script.
+The GSM service usually contains the [Lookup Service]({%latestjavaurl%}/Lookup-Service-Configuration.html) and the Webster codebase server as part of its standard configuration. This configuration can be changed by providing additional parameters in the GSM startup script.
 
 {% anchor gsc %}
 
@@ -226,7 +226,7 @@ The [Basic Processing Unit Container](./basic-processing-unit-container.html) ex
 
 ## C++ Container
 
-Much like the .NET Abstract Container, the [C++ container](http://wiki.gigaspaces.com/wiki/display/XAP95/CPP+Processing+Unit) provides a native C++ runtime environment for [C++ SBA](http://wiki.gigaspaces.com/wiki/display/XAP95/XAP+CPP) applications.
+Much like the .NET Abstract Container, the [C++ container]({%latestjavaurl%}/CPP-Processing-Unit.html) provides a native C++ runtime environment for [C++ SBA]({%latestjavaurl%}/XAP-CPP.html) applications.
 
 ## Java - Spring Container
 
@@ -236,13 +236,13 @@ The Spring framework provides very elegant abstractions, which makes it very eas
 
 ## Jetty Web Container
 
-Jetty is a very popular web container, which provides support for JEE [web container](http://wiki.gigaspaces.com/wiki/display/XAP95/Web+Processing+Unit+Container) specification services such as: Servlet, JavaServer Pages, JavaServer Faces, and others.
+Jetty is a very popular web container, which provides support for JEE [web container]({%latestjavaurl%}/Web-Processing-Unit-Container.html) specification services such as: Servlet, JavaServer Pages, JavaServer Faces, and others.
 
-The [integration with the Jetty web container](http://wiki.gigaspaces.com/wiki/display/XAP95/Web+Jetty+Processing+Unit+Container), allows you to run JEE web applications (.war files) on top of GigaSpaces XAP.
+The [integration with the Jetty web container]({%latestjavaurl%}/Web-Jetty-Processing-Unit-Container.html), allows you to run JEE web applications (.war files) on top of GigaSpaces XAP.
 
 ## Mule
 
-Mule is a very popular open source Enterprise Services Bus implementation in Java. The [Mule container integration](http://wiki.gigaspaces.com/wiki/display/XAP95/Mule+ESB) allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
+Mule is a very popular open source Enterprise Services Bus implementation in Java. The [Mule container integration]({%latestjavaurl%}/Mule-ESB.html) allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
 {% endtoczone %}
 
 # Developers API and Components
