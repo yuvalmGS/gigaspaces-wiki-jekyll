@@ -64,7 +64,7 @@ also asynchronously persists the data using a mirror (see [Cassandra Space Synch
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
        http://www.openspaces.org/schema/core
-       http://www.openspaces.org/schema/9.5/core/openspaces-core.xsd">
+       http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd">
 
     <bean id="propertiesConfigurer"
        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>

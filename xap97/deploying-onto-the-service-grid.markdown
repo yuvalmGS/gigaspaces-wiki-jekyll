@@ -385,7 +385,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 	xmlns:os-admin="http://www.openspaces.org/schema/admin"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/9.5/admin/openspaces-admin.xsd">
+	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% latestxaprelease %}/admin/openspaces-admin.xsd">
 
 	<context:annotation-config />
 
@@ -418,7 +418,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 	xmlns:os-admin="http://www.openspaces.org/schema/admin"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/9.5/admin/openspaces-admin.xsd">
+	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% latestxaprelease %}/admin/openspaces-admin.xsd">
 
 	<context:annotation-config />
 
@@ -501,7 +501,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 	xmlns:os-admin="http://www.openspaces.org/schema/admin"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/9.5/admin/openspaces-admin.xsd">
+	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% latestxaprelease %}/admin/openspaces-admin.xsd">
 
 	<context:annotation-config />
 
@@ -534,7 +534,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 	xmlns:os-admin="http://www.openspaces.org/schema/admin"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/9.5/admin/openspaces-admin.xsd">
+	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% latestxaprelease %}/admin/openspaces-admin.xsd">
 
 	<context:annotation-config />
 

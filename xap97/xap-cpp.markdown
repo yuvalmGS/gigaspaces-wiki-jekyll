@@ -18,7 +18,7 @@ To get started with GigaSpaces C++ API:
 
 {% lampon %} See also:
 
-- [Gigaspaces C++ API Documentation](http://www.gigaspaces.com/docs/cppdocs9.5/annotated.html)
+- [Gigaspaces C++ API Documentation](http://www.gigaspaces.com/docs/cppdocs{% latestxaprelease %}/annotated.html)
 - [CPP API Code Generator](./cpp-api-code-generator.html)
 - [Supported C++ types](./cpp-api-mapping-file.html#type -- Supported Types)
 

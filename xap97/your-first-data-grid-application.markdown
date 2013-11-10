@@ -31,9 +31,9 @@ The following example shows how to run the GigaSpaces Data Grid within your appl
 
 Acquiring XAP is simple: download an archive from the [Current Releases](http://www.gigaspaces.com/LatestProductVersion) page.
 Installing XAP is just as easy - since it's just an archive, unzip it into a directory of your choice.
-On Windows, for example, one might install it into `C:\tools\`, leading to an installation directory of `C:\tools\gigaspaces-xap-premium-9.5.0\`.
+On Windows, for example, one might install it into `C:\tools\`, leading to an installation directory of `C:\tools\gigaspaces-xap-premium-{% latestxaprelease %}.0\`.
 
-In a UNIX environment, you might install it into `/usr/local/`, which would result in a final installation directory of `/usr/local/gigaspaces-xap-premium-9.5.0/`.
+In a UNIX environment, you might install it into `/usr/local/`, which would result in a final installation directory of `/usr/local/gigaspaces-xap-premium-{% latestxaprelease %}.0/`.
 
 ## Running the GigaSpaces Agent
 

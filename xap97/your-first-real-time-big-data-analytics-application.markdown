@@ -127,11 +127,11 @@ The application uses [Apache Maven](http://maven.apache.org/). If you don't have
 
 4. Building the Application
 Move to the `<applicationRoot>` folder (contains the application's project files).
-Edit the pom.xml file and make sure the <gsVersion> include the correct GigaSpaces XAP release you have installed. For example if you have XAP 9.5.1 installed you should have the following:
+Edit the pom.xml file and make sure the <gsVersion> include the correct GigaSpaces XAP release you have installed. For example if you have XAP {{ site.latest_xap_version }} installed you should have the following:
 
 {% highlight java %}
 <properties>
-	<gsVersion>9.5.1-RELEASE</gsVersion>
+	<gsVersion>{{ site.latest_maven_version }}</gsVersion>
 </properties>
 {% endhighlight %}
 
@@ -150,7 +150,7 @@ mvn package -DargLine="-Dcom.gs.home="<XapInstallationRoot>"
 Where **XapInstallationRoot** should be XAP root folder - example:
 
 {% highlight java %}
-mvn package -DargLine="-Dcom.gs.home="c:\gigaspaces-xap-premium-9.5.1-ga"
+mvn package -DargLine="-Dcom.gs.home="c:/{{ site.latest_gshome_dirname }}"
 {% endhighlight %}
 
 The Maven build will download the required dependencies, compile the source files, run the unit tests, and build the required jar files. In our example, the following processing unit jar files are built:
@@ -190,7 +190,7 @@ Once the project is loaded in your IDE, you can run the application, as follows:
 
 - In **Eclipse**, create two run configurations. One for the **feeder** and one for the **processor**. For both, the main class must be [`org.openspaces.pu.container.integrated.IntegratedProcessingUnitContainer`](http://www.gigaspaces.com/docs/JavaDoc9.0/org/openspaces/pu/container/integrated/IntegratedProcessingUnitContainer.html).
 Configure the GigaSpaces home folder using the **com.gs.home** system property:
-`-Dcom.gs.home="c:\gigaspaces-xap-premium-9.5.1-ga"`
+`-Dcom.gs.home="c:\{{ site.latest_gshome_dirname }}"`
 Configure the active spring profiles using the **spring.profiles.active** system property:
 `-Dspring.profiles.active=list-feeder,file-archiver`
 
@@ -336,7 +336,7 @@ gs deploy ..\recipes\apps\streaming-bigdata\bigDataApp\processor\rt-analytics-pr
 You should see the following output:
 
 {% highlight java %}
-Deploying [rt-analytics-processor.jar] with name [rt-processor-XAP-9.5.1] under groups [gigaspaces-9.5.1-XAPPremium-ga] and locators []
+Deploying [rt-analytics-processor.jar] with name [rt-processor-XAP-{% latestxaprelease %}] under groups [{{ site.latest_default_lookup_group }}] and locators []
 Uploading [rt-analytics-processor] to [http://127.0.0.1:61765/]
 Waiting indefinitely for [4] processing unit instances to be deployed...
 [rt-analytics-processor] [1] deployed successfully on [127.0.0.1]
@@ -372,7 +372,7 @@ You will need XAP PREMIUM edition license key to deploy the processor in a clust
 You should see the following output:
 
 {% highlight java %}
-Deploying [rt-analytics-feeder.jar] with name [rt-analytics-feeder] under groups [gigaspaces-9.5.1-XAPPremium-ga] and locators []
+Deploying [rt-analytics-feeder.jar] with name [rt-analytics-feeder] under groups [{{ site.latest_default_lookup_group }}] and locators []
 Uploading [rt-analytics-feeder] to [http://127.0.0.1:61765/]
 SLA Not Found in PU.  Using Default SLA.
 Waiting indefinitely for [1] processing unit instances to be deployed...

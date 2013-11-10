@@ -54,7 +54,7 @@ The following environment variables need to be defined:
 
 For example:
 
-    set JSHOMEDIR=C:\gigaspaces-xap-premium-9.5.0-ga
+    set JSHOMEDIR=C:\gigaspaces-xap-premium-{% latestxaprelease %}.0-ga
     set PLATFORM=win32
     set COMPILER=VS9.0
 

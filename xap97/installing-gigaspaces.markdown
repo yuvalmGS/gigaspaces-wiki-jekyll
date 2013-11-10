@@ -32,7 +32,7 @@ GigaSpaces is 100% pure Java, and therefore can run on any UNIX or Windows machi
 
 ## Installing on Windows
 
-1. Unzip the ZIP file (using your favorite unzip tool, for example, WinZip) to the location of your choice. Unzipping the file creates a `<GigaSpaces Root>` directory with several sub-directories. An example for the name of the ZIP file will be `gigaspaces-xap-premium-9.5.0-ga-b8500`.
+1. Unzip the ZIP file (using your favorite unzip tool, for example, WinZip) to the location of your choice. Unzipping the file creates a `<GigaSpaces Root>` directory with several sub-directories. An example for the name of the ZIP file will be `gigaspaces-xap-premium-{% latestxaprelease %}.0-ga-b8500`.
 1. After unzipping the ZIP file, you should have the following files and folders under the `<GigaSpaces Root>` folder:
 
 ![win_dirtree_XAP95.jpg](/attachment_files/win_dirtree_XAP95.jpg)
@@ -66,7 +66,7 @@ unzip gigaspaces-xap-premium-9.5.0-ga-b8500.zip
 
 ## Mixing GigaSpaces versions/builds
 
-Mixing clients and Space servers from different GigaSpaces Major Releases:Clients running on 8.0 can run against 9.5 servers. 8.0 servers cannot be part of the same cluster with 9.5 servers.
+Mixing clients and Space servers from different GigaSpaces Major Releases:Clients running on 8.0 can run against {% latestxaprelease %} servers. 8.0 servers cannot be part of the same cluster with {% latestxaprelease %} servers.
 
 ## Mixing Different GigaSpaces JARs in Same Deployment Environment
 

@@ -9,7 +9,7 @@ page_id: 61867211
 
 # Overview
 
-The [Archive Container](./archive-container.html) can be configured to work against Cassandra (without writing any extra code). The [ArchiveOperationHandler interface](http://www.gigaspaces.com/docs/JavaDoc9.5/org/openspaces/archive/ArchiveOperationHandler.html) abstracts the Big-Data storage from the [Archive Container](./archive-container.html). The Cassandra Archive Operation Handler implements this interface by [serializing](#Property Value Serializer) space objects into Cassandra.
+The [Archive Container](./archive-container.html) can be configured to work against Cassandra (without writing any extra code). The [ArchiveOperationHandler interface](http://www.gigaspaces.com/docs/JavaDoc{% latestxaprelease %}/org/openspaces/archive/ArchiveOperationHandler.html) abstracts the Big-Data storage from the [Archive Container](./archive-container.html). The Cassandra Archive Operation Handler implements this interface by [serializing](#Property Value Serializer) space objects into Cassandra.
 
 {% indent %}
 ![archive-container-cassandra.jpg](/attachment_files/archive-container-cassandra.jpg)

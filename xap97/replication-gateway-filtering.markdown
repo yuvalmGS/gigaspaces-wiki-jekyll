@@ -39,15 +39,15 @@ With the example below a replication filter is used with the source space (outpu
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.openspaces.org/schema/core
-       http://www.openspaces.org/schema/9.5/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd
        http://www.openspaces.org/schema/events
-       http://www.openspaces.org/schema/9.5/events/openspaces-events.xsd
+       http://www.openspaces.org/schema/{% latestxaprelease %}/events/openspaces-events.xsd
        http://www.openspaces.org/schema/remoting
-       http://www.openspaces.org/schema/9.5/remoting/openspaces-remoting.xsd
+       http://www.openspaces.org/schema/{% latestxaprelease %}/remoting/openspaces-remoting.xsd
        http://www.openspaces.org/schema/sla
-       http://www.openspaces.org/schema/9.5/sla/openspaces-sla.xsd
+       http://www.openspaces.org/schema/{% latestxaprelease %}/sla/openspaces-sla.xsd
        http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/9.5/core/gateway/openspaces-gateway.xsd">
+       http://www.openspaces.org/schema/{% latestxaprelease %}/core/gateway/openspaces-gateway.xsd">
 
         <bean id="londonFilter" class="com.gigaspaces.examples.gateway.LondonReplicationFilter"/>
 
