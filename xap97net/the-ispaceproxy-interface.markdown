@@ -340,11 +340,11 @@ Here are few important considerations when using the batch operations:
 - When using `writeMultiple`, you should verify that duplicated entries (with the same ID) do not appear as part of the passed array, since the identity of the object is determined based on its `ID` and not based on its reference. This is extremely important with an embedded space, since `writeMultiple` injects the ID value into the object after the write operation (when autogenerate=false).
 - The `readMultiple` and `takeMultiple` operations **do not support timeout** operations. The simple way to achieve this is by calling the `read` operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
 - Exception handling - batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
-    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultiplePartialFailureException)
-    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultipleException)
-    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ReadMultipleException)
-    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/TakeMultipleException)
-    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ClearException)
+    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultiplePartialFailureException.html)
+    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultipleException.html)
+    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ReadMultipleException.html)
+    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/TakeMultipleException.html)
+    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ClearException.html)
 
 # Asynchronous Operations
 
@@ -602,8 +602,8 @@ A default implementation of the exception translator is automatically used, whic
 
 Batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
 
-- [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultiplePartialFailureException)
-- [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultipleException)
-- [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ReadMultipleException)
-- [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/TakeMultipleException)
-- [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ClearException)
+- [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultiplePartialFailureException.html)
+- [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultipleException.html)
+- [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ReadMultipleException.html)
+- [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/TakeMultipleException.html)
+- [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ClearException.html)

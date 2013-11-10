@@ -41,7 +41,7 @@ Dependencies between processing units are depicted by an arrow flowing in the di
 For example, in the screenshot below, the feeder depends on the Space to be alive.
 
 {% info %}
-For more information on processing unit dependencies, see [Application deployment and processing unit dependencies]({%currentversion%}/deploying-onto-the-service-grid.html)
+For more information on processing unit dependencies, see [Application deployment and processing unit dependencies]({%latestjavaurl%}/deploying-onto-the-service-grid.html)
 {% endinfo %}
 
 ![application_dependency.png](/attachment_files/xap97net/application_dependency.png)

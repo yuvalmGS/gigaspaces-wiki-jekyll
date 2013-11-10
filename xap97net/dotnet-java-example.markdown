@@ -59,8 +59,6 @@ The `\[SpaceClass(AliasName="")\]` attribute is used to map the .NET names to th
 |:---|:-----|
 |`Using GigaSpaces.Core.Metadata;`<br/><br/>`namespace GigaSpaces.Examples.DotnetJava`<br/>`{`<br/>`    [SpaceClass(AliasName = "com.gigaspaces.examples.dotnetjava.Person")]`<br/>`    public class Person`<br/>`    {`<br/>`    [SpaceProperty(AliasName="someByte")]`<br/>`    public Nullable<byte> SomeByte;`<br/>`    [SpaceProperty(AliasName = "someString")]`<br/>`    public string SomeString;`<br/>`...`<br/>`    }`<br/>`}`|`package com.gigaspaces.examples.dotnetjava;`<br/><br/>`public class Person`<br/>`{`<br/>`    private Byte _someByte;`<br/>`    public Byte getSomeByte()`<br/>`    { return _someByte; }`<br/>`    public void setSomeByte(Byte value)`<br/>`    { _someByte = value; }`<br/><br/>`    private String _someString;`<br/>`    public String getSomeString()`<br/>`    { return _someString; }`<br/>`    public void setSomeString(String value)`<br/>`    { _someString = value; }`<br/>`...`<br/>`}`|
 
-For more details about .NET-Java Interoperability and designing the interoperable classes, refer to [.NET-Java Interoperability](http://www.gigaspaces.com/wiki/display/XAP66/.NET-Java+Interoperability)
-
 # Building and Running the Example
 
 1. Build the .NET application, using compileC#.bat (You can also build the DotNetJavaDemo.sln from Visual Studio).
