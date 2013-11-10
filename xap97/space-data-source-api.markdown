@@ -37,7 +37,7 @@ Space data source configuration can be done using a Spring bean or via code as s
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:os-core="http://www.openspaces.org/schema/core"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/9.5/core/openspaces-core.xsd">
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd">
 
     <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
     <bean id="spaceDataSource" class="com.gigaspaces.test.SpaceDataSourceImpl" />
@@ -63,7 +63,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")
 
 # The SpaceDataSource API
 
-The [SpaceDataSource](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/SpaceDataSource.html) abstract class should be extended in order to provide a custom behavior where needed.
+The [SpaceDataSource](http://www.gigaspaces.com/docs/JavaDoc{% latestxaprelease %}/index.html?com/gigaspaces/datasource/SpaceDataSource.html) abstract class should be extended in order to provide a custom behavior where needed.
 
 # Initial Metadata Load
 

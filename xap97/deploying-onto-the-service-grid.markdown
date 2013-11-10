@@ -356,7 +356,7 @@ for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent Admin API + XML %}
+{% tabcontent Admin API and XML %}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 A full working example can be found in [org.openspaces.admin.application.deploy.ApplicationDeployCommand](https://github.com/OpenSpaces/OpenSpaces/blob/master/src/main/src/org/openspaces/admin/application/deploy/ApplicationDeployCommand.java )
 
@@ -402,7 +402,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent GigaSpaces CLI + XML %}
+{% tabcontent GigaSpaces CLI and XML %}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 
 {% highlight java %}
@@ -444,7 +444,7 @@ The reason for imposing this dependency is that the space proxy bean in the feed
 
 The feeder can relax this restriction, by specifying a dependency of at least one instance per partition. Now the feeder is redeployed as long as the space has a minimum of one instance per partition. The downside of this approach is that during initial deployment there is a small time gap in which the feeder writes data to the space while there is only one copy of the data (one instance per partition).
 
-{% inittab os_simple_space|top %}
+{% inittab adaptive_sla|top %}
 {% tabcontent Admin API %}
 
 {% highlight java %}
@@ -472,7 +472,7 @@ for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent Admin API + XML %}
+{% tabcontent Admin API with XML %}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 A full working example can be found in [org.openspaces.admin.application.deploy.ApplicationDeployCommand](https://github.com/OpenSpaces/OpenSpaces/blob/master/src/main/src/org/openspaces/admin/application/deploy/ApplicationDeployCommand.java )
 
@@ -518,7 +518,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent GigaSpaces CLI + XML %}
+{% tabcontent GigaSpaces CLI with XML %}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 
 {% highlight java %}
