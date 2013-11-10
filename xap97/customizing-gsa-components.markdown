@@ -10,7 +10,9 @@ page_id: 61867256
 # Process Type Configuration
 
 GSA manages different process types. Each process type is defined within the `<GSHOME>\config\gsa` directory in an xml file that identifies the process type by its name.
+
 {% tip %}You can change the default location of the GSA configuration files using the `com.gigaspaces.grid.gsa.config-directory` system property.{% endtip %}
+
 The following are the process types that come out of the box:
 
 {: .table .table-bordered}
