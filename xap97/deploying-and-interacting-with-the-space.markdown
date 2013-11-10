@@ -205,7 +205,7 @@ You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to
 
 By using [processing units](./the-processing-unit-structure-and-configuration.html), you can deploy full-blown applications onto the service grid, and leverage on the [Space's messaging](./messaging-and-events.html) and code execution capabilities, such as [remoting](./space-based-remoting.html) and [task execution](./task-execution-over-the-space.html). This allows you to execute the business logic close to the Space instance for the best possible performance.
 
-A processing unit can define an embedded Space in the processing unit's `[pu.xml](./configuring-processing-unit-elements.html)` file. The `pu.xml` file is, in effect a [Spring](http://www.springframework.org) XML configuration file, and you simply define the Space using GigaSpaces namespace extensions, or using plain Spring format. Here is an example:
+A processing unit can define an embedded Space in the processing unit's [`pu.xml`](./configuring-processing-unit-elements.html) file. The `pu.xml` file is, in effect a [Spring](http://www.springframework.org) XML configuration file, and you simply define the Space using GigaSpaces namespace extensions, or using plain Spring format. Here is an example:
 
 {% highlight xml %}
 <os-core:space id="space" url="/./mySpace"/>
