@@ -85,7 +85,7 @@ GigaSpaces and its Space-Based-Architecture embrace the [reactive programming](h
 - [Local View and Local Cache](./client-side-caching.html)
 - [Task Execution over the Space](./task-execution-over-the-space.html)
 - [Asynchronous Operations]({{ page.url | remove: 'net' }}/the-gigaspace-interface.html#Asynchronous Operations)
-- [Drools Rule Engine Integration](/sbp/drools-rule-engine-integration.html) Available from a 3rd party.
+- [Drools Rule Engine Integration](/sbp/drools-rule-engine-integration.html): Available from a 3rd party.
 
 {% endtoczone %}
 
@@ -96,7 +96,7 @@ The Space supports a number of APIs to allow for maximum flexibility to Space cl
 - The core [Space API](./the-ispaceproxy-interface.html), which is the most recommended, allows you to read objects from the Space based on various criteria, write objects to it, remove objects from it and get notified about changes made to objects. This API supports transactions.
 
 {% info title=Accessing the Space from Other Languages %}
-The code space API is also supported in [Java]({{ page.url | remove: 'net' }}/The-In-Memory-Data-Grid.html) and [C++]({{ page.url | remove: 'net' }}/XAP-CPP.html). This allows clients to access the space via these languages. It also supports [interoperability]({{ page.url | remove: 'net' }}/Platform-Interoperability-in-GigaSpaces.html) between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
+The code space API is also supported in [Java]({{ page.url | remove: 'net' }}/In-Memory-Data-Grid.html) and [C++|XAP CPP]. This allows clients to access the space via these languages. It also supports [interoperability|Platform Interoperability in GigaSpaces] between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
 {% endinfo %}
 
 - The [Document API](./document-(schema-free)-api.html) allows you to develop your application in a schema-less manner. Using map-like objects, you can add attributes to data types in runtime.

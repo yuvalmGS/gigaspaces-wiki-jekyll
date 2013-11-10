@@ -43,7 +43,7 @@ Use the Benchmark Example and customize the Benchmark run:
 - by changing the space-url to connect to the space topology that you want to check.
 - by configuring the input xml file and changing configuration parameters.
 
-For more information please read [Out-of-the-box benchmark](http://wiki.gigaspaces.com/wiki/display/XAP66/Out-of-the-box+benchmark#1)
+For more information please read [Out-of-the-box benchmark]({%latestjavaurl%}/Out-of-the-box+benchmark.tml#1)
 
 **2. Develop a custom benchmark with your own code for the benchmark scenario and the benchmark object.**
 
