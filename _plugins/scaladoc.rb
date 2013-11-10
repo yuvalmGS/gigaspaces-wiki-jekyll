@@ -1,22 +1,17 @@
 module Jekyll
-  class Scaladoc < Liquid::Tag
+  class Scaladoc < Jekyll::AbstractDocPlugin
 
     def initialize(tag_name, text, tokens)
       super
-      @class_name = text.strip
-    end
-
-    def render(context)
-      create_link(context, super)
     end
 
     def create_link(context, content)
-      latest_xap_release = context.registers[:site].config["latest_xap_release"] || "9.7"
+      current_release = get_current_version(context)
 
       base_scaladoc_url = context.registers[:site].config["base_scaladoc_url"] || 
                          "http://www.gigaspaces.com/docs/scaladocs%{version}/#%{fqcn}"
 
-      base_scaladoc_url % {:version => latest_xap_release, :fqcn => @class_name}
+      base_scaladoc_url % {:version => current_release, :fqcn => @class_name}
     end
   end
 end
