@@ -150,15 +150,15 @@ Below is an example `pu.xml` file for the gateway of New-York
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd
     http://www.openspaces.org/schema/core
-    http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
     http://www.openspaces.org/schema/events
-    http://www.openspaces.org/schema/{% latestxaprelease %}/events/openspaces-events.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
     http://www.openspaces.org/schema/remoting
-    http://www.openspaces.org/schema/{% latestxaprelease %}/remoting/openspaces-remoting.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
     http://www.openspaces.org/schema/sla
-    http://www.openspaces.org/schema/{% latestxaprelease %}/sla/openspaces-sla.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
     http://www.openspaces.org/schema/core/gateway
-    http://www.openspaces.org/schema/{% latestxaprelease %}/core/gateway/openspaces-gateway.xsd">
+    http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
 
   <os-gateway:delegator id="delegator" local-gateway-name="NEWYORK"
     gateway-lookups="gatewayLookups">

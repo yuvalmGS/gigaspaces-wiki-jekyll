@@ -10,6 +10,7 @@ page_id: 61867337
 # Overview
 
 The Memory Management facility is used to assist the client in avoiding a situation where a space server gets into an out-of-memory failure scenario. Based on the configured cache policy, the memory manager protects the space (and the application, in the case it is running collocated with the space) from consuming memory beyond a defined threshold.
+
 {% warning %}
 The client/Application is expected to have some business logic that will handle `org.openspaces.core.SpaceMemoryShortageException` that might be thrown (when using the openspaces API). When the legacy `IJSpace` interface is used, `com.j_spaces.core.MemoryShortageException` will be thrown instead. Without such business logic, the space server or a client local cache may eventually exhaust all their parent process available memory resources.
 {% endwarning %}
@@ -101,10 +102,10 @@ Since LRU eviction can be costly, it is done in asynchronously by the memory man
 
 # Explicit Eviction of Objects from the Space
 
-Objects can be evicted explicitly from the space by calling the `takeMultiple` or `clear` operations on [the GigaSpace interface](./the-gigaspace-interface.html) combined with the [`TakeModifiers.EVICT_ONLY`](http://www.gigaspaces.com/docs/JavaDoc9.6/com/j_spaces/core/client/TakeModifiers.html) modifier. The `clear` operation only returns the number of objects actually evicted from the space. The `takeMultiple` operation returns the actual objects that were evicted. Here's usage example:
+Objects can be evicted explicitly from the space by calling the `takeMultiple` or `clear` operations on [the GigaSpace interface](./the-gigaspace-interface.html) combined with the [`TakeModifiers.EVICT_ONLY`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/client/TakeModifiers.html) modifier. The `clear` operation only returns the number of objects actually evicted from the space. The `takeMultiple` operation returns the actual objects that were evicted. Here's usage example:
 
 {% inittab %}
-{% tabcontent Using clear() %}
+{% tabcontent Using clear %}
 
 {% highlight java %}
 GigaSpace gigaSpace = ...;
@@ -114,7 +115,7 @@ int numEvicted = gigaSpace.clear(template, ClearModifiers.EVICT_ONLY);
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent Using takeMultiple() %}
+{% tabcontent Using takeMultiple %}
 
 {% highlight java %}
 GigaSpace gigaSpace = ...;

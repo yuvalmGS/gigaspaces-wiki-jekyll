@@ -47,7 +47,7 @@ GigaSpaces provides several options to deploy a processing unit onto the Service
 
 {% inittab os_simple_space|top %}
 {% tabcontent Admin API %}
-Deploying via code is done using the GigaSpaces [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](./administration-and-monitoring-api.html) and [javadoc](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html) of the Admin API.
+Deploying via code is done using the GigaSpaces [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](./administration-and-monitoring-api.html) and [javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html) of the Admin API.
 
 {% highlight java %}
 Admin admin = new AdminFactory().addGroup("myGroup").create();
@@ -238,7 +238,7 @@ To restart a running PU (all instances) via the GS-UI you should:
 
 ## Restart a running PU via the Admin API
 
-The [ProcessingUnitInstance](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/pu/ProcessingUnitInstance.html) includes few `restart` methods you may use to restart a PU instance:
+The [ProcessingUnitInstance](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/ProcessingUnitInstance.html) includes few `restart` methods you may use to restart a PU instance:
 
 {% highlight java %}
 restart()
@@ -385,7 +385,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 	xmlns:os-admin="http://www.openspaces.org/schema/admin"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% latestxaprelease %}/admin/openspaces-admin.xsd">
+	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% currentversion %}/admin/openspaces-admin.xsd">
 
 	<context:annotation-config />
 
@@ -418,7 +418,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 	xmlns:os-admin="http://www.openspaces.org/schema/admin"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% latestxaprelease %}/admin/openspaces-admin.xsd">
+	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% currentversion %}/admin/openspaces-admin.xsd">
 
 	<context:annotation-config />
 
@@ -501,7 +501,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 	xmlns:os-admin="http://www.openspaces.org/schema/admin"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% latestxaprelease %}/admin/openspaces-admin.xsd">
+	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% currentversion %}/admin/openspaces-admin.xsd">
 
 	<context:annotation-config />
 
@@ -534,7 +534,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 	xmlns:os-admin="http://www.openspaces.org/schema/admin"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% latestxaprelease %}/admin/openspaces-admin.xsd">
+	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% currentversion %}/admin/openspaces-admin.xsd">
 
 	<context:annotation-config />
 

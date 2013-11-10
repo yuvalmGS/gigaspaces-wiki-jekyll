@@ -9,7 +9,7 @@ page_id: 61867177
 
 # Overview
 
-The [SpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/sync/SpaceSynchronizationEndpoint.html) is used for persisting data from the space to an external storage.
+The [SpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/sync/SpaceSynchronizationEndpoint.html) is used for persisting data from the space to an external storage.
 The following data is synchronized:
 
 1. Batched write/update/remove operations.
@@ -61,7 +61,7 @@ Space synchronization endpoint configuration can be done using a Spring bean or 
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:os-core="http://www.openspaces.org/schema/core"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd">
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd">
 
     <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
 
@@ -204,7 +204,7 @@ public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint
 {% endhighlight %}
 
 {% tip %}
-For implementation reference see our built in Hibernate and Cassandra implementations: [DefaultHibernateSpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/persistency/hibernate/DefaultHibernateSpaceSynchronizationEndpoint.html) and [CassandraSpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/persistency/cassandra/CassandraSpaceSynchronizationEndpoint.html) classes.
+For implementation reference see our built in Hibernate and Cassandra implementations: [DefaultHibernateSpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/persistency/hibernate/DefaultHibernateSpaceSynchronizationEndpoint.html) and [CassandraSpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/persistency/cassandra/CassandraSpaceSynchronizationEndpoint.html) classes.
 {% endtip %}
 
 # Example of a Space synchronization endpoint implementation handling Consolidation Failure events

@@ -6,7 +6,7 @@ page_id: 61867284
 
 # System Properties List
 
-{% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}
+{% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}
 
 {: .table .table-bordered}
 | Property name | Description | Default value |

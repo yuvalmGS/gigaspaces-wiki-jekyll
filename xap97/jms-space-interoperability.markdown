@@ -92,7 +92,7 @@ In this example, a `ConnectionFactory` is configured, and an instance of `Object
 
 ### Configuring MessageConverters During Runtime
 
-You can use the `GSJMSAdmin` helper class to get a `ConnectionFactory` with a `MessageConverter`, by using one its methods. For the list of methods, see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/jms/utils/GSJMSAdmin.html).
+You can use the `GSJMSAdmin` helper class to get a `ConnectionFactory` with a `MessageConverter`, by using one its methods. For the list of methods, see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/jms/utils/GSJMSAdmin.html).
 
 Passing `null` as a `MessageConverter` means that the `ConnectionFactory` does not use a `MessageConverter`.
 

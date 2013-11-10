@@ -447,7 +447,7 @@ The Employee class uses the <reference> tag to inherit metadata from the Person 
 | `name` | Contains the full qualified name of the specified class. Because this attribute is of the XML type `ID`, there can only be one `class-descriptor` per class. |
 | `persist` | This field indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this attribute will persist objects of this type. {% refer %}For more details, refer to the [Persistency](./persistency.html) section. {% endrefer %} |
 | `replicate` | This field indicates the replication mode of the object. When a space is defined as replicated, a `true` value for this attribute will replicate objects of this type. {% refer %}For more details, refer to the [Replication](./replication.html) section. {% endrefer %}{% wbr %}{% tip %}{% wbr %}To control replication at the object level you should specify a [replication filter](./cluster-replication-filters.html){% wbr %}{% endtip %}|
-| `fifo-support` | To enable FIFO operations, set this attribute to one of the [FifoSupport](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/annotation/pojo/FifoSupport.html) enumeration values. {% refer %}For more details, refer to the [FIFO operations](./fifo-support.html) section.{% endrefer %} |
+| `fifo-support` | To enable FIFO operations, set this attribute to one of the [FifoSupport](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/annotation/pojo/FifoSupport.html) enumeration values. {% refer %}For more details, refer to the [FIFO operations](./fifo-support.html) section.{% endrefer %} |
 
 ### Field Level Tags
 

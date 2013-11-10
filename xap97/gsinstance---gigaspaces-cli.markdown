@@ -8,7 +8,7 @@ page_id: 61867002
 
 # Overview
 
-This section explains how to start a light version of the GigaSpaces server, which loads a container and one space, using the `gsInstance` script. The `gsInstance` (which calls [SpaceFinder](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/client/SpaceFinder.html)) starts by default embedded Reggie and Webster services.
+This section explains how to start a light version of the GigaSpaces server, which loads a container and one space, using the `gsInstance` script. The `gsInstance` (which calls [SpaceFinder](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/SpaceFinder.html)) starts by default embedded Reggie and Webster services.
 
 ## Starting Embedded Mahalo
 

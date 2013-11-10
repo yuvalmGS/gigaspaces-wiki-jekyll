@@ -82,7 +82,7 @@ Sort the 'status' column in ascending order to show latest unresolved alerts.
 
 Alerts can be consumed using a registered event listener by registereing with the `AlertManager` component (which is part of the [Administration and Monitoring API](./administration-and-monitoring-api.html). The listener will be notified of alerts that have been triggered.
 
-Javadoc ref: [Alert](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/alert/Alert.html)&nbsp;[AlertManager](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/alert/AlertManager.html)&nbsp;[XmlAlertConfigurationParser](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/alert/config/parser/XmlAlertConfigurationParser.html)&nbsp;[AlertTriggeredEventListener](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/alert/events/AlertTriggeredEventListener.html)
+Javadoc ref: [Alert](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/alert/Alert.html)&nbsp;[AlertManager](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/alert/AlertManager.html)&nbsp;[XmlAlertConfigurationParser](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/alert/config/parser/XmlAlertConfigurationParser.html)&nbsp;[AlertTriggeredEventListener](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/alert/events/AlertTriggeredEventListener.html)
 
 {% highlight java %}
  Admin admin = new AdminFactory().createAdmin();
@@ -108,7 +108,7 @@ The file argument can be:
 - a file under config/alerts/ in the classpath.
 {% endinfo %}
 
-The default parser parses the XML file. If needed, you can implement a different parser (see [AlertConfigurationParser](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/alert/config/parser/AlertConfigurationParser.html) interface).
+The default parser parses the XML file. If needed, you can implement a different parser (see [AlertConfigurationParser](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/alert/config/parser/AlertConfigurationParser.html) interface).
 The `alertTriggered` method is called upon each alert triggered.
 
 # The Alert Event
@@ -128,7 +128,7 @@ The `org.openspaces.admin.alert.Alert` instance includes the following set of pr
 | Config | The configuration properties set for this alert | |
 | Properties | Any runtime properties that could be extracted and are relevant information for this alert | e.g. host name, host address, memory utilization,etc. |
 
-Javadoc ref: [AlertSeverity](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/alert/AlertSeverity.html)&nbsp;[AlertStatus](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/alert/AlertStatus.html)
+Javadoc ref: [AlertSeverity](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/alert/AlertSeverity.html)&nbsp;[AlertStatus](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/alert/AlertStatus.html)
 
 # Runtime Configuration
 

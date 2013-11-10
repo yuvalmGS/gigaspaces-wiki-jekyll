@@ -207,15 +207,15 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
     http://www.openspaces.org/schema/core
-    http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
     http://www.openspaces.org/schema/events
-    http://www.openspaces.org/schema/{% latestxaprelease %}/events/openspaces-events.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
     http://www.openspaces.org/schema/remoting
-    http://www.openspaces.org/schema/{% latestxaprelease %}/remoting/openspaces-remoting.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
     http://www.openspaces.org/schema/sla
-    http://www.openspaces.org/schema/{% latestxaprelease %}/sla/openspaces-sla.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
     http://www.openspaces.org/schema/core/gateway
-    http://www.openspaces.org/schema/{% latestxaprelease %}/core/gateway/openspaces-gateway.xsd">
+    http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
 
   <os-core:space id="space" url="/./myNYSpace" gateway-targets="gatewayTargets"/>
 
@@ -242,15 +242,15 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
     http://www.openspaces.org/schema/core
-    http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
     http://www.openspaces.org/schema/events
-    http://www.openspaces.org/schema/{% latestxaprelease %}/events/openspaces-events.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
     http://www.openspaces.org/schema/remoting
-    http://www.openspaces.org/schema/{% latestxaprelease %}/remoting/openspaces-remoting.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
     http://www.openspaces.org/schema/sla
-    http://www.openspaces.org/schema/{% latestxaprelease %}/sla/openspaces-sla.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
     http://www.openspaces.org/schema/core/gateway
-    http://www.openspaces.org/schema/{% latestxaprelease %}/core/gateway/openspaces-gateway.xsd">
+    http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
 
   <os-core:space id="space" url="/./myLondonSpace"/>
     <!-- No gateway targets needed as this space
@@ -277,15 +277,15 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd
     http://www.openspaces.org/schema/core
-    http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
     http://www.openspaces.org/schema/events
-    http://www.openspaces.org/schema/{% latestxaprelease %}/events/openspaces-events.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
     http://www.openspaces.org/schema/remoting
-    http://www.openspaces.org/schema/{% latestxaprelease %}/remoting/openspaces-remoting.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
     http://www.openspaces.org/schema/sla
-    http://www.openspaces.org/schema/{% latestxaprelease %}/sla/openspaces-sla.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
     http://www.openspaces.org/schema/core/gateway
-    http://www.openspaces.org/schema/{% latestxaprelease %}/core/gateway/openspaces-gateway.xsd">
+    http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
 
   <os-gateway:sink id="sink" local-gateway-name="LONDON"
     local-space-url="jini://*/*/myLondonSpace">
@@ -313,15 +313,15 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
     http://www.openspaces.org/schema/core
-    http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
     http://www.openspaces.org/schema/events
-    http://www.openspaces.org/schema/{% latestxaprelease %}/events/openspaces-events.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
     http://www.openspaces.org/schema/remoting
-    http://www.openspaces.org/schema/{% latestxaprelease %}/remoting/openspaces-remoting.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
     http://www.openspaces.org/schema/sla
-    http://www.openspaces.org/schema/{% latestxaprelease %}/sla/openspaces-sla.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
     http://www.openspaces.org/schema/core/gateway
-    http://www.openspaces.org/schema/{% latestxaprelease %}/core/gateway/openspaces-gateway.xsd">
+    http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
 
   <os-core:space id="space" url="/./myHKSpace"/>
     <!-- No gateway targets needed as this space
@@ -348,15 +348,15 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd
     http://www.openspaces.org/schema/core
-    http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
     http://www.openspaces.org/schema/events
-    http://www.openspaces.org/schema/{% latestxaprelease %}/events/openspaces-events.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
     http://www.openspaces.org/schema/remoting
-    http://www.openspaces.org/schema/{% latestxaprelease %}/remoting/openspaces-remoting.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
     http://www.openspaces.org/schema/sla
-    http://www.openspaces.org/schema/{% latestxaprelease %}/sla/openspaces-sla.xsd
+    http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
     http://www.openspaces.org/schema/core/gateway
-    http://www.openspaces.org/schema/{% latestxaprelease %}/core/gateway/openspaces-gateway.xsd">
+    http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
 
   <os-gateway:sink id="sink" local-gateway-name="Hong Kong"
     local-space-url="jini://*/*/myHKSpace">
@@ -399,15 +399,15 @@ Here are the contents of the files for each of the components:
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.openspaces.org/schema/core
-       http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
        http://www.openspaces.org/schema/events
-       http://www.openspaces.org/schema/{% latestxaprelease %}/events/openspaces-events.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
        http://www.openspaces.org/schema/remoting
-       http://www.openspaces.org/schema/{% latestxaprelease %}/remoting/openspaces-remoting.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
        http://www.openspaces.org/schema/sla
-       http://www.openspaces.org/schema/{% latestxaprelease %}/sla/openspaces-sla.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
        http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/{% latestxaprelease %}/core/gateway/openspaces-gateway.xsd">
+       http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
 
         <os-core:space id="space" url="/./myNYSpace" gateway-targets="gatewayTargets"/>
 
@@ -436,15 +436,15 @@ Here are the contents of the files for each of the components:
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-3.0.xsd
        http://www.openspaces.org/schema/core
-       http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
        http://www.openspaces.org/schema/events
-       http://www.openspaces.org/schema/{% latestxaprelease %}/events/openspaces-events.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
        http://www.openspaces.org/schema/remoting
-       http://www.openspaces.org/schema/{% latestxaprelease %}/remoting/openspaces-remoting.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
        http://www.openspaces.org/schema/sla
-       http://www.openspaces.org/schema/{% latestxaprelease %}/sla/openspaces-sla.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
        http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/{% latestxaprelease %}/core/gateway/openspaces-gateway.xsd">
+       http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
 
         <os-gateway:sink id="sink" local-gateway-name="NEWYORK"
            local-space-url="jini://*/*/myNYSpace">
@@ -471,15 +471,15 @@ Here are the contents of the files for each of the components:
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.openspaces.org/schema/core
-       http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
        http://www.openspaces.org/schema/events
-       http://www.openspaces.org/schema/{% latestxaprelease %}/events/openspaces-events.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
        http://www.openspaces.org/schema/remoting
-       http://www.openspaces.org/schema/{% latestxaprelease %}/remoting/openspaces-remoting.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
        http://www.openspaces.org/schema/sla
-       http://www.openspaces.org/schema/{% latestxaprelease %}/sla/openspaces-sla.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
        http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/{% latestxaprelease %}/core/gateway/openspaces-gateway.xsd">
+       http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
 
         <os-core:space id="space" url="/./myLondonSpace"
           gateway-targets="gatewayTargets"/>
@@ -509,15 +509,15 @@ Here are the contents of the files for each of the components:
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-3.0.xsd
        http://www.openspaces.org/schema/core
-       http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
        http://www.openspaces.org/schema/events
-       http://www.openspaces.org/schema/{% latestxaprelease %}/events/openspaces-events.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
        http://www.openspaces.org/schema/remoting
-       http://www.openspaces.org/schema/{% latestxaprelease %}/remoting/openspaces-remoting.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
        http://www.openspaces.org/schema/sla
-       http://www.openspaces.org/schema/{% latestxaprelease %}/sla/openspaces-sla.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
        http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/{% latestxaprelease %}/core/gateway/openspaces-gateway.xsd">
+       http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
 
         <os-gateway:sink id="sink" local-gateway-name="LONDON"
           local-space-url="jini://*/*/myLondonSpace">
@@ -548,15 +548,15 @@ In this example, the gateway `pu.xml` is quite symmetric, the only difference is
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-3.0.xsd
        http://www.openspaces.org/schema/core
-       http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
        http://www.openspaces.org/schema/events
-       http://www.openspaces.org/schema/{% latestxaprelease %}/events/openspaces-events.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
        http://www.openspaces.org/schema/remoting
-       http://www.openspaces.org/schema/{% latestxaprelease %}/remoting/openspaces-remoting.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
        http://www.openspaces.org/schema/sla
-       http://www.openspaces.org/schema/{% latestxaprelease %}/sla/openspaces-sla.xsd
+       http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
        http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/{% latestxaprelease %}/core/gateway/openspaces-gateway.xsd">
+       http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
 
         <bean id="propertiesConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
