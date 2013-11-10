@@ -254,7 +254,7 @@ catch(ChangeException e)
 
 # Change and Optimistic Locking
 
-The `Change` operation has the same semantics as regular space `Update` operation when it comes to [Optimistic Locking]({%latestjavaurl%}/optimistic-locking.html). It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
+The `Change` operation has the same semantics as regular space `Update` operation when it comes to [Optimistic Locking]({% currentjavaurl %}/optimistic-locking.html). It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
 
 {% highlight java %}
 ISpaceProxy space = // ... obtain a space reference
