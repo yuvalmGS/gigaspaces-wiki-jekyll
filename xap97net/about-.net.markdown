@@ -25,7 +25,7 @@ Unmatched levels of high-throughput and low-latency are achieved through the sol
 
 ## Plain Old .Net Objects
 
-The [Space-Based .NET API] is a .NET equivalent of the [POJO]({%latestjavaurl%}/POJO-Support.html) in the Java world. Using the PONO provides a consistent programming model across the two different languages. It is a declarative and non-intrusive way to map existing domain model objects into the space using .NET attributes. Finally, using PONOs is simple -- API appears in pure a .NET library, in a native format.
+The [Space-Based .NET API] is a .NET equivalent of the [POJO]({%currentversion%}/POJO-Support.html) in the Java world. Using the PONO provides a consistent programming model across the two different languages. It is a declarative and non-intrusive way to map existing domain model objects into the space using .NET attributes. Finally, using PONOs is simple -- API appears in pure a .NET library, in a native format.
 
 ## PBS
 

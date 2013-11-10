@@ -69,9 +69,9 @@ The [mirror service]({%latestjavaurl%}/Asynchronous-Persistency-with-the-Mirror.
 
 # Processing Unit Relationships and Events
 
-The feeder, web servlet, monitor, messaging and mirror are deployed as [Processing Units (PUs)]({%latestjavaurl%}/A-Typical-SBA-Application.html).
+The feeder, web servlet, monitor, messaging and mirror are deployed as [Processing Units (PUs)](/product_overview/A-Typical-SBA-Application.html).
 
-The event processing engine is deployed as an [_Elastic_ PU]({%latestjavaurl%}/Elastic-Processing-Unit.html) with [replication]({%latestjavaurl%}/Replication.html).  The elasticity enables the grid to scale up or down based on user-defined metrics.  In this case, we use the number of trade objects in the space, which is counted by the monitor PU.  When this exceeds 50, memory capacity is increased through the [admin API](http://www.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API+Security).  This causes new [processing containers](http://www.gigaspaces.com/wiki/display/XAP8/The+Grid+Service+Container) to be provisioned and the Elastic PUs to be rebalanced across the new nodes.  Scaling down is the reverse process.
+The event processing engine is deployed as an [_Elastic_ PU]({%latestjavaurl%}/Elastic-Processing-Unit.html) with [replication]({%latestjavaurl%}/Replication.html).  The elasticity enables the grid to scale up or down based on user-defined metrics.  In this case, we use the number of trade objects in the space, which is counted by the monitor PU.  When this exceeds 50, memory capacity is increased through the [admin API](http://www.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API+Security).  This causes new [processing containers]({%latestjavaurl%}/Service-grid.html#gsc) to be provisioned and the Elastic PUs to be rebalanced across the new nodes.  Scaling down is the reverse process.
 
 You can step through the demo code in your favorite IDE by deploying the target processing unit(s) in an [Integrated Processing Unit Container]({%latestjavaurl%}/Deploying-and-Running-the-Processing-Unit.html).
 
@@ -142,7 +142,7 @@ pu.scale(new ManualCapacityScaleConfigurer()
 Click [here]({%latestjavaurl%}/Elastic-Processing-Unit.html#ElasticProcessingUnit-MaximumMemoryCapacity) to see how the number of processing containers is dynamically calculated based on the amount of memory.
 
 ## Space Document
-A [document store]({%latestjavaurl%}/Document-(Schema-Free)-API.html) is used for saving matched deals.  This document contains the following items:
+A [document store]({%latestjavaurl%}/Document-API.html) is used for saving matched deals.  This document contains the following items:
 
 - Deal ID
 - Routing string

@@ -18,7 +18,7 @@ page_id: 53379091
 {% endtip %}
 
 # Overview
-GigaSpaces Data-Grid support standard data access API. One of them is the [JDBC Driver]({%latestjavaurl%}/JDBC+Driver). Using the JDBC API and ODBC-JDBC bridge such as the one comes from [Open Link Software](http://uda.openlinksw.com), you can use standard ODBC API to access the GigaSpaces Data-Grid.
+GigaSpaces Data-Grid support standard data access API. One of them is the [JDBC Driver]({%latestjavaurl%}/JDBC-Driver.html). Using the JDBC API and ODBC-JDBC bridge such as the one comes from [Open Link Software](http://uda.openlinksw.com), you can use standard ODBC API to access the GigaSpaces Data-Grid.
 
 # GigaSpaces Installation
 
@@ -34,7 +34,7 @@ GigaSpaces Data-Grid support standard data access API. One of them is the [JDBC 
 
 # Create a new user
 Create a new user "user" and password "password" and grant it all access privileges.
-See [GigaSpaces Management Center Security]({%latestjavaurl%}/GigaSpaces+Management+Center+(UI)+Security) for instructions.
+See [GigaSpaces Management Center Security]({%latestjavaurl%}/GigaSpaces-Management-Center-(UI)-Security.html) for instructions.
 
 # Deploy a Secured Space
 

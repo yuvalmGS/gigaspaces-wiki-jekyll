@@ -24,7 +24,7 @@ Partitioning refers to distribution across multiple nodes; if all of your data i
 
 # Efficient Partitioning
 
-In Gigaspaces XAP, there are six approaches to partitioning, as discussed on [Data-Partitioning]({%latestjavaurl%}Data-Partitioning.html). In order to understand the full scope of partitioning, see the [Data-Partitioning]({%latestjavaurl%}/Data-Partitioning) section.
+In Gigaspaces XAP, there are six approaches to partitioning, as discussed on [Data-Partitioning]({%latestjavaurl%}/Data-Partitioning.html). In order to understand the full scope of partitioning, see the [Data-Partitioning]({%latestjavaurl%}/Data-Partitioning.html) section.
 
 The most common approach to partitioning is, as stated in the [Data-Partitioning]({%latestjavaurl%}/Data-Partitioning.html) documentation, hash-based partitioning, using an explicit value contained in a data object. This is specified via an annotation:
 

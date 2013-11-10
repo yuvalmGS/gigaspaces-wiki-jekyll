@@ -97,7 +97,7 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 ##### • [What's new in XAP 9.6.X](http://wiki.gigaspaces.com/wiki/display/RN/What's+New+in+GigaSpaces+9.6.X)
 
-##### • [API Documentation](/api_documentation/api-documentation.html)
+##### • [API Documentation](/api_documentation/index.html)
 
 ##### • [Solutions and Best Practices Home](./index.html)
 
