@@ -5,7 +5,7 @@ page_id: 61867045
 ---
 
 
-{% summary page %}Allows archiving of space objects to an external persistency service.{% endsummary %}
+{% summary %}Allows archiving of space objects to an external persistency service.{% endsummary %}
 
 # Overview
 
@@ -21,7 +21,7 @@ The typical scenario is when streaming vast number of raw events through the Spa
 - The Archive Container configures the set of objects to be archived.
 - The Archive Container supports Space fail-over, and Big-Data storage unavailability.
 - The persisted objects, can then be read by 3rd party tools directly from the Big-Data storage.
-- Big-Data storage is abstracted with the ['ArchiveOperationHandler`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/archive/ArchiveOperationHandler.html) interface. [Cassandra Archive Operation Handler](./cassandra-archive-operation-handler.html) implementation is available out of the box.
+- Big-Data storage is abstracted with the [`ArchiveOperationHandler`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/archive/ArchiveOperationHandler.html) interface. [Cassandra Archive Operation Handler](./cassandra-archive-operation-handler.html) implementation is available out of the box.
 
 ## Archive Container vs Space Persistency
 
