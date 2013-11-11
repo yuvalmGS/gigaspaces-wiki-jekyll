@@ -64,7 +64,12 @@ Several `ISpaceProxy` instances can be defined within a single Processing Unit, 
 
 # Operations
 
-The [ISpaceProxy]({% dotnetdoc GigaSpaces.Core.ISpaceProxy %}) interface includes the following main operations:
+
+The [ISpaceProxy]({%dotnetdoc /GigaSpaces.Core.ISpaceProxy) %} interface includes the following main operations:
+
+
+
+
 
 {: .table .table-bordered}
 |[Id Based operations](./id-queries.html)|[Batch operations](#Batch Operations)|[Asynchronous operations](#Asynchronous Operations)|Data Count operations|

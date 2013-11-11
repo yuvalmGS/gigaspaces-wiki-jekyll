@@ -28,7 +28,7 @@ Each sub-system (layer) is responsible for providing application server capabili
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-An SLA-Driven Container, also known as the [Service Grid]({% currentjavaurl %}/Service-Grid-Processing-Unit-Container.html), is responsible for abstracting the physical characteristics of the host machines from the application deployment.
+An SLA-Driven Container, also known as the [Service Grid]({% currentjavaurl %}/service-grid.html#gsc), is responsible for abstracting the physical characteristics of the host machines from the application deployment.
 
 The Service Grid is simply a set of runtime container processes deployed on multiple physical machines, which together form a virtual runtime cloud.  Once the cloud is formed, applications can be deployed for execution across the cloud, without a need to define specific host machine characteristics.
 
@@ -40,7 +40,7 @@ When it comes to provisioning and monitoring large-scale systems, the ability to
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-The Service Grid takes a [pre-defined application-required SLA]({% currentjavaurl %}/Service-Grid-Processing-Unit-Container.html#ServiceGridProcessingUnitContainer-SLAPolicy), and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
+The Service Grid takes a [pre-defined application-required SLA]({% currentjavaurl %}//Configuring-the-Processing-Unit-SLA.html), and makes sure that it is met during deployment and runtime, throughout the application's life-cycle.
 
 To clarify, here is an example of an application SLA:
 
