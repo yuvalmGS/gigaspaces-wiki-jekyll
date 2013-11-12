@@ -63,7 +63,7 @@ The messaging processor receives events when deals are matched and generates an 
 
 The monitor is a thread that periodically counts the number of matched deal objects in the space.  If this number exceeds 50, it will scale the grid up.  The grid will be scaled down if this number falls below 50.
 
-The [mirror service]({%latestjavaurl%}/Asynchronous-Persistency-with-the-Mirror.html) provides reliable asynchronous persistence to a HSQL database through a hibernate interface.
+The [mirror service]({%latestjavaurl%}/asynchronous-persistency-with-the-mirror.html) provides reliable asynchronous persistence to a HSQL database through a hibernate interface.
 
 ![SA-Architecture.png](/attachment_files/sbp/SA-Architecture.png)
 
@@ -71,11 +71,11 @@ The [mirror service]({%latestjavaurl%}/Asynchronous-Persistency-with-the-Mirror.
 
 The feeder, web servlet, monitor, messaging and mirror are deployed as [Processing Units (PUs)](/product_overview/A-Typical-SBA-Application.html).
 
-The event processing engine is deployed as an [_Elastic_ PU]({%latestjavaurl%}/Elastic-Processing-Unit.html) with [replication]({%latestjavaurl%}/Replication.html).  The elasticity enables the grid to scale up or down based on user-defined metrics.  In this case, we use the number of trade objects in the space, which is counted by the monitor PU.  When this exceeds 50, memory capacity is increased through the [admin API](http://www.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API+Security).  This causes new [processing containers]({%latestjavaurl%}/Service-grid.html#gsc) to be provisioned and the Elastic PUs to be rebalanced across the new nodes.  Scaling down is the reverse process.
+The event processing engine is deployed as an [_Elastic_ PU]({%latestjavaurl%}/elastic-processing-unit.html) with [replication]({%latestjavaurl%}/replication.html).  The elasticity enables the grid to scale up or down based on user-defined metrics.  In this case, we use the number of trade objects in the space, which is counted by the monitor PU.  When this exceeds 50, memory capacity is increased through the [admin API](http://www.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API+Security).  This causes new [processing containers]({%latestjavaurl%}/service-grid.html#gsc) to be provisioned and the Elastic PUs to be rebalanced across the new nodes.  Scaling down is the reverse process.
 
-You can step through the demo code in your favorite IDE by deploying the target processing unit(s) in an [Integrated Processing Unit Container]({%latestjavaurl%}/Deploying-and-Running-the-Processing-Unit.html).
+You can step through the demo code in your favorite IDE by deploying the target processing unit(s) in an [Integrated Processing Unit Container]({%latestjavaurl%}/deploying-and-running-the-processing-Unit.html).
 
-Deal matching uses a [polling container]({%latestjavaurl%}/Polling-Container.html) and [transactions]({%latestjavaurl%}/Transaction-Management.html).
+Deal matching uses a [polling container]({%latestjavaurl%}/Polling-Container.html) and [transactions]({%latestjavaurl%}/transaction-management.html).
 
 ![SA-PUs.png](/attachment_files/sbp/SA-PUs.png)
 
@@ -139,10 +139,10 @@ pu.scale(new ManualCapacityScaleConfigurer()
         );
 {% endhighlight %}
 
-Click [here]({%latestjavaurl%}/Elastic-Processing-Unit.html#ElasticProcessingUnit-MaximumMemoryCapacity) to see how the number of processing containers is dynamically calculated based on the amount of memory.
+Click [here]({%latestjavaurl%}/elastic-processing-unit.html#ElasticProcessingUnit-MaximumMemoryCapacity) to see how the number of processing containers is dynamically calculated based on the amount of memory.
 
 ## Space Document
-A [document store]({%latestjavaurl%}/Document-API.html) is used for saving matched deals.  This document contains the following items:
+A [document store]({%latestjavaurl%}/document-api.html) is used for saving matched deals.  This document contains the following items:
 
 - Deal ID
 - Routing string
@@ -218,7 +218,7 @@ The trade and matched deal objects are persisted to the HSQL database through Hi
 {% endhighlight %}
 
 ## Web Session Management
-HTTP Sessions are maintained in the space and a copy is also kept in a [local cache]({%latestjavaurl%}/Client-Side-Caching.html), with 1 object per client.  Sessions are accessed using the following:
+HTTP Sessions are maintained in the space and a copy is also kept in a [local cache]({%latestjavaurl%}/client-side-caching.html), with 1 object per client.  Sessions are accessed using the following:
 
 {% highlight java %}
 jetty.sessions.spaceUrl=jini://**/**/settlementSpace?useLocalCache

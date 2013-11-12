@@ -17,7 +17,7 @@ A module in SBA is called a Processing Unit. This is the smallest unit for cross
 TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
-A [Processing Unit]({% currentjavaurl %}/Packaging-and-Deployment.html) is the unit of scale. It is an application component, provided by the application developer, which is deployed to be run on several GSC instances.
+A [Processing Unit]({% currentjavaurl %}/packaging-and-deployment.html) is the unit of scale. It is an application component, provided by the application developer, which is deployed to be run on several GSC instances.
 
 The Service Grid is responsible for taking a single copy of a Processing Unit, and creating several instances on multiple GSCs.
 
@@ -30,15 +30,15 @@ TODO_NIV - Change to internal link when available.
 {% endcomment %}
 
 - [**.NET** Processing Unit](./processing-units.html) -  has its code components in .NET, and may contain a space component.
-- [**Java** Processing Unit]({% currentjavaurl %}/Packaging-and-Deployment.html) - has code components in Java, and may contain a space component.
-- [**Web** Processing Unit]({% currentjavaurl %}/Web-Processing-Unit-Container.html) - contains web applications. This Processing Unit can be packaged as a standard JEE WAR (Web Archive) file, and may contain a space component.
-- [**EDG** Processing Unit]({% currentjavaurl %}/The-Processing-Unit-Structure-and-Configuration.html#dataOnlyPUs) - contains space component(s) only.
+- [**Java** Processing Unit]({% currentjavaurl %}/packaging-and-deployment.html) - has code components in Java, and may contain a space component.
+- [**Web** Processing Unit]({% currentjavaurl %}/web-processing-unit-container.html) - contains web applications. This Processing Unit can be packaged as a standard JEE WAR (Web Archive) file, and may contain a space component.
+- [**EDG** Processing Unit]({% currentjavaurl %}/the-processing-unit-structure-and-configuration.html#dataOnlyPUs) - contains space component(s) only.
 
 A Processing Unit package structure is defined, based on the technology:
 
 - A **.NET** Processing Unit is packaged as a directory structure. For more information, please refer to the [XAP.NET Programmer's Guide](./processing-units.html).
 - A [**Java** Processing Unit]{{ page.url | remove: 'net' }}/The-Processing-Unit-Structure-and-Configuration.html) is packaged usually as a JAR file, modeled after the Spring DI structure. The package can also be within a file structure based on the same structure.
-- A [**Web** Processing Unit]({% currentjavaurl %}/Web-Processing-Unit-Container.html#Deployment) is packaged as a standard JEE WAR file.
+- A [**Web** Processing Unit]({% currentjavaurl %}/web-processing-unit-container.html#Deployment) is packaged as a standard JEE WAR file.
 
 # Data-Only Processing Unit (EDG)
 

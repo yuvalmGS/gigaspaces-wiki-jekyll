@@ -18,10 +18,10 @@ page_id: 55937666
 {% endtip %}
 
 # Overview
-The GigaSpaces Universal Deployer (GUD) allows deploying the different supported processing units ([Space PU]({%latestjavaurl%}/Deploying-and-Interacting-with-the-Space.html), [Regular PU]({%latestjavaurl%}/Packaging-and-Deployment.html), [Elastic PU]({%latestjavaurl%}/Elastic-Processing-Unit.html), [memCache PU]({%latestjavaurl%}/Memcached-API.html) or [Web PU]({%latestjavaurl%}/Web-Processing-Unit-Container.html) via a simple configuration file. The GUD support dependency based deployment allowing multiple processing units to be deployed as one atomic process (e.g composite application).
+The GigaSpaces Universal Deployer (GUD) allows deploying the different supported processing units ([Space PU]({%latestjavaurl%}/deploying-and-interacting-with-the-space.html), [Regular PU]({%latestjavaurl%}/packaging-and-deployment.html), [Elastic PU]({%latestjavaurl%}/elastic-processing-unit.html), [memCache PU]({%latestjavaurl%}/memcached-api.html) or [Web PU]({%latestjavaurl%}/web-processing-unit-container.html) via a simple configuration file. The GUD support dependency based deployment allowing multiple processing units to be deployed as one atomic process (e.g composite application).
 
 {% tip %}
-Starting with XAP 9 you may use the **Deployment Dependencies API** to specify the deployment order. See the [Application Deployment and Processing Unit Dependencies]({%latestjavaurl%}/Deploying-onto-the-Service-Grid.html#Application+Deployment+and+Processing+Unit+Dependencies) for details.
+Starting with XAP 9 you may use the **Deployment Dependencies API** to specify the deployment order. See the [Application Deployment and Processing Unit Dependencies]({%latestjavaurl%}/deploying-onto-the-service-grid.html#Application+Deployment+and+Processing+Unit+Dependencies) for details.
 {% endtip %}
 
 ## Dependency Based Deployment
@@ -112,7 +112,7 @@ Each GUD configuration file line supports the following options:
 |-max-instances-per-machine number      | Set the SLA number of instances per machine|Numeric value | |
 |-max-instances-per-zone |Set the SLA number of instances per zone |zone/number| |
 |-zones | Set the SLA zone requirements | | |
-|-elastic | Deploy the PU as an [Elastic PU]({%latestjavaurl%}/Elastic-Processing-Unit.html). You should have the ESM started when using this option.| manualCapacity,eagerCapacity | |
+|-elastic | Deploy the PU as an [Elastic PU]({%latestjavaurl%}/elastic-processing-unit.html). You should have the ESM started when using this option.| manualCapacity,eagerCapacity | |
 |-highlyAvailable | Used with a Stale-full Elastic PU. Start backup instances. Specifies if the space should duplicate each information on two different machines.|true,false|true|
 |-memoryCapacityPerContainer |Used with an Elastic PU. Specifies the the heap size per container (operating system process). |Numeric value with a Memory Unit. Memory units supported: m for MB,g for GB|32m|
 |-maxMemoryCapacity |Used with an Elastic PU. Specifies the estimated **maximum** total memory capacity used with this processing unit. |Numeric value with a Memory Unit. Memory units supported: m for MB,g for GB|256m|

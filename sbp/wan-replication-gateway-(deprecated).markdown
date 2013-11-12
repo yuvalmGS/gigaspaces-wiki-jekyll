@@ -18,11 +18,11 @@ page_id: 54820903
 
 # Overview
 
-Mirror Gateway Synchronization can be used to synchronize operations conducted at one local site with data in a remote site or another cluster instance as explained in the [Clusters Over WAN]({%latestjavaurl%}/Multi-Site-Replication-over-the-WAN.html) page. This example demonstrates how this can be done using a custom external dataSource implementation running on the mirror.
+Mirror Gateway Synchronization can be used to synchronize operations conducted at one local site with data in a remote site or another cluster instance as explained in the [Clusters Over WAN]({%latestjavaurl%}/multi-site-replication-over-the-wan.html) page. This example demonstrates how this can be done using a custom external dataSource implementation running on the mirror.
 
 This is a simple order processing example based on GigaSpaces maven basic-async-persistency template. Product objects in the space maintain available quantity information. New orders coming into the system reduce the number of available products. Example shows how you can synchronize the available Product information across two clusters using a Mirror Gateway.
 
-{% exclamation %} The GigaSpaces WAN Gateway, a solution for synchronizing multiple clusters over the WAN can be found at [Multi-Site Replication over the WAN]({%latestjavaurl%}/Multi-Site-Replication-over-the-WAN.html).
+{% exclamation %} The GigaSpaces WAN Gateway, a solution for synchronizing multiple clusters over the WAN can be found at [Multi-Site Replication over the WAN]({%latestjavaurl%}/multi-site-replication-over-the-wan.html).
 
 # Mirror Gateway - One way
 
@@ -266,7 +266,7 @@ public class MyExternalDataSource implements BulkDataPersister, ManagedDataSourc
 # Running the example
 
 {% note %}
- This example is using Maven for packaging and build. Please [install the OpenSpaces Maven plugin]({%latestjavaurl%}/Maven-Plugin.html#MavenPlugin-Installation) before you run this example.
+ This example is using Maven for packaging and build. Please [install the OpenSpaces Maven plugin]({%latestjavaurl%}/maven-plugin.html#MavenPlugin-Installation) before you run this example.
 Some instructions below might use windows syntax please use appropriate **nix syntax if you are running the example in a **nix machine.
 Example was tested using a single machine with ip address, 192.168.2.100 and Lookup Server ports for SiteA and SiteB as 14164 and 14165 respectively. Please modify these corresponding to your environment.
 {% endnote %}
