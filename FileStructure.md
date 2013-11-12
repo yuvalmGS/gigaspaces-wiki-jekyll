@@ -12,7 +12,6 @@ to reuse the images in the future. We started the re grouping with the folder sp
 
 * Sub directories
 
-{: .table .table-bordered}
 |Subfolder name |Description|
 |:------|:---------------------------------------|
 | gs    |contains GigaSpaces logos and trademarks|
