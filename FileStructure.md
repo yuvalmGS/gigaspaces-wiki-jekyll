@@ -78,3 +78,6 @@ This is the directory that holds all wiki pages for the xap97 .NET release.
 |Subfolder name |Description|
 |:------|:---------------------------------------|
 | release_notes | contains all information about this release |
+
+
+Each new XAP version will have its own subfolders, e.g XAP98, XAP99 etc.
