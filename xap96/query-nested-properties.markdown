@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Query Nested Properties
-page_id: 63078974
+categories: XAP96
 ---
 
 {% compositionsetup %}

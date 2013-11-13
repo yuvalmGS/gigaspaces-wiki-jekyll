@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Running GigaSpaces as a Windows Service
-page_id: 61867185
+categories: XAP96
 ---
 
 {% summary %}Running GigaSpaces as a Windows Service{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  How to Determine Whether Multicast is Available
-page_id: 61867240
+categories: XAP96
 ---
 
 {% summary %}Used to determine whether multicast is available.{% endsummary %}

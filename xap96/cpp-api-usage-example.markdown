@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  CPP API Usage Example
-page_id: 61867410
+categories: XAP96
 ---
 
 {% compositionsetup %}

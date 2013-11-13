@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Memcached API
-page_id: 61867350
+categories: XAP96
 ---
 
 {% compositionsetup %}

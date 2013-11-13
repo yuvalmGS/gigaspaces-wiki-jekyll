@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Event Driven Remoting
-page_id: 61867434
+categories: XAP96
 ---
 
 {% compositionsetup %}

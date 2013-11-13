@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Topologies
-page_id: 61867126
+categories: XAP96
 ---
 
 {% compositionsetup %}

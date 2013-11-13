@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Backing-up Files With a Custom Policy
-page_id: 61867328
+categories: XAP96
 ---
 
 {% summary %}Custom backup policy{% endsummary %}

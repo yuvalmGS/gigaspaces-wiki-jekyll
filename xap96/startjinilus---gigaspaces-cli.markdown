@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  startJiniLUS - GigaSpaces CLI
-page_id: 61867398
+categories: XAP96
 ---
 
 {% summary %}Starts the Jini Lookup Service as a standalone process. {% endsummary %}

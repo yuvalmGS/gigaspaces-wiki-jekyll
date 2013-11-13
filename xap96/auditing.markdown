@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Auditing
-page_id: 61867299
+categories: XAP96
 ---
 
 {% summary %}Auditing of authentication and operations{% endsummary %}

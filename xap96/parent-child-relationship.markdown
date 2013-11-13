@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Parent Child Relationship
-page_id: 61867335
+categories: XAP96
 ---
 
 {% compositionsetup %}{% summary %}Constructing Parent-Child Relationships with GigaSpaces Data-Grid{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Scala Task Execution
-page_id: 63078415
+categories: XAP96
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Tuning Threads Usage
-page_id: 61867401
+categories: XAP96
 ---
 
 # Overview

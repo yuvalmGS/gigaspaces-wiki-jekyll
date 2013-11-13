@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Your First Web Application
-page_id: 61867190
+categories: XAP96
 ---
 
 {% trainingbox %}

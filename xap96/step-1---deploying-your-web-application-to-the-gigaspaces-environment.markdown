@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step 1 - Deploying Your Web Application to the GigaSpaces Environment
-page_id: 61867166
+categories: XAP96
 ---
 
 {% compositionsetup %}

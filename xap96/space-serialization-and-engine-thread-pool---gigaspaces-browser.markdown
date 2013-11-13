@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Serialization and Engine Thread Pool - GigaSpaces Browser
-page_id: 61867081
+categories: XAP96
 ---
 
 {% summary %}Using the **Performance** tab of the advanced space configuration dialog.{% endsummary %}

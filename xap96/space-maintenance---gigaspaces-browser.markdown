@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Maintenance - GigaSpaces Browser
-page_id: 61867201
+categories: XAP96
 ---
 
 {% summary %}Pinging, destroying, cleaning, stopping, starting, and restarting a space using the button toolbar.{% endsummary %}

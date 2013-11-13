@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Packaging and Deployment
-page_id: 61867298
+categories: XAP96
 ---
 
 {% summary page|70 %}This section deals with the internals of the GigaSpaces XAP packaging and deployment unit, namely the processing unit. It explains how to create it and how to run it in the various runtime modes.{% endsummary %}

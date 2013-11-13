@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step 1 - Adjusting Your JPA Domain Model to the XAP JPA Implementation
-page_id: 61867282
+categories: XAP96
 ---
 
 {% summary %}Adjusting Your JPA Domain Model to the XAP JPA Implementation{% endsummary %}

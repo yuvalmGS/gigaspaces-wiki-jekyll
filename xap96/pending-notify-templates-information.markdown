@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Pending Notify Templates Information
-page_id: 61867086
+categories: XAP96
 ---
 
 {% summary page|60 %}Information regarding pending notify templates{% endsummary %}

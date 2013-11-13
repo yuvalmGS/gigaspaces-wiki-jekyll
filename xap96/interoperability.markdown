@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Interoperability
-page_id: 61867345
+categories: XAP96
 ---
 
 {% children %}

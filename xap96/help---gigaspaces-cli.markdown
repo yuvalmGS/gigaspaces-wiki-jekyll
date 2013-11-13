@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  help - GigaSpaces CLI
-page_id: 61867427
+categories: XAP96
 ---
 
 {% summary %}Displays syntax of specified CLI command, or list of all commands. {% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  JMS Failover
-page_id: 61867206
+categories: XAP96
 ---
 
 {% summary page|60 %}JMS behavior during failover, How to recover JMS applications from failovers.{% endsummary %}

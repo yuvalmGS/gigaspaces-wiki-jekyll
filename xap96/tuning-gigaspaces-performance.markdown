@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Tuning GigaSpaces Performance
-page_id: 61867179
+categories: XAP96
 ---
 
 # Overview

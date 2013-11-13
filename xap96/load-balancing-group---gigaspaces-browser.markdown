@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Load-Balancing Group - GigaSpaces Browser
-page_id: 61867436
+categories: XAP96
 ---
 
 {% summary %}A load-balancing group defines load-balancing between spaces in the cluster.{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Persistency Advanced Topics
-page_id: 61867063
+categories: XAP96
 ---
 
 {% compositionsetup %}

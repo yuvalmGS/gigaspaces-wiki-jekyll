@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Leases - Automatic Expiration
-page_id: 61867416
+categories: XAP96
 ---
 
 {% compositionsetup %}{% summary %}Lease basics and explains how Leases can be managed{% endsummary %}

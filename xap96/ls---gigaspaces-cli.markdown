@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  ls - GigaSpaces CLI
-page_id: 61867347
+categories: XAP96
 ---
 
 {% summary %}Lists the contents of the current working directory, like the Unix `ls` command. {% endsummary %}

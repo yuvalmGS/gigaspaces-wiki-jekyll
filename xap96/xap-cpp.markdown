@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP CPP
-page_id: 61867227
+categories: XAP96
 ---
 
 {% summary section %}The GigaSpaces c++ API has been designed to allow the same level of flexibility, usability and interoperability of the Java [POJO](/xap96/pojo-support.html) and [.NET C# PONO|XAP96NET:](Object Metadata) counterpart APIs for building scalable, low-latency SBA applications.{% endsummary %}

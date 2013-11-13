@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Intercepting Replication Events at the Gateway
-page_id: 61867233
+categories: XAP96
 ---
 
 {% summary %}This page explains how to plugin a custom interceptor at the gateway which can be used to implement custom logic upon incoming replication events in a target gateway{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Persistency
-page_id: 61867173
+categories: XAP96
 ---
 
 {% summary %}GigaSpaces's persistency approach consists of several paradigms for data persistency, according to the application needs. This section gives a basic overview of each paradigm. {% endsummary %}

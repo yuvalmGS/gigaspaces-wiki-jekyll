@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Footer
-page_id: 61867204
+categories: XAP96
 ---
 
 {% panel borderColor=#F0C000|bgColor=#FFFFCE %}

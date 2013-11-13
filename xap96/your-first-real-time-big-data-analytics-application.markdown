@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Your First Real Time Big Data Analytics Application
-page_id: 61867429
+categories: XAP96
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Communication Filter Over the Wan (SSL,ZIP)
-page_id: 61867318
+categories: XAP96
 ---
 
 {% summary %}This page is about putting filters over the network communication which goes across the WAN.{% endsummary %}

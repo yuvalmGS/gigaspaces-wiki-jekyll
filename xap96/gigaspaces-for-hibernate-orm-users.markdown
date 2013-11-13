@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  GigaSpaces for Hibernate ORM Users
-page_id: 61867033
+categories: XAP96
 ---
 
 {% compositionsetup %}

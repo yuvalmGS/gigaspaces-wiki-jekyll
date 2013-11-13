@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Paging Support with Space Iterator
-page_id: 61867380
+categories: XAP96
 ---
 
 {% summary %}Reading large number of objects using multiple queries in one call in a continuous manner. {% endsummary %}

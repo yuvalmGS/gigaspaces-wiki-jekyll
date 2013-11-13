@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Advanced Topics
-page_id: 61867450
+categories: XAP96
 ---
 
 {% children %}

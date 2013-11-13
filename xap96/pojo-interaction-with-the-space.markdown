@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  POJO Interaction with the Space
-page_id: 63079278
+categories: XAP96
 ---
 
 #POJO Interaction with the Space

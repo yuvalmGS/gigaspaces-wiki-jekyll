@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  JMS Transactions in GigaSpaces
-page_id: 61867418
+categories: XAP96
 ---
 
 {% summary %}Using local and distributed transactions with the JMS implementation.{% endsummary %}

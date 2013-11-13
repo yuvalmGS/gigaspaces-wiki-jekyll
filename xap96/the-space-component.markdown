@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Space Component
-page_id: 61867280
+categories: XAP96
 ---
 
 {% compositionsetup %}

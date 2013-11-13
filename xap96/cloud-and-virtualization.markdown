@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Cloud and Virtualization
-page_id: 61867411
+categories: XAP96
 ---
 
 This section describes the XAP integrations with various cloud and virtualization vendors.

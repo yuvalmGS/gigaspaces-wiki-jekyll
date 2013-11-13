@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Terminology - Basic Components
-page_id: 61867004
+categories: XAP96
 ---
 
 {% summary page|65 %}GigaSpaces basic components.{% endsummary %}

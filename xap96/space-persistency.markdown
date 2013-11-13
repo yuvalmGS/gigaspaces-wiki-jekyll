@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Persistency
-page_id: 61867406
+categories: XAP96
 ---
 
 {% summary page|65 %}Space Persistency provides advanced persistency capabilities for the space architecture.{% endsummary %}

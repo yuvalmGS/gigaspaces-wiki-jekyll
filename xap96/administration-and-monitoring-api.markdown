@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Administration and Monitoring API
-page_id: 61867291
+categories: XAP96
 ---
 
 {% compositionsetup %}

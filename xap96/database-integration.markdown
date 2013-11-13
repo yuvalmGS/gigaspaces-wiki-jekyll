@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Database Integration
-page_id: 61867029
+categories: XAP96
 ---
 
 {% summary %}This section describes Database Integration in SBA{% endsummary %}

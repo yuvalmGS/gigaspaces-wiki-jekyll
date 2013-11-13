@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Setting Up your IDE to work with GigaSpaces
-page_id: 61867371
+categories: XAP96
 ---
 
 {% compositionsetup %}{% compositionsetup %}

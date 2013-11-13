@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP Order Management Tutorial
-page_id: 61867393
+categories: XAP96
 ---
 
 {% compositionsetup %}

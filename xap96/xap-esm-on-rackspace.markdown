@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP ESM on Rackspace
-page_id: 61867047
+categories: XAP96
 ---
 
 {% compositionsetup %}

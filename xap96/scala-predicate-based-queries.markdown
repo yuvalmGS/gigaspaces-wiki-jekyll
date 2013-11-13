@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Scala Predicate Based Queries
-page_id: 63078413
+categories: XAP96
 ---
 
 {% compositionsetup %}

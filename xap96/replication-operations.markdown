@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Replication Operations
-page_id: 61867057
+categories: XAP96
 ---
 
 {% compositionsetup %}{% summary %} This section describes in detail how each space operation is replicated provides relevant configuration and optimizations .{% endsummary %}

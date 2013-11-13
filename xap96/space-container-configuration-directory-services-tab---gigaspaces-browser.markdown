@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Container Configuration Directory Services Tab - GigaSpaces Browser
-page_id: 61867395
+categories: XAP96
 ---
 
 {% summary %}Lookup service options for the container.{% endsummary %}

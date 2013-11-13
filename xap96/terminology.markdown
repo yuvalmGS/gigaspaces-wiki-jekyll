@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Terminology
-page_id: 61867322
+categories: XAP96
 ---
 
 {% children %}

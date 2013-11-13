@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  login - GigaSpaces CLI
-page_id: 61867005
+categories: XAP96
 ---
 
 {% summary %}This CLI command allows you to login to secured services: GSM, GSC and spaces. {% endsummary %}

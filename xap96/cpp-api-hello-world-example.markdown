@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  CPP API Hello World Example
-page_id: 61867007
+categories: XAP96
 ---
 
 {% compositionsetup %}

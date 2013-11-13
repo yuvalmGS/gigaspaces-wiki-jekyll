@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  FIFO Grouping
-page_id: 61867128
+categories: XAP96
 ---
 
 {% compositionsetup %}

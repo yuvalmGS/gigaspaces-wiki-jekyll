@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Commands
-page_id: 61867336
+categories: XAP96
 ---
 
 {% children %}

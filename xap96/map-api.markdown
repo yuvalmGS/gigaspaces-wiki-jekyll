@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Map API
-page_id: 61867396
+categories: XAP96
 ---
 
 {% compositionsetup %}{% summary page|60 %}Using GigaSpaces as a distributed cache. Interacting with the space using the Hashtable API. This is an optimized API to store user sessions or metadata accessed via a simple key{% endsummary %}

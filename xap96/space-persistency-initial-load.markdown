@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Persistency Initial Load
-page_id: 61867145
+categories: XAP96
 ---
 
 {% compositionsetup %}

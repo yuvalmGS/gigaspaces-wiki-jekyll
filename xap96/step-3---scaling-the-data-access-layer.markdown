@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step 3 - Scaling the Data Access Layer
-page_id: 61867433
+categories: XAP96
 ---
 
 {% compositionsetup %}

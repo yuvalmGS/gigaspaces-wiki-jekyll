@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Using GigaSpaces JMS Without Changing the Classpath
-page_id: 61867078
+categories: XAP96
 ---
 
 {% summary page|65 %}Using GigaSpaces JMS without having to include GigaSpaces JAR files in the classpath.{% endsummary %}

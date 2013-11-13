@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Troubleshooting Common User Issues
-page_id: 61867223
+categories: XAP96
 ---
 
 # Troubleshooting Common Users Mistakes Which Might Lead to Issues

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Container Configuration JMS Tab - GigaSpaces Browser
-page_id: 61867159
+categories: XAP96
 ---
 
 {% summary %}Enabling JMS, enabling internal JNDI, enabling external JNDI.{% endsummary %}

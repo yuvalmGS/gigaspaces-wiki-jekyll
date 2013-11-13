@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Commands and Scripts
-page_id: 61867137
+categories: XAP96
 ---
 
 # Overview

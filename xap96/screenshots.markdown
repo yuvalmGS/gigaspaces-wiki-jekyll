@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Screenshots
-page_id: 61867234
+categories: XAP96
 ---
 
 {% gallery %}{% endgallery %}

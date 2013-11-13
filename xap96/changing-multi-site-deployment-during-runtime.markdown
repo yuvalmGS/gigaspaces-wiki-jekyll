@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Changing Multi-Site Deployment during Runtime
-page_id: 61867174
+categories: XAP96
 ---
 
 {% summary %}This page explains how to configure replication gateway targets of a space.{% endsummary %}

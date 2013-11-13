@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Application View
-page_id: 61867093
+categories: XAP96
 ---
 
 {% compositionsetup %}{% summary %}Applications and Processing unit dependency view{% endsummary %}

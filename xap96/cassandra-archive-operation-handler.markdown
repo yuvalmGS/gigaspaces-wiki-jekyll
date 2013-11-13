@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Cassandra Archive Operation Handler
-page_id: 61867211
+categories: XAP96
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  System Properties List
-page_id: 61867284
+categories: XAP96
 ---
 
 # System Properties List

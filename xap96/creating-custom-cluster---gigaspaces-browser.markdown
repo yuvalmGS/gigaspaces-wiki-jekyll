@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Creating Custom Cluster - GigaSpaces Browser
-page_id: 61867042
+categories: XAP96
 ---
 
 {% summary %}Building a custom cluster from a standard cluster schema.{% endsummary %}

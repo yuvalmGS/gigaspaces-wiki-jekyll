@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Data-Partitioning
-page_id: 61867242
+categories: XAP96
 ---
 
 {% compositionsetup %}

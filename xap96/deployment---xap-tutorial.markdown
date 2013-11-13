@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Deployment - XAP Tutorial
-page_id: 61867018
+categories: XAP96
 ---
 
 # Deployment

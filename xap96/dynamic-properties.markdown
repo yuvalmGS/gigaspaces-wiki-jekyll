@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Dynamic Properties
-page_id: 61867452
+categories: XAP96
 ---
 
 {% compositionsetup %}

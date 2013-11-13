@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Asynchronous Persistency with the Mirror
-page_id: 61867054
+categories: XAP96
 ---
 
 {% compositionsetup %}

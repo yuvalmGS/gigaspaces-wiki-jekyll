@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Cluster Replication Filters
-page_id: 61867236
+categories: XAP96
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Query User Defined Classes
-page_id: 63078969
+categories: XAP96
 ---
 
 {% compositionsetup %}

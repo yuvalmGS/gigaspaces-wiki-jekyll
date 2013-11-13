@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  License Key
-page_id: 61867202
+categories: XAP96
 ---
 
 {% summary %}Getting a license key and defining it in the space schema.{% endsummary %}

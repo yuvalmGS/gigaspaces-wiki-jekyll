@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Command Line Interface (CLI) Security
-page_id: 61867110
+categories: XAP96
 ---
 
 {% compositionsetup %}

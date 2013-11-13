@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Slow Consumer
-page_id: 61867424
+categories: XAP96
 ---
 
 {% summary %}The space includes a special mechanism that detects clients that cannot consume the notifications sent fast enough - i.e. slow consumers. {% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Scala
-page_id: 61867243
+categories: XAP96
 ---
 
 {% compositionsetup %}

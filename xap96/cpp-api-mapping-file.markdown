@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  CPP API Mapping File
-page_id: 61867249
+categories: XAP96
 ---
 
 {% summary page|65 %}Elements that are available to be used in your `gs.xml` file and supported types.{% endsummary %}

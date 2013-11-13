@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  FIFO Support
-page_id: 61867388
+categories: XAP96
 ---
 
 {% summary %}How to get entries in the same order in which they were written to the space.{% endsummary %}

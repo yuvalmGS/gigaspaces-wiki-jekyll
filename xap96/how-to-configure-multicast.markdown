@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  How to Configure Multicast
-page_id: 61867133
+categories: XAP96
 ---
 
 {% summary %}Enabling multicast on Linux and windows. {% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Custom Eviction Policy
-page_id: 61867214
+categories: XAP96
 ---
 
 {% compositionsetup %}

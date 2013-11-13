@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Asynchronous Replication
-page_id: 61867158
+categories: XAP96
 ---
 
 {% summary %}This page describe what is asynchronous replication and how to configure it{% endsummary %}

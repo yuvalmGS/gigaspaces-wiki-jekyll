@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Cluster View - GigaSpaces Browser
-page_id: 61867382
+categories: XAP96
 ---
 
 {% summary %}Using Cluster View areas: Cluster Tree, visual display, legend, and information panel.{% endsummary %}

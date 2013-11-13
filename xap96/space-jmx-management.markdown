@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space JMX Management
-page_id: 61867258
+categories: XAP96
 ---
 
 {% summary %}Controlling space attributes and operations using the JMX console. {% endsummary %}

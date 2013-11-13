@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Dashboard View
-page_id: 61867199
+categories: XAP96
 ---
 
 {% compositionsetup %}{% summary %}Main Dashboard navigation view{% endsummary %}

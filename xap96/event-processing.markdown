@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Event Processing
-page_id: 61867213
+categories: XAP96
 ---
 
 {% summary %}This section will guide you through event processing APIs and configuration on top of the space{% endsummary %}

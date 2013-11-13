@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Securing the Transport Layer (using SSL)
-page_id: 61867108
+categories: XAP96
 ---
 
 {% summary %}GigaSpaces provides a generic network filter that also provides SSL support, through an SSL communication filter.{% endsummary %}

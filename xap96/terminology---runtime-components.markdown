@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Terminology - Runtime Components
-page_id: 61867104
+categories: XAP96
 ---
 
 {% summary page|65 %}GigaSpaces runtime components {% endsummary %}

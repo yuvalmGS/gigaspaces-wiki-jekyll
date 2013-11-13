@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Setting Up your IDE to work with XAP
-page_id: 61867150
+categories: XAP96
 ---
 
 {% compositionsetup %}

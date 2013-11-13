@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Footer Links
-page_id: 61867068
+categories: XAP96
 ---
 
 {% align center %}

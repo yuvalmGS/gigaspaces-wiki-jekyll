@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Nav Links
-page_id: 61867235
+categories: XAP96
 ---
 
 ### Additional Resources

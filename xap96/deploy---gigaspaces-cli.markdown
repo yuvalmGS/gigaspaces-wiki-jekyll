@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  deploy - GigaSpaces CLI
-page_id: 61867116
+categories: XAP96
 ---
 
 {% summary page|70 %}Deploys a Processing Unit onto the Service Grid.{% endsummary %}

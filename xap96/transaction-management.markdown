@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Transaction Management
-page_id: 61867261
+categories: XAP96
 ---
 
 {% compositionsetup %}

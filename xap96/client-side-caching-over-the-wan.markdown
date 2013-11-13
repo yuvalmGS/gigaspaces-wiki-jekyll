@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Client-Side Caching over the WAN
-page_id: 61867024
+categories: XAP96
 ---
 
 {% compositionsetup %}{% summary page|60 %}Client Caching Over WAN.{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  task - GigaSpaces CLI
-page_id: 61867312
+categories: XAP96
 ---
 
 {% summary %}Submits a task in the form of an Ant configuration file. {% endsummary %}

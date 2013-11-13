@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Monitoring the Client-Side Cache
-page_id: 61867228
+categories: XAP96
 ---
 
 {% compositionsetup %}{% summary page|60 %}The Local View/Cache Monitoring{% endsummary %}

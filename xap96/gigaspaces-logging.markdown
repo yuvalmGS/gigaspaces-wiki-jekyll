@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  GigaSpaces Logging
-page_id: 61867375
+categories: XAP96
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Concepts
-page_id: 61867442
+categories: XAP96
 ---
 
 {% summary %}This section describes the main concepts underlying GigaSpaces XAP.{% endsummary %}

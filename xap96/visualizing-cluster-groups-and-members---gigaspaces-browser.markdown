@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Visualizing Cluster Groups and Members - GigaSpaces Browser
-page_id: 61867191
+categories: XAP96
 ---
 
 {% summary %}Viewing clustered groups, clustered spaces and URLs, and accessing information views for a clustered space.{% endsummary %}

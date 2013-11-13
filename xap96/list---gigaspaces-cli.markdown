@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  list - GigaSpaces CLI
-page_id: 61867343
+categories: XAP96
 ---
 
 {% summary %}Lists information about active Service Grid services. {% endsummary %}

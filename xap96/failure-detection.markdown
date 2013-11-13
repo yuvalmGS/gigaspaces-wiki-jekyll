@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Failure Detection
-page_id: 61867419
+categories: XAP96
 ---
 
 {% summary %}About failure detection, reducing failure detection time, and relevant parameters.{% endsummary %}

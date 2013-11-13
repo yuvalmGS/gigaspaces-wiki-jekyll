@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Communication Protocol
-page_id: 61867256
+categories: XAP96
 ---
 
 {% summary %}Setting communication protocol using exporters; `GenericExporter` configuration - ports, connections, and threads.{% endsummary %}

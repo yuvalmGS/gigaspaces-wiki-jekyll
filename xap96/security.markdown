@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Security
-page_id: 61867437
+categories: XAP96
 ---
 
 {% summary %}This section describes GigaSpaces security model{% endsummary %}

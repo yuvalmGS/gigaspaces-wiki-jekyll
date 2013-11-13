@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Terminology - Data Grid Topologies
-page_id: 61867088
+categories: XAP96
 ---
 
 {% summary page|65 %}GigaSpaces Data-Grid components {% endsummary %}

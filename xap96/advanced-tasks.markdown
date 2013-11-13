@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Advanced Tasks
-page_id: 61867252
+categories: XAP96
 ---
 
 {% children %}

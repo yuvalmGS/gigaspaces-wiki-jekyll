@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Terminology - Space-Based Architecture
-page_id: 61867130
+categories: XAP96
 ---
 
 {% summary page|65 %}GigaSpaces SBA components {% endsummary %}

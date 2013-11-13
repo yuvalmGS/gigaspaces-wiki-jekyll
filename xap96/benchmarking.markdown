@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Benchmarking
-page_id: 61867306
+categories: XAP96
 ---
 
 # The Art of Benchmarks

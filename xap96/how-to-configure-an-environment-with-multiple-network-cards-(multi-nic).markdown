@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  How to Configure an Environment With Multiple Network-Cards (Multi-NIC)
-page_id: 61867346
+categories: XAP96
 ---
 
 {% summary %}Configuring GigaSpaces for a machine with multiple network cards. By default all network cards are used; you can limit GigaSpaces to specific ones.{% endsummary %}

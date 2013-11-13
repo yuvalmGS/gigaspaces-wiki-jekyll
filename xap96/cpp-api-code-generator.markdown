@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  CPP API Code Generator
-page_id: 61867307
+categories: XAP96
 ---
 
 {% summary page|65 %}CPP API Code Generator utility. Generates your header files using the gs.xml input files{% endsummary %}

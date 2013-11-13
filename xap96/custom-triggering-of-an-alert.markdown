@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Custom Triggering of an Alert
-page_id: 61867032
+categories: XAP96
 ---
 
 {% compositionsetup %}

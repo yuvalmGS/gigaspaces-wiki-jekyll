@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Internal
-page_id: 61867413
+categories: XAP96
 ---
 
 {% warning %}

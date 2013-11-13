@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Suggested Monitoring Tools
-page_id: 61867250
+categories: XAP96
 ---
 
 {% summary %}Suggested list of monitoring tools.{% endsummary %}

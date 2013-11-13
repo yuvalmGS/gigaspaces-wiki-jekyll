@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Synchronization Endpoint API
-page_id: 61867177
+categories: XAP96
 ---
 
 {% compositionsetup %}

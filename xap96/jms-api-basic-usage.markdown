@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  JMS API Basic Usage
-page_id: 61867456
+categories: XAP96
 ---
 
 {% compositionsetup %}

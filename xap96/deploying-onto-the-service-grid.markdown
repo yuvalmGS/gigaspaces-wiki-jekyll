@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Deploying onto the Service Grid
-page_id: 61867279
+categories: XAP96
 ---
 
 {% compositionsetup %}

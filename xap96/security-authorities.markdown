@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Security Authorities
-page_id: 61867445
+categories: XAP96
 ---
 
 {% summary %}System, Grid, Space and Monitor authorities{% endsummary %}

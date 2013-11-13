@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Appendix
-page_id: 61867255
+categories: XAP96
 ---
 
 {% children %}

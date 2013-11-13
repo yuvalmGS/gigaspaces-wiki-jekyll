@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Direct Persistency
-page_id: 61867313
+categories: XAP96
 ---
 
 {% compositionsetup %}

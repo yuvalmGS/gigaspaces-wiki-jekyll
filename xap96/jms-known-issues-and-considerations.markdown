@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  JMS Known Issues and Considerations
-page_id: 61867352
+categories: XAP96
 ---
 
 {% summary %}JMS API open issues, unsupported features, and considerations {% endsummary %}

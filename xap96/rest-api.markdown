@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  REST API
-page_id: 61867008
+categories: XAP96
 ---
 
 {% compositionsetup %}

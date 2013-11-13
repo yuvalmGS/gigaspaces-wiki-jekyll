@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Query View - GigaSpaces Browser
-page_id: 61867152
+categories: XAP96
 ---
 
 {% summary %}Used to query the space using SQL statements and view the resulting data set in tabular format.{% endsummary %}

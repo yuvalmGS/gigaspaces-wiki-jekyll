@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  A Typical SBA Application
-page_id: 61867017
+categories: XAP96
 ---
 
 {% summary %}A Typical Space-Based Application {% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Document-POJO Interoperability
-page_id: 61867215
+categories: XAP96
 ---
 
 {% summary %}Interoperability between POJO and Document space entries{% endsummary %}

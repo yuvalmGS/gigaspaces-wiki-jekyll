@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Your First Data Grid Application
-page_id: 61867330
+categories: XAP96
 ---
 
 {% compositionsetup %}

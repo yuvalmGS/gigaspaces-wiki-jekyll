@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Quick Start
-page_id: 63079276
+categories: XAP96
 ---
 
 #Quick Start Guide

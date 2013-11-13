@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Data Types View - GigaSpaces Browser
-page_id: 61867453
+categories: XAP96
 ---
 
 {% summary %}Used to view data stored on the space (Data Types information and number of instances).{% endsummary %}

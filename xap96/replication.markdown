@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Replication
-page_id: 61867058
+categories: XAP96
 ---
 
 {% summary %}This section gives a detailed description of the Space's replication mechanism, and how to configure and optimize it.{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Processing Unit Structure and Configuration
-page_id: 61867075
+categories: XAP96
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Dynamic Language Tasks
-page_id: 61867041
+categories: XAP96
 ---
 
 {% compositionsetup %}

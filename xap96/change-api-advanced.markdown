@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Change API Advanced
-page_id: 61867447
+categories: XAP96
 ---
 
 {% compositionsetup %}

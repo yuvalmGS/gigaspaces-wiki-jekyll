@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Consistency Level
-page_id: 61867178
+categories: XAP96
 ---
 
 {% summary %}Consistency level for replicated operations{% endsummary %}

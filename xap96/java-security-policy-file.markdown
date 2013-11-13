@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Java Security Policy File
-page_id: 61867069
+categories: XAP96
 ---
 
 {% summary %}Setting the `java.security.policy` property.{% endsummary %}

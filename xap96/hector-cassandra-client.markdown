@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Hector Cassandra Client
-page_id: 61867325
+categories: XAP96
 ---
 
 {% compositionsetup %}

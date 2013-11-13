@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Failover Detection and Tuning
-page_id: 61867273
+categories: XAP96
 ---
 
 {% summary page|70 %}This page describes how to calculate the duration of various failover scenarios and what configuration parameters control it{% endsummary %}

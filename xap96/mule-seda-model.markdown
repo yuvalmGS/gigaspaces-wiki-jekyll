@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Mule SEDA Model
-page_id: 61867176
+categories: XAP96
 ---
 
 {% compositionsetup %}

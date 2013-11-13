@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Replication Group - GigaSpaces Browser
-page_id: 61867064
+categories: XAP96
 ---
 
 {% summary %}Common settings, sync/async replication, transmission policies, filters, recovery options.{% endsummary %}

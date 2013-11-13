@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  space clean - GigaSpaces CLI
-page_id: 61867180
+categories: XAP96
 ---
 
 {% summary %}Removes all Entries and templates from the space.{% endsummary %}

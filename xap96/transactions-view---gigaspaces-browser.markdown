@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Transactions View - GigaSpaces Browser
-page_id: 61867109
+categories: XAP96
 ---
 
 {% summary %}The Transactions view allows you to view all of the trasactions that are currently taking place in the selected space.{% endsummary %}

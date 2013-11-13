@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Installing GigaSpaces
-page_id: 61867142
+categories: XAP96
 ---
 
 {% compositionsetup %}{% compositionsetup %}

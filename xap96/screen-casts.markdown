@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Screen Casts
-page_id: 61867162
+categories: XAP96
 ---
 
 ## To view one of the videos, click it on the right hand side of the player

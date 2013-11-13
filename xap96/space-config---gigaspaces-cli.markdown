@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  space config - GigaSpaces CLI
-page_id: 61867118
+categories: XAP96
 ---
 
 {% summary %}Displays the specified spaces's configuration details.{% endsummary %}

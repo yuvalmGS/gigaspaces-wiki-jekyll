@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  How to Set GigaSpaces Over a Firewall
-page_id: 61867357
+categories: XAP96
 ---
 
 {% summary page|65 %}The GigaSpaces settings to enable functioning over a Firewall. {% endsummary %}

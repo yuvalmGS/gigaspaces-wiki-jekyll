@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Failover
-page_id: 61867403
+categories: XAP96
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Messaging Support
-page_id: 61867443
+categories: XAP96
 ---
 
 {% children %}

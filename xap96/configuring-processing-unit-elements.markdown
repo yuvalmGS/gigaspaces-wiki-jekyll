@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Configuring Processing Unit Elements
-page_id: 61867049
+categories: XAP96
 ---
 
 {% compositionsetup %}

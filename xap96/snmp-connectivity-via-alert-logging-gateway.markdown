@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  SNMP Connectivity via Alert Logging Gateway
-page_id: 61867149
+categories: XAP96
 ---
 
 {% compositionsetup %}

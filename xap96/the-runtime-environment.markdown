@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Runtime Environment
-page_id: 61867113
+categories: XAP96
 ---
 
 {% summary %}This section gives a detailed description of the GigaSpaces deployment & runtime environment.{% endsummary %}

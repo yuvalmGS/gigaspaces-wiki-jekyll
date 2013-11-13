@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Memory Management Facilities
-page_id: 61867337
+categories: XAP96
 ---
 
 {% compositionsetup %}

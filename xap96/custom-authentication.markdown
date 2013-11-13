@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Custom Authentication
-page_id: 63078672
+categories: XAP96
 ---
 
 {% compositionsetup %}

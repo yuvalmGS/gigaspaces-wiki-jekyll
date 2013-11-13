@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  PlatformInfo - GigaSpaces CLI
-page_id: 61867221
+categories: XAP96
 ---
 
 {% summary %}Provides full information on the system configuration. {% endsummary %}

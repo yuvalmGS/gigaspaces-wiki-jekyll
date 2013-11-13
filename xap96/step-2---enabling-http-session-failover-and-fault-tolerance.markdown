@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step 2 - Enabling HTTP Session Failover and Fault Tolerance
-page_id: 61867247
+categories: XAP96
 ---
 
 {% compositionsetup %}

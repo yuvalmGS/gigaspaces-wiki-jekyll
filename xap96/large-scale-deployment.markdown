@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Large Scale Deployment
-page_id: 61867115
+categories: XAP96
 ---
 
 {% summary page|60 %}Instructions and best practices for tuning large-scale deployments.{% endsummary %}

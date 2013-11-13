@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Multi-Site Replication Limitations
-page_id: 61867303
+categories: XAP96
 ---
 
 # Limitations and Open Issues

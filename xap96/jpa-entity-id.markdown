@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  JPA Entity Id
-page_id: 61867245
+categories: XAP96
 ---
 
 {% summary %}This page explains the various supported options for mapping the identifier property of your JPA enntities.{% endsummary %}

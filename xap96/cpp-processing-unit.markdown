@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  CPP Processing Unit
-page_id: 61867263
+categories: XAP96
 ---
 
 {% summary page|65 %}The CPP Processing Unit{% endsummary %}

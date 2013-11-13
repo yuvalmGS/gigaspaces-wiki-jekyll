@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  gsa - GigaSpaces CLI
-page_id: 61867314
+categories: XAP96
 ---
 
 {% summary %}Invoke gsa CLI command.{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Your First JPA Application
-page_id: 61867253
+categories: XAP96
 ---
 
 {% compositionsetup %}{% compositionsetup %}

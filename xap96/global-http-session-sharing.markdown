@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Global HTTP Session Sharing
-page_id: 61867399
+categories: XAP96
 ---
 
 {% include /sbp/global-http-session-sharing.markdown %}

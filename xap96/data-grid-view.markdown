@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Data Grid View
-page_id: 61867421
+categories: XAP96
 ---
 
 {% compositionsetup %}{% summary %}Cluster wide information about your data grids including: data queries, metrics, metadata etc.{% endsummary %}

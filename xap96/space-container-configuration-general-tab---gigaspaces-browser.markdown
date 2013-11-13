@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Container Configuration General Tab - GigaSpaces Browser
-page_id: 61867056
+categories: XAP96
 ---
 
 {% summary %}Home directory, license, container socket port, security mode.{% endsummary %}

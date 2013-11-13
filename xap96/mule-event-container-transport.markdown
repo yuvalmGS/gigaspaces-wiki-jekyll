@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Mule Event Container Transport
-page_id: 61867163
+categories: XAP96
 ---
 
 {% compositionsetup %}

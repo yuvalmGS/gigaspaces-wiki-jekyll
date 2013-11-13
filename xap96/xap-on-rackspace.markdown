@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP on Rackspace
-page_id: 61867376
+categories: XAP96
 ---
 
 {% summary %}GigaSpaces XAP on Rackspace Enterprise Cloud{% endsummary %}

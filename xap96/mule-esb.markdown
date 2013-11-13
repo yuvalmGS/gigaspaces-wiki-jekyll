@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Mule ESB
-page_id: 61867050
+categories: XAP96
 ---
 
 {% summary section|65 %}OpenSpaces Mule ESB integration allows you to use the Space as a Mule external transport, replace Mule VM transport with transport over the Space, enhances the Mule SEDA model, and can be packaged and run as a Processing Unit.{% endsummary %}

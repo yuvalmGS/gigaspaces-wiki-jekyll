@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  undeploy - GigaSpaces CLI
-page_id: 61867377
+categories: XAP96
 ---
 
 {% summary page|70 %}Undeploys an application from the service grid. {% endsummary %}

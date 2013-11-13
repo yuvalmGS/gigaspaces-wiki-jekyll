@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Document API
-page_id: 61867271
+categories: XAP96
 ---
 
 {% compositionsetup %}

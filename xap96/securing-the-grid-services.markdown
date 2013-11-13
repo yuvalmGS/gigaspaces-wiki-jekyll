@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Securing the Grid Services
-page_id: 61866996
+categories: XAP96
 ---
 
 {% summary %}Enabling security for Grid Service Agent, Manager and Container.{% endsummary %}

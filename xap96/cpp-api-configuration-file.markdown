@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  CPP API Configuration File
-page_id: 61867451
+categories: XAP96
 ---
 
 {% summary page|65 %}C++ configuration file and setting the JVM options.{% endsummary %}

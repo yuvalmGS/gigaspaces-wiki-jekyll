@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Replication Gateway Bootstrapping Process
-page_id: 61867441
+categories: XAP96
 ---
 
 {% summary %}This page is about bootstrapping a site from another site across gateways.{% endsummary %}

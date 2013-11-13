@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Elastic Application Platform Home
-page_id: 61867365
+categories: XAP96
 ---
 
 {% compositionsetup %}

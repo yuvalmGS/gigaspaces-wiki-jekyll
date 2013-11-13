@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Executor Based Remoting
-page_id: 61867379
+categories: XAP96
 ---
 
 {% compositionsetup %}

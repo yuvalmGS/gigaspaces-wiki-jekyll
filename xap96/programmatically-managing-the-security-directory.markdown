@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Programmatically Managing the Security Directory
-page_id: 61867246
+categories: XAP96
 ---
 
 {% summary %}User and Role directory API{% endsummary %}

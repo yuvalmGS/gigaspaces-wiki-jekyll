@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Constructor Based Properties
-page_id: 63078410
+categories: XAP96
 ---
 
 {% compositionsetup %}

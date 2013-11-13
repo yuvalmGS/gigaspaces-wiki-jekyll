@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Hibernate Space Persistency
-page_id: 61867339
+categories: XAP96
 ---
 
 {% compositionsetup %}

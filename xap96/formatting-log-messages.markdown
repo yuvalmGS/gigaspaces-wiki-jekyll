@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Formatting Log Messages
-page_id: 61867207
+categories: XAP96
 ---
 
 {% summary %}Formatting the logged output{% endsummary %}

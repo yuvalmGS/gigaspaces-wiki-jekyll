@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  GigaSpaces CPP API
-page_id: 61867161
+categories: XAP96
 ---
 
 {% summary page|65 %}An overview of the main capabilities provided by GigaSpaces C++ API{% endsummary %}

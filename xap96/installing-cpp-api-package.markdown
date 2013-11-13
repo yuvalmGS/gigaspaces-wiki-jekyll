@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Installing CPP API Package
-page_id: 61867219
+categories: XAP96
 ---
 
 {% compositionsetup %}

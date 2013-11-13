@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Configuring the Processing Unit SLA
-page_id: 61867039
+categories: XAP96
 ---
 
 {% compositionsetup %}

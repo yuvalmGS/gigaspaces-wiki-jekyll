@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP ESM on Cisco UCS
-page_id: 61867359
+categories: XAP96
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Grid Service Manager
-page_id: 61867037
+categories: XAP96
 ---
 
 {% compositionsetup %}

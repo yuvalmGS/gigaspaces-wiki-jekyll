@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  jconsole - GigaSpaces CLI
-page_id: 61867281
+categories: XAP96
 ---
 
 {% summary page|60 %}Launches Admin UI for browsing the JMX instance associated with a specific GSC. {% endsummary %}

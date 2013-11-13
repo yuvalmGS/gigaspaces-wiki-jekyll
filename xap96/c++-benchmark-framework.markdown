@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  C++ Benchmark Framework
-page_id: 61867290
+categories: XAP96
 ---
 
 {% summary page|65 %}How to configure and run the c++ POCO Benchmark Framework{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Logging API
-page_id: 61867067
+categories: XAP96
 ---
 
 {% compositionsetup %}
