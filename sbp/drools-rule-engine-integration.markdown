@@ -2,7 +2,6 @@
 layout: sbp
 title:  Drools Rule Engine Integration
 categories: SBP
-page_id: 54821146
 ---
 
 {% compositionsetup %}

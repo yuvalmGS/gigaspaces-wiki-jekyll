@@ -2,7 +2,6 @@
 layout: sbp
 title:  Nav Bar
 categories: SBP
-page_id: 48236943
 ---
 
 ### Search Solutions & Best Practices
@@ -14,6 +13,6 @@ page_id: 48236943
 
 ### Browse Solutions & Best Practices
 
-{% include sbpnav.html %}
+{% include sbpnav.markdown %}
 
 {% include /sbp/nav-links.markdown %}

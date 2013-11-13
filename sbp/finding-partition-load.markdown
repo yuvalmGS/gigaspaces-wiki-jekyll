@@ -2,7 +2,6 @@
 layout: sbp
 title:  Finding Partition Load
 categories: SBP
-page_id: 54297314
 ---
 
 {% compositionsetup %}

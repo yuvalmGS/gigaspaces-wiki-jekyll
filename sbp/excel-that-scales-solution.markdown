@@ -2,7 +2,6 @@
 layout: sbp
 title:  Excel that Scales Solution
 categories: SBP
-page_id: 47219144
 ---
 
 {% tip %}

@@ -2,7 +2,6 @@
 layout: sbp
 title:  Safe Grid Shutdown
 categories: SBP
-page_id: 64325420
 ---
 
 {% compositionsetup %}

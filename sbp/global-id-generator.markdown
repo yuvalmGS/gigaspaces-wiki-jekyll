@@ -2,7 +2,6 @@
 layout: sbp
 title:  Global ID Generator
 categories: SBP
-page_id: 52887597
 ---
 
 {% compositionsetup %}

@@ -2,7 +2,6 @@
 layout: sbp
 title:  Elastic Distributed Calculation Engine
 categories: SBP
-page_id: 56427156
 ---
 
 {% compositionsetup %}

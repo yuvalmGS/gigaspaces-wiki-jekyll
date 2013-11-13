@@ -2,7 +2,6 @@
 layout: sbp
 title:  Dynamic Polling Container Templates using TriggerOperationHandler
 categories: SBP
-page_id: 58098677
 ---
 
 {% compositionsetup %}

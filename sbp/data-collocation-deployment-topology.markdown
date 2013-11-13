@@ -2,7 +2,6 @@
 layout: sbp
 title:  Data-Collocation Deployment Topology
 categories: SBP
-page_id: 51119964
 ---
 
 {% compositionsetup %}

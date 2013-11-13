@@ -2,7 +2,6 @@
 layout: sbp
 title:  Mirror Monitor
 categories: SBP
-page_id: 52888463
 ---
 
 {% tip %}

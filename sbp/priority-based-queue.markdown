@@ -2,7 +2,6 @@
 layout: sbp
 title:  Priority Based Queue
 categories: SBP
-page_id: 48760404
 ---
 
 {% tip %}

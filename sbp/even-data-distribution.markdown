@@ -2,7 +2,6 @@
 layout: sbp
 title:  Even Data Distribution
 categories: SBP
-page_id: 54297306
 ---
 
 {% compositionsetup %}

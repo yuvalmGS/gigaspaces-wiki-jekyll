@@ -2,7 +2,6 @@
 layout: sbp
 title:  Scala Integration
 categories: SBP
-page_id: 56428283
 ---
 
 {% compositionsetup %}

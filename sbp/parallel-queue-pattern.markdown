@@ -2,7 +2,6 @@
 layout: sbp
 title:  Parallel Queue Pattern
 categories: SBP
-page_id: 52887871
 ---
 
 {% compositionsetup %}

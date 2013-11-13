@@ -2,7 +2,6 @@
 layout: sbp
 title:  Footer
 categories: SBP
-page_id: 52888723
 ---
 
 {% align center %}

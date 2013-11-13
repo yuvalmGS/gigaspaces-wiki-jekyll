@@ -2,7 +2,6 @@
 layout: sbp
 title:  Trading Settlement
 categories: SBP
-page_id: 56429380
 ---
 
 {% compositionsetup %}

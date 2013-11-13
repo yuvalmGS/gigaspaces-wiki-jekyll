@@ -2,7 +2,6 @@
 layout: sbp
 title:  JTA-XA Example
 categories: SBP
-page_id: 55938209
 ---
 
 {% compositionsetup %}

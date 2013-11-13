@@ -2,7 +2,6 @@
 layout: sbp
 title:  WAN Replication Gateway (Deprecated)
 categories: SBP
-page_id: 54820903
 ---
 
 {% compositionsetup %}

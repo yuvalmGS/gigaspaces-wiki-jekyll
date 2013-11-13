@@ -2,7 +2,6 @@
 layout: sbp
 title:  Moving from Hibernate to Space
 categories: SBP
-page_id: 55935740
 ---
 
 {% compositionsetup %}

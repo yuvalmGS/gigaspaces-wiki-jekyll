@@ -2,7 +2,6 @@
 layout: sbp
 title:  Observable WAN
 categories: SBP
-page_id: 57213232
 ---
 
 {% compositionsetup %}

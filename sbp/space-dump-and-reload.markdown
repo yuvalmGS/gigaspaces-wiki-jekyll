@@ -2,7 +2,6 @@
 layout: sbp
 title:  Space Dump and Reload
 categories: SBP
-page_id: 54820920
 ---
 
 {% compositionsetup %}

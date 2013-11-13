@@ -2,7 +2,6 @@
 layout: sbp
 title:  Master-Worker Pattern
 categories: SBP
-page_id: 51118939
 ---
 
 {% compositionsetup %}

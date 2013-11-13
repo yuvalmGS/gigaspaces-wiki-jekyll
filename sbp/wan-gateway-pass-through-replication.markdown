@@ -2,7 +2,6 @@
 layout: sbp
 title:  WAN Gateway Pass Through Replication
 categories: SBP
-page_id: 59441985
 ---
 
 {% compositionsetup %}

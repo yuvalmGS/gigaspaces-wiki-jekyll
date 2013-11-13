@@ -2,7 +2,6 @@
 layout: sbp
 title:  Map-Reduce Pattern - Executors Example
 categories: SBP
-page_id: 49414729
 ---
 
 {% compositionsetup %}

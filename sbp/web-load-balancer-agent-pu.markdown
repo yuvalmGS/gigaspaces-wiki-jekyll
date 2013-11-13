@@ -2,7 +2,6 @@
 layout: sbp
 title:  Web Load Balancer Agent PU
 categories: SBP
-page_id: 54820978
 ---
 
 {% compositionsetup %}

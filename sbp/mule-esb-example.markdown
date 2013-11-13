@@ -2,7 +2,6 @@
 layout: sbp
 title:  Mule ESB Example
 categories: SBP
-page_id: 50758015
 ---
 
 {% compositionsetup %}

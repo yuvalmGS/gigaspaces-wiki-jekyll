@@ -2,7 +2,6 @@
 layout: sbp
 title:  Space Object Modeling
 categories: SBP
-page_id: 51120319
 ---
 
 {% compositionsetup %}

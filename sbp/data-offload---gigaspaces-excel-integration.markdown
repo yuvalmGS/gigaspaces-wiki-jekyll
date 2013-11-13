@@ -2,7 +2,6 @@
 layout: sbp
 title:  Data Offload - GigaSpaces-Excel Integration
 categories: SBP
-page_id: 47219052
 ---
 
 {% summary page|65 %}Using the data offload pattern.{% endsummary %}

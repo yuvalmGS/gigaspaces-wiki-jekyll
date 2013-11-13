@@ -2,7 +2,6 @@
 layout: sbp
 title:  Embedding XAP for OEMs
 categories: SBP
-page_id: 56429827
 ---
 
 {% compositionsetup %}

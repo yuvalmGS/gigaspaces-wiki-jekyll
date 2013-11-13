@@ -2,7 +2,6 @@
 layout: sbp
 title:  Primary-Backup Zone Controller
 categories: SBP
-page_id: 55938230
 ---
 
 {% compositionsetup %}

@@ -2,7 +2,6 @@
 layout: sbp
 title:  JMX Space Statistics
 categories: SBP
-page_id: 48760469
 ---
 
 {% tip %}

@@ -2,7 +2,6 @@
 layout: sbp
 title:  Prerequisites - GigaSpaces-Excel Integration
 categories: SBP
-page_id: 47219561
 ---
 
 # Prerequisites

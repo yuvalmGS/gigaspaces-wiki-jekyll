@@ -2,7 +2,6 @@
 layout: sbp
 title:  GigaSpaces-Excel Integration FAQ
 categories: SBP
-page_id: 47219033
 ---
 
 {% summary page|65 %}Frequently asked questions about the GigaSpaces-Excel integration.{% endsummary %}

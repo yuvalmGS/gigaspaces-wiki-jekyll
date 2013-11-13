@@ -2,7 +2,6 @@
 layout: sbp
 title:  RTD and UDF Examples - GigaSpaces-Excel Integration
 categories: SBP
-page_id: 47219410
 ---
 
 {% tip %}

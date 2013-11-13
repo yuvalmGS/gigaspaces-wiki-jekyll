@@ -2,7 +2,6 @@
 layout: sbp
 title:  Capacity Planning
 categories: SBP
-page_id: 50759531
 ---
 
 {% tip %}

@@ -2,7 +2,6 @@
 layout: sbp
 title:  Hyperic integration
 categories: SBP
-page_id: 57212965
 ---
 
 # Overview

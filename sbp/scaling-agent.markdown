@@ -2,7 +2,6 @@
 layout: sbp
 title:  Scaling Agent
 categories: SBP
-page_id: 51119415
 ---
 
 {% compositionsetup %}

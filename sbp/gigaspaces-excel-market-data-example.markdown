@@ -2,7 +2,6 @@
 layout: sbp
 title:  GigaSpaces-Excel Market-Data Example
 categories: SBP
-page_id: 47219542
 ---
 
 {% tip %}

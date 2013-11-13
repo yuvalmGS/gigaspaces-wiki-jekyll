@@ -2,7 +2,6 @@
 layout: sbp
 title:  Event Driven Remoting Example
 categories: SBP
-page_id: 47219276
 ---
 
 {% compositionsetup %}

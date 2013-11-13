@@ -2,7 +2,6 @@
 layout: sbp
 title:  MongoDB External DataStore
 categories: SBP
-page_id: 56428168
 ---
 
 {% compositionsetup %}

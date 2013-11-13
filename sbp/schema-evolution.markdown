@@ -2,7 +2,6 @@
 layout: sbp
 title:  Schema Evolution
 categories: SBP
-page_id: 48236978
 ---
 
 {% tip %}

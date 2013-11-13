@@ -2,7 +2,6 @@
 layout: sbp
 title:  Excel Space Viewer
 categories: SBP
-page_id: 47219420
 ---
 
 {% tip %}

@@ -2,7 +2,6 @@
 layout: sbp
 title:  Mainframe Integration
 categories: SBP
-page_id: 56429998
 ---
 
 {% compositionsetup %}

@@ -2,7 +2,6 @@
 layout: sbp
 title:  Lowering the Space Object Footprint
 categories: SBP
-page_id: 52527436
 ---
 
 {% compositionsetup %}

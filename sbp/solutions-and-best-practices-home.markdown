@@ -2,7 +2,6 @@
 layout: sbp
 title:  Solutions and Best Practices Home
 categories: SBP
-page_id: 48236956
 ---
 
 {% section %}

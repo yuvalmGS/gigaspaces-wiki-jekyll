@@ -2,7 +2,6 @@
 layout: sbp
 title:  Spring Batch PU
 categories: SBP
-page_id: 55937171
 ---
 
 {% compositionsetup %}

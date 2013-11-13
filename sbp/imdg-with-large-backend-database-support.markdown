@@ -2,7 +2,6 @@
 layout: sbp
 title:  IMDG with Large Backend Database Support
 categories: SBP
-page_id: 55935416
 ---
 
 {% tip %}

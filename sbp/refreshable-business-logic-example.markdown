@@ -2,7 +2,6 @@
 layout: sbp
 title:  Refreshable Business Logic Example
 categories: SBP
-page_id: 55443590
 ---
 
 {% compositionsetup %}

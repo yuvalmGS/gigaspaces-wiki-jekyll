@@ -2,7 +2,6 @@
 layout: sbp
 title:  WAN Replication Gateway
 categories: SBP
-page_id: 56428286
 ---
 
 {% compositionsetup %}
