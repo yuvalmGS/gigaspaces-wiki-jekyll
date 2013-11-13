@@ -63,7 +63,7 @@ The **Create View** option allows you to create a view of space data inside your
 - It is possible to connect to any running space in your network.
 To connect to a space:
     1. Click the **Connect** button.
-    1. In the Connect to Space dialog box, type the [space URL]({%latestjavaurl%}/Space-URL.html). The general format of the space URL is:
+    1. In the Connect to Space dialog box, type the [space URL]({%latestjavaurl%}/space-url.html). The general format of the space URL is:
     {% highlight java %}
         <protocol>://<host name>:<port>/<container name>/<space name>?<properties>
     {% endhighlight %}
@@ -136,9 +136,9 @@ The Configure View window already includes your previously selected options, and
 - GigaSpaces 6.5 GA.
 .Net product is unzipped.
 JSHOMEDIR is configured.
-For more details see [Installing GigaSpaces]({%latestneturl%}/Installing-XAP.NET.html) section.
+For more details see [Installing GigaSpaces]({%latestneturl%}/installing-xap.net.html) section.
 
-- A [JDK 1.5]({%latestjavaurl%}/Installing-GigaSpaces.html#Prior+to+Installation)
+- A [JDK 1.5]({%latestjavaurl%}/installing-gigaspaces.html#Prior+to+Installation)
 - The [.NET Framework](http://msdn2.microsoft.com/en-us/netframework/aa569263.aspx)
 - Microsoft Office 2003
 

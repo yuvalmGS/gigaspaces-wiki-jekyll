@@ -23,11 +23,11 @@ GigaSpaces Unit of Work (UOW) enables a stand-alone message producer to group me
 The UOW can be used with financial systems to process **trade orders** , in healthcare systems to processes **patient medical data** , with transportation systems to process **reservations** , with airlines systems to process **flight schedule** , with billing system to processes **payments**, etc.
 
 {% tip %}
-Starting with XAP 9 you may use the **FIFO Grouping** to implement the Unit of Work model. See the [FIFO Grouping]({%latestjavaurl%}/FIFO-Grouping.html) for details.
+Starting with XAP 9 you may use the **FIFO Grouping** to implement the Unit of Work model. See the [FIFO Grouping]({%latestjavaurl%}/fifo-grouping.html) for details.
 {% endtip %}
 
 # GigaSpaces FIFO and UOW
-While the [FIFO]({%latestjavaurl%}/FIFO-Support.html) mode provides ordered object consumption, it does so in a very strict sense. It defines an order between space objects based on the time they were written into the space. FIFO does not take into account consuming associated objects as one atomic operation. UOW allows a polling container to process a group of associated objects in the order they have been written in parallel to other processing groups. Multiple polling containers handle different groups concurrently, each group items processed in a FIFO fashion.
+While the [FIFO]({%latestjavaurl%}/fifo-support.html) mode provides ordered object consumption, it does so in a very strict sense. It defines an order between space objects based on the time they were written into the space. FIFO does not take into account consuming associated objects as one atomic operation. UOW allows a polling container to process a group of associated objects in the order they have been written in parallel to other processing groups. Multiple polling containers handle different groups concurrently, each group items processed in a FIFO fashion.
 
 # When can the GigaSpaces Unit of Work be used?
 GigaSpaces UOW can be used in the following cases:

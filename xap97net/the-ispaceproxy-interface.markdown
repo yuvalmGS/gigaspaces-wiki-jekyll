@@ -65,7 +65,7 @@ Several `ISpaceProxy` instances can be defined within a single Processing Unit, 
 # Operations
 
 
-The [ISpaceProxy]({%dotnetdoc /GigaSpaces.Core.ISpaceProxy) %} interface includes the following main operations:
+The [ISpaceProxy](%dotnetdoc %}/GigaSpaces.Core.ISpaceProxy) interface includes the following main operations:
 
 
 

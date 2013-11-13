@@ -45,7 +45,7 @@ For best performance you should use the [ALL-IN-CACHE cache policy]({% currentja
 The in-line cache mechanism is widely used with the following GigaSpaces APIs:
 
 - [GigaSpace API](./the-ispaceproxy-interface.html): GigaSpaces native Object/SQL API.
-- [The GigaMap Interface]({% currentjavaurl %}/map-API.html).
+- [The GigaMap Interface]({% currentjavaurl %}/map-api.html).
 
 ## When you should use an in-line cache?
 

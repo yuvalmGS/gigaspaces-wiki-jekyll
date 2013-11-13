@@ -45,7 +45,7 @@ This page will demonstrate two sample multi-site replication topologies. These a
 - Multi-master with two sites, where each site is active and updates its subset of the data.
 - Master-slave, where only one site actually updates the data while the rest either serve as a backup or use it in read only mode.
 
-For both of the above topologies, replication is done in in a similar way: Each space is replicating the relevant data to its target space(s) via a local gateway which routes the data to the gateway of the target space(s) and from there to the target space. The data is being replicated asynchronously in a reliable mode, which means that even if a primary space instance fails on the source site, the backup space instance which replaces it will immediately take control and replicate the missing data along with new data that has been  generated on the newly elected primary space instance. This is very similar to the [Mirror Service]({% currentjavaurl %}/Asynchronous-Persistency-with-the-Mirror.html) replication scheme. The gateway is discussed in full below.
+For both of the above topologies, replication is done in in a similar way: Each space is replicating the relevant data to its target space(s) via a local gateway which routes the data to the gateway of the target space(s) and from there to the target space. The data is being replicated asynchronously in a reliable mode, which means that even if a primary space instance fails on the source site, the backup space instance which replaces it will immediately take control and replicate the missing data along with new data that has been  generated on the newly elected primary space instance. This is very similar to the [Mirror Service]({% currentjavaurl %}/asynchronous-persistency-with-the-mirror.html) replication scheme. The gateway is discussed in full below.
 
 ![wan_how_it_works.jpg](/attachment_files/xap97net/wan_how_it_works.jpg)
 
@@ -155,11 +155,11 @@ have no meaning, all sites could designate the same ports as well-->
 In the above example we see that both the sink and delegator needs a reference to the gateway lookup configuration, and that's because both components are using this configuration to locate the relevant component or to register themselves. They use their local gateway name to identify themselves to the lookup configuration, where they should be registered and where they should look for their targets.
 
 The delegator and sink components are actually isolated and can even be deployed in separate processing units but the most simple deployment would be to bundle theses two together. However, in some cases you might want to separate this into two or more machines due to system loads or other reasons.
-{% refer %}For full details and available configuration please refer to [Replication Gateway Components]({% currentjavaurl %}/Replication-Gateway-Components.html){% endrefer %}
+{% refer %}For full details and available configuration please refer to [Replication Gateway Components]({% currentjavaurl %}/replication-gateway-components.html){% endrefer %}
 
 ## Gateway and the Mirror Service
 
-A gateway and a [Mirror Service]({% currentjavaurl %}/Asynchronous-Persistency-with-the-Mirror.html) are two different components which can co-exist together without any effect on each other. A gateway is just another reliable asynchronous target. Due to this fact, we will not discuss or demonstrate mirror service along side with a gateway because they do not contradict each other or require any special configuration when used in the same space cluster.
+A gateway and a [Mirror Service]({% currentjavaurl %}/asynchronous-persistency-with-the-mirror.html) are two different components which can co-exist together without any effect on each other. A gateway is just another reliable asynchronous target. Due to this fact, we will not discuss or demonstrate mirror service along side with a gateway because they do not contradict each other or require any special configuration when used in the same space cluster.
 
 ## Gateway and Distributed Transactions
 
@@ -484,7 +484,7 @@ With this architecture, we will have a multi-master topology where data is being
 
 ![wan_multi_master.jpg](/attachment_files/xap97net/wan_multi_master.jpg)
 
-We will demonstrate this using two sites but any number of sites is supported in the same manner. In a master-slave topology, each site should try to modify different subsets of the data as much as possible because many conflicts can occur if multiple sites are changing the same space entries at the same time. Such conflict can be resolved using a conflict resolver which will be discussed fully at [Multi-Site Conflict Resolution]({% currentjavaurl %}/Multi-Site-Conflict-Resolution.html).
+We will demonstrate this using two sites but any number of sites is supported in the same manner. In a master-slave topology, each site should try to modify different subsets of the data as much as possible because many conflicts can occur if multiple sites are changing the same space entries at the same time. Such conflict can be resolved using a conflict resolver which will be discussed fully at [Multi-Site Conflict Resolution]({% currentjavaurl %}/multi-site-conflict-resolution.html).
 
 With the example below we will have only New York and London as the two active sites.
 
@@ -747,8 +747,8 @@ The [Multi-Master running example](/sbp/wan-replication-gateway.html) includes a
 
 # Filtering Replication Between Gateways
 
-In some cases, there can be data that should not be replicated between the sites but should still be replicated locally to the backup or a mirror service. Hence, specifying the object is not replicated does not fit. Since a replication channel to a gateway is like any other replication channel, a custom [Replication Filter]({% currentjavaurl %}/Cluster-Replication-Filters.html) at the source space can be used to filter the relevant data from being sent to the target gateway. This filtering should be based on the replication target name in order to identify that the replication filter is called for the correct outgoing replication to the gateway.
-{% refer %}For full details and example please refer to [Replication Gateway Filtering]({% currentjavaurl %}/Replication-Gateway-Filtering.html){% endrefer %}
+In some cases, there can be data that should not be replicated between the sites but should still be replicated locally to the backup or a mirror service. Hence, specifying the object is not replicated does not fit. Since a replication channel to a gateway is like any other replication channel, a custom [Replication Filter]({% currentjavaurl %}/cluster-replication-filters.html) at the source space can be used to filter the relevant data from being sent to the target gateway. This filtering should be based on the replication target name in order to identify that the replication filter is called for the correct outgoing replication to the gateway.
+{% refer %}For full details and example please refer to [Replication Gateway Filtering]({% currentjavaurl %}/replication-gateway-filtering.html){% endrefer %}
 
 # Bootstrap One Site From Another Site
 

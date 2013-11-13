@@ -96,7 +96,7 @@ The Space supports a number of APIs to allow for maximum flexibility to Space cl
 - The core [Space API](./the-ispaceproxy-interface.html), which is the most recommended, allows you to read objects from the Space based on various criteria, write objects to it, remove objects from it and get notified about changes made to objects. This API supports transactions.
 
 {% info title=Accessing the Space from Other Languages %}
-The code space API is also supported in [Java]({% currentjavaurl %}/the-In-Memory-Data-Grid.html) and [C++]({%currentjavaurl%}/XAP-CPP.html). This allows clients to access the space via these languages. It also supports [interoperability|Platform Interoperability in GigaSpaces] between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
+The code space API is also supported in [Java]({% currentjavaurl %}/the-in-memory-data-grid.html) and [C++]({%currentjavaurl%}/xap-cpp.html). This allows clients to access the space via these languages. It also supports [interoperability|Platform Interoperability in GigaSpaces] between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
 {% endinfo %}
 
 - The [Document API](./document-(schema-free)-api.html) allows you to develop your application in a schema-less manner. Using map-like objects, you can add attributes to data types in runtime.
