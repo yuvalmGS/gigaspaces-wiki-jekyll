@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Split Brain and Island Scenarios
-page_id: 61867140
+categories: XAP97
 ---
 
 {% summary %}About Split-Brain and "Islands" scenarios, ways to detect and avoid them.{% endsummary %}

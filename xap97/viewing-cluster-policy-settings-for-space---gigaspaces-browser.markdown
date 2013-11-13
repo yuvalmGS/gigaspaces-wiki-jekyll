@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Viewing Cluster Policy Settings for Space - GigaSpaces Browser
-page_id: 61867168
+categories: XAP97
 ---
 
 {% summary %}How to view replication, load-balancing and failover settings for a space in Cluster View. {% endsummary %}

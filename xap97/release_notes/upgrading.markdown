@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Upgrading from previous versions
-page_id: 61867183
+categories: XAP97
 ---
 
 {%summary%}Step by step instructions on how to upgrade from previous versions {%endsummary%}

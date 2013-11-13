@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  space sql - GigaSpaces CLI
-page_id: 61867046
+categories: XAP97
 ---
 
 {% summary %}Queries specified space.{% endsummary %}

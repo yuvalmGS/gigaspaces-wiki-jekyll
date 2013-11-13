@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Viewing Clustered Space Status
-page_id: 61867071
+categories: XAP97
 ---
 
 {% summary page|60 %}The status of clustered spaces can be viewed using different logging levels.{% endsummary %}

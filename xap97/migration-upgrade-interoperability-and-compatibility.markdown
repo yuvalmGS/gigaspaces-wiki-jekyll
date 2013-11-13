@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Migration Upgrade Interoperability and Compatibility
-page_id: 61867139
+categories: XAP97
 ---
 
 # Upgrading from Previous GigaSpaces Releases

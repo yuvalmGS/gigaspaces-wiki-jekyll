@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Administration and Monitoring API Security
-page_id: 61867148
+categories: XAP97
 ---
 
 {% summary %}Applying security to Admin API operations{% endsummary %}

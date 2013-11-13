@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  deploy-space GigaSpaces CLI
-page_id: 61867333
+categories: XAP97
 ---
 
 {% summary page|70 %}Deploys a Space onto the Service Grid.{% endsummary %}

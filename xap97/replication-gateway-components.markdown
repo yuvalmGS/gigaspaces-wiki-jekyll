@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Replication Gateway Components
-page_id: 61867022
+categories: XAP97
 ---
 
 {% summary %}This page is about the replication gateway components.{% endsummary %}

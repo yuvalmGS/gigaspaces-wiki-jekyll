@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Securing XAP Components
-page_id: 61867300
+categories: XAP97
 ---
 
 # Overview

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Browsing JMS Queues
-page_id: 61867187
+categories: XAP97
 ---
 
 {% summary page|60 %}Using the `QueueBrowser` to examine messages in a queue without deleting them.{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Instance Recovery
-page_id: 61867127
+categories: XAP97
 ---
 
 {% compositionsetup %}{% summary %}How space instance recovers its data when first started, relocated or after an unexpected failure.{% endsummary %}

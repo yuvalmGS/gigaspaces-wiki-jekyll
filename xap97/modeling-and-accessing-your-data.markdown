@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Modeling and Accessing Your Data
-page_id: 61867448
+categories: XAP97
 ---
 
 {% summary %}This section will teach you how to design your data for distributing on the data grid and about the various APIs for accessing you data.{% endsummary %}

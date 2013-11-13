@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Change Extension
-page_id: 61867160
+categories: XAP97
 ---
 
 {% compositionsetup %}

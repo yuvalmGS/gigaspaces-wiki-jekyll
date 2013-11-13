@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  OpenSpaces FAQ
-page_id: 61867192
+categories: XAP97
 ---
 
 {% compositionsetup %}

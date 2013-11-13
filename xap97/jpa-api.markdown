@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  JPA API
-page_id: 61867043
+categories: XAP97
 ---
 
 {% compositionsetup %}{% summary %}Using JPA with GigaSpaces.{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Images
-page_id: 61867370
+categories: XAP97
 ---
 
 {% gallery %}

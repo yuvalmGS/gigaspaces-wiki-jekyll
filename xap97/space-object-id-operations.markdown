@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Object ID Operations
-page_id: 61867208
+categories: XAP97
 ---
 
 {% compositionsetup %}{% summary %}Space Object ID Usage{% endsummary %}

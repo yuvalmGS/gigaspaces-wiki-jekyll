@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Writing POJO Services - XAP Tutorial
-page_id: 61867305
+categories: XAP97
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  How to Set GigaSpaces Over NAT
-page_id: 61867019
+categories: XAP97
 ---
 
 {% summary page %}The GigaSpaces settings to enable functioning over NAT. {% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Replication Gateway Filtering
-page_id: 61867259
+categories: XAP97
 ---
 
 {% summary %}This page explains how to filter specific data from being replicated through a gateway to another site.{% endsummary %}

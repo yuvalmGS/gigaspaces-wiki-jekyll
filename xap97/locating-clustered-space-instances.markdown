@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Locating Clustered Space Instances
-page_id: 61867229
+categories: XAP97
 ---
 
 {% summary %}Using `SpaceFinder` to search for clustered space/cache instances in the network. {% endsummary %}

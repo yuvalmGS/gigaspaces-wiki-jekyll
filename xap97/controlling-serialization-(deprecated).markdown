@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Controlling Serialization (Deprecated)
-page_id: 61867444
+categories: XAP97
 ---
 
 {% note title=This implementation is deprecated starting from version 9.0 %}

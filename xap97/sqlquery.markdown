@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  SQLQuery
-page_id: 61867326
+categories: XAP97
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Working with GSJMSAdmin
-page_id: 61867338
+categories: XAP97
 ---
 
 {% summary page|60 %}Obtaining JMS resources without JNDI, Using JNDI with GSJMSAdmin.{% endsummary %}

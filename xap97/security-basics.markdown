@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Security Basics
-page_id: 61867131
+categories: XAP97
 ---
 
 # Overview

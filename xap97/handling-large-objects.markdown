@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Handling Large Objects
-page_id: 61867369
+categories: XAP97
 ---
 
 {% summary %}Storing large files in memory.{% endsummary %}

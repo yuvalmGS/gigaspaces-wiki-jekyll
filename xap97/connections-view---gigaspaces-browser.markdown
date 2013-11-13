@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Connections View - GigaSpaces Browser
-page_id: 61867368
+categories: XAP97
 ---
 
 {% summary page|60 %}Displays information regarding all connected and disconnected proxies.{% endsummary %}

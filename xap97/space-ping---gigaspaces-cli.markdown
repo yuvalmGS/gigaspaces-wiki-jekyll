@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  space ping - GigaSpaces CLI
-page_id: 61867383
+categories: XAP97
 ---
 
 {% summary %}Provides a convenient way to test a space.{% endsummary %}

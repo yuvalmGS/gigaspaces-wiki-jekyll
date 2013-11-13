@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Setting Classpath
-page_id: 61867262
+categories: XAP97
 ---
 
 {% summary %}JARs that should be in the classpath of applications accessing a remote or embedded space. {% endsummary %}

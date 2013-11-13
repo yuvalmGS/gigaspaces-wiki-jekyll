@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Locking and Blocking
-page_id: 61867268
+categories: XAP97
 ---
 
 {% tip %}

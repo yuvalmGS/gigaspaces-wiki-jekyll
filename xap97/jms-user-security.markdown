@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  JMS User Security
-page_id: 61867361
+categories: XAP97
 ---
 
 {% summary %}Obtaining connections using client authentication.{% endsummary %}

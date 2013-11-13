@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Troubleshooting Tools
-page_id: 61867023
+categories: XAP97
 ---
 
 {% summary page|60 %}Troubleshooting tools for testing a running product and environmental issues. {% endsummary %}

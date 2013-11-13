@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Introducing Spring Security
-page_id: 61867231
+categories: XAP97
 ---
 
 {% compositionsetup %}

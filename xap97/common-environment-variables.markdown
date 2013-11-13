@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Common Environment Variables
-page_id: 61867342
+categories: XAP97
 ---
 
 {% summary %}Descriptions of the main environment variables set automatically by `setenv.bat`.{% endsummary %}

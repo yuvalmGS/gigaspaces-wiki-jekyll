@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  JMS Messages in GigaSpaces
-page_id: 61867296
+categories: XAP97
 ---
 
 {% summary page|60 %}JMS messages implementation; supported and unsupported message types; message compression; accessing JMS messages via space API.{% endsummary %}

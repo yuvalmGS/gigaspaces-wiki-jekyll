@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Security Administration
-page_id: 61867155
+categories: XAP97
 ---
 
 # Overview

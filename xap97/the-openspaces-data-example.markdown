@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The OpenSpaces Data Example
-page_id: 61867165
+categories: XAP97
 ---
 
 {% compositionsetup %}

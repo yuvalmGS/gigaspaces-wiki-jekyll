@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  GigaSpaces Spring-based Security bridge
-page_id: 61867272
+categories: XAP97
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Extending Space Documents
-page_id: 61867407
+categories: XAP97
 ---
 
 {% summary %}Extending the SpaceDocument class{% endsummary %}

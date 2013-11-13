@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Working with GigaSpaces JNDI
-page_id: 61867319
+categories: XAP97
 ---
 
 {% summary %}JNDI Overview, Binding/Obtaining `ConnectionFactory` and `Destination` instances.{% endsummary %}

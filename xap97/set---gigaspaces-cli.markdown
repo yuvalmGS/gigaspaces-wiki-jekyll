@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  set - GigaSpaces CLI
-page_id: 61867146
+categories: XAP97
 ---
 
 {% summary %}Sets the Service Grid system environment variables. {% endsummary %}

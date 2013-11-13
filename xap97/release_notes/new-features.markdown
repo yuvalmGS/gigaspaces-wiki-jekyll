@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  New Features and Improvements
-page_id: 61867183
+categories: XAP97
 ---
 
 {%summary%} New features and improvements in the XAP 9.7.X release {%endsummary%}

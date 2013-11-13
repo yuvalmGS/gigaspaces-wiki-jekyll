@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Multi-Site Replication over the WAN - FAQ
-page_id: 61867027
+categories: XAP97
 ---
 
 # FAQ

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  space connections - GigaSpaces CLI
-page_id: 61867230
+categories: XAP97
 ---
 
 {% summary page|60 %}Displays all live connections to the specified space.{% endsummary %}

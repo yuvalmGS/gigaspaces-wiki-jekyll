@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Application Layer
-page_id: 61867196
+categories: XAP97
 ---
 
 {% summary %}This section describes the GigaSpaces Application Layer.{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Backward Compatibility
-page_id: 61867265
+categories: XAP97
 ---
 
 {% summary %}Backward compatibility, rolling upgrades and coexistence of GigaSpaces versions.{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Programmer's Guide
-page_id: 61867134
+categories: XAP97
 ---
 
 # What Does the Programmer's Guide Cover?

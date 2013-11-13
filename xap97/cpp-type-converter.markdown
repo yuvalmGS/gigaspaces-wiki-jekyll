@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  CPP Type Converter
-page_id: 61867083
+categories: XAP97
 ---
 
 {% summary page|65 %}How to implement unsupported data types by creating user-defined packaging code.{% endsummary %}

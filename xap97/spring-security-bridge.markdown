@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Spring Security Bridge
-page_id: 61867147
+categories: XAP97
 ---
 
 {% compositionsetup %}

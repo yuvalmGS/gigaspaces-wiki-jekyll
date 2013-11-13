@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Securing the HelloWorld example
-page_id: 61867091
+categories: XAP97
 ---
 
 {% summary %}Get started with a simple HelloWorld example {% star %}{% endsummary %}

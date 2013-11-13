@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Deploying and Interacting with the Space
-page_id: 61867331
+categories: XAP97
 ---
 
 {% compositionsetup %}

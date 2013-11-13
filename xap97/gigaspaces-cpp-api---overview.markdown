@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  GigaSpaces CPP API - Overview
-page_id: 61867182
+categories: XAP97
 ---
 
 {% summary page|65 %}GigaSpaces C++ API explained: About POCOs; space class metadata; using existing C++ classes with the space; dynamic scalability; deployment -- standalone and grid-based; configuration; compatibility and packaging.{% endsummary %}

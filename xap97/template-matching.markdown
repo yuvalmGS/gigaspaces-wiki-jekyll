@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Template Matching
-page_id: 61867374
+categories: XAP97
 ---
 
 {% summary %}How to query the space using Template Matching{% endsummary %}

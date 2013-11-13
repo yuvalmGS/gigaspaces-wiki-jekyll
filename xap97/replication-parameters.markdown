@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Replication Parameters
-page_id: 61867095
+categories: XAP97
 ---
 
 {% summary %}This page contains all the parameters that can be configured as part of the replication configuration{% endsummary %}

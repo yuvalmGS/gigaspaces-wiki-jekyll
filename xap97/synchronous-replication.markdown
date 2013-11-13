@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Synchronous Replication
-page_id: 61867015
+categories: XAP97
 ---
 
 {% summary %}This page describe what is synchronous replication and how to configure it{% endsummary %}

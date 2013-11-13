@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Supported Platforms
-page_id: 61867183
+categories: XAP97
 ---
 
 {%summary%} Supported Platforms for XAP 9.7.X release {%endsummary%}

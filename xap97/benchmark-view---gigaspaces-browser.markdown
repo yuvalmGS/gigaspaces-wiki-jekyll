@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Benchmark View - GigaSpaces Browser
-page_id: 61867151
+categories: XAP97
 ---
 
 {% summary %}The Benchmark view provides a user interface for benchmarking the space.{% endsummary %}

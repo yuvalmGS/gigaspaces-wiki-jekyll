@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Elastic Processing Unit
-page_id: 61867186
+categories: XAP97
 ---
 
 {% compositionsetup %}

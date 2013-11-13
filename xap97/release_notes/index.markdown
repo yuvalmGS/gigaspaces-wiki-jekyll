@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP 9.7 Release Notes
-page_id: 61867355
+categories: XAP97
 ---
 
 

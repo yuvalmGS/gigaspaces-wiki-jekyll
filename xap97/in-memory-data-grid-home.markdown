@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  In-Memory Data Grid Home
-page_id: 61867267
+categories: XAP97
 ---
 
 {% compositionsetup %}

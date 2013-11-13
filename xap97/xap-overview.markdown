@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP Overview
-page_id: 61867422
+categories: XAP97
 ---
 
 {% summary page|60 %}GigaSpaces XAP is a platform for scaling out stateful applications. XAP uses the GigaSpaces space as a core middleware, and provides the Spring-based Open Spaces framework as a development environment.{% endsummary %}

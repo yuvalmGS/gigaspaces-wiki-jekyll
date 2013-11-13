@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  GigaSpaces Browser Menus and Buttons
-page_id: 61867172
+categories: XAP97
 ---
 
 {% summary %}Using the **File** menu, **Container** menu, **Space** menu, **Cluster** menu, **Windows** menu, **Help** menu, button toolbar, and address bar.{% endsummary %}

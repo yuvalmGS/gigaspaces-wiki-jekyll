@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Security Configurations
-page_id: 61867341
+categories: XAP97
 ---
 
 {% summary %}Configurations and defaults{% endsummary %}

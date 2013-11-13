@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  featurepremium
-page_id: 61867123
+categories: XAP97
 ---
 
 <table cellspacing="15px">

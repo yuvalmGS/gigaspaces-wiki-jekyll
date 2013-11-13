@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  space copy - GigaSpaces CLI
-page_id: 61867317
+categories: XAP97
 ---
 
 {% summary %}Copies all objects from the specified source space to the specified destination space.{% endsummary %}

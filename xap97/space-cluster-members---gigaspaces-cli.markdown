@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  space cluster-members - GigaSpaces CLI
-page_id: 61867432
+categories: XAP97
 ---
 
 {% summary page|60 %}Show the full list of cluster members, including members that aren't "alive".{% endsummary %}

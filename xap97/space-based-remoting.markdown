@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Based Remoting
-page_id: 61867389
+categories: XAP97
 ---
 
 {% compositionsetup %}

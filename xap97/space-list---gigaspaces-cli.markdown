@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  space list - GigaSpaces CLI
-page_id: 61867283
+categories: XAP97
 ---
 
 {% summary %}Lists spaces in the network.{% endsummary %}

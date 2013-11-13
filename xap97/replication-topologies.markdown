@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Replication Topologies
-page_id: 61867405
+categories: XAP97
 ---
 
 {% summary %}This page provides a brief description for the different replication topologies{% endsummary %}

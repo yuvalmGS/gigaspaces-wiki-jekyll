@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Writing Existing CPP Class to Space
-page_id: 61867164
+categories: XAP97
 ---
 
 {% summary page|65 %}How to use an existing C++ class and write it to the space.{% endsummary %}

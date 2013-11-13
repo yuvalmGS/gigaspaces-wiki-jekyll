@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  TestPage
-page_id: 61867074
+categories: XAP97
 ---
 
 {% compositionsetup %}

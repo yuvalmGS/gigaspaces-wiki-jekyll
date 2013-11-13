@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  GigaSpaces Browser Tree Panel and Configuration Panel
-page_id: 61867430
+categories: XAP97
 ---
 
 {% summary %}Using the Grid Tree and the Configuration Panel on the right. {% endsummary %}

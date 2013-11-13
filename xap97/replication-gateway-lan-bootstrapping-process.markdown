@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Replication Gateway LAN Bootstrapping Process
-page_id: 61867053
+categories: XAP97
 ---
 
 {% summary %}This page is about bootstrapping a space from another space via gateway.{% endsummary %}

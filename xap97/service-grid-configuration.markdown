@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Service Grid Configuration
-page_id: 61867445
+categories: XAP97
 ---
 
 {% compositionsetup %}

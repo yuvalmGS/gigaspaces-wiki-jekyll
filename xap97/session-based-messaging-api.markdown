@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Session Based Messaging API
-page_id: 61867392
+categories: XAP97
 ---
 
 {% summary :page|60 %}The new Notify Session API provides a unified and consistent mechanism for event registration.{% endsummary %}

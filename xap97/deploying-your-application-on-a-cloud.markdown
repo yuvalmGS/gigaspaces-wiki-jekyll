@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Deploying your Application on a Cloud
-page_id: 61867098
+categories: XAP97
 ---
 
 {% summary %}How to Deploy an application with Data Grid and Processing Units on any Cloud using a recipe{% endsummary %}

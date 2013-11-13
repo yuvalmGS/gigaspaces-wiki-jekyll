@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Backward compatibility
-page_id: 61867183
+categories: XAP97
 ---
 
 {%summary%} Backward compatibility, rolling upgrades and coexistence of XAP versions {%endsummary%}

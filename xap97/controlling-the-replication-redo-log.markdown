@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Controlling the Replication Redo Log
-page_id: 61867400
+categories: XAP97
 ---
 
 {% summary %} This section describes how to control the replication queue (aka the redo log), what options it provides, and what are the trade-offs involved with each option.{% endsummary %}

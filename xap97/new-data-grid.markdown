@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  New Data Grid
-page_id: 62717993
+categories: XAP97
 ---
 
  {% compositionsetup %}{% summary page|60 %}A .......{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP on GoGrid
-page_id: 61867244
+categories: XAP97
 ---
 
 {% summary %}GigaSpaces XAP on GoGrid Enterprise Cloud{% endsummary %}
