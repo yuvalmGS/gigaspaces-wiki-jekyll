@@ -1,4 +1,10 @@
-# Wiki File Structure
+---
+layout: post
+title:  Wiki Directory Structure
+page_id: 61867355
+---
+
+
 
 The wiki has the following directory structure :
 
@@ -12,6 +18,7 @@ to reuse the images in the future. We started the re grouping with the folder sp
 
 * Sub directories
 
+{: .table .table-bordered}
 |Subfolder name |Description|
 |:------|:---------------------------------------|
 | gs    |contains GigaSpaces logos and trademarks|
@@ -32,6 +39,7 @@ All downloadable artifacts like examples and presentations are placed in this di
 
 * Sub directories
 
+{: .table .table-bordered}
 |Subfolder name |Description|
 |:------|:---------------------------------------|
 | sbp   |contains artifacts for the Services and Best Practices |
@@ -50,6 +58,7 @@ This page then will be included in the actual release notes that are located wit
 
 * Sub directories
 
+{: .table .table-bordered}
 |Subfolder name |Description|
 |:------|:---------------------------------------|
 | xap97   |contains a common description for this release |
@@ -77,6 +86,7 @@ This is the directory that holds all wiki pages for the xap97 release.
 
 * Sub directories
 
+{: .table .table-bordered}
 |Subfolder name |Description|
 |:------|:---------------------------------------|
 | release_notes | contains all information about this release |
@@ -87,6 +97,7 @@ This is the directory that holds all wiki pages for the xap97 .NET release.
 
 * Sub directories
 
+{: .table .table-bordered}
 |Subfolder name |Description|
 |:------|:---------------------------------------|
 | release_notes | contains all information about this release |
