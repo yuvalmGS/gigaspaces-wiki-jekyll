@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Type Discovery
 categories: XAP97NET
-page_id: 63799381
 ---
 
 {% summary page|65 %}Controlling data type discovery{% endsummary %}

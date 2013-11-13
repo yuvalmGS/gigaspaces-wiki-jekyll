@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Quick Start Guide
 categories: XAP97NET
-page_id: 63799424
 ---
 
 {% section %}

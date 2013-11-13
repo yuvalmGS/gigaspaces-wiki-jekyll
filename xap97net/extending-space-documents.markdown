@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Extending Space Documents
 categories: XAP97NET
-page_id: 63799372
 ---
 
 {% summary %}Extending the SpaceDocument class{% endsummary %}

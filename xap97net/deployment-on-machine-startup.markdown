@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Deployment on Machine Startup
 categories: XAP97NET
-page_id: 63799348
 ---
 
 {% summary %}Service Grid deployment using Windows Services{% endsummary %}

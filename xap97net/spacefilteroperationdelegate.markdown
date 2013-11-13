@@ -2,7 +2,6 @@
 layout: xap97net
 title:  SpaceFilterOperationDelegate
 categories: XAP97NET
-page_id: 63799317
 ---
 
 # Overview

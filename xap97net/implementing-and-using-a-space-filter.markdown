@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Implementing and Using a Space Filter
 categories: XAP97NET
-page_id: 63799349
 ---
 
 # Overview

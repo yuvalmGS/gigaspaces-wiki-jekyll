@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Administrator's Guide
 categories: XAP97NET
-page_id: 63799420
 ---
 
 # What Does the .NET Adminstrator's Guide Cover?

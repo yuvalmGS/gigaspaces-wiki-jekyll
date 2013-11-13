@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Interop Processing Unit
 categories: XAP97NET
-page_id: 63799414
 ---
 
 {% summary %}Creating and deploying a multi language processing unit{% endsummary %}

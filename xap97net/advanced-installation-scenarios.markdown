@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Advanced Installation Scenarios
 categories: XAP97NET
-page_id: 63799333
 ---
 
 {% summary %}Common Questions and Answers about XAP.NET installations.{% endsummary %}

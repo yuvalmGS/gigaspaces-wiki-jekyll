@@ -2,7 +2,6 @@
 layout: xap97net
 title:  A Typical SBA Application
 categories: XAP97NET
-page_id: 63799429
 ---
 
 {% summary %}A Typical Space-Based Application {% endsummary %}

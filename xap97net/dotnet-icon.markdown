@@ -2,7 +2,6 @@
 layout: xap97net
 title:  .NET Icon
 categories: XAP97NET
-page_id: 63799374
 ---
 
 Created by [~shlomo]<br/>

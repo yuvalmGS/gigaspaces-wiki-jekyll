@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Template Matching
 categories: XAP97NET
-page_id: 63799323
 ---
 
 {% summary %}How to query the space using Template Matching{% endsummary %}

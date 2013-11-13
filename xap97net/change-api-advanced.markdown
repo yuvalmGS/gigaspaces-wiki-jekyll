@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Change API Advanced
 categories: XAP97NET
-page_id: 64325389
 ---
 
 {% compositionsetup %}

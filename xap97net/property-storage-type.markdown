@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Property Storage Type
 categories: XAP97NET
-page_id: 63799405
 ---
 
 {% summary page|65 %}Controlling properties storage and serialization{% endsummary %}

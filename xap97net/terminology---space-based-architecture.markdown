@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Terminology - Space-Based Architecture
 categories: XAP97NET
-page_id: 63799428
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.

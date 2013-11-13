@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Jvm Configuration
 categories: XAP97NET
-page_id: 63799320
 ---
 
 {% summary %}JVM Settings Configuration Section.{% endsummary %}

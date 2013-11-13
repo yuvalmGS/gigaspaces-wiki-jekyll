@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Product Architecture
 categories: XAP97NET
-page_id: 63799417
 ---
 
 {% summary %}This section describes the architecture of the GigaSpaces XAP product.{% endsummary %}

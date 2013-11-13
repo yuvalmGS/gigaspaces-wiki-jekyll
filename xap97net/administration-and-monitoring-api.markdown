@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Administration and Monitoring API
 categories: XAP97NET
-page_id: 63799361
 ---
 
 {% compositionsetup %}

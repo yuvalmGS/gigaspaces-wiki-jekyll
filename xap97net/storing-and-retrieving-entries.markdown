@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Storing and Retrieving Entries
 categories: XAP97NET
-page_id: 63799306
 ---
 
 {% summary %}Storing entry in a space, retrieving entry from a space{% endsummary %}

@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Multi-Site Replication over the WAN
 categories: XAP97NET
-page_id: 63799328
 ---
 
 {% summary %}This page explains how to establish data synchronization between multiple sites (spaces), usually used over the WAN.{% endsummary %}

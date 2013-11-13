@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Getting Partial Results Using The Projection API
 categories: XAP97NET
-page_id: 63799308
 ---
 
 {% summary %}This page describes how you can obtain partial results when querying the space to improve application performance and reduce memory footprint.{% endsummary %}

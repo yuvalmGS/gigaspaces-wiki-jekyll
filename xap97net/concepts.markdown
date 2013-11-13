@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Concepts
 categories: XAP97NET
-page_id: 63799386
 ---
 
 {% summary %}This section describes the main concepts underlying GigaSpaces XAP.{% endsummary %}

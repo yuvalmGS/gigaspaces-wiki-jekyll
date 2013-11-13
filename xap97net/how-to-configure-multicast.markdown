@@ -2,7 +2,6 @@
 layout: xap97net
 title:  How to Configure Multicast
 categories: XAP97NET
-page_id: 64127787
 ---
 
 {% summary %}Enabling multicast on Linux and windows. {% endsummary %}

@@ -2,7 +2,6 @@
 layout: xap97net
 title:  FIFO Grouping
 categories: XAP97NET
-page_id: 63799410
 ---
 
 {% compositionsetup %}

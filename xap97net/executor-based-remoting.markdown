@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Executor Based Remoting
 categories: XAP97NET
-page_id: 63799343
 ---
 
 {% compositionsetup %}

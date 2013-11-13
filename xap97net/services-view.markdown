@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Services View
 categories: XAP97NET
-page_id: 63799373
 ---
 
 {% compositionsetup %}

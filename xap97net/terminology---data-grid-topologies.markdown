@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Terminology - Data Grid Topologies
 categories: XAP97NET
-page_id: 63799407
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.

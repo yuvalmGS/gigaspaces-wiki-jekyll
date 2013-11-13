@@ -2,7 +2,6 @@
 layout: xap97net
 title:  .NET Benchmark Example
 categories: XAP97NET
-page_id: 63799403
 ---
 
 {% compositionsetup %}

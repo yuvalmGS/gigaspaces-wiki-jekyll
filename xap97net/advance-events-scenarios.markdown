@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Advance Events Scenarios
 categories: XAP97NET
-page_id: 63799413
 ---
 
 {% summary %}Advance events scenarios{% endsummary %}

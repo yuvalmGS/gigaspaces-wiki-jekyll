@@ -2,7 +2,6 @@
 layout: xap97net
 title:  How to Determine Whether Multicast is Available
 categories: XAP97NET
-page_id: 64127791
 ---
 
 {% summary %}Used to determine whether multicast is available.{% endsummary %}

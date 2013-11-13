@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Event Listener Container
 categories: XAP97NET
-page_id: 63799388
 ---
 
 {% compositionsetup %}

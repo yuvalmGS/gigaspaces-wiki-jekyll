@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Writing and Updating Entries
 categories: XAP97NET
-page_id: 63799399
 ---
 
 {% summary %}Writing objects to the space{% endsummary %}

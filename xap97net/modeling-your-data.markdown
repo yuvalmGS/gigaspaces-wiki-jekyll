@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Modeling your Data
 categories: XAP97NET
-page_id: 63799309
 ---
 
 {% summary %}How to model application data for in-memory data grid{% endsummary %}

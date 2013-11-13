@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Application View
 categories: XAP97NET
-page_id: 63799300
 ---
 
 {% compositionsetup %}

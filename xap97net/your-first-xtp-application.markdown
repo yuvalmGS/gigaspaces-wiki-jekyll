@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Your First XTP Application
 categories: XAP97NET
-page_id: 63799346
 ---
 
 {% compositionsetup %}

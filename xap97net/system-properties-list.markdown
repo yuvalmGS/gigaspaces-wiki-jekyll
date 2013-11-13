@@ -2,7 +2,6 @@
 layout: xap97net
 title:  System Properties List
 categories: XAP97NET
-page_id: 63799375
 ---
 
 # System Properties List

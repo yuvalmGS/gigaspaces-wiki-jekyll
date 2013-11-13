@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Transactions
 categories: XAP97NET
-page_id: 63799304
 ---
 
 {% compositionsetup %}

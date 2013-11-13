@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Product structure
 categories: XAP97NET
-page_id: 63799358
 ---
 
 {% summary %}This section describes the XAP.NET product structure{% endsummary %}

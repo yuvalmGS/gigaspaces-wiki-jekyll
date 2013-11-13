@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Installation
 categories: XAP97NET
-page_id: 63799366
 ---
 
 # System Requirements

@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Detailed Basic Processing Unit Container
 categories: XAP97NET
-page_id: 63799322
 ---
 
 {% compositionsetup %}

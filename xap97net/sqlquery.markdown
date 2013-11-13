@@ -2,7 +2,6 @@
 layout: xap97net
 title:  SqlQuery
 categories: XAP97NET
-page_id: 63799350
 ---
 
 {% summary %}Querying the space using SqlQuery{% endsummary %}

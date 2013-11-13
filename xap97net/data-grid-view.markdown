@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Data Grid View
 categories: XAP97NET
-page_id: 63799321
 ---
 
 {% compositionsetup %}

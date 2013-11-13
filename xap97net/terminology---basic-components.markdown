@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Terminology - Basic Components
 categories: XAP97NET
-page_id: 63799398
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.

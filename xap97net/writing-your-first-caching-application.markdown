@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Writing Your First Caching Application
 categories: XAP97NET
-page_id: 63799409
 ---
 
 {% compositionsetup %}

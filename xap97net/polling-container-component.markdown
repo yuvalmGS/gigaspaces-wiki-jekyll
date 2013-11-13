@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Polling Container Component
 categories: XAP97NET
-page_id: 63799324
 ---
 
 {% compositionsetup %}

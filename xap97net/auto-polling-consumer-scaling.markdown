@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Auto Polling Consumer Scaling
 categories: XAP97NET
-page_id: 63799302
 ---
 
 {% compositionsetup %}

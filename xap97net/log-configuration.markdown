@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Log Configuration
 categories: XAP97NET
-page_id: 63799400
 ---
 
 # This page is under construction.

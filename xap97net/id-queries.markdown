@@ -2,7 +2,6 @@
 layout: xap97net
 title:  ID Queries
 categories: XAP97NET
-page_id: 63799334
 ---
 
 {% summary %}How to query the space using entry ID{% endsummary %}

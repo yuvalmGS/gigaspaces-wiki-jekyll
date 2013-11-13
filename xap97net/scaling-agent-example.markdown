@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Scaling Agent Example
 categories: XAP97NET
-page_id: 63799365
 ---
 
 {% compositionsetup %}

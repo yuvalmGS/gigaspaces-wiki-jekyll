@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Nav Bar
 categories: XAP97NET
-page_id: 63799331
 ---
 
 {% section %}

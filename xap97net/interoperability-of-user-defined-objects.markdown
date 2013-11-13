@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Interoperability of User-Defined Objects
 categories: XAP97NET
-page_id: 63799393
 ---
 
 {% summary %}How to implement deep (complex) interoperable classes.{% endsummary %}

@@ -2,7 +2,6 @@
 layout: xap97net
 title:  ISpaceFilterEntry Interface
 categories: XAP97NET
-page_id: 63799423
 ---
 
 # ISpaceFilterEntry interface

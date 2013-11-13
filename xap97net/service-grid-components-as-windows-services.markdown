@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Service Grid Components as Windows Services
 categories: XAP97NET
-page_id: 63799352
 ---
 
 {% summary %}Installing and managing Service Grid Components as Windows Services{% endsummary %}

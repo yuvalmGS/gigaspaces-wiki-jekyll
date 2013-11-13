@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Footer
 categories: XAP97NET
-page_id: 63799303
 ---
 
 {% panel borderColor=#F0C000|bgColor=#FFFFCE %}

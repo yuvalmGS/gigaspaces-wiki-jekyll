@@ -2,7 +2,6 @@
 layout: xap97net
 title:  The In-Memory Data Grid
 categories: XAP97NET
-page_id: 63799389
 ---
 
 {% compositionsetup %}

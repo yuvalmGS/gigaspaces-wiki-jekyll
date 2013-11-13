@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Service Grid
 categories: XAP97NET
-page_id: 64127758
 ---
 
 {% compositionsetup %}

@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Reading Entries
 categories: XAP97NET
-page_id: 63799307
 ---
 
 {% summary %}Reading entries from the space{% endsummary %}

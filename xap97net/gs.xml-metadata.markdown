@@ -2,7 +2,6 @@
 layout: xap97net
 title:  GS.XML Metadata
 categories: XAP97NET
-page_id: 63799396
 ---
 
 {% summary page|65 %}This page explains how to use GS.XML to define space objects metadata.{% endsummary %}

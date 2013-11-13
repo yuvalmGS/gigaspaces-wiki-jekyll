@@ -2,7 +2,6 @@
 layout: xap97net
 title:  The ISpaceProxy Interface
 categories: XAP97NET
-page_id: 63799326
 ---
 
 {% compositionsetup %}

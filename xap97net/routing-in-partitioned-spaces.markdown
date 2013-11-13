@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Routing In Partitioned Spaces
 categories: XAP97NET
-page_id: 63799357
 ---
 
 {% compositionsetup %}

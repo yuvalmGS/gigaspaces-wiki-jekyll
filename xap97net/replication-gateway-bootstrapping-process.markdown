@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Replication Gateway Bootstrapping Process
 categories: XAP97NET
-page_id: 63799425
 ---
 
 {% summary %}This page is about bootstrapping a site from another site across gateways.{% endsummary %}

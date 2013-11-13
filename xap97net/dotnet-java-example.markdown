@@ -2,7 +2,6 @@
 layout: xap97net
 title:  .Net-Java Example
 categories: XAP97NET
-page_id: 63799316
 ---
 
 {% compositionsetup %}

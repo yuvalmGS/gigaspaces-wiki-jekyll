@@ -2,7 +2,6 @@
 layout: xap97net
 title:  Notify Container Component
 categories: XAP97NET
-page_id: 63799370
 ---
 
 {% compositionsetup %}
