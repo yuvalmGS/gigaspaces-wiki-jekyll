@@ -133,7 +133,7 @@ Display Roles
 {%endsection%}
 You may have noticed that you can assign fine grained access control for space operations (read/write/etc) per space class(slide 4).
 
-{%learn%}{%latestjavaurl%}/gigaspaces-management-center-(ui)-security{%endlearn%}
+{%learn%}{%latestjavaurl%}/gigaspaces-management-center-(ui)-security.html{%endlearn%}
 
 
 # Managing Users
@@ -201,7 +201,7 @@ private Role createRole() {
 {% endtabcontent  %}
 {% endinittab %}
 
-{%learn%}{%latestjavaurl%}/gigaspaces-management-center-(ui)-security{%endlearn%}
+{%learn%}{%latestjavaurl%}/gigaspaces-management-center-(ui)-security.html{%endlearn%}
 
 
 # Securing XAP Components

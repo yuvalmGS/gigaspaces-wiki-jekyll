@@ -196,7 +196,7 @@ When deploying, include within the META-INF/spring/pu.properties file the jetty.
 
 ### Deploying with the Web Admin UI:
 
-There are fully functional examples on GitHub available.{%try%}https://github.com/Gigaspaces/xap-tutorial}{%endtry%}
+There are fully functional examples on GitHub available.{%try%}https://github.com/Gigaspaces/xap-tutorial{%endtry%}
 
 
 {%section%}

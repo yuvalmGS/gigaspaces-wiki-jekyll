@@ -196,7 +196,7 @@ XAP provides out of the box Aggregator Tasks.
 #### ExecutorBuilder
 The executor builder allows to combine several task executions (both distributed ones and non distributed ones) into a seemingly single execution (with a reduce phase).
 
-{%learn%}{%latestjavaurl%}/task-execution-overthe-space.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/task-execution-over-the-space.html{%endlearn%}
 
 
 

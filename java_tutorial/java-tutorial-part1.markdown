@@ -112,7 +112,7 @@ The space generates a unique identifier (UID) for every object in one of the fol
 #### Compound SpaceId
 You might need to construct a space id that will be comprised from a user defined class rather than using a Numeric or String type field. In such a case your user defined class used as the SpaceId data type must implement the toString , hashCode and equals methods. The compound ID class must implement a toString method that return a unique String for each ID.
 
-{%learn%}{%latestjavaurl%}/space-object-id.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/space-object-id-operations.html{%endlearn%}
 
 
 #### Defining Routing

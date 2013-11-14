@@ -152,7 +152,7 @@ public class Payment implements Serializable {
 }
 {%endhighlight%}
 
-{%learn%}{%latestjavaurl%}/fifi-support.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/fifo-support.html{%endlearn%}
 
 
 
@@ -162,7 +162,7 @@ public class Payment implements Serializable {
 # JMS
 In addition to the polling containers you can also use a JMS facade on top of the space to deliver events. The JMS facade is designed to enable integration with external feeders that cannot or were not designed to work with the space based API. 
 
-{%learn%}{%latestjavaurl%}/jms-basics.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/jms---basics.html{%endlearn%}
 
  
 
