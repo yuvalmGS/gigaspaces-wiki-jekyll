@@ -16,7 +16,7 @@ Once packaged, a processing unit is deployed onto the GigaSpaces runtime environ
 ![archi_deployenv.jpg](/attachment_files/xap97net/archi_deployenv.jpg)
 
 {% info %}
-When developing your processing unit, you can [run and debug the processing unit within your IDE]({%latestjavaurl%}/running-and-debugging-within-your-ide.html). You will typically deploy it to the GigaSpaces runtime environment when it's ready for production or when you want to run it in the real-life runtime environment
+When developing your processing unit, you can [run and debug the processing unit within your IDE]({% currentjavaurl %}/running-and-debugging-within-your-ide.html). You will typically deploy it to the GigaSpaces runtime environment when it's ready for production or when you want to run it in the real-life runtime environment
 {% endinfo %}
 
 # Service Grid Architecture
@@ -34,5 +34,5 @@ In order to discover one another in the network, the GSCs and GSMs use a [Lookup
 
 Finally, the **GSA** ([Grid Service Agent](./service-grid.html#gsa)) component is used to start and manage the other components of the Service Grid (i.e. GSC, GSM, LUS). Typically, the GSA is started with the hosting machine's startup. Using the agent, you can bootstrap the entire cluster very easily, and start and stop additional GSCs, GSMs and lookup services at will.
 
-All of the above components are fully manageable from the GigaSpaces management interfaces such as the [UI]({%latestjavaurl%}/graphical-user-interface.html), CLI and [Admin API](./administration-and-monitoring-api.html).
+All of the above components are fully manageable from the GigaSpaces management interfaces such as the [UI]({% currentjavaurl %}/graphical-user-interface.html), CLI and [Admin API](./administration-and-monitoring-api.html).
 

@@ -17,7 +17,7 @@ categories: SBP
 
 # Overview
 
-Service Reloading [page]({%latestjavaurl%}/Reloading+Business+Logic) explains how Refreshable context can be used to reload business logic. Find a modified version of Helloworld example which is included in the GigaSpaces installation configured for refreshable business logic.
+Service Reloading [page]({%latestjavaurl%}/reloading-business-logic.html) explains how Refreshable context can be used to reload business logic. Find a modified version of Helloworld example which is included in the GigaSpaces installation configured for refreshable business logic.
 
 # Source Code
 

@@ -47,7 +47,7 @@ GigaSpaces provides several options to deploy a processing unit onto the Service
 
 {% inittab os_simple_space|top %}
 {% tabcontent Admin API %}
-Deploying via code is done using the GigaSpaces [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](./administration-and-monitoring-api.html) and [javadoc](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html) of the Admin API.
+Deploying via code is done using the GigaSpaces [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](./administration-and-monitoring-api.html) and [javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html) of the Admin API.
 
 {% highlight java %}
 Admin admin = new AdminFactory().addGroup("myGroup").create();
@@ -238,7 +238,7 @@ To restart a running PU (all instances) via the GS-UI you should:
 
 ## Restart a running PU via the Admin API
 
-The [ProcessingUnitInstance](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/admin/pu/ProcessingUnitInstance.html) includes few `restart` methods you may use to restart a PU instance:
+The [ProcessingUnitInstance](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/ProcessingUnitInstance.html) includes few `restart` methods you may use to restart a PU instance:
 
 {% highlight java %}
 restart()
@@ -356,7 +356,7 @@ for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent Admin API + XML %}
+{% tabcontent Admin API and XML %}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 A full working example can be found in [org.openspaces.admin.application.deploy.ApplicationDeployCommand](https://github.com/OpenSpaces/OpenSpaces/blob/master/src/main/src/org/openspaces/admin/application/deploy/ApplicationDeployCommand.java )
 
@@ -385,7 +385,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 	xmlns:os-admin="http://www.openspaces.org/schema/admin"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/9.5/admin/openspaces-admin.xsd">
+	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% currentversion %}/admin/openspaces-admin.xsd">
 
 	<context:annotation-config />
 
@@ -402,7 +402,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent GigaSpaces CLI + XML %}
+{% tabcontent GigaSpaces CLI and XML %}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 
 {% highlight java %}
@@ -418,7 +418,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 	xmlns:os-admin="http://www.openspaces.org/schema/admin"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/9.5/admin/openspaces-admin.xsd">
+	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% currentversion %}/admin/openspaces-admin.xsd">
 
 	<context:annotation-config />
 
@@ -444,7 +444,7 @@ The reason for imposing this dependency is that the space proxy bean in the feed
 
 The feeder can relax this restriction, by specifying a dependency of at least one instance per partition. Now the feeder is redeployed as long as the space has a minimum of one instance per partition. The downside of this approach is that during initial deployment there is a small time gap in which the feeder writes data to the space while there is only one copy of the data (one instance per partition).
 
-{% inittab os_simple_space|top %}
+{% inittab adaptive_sla|top %}
 {% tabcontent Admin API %}
 
 {% highlight java %}
@@ -472,7 +472,7 @@ for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent Admin API + XML %}
+{% tabcontent Admin API with XML %}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 A full working example can be found in [org.openspaces.admin.application.deploy.ApplicationDeployCommand](https://github.com/OpenSpaces/OpenSpaces/blob/master/src/main/src/org/openspaces/admin/application/deploy/ApplicationDeployCommand.java )
 
@@ -501,7 +501,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 	xmlns:os-admin="http://www.openspaces.org/schema/admin"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/9.5/admin/openspaces-admin.xsd">
+	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% currentversion %}/admin/openspaces-admin.xsd">
 
 	<context:annotation-config />
 
@@ -518,7 +518,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent GigaSpaces CLI + XML %}
+{% tabcontent GigaSpaces CLI with XML %}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
 
 {% highlight java %}
@@ -534,7 +534,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 	xmlns:os-admin="http://www.openspaces.org/schema/admin"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/9.5/admin/openspaces-admin.xsd">
+	                    http://www.openspaces.org/schema/admin http://www.openspaces.org/schema/{% currentversion %}/admin/openspaces-admin.xsd">
 
 	<context:annotation-config />
 

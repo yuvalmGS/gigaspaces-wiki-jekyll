@@ -89,7 +89,7 @@ Summary: the mirror service serves as a coordinator that provides not only acces
 
 The ability to deploy web services acting as gateways to the data/business logic hosted within GigaSpaces is important.  This functionality allows every new component or legacy component to interact with the system. The GigaSpaces container may run a set of web services, and can scale these dynamically.
 
-These may be the backbone of the entire system to access backend data and services. The web layer can have its own [cache]({%latestjavaurl%}/Client-Side-Caching.html) running within the web application. This speeds up access to reused data by having it as part of the application memory address avoiding the need to perform remote access to the IMDG.
+These may be the backbone of the entire system to access backend data and services. The web layer can have its own [cache]({%latestjavaurl%}/client-side-caching.html) running within the web application. This speeds up access to reused data by having it as part of the application memory address avoiding the need to perform remote access to the IMDG.
 
 ## Multi-Tenancy
 
@@ -101,7 +101,7 @@ GigaSpaces can be used with Mainframe using the following:
 
 ## GigaSpaces External Data Source
 
-Allows the IMDG to pull data from Mainframe via a public interfaces (web services for example) through the [IMDG EDS API]({%latestjavaurl%}/External-Data-Source-API.html). Once there is a cache miss or once the IMDG is started, the IMDG accesses the Mainframe and fetch relevant data. The IMDG can push any changes done back to the Mainframe in a synchronous or asynchronous manner.
+Allows the IMDG to pull data from Mainframe via a public interfaces (web services for example) through the [IMDG EDS API]({%latestjavaurl%}/external-data-source-api.html). Once there is a cache miss or once the IMDG is started, the IMDG accesses the Mainframe and fetch relevant data. The IMDG can push any changes done back to the Mainframe in a synchronous or asynchronous manner.
 
 ## JCICS
 
@@ -124,7 +124,7 @@ Connect into a known messaging broker (IBM MQ) within the existing system, consu
 
 ## Mule ESB
 
-Leverage [MF Mule integration](http://www.mulesoft.com/webinar-getting-mainframe-30-minutes) and [GigaSpaces Mule]({%latestjavaurl%}/Mule-ESB.html) support to have these to communicate with each other.
+Leverage [MF Mule integration](http://www.mulesoft.com) and [GigaSpaces Mule]({%latestjavaurl%}/mule-esb.html) support to have these to communicate with each other.
 
 ## WebMethods EntireX
 

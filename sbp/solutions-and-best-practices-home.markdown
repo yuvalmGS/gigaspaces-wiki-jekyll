@@ -88,28 +88,4 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 
 {% endcolumn %}
 
-{% column %}
-
-#### Quick Links
-
-##### • [9.6.X Release Notes](http://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+XAP+9.6.X+Release+Notes)
-
-##### • [What's new in XAP 9.6.X](http://wiki.gigaspaces.com/wiki/display/RN/What's+New+in+GigaSpaces+9.6.X)
-
-##### • [API Documentation](/api_documentation/api-documentation.html)
-
-##### • [Solutions and Best Practices Home](./index.html)
-
-##### • [Forum](http://ask.gigaspaces.org/)
-
-##### • [Downloads](http://www.gigaspaces.com/LatestProductVersion)
-
-##### • [Blog](http://blog.gigaspaces.com/)
-
-##### • [White Papers](http://www.gigaspaces.com/os_papers.html)
-
-##### • Looking for **[XAP.NET]({%latestneturl%})
-
-{% endcolumn %}
-
 {% endsection %}

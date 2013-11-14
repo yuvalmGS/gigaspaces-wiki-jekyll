@@ -30,34 +30,6 @@ Administrating GigaSpaces XAP.NET components, including "how to", troubleshootin
 
 {% endcolumn %}
 
-{% column width=30% %}
 
-# Quick Links
-
-[![training_banner.png](/attachment_files/training_banner.png)](http://www.gigaspaces.com/content/gigaspaces-training)
-
-##### &bull; [What's New in 9.0.X](http://wiki.gigaspaces.com/wiki/display/RN/What's+New+in+GigaSpaces+9.0.X)
-
-##### &bull; [Release Notes](http://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+XAP+9.0.X+Release+Notes)
-
-##### &bull; [Upgrading from Previous Versions](http://wiki.gigaspaces.com/wiki/display/RN/Upgrading+to+9.0.X)
-
-##### &bull; [API Documentation](/api_documentation/index.html)
-
-##### &bull; [Solutions and Best Practices Home](/sbp/index.html)
-
-##### &bull; [Forum](http://forum.openspaces.org/forum.jspa?forumID=175)
-
-##### &bull; [Customer Support Portal](http://www.gigaspaces.com/supportcenter)
-
-##### &bull; [Training Programs](http://www.gigaspaces.com/content/gigaspaces-training)
-
-##### &bull; [Blog](http://blog.gigaspaces.com/)
-
-##### &bull; [White Papers](http://www.gigaspaces.com/os_papers.html)
-
-##### &bull; Looking for **[XAP](/xap97/index.html)
-
-{% endcolumn %}
 
 {% endsection %}

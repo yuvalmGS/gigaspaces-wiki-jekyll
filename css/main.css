@@ -199,3 +199,20 @@ ul li.search-result{
     position: fixed;
   } 
 }
+
+#toc {
+  display:none;
+}
+
+@media (min-width: 768px) {
+  #toc {
+    display:block;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+

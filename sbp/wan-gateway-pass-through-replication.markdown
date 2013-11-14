@@ -278,7 +278,7 @@ The pass-through topology configuration is implemented through delegators across
 2. Please extract the file and and copy the content of the **deploy** folder into `\<GIGASPACES_HOME>\deploy` folder.
 3. Extract the `scripts` folder to an arbitrary location and edit the `setExampleEnv.bat/sh` script to include correct values for `NIC_ADDR` as the machine IP and `JSHOMEDIR` as the GigaSpaces root folder location.
 
-The `scripts` folder contains the necessary scripts to start the [Grid Service Agent]({%latestjavaurl%}/The+Grid+Service+Agent) for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:
+The `scripts` folder contains the necessary scripts to start the [Grid Service Agent]({%latestjavaurl%}/service-grid.html#gsa) for each cluster, in addition to a deploy script `deployAll.bat/sh` which will be used to automate the deployment of all three gateways and space instances. This will allow you to run the entire setup on one machine to simplify testing. Here are the steps to run the example:
 
 1. Run `startAgent-GB.bat/sh` or to start GB site.
 2. Run `startAgent-HK.bat/sh` to start HK site.
@@ -298,7 +298,7 @@ Once The deployAll.bat/sh script finishes running, you should be able to see all
 ![pu_deployments.jpg](/attachment_files/sbp/pu_deployments.jpg)<br/>
 
 # Testing Pass Through Replication
-You can test the setup by using the [benchmark utility]({%latestjavaurl%}/Benchmark+View+-+GigaSpaces+Browser) comes with the GS-UI. Select one of the HK or US Benchmark icons and click Start to begin writing objects to the space:
+You can test the setup by using the [benchmark utility]({%latestjavaurl%}/benchmark-view---gigaspaces-browser.html) comes with the GS-UI. Select one of the HK or US Benchmark icons and click Start to begin writing objects to the space:
 ![space_write.jpg](/attachment_files/sbp/space_write.jpg)
 
 Click the Spaces icon on the Space Browser Tab to get a global view of all spaces. As objects are being written, you should see replication occurring across both HK and US sites until there are 5000 objects in each space. Notice that since the GB site is a pass through, the object count should remain zero:

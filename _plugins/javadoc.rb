@@ -1,24 +1,19 @@
 module Jekyll
-  class Javadoc < Liquid::Tag
+  class Javadoc < Jekyll::AbstractDocPlugin
 
     def initialize(tag_name, text, tokens)
       super
-      @class_name = text.strip
-    end
-
-    def render(context)
-      create_link(context, super)
-    end
+    end   
 
     def create_link(context, content)
-      latest_xap_release = context.registers[:site].config["latest_xap_release"] || "9.7"
+      current_release = get_current_version(context)
 
       base_javadoc_url = context.registers[:site].config["base_javadoc_url"] || 
                          "http://www.gigaspaces.com/docs/JavaDoc%{version}/index.html?%{fqcn}.html"
 
       fqcn = @class_name.gsub(/\./, "/")
 
-      base_javadoc_url % {:version => latest_xap_release, :fqcn => fqcn}
+      base_javadoc_url % {:version => current_release, :fqcn => fqcn}
     end
   end
 end

@@ -587,7 +587,7 @@ Lets look at a Spring configuration file that represents the creation of an embe
 	xsi:schemaLocation="
    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
-   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/X.x/core/openspaces-core.xsd>
+   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd>
 
 	<!-- Scan the packages for annotations / -->
 	<context:component-scan base-package="xap" />
@@ -603,9 +603,6 @@ Lets look at a Spring configuration file that represents the creation of an embe
 </beans>
 {%endhighlight%}
 
-
-
-{%note%}Replace the X.x version number of XAP in the schema with the version you downloaded. For example, if you downloaded 9.6, you would replace X.x with 9.6{%endnote%}
 
 And here is the code to access the Spring bean within your application:
 {%highlight java%}

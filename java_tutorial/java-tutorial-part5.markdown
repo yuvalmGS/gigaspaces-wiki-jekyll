@@ -122,10 +122,10 @@ Here is an example of a pu.xml file:
    xsi:schemaLocation="
    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
-   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/X.x/core/openspaces-core.xsd
-   http://www.openspaces.org/schema/events http://www.openspaces.org/schema/X.x/events/openspaces-events.xsd
-   http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/X.x/remoting/openspaces-remoting.xsd
-   http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/X.x/sla/openspaces-sla.xsd">
+   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
+   http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
+   http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
+   http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd">
 
     <!-- Enables to configure Spring beans through annotations   -->
     <context:annotation-config />
@@ -152,8 +152,6 @@ Here is an example of a pu.xml file:
 </beans>
 {%endhighlight%}
 
-{%info%}Replace the X.x version in the xml schema with the version you have downloaded. For example, X.x would become 9.6{%endinfo%}
-
 {%learn%}/{%latestjavaurl%}/configuring-processing-unit-elements.html{%endlearn%}
 
 
@@ -169,7 +167,7 @@ A sample SLA definition is shown below:
        xmlns:os-sla="http://www.openspaces.org/schema/sla"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-       http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/X.x/sla/openspaces-sla.xsd">
+       http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd">
 
       <os-sla:sla cluster-schema="partitioned-sync2backup"
             number-of-instances="2" number-of-backups="1"
@@ -234,10 +232,10 @@ In this step will create the configuration file for the PU deployment
 	xsi:schemaLocation="
    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
-   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/X.x/core/openspaces-core.xsd
-   http://www.openspaces.org/schema/events http://www.openspaces.org/schema/X.x/events/openspaces-events.xsd
-   http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/X.x/remoting/openspaces-remoting.xsd
-   http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/X.x/sla/openspaces-sla.xsd">
+   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
+   http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
+   http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
+   http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd">
 
 	<!-- Scan the packages for annotations / -->
 	<context:component-scan base-package="xap" />

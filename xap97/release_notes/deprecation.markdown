@@ -13,8 +13,8 @@ Features that are deprecated as of version 9.7
 
 {: .table .table-bordered}
 |Key|Summary|Component/s|
-|:----|:--------|
-|GS-11104  | Deprecate - NOTIFY_ALL modifier, use specific modifiers when registering to notifications| Events|
+|:--|:------|:----------|
+|   |       |           |
 
 
 

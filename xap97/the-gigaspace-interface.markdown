@@ -9,7 +9,7 @@ categories: XAP97
 
 # Overview
 
-OpenSpaces provides a simpler space API using the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html) interface, by wrapping the [IJSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/IJSpace.html) (and the Jini [JavaSpace](http://www.gigaspaces.com/docs/JiniApi/net/jini/space/JavaSpace.html)), and simplifying both the API and its programming model.
+OpenSpaces provides a simpler space API using the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html) interface, by wrapping the [IJSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/IJSpace.html) (and the Jini [JavaSpace](http://www.gigaspaces.com/docs/JiniApi/net/jini/space/JavaSpace.html)), and simplifying both the API and its programming model.
 
 {% indent %}
 ![space_basic_operations91.jpg](/attachment_files/space_basic_operations91.jpg)
@@ -361,7 +361,7 @@ Few basic usage guidelines when using the `GigaSpace` interface:
 
 # Operations
 
-The [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/GigaSpace.html) interface includes the following main operations:
+The [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) interface includes the following main operations:
 
 {: .table .table-bordered}
 |[Id Based operations](./id-queries.html)|[Batch operations](#Batch Operations)|[Asynchronous operations](#Asynchronous Operations)|Data Count operations|
@@ -537,7 +537,7 @@ MyData previousValue = lc.getObject();
 
 # Delta Update
 
-You may update selected space object fields (delta) using the [WriteModifiers.PARTIAL_UPDATE](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html) modifier. This option is useful when having objects with large number of fields where you would like to update only few of the space object fields. This optimizes the network utilization and avoids serializing/de-serializing the entire object fields when interacting with a remote space.
+You may update selected space object fields (delta) using the [WriteModifiers.PARTIAL_UPDATE](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/WriteModifiers.html) modifier. This option is useful when having objects with large number of fields where you would like to update only few of the space object fields. This optimizes the network utilization and avoids serializing/de-serializing the entire object fields when interacting with a remote space.
 
 ## How to Perform Delta Updates?
 
@@ -612,7 +612,7 @@ The [SQLQuery](./sqlquery.html) class is used to query the space using SQL-like 
 
 ## Space Iterator
 
-The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/client/GSIterator.html) allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the `readMultiple` since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side. See the [Paging Support with Space Iterator](./paging-support-with-space-iterator.html) for details.
+The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/GSIterator.html) allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the `readMultiple` since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side. See the [Paging Support with Space Iterator](./paging-support-with-space-iterator.html) for details.
 
 # readIfExists and read Operations
 
@@ -669,17 +669,17 @@ Here are few important considerations when using the batch operations:
 - When using `writeMultiple`, you should verify that duplicated entries (with the same ID) do not appear as part of the passed array, since the identity of the object is determined based on its `ID` and not based on its reference. This is extremely important with an embedded space, since `writeMultiple` injects the ID value into the object after the write operation (when autogenerate=false).
 - The `readMultiple` and `takeMultiple` operations **do not support timeout** operations. The simple way to achieve this is by calling the `read` operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
 - Exception handling - batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
-    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/WriteMultiplePartialFailureException.html)
-    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/WriteMultipleException.html)
-    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/ReadMultipleException.html)
-    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/TakeMultipleException.html)
-    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/ClearException.html)
+    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/WriteMultiplePartialFailureException.html)
+    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/WriteMultipleException.html)
+    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/ReadMultipleException.html)
+    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/TakeMultipleException.html)
+    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/ClearException.html)
 
 # Asynchronous Operations
 
 The GigaSpace interface supports asynchronous (non-blocking) read and asynchronous take operations through the GigaSpace interface. Both return a [Future<T>](http://download.oracle.com/javase/6/docs/api/java/util/concurrent/Future.html) object, where T is the type of the object the request returns. Future<T>.get() can be used to query the object to see if a result has been returned or not.
 
-Alternatively, asyncRead and asyncTake also accept an implementation of [AsyncFutureListener](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/async/AsyncFutureListener.html), which will have its `AsyncFutureListener.onResult` method called when the result has been populated. This does not affect the return type of the `Future<T>`, but provides an additional mechanism for handling the asynchronous response.
+Alternatively, asyncRead and asyncTake also accept an implementation of [AsyncFutureListener](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/async/AsyncFutureListener.html), which will have its `AsyncFutureListener.onResult` method called when the result has been populated. This does not affect the return type of the `Future<T>`, but provides an additional mechanism for handling the asynchronous response.
 
 ![async_operationsnew.jpg](/attachment_files/async_operationsnew.jpg)
 
@@ -970,12 +970,12 @@ gigaSpace.write(someObject, gigaSpace.getDefaultWriteModifiers().add(WriteModifi
 
 For further details on each of the available modifiers see:
 
-- [com.gigaspaces.client.ReadModifiers](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/ReadModifiers.html)
-- [com.gigaspaces.client.WriteModifiers](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/WriteModifiers.html)
-- [com.gigaspaces.client.TakeModifiers](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/TakeModifiers.html)
-- [com.gigaspaces.client.CountModifiers](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/CountModifiers.html)
-- [com.gigaspaces.client.ClearModifiers](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/ClearModifiers.html)
-- [com.gigaspaces.client.ChangeModifiers](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/client/ChangeModifiers.html)
+- [com.gigaspaces.client.ReadModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/ReadModifiers.html)
+- [com.gigaspaces.client.WriteModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/WriteModifiers.html)
+- [com.gigaspaces.client.TakeModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/TakeModifiers.html)
+- [com.gigaspaces.client.CountModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/CountModifiers.html)
+- [com.gigaspaces.client.ClearModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/ClearModifiers.html)
+- [com.gigaspaces.client.ChangeModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/ChangeModifiers.html)
 
 # Exception Hierarchy
 
@@ -995,8 +995,8 @@ A default implementation of the exception translator is automatically used, whic
 ## Exception handling for Batch Operations
 
 Batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
-    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/WriteMultiplePartialFailureException.html)
-    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/WriteMultipleException.html)
-    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/ReadMultipleException.html)
-    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/TakeMultipleException.html)
-    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/ClearException.html)
+    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/WriteMultiplePartialFailureException.html)
+    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/WriteMultipleException.html)
+    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/ReadMultipleException.html)
+    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/TakeMultipleException.html)
+    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/ClearException.html)

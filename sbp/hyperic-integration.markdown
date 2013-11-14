@@ -12,7 +12,7 @@ The plugin is offered as open source as part of OpenSpaces community.
 
 # Installation
 
-As the GigaSpaces plugin uses the [Administration and Monitoring API]({%latestjavaurl%}/Administration+and+Monitoring+API) (a.k.a. Admin API) a single Hyperic agent will be used to monitor the whole cluster. Indeed GigaSpaces is a very dynamic platform and a classical Hyperic installation based on an agent monitoring the processes on his physical (or virtual) machine won't work well, a given processing unit could be unavailable on a machine because the GSM decided to deploy it somewhere else.
+As the GigaSpaces plugin uses the [Administration and Monitoring API]({%latestjavaurl%}/administration-and-monitoring-api.html) (a.k.a. Admin API) a single Hyperic agent will be used to monitor the whole cluster. Indeed GigaSpaces is a very dynamic platform and a classical Hyperic installation based on an agent monitoring the processes on his physical (or virtual) machine won't work well, a given processing unit could be unavailable on a machine because the GSM decided to deploy it somewhere else.
 
 In order to use the plugin on an hyperic agent you have to prepare this agent to be 'GigaSpaces ready'.
 

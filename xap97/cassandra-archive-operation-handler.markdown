@@ -9,7 +9,7 @@ categories: XAP97
 
 # Overview
 
-The [Archive Container](./archive-container.html) can be configured to work against Cassandra (without writing any extra code). The [ArchiveOperationHandler interface](http://www.gigaspaces.com/docs/JavaDoc9.5/org/openspaces/archive/ArchiveOperationHandler.html) abstracts the Big-Data storage from the [Archive Container](./archive-container.html). The Cassandra Archive Operation Handler implements this interface by [serializing](#Property Value Serializer) space objects into Cassandra.
+The [Archive Container](./archive-container.html) can be configured to work against Cassandra (without writing any extra code). The [ArchiveOperationHandler interface](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/archive/ArchiveOperationHandler.html) abstracts the Big-Data storage from the [Archive Container](./archive-container.html). The Cassandra Archive Operation Handler implements this interface by [serializing](#Property Value Serializer) space objects into Cassandra.
 
 {% indent %}
 ![archive-container-cassandra.jpg](/attachment_files/archive-container-cassandra.jpg)
@@ -169,7 +169,7 @@ By default when serializing object/document properties to column values, the fol
 - If the type of the value to be serialized matches a primitive type in Cassandra it will be serialized as defined by the Cassandra primitive type serialization protocol.
 - Otherwise, the value will be serialized using standard java Object serialization mechanism.
 
-It is possible to override this default behavior by providing a custom implementation of [PropertyValueSerializer](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/persistency/cassandra/meta/types/dynamic/PropertyValueSerializer.html).
+It is possible to override this default behavior by providing a custom implementation of [PropertyValueSerializer](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/persistency/cassandra/meta/types/dynamic/PropertyValueSerializer.html).
 This interface is defined by these 2 methods:
 
 {% highlight java %}

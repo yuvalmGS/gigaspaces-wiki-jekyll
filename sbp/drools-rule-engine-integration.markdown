@@ -25,7 +25,7 @@ A rule engine is a component specialized in the execution of business rules. The
 
 This article demonstrates how to integrate a rules engine called Drools (also known as JBoss Rules) with GigaSpaces. A working example is provided as part of this article. In the next sections a technical description is given on how the integration works. It will go into detail of all the classes used, how they interact and should be accessed from another system. You will find that the GigaSpaces data grid is used for storing the business rules, event containers for pre-compiling rulesets in an asynchronous manner, and that Remoting Services can be used for invocations of the rule-engine.
 
-Click [here]({%latestjavaurl%}/attachments/54821146/SpaceEnabledDrools.zip) to download a working code sample that uses [JBoss Drools 5](http://www.jboss.org/drools).
+Click [here](/download_files/sbp/SpaceEnabledDrools.zip) to download a working code sample that uses [JBoss Drools 5](http://www.jboss.org/drools).
 
 # Modules
 

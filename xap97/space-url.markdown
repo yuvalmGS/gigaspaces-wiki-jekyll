@@ -10,7 +10,7 @@ categories: XAP97
 
 ## What is SpaceURL?
 
-The **[SpaceURL](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/client/SpaceURL.html)** object is an address, passed to the `GigaSpace` API, used to connect to a space and remotely create new spaces, as well as to enable various characteristics.
+The **[SpaceURL](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/SpaceURL.html)** object is an address, passed to the `GigaSpace` API, used to connect to a space and remotely create new spaces, as well as to enable various characteristics.
 
 # Usage
 
@@ -51,7 +51,7 @@ spaceConfigurer.destroy();
 
 The following are optional property string values.
 
-These strings are defined as part of the `SpaceURL` class (`com.j_spaces.core.client.SpaceURL`; see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/client/SpaceURL.html)) as static attributes.
+These strings are defined as part of the `SpaceURL` class (`com.j_spaces.core.client.SpaceURL`; see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/SpaceURL.html)) as static attributes.
 
 {: .table .table-bordered}
 | Property name | Property String | Description | Optional values |

@@ -1,24 +1,19 @@
 module Jekyll
-  class Netdoc < Liquid::Tag
+  class Netdoc < Jekyll::AbstractDocPlugin
 
     def initialize(tag_name, text, tokens)
       super
-      @class_name = text.strip
-    end
-
-    def render(context)
-      create_link(context, super)
     end
 
     def create_link(context, content)
-      latest_xap_release = context.registers[:site].config["latest_xap_release"] || "9.7"
+      current_release = get_current_version(context)
 
       base_dotnetdoc_url = context.registers[:site].config["base_dotnetdoc_url"] || 
                            "http://www.gigaspaces.com/docs/dotnetdocs%{version}/html/T_%{fqcn}.htm"
 
       fqcn = @class_name.gsub(/\./, "_")
 
-      base_dotnetdoc_url % {:version => latest_xap_release, :fqcn => fqcn} 
+      base_dotnetdoc_url % {:version => current_release, :fqcn => fqcn} 
 
     end
   end

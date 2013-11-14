@@ -32,7 +32,7 @@ GigaSpaces is 100% pure Java, and therefore can run on any UNIX or Windows machi
 
 ## Installing on Windows
 
-1. Unzip the ZIP file (using your favorite unzip tool, for example, WinZip) to the location of your choice. Unzipping the file creates a `<GigaSpaces Root>` directory with several sub-directories. An example for the name of the ZIP file will be `gigaspaces-xap-premium-9.5.0-ga-b8500`.
+1. Unzip the ZIP file (using your favorite unzip tool, for example, WinZip) to the location of your choice. Unzipping the file creates a `<GigaSpaces Root>` directory with several sub-directories. An example for the name of the ZIP file will be `{{ site.latest_build_filename }}`.
 1. After unzipping the ZIP file, you should have the following files and folders under the `<GigaSpaces Root>` folder:
 
 ![win_dirtree_XAP95.jpg](/attachment_files/win_dirtree_XAP95.jpg)
@@ -47,7 +47,7 @@ GigaSpaces is 100% pure Java, and therefore can run on any UNIX or Windows machi
 1. Move into the directory where you want to install GigaSpaces XAP, e.g. `opt`, and issue the following `unzip` command, supplying the path to the name of the GigaSpaces zip file -- `gigaspaces-edition-versionNumber-version/milestone-build.zip`. For example:
 
 {% highlight java %}
-unzip gigaspaces-xap-premium-9.5.0-ga-b8500.zip
+unzip {{ site.latest_build_filename }}
 {% endhighlight %}
 
 1. Make sure all `sh` file(s) in the `/bin` and the `/examples` directory are in executable mode, meaning you can run them from your machine. To check this, use the `ls \-all` command for the relevant directory, and make sure that `x` is included in the file permissions.
@@ -66,7 +66,7 @@ unzip gigaspaces-xap-premium-9.5.0-ga-b8500.zip
 
 ## Mixing GigaSpaces versions/builds
 
-Mixing clients and Space servers from different GigaSpaces Major Releases:Clients running on 8.0 can run against 9.5 servers. 8.0 servers cannot be part of the same cluster with 9.5 servers.
+Mixing clients and Space servers from different GigaSpaces Major Releases:Clients running on 8.0 can run against {% latestxaprelease %} servers. 8.0 servers cannot be part of the same cluster with {% latestxaprelease %} servers.
 
 ## Mixing Different GigaSpaces JARs in Same Deployment Environment
 

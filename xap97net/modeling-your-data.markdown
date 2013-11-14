@@ -75,7 +75,7 @@ See the [SqlQuery](./sqlquery.html) section for details about embedded entities 
 ![model_non_embed.jpg](/attachment_files/xap97net/model_non_embed.jpg)
 
 {% tip %}
-See the [Parent Child Relationship]({%latestjavaurl%}/parent-child-relationship.html) for an example for non-embedded relationships.
+See the [Parent Child Relationship]({% currentjavaurl %}/parent-child-relationship.html) for an example for non-embedded relationships.
 {% endtip %}
 
 ## Embedded vs. Non Embedded Relationships

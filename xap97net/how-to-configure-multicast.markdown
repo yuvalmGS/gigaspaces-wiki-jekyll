@@ -15,7 +15,7 @@ The word "multicast" is typically used to refer to IP Multicast, the implementat
 
 GigaSpaces uses multicast in the following cases:
 
-- [When deploying onto the service grid]({%latestjavaurl%}/deploying-onto-the-service-grid.html) GigaSpaces XAP uses multicast to discover the [Lookup Service](./lookup-service-configuration.html), and register their proxies.
+- [When deploying onto the service grid]({% currentjavaurl %}/deploying-onto-the-service-grid.html) GigaSpaces XAP uses multicast to discover the [Lookup Service](./lookup-service-configuration.html), and register their proxies.
 - Clients use multicast to discover the [Lookup Service Configuration](./lookup-service-configuration.html) and look up a matching service proxy (such as the space).
 
 {% tip title=What should I do in order to determine if multicast is enabled on my environment? %}

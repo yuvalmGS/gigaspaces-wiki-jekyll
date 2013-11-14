@@ -79,7 +79,7 @@ With this approach you first retrieve an initial set of "root space objects" usu
 With this approach you access the referenced (child) objects directly and from these access their parent object. With this flow the child object store the parent object ID (and routing field value). You query the space for child objects via some property(s) using a [SQLQuery](./sqlquery.html) or a [template](./template-matching.html) with the `readMultiple` call , iterate over the child objects result set collecting getting the parent IDs and via the `readByIds` call read all relevant parent objects.
 
 {% tip %}
-XAP 9.5 support projections where you can read specific properties (delta read) instead of reading the entire space object content. This may optimize the data retrieval flow.
+Since version 9.5, XAP supports projections where you can read specific properties (delta read) instead of reading the entire space object content. This may optimize the data retrieval flow.
 {% endtip %}
 
 #### Parent-Child Bi-Directional Data Retrieval Flow

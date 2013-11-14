@@ -28,7 +28,7 @@ Few other ways Lease can be managed include,
 
 # Space Object Lease
 
-Leases can be used for objects written to GigaSpaces cluster. All the write operations in [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/GigaSpace.html) interface support Lease. Lease duration is an argument that is passed to the write operations and they return a Lease Context which can be used to manage the Leases.
+Leases can be used for objects written to GigaSpaces cluster. All the write operations in [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) interface support Lease. Lease duration is an argument that is passed to the write operations and they return a Lease Context which can be used to manage the Leases.
 
 {% highlight java %}
 UrlSpaceConfigurer configurer=new UrlSpaceConfigurer("jini://*/*/space");
@@ -138,7 +138,7 @@ Each time a lease is renewed, the renewal manager will ask for an extension equa
 otherwise it will ask for an extension equal to the lease's remaining desired duration.
 
 {% note %}
- With 9.5 Release, Lease.ANY is not supported, equivalent is to use Lease.FOREVER when using LeaseRenewalManager.
+ Starting from XAP 9.5, Lease.ANY is not supported, equivalent is to use Lease.FOREVER when using LeaseRenewalManager.
 {% endnote %}
 
 Once a lease is given to a lease renewal manager, the manager will continue to renew the lease until one of the following occurs:

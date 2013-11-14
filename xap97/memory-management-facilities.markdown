@@ -10,6 +10,7 @@ categories: XAP97
 # Overview
 
 The Memory Management facility is used to assist the client in avoiding a situation where a space server gets into an out-of-memory failure scenario. Based on the configured cache policy, the memory manager protects the space (and the application, in the case it is running collocated with the space) from consuming memory beyond a defined threshold.
+
 {% warning %}
 The client/Application is expected to have some business logic that will handle `org.openspaces.core.SpaceMemoryShortageException` that might be thrown (when using the openspaces API). When the legacy `IJSpace` interface is used, `com.j_spaces.core.MemoryShortageException` will be thrown instead. Without such business logic, the space server or a client local cache may eventually exhaust all their parent process available memory resources.
 {% endwarning %}
@@ -45,7 +46,7 @@ By default ALL IN CACHE policy is used for an in-memory data grid,and LRU-Cache 
 
 Both the `ALL_IN_CACHE` and `LRU` cache policies calculate the JVM's available memory to determine if there is a need to throw `SpaceMemoryShortageException` or to start to evict objects. Calculating the available memory is performed when the following operations are called: abort, changeReplicationState, clear, commit, count, getReplicationStatus, getRuntimeInfo, getSpacePump, getTemplatesInfo, joinReplicationGroup, leaveReplicationGroup, notify, prepare, prepareAndCommit, execute, read, readMultiple, replace, spaceCopy, update, updateMultiple, write.
 
-Before throwing `SpaceMemoryShortageException` or `MemoryShortageException` the local cache/local view/space performs an explicit garbage collection call (`[System.gc()](http://download.oracle.com/javase/6/docs/api/java/lang/System.html#gc())`), allowing the JVM to reclaim any unused heap memory. This activity may happen at the client side when running a local cache or a local view, or at the space side (JVM hosting the GSC).
+Before throwing `SpaceMemoryShortageException` or `MemoryShortageException` the local cache/local view/space performs an explicit garbage collection call ([`System.gc()`](http://download.oracle.com/javase/6/docs/api/java/lang/System.html#gc())), allowing the JVM to reclaim any unused heap memory. This activity may happen at the client side when running a local cache or a local view, or at the space side (JVM hosting the GSC).
 
 The explicit garbage collection call reduces the probability of throwing `SpaceMemoryShortageException` or `MemoryShortageException` in case the JVM does have some available memory left. Still, such a call might impact the client side (when running local cache/view) or space-side responsiveness since during the garbage collection activity, no JVM thread will manage to perform its activity. With a client or space using a large heap size, this _might_ introduce a long pause.
 
@@ -101,10 +102,10 @@ Since LRU eviction can be costly, it is done in asynchronously by the memory man
 
 # Explicit Eviction of Objects from the Space
 
-Objects can be evicted explicitly from the space by calling the `takeMultiple` or `clear` operations on [the GigaSpace interface](./the-gigaspace-interface.html) combined with the [`TakeModifiers.EVICT_ONLY`](http://www.gigaspaces.com/docs/JavaDoc9.6/com/j_spaces/core/client/TakeModifiers.html) modifier. The `clear` operation only returns the number of objects actually evicted from the space. The `takeMultiple` operation returns the actual objects that were evicted. Here's usage example:
+Objects can be evicted explicitly from the space by calling the `takeMultiple` or `clear` operations on [the GigaSpace interface](./the-gigaspace-interface.html) combined with the [`TakeModifiers.EVICT_ONLY`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/client/TakeModifiers.html) modifier. The `clear` operation only returns the number of objects actually evicted from the space. The `takeMultiple` operation returns the actual objects that were evicted. Here's usage example:
 
 {% inittab %}
-{% tabcontent Using clear() %}
+{% tabcontent Using clear %}
 
 {% highlight java %}
 GigaSpace gigaSpace = ...;
@@ -114,7 +115,7 @@ int numEvicted = gigaSpace.clear(template, ClearModifiers.EVICT_ONLY);
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent Using takeMultiple() %}
+{% tabcontent Using takeMultiple %}
 
 {% highlight java %}
 GigaSpace gigaSpace = ...;

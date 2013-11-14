@@ -67,7 +67,7 @@ Calculations can be deployed colocated with the data or separately.
 
 The Calculating Flow includes the following:
 
-- A client, splitting a list of Trade IDs into multiple batches. Each Batch is sent into the calculation node (space partition) via a [AnalysisTask](#The AnalysisTask) that implements the [Task Interface]({%latestjavaurl%}/Task-Execution-over-the-Space.html). Each calculation node stores a subset of the Trade data.
+- A client, splitting a list of Trade IDs into multiple batches. Each Batch is sent into the calculation node (space partition) via a [AnalysisTask](#The AnalysisTask) that implements the [Task Interface]({%latestjavaurl%}/task-execution-over-the-space.html). Each calculation node stores a subset of the Trade data.
 - [The AnalysisTask](#The AnalysisTask) is executed. Once completed, an intermediate result is sent back to the client. If the requested Trade cannot be found within the space, it is loaded from the database.
 -  The client aggregating the results retrieved from all the calculations nodes and reducing it to four numbers. These four numbers represent books.
 
@@ -76,7 +76,7 @@ The Calculating Flow includes the following:
 {% exclamation %} When running the Elastic Calcualtion Engine on a single machine, scaling up and down will not affect the calculation time, but when running this on a grid with multiple machines, you will see better or worse calculation time when the grid scales up or down.
 
 ## Intelligent Map-Reduce
-The Elastic Calcualtion Engine uses the [ExecutorBuilder]({%latestjavaurl%}/Task-Execution-over-the-Space.html#ExecutorBuilder+API). This allows executing multiple `AnalysisTasks` in a parallel manner where each Task includes a different Trade ID list to use for the calculation. Each List is sent to a relevant node where it is used to fetch the Trade data from the colocated space or to be loaded from the database.
+The Elastic Calcualtion Engine uses the [ExecutorBuilder]({%latestjavaurl%}/task-execution-over-the-space.html#executorbuilder-api). This allows executing multiple `AnalysisTasks` in a parallel manner where each Task includes a different Trade ID list to use for the calculation. Each List is sent to a relevant node where it is used to fetch the Trade data from the colocated space or to be loaded from the database.
 
 ## The AnalysisTask
 The `AnalysisTask` include the following:
@@ -115,7 +115,7 @@ The Trade Space class stores the following items:
 - CacheFlowData - The cache flow data for Year 0 through Year 5.
 
 ## Elasticity
-The [Elastic Processing Unit]({%latestjavaurl%}/Elastic-Processing-Unit.html) is used to deploy the data/compute grid and scale it dynamically. This allows you to increase the capacity of the data grid and leverage additional CPU resources for the calculation activity. With this demo, the user changes the capacity using a scale command that instructs the data/compute grid to increase its capacity (this in turn starts additional containers and rebalances the data/compute grid) or decrease its capacity (by terminating containers and rebalancing).
+The [Elastic Processing Unit]({%latestjavaurl%}/elastic-processing-unit.html) is used to deploy the data/compute grid and scale it dynamically. This allows you to increase the capacity of the data grid and leverage additional CPU resources for the calculation activity. With this demo, the user changes the capacity using a scale command that instructs the data/compute grid to increase its capacity (this in turn starts additional containers and rebalances the data/compute grid) or decrease its capacity (by terminating containers and rebalancing).
 
 # Remote Calculations
 For long calculations that consume relatively large amount of CPU time, the recommended approach to implement distributed calculations is the [Master-Worker Pattern](./master-worker-pattern.html). The approach suggested with the Master-Worker pattern should be used when the calculation time is relativity very long where the data access time can't be considered as overhead.

@@ -205,7 +205,7 @@ You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to
 
 By using [processing units](./the-processing-unit-structure-and-configuration.html), you can deploy full-blown applications onto the service grid, and leverage on the [Space's messaging](./messaging-and-events.html) and code execution capabilities, such as [remoting](./space-based-remoting.html) and [task execution](./task-execution-over-the-space.html). This allows you to execute the business logic close to the Space instance for the best possible performance.
 
-A processing unit can define an embedded Space in the processing unit's `[pu.xml](./configuring-processing-unit-elements.html)` file. The `pu.xml` file is, in effect a [Spring](http://www.springframework.org) XML configuration file, and you simply define the Space using GigaSpaces namespace extensions, or using plain Spring format. Here is an example:
+A processing unit can define an embedded Space in the processing unit's [`pu.xml`](./configuring-processing-unit-elements.html) file. The `pu.xml` file is, in effect a [Spring](http://www.springframework.org) XML configuration file, and you simply define the Space using GigaSpaces namespace extensions, or using plain Spring format. Here is an example:
 
 {% highlight xml %}
 <os-core:space id="space" url="/./mySpace"/>
@@ -390,7 +390,7 @@ There are two types of resources associated with space instances and space clien
 1. **Thread and memory resources**: If your space client or embedded space are running within a Spring-enabled environment (e.g. the GigaSpaces service grid or a standalone Spring application), and are configured in a Spring application context, these resources will be cleaned up automatically when the Spring application context is destroyed. <br/> However, if you start the space client or space instance programatically, you must call the `UrlSpaceConfigurer#destroy` method when your application no longer uses the space instance / space client.
 1. **Communication resources**: All communication related resources in GigaSpaces are are shared between all the GigaSpaces components
 at the Java classloader level. If you're using the [GigasSpaces service grid](./the-runtime-environment.html) to run your GigaSpaces application you do not need to handle communication resources cleanup explicitly. But if your application runs on a standalone environment or another hosted environment (e.g. a JEE application server) you will need to explicitly clean up those resources.
-You should make sure to shutdown these resources explicitly when your application no longer uses the GigaSpaces components (e.g. when it's undeployed from the application server). This is done by calling the static method [`LRMIManager#shutdown`](http://www.gigaspaces.com/docs/JavaDoc9.6/com/gigaspaces/lrmi/LRMIManager.html).
+You should make sure to shutdown these resources explicitly when your application no longer uses the GigaSpaces components (e.g. when it's undeployed from the application server). This is done by calling the static method [`LRMIManager#shutdown`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/lrmi/LRMIManager.html).
 Note that if the JVM process is shut down anyway, you do not need to do explicitly shut down the communication resources.
 {% endnote %}
 

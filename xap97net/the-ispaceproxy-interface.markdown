@@ -58,12 +58,17 @@ Several `ISpaceProxy` instances can be defined within a single Processing Unit, 
 - The `ISpaceProxy` variable represents a remote or embedded space proxy (for a single space or clustered) and **should be constructed only** once throughout the lifetime of the application process.
 - You should treat the `ISpaceProxy` variable as a singleton to be shared across multiple different threads.
 - The `ISpaceProxy` interface is a thread safe and there is no need to create an `ISpaceProxy` variable per application thread.
-- In case the space has been fully terminated (no backup or primary instances running any more) the client space proxy will try to reconnect to the space up to a predefined timeout based on the [Proxy Connectivity]({%latestjavaurl%}/proxy-connectivity.html) settings. If it fails to reconnect, an error will be displayed.
+- In case the space has been fully terminated (no backup or primary instances running any more) the client space proxy will try to reconnect to the space up to a predefined timeout based on the [Proxy Connectivity]({% currentjavaurl %}/proxy-connectivity.html) settings. If it fails to reconnect, an error will be displayed.
 {% endnote %}
 
 # Operations
 
-The [ISpaceProxy](http://www.gigaspaces.com/docs/JavaDocOS//docs/dotnetdocs9.5/) interface includes the following main operations:
+
+The [ISpaceProxy](%dotnetdoc %}/GigaSpaces.Core.ISpaceProxy) interface includes the following main operations:
+
+
+
+
 
 {: .table .table-bordered}
 |[Id Based operations](./id-queries.html)|[Batch operations](#Batch Operations)|[Asynchronous operations](#Asynchronous Operations)|Data Count operations|
@@ -71,7 +76,7 @@ The [ISpaceProxy](http://www.gigaspaces.com/docs/JavaDocOS//docs/dotnetdocs9.5/)
 
 {: .table .table-bordered}
 |[Data Query operations](./sqlquery.html)|Data Insert and Update operations|[Business logic execution operations](./task-execution-over-the-space.html)|Data removal operations|
-|Read<br/>ReadMultiple<br/>[GetSpaceIterator]({%latestjavaurl%}/paging-support-with-space-iterator.html)|Write<br/>WriteMultiple [change](./change-api.html) |Execute<br/>executorBuilder|Clean<br/>Clear<br/>Take<br/>TakeMultiple|
+|Read<br/>ReadMultiple<br/>[GetSpaceIterator]({% currentjavaurl %}/paging-support-with-space-iterator.html)|Write<br/>WriteMultiple [change](./change-api.html) |Execute<br/>executorBuilder|Clean<br/>Clear<br/>Take<br/>TakeMultiple|
 
 { include ispaceproxy-code-snippets.markdown }
 
@@ -181,7 +186,7 @@ In a similar manner, the read timeout and write lease can be specified.
 {% endinittab %}
 
 {% tip %}
-See more examples for the `ISpaceProxy` interface usage with the [POJO Support]({%latestjavaurl%}/pojo-support.html) section.
+See more examples for the `ISpaceProxy` interface usage with the [POJO Support]({% currentjavaurl %}/pojo-support.html) section.
 {% endtip %}
 
 # Saving Data to the Space
@@ -190,11 +195,11 @@ The `ISpaceProxy.Write()` operation saves a copy of an object into the Space. Th
 
 When updating an object with many fields use the `PARTIAL_UPDATE` mode.
 
-When performing a Write operation you may provide a lease (time to live) duration (in milliseconds time unit) for the object. The Write invocation returns a [Lease]({%latestjavaurl%}/leases---automatic-expiration.html) object allowing you to cancel or renew the object lease. When the lease expires, the object is removed from the Space. The default lease duration is `FOREVER`. An `IllegalArgumentException` is thrown if the lease time requested is negative.
+When performing a Write operation you may provide a lease (time to live) duration (in milliseconds time unit) for the object. The Write invocation returns a [Lease]({% currentjavaurl %}/leases---automatic-expiration.html) object allowing you to cancel or renew the object lease. When the lease expires, the object is removed from the Space. The default lease duration is `FOREVER`. An `IllegalArgumentException` is thrown if the lease time requested is negative.
 
 If a Write returns without throwing an exception, that object is committed to the Space, possibly within a transaction. When the Write operation throws an exception, the exception type and message must be considered in order to know whether the object was successfully committed to the Space or not. For example, the `EntryAlreadyInSpaceException` when using write with a `WriteOnly` modifier means the object was not committed, as it already exists in the Space.
 
-Writing an object into a space might generate [notifications]({%latestjavaurl%}/notify-container.html) to registered objects.
+Writing an object into a space might generate [notifications]({% currentjavaurl %}/notify-container.html) to registered objects.
 
 ## Returning Previous Value
 
@@ -202,7 +207,7 @@ When updating an existing object in the space, you may need the object's value b
 
 # Performing a Delta Update
 
-You may update selected Space object fields (delta) using the [WriteModifiers.PARTIAL_UPDATE](http://www.gigaspaces.com/docs/JavaDoc9.6/com/gigaspaces/client/WriteModifiers.html) modifier. This option is useful when having objects with large number of fields where you would like to update only few of the space object fields. This optimizes the network utilization and avoids serializing/de-serializing the entire object fields when interacting with a remote space.
+You may update selected Space object fields (delta) using the [WriteModifiers.PARTIAL_UPDATE](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/client/WriteModifiers.html) modifier. This option is useful when having objects with large number of fields where you would like to update only few of the space object fields. This optimizes the network utilization and avoids serializing/de-serializing the entire object fields when interacting with a remote space.
 
 ## How to Perform a Delta Update?
 
@@ -284,9 +289,9 @@ See the [SQLQuery](./sqlquery.html) for details.
 
 ## Space Iterator
 
-The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc9.6/com/j_spaces/core/client/GSIterator.html) allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the `readMultiple` since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side.
+The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/client/GSIterator.html) allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the `readMultiple` since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side.
 
-See the [Paging Support with Space Iterator]({%latestjavaurl%}/paging-support-with-space-iterator.html) for details.
+See the [Paging Support with Space Iterator]({% currentjavaurl %}/paging-support-with-space-iterator.html) for details.
 
 # ReadIfExists and Read Operations
 
@@ -314,7 +319,7 @@ With a `RemoteException`, an object can be removed from a space and yet never re
 
 If you would like to take objects from the space in the same order they have been written into the space you should perform the take objects in a [FIFO mode](./fifo-support.html).
 
-Taking an object from the space might generate [notifications]({%latestjavaurl%}/notify-container.html) to registered objects/queries.
+Taking an object from the space might generate [notifications]({% currentjavaurl %}/notify-container.html) to registered objects/queries.
 
 {% tip %}
 The `take` operation default timeout is `JavaSpace.NO_WAIT`.
@@ -339,11 +344,11 @@ Here are few important considerations when using the batch operations:
 - When using `writeMultiple`, you should verify that duplicated entries (with the same ID) do not appear as part of the passed array, since the identity of the object is determined based on its `ID` and not based on its reference. This is extremely important with an embedded space, since `writeMultiple` injects the ID value into the object after the write operation (when autogenerate=false).
 - The `readMultiple` and `takeMultiple` operations **do not support timeout** operations. The simple way to achieve this is by calling the `read` operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
 - Exception handling - batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
-    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultiplePartialFailureException)
-    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultipleException)
-    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ReadMultipleException)
-    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/TakeMultipleException)
-    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ClearException)
+    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultiplePartialFailureException.html)
+    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultipleException.html)
+    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ReadMultipleException.html)
+    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/TakeMultipleException.html)
+    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ClearException.html)
 
 # Asynchronous Operations
 
@@ -447,7 +452,7 @@ public class AsyncWriteTask implements Task<Integer>{
 
 # Declarative Transactions
 
-As seen in the take API above, there is no need to provide a Jini transaction object for the different space operations. `GigaSpace` with the different OpenSpaces [transaction managers]({%latestjavaurl%}/transaction-management.html) and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the `GigaSpace` interface joins it, using Spring's rich transaction support.
+As seen in the take API above, there is no need to provide a Jini transaction object for the different space operations. `GigaSpace` with the different OpenSpaces [transaction managers]({% currentjavaurl %}/transaction-management.html) and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the `GigaSpace` interface joins it, using Spring's rich transaction support.
 
 {% exclamation %} In order to have GigaSpace transactional, the transaction manager must be provided as a reference when constructing the GigaSpace bean. For example (using the distributed transaction manager):
 
@@ -601,8 +606,8 @@ A default implementation of the exception translator is automatically used, whic
 
 Batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
 
-- [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultiplePartialFailureException)
-- [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/WriteMultipleException)
-- [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ReadMultipleException)
-- [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/TakeMultipleException)
-- [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDocOS/org/openspaces/core/ClearException)
+- [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultiplePartialFailureException.html)
+- [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultipleException.html)
+- [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ReadMultipleException.html)
+- [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/TakeMultipleException.html)
+- [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ClearException.html)

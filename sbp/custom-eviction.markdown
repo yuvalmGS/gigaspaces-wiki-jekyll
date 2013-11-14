@@ -22,7 +22,6 @@ GigaSpaces supports two cache policies, [LRU]({%latestjavaurl%}/lru-cache-policy
 
 As the name suggests LRU is "least recently used" data and any data written first into the space become a candidate for eviction when there is no more room in the JVM. This policy works well for [Side Cache scenarios]({%latestjavaurl%}/caching-scenarios.html#cachingscenarios-sideCache) where the purpose of GigaSpaces is to cache frequently used data.
 
-For some applications LRU based eviction is not suitable. Examples include, applications that cache reference data which should always be in the space. applications that want some data to be always in space irrespective of when it is written as this data has higher SLA requirements and need to be readily available. For these scenarios, [ALL_IN_CACHE]({%latestjavaurl%}/ALL-IN-CACHE-Cache-Policy.html) is more appropriate. In these scenarios, application can adopt one of the strategies mentioned below and not run out of memory and cause MemoryShortageExceptions.
 
 # Eviction Strategies
 
@@ -100,9 +99,9 @@ This approach is most suitable for application which have fluctuating data loads
 
 ## Using a Polling Container
 
-Sometimes applications data usage is based on the age of the data. After end of a business day any data for that day is not needed by the application and can be evicted. Applications like these use a [polling container]({%latestjavaurl%}/Polling-Container.html) to perform eviction logic.
+Sometimes applications data usage is based on the age of the data. After end of a business day any data for that day is not needed by the application and can be evicted. Applications like these use a [polling container]({%latestjavaurl%}/polling-container.html) to perform eviction logic.
 
-Eviction logic will be defined as listener logic. Eviction candidates will be selected using a [Trigger Receive Handler]({%latestjavaurl%}/Polling-Container.html#PollingContainer-TriggerReceiveOperation) feature which will modify the query dynamically for each invocation.
+Eviction logic will be defined as listener logic. Eviction candidates will be selected using a [Trigger Receive Handler]({%latestjavaurl%}/polling-container.html#pollingcontainer-triggerReceiveOperation) feature which will modify the query dynamically for each invocation.
 
 Another variation of this approach is listener logic will wait for a command object (something like a close of business day event). When this command object is written into space eviction logic starts and cleans up data.
 
@@ -228,7 +227,7 @@ public class Evictor {
 {% note %}
 This example is using Maven for packaging and build.
 
-- Please [install the OpenSpaces Maven plugin]({%latestjavaurl%}/Maven-Plugin.html#MavenPlugin-Installation) before you run this example.
+- Please [install the OpenSpaces Maven plugin]({%latestjavaurl%}/maven-plugin.html#MavenPlugin-Installation) before you run this example.
 - Please update the GigaSpaces and Spring versions to appropriate versions in the pom.xml file.
 {% endnote %}
 
@@ -541,7 +540,7 @@ gs.write(wMark, Lease.FOREVER, 5000, UpdateModifiers.UPDATE_OR_WRITE);
 {% note %}
 This example is using Maven for packaging and build.
 
-- Please [install the OpenSpaces Maven plugin]({%latestjavaurl%}/Maven-Plugin.html#MavenPlugin-Installation) before you run this example.
+- Please [install the OpenSpaces Maven plugin]({%latestjavaurl%}/maven-plugin.html#MavenPlugin-Installation) before you run this example.
 - Please update the GigaSpaces and Spring versions to appropriate versions in the pom.xml file.
 {% endnote %}
 
@@ -595,13 +594,13 @@ Below is a screenshot of Tenured pool of the JVM,
 
 Applications using External Data Source Integration will need some changes to the eviction functionality. Because of EDS integration the take/clear will remove the data from the database also which might not be intended.
 
-In cases where the Space is using [LRU]({%latestjavaurl%}/LRU-Cache-Policy.html) mode,
+In cases where the Space is using [LRU]({%latestjavaurl%}/lru-cache-policy.html) mode,
 
-- Take or clear operation can be triggered using the [TakeModifiers.EVICT_ONLY]({%latestjavaurl%}/LRU-Cache-Policy.html#LRU-CachePolicy-ExplicitEvictionofObjectsfromtheSpace) which will remove the data only from space and not from the DB.
+- Take or clear operation can be triggered using the [TakeModifiers.EVICT_ONLY]({%latestjavaurl%}/lru-cache-policy.html#LRU-CachePolicy-ExplicitEvictionofObjectsfromtheSpace) which will remove the data only from space and not from the DB.
 
-In [ALL_IN_CACHE]({%latestjavaurl%}/ALL-IN-CACHE-Cache-Policy.html) mode,
+In [ALL_IN_CACHE]({%latestjavaurl%}/all-in-cache-cache-policy.html) mode,
 
 - Take or clear operations will remove the data from space and database (in read-write mode), you should use
-    - Lease expiration option to remove the entries from the space and free up memory. When you restart the cluster, expired data will get loaded again and fill up the entire cluster. In order to avaoid this you have to propogate the lease information into the DB (using the [SpaceLease]({%latestjavaurl%}/POJO-Metadata.html) property).
+    - Lease expiration option to remove the entries from the space and free up memory. When you restart the cluster, expired data will get loaded again and fill up the entire cluster. In order to avaoid this you have to propogate the lease information into the DB (using the [SpaceLease]({%latestjavaurl%}/pojo-metadata.html) property).
     Objects which are cleared from the space using Lease expiration are not loaded automatically when someone queries for them, you will need to build custom functionality to retrieve this data.
     - Custom EDS mechanism that intercepts the eviction requests and stops propogating them into DB.

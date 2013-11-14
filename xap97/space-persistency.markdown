@@ -18,7 +18,7 @@ The two components mentioned above are in charge of the following activities:
 - The Space synchronization endpoint component handles changes done within the space delegation to the persistency layer.
 
 
-GigaSpaces Space Persistency provides the [SpaceDataSource](http://www.gigaspaces.com/docs/JavaDoc9.6/com/gigaspaces/datasource/SpaceDataSource.html) and [SpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc9.6/com/gigaspaces/sync/SpaceSynchronizationEndpoint.html) classes which can be extended and then used to load data and store data into an existing data source. Data is [loaded from the data source](./space-persistency-initial-load.html) during space initialization (`SpaceDataSource`), and from then onwards the application works with the space directly.
+GigaSpaces Space Persistency provides the [SpaceDataSource](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/datasource/SpaceDataSource.html) and [SpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/sync/SpaceSynchronizationEndpoint.html) classes which can be extended and then used to load data and store data into an existing data source. Data is [loaded from the data source](./space-persistency-initial-load.html) during space initialization (`SpaceDataSource`), and from then onwards the application works with the space directly.
 
 {% indent %}
 ![data-grid-initial-loadNew.jpg](/attachment_files/data-grid-initial-loadNew.jpg)
@@ -43,7 +43,7 @@ Persistency can be configured to run in Synchronous or Asynchronous mode:
 {% infosign %} The difference between the Synchronous or Asynchronous persistency mode concerns how data is persisted back to the database. The Synchronous mode data is persisted immediately once the operation is conducted where the client application wait for the `SpaceDataSource`/`SpaceSynchronizationEndpoint` to confirm the write. With the Asynchronous mode (mirror Service), data is persisted in a **reliable** asynchronous manner using the mirror Service as a write behind activity. This mode provides maximum performance.
 
 {% tip %}
-If you're migrating from a GigaSpaces version prior to 9.5 please see the [Migrating From External Data Source API](./migrating-from-external-data-source-api.html) page.
+If you're migrating from a GigaSpaces version prior to {% latestxaprelease %} please see the [Migrating From External Data Source API](./migrating-from-external-data-source-api.html) page.
 {% endtip %}
 
 # Space Persistency API

@@ -1133,15 +1133,5 @@ public class BatchListener {
 
 # Default Values of Notify Container Configuration Parameters
 
-The default values for all of the notify container configuration parameters, such as `perform-take-on-notify, ignore-event-on-null-take` and others can be found in the JavaDoc (and sources) of the class `[org.openspaces.events.notify.SimpleNotifyEventListenerContainer](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/events/notify/SimpleNotifyEventListenerContainer.html)` and its super class, namely `[org.openspaces.events.notify.AbstractNotifyEventListenerContainer](http://www.gigaspaces.com/docs/JavaDoc9.6/org/openspaces/events/notify/AbstractNotifyEventListenerContainer.html)`.
-For example, `perform-take-on-notify` default value is documented in the method `SimpleNotifyEventListenerContainer.setPerformTakeOnNotify(boolean)`
-
-# Schema
-
-The Notify Container schema and complete configuration options are described below:
-
-{% indent %}
-![notify_container_schema.jpg](/attachment_files/notify_container_schema.jpg)
-{% endindent %}
-
-***Link required
+The default values for all of the notify container configuration parameters, such as `perform-take-on-notify, ignore-event-on-null-take` and others can be found in the JavaDoc (and sources) of the class [`org.openspaces.events.notify.SimpleNotifyEventListenerContainer`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/events/notify/SimpleNotifyEventListenerContainer.html) and its super class, namely [`org.openspaces.events.notify.AbstractNotifyEventListenerContainer`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/events/notify/AbstractNotifyEventListenerContainer.html).
+For example, `perform-take-on-notify` default value is documented in the method `SimpleNotifyEventListenerContainer.setPerformTakeOnNotify(boolean)`.

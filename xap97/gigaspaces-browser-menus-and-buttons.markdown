@@ -160,7 +160,7 @@ The button toolbar allows you to perform maintenance operations on containers an
 | ![destroy_space.gif](/attachment_files/destroy_space.gif) | Destroys the selected space |
 | ![GMC_space_groupManagementToolbarIcon_6.5.jpg](/attachment_files/GMC_space_groupManagementToolbarIcon_6.5.jpg) | Opens the [Discovery Group Selection](#Settings Menu) window |
 | ![GMC_space_ResetPerspectiveToolbarIcon_6.5.jpg](/attachment_files/GMC_space_ResetPerspectiveToolbarIcon_6.5.jpg) | Resets all main window tabs, returns docking windows to their initial size and location. |
-| ![help.gif](/attachment_files/help.gif) | Opens the [GigaSpaces Online Help homepage](./xap-9.6-documentation-home.html) |
+| ![help.gif](/attachment_files/help.gif) | Opens the [GigaSpaces Online Help homepage](/{% latestjavaurl %}) |
 
 # Address Bar
 

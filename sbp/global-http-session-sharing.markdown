@@ -32,7 +32,7 @@ GigaSpaces Global HTTP Session Management features the following:
 - **Transparent Session sharing** between any App/Web server - Any JEE app/web server (WebSphere , Weblogic , JBoss , Tomcat , Jetty , GlassFish...) may share their HTTP session with each other.
 - **Application elasticity** - Support **session replication** across different App/Web applications located within the same or different data-centers/clouds allowing the application to scale dynamically without any downtime. 
 - **Unlimited number of sessions and concurrent users** support - Sub-millisecond session data access by using GigaSpaces In-Memory-Data-Grid.
-- **Session replication over the WAN** support - Utilizing GigaSpaces [XAP9:Multi-Site Replication over the WAN] technology.
+- **Session replication over the WAN** support - Utilizing GigaSpaces Multi-Site Replication over the WAN technology.
 - HTTP Session **data access scalability** - Session data can utilize any of the supported In-Memory-Data-Grid topologies ; replicated , partitioned , with and without local cache.
 - **Transparent App/Web Failover** - Allow app server restart without any session data loss.
 - Any session data type attribute support - **Primitive and Non-Primitive** (collections, user defined types) attributes supported.
@@ -149,7 +149,7 @@ sessionValidationScheduler.sessionManager = $sessionManager
 securityManager.sessionManager.sessionValidationScheduler = $sessionValidationScheduler
 {% endhighlight %}
 
-{% tip %}The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Space URL]({%latestjavaurl%}/Space-URL.html) to the IMDG deployed within your site.{% endtip %}
+{% tip %}The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Space URL]({%latestjavaurl%}/space-url.html) to the IMDG deployed within your site.{% endtip %}
 
 ### Web Application Libraries
 
@@ -173,11 +173,11 @@ To deploy the IMDG start the GigaSpaces agent using the `gs-agent` and run the f
 
 		gs deploy-space sessionSpace
 
-{% tip %}See the [deploy-space]({%latestjavaurl%}/deploy-space+GigaSpaces+CLI) command for details.{% endtip %}
+{% tip %}See the [deploy-space]({%latestjavaurl%}/deploy-space-gigaspaces-cli.html) command for details.{% endtip %}
 
 ### The WAN Gateway
 
-The [WAN Gateway]({%latestjavaurl%}/Multi-Site+Replication+over+the+WAN) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](./WAN+Replication+Gateway) best practice for an example of how a multi-master Gateway architecture can be deployed.
+The [WAN Gateway]({%latestjavaurl%}/multi-site-replication-over-the-wan.html) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](./wan-replication-gateway.html) best practice for an example of how a multi-master Gateway architecture can be deployed.
 
 ### Other configuration options
 
@@ -202,7 +202,7 @@ Session manager uses XStream libraries for serializing session data to XML. XStr
 
 ##### Secured GigaSpaces cluster
 
-When using a [Secure GigaSpaces cluster]({%latestjavaurl%}/Securing-your-Data.html) you can pass security credentials using following parameters in `shiro.ini` file,
+When using a [Secure GigaSpaces cluster]({%latestjavaurl%}/securing-your-data.html) you can pass security credentials using following parameters in `shiro.ini` file,
 
 		# When using secured GigaSpace cluster, pass the credentials here
 		# cacheManager.username = gs
@@ -297,7 +297,7 @@ You can shutdown Websphere or Tomcat and later restart these. Your web applicati
 
 ### Multi-Site Deployment
 
-When deploying the [multi-site example](./WAN+Replication+Gateway) you should change the `shiro.ini` for each site to match the local site Space URL. For example,
+When deploying the [multi-site example](./wan-replication-gateway.html) you should change the `shiro.ini` for each site to match the local site Space URL. For example,
 to connect to the DE space you should have the web application use a `shiro.ini` with the following:
 
 		sessionDAO.activeSessionsCacheName = jini://*/*/wanSpaceDE?useLocalCache&groups=DE

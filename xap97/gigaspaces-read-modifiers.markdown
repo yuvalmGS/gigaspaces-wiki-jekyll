@@ -12,7 +12,7 @@ categories: XAP97
 
 # Overview
 
-GigaSpaces `ReadModifiers` class (see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/j_spaces/core/client/ReadModifiers.html)) provides static methods and constants to decode read-type modifiers. The sets of modifiers are represented as integers with distinct bit positions representing different modifiers.
+GigaSpaces `ReadModifiers` class (see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/ReadModifiers.html)) provides static methods and constants to decode read-type modifiers. The sets of modifiers are represented as integers with distinct bit positions representing different modifiers.
 
 Four main types of modifiers can be used:
 

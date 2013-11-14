@@ -40,12 +40,12 @@ There are two options to implement Data retrieval:
 
 ####  SQL-based API
 
-The [SQLDataProvider](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/SQLDataProvider.html) allows you to implement a full-featured EDS with databases that support SQL queries.
+The [SQLDataProvider](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/SQLDataProvider.html) allows you to implement a full-featured EDS with databases that support SQL queries.
 When the EDS implements the `SQLDataProvider` interface, all space data retrieval operations are translated to SQLQuery and passed to `DataIterator iterator(SQLQuery query)`. The result is an iterator of the fetched data, that is iterated by the space, and the data is inserted into the space memory. See Default implementation of SQLDataProvider.iterator().
 
 #### Object-based API
 
-The **[DataProvider](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/DataProvider.html)** should be used for databases that don't support SQL queries.
+The **[DataProvider](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/DataProvider.html)** should be used for databases that don't support SQL queries.
 
 - `DataIterator iterator(userObjectTemplate)`: This method is called when read is performed with a template. The original template is passed as the parameter to iterator(). The result is an iterator of the fetched data that is iterated by the space, and the data is inserted into the space memory.
 - `Object read(Object userObjectTemplate)`: This method is used to optimize queries that always return a single object - reads with UID. The data is the user object template that has a non-null UID. The result should be a matching object found in the EDS with the same ID.
@@ -65,14 +65,14 @@ In case you would like to avoid specific classes or space objects from being per
 
 ### Persistency Transactional Mode
 
-If the EDS implements the **[BulkDataPersister](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/BulkDataPersister.html)** interface, data persistency operations that fall under a transaction are translated to a list of **BulkItem**(operation+data), and passed to `executeBulk(List<BulkItem>` items).
-The [BulkItem](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/BulkItem.html) is an object that has two components - the data that was changed and the operation that was executed - WRITE/UPDATE/REMOVE. See Default implementation of BulkDataPersister.executeBulk()
+If the EDS implements the **[BulkDataPersister](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/BulkDataPersister.html)** interface, data persistency operations that fall under a transaction are translated to a list of **BulkItem**(operation+data), and passed to `executeBulk(List<BulkItem>` items).
+The [BulkItem](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/BulkItem.html) is an object that has two components - the data that was changed and the operation that was executed - WRITE/UPDATE/REMOVE. See Default implementation of BulkDataPersister.executeBulk()
 
 ### Persistency Non-Transactional Mode
 
-In the EDS does not implement  **[BulkDataPersister](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/BulkDataPersister.html)** interface, or space operations are not wrapped under a transaction, persistence operations are invoked on a per space operation basis.
+In the EDS does not implement  **[BulkDataPersister](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/BulkDataPersister.html)** interface, or space operations are not wrapped under a transaction, persistence operations are invoked on a per space operation basis.
 
-The **[DataPersister](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/DataPersister.html)** interface has three methods for each space operation:
+The **[DataPersister](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/DataPersister.html)** interface has three methods for each space operation:
 
 - `write(Object userObject)` - Invoked when a new object is inserted to the space.
 - `update(Object userObject)` - Invoked when an object is updated in the space.
@@ -83,7 +83,7 @@ The **[DataPersister](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/g
 {% endtip %}
 
 ##Initialization and Shutdown
-Initialization and Shutdown done via the **[ManagedDataSource](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/ManagedDataSource.html)** interface:
+Initialization and Shutdown done via the **[ManagedDataSource](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/ManagedDataSource.html)** interface:
 
 - `init(Properties customProperties)` is called on space startup, so all the EDS initialization is done in this method. All the configuration is passed in the _customProperties_ parameter. This is the content of a properties file that is completely implementation dependant, and can be configured in the following way: see EDS Configuration and Default implementation of ManagedDataSource.init()
 - `DataIterator initialLoad()` is called just after the init(). It returns an iterator to the data that should be inserted into the space on startup. This can be all of the data, or only a subset. This depends on the implementation - see Default implementation of ManagedDataSource.initialLoad()
@@ -155,14 +155,14 @@ If a Custom EDS implements BulkDataPersister but the space operations are not in
 
 # All External Data Source APIs
 
-- **[ManagedDataSource](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/ManagedDataSource.html)** -- handles data source life cycle -- configuration,initialization, shutdown, and initial load.
-- **[SQLDataProvider](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/SQLDataProvider.html)** -- handles all space read operations.
-- **[DataProvider](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/DataProvider.html)** -- handles simple data source queries -- read operations.
-    - [DataIterator](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/DataIterator.html)
-- **[BulkDataPersister](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/BulkDataPersister.html)** -- handles the persistency of all write/update/take operations. Supports transactional operations.
-    - [BulkItem](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/BulkItem.html)
-- **[DataPersister](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?com/gigaspaces/datasource/DataPersister.html)** -- handles single data updates -- write/update/remove operations.
-- **[SQLDataProviderSplitter](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/persistency/patterns/SQLDataProviderSplitter.html)** --  A sql data provider that redirects the sql based operations to the given data source that
+- **[ManagedDataSource](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/ManagedDataSource.html)** -- handles data source life cycle -- configuration,initialization, shutdown, and initial load.
+- **[SQLDataProvider](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/SQLDataProvider.html)** -- handles all space read operations.
+- **[DataProvider](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/DataProvider.html)** -- handles simple data source queries -- read operations.
+    - [DataIterator](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/DataIterator.html)
+- **[BulkDataPersister](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/BulkDataPersister.html)** -- handles the persistency of all write/update/take operations. Supports transactional operations.
+    - [BulkItem](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/BulkItem.html)
+- **[DataPersister](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/DataPersister.html)** -- handles single data updates -- write/update/remove operations.
+- **[SQLDataProviderSplitter](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/persistency/patterns/SQLDataProviderSplitter.html)** --  A sql data provider that redirects the sql based operations to the given data source that
   can handle the given type.
 
 # Example

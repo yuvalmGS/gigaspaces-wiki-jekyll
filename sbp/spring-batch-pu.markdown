@@ -34,7 +34,7 @@ The GigaSpaces Spring Batch PU provides:
 -- Continuous High-Availability.
 
 - Scalability
--- [Elastic]({%latestjavaurl%}/Elastic-Processing-Unit.html) and Dynamic scalability of the Spring batch PU instances.
+-- [Elastic]({%latestjavaurl%}/elastic-processing-unit.html) and Dynamic scalability of the Spring batch PU instances.
 
 # Spring Batch Introduction
 [Spring Batch](http://static.springsource.org/spring-batch) is a lightweight, comprehensive batch framework designed to enable the development of robust batch applications vital for the daily operations of enterprise systems.

@@ -53,7 +53,7 @@ spaceConfigurer.destroy();
 This example creates an embedded space (`IJSpace`) within the Spring application context (using the `/./` prefix) with the name `space` and a Spring bean id of the `space`.
 
 {% tip %}
- You may consider using the **[OpenSpaces Configuration API (Configurers)](./programmatic-api-(configurers).html)** in scenarios in which a Spring wiring them through XML configuration can not be used or you prefer using Code Based Configuration. Refer to the **[UrlSpaceConfigurer](http://www.gigaspaces.com/docs/JavaDoc9.6/index.html?org/openspaces/core/space/UrlSpaceConfigurer.html)** for more details.
+ You may consider using the **[OpenSpaces Configuration API (Configurers)](./programmatic-api-(configurers).html)** in scenarios in which a Spring wiring them through XML configuration can not be used or you prefer using Code Based Configuration. Refer to the **[UrlSpaceConfigurer](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/space/UrlSpaceConfigurer.html)** for more details.
 {% endtip %}
 
 # URL Properties
