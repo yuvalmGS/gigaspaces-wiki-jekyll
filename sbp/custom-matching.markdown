@@ -2,6 +2,8 @@
 layout: sbp
 title:  Custom Matching
 categories: SBP
+parent: none
+weight: 300
 ---
 
 {% compositionsetup %}

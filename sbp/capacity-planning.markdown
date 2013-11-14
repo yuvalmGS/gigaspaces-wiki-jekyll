@@ -2,6 +2,8 @@
 layout: sbp
 title:  Capacity Planning
 categories: SBP
+parent: none
+weight: 100
 ---
 
 {% tip %}

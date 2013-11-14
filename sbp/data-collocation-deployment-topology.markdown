@@ -2,6 +2,8 @@
 layout: sbp
 title:  Data-Collocation Deployment Topology
 categories: SBP
+parent: none
+weight: 400
 ---
 
 {% compositionsetup %}

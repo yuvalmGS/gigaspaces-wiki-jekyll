@@ -2,6 +2,8 @@
 layout: sbp
 title:  Custom Eviction
 categories: SBP
+parent: none
+weight: 200
 ---
 
 {% compositionsetup %}

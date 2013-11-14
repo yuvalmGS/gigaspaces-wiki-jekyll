@@ -1,3 +1,4 @@
+<script type='text/javascript'>
 $(function () {
 
   $(".tabsection").each(function(index) {
@@ -70,10 +71,16 @@ $(function () {
     $("#gallery a").fancybox();
   }
 
-  //$("#navigation").treeview({
-  // persist: "location"
-  //});
+  $("#menu_{{page.categories}}").treeview({
+    persist: "location"
+  });
+  $("#menu_{{page.categories}}").fadeIn('slow');
+
+  // $("#navigation").treeview({
+  //   persist: "location"
+  // });
 
   $('tooltip-test').tooltip();
 
 })
+</script>

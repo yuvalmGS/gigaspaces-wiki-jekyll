@@ -2,6 +2,8 @@
 layout: sbp
 title:  Excel that Scales Solution
 categories: SBP
+parent: none
+weight: 700
 ---
 
 {% tip %}
