@@ -5,13 +5,11 @@ page_id: 61867355
 ---
 
 
-
-
 # Moving Early access wiki into production
 
 1.	Modify _config.yaml
 
-{%highlight%}
+{%highlight xml%}
 latest_xap_release: "9.7"
 latest_xap_version: "9.7.0"
 latest_maven_version: "9.6.2-9900-RELEASE"
