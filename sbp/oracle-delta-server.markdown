@@ -1,6 +1,7 @@
 ---
 layout: sbp
 title:  Oracle Delta Server
+categories: SBP
 page_id: 61867355
 ---
 
