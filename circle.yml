@@ -14,9 +14,10 @@ dependencies:
   override:
     - bundle install: 
         timeout: 3600 # fail if command has no output for 60 minutes
-    - bundle show 
     - bundle exec jekyll build:
         timeout: 3600 # fail if command has no output for 60 minutes
+  cache_directories:
+    - /home/ubuntu/.rvm/gems/ruby-1.9.3-p448
 
 test:
   override:
