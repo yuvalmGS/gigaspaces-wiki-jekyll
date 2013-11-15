@@ -19,7 +19,27 @@ It's becoming increasingly important for organizations to share HTTP session dat
 - **Reduce Web application memory footprint** - The web application storing all session within the web application process heap, consuming large amount of memory. Having the session stored within a remote process will reduce web application utilization avoiding garbage collocation and long pauses.
 - **Multiple Data-Center deployment** - You may need to deploy your application across multiple data centers for high-availability, scalability or flexibility, so session data will need to be replicated.
 
+
+[Global Http Session Sharing](www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2)
+
+{%comment%}
 <div style="width:425px;text-align:left"><a style="font:14px Helvetica,Arial,Sans-serif;color: #0000CC;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="//www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2" title="Global Http Session Sharing">Global Http Session Sharing</a><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="425" height="370" id="onlinePlayer631622"><param name="movie" value="//www.slideboom.com/player/player.swf?id_resource=631622" /><param name="allowScriptAccess" value="always" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><param name="allowFullScreen" value="true" /><param name="flashVars" value="" /><embed src="//www.slideboom.com/player/player.swf?id_resource=631622" width="425" height="370" name="onlinePlayer631622" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"allowScriptAccess="always" quality="high" bgcolor="#ffffff" allowFullScreen="true" flashVars="" ></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View <a href="" style="color: #0000CC;">more presentations</a> or <a href="/upload" style="color: #0000CC;">Upload</a> your own.</div></div>
+
+
+<object width="746" height="413"><param name="movie" value="//www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2"></param><embed src="http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2" type="application/x-shockwave-flash" width="746" height="413"></embed></object>
+
+
+<object width="746" height="413"><param name="movie" value="//www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2"></param><embed src="http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2" type="application/x-shockwave-flash" width="746" height="413"></embed></object>
+
+<div style="width:425px;text-align:left">
+<a style="font:14px Helvetica,Arial,Sans-serif;color: #0000CC;display:block;margin:12px 0 3px 0;text-decoration:underline;"
+href="//www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2"
+title="Global Http Session Sharing">Global Http Session Sharing</a><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="425" height="370"
+id="onlinePlayer631622"><param name="movie" value="//www.slideboom.com/player/player.swf?id_resource=631622" />
+<param name="allowScriptAccess" value="always" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />
+<param name="allowFullScreen" value="true" /><param name="flashVars" value="" /><embed src="//www.slideboom.com/player/player.swf?id_resource=631622" width="425" height="370" name="onlinePlayer631622" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"allowScriptAccess="always" quality="high" bgcolor="#ffffff" allowFullScreen="true" flashVars="" ></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View <a href="" style="color: #0000CC;">more presentations</a> or <a href="/upload" style="color: #0000CC;">Upload</a> your own.</div></div>
+{%endcomment%}
 
 The following image depicts a common use case where there are multiple data centers connected across the WAN, and each is running a different type of web server.
 
@@ -221,7 +241,7 @@ When using a [Secure GigaSpaces cluster]({%latestjavaurl%}/securing-your-data.ht
 
 The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish....).
 
-1. Download the [HttpSession.war]({%latestjavaurl%}/attachments/56430569/HttpSession.war?version=2).
+1. Download the [HttpSession.war](/download_files/sbp/HttpSession.war).
 1. Deploy a space named **sessionSpace**. You can start the `GigaSpaces root/bin/gsInstance.sh/bat` for a single instance space or deploy a clustered space using the command line or GS-UI.
 1. Deploy the HttpSession.war into Tomcat (or any other app server).
 1. Start your browser and access the web application via the following URL: http://localhost:8080/HttpSession
