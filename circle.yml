@@ -16,6 +16,8 @@ dependencies:
         timeout: 3600 # fail if command has no output for 60 minutes
     - bundle exec jekyll build:
         timeout: 3600 # fail if command has no output for 60 minutes
+    - ln -s ./_site/xap97 ./_site/xaplatest
+    - ln -s ./_site/xap97net ./_site/xapnetlatest
 
 test:
   override:
