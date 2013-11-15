@@ -55,7 +55,7 @@ page_id: 61867130
 
 {% anchor Space Based Architecture Artifacts %}
 
-Once a [Processing Unit library](./the-processing-unit-structure-and-configuration.html) is deployed, a processing unit instance is created. The processing unit instance is hosted within the [GigaSpaces container](./service-grid.html#gsc). If the processing unit instance includes a space, all the collocated beans within the processing unit instance inherit the space primary/backup mode: If the space running in a primary mode, they will be active; if the space running in a backup mode, they will be in a standby mode.
+Once a [Processing Unit library](./the-processing-unit-structure-and-configuration.html) is deployed, a processing unit instance is created. The processing unit instance is hosted within the [GigaSpaces container]({%currentjavaurl%}/service-grid.html#ServiceGrid-gsc). If the processing unit instance includes a space, all the collocated beans within the processing unit instance inherit the space primary/backup mode: If the space running in a primary mode, they will be active; if the space running in a backup mode, they will be in a standby mode.
 
 {% section %}
 {% align center %}

@@ -123,7 +123,7 @@ GigaSpaces XAP extends template matching by providing semantics to query ranges 
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 
-The [space as defined previously]({%latestjavaurl%}/space-Concepts-and-capabilities.html) is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a **cluster**, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
+The space as defined previously, is a logical concept - a memory space which can contain entries of information. The actual space implementation can vary. Multiple space instances connected via a defined relationship (clustering topology), form a **cluster**, and for external clients, a cluster can be seen as a single "large" space. GigaSpaces XAP provides multiple clustering topologies, and XAP users define the cluster topology during system design and deployment.
 
 The three main cluster topologies are:
 
