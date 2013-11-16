@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: release
 title:  Upgrading from previous versions
 page_id: 61867183
 ---

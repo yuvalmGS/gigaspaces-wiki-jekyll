@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: release
 title:  What's new in XAP 9.7
 page_id: 61867183
 ---

@@ -1,6 +1,6 @@
 ---
-layout: post
-title:  XAP 9.7 Release Notes
+layout: release
+title:  XAP .NET 9.7 Release Notes
 page_id: 61867355
 ---
 
@@ -29,11 +29,11 @@ page_id: 61867355
 
 [Supported Platforms](./fixed-issues.html)
 
-[Known Issues](./Known-issues.html)
+[Known Issues](./known-issues.html)
 
 [Deprecated Functionality](./deprecation.html)
 
 [Backward Compatibility](./backward-compatibility.html)
 
-[Upgrading](./upgrading.html.html)
+[Upgrading](./upgrading.html)
 

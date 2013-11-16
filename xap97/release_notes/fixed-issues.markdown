@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: release
 title:  Resolved Issues
 page_id: 61867183
 ---

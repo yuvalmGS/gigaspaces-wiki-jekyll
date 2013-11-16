@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: release
 title:  Known Issues and Limitations
 page_id: 61867183
 ---

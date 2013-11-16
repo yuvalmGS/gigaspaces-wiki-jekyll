@@ -1,6 +1,6 @@
 ---
 layout: howto
-title:  Creating a early access wiki
+title:  Creating an early access wiki
 page_id: 61867355
 ---
 

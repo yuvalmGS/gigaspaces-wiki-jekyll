@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: release
 title:  Deprecated Functionality
 page_id: 61867183
 ---
