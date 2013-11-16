@@ -37,7 +37,7 @@ In order to have Grid Service Managers (Gsm) and Grid Service Containers (Gsc) t
 The Starting State should be updated to Automatic.
 
 {% info title=Firewall environment %}
-If your environment has connection problems due to firewalls see [how to set gigaSpaces over a firewall](http://wiki.gigaspaces.com/wiki/display/XAP95/How+to+Set+GigaSpaces+Over+a+Firewall), this page is in GigaSpaces XAP java context, all the relevant described Jvm System properties should be configured inside `<JvmCustomOptions>` section of each service configuration file as new Option keys.
+If your environment has connection problems due to firewalls see [how to set gigaSpaces over a firewall]({%currentjavaurl%}/how-to-set-gigaspaces-over-a-firewall.html), this page is in GigaSpaces XAP java context, all the relevant described Jvm System properties should be configured inside `<JvmCustomOptions>` section of each service configuration file as new Option keys.
 {% endinfo %}
 
 # Deploy Processing Unit on Startup
@@ -56,7 +56,7 @@ In order to have a processing unit deployed automatically at machine startup, Co
 </configuration>
 {% endhighlight %}
 
-{% refer %}For a full list of possible command line options refer to [Cli Command](http://wiki.gigaspaces.com/wiki/display/XAP95/gs.bat+-+Other+CLI+Commands) page or run Start->Program Files->GigaSpaces XAP.NET->Tools->GigaSpaces Command Line and type help{% endrefer %}
+{% refer %}For a full list of possible command line options refer to [Cli Command]({%currentjavaurl%}/gs.bat---other-cli-commands.html) page or run Start->Program Files->GigaSpaces XAP.NET->Tools->GigaSpaces Command Line and type help{% endrefer %}
 
 {% exclamation %} The Command Line Interface lookup groups must match the Gsm in which the processing unit is deployed and it is configured in the same way as the lookup groups is configured in Gsc and Gsm.
 

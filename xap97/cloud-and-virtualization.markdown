@@ -6,7 +6,7 @@ page_id: 61867411
 
 This section describes the XAP integrations with various cloud and virtualization vendors.
 
-[XAP on EC2](http://wiki.gigaspaces.com/wiki/display/CCF/CCF4XAP+Documentation+Home)
+[XAP on EC2](http://www.cloudifysource.org/guide/)
 [XAP on Rackspace](./xap-on-rackspace.html)
 [XAP on GoGrid](./xap-on-gogrid.html)
 [XAP on VMWare](./xap-on-vmware.html)
