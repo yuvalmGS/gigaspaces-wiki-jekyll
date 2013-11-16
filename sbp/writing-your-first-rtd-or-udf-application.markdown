@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Writing Your First RTD or UDF Application
 categories: SBP
 ---

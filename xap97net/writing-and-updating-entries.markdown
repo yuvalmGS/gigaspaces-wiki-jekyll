@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Writing and Updating Entries
 categories: XAP97NET
 ---

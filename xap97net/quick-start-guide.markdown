@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Quick Start Guide
 categories: XAP97NET
 ---

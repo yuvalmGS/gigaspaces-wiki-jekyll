@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Property Storage Type
 categories: XAP97NET
 ---

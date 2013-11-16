@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Product Overview
 categories: XAP97NET
 ---

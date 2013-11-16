@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Even Data Distribution
 categories: SBP
 parent: custom-eviction.html

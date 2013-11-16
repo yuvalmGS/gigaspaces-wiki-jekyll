@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Prerequisites - GigaSpaces-Excel Integration
 categories: SBP
 ---

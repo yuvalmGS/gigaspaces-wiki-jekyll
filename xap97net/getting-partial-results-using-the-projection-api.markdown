@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Getting Partial Results Using The Projection API
 categories: XAP97NET
 ---

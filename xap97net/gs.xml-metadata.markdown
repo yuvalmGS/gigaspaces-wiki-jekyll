@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  GS.XML Metadata
 categories: XAP97NET
 ---

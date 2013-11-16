@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Local Cache
 categories: XAP97NET
 ---

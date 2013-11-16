@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Web Service PU
 categories: SBP
 ---

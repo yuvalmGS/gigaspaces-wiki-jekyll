@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Dashboard View
 categories: XAP97NET
 ---

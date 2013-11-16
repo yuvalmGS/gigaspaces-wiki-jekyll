@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Change API
 categories: XAP97NET
 ---

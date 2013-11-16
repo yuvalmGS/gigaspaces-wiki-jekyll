@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Excel Space Viewer
 categories: SBP
 ---

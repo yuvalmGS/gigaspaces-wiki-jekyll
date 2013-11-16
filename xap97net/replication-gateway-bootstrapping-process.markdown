@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Replication Gateway Bootstrapping Process
 categories: XAP97NET
 ---

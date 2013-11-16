@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Data-Collocation Deployment Topology
 categories: SBP
 parent: none

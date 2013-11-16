@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Refer To
 categories: XAP97NET
 ---

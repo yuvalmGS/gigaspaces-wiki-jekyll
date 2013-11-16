@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  JMX Space Statistics
 categories: SBP
 ---

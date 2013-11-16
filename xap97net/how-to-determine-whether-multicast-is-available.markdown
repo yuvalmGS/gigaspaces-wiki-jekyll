@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  How to Determine Whether Multicast is Available
 categories: XAP97NET
 ---

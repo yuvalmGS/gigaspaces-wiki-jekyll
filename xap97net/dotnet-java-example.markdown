@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  .Net-Java Example
 categories: XAP97NET
 ---

@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Calculation Offload - GigaSpaces-Excel Integration
 categories: SBP
 parent: excel-that-scales-solution.html

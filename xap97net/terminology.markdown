@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Terminology
 categories: XAP97NET
 ---

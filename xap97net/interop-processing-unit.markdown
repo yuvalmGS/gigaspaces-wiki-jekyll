@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Interop Processing Unit
 categories: XAP97NET
 ---

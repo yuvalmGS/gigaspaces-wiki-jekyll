@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  FIFO Support
 categories: XAP97NET
 ---

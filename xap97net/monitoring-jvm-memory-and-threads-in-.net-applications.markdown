@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Monitoring JVM Memory and Threads in .NET Applications
 categories: XAP97NET
 ---

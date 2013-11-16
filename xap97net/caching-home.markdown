@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Caching Home
 categories: XAP97NET
 ---

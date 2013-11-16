@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  SpaceFilterOperationDelegate
 categories: XAP97NET
 ---

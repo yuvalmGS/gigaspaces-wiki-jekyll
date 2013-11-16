@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Terminology - Space-Based Architecture
 categories: XAP97NET
 ---

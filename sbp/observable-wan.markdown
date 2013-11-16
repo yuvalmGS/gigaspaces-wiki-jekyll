@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Observable WAN
 categories: SBP
 ---

@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Refreshable Business Logic Example
 categories: SBP
 ---

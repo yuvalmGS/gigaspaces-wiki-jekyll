@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  How to Configure Unicast Discovery
 categories: XAP97NET
 ---

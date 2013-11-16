@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Administration and Monitoring API
 categories: XAP97NET
 ---

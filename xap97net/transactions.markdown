@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Transactions
 categories: XAP97NET
 ---

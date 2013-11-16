@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Reading Entries
 categories: XAP97NET
 ---

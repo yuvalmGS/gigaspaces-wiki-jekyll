@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Change Extension
 categories: XAP97NET
 ---

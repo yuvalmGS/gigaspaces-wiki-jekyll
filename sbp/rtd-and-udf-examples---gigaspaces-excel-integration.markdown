@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  RTD and UDF Examples - GigaSpaces-Excel Integration
 categories: SBP
 ---

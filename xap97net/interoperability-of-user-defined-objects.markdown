@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Interoperability of User-Defined Objects
 categories: XAP97NET
 ---

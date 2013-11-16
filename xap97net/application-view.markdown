@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Application View
 categories: XAP97NET
 ---

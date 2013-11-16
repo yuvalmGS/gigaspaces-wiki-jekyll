@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Debugging a XAP.NET Application
 categories: XAP97NET
 ---

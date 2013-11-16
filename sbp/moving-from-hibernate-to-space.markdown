@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Moving from Hibernate to Space
 categories: SBP
 ---

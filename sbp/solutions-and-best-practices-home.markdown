@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Solutions and Best Practices Home
 categories: SBP
 ---

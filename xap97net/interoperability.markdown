@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Interoperability
 categories: XAP97NET
 ---

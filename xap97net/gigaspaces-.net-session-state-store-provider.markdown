@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  GigaSpaces .NET Session State Store Provider
 categories: XAP97NET
 ---

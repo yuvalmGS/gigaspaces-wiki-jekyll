@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Packaging And Deployment
 categories: XAP97NET
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Modeling your Data
 categories: XAP97NET
 ---

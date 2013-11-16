@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Programmer's Guide
 categories: XAP97NET
 ---

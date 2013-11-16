@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Caching Scenarios
 categories: XAP97NET
 ---

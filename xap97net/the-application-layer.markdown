@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  The Application Layer
 categories: XAP97NET
 ---

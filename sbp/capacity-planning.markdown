@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Capacity Planning
 categories: SBP
 parent: none

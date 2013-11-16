@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  WAN Gateway Pass Through Replication
 categories: SBP
 ---

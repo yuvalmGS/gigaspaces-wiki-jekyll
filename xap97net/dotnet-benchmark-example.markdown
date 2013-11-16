@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  .NET Benchmark Example
 categories: XAP97NET
 ---

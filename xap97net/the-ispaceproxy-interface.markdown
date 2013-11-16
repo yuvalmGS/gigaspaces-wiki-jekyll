@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  The ISpaceProxy Interface
 categories: XAP97NET
 ---

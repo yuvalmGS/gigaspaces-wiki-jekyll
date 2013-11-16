@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Template Matching
 categories: XAP97NET
 ---

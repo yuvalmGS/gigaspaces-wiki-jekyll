@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Configuration
 categories: XAP97NET
 ---

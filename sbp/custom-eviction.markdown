@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Custom Eviction
 categories: SBP
 parent: none

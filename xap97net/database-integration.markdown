@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Database Integration
 categories: XAP97NET
 ---

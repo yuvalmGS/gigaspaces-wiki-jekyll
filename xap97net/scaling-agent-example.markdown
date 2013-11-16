@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Scaling Agent Example
 categories: XAP97NET
 ---

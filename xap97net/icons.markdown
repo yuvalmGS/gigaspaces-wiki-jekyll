@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Icons
 categories: XAP97NET
 ---

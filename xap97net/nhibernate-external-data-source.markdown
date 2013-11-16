@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  NHibernate External Data Source
 categories: XAP97NET
 ---

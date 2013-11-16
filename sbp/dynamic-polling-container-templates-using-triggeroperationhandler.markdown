@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Dynamic Polling Container Templates using TriggerOperationHandler
 categories: SBP
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Internal
 categories: XAP97NET
 ---

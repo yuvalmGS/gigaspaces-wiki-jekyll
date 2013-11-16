@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  WAN Gateway Master Slave Replication
 categories: SBP
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Auto Polling Consumer Scaling
 categories: XAP97NET
 ---

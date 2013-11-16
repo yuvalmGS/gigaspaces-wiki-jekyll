@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Prepared Template
 categories: XAP97NET
 ---

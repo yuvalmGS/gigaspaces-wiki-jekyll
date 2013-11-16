@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Object Metadata
 categories: XAP97NET
 ---

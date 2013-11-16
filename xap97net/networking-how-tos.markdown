@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Networking How Tos
 categories: XAP97NET
 ---

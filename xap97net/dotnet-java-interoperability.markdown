@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  .NET-Java Interoperability
 categories: XAP97NET
 ---

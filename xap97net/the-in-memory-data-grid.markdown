@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  The In-Memory Data Grid
 categories: XAP97NET
 ---

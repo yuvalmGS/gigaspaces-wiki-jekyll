@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Service Grid Components as Windows Services
 categories: XAP97NET
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  The Space API
 categories: XAP97NET
 ---

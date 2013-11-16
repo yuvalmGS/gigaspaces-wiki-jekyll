@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Lowering the Space Object Footprint
 categories: SBP
 ---

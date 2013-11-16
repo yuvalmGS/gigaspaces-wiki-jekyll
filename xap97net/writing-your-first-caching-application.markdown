@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Writing Your First Caching Application
 categories: XAP97NET
 ---

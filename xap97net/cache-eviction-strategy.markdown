@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Cache Eviction Strategy
 categories: XAP97NET
 ---

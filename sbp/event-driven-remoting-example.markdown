@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Event Driven Remoting Example
 categories: SBP
 ---

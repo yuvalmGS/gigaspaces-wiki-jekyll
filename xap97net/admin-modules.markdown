@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Admin Modules
 categories: XAP97NET
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  The Runtime Environment
 categories: XAP97NET
 ---

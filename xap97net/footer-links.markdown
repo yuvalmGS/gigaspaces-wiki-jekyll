@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Footer Links
 categories: XAP97NET
 ---

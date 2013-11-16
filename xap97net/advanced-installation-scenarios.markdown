@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Advanced Installation Scenarios
 categories: XAP97NET
 ---

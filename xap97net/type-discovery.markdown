@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Type Discovery
 categories: XAP97NET
 ---

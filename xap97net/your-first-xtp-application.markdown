@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Your First XTP Application
 categories: XAP97NET
 ---

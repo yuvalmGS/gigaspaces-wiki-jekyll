@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Custom Matching
 categories: SBP
 parent: none

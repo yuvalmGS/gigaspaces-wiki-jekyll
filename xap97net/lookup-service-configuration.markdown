@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Lookup Service Configuration
 categories: XAP97NET
 ---

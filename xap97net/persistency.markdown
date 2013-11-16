@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Persistency
 categories: XAP97NET
 ---

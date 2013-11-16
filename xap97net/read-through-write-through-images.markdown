@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Read-Through Write-Through Images
 categories: XAP97NET
 ---

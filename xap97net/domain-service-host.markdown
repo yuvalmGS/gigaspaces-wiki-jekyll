@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Domain Service Host
 categories: XAP97NET
 ---

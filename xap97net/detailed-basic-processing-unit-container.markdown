@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Detailed Basic Processing Unit Container
 categories: XAP97NET
 ---

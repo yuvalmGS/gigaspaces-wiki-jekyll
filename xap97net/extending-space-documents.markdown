@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Extending Space Documents
 categories: XAP97NET
 ---

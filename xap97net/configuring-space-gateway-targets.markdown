@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Configuring Space Gateway Targets
 categories: XAP97NET
 ---

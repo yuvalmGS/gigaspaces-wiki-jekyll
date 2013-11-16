@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Master-Worker Pattern
 categories: SBP
 ---

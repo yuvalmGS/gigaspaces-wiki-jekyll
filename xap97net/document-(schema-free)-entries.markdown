@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Document (Schema-Free) Entries
 categories: XAP97NET
 ---

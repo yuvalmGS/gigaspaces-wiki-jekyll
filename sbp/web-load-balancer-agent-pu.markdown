@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Web Load Balancer Agent PU
 categories: SBP
 ---

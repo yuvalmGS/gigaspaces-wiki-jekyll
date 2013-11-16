@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  JTA-XA Example
 categories: SBP
 ---

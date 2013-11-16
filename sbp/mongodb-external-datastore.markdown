@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  MongoDB External DataStore
 categories: SBP
 ---

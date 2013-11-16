@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Embedding XAP for OEMs
 categories: SBP
 ---

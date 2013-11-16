@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  .NET Icon
 categories: XAP97NET
 ---

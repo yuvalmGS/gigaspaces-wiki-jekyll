@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Space Dump and Reload
 categories: SBP
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Querying the Space
 categories: XAP97NET
 ---

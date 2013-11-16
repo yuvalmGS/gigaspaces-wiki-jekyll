@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Excel that Scales Solution
 categories: SBP
 parent: none

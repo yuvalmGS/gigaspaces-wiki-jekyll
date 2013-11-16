@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Storing and Retrieving Entries
 categories: XAP97NET
 ---

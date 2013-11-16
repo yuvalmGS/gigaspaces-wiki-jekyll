@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Map-Reduce Pattern - Executors Example
 categories: SBP
 ---

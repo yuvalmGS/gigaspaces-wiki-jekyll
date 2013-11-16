@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Advance Events Scenarios
 categories: XAP97NET
 ---

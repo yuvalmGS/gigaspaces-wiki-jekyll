@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Product Architecture
 categories: XAP97NET
 ---

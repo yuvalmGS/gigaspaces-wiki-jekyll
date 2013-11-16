@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Routing In Partitioned Spaces
 categories: XAP97NET
 ---

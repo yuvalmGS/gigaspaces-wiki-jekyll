@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  SqlQuery
 categories: XAP97NET
 ---

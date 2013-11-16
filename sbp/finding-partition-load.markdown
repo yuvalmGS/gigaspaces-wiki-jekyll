@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Finding Partition Load
 categories: SBP
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Terminology - Runtime Components
 categories: XAP97NET
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Getting Started
 categories: XAP97NET
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Document-Object interoperability
 categories: XAP97NET
 ---

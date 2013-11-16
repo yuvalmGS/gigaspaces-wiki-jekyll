@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Notify Container Component
 categories: XAP97NET
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Service Grid
 categories: XAP97NET
 ---

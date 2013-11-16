@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Multi-Site Replication over the WAN
 categories: XAP97NET
 ---

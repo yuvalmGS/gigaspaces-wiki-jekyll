@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  ID Queries
 categories: XAP97NET
 ---

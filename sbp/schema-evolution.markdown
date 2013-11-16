@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Schema Evolution
 categories: SBP
 ---

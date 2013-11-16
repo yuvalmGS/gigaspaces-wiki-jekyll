@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  ISpaceFilterEntry Interface
 categories: XAP97NET
 ---

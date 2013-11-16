@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Elastic Distributed Calculation Engine
 categories: SBP
 ---

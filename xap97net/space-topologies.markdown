@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Space Topologies
 categories: XAP97NET
 ---

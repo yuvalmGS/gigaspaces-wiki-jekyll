@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Space Filter Demo
 categories: XAP97NET
 ---

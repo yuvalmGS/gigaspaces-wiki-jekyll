@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Global ID Generator
 categories: SBP
 ---

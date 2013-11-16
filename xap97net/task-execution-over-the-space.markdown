@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Task Execution Over The Space
 categories: XAP97NET
 ---

@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Space Based Remoting
 categories: XAP97NET
 ---

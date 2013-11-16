@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  GigaSpaces-Excel Market-Data Example
 categories: SBP
 ---

@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Spring Batch PU
 categories: SBP
 ---

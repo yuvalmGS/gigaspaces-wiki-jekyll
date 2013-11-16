@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Web Management Console
 categories: XAP97NET
 ---

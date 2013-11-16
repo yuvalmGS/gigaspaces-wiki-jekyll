@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Trading Settlement
 categories: SBP
 ---

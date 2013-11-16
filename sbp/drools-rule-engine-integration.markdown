@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Drools Rule Engine Integration
 categories: SBP
 parent: none

@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Main Modules
 categories: XAP97NET
 ---

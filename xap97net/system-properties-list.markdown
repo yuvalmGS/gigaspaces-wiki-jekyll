@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  System Properties List
 categories: XAP97NET
 ---

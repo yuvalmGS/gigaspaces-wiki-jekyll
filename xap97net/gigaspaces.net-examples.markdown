@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  GigaSpaces.NET Examples
 categories: XAP97NET
 ---

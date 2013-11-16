@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Screenshots
 categories: XAP97NET
 ---

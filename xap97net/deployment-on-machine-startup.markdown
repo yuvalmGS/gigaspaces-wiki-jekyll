@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Deployment on Machine Startup
 categories: XAP97NET
 ---

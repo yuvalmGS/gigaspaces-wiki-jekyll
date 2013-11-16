@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Mule ESB Example
 categories: SBP
 ---

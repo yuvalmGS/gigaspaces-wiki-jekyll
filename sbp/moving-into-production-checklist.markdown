@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  Moving into Production Checklist
 categories: SBP
 ---

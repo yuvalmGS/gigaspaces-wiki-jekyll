@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Space Events
 categories: XAP97NET
 ---

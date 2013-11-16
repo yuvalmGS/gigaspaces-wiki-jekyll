@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Polling Container Component
 categories: XAP97NET
 ---

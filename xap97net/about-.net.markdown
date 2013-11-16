@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  About .NET
 categories: XAP97NET
 ---

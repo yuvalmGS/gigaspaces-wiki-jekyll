@@ -1,5 +1,5 @@
 ---
-layout: sbp
+layout: post
 title:  WAN Replication Gateway (Deprecated)
 categories: SBP
 ---

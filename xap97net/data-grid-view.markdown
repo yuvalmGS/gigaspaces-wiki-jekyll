@@ -1,5 +1,5 @@
 ---
-layout: xap97net
+layout: post
 title:  Data Grid View
 categories: XAP97NET
 ---
