@@ -1,4 +1,3 @@
-
 [Wiki directory and file structure](./file-structure.html)
 
 [Wiki implementation](./implementation.html)
