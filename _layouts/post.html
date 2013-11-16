@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
-  <body>    
+  <body>
     <script type="text/javascript">
       var tocheaders = {};
+      var tocheadersz = {};
+      var sidebar = {};
     </script>
     {% include scripts.html %}
     {% include navbar.html %}
@@ -12,13 +14,13 @@
         <div class="col-md-3">
           {% include nav.html %}
         </div>
-        <div id="content" class="col-md-9">          
-          <h1 style="margin-top: 0px;">{{ page.title }}</h1>                  
+        <div id="content" class="col-md-9">
+          <h1 style="margin-top: 0px;">{{ page.title }}</h1>
           {{ content }}
         </div>
-      </div> 
+      </div>
     </div><!-- /container -->
     {% include footer.html %}
-    <script type="text/javascript" src="/js/post-layout.js"></script>
+    {% include post-layout.markdown %}
   </body>
 </html>
