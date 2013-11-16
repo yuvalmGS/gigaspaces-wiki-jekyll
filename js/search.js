@@ -178,6 +178,27 @@ $(document).ready(function () {
         </p>
         </li>
         */
+        this.re = /http:\/\/.*\/(.*)\/.*/;
+
+        this.endsWith = function(str, suffix) {
+            return str.indexOf(suffix, str.length - suffix.length) !== -1;
+        }
+
+        this.startsWith = function(str, prefix) {
+            return str.indexOf(prefix) == 0;
+        }
+
+        this.getCategory = function(link) {
+            var regexArray = this.re.exec(link);
+            if (regexArray && regexArray.length > 1) {
+                var path = regexArray[1]; 
+                if (this.endsWith(path,"net")) return "[XAP.NET] ";
+                else if (this.startsWith(path,"xap")) return "[XAP/Java] ";
+                else if (path == "sbp") return "[Solution & Best Practices] ";
+            }
+            return "";
+        }
+
         var arr = [
             '<li class="search-result">',
             '<h4><a href="',r.link,'">',this.getCategory(r.link),r.title,'</a></h4>',
@@ -192,19 +213,7 @@ $(document).ready(function () {
         this.toString = function () {
             return arr.join('');
         }
-
-        var re = /http:\/\/.*\/(.*)\/.*/;
-
-        this.getCategory = function(link) {
-            var regexArray = re.exec(link);
-            if (regexArray && regexArray.length > 1) {
-                var path = regexArray[1]; 
-                if (path.endsWith("net")) return "[XAP.NET] ";
-                else if (path.startWith("xap")) return "[XAP/Java] ";
-                else if (path == "sbp") return "[Solution & Best Practices] ";
-            }
-            return "";
-        }
+        
     }    
 
 
