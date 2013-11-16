@@ -1,31 +1,25 @@
 $(document).ready(function () {
 
-    //var currentContent = "";
-
-    var cxBlog = "005646302152591029507:ndo3tbbopl0";
-    //add new guides here when releasing a new version 
-    var guideCxs = {
-        "2.2":"005646302152591029507:mb6a9za1aoa", 
-        "2.3":"005646302152591029507:zenlau0cpto", 
-        "2.5":"005646302152591029507:akzqpmzyauq", 
-        "2.6":"005646302152591029507:gsfwsaitfsa", 
-        "2.7":"005646302152591029507:eywmbetvnfu"
+    
+    //add new engines here when releasing a new version 
+    var versionCxs = {
+        "xap97":"005646302152591029507:p5g7vbsasb8", 
+        "xap97net":"005646302152591029507:_7aj0mx_vzi", 
+        "sbp":"005646302152591029507:qjv3z0hsori"
     }    
-    var cxEntireSite = "005646302152591029507:wp1h0fve318";
+    var cxEntireSite = "005646302152591029507:5jyranabgec";
 
     
     var config = {
         apiURL:'https://www.googleapis.com/customsearch/v1',
-        apiKey:'AIzaSyCR79snpFgr45ear_SBoqkjQaGa7FHYg4I', // Change this to your site
+        apiKey:'AIzaSyCR79snpFgr45ear_SBoqkjQaGa7FHYg4I', 
         cx: function() {
             href = window.location.href; 
-            var re = /.*\/guide\/(\d+\.\d+)\/.*/;
+            var re = /http:\/\/.*\/(.*)\/.*/;
             var regexArray = re.exec(href);
             if (regexArray && regexArray.length > 1) {
-                return guideCxs[regexArray[1]];    
+                return versionCxs[regexArray[1]] || cxEntireSite;    
             }
-            if (href.match(".*/blog.*") || href.match(".*/20.*") || href.match(".*/page.*") || href.match(".*/tags/.*")) 
-                return cxBlog;
             return cxEntireSite;
         }(),
         perPage:10, // A maximum of 10 is allowed by Google
@@ -186,7 +180,7 @@ $(document).ready(function () {
         */
         var arr = [
             '<li class="search-result">',
-            '<h4><a href="',r.link,'">',r.title,'</a></h4>',
+            '<h4><a href="',r.link,'">',this.getCategory(r.link),r.title,'</a></h4>',
             '<p>',
             r.snippet,'&nbsp;&nbsp;',
             '<a href="',r.link, '">Read More &raquo;</a>',
@@ -194,10 +188,22 @@ $(document).ready(function () {
             '</li>'
         ];
 
-
         // The toString method.
         this.toString = function () {
             return arr.join('');
+        }
+
+        var re = /http:\/\/.*\/(.*)\/.*/;
+
+        this.getCategory = function(link) {
+            var regexArray = re.exec(link);
+            if (regexArray && regexArray.length > 1) {
+                var path = regexArray[1]; 
+                if (path.endsWith("net")) return "[XAP.NET] ";
+                else if (path.startWith("xap")) return "[XAP/Java] ";
+                else if (path == "sbp") return "[Solution & Best Practices] ";
+            }
+            return "";
         }
     }    
 
