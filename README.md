@@ -9,9 +9,14 @@ It's important for us to encourage your feedback and contribution. Contributing 
 ## Installing and Testing Locally 
 To run and test the website locally, you should perform the following steps: 
 * Install the latest version of Jekyll (you can find detailed directions [here](http://jekyllrb.com/docs/installation/)).
-* Clone this repository: 
+* If you intend to edit the docs, create a fork of this repo and clone it to your machine. 
 ```
-git clone https://github.com/uric/gigaspaces-wiki-jekyll.git
+git clone https://github.com/&lt;your github username&gt;/gigaspaces-wiki-jekyll.git
+```
+
+If you just want to run it locally, you can clone this repository: 
+```
+git clone https://github.com/Gigaspaces/gigaspaces-wiki-jekyll.git
 ```
 
 * cd to the clone directory: 
