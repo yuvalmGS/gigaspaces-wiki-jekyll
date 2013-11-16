@@ -1,11 +1,11 @@
 ---
-layout: post
+layout: howto
 title:  Moving early access version into production
 page_id: 61867355
 ---
 
 
-# Moving Early access wiki into production
+
 
 1.	Modify _config.yaml
 

@@ -1,6 +1,6 @@
 ---
-layout: post
-title:  Creating and early access wiki
+layout: howto
+title:  Creating a early access wiki
 page_id: 61867355
 ---
 
@@ -26,6 +26,11 @@ In this example we will assume that the current version of XAP is 9.7, and the n
 4. Updating landing pages
 * XAP Main landing page. Update the file /xap98/index.html, change all version numbers to reflect the new release and add Early Access in the text.
 * XAPNET Main landing page. Update the file /xap98net/index.html, change all version numbers to reflect the new release and add Early Access in the text.
+
+
+5. Create API Documentation Page
+* Create a new file called xap-98.markdown in the /api_documentation folder
+* Add the new page in the /_includes/apidocnav.html page `<li><a href="xap-98.html">XAP 9.8</a></li>`
 
 
 

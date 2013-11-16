@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: howto
 title:  Wiki Directory Structure
 page_id: 61867355
 ---

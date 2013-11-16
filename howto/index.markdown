@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: howto
 title:  XAP Wiki How To
 page_id: 61867355
 ---
