@@ -2,6 +2,8 @@
 layout: post
 title:  The Application Layer
 categories: XAP97NET
+parent: product-overview.html
+weight: 500
 ---
 
 {% summary %}This section describes the GigaSpaces Application Layer.{% endsummary %}

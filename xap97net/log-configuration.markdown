@@ -2,6 +2,8 @@
 layout: post
 title:  Log Configuration
 categories: XAP97NET
+parent: configuration.html
+weight: 400
 ---
 
 # This page is under construction.

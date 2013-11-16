@@ -2,6 +2,8 @@
 layout: post
 title:  Terminology - Runtime Components
 categories: XAP97NET
+parent: terminology.html
+weight: 300
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.

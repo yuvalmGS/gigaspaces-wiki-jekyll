@@ -2,6 +2,8 @@
 layout: post
 title:  System Configuration
 categories: XAP97NET
+parent: configuration.html
+weight: 100
 ---
 
 {% summary %}Using System Properties to configure XAP.NET{% endsummary %}

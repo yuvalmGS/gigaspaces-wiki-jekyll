@@ -2,6 +2,8 @@
 layout: post
 title:  Configuration
 categories: XAP97NET
+parent: administrator's-guide.html
+weight: 400
 ---
 
 # Section Contents

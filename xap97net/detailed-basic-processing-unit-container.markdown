@@ -2,6 +2,8 @@
 layout: post
 title:  Detailed Basic Processing Unit Container
 categories: XAP97NET
+parent: basic-processing-unit-container.html
+weight: 100
 ---
 
 {% compositionsetup %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Configuring Space Gateway Targets
 categories: XAP97NET
+parent: multi-site-replication-over-the-wan.html
+weight: 100
 ---
 
 {% summary %}This page explains how to configure replication gateway targets of a space.{% endsummary %}

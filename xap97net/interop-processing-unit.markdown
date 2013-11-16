@@ -2,6 +2,8 @@
 layout: post
 title:  Interop Processing Unit
 categories: XAP97NET
+parent: processing-units.html
+weight: 300
 ---
 
 {% summary %}Creating and deploying a multi language processing unit{% endsummary %}

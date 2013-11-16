@@ -2,6 +2,8 @@
 layout: post
 title:  Installation
 categories: XAP97NET
+parent: administrator's-guide.html
+weight: 300
 ---
 
 # System Requirements

@@ -2,6 +2,8 @@
 layout: post
 title:  Quick Start Guide
 categories: XAP97NET
+parent: none
+weight: 100
 ---
 
 {% section %}

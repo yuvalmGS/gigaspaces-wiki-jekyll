@@ -2,6 +2,8 @@
 layout: post
 title:  Data Grid View
 categories: XAP97NET
+parent: web-management-console.html
+weight: 300
 ---
 
 {% compositionsetup %}

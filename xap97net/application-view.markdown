@@ -2,6 +2,8 @@
 layout: post
 title:  Application View
 categories: XAP97NET
+parent: web-management-console.html
+weight: 100
 ---
 
 {% compositionsetup %}

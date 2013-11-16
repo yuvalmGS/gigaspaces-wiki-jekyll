@@ -2,6 +2,8 @@
 layout: post
 title:  Prepared Template
 categories: XAP97NET
+parent: getting-partial-results-using-the-projection-api.html
+weight: 400
 ---
 
 {% summary %}Querying the space using a Prepared Template{% endsummary %}

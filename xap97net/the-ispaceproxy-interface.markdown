@@ -2,6 +2,8 @@
 layout: post
 title:  The ISpaceProxy Interface
 categories: XAP97NET
+parent: the-space-api.html
+weight: 200
 ---
 
 {% compositionsetup %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Scaling Agent Example
 categories: XAP97NET
+parent: administration-and-monitoring-api.html
+weight: 100
 ---
 
 {% compositionsetup %}

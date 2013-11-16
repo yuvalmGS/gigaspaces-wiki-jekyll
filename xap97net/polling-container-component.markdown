@@ -2,6 +2,8 @@
 layout: post
 title:  Polling Container Component
 categories: XAP97NET
+parent: event-driven-architecture.html
+weight: 300
 ---
 
 {% compositionsetup %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Services View
 categories: XAP97NET
+parent: web-management-console.html
+weight: 400
 ---
 
 {% compositionsetup %}

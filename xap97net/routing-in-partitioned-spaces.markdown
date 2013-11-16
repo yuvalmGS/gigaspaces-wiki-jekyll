@@ -2,6 +2,8 @@
 layout: post
 title:  Routing In Partitioned Spaces
 categories: XAP97NET
+parent: the-space-api.html
+weight: 600
 ---
 
 {% compositionsetup %}

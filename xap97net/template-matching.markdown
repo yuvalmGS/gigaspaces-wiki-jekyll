@@ -2,6 +2,8 @@
 layout: post
 title:  Template Matching
 categories: XAP97NET
+parent: getting-partial-results-using-the-projection-api.html
+weight: 600
 ---
 
 {% summary %}How to query the space using Template Matching{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Concepts
 categories: XAP97NET
+parent: product-overview.html
+weight: 100
 ---
 
 {% summary %}This section describes the main concepts underlying GigaSpaces XAP.{% endsummary %}

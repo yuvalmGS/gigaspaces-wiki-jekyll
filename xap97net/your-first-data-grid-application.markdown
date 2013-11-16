@@ -2,6 +2,8 @@
 layout: post
 title:  Your First Data Grid Application
 categories: XAP97NET
+parent: quick-start-guide.html
+weight: 200
 ---
 
 {% summary %}Writing your first XAP.NET application {% endsummary %}

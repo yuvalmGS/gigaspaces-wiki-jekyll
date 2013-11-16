@@ -2,6 +2,8 @@
 layout: post
 title:  Database Integration
 categories: XAP97NET
+parent: product-overview.html
+weight: 300
 ---
 
 {% summary %}This section describes Database Integration in SBA{% endsummary %}

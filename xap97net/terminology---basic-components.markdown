@@ -2,6 +2,8 @@
 layout: post
 title:  Terminology - Basic Components
 categories: XAP97NET
+parent: terminology.html
+weight: 100
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.

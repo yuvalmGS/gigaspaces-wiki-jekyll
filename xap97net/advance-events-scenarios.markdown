@@ -2,6 +2,8 @@
 layout: post
 title:  Advance Events Scenarios
 categories: XAP97NET
+parent: space-events.html
+weight: 100
 ---
 
 {% summary %}Advance events scenarios{% endsummary %}

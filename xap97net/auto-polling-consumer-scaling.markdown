@@ -2,6 +2,8 @@
 layout: post
 title:  Auto Polling Consumer Scaling
 categories: XAP97NET
+parent: polling-container-component.html
+weight: 100
 ---
 
 {% compositionsetup %}

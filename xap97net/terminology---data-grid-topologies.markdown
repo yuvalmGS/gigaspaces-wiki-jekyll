@@ -2,6 +2,8 @@
 layout: post
 title:  Terminology - Data Grid Topologies
 categories: XAP97NET
+parent: terminology.html
+weight: 200
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.

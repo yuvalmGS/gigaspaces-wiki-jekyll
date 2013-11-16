@@ -2,6 +2,8 @@
 layout: post
 title:  SqlQuery
 categories: XAP97NET
+parent: getting-partial-results-using-the-projection-api.html
+weight: 200
 ---
 
 {% summary %}Querying the space using SqlQuery{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Your First XTP Application
 categories: XAP97NET
+parent: quick-start-guide.html
+weight: 300
 ---
 
 {% compositionsetup %}

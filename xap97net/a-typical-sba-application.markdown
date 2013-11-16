@@ -2,6 +2,8 @@
 layout: post
 title:  A Typical SBA Application
 categories: XAP97NET
+parent: product-overview.html
+weight: 200
 ---
 
 {% summary %}A Typical Space-Based Application {% endsummary %}

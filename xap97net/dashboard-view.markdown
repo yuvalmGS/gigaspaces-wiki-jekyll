@@ -2,6 +2,8 @@
 layout: post
 title:  Dashboard View
 categories: XAP97NET
+parent: web-management-console.html
+weight: 200
 ---
 
 {% compositionsetup %}

@@ -80,7 +80,8 @@ function makeParentMenu(orig, space) {
   var i, j;
   for (i = 0, j = orig['urls'].length; i < j; i++) {
     var curr_menu = orig['urls'][i];
-    output += "<li><a href='" + curr_menu['url'] + "'>" + curr_menu['title'] + "</a></li>\n";
+    console.log(curr_menu['url']);
+    output += '<li><a href="' + curr_menu['url'] + '">' + curr_menu['title'] + "</a></li>\n";
   }
   output += "</ul>";
   return output
@@ -91,7 +92,7 @@ function makeChildMenu(orig) {
   var ci, cj;
   for (ci = 0, cj = orig['urls'].length; ci < cj; ci++) {
     var curr_menu = orig['urls'][ci];
-    output += "<li><a href='" + curr_menu['url'] + "'>" + curr_menu['title'] + "</a></li>\n";
+    output += '<li><a href="' + curr_menu['url'] + '">' + curr_menu['title'] + "</a></li>\n";
   }
   output += "</ul>";
   return output

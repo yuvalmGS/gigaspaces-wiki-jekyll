@@ -2,6 +2,8 @@
 layout: post
 title:  Product Architecture
 categories: XAP97NET
+parent: product-overview.html
+weight: 400
 ---
 
 {% summary %}This section describes the architecture of the GigaSpaces XAP product.{% endsummary %}

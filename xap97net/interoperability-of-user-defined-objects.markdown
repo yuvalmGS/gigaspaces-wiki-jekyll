@@ -2,6 +2,8 @@
 layout: post
 title:  Interoperability of User-Defined Objects
 categories: XAP97NET
+parent: dotnet-java-interoperability.html
+weight: 100
 ---
 
 {% summary %}How to implement deep (complex) interoperable classes.{% endsummary %}

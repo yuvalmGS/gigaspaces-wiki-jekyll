@@ -2,6 +2,8 @@
 layout: post
 title:  Deployment on Machine Startup
 categories: XAP97NET
+parent: service-grid-components-as-windows-services.html
+weight: 100
 ---
 
 {% summary %}Service Grid deployment using Windows Services{% endsummary %}

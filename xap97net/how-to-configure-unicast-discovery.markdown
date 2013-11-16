@@ -2,6 +2,8 @@
 layout: post
 title:  How to Configure Unicast Discovery
 categories: XAP97NET
+parent: networking-how-tos.html
+weight: 200
 ---
 
 {% summary %}The section explains How to Configure and use Unicast Discovery.{% endsummary %}

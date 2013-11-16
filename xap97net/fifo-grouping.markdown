@@ -2,6 +2,8 @@
 layout: post
 title:  FIFO Grouping
 categories: XAP97NET
+parent: fifo-support.html
+weight: 100
 ---
 
 {% compositionsetup %}

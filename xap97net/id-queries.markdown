@@ -2,6 +2,8 @@
 layout: post
 title:  ID Queries
 categories: XAP97NET
+parent: getting-partial-results-using-the-projection-api.html
+weight: 300
 ---
 
 {% summary %}How to query the space using entry ID{% endsummary %}

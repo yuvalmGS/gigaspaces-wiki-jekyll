@@ -2,6 +2,8 @@
 layout: post
 title:  The In-Memory Data Grid
 categories: XAP97NET
+parent: main-modules.html
+weight: 100
 ---
 
 {% compositionsetup %}

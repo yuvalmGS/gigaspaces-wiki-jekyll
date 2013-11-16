@@ -2,6 +2,8 @@
 layout: post
 title:  Change Extension
 categories: XAP97NET
+parent: change-api.html
+weight: 200
 ---
 
 {% compositionsetup %}

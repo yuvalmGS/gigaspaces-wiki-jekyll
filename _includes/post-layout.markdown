@@ -73,7 +73,7 @@
 
     $("#sidebar_menu").treeview({
       persist: "location",
-      animation: "normal",
+      animation: "slow",
       collapsed: "true"
     });
     $("#menu_{{page.categories}}").fadeIn('slow');

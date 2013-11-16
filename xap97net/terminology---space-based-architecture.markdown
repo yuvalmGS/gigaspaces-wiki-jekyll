@@ -2,6 +2,8 @@
 layout: post
 title:  Terminology - Space-Based Architecture
 categories: XAP97NET
+parent: terminology.html
+weight: 400
 ---
 
 **Summary** - GigaSpaces components from a functional perspective.

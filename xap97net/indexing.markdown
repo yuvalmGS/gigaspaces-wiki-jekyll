@@ -2,6 +2,8 @@
 layout: post
 title:  Indexing
 categories: XAP97NET
+parent: getting-partial-results-using-the-projection-api.html
+weight: 500
 ---
 
 {% compositionsetup %}

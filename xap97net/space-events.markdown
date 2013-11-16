@@ -2,6 +2,8 @@
 layout: post
 title:  Space Events
 categories: XAP97NET
+parent: the-space-api.html
+weight: 900
 ---
 
 {% summary %}Registering to Space events{% endsummary %}

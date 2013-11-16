@@ -2,6 +2,8 @@
 layout: post
 title:  Administrator's Guide
 categories: XAP97NET
+parent: none
+weight: 400
 ---
 
 # What Does the .NET Adminstrator's Guide Cover?

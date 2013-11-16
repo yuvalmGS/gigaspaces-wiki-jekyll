@@ -2,6 +2,8 @@
 layout: post
 title:  Change API
 categories: XAP97NET
+parent: the-ispaceproxy-interface.html
+weight: 100
 ---
 
 {% compositionsetup %}

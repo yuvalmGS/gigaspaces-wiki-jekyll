@@ -2,6 +2,8 @@
 layout: post
 title:  Executor Based Remoting
 categories: XAP97NET
+parent: space-based-remoting.html
+weight: 200
 ---
 
 {% compositionsetup %}

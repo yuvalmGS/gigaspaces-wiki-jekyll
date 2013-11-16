@@ -2,6 +2,8 @@
 layout: post
 title:  Reading Entries
 categories: XAP97NET
+parent: the-space-api.html
+weight: 400
 ---
 
 {% summary %}Reading entries from the space{% endsummary %}

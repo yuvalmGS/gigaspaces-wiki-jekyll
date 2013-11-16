@@ -2,6 +2,8 @@
 layout: post
 title:  Event Listener Container
 categories: XAP97NET
+parent: event-driven-architecture.html
+weight: 100
 ---
 
 {% compositionsetup %}

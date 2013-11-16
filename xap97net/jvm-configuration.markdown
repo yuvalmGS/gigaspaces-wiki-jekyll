@@ -2,6 +2,8 @@
 layout: post
 title:  Jvm Configuration
 categories: XAP97NET
+parent: configuration.html
+weight: 300
 ---
 
 {% summary %}JVM Settings Configuration Section.{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Service Grid
 categories: XAP97NET
+parent: the-runtime-environment.html
+weight: 100
 ---
 
 {% compositionsetup %}
