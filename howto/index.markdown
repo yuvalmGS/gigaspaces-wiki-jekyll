@@ -1,14 +1,3 @@
----
-layout: howto
-title:  XAP Wiki How To
-page_id: 61867355
----
-
-
-{%summary%}...................{%endsummary%}
-
-
-
 
 [Wiki directory and file structure](./file-structure.html)
 
