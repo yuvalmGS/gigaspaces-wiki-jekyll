@@ -2,6 +2,8 @@
 layout: post
 title:  Primary-Backup Zone Controller
 categories: SBP
+parent: none
+weight: 2800
 ---
 
 {% compositionsetup %}

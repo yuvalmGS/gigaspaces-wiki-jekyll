@@ -13,6 +13,6 @@ categories: SBP
 
 ### Browse Solutions & Best Practices
 
-{% include sbpnav.markdown %}
+{% include nav.html %}
 
 {% include /sbp/nav-links.markdown %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Embedding XAP for OEMs
 categories: SBP
+parent: none
+weight: 800
 ---
 
 {% compositionsetup %}

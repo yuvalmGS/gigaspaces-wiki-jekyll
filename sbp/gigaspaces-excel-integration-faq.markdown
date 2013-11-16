@@ -2,6 +2,8 @@
 layout: post
 title:  GigaSpaces-Excel Integration FAQ
 categories: SBP
+parent: excel-that-scales-solution.html
+weight: 400
 ---
 
 {% summary page|65 %}Frequently asked questions about the GigaSpaces-Excel integration.{% endsummary %}

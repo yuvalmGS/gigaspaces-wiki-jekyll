@@ -2,8 +2,8 @@
 layout: post
 title:  Even Data Distribution
 categories: SBP
-parent: custom-eviction.html
-weight: 300
+parent: none
+weight: 2700
 ---
 
 {% compositionsetup %}

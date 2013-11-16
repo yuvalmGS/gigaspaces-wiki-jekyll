@@ -2,6 +2,8 @@
 layout: post
 title:  Mainframe Integration
 categories: SBP
+parent: none
+weight: 1500
 ---
 
 {% compositionsetup %}

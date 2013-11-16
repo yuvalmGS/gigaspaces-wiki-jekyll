@@ -2,6 +2,8 @@
 layout: post
 title:  Rapid Data Load
 categories: SBP
+parent: none
+weight: 2900
 ---
 
 {% compositionsetup %}

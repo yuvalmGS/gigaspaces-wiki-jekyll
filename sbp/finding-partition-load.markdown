@@ -2,6 +2,8 @@
 layout: post
 title:  Finding Partition Load
 categories: SBP
+parent: none
+weight: 2600
 ---
 
 {% compositionsetup %}

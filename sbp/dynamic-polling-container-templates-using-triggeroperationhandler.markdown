@@ -2,6 +2,8 @@
 layout: post
 title:  Dynamic Polling Container Templates using TriggerOperationHandler
 categories: SBP
+parent: none
+weight: 600
 ---
 
 {% compositionsetup %}

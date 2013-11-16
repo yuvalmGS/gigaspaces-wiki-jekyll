@@ -2,6 +2,8 @@
 layout: post
 title:  Priority Based Queue
 categories: SBP
+parent: none
+weight: 3200
 ---
 
 {% tip %}

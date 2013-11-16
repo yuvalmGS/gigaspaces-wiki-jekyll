@@ -2,6 +2,8 @@
 layout: post
 title:  Lowering the Space Object Footprint
 categories: SBP
+parent: none
+weight: 1400
 ---
 
 {% compositionsetup %}

@@ -2,6 +2,8 @@
 layout: post
 title:  WAN Replication Gateway (Deprecated)
 categories: SBP
+parent: none
+weight: 4700
 ---
 
 {% compositionsetup %}

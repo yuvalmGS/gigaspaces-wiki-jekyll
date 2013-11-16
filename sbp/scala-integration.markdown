@@ -2,6 +2,8 @@
 layout: post
 title:  Scala Integration
 categories: SBP
+parent: none
+weight: 3500
 ---
 
 {% compositionsetup %}

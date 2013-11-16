@@ -2,6 +2,8 @@
 layout: post
 title:  Space Dump and Reload
 categories: SBP
+parent: none
+weight: 3900
 ---
 
 {% compositionsetup %}

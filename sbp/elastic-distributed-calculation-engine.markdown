@@ -2,6 +2,8 @@
 layout: post
 title:  Elastic Distributed Calculation Engine
 categories: SBP
+parent: none
+weight: 700
 ---
 
 {% compositionsetup %}

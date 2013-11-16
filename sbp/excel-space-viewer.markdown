@@ -2,6 +2,8 @@
 layout: post
 title:  Excel Space Viewer
 categories: SBP
+parent: excel-that-scales-solution.html
+weight: 300
 ---
 
 {% tip %}

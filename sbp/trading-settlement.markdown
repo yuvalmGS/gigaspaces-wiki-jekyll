@@ -2,6 +2,8 @@
 layout: post
 title:  Trading Settlement
 categories: SBP
+parent: none
+weight: 4200
 ---
 
 {% compositionsetup %}

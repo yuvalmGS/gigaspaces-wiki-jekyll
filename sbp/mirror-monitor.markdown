@@ -2,6 +2,8 @@
 layout: post
 title:  Mirror Monitor
 categories: SBP
+parent: none
+weight: 1800
 ---
 
 {% tip %}

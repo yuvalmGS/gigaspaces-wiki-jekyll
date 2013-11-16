@@ -2,6 +2,8 @@
 layout: post
 title:  GigaSpaces-Excel Troubleshooting
 categories: SBP
+parent: excel-that-scales-solution.html
+weight: 600
 ---
 
 {% summary page|65 %}Debugging using Excel; how to write a hosting application for easy debugging.{% endsummary %}

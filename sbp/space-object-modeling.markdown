@@ -2,6 +2,8 @@
 layout: post
 title:  Space Object Modeling
 categories: SBP
+parent: none
+weight: 4000
 ---
 
 {% compositionsetup %}

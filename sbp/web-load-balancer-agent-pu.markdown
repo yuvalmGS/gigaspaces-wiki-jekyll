@@ -2,6 +2,8 @@
 layout: post
 title:  Web Load Balancer Agent PU
 categories: SBP
+parent: none
+weight: 4800
 ---
 
 {% compositionsetup %}

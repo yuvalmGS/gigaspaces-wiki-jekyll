@@ -2,6 +2,8 @@
 layout: post
 title:  Parallel Queue Pattern
 categories: SBP
+parent: none
+weight: 2500
 ---
 
 {% compositionsetup %}

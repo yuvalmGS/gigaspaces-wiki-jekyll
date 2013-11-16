@@ -2,6 +2,8 @@
 layout: post
 title:  Hyperic integration
 categories: SBP
+parent: none
+weight: 1100
 ---
 
 # Overview

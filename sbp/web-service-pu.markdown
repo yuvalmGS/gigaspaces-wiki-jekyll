@@ -2,6 +2,8 @@
 layout: post
 title:  Web Service PU
 categories: SBP
+parent: none
+weight: 4900
 ---
 
 {% compositionsetup %}
