@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: product
 title:  Terminology - Runtime Components
 page_id: 61867104
 ---

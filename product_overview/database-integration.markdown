@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: product
 title:  Database Integration
 page_id: 61867029
 ---

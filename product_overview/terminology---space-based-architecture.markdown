@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: product
 title:  Terminology - Space-Based Architecture
 page_id: 61867130
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: product
 title:  Terminology - Basic Components
 page_id: 61867004
 ---
