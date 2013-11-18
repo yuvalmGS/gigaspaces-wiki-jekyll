@@ -1,7 +1,8 @@
 ---
-layout: xap97net
+layout: post
 title:  Getting Started
 categories: XAP97NET
-page_id: 63799311
+parent: programmer's-guide.html
+weight: 100
 ---
 

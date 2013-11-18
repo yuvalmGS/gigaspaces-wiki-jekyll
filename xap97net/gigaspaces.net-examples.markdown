@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  GigaSpaces.NET Examples
 categories: XAP97NET
-page_id: 63799344
 ---
 
 {% infosign %} These examples can be found under the, `<GigaSpaces Root>\Examples` folder.

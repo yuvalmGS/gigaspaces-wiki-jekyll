@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Data Offload - GigaSpaces-Excel Integration
 categories: SBP
-page_id: 47219052
+parent: excel-that-scales-solution.html
+weight: 200
 ---
 
 {% summary page|65 %}Using the data offload pattern.{% endsummary %}

@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  Footer Links
 categories: XAP97NET
-page_id: 63799422
 ---
 
 {% align center %}

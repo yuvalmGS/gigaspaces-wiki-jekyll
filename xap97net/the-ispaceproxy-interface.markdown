@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  The ISpaceProxy Interface
 categories: XAP97NET
-page_id: 63799326
+parent: the-space-api.html
+weight: 200
 ---
 
 {% compositionsetup %}
@@ -65,9 +66,7 @@ Several `ISpaceProxy` instances can be defined within a single Processing Unit, 
 # Operations
 
 
-The [ISpaceProxy](%dotnetdoc %}/GigaSpaces.Core.ISpaceProxy) interface includes the following main operations:
-
-
+The [ISpaceProxy](% netdoc GigaSpaces.Core.ISpaceProxy %) interface includes the following main operations:
 
 
 

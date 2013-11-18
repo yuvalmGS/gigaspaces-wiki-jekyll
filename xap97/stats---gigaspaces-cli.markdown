@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  stats - GigaSpaces CLI
-page_id: 61867121
+categories: XAP97
 ---
 
 {% summary %}Provides statistics from the GSC and GSM of the local machine. {% endsummary %}

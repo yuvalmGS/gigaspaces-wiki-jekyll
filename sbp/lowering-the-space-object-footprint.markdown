@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Lowering the Space Object Footprint
 categories: SBP
-page_id: 52527436
+parent: none
+weight: 1400
 ---
 
 {% compositionsetup %}

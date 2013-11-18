@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Excel Space Viewer
 categories: SBP
-page_id: 47219420
+parent: excel-that-scales-solution.html
+weight: 300
 ---
 
 {% tip %}

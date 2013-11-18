@@ -173,3 +173,54 @@ Creates a summary section at the top of the page. The section will include the t
 
 * `whr`
 
+
+## Cross referencing pages and URL's
+
+###  Latest XAP release URL
+
+When you need to referece a page in the latest XAP release in your documentation you use the `latestjavaurl` plugin.
+
+Example: `[Grid Service Agent]({%latestjavaurl%}/service-grid.html)`
+          This will create the following url: /xap97/service-grid.html
+
+This plugin is used in the the following sections:
+
+* Services and Best Practices
+* Java Tutorial
+* Product Overview
+
+
+### Latest XAP release number
+
+If you need to reference the latest XAP version number, you use the `latestxaprelease` plugin
+
+Example: http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd>
+This will produce the following URL: http://www.openspaces.org/schema/9.7/core/openspaces-core.xsd
+
+This plugin is used in the following sections:
+
+* Services and Best Practices
+* Java Tutorial
+* Product Overview
+
+
+### API Documentation API
+
+When referencing API Documentation in XAP and XAPNET pages you need to use the following plugins in the wiki pages:
+
+* Java :`javadoc`
+* .NET :`netdoc`
+* Scala:`scaladoc`
+
+This will point the the url to the version of the documentation you are working in.
+
+This plugin is used in the following folders:
+
+* /xapXX    (xx version)
+* /xapXXnet
+
+
+
+
+
+

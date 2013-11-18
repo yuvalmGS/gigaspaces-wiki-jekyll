@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Notify Container Component
 categories: XAP97NET
-page_id: 63799370
+parent: event-driven-architecture.html
+weight: 200
 ---
 
 {% compositionsetup %}

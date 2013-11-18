@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Safe Grid Shutdown
 categories: SBP
-page_id: 64325420
+parent: none
+weight: 3400
 ---
 
 {% compositionsetup %}

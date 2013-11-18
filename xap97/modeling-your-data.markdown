@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Modeling your data
-page_id: 61866998
+categories: XAP97
 ---
 
 {% compositionsetup %}

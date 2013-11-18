@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Change API Code Snippet
-page_id: 61867009
+categories: XAP97
 ---
 
 The `GigaSpace.change` operation allows you to change a specific content of an existing object(s) in the space. Unlike the write operation that may update an existing object, the `change` operation does not require reading the object and later sending its updated copy with the operation back to the space.

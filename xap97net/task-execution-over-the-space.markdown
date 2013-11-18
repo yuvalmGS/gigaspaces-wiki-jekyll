@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Task Execution Over The Space
 categories: XAP97NET
-page_id: 63799341
+parent: main-modules.html
+weight: 300
 ---
 
 {% compositionsetup %}

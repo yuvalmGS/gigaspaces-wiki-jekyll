@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  FIFO Grouping
 categories: XAP97NET
-page_id: 63799410
+parent: fifo-support.html
+weight: 100
 ---
 
 {% compositionsetup %}

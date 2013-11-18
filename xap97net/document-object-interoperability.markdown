@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  Document-Object interoperability
 categories: XAP97NET
-page_id: 63799412
 ---
 
 {% summary %}Interoperability between Concrete Object and Document space entries{% endsummary %}

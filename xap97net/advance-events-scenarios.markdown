@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Advance Events Scenarios
 categories: XAP97NET
-page_id: 63799413
+parent: space-events.html
+weight: 100
 ---
 
 {% summary %}Advance events scenarios{% endsummary %}

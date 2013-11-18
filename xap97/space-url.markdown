@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space URL
-page_id: 61867144
+categories: XAP97
 ---
 
 {% summary %}An address, passed to `GigaSpace`, used to connect to a space and remotely create new spaces as well as enable various characteristics.{% endsummary %}

@@ -1,7 +1,6 @@
 ---
-layout: sbp
+layout: post
 title:  Internal
 categories: SBP
-page_id: 48236940
 ---
 

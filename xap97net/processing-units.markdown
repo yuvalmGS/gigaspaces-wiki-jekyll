@@ -1,7 +1,8 @@
 ---
-layout: xap97net
+layout: post
 title:  Processing Units
 categories: XAP97NET
-page_id: 63799347
+parent: main-modules.html
+weight: 600
 ---
 

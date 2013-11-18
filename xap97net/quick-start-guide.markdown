@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Quick Start Guide
 categories: XAP97NET
-page_id: 63799424
+parent: none
+weight: 100
 ---
 
 {% section %}

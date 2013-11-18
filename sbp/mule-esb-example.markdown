@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Mule ESB Example
 categories: SBP
-page_id: 50758015
+parent: none
+weight: 2200
 ---
 
 {% compositionsetup %}

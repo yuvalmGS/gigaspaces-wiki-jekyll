@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Grid Service Container
-page_id: 61867270
+categories: XAP97
 ---
 
 {% compositionsetup %}

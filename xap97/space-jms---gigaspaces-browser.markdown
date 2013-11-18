@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space JMS - GigaSpaces Browser
-page_id: 61867387
+categories: XAP97
 ---
 
 {% summary %}Using the **JMS** tab of the advanced space configuration dialog.{% endsummary %}

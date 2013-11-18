@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  Internal
 categories: XAP97NET
-page_id: 63799353
 ---
 
 {% children %}

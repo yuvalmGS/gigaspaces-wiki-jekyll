@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  cd - GigaSpaces CLI
-page_id: 61867423
+categories: XAP97
 ---
 
 {% summary %}Moves to a different working directory, like the Unix `cd` command. {% endsummary %}

@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Unit Of Work
 categories: SBP
-page_id: 54296773
+parent: none
+weight: 4300
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Admin Modules
-page_id: 61867082
+categories: XAP97
 ---
 
 {% summary %}This section explains how to manage and monitor XAP using administrative APIs{% endsummary %}

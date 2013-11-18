@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Template Matching
 categories: XAP97NET
-page_id: 63799323
+parent: querying-the-space.html
+weight: 600
 ---
 
 {% summary %}How to query the space using Template Matching{% endsummary %}

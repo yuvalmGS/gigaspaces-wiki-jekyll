@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Memory Management - GigaSpaces Browser
-page_id: 61867409
+categories: XAP97
 ---
 
 {% summary %}Using the **Memory Management** tab of the advanced space configuration dialog.{% endsummary %}

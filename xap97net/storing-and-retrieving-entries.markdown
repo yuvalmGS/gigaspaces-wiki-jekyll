@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Storing and Retrieving Entries
 categories: XAP97NET
-page_id: 63799306
+parent: the-space-api.html
+weight: 100
 ---
 
 {% summary %}Storing entry in a space, retrieving entry from a space{% endsummary %}

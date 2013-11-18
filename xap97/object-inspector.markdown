@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Object Inspector
-page_id: 61867455
+categories: XAP97
 ---
 
 {% summary %}Using the selected object's UID, the Object Inspector takes the object itself from the space and displays its class fields, allowing you to drill down into object arrays.{% endsummary %}

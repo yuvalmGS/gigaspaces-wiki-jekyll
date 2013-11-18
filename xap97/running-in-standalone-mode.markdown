@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Running in Standalone Mode
-page_id: 61867332
+categories: XAP97
 ---
 
 {% compositionsetup %}

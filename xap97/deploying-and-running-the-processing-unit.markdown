@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Deploying and Running the Processing Unit
-page_id: 61867073
+categories: XAP97
 ---
 
 {% summary %}This section describes the various options to debug and run your processing units{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Monitoring Network Activity
-page_id: 61867278
+categories: XAP97
 ---
 
 {% compositionsetup %}

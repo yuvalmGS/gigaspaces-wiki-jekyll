@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Spring Batch PU
 categories: SBP
-page_id: 55937171
+parent: none
+weight: 4100
 ---
 
 {% compositionsetup %}

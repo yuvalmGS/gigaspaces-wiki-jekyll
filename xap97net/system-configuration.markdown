@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  System Configuration
 categories: XAP97NET
-page_id: 63799332
+parent: configuration.html
+weight: 100
 ---
 
 {% summary %}Using System Properties to configure XAP.NET{% endsummary %}

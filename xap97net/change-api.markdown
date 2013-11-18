@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Change API
 categories: XAP97NET
-page_id: 63799419
+parent: the-ispaceproxy-interface.html
+weight: 100
 ---
 
 {% compositionsetup %}

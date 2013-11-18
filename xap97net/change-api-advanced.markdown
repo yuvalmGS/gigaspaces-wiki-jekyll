@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Change API Advanced
 categories: XAP97NET
-page_id: 64325389
+parent: change-api.html
+weight: 100
 ---
 
 {% compositionsetup %}

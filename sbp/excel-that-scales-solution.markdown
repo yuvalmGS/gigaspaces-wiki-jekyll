@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Excel that Scales Solution
 categories: SBP
-page_id: 47219144
+parent: none
+weight: 3800
 ---
 
 {% tip %}

@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Installing XAP.NET
 categories: XAP97NET
-page_id: 63799379
+parent: quick-start-guide.html
+weight: 100
 ---
 
 {% include /xap97net/installation.markdown %}

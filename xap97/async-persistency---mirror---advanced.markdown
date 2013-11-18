@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Async Persistency - Mirror - Advanced
-page_id: 61867440
+categories: XAP97
 ---
 
 {% compositionsetup %}

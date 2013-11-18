@@ -1,7 +1,7 @@
 ---
 layout: release
 title:  What's new in XAP 9.7
-page_id: 61867183
+categories: XAP97
 ---
 
 {%summary%} What's new in XAP 9.7 {%endsummary%}

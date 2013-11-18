@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  GigaSpaces-Excel Market-Data Example
 categories: SBP
-page_id: 47219542
+parent: excel-that-scales-solution.html
+weight: 500
 ---
 
 {% tip %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Local View
-page_id: 61867394
+categories: XAP97
 ---
 
 {% compositionsetup %}{% summary page|60 %} A Local View allows the client application to cache specific data based on client's criteria at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}

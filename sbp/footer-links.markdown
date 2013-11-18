@@ -1,8 +1,7 @@
 ---
-layout: sbp
+layout: post
 title:  Footer Links
 categories: SBP
-page_id: 52888719
 ---
 
 {% align center %}

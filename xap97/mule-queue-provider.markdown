@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Mule Queue Provider
-page_id: 61867390
+categories: XAP97
 ---
 
 {% compositionsetup %}

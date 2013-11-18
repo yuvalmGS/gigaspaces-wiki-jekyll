@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  How to Determine Whether Multicast is Available
 categories: XAP97NET
-page_id: 64127791
+parent: how-to-configure-multicast.html
+weight: 100
 ---
 
 {% summary %}Used to determine whether multicast is available.{% endsummary %}

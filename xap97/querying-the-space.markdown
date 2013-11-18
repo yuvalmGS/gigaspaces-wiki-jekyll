@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Querying The Space
-page_id: 61867217
+categories: XAP97
 ---
 
 {% summary %}How to query entries from the space{% endsummary %}

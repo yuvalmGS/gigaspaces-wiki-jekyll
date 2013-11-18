@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Cassandra Space Persistency
-page_id: 61867169
+categories: XAP97
 ---
 
 {% compositionsetup %}

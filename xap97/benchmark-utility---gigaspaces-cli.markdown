@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Benchmark Utility - GigaSpaces CLI
-page_id: 61867101
+categories: XAP97
 ---
 
 {% summary %}A tool for running performance benchmarks on the space in various scenarios.{% endsummary %}

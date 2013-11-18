@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Indexing
-page_id: 61867200
+categories: XAP97
 ---
 
 {% compositionsetup %}

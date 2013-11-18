@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Id Queries
-page_id: 61867449
+categories: XAP97
 ---
 
 {% summary %}Id Based query - Primary Key based retrieval{% endsummary %}

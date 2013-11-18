@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Data-Collocation Deployment Topology
 categories: SBP
-page_id: 51119964
+parent: none
+weight: 400
 ---
 
 {% compositionsetup %}

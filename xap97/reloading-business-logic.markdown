@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Reloading Business Logic
-page_id: 61867257
+categories: XAP97
 ---
 
 {% compositionsetup %}

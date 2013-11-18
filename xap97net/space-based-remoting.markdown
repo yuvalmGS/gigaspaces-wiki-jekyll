@@ -1,7 +1,8 @@
 ---
-layout: xap97net
+layout: post
 title:  Space Based Remoting
 categories: XAP97NET
-page_id: 63799298
+parent: main-modules.html
+weight: 400
 ---
 

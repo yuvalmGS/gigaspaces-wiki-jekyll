@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  GigaSpaces JPA Limitations
-page_id: 61867171
+categories: XAP97
 ---
 
 {% summary %}Unsupported Features Of GigaSpaces JPA{% endsummary %}

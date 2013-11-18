@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Custom Processing Unit Details and Monitors
-page_id: 61867232
+categories: XAP97
 ---
 
 {% compositionsetup %}

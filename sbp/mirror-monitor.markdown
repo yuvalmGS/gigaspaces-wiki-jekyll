@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Mirror Monitor
 categories: SBP
-page_id: 52888463
+parent: none
+weight: 1800
 ---
 
 {% tip %}

@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Product structure
 categories: XAP97NET
-page_id: 63799358
+parent: administrator's-guide.html
+weight: 200
 ---
 
 {% summary %}This section describes the XAP.NET product structure{% endsummary %}

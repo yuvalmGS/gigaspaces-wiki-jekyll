@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Data Grid View
 categories: XAP97NET
-page_id: 63799321
+parent: web-management-console.html
+weight: 300
 ---
 
 {% compositionsetup %}

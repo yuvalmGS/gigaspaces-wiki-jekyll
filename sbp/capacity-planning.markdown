@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Capacity Planning
 categories: SBP
-page_id: 50759531
+parent: none
+weight: 100
 ---
 
 {% tip %}

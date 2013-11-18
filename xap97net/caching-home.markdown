@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  Caching Home
 categories: XAP97NET
-page_id: 63799408
 ---
 
 {% compositionsetup %}

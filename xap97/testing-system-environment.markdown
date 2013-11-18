@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Testing System Environment
-page_id: 61867092
+categories: XAP97
 ---
 
 {% summary %}Verifying a local installation and a remote installation.{% endsummary %}

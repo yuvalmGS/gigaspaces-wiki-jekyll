@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Primary-Backup Zone Controller
 categories: SBP
-page_id: 55938230
+parent: none
+weight: 2800
 ---
 
 {% compositionsetup %}

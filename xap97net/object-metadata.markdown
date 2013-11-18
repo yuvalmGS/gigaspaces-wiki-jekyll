@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  Object Metadata
 categories: XAP97NET
-page_id: 63799371
 ---
 
 {% summary %}Customizing object behaviour using space metadata attributes. {% endsummary %}

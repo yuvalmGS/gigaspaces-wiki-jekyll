@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  WAN Gateway Master Slave Replication
 categories: SBP
-page_id: 64323671
+parent: none
+weight: 4500
 ---
 
 {% compositionsetup %}

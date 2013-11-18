@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Space Dump and Reload
 categories: SBP
-page_id: 54820920
+parent: none
+weight: 3900
 ---
 
 {% compositionsetup %}

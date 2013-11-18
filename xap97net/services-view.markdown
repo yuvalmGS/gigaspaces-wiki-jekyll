@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Services View
 categories: XAP97NET
-page_id: 63799373
+parent: web-management-console.html
+weight: 400
 ---
 
 {% compositionsetup %}

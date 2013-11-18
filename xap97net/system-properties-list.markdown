@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  System Properties List
 categories: XAP97NET
-page_id: 63799375
+parent: configuration.html
+weight: 200
 ---
 
 # System Properties List

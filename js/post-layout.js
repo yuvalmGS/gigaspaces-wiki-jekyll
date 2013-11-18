@@ -1,4 +1,4 @@
-$(function () {        
+$(function () {
 
   $(".tabsection").each(function(index) {
     list = "";
@@ -17,7 +17,7 @@ $(function () {
     });
     $(this).find(".nav").html(list);
   });
-  
+
   $('.tabsection ul.nav a').click(function (e) {
     e.preventDefault();
     $(this).tab('show');
@@ -30,7 +30,7 @@ $(function () {
 
   $("#summarypanel").html(summary_url);
 
-  /*  
+  /*
   if (!$.isEmptyObject(tocheaders)) {
     $.each(tocheaders, function(tocindex, tocvalue) {
       toc_url = "";
@@ -70,12 +70,10 @@ $(function () {
     $("#gallery a").fancybox();
   }
 
+  //$("#navigation").treeview({
+  // persist: "location"
+  //});
+
+  $('tooltip-test').tooltip();
+
 })
-
-$("#navigation").treeview({
-  persist: "location"
-});
-
-
-
-$('tooltip-test').tooltip();

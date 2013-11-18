@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Proxy Connectivity (Old)
-page_id: 61867003
+categories: XAP97
 ---
 
 {% summary %}Client Proxy Connectivity and reconnection options{% endsummary %}

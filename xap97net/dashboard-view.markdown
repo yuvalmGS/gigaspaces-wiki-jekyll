@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Dashboard View
 categories: XAP97NET
-page_id: 63799382
+parent: web-management-console.html
+weight: 200
 ---
 
 {% compositionsetup %}

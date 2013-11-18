@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Data Source API
-page_id: 61867226
+categories: XAP97
 ---
 
 {% compositionsetup %}

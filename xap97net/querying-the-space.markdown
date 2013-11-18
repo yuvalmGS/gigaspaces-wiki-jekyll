@@ -1,7 +1,8 @@
 ---
-layout: xap97net
+layout: post
 title:  Querying the Space
 categories: XAP97NET
-page_id: 63799368
+parent: the-space-api.html
+weight: 500
 ---
 

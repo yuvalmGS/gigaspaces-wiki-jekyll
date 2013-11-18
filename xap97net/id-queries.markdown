@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  ID Queries
 categories: XAP97NET
-page_id: 63799334
+parent: querying-the-space.html
+weight: 300
 ---
 
 {% summary %}How to query the space using entry ID{% endsummary %}

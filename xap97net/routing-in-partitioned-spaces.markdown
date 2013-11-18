@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Routing In Partitioned Spaces
 categories: XAP97NET
-page_id: 63799357
+parent: the-space-api.html
+weight: 600
 ---
 
 {% compositionsetup %}

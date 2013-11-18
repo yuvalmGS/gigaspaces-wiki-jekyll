@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Networking How Tos
 categories: XAP97NET
-page_id: 64127776
+parent: administrator's-guide.html
+weight: 100
 ---
 
 {% summary %}Instructions for getting specific things related to networking done.{% endsummary %}

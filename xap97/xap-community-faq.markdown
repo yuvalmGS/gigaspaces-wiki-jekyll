@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP-Community FAQ
-page_id: 61867415
+categories: XAP97
 ---
 
 # Frequently Asked Questions

@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Database Integration
 categories: XAP97NET
-page_id: 63799360
+parent: product-overview.html
+weight: 300
 ---
 
 {% summary %}This section describes Database Integration in SBA{% endsummary %}

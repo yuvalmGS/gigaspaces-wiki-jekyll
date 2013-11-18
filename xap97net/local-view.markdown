@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  Local View
 categories: XAP97NET
-page_id: 63799395
 ---
 
 {% summary %} A Local View allows the client application to cache specific data based on client's criteria at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}

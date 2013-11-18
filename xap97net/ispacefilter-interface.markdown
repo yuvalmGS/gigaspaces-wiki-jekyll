@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  ISpaceFilter Interface
 categories: XAP97NET
-page_id: 63799397
 ---
 
 # ISpaceFilter Interface

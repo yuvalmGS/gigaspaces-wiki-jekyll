@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Wiring with Spring - XAP Tutorial
-page_id: 61867404
+categories: XAP97
 ---
 
 {% compositionsetup %}

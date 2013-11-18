@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  Cache Eviction Strategy
 categories: XAP97NET
-page_id: 63799310
 ---
 
 {% summary %}The local cache storage is managed by an eviction strategy. The strategy determines when and if Entries needs to be evicted from the space, and is also in charge of deciding which specific Entries to evict.{% endsummary %}

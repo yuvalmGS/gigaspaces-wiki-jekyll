@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Finding Partition Load
 categories: SBP
-page_id: 54297314
+parent: none
+weight: 2600
 ---
 
 {% compositionsetup %}

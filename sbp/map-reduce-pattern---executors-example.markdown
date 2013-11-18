@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Map-Reduce Pattern - Executors Example
 categories: SBP
-page_id: 49414729
+parent: none
+weight: 1600
 ---
 
 {% compositionsetup %}

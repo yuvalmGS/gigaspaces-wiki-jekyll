@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Starting the Management Console
-page_id: 61867251
+categories: XAP97
 ---
 
 {% compositionsetup %}{% summary %}Reviews the different deployment option of the web management console{% endsummary %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Platform Interoperability in GigaSpaces
-page_id: 61867084
+categories: XAP97
 ---
 
 {% compositionsetup %}

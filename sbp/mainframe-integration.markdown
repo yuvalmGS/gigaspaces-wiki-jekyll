@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Mainframe Integration
 categories: SBP
-page_id: 56429998
+parent: none
+weight: 1500
 ---
 
 {% compositionsetup %}

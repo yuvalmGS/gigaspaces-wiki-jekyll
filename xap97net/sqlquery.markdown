@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  SqlQuery
 categories: XAP97NET
-page_id: 63799350
+parent: querying-the-space.html
+weight: 200
 ---
 
 {% summary %}Querying the space using SqlQuery{% endsummary %}

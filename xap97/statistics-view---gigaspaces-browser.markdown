@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Statistics View - GigaSpaces Browser
-page_id: 61867065
+categories: XAP97
 ---
 
 {% summary %}Provides graphical representation of space operations performed and average throughput.{% endsummary %}

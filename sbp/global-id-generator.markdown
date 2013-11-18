@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Global ID Generator
 categories: SBP
-page_id: 52887597
+parent: none
+weight: 1000
 ---
 
 {% compositionsetup %}

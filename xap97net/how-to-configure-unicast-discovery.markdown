@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  How to Configure Unicast Discovery
 categories: XAP97NET
-page_id: 64127781
+parent: networking-how-tos.html
+weight: 200
 ---
 
 {% summary %}The section explains How to Configure and use Unicast Discovery.{% endsummary %}

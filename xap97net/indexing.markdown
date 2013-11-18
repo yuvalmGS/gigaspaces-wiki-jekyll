@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Indexing
 categories: XAP97NET
-page_id: 63799369
+parent: querying-the-space.html
+weight: 500
 ---
 
 {% compositionsetup %}

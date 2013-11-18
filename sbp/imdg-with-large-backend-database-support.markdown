@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  IMDG with Large Backend Database Support
 categories: SBP
-page_id: 55935416
+parent: none
+weight: 1200
 ---
 
 {% tip %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Using JMS with OpenSpaces Example
-page_id: 61867224
+categories: XAP97
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,6 @@
 ---
-layout: xap97net
+layout: post
 title:  Space Filters
 categories: XAP97NET
-page_id: 63799384
 ---
 

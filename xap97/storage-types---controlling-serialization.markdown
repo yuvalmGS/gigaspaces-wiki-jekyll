@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Storage Types - Controlling Serialization
-page_id: 61867055
+categories: XAP97
 ---
 
 {% compositionsetup %}

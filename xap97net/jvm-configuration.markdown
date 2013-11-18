@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Jvm Configuration
 categories: XAP97NET
-page_id: 63799320
+parent: configuration.html
+weight: 300
 ---
 
 {% summary %}JVM Settings Configuration Section.{% endsummary %}

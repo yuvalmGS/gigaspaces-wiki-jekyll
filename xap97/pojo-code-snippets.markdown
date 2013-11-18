@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  POJO Code Snippets
-page_id: 61867349
+categories: XAP97
 ---
 
 # Code Snippets

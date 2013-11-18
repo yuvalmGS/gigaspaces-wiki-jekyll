@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Drools Rule Engine Integration
 categories: SBP
-page_id: 54821146
+parent: none
+weight: 500
 ---
 
 {% compositionsetup %}

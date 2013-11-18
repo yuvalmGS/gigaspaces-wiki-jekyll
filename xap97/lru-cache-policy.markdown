@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  LRU-Cache Policy
-page_id: 61867327
+categories: XAP97
 ---
 
 {% compositionsetup %}

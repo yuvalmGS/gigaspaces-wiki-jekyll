@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Administration and Monitoring API
 categories: XAP97NET
-page_id: 63799361
+parent: admin-modules.html
+weight: 100
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  GigaSapces Management Center
-page_id: 618673591
+categories: XAP97
 ---
 
 {% compositionsetup %}{% summary section %}GigaSpaces Management Center is a GUI that allows you to view spaces, containers, and clusters and configure them, using the Space Browser tab. You can also deploy and manage services using the Deployments tab.{% endsummary %}

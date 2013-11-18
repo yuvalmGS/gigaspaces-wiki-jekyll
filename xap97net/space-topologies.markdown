@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Space Topologies
 categories: XAP97NET
-page_id: 63799355
+parent: the-in-memory-data-grid.html
+weight: 100
 ---
 
 {% compositionsetup %}

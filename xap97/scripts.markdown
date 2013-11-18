@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Scripts
-page_id: 61867124
+categories: XAP97
 ---
 
 {% compositionsetup %}

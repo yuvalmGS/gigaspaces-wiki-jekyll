@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Change Extension
 categories: XAP97NET
-page_id: 64325381
+parent: change-api.html
+weight: 200
 ---
 
 {% compositionsetup %}

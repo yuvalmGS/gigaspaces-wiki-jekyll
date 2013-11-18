@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Trading Settlement
 categories: SBP
-page_id: 56429380
+parent: none
+weight: 4200
 ---
 
 {% compositionsetup %}

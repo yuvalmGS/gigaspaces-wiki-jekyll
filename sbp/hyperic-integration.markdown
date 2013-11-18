@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Hyperic integration
 categories: SBP
-page_id: 57212965
+parent: none
+weight: 1100
 ---
 
 # Overview

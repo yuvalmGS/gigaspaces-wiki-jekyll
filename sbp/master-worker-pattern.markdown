@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Master-Worker Pattern
 categories: SBP
-page_id: 51118939
+parent: none
+weight: 1700
 ---
 
 {% compositionsetup %}

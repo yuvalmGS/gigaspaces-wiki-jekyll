@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  quit - GigaSpaces CLI
-page_id: 61867414
+categories: XAP97
 ---
 
 {% summary %}Ends the CLI session.{% endsummary %}

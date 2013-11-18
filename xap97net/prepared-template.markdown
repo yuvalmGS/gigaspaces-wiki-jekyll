@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Prepared Template
 categories: XAP97NET
-page_id: 63799305
+parent: querying-the-space.html
+weight: 400
 ---
 
 {% summary %}Querying the space using a Prepared Template{% endsummary %}

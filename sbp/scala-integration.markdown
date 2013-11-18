@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Scala Integration
 categories: SBP
-page_id: 56428283
+parent: none
+weight: 3500
 ---
 
 {% compositionsetup %}

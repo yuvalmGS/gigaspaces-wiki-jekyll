@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  Local Cache
 categories: XAP97NET
-page_id: 63799431
 ---
 
 {% summary %}Local cache storage over a space proxy{% endsummary %}

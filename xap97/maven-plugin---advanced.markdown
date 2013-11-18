@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Maven Plugin - Advanced
-page_id: 61867241
+categories: XAP97
 ---
 
 {% summary page|65 %}Processing unit assembly definition.{% endsummary %}

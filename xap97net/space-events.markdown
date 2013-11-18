@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Space Events
 categories: XAP97NET
-page_id: 63799367
+parent: the-space-api.html
+weight: 900
 ---
 
 {% summary %}Registering to Space events{% endsummary %}

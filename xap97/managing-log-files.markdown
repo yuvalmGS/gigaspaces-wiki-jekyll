@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Managing Log Files
-page_id: 61867061
+categories: XAP97
 ---
 
 {% summary %}Managing log file naming, and rolling over policies{% endsummary %}

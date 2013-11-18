@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Graphical User Interface
-page_id: 61867035
+categories: XAP97
 ---
 
 {% summary %}Describes the standalone XAP java client and the XAP Web Management Console{% endsummary %}

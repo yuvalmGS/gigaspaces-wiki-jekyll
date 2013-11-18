@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Web Load Balancer Agent PU
 categories: SBP
-page_id: 54820978
+parent: none
+weight: 4800
 ---
 
 {% compositionsetup %}

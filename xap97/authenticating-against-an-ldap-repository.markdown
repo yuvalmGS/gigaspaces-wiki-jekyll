@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Authenticating against an LDAP repository
-page_id: 61867044
+categories: XAP97
 ---
 
 {% compositionsetup %}

@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Web Management Console
 categories: XAP97NET
-page_id: 63799390
+parent: administrator's-guide.html
+weight: 600
 ---
 
 {% summary %}The web management console is a new user interface for XAP allowing users to deploy, manage and monitor their Processing Units and Applications{% endsummary %}

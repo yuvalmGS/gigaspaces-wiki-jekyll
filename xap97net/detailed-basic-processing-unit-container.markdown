@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Detailed Basic Processing Unit Container
 categories: XAP97NET
-page_id: 63799322
+parent: basic-processing-unit-container.html
+weight: 100
 ---
 
 {% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Web Application Support
-page_id: 61867386
+categories: XAP97
 ---
 
 # Section Contents

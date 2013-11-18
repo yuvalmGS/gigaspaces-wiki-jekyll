@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  JTA-XA Example
 categories: SBP
-page_id: 55938209
+parent: none
+weight: 1300
 ---
 
 {% compositionsetup %}

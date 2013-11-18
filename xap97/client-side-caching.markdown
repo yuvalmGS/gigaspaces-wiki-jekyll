@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Client Side Caching
-page_id: 61867059
+categories: XAP97
 ---
 
 {% compositionsetup %}{% summary page|60 %}A client application may run a local cache (near cache), which caches data in local memory of the client application. There are two variations provided: local cache and local view. Both allow the client application to cache specific or recently used data within client JVM and have it updated automatically by the space when that data changes.{% endsummary %}

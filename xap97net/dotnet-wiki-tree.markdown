@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  .NET WIKI Tree
 categories: XAP97NET
-page_id: 63799313
 ---
 
 {% children %}

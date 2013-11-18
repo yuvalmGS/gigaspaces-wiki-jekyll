@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Grid Service Agent
-page_id: 61867072
+categories: XAP97
 ---
 
 {% compositionsetup %}

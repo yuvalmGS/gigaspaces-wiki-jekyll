@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Lookup Service Configuration
 categories: XAP97NET
-page_id: 64127778
+parent: networking-how-tos.html
+weight: 300
 ---
 
 {% summary %}Defining group names and unicast Locators for Jini Services; searching for available lookup services in the network.{% endsummary %}

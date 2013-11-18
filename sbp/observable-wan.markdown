@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Observable WAN
 categories: SBP
-page_id: 57213232
+parent: none
+weight: 2300
 ---
 
 {% compositionsetup %}

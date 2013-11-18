@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Security Concepts
-page_id: 61867195
+categories: XAP97
 ---
 
 {% summary %}Authentication, Encryption, Authenticity Validation, and Managing users and roles{% endsummary %}

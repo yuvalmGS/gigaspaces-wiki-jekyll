@@ -1,7 +1,7 @@
 ---
 layout: release
 title:  Deprecated Functionality
-page_id: 61867183
+categories: XAP97
 ---
 
 {%summary%} Deprecated Functionality in XAP97 {%endsummary%}

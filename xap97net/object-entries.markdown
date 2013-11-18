@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  Object Entries
 categories: XAP97NET
-page_id: 63799340
 ---
 
 {% summary %} Understanding the semantics of Space Entries and .NET Objects{% endsummary %}

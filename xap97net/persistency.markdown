@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  Persistency
 categories: XAP97NET
-page_id: 63799336
 ---
 
 {% compositionsetup %}

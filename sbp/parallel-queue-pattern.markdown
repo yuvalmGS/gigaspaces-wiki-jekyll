@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Parallel Queue Pattern
 categories: SBP
-page_id: 52887871
+parent: none
+weight: 2500
 ---
 
 {% compositionsetup %}

@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Custom Matching
 categories: SBP
-page_id: 52528551
+parent: none
+weight: 300
 ---
 
 {% compositionsetup %}

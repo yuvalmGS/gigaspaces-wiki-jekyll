@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Supported Platforms
-page_id: 61867269
+categories: XAP97
 ---
 
 **Navigate to the required category**:

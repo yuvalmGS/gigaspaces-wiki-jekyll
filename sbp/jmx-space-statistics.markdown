@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  JMX Space Statistics
 categories: SBP
-page_id: 48760469
+parent: none
+weight: 3100
 ---
 
 {% tip %}

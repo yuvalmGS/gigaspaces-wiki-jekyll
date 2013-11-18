@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Configuring the System
-page_id: 61867287
+categories: XAP97
 ---
 
 {% children %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Durable Notifications
-page_id: 61867293
+categories: XAP97
 ---
 
 {% summary %}Durable notifications support primary-backup space failover over and network disconnections{% endsummary %}

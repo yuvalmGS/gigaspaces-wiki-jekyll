@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Read-Through Write-Through Images
-page_id: 61867001
+categories: XAP97
 ---
 
 {% gallery %}

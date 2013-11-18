@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  MongoDB External DataStore
 categories: SBP
-page_id: 56428168
+parent: none
+weight: 1900
 ---
 
 {% compositionsetup %}

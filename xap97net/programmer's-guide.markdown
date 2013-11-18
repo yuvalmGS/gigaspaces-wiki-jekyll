@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Programmer's Guide
 categories: XAP97NET
-page_id: 63799416
+parent: none
+weight: 300
 ---
 
 # .NET Programmer's Guide Abstract

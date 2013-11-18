@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  alert-event
-page_id: 61867105
+categories: XAP97
 ---
 
 {% redirect ./administrative-alerts.html|Administrative Alerts %}

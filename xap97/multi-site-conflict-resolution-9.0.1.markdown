@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Multi-Site Conflict Resolution 9.0.1
-page_id: 61867304
+categories: XAP97
 ---
 
 {% summary %}This page explains how multi-site replication conflict resolution works and how to customize its functionality.{% endsummary %}

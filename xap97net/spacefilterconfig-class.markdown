@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  SpaceFilterConfig Class
 categories: XAP97NET
-page_id: 63799362
 ---
 
 # SpaceFilterConfig

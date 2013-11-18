@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Packaging And Deployment
 categories: XAP97NET
-page_id: 64127773
+parent: getting-started.html
+weight: 100
 ---
 
 {% include /xap97net/processing-units.markdown %}

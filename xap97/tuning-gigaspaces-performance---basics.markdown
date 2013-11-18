@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Tuning GigaSpaces Performance - Basics
-page_id: 61866997
+categories: XAP97
 ---
 
 {% summary %}Helpful recommendations for tuning GigaSpaces, boosting its performance, and improving its scalability.{% endsummary %}

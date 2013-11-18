@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Apache Load Balancer Agent
-page_id: 61867080
+categories: XAP97
 ---
 
 {% compositionsetup %}

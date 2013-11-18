@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Event Listener Container
 categories: XAP97NET
-page_id: 63799388
+parent: event-driven-architecture.html
+weight: 100
 ---
 
 {% compositionsetup %}

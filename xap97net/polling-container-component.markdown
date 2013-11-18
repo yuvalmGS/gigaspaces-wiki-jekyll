@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Polling Container Component
 categories: XAP97NET
-page_id: 63799324
+parent: event-driven-architecture.html
+weight: 300
 ---
 
 {% compositionsetup %}

@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Rapid Data Load
 categories: SBP
-page_id: 51118632
+parent: none
+weight: 2900
 ---
 
 {% compositionsetup %}

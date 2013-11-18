@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Domain Service Host
 categories: XAP97NET
-page_id: 63799411
+parent: space-based-remoting.html
+weight: 100
 ---
 
 {% compositionsetup %}

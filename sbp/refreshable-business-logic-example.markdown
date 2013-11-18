@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Refreshable Business Logic Example
 categories: SBP
-page_id: 55443590
+parent: none
+weight: 3300
 ---
 
 {% compositionsetup %}

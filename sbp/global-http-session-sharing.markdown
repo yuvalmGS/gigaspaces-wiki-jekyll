@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Global HTTP Session Sharing
 categories: SBP
-page_id: 47218928
+parent: none
+weight: 900
 ---
 
 {% compositionsetup %}
@@ -49,15 +50,15 @@ The GigaSpaces Global HTTP Session Sharing architecture allows users to deploy t
 
 With this solution, there is no need to deploy a database to store the session, so you avoid the use of expensive database replication across multiple sites. Setting up GigaSpaces for session sharing between each site is simple and does not involve any code changes to the application.
 
-# What does GigaSpaces Global HTTP Session Management provide? 
+# What does GigaSpaces Global HTTP Session Management provide?
 
 GigaSpaces Global HTTP Session Management designed to deliver the application maximum performance with ZERO application code changes.
 
 GigaSpaces Global HTTP Session Management features the following:
 - **Reduce App/Web server memory footprint** storing the session within a remote JVM.
-- **No code changes required** to share the session with other remote Web/App servers - Support **Serialized and Non-Serialized** Session attributes. Your attributes do not need to implement Serializable or Externalizable interface. 
+- **No code changes required** to share the session with other remote Web/App servers - Support **Serialized and Non-Serialized** Session attributes. Your attributes do not need to implement Serializable or Externalizable interface.
 - **Transparent Session sharing** between any App/Web server - Any JEE app/web server (WebSphere , Weblogic , JBoss , Tomcat , Jetty , GlassFish...) may share their HTTP session with each other.
-- **Application elasticity** - Support **session replication** across different App/Web applications located within the same or different data-centers/clouds allowing the application to scale dynamically without any downtime. 
+- **Application elasticity** - Support **session replication** across different App/Web applications located within the same or different data-centers/clouds allowing the application to scale dynamically without any downtime.
 - **Unlimited number of sessions and concurrent users** support - Sub-millisecond session data access by using GigaSpaces In-Memory-Data-Grid.
 - **Session replication over the WAN** support - Utilizing GigaSpaces Multi-Site Replication over the WAN technology.
 - HTTP Session **data access scalability** - Session data can utilize any of the supported In-Memory-Data-Grid topologies ; replicated , partitioned , with and without local cache.
@@ -75,7 +76,7 @@ There is no need to change the web application or plug in any custom code in ord
 The below diagram shows a more detailed view of the IMDG deployment. In this case, there are multiple partitions for high scalability, as well as backup instances for redundancy. The WAN Gateway is also deployed and shows replication to each remote site.
 
 {% indent %}![httpSessionSharing2.jpg](/attachment_files/httpSessionSharing2.jpg){% endindent %}
- 
+
 The end-to-end path between the 2 data center nodes includes the servlet and Shiro filters, and the IMDG with local cache and WAN Gateway.
 
 {% indent %}![httpSessionSharing3.jpg](/attachment_files/httpSessionSharing3.jpg){% endindent %}
@@ -88,7 +89,7 @@ The GigaSpaces Global HTTP Session Sharing support two Load-Balancing scenarios:
 
 {% section %}
 {% column width=40% %}
-Have `cacheManager.cacheSessionLocally = true` when you would like multiple web application instances to share the same HTTP session. In this case your load balancer should be configured to support *non-sticky sessions* routing requests to a different web application based on some load-balancing algorithm. This will improve the performance of your application by avoiding reading the latest copy of the session from the remote space on each page load. 
+Have `cacheManager.cacheSessionLocally = true` when you would like multiple web application instances to share the same HTTP session. In this case your load balancer should be configured to support *non-sticky sessions* routing requests to a different web application based on some load-balancing algorithm. This will improve the performance of your application by avoiding reading the latest copy of the session from the remote space on each page load.
 {% endcolumn %}
 {% column %}
 {% indent %}![http-session-non-sticky.jpg](/attachment_files/http-session-non-sticky.jpg){% endindent %}
@@ -113,7 +114,7 @@ The web application requires a couple of configuration changes to the web.xml fi
 {% highlight java %}
 <web-app>
 
-....  
+....
 	<listener>
 		<listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
 	</listener>
@@ -165,7 +166,7 @@ securityManager.cacheManager = $cacheManager
 # Session validation
 sessionValidationScheduler = org.apache.shiro.session.mgt.ExecutorServiceSessionValidationScheduler
 
-# Session timeout  
+# Session timeout
 securityManager.sessionManager.defaultSessionTimeout = 1800000
 
 # Default is 3,600,000 millis = 1 hour:
@@ -188,7 +189,7 @@ aopalliance-1.0.jar, commons-beanutils-1.8.3.jar, commons-collections-2.1.1.jar,
 
 ### GigaSpaces In Memory Data Grid (IMDG)
 
-GigaSpaces IMDG should be deployed using your favorite topology (replicated and/or partitioned, static or elastic) and include a reference to a WAN Gateway. 
+GigaSpaces IMDG should be deployed using your favorite topology (replicated and/or partitioned, static or elastic) and include a reference to a WAN Gateway.
 
 Before deploying regular IMDG:
 
@@ -222,7 +223,7 @@ Session manager uses XStream libraries for serializing session data to XML. XStr
 		# Default value is false
 		# cacheManager.registerReflectionConverter = true
 
-		# List of XStream converters that application would like to register 
+		# List of XStream converters that application would like to register
 		# (Expecting that these are part of classpath or WEB-INF/lib)
 		# Pass them comma separated
 		# cacheManager.converterNameList = org.openspaces.xtreme.converter.XmlCalendarConverter
@@ -289,7 +290,7 @@ Another option would be to use a load-balancer such as the [apache httpd](http:/
 
 1. Configure the `<Apache2.2 HTTPD root>\conf\httpd.conf` to have the following:
 
-		Include "/tools/Apache2.2/conf/gigaspaces/*.conf" 
+		Include "/tools/Apache2.2/conf/gigaspaces/*.conf"
 
 		LoadModule proxy_module modules/mod_proxy.so
 		LoadModule proxy_balancer_module modules/mod_proxy_balancer.so
@@ -302,9 +303,9 @@ Another option would be to use a load-balancer such as the [apache httpd](http:/
 		<Location /balancer-manager>
 		SetHandler balancer-manager
 
-		Order deny,allow 
-		Deny from all 
-		Allow from 127.0.0.1 
+		Order deny,allow
+		Deny from all
+		Allow from 127.0.0.1
 		</Location>
 
 {% note %}The `/tools/Apache2.2` folder name should be replaced with your correct Apache httpd location. \\ The `127.0.0.1` IP should be replaced with appropriate IP addresses of the machine that is running apache.{% endnote %}
@@ -343,6 +344,6 @@ Global HTTP session sharing works only when your application is deployed as a no
 
 When using the Global HTTP session sharing with WebSphere Application Server , please enable the [HttpSessionIdReuse](http://pic.dhe.ibm.com/infocenter/wasinfo/v7r0/index.jsp?topic=%2Fcom.ibm.websphere.express.doc%2Finfo%2Fexp%2Fae%2Frprs_custom_properties.html) custom property. In a multi-JVM environment that is not configured for session persistence setting this property to true enables the session manager to use the same session information for all of a user's requests even if the Web applications that are handling these requests are governed by different JVMs.
 
-##### Transient Attribute 
+##### Transient Attribute
 
 An attribute specified as *transient* would not be shared and its content will not be stored within the IMDG. Your code should be modified to have this as a regular attribute that can be serialized.

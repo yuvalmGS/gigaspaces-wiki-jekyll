@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Debugging a XAP.NET Application
 categories: XAP97NET
-page_id: 63799354
+parent: getting-started.html
+weight: 300
 ---
 
 {% children %}

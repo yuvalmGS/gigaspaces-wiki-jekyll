@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Cassandra Space Data Source
-page_id: 61867225
+categories: XAP97
 ---
 
 {% compositionsetup %}

@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Writing and Updating Entries
 categories: XAP97NET
-page_id: 63799399
+parent: the-space-api.html
+weight: 300
 ---
 
 {% summary %}Writing objects to the space{% endsummary %}

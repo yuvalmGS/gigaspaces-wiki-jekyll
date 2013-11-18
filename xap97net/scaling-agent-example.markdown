@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Scaling Agent Example
 categories: XAP97NET
-page_id: 63799365
+parent: administration-and-monitoring-api.html
+weight: 100
 ---
 
 {% compositionsetup %}

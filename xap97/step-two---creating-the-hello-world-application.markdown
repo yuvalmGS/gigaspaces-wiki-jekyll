@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step Two - Creating the Hello World Application
-page_id: 61867276
+categories: XAP97
 ---
 
 {% compositionsetup %}

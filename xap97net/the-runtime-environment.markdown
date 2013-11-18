@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  The Runtime Environment
 categories: XAP97NET
-page_id: 63799318
+parent: getting-started.html
+weight: 200
 ---
 
 {% summary %}This section gives a detailed description of the GigaSpaces deployment & runtime environment.{% endsummary %}

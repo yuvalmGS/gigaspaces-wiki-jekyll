@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Container Maintenance - GigaSpaces Browser
-page_id: 61867051
+categories: XAP97
 ---
 
 {% summary %}Restarting, shutting down and refreshing containers; viewing a runtime configuration report.{% endsummary %}

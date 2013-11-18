@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Universal Deployer
 categories: SBP
-page_id: 55937666
+parent: none
+weight: 4400
 ---
 
 {% compositionsetup %}

@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Custom Eviction
 categories: SBP
-page_id: 54298007
+parent: none
+weight: 200
 ---
 
 {% compositionsetup %}

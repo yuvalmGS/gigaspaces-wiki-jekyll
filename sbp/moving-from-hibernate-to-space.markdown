@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Moving from Hibernate to Space
 categories: SBP
-page_id: 55935740
+parent: none
+weight: 2000
 ---
 
 {% compositionsetup %}

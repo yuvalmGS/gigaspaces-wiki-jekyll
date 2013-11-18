@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Setting JVM Location
-page_id: 61867114
+categories: XAP97
 ---
 
 {% summary %}Setting the `JAVA_HOME` parameter to tell GigaSpaces where the JDK is installed.{% endsummary %}

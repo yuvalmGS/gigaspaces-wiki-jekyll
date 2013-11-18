@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Networking How Tos
-page_id: 61867175
+categories: XAP97
 ---
 
 {% summary %}Instructions for getting specific things related to networking done.{% endsummary %}

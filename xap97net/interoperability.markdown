@@ -1,7 +1,8 @@
 ---
-layout: xap97net
+layout: post
 title:  Interoperability
 categories: XAP97NET
-page_id: 63799339
+parent: programmer's-guide.html
+weight: 400
 ---
 

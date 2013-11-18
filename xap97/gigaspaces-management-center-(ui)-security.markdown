@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  GigaSpaces Management Center (UI) Security
-page_id: 61867156
+categories: XAP97
 ---
 
 {% summary %}Security Administration using the GigaSpaces Management Center (UI){% endsummary %}

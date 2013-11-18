@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  ODBC Driver
 categories: SBP
-page_id: 53379091
+parent: none
+weight: 2400
 ---
 
 {% compositionsetup %}

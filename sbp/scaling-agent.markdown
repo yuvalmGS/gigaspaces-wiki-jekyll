@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Scaling Agent
 categories: SBP
-page_id: 51119415
+parent: none
+weight: 3600
 ---
 
 {% compositionsetup %}

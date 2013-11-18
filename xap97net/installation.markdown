@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Installation
 categories: XAP97NET
-page_id: 63799366
+parent: administrator's-guide.html
+weight: 300
 ---
 
 # System Requirements

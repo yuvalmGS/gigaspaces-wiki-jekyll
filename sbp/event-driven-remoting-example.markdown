@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Event Driven Remoting Example
 categories: SBP
-page_id: 47219276
+parent: none
+weight: 3000
 ---
 
 {% compositionsetup %}

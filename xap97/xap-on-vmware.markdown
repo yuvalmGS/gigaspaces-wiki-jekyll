@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP on VMWare
-page_id: 61867301
+categories: XAP97
 ---
 
 {% summary %}GigaSpaces XAP VMWare virtual appliance{% endsummary %}

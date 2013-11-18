@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Hosts View
-page_id: 61867425
+categories: XAP97
 ---
 
 {% compositionsetup %}{% summary %}Physical resources{% endsummary %}

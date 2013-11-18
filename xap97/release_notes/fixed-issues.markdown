@@ -1,7 +1,7 @@
 ---
 layout: release
 title:  Resolved Issues
-page_id: 61867183
+categories: XAP97
 ---
 
 {%summary%} Issues that have been fixed in XAP 9.7.X release {%endsummary%}

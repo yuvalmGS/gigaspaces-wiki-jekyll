@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  POJO Support
-page_id: 61867112
+categories: XAP97
 ---
 
 {% compositionsetup %}

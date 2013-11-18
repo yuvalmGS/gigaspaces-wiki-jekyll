@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Web Service PU
 categories: SBP
-page_id: 56426564
+parent: none
+weight: 4900
 ---
 
 {% compositionsetup %}

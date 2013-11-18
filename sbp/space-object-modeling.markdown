@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Space Object Modeling
 categories: SBP
-page_id: 51120319
+parent: none
+weight: 4000
 ---
 
 {% compositionsetup %}

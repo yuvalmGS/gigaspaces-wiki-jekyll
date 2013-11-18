@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  ALL IN CACHE-Cache Policy
-page_id: 61867183
+categories: XAP97
 ---
 
 {% summary %}The ALL-In-Cache Cache policy{% endsummary %}

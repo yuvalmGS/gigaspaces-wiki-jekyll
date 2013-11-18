@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Elastic Distributed Calculation Engine
 categories: SBP
-page_id: 56427156
+parent: none
+weight: 700
 ---
 
 {% compositionsetup %}

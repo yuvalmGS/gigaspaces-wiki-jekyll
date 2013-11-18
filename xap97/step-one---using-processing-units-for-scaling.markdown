@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step One - Using Processing Units for Scaling
-page_id: 61867010
+categories: XAP97
 ---
 
 {% compositionsetup %}

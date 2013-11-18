@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Multi-Space Replication over the LAN or VPN
-page_id: 61867132
+categories: XAP97
 ---
 
 {% summary %}This page explains how to establish data synchronization between multiple spaces which have direct network communication between each other.{% endsummary %}

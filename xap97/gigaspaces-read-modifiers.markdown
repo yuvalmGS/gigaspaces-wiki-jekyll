@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  GigaSpaces Read Modifiers
-page_id: 61867097
+categories: XAP97
 ---
 
 {% tip %}

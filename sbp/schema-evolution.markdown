@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Schema Evolution
 categories: SBP
-page_id: 48236978
+parent: none
+weight: 3700
 ---
 
 {% tip %}

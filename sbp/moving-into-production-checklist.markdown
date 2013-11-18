@@ -1,8 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Moving into Production Checklist
 categories: SBP
-page_id: 52527859
+parent: none
+weight: 2100
 ---
 
 {% compositionsetup %}

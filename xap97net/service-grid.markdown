@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Service Grid
 categories: XAP97NET
-page_id: 64127758
+parent: the-runtime-environment.html
+weight: 100
 ---
 
 {% compositionsetup %}

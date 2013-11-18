@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Replication Gateway Bootstrapping Process
 categories: XAP97NET
-page_id: 63799425
+parent: multi-site-replication-over-the-wan.html
+weight: 100
 ---
 
 {% summary %}This page is about bootstrapping a site from another site across gateways.{% endsummary %}

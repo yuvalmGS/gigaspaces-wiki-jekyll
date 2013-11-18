@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  deploy-application - GigaSpaces CLI
-page_id: 61867184
+categories: XAP97
 ---
 
 {% summary page|70 %}Deploys an application onto the service grid. {% endsummary %}

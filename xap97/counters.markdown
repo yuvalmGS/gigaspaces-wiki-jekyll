@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Counters
-page_id: 61867141
+categories: XAP97
 ---
 
 {% compositionsetup %}

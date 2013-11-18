@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  HTTP Session Management
-page_id: 61867170
+categories: XAP97
 ---
 
 {% compositionsetup %}

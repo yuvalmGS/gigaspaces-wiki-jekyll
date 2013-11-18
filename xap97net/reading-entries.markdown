@@ -1,8 +1,9 @@
 ---
-layout: xap97net
+layout: post
 title:  Reading Entries
 categories: XAP97NET
-page_id: 63799307
+parent: the-space-api.html
+weight: 400
 ---
 
 {% summary %}Reading entries from the space{% endsummary %}

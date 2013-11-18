@@ -1,8 +1,7 @@
 ---
-layout: xap97net
+layout: post
 title:  Document (Schema-Free) API
 categories: XAP97NET
-page_id: 63799383
 ---
 
 {% compositionsetup %}
