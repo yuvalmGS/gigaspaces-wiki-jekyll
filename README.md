@@ -6,7 +6,7 @@ It's based on [Jekyll](http://jekyllrb.com/), a Ruby-based static site generator
 ## Help Us Improve! 
 It's important for us to encourage your feedback and contribution. Contributing to this website is straightforward. Simply fork this repository, make your changes, test them with your locak Jekyll installation, and submit a pull request. We promise to review and comment on every pull request, and merge it if it makes sense.  
 
-## Installing and Testing Locally 
+## Installing, Editing and Testing Locally 
 To run and test the website locally, you should perform the following steps: 
 * Install the latest version of Jekyll (you can find detailed directions [here](http://jekyllrb.com/docs/installation/)).
 * If you intend to edit the docs, create a fork of this repo and clone it to your machine. 
@@ -24,6 +24,8 @@ git clone https://github.com/Gigaspaces/gigaspaces-wiki-jekyll.git
 cd gigaspaces-wiki-jekyll
 ```
 
+* Make the required changes to the docs (if you need to).
+
 * Run Jekyll in sever mode, and wait for the site generation to complete: 
 ```
 jekyll serve
@@ -38,7 +40,9 @@ Configuration file: /Users/uri1803/dev/gigaspaces-wiki-jekyll/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-* Point your browser to [http://localhost:4000](). You should see the documentation portal home page. 
+* Point your browser to [http://localhost:4000](). You should see the documentation portal home page, and verify that you're ok with your changes. 
+
+* If you've forked the repository and updated documentation pages, you can submit a pull request. We will review, comment and merge the pull request after approving it. 
 
 ## Continuous Deployment 
 
@@ -168,4 +172,55 @@ Creates a summary section at the top of the page. The section will include the t
 * `wbr`
 
 * `whr`
+
+
+## Cross referencing pages and URL's
+
+###  Latest XAP release URL
+
+When you need to referece a page in the latest XAP release in your documentation you use the `latestjavaurl` plugin.
+
+Example: `[Grid Service Agent]({%latestjavaurl%}/service-grid.html)`
+          This will create the following url: /xap97/service-grid.html
+
+This plugin is used in the the following sections:
+
+* Services and Best Practices
+* Java Tutorial
+* Product Overview
+
+
+### Latest XAP release number
+
+If you need to reference the latest XAP version number, you use the `latestxaprelease` plugin
+
+Example: http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd>
+This will produce the following URL: http://www.openspaces.org/schema/9.7/core/openspaces-core.xsd
+
+This plugin is used in the following sections:
+
+* Services and Best Practices
+* Java Tutorial
+* Product Overview
+
+
+### API Documentation API
+
+When referencing API Documentation in XAP and XAPNET pages you need to use the following plugins in the wiki pages:
+
+* Java :`javadoc`
+* .NET :`netdoc`
+* Scala:`scaladoc`
+
+This will point the the url to the version of the documentation you are working in.
+
+This plugin is used in the following folders:
+
+* /xapXX    (xx version)
+* /xapXXnet
+
+
+
+
+
 

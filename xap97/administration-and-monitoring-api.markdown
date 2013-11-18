@@ -171,10 +171,6 @@ for (Machine machine : admin.getMachines()) {
 
 {% tip %}
 See a fully running example of a [Scaling Agent](/sbp/scaling-agent.html) as part of the Solutions & Best Practices section.
-
-Please also check out this webinar about this API's capabilities and features:
-{% admindeepdive %}
-
 {% endtip %}
 
 # Admin Construction

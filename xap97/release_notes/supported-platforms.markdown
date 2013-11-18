@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: release
 title:  Supported Platforms
 categories: XAP97
 ---

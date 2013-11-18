@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: product
 title:  A Typical SBA Application
 page_id: 61867017
 ---

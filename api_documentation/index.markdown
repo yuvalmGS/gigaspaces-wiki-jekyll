@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: apidoc
 title:  API Documentation
 page_id: 61867183
 ---
@@ -7,6 +7,27 @@ page_id: 61867183
 {%summary%}Links to API documentation for the XAP platform{%endsummary%}
 
 
+
+[XAP 9.7](./xap-97.html)
+
+[XAP 9.6](./xap-96.html)
+
+[XAP 9.5](./xap-95.html)
+
+[XAP 9.1](./xap-91.html)
+
+[XAP 9.0](./xap-90.html)
+
+[XAP 8.0](./xap-80.html)
+
+[XAP 7.1](./xap-71.html)
+
+[XAP 7.0](./xap-70.html)
+
+
+
+
+{%comment%}
 # GigaSpaces XAP 9.7
 
 ![](/attachment_files/logos/java_icon.gif) [GigaSpaces XAP Javadoc](http://www.gigaspaces.com/docs/JavaDoc9.7/index.html) -- _GigaSpaces XAP API, including all components_
@@ -95,3 +116,5 @@ page_id: 61867183
 
 [GigaSpaces 6.5.X C+\+ API Documentation](http://www.gigaspaces.com/docs/cppdocs6.5) -- _GigaSpaces C+\+ classes_
 
+
+{%endcomment%}

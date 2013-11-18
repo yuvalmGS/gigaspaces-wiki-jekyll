@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: release
 title:  Deprecated Functionality
 categories: XAP97
 ---

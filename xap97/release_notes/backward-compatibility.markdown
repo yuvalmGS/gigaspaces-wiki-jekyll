@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: release
 title:  Backward compatibility
 categories: XAP97
 ---

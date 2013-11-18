@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: release
 title:  New Features and Improvements
 page_id: 61867183
 ---

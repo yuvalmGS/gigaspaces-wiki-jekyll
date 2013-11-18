@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: release
 title:  New Features and Improvements
 categories: XAP97
 ---

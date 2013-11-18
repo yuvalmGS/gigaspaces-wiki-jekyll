@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: release
 title:  Known Issues and Limitations
 categories: XAP97
 ---

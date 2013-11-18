@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: product
 title:  Terminology
 page_id: 61867322
 ---

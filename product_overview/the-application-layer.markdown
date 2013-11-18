@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: product
 title:  The Application Layer
 page_id: 61867196
 ---

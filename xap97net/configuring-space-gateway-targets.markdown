@@ -87,7 +87,7 @@ container.CreateSpaceProxy("Space", "/./myNYSpace", spaceConfig);
 
 {% endinittab %}
 
-Each configuration can be configured for all gateways or specifically per each gateway as seen in the above example, max-redo-log-capacity is configured for all gateways while bulk-size is specifically overridden in the configuration of HONGKONG gateway target. A recommended reading regarding the replication redo-log is [Controlling the Replication Redo Log](http://wiki.gigaspaces.com/wiki/display/XAP95/Controlling+the+Replication+Redo+Log).
+Each configuration can be configured for all gateways or specifically per each gateway as seen in the above example, max-redo-log-capacity is configured for all gateways while bulk-size is specifically overridden in the configuration of HONGKONG gateway target. A recommended reading regarding the replication redo-log is [Controlling the Replication Redo Log]({%currentjavaurl%}/controlling-the-replication-redo-log.html).
 
 # Configurable Parameters
 

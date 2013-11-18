@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: javatutorial
 title:  XAP Tutorial Part I
 page_id: 61867355
 ---

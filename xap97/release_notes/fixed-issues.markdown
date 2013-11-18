@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: release
 title:  Resolved Issues
 categories: XAP97
 ---

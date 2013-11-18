@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: product
 title:  Concepts
 page_id: 61867442
 ---
