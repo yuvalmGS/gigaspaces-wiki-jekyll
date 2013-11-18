@@ -1,7 +1,9 @@
 ---
- layout: javatutorial
- title:  XAP Tutorial Part VI
- page_id: 61867355
+layout: post
+title:  XAP Tutorial Part VI
+categories: JAVATUTORIAL
+weight: 600
+parent: none
 ---
 
 
