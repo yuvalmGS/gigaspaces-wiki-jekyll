@@ -1,7 +1,9 @@
 ---
-layout: release
+layout: post
 title:  Upgrading from previous versions
-page_id: 61867183
+categories: XAP97NET
+parent: none
+weight: 800
 ---
 
 {%summary%}Step by step instructions on how to upgrade from previous versions {%endsummary%}

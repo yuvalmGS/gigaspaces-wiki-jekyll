@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  XAP Tutorial Part II
+title:  The Data Grid
 categories: JAVATUTORIAL
 weight: 200
-parent: index.html
+parent: none
 ---
 
 

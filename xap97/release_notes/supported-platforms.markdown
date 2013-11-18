@@ -1,7 +1,9 @@
 ---
-layout: release
+layout: post
 title:  Supported Platforms
 categories: XAP97
+parent: none
+weight: 700
 ---
 
 {%summary%} Supported Platforms for XAP 9.7.X release {%endsummary%}

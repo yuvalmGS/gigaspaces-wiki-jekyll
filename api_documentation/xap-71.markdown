@@ -1,7 +1,9 @@
 ---
-layout: apidoc
+layout: post
 title:  XAP 7.1 API Documentation
-page_id: 61867183
+categories: APIDOCS
+weight: 700
+parent: none
 ---
 
 

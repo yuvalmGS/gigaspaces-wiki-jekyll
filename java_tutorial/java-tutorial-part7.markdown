@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  XAP Tutorial Part VII
+title:  Space Persistence
 categories: JAVATUTORIAL
 weight: 700
-parent: index.html
+parent: none
 ---
 
 {%comment%}

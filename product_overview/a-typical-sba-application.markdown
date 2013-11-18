@@ -1,7 +1,9 @@
 ---
-layout: product
+layout: post
 title:  A Typical SBA Application
-page_id: 61867017
+categories: PRODUCT
+weight: 200
+parent: none
 ---
 
 {% summary %}A Typical Space-Based Application {% endsummary %}

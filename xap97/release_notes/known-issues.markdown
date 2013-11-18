@@ -1,7 +1,9 @@
 ---
-layout: release
+layout: post
 title:  Known Issues and Limitations
 categories: XAP97
+parent: none
+weight: 400
 ---
 
 {%summary%} Known Issues and Limitations in XAP 9.7.X release {%endsummary%}

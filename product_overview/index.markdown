@@ -1,7 +1,7 @@
 ---
-layout: product
+layout: post
 title:  Product Overview
-page_id: 61867264
+categories: PRODUCT
 ---
 
 # What Does the Product Overview Guide Cover?

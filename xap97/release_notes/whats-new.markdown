@@ -1,7 +1,9 @@
 ---
-layout: release
+layout: post
 title:  What's new in XAP 9.7
 categories: XAP97
+parent: none
+weight: 100
 ---
 
 {%summary%} What's new in XAP 9.7 {%endsummary%}

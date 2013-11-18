@@ -1,7 +1,9 @@
 ---
-layout: release
+layout: post
 title:  Resolved Issues
 categories: XAP97
+parent: none
+weight: 300
 ---
 
 {%summary%} Issues that have been fixed in XAP 9.7.X release {%endsummary%}

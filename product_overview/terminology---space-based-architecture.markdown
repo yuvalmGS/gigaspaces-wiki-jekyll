@@ -1,7 +1,9 @@
 ---
-layout: product
+layout: post
 title:  Terminology - Space-Based Architecture
-page_id: 61867130
+categories: PRODUCT
+weight: 400
+parent: terminology.html
 ---
 
 {% summary %}GigaSpaces SBA components {% endsummary %}

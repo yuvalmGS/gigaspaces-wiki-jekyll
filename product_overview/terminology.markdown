@@ -1,7 +1,9 @@
 ---
-layout: product
+layout: post
 title:  Terminology
-page_id: 61867322
+categories: PRODUCT
+weight: 600
+parent: none
 ---
 
 {% children %}

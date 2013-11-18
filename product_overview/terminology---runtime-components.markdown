@@ -1,7 +1,9 @@
 ---
-layout: product
+layout: post
 title:  Terminology - Runtime Components
-page_id: 61867104
+categories: PRODUCT
+weight: 300
+parent: terminology.html
 ---
 
 {% summary page|65 %}GigaSpaces runtime components {% endsummary %}

@@ -1,7 +1,9 @@
 ---
-layout: release
+layout: post
 title:  Resolved Issues
-page_id: 61867183
+categories: XAP97NET
+parent: none
+weight: 300
 ---
 
 {%summary%} Issues that have been fixed in XAP 9.7.X release {%endsummary%}

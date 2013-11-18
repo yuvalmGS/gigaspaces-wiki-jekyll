@@ -1,7 +1,9 @@
 ---
-layout: release
+layout: post
 title:  Known Issues and Limitations
-page_id: 61867183
+categories: XAP97NET
+parent: none
+weight: 400
 ---
 
 {%summary%} Known Issues and Limitations in XAP 9.7.X release {%endsummary%}

@@ -1,7 +1,9 @@
 ---
-layout: apidoc
-title:  XAP 97 API Documentation
-page_id: 61867183
+layout: post
+title:  XAP 9.7 API Documentation
+categories: APIDOCS
+weight: 100
+parent: none
 ---
 
 

@@ -1,7 +1,9 @@
 ---
-layout: product
+layout: post
 title:  The Application Layer
-page_id: 61867196
+categories: PRODUCT
+weight: 500
+parent: none
 ---
 
 {% summary %}This section describes the GigaSpaces Application Layer.{% endsummary %}

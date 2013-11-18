@@ -1,7 +1,9 @@
 ---
-layout: earlyaccess
+layout: post
 title:  Early Access
-page_id: 61867264
+weight:
+parent: none
+categories: EA
 ---
 
 At this moment there is no new version available

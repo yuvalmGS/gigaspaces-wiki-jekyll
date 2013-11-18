@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  XAP Tutorial Part IV
+title:  Events and Messaging
 categories: JAVATUTORIAL
 weight: 400
-parent: index.html
+parent: none
 ---
 
 

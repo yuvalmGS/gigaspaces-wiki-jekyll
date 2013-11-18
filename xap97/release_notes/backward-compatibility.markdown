@@ -1,7 +1,9 @@
 ---
-layout: release
+layout: post
 title:  Backward compatibility
 categories: XAP97
+parent: none
+weight: 600
 ---
 
 {%summary%} Backward compatibility, rolling upgrades and coexistence of XAP versions {%endsummary%}

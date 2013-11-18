@@ -1,7 +1,8 @@
 ---
-layout: apidoc
+layout: post
 title:  API Documentation
-page_id: 61867183
+categories: APIDOCS
+parent: none
 ---
 
 {%summary%}Links to API documentation for the XAP platform{%endsummary%}

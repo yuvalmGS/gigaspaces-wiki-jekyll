@@ -1,7 +1,9 @@
 ---
-layout: product
+layout: post
 title:  Terminology - Basic Components
-page_id: 61867004
+categories: PRODUCT
+weight: 100
+parent: terminology.html
 ---
 
 {% summary page|65 %}GigaSpaces basic components.{% endsummary %}

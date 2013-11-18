@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  XAP Tutorial Part VIII
+title:  Web Processing Unit
 categories: JAVATUTORIAL
 weight: 800
-parent: index.html
+parent: none
 ---
 
 

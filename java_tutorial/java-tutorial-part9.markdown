@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  XAP Tutorial Part IX
+title:  Big Data
 categories: JAVATUTORIAL
 weight: 900
-parent: index.html
+parent: none
 ---
 
 {%comment%}

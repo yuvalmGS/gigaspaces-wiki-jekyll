@@ -1,7 +1,9 @@
 ---
-layout: release
+layout: post
 title:  Deprecated Functionality
 categories: XAP97
+parent: none
+weight: 500
 ---
 
 {%summary%} Deprecated Functionality in XAP97 {%endsummary%}

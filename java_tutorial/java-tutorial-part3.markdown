@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  XAP Tutorial Part III
+title:  Processing Services
 categories: JAVATUTORIAL
 weight: 300
-parent: index.html
+parent: none
 ---
 
 

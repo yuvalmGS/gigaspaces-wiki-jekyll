@@ -1,7 +1,9 @@
 ---
-layout: release
+layout: post
 title:  Deprecated Functionality
-page_id: 61867183
+categories: XAP97NET
+parent: none
+weight: 500
 ---
 
 {%summary%} Deprecated Functionality in XAP97 {%endsummary%}

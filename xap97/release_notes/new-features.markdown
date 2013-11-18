@@ -1,7 +1,9 @@
 ---
-layout: release
+layout: post
 title:  New Features and Improvements
 categories: XAP97
+parent: none
+weight: 200
 ---
 
 {%summary%} New features and improvements in the XAP 9.7.X release {%endsummary%}

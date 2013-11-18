@@ -1,7 +1,8 @@
 ---
-layout: release
+layout: post
 title:  XAP 9.7 Release Notes
 categories: XAP97
+parent: none
 ---
 
 

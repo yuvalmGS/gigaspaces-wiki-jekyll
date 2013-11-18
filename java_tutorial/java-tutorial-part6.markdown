@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  XAP Tutorial Part VI
+title:  Space Transactions
 categories: JAVATUTORIAL
 weight: 600
-parent: index.html
+parent: none
 ---
 
 

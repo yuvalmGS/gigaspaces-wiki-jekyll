@@ -1,7 +1,9 @@
 ---
-layout: product
+layout: post
 title:  Database Integration
-page_id: 61867029
+categories: PRODUCT
+weight: 300
+parent: none
 ---
 
 {% summary %}This section describes Database Integration in SBA{% endsummary %}

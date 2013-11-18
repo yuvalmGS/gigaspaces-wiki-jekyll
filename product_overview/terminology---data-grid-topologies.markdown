@@ -1,7 +1,9 @@
 ---
-layout: product
+layout: post
 title:  Terminology - Data Grid Topologies
-page_id: 61867088
+categories: PRODUCT
+weight: 200
+parent: terminology.html
 ---
 
 {% summary page|65 %}GigaSpaces Data-Grid components {% endsummary %}

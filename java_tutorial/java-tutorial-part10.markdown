@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  XAP Tutorial Part X
+title:  Security
 categories: JAVATUTORIAL
 weight: 1000
-parent: index.html
+parent: none
 ---
 
 {%comment%}

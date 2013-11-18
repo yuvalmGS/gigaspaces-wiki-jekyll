@@ -1,7 +1,9 @@
 ---
-layout: product
+layout: post
 title:  Product Architecture
-page_id: 61867135
+categories: PRODUCT
+weight: 400
+parent: none
 ---
 
 {% summary %}This section describes the architecture of the GigaSpaces XAP product.{% endsummary %}

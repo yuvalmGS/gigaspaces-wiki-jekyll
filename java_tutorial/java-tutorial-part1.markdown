@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  XAP Tutorial Part I
+title:  The Space
 categories: JAVATUTORIAL
 weight: 100
-parent: index.html
+parent: none
 ---
 
 

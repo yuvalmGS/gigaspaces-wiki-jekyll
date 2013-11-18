@@ -1,7 +1,8 @@
 ---
-layout: release
+layout: post
 title:  XAP .NET 9.7 Release Notes
-page_id: 61867355
+categories: XAP97NET
+parent: none
 ---
 
 

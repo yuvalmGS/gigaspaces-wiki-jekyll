@@ -1,7 +1,9 @@
 ---
-layout: apidoc
+layout: post
 title:  XAP 8.0 API Documentation
-page_id: 61867183
+categories: APIDOCS
+weight: 600
+parent: none
 ---
 
 
