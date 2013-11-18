@@ -1,7 +1,9 @@
 ---
-layout: javatutorial
+layout: post
 title:  XAP Tutorial Part X
-page_id: 61867355
+categories: JAVATUTORIAL
+weight: 1000
+parent: none
 ---
 
 {%comment%}
