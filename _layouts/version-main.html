@@ -2,6 +2,11 @@
 <html lang="en">
   {% include head.html %}
   <body>
+    <script type="text/javascript">
+      var tocheaders = {};
+      var tocheadersz = {};
+      var sidebar = {};
+    </script>
     {% include scripts.html %}
     <div id="wrapper">
       <div id="header">
@@ -23,6 +28,7 @@
       <div class="push"></div>
     </div>
     {% include footer.html %}
+    {% include post-layout.markdown %}
     
     <script>
       $("#navigation").treeview({
