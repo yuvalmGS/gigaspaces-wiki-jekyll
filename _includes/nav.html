@@ -4,8 +4,7 @@
 {% for cat in site.categories-list %}
 
 <script type="text/javascript">
-  sidebar["{{ cat }}"] = [];
-  sidebar_categories = ["SBP", "XAP97", "XAP96", "XAP97NET","JAVATUTORIAL"];
+  sidebar["{{ cat }}"] = [];  
 {% for page in site.pages %}
 {% if page.categories == cat %}
 {% if page.parent != null %}

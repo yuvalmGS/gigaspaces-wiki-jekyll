@@ -2,7 +2,7 @@
 layout: post
 title:  XAP Tutorial
 categories: JAVATUTORIAL
-parent:
+parent: none
 ---
 
 

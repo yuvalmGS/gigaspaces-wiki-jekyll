@@ -3,7 +3,7 @@ layout: post
 title:  XAP Tutorial Part X
 categories: JAVATUTORIAL
 weight: 1000
-parent: none
+parent: index.html
 ---
 
 {%comment%}

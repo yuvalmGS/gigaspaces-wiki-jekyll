@@ -3,7 +3,7 @@ layout: post
 title:  XAP Tutorial Part III
 categories: JAVATUTORIAL
 weight: 300
-parent: none
+parent: index.html
 ---
 
 
