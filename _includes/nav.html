@@ -57,9 +57,15 @@ function makeSideBar(orig, space) {
   var counter = 0;
   while (with_parent.length != 0) {
     counter += 1;
+    if (with_parent.length > 2) {
+      var current_child = with_parent[~~(Math.random()*with_parent.length)];
+    } else if (with_parent.length == 2) {
+      var current_child = with_parent[Math.round(Math.random())];
+    } else {
+      var current_child = with_parent[0];
+    }
 
-    var current_child = with_parent[Math.floor(Math.random()*with_parent.length)];
-    sidebar_url = 'a[href="/' + space.toLowerCase() + '/' + current_child['parent'] + '"]';
+    sidebar_url = '[href$="' + current_child['parent'] + '"]';
     find_a = parent_object.find(sidebar_url);
     if (find_a.length != 0) {
       with_parent = $.grep(with_parent, function(value) { return(value != current_child) });
@@ -80,7 +86,6 @@ function makeParentMenu(orig, space) {
   var i, j;
   for (i = 0, j = orig['urls'].length; i < j; i++) {
     var curr_menu = orig['urls'][i];
-    console.log(curr_menu['url']);
     output += '<li><a href="' + curr_menu['url'] + '">' + curr_menu['title'] + "</a></li>\n";
   }
   output += "</ul>";
@@ -98,13 +103,13 @@ function makeChildMenu(orig) {
   return output
 }
 
-for (var space in sidebar) {
-  var tmp = transformArr(sidebar[space]);
+current_categories = '{{ page.categories }}';
 
-  if (tmp.length != 0) {
-    html_result = makeSideBar(tmp, space);
-    $("#sidebar_menu").append(html_result);
-  }
+
+var tmp = transformArr(sidebar[current_categories]);
+
+if (tmp.length != 0) {
+  html_result = makeSideBar(tmp, current_categories);
+  $("#sidebar_menu").append(html_result);
 }
-
 </script>

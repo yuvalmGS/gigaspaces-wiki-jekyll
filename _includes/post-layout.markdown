@@ -57,15 +57,15 @@
     }
     */
 
-    if ($("#childrentree").length !== 0) {
-      var childrentreeid = $("a:contains('" + $("title").text() +"')");
-      var childrens_li = childrentreeid.siblings("ul").children("li");
-      $("#childrentree").append("<ul></ul>");
-      childrentreeul = $("#childrentree").children("ul");
-      childrens_li.each(function() {
-        childrentreeul.append($(this));
-      });
-    }
+    // if ($("#childrentree").length !== 0) {
+    //   var childrentreeid = $("a:contains('" + $("title").text() +"')");
+    //   var childrens_li = childrentreeid.siblings("ul").children("li");
+    //   $("#childrentree").append("<ul></ul>");
+    //   childrentreeul = $("#childrentree").children("ul");
+    //   childrens_li.each(function() {
+    //     childrentreeul.clone().append($(this));
+    //   });
+    // }
 
     if ($("#gallery").length !== 0) {
       $("#gallery a").fancybox();

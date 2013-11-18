@@ -2,7 +2,7 @@
 layout: post
 title:  ID Queries
 categories: XAP97NET
-parent: getting-partial-results-using-the-projection-api.html
+parent: querying-the-space.html
 weight: 300
 ---
 
