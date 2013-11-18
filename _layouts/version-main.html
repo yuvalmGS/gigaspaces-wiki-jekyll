@@ -3,18 +3,25 @@
   {% include head.html %}
   <body>
     {% include scripts.html %}
-    {% include navbar.html %}
-    <div class="container" style="padding-top: 20px;">
-      <div class='row'>
-        <div class='col-md-3'>
-          {% include nav.html %}
-        </div>
-        <div id="content" class='col-md-9'>
-          {{ content }}
-        </div>
+    <div id="wrapper">
+      <div id="header">
+        {% include navbar.html %}
       </div>
-      <hr/>      
-    </div> <!-- /container -->
+      <div id="content-parent">
+        <div class="container" style="padding-top: 80px;">
+          <div class='row'>
+            <div class='col-md-3'>
+              {% include nav.html %}
+            </div>
+            <div id="content" class='col-md-9'>
+              {{ content }}
+            </div>
+          </div>
+          <hr/>      
+        </div> <!-- /container -->
+      </div>
+      <div class="push"></div>
+    </div>
     {% include footer.html %}
     
     <script>

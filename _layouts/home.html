@@ -5,8 +5,17 @@
   
   <body>  
     {% include scripts.html %}  
-    {% include navbar.html %}
-    {{ content }}
-    {% include footer.html %}   
+    <div id="wrapper">
+    	<div id="header">
+    	{% include navbar.html %}
+    	</div>
+    	<div id="content-parent">
+    	{{ content }}
+    	</div>
+    	<div class="push"></div>
+	</div>
+
+    {% include footer.html %}
+
   </body>
 </html>

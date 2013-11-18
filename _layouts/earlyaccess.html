@@ -5,22 +5,35 @@
     <script type="text/javascript">
       var tocheaders = {};
       var tocheadersz = {};
+      var sidebar = {};
     </script>
     {% include scripts.html %}
-    {% include navbar.html %}
-    <div class="container" style="padding-top: 20px;">
-      <div class="row">
-        <div class="col-md-3">
-          {% include earlyaccessnav.html %}
-        </div>
-        <div id="content" class="col-md-9">
-          <h1 style="margin-top: 0px;">{{ page.title }}</h1>
-          {{ content }}
+    <div id="wrapper">
+      <div id="header">
+        {% include navbar.html %}
+      </div>
+
+      <div id="content-parent">
+        <div class="container" style="padding-top: 80px;">
+          <div class="row">
+            {% if page.categories == null %}
+              <div id="content" class="col-md-12">
+            {% else %}
+              <div class="col-md-3">
+                {% include earlyaccessnav.html %}
+              </div>
+              <div id="content" class="col-md-9">
+            {% endif %}
+                <h1 style="margin-top: 0px;">{{ page.title }}</h1>
+                {{ content }}
+              </div>
+            </div>
+          </div><!-- /container -->
         </div>
       </div>
-    </div><!-- /container -->
+      <div class="push"></div>
+    </div>
     {% include footer.html %}
-
-    <script type="text/javascript" src="/js/post-layout.js"></script>
+    {% include post-layout.markdown %}
   </body>
 </html>
