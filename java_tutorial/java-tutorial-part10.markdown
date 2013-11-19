@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Security
-categories: JAVATUTORIAL
+categories: JAVA_TUTORIAL
 weight: 1000
 parent: none
 ---

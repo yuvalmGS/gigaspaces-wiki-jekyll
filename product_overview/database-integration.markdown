@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Database Integration
-categories: PRODUCT
+categories: PRODUCT_OVERVIEW
 weight: 300
 parent: none
 ---

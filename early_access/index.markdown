@@ -3,7 +3,7 @@ layout: post
 title:  Early Access
 weight:
 parent: none
-categories: EA
+categories: EARLY_ACCESS
 ---
 
 At this moment there is no new version available

@@ -93,3 +93,34 @@ function makeChildMenu(orig) {
   output += "</ul>";
   return output
 }
+
+function createBreadcrumbs(category, currentSection) {
+  
+  if (sidebar[category]) {
+    var locations = []; 
+    var currentPath = location.pathname; 
+    var currentCrumb = sidebar[category].filter(function(x) {return x.url == currentPath})[0]
+    while (currentCrumb) {
+      locations.unshift(currentCrumb);      
+      if (currentCrumb.parent == "none") break;         
+      currentPath = "/" + category.toLowerCase() + "/" + currentCrumb.parent; 
+      currentCrumb = sidebar[category].filter(function(x) {return x.url == currentPath})[0]
+    }
+  }
+
+  var breadcrumbsHtml = "<ol class='breadcrumb'>";
+  breadcrumbsHtml += "<li><a href='/'>Home</a></li>";  
+  breadcrumbsHtml += "<li><a href='/" + category.toLowerCase() + "/'>" + currentSection + "</a></li>";  
+  if (locations.length > 0) {  
+    for (var i=0; i<locations.length; i++) {
+      breadcrumbsHtml += "<li><a href='" + locations[i].url +"'>" + locations[i].title + "</a></li>";  
+    }  
+  }
+  breadcrumbsHtml += "</ol>";
+  $("#breadcrumbs").append(breadcrumbsHtml);
+
+}
+
+
+
+

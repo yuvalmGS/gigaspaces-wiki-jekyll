@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Product Architecture
-categories: PRODUCT
+categories: PRODUCT_OVERVIEW
 weight: 400
 parent: none
 ---

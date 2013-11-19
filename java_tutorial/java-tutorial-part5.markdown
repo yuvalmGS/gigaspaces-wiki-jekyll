@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Processing Unit
-categories: JAVATUTORIAL
+categories: JAVA_TUTORIAL
 weight: 500
 parent: none
 ---

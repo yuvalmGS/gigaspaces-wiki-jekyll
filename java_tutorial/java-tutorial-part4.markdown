@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Events and Messaging
-categories: JAVATUTORIAL
+categories: JAVA_TUTORIAL
 weight: 400
 parent: none
 ---

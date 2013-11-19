@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Big Data
-categories: JAVATUTORIAL
+categories: JAVA_TUTORIAL
 weight: 900
 parent: none
 ---

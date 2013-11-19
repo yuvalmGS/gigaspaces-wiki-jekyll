@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Processing Services
-categories: JAVATUTORIAL
+categories: JAVA_TUTORIAL
 weight: 300
 parent: none
 ---

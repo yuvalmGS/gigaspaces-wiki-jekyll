@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Space
-categories: JAVATUTORIAL
+categories: JAVA_TUTORIAL
 weight: 100
 parent: none
 ---

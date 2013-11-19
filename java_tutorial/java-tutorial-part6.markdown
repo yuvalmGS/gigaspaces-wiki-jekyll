@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Transactions
-categories: JAVATUTORIAL
+categories: JAVA_TUTORIAL
 weight: 600
 parent: none
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Terminology - Space-Based Architecture
-categories: PRODUCT
+categories: PRODUCT_OVERVIEW
 weight: 400
 parent: terminology.html
 ---

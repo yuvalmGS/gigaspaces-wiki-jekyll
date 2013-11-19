@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP 9.1 API Documentation
-categories: APIDOCS
+categories: API_DOCUMENTATION
 weight: 400
 parent: none
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Data Grid
-categories: JAVATUTORIAL
+categories: JAVA_TUTORIAL
 weight: 200
 parent: none
 ---

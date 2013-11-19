@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Application Layer
-categories: PRODUCT
+categories: PRODUCT_OVERVIEW
 weight: 500
 parent: none
 ---

@@ -46,6 +46,16 @@ html,body{ height:100%; padding-top:0;}
      border-right: #dfdfdf 1px solid;    
 }
 
+.breadcrumb {
+  padding: 0px 0px 0px 10px;
+  margin-bottom: 10px;
+  background-color: transparent;
+}
+
+#breadcrumbs {
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
 ul li.search-result{ 
   border-bottom:solid 1px #e4e4e4; 
   min-height:64px; 

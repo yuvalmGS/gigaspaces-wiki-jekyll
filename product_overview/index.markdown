@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Product Overview
-categories: PRODUCT
+categories: PRODUCT_OVERVIEW
 ---
 
 # What Does the Product Overview Guide Cover?

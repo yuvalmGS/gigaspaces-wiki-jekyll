@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP Tutorial
-categories: JAVATUTORIAL
+categories: JAVA_TUTORIAL
 parent: none
 ---
 

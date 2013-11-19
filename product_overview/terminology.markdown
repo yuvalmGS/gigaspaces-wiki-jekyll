@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Terminology
-categories: PRODUCT
+categories: PRODUCT_OVERVIEW
 weight: 600
 parent: none
 ---

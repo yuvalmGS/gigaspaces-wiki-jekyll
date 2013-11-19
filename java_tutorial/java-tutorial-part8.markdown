@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Web Processing Unit
-categories: JAVATUTORIAL
+categories: JAVA_TUTORIAL
 weight: 800
 parent: none
 ---

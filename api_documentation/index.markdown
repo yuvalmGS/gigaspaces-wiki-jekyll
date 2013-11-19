@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  API Documentation
-categories: APIDOCS
+categories: API_DOCUMENTATION
 parent: none
 ---
 

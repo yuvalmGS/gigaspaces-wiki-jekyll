@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Persistence
-categories: JAVATUTORIAL
+categories: JAVA_TUTORIAL
 weight: 700
 parent: none
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Concepts
-categories: PRODUCT
+categories: PRODUCT_OVERVIEW
 parent: none
 weight: 100
 ---
