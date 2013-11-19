@@ -2,6 +2,8 @@
 layout: post
 title:  Your First XTP Application
 categories: XAP97
+weight: 400
+parent: quick-start-guide.html
 ---
 
 {% trainingbox %}

@@ -2,6 +2,8 @@
 layout: post
 title:  The OpenSpaces Data Example
 categories: XAP97
+weight: 100
+parent: beyond-the-basics.html
 ---
 
 {% compositionsetup %}

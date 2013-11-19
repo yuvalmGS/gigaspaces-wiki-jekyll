@@ -2,6 +2,8 @@
 layout: post
 title:  About Jini
 categories: XAP97
+weight:
+parent: none
 ---
 
 {% summary %}Jini is an open architecture that allows the implementation of network services - One such service is JavaSpaces.{% endsummary %}

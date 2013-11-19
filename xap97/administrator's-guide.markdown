@@ -2,6 +2,8 @@
 layout: post
 title:  Administrator's Guide
 categories: XAP97
+weight: 300
+parent: none
 ---
 
 # What Does the Administrator's Guide Cover?

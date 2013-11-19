@@ -2,6 +2,8 @@
 layout: post
 title:  XAP Order Management Tutorial
 categories: XAP97
+weight: 200
+parent: beyond-the-basics.html
 ---
 
 {% compositionsetup %}

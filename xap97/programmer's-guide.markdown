@@ -2,6 +2,8 @@
 layout: post
 title:  Programmer's Guide
 categories: XAP97
+weight: 200
+parent: none
 ---
 
 # What Does the Programmer's Guide Cover?

@@ -2,6 +2,8 @@
 layout: post
 title:  Step Three - Deploying onto the Service Grid
 categories: XAP97
+weight: 400
+parent: your-first-xtp-application.html
 ---
 
 {% compositionsetup %}

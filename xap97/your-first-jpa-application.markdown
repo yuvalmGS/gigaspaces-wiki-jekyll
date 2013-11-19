@@ -2,6 +2,8 @@
 layout: post
 title:  Your First JPA Application
 categories: XAP97
+weight: 500
+parent: quick-start-guide.html
 ---
 
 {% compositionsetup %}{% compositionsetup %}

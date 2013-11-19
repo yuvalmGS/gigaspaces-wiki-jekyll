@@ -2,6 +2,8 @@
 layout: post
 title:  Screen Casts
 categories: XAP97
+weight: 100
+parent: quick-start-guide.html
 ---
 
 ## To view one of the videos, click it on the right hand side of the player

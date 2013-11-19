@@ -2,6 +2,8 @@
 layout: post
 title:  Your First Real Time Big Data Analytics Application
 categories: XAP97
+weight: 700
+parent: quick-start-guide.html
 ---
 
 {% compositionsetup %}
