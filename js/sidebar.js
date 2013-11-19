@@ -73,7 +73,7 @@ function makeSideBar(orig, space) {
 }
 
 function makeParentMenu(orig, space) {
-  output = "<ul id='menu_" + space + "' style='display:none;'>\n";
+  output = "<ul id='toc_menu' style='display:none;'>\n";
   var i, j;
   for (i = 0, j = orig['urls'].length; i < j; i++) {
     var curr_menu = orig['urls'][i];

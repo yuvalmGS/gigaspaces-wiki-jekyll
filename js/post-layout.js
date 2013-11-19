@@ -1,3 +1,7 @@
+---
+layout: nil
+---
+
 $(function () {
 
   $(".tabsection").each(function(index) {
@@ -62,7 +66,8 @@ $(function () {
     $("#childrentree").append("<ul></ul>");
     childrentreeul = $("#childrentree").children("ul");
     childrens_li.each(function() {
-      childrentreeul.append($(this));
+      tmp = $(this).clone();
+      childrentreeul.append(tmp);
     });
   }
 
@@ -70,9 +75,16 @@ $(function () {
     $("#gallery a").fancybox();
   }
 
-  //$("#navigation").treeview({
-  // persist: "location"
-  //});
+  $("#sidebar_menu").treeview({
+    persist: "location",
+    animation: "slow",
+    collapsed: "true"
+  });
+  $("#toc_menu").fadeIn('slow');
+
+  // $("#navigation").treeview({
+  //   persist: "location"
+  // });
 
   $('tooltip-test').tooltip();
 
