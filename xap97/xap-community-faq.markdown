@@ -2,6 +2,8 @@
 layout: post
 title:  XAP-Community FAQ
 categories: XAP97
+weight: 300
+parent: appendix.html
 ---
 
 # Frequently Asked Questions
