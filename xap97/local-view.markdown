@@ -195,6 +195,16 @@ If local view synchronization is done using notifications, the round-trip-time c
 
 Creating a Local View directly from the space url is deprecated - use `LocalViewSpaceFactoryBean` or `LocalViewSpaceConfigurer` instead.
 
+## Server side local view properties
+
+This properties can be configured on the space side and they will affect all the local views which are created on top of that space:
+{: .table .table-bordered}
+| Property | Description | Default Value |
+|:---------|:------------|:--------------|
+| `cluster-config.groups.group.repl-policy.redo-log-local-view-capacity` | Specifies the total capacity of replication packets the redo log can hold for a local view replication target | 150000 |
+| `cluster-config.groups.group.repl-policy.redo-log-local-view-recovery-capacity` | Specifies the total capacity of replication packets the redo log can hold for a local view replication target while the local view is in recovery state (initial load process)| 1000000 |
+| `cluster-config.groups.group.repl-policy.local-view-max-disconnection-time` | Specifies the maximum amount of time (in milliseconds) the space will wait for the local view replication target before it is considered disconnected, after which the target will be dropped. | 300000 |
+
 ## Summary of Configuration Changes
 
 The following table summarizes the configuration changes made in 8.0.5
