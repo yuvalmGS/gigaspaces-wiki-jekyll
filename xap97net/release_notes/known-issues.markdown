@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Known Issues and Limitations
-categories: XAP97NET
+categories:
 parent: none
 weight: 400
 ---

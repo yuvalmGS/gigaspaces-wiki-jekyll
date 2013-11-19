@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Deprecated Functionality
-categories: XAP97NET
+categories:
 parent: none
 weight: 500
 ---

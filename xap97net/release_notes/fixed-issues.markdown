@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Resolved Issues
-categories: XAP97NET
+categories:
 parent: none
 weight: 300
 ---

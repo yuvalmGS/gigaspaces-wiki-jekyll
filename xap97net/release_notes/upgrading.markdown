@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Upgrading from previous versions
-categories: XAP97NET
+categories:
 parent: none
 weight: 800
 ---

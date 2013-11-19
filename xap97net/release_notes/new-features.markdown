@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  New Features and Improvements
-categories: XAP97NET
+categories:
 parent: none
 weight: 200
 ---

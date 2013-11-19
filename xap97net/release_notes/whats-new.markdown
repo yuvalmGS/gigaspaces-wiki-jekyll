@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  What's new in XAPNET 9.7
-categories: XAP97NET
+categories:
 parent: none
 weight: 100
 ---

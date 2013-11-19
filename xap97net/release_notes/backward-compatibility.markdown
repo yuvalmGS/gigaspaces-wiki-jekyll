@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Backward compatibility
-categories: XAP97NET
+categories:
 parent: none
 weight: 600
 ---

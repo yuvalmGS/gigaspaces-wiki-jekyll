@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP .NET 9.7 Release Notes
-categories: XAP97NET
+categories:
 parent: none
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Supported Platforms
-categories: XAP97NET
+categories:
 parent: none
 weight: 700
 ---
