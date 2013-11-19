@@ -2,6 +2,8 @@
 layout: post
 title:  Step Two - Creating the Hello World Application
 categories: XAP97
+weight: 300
+parent: your-first-xtp-application.html
 ---
 
 {% compositionsetup %}

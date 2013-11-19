@@ -2,6 +2,8 @@
 layout: post
 title:  Step 2 - Using the Power of the Space to Scale Your Data Access Layer
 categories: XAP97
+weight: 200
+parent: your-first-jpa-application.html
 ---
 
 {% summary %}This step explains how to utilize the power of the grid when implementing the data access layer of the PetClinic application (namely the `Clinic` interface), and seamlessly use distributed computing paradigms such as Map/Reduce and data and processing colocation{% endsummary %}

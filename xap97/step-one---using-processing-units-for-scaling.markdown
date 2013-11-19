@@ -2,6 +2,8 @@
 layout: post
 title:  Step One - Using Processing Units for Scaling
 categories: XAP97
+weight: 200
+parent: your-first-xtp-application.html
 ---
 
 {% compositionsetup %}

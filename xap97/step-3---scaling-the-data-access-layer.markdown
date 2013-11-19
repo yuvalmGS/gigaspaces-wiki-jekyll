@@ -2,6 +2,8 @@
 layout: post
 title:  Step 3 - Scaling the Data Access Layer
 categories: XAP97
+weight: 300
+parent: your-first-web-application.html
 ---
 
 {% compositionsetup %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Your First Data Grid Application
 categories: XAP97
+weight: 200
+parent: quick-start-guide.html
 ---
 
 {% compositionsetup %}

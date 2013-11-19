@@ -2,6 +2,8 @@
 layout: post
 title:  Step Four - Scaling the Hello World Application
 categories: XAP97
+weight: 500
+parent: your-first-xtp-application.html
 ---
 
 {% compositionsetup %}
