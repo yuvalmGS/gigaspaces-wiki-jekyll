@@ -104,4 +104,5 @@ The following parameters are low level configuration that relates to the swap re
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `cluster-config.groups.group.repl-policy.redo-log-local-view-capacity` | Specifies the total capacity of replication packets the redo log can hold for a local view replication target | 150000 |
+| `cluster-config.groups.group.repl-policy.redo-log-local-view-recovery-capacity` | Specifies the total capacity of replication packets the redo log can hold for a local view replication target while the local view is in recovery state (initial load process)| 1000000 |
 | `cluster-config.groups.group.repl-policy.local-view-max-disconnection-time` | Specifies the maximum amount of time (in milliseconds) the space will wait for the local view replication target before it is considered disconnected, after which the target will be dropped. | 300000 |
