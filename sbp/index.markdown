@@ -4,13 +4,7 @@ title:  Solutions and Best Practices Home
 categories: SBP
 ---
 
-{% section %}
-
-{% column width=70% %}
-
 This section contains GigaSpaces usage patterns, best practices and solutions. Each best practice is listed with the author/origin, and the GigaSpaces product version that it was tested against.
-
-{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
 # Data Access Patterns
 
@@ -85,7 +79,3 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |[Mainframe Integration](./mainframe-integration.html) |Advanced| GigaSpaces XAP can simplify the migration effort from mainframe based systems and reduce the cost of the legacy applications. GigaSpaces XAP act as a front-end layer for mainframe based systems may boost the system performance and improve the overall system response time on peak load.|
 |[Global Http Session Sharing](./global-http-session-sharing.html)|Advanced| Global HTTP Session Sharing allows transparent session replication between remote sites and sharing between different application servers in real-time.|
 |[Observable WAN](./observable-wan.html)|Advanced|Monitor and measure the replication performance of a multi-site deployment.|
-
-{% endcolumn %}
-
-{% endsection %}
