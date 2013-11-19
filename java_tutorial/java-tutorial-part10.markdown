@@ -293,12 +293,12 @@ The transport layer can be secured using an SSL communication filter.
 
 
 
-{%info%}This concludes this tutorial. For more detailed information of the XAP platform and its API please consult the [Programmers Guide]({%latestjavaurl%}/programmer's-guide.html) {%endinfo%}
+{%info%}This concludes this tutorial. For more detailed information of the XAP platform and its API please consult the [Programmers Guide]({%latestjavaurl%}/programmers-guide.html) {%endinfo%}
 
 
 {%comment%}
 # What's Next
-!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Programmer's Guide](./programmer's-guide.html) of this tutorial will introduce you to security aspects of XAP.
+!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Programmer's Guide](./programmers-guide.html) of this tutorial will introduce you to security aspects of XAP.
 
 
 #

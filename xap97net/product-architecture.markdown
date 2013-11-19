@@ -151,7 +151,7 @@ The IMDG uses the unified clustering layer, to provide a highly available and re
 TODO_NIV - Change to ISpaceProxy link when available.
 {% endcomment %}
 
-The main API to access the IMDG service, is the [Writing Your First Application](./your-first-data-grid-application.html). Please refer to the [Programmer's Guide](./programmer's-guide.html) for usage examples.
+The main API to access the IMDG service, is the [Writing Your First Application](./your-first-data-grid-application.html). Please refer to the [Programmer's Guide](./programmers-guide.html) for usage examples.
 
 ## Messaging Grid
 
@@ -213,7 +213,7 @@ GigaSpaces XAP provides several default implementations as part of the product, 
 **Current implementations supported by GigaSpaces XAP**:
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
-More information on the usage of the above integrations can be found in the [Programmer's Guide](./programmer's-guide.html).
+More information on the usage of the above integrations can be found in the [Programmer's Guide](./programmers-guide.html).
 
 ## .NET  - Abstract container
 

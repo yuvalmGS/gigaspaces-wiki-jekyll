@@ -2,7 +2,7 @@
 layout: post
 title:  Installation
 categories: XAP97NET
-parent: administrator's-guide.html
+parent: administrators-guide.html
 weight: 300
 ---
 

@@ -79,7 +79,7 @@ GigaSpaces XAP provides several default implementations as part of the product, 
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 
-More information on the usage of the above integrations can be found in the [Programmer's Guide]({%latestjavaurl%}/programmer's-guide.html).
+More information on the usage of the above integrations can be found in the [Programmer's Guide]({%latestjavaurl%}/programmers-guide.html).
 
 ## Spring Container
 
@@ -97,7 +97,7 @@ The [integration with the Jetty web container]({%latestjavaurl%}/web-jetty-proce
 
 The .NET SBA application takes advantage of the ability to run business services and .NET code, colocated with the data stored within the space.
 
-The [.NET container]({%latestneturl%}/programmer's-guide.html) bridges the technical gap and provides a native .NET experience for .NET applications.
+The [.NET container]({%latestneturl%}/programmers-guide.html) bridges the technical gap and provides a native .NET experience for .NET applications.
 
 ## C++ Container
 
@@ -138,7 +138,7 @@ It is important to note that the IMDG, although a memory-based service, is fully
 
 The IMDG uses the unified clustering layer, to provide a highly available and reliable service.
 
-The main API to access the IMDG service, is the [`GigaSpace` interface]({%latestjavaurl%}/the-gigaspace-interface.html). In addition, one can use the Map API (using the [GigaMap interface]({%latestjavaurl%}/map-api.html)) to access the IMDG. Please refer to the [Programmer's Guide]({%latestjavaurl%}/programmer's-guide.html) for usage examples.
+The main API to access the IMDG service, is the [`GigaSpace` interface]({%latestjavaurl%}/the-gigaspace-interface.html). In addition, one can use the Map API (using the [GigaMap interface]({%latestjavaurl%}/map-api.html)) to access the IMDG. Please refer to the [Programmer's Guide]({%latestjavaurl%}/programmers-guide.html) for usage examples.
 
 ## Messaging Grid
 

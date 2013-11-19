@@ -473,4 +473,4 @@ Now let's deliberately terminate one of the GSCs on which the application is dep
 # What's Next?
 
 ![Jump arrow green.bmp](/attachment_files/Jump arrow green.bmp) You have completed the web application scaling tutorial.
-Click here to view [other tutorials](./quick-start-guide.html) or go directly to the [GigaSpaces XAP programmer's guide](./programmer's-guide.html).
+Click here to view [other tutorials](./quick-start-guide.html) or go directly to the [GigaSpaces XAP programmer's guide](./programmers-guide.html).

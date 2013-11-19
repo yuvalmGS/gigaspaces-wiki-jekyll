@@ -2,7 +2,7 @@
 layout: post
 title:  Admin Modules
 categories: XAP97NET
-parent: programmer's-guide.html
+parent: programmers-guide.html
 weight: 300
 ---
 

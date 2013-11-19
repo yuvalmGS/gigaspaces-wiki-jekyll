@@ -2,7 +2,7 @@
 layout: post
 title:  Networking How Tos
 categories: XAP97NET
-parent: administrator's-guide.html
+parent: administrators-guide.html
 weight: 100
 ---
 
