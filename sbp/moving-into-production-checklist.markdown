@@ -448,7 +448,7 @@ To capture the detailed information about garbage collection and how it is perfo
 Modify the path and file names appropriately. You will need to use a different file name for each invocation in order to not overwrite the files from multiple processes.
 {% endtip %}
 
-{% include /COM7/jconsolejmapwarning.markdown %}
+{% include /COM/jconsolejmapwarning.markdown %}
 
 ## Soft References LRU Policy
 In the attempt to provide the highest level of performance possible, GigaSpaces takes advantage of features in the Java language that allows for effective caching in the face of memory demands. In particular, the [SoftReference](http://docs.oracle.com/javase/6/docs/api/java/lang/ref/SoftReference.html) class is used to store data up until there is a need for explicit garbage collection, at which point the data stored in soft references will be collected if possible. The system default is 1000, which represents the amount of time (in milliseconds) they will survive past their last reference. `-XX:SoftRefLRUPolicyMSPerMB` is the parameter that allows you to determine how much data is cached by allowing the JVM to control how long it endures; A recommended setting this value to **500** in active, dynamic systems:

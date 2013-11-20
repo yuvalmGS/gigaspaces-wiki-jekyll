@@ -171,4 +171,4 @@ From a runtime perspective, there are several ways remote clients can interact w
 
 ![Remote Clients.jpg](/attachment_files/Remote Clients.jpg)
 
-{% include /COM7/j2eevsxap.markdown %}
+{% include /COM/j2eevsxap.markdown %}

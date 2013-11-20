@@ -919,7 +919,7 @@ When a network failure occurs and the space can't communicate with the client, t
 </os-core:space>
 {% endhighlight %}
 
-{% include /COM7/notify-recovery.markdown %}
+{% include /COM/notify-recovery.markdown %}
 
 # Durable Notifications
 

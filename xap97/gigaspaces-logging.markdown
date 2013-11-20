@@ -501,7 +501,7 @@ To change the logging level in JConsole do the following:
 1. Select the Operations tab
 1. Type the logger's name and level for the arguments of the `setLoggerLevel()` method. For example, If you want to change `com.gigaspaces.exceptions.level` level to `WARNING`, use `setLoggerLevel(com.gigaspaces.exceptions, WARNING)`.
 
-{% include /COM7/jconsolejmapwarning.markdown %}
+{% include /COM/jconsolejmapwarning.markdown %}
 
 {% infosign %} Note, you will need to use the logging level without the .level string e.g.: "com.gigaspaces.core.cluster.replication" and set value "FINE"
 

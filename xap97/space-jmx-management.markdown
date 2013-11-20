@@ -50,7 +50,7 @@ A JMX manageable resource can be an application, an implementation of a service,
             `String jndiURL = containerConfig.jndiUrl;`{% wbr %}
             `Runtime.getRuntime().exec( "jconsole " + jndiURL );`{% wbr %}
 
-{% include /COM7/jconsolejmapwarning.markdown %}
+{% include /COM/jconsolejmapwarning.markdown %}
 
 # Remote JConsole connection
 

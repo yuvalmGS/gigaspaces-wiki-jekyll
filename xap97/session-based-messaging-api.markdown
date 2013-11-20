@@ -377,7 +377,7 @@ boolean isFromReplication()
 {% endtabcontent %}
 {% endinittab %}
 
-{% include /COM7/notify-recovery.markdown %}
+{% include /COM/notify-recovery.markdown %}
 
 # Cancelling Registration and Closing the Session
 

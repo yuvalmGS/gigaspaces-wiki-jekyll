@@ -176,7 +176,7 @@ The following is a snippet taken from the example SLA definition section of the 
 
 {% endtoczone %}
 
-{% include /COM7/j2eevsxap.markdown %}
+{% include /COM/j2eevsxap.markdown %}
 
 {% whr %}
 {% refer %}**Next Chapter:** [Database Integration](./database-integration.html){% endrefer %}

@@ -249,7 +249,7 @@ The Client Local Cache eviction can be monitored by setting the client applicati
 
 {% plus %} The logging level of `com.gigaspaces.core.memorymanager` can be changed while the client application is running using JConsole.
 
-{% include /COM7/jconsolejmapwarning.markdown %}
+{% include /COM/jconsolejmapwarning.markdown %}
 
 # Local Cache Performance
 

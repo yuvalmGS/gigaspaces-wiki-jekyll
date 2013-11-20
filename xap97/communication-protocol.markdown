@@ -222,7 +222,7 @@ LRMI communication transport protocol debug messages are displayed.
 ![lrmi_log_jmx_console2.jpg](/attachment_files/lrmi_log_jmx_console2.jpg)
 {% endindent %}
 
-{% include /COM7/jconsolejmapwarning.markdown %}
+{% include /COM/jconsolejmapwarning.markdown %}
 
 When LRMI logging is turned on, the space displays the following when started:
 
