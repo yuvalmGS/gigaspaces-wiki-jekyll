@@ -1,4 +1,11 @@
-# Moving into Production 
+---
+layout: post
+title:  Moving into Production
+parent: index.html
+weight: 400
+categories: HOWTO
+---
+
 
 To make a current early access release the official GA release, you should perform the following steps: 
 
@@ -15,5 +22,5 @@ latest_java_url: "/xap97"
 latest_net_url: "/xap97net"
 {%endhighlight%}
 
-### Remove early access from main menu
+
 

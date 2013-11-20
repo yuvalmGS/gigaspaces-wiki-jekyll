@@ -1,3 +1,11 @@
+---
+layout: post
+title:  Directory Structure
+categories: HOWTO
+weight:  100
+parent:  index.html
+---
+
 # XAP Documentation Poral File Structure
 
 The documentation portral has the following directory structure :

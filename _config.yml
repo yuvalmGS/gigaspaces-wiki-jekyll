@@ -3,7 +3,9 @@ markdown: kramdown
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 pygments: true
-exclude: ["howto"]
+
+#exclude: ["howto"]
+
 
 latest_xap_release: "9.7"
 latest_xap_version: "9.7.0"
@@ -18,4 +20,4 @@ base_javadoc_url: "http://www.gigaspaces.com/docs/JavaDoc%{version}/index.html?%
 base_scaladoc_url: "http://www.gigaspaces.com/docs/scaladocs%{version}/#%{fqcn}"
 base_dotnetdoc_url: "http://www.gigaspaces.com/docs/dotnetdocs%{version}/html/T_%{fqcn}.htm"
 
-categories-list: ["SBP", "XAP97", "XAP97NET", "JAVA_TUTORIAL", "PRODUCT_OVERVIEW", "API_DOCUMENTATION", "EARLY_ACCESS"]
+categories-list: ["SBP", "XAP97", "XAP97NET", "JAVA_TUTORIAL", "PRODUCT_OVERVIEW", "API_DOCUMENTATION", "EARLY_ACCESS", "HOWTO"]

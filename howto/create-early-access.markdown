@@ -1,9 +1,17 @@
-# Creating Documentation for the New Version 
+---
+layout: post
+title:  Creating a new Version
+parent: index.html
+weight: 300
+categories: HOWTO
+---
+
+
+# Creating Documentation for the New Version
 
 In this example we will assume that the current version of XAP is 9.7, and the new version will be 10.0. We will use these release numbers for our example.
 
 1. Creating a new wiki version
-
 * Clone this repository
 * Copy the `/xap97` folder and rename it to `xap100`
 * Copy the `/xap97net` folder and rename it to `xap100net`
