@@ -197,7 +197,8 @@ Creating a Local View directly from the space url is deprecated - use `LocalView
 
 ## Server side local view properties
 
-This properties can be configured on the space side and they will affect all the local views which are created on top of that space:
+This properties can be configured on the space side and they will affect all the local views which are created on top of that space.
+
 {: .table .table-bordered}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
