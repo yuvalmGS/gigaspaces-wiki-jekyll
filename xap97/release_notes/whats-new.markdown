@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  What's new in XAPNET 9.7
-categories:  RELEASE_NOTES
-parent: none
+title:  What's new in XAP 9.7
+categories:   RELEASE_NOTES
+parent: index.html
 weight: 100
 ---
 

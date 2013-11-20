@@ -12,17 +12,15 @@ categories: HOWTO
 {%panel%}
 This is a box that displays text
 
-{%info%}this is an information{%endinfo%}
-
-Markdown:
-
-{%panel bgColor=white%}
-
+{%info title=Info title%}this is an information{%endinfo%}
+{%panel bgColor=white | title=Markdown%}
 {% raw  %}
-{%info%}this is an information {%endinfo%}
+{%info title=Info title%}this is an information{%endinfo%}
 {% endraw  %}
 {% endpanel %}
-
+{%panel bgColor=white | title=Parameters%}
+title
+{% endpanel %}
 {% endpanel %}
 
 
@@ -31,48 +29,49 @@ Markdown:
 {%panel%}
 This is a box that displays text
 
-{%note%}this is an note {%endnote%}
-
-Markdown:
-
-{%panel bgColor=white%}
+{%note title=Note title%}this is an note {%endnote%}
+{%panel bgColor=white | title=Markdown%}
 {% raw  %}
-{%note%}this is an note {%endnote%}
+{%note title=Note title%}this is an note {%endnote%}
 {% endraw  %}
-{%endpanel%}
-{%endpanel%}
+{% endpanel %}
+{%panel bgColor=white | title=Parameters%}
+title
+{% endpanel %}
+{% endpanel %}
 
 #### Tip
 
 {%panel%}
 This is a box that displays text
 
-{%tip%}this is an note {%endtip%}
-
-Markdown:
-
-{%panel bgColor=white%}
+{%tip title=Tip title %}this is an tip {%endtip%}
+{%panel bgColor=white | title=Markdown%}
 {% raw  %}
-{%tip%} this is an note {%endtip%}
+{%tip title=Tip title %}this is an tip {%endtip%}
 {% endraw  %}
-{%endpanel%}
-{%endpanel%}
+{% endpanel %}
+{%panel bgColor=white | title=Parameters%}
+title
+{% endpanel %}
+{% endpanel %}
 
 #### Quote
 
 {%panel%}
 This is a box that displays text
 
-{%quote%}this is an note {%endquote%}
+{%quote title=Quote title%}this is an quote {%endquote%}
 
-Markdown:
-
-{%panel bgColor=white%}
+{%panel bgColor=white | title=Markdown%}
 {% raw  %}
-{%quote%}this is an note {%endquote%}
+{%quote title=Quote title%}this is an quote {%endquote%}
 {% endraw  %}
-{%endpanel%}
-{%endpanel%}
+{% endpanel %}
+{%panel bgColor=white | title=Parameters%}
+title
+{% endpanel %}
+{% endpanel %}
 
 
 #### Warning
@@ -80,16 +79,16 @@ Markdown:
 {%panel%}
 This is a box that displays text
 
-{%warning%}this is an note {%endwarning%}
-
-Markdown:
-
-{%panel bgColor=white%}
+{%warning title=Warning title%}this is an warning {%endwarning%}
+{%panel bgColor=white | title=Markdown%}
 {% raw  %}
-{%warning%}this is an note {%endwarning%}
+{%warning title=Warning title%}this is an warning {%endwarning%}
 {% endraw  %}
-{%endpanel%}
-{%endpanel%}
+{% endpanel %}
+{%panel bgColor=white | title=Parameters%}
+title
+{% endpanel %}
+{% endpanel %}
 
 
 

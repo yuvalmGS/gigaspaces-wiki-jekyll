@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Known Issues and Limitations
-categories:
+categories: RELEASE_NOTES
 parent: none
 weight: 400
 ---

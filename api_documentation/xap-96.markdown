@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  XAP 9.6 API Documentation
+title:  XAP 9.6
 categories: API_DOCUMENTATION
 weight: 200
 parent: none

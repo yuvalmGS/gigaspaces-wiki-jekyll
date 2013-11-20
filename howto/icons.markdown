@@ -11,57 +11,52 @@ categories: HOWTO
 #### Exclamation mark
 
 {%panel%}
-This is an exclamation mark
 
 {%exclamation%} This is an exclamation mark !
 
-Markdown:
-
-{%panel bgColor=white%}
-
-{% raw  %}
+{%panel bgColor=white | title=Markdown%}
+ {% raw  %}
 {%exclamation%} This is an exclamation mark !
 {% endraw  %}
 {% endpanel %}
-
+{%panel bgColor=white | title=Parameters%}
+None
+{% endpanel %}
 {% endpanel %}
 
 
-#### Remove
+#### Caution
 
 {%panel%}
-This is remove sign
 
 {%remove%} This is a remove
 
-Markdown:
-
-{%panel bgColor=white%}
+{%panel bgColor=white | title=Markdown%}
 
 {% raw  %}
 {%remove%} This is a remove
 {% endraw  %}
 {% endpanel %}
-
+{%panel bgColor=white | title=Parameters%}
+None
+{% endpanel %}
 {% endpanel %}
 
 
 #### Plus
 
 {%panel%}
-This is plus sign
 
 {%plus%} This is a plus sign
 
-Markdown:
-
-{%panel bgColor=white%}
-
+{%panel bgColor=white | title=Markdown%}
 {% raw  %}
 {%plus%}This is a plus sign
 {% endraw  %}
 {% endpanel %}
-
+{%panel bgColor=white | title=Parameters%}
+None
+{% endpanel %}
 {% endpanel %}
 
 
@@ -69,115 +64,108 @@ Markdown:
 #### Question
 
 {%panel%}
-This is question
 
 {%question%} This is a question
 
-Markdown:
-
-{%panel bgColor=white%}
-
+{%panel bgColor=white | title=Markdown%}
 {% raw  %}
 {%question%} This is a question
 {% endraw  %}
 {% endpanel %}
-
+{%panel bgColor=white | title=Parameters%}
+None
+{% endpanel %}
 {% endpanel %}
 
 
 #### Lamp on
 
 {%panel%}
-Lamp on
 
 {%lampon%} Lamp on
 
-Markdown:
-
-{%panel bgColor=white%}
+{%panel bgColor=white | title=Markdown%}
 
 {% raw  %}
 {%lampon%} Lamp on
 {% endraw  %}
 {% endpanel %}
-
+{%panel bgColor=white | title=Parameters%}
+None
 {% endpanel %}
+{% endpanel %}
+
 
 
 #### Lamp off
 
 {%panel%}
-Lamp off
 
 {%lampoff%} Lamp off
 
-Markdown:
-
-{%panel bgColor=white%}
+{%panel bgColor=white | title=Markdown%}
 
 {% raw  %}
-{%lampoff%}Lamp on
+{%lampoff%}Lamp off
 {% endraw  %}
 {% endpanel %}
-
+{%panel bgColor=white | title=Parameters%}
+None
 {% endpanel %}
+{% endpanel %}
+
 
 
 #### Information
 
 {%panel%}
-Information
 
- {%infosign%} Some Information
+{%infosign%} Some Information
 
- Markdown:
-
- {%panel bgColor=white%}
-
- {% raw  %}
- {%infosign%} Some Information
- {% endraw  %}
- {% endpanel %}
-
- {% endpanel %}
+{%panel bgColor=white | title=Markdown%}
+{% raw  %}
+{%infosign%} Some Information
+{% endraw  %}
+{% endpanel %}
+{%panel bgColor=white | title=Parameters%}
+None
+{% endpanel %}
+{% endpanel %}
 
 
 #### Star
 
  {%panel%}
- Lamp on
+
 
  {%star%} Star
 
- Markdown:
-
- {%panel bgColor=white%}
-
+{%panel bgColor=white | title=Markdown%}
  {% raw  %}
  {%star%} Star
  {% endraw  %}
- {% endpanel %}
+{% endpanel %}
+{%panel bgColor=white | title=Parameters%}
+None
+{% endpanel %}
+{% endpanel %}
 
- {% endpanel %}
 
 #### OK Sign
 
  {%panel%}
- Lamp on
 
  {%oksign%} It is OK
 
- Markdown:
-
- {%panel bgColor=white%}
-
+{%panel bgColor=white | title=Markdown%}
  {% raw  %}
  {%oksign%} It is OK
  {% endraw  %}
- {% endpanel %}
+{% endpanel %}
+{%panel bgColor=white | title=Parameters%}
+None
+{% endpanel %}
+{% endpanel %}
 
- {% endpanel %}
 
 
-
-{%refer%} This is refer   {%endrefer%}

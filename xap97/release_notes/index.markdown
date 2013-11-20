@@ -1,8 +1,9 @@
 ---
 layout: post
-title:   .NET Release Notes
+title:  Release Notes
 categories:   RELEASE_NOTES
 parent: none
+weight:
 ---
 
 

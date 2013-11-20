@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  Supported Platforms
-categories:    RELEASE_NOTES
-parent: none
+categories:  RELEASE_NOTES
+parent: index.html
 weight: 700
 ---
 

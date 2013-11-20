@@ -2,7 +2,7 @@
 layout: post
 title:  Deprecated Functionality
 categories:  RELEASE_NOTES
-parent: none
+parent: index.html
 weight: 500
 ---
 

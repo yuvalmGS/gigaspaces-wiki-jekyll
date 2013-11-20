@@ -2,7 +2,7 @@
 layout: post
 title:  Upgrading from previous versions
 categories:  RELEASE_NOTES
-parent: none
+parent: index.html
 weight: 800
 ---
 
