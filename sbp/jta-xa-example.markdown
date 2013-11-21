@@ -369,7 +369,7 @@ build deploy-processor
 
 ## References
 
-- JTA/XA support information, [http://www.gigaspaces.com/wiki/display/XAP71/Transaction+Management#TransactionManagement-XA%2FJTASupport](http://www.gigaspaces.com/wiki/display/XAP71/Transaction+Management#TransactionManagement-XA%2FJTASupport).
+- JTA/XA support information, [Transaction Management]({%latestjavaurl%}/transaction-management.html).
 - XA transactions using Spring, http://www.javaworld.com/javaworld/jw-04-2007/jw-04-xa.html.
 - Distributed transactions in Spring, with and without XA, http://www.javaworld.com/javaworld/jw-01-2009/jw-01-spring-transactions.html.
 - Atomikos TransactionEssentials Spring Integration information, http://www.atomikos.com/Documentation/SpringIntegration.
