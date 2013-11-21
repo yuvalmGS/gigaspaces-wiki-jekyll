@@ -2,6 +2,8 @@
 layout: post
 title:  Replication Gateway Filtering
 categories: XAP97
+parent: multi-site-conflict-resolution.html
+weight: 700
 ---
 
 {% summary %}This page explains how to filter specific data from being replicated through a gateway to another site.{% endsummary %}

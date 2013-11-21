@@ -2,6 +2,8 @@
 layout: post
 title:  Deploying onto the Service Grid
 categories: XAP97
+parent: deploying-and-running-the-processing-unit.html
+weight: 100
 ---
 
 {% compositionsetup %}

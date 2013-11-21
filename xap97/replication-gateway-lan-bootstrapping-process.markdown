@@ -2,6 +2,8 @@
 layout: post
 title:  Replication Gateway LAN Bootstrapping Process
 categories: XAP97
+parent: multi-space-replication-over-the-lan-or-vpn.html
+weight: 100
 ---
 
 {% summary %}This page is about bootstrapping a space from another space via gateway.{% endsummary %}

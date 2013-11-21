@@ -2,6 +2,8 @@
 layout: post
 title:  Obtaining Cluster Information
 categories: XAP97
+parent: packaging-and-deployment.html
+weight: 400
 ---
 
 {% summary page|60 %}Obtaining information about the clustering topology, member id and other cluster related information can be useful in many cases. Cluster information can be provided to the processing unit instances at deployment time via the class `org.openspaces.core.cluster.ClusterInfo`, which can be injected into the processing unit components{% endsummary %}

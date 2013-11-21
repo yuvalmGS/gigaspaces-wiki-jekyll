@@ -2,6 +2,8 @@
 layout: post
 title:  Elastic Processing Unit
 categories: XAP97
+parent: deploying-and-running-the-processing-unit.html
+weight: 300
 ---
 
 {% compositionsetup %}

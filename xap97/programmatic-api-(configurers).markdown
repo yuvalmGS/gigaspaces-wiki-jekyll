@@ -2,6 +2,8 @@
 layout: post
 title:  Programmatic API (Configurers)
 categories: XAP97
+parent: deploying-and-interacting-with-the-space.html
+weight: 300
 ---
 
 {% summary %}This section describes how you can use OpenSpaces components in a non-Spring environment. The constructs which are used to create and configure GigaSpaces components are called **Configurers** .{% endsummary %}

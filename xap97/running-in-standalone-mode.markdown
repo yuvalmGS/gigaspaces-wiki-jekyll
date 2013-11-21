@@ -2,6 +2,8 @@
 layout: post
 title:  Running in Standalone Mode
 categories: XAP97
+parent: deploying-and-running-the-processing-unit.html
+weight: 200
 ---
 
 {% compositionsetup %}

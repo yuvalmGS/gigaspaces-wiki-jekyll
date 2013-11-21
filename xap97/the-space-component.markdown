@@ -2,6 +2,8 @@
 layout: post
 title:  The Space Component
 categories: XAP97
+parent: deploying-and-interacting-with-the-space.html
+weight: 100
 ---
 
 {% compositionsetup %}

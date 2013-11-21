@@ -2,6 +2,8 @@
 layout: post
 title:  Memory Management Facilities
 categories: XAP97
+parent: deploying-and-interacting-with-the-space.html
+weight: 400
 ---
 
 {% compositionsetup %}

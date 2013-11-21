@@ -2,6 +2,8 @@
 layout: post
 title:  Deploying and Interacting with the Space
 categories: XAP97
+parent: the-in-memory-data-grid.html
+weight: 200
 ---
 
 {% compositionsetup %}

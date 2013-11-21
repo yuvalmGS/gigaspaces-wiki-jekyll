@@ -2,6 +2,8 @@
 layout: post
 title:  Local Cache
 categories: XAP97
+parent: client-side-caching.html
+weight: 100
 ---
 
 {% compositionsetup %}{% summary page|60 %}A local cache allows the client application to cache recently used data at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}

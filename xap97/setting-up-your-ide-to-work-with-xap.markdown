@@ -2,6 +2,8 @@
 layout: post
 title:  Setting Up your IDE to work with XAP
 categories: XAP97
+parent: getting-started.html
+weight: 100
 ---
 
 {% compositionsetup %}

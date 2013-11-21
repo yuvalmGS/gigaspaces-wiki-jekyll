@@ -2,6 +2,8 @@
 layout: post
 title:  Replication Gateway Components
 categories: XAP97
+parent: multi-site-replication-over-the-wan.html
+weight: 200
 ---
 
 {% summary %}This page is about the replication gateway components.{% endsummary %}

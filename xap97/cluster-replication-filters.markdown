@@ -2,6 +2,8 @@
 layout: post
 title:  Cluster Replication Filters
 categories: XAP97
+parent: the-space-component.html
+weight: 200
 ---
 
 {% compositionsetup %}
