@@ -28,14 +28,27 @@ html,body{ height:100%; padding-top:0;}
   }
 }
 
+.news-box {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .news-box {
+    display: block;
+    z-index: 10;
+    border-color: #8E9B83;
+    border-width: 2px;
+    position: fixed;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: -10px;
+  }
+}
+
 .training-box {
   float: right;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #036;
   width: 160px;
   min-width: 160px;
-  background-color: #FFC;
   margin-left: 10px;
   margin-bottom: 10px;
   margin-right: 20px;
