@@ -2,11 +2,12 @@
 layout: post
 title:  XAP 9.7
 categories: API_DOCUMENTATION
-weight: 100
+weight: 1000
 parent: none
 ---
 
 
+{%panel  %}
 
 ![](/attachment_files/logos/java_icon.gif) [GigaSpaces XAP Javadoc](http://www.gigaspaces.com/docs/JavaDoc9.7/index.html) -- _GigaSpaces XAP API, including all components_
 
@@ -16,4 +17,5 @@ parent: none
 
 [GigaSpaces 9.7.X C+\+ API Documentation](http://www.gigaspaces.com/docs/cppdocs9.7) -- _GigaSpaces C+\+ classes_
 
+{%endpanel%}
 

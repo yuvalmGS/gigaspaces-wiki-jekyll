@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Icons
-parent: markdown.html
+parent: plugin.html
 weight: 100
 categories: HOWTO
 ---

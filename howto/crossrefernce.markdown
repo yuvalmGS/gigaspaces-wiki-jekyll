@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Page Cross-reference
-parent: markdown.html
+parent: plugin.html
 weight: 500
 categories: HOWTO
 ---
