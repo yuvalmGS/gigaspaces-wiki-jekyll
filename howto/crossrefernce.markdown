@@ -23,7 +23,32 @@ Markdown:
 {%endraw%}
 {% endpanel %}
 
-You should use this plugin in the following sections of the documentation:
+You must use this plugin in the following sections of the documentation:
+
+* Services and Best Practices
+* Java Tutorial
+* Product Overview
+
+{% endpanel %}
+
+
+#### Latest XAP .NET release
+
+When you need to referece a page in the latest XAPNET release in your documentation you use the `latestneturl` plugin.
+
+{%panel%}
+
+[Admin Modules]({%latestneturl%}/admin-modules.html)
+
+Markdown:
+
+{%panel bgColor=white%}
+{%raw%}
+\[Grid Service Agent]({%latestneturl%}/service-grid.html)
+{%endraw%}
+{% endpanel %}
+
+You must use this plugin in the following sections of the documentation:
 
 * Services and Best Practices
 * Java Tutorial
@@ -59,7 +84,7 @@ You must use this plugin for the following scenarios:
 
 #### Current Java Release
 
-When you need to referece a page in the current XAP release in the documentation you use the `currentjavaurl` plugin.
+When you need to referece an XAP page in the current release you use the `currentjavaurl` plugin.
 
 {%panel%}
 
@@ -69,7 +94,7 @@ Markdown:
 
 {%panel bgColor=white%}
  {%raw%}
-\[Administration UI Interfaces]({% currentjavaurl %}/graphical-user-interface.html)
+\[Administration Guide]({% currentjavaurl %}/graphical-user-interface.html)
 {%endraw%}
 {% endpanel %}
 
@@ -80,6 +105,27 @@ You must use this plugin in the following scenarios:
 {% endpanel %}
 
 
+#### Current .NET Release
+
+When you need to reference a page in the current XAP release you use the `currentneturl` plugin.
+
+{%panel%}
+
+[Administration Guide]({% currentneturl %}/admin-modules.html)
+
+Markdown:
+
+{%panel bgColor=white%}
+ {%raw%}
+\[Administration Guide]({% currentneturl %}/admin-modules.html)
+{%endraw%}
+{% endpanel %}
+
+You must use this plugin in the following scenarios:
+
+* To make a reference link from an XAP document to a document in XAP .NET
+
+{% endpanel %}
 
 
 
