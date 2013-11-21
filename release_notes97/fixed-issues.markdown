@@ -1,14 +1,14 @@
 ---
 layout: post
 title:  Resolved Issues
-categories:   RELEASE_NOTES
-parent: index.html
+categories: RELEASE_NOTES
+parent: none
 weight: 300
 ---
 
 {%summary%} Issues that have been fixed in XAP 9.7.X release {%endsummary%}
 
-# Overview
+## Overview
 
 Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 

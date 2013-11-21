@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  Upgrading from previous versions
-categories:  RELEASE_NOTES
+categories: RELEASE_NOTES
 parent: none
 weight: 800
 ---
 
 {%summary%}Step by step instructions on how to upgrade from previous versions {%endsummary%}
 
-# Overview
+## Overview
 Step by step instructions on how to upgrade from previous versions
 

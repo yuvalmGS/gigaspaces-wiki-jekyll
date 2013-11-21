@@ -1,14 +1,14 @@
 ---
 layout: post
 title:  Known Issues and Limitations
-categories:  RELEASE_NOTES
-parent: index.html
+categories: RELEASE_NOTES
+parent: none
 weight: 400
 ---
 
 {%summary%} Known Issues and Limitations in XAP 9.7.X release {%endsummary%}
 
-# Overview
+## Overview
 
 Below is a list of new features and improvements in GigaSpaces 9.7.X.
 
