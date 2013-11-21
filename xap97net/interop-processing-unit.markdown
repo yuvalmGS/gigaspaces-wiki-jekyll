@@ -11,7 +11,7 @@ weight: 300
 # Overview
 
 It is possible to create a processing unit which is part .NET part Java and part C++.
-This page assumes knowledge of creating and using [OpenSpaces Processing Unit]({% currentjavaurl %}/the-processing-unit-structure-and-configuration.html) and creating and using [.NET Processing Unit Container](./Processing-Unit-Container.html). It will cover how to properly create deployment files and directory structure for a mixed processing unit.
+This page assumes knowledge of creating and using [OpenSpaces Processing Unit]({% currentjavaurl %}/the-processing-unit-structure-and-configuration.html) and creating and using [.NET Processing Unit Container](./processing-unit-container.html). It will cover how to properly create deployment files and directory structure for a mixed processing unit.
 
 {% refer %}C++ processing unit is based on [OpenSpaces Processing Unit]({% currentjavaurl %}/the-processing-unit-structure-and-configuration.html) and therefore treated the same, see [CPP Processing Unit]({% currentjavaurl %}/cpp-processing-unit.html) for related information.{% endrefer %}
 
