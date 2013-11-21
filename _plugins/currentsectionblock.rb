@@ -1,23 +1,20 @@
 require 'kramdown'
 module Jekyll
-  class CurrentSection < Liquid::Tag
+  class CurrentSectionBlock < Liquid::Block
     include Liquid::StandardFilters
 
     def initialize(tag_name, markup, tokens)
       super
-      @url = markup.strip
     end
 
     def render(context)
-      get_current_section(context)
+      get_current_section(context, super)
     end
 
-    def get_current_section(context)
-      sectionPath = @url.strip!
-      if !sectionPath || sectionPath != ""  
-        sectionPath = context.environments.first["page"]["url"].split("/")[1]
-      end 
-      if !sectionPath.nil?
+    def get_current_section(context, content)
+      path = content.to_s
+      if !path.nil?
+        sectionPath = path.split("/")[1]
         if sectionPath.start_with?("xap")
        	  isDotNet = sectionPath.end_with?("net"); 
           sectionPath = sectionPath.sub("xap","")
@@ -47,5 +44,4 @@ module Jekyll
     end 
   end
 end
-
-Liquid::Template.register_tag('currentsection', Jekyll::CurrentSection)
+Liquid::Template.register_tag('currentsectionblock', Jekyll::CurrentSectionBlock)
