@@ -1,0 +1,15 @@
+---
+layout: nil
+---
+{ 
+	{% assign siteUrl="http://docs.gigaspaces.com" %}
+	"pages": [
+	{% for page in site.pages %}
+		"page": {
+			"url": "{{ siteUrl }}{{ page.url }}", 
+			"title": "{{ page.title }}",
+			"category": "{% currentsectionblock %}{{ page.url }}{% endcurrentsectionblock %}"
+		}{% unless forloop.last %},{% endunless %}
+	{% endfor %}
+	]
+}
