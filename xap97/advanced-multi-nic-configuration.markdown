@@ -2,8 +2,6 @@
 layout: post
 title:  Advanced Multi-NIC Configuration
 categories: XAP97
-weight:
-parent: none
 ---
 
 {% summary %}How to configure GigaSpaces for Multiple Network Interface Cards.{% endsummary %}
