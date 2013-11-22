@@ -2,6 +2,8 @@
 layout: post
 title:  Memcached API
 categories: XAP97
+parent: other-data-access-apis.html
+weight: 400
 ---
 
 {% compositionsetup %}

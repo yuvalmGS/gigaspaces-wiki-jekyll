@@ -2,6 +2,8 @@
 layout: post
 title:  The GigaSpace Interface
 categories: XAP97
+parent: the-space-api.html
+weight: 100
 ---
 
 {% compositionsetup %}

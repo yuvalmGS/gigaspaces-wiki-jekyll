@@ -2,6 +2,8 @@
 layout: post
 title:  GigaSpaces CPP Processing Unit Example
 categories: XAP97
+parent: cpp-api-examples.html
+weight: 200
 ---
 
 {% compositionsetup %}

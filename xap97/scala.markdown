@@ -2,6 +2,8 @@
 layout: post
 title:  Scala
 categories: XAP97
+parent: integrations.html
+weight: 300
 ---
 
 {% compositionsetup %}

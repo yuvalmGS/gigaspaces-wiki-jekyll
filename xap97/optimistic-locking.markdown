@@ -2,6 +2,8 @@
 layout: post
 title:  Optimistic Locking
 categories: XAP97
+parent: space-locking-and-blocking.html
+weight: 200
 ---
 
 {% compositionsetup %}

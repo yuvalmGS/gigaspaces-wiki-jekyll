@@ -2,6 +2,8 @@
 layout: post
 title:  JMS API Support
 categories: XAP97
+parent: messaging-support.html
+weight: 100
 ---
 
 {% summary section %}GigaSpaces allows applications to use the space as a messaging hub. Applications use JMS to create topics and queues as usual; these are transparently translated into space Entries.{% endsummary %}

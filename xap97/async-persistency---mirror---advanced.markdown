@@ -2,6 +2,8 @@
 layout: post
 title:  Async Persistency - Mirror - Advanced
 categories: XAP97
+parent: asynchronous-persistency-with-the-mirror.html
+weight: 100
 ---
 
 {% compositionsetup %}

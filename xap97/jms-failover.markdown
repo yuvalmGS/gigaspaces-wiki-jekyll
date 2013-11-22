@@ -2,6 +2,8 @@
 layout: post
 title:  JMS Failover
 categories: XAP97
+parent: jms---advanced.html
+weight: 100
 ---
 
 {% summary page|60 %}JMS behavior during failover, How to recover JMS applications from failovers.{% endsummary %}

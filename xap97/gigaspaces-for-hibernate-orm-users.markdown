@@ -2,6 +2,8 @@
 layout: post
 title:  GigaSpaces for Hibernate ORM Users
 categories: XAP97
+parent: caching-scenarios.html
+weight: 100
 ---
 
 {% compositionsetup %}

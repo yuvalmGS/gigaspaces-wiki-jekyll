@@ -2,6 +2,8 @@
 layout: post
 title:  Handling Large Objects
 categories: XAP97
+parent: advanced-topics.html
+weight: 400
 ---
 
 {% summary %}Storing large files in memory.{% endsummary %}

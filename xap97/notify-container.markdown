@@ -2,6 +2,8 @@
 layout: post
 title:  Notify Container
 categories: XAP97
+parent: event-processing.html
+weight: 200
 ---
 
 {% compositionsetup %}

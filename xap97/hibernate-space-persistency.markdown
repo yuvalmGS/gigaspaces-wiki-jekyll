@@ -2,6 +2,8 @@
 layout: post
 title:  Hibernate Space Persistency
 categories: XAP97
+parent: space-persistency.html
+weight: 200
 ---
 
 {% compositionsetup %}

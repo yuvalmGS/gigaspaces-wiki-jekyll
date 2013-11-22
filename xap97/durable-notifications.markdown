@@ -2,6 +2,8 @@
 layout: post
 title:  Durable Notifications
 categories: XAP97
+parent: session-based-messaging-api.html
+weight: 100
 ---
 
 {% summary %}Durable notifications support primary-backup space failover over and network disconnections{% endsummary %}

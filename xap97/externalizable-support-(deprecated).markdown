@@ -2,6 +2,8 @@
 layout: post
 title:  Externalizable Support (Deprecated)
 categories: XAP97
+parent: advanced-topics.html
+weight: 300
 ---
 
 {% summary %}Using Externalizable to boost remote space performance operations.{% endsummary %}

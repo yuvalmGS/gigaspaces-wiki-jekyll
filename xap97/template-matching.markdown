@@ -2,6 +2,8 @@
 layout: post
 title:  Template Matching
 categories: XAP97
+parent: querying-the-space.html
+weight: 200
 ---
 
 {% summary %}How to query the space using Template Matching{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  ALL IN CACHE-Cache Policy
 categories: XAP97
+parent: memory-management-facilities.html
+weight: 100
 ---
 
 {% summary %}The ALL-In-Cache Cache policy{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  JMS User Security
 categories: XAP97
+parent: jms---advanced.html
+weight: 300
 ---
 
 {% summary %}Obtaining connections using client authentication.{% endsummary %}

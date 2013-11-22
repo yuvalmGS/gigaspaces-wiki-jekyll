@@ -2,6 +2,8 @@
 layout: post
 title:  Space Persistency Initial Load
 categories: XAP97
+parent: space-persistency.html
+weight: 600
 ---
 
 {% compositionsetup %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Cassandra Space Data Source
 categories: XAP97
+parent: cassandra-space-persistency.html
+weight: 100
 ---
 
 {% compositionsetup %}

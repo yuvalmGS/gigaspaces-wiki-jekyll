@@ -2,6 +2,8 @@
 layout: post
 title:  Services on Top of the Data Grid
 categories: XAP97
+parent: main-modules.html
+weight: 400
 ---
 
 {% compositionsetup %}

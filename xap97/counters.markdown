@@ -2,6 +2,8 @@
 layout: post
 title:  Counters
 categories: XAP97
+parent: the-gigaspace-interface.html
+weight: 200
 ---
 
 {% compositionsetup %}

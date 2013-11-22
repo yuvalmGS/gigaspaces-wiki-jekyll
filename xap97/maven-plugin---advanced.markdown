@@ -2,6 +2,8 @@
 layout: post
 title:  Maven Plugin - Advanced
 categories: XAP97
+parent: maven-plugin.html
+weight: 100
 ---
 
 {% summary page|65 %}Processing unit assembly definition.{% endsummary %}

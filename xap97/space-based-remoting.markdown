@@ -2,6 +2,8 @@
 layout: post
 title:  Space Based Remoting
 categories: XAP97
+parent: main-modules.html
+weight: 600
 ---
 
 {% compositionsetup %}

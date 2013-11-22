@@ -2,6 +2,8 @@
 layout: post
 title:  CPP API Mapping File
 categories: XAP97
+parent: cpp-api-code-generator.html
+weight: 100
 ---
 
 {% summary page|65 %}Elements that are available to be used in your `gs.xml` file and supported types.{% endsummary %}

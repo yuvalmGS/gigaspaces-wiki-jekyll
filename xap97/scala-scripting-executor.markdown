@@ -2,6 +2,8 @@
 layout: post
 title:  Scala Scripting Executor
 categories: XAP97
+parent: scala.html
+weight: 400
 ---
 
 {% compositionsetup %}

@@ -2,8 +2,8 @@
 layout: post
 title:  Appendix
 categories: XAP97
-weight: 600
-parent: programmer's-guide.html
+weight: 700
+parent: programmers-guide.html
 ---
 
 {% children %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Direct Persistency
 categories: XAP97
+parent: persistency.html
+weight: 200
 ---
 
 {% compositionsetup %}

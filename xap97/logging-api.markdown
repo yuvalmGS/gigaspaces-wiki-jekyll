@@ -2,6 +2,8 @@
 layout: post
 title:  Logging API
 categories: XAP97
+parent: administration-and-monitoring-api.html
+weight: 200
 ---
 
 {% compositionsetup %}

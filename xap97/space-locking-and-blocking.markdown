@@ -2,6 +2,8 @@
 layout: post
 title:  Space Locking and Blocking
 categories: XAP97
+parent: transaction-management.html
+weight: 100
 ---
 
 {% tip %}

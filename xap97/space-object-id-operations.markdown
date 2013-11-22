@@ -2,6 +2,8 @@
 layout: post
 title:  Space Object ID Operations
 categories: XAP97
+parent: the-space-api.html
+weight: 300
 ---
 
 {% compositionsetup %}{% summary %}Space Object ID Usage{% endsummary %}

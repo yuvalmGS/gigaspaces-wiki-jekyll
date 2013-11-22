@@ -2,6 +2,8 @@
 layout: post
 title:  gsxml2cpp Utility
 categories: XAP97
+parent: cpp-api-code-generator.html
+weight: 200
 ---
 
 {% summary page|65 %}The `gsxml2cpp` utility generates serializer code, created by the `gs.xml` file, allowing you to perform space operations.{% endsummary %}

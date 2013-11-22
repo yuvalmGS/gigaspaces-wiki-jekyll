@@ -2,6 +2,8 @@
 layout: post
 title:  Query Nested Properties
 categories: XAP97
+parent: querying-the-space.html
+weight: 400
 ---
 
 {% compositionsetup %}

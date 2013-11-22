@@ -2,6 +2,8 @@
 layout: post
 title:  GigaSpaces JPA Limitations
 categories: XAP97
+parent: jpa-api.html
+weight: 300
 ---
 
 {% summary %}Unsupported Features Of GigaSpaces JPA{% endsummary %}

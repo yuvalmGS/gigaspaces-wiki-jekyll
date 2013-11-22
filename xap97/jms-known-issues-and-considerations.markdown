@@ -2,6 +2,8 @@
 layout: post
 title:  JMS Known Issues and Considerations
 categories: XAP97
+parent: jms---advanced.html
+weight: 500
 ---
 
 {% summary %}JMS API open issues, unsupported features, and considerations {% endsummary %}

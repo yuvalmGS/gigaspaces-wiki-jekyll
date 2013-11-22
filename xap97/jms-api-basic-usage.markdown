@@ -2,6 +2,8 @@
 layout: post
 title:  JMS API Basic Usage
 categories: XAP97
+parent: jms---basics.html
+weight: 100
 ---
 
 {% compositionsetup %}

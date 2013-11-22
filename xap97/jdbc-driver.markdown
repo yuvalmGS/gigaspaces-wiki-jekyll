@@ -2,6 +2,8 @@
 layout: post
 title:  JDBC Driver
 categories: XAP97
+parent: other-data-access-apis.html
+weight: 100
 ---
 
 {% compositionsetup %}{% summary page|60 %}GigaSpaces allows applications to connect to the IMDG using a JDBC driver. A GigaSpaces JDBC driver accepts SQL statements, translates them to space operations, and returns standard result sets. {% endsummary %}

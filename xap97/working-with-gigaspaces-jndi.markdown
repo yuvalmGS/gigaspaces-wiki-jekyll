@@ -2,6 +2,8 @@
 layout: post
 title:  Working with GigaSpaces JNDI
 categories: XAP97
+parent: jms-administration-api.html
+weight: 100
 ---
 
 {% summary %}JNDI Overview, Binding/Obtaining `ConnectionFactory` and `Destination` instances.{% endsummary %}

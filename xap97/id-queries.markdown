@@ -2,6 +2,8 @@
 layout: post
 title:  Id Queries
 categories: XAP97
+parent: querying-the-space.html
+weight: 100
 ---
 
 {% summary %}Id Based query - Primary Key based retrieval{% endsummary %}

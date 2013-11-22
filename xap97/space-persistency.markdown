@@ -2,6 +2,8 @@
 layout: post
 title:  Space Persistency
 categories: XAP97
+parent: persistency.html
+weight: 400
 ---
 
 {% summary page|65 %}Space Persistency provides advanced persistency capabilities for the space architecture.{% endsummary %}

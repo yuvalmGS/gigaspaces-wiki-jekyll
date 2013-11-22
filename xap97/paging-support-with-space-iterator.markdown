@@ -2,6 +2,8 @@
 layout: post
 title:  Paging Support with Space Iterator
 categories: XAP97
+parent: querying-the-space.html
+weight: 700
 ---
 
 {% summary %}Reading large number of objects using multiple queries in one call in a continuous manner. {% endsummary %}

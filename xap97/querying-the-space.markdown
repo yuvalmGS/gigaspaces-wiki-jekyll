@@ -2,6 +2,8 @@
 layout: post
 title:  Querying The Space
 categories: XAP97
+parent: the-space-api.html
+weight: 200
 ---
 
 {% summary %}How to query entries from the space{% endsummary %}

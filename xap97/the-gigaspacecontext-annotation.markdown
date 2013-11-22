@@ -2,6 +2,8 @@
 layout: post
 title:  The GigaSpaceContext Annotation
 categories: XAP97
+parent: the-gigaspace-interface.html
+weight: 300
 ---
 
 {% compositionsetup %}

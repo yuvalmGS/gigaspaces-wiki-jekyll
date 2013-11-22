@@ -2,6 +2,8 @@
 layout: post
 title:  GigaSpaces Read Modifiers
 categories: XAP97
+parent: space-locking-and-blocking.html
+weight: 100
 ---
 
 {% tip %}

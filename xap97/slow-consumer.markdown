@@ -2,6 +2,8 @@
 layout: post
 title:  Slow Consumer
 categories: XAP97
+parent: session-based-messaging-api.html
+weight: 200
 ---
 
 {% summary %}The space includes a special mechanism that detects clients that cannot consume the notifications sent fast enough - i.e. slow consumers. {% endsummary %}

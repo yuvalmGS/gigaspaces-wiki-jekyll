@@ -2,6 +2,8 @@
 layout: post
 title:  Extending Space Documents
 categories: XAP97
+parent: document-api.html
+weight: 100
 ---
 
 {% summary %}Extending the SpaceDocument class{% endsummary %}

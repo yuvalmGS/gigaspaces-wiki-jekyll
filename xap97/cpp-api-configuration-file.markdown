@@ -2,6 +2,8 @@
 layout: post
 title:  CPP API Configuration File
 categories: XAP97
+parent: cpp-api-basics.html
+weight: 300
 ---
 
 {% summary page|65 %}C++ configuration file and setting the JVM options.{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Transient Entries
 categories: XAP97
+parent: persistency-advanced-topics.html
+weight: 100
 ---
 
 {% summary %}How to specify that some objects in a persistent space should not be saved to the persistent storage. {% endsummary %}

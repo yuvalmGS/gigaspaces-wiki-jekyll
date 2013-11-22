@@ -2,6 +2,8 @@
 layout: post
 title:  Event Driven Remoting
 categories: XAP97
+parent: space-based-remoting.html
+weight: 200
 ---
 
 {% compositionsetup %}

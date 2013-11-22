@@ -2,6 +2,8 @@
 layout: post
 title:  XAP ESM on Cisco UCS
 categories: XAP97
+parent: cloud-and-virtualization.html
+weight: 100
 ---
 
 {% compositionsetup %}
