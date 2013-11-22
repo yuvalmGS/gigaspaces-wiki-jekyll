@@ -1,14 +1,14 @@
 ---
 layout: post
 title:  Supported Platforms
-categories:    RELEASE_NOTES
+categories: RELEASE_NOTES
 parent: none
 weight: 700
 ---
 
 {%summary%} Supported Platforms for XAP 9.7.X release {%endsummary%}
 
-# Overview
+## Overview
 
 GigaSpaces Data Grid and Messaging Grid core middleware, Database Cache and Persistency, Service Grid and OpenSpaces are 100% Java technology based.
 

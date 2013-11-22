@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Terminology - Runtime Components
+title:  Runtime Components
 categories: PRODUCT_OVERVIEW
 weight: 300
 parent: terminology.html

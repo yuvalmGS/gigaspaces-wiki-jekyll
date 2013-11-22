@@ -10,7 +10,7 @@ module Jekyll
 
     def render(context)
       output = <<-output
-<div class="training-box">
+<div class="well training-box">
 <strong>Wish to become a GigaSpaces professional and get training from our product experts?</strong>
 <br/>
 <a href="http://www.gigaspaces.com/content/gigaspaces-training" target="training">Click here</a> for details about our various training education programs.

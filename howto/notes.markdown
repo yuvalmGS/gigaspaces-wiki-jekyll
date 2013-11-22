@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Notes
-parent: markdown.html
+parent: plugin.html
 weight: 300
 categories: HOWTO
 ---

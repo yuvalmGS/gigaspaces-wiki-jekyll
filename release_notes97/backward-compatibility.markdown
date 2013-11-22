@@ -1,14 +1,14 @@
 ---
 layout: post
 title:  Backward compatibility
-categories:  RELEASE_NOTES
+categories: RELEASE_NOTES
 parent: none
 weight: 600
 ---
 
-{%summary%} Backward compatibility, rolling upgrades and coexistence of XAP versions {%endsummary%}
 
-# Overview
+
+## Overview
 Backward Compatibility in GigaSpaces
 XAP 9.7 is a minor release which includes new features and improvements, including the Change API, Custom Eviction Policy and more.
 
@@ -31,7 +31,7 @@ We try to maintain backward compatibility wherever possible. However, in some ca
 
 The below table describes backwards compatibility support in XAP 9.7:
 
-# OpenSpaces
+## OpenSpaces
 
 {: .table .table-bordered}
 |Delivery|XAP API/Configuration|XAP Binaries|Client-Server|Server-Server|

@@ -1,14 +1,14 @@
 ---
 layout: post
 title:  New Features and Improvements
-categories:  RELEASE_NOTES
-parent: index.html
+categories: RELEASE_NOTES
+parent: none
 weight: 200
 ---
 
 {%summary%} New features and improvements in the XAP 9.7.X release {%endsummary%}
 
-# Overview
+## Overview
 
 Below is a list of new features and improvements in GigaSpaces 9.7.X.
 

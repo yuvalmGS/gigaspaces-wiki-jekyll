@@ -1,17 +1,17 @@
 ---
 layout: post
 title:  Release Notes
-categories:   RELEASE_NOTES
+categories: RELEASE_NOTES
 parent: none
-weight:
 ---
 
 
-# Overview
+
 {%section%}
 {%column width=75% %}
 
-{%include /release_notes/xap97/general_notes.markdown %}
+
+A new release of Gigaspace's XAP platform has been released. Version 9.7 is a minor release. Below you will find all relevant information.
 
 {%endcolumn%}
 {%column width=20% %}
@@ -21,7 +21,7 @@ weight:
 
 
 
-# XAP 9.7.0
+## XAP 9.7.0
 
 [What's new](./whats-new.html)
 
@@ -38,4 +38,9 @@ weight:
 [Backward Compatibility](./backward-compatibility.html)
 
 [Upgrading](./upgrading.html)
+
+
+## Previouse releases
+
+You can find release notes of earlier versions [here](http://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+Release+Notes).
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Terminology - Data Grid Topologies
+title:  Data Grid Topologies
 categories: PRODUCT_OVERVIEW
 weight: 200
 parent: terminology.html

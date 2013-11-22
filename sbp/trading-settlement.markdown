@@ -52,7 +52,7 @@ Blotter clients connect to the servlet through HTTP.  The blotter displays user 
 
 The feeder generates random trade objects and places them into the space.
 
-The [grid topology](/product_overview/Terminology---Data-Grid-Topologies.html) for the event processing engine consists of 2 partitions with backup instances.
+The [grid topology](/product_overview/terminology---data-grid-topologies.html) for the event processing engine consists of 2 partitions with backup instances.
 
 It receives an event when an unprocessed trade is placed in the space and starts a transaction.  The transaction consists of several operations:
 
@@ -70,13 +70,13 @@ The [mirror service]({%latestjavaurl%}/asynchronous-persistency-with-the-mirror.
 
 # Processing Unit Relationships and Events
 
-The feeder, web servlet, monitor, messaging and mirror are deployed as [Processing Units (PUs)](/product_overview/A-Typical-SBA-Application.html).
+The feeder, web servlet, monitor, messaging and mirror are deployed as [Processing Units (PUs)](/product_overview/a-typical-sba-application.html).
 
-The event processing engine is deployed as an [_Elastic_ PU]({%latestjavaurl%}/elastic-processing-unit.html) with [replication]({%latestjavaurl%}/replication.html).  The elasticity enables the grid to scale up or down based on user-defined metrics.  In this case, we use the number of trade objects in the space, which is counted by the monitor PU.  When this exceeds 50, memory capacity is increased through the [admin API](http://www.gigaspaces.com/wiki/display/XAP8/Administration+and+Monitoring+API+Security).  This causes new [processing containers]({%latestjavaurl%}/service-grid.html#gsc) to be provisioned and the Elastic PUs to be rebalanced across the new nodes.  Scaling down is the reverse process.
+The event processing engine is deployed as an [_Elastic_ PU]({%latestjavaurl%}/elastic-processing-unit.html) with [replication]({%latestjavaurl%}/replication.html).  The elasticity enables the grid to scale up or down based on user-defined metrics.  In this case, we use the number of trade objects in the space, which is counted by the monitor PU.  When this exceeds 50, memory capacity is increased through the [admin API]({%latestjavaurl%}/administration-and-monitoring-api-security.html).  This causes new [processing containers]({%latestjavaurl%}/service-grid.html#gsc) to be provisioned and the Elastic PUs to be rebalanced across the new nodes.  Scaling down is the reverse process.
 
-You can step through the demo code in your favorite IDE by deploying the target processing unit(s) in an [Integrated Processing Unit Container]({%latestjavaurl%}/deploying-and-running-the-processing-Unit.html).
+You can step through the demo code in your favorite IDE by deploying the target processing unit(s) in an [Integrated Processing Unit Container]({%latestjavaurl%}/deploying-and-running-the-processing-unit.html).
 
-Deal matching uses a [polling container]({%latestjavaurl%}/Polling-Container.html) and [transactions]({%latestjavaurl%}/transaction-management.html).
+Deal matching uses a [polling container]({%latestjavaurl%}/polling-container.html) and [transactions]({%latestjavaurl%}/transaction-management.html).
 
 ![SA-PUs.png](/attachment_files/sbp/SA-PUs.png)
 
