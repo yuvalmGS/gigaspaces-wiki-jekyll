@@ -5,7 +5,7 @@ layout: nil
 var sidebar = {};
 
 {% for cat in site.categories-list %}
-sidebar["{{ cat }}"] = [];  
+sidebar["{{ cat }}"] = [];
 {% for page in site.pages %}{% if page.categories == cat %}{% if page.parent != null %}
 sidebar["{{ cat }}"].push({url:"{{ page.url }}", parent: "{{ page.parent }}", weight:{% if page.weight != null %} {{ page.weight }}{% else %} 0{% endif %}, title: "{{ page.title }}"});
 {% endif %}{% endif %}{% endfor %}{% endfor %}
@@ -57,14 +57,14 @@ function makeSideBar(orig, space) {
     }
 
     sidebar_url = '[href$="' + current_child['parent'] + '"]';
-    find_a = parent_object.find(sidebar_url);
+    find_a = parent_object.find(decodeURI(sidebar_url));
     if (find_a.length != 0) {
       with_parent = $.grep(with_parent, function(value) { return(value != current_child) });
       find_a.after("\n" + makeChildMenu(current_child) + "\n");
     }
 
     //failsafe 200 times iteration
-    if (counter == 200) {
+    if (counter == 600) {
       with_parent = [];
     }
 
@@ -95,26 +95,26 @@ function makeChildMenu(orig) {
 }
 
 function createBreadcrumbs(category, currentSection) {
-  
+
   if (sidebar[category]) {
-    var locations = []; 
-    var currentPath = location.pathname; 
+    var locations = [];
+    var currentPath = location.pathname;
     var currentCrumb = sidebar[category].filter(function(x) {return x.url == currentPath})[0]
     while (currentCrumb) {
-      locations.unshift(currentCrumb);      
-      if (currentCrumb.parent == "none") break;         
-      currentPath = "/" + category.toLowerCase() + "/" + currentCrumb.parent; 
+      locations.unshift(currentCrumb);
+      if (currentCrumb.parent == "none") break;
+      currentPath = "/" + category.toLowerCase() + "/" + currentCrumb.parent;
       currentCrumb = sidebar[category].filter(function(x) {return x.url == currentPath})[0]
     }
   }
 
   var breadcrumbsHtml = "<ol class='breadcrumb'>";
-  breadcrumbsHtml += "<li><a href='/'>Home</a></li>";  
-  breadcrumbsHtml += "<li><a href='/" + category.toLowerCase() + "/'>" + currentSection + "</a></li>";  
-  if (locations.length > 0) {  
+  breadcrumbsHtml += "<li><a href='/'>Home</a></li>";
+  breadcrumbsHtml += "<li><a href='/" + category.toLowerCase() + "/'>" + currentSection + "</a></li>";
+  if (locations.length > 0) {
     for (var i=0; i<locations.length; i++) {
-      breadcrumbsHtml += "<li><a href='" + locations[i].url +"'>" + locations[i].title + "</a></li>";  
-    }  
+      breadcrumbsHtml += "<li><a href='" + locations[i].url +"'>" + locations[i].title + "</a></li>";
+    }
   }
   breadcrumbsHtml += "</ol>";
   $("#breadcrumbs").append(breadcrumbsHtml);
