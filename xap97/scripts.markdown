@@ -2,6 +2,8 @@
 layout: post
 title:  Scripts
 categories: XAP97
+parent: commands-and-scripts.html
+weight: 100
 ---
 
 {% compositionsetup %}

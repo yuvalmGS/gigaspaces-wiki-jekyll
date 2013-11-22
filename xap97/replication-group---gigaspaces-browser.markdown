@@ -2,6 +2,8 @@
 layout: post
 title:  Replication Group - GigaSpaces Browser
 categories: XAP97
+parent: working-with-clusters---gigaspaces-browser.html
+weight: 500
 ---
 
 {% summary %}Common settings, sync/async replication, transmission policies, filters, recovery options.{% endsummary %}

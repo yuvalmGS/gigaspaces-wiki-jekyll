@@ -2,6 +2,8 @@
 layout: post
 title:  Programmatically Managing the Security Directory
 categories: XAP97
+parent: security-basics.html
+weight: 400
 ---
 
 {% summary %}User and Role directory API{% endsummary %}

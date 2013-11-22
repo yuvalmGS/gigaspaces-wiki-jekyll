@@ -2,6 +2,8 @@
 layout: post
 title:  Tuning Java Virtual Machines
 categories: XAP97
+parent: performance-tuning-and-considerations.html
+weight: 300
 ---
 
 {% summary %}As part of configuring  GigaSpaces, you can fine-tune settings that enhance system use of the JVM. {% endsummary %}

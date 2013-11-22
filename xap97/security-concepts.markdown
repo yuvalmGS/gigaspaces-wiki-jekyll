@@ -2,6 +2,8 @@
 layout: post
 title:  Security Concepts
 categories: XAP97
+parent: security-basics.html
+weight: 100
 ---
 
 {% summary %}Authentication, Encryption, Authenticity Validation, and Managing users and roles{% endsummary %}

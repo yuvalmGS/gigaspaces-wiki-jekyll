@@ -2,6 +2,8 @@
 layout: post
 title:  Data-Grid Clustering
 categories: XAP97
+parent: advanced-tasks.html
+weight: 100
 ---
 
 {% compositionsetup %}

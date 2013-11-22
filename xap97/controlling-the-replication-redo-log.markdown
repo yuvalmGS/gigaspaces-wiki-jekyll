@@ -2,6 +2,8 @@
 layout: post
 title:  Controlling the Replication Redo Log
 categories: XAP97
+parent: replication.html
+weight: 600
 ---
 
 {% summary %} This section describes how to control the replication queue (aka the redo log), what options it provides, and what are the trade-offs involved with each option.{% endsummary %}

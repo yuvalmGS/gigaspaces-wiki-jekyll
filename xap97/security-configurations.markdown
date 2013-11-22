@@ -2,6 +2,8 @@
 layout: post
 title:  Security Configurations
 categories: XAP97
+parent: security-basics.html
+weight: 400
 ---
 
 {% summary %}Configurations and defaults{% endsummary %}

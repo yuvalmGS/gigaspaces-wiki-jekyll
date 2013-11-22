@@ -2,6 +2,8 @@
 layout: post
 title:  Failover Detection and Tuning
 categories: XAP97
+parent: configuring-the-system.html
+weight: 200
 ---
 
 {% summary page|70 %}This page describes how to calculate the duration of various failover scenarios and what configuration parameters control it{% endsummary %}

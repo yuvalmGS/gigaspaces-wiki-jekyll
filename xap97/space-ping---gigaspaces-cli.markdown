@@ -2,6 +2,9 @@
 layout: post
 title:  space ping - GigaSpaces CLI
 categories: XAP97
+parent: space---gigaspaces-cli.html
+weight: 800
+
 ---
 
 {% summary %}Provides a convenient way to test a space.{% endsummary %}

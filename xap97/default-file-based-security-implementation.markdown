@@ -2,6 +2,8 @@
 layout: post
 title:  Default File-Based Security Implementation
 categories: XAP97
+parent: security.html
+weight: 200
 ---
 
 {% summary %}The default file-based users/roles directory; Overview, Getting Started, Configuration, and Custom Extensions{% endsummary %}

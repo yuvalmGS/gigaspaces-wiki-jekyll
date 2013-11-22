@@ -2,6 +2,8 @@
 layout: post
 title:  undeploy - GigaSpaces CLI
 categories: XAP97
+parent: commands.html
+weight: 2000
 ---
 
 {% summary page|70 %}Undeploys an application from the service grid. {% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  C++ Benchmark Framework
 categories: XAP97
+parent: benchmarking.html
+weight: 300
 ---
 
 {% summary page|65 %}How to configure and run the c++ POCO Benchmark Framework{% endsummary %}

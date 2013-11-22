@@ -2,6 +2,8 @@
 layout: post
 title:  GigaSpaces Management Center (UI) Security
 categories: XAP97
+parent: security-administration.html
+weight: 100
 ---
 
 {% summary %}Security Administration using the GigaSpaces Management Center (UI){% endsummary %}

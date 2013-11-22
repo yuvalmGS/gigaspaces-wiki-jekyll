@@ -2,6 +2,8 @@
 layout: post
 title:  Synchronous Replication
 categories: XAP97
+parent: replication.html
+weight: 200
 ---
 
 {% summary %}This page describe what is synchronous replication and how to configure it{% endsummary %}

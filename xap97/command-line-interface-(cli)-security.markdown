@@ -2,6 +2,8 @@
 layout: post
 title:  Command Line Interface CLI Security
 categories: XAP97
+parent: security-administration.html
+weight: 200
 ---
 
 {% compositionsetup %}

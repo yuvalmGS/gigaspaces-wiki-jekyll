@@ -2,6 +2,8 @@
 layout: post
 title:  Transactions View - GigaSpaces Browser
 categories: XAP97
+parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
+weight: 600
 ---
 
 {% summary %}The Transactions view allows you to view all of the trasactions that are currently taking place in the selected space.{% endsummary %}

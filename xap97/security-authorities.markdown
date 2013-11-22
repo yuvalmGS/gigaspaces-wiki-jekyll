@@ -2,6 +2,8 @@
 layout: post
 title:  Security Authorities
 categories: XAP97
+parent: security-basics.html
+weight: 200
 ---
 
 {% summary %}System, Grid, Space and Monitor authorities{% endsummary %}

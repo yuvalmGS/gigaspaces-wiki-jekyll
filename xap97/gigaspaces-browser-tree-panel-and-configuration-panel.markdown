@@ -2,6 +2,8 @@
 layout: post
 title:  GigaSpaces Browser Tree Panel and Configuration Panel
 categories: XAP97
+parent: using-space-browser-tab---gigaspaces-management-center.html
+weight: 100
 ---
 
 {% summary %}Using the Grid Tree and the Configuration Panel on the right. {% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Benchmark View - GigaSpaces Browser
 categories: XAP97
+parent: benchmarking.html
+weight: 200
 ---
 
 {% summary %}The Benchmark view provides a user interface for benchmarking the space.{% endsummary %}

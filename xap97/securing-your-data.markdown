@@ -2,6 +2,8 @@
 layout: post
 title:  Securing your Data
 categories: XAP97
+parent: securing-xap-components.html
+weight: 100
 ---
 
 {% compositionsetup %}

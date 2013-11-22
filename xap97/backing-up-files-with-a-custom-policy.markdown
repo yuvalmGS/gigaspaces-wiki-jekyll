@@ -2,6 +2,8 @@
 layout: post
 title:  Backing-up Files With a Custom Policy
 categories: XAP97
+parent: managing-log-files.html
+weight: 100
 ---
 
 {% summary %}Custom backup policy{% endsummary %}

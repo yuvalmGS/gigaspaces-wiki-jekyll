@@ -2,6 +2,8 @@
 layout: post
 title:  Securing the HelloWorld example
 categories: XAP97
+parent: security.html
+weight: 500
 ---
 
 {% summary %}Get started with a simple HelloWorld example {% star %}{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Object Inspector
 categories: XAP97
+parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
+weight: 300
 ---
 
 {% summary %}Using the selected object's UID, the Object Inspector takes the object itself from the space and displays its class fields, allowing you to drill down into object arrays.{% endsummary %}

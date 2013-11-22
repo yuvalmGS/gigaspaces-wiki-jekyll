@@ -2,6 +2,8 @@
 layout: post
 title:  Application View
 categories: XAP97
+parent: web-management-console.html
+weight: 300
 ---
 
 {% compositionsetup %}{% summary %}Applications and Processing unit dependency view{% endsummary %}

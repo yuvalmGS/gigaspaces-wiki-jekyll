@@ -2,6 +2,8 @@
 layout: post
 title:  Split Brain and Primary Resolution
 categories: XAP97
+parent: data-grid-clustering.html
+weight: 500
 ---
 
 {% compositionsetup %}

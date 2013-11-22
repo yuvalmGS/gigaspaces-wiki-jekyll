@@ -2,6 +2,8 @@
 layout: post
 title:  How to Set GigaSpaces Over NAT
 categories: XAP97
+parent: networking-how-tos.html
+weight: 300
 ---
 
 {% summary page %}The GigaSpaces settings to enable functioning over NAT. {% endsummary %}

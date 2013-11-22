@@ -2,6 +2,8 @@
 layout: post
 title:  startJiniTX_Mahalo - GigaSpaces CLI
 categories: XAP97
+parent: scripts.html
+weight: 400
 ---
 
 {% summary %}Starts the Jini Transaction Manager as a stand alone process. {% endsummary %}

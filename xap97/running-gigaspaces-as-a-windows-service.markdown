@@ -2,6 +2,8 @@
 layout: post
 title:  Running GigaSpaces as a Windows Service
 categories: XAP97
+parent: managing-and-monitoring-a-running-system.html
+weight: 300
 ---
 
 {% summary %}Running GigaSpaces as a Windows Service{% endsummary %}

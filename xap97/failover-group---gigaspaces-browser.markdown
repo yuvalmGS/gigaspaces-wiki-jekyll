@@ -2,6 +2,8 @@
 layout: post
 title:  Failover Group - GigaSpaces Browser
 categories: XAP97
+parent: working-with-clusters---gigaspaces-browser.html
+weight: 300
 ---
 
 {% summary %}A failover group defines failover between spaces in the cluster.{% endsummary %}

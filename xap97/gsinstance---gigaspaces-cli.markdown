@@ -2,6 +2,8 @@
 layout: post
 title:  gsInstance - GigaSpaces CLI
 categories: XAP97
+parent: scripts.html
+weight: 100
 ---
 
 {% summary %}Loads a space container, one space, an embedded Reggie, and an embedded Webster, using the `gsInstance` script. {% endsummary %}

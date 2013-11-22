@@ -2,6 +2,8 @@
 layout: post
 title:  Tuning Threads Usage
 categories: XAP97
+parent: performance-tuning-and-considerations.html
+weight: 500
 ---
 
 # Overview

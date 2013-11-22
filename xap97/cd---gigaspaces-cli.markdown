@@ -2,6 +2,8 @@
 layout: post
 title:  cd - GigaSpaces CLI
 categories: XAP97
+parent: commands.html
+weight: 100
 ---
 
 {% summary %}Moves to a different working directory, like the Unix `cd` command. {% endsummary %}

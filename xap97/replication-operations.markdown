@@ -2,6 +2,8 @@
 layout: post
 title:  Replication Operations
 categories: XAP97
+parent: replication.html
+weight: 500
 ---
 
 {% compositionsetup %}{% summary %} This section describes in detail how each space operation is replicated provides relevant configuration and optimizations .{% endsummary %}

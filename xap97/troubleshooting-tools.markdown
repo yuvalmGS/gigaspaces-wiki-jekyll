@@ -2,6 +2,8 @@
 layout: post
 title:  Troubleshooting Tools
 categories: XAP97
+parent: troubleshooting-for-administrators.html
+weight: 300
 ---
 
 {% summary page|60 %}Troubleshooting tools for testing a running product and environmental issues. {% endsummary %}

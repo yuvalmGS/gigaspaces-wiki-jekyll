@@ -2,6 +2,8 @@
 layout: post
 title:  stats - GigaSpaces CLI
 categories: XAP97
+parent: commands.html
+weight: 1700
 ---
 
 {% summary %}Provides statistics from the GSC and GSM of the local machine. {% endsummary %}

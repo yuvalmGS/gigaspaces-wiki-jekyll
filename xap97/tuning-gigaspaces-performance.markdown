@@ -2,6 +2,8 @@
 layout: post
 title:  Tuning GigaSpaces Performance
 categories: XAP97
+parent: performance-tuning-and-considerations.html
+weight: 200
 ---
 
 # Overview

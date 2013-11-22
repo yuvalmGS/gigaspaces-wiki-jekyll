@@ -2,6 +2,8 @@
 layout: post
 title:  Space Container Configuration General Tab - GigaSpaces Browser
 categories: XAP97
+parent: managing-space-containers---gigaspaces-browser.html
+weight: 200
 ---
 
 {% summary %}Home directory, license, container socket port, security mode.{% endsummary %}

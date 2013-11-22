@@ -2,6 +2,8 @@
 layout: post
 title:  System Properties List
 categories: XAP97
+parent: configuring-the-system.html
+weight: 100
 ---
 
 # System Properties List

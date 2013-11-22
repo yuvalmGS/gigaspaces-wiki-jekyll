@@ -2,6 +2,8 @@
 layout: post
 title:  GigaSpaces Logging
 categories: XAP97
+parent: administrators-guide.html
+weight: 500
 ---
 
 {% compositionsetup %}

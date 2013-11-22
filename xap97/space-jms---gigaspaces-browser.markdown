@@ -2,6 +2,8 @@
 layout: post
 title:  Space JMS - GigaSpaces Browser
 categories: XAP97
+parent: working-with-spaces---gigaspaces-browser.html
+weight: 100
 ---
 
 {% summary %}Using the **JMS** tab of the advanced space configuration dialog.{% endsummary %}

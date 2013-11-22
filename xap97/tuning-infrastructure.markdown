@@ -2,6 +2,8 @@
 layout: post
 title:  Tuning Infrastructure
 categories: XAP97
+parent: performance-tuning-and-considerations.html
+weight: 100
 ---
 
 {% summary %}Helpful recommendations for: tuning the infrastructure on which GigaSpaces XAP is running, boosting its performance, and improving its scalability.

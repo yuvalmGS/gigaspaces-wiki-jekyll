@@ -2,6 +2,8 @@
 layout: post
 title:  space cluster-members - GigaSpaces CLI
 categories: XAP97
+parent: space---gigaspaces-cli.html
+weight: 300
 ---
 
 {% summary page|60 %}Show the full list of cluster members, including members that aren't "alive".{% endsummary %}

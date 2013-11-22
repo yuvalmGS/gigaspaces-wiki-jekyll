@@ -2,6 +2,8 @@
 layout: post
 title:  License Key
 categories: XAP97
+parent: installation-prerequisites.html
+weight: 200
 ---
 
 {% summary %}Getting a license key and defining it in the space schema.{% endsummary %}

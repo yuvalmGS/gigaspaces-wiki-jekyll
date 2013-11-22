@@ -2,6 +2,8 @@
 layout: post
 title:  Benchmarking
 categories: XAP97
+parent: evaluating-performance-and-scalability.html
+weight: 100
 ---
 
 # The Art of Benchmarks

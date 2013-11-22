@@ -2,6 +2,9 @@
 layout: post
 title:  space sql - GigaSpaces CLI
 categories: XAP97
+parent: space---gigaspaces-cli.html
+weight: 900
+
 ---
 
 {% summary %}Queries specified space.{% endsummary %}

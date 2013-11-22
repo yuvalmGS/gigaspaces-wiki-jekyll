@@ -2,6 +2,8 @@
 layout: post
 title:  Security Basics
 categories: XAP97
+parent: security.html
+weight: 100
 ---
 
 # Overview

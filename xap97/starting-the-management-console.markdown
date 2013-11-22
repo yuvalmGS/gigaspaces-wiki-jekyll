@@ -2,6 +2,8 @@
 layout: post
 title:  Starting the Management Console
 categories: XAP97
+parent: web-management-console.html
+weight: 100
 ---
 
 {% compositionsetup %}{% summary %}Reviews the different deployment option of the web management console{% endsummary %}

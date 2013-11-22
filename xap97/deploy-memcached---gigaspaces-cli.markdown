@@ -2,6 +2,8 @@
 layout: post
 title:  deploy-memcached - GigaSpaces CLI
 categories: XAP97
+parent: commands.html
+weight: 400
 ---
 
 {% summary page|70 %}Deploys a memcached-enabled space onto the service grid. {% endsummary %}
