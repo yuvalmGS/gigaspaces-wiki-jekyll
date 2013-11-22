@@ -2,11 +2,13 @@
 layout: post
 title:  Extending Space Documents
 categories: XAP97NET
+parent: document-(schema-free)-api.html
+weight: 100
 ---
 
 {% summary %}Extending the SpaceDocument class{% endsummary %}
 
-![new-in-801-banner.png](/attachment_files/xap97net/new-in-801-banner.png)
+![new-in-801-banner.png](/attachment_files/dotnet/new-in-801-banner.png)
 
 # Overview
 

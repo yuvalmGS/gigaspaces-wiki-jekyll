@@ -2,6 +2,8 @@
 layout: post
 title:  Type Discovery
 categories: XAP97NET
+parent: object-entries.html
+weight: 500
 ---
 
 {% summary page|65 %}Controlling data type discovery{% endsummary %}

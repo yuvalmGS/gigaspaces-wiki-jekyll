@@ -13,7 +13,7 @@ weight: 300
 Objects are written to the space using the `ISpaceProxy.Write` method. A write operation inserts a copy of the given object to the space, hence, any changes made to the object after the write operation do not affect the object in the space.
 
 {% indent %}
-![space_write.jpg](/attachment_files/xap97net/space_write.jpg)
+![space_write.jpg](/attachment_files/dotnet/space_write.jpg)
 {% endindent %}
 
 # Writing a Single Object

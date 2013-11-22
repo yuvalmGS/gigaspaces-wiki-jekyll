@@ -2,6 +2,8 @@
 layout: post
 title:  Document (Schema-Free) API
 categories: XAP97NET
+parent: modeling-your-data.html
+weight: 200
 ---
 
 {% compositionsetup %}
@@ -20,7 +22,7 @@ The GigaSpaces document API exposes the space as [Document Store](http://en.wiki
 
 {% column %}
 
-![doc_api.jpg](/attachment_files/xap97net/doc_api.jpg)
+![doc_api.jpg](/attachment_files/dotnet/doc_api.jpg)
 
 {% endcolumn %}
 

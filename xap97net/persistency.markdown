@@ -2,6 +2,8 @@
 layout: post
 title:  Persistency
 categories: XAP97NET
+parent: deploying-and-interacting-with-the-space.html
+weight: 200
 ---
 
 {% compositionsetup %}

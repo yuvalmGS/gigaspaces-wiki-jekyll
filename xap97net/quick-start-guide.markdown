@@ -19,7 +19,7 @@ If you would like to run the tutorial sample application, download GigaSpaces an
 <br/>
 
 {% align center %}
-[![button2.jpg](/attachment_files/xap97net/button2.jpg)](./your-first-data-grid-application.html)
+[![button2.jpg](/attachment_files/dotnet/button2.jpg)](./your-first-data-grid-application.html)
 {% endalign %}
 
 {% endcolumn %}
@@ -50,7 +50,7 @@ Create your first simple Hello World caching application
 <br/>
 
 {% align center %}
-[![dataexamplesmall.jpg](/attachment_files/xap97net/dataexamplesmall.jpg)](./your-first-xtp-application.html)
+[![dataexamplesmall.jpg](/attachment_files/dotnet/dataexamplesmall.jpg)](./your-first-xtp-application.html)
 {% endalign %}
 
 {% endcolumn %}

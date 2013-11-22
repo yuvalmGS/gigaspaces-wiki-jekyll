@@ -15,7 +15,7 @@ weight: 200
 The `ISpaceProxy` interface is ideal for connecting to data stored in the Space. The `ISpaceProxy` interface is used to interact with the Space, allowing both read and write actions. An `ISpaceProxy` is initialized using the `GigaSpacesFactor` static class object.
 
 {% indent %}
-![space_basic_operations91.jpg](/attachment_files/xap97net/space_basic_operations91.jpg)
+![space_basic_operations91.jpg](/attachment_files/dotnet/space_basic_operations91.jpg)
 {% endindent %}
 
 An `ISpaceProxy` can be initialized directly in the code or in the `pu.config` file in XML format. To define an `ISpaceProxy`:
@@ -356,7 +356,7 @@ The GigaSpace interface supports asynchronous (non-blocking) read and asynchrono
 
 Alternatively, asyncRead and asyncTake also accept an implementation of [AsyncFutureListener<T>](http://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/async/AsyncFutureListener.html), which will have its [onResult(AsyncFuture<T>)](http://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/async/AsyncFutureListener.html#onResult(com.gigaspaces.async.AsyncResult)) method called when the result has been populated. This does not affect the return type of the Future<T>, but provides an additional mechanism for handling the asynchronous response.
 
-![async_operations.jpg](/attachment_files/xap97net/async_operations.jpg)
+![async_operations.jpg](/attachment_files/dotnet/async_operations.jpg)
 
 Asynchronous `write` operation can be implemented using a [Task](./task-execution-over-the-space.html), where the `Task` implementation include a write operation. With this approach the `Task` is sent to the space and executed in an asynchronous manner. The write operation itself will be completed once both the primary and the backup will acknowledge the operation. This activity will be performed as a background activity from the client perspective.
 

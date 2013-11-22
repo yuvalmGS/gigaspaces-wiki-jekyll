@@ -2,6 +2,8 @@
 layout: post
 title:  Client Side Caching
 categories: XAP97NET
+parent: deploying-and-interacting-with-the-space.html
+weight: 100
 ---
 
 {% summary %} A client application may run a local cache (near cache), which caches data in the client application's local memory. Gigaspaces provides two options for interacting with a client-side cache: local cache and local view. Both the local cache and local view allow the client application to cache specific or recently used data within client JVM. The data is also updated automatically by the space when necessary. The local cache is ideal for situations where higher flexibility is required, while the local view is designed for more rigid and predefined, static data.{% endsummary %}
@@ -11,10 +13,10 @@ categories: XAP97NET
 GigaSpaces supports client side caching of space data within the client application's memory. Client-side caching implements a two-layer cache architecture where the first layer is stored locally, within the client's memory, and the second layer is stored within the remote master space. The remote master space may be used with any of the supported deployment topologies.
 
 **In-line cache with a client cache**:
-![in-line_cache-local-cache.jpg](/attachment_files/xap97net/in-line_cache-local-cache.jpg)
+![in-line_cache-local-cache.jpg](/attachment_files/dotnet/in-line_cache-local-cache.jpg)
 
 **Side cache with a client cache**:
-![side-cache-local-cache.jpg](/attachment_files/xap97net/side-cache-local-cache.jpg)
+![side-cache-local-cache.jpg](/attachment_files/dotnet/side-cache-local-cache.jpg)
 
 The client-side cache size is limited to the heap size of the client application's memory.
 
@@ -37,7 +39,7 @@ Client-side cache should be used when the application performs repetitive read o
 
 In some cases where the relevant dataset size fits a single JVM (64 Bit JVM may also be utilized), the data may be maintained in multiple locations (JVMs) having it collocated to the application code (client or a service) as demonstrated below:
 
-![local-cache-real-life.jpg](/attachment_files/xap97net/local-cache-real-life.jpg)
+![local-cache-real-life.jpg](/attachment_files/dotnet/local-cache-real-life.jpg)
 
 With the above architecture the client and the remote service has a local cache/view proxy that maintains a dataset that was distributed across the different partitions. In this scenario, readbyId or readByIds calls are VERY fast since they are actually local calls (semi-reference object access) that do not involve network utilization.
 

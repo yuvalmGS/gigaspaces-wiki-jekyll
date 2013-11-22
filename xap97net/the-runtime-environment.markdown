@@ -15,7 +15,7 @@ weight: 200
 The basic unit of deployment in the GigaSpaces XAP platform is the [Processing Unit](./packaging-and-deployment.html).
 
 Once packaged, a processing unit is deployed onto the GigaSpaces runtime environment, which is called the **Service Grid**. It is responsible for materializing the processing unit's configuration, provisioning its instances to the runtime infrastructure and making sure they continue to run properly over time.
-![archi_deployenv.jpg](/attachment_files/xap97net/archi_deployenv.jpg)
+![archi_deployenv.jpg](/attachment_files/dotnet/archi_deployenv.jpg)
 
 {% info %}
 When developing your processing unit, you can [run and debug the processing unit within your IDE]({% currentjavaurl %}/running-and-debugging-within-your-ide.html). You will typically deploy it to the GigaSpaces runtime environment when it's ready for production or when you want to run it in the real-life runtime environment
@@ -24,7 +24,7 @@ When developing your processing unit, you can [run and debug the processing unit
 # Service Grid Architecture
 
 The service grid is composed of a number of components:
-![gs_runtime-core.jpg](/attachment_files/xap97net/gs_runtime-core.jpg)
+![gs_runtime-core.jpg](/attachment_files/dotnet/gs_runtime-core.jpg)
 
 ## Core Components
 

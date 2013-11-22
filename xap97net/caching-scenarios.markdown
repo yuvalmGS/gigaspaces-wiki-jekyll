@@ -2,6 +2,8 @@
 layout: post
 title:  Caching Scenarios
 categories: XAP97NET
+weight: 300
+parent: the-in-memory-data-grid.html
 ---
 
 {% summary %}GigaSpaces IMDG supports three different caching mechanisms: in-line cache, side cache and client cache.{% endsummary %}
@@ -26,7 +28,7 @@ With this mechanism, the IMDG is the system of record. The database data is load
 - When running in `ALL-IN-CACHE` cache policy mode, all data is loaded from the database into the cache once it is started.
 - When running in `LRU` cache policy mode, a subset of the data is loaded from the database into the cache when it is started. Data is evicted from the cache based on available memory or a maximum amount of cache objects. Once there is a cache miss, the cache looks for the data within the underlying data-source. If matching data is found, it is loaded into the cache and delivered to the application.
 
-![in-line-cache.jpg](/attachment_files/xap97net/in-line-cache.jpg)
+![in-line-cache.jpg](/attachment_files/dotnet/in-line-cache.jpg)
 
 The in-line cache is implemented using the following configurations:
 
@@ -66,7 +68,7 @@ With this mechanism, the application is responsible for maintaining the data in 
 
 4. The next time the application attempts to fetch the same object, it will be read from the cache - unless the object has been expired or evicted.
 
-![side_cache.jpg](/attachment_files/xap97net/side_cache.jpg)
+![side_cache.jpg](/attachment_files/dotnet/side_cache.jpg)
 
 The Side cache scenario is widely used with the following GigaSpaces APIs:
 
@@ -91,11 +93,11 @@ When using client cache, you use a two-layered cache architecture: The first lay
 
 ##### In-line cache with a client cache:
 
-![in-line_cache-local-cache.jpg](/attachment_files/xap97net/in-line_cache-local-cache.jpg)
+![in-line_cache-local-cache.jpg](/attachment_files/dotnet/in-line_cache-local-cache.jpg)
 
 ##### Side cache with a client cache:
 
-![side-cache-local-cache.jpg](/attachment_files/xap97net/side-cache-local-cache.jpg)
+![side-cache-local-cache.jpg](/attachment_files/dotnet/side-cache-local-cache.jpg)
 
 The client cache size is limited to the client process heap size. The client-side cache is updated automaticaly once the master copy of the object within the IMDG is updated. The client cache can be implemented using the following configurations:
 
@@ -114,7 +116,7 @@ Client side cache should be used when most of the application activities (above 
 
 When running the cache in LRU cache policy mode, you may need to expire or evict the cache data. This will make sure you will not load the cache with unnecessary data. Another reason to expire or evict the cache data is to make sure the memory allocated for the cache (JVM heap size) can accommodate the most valuable objects your applications needs.
 
-![query-service.jpg](/attachment_files/xap97net/query-service.jpg)
+![query-service.jpg](/attachment_files/dotnet/query-service.jpg)
 
 Here are the options you may use to refresh the cache:
 
@@ -127,4 +129,4 @@ Here are the options you may use to refresh the cache:
 - Periodic refresh - You may push data into the cache in a periodic manner via a timer. The Timer will be fetching relevant data that was recently updated within the database and pushing it into the cache.
 - Refresh data using a Queue - Any updates made to the database are also written to a queue. Refresher client consumes the messages on the queue and applies these changes to space.
 
-![queue-refresh.png](/attachment_files/xap97net/queue-refresh.png)
+![queue-refresh.png](/attachment_files/dotnet/queue-refresh.png)

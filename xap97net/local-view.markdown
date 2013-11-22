@@ -2,6 +2,8 @@
 layout: post
 title:  Local View
 categories: XAP97NET
+parent: client-side-caching.html
+weight: 200
 ---
 
 {% summary %} A Local View allows the client application to cache specific data based on client's criteria at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}
@@ -15,7 +17,7 @@ Data is streamed into the client's local view based on predefined criteria (a co
 During the local view initialization, data is loaded into the client's memory based on the view criteria. Afterwards, the local view is continuously updated by the master space asynchronously; any operation executed on the master space that affects an entry which matches the view criteria is automatically propagated to the client.
 
 {% indent %}
-![local_view.jpg](/attachment_files/xap97net/local_view.jpg)
+![local_view.jpg](/attachment_files/dotnet/local_view.jpg)
 {% endindent %}
 
 {% plus %} For additional client side caching options, refer to [Client Side Caching](./client-side-caching.html).

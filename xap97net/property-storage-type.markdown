@@ -2,6 +2,8 @@
 layout: post
 title:  Property Storage Type
 categories: XAP97NET
+parent: object-entries.html
+weight: 400
 ---
 
 {% summary page|65 %}Controlling properties storage and serialization{% endsummary %}
