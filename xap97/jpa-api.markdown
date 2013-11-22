@@ -2,6 +2,8 @@
 layout: post
 title:  JPA API
 categories: XAP97
+parent: other-data-access-apis.html
+weight: 200
 ---
 
 {% compositionsetup %}{% summary %}Using JPA with GigaSpaces.{% endsummary %}

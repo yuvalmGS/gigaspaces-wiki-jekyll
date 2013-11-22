@@ -2,8 +2,8 @@
 layout: post
 title:  Administration and Monitoring API
 categories: XAP97
-weight:
-parent: none
+weight: 100
+parent: admin-modules.html
 ---
 
 {% compositionsetup %}

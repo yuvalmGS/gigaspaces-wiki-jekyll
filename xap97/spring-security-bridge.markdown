@@ -2,6 +2,8 @@
 layout: post
 title:  Spring Security Bridge
 categories: XAP97
+parent: security.html
+weight: 700
 ---
 
 {% compositionsetup %}

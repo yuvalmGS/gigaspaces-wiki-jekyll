@@ -2,6 +2,8 @@
 layout: post
 title:  Storage Types - Controlling Serialization
 categories: XAP97
+parent: pojo-support.html
+weight: 400
 ---
 
 {% compositionsetup %}

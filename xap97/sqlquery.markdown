@@ -2,6 +2,8 @@
 layout: post
 title:  SQLQuery
 categories: XAP97
+parent: querying-the-space.html
+weight: 300
 ---
 
 {% compositionsetup %}

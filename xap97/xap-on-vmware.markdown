@@ -2,6 +2,8 @@
 layout: post
 title:  XAP on VMWare
 categories: XAP97
+parent: cloud-and-virtualization.html
+weight: 400
 ---
 
 {% summary %}GigaSpaces XAP VMWare virtual appliance{% endsummary %}

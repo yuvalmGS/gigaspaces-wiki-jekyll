@@ -2,6 +2,8 @@
 layout: post
 title:  Space Container Configuration Directory Services Tab - GigaSpaces Browser
 categories: XAP97
+parent: managing-space-containers---gigaspaces-browser.html
+weight: 100
 ---
 
 {% summary %}Lookup service options for the container.{% endsummary %}

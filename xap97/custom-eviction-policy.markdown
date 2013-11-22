@@ -2,6 +2,8 @@
 layout: post
 title:  Custom Eviction Policy
 categories: XAP97
+parent: memory-management-facilities.html
+weight: 200
 ---
 
 {% compositionsetup %}

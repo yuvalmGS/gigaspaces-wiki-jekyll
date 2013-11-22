@@ -2,6 +2,8 @@
 layout: post
 title:  CPP Processing Unit
 categories: XAP97
+parent: cpp-api---advanced.html
+weight: 100
 ---
 
 {% summary page|65 %}The CPP Processing Unit{% endsummary %}

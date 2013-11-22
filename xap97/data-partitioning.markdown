@@ -2,6 +2,8 @@
 layout: post
 title:  Data-Partitioning
 categories: XAP97
+parent: data-grid-clustering.html
+weight: 200
 ---
 
 {% compositionsetup %}

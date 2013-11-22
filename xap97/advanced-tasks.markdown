@@ -1,9 +1,9 @@
-latestjava---
+---
 layout: post
 title:  Advanced Tasks
 categories: XAP97
-weight:
-parent: none
+parent: administrators-guide.html
+weight: 800
 ---
 
 {% children %}

@@ -2,6 +2,8 @@
 layout: post
 title:  POJO Metadata
 categories: XAP97
+parent: pojo-support.html
+weight: 100
 ---
 
 {% compositionsetup %}{% summary %}GigaSpace API Plain Old Java Object support - the [POJO](http://en.wikipedia.org/wiki/Plain_Old_Java_Object). This section deals with the annotations and gs.xml mapping file decorations.{% endsummary %}

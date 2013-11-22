@@ -2,6 +2,8 @@
 layout: post
 title:  Using JMS with OpenSpaces Example
 categories: XAP97
+parent: jms---basics.html
+weight: 500
 ---
 
 {% compositionsetup %}

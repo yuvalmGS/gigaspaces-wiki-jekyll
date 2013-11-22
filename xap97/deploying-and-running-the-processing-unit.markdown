@@ -2,6 +2,8 @@
 layout: post
 title:  Deploying and Running the Processing Unit
 categories: XAP97
+parent: packaging-and-deployment.html
+weight: 200
 ---
 
 {% summary %}This section describes the various options to debug and run your processing units{% endsummary %}

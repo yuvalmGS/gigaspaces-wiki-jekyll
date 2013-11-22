@@ -2,6 +2,8 @@
 layout: post
 title:  Connections View - GigaSpaces Browser
 categories: XAP97
+parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
+weight: 100
 ---
 
 {% summary page|60 %}Displays information regarding all connected and disconnected proxies.{% endsummary %}

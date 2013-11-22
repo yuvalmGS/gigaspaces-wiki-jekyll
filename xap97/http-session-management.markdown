@@ -2,6 +2,8 @@
 layout: post
 title:  HTTP Session Management
 categories: XAP97
+parent: web-jetty-processing-unit-container.html
+weight: 100
 ---
 
 {% compositionsetup %}

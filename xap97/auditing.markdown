@@ -2,6 +2,8 @@
 layout: post
 title:  Auditing
 categories: XAP97
+parent: security-administration.html
+weight: 400
 ---
 
 {% summary %}Auditing of authentication and operations{% endsummary %}

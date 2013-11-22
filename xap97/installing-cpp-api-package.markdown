@@ -2,6 +2,8 @@
 layout: post
 title:  Installing CPP API Package
 categories: XAP97
+parent: xap-cpp.html
+weight: 100
 ---
 
 {% compositionsetup %}

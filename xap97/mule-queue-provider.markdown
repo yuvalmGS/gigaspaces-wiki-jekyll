@@ -2,6 +2,8 @@
 layout: post
 title:  Mule Queue Provider
 categories: XAP97
+parent: mule-esb.html
+weight: 300
 ---
 
 {% compositionsetup %}

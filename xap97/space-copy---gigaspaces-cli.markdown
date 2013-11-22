@@ -2,6 +2,9 @@
 layout: post
 title:  space copy - GigaSpaces CLI
 categories: XAP97
+parent: space---gigaspaces-cli.html
+weight: 600
+
 ---
 
 {% summary %}Copies all objects from the specified source space to the specified destination space.{% endsummary %}

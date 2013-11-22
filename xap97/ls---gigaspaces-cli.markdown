@@ -2,6 +2,8 @@
 layout: post
 title:  ls - GigaSpaces CLI
 categories: XAP97
+parent: commands.html
+weight: 1200
 ---
 
 {% summary %}Lists the contents of the current working directory, like the Unix `ls` command. {% endsummary %}

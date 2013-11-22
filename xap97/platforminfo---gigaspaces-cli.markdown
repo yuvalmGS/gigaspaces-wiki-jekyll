@@ -2,6 +2,8 @@
 layout: post
 title:  PlatformInfo - GigaSpaces CLI
 categories: XAP97
+parent: scripts.html
+weight: 200
 ---
 
 {% summary %}Provides full information on the system configuration. {% endsummary %}

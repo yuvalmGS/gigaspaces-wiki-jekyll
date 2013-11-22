@@ -2,6 +2,8 @@
 layout: post
 title:  The Processing Unit Structure and Configuration
 categories: XAP97
+parent: packaging-and-deployment.html
+weight: 100
 ---
 
 {% compositionsetup %}

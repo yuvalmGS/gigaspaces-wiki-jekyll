@@ -2,6 +2,8 @@
 layout: post
 title:  list - GigaSpaces CLI
 categories: XAP97
+parent: commands.html
+weight: 1000
 ---
 
 {% summary %}Lists information about active Service Grid services. {% endsummary %}

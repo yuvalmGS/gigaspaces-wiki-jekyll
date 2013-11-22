@@ -2,6 +2,8 @@
 layout: post
 title:  The Grid Service Container
 categories: XAP97
+parent: the-runtime-environment.html
+weight: 200
 ---
 
 {% compositionsetup %}

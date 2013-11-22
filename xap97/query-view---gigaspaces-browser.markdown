@@ -2,6 +2,8 @@
 layout: post
 title:  Query View - GigaSpaces Browser
 categories: XAP97
+parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
+weight: 400
 ---
 
 {% summary %}Used to query the space using SQL statements and view the resulting data set in tabular format.{% endsummary %}

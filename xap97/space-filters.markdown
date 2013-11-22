@@ -2,6 +2,8 @@
 layout: post
 title:  Space Filters
 categories: XAP97
+parent: the-space-component.html
+weight: 100
 ---
 
 {% compositionsetup %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Troubleshooting Common User Issues
 categories: XAP97
+parent: troubleshooting.html
+weight: 100
 ---
 
 # Troubleshooting Common Users Mistakes Which Might Lead to Issues

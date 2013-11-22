@@ -2,6 +2,8 @@
 layout: post
 title:  help - GigaSpaces CLI
 categories: XAP97
+parent: commands.html
+weight: 800
 ---
 
 {% summary %}Displays syntax of specified CLI command, or list of all commands. {% endsummary %}

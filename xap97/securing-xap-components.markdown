@@ -2,6 +2,8 @@
 layout: post
 title:  Securing XAP Components
 categories: XAP97
+parent: security.html
+weight: 300
 ---
 
 # Overview

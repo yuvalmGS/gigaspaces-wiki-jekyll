@@ -2,6 +2,8 @@
 layout: post
 title:  Communication Filter Over the Wan (SSL,ZIP)
 categories: XAP97
+parent: multi-site-replication-over-the-wan.html
+weight: 100
 ---
 
 {% summary %}This page is about putting filters over the network communication which goes across the WAN.{% endsummary %}

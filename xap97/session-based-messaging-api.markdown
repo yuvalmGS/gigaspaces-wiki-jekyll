@@ -2,6 +2,8 @@
 layout: post
 title:  Session Based Messaging API
 categories: XAP97
+parent: notify-container.html
+weight: 100
 ---
 
 {% summary :page|60 %}The new Notify Session API provides a unified and consistent mechanism for event registration.{% endsummary %}

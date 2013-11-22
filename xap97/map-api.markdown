@@ -2,6 +2,8 @@
 layout: post
 title:  Map API
 categories: XAP97
+parent: other-data-access-apis.html
+weight: 300
 ---
 
 {% compositionsetup %}{% summary page|60 %}Using GigaSpaces as a distributed cache. Interacting with the space using the Hashtable/JCache (JSR-107) API. This is an optimized API to store user sessions or metadata accessed via a simple key{% endsummary %}

@@ -2,8 +2,8 @@
 layout: post
 title:  Administrative Alerts
 categories: XAP97
-weight:
-parent: none
+weight: 300
+parent: administration-and-monitoring-api.html
 ---
 
 {% compositionsetup %}

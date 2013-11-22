@@ -2,6 +2,8 @@
 layout: post
 title:  Reloading Business Logic
 categories: XAP97
+parent: services-on-top-of-the-data-grid.html
+weight: 100
 ---
 
 {% compositionsetup %}

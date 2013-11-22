@@ -2,6 +2,8 @@
 layout: post
 title:  Using GigaSpaces JMS Without Changing the Classpath
 categories: XAP97
+parent: jms---advanced.html
+weight: 600
 ---
 
 {% summary page|65 %}Using GigaSpaces JMS without having to include GigaSpaces JAR files in the classpath.{% endsummary %}

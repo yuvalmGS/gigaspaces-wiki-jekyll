@@ -2,6 +2,8 @@
 layout: post
 title:  Intercepting Replication Events at the Gateway
 categories: XAP97
+parent: multi-site-conflict-resolution.html
+weight: 800
 ---
 
 {% summary %}This page explains how to plugin a custom interceptor at the gateway which can be used to implement custom logic upon incoming replication events in a target gateway{% endsummary %}

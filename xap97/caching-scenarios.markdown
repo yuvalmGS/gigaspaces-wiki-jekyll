@@ -2,6 +2,8 @@
 layout: post
 title:  Caching Scenarios
 categories: XAP97
+parent: the-in-memory-data-grid.html
+weight: 400
 ---
 
 {% summary %}GigaSpaces IMDG supports three different caching mechanisms: In-line Cache, Side Cache and Client Side Cache.{% endsummary %}

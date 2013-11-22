@@ -2,6 +2,8 @@
 layout: post
 title:  XAP on GoGrid
 categories: XAP97
+parent: cloud-and-virtualization.html
+weight: 300
 ---
 
 {% summary %}GigaSpaces XAP on GoGrid Enterprise Cloud{% endsummary %}

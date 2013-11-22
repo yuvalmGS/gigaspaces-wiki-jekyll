@@ -2,6 +2,8 @@
 layout: post
 title:  Space JMX Management
 categories: XAP97
+parent: managing-and-monitoring-a-running-system.html
+weight: 500
 ---
 
 {% summary %}Controlling space attributes and operations using the JMX console. {% endsummary %}

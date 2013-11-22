@@ -2,6 +2,8 @@
 layout: post
 title:  Dump
 categories: XAP97
+parent: administration-and-monitoring-api.html
+weight: 100
 ---
 
 {% compositionsetup %}

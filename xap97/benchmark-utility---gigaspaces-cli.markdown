@@ -2,6 +2,8 @@
 layout: post
 title:  Benchmark Utility - GigaSpaces CLI
 categories: XAP97
+parent: benchmarking.html
+weight: 100
 ---
 
 {% summary %}A tool for running performance benchmarks on the space in various scenarios.{% endsummary %}

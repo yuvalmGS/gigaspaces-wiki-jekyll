@@ -2,6 +2,8 @@
 layout: post
 title:  Working with GSJMSAdmin
 categories: XAP97
+parent: jms-administration-api.html
+weight: 200
 ---
 
 {% summary page|60 %}Obtaining JMS resources without JNDI, Using JNDI with GSJMSAdmin.{% endsummary %}

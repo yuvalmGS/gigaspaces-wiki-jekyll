@@ -2,6 +2,8 @@
 layout: post
 title:  Mule SEDA Model
 categories: XAP97
+parent: mule-esb.html
+weight: 400
 ---
 
 {% compositionsetup %}

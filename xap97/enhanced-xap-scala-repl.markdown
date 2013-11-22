@@ -2,6 +2,8 @@
 layout: post
 title:  Enhanced XAP Scala REPL
 categories: XAP97
+parent: scala.html
+weight: 200
 ---
 
 {% compositionsetup %}

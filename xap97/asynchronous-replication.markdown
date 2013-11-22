@@ -2,6 +2,8 @@
 layout: post
 title:  Asynchronous Replication
 categories: XAP97
+parent: replication.html
+weight: 300
 ---
 
 {% summary %}This page describe what is asynchronous replication and how to configure it{% endsummary %}

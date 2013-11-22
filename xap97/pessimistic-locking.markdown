@@ -2,6 +2,8 @@
 layout: post
 title:  Pessimistic Locking
 categories: XAP97
+parent: space-locking-and-blocking.html
+weight: 300
 ---
 
 {% tip %}

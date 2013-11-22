@@ -2,6 +2,8 @@
 layout: post
 title:  Hosts View
 categories: XAP97
+parent: web-management-console.html
+weight: 400
 ---
 
 {% compositionsetup %}{% summary %}Physical resources{% endsummary %}

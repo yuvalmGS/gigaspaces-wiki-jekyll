@@ -2,6 +2,8 @@
 layout: post
 title:  Formatting Log Messages
 categories: XAP97
+parent: gigaspaces-logging.html
+weight: 100
 ---
 
 {% summary %}Formatting the logged output{% endsummary %}

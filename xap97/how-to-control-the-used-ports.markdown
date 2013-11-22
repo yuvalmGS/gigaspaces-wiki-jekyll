@@ -2,6 +2,8 @@
 layout: post
 title:  How to Control the Used Ports
 categories: XAP97
+parent: networking-how-tos.html
+weight: 700
 ---
 
 {% summary %}Default ports used by the space, container, and Jini Lookup Service, and how to configure them. {% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Space Synchronization Endpoint API
 categories: XAP97
+parent: space-persistency.html
+weight: 700
 ---
 
 {% compositionsetup %}

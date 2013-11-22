@@ -2,6 +2,8 @@
 layout: post
 title:  Cloud and Virtualization
 categories: XAP97
+weight: 600
+parent: programmers-guide.html
 ---
 
 This section describes the XAP integrations with various cloud and virtualization vendors.

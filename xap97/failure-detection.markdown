@@ -2,6 +2,8 @@
 layout: post
 title:  Failure Detection
 categories: XAP97
+parent: troubleshooting-for-administrators.html
+weight: 200
 ---
 
 {% summary %}About failure detection, reducing failure detection time, and relevant parameters.{% endsummary %}

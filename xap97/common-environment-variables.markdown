@@ -2,6 +2,8 @@
 layout: post
 title:  Common Environment Variables
 categories: XAP97
+parent: system-environment-and-environment-variables.html
+weight: 200
 ---
 
 {% summary %}Descriptions of the main environment variables set automatically by `setenv.bat`.{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Consistency Level
 categories: XAP97
+parent: data-grid-clustering.html
+weight: 100
 ---
 
 {% summary %}Consistency level for replicated operations{% endsummary %}

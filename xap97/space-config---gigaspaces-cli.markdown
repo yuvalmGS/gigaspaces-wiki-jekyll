@@ -2,6 +2,8 @@
 layout: post
 title:  space config - GigaSpaces CLI
 categories: XAP97
+parent: space---gigaspaces-cli.html
+weight: 400
 ---
 
 {% summary %}Displays the specified spaces's configuration details.{% endsummary %}

@@ -2,6 +2,9 @@
 layout: post
 title:  Customizing Cluster View - GigaSpaces Browser
 categories: XAP97
+parent: cluster-view---gigaspaces-browser.html
+weight: 100
+
 ---
 
 {% summary %}Changing cluster visualization behavior, refresh speed, and colors.{% endsummary %}

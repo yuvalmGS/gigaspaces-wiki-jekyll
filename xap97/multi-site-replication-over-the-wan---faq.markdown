@@ -2,6 +2,8 @@
 layout: post
 title:  Multi-Site Replication over the WAN - FAQ
 categories: XAP97
+parent: multi-site-conflict-resolution.html
+weight: 1000
 ---
 
 # FAQ

@@ -2,6 +2,8 @@
 layout: post
 title:  Data Grid View
 categories: XAP97
+parent: web-management-console.html
+weight: 500
 ---
 
 {% compositionsetup %}{% summary %}Cluster wide information about your data grids including: data queries, metrics, metadata etc.{% endsummary %}

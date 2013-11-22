@@ -2,6 +2,8 @@
 layout: post
 title:  Dynamic Properties
 categories: XAP97
+parent: pojo-support.html
+weight: 300
 ---
 
 {% compositionsetup %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Replication
 categories: XAP97
+parent: data-grid-clustering.html
+weight: 400
 ---
 
 {% summary %}This section gives a detailed description of the Space's replication mechanism, and how to configure and optimize it.{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  set - GigaSpaces CLI
 categories: XAP97
+parent: commands.html
+weight: 1500
 ---
 
 {% summary %}Sets the Service Grid system environment variables. {% endsummary %}

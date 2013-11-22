@@ -2,6 +2,8 @@
 layout: post
 title:  task - GigaSpaces CLI
 categories: XAP97
+parent: commands.html
+weight: 1800
 ---
 
 {% summary %}Submits a task in the form of an Ant configuration file. {% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  space connections - GigaSpaces CLI
 categories: XAP97
+parent: space---gigaspaces-cli.html
+weight: 500
 ---
 
 {% summary page|60 %}Displays all live connections to the specified space.{% endsummary %}

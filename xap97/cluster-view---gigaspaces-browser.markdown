@@ -2,6 +2,8 @@
 layout: post
 title:  Cluster View - GigaSpaces Browser
 categories: XAP97
+parent: working-with-clusters---gigaspaces-browser.html
+weight: 100
 ---
 
 {% summary %}Using Cluster View areas: Cluster Tree, visual display, legend, and information panel.{% endsummary %}

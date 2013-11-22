@@ -2,6 +2,8 @@
 layout: post
 title:  Space Mode Context Loader
 categories: XAP97
+parent: the-space-component.html
+weight: 300
 ---
 
 {% compositionsetup %}

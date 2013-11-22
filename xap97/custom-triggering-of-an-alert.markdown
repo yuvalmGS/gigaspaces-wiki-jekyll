@@ -2,6 +2,8 @@
 layout: post
 title:  Custom Triggering of an Alert
 categories: XAP97
+parent: administrative-alerts.html
+weight: 100
 ---
 
 {% compositionsetup %}

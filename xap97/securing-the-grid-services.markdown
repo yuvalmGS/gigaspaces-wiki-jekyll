@@ -2,6 +2,8 @@
 layout: post
 title:  Securing the Grid Services
 categories: XAP97
+parent: securing-xap-components.html
+weight: 200
 ---
 
 {% summary %}Enabling security for Grid Service Agent, Manager and Container.{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Mule Processing Unit
 categories: XAP97
+parent: mule-esb.html
+weight: 200
 ---
 
 {% compositionsetup %}

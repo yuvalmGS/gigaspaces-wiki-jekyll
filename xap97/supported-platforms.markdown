@@ -2,6 +2,8 @@
 layout: post
 title:  Supported Platforms
 categories: XAP97
+parent: installation-prerequisites.html
+weight: 300
 ---
 
 **Navigate to the required category**:

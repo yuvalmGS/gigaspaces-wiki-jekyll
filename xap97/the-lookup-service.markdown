@@ -2,6 +2,8 @@
 layout: post
 title:  The Lookup Service
 categories: XAP97
+parent: the-runtime-environment.html
+weight: 400
 ---
 
 {% compositionsetup %}

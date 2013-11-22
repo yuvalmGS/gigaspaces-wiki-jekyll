@@ -2,6 +2,8 @@
 layout: post
 title:  Running and Debugging Within Your IDE
 categories: XAP97
+parent: getting-started.html
+weight: 200
 ---
 
 {% compositionsetup %}

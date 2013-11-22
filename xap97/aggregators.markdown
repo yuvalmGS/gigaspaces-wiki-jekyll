@@ -2,6 +2,8 @@
 layout: post
 title:  Aggregators
 categories: XAP97
+parent: task-execution-over-the-space.html
+weight: 100
 ---
 
 {% compositionsetup %}

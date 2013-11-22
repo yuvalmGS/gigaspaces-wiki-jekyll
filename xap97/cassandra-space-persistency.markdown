@@ -2,6 +2,8 @@
 layout: post
 title:  Cassandra Space Persistency
 categories: XAP97
+parent: space-persistency.html
+weight: 100
 ---
 
 {% compositionsetup %}

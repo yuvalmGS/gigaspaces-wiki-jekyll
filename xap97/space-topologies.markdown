@@ -2,6 +2,8 @@
 layout: post
 title:  Space Topologies
 categories: XAP97
+parent: the-in-memory-data-grid.html
+weight: 100
 ---
 
 {% compositionsetup %}

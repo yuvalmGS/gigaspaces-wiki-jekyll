@@ -2,6 +2,8 @@
 layout: post
 title:  Clustered vs Non-Clustered Proxies
 categories: XAP97
+parent: modeling-and-accessing-your-data.html
+weight: 100
 ---
 
 {% compositionsetup %}

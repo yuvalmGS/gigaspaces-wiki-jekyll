@@ -2,6 +2,8 @@
 layout: post
 title:  Browsing JMS Queues
 categories: XAP97
+parent: jms---advanced.html
+weight: 400
 ---
 
 {% summary page|60 %}Using the `QueueBrowser` to examine messages in a queue without deleting them.{% endsummary %}

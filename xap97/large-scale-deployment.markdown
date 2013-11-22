@@ -2,6 +2,8 @@
 layout: post
 title:  Large Scale Deployment
 categories: XAP97
+parent: tuning-gigaspaces-performance---advanced.html
+weight: 100
 ---
 
 {% summary page|60 %}Instructions and best practices for tuning large-scale deployments.{% endsummary %}

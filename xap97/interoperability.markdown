@@ -2,8 +2,8 @@
 layout: post
 title:  Interoperability
 categories: XAP97
-weight: 400
-parent: programmer's-guide.html
+weight: 500
+parent: programmers-guide.html
 ---
 
 {% children %}

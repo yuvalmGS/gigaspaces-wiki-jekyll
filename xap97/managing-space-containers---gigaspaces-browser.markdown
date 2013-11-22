@@ -2,6 +2,8 @@
 layout: post
 title:  Managing Space Containers - GigaSpaces Browser
 categories: XAP97
+parent: using-space-browser-tab---gigaspaces-management-center.html
+weight: 300
 ---
 
 {% summary %}Using the Space Container Configuration tab of a container node in the Grid Tree, and tool buttons relevant for containers.{% endsummary %}

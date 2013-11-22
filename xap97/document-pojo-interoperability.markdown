@@ -2,6 +2,8 @@
 layout: post
 title:  Document-POJO Interoperability
 categories: XAP97
+parent: document-api.html
+weight: 200
 ---
 
 {% summary %}Interoperability between POJO and Document space entries{% endsummary %}

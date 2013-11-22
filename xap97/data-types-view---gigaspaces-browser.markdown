@@ -2,6 +2,8 @@
 layout: post
 title:  Data Types View - GigaSpaces Browser
 categories: XAP97
+parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
+weight: 200
 ---
 
 {% summary %}Used to view data stored on the space (Data Types information and number of instances).{% endsummary %}

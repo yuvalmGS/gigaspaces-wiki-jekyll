@@ -2,6 +2,8 @@
 layout: post
 title:  Space URL
 categories: XAP97
+parent: the-space-component.html
+weight: 400
 ---
 
 {% summary %}An address, passed to `GigaSpace`, used to connect to a space and remotely create new spaces as well as enable various characteristics.{% endsummary %}

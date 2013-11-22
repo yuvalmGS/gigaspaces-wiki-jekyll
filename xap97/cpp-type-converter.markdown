@@ -2,6 +2,8 @@
 layout: post
 title:  CPP Type Converter
 categories: XAP97
+parent: cpp-api-basics.html
+weight: 100
 ---
 
 {% summary page|65 %}How to implement unsupported data types by creating user-defined packaging code.{% endsummary %}

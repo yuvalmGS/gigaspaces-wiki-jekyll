@@ -2,6 +2,8 @@
 layout: post
 title:  Document API
 categories: XAP97
+parent: modeling-and-accessing-your-data.html
+weight: 400
 ---
 
 {% compositionsetup %}

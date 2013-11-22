@@ -2,6 +2,8 @@
 layout: post
 title:  Replication Parameters
 categories: XAP97
+parent: replication.html
+weight: 700
 ---
 
 {% summary %}This page contains all the parameters that can be configured as part of the replication configuration{% endsummary %}

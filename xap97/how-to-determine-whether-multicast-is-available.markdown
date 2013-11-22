@@ -2,6 +2,8 @@
 layout: post
 title:  How to Determine Whether Multicast is Available
 categories: XAP97
+parent: how-to-configure-multicast.html
+weight: 100
 ---
 
 {% summary %}Used to determine whether multicast is available.{% endsummary %}

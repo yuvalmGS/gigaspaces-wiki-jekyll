@@ -2,6 +2,8 @@
 layout: post
 title:  space clean - GigaSpaces CLI
 categories: XAP97
+parent: space---gigaspaces-cli.html
+weight: 100
 ---
 
 {% summary %}Removes all Entries and templates from the space.{% endsummary %}

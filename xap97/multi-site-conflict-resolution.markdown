@@ -2,6 +2,8 @@
 layout: post
 title:  Multi-Site Conflict Resolution
 categories: XAP97
+parent: multi-site-replication-over-the-wan.html
+weight: 500
 ---
 
 {% summary %}This page explains how multi-site replication conflict resolution works and how to customize its functionality.{% endsummary %}

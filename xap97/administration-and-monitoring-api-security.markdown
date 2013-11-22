@@ -2,8 +2,8 @@
 layout: post
 title:  Administration and Monitoring API Security
 categories: XAP97
-weight:
-parent: none
+parent: security-administration.html
+weight: 300
 ---
 
 {% summary %}Applying security to Admin API operations{% endsummary %}

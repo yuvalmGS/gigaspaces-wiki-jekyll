@@ -2,6 +2,8 @@
 layout: post
 title:  quit - GigaSpaces CLI
 categories: XAP97
+parent: commands.html
+weight: 1400
 ---
 
 {% summary %}Ends the CLI session.{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Commands and Scripts
 categories: XAP97
+parent: managing-and-monitoring-a-running-system.html
+weight: 100
 ---
 
 # Overview

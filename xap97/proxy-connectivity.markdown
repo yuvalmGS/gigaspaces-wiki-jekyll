@@ -2,6 +2,8 @@
 layout: post
 title:  Proxy Connectivity
 categories: XAP97
+parent: tuning-gigaspaces-performance---advanced.html
+weight: 200
 ---
 
 {% summary %}Client Proxy Connectivity and reconnection options{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Parent Child Relationship
 categories: XAP97
+parent: pojo-support.html
+weight: 200
 ---
 
 {% compositionsetup %}{% summary %}Constructing Parent-Child Relationships with GigaSpaces Data-Grid{% endsummary %}

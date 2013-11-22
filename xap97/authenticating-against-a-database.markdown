@@ -2,6 +2,8 @@
 layout: post
 title:  Authenticating against a database
 categories: XAP97
+parent: spring-security-bridge.html
+weight: 300
 ---
 
 {% compositionsetup %}

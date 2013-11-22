@@ -2,6 +2,8 @@
 layout: post
 title:  Viewing Space Interrelations in Cluster - GigaSpaces Browser
 categories: XAP97
+parent: cluster-view---gigaspaces-browser.html
+weight: 300
 ---
 
 {% summary %}Viewing spaces in different cluster policy groups and how they relate to each other.{% endsummary %}

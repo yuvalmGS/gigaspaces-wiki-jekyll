@@ -2,6 +2,8 @@
 layout: post
 title:  Custom Security
 categories: XAP97
+parent: security.html
+weight: 600
 ---
 
 {% compositionsetup %}

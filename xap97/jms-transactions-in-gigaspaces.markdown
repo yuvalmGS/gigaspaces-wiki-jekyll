@@ -2,6 +2,8 @@
 layout: post
 title:  JMS Transactions in GigaSpaces
 categories: XAP97
+parent: jms---advanced.html
+weight: 200
 ---
 
 {% summary %}Using local and distributed transactions with the JMS implementation.{% endsummary %}

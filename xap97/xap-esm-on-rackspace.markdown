@@ -2,6 +2,8 @@
 layout: post
 title:  XAP ESM on Rackspace
 categories: XAP97
+parent: cloud-and-virtualization.html
+weight: 200
 ---
 
 {% compositionsetup %}

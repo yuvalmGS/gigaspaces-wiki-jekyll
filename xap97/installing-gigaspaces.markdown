@@ -2,6 +2,8 @@
 layout: post
 title:  Installing GigaSpaces
 categories: XAP97
+parent: installation-prerequisites.html
+weight: 100
 ---
 
 {% compositionsetup %}{% compositionsetup %}

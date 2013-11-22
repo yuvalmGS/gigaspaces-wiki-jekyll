@@ -2,6 +2,8 @@
 layout: post
 title:  Split-Brain and Active Election - General Definition
 categories: XAP97
+parent: split-brain-and-island-scenarios.html
+weight: 100
 ---
 
 {% summary %}How a network of processors elects a unique processor (a leader), and how to avoid split-brain scenarios.{% endsummary %}

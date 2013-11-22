@@ -2,6 +2,8 @@
 layout: post
 title:  Split Brain and Island Scenarios
 categories: XAP97
+parent: failover-detection-and-tuning.html
+weight: 100
 ---
 
 {% summary %}About Split-Brain and "Islands" scenarios, ways to detect and avoid them.{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Replication Topologies
 categories: XAP97
+parent: replication.html
+weight: 100
 ---
 
 {% summary %}This page provides a brief description for the different replication topologies{% endsummary %}

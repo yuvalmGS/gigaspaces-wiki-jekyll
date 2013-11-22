@@ -2,6 +2,8 @@
 layout: post
 title:  Space Timeout, Filters and Lease Manager - GigaSpaces Browser
 categories: XAP97
+parent: working-with-spaces---gigaspaces-browser.html
+weight: 500
 ---
 
 {% summary %}Using the **General** tab of the advanced space configuration dialog.{% endsummary %}

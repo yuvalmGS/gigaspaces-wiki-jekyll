@@ -2,6 +2,8 @@
 layout: post
 title:  JMS-Space Interoperability
 categories: XAP97
+parent: jms---basics.html
+weight: 300
 ---
 
 {% summary page|60 %}Creating JMS messages with the space API; reading/taking JMS messages with the space API; using JMS API with the `MessageConverter` to send custom POJOs to the space.{% endsummary %}

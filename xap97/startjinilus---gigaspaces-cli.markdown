@@ -2,6 +2,8 @@
 layout: post
 title:  startJiniLUS - GigaSpaces CLI
 categories: XAP97
+parent: scripts.html
+weight: 300
 ---
 
 {% summary %}Starts the Jini Lookup Service as a standalone process. {% endsummary %}

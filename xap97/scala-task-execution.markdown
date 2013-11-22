@@ -2,6 +2,8 @@
 layout: post
 title:  Scala Task Execution
 categories: XAP97
+parent: scala.html
+weight: 500
 ---
 
 {% compositionsetup %}

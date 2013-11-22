@@ -2,6 +2,8 @@
 layout: post
 title:  Modeling your data
 categories: XAP97
+parent: modeling-and-accessing-your-data.html
+weight: 200
 ---
 
 {% compositionsetup %}

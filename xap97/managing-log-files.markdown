@@ -2,6 +2,8 @@
 layout: post
 title:  Managing Log Files
 categories: XAP97
+parent: gigaspaces-logging.html
+weight: 200
 ---
 
 {% summary %}Managing log file naming, and rolling over policies{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Monitoring the Client-Side Cache
 categories: XAP97
+parent: client-side-caching.html
+weight: 400
 ---
 
 {% compositionsetup %}{% summary page|60 %}The Local View/Cache Monitoring{% endsummary %}

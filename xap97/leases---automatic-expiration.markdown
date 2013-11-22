@@ -2,6 +2,8 @@
 layout: post
 title:  Leases - Automatic Expiration
 categories: XAP97
+parent: the-space-api.html
+weight: 500
 ---
 
 {% compositionsetup %}{% summary %}Lease basics and explains how Leases can be managed{% endsummary %}

@@ -2,6 +2,8 @@
 layout: post
 title:  REST API
 categories: XAP97
+parent: interoperability.html
+weight: 200
 ---
 
 {% compositionsetup %}

@@ -2,6 +2,8 @@
 layout: post
 title:  Dynamic Language Tasks
 categories: XAP97
+parent: task-execution-over-the-space.html
+weight: 200
 ---
 
 {% compositionsetup %}

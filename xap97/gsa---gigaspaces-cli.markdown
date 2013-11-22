@@ -2,6 +2,8 @@
 layout: post
 title:  gsa - GigaSpaces CLI
 categories: XAP97
+parent: commands.html
+weight: 700
 ---
 
 {% summary %}Invoke gsa CLI command.{% endsummary %}

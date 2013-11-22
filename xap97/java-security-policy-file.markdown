@@ -2,6 +2,8 @@
 layout: post
 title:  Java Security Policy File
 categories: XAP97
+parent: security-administration.html
+weight: 500
 ---
 
 {% summary %}Setting the `java.security.policy` property.{% endsummary %}

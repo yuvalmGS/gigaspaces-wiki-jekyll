@@ -2,6 +2,8 @@
 layout: post
 title:  Platform Interoperability in GigaSpaces
 categories: XAP97
+parent: interoperability.html
+weight: 100
 ---
 
 {% compositionsetup %}

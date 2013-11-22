@@ -2,6 +2,8 @@
 layout: post
 title:  Custom User-Role Management
 categories: XAP97
+parent: custom-security.html
+weight: 200
 ---
 
 {% summary %}Customize user/role management to meet your application requirements{% endsummary %}
