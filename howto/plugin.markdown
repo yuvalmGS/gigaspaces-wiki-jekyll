@@ -6,5 +6,6 @@ weight:  200
 parent:  index.html
 ---
 
+There are several special plugins available.
 
 {% children %}

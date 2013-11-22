@@ -7,8 +7,6 @@ categories: HOWTO
 ---
 
 
-# Creating Documentation for the New Version
-
 In this example we will assume that the current version of XAP is 9.7, and the new version will be 10.0. We will use these release numbers for our example.
 
 1. Creating a new wiki version
@@ -16,21 +14,30 @@ In this example we will assume that the current version of XAP is 9.7, and the n
 * Copy the `/xap97` folder and rename it to `xap100`
 * Copy the `/xap97net` folder and rename it to `xap100net`
 
-
 2. Release notes
-* Create a new folder in the `/_includes/release_notes` directory called `xap100`
-* Create a new file called `general_notes.markdown` in this newly created folder (no formatting). Change all relevant version numbers to reflect the new version
-* Update XAP specific release notes in `/xap100/release_notes` and include the file you just created in step 5.
-* Update .NET release notes in `/xap100net/release_notes` and include the file you just created in step 5.
+* Copy the folder `/release_notes97` and rename it to `/release_notes100`
+* Update all pages in this folder to reflect the new version
 
-3. Early access Page
+3. Create API Documentation Page
+* Copy the file `xap-97.markdown` and rename the new copy it to `xap-100.markdown`
+* Modify `xap-100.markdown`, change the yaml front matter on this page:
+
+{%panel%}
+layout: post
+
+`title:  XAP 10.0`
+
+categories: API_DOCUMENTATION
+
+`weight: 900`
+
+parent: none
+{%endpanel%}
+* change the title to reflect the new version
+* weight should be the current release weight - 100
+
+4.Early access page
 * Change the links and text in /early_access/index.html to reflect the new version.
-
-4. Create API Documentation Page
-* Create a new file called `xap-100.markdown` in the `/api_documentation` folder
-* Add the new page in the `/_includes/apidocnav.html` page `<li><a href="xap-100.html">XAP 10.0</a></li>`
-
-
 
 
 

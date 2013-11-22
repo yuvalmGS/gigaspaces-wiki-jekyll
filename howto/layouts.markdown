@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Layout
-parent: markdown.html
+parent: plugin.html
 weight: 200
 categories: HOWTO
 ---
@@ -56,7 +56,9 @@ This is some panel content
 {% endraw  %}
 {%endpanel%}
 {%panel bgColor=white | title=Parameters%}
-TODO
+title
+bgcolor
+borderStyle
 {%endpanel%}
 {%endpanel%}
 
@@ -70,6 +72,11 @@ TODO
 |:-----|:-------|:-----------|
 | column1 | column2 | column3|
 
+{: .table }
+| Header1 | Header2 | Header3
+|:-----|:-------|:-----------|
+| column1 | column2 | column3|
+
 {%panel bgColor=white | title=Markdown%}
 {% raw  %}
 \{: .table .table-bordered}
@@ -79,7 +86,7 @@ TODO
 {% endraw  %}
 {%endpanel%}
 {%panel bgColor=white | title=Parameters%}
-TODO
+None
 {%endpanel%}
 {%endpanel%}
 
@@ -139,7 +146,8 @@ TODO
 {% endraw  %}
 {%endpanel%}
 {%panel bgColor=white | title=Parameters%}
-TODO
+java
+xml
 {%endpanel%}
 {%endpanel%}
 

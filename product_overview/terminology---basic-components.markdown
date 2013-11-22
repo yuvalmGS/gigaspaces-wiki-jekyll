@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Terminology - Basic Components
+title:  Basic Components
 categories: PRODUCT_OVERVIEW
 weight: 100
 parent: terminology.html
