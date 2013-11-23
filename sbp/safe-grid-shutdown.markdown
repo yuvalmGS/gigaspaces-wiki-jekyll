@@ -18,10 +18,10 @@ weight: 3400
 {% endtip %}
 
 # Problem
-Shutting down an entire cluster in GigaSpaces XAP is usually done through the "gsa shutdown" command in the [gsa - GigaSpaces CLI](/xap97/gsa---gigaspaces-cli.html). However, in cases of a space asynchronously replicating to a persistent store ([Asynchronous Persistency with the Mirror](/xap97/asynchronous-persistency-with-the-mirror.html)) or a remote grid ([Multi-Site Replication over the WAN](/xap97net/multi-site-replication-over-the-wan.html)), the gsa shutdown workflow does not wait for replication redo logs to completely flush before killing the child GSC processes. Since replication redo logs are almost always stored in memory, this could lead to a situation where pending space changes do not make it to an external data store or cluster.
+Shutting down an entire cluster in GigaSpaces XAP is usually done through the "gsa shutdown" command in the [gsa - GigaSpaces CLI]({%latestjavaurl%}/gsa---gigaspaces-cli.html). However, in cases of a space asynchronously replicating to a persistent store ([Asynchronous Persistency with the Mirror]({%latestjavaurl%}/asynchronous-persistency-with-the-mirror.html)) or a remote grid ([Multi-Site Replication over the WAN]({%latestjavaurl%}/multi-site-replication-over-the-wan.html)), the gsa shutdown workflow does not wait for replication redo logs to completely flush before killing the child GSC processes. Since replication redo logs are almost always stored in memory, this could lead to a situation where pending space changes do not make it to an external data store or cluster.
 
 # Solution
-To ensure that no pending asynchronous replication data is lost during shutdown, we utilize the [Admin API](/xap97/administration-and-monitoring-api.html) to ensure that the shutdown process does not kill all processes until all replication operations have been committed (redo log size is 0). This mechanism is achieved through the following orderly steps:
+To ensure that no pending asynchronous replication data is lost during shutdown, we utilize the [Admin API]({%latestjavaurl%}/administration-and-monitoring-api.html) to ensure that the shutdown process does not kill all processes until all replication operations have been committed (redo log size is 0). This mechanism is achieved through the following orderly steps:
 1.	Wait until the redo log size for mirrors is 0
 2.	Wait until the redo log size for all backups is 0
 If the redo logs are not flushed after a specific timeout, an E-mail alert is sent as a warning and the shutdown process is cancelled.
