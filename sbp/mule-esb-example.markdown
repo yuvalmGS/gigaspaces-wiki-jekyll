@@ -2,8 +2,8 @@
 layout: post
 title:  Mule ESB Example
 categories: SBP
-parent: none
-weight: 2200
+parent: processing.html
+weight: 600
 ---
 
 {% compositionsetup %}

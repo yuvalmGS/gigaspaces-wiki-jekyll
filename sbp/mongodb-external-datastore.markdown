@@ -2,8 +2,8 @@
 layout: post
 title:  MongoDB External DataStore
 categories: SBP
-parent: none
-weight: 1900
+parent: data-access-patterns.html
+weight: 1000
 ---
 
 {% compositionsetup %}

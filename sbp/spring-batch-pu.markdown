@@ -2,8 +2,8 @@
 layout: post
 title:  Spring Batch PU
 categories: SBP
-parent: none
-weight: 4100
+parent: processing.html
+weight: 900
 ---
 
 {% compositionsetup %}

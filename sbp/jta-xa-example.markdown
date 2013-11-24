@@ -2,8 +2,8 @@
 layout: post
 title:  JTA-XA Example
 categories: SBP
-parent: none
-weight: 1300
+parent: processing.html
+weight: 300
 ---
 
 {% compositionsetup %}

@@ -2,8 +2,8 @@
 layout: post
 title:  Map-Reduce Pattern - Executors Example
 categories: SBP
-parent: none
-weight: 1600
+parent: processing.html
+weight: 400
 ---
 
 {% compositionsetup %}

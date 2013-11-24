@@ -2,8 +2,8 @@
 layout: post
 title:  Even Data Distribution
 categories: SBP
-parent: none
-weight: 2700
+parent: data-access-patterns.html
+weight: 400
 ---
 
 {% compositionsetup %}

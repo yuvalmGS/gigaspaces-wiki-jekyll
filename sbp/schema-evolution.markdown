@@ -2,8 +2,8 @@
 layout: post
 title:  Schema Evolution
 categories: SBP
-parent: none
-weight: 3700
+parent: data-access-patterns.html
+weight: 1500
 ---
 
 {% tip %}

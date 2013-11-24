@@ -2,8 +2,8 @@
 layout: post
 title:  Safe Grid Shutdown
 categories: SBP
-parent: none
-weight: 3400
+parent: production.html
+weight: 1200
 ---
 
 {% compositionsetup %}

@@ -2,8 +2,8 @@
 layout: post
 title:  Lowering the Space Object Footprint
 categories: SBP
-parent: none
-weight: 1400
+parent: data-access-patterns.html
+weight: 900
 ---
 
 {% compositionsetup %}

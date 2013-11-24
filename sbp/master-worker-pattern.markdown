@@ -2,8 +2,8 @@
 layout: post
 title:  Master-Worker Pattern
 categories: SBP
-parent: none
-weight: 1700
+parent: processing.html
+weight: 500
 ---
 
 {% compositionsetup %}

@@ -2,8 +2,8 @@
 layout: post
 title:  Global HTTP Session Sharing
 categories: SBP
-parent: none
-weight: 900
+parent: solutions.html
+weight: 200
 ---
 
 {% compositionsetup %}

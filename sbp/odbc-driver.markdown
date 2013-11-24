@@ -2,8 +2,8 @@
 layout: post
 title:  ODBC Driver
 categories: SBP
-parent: none
-weight: 2400
+parent: data-access-patterns.html
+weight: 1200
 ---
 
 {% compositionsetup %}

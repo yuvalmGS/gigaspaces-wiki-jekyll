@@ -2,8 +2,8 @@
 layout: post
 title:  Data-Collocation Deployment Topology
 categories: SBP
-parent: none
-weight: 400
+parent: production.html
+weight: 300
 ---
 
 {% compositionsetup %}

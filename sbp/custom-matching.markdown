@@ -2,8 +2,8 @@
 layout: post
 title:  Custom Matching
 categories: SBP
-parent: none
-weight: 300
+parent: data-access-patterns.html
+weight: 100
 ---
 
 {% compositionsetup %}

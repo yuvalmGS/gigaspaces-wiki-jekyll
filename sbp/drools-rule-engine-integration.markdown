@@ -2,8 +2,8 @@
 layout: post
 title:  Drools Rule Engine Integration
 categories: SBP
-parent: none
-weight: 500
+parent: processing.html
+weight: 100
 ---
 
 {% compositionsetup %}

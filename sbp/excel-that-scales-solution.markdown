@@ -2,8 +2,8 @@
 layout: post
 title:  Excel that Scales Solution
 categories: SBP
-parent: none
-weight: 3800
+parent: data-access-patterns.html
+weight: 500
 ---
 
 {% tip %}

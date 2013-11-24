@@ -1,9 +1,9 @@
 ---
-layout: sbp
-title:  Oracle Delta Server
+layout: post
+title:  Setup Production Environment
 categories: SBP
-parent: data-processing-patterns.html
-weight: 1220
+parent: none
+weight: 300
 ---
 
 

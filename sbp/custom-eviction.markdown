@@ -2,7 +2,7 @@
 layout: post
 title:  Custom Eviction
 categories: SBP
-parent: none
+parent: data-access-patterns.html
 weight: 200
 ---
 

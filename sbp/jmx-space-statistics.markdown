@@ -2,8 +2,8 @@
 layout: post
 title:  JMX Space Statistics
 categories: SBP
-parent: none
-weight: 3100
+parent: production.html
+weight: 600
 ---
 
 {% tip %}

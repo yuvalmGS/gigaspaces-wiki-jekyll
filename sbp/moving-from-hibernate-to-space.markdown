@@ -2,8 +2,8 @@
 layout: post
 title:  Moving from Hibernate to Space
 categories: SBP
-parent: none
-weight: 2000
+parent: data-access-patterns.html
+weight: 1100
 ---
 
 {% compositionsetup %}
