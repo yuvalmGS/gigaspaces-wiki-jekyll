@@ -2,7 +2,7 @@
 layout: post
 title:  Notes
 parent: plugin.html
-weight: 300
+weight: 500
 categories: HOWTO
 ---
 

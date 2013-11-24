@@ -2,89 +2,85 @@
 layout: post
 title:  Page Cross-reference
 parent: plugin.html
-weight: 500
+weight: 600
 categories: HOWTO
 ---
 
 
 #### Latest XAP release
 
-When you need to referece a page in the latest XAP release in your documentation you use the `latestjavaurl` plugin.
-
 {%panel%}
 
 [Grid Service Agent]({%latestjavaurl%}/service-grid.html)
 
-Markdown:
 
-{%panel bgColor=white%}
+
+{%panel bgColor=white | title=Markdown%}
 {%raw%}
 \[Grid Service Agent]({%latestjavaurl%}/service-grid.html)
 {%endraw%}
 {% endpanel %}
-
-You must use this plugin in the following sections of the documentation:
+{%panel bgColor=white | title=Usage%}
+ You must use this plugin in the following scenarios:
 
 * Services and Best Practices
 * Java Tutorial
 * Product Overview
-
+{% endpanel %}
 {% endpanel %}
 
 
 #### Latest XAP .NET release
 
-When you need to referece a page in the latest XAPNET release in your documentation you use the `latestneturl` plugin.
-
 {%panel%}
 
 [Admin Modules]({%latestneturl%}/admin-modules.html)
 
-Markdown:
 
-{%panel bgColor=white%}
+
+{%panel bgColor=white | title=Markdown%}
 {%raw%}
 \[Grid Service Agent]({%latestneturl%}/service-grid.html)
 {%endraw%}
 {% endpanel %}
+{%panel bgColor=white | title=Usage%}
 
-You must use this plugin in the following sections of the documentation:
+ You must use this plugin in the following scenarios:
 
 * Services and Best Practices
 * Java Tutorial
 * Product Overview
 
+{%endpanel%}
 {% endpanel %}
 
 
 #### Latest XAP release number
 
-When you need to referece the latest XAP release number in your documentation you use the `latestxaprelease` plugin.
-
 {%panel%}
 
 In version {%latestxaprelease%} of XAP the ...
 
-Markdown:
-
-{%panel bgColor=white%}
+{%panel bgColor=white | title=Markdown%}
 {%raw%}
 In version {%latestxaprelease%} of XAP the ...
 {%endraw%}
 {% endpanel %}
-
-You must use this plugin for the following scenarios:
+{%panel bgColor=white | title=Usage%}
+ You must use this plugin in the following scenarios:
 
 * Services and Best Practices
 * Java Tutorial
 * Product Overview
 
+{%endpanel%}
+
 {% endpanel %}
 
 
-#### Current Java Release
 
-When you need to referece an XAP page in the current release you use the `currentjavaurl` plugin.
+
+#### Current Java Release
 
 {%panel%}
 
@@ -92,44 +88,47 @@ When you need to referece an XAP page in the current release you use the `curren
 
 Markdown:
 
-{%panel bgColor=white%}
+{%panel bgColor=white | Markdown%}
  {%raw%}
 \[Administration Guide]({% currentjavaurl %}/graphical-user-interface.html)
 {%endraw%}
 {% endpanel %}
-
-You must use this plugin in the following scenarios:
+{%panel bgColor=white | title=Usage%}
+ You must use this plugin in the following scenarios:
 
 * To make a reference link from a .NET document to a document in XAP
 
+{%endpanel%}
 {% endpanel %}
 
 
-#### Current .NET Release
 
-When you need to reference a page in the current XAP release you use the `currentneturl` plugin.
+
+#### Current .NET Release
 
 {%panel%}
 
 [Administration Guide]({% currentneturl %}/admin-modules.html)
 
-Markdown:
+{%panel bgColor=white | title=Markdown%}
+{% raw  %}
 
-{%panel bgColor=white%}
- {%raw%}
 \[Administration Guide]({% currentneturl %}/admin-modules.html)
-{%endraw%}
-{% endpanel %}
 
-You must use this plugin in the following scenarios:
+{% endraw  %}
+{%endpanel%}
+{%panel bgColor=white | title=Usage%}
+ You must use this plugin in the following scenarios:
 
-* To make a reference link from an XAP document to a document in XAP .NET
+ * To make a reference link from an XAP document to a document in XAP .NET
 
-{% endpanel %}
-
-
-
-
+{%endpanel%}
+{%endpanel%}
 
 
+TODO
+
+javadoc
+dotnetdoc
+scaladoc
 
