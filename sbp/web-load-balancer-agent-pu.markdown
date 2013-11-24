@@ -3,7 +3,7 @@ layout: post
 title:  Web Load Balancer Agent PU
 categories: SBP
 parent: production.html
-weight: 1800
+weight: 1900
 ---
 
 {% compositionsetup %}
