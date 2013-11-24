@@ -1,9 +1,9 @@
 ---
-layout: sbp
+layout: post
 title:  Oracle Delta Server
 categories: SBP
 parent: data-processing-patterns.html
-weight: 1220
+weight: 1300
 ---
 
 

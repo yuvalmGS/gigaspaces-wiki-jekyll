@@ -3,7 +3,7 @@ layout: post
 title:  Space Object Modeling
 categories: SBP
 parent: data-access-patterns.html
-weight: 1600
+weight: 1700
 ---
 
 {% compositionsetup %}

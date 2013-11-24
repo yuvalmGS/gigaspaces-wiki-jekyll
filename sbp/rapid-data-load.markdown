@@ -3,7 +3,7 @@ layout: post
 title:  Rapid Data Load
 categories: SBP
 parent: data-access-patterns.html
-weight: 1300
+weight: 1400
 ---
 
 {% compositionsetup %}

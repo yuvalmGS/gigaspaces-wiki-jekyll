@@ -3,7 +3,7 @@ layout: post
 title:  Web Service PU
 categories: SBP
 parent: data-access-patterns.html
-weight: 1700
+weight: 1800
 ---
 
 {% compositionsetup %}

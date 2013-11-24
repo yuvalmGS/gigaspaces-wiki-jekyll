@@ -219,7 +219,7 @@ The XAP Mirror Service provides reliable asynchronous persistency. This allows y
 
 An example of a MongoDB asynchronous persistence is presented in the Best Practices section.
 
-{%learn%}http://wiki.gigaspaces.com/wiki/display/SBP/MongoDB+External+DataStore{%endlearn%}
+{%learn%}/sbp/mongodb-external-datastore.html{%endlearn%}
 
 
 

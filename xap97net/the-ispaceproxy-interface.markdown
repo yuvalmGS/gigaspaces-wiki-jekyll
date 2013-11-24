@@ -344,17 +344,17 @@ Here are few important considerations when using the batch operations:
 - When using `writeMultiple`, you should verify that duplicated entries (with the same ID) do not appear as part of the passed array, since the identity of the object is determined based on its `ID` and not based on its reference. This is extremely important with an embedded space, since `writeMultiple` injects the ID value into the object after the write operation (when autogenerate=false).
 - The `readMultiple` and `takeMultiple` operations **do not support timeout** operations. The simple way to achieve this is by calling the `read` operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
 - Exception handling - batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
-    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultiplePartialFailureException.html)
-    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultipleException.html)
-    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ReadMultipleException.html)
-    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/TakeMultipleException.html)
-    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ClearException.html)
+    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/WriteMultiplePartialFailureException.html)
+    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/WriteMultipleException.html)
+    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/ReadMultipleException.html)
+    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/TakeMultipleException.html)
+    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/ClearException.html)
 
 # Asynchronous Operations
 
 The GigaSpace interface supports asynchronous (non-blocking) read and asynchronous take operations through the GigaSpace interface. Both return a [Future<T>](http://download.oracle.com/javase/6/docs/api/java/util/concurrent/Future.html) object, where T is the type of the object the request returns. Future<T>.get() can be used to query the object to see if a result has been returned or not.
 
-Alternatively, asyncRead and asyncTake also accept an implementation of [AsyncFutureListener<T>](http://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/async/AsyncFutureListener.html), which will have its [onResult(AsyncFuture<T>)](http://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/async/AsyncFutureListener.html#onResult(com.gigaspaces.async.AsyncResult)) method called when the result has been populated. This does not affect the return type of the Future<T>, but provides an additional mechanism for handling the asynchronous response.
+Alternatively, asyncRead and asyncTake also accept an implementation of [AsyncFutureListener<T>](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/async/AsyncFutureListener.html), which will have its [onResult(AsyncFuture<T>)](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/async/AsyncFutureListener.html#onResult(com.gigaspaces.async.AsyncResult)) method called when the result has been populated. This does not affect the return type of the Future<T>, but provides an additional mechanism for handling the asynchronous response.
 
 ![async_operations.jpg](/attachment_files/dotnet/async_operations.jpg)
 
@@ -606,8 +606,8 @@ A default implementation of the exception translator is automatically used, whic
 
 Batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
 
-- [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultiplePartialFailureException.html)
-- [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultipleException.html)
-- [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ReadMultipleException.html)
-- [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/TakeMultipleException.html)
-- [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ClearException.html)
+- [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/WriteMultiplePartialFailureException.html)
+- [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/WriteMultipleException.html)
+- [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/ReadMultipleException.html)
+- [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/TakeMultipleException.html)
+- [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/ClearException.html)

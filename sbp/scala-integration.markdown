@@ -3,7 +3,7 @@ layout: post
 title:  Scala Integration
 categories: SBP
 parent: data-access-patterns.html
-weight: 1400
+weight: 1500
 ---
 
 {% compositionsetup %}

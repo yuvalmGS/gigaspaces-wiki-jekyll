@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  Early Access
-weight:
 parent: none
 categories: EARLY_ACCESS
 ---

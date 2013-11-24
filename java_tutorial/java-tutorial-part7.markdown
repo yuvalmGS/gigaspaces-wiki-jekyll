@@ -86,7 +86,7 @@ XAP comes with built in implementations of Space Data Source and Space Synchroni
 - MongoDB adapter
   You can find a MongoDB adapter in our best practices section.
 
-{%learn%}http://wiki.gigaspaces.com/wiki/display/SBP/MongoDB+External+DataStore{%endlearn%}
+{%learn%}/sbp/mongodb-external-datastore.html{%endlearn%}
 
 
 
