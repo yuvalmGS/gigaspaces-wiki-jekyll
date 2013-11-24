@@ -14,10 +14,10 @@ categories: HOWTO
 {%panel%}
 
 {%section%}
-{%column%}
+{%column witdh=30%}
 This is the first column
 {%endcolumn%}
-{%column%}
+{%column width=70%}
 This is the second column
 {%endcolumn%}
 {%endsection%}
@@ -25,17 +25,17 @@ This is the second column
 {%panel bgColor=white | title=Markdown%}
 {% raw  %}
 {%section%}
-{%column%}
+{%column witdh=30%}
 This is the first column
 {%endcolumn%}
-{%column%}
+{%column width=70%}
 This is the second column
 {%endcolumn%}
 {%endsection%}
 {% endraw  %}
 {%endpanel%}
 {%panel bgColor=white | title=Parameters%}
-TODO
+width= %
 {%endpanel%}
 {%endpanel%}
 

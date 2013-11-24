@@ -1,6 +1,6 @@
 # GigaSpaces XAP Documentation
 
-This repository contains the markup files, html templates and javascript sources for the new [GigaSpaces XAP documentation portal](http://wiki.gigaspaces.com.s3-website-us-east-1.amazonaws.com). 
+This repository contains the markup files, html templates and javascript sources for the new [GigaSpaces XAP documentation portal](http://docs.gigaspaces.com).
 It's based on [Jekyll](http://jekyllrb.com/), a Ruby-based static site generator, and uses [Markdown]() as a markup language. It was originally ported from Atlassian Confluence, and therefore multiple useful Jekyll [plugins](#available-plugins) were defined. The plugins mimic the behavior of original Confluene macros to allow for easy migration from Confulence and provide content editor with useful markup extensions that are relevant to online documentation portals. 
 
 ## Help Us Improve! 

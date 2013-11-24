@@ -44,6 +44,31 @@ color
 {%endpanel%}
 {%endpanel%}
 
+#### Blank Line
+
+{%panel%}
+
+This is a text
+{% whr %}
+New text
+
+{%panel bgColor=white | title=Markdown%}
+
+{% raw  %}
+
+This is a text
+
+{% whr %}
+
+New text
+
+{% endraw  %}
+{%endpanel%}
+
+{%panel bgColor=white | title=Parameters%}
+None
+{%endpanel%}
+{%endpanel%}
 
 
 #### Color
@@ -95,6 +120,27 @@ size
 {%indent%} Indented text   {%endindent%}
 {% endraw  %}
 {%endpanel%}
+{%panel bgColor=white | title=Parameters%}
+None
+{%endpanel%}
+{%endpanel%}
+
+
+#### Word Break
+
+{%panel%}
+
+This is a line with{% wbr %} word break
+
+{%panel bgColor=white | title=Markdown%}
+
+{% raw  %}
+
+This is a line with{% wbr %} word break
+
+{% endraw  %}
+{%endpanel%}
+
 {%panel bgColor=white | title=Parameters%}
 None
 {%endpanel%}
