@@ -6,6 +6,6 @@ parents: commands-and-scripts.html
 weight: 200
 ---
 
-{% comment %}
+
 {% children %}
-{% endcomment %}
+

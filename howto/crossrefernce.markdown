@@ -126,9 +126,47 @@ Markdown:
 {%endpanel%}
 
 
-TODO
+#### Current Java API documentation
 
-javadoc
-dotnetdoc
-scaladoc
+{%panel%}
+
+[AsyncFuture]({% javadoc com.gigaspaces.async.AsyncFuture %})
+
+{%panel bgColor=white | title=Markdown%}
+{% raw  %}
+
+\[AsyncFuture]({% javadoc com.gigaspaces.async.AsyncFuture %})
+
+{% endraw  %}
+{%endpanel%}
+{%panel bgColor=white | title=Usage%}
+ You must use this plugin in the following scenarios:
+
+ * To create a reference link to the current Java API documentation
+
+{%endpanel%}
+{%endpanel%}
+
+
+#### Current .NET API documentation
+
+{%panel%}
+
+[INetworkStatistics]({% dotnetdoc GigaSpaces.Core.Admin.ServiceGrid.OperatingSystem.INetworkStatistics %})
+
+{%panel bgColor=white | title=Markdown%}
+{% raw  %}
+
+\[INetworkStatistics]({% dotnetdoc GigaSpaces.Core.Admin.ServiceGrid.OperatingSystem.INetworkStatistics %})
+
+{% endraw  %}
+{%endpanel%}
+{%panel bgColor=white | title=Usage%}
+ You must use this plugin in the following scenarios:
+
+ * To create a reference link to the current .NET API documentation
+
+{%endpanel%}
+{%endpanel%}
+
 

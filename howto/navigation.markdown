@@ -76,7 +76,7 @@ None
 
 {%panel%}
 
- TODO
+TODO
 
 {%panel bgColor=white | title=Markdown %}
 
@@ -205,9 +205,6 @@ location
 None
 {% endpanel %}
 {% endpanel %}
-
-
-
 
 
 

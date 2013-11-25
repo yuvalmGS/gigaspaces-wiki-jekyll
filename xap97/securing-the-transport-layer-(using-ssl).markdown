@@ -31,13 +31,13 @@ For example, to use an SSL communication filter, run GigaSpaces with:
 
 # Default SSLFilterFactory
 
-{% refer %}[GigaSpaces Java API Documentation](http://www.gigaspaces.com/wiki/display/API/API+Documentation+Portal){% endrefer %}
+{% refer %}[GigaSpaces Java API Documentation](http://www.gigaspaces.com/wiki/display/API/API-Documentation+Portal){% endrefer %}
 
-Since some types of communication filters are not symmetric regarding the client and server, the class [`SSLFilterFactory`](http://www.gigaspaces.com/docs/JavaDoc7.0/com/gigaspaces/lrmi/nio/filters/SSLFilterFactory.html) has 2 methods: one to create the communication filter for the client side, and the other for the server side.
+Since some types of communication filters are not symmetric regarding the client and server, the class [`SSLFilterFactory`](http://www.gigaspaces.com/docs/{%currentversion%}/com/gigaspaces/lrmi/nio/filters/SSLFilterFactory.html) has 2 methods: one to create the communication filter for the client side, and the other for the server side.
 
-- public IOFilter [`createClientFilter()`](http://www.gigaspaces.com/docs/JavaDoc7.0/com/gigaspaces/lrmi/nio/filters/SSLFilterFactory.html#createClientFilter) throws Exception;
+- public IOFilter [`createClientFilter()`](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/lrmi/nio/filters/SSLFilterFactory.html#createClientFilter) throws Exception;
 
-- public IOFilter [`createServerFilter()`](http://www.gigaspaces.com/docs/JavaDoc7.0/com/gigaspaces/lrmi/nio/filters/SSLFilterFactory.html#createServerFilter) throws Exception;
+- public IOFilter [`createServerFilter()`](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/lrmi/nio/filters/SSLFilterFactory.html#createServerFilter) throws Exception;
 
 If the communication filter needs its own parameters, it can acquire them by directly reading system properties. For example, the supplied SSLFilter needs to get the keystore file, and the password to this file.
 
@@ -54,8 +54,8 @@ The provided SSLFilter uses keystore type JKS, with key management method SunX50
 
 {% infosign %} Please refer to the JavaDocs for more details about the reference classes:
 
-- [`com.gigaspaces.lrmi.nio.filters.IOSSLFilter`](http://www.gigaspaces.com/docs/JavaDoc7.0/com/gigaspaces/lrmi/nio/filters/IOSSLFilter.html)
-- [`com.gigaspaces.lrmi.nio.filters.IOStreamCompressionFilter`](http://www.gigaspaces.com/docs/JavaDoc7.0/com/gigaspaces/lrmi/nio/filters/IOStreamCompressionFilter.html)
+- [`com.gigaspaces.lrmi.nio.filters.IOSSLFilter`](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/lrmi/nio/filters/IOSSLFilter.html)
+- [`com.gigaspaces.lrmi.nio.filters.IOStreamCompressionFilter`](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/lrmi/nio/filters/IOStreamCompressionFilter.html)
 
 Code snippet of the space server.
 
