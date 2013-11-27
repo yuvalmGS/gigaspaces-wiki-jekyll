@@ -2,7 +2,7 @@
 layout: post
 title:  space - GigaSpaces CLI
 categories: XAP97
-parent: commands.html
+parent: command-line-interface.html
 weight: 1600
 ---
 

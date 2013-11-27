@@ -3,7 +3,7 @@ layout: post
 title:  Security
 categories: XAP97
 parent: administrators-guide.html
-weight: 400
+weight: 700
 ---
 
 {% summary %}This section describes GigaSpaces security model{% endsummary %}

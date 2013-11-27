@@ -2,6 +2,8 @@
 layout: post
 title:  Custom Processing Unit Details and Monitors
 categories: XAP97
+parent: the-processing-unit-structure-and-configuration.html
+weight: 300
 ---
 
 {% compositionsetup %}

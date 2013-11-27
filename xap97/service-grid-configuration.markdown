@@ -2,9 +2,11 @@
 layout: post
 title:  Service Grid Configuration
 categories: XAP97
+parent: the-runtime-environment.html
+weight: 300
 ---
 
-{% compositionsetup %}
+
 {% summary %}How to configure a Service Grid{% endsummary %}
 
 # Configuring a Service Grid

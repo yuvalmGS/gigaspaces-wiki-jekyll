@@ -2,6 +2,8 @@
 layout: post
 title:  Configuring the Processing Unit SLA
 categories: XAP97
+parent: the-processing-unit-structure-and-configuration.html
+weight: 200
 ---
 
 {% compositionsetup %}

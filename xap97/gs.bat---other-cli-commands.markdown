@@ -2,7 +2,7 @@
 layout: post
 title:  gs.bat - Other CLI Commands
 categories: XAP97
-parent: commands.html
+parent: command-line-interface.html
 weight: 600
 ---
 

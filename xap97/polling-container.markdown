@@ -2,7 +2,7 @@
 layout: post
 title:  Polling Container
 categories: XAP97
-parent: archive-container.html
+parent: event-processing.html
 weight: 300
 ---
 
