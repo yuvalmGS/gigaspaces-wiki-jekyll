@@ -52,5 +52,15 @@ Below is a list of new features and improvements in GigaSpaces 9.7.X.
 | GS-11208 | Projection support for nested paths | 9.7.0 | | | Java,.NET |
 | GS-11311 | Expose PID and host in LRMIProxyMonitoringDetails | 9.7.0 | | | Java |
 | GS-11417 | Add 'version' command to CLI | 9.7.0 | | | All |
+| GS-11480 | Add system property to determine whether DateTime values read from the space should be converted from UTC to local time | 9.7.0 | 8471 | | .NET |
+| GS-11477 | Add protective mode which prevents user error by querying with templates that has no null values | 9.7.0 | | | All |
+| GS-11471 | Update XAP.NET bundled JDK to Oracle 7 update 45 | 9.7.0 | | | .NET |
+| GS-11453 | Allow to configure web-ui client disconnection time | 9.7.0 | | | Java |
+| GS-11406 | Deprecation - custom lease for data event listeners | 9.7.0 | | | All |
+| GS-11405 | Deprecation - Data events communication type | 9.7.0 | | | All |
+| GS-11404 | Change data events default com type from unicast to multiplex | 9.7.0 | | | All |
+| GS-10888 | Enhance LRMI watchdog to close hanged connection when it can decide with high guarantee the response will never come | 9.7.0 | | | All |
+| GS-10590 | Protect from writing object to space without an ID | 9.7.0 | | | Java, .NET |
+| GS-23    | LINQ Support - allow to query the space using Linq | 9.7.0 | | | .NET |
 
 
