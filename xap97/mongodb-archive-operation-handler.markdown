@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  MongoDB Archive Operation Handler
-categories: XAP97
-parent: archive-container.html
+categories:
+parent: none
 weight: 150
 ---
 
