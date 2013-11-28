@@ -30,6 +30,10 @@ For information about the two see: [Cassandra Space Data Source](./cassandra-spa
 
 For further details about the persistency APIs used see [Space Persistency](./space-persistency.html).
 
+
+{%children%}
+
+{%comment%}
 # Cassandra Space Data Source
 
 {% include xap97/cassandra-space-data-source.markdown %}
@@ -37,3 +41,4 @@ For further details about the persistency APIs used see [Space Persistency](./sp
 # Cassandra Space Synchronization Endpoint
 
 {% include xap97/cassandra-space-synchronization-endpoint.markdown %}
+{%endcomment%}
