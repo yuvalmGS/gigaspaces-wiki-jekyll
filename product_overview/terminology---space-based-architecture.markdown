@@ -57,7 +57,7 @@ parent: terminology.html
 
 {% anchor Space Based Architecture Artifacts %}
 
-Once a [Processing Unit library](./the-processing-unit-structure-and-configuration.html) is deployed, a processing unit instance is created. The processing unit instance is hosted within the [GigaSpaces container]({%currentjavaurl%}/service-grid.html#ServiceGrid-gsc). If the processing unit instance includes a space, all the collocated beans within the processing unit instance inherit the space primary/backup mode: If the space running in a primary mode, they will be active; if the space running in a backup mode, they will be in a standby mode.
+Once a [Processing Unit library]({%latestjavaurl%}/the-processing-unit-structure-and-configuration.html) is deployed, a processing unit instance is created. The processing unit instance is hosted within the [GigaSpaces container]({%currentjavaurl%}/service-grid.html#ServiceGrid-gsc). If the processing unit instance includes a space, all the collocated beans within the processing unit instance inherit the space primary/backup mode: If the space running in a primary mode, they will be active; if the space running in a backup mode, they will be in a standby mode.
 
 {% section %}
 {% align center %}
@@ -70,7 +70,7 @@ Once a [Processing Unit library](./the-processing-unit-structure-and-configurati
 - JVM - Java process. Native OS process.
 - Processing unit - Deployable package (bundle).
 - GigaSpaces Container - Hosting deployed PU.
-- [Processing unit Instance](./packaging-and-deployment.html) - deployed instantiated PU.
+- [Processing unit Instance]({%latestjavaurl%}/packaging-and-deployment.html) - deployed instantiated PU.
 - [Space Partition](./terminology---data-grid-topologies.html) - Data-Grid Member. Store data in-memory.
 - Data-Grid - Collection of Space Partitions.
 - Local Proxy - Access to collocated space partition.
@@ -79,7 +79,7 @@ Once a [Processing Unit library](./the-processing-unit-structure-and-configurati
 - Backup Instance - standby space partition.
 - Standby Bean - Bean collocated with a backup instance.
 - Partition - Collection of primary and backup processing unit instances
-- [Polling container](./polling-container.html) - Execution queue. Consumes objects from the space.
+- [Polling container]({%latestjavaurl%}/polling-container.html) - Execution queue. Consumes objects from the space.
 {% endsection %}
 
 |[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|Space-Based Architecture|[Runtime Components](./terminology---runtime-components.html)|

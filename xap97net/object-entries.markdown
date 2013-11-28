@@ -2,6 +2,8 @@
 layout: post
 title:  Object Entries
 categories: XAP97NET
+parent: modeling-your-data.html
+weight: 100
 ---
 
 {% summary %} Understanding the semantics of Space Entries and .NET Objects{% endsummary %}

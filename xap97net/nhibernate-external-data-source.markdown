@@ -2,6 +2,8 @@
 layout: post
 title:  NHibernate External Data Source
 categories: XAP97NET
+parent: persistency.html
+weight: 100
 ---
 
 {% compositionsetup %}
@@ -41,7 +43,7 @@ NHibernate requires a session factory that creates new sessions over the databas
     <!--Disabled the validation of your persistent classes, allows using .Net properties and not getters and setters on your fields-->
     <property name="use_proxy_validator">false</property>
     <!--This will create the tables in the database for your persistent classes according to the mapping file.-->
-    <![--If the tables are already created this will recreate them and clear the data](/attachment_files/xap97net/--If the tables are already created this will recreate them and clear the data)-->
+    <![--If the tables are already created this will recreate them and clear the data](/attachment_files/dotnet/--If the tables are already created this will recreate them and clear the data)-->
     <property name="hbm2ddl.auto">create</property>
 
   </session-factory>

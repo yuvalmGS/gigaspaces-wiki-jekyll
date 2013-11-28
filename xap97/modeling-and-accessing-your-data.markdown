@@ -13,6 +13,7 @@ weight: 300
 Moving your application to a distributed environment holds significant benefits such as linear scalability, excellent performance and increased reliability. However, it requires a different design for you data model. Look at the [Modeling your data](./modeling-your-data.html) page for key insights.
 
 XAP promotes openness and interoperability, supporting common interfaces for accessing data, such as JPA, Document, SQL, JDBC, Memcached and a native POJO based API. You can choose the best API for the case at hand, and be able to operate on the same data regardless of the APIs you have chosen. Look at the different API pages to learn about each and every use case for data accessing on XAP.
+
 ![anyapi.png](/attachment_files/anyapi.png)
 
 # Supported APIs
@@ -25,4 +26,4 @@ XAP promotes openness and interoperability, supporting common interfaces for acc
 - [Memcached API](./memcached-api.html)
 - [C++ API](./xap-cpp.html)
 - [REST API](./rest-api.html)
-- [.Net API](/xap97net/index.html)
+- [.Net API]({%currentneturl%}/index.html)

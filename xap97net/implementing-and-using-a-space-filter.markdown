@@ -2,6 +2,8 @@
 layout: post
 title:  Implementing and Using a Space Filter
 categories: XAP97NET
+weight: 100
+parent: space-filters.html
 ---
 
 # Overview

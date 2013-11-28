@@ -9,7 +9,7 @@ weight: 300
 {% summary %}JVM Settings Configuration Section.{% endsummary %}
 
 {% comment %}
-![NewinXAP66.gif](/attachment_files/xap97net/NewinXAP66.gif)
+![NewinXAP66.gif](/attachment_files/dotnet/NewinXAP66.gif)
 {% endcomment %}
 
 # Overview

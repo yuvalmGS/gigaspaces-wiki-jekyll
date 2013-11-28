@@ -2,6 +2,7 @@
 layout: post
 title:  Product Overview
 categories: PRODUCT_OVERVIEW
+parent: none
 ---
 
 # What Does the Product Overview Guide Cover?
@@ -10,6 +11,9 @@ This guide provides a high-level overview of the GigaSpaces XAP product. It star
 
 The primary people who can benefit from this guide, are architects and developers who wish to build scaled-out applications with GigaSpaces XAP.
 
+{%comment%}
 ## Chapters in this Guide
 
 {% children %}
+
+{%endcomment%}

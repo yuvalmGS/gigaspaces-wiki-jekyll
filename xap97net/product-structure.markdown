@@ -37,7 +37,7 @@ The product directory structure as follows (see Figure 1):
 - **Runtime** -- Contains the Java part of the product as well as an embedded Java installation.
 
 {% indent %}
-![XapNetProductStructure_806.jpg](/attachment_files/xap97net/XapNetProductStructure_806.jpg)
+![XapNetProductStructure_806.jpg](/attachment_files/dotnet/XapNetProductStructure_806.jpg)
 {% sub %}**Figure 1. product directory structure**{% endsub %}
 {% endindent %}
 
@@ -46,7 +46,7 @@ The product directory structure as follows (see Figure 1):
 The installer creates useful shortcuts in the start menu.
 
 {% indent %}
-![XapNetStartMenu_806.jpg](/attachment_files/xap97net/XapNetStartMenu_806.jpg)
+![XapNetStartMenu_806.jpg](/attachment_files/dotnet/XapNetStartMenu_806.jpg)
 {% sub %}**Figure 2. Shortcuts added to the Start Menu**{% endsub %}
 {% endindent %}
 

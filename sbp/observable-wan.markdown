@@ -2,8 +2,8 @@
 layout: post
 title:  Observable WAN
 categories: SBP
-parent: none
-weight: 2300
+parent: solutions.html
+weight: 400
 ---
 
 {% compositionsetup %}

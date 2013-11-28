@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Early Access
-weight:
 parent: none
 categories: EARLY_ACCESS
+weight: 0
 ---
 
 At this moment there is no new version available

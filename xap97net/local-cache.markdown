@@ -2,6 +2,8 @@
 layout: post
 title:  Local Cache
 categories: XAP97NET
+parent: client-side-caching.html
+weight: 100
 ---
 
 {% summary %}Local cache storage over a space proxy{% endsummary %}

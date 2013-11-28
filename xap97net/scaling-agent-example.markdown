@@ -19,7 +19,7 @@ that monitors a deployed application, and scale it up on demand.{% endsummary %}
 
 {% column width=86% %}
 
-{% align center %}||![wiki_icon_folder.gif](/attachment_files/xap97net/wiki_icon_folder.gif)||Example Root|`<GigaSpaces Root>\Examples\ScalingAgent` |
+{% align center %}||![wiki_icon_folder.gif](/attachment_files/dotnet/wiki_icon_folder.gif)||Example Root|`<GigaSpaces Root>\Examples\ScalingAgent` |
 {% endalign %}
 
 {% endcolumn %}
@@ -41,7 +41,7 @@ The activities to scale up the application could be: starting a new GSC on remot
 {% refer %}This page assumes knowledge of the processing unit concept. If you are unfamilar with it, please refer to
 the [SBA Example] first.{% endrefer %}
 
-{% align center %}![scaling agent .net.jpg](/attachment_files/xap97net/scaling agent .net.jpg){% endalign %}
+{% align center %}![scaling agent .net.jpg](/attachment_files/dotnet/scaling agent .net.jpg){% endalign %}
 
 # How the Scaling Agent Works
 
@@ -321,12 +321,12 @@ To simplify the deployment of the examples, there are several scripts in the exa
 ## Feeder Application
 
 {% indent %}
-![ScalingAgentFeeder.jpg](/attachment_files/xap97net/ScalingAgentFeeder.jpg)
+![ScalingAgentFeeder.jpg](/attachment_files/dotnet/ScalingAgentFeeder.jpg)
 {% endindent %}
 
 ## Agent Application
 
 {% indent %}
-![ScalingAgentConsole.jpg](/attachment_files/xap97net/ScalingAgentConsole.jpg)
+![ScalingAgentConsole.jpg](/attachment_files/dotnet/ScalingAgentConsole.jpg)
 {% endindent %}
 

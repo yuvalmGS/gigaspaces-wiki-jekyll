@@ -13,13 +13,13 @@ weight: 200
 
 The main dashboard screen appears immediately after logging into the management console. The dashboard gives you a single click view of the entire cluster, including alerts on various problematic conditions.
 
-![dashboard803.png](/attachment_files/xap97net/dashboard803.png)
+![dashboard803.png](/attachment_files/dotnet/dashboard803.png)
 
 # Alerts panel
 
 The Alerts panel displays XAP Alert groups (Alerts are grouped by correlation key) for more details see [Administrative Alerts](http://www.gigaspaces.com/wiki/display/XAP9/Administrative+Alerts)
 
-![dashboard_explained.png](/attachment_files/xap97net/dashboard_explained.png)
+![dashboard_explained.png](/attachment_files/dotnet/dashboard_explained.png)
 
 # Events time-line panel
 
@@ -46,8 +46,8 @@ To filter by application, the events time line is also available in the Applicat
 - installation crashed: processing unit instance unresponsiveness has timed-out (detected failure)
 - installation re-detected: processing unit instance was previously unresponsive but is now responsive.
 
-![events_timeline_in_dashboard.png](/attachment_files/xap97net/events_timeline_in_dashboard.png)
+![events_timeline_in_dashboard.png](/attachment_files/dotnet/events_timeline_in_dashboard.png)
 
 Click each event to get a tooltip with more information.
 
-![timeline_event_tool_tip.png](/attachment_files/xap97net/timeline_event_tool_tip.png)
+![timeline_event_tool_tip.png](/attachment_files/dotnet/timeline_event_tool_tip.png)

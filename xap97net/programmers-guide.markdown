@@ -3,7 +3,7 @@ layout: post
 title:  Programmer's Guide
 categories: XAP97NET
 parent: none
-weight: 300
+weight: 200
 ---
 
 # .NET Programmer's Guide Abstract

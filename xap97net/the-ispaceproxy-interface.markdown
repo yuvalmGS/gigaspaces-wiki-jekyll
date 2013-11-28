@@ -15,7 +15,7 @@ weight: 200
 The `ISpaceProxy` interface is ideal for connecting to data stored in the Space. The `ISpaceProxy` interface is used to interact with the Space, allowing both read and write actions. An `ISpaceProxy` is initialized using the `GigaSpacesFactor` static class object.
 
 {% indent %}
-![space_basic_operations91.jpg](/attachment_files/xap97net/space_basic_operations91.jpg)
+![space_basic_operations91.jpg](/attachment_files/dotnet/space_basic_operations91.jpg)
 {% endindent %}
 
 An `ISpaceProxy` can be initialized directly in the code or in the `pu.config` file in XML format. To define an `ISpaceProxy`:
@@ -344,19 +344,19 @@ Here are few important considerations when using the batch operations:
 - When using `writeMultiple`, you should verify that duplicated entries (with the same ID) do not appear as part of the passed array, since the identity of the object is determined based on its `ID` and not based on its reference. This is extremely important with an embedded space, since `writeMultiple` injects the ID value into the object after the write operation (when autogenerate=false).
 - The `readMultiple` and `takeMultiple` operations **do not support timeout** operations. The simple way to achieve this is by calling the `read` operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
 - Exception handling - batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
-    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultiplePartialFailureException.html)
-    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultipleException.html)
-    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ReadMultipleException.html)
-    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/TakeMultipleException.html)
-    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ClearException.html)
+    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/WriteMultiplePartialFailureException.html)
+    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/WriteMultipleException.html)
+    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/ReadMultipleException.html)
+    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/TakeMultipleException.html)
+    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/ClearException.html)
 
 # Asynchronous Operations
 
 The GigaSpace interface supports asynchronous (non-blocking) read and asynchronous take operations through the GigaSpace interface. Both return a [Future<T>](http://download.oracle.com/javase/6/docs/api/java/util/concurrent/Future.html) object, where T is the type of the object the request returns. Future<T>.get() can be used to query the object to see if a result has been returned or not.
 
-Alternatively, asyncRead and asyncTake also accept an implementation of [AsyncFutureListener<T>](http://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/async/AsyncFutureListener.html), which will have its [onResult(AsyncFuture<T>)](http://www.gigaspaces.com/docs/JavaDoc7.1/com/gigaspaces/async/AsyncFutureListener.html#onResult(com.gigaspaces.async.AsyncResult)) method called when the result has been populated. This does not affect the return type of the Future<T>, but provides an additional mechanism for handling the asynchronous response.
+Alternatively, asyncRead and asyncTake also accept an implementation of [AsyncFutureListener<T>](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/async/AsyncFutureListener.html), which will have its [onResult(AsyncFuture<T>)](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/async/AsyncFutureListener.html#onResult(com.gigaspaces.async.AsyncResult)) method called when the result has been populated. This does not affect the return type of the Future<T>, but provides an additional mechanism for handling the asynchronous response.
 
-![async_operations.jpg](/attachment_files/xap97net/async_operations.jpg)
+![async_operations.jpg](/attachment_files/dotnet/async_operations.jpg)
 
 Asynchronous `write` operation can be implemented using a [Task](./task-execution-over-the-space.html), where the `Task` implementation include a write operation. With this approach the `Task` is sent to the space and executed in an asynchronous manner. The write operation itself will be completed once both the primary and the backup will acknowledge the operation. This activity will be performed as a background activity from the client perspective.
 
@@ -606,8 +606,8 @@ A default implementation of the exception translator is automatically used, whic
 
 Batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
 
-- [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultiplePartialFailureException.html)
-- [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/WriteMultipleException.html)
-- [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ReadMultipleException.html)
-- [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/TakeMultipleException.html)
-- [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc9.7/org/openspaces/core/ClearException.html)
+- [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/WriteMultiplePartialFailureException.html)
+- [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/WriteMultipleException.html)
+- [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/ReadMultipleException.html)
+- [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/TakeMultipleException.html)
+- [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/ClearException.html)

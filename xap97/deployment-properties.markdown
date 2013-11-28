@@ -2,6 +2,8 @@
 layout: post
 title:  Deployment Properties
 categories: XAP97
+parent: the-processing-unit-structure-and-configuration.html
+weight: 400
 ---
 
 {% compositionsetup %}{% summary page|70 %}The processing unit can be injected with dynamic property values at deployment time. The mechanism leverages Spring's [`PropertyPlaceholderConfigurer`](http://static.springframework.org/spring/docs/2.5.x/reference/beans.html#beans-factory-placeholderconfigurer) to provide powerful and simple properties-based injection.{% endsummary %}

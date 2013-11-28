@@ -2,8 +2,8 @@
 layout: post
 title:  Event Driven Remoting Example
 categories: SBP
-parent: none
-weight: 3000
+parent: processing.html
+weight: 200
 ---
 
 {% compositionsetup %}

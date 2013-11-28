@@ -2,7 +2,6 @@
 layout: post
 title: API Documentation
 categories: API_DOCUMENTATION
-parent: none
 ---
 
 {%summary%}Links to API documentation for the XAP platform{%endsummary%}

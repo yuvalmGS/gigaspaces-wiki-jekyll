@@ -2,8 +2,8 @@
 layout: post
 title:  Moving into Production Checklist
 categories: SBP
-parent: none
-weight: 2100
+parent: production.html
+weight: 800
 ---
 
 {% compositionsetup %}

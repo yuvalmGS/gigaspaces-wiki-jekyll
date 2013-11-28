@@ -2,6 +2,8 @@
 layout: post
 title:  SpaceFilterConfig Class
 categories: XAP97NET
+parent:  implementing-and-using-a-space-filter.html
+weight: 300
 ---
 
 # SpaceFilterConfig

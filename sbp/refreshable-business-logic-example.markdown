@@ -2,8 +2,8 @@
 layout: post
 title:  Refreshable Business Logic Example
 categories: SBP
-parent: none
-weight: 3300
+parent: production.html
+weight: 1100
 ---
 
 {% compositionsetup %}

@@ -2,6 +2,8 @@
 layout: post
 title:  GS.XML Metadata
 categories: XAP97NET
+parent: object-entries.html
+weight: 200
 ---
 
 {% summary page|65 %}This page explains how to use GS.XML to define space objects metadata.{% endsummary %}

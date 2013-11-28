@@ -2,8 +2,8 @@
 layout: post
 title:  Space Dump and Reload
 categories: SBP
-parent: none
-weight: 3900
+parent: production.html
+weight: 1400
 ---
 
 {% compositionsetup %}
@@ -31,7 +31,7 @@ The [Space Dump Utility](/attachment_files/sbp/spacedump.zip) copies the data cu
 ![spaceDumpReload.jpg](/attachment_files/sbp/spaceDumpReload.jpg)
 {% endindent %}
 
-The Space Dump utility uses a temporary persistent space approach with the [space copy API](http://www.gigaspaces.com/docs/JavaDoc7.1/com/j_spaces/core/admin/IRemoteJSpaceAdmin.html#spaceCopy). This allows the utility to consume all the data from every IMDG partition and push it into a file. To reload the data from the file, the temporary space is started, loading the data from the file, and then the data is copied back into the relevant IMDG partition. If the IMDG is running backup spaces, these are restarted to allow them to recover their data from their relevant primary instance.
+The Space Dump utility uses a temporary persistent space approach with the [space copy API](http://www.gigaspaces.com/docs/JavaDoc{%latestxaprelease%}/com/j_spaces/core/admin/IRemoteJSpaceAdmin.html#spaceCopy). This allows the utility to consume all the data from every IMDG partition and push it into a file. To reload the data from the file, the temporary space is started, loading the data from the file, and then the data is copied back into the relevant IMDG partition. If the IMDG is running backup spaces, these are restarted to allow them to recover their data from their relevant primary instance.
 
 # The Space Dump Utility
 To run the Space Dump Utility:

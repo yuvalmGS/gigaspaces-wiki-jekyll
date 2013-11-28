@@ -2,6 +2,8 @@
 layout: post
 title:  Version GigaSpaces CLI
 categories: XAP97
+weight: 2100
+parent: command-line-interface.html
 ---
 
 {% summary %}Displays path of current working directory, like the Unix `pwd` command. {% endsummary %}

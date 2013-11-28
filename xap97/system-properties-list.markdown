@@ -3,7 +3,7 @@ layout: post
 title:  System Properties List
 categories: XAP97
 parent: configuring-the-system.html
-weight: 100
+weight: 500
 ---
 
 # System Properties List

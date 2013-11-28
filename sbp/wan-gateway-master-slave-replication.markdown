@@ -2,8 +2,8 @@
 layout: post
 title:  WAN Gateway Master Slave Replication
 categories: SBP
-parent: none
-weight: 4500
+parent: production.html
+weight: 1700
 ---
 
 {% compositionsetup %}

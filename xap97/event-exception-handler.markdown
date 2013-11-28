@@ -2,6 +2,7 @@
 layout: post
 title:  Event Exception Handler
 categories: XAP97
+parent: event-processing.html
 weight: 500
 ---
 

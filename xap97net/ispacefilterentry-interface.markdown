@@ -2,6 +2,8 @@
 layout: post
 title:  ISpaceFilterEntry Interface
 categories: XAP97NET
+weight: 100
+parent: implementing-and-using-a-space-filter.html
 ---
 
 # ISpaceFilterEntry interface

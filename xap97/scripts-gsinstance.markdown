@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  gsInstance - GigaSpaces CLI
+title:  Scripts gsInstance
 categories: XAP97
-parent: scripts.html
+parent: advanced-scripts.html
 weight: 100
 ---
 

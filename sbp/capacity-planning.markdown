@@ -2,7 +2,7 @@
 layout: post
 title:  Capacity Planning
 categories: SBP
-parent: none
+parent: production.html
 weight: 100
 ---
 

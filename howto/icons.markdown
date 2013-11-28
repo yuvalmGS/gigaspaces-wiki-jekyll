@@ -2,7 +2,7 @@
 layout: post
 title:  Icons
 parent: plugin.html
-weight: 100
+weight: 200
 categories: HOWTO
 ---
 

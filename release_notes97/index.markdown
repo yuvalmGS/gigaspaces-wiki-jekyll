@@ -2,7 +2,6 @@
 layout: post
 title:  Release Notes
 categories: RELEASE_NOTES
-parent: none
 ---
 
 

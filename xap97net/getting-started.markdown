@@ -6,3 +6,5 @@ parent: programmers-guide.html
 weight: 100
 ---
 
+
+{%children%}

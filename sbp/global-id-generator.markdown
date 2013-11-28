@@ -2,8 +2,8 @@
 layout: post
 title:  Global ID Generator
 categories: SBP
-parent: none
-weight: 1000
+parent: data-access-patterns.html
+weight: 700
 ---
 
 {% compositionsetup %}

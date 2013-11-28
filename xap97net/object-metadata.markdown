@@ -2,6 +2,8 @@
 layout: post
 title:  Object Metadata
 categories: XAP97NET
+parent: object-entries.html
+weight: 100
 ---
 
 {% summary %}Customizing object behaviour using space metadata attributes. {% endsummary %}

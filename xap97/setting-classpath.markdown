@@ -2,8 +2,8 @@
 layout: post
 title:  Setting Classpath
 categories: XAP97
-parent: system-environment-and-environment-variables.html
-weight: 200
+parent: configuring-the-system.html
+weight: 300
 ---
 
 {% summary %}JARs that should be in the classpath of applications accessing a remote or embedded space. {% endsummary %}

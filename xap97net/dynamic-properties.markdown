@@ -2,13 +2,15 @@
 layout: post
 title:  Dynamic Properties
 categories: XAP97NET
+parent: object-entries.html
+weight: 300
 ---
 
 {% compositionsetup %}
 
 {% summary %}Using Dynamic Properties with Object entries.{% endsummary %}
 
-![new-in-801-banner.png](/attachment_files/xap97net/new-in-801-banner.png)
+![new-in-801-banner.png](/attachment_files/dotnet/new-in-801-banner.png)
 
 # Overview
 

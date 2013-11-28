@@ -2,7 +2,7 @@
 layout: post
 title:  Common Environment Variables
 categories: XAP97
-parent: system-environment-and-environment-variables.html
+parent: configuring-the-system.html
 weight: 200
 ---
 

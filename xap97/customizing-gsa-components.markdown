@@ -2,6 +2,8 @@
 layout: post
 title:  Customizing GSA Components
 categories: XAP97
+parent: the-runtime-environment.html
+weight: 200
 ---
 
 

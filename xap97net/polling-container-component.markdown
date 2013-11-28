@@ -14,7 +14,7 @@ weight: 300
 
 The polling event container implements the [IEventListenerContainer](./event-listener-container.html) interface. Its life-cycle consists of performing polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the [DataEventArrived](./event-listener-container.html#DataEventArrived) event is invoked. A polling event operation is mainly used when simulating Queue semantics, or when using the master-worker design pattern.
 
-![Net_polling_cont.jpg](/attachment_files/xap97net/Net_polling_cont.jpg)
+![Net_polling_cont.jpg](/attachment_files/dotnet/Net_polling_cont.jpg)
 
 The examples in this page follow a certain pattern. Each code example has two tabs: Using EventListenerContainerFactory, and PollingEventListenerContainer Code Construction.
 
