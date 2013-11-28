@@ -63,3 +63,9 @@ Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 | GS-11388 | NPE appears in logs when performing change operation with SQLQuery on local cache | 9.7.0 | | Java,.NET |
 | GS-11251 | ESM fails to start GSC when one out of two LUS is down | 9.6.1,9.7.0 | | Java |
 | GS-11402 | When a cancel/renew multiple leases operation fails, the exceptions are ignored | 9.7.0 | | All |
+| GS-11489 | Wrong display of Machine SLA Enforcment event | 9.7.0 | | All |
+| GS-11487 | WLocal View which fail to initialize due to MSE can cause replication backlog accumulation in the space | 9.7.0 | 8475 | All |
+| GS-11469 | Change operation and central data base causes a problem when sending a durable notifications | 9.7.0 | | All |
+| GS-11462 | Restart the ESM if it cannot detect any lookup service | 9.7.0 | 8448 | Java |
+| GS-11452 | NPE replicating change operation in rare conditions | 9.7.0 | 8439 | Java, .NET |
+| GS-11303 | Projections is not working with a space iterator | 9.7.0 | 8247 | Java, .NET |
