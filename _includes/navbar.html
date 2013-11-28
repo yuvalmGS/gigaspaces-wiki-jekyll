@@ -77,7 +77,7 @@ $('[target=_blank]').append(" <i class=\"icon-external-link\" style=\"font-size:
 $("#q").typeahead({
   name: "Documentation Pages",
   prefetch: "/sitemap.json",
-  template: "<p><strong>{% raw %}{{value}}{% endraw %}</strong></p>",
+  template: "<p><strong><a href='{% raw %}{{url}}{% endraw %}'>{% raw %}{{value}}{% endraw %}</a></strong></p>",
   engine: Hogan
 });
 
