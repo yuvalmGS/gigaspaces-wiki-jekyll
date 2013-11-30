@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Quick Start Guide
-categories: XAP97
-weight: 100
+title:  Java Tutorials
+categories: TUTORIAL
 parent: none
+weight: 300
 ---
 
 {% section %}

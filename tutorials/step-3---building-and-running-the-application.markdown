@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step 3 - Building and Running the Application
-categories: XAP97
+categories: TUTORIAL
 weight: 300
 parent: your-first-jpa-application.html
 ---
@@ -23,7 +23,7 @@ To build the example you should follow the following steps:
 
 - Download and unzip the [application sources](https://github.com/Gigaspaces/PetClinic)
 - Download and install [GigaSpaces XAP Premium Edition](http://www.gigaspaces.com/LatestProductVersion).
-- Install the Gigaspaces Maven Plugin as described [here](./maven-plugin.html). Please take note of the GigaSpaces build number in the console output, e.g.:
+- Install the Gigaspaces Maven Plugin as described [here]({%currentjavaurl%}/maven-plugin.html). Please take note of the GigaSpaces build number in the console output, e.g.:
 
 {% highlight java %}
 D:\GS-Releases\{{ site.latest_gshome_dirname }}\tools\maven>installmavenrep.bat
@@ -54,7 +54,7 @@ This will download the application's decencies, compile the sources and package 
 
 To deploy the application, you should do the following:
 
-- Start a [GigaSpaces Agent](./service-grid.html#gsa)
+- Start a [GigaSpaces Agent]({%latestjavaurl%}/service-grid.html#gsa)
 - Run the following Maven command from the application's root directory:
 
 {% highlight java %}
@@ -69,7 +69,7 @@ To have an initial sample data set to work with, simply click the "Create Dummy 
 
 # Monitoring the Deployed Application
 
-To monitor  the application, start the GigaSpaces UI using the `<GigaSpaces root>/bin/gs-ui.sh(bat)` or the GigaSpaces [Web UI](./web-management-console.html).
+To monitor  the application, start the GigaSpaces UI using the `<GigaSpaces root>/bin/gs-ui.sh(bat)` or the GigaSpaces [Web UI]({%latestjavaurl%}/web-management-console.html).
 
 ![web-ui-pc.png](/attachment_files/web-ui-pc.png)
 

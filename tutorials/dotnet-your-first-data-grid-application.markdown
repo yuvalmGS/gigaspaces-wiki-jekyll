@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  Your First Data Grid Application
-categories: XAP97NET
-parent: quick-start-guide.html
+title:  .NET Your First Data Grid Application
+categories: TUTORIAL
+parent: dotnet-quick-start-guide.html
 weight: 200
 ---
 
@@ -16,7 +16,7 @@ This page explains how to create a simple Hello World application using XAP.NET 
 
 # Prerequisites
 
-If you haven't done so yet, please [download](http://www.gigaspaces.com/LatestProductVersion) and [install](./installing-xap.net.html) GigaSpaces XAP.NET.
+If you haven't done so yet, please [download](http://www.gigaspaces.com/LatestProductVersion) and [install](./dotnet-installation.html) GigaSpaces XAP.NET.
 
 # Setting Up the Project
 

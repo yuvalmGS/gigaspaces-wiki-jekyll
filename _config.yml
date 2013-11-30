@@ -14,8 +14,10 @@ latest_default_lookup_group: "gigaspaces-9.7.0-XAPPremium-ga"
 latest_java_url: "/xap97"
 latest_net_url: "/xap97net"
 
+latest_cloudify_release: "2.6"
+
 base_javadoc_url: "http://www.gigaspaces.com/docs/JavaDoc%{version}/index.html?%{fqcn}.html"
 base_scaladoc_url: "http://www.gigaspaces.com/docs/scaladocs%{version}/#%{fqcn}"
 base_dotnetdoc_url: "http://www.gigaspaces.com/docs/dotnetdocs%{version}/html/T_%{fqcn}.htm"
 
-categories-list: ["SBP", "XAP97", "XAP97NET", "JAVA_TUTORIAL", "PRODUCT_OVERVIEW", "API_DOCUMENTATION", "EARLY_ACCESS", "HOWTO" , "RELEASE_NOTES"]
+categories-list: ["SBP", "XAP97", "XAP97NET",  "PRODUCT_OVERVIEW", "API_DOCUMENTATION", "EARLY_ACCESS", "HOWTO" , "RELEASE_NOTES" , "TUTORIAL" ]

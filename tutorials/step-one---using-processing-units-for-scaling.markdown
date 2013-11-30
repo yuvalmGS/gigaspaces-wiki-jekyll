@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step One - Using Processing Units for Scaling
-categories: XAP97
+categories: TUTORIAL
 weight: 200
 parent: your-first-xtp-application.html
 ---

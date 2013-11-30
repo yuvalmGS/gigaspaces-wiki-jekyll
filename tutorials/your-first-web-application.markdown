@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Your First Web Application
-categories: XAP97
-weight: 300
-parent: quick-start-guide.html
+categories: TUTORIAL
+weight: 400
+parent: xap-tutorials.html
 ---
 
 {% trainingbox %}

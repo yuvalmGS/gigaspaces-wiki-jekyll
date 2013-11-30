@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Quick Start Guide
-categories: XAP97NET
+title:  NET Quick Start Guide
+categories: TUTORIAL
 parent: none
-weight: 100
+weight: 400
 ---
 
 {% section %}
@@ -19,7 +19,7 @@ If you would like to run the tutorial sample application, download GigaSpaces an
 <br/>
 
 {% align center %}
-[![button2.jpg](/attachment_files/dotnet/button2.jpg)](./your-first-data-grid-application.html)
+[![button2.jpg](/attachment_files/dotnet/button2.jpg)](./dotnet-your-first-data-grid-application.html)
 {% endalign %}
 
 {% endcolumn %}
@@ -29,7 +29,7 @@ If you would like to run the tutorial sample application, download GigaSpaces an
 <br/>
 
 {% fontsize 20 %}
-[Writing Your First Caching Application](./your-first-data-grid-application.html)
+[Writing Your First Caching Application](./dotnet-your-first-data-grid-application.html)
 {% endfontsize %}
 
 Create your first simple Hello World caching application

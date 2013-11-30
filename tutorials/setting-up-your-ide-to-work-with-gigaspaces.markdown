@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Setting Up your IDE to work with GigaSpaces
-categories: XAP97
+categories: TUTORIAL
 weight: 100
-parent: your-first-xtp-application.html
+parent: xap-tutorials.html
 ---
 
 {% compositionsetup %}{% compositionsetup %}

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step Three - Deploying onto the Service Grid
-categories: XAP97
+categories: TUTORIAL
 weight: 400
 parent: your-first-xtp-application.html
 ---
@@ -66,7 +66,7 @@ parent: your-first-xtp-application.html
 
 We recommend that you go through the following steps before starting this tutorial:
 
-1. [Download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-xap.html) - this is needed to run the tutorial sample application.
+1. [Download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html) - this is needed to run the tutorial sample application.
 1. [Step One - Using Processing Units For Scaling](./step-one---using-processing-units-for-scaling.html) - a short introduction to how processing units are used for scaling your application - **Recommended**.
 1. [Step Two - Creating the Hello World Application](./step-two---creating-the-hello-world-application.html) - Create and run your first Processing Unit.
 
@@ -286,7 +286,7 @@ The GSA, by default, will start 2 local Grid Service Containers, and manage a gl
 
 **The GigaSpaces Agent**
 
-[The GigaSpaces Agent (GSA)](./service-grid.html#gsa) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as the Grid Service Manager (aka [The GigaSpaces Manager](./the-gigaspaces-manager.html)), the Grid Service Container (aka [The GigaSpaces Container](./the-gigaspaces-container.html)), and Lookup Service.
+[The GigaSpaces Agent (GSA)]({%latestjavaurl%}/service-grid.html#gsa) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as the Grid Service Manager (aka [The GigaSpaces Manager]({%currentjavaurl%}/service-grid.html#gsm)), the Grid Service Container (aka [The GigaSpaces Container]({%currentjavaurl%}/service-grid.html#gsc)), and Lookup Service.
 
 {% endpanel %}
 {% endgcloak %}
@@ -302,9 +302,9 @@ The GSA, by default, will start 2 local Grid Service Containers, and manage a gl
 
 The GSA manages Operating System processes. There are two types of process management, local and global.
 
-Local processes simply start the process type (for example, a [GigaSpaces Container](./service-grid.html#gsc)) without taking into account any other process types running by different GSAs.
+Local processes simply start the process type (for example, a [GigaSpaces Container]({%latestjavaurl%}/service-grid.html#gsc)) without taking into account any other process types running by different GSAs.
 
-Global processes take into account the number of process types ([GigaSpaces Manager](./service-grid.html#gsm) for example) that are currently running by other GSAs (within the same lookup groups or lookup locators). It will automatically try and run at least X number of processes **across** all the different GSAs (with a maximum of 1 process type per GSA). If a GSA running a process type that is managed globally fails, another GSA will identify the failure and start it in order to maintain at least X number of global process types.
+Global processes take into account the number of process types ([GigaSpaces Manager]({%latestjavaurl%}service-grid.html#gsm) for example) that are currently running by other GSAs (within the same lookup groups or lookup locators). It will automatically try and run at least X number of processes **across** all the different GSAs (with a maximum of 1 process type per GSA). If a GSA running a process type that is managed globally fails, another GSA will identify the failure and start it in order to maintain at least X number of global process types.
 
 {% endpanel %}
 {% endgcloak %}
@@ -408,4 +408,4 @@ A new Grid Service Container starts on your local machine, and its output is sho
 {% color green %}Step Four{% endcolor %}
  - [Scaling the Hello World Application](./step-four---scaling-the-hello-world-application.html)
 
-Or return to the [Quick Start Guide](./quick-start-guide.html).
+Or return to the [Quick Start Guide](./index.html).

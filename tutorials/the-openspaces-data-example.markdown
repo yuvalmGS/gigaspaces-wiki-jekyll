@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The OpenSpaces Data Example
-categories: XAP97
+categories: TUTORIAL
 weight: 100
 parent: beyond-the-basics.html
 ---
@@ -23,7 +23,7 @@ The purpose of this example is to show many of the capabilities of GigaSpaces XA
 - Event containers (polling and notify containers)
 - OpenSpaces remoting
 - OpenSpaces clustering and SLA
-- Using the JMS [MessageConverter](./jms-space-interoperability.html) feature that writes POJOs to the space using the JMS API
+- Using the JMS [MessageConverter]({%currentjavaurl%}/jms-space-interoperability.html) feature that writes POJOs to the space using the JMS API
 
 This example shows a PU that contains several services that are independent of each other and serve different purposes within one application. Moreover, the example show how different processing units use the space to share data.
 

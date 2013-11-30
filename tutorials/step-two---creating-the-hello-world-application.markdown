@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step Two - Creating the Hello World Application
-categories: XAP97
+categories: TUTORIAL
 weight: 300
 parent: your-first-xtp-application.html
 ---
@@ -620,4 +620,4 @@ The url the feeder is using to connect to the space is written in the
 ![Jump arrow green.bmp](/attachment_files/Jump arrow green.bmp)
 {% color green %}Step three{% endcolor %} - [Deploying the Hello World Application onto the Service Grid](./step-three---deploying-onto-the-service-grid.html) - shows how to deploy our application onto the grid, to gain fail-over, recovery and self healing capabilities.
 
-Or return to the [Quick Start Guide](./quick-start-guide.html).
+Or return to the [Quick Start Guide](./index.html).

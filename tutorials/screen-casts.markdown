@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Screen Casts
-categories: XAP97
+categories: TUTORIAL
 weight: 100
-parent: quick-start-guide.html
+parent: none
 ---
 
 ## To view one of the videos, click it on the right hand side of the player

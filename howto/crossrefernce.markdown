@@ -78,6 +78,27 @@ In version {%latestxaprelease%} of XAP the ...
 {% endpanel %}
 
 
+#### Latest Cloufify release
+
+{%panel%}
+
+[Recipe](http://www.cloudifysource.org/guide/{%latestcloudifyrelease%}/developing/recipes_overview)
+
+{%panel bgColor=white | title=Markdown%}
+{% raw  %}
+
+\[Recipe](http://www.cloudifysource.org/guide/{%latestcloudifyrelease%}/developing/recipes_overview)
+
+{% endraw  %}
+{%endpanel%}
+{%panel bgColor=white | title=Usage%}
+ You must use this plugin in the following scenarios:
+
+ * To create a reference link to the latest Cloudify release
+
+{%endpanel%}
+{%endpanel%}
+
 
 
 #### Current Java Release
@@ -168,5 +189,7 @@ Markdown:
 
 {%endpanel%}
 {%endpanel%}
+
+
 
 

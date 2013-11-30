@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Your First XTP Application
-categories: XAP97
-weight: 400
-parent: quick-start-guide.html
+categories: TUTORIAL
+weight: 500
+parent: xap-tutorials.html
 ---
 
 {% trainingbox %}
@@ -138,7 +138,7 @@ How to create, deploy, run and monitor your Processing Unit
 
 {% endcolumn %}
 {% column width=35% %}
-[**Deploying the Hello World Application onto the ServiceGrid**](./deploying-onto-the-service-grid.html)
+[**Deploying the Hello World Application onto the ServiceGrid**]({%currentjavaurl%}/deploying-onto-the-service-grid.html)
 {% color grey %}~10 minutes{% endcolor %}
 How to deploy the _Hello World Processing Unit_ onto the grid enabled infrastructure (the ServiceGrid) to enable instant fail-over, recovery, SLA management and runtime monitoring capabilities for your application
 
@@ -214,6 +214,6 @@ How to scale the _Hello World Processing Unit_ application
 ## Go Beyond the Basics
 
 After you have learned the basics, you can go to the [more advanced tutorials](./beyond-the-basics.html) to dive into the details, and learn how to implement real world scenarios.
-{% refer %}[Back to Quick Start Guide Home](./quick-start-guide.html){% endrefer %}
+{% refer %}[Back to Quick Start Guide Home](./index.html){% endrefer %}
 {% endsection %}
 

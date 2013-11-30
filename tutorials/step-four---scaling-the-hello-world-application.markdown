@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step Four - Scaling the Hello World Application
-categories: XAP97
+categories: TUTORIAL
 weight: 500
 parent: your-first-xtp-application.html
 ---
@@ -213,7 +213,7 @@ This is achieved by dividing the application data into partitions (each partitio
 **Routing Index** - When writing an object to a cluster of Processing Units which contains multiple partitions, the routing of that object to a specific partition, is calculated based on the value of one of the object's properties. This property is designated using the `@SpaceRouting` annotation, and is referred to as the **Routing Index**.
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
+For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit]({%latestjavaurl%}/elastic-processing-unit.html) section.
 {% endtip %}
 
 {% comment %}
@@ -274,7 +274,7 @@ The GSA, by default, will start 2 local Grid Service Containers, and manage a gl
 
 **The GigaSpaces Agent**
 
-[The GigaSpaces Agent (GSA)](./service-grid.html#gsa) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as the Grid Service Manager (aka [The GigaSpaces Manager](./the-gigaspaces-manager.html)), the Grid Service Container (aka [The GigaSpaces Container](./the-gigaspaces-container.html)), and Lookup Service.
+[The GigaSpaces Agent (GSA)]({%latestjavaurl%}/service-grid.html#gsa) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as the Grid Service Manager (aka [The GigaSpaces Manager]({%latestjavaurl%}/service-grid.html#gsm)), the Grid Service Container (aka [The GigaSpaces Container]({%latestjavaurl%}/service-grid.html#gsc)), and Lookup Service.
 
 {% endpanel %}
 {% endgcloak %}
@@ -403,4 +403,4 @@ The backup instance of the primary you just shut down becomes the primary. Then 
 ## What's Next?
 
 Congratulations! By now you should have implemented your first GigaSpaces application, introduced high availability to it and scaled it out.
-Next, you can go [Beyond the Basics, and explore GigaSpaces more Advanced Features](./beyond-the-basics.html), or return to the [Quick Start Guide Home ](./quick-start-guide.html).
+Next, you can go [Beyond the Basics, and explore GigaSpaces more Advanced Features](./beyond-the-basics.html), or return to the [Quick Start Guide Home ](./index.html).

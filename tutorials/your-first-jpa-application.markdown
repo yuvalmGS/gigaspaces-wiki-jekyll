@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Your First JPA Application
-categories: XAP97
-weight: 500
-parent: quick-start-guide.html
+categories: TUTORIAL
+weight: 600
+parent: xap-tutorials.html
 ---
 
 {% compositionsetup %}{% compositionsetup %}
@@ -19,7 +19,7 @@ parent: quick-start-guide.html
 ![jpa.png](/attachment_files/jpa.png)
 {% endcolumn %}
 {% column width=90% %}
-**Summary:** {% excerpt %}This tutorial explains how the sample Spring PetClinic application can be fine tuned to use GigaSpaces XAP [JPA API](./jpa-api.html) and deployed into the GigaSpaces XAP platform{% endexcerpt %}
+**Summary:** {% excerpt %}This tutorial explains how the sample Spring PetClinic application can be fine tuned to use GigaSpaces XAP [JPA API]({%latestjavaurl%}/jpa-api.html) and deployed into the GigaSpaces XAP platform{% endexcerpt %}
 {% endcolumn %}
 {% endsection %}
 

@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Beyond the Basics
-categories: XAP97
-weight: 600
-parent: quick-start-guide.html
+categories: TUTORIAL
+weight: 700
+parent: xap-tutorials.html
 ---
 
 {% compositionsetup %}

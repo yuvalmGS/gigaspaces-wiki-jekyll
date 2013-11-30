@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  Installation
-categories: XAP97NET
-parent: quick-start-guide.html
+categories: TUTORIAL
+parent: dotnet-quick-start-guide.html
 weight: 100
 ---
 
