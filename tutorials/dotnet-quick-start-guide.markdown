@@ -50,7 +50,7 @@ Create your first simple Hello World caching application
 <br/>
 
 {% align center %}
-[![dataexamplesmall.jpg](/attachment_files/dotnet/dataexamplesmall.jpg)](./your-first-xtp-application.html)
+[![dataexamplesmall.jpg](/attachment_files/dotnet/dataexamplesmall.jpg)](./dotnet-your-first-xtp-application.html)
 {% endalign %}
 
 {% endcolumn %}
@@ -60,7 +60,7 @@ Create your first simple Hello World caching application
 <br/>
 
 {% fontsize 20 %}
-[The Full Space Based Architecture Example](./your-first-xtp-application.html)
+[The Full Space Based Architecture Example](./dotnet-your-first-xtp-application.html)
 {% endfontsize %}
 
 A kitchen sink demonstration of all the major features in GigaSpaces XAP.NET
