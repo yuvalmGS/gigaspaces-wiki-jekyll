@@ -12,7 +12,7 @@ weight: 400
 
 ## What is SpaceURL?
 
-The **[SpaceURL](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/SpaceURL.html)** object is an address, passed to the `GigaSpace` API, used to connect to a space and remotely create new spaces, as well as to enable various characteristics.
+The **[SpaceURL](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/client/SpaceURL.html)** object is an address, passed to the `GigaSpace` API, used to connect to a space and remotely create new spaces, as well as to enable various characteristics.
 
 # Usage
 
@@ -53,7 +53,7 @@ spaceConfigurer.destroy();
 
 The following are optional property string values.
 
-These strings are defined as part of the `SpaceURL` class (`com.j_spaces.core.client.SpaceURL`; see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/SpaceURL.html)) as static attributes.
+These strings are defined as part of the `SpaceURL` class (`com.j_spaces.core.client.SpaceURL`; see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/client/SpaceURL.html)) as static attributes.
 
 {: .table .table-bordered}
 | Property name | Property String | Description | Optional values |
@@ -63,7 +63,7 @@ These strings are defined as part of the `SpaceURL` class (`com.j_spaces.core.cl
 | `EMBEDDED_SPACE`{% wbr %}`\_PROTOCOL` | java: | Start the space in local embedded mode. Make sure you have the `com.gs.home` JVM property defined to specify the space configuration file directory | |
 | `FIFO_MODE` | fifo | Indicates that all take/write operations be conducted in FIFO mode. Default is false. Example: `jini://localhost:10098/containerName`{% wbr %}`/JavaSpaces?fifo=true` | `false` |
 | `GROUPS` | `groups` | The Jini Lookup Service group to find container or space using multicast. Example: `jini://*/containerName/spaceName?groups=grid`{% wbr %}{% infosign %} The default value of the `LOOKUPGROUPS` variable is the GigaSpaces version number, preceded by `XAP`. For example, in GigaSpaces XAP 6.0 the default lookup group is `XAP6.0`. This is the lookup group which the space and Jini Transaction Manager register with, and which clients use by default to connect to the space.{% wbr %}{% exclamation %} Jini groups are irrelevant when using unicast lookup discovery -- they are relevant only when using multicast lookup discovery. If you have multiple spaces with the same name and you are using unicast lookup discovery, you might end up getting the wrong proxy. In such a case, make sure you have a different lookup for each space, where each space is configured to use a specific lookup. A good practice is to have different space names. | `Group name` |
-| `LOCATORS` | `locators` | Instructs the started space or a client to locate the Jini Lookup Service on specific host name and port. For more details please refer to [How to Configure Unicast Discovery](http://www.gigaspaces.com/wiki/display/XAP7/How+to+Configure+Unicast+Discovery#HowtoConfigureUnicastDiscovery-Configuringthelookuplocatorsproperty) page. | |
+| `LOCATORS` | `locators` | Instructs the started space or a client to locate the Jini Lookup Service on specific host name and port. For more details please refer to [How to Configure Unicast Discovery](./how-to-configure-unicast-discovery.html#HowtoConfigureUnicastDiscovery-Configuringthelookuplocatorsproperty) page. | |
 | `JINI_PROTOCOL` | `jini:` | Using JINI Lookup service to search for the space | |
 | `LOCAL_CACHE`{% wbr %} `\_UPDATE_MODE` | `updateMode` | Push or pull update mode. Example: `jini://localhost:10098/containerName`
  `/JavaSpaces?useLocalCache&updateMode=1` | `UPDATE\_`{% wbr %} `MODE`{% wbr %} `\_PULL`{% wbr %} `= 1` {% wbr %} `UPDATE\_`{% wbr %} `MODE`{% wbr %} `\_PUSH`{% wbr %} `= 2` |
@@ -147,7 +147,7 @@ jini://host1:port1/container-name/space name?locators=h1:port,h2:port,h3:port
 
 ## Running Replicated Space
 
-To start three space instances using the [replicated cache topology](./terminology---data-grid-topologies.html), which enables replicating their data and operations synchronously, you should have the following commands:
+To start three space instances using the [replicated cache topology](/product_overview/terminology---data-grid-topologies.html), which enables replicating their data and operations synchronously, you should have the following commands:
 
 {% highlight java %}
 gsInstance "/./mySpace?cluster_schema=sync_replicated&total_members=3&id=1"
@@ -163,7 +163,7 @@ jini://*/*/mySpace
 
 ## Running Partitioned Space
 
-To start three space instances using the [partitioned cache topology](./terminology---data-grid-topologies.html) where each partition stores different portions of the data, you should have the following calls:
+To start three space instances using the [partitioned cache topology](/product_overview/terminology---data-grid-topologies.html) where each partition stores different portions of the data, you should have the following calls:
 
 {% highlight java %}
 gsInstance "/./mySpace?cluster_schema=partitioned&total_members=3&id=1"

@@ -66,7 +66,7 @@ A partitioned cluster with one primary and one backup for each partition:
 For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
 {% endtip %}
 
-The Space cluster is typically accessed from a remote JVM. Alternatively, applications that are collocated on the same JVM with a Space instance can access that instance locally without being exposed to the other instances (this is useful for implementing [SBA applications](./a-typical-sba-application.html)).
+The Space cluster is typically accessed from a remote JVM. Alternatively, applications that are collocated on the same JVM with a Space instance can access that instance locally without being exposed to the other instances (this is useful for implementing [SBA applications](/product_overview/a-typical-sba-application.html)).
 
 # Instantiating a Space
 
@@ -81,8 +81,8 @@ The last two ways of instantiating a space are from within your own application,
 
 ## Deploying a Space onto the Service Grid Infrastructure
 
-The service grid infrastructure is composed of one or more [GigaSpaces Containers](./the-grid-service-container.html) (GSCs) and at least one [GigaSpaces Manager](./the-grid-service-manager.html). When deploying onto the service grid, the deployment tool you use connects to the GSM and instructs it to provision Space instances to the running GSCs, based on the deployment details (Space topology, number of instances, etc.).
-After starting the appropriate amount of GSCs and GSMs in your cluster (note that as of version 7.0 you can use [The Grid Service Agent](./the-grid-service-agent.html) for this), there are a number of tools that can be used to deploy a Space onto the service grid:
+The service grid infrastructure is composed of one or more [GigaSpaces Containers](./service-grid.html#gsc) (GSCs) and at least one [GigaSpaces Manager](./service-grid.html#gsm). When deploying onto the service grid, the deployment tool you use connects to the GSM and instructs it to provision Space instances to the running GSCs, based on the deployment details (Space topology, number of instances, etc.).
+After starting the appropriate amount of GSCs and GSMs in your cluster (note that as of version 7.0 you can use [The Grid Service Agent](./service-grid.html#gsa) for this), there are a number of tools that can be used to deploy a Space onto the service grid:
 
 - [Using the Management UI](#app)
 - [Using the CLI](#cli)
