@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step 1 - Deploying Your Web Application to the GigaSpaces Environment
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 100
 parent: your-first-web-application.html
 ---

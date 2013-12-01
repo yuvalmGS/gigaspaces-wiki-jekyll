@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Web Processing Unit
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 800
 parent: java-home.html
 ---

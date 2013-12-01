@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step Two - Creating the Hello World Application
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 300
 parent: your-first-xtp-application.html
 ---

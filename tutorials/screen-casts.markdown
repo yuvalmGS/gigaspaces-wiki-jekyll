@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Screen Casts
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 100
 parent: none
 ---

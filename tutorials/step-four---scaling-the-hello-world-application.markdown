@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step Four - Scaling the Hello World Application
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 500
 parent: your-first-xtp-application.html
 ---

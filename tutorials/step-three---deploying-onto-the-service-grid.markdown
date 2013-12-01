@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step Three - Deploying onto the Service Grid
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 400
 parent: your-first-xtp-application.html
 ---

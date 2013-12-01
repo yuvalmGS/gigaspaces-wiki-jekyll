@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Space Persistence
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 700
 parent: java-home.html
 ---

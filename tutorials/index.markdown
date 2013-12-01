@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Tutorials
-categories: TUTORIAL
+categories: TUTORIALS
 ---
 
 

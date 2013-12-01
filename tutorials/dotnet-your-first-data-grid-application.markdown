@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  .NET Your First Data Grid Application
-categories: TUTORIAL
+categories: TUTORIALS
 parent: dotnet-quick-start-guide.html
 weight: 200
 ---

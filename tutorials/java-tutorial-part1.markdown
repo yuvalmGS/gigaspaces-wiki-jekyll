@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Space
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 100
 parent: java-home.html
 ---

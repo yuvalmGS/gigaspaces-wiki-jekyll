@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Your First Web Application
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 400
 parent: xap-tutorials.html
 ---

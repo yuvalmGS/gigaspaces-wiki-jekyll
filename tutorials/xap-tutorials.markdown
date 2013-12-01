@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Java Tutorials
-categories: TUTORIAL
+categories: TUTORIALS
 parent: none
 weight: 300
 ---

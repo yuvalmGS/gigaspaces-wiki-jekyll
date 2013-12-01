@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Your First JPA Application
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 600
 parent: xap-tutorials.html
 ---

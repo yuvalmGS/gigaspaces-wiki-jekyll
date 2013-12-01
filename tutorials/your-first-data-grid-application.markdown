@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Your First Data Grid Application
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 200
 parent: xap-tutorials.html
 ---

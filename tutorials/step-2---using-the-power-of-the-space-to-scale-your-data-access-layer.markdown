@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step 2 - Using the Power of the Space to Scale Your Data Access Layer
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 200
 parent: your-first-jpa-application.html
 ---

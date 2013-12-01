@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The Data Grid
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 200
 parent: java-home.html
 ---

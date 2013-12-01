@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Your First XTP Application
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 500
 parent: xap-tutorials.html
 ---

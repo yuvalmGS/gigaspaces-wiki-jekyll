@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Release Notes
-categories: RELEASE_NOTES
+categories: RELEASE_NOTES97
 ---
 
 

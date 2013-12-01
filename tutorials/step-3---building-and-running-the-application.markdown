@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step 3 - Building and Running the Application
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 300
 parent: your-first-jpa-application.html
 ---

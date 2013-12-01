@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Setting Up your IDE to work with GigaSpaces
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 100
 parent: xap-tutorials.html
 ---

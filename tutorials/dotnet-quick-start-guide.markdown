@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  NET Quick Start Guide
-categories: TUTORIAL
+categories: TUTORIALS
 parent: none
 weight: 400
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Beyond the Basics
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 700
 parent: xap-tutorials.html
 ---

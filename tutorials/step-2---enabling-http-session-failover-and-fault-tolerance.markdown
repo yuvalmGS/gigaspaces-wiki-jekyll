@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step 2 - Enabling HTTP Session Failover and Fault Tolerance
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 200
 parent: your-first-web-application.html
 ---

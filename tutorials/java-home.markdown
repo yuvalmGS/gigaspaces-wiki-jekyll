@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP Tutorial
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 300
 parent: xap-tutorials.html
 ---

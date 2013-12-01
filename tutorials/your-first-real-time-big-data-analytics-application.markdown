@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Your First Real Time Big Data Analytics Application
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 800
 parent: xap-tutorials.html
 ---

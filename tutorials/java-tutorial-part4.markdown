@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Events and Messaging
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 400
 parent: java-home.html
 ---

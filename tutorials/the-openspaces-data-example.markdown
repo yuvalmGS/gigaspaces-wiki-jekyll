@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The OpenSpaces Data Example
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 100
 parent: beyond-the-basics.html
 ---

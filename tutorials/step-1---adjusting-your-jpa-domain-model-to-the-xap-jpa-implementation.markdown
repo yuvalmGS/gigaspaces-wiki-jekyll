@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Step 1 - Adjusting Your JPA Domain Model to the XAP JPA Implementation
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 100
 parent: your-first-jpa-application.html
 ---

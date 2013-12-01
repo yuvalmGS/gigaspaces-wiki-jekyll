@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Security
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 1000
 parent: java-home.html
 ---

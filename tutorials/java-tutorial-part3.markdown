@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Processing Services
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 300
 parent: java-home.html
 ---

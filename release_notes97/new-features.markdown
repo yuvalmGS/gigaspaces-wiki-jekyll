@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  New Features and Improvements
-categories: RELEASE_NOTES
+categories: RELEASE_NOTES97
 parent: none
 weight: 200
 ---

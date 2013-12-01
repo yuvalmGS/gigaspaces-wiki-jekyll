@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Installation
-categories: TUTORIAL
+categories: TUTORIALS
 parent: dotnet-quick-start-guide.html
 weight: 100
 ---

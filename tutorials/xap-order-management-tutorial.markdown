@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  XAP Order Management Tutorial
-categories: TUTORIAL
+categories: TUTORIALS
 weight: 200
 parent: beyond-the-basics.html
 ---
