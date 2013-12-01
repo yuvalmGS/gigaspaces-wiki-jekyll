@@ -6,7 +6,7 @@ weight: 200
 parent: your-first-xtp-application.html
 ---
 
-{% compositionsetup %}
+
 
 **Summary:** {% excerpt %}In this step we will use a car wash analogy to compare the traditional tier based approach for architecting enterprise application with GigaSpaces' Space Based approach, and explain the concept of _Processing Units_.{% endexcerpt %}
 

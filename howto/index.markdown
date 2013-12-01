@@ -2,7 +2,6 @@
 layout: post
 title:  Authoring Guidelines
 categories: HOWTO
-parent: none
 ---
 
 

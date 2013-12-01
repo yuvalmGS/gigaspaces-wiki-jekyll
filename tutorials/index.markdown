@@ -2,7 +2,6 @@
 layout: post
 title:  Tutorials
 categories: TUTORIAL
-parent: none
 ---
 
 

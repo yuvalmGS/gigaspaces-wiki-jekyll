@@ -3,7 +3,7 @@ layout: post
 title:  Directory Structure
 categories: HOWTO
 weight:  100
-parent:  index.html
+parent:  none
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Creating a new Version
-parent: index.html
+parent: none
 weight: 300
 categories: HOWTO
 ---

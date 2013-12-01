@@ -6,7 +6,7 @@ weight: 100
 parent: xap-tutorials.html
 ---
 
-{% compositionsetup %}{% compositionsetup %}
+
 **Summary:** Setting up your IDE to Work With GigaSpaces
 
 {% anchor 0 %}
