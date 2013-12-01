@@ -14,7 +14,7 @@ The Java Persistency API (JPA) is a Java programming language framework managing
 
 {% info %}
 It is highly recommended that you [get yourself familiar with JPA](http://download.oracle.com/javaee/6/tutorial/doc/bnbpz.html) before reading this page.
-It is also recommended that you take the [XAP PetClinic JPA Tutorial](./your-first-jpa-application.html) which describes how a standard JPA application (the Spring PetClinic) can be adapted to XAP JPA and deployed on to the XAP runtime environment
+It is also recommended that you take the [XAP PetClinic JPA Tutorial](/tutorials/your-first-jpa-application.html) which describes how a standard JPA application (the Spring PetClinic) can be adapted to XAP JPA and deployed on to the XAP runtime environment
 {% endinfo %}
 
 # GigaSpaces JPA Configuration

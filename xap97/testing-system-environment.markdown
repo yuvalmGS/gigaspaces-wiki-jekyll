@@ -149,4 +149,4 @@ Repeat the above steps #3, where the ping command is called from a machine diffe
 
 # What's Next?
 
-{% refer %}**[Get Started with GigaSpaces Tutorials](./quick-start-guide.html)**{% endrefer %}
+{% refer %}**[Get Started with GigaSpaces Tutorials](/tutorials/index.html)**{% endrefer %}

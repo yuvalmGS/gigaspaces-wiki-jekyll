@@ -12,7 +12,7 @@ weight: 100
 
 # Overview
 
-GigaSpaces [Data Grid and Messaging Grid core middleware](./product-architecture.html#ProductArchitecture-CoreMiddleware), [Database Cache and Persistency](./persistency.html), [Service Grid and OpenSpaces](./product-architecture.html#OpenSpaces - API and Components) are 100% [Java technology](http://java.sun.com) based.
+GigaSpaces [Data Grid and Messaging Grid core middleware](/product_overview/product-architecture.html#ProductArchitecture-CoreMiddleware), [Database Cache and Persistency](./persistency.html), [Service Grid and OpenSpaces](/product_overview/product-architecture.html#OpenSpaces - API and Components) are 100% [Java technology](http://java.sun.com) based.
 
 **You can run GigaSpaces on every operating system that supports the Java Platform Standard Edition technology** -- i.e., Windows , Linux x86, Linux AMD64 (Opteron), Sun Solaris, Hewlett Packard HP-UX, IBM AIX, Apple Mac OS/X, etc.
 
