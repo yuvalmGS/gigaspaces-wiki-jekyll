@@ -28,7 +28,7 @@ weight: 500
 | Security | [http://java.sun.com/products/jsse/](http://java.sun.com/products/jsse/) |1.6 | Sun | [http://www.opensource.org/licenses/sunpublic.php](http://www.opensource.org/licenses/sunpublic.php) | Yes | Core |
 | Spring | [http://www.springframework.org/about](http://www.springframework.org/about) | 3.2.4 | Apache2 | [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) | Yes | Core |
 | Velocity | [http://jakarta.apache.org/velocity/](http://jakarta.apache.org/velocity/) | 1.5 | Apache2 | [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) | No | Utilities |
-| Apache Commons | [http://jakarta.apache.org/commons/] | 1.x-2.x | Apache2 | [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) | Yes | OpenSpaces |
+| Apache Commons | [http://jakarta.apache.org/commons/](http://jakarta.apache.org/commons/) | 1.x-2.x | Apache2 | [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) | Yes | OpenSpaces |
 | ASM | [http://asm.objectweb.org/doc/tutorial.html](http://asm.objectweb.org/doc/tutorial.html) | 2.2.3 | INRIA | [http://asm.objectweb.org/license.html](http://asm.objectweb.org/license.html) | No | Core |
 | Jetty | [http://www.mortbay.org/jetty/](http://www.mortbay.org/jetty/) | 8.1.8 | Apache2 | [http://www.eclipse.org/jetty/licenses.php](http://www.eclipse.org/jetty/licenses.php) | No | Web Container Support |
 | Maven | [http://maven.apache.org/](http://maven.apache.org/) | 3.0.2| Apache2 | [http://maven.apache.org/license.html](http://maven.apache.org/license.html) | No | OpenSpaces Maven Integration |
@@ -62,7 +62,7 @@ weight: 500
 | JGraph | [http://www.jgraph.com/](http://www.jgraph.com/) | 5.11.0.1 | BSD | [http://www.jgraph.com/license.html](http://www.jgraph.com/license.html) | Yes | GUI |
 | JOI - Java Object Inspector | [http://www.programmers-friend.org/JOI/](http://www.programmers-friend.org/JOI/) | 3.5.2 | CPL | [http://www.programmers-friend.org/cpl-v10.html](http://www.programmers-friend.org/cpl-v10.html) | Yes | GUI |
 | iSQL-Viewer | [http://isql.sourceforge.net/](http://isql.sourceforge.net/) | 3.0.0 | MPL 1.1 | [http://www.mozilla.org/MPL/](http://www.mozilla.org/MPL/) | Yes | GUI |
-| Google Web Toolkit | [http://code.google.com/webtoolkit/] | 2.4.0 | Apache2 | [http://code.google.com/webtoolkit/terms.html] | Yes | Web based dashboard |
+| Google Web Toolkit | [http://code.google.com/webtoolkit/](http://code.google.com/webtoolkit/) | 2.4.0 | Apache2 | [http://code.google.com/webtoolkit/terms.html] | Yes | Web based dashboard |
 | FileUpload | [http://commons.apache.org/fileupload/](http://commons.apache.org/fileupload/) | 1.2.2 | Apache2 | [http://commons.apache.org/fileupload/license.html](http://commons.apache.org/fileupload/license.html) | Yes | Web based dashboard |
 | gwtupload | [http://code.google.com/p/gwtupload/](http://code.google.com/p/gwtupload/) | 0.6.3 | Apache2 | [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0) | Yes | Web based dashboard |
 | Commons Lang | [http://commons.apache.org/lang/](http://commons.apache.org/lang/) | 2.6 | Apache2 | [http://commons.apache.org/lang/license.html](http://commons.apache.org/lang/license.html) | Yes | Web based dashboard |
