@@ -7,11 +7,11 @@ weight: 200
 ---
 
 {% compositionsetup %}
-{% summary page|70 %}The GigaSpaces runtime environment, aka Service Grid, provides SLA-driven capabilities when deploying and running processing units by using the available [GSCs](./the-grid-service-container.html) as a dynamic pool of processes which can host the processing unit{% endsummary %}
+{% summary page|70 %}The GigaSpaces runtime environment, aka Service Grid, provides SLA-driven capabilities when deploying and running processing units by using the available [GSCs](./service-grid.html#gsc) as a dynamic pool of processes which can host the processing unit{% endsummary %}
 
 # Overview
 
-The GigaSpaces runtime environment (A.K.A the Service Grid) provides SLA-driven capabilities via the [GSM](./the-grid-service-manager.html) and the [GSC](./the-grid-service-container.html) runtime components. The GSC is responsible for running one or more Processing Units; while the GSM is responsible for analyzing the deployment and provisioning the processing unit instances to the available GSCs.
+The GigaSpaces runtime environment (A.K.A the Service Grid) provides SLA-driven capabilities via the [GSM](./service-grid.html#gsm) and the [GSC](./service-grid.html#gsc) runtime components. The GSC is responsible for running one or more Processing Units; while the GSM is responsible for analyzing the deployment and provisioning the processing unit instances to the available GSCs.
 
 {% note title=Enforcing SLA definitions %}
 The SLA definition are only enforced when deploying the processing unit on to the GigaSpaces service grid, since this environment actively manages and controls the deployment using the GSM(s). When running within your IDE or in standalone mode these definitions are ignored.
@@ -464,11 +464,120 @@ To control the location of the primary and backup instances during the life-cycl
 When using instance level SLA, max-instances settings do not apply (or any cluster level setting).
 {% endnote %}
 
+
+# Deterministic deployment
+
+Deterministic deployment defines specific zones where primary instances will be provisioned.
+Primary zones are monitored during the cluster life cycle and rebalanced if needed.
+
+{%indent%}
+![primarybackupzonecontroller.jpg](/attachment_files/primarybackupzonecontroller.jpg)
+{%endindent%}
+
+## Example
+
+Simple example that deploys a 2,1 cluster 2,1 with primary-zone=A.
+
+*sla.xml*
+
+{% highlight xml%}
+<sla:sla cluster-schema="partitioned-sync2backup"
+number-of-instances="2" number-of-backups="1" max-instances-per-zone="A/1,B/1"
+primary-zone="A" >
+<sla:requirements >
+<sla:zone name="A" />
+<sla:zone name="B" />
+</sla:requirements>
+{%endhighlight%}
+
+*pu.xml*
+
+Add the following snippet to your PU.
+{%highlight xml%}
+
+<bean id="primaryZoneController" class="org.openspaces.pu.sla.PrimaryZoneController" >
+<property name="primaryZone" value="A" />
+</bean>
+
+{%endhighlight%}
+
+#### Setup the zones
+
+Define two zones (zone1,zone2) need to be defined:
+
+*Start Zone A*
+
+{% inittab zoneA|top %}
+{% tabcontent Windows %}
+
+{% highlight xml %}
+set GSC_JAVA_OPTIONS=-Dcom.gs.zones="A"
+gs-agent gsa.gsc 2 gsa.lus 0 gsa.gsm 0
+{%endhighlight%}
+{%endtabcontent%}
+
+{% tabcontent Linux %}
+{% highlight xml %}
+
+export GSC_JAVA_OPTIONS=-Dcom.gs.zones="A"
+./gs-agent.sh gsa.gsc 2 gsa.lus 0 gsa.gsm 0
+{%endhighlight%}
+
+{%endtabcontent%}
+{%endinittab%}
+
+*Start Zone B*
+
+{% inittab zoneB|top %}
+{% tabcontent Windows %}
+
+{% highlight xml %}
+set GSC_JAVA_OPTIONS=-Dcom.gs.zones="B"
+gs-agent gsa.gsc 2 gsa.lus 0 gsa.gsm 0
+{%endhighlight%}
+{%endtabcontent%}
+
+{% tabcontent Linux %}
+{% highlight xml %}
+export GSC_JAVA_OPTIONS=-Dcom.gs.zones="B"
+./gs-agent.sh gsa.gsc 2 gsa.lus 0 gsa.gsm 0
+{%endhighlight%}
+
+{%endtabcontent%}
+{%endinittab%}
+
+### Deploy the PU
+
+Deploy your PU from CLI or UI.
+[See CLI example] (./deploy---gigaspaces-cli.html).
+
+When deployed all primary instances will be allocated in A and backups in B.
+If primary goes down for some reason, the order will be restored by using restart.
+
+### Multiple primary zones
+
+Several primary zones can be specified:
+
+{%highlight xml%}
+primary-zone="A,C,D"
+{%endhighlight%}
+
+Primary instances will be provisioned in the configured order - A,C,D.
+
+### Limitations
+
+* Deterministic deployment supports only clusters with singe backup (X,1).
+* Deterministic deployment requires to set _max-instances-per-zone_ to 1.
+
+In the above example: max-instances-per-zone="A/1,B/1.
+
+
+
 {% anchor livenessDetection %}
 
 # Monitoring the Liveness of Processing Unit Instances
 
-The [GSM](./the-grid-service-manager.html) monitors the liveness of all the processing unit instances it provisioned to the GSCs. The GSM pings each instance in the cluster to see whether it's available.
+The [GSM](./service-grid.html#gsm) monitors the liveness of all the processing unit instances it provisioned to the GSCs. The GSM pings each instance in the cluster to see whether it's available.
 
 You can also control how often a processing unit instance will be monitored by the GSM, and in case of failure, how many times the GSM will retry to ping the instance and for how long it will wait between retry attempts.
 
