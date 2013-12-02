@@ -1,6 +1,6 @@
 require 'kramdown'
 module Jekyll
-  class CurrentVersion < Jekyll::AbstractDocPlugin
+  class CurrentVersion < Liquid::Tag
     include Liquid::StandardFilters
 
     def initialize(tag_name, markup, tokens)
@@ -8,7 +8,7 @@ module Jekyll
     end
 
     def render(context)
-      get_current_version(context)
+      DocUtils.get_current_version(context)
     end
   end
 end

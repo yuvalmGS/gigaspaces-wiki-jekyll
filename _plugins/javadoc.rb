@@ -1,12 +1,17 @@
 module Jekyll
-  class Javadoc < Jekyll::AbstractDocPlugin
+  class Javadoc < Liquid::Tag
 
     def initialize(tag_name, text, tokens)
       super
+      @class_name = text.strip
     end   
 
+    def render(context)
+      create_link(context, super)
+    end
+
     def create_link(context, content)
-      current_release = get_current_version(context)
+      current_release = DocUtils.get_current_version(context)
 
       base_javadoc_url = context.registers[:site].config["base_javadoc_url"] || 
                          "http://www.gigaspaces.com/docs/JavaDoc%{version}/index.html?%{fqcn}.html"
