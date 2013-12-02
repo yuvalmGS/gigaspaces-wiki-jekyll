@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  Oracle Delta Server
+title: Oracle Delta Server
 categories: SBP
-parent: data-processing-patterns.html
+parent: data-access-patterns.html
 weight: 1300
 ---
 

@@ -94,7 +94,7 @@ The space supports a number of APIs to allow for maximum flexibility to space cl
 - The core [Space API](./the-gigaspace-interface.html), which is the most recommended, allows you to read objects from the space based on various criteria, write objects to it, remove objects from it and get notified about changes made to objects. It is inspired by the JavaSpaces specification and the tuple space model, although the basic data unit is a POJO, which means the space entries are simply Java objects. This API supports transactions.
 
 {% info title=Accessing the Space from Other Languages %}
-The code space API is also supported in [.Net]({%currentneturl%}the-in-memory-data-grid.html) and [C++](./xap-cpp.html). This allows clients to access the space via these languages. It also supports [interoperability](./platform-interoperability-in-gigaspaces.html) between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
+The code space API is also supported in [.Net]({%currentneturl%}/the-in-memory-data-grid.html) and [C++](./xap-cpp.html). This allows clients to access the space via these languages. It also supports [interoperability](./platform-interoperability-in-gigaspaces.html) between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
 {% endinfo %}
 
 - The [JPA API](./jpa-api.html) allows you to use JPA annotations and execute JPQL queries on the space
@@ -117,7 +117,7 @@ In addition, the higher level services (remoting and event processing), are also
 
 # The Space as the Foundation for Space-Based Architecture
 
-Besides its ability to function as an in-memory data grid, the Space's core features and the services on top of it, form the foundation for [Space-Based Architecture (SBA)](./a-typical-sba-application.html). By using SBA, you can gain performance and scalability benefits not available with traditional tier-based architectures, even when these include an in-memory data grid, such as the Space.
+Besides its ability to function as an in-memory data grid, the Space's core features and the services on top of it, form the foundation for [Space-Based Architecture (SBA)](/product_overview/a-typical-sba-application.html). By using SBA, you can gain performance and scalability benefits not available with traditional tier-based architectures, even when these include an in-memory data grid, such as the Space.
 The basic unit of scalability in SBA is the [processing unit](./packaging-and-deployment.html). The Space can be embedded into the processing unit, or accessed remotely from it. When embedded into the processing unit, local services, such as event handler and service bean exposed remotely over the space, can interact with the local space instance to achieve unparalleled performance and scalability. The Space's built-in support for data partitioning is used to distribute the data and processing across the nodes, and for scaling the application.
 
 # What's Next

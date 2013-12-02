@@ -364,7 +364,7 @@ Elastic Middleware Services are explained [here](./elastic-middleware-services.h
 com.gigaspaces.grid.gsa.level = INFO
 {% endhighlight %}
 
-The GigaSpaces Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as The GigaSpaces Manager (GSM), The GigaSpaces Container (GSC), and Lookup Service (LUS). More information regarding GSA can be found [here](./the-grid-service-agent.html).
+The GigaSpaces Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as The GigaSpaces Manager (GSM), The GigaSpaces Container (GSC), and Lookup Service (LUS). More information regarding GSA can be found [here](./service-grid.html#gsa).
 {% endtabcontent %}
 {% tabcontent Security %}
 

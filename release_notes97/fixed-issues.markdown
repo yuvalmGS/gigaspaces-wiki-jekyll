@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Resolved Issues
-categories: RELEASE_NOTES
+categories: RELEASE_NOTES97
 parent: none
 weight: 300
 ---

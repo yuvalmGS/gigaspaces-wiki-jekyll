@@ -79,7 +79,7 @@ This approach is called Space Based Architecture, and the way to achieve it is t
 
 {% refer %}To learn more about Space-Based Architecture and its implications, read our white paper, [The Scalability Revolution: From Dead End to Open Road](http://www.gigaspaces.com/WhitePapers).{% endrefer %}
 
-{% refer %}To learn more about OpenSpaces, see the [OpenSpaces](./product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) section in this online help.{% endrefer %}
+{% refer %}To learn more about OpenSpaces, see the [OpenSpaces](/product_overview/product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) section in this online help.{% endrefer %}
 
 {% anchor step1 %}
 

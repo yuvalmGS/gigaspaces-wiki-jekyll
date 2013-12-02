@@ -10,7 +10,7 @@ weight: 500
 
 # Introduction
 
-If you are new to the **Hello World** example, we suggest to first review the [Your First XTP Application](./your-first-xtp-application.html) tutorial and its [Hello World screencast](http://www.youtube.com/watch?v=I2s8jg_Gufs&feature=relmfu). With this page we provide a short overview of the example, and get you started with applying security aspects to it.
+If you are new to the **Hello World** example, we suggest to first review the [Your First XTP Application](/tutorials/your-first-xtp-application.html) tutorial and its [Hello World screencast](http://www.youtube.com/watch?v=I2s8jg_Gufs&feature=relmfu). With this page we provide a short overview of the example, and get you started with applying security aspects to it.
 
 {% infosign %} The example distribution can be found under `<GigaSpaces root>/examples/helloworld`.
 

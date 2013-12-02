@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  Release Notes
-categories: RELEASE_NOTES
+categories: RELEASE_NOTES97
 ---
 
 
 
 {%section%}
-{%column width=75% %}
+{%column width=70% %}
 
 
 A new release of Gigaspace's XAP platform has been released. Version 9.7 is a minor release. Below you will find all relevant information.

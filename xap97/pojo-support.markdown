@@ -109,7 +109,7 @@ public int getEmployeeID()
 {% endhighlight %}
 
 - The ID field can be determined using the `@SpaceId` annotation or the `id` tag.
-- When using POJOs, the **write operation** uses the [WriteModifiers.UPDATE_OR_WRITE](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/WriteModifiers.html) mode by default. This means that when the space already includes an object with the same UID (`@SpaceId(autoGenerate=false)` with the same value), the POJO is updated, and a new object is not inserted.
+- When using POJOs, the **write operation** uses the [WriteModifiers.UPDATE_OR_WRITE](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/client/WriteModifiers.html) mode by default. This means that when the space already includes an object with the same UID (`@SpaceId(autoGenerate=false)` with the same value), the POJO is updated, and a new object is not inserted.
 - When using `SpaceId(autoGenerate=true)`, the UID is stored inside the `SpaceId` field, causing an overhead when indexed.
 - A `null` value as template is not supported. Use `new Object()` instead.
 - A POJO class must implement the `Serializable` or `Externalizable` interface if used as a parameter for a remote call ([OpenSpaces remoting](./space-based-remoting.html)).

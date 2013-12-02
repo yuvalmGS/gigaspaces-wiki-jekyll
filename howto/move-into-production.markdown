@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Moving into Production
-parent: index.html
+parent: none
 weight: 400
 categories: HOWTO
 ---

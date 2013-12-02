@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  What's new
-categories: RELEASE_NOTES
+categories: RELEASE_NOTES97
 parent: none
 weight: 100
 ---

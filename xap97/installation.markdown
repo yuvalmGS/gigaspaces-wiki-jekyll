@@ -42,7 +42,7 @@ GigaSpaces is 100% pure Java, and therefore can run on any UNIX or Windows machi
 {% lampon %} **What's Next?**
 
 - To verify a local installation, a remote installation, and the cluster configuration, refer to the [Testing System Environment](./testing-system-environment.html) section.
-- See the [Quick Start Guide](./quick-start-guide.html) for your first steps with GigaSpaces.
+- See the [Quick Start Guide](/tutorials/index.html) for your first steps with GigaSpaces.
 
 ## Installing on Linux
 
@@ -58,7 +58,7 @@ unzip {{ site.latest_build_filename }}
 {% lampon %} **What's Next?**
 
 - To verify a local installation, a remote installation, and the cluster configuration, refer to the [Testing System Environment](./testing-system-environment.html) section.
-- See the [Quick Start Guide](./quick-start-guide.html) for your first steps with GigaSpaces.
+- See the [Quick Start Guide](/tutorials/index.html) for your first steps with GigaSpaces.
 
 {% endtoczone %}
 

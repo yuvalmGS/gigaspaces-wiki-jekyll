@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Backward compatibility
-categories: RELEASE_NOTES
+categories: RELEASE_NOTES97
 parent: none
 weight: 600
 ---
