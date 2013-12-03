@@ -16,7 +16,7 @@ JDK:**Sun JDK 1.6**
 Date: September 2009
 
 # The ABCs of the Processing Unit
-GigaSpaces XAP includes a universal grid-based runtime environment for real-time extreme transaction processing (XTP) for Java, C++ and .Net applications. The runtime environment includes a Service Level Agreement-based container called a [GSC]({%latestjavaurl%}/the-grid-service-container.html), in which you are able to deploy business logic and stateful data.
+GigaSpaces XAP includes a universal grid-based runtime environment for real-time extreme transaction processing (XTP) for Java, C++ and .Net applications. The runtime environment includes a Service Level Agreement-based container called a [GSC]({%latestjavaurl%}/service-grid.html#gsc), in which you are able to deploy business logic and stateful data.
 
 When your business logic and its state are managed by the GigaSpaces runtime components, they are able to self-heal in the case of a failure via the continuous high-availability mechanism of the system. They can dynamically scale themselves by configuration or by a programmable API - all out-of-the-box.
 
