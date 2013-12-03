@@ -68,7 +68,7 @@ SpaceDocument docresult[] = space.ReadMultiple(docQuery);
 
 # Supported Operations
 
-The projection is defined for any operation that returns data from the space. Therefore ID Based or Query based operations support projections. You can use projections with `Read`,`Take`,`ReadById`,`TakeById`,`ReadMultiple` and `TakeMultiple` operations. When performing a `Take` operation with projections, the entire object will be removed from the space, but the result returned to the user will contain only the projected properties.
+The projection is defined for any operation that returns data from the space. Therefore ID Based or Query based operations support projections. You can use projections with `Read`,`Take`,`ReadById`,`TakeById`,`ReadMultiple`,`TakeMultiple` and `SpaceIterator` operations. When performing a `Take` operation with projections, the entire object will be removed from the space, but the result returned to the user will contain only the projected properties.
 You can use projections with the [Notify Container](./notify-container-component.html) when subscribing to notifications, or with the [Polling Container](./polling-container-component.html) when consuming space objects. You can also create a [Local View](./local-view.html) with templates or a `View` using projections. The local view will maintain the relevant objects, but with the projected data - only with the projected properties.
 Projected properties can specify both dynamic or fixed properties and the usage is the same. As a result, when providing a projected property name which is not part of the fixed properties set, it will be treated as a dynamic property. If there is no dynamic property present with that name on an object which is a result of the query - that projection property will be ignored (and no exception will be raised). Please note that a result may contain multiple objects, each with different set of properties (fixed and dynamic), each object will be treated individually when applying the projections on it.
 
@@ -76,6 +76,5 @@ Projected properties can specify both dynamic or fixed properties and the usage 
 
 # Considerations
 
-1. Projections are supported only for first level properties (root level). Nested properties can't be specified as part of the projection properties list.
-2. You can't use a projection on [Local Cache](./local-cache.html) as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projections will only impact performance.
-3. You can't use a projection to query a Local View for the same reason as Local Cache, however, you can create the local view with projection template and the Local View will be contain the objects in their projected form.
+1. You can't use a projection on [Local Cache](./local-cache.html) as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projections will only impact performance.
+2. You can't use a projection to query a Local View for the same reason as Local Cache, however, you can create the local view with projection template and the Local View will be contain the objects in their projected form.
