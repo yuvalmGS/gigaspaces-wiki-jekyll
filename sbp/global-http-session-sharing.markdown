@@ -205,7 +205,7 @@ To deploy the IMDG start the GigaSpaces agent using the `gs-agent` and run the f
 
 ### The WAN Gateway
 
-The [WAN Gateway]({%latestjavaurl%}/multi-site-replication-over-the-wan.html) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](./wan-replication-gateway.html) best practice for an example of how a multi-master Gateway architecture can be deployed.
+The [WAN Gateway]({%latestjavaurl%}/multi-site-replication-over-the-wan.html) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](/sbp/wan-replication-gateway.html) best practice for an example of how a multi-master Gateway architecture can be deployed.
 
 ### Other configuration options
 
@@ -325,7 +325,7 @@ You can shutdown Websphere or Tomcat and later restart these. Your web applicati
 
 ### Multi-Site Deployment
 
-When deploying the [multi-site example](./wan-replication-gateway.html) you should change the `shiro.ini` for each site to match the local site Space URL. For example,
+When deploying the [multi-site example](/sbp/wan-replication-gateway.html) you should change the `shiro.ini` for each site to match the local site Space URL. For example,
 to connect to the DE space you should have the web application use a `shiro.ini` with the following:
 
 		sessionDAO.activeSessionsCacheName = jini://*/*/wanSpaceDE?useLocalCache&groups=DE

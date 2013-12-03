@@ -33,7 +33,7 @@ GigaSpaces needs to be installed in your local directory. Make sure that this ve
 
 To verify the JVM version, run the following command: `>java -version`
 
-{% refer %}For more details, refer to the [Installing GigaSpaces](./installing-gigaspaces.html) section.{% endrefer %}
+{% refer %}For more details, refer to the [Installing GigaSpaces](./installation.html) section.{% endrefer %}
 
 ### C++ API installation
 

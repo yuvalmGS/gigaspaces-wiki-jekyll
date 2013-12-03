@@ -137,9 +137,9 @@ The Configure View window already includes your previously selected options, and
 - GigaSpaces 6.5 GA.
 .Net product is unzipped.
 JSHOMEDIR is configured.
-For more details see [Installing GigaSpaces]({%latestneturl%}/installing-xap.net.html) section.
+For more details see [Installing GigaSpaces]({%latestneturl%}/installation.html) section.
 
-- A [JDK 1.5]({%latestjavaurl%}/installing-gigaspaces.html#Prior+to+Installation)
+- A [JDK 1.5]({%latestjavaurl%}/installation.html)
 - The [.NET Framework](http://msdn2.microsoft.com/en-us/netframework/aa569263.aspx)
 - Microsoft Office 2003
 

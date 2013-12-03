@@ -267,11 +267,11 @@ In this type of example, the Deployment Infrastructure is responsible for making
 
 ## Grid Service Agent (GSA)
 
-The [Grid Service Agent (GSA)]({%latestjavaurl%}/the-grid-service-agent.html) acts as a process manager that can spawn and manage Deployment Infrastructure processes (Operating System level processes) such as [Grid Service Manager]({%latestjavaurl%}/the-grid-service-manager.html) and [Grid Service Container]({%latestjavaurl%}/the-grid-service-container.html).
+The [Grid Service Agent (GSA)]({%latestjavaurl%}/service-grid.html#gsa) acts as a process manager that can spawn and manage Deployment Infrastructure processes (Operating System level processes) such as [Grid Service Manager]({%latestjavaurl%}/service-grid.html#gsm) and [Grid Service Container]({%latestjavaurl%}/service-grid.html#gsc).
 
-Usually, a single GSA is deployed on each individual machine. The GSA spawns [Grid Service Managers]({%latestjavaurl%}/the-grid-service-manager.html), [Grid Service Containers]({%latestjavaurl%}/the-grid-service-container.html), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
+Usually, a single GSA is deployed on each individual machine. The GSA spawns [Grid Service Managers]({%latestjavaurl%}/service-grid.html#gsm), [Grid Service Containers]({%latestjavaurl%}/service-grid.html#gsc), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
 
-{% lampon %} Though [Grid Service Manager]({%latestjavaurl%}/the-grid-service-manager.html), [Grid Service Container]({%latestjavaurl%}/the-grid-service-container.html), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
+{% lampon %} Though [Grid Service Manager]({%latestjavaurl%}/service-grid.html#gsm), [Grid Service Container]({%latestjavaurl%}/service-grid.html#gsc), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
 
 {% anchor gsm %}
 
@@ -289,7 +289,7 @@ The GSM monitors SLA breach events throughout the life-cycle of the application,
 
 A Grid Service Container (GSC) is a container which hosts Processing Units instances. The GSC can be perceived as a node on the grid, which is controlled by the GSM. The GSM instruct the GSC to deploy or undeploy Processing Unit instances. The GSC reports its status to the GSM.
 
-It is common to start several GSCs on the same physical machine, depending on the machine CPU and memory resources. The GSCs provide a layer of abstraction on top of the physical layer (Machines). This concept enables deployment of clusters on various deployment topologies on enterprise data centers and [public clouds](./cloud-and-virtualization.html).
+It is common to start several GSCs on the same physical machine, depending on the machine CPU and memory resources. The GSCs provide a layer of abstraction on top of the physical layer (Machines). This concept enables deployment of clusters on various deployment topologies on enterprise data centers and public clouds.
 
 {% endtoczone %}
 
