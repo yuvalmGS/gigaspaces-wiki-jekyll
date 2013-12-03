@@ -103,7 +103,7 @@ GigaSpaces can be used with Mainframe using the following:
 
 ## GigaSpaces External Data Source
 
-Allows the IMDG to pull data from Mainframe via a public interfaces (web services for example) through the [IMDG EDS API]({%latestjavaurl%}/external-data-source-api.html). Once there is a cache miss or once the IMDG is started, the IMDG accesses the Mainframe and fetch relevant data. The IMDG can push any changes done back to the Mainframe in a synchronous or asynchronous manner.
+Allows the IMDG to pull data from Mainframe via a public interfaces (web services for example) through the [IMDG EDS API]({%latestjavaurl%}/space-data-source-api.html). Once there is a cache miss or once the IMDG is started, the IMDG accesses the Mainframe and fetch relevant data. The IMDG can push any changes done back to the Mainframe in a synchronous or asynchronous manner.
 
 ## JCICS
 
