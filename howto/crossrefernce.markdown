@@ -78,7 +78,7 @@ In version {%latestxaprelease%} of XAP the ...
 {% endpanel %}
 
 
-#### Latest Cloufify release
+#### Latest Cloudify release
 
 {%panel%}
 
