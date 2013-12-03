@@ -4,7 +4,7 @@ This repository contains the markup files, html templates and javascript sources
 It's based on [Jekyll](http://jekyllrb.com/), a Ruby-based static site generator, and uses [Markdown]() as a markup language. It was originally ported from Atlassian Confluence, and therefore multiple useful Jekyll [plugins](http://docs.gigaspaces.com/howto/plugin.html) were defined. The plugins mimic the behavior of original Confluene macros to allow for easy migration from Confulence and provide content editor with useful markup extensions that are relevant to online documentation portals.
 
 ## Help Us Improve! 
-It's important for us to encourage your feedback and contribution. Contributing to this website is straightforward. Simply fork this repository, make your changes, test them with your locak Jekyll installation, and submit a pull request. We promise to review and comment on every pull request, and merge it if it makes sense.  
+It's important for us to encourage your feedback and contribution. Contributing to this website is straightforward. Simply fork this repository, make your changes, test them with your local Jekyll installation, and submit a pull request. We promise to review and comment on every pull request, and merge it if it makes sense.  
 
 ## Installing, Editing and Testing Locally 
 To run and test the website locally, you should perform the following steps: 
@@ -40,7 +40,7 @@ Configuration file: /Users/uri1803/dev/gigaspaces-wiki-jekyll/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-* Point your browser to [http://localhost:4000](). You should see the documentation portal home page, and verify that you're ok with your changes. 
+* Point your browser to [http://localhost:4000](http://localhost:4000). You should see the documentation portal home page, and verify that you're ok with your changes. 
 
 * If you've forked the repository and updated documentation pages, you can submit a pull request. We will review, comment and merge the pull request after approving it. 
 
