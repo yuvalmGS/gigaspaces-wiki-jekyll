@@ -11,7 +11,7 @@ weight: 100
 
 # Overview
 
-OpenSpaces provides a simpler space API using the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html) interface, by wrapping the [IJSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/IJSpace.html) (and the Jini [JavaSpace](http://www.gigaspaces.com/docs/JiniApi/net/jini/space/JavaSpace.html)), and simplifying both the API and its programming model.
+OpenSpaces provides a simpler space API using the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html) interface, by wrapping the [IJSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/IJSpace.html) (and the Jini [JavaSpace](http://www.gigaspaces.com/docs/JiniApi/net/jini/space/JavaSpace.html)), and simplifying both the API and its programming model.
 
 {% indent %}
 ![space_basic_operations91.jpg](/attachment_files/space_basic_operations91.jpg)

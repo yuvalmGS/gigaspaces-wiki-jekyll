@@ -20,7 +20,7 @@ GigaSpaces XAP includes a universal grid-based runtime environment for real-time
 
 When your business logic and its state are managed by the GigaSpaces runtime components, they are able to self-heal in the case of a failure via the continuous high-availability mechanism of the system. They can dynamically scale themselves by configuration or by a programmable API - all out-of-the-box.
 
-The actual deployment is done via a dedicated service called the [GSM]({%latestjavaurl%}/the-grid-service-manager.html), which is responsible for the deployment process and for enforcing the pre-defined SLA (if any) throughout the lifecycle of the application.
+The actual deployment is done via a dedicated service called the [GSM]({%latestjavaurl%}/service-grid.html#gsm), which is responsible for the deployment process and for enforcing the pre-defined SLA (if any) throughout the lifecycle of the application.
 
 The application code running within the GSC should be compiled, packaged into a library, and deployed via the relevant deploy command/API/UI. The GSM is responsible for pushing the application libraries into all the machines running the GSC at deployment, when scaling the system, or when there is a failure that requires the system to use a new available GSC. Once the application libraries have been deployed to the GSC, the container loads the application, initializes it, and then starts the application. You can use external parameters in the deployment and get the status of the business logic and its state via the relevant [administration API]({%latestjavaurl%}/administration-and-monitoring-api.html), or the provided administration tools.
 
