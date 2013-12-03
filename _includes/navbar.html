@@ -74,6 +74,7 @@
 <script>
 $('[target=_blank]').append(" <i class=\"icon-external-link\" style=\"font-size:10px\"></i>"); 
 
+/*
 $("#q").typeahead({
   name: "Documentation Pages",
   prefetch: "/sitemap.json",
@@ -86,6 +87,35 @@ $("#q").typeahead({
 $("#q").bind("typeahead:selected", function(obj, datum, name) {
   location.href = datum.url; 
 }); 
+*/
+
+var customRenderFunction = function(document_type, item) {
+  var title = item["highlight"]["title"]; 
+  if (!title) {
+    title = item["title"]
+  }
+  var out = "<p class='title'>" + title + "</p>";
+  if (item["highlight"]["sections"]) {
+    return out.concat("<p class='sections'>" + item["highlight"]["sections"] + "</p>");
+  }
+  return out; 
+}
+
+$("#q").swiftype({
+  renderFunction: customRenderFunction,
+  engineKey: "vskywTXhmRpTsNEQ9nux"
+});
+
+// set up search
+/*
+$("#q").swiftypeSearch({
+  engineKey: "vskywTXhmRpTsNEQ9nux",
+  fetchFields: {'page': {'title^5', 'sections'}},
+  resultContainingElement: "content", 
+  perPage: 10, 
+});
+*/
+
 
 </script>
 
