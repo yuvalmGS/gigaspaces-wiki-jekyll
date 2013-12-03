@@ -8,7 +8,7 @@ $(document).ready(function () {
         params: {
             "engine_key":"vskywTXhmRpTsNEQ9nux",
             "per_page":10,
-            "page":0
+            "page":1
         }
     }
 
@@ -42,7 +42,7 @@ $(document).ready(function () {
             resultsDiv.append(paginationButtons);
 
             
-            if (settings.params.page > 0) {                
+            if (settings.params.page > 1) {                
                 $("[rel='prev']").attr("class", "previous enabled");
                 $("[rel='prev']").click(function () {
                     search({params:{ page:settings.params.page - 1}});
@@ -52,10 +52,10 @@ $(document).ready(function () {
                 $("[rel='prev']").bind('click', false);
             }
 
-            if (data.info.page.total_result_count > (settings.params.page + 1) * settings.params.per_page) {
+            if (data.info.page.total_result_count > (settings.params.page) * settings.params.per_page) {
                 $("[rel='next']").attr("class", "next enabled");
                 $("[rel='next']").click(function () {
-                    search({params:{page:settings.page + 1}});
+                    search({params:{page:settings.params.page + 1}});
                 });
             } else {
                 $("[rel='next']").attr("class", "next disabled");
@@ -69,25 +69,24 @@ $(document).ready(function () {
         }
     }
 
-    function search() {
+    function search(settings) {
 
         var query = $('#q').val() || "";
         if (query.trim() == "") return; 
 
         // If no parameters are supplied to the function,
         // it takes its defaults from the config object above:
-        settings = $.extend({}, config, settings);
+        settings = $.extend(true, {}, config, settings);
 
         settings.params.q = query; 
         
         
-        try {
-            var pageNum = settings.page + 1;
+        try {            
             $.ajax({
                 type:'GET',
                 url:settings.apiURL,
                 dataType:'jsonp',
-                data: settings["options"],
+                data: settings.params,
                 success: function(data) {
                     displaySearch(settings, data);
                     /* //history handling, disabled for now 
@@ -159,9 +158,15 @@ $(document).ready(function () {
             return "";
         }
 
+        var title = r.highlight.title; 
+        if (!title) title = r.title; 
+
+        var snippet = r.highlight.body; 
+        if (!snippet) snippet = r.body; 
+
         var arr = [
             '<li class="search-result">',
-            '<h4><a href="',r.url,'">',this.getCategory(r.url),r.highlight.title,'</a></h4>',
+            '<h4><a href="',r.url,'">',this.getCategory(r.url),title,'</a></h4>',
             '<p>',
             r.highlight.body,'&nbsp;&nbsp;',
             '<a href="',r.url, '">Read More &raquo;</a>',
