@@ -103,13 +103,18 @@ You can use [Data-Partitioning](./data-partitioning.html) to distribute the data
 - Replaced string fields with a small number of possible (source for instance) values with enum.
 - Indexes footprint can be reduced by directing the system to work in Economy mode. The downside of working in Economy mode is a performance penalty of up to 15% in embedded space operations. In order to work in Economy mode set `space-config.engine.use_economy_hashmap=true`.
 
+{%comment%}
+
 # Choose Local Transactions Over Distributed Transactions
 
 [Distributed Transactions](./transaction-management.html#Distributed Jini Transaction Manager) perform a lengthy 2PC process. [Local Transactions](./transaction-management.html#Local Jini Transaction Manager), in contrast, perform a 1PC process. If you are performing some operations under a transaction on a single space, use local transactions. The slower your network compared to other resources (for example, a disk), the greater will be the noticeable improvement.
 
+
 {% tip %}
 For more details on transaction support, refer to the [Transaction Management](./transaction-management.html) section.
 {% endtip %}
+
+{%endcomment%}
 
 # Using Snapshot to Reduce Object Creation and Space Object Data Inspection
 
