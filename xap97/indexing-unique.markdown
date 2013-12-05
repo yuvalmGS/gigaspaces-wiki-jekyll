@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  Unique Index
-categories: XAP97
-parent:  indexing.html
+categories:
+parent:
 weight: 100
 ---
 
 
-{% summary %} Using indexes to improve performance. {% endsummary %}
+{% summary %} TODO. {% endsummary %}
 
 # Overview
 
@@ -30,9 +30,14 @@ Example:
 
 {%highlight java%}
 
-@SpaceIndex(type=SpaceIndexType.BASIC, unique = true)
+public class Person
+{
+  @SpaceIndex(type=SpaceIndexType.BASIC, unique = true)
+  private String lastName;
 
-
+  private String firstName;
+ .
+ .
 {%endhighlight%}
 
 

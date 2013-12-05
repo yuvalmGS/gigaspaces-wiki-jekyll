@@ -535,7 +535,11 @@ With the above the `mySpace` EPU will be deployed only into agents associated wi
 
 ## Automatic Machine Provisioning
 
+{%comment%}
+Roffler
 The EPU supports automatic Virtual Machines provisioning through custom plugins. The plugins are open source [http://svn.openspaces.org/cvi/trunk](http://svn.openspaces.org/cvi/trunk) and provide an implementation of [ElasticMachineProvisioningConfig](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/elastic/ElasticMachineProvisioningConfig.html) and [ElasticMachineProvisioning](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/grid/gsm/machines/plugins/ElasticMachineProvisioning.html).
+
+{%endcomment%}
 
 When deploying an EPU pass an instance of [ElasticMachineProvisioningConfig](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/elastic/ElasticMachineProvisioningConfig.html) as the [machineProvisioning](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/elastic/topology/ElasticDeploymentTopology.html) deployment property.
 
