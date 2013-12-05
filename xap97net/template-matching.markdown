@@ -3,7 +3,7 @@ layout: post
 title:  Template Matching
 categories: XAP97NET
 parent: querying-the-space.html
-weight: 600
+weight: 300
 ---
 
 {% summary %}How to query the space using Template Matching{% endsummary %}
