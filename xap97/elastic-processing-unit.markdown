@@ -701,7 +701,7 @@ The demo includes the following phases:
 ## Running the Example
 
 1. Download and Install
-[Download the example](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/EPUScaleDemo.zip) and extract it.
+[Download the example](/download_files/EPUScaleDemo.zip) and extract it.
 
 2. Start gs-agent
 Start gs-agent using the following command:
