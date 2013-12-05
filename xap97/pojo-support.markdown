@@ -11,7 +11,7 @@ weight: 300
 
 # Overview
 
-GigaSpaces JavaSpaces `POJO` support allows you to use `JavaBean` classes as space domain classes, and perform space operations using these objects. POJO domain Classes should follow rules similar to the ones defined by [JPA](http://en.wikipedia.org/wiki/Java_Persistence_API), [Hibernate](http://www.hibernate.org/hibernate) and other domain class frameworks.
+GigaSpaces JavaSpaces `POJO` support allows you to use `JavaBean` classes as space domain classes, and perform space operations using these objects. POJO domain Classes should follow rules similar to the ones defined by [JPA](http://en.wikipedia.org/wiki/Java_Persistence_API), [Hibernate](http://www.hibernate.org) and other domain class frameworks.
 
 # POJOs as Data Objects
 

@@ -318,7 +318,7 @@ However, it is recommended that you familiarize yourself with the `GigaSpace` in
 The `GigaSpace` interface supports a number of Space operations:
 
 - **Read**: Allows you to read objects from the Space. The criteria can be specified via one of the following:
-    - _Template matching_ (JavaSpaces term for the equivalent of Hibernate's [Example API](http://docs.jboss.org/hibernate/stable/core/reference/en/html/querycriteria.html#querycriteria-examples).
+    - _Template matching_ (JavaSpaces term for the equivalent of Hibernate's [Example API](http://docs.jboss.org/hibernate/orm/3.3/reference/en/html/querycriteria.html#example-queries).
     - SQL-like queries.
     - Based on a certain object's ID (every object in the Space has a unique identifier which distinguishes it from other objects).
 

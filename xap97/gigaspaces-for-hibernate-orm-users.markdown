@@ -15,7 +15,7 @@ weight: 100
 
 This page explains how you can use GigaSpaces eXtreme Application Platform (XAP) to:
 
-- **Get a free 2nd-level distributed cache** for your [Hibernate](http://www.hibernate.org/hibernate)-based database integration
+- **Get a free 2nd-level distributed cache** for your [Hibernate](http://www.hibernate.org)-based database integration
 - **Scale up your database using the existing ORM** by adding a GigaSpaces Data Grid with back-end Hibernate integration
 
 GigaSpaces as Hibernate 2nd level cache provides:
