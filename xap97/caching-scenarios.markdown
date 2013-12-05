@@ -146,6 +146,6 @@ Any updates made to the database are also written to a queue. Refresher client c
 
 ## Refresh data using Database Change Notifications
 
-Oracle and few other databases support [Database Change Notifications](http://docs.oracle.com/cd/E11882_01/java.112/e16548/dbchgnf.html) where a client can register a listener for changes to data. Any changes made to the database will trigger the listener defined in a DCN Client. Listener can in turn write these messages into the space.
+Oracle and few other databases support [Database Change Notifications](/sbp/oracle-delta-server.html) where a client can register a listener for changes to data. Any changes made to the database will trigger the listener defined in a DCN Client. Listener can in turn write these messages into the space.
 
 ![Database Change Notification.png](/attachment_files/Database Change Notification.png)

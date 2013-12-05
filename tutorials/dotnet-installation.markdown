@@ -31,5 +31,5 @@ GigaSpaces XAP.NET offers more installation scenarios and customizations. For ex
 - Side-by-side installations.
 - Using a different jvm.
 
-For more information see [Advanced Installation Scenarios](./advanced-installation-scenarios.html).
+For more information see [Advanced Installation Scenarios]({%latestneturl%}/advanced-installation-scenarios.html).
 
