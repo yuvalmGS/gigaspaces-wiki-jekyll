@@ -3,7 +3,7 @@ layout: post
 title:  SqlQuery
 categories: XAP97NET
 parent: querying-the-space.html
-weight: 200
+weight: 100
 ---
 
 {% summary %}Querying the space using SqlQuery{% endsummary %}
