@@ -93,14 +93,13 @@ form input.st-search-input {
 }
 
 .swiftype-widget .autocomplete li p.title {
-  font-weight: normal;
+  font-weight: bold;
   color: #1c6cb5;
 }
 
 .swiftype-widget .autocomplete li p.title em {
-  color: #1c6cb5;
+  background-color: #FFFF00;
   font-style: normal;
-  font-weight: bold;
 }
 
 .swiftype-widget .autocomplete li.active p.title {
@@ -109,6 +108,7 @@ form input.st-search-input {
 }
 
 .swiftype-widget .autocomplete li.active p.title em {
+  background-color: transparent;
   color: #fff;
   font-style: normal;
 }
@@ -119,9 +119,8 @@ form input.st-search-input {
 }
 
 .swiftype-widget .autocomplete li .sections em {
-  color: #999;
+  background-color: #FFFF00;
   font-style: normal;
-  font-weight: bold;
 }
 
 .swiftype-widget .autocomplete li .sections .section {
@@ -134,6 +133,7 @@ form input.st-search-input {
 }
 
 .swiftype-widget .autocomplete li.active .sections em {
+  background-color: transparent;
   color: #a9d7f1;
   font-style: normal;
 }
