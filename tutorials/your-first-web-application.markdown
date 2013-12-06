@@ -68,7 +68,6 @@ Shows how to take an existing web application (in our case a very simple servlet
 {% align right %}
 
 ![web-deploy.jpg](/attachment_files/web-deploy.jpg)
-![web-deploy-large.jpg](/attachment_files/web-deploy-large.jpg)
 {% endalign %}
 
 {% endcolumn %}
@@ -110,7 +109,6 @@ Shows how to back your application's HTTP session store with the Space to achiev
 {% align right %}
 
 ![http-session.jpg](/attachment_files/http-session.jpg)
-![http-session-large.jpg](/attachment_files/http-session-large.jpg)
 {% endalign %}
 
 {% endcolumn %}
@@ -153,7 +151,6 @@ Shows how to access the GigaSpaces XAP in memory data grid from within your web 
 {% align right %}
 
 ![space-access.jpg](/attachment_files/space-access.jpg)
-![space-access-large.jpg](/attachment_files/space-access-large.jpg)
 {% endalign %}
 
 {% endcolumn %}
