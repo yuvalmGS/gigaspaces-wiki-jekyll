@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  Deprecated Functionality
-categories: RELEASE_NOTES97
-parent: none
+categories: RELEASE_NOTES
+parent: xap97.html
 weight: 500
 ---
 

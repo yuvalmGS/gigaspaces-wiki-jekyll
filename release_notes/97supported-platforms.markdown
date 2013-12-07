@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  Supported Platforms
-categories: RELEASE_NOTES97
-parent: none
+categories: RELEASE_NOTES
+parent: xap97.html
 weight: 700
 ---
 
