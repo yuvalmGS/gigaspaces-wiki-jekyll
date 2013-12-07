@@ -410,25 +410,6 @@ processorContainerHost.Dispose();
 This will host the two processing units, processor and feeder, which reside in the specified deployment directory.
 When the host is created the hosted processing units are immidiatly created and initialized, once the host is disposed it will dispose of the hosted processing unit container.
 
-{% anchor standalone %}
-
-## Standalone Process Deployment
-
-One option is to run a standalone process which will host the Processing Unit container. Like above, this should be used for debug purposes only since it is not deployed and managed by the service grid. This is done simply by calling the following commands from your `<GigaSpaces Root>\Bin` directory:
-
-The following deploys the data processor:
-
-{% highlight java %}
-PuInstance ..\Examples\ProcessingUnit\Processor\Deployment\DataProcessor
-{% endhighlight %}
-
-The following deploys the data feeder:
-
-{% highlight java %}
-PuInstance ..\Examples\ProcessingUnit\Feeder\Deployment\DataFeeder
-{% endhighlight %}
-
-Each command creates the standalone process and hosts the `DataProcessor` or `DataFeeder` Processing Units.
 
 
 {%children%}
