@@ -31,7 +31,7 @@ weight: 1250
 [<img src="/attachment_files/sbp/ibm-d-server.png" width="400" height="300">](/attachment_files/sbp/ibm-d-server.png)
 {%endalign%}
 
- ![ibm-d-server.png](/attachment_files/ibm-d-server.png)
+
 
  We will show you how you can implement this scenario with XAP. A fully functional example is available for [download](/download_files/sbp/db2gs.jar).
 

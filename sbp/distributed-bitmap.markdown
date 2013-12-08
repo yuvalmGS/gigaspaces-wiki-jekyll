@@ -111,7 +111,7 @@ return Integer.MIN_VALUE+((int)pageno*PAGE_SIZE_BITS);
 
 Each pages space id consists in the lowest value integer that it represents. For example, the page with id '0' represents bits from 0 to 1023 (in the 1024 bit page size case). So if I want to inspect (or set) the value of bit 5, I need to first fetch page id 0, and then apply a mask. Note the final utility method in the class. It's purpose is to return the page id for any supplied integer.
 
-This is really all you need, but it's not user friendly or efficient. Ideally we don't want to fetch pages across the network. Using XAPs [executor remoting|http://wiki.gigaspaces.com/wiki/display/XAP96/Executor+Based+Remoting] we can create a distributed RPC that executes the bit page operations colocated with the page itself. The service implementation looks like this:
+This is really all you need, but it's not user friendly or efficient. Ideally we don't want to fetch pages across the network. Using XAPs [executor remoting]({%latestjavaurl%}/executor-based-remoting.html) we can create a distributed RPC that executes the bit page operations colocated with the page itself. The service implementation looks like this:
 
 
 {%highlight java%}
