@@ -25,7 +25,11 @@ Scala programs run on the Java VM, are byte code compatible with Java so you can
 
 # Scala Helloworld examples
 
-There are many possible permutations for integrating Java and Scala applications, you may have mixture of Java and Scala code or pure Scala code that you want to run on top of GigaSpaces. [Hello World in Scala](http://www.openspaces.org/display/SCL/Hello+World+in+Scala) OpenSpaces project ports the GigaSpaces XAP standard helloworld example application for common Scala integration scenarios. Use this as a reference for how to integrate your Scala applications with GigaSpaces.
+There are many possible permutations for integrating Java and Scala applications, you may have mixture of Java and Scala code or pure Scala code that you want to run on top of GigaSpaces.
+
+{%comment%}
+[Hello World in Scala](http://www.openspaces.org/display/SCL/Hello+World+in+Scala) OpenSpaces project ports the GigaSpaces XAP standard helloworld example application for common Scala integration scenarios. Use this as a reference for how to integrate your Scala applications with GigaSpaces.
+{%endcomment%}
 
 When building your application in Scala, the configuration and packaging will still be like Java application.
 
