@@ -31,9 +31,9 @@ For example, to use an SSL communication filter, run GigaSpaces with:
 
 # Default SSLFilterFactory
 
-{% refer %}[GigaSpaces Java API Documentation](http://www.gigaspaces.com/wiki/display/API/API-Documentation+Portal){% endrefer %}
+{% refer %}[GigaSpaces Java API Documentation](/api_documentation/index.html){% endrefer %}
 
-Since some types of communication filters are not symmetric regarding the client and server, the class [`SSLFilterFactory`](http://www.gigaspaces.com/docs/{%currentversion%}/com/gigaspaces/lrmi/nio/filters/SSLFilterFactory.html) has 2 methods: one to create the communication filter for the client side, and the other for the server side.
+Since some types of communication filters are not symmetric regarding the client and server, the class [`SSLFilterFactory`](http://www.gigaspaces.com/docs{%currentversion%}/com/gigaspaces/lrmi/nio/filters/SSLFilterFactory.html) has 2 methods: one to create the communication filter for the client side, and the other for the server side.
 
 - public IOFilter [`createClientFilter()`](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/lrmi/nio/filters/SSLFilterFactory.html#createClientFilter) throws Exception;
 
