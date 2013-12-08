@@ -17,7 +17,7 @@ GigaSpaces IMDG supports three kinds of caching mechanisms:In-line Cache, Side C
 - Less load on the database layer - Since the cache will isolate the database from the application somewhat, you will have less contention generated at the database layer.
 - Continuous High-Availability - Zero downtime of your data access layer with the ability to survive system failures without any data loss.
 
-Both the In-line cache and the Side cache support the common deployment toplogies: [replicated](./terminology---data-grid-topologies.html#Primary Backup Data Grid), [partitioned](/product_overview/terminology---data-grid-topologies.html#Partitioned Data Grid) and [primary-backup partitioned](/product_overview/terminology---data-grid-topologies.html#Primary Backup Partitioned Data Grid).
+Both the In-line cache and the Side cache support the common deployment toplogies: [replicated](/product_overview/terminology---data-grid-topologies.html#Primary Backup Data Grid), [partitioned](/product_overview/terminology---data-grid-topologies.html#Partitioned Data Grid) and [primary-backup partitioned](/product_overview/terminology---data-grid-topologies.html#Primary Backup Partitioned Data Grid).
 
 # In-line Cache
 
@@ -146,6 +146,6 @@ Any updates made to the database are also written to a queue. Refresher client c
 
 ## Refresh data using Database Change Notifications
 
-Oracle and few other databases support [Database Change Notifications](http://docs.oracle.com/cd/E11882_01/java.112/e16548/dbchgnf.html) where a client can register a listener for changes to data. Any changes made to the database will trigger the listener defined in a DCN Client. Listener can in turn write these messages into the space.
+Oracle and few other databases support [Database Change Notifications](/sbp/oracle-delta-server.html) where a client can register a listener for changes to data. Any changes made to the database will trigger the listener defined in a DCN Client. Listener can in turn write these messages into the space.
 
 ![Database Change Notification.png](/attachment_files/Database Change Notification.png)

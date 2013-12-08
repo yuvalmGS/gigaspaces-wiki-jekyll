@@ -535,7 +535,11 @@ With the above the `mySpace` EPU will be deployed only into agents associated wi
 
 ## Automatic Machine Provisioning
 
+{%comment%}
+Roffler
 The EPU supports automatic Virtual Machines provisioning through custom plugins. The plugins are open source [http://svn.openspaces.org/cvi/trunk](http://svn.openspaces.org/cvi/trunk) and provide an implementation of [ElasticMachineProvisioningConfig](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/elastic/ElasticMachineProvisioningConfig.html) and [ElasticMachineProvisioning](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/grid/gsm/machines/plugins/ElasticMachineProvisioning.html).
+
+{%endcomment%}
 
 When deploying an EPU pass an instance of [ElasticMachineProvisioningConfig](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/elastic/ElasticMachineProvisioningConfig.html) as the [machineProvisioning](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/elastic/topology/ElasticDeploymentTopology.html) deployment property.
 
@@ -697,7 +701,7 @@ The demo includes the following phases:
 ## Running the Example
 
 1. Download and Install
-[Download the example](http://wiki.gigaspaces.com/wiki/download/attachments/61867186/EPUScaleDemo.zip) and extract it.
+[Download the example](/download_files/EPUScaleDemo.zip) and extract it.
 
 2. Start gs-agent
 Start gs-agent using the following command:

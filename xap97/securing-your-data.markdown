@@ -185,7 +185,7 @@ Using the CLI deploy command supply username and password using the -user and -p
 
 # Local Cache
 
-{% refer %}[Local Cache](./local-view-and-local-cache.html){% endrefer %}
+{% refer %}[Local Cache](./client-side-caching.html){% endrefer %}
 
 The local cache is a read-only service on top of a remote Space. Thus, the local cache "creator" needs to have **Read** privileges.
 Security is enforced by the remote Space, and the proxy should be acquired by supplying the username and password.
@@ -222,7 +222,7 @@ GigaSpace localCache = new GigaSpaceConfigurer(configurer.localCache()).gigaSpac
 
 # Local View
 
-{% refer %}[Local View](./local-view-and-local-cache.html){% endrefer %}
+{% refer %}[Local View](./client-side-caching.html){% endrefer %}
 
 Similar to a Local Cache, the Local View is a read-only service on top of a remote Space. Here, the cache is limited to Views. Thus, the local view "creator" needs to have **Read** privileges for the specific views. For example, needs to have **Read** privileges for both `Trade` and `Stock` classes, otherwise access will be denied.
 

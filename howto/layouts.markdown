@@ -126,7 +126,7 @@ TODO
 
 {%panel%}
 
-{% highlight java %}
+{% highlight java linenos %}
  public class Test()
  {
 
@@ -136,7 +136,7 @@ TODO
 {%panel bgColor=white | title=Markdown%}
 {% raw  %}
 
-{% highlight java %}
+{% highlight java linenos %}
  public class Test()
  {
 
@@ -148,6 +148,7 @@ TODO
 {%panel bgColor=white | title=Parameters%}
 java
 xml
+csharp
 {%endpanel%}
 {%endpanel%}
 

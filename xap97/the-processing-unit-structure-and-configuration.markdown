@@ -61,7 +61,7 @@ In some cases, multiple Processing Units use the same JAR files. In such cases i
 There are three options to achieve this:
 
 ## `lib/optional/pu-common directory`
-JAR files placed in the `<GigaSpaces root>/lib/optional/pu-common` directory will be loaded by each Processing Unit instance in its own separate classloader (called the Service Classloader, see the [./class-loaders.html#ClassLoaders] section below).
+JAR files placed in the `<GigaSpaces root>/lib/optional/pu-common` directory will be loaded by each Processing Unit instance in its own separate classloader (called the Service Classloader, [see the](#ClassLoaders) section below).
 
 This means they are not shared between Processing Units on the same JVM, which provides an isolation quality often required for JARs containing the application's proprietary business-logic. On the other hand this option consumes more PermGen memory (due to potentially multiple instances per JVM).
 
@@ -72,14 +72,14 @@ When a new JAR needs to be loaded, just place the new JAR in `pu-common` directo
 Note: if different Processing Units use different versions of the same JAR (under same JAR file name) then `pu-common` should not be used.
 
 ## `META-INF/MANIFEST.MF` descriptor
-JAR files specified in the Processing Unit's `META-INF/MANIFEST.MF` descriptor file will be loaded by each Processing Unit instance in its own separate classloader (called the Service Classloader, see the [Class Loaders](./classloaders.html) section below.
+JAR files specified in the Processing Unit's `META-INF/MANIFEST.MF` descriptor file will be loaded by each Processing Unit instance in its own separate classloader (called the Service Classloader, see the [Class Loaders](#classloaders) section below.
 
 This option achieves similar behavior to the `lib/optional/pu-common` option above, but allows a more fine-grained control by enabling to specify specific JAR files (each in its own location) rather than an entire folder (and only a single folder).
 
 For more information see [Manifest Based Classpath|#ManifestBasedClasspath] section below.
 
 ## `lib/platform/ext` directory
-JAR files placed in the `<GigaSpaces root>/lib/platform/ext` directory will be loaded once by the GSC-wide classloader and not separately by each Processing Unit instance (this classloader is called the Common Classloader, see the [Class Loaders|#classloaders] section below).
+JAR files placed in the `<GigaSpaces root>/lib/platform/ext` directory will be loaded once by the GSC-wide classloader and not separately by each Processing Unit instance (this classloader is called the Common Classloader, see the [Class Loaders](#classloaders) section below).
 
 This means they are shared between Processing Units on the same JVM and thereby offer no isolation. On the other hand this option consumes less PermGen memory (one instance per JVM).
 
@@ -125,6 +125,8 @@ One way to package such processing unit is to use the standard processing unit p
 GigaSpaces also provides a simpler option via its built-in data-only processing unit templates (located under `<GigaSpaces Root>/deploy/templates/datagrid`. Using these templates you can deploy and run data only processing unit without creating a dedicated jar for them.
 
 For more information please refer to [Deploying and running the processing unit](./deploying-and-running-the-processing-unit.html)
+
+{%anchor classloaders %}
 
 # Class Loaders
 

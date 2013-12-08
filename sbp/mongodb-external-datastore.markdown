@@ -20,7 +20,7 @@ weight: 1000
 {% endtip %}
 
 # Overview
-One of the challenges in using an in-memory data grid is that it's an ideal representation of data that's often held in a non-relational database. GigaSpaces XAP has a [write-behind persistence mechanism]({%latestjavaurl%}/external-data-source-api.html) built-in that's designed for relational databases (so when you write a data item into the data grid, it gets replicated to the backend database automatically), but you might instead want to replicate to a different data storage mechanism altogether, such as [MongoDB](http://mongodb.org) or [Cassandra](http://cassandra.apache.org).
+One of the challenges in using an in-memory data grid is that it's an ideal representation of data that's often held in a non-relational database. GigaSpaces XAP has a [write-behind persistence mechanism]({%latestjavaurl%}/space-data-source-api.html) built-in that's designed for relational databases (so when you write a data item into the data grid, it gets replicated to the backend database automatically), but you might instead want to replicate to a different data storage mechanism altogether, such as [MongoDB](http://www.mongodb.org) or [Cassandra](http://cassandra.apache.org).
 
 The mirror-parent project is meant to collect various external datastore implementations. As of September 2011, implementations include Cassandra and MongoDB, with slight feature differences between them (which will be discussed); however, the implementations work for the general case and illustrate a pattern that can be customized as needed.
 

@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/">
-        <img src="/images/xapbrand.png" height="21" class="pull-left">
+        <img src="/images/xapbrand-small.png" style="height:21px;" class="pull-left">
       </a>
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -20,7 +20,7 @@
             <li><a href="http://wiki.gigaspaces.com/wiki/display/XAP96" target="_blank">9.6</a></li>
             <li><a href="http://wiki.gigaspaces.com/wiki/display/XAP95" target="_blank">9.5</a></li>
             <li><a href="http://wiki.gigaspaces.com/wiki/display/XAP91" target="_blank">9.1</a></li>
-            <li><a href="/release_notes97">Release Notes</a></li>
+            <li><a href="/release_notes">Release Notes</a></li>
             <li><a href="/sbp">Solutions &amp; Best Practices</a></li>
           </ul>         
         </li>             
@@ -31,7 +31,7 @@
             <li><a href="http://wiki.gigaspaces.com/wiki/display/XAP96NET" target="_blank">9.6</a></li>
             <li><a href="http://wiki.gigaspaces.com/wiki/display/XAP95NET" target="_blank">9.5</a></li>
             <li><a href="http://wiki.gigaspaces.com/wiki/display/XAP91NET" target="_blank">9.1</a></li>
-            <li><a href="/release_notes97">Release Notes</a></li>
+            <li><a href="/release_notes">Release Notes</a></li>
             <li><a href="/sbp">Solutions &amp; Best Practices</a></li>
           </ul>         
         </li>
@@ -74,6 +74,7 @@
 <script>
 $('[target=_blank]').append(" <i class=\"icon-external-link\" style=\"font-size:10px\"></i>"); 
 
+/*
 $("#q").typeahead({
   name: "Documentation Pages",
   prefetch: "/sitemap.json",
@@ -86,6 +87,35 @@ $("#q").typeahead({
 $("#q").bind("typeahead:selected", function(obj, datum, name) {
   location.href = datum.url; 
 }); 
+*/
+
+var customRenderFunction = function(document_type, item) {
+  var title = item["highlight"]["title"]; 
+  if (!title) {
+    title = item["title"]
+  }
+  var out = "<p class='title'>" + title + "</p>";
+  if (item["highlight"]["sections"]) {
+    return out.concat("<p class='sections'>" + item["highlight"]["sections"] + "</p>");
+  }
+  return out; 
+}
+
+$("#q").swiftype({
+  renderFunction: customRenderFunction,
+  engineKey: "vskywTXhmRpTsNEQ9nux"
+});
+
+// set up search
+/*
+$("#q").swiftypeSearch({
+  engineKey: "vskywTXhmRpTsNEQ9nux",
+  fetchFields: {'page': {'title^5', 'sections'}},
+  resultContainingElement: "content", 
+  perPage: 10, 
+});
+*/
+
 
 </script>
 

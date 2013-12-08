@@ -15,7 +15,7 @@ weight: 100
 
 This page explains how you can use GigaSpaces eXtreme Application Platform (XAP) to:
 
-- **Get a free 2nd-level distributed cache** for your [Hibernate](http://www.hibernate.org/hibernate)-based database integration
+- **Get a free 2nd-level distributed cache** for your [Hibernate](http://www.hibernate.org)-based database integration
 - **Scale up your database using the existing ORM** by adding a GigaSpaces Data Grid with back-end Hibernate integration
 
 GigaSpaces as Hibernate 2nd level cache provides:
@@ -90,7 +90,7 @@ This section provides instructions on switching your existing Hibernate local ca
 **To switch your Hibernate cache provider to GigaSpaces and use GigaSpaces distributed caching:**
 
 1. Download the GigaSpaces {% refer %} [Download Page](http://www.gigaspaces.com/xap-download) {% endrefer %}
-2. Install GigaSpaces. If you need help, refer to the [installation instructions](./installing-gigaspaces.html).
+2. Install GigaSpaces. If you need help, refer to the [installation instructions](./installation.html).
 3. This step is different if you are managing your Hibernate configuration using Spring (refer to the Spring documentation, ORM Data Access, section 12.2.2), or directly using `hibernate.properties` or `hibernate.cfg.xml`. Select the relevant tab below.
 
 {% c %}
@@ -400,5 +400,5 @@ GigaSpaces Hibernate 2nd Level Cache controlled via the following system propert
 |Property|Description|Default|Mandatory?|
 |:-------|:----------|:------|:---------|
 |gigaspace.hibernate.cache.url|  [Space URL](./space-url.html) String. This could be remote (clustered space) with/without a local cache/view URL or embedded space URL. Example:  `jini://\*/\*/mySpace`|  | YES |
-|gigaspace.hibernate.cache.timeToLive| Time in ms for the cached Hibernate object to live within the space. When you would like to evict Hibernate objects form the space based on a specific time duration, you should set this value.| [Long.MAX_VALUE](http://java.sun.com/j2se/1.4.2/docs/api/java/lang/Long.html#MAX_VALUE) | NO |
+|gigaspace.hibernate.cache.timeToLive| Time in ms for the cached Hibernate object to live within the space. When you would like to evict Hibernate objects form the space based on a specific time duration, you should set this value.| Long.MAX_VALUE | NO |
 |gigaspace.hibernate.cache.waitForResponse| Time in ms to wait for a matching object to be written into the space when reading object from the space. When having transactional hibernate configuration you might want to increase this value to allow GigaSpaces to wait for locked objects under a transaction to be committed before rejecting the read operation. A value of 60000 (60 second) might be relevant in such cases.| 0 | NO |

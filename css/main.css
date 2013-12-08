@@ -1,6 +1,12 @@
 * { margin: 0;}
 html,body{ height:100%; padding-top:0;}
 
+img {
+  display:block;
+  max-width:100%;
+  height:auto
+}
+
 /* Wrapper for page content to push down footer */
 #wrapper {
   min-height: 100%;
@@ -103,6 +109,11 @@ ul li.search-result{
   .sb-fixed {
     position: fixed;
   } 
+}
+
+li.search-result em {
+  font-style: normal;
+  background-color: #FFFF00;
 }
 
 #toc {

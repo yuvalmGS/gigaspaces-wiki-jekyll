@@ -25,8 +25,8 @@ GigaSpaces is 100% pure Java, and therefore can run on any UNIX or Windows machi
 - The `JAVA_HOME` environment variable points to the correct JDK (not JRE) directory before running GigaSpaces. For example, `D:\Java\jdk1.6.0_39`.
 - The `JAVA_HOME` environment variable should be added to the beginning of the `Path` environment variable. For example, `%JAVA_HOME%\bin;SystemRoot%\system32;%SystemRoot%;%SystemRoot%`
 - Optional: Your network and machines running GigaSpaces are configured to have multicast enabled. See the [Multicast Configuration](./how-to-configure-multicast.html) section for details on how to enable multicast.
-- You have reviewed the **[Supported Platforms](./supported-platforms.html)** section.
 - Set the `NIC_ADDR` environment variable to have the machine IP.
+- You have reviewed the **Supported Platforms in the release notes**.
 
 # Installation
 

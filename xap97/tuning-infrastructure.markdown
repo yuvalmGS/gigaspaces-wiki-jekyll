@@ -73,7 +73,10 @@ Windows 2003 has no parameter dealing directly with the number of **file handles
 To increase it run regedit - HKEY_LOCAL_MACHINE->SYSTEM->CurrentControlSet->Control->Session Manager->Subsystems:
 in the key "Windows" find "SharedSection=1024,3072,512", where 512KB is the size of heap shared section for the processes running in the background. The value should be increased, the recommendation is to increase it initially to 1024KB, max value 3072. **Reboot is necessary** to enable the new setting.
 
+{%comment%}
+Roffler
 {% infosign %} See also - [File Descriptors - changing the value for Unix and Windows](http://www-01.ibm.com/support/docview.wss?rs=769&context=SSXLSW&dc=DB520&dc=DB560&uid=swg21138122&loc=en_US&cs=UTF-8&lang=en&rss=ct769tivoli)
+{%endcomment%}
 
 {% infosign %} [One of reports in Sun bug database](http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4189011) describes the fixed bug (fix done in JVM 1.5 RC1) which mention file handles limit 2035 per jvm - the case has the test java code attached. It could be used to check the influence of the registry reconfiguration.
 

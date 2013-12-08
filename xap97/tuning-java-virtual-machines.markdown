@@ -67,7 +67,7 @@ For more details, see [Moving into Production Checklist JVM Tuning](/sbp/moving-
 
 ## Remote GC
 
-The [sun.rmi.dgc.client.gcInterval](http://java.sun.com/j2se/1.4.2/docs/guide/rmi/sunrmiproperties.html) and [sun.rmi.dgc.server.gcInterval](http://java.sun.com/j2se/1.4.2/docs/guide/rmi/sunrmiproperties.html) properties are set by default to 60000 milliseconds (60 seconds).
+The [sun rmi dgc gcInterval](http://docs.oracle.com/javase/7/docs/technotes/guides/rmi/sunrmiproperties.html)  properties are set by default to 60000 milliseconds (60 seconds).
 
 In some cases this might cause the JVM process to slow down every 60 seconds. To reduce the performance impact of redundant GC cycles, increase the interval to be an hour (3600000 milliseconds) both for the space JVM and the client JVM.
 
@@ -82,7 +82,7 @@ When starting the space in embedded mode or running it in remote mode using the 
 
 Softly reachable objects will remain alive for some amount of time after the last time they were referenced. The default value is one second (1000) of lifetime per free megabyte in the heap. This value can be adjusted using the `-XX:SoftRefLRUPolicyMSPerMB` flag, which accepts integer values representing milliseconds per MB of free memory.
 
-If the application using large amount of [Soft references](http://download.oracle.com/javase/1.4.2/docs/api/java/lang/ref/SoftReference.html) you may want to tune the `-XX:SoftRefLRUPolicyMSPerMB` to have a smaller value than the default.
+If the application using large amount of [Soft references](http://docs.oracle.com/javase/7/docs/api/java/lang/ref/SoftReference.html) you may want to tune the `-XX:SoftRefLRUPolicyMSPerMB` to have a smaller value than the default.
 
 # UseBiasedLocking JVM Option
 

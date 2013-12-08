@@ -60,10 +60,10 @@ The master-slave topology configuration is simply implemented through delegators
 	xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/8.0/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
-       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/8.0/core/gateway/openspaces-gateway.xsd
+       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{%currentversion%}/core/gateway/openspaces-gateway.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/remoting/openspaces-remoting.xsd">
 	<context:annotation-config></context:annotation-config>
 	<tx:annotation-driven transaction-manager="transactionManager" />
@@ -100,7 +100,7 @@ The master-slave topology configuration is simply implemented through delegators
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/8.0/core/gateway/openspaces-gateway.xsd">
+       http://www.openspaces.org/schema/{%currentversion%}/core/gateway/openspaces-gateway.xsd">
 
     <os-gateway:delegator id="delegator" local-gateway-name="US" gateway-lookups="gatewayLookups">
         <os-gateway:delegation target="GB" />
@@ -131,10 +131,10 @@ The master-slave topology configuration is simply implemented through delegators
 	xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/8.0/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
-       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/8.0/core/gateway/openspaces-gateway.xsd
+       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{%currentversion%}/core/gateway/openspaces-gateway.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/remoting/openspaces-remoting.xsd">
 	<context:annotation-config></context:annotation-config>
 	<tx:annotation-driven transaction-manager="transactionManager" />
@@ -164,7 +164,7 @@ The master-slave topology configuration is simply implemented through delegators
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/8.0/core/gateway/openspaces-gateway.xsd">
+       http://www.openspaces.org/schema/{%currentversion%}/core/gateway/openspaces-gateway.xsd">
 
     <os-gateway:sink id="sink" local-gateway-name="GB" gateway-lookups="gatewayLookups"
                      local-space-url="jini://*/*/wanSpaceGB">
@@ -196,10 +196,10 @@ The master-slave topology configuration is simply implemented through delegators
 	xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/8.0/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
-       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/8.0/core/gateway/openspaces-gateway.xsd
+       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{%currentversion%}/core/gateway/openspaces-gateway.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/remoting/openspaces-remoting.xsd">
 	<context:annotation-config></context:annotation-config>
 	<tx:annotation-driven transaction-manager="transactionManager" />
@@ -229,7 +229,7 @@ The master-slave topology configuration is simply implemented through delegators
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/8.0/core/gateway/openspaces-gateway.xsd">
+       http://www.openspaces.org/schema/{%currentversion%}/core/gateway/openspaces-gateway.xsd">
 
     <os-gateway:sink id="sink" local-gateway-name="HK" gateway-lookups="gatewayLookups"
                      local-space-url="jini://*/*/wanSpaceHK">

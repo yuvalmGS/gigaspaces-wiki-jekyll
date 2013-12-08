@@ -359,8 +359,12 @@ for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
 
 {% endtabcontent %}
 {% tabcontent Admin API and XML %}
+
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
+
+{%comment%}
 A full working example can be found in [org.openspaces.admin.application.deploy.ApplicationDeployCommand](https://github.com/OpenSpaces/OpenSpaces/blob/master/src/main/src/org/openspaces/admin/application/deploy/ApplicationDeployCommand.java )
+{%endcomment%}
 
 {% highlight java %}
 Admin admin = new AdminFactory().addGroup("myGroup").create();
@@ -476,7 +480,10 @@ for (ProcessingUnit pu : dataApp.getProcessingUnits()) {
 {% endtabcontent %}
 {% tabcontent Admin API with XML %}
 Since XAP v9.0.1 the processing unit dependencies can be described using an XML file.
+
+{%comment%}
 A full working example can be found in [org.openspaces.admin.application.deploy.ApplicationDeployCommand](https://github.com/OpenSpaces/OpenSpaces/blob/master/src/main/src/org/openspaces/admin/application/deploy/ApplicationDeployCommand.java )
+{%endcomment%}
 
 {% highlight java %}
 Admin admin = new AdminFactory().addGroup("myGroup").create();

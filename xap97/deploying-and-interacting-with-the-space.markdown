@@ -205,7 +205,7 @@ You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to
 
 ## Creating and Deploying a Processing Unit onto the Service Grid Infrastructure
 
-By using [processing units](./the-processing-unit-structure-and-configuration.html), you can deploy full-blown applications onto the service grid, and leverage on the [Space's messaging](./messaging-and-events.html) and code execution capabilities, such as [remoting](./space-based-remoting.html) and [task execution](./task-execution-over-the-space.html). This allows you to execute the business logic close to the Space instance for the best possible performance.
+By using [processing units](./the-processing-unit-structure-and-configuration.html), you can deploy full-blown applications onto the service grid, and leverage on the [Space's messaging](./messaging-support.html) and code execution capabilities, such as [remoting](./space-based-remoting.html) and [task execution](./task-execution-over-the-space.html). This allows you to execute the business logic close to the Space instance for the best possible performance.
 
 A processing unit can define an embedded Space in the processing unit's [`pu.xml`](./configuring-processing-unit-elements.html) file. The `pu.xml` file is, in effect a [Spring](http://www.springframework.org) XML configuration file, and you simply define the Space using GigaSpaces namespace extensions, or using plain Spring format. Here is an example:
 
@@ -318,7 +318,7 @@ However, it is recommended that you familiarize yourself with the `GigaSpace` in
 The `GigaSpace` interface supports a number of Space operations:
 
 - **Read**: Allows you to read objects from the Space. The criteria can be specified via one of the following:
-    - _Template matching_ (JavaSpaces term for the equivalent of Hibernate's [Example API](http://docs.jboss.org/hibernate/stable/core/reference/en/html/querycriteria.html#querycriteria-examples).
+    - _Template matching_ (JavaSpaces term for the equivalent of Hibernate's [Example API](http://docs.jboss.org/hibernate/orm/3.3/reference/en/html/querycriteria.html#example-queries).
     - SQL-like queries.
     - Based on a certain object's ID (every object in the Space has a unique identifier which distinguishes it from other objects).
 

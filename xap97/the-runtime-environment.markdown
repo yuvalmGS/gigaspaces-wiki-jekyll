@@ -24,7 +24,7 @@ Once packaged, a processing unit is deployed onto the GigaSpaces runtime environ
 
 The service grid is composed of a number of components:
 
-![gs_runtime.jpg.jpg](/attachment_files/gs_runtime.jpg.jpg)
+![gs_runtime.jpg](/attachment_files/gs_runtime.jpg)
 
 
 

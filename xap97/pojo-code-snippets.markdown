@@ -6,7 +6,7 @@ categories: XAP97
 
 # Code Snippets
 
-{% lampon %} Space operations with POJO objects can be conducted using the [org.openspaces.core.GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) interface or the [com.j_spaces.core.IJSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/IJSpace.html) interface.
+{% lampon %} Space operations with POJO objects can be conducted using the [org.openspaces.core.GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) interface or the [com.j_spaces.core.IJSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/IJSpace.html) interface.
 
 {% lampon %} **The code snippets below use the** [org.openspaces.core.GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) interface that is the recommended interface.
 
@@ -326,7 +326,7 @@ The `GigaSpace.writeMultiple` returns an array of objects which correspond to th
 Since the `GigaSpace.writeMultiple` in
 [WriteModifiers.UPDATE_OR_WRITE](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/WriteModifiers.html)
 mode does not support timeout based updates, there is no way to identify if an updated object is already locked under a transaction - i.e. the
-[UpdateOperationTimeoutException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/UpdateOperationTimeoutException) **is not returned** as part of the returned array elements.
+[UpdateOperationTimeoutException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/UpdateOperationTimeoutException.html) **is not returned** as part of the returned array elements.
 With a transactional system, it is recommended to perform batch updates using the [WriteModifiers.UPDATE_ONLY](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/client/WriteModifiers.html)
 modifier.
 {% endtip %}

@@ -179,7 +179,7 @@ jini://*/*/mySpace
 
 ## Running Embedded Space
 
-You may run the replicated or partitioned space from within your application. In this case, the space instance will be running in the same memory address as the application - i.e. [embedded space](./terminology---data-grid-topologies.html). See the following example for running three space instances in partitioned embedded mode.
+You may run the replicated or partitioned space from within your application. In this case, the space instance will be running in the same memory address as the application - i.e. [embedded space](/product_overview/terminology---data-grid-topologies.html). See the following example for running three space instances in partitioned embedded mode.
 Each `CacheFinder.find()` or `SpaceFinder.find()` call should be done from a different application process.
 
 {% highlight java %}
