@@ -6,7 +6,6 @@ parent: data-access-patterns.html
 weight: 900
 ---
 
-{% compositionsetup %}
 
 {% summary %}Lowering the Space Object Footprint - Compact Serialization Pattern{% endsummary %}
 

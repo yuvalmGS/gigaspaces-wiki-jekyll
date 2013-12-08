@@ -2,7 +2,7 @@
 layout: post
 title:  Observable WAN
 categories: SBP
-parent: solutions.html
+parent: wan-based-deployment.html
 weight: 400
 ---
 

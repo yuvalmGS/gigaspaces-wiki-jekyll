@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  WAN Replication Gateway
-parent: production.html
+parent: wan-based-deployment.html
 categories: SBP
-weight: 1800
+weight: 100
 ---
 
 {% compositionsetup %}

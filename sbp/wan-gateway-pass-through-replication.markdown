@@ -2,8 +2,8 @@
 layout: post
 title:  WAN Gateway Pass Through Replication
 categories: SBP
-parent: production.html
-weight: 1600
+parent: wan-based-deployment.html
+weight: 300
 ---
 
 {% compositionsetup %}
