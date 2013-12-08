@@ -173,7 +173,30 @@ var query = from p in spaceProxy.Query<Person>()
 
 # Projection 
 
-{%exclamation%} Under Construction 
+Projection is useful when only a subset of an entry's properties are required - instead of returning the entire entry, the query can declare which properties should be returned. This information is passed down all the way to the server which executes the query and yields the results, so that only the relevant properties are transmitted back, which reduces network traffic and improves performance.
+
+For example, to query for entries whose *Name* ends with *"Smith"* and return only their *Name*: 
+{% highlight csharp linenos %}
+var query = from p in spaceProxy.Query<Person>() 
+            where p.Name.EndsWith("Smith") 
+            select p.Name; 
+{% endhighlight %}
+
+To return both the *Name* and *HomeAddress*:
+{% highlight csharp linenos %}
+var query = from p in spaceProxy.Query<Person>() 
+            where p.Name.EndsWith("Smith") 
+            select new {p.Name, p.HomeAddress};
+{% endhighlight %}
+
+In this case the result will be an anonymous class with 2 properties. Since anonymous types are only useful within the scope of the method in which they're defined, you may prefer using `ExpressionQuery` with projections instead:
+
+{% highlight csharp linenos %}
+var query = new ExpressionQuery<Person>(p => p.Name.EndsWith("Smith"));
+query.Projections = new List<String> {"Id", "HomeAddress"};
+{% endhighlight %}
+
+In this case the result is the original type (`Person`), but only the projected properties are set and the rest of the properties are nulls (or default values). 
 
 # Batch results 
 
