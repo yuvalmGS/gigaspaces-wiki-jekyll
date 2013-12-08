@@ -4,4 +4,4 @@ title:  Frequently Ask Questions
 categories: FAQ
 ---
 
-{% children %}
+Here you will find answers to frequently asked questions about Open Spaces and GigaSpaces XAP platform.

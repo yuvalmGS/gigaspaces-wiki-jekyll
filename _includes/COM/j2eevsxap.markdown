@@ -2,6 +2,7 @@
 
 Here is a simple mapping between the J2EE common components and equivalent XAP components:
 
+{: .table .table-bordered}
 |Component|J2EE|XAP|
 |:--------|:---|:--|
 |Persistency|JPA|[Hibernate]({%latestjavaurl%}/hibernate-space-persistency.html), [JPA]({%latestjavaurl%}/jpa-api.html)|
@@ -11,7 +12,7 @@ Here is a simple mapping between the J2EE common components and equivalent XAP c
 |Transaction Management|JTA|[Spring Transaction via Jini Transaction Manager]({%latestjavaurl%}/transaction-management.html)|
 |Data Access|JDBC , Session Bean (Stateless or Stateful), Entity Bean|[JDBC]({%latestjavaurl%}/jdbc-driver.html), [Space]({%latestjavaurl%}/the-gigaspace-interface.html), [JPA]({%latestjavaurl%}/jpa-api.html) , Session Bean(Stateless or Stateful) {% star %}, Entity Bean {% star %}|
 |Remoting|EJB, IIOP, RMI|[Spring remoting over LRMI]({%latestjavaurl%}/executor-based-remoting.html) , EJB {% star %}|
-|Web|Servlet, JSP |[Servlet, JSP (via Jetty)| [Web PU](%currentjavaurl%}/web-processing-unit-container.html)|
+|Web|Servlet, JSP | [Servlet, JSP (via Jetty)](%latestjavaurl%}/web-processing-unit-container.html)|
 |Packaging and deployment|EAR , war|[jar]({%latestjavaurl%}/the-processing-unit-structure-and-configuration.html), [war]({%latestjavaurl%}/web-processing-unit-container.html) , EAR {% star %}|
 |Contexts and Dependency Injection|JSR 299|Spring IOC|
 |System Management|JMX|[JMX]({%latestjavaurl%}/snmp-connectivity-via-alert-logging-gateway.html) , [SNMP]({%latestjavaurl%}/snmp-connectivity-via-alert-logging-gateway.html), [Native Admin API]({%latestjavaurl%}/administration-and-monitoring-api.html)|
@@ -21,6 +22,7 @@ Here is a simple mapping between the J2EE common components and equivalent XAP c
 
 ## Messaging Concepts & Patterns
 
+{: .table .table-bordered}
 |Functionality|J2EE|XAP|
 |:------------|:---|:--|
 |Queue|JMS Queue|[Polling Container]({%latestjavaurl%}/polling-container.html)|
