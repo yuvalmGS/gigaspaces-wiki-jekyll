@@ -38,6 +38,8 @@ Where the `gigaspaces-cpp-9.X.X-ga-linux-amd64-gcc-4.1.2.tar.gz` should be locat
 ![CppTree.PNG](/attachment_files/CppTree.PNG)
 {% endindent %}
 
+{%anchor setting-the-environment %}
+
 # Setting the Environment
 
 There are several environment settings that are necessary to build and run the examples that come with this package. This section lists these settings. Choose the tab below that matches your platform.

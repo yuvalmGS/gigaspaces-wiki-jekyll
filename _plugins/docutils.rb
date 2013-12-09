@@ -24,8 +24,10 @@ module DocUtils
         "Tutorials"
       elsif sectionPath == "howto"
         "How To"
-      elsif sectionPath == "release_notes97"
+      elsif sectionPath == "release_notes"
         "Release Notes"
+      elsif sectionPath == "faq"
+        "FAQ"
       else
         ""
       end

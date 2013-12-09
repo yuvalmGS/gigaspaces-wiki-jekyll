@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  OpenSpaces FAQ
-categories: XAP97
-weight: 200
-parent: appendix.html
+categories: FAQ
+weight: 100
+parent: none
 ---
 
 {% compositionsetup %}
