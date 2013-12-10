@@ -16,12 +16,12 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |[Even Data Distribution](./even-data-distribution.html)| Beginner | Technique to ensure even data load-balancing with partitioned IMDG.|
 |[Space Object Modeling](./space-object-modeling.html)| Beginner | Migrating Relational Model into Object model.|
 |[Oracle Delta Server](./oracle-delta-server.html)| Beginner |This best practice presents the Oracle Delta Server allowing the data grid to receive updates from the database conducted by applications that are not using the data grid as their system of record (Non-Aware Data-Grid Clients) |
-|[DB2 Delta Server](./db2-delta-server.html)| Beginner |This best practice presents the DB2 Delta Server allowing the data grid to receive updates from the database conducted by applications that are not using the data grid as their system of record (Non-Aware Data-Grid Clients) |
 |[Excel that Scales Solution](./excel-that-scales-solution.html)| Beginner | Leveraging GigaSpaces .Net API to scale Excel applications.|
 |[Global ID Generator](./global-id-generator.html)| Beginner | Replacing Database sequencing with lightweight In-Memory ID Generator.|
 |[Web Service PU](./web-service-pu.html)|Beginner | Web Service Processing Unit. Using the CXF Framework.|
 |[ODBC Driver](./odbc-driver.html)| Beginner | Accessing GigaSpaces Data Grid via 3rd party ODBC Driver.|
 |[IMDG with Large Backend Database Support](./imdg-with-large-backend-database-support.html)| Advanced | Leveraging IMDG running in LRU mode with large backend Database.|
+|[DB2 Delta Server](./db2-delta-server.html)| Advanced |This best practice presents the DB2 Delta Server allowing the data grid to receive updates from the database conducted by applications that are not using the data grid as their system of record (Non-Aware Data-Grid Clients) |
 |[Dynamic Polling Container Templates using TriggerOperationHandler](./dynamic-polling-container-templates-using-triggeroperationhandler.html)| Advanced | Polling Containers using TriggerOperationHandler |
 |[Custom Matching](./custom-matching.html)| Advanced | Implementing complex customized queries for pattern matching.|
 |[Custom Eviction](./custom-eviction.html)| Advanced | Implementing used defined data eviction when using large backend Database.|
