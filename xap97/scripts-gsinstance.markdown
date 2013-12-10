@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Scripts gsInstance
+title:  gsInstance
 categories: XAP97
 parent: advanced-scripts.html
 weight: 100
