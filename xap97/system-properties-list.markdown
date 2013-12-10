@@ -6,8 +6,6 @@ parent: configuring-the-system.html
 weight: 500
 ---
 
-# System Properties List
-
 {% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}
 
 {: .table .table-bordered}
