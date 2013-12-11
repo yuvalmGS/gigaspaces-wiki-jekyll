@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Java Tutorials
+title:  XAP Tutorials
 categories: TUTORIALS
 parent: none
 weight: 300

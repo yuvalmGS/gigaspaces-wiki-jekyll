@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  Your First Data Grid Application
+title:  XAP in 5 Minutes
 categories: TUTORIALS
 weight: 200
 parent: xap-tutorials.html
 ---
 
 
-{% summary page %}This page explains how to start and use a XAP [Data Grid]({%latestjavaurl%}/the-in-memory-data-grid.html) from within another Java process, catering to quick and self-sufficient embedding of XAP within another, external application.{% endsummary %}
+{% summary page %}This tutorial explains how to start and use a XAP [Data Grid]({%latestjavaurl%}/the-in-memory-data-grid.html) from within another Java process, catering to quick and self-sufficient embedding of XAP within another, external application. The complete XAP tutorial can be found [here](./xap-tutorials.html){% endsummary %}
 
 GigaSpaces XAP can be used as a scalable application platforom on which you can host your Java application, similar to JEE and web containers. However, GigaSpaces XAP's in memory data grid can also be embedded within another Java application which is not hosted within the XAP platform. This section describes the steps required to start and access the XAP data grid from within external Java processes.
 
@@ -42,13 +42,17 @@ In a UNIX environment, you might install it into `/usr/local/`, which would resu
 A GigaSpaces node is best facilitated through the use of a service called the "[Grid Service Agent]({%latestjavaurl%}/service-grid.html#gsa)", or GSA.
 The simplest way to start a node with GigaSpaces is to invoke the GSA from the GigaSpaces bin directory, preferably in its own command shell (although you can easily start a background process with `start` or `nohup` if desired):
 
+{%panel title=Unix %}
 {% highlight java %}
 .\gs-agent.bat gsa.global.esm 1 gsa.gsc 2 gsa.global.lus 2 gsa.global.gsm 2
 {% endhighlight %}
+{%endpanel%}
 
+{%panel title=Windows %}
 {% highlight java %}
 ./gs-agent.sh gsa.global.esm 1 gsa.gsc 2 gsa.global.lus 2 gsa.global.gsm 2
 {% endhighlight %}
+{%endpanel%}
 
 ## Connecting to a Data Grid
 
@@ -171,7 +175,9 @@ That's it, you're good to go!
 
 # What's Next?
 
-Read more about the GigaSpaces runtime environment, how to model your data in a clustered environment, and how to levarage the power capabilties of the Space.
+[The Full XAP Java Tutorial](./xap-tutorials.html) will introduce you to the basic concepts and functionalities of XAP. Many ready to run examples are provided.
+
+Read more about the GigaSpaces runtime environment, how to model your data in a clustered environment, and how to leverage the power capabilities of the Space.
 
 - [Elastic Processing Unit]({%latestjavaurl%}/elastic-processing-unit.html)
 - [Modeling and Accessing Your Data]({%latestjavaurl%}/modeling-and-accessing-your-data.html)

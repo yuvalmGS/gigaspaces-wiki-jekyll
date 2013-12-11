@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  XAP Tutorial
+title:  Full XAP Java Tutorial
 categories: TUTORIALS
 weight: 300
 parent: xap-tutorials.html
