@@ -167,15 +167,18 @@ For more details about different configurations see [Space Persistency](./space-
 {: .table .table-bordered}
 |Property|Description|
 |:-------|:----------|
-|hectorClient|A configured [HectorCassandraClient](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/persistency/cassandra/HectorCassandraClient.html) bean. see [Hector Cassandra Client](./hector-cassandra-client.html).|
-|fixedPropertyValueSerializer|see [Property Value Serializer](./cassandra-space-synchronization-endpoint.html#Property Value Serializer).|
-|dynamicPropertyValueSerializer|see [Property Value Serializer](./cassandra-space-synchronization-endpoint.html#Property Value Serializer).|
-|flattenedPropertiesFilter| see [Flattened Properties Filter](./cassandra-space-synchronization-endpoint.html#Flattened Properties Filter).|
-|columnFamilyNameConverter| see [Column Family Name Converter](./cassandra-space-synchronization-endpoint.html#Column Family Name Converter).|
+|hectorClient|A configured [HectorCassandraClient](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/persistency/cassandra/HectorCassandraClient.html) bean. see [Hector Cassandra Client](./hector-cassandra-client.html).|
+|fixedPropertyValueSerializer|see [Property Value Serializer]( #Property-Value-Serializer).|
+|dynamicPropertyValueSerializer|see [Property Value Serializer](#Property-Value-Serializer).|
+|flattenedPropertiesFilter| see [Flattened Properties Filter](#Flattened-Properties-Filter).|
+|columnFamilyNameConverter| see [Column Family Name Converter](#Column-Family-Name-Converter).|
+
+{%anchor Property-Value-Serializer %}
 
 ### Property Value Serializer
 
 By default when serializing object/document properties to column values, the following serialization logic is applied:
+
 
 For fixed properties:
 
@@ -202,6 +205,8 @@ The behavior of overriding the serialization logic is different for fixed proper
 {% note %}
 Overriding the property value serializers in the `Cassandra Space Synchronization Endpoint` must be followed by overriding the same serializers in the `Cassandra Space Data Source`. Failure to do so will prevent the `Cassandra Space Data Source` from properly deserializing values read from Cassandra.
 {% endnote %}
+
+{%anchor Flattened-Properties-Filter %}
 
 ### Flattened Properties Filter
 
@@ -286,6 +291,8 @@ Class<?> getType();
 boolean isDynamic();
 int getCurrentNestingLevel();
 {% endhighlight %}
+
+{%anchor Column-Family-Name-Converter %}
 
 ### Column Family Name Converter
 

@@ -125,6 +125,7 @@ Total and average Space operation metrics are available for selection as well.
 ![web_pu_metrics.jpg](/attachment_files/web_pu_metrics.jpg)
 
 #### Mirror metrics:
+
 ###### OS metrics
 - Memory
 - CPU
