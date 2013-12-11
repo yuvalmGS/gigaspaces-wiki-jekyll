@@ -91,12 +91,58 @@ $("#q").bind("typeahead:selected", function(obj, datum, name) {
 }); 
 */
 
+function endsWith(str, suffix) {
+  return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+function startsWith(str, prefix) {
+  return str.indexOf(prefix) == 0;
+}
+
+function getCurrentSection(url) {
+  if (url) {
+    var urlSections = url.split("/"); 
+    if (urlSections.length > 3 && urlSections[3]) {      
+      var sectionPath = urlSections[3]; 
+      if (startsWith(sectionPath, "xap")) {
+        var isDotNet = endsWith(sectionPath, "net");
+        sectionPath = sectionPath.replace("xap","")
+        sectionPath = sectionPath.replace("net","")
+        var version = sectionPath.slice(0, -1) +"."+sectionPath.slice(-1);
+        if (isDotNet)
+          return "XAP.NET " + version;
+        else 
+          return "XAP " + version; 
+      } 
+      else if (sectionPath == "sbp") 
+        return "Solutions &amp; Best Practices"; 
+      else if (sectionPath == "api_documentation")
+        return "API Documentation";
+      else if (sectionPath == "early_access")
+        return "Early Access";
+      else if (sectionPath == "product_overview")
+        return "Product Overview";
+      else if (sectionPath == "tutorials")
+        return "Tutorials"; 
+      else if (sectionPath == "howto")
+        return "How To";
+      else if (sectionPath == "release_notes")
+        return "Release Notes";
+      else if (sectionPath == "faq")
+        return "FAQ"
+    }
+    return ""; 
+  }
+  return ""; 
+}
+
 var customRenderFunction = function(document_type, item) {
   var title = item["highlight"]["title"]; 
+  var currentSection = getCurrentSection(item["url"]);
   if (!title) {
     title = item["title"]
   }
-  var out = "<p class='title'>" + title + "</p>";
+  var out = "<p class='title'>[" + currentSection + " ] " + title + "</p>";
   if (item["highlight"]["sections"]) {
     return out.concat("<p class='sections'>" + item["highlight"]["sections"] + "</p>");
   }
@@ -107,6 +153,8 @@ $("#q").swiftype({
   renderFunction: customRenderFunction,
   engineKey: "vskywTXhmRpTsNEQ9nux"
 });
+
+
 
 // set up search
 /*
