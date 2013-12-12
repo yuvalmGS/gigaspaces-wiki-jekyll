@@ -142,7 +142,7 @@ var customRenderFunction = function(document_type, item) {
   if (!title) {
     title = item["title"]
   }
-  var out = "<p class='title'>[" + currentSection + " ] " + title + "</p>";
+  var out = "<p class='title'>[" + currentSection + "] " + title + "</p>";
   if (item["highlight"]["sections"]) {
     return out.concat("<p class='sections'>" + item["highlight"]["sections"] + "</p>");
   }
