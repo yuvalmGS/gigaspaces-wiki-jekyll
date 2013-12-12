@@ -6,7 +6,6 @@ parent: the-in-memory-data-grid.html
 weight: 200
 ---
 
-{% compositionsetup %}
 {% summary %}Overview of GigaSpaces in-memory data grid - how to create a data grid, connect to it, and interact with it.{% endsummary %}
 
 # Overview
@@ -205,7 +204,8 @@ You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to
 
 ## Creating and Deploying a Processing Unit onto the Service Grid Infrastructure
 
-By using [processing units](./the-processing-unit-structure-and-configuration.html), you can deploy full-blown applications onto the service grid, and leverage on the [Space's messaging](./messaging-support.html) and code execution capabilities, such as [remoting](./space-based-remoting.html) and [task execution](./task-execution-over-the-space.html). This allows you to execute the business logic close to the Space instance for the best possible performance.
+
+By using [processing units](./the-processing-unit-structure-and-configuration.html), you can deploy full-blown applications onto the service grid, and leverage on the Space [Event Processing](./event-processing.html) and code execution capabilities, such as [remoting](./space-based-remoting.html) and [task execution](./task-execution-over-the-space.html). This allows you to execute the business logic close to the Space instance for the best possible performance.
 
 A processing unit can define an embedded Space in the processing unit's [`pu.xml`](./configuring-processing-unit-elements.html) file. The `pu.xml` file is, in effect a [Spring](http://www.springframework.org) XML configuration file, and you simply define the Space using GigaSpaces namespace extensions, or using plain Spring format. Here is an example:
 
@@ -219,6 +219,17 @@ Note that the cluster schema and number of instances are defined inside the proc
 {% highlight xml %}
 <os-sla:sla cluster-schema="partitioned-sync2backup" number-of-instances="2" number-of-backups="1"/>
 {% endhighlight %}
+
+Synchronous replicated cluster should have the following:
+{%highlight xml%}
+ <os-sla:sla cluster-schema="sync_replicated" number-of-instances="2" />
+{%endhighlight%}
+
+
+A-Synchronous replicated cluster should have the following:
+{%highlight xml%}
+  <os-sla:sla cluster-schema="async_replicated" number-of-instances="2" />
+{%endhighlight%}
 
 Refer to [this page](./the-space-component.html) for more details on how to configure the Space component, and to [this page](./configuring-the-processing-unit-sla.html) for more details about the SLA definitions.
 Once packaged, the processing unit can be deployed onto the service grid using one of the deployment tools (UI, CLI, admin API).
@@ -235,10 +246,9 @@ When creating the Space instance in your own application, you have to provide th
 
 ## Creating the Space Programmatically
 
-The last option is to create the Space Programmatically from within a plain Java application. Note that this option has the same limitation as creating the Space in your standalone Spring application, namely you have to start each of the instances separately and provide the instance ID to each of the started Space instances. Here is an example of starting the first instance of a sync-replicated Space with 10 instances:
-
+The last option is to create the Space via the API from within a plain Java application. Note that this option has the same limitation as creating the Space in your standalone Spring application, namely you have to start each of the instances separately and provide the instance ID to each of the started Space instances. Here is an example of starting the first instance of a sync-replicated Space with 10 instances:
 {% highlight java %}
-ClusterInfo clusterInfo = new ClusterInfo("sync-replicated", 1, null, 10, null);
+ClusterInfo clusterInfo = new ClusterInfo("sync_replicated", 1, null, 10, null);
 IJSpace space = new UrlSpaceConfigurer("/./mySpace").clusterInfo(clusterInfo).space();
 {% endhighlight %}
 

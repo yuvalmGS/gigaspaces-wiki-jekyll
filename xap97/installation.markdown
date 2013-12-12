@@ -6,12 +6,14 @@ parent: administrators-guide.html
 weight: 100
 ---
 
-{% compositionsetup %}{% compositionsetup %}
+
 {% summary %}Requirements and how to install GigaSpaces with Windows, Linux or Unix.{% endsummary %}
 
 # Overview
 
 GigaSpaces XAP is 100% pure Java, and therefore can run on any UNIX or Windows machine that supports Java.
+
+{%anchor Prior-to-Installation%}
 
 # Prior to Installation
 

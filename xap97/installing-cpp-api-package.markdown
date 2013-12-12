@@ -19,7 +19,7 @@ The current supported platforms and compilers are:
 - Windows
     - 32/64bit -- VS 9.0/10.0 (Visual Studio 2008/2010)
 
-{% exclamation %} Prior to installation, see the **[GigaSpaces installation prerequisites](./installation.html#Prior to Installation)**.
+{% exclamation %} Prior to installation, see the **[GigaSpaces installation prerequisites](./installation.html#Prior-to-Installation)**.
 
 # Installation
 
