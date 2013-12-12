@@ -26,27 +26,17 @@ In addition, you can optionally configure a `PasswordEncoder` and a `SaltSource`
 
 # Using an in-memory DAO
 
-Spring Security comes with `InMemoryDaoImpl`, an implementation of `UserDetailsService` that draws its user information from its Spring configuration. This is perfect when just starting to integrate Spring Security. Here's an example of how you may configure an `InMemoryDaoImpl` in Spring configuration file:
+Spring Security comes with an implementation of UserDetailsService that draws its user information from its Spring configuration. This is perfect when just starting to integrate Spring Security. Here's a sample configuration:
 
-{% highlight java %}
-<bean id="daoUserDetailsService"
-      class="org.springframework.security.core.userdetails.memory.InMemoryDaoImpl">
- <property name="userMap">
-    <value>
-      Edward = koala, SpacePrivilege READ ClassFilter eg.cinema.Movie, SpacePrivilege READ ClassFilter eg.cinema.Seat,
-               SpacePrivilege WRITE ClassFilter eg.cinema.Seat
-      Arthur = goanna, SpacePrivilege READ ClassFilter eg.cinema.Movie, SpacePrivilege READ ClassFilter eg.cinema.Seat,
-               SpacePrivilege WRITE ClassFilter eg.cinema.Seat
-      Emily = kangaroo, GridPrivilege MANAGE_GRID, GridPrivilege MANAGE_PU, GridPrivilege PROVISION_PU,
-              SpacePrivilege READ PackageFilter eg.cinema
-    </value>
-  </property>
-</bean>
-
-- Simpler option is to use the user-service element from the Spring's security namespace.
+{% highlight xml %}
+<sec:user-service>
+  <sec:user name="Edward" password="koala" authorities="SpacePrivilege READ ClassFilter eg.cinema.Movie, SpacePrivilege READ ClassFilter eg.cinema.Seat, SpacePrivilege WRITE ClassFilter eg.cinema.Seat" />
+  <sec:user name="Davis" password="dingo" authorities="SpacePrivilege READ ClassFilter eg.cinema.Movie, SpacePrivilege READ ClassFilter eg.cinema.Seat, SpacePrivilege WRITE ClassFilter eg.cinema.Seat" />
+  <sec:user name="Thomas" password="wombat" authorities="SpacePrivilege READ ClassFilter eg.cinema.Movie, SpacePrivilege READ ClassFilter eg.cinema.Seat, SpacePrivilege WRITE ClassFilter eg.cinema.Seat, SpacePrivilege WRITE ClassFilter eg.cinema.Movie, SpacePrivilege TAKE ClassFilter eg.cinema.Movie" />
+  <sec:user name="Allen" password="kangaroo" authorities="GridPrivilege MANAGE_GRID, GridPrivilege MANAGE_PU, GridPrivilege PROVISION_PU, SpacePrivilege READ PackageFilter eg.cinema" />
+</sec:user-service>
 {% endhighlight %}
 
-The `userMap` property defines a set of usernames, passwords and privileges. On each line is a username, a password followed by a comma separated list of one or more authorities to be granted to the user.
 
 Consider Edward, a Box-Office Employee, which has privileges to list all movies and their available seats, and to reserve a seat. Edward is granted `READ` privileges for class `eg.cinema.Movie` and for class `eg.cinema.Seat`, and `WRITE` privileges to update a `eg.cinema.Seat` as reserved. Of course, this can get quite cumbersome for production use.
 
