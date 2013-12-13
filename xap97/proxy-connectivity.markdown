@@ -84,6 +84,7 @@ Example : To increase the lookup duration timeout to 5 minutes you should have t
 # Communication Disruptions
 
 When the space resides in the same process as the client (a.k.a. embedded space), communication disruptions are impossible since no network is involved. However, when the space resides in a different process, communication between the client and the space may be disrupted for various reasons (machine was restarted or disconnected, space was shut down, processing unit was relocated, etc.). In such cases the space proxy router initiates an *active server lookup* procedure, in which all the potential servers are sampled concurrently until an available active server is discovered. If the active server lookup procedure exceeds the predefined timeout and no active server was found, the operation will be terminated and an exception will be thrown. The active server lookup timeout can be configured using the space-config.proxy.router.active-server-lookup-timeout property.
+
 {% infosign %} **Single Space**: A single remote space is treated as a clustered space with a single member.
 
 {% plus %} **Optimizing Failure Detection**: When searching for an active server the default interval between samples is 100 milliseconds. If your system demands shorter failure detection, the sampling interval can be configured using the `space-config.proxy.router.active-server-lookup-sampling-interval` property (see [Configuration](#Configuration)). **Note**: This settings does not affect the failover duration (i.e. how long it takes for a backup space to become primary), it only affects how long it takes for a space proxy to discover the new primary space. For more information refer to [Failure Detection](./failure-detection.html).
@@ -110,7 +111,7 @@ When using [Client side caching](./client-side-caching.html), the connection man
 
 ## Unicast Lookup Service
 
-The space proxy router uses the [Lookup Service](./the-lookup-service.html) to locate data grid members. The lookup service uses either [multicast](./how-to-configure-multicast.html) or [unicast](./how-to-configure-unicast-discovery.html) discovery (default is multicast). When a unicast lookup service is restarted, the space proxy will automatically re-discover after a while. If you need to better understand that process and  fine-tune it, refer to [Configuring lookup discovery intervals](./how-to-configure-unicast-discovery.html#Configuring lookup discovery intervals).
+The space proxy router uses the [Lookup Service](./service-grid.html#lus) to locate data grid members. The lookup service uses either [multicast](./how-to-configure-multicast.html) or [unicast](./how-to-configure-unicast-discovery.html) discovery (default is multicast). When a unicast lookup service is restarted, the space proxy will automatically re-discover after a while. If you need to better understand that process and  fine-tune it, refer to [Configuring lookup discovery intervals](./how-to-configure-unicast-discovery.html#Configuring lookup discovery intervals).
 
 # Load balancing
 
@@ -133,6 +134,7 @@ This section is intended to summarize the changes in 9.0.1 for users upgrading f
 ## Reconnection Algorithm
 
 In general, the change can be summarized as follows: instead of "On failure, retry the operation up to 10 times with 2 seconds sleep between retries", we have "On failure, wait up to 20 seconds until an active space comes up, and sample all potential spaces each 100 milliseconds".
+
 
 When a client fails to execute an operation due to a network problem, it can't tell whether the problem is a short disconnection (which means it should retry on the same space) or long disconnection (which means the backup will soon become primary, so the proxy should switch to it). The old router used a complicated algorithm with complex heuristics trying to guess which space is most likely to succeed in the next operation, and try to execute the operation on it. If the guess was wrong, it analyzed the exception to figure out what to do next. This approach led to complicated and unpredictable behavior which is very hard for users to understand and configure properly, and on top of that is not very efficient.
 

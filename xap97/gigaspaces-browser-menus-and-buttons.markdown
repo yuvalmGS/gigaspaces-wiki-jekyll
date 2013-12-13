@@ -150,7 +150,7 @@ Press **OK** to accept the changes and exit the window, or **Cancel** to exit wi
 The **Help** menu provides the following options:
 
 - **About** -- provides product version information.
-- **Online Help** -- opens the [GigaSpaces Online Help homepage](./xap-9.6-documentation-home.html).
+- **Online Help** -- opens the [GigaSpaces Online Help homepage](./xap{%latestjavaurl%}).
 
 ## Button Toolbar
 

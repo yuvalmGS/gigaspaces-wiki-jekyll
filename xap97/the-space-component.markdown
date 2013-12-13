@@ -22,7 +22,11 @@ Here is an example of creating a space within a Spring XML-based configuration:
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./space" />
+<os-core:space id="space" url="/./space"
+ 	 lookup-timeout="10000"
+ 	 lookup-locators="10.10.10.10"
+ 	 lookup-groups="lookupGroupTest" />
+
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -32,6 +36,9 @@ Here is an example of creating a space within a Spring XML-based configuration:
 
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
     <property name="url" value="/./space" />
+    <property name="lookupGroups" value="lookupGroupTest" />
+    <property name="lookupTimeout" value="10000" />
+    <property name="lookupLocators" value="10.10.10.10" />
 </bean>
 {% endhighlight %}
 
@@ -40,7 +47,12 @@ Here is an example of creating a space within a Spring XML-based configuration:
 
 {% highlight java %}
 
-UrlSpaceConfigurer spaceConfigurer = new UrlSpaceConfigurer("/./space");
+UrlSpaceConfigurer spaceConfigurer =
+ 	 new UrlSpaceConfigurer("/./space").
+ 	 lookupTimeout(10000).
+ 	 lookupGroups("lookupGroupTest").
+ 	 lookupLocators("10.10.10.10");
+
 IJSpace space = spaceConfigurer.space();
 
 // ...
@@ -57,6 +69,19 @@ This example creates an embedded space (`IJSpace`) within the Spring application
 {% tip %}
  You may consider using the **[OpenSpaces Configuration API (Configurers)](./programmatic-api-(configurers).html)** in scenarios in which a Spring wiring them through XML configuration can not be used or you prefer using Code Based Configuration. Refer to the **[UrlSpaceConfigurer](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/space/UrlSpaceConfigurer.html)** for more details.
 {% endtip %}
+
+
+## Basic Properties
+
+The Space component support the following basic properties:
+
+
+{: .table .table-bordered}
+|XML Property|NameSpace Property|Description|Default|Time Unit
+|:-----------|:-----------------|:----------|:------|:--------|
+|lookupGroups|lookup-groups|The Jini Lookup Service group to use when running in multicast discovery mode. you may specify multiple groups comma separated| gigaspaces-X.X.X-XAP<Release>-ga | |
+|lookupLocators|lookup-locators|The Jini Lookup locators to use when running in unicast discovery mode. In the form of: host1:port1,host2:port2.| | |
+|lookupTimeout|lookup-timeout|The max timeout in milliseconds to use when running in multicast discovery mode to find a lookup service| 5000 | milliseconds |
 
 # URL Properties
 

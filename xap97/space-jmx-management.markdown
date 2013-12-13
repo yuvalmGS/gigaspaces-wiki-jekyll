@@ -30,7 +30,7 @@ A JMX manageable resource can be an application, an implementation of a service,
 1. Click **Launch JConsole**.
 1. This opens the JConsole (only if you are running JDK 1.5 and above) of the selected process.
 1. You can browse the various MBeans.
-1. Make sure you have a [gsInstance](./gsinstance---gigaspaces-cli.html) running (`<GigaSpaces Root>\bin\gsInstance.bat/sh`).
+1. Make sure you have a deployed space.
 1. Open a console and type the following command:{% wbr %}`jconsole`{% wbr %}{% infosign %} By default, operations in the MBeans **Operations** tab which have GigaSpaces classes as their type are disabled. To enable these, type{% wbr %}`jconsole -J-Djava.class.path=%JAVA_HOME%\lib\jconsole.jar;GS_HOME\lib\JSpaces.jar`{% wbr %}in your console. Instead of `GS_HOME`, type the directory in which GigaSpaces is installed on your computer.
 
 1. Connect to the MBean server (choose one of the following options):
