@@ -8,7 +8,7 @@ weight:
 
 {%summary%}Here you will find mile stone releases for XAP 9.7{%endsummary%}
 
-
+ 
 # Milestone 8
 
 {%panel%}
