@@ -33,12 +33,3 @@ For further details about the persistency APIs used see [Space Persistency](./sp
 
 {%children%}
 
-{%comment%}
-# Cassandra Space Data Source
-
-{% include xap97/cassandra-space-data-source.markdown %}
-
-# Cassandra Space Synchronization Endpoint
-
-{% include xap97/cassandra-space-synchronization-endpoint.markdown %}
-{%endcomment%}

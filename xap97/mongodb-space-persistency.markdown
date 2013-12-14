@@ -30,16 +30,6 @@ For information about the two see: [MongoDB Space Data Source](./mongodb-space-d
 For further details about the persistency APIs used see [Space Persistency](./space-persistency.html).
 
 
-{%comment%}
-# MongoDB Space Data Source
 
-Pleas no versions hard coding !
-
-{% include  /xap97//mongodb-space-data-source.markdown %}
-
-# MongoDB Space Synchronization Endpoint
-
-{% include /xap97/mongodb-space-synchronization-endpoint.markdown %}
-{%endcomment%}
 
 {%children%}
