@@ -2,12 +2,12 @@
 layout: post
 title:  Multi-Space Replication over the LAN or VPN
 categories: XAP97
-parent: space-topologies.html
-weight: 200
+parent: programmers-guide.html
+weight: 800
 ---
 
 {% summary %}This page explains how to establish data synchronization between multiple spaces which have direct network communication between each other.{% endsummary %}
-{% compositionsetup %}
+
 
 {% info title=Licensing %}
 The Gateway requires a separate license in addition to the GigaSpaces commercial license. Please contact [GigaSpaces Customer Support](http://www.gigaspaces.com/content/customer-support-services) for more details.

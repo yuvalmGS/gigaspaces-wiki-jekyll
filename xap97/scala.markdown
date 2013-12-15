@@ -2,11 +2,10 @@
 layout: post
 title:  Scala
 categories: XAP97
-parent: integrations.html
-weight: 300
+parent: interoperability.html
+weight: 400
 ---
 
-{% compositionsetup %}
 
 {% section %}
 {% column %}

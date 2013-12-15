@@ -9,12 +9,11 @@ weight: 100
 
 {% summary %} A MongoDB Space Persistency Solution {% endsummary %}
 
+
+
 # Overview
 
-[MongoDB](http://www.mongodb.org/) is a simple and popular open-source document-oriented NoSQL database.
-
-
-# MongoDB Space Data Source and Space Synchronization Endpoint
+MongoDB Space Data Source and Space Synchronization Endpoint
 
 GigaSpaces comes with built in implementations of [Space Data Source](./space-data-source-api.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html)
  for MongoDB, called `MongoSpaceDataSource` and `MongoSpaceSynchronizationEndpoint`, respectively.

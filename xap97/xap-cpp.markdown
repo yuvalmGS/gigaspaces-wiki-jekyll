@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  XAP CPP
+title:  CPP
 categories: XAP97
 parent: interoperability.html
 weight: 300

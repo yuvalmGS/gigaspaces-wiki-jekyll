@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Installing CPP API Package
+title:  Installation
 categories: XAP97
 parent: xap-cpp.html
 weight: 100
