@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Space Persistency
+title:  Cassandra Integration
 categories: XAP97
-parent: mongodb.html
+parent: big-data.html
 weight: 100
 ---
 

@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  MongoDB Archive Operation Handler
+title:  Archive Operation Handler
 categories: XAP97
-parent: archive-container.html
-weight: 150
+parent: mongodb.html
+weight: 200
 ---
 
 {% summary page|60 %}Archives space objects to MongoDB.{% endsummary %}
