@@ -213,4 +213,4 @@ weight: 1250
 {%endhighlight%}
 
  If you start the XAP Administration UI you should see under "mySpace" the entries we have inserted into the data base.
- Simply Scale with GigaSpaces -  Legal Notice - 3rd Party License Agreements - Site Map - Contact Admin - Powered by Atlassian Confluence
+
