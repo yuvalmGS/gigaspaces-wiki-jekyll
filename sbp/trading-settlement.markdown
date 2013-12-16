@@ -252,5 +252,4 @@ jetty.sessions.spaceUrl=jini://**/**/settlementSpace?useLocalCache
 12. When the number of com.gigaspaces.settlement.model.Trade object > 50 (use the GS-UI - Data Type List for the settlementSpace to see the amount of objects), the settlementSpace will scale up by creating 2 additional GSCs. See the Hosts view.
 13. You can scale the application down by clicking on the Administration tab and then clicking on Clear Trades.
 
-# Questions and Feedback
-[nleitman@gigaspaces.com](mailto:nleitman@gigaspaces.com)
+
