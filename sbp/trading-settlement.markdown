@@ -222,7 +222,7 @@ The trade and matched deal objects are persisted to the HSQL database through Hi
 HTTP Sessions are maintained in the space and a copy is also kept in a [local cache]({%latestjavaurl%}/client-side-caching.html), with 1 object per client.  Sessions are accessed using the following:
 
 {% highlight java %}
-jetty.sessions.spaceUrl=jini://**/**/settlementSpace?useLocalCache
+jetty.sessions.spaceUrl=jini://*/*/settlementSpace?useLocalCache
 {% endhighlight %}
 
 # Running the Demo
