@@ -80,7 +80,7 @@ The following example shows how to configure a space with a Hibernate `SpaceData
 
 {% highlight xml %}
 <!-- SPACE -->
-<bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSource">
+<bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSourceFactoryBean">
     <property name="sessionFactory" ref="sessionFactory"/>
     <property name="initialLoadChunkSize" value="2000"/>
 </bean>
@@ -98,7 +98,7 @@ The following example shows how to configure a space with a Hibernate `SpaceData
 <bean id="hibernateSpaceSynchronizationEndpoint" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceSynchronizationEndpointFactoryBean">
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
-<os-core:mirror id="mirror" url="/./mirror-service" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint" operation-grouping="group-by-transaction">
+<os-core:mirror id="mirror" url="/./mirror-service" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint" operation-grouping="group-by-space-transaction">
     <os-core:source-space name="mySpace" partitions="2" backups="1"/>
 </os-core:mirror>
 {% endhighlight %}
