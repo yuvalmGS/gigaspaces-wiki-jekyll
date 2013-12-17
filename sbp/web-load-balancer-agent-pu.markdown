@@ -3,10 +3,10 @@ layout: post
 title:  Web Load Balancer Agent PU
 categories: SBP
 parent: production.html
-weight: 1900
+weight: 1600
 ---
 
-{% compositionsetup %}
+
 
 {% tip %}
 **Summary:** {% excerpt %}This article illustrates creating a Web Load Balancer Agent as a processing unit{% endexcerpt %}<br/>

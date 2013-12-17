@@ -70,6 +70,8 @@ This section contains GigaSpaces usage patterns, best practices and solutions. E
 |[Moving into Production Checklist](./moving-into-production-checklist.html)| Advanced | All what you need to review before moving your system into production.|
 |[Capacity Planning](./capacity-planning.html)| Advanced | Considerations for sizing your system before moving into production.|
 |[Refreshable Business Logic Example](./refreshable-business-logic-example.html)| Advanced | Using the administration API to reload new application code (hot deploy) while the application is running.|
+|[Recipes For XAP Cloud Deployment](./automated-xap-deployment-with-cloudify.html)| Advanced | Recipes For XAP Cloud Deployment.|
+
 
 
 # WAN Based Deployment
