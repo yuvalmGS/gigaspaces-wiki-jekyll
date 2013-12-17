@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Installation
+title:  Installation CPP
 categories: XAP97
 parent: xap-cpp.html
 weight: 100

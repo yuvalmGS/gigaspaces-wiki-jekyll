@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Space Persistency
+title:  Cassandra Space Persistency
 categories: XAP97
 parent: cassandra.html
 weight: 100
