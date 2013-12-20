@@ -6,9 +6,8 @@ weight: 300
 parent: terminology.html
 ---
 
-{% summary page|65 %}GigaSpaces runtime components {% endsummary %}
+{% summary %}GigaSpaces runtime components {% endsummary %}
 
-|[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|Runtime Components|
 
 # GigaSpaces Runtime and Administration Components
 
@@ -222,4 +221,3 @@ Enables the user to view and interact with the runtime components running in the
 {% endcolumn %}
 {% endsection %}
 
-|[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|Runtime Components|

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Hector Cassandra Client
+title:  Hector Client
 categories: XAP97
 parent: cassandra-space-persistency.html
 weight: 300

@@ -3,7 +3,7 @@ layout: post
 title:  Concepts
 categories: PRODUCT_OVERVIEW
 parent: none
-weight: 100
+weight: 300
 ---
 
 {% summary %}This section describes the main concepts underlying GigaSpaces XAP.{% endsummary %}
@@ -130,8 +130,10 @@ The space as defined previously, is a logical concept - a memory space which can
 The three main cluster topologies are:
 
 - [Replication](#Replication)
-- [Partitioned](#Partitioned)
+- [Partitioned](#1)
 - [Resilient Partitioning](#Resilient Partitioning): a combination of Replication and Partitioned.
+
+{%anchor  Replication %}
 
 ## Replication
 
@@ -149,6 +151,9 @@ The asynchronous replication (async replication) strategy returns the call back 
 
 {% infosign %} The replication QoS should be considered, based on the application requirements. The default replication policy is synchronous replication.
 
+
+{%anchor  1 %}
+
 ## Partitioned
 
 Spaces form a 'partitioned cluster' when there is a need to store, in-memory, larger amounts of data than can be stored in a single space process memory. Data is divided into partitions, and each space contains a subset of the information. A combination of all the spaces within the same cluster, creates the full set of information.
@@ -163,6 +168,8 @@ For example, when writing one million orders into a space, the orders are (and s
 For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit]({%latestjavaurl%}/elastic-processing-unit.html) section.
 {% endtip %}
 
+{%anchor  Resilient Partitioning %}
+
 ## Resilient Partitioning
 
 Since each partition contains only a subset of the data, losing a partition can result in information being lost if that partition is the only place that the data exists. For this reason, a combination of partitioning and replication provides both scalability and resiliency.
@@ -173,6 +180,4 @@ The common topology is of a partitioned cluster, where each partition member has
 
 {% endtoczone %}
 
-{% whr %}
-{% refer %}**Next Chapter:** [A Typical SBA Application](./a-typical-sba-application.html){% endrefer %}
 

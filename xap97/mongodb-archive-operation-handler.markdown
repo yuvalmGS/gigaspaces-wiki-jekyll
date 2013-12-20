@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  MongoDB Archive Operation Handler
+title:  Archive Operation Handler
 categories: XAP97
 parent: mongodb.html
 weight: 200

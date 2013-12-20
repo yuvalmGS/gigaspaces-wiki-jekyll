@@ -27,7 +27,7 @@ Here is a simple mapping between the J2EE common components and equivalent XAP c
 |:------------|:---|:--|
 |Queue|JMS Queue|[Polling Container]({%latestjavaurl%}/polling-container.html)|
 |Topic|JMS Topic|[Notify Container]({%latestjavaurl%}/notify-container.html)|
-|Unit of Order|JMS UOO|[XAP Unit Of Work](/sbp/unit-of-work.html)|
-|Queue Partitioning|JMS Service Activator Aggregator Strategy|[XAP Parallel Queue](/sbp/parallel-queue-pattern.html)|
-|Distributed Priority Queue|JMS Quality of Service|[XAP Priority Based Queue](/sbp/priority-based-queue.html)|
-|Compute Grid|MDB + Custom code|[XAP Master-Worker](/sbp/master-worker-pattern.html)|
+|Unit of Order|JMS UOO|[{%color green%}XAP Unit Of Work{%endcolor%}](/sbp/unit-of-work.html)|
+|Queue Partitioning|JMS Service Activator Aggregator Strategy|[{%color green%}XAP Parallel Queue{%endcolor%}](/sbp/parallel-queue-pattern.html)|
+|Distributed Priority Queue|JMS Quality of Service|[{%color green%}XAP Priority Based Queue{%endcolor%}](/sbp/priority-based-queue.html)|
+|Compute Grid|MDB + Custom code|[{%color green%}XAP Master-Worker{%endcolor%}](/sbp/master-worker-pattern.html)|

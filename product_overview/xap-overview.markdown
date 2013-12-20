@@ -2,11 +2,11 @@
 layout: post
 title:  XAP Overview
 categories: PRODUCT_OVERVIEW
-weight: 50
+weight: 100
 parent: none
 ---
 
-{% summary page|60 %}GigaSpaces XAP is a platform for scaling out stateful applications. XAP uses the GigaSpaces space as a core middleware, and provides the Spring-based Open Spaces framework as a development environment.{% endsummary %}
+{% summary %}GigaSpaces XAP is a platform for scaling out stateful applications. XAP uses the GigaSpaces space as a core middleware, and provides the Spring-based Open Spaces framework as a development environment.{% endsummary %}
 
 # Overview
 
@@ -37,7 +37,7 @@ The following diagram shows a component view of GigaSpaces XAP. The main compone
 
 ## OpenSpaces
 
-[Product Architecture#ProductArchitecture-OpenSpacesAPIandComponents](./product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) the primary framework for developing applications in GigaSpaces. Open Spaces uses Spring as a POJO-driven development infrastructure, and adds runtime and development components for developing POJO-driven EDA/SOA-based applications, and scaling them out simply across a pool of machines, without dependency on a J2EE container.
+[Product Architecture](./product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) the primary framework for developing applications in GigaSpaces. Open Spaces uses Spring as a POJO-driven development infrastructure, and adds runtime and development components for developing POJO-driven EDA/SOA-based applications, and scaling them out simply across a pool of machines, without dependency on a J2EE container.
 
 To achieve these goals, Open Spaces adds the following components to the Spring development environment:
 
