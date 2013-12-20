@@ -9,12 +9,14 @@ $(document).ready(function () {
   current_categories = '{{ page.categories }}';
 
 
-  var tmp = transformArr(sidebar[current_categories]);
+  var tmp = makeSideBar(current_categories);
 
+  /*
   if (tmp.length != 0) {
     html_result = makeSideBar(tmp, current_categories);
     $("#sidebar_menu").append(html_result);
   }
+  */
 
   createBreadcrumbs('{{ page.categories }}', '{% currentsection %}');
 });
