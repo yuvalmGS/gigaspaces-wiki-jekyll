@@ -829,7 +829,7 @@ h1[id] {
  */
 
 .highlight {
-  display: none; /* hidden by default, until >480px */
+  display: block; 
   padding: 9px 14px;
   margin-bottom: 14px;
   background-color: #f7f7f9;
@@ -857,10 +857,18 @@ h1[id] {
   color: #bebec5;
 }
 
-/* Show code snippets when we have the space */
-@media screen and (min-width: 481px) {
-  .highlight {
-    display: block;
+/* Decrease font of code snippets of code snippets on small screens */
+@media screen and (max-width: 481px) {
+  pre {
+    font-size: 10px;
+  }
+}
+
+@media screen 
+and (min-width: 482px)
+and (max-width: 768px) {
+  pre {
+    font-size: 12px;
   }
 }
 
