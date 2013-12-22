@@ -2,7 +2,7 @@
 layout: post
 title:  About Jini
 categories: PRODUCT_OVERVIEW
-weight: 80
+weight: 150
 parent: none
 ---
 
@@ -127,6 +127,7 @@ This section discusses the key Jini services and their role in creating a dynami
 In a dynamic federation in which services can join and leave at any time, up-to-date lookup registry is necessary.
 
 The Lookup Service is the primary means for client programs to find services in the federation, and is the foundation for providing user interfaces through which users and administrators can discover and interact with services in the federation. Descriptive service information stored in the Lookup Service helps clients decide whether to use the service or not.
+
 {% anchor 3 %}
 
 ### Interfaces and Classes

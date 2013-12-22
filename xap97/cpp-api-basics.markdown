@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  CPP API Basics
+title:  Basics API
 categories: XAP97
 parent: xap-cpp.html
 weight: 300

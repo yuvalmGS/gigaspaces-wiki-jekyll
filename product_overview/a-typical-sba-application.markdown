@@ -2,7 +2,7 @@
 layout: post
 title:  A Typical SBA Application
 categories: PRODUCT_OVERVIEW
-weight: 200
+weight: 600
 parent: none
 ---
 
@@ -28,13 +28,19 @@ The application needs to provide a 100% guarantee that once a transaction enters
 # Application Design
 
 The first step in building such an application with SBA, is to define its business logic components as independent services - Enrichment Service (parsing and validation), Order Book Service (matching and execution), and Reconciliation Service (routing):
-![intro1a.jpg](/attachment_files/intro1a.jpg)
+
+{%align center %}![intro1a.jpg](/attachment_files/intro1a.jpg) {%endalign%}
+
 To reduce the latency overhead of communication between these services, they are all collocated in a single Virtual Machine (VM). To eliminate the network overhead of communication with the messaging and data tiers, Messaging Grid and Data Grid instances are both collocated in the same VM. All the interaction with all the services is done purely in-process, bringing I/O overhead to a minimum, in both the data and messaging layers.
 
 This collocated unit of work (which includes business logic, messaging and data) is called a Processing Unit. Because the Processing Unit encompasses all application tiers, it represents the application's full latency path. And because everything occurs in-process, latency is reduced to an absolute minimum.
-![intro2a.jpg](/attachment_files/intro2a.jpg)
+
+{%align center %}![intro2a.jpg](/attachment_files/intro2a.jpg)  {%endalign%}
+
 Scaling is achieved simply by adding more Processing Units and spreading the load among them. Scaling does not affect latency, because the application's complexity does not increase. Each transaction is still routed to a single Processing Unit, which handles the entire business transaction in-process, with the same minimal level of latency.
-![intro3a.jpg](/attachment_files/intro3a.jpg)
+
+{%align center %}![intro3a.jpg](/attachment_files/intro3a.jpg)  {%endalign%}
+
 We can see that the trading application guarantees both minimal latency and linear scalability - something that would be impossible with a tier-based, best-of-breed approach (in other words, with separate products to manage business logic, data and messaging).
 
 # Application Structure
@@ -42,7 +48,8 @@ We can see that the trading application guarantees both minimal latency and line
 {% toczone minLevel=3|maxLevel=3|type=flat|separator=pipe|location=top %}
 
 The following diagram outlines a typical architecture of an application built with OpenSpaces:
-![intro4a.jpg](/attachment_files/intro4a.jpg)
+
+{%align center %}![intro4a.jpg](/attachment_files/intro4a.jpg)  {%endalign%}
 
 ### Processing Unit
 
@@ -52,7 +59,7 @@ At the heart of the application is the processing unit. A processing unit repres
 - business logic units, which are essentially POJOs that process events delivered from the messaging component.
 - a data component, that holds the state required for the business logic implementation.
 
-The processing unit is built as an extension of the [Spring](http://www.springframework.org/) application context, so the development of a processing unit looks just like the normal development of any Spring application context. In addition to the standard Spring framework, it provides specific components designed primarily to enable rapid development of SOA/EDA-based applications. These components are explained below.
+The processing unit is built as an extension of the [{%color orange%}Spring{%endcolor%}](http://www.springframework.org/) application context, so the development of a processing unit looks just like the normal development of any Spring application context. In addition to the standard Spring framework, it provides specific components designed primarily to enable rapid development of SOA/EDA-based applications. These components are explained below.
 
 {% anchor event_containers %}
 
@@ -61,7 +68,7 @@ The processing unit is built as an extension of the [Spring](http://www.springfr
 There are basically two main types of event containers:
 
 - [Polling]({%latestjavaurl%}/polling-container.html)
-- [Notify]({% latestjavaurl  %}/notify-container.html)
+- [Notify]({%latestjavaurl%}/notify-container.html)
 
 Event containers are used to abstract the event processing from the event source. This abstraction enables users to build their business logic with minimal binding to the underlying event source, whether it is a space-based event source, or a JMS event source, etc.
 
@@ -144,7 +151,9 @@ public class Data {
 ### Space-Based Remoting
 
 [Space-Based Remoting]({%latestjavaurl%}/space-based-remoting.html) allows for POJO services that are collocated within a specific processing unit to be exposed to remote clients, like any other RMI service. Spring provides a generic framework for exposing and invoking POJO-based services. OpenSpaces utilizes the Spring remoting framework to enable POJO services to expose themselves through the space, as illustrated in the diagram below:
-![intro5.jpg](/attachment_files/intro5.jpg)
+
+{%align center %}![intro5.jpg](/attachment_files/intro5.jpg) {%endalign%}
+
 The client uses the `SpaceRemotingProxyFactoryBean` to create a space-based dynamic proxy for the service. The client uses the proxy to invoke methods on the appropriate service instance. The proxy captures the invocation, and creates a generic command Entry with the information on the service-instance, the method-name, and arguments; and calls the space write operation to send the command to the service implementation, followed by a blocking take for the response.
 
 A service that needs to be exported uses the `SpaceRemotingServiceExporter` to export itself. The `SpaceRemotingServiceExporter` creates a service-delegator listener that registers for invocation commands by calling the take method on the space. The command contains information about the instance that needs to be invoked, the method and the arguments. The delegator uses this information to invoke the appropriate method on the POJO service. If the method returns a value, it captures the value and uses the space write method to write a response Entry.
@@ -160,7 +169,9 @@ A service that needs to be exported uses the `SpaceRemotingServiceExporter` to e
 ### SLA-Driven Container
 
 An [OpenSpaces SLA Driven Container]({% latestjavaurl  %}/the-processing-unit-structure-and-configuration.html) that allows you to deploy a processing unit over a dynamic pool of machines, is available through an SLA-driven container, formerly known as the Grid Service Containers - GSCs. The SLA-driven containers are Java processes that provide a hosting environment for a running processing unit. The Grid Service Manager (GSM) is used to manage the deployment of the processing unit, based on SLA. The SLA definition is part of the processing unit configuration, and is normally named `pu.xml`. The SLA definition defines: the number of PU instances that need to be running at a given point of time, the scaling policy, the failover policy based on CPU, and memory or application-specific measurement.
-![intro6a.jpg](/attachment_files/intro6a.jpg)
+
+{%align center %}![intro6a.jpg](/attachment_files/intro6a.jpg){%endalign%}
+
 The following is a snippet taken from the example SLA definition section of the processing unit Spring configuration:
 
 {% highlight xml %}
@@ -178,5 +189,3 @@ The following is a snippet taken from the example SLA definition section of the 
 
 {% include /COM/j2eevsxap.markdown %}
 
-{% whr %}
-{% refer %}**Next Chapter:** [Database Integration](./database-integration.html){% endrefer %}

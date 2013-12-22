@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  CPP API Mapping File
+title:  API Mapping File
 categories: XAP97
 parent: cpp-api-code-generator.html
 weight: 100
 ---
 
-{% summary page|65 %}Elements that are available to be used in your `gs.xml` file and supported types.{% endsummary %}
+{% summary%}Elements that are available to be used in your `gs.xml` file and supported types.{% endsummary %}
 
 # Overview
 
@@ -15,7 +15,7 @@ This section describes the elements that are available to be used in your `gs.xm
 
 The gs.xml file allows you to define c++ classes in the space. To learn how to do this, see the [CPP API Code Generator](./cpp-api-code-generator.html) section.
 
-{% lampon %} To find out about the **supported c++ types**, see [below](#type -- Supported Types).
+{% lampon %} To find out about the **supported c++ types**, see [below](#type--Supported-Types).
 
 The `\*.gs.xml` configuration needs to reside in a `<Root Folder>\config\mapping` folder where the `<Root Folder>` should be part of the application classpath.
 
@@ -84,6 +84,8 @@ The `property` element defines a field in this class.
 | `type` | String | Defines the type of the property. **This is required.** See possible values below. | |
 
 {% anchor 1 %}
+
+{% anchor type--Supported-Types %}
 
 # type
 

@@ -2,7 +2,7 @@
 layout: post
 title:  Product Architecture
 categories: PRODUCT_OVERVIEW
-weight: 400
+weight: 200
 parent: none
 ---
 
@@ -11,6 +11,8 @@ parent: none
 GigaSpaces XAP is built from the following sub-systems:
 
 ![archi_overview.jpg](/attachment_files/archi_overview.jpg)
+
+{% anchor Open-Interfacing-Layer%}
 
 # Open Interfacing Layer
 
@@ -23,6 +25,8 @@ Supports any language, any platform, any API - Achieve interoperability, easy mi
 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 
+{% anchor OpenSpaces%}
+
 ## OpenSpaces
 
 OpenSpaces is the GigaSpaces native programming API. It is an open-source [Spring-based](http://www.springframework.org/about) application interface designed to make space-based development easy, reliable, and scalable. In addition, the programming model is non-intrusive, based on a simple POJO programming model and a clean integration point with other development frameworks.
@@ -34,9 +38,13 @@ The OpenSpaces API is divided into four parts:
 - Space Based Remoting
 - Integrations
 
+{% anchor Core-API%}
+
 ## Core API
 
 The core package of OpenSpaces provides APIs for direct access to a data grid, internally referred to as a "space." The main interface is the GigaSpace, which enables the basic interaction with the data grid. The core components include basic infrastructure support such as [Space]({%latestjavaurl%}/the-space-component.html) construction, simplified API using the [GigaSpace]({%latestjavaurl%}/the-gigaspace-interface.html) interface including [Transaction Management]({%latestjavaurl%}/transaction-management.html) and declarative transaction support. Core components also include support for [Map/Cache]({%latestjavaurl%}/map-api.html) construction and a simplified API using [GigaMap]({%latestjavaurl%}/map-api.html).
+
+{% anchor Events%}
 
 ## Events
 
@@ -46,17 +54,23 @@ Another alternative for events is the usage of JMS 1.1 on top of GigaSpaces, whi
 
 The events module includes components for simplified EDA/Service Bus development. These components allow [unified event-handling]({%latestjavaurl%}/data-event-listener.html) and provide two mechanisms for event-generation: a [Polling Container]({%latestjavaurl%}/polling-container.html) uses polling received operations against the space, and a [Notify Container]({%latestjavaurl%}/notify-container.html) which uses the space's built-in notification support.
 
+{% anchor Space-Based-Remoting%}
+
 ## Space Based Remoting
 
 The [Remoting]({%latestjavaurl%}/space-based-remoting.html) package provides capabilities for clients to access remote services. Remoting in GigaSpaces XAP is implemented on top of the data grid's clustering model, which provides location transparency, fail-over, and performance to remote service invocations. OpenSpaces implements [remoting]({%latestjavaurl%}/space-based-remoting.html), using the space as the transport layer, similar to [other Spring remoting components](http://static.springframework.org/spring/docs/3.0.x/reference/remoting.html).
 
 Remoting can be viewed as the alternative to Java EE Session Beans, or Java RMI, as it provides all of their capabilities as well as supporting synchronous and asynchronous invocations, and dynamic scripting languages - enabling you to use Groovy or Ruby in your space-based applications.
 
+{% anchor Integrations%}
+
 ## Integrations
 
 This package contains integrations with non-XAP components. For more information please refer to the Programmers Guide.
 
 {% endtoczone %}
+
+{% anchor Elastic-Application-Container%}
 
 # Elastic Application Container
 
@@ -80,6 +94,8 @@ GigaSpaces XAP provides several default implementations as part of the product, 
 {% toczone location=top|maxLevel=2|minLevel=2|type=flat|separator=pipe %}
 
 More information on the usage of the above integrations can be found in the [Programmer's Guide]({%latestjavaurl%}/programmers-guide.html).
+
+{% anchor Spring-Container%}
 
 ## Spring Container
 
@@ -293,5 +309,3 @@ It is common to start several GSCs on the same physical machine, depending on th
 
 {% endtoczone %}
 
-{% whr %}
-{% refer %} **Next chapter**: [Terminology](./terminology.html){% endrefer %}

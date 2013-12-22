@@ -6,9 +6,7 @@ weight: 200
 parent: terminology.html
 ---
 
-{% summary page|65 %}GigaSpaces Data-Grid components {% endsummary %}
-
-|[Basic Components](./terminology---basic-components.html)|Data Grid Topologies|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|
+{% summary %}GigaSpaces Data-Grid components {% endsummary %}
 
 # Data Grid
 
@@ -178,5 +176,3 @@ A [partitioned Data Grid](#Partitioned Data Grid), with one or more [backup](#Pr
 {% tip %}
 For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit]({%latestjavaurl%}/elastic-processing-unit.html) section.
 {% endtip %}
-
-|[Basic Components](./terminology---basic-components.html)|Data Grid Topologies|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|

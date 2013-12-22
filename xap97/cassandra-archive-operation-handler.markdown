@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Cassandra Archive Operation Handler
+title:  Archive Operation Handler
 categories: XAP97
 parent: cassandra.html
 weight: 200

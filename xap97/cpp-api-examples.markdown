@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  CPP API Examples
+title:  API Examples
 categories: XAP97
 parent: cpp-api-basics.html
 weight: 500

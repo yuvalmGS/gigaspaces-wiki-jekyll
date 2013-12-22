@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  CPP API Hello World Example
+title:  Hello World Example
 categories: XAP97
 parent: xap-cpp.html
 weight: 200

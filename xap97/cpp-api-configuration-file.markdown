@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  CPP API Configuration File
+title:  Configuration File
 categories: XAP97
 parent: cpp-api-basics.html
 weight: 300

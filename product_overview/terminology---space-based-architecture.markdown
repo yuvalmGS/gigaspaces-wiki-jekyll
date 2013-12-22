@@ -1,14 +1,12 @@
 ---
 layout: post
-title:  Space-Based Architecture
+title:  Space Based Architecture
 categories: PRODUCT_OVERVIEW
 weight: 400
 parent: terminology.html
 ---
 
 {% summary %}GigaSpaces SBA components {% endsummary %}
-
-|[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|Space-Based Architecture|[Runtime Components](./terminology---runtime-components.html)|
 
 # Space-Based Architecture
 
@@ -44,7 +42,6 @@ parent: terminology.html
 - Full monitoring and management during runtime are available through the [Management UI](./terminology---runtime-components.html#Management UI).
 
 {% align center %}
-
 ![sba_with_backup.jpg](/attachment_files/sba_with_backup.jpg)
 
 {% sub %}**An SBA implementation, with 3 primary instances and one backup for each them, accessed by two client applications**{% endsub %}
@@ -57,7 +54,7 @@ parent: terminology.html
 
 {% anchor Space Based Architecture Artifacts %}
 
-Once a [Processing Unit library]({%latestjavaurl%}/the-processing-unit-structure-and-configuration.html) is deployed, a processing unit instance is created. The processing unit instance is hosted within the [GigaSpaces container]({%currentjavaurl%}/service-grid.html#ServiceGrid-gsc). If the processing unit instance includes a space, all the collocated beans within the processing unit instance inherit the space primary/backup mode: If the space running in a primary mode, they will be active; if the space running in a backup mode, they will be in a standby mode.
+Once a [Processing Unit library]({%latestjavaurl%}/the-processing-unit-structure-and-configuration.html) is deployed, a processing unit instance is created. The processing unit instance is hosted within the [GigaSpaces container]({%latestjavaurl%}/service-grid.html#ServiceGrid-gsc). If the processing unit instance includes a space, all the collocated beans within the processing unit instance inherit the space primary/backup mode: If the space running in a primary mode, they will be active; if the space running in a backup mode, they will be in a standby mode.
 
 {% section %}
 {% align center %}
@@ -82,4 +79,3 @@ Once a [Processing Unit library]({%latestjavaurl%}/the-processing-unit-structure
 - [Polling container]({%latestjavaurl%}/polling-container.html) - Execution queue. Consumes objects from the space.
 {% endsection %}
 
-|[Basic Components](./terminology---basic-components.html)|[Data Grid Topologies](./terminology---data-grid-topologies.html)|Space-Based Architecture|[Runtime Components](./terminology---runtime-components.html)|

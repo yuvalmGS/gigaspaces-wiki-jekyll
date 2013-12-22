@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  CPP API Code Generator
+title:  API Code Generator
 categories: XAP97
 parent: cpp-api-basics.html
 weight: 400
