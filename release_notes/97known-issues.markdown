@@ -51,4 +51,8 @@ Below is a list of new features and improvements in GigaSpaces 9.7.X.
 | GS-11492 | SpaceDocument Id cannot be set to Integer via namespace declaration | | 9.7.0 | | Java |
 | GS-11496 | webui security - a viewer can uninstall applications | | 9.7.0 | | All |
 | GS-11500 | Installing services in the app catalog prompts for authorization groups | | 9.7.0 | | All |
-
+| GS-11538 | Repeated NumberFormatException preventing web-ui from functioning in case statistics are not available | | 9.7.0 | | Java |
+| GS-11537 | @EventDriven @Polling @Notify to support inheritance | | 9.7.0 | | Java,.NET |
+| GS-11536 | LRMI threads cause JVM-wide slowdown with parallel reads | | 9.7.0 | | Java |
+| GS-11534 | NullPointerException in LeaseManager | | 9.7.0 | | All |
+| GS-11524 | webui security - only Jane has the community discussion button | | 9.7.0 | | All |

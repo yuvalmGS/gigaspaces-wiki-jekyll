@@ -66,4 +66,8 @@ Below is a list of new features and improvements in GigaSpaces 9.7.X.
 | GS-11493 | Enhance EventTemplate attribute to support method with ISpaceProxy argument | 9.7.0 | | | .Net |
 | GS-11494 | Add ISpaceProxy.GetServerAdmin().GetClusteredProxy() | 9.7.0 | | | .Net |
 | GS-11495 | Deprecation - notify auto-renew with custom arguments | 9.7.0 | | | All |
-
+| GS-11539 | Web-ui should expose reconnect option | 9.7.0 | | | Java |
+| GS-11526 | Provide capability of automatic thread dump generation upon LRMI critical resource level warning | 9.7.0 | | | All |
+| GS-11516 | Remove GSM and GSC windows service wrapper in XAP.NET | 9.7.0 | | | .NET |
+| GS-11515 | Change XAP.NET setup wizard default from both .NET 2.0 and 4.0 to 4.0 only | 9.7.0 | | | .NET |
+| GS-11514 | Add strongly typed API for creating local cache in XAP.NET | 9.7.0 | | | .NET |

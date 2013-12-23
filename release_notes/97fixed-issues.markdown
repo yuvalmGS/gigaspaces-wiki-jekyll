@@ -74,3 +74,7 @@ Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 | GS-11489 | Wrong display of Machine SLA Enforcment event | 9.7.0 | | All |
 | GS-11490 | GSC failed to create a JMX server and listen on a port | 9.7.0 | 8496 | All |
 | GS-11491 | Space shutdown may hang while closing Background fifo thread on rare scenarios | 9.7.0,9.6.2patch2 | 8451 | All |
+| GS-11527 | DiscoveredMachineProvisioningConfigurer is missing the reservedMemoryCapacityPerManagementMachine method | 9.7.0 | | Java |
+| GS-11522 | Durable notification do not arrive when there is a gateway configured | 9.7.0 | | Java,.NET |
+| GS-11485 | Exceptions reading with OR queries objects with Date fields inserted by GS-UI | 9.7.0, 9.5.1patch3 | 8481 | All |
+
