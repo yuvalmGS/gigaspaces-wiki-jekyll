@@ -17,22 +17,22 @@ http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m6/gigaspace
 {%comment%}
 
 Java - 
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/gigaspaces-xap-premium-9.7.0-m8-b10493.zip
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/gigaspaces-xap-caching-9.7.0-m8-b10493.zip
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/gigaspaces-xap.net-9.7.0-m8-b10493-doc.zip
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-xap-premium-9.7.0-rc-b10494.zip
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-xap-premium-9.7.0-rc-b10494.tar.gz
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-xap-caching-9.7.0-rc-b10494.zip
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-xap.net-9.7.0-rc-b10494-doc.zip
 .Net - 
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/GigaSpaces-XAP.NET-Premium-9.7.0.10493-M8-x86.msi
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/GigaSpaces-XAP.NET-Premium-9.7.0.10493-M8-x64.msi
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/GigaSpaces-XAP.NET-Caching-9.7.0.10493-M8-x86.msi
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/GigaSpaces-XAP.NET-Caching-9.7.0.10493-M8-x64.msi
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/GigaSpaces-XAP.NET-Premium-9.7.0.10494-RC-x86.msi
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/GigaSpaces-XAP.NET-Premium-9.7.0.10494-RC-x64.msi
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/GigaSpaces-XAP.NET-Caching-9.7.0.10494-RC-x86.msi
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/GigaSpaces-XAP.NET-Caching-9.7.0.10494-RC-x64.msi
 Cpp -
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/gigaspaces-xap-premium-9.7.0-m8-b10493.tar.gz
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/gigaspaces-cpp-9.7.0-m8-win64-vs10.0.tar.gz
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/gigaspaces-cpp-9.7.0-m8-linux32-gcc-4.1.2.tar.gz
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/gigaspaces-cpp-9.7.0-m8-linux-amd64-gcc-4.1.2.tar.gz
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/gigaspaces-cpp-9.7.0-m8-win32-vs10.0.tar.gz
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/gigaspaces-cpp-9.7.0-m8-win64-vs9.0.tar.gz
-http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m8/gigaspaces-cpp-9.7.0-m8-win32-vs9.0.tar.gz
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-cpp-9.7.0-rc-win64-vs10.0.tar.gz
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-cpp-9.7.0-rc-linux32-gcc-4.1.2.tar.gz
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-cpp-9.7.0-rc-linux-amd64-gcc-4.1.2.tar.gz
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-cpp-9.7.0-rc-win32-vs10.0.tar.gz
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-cpp-9.7.0-rc-win64-vs9.0.tar.gz
+http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-cpp-9.7.0-rc-win32-vs9.0.tar.gz
 
 [XAP](/xap100)
 
