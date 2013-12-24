@@ -3,9 +3,11 @@ module DocUtils
   def self.get_current_section(sectionPath)
     if !sectionPath.nil?
       if sectionPath.start_with?("xap")
-        isDotNet = sectionPath.end_with?("net"); 
+        isDotNet = sectionPath.end_with?("net");
+        isAdm = sectionPath.end_with?("adm");
         sectionPath = sectionPath.sub("xap","")
         sectionPath = sectionPath.sub("net","")
+        sectionPath = sectionPath.sub("adm","")
         version = sectionPath.insert(sectionPath.length - 1, ".")
         if isDotNet 
           "XAP.NET " + version 
