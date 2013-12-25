@@ -6,7 +6,7 @@ parent: the-gigaspace-interface.html
 weight: 100
 ---
 
-{% compositionsetup %}
+
 {% summary %}This page covers the Change API, its usage and behavior.{% endsummary %}
 
 # Overview
