@@ -998,8 +998,9 @@ A default implementation of the exception translator is automatically used, whic
 ## Exception handling for Batch Operations
 
 Batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
-    - [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/WriteMultiplePartialFailureException.html)
-    - [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/WriteMultipleException.html)
-    - [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/ReadMultipleException.html)
-    - [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/TakeMultipleException.html)
-    - [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/ClearException.html)
+
+- [org.openspaces.core.WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/WriteMultiplePartialFailureException.html)
+- [org.openspaces.core.WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/WriteMultipleException.html)
+- [org.openspaces.core.ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/ReadMultipleException.html)
+- [org.openspaces.core.TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/TakeMultipleException.html)
+- [org.openspaces.core.ClearException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/ClearException.html)
