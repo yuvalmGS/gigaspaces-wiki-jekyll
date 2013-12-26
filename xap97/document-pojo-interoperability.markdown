@@ -124,7 +124,9 @@ SpaceDocument[] documents = gigaSpace.readByIds(
 
 # Dynamic Properties
 
+{%comment%}
 ![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
+{%endcomment%}
 
 When a type descriptor is created from a POJO class, the type descriptor builder checks if the POJO class supports [Dynamic Properties](./dynamic-properties.html) (new in 8.0.1). If it doesn't, the type descriptor will also not support dynamic properties. If a space document will be created using the same type with a property that is not defined in the POJO and written to the space, an exception will be thrown indicating the property is not defined in the type and the type does not support dynamic properties.
 
@@ -132,7 +134,9 @@ It is possible to manually create a `SpaceTypeDescriptor` of the POJO using the 
 
 # Deep Interoperability
 
+{%comment%}
 ![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
+{%endcomment%}
 
 If the POJO contains properties which are POJO themselves, the space will implicitly convert these properties to space documents as needed.
 For example:

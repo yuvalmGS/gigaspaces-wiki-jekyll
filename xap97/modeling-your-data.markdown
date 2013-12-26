@@ -6,7 +6,6 @@ parent: modeling-and-accessing-your-data.html
 weight: 200
 ---
 
-{% compositionsetup %}
 {% summary %}How to model application data for in-memory data grid{% endsummary %}
 
 # Moving from Centralized to Distributed Data Model
@@ -15,7 +14,7 @@ When moving from a centralized into a distributed data store, your data needs to
 
 There are several questions which need to be answered when planning for data partitioning:
 
-1. **What is the information I should store in memory?** The answer to this question is not a technical one, and should not be mistakenly confused with the structure of the data. This is in essence a business question: How much the data will it grow over time? For how long should you keep it?
+1. What is the information I should store in memory? The answer to this question is not a technical one, and should not be mistakenly confused with the structure of the data. This is in essence a business question: How much the data will it grow over time? For how long should you keep it?
 
 We recommend using the following table for this process:
 
@@ -27,7 +26,7 @@ We recommend using the following table for this process:
 
 Once you have identified the size and expected growth of your data, you can start thinking about partitioning it; however, there's more to consider before doing that.
 
-2. **What are my application's use cases?** While you might be used to model your data by the logical relationship of your data items, in the case of distributed data, you need to think differently. The rule of thumb here is to avoid cross cluster relationships as much as possible, since they will lead to cross cluster queries and updates which are usually much less scalable and fast than their local counterparts.
+2. What are my application's use cases? While you might be used to model your data by the logical relationship of your data items, in the case of distributed data, you need to think differently. The rule of thumb here is to avoid cross cluster relationships as much as possible, since they will lead to cross cluster queries and updates which are usually much less scalable and fast than their local counterparts.
 
 Thinking in terms of traditional relationships ("one to one", "one to many" and "many to many"), is deceiving with distributed data. The first question to ask is: How many different associations does each entity have?
 
@@ -99,10 +98,10 @@ To leverage the space data modeling approach you will need to adapt your existin
 With the following example we have the **Author** and the **Book** entities. Here is how the original **Author** and the **Book** Entities looks like:
 
 {: .table .table-bordered}
-|Author|  |Book|
-|:-----|:-|:---|
-|id:Integer| |id:Integer|
-|lastName:String| |title:String|
+|Author|Book|
+|:-----|:---|
+|id:Integer| id:Integer|
+|lastName:String| title:String|
 
 ## Example Code
 

@@ -6,8 +6,7 @@ parent: deploying-and-running-the-processing-unit.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|70 %}Explains how to deploy your processing unit onto the GigaSpaces [Service Grid](./the-runtime-environment.html) to get automated SLA management and self-healing capabilities{% endsummary %}
+{% summary%}Explains how to deploy your processing unit onto the GigaSpaces [Service Grid](./the-runtime-environment.html) to get automated SLA management and self-healing capabilities{% endsummary %}
 
 # Overview
 
@@ -571,7 +570,10 @@ In the example above, the feeder instance will complete the teardown of all the 
 
 # Monitoring Deployment Progress
 
+{%comment%}
 ![new-in-806-ribbon.png](/attachment_files/new-in-806-ribbon.png)
+{%endcomment%}
+
 The deployment progress can be monitored using the events provided by the Admin API. There are 4 provision events on a processing unit instance:
 
 1. `ProvisionStatus#ATTEMPT` - an attempt to provision an instance on an available `GridServiceContainer`

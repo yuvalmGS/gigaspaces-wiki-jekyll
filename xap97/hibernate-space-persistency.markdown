@@ -6,8 +6,8 @@ parent: space-persistency.html
 weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|60 %} The default Hibernate implementation of the [Space Persistency](./space-persistency.html) APIs.{% endsummary %}
+
+{% summary%} The default Hibernate implementation of the [Space Persistency](./space-persistency.html) APIs.{% endsummary %}
 
 # Overview
 
@@ -33,11 +33,10 @@ The `Hibernate Space Persistency Implementation` is used both with the [Synchron
 
 See below example for `Hibernate Space Persistency` that is configured having a Space connected to a central data source using Hibernate configuration files decorating the Space Classes:
 
-{% inittab os_simple_space|top %}
+{% inittab simple_space|top %}
+
 {% tabcontent Namespace %}
-
 {% highlight xml %}
-
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
     <property name="url" value="jdbc:hsqldb:hsql://localhost:9001"/>
@@ -83,12 +82,9 @@ See below example for `Hibernate Space Persistency` that is configured having a 
     </os-core:properties>
 </os-core:space>
 {% endhighlight %}
-
 {% endtabcontent %}
 {% tabcontent Plain XML %}
-
 {% highlight xml %}
-
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
     <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
     <property name="url" value="jdbc:hsqldb:hsql://localhost:9001"/>
@@ -137,8 +133,8 @@ See below example for `Hibernate Space Persistency` that is configured having a 
     </property>
 </bean>
 {% endhighlight %}
-
 {% endtabcontent %}
+
 {% endinittab %}
 
 When using annotations to decorate the Space Classes the `sessionFactory` would have the following:

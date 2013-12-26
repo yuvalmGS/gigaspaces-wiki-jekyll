@@ -262,32 +262,23 @@ The handle to the Space is represented by the low level `IJSpace` interface. Whe
 If you are connecting to the Space from a remote JVM, you can use all of the above methods, with the exception that [the Space URL](./space-url.html) you should use is a remote URL (using the `jini://` discovery protocol), and you don't have to specify the clustering topology or the instance ID (since your code in that case does not create the Space, it simply connects to an already running Space).
 Here is an example of how you would do this programmatically, or via Spring configuration (from within a processing unit or a plain Spring application):
 
-{% inittab os_simple_Space|top %}
-{% tabcontent Spring Configuration (NameSpace) %}
-
+{% inittab simple_Space|top %}
+{% tabcontent Spring Configuration NameSpace %}
 {% highlight xml %}
-
 <os-core:space id="space" url="jini://*/*/mySpace" />
 {% endhighlight %}
-
 {% endtabcontent %}
-{% tabcontent Spring Configuration (Plain) %}
-
+{% tabcontent Spring Configuration Plain %}
 {% highlight xml %}
-
 <bean id="space" class="org.openSpaces.core.Space.UrlSpaceFactoryBean">
     <property name="url" value="jini:/*/*/mySpace" />
 </bean>
 {% endhighlight %}
-
 {% endtabcontent %}
 {% tabcontent Java Code %}
-
 {% highlight java %}
-
 IJSpace space = new UrlSpaceConfigurer("jini://*/*/mySpace").space();
 {% endhighlight %}
-
 {% endtabcontent %}
 {% endinittab %}
 
@@ -353,7 +344,7 @@ The Space can also be used to deliver events (messages) to your application. Thi
 Creating a `GigaSpace` instance is done by wrapping an existing IJSpace instance, or by providing details about the Space you would like to connect to. This can be done programmatically, or via Spring. Here is an example:
 
 {% inittab os_simple_Space|top %}
-{% tabcontent Spring Configuration (NameSpace) %}
+{% tabcontent Spring Configuration NameSpace %}
 
 {% highlight xml %}
 
@@ -362,7 +353,7 @@ Creating a `GigaSpace` instance is done by wrapping an existing IJSpace instance
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent Spring Configuration (Plain) %}
+{% tabcontent Spring Configuration Plain %}
 
 {% highlight xml %}
 
@@ -399,10 +390,10 @@ Once you have access to a `GigaSpace` instance, you can start operating on the S
 {% note title=Cleaning up resources after using the space %}
 There are two types of resources associated with space instances and space clients.
 
-1. **Thread and memory resources**: If your space client or embedded space are running within a Spring-enabled environment (e.g. the GigaSpaces service grid or a standalone Spring application), and are configured in a Spring application context, these resources will be cleaned up automatically when the Spring application context is destroyed. <br/> However, if you start the space client or space instance programatically, you must call the `UrlSpaceConfigurer#destroy` method when your application no longer uses the space instance / space client.
+1. **Thread and memory resources**: If your space client or embedded space are running within a Spring-enabled environment (e.g. the GigaSpaces service grid or a standalone Spring application), and are configured in a Spring application context, these resources will be cleaned up automatically when the Spring application context is destroyed. <br/> However, if you start the space client or space instance programatically, you must call the `UrlSpaceConfigurer` method when your application no longer uses the space instance / space client.
 1. **Communication resources**: All communication related resources in GigaSpaces are are shared between all the GigaSpaces components
 at the Java classloader level. If you're using the [GigasSpaces service grid](./the-runtime-environment.html) to run your GigaSpaces application you do not need to handle communication resources cleanup explicitly. But if your application runs on a standalone environment or another hosted environment (e.g. a JEE application server) you will need to explicitly clean up those resources.
-You should make sure to shutdown these resources explicitly when your application no longer uses the GigaSpaces components (e.g. when it's undeployed from the application server). This is done by calling the static method [`LRMIManager#shutdown`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/lrmi/LRMIManager.html).
+You should make sure to shutdown these resources explicitly when your application no longer uses the GigaSpaces components (e.g. when it's undeployed from the application server). This is done by calling the static method [LRMIManager](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/lrmi/LRMIManager.html).
 Note that if the JVM process is shut down anyway, you do not need to do explicitly shut down the communication resources.
 {% endnote %}
 

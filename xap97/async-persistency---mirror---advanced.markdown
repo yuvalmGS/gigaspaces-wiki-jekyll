@@ -6,8 +6,8 @@ parent: asynchronous-persistency-with-the-mirror.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|66 %}Reliable Asynchronous Persistency (Mirror) - advanced topics.{% endsummary %}
+
+{% summary%}Reliable Asynchronous Persistency (Mirror) - advanced topics.{% endsummary %}
 
 # Custom Mirror Service Name
 
@@ -203,14 +203,11 @@ Setting this property will cause a `SpaceSynchronizationEndpoint.onTransactionSy
     public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint {
         @Override
         public void onTransactionSynchronization(TransactionData transactionData) {
-
             TransactionParticipantMetaData metaData = transactionData.getTransactionParticipantMetaData();
             int participantId = metaData.getParticipantId();
             int participantsCount = metaData.getTransactionParticipantsCount();
             TransactionUniqueId transactionId = metaData.getTransactionUniqueId();
-
             // ...
-
         }
     }
 {% endhighlight %}
@@ -221,7 +218,9 @@ Notes:
 2. Non-transactional operations are grouped according to the replication policy (`bulk-size` and `interval-millis`) and sent to the Mirror Service.
 3. Transactional and non-transactional items are not mixed.
 
+{%comment%}
 ![new_9_0_1_banner.png](/attachment_files/new_9_0_1_banner.png)
+{%endcomment%}
 
 In 9.0.1 a new transaction participant meta data interface is introduced.
 The main change over the old interface is that we've added an interface for describing a transaction's unique id which consists of the transaction's id and the transaction manager id who have created it.

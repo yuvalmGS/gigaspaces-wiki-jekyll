@@ -45,7 +45,7 @@ The SLA definition, whether it comes in a separate file or embedded inside the `
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.openspaces.org/schema/sla
-	   http://www.openspaces.org/schema/8.0/sla/openspaces-sla.xsd">
+	   http://www.openspaces.org/schema/{%currentversion%}/sla/openspaces-sla.xsd">
     <os-sla:sla cluster-schema="partitioned-sync2backup"
             number-of-instances="2" number-of-backups="1"
             max-instances-per-vm="1">

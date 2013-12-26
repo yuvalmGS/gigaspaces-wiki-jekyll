@@ -31,7 +31,7 @@ This strategy checks the amount of space objects, and evicts the relevant object
 - Writing a new object into the space.
 - A transaction is committed or rolled-back.
 
-1. **Based on the amount of available memory the JVM hosting the space has** - when using this strategy, you should perform some tuning to provide deterministic behavior. This strategy is turned on when the `space-config.engine.memory_usage.enabled` value is `true`. This strategy is very complicated to use when you have multiple spaces running within the same JVM.
+2. **Based on the amount of available memory the JVM hosting the space has** - when using this strategy, you should perform some tuning to provide deterministic behavior. This strategy is turned on when the `space-config.engine.memory_usage.enabled` value is `true`. This strategy is very complicated to use when you have multiple spaces running within the same JVM.
 
 ## The Eviction Flow
 
