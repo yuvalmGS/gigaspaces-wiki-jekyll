@@ -15,3 +15,6 @@ The XAP web management console is a web application which was designed to enable
 In terms of functionality, it does not currently replace the existing standalone GUI (the GigaSpaces Management Center), but rather completes it. {% children %}
 
 ![dashboard803_9_6.png](/attachment_files/dashboard803_9_6.png)
+
+
+{%children%}
