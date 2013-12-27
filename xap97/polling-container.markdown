@@ -6,16 +6,15 @@ parent: event-processing.html
 weight: 300
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}Allows you to perform polling receive operations against the space.{% endsummary %}
+{% summary %}Allows you to perform polling receive operations against the space.{% endsummary %}
 
 # Overview
 
 {% section %}
-{% column width=30% %}
+{% column width=40% %}
 The polling event container is an implementation of the [polling consumer pattern](http://enterpriseintegrationpatterns.com/PollingConsumer.html){:target="_blank"} which uses the space to receive events. It performs polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the [Data Event Listener](./data-event-listener.html) is invoked with the event. A polling event operation is mainly used when simulating Queue semantics or when using the master-worker design pattern.
 {% endcolumn %}
-{% column width=70% %}
+{% column width=50% %}
 ![polling_container_basic.jpg](/attachment_files/polling_container_basic.jpg)
 {% endcolumn %}
 {% endsection %}
@@ -505,13 +504,13 @@ OpenSpaces comes with several built-in receive operation-handler implementations
 
 {: .table .table-bordered}
 |Receive Operation Handler|Description|
-|:-----------------------:|:---------:|
-| `SingleTakeReceiveOperationHandler` |Performs a single blocking take operation with the receive timeout.|
-| `SingleReadReceiveOperationHandler` |Performs a single blocking read operation with the receive timeout.|
-| `ExclusiveReadReceiveOperationHandler` |Performs a single read operation under an exclusive read lock (similar to "select for update" in databases) with the receive timeout. Exclusive read lock mimics the take operation without actually taking the Entry from the space. {% exclamation %} This receive operation handler must be used within a transaction.|
-| `MultiTakeReceiveOperationHandler` |First tries to perform takeMultiple (using a configured max Entries). If no values are returned, performs a blocking take operation with the receive timeout.|
-| `MultiReadReceiveOperationHandler` |First tries to perform readMultiple (using a configured max Entries). If no values are returned, performs a blocking read operation with the receive timeout.|
-| `MultiExclusiveReadReceiveOperationHandler` |First tries to perform readMultiple (using a configured max Entries). If no values are returned, performs a blocking read operation with the receive timeout. Both read operations are performed under an exclusive read lock (similar to "select for update" in databases) which mimics a take operation without actually taking the Entry from the space. Note, this receive operation handler must be used within a transaction. |
+|:------------------------|:----------|
+|`SingleTakeReceiveOperationHandler`|Performs a single blocking take operation with the receive timeout.|
+|`SingleReadReceiveOperationHandler`|Performs a single blocking read operation with the receive timeout.|
+|`ExclusiveReadReceiveOperationHandler`|Performs a single read operation under an exclusive read lock (similar to "select for update" in databases) with the receive timeout. Exclusive read lock mimics the take operation without actually taking the Entry from the space. {% exclamation %} This receive operation handler must be used within a transaction.|
+|`MultiTakeReceiveOperationHandler`|First tries to perform takeMultiple (using a configured max Entries). If no values are returned, performs a blocking take operation with the receive timeout.|
+|`MultiReadReceiveOperationHandler`|First tries to perform readMultiple (using a configured max Entries). If no values are returned, performs a blocking read operation with the receive timeout.|
+|`MultiExclusiveReadReceiveOperationHandler`|First tries to perform readMultiple (using a configured max Entries). If no values are returned, performs a blocking read operation with the receive timeout. Both read operations are performed under an exclusive read lock (similar to "select for update" in databases) which mimics a take operation without actually taking the Entry from the space. Note, this receive operation handler must be used within a transaction. |
 
 {% infosign %} When using the `ExclusiveReadReceiveOperationHandler` or even the `SingleReadReceiveOperationHandler`, it is important to remember that the actual event still remains in the space. If the data event is not taken from the space, or one of its properties changes in order **not** to match the container template, the same data event is read again.
 

@@ -3,7 +3,7 @@ layout: post
 title:  Cassandra Integration
 categories: XAP97
 parent: big-data.html
-weight: 100
+weight: 200
 ---
 
 

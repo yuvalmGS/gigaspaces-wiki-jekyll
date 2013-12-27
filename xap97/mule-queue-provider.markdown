@@ -27,7 +27,7 @@ In order to use the OpenSpaces queue provider, the following namespaces should b
 xmlns:os-queue=http://www.openspaces.org/schema/mule/os-queue
 
 xsi:schemaLocation="...
-http://www.openspaces.org/schema/mule/os-queue http://www.openspaces.org/schema/8.0/mule/3.1/mule-os-queue.xsd">
+http://www.openspaces.org/schema/mule/os-queue http://www.openspaces.org/schema/{%currentversion%}/mule/3.1/mule-os-queue.xsd">
 {% endhighlight %}
 
 # Connector
@@ -88,7 +88,9 @@ The OpenSpaces queue outbound component is very simple to configure once the que
 
 # Mule Messaging Styles Support
 
+{%comment%}
 ![new-in-804-star.png](/attachment_files/new-in-804-star.png)
+{%endcomment%}
 
 The queue supports the mule messaging styles - request-response and one-way.
 The messaging style can be configured on the endpoints in the following way:
@@ -163,12 +165,12 @@ The example below will uses two components: `Appender1` and `Appender2`. The 2 s
       xmlns:os-queue="http://www.openspaces.org/schema/mule/os-queue"
       xmlns:stdio="http://www.mulesoft.org/schema/mule/stdio"
 
-      xsi:schemaLocation="http://www.openspaces.org/schema/core http://www.openspaces.org/schema/8.0/core/openspaces-core.xsd
-       http://www.openspaces.org/schema/events http://www.openspaces.org/schema/8.0/events/openspaces-events.xsd
+      xsi:schemaLocation="http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
        http://www.mulesoft.org/schema/mule/stdio http://www.mulesoft.org/schema/mule/stdio/3.1/mule-stdio.xsd
-       http://www.openspaces.org/schema/mule/os-queue http://www.openspaces.org/schema/8.0/mule/3.1/mule-os-queue.xsd">
+       http://www.openspaces.org/schema/mule/os-queue http://www.openspaces.org/schema/{%currentversion%}/mule/3.1/mule-os-queue.xsd">
 
     <spring:beans>
         <os-core:space id="space" url="/./space" lookup-groups="${user.name}"/>

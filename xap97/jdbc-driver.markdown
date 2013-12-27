@@ -288,7 +288,7 @@ The following information represents the SQL to Java mapping conducted at runtim
 - All Basic SQL statements: `SELECT, INSERT, DELETE, UPDATE, CREATE TABLE, DROP TABLE`.
 - `AND/OR` operators to join two or more conditions in a `WHERE` clause.
 - Aggregate functions: `COUNT`, `MAX`, `MIN`, `SUM`, `AVG`.
-- All basic logical operations to create conditions: =, <>, <,>, >=, <=, `\[NOT\]` like, is `\[NOT\]` `null`, `IN`.
+- All basic logical operations to create conditions: =, <>, <,>, >=, <=, `[NOT]` like, is `[NOT]` `null`, `IN`.
 - Nested fields query - You may use as part of the select statement nested fields within collections (maps) or objects within the Space object.
 - Multiple tables select - Starting with XAP 7.0.1 the join feature supports the selection of multiple tables (previous versions supported select with only two tables). The join feature uses the cartesian product of the tables data to form the result set. The join will perform well when having tables with small/medium size (up to 1,000,000 rows).
 - `ORDER BY` for multiple columns.
@@ -357,7 +357,7 @@ Field incrementation is only supported for `Integer` fields using a '+' operator
 - The SQL statements: `HAVING`, `VIEW`, `TRIGGERS`, `EXISTS`, `BETWEEN`, `NOT`, `CREATE USER`, `GRANT`, `REVOKE`, `SET PASSWORD`,  `CONNECT USER`, `ON`.
 - `CREATE` Database.
 - `CREATE` Index, `DROP` Index.
-- Constraints: `NOT NULL`, `IDENTITY`, `UNIQUE`, `PRIMARY KEY`, Foreign Key/`REFERENCES`, `NO ACTION`, `CASCADE`, `SET NULL`, `SET DEFAULT`, `CHECK`.
+- Constraints: `NOT NULL`, `IDENTITY`, `UNIQUE`, `PRIMARY KEY`, Foreign Key `REFERENCES`, `NO ACTION`, `CASCADE`, `SET NULL`, `SET DEFAULT`, `CHECK`.
 - Set operations: `Union, Minus, Union All`.
 - Aggregate Functions: `STDEV`, `STDEVP`, `VAR`, `VARP`, `FIRST`, `LAST`.
 - The `UPDATE` statement does not allow the use of an expression or a `null` value in the `SET` clause.
@@ -365,12 +365,12 @@ Field incrementation is only supported for `Integer` fields using a '+' operator
 - The `INSERT` statement does not allow the use of an expression in the `VALUES` clause.
 - "." used to indicate a double data type.
 - Using mathematical expressions in the `WHERE` clause.
-- `LEFT \[OUTER\] JOIN`
-- `RIGHT \[OUTER\] JOIN`
-- `\[INNER\] JOIN`
+- `LEFT [OUTER] JOIN`
+- `RIGHT [OUTER] JOIN`
+- `[INNER] JOIN`
 
 {% tip %}
-When having `SELECT count (\*) FROM myClass` JDBC query -- `myClass` sub classes object count are not taken into consideration when processing the query result. The `SELECT count (\*) FROM myClass WHERE X=Y` and `SELECT (\*) from myClass` do take into consideration `myClass` sub classes objects when processing the result. Future versions will resolve this inconsistency.
+When having `SELECT count (*) FROM myClass` JDBC query -- `myClass` sub classes object count are not taken into consideration when processing the query result. The `SELECT count (*) FROM myClass WHERE X=Y` and `SELECT (*) from myClass` do take into consideration `myClass` sub classes objects when processing the result. Future versions will resolve this inconsistency.
 As a workaround, construct a JDBC query that includes a relevant `WHERE` part.
 {% endtip %}
 
@@ -379,8 +379,8 @@ As a workaround, construct a JDBC query that includes a relevant `WHERE` part.
 In order to partition the data and rout operations to the correct partition you should specify a "routing column" for each table. The "routing column" is specified through one of three mechanisms:
 
 1. A POJO with a [@SpaceRouting](./pojo-metadata.html) field can be sent to the space via the `snapshot` call prior to calling the JDBC API.
-1. Create the table through JDBC; the first index as part of the CREATE TABLE statement will be the routing field.
-1. If there is no indexed column, the first column as part of the CREATE TABLE will be the routing field.
+2. Create the table through JDBC; the first index as part of the CREATE TABLE statement will be the routing field.
+3. If there is no indexed column, the first column as part of the CREATE TABLE will be the routing field.
 
 # Nested Field Query
 
@@ -485,14 +485,14 @@ Here is a list of JDBC reserved keywords, data types, separators and operators:
 ALTER ADD AND ASC BETWEEN BY CREATE CALL DROP DEFAULT_NULL DESC DISTINCT
 END FROM GROUP IN IS LIKE MAX MIN NOT NULL OR ORDER SELECT SUBSTR SUM SYSDATE
 UPPER WHERE COUNT DELETE EXCEPTION ROWNUM INDEX INSERT INTO SET TABLE TO_CHAR
-TO\_NUMBER FOR\_UPDATE UPDATE UNION VALUES COMMIT ROLLBACK PRIMARY_KEY UID USING
+TO_NUMBER FOR_UPDATE UPDATE UNION VALUES COMMIT ROLLBACK PRIMARY_KEY UID USING
 {% endhighlight %}
 
 ## Data Types
 
 {% highlight java %}
 date datetime  time float double number decimal boolean integer varchar varchar2
-char timestamp long clob blob empty\_clob() empty\_blob() lob true false
+char timestamp long clob blob empty_clob() empty_blob() lob true false
 {% endhighlight %}
 
 ## Separators and operators
@@ -508,16 +508,16 @@ The JDBC Driver should be configured using the following properties. These shoul
 {: .table .table-bordered}
 | Parameter | Description | Default Value |
 |:----------|:------------|:--------------|
-|space-config.QueryProcessor.space\_read\_lease\_time|Read timeout. Millisec units.|0|
-|space-config.QueryProcessor.space\_write\_lease|Object lease timeout. Millisec units. |9223372036854775807L|
-|space-config.QueryProcessor.transaction\_timeout|Millisec unit. Transaction Timeout.|30000|
-|space-config.QueryProcessor.init\_jmx|Expose Tracing via JMX|false|
-|space-config.QueryProcessor.trace\_exec\_time|Enable Tracing |false|
-|space-config.QueryProcessor.debug\_mode|Boolean value. When true show debug information.|false|
-|space-config.QueryProcessor.parser\_case\_sensetivity|Boolean value. Determines if Column and Table names are case sensitive.|true|
-|space-config.QueryProcessor.auto\_commit|Boolean value. Auto Commit mode|true|
-|space-config.QueryProcessor.date\_format| Date Format|yyyy-MM-dd|
-|space-config.QueryProcessor.datetime\_format| DateTime Format|yyyy-MM-dd hh:mm:ss|
+|space-config.QueryProcessor.space_read_lease_time|Read timeout. Millisec units.|0|
+|space-config.QueryProcessor.space_write_lease|Object lease timeout. Millisec units. |9223372036854775807L|
+|space-config.QueryProcessor.transaction_timeout|Millisec unit. Transaction Timeout.|30000|
+|space-config.QueryProcessor.init_jmx|Expose Tracing via JMX|false|
+|space-config.QueryProcessor.trace_exec_time|Enable Tracing |false|
+|space-config.QueryProcessor.debug_mode|Boolean value. When true show debug information.|false|
+|space-config.QueryProcessor.parser_case_sensetivity|Boolean value. Determines if Column and Table names are case sensitive.|true|
+|space-config.QueryProcessor.auto_commit|Boolean value. Auto Commit mode|true|
+|space-config.QueryProcessor.date_format| Date Format|yyyy-MM-dd|
+|space-config.QueryProcessor.datetime_format| DateTime Format|yyyy-MM-dd hh:mm:ss|
 |space-config.QueryProcessor.time_format| Time Format|hh:mm:ss|
 
 Example:

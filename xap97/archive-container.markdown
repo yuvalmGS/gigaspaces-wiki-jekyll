@@ -2,7 +2,7 @@
 layout: post
 title:  Archive Container
 categories: XAP97
-parent: event-processing.html
+parent: big-data.html
 weight: 100
 ---
 

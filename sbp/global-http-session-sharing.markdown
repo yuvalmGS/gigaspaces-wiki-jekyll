@@ -6,8 +6,7 @@ parent: solutions.html
 weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}
+{% summary page%}
 Global HTTP Session Sharing allows transparent session replication between remote sites and session sharing between different application servers in real-time. The solution uses the [Shiro Session Manager library](http://shiro.apache.org/session-management.html)
 {% endsummary %}
 
@@ -56,15 +55,25 @@ GigaSpaces Global HTTP Session Management designed to deliver the application ma
 
 GigaSpaces Global HTTP Session Management features the following:
 - **Reduce App/Web server memory footprint** storing the session within a remote JVM.
+
 - **No code changes required** to share the session with other remote Web/App servers - Support **Serialized and Non-Serialized** Session attributes. Your attributes do not need to implement Serializable or Externalizable interface.
+
 - **Transparent Session sharing** between any App/Web server - Any JEE app/web server (WebSphere , Weblogic , JBoss , Tomcat , Jetty , GlassFish...) may share their HTTP session with each other.
+
 - **Application elasticity** - Support **session replication** across different App/Web applications located within the same or different data-centers/clouds allowing the application to scale dynamically without any downtime.
+
 - **Unlimited number of sessions and concurrent users** support - Sub-millisecond session data access by using GigaSpaces In-Memory-Data-Grid.
+
 - **Session replication over the WAN** support - Utilizing GigaSpaces Multi-Site Replication over the WAN technology.
+
 - HTTP Session **data access scalability** - Session data can utilize any of the supported In-Memory-Data-Grid topologies ; replicated , partitioned , with and without local cache.
+
 - **Transparent App/Web Failover** - Allow app server restart without any session data loss.
+
 - Any session data type attribute support - **Primitive and Non-Primitive** (collections, user defined types) attributes supported.
+
 - **Sticky session and Non-sticky** session support - Your requests can move across multiple instances of web application seamlessly.
+
 - **Atomic HTTP request** session access support - multiple requests for the session attributes within the same HTTP request will be served without performing any remote calls. Master session copy will be updated when the HTTP request will be completed.
 
 # Using GigaSpaces Global HTTP Session Sharing with your Application

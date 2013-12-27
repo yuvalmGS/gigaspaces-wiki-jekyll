@@ -6,16 +6,15 @@ parent: event-processing.html
 weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}The notify event container uses the space inherited support for notifications, using a GigaSpaces unified event session API.{% endsummary %}
+{% summary%}The notify event container uses the space inherited support for notifications, using a GigaSpaces unified event session API.{% endsummary %}
 
 # Overview
 
 {% section %}
-{% column width=30% %}
+{% column width=50% %}
 The notify event container uses the space inherited support for notifications (continuous query) using a GigaSpaces unified event session API. If a notification occurs, the [data event listener](./data-event-listener.html) is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
 {% endcolumn %}
-{% column width=70% %}
+{% column width=40% %}
 ![notify_container_basic.jpg](/attachment_files/notify_container_basic.jpg)
 {% endcolumn %}
 {% endsection %}

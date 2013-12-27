@@ -6,8 +6,7 @@ parent: mule-esb.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}OpenSpaces event container transport uses event components that allow you to send and receive POJO messages over the Space using Mule.{% endsummary %}
+{% summary%}OpenSpaces event container transport uses event components that allow you to send and receive POJO messages over the Space using Mule.{% endsummary %}
 
 # Overview
 
@@ -26,12 +25,12 @@ In order to use the event container transport (using XML namespaces), the follow
       xmlns:os-eventcontainer="http://www.openspaces.org/schema/mule/os-eventcontainer"
       xmlns:stdio="http://www.mulesoft.org/schema/mule/stdio"
 
-      xsi:schemaLocation="http://www.openspaces.org/schema/core http://www.openspaces.org/schema/8.0/core/openspaces-core.xsd
-       http://www.openspaces.org/schema/events http://www.openspaces.org/schema/8.0/events/openspaces-events.xsd
+      xsi:schemaLocation="http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
        http://www.mulesoft.org/schema/mule/stdio http://www.mulesoft.org/schema/mule/stdio/3.1/mule-stdio.xsd
-       http://www.openspaces.org/schema/mule/os-eventcontainer http://www.openspaces.org/schema/8.0/mule/3.1/mule-os-eventcontainer.xsd">
+       http://www.openspaces.org/schema/mule/os-eventcontainer http://www.openspaces.org/schema/{%currentversion%}/mule/3.1/mule-os-eventcontainer.xsd">
 
        <!-- Mule configuration comes here ... -->
 
@@ -204,7 +203,7 @@ In this example, POJO messages are received (`SimpleMessage`) from the Space, wi
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
        http://www.mulesoft.org/schema/mule/stdio http://www.mulesoft.org/schema/mule/stdio/3.1/mule-stdio.xsd
-       http://www.openspaces.org/schema/mule/os-eventcontainer http://www.openspaces.org/schema/8.0/mule/3.1/mule-os-eventcontainer.xsd">
+       http://www.openspaces.org/schema/mule/os-eventcontainer http://www.openspaces.org/schema/{%currentversion%}/mule/3.1/mule-os-eventcontainer.xsd">
 
     <description>Tests mule connector, receive and process single object at a time.</description>
 
