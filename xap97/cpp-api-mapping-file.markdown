@@ -104,17 +104,17 @@ The table below shows the **supported types that can be used in the space**, and
 | `long long` | `long long` | `long` | `long` |
 | `short` | `short` | `short` | `short` |
 | `string` | `std::string` | `java.lang.String` | `string` |
-| `bool\[\]` | `std::vector<bool>` | `boolean\[\]` | `bool\[\]` |
-| `byte\[\]` | `std::vector<char>` | `byte\[\]` | `byte\[\]` |
-| `char\[\]` | `std::vector<char>` | `char\[\]` | `char\[\]` |
-| `double\[\]` | `std::vector<double>` | `double\[\]` | `double\[\]` |
-| `float\[\]` | `std::vector<float>` | `float\[\]` | `float\[\]` |
-| `int\[\]` | `std::vector<int>` | `int\[\]` | `int\[\]` |
-| `long\[\]` | `std::vector<long>` | `int\[\]` | `int\[\]` |
-| `long long\[\]` | `std::vector<long long>` | `long\[\]` | `long\[\]` |
-| `short\[\]` | `std::vector<short>` | `short\[\]` | `short\[\]` |
-| `string\[\]` | `std::vector<std::string>` | `java.lang.String\[\]` | `string\[\]` |
-| `blob` | `Blob` | `byte\[\]` | `byte\[\]` |
+| `bool[]` | `std::vector<bool>` | `boolean[]` | `bool[]` |
+| `byte[]` | `std::vector<char>` | `byte[]` | `byte[]` |
+| `char[]` | `std::vector<char>` | `char[]` | `char[]` |
+| `double[]` | `std::vector<double>` | `double[]` | `double[]` |
+| `float[]` | `std::vector<float>` | `float[]` | `float[]` |
+| `int[]` | `std::vector<int>` | `int[]` | `int[]` |
+| `long[]` | `std::vector<long>` | `int[]` | `int[]` |
+| `long long[]` | `std::vector<long long>` | `long[]` | `long[]` |
+| `short[]` | `std::vector<short>` | `short[]` | `short[]` |
+| `string[]` | `std::vector<std::string>` | `java.lang.String[]` | `string[]` |
+| `blob` | `Blob` | `byte[]` | `byte[]` |
 
 {% tip %}
 When having a Java class and a C++ class sharing data you should use int/long/float/double/short data types with your Java space class POJO instead of java.lang.Integer/Long/Float/Double/Short
@@ -135,7 +135,7 @@ Types that can be used with the `ref-property` attribute:
 {: .table .table-bordered}
 | XML type | CPP Type | Java Type | .NET Type |
 |:---------|:---------|:----------|:----------|
-| `array` | `std::vector < boost::shared_ptr < POCO > >` | `POJO\[\]` | `PONO\[\]` |
+| `array` | `std::vector < boost::shared_ptr < POCO > >` | `POJO[]` | `PONO[]` |
 | `boost::shared_ptr` | `boost::shared_ptr< POCO >` | `POJO` | `PONO` |
 
 For example:

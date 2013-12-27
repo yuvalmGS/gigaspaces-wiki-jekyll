@@ -7,7 +7,7 @@ parent: programmers-guide.html
 ---
 
 
-{% summary page|65 %}The possibility for organizations whose projects include a combination of Java, .NET and C++ platforms to communicate and access each other easily and efficiently while also maintaining the benefits of the GigaSpaces scale-out application server.{% endsummary %}
+{% summary  %}The possibility for organizations whose projects include a combination of Java, .NET and C++ platforms to communicate and access each other easily and efficiently while also maintaining the benefits of the GigaSpaces scale-out application server.{% endsummary %}
 
 # Overview
 
@@ -36,18 +36,16 @@ There are pros and cons for each alternative. Here are some points to help you d
 - If you're getting started with interoperability, you can use the code generator as a learning tool to review interoperable classes in all platforms.
 - The code generation tool does not support some of the advanced features in .NET. If you have a need for these features, it is recommended to use the generator to get started, and manually edit the generated code. In this case you need to be careful when changing the class, since regenerating the code might override your manual changes.
 
-{% inittab interop %}
-{% tabcontent Writing Interoperable Classes %}
+
+# Writing Interoperable Classes
 Please refer to the [interoperability section in our XAP.NET documentation]({%currentneturl%}/dotnet-java-interoperability.html).
 
 
-{% endtabcontent %}
-{% tabcontent Code Generator %}
+
+# Code Generator
 Please refer to the [C++ Code Generation Guidelines](./cpp-api-code-generator.html).
 
 
-{% endtabcontent %}
-{% endinittab %}
 
 {%children%}
 

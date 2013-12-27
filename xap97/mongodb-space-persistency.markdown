@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Space Persistency
+title: Mongo Space Persistency
 categories: XAP97
 parent: mongodb.html
 weight: 100

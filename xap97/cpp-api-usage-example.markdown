@@ -27,7 +27,9 @@ This example runs by default using a predefined **embedded space**. It can work 
 For more information on setting the environment refer to [Installing C++ Package](./installing-cpp-api-package.html#Setting the Environment).
 
 After running the example the console will have the following output:
-{noformat:borderStyle=solid}
+
+{%highlight java%}
+
 Retrieved a space proxy to /./APIUsageExampleEmbeddedSpace?groups=CPP-GROUP
 Did snapshot for Person class
 Running ...
@@ -46,5 +48,7 @@ Total number of notifications received: 100
 DONE
 Press Enter to end API Usage Example...
 
-    {% infosign %} The API Usage Example can work with any given space simply by providing the space URL as an argument. To do so change the project Command Arguments and specify the space URL string. For example, `jini://localhost/*/mySpace`.
+{%endhighlight%}
+
+{% infosign %} The API Usage Example can work with any given space simply by providing the space URL as an argument. To do so change the project Command Arguments and specify the space URL string. For example, `jini://localhost/*/mySpace`.
 

@@ -3,7 +3,7 @@ layout: post
 title:  Scala
 categories: XAP97
 parent: interoperability.html
-weight: 400
+weight: 300
 ---
 
 
