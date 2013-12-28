@@ -41,8 +41,8 @@ Using `-c` (or `-cluster`) with a URL of a clustered space pings **all** cluster
 |:-------|:------------|:-------------|
 | `url` | The URL of the space you want to restart, or of the container -- pings the spaces under that container. | Container URL: `jini://localhost/my_container`{% wbr %}{% wbr %}`rmi://localhost:10098/my_container`{% wbr %}{% wbr %}Space URL: `jini://localhost/my_container/mySpace`{% wbr %}{% wbr %}`rmi://localhost:10098/my_container` |
 | `cluster` / `c` | Pings all cluster members. | |
-| `t` |  Sets the message objects' lease timout (in `\[ms\]`). Default is `FOREVER`. | `1000` |
-| `ft` | Sets a a timeout (in `\[ms\]`) for the Jini protocol. | `1000` |
+| `t` |  Sets the message objects' lease timout (in `[ms]`). Default is `FOREVER`. | `1000` |
+| `ft` | Sets a a timeout (in `[ms]`) for the Jini protocol. | `1000` |
 | `s` | Sets the byte size of the object. | `128` |
 | `i` |  Sets the iteration number. Default is `5`. | `10` |
 | `read` | Reads from the space. Cannot be performed together with take -- either read or take is performed. If you do not specify read nor take, read is performed by default. | |

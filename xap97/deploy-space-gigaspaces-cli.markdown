@@ -22,15 +22,15 @@ A Space only Processing Unit can be easily deployed onto the Service Grid.
 |Option|Description|Value Format|
 |:-----|:----------|:-----------|
 | Space Name -- **mandatory** | The name of the space to be deployed.| |
-| `-cluster` |Allows you to control the clustering characteristics of the space.{% wbr %}The following options are available (used automatically by any embedded space included in the Processing Unit):{% wbr %}- `schema` -- the cluster schema used by the Processing Unit.{% wbr %}- `total_members` -- the number of instances, optionally followed by the number of backups {% wbr %}  (number of backups is required only if the `partitioned-sync2backup` schema is used). | `-cluster schema=\[schema name\]`{% wbr %}`total_members=numberOfInstances[,numberOfBackups\]` |
-| `-properties` | Allows you to control [deployment properties](./deployment-properties.html). | `-properties \[bean name\] location` |
-| `-sla` | Allows you to specify a link (default to file-system) to a Spring XML configuration, holding the SLA definition. | `-sla \[slaLocation\]` |
-| `-zones` | Allows you to specify a list of deployment zones that are to restrict that the deployment to specific GSCs. | `-zones \[zoneName1, zoneName2 ... \]` |
+| `-cluster` |Allows you to control the clustering characteristics of the space.{% wbr %}The following options are available (used automatically by any embedded space included in the Processing Unit):{% wbr %}- `schema` -- the cluster schema used by the Processing Unit.{% wbr %}- `total_members` -- the number of instances, optionally followed by the number of backups {% wbr %}  (number of backups is required only if the `partitioned-sync2backup` schema is used). | `-cluster schema=[schema name]`{% wbr %}`total_members=numberOfInstances[,numberOfBackups]` |
+| `-properties` | Allows you to control [deployment properties](./deployment-properties.html). | `-properties [bean name] location` |
+| `-sla` | Allows you to specify a link (default to file-system) to a Spring XML configuration, holding the SLA definition. | `-sla [slaLocation]` |
+| `-zones` | Allows you to specify a list of deployment zones that are to restrict that the deployment to specific GSCs. | `-zones [zoneName1, zoneName2 ... ]` |
 | `-max-instances-per-vm` | Allows you to set the SLA number of instances per VM | |
 | `-max-instances-per-machine` | Allows you to set the SLA number of instances per machine | |
 | `-max-instances-per-zone` | Allows you to set the SLA number of instances per zone in the format of `zoneX/number,zoneY/number` | |
 | `h` / `help`  | Prints help | |
-| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security](./command-line-interface-(cli)-security.html)| `-secured \[true/false\]`|
+| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security](./command-line-interface-(cli)-security.html)| `-secured [true/false]`|
 | `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security](./command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
 {% tip %}

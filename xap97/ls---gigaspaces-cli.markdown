@@ -21,4 +21,4 @@ The `ls` command lists the contents of the current working directory, like the U
 {: .table .table-bordered}
 | Option | Description |
 |:-------|:------------|
-| `\-l` | List the contents in more detail. |
+| `-l` | List the contents in more detail. |
