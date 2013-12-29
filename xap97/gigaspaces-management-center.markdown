@@ -16,4 +16,9 @@ weight: 100
 
 {% include /COM/about-gigaspaces-management-center.markdown %}
 
+{%comment%}
 {% include xap97/using-space-browser-tab---gigaspaces-management-center.markdown %}
+
+{%endcomment%}
+
+{%children%}

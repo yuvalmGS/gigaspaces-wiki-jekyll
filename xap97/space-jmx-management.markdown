@@ -243,4 +243,4 @@ Following are some space/space container MBeans **Operations** settings you can 
 
 See [example of JMX API usage](/sbp/jmx-space-statistics.html).
 
-\*\*\*Link required
+
