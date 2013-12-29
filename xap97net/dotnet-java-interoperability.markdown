@@ -77,7 +77,7 @@ The following collections are mapped for interoperability:
 {: .table .table-bordered}
 | .Net | Java | Description |
 |:-----|:-----|:------------|
-| `T\[\]` | `E\[\]` | Fixed-size arrays of elements. |
+| `T[]` | `E[]` | Fixed-size arrays of elements. |
 | [System.Collections.Generic.List<T>](http://msdn.microsoft.com/en-us/library/6sh2ey19.aspx)  [System.Collections.ArrayList](http://msdn2.microsoft.com/en-us/library/system.collections.arraylist.aspx)  [System.Collections.Specialized.StringCollection](http://msdn2.microsoft.com/en-us/library/system.collections.specialized.stringcollection.aspx) | [java.util.ArrayList ](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/ArrayList.html) | Ordered list of elements. |
 | [System.Collections.Generic.Dictionary<K,V>](http://msdn.microsoft.com/en-us/library/xfhwa508.aspx)  [System.Collections.HashTable](http://msdn2.microsoft.com/en-us/library/system.collections.hashtable.aspx)  [System.Collections.Specialized.HybridDictionary](http://msdn2.microsoft.com/en-us/library/system.collections.specialized.hybriddictionary.aspx)  [System.Collections.Specialized.ListDictionary](http://msdn2.microsoft.com/en-us/library/system.collections.specialized.listdictionary.aspx) | [java.util.HashMap](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/HashMap.html) | Collection of key-value pairs. |
 | [System.Collections.Specialized.OrderedDictionary](http://msdn2.microsoft.com/en-us/library/system.collections.specialized.ordereddictionary.aspx) | [java.util.LinkedHashMap](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/LinkedHashMap.html) | Ordered collection of key-value pairs. |

@@ -93,7 +93,7 @@ Person p = spaceProxy.Read(new Person());
 
 We expect **p** to hold the person we just wrote to the space, but in fact it will be null: since **age** is primitive it is implicitly initialized to 0 (zero) and cannot be set to null either implicitly or explicitly, which means we're actually matching for Persons whose age is 0 (zero).
 
-To overcome this issue we can map a primitive value to null via the `\[SpaceProperty(NullValue = ?)\]` attribute. For example:
+To overcome this issue we can map a primitive value to null via the `[SpaceProperty(NullValue = ?)]` attribute. For example:
 
 {% highlight java %}
 public class Person
