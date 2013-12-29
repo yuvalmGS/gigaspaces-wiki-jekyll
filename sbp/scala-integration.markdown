@@ -6,7 +6,7 @@ parent: data-access-patterns.html
 weight: 1500
 ---
 
-{% compositionsetup %}
+
 
 {% tip %}
 **Summary:** {% excerpt %}This article presents common Scala integration scenarios on top of XAP.{% endexcerpt %}<br/>
@@ -151,10 +151,10 @@ object Feeder {
        xmlns:os-sla="http://www.openspaces.org/schema/sla"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/8.0/core/openspaces-core.xsd
-       http://www.openspaces.org/schema/events http://www.openspaces.org/schema/8.0/events/openspaces-events.xsd
-       http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/8.0/remoting/openspaces-remoting.xsd
-       http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/8.0/sla/openspaces-sla.xsd">
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%latestxaprelease%}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%latestxaprelease%}/events/openspaces-events.xsd
+       http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{%latestxaprelease%}/remoting/openspaces-remoting.xsd
+       http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/{%latestxaprelease%}/sla/openspaces-sla.xsd">
 
     <os-core:space id="space" url="/./processorSpace" />
     <os-core:distributed-tx-manager id="transactionManager"/>

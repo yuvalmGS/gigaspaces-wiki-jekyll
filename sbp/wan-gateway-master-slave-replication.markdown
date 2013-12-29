@@ -5,8 +5,7 @@ categories: SBP
 parent: wan-based-deployment.html
 weight: 200
 ---
-
-{% compositionsetup %}
+s
 
 {% tip %}
 **Summary:** {% excerpt %}WAN Master-Slave replication example{% endexcerpt %}<br/>
@@ -60,10 +59,10 @@ The master-slave topology configuration is simply implemented through delegators
 	xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%latestxaprelease%}/core/openspaces-core.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
-       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{%currentversion%}/core/gateway/openspaces-gateway.xsd
+       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{%latestxaprelease%}/core/gateway/openspaces-gateway.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/remoting/openspaces-remoting.xsd">
 	<context:annotation-config></context:annotation-config>
 	<tx:annotation-driven transaction-manager="transactionManager" />
@@ -131,10 +130,10 @@ The master-slave topology configuration is simply implemented through delegators
 	xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%latestxaprelease%}/core/openspaces-core.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
-       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{%currentversion%}/core/gateway/openspaces-gateway.xsd
+       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{%latestxaprelease%}/core/gateway/openspaces-gateway.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/remoting/openspaces-remoting.xsd">
 	<context:annotation-config></context:annotation-config>
 	<tx:annotation-driven transaction-manager="transactionManager" />
@@ -196,10 +195,10 @@ The master-slave topology configuration is simply implemented through delegators
 	xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%latestxaprelease%}/core/openspaces-core.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
-       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{%currentversion%}/core/gateway/openspaces-gateway.xsd
+       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{%latestxaprelease%}/core/gateway/openspaces-gateway.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/remoting/openspaces-remoting.xsd">
 	<context:annotation-config></context:annotation-config>
 	<tx:annotation-driven transaction-manager="transactionManager" />

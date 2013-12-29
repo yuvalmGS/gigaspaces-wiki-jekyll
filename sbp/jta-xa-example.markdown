@@ -6,7 +6,6 @@ parent: processing.html
 weight: 300
 ---
 
-{% compositionsetup %}
 
 {% tip %}
 **Summary:** {% excerpt %}Integrating GigaSpaces with External JMS Server using JTA/XA{% endexcerpt %}<br/>
@@ -328,41 +327,60 @@ public class Message  {
 
 ## Running the example
 
-1. Download Apache ActiveMQ from [here](http://activemq.apache.org/download.html).
-2. Download Atomikos TransactionEssentials from [here](http://www.atomikos.com/Main/TransactionsEssentialsDownloadForm).
-3. Extract the [example](/attachment_files/sbp/helloworld-jta.zip) archive into a folder (calling it <helloworld-jta>). Modify the setDevEnv.bat and build.properties files to have proper paths for GigaSpaces home, Java home, ActiveMQ home and Atomikos home. Also modify the NIC_ADDR and locators variable to have proper IP address.
-4. Open a command shell and navigate to <helloworld-jta> folder.
-5. Run `setDevEnv.bat` script in <helloworld-jta> folder, to set the environment variables.
-6. Copy the required jars to the <helloworld-jta>\lib folder using the `copy-libs` ant task provided.
+Step 1. Download Apache ActiveMQ from [here](http://activemq.apache.org/download.html).
+
+Step 2. Download Atomikos TransactionEssentials from [here](http://www.atomikos.com/Main/TransactionsEssentialsDownloadForm).
+
+Step 3. Extract the [example](/attachment_files/sbp/helloworld-jta.zip) archive into a folder (calling it <helloworld-jta>). Modify the setDevEnv.bat and build.properties files to have proper paths for GigaSpaces home, Java home, ActiveMQ home and Atomikos home. Also modify the NIC_ADDR and locators variable to have proper IP address.
+
+Step 4. Open a command shell and navigate to <helloworld-jta> folder.
+
+Step 5. Run `setDevEnv.bat` script in <helloworld-jta> folder, to set the environment variables.
+
+Step 6. Copy the required jars to the <helloworld-jta>\lib folder using the `copy-libs` ant task provided.
+
 {% highlight java %}
  build copy-libs
 {% endhighlight %}
+
 {% note %}
  Example was tested using following product versions,
+
 1. GigaSpaces - **8.0.1**
+
 2. Apache ActiveMQ - **5.5**
+
 3. Atomikos TransactionEssentials - **3.7.0**
+
 If you are using different versions please make sure all the equivalent jars are reflected in `copy-libs` ant task
 {% endnote %}
-7. Start a gs-ui instance using `gs-ui.bat` script in <helloworld-jta> folder.
-8. Run `gs-agent.bat`  <helloworld-jta> folder, to start the GigaSpaces components (GSA,GSM, LUS, GSM).
-9. Start the ActiveMQ process using <ActiveMQHome>`\bin\activemq.bat` script.
+
+Step 7. Start a gs-ui instance using `gs-ui.bat` script in <helloworld-jta> folder.
+
+Step 8. Run `gs-agent.bat`  <helloworld-jta> folder, to start the GigaSpaces components (GSA,GSM, LUS, GSM).
+
+Step 9. Start the ActiveMQ process using <ActiveMQHome>`\bin\activemq.bat` script.
+
 {% note %}
 If ActiveMQ is running on another server, please remember to update the brokerURL in `pu.xml`
 {% endnote %}
-10. Deploy the processorSpace cluster by running `deploy-processor` ant task.
+
+Step 10. Deploy the processorSpace cluster by running `deploy-processor` ant task.
+
 {% highlight java %}
 build deploy-processor
 {% endhighlight %}
-13. Run the feeder process using `run-feeder` ant task.
+Step 11. Run the feeder process using `run-feeder` ant task.
 {% highlight java %}
  build run-feeder
 {% endhighlight %}
-14. If you check GigaSpaces logs, you will notice that the Message-0 (id=0) is Rolled back and all other messages are processed successfully and sent to JMS server.
+Step 12. If you check GigaSpaces logs, you will notice that the Message-0 (id=0) is Rolled back and all other messages are processed successfully and sent to JMS server.
+
 {% note %}
  Message-0 (id=0) will keep going back to Polling container logic because the space update and JMS message both are rolled back. This is intentionally done, to demonstrate XA.
 {% endnote %}
-15. You can validate the JMS messages received by the Queue using a test JMS client included. You can run the client using `jms-client` ant task.
+
+Step 13. You can validate the JMS messages received by the Queue using a test JMS client included. You can run the client using `jms-client` ant task.
 {% highlight java %}
  build jms-client
 {% endhighlight %}
