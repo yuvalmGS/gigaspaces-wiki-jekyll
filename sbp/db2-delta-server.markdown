@@ -176,13 +176,13 @@ weight: 1250
 
 # Running the Demo
 
-1. Start the xap agent
+Step 1: Start the xap agent
 
  {%highlight java%}
  \XAP_HOME\bin\gs-agent.sh
  {%endhighlight%}
 
-2. Set environment variables for MQ
+Step 2: Set environment variables for MQ
 
  {%highlight java%}
  export MQ_JAVA_INSTALL_PATH=/opt/mqm/java
@@ -190,7 +190,7 @@ weight: 1250
  export MQ_JAVA_LIB_PATH=/opt/mqm/java/lib64
 {%endhighlight%}
 
-3. Start the Delta Server
+Step 3: Start the Delta Server
 
  {%highlight java%}
  java -Djava.library.path=/opt/mqm/java/lib64 -cp "/opt/mqm/java/lib:./*"
@@ -200,7 +200,7 @@ weight: 1250
 
  Make sure you include all the jars that are MQS specific.
 
-4. Update the data base to force notifications
+Step 4: Update the data base to force notifications
 
 {%highlight java%}
 

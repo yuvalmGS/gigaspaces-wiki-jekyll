@@ -16,7 +16,7 @@ Supporting FIFO (First In, First Out) behavior for Entries is a critical require
 
 The default space behavior is non-FIFO. The reason is that FIFO support comes at a cost: the space needs to organize and maintain the entries internally in a more complex fashion to support FIFO queries, thus slowing down concurrent write operations. To enable FIFO operations users need to turn on FIFO support for classes which will participate in such operations. If a FIFO operation is performed on an entry whose class does not support FIFO, an exception will be thrown.
 
-Setting FIFO support for a class can be done via the `FifoSupport` property on the `\[SpaceClass\]` attribute:
+Setting FIFO support for a class can be done via the `FifoSupport` property on the `[SpaceClass]` attribute:
 
 {% highlight java %}
 [SpaceClass(FifoSupport = FifoSupport.Operation)]

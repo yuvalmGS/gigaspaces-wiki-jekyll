@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  SpaceFilterOperationDelegate
+title:  Space Filter Operation Delegate
 categories: XAP97NET
 parent: implementing-and-using-a-space-filter.html
 weight: 400

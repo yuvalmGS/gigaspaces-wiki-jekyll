@@ -6,9 +6,9 @@ parent: the-space-api.html
 weight: 200
 ---
 
-{% compositionsetup %}
 
-{% summary page|60 %}The `ISpaceProxy` interface provides access to the In-Memory Data Grid or the Space. The `ISpaceProxy` interface is used to read froom and write to the space. {% endsummary %}
+
+{% summary   %}The `ISpaceProxy` interface provides access to the In-Memory Data Grid or the Space. The `ISpaceProxy` interface is used to read froom and write to the space. {% endsummary %}
 
 # Overview
 

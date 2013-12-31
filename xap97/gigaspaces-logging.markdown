@@ -466,8 +466,8 @@ To troubleshoot and detect which logging properties file was loaded and from whi
 
 GigaSpaces out of the box configures logging with two log Handlers,
 
-- `java.util.logging.**ConsoleHandler**`: A simple handler for writing formatted output to System.err (level is set to ALL)
-- `com.gigaspaces.logger.**RollingFileHandler**`: A handler that writes formatted output to a file that rolls over if a certain policy is triggered. see [Managing Log Files](./managing-log-files.html)
+- `java.util.logging.ConsoleHandler`: A simple handler for writing formatted output to System.err (level is set to ALL)
+- `com.gigaspaces.logger.RollingFileHandler`: A handler that writes formatted output to a file that rolls over if a certain policy is triggered. see [Managing Log Files](./managing-log-files.html)
 
 Java util logging supports other handlers. MemoryHandler, SocketHandler or any other handler can be used instead of the above. More information about handlers is [here](http://docs.oracle.com/javase/1.4.2/docs/guide/util/logging/overview.html). You can also use one of the [open source logging frameworks](http://java-source.net/open-source/logging) that support java.util.logging.
 
@@ -475,7 +475,7 @@ Java util logging supports other handlers. MemoryHandler, SocketHandler or any o
 
 Formatters are in charge of formatting the log messages and adding meta data to them (date, time, level, etc).
 GigaSpaces configures the logging `Handler`'s `formatter` property with a single `Formatter` implementation class:
-`com.gigaspaces.logger.`**`GSSimpleFormatter`**. This formatter class is based on the `java.util.logging.`**`SimpleFormatter`** class. see [Formatting Log Messages](./formatting-log-messages.html) for more details.
+`com.gigaspaces.logger.GSSimpleFormatter. This formatter class is based on the `java.util.logging.SimpleFormatter` class. see [Formatting Log Messages](./formatting-log-messages.html) for more details.
 
 # Exception visibility
 

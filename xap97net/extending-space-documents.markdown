@@ -8,8 +8,6 @@ weight: 100
 
 {% summary %}Extending the SpaceDocument class{% endsummary %}
 
-![new-in-801-banner.png](/attachment_files/dotnet/new-in-801-banner.png)
-
 # Overview
 
 While documents provide us with a dynamic schema, they force us to give up .NET type-safety for working with typeless key-value pairs. GigaSpaces supports extending the SpaceDocument class to provide a type-safe wrapper for documents which is much easier to code with, while maintaining the dynamic schema.

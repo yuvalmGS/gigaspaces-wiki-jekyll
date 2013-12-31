@@ -3,7 +3,7 @@ layout: post
 title:  Product structure
 categories: XAP97NET
 parent: administrators-guide.html
-weight: 200
+weight: 100
 ---
 
 {% summary %}This section describes the XAP.NET product structure{% endsummary %}

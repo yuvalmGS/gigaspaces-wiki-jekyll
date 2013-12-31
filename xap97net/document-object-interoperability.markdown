@@ -8,7 +8,9 @@ parent: document-(schema-free)-api.html
 
 {% summary %}Interoperability between Concrete Object and Document space entries{% endsummary %}
 
+{%comment%}
 ![new-in-801-banner.png](/attachment_files/dotnet/new-in-801-banner.png)
+{%endcomment%}
 
 # Overview
 

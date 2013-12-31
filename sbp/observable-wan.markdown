@@ -6,8 +6,6 @@ parent: wan-based-deployment.html
 weight: 400
 ---
 
-{% compositionsetup %}
-
 {% tip %}
 **Summary:** {% excerpt %}Observable WAN - Multi-site WAN performance detection{% endexcerpt %}<br/>
 **Author**: DeWayne Filppi<br/>

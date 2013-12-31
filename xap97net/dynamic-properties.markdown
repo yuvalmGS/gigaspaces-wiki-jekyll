@@ -10,8 +10,6 @@ weight: 300
 
 {% summary %}Using Dynamic Properties with Object entries.{% endsummary %}
 
-![new-in-801-banner.png](/attachment_files/dotnet/new-in-801-banner.png)
-
 # Overview
 
 Object entries' properties are bound by the schema of the Object class, which means a property cannot be added without changing the class, and since changing the class requires restarting the space, this can be a long and tiresome project.

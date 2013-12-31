@@ -6,11 +6,14 @@ parent: processing.html
 weight: 600
 ---
 
-{% compositionsetup %}
+
 
 {% summary %}Mule ESB Distributed Multi Service Example{% endsummary %}
 
+{%comment%}
 ![new-in-801-banner.png](/attachment_files/sbp/new-in-801-banner.png)
+{%endcomment%}
+
 **Author**: Shay Hassidim, Deputy CTO, GigaSpaces<br/>
 Using Mule:**3.1.0**<br/>
 Using XAP:**8.0.1**<br/>
@@ -247,8 +250,8 @@ The Approver Service Configuration using a `polling-container` running in a [Non
 
 # Building the Example
 
-1. Have the correct maven bin folder (located at `\gigaspaces-xap-premium-8.0.1\tools\maven\apache-maven-3.0.2\bin`) as part of the `PATH`.
-2. Have the GigaSpaces maven plug-in installed. See the [Maven Plugin]({%latestjavaurl%}/maven-plugin.html) for instructions how to install it.
+Step 1. Have the correct maven bin folder (located at `\gigaspaces-xap-premium-8.0.1\tools\maven\apache-maven-3.0.2\bin`) as part of the `PATH`.
+Step 2. Have the GigaSpaces maven plug-in installed. See the [Maven Plugin]({%latestjavaurl%}/maven-plugin.html) for instructions how to install it.
 In general to install the GigaSpaces maven plug-in you should run the following:
 
 {% highlight java %}
@@ -258,7 +261,7 @@ Unix:
 \gigaspaces-xap-premium-8.0.1\tools\maven>installmavenrep.sh
 {% endhighlight %}
 
-3. Download the [example package](/attachment_files/sbp/Mule_Multi_service_Example.zip) and extract it into `Gigaspaces Root\tools\maven`. Once extracted you will have the following folders under `Gigaspaces Root\tools\maven\my-app`:
+Step 3. Download the [example package](/attachment_files/sbp/Mule_Multi_service_Example.zip) and extract it into `Gigaspaces Root\tools\maven`. Once extracted you will have the following folders under `Gigaspaces Root\tools\maven\my-app`:
 
 - common
 - feeder
@@ -266,7 +269,7 @@ Unix:
 - verifier
 - monitor
 
-4. To build the example run the following command:
+Step 4. To build the example run the following command:
 
 {% highlight java %}
 \gigaspaces-xap-premium-8.0.1\tools\maven\my-app>mvn
