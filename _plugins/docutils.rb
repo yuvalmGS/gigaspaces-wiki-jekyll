@@ -5,14 +5,18 @@ module DocUtils
       if sectionPath.start_with?("xap")
         isDotNet = sectionPath.end_with?("net");
         isAdmin = sectionPath.end_with?("adm");
+        isInstall = sectionPath.end_with?("inst");
         sectionPath = sectionPath.sub("xap","")
         sectionPath = sectionPath.sub("net","")
         sectionPath = sectionPath.sub("adm","")
+        sectionPath = sectionPath.sub("inst","")
         version = sectionPath.insert(sectionPath.length - 1, ".")
         if isDotNet 
           "XAP.NET " + version 
         elsif isAdmin
           return "XAP " + version + " Admin"
+        elsif isInstall
+          return "XAP " + version + " Installation"
         else 
           return "XAP " + version 
         end
