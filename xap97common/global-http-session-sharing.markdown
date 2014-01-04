@@ -16,7 +16,20 @@ It's becoming increasingly important for organizations to share HTTP session dat
 
 [Global Http Session Sharing](http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2)
 
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="500" height="426" id="onlinePlayer"><param name="allowScriptAccess" value="always" /><param name="movie" value="http://www.slideboom.com/player/player.swf?id_resource=631622" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><param name="flashVars" value="mode=2&idResource=1837&siteUrl=http://www.slideboom.com" /><param name="allowFullScreen" name="true" /><embed src="http://www.slideboom.com/player/player.swf?id_resource=631622" quality="high" bgcolor="#ffffff" width="500" height="426" name="onlinePlayer" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" allowFullScreen="true" flashVars="mode=0&idResource=631622&siteUrl=http://www.slideboom.com" /></object>
+
+
 {%comment%}
+
+<object width="746" height="413"><param name="movie" value="//www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2"></param><embed src="http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2" type="application/x-shockwave-flash" width="746" height="413"></embed></object>
+
+
+http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2
+
+
+
+
 <div style="width:425px;text-align:left"><a style="font:14px Helvetica,Arial,Sans-serif;color: #0000CC;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="//www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2" title="Global Http Session Sharing">Global Http Session Sharing</a><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="425" height="370" id="onlinePlayer631622"><param name="movie" value="//www.slideboom.com/player/player.swf?id_resource=631622" /><param name="allowScriptAccess" value="always" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><param name="allowFullScreen" value="true" /><param name="flashVars" value="" /><embed src="//www.slideboom.com/player/player.swf?id_resource=631622" width="425" height="370" name="onlinePlayer631622" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"allowScriptAccess="always" quality="high" bgcolor="#ffffff" allowFullScreen="true" flashVars="" ></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View <a href="" style="color: #0000CC;">more presentations</a> or <a href="/upload" style="color: #0000CC;">Upload</a> your own.</div></div>
 
 

@@ -6,7 +6,6 @@ parent: production.html
 weight: 800
 ---
 
-{% compositionsetup %}
 
 {% summary %}Moving into Production Checklist{% endsummary %}
 
@@ -88,7 +87,7 @@ When there are several GSCs running on the same machine, or several servers runn
 The [GigaSpaces LRMI]({%latestjavaurl%}/communication-protocol.html) uses two independent resource pools working collaboratively allowing a client to communicate with a server in a scalable manner. The client connection pool is configured via the `com.gs.transport_protocol.lrmi.max-conn-pool` and a server connection thread pool is configured via the `com.gs.transport_protocol.lrmi.max-threads`, both should be configured on the server side as system properties. You may configure these two pools' sizes and their resource timeouts to provide maximum throughput and low latency when a client communicates with a server. The default LRMI behavior will open a different connection at the client side and start a connection thread at the server side, once a multithreaded client accesses a server component. All client connections may be shared between all the client threads when communicating with the server. All server side connection threads may be shared between all client connections.
 
 {% indent %}
-![lrmi_archi2.jpg](/attachment_files/sbp/lrmi_archi2.jpg)
+[<img src="/attachment_files/sbp/lrmi_archi2.jpg" width="120" height="80">](/attachment_files/sbp/lrmi_archi2.jpg)
 {% endindent %}
 
 ## Client LRMI Connection Pool

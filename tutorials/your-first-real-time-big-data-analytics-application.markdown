@@ -6,7 +6,6 @@ weight: 800
 parent: xap-tutorials.html
 ---
 
-{% compositionsetup %}
 {% summary %}How to use XAP for Real-time analysis of Big Data{% endsummary %}
 
 # Introduction
@@ -186,7 +185,27 @@ Since the application is a Maven project, you can load it using your Java IDE an
 - With [IntelliJ](http://www.intellij.com), simply click "File -> Open Project" and point to `<applicationRoot>/pom.xml`. IntelliJ will load the project and present the modules for you.
 - With [Eclipse](http://www.eclipse.org), install the [`M2Eclipse plugin`](http://eclipse.org/m2e/download/) and click "File -> Import" , "Maven -> Existing Maven Projects" , select the `streaming-bigdata` folder and click the `Finish` button.
 
-![rt-ide3.jpg](/attachment_files/rt-ide3.jpg)
+
+{%section%}
+{%column%}
+
+[<img src="/attachment_files/rt-ide1.jpg" width="120" height="100">](/attachment_files/rt-ide1.jpg)
+{%endcolumn%}
+
+{%column%}
+
+[<img src="/attachment_files/rt-ide2.jpg" width="120" height="100">](/attachment_files/rt-ide2.jpg)
+{%endcolumn%}
+
+{%column%}
+
+[<img src="/attachment_files/rt-ide3.jpg" width="120" height="100">](/attachment_files/rt-ide3.jpg)
+{%endcolumn%}
+
+{%endsection%}
+
+
+
 
 Once the project is loaded in your IDE, you can run the application, as follows:
 
@@ -197,9 +216,32 @@ Configure the active spring profiles using the **spring.profiles.active** system
 `-Dspring.profiles.active=list-feeder,file-archiver`
 
 rt-processor project run configuration:
-![rt-processor2.png](/attachment_files/rt-processor2.png)
+
+{%section%}
+{%column%}
+
+[<img src="/attachment_files/rt-processor1.png" width="120" height="100">](/attachment_files/rt-processor1.png)
+{%endcolumn%}
+
+{%column%}
+
+[<img src="/attachment_files/rt-processor2.png" width="120" height="100">](/attachment_files/rt-processor2.png)
+{%endcolumn%}
+{%endsection%}
+
 rt-feeder project run configuration:
-![rt-feeder2.png](/attachment_files/rt-feeder2.png)
+
+{%section%}
+{%column%}
+
+[<img src="/attachment_files/rt-feeder1.png" width="120" height="100">](/attachment_files/rt-feeder1.png)
+{%endcolumn%}
+
+{%column%}
+
+[<img src="/attachment_files/rt-feeder2.png" width="120" height="100">](/attachment_files/rt-feeder2.png)
+{%endcolumn%}
+{%endsection%}
 
 - In IntelliJ, create two run configurations, with [`org.openspaces.pu.container.integrated.IntegratedProcessingUnitContainer`](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/pu/container/integrated/IntegratedProcessingUnitContainer.html) as the main class, and make sure that the feeder configuration uses the classpath of the `feeder` module, and that the processor configuration uses that of the `processor` module.
 
