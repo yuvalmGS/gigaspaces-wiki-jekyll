@@ -6,8 +6,8 @@ weight: 100
 parent: none
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}Frequently asked questions about OpenSpaces.{% endsummary %}
+
+{% summary %}Frequently asked questions about OpenSpaces.{% endsummary %}
 
 # What is OpenSpaces?
 
