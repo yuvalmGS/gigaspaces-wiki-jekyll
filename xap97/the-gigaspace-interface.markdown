@@ -6,8 +6,8 @@ parent: the-space-api.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}The JavaSpaces API is abstracted in OpenSpaces by a simple wrapper: the `GigaSpace` interface.{% endsummary %}
+
+{% summary %}The JavaSpaces API is abstracted in OpenSpaces by a simple wrapper: the `GigaSpace` interface.{% endsummary %}
 
 # Overview
 
