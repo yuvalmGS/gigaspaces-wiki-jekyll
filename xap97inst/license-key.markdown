@@ -3,7 +3,7 @@ layout: post
 title:  License Key
 categories: XAP97INST
 parent: none
-weight: 10
+weight: 100
 ---
 
 {% summary %}Getting a license key and defining it in the space schema.{% endsummary %}

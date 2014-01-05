@@ -3,7 +3,7 @@ layout: post
 title:  Maven Plugin
 categories: XAP97INST
 parent: none
-weight: 300
+weight: 600
 ---
 
 {% summary page|65 %}Installing the OpenSpaces Maven plugin, creating and running a Processing Unit project.{% endsummary %}

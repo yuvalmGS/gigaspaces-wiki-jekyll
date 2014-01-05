@@ -63,7 +63,7 @@ The pass-through topology configuration is implemented through delegators across
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%latestxaprelease%}/core/openspaces-core.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
-       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/latestxaprelease/core/gateway/openspaces-gateway.xsd
+       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{%latestxaprelease%}/core/gateway/openspaces-gateway.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/remoting/openspaces-remoting.xsd">
 	<context:annotation-config></context:annotation-config>
 	<tx:annotation-driven transaction-manager="transactionManager" />
@@ -97,7 +97,7 @@ The pass-through topology configuration is implemented through delegators across
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/latestxaprelease/core/gateway/openspaces-gateway.xsd">
+       http://www.openspaces.org/schema/{%latestxaprelease%}/core/gateway/openspaces-gateway.xsd">
 
     <os-gateway:delegator id="delegator" local-gateway-name="US" gateway-lookups="gatewayLookups">
         <!-- <os-gateway:delegation target="DE"/> -->
@@ -134,10 +134,10 @@ The pass-through topology configuration is implemented through delegators across
 	xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/latestxaprelease/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%latestxaprelease%}/core/openspaces-core.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
-       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/latestxaprelease/core/gateway/openspaces-gateway.xsd
+       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{%latestxaprelease%}/core/gateway/openspaces-gateway.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/remoting/openspaces-remoting.xsd">
 	<context:annotation-config></context:annotation-config>
 	<tx:annotation-driven transaction-manager="transactionManager" />
@@ -171,7 +171,7 @@ The pass-through topology configuration is implemented through delegators across
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/latestxaprelease/core/gateway/openspaces-gateway.xsd">
+       http://www.openspaces.org/schema/{%latestxaprelease%}/core/gateway/openspaces-gateway.xsd">
 
     <os-gateway:delegator id="delegator" local-gateway-name="GB" gateway-lookups="gatewayLookups">
         <os-gateway:delegation target="US"/>
@@ -209,10 +209,10 @@ The pass-through topology configuration is implemented through delegators across
 	xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/latestxaprelease/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%latestxaprelease%}/core/openspaces-core.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
-       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/latestxaprelease/core/gateway/openspaces-gateway.xsd
+       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{%latestxaprelease%}/core/gateway/openspaces-gateway.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/remoting/openspaces-remoting.xsd">
 	<context:annotation-config></context:annotation-config>
 	<tx:annotation-driven transaction-manager="transactionManager" />
@@ -247,7 +247,7 @@ The pass-through topology configuration is implemented through delegators across
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/latestxaprelease/core/gateway/openspaces-gateway.xsd">
+       http://www.openspaces.org/schema/{%latestxaprelease%}/core/gateway/openspaces-gateway.xsd">
 
     <os-gateway:delegator id="delegator" local-gateway-name="HK" gateway-lookups="gatewayLookups">
         <os-gateway:delegation target="US" delegate-through="GB" />

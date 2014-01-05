@@ -37,10 +37,11 @@ The internal architecture of the setup includes a clustered space and a Gateway,
 # Installing the Example
 
 Step 1. Download the [WAN_Gateway_example.zip](/attachment_files/sbp/WAN_Gateway_example.zip). It includes two folders: **deploy** and **scripts**.
-Step 2. Please extract the file and and copy the content of the **deploy folder** into `\gigaspaces-xap-premium-8.0.X-ga\deploy` folder. It should looks like this:
+
+Step 2. Please extract the file and and copy the content of the **deploy folder** into `\gigaspaces-xap-premium-{%latestxaprelease%}-ga\deploy` folder. It should looks like this:
 
 {% highlight java %}
-Directory of D:\gigaspaces-xap-premium-8.0.3-ga\deploy
+Directory of D:\gigaspaces-xap-premium-{%latestxaprelease%}-ga\deploy
 
 09/11/2011  04:41 AM    <DIR>          .
 09/11/2011  04:41 AM    <DIR>          ..
@@ -65,7 +66,7 @@ You will find within the `scripts` folder running scripts to start [Grid Service
 
 # Viewing the Clusters
 
-- Start the `\gigaspaces-xap-premium-8.0.X-ga\bin\GS-UI.bat/sh`.
+- Start the `\gigaspaces-xap-premium-{%latestxaprelease%}-ga\bin\GS-UI.bat/sh`.
 - Once you deployed make sure you enable the relevant groups within the GS-UI:
 ![wan_example3.jpg](/attachment_files/sbp/wan_example3.jpg)
 
