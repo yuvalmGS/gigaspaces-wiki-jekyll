@@ -11,9 +11,11 @@ categories: RELEASE_NOTES
 A new release of Gigaspace's XAP platform has been released. Version 9.7 is a minor release. Below you will find all relevant information.
 
 
-## Current Release
+## Current Release XAP 9.7
 
-[XAP 9.7](./97whats-new.html)
+- [What's new](./97whats-new.html)
+- [Fixed issues](./97fixed-issues.html)
+- [Known issues](./97known-issues.html)
 
 
 

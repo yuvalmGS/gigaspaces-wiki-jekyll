@@ -11,16 +11,20 @@ This guide provides step by step instructions on how to install XAP on different
 The latest version of XAP can be downloded [here](http://www.gigaspaces.com/xap-download).
 
 
-[License Key Installation](./license-key.html)
+- [License Key Installation](./license-key.html)
 
-[Java Installation](./java.html)
+- [Java Installation](./java.html)
 
-[Scala Installation](./scala.html)
+- [Scala Installation](./scala.html)
 
-[Maven Plubin](./maven-plugin.html)
+- [.NET Installation](./net.html)
 
-[.NET Installation](./net.html)
+- [C++ Installation](./cpp-installing-cpp-api-package.html)
 
-[C++ Installation](./cpp-installing-cpp-api-package.html)
+- [Maven Plubin](./maven-plugin.html)
+
+- [Eclipse setup](./setting-up-your-ide.html)
+
+
 
 
