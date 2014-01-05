@@ -1,61 +1,53 @@
 ---
 layout: post
-title:  XAP Screencasts
+title:  XAP Videos 
 categories: TUTORIALS
 weight: 100
 parent: none
 ---
 
-#### Click the playlist icon at the top left of the player to view additional videos
+#### Click a thumbnail to watch the relevant video
 
 <div id="player"></div>
-<div id="listDiv">
-	<ul id="list"></ul>
-</div>
+<div id="videosDiv"></div>
 
+<script src="/js/ekko-lightbox.js"></script>
 <script>
-  // 2. This code loads the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
+  function listVideos() {
+  	var playListURL = 'http://gdata.youtube.com/feeds/api/playlists/2n0rHgIKEuUIl4-Lfm3PsqEgk0N63E8Q?v=2&alt=json&callback=?';
+  	var videoURL= 'http://www.youtube.com/watch?v=';
+  	$.getJSON(playListURL, function(data) {  		
+  		$.each(data.feed.entry, function(i, item) {        
+  			var feedTitle = item.title.$t;
+  			var desc = item.media$group.media$description.$t;
+  			var feedURL = item.link[1].href;
+  			var fragments = feedURL.split("/");
+  			var videoID = fragments[fragments.length - 2];
+        	var thumb = "http://img.youtube.com/vi/"+ videoID +"/0.jpg";
+  			var url = videoURL + videoID;						
+	        var rowId = "videosRow" + Math.floor(i/4);
+	        console.log(rowId);
+	        if (i%4 == 0) {
+	          var rowHtml = '<div class="row" id="' + rowId + '"></div>';        
+	          $("#videosDiv").append(rowHtml);  
+	          $("#videosDiv").append('</br>');  
 
-  tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // 3. This function creates an <iframe> (and YouTube player)
-  //    after the API code downloads.
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      height: '480',
-      width: '853',
-      videoId: 'A3KcONlCIXU',
-      playerVars: { 
-        //'autoplay': 1, 
-        'enablejsapi': 1, 
-        //'quality': 'hd720',
-        'list': 'PL2n0rHgIKEuUIl4-Lfm3PsqEgk0N63E8Q', 
-        'listType': 'playlist'
-      },
-      events: {
-        'onReady': onPlayerReady
-        //'onStateChange': onPlayerStateChange
-      }
+	        }
+	        var vid = '<a href="' + url + '" data-toggle="lightbox" data-width="853" data-height="480" data-' + 
+	                  'gallery="youtubevideos" class="col-sm-3"><img src="'+ thumb + '" class="img-responsive img-rounded">' +  
+	                  feedTitle  +'</a>';
+	        $("#" + rowId).append(vid);  			
+  		});
     });
   }
 
-  // 4. The API will call this function when the video player is ready.
-  function onPlayerReady(event) {
-    console.log(event.target.setPlaybackQuality('small'));
-    console.log(event.target.getPlaybackQuality());//('small')
-    /*var list = player.getPlaylist();      
-    for (var i=0; i<list.length; i++) {
-      $("#list").append("<li>"+list[i]+"</li>");
-    }*/
+  listVideos();
 
-    event.target.playVideo();
-  }
+   $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+    event.preventDefault();
+    return $(this).ekkoLightbox();
+  });
 
-  
 </script>
 
 
