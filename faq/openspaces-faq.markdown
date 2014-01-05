@@ -37,7 +37,7 @@ OpenSpaces is provided under the [Apache License, Version 2.0](http://www.apache
 
 # How is OpenSpaces related to JavaSpaces?
 
-OpenSpaces introduces a JavaSpaces abstraction named [GigaSpace](./the-gigaspace-interface.html). {% infosign %} We see this interface as a proposal for a new specification that will eventually be driven by the community, and not as a GigaSpaces specification per-se.
+OpenSpaces introduces a JavaSpaces abstraction named [GigaSpace]({%latestjavaurl%}/the-gigaspace-interface.html). {% infosign %} We see this interface as a proposal for a new specification that will eventually be driven by the community, and not as a GigaSpaces specification per-se.
 
 The goal behind this abstraction is to provide a simpler interface that will fit into a POJO-driven architecture, such as Spring, with the following principles:
 
@@ -48,7 +48,7 @@ The goal behind this abstraction is to provide a simpler interface that will fit
 
 # What is a Processing Unit?
 
-A Processing Unit represents the unit of scalability and failover in Space-Based Architecture (SBA). The Processing Unit is designed to be a self-sufficient unit that contains the messaging, data and business logic within the same process. It is written just like any Spring application with the addition of the built-in [OpenSpaces Components](./product-architecture.html#OpenSpaces - API and Components) for handling events, state and workflow.
+A Processing Unit represents the unit of scalability and failover in Space-Based Architecture (SBA). The Processing Unit is designed to be a self-sufficient unit that contains the messaging, data and business logic within the same process. It is written just like any Spring application with the addition of the built-in [OpenSpaces Components](/product_overview/product-architecture.html#OpenSpaces-API-and-Components) for handling events, state and workflow.
 
 # How can I contribute code to OpenSpaces?
 
@@ -107,8 +107,8 @@ The current version of OpenSpaces follows the structure of the OSGI-Spring integ
 
 # How can I change a service within a Processing Unit without shutting down the Processing Unit?
 
-The current version of OpenSpaces enables dynamic reloading of **selected** service beans (business logic) without bringing down the processing unit. Read more [here](./reloading-business-logic.html).
+The current version of OpenSpaces enables dynamic reloading of **selected** service beans (business logic) without bringing down the processing unit. Read more [here]({%latestjavaurl%}/reloading-business-logic.html).
 
 {% infosign %} This mainly applies when wanting to change business logic of a Processing Unit that also starts a space, without shutting down the space. Any Processing Unit or other services that connect to the space remotely can be replaced easily with the current version.
 
-{% lampon %} Didn't find the answers you were looking for? Feel free to **[write to us](mailto:feedback60@gigaspaces.com?subject=OpenSpaces%20FAQ)** or visit our **[forums](http://forum.openspaces.org/index.jspa)**.
+{% lampon %} Didn't find the answers you were looking for? Feel free to **[write to us](mailto:feedback60@gigaspaces.com?subject=OpenSpaces%20FAQ)** or visit our **[forums](http://ask.gigaspaces.org)**.
