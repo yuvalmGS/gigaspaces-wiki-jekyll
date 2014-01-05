@@ -34,7 +34,9 @@ The demo is configured to start three space instances across three clusters. Whi
 | wan-space-GB | GB | 4366 |
 
 The internal architecture of the setup includes a clustered space and a Gateway, such that the master site (US) only configures delegators while the slave sites (GB, HK) only configure sinks (click the thumbnail to enlarge):
-![WAN_masterslave_arch.png](/attachment_files/sbp/WAN_masterslave_arch.png)
+
+[<img src="/attachment_files/sbp/WAN_masterslave_arch.png" width="140" height="100">](/attachment_files/sbp/WAN_masterslave_arch.png)
+
 
 As a result of this topology setup, the following scenario will take place once updates are written to the New York space:
 
@@ -274,16 +276,25 @@ Check to enable all three advertised groups for each site:
 ![groups_selection_dialog.jpg](/attachment_files/sbp/groups_selection_dialog.jpg)
 
 As a result, you should see the service grid components for each site displayed under the "Hosts" tree as follows:
-![masterslave_hosts_view.png](/attachment_files/sbp/masterslave_hosts_view.png)
+
+[<img src="/attachment_files/sbp/masterslave_hosts_view.png" width="140" height="100">](/attachment_files/sbp/masterslave_hosts_view.png)
+
+
+
 Once The deployAll.bat/sh script finishes running, you should be able to see all three sites deployed as follows:
-![pu_deployments.jpg](/attachment_files/sbp/pu_deployments.jpg)
+[<img src="/attachment_files/sbp/pu_deployments.jpg" width="140" height="100">](/attachment_files/sbp/pu_deployments.jpg)
+
 
 If you are using the GS-WEBUI, you can also view the site topology through the "Data Grids > Gateways" view as the following:
-![webui_gw_topology.png](/attachment_files/sbp/webui_gw_topology.png)
+[<img src="/attachment_files/sbp/webui_gw_topology.png" width="140" height="100">](/attachment_files/sbp/webui_gw_topology.png)
 
 # Testing Master-Slave Replication
 
 You can test the setup by using the [benchmark utility]({%latestjavaurl%}/benchmark-view---gigaspaces-browser.html) comes with the GS-UI. Select the US Benchmark icons and click Start to begin writing objects to the space:
-![masterslave_space_write.png](/attachment_files/sbp/masterslave_space_write.png)
+[<img src="/attachment_files/sbp/masterslave_space_write.png" width="140" height="100">](/attachment_files/sbp/masterslave_space_write.png)
+
+
 Click the Spaces icon on the Space Browser Tab to get a global view of all spaces. As objects are being written, you should see replication occurring across both HK and GB sites until there are 5000 objects in each space:
-![masterslave_space_count.png](/attachment_files/sbp/masterslave_space_count.png)
+[<img src="/attachment_files/sbp/masterslave_space_count.png" width="140" height="100">](/attachment_files/sbp/masterslave_space_count.png)
+
+

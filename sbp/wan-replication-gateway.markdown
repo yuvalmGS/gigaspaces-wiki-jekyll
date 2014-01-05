@@ -32,7 +32,8 @@ You will find folders for the following PUs:
 - wan-space-US - Deployed into **US** zone, using the **US** lookup group and a lookup service listening on port 4266.
 
 The internal architecture of the setup includes a clustered space and a Gateway, where each Gateway includes a Delegator and a Sink:
-![wan_example2.jpg](/attachment_files/sbp/wan_example2.jpg)
+
+[<img src="/attachment_files/sbp/wan_example2.jpg" width="140" height="100">](/attachment_files/sbp/wan_example2.jpg)
 
 # Installing the Example
 
@@ -74,23 +75,23 @@ You should check all Groups:
 ![wan_example4.jpg](/attachment_files/sbp/wan_example4.jpg)
 
 You should see this:
-![wan_example5.jpg](/attachment_files/sbp/wan_example5.jpg)
+[<img src="/attachment_files/sbp/wan_example5.jpg" width="140" height="100">](/attachment_files/sbp/wan_example5.jpg)
 
 Once deployed successfully you should see this:
-![wan_example6.jpg](/attachment_files/sbp/wan_example6.jpg)
+[<img src="/attachment_files/sbp/wan_example6.jpg" width="140" height="100">](/attachment_files/sbp/wan_example6.jpg)
 
 # Testing the WAN Gateway Replication
 You can test the setup by using the [benchmark utility]({%latestjavaurl%}/benchmark-view---gigaspaces-browser.html) comes with the GS-UI. Move the one of the Clusters Benchmark icon and click the Start Button:
-![wan_example7.jpg](/attachment_files/sbp/wan_example7.jpg)
+[<img src="/attachment_files/sbp/wan_example7.jpg" width="140" height="100">](/attachment_files/sbp/wan_example7.jpg)
 
 You will see all spaces **Object Count** across all clusters by clicking the **Spaces icon** on the Space Browser Tab. You should see identical number of objects (5000) for all members:
-![wan_example8.jpg](/attachment_files/sbp/wan_example8.jpg)
+[<img src="/attachment_files/sbp/wan_example8.jpg" width="140" height="100">](/attachment_files/sbp/wan_example8.jpg)
 
 You can remove objects from each space cluster by selecting the **Take operation** and click Start:
-![wan_example9.jpg](/attachment_files/sbp/wan_example9.jpg)
+[<img src="/attachment_files/sbp/wan_example9.jpg" width="140" height="100">](/attachment_files/sbp/wan_example9.jpg)
 
 You will see the Object Count changing having zero object count for each space:
-![wan_example10.jpg](/attachment_files/sbp/wan_example10.jpg)
+[<img src="/attachment_files/sbp/wan_example10.jpg" width="140" height="100">](/attachment_files/sbp/wan_example10.jpg)
 
 # Replication Throughput Capacity
 
