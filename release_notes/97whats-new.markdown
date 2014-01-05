@@ -14,7 +14,7 @@ This page lists the main new features in XAP 9.7 (Java and .Net editions). It's 
 
 # MongoDB External Data Source
 
-[MongoDB](http://www.mongodb.org) is an extermely popular and powerful NoSQL database. XAP 9.7 introduces full support for using Mongo as a write behind data store for the space, and as a source for initial data load and read through scenario. This means that you can now use Mongo as an extension to the space, allowing
+[MongoDB](http://www.mongodb.org) is an extermely popular and powerful NoSQL database. XAP 9.7 introduces full support for using Mongo as a write behind data store for the space, and as a source for initial data load and read through scenario. This means that you can now use Mongo as an extension to the space, allowing two-way integration between XAP and Mongo. 
 
 # LINQ Support for XAP.NET 
 
