@@ -19,6 +19,8 @@ This section provides an understanding of GigaSpaces XAP Security, where it fits
 {% endcolumn %}
 {% endsection %}
 
+{%anchor what-is-gigaspaces-security %}
+
 # What is GigaSpaces Security?
 
 GigaSpaces Security provides comprehensive support for securing your data, services, or both. GigaSpaces provides a set of authorities granting privileged access to data, and for performing operations on services.
