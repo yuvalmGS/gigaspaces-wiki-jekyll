@@ -94,7 +94,7 @@ Right-clicking a space container node ( ![container.gif](/attachment_files/conta
 {% endindent %}
 
 - **Refresh** -- refreshes the tree panel display.
-- **Runtime Configuration Report** -- displays the current configuration of the selected space container (see [Runtime Configuration Report](./space-container-maintenance---gigaspaces-browser.html#Runtime Configuration Report)).
+- **Runtime Configuration Report** -- displays the current configuration of the selected space container (see [Runtime Configuration Report](./space-container-configuration-general-tab---gigaspaces-browser.html#Runtime Configuration Report)).
 - **Launch JConsole** -- launches a [JConsole](./space-jmx-management.html) for the selected space container.
 
 When the space container node is selected, its configuration data is displayed in the configuration panel on the right side.
