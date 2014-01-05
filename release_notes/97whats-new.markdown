@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  What's new
+title:  What's New in XAP 9.7 
 categories: RELEASE_NOTES
 parent: xap97.html
 weight: 100
