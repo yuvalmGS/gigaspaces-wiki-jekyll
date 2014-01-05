@@ -34,7 +34,9 @@ The demo is configured to start three space instances across three clusters. Whi
 |wan-space-GB|GB|4366|
 
 The internal architecture of the setup includes a clustered space and a Gateway, where each Gateway includes a Delegator and a Sink (click the thumbnail to enlarge):
-![WAN_passthrough_arch.jpg](/attachment_files/sbp/WAN_passthrough_arch.jpg)
+
+
+[<img src="/attachment_files/sbp/WAN_passthrough_arch.jpg" width="140" height="100">](/attachment_files/sbp/WAN_passthrough_arch.jpg)
 
 As a result of indirect delegation, the following scenario will take place once updates are written to the New York space:
 
@@ -293,17 +295,25 @@ The `scripts` folder contains the necessary scripts to start the [Grid Service A
 Check to enable all three advertised groups for each site:<br/>
 ![groups_selection_dialog.jpg](/attachment_files/sbp/groups_selection_dialog.jpg)<br/>
 As a result, you should see the service grid components for each site displayed under the "Hosts" tree as follows:<br/>
-![service_grid.jpg](/attachment_files/sbp/service_grid.jpg)<br/>
+[<img src="/attachment_files/sbp/service_grid.jpg" width="140" height="100">](/attachment_files/sbp/service_grid.jpg)
+
 Once The deployAll.bat/sh script finishes running, you should be able to see all three sites deployed as follows:<br/>
-![pu_deployments.jpg](/attachment_files/sbp/pu_deployments.jpg)<br/>
+[<img src="/attachment_files/sbp/pu_deployments.jpg" width="140" height="100">](/attachment_files/sbp/pu_deployments.jpg)
+
 
 # Testing Pass Through Replication
 You can test the setup by using the [benchmark utility]({%latestjavaurl%}/benchmark-view---gigaspaces-browser.html) comes with the GS-UI. Select one of the HK or US Benchmark icons and click Start to begin writing objects to the space:
-![space_write.jpg](/attachment_files/sbp/space_write.jpg)
+[<img src="/attachment_files/sbp/space_write.jpg" width="140" height="100">](/attachment_files/sbp/space_write.jpg)
+
+
 
 Click the Spaces icon on the Space Browser Tab to get a global view of all spaces. As objects are being written, you should see replication occurring across both HK and US sites until there are 5000 objects in each space. Notice that since the GB site is a pass through, the object count should remain zero:
-![space_object_count.jpg](/attachment_files/sbp/space_object_count.jpg)
+[<img src="/attachment_files/sbp/space_object_count.jpg" width="140" height="100">](/attachment_files/sbp/space_object_count.jpg)
+
+
 
 You can also utilize the Take operation and click Start to remove objects from either the HK or US space. As a result, you will see the object count reaching zero across both HK and US as the pass through replication is taking place:
-![object_count_zero.jpg](/attachment_files/sbp/object_count_zero.jpg)
+[<img src="/attachment_files/sbp/object_count_zero.jpg" width="140" height="100">](/attachment_files/sbp/object_count_zero.jpg)
+
+
 
