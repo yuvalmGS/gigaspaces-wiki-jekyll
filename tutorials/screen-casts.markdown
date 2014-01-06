@@ -34,7 +34,7 @@ parent: none
 
 	        }
 	        var vid = '<a href="' + url + '" data-toggle="lightbox" data-width="853" data-height="480" data-' + 
-	                  'gallery="youtubevideos" class="col-sm-3"><img src="'+ thumb + '" class="img-responsive img-rounded">' +  
+	                  'gallery="youtubevideos" class="col-sm-3 col-md-3 col-xs-6"><img src="'+ thumb + '" class="img-responsive img-rounded">' +  
 	                  feedTitle  +'</a>';
 	        $("#" + rowId).append(vid);  			
   		});
@@ -43,10 +43,13 @@ parent: none
 
   listVideos();
 
-   $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
-    event.preventDefault();
-    return $(this).ekkoLightbox();
-  });
+  var mq = window.matchMedia( "(min-width: 1024px)" );
+  if (mq.matches) {
+    $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+      event.preventDefault();
+      return $(this).ekkoLightbox();
+    });
+  }
 
 </script>
 
