@@ -13,8 +13,9 @@ parent: none
 
 <script src="/js/ekko-lightbox.js"></script>
 <script>
+
+  var mq = window.matchMedia( "(min-width: 1024px)" );
   function listVideos() {
-  	var mq = window.matchMedia( "(min-width: 1024px)" );
   	var videosPerRow = 2; 
   	if (mq.matches) {
   		videosPerRow = 4; 
@@ -31,7 +32,6 @@ parent: none
         	var thumb = "http://img.youtube.com/vi/"+ videoID +"/0.jpg";
   			var url = videoURL + videoID;						
 	        var rowId = "videosRow" + Math.floor(i/videosPerRow);
-	        console.log(rowId);
 	        if (i%videosPerRow == 0) {
 	          var rowHtml = '<div class="row" id="' + rowId + '"></div>';        
 	          $("#videosDiv").append(rowHtml);  
