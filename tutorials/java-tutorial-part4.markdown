@@ -181,7 +181,7 @@ In GigaSpaces XAP, you can implement the Master-Worker pattern using several met
 {%endcolumn%}
 {%column width=20% %}
 
-[<img src="/attachment_files/qsg//the_master_worker.jpg" width="200" height="200">](/attachment_files/qsg/the_master_worker.jpg)
+[<img src="/attachment_files/qsg/the_master_worker.jpg" width="200" height="200">](/attachment_files/qsg/the_master_worker.jpg)
 
 {%endcolumn%}
 {%endsection%}
