@@ -14,6 +14,11 @@ parent: none
 <script src="/js/ekko-lightbox.js"></script>
 <script>
   function listVideos() {
+  	var mq = window.matchMedia( "(min-width: 1024px)" );
+  	var videosPerRow = 2; 
+  	if (mq.matches) {
+  		videosPerRow = 4; 
+  	}
   	var playListURL = 'http://gdata.youtube.com/feeds/api/playlists/2n0rHgIKEuUIl4-Lfm3PsqEgk0N63E8Q?v=2&alt=json&callback=?';
   	var videoURL= 'http://www.youtube.com/watch?v=';
   	$.getJSON(playListURL, function(data) {  		
@@ -25,9 +30,9 @@ parent: none
   			var videoID = fragments[fragments.length - 2];
         	var thumb = "http://img.youtube.com/vi/"+ videoID +"/0.jpg";
   			var url = videoURL + videoID;						
-	        var rowId = "videosRow" + Math.floor(i/4);
+	        var rowId = "videosRow" + Math.floor(i/videosPerRow);
 	        console.log(rowId);
-	        if (i%4 == 0) {
+	        if (i%videosPerRow == 0) {
 	          var rowHtml = '<div class="row" id="' + rowId + '"></div>';        
 	          $("#videosDiv").append(rowHtml);  
 	          $("#videosDiv").append('</br>');  
@@ -43,7 +48,7 @@ parent: none
 
   listVideos();
 
-  var mq = window.matchMedia( "(min-width: 1024px)" );
+  
   if (mq.matches) {
     $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
       event.preventDefault();
