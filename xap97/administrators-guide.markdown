@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Administrator's Guide
+title:  Administration
 categories: XAP97
 weight: 300
 parent: none

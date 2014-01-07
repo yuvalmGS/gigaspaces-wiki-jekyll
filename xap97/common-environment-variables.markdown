@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Common Environment Variables
+title:  Environment Variables
 categories: XAP97
-parent: configuring-the-system.html
-weight: 200
+parent: installation-java.html
+weight: 100
 ---
 
 {% summary %}Descriptions of the main environment variables set automatically by `setenv.bat`.{% endsummary %}
