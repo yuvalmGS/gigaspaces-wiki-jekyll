@@ -242,6 +242,7 @@ A compound index that contains this FIFO grouping index and the FIFO grouping pr
 
 {% refer %}For more details and examples, refer to the [FIFO Grouping](./fifo-grouping.html) section.{% endrefer %}
 
+{% anchor SpaceClassConstructor %}
 ## Constructor Level Decoration -- @SpaceClassConstructor
 
 The `@SpaceClassConstructor` annotation can be placed on a POJO constructor to denote that this constructor should be used during object instantiation.
