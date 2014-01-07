@@ -22,6 +22,7 @@ parent: none
   	}
   	var playListURL = 'http://gdata.youtube.com/feeds/api/playlists/2n0rHgIKEuUIl4-Lfm3PsqEgk0N63E8Q?v=2&alt=json&callback=?';
   	var videoURL= 'http://www.youtube.com/watch?v=';
+  	var embedURL= 'http://www.youtube.com/embed/';
   	$.getJSON(playListURL, function(data) {  		
   		$.each(data.feed.entry, function(i, item) {        
   			var feedTitle = item.title.$t;
@@ -38,10 +39,16 @@ parent: none
 	          $("#videosDiv").append('</br>');  
 
 	        }
-	        var vid = '<a href="' + url + '" data-toggle="lightbox" data-width="853" data-height="480" data-' + 
-	                  'gallery="youtubevideos" class="col-sm-3 col-md-3 col-xs-6"><img src="'+ thumb + '" class="img-responsive img-rounded">' +  
-	                  feedTitle  +'</a>';
-	        $("#" + rowId).append(vid);  			
+	        var vid = null; 
+	        if (mq.matches) {
+	        	vid = '<a href="' + url + '" data-toggle="lightbox" data-width="853" data-height="480" data-' + 
+	            'gallery="youtubevideos" class="col-sm-3 col-md-3 col-xs-6"><img src="'+ thumb + '" class="img-responsive img-rounded">' +  
+	            feedTitle  +'</a>';
+	        	$("#" + rowId).append(vid);  			
+	        } else {
+	        	vid = '<div class="col-xs-6"><iframe src="' + embedURL + videoID + '" frameborder="0" width="160" height="90"></iframe></div>';
+	        	$("#" + rowId).append(vid);  			
+	        }
   		});
     });
   }
