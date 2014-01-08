@@ -6,9 +6,6 @@ parent: xap97.html
 weight: 300
 ---
 
-{%summary%} Issues that have been fixed in XAP 9.7.X release {%endsummary%}
-
-## Overview
 
 Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 

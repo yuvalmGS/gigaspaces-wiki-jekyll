@@ -6,9 +6,9 @@ parent: xap97.html
 weight: 700
 ---
 
-{%summary%} Supported Platforms for XAP 9.7.X release {%endsummary%}
+{%summary%}{%endsummary%}
 
-## Overview
+# Overview
 
 GigaSpaces Data Grid and Messaging Grid core middleware, Database Cache and Persistency, Service Grid and OpenSpaces are 100% Java technology based.
 

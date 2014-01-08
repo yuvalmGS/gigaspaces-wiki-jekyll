@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  What's New in XAP 9.7 
+title:  What's New in XAP 9.7
 categories: RELEASE_NOTES
 parent: xap97.html
 weight: 100
 ---
 
-{%summary%} What's new in XAP 9.7 {%endsummary%}
+{%summary%}{%endsummary%}
 
 # Overview
 
@@ -101,7 +101,7 @@ Up to version 9.7, every space property needed to have both a getter and a sette
 
 # Grid Activity Breakdown by Client in the Web UI
 
-The web UI has a new functionality that enables you to view the activity in the data grid (throughput and breakdowb of operations, client libraries version, etc.). 
+The web UI has a new functionality that enables you to view the activity in the data grid (throughput and breakdown of operations, client libraries version, etc.).
 
 # Better Separation of Thread Pools 
 

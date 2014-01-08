@@ -6,9 +6,6 @@ parent: xap97.html
 weight: 400
 ---
 
-{%summary%} Known Issues and Limitations in XAP 9.7.X release {%endsummary%}
-
-## Overview
 
 Below is a list of known issues in GigaSpaces 9.7.X.
 

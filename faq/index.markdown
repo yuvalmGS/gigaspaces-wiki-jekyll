@@ -6,9 +6,9 @@ categories: FAQ
 
 Here you will find answers to frequently asked questions about OpenSpaces and the GigaSpaces XAP platform.
 
-{%whr%}
-{%whr%}
 
+{% wbr %}
+{% wbr %}
 
 
 - [OpenSpaces FAQ](./openspaces-faq.html)
