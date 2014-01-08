@@ -10,7 +10,7 @@ weight: 400
 
 ## Overview
 
-Below is a list of new features and improvements in GigaSpaces 9.7.X.
+Below is a list of known issues in GigaSpaces 9.7.X.
 
 
 {: .table .table-bordered}
