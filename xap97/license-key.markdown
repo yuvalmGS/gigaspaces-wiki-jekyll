@@ -2,7 +2,7 @@
 layout: post
 title:  License Key
 categories: XAP97
-parent: configuring-the-system.html
+parent: installation.html
 weight: 100
 ---
 
@@ -26,7 +26,7 @@ The license key file should be placed on each machine running a GSA/GSM/GSC.
 
 The activation license key is in the following form:
 
-    "Nov 16, 2020~user@XXXXXXXXXXXXXXXXXXXXX#PREMIUM^7.0XAPPremium%UNBOUND+UNLIMITED"
+    "Nov 16, 2020~user@XXXXXXXXXXXXXXXXXXXXX#PREMIUM^9.7XAPPremium%UNBOUND+UNLIMITED"
 
 # Installing new License
 
@@ -36,7 +36,7 @@ To install the license, insert the license string between the license key tags:
 <com>
   <j_spaces>
         <kernel>
-          <licensekey>Nov 16, 2020~user@XXXXXXX#PREMIUM^7.0XAPPremium%UNBOUND+UNLIMITED</licensekey>
+          <licensekey>Nov 16, 2020~user@XXXXXXX#PREMIUM^9.7XAPPremium%UNBOUND+UNLIMITED</licensekey>
        </kernel>
   </j_spaces>
 </com>
@@ -52,7 +52,7 @@ GigaSpaces search for the license key using the following search path:
 1. Using the `com.gs.licensekey` system property. Example:
 
 {% highlight java %}
-export EXT_JAVA_OPTIONS=-Dcom.gs.licensekey=Nov 16, 2020~user@XXXXXXX#PREMIUM^7.0XAPPremium%UNBOUND+UNLIMITED
+export EXT_JAVA_OPTIONS=-Dcom.gs.licensekey=Nov 16, 2020~user@XXXXXXX#PREMIUM^9.7XAPPremium%UNBOUND+UNLIMITED
 ./gs-agent.sh &
 {% endhighlight %}
 

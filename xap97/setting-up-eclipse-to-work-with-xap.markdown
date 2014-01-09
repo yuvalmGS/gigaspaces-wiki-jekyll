@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Setting Up your IDE to work with XAP
+title:  Eclipse setup
 categories: XAP97
-parent: getting-started.html
-weight: 100
+parent: installation.html
+weight: 600
 ---
 
 {% compositionsetup %}

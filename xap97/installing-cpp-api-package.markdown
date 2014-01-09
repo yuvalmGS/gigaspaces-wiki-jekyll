@@ -1,13 +1,12 @@
 ---
 layout: post
-title:  Installation CPP
+title:  C++
 categories: XAP97
-parent: xap-cpp.html
-weight: 100
+parent: installation.html
+weight: 400
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}Requirements and how to install GigaSpaces c++ on Windows and Linux.{% endsummary %}
+{% summary %}Requirements and how to install GigaSpaces c++ on Windows and Linux.{% endsummary %}
 
 # Overview
 
@@ -19,7 +18,9 @@ The current supported platforms and compilers are:
 - Windows
     - 32/64bit -- VS 9.0/10.0 (Visual Studio 2008/2010)
 
+{%comment%}
 {% exclamation %} Prior to installation, see the **[GigaSpaces installation prerequisites](./installation.html#Prior-to-Installation)**.
+{%endcomment%}
 
 # Installation
 

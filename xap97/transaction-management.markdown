@@ -278,7 +278,6 @@ Here is an example of how this can be configured:
 </bean>
 
 <bean id="transactionManager" class="org.openspaces.core.transaction.manager.DistributedJiniTransactionManager">
-	<property name="space" ref="space" />
 	<property name="leaseRenewalConfig">
 	    <bean class="org.openspaces.core.transaction.manager.TransactionLeaseRenewalConfig">
 	        <property name="poolSize" value="2" />

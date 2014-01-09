@@ -6,9 +6,11 @@ parent: xap97.html
 weight: 200
 ---
 
+{%comment%}
 {%summary%} New features and improvements in the XAP 9.7.X release {%endsummary%}
 
 ## Overview
+{%endcomment%}
 
 Below is a list of new features and improvements in GigaSpaces 9.7.X.
 
@@ -31,6 +33,7 @@ Below is a list of new features and improvements in GigaSpaces 9.7.X.
 | GS-11252 | Improve XAP.NET configuration to support multiple GSA configurations | 9.6.1,9.7.0 | | | .NET |
 | GS-11253 | unique index support | 9.7.0 | | | Java,.NET |
 | GS-11262 | Upgrade Spring (not including security) to 3.2.4 | 9.7.0 | | | Java |
+| GS-11263 | Mongo Space Persistency implementation | 9.7.0 | | | Java |
 | GS-11270 | Allow to designate a zone for primary instances and zone for backup instances | 8_0_5_patch1,9.7.0 | | | All |
 | GS-11271 | GSM to deploy primaries to designated zone | 9.7.0 | | | All |
 | GS-11272 | Management Processing Unit which relocates primary instances to correct zone during runtime | 9.7.0 | | | All |
@@ -66,4 +69,5 @@ Below is a list of new features and improvements in GigaSpaces 9.7.X.
 | GS-11493 | Enhance EventTemplate attribute to support method with ISpaceProxy argument | 9.7.0 | | | .Net |
 | GS-11494 | Add ISpaceProxy.GetServerAdmin().GetClusteredProxy() | 9.7.0 | | | .Net |
 | GS-11495 | Deprecation - notify auto-renew with custom arguments | 9.7.0 | | | All |
-
+| GS-11543 | Refactor cassandra code shared with mongo to neutral package | 9.7.0 | | | Java |
+| GS-11544 | Modify XAP.NET assemblyVersion to Major.Minor format | 9.7.0 | | | .NET |

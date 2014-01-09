@@ -6,9 +6,6 @@ parent: xap97.html
 weight: 300
 ---
 
-{%summary%} Issues that have been fixed in XAP 9.7.X release {%endsummary%}
-
-## Overview
 
 Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 
@@ -52,6 +49,7 @@ Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 | GS-11391 | ESM service is missing an icon in gs-ui | 9.7.0,9_5_0_patch3,9_6_2 | | All |
 | GS-11394 | creating of compound index allowed from SpaceTypeDescriptorBuilder with type=extended | 9.7.0 | | Java |
 | GS-11395 | local view properties ignored | 9.7.0 | | All |
+| GS-11397 | Misleading error when specifying empty locator in url | 9.7.0 | 8333 | All |
 | GS-11402 | When a cancel/renew multiple leases operation fails, the exceptions are ignored | 9.7.0 | | All |
 | GS-11411 | XSD 9.6 schemas are not provided -require internet | 9.7.0,9_6_2 | 8342 | All |
 | GS-11414 | ESM may not start if failed communicating with management GSA | 9.7.0 | | Java |
@@ -69,8 +67,7 @@ Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 | GS-11469 | Change operation and central data base causes a problem when sending a durable notifications | 9.7.0 | | All |
 | GS-11486 | Fix GigaMap id registration | 9.7.0 |  | Java |
 | GS-11487 | Local View which fail to initialize due to MSE can cause replication backlog accumulation in the space | 9.7.0 | 8475 | All |
-| GS-11487 | WLocal View which fail to initialize due to MSE can cause replication backlog accumulation in the space | 9.7.0 | 8475 | All |
 | GS-11489 | Wrong display of Machine SLA Enforcment event | 9.7.0 |  | All |
-| GS-11489 | Wrong display of Machine SLA Enforcment event | 9.7.0 | | All |
 | GS-11490 | GSC failed to create a JMX server and listen on a port | 9.7.0 | 8496 | All |
 | GS-11491 | Space shutdown may hang while closing Background fifo thread on rare scenarios | 9.7.0,9.6.2patch2 | 8451 | All |
+| GS-11532 | NullPointerException in LeaseManager | 9.7.0 | 8555 | All |

@@ -6,11 +6,8 @@ parent: xap97.html
 weight: 400
 ---
 
-{%summary%} Known Issues and Limitations in XAP 9.7.X release {%endsummary%}
 
-## Overview
-
-Below is a list of new features and improvements in GigaSpaces 9.7.X.
+Below is a list of known issues in GigaSpaces 9.7.X.
 
 
 {: .table .table-bordered}
@@ -31,7 +28,6 @@ Below is a list of new features and improvements in GigaSpaces 9.7.X.
 | GS-11381 | ESM caught in a re-balancing loop after addition of new machine | | 9.7.0 | | All |
 | GS-11384 | single click to hide layover and play widget | | 9.7.0 | | All |
 | GS-11385 | Widget - separate API urls from page urls | | 9.7.0 | | All |
-| GS-11396 | Enable multi widgets on same page | | 9.7.0 | | All |
 | GS-11396 | NIC_ADDR , LOOKUPLOCATORS and LOOKUPGROUPS should be read also by GigaSpaces client | | 9.7.0 | | All |
 | GS-11398 | Web UI alignments | | 9.7.0 | | All |
 | GS-11408 | Web - UI - Mirror stats should track change operations | | 9.7.0 | | All |
@@ -51,4 +47,10 @@ Below is a list of new features and improvements in GigaSpaces 9.7.X.
 | GS-11492 | SpaceDocument Id cannot be set to Integer via namespace declaration | | 9.7.0 | | Java |
 | GS-11496 | webui security - a viewer can uninstall applications | | 9.7.0 | | All |
 | GS-11500 | Installing services in the app catalog prompts for authorization groups | | 9.7.0 | | All |
-
+| GS-11538 | Repeated NumberFormatException preventing web-ui from functioning in case statistics are not available | 8554 | 9.7.0 | | Java |
+| GS-11542 | .NET ScalingAgent example - inverted arrows | | 9.7.0 | | .NET |
+| GS-11546 | ESM stateless increment instance timeout is too big | | 9.7.0 | | Java |
+| GS-11547 | NPE in admin when primary gsm restarts | | 9.7.0 | | Java |
+| GS-11550 | unclear UpdateOperationTimeoutException | | 9.7.0 | | All |
+| GS-11555 | Deploying with max-instances-per-zone 0 result in 1 instance | 8574 | 9.7.0 | | All |
+| GS-11557 | .Net add validation that both client and server classes are same including aliases | 8546 | 9.7.0 | | .NET |

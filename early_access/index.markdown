@@ -9,7 +9,7 @@ weight:
 {%summary%}Here you will find mile stone releases for XAP 9.7{%endsummary%}
 
  
-# Release Candidate b10494
+# Release Candidate b10495
 
 {%panel%}
 
@@ -21,35 +21,35 @@ http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/m6/gigaspace
 
 {%panel title=Java%}
 
-[XAP Premium](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-xap-premium-9.7.0-rc-b10494.zip)
+[XAP Premium](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc2/gigaspaces-xap-premium-9.7.0-rc2-b10495.zip)
 
-[XAP Caching](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-xap-caching-9.7.0-rc-b10494.zip)
+[XAP Caching](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc2/gigaspaces-xap-caching-9.7.0-rc2-b10495.zip)
 {%endpanel%}
 
 
 {%panel title=.Net%}
-[XAP Premium x86](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/GigaSpaces-XAP.NET-Premium-9.7.0.10494-RC-x86.msi)
+[XAP Premium x86](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc2/GigaSpaces-XAP.NET-Premium-9.7.0.10495-RC2-x86.msi)
 
-[XAP Premium x64](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/GigaSpaces-XAP.NET-Premium-9.7.0.10494-RC-x64.msi)
+[XAP Premium x64](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc2/GigaSpaces-XAP.NET-Premium-9.7.0.10495-RC2-x64.msi)
 
-[XAP Caching x86](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/GigaSpaces-XAP.NET-Caching-9.7.0.10494-RC-x86.msi)
+[XAP Caching x86](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc2/GigaSpaces-XAP.NET-Caching-9.7.0.10495-RC2-x86.msi)
 
-[XAP Caching x64](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/GigaSpaces-XAP.NET-Caching-9.7.0.10494-RC-x64.msi)
+[XAP Caching x64](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc2/GigaSpaces-XAP.NET-Caching-9.7.0.10495-RC2-x64.msi)
 {%endpanel%}
 
 {%panel title=CPP%}
 
-[XAP win64 vs10.0](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-cpp-9.7.0-rc-win64-vs10.0.tar.gz)
+[XAP win64 vs10.0](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc2/gigaspaces-cpp-9.7.0-rc2-win64-vs10.0.tar.gz)
 
-[XAP Linux 32 gcc-4.1.2](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-cpp-9.7.0-rc-linux32-gcc-4.1.2.tar.gz)
+[XAP Linux 32 gcc-4.1.2](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc2/gigaspaces-cpp-9.7.0-rc2-linux32-gcc-4.1.2.tar.gz)
 
-[XAP linux-amd64-gcc-4.1.2](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-cpp-9.7.0-rc-linux-amd64-gcc-4.1.2.tar.gz)
+[XAP linux-amd64-gcc-4.1.2](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc2/gigaspaces-cpp-9.7.0-rc2-linux-amd64-gcc-4.1.2.tar.gz)
 
-[XAP win32-vs10.0](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-cpp-9.7.0-rc-win32-vs10.0.tar.gz)
+[XAP win32-vs10.0](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc2/gigaspaces-cpp-9.7.0-rc2-win32-vs10.0.tar.gz)
 
-[XAP win64-vs9.0](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-cpp-9.7.0-rc-win64-vs9.0.tar.gz)
+[XAP win64-vs9.0](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc2/gigaspaces-cpp-9.7.0-rc2-win64-vs9.0.tar.gz)
 
-[XAP win32-vs9.0](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc/gigaspaces-cpp-9.7.0-rc-win32-vs9.0.tar.gz)
+[XAP win32-vs9.0](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/9.7.0/rc2/gigaspaces-cpp-9.7.0-rc2-win32-vs9.0.tar.gz)
 {%endpanel%}
 
 {%endpanel%}
