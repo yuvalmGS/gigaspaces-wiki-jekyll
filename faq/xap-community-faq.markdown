@@ -11,6 +11,7 @@ parent: none
 
 {% wbr %}
 
+{%panel%}
 - [What is GigaSpaces XAP-Community?](#1)
 
 - [Why was it launched?](#2)
@@ -28,7 +29,7 @@ parent: none
 - [What if I need support for the XAP-Community?](#8)
 
 - [What are my upgrade options from the XAP-Community?](#9)
-
+{%endpanel%}
 
 {%anchor 1%}
 

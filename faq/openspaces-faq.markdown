@@ -9,7 +9,7 @@ parent: none
 {% wbr %}
 
 
-
+{%panel%}
 - [What is OpenSpaces?](#1)
 
 - [Who should use OpenSpaces?](#2)
@@ -35,7 +35,7 @@ parent: none
 - [Where does OSGi fit into the picture?](#12)
 
 - [How can I change a service within a Processing Unit without shutting down the Processing Unit?](#13)
-
+{%endpanel%}
 
 {%anchor 1%}
 
