@@ -46,7 +46,7 @@ parent: none
 	            feedTitle  +'</a>';
 	        	$("#" + rowId).append(vid);  			
 	        } else {
-	        	vid = '<div class="col-xs-6"><iframe src="' + embedURL + videoID + '" frameborder="0" width="140" height="78"></iframe>'+feedTitle +'</div>';
+	        	vid = '<div class="col-xs-6"><iframe src="' + embedURL + videoID + '" frameborder="0" width="80%"></iframe></br>'+feedTitle +'</div>';
 	        	$("#" + rowId).append(vid);  			
 	        }
   		});
