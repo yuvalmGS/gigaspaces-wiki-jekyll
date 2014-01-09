@@ -254,7 +254,7 @@ public void ChangeSet() {
 		new ChangeSet().set("status", EAccountStatus.BLOCKED));
 
      if (changeResult.getNumberOfChangedEntries() == 0) {
-	System.out.println("Entry does not exist");
+	    System.out.println("Entry does not exist");
      }
 }
 {%endhighlight%}
@@ -553,6 +553,39 @@ SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Dow' AND cred
 There are several additional indexing options available. For example you can index nested attributes, Nested Maps, Collections, nested attributes within a Collection, free text search and others.
 
 {%learn%}{%latestjavaurl%}/indexing.html{%endlearn%}
+
+
+# Space class best practice
+
+{%tip%}
+{%panel%}
+
+When you code your space classes make sure:
+
+- there are indexes for all relevant attributes including nested attributes you use for queries
+
+- numeric attribute queried with between / greater / less than should have an extended index.
+
+- compound indexes should be used for attributes queried using AND query
+
+- space classes have empty no arg constructor
+
+- all nested classes are serializable
+
+- do not use  int, long, etc. integer attributes, instead use Long.
+
+- when possible use writeMultiple.
+
+- use projection for read/readMultiple
+
+- use clear for data removal and not take or takeMultiple
+
+- no huge collections with many items
+
+- use change api instead of update , especially if collections are used.
+{%endpanel%}
+{%endtip%}
+
 
 # Other Data Access API's
 XAP provides a JDBC Driver, JPA API, MAP and Memcached API's.

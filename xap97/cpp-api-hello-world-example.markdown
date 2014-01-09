@@ -6,8 +6,8 @@ parent: xap-cpp.html
 weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}C++ environment setup and writing a Hello World C++ application.{% endsummary %}
+
+{% summary   %}C++ environment setup and writing a Hello World C++ application.{% endsummary %}
 
 # Overview
 

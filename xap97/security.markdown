@@ -6,16 +6,19 @@ parent: none
 weight: 400
 ---
 
+{%comment%}
 {% summary %}This section describes GigaSpaces security model{% endsummary %}
+{%endcomment%}
 
-# Overview
+{% summary %} {% endsummary %}
+
 
 {% section %}
-{% column %}
+{% column width=75% %}
 This section provides an understanding of GigaSpaces XAP Security, where it fits in the GigaSpaces architecture, which components can be secured, and how to configure and customize the security depending on your application security requirements.
 {% endcolumn %}
-{% column %}
-![security-logo.jpg](/attachment_files/security-logo.jpg)
+{% column width=20% %}
+<img src="/attachment_files/qsg/security.png" width="100" height="100">
 {% endcolumn %}
 {% endsection %}
 
@@ -23,9 +26,17 @@ This section provides an understanding of GigaSpaces XAP Security, where it fits
 
 # What is GigaSpaces Security?
 
+{% section %}
+{% column width=75% %}
 GigaSpaces Security provides comprehensive support for securing your data, services, or both. GigaSpaces provides a set of authorities granting privileged access to data, and for performing operations on services.
+{% endcolumn %}
+{% column width=20% %}
+{%align center%}
+[<img src="/attachment_files/security_ovreview.jpg" width="200" height="200">](/attachment_files/security_ovreview.jpg)
+{%endalign%}
+{% endcolumn %}
+{% endsection %}
 
-[<img src="/attachment_files/security_ovreview.jpg" width="140" height="120">](/attachment_files/security_ovreview.jpg)
 
 
 
