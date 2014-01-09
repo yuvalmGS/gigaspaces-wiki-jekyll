@@ -55,6 +55,12 @@ include the following in your `pom.xml`
 	<version>4.0</version> 
 </dependency> 
 
+<dependency>
+    <groupId>com.gigaspaces</groupId>
+    <artifactId>mongo-datasource</artifactId>
+    <version>9.7.0-SNAPSHOT</version>
+</dependency>
+
 {% endhighlight %}
 
 ### Setup 
@@ -130,7 +136,7 @@ MongoClientConnector client = new MongoClientConnectorConfigurer()
 		.db(dbName)
 		.create();	
 
-MongoSpaceDataSource dataSource = new MongoSpaceDataSourceConfigurer()
+MongoSpaceDataSource spaceDataSource = new MongoSpaceDataSourceConfigurer()
 		.mongoClientConnector(client)
 		.create();
 
@@ -149,6 +155,21 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")
 
 For more details about different configurations see [Space Persistency](./space-persistency.html). 
 
+###Before you begin###
+
+Before deploying your Processing Unit, please do the following:
+
+1. Copy the `mongo-datasource.jar` from `lib\optional\datasource\mongo` to `lib\optional\pu-common`.
+2. download the following jars and copy them to `lib\optional\pu-common`:
+
+	- `antlr-runtime.jar` from [antlr's website](http://www.antlr.org/download.html) .
+
+	- `mongo-java-driver-2.9.3.jar` from [mongoDB's website](http://docs.mongodb.org/ecosystem/drivers/java/) .
+
+	- `mongodb-async-driver-1.2.3.jar` from [allanbank's website](http://www.allanbank.com/mongodb-async-driver/download.html) .
+
+	- `guava-r08.jar` from [Guava-project's website](https://code.google.com/p/guava-libraries/wiki/Release08) . **NOTE:** you must download Guava's release 08, and extract the `guava-r08.jar` from within the `guava-r08.zip` that you have downloaded
+
 ### `MongoSpaceDataSource` Properties
 
 {: .table .table-bordered}
@@ -163,17 +184,29 @@ For more details about different configurations see [Space Persistency](./space-
 
 ### Cache miss Query limitations 
 Supported queries:
+
 - `id = 1234` 
+
 - `name = 'John' AND age = 13` 
+
 - `address.streetName = 'Liberty'` 
+
 - `age > 15`
+
 - `age < 20`
+
 - `age <= 20`
+
 - ` age >= 15`
+
 - `name = 'John' OR name = 'Jane'`
+
 - `name rlike 'A.*B'`
+
 - `name like 'A%'`
+
 - `name is NULL`
+
 - `name is NOT NULL`
 
 note: java types Short, Float, BigDecimal and BigInt supported only =,<> quieries >,<,>=,<= is not supported.
