@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Tuning Infrastructure
+title:  Infrastructure
 categories: XAP97
 parent: performance-tuning-and-considerations.html
 weight: 100

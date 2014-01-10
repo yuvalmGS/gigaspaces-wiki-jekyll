@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Performance Tuning and Considerations
+title:  Tuning
 categories: XAP97
-parent: advanced-tasks.html
-weight: 200
+parent: none
+weight: 600
 ---
 
 {% children %}
