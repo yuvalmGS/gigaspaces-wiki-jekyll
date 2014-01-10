@@ -11,7 +11,7 @@ parent: xap-tutorials.html
 # Introduction
 
 {% section %}
-{% column %}
+{% column width=60% %}
 We live almost every aspect of our lives in a real-time world. Think about our social communications; we update our friends online via social networks and micro-blogging, we text from our cellphones, or message from our laptops. But it's not just our social lives; we shop online whenever we want, we search the web for immediate answers to our questions, we trade stocks online, we pay our bills, and do our banking. All online and all in real time.
 
 Real time doesn't just affect our personal lives. Enterprises and government agencies need real-time insights to be successful, whether they are investment firms that need fast access to market views and risk analysis, or retailers that need to adjust their online campaigns and recommendations to their customers. Even homeland security has come to increasingly rely on real-time monitoring.
@@ -19,7 +19,7 @@ The amount of data that flows in these systems is huge. Twitter, for example, 50
 
 This tutorial explains the challenges of a Real-time (RT) Analytics system using Twitter as an example, and show in details how these challenges can be met by using GigaSpaces XAP.
 {% endcolumn %}
-{% column %}
+{% column width=35% %}
 <object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/ioHwEsARPWI?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/ioHwEsARPWI?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 {% endcolumn %}
 {% endsection %}
@@ -42,7 +42,7 @@ These challenges are not simple to deal with as there are knock-on effects from 
 # Solution Architecture
 
 {% section %}
-{% column %}
+{% column width=60% %}
 In designing a solution, we need to consider the various challenges we must address.
 
 The first challenge is providing **unlimited scalability** - therefore, we are talking about dynamically increasing resources to meet demand, and hence implementing a distributed solution using parallelized processing approach.
@@ -53,13 +53,13 @@ To overcome the latency challenge, we use an in-memory system of record. GigaSpa
 
 The third challenge is the **efficient processing** of the data in a distributed system. To achieve this, we use the **Map** / **Reduce** algorithm for distributed computing on large data sets on clusters of computers. In the **Map** step, we normalize the data so we can create local counters. In the **Reduce** step, we aggregate the entire set of interim results into a single set of results.
 {% endcolumn %}
-{% column %}
+{% column width=35% %}
 ![map_reduce.png](/attachment_files/map_reduce.png)
 {% endcolumn %}
 {% endsection %}
 
 {% section %}
-{% column %}
+{% column width=55% %}
 In our Twitter example, we need to build a flow that provides the **Map** / **Reduce** flow in real time. For this we use XAP's Processing and Messaging features collocated with its corresponding data.
 
 Our solution therefore uses 2 modules for persisting and processing data, as follows:
@@ -74,7 +74,7 @@ The processor's **Map** phase has the following logical steps:
 
 The processor's **Reduce** phase aggregates the local results into global word counters.
 {% endcolumn %}
-{% column %}
+{% column width=40% %}
 ![map_reduce_tweets.png](/attachment_files/map_reduce_tweets.png)
 {% endcolumn %}
 {% endsection %}
@@ -82,7 +82,7 @@ The processor's **Reduce** phase aggregates the local results into global word c
 # Implementing the Solution as a XAP Application
 
 {% section %}
-{% column %}
+{% column width=55% %}
 To implement our solution, we use Cassandra (or a local file) as the historical data tier and build a XAP application that processes and persists the data in real-time using the following modules:
 
 - The [`processor`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/processor) module is a XAP [processing unit]({%latestjavaurl%}/the-processing-unit-structure-and-configuration.html) that contains the Space and performs the real-time workflow of processing the incoming tweets. The processing of data objects is performed using event containers.
@@ -93,7 +93,7 @@ To implement our solution, we use Cassandra (or a local file) as the historical 
 - Optionally, the [`common`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/common) module for including items that are shared between the feeder and the processor modules (e.g. common interfaces, shared data model, etc.).
 - The [`bigDataApp`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/bigDataApp) directory contains the recipes and other scripts required to automatically deploy, monitor and manage the entire application together with the [Cassandra](http://cassandra.apache.org/) back-end using [Cloudify](http://www.cloudifysource.org).
 {% endcolumn %}
-{% column %}
+{% column width=40% %}
 ![twitter_topo.png](/attachment_files/twitter_topo.png)
 {% endcolumn %}
 {% endsection %}
