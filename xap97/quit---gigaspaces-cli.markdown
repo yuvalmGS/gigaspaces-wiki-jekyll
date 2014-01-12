@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  quit - GigaSpaces CLI
+title:  quit
 categories: XAP97
 parent: command-line-interface.html
 weight: 1400

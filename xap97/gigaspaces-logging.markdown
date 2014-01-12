@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  GigaSpaces Logging
+title:  Logging
 categories: XAP97
 parent: administrators-guide.html
 weight: 500

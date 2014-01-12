@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  space copy - GigaSpaces CLI
+title:  space copy
 categories: XAP97
 parent: space---gigaspaces-cli.html
 weight: 600

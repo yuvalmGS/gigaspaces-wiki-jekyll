@@ -2,8 +2,8 @@
 layout: post
 title:  Command Line Interface
 categories: XAP97
-parent: managing-and-monitoring-a-running-system.html
-weight: 200
+parent: administrators-guide.html
+weight: 10
 ---
 
 # Overview

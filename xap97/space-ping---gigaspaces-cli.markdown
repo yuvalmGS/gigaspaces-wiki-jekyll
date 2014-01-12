@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  space ping - GigaSpaces CLI
+title:  space ping
 categories: XAP97
 parent: space---gigaspaces-cli.html
 weight: 800
