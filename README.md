@@ -7,23 +7,18 @@ It's based on [Jekyll](http://jekyllrb.com/), a Ruby-based static site generator
 It's important for us to encourage your feedback and contribution. Contributing to this website is straightforward. Simply fork this repository, make your changes, test them with your local Jekyll installation, and submit a pull request. We promise to review and comment on every pull request, and merge it if it makes sense.  
 
 ## Installing, Editing and Testing Locally 
-To run and test the website locally, you should perform the following steps: 
+To run and test the website locally, you should perform the following steps:
+* Make sure Ruby and RubyGems are installed.
 * Install the latest version of Jekyll (you can find detailed directions [here](http://jekyllrb.com/docs/installation/)).
   * If you're using Windows, you may want to use the (unofficial) [portable jekyll for Windows](http://www.madhur.co.in/blog/2013/07/20/buildportablejekyll.html).
+* Install the [Kramdown markdown converter](http://kramdown.gettalong.org/installation.html).
 * If you intend to edit the docs, create a fork of this repo and clone it to your machine. 
-```
-git clone https://github.com/&lt;your github username&gt;/gigaspaces-wiki-jekyll.git
-```
-
-If you just want to run it locally, you can clone this repository: 
-```
-git clone https://github.com/Gigaspaces/gigaspaces-wiki-jekyll.git
-```
+    git clone https://github.com/&lt;your github username&gt;/gigaspaces-wiki-jekyll.git
+  If you just want to run it locally, you can clone this repository:
+    git clone https://github.com/Gigaspaces/gigaspaces-wiki-jekyll.git
 
 * cd to the clone directory: 
-```
-cd gigaspaces-wiki-jekyll
-```
+    cd gigaspaces-wiki-jekyll
 
 * If you're using Windows, run `setup-win.bat` with administrative permissions (requires Windows Vista or later).
 This script is a workaround for a known issue in git which ignores symbolic links on windows. 
@@ -33,7 +28,7 @@ This script is a workaround for a known issue in git which ignores symbolic link
 ```
 jekyll serve
 ```
-You should see the following output if everything was ok: 
+You should see the following output if everything was ok:
 ```
 Configuration file: /Users/uri1803/dev/gigaspaces-wiki-jekyll/_config.yml
             Source: /Users/uri1803/dev/gigaspaces-wiki-jekyll
