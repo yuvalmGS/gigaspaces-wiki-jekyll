@@ -14,6 +14,7 @@ To run and test the website locally, you should perform the following steps:
 * Make sure Ruby and RubyGems are installed.
 
 * Install the latest version of Jekyll (you can find detailed directions [here](http://jekyllrb.com/docs/installation/)).
+
   * If you're using Windows, you may want to use the (unofficial) [portable jekyll for Windows](http://www.madhur.co.in/blog/2013/07/20/buildportablejekyll.html).
 
 * Install the [Kramdown markdown converter](http://kramdown.gettalong.org/installation.html).
