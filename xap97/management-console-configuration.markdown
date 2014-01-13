@@ -13,7 +13,7 @@ weight: 100
 
 The management console allows for alternative locales which can be configured via XML. Currently, the supported locales
 are Chinese and English (which is the default). Users wishing to change the locale should update the configuration file,
-like so:
+as follows:
 
 * Open the *gs-webui.war* archive (found under `[XAP_HOME]/tools/gs-webui`) for exploring and navigate to */WEB-INF/lib*.
 Open the *gs-webui-[version-build].jar* archive for exploring.
