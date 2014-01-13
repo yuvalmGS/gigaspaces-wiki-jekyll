@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  deploy-memcached - GigaSpaces CLI
+title:  deploy memcached
 categories: XAP97
 parent: command-line-interface.html
 weight: 400

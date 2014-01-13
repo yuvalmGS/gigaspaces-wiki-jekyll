@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  undeploy-application - GigaSpaces CLI
+title:  undeploy application
 categories: XAP97
 parent: command-line-interface.html
 weight: 1900

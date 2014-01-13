@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  task - GigaSpaces CLI
+title:  task
 categories: XAP97
 parent: command-line-interface.html
 weight: 1800

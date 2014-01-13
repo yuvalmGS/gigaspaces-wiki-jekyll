@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  jconsole - GigaSpaces CLI
+title:  jconsole
 categories: XAP97
 parent: command-line-interface.html
 weight: 900

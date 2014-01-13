@@ -2,11 +2,11 @@
 layout: post
 title:  Data-Grid Clustering
 categories: XAP97
-parent: advanced-tasks.html
-weight: 100
+parent: deployment.html
+weight: 150
 ---
 
-{% compositionsetup %}
+
 {% summary %}This section describe into details how the In-Memory-Data-Grid clustering works. It goes into the details of the fail-over, load-balancing, and replication facilities used.{% endsummary %}
 
 # Overview

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  space cluster-members - GigaSpaces CLI
+title:  space cluster-members
 categories: XAP97
 parent: space---gigaspaces-cli.html
 weight: 300

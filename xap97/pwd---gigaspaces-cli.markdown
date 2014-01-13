@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  pwd - GigaSpaces CLI
+title:  pwd
 categories: XAP97
 parent: command-line-interface.html
 weight: 1300

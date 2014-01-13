@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  space sql - GigaSpaces CLI
+title:  space sql
 categories: XAP97
 parent: space---gigaspaces-cli.html
 weight: 900

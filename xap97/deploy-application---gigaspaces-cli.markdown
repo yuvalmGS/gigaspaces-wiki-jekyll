@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  deploy-application - GigaSpaces CLI
+title:  deploy application
 categories: XAP97
 parent: command-line-interface.html
 weight: 200
