@@ -17,7 +17,7 @@ To run and test the website locally, you should perform the following steps:
         git clone https://github.com/&lt;your github username&gt;/gigaspaces-wiki-jekyll.git
 
   If you just want to run it locally, you can clone this repository:
-    git clone https://github.com/Gigaspaces/gigaspaces-wiki-jekyll.git
+        git clone https://github.com/Gigaspaces/gigaspaces-wiki-jekyll.git
 
 * cd to the clone directory: 
     cd gigaspaces-wiki-jekyll
