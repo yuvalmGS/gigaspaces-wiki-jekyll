@@ -3,10 +3,10 @@ layout: post
 title:  Configuration
 categories: XAP97
 parent: web-management-console.html
-weight: 100
+weight: 50
 ---
 
-{% compositionsetup %}{% summary %}Configuring various options and customizing the management console.{% endsummary %}
+{% summary %}Configuring various options and customizing the management console.{% endsummary %}
 
 
 # Internationalization
