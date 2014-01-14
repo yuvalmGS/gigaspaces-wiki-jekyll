@@ -7,7 +7,7 @@ machine:
 
 checkout:
   post:
-    - git clone https://github.com/Gigaspaces/gigaspaces-sbp-jekyll.git sbp2
+    - git clone https://github.com/Gigaspaces/gigaspaces-sbp-jekyll.git sbp
     - rm -rf ./_site
 
 ## Customize dependencies
