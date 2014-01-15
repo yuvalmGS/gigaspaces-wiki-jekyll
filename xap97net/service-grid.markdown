@@ -80,7 +80,7 @@ Global processes take into account the number of process types ([Grid Service Ma
 The Service Grid can be started in two fashions:
 
 1. **Console Application** - using `<GSHOME>\bin\gs-agent.exe`
-2. **Windows Service** - using the [GigaSpaces Windows Services Manager](./service-grid-components-as-windows-services.html) tool bundled with XAP.NET.
+2. **Windows Service** - using the [GigaSpaces Services Manager](./gigaspaces-services-manager.html) tool bundled with XAP.NET.
 
 Usually the console application is used by developers whereas the Windows service is used in production environments.
 
