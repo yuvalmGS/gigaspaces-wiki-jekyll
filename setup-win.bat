@@ -1,7 +1,7 @@
 @echo off
 cd /d %~dp0
 
-FOR %%a IN (sbp xap97 xap97net) DO (
+FOR %%a IN (sbp xap97 xap97net xap97common) DO (
 	IF EXIST _includes\%%a rmdir _includes\%%a
 	IF EXIST _includes\%%a del _includes\%%a
 	IF EXIST _includes\%%a GOTO error
