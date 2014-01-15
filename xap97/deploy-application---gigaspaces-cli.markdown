@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  deploy-application - GigaSpaces CLI
+title:  deploy application
 categories: XAP97
 parent: command-line-interface.html
 weight: 200
@@ -25,10 +25,10 @@ For undeploying an application see [undeploy-application ](./undeploy-applicatio
 {: .table .table-bordered}
 |Option|Description|Value Format|
 |:-----|:----------|:-----------|
-| `-timeout` | Allows you to specify a timeout value (in milliseconds) when looking up the GSM to deploy to.{% wbr %}Defaults to `5000` milliseconds (5 seconds).| `-timeout \[timeoutValue\]`|
-| `-deploy-timeout` | Timeout for deploy operation (in milliseconds),{% wbr %}otherwise blocks until all successful/failed deployment events arrive (default)" |`-deploy-timeout \[timeoutValue\]`|
+| `-timeout` | Allows you to specify a timeout value (in milliseconds) when looking up the GSM to deploy to.{% wbr %}Defaults to `5000` milliseconds (5 seconds).| `-timeout [timeoutValue]`|
+| `-deploy-timeout` | Timeout for deploy operation (in milliseconds),{% wbr %}otherwise blocks until all successful/failed deployment events arrive (default)" |`-deploy-timeout [timeoutValue]`|
 | `-h` / `-help`  | Prints help | |
-| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security](./command-line-interface-(cli)-security.html)| `-secured \[true/false\]`|
+| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security](./command-line-interface-(cli)-security.html)| `-secured [true/false]`|
 | `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security](./command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
 # Example

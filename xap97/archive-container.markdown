@@ -2,7 +2,7 @@
 layout: post
 title:  Archive Container
 categories: XAP97
-parent: event-processing.html
+parent: big-data.html
 weight: 100
 ---
 
@@ -398,9 +398,9 @@ public class ExpiredTweetsFilter {
 	xmlns:os-archive="http://www.openspaces.org/schema/archive"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
 	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/core http://www.openspaces.org/schema/9.1/core/openspaces-core.xsd
-	                    http://www.openspaces.org/schema/events http://www.openspaces.org/schema/9.1/events/openspaces-events.xsd
-	                    http://www.openspaces.org/schema/archive http://www.openspaces.org/schema/9.1/archive/openspaces-archive.xsd">
+	                    http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
+	                    http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
+	                    http://www.openspaces.org/schema/archive http://www.openspaces.org/schema/{%currentversion%}/archive/openspaces-archive.xsd">
 ...
 
 </beans>

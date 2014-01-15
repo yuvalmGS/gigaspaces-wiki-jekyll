@@ -6,7 +6,7 @@ parent: pojo-support.html
 weight: 100
 ---
 
-{% compositionsetup %}{% summary %}GigaSpace API Plain Old Java Object support - the [POJO](http://en.wikipedia.org/wiki/Plain_Old_Java_Object). This section deals with the annotations and gs.xml mapping file decorations.{% endsummary %}
+{% summary %}GigaSpace API Plain Old Java Object support - the [POJO](http://en.wikipedia.org/wiki/Plain_Old_Java_Object). This section deals with the annotations and gs.xml mapping file decorations.{% endsummary %}
 
 # Space POJO Annotations and XML Mapping (gs.xml) File Elements
 
@@ -242,6 +242,7 @@ A compound index that contains this FIFO grouping index and the FIFO grouping pr
 
 {% refer %}For more details and examples, refer to the [FIFO Grouping](./fifo-grouping.html) section.{% endrefer %}
 
+{% anchor SpaceClassConstructor %}
 ## Constructor Level Decoration -- @SpaceClassConstructor
 
 The `@SpaceClassConstructor` annotation can be placed on a POJO constructor to denote that this constructor should be used during object instantiation.

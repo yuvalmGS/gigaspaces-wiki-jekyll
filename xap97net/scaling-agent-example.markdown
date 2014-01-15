@@ -6,7 +6,7 @@ parent: administration-and-monitoring-api.html
 weight: 100
 ---
 
-{% compositionsetup %}
+
 
 {% summary %}This example demonstrates how to harness the Service Grid Admin API to build an agent
 that monitors a deployed application, and scale it up on demand.{% endsummary %}

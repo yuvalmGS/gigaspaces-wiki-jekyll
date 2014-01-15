@@ -10,89 +10,53 @@ sidebar["{{ cat }}"] = [];
 sidebar["{{ cat }}"].push({url:"{{ page.url }}", parent: "{{ page.parent }}", weight:{% if page.weight != null %} {{ page.weight }}{% else %} 0{% endif %}, title: "{{ page.title }}"});
 {% endif %}{% endif %}{% endfor %}{% endfor %}
 
-function transformArr(orig) {
-  var newArr = [],
-  parents = {},
-  newItem, i, j, cur, x, y;
-  for (i = 0, j = orig.length; i < j; i++) {
-    cur = orig[i];
-    if (!(cur.parent in parents)) {
-      parents[cur.parent] = {parent: cur.parent, urls: []};
-      newArr.push(parents[cur.parent]);
-    }
-    parents[cur.parent].urls.push({url:cur.url, weight:cur.weight, title:cur.title});
-  }
 
-  for (i = 0, j = newArr.length; i < j; i++) {
-    newArr[i]['urls'] = newArr[i]['urls'].sort(function(a,b) {
-      return(a.weight - b.weight)
-    });
-    for (x = 0, y = newArr[i]['urls'].length; x < y; x++) {
-      delete newArr[i]['urls'][x]['weight'];
-    }
+function addChildren(categoryName, categoryPages, parentUrl) {
+  var tree = []; 
+  var children = categoryPages.filter(function(x) {
+    return (parentUrl == x.parent) ||
+           (parentUrl == ("/" + categoryName.toLowerCase() + "/" + x.parent));
+  });
+  if (children == null || children.length == 0) return null; 
+  for (var i=0; i<children.length; i++) {
+    tree.push({"title":children[i].title, "url":children[i].url, "weight":children[i].weight, 
+               "children":addChildren(categoryName, categoryPages, children[i].url)});
   }
-
-  return newArr;
+  tree.sort(function(a,b) {
+    return(a.weight - b.weight);
+  });
+  return tree; 
 }
 
-function makeSideBar(orig, space) {
-  without_parent = orig.filter(function(x) {return x.parent == 'none'})[0];
-  with_parent = orig.filter(function(x) {return x.parent != 'none'});
-
-  parent_html = makeParentMenu(without_parent, space);
-  parent_object = $('<div/>').html(parent_html).contents();
-
-  // dangerous recursion
-  // Not finished yet, don't use this
-
-  var counter = 0;
-  while (with_parent.length != 0) {
-    counter += 1;
-    if (with_parent.length > 2) {
-      var current_child = with_parent[~~(Math.random()*with_parent.length)];
-    } else if (with_parent.length == 2) {
-      var current_child = with_parent[Math.round(Math.random())];
-    } else {
-      var current_child = with_parent[0];
-    }
-
-    sidebar_url = '[href$="' + current_child['parent'] + '"]';
-    find_a = parent_object.find(decodeURI(sidebar_url));
-    if (find_a.length != 0) {
-      with_parent = $.grep(with_parent, function(value) { return(value != current_child) });
-      find_a.after("\n" + makeChildMenu(current_child) + "\n");
-    }
-
-    //failsafe 200 times iteration
-    if (counter == 600) {
-      with_parent = [];
-    }
-
-  }
-  return parent_object.prop("outerHTML")
+function makeSideBar(categoryName) {
+  var tree = addChildren(categoryName, sidebar[categoryName], 'none');
+  return treeToDom(tree);
 }
 
-function makeParentMenu(orig, space) {
-  output = "<ul id='toc_menu' style='display:none;'>\n";
-  var i, j;
-  for (i = 0, j = orig['urls'].length; i < j; i++) {
-    var curr_menu = orig['urls'][i];
-    output += '<li><a href="' + curr_menu['url'] + '">' + curr_menu['title'] + "</a></li>\n";
-  }
-  output += "</ul>";
-  return output
+function treeToDom(tree) {
+  var rootUl = document.createElement("ul");
+  $("#sidebar_menu").append(rootUl);
+  appendChildrenToDom(rootUl, tree);
 }
 
-function makeChildMenu(orig) {
-  output = "<ul>\n";
-  var ci, cj;
-  for (ci = 0, cj = orig['urls'].length; ci < cj; ci++) {
-    var curr_menu = orig['urls'][ci];
-    output += '<li><a href="' + curr_menu['url'] + '">' + curr_menu['title'] + "</a></li>\n";
+function appendChildrenToDom(currentDomElement, tree) {
+  for (var i=0; i<tree.length; i++) {
+    var li = document.createElement("li");
+    var a = document.createElement("a");
+    a.setAttribute("href", tree[i].url);
+    li.appendChild(a);
+    a.appendChild(document.createTextNode(tree[i].title));
+    li.appendChild(a);
+    currentDomElement.appendChild(li);
+    if (tree[i].children) {
+      var innerUl = document.createElement("ul");
+      li.appendChild(innerUl);
+      appendChildrenToDom(innerUl, tree[i].children);
+    }
   }
-  output += "</ul>";
-  return output
+
 }
+
 
 function createBreadcrumbs(category, currentSection) {
 

@@ -112,6 +112,9 @@ See that Item3 does not exists:
 # Setup Instructions
 
 1.Download the project from the [github repository](https://github.com/OpenSpaces/RESTData)
-2.Edit "/RESTData/src/main/webapp/WEB-INF/config.properties"? to include your space url, for example: `spaceUrl=jini://\*/\*/testSpace?groups=restdata`
+
+2.Edit "/RESTData/src/main/webapp/WEB-INF/config.properties"? to include your space url, for example: `spaceUrl=jini://*/*/testSpace?groups=restdata`
+
 3.Package the project using maven: "mvn package". This will run the unit tests and package the project to a war file located at /target/RESTData.war
+
 4.[Deploy](./deploy---gigaspaces-cli.html) the war file.

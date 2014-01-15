@@ -47,7 +47,7 @@ com.gs.security.fs.file-service.file-path = /opt/head/security/my-directory.fsm
 {% exclamation %} Note that file separators in a properties file are `'/'`.
 {% question %} The file extension doesn't have to be `.fsm`.
 {% exclamation %} If the file doesn't exist, only a warning is displayed
-{% exclamation %} You should specify in UI (manage security) path to security configuration file containing this property ,otherwise default fsm file will be used.
+{% exclamation %} You should specify in the UI (manage security) the path to security configuration file containing this property ,otherwise the default fsm file will be used.
 ![security_namagement_config_file.jpg](/attachment_files/security_namagement_config_file.jpg)
 
 # Custom Extensions

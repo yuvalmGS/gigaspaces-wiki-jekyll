@@ -1,12 +1,10 @@
 ---
 layout: post
-title:  Administrator's Guide
+title:  Administration
 categories: XAP97
-weight: 300
+weight: 500
 parent: none
 ---
-
-# What Does the Administrator's Guide Cover?
 
 As the administrator of your organization's computing applications, you are responsible for setting up and running a system that is critical to your corporate mission. You must plan how to maximize the performance and reliability of your GigaSpaces XAP, and then make it happen.
 

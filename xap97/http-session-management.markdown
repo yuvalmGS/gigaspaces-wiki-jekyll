@@ -41,7 +41,7 @@ gs deploy -properties embed://jetty.sessions.spaceUrl=jini://*/*/sessionSpace?us
 
 When deploying, include within the **META-INF/spring/pu.properties** file the **jetty.sessions.spaceUrl** property value. This should be set with the space url defining where the sessions will be stored.
 
-For example, if the session will be stored on a remote clustered Space with local cache, the URL can be: **jini://\*/\*/sessionSpace?useLocalCache** (assuming the name of the Space is _sessionSpace_). If the session should be stored on a Space that should be started within the web application (in a collocated manner) in a sync\_replicated cluster schema (for example), then the url can be **/./sessionSpace?cluster\_schema=sync\_replicated** (note, cluster ids will be automatically set based on the number of web applications deployed).
+For example, if the session will be stored on a remote clustered Space with local cache, the URL can be: **jini://*/*/sessionSpace?useLocalCache** (assuming the name of the Space is _sessionSpace_). If the session should be stored on a Space that should be started within the web application (in a collocated manner) in a sync_replicated cluster schema (for example), then the url can be **/./sessionSpace?cluster_schema=sync_replicated** (note, cluster ids will be automatically set based on the number of web applications deployed).
 
 In case there is already a Space configured within the web application. For example, defined within **META-INF/spring/pu.xml**, it can be used as the Space where sessions will be stored as well. In this case, the **jetty.sessions.spaceUrl** can use the special prefix **bean**. For example, if the Space was defined as a bean with id of **sessionSpace**, the  **jetty.sessions.spaceUrl** can be set to **bean://sessionSpace**.
 
@@ -56,7 +56,7 @@ Controlling the session Management done via the following properties:
 {: .table .table-bordered}
 |Property|Description|Default|Mandatory?|
 |:-------|:----------|:------|:---------|
-|`jetty.sessions.spaceUrl`|specifies the URL of the space with the HTTP session store will be backed. Use the `bean://` notation to reference a space proxy defined within the `META-INF/spring/pu.xml` file.|`jini://\*/\*/sessionSpace?useLocalCache`{% wbr %}`/./sessionSpace?cluster_schema=replicated`{% wbr %}`bean://sessionSpace`| Yes |
+|`jetty.sessions.spaceUrl`|specifies the URL of the space with the HTTP session store will be backed. Use the `bean://` notation to reference a space proxy defined within the `META-INF/spring/pu.xml` file.|`jini://*/*/sessionSpace?useLocalCache`{% wbr %}`/./sessionSpace?cluster_schema=replicated`{% wbr %}`bean://sessionSpace`| Yes |
 |`jetty.sessions.scavengePeriod`| Determines how often the web container will check for expired sessions. Set in seconds.| 300 seconds (5 minutes) | No |
 |`jetty.sessions.savePeriod`| How often an actual update of a **non dirty** session will be performed to the Space. Set in seconds|60 seconds. This is useful for cases where a session attribute is not updated explicitly using the `HttpSession#setAttribute` method. More importantly, it makes sure to report the last time the user has accessed the application to the space so that the user session will not expire |No |
 |`jetty.sessions.timeout`| Determines the HTTP session timeout in minutes (similar to `session-timeout` element in `web.xml`|30 minutes| No |

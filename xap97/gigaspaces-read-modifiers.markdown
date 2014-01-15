@@ -6,11 +6,10 @@ parent: space-locking-and-blocking.html
 weight: 100
 ---
 
-{% tip %}
-**Summary:** {% excerpt %}GigaSpaces `EXCLUSIVE_READ_LOCK`, `READ_COMMITTED`, `DIRTY_READ`, and `REPEATABLE_READ` modifiers.{% endexcerpt %}
-**Contents:**
+ {% summary %}GigaSpaces `EXCLUSIVE_READ_LOCK`, `READ_COMMITTED`, `DIRTY_READ`, and `REPEATABLE_READ` modifiers.{% endsummary %}
+
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
-{% endtip %}
+
 
 # Overview
 
@@ -28,7 +27,7 @@ These should be used for backward compatibility with older versions of GigaSpace
 - `MATCH_BY_ID`
 - `THROW_PARTIAL_FAILURE`
 
-You can use **bitwise** or the `\|` operator to unite different modifiers.
+You can use **bitwise** or the `|` operator to unite different modifiers.
 
 {% exclamation %} `REPEATABLE_READ`, `DIRTY_READ`, and `READ_COMMITTED` are mutually exclusive (i.e. can't be used together). `EXCLUSIVE_READ_LOCK` can be joined with any of them.
 
@@ -41,12 +40,12 @@ The following table describes the mapping between the [Spring TransactionDefinit
 {: .table .table-bordered}
 |Spring TransactionDefinition| GigaSpaces ReadModifiers |
 |:---------------------------|:-------------------------|
-|ISOLATION\_READ\_UNCOMMITTED| DIRTY_READ|
-|ISOLATION\_READ\_COMMITTED|READ_COMMITTED|
-|ISOLATION\_REPEATABLE\_READ|REPEATABLE_READ|
+|ISOLATION_READ_UNCOMMITTED| DIRTY_READ|
+|ISOLATION_READ_COMMITTED|READ_COMMITTED|
+|ISOLATION_REPEATABLE_READ|REPEATABLE_READ|
 
 {% comment %}
-|ISOLATION\_SERIALIZABLE|EXCLUSIVE\_READ\_LOCK|
+|ISOLATION_SERIALIZABLE|EXCLUSIVE_READ_LOCK|
 {% endcomment %}
 
 # Repeatable Read
@@ -116,8 +115,8 @@ If the read operation is under a transaction, there is no need to "enlist" the s
 | Dirty Read Transaction X or null| Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed |
 
 {% refer %}Refer to the [Space Locking and Blocking](./space-locking-and-blocking.html) section for GigaSpaces general locking and blocking rules.{% endrefer %}
-{% note %}
 
+{% note %}
 - To read the original state of a space object that is locked under a transaction (take or update) you should use READ_COMMITTED mode.
 - To read the current state of a space object that is locked under transaction (take or update) should use Dirty Read mode.
 - Dirty read (without transaction) does not blocks transactional take operation.
@@ -159,7 +158,7 @@ The following methods support exclusive read lock when used with a transaction:
 The exclusive read lock is supported in a clustered environment when using the Jini Transaction Manager.
 
 {% tip %}
-Starting with XAP 7.1.2 GigaSpaces throws `java.lang.IllegalArgumentException: Using EXCLUSIVE_READ_LOCK modifier without a transaction is illegal` exception as a protection mechanism when performing exclusive read **without** using a transaction. You must use a transaction when using exclusive read lock.
+Starting with XAP 7.1.2 GigaSpaces throws `java.lang.IllegalArgumentException: Using EXCLUSIVE_READ_LOCK modifier without a transaction`{%wbr%}`is illegal` exception as a protection mechanism when performing exclusive read **without** using a transaction. You must use a transaction when using exclusive read lock.
 {% endtip %}
 
 ## Code Example

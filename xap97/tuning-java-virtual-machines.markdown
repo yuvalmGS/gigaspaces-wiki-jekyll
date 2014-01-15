@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Tuning Java Virtual Machines
+title:  Java Virtual Machines
 categories: XAP97
 parent: performance-tuning-and-considerations.html
 weight: 300

@@ -45,7 +45,7 @@ The SLA definition, whether it comes in a separate file or embedded inside the `
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.openspaces.org/schema/sla
-	   http://www.openspaces.org/schema/8.0/sla/openspaces-sla.xsd">
+	   http://www.openspaces.org/schema/{%currentversion%}/sla/openspaces-sla.xsd">
     <os-sla:sla cluster-schema="partitioned-sync2backup"
             number-of-instances="2" number-of-backups="1"
             max-instances-per-vm="1">
@@ -458,7 +458,7 @@ You can also define SLA deployment requirements on per processing unit instance 
 
 The above example verifies that the **first instance** is deployed to a specific machine (specified by its IP address), and its **second instance** for the same partition is deployed to a different machine. All instances share the "general" requirements of CPU and memory. The first instance **might be** the primary and the second might be the backup, but there is no guarantee these will remain primary/backup as these are runtime properties and might change during the life-cycle of the clustered space. The activation property of the space (primary or backup) is determined once the instance is deployed and is not controlled by the GSM but as part of the primary election process.
 
-To control the location of the primary and backup instances during the life-cycle of the clustered space you should use the [Primary-Backup Zone Controller best practice](/sbp/primary-backup-zone-controller.html).
+To control the location of the primary and backup instances please see the next section.
 
 {% note %}
 When using instance level SLA, max-instances settings do not apply (or any cluster level setting).

@@ -6,8 +6,8 @@ parent: main-modules.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}Explains the concepts of the GigaSpaces in-memory data grid (the Space), how to access it, and how to configure advanced capabilities, such as persistency, eviction, etc.{% endsummary %}
+
+{% summary  %}Explains the concepts of the GigaSpaces in-memory data grid (the Space), how to access it, and how to configure advanced capabilities, such as persistency, eviction, etc.{% endsummary %}
 
 # Overview
 
@@ -94,7 +94,7 @@ The space supports a number of APIs to allow for maximum flexibility to space cl
 - The core [Space API](./the-gigaspace-interface.html), which is the most recommended, allows you to read objects from the space based on various criteria, write objects to it, remove objects from it and get notified about changes made to objects. It is inspired by the JavaSpaces specification and the tuple space model, although the basic data unit is a POJO, which means the space entries are simply Java objects. This API supports transactions.
 
 {% info title=Accessing the Space from Other Languages %}
-The code space API is also supported in [.Net]({%currentneturl%}/the-in-memory-data-grid.html) and [C++](./xap-cpp.html). This allows clients to access the space via these languages. It also supports [interoperability](./platform-interoperability-in-gigaspaces.html) between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
+The code space API is also supported in [.Net]({%currentneturl%}/the-in-memory-data-grid.html) and [C++](./xap-cpp.html). This allows clients to access the space via these languages. It also supports [interoperability](./interoperability.html) between languages, so in effect you can write an object to the space using one language, say C++, and read it with another, say Java
 {% endinfo %}
 
 - The [JPA API](./jpa-api.html) allows you to use JPA annotations and execute JPQL queries on the space

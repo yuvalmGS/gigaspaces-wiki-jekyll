@@ -8,7 +8,7 @@ weight: 300
 
 {% summary %}This section will teach you how to design your data for distributing on the data grid and about the various APIs for accessing you data.{% endsummary %}
 
-# overview
+# Overview
 
 Moving your application to a distributed environment holds significant benefits such as linear scalability, excellent performance and increased reliability. However, it requires a different design for you data model. Look at the [Modeling your data](./modeling-your-data.html) page for key insights.
 

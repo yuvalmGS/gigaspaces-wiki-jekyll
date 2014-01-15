@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Multi-Site Conflict Resolution
+title:  Conflict Resolution
 categories: XAP97
 parent: multi-site-replication-over-the-wan.html
 weight: 500

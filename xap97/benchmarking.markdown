@@ -2,9 +2,10 @@
 layout: post
 title:  Benchmarking
 categories: XAP97
-parent: evaluating-performance-and-scalability.html
-weight: 100
+parent: performance-tuning-and-considerations.html
+weight: 600
 ---
+
 
 # The Art of Benchmarks
 
@@ -27,7 +28,7 @@ The different benchmarks results can be found on the [benchmarks page](http://ww
 - [GS-UI Benchmark View](./benchmark-view---gigaspaces-browser.html) — This is a Java Swing-based tool allowing you to run various tests. It does not currently have a good way to export the results and automate the benchmark scenarios. Still, with a matter of few clicks, you can get a good sense how your environment performs.
 - [Benchmark Utility - GigaSpaces CLI](./benchmark-utility---gigaspaces-cli.html) — This is the Java command line version of the GS-UI Benchmark View. It include similar options, but being a command-line tool allows automation of the benchmarks via scripts. The source code is provided for this tool.
 - [C++ Benchmark Framework](./c++-benchmark-framework.html) — XAP C++ API Benchmark framework. Source code provided.
-- [.NET Benchmark Example](/xap97net/dotnet-benchmark-example.html) - XAP .Net API Benchmark framework. Source code provided.
+- [.NET Benchmark Example]({%currentneturl%}/dotnet-benchmark-example.html) - XAP .Net API Benchmark framework. Source code provided.
 
 ## Large Scale Benchmarks
 

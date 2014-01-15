@@ -6,7 +6,6 @@ parent: change-api.html
 weight: 200
 ---
 
-{% compositionsetup %}
 {% summary %}This page covers the Change API, its usage and behavior.{% endsummary %}
 
 

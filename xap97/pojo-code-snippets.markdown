@@ -1,8 +1,4 @@
----
-layout: post
-title:  POJO Code Snippets
-categories: XAP97
----
+
 
 # Code Snippets
 

@@ -2,30 +2,44 @@
 layout: post
 title:  Security
 categories: XAP97
-parent: administrators-guide.html
-weight: 700
+parent: none
+weight: 300
 ---
 
+{%comment%}
 {% summary %}This section describes GigaSpaces security model{% endsummary %}
+{%endcomment%}
 
-# Overview
+{% summary %} {% endsummary %}
+
 
 {% section %}
-{% column %}
+{% column width=75% %}
 This section provides an understanding of GigaSpaces XAP Security, where it fits in the GigaSpaces architecture, which components can be secured, and how to configure and customize the security depending on your application security requirements.
 {% endcolumn %}
-{% column %}
-![security-logo.jpg](/attachment_files/security-logo.jpg)
+{% column width=20% %}
+<img src="/attachment_files/qsg/security.png" width="100" height="100">
 {% endcolumn %}
 {% endsection %}
 
+{%anchor what-is-gigaspaces-security %}
+
 # What is GigaSpaces Security?
 
+{% section %}
+{% column width=75% %}
 GigaSpaces Security provides comprehensive support for securing your data, services, or both. GigaSpaces provides a set of authorities granting privileged access to data, and for performing operations on services.
+{% endcolumn %}
+{% column width=20% %}
+{%align center%}
+[<img src="/attachment_files/security_ovreview.jpg" width="200" height="200">](/attachment_files/security_ovreview.jpg)
+{%endalign%}
+{% endcolumn %}
+{% endsection %}
 
-{% indent %}
-![security_ovreview.jpg](/attachment_files/security_ovreview.jpg)
-{% endindent %}
+
+
+
 
 Security comprises two major operations: **authentication** and **authorization**. **Authentication** is the process of establishing and confirming the authenticity of a _principal_. A _principal_ in GigaSpaces terms, means a user (human or software) performing an action in your application. **Authorization** refers to the process of deciding whether a principal is allowed to perform this action. The flow means that a principal is first established by the authentication process, and then authorized by the authorization decision process, when performing actions. These concepts are common and not specific to GigaSpaces Security.
 

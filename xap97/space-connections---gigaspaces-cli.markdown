@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  space connections - GigaSpaces CLI
+title:  space connections
 categories: XAP97
 parent: space---gigaspaces-cli.html
 weight: 500

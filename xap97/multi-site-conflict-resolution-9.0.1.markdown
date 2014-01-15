@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Multi-Site Conflict Resolution 9.0.1
+title:  Conflict Resolution 9.0.1
 categories: XAP97
 parent: multi-site-conflict-resolution.html
 weight: 100

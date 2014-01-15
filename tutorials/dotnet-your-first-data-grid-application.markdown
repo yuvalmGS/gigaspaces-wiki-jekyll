@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  .NET Your First Data Grid Application
+title:  XAP .NET in 5 Minutes
 categories: TUTORIALS
 parent: dotnet-quick-start-guide.html
 weight: 200

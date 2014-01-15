@@ -3,10 +3,10 @@ layout: post
 title:  Mule ESB
 categories: XAP97
 parent: integrations.html
-weight: 200
+weight: 300
 ---
 
-{% summary section|65 %}OpenSpaces Mule ESB integration allows you to use the Space as a Mule external transport, replace Mule VM transport with transport over the Space, enhances the Mule SEDA model, and can be packaged and run as a Processing Unit.{% endsummary %}
+{% summary%}OpenSpaces Mule ESB integration allows you to use the Space as a Mule external transport, replace Mule VM transport with transport over the Space, enhances the Mule SEDA model, and can be packaged and run as a Processing Unit.{% endsummary %}
 
 # Overview
 
@@ -19,5 +19,6 @@ OpenSpaces Mule integration also [enhances the Mule SEDA model](./mule-seda-mode
 Last, a Mule application can be [packaged and run as a Processing Unit](./mule-processing-unit.html) within one of the OpenSpaces Processing Unit containers -- most importantly the SLA-driven container.
 
 {% exclamation %} See the [Distributed Multi Mule service example](/sbp/mule-esb-example.html) for a best practice approach when designing your Mule based application.
+
 {% children %}
 

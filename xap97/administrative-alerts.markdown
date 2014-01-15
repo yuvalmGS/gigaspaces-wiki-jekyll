@@ -6,7 +6,6 @@ weight: 300
 parent: administration-and-monitoring-api.html
 ---
 
-{% compositionsetup %}
 {% summary %}Runtime administrative alerts - monitoring the "health state" of the system.{% endsummary %}
 
 # Overview
@@ -71,8 +70,7 @@ Since GigaSpaces XAP is working in a distributed environment, an alert is identi
 
 # Viewing Alerts (Web-UI)
 
-![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
-Alerts are visible in the Alerts View of the Web-UI ({% bgcolor orange %}Since 8.0.1{% endbgcolor %}). The Web-UI server utilizes the `<GigaSpaces Root>/config/alerts/alerts.xml` configuration file. These configurations apply to any client connecting to the Web-UI at the specified host and port.
+Alerts are visible in the Alerts View of the Web-UI Since 8.0.1. The Web-UI server utilizes the `<GigaSpaces Root>/config/alerts/alerts.xml` configuration file. These configurations apply to any client connecting to the Web-UI at the specified host and port.
 
 The alerts are grouped together by their 'type' (e.g. CPU, Memory, GC, etc.). When an alert is raised, it is aggregated with other consecutive alerts of the same 'type'. Previous alerts form the aggregation get "pushed" down (circled in red). A resolved alert "closes" the aggregation (circled in green). A new alert of the same 'type' will "open" a new aggregation.
 
@@ -216,7 +214,7 @@ alertManager.setConfig(
 alertManager.enableAlert(CpuUtilizationAlertConfiguration.class);
 {% endhighlight %}
 
-{% bgcolor orange %}Since 8.0.2{% endbgcolor %} the `enabled` indication has been added to the `AlertConfigurer` API.
+Since 8.0.2  the `enabled` indication has been added to the `AlertConfigurer` API.
 This lets you use the `AlertManager.configure(AlertConfiguration ...)` method to configure one or more alert configurations following the same fluent API usage as above.
 
 This code sample does exactly the same as the code above.

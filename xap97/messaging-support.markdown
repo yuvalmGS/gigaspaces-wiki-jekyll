@@ -2,8 +2,8 @@
 layout: post
 title:  Messaging Support
 categories: XAP97
-parent: main-modules.html
-weight: 800
+parent: integrations.html
+weight: 200
 ---
 
 {% children %}

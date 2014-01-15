@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  ls - GigaSpaces CLI
+title:  ls
 categories: XAP97
 parent: command-line-interface.html
 weight: 1200
@@ -21,4 +21,4 @@ The `ls` command lists the contents of the current working directory, like the U
 {: .table .table-bordered}
 | Option | Description |
 |:-------|:------------|
-| `\-l` | List the contents in more detail. |
+| `-l` | List the contents in more detail. |

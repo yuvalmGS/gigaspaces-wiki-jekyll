@@ -2,12 +2,12 @@
 layout: post
 title:  Multi-Site Replication over the WAN
 categories: XAP97
-parent: space-topologies.html
-weight: 100
+parent: deployment.html
+weight: 300
 ---
 
 {% summary %}This page explains how to establish data synchronization between multiple sites (spaces), usually used over the WAN.{% endsummary %}
-{% compositionsetup %}
+
 
 {% info title=Licensing %}
 The Gateway requires a separate license in addition to the GigaSpaces commercial license. Please contact [GigaSpaces Customer Support](http://www.gigaspaces.com/content/customer-support-services) for more details.

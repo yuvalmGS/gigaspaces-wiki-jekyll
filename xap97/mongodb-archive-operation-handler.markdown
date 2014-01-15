@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  MongoDB Archive Operation Handler
+title:  Mongo Archive Operation Handler
 categories: XAP97
-parent: archive-container.html
-weight: 150
+parent: mongodb.html
+weight: 200
 ---
 
 {% summary page|60 %}Archives space objects to MongoDB.{% endsummary %}
@@ -23,8 +23,6 @@ The [Archive Container](./archive-container.html) can be configured to work agai
 The MongoDB Archive Operation Handler uses the [MongoDB driver](http://www.allanbank.com/mongodb-async-driver/index.html) for communicating with the MongoDB cluster.
 Include the following in your `pom.xml`
 
-{% inittab %}
-{% tabcontent mognodb async driver %}
 
 {% highlight xml %}
 <dependency>
@@ -52,12 +50,13 @@ Include the following in your `pom.xml`
 </dependency>
 {% endhighlight %}
 
-{% endtabcontent %}
-{% endinittab %}
+
 
 ## Setup
 
 {% inittab os_simple_space|top %}
+
+{%comment%}
 {% tabcontent Namespace %}
 
 {% highlight xml %}
@@ -65,11 +64,13 @@ Include the following in your `pom.xml`
 <os-archive:mongo-archive-handler id="mongoArchiveHandler" 
 	giga-space="gigaSpace" 
 	config-ref="config" 
-	db="${mongodb.db}" 
-/>
+	db="${mongodb.db}"/>
 {% endhighlight %}
 
 {% endtabcontent %}
+
+{%endcomment%}
+
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
@@ -107,7 +108,7 @@ archiveContainer.destroy();
 {: .table .table-bordered}
 |Property|Description|
 |:-------|:----------|
-|gigaSpace| GigaSpace reference used for type descriptors. see [Archive Container#Configuration](./archive-container.html#Configuration)|
+|gigaSpace| GigaSpace reference used for type descriptors. see [Archive Container](./archive-container.html#Configuration)|
 |config | MongoClientConfiguration reference used to handle the mongodb driver configuration. see [MongoClientConfiguration](http://www.allanbank.com/mongodb-async-driver/apidocs/com/allanbank/mongodb/MongoClientConfiguration.html)|
 |db | mongodb database name|
 

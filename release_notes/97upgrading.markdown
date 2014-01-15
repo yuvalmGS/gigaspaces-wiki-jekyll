@@ -53,6 +53,3 @@ A couple of obsolete tools have been removed from the `bin` folder:
 
 In addition, the Windows Service wrappers for `GSC`, `GSM` and `LUS` have been removed from the `config` folder - the `Agent` service wrapper includes these functionality and should be used instead.
 
-### TODO: .NET CLI Service was removed
-
-

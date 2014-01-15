@@ -6,9 +6,9 @@ parent: processing-units.html
 weight: 100
 ---
 
-{% compositionsetup %}
 
-{% summary page|65 %}Describing the .NET Processing Unit Container and how to create and deploy it.{% endsummary %}
+
+{% summary %}Describing the .NET Processing Unit Container and how to create and deploy it.{% endsummary %}
 
 # Overview
 
@@ -16,7 +16,9 @@ The .NET Processing Unit Container is based on the [OpenSpaces Processing Unit](
 
 The Processing Unit Container is aware of the [cluster info](#ClusterInfo). This allows you to write your code decoupled from cluster topologies considerations.
 
-{% refer %}Learn how to use the .NET Processing Unit Container in the **[SBA Example]** section.{% endrefer %}
+{%comment%}
+{% refer %}Learn how to use the .NET Processing Unit Container in the [SBA Example] section.{% endrefer %}
+{%endcomment%}
 
 {% tip %}
  Most users prefer to work with the [Basic Processing Unit Container](./basic-processing-unit-container.html), since it simplifies many common tasks associated with implementing a processing unit from scratch.

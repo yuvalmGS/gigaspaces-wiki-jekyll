@@ -32,7 +32,7 @@ This multicast utility serves to check multicast communication between sender an
 `Reply from 192.138.120.56:5558 bytes=100 time=1.539ms`
 
 {% tip %}
-For multi-homed network card machine use `multicastTest -sender -ba \[network card IP]`.
+For multi-homed network card machine use `multicastTest -sender -ba [network card IP]`.
 {% endtip %}
 
 {% tip %}

@@ -2,7 +2,7 @@
 layout: post
 title:  Database Integration
 categories: PRODUCT_OVERVIEW
-weight: 300
+weight: 500
 parent: none
 ---
 
@@ -43,5 +43,3 @@ One of the common questions when it comes to memory as a critical system of reco
 In order to preserve data, it is common topology to make sure that each memory copy has a replica. In addition it is important to put both replicas on different hardware, in order to eliminate single points of failures. If for some reason a single copy is not enough, we create as many copies as we need.
 {% endtip %}
 
-{% whr %}
-{% refer %}**Next chapter:** [Product Architecture](./product-architecture.html){% endrefer %}

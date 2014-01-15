@@ -1,20 +1,15 @@
 module Jekyll
   module Tags
     class Learn < Liquid::Block
-      include Liquid::StandardFilters
-
-      def initialize(tag_name, markup, tokens)
+      
+      def initialize(tag_name, text, tokens)
         super
+        @text = text.strip
       end
 
+      
       def render(context)
-        add_learn(context, super)
-      end
-
-      def add_learn(context, content)
-        output = "Learn more [![Learn more](/attachment_files/navigation/l-more.png)]("
-        output << content
-        output << "){:target=\"_blank\"}"
+        output = "Learn more&nbsp;<a href=\"#{@text}\" target=\"_blank\"><img style=\"display:inherit;\" src=\"/attachment_files/navigation/l-more.png\" alt=\"Learn more\"></a>"
       end
     end
   end

@@ -81,12 +81,13 @@ XAP comes with built in persistence support for Hibernate, Cassandra and MongoDB
 - Cassandra adapter
 XAP comes with built in implementations of Space Data Source and Space Synchronization Endpoint for Cassandra, called CassandraSpaceDataSource and CassandraSpaceSynchronizationEndpoint, respectively.
 
-{%learn%}{%latestjavaurl%}/cassandra-space-persistency.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/cassandra.html{%endlearn%}
 
 - MongoDB adapter
-  You can find a MongoDB adapter in our best practices section.
+XAP comes with built in implementations of Space Data Source and Space Synchronization Endpoint for MongoDB, called MongoSpaceDataSource and MongoSpaceSynchronizationEndpoint, respectively.
 
-{%learn%}/sbp/mongodb-external-datastore.html{%endlearn%}
+
+{%learn%}{%latestjavaurl%}/mongodb.html{%endlearn%}
 
 
 

@@ -65,7 +65,7 @@ Following is an example of how to bootstrap New-York from London:
 Admin admin = new AdminFactory().create();
 Gateway newyorkGateway = admin.getGateways().waitFor("NEWYORK");
 GatewaySinkSource londonSinkSource = newyorkGateway.waitForSinkSource("LONDON");
-BootstrapResult bootstrapResult = londonSinkSource.bootstrapFromGatewayAndWait, 3600, TimeUnit.SECONDS);
+BootstrapResult bootstrapResult = londonSinkSource.bootstrapFromGatewayAndWait(3600, TimeUnit.SECONDS);
 {% endhighlight %}
 
 The bootstrap method will block until the bootstrap is completed and the result will specify whether the bootstrap completed successfully or some error occurred, such as timeout.

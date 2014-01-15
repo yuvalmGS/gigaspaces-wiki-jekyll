@@ -2,11 +2,10 @@
 layout: post
 title:  Scala
 categories: XAP97
-parent: integrations.html
+parent: interoperability.html
 weight: 300
 ---
 
-{% compositionsetup %}
 
 {% section %}
 {% column %}
@@ -28,6 +27,6 @@ Several extensions to OpenSpaces API have been introduced to provide a more natu
 # General Setup
 
 Assuming there is a scala installation under `$SCALA_HOME`, the jars under `$SCALA_HOME/lib` should be copied to `$GS_HOME/lib/platform/scala/lib`.
-Another options is to change `setenv.\{bat,sh\`} so that `$SCALA_JARS` points to `$SCALA_HOME/lib`.
+Another options is to change `setenv.{bat,sh`} so that `$SCALA_JARS` points to `$SCALA_HOME/lib`.
 
 {% children %}

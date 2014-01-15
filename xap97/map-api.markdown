@@ -433,7 +433,7 @@ Here is a simple comparison between the GigaMap API vs. the [GigaSpace API](./th
 
 When configuring a `GigaMap` with an embedded clustered space or with a remote clustered space, a clustered `GigaMap` proxy is created. A clustered proxy is a smart proxy that may perform operations against the entire cluster when needed. The `put` operation will be routing the key and value to the relevant partition (using the key hashcode to calculate the target partition).
 
-The `get` operation will do the same by routing the operation to the relevant partition. The `putAll`} will generate a bucket per partition for all entries that should be placed within the same partition and perform a parallel write to all relevant partition.
+The `get` operation will do the same by routing the operation to the relevant partition. The `putAll` will generate a bucket per partition for all entries that should be placed within the same partition and perform a parallel write to all relevant partition.
 
 Many times, especially when working with a Processing Unit that starts an embedded space, operations against the space should be performed directly on the cluster member without interacting with the other space cluster members (partitions). This is a core concept of the SBA and Processing Unit, where most if not all the operations should be performed in-memory without leaving the Processing Unit boundaries, when a Processing Unit starts an embedded space.
 

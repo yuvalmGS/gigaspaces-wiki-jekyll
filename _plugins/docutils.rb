@@ -3,14 +3,26 @@ module DocUtils
   def self.get_current_section(sectionPath)
     if !sectionPath.nil?
       if sectionPath.start_with?("xap")
-        isDotNet = sectionPath.end_with?("net"); 
+        isDotNet = sectionPath.end_with?("net");
+        isAdmin = sectionPath.end_with?("adm");
+        isInstall = sectionPath.end_with?("inst");
+        isDeploy = sectionPath.end_with?("dep");
         sectionPath = sectionPath.sub("xap","")
         sectionPath = sectionPath.sub("net","")
+        sectionPath = sectionPath.sub("adm","")
+        sectionPath = sectionPath.sub("inst","")
+        sectionPath = sectionPath.sub("dep","")
         version = sectionPath.insert(sectionPath.length - 1, ".")
         if isDotNet 
           "XAP.NET " + version 
+        elsif isAdmin
+          return "XAP " + version + " Admin Guide"
+        elsif isInstall
+          return "XAP " + version + " Installation Guide"
+        elsif isDeploy
+          return "XAP " + version + " Deployment Guide"
         else 
-          return "XAP " + version
+          return "XAP " + version 
         end
       elsif sectionPath == "sbp" 
         "Solutions &amp; Best Practices"

@@ -15,12 +15,12 @@ parent: java-home.html
 
 
 
-
+{%comment%}
 {%summary%}This tutorial will introduce you to the basic features of the GigaSpaces XAP platform.{%endsummary%}
+{%endcomment%}
 
 
 
-# Overview
 {%section%}
 {%column width=75% %}
 In this part of the tutorial we will demonstrate how to create a space and how you can interact with it. We will also demonstrate how you can improve your space search performance by using indexes and returning partial results.
@@ -29,6 +29,8 @@ In this part of the tutorial we will demonstrate how to create a space and how y
 <img src="/attachment_files/qsg/data.png" width="100" height="100">
 {%endcolumn%}
 {%endsection%}
+
+{%summary%}{%endsummary%}
 
 
 # Creating a Space
@@ -254,7 +256,7 @@ public void ChangeSet() {
 		new ChangeSet().set("status", EAccountStatus.BLOCKED));
 
      if (changeResult.getNumberOfChangedEntries() == 0) {
-	System.out.println("Entry does not exist");
+	    System.out.println("Entry does not exist");
      }
 }
 {%endhighlight%}
@@ -553,6 +555,39 @@ SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Dow' AND cred
 There are several additional indexing options available. For example you can index nested attributes, Nested Maps, Collections, nested attributes within a Collection, free text search and others.
 
 {%learn%}{%latestjavaurl%}/indexing.html{%endlearn%}
+
+
+# Best Practice
+
+{%tip%}
+{%panel%}
+
+When you code your space classes make sure:
+
+- there are indexes for all relevant attributes including nested attributes you use for queries
+
+- numeric attribute queried with between / greater / less than should have an extended index.
+
+- compound indexes should be used for attributes queried using AND query
+
+- space classes have empty no arg constructor
+
+- all nested classes are serializable
+
+- do not use  int, long, etc. integer attributes, instead use Long.
+
+- when possible use writeMultiple.
+
+- use projection for read/readMultiple
+
+- use clear for data removal and not take or takeMultiple
+
+- no huge collections with many items
+
+- use change api instead of update , especially if collections are used.
+{%endpanel%}
+{%endtip%}
+
 
 # Other Data Access API's
 XAP provides a JDBC Driver, JPA API, MAP and Memcached API's.

@@ -6,7 +6,7 @@ parent: security.html
 weight: 500
 ---
 
-{% summary %}Get started with a simple HelloWorld example {% star %}{% endsummary %}
+{% summary %}Get started with a simple HelloWorld example{% endsummary %}
 
 # Introduction
 
@@ -48,7 +48,7 @@ There are two options for providing the principal credentials. The first, is by 
 </os-core:space>
 {% endhighlight %}
 
-# Granting access to the `Feeder`
+# Granting access to the Feeder
 
 The `Feeder` in this example is not a processing unit. It is just an external process acquiring a remote proxy to the Space.
 Lets take a look at the `Feeder` constructor.

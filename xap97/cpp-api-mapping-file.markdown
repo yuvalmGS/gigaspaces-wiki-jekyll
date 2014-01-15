@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  CPP API Mapping File
+title:  API Mapping File
 categories: XAP97
 parent: cpp-api-code-generator.html
 weight: 100
 ---
 
-{% summary page|65 %}Elements that are available to be used in your `gs.xml` file and supported types.{% endsummary %}
+{% summary%}Elements that are available to be used in your `gs.xml` file and supported types.{% endsummary %}
 
 # Overview
 
@@ -15,7 +15,7 @@ This section describes the elements that are available to be used in your `gs.xm
 
 The gs.xml file allows you to define c++ classes in the space. To learn how to do this, see the [CPP API Code Generator](./cpp-api-code-generator.html) section.
 
-{% lampon %} To find out about the **supported c++ types**, see [below](#type -- Supported Types).
+{% lampon %} To find out about the **supported c++ types**, see [below](#type--Supported-Types).
 
 The `\*.gs.xml` configuration needs to reside in a `<Root Folder>\config\mapping` folder where the `<Root Folder>` should be part of the application classpath.
 
@@ -85,6 +85,8 @@ The `property` element defines a field in this class.
 
 {% anchor 1 %}
 
+{% anchor type--Supported-Types %}
+
 # type
 
 The table below shows the **supported types that can be used in the space**, and how the different types are mapped in each language.
@@ -102,17 +104,17 @@ The table below shows the **supported types that can be used in the space**, and
 | `long long` | `long long` | `long` | `long` |
 | `short` | `short` | `short` | `short` |
 | `string` | `std::string` | `java.lang.String` | `string` |
-| `bool\[\]` | `std::vector<bool>` | `boolean\[\]` | `bool\[\]` |
-| `byte\[\]` | `std::vector<char>` | `byte\[\]` | `byte\[\]` |
-| `char\[\]` | `std::vector<char>` | `char\[\]` | `char\[\]` |
-| `double\[\]` | `std::vector<double>` | `double\[\]` | `double\[\]` |
-| `float\[\]` | `std::vector<float>` | `float\[\]` | `float\[\]` |
-| `int\[\]` | `std::vector<int>` | `int\[\]` | `int\[\]` |
-| `long\[\]` | `std::vector<long>` | `int\[\]` | `int\[\]` |
-| `long long\[\]` | `std::vector<long long>` | `long\[\]` | `long\[\]` |
-| `short\[\]` | `std::vector<short>` | `short\[\]` | `short\[\]` |
-| `string\[\]` | `std::vector<std::string>` | `java.lang.String\[\]` | `string\[\]` |
-| `blob` | `Blob` | `byte\[\]` | `byte\[\]` |
+| `bool[]` | `std::vector<bool>` | `boolean[]` | `bool[]` |
+| `byte[]` | `std::vector<char>` | `byte[]` | `byte[]` |
+| `char[]` | `std::vector<char>` | `char[]` | `char[]` |
+| `double[]` | `std::vector<double>` | `double[]` | `double[]` |
+| `float[]` | `std::vector<float>` | `float[]` | `float[]` |
+| `int[]` | `std::vector<int>` | `int[]` | `int[]` |
+| `long[]` | `std::vector<long>` | `int[]` | `int[]` |
+| `long long[]` | `std::vector<long long>` | `long[]` | `long[]` |
+| `short[]` | `std::vector<short>` | `short[]` | `short[]` |
+| `string[]` | `std::vector<std::string>` | `java.lang.String[]` | `string[]` |
+| `blob` | `Blob` | `byte[]` | `byte[]` |
 
 {% tip %}
 When having a Java class and a C++ class sharing data you should use int/long/float/double/short data types with your Java space class POJO instead of java.lang.Integer/Long/Float/Double/Short
@@ -133,7 +135,7 @@ Types that can be used with the `ref-property` attribute:
 {: .table .table-bordered}
 | XML type | CPP Type | Java Type | .NET Type |
 |:---------|:---------|:----------|:----------|
-| `array` | `std::vector < boost::shared_ptr < POCO > >` | `POJO\[\]` | `PONO\[\]` |
+| `array` | `std::vector < boost::shared_ptr < POCO > >` | `POJO[]` | `PONO[]` |
 | `boost::shared_ptr` | `boost::shared_ptr< POCO >` | `POJO` | `PONO` |
 
 For example:

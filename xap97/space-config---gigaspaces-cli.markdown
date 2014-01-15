@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  space config - GigaSpaces CLI
+title:  space config
 categories: XAP97
 parent: space---gigaspaces-cli.html
 weight: 400

@@ -614,7 +614,10 @@ ProcessingUnit pu = gsm.deploy(
 
 # Shared Machine Provisioning
 
+{%comment%}
 ![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
+{%endcomment%}
+
 In the code examples above, we showed the usage of `.dedicatedMachineProvisioning`. 'Dedicated' machine provisioning means that the whole machine is 'reserved' for instances of a single processing unit. In other words, other processing units are denied to co-exist on the same machine. This policy is useful if one processing unit should not be affected by other resource consuming processes.
 
 For sharing a machine between processing units, you would need to specify a **_sharing ID_** - a simple string identifying your sharing policy. When a processing unit is requested to scale-out, a new machine is marked with the _sharing ID_ of the processing unit. This ensures that no other processing unit will race to occupy the machine. This _sharing ID_ is later used to match against other processing unit's _sharing ID_ - to allow or deny sharing the same machine resource.

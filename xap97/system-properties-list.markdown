@@ -6,7 +6,7 @@ parent: configuring-the-system.html
 weight: 500
 ---
 
-{% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}
+{% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}
 
 {: .table .table-bordered}
 | Property name | Description | Default value |

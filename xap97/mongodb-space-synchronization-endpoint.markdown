@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  MongoDB Space Synchronization Endpoint
+title:  Mongo Synchronization Endpoint
 categories: XAP97
 parent: mongodb-space-persistency.html
 weight: 200
@@ -53,6 +53,13 @@ Include the following in your `pom.xml`
 	<artifactId>antlr4-runtime</artifactId> 
 	<version>4.0</version> 
 </dependency> 
+
+<dependency>
+    <groupId>com.gigaspaces</groupId>
+    <artifactId>mongo-datasource</artifactId>
+    <version>9.7.0-SNAPSHOT</version>
+</dependency>
+
 {% endhighlight %}
 
 ### Setup 
@@ -103,6 +110,7 @@ class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" /
 	class="com.gigaspaces.persistency.MongoSpaceSynchronizationEndpointBeanFactory">
 	<property name="mongoClientConnector" ref="mongoClient" />
 </bean> 
+</beans> 
 
 {% endhighlight %}
 
@@ -139,6 +147,21 @@ IJSpace mirror = new UrlSpaceConfigurer("/./mirror-service")
 {% endinittab %}
 
 For more details about different configurations see [Space Persistency](./space-persistency.html).
+
+###Before you begin###
+
+Before deploying your Processing Unit, please do the following:
+
+1. Copy the `mongo-datasource.jar` from `lib\optional\datasource\mongo` to `lib\optional\pu-common`.
+2. download the following jars and copy them to `lib\optional\pu-common`:
+
+	- `antlr-runtime.jar` from [antlr's website](http://www.antlr.org/download.html) .
+
+	- `mongo-java-driver-2.9.3.jar` from [mongoDB's website](http://docs.mongodb.org/ecosystem/drivers/java/) .
+
+	- `mongodb-async-driver-1.2.3.jar` from [allanbank's website](http://www.allanbank.com/mongodb-async-driver/download.html) .
+
+	- `guava-r08.jar` from [Guava-project's website](https://code.google.com/p/guava-libraries/wiki/Release08) . **NOTE:** you must download Guava's release 08, and extract the `guava-r08.jar` from within the `guava-r08.zip` that you have downloaded
 
 ## `MongoSpaceSynchronizationEndpoint` Properties
 

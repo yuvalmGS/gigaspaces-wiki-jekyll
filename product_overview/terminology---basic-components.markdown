@@ -6,7 +6,7 @@ weight: 100
 parent: terminology.html
 ---
 
-{% summary page|65 %}GigaSpaces basic components.{% endsummary %}
+{% summary %}GigaSpaces basic components.{% endsummary %}
 
 |Basic Components|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|
 
@@ -56,7 +56,7 @@ The GigaSpaces cache instance that holds data objects in memory.
 ----------------------------
 {% endcomment %}
 
-{% anchor Execute, Read, Write, Take and Notify %}
+{% anchor Execute-Read-Write-Take-and-Notify %}
 
 {% section %}
 {% column width=50% %}
@@ -215,5 +215,3 @@ Client application (which can also be other processing units) write objects to t
 
 {% endcolumn %}
 {% endsection %}
-
-|Basic Components|[Data Grid Topologies](./terminology---data-grid-topologies.html)|[Space-Based Architecture](./terminology---space-based-architecture.html)|[Runtime Components](./terminology---runtime-components.html)|

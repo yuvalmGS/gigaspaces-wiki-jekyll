@@ -2,8 +2,8 @@
 layout: post
 title:  Packaging and Deployment
 categories: XAP97
-parent: getting-started.html
-weight: 400
+parent: deployment.html
+weight: 100
 ---
 
 {% summary page|70 %}This section deals with the internals of the GigaSpaces XAP packaging and deployment unit, namely the processing unit. It explains how to create it and how to run it in the various runtime modes.{% endsummary %}

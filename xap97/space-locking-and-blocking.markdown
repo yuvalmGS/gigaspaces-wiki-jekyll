@@ -6,11 +6,11 @@ parent: transaction-management.html
 weight: 100
 ---
 
-{% tip %}
-**Summary:** {% excerpt %}Using optimistic and pessimistic locking to preserve the integrity of changes in multi-user scenarios.{% endexcerpt %}
-**Contents:**
-{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
-{% endtip %}
+
+ {% summary %}Using optimistic and pessimistic locking to preserve the integrity of changes in multi-user scenarios.{% endsummary %}
+
+
+
 
 # Overview
 

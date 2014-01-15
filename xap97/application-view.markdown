@@ -6,7 +6,7 @@ parent: web-management-console.html
 weight: 300
 ---
 
-{% compositionsetup %}{% summary %}Applications and Processing unit dependency view{% endsummary %}
+{% summary %}Applications and Processing unit dependency view{% endsummary %}
 
 # Overview
 
@@ -125,6 +125,7 @@ Total and average Space operation metrics are available for selection as well.
 ![web_pu_metrics.jpg](/attachment_files/web_pu_metrics.jpg)
 
 #### Mirror metrics:
+
 ###### OS metrics
 - Memory
 - CPU
@@ -175,7 +176,9 @@ For more information on the events displayed, see [Events time-line tab in dashb
 
 ![events_timeline_in_application.png](/attachment_files/events_timeline_in_application.png)
 
+{%comment%}
 ![new-in-91-ribbon.png](/attachment_files/new-in-91-ribbon.png)
+{%endcomment%}
 
 # Events table (per application)
 
@@ -184,7 +187,9 @@ The events table shows the deployment life cycle of all the processing units bel
 
 ![events_grid_in_application_9_6.png](/attachment_files/events_grid_in_application_9_6.png)
 
+{%comment%}
 ![new-in-91-ribbon.png](/attachment_files/new-in-91-ribbon.png)
+{%endcomment%}
 
 # SSH terminal
 

@@ -1,13 +1,12 @@
 ---
 layout: post
-title:  Installing CPP API Package
+title:  C++
 categories: XAP97
-parent: xap-cpp.html
-weight: 100
+parent: installation.html
+weight: 400
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}Requirements and how to install GigaSpaces c++ on Windows and Linux.{% endsummary %}
+{% summary %}Requirements and how to install GigaSpaces c++ on Windows and Linux.{% endsummary %}
 
 # Overview
 
@@ -19,7 +18,9 @@ The current supported platforms and compilers are:
 - Windows
     - 32/64bit -- VS 9.0/10.0 (Visual Studio 2008/2010)
 
-{% exclamation %} Prior to installation, see the **[GigaSpaces installation prerequisites](./installation.html#Prior to Installation)**.
+{%comment%}
+{% exclamation %} Prior to installation, see the **[GigaSpaces installation prerequisites](./installation.html#Prior-to-Installation)**.
+{%endcomment%}
 
 # Installation
 
@@ -37,6 +38,8 @@ Where the `gigaspaces-cpp-9.X.X-ga-linux-amd64-gcc-4.1.2.tar.gz` should be locat
 {% indent %}
 ![CppTree.PNG](/attachment_files/CppTree.PNG)
 {% endindent %}
+
+{%anchor setting-the-environment %}
 
 # Setting the Environment
 

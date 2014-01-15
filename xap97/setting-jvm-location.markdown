@@ -2,8 +2,8 @@
 layout: post
 title:  Setting JVM Location
 categories: XAP97
-parent: configuring-the-system.html
-weight: 400
+parent: installation-java.html
+weight: 300
 ---
 
 {% summary %}Setting the `JAVA_HOME` parameter to tell GigaSpaces where the JDK is installed.{% endsummary %}

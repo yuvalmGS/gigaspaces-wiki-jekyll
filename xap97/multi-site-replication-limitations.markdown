@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Multi-Site Replication Limitations
+title:  Limitations
 categories: XAP97
 parent: multi-site-conflict-resolution.html
 weight: 900

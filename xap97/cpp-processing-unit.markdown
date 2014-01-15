@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  CPP Processing Unit
+title:  Processing Unit
 categories: XAP97
 parent: cpp-api---advanced.html
 weight: 100
@@ -239,8 +239,8 @@ Here is an example for a processing unit with a c++ worker deployed, using a clu
        xmlns:os-sla="http://www.openspaces.org/schema/sla"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-       http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/8.0/sla/openspaces-sla.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/8.0/core/openspaces-core.xsd">
+       http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/{%currentversion%}/sla/openspaces-sla.xsd
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd">
     <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
     <os-core:space id="space" url="/./space" />
     <os-core:giga-space id="gigaSpace" space="space" />

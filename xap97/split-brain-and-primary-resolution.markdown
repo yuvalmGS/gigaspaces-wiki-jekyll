@@ -6,7 +6,6 @@ parent: data-grid-clustering.html
 weight: 500
 ---
 
-{% compositionsetup %}
 {% summary %}This section describes Data-Grid cluster split brain and primary resolution flow.{% endsummary %}
 
 # Overview

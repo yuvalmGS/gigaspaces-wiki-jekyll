@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  XAP Tutorial
+title:  Full XAP Java Tutorial
 categories: TUTORIALS
 weight: 300
 parent: xap-tutorials.html
@@ -10,14 +10,9 @@ parent: xap-tutorials.html
 {%summary%}This tutorial will introduce you to the basic features of GigaSpace's XAP platform.{%endsummary%}
 
 # Overview
-{%section%}
-{%column width=75% %}
+
 This Tutorial provides a high-level overview of the GigaSpaces XAP platform. Hands on examples are provided to demonstrate the core concepts and API's. The primary people who can benefit from this tutorial, are architects and developers who wish to build scaled-out applications with GigaSpaces XAP.
-{%endcolumn%}
-{%column width=20% %}
-<img src="/attachment_files/gs/gs.png" width="100" height="100">
-{%endcolumn%}
-{%endsection%}
+
 
 # Class Model
 Throughout this tutorial we will create and use a simple internet payment service application to demonstrate the basic XAP features. The basic concept of our application;

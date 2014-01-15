@@ -1,17 +1,17 @@
 ---
 layout: post
 title:  Unique Index
-categories:
-parent:
+categories: XAP97
+parent: indexing.html
 weight: 100
 ---
 
 
-{% summary %} TODO. {% endsummary %}
+{% summary %}Space class with unique constraint {% endsummary %}
 
 # Overview
 
-Unique constraint ensure uniqueness of indexed attributes stored in the space. It is applicable to all types of indices- Basic, Extended, Compound and Collection indices.
+Unique constraints can be defined for an attribute or attributes of a space class. This will ensure that only one instance of the space class exists in the space with the specific attribute value. These indexes are applicable to all types of index; Basic, Extended, Compound and Collection indices.
 
 {%note%}
 The uniqueness is enforced per partition and not over the whole cluster.
@@ -19,7 +19,19 @@ The uniqueness is enforced per partition and not over the whole cluster.
 
 # Operation
 
-When the system encounters a violation in a unique constraint in one of the index-changing apis (write/update/change) a  UniqueConstraintViolationException is thrown, and the operation which caused the violation is revoked- in case of a write the entry is removed and in case of an update/change operation- the original value is restored.  Note that even if the operation(write or update)  is done under a transaction the unique value check is done when the operation is performed  (eager mode) and not when the transaction is committed.
+When the system encounters a unique constraint violation in one of the index-changing api calls (write/update/change) a  UniqueConstraintViolationException is thrown.
+
+The operation which caused the violation is rolled back with the following effects:
+
+
+{: .table .table-bordered}
+| Operation | Action |
+|:--------------|:------------|
+|write|the entry is removed|
+|update|the original value is restored|
+|change|the original value is restored|
+
+{%note%}If the operation(write or update) is performed under a transaction, the unique value check is done when the operation is performed (eager mode) and not when the transaction is committed. {%endnote%}
 
 
 # API
@@ -28,30 +40,45 @@ A unique attribute is added to the `@SpaceIndex` annotation. Unique = true will 
 
 Example:
 
+{% inittab Java |top %}
+{% tabcontent Java %}
 {%highlight java%}
 
+@SpaceClass
 public class Person
 {
   @SpaceIndex(type=SpaceIndexType.BASIC, unique = true)
   private String lastName;
 
+  @SpaceIndex(type=SpaceIndexType.BASIC)
   private String firstName;
+
+  @SpaceIndex(type=SpaceIndexType.EXTENDED)
+  private Integer age;
  .
  .
 {%endhighlight%}
+{% endtabcontent%}
 
-
-unique=true can be added to GSXML and PUXML files too.
-Example of a GSXML extract:
-
+{% tabcontent XML %}
 {%highlight xml %}
-        <property name="field">
+
+<gigaspaces-mapping>
+    <class name="com.gigaspaces.examples.Person" persist="false" replicate="false" fifo="false" >
+        <property name="lastName">
             <index type="BASIC" unique="true"/>
         </property>
-        <property name="counter">
-            <index type="EXTENDED" unique="true"/>
+        <property name="firstName">
+            <index type="BASIC"/>
         </property>
+        <property name="age">
+             <index type="EXTENDED"/>
+        </property>
+    </class>
+</gigaspaces-mapping>
 {%endhighlight%}
+{% endtabcontent%}
+{% endinittab%}
 
 # Limitations
 

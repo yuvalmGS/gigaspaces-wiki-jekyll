@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  Running GigaSpaces as a Windows Service
+title:  XAP as Windows Service
 categories: XAP97
-parent: advanced-tasks.html
-weight: 300
+parent: installation.html
+weight: 700
 ---
 
-{% summary %}Running GigaSpaces as a Windows Service{% endsummary %}
+{% summary %} {% endsummary %}
 
-## Common Scenarios
+# Common Scenarios
 
 GigaSpaces infrastructure can be started using a GigaSpaces Grid Service Agent as explained in [GSA page](./service-grid.html#gsa). When using Windows based OS for running GigaSpaces infrastructure, users want to convert GSA into a windows service for following common reasons,
 
@@ -16,11 +16,11 @@ GigaSpaces infrastructure can be started using a GigaSpaces Grid Service Agent a
 1. GSA command windows should be hidden so that they are not closed accidentally by users.
 1. GSA process should restart automatically after a machine restart and all GigaSpaces infrastructure should be available without user/administrator intervention.
 
-## psexec
+# psexec
 
 If your requirement is only item 1 and/or 2 above, you can use psexec (SysInternals/Microsoft tool, http://technet.microsoft.com/en-us/sysinternals/bb897553). When you start the GSA using psexec from a remote machine in the network the process does not open command windows and does not get terminated on a logoff of the user.
 
-## Windows Service
+# Windows Service
 
 If you need to fulfill all 3 reasons above, then you have to create a windows service for GSA.
 
@@ -35,7 +35,7 @@ Following are some popular software that can help:
 - [Launch4J](http://launch4j.sourceforge.net/)
 - [Yet Another Java Service Wrapper](http://sourceforge.net/projects/yajsw/)
 
-### Example
+# Example
 
 An example GSA windows service configuration created using [Java Service Wrapper](http://wrapper.tanukisoftware.org/) can be downloaded from [here](/download_files/myApp.zip. It was created using the [instructions](http://wrapper.tanukisoftware.com/doc/english/integrate-simple-win.html#allTogether) on Tanuki software website.
 
@@ -52,7 +52,7 @@ An example GSA windows service configuration created using [Java Service Wrapper
 
 - Use the `UninstallGSAService-NT.bat` script to uninstall the service.
 
-### Other Information
+# Other Information
 
 - It is recommended that the `deploy` command be run manually instead of defining this as a windows service.
 - Typically, GigaSpaces cluster spans multiple machines and redundant instances of GSM's and LUS's run on different machines. If a machine is restarted, deployment will still be intact and be managed by available redundant GSM that is running on other machine. Once the machine and GSC's are restarted missing PU instances are deployed by GSM into these newly started GSC's as needed.

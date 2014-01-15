@@ -6,8 +6,8 @@ parent: space-based-remoting.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page %}Executor Remoting allows you to use remote invocations of POJO services, with the space as the transport layer using OpenSpaces Executors.{% endsummary %}
+
+{% summary%}Executor Remoting allows you to use remote invocations of POJO services, with the space as the transport layer using OpenSpaces Executors.{% endsummary %}
 
 # Overview
 
@@ -511,7 +511,9 @@ When using broadcast with executor remoting, a declarative distributed transacti
 
 Here is a simple example how the Client and the Service should be configured:
 
-{% highlight java %}
+Client pu.xml
+
+{% highlight xml %}
 <context:component-scan base-package="com.demo"/>
 <os-core:space id="space" url="jini://*/*/space" />
 
@@ -535,6 +537,8 @@ Here is a simple example how the Client and the Service should be configured:
 </bean>
 {% endhighlight %}
 
+Client Implementation
+
 {% highlight java %}
 @Transactional(readOnly = true , value="myTransactionManager")
 public class Client{
@@ -557,6 +561,8 @@ public class Client{
 }
 {% endhighlight %}
 
+Service pu.xml
+
 {% highlight java %}
 <context:component-scan base-package="com.demo"/>
 <os-remoting:annotation-support />
@@ -564,6 +570,8 @@ public class Client{
 <os-core:giga-space id="gigaSpace" space="space"/>
 <os-remoting:service-exporter id="serviceExporter" />
 {% endhighlight %}
+
+Service Implementation
 
 {% highlight java %}
 @RemotingService

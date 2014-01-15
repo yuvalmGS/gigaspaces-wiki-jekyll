@@ -6,16 +6,15 @@ parent: event-processing.html
 weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}The notify event container uses the space inherited support for notifications, using a GigaSpaces unified event session API.{% endsummary %}
+{% summary page|60 %}The notify event container wraps the space data event session API with event container abstraction.{% endsummary %}
 
 # Overview
 
 {% section %}
-{% column width=30% %}
+{% column width=50% %}
 The notify event container uses the space inherited support for notifications (continuous query) using a GigaSpaces unified event session API. If a notification occurs, the [data event listener](./data-event-listener.html) is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
 {% endcolumn %}
-{% column width=70% %}
+{% column width=40% %}
 ![notify_container_basic.jpg](/attachment_files/notify_container_basic.jpg)
 {% endcolumn %}
 {% endsection %}
@@ -785,32 +784,9 @@ public class SimpleListener {
 
 # Re-Register after complete space shutdown and restart
 
-Notify Containers under the hood use Notification Registration. When a remote client with an independent life cycle creates a Notify Container and is shutdown, the registration will remain in the space and can be a unnecessary overhead for the space if there are multiple clients registered for many templates.
+The Notify Container can recover from partial disconnections (e.g failover) automatically, but if the entire cluster is shut down and  restarted, the event registrations are lost and the notify container needs to be restarted. 
 
-To avoid this overhead, an optimization is required where notification registration is created with a limited lease and the client periodically renews the lease to keep it active. If client is shutdown or does not need this events anymore, the lease is not renewed thereby removing the registration.
-
-Lease Renewal Manager provides a systematic lease renewal and management framework and is used by Notify Container for managing the notification registration leases. Leases are managed in an automatic manner without any application intervention. More information regarding Lease Renewal Manager can be found [here](./leases---automatic-expiration.html#LeaseRenewalManager).
-
-To allow a remote client using a notify container to continue and receive notifications in case the space cluster was completely shutdown and restarted, you should use the `LeaseListener` and re-create the notify container in case its lease renewal failed (i.e. `LeaseListener.notify()` been called). The notify container **must enable** the `autoRenew` property to instruct GigaSpaces to construct a `Lease Renewal Manager` and have the associated `LeaseListener` implementation to be invoked.
-
-With this approach we assume the space will be available is some point to acknowledge the registration and continue and send notifications for the matching events back to the client.
-
-See below Notify Container properties you may set when using the `LeaseListener` managed by the Lease Renewal Manager running within the Notify container:
-
-{: .table .table-bordered}
-|Property| Description | Default | Unit |
-|:-------|:------------|:--------|:-----|
-|autoRenew|If set to `true`, automatically performs lease renewal and call the `LeaseListener.notify()` if fails to renew, where the lease's desired expiration time has not yet been reached.|false| |
-|listenerLease|Controls the lease (time to live) associated with the registered notify listener|Lease.FOREVER|ms|
-|renewExpiration|The period of time your notifications stopped from being renewed. Applies Only when `autoRenew` is `true`| Lease.FOREVER|ms|
-|renewDuration |The period of time that passes between client failure, and the time your notifications stop from being sent. Should be larger than renewRTT. Applies Only when `autoRenew` is `true`. |20000 | ms|
-|renewRTT|RoundTripTime - The time that takes to reach the server and return. Applies Only when `autoRenew` is `true`.|10000| ms|
-
-{% tip %}
-Prior calling the `LeaseListener.notify()` , the `LeaseRenewalManager` used by the Notify container, will remove the affected lease from its managed set of leases.
-{% endtip %}
-
-See below example how to use the LeaseListener to re-register for notifications:
+To get a notification about such disconnections, the *Auto Renew* feature needs to be enabled, and the container needs to implement a `LeaseListener` and register if to be triggered when the container becomes disconnected. For example:
 
 {% inittab register_notifications|top %}
 
@@ -819,55 +795,44 @@ See below example how to use the LeaseListener to re-register for notifications:
 {% highlight java %}
 
 public class NotifyHAMain {
-	static GigaSpace space;
-	static DateFormat formatter = new SimpleDateFormat(
-			"MM/dd/yyyy hh:mm:ss.SSS");
-	static Calendar calendar = Calendar.getInstance();
 
-	public static void main(String[] args) throws Exception{
+    static GigaSpace space;
 
-		while (space == null) {
-                   getSpace();
-		}
+    public static void main(String[] args) throws Exception {
 
-		MyLeaseListener leaseListener = new MyLeaseListener(space);
-		register(leaseListener);
-		System.out.println("Notification Registration Done!");
-        while (true)
-        {
-        	Thread.sleep(10000);
-        }
-	}
-
-        static void getSpace() {
-
-	    try {
-		space = new GigaSpaceConfigurer(new UrlSpaceConfigurer(
-			"jini://*/*/space")).gigaSpace();
-	    } catch (Exception e) {
-		System.out.println(formatter.format(calendar.getTime())
-			+ " Cannot find space. Got an exception "
-			+ e.getMessage());
-	    }
+        while (space == null) {
+            getSpace();
         }
 
-	static void register(MyLeaseListener leaseListener)
-	{
-	 SimpleNotifyEventListenerContainer notifyEventListenerContainer =
-             new SimpleNotifyContainerConfigurer(space)
-        .template(new MyData())
-        .leaseListener(leaseListener)
-        .autoRenew(true)
-        .listenerLease(30000)
-        .renewDuration(20000)
-        .eventListenerAnnotation(new Object() {
-            @SpaceDataEvent
-            public void eventHappened(MyData data) {
-                System.out.println(new Date(System.currentTimeMillis()).getSeconds() +
-                      " -- > Got notification " + data.getData());
-            }
-        }).notifyContainer();
-	}
+        MyLeaseListener leaseListener = new MyLeaseListener(space);
+        register(leaseListener);
+        System.out.println("Notification Registration Done!");
+        while (true) {
+            Thread.sleep(10000);
+        }
+    }
+
+    static void getSpace() {
+        try {
+            space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).create();
+        } catch (Exception e) {
+            System.out.println("Cannot find space: " + e.getMessage());
+        }
+    }
+
+    static SimpleNotifyEventListenerContainer register(MyLeaseListener leaseListener) {
+        return new SimpleNotifyContainerConfigurer(space)
+            .template(new MyData())
+            .leaseListener(leaseListener)
+            .autoRenew(true)
+            .eventListenerAnnotation(new Object() {
+                @SpaceDataEvent
+                public void eventHappened(MyData data) {
+                    System.out.println("Got notification: " + data.getData());
+                }
+            })
+            .notifyContainer();
+    }
 }
 {% endhighlight %}
 
@@ -877,24 +842,23 @@ public class NotifyHAMain {
 
 {% highlight java %}
 
-public class MyLeaseListener implements LeaseListener{
+public class MyLeaseListener implements LeaseListener {
 
-	public MyLeaseListener (GigaSpace space)
-	{
-		this.space=space;
-	}
 	GigaSpace space ;
 
-	//Called by the LeaseRenewalManager when it cannot renew a lease that it is managing,
-	//and the lease's desired expiration time has not yet been reached.
+	public MyLeaseListener (GigaSpace space) {
+		this.space = space;
+	}
+
+	// Called when the event registration's lease cannot be renewed
 	public void notify(LeaseRenewalEvent event) {
 		System.out.println("Can't renew - try to re-register");
-		SimpleNotifyEventListenerContainer notifyEventListenerContainer = null;
-		while (notifyEventListenerContainer == null) {
-                        NotifyHAMain.getSpace();
-			notifyEventListenerContainer = NotifyHAMain.register(this);
+		SimpleNotifyEventListenerContainer container = null;
+		while (container == null) {
+            NotifyHAMain.getSpace();
+			container = NotifyHAMain.register(this);
 		}
-		System.out.println("Notfy ReRegistration Done!");
+		System.out.println("Notify ReRegistration Done!");
 	}
 }
 {% endhighlight %}
@@ -906,6 +870,8 @@ public class MyLeaseListener implements LeaseListener{
 {% tip %}
 To make sure the client application will manage to reconnect automatically to the space cluster once it was restarted you may want to change the default configuration. See the [Proxy Connectivity](./proxy-connectivity.html) for details.
 {% endtip %}
+
+For more information see [Auto Renew](./session-based-messaging-api.html#disconnections).
 
 # Resending Notifications after a Space-Client Disconnection
 

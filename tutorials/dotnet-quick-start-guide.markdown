@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  .NET Tutorials
+title:  XAP .NET Tutorials
 categories: TUTORIALS
 parent: none
 weight: 400

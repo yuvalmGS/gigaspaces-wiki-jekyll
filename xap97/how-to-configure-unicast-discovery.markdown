@@ -37,7 +37,7 @@ To lookup a Space service using the unicast protocol, add the locators SpaceURL 
 For both **unicast AND multicast discovery**, use:
 
 {% highlight java %}
-jini://*/./mySpace?locators=linux-lab1:4174,linux-lab2:4174&groups=gigaspaces-9.0.0-XAPPremium-ga
+jini://*/./mySpace?locators=linux-lab1:4174,linux-lab2:4174&groups=gigaspaces-{%currentversion%}-XAPPremium-ga
 {% endhighlight %}
 
 {% exclamation %} When the locators attribute is used in conjunction with the jini://* prefix and groups attribute, the discovery will be unicast AND multicast.

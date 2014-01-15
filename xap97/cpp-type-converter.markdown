@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  CPP Type Converter
+title:  Type Converter
 categories: XAP97
 parent: cpp-api-basics.html
 weight: 100

@@ -55,7 +55,7 @@ See blow an example of `Car` class's space metadata definitions in GS.XML
 
 ### Class Level Elements
 
-- `**<class>**` -- a `class` element encapsulates metadata information of a concrete class. The below table shows the available attributes for the Class element.
+- `<class>` -- a `class` element encapsulates metadata information of a concrete class. The below table shows the available attributes for the Class element.
 
 {: .table .table-bordered}
 | Attribute | Description |
@@ -70,7 +70,7 @@ For more details, see: [Object Metadata](./object-metadata.html#Including/Exclud
 
 ### Field Level Elements
 
-- `**<property>**` - contains metadata information for a class's field.
+- `<property>` - contains metadata information for a class's field.
 
 {: .table .table-bordered}
 | Attribute | Description |
@@ -88,26 +88,26 @@ For more details, see: [Object Metadata](./object-metadata.html#Including/Exclud
 </class>
 {% endhighlight %}
 
-- `**<id>**` - Defines whether this field can used as the objects unique identifier. The value is used when generating the object UID in the space.
+- `<id>` - Defines whether this field can used as the objects unique identifier. The value is used when generating the object UID in the space.
 
 {: .table .table-bordered}
 | Attribute | Description |
 | `name` | (Required) Maps to the relevant class's field name. |
 | `auto-generate` | Specifies if the object UID is generated automatically by the space when written into the space. If `false`, the UID will be generated using the field value, and if `true`, the field should be left null and the auto generated UID will be stored in it once written to the space. |
 
-- `**<version>**` - Uses for optimistic concurrency, as the field that contains the objects version in the space. This must be an `int` data type field.
+- `<version>` - Uses for optimistic concurrency, as the field that contains the objects version in the space. This must be an `int` data type field.
 
 {: .table .table-bordered}
 | Attribute | Description |
 | `name` | (Required) Maps to the relevant class's field name. |
 
-- `**<routing>**` - Defines the field the will be used by the load balancing mechanism to calculate the routing track.
+- `<routing>` - Defines the field the will be used by the load balancing mechanism to calculate the routing track.
 
 {: .table .table-bordered}
 | Attribute | Description |
 | `name` | (Required) Maps to the relevant class's field name. |
 
-- `**<exclude>**` - A filed marked as Exclude will not be stored into the space.
+- `<exclude>` - A filed marked as Exclude will not be stored into the space.
 
 {: .table .table-bordered}
 | Attribute | Description |

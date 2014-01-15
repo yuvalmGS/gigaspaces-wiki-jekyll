@@ -3,7 +3,7 @@ layout: post
 title:  Web Processing Unit Container
 categories: XAP97
 parent: web-application-support.html
-weight: 200
+weight: 100
 ---
 
 {% compositionsetup %}
@@ -33,9 +33,9 @@ The integration can either deploy a packaged WAR file or an exploded WAR file. I
 
 1. Point the deployment tool to the WAR file (UI/CLI/Programmatic).
 1. The WAR file itself is uploaded to the chosen GSM (which will act as the primary GSM of the deployment).
-1. The WAR is extracted under the GSM deploy directory with the provided processing unit name. The default directory location is `GSRoot/deploy/\[processing unit name\]`.
+1. The WAR is extracted under the GSM deploy directory with the provided processing unit name. The default directory location is `GSRoot/deploy/[processing unit name]`.
 1. The GSM decides (based on the SLA) how many instances of the web application need to be deployed, and deploys them to the available GSCs.
-1. Each GSC that is supposed to run an instance of the web application, downloads the web application into its own local file system. By default, it downloads it into `GSRoot/work/deployed-processing-units/\[processing unit name\]\_\[unique identifier\]`.
+1. Each GSC that is supposed to run an instance of the web application, downloads the web application into its own local file system. By default, it downloads it into `GSRoot/work/deployed-processing-units/[processing unit name]_[unique identifier]`.
 1. The appropriate web container is configured to run the web application using the local file system location.
 
 Deploying an exploded WAR is similar to deploying a packaged WAR. Here are the steps:
@@ -43,7 +43,7 @@ Deploying an exploded WAR is similar to deploying a packaged WAR. Here are the s
 1. The exploded WAR file should be copied (manually) over to all the GSMs deploy directory. The default location is `GSRoot/deploy`.
 1. A deploy command is issued with the processing unit name (the name of the directory under the deploy directory).
 1. The GSM decides (based on the SLA) how many instances of the web application needs to be deployed, and deploys them to the available GSCs.
-1. Each GSC that is supposed to run an instance of the web application, downloads the web application into its own local file system. By default, it downloads it into `GSRoot/work/deployed-processing-units/\[processing unit name\]\_\[unique identifier\]`.
+1. Each GSC that is supposed to run an instance of the web application, downloads the web application into its own local file system. By default, it downloads it into `GSRoot/work/deployed-processing-units/[processing unit name]_[unique identifier]`.
 1. The appropriate web container is configured to run the web application using the local file system location.
 
 {% lampon %} The directory where the web applications are extracted (up to the `work` directory) on the GSC side can be controlled using the **`com.gs.work`** system property.
@@ -75,9 +75,9 @@ The following table shows which user controlled locations end up in which class 
 {: .table .table-bordered}
 |Class Loader|User Locations|Built in Jar Files|
 |:-----------|:-------------|:-----------------|
-|Common|\[GSRoot\]/lib/platform/ext/\*.jar|gs-runtime.jar|
-|JEE Container|JEE container specific jars|\[GSRoot\]/lib/platform/jetty/\*.jar|
-|Webapp|\[PU\]/WEB-INF/classes, \[PU\]/WEB-INF/lib/\*.jar|gs-openspaces.jar, spring/\*.jar|
+|Common|\[GSRoot\]/lib/platform/ext/*.jar|gs-runtime.jar|
+|JEE Container|JEE container specific jars|\[GSRoot\]/lib/platform/jetty/*.jar|
+|Webapp|\[PU\]/WEB-INF/classes, \[PU\]/WEB-INF/lib/*.jar|gs-openspaces.jar, spring/*.jar|
 
 The idea behind the class loaders is to create a completely self sufficient web application. All relevant jar files or classes should exists within the web application (as if running it standalone) and then deploying it into the Service Grid will be a seamless experience.
 

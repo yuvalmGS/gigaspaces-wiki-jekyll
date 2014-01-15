@@ -181,27 +181,29 @@ You can troubleshoot the space activity using LRMI logging. You can turn on LRMI
 
 ## Offline mode -- via gs_logging.properties
 
-1. Open `<GigaSpaces Root>/config/gs_logging.properties`
-1. Locate the following line:
+`Step 1:` Open `<GigaSpaces Root>/config/gs_logging.properties`
+
+`Step 2:` Locate the following line:
 
 {% highlight java %}
 com.gigaspaces.lrmi.level = INFO
 {% endhighlight %}
 
-1. Set debug logger granularity level:
+`Step 3:` Set debug logger granularity level:
     - `ALL` -- all debug messages available for LRMI.
     - `FINE` -- configuration, watchdog, client connections (connect/disconnect).
     - `FINER` -- content and execution state of remote method invocation on remote object.
     - `SEVER` -- caught exceptions by LRMI on server and client side.
 
-1. Save and close the `gs_logging.properties` file.
-1. Start a space by deploying a data-grid PU or a custom PU with a space. You may also start a space via `<GigaSpaces Root>/bin/gsInstance`.
+`Step 4:` Save and close the `gs_logging.properties` file.
+
+`Step 5:` Start a space by deploying a data-grid PU or a custom PU with a space. You may also start a space via `<GigaSpaces Root>/bin/gsInstance`.
 
 LRMI communication transport protocol debug messages are displayed.
 
 ## During Runtime -- using JMX
 
-1. Start `gsInstance` using the following Java system properties:
+`Step 1:` Start `gsInstance` using the following Java system properties:
 
 {% highlight java %}
 -Dcom.sun.management.jmxremote.port=5001
@@ -209,16 +211,19 @@ LRMI communication transport protocol debug messages are displayed.
 -Dcom.sun.management.jmxremote.authenticate=false
 {% endhighlight %}
 
-1. Start [jconsole](http://java.sun.com/developer/technicalArticles/J2SE/jconsole.html) -- copy the JMX URL to the JConsole.
-1. Click **Connect**.
+`Step 2:` Start [jconsole](http://java.sun.com/developer/technicalArticles/J2SE/jconsole.html) -- copy the JMX URL to the JConsole.
+
+`Step 3:` Click **Connect**.
 
 {% indent %}
 ![lrmi_log_jmx_console1.jpg](/attachment_files/lrmi_log_jmx_console1.jpg)
 {% endindent %}
 
-1. Set `com.gigaspaces.lrmi` with a desired log level.
-1. Click **setLoggerLevel**.
-1. A new log level is defined.
+`Step 4:` Set `com.gigaspaces.lrmi` with a desired log level.
+
+`Step 5:` Click **setLoggerLevel**.
+
+`Step 6:` A new log level is defined.
 
 {% indent %}
 ![lrmi_log_jmx_console2.jpg](/attachment_files/lrmi_log_jmx_console2.jpg)

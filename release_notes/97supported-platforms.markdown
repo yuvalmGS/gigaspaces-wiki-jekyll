@@ -6,9 +6,9 @@ parent: xap97.html
 weight: 700
 ---
 
-{%summary%} Supported Platforms for XAP 9.7.X release {%endsummary%}
+{%summary%}{%endsummary%}
 
-## Overview
+# Overview
 
 GigaSpaces Data Grid and Messaging Grid core middleware, Database Cache and Persistency, Service Grid and OpenSpaces are 100% Java technology based.
 
@@ -49,17 +49,16 @@ GigaSpaces is being tested with (32bit and 64bit JVMs):
 
 See below tested JVMs:
 
-- Oracle 6 - XAP was tested using Sun JVM version 6u39 and above.
-- Oracle 7 - XAP was tested using Sun JVM version 7u17 and above.
-- JRockit/BEA 1.6.x - XAP was tested using BEA JRockit(R) build 1.6.0_31-b05
-- IBM 1.6.0 - XAP was tested using IBM JVM version 1.6.0 IBM J9 VM (build 2.4, JRE 1.6.0 IBM J9 2.4 Linux amd64-64 jvmxa6460sr12-20121024_126067 (JIT enabled, AOT enabled)
-
+- Oracle 6 - XAP was tested using Sun JVM version 6u43 and above.
+- Oracle 7 - XAP was tested using Sun JVM version 7u45 and above.
+- IBM 1.6.0 - XAP was tested using IBM JVM version 1.6.0 IBM J9VM. 
+- IBM 1.7.0 - XAP was tested using IBM JVM version 1.7.0 IBM J9VM SR6.
 
 # .NET Interface
 
 
 ### System Requirements
-Required Software: [Microsoft .NET Framework 2.0](http://msdn.microsoft.com/en-us/vstudio/aa496123) or later including Microsoft .NET Framework 4.0).
+Required Software: [Microsoft .NET Framework 2.0](http://msdn.microsoft.com/en-us/vstudio/aa496123) or later including Microsoft .NET Framework 4.0.
 Recommended: [Microsoft .NET Framework 2.0 Service Pack 2](http://www.microsoft.com/en-us/download/details.aspx?id=1639) or later.
 
 Supported Operating Systems: Any operating system supported by .NET Framework 2.0.
@@ -89,17 +88,10 @@ The current supported platforms and compilers are:
    * 64bit – gcc.4.1.2
    * 32bit – gcc.4.1.2
 - Windows
-   * 32/64bit C++ for VisualStudio 2008/2010 (VS8.0/VS9.0)
+   * 32/64bit C++ for VisualStudio 2008/2010 (VS9.0/VS10.0)
 
 
 # Integrations with 3rd Party Products
-The following products/projects were tested and certified using GigaSpaces 9.7:
+#The following products/projects were tested and certified using GigaSpaces 9.7:
 
-- Spring 3.1.3.RELEASE
-- Hibernate version 3.6.1.Final
-- Mule 3.3.0
-- Jetty 8.1.8.v20121106
-- Groovy 1.8.6
-- Maven 3.0.4
-- Hyperic SIGAR 1.6.5
-- Apache Cassandra 1.1.6
+[Integrations with 3rd Party Products](/release_notes/97third-party.html)

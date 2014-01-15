@@ -6,23 +6,12 @@ parent: jms---basics.html
 weight: 500
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}Including a JMS feeder in a processing unit using Spring JmsTemplate, and using the JMS message converter to send POJOs to the space, using the JMS API.{% endsummary %}
 
-{% section %}
-{% column width=6 %}
-{% endcolumn %}
-{% column width=86 %}
-{% align center %}
+{% summary%}Including a JMS feeder in a processing unit using Spring JmsTemplate, and using the JMS message converter to send POJOs to the space, using the JMS API.{% endsummary %}
 
-|![wiki_icon_folder.gif](/attachment_files/wiki_icon_folder.gif)|Example Root|`<GigaSpaces Root>\examples\data` |
 
-{% endalign %}
+![folder_icon.gif](/attachment_files/folder_icon.gif) Example Root `<GigaSpaces Root>\examples\data`
 
-{% endcolumn %}
-{% column width=6 %}
-{% endcolumn %}
-{% endsection %}
 
 # Overview
 

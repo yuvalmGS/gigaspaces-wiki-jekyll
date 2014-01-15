@@ -212,7 +212,7 @@ XAP provides additional read modifiers to denote the isolation level:
 - READ_COMMITTED
 - EXCLUSIVE_READ_LOCK
 
-{%learn%}{%latestjavaurl%}/gigaSpaces-read-modifiers.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/gigaspaces-read-modifiers.html{%endlearn%}
 
 
 

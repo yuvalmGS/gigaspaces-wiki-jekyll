@@ -132,7 +132,7 @@ Edit your SessionFactory Setup. This is the section inside your Spring Applicati
 {% endindent %}
 
 {% endtabcontent %}
-{% tabcontent Direct Configuration (hibernate.properties) %}
+{% tabcontent Direct Configuration hibernate.properties %}
 **Direct Configuration (hibernate.properties**
 
 Edit your `hibernate.properties` file. **Add or modify** the following properties in the Second-Level Cache section:
@@ -153,7 +153,7 @@ Edit your `hibernate.properties` file. **Add or modify** the following propertie
 {% endindent %}
 
 {% endtabcontent %}
-{% tabcontent Direct Configuration (hibernate.cfg.xml) %}
+{% tabcontent Direct Configuration hibernate.cfg.xml %}
 **Direct Configuration (hibernate.cfg.xml)**
 Edit your `hibernate.cfg.xml` file. **Add or modify** the following properties under `<session-factory>`:
 
@@ -225,7 +225,7 @@ In this topology each application accessing a remote cache.
 **To use the remote cache topology:**
 
 - Set your `gigaspaces.hibernate.cache.url` property to {% wbr %}
-    `jini://\*/\*/dataGrid`
+    `jini://*/*/dataGrid`
 - Copy `dom4j.jar` and `hibernate3.jar` and all relevant Hibernate distribution package libraries into the `<GigaSpaces Root>/lib/platform/ext` folder.
 - Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment](./the-runtime-environment.html).
 - Run the deploy command to deploy the remote space:
@@ -251,7 +251,7 @@ In this topology each application has a lightweight, embedded cache, which is in
 **To use the master-local topology:**
 
 - Set your `gigaspaces.hibernate.cache.url` property to
-    jini://\*/\*/dataGrid?useLocalCache
+    jini://*/*/dataGrid?useLocalCache
 
 - Copy `dom4j.jar` and `hibernate3.jar` and all relevant Hibernate distribution package libraries into the `<GigaSpaces Root>/lib/platform/ext` folder.
 - Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment](./the-runtime-environment.html).
@@ -281,7 +281,7 @@ In this topology, data is split between two spaces (partitions) according to an 
 **To use the master-local partitioned topology with two partitions:**
 
 - Configure your `gigaspaces.hibernate.cache.url` property to:
-    jini://\*/\*/dataGrid?useLocalCache
+    jini://*/*/dataGrid?useLocalCache
 
 - Copy `dom4j.jar` and `hibernate3.jar` from Hibernate distribution package into the `<GigaSpaces Root>/lib/platform/ext` folder.
 - Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment](./the-runtime-environment.html).
@@ -399,6 +399,6 @@ GigaSpaces Hibernate 2nd Level Cache controlled via the following system propert
 {: .table .table-bordered}
 |Property|Description|Default|Mandatory?|
 |:-------|:----------|:------|:---------|
-|gigaspace.hibernate.cache.url|  [Space URL](./space-url.html) String. This could be remote (clustered space) with/without a local cache/view URL or embedded space URL. Example:  `jini://\*/\*/mySpace`|  | YES |
+|gigaspace.hibernate.cache.url|  [Space URL](./space-url.html) String. This could be remote (clustered space) with/without a local cache/view URL or embedded space URL. Example:  `jini://*/*/mySpace`|  | YES |
 |gigaspace.hibernate.cache.timeToLive| Time in ms for the cached Hibernate object to live within the space. When you would like to evict Hibernate objects form the space based on a specific time duration, you should set this value.| Long.MAX_VALUE | NO |
 |gigaspace.hibernate.cache.waitForResponse| Time in ms to wait for a matching object to be written into the space when reading object from the space. When having transactional hibernate configuration you might want to increase this value to allow GigaSpaces to wait for locked objects under a transaction to be committed before rejecting the read operation. A value of 60000 (60 second) might be relevant in such cases.| 0 | NO |
