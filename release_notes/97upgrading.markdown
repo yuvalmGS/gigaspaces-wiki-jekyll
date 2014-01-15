@@ -6,9 +6,7 @@ parent: xap97.html
 weight: 800
 ---
 
-# Overview
-
-This page contains information about changes in this release which can affect upgrading from previous versions.
+{% summary %}This page contains information about changes in this release which can affect upgrading from previous versions.{% endsummary %}
 
 # Changes in Behavior / Syntax 
 
