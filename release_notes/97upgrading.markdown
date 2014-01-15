@@ -46,10 +46,16 @@ The `bin` folder now contains only the common scripts required to use the produc
 
 ## XAP for .NET
 
+The following obsolete tools and services have been removed from the product
+
+### Removed Tools
 A couple of obsolete tools have been removed from the `bin` folder: 
 
 * `DistributedTransactionManager.exe` - Standalone distributed transactions manager. Embedded distributed transactions should be used instead. 
 * `puinstance.exe` - Standalone processing unit host. Processing units should be deployed to the service grid or debugged using the integrated processing unit container.
 
-In addition, the Windows Service wrappers for `GSC`, `GSM` and `LUS` have been removed from the `config` folder - the `Agent` service wrapper includes these functionality and should be used instead.
+### Removed Services
 
+The Windows Service wrappers for `GSC`, `GSM` and `LUS` have been removed from the `config` folder - the `Agent` service wrapper includes these functionality and should be used instead.
+
+In addition, the `CLI` Windows service wrapper which was used as a platform to run scripts on startup has been removed - this functionality is available as part of Windows Operating Systems (see [Assign Computer Startup Scripts](http://technet.microsoft.com/en-us/library/cc770556.aspx) on [technet](http://technet.microsoft.com)).
