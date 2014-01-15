@@ -54,6 +54,14 @@ See below tested JVMs:
 - IBM 1.6.0 - XAP was tested using IBM JVM version 1.6.0 IBM J9VM. 
 - IBM 1.7.0 - XAP was tested using IBM JVM version 1.7.0 IBM J9VM SR6.
 
+
+# Supported Platforms
+
+- Cassandra		version 1.1.6
+- MongoDB		version	2.11.2
+- Mule			version 3.3.0
+
+
 # .NET Interface
 
 
@@ -92,6 +100,5 @@ The current supported platforms and compilers are:
 
 
 # Integrations with 3rd Party Products
-#The following products/projects were tested and certified using GigaSpaces 9.7:
 
 [Integrations with 3rd Party Products](/release_notes/97third-party.html)
