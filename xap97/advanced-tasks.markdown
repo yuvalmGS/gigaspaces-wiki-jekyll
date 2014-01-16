@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Advanced Tasks
-categories:
+categories:  XAP97
 parent: administrators-guide.html
 weight: 800
 ---

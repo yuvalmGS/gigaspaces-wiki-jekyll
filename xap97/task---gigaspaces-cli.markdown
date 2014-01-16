@@ -2,8 +2,8 @@
 layout: post
 title:  task
 categories: XAP97
-parent: command-line-interface.html
-weight: 1800
+parent: deploy-command-line-interface.html
+weight: 500
 ---
 
 {% summary %}Submits a task in the form of an Ant configuration file. {% endsummary %}

@@ -2,7 +2,7 @@
 layout: post
 title:  deploy application
 categories: XAP97
-parent: command-line-interface.html
+parent: deploy-command-line-interface.html
 weight: 200
 ---
 

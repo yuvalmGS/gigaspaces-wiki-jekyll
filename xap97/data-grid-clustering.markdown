@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Data-Grid Clustering
+title:  Data Grid Clustering
 categories: XAP97
 parent: deployment.html
-weight: 150
+weight: 300
 ---
 
 

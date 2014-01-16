@@ -2,8 +2,8 @@
 layout: post
 title:  undeploy
 categories: XAP97
-parent: command-line-interface.html
-weight: 2000
+parent: deploy-command-line-interface.html
+weight: 350
 ---
 
 {% summary%}Undeploys an application from the service grid. {% endsummary %}

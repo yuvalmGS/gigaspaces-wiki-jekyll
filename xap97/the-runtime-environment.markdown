@@ -3,7 +3,7 @@ layout: post
 title:  The Runtime Environment
 categories: XAP97
 parent: deployment.html
-weight: 50
+weight: 100
 ---
 
 {% summary %}This section gives a detailed description of the GigaSpaces deployment & runtime environment.{% endsummary %}
