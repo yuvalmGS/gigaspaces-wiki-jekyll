@@ -99,6 +99,10 @@ on variables that may change between executions, such as system time, random, ma
 If the operation is not structured that way, the state can be inconsistent in the different locations after being replicated 
 1. When creating a custom change operation always have this in the back of your mind - "With great power comes great responsibility".
 
+# Space Security
+
+Custom change operation lets you run custom code on the space, hence the required space security privilege required in order to execute a custom change operation is `EXECUTE` (the role which allows executing space tasks on a space).
+
 # You custom operation and integration points
 
 Using the custom operation along with [Replication Filter](./cluster-replication-filters.html), [Space Filter](./space-filters.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html) is supported
