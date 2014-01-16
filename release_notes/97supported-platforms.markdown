@@ -55,15 +55,21 @@ See below tested JVMs:
 - IBM 1.7.0 - XAP was tested using IBM JVM version 1.7.0 IBM J9VM SR6.
 
 
-# Supported Platforms
+# Products Integrated
 
-- Cassandra		version 1.1.6
-- MongoDB		version	2.11.2
-- Mule			version 3.3.0
+{: .table .table-bordered}
+| Product | Product Page | Version | Component | Documentation | 
+|:--------|:-------------|:--------|:---------|:---------------|
+| Cassandra | [http://cassandra.apache.org/](http://cassandra.apache.org/) | 1.1.6 | Cassandra archiver and Cassandra EDS | [Cassandra Integration](/xap97/cassandra.html) |
+| Hibernate | [http://www.hibernate.org/](http://www.hibernate.org/) | 3.6.1 | Persistency | [Hibernate Space Persistency](/xap97/hibernate-space-persistency.html) |
+| log4j | [http://logging.apache.org/log4j/1.2/](http://logging.apache.org/log4j/1.2/) | 1.2.17 | Hibernate |  | 
+| log4j-snmp-trap-appender | [http://code.google.com/p/log4j-snmp-trap-appender/](http://code.google.com/p/log4j-snmp-trap-appender/) | 1.2.9 |  |  |
+| MongoDB | [http://www.mongodb.org/](http://www.mongodb.org/) | 2.11.2 | MongoDB archiver and MongoDB EDS  | [MongoDB Integration](/xap97/mongodb.html) |
+| Mule | [http://www.mulesoft.org/](http://www.mulesoft.org/) | 3.3.0 | XAP integrates with Mule and allows to run a Mule PU | [Mule ESB](/xap97/mule-esb.html) |
+| snmp4j | [http://www.snmp4j.org/](http://www.snmp4j.org/) | 1.11.2 | Alert integration example | [SNMP Connectivity via Alert Logging Gateway](/xap97/snmp-connectivity-via-alert-logging-gateway.html) | 
 
 
 # .NET Interface
-
 
 ### System Requirements
 Required Software: [Microsoft .NET Framework 2.0](http://msdn.microsoft.com/en-us/vstudio/aa496123) or later including Microsoft .NET Framework 4.0.

@@ -21,7 +21,6 @@ This page list all the 3rd party libraries shipped with GigaSpaces XAP 9.7 and t
 | HyperSonic SQL | [http://www.hsqldb.org](http://www.hsqldb.org/) | 1.8.0 | Hypersonic SQL | [http://www.hsqldb.org/web/hsqlLicense.html](http://www.hsqldb.org/web/hsqlLicense.html) | No | Persistency |
 | H2 | [http://www.h2database.com/](http://www.h2database.com/) | 1.2 | H2 | [http://www.h2database.com/html/license.html](http://www.h2database.com/html/license.html) | No | Persistency |
 | Xerces | [http://xml.apache.org/](http://xml.apache.org/) | 2.9.0 | Apache2 | [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) | No | Core Cluster |
-| Hibernate | [http://www.hibernate.org/](http://www.hibernate.org/) | 3.6.1 | LGPL | [http://www.gnu.org/copyleft/lesser.html](http://www.gnu.org/copyleft/lesser.html) | No | Persistency |
 | JMS | [http://java.sun.com/products/jms/](http://java.sun.com/products/jms/) | 1.1 | Sun | [http://www.opensource.org/licenses/sunpublic.php](http://www.opensource.org/licenses/sunpublic.php) | No | JMS |
 | Security | [http://java.sun.com/products/jsse/](http://java.sun.com/products/jsse/) |1.6 | Sun | [http://www.opensource.org/licenses/sunpublic.php](http://www.opensource.org/licenses/sunpublic.php) | Yes | Core |
 | Spring | [http://www.springframework.org/about](http://www.springframework.org/about) | 3.2.4 | Apache2 | [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) | Yes | Core |
@@ -41,9 +40,6 @@ This page list all the 3rd party libraries shipped with GigaSpaces XAP 9.7 and t
 {: .table .table-bordered}
 | Product | Product Page | Version | License | License Page | Required | Component |
 |:--------|:-------------|:--------|:--------|:-------------|:---------|:----------|
-| log4j | [http://logging.apache.org/log4j/1.2/](http://logging.apache.org/log4j/1.2/) | 1.2.17 | Apache2 | [http://logging.apache.org/log4j/1.2/license.html](http://logging.apache.org/log4j/1.2/license.html) | No | Examples |
-| log4j-snmp-trap-appender | [http://code.google.com/p/log4j-snmp-trap-appender/](http://code.google.com/p/log4j-snmp-trap-appender/) | 1.2.9 | Apache2 | [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0) | No | Examples |
-| snmp4j | [http://www.snmp4j.org/](http://www.snmp4j.org/) | 1.11.2 | Apache2 | [http://www.snmp4j.org/LICENSE-2_0.txt](http://www.snmp4j.org/LICENSE-2_0.txt) | No | Examples |
 | Ant | [http://ant.apache.org/](http://ant.apache.org/) | 1.6.5 | Apache2 | [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) | No | Examples |
 
 {% endtabcontent %}
