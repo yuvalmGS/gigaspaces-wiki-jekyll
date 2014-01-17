@@ -6,17 +6,16 @@ parent: change-api.html
 weight: 100
 ---
 
-{% compositionsetup %}
 {% summary %}This page describes how to implement a custom change operation and how to use it.{% endsummary %}
 
-# What is a custom change operation
+# What Is a Custom Change Operation
 
-A custom change operation lets the user to to implement its own change operation in case the built-in operations do not suffice. This is a very powerful capability but it must be used with extreme care.
+A custom change operation lets the user implement her own change operation in case the built-in operations (increment, add, remove, set, etc.) do not suffice. This is a very powerful capability but it must be used with extreme care.
 
-# How to implement and use it
+# Implementing and Using a Custom Change Operation
 
-The implementation should extend the abstract `CustomChangeOperation` class and implement both `getName` and `change` methods.
-Following is an example of a change operation which multiply an integer property value:
+The implementation should extend the abstract `CustomChangeOperation` class and implement both the `getName` and `change` methods.
+See below an example of a change operation which multiplies an integer property value:
 
 {% highlight java %}
 public static class MultiplyIntegerChangeOperation extends CustomChangeOperation {
@@ -44,7 +43,8 @@ public static class MultiplyIntegerChangeOperation extends CustomChangeOperation
 
   @Override
   public Object change(MutableServerEntry entry) {
-    //Assume this is an integer property, if this is not true an exception will be thrown and the change operation will fail
+    //Assume this is an integer property, if this is not true an exception will be thrown 
+    //and the change operation will fail
     int oldValue = (int)entry.getPathValue(path);
     int newValue = oldValue * multiplier;
     entry.setPathValue(path, newValue);
@@ -59,29 +59,26 @@ Using it will be like any other change operation, while providing this custom im
 gigaSpace.change(query, new ChangeSet().custom(new MultiplyIntegerChangeOperation("votes", 2));
 {% endhighlight %}
 
-# What does the name means (getName() implementation)
+# The Name of a Custom Change Operation 
 
-The custom operation is treated like the built-in change operations, in fact they are built-in implementations of the same mechanism, therefore the operation should have a unique name which is used in all the relevant places as described in [Change API Advanced](./change-api-advanced.html), such as configuring which operation are supported by a `SpaceSynchronizationEndpoint` implementation, using it inside space and replication filters to identify which custom change operation is executed etc.
+The custom operation is treated like the built-in change operations (in fact the build in implementations are using the same the same mechanism), therefore the operation should have a unique name which is used in all the relevant places as described in the [Change API Advanced Page](./change-api-advanced.html), such as configuring which operations are supported by a `SpaceSynchronizationEndpoint` implementation, using it inside space and replication filters to identify which custom change operation is executed, etc.
 
-# Guidlines which must be followed
+# Mandatory Implementation Requirements 
 
 When implementing a custom change operation the following guidliness must be followed and fully understood.
-1. The provided {@link MutableServerEntry} is wrapping the actual object which is kept in space, therefore it is crucial to understand when a value is retrieved from the entry 
-it points to the actual reference in the data structure of the space. The content of this reference should not be changed as it will affect directly the object in space and will
-break data integrity, transaction and visibility scoping (transaction abort will not restore the previous value). Changing a value should always be done via the {@link MutableServerEntry#setPathValue(String, Object)}. 
-Moreover, if you want to change a property within that value by invoking a method on that object (e.g. if the value is a list, adding an item to the list) 
-first you must clone the fetched value first, and invoke the method on the cloned copy otherwise, for the reason explained here, 
-you will change the existing data structure in the space without going the proper data update path and break data integrity.
+1. The provided {% javadoc com.gigaspaces.sync.change.MutableServerEntry %} is wrapping the actual object which is kept in space, therefore it is crucial to understand when a value is retrieved from the entry 
+it points to the actual reference in the data structure of the space. The content of this reference should not be changed as it will directly affect the object in space and will break data integrity, transaction management and visibility scoping (e.g. transaction abort will not restore the previous value). Changing a value should always be done via the [MutableServerEntry](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/sync/change/MutableServerEntry.html#setPathValue(String, Object)). 
+Moreover, if you want to change a property within that value by invoking a method on that object (e.g. if the value is a list, adding an item to the list), you must first clone the fetched value, and then invoke the method on the cloned copy. Otherwise, you will change the existing data structure in the space without going through the proper data update mechanism and will potentially break data integrity.
 
-Following is an example that adds the element 2 into an ArrayList that exists in the entry under a property named "listProperty" , 
-the result sent to client if requested is the size of the collection after the change, note that we clone the ArrayList before modifying it as explained here.
+Below you can find an example that adds the element 2 into an ArrayList that exists in the entry under a property named "listProperty". The result sent to client (if requested) is the size of the collection after the change. Note that we clone the ArrayList before modifying it as explained above.
 	 
 {% highlight java %}
 public Object change(MutableServerEntry entry) {
   ArrayList oldValue = (ArrayList)entry.getPathValue("listPropery");
   if (oldValue == null)
-    throw new IllegalStateException("No ArrayList instance exists under the given path 'listProperty', 
-	           					     in order to add a value an ArrayList instance must exist");
+    throw new IllegalStateException("No ArrayList instance exists under the given path 
+                                     'listProperty', in order to add a value an ArrayList 
+                                     instance must exist");
   Collection newValue = (ArrayList)oldValue.clone()
   newValue.add(2);
   int size = newValue.size();
@@ -89,24 +86,24 @@ public Object change(MutableServerEntry entry) {
   return size;
 }
 {% endhighlight %}
-	 
+
 {% info %}
-`getPathValue`, `setPathValue` operations supports nested paths, it will traverse on properties and map keys if the path contains '.' in it (e.g. "myPojo.mapProperty.key")
-{% endinfo %}	  
-1. When using a replicated topology (e.g. backup space, gateway, mirror) the change operation itself is replicated (and *NOT* the modified entry). 
-Hence, it is imperative that this method will always cause the exact same affect on the entry assuming the same entry was provided, for example it should not rely 
+`getPathValue`, `setPathValue` operations support nested paths, it will traverse on properties and map keys if the path contains '.' in it (e.g. "myPojo.mapProperty.key")
+{% endinfo %}   
+	 
+{% warn %}
+When using a replicated topology (e.g. with backup space instances, gateways, mirror) the change operation itself is replicated (and *NOT* the modified entry). Hence, it is imperative that this method will always cause the exact same affect on the entry (assuming the same entry was provided). For example it should not rely 
 on variables that may change between executions, such as system time, random, machine name etc.
-If the operation is not structured that way, the state can be inconsistent in the different locations after being replicated 
-1. When creating a custom change operation always have this in the back of your mind - "With great power comes great responsibility".
+If the operation is not structured that way, the state can be inconsistent in the different locations after being replicate. {% endwarn %}
 
 # Space Security
 
-Custom change operation lets you run custom code on the space, hence the required space security privilege required in order to execute a custom change operation is `EXECUTE` (the role which allows executing space tasks on a space).
+Custom change operation lets you run custom code on the space, hence the space security privilege required in order to execute a custom change operation is `EXECUTE` (the same role which allows executing space tasks).
 
-# You custom operation and integration points
+# Custom Operation and Space Integration Points
 
-Using the custom operation along with [Replication Filter](./cluster-replication-filters.html), [Space Filter](./space-filters.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html) is supported
-and it is the same as the built-in operations. You can get a reference to the instance of the `CustomChangeOperation` by checking its name (or `instanceof`) and casting to the specific type.
+Using a custom operation with a [Replication Filter](./cluster-replication-filters.html), [Space Filter](./space-filters.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html) is supported
+and behaves the same as the built-in operations. You can get a reference to the instance of the `CustomChangeOperation` by checking its name (or `instanceof`) and casting to the specific type.
 
 {% highlight java %}
 DataSyncChangeSet dataSyncChangeSet = ChangeDataSyncOperation.getChangeSet(dataSyncOperation);
