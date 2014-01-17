@@ -231,7 +231,7 @@ Space Query
 {%tip%}You can modify the query statement and query the space in realtime.
 Example : select UID,* from xap.tutorial.user.model.User *where creditLimit > 100 and* rowNum<5000{%endtip%}
  
-With the Admin UI console has many more features which we will introduce you to throughout this tutorial.
+The Admin UI console has many more features which we will introduce you to throughout this tutorial.
 
    
 
@@ -239,8 +239,18 @@ With the Admin UI console has many more features which we will introduce you to 
 
  
 
-# What's Next
+
+
+<ul class="pager">
+  <li class="previous"><a href="./java-tutorial-part1.html">&larr; The Space</a></li>
+  <li class="next"><a href="./java-tutorial-part3.html">Processing Services &rarr;</a></li>
+</ul>
+
 {%comment%}
+
+# What's Next
+
+Tutorial Part III of this tutorial will introduce you to the processing services that can be performed over the space.
 
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part III|Tutorial Part III] of this tutorial will introduce you to the processing services that can be performed over the space.
  

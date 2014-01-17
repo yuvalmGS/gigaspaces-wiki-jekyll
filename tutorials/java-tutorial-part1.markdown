@@ -7,18 +7,12 @@ parent: java-home.html
 ---
 
 
-
-
 {%comment%}
  [< Previous|XAP Tutorial] * [Home|XAP Tutorial] * [Next >|Tutorial  Part II]
 {%endcomment%}
 
 
-
-{%comment%}
 {%summary%}This tutorial will introduce you to the basic features of the GigaSpaces XAP platform.{%endsummary%}
-{%endcomment%}
-
 
 
 {%section%}
@@ -29,8 +23,6 @@ In this part of the tutorial we will demonstrate how to create a space and how y
 <img src="/attachment_files/qsg/data.png" width="100" height="100">
 {%endcolumn%}
 {%endsection%}
-
-{%summary%}{%endsummary%}
 
 
 # Creating a Space
@@ -655,11 +647,16 @@ public void findSpace()  {
 
 
 
-# What's Next
+
+
+
+<ul class="pager">
+  <li class="previous"><a href="./java-home.html">&larr; Tutorial Home</a></li>
+  <li class="next"><a href="./java-tutorial-part2.html">The Data Grid &rarr;</a></li>
+</ul>
+
+
 {%comment%}
-!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part II|Tutorial  Part II] of this tutorial will show how you can create an In Memory Data Grid (IMDG) and how you can interact with it.
-
-
-#
-{align:center}[< Previous|XAP Tutorial] * [Home|XAP Tutorial] * [Next >|Tutorial  Part II]{align}
+# What's Next
+Part two of this tutorial will show how you can create an In Memory Data Grid (IMDG) and how you can interact with it.
 {%endcomment%}

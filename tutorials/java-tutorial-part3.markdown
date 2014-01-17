@@ -282,11 +282,18 @@ public class RemoteService {
 
 
 
+<ul class="pager">
+  <li class="previous"><a href="./java-tutorial-part2.html">&larr; The Data Grid</a></li>
+  <li class="next"><a href="./java-tutorial-part4.html">Events and Messaging</a></li>
+</ul>
 
+{%comment%}
 
 # What's Next
 
-{%comment%}
+Part IV  of this tutorial will introduce you to the event and messaging processing capabilities of XAP.
+
+
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part IV|Tutorial Part IV] of this tutorial will introduce you to the event and messaging processing capabilities of XAP.
 ##
 

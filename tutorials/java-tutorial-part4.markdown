@@ -189,9 +189,18 @@ In GigaSpaces XAP, you can implement the Master-Worker pattern using several met
 {%learn%}/sbp/master-worker-pattern.html{%endlearn%}
 
 
-# What's Next
+
+
+<ul class="pager">
+  <li class="previous"><a href="./java-tutorial-part3.html">&larr; Processing Services</a></li>
+  <li class="next"><a href="./java-tutorial-part5.html">The Processing Unit &rarr;</a></li>
+</ul>
 
 {%comment%}
+# What's Next
+
+Part IV of this tutorial will introduce you to the concept of a Processing Unit which is the fundamental unit of deployment in GigaSpaces XAP.
+
 
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part IV|Tutorial Part V] of this tutorial will introduce you to the concept of a Processing Unit which is the fundamental unit of deployment in GigaSpaces XAP.
 

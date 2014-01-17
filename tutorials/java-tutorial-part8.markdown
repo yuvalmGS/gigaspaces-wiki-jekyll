@@ -305,9 +305,18 @@ The integration dynamically creates and updates the mod_proxy_balancer configura
  
 {%learn%}{%latestjavaurl%}/apache-load-balancer-agent.html{%endlearn%}
 
-# What's next
+
+
+<ul class="pager">
+  <li class="previous"><a href="./java-tutorial-part7.html">&larr; Space Persistency</a></li>
+  <li class="next"><a href="./java-tutorial-part9.html">Big Data &rarr;</a></li>
+</ul>
 
 {%comment%}
+# What's next
+
+Part IX of this tutorial will introduce you to XAP's Big Data integration.
+
  # What's Next
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part IX|Tutorial Part IX] of this tutorial will introduce you to XAP's Big Data integration.
 

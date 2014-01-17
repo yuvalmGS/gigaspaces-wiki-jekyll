@@ -183,9 +183,19 @@ Next, we setup the Spring configuration for Hibernate:
 Now we are ready to deploy this as a PU.
 
 
-# What's Next
+
+
+<ul class="pager">
+  <li class="previous"><a href="./java-tutorial-part6.html">&larr; Space Transactions</a></li>
+  <li class="next"><a href="./java-tutorial-part8.html">Web Processing Unit &rarr;</a></li>
+</ul>
+
 
 {%comment%}
+# What's Next
+
+Part VIII of this tutorial will introduce you to web application deployment in XAP.
+
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part VIII|Tutorial Part VIII] of this tutorial will introduce you to web application deployment in XAP.
 
 

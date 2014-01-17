@@ -416,9 +416,18 @@ With a stateless PU
 {%learn%}{%latestjavaurl%}/deploy---gigaspaces-cli.html{%endlearn%}
 
 
-# What's Next
+
+<ul class="pager">
+  <li class="previous"><a href="./java-tutorial-part4.html">&larr; Events and Messaging</a></li>
+  <li class="next"><a href="./java-tutorial-part6.html">Space Transactions &rarr;</a></li>
+</ul>
 
 {%comment%}
+
+# What's Next
+
+Part VI of this tutorial will introduce you to transaction management and space persistence.
+
 
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part VI|Tutorial Part VI] of this tutorial will introduce you to transaction management and space persistence.
 

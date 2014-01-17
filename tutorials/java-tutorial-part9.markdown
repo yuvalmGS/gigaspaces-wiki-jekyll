@@ -220,9 +220,18 @@ The XAP Mirror Service provides reliable asynchronous persistency. This allows y
 
 
 
-# What's Next
+
+
+<ul class="pager">
+  <li class="previous"><a href="./java-tutorial-part8.html">&larr; Web Processing Unit</a></li>
+  <li class="next"><a href="./java-tutorial-part10.html">Security &rarr;</a></li>
+</ul>
 
 {%comment%}
+
+# What's Next
+
+Part X  of this tutorial will introduce you to security aspects of XAP.
 
 !GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part X|Tutorial Part X] of this tutorial will introduce you to security aspects of XAP.
 
