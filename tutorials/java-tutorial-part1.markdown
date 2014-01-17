@@ -14,6 +14,7 @@ parent: java-home.html
 
 {%summary%}This tutorial will introduce you to the basic features of the GigaSpaces XAP platform.{%endsummary%}
 
+# Overview
 
 {%section%}
 {%column width=75% %}
@@ -643,10 +644,8 @@ public void findSpace()  {
 }
 {%endhighlight%}
 
+
 {%info%}In the following parts of this tutorial we will introduce you the different schemas that support the XAP Spring integration. We will also use the Annotations to configure and inject components.{%endinfo%}
-
-
-
 
 
 
