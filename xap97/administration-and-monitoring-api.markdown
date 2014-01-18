@@ -2,12 +2,12 @@
 layout: post
 title:  Administration and Monitoring API
 categories: XAP97
-weight: 100
-parent: admin-modules.html
+weight: 300
+parent: programmers-guide.html
 ---
 
-{% compositionsetup %}
-{% summary page|70 %}Simple API to monitor and administer GigaSpaces services and components.{% endsummary %}
+
+{% summary%}Simple API to monitor and administer GigaSpaces services and components.{% endsummary %}
 
 # Overview
 

@@ -6,12 +6,15 @@ parent: none
 weight: 300
 ---
 
+
 {%comment%}
 {% summary %}This section describes GigaSpaces security model{% endsummary %}
 {%endcomment%}
 
 {% summary %} {% endsummary %}
 
+
+# Overview
 
 {% section %}
 {% column width=75% %}
@@ -49,7 +52,7 @@ The authentication layer is totally independent from the authorization decision 
 
 GigaSpaces Security architecture has been designed to meet the needs of enterprise application security. We have tried to provide a complete experience throughout all the components, for a useful, configurable and extendable security system.
 
-GigaSpaces Main Security Features:
+{%vbar title=GigaSpaces Main Security Features: %}
 
 - Authority roles based security
     - System , Monitor , Grid , Data-Grid Authorities
@@ -61,9 +64,12 @@ GigaSpaces Main Security Features:
 - Data-Grid operations Auditing
 - SSL Transport Layer security
 - UI, CLI and API Security Tools
+{%endvbar%}
 
 # Getting Started
 
 To help you get started, the section goes through the [basics](./security-basics.html), how to secure the [components](./securing-xap-components.html), [administration tools](./security-administration.html), applying security to the [HelloWorld example](./securing-the-helloworld-example.html), and finally once you gain an in-depth understanding, shows you how to [customize](./custom-security.html) the security based on your application requirements. One such custom security implementation is the [Spring Security Bridge](./spring-security-bridge.html).
 
+
 {% children %}
+

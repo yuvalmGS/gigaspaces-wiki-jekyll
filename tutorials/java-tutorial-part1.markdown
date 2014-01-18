@@ -30,7 +30,7 @@ In this part of the tutorial we will demonstrate how to create a space and how y
 Let's create a space called 'xapTutorialSpace' that is co-located within an application. This type of space is called embedded space.
 
 Here is an example how you start an embedded space:
-{%highlight java%}
+{%highlight java  %}
 // Embedded Space
 String url = "/./xapTutorialSpace";
 
@@ -39,7 +39,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer(url)).gigaS
 {%endhighlight%}
 
 This space we just created can also be accessed remotely from another JVM by connecting with a modified space URL. In order to do so you would use the following Space URL:
-{%highlight java%}
+{%highlight java  %}
 String url ="jini://*/*/xapTutorialSpace";
 {%endhighlight%}
 
@@ -73,7 +73,7 @@ XAP supports two types of objects that can interact with the Space, POJOs and Do
 Any POJO can be used to interact with the space as long it follows the Java Beans convention. The POJO needs to implement a default constructor, setters and getters for every property you want to store in the Space.
 
 
-{%highlight java%}
+{%highlight java  %}
 @SpaceClass
 public class User {
   private Long id;
@@ -131,7 +131,7 @@ The GigaSpaces document API exposes the space as Document Store. A document, whi
 To create a document we use a Map<String,Object> for its properties. The SpaceDocument object is instantiated by using the type name and properties. XAP provides a special implementation of a Hash Map called  DocumentProperties that provides a fluent API.
 
 Here is an example how you can create a SpaceDocument:
-{%highlight java%}
+{%highlight java  %}
 public SpaceDocument createDocumemt() {
      DocumentProperties properties = new DocumentProperties()
        .setProperty("CatalogNumber", "av-9876")
@@ -151,7 +151,7 @@ public SpaceDocument createDocumemt() {
 {%endhighlight%}
 
 In order to use the SpaceDocument, we need to register its schema first with the space:
-{%highlight java%}
+{%highlight java  %}
 public void registerProductType(GigaSpace gigaspace) {
      // Create type descriptor:
      SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder(
@@ -183,7 +183,7 @@ When writing an object to the space, the object is created in space if it does n
 
 
 
-{%highlight java%}
+{%highlight java  %}
 public void writeUser() {
      User user = new User();
      user.setId(new Long(1));
@@ -198,7 +198,7 @@ public void writeUser() {
 It is also possible to write multiple objects in one operation to the space (batch mode). This can vastly improve the performance if you need to load many objects at once into the space.
 
 Here is an example on how you write multiple objects to the space:
-{%highlight java%}
+{%highlight java  %}
 public void writeUsers() {
      User[] users = new User[2];
      users[0] = new User();
@@ -236,7 +236,7 @@ In this example, we are writing an object to the space with zero delay, 10 secon
 #### Updating an object in space
 When you want to update only a couple of attributes on an object in space, you can use the change operation and update specific fields or even nested fields or modify collections and maps without having to supply the entire collection or map for the operation. With the following change operation example it is not necessary to read the object first from the space to update it. The Change API reduces a normal two step operation to a one step operation. This operation can vastly improve performance when you have an object with many attributes and you only need to update one or a couple of attributes.
 
-{%highlight java%}
+{%highlight java  %}
 public void ChangeSet() {
       User user = new User();
       user.setId(new Long(1));
@@ -270,14 +270,14 @@ Now we are ready to query the space. XAP provides several ways to perform querie
 This is the simplest and fasted way to retrieve objects from the space.
 
 Here is an example of a query by id:
-{%highlight java%}
+{%highlight java  %}
 public User findUserById() {
      return space.readById(User.class, new Long(1));
 }
 {%endhighlight%}
 
 You can also perform a bulk read for multiple Id's
-{%highlight java%}
+{%highlight java  %}
 public User[] findUsersByIds() {
      ReadByIdsResult<User> result = space.readByIds(User.class, new Long[] {1l, 2l, 3l });
      return result.getResultsArray();
@@ -291,7 +291,7 @@ Template matching (match by example) is a simple way to query the space. The tem
 The following examples assume the default constructor of the User class initializes all its attributes to null.
 
 Read an entry of type User where the name is 'John Dow':
-{%highlight java%}
+{%highlight java  %}
 public User findUserByTemplate() {
      User user = new User();
      user.setName("John Dow");
@@ -300,7 +300,7 @@ public User findUserByTemplate() {
 {%endhighlight%}
 
 You can also perform a bulk read with templates. In the example below will read all users that have a status of ACTIVE:
-{%highlight java%}
+{%highlight java  %}
 public User[] findUsersByTemplate() {
      User user = new User();
      user.setStatus(EAccountStatus.ACTIVE);
@@ -314,7 +314,7 @@ public User[] findUsersByTemplate() {
 #### SQL Query
 The SQLQuery class is used to query the space with an SQL-like syntax. The query statement includes only the WHERE statement part. An SQLQuery is composed from the class of entry to query and an expression in SQL syntax.
 
-{%highlight java%}
+{%highlight java  %}
 public User[] sqlFindUsersByName() {
      SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Dow'");
      return space.readMultiple(query);
@@ -336,7 +336,7 @@ public User[] sqlFindUsersByNameAndIds() {
 You can separate the values for the SQL criteria expression by placing a '?' symbol instead of the actual value in the expression. When executing the query, the conditions that includes '?' are replaced with the corresponding parameter values supplied via the setParameter  method.
 
 For example:
-{%highlight java%}
+{%highlight java  %}
 public User[] sqlParameterFindUsersByName() {
      SQLQuery<User> query = new SQLQuery<User>(User.class, "name = ?").setParameter(1, "John Dow");
      return space.readMultiple(query);
@@ -355,7 +355,7 @@ public User[] sqlParameterFindUsersByNameAndCreditLimit() {
 Many times a class has embedded classes as attributes. You can query for attributes within the embedded classes. Matching a nested attribute is done by specifying a Path which describes how to obtain its value. For example, our user class has an embedded attribute of an Address that has a zipCode attribute.
 
 Here is an example how you can query the space for all users that have a zip code of '12345'.
-{%highlight java%}
+{%highlight java  %}
 public User[] sqlFindUsersByZipCode() {
      SQLQuery<User> query = new SQLQuery<User>(User.class,"address.zipCode = 12345");
      return space.readMultiple(query);
@@ -366,7 +366,7 @@ public User[] sqlFindUsersByZipCode() {
 
 #### Nested Collections
 It is possible to query embedded collections. Our user class has a collection groups that he belongs to. We can query the space for all users that belong to a certain group:
-{%highlight java%}
+{%highlight java  %}
 public User[] findUsersByGroup() {
    SQLQuery<User> sqlQuery = new SQLQuery<User>(User.class,"groups[*].id = 1L");
    return space.readMultiple(sqlQuery);
@@ -374,7 +374,6 @@ public User[] findUsersByGroup() {
 {%endhighlight%}
 
 There are several additional query options available. For example you can query Nested Maps by key,query with Regular Expression, Enum attributes and others.
-
 {%learn%}{%latestjavaurl%}/sqlquery.html{%endlearn%}
 
 
@@ -383,7 +382,7 @@ There are several additional query options available. For example you can query 
 In some cases when querying the space for objects only specific attributes of an objects are required and not the entire object (delta read). For that purpose the Projection API can be used where you can specify which attributes are of interest and the space will only populate these attributes with the actual data when the result is returned back to the user. This approach reduces network overhead and can vastly improve performance.
 
 In this example below we are just interested in the name attribute of the user object:
-{%highlight java%}
+{%highlight java  %}
 public User[] findUsersByNameAndProjection() {
      SQLQuery<User> query = new SQLQuery<User>(User.class,"name = ?");
      query.setParameter(1, "John Dow");
@@ -399,7 +398,7 @@ You can also query the space for documents. Just like the POJO queries, you can 
 
 
 Here are some examples how you can query the space for documents:
-{%highlight java%}
+{%highlight java  %}
 public SpaceDocument readProductById(GigaSpace gigaSpace) {
     return gigaSpace.readById(new IdQuery<SpaceDocument>("Product", "hw-1234"));
 }
@@ -415,7 +414,7 @@ public SpaceDocument[] readProductsBySQL() {
       query.setParameter(1, 19.99f);
       return space.readMultiple(query);
 }
-{%endhighlight%}
+{%endhighlight  %}
 
 {%learn%}{%latestjavaurl%}/document-api.html{%endlearn%}
 
@@ -433,7 +432,7 @@ The take operation returns an object and removes it from the space. XAP provides
 - Take multiple
 
 Here are some examples:
-{%highlight java%}
+{%highlight java  %}
 public User takeUserById() {
    return space.takeById(User.class, 1L);
 }
@@ -457,7 +456,7 @@ public User[] takeUsersBySQL() {
 #### Clear operation
 The clear operation removes objects from a space without returning them.
 Here are some examples:
-{%highlight java%}
+{%highlight java  %}
 public void clearUserByTemplate() {
      User template = new User();
      space.clear(template);
@@ -491,7 +490,7 @@ There are two basic index types provide:
 
 Here is an example how you can define indexes:
 
-{%highlight java%}
+{%highlight java  %}
 @SpaceClass
 public class User {
 
@@ -522,13 +521,13 @@ public class User {
 		return creditLimit;
 	}
 }
-{%endhighlight%}
+{%endhighlight  %}
 
 #### Compound Indexing
 A Compound Index is a space index composed from several attributes or nested attributes. Each attribute of a compound index is called a segment and each segment is described by its path.
 
 Here is an example of a compound index:
-{%highlight java%}
+{%highlight java  %}
 @CompoundSpaceIndexes({ @CompoundSpaceIndex(paths = { "name", "creditLimit" }) })
 @SpaceClass
 public class User {
@@ -552,10 +551,8 @@ There are several additional indexing options available. For example you can ind
 
 # Best Practice
 
-{%tip%}
-{%panel%}
 
-When you code your space classes make sure:
+{%vbar title=When you code your space classes make sure:  %}
 
 - there are indexes for all relevant attributes including nested attributes you use for queries
 
@@ -578,8 +575,8 @@ When you code your space classes make sure:
 - no huge collections with many items
 
 - use change api instead of update , especially if collections are used.
-{%endpanel%}
-{%endtip%}
+{%endvbar%}
+
 
 
 # Other Data Access API's
@@ -592,7 +589,7 @@ XAP provides a JDBC Driver, JPA API, MAP and Memcached API's.
 # Spring Integration
 All XAP components can be wired and configured with the application using corresponding Spring Beans.
 
-The GigaSpaces Spring Integration supports:
+{%vbar title=The GigaSpaces Spring Integration supports:%}
 
 - Spring Automatic Transaction Demarcation
 - Spring Data
@@ -604,10 +601,12 @@ The GigaSpaces Spring Integration supports:
 - Spring Security
 - Mule
 
+{%endvbar%}
+
 Lets look at a Spring configuration file that represents the creation of an embedded space:
 
 
-{%highlight xml%}
+{%highlight xml  %}
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
@@ -635,7 +634,7 @@ Lets look at a Spring configuration file that represents the creation of an embe
 
 
 And here is the code to access the Spring bean within your application:
-{%highlight java%}
+{%highlight java  %}
 public void findSpace()  {
     FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext(
 	"classpath:/spring/application-context.xml");

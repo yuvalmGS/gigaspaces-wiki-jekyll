@@ -1,7 +1,7 @@
 require 'kramdown'
 module Jekyll
   module Tags
-    class Info < Liquid::Block
+    class VBar < Liquid::Block
       include Liquid::StandardFilters
 
       def initialize(tag_name, markup, tokens)
@@ -20,12 +20,11 @@ module Jekyll
       end
 
       def render(context)
-      	add_info(context, super)
+      	add_tip(context, super)
       end
 
-
-      def add_info(context, content)
-      	output = "<div class=\"bs-callout bs-callout-info\">"
+      def add_tip(context, content)
+        output = "<div class=\"bs-callout bs-callout-success\">"
         unless @title.empty?
           output << "<strong>"
           output << Kramdown::Document.new(@title).to_html
@@ -38,4 +37,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('info', Jekyll::Tags::Info)
+Liquid::Template.register_tag('vbar', Jekyll::Tags::VBar)
