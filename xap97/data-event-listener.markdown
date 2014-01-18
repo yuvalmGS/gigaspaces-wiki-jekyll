@@ -11,9 +11,14 @@ weight: 400
 
 # Overview
 
+{%section%}
+{%column width=70% %}
 OpenSpaces provides a single interface for Space Data event listeners used by different event containers (Space data event generators) such as Polling Event and Notify Event containers. The benefit of doing so is the loose coupling between how the events are received (the different containers) and what to do with a received event (the listener).
-
+{%endcolumn%}
+{%column width=25% %}
 ![data_event.jpg](/attachment_files/data_event.jpg)
+{%endcolumn%}
+{%endsection%}
 
 # Space Data Event Listener
 
