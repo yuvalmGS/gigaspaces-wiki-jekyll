@@ -11,15 +11,16 @@ weight: 200
 # Overview
 
 {% section %}
-{% column width=50% %}
+{% column width=70% %}
 The notify event container uses the space inherited support for notifications (continuous query) using a GigaSpaces unified event session API. If a notification occurs, the [data event listener](./data-event-listener.html) is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
 {% endcolumn %}
-{% column width=40% %}
+{% column width=25% %}
 ![notify_container_basic.jpg](/attachment_files/notify_container_basic.jpg)
 {% endcolumn %}
 {% endsection %}
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/GwLfDYgl6f8?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
+
 ## Life Cycle Events
 
 The notify container life cycle events described below. You may implement each of of these to perform the desired activity.
