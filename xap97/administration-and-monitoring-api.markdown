@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Administration and Monitoring API
+title:  Administration and Monitoring
 categories: XAP97
-weight: 300
 parent: programmers-guide.html
+weight: 1700
 ---
 
 
@@ -11,10 +11,14 @@ parent: programmers-guide.html
 
 # Overview
 
+{%section%}
+{%column width=50% %}
 The Admin API provides a way to administer and monitor all of GigaSpaces services and components using a simple API. The API provides information and the ability to operate on the currently running [GigaSpaces Agent](./service-grid.html#gsa), [GigaSpaces Manager](./service-grid.html#gsm), [GigaSpaces Container](./service-grid.html#gsc), [Lookup Service](./service-grid.html#lus), [Processing Unit](./packaging-and-deployment.html) and Spaces.
-
-
+{%endcolumn%}
+{%column width=45% %}
 ![archi_manag.jpg](/attachment_files/archi_manag.jpg)
+{%endcolumn%}
+{%endsection%}
 
 {% tip %}
 You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.

@@ -2,8 +2,8 @@
 layout: post
 title:  The In-Memory Data Grid
 categories: XAP97
-parent: main-modules.html
-weight: 100
+parent: programmers-guide.html
+weight: 900
 ---
 
 
@@ -11,9 +11,14 @@ weight: 100
 
 # Overview
 
+{%section%}
+{%column width=50% %}
 This section describes the Space, GigaSpaces in-memory data grid implementation. The Space enables your application to read data from it, and write data to it in various ways. It also deals with various configuration aspects, such as space topologies, persistency to an external data source and memory management facilities.
-
+{%endcolumn%}
+{%column width=45% %}
 ![archi_imdg.jpg](/attachment_files/archi_imdg.jpg)
+{%endcolumn%}
+{%endsection%}
 
 # The Space as the System of Record
 

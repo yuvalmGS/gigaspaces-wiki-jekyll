@@ -2,15 +2,14 @@
 layout: post
 title:  Pessimistic Locking
 categories: XAP97
-parent: space-locking-and-blocking.html
-weight: 300
+parent: transaction-management.html
+weight: 400
 ---
 
-{% tip %}
-**Summary:** {% excerpt %}In the pessimistic locking approach, your program must explicitly obtain a lock using a transaction on one or more objects before making any changes.{% endexcerpt %}
-**Contents:**
-{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
-{% endtip %}
+
+{% summary %}In the pessimistic locking approach, your program must explicitly obtain a lock using a transaction on one or more objects before making any changes.{% endsummary %}
+
+
 
 # Overview
 
@@ -22,9 +21,10 @@ To enforce a sole reader and sole updater for the object we explicitly lock the 
 
 When performing read operations without locking the object via a transaction, users can immediately perform an update operation, without having to wait for other users to complete their transaction (since there is none). However, there is no guarantee that the update operation will be performed on the latest version of the object.
 
-{% exclamation %} The optimistic locking protocol assumes that a client that retrieved an object from the space, might or might not update the object, so it never locks the object when it is reading it. This makes the object accessible for large amount of users avoiding the need to wait for the lock to be released. Using the optimistic locking protocol when every object that is read is also updated, will consume unnecessary resources at the client and space side since all the clients will try to get the latest version of the object when updating it.
+{% note %} The optimistic locking protocol assumes that a client that retrieved an object from the space, might or might not update the object, so it never locks the object when it is reading it. This makes the object accessible for large amount of users avoiding the need to wait for the lock to be released. Using the optimistic locking protocol when every object that is read is also updated, will consume unnecessary resources at the client and space side since all the clients will try to get the latest version of the object when updating it.{%endnote%}
 
-To implement the pessimistic locking protocol you should have the following:
+
+{%vbar title=To implement the pessimistic locking protocol you should have the following: {%vbar%}
 
 - Start a transaction. You may use spring automatic transaction demarcation by annotating the method as `@Transactional`.
 - Read the object using the `Exclusive read Lock` modifier.  This will block other transactions from reading the same object. If there is another transaction locking the object, the read operation will wait for the transaction (according to the specified timeout) to be completed (commit or abort) and return the latest version of the object. You may read multiple objects during this phase.
@@ -32,7 +32,9 @@ To implement the pessimistic locking protocol you should have the following:
 - Update the object within the space. You may update multiple objects.
 - Commit the transaction. This will happen automatically when the transactional method will be completed.
 
-{% exclamation %} Having the above executed at the space side via [Executor Based Remoting](./executor-based-remoting.html) or [Task Executors](./task-execution-over-the-space.html) is highly recommended. This will shorten the transaction time period since all space operations will be executed against a colocated space.
+{%endvbar%}
+
+{% tip %} Having the above executed at the space side via [Executor Based Remoting](./executor-based-remoting.html) or [Task Executors](./task-execution-over-the-space.html) is highly recommended. This will shorten the transaction time period since all space operations will be executed against a colocated space. {%endtip%}
 
 # Example
 

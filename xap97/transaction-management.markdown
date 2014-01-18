@@ -2,12 +2,12 @@
 layout: post
 title:  Transaction Management
 categories: XAP97
-parent: the-space-api.html
-weight: 700
+parent: programmers-guide.html
+weight: 600
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}OpenSpaces provides an implementation of Spring's `PlatformTransactionManager` enabling you to use XAP's distributed transaction manager.{% endsummary %}
+
+{% summary %}OpenSpaces provides an implementation of Spring's PlatformTransactionManager enabling you to use XAP's distributed transaction manager.{% endsummary %}
 
 # Overview
 
@@ -20,6 +20,7 @@ By implementing Spring's `PlatformTransactionManager`, the OpenSpaces API allows
 Please note that when using Spring declarative transaction, a proxy is generated for the classes annotated with `@Transactional` methods. In such a case **only external method calls** coming in through the proxy will be intercepted. This means that 'self-invocation', i.e. a method within the target object calling some other method of the target object, won't lead to an actual transaction at runtime even if the invoked method is marked with `@Transactional`.
 
 {% exclamation %} In order to make [The GigaSpace Interface ](./the-gigaspace-interface.html) transactional, the transaction manager must be provided to it when constructing the GigaSpace bean.
+
 {% exclamation %} The following should be added to your `pu.xml` to enable the configuration of transactional behavior based on annotations:
 
 {% highlight java %}

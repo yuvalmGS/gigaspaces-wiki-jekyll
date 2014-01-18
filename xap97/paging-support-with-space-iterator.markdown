@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Paging Support with Space Iterator
+title:  Paging Support
 categories: XAP97
 parent: querying-the-space.html
 weight: 700

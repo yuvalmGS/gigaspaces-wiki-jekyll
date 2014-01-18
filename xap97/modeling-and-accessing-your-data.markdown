@@ -2,8 +2,8 @@
 layout: post
 title:  Modeling and Accessing Your Data
 categories: XAP97
-parent: the-in-memory-data-grid.html
-weight: 300
+parent: getting-started.html
+weight: 600
 ---
 
 {% summary %}This section will teach you how to design your data for distributing on the data grid and about the various APIs for accessing you data.{% endsummary %}

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Query User Defined Classes
+title:  User Defined Classes
 categories: XAP97
 parent: querying-the-space.html
 weight: 500

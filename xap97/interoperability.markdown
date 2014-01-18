@@ -2,8 +2,8 @@
 layout: post
 title:  Platform Interoperability
 categories: XAP97
-weight: 500
 parent: programmers-guide.html
+weight: 1500
 ---
 
 

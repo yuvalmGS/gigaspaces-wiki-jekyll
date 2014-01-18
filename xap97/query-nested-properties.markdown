@@ -1,12 +1,11 @@
 ---
 layout: post
-title:  Query Nested Properties
+title:  Nested Properties
 categories: XAP97
 parent: querying-the-space.html
 weight: 400
 ---
 
-{% compositionsetup %}
 {% summary %}Query nested properties, maps and collections using SQL queries {% endsummary %}
 
 # Overview
@@ -156,7 +155,7 @@ public class Person {
 
 # Nested Collections
 
-The GigaSpaces SQL syntax supports a special operand `\[*\]`, which is sometimes referred to as the 'contains' operand. This operand is used in conjunction with collection properties to indicate that each collection item should be evaluated, and if at least one such item matches, the owner entry is considered as matched.
+The GigaSpaces SQL syntax supports a special operand `[*]`, which is sometimes referred to as the 'contains' operand. This operand is used in conjunction with collection properties to indicate that each collection item should be evaluated, and if at least one such item matches, the owner entry is considered as matched.
 
 {% infosign %} Arrays are supported as well, except for arrays of primitive types (int, boolean, etc.) which are are **not** supported - use the equivalent wrapper type (java.lang.Integer, java.lang.Boolean, etc.) instead.
 
@@ -184,7 +183,7 @@ The following example queries for a **Dealer** which contains a **car** which co
 
 ## Multiple Conditions On Collection Items
 
-The scope of the `\[*\]` operand is bounded to the predicate it participates in. When using it more than once, each occurrence is evaluated separately.
+The scope of the `[*]` operand is bounded to the predicate it participates in. When using it more than once, each occurrence is evaluated separately.
 This behavior is useful when looking for multiple distinct items, for example: a dealer with several cars of different companies.
 The following example queries for a **Dealer** which has both a **Honda** and a **Subaru**:
 
@@ -199,7 +198,7 @@ The following example queries for a **Dealer** which has a **Car** whose *compan
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*](company = 'Honda' AND color = 'Red')");
 {% endhighlight %}
 
-{% note title=Be Careful %}
+{% note title=Caution %}
 Writing that last query without parentheses will yield results which are somewhat confusing:
 
 {% highlight java %}
@@ -212,7 +211,7 @@ This query will match any **Dealer** with a **Honda** car and a **red** car, but
 ## Indexing
 
 Collection properties can be indexed to boost performance, similar to 'regular' paths, except that each item in the collection is indexed.
-For example, suppose we've analyzed our queries and decided that **cars\[\*\].company** is commonly used and should be indexed:
+For example, suppose we've analyzed our queries and decided that **cars[*].company** is commonly used and should be indexed:
 
 {% highlight java %}
 @SpaceIndex(path = "[*].company")
@@ -221,7 +220,7 @@ public List<Car> getCars() {
 }
 {% endhighlight %}
 
-{% infosign %} Note that since the index is specified on top of the **cars** property, the `path` is **\[\*\].company** rather than **cars\[\*\].company**.
+{% infosign %} Note that since the index is specified on top of the **cars** property, the `path` is **[*].company** rather than **cars[*].company**.
 
 {% exclamation %} The bigger the collection - the more memory is required to store the index at the server (since each item is indexed). Use with caution!
 

@@ -2,15 +2,17 @@
 layout: post
 title:  Space Based Remoting
 categories: XAP97
-parent: main-modules.html
-weight: 600
+parent: programmers-guide.html
+weight: 1200
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}Remoting allows you to use remote invocations of POJO services, with the space as the transport layer.{% endsummary %}
+
+{% summary %}Remoting allows you to use remote invocations of POJO services, with the space as the transport layer.{% endsummary %}
 
 # Overview
 
+{%section%}
+{%column width=50% %}
 Spring provides support for [various remoting technologies](http://static.springframework.org/spring/docs/2.0.x/reference/remoting.html). GigaSpaces uses the same concepts to provide remoting, using the space as the underlying protocol.
 
 Some benefits of using the space as the transport layer include:
@@ -19,8 +21,13 @@ Some benefits of using the space as the transport layer include:
 - **Load-balancing** -- when using a space with a partitioned cluster topology, each remote invocation is automatically directed to the appropriate partition (based on its routing handler), providing automatic load-balancing.
 - **Performance** -- remote invocations are represented in fast internal OpenSpaces objects, providing fast serialization and transport over the net.
 - **Asynchronous execution** -- by its nature, remoting support is asynchronous, allowing for much higher throughput of remote invocations. OpenSpaces allows you to use asynchronous execution using Futures, and also provides synchronous support (built on top of it).
+{%endcolumn%}
 
+{%column width=46% %}
 ![archi_proce.jpg](/attachment_files/archi_proce.jpg)
+{%endcolumn%}
+{%endsection%}
+
 
 The OpenSpaces API supports two types of remoting, distinguished by the underlying implementation used to send the remote call. The first is called [Executor Based Remoting](./executor-based-remoting.html), and the second is called [Event Driven Remoting](./event-driven-remoting.html).
 

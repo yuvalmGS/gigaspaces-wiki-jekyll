@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Getting Partial Results Using Projection API
+title:  Partial Results
 categories: XAP97
 parent: querying-the-space.html
 weight: 800

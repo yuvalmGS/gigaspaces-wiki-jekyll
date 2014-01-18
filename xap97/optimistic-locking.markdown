@@ -2,12 +2,12 @@
 layout: post
 title:  Optimistic Locking
 categories: XAP97
-parent: space-locking-and-blocking.html
-weight: 200
+parent: transaction-management.html
+weight: 300
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}The optimistic locking protocol provides better performance and scalability when having concurrent access to the same data. Optimistic locking offers higher concurrency and better performance than pessimistic locking. It also avoids deadlocks.
+
+{% summary %}The optimistic locking protocol provides better performance and scalability when having concurrent access to the same data. Optimistic locking offers higher concurrency and better performance than pessimistic locking. It also avoids deadlocks.
 {% endsummary %}
 
 # Overview

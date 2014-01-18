@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Persistency Advanced Topics
-categories: XAP97
+categories:
 parent: persistency.html
 weight: 300
 ---

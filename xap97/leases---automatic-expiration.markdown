@@ -2,7 +2,7 @@
 layout: post
 title:  Leases - Automatic Expiration
 categories: XAP97
-parent: the-space-api.html
+parent: getting-started.html
 weight: 500
 ---
 

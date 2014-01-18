@@ -2,7 +2,7 @@
 layout: post
 title:  Space Object ID Operations
 categories: XAP97
-parent: the-space-api.html
+parent: getting-started.html
 weight: 300
 ---
 
