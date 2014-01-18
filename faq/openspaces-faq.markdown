@@ -71,6 +71,8 @@ Not exactly. OpenSpaces is an open community initiative built around GigaSpaces'
 
 OpenSpaces is provided under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html). The distribution contains the source code of the OpenSpaces package. Note that the underlying GigaSpaces XAP implementation is provided only in its binary distribution format. A Development Source license for XAP will be provided to GigaSpaces customers.
 
+{%anchor 5%}
+
 ### How is OpenSpaces related to JavaSpaces?
 
 OpenSpaces introduces a JavaSpaces abstraction named [GigaSpace]({%latestjavaurl%}/the-gigaspace-interface.html). {% infosign %} We see this interface as a proposal for a new specification that will eventually be driven by the community, and not as a GigaSpaces specification per-se.
@@ -82,13 +84,13 @@ The goal behind this abstraction is to provide a simpler interface that will fit
 - **Generics Support** -- developers can use generics to avoid unnecessary casting and make their interaction with the space more type-safe.
 - **Overloaded Methods** -- the `GigaSpace` interface uses overloaded methods that can use defaults to reduce the amount of arguments passed in read/take/write methods.
 
-{%anchor 5%}
+{%anchor 6%}
 
 ### What is a Processing Unit?
 
 A Processing Unit represents the unit of scalability and failover in Space-Based Architecture (SBA). The Processing Unit is designed to be a self-sufficient unit that contains the messaging, data and business logic within the same process. It is written just like any Spring application with the addition of the built-in [OpenSpaces Components](/product_overview/product-architecture.html#OpenSpaces-API-and-Components) for handling events, state and workflow.
 
-{%anchor 6%}
+{%anchor 7%}
 
 ### How can I contribute code to OpenSpaces?
 
@@ -96,7 +98,7 @@ At this stage, you can submit code by sending an e-mail to [contribute@openspace
 
 A full OpenSpaces source repository will be available soon.
 
-{%anchor 7%}
+{%anchor 8%}
 
 ### How does OpenSpaces relate to Spring?
 
@@ -126,13 +128,13 @@ The GigaSpaces Spring Integration support:
 - Mule
 
 
-{%anchor 8%}
+{%anchor 9%}
 
 ### How does OpenSpaces relate to the GigaSpaces Service Grid?
 
 The GigaSpaces Service Grid is used as the SLA-driven container for the deployment of Spring-based Processing Units. OpenSpaces uses a Spring-based deployment descriptor. The Spring-based deployment-descriptor is a simplified version of the Service Grid deployment-descriptor, specialized for EDA and SOA use cases. It provides a generic form of defining SLAs for an entire Processing Unit. For example, it adds primary-backup semantics and a partitioning topology that maintains the partitioning of the spaces, as well as the services.
 
-{%anchor 9%}
+{%anchor 10%}
 
 ### How does OpenSpaces relate to EDA and SOA?
 
@@ -142,7 +144,7 @@ While the concept behind SOA/EDA is straightforward, most existing implementatio
 
 OpenSpaces was designed to support the SBA model out of the box in a simple and generic way, and therefore, make the development of high-performance SOA/EDA applications simple and scalable.
 
-{%anchor 10%}
+{%anchor 11%}
 
 ### How do I package my application with OpenSpaces?
 
@@ -150,13 +152,13 @@ One of the main goals of OpenSpaces is simplifying lifecycle management of an ap
 
 A Processing Unit is a simple directory structure, compliant with the OSGi-Spring integration directory structure. It includes a Spring XML configuration file (under `META-INF/spring/pu.xml`), the business logic class files, and third-party module `jar` files. A Processing Unit, under the mentioned structure, can then run within the IDE, locally, and deployed on the SLA-driven container without any changes.
 
-{%anchor 11%}
+{%anchor 12%}
 
 ### Where does OSGi fit into the picture?
 
 The current version of OpenSpaces follows the structure of the OSGI-Spring integration `jar` structure. Processing Units are packaged deployments of applications into the SLA-driven container. In the future, OSGi will be used as the component model for managing the lifecycle of services within a Processing Unit. In other words, a Processing Unit can be built from several OSGi bundles, which can maintain their own business logic and lifecycle.
 
-{%anchor 12%}
+{%anchor 13%}
 
 ### How can I change a service within a Processing Unit without shutting down the Processing Unit?
 
