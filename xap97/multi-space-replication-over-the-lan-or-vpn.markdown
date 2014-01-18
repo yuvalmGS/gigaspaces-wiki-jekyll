@@ -36,6 +36,7 @@ In the case where each space resides on a different network and there is no netw
 {% endinfo %}
 
 <iframe width="640" height="360" src="//www.youtube.com/embed/V7rbbmWo3JU?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
+
 # Supported Topologies
 
 This page will demonstrate two sample multi-space replication topologies. These are not the only supported topologies. In fact, the permutations of topologies are quite extensive, and we've chosen to demonstrate two of the more common topologies which can also serve as a basis for other topologies as required by the user:
