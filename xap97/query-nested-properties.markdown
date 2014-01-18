@@ -225,3 +225,9 @@ public List<Car> getCars() {
 {% exclamation %} The bigger the collection - the more memory is required to store the index at the server (since each item is indexed). Use with caution!
 
 {% plus %} For more information see the [Collection Indexing](./indexing.html#Collection Indexing) section under [Indexing](./indexing.html).
+
+
+<ul class="pager">
+  <li class="previous"><a href="./sqlquery.html">&larr; SQLQuery</a></li>
+  <li class="next"><a href="./query-user-defined-classes.html">User Defined CLasses &rarr;</a></li>
+</ul>

@@ -6,7 +6,7 @@ parent: querying-the-space.html
 weight: 300
 ---
 
-{% compositionsetup %}
+
 {% summary %}The SQLQuery class is used to query the space using `SQL`-like syntax.{% endsummary %}
 
 # Overview
@@ -462,3 +462,9 @@ new SQLQuery<MyData>(MyData.class, "`count` = 5")
 {% highlight java %}
 := || ; . ROWTYPE ~ < <= >  >= => != <> \(+\) ( ) \* / + - ? \{ \}
 {% endhighlight %}
+
+
+<ul class="pager">
+  <li class="previous"><a href="./template-matching.html">&larr; Template Matching</a></li>
+  <li class="next"><a href="./query-nested-properties.html">Nested Properties &rarr;</a></li>
+</ul>

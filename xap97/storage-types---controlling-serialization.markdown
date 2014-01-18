@@ -31,7 +31,7 @@ Each non-primitive space object property can be assigned a storage type decorati
 
 The default storage type can be determined for the entire space and/or for a specific space class. If a default storage type is not defined for the space, then the default value is OBJECT. Each property for which a storage type was not defined gets the class's default storage type if that exists and the space storage type if it doesn't.
 
-# Why Use a Storage Type Different than `OBJECT`
+# Why Use a Storage Type Different than OBJECT
 
 There are a few motivations for changing the default storage type for a certain property:
 

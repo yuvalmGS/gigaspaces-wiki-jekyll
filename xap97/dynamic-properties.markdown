@@ -41,7 +41,7 @@ public class Person {
 }
 {% endhighlight %}
 
-{% plus %} It is recommended to use the `DocumentProperties` class to host dynamic properties, as it provides a [fluent interface](http://en.wikipedia.org/wiki/Fluent_interface) to set properties as well as better performance and memory footprint.
+{% note %} It is recommended to use the `DocumentProperties` class to host dynamic properties, as it provides a [fluent interface](http://en.wikipedia.org/wiki/Fluent_interface) to set properties as well as better performance and memory footprint.{%endnote%}
 
 # Using Dynamic Properties
 

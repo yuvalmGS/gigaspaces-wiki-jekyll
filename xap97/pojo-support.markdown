@@ -6,7 +6,7 @@ parent: getting-started.html
 weight: 100
 ---
 
-{% compositionsetup %}
+
 {% summary %}GigaSpaces JavaSpaces API Plain Old Java Object support - the [POJO](http://en.wikipedia.org/wiki/Plain_Old_Java_Object).{% endsummary %}
 
 # Overview
@@ -87,7 +87,7 @@ GigaSpaces `POJO` rules:
  You can define space classes metadata by class and field level decorations. These can be defined via annotations or XML configurations files (*gs.xml file).
 {% endinfo %}
 
-{% exclamation %} This page deals with the POJO class as a space domain class, used to model the space, and store application data into the IMDG. POJO classes deployed as services into the Service Grid are described in the [Data Event Listener](./data-event-listener.html) and [Space Based Remoting](./space-based-remoting.html) sections. In these cases, the POJO class is used to process incoming data, or is invoked remotely.
+{% note %} This page deals with the POJO class as a space domain class, used to model the space, and store application data into the IMDG. POJO classes deployed as services into the Service Grid are described in the [Data Event Listener](./data-event-listener.html) and [Space Based Remoting](./space-based-remoting.html) sections. In these cases, the POJO class is used to process incoming data, or is invoked remotely.{%endnote%}
 
 # A POJO as a Space Domain Class
 

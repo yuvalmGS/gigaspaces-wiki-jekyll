@@ -59,3 +59,9 @@ public class Version implements Serializable, Comparable<Version> {
     }
 }
 {% endhighlight %}
+
+
+<ul class="pager">
+  <li class="previous"><a href="./query-nested-properties.html">&larr; Nested Properties</a></li>
+  <li class="next"><a href="./paging-support-with-space-iterator.html">Paging Support &rarr;</a></li>
+</ul>
