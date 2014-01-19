@@ -78,7 +78,7 @@ If you don't want to set these variables globally (by defining System Variables)
 - **`<GigaSpaces Root>\cpp\env.cmd`** -- Running this file defines these variables to match your platform.
 - **`<GigaSpaces Root>\cpp\GigaVisualStudio.bat`** -- Running this file starts **Visual Studio** and automatically sets the environment.
 
-{% exclamation %} You might need to edit these files to include the correct values for the `PATH` , `JAVA_HOME` and `JSHOMEDIR` environment variables and the correct location of Visual Studio and the jvm.dll.
+{% tip %} You might need to edit these files to include the correct values for the `PATH` , `JAVA_HOME` and `JSHOMEDIR` environment variables and the correct location of Visual Studio and the jvm.dll.{%endtip%}
 
 {% endtabcontent %}
 {% tabcontent Linux %}

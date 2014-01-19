@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  Maven Plugin - Advanced
+title:  Advanced Configuration
 categories: XAP97
 parent: maven-plugin.html
 weight: 100
 ---
 
-{% summary page|65 %}Processing unit assembly definition.{% endsummary %}
+{% summary %}Processing unit assembly definition.{% endsummary %}
 
-# Description
+# Overview
 
 This page contains information beyond the basics. It was created for those who want to know a little bit more about how OpenSpaces and Maven integrate. Basically, the information given in [OpenSpaces Maven Plugin](./maven-plugin.html) should be sufficient for the common user.
 
