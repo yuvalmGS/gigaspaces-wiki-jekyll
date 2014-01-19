@@ -18,6 +18,8 @@ You don't need to be an experienced Maven user to start working with this plugin
 
 {% refer %}For further information about maven see: [apache.org; What is Maven?](http://maven.apache.org/what-is-maven.html){% endrefer %}
 
+<iframe width="640" height="390" src="//www.youtube.com/embed/_n8ZCnoAIyw" frameborder="0" allowfullscreen></iframe>
+
 # Prior to Installation
 
 In order to use the OpenSpaces Maven plugin, Maven needs to be installed on the machine. If a Maven installation already exists on the machine, it can be used. If not, GigaSpaces comes with a ready-to-use distribution of Maven 3.0, located under: `<JSHOMEDIR>/tools/maven/apache-maven-3.0`.
