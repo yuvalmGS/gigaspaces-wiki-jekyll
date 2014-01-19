@@ -18,8 +18,8 @@ module Jekyll
 
       def add_bgcolor(context, content)
         output = "<span style=\"background-color:#{@bgcolor}\">"
-        #output << content
-        output << Kramdown::Document.new(content).to_html
+        output << content
+        #output << Kramdown::Document.new(content).to_html
         output << "</span>"
       end
     end
