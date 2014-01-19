@@ -16,5 +16,8 @@ The latest version of XAP can be downloded [here](http://www.gigaspaces.com/xap-
 {%note%}For a list of supported platforms please consult [the realease notes](/release_notes) {%endnote%}
 
 
+<iframe width="640" height="360" src="//www.youtube.com/embed/Q1zCFxqbqrQ?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
+
+
 
 {%children%}
