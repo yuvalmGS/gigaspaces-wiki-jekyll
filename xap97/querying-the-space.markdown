@@ -22,8 +22,8 @@ This section explains the various mechanisms offered by GigaSpaces XAP to query 
 <iframe width="640" height="360" src="//www.youtube.com/embed/jC57mId3SMg?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 
 
-{%wbr%}
 
-{%vbar title=Sub Topics %}
+
+
 {% children %}
-{%endvbar%}
+
