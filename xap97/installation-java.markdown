@@ -13,6 +13,7 @@ weight: 200
 
 GigaSpaces XAP is 100% pure Java, and therefore can run on any UNIX or Windows machine that supports Java.
 
+<iframe width="640" height="360" src="//www.youtube.com/embed/n7P4rnQN1gw?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
 
 
 {%anchor Prior-to-Installation%}
