@@ -87,7 +87,7 @@ GigaSpaces `POJO` rules:
  You can define space classes metadata by class and field level decorations. These can be defined via annotations or XML configurations files (*gs.xml file).
 {% endinfo %}
 
-{% note %} This page deals with the POJO class as a space domain class, used to model the space, and store application data into the IMDG. POJO classes deployed as services into the Service Grid are described in the [Data Event Listener](./data-event-listener.html) and [Space Based Remoting](./space-based-remoting.html) sections. In these cases, the POJO class is used to process incoming data, or is invoked remotely.{%endnote%}
+This page deals with the POJO class as a space domain class, used to model the space, and store application data into the IMDG. POJO classes deployed as services into the Service Grid are described in the [Data Event Listener](./data-event-listener.html) and [Space Based Remoting](./space-based-remoting.html) sections. In these cases, the POJO class is used to process incoming data, or is invoked remotely.
 
 # A POJO as a Space Domain Class
 
@@ -135,9 +135,15 @@ POJO space mapping files `gs.xml` files can be loaded from:
 - `<CLASSPATH>\config\mapping` folder, or
 - The same package where the class file is located using the format `<<Class Name>>.gs.xml`.
 
+## User Defined Space Class Fields
+
+You may have user defined data types (non-primitive data types) with your Space class. These should implement the `Serializable` or `Externalizable` interface. The user defined class nested fields can be used with queries and can be indexed. See the [Nested Properties](./sqlquery.html#Nested Properties) and the [Nested Properties Indexing](./indexing.html#Nested Properties Indexing) section for details.
+
+{%comment%}
 ## Jini Entry Handling
 
 All `net.jini.core.entry.Entry` based classes meta data methods are not supported with POJO based classes. These include: __setEntryInfo() , \__getEntryInfo() , \__setEntryUID() , \__getEntryUID() ,_\_getSpaceIndexedFields(). With POJO based space domain classes, meta data is declared using relevant annotations or xml tags. see the [POJO Metadata](./pojo-metadata.html) for details.
+{%endcomment%}
 
 ## Reference Handling
 

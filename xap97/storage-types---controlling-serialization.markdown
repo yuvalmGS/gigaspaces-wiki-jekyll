@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Storage Types - Controlling Serialization
+title:  Storage Types
 categories: XAP97
-parent: pojo-support.html
-weight: 400
+parent: getting-started.html
+weight: 350
 ---
 
-{% compositionsetup %}
+
 {% summary %} Using storage type per type and per property to determine in which way each property is stored in space.{% endsummary %}
 
 # Available Storage Types
