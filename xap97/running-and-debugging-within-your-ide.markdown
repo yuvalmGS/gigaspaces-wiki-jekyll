@@ -3,7 +3,7 @@ layout: post
 title:  Running and Debugging Within Your IDE
 categories: XAP97
 parent: getting-started.html
-weight: 200
+weight: 700
 ---
 
 {% summary %}Explains how to run your processing unit inside your IDE or in unit tests{% endsummary %}

@@ -35,7 +35,7 @@ Below is a list of some of a selected list of commonly used variables that are d
 | `ECLIPSE_REMOTE_DEBUG` |For remote Eclipse debugging add the `ECLIPSE_REMOTE_DEBUG` variable to the application command line.|
 | `REMOTE_JMX` |Enable monitoring and management from remote systems using JMX jconsole.|
 
-{% infosign %} The default value of the `LOOKUPGROUPS` variable is the GigaSpaces version number, preceded by `XAP`. For example, in GigaSpaces XAP 6.0, the default lookup group is `gigaspaces-6.0XAP`. This is the lookup group which the space and Jini Transaction Manager register with, and which clients use by default to connect to the space.
+{% info %} The default value of the `LOOKUPGROUPS` variable is the GigaSpaces version number, preceded by `XAP`. For example, in GigaSpaces XAP 6.0, the default lookup group is `gigaspaces-6.0XAP`. This is the lookup group which the space and Jini Transaction Manager register with, and which clients use by default to connect to the space.{%endinfo%}
 
 # Using the setenv Utility
 

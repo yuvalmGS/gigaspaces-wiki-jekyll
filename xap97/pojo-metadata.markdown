@@ -1,18 +1,23 @@
 ---
 layout: post
-title:  POJO Metadata
+title:  Metadata
 categories: XAP97
 parent: pojo-support.html
 weight: 100
 ---
 
-{% summary %}GigaSpace API Plain Old Java Object support - the [POJO](http://en.wikipedia.org/wiki/Plain_Old_Java_Object). This section deals with the annotations and gs.xml mapping file decorations.{% endsummary %}
+{% summary %}This section deals with the annotations and gs.xml mapping file decorations.{% endsummary %}
 
-# Space POJO Annotations and XML Mapping (gs.xml) File Elements
 
-{% anchor 1 %}
 
-The [GigaSpaces API](./the-gigaspace-interface.html) supports class and field-level decorations with POJOs. These can be specified via annotations on the space class source itself or external xml file accompanied with the class byte code files located within the jar/war. You can define common behavior for all class instances, and specific behavior for class fields. You may use the gs.xml files to decorate your Space classes as an alternative to Annotations or when you want to share the space decorations with .Net and C++ application accessing the same space objects.
+
+The [GigaSpaces API](./the-gigaspace-interface.html) supports class and field-level decorations with POJOs. These can be specified via annotations on the space class source itself or external xml file accompanied with the class byte code files located within the jar/war. You can define common behavior for all class instances, and specific behavior for class fields.
+
+
+{%children%}
+
+
+{%comment%}
 
 {% inittab os_simple_space|top %}
 {% tabcontent Annotations %}
@@ -521,9 +526,15 @@ For details about scaling a running space cluster **in runtime** see the [Dynami
 {% endtabcontent %}
 {% endinittab %}
 
+
+
+
 # User Defined Space Class Fields
 
 You may have user defined data types (non-primitive data types) with your Space class. These should implement the `Serializable` or `Externalizable` interface. The user defined class nested fields can be used with queries and can be indexed. See the [Nested Properties](./sqlquery.html#Nested Properties) and the [Nested Properties Indexing](./indexing.html#Nested Properties Indexing) section for details.
+
+
+{%endcomment%}
 
 # Troubleshooting
 

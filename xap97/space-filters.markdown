@@ -6,14 +6,15 @@ parent: the-space-component.html
 weight: 100
 ---
 
-{% compositionsetup %}
 {% summary %}Space Filters are interceptors inside the GigaSpaces space engine.{% endsummary %}
 
 # Overview
 
 Space Filters are interceptors inside the GigaSpaces space engine that enable integration with external systems and/or implementation of user-defined logic based once space operations are executed.
 
+{%indent 30 %}
 ![Space Filter.JPG](/attachment_files/Space Filter.JPG)
+{%endindent%}
 
 The Space Filter implementation may use the following interceptors. The relevant method should be annotated with the annotation listed below. The signature of these methods may include the following parameters:
 
@@ -346,11 +347,14 @@ public class MyTask implements Task<Serializable>{
 {% endtabcontent %}
 {% endinittab %}
 
+{%comment%}
 ## The expected output
+{%endcomment%}
 
-Here is how the expected output should look like:
+{% togglecloak id=1 %} Here is how the expected output should look like:{% endtogglecloak %} {% gcloak 1 %}
 
 {% highlight java %}
+
 MySpaceFilter Space Filter initialized
 INFO [com.gigaspaces.core.common] - Space [space_container:space] with url
  [/./space?schema=default&groups=gigaspaces-7.1.0-XAPPremium-rc&state=started] started successfully
@@ -401,6 +405,9 @@ SpaceDataEvent event called
 afterNotifyTrigger called  Class Message - Object ID:1 data:AAAA
 afterAllNotifyTrigger called  Class Message - Object ID:1 data:AAAA
 {% endhighlight %}
+
+{% endgcloak %}
+
 
 # Advanced Options
 

@@ -2,8 +2,8 @@
 layout: post
 title:  Integrations
 categories: XAP97
-weight: 400
 parent: programmers-guide.html
+weight: 1400
 ---
 
 {% children %}

@@ -119,3 +119,9 @@ We've indicated that `-1` should be treated as `null` when performing template m
 ## Nested Template Matching
 
 Nested template matching is not supported - to match nested properties, collections and arrays use [SQLQuery](./sqlquery.html).
+
+
+<ul class="pager">
+  <li class="previous"><a href="./id-queries.html">&larr; Id Query</a></li>
+  <li class="next"><a href="./sqlquery.html">SQL Query &rarr;</a></li>
+</ul>

@@ -6,8 +6,8 @@ parent: the-in-memory-data-grid.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}Explains the topologies and clustering mechanism of the GigaSpaces in-memory data grid (the Space){% endsummary %}
+
+{% summary  %}Explains the topologies and clustering mechanism of the GigaSpaces in-memory data grid (the Space){% endsummary %}
 
 # Overview
 
@@ -67,4 +67,3 @@ GigaSpaces XAP supports the following data grid topologies:
 - Partitioned with backup - `partitioned-sync2backup`
 The local cache and local view topologies do not need their own schemas, because they are defined on the client side.
 
-{% children %}

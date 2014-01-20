@@ -2,8 +2,8 @@
 layout: post
 title:  FIFO Support
 categories: XAP97
-parent: the-space-api.html
-weight: 600
+parent: programmers-guide.html
+weight: 500
 ---
 
 {% summary %}How to get entries in the same order in which they were written to the space.{% endsummary %}

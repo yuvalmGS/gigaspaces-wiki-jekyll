@@ -92,5 +92,20 @@ title
 
 
 
+#### VBar
+
+{%panel%}
+This is a box that displays a VBar
+
+{%vbar title=VBar title%}This is a remark {%endvbar%}
+{%panel bgColor=white | title=Markdown%}
+{% raw  %}
+{%vbar title=VBar title%}This is a remark {%endvbar%}
+{% endraw  %}
+{% endpanel %}
+{%panel bgColor=white | title=Parameters%}
+title
+{% endpanel %}
+{% endpanel %}
 
 

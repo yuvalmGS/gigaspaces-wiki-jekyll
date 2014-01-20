@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  GigaSpaces Read Modifiers
+title:  Read Modifiers
 categories: XAP97
-parent: space-locking-and-blocking.html
-weight: 100
+parent: transaction-management.html
+weight: 200
 ---
 
- {% summary %}GigaSpaces `EXCLUSIVE_READ_LOCK`, `READ_COMMITTED`, `DIRTY_READ`, and `REPEATABLE_READ` modifiers.{% endsummary %}
+ {% summary %}GigaSpaces EXCLUSIVE_READ_LOCK, READ_COMMITTED, DIRTY_READ, and REPEATABLE_READ modifiers.{% endsummary %}
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 

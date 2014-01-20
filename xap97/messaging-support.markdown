@@ -6,7 +6,7 @@ parent: integrations.html
 weight: 200
 ---
 
-{% children %}
+
 
 ![archi_messa.jpg](/attachment_files/archi_messa.jpg)
 
@@ -19,3 +19,6 @@ weight: 200
 |[Priority Based Queue](/sbp/priority-based-queue.html)|Messaging based pattern. Can be used when moving from **J2EE JMS** Quality of Service into XAP.|
 |[Parallel Queue Pattern](/sbp/parallel-queue-pattern.html)|Messaging based pattern. Can be used when moving from **J2EE JMS Service Activator Aggregator Strategy/MDB** into XAP.|
 |[Unit Of Work](/sbp/unit-of-work.html)|Messaging based pattern. Can be used when moving from **J2EE JMS** Unit of Order into XAP.|
+
+
+{% children %}

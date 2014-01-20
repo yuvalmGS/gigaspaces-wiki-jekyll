@@ -2,11 +2,10 @@
 layout: post
 title:  Dynamic Properties
 categories: XAP97
-parent: pojo-support.html
-weight: 300
+parent: getting-started.html
+weight: 150
 ---
 
-{% compositionsetup %}
 {% summary %}Using Dynamic Properties with POJO entries.{% endsummary %}
 
 # Overview
@@ -41,7 +40,7 @@ public class Person {
 }
 {% endhighlight %}
 
-{% plus %} It is recommended to use the `DocumentProperties` class to host dynamic properties, as it provides a [fluent interface](http://en.wikipedia.org/wiki/Fluent_interface) to set properties as well as better performance and memory footprint.
+{% note %} It is recommended to use the `DocumentProperties` class to host dynamic properties, as it provides a [fluent interface](http://en.wikipedia.org/wiki/Fluent_interface) to set properties as well as better performance and memory footprint.{%endnote%}
 
 # Using Dynamic Properties
 

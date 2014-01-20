@@ -8,7 +8,6 @@ weight: 300
 
 {% summary %}Setting the `JAVA_HOME` parameter to tell GigaSpaces where the JDK is installed.{% endsummary %}
 
-# Overview
 
 GigaSpaces has a dependency on the `JAVA_HOME` environment variable being set. Make sure you have an environment variable `JAVA_HOME` defined pointing to your JDK root directory.
 In the case of `JAVA_HOME` not being set, GigaSpaces script files will print an error message.

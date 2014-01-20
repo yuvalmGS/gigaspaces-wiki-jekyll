@@ -67,3 +67,9 @@ See [Parent Child Relationship](./parent-child-relationship.html) for a full usa
 ReadById is intended to objects with meaningful ids,if used with auto-generate="true" ids,the given object type will be ignored.
 {% endtip %}
 
+
+
+<ul class="pager">
+  <li class="previous"><a href="./querying-the-space.html">&larr; Querying the Space</a></li>
+  <li class="next"><a href="./template-matching.html">Template Matching &rarr;</a></li>
+</ul>

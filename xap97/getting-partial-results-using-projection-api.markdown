@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Getting Partial Results Using Projection API
+title:  Partial Results
 categories: XAP97
 parent: querying-the-space.html
 weight: 800
@@ -76,3 +76,9 @@ Projected properties can specify both dynamic or fixed properties and the usage 
 
 1. You can't use a projection on [Local Cache](./local-cache.html) as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projection will only impact performance.
 1. You can't use a projection to query a Local View for the same reason as Local Cache, however, You can create the local view with projection template and the Local View will be contain the objects in their projected form.
+
+
+<ul class="pager">
+  <li class="previous"><a href="./paging-support-with-space-iterator.html">&larr; Paging Support</a></li>
+  <li class="next"><a href="./querying-the-space.html">Querying the Space &rarr;</a></li>
+</ul>

@@ -6,14 +6,20 @@ parent: deploying-and-interacting-with-the-space.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}A Space component allows you to create an `IJSpace` (or `JavaSpace`) based on a space URL.{% endsummary %}
+
+{% summary %}A Space component allows you to create an `IJSpace` (or `JavaSpace`) based on a space URL.{% endsummary %}
 
 # Overview
 
+{%section%}
+{%column width=60% %}
 The different space components allow you to configure a space within a Spring application context (or a Processing Unit). A Space component allows you to create an `IJSpace` (or `JavaSpace`) with the most common practice of creating one based on a [Space URL](./space-url.html).
+{%endcolumn%}
 
+{%column width=35% %}
 ![OS_OnlyEmbedded.jpg](/attachment_files/OS_OnlyEmbedded.jpg)
+{%endcolumn%}
+{%endsection%}
 
 Here is an example of creating a space within a Spring XML-based configuration:
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Paging Support with Space Iterator
+title:  Paging Support
 categories: XAP97
 parent: querying-the-space.html
 weight: 700
@@ -183,3 +183,9 @@ The `GSIterator` uses the following `NotifyModifiers`:
 Updates do affect the iterator.
 {% endtip %}
 {% endcomment %}
+
+
+<ul class="pager">
+  <li class="previous"><a href="./query-user-defined-classes.html">&larr; User Defined Class</a></li>
+  <li class="next"><a href="./getting-partial-results-using-projection-api.html">Partial Results &rarr;</a></li>
+</ul>

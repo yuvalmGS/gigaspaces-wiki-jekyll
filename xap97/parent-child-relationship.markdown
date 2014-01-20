@@ -2,11 +2,11 @@
 layout: post
 title:  Parent Child Relationship
 categories: XAP97
-parent: pojo-support.html
-weight: 200
+parent: modeling-and-accessing-your-data.html
+weight: 300
 ---
 
-{% compositionsetup %}{% summary %}Constructing Parent-Child Relationships with GigaSpaces Data-Grid{% endsummary %}
+{% summary %}Constructing Parent-Child Relationships with GigaSpaces Data-Grid{% endsummary %}
 
 # Parent-Child Relationship
 
@@ -34,8 +34,9 @@ The example demonstrates a simple approach locating all the parent objects that 
 The full example source code can be downloaded [here](/download_files/ParentChild_711.zip).
 {% endtip %}
 
-# Child class
 
+{% inittab Space-Level Storage Type|top %}
+{% tabcontent Child Class %}
 {% highlight java %}
 package com.j_spaces.examples.parentchild;
 
@@ -95,8 +96,9 @@ public class Child {
 	}
 }
 {% endhighlight %}
+{%endtabcontent%}
 
-# Parent class
+{% tabcontent Parent class %}
 
 {% highlight java %}
 package com.j_spaces.examples.parentchild;
@@ -200,7 +202,10 @@ public class Parent  {
 }
 {% endhighlight %}
 
-# Application
+{%endtabcontent%}
+
+{% tabcontent Application %}
+
 
 {% highlight java %}
 package com.j_spaces.examples.parentchild;
@@ -329,6 +334,10 @@ public class ParentChildMain {
 	}
 }
 {% endhighlight %}
+
+{%endtabcontent%}
+
+{%endinittab%}
 
 # Expected output
 

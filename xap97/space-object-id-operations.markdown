@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Space Object ID Operations
+title:  Space Object ID
 categories: XAP97
-parent: the-space-api.html
+parent: getting-started.html
 weight: 300
 ---
 
-{% compositionsetup %}{% summary %}Space Object ID Usage{% endsummary %}
+{% summary %}Space Object ID Usage{% endsummary %}
 
 # How Space Object ID is Generated?
 
@@ -22,7 +22,7 @@ The space UID for space object can be created in three different ways:
 See the [Global ID Generator](/sbp/global-id-generator.html) for a generic ID generator service you may use with your application.
 {% endtip %}
 
-{% infosign %} To learn how to read space entries by ID see [ID Queries](./id-queries.html).
+{% info %} To learn how to read space entries by ID see [ID Queries](./id-queries.html). {%endinfo%}
 
 # The SpaceId Field content
 
@@ -35,7 +35,7 @@ See the [Global ID Generator](/sbp/global-id-generator.html) for a generic ID ge
 
 You might need to construct an ID that will be comprised from a user defined Object rather than using a Numeric or String type field. In such a case your user defined class used as the `SpaceId` data type must implement the `toString` , `hashCode` and `equals` methods.
 
-{% exclamation %} The compound ID class must implement a `toString` method that return a unique String for each ID.
+{% note %} The compound ID class must implement a `toString` method that return a unique String for each ID. {%endnote%}
 
 See below example:
 

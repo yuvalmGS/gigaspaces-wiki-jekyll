@@ -2,8 +2,8 @@
 layout: post
 title:  The In-Memory Data Grid
 categories: XAP97
-parent: main-modules.html
-weight: 100
+parent: programmers-guide.html
+weight: 900
 ---
 
 
@@ -11,9 +11,14 @@ weight: 100
 
 # Overview
 
+{%section%}
+{%column width=50% %}
 This section describes the Space, GigaSpaces in-memory data grid implementation. The Space enables your application to read data from it, and write data to it in various ways. It also deals with various configuration aspects, such as space topologies, persistency to an external data source and memory management facilities.
-
+{%endcolumn%}
+{%column width=45% %}
 ![archi_imdg.jpg](/attachment_files/archi_imdg.jpg)
+{%endcolumn%}
+{%endsection%}
 
 # The Space as the System of Record
 
@@ -120,11 +125,5 @@ In addition, the higher level services (remoting and event processing), are also
 Besides its ability to function as an in-memory data grid, the Space's core features and the services on top of it, form the foundation for [Space-Based Architecture (SBA)](/product_overview/a-typical-sba-application.html). By using SBA, you can gain performance and scalability benefits not available with traditional tier-based architectures, even when these include an in-memory data grid, such as the Space.
 The basic unit of scalability in SBA is the [processing unit](./packaging-and-deployment.html). The Space can be embedded into the processing unit, or accessed remotely from it. When embedded into the processing unit, local services, such as event handler and service bean exposed remotely over the space, can interact with the local space instance to achieve unparalleled performance and scalability. The Space's built-in support for data partitioning is used to distribute the data and processing across the nodes, and for scaling the application.
 
-# What's Next
-
-It is recommended that you read the following sections next:
-
-- [Space Topologies](./space-topologies.html)
-- [Deploying and Interacting with the Space](./deploying-and-interacting-with-the-space.html)
 
 {% children %}

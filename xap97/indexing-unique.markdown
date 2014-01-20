@@ -1,15 +1,11 @@
 ---
 layout: post
-title:  Unique Index
+title:  Unique
 categories: XAP97
 parent: indexing.html
-weight: 100
+weight: 400
 ---
 
-
-{% summary %}Space class with unique constraint {% endsummary %}
-
-# Overview
 
 Unique constraints can be defined for an attribute or attributes of a space class. This will ensure that only one instance of the space class exists in the space with the specific attribute value. These indexes are applicable to all types of index; Basic, Extended, Compound and Collection indices.
 
