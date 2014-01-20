@@ -14,7 +14,7 @@ Below is a list of known issues in GigaSpaces 9.7.X.
 | Key | Summary | SalesForce ID | Since version | Workaround | Platform/s
 |:----|:--------|:----------------|:---------------|:------------------|:----------|
 | GS-11222 | Unable to run GigaSpaces component when installed under folder with '(',')' chars | 8169 | 9.7.0 | | All |
-| GS-11249 | Error while deploying a processing unit which contains '#' in its name/directory | 8209 | 9.7.0 | | Java,.Net |
+| GS-11249 | Error while deploying a processing unit which contains '#' in its name/directory | 8209 | 9.7.0 | | Java, .Net |
 | GS-11295 | Web-ui show strange log msg when trying to run custom command on gsc which contains stateful pu | | 9.7.0 | | All |
 | GS-11320 | Progress is missing when performing undeploy application/service via Web-ui | | 9.7.0 | | All |
 | GS-11346 | Web-ui doesn't show the correct running/planned instances of a deployed application | | 9.7.0 | | All |
@@ -36,7 +36,7 @@ Below is a list of known issues in GigaSpaces 9.7.X.
 | GS-11519 | Web-ui logs - Feature Requests | | 9.7.0 | | All |
 | GS-11520 | Web-ui logs - buttons are not working | | 9.7.0 | | All |
 | GS-11534 | Heap Dumps not supported on IBM jdk | | 9.7.0 | | All |
-| GS-11537 | @EventDriven @Polling @Notify should support inheritance | 8560 | 9.7.0 | | Java,.Net |
+| GS-11537 | @EventDriven @Polling @Notify should support inheritance | 8560 | 9.7.0 | | Java, .Net |
 | GS-11542 | .Net ScalingAgent example - inverted arrows | | 9.7.0 | | .Net |
 | GS-11546 | ESM stateless increment instance - timeout is too big | | 9.7.0 | | Java |
 | GS-11547 | NPE in admin when primary GSM restarts | | 9.7.0 | | Java |
@@ -44,3 +44,4 @@ Below is a list of known issues in GigaSpaces 9.7.X.
 | GS-11555 | Deploying with max-instances-per-zone 0 result in 1 instance | 8574 | 9.7.0 | | All |
 | GS-11557 | .Net add validation that both client and server classes are including the same aliases | 8546 | 9.7.0 | | .Net |
 | GS-11561 | Reading a POJO which contains a document using mongo EDS fails | | 9.7.0 | | Java |
+| GS-11592 | Web-ui ssh terminal blocked by java 1.7u51 | | 9.7.0 | | Java |
