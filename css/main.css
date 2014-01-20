@@ -15,6 +15,11 @@ pre {
   tab-size:4;
 }
 
+code {
+  color: #515153;
+}
+
+
 /* Wrapper for page content to push down footer */
 #wrapper {
   min-height: 100%;
