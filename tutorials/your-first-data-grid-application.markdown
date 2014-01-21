@@ -6,120 +6,193 @@ weight: 200
 parent: xap-tutorials.html
 ---
 
+{% summary page %}This tutorial explains how to deploy and use a XAP [Data Grid]({%latestjavaurl%}/the-in-memory-data-grid.html) from a Java client application {% endsummary %}
+ 
+# Overview
 
-{% summary page %}This tutorial explains how to start and use a XAP [Data Grid]({%latestjavaurl%}/the-in-memory-data-grid.html) from within another Java process, catering to quick and self-sufficient embedding of XAP within another, external application. The complete XAP tutorial can be found [here](./xap-tutorials.html){% endsummary %}
+In this tutorial we will:
 
-GigaSpaces XAP can be used as a scalable application platforom on which you can host your Java application, similar to JEE and web containers. However, GigaSpaces XAP's in memory data grid can also be embedded within another Java application which is not hosted within the XAP platform. This section describes the steps required to start and access the XAP data grid from within external Java processes.
+1. Download and install **XAP**.
+2. Deploy a Data Grid.
+3. Write code that connects to the Data Grid and interacts with it.
+ 
+# Download and Install XAP
 
-# General Description
+Getting XAP is simple: download it from the [Current Releases](http://www.gigaspaces.com/LatestProductVersion) page.
 
-The XAP data grid requires a number of components to be deployed and started successfully, such as the [lookup service]({%latestjavaurl%}/the-lookup-service.html), the [grid service container]({%latestjavaurl%}/service-grid.html#gsc) and the [grid service manager]({%latestjavaurl%}/service-grid.html#gsm). The simplest way to start all of these components is to fire up a [grid service agent]({%latestjavaurl%}/service-grid.html#gsa) on every machine you wish to run a data grid node on.
-The agent is responsible for bootstrapping the GigaSpaces cluster environment implicitly, and starting all of the required components. All agents use a peer to peer communication between one another to ensure a successful cluster wide startup of all infrastructure components.
+Installing XAP is just as easy - unzip it into a directory of your choice:
 
+* On Windows, you might unzip it into `c:\tools\`, which will create `c:\tools\{{ site.latest_gshome_dirname }}`.
+* On Unix, you might unzip it into `/usr/local/`, which will create `/usr/local/{{ site.latest_gshome_dirname }}`. You'll also need to grant execution permissions to the scripts in the `bin` folder.
 
-![POJO_write.jpg](/attachment_files/POJO_write.jpg)
-![POJO_write.jpg](/attachment_files/POJO_read.jpg)
+# Deploy a Data Grid
 
+### Starting a Service Grid
 
+A Data Grid requires a [Service Grid]({%currentjavaurl%}/service-grid.html) to host it. A service grid is composed of one or more machines (service grid nodes) running a [Service Grid Agent]({%currentjavaurl%}/service-grid.html#gsa) (or `GSA`), and provides a framework to deploy and monitor applications on those machines, in our case the Data Grid.
 
-Once all agents have started, you can issue a few simple API calls from within your application code to bootstrap the data grid and interact with it, by using the [GigaSpaces Elastic Middleware]({%latestjavaurl%}/elastic-processing-unit.html) capabilties.
-These API calls will provision a data grid on the GigaSpaces cluster based on the capacity and other SLA requirements specified in the API calls.
+In this tutorial you'll launch a single node service grid on your machine. To start the service grid, simply run the `gs-agent` script from the product's `bin` folder.
 
-The following example shows how to run the GigaSpaces Data Grid within your application.
-
-# Running the GigaSpaces XAP Data Grid
-
-## Acquiring and Installing XAP
-
-Acquiring XAP is simple: download an archive from the [Current Releases](http://www.gigaspaces.com/LatestProductVersion) page.
-Installing XAP is just as easy - since it's just an archive, unzip it into a directory of your choice.
-On Windows, for example, one might install it into `C:\tools\`, leading to an installation directory of `C:\tools\{{ site.latest_gshome_dirname }}`.
-
-In a UNIX environment, you might install it into `/usr/local/`, which would result in a final installation directory of `/usr/local/{{ site.latest_gshome_dirname }}`.
-
-## Running the GigaSpaces Agent
-
-A GigaSpaces node is best facilitated through the use of a service called the "[Grid Service Agent]({%latestjavaurl%}/service-grid.html#gsa)", or GSA.
-The simplest way to start a node with GigaSpaces is to invoke the GSA from the GigaSpaces bin directory, preferably in its own command shell (although you can easily start a background process with `start` or `nohup` if desired):
-
-{%panel title=Unix %}
-{% highlight java %}
-.\gs-agent.bat gsa.global.esm 1 gsa.gsc 2 gsa.global.lus 2 gsa.global.gsm 2
-{% endhighlight %}
-{%endpanel%}
-
-{%panel title=Windows %}
-{% highlight java %}
-./gs-agent.sh gsa.global.esm 1 gsa.gsc 2 gsa.global.lus 2 gsa.global.gsm 2
-{% endhighlight %}
-{%endpanel%}
-
-## Connecting to a Data Grid
-
-In order to create a data grid, you need to first deploy it onto the GigaSpaces cluster. It's actually fairly easy to write some code that can connect to an existing data grid, or deploy a new one if the datagrid doesn't exist.
-
-First, make sure your application's classpath includes the includes the [GigaSpaces runtime libraries]({%latestjavaurl%}/setting-classpath.html). In short, include all jars under `<XAP installation root>/lib/required` in your classpath. Then, connect to the datagrid. In the GigaSpace lingo, a data grid is called a _Space_, and a data grid node is called a _Space Instance_. The space is hosted within a _Processing Unit_, which is the GigaSpaces unit of deployment. The following snippets shows how to connect to an existing data grid or deploy a new one if such does not exist.
-
-Creating and deploying an Elastic Data Grid
-
-{% highlight java %}
-try {
-    //create an admin instance to interact with the cluster
-    Admin admin = new AdminFactory().createAdmin();
-
-    //locate a grid service manager and deploy a partioned data grid with 2 primaries and one backup for each primary
-    GridServiceManager esm = admin.getGridServiceManagers().waitForAtLeastOne();
-    ProcessingUnit pu = esm.deploy(new SpaceDeployment(spaceName).partitioned(2, 1));
-} catch (ProcessingUnitAlreadyDeployedException e)  {
-    //already deployed, do nothing
-}
-
-//Once your data grid has been deployed, wait for 4 instances (2 primaries and 2 backups)
-pu.waitFor(4, 30, TimeUnit.SECONDS);
-
-//and finally, obtain a reference to it
-GigaSpace gigaSpace = pu.waitForSpace().getGigaSpace();
-{% endhighlight %}
-
-
-{% note %}*Lite edition support a single partition*
-If you are using the Lite edition use this:
-{% highlight java %}
-ProcessingUnit pu = esm.deploy(new SpaceDeployment(spaceName).partitioned(1, 1));
-....
-pu.waitFor(2, 30, TimeUnit.SECONDS);
-{% endhighlight %}
-{% endnote %}
-
-
-You can also use a simple helper utility (DataGridConnectionUtility) that combines the two. It first look for a DataGrid instance and if one doesn't exist it will create a new one; it's trivial to alter the `getSpace()` method to increase the number of nodes or even scale dynamically as required. Read [this]({%latestjavaurl%}/elastic-processing-unit.html) for more detailed information on how elastic scaling works.
-
-{% tip %}
-A The DataGridConnectionUtility class [is available on Github](https://github.com/Gigaspaces/bestpractices/blob/master/plains/src/main/java/org/openspaces/plains/datagrid/DataGridConnectionUtility.java), in the "plains" project.
+{% tip title=*Optional* - The Web Console %}
+XAP provides a web-based tool for monitoring and management. From the `bin` folder start the `gs-webui` script, then browse to [localhost:8099](http://localhost:8099). Click the 'Login' button and take a look at the *Dashboard* and *Hosts* tabs - you'll see the service grid components created on your machine.
 {% endtip %}
 
-With this class in the classpath, getting a datagrid reference is as simple as:
+### Deploying the Data Grid
 
-{% highlight java %}
-GigaSpace space=DataGridConnectionUtility.getSpace("myGrid");
+The Data grid can be deployed from command line, from the web management tool or via an Administration API. In this tutorial we'll use the command line.
+
+Start a command line, navigate to the product's `bin` folder and run the following command:
+
+{% inittab %}
+{% tabcontent Unix %}
+{% highlight bash %}
+./gs.sh deploy-space -cluster total_members=2,1 myGrid
 {% endhighlight %}
+{% endtabcontent %}
+{% tabcontent Windows %}
+{% highlight bash %}
+gs.bat deploy-space -cluster total_members=2,1 myGrid
+{% endhighlight %}
+{% endtabcontent %}
+{% endinittab %}
+  
+This command deploys a Data Grid (aka space) called **myGrid** with 2 partitions and 1 backup per partition (hence the `2,1` syntax). 
+
+If you're using the web console mentioned above to see what's going on, you'll see the data grid has been deployed.
+ 
+{%info%} Note that the Lite edition is limited to a single partition - if you're using it type `total_members=1,1` instead.{%endinfo%}
 
 # Interacting with the Data Grid
 
-Once you've obtained a reference to the data grid, it's time to write some data to it.
-You can write any POJO to the data grid, so long as it has a default constructor and a getter and setter for every property you want to store in the space. Here's an example for a simple POJO:
+### Setting up you IDE
+
+Open your favorite java IDE (Eclipse, IntelliJ IDEA, etc), Create a new project, and add all the jars from `{{ site.latest_gshome_dirname }}/lib/required` to the project's classpath.
+
+{%info%} For more info see [Setting Classpath]({%latestjavaurl%}/setting-classpath.html).{%endinfo%}
+
+### Connecting to the Grid
+
+Since the Data grid is not located in our client process, we need some sort of address to find it. Data grids are searched using a `Space URL`, for example: `jini://*/*/myGrid`. This roughly translates to: Find a remote space called `myGrid` (for more information see [SpaceURL]({%latestjavaurl%}/space-url.html)).
+
+Now that we have an address, we can connect to the grid:       
 
 {% highlight java %}
-import com.gigaspaces.annotation.pojo.SpaceClass;
+UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("jini://*/*/myGrid");
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).create();
+{% endhighlight %}
+
+The result is a `GigaSpace` instance, which is a proxy to the `myGrid` data grid. 
+
+{%info%} The `UrlSpaceConfigurer` and `GigaSpaceConfigurer` provide additional options which are not covered in this tutorial.{%endinfo%}
+
+### Implementing a POJO
+
+We now have a `GigaSpace` instance connected to our grid, which we can use to store and retrieve entries. But what shall we write? Actually, any POJO can be stored in the space, so long as it has a default constructor and an ID property. For this tutorial let's define a `Person` class with the following properties:
+
+{% highlight java %}
 import com.gigaspaces.annotation.pojo.SpaceId;
 
-@SpaceClass
 public class Person {
+
     private Integer ssn;
     private String firstName;
     private String lastName;
 
-    //default constructor, required
+    // Default constructor (required by XAP)
+    public Person() {}
+
+    @SpaceId
+    public Integer getSsn() {
+        return ssn;
+    }
+    public void setSsn(Integer ssn) {
+        this.ssn = ssn;
+    }
+
+    // Getters and Setters of firstName and lastName are omitted in this snippet.    
+}
+{% endhighlight %}
+
+Note that we've annotated the `ssn` property's getter with a custom XAP annotation (`@SpaceId`) to mark it as the entry'd ID.
+
+{%infosign%} The full source code of `Person` is available [at the end](#source) of this tutorial.
+ 
+### Interacting with the grid
+
+Now that we have a `GigaSpace` instance connected to our grid and a POJO which can be stored, we can store entries in the grid using the `write()` method and read them using various `read()` methods:
+
+{% highlight java %}
+System.out.println("Write (store) a couple of entries in the data grid:");
+gigaSpace.write(new Person(1, "Vincent", "Chase"));
+gigaSpace.write(new Person(2, "Johnny", "Drama"));
+
+System.out.println("Read (retrieve) an entry from the grid by its id:");
+Person result1 = gigaSpace.readById(Person.class, 1);
+
+System.out.println("Read an entry from the grid using a SQL-like query:");
+Person result2 = gigaSpace.read(new SQLQuery<Person>(Person.class, "firstName=?", "Johnny"));
+
+System.out.println("Read all entries of type Person from the grid:");
+Person[] results = gigaSpace.readMultiple(new Person());
+{% endhighlight %}
+
+If you're using the web console mentioned above to see what's going on, you'll see two entries stored in the grid, one in each partition.
+
+### {% anchor source %} Full Source Code
+
+{% togglecloak id=1 %}`Program.java`{% endtogglecloak %}
+{% gcloak 1 %}
+{% highlight java %}
+package com.gigaspaces.demo;
+
+import com.j_spaces.core.client.SQLQuery;
+import org.openspaces.core.GigaSpace;
+import org.openspaces.core.GigaSpaceConfigurer;
+import org.openspaces.core.space.UrlSpaceConfigurer;
+
+public class Program {
+
+    public static void main(String[] args) {
+        String url = "jini://*/*/myGrid";
+        System.out.println("Connecting to data grid " + url);
+        UrlSpaceConfigurer configurer = new UrlSpaceConfigurer(url);
+        GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).create();
+
+        System.out.println("Write (store) a couple of entries in the data grid:");
+        gigaSpace.write(new Person(1, "Vincent", "Chase"));
+        gigaSpace.write(new Person(2, "Johnny", "Drama"));
+
+        System.out.println("Read (retrieve) an entry from the grid by its id:");
+        Person result1 = gigaSpace.readById(Person.class, 1);
+        System.out.println("Result: " + result1);
+
+        System.out.println("Read an entry from the grid using a SQL-like query:");
+        Person result2 = gigaSpace.read(new SQLQuery<Person>(Person.class, "firstName=?", "Johnny"));
+        System.out.println("Result: " + result2);
+
+        System.out.println("Read all entries of type Person from the grid:");
+        Person[] results = gigaSpace.readMultiple(new Person());
+        System.out.println("Result: " + java.util.Arrays.toString(results));
+    }
+}
+{% endhighlight %}
+{% endgcloak %}
+
+{% togglecloak id=2 %}`Person.java`{% endtogglecloak %}
+{% gcloak 2 %}
+
+{% highlight java %}
+package com.gigaspaces.demo;
+
+import com.gigaspaces.annotation.pojo.SpaceId;
+
+public class Person {
+
+    private Integer ssn;
+    private String firstName;
+    private String lastName;
+
+    // Default constructor (required by XAP)
     public Person() {}
 
     public Person(Integer ssn, String firstName, String lastName) {
@@ -132,7 +205,6 @@ public class Person {
     public Integer getSsn() {
         return ssn;
     }
-
     public void setSsn(Integer ssn) {
         this.ssn = ssn;
     }
@@ -140,7 +212,6 @@ public class Person {
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -148,30 +219,17 @@ public class Person {
     public String getLastName() {
         return lastName;
     }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    @Override
+    public String toString() {
+        return "Person #" + ssn + ": " + firstName + " " + lastName;
+    }
 }
 {% endhighlight %}
-
-And now you can write and read objects from the space:
-
-{% highlight java %}
-gigaSpace.write(new Person(1, "Vincent", "Chase"));
-gigaSpace.write(new Person(2, "Johny", "Drama"));
-...
-//read by ID
-Person vince = gigaSpace.readById(Person.class, 1);
-
-//read with SQL query
-Person johny = gigaSpace.read(new SQLQuery(Person.class, "firstName=?", "Johny");
-
-//readMultiple with template
-Person[] vinceAndJohny = gigaSpace.readMultiple(new Person());
-{% endhighlight %}
-
-That's it, you're good to go!
+{% endgcloak %}
 
 # What's Next?
 
