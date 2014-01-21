@@ -6,7 +6,7 @@ weight: 200
 parent: xap-tutorials.html
 ---
 
-{% summary page %}This tutorial explains how to deploy and use a XAP [Data Grid]({%latestjavaurl%}/the-in-memory-data-grid.html) from a Java client application {% endsummary %}
+{% summary page %}This tutorial explains how to deploy and use a XAP [Data Grid]({%currentjavaurl%}/the-in-memory-data-grid.html) from a Java client application {% endsummary %}
  
 # Overview
 
@@ -68,11 +68,11 @@ If you're using the web console mentioned above to see what's going on, you'll s
 
 Open your favorite java IDE (Eclipse, IntelliJ IDEA, etc), Create a new project, and add all the jars from `{{ site.latest_gshome_dirname }}/lib/required` to the project's classpath.
 
-{%info%} For more info see [Setting Classpath]({%latestjavaurl%}/setting-classpath.html).{%endinfo%}
+{%info%} For more info see [Setting Classpath]({%currenttjavaurl%}/setting-classpath.html).{%endinfo%}
 
 ### Connecting to the Grid
 
-Since the Data grid is not located in our client process, we need some sort of address to find it. Data grids are searched using a `Space URL`, for example: `jini://*/*/myGrid`. This roughly translates to: Find a remote space called `myGrid` (for more information see [SpaceURL]({%latestjavaurl%}/space-url.html)).
+Since the Data grid is not located in our client process, we need some sort of address to find it. Data grids are searched using a `Space URL`, for example: `jini://*/*/myGrid`. This roughly translates to: Find a remote space called `myGrid` (for more information see [SpaceURL]({%currentjavaurl%}/space-url.html)).
 
 Now that we have an address, we can connect to the grid:       
 
@@ -237,8 +237,8 @@ public class Person {
 
 Read more about the GigaSpaces runtime environment, how to model your data in a clustered environment, and how to leverage the power capabilities of the Space.
 
-- [Elastic Processing Unit]({%latestjavaurl%}/elastic-processing-unit.html)
-- [Modeling and Accessing Your Data]({%latestjavaurl%}/modeling-and-accessing-your-data.html)
-- [Deploying and Interacting with the Space]({%latestjavaurl%}/deploying-and-interacting-with-the-space.html)
-- [The GigaSpaces Runtime Environment]({%latestjavaurl%}/the-runtime-environment.html)
+- [Elastic Processing Unit]({%currentjavaurl%}/elastic-processing-unit.html)
+- [Modeling and Accessing Your Data]({%currentjavaurl%}/modeling-and-accessing-your-data.html)
+- [Deploying and Interacting with the Space]({%currentjavaurl%}/deploying-and-interacting-with-the-space.html)
+- [The GigaSpaces Runtime Environment]({%currentjavaurl%}/the-runtime-environment.html)
 
