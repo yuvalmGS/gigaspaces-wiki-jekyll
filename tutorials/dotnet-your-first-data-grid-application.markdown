@@ -16,13 +16,13 @@ In this tutorial we will:
 2. Deploy a Data Grid.
 3. Write code that connects to the Data Grid and interacts with it.
 
-{% oksign %} This tutorial contains code snippets in [C#](http://msdn.microsoft.com/en-us/library/kx37x362(v=vs.100).aspx), but naturally any other .NET language ([Visual Basic](http://msdn.microsoft.com/en-us/library/2x7h1hfk(v=vs.100).aspx), [C++/CLI](http://msdn.microsoft.com/en-us/library/xey702bw(v=vs.100).aspx), etc.) is supported as well.
+{% tip %} This tutorial contains code snippets in [C#](http://msdn.microsoft.com/en-us/library/kx37x362(v=vs.100).aspx), but naturally any other .NET language ([Visual Basic](http://msdn.microsoft.com/en-us/library/2x7h1hfk(v=vs.100).aspx), [C++/CLI](http://msdn.microsoft.com/en-us/library/xey702bw(v=vs.100).aspx), etc.) is supported as well.{%endtip%}
 
 # Download and Install XAP
 
 Getting XAP.NET is simple: download it from the [Current Releases](http://www.gigaspaces.com/LatestProductVersion) page.
 
-{%infosign%} There are two XAP.NET packages, one for `x86` and another for `x64`. This tutorial refers to the `x86` package names and locations, but it fits the `x64` as well.   
+{%info%} There are two XAP.NET packages, one for `x86` and another for `x64`. This tutorial refers to the `x86` package names and locations, but it fits the `x64` as well.{%endinfo%}
  
 To install, simply double-click the `{{ site.latest_msi_filename }}` you've downloaded and follow the wizard to complete the installation. By default, the product will be installed into `C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}`. 
 
@@ -34,7 +34,7 @@ A Data Grid requires a [Service Grid]({%currentneturl%}/service-grid.html) to ho
 
 In this tutorial you'll launch a single node service grid on your machine. To start the service grid, simply run the `Gs-agent.exe` from the product's `bin` folder.
 
-{% tip title=*Optional* - The Web Console %}
+{% tip title=Optional - The Web Console %}
 XAP provides a web-based tool for monitoring and management. From the `bin` folder start `Gs-webui.exe`, then browse to [localhost:8099](http://localhost:8099). Click the 'Login' button and take a look at the *Dashboard* and *Hosts* tabs - you'll see the service grid components created on your machine.
 {% endtip %}
 
@@ -52,7 +52,7 @@ This command deploys a Data Grid (aka space) called **myGrid** with 2 partitions
 
 If you're using the web console mentioned above to see what's going on, you'll see the data grid has been deployed.
  
-{%exclamation%} Note that the Lite edition is limited to a single partition - if you're using it type `total_members=1,1` instead.
+{%info%} Note that the Lite edition is limited to a single partition - if you're using it type `total_members=1,1` instead.{%endinfo%}
 
 # Interacting with the Data Grid
 
@@ -72,7 +72,7 @@ Launch Visual Studio, create a new C# *Console Application* and add a reference 
 
 {% endgcloak %}
 
-{%exclamation%} If you're using XAP.NET x64, note that the [default platform for Console Applications is x86](http://connect.microsoft.com/VisualStudio/feedback/details/455103/new-c-console-application-targets-x86-by-default), and you must [change it to x64](http://msdn.microsoft.com/en-us/library/ms185328.aspx). 
+{%warning%} If you're using XAP.NET x64, note that the [default platform for Console Applications is x86](http://connect.microsoft.com/VisualStudio/feedback/details/455103/new-c-console-application-targets-x86-by-default), and you must [change it to x64](http://msdn.microsoft.com/en-us/library/ms185328.aspx).{%endwarning%}
 
 ### Connecting to the Grid
 
