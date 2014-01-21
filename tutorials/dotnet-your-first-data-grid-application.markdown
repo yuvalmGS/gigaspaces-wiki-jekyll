@@ -1,184 +1,214 @@
 ---
 layout: post
-title:  XAP .NET in 5 Minutes
+title:  XAP.NET in 5 Minutes
 categories: TUTORIALS
 parent: dotnet-quick-start-guide.html
 weight: 200
 ---
 
-{% summary %}Writing your first XAP.NET application {% endsummary %}
-
+{% summary page %}This tutorial explains how to deploy and use a XAP [Data Grid]({%currentneturl%}/the-in-memory-data-grid.html) from a .NET client application {% endsummary %}
+ 
 # Overview
 
-This page explains how to create a simple Hello World application using XAP.NET API. The application is very simple: connect to a space, store an entry and retrieve it. The application shown here is also available in the examples distributed with the product (from the Windows Start menu, select **Programs > GigaSpaces XAP.NET > Examples** and review the **HelloWorld** example).
+In this tutorial we will:
 
-{% infosign %} All the instructions and code shown in this page are for C# developers. Naturally all other .NET languages (VB.NET, C++/CLI, J#, etc.) are supported as well.
+1. Download and install **XAP.NET**.
+2. Deploy a Data Grid.
+3. Write code that connects to the Data Grid and interacts with it.
 
-# Prerequisites
+{% oksign %} This tutorial contains code snippets in [C#](http://msdn.microsoft.com/en-us/library/kx37x362(v=vs.100).aspx), but naturally any other .NET language ([Visual Basic](http://msdn.microsoft.com/en-us/library/2x7h1hfk(v=vs.100).aspx), [C++/CLI](http://msdn.microsoft.com/en-us/library/xey702bw(v=vs.100).aspx), etc.) is supported as well.
 
-If you haven't done so yet, please [download](http://www.gigaspaces.com/LatestProductVersion) and [install](./dotnet-installation.html) GigaSpaces XAP.NET.
+# Download and Install XAP
 
-# Setting Up the Project
+Getting XAP.NET is simple: download it from the [Current Releases](http://www.gigaspaces.com/LatestProductVersion) page.
 
-This section shows how to create a C# Console Application named **HelloWorld** with a reference to the **GigaSpaces.Core** assembly.
+{%infosign%} There are two XAP.NET packages, one for `x86` and another for `x64`. This tutorial refers to the `x86` package names and locations, but it fits the `x64` as well.   
+ 
+To install, simply double-click the `{{ site.latest_msi_filename }}` you've downloaded and follow the wizard to complete the installation. By default, the product will be installed into `C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}`. 
 
-## Create a Console Application Project
+# Deploy a Data Grid
 
+### Starting a Service Grid
+
+A Data Grid requires a [Service Grid]({%currentneturl%}/service-grid.html) to host it. A service grid is composed of one or more machines (service grid nodes) running a [Service Grid Agent]({%currentneturl%}/service-grid.html#gsa) (or `GSA`), and provides a framework to deploy and monitor applications on those machines, in our case the Data Grid.
+
+In this tutorial you'll launch a single node service grid on your machine. To start the service grid, simply run the `Gs-agent.exe` from the product's `bin` folder.
+
+{% tip title=*Optional* - The Web Console %}
+XAP provides a web-based tool for monitoring and management. From the `bin` folder start `Gs-webui.exe`, then browse to [localhost:8099](http://localhost:8099). Click the 'Login' button and take a look at the *Dashboard* and *Hosts* tabs - you'll see the service grid components created on your machine.
+{% endtip %}
+
+### Deploying the Data Grid
+
+The Data grid can be deployed from command line, from the web management tool or via an Administration API. In this tutorial we'll use the command line.
+
+Start a command line, navigate to the product's `bin` folder and run the following command:
+
+{% highlight bash %}
+gs-cli deploy-space -cluster total_members=2,1 myGrid
+{% endhighlight %}
+  
+This command deploys a Data Grid (aka space) called **myGrid** with 2 partitions and 1 backup per partition (hence the `2,1` syntax). 
+
+If you're using the web console mentioned above to see what's going on, you'll see the data grid has been deployed.
+ 
+{%exclamation%} Note that the Lite edition is limited to a single partition - if you're using it type `total_members=1,1` instead.
+
+# Interacting with the Data Grid
+
+### Setting up your IDE
+
+Launch Visual Studio, create a new C# *Console Application* and add a reference to **GigaSpaces.Core.dll** from `C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}\NET v4.0.30319\Bin`. If you're new to Visual Studio and .NET, follow these instructions:
+
+{% togglecloak id=0 %}How to create a XAP.NET{% endtogglecloak %}
+{% gcloak 0 %}
 1. Open Microsoft Visual Studio. From the **File** menu select **New > Project**. The **New Project** dialog appears.
 2. In the **Project types** tree, select **Visual C#**, then select **Console Application** in the **Templates** list.
-3. In the **Name** test box, type **HelloWorld**. If you wish, change the default location to a path you prefer.
+3. In the **Name** test box, type **XapDemo**. If you wish, change the default location to a path you prefer.
 4. Select **OK** to continue. Visual Studio creates the project and opens the automatically generated `program.cs` file.
+5. From the **Project** menu, select **Add Reference**. The **Add Reference** dialog appears.
+6. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}\NET v4.0.30319**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
+7. In the **Solution Explorer**, make sure you see **GigaSpaces.Core** in the project references. There's no need to reference any other assembly.
 
-## Add a Reference to the GigaSpaces Core Assembly
+{% endgcloak %}
 
-1. From the **Project** menu, select **Add Reference**. The **Add Reference** dialog appears.
-2. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\XAP.NET 8.0.0 x86\NET v4.0.30319**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
-    1. Since running .NET 4.0 side-by-side with .NET 2.0 [has limitations](http://msdn.microsoft.com/en-us/magazine/ee819091.aspx), GigaSpaces XAP.NET comes with a separate set of assemblies for .NET 2.0 and .NET 4.0. Make sure you use the one relevant for you.
+{%exclamation%} If you're using XAP.NET x64, note that the [default platform for Console Applications is x86](http://connect.microsoft.com/VisualStudio/feedback/details/455103/new-c-console-application-targets-x86-by-default), and you must [change it to x64](http://msdn.microsoft.com/en-us/library/ms185328.aspx). 
 
-3. In the **Solution Explorer**, make sure you see **GigaSpaces.Core** in the project references. There's no need to reference any other assembly.
+### Connecting to the Grid
 
-# Writing the Code
+Since the Data grid is not located in our client process, we need some sort of address to find it. Data grids are searched using a `Space URL`, for example: `jini://*/*/myGrid?groups=$(XapNet.Groups)`. This roughly translates to: Find a remote space called `myGrid` (for more information see [SpaceURL]({%currentneturl%}/space-url.html)).
 
-This section shows how to write a simple program that connects to the space, stores a `Message` object with some text, and retrieves it.
+Now that we have an address, we can connect to the grid:       
 
-## Creating the Message Class
+{% highlight csharp %}
+ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace("jini://*/*/myGrid?groups=$(XapNet.Groups)");
+{% endhighlight %}
 
-We want to demonstrate storing some object to the space. To do this, let's create a simple `Message` class with a `Text` property of type `String`.
+The result is a `ISpaceProxy` instance, which is a proxy to the `myGrid` data grid. 
 
-1. In **Solution Explorer**, right-click the **HelloWorld** project and select **Add > Class**. The **Add New Item** dialog appears.
-2. In the **Templates** list, make sure **Class** is selected. Type **Message** in the class name text box, and click **Add**. The class is added to the project and the editor displays its content.
-3. Add the following code to the `Message` class:
+### Implementing a POCO
 
-{% highlight java %}
-public class Message
+We now have a `ISpaceProxy` instance connected to our grid, which we can use to store and retrieve entries. But what shall we write? Actually, any POCO can be stored in the space, so long as it has a default constructor and an ID property. For this tutorial let's define a `Person` class with the following properties:
+
+{% highlight csharp %}
+using GigaSpaces.Core.Metadata;
+
+public class Person
 {
-    private String _text;
-
-    public Message()
-    {
-    }
-    public Message(String text)
-    {
-        this._text = text;
-    }
-
-    public String Text
-    {
-        get { return this._text; }
-        set { this._text = value; }
-    }
+    [SpaceID]
+    public int? Ssn {get; set;}
+    public String FirstName {get; set;}
+    public String LastName  {get; set;}
 }
 {% endhighlight %}
 
-## Getting Started
+Note that we've annotated the `Ssn` property with a custom XAP.NET attribute (`[SpaceID]`) to mark it as the entry'd ID.
 
-The XAP.NET API used in this example is located in the `GigaSpaces.Core` namespace.
-Switch to the **Program.cs** editor, and add a `using` statement to include `GigaSpaces.Core`:
+### Interacting with the grid
 
-{% highlight java %}
-using GigaSpaces.Core;
+Now that we have a `ISpaceProxy` instance connected to our grid and a POCO which can be stored, we can store entries in the grid using the `Write()` method and read them using various `Read()` methods:
+
+{% highlight csharp %}
+Console.WriteLine("Write (store) a couple of entries in the data grid:");
+spaceProxy.Write(new Person {Ssn=1, FirstName="Vincent", LastName="Chase"});
+spaceProxy.Write(new Person {Ssn=2, FirstName="Johnny", LastName="Drama"});
+
+Console.WriteLine("Read (retrieve) an entry from the grid by its id:");
+Person result1 = spaceProxy.ReadById<Person>(1);
+
+Console.WriteLine("Read an entry from the grid using LINQ:");
+var query = from p in spaceProxy.Query<Person>()
+            where p.FirstName == "Johnny"
+            select p;
+Person result2 = spaceProxy.Read<Person>(query.ToSpaceQuery());
+
+Console.WriteLine("Read all entries of type Person from the grid:");
+Person[] results = spaceProxy.ReadMultiple(new Person());
 {% endhighlight %}
 
-## Connecting to the Space
+If you're using the web console mentioned above to see what's going on, you'll see two entries stored in the grid, one in each partition.
 
-We need to establish a connection to a space which stores the object. To do this, we use the `FindSpace` method from a factory class called `GigaSpacesFactory`. This takes a URL of the requested space, and returns a space proxy of type `ISpaceProxy`. Since we don't have any spaces running yet, we use a special URL prefix to indicate that we want the space lookup to occur in-process, and that the searched space should be created in-process if it doesn't exist yet. The space name is **myEmbeddedSpace** (when the space and the proxy reside in the same process, the space is called an **embedded space**).
+### {% anchor source %} Full Source Code
 
-Edit the `Main` method and add the following code:
-
-{% highlight java %}
-String spaceUrl = "/./myEmbeddedSpace";
-
-// Connect to space:
-Console.WriteLine("*** Connecting to space using \"" + spaceUrl + "\"...");
-ISpaceProxy proxy = GigaSpacesFactory.FindSpace(spaceUrl);
-Console.WriteLine("*** Connected to space.");
-{% endhighlight %}
-
-## Storing a Message Object
-
-The next step is to create a `Message` object, and store it in the space. To do this, we use the `Write` method in the `ISpaceProxy` we've just created, and simply pass the object we want to store as an argument:
-
-Add the following code to the `Main` method, after the previous code:
-
-{% highlight java %}
-// Write a message to the space:
-Message outgoingMessage = new Message("Hello World");
-Console.WriteLine("Writing Message [" + outgoingMessage.Text + "]");
-proxy.Write(outgoingMessage);
-{% endhighlight %}
-
-## Retrieving the Stored Message
-
-Finally, we want to retrieve the object from the space. To do this, we use the `Take` method in `ISpaceProxy`, which takes a template argument and searches for a matching entry in the space. If a match is found, it is removed from the space, and returned to the caller, otherwise null is returned.
-
-A template is an object of the type we wish to query, where the null properties are ignored and the non-null properties are matched. For example, creating a `Message`, and setting the `Text` to "Goodbye" returns null, because the space does not contain such an object. We use a new `Message`, without setting the `Text` property, which matches all possible entries of type `Message` (of course, we know there's currently only one in the space).
-
-Add the following code to the `Main` method, after the previous code:
-
-{% highlight java %}
-// Take a message from the space:
-Message incomingMessage = proxy.Take(new Message());
-Console.WriteLine("Took Message [" + incomingMessage.Text + "]");
-
-Console.WriteLine("Press ENTER to exit.");
-Console.ReadLine();
-{% endhighlight %}
-
-# Running the Program
-
-To run the program, from the **Debug** menu, select **Start Debugging**.
-
-The following shows the complete program code, with some minor modifications:
-
-{% highlight java %}
+{% togglecloak id=1 %}`Program.cs`{% endtogglecloak %}
+{% gcloak 1 %}
+{% highlight csharp %}
 using System;
-using System.Collections.Generic;
-using System.Text;
-
+using System.Linq;
 using GigaSpaces.Core;
+using GigaSpaces.Core.Linq;
 
-namespace HelloWorld
+namespace XapDemo
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to GigaSpaces.NET Hello World Example!" + Environment.NewLine);
+            String url = "jini://*/*/myGrid?groups=$(XapNet.Groups)";
+            Console.WriteLine("Connecting to data grid " + url);
+            ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
 
-            try
-            {
-                // Get space URL from command argument, (use default if none):
-                string spaceUrl = (args.Length > 0 ? args[0] : "/./myEmbeddedSpace");
+            Console.WriteLine("Write (store) a couple of entries in the data grid:");
+            spaceProxy.Write(new Person { Ssn = 1, FirstName = "Vincent", LastName = "Chase" });
+            spaceProxy.Write(new Person { Ssn = 2, FirstName = "Johnny", LastName = "Drama" });
 
-                // Connect to space:
-                Console.WriteLine("*** Connecting to space using \"" + spaceUrl + "\"...");
-                ISpaceProxy proxy = GigaSpacesFactory.FindSpace(spaceUrl);
-                Console.WriteLine("*** Connected to space.");
-                Console.WriteLine();
+            Console.WriteLine("Read (retrieve) an entry from the grid by its id:");
+            Person result1 = spaceProxy.ReadById<Person>(1);
+            Console.WriteLine("Result: " + result1);
 
-                // Write a message to the space:
-                Random random = new Random();
-                Message outgoingMessage = new Message("Hello World " + random.Next(1, 1001));
-                Console.WriteLine("Writing Message [" + outgoingMessage.Text + "]");
-                proxy.Write(outgoingMessage);
+            Console.WriteLine("Read an entry from the grid using LINQ:");
+            var query = from p in spaceProxy.Query<Person>()
+                        where p.FirstName == "Johnny"
+                        select p;
+            Person result2 = spaceProxy.Read<Person>(query.ToSpaceQuery());
+            Console.WriteLine("Result: " + result2);
 
-                // Take a message from the space:
-                Message incomingMessage = proxy.Take(new Message());
-                Console.WriteLine("Took Message [" + incomingMessage.Text + "]");
+            Console.WriteLine("Read all entries of type Person from the grid:");
+            Person[] results = spaceProxy.ReadMultiple(new Person());
+            Console.WriteLine("Result: " + String.Join<Person>(",", results));
 
-                proxy.Dispose();
-
-                Console.WriteLine(Environment.NewLine + "Hello World Example finished successfully!" + Environment.NewLine);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(Environment.NewLine + "Hello World Example failed: " + ex.ToString());
-            }
-
-            Console.WriteLine("Press ENTER to exit.");
+            Console.WriteLine("Demo completed - press ENTER to exit");
             Console.ReadLine();
         }
     }
 }
 {% endhighlight %}
+{% endgcloak %}
 
+{% togglecloak id=2 %}`Person.cs`{% endtogglecloak %}
+{% gcloak 2 %}
+
+{% highlight csharp %}
+using System;
+using GigaSpaces.Core.Metadata;
+
+namespace XapDemo
+{
+    public class Person
+    {
+        [SpaceID]
+        public int? Ssn { get; set; }
+        public String FirstName { get; set; }
+        public String LastName { get; set; }
+
+        public override string ToString()
+        {
+            return "Person #" + Ssn + ": " + FirstName + " " + LastName;
+        }
+    }
+}
+{% endhighlight %}
+{% endgcloak %}
+
+{%comment%}
+# What's Next?
+
+[The Full XAP Java Tutorial](./xap-tutorials.html) will introduce you to the basic concepts and functionalities of XAP. Many ready to run examples are provided.
+
+Read more about the GigaSpaces runtime environment, how to model your data in a clustered environment, and how to leverage the power capabilities of the Space.
+
+- [Elastic Processing Unit]({%currentneturl%}/elastic-processing-unit.html)
+- [Modeling and Accessing Your Data]({%currentneturl%}/modeling-and-accessing-your-data.html)
+- [Deploying and Interacting with the Space]({%currentneturl%}/deploying-and-interacting-with-the-space.html)
+- [The GigaSpaces Runtime Environment]({%currentneturl%}/the-runtime-environment.html)
+{%endcomment%}
