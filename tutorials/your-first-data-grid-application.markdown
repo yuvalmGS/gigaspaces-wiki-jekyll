@@ -60,7 +60,7 @@ This command deploys a Data Grid (aka space) called **myGrid** with 2 partitions
 
 If you're using the web console mentioned above to see what's going on, you'll see the data grid has been deployed.
  
-{%exclamation%} Note that the Lite edition is limited to a single partition - if you're using it type `total_members=1,1` instead.
+{%info%} Note that the Lite edition is limited to a single partition - if you're using it type `total_members=1,1` instead.{%endinfo%}
 
 # Interacting with the Data Grid
 
@@ -68,7 +68,7 @@ If you're using the web console mentioned above to see what's going on, you'll s
 
 Open your favorite java IDE (Eclipse, IntelliJ IDEA, etc), Create a new project, and add all the jars from `{{ site.latest_gshome_dirname }}/lib/required` to the project's classpath.
 
-{%infosign%} For more info see [Setting Classpath]({%latestjavaurl%}/setting-classpath.html).  
+{%info%} For more info see [Setting Classpath]({%latestjavaurl%}/setting-classpath.html).{%endinfo%}
 
 ### Connecting to the Grid
 
@@ -83,7 +83,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).create();
 
 The result is a `GigaSpace` instance, which is a proxy to the `myGrid` data grid. 
 
-{%infosign%} The `UrlSpaceConfigurer` and `GigaSpaceConfigurer` provide additional options which are not covered in this tutorial.
+{%info%} The `UrlSpaceConfigurer` and `GigaSpaceConfigurer` provide additional options which are not covered in this tutorial.{%endinfo%}
 
 ### Implementing a POJO
 
