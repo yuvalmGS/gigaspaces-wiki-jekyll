@@ -29,9 +29,9 @@ module Jekyll
         #else
         #  output << "<strong>Summary: </strong></h3></p>"
         #end
-        output = "<h4 style='font-weight:300'>"
-        output << Kramdown::Document.new(content).to_html
-        output << "</h4><hr style='margin-top:5px; margin-bottom:5px;'/>"
+        output = '<p class="lead">'
+        output << content
+        output << "</p><hr style='margin-top:5px; margin-bottom:5px;'/>"
         #if @section
         #  output << "</div></div>"
         #else
