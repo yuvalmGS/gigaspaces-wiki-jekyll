@@ -529,6 +529,10 @@ h1[id] {
 }
 
 /* Variations */
+.bs-callout-success {
+  background-color: #dff0d8;
+  border-color: #BAE099;
+}
 .bs-callout-danger {
   background-color: #fcf2f2;
   border-color: #dFb5b4;
