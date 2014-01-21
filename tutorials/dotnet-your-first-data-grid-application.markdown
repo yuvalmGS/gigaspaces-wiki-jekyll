@@ -60,7 +60,7 @@ If you're using the web console mentioned above to see what's going on, you'll s
 
 Launch Visual Studio, create a new C# *Console Application* and add a reference to **GigaSpaces.Core.dll** from `C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}\NET v4.0.30319\Bin`. If you're new to Visual Studio and .NET, follow these instructions:
 
-{% togglecloak id=0 %}How to create a XAP.NET{% endtogglecloak %}
+{% togglecloak id=0 %}How to create a XAP.NET Project in Visual Studio{% endtogglecloak %}
 {% gcloak 0 %}
 1. Open Microsoft Visual Studio. From the **File** menu select **New > Project**. The **New Project** dialog appears.
 2. In the **Project types** tree, select **Visual C#**, then select **Console Application** in the **Templates** list.
