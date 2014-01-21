@@ -33,7 +33,7 @@ A Data Grid requires a [Service Grid]({%currentjavaurl%}/service-grid.html) to h
 
 In this tutorial you'll launch a single node service grid on your machine. To start the service grid, simply run the `gs-agent` script from the product's `bin` folder.
 
-{% tip title=*Optional* - The Web Console %}
+{% tip title=Optional - The Web Console %}
 XAP provides a web-based tool for monitoring and management. From the `bin` folder start the `gs-webui` script, then browse to [localhost:8099](http://localhost:8099). Click the 'Login' button and take a look at the *Dashboard* and *Hosts* tabs - you'll see the service grid components created on your machine.
 {% endtip %}
 
@@ -68,7 +68,7 @@ If you're using the web console mentioned above to see what's going on, you'll s
 
 Open your favorite java IDE (Eclipse, IntelliJ IDEA, etc), Create a new project, and add all the jars from `{{ site.latest_gshome_dirname }}/lib/required` to the project's classpath.
 
-{%info%} For more info see [Setting Classpath]({%currenttjavaurl%}/setting-classpath.html).{%endinfo%}
+{%info%} For more info see [Setting Classpath]({%currentjavaurl%}/setting-classpath.html).{%endinfo%}
 
 ### Connecting to the Grid
 
