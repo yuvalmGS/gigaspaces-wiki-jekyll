@@ -66,12 +66,12 @@ This installs the GigaSpaces libraries and the OpenSpaces Maven plugin into the 
 <dependency>
   <artifactId>gs-runtime</artifactId>
   <groupId>com.gigaspaces</groupId>
-  <version>8.0.x</version>
+  <version>{{ site.latest_maven_version }}</version>
 </dependency>
 <dependency>
   <artifactId>gs-openspaces</artifactId>
   <groupId>com.gigaspaces</groupId>
-  <version>8.0.x</version>
+  <version>{{ site.latest_maven_version }}</version>
 </dependency>
 {% endhighlight %}
 
