@@ -73,7 +73,7 @@ XAP supports two types of objects that can interact with the Space, POJOs and Do
 Any POJO can be used to interact with the space as long it follows the Java Beans convention. The POJO needs to implement a default constructor, setters and getters for every property you want to store in the Space.
 
 
-{%highlight java  %}
+{%highlight java%}
 @SpaceClass
 public class User {
   private Long id;

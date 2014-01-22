@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  gs - XML
-categories: XAP97
+categories:
 parent: pojo-metadata.html
 weight: 300
 ---
