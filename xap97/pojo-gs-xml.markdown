@@ -2,8 +2,8 @@
 layout: post
 title:  gs - XML
 categories:
-parent: pojo-metadata.html
-weight: 300
+parent:
+weight:
 ---
 
 {%comment%}
