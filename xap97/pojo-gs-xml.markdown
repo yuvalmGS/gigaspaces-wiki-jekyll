@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  gs - XML
-categories: XAP97
-parent: pojo-metadata.html
-weight: 300
+categories:
+parent:
+weight:
 ---
 
 {%comment%}

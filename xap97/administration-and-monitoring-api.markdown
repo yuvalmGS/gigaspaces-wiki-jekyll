@@ -9,10 +9,17 @@ weight: 1700
 
 {% summary%}Simple API to monitor and administer GigaSpaces services and components.{% endsummary %}
 
-# Overview
+{%wbr%}
+{%wbr%}
+
+<div>
+   <hr width="100%">
+</div>
 
 {%section%}
 {%column width=50% %}
+{%wbr%}
+{%wbr%}
 The Admin API provides a way to administer and monitor all of GigaSpaces services and components using a simple API. The API provides information and the ability to operate on the currently running [GigaSpaces Agent](./service-grid.html#gsa), [GigaSpaces Manager](./service-grid.html#gsm), [GigaSpaces Container](./service-grid.html#gsc), [Lookup Service](./service-grid.html#lus), [Processing Unit](./packaging-and-deployment.html) and Spaces.
 {%endcolumn%}
 {%column width=45% %}
