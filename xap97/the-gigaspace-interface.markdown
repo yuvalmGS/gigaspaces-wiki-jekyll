@@ -7,7 +7,7 @@ weight: 200
 ---
 
 
-{% summary %}The JavaSpaces API is abstracted in OpenSpaces by a simple wrapper: the `GigaSpace` interface.{% endsummary %}
+{% summary %}Describes the main XAP API for interacting with the space{% endsummary %}
 
 # Overview
 
