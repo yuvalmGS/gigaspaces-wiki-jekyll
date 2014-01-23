@@ -34,7 +34,7 @@ SQLQuery<CollectionIndexingExample> sqlQuery = new SQLQuery<CollectionIndexingEx
 CollectionIndexingExample[] result = gigaspace.readMultiple(sqlQuery, Integer.MAX_VALUE);
 {% endhighlight %}
 
-{% exclamation %} See the [Free Text Search](./sqlquery.html#Free Text Search) section for more details.
+{% note %} See the [Free Text Search](./sqlquery.html#Free Text Search) section for more details. {%endnote%}
 
 ### Nested property within a Collection
 

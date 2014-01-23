@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mongo Space Persistency
+title: Space Persistency
 categories: XAP97
 parent: mongodb.html
 weight: 100
@@ -11,7 +11,7 @@ weight: 100
 
 
 
-# Overview
+
 
 MongoDB Space Data Source and Space Synchronization Endpoint
 

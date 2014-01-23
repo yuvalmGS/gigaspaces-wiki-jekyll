@@ -1,21 +1,25 @@
 ---
 layout: post
-title:  Archive Operation Handler
+title:  Archive Handler
 categories: XAP97
 parent: cassandra.html
 weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}Archives space objects to Cassandra.{% endsummary %}
 
+{% summary  %}Archives space objects to Cassandra.{% endsummary %}
+
+{%section%}
+{%column width=60% %}
 # Overview
 
 The [Archive Container](./archive-container.html) can be configured to work against Cassandra (without writing any extra code). The [ArchiveOperationHandler interface](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/archive/ArchiveOperationHandler.html) abstracts the Big-Data storage from the [Archive Container](./archive-container.html). The Cassandra Archive Operation Handler implements this interface by [serializing](#Property Value Serializer) space objects into Cassandra.
 
-{% indent %}
+{%endcolumn%}
+{%column width=35% %}
 ![archive-container-cassandra.jpg](/attachment_files/archive-container-cassandra.jpg)
-{% endindent %}
+{%endcolumn%}
+{%endsection%}
 
 # Configuration
 
@@ -156,6 +160,7 @@ archiveContainer.destroy();
 |flattenedPropertiesFilter| see [Flattened Properties Filter](./cassandra-space-synchronization-endpoint.html#Flattened Properties Filter).|
 |columnFamilyNameConverter| see [Column Family Name Converter](./cassandra-space-synchronization-endpoint.html#Column Family Name Converter).|
 
+{%comment%}
 ## XSD Schema
 
 - <os-archive:cassandra-archive-handler> schema:
@@ -163,6 +168,8 @@ archiveContainer.destroy();
 {% indent %}
 ![cassandra-archive-handler-schema-9-1-1.png](/attachment_files/cassandra-archive-handler-schema-9-1-1.png)
 {% endindent %}
+
+{%endcomment%}
 
 ## Property Value Serializer
 

@@ -29,7 +29,9 @@ These should be used for backward compatibility with older versions of GigaSpace
 
 You can use **bitwise** or the `|` operator to unite different modifiers.
 
-{% exclamation %} `REPEATABLE_READ`, `DIRTY_READ`, and `READ_COMMITTED` are mutually exclusive (i.e. can't be used together). `EXCLUSIVE_READ_LOCK` can be joined with any of them.
+{% note %}
+`REPEATABLE_READ`, `DIRTY_READ`, and `READ_COMMITTED` are mutually exclusive (i.e. can't be used together). `EXCLUSIVE_READ_LOCK` can be joined with any of them.
+{%endnote%}
 
 These modifiers can be set either at the proxy level - `IJSpace.setReadModifiers(int)`, or at the operation level (e.g. using one of `IJSpace` read/`readIfExists`/`readMultiple`/count methods with a modifiers parameter).
 

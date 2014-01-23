@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Document-POJO Interoperability
+title:  Interoperability
 categories: XAP97
 parent: document-api.html
 weight: 200
@@ -12,7 +12,9 @@ weight: 200
 
 GigaSpaces offers interoperability between documents and POJOs via the space - it is possible to write POJOs and read them back as documents, and vice versa. This is usually useful in scenarios requiring reading and/or manipulating POJO objects without loading the concrete java classes.
 ![document_arch2.jpg](/attachment_files/document_arch2.jpg)
-{% plus %} In previous releases the `ExternalEntry` class was used to achieve this functionality. Starting with 8.0, the `SpaceDocument` class should be used to accomplish these needs in a simpler and safer manner, whereas `ExternalEntry` has been deprecated and should no longer be used.
+{% tip %}
+In previous releases the `ExternalEntry` class was used to achieve this functionality. Starting with 8.0, the `SpaceDocument` class should be used to accomplish these needs in a simpler and safer manner, whereas `ExternalEntry` has been deprecated and should no longer be used.
+{%endtip%}
 
 # Requirements
 
@@ -120,7 +122,9 @@ SpaceDocument[] documents = gigaSpace.readByIds(
         ids, QueryResultType.DOCUMENT)).getResultsArray();
 {% endhighlight %}
 
-{% infosign %} The original `readById` (and related methods) signatures are not suited for document types, since they require a concrete java class. They always return POJO(s).
+{% info %}
+The original `readById` (and related methods) signatures are not suited for document types, since they require a concrete java class. They always return POJO(s).
+{%endinfo%}
 
 # Dynamic Properties
 
@@ -192,7 +196,9 @@ The `SpaceDocumentSupport` can be one of the following:
 
 This behavior applies to arrays and collections as well (for example, if `Person` would have `List<Address> getAddresses()`, it would be converted to a list of address documents).
 
-{% exclamation %} This feature is new 8.0.1. In previous releases, there's no implicit conversion of nested properties.
+{% note %}
+This feature is new 8.0.1. In previous releases, there's no implicit conversion of nested properties.
+{%endnote%}
 
 # Local View / Local Cache
 

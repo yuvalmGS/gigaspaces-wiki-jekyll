@@ -11,8 +11,6 @@ weight: 100
 {% summary %} A Cassandra Space Persistency Solution {% endsummary %}
 
 
-# Overview
-
 Cassandra Space Data Source and Space Synchronization Endpoint
 
 GigaSpaces comes with built in implementations of [Space Data Source](./space-data-source-api.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html) for Cassandra, called `CassandraSpaceDataSource` and `CassandraSpaceSynchronizationEndpoint`, respectively.

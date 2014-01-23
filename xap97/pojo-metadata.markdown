@@ -2,8 +2,8 @@
 layout: post
 title:  Metadata
 categories: XAP97
-parent: pojo-support.html
-weight: 100
+parent: getting-started.html
+weight: 600
 ---
 
 {% summary %}This section deals with the annotations and gs.xml mapping file decorations.{% endsummary %}

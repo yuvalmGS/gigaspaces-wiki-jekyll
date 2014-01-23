@@ -44,7 +44,9 @@ The following example queries for a **Person** with an **address** whose **city*
 ... = new SQLQuery<Person>(Person.class, "address.city = 'New York'");
 {% endhighlight %}
 
-{% infosign %} Note that other properties (if any) in **address** which are not part of the criteria are ignored in the matching process.
+{% info %}
+Note that other properties (if any) in **address** which are not part of the criteria are ignored in the matching process.
+{%endinfo%}
 
 The number of levels in the path is unlimited.
 For example, suppose the **Address** class has a **Street** class which encapsulates a **name** (String) and a **houseNum** (int).
@@ -95,15 +97,17 @@ public class Person {
 }
 {% endhighlight %}
 
-{% infosign %} Note that since the index is specified on top of the **address** property, the `path` is "**city**" rather than "**address.city**".
-
-{% plus %} For more information see the [Nested Properties Indexing](./indexing.html#Nested Properties Indexing) section under [Indexing](./indexing.html).
+{% info%}
+Note that since the index is specified on top of the **address** property, the `path` is "**city**" rather than "**address.city**".
+For more information see the [Nested Properties Indexing](./indexing.html#Nested Properties Indexing) section under [Indexing](./indexing.html).
+{%endinfo%}
 
 ## Remarks
 
-{% infosign %} The type of the nested object must be a class - querying interfaces is not supported.
-
-{% infosign %} Nested properties' classes should be `Serializable`, otherwise the entry will not be accessible from remote clients.
+{% info%}
+The type of the nested object must be a class - querying interfaces is not supported.
+Nested properties' classes should be `Serializable`, otherwise the entry will not be accessible from remote clients.
+{%endinfo%}
 
 # Nested Maps
 
@@ -125,9 +129,10 @@ The following example queries for a **Person** whose **phoneNumbers** property c
 ... = new SQLQuery<Person>(Person.class, "phoneNumbers.home = '555-1234'");
 {% endhighlight %}
 
-{% infosign %} A path can continue traversing from 'regular' properties to maps and back to 'regular' properties as needed.
-
-{% plus %} Map properties are useful for creating a flexible schema - since the keys in the map are not part of the schema, the map can be used to add or remove data from a space object without changing its structure.
+{% info%}
+A path can continue traversing from 'regular' properties to maps and back to 'regular' properties as needed.
+Map properties are useful for creating a flexible schema - since the keys in the map are not part of the schema, the map can be used to add or remove data from a space object without changing its structure.
+{%endinfo%}
 
 ## Indexing
 
@@ -147,9 +152,10 @@ public class Person {
 }
 {% endhighlight %}
 
-{% infosign %} Note that since the index is specified on top of the **phoneNumbers** property, the `path` is "**home**" rather than "**phoneNumbers.home**".
-
-{% plus %} For more information see the [Nested Properties Indexing](./indexing.html#Nested properties indexing) section under [Indexing](./indexing.html).
+{% info %}
+Note that since the index is specified on top of the **phoneNumbers** property, the `path` is "**home**" rather than "**phoneNumbers.home**".
+For more information see the [Nested Properties Indexing](./indexing.html#Nested properties indexing) section under [Indexing](./indexing.html).
+{%endinfo%}
 
 {% anchor collection-support %}
 
@@ -157,7 +163,9 @@ public class Person {
 
 The GigaSpaces SQL syntax supports a special operand `[*]`, which is sometimes referred to as the 'contains' operand. This operand is used in conjunction with collection properties to indicate that each collection item should be evaluated, and if at least one such item matches, the owner entry is considered as matched.
 
-{% infosign %} Arrays are supported as well, except for arrays of primitive types (int, boolean, etc.) which are are **not** supported - use the equivalent wrapper type (java.lang.Integer, java.lang.Boolean, etc.) instead.
+{% info%}
+Arrays are supported as well, except for arrays of primitive types (int, boolean, etc.) which are are **not** supported - use the equivalent wrapper type (java.lang.Integer, java.lang.Boolean, etc.) instead.
+{%endinfo%}
 
 Suppose we have a type called **Dealer** with a property called **cars** (which is a list of strings).
 The following example queries for a **Dealer** whose *cars* collection property contains the **"Honda"** String:
@@ -205,6 +213,7 @@ Writing that last query without parentheses will yield results which are somewha
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*].company = 'Honda' AND cars[*].color = 'Red'");
 {% endhighlight %}
 
+
 This query will match any **Dealer** with a **Honda** car and a **red** car, but not necessarily the same car (e.g. a blue **Honda** and a **red** Subaru).
 {% endnote %}
 
@@ -220,12 +229,11 @@ public List<Car> getCars() {
 }
 {% endhighlight %}
 
-{% infosign %} Note that since the index is specified on top of the **cars** property, the `path` is **[*].company** rather than **cars[*].company**.
-
-{% exclamation %} The bigger the collection - the more memory is required to store the index at the server (since each item is indexed). Use with caution!
-
-{% plus %} For more information see the [Collection Indexing](./indexing.html#Collection Indexing) section under [Indexing](./indexing.html).
-
+{% note %}
+Note that since the index is specified on top of the **cars** property, the `path` is **[*].company** rather than **cars[*].company**.
+The bigger the collection - the more memory is required to store the index at the server (since each item is indexed). Use with caution!
+For more information see the [Collection Indexing](./indexing.html#Collection Indexing) section under [Indexing](./indexing.html).
+{%endnote%}
 
 <ul class="pager">
   <li class="previous"><a href="./sqlquery.html">&larr; SQLQuery</a></li>

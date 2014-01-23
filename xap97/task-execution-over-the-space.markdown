@@ -510,7 +510,9 @@ Executors fully support transactions similar to other `GigaSpace` API. Once an `
 
 An exception thrown within the `execute` operation will not cause the transaction to rollback (since it might be a valid exception). Transaction commit/rollback is controlled just by the client the executed the task.
 
-{% lampon %} When executing distributed tasks or tasks that executed on more than one node within the same execution should use the distributed transaction manager. Tasks that execute just on a single node can use the distributed transaction manager, but should use the local transaction manager.
+{% tip %}
+When executing distributed tasks or tasks that executed on more than one node within the same execution should use the distributed transaction manager. Tasks that execute just on a single node can use the distributed transaction manager, but should use the local transaction manager.
+{%endtip%}
 
 {% anchor j.u.c. ExecutorService %}
 

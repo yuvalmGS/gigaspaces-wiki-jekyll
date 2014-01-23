@@ -9,7 +9,6 @@ weight: 1600
 
 {% summary %} XAP provides integration with Big Data  {% endsummary %}
 
-# Overview
 
 
 

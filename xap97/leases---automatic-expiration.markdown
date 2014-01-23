@@ -3,7 +3,7 @@ layout: post
 title:  Leases - Automatic Expiration
 categories: XAP97
 parent: getting-started.html
-weight: 500
+weight: 800
 ---
 
 {% compositionsetup %}{% summary %}Lease basics and explains how Leases can be managed{% endsummary %}

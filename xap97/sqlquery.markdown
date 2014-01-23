@@ -118,7 +118,8 @@ SQLQuery<MyClass> query3 = new SQLQuery<MyClass>(MyClass.class,
     "num > ? or num < ? and name = ?", 2, 3, "smith");
 {% endhighlight %}
 
-{% infosign %} The number of **'?'** symbols in the expression string must match the number of parameters set on the query. For example, when using `IN` condition:
+{% info %} The number of **'?'** symbols in the expression string must match the number of parameters set on the query. For example, when using `IN` condition:
+{%endinfo%}
 
 {% highlight java %}
 SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,
@@ -130,9 +131,9 @@ SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,
     "name = 'A' AND num IN (1,2,3)");
 {% endhighlight %}
 
-{% exclamation %} Parameter assignment to the `SQLQuery` instance is not thread safe. If the query is intended to be executed on multiple threads which may change the parameters, it is recommended to use different `SQLQuery` instances. This has an analogue in JDBC, because `PreparedStatement` is not threadsafe either.
-
-{% exclamation %} In previous options, parameters could be passed via a POJO template as well. This option is still available, but is deprecated and will be removed in future versions.
+{% note %} Parameter assignment to the `SQLQuery` instance is not thread safe. If the query is intended to be executed on multiple threads which may change the parameters, it is recommended to use different `SQLQuery` instances. This has an analogue in JDBC, because `PreparedStatement` is not threadsafe either.
+In previous options, parameters could be passed via a POJO template as well. This option is still available, but is deprecated and will be removed in future versions.
+{%endnote%}
 
 # Properties Types
 
@@ -169,7 +170,7 @@ public class Vehicle {
 ... = new SQLQuery<Vehicle>(Vehicle.class, "type = 'CAR'");
 {% endhighlight %}
 
-{% infosign %} When using an Enum string value, the value must be identical (case sensitive) to the name of the Enum value.
+{% info %} When using an Enum string value, the value must be identical (case sensitive) to the name of the Enum value.{%endinfo%}
 
 ## Date Properties
 
@@ -209,9 +210,9 @@ For example:
 
 These space properties should be configured with a valid Java format pattern as defined in the [official Java language documentation](http://java.sun.com/docs/books/tutorial/i18n/format/simpleDateFormat.html).
 
-{% infosign %} The `space-config.QueryProcessor.date_format` property used when your query include a String representing the date
-
-{% plus %} Date properties are often used for comparison (greater/less than). Consider using [extended indexing](./indexing.html) to boost performance.
+{% info%} The `space-config.QueryProcessor.date_format` property used when your query include a String representing the date
+Date properties are often used for comparison (greater/less than). Consider using [extended indexing](./indexing.html) to boost performance.
+{%endinfo%}
 
 ## sysdate
 
@@ -293,7 +294,8 @@ SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,
 
 All the supported methods and options above are relevant also for using `rlike` with `SQLQuery`.
 
-{% exclamation %} `like` and `rlike` queries are not using indexed data, hence executing such may be relatively time consuming compared to other queries that do leverage indexed data. This means the space engine iterate the potential candidate list to find matching object using the Java regular expression utilizes. A machine using 3GHz CPU may iterate 100,000-200,000 objects per second when executing regular expression query. To speed up `like` and `rlike` queries make sure your query leveraging also at least one indexed field to minimize the candidate list. Running multiple partitions will also speed up the query execution since this will allow the system to iterate over the potential matching objects in a parallel manner across the different partitions.
+{% note %} `like` and `rlike` queries are not using indexed data, hence executing such may be relatively time consuming compared to other queries that do leverage indexed data. This means the space engine iterate the potential candidate list to find matching object using the Java regular expression utilizes. A machine using 3GHz CPU may iterate 100,000-200,000 objects per second when executing regular expression query. To speed up `like` and `rlike` queries make sure your query leveraging also at least one indexed field to minimize the candidate list. Running multiple partitions will also speed up the query execution since this will allow the system to iterate over the potential matching objects in a parallel manner across the different partitions.
+{%endnote%}
 
 # Free Text Search
 
@@ -326,7 +328,8 @@ public class MyData {
 }
 {% endhighlight %}
 
-{% exclamation %} Note how the **freeText** field is broken into the **words** array before placed into the indexed field.
+{% note %} Note how the **freeText** field is broken into the **words** array before placed into the indexed field.
+{%endnote%}
 
 You may write the data into the space using the following:
 

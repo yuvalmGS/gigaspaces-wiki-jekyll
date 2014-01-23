@@ -6,7 +6,6 @@ parent: querying-the-space.html
 weight: 500
 ---
 
-{% compositionsetup %}
 {% summary %}Query User Defined Classes{% endsummary %}
 
 Since matching and comparing expressions is executed via java's built-in `equals` and `Comparable` mechanisms, a user defined class can be matched and compared as well.

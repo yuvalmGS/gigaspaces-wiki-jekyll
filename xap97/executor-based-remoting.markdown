@@ -180,7 +180,9 @@ The next step is exporting the service over the space. Exporting the service is 
 
 The name/id of the `SpaceRemotingServiceExporter` bean is important when using executor based remoting. By default, the `Task` representing the remote invocation searches for a service exporter named `serviceExporter`, otherwise, it uses the first bean that is of the type `SpaceRemotingServiceExporter`.
 
-{% infosign %} Exporting services is done on a Processing Unit (or a Spring application context) that starts an embedded space.
+{% note %}
+Exporting services is done on a Processing Unit (or a Spring application context) that starts an embedded space.
+{%endnote%}
 
 # Using the Service on the Client Side
 
@@ -410,7 +412,9 @@ public interface MyService {
 
 In the above example, the `getProperty` method is called on the `Value` object, and its return value is used to extract the routing index.
 
-{% exclamation %} **Note:** Using a [SpaceDocument](./document-api.html) as the annotated routing argument will cause an exception since the `SpaceDocument` class does not define a getter method for each property, but rather a generic getter method to get a property value by its name. The solution is either to extend the `SpaceDocument` class as described in [Extending Space Documents](./extending-space-documents.html), and define the relevant `getProperty` method in the extension class, or use the `RemoteRoutingHandler` mentioned above.
+{% note %}
+**Note:** Using a [SpaceDocument](./document-api.html) as the annotated routing argument will cause an exception since the `SpaceDocument` class does not define a getter method for each property, but rather a generic getter method to get a property value by its name. The solution is either to extend the `SpaceDocument` class as described in [Extending Space Documents](./extending-space-documents.html), and define the relevant `getProperty` method in the extension class, or use the `RemoteRoutingHandler` mentioned above.
+{%endnote%}
 
 # Asynchronous Execution
 
@@ -491,7 +495,9 @@ public class Value implements ClusterInfoAware {
 }
 {% endhighlight %}
 
-{% infosign %} Note the fact that `clusterInfo` is transient, so it won't be marshalled after injection back to the client.
+{% info %}
+Note the fact that `clusterInfo` is transient, so it won't be marshalled after injection back to the client.
+{%endinfo%}
 
 Another example is injecting another service that is defined in the server side directly into the parameter, for example, using Spring `@Autowired` annotation.
 
