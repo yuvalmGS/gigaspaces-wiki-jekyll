@@ -9,7 +9,7 @@ weight: 200
 
 {% summary %} XAP Integration with Cassandra {% endsummary %}
 
-# Overview
+
 
 The [Apache Cassandra Project™](http://cassandra.apache.org) is a scalable multi-master database with no single points of failure. The Apache Cassandra Project develops a highly scalable second-generation distributed database, bringing together Dynamo's fully distributed design and Bigtable's ColumnFamily-based data model.
 

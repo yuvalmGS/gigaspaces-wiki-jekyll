@@ -19,9 +19,10 @@ By implementing Spring's `PlatformTransactionManager`, the OpenSpaces API allows
 
 Please note that when using Spring declarative transaction, a proxy is generated for the classes annotated with `@Transactional` methods. In such a case **only external method calls** coming in through the proxy will be intercepted. This means that 'self-invocation', i.e. a method within the target object calling some other method of the target object, won't lead to an actual transaction at runtime even if the invoked method is marked with `@Transactional`.
 
-{% exclamation %} In order to make [The GigaSpace Interface ](./the-gigaspace-interface.html) transactional, the transaction manager must be provided to it when constructing the GigaSpace bean.
-
-{% exclamation %} The following should be added to your `pu.xml` to enable the configuration of transactional behavior based on annotations:
+{% note%}
+In order to make [The GigaSpace Interface ](./the-gigaspace-interface.html) transactional, the transaction manager must be provided to it when constructing the GigaSpace bean.
+The following should be added to your `pu.xml` to enable the configuration of transactional behavior based on annotations:
+{%endnote%}
 
 {% highlight java %}
 <beans ....
@@ -133,12 +134,14 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gig
 {% endtabcontent %}
 {% endinittab %}
 
-{% infosign %} Time based Parameters Units:
+{% info %}
+Time based Parameters Units:
 
 - The **default-timeout** parameter is specified in seconds
 - Other parameters such as the commit and abort timeout, lookup-timeout, and others are specified in millisecond
 
-{% infosign %} When using Spring declarative transaction management, a transaction timeout can be set on the transaction scope. For more details, see [above](#spring).
+When using Spring declarative transaction management, a transaction timeout can be set on the transaction scope. For more details, see [above](#spring).
+{%endinfo%}
 
 When using Jini based transactions, a timeout value can be set for both the commit and abort operations. This values can also be set on the transaction manager.
 
@@ -239,7 +242,9 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gig
 {% endtabcontent %}
 {% endinittab %}
 
-{% infosign %} When using Spring declarative transaction management, a transaction timeout can be set on the transaction scope. For more details, see [above](#spring).
+{% info %}
+When using Spring declarative transaction management, a transaction timeout can be set on the transaction scope. For more details, see [above](#spring).
+{%endinfo%}
 
 When using Jini based transactions, a timeout value can be set for both the commit and abort operations. This values can also be set on the transaction manager.
 
@@ -368,9 +373,13 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gig
 {% endtabcontent %}
 {% endinittab %}
 
-{% infosign %} Since version 8.0.1, GigaSpaces JTA implementation supports both local and distributed transaction managers. That means that you can enlist multiple space partitions as a single XA resource in an XA transaction.
+{% info%}
+Since version 8.0.1, GigaSpaces JTA implementation supports both local and distributed transaction managers. That means that you can enlist multiple space partitions as a single XA resource in an XA transaction.
+{%endinfo%}
 
-{% exclamation %} XA transactions should be carefully considered. The overhead of managing a 2PC transaction over two or more resources is often times a performance killer.
+{% note %}
+XA transactions should be carefully considered. The overhead of managing a 2PC transaction over two or more resources is often times a performance killer.
+{%endnote%}
 
 {% tip %}
 See the [JTA-XA Example](/sbp/jta-xa-example.html) for fully running demonstration how to integrate GigaSpaces with an external JMS Server.

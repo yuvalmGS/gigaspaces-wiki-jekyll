@@ -1,19 +1,19 @@
 ---
 layout: post
-title:  Attribute Annotations
+title:  Attribute Metadata
 categories: XAP97
 parent: pojo-metadata.html
 weight: 200
 ---
 
-{% summary %}This section explains the different attribute level annotations.{% endsummary %}
+{% summary %}This section explains the different attribute metadata .{% endsummary %}
 
 {%wbr%}
 
 Specific behavior for class attributes can be defined with annotations. The annotations are defined on the getter methods.
 
 
-# @SpaceId
+# SpaceId
 
 {: .table .table-bordered}
 |Syntax     | @SpaceId(autoGenerate=false)|
@@ -43,7 +43,7 @@ public class Person {
 
 
 
-# @SpaceRouting
+# SpaceRouting
 
 {: .table .table-bordered}
 |Syntax     | @SpaceRouting|
@@ -68,7 +68,7 @@ public class Employee {
 
 
 
-# @SpaceProperty
+# SpaceProperty
 
 {: .table .table-bordered}
 |Syntax     | @SpaceProperty(nullValue="-1" )|
@@ -95,7 +95,7 @@ public class Employee {
 {%endhighlight%}
 {% endgcloak %}
 
-# @SpaceIndex
+# SpaceIndex
 
 {: .table .table-bordered}
 |Syntax     |  @SpaceIndex(type=SpaceIndexType.BASIC)|
@@ -140,7 +140,7 @@ public class User {
 {%endhighlight%}
 {% endgcloak %}
 
-# @SpaceIndex Path
+# SpaceIndex Path
 
 {: .table .table-bordered}
 |Syntax     |  @SpaceIndex(path = "attributeName",type = SpaceIndexType.EXTENDED)|
@@ -183,7 +183,7 @@ public static class Address implements Serializable {
 {%endhighlight%}
 {% endgcloak %}
 
-# @SpaceVersion
+# SpaceVersion
 
 {: .table .table-bordered}
 |Syntax     |  @SpaceVersion|
@@ -209,7 +209,7 @@ public class Employee {
 {%endhighlight%}
 {% endgcloak %}
 
-# @SpacePersist
+# SpacePersist
 
 {: .table .table-bordered}
 |Syntax     | @SpacePersist|
@@ -234,7 +234,7 @@ public class Employee {
 {% endgcloak %}
 
 
-# @SpaceExclude
+# SpaceExclude
 
 {: .table .table-bordered}
 |Syntax     |  @SpaceExclude|
@@ -259,16 +259,34 @@ public class Employee {
 {%endhighlight%}
 {% endgcloak %}
 
-# @SpaceLeaseExpiration
+# SpaceLeaseExpiration
 
 {: .table .table-bordered}
 |Syntax     |  @SpaceLeaseExpiration|
 |Description|This annotation specifies the attribute for holding the timestamp of when the instance's lease expires (this is a standard Java timestamp based on the 1/1/1970 epoch). This property should not be populated by the user code. The space will populate this property automatically based on the lease time given by the user when writing the object. When using an external data source, you can choose to persist this value to the database. Subsequently, when data is reloaded from the external data source (at startup time for example), the space will filter out instances whose lease expiration timestamp has already passed. This field should be a `long` data type.|
 |Reference  | [Lease](./leases---automatic-expiration.html)  |
 
+{% togglecloak id=81 %}**Example**{% endtogglecloak %}
+{% gcloak 81 %}
+{%highlight java%}
+@SpaceClass (persist=true)
+public class MyData {
+    private long lease;
+	.............
 
+    @SpaceLeaseExpiration
+    public long getLease()
+    {
+        return lease;
+    }
+    public void setLease(long lease) {
+        this.lease = lease;
+    }
+}
+{%endhighlight%}
+{% endgcloak %}
 
-# @SpaceStorageType
+# SpaceStorageType
 
 {: .table .table-bordered}
 |Syntax     | @SpaceStorageType(storageType=StorageType.BINARY)|
@@ -296,7 +314,7 @@ public class Message {
 
 
 
-# @SpaceFifoGroupingProperty
+# SpaceFifoGroupingProperty
 
 {: .table .table-bordered}
 |Syntax     | @SpaceFifoGroupingProperty(path = "attributeName")|
@@ -324,7 +342,7 @@ public class FlightReservation
 
 
 
-# @SpaceFifoGroupingIndex
+# SpaceFifoGroupingIndex
 
 {: .table .table-bordered}
 |Syntax     | @SpaceFifoGroupingIndex|
@@ -349,12 +367,46 @@ public class FlightReservation
 {% endgcloak %}
 
 
-# @SpaceClassConstructor
+# SpaceClassConstructor
 
 {: .table .table-bordered}
 |Syntax     | @SpaceClassConstructor|
 |Description| This annotation can be placed on a POJO constructor to denote that this constructor should be used during object instantiation.{%wbr%}Using this annotations, it is possible for the POJO to have immutable properties (i.e. `final` fields).{%wbr%}As opposed to a standard POJO, a POJO annotated with this annotation may omit setters for its properties.{%wbr%}Except for the case where the id property is auto generated, only properties defined in this constructor will be considered space properties.{%wbr%}The annotations can be placed on at most one constructor.|
 |Reference  | [FIFO Grouping](./fifo-grouping.html)  |
+
+
+
+# SpaceDynamicProperties
+
+{: .table .table-bordered}
+|Syntax     | @SpaceDynamicProperties|
+|Description| Allows adding properties freely to a class without worrying about the schema.|
+|Reference  | [Dynamic Properties](./dynamic-properties.html)  |
+
+
+{% togglecloak id=13 %}**Example**{% endtogglecloak %}
+{% gcloak 13 %}
+{%highlight java%}
+@SpaceClass
+public class Person {
+    public Person (){}
+    private String name;
+    private Integer id;
+    private DocumentProperties extraInfo;
+
+    public String getName() {return name}
+    public void setName(String name) {this.name=name}
+
+    @SpaceId
+    public Integer getId() {return id;}
+    public void setId(Integer id) {this.id=id;}
+
+    @SpaceDynamicProperties
+    public DocumentProperties getExtraInfo() {return extraInfo;}
+    public void setExtraInfo(DocumentProperties extraInfo) {this.extraInfo=extraInfo;}
+}
+{%endhighlight%}
+{% endgcloak %}
 
 
 
@@ -486,6 +538,7 @@ For details about scaling a running space cluster **in runtime** see the [Elasti
 {% endtip %}
 
 {% anchor SpaceLeaseExpiration %}
+
 
 # @SpaceLeaseExpiration
 

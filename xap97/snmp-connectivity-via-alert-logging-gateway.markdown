@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  SNMP Connectivity via Alert Logging Gateway
+title:  SNMP Alerts
 categories: XAP97
 parent: administrative-alerts.html
 weight: 200

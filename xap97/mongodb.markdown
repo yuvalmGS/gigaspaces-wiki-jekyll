@@ -9,7 +9,7 @@ weight: 300
 
 {% summary %} A MongoDB Space Persistency Solution {% endsummary %}
 
-# Overview
+
 
 [MongoDB](http://www.mongodb.org/) is a simple and popular open-source document-oriented NoSQL database.
 

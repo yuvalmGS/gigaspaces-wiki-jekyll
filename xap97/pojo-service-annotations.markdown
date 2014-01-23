@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Service Annotations
+title:  Service Metadata
 categories: XAP97
 parent: pojo-metadata.html
 weight: 300
 ---
 
-{% summary %}This section explains the different service  annotations.{% endsummary %}
+{% summary %}This section explains the different service metadata.{% endsummary %}
 
 
 
@@ -109,6 +109,51 @@ public class DataRemoting {
 public interface MyService {
 
     void doSomething(@Routing int param1, int param2);
+}
+{%endhighlight%}
+{% endgcloak %}
+
+
+# Task Execution
+
+{: .table .table-bordered}
+|Attribute Annotation|@TaskGigaSpace   |
+|Description         | This annotation injects a clustered proxy into the Task implementation. This is useful when the Task should access other partitions.   |
+|Reference  | [Task Execution](./task-execution-over-the-space.html)|
+
+{% togglecloak id=4 %}**Example**{% endtogglecloak %}
+{% gcloak 4 %}
+{%highlight java%}
+public class MyTask implements Task<Integer>  {
+
+    @TaskGigaSpace
+    private transient GigaSpace colocatedSpace;
+    private transient GigaSpace clusteredSpace;
+
+    public MyTask() {
+    }
+....
+}
+{%endhighlight%}
+{% endgcloak %}
+
+# Task Routing
+
+{: .table .table-bordered}
+|Method Annotation|@SpaceRouting  |
+|Description         | This annotation selects the routing value. In case it is a POJO defined with a @SpaceRouting on one of its properties, the value of that property will be used as the routing information when passed as a parameter.   |
+|Reference  | [Task Execution](./task-execution-over-the-space.html)|
+
+{% togglecloak id=5 %}**Example**{% endtogglecloak %}
+{% gcloak 5 %}
+{%highlight java%}
+public class MyTask implements Task<Integer>  {
+
+    @SpaceRouting
+    public Integer routing() {
+       return this.value;
+    }
+....
 }
 {%endhighlight%}
 {% endgcloak %}

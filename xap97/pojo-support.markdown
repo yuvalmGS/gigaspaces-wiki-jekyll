@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  POJO Support
+title:  Space Class
 categories: XAP97
 parent: getting-started.html
 weight: 100

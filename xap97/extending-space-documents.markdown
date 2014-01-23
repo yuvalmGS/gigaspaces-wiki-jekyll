@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Extending Space Documents
+title:  Extending
 categories: XAP97
 parent: document-api.html
 weight: 100

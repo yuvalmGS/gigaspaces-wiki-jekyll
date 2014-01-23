@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Document API
+title:  Space Document
 categories: XAP97
 parent: getting-started.html
-weight: 200
+weight: 300
 ---
 
 {% summary %}Working with Space Documents{% endsummary %}
@@ -11,10 +11,10 @@ weight: 200
 # Overview
 
 {% section %}
-{% column width=70% %}
+{% column width=80% %}
 The GigaSpaces document API exposes the space as [Document Store](http://en.wikipedia.org/wiki/Document-oriented_database). A document, which is represented by the class `SpaceDocument`, is essentially collection of key-value pairs, where the keys are strings and the values are primitives, `String`, `Date`, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
 {% endcolumn %}
-{% column  width=25% %}
+{% column  width=15% %}
 ![doc_api.jpg](/attachment_files/doc_api.jpg)
 {% endcolumn %}
 {% endsection %}

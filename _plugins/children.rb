@@ -6,7 +6,7 @@ module Jekyll
     end
 
     def render(context)
-      output = "<h3>Navigation</h3>"
+      output = "<h3>Related Topics</h3>"
       output << "<div id=\"childrentree\"></div>"
     end
   end

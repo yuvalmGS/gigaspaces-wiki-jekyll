@@ -9,21 +9,26 @@ weight: 100
 
 {% summary %}Allows archiving of space objects to an external persistency service.{% endsummary %}
 
+{%section%}
+{%column width=60% %}
 # Overview
-
 The archive container is used to transfer historical data into Big-Data storage (for example Cassandra).
 
 The typical scenario is when streaming vast number of raw events through the Space, enriching them and then moving them to a Big-Data storage. Typically, there is no  intention of keeping them in the space nor querying them in the space.
 
-{% indent 3 %}
+{%endcolumn%}
+{%column width=35% %}
 ![](/attachment_files/archive-container.jpg)
-{% endindent %}
+{%endcolumn%}
+{%endsection%}
 
+{%vbar%}
 - The Archive Container automatically moves objects from the Space to the Big-Data storage.
 - The Archive Container configures the set of objects to be archived.
 - The Archive Container supports Space fail-over, and Big-Data storage unavailability.
 - The persisted objects, can then be read by 3rd party tools directly from the Big-Data storage.
 - Big-Data storage is abstracted with the [`ArchiveOperationHandler`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/archive/ArchiveOperationHandler.html) interface. [Cassandra Archive Operation Handler](./cassandra-archive-operation-handler.html) implementation is available out of the box.
+{%endvbar%}
 
 ## Archive Container vs Space Persistency
 
@@ -223,7 +228,9 @@ For a  real-world example consult the streaming-bigdata example :
 
 The archive container, performs take operations only when the relevant space it is working against is in primary mode. When the space is in backup mode, no take operations are performed. If the space moves from backup mode to primary mode, the take operations are started.
 
-{% infosign %} This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
+{% info %}
+This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
+{%endinfo%}
 
 # Static Template Definition
 
@@ -313,7 +320,9 @@ When using transactions with archive container a special care should be taken wi
 
 Adding transaction support is done by injecting a transaction manager into the archive-container and giga-space beans. See the example at the [Configuration](#Configuration) section.
 
-{% infosign %} Note the timeout value is in seconds as per Spring spec for TransactionDefinition.
+{% note %}
+Note the timeout value is in seconds as per Spring spec for TransactionDefinition.
+{%endnote%}
 
 # Default Values of Archive Container Configuration Parameters
 
@@ -377,6 +386,8 @@ public class ExpiredTweetsFilter {
 {% endtabcontent %}
 {% endinittab %}
 
+
+{%comment%}
 # Schema
 
 - <os-archive:archive-container> schema:
@@ -384,6 +395,9 @@ public class ExpiredTweetsFilter {
 {% indent %}
 ![archive-container-schema-9-1-1.png](/attachment_files/archive-container-schema-9-1-1.png)
 {% endindent %}
+
+{%endcomment%}
+
 
 - Spring pu.xml file header
 

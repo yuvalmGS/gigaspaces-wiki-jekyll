@@ -6,8 +6,8 @@ parent: task-execution-over-the-space.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}Aggregating Data with GigaSpaces In-Memory Data-Grid using built-in aggregators.{% endsummary %}
+
+{% summary  %}Aggregating Data with GigaSpaces In-Memory Data-Grid using built-in aggregators.{% endsummary %}
 
 # Overview
 
@@ -33,7 +33,7 @@ The following built-in Aggregators provided:
 The [JDBC Driver](./jdbc-driver.html) support aggregate functions. Still , the Built-in Aggregators will perform better, especially when using [projections](./getting-partial-results-using-projection-api.html).
 {% endnote %}
 
-# Sum Aggregation Example
+# Example
 
 Below example using the `SumTask` to aggregate data using a specific field within the `MyData` objects. A [SQLQuery](./sqlquery.html) using a different field to specify the set of objects the aggregation process will be using. To speed up the aggregation process a [Projection](./getting-partial-results-using-projection-api.html) is used with the SQL Query to read only the specific field required for the aggregation activity (rather the entire space object content).
 
@@ -41,15 +41,17 @@ The example using a [SpaceDocument](./document-api.html) to illustrate a generic
 
 The basic usage of the `SumAggregatorTask` demonstrated with the following:
 
+{% inittab %}
+{% tabcontent Application %}
 {% highlight java %}
 GigaSpace space = ...
 SumAggregatorTask sumAggregatorTask = new SumAggregatorTask("queryField", min, max, "aggregatedField");
 AsyncFuture<Double> future = space.execute(new SumTask<Double, Double>(Double.class, sumAggregatorTask));
 Double result = future.get();
 {% endhighlight %}
+{% endtabcontent%}
 
-The Space Class:
-
+{% tabcontent Space Class %}
 {% highlight java %}
 public class MyData {
 	public MyData (){}
@@ -87,8 +89,9 @@ public class MyData {
 	}
 }
 {% endhighlight %}
+{% endtabcontent%}
+{% tabcontent SumAggregatorTask %}
 
-The SumAggregatorTask:
 
 {% highlight java %}
 import org.openspaces.core.GigaSpace;
@@ -132,4 +135,6 @@ public class SumAggregatorTask implements Task<Double>{
 	  }
 }
 {% endhighlight %}
+{% endtabcontent%}
+{%endinittab%}
 

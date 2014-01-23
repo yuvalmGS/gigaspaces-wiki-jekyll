@@ -3,7 +3,7 @@ layout: post
 title:  Storage Types
 categories: XAP97
 parent: getting-started.html
-weight: 350
+weight: 500
 ---
 
 

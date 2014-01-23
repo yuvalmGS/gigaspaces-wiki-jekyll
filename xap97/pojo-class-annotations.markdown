@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Class Annotations
+title:  Class Metadata
 categories: XAP97
 parent: pojo-metadata.html
 weight: 100
 ---
 
-{% summary %}This section explains the different class level annotations.{% endsummary %}
+{% summary %}This section explains the different class metadata.{% endsummary %}
 
 {%wbr%}
 
@@ -21,15 +21,27 @@ weight: 100
 
 {% togglecloak id=1 %}**Example**{% endtogglecloak %}
 {% gcloak 1 %}
+{% inittab os_simple_space|top %}
+{% tabcontent Annotation %}
 {%highlight java%}
 
 @SpaceClass(persist=true)
 public class Person {
-
-  //
+//
 }
 {%endhighlight%}
+{% endtabcontent %}
+{% tabcontent gs.xml %}
+{%highlight xml%}
+ <class name="examples.model.Person"
+     persist="true">
+ </class>
+}
+{%endhighlight%}
+{% endtabcontent %}
+{% endinittab %}
 {% endgcloak %}
+
 
 
 # Include Properties
@@ -125,6 +137,8 @@ public class Person {
 
 {% togglecloak id=6 %}**Example**{% endtogglecloak %}
 {% gcloak 6 %}
+{% inittab os_simple_space|top %}
+{% tabcontent Annotation %}
 {%highlight java%}
 @SpaceClass(replicate=false)
 public class Person {
@@ -132,6 +146,15 @@ public class Person {
   //
 }
 {%endhighlight%}
+{% endtabcontent  %}
+{% tabcontent gs.xml %}
+{%highlight xml%}
+<class name="com.model.Person"
+         replicate="false">
+</class>
+{%endhighlight%}
+{% endtabcontent  %}
+{%endinittab%}
 {% endgcloak %}
 
 
