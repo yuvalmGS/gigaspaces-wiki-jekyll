@@ -1,20 +1,15 @@
 module Jekyll
   module Tags
     class Try < Liquid::Block
-      include Liquid::StandardFilters
 
-      def initialize(tag_name, markup, tokens)
+      def initialize(tag_name, text, tokens)
         super
+        @text = text.strip
       end
+
 
       def render(context)
-        add_try(context, super)
-      end
-
-      def add_try(context, content)
-        output = "Try it out [![Tryit](/attachment_files/navigation/tryit.jpg)]("
-        output << content
-        output << "){:target=\"_blank\"}"
+        output = "Try it out &nbsp;<a href=\"#{super}\" target=\"_blank\"><img style=\"display:inherit;\" src=\"/attachment_files/navigation/tryit.jpg\" alt=\"Try it out\"></a>"
       end
     end
   end
