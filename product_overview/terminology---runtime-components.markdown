@@ -30,13 +30,13 @@ parent: terminology.html
 {% anchor Processing Unit Container %}
 
 {% section %}
-{% column width=50% %}
+{% column width=70% %}
 
 A container that hosts a [Processing Unit](./terminology---basic-components.html#Processing Unit).
 
 {% sub %}Key sentence: The Processing Unit can run only inside a hosting Processing Unit Container.{% endsub %}
 {% endcolumn %}
-{% column width=30% %}
+{% column width=25% %}
 {% align center %}
 ![term_puc.gif](/attachment_files/term_puc.gif)
 

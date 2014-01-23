@@ -137,6 +137,7 @@ In previous options, parameters could be passed via a POJO template as well. Thi
 
 # Properties Types
 
+{% anchor Nested Properties%}
 ## Nested Properties
 
 GigaSpaces SQL syntax contains various extensions to support matching nested properties, maps, collections and arrays.
