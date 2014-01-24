@@ -6,5 +6,11 @@ weight: 100
 parent: programmers-guide.html
 ---
 
-{% summary %}This section will describe steps to setup your development environment to work with XAP{% endsummary %}
+{% summary %}
+This section describes the basic concepts of XAP.
+You will be introduced to the Space and the basic object types that can be used with the space.
+{% endsummary %}
+
+
+
 {% children %}

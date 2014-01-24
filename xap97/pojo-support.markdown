@@ -9,11 +9,9 @@ weight: 100
 
 {% summary %}GigaSpaces JavaSpaces API Plain Old Java Object support - the [POJO](http://en.wikipedia.org/wiki/Plain_Old_Java_Object).{% endsummary %}
 
-# Overview
-
 GigaSpaces JavaSpaces `POJO` support allows you to use `JavaBean` classes as space domain classes, and perform space operations using these objects. POJO domain Classes should follow rules similar to the ones defined by [JPA](http://en.wikipedia.org/wiki/Java_Persistence_API), [Hibernate](http://www.hibernate.org) and other domain class frameworks.
 
-# POJOs as Data Objects
+# Data Objects
 
 One of the differences between the `GigaSpace` interface and the classic `net.jini.Space.JavaSpace` interface is its support for POJOs as Space entries. The `JavaSpace` interface is rather intrusive and forces objects that are written to the Space to implement the `net.jini.core.entry.Entry` interface, and mark any field to be stored on the Space as `public`.
 
@@ -89,7 +87,7 @@ GigaSpaces `POJO` rules:
 
 This page deals with the POJO class as a space domain class, used to model the space, and store application data into the IMDG. POJO classes deployed as services into the Service Grid are described in the [Data Event Listener](./data-event-listener.html) and [Space Based Remoting](./space-based-remoting.html) sections. In these cases, the POJO class is used to process incoming data, or is invoked remotely.
 
-# A POJO as a Space Domain Class
+# Domain Class
 
 When using a POJO as a space domain class, follow these guidelines:
 
@@ -159,6 +157,8 @@ Non-Indexed fields that are not used for queries should be placed within a user 
 [Indexing](./indexing.html) is **critical** for good performance over large spaces. Don't forget to index properly with the @SpaceIndex(type=SpaceIndexType.BASIC) or @SpaceIndex(type=SpaceIndexType.EXTENDED) annotation or use the gs.xml equivalent.
 {% endtip %}
 
+{%comment%}
 {% include xap97/pojo-code-snippets.markdown %}
 {% whr %}
 {% refer %}**Next subchapter:** [POJO Metadata](./pojo-metadata.html) - This section deals with the annotations and gs.xml mapping file, troubleshooting procedures, considerations, UID generation and usage, as well as frequently used code snippets.{% endrefer %}
+{%endcomment%}

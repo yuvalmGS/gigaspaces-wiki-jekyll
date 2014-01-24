@@ -16,9 +16,11 @@ While documents provide us with a dynamic schema, they force us to give up Java'
 ![document_arch.jpg](/attachment_files/document_arch.jpg)
 {% endcomment %}
 
+{%comment%}
 {% plus %} Do not confuse this with [Document-POJO interoperability](./document-pojo-interoperability.html), which is a different feature.
+{%endcomment%}
 
-# Creating the Extension Class
+# Definition
 
 Let's create a type-safe document wrapper for the **Product** type described in the [Document Support](./document-api.html) page. The extensions are:
 
@@ -64,7 +66,7 @@ public class ProductDocument extends SpaceDocument {
 }
 {% endhighlight %}
 
-# Registering the Extension Class
+# Registration
 
 If your only intention is to write/update document entries, creating the extension class is sufficient - from the space's perspective it is equivalent to a `SpaceDocument` instance. However, if you attempt to read/take entries from the space, the results will be `SpaceDocument` instances, and the cast to `ProductDocument` will throw an exception.
 To overcome that, we need to include the document wrapper class in the type introduction:
@@ -84,7 +86,7 @@ public void registerProductType(GigaSpace gigaspace) {
 
 This wrapper type-registration is kept in the proxy and not propagated to the server, so that from the server's perspective this is still a virtual document type with no affiliated POJO class.
 
-# Using the Extension Class
+# Usage
 
 The following code snippet demonstrate usage of the `ProductDocument` extensions we've created to write and read documents from the space.
 

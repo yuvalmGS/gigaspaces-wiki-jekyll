@@ -243,7 +243,7 @@ Built on the same concept of Spring `ApplicationContextAware` callback interface
 
 The `UrlSpaceFactoryBean` implements this `ClusterInfoAware` and uses the `ClusterInfo` in order to automatically amend the Space URL with cluster parameters. The `ClusterInfo` is provided by external containers that can run a Processing Unit.
 
-{% refer %}For more details on `ClusterInfo`, refer to [this section](./obtaining-cluster-information.html).{% endrefer %}
+{% learn%}./obtaining-cluster-information.html{% endlearn %}
 
 {% tip %}
 Deploying a space (Stateful PU) may use the [Elastic Processing Unit](./elastic-processing-unit.html) allowing dynamic scale and space instances (primary/backup) rebalancing without any downtime.
