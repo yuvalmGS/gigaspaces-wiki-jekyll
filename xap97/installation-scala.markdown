@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Scala
-categories: XAP97
+categories:
 parent: installation.html
 weight: 300
 ---

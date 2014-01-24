@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Security Configurations
+title:  Configuration
 categories: XAP97
 parent: security-basics.html
 weight: 300

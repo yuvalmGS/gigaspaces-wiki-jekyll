@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Security Concepts
+title:  Concepts
 categories: XAP97
 parent: security-basics.html
 weight: 100

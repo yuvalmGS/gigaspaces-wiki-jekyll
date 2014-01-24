@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Security Authorities
+title:  Authorities
 categories: XAP97
 parent: security-basics.html
 weight: 200
@@ -34,7 +34,9 @@ The **Grid Authority** consists of privileges for managing the Grid and its Serv
 In distributed systems, it may be confusing as to which service is performing the authorization. The GSM is responsible for deploying, un-deploying, scaling, relocating, restarting and destroying of processing units. The GSA (if available) is responsible for starting, terminating restarting of GSC/GSM/LUS. The GSC on the other hand, mainly delegates the calls to the managing GSM (e.g. relocate).
 
 
-{% exclamation %} When deploying an [elastic processing unit](./elastic-processing-unit.html), the *Provision PU* privilege is not enough - *Manage PU* and *Manage Grid* are required as well, since an elastic PU requires scaling and grid management.
+{% note %}
+When deploying an [elastic processing unit](./elastic-processing-unit.html), the *Provision PU* privilege is not enough - *Manage PU* and *Manage Grid* are required as well, since an elastic PU requires scaling and grid management.
+{%endnote%}
 
 # Space Authority
 
