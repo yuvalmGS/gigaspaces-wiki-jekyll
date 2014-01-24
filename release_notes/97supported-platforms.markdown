@@ -66,6 +66,7 @@ See below tested JVMs:
 | log4j-snmp-trap-appender | [http://code.google.com/p/log4j-snmp-trap-appender/](http://code.google.com/p/log4j-snmp-trap-appender/) | 1.2.9 | Alert integration example | [SNMP Connectivity via Alert Logging Gateway](/xap97/snmp-connectivity-via-alert-logging-gateway.html)  |
 | MongoDB | [http://www.mongodb.org/](http://www.mongodb.org/) | 2.11.2 | MongoDB archiver and MongoDB EDS  | [MongoDB Integration](/xap97/mongodb.html) |
 | Mule | [http://www.mulesoft.org/](http://www.mulesoft.org/) | 3.3.0 | XAP Mule PU | [Mule ESB](/xap97/mule-esb.html) |
+| Scala | [http://oss.sonatype.org/content/groups/scala-tools/](http://oss.sonatype.org/content/groups/scala-tools/) | 2.10.1 |  Express common programming patterns in a concise | [Scala](/xap97/scala.html) | 
 | snmp4j | [http://www.snmp4j.org/](http://www.snmp4j.org/) | 1.11.2 | Alert integration example | [SNMP Connectivity via Alert Logging Gateway](/xap97/snmp-connectivity-via-alert-logging-gateway.html) | 
 
 
