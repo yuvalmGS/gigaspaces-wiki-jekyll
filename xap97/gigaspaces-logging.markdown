@@ -105,7 +105,7 @@ org.openspaces.pu.container.jee.context.ProcessingUnitWebApplicationContext.leve
 org.springframework.level = WARNING
 {% endhighlight %}
 
-OpenSpaces wraps the GigaSpaces core product with Spring which enables Spring configuration and Spring life cycle to GigaSpaces applications. Some additional info about OpenSpaces is [here](./openspaces-faq.html).
+OpenSpaces wraps the GigaSpaces core product with Spring which enables Spring configuration and Spring life cycle to GigaSpaces applications. Some additional info about OpenSpaces is [here](/faq/openspaces-faq.html).
 
 ### Spring
 
@@ -239,7 +239,7 @@ Replication between spaces is one of the core features of GigaSpaces and is expl
 com.gigaspaces.core.cluster.partition.level = INFO
 {% endhighlight %}
 
-When cluster uses partitioned topology, data is partitioned across multiple instances of spaces. More information about topologies is [here](/product_overview//space-topologies.html).
+When cluster uses partitioned topology, data is partitioned across multiple instances of spaces. More information about topologies is [here](/product_overview/space-topologies.html).
 
 ### Space Active-Election
 
@@ -336,7 +336,7 @@ com.gigaspaces.grid.gsm.selector.level = INFO
 org.jini.rio.tools.webster.level = INFO
 {% endhighlight %}
 
-GSM manages the applications and maintains the SLA's of deployments. More information about GSM is [here](./the-gigaspaces-manager.html).
+GSM manages the applications and maintains the SLA's of deployments. More information about GSM is [here](./service-grid.html#gsm).
 
 ### GSC
 
@@ -347,7 +347,7 @@ com.gigaspaces.grid.gsm.GSMFaultDetectionHandler.level = INFO
 org.openspaces.pu.container.servicegrid.PUFaultDetectionHandler.level = INFO
 {% endhighlight %}
 
-GSC is the runtime environment for GigaSpaces applications. More information about GSC's is [here](./the-gigaspaces-container.html).
+GSC is the runtime environment for GigaSpaces applications. More information about GSC's is [here](./service-grid.html#gsc).
 
 ### ESM
 
@@ -355,8 +355,11 @@ GSC is the runtime environment for GigaSpaces applications. More information abo
 org.openspaces.grid.esm.level = INFO
 {% endhighlight %}
 
-Elastic Service Manager (ESM) is an implementation of the Elastic Middleware Services. It is built on-top of the existing administrative API exposed by the GigaSpaces components. See [The Elastic Service Manager](./the-elastic-service-manager.html) page for more details.
+Elastic Service Manager (ESM) is an implementation of the Elastic Middleware Services. It is built on-top of the existing administrative API exposed by the GigaSpaces components. See [The Elastic Service Manager](./elastic-processing-unit.html) page for more details.
+
+{%comment%}
 Elastic Middleware Services are explained [here](./elastic-middleware-services.html).
+{%endcomment%}
 
 ### GSA
 

@@ -717,7 +717,7 @@ The following Spring configuration XML shows how the filter can be configured, u
 
 ## Accessing a Space within a Space Filter
 
-Accessing a space within a space filter can cause a cycle construction exception, since the space can not be injected to the filter (because the space was not constructed yet). There are options to solve this with pure Spring, but OpenSpaces provides a simpler option by using the [GigaSpacesLateContext](./the-gigaspacecontext-annotation.html) annotation.
+Accessing a space within a space filter can cause a cycle construction exception, since the space can not be injected to the filter (because the space was not constructed yet). There are options to solve this with pure Spring, but OpenSpaces provides a simpler option by using the [GigaSpacesLateContext](./pojo-grid-annotations.html) annotation.
 
 # Space Replication Filters
 

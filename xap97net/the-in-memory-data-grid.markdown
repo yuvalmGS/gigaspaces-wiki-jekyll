@@ -116,6 +116,6 @@ The basic unit of scalability in SBA is the [processing unit](./processing-unit-
 
 It is recommended that you read the following sections next:
 
-- [Space Topologies](/product_overview}/space-topologies.html)
+- [Space Topologies](/product_overview/space-topologies.html)
 - [Deploying and Interacting with the Space](./deploying-and-interacting-with-the-space.html)
 
