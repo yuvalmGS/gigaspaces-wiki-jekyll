@@ -111,13 +111,13 @@ Building on top of the core API, the Space also provides [higher level services]
 
 # The Space as the Foundation for Space-Based Architecture
 
-Besides its ability to function as an in-memory data grid, the Space's core features and the services on top of it, form the foundation for [Space-Based Architecture (SBA)](./a-typical-sba-application.html). By using SBA, you can gain performance and scalability benefits not available with traditional tier-based architectures, even when these include an in-memory data grid, such as the Space.
+Besides its ability to function as an in-memory data grid, the Space's core features and the services on top of it, form the foundation for [Space-Based Architecture (SBA)](/product_overview/a-typical-sba-application.html). By using SBA, you can gain performance and scalability benefits not available with traditional tier-based architectures, even when these include an in-memory data grid, such as the Space.
 The basic unit of scalability in SBA is the [processing unit](./processing-unit-container.html). The Space can be embedded into the processing unit, or accessed remotely from it. When embedded into the processing unit, local services, such as event handler and service exposed remotely over the Space, can interact with the local space instance to achieve unparalleled performance and scalability. The Space's built-in support for data partitioning is used to distribute the data and processing across the nodes, and for scaling the application.
 
 # What's Next
 
 It is recommended that you read the following sections next:
 
-- [Space Topologies](./space-topologies.html)
+- [Space Topologies]({%currentjavaurl%}/space-topologies.html)
 - [Deploying and Interacting with the Space](./deploying-and-interacting-with-the-space.html)
 

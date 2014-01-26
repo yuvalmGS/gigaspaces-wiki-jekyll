@@ -19,7 +19,7 @@ GigaSpaces IMDG supports three kinds of caching mechanisms. Using GigaSpaces IMD
 
 The main supported caching mechanisms are the [in-line cache](#In-line Cache) and the [side cache](#Side Cache).
 
-Both the In-line cache and the Side cache support the common deployment toplogies: [replicated](./terminology---data-grid-topologies.html#Primary Backup Data Grid), [partitioned](./terminology---data-grid-topologies.html#Partitioned Data Grid) and [primary-backup partitioned](./terminology---data-grid-topologies.html#Primary Backup Partitioned Data Grid).
+Both the In-line cache and the Side cache support the common deployment toplogies: [replicated](/product_overview/terminology---data-grid-topologies.html#Primary Backup Data Grid), [partitioned](/product_overview/terminology---data-grid-topologies.html#Partitioned Data Grid) and [primary-backup partitioned](/product_overview/terminology---data-grid-topologies.html#Primary Backup Partitioned Data Grid).
 
 # In-line Cache
 
