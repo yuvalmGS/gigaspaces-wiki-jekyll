@@ -130,4 +130,4 @@ Here are the options you may use to refresh the cache:
 - Refresh data using a Queue - Any updates made to the database are also written to a queue. Refresher client consumes the messages on the queue and applies these changes to space.
 
 
-![queue-refresh.png](/attachment_files/dotnet/queue-refresh.png)
+![queue-refresh.png](/attachment_files/dotnet/queue-refresh.jpg)
