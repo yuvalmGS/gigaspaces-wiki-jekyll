@@ -20,7 +20,8 @@ Specific behavior for class attributes can be defined with annotations. The anno
 |Argument   |  boolean          |
 |Default    | false |
 |Description| Defines whether this field value is used when generating the Object ID. The field value should be unique -- i.e., no multiple objects with the same value should be written into the space (each object should have a different field value). When writing an object into the space with an existing `id` field value, an `EntryAlreadyInSpaceException` is thrown. The Object ID is created, based on the `id` field value.{%wbr%}Specifies if the object ID is generated automatically by the space when written into the space. If `false`, the field is indexed automatically, and if `true`, the field isn't indexed. If `autoGenerate` is declared as `false`, the field is indexed automatically. If `autoGenerate` is declared as `true`, the field isn't indexed. If `autoGenerate` is `true`, the field must be of the type `java.lang.String`. |
-|Reference  | [Object ID](./space-object-id-operations.html)|
+
+
 
 
 
@@ -40,7 +41,7 @@ public class Person {
 }
 {%endhighlight%}
 {% endgcloak %}
-
+{%learn%}./space-object-id-operations.html{%endlearn%}
 
 
 # SpaceRouting
@@ -48,7 +49,7 @@ public class Person {
 {: .table .table-bordered}
 |Syntax     | @SpaceRouting|
 |Description| The `@SpaceRouting` annotation specifies a get method for the field to be used to calculate the target space for the space operation (read , write...). The `@SpaceRouting` field value hash code is used to calculate the target space when the space is running in **partitioned mode**.{%wbr%}The field value hash code is used to calculate the target space when the space is running in **partitioned mode**. |
-|Reference  | [Data-Partitioning](./data-partitioning.html)|
+
 
 {% togglecloak id=2 %}**Example**{% endtogglecloak %}{% gcloak 2 %}
 {%highlight java%}
@@ -65,7 +66,7 @@ public class Employee {
 }
 {%endhighlight%}
 {% endgcloak %}
-
+{%learn%}./data-partitioning.html{%endlearn%}
 
 
 # SpaceProperty
@@ -75,7 +76,7 @@ public class Employee {
 |Argument   |  nullValue          |
 |Default    |  null |
 |Description| Specifies that an attribute value be treated as `null` when the object is written to the space and no value is assigned to the attribute. (where `-1` functions as a `null` value in case of an int)|
-|Reference  |  |
+
 
 
 {% togglecloak id=3 %}**Example**{% endtogglecloak %}
@@ -101,7 +102,6 @@ public class Employee {
 |Syntax     |  @SpaceIndex(type=SpaceIndexType.BASIC)|
 |Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %})  |
 |Description| Querying indexed fields speeds up read and take operations. The `@SpaceIndex` annotation should be used to specify an indexed field.|
-|Reference  | [Indexing](./indexing.html) |
 
 
 {% togglecloak id=4 %}**Example**{% endtogglecloak %}
@@ -140,13 +140,15 @@ public class User {
 {%endhighlight%}
 {% endgcloak %}
 
+{%learn%}./indexing.html{%endlearn%}
+
 # SpaceIndex Path
 
 {: .table .table-bordered}
 |Syntax     |  @SpaceIndex(path = "attributeName",type = SpaceIndexType.EXTENDED)|
 |Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %}){%wbr%} path - indexed attribute|
 |Description| The `path()` attribute represents the path of the indexed property within a nested object. |
-|Reference  | [Nested Indexing](./indexing-nested-properties.html) |
+
 
 {% togglecloak id=5 %}**Example**{% endtogglecloak %}
 {% gcloak 5 %}
@@ -182,6 +184,7 @@ public static class Address implements Serializable {
 }
 {%endhighlight%}
 {% endgcloak %}
+{%learn%}./indexing-nested-properties.html{%endlearn%}
 
 # SpaceVersion
 
@@ -189,7 +192,6 @@ public static class Address implements Serializable {
 |Syntax     |  @SpaceVersion|
 |Description| This annotation is used for object versioning used for optimistic locking. |
 |Note       | The attribute must be an `int` data type. |
-|Reference  | [Optimistic Locking](./optimistic-locking.html) |
 
 
 {% togglecloak id=6 %}**Example**{% endtogglecloak %}
@@ -208,6 +210,7 @@ public class Employee {
 }
 {%endhighlight%}
 {% endgcloak %}
+{%learn%}./optimistic-locking.html{%endlearn%}
 
 # SpacePersist
 
@@ -264,7 +267,7 @@ public class Employee {
 {: .table .table-bordered}
 |Syntax     |  @SpaceLeaseExpiration|
 |Description|This annotation specifies the attribute for holding the timestamp of when the instance's lease expires (this is a standard Java timestamp based on the 1/1/1970 epoch). This property should not be populated by the user code. The space will populate this property automatically based on the lease time given by the user when writing the object. When using an external data source, you can choose to persist this value to the database. Subsequently, when data is reloaded from the external data source (at startup time for example), the space will filter out instances whose lease expiration timestamp has already passed. This field should be a `long` data type.|
-|Reference  | [Lease](./leases---automatic-expiration.html)  |
+
 
 {% togglecloak id=81 %}**Example**{% endtogglecloak %}
 {% gcloak 81 %}
@@ -285,6 +288,7 @@ public class MyData {
 }
 {%endhighlight%}
 {% endgcloak %}
+{%learn%}./leases---automatic-expiration.html{%endlearn%}
 
 # SpaceStorageType
 
@@ -293,7 +297,7 @@ public class MyData {
 |Argument   | [StorageType]({% javadoc com/gigaspaces/metadata/StorageType %})          |
 |Default    | StorageType.OBJECT |
 |Description| This annotation is used to specify how the attribute is stored in the space. |
-|Reference  | [Storage Types](./storage-types---controlling-serialization.html)  |
+
 
 {% togglecloak id=10 %}**Example**{% endtogglecloak %}
 {% gcloak 10 %}
@@ -311,7 +315,7 @@ public class Message {
 }
 {%endhighlight%}
 {% endgcloak %}
-
+{%learn%}./storage-types---controlling-serialization.html{%endlearn%}
 
 
 # SpaceFifoGroupingProperty
@@ -320,7 +324,6 @@ public class Message {
 |Syntax     | @SpaceFifoGroupingProperty(path = "attributeName")|
 |Argument   | path          |
 |Description| This annotation is used to define a space FIFO grouping property. |
-|Reference  |  [FIFO Grouping](./fifo-grouping.html) |
 |Note | If defined, the `TakeModifiers.FIFO_GROUPING_POLL` or `ReadModifiers.FIFO_GROUPING_POLL` modifiers can be used to return all space entries that match the selection template in FIFO order. Different values of the FG property define groups of space entries that match each value. FIFO ordering exists within each group and not between different groups. |
 
 {% togglecloak id=11 %}**Example**{% endtogglecloak %}
@@ -339,7 +342,7 @@ public class FlightReservation
 }
 {%endhighlight%}
 {% endgcloak %}
-
+{%learn%}./fifo-grouping.html{%endlearn%}
 
 
 # SpaceFifoGroupingIndex
@@ -347,7 +350,6 @@ public class FlightReservation
 {: .table .table-bordered}
 |Syntax     | @SpaceFifoGroupingIndex|
 |Description| This annotation is used to define a space FIFO grouping Index. |
-|Reference  | [FIFO Grouping](./fifo-grouping.html)  |
 |Note |This annotation can be declared on several properties in a class in order to assist in efficient traversal.{%wbr%}If defined, there must be a property in the class, marked with the `@SpaceFifoGroupingProperty` annotation.{%wbr%}A compound index that contains this FIFO grouping index and the FIFO grouping property will be created.   |
 
 
@@ -365,23 +367,23 @@ public class FlightReservation
 
 {%endhighlight%}
 {% endgcloak %}
-
+{%learn%}./fifo-grouping.html{%endlearn%}
 
 # SpaceClassConstructor
 
 {: .table .table-bordered}
 |Syntax     | @SpaceClassConstructor|
 |Description| This annotation can be placed on a POJO constructor to denote that this constructor should be used during object instantiation.{%wbr%}Using this annotations, it is possible for the POJO to have immutable properties (i.e. `final` fields).{%wbr%}As opposed to a standard POJO, a POJO annotated with this annotation may omit setters for its properties.{%wbr%}Except for the case where the id property is auto generated, only properties defined in this constructor will be considered space properties.{%wbr%}The annotations can be placed on at most one constructor.|
-|Reference  | [FIFO Grouping](./fifo-grouping.html)  |
 
 
+{%learn%}./fifo-grouping.html{%endlearn%}
 
 # SpaceDynamicProperties
 
 {: .table .table-bordered}
 |Syntax     | @SpaceDynamicProperties|
 |Description| Allows adding properties freely to a class without worrying about the schema.|
-|Reference  | [Dynamic Properties](./dynamic-properties.html)  |
+
 
 
 {% togglecloak id=13 %}**Example**{% endtogglecloak %}
@@ -407,7 +409,7 @@ public class Person {
 }
 {%endhighlight%}
 {% endgcloak %}
-
+ {%learn%}./dynamic-properties.html{%endlearn%}
 
 
 

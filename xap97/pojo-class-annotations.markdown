@@ -15,9 +15,9 @@ weight: 100
 {: .table .table-bordered}
 |Syntax     | @SpaceClass(persist=true) |
 |Argument   | boolean          |
-|Default    | true|
+|Default    | false|
 |Description| When a space is defined as persistent, a 'true' value for this annotation persists objects of this type. |
-|Reference  | [persistency](./persistency.html)|
+
 
 {% togglecloak id=1 %}**Example**{% endtogglecloak %}
 {% gcloak 1 %}
@@ -41,7 +41,7 @@ public class Person {
 {% endtabcontent %}
 {% endinittab %}
 {% endgcloak %}
-
+{%learn%}./persistency.html{%endlearn%}
 
 
 # Include Properties
@@ -55,10 +55,8 @@ public class Person {
 {% togglecloak id=2 %}**Example**{% endtogglecloak %}
 {% gcloak 2 %}
 {%highlight java%}
-
 @SpaceClass(includeProperties=IncludeProperties.EXPLICIT)
 public class Person {
-
   //
 }
 {%endhighlight%}
@@ -71,7 +69,7 @@ public class Person {
 |Argument   | [FifoSupport]({% javadoc com/gigaspaces/annotation/pojo/FifoSupport %})|
 |Default    | FifoSupport.NOT_SET|
 |Description| To enable FIFO operations, set this attribute to `FifoSupport.OPERATION`|
-|Reference  | [FIFO](./fifo-support.html) |
+
 
 {% togglecloak id=3 %}**Example**{% endtogglecloak %}
 {% gcloak 3 %}
@@ -83,6 +81,7 @@ public class Person {
 }
 {%endhighlight%}
 {% endgcloak %}
+ {%learn%}./fifo-support.html{%endlearn%}
 
 
 # Inherit Index
@@ -92,7 +91,7 @@ public class Person {
 |Argument   | boolean          |
 |Default    | true|
 |Description| Whether to use the class indexes list only, or to also include the superclass' indexes. {% wbr %}If the class does not define indexes, superclass indexes are used. {% wbr %}Options:{% wbr %}- `false` -- class indexes only.{% wbr %}- `true` -- class indexes and superclass indexes.|
-|Reference  |  [Indexing](./indexing.html) |
+
 
 
 {% togglecloak id=4 %}**Example**{% endtogglecloak %}
@@ -105,6 +104,7 @@ public class Person {
 }
 {%endhighlight%}
 {% endgcloak %}
+{%learn%}./indexing.html{%endlearn%}
 
 # Storage Type
 
@@ -113,7 +113,6 @@ public class Person {
 |Argument   | [StorageType]({% javadoc com/gigaspaces/metadata/StorageType %})          |
 |Default    | StorageType.OBJECT |
 |Description| To determine a default storage type for each non primitive property for which a (field level) storage type was not defined.|
-|Reference  | [Storage Type](./storage-types---controlling-serialization.html)  |
 
 
 {% togglecloak id=5 %}**Example**{% endtogglecloak %}
@@ -126,6 +125,7 @@ public class Person {
 }
 {%endhighlight%}
 {% endgcloak %}
+{%learn%}./storage-types---controlling-serialization.html{%endlearn%}
 
 # Replication
 
@@ -165,7 +165,6 @@ public class Person {
 |Argument(s)| string          |
 |Values     | attribute name(s)   |
 |Description| Indexes can be defined for multiple attributes of a class  |
-|Reference  | [Compound Index](./indexing-compound.html)  |
 
 
 {% togglecloak id=7 %}**Example**{% endtogglecloak %}
@@ -185,3 +184,4 @@ public class User {
 
 {%endhighlight%}
 {% endgcloak %}
+{%learn%}./indexing-compound.html{%endlearn%}

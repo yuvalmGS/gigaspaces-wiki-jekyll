@@ -6,7 +6,7 @@ parent: the-space.html
 weight: 200
 ---
 
-{% summary %}An address, passed to `GigaSpace`, used to connect to a space and remotely create new spaces as well as enable various characteristics.{% endsummary %}
+{% summary %}A Space URL is a string that represents an address of a space.{% endsummary %}
 
 # Overview
 
@@ -27,9 +27,8 @@ A more commonly used format is using the **[OpenSpaces Configurer API](./program
 {%endcomment%}
 
 {% highlight java %}
-UrlSpaceConfigurer spaceConfigurer = new UrlSpaceConfigurer("/./space").fifo(true)
-                                                                       .lookupGroups("test");
-IJSpace space = spaceConfigurer.space();
+UrlSpaceConfigurer spaceConfigurer = new UrlSpaceConfigurer("/./space");
+GigaSpace gigaSpace = new GigaSpaceConfigurer(spaceConfigurer).gigaSpace();
 
 // ...
 
@@ -71,17 +70,17 @@ When a URL is provided without the protocol (java) and host name (localhost), th
 
 # Examples
 
-## Accessing Remote Space Using Jini Lookup Service - Unicast Discovery
+#### Accessing Remote Space Using Jini Lookup Service - Unicast Discovery
 
 - `JINI://hostname/*/myspace`
 - `JINI://mylookuphost/mycontainername/myspace`
 
-## Accessing Remote Space Using the Jini Lookup Service - Multicast Discovery
+#### Accessing Remote Space Using the Jini Lookup Service - Multicast Discovery
 
 - `JINI://*/mycontainername/myspace`
 - `JINI://*/*/myspace`
 
-## Starting Embedded Space Using the Java Protocol
+#### Starting Embedded Space Using the Java Protocol
 
 - `JAVA://containerHostName:port/myContainerName/spaceName`
 - `/./mySpace (which translates to java://localhost:10098/containerName/mySpace?schema=default)`
@@ -89,7 +88,7 @@ When a URL is provided without the protocol (java) and host name (localhost), th
 
 {% anchor 1 %}
 
-## Distributed Unicast-Based Lookup Service Support
+#### Distributed Unicast-Based Lookup Service Support
 
 In environments that do not support multicast, you can use the new `locators` space URL property to instruct the started space or a client to locate the Jini Lookup Service on specific host name and port.
 
@@ -110,7 +109,7 @@ jini://host1:port1,....host n:port n/container-name/space_name?locators=h1:port,
 jini://host1:port1/container-name/space name?locators=h1:port,h2:port,h3:port
 {% endhighlight %}
 
-## Running Replicated Space
+#### Running Replicated Space
 
 To start three space instances using the [replicated cache topology](/product_overview/terminology---data-grid-topologies.html), which enables replicating their data and operations synchronously, you should have the following commands:
 
@@ -126,7 +125,7 @@ To access the replicated space, the client application should use the following 
 jini://*/*/mySpace
 {% endhighlight %}
 
-## Running Partitioned Space
+#### Running Partitioned Space
 
 To start three space instances using the [partitioned cache topology](/product_overview/terminology---data-grid-topologies.html) where each partition stores different portions of the data, you should have the following calls:
 
@@ -142,7 +141,7 @@ To access the partitioned space, the client application should use the following
 jini://*/*/mySpace
 {% endhighlight %}
 
-## Running Embedded Space
+#### Running Embedded Space
 
 You may run the replicated or partitioned space from within your application. In this case, the space instance will be running in the same memory address as the application - i.e. [embedded space](/product_overview/terminology---data-grid-topologies.html). See the following example for running three space instances in partitioned embedded mode.
 Each `CacheFinder.find()` or `SpaceFinder.find()` call should be done from a different application process.

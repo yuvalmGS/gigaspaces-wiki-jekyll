@@ -146,20 +146,19 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 # ClusterInfoContext
 
 {: .table .table-bordered}
-|Class Annotation    |  |
 |Attribute Annotation| @ClusterInfoContext  |
-|Description         |   |
-|Reference  | [GigaSpace Context](./the-gigaspacecontext-annotation.html)|
+|Description         | This annotation injects cluster information into the class.  |
 
 
 {% togglecloak id=3 %}**Example**{% endtogglecloak %}
 {% gcloak 3 %}
 {%highlight java%}
-public class MyService {
+public class Process {
 
-    @GigaSpaceLateContext
-    private GigaSpace gigaSpace;
+    @ClusterInfoContext
+    ClusterInfo  clusterInfo;
 
+    Integer instanceId = clusterInfo.getInstanceId();
 }
 {%endhighlight%}
 {% endgcloak %}

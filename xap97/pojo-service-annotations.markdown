@@ -18,7 +18,7 @@ weight: 300
 |Method Annotation|  @EventTemplate - defines a template{%wbr%}  @SpaceDataEvent - event handler method |
 |Description         | The Notify Container is the equivalent of  publish/subscribe messaging. |
 |Note | @EventDriven , @Notify   can’t be placed on interface classes. You should place these on the implementation class.|
-|Reference  | [Notify Container](./notify-container.html)|
+
 
 
 {% togglecloak id=1 %}**Example**{% endtogglecloak %}
@@ -41,7 +41,7 @@ public class SimpleListener {
 }
 {%endhighlight%}
 {% endgcloak %}
-
+{%learn%}./notify-container.html{%endlearn%}
 
 # Polling Container
 
@@ -50,7 +50,7 @@ public class SimpleListener {
 |Method Annotation|  @EventTemplate - defines a template{%wbr%}  @SpaceDataEvent - event handler method |
 |Description         | The Polling Container is the equivalent of point to point messaging. |
 |Note | @EventDriven , @Polling   can’t be placed on interface classes. You should place these on the implementation class.|
-|Reference  | [Polling Container](./polling-container.html)|
+
 
 {% togglecloak id=2 %}**Example**{% endtogglecloak %}
 {% gcloak 2 %}
@@ -72,7 +72,7 @@ public class SimpleListener {
 }
 {%endhighlight%}
 {% endgcloak %}
-
+{%learn%}./polling-container.html{%endlearn%}
 
 # Remoting
 
@@ -81,7 +81,7 @@ public class SimpleListener {
 |Description         | Spring provides support for various remoting technologies. GigaSpaces uses the same concepts to provide remoting, using the space as the underlying protocol |
 |Attribute Annotation|  @ExecutorProxy  |
 |Method argument     | @Routing |
-|Reference  | [Space based Remoting](./space-based-remoting.html)|
+
 
 {% togglecloak id=3 %}**Example**{% endtogglecloak %}
 {% gcloak 3 %}
@@ -112,14 +112,14 @@ public interface MyService {
 }
 {%endhighlight%}
 {% endgcloak %}
-
+{%learn%}./space-based-remoting.html{%endlearn%}
 
 # Task Execution
 
 {: .table .table-bordered}
 |Attribute Annotation|@TaskGigaSpace   |
 |Description         | This annotation injects a clustered proxy into the Task implementation. This is useful when the Task should access other partitions.   |
-|Reference  | [Task Execution](./task-execution-over-the-space.html)|
+
 
 {% togglecloak id=4 %}**Example**{% endtogglecloak %}
 {% gcloak 4 %}
@@ -137,12 +137,15 @@ public class MyTask implements Task<Integer>  {
 {%endhighlight%}
 {% endgcloak %}
 
+{%learn%}./task-execution-over-the-space.html{%endlearn%}
+
+
 # Task Routing
 
 {: .table .table-bordered}
 |Method Annotation|@SpaceRouting  |
 |Description         | This annotation selects the routing value. In case it is a POJO defined with a @SpaceRouting on one of its properties, the value of that property will be used as the routing information when passed as a parameter.   |
-|Reference  | [Task Execution](./task-execution-over-the-space.html)|
+
 
 {% togglecloak id=5 %}**Example**{% endtogglecloak %}
 {% gcloak 5 %}
@@ -157,3 +160,4 @@ public class MyTask implements Task<Integer>  {
 }
 {%endhighlight%}
 {% endgcloak %}
+{%learn%}./task-execution-over-the-space.html{%endlearn%}

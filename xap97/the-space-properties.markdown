@@ -18,6 +18,88 @@ The interface allows a POJO or a Document domain model to be stored in the space
 
 There are multiple runtime configurations you may use when interacting with the space:
 
+
+# Basic Properties
+
+The Space component support the following basic properties:
+
+
+{: .table .table-bordered}
+|Property |Description|Default|
+|:-----------|:-----------------|:----------|:------|
+|lookupGroups|The Jini Lookup Service group to use when running in multicast discovery mode. you may specify multiple groups comma separated| gigaspaces-X.X.X-XAP<Release>-ga |
+
+
+{% togglecloak id=1 %}**Example**{% endtogglecloak %}
+{% gcloak 1 %}
+{% inittab os_simple_space|top %}
+{% tabcontent java %}
+{%highlight java%}
+UrlSpaceConfigurer urlSpaceConfigurer = new UrlSpaceConfigurer("/./space").lookupGroups("test");
+GigaSpace gigaSpace = new GigaSpaceConfigurer(urlSpaceConfigurer).gigaSpace();
+{%endhighlight%}
+{% endtabcontent %}
+{% tabcontent Name Space %}
+{%highlight xml%}
+ <os-core:space id="space" url="/./space" />
+ <os-core:giga-space id="gigaSpace" space="space" lookupGroups="test"
+ </os-core:giga-space>
+{%endhighlight%}
+{% endtabcontent %}
+{% endinittab %}
+{% endgcloak %}
+
+{: .table .table-bordered}
+|Property|Description|Default|
+|:-----------------|:----------|:------|
+|lookupLocators |The Jini Lookup locators to use when running in unicast discovery mode. In the form of: host1:port1,host2:port2.| |
+
+{% togglecloak id=2 %}**Example**{% endtogglecloak %}
+{% gcloak 2 %}
+{% inittab os_simple_space|top %}
+{% tabcontent java %}
+{%highlight java%}
+UrlSpaceConfigurer urlSpaceConfigurer = new UrlSpaceConfigurer(url).lookupLocators("192.165.1.21:7888, 192.165.1.22:7888");
+GigaSpace gigaSpace = new GigaSpaceConfigurer(urlSpaceConfigurer).gigaSpace();
+{%endhighlight%}
+{% endtabcontent %}
+{% tabcontent Name Space %}
+{%highlight xml%}
+ <os-core:space id="space" url="/./space" />
+ <os-core:giga-space id="gigaSpace" space="space" lookupLocators="192.165.1.21:7888, 192.165.1.22:7888"
+ </os-core:giga-space>
+{%endhighlight%}
+{% endtabcontent %}
+{% endinittab %}
+{% endgcloak %}
+
+
+{: .table .table-bordered}
+|Property|Description|Default|Time Unit
+|:-----------------|:----------|:------|:--------|
+|lookupTimeout |The max timeout in milliseconds to use when running in multicast discovery mode to find a lookup service| 5000 | milliseconds |
+
+{% togglecloak id=3 %}**Example**{% endtogglecloak %}
+{% gcloak 3 %}
+{% inittab os_simple_space|top %}
+{% tabcontent java %}
+{%highlight java%}
+UrlSpaceConfigurer urlSpaceConfigurer = new UrlSpaceConfigurer(url).lookupTimeout(1000);
+GigaSpace gigaSpace = new GigaSpaceConfigurer(urlSpaceConfigurer).gigaSpace();
+{%endhighlight%}
+{% endtabcontent %}
+{% tabcontent Name Space %}
+{%highlight xml%}
+ <os-core:space id="space" url="/./space" />
+ <os-core:giga-space id="gigaSpace" space="space" lookupTimout="1000"
+ </os-core:giga-space>
+{%endhighlight%}
+{% endtabcontent %}
+{% endinittab %}
+{% endgcloak %}
+
+
+
 # The giga-space Bean
 
 The `os-core:giga-space` Spring Bean provides a simple way to confgire a GigaSpace object to be injected into the relevant Bean. It can have the following elements:
