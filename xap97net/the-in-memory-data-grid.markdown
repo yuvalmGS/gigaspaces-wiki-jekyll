@@ -6,8 +6,6 @@ parent: main-modules.html
 weight: 100
 ---
 
-{% compositionsetup %}
-
 {% summary page|60 %}Explains the concepts of the GigaSpaces In-Memory Data Grid (the Space), how to access it, and how to configure advanced capabilities, such as persistency, eviction, etc.{% endsummary %}
 
 # Overview
@@ -43,7 +41,7 @@ The space has a number of determining characteristics that should be configured 
 ### The Space Clustering Topology
 
 The Space can have a single instance, in which case it runs on a single Virtual Machine (VM), or multiple instances, in which case it can run on multiple VMs.
-When it has multiple instances, the Space can run in a number of [topologies](./space-topologies.html) which determine how the data is distributed across those VMs. In general, the data can be either **replicated**, which means it resides on all of the VMs in the cluster, or **partitioned**, which means that the data is distributed across all of the VMs, each containing a different subset of it. With a partitioned topology you can also assign one or more backup space instances for each partition.
+When it has multiple instances, the Space can run in a number of [topologies](/product_overview/space-topologies.html) which determine how the data is distributed across those VMs. In general, the data can be either **replicated**, which means it resides on all of the VMs in the cluster, or **partitioned**, which means that the data is distributed across all of the VMs, each containing a different subset of it. With a partitioned topology you can also assign one or more backup space instances for each partition.
 
 ![topologies.jpg](/attachment_files/dotnet/topologies.jpg)
 

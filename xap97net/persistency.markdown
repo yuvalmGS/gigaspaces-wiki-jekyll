@@ -6,9 +6,9 @@ parent: deploying-and-interacting-with-the-space.html
 weight: 200
 ---
 
-{% compositionsetup %}
 
-{% summary page|65 %}Using the GigaSpaces External Data Source interface to persist data stored in the space{% endsummary %}
+
+{% summary  %}Using the GigaSpaces External Data Source interface to persist data stored in the space{% endsummary %}
 
 # Overview
 
@@ -101,7 +101,7 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size",
 
 ## Server Side Logging
 
-{% refer %}To enable the .NET `ExternalDataSource` adapter logging, refer to the [GigaSpaces Logging]({% currentjavaurl %}/gigaSpaces-logging.html#GigaSpacesLoggers) section.{% endrefer %}
+{% refer %}To enable the .NET `ExternalDataSource` adapter logging, refer to the [GigaSpaces Logging]({% currentjavaurl %}/gigaspaces-logging.html#GigaSpacesLoggers) section.{% endrefer %}
 
 {% endtoczone %}
 

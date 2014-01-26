@@ -35,7 +35,7 @@ The in-line cache is implemented using the following configurations:
 - Read-through and Write-through: For persisting the cache data synchronously.
 - Write-behind - Mirror: For persisting the cache data asynchronously.
 
-Persistence logic can either be the out-of-the-box [NHibernate External Data Source](./nhibernate-external-data-source.html) or any custom persistence logic that implements the [external data source interfaces]({% currentjavaurl %}/external-data-source-api.html).
+Persistence logic can either be the out-of-the-box [NHibernate External Data Source](./nhibernate-external-data-source.html) or any custom persistence logic that implements the [external data source interfaces]({% currentjavaurl %}/persistency.html).
 
 The in-line cache ensures maximum performance when fetching data where the database is outside the critical path of the application transaction. (This makes more sense than it might seem: database contention is a primary source of application performance failure.)
 
@@ -124,8 +124,8 @@ Here are the options you may use to refresh the cache:
 - Lease expiration - You may write objects into the space with a specific time to live (lease duration).
 - Programmatic expiration - You may expire the object using:
 -- `net.jini.core.lease.Lease.cancel()` - You can get the Lease object as a result of a write operation for a new object.
--- `GigaSpace.write` operation for an existing object (update) using a short lease time. See the [GigaSpace]({% dotnetdoc /org/openspaces/core/GigaSpace %}) interface write operation for details.
--- Take operation with [TakeModifiers.EVICT_ONLY mode]({% currentjavaurl %}/lru-cache-policy.html#Explicit Eviction of Objects from the Space). See the [GigaSpace]({% dotnetdoc /org/openspaces/core/GigaSpace %}) interface take operation for details.
+-- `GigaSpace.write` operation for an existing object (update) using a short lease time. See the [GigaSpace]({% dotnetdoc GigaSpaces.Core %}) interface write operation for details.
+-- Take operation with [TakeModifiers.EVICT_ONLY mode]({% currentjavaurl %}/lru-cache-policy.html#Explicit Eviction of Objects from the Space). See the [GigaSpace]({% dotnetdoc GigaSpaces.Core %}) interface take operation for details.
 - Periodic refresh - You may push data into the cache in a periodic manner via a timer. The Timer will be fetching relevant data that was recently updated within the database and pushing it into the cache.
 - Refresh data using a Queue - Any updates made to the database are also written to a queue. Refresher client consumes the messages on the queue and applies these changes to space.
 

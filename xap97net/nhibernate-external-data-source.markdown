@@ -6,7 +6,7 @@ parent: persistency.html
 weight: 100
 ---
 
-{% compositionsetup %}
+
 
 {% summary page|65 %}A walkthrough of a common scenario for using the GigaSpaces NHibernate External Data Source.{% endsummary %}
 
@@ -113,7 +113,7 @@ namespace Entities
 
 # Starting the Spaces with NHibernate External Data Source
 
-This walkthrough demonstrates how to start the spaces with the NHibernate External Data Source from code, using a cluster in a [partitioned-sync2backup](./terminology---data-grid-topologies.html) topology.
+This walkthrough demonstrates how to start the spaces with the NHibernate External Data Source from code, using a cluster in a [partitioned-sync2backup](/product_overview/terminology---data-grid-topologies.html) topology.
 Our cluster is 2,1 and a mirror. Therefore it consists of:
 
 - 2 partitioned primary spaces
