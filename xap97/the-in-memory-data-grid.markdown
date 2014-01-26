@@ -45,7 +45,7 @@ The space has a number of determining characteristics that should be configured 
 ### The Space Clustering Topology
 
 The space can have a single instance, in which case it runs on a single JVM, or multiple instances, in which case it can run on multiple JVMs.
-When it has multiple instances, the space can run in a number of [topologies](./space-topologies.html) which determine how the data is distributed across those JVMs. In general, the data can be either **replicated**, which means it resides on all of the JVMs in the cluster, or **partitioned**, which means that the data is distributed across all of the JVMs, each containing a different subset of it. With a partitioned topology you can also assign one or more backup space instances for each partition.
+When it has multiple instances, the space can run in a number of [topologies](/product_overview/space-topologies.html) which determine how the data is distributed across those JVMs. In general, the data can be either **replicated**, which means it resides on all of the JVMs in the cluster, or **partitioned**, which means that the data is distributed across all of the JVMs, each containing a different subset of it. With a partitioned topology you can also assign one or more backup space instances for each partition.
 
 ![topologies.jpg](/attachment_files/topologies.jpg)
 

@@ -26,7 +26,7 @@ When a processing unit is deployed to [the GigaSpaces runtime environment](./the
 
 In general, there are 3 types of processing units: Data only, business-logic only and mixed processing units (which contain both data and business logic). The data container for processing units is GigaSpaces' in memory data grid (IMDG) implementation, which is called the **Space**.
 
-The space can be accessed via various APIs, and can be deployed in multiple [topologies](./space-topologies.html) (which determine how the data is distributed across the cluster). It can be replicated (in which case the objects written to it are replicated across the cluster) or partitioned (in which case objects are distributed across multiple instances). If it's partitioned, it may also have backups for each partition.
+The space can be accessed via various APIs, and can be deployed in multiple [topologies](/product_overview/space-topologies.html) (which determine how the data is distributed across the cluster). It can be replicated (in which case the objects written to it are replicated across the cluster) or partitioned (in which case objects are distributed across multiple instances). If it's partitioned, it may also have backups for each partition.
 
 ![PackagingandDeployment-topologies.jpg](/attachment_files/PackagingandDeployment-topologies.jpg)
 

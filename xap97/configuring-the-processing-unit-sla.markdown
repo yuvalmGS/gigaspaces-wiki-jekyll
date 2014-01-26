@@ -76,7 +76,7 @@ The SLA definition, whether it comes in a separate file or embedded inside the `
 {% endtabcontent %}
 {% endinittab %}
 
-The SLA definition above creates 4 instances of a Processing Unit using the `partitioned-sync2backup` [space topology](./space-topologies.html). It defines 2 partitions (`number-of-instances="2"`), each with one backup (`number-of-backups="1"`). In addition, it requires that a primary and a backup instance of the same partition will not be provisioned to the same GSC (`max-instances-per-vm="1"`).
+The SLA definition above creates 4 instances of a Processing Unit using the `partitioned-sync2backup` [space topology](/product_overview/space-topologies.html). It defines 2 partitions (`number-of-instances="2"`), each with one backup (`number-of-backups="1"`). In addition, it requires that a primary and a backup instance of the same partition will not be provisioned to the same GSC (`max-instances-per-vm="1"`).
 
 {% lampon %} It is up to the deployer to configure the SLA correctly. Trying to deploy a Processing Unit with a cluster schema that requires backups without specifying `numberOfBackups` causes the deployment to fail.
 
@@ -107,7 +107,7 @@ There are numerous clustering topologies you can choose from:
 From the client application's perspective (the one that connects to the space from another process), the clustering topology is transparent in most cases.
 
 {% info %}
-Please refer to [this page](./space-topologies.html) for more details about space clustering topologies and guidelines regarding when to use each of the topologies.
+Please refer to [this page](/product_overview/space-topologies.html) for more details about space clustering topologies and guidelines regarding when to use each of the topologies.
 {% endinfo %}
 
 {% info %}

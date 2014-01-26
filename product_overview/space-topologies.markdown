@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Space Topologies
-categories: XAP97
-parent: the-in-memory-data-grid.html
-weight: 100
+categories: PRODUCT_OVERVIEW
+parent: none
+weight: 650
 ---
 
 
@@ -26,7 +26,7 @@ This section explains the topologies supported by XAP - replicated, partitioned 
 
 ![DGA-GigaSpacesDataGrid.jpg](/attachment_files/DGA-GigaSpacesDataGrid.jpg)
 
-- **GigaSpaces Container (GSC)** - a generic container that can run one or more [processing units](./packaging-and-deployment.html). A space instances usually runs within processing unit. The GSC is launched on each machine that participates in the space cluster, and hosts the space instances.
+- **GigaSpaces Container (GSC)** - a generic container that can run one or more [processing units]({%latestjavaurl%}/packaging-and-deployment.html). A space instances usually runs within processing unit. The GSC is launched on each machine that participates in the space cluster, and hosts the space instances.
    ![DGA-ServiceGridDataGrid.jpg](/attachment_files/DGA-ServiceGridDataGrid.jpg)
 
 - **Remote vs. Collocated** - The Space can be remote to the application or collocated with the application. With Remote mode any space operation involves network usage. With collocated mode there is no network utilization. This mode improves the performance and latency with activities that performs space operations.
@@ -45,7 +45,7 @@ This section explains the topologies supported by XAP - replicated, partitioned 
 - **Topology** - a specific configuration of space instances. For example, a replicated topology is a configuration in which all space instances replicate data between one another. In GigaSpaces, space topologies are defined by _clustering policies_ (explained in the following section).
 
 {% info title=Replication Configuration %}
-For more details on how to configure the replication mechanisms of the Space, please refer to [this page](./replication.html) in the [Administrator's Guide](./administrators-guide.html).
+For more details on how to configure the replication mechanisms of the Space, please refer to [this page]({%latestjavaurl%}/replication.html) in the [Administrator's Guide]({%latestjavaurl%}/administrators-guide.html).
 {% endinfo %}
 
 # Data Grid Topologies
@@ -60,10 +60,14 @@ GigaSpaces XAP supports the following data grid topologies:
 | **Local Cache** ([view diagram](/attachment_files/dg_a_topology4.gif)){% wbr %} Each client has a lightweight, embedded cache (space instance), which is initially empty. Upon the first time data is read, it is loaded from a master space to the local cache (this is called lazy loading); the next time the same data is read, it is fetched quickly from the local cache without network access. Later on data is either updated from the master or evicted from the cache. For more information see [Local Cache](./local-cache.html).{% wbr %}| Boosting read performance for frequently used data. A useful rule of thumb is to use a local cache when over 80% of all operations are repetitive read operations. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc. |
 | **Local View** ([view diagram](/attachment_files/dg_a_topology5.gif)){% wbr %}  Each client has a lightweight, embedded cache (space instance), which contains a subset of the mater space's data. The client defines which data is cached using a collection of SQL queries, and the master space pushes the matching data to the client's cache. For more information see [Local View](./local-view.html). | Achieving maximal read performance for a predetermined subset of the data. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.|
 
-{% infosign %} The topologies above are provided in the GigaSpaces product as predefined cluster schemas. The schema names are:
+{% info %}
+The topologies above are provided in the GigaSpaces product as predefined cluster schemas. The schema names are:
+
 
 - Synchronous replication - `sync-replicated`
 - Asynchronous replication - `async-replicated`
 - Partitioned with backup - `partitioned-sync2backup`
+
 The local cache and local view topologies do not need their own schemas, because they are defined on the client side.
 
+{%endinfo%}

@@ -6,7 +6,7 @@ parent: administrators-guide.html
 weight: 500
 ---
 
-{% compositionsetup %}
+
 {% summary %}GigaSpaces logging facilities{% endsummary %}
 
 # Overview
@@ -230,7 +230,7 @@ com.gigaspaces.core.cluster.replication.redolog.level = INFO
 com.gigaspaces.core.cluster.sync_replication.level = INFO
 {% endhighlight %}
 
-When a cluster topology is replicated, replication functionality is enabled. More information about topologies is [here](./space-topologies.html).
+When a cluster topology is replicated, replication functionality is enabled. More information about topologies is [here](/product_overview/space-topologies.html).
 Replication between spaces is one of the core features of GigaSpaces and is explained in detail [here](./replication.html).
 
 ### Space Partitioning
@@ -239,7 +239,7 @@ Replication between spaces is one of the core features of GigaSpaces and is expl
 com.gigaspaces.core.cluster.partition.level = INFO
 {% endhighlight %}
 
-When cluster uses partitioned topology, data is partitioned across multiple instances of spaces. More information about topologies is [here](./space-topologies.html).
+When cluster uses partitioned topology, data is partitioned across multiple instances of spaces. More information about topologies is [here](/product_overview//space-topologies.html).
 
 ### Space Active-Election
 
