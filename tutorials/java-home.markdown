@@ -24,7 +24,7 @@ Throughout this tutorial we will create and use a simple internet payment servic
 Here is the simplified Class Model:
 
 {%indent %}
-{%align center %}<img src="/attachment_files/qsg/class_diagram.png" width="500" height="400"> {%endalign%}
+[<img src="/attachment_files/qsg/class_diagram.png" width="200" height="140">](/attachment_files/qsg/class_diagram.png)
 {%endindent%}
  
 

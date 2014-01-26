@@ -127,7 +127,7 @@ GS_HOME\bin\gs.sh deploy-space  -cluster schema=partitioned-sync2backup total_me
 {%endhighlight%}
 When the application write Payment objects into this space, XAP will use the routing information provided (@SpaceRouting) by the Payment class to route the object to the right partition. 
 
-{%learn%}{%latestjavaurl%}/space-topologies.html{%endlearn%}
+{%learn%}/product_overview/space-topologies.html{%endlearn%}
 
 
 

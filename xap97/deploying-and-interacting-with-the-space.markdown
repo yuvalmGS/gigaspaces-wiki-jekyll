@@ -33,7 +33,7 @@ If you're running Java 6, you can use a shorthand to include directories of jars
 
 # Space Cluster Schemas
 
-A Space is identified by its name, and is comprised of one or more Space instances, which form the Space cluster. The Space instances interact with one another, based on the [Space topology](./space-topologies.html) defined for the Space. The topology is defined using a cluster schema, and the following schemas are provided out-of-the-box:
+A Space is identified by its name, and is comprised of one or more Space instances, which form the Space cluster. The Space instances interact with one another, based on the [Space topology](/product_overview/space-topologies.html) defined for the Space. The topology is defined using a cluster schema, and the following schemas are provided out-of-the-box:
 
 - `sync_replicated` - defines a replicated cluster with synchronous replication between Space instances.
 
