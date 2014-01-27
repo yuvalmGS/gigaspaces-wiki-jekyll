@@ -173,6 +173,8 @@ public class Program {
         System.out.println("Read all entries of type Person from the grid:");
         Person[] results = gigaSpace.readMultiple(new Person());
         System.out.println("Result: " + java.util.Arrays.toString(results));
+
+        configurer.destroy();
     }
 }
 {% endhighlight %}
@@ -209,6 +211,7 @@ public class Person {
         this.ssn = ssn;
     }
 
+    @SpaceIndex(type=SpaceIndexType.BASIC)
     public String getFirstName() {
         return firstName;
     }
@@ -233,7 +236,7 @@ public class Person {
 
 # What's Next?
 
-[The Full XAP Java Tutorial](./xap-tutorials.html) will introduce you to the basic concepts and functionalities of XAP. Many ready to run examples are provided.
+[The Full XAP Java Tutorial](./java-home.html) will introduce you to the basic concepts and functionalities of XAP. Many ready to run examples are provided.
 
 Read more about the GigaSpaces runtime environment, how to model your data in a clustered environment, and how to leverage the power capabilities of the Space.
 
