@@ -2,7 +2,7 @@
 layout: post
 title:  Changing Multi-Site Deployment during Runtime
 categories: XAP97
-parent: multi-site-conflict-resolution.html
+parent: parent: multi-site-replication-over-the-wan.html
 weight: 600
 ---
 

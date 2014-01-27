@@ -2,7 +2,7 @@
 layout: post
 title:  Limitations
 categories: XAP97
-parent: multi-site-conflict-resolution.html
+parent: multi-site-replication-over-the-wan.html
 weight: 900
 ---
 
