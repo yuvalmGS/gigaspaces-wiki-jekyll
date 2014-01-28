@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Task Execution over the Space
+title:  Task Execution
 categories: XAP97
 parent: programmers-guide.html
 weight: 1100

@@ -2,12 +2,12 @@
 layout: post
 title:  Reloading Business Logic
 categories: XAP97
-parent: services-on-top-of-the-data-grid.html
-weight: 100
+parent: deployment.html
+weight: 250
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}Service reloading allows you to reload business logic without bringing down the Processing Unit.{% endsummary %}
+
+{% summary  %}Service reloading allows you to reload business logic without bringing down the Processing Unit.{% endsummary %}
 
 # Overview
 
