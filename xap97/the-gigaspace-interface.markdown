@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  The GigaSpace Interface
+title:  The Space Interface
 categories: XAP97
 parent: programmers-guide.html
 weight: 200
