@@ -373,8 +373,10 @@ Distributed transaction participants' data will be processed individually if ten
 Note that by setting the "cluster-config.groups.group.repl-policy.processing-type" property to "multi-source" all reliable asynchronous replication targets for that space will work in distributed transaction consolidation mode (For example: Gateway Sink).
 {% endinfo %}
 
-{% exclamation %} Setting both dist-tx-wait-timeout-millis and dist-tx-wait-for-opers to unlimited (or very high value) is risky and may cause replication backlog accumulation due to a
+{% note %}
+Setting both dist-tx-wait-timeout-millis and dist-tx-wait-for-opers to unlimited (or very high value) is risky and may cause replication backlog accumulation due to a
 packet which is unconsolidated and waits for consolidation which may never occur due to various reasons.
+{%endnote%}
 
 # Usage Scenarios
 
@@ -416,7 +418,9 @@ Here is a schematic flow of how two partitions (each a primary-backup pair) asyn
 
 # Considerations and Known Issues
 
-{% exclamation %} [Space persistency considerations](./space-persistency-advanced-topics.html#limits) also apply to the Mirror Service.
+{% note %}
+[Space persistency considerations](./space-persistency-advanced-topics.html#limits) also apply to the Mirror Service.
+{%endnote%}
 
 - The Mirror Service cannot be used with a single space or the `partitioned` cluster schema. It is supported with the `async-replicated`, and `partitioned-sync2backup` cluster schemas.
 - The Mirror Service is a single space which joins a replication group. The Mirror Service is not a clustered space or part of the replication group declaration.

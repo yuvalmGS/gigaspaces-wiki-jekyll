@@ -108,12 +108,13 @@ To login from within the UI, choose from the title menu bar **
 ![login-dialog.png](/attachment_files/login-dialog.png)
 
 In distributed systems, the login credentials are authenticated with each service. Thus, the indication of success or failure is specific to each.
-The **`Authentication Monitor`*** dialog appears when you press the **OK** button, but can also be viewed when pressing the ![logged-in-as.png](/attachment_files/logged-in-as.png) icon in the bottom-right corner of the screen (appears after Login).
+The **`Authentication Monitor`*** dialog appears when you press the **OK** button, but can also be viewed when pressing the ![logged-in-as.png](/attachment_files/logged-in-as.png)
 
-![authentication-monitor.png](/attachment_files/authentication-monitor.png)
+icon in the bottom-right corner of the screen (appears after Login). ![authentication-monitor.png](/attachment_files/authentication-monitor.png)
 
-- A service which has yet been logged into, or login has failed for, will appear as locked ![locked.png](/attachment_files/locked.png).
-- A service for which authentication was successful will be indicated as un-locked ![un-locked.png](/attachment_files/un-locked.png).
+- A service which has yet been logged into, or login has failed for, will appear as locked ![locked.png](/attachment_files/locked.png)
+
+- A service for which authentication was successful will be indicated as un-locked ![un-locked.png](/attachment_files/un-locked.png)
 
 ## Logout
 
@@ -146,7 +147,9 @@ The Deployment Wizard allows the deployment of a data-grid or a processing unit.
 
 ![select-gsm.png](/attachment_files/select-gsm.png)
 
-{% infosign %} It is important to understand the difference between the credentials supplied to the **login** dialog and the supplied credentials provided when deploying. The first, is used to authenticate the user against the services discovered by the UI, and allow actions to be performed. One of the actions is to **deploy**. When you are authorized to deploy, the credentials passed in the deployment dialog are propagated to the Processing Unit.
+{% info %}
+It is important to understand the difference between the credentials supplied to the **login** dialog and the supplied credentials provided when deploying. The first, is used to authenticate the user against the services discovered by the UI, and allow actions to be performed. One of the actions is to **deploy**. When you are authorized to deploy, the credentials passed in the deployment dialog are propagated to the Processing Unit.
+{%endinfo%}
 
 ## Deploying a Secured data-grid
 

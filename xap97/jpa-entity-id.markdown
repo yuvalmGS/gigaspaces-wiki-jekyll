@@ -116,7 +116,9 @@ Note that the class that uses the compound the Id should adhere to the following
 1. There should be no `@Id` annotation when the `@EmbeddedId` annotation is used.
 1. The `@EmbeddedId` annotated property's type should have an `@Embeddable` annotation & implement `Serializable`.
 
-{% exclamation %} The Compound ID class must implement a `toString` method that return a unique String for each ID.
+{% note %}
+The Compound ID class must implement a `toString` method that return a unique String for each ID.
+{%endnote%}
 
 Lets examine the following example:
 

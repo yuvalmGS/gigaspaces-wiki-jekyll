@@ -173,7 +173,9 @@ public void onOperationsBatchSynchronization(OperationsBatchData operationsBatch
 }
 {% endhighlight %}
 
-{% exclamation %} Remove and Change operation do not contain the routing value.
+{% note %}
+Remove and Change operation do not contain the routing value.
+{%endnote%}
 
 ##### Transaction Synchronization Event Example
 

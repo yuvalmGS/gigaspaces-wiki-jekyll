@@ -6,7 +6,7 @@ parent: security-administration.html
 weight: 200
 ---
 
-{% compositionsetup %}
+
 {% summary %}Applying security with the Command Line Interface{% endsummary %}
 
 # Overview
@@ -17,7 +17,9 @@ The Command Line Interface can be used to manage and monitor a running system. I
 
 The Command Line Interface (CLI) has two modes - an `interactive shell` mode and a `non-interactive` mode. The difference in terms of security is the **login** stage. When in `interactive` mode, you can call the **`login`** command, supply credentials, and perform operations using this session. But, when in a `non-interactive` mode, you can execute only one command line at a time - no session is being managed.
 
-{% infosign %} Note that the login is being performed against the GSM. If the Grid is not secured, you can deploy without logging in. For example, you can deploy a secured Processing Unit into a non-secured Grid.
+{% info %}
+Note that the login is being performed against the GSM. If the Grid is not secured, you can deploy without logging in. For example, you can deploy a secured Processing Unit into a non-secured Grid.
+{%endinfo%}
 
 {% inittab login|tablocation=top %}
 {% tabcontent  Interactive %}
@@ -53,7 +55,9 @@ To **logout* *`quit`** the interactive shell.
 The CLI **`deploy`** command accepts a **`-secured true/false`** used to deploy a secured Processing Unit with a secured Space. Common when deploying a data-grid.
 In order to pass the user credentials, use **`-user`* and *`-password`** arguments. This will implicitly deploy a secured Processing Unit, and the credentials will be propagated to the Processing Unit and its internal services.
 
-{% infosign %} Same syntax applies for **`deploy-space`** and **`pudeploy`** commands.
+{% info %}
+Same syntax applies for **`deploy-space`** and **`pudeploy`** commands.
+{%endinfo%}
 
 Here are some examples and how they are accomplished in both CLI modes:
 
@@ -112,7 +116,9 @@ gs -user uuu -password ppp undeploy processor
 
 The CLI **`space`** commands are basically all the same. They require that the user has sufficient privileges to perform operations on the data.
 
-{% infosign %} Note that the login is being performed against the Space; It doesn't matter if the GSM or GSC are secured. The login credentials should reflect the operations being performed on the service.
+{% info %}
+Note that the login is being performed against the Space; It doesn't matter if the GSM or GSC are secured. The login credentials should reflect the operations being performed on the service.
+{%endinfo%}
 
 For example, for the **`space clean`** command, the user _(uuu/ppp)_ needs **`Alter`** privileges.
 

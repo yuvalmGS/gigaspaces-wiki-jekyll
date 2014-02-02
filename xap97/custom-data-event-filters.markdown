@@ -101,4 +101,6 @@ space.write(msg1, null, Lease.FOREVER);
 space.write(msg2, null, Lease.FOREVER);
 {% endhighlight %}
 
-{% exclamation %} The `INotifyDelegatorFilter` implementation class should be part of the space classpath.
+{% note %}
+The `INotifyDelegatorFilter` implementation class should be part of the space classpath.
+{%endnote%}

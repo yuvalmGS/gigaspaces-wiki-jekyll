@@ -448,7 +448,9 @@ public interface SimpleService {
 
 In the above example, the `say()` method uses a `Future` in order to receive the result, while the `calc` method remains synchronous.
 
-{% infosign %} When using different services, it is important to include the interface definition in the processing unit `lib` directory (or the compiled classes root directory), so that both client and server use their own definitions and don't share a single one.
+{% info %}
+When using different services, it is important to include the interface definition in the processing unit `lib` directory (or the compiled classes root directory), so that both client and server use their own definitions and don't share a single one.
+{%endinfo%}
 
 ## Single Service Interface
 

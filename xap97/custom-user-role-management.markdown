@@ -16,7 +16,7 @@ From the `DirectoryManager` you can gain a `UserManager` interface and a `RoleMa
 
 GigaSpaces security is not aware of the directory at all. As long as the authentication process manages to access the user storage, authenticate the user and return all its authorities.
 
-## Example usage of the `DirectoryManager` API
+#### Example usage of the `DirectoryManager` API
 
 {% refer %}[Securing the HelloWorld example](./securing-the-helloworld-example.html){% endrefer %}
 

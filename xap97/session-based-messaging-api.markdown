@@ -6,8 +6,8 @@ parent: notify-container.html
 weight: 100
 ---
 
-{% summary :page|60 %}Using Data Event Sessions to receive events when data changes in the space{% endsummary %}
-{% compositionsetup %}
+{% summary   %}Using Data Event Sessions to receive events when data changes in the space{% endsummary %}
+
 
 # Overview
 
@@ -77,7 +77,9 @@ session.removeListener(registration);
 
 If the entire session is no longer needed, instead of removing the active registrations one-by-one you can simply call the session's `close()` method to close all active registrations.
 
-{% exclamation %} A closed session cannot register new listeners - You need to create a new session in order to register for new events.
+{% note %}
+A closed session cannot register new listeners - You need to create a new session in order to register for new events.
+{%endnote%}
 
 # Event Types
 
@@ -114,11 +116,11 @@ The available event types are:
 |`NOTIFY_WRITE_OR_UPDATE`| A combination of `NOTIFY_WRITE` and `NOTIFY_UPDATE`.|
 |`NOTIFY_ALL`| A combination of `NOTIFY_WRITE`, `NOTIFY_UPDATE`, `NOTIFY_TAKE` and `NOTIFY_LEASE_EXPIRATION`.|
 
-{%exclamation%} `NOTIFY_UPDATE` cannot be used with `NOTIFY_MATCHED_UPDATE` and `NOTIFY_REMATCHED_UPDATE`, since they are overlapping. 
-
-{%remove%} `NOTIFY_ALL` is deprecated and should not be used. The reason is that as the product evolves and new event types are added, they are not included in `NOTIFY_ALL` to preserve backward compatibility, and the name `ALL` is misleading.
-
-{% exclamation %} Notifications for expired objects sent both from primary and backup space (when using backups).
+{%warning%}
+`NOTIFY_UPDATE` cannot be used with `NOTIFY_MATCHED_UPDATE` and `NOTIFY_REMATCHED_UPDATE`, since they are overlapping.
+`NOTIFY_ALL` is deprecated and should not be used. The reason is that as the product evolves and new event types are added, they are not included in `NOTIFY_ALL` to preserve backward compatibility, and the name `ALL` is misleading.
+ Notifications for expired objects sent both from primary and backup space (when using backups).
+{%endwarning%}
 
 # FIFO
 
@@ -134,7 +136,9 @@ When a session is configured to be FIFO, all the event listeners registered thro
 
 When FIFO is not set, the event listener is often invoked concurrently for different events, for efficiency. When FIFO is enabled, though, all events are queued in a single dispatcher thread and are processed sequentially. Note that while this synchronization is required to ensure the correct order, it may also affect performance as multiple events cannot be processed simultaneously. 
 
-{%exclamation%} When using a partitioned cluster, FIFO is maintained per-partition and not for the entire cluster.  
+{%note%}
+When using a partitioned cluster, FIFO is maintained per-partition and not for the entire cluster.
+{%endnote%}
 
 # Batching
 

@@ -45,7 +45,9 @@ To allow the client to detect that the space removed its notify registration, it
 
 The LRMI thread pool queue size parameter, measured in **Objects**, configures the client and space server communication queue maximum size when processing incoming requests.
 
-{% exclamation %} In general, you should have a different LRMI thread pool queue size value for clients and for the space server.
+{% info%}
+In general, you should have a different LRMI thread pool queue size value for clients and for the space server.
+{%endinfo%}
 
 When the LRMI thread pool queue size in the client side reached its limit (client can't consume incoming notifications), the client will stop consuming incoming network packets. This in return will initiate the slow consumer mechanism at the space side that will cancel the client notify registration.
 
@@ -61,15 +63,18 @@ To enable and tune the slow consumer mechanism, you should configure the LRMI la
 |com.gs.transport_protocol.lrmi.slow-consumer.latency| Specify a time period the space will evaluate a client suspected as slow consumer until it will be identified as a slow consumer. At the end of this time period, a client identified as a slow consumer will have its notification lease canceled.| 500 | milliseconds|
 |com.gs.transport_protocol.lrmi.slow-consumer.retries| Specify the number of times within the specified latency limitation a space will retry to send notification into a client suspected as a slow consumer. | 3 | retries|
 
-{% lampon %} It may be required to alter the default slow consumer parameters according to the specific scenario.
-
-{% lampon %} Please make sure you are not adding the services.config file to your server class path, this may cause the slow consumer to be turned on by default.
+{% note %}
+It may be required to alter the default slow consumer parameters according to the specific scenario.
+Please make sure you are not adding the services.config file to your server class path, this may cause the slow consumer to be turned on by default.
+{%endnote%}
 
 # Configuration - Client Side
 
 You should configure the following JVM system properties at the **client side**. These specify the capacity of the LRMI thread pool, and set a specific limit. This allows the client to block incoming requests once the capacity is reached, in this case an incoming notification invocation. This will trigger the slow consumer mechanism at the server side since that client will stop receiving new notification invocations.
 
-{% exclamation %} When using FIFO notifications, the fifo notify queue should be limited as well for the same reasons
+{% info %}
+When using FIFO notifications, the fifo notify queue should be limited as well for the same reasons
+{%endinfo%}
 
 {: .table .table-bordered}
 |Property|Description|Default|Unit|

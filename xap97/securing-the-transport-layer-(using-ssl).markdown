@@ -52,10 +52,14 @@ The keystore file is loaded from somewhere in the classpath.
 
 The provided SSLFilter uses keystore type JKS, with key management method SunX509.
 
-{% infosign %} Please refer to the JavaDocs for more details about the reference classes:
+{% info %}
+Please refer to the JavaDocs for more details about the reference classes:
 
-- [`com.gigaspaces.lrmi.nio.filters.IOSSLFilter`](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/lrmi/nio/filters/IOSSLFilter.html)
-- [`com.gigaspaces.lrmi.nio.filters.IOStreamCompressionFilter`](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/lrmi/nio/filters/IOStreamCompressionFilter.html)
+- [com.gigaspaces.lrmi.nio.filters.IOSSLFilter](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/lrmi/nio/filters/IOSSLFilter.html)
+
+- [com.gigaspaces.lrmi.nio.filters.IOStreamCompressionFilter](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/lrmi/nio/filters/IOStreamCompressionFilter.html)
+
+{%endinfo%}
 
 Code snippet of the space server.
 

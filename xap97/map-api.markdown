@@ -6,7 +6,7 @@ parent: other-data-access-apis.html
 weight: 300
 ---
 
-{% compositionsetup %}{% summary page|60 %}Using GigaSpaces as a distributed cache. Interacting with the space using the Hashtable/JCache (JSR-107) API. This is an optimized API to store user sessions or metadata accessed via a simple key{% endsummary %}
+{% summary %}Using GigaSpaces as a distributed cache. Interacting with the space using the Hashtable/JCache (JSR-107) API. This is an optimized API to store user sessions or metadata accessed via a simple key{% endsummary %}
 
 {% comment %}
 # Connecting to the space with the Map API
@@ -254,7 +254,9 @@ gigaMap.put(key , value , 5000);
 
 There is no need to provide a Jini transaction object for the different map operations. `GigaMap` with the different OpenSpaces [transaction managers](./transaction-management.html) and Spring allow simple declarative definition of transactions. This means that if there is an ongoing transaction running, most operations performed using the `GigaMap` interface join it, using Spring's rich transaction support.
 
-{% lampon %} It is highly recommended to read the [transaction management chapter](http://static.springframework.org/spring/docs/2.0.x/reference/transaction.html) in the Spring reference documentation.
+{% info %}
+It is highly recommended to read the [transaction management chapter](http://static.springframework.org/spring/docs/2.0.x/reference/transaction.html) in the Spring reference documentation.
+{%endinfo%}
 
 ## Transaction Provider
 

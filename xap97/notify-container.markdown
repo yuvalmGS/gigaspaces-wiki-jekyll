@@ -6,7 +6,7 @@ parent: event-processing.html
 weight: 200
 ---
 
-{% summary page|60 %}The notify event container wraps the space data event session API with event container abstraction.{% endsummary %}
+{% summary  %}The notify event container wraps the space data event session API with event container abstraction.{% endsummary %}
 
 # Overview
 
@@ -149,8 +149,13 @@ The above example registers with the space for write notifications using the pro
 
 By default, the notify event container registers for notifications only when the relevant space it is working against is in primary mode. When the space is in backup mode, no registration occurs. If the space moves from backup mode to primary mode, the container registers for notifications, and if it moved to backup mode, the registrations are canceled.
 
-{% infosign %} This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
-{% exclamation %} Notifications for expired objects (NOTIFY_LEASE_EXPIRATION type) are sent both from the primary and the backup space. To avoid this, you should set the Notify Container `replicateNotifyTemplate` to `false` and run the notify container collocated with the space. This will start the Notify Container only with the primary and will avoid duplicated notifications.
+{% info %}
+This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
+{%endinfo%}
+
+{% note %}
+Notifications for expired objects (NOTIFY_LEASE_EXPIRATION type) are sent both from the primary and the backup space. To avoid this, you should set the Notify Container `replicateNotifyTemplate` to `false` and run the notify container collocated with the space. This will start the Notify Container only with the primary and will avoid duplicated notifications.
+{%endnote%}
 
 # Template Definition
 
@@ -283,7 +288,9 @@ To free the resources used by the notify container make sure you close it proper
 
 The notify container can be configured with transaction support, so the event action can be performed under a transaction. Exceptions thrown by the event listener cause the operations performed within the listener to be rolled back automatically.
 
-{% exclamation %} When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. In case this behavior is required, please consider using the [Polling Event Container](./polling-container.html).
+{% note %}
+When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. In case this behavior is required, please consider using the [Polling Event Container](./polling-container.html).
+{%endnote%}
 
 Transaction support can be configured as follows:
 
@@ -710,7 +717,9 @@ public class SimpleListener {
 
 By default the notify event container running on non-FIFO mode. This means the event listener will be called simultaneously by multiple threads in case there are concurrent notifications sent from the space. To have a sequential event listener calls, you should run the notify  event container in a FIFO mode.
 
-{% infosign %} For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [Space FIFO support](./fifo-support.html) section.
+{% info%}
+For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [Space FIFO support](./fifo-support.html) section.
+{%endinfo%}
 
 Here is an example of how FIFO events can be configured with the notify container:
 

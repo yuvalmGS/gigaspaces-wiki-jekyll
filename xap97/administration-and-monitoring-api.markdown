@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Administration and Monitoring
+title:  Admin and Monitoring
 categories: XAP97
 parent: programmers-guide.html
 weight: 1700
@@ -194,39 +194,232 @@ This means that just creating the `Admin` and calling a specific "getter" for a 
 # Domain Model
 
 The Admin Domain Model has representation to all GigaSpaces level main actors. They include:
-|[GridServiceAgent](#GridServiceAgentLink) | [GridServiceAgents](#GridServiceAgentsLink) | [GridServiceManager](#GridServiceManagerLink) |
-|[GridServiceManagers](#GridServiceManagersLink) | [GridServiceContainer](#GridServiceContainerLink) | [GridServiceContainers](#GridServiceContainersLink) |
-|[LookupService](#LookupServiceLink) | [LookupServices](#LookupServicesLink) | [ProcessingUnit](#ProcessingUnitLink) | [ProcessingUnitInstance](#ProcessingUnitInstanceLink) | [ProcessingUnits](#ProcessingUnitsLink) |
-|[Space](#SpaceLink) | [SpaceInstance](#SpaceInstanceLink) | [Spaces](#SpacesLink) | [VirtualMachine](#VirtualMachineLink) | [VirtualMachines](#VirtualMachinesLink) |
-|[Machine](#MachineLink) | [Machines](#MachinesLink) | [OperatingSystem](#OperatingSystemLink) | [OperatingSystems](#OperatingSystemsLink) | [Transport](#TransportLink) | [Transports](#TransportsLink)
 
 ![admin_DomainModel.jpg](/attachment_files/admin_DomainModel.jpg)
 
+{% whr %}
+
+{%section%}
+{%column width=45% %}
+- [GridServiceAgent](#GridServiceAgentLink)
+- [GridServiceAgents](#GridServiceAgentsLink)
+- [GridServiceManager](#GridServiceManagerLink)
+- [GridServiceManagers](#GridServiceManagersLink)
+- [GridServiceContainer](#GridServiceContainerLink)
+- [GridServiceContainers](#GridServiceContainersLink)
+- [LookupService](#LookupServiceLink)
+- [LookupServices](#LookupServicesLink)
+- [ProcessingUnit](#ProcessingUnitLink)
+- [ProcessingUnitInstance](#ProcessingUnitInstanceLink)
+- [ProcessingUnits](#ProcessingUnitsLink)
+
+{%endcolumn%}
+{%column width=45% %}
+
+- [Space](#SpaceLink)
+- [SpaceInstance](#SpaceInstanceLink)
+- [Spaces](#SpacesLink)
+- [VirtualMachine](#VirtualMachineLink)
+- [VirtualMachines](#VirtualMachinesLink)
+- [Machine](#MachineLink)
+- [Machines](#MachinesLink)
+- [OperatingSystem](#OperatingSystemLink)
+- [OperatingSystems](#OperatingSystemsLink)
+- [Transport](#TransportLink)
+- [Transports](#TransportsLink)
+{%endcolumn%}
+{%endsection%}
+
+
+
+{%anchor GridServiceAgentLink%}
+
 {: .table .table-bordered}
-|Name|Description|Main Operations|Runtime Events|
-|:---|:----------|:--------------|:-------------|
-|[{% anchor GridServiceAgentLink %}GridServiceAgent](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsa/GridServiceAgent.html)|A process manager that manages Service Grid processes such as GSM, GSC and LUS. More info [here](./service-grid.html#gsa).|* Allows to list all the currently managed processes.{% wbr %}- Start processes (GSM, GSC, LUS).| |
-|{% anchor GridServiceAgentsLink %}[GridServiceAgents](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsa/GridServiceAgents.html)|Holds all the currently discovered Grid Service Agents.|* Get all the currently discovered Grid Service Agents.{% wbr %}- Wait for X number of Grid Service Agents to be up.|* Register for Grid Service Agent addition (discovery) and removals events.|
-|{% anchor GridServiceManagerLink %}[GridServiceManager](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsm/GridServiceManager.html)|Managing Processing Unit deployments and Grid Service Containers. More info [here](./service-grid.html#gsm).|* Deploy Processing Units.{% wbr %}- Deploy pure Space Processing Units.{% wbr %}- Get the Grid Service Agent Managing it.{% wbr %}- Restart itself (if managed by a Grid Service Agent).{% wbr %}- Kill itself (if managed by a Grid Service Agent).| |
-|{% anchor GridServiceManagersLink %}[GridServiceManagers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsm/GridServiceManagers.html)|Holds all the currently discovered Grid Service Managers.|* Deploy Processing Units on a random Grid Service Manager.{% wbr %}- Deploy pure Space Processing Units on a random Grid Service Manager.{% wbr %}- Get all the currently discovered Grid Service Managers.{% wbr %}- Wait for X number of Grid Service Managers to be up.|* Register for Grid Service Manager addition (discovery) and removals events.|
-|{% anchor GridServiceContainerLink %}[GridServiceContainer](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsc/GridServiceContainer.html)|Container hosting Processing Unit Instances deployed from the GSM. More info [here](./service-grid.html#gsc).|\* List currently running Processing Units Instances.|\* Register for Processing Unit Instance additions and removals events.|
-|{% anchor GridServiceContainersLink %}[GridServiceContainers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsc/GridServiceContainers.html)|Holds all the currently discovered Grid Service Containers.|* Get all the currently discovered Grid Service Containers.{% wbr %}- Wait for X number of Grid Service Containers to be up.|* Register for Grid Service Container addition (discovery) and removals events.|
-|{% anchor LookupServiceLink %}[LookupService](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/lus/LookupService.html)|A registry of services (GSM, GSC, Space Instances, Processing Unit Instances) that can be lookup up using it. More info [here](./the-lookup-service.html#lus).|* Get the Lookup Groups and Locator it was started with.| |
-|{% anchor LookupServicesLink %}[LookupServices](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/lus/LookupServices.html)|Holds all the currently discovered Lookup Services.|* Get all the currently discovered Lookup Services.{% wbr %}- Wait for X number of Lookup Services to be up.|* Register for Lookup Service addition (discovery) and removals events.|
-|{% anchor ProcessingUnitLink %}[ProcessingUnit](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/ProcessingUnit.html)|A deployable processing unit running one or more Processing Unit Instances. Managed by the Grid Service Manager.| * Undeploy the Processing Unit{% wbr %}- Increase the number of Processing Units Instances (if allowed).{% wbr %}- Decrease the number of Processing Unit Instances (if allowed).{% wbr %}- Get the deployment status of the Processing Unit.{% wbr %}- Get the managing Grid Service Manager.{% wbr %}- Get the list of backup Grid Service Managers.{% wbr %}- List all the currently running Processing Unit Instances.{% wbr %}- Wait for X number of Processing Unit Instances or be up.{% wbr %}- Get an embedded Space that the Processing Unit has.{% wbr %}- Wait for an embedded Space to be correlated (discovered) with the Processing Unit.|* Register for Processing Unit Instances additions and removals events.{% wbr %}- Register for Processing Unit Instance provision attempts, failures, success and pending events.{% wbr %}- Register for Managing Grid Service Manager change events.{% wbr %}- Register for Space correlation events.{% wbr %}- Register for deployment status change events.{% wbr %}- Register for backup Grid Service Manager change events.|
-|{% anchor ProcessingUnitInstanceLink %}[ProcessingUnitInstance](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/ProcessingUnitInstance.html)|An actual instance of a Processing Unit running within a Grid Service Container.|* Destroy itself (if SLA is breached, will be instantiated again).{% wbr %}- Decrease itself (and destroying itself in the process). Will not attempt to create it again.{% wbr %}- Relocate itself to a different Grid Service Container.{% wbr %}- List all its inner services (such as event containers).{% wbr %}- Get the embedded Space Instance running within it (if there is one).{% wbr %}- Get the JEE container details if it is a web processing unit.| |
-|{% anchor ProcessingUnitsLink %}[ProcessingUnits](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/ProcessingUnits.html)|Holds all the currently deployed Processing Units|* Get all the currently deployed Processing Units.{% wbr %}- Wait for (and return) a Processing by a specific name.|* Register for Processing Unit deployments and undeployment events.{% wbr %}- Register for all Processing Unit Instance addition and removal events (across all Processing Units).{% wbr %}- Register for all Processing Unit Instance provision attempts, failures, success and pending events (across all Processing Units).{% wbr %}- Register for Managing Grid Service Manager change events on all Processing Units.{% wbr %}- Register for backup Grid Service Manager change events on all Processing Units.|
-|{% anchor SpaceLink %}[Space](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/space/Space.html)|Composed of one or more Space Instances to form a Space topology (cluster)|* Get all the currently running Space Instance that are part of the Space.{% wbr %}- Wait for X number of Space Instances to be up.{% wbr %}- Get aggregated Space statistics.{% wbr %}- Get a clustered [GigaSpace](./the-gigaspace-interface.html) to perform Space operations.|* Register for Space Instance additions and removals events.{% wbr %}- Register for Space Instance change mode events (for all Space Instances that are part of the Space).{% wbr %}- Register for Space Instance replication status change events (for all Space Instances that are part of the Space).{% wbr %}- Register for aggregated Space statistics events (if monitoring).|
-|{% anchor SpaceInstanceLink %}[SpaceInstance](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/space/SpaceInstance.html)|An actual instance of a Space that is part of a topology (cluster), usually running within a Processing Unit Instance|* Get its Space Mode (primary or backup).{% wbr %}- Get its replication targets.{% wbr %}- Get a direct [GigaSpace](./the-gigaspace-interface.html) to perform Space operations.{% wbr %}- Get Space Instance statistics.|* Register for replication status change events.{% wbr %}- Register for Space Mode change events{% wbr %}- Register for Space Instance statistics (if monitoring).|
-|{% anchor SpacesLink %}[Spaces](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/space/Spaces.html)|Holds all the currently running Spaces|* Get all the currently running Spaces.{% wbr %}- Wait for (and return) a specific Space by name.|* Register for Space additions and removal events.{% wbr %}- Register for Space Instance additions and removal events (across all Spaces).{% wbr %}- Register for Space Instance Mode change events (across all Space Instances).{% wbr %}- Register for Space Instance replication change events (across all Space Instances).{% wbr %}- Register for aggregated Space level statistics change events (across all Spaces, if monitoring).{% wbr %}- Register for Space Instance statistics change events (across all Space Instances, if monitoring).|
-|{% anchor VirtualMachineLink %}[VirtualMachine](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/vm/VirtualMachine.html)|A virtual machine (JVM) that is currently running at least one GigaSpaces component / service.|* Get the Grid Service Agent (if exists).{% wbr %}- Get the Grid Service Manager (if exists).{% wbr %}- Get the Grid Service Container (if exists).{% wbr %}- Get all the Processing Unit Instances that are running within the Virtual Machine.{% wbr %}- Get all the Space Instances that are running within the Virtual Machine.{% wbr %}- Get the details of the Virtual Machine (min/max memory, and so on).{% wbr %}- Get the statistics of the Virtual Machine (heap used, and so on).|* Register for Processing Unit Instance additions and removals events.{% wbr %}- Register for Space Instance additions and removals events.{% wbr %}- Register for statistics change events (if monitoring).|
-|{% anchor VirtualMachinesLink %}[VirtualMachines](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/vm/VirtualMachines.html)|Holds all the currently discovered Virtual Machines|* Get all the currently discovered Virtual Machines.{% wbr %}- Get aggregated Virtual Machines details.{% wbr %}- Get aggregated Virtual Machines statistics.|* Register for Virtual Machines additions and removals events.{% wbr %}- Register for aggregated Virtual Machines statistics events (if monitoring).{% wbr %}- Register for Virtual Machine level statistics change events (across all Virtual Machines, if monitoring).|
-|{% anchor MachineLink %}[Machine](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/machine/Machine.html)|An actual Machine (identified by its host address) running one or more GigaSpaces components / services in one or more Virtual Machines. Associated with one Operating System|* Get all the Grid Service Agents running on the Machine.{% wbr %}- Get all the Grid Service Containers running on the Machine.{% wbr %}- Get all the Grid Service Managers running on the Machine.{% wbr %}- Get all the Virtual Machines running on the Machine.{% wbr %}- Get all the Processing Unit Instances running on the Machine.{% wbr %}- Get all the Space Instances running on the Machine.{% wbr %}- Get the Operating System the Machine is running on.|* Register for Space Instances additions and removals events from the Machine.{% wbr %}- Register for Processing Unit Instance additions and removals events from the Machine.|
-|{% anchor MachinesLink %}[Machines](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/machine/Machines.html)|Holds all the currently discovered Machines|* Get all the currently running Machines.{% wbr %}- Wait for X number of Machines or be up.|* Register for Machine additions and removals events.|
-|{% anchor OperatingSystemLink %}[OperatingSystem](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/os/OperatingSystem.html)|The Operating System GigaSpaces components / services are running on. Associated with one Machine.|* Get the details of the Operating System.{% wbr %}- Get the operating system statistics.|* Register for statistics change events (if monitoring).|
-|{% anchor OperatingSystemsLink %}[OperatingSystems](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/os/OperatingSystems.html)|Holds all the currently discovered Operating Systems|* Get all the current Operating Systems.{% wbr %}- Get the aggregated Operating Systems details.{% wbr %}- Get the aggregated Operating Systems statistics.|* Register for aggregated Operating Systems statistics change events (if monitoring).{% wbr %}- Register for Operating System level statistics change events (across all Operating Systems, if monitoring).|
-|{% anchor TransportLink %}[Transport](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/transport/Transport.html)|The communication layer each GigaSpaces component / service uses|* Get the Transport details (host, port).{% wbr %}- Get the Transport statistics.|* Register for Transport statistics change events (if monitoring).|
-|{% anchor TransportsLink %}[Transports](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/transport/Transports.html)|Holds all the currently discovered Transports|* Get all the current Transports.{% wbr %}- Get the aggregated Transports details.{% wbr %}- Get the aggregated Transports statistics.|* Register for aggregated Transports statistics change events (if monitoring).{% wbr %}- Register for Transport level statistics change events (across all Transports, if monitoring).|
+|Name            |[GridServiceAgent](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsa/GridServiceAgent.html)|
+|Description     |A process manager that manages Service Grid processes such as GSM, GSC and LUS. More info [here](./service-grid.html#gsa).|
+|Main Operations |Allows to list all the currently managed processes.- Start processes (GSM, GSC, LUS).       |
+|Runtime Events  | |
+
+{%anchor GridServiceAgentsLink%}
+
+{: .table .table-bordered}
+|Name            |[GridServiceAgents](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsa/GridServiceAgents.html)|
+|Description     |Holds all the currently discovered Grid Service Agents.|
+|Main Operations |Get all the currently discovered Grid Service Agents.Wait for X number of Grid Service Agents to be up.|
+|Runtime Events  |Register for Grid Service Agent addition (discovery) and removals events. |
+
+{%anchor GridServiceManagerLink%}
+
+{: .table .table-bordered}
+|Name            | [GridServiceManager](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsm/GridServiceManager.html)|
+|Description     |Managing Processing Unit deployments and Grid Service Containers. More info [here](./service-grid.html#gsm).|
+|Main Operations |Deploy Processing Units. Deploy pure Space Processing Units. Get the Grid Service Agent Managing it. Restart itself (if managed by a Grid Service Agent).Kill itself (if managed by a Grid Service Agent).|
+|Runtime Events  |  |
+
+{%anchor GridServiceManagersLink%}
+
+{: .table .table-bordered}
+|Name            |[GridServiceManagers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsm/GridServiceManagers.html)|
+|Description     |Holds all the currently discovered Grid Service Managers.|
+|Main Operations |Deploy Processing Units on a random Grid Service Manager. Deploy pure Space Processing Units on a random Grid Service Manager. Get all the currently discovered Grid Service Managers. Wait for X number of Grid Service Managers to be up.|
+|Runtime Events  |Register for Grid Service Manager addition (discovery) and removals events.|
+
+{%anchor GridServiceContainerLink%}
+
+{: .table .table-bordered}
+|Name            |[GridServiceContainer](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsc/GridServiceContainer.html)|
+|Description     | Container hosting Processing Unit Instances deployed from the GSM. More info [here](./service-grid.html#gsc).|
+|Main Operations | List currently running Processing Units Instances.|
+|Runtime Events  | Register for Processing Unit Instance additions and removals events.|
+
+
+{%anchor GridServiceContainersLink%}
+
+{: .table .table-bordered}
+|Name            | [GridServiceContainers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsc/GridServiceContainers.html)|
+|Description     |Holds all the currently discovered Grid Service Containers.|
+|Main Operations |Get all the currently discovered Grid Service Containers.{% wbr %}- Wait for X number of Grid Service Containers to be up.|
+|Runtime Events  |Register for Grid Service Container addition (discovery) and removals events.  |
+
+
+{%anchor LookupServiceLink%}
+
+{: .table .table-bordered}
+|Name            | [LookupService](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/lus/LookupService.html)|
+|Description     | A registry of services (GSM, GSC, Space Instances, Processing Unit Instances) that can be lookup up using it. More info [here](./the-lookup-service.html#lus).|
+|Main Operations | Get the Lookup Groups and Locator it was started with.|
+|Runtime Events  |  |
+
+
+{%anchor LookupServicesLink%}
+
+{: .table .table-bordered}
+|Name            |[LookupServices](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/lus/LookupServices.html)|
+|Description     |Holds all the currently discovered Lookup Services.|
+|Main Operations |Get all the currently discovered Lookup Services.Wait for X number of Lookup Services to be up.|
+|Runtime Events  |Register for Lookup Service addition (discovery) and removals events. |
+
+
+{%anchor ProcessingUnitLink%}
+
+{: .table .table-bordered}
+|Name            |  [ProcessingUnit](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/ProcessingUnit.html)|
+|Description     | A deployable processing unit running one or more Processing Unit Instances. Managed by the Grid Service Manager.|
+|Main Operations |Undeploy the Processing Unit{% wbr %}- Increase the number of Processing Units Instances (if allowed).{% wbr %}- Decrease the number of Processing Unit Instances (if allowed).{% wbr %}- Get the deployment status of the Processing Unit.{% wbr %}- Get the managing Grid Service Manager.{% wbr %}- Get the list of backup Grid Service Managers.{% wbr %}- List all the currently running Processing Unit Instances.{% wbr %}- Wait for X number of Processing Unit Instances or be up.{% wbr %}- Get an embedded Space that the Processing Unit has.{% wbr %}- Wait for an embedded Space to be correlated (discovered) with the Processing Unit.|
+|Runtime Events  |Register for Processing Unit Instances additions and removals events.{% wbr %}- Register for Processing Unit Instance provision attempts, failures, success and pending events.{% wbr %}- Register for Managing Grid Service Manager change events.{% wbr %}- Register for Space correlation events.{% wbr %}- Register for deployment status change events.{% wbr %}- Register for backup Grid Service Manager change events.|
+
+
+{%anchor ProcessingUnitInstanceLink%}
+
+{: .table .table-bordered}
+|Name            | [ProcessingUnitInstance](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/ProcessingUnitInstance.html)|
+|Description     | An actual instance of a Processing Unit running within a Grid Service Container.|
+|Main Operations | Destroy itself (if SLA is breached, will be instantiated again).{% wbr %}- Decrease itself (and destroying itself in the process). Will not attempt to create it again.{% wbr %}- Relocate itself to a different Grid Service Container.{% wbr %}- List all its inner services (such as event containers).{% wbr %}- Get the embedded Space Instance running within it (if there is one).{% wbr %}- Get the JEE container details if it is a web processing unit.|
+|Runtime Events  | |
+
+
+{%anchor ProcessingUnitsLink%}
+
+{: .table .table-bordered}
+|Name            |[ProcessingUnits](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/pu/ProcessingUnits.html)|
+|Description     |  Holds all the currently deployed Processing Units|
+|Main Operations |Get all the currently deployed Processing Units.{% wbr %}- Wait for (and return) a Processing by a specific name.|
+|Runtime Events  |Register for Processing Unit deployments and undeployment events.{% wbr %}- Register for all Processing Unit Instance addition and removal events (across all Processing Units).{% wbr %}- Register for all Processing Unit Instance provision attempts, failures, success and pending events (across all Processing Units).{% wbr %}- Register for Managing Grid Service Manager change events on all Processing Units.{% wbr %}- Register for backup Grid Service Manager change events on all Processing Units.|
+
+
+{%anchor SpaceLink%}
+
+{: .table .table-bordered}
+|Name            | [Space](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/space/Space.html)|
+|Description     | Composed of one or more Space Instances to form a Space topology (cluster)|
+|Main Operations | Get all the currently running Space Instance that are part of the Space.{% wbr %}- Wait for X number of Space Instances to be up.{% wbr %}- Get aggregated Space statistics.{% wbr %}- Get a clustered [GigaSpace](./the-gigaspace-interface.html) to perform Space operations.|
+|Runtime Events  | Register for Space Instance additions and removals events.{% wbr %}- Register for Space Instance change mode events (for all Space Instances that are part of the Space).{% wbr %}- Register for Space Instance replication status change events (for all Space Instances that are part of the Space).{% wbr %}- Register for aggregated Space statistics events (if monitoring).|
+
+
+{%anchor SpaceInstanceLink%}
+
+{: .table .table-bordered}
+|Name            |[SpaceInstance](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/space/SpaceInstance.html)|
+|Description     |An actual instance of a Space that is part of a topology (cluster), usually running within a Processing Unit Instance|
+|Main Operations | Get its Space Mode (primary or backup).{% wbr %}- Get its replication targets.{% wbr %}- Get a direct [GigaSpace](./the-gigaspace-interface.html) to perform Space operations.{% wbr %}- Get Space Instance statistics.|
+|Runtime Events  |Register for replication status change events.{% wbr %}- Register for Space Mode change events{% wbr %}- Register for Space Instance statistics (if monitoring).|
+
+
+{%anchor SpacesLink%}
+
+{: .table .table-bordered}
+|Name            |[Spaces](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/space/Spaces.html)|
+|Description     | Holds all the currently running Spaces|
+|Main Operations |Get all the currently running Spaces.{% wbr %}- Wait for (and return) a specific Space by name.|
+|Runtime Events |Register for Space additions and removal events.{% wbr %}- Register for Space Instance additions and removal events (across all Spaces).{% wbr %}- Register for Space Instance Mode change events (across all Space Instances).{% wbr %}- Register for Space Instance replication change events (across all Space Instances).{% wbr %}- Register for aggregated Space level statistics change events (across all Spaces, if monitoring).{% wbr %}- Register for Space Instance statistics change events (across all Space Instances, if monitoring).|
+
+
+{%anchor VirtualMachineLink%}
+
+{: .table .table-bordered}
+|Name            |  [VirtualMachine](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/vm/VirtualMachine.html)|
+|Description     | A virtual machine (JVM) that is currently running at least one GigaSpaces component / service.|
+|Main Operations |Get the Grid Service Agent (if exists).{% wbr %}- Get the Grid Service Manager (if exists).{% wbr %}- Get the Grid Service Container (if exists).{% wbr %}- Get all the Processing Unit Instances that are running within the Virtual Machine.{% wbr %}- Get all the Space Instances that are running within the Virtual Machine.{% wbr %}- Get the details of the Virtual Machine (min/max memory, and so on).{% wbr %}- Get the statistics of the Virtual Machine (heap used, and so on).|
+|Runtime Events  | Register for Processing Unit Instance additions and removals events.{% wbr %}- Register for Space Instance additions and removals events.{% wbr %}- Register for statistics change events (if monitoring).|
+
+{%anchor VirtualMachinesLink%}
+
+{: .table .table-bordered}
+|Name            |[VirtualMachines](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/vm/VirtualMachines.html)|
+|Description     | Holds all the currently discovered Virtual Machines|
+|Main Operations | Get all the currently discovered Virtual Machines.{% wbr %}- Get aggregated Virtual Machines details.{% wbr %}- Get aggregated Virtual Machines statistics.|
+|Runtime Events  | Register for Virtual Machines additions and removals events.{% wbr %}- Register for aggregated Virtual Machines statistics events (if monitoring).{% wbr %}- Register for Virtual Machine level statistics change events (across all Virtual Machines, if monitoring).|
+
+
+{%anchor MachineLink%}
+
+{: .table .table-bordered}
+|Name            | [Machine](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/machine/Machine.html)|
+|Description     | An actual Machine (identified by its host address) running one or more GigaSpaces components / services in one or more Virtual Machines. Associated with one Operating System|
+|Main Operations | Get all the Grid Service Agents running on the Machine.{% wbr %}- Get all the Grid Service Containers running on the Machine.{% wbr %}- Get all the Grid Service Managers running on the Machine.{% wbr %}- Get all the Virtual Machines running on the Machine.{% wbr %}- Get all the Processing Unit Instances running on the Machine.{% wbr %}- Get all the Space Instances running on the Machine.{% wbr %}- Get the Operating System the Machine is running on.|
+|Runtime Events  | Register for Space Instances additions and removals events from the Machine.{% wbr %}- Register for Processing Unit Instance additions and removals events from the Machine.|
+
+
+{%anchor MachinesLink%}
+
+{: .table .table-bordered}
+|Name            | [Machines](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/machine/Machines.html)|
+|Description     | Holds all the currently discovered Machines|
+|Main Operations |  * Get all the currently running Machines.{% wbr %}- Wait for X number of Machines or be up.|
+|Runtime Events  | * Register for Machine additions and removals events.|
+
+
+{%anchor OperatingSystemLink%}
+
+{: .table .table-bordered}
+|Name            | [OperatingSystem](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/os/OperatingSystem.html)|
+|Description     | The Operating System GigaSpaces components / services are running on. Associated with one Machine.|
+|Main Operations | Get the details of the Operating System.{% wbr %}- Get the operating system statistics.|
+|Runtime Events  | Register for statistics change events (if monitoring).|
+
+{%anchor OperatingSystemsLink%}
+
+{: .table .table-bordered}
+|Name            |[OperatingSystems](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/os/OperatingSystems.html)|
+|Description     |Holds all the currently discovered Operating Systems|
+|Main Operations |Get all the current Operating Systems.{% wbr %}- Get the aggregated Operating Systems details.{% wbr %}- Get the aggregated Operating Systems statistics.|
+|Runtime Events  | Register for aggregated Operating Systems statistics change events (if monitoring).{% wbr %}- Register for Operating System level statistics change events (across all Operating Systems, if monitoring).|
+
+{%anchor TransportLink%}
+
+{: .table .table-bordered}
+|Name            |[Transport](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/transport/Transport.html)|
+|Description     | The communication layer each GigaSpaces component / service uses|
+|Main Operations | Get the Transport details (host, port).{% wbr %}- Get the Transport statistics.|
+|Runtime Events  | Register for Transport statistics change events (if monitoring).|
+
+{%anchor TransportsLink%}
+
+{: .table .table-bordered}
+|Name            | [Transports](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/transport/Transports.html)|
+|Description     | Holds all the currently discovered Transports|
+|Main Operations |  Get all the current Transports.{% wbr %}- Get the aggregated Transports details.{% wbr %}- Get the aggregated Transports statistics.|
+|Runtime Events  |Register for aggregated Transports statistics change events (if monitoring).{% wbr %}- Register for Transport level statistics change events (across all Transports, if monitoring).|
 
 # Accessing the Domain Model
 

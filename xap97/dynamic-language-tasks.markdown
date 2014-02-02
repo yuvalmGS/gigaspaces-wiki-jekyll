@@ -6,8 +6,8 @@ parent: task-execution-over-the-space.html
 weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}GigaSpaces supports the execution of tasks using scripting languages like JavaScipt and Groovy. These can be defined dynamically using the JDK 1.6 dynamic languages support. The dynamic language support is based on the [ordinary task executors](./task-execution-over-the-space.html) and OpenSpaces [remoting support](./space-based-remoting.html).{% endsummary %}
+
+{% summary   %}GigaSpaces supports the execution of tasks using scripting languages like JavaScipt and Groovy. These can be defined dynamically using the JDK 1.6 dynamic languages support. The dynamic language support is based on the [ordinary task executors](./task-execution-over-the-space.html) and OpenSpaces [remoting support](./space-based-remoting.html).{% endsummary %}
 
 # Overview
 
@@ -206,7 +206,9 @@ By default, the `DefaultScriptingExecutor` passes beans of type `GigaSpace`, key
 
 As an example, if my server side Spring application context has a `GigaSpace` bean with id of `myGigaSpace`, a simple groovy script to use it (without configuring anything within the default executor) can be: `myGigaSpace.write(new Object())`. Note, we use the id of the bean to access the `GigaSpace` and write a new Object.
 
-{% infosign %} A quick note regarding usage of `GigaSpace` beans. The clustered flag plays an important role when using it. This basically allows to control if the script execution of `GigaSpace` operations works only against its clustered member space, or against the whole cluster.
+{% info %}
+A quick note regarding usage of `GigaSpace` beans. The clustered flag plays an important role when using it. This basically allows to control if the script execution of `GigaSpace` operations works only against its clustered member space, or against the whole cluster.
+{%endinfo%}
 
 ## Script Compilation Caching
 

@@ -109,7 +109,7 @@ The code space API is also supported in [.Net]({%currentneturl%}/the-in-memory-d
 
 # Services on Top of the Space
 
-Building on top of the core API, the Space also provides [higher level services](./services-on-top-of-the-data-grid.html) onto the application. These services, along with the space's basic capabilities, provide the full stack of middleware features that you can build your application with.
+Building on top of the core API, the Space also provides [higher level services](/product_overview/services-on-top-of-the-data-grid.html) onto the application. These services, along with the space's basic capabilities, provide the full stack of middleware features that you can build your application with.
 [The Task Execution API](./task-execution-over-the-space.html) allows you send your code to the space and execute it on one or more  nodes in parallel, accessing the space data on each node locally.
 [Event containers](./messaging-support.html) use the core API's operations and abstract your code from all the low level details involved in handling the event, such as event registration with the space, transaction initiation, etc. This has the benefit of abstracting your code from the lower level API and allows it to focus on your business logic and the application behavior.
 [Space-Based Remoting](./space-based-remoting.html) allows you to use the space's messaging and code execution capabilities to enable application clients to invoke space side services transparently, using an application specific interface. Using the space as the transport mechanism for the remote calls, allows for location transparency, high availability and parallel execution of the calls, without changing the client code.

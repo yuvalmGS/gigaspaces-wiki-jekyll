@@ -12,7 +12,9 @@ weight: 400
 
 GigaSpaces provides the ability to audit the authentication requests and operations performed on a secured service. It facilitates the logging mechanism to declare the audit log file, and the level of auditing. The level can be dynamically modified using the `java.util.logging JMX Extensions`. This allows an easy extension for custom auditing.
 
-{% exclamation %} Currently auditing of operations is limited to Space operations.
+{% note %}
+Currently auditing of operations is limited to Space operations.
+{%endnote%}
 
 # Configuration
 

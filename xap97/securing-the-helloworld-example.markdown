@@ -12,7 +12,9 @@ weight: 500
 
 If you are new to the **Hello World** example, we suggest to first review the [Your First XTP Application](/tutorials/your-first-xtp-application.html) tutorial and its [Hello World screencast](http://www.youtube.com/watch?v=I2s8jg_Gufs&feature=relmfu). With this page we provide a short overview of the example, and get you started with applying security aspects to it.
 
-{% infosign %} The example distribution can be found under `<GigaSpaces root>/examples/helloworld`.
+{% info %}
+The example distribution can be found under `<GigaSpaces root>/examples/helloworld`.
+{%endinfo%}
 
 # Overview
 
@@ -101,10 +103,11 @@ We have two users to declare - "helloProcessor" and the other "helloFeeder".
 The "helloProcessor" user will be granted **`Take`** access for `HelloObject` and **`Write`** access for `ProcessedHelloObject`.
 The "helloFeeder" user will be granted **`Write`** access for `HelloObject` and **`Read`** access for `ProcessedHelloObject`
 
-{% exclamation %} Some implementation notes:
+{% note title=Some implementation notes: %}
 
 - The `ProcessedHelloObject` is fictive. Actually the `Feeder` waits for `HelloObject` template matching the "Hello World !!" String.
 - The `HelloObject` was replaced by a `Message` Object in the products example. Thus the actual class that should be granted privileges for is `org.openspaces.example.helloworld.common.Message`.
+{%endnote%}
 
 Lets look at how easily it can be using the [GigaSpaces Management Center (UI) Security](./gigaspaces-management-center-(ui)-security.html)
 ![helloWorldUsers.png](/attachment_files/helloWorldUsers.png)
@@ -113,14 +116,16 @@ Lets look at how easily it can be using the [GigaSpaces Management Center (UI) S
 
 There are a couple of deployment options. For example deploying using the ant build script or the UI.
 
-{% infosign %} To simplify this example we will assume that the Service Grid components are **not** secured.
+{% info %}
+To simplify this example we will assume that the Service Grid components are **not** secured.
+{%endinfo%}
 
 1. Start a GSM
 1. Start a GSC
 1. Run the build `deploy-processor` target
 1. Run the build `run-feeder` target
 
-{% star %} Congratulations! You have just deployed your first secured application.
+
 
 # Secured Service Grid
 

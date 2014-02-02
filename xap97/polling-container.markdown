@@ -24,7 +24,7 @@ The polling event container is an implementation of the [polling consumer patter
 ## Life Cycle Events
 
 The polling container life cycle events described below. You may implement each of of these to perform the desired activity.
-![dynamic_polling_container_life_cycle.jpg](/attachment_files/dynamic_polling_container_life_cycle.jpg)|
+![dynamic_polling_container_life_cycle.jpg](/attachment_files/dynamic_polling_container_life_cycle.jpg)
 
 ## Configuration
 
@@ -154,7 +154,9 @@ The example above performs single take operations (see below) using the provided
 
 The polling event container, by default, performs receive operations only when the relevant space it is working against is in primary mode. When the space is in backup mode, no receive operations are performed. If the space moves from backup mode to primary mode, the receive operations are started.
 
-{% infosign %} This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
+{% info %}
+This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
+{%endinfo%}
 
 # FIFO Grouping
 
@@ -1198,6 +1200,7 @@ Learn more using about `TriggerOperationsHandler` using an example application o
 The default values for all of the polling container configuration parameters such as `concurrent-consumers, active-when-primary, receive-timeout` and others can be found in the JavaDoc (and sources) of the class [`org.openspaces.events.polling.SimplePollingEventListenerContainer`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/events/polling/SimplePollingEventListenerContainer.html) and its super class, namely [`org.openspaces.events.polling.AbstractPollingEventListenerContainer`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/events/polling/AbstractPollingEventListenerContainer.html).
 For example, `concurrent-consumers` default value is documented in the method `SimplePollingEventListenerContainer.setConcurrentConsumers(int)`
 
+{%comment%}
 # Schema
 
 The Polling Container schema and complete configuration options are described below:
@@ -1205,3 +1208,4 @@ The Polling Container schema and complete configuration options are described be
 {% indent %}
 ![polling_container_schema.jpg](/attachment_files/polling_container_schema.jpg)
 {% endindent %}
+{%endcomment%}

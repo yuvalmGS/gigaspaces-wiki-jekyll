@@ -18,11 +18,13 @@ To get started with GigaSpaces C++ API:
     - [Writing Existing CPP Class to Space](./writing-existing-cpp-class-to-space.html) -- learn how to save existing C++ classes in the space.
     - [CPP Type Converter](./cpp-type-converter.html) -- learn how to to work with data types that aren't supported by the GigaSpaces C++ API.
 
-{% lampon %} See also:
+{% info title=See also: %}
 
 - [Gigaspaces C++ API Documentation](http://www.gigaspaces.com/docs/cppdocs{% latestxaprelease %}/annotated.html)
 - [CPP API Code Generator](./cpp-api-code-generator.html)
 - [Supported C++ types](./cpp-api-mapping-file.html#type -- Supported Types)
+{%endinfo%}
+
 
 # Overview
 

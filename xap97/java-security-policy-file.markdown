@@ -20,13 +20,12 @@ grant {
 };
 {% endhighlight %}
 
-{% infosign %} You can augment or replace the default JVM runtime permissions using the `java.security.policy` system property to specify the path to a policy file. This System property is unique in that it can use `=` or `==` to indicate whether the policy file specified should append to, or replace the default permissions. If you use the "=", the permissions in the specified policy file are appended to the default permissions. If you use the `==`, then the permissions in the specified policy file replace the default permissions.
-
-{% infosign %} GigaSpaces includes default security permissions, based on the above settings. These are located in the `gs-runtime.jar` file, under `\policy\gigaspaces.policy`. If you do not need special security settings, you do not need to set up the `java.security.policy` property when accessing the space. The default setting is used. The same occurs when using the `SpaceFinder` to start a space (not using the `ServiceStarter`).
-
-{% infosign %} **Flat File Structure** -- the `policy.all` file can be moved under the `<GigaSpaces Root>` directory, if you want to maintain a flat file structure -- where configuration, jar, and security files can be organized under the `<GigaSpaces Root>` folder, or under their main folder without having sub-folders.
-
-{% oksign %} For more details on Java security, refer to: [Sun;Default Policy Implementation and Policy File Syntax](http://java.sun.com/j2se/1.4.2/docs/guide/security/PolicyFiles.html).
+{% info%}
+You can augment or replace the default JVM runtime permissions using the `java.security.policy` system property to specify the path to a policy file. This System property is unique in that it can use `=` or `==` to indicate whether the policy file specified should append to, or replace the default permissions. If you use the "=", the permissions in the specified policy file are appended to the default permissions. If you use the `==`, then the permissions in the specified policy file replace the default permissions.
+GigaSpaces includes default security permissions, based on the above settings. These are located in the `gs-runtime.jar` file, under `\policy\gigaspaces.policy`. If you do not need special security settings, you do not need to set up the `java.security.policy` property when accessing the space. The default setting is used. The same occurs when using the `SpaceFinder` to start a space (not using the `ServiceStarter`).
+**Flat File Structure** -- the `policy.all` file can be moved under the `<GigaSpaces Root>` directory, if you want to maintain a flat file structure -- where configuration, jar, and security files can be organized under the `<GigaSpaces Root>` folder, or under their main folder without having sub-folders.
+For more details on Java security, refer to: [Sun;Default Policy Implementation and Policy File Syntax](http://java.sun.com/j2se/1.4.2/docs/guide/security/PolicyFiles.html).
+{%endinfo%}
 
 # Security permissions required for GigaSpaces
 

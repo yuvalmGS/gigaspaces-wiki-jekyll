@@ -44,10 +44,13 @@ The location of the directory file and its name are configurable using the `com.
 com.gs.security.fs.file-service.file-path = /opt/head/security/my-directory.fsm
 {% endhighlight %}
 
-{% exclamation %} Note that file separators in a properties file are `'/'`.
-{% question %} The file extension doesn't have to be `.fsm`.
-{% exclamation %} If the file doesn't exist, only a warning is displayed
-{% exclamation %} You should specify in the UI (manage security) the path to security configuration file containing this property ,otherwise the default fsm file will be used.
+{% note %}
+Note that file separators in a properties file are `'/'`.
+The file extension doesn't have to be `.fsm`.
+If the file doesn't exist, only a warning is displayed
+You should specify in the UI (manage security) the path to security configuration file containing this property ,otherwise the default fsm file will be used.
+{%endnote%}
+
 ![security_namagement_config_file.jpg](/attachment_files/security_namagement_config_file.jpg)
 
 # Custom Extensions
@@ -111,9 +114,13 @@ com.gs.security.fs.file-service.class = com.gigaspaces.security.fs.URLFileServic
 com.gs.security.fs.file-service.url = http://www.gigaspaces.com/download/attachments/gs-directory.fsm
 {% endhighlight %}
 
-{% infosign %} The default file-service implementation class is: `com.gigaspaces.security.fs.LocalFileService`
+{% info %}
+The default file-service implementation class is: `com.gigaspaces.security.fs.LocalFileService`
+{%endinfo%}
 
-{% exclamation %} It might be obvious to note that you will need to manage the security directory as a local-file, upload the file to an HTTP server, and +only then+ configure your services with the above properties. If your HTTP server allows write-access, then the `URLFileService` can also be used for managing your directory; the `writeToFile` method (see interface) will use the output stream to write through this connection.
+{% note%}
+It might be obvious to note that you will need to manage the security directory as a local-file, upload the file to an HTTP server, and +only then+ configure your services with the above properties. If your HTTP server allows write-access, then the `URLFileService` can also be used for managing your directory; the `writeToFile` method (see interface) will use the output stream to write through this connection.
+{%endnote%}
 
 ##### Custom File Service
 
