@@ -8,7 +8,7 @@ weight: 300
 
 {% summary %}How to Deploy an application with Data Grid and Processing Units on any Cloud using a recipe{% endsummary %}
 
-# Introduction
+# Overview
 
 XAP 9 Comes with a built-in Cloudify recipe feature that allows the deployment and management of an entire application onto any cloud. For more information on supported Cloud and Cloud Drivers see the [Cloudify User Guide](http://www.cloudifysource.org/guide/). The following sections will demonstrate how to compose a recipe for deploying and managing your XAP application on the Cloud.
 

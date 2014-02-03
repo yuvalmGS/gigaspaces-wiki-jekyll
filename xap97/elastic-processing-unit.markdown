@@ -6,17 +6,22 @@ parent: deploying-and-running-the-processing-unit.html
 weight: 300
 ---
 
-{% compositionsetup %}
+
 {% summary page %}Explains how to deploy and manage an Elastic Processing Unit (EPU){% endsummary %}
 
 # Overview
 
 {% section %}
-{% column %}
+{% column width=50% %}
 An Elastic Processing Unit (EPU) is a Processing Unit with additional capabilities that simplify its deployment across multiple machines. Containers and machine resources such as Memory and CPU are automatically provisioned based on Memory and CPU requirements. When a machine failure occurs, or when scale requirements change, new machines are provisioned and the Processing Unit deployment distribution is balanced automatically. The PU scale is triggered by modifying the requirements through an API call. From that point in time the EPU continuously maintains the specified capacity (indefinitely, or until the next scale trigger).
-
+{%endcolumn%}
+{% column width=45% %}
 ![archi_elastic.jpg](/attachment_files/archi_elastic.jpg)
+{%endcolumn%}
+{% endsection %}
 
+{% section %}
+{% column width=50% %}
 The EPU has following features:
 
 - SLA based deployment where required memory and cores can be specified.
@@ -27,10 +32,11 @@ The EPU has following features:
 - Eager and manual scale strategies.
 - Automatic machine provisioning plug-in.
 {% endcolumn %}
-{% column %}
+{% column widt=45% %}
 ![colored_bands.jpg](/attachment_files/colored_bands.jpg)
 {% endcolumn %}
 {% endsection %}
+
 
 Basic steps when using the EPU:
 
@@ -53,9 +59,8 @@ Here is a quick EPU tutorial:
 
 <div style="width:425px" id="__ss_7017690"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/shayhassidim/the-elastic-pu" title="The Elastic PU">The Elastic PU</a></strong><object id="__sse7017690" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=elasticpu-110222110302-phpapp02&stripped_title=the-elastic-pu&userName=shayhassidim" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse7017690" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=elasticpu-110222110302-phpapp02&stripped_title=the-elastic-pu&userName=shayhassidim" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object></div>
 
-{% exclamation %} For a quick start follow the [Elastic Processing Unit deployment example](./deploying-onto-the-service-grid.html#ElasticProcessingUnitDeploymentusingtheAdminAPI).
-
 {% tip %}
+For a quick start follow the [Elastic Processing Unit deployment example](./deploying-onto-the-service-grid.html#ElasticProcessingUnitDeploymentusingtheAdminAPI).
 When using the EPU, GigaSpaces manage the **entire** life cycle of the container. Once the EPU is deployed containers are started and the EPU instances are provisioned into these containers. When the EPU scales up, additional containers are started and instances are relocated into these containers. When the EPU is un-deployed, all the containers associated with the EPU are automatically terminated.
 {% endtip %}
 
@@ -65,7 +70,9 @@ This page has three main sections:
 - The **Scale Triggers** section describes how to scale a PU after it has been deployed.
 - The **Machine Provisioning**, describes how to start the GigaSpaces agent on each machine, plug-in development for different cloud providers and the algorithm that re-balances the PU across the machines.
 
-{% exclamation %} With XAP 8.0 the EPU supports only partitioned deployment topology. The scale event is triggered by the administrator and not automatically when memory reaches a certain threshold.
+{% note %}
+With XAP 8.0 the EPU supports only partitioned deployment topology. The scale event is triggered by the administrator and not automatically when memory reaches a certain threshold.
+{%endnote%}
 
 # EPU Deployment
 
@@ -140,7 +147,9 @@ numberOfPartitions
    = 2
 {% endhighlight %}
 
-{% exclamation %} The number of Processing Unit partitions cannot be changed without re-deployment of the PU.
+{% note %}
+The number of Processing Unit partitions cannot be changed without re-deployment of the PU.
+{%endnote%}
 
 ## Maximum Number of CPU Cores
 
@@ -332,7 +341,7 @@ When specifying both memory and cores capacity requirements as part of the deplo
 
 Here is an example how you can scale a deployed EPU memory and CPU capacity.
 
-### Step 1 - Deploy the PU:
+#### Step 1 - Deploy the PU:
 
 We deploy the PU having 512GB as the maximum total amount of memory utilized both for primary and backup instances where the entire system should consume maximum of 32 cores. At start only 128GB and 8 cores will be utilized.
 
@@ -353,7 +362,7 @@ ProcessingUnit pu = gsm.deploy(
 pu.waitForSpace().waitFor(pu.getTotalNumberOfInstances());
 {% endhighlight %}
 
-### Step 2 - Increase the memory capacity from 128GB to 256GB and number of cores from 8 to 16:
+#### Step 2 - Increase the memory capacity from 128GB to 256GB and number of cores from 8 to 16:
 
 {% highlight java %}
 ProcessingUnit pu = admin.getProcessingUnits().waitFor("myPU", 5,TimeUnit.SECONDS); //get the PU
@@ -365,7 +374,7 @@ pu.scale(new ManualCapacityScaleConfigurer()
          .create());
 {% endhighlight %}
 
-### Step 3 - Increase the memory capacity from 256GB to 512GB and number of cores from 16 to 32:
+#### Step 3 - Increase the memory capacity from 256GB to 512GB and number of cores from 16 to 32:
 
 {% highlight java %}
 ProcessingUnit pu = admin.getProcessingUnits().waitFor("myPU", 5,TimeUnit.SECONDS); //get the PU
@@ -377,7 +386,7 @@ pu.scale(new ManualCapacityScaleConfigurer()
          .create());
 {% endhighlight %}
 
-### Step 4 - Decrease the memory capacity and CPU capacity:
+#### Step 4 - Decrease the memory capacity and CPU capacity:
 
 {% highlight java %}
 ProcessingUnit pu = admin.getProcessingUnits().waitFor("myPU", 5,TimeUnit.SECONDS); //get the PU
@@ -699,7 +708,9 @@ The demo includes the following phases:
 3. Scaling up to 256 MB
 4. Scaling down to 64 MB
 
-{% exclamation %} This demo assumes you have about 300 MB available memory on your machine.
+{% note %}
+This demo assumes you have about 300 MB available memory on your machine.
+{%endnote%}
 
 ## Running the Example
 

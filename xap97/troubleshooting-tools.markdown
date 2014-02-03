@@ -1,16 +1,16 @@
 ---
 layout: post
-title:  Troubleshooting Tools
+title:  Tools
 categories: XAP97
-parent: troubleshooting-for-administrators.html
-weight: 300
+parent: troubleshooting.html
+weight: 500
 ---
 
-{% summary page|60 %}Troubleshooting tools for testing a running product and environmental issues. {% endsummary %}
+{% summary  %}Troubleshooting tools for testing a running product and environmental issues. {% endsummary %}
 
 # CPU and Memory Dumper
 
-## CPU Dumper Java Utility for Windows
+#### CPU Dumper Java Utility for Windows
 
 The application starts a space and collects the memory and CPU utilization and dumps the threads when the CPU britches the configured CPU level.
 
@@ -18,7 +18,7 @@ The application starts a space and collects the memory and CPU utilization and d
 - Modify the config.dat and set the proper classpath, the CPU (in % beyond it the dump will be created) and the TIME (in msc of the time which lasts the application to breech beyond the configured CPU value)
 - Run the GetJvmDump.exe
 
-## A Script Utility for Linux
+#### A Script Utility for Linux
 
 The [attached gsInstance.sh script](/download_files/gsInstanceDumper.zip) script starts a space using the regular gsInstance.sh equivalent and dumps the threads once the application breeches a certain CPU level for a certain period, set by the TIME value. The CPU and TIME can be passed as additional arguments to the script.
 You can also simply copy the following section into any script:
@@ -62,7 +62,7 @@ do
 done
 {% endhighlight %}
 
-## Windows Debugging Tools
+#### Windows Debugging Tools
 
 1. **userdump** - (correct version should be chosen - 32 or 64-bit according to the application) to get a dump
 1. **[Debugging Tools for Windows](http://www.microsoft.com/whdc/DevTools/Debugging/default.mspx)** - to navigate in the dump. While userdump is by default non-intrusive and should not kill the application, it causes the application freeze which could be for a few seconds and it, eventually, could crash the application. So, it is NOT 100% safe.
@@ -79,7 +79,7 @@ Both tools are well tested and common in Windows environment.
 
 # Threads Dumper
 
-## SendSignal Utility
+#### SendSignal Utility
 
 Java has this great feature where if you hit Ctrl-break on the console, it dumps a list of threads and all their held locks to stdout. If your app is stuck or overwhelmed with too many threads, you can figure out what it is doing. If it is deadlocked/overwhelmed, sometimes the JVM can even tell you exactly which threads are involved. The problem is that if you can't get to the console, you can't hit ctrl-break. This commonly happens to us when we are running under an IDE. The IDE captures stdout and there is no console. If the app deadlocks, there is no way to get the crucial debugging info. Another common usage scenario is once we do not have access to the console itself.
 

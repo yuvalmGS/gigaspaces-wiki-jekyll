@@ -2,8 +2,8 @@
 layout: post
 title:  Proxy Connectivity
 categories: XAP97
-parent: tuning-gigaspaces-performance---advanced.html
-weight: 200
+parent: tuning-gigaspaces-performance.html
+weight: 120
 ---
 
 {% summary %}Client Proxy Connectivity and reconnection options{% endsummary %}
@@ -25,19 +25,19 @@ The space proxy router has the following responsibilities:
 - If the data grid topology is partitioned, route the operation to the relevant partition(s) and aggregate the partitions results. (For example: a **count** operation is broadcasted concurrently to each partition, results are accumulated implicitly and when the last partition result arrives the operation is completed).
 
 
- # Configuration
+# Configuration
 
  The space proxy router behavior is controlled using the following configuration properties, which can be specified as part of the [Space Component](./the-space-component.html#Reconnection) or via API:
 
- {: .table .table-bordered}
- |Property|Description|Default value|
- |:-------|:----------|:------------|
- | `space-config.proxy.router.active-server-lookup-timeout` |  If an operation cannot be executed because the target member is not available, the maximum time (in milliseconds) the router is allowed to wait while searching for an active member. | 20000 |
- | `space-config.proxy.router.active-server-lookup-sampling-interval` | The interval (in milliseconds) between active member lookup samples. | 100 |
- | `space-config.proxy.router.threadpool-size` | Number of threads in the dedicated thread pool used by the space proxy router | 2 * number of cores |
- | `space-config.proxy.router.load-balancer-type` | Load balancer type to be used by the router for active-active topologies (STICKY or ROUND_ROBIN) | STICKY |
+{: .table .table-bordered}
+|Property|Description|Default value|
+|:-------|:----------|:------------|
+| `space-config.proxy.router.active-server-lookup-timeout` |  If an operation cannot be executed because the target member is not available, the maximum time (in milliseconds) the router is allowed to wait while searching for an active member. | 20000 |
+| `space-config.proxy.router.active-server-lookup-sampling-interval` | The interval (in milliseconds) between active member lookup samples. | 100 |
+| `space-config.proxy.router.threadpool-size` | Number of threads in the dedicated thread pool used by the space proxy router | 2 * number of cores |
+| `space-config.proxy.router.load-balancer-type` | Load balancer type to be used by the router for active-active topologies (STICKY or ROUND_ROBIN) | STICKY |
 
- {% plus %} In most scenarios the goal is for all proxies to be configured with the same settings. This is provided out of the box by configuring the proxy settings as part of the space deployment - clients that connect to the space automatically retrieve the space proxy settings and use them. If a specific client needs a different configuration, it can override the configuration locally without affecting the space or other clients.
+{% plus %} In most scenarios the goal is for all proxies to be configured with the same settings. This is provided out of the box by configuring the proxy settings as part of the space deployment - clients that connect to the space automatically retrieve the space proxy settings and use them. If a specific client needs a different configuration, it can override the configuration locally without affecting the space or other clients.
 
 
 Example : To increase the lookup duration timeout to 5 minutes you should have the following:

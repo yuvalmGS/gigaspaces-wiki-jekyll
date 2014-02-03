@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  How to Configure Multicast
+title:  Multicast Configuration
 categories: XAP97
 parent: networking-how-tos.html
 weight: 200

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  How to Configure Unicast Discovery
+title:  Unicast Discovery Configuration
 categories: XAP97
 parent: networking-how-tos.html
 weight: 100

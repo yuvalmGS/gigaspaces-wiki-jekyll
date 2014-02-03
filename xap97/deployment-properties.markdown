@@ -12,7 +12,9 @@ weight: 400
 
 When a processing unit is deployed and provisioned, you can inject property values to it only known at deployment time, or in order to further configure the processing unit elements. Injected properties can be either properties that have been explicitly externalized from the [processing unit configuration file](./configuring-processing-unit-elements.html) or properties related to one the platform components (e.g. a space) that can be configured at deployment time. This mechanism is built on top of Spring's support for an externalized properties configuration called [PropertyPlaceholderConfigurer](http://static.springframework.org/spring/docs/2.5.x/reference/beans.html#beans-factory-placeholderconfigurer). This mechanism has been enhanced to provide a powerful yet simple property injection.
 
-{% infosign %} One of the core values of GigaSpaces XAP processing unit model is the fact that a processing unit need not be changed at all in the transition from the development environment (namely your IDE) to the production environment. This feature, along with others, is one of the enablers of this behavior.
+{% info %}
+One of the core values of GigaSpaces XAP processing unit model is the fact that a processing unit need not be changed at all in the transition from the development environment (namely your IDE) to the production environment. This feature, along with others, is one of the enablers of this behavior.
+{%endinfo%}
 
 # Defining Property Place Holders in Your Processing Unit
 
@@ -20,7 +22,9 @@ Property injection to the processing unit's configuration is supported at the Sp
 
 Below you can find an example of an XML configuration which defines to property place holders, `spaceSchema` and `connectionTimeout`. In this example we also specify default values for them, which is always a good practice and does not force the deployer to specify values for these place holders.
 
-{% lampon %} Note that for property place holders we use the `$\{placeholder name\`} notation.
+{% tip %}
+Note that for property place holders we use the `$\{placeholder name\`} notation.
+{%endtip%}
 
 {% inittab os_simple_space|top %}
 {% tabcontent Namespace %}

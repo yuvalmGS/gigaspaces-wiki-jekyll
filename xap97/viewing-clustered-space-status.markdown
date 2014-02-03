@@ -2,8 +2,8 @@
 layout: post
 title:  Viewing Clustered Space Status
 categories: XAP97
-parent: testing-system-environment.html
-weight: 200
+parent: troubleshooting.html
+weight: 300
 ---
 
 {% summary page|60 %}The status of clustered spaces can be viewed using different logging levels.{% endsummary %}

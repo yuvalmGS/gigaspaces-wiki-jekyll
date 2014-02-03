@@ -9,7 +9,7 @@ weight: 300
 
 {% summary %}How to configure a Service Grid{% endsummary %}
 
-# Configuring a Service Grid
+# Overview
 
 Service Grid configuration is often composed of two layers: system-wide configuration and component-specific configuration.
 The system-wide configuration specifies settings which all components share, e.g. discovery (unicast/multicast), security, zones, etc. These are set in the `EXT_JAVA_OPTIONS` environment variable.
@@ -35,7 +35,7 @@ export LUS_JAVA_OPTIONS=-Xmx1024m
 {% endhighlight %}
 {% endcolumn %}
 
-{% column width=50% %}
+{% column width=45% %}
 {% highlight java %}
 Windows
 set GSA_JAVA_OPTIONS=-Xmx256m
@@ -49,7 +49,7 @@ call gs-agent.bat
 {% endcolumn %}
 {% endsection %}
 
-## Configuring independent components
+#### Configuring independent components
 
 It is highly recommended that the Service Grid is started (and configured) using the gs-agent as shown above. If you do need to start a specific component separately, you can use the same environment variables shown above.
 
@@ -64,7 +64,7 @@ export GSC_JAVA_OPTIONS=-Xmx1024m
 . ./gsc.sh
 {% endhighlight %}
 {% endcolumn %}
-{% column width=50% %}
+{% column width=45% %}
 {% highlight java  %}
 Windows
 set GSC_JAVA_OPTIONS=-Xmx1024m
@@ -74,4 +74,6 @@ call gsc.bat
 {% endcolumn %}
 {% endsection %}
 
-{% exclamation %} Component specific configuration can be set using system properties (follows the \[component name\].\[property name\] notation).
+{% note %}
+Component specific configuration can be set using system properties (follows the \[component name\].\[property name\] notation).
+{%endnote%}

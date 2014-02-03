@@ -6,7 +6,7 @@ parent: packaging-and-deployment.html
 weight: 400
 ---
 
-{% summary page|60 %}Obtaining information about the clustering topology, member id and other cluster related information can be useful in many cases. Cluster information can be provided to the processing unit instances at deployment time via the class `org.openspaces.core.cluster.ClusterInfo`, which can be injected into the processing unit components{% endsummary %}
+{% summary %}Obtaining information about the clustering topology, member id and other cluster related information can be useful in many cases. Cluster information can be provided to the processing unit instances at deployment time via the class `org.openspaces.core.cluster.ClusterInfo`, which can be injected into the processing unit components{% endsummary %}
 
 # Overview
 
@@ -28,7 +28,9 @@ As mentioned above the cluster information is passed to the components of each p
 | Backup ID | If the processing unit contains an embedded space with backups, a value between on 1 to `numberOfBackups`, denoting the backup ID of the processing instance. The primary instance ID which the processing unit instance is backing up is denoted by `instanceId`. If the processing unit instance is not a backup instance, `null` is returned | `ClusterInfo#getBackupId` |
 | Running number | A running number of the processing unit instance instance. Takes into account different topologies and provides a unique identifier (starting from `0`) of the processing unit instance within the cluster | `ClusterInfo#getRunningNumber` |
 
-{% infosign %} `null` value for one of these properties means that they are not applicable for the processing unit instance at hand or the used deployment topology.
+{% info %}
+`null` value for one of these properties means that they are not applicable for the processing unit instance at hand or the used deployment topology.
+{%endinfo%}
 
 # Obtaining the Cluster Information
 

@@ -2,8 +2,8 @@
 layout: post
 title:  Testing System Environment
 categories: XAP97
-parent: troubleshooting-for-administrators.html
-weight: 100
+parent: troubleshooting.html
+weight: 200
 ---
 
 {% summary %}Verifying a local installation and a remote installation.{% endsummary %}

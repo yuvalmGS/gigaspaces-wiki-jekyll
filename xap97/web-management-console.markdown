@@ -2,7 +2,7 @@
 layout: post
 title:  Web Management Console
 categories: XAP97
-parent: administrators-guide.html
+parent: administration-tools.html
 weight: 300
 ---
 

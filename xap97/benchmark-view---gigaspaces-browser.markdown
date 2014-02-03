@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Benchmark View - GigaSpaces Browser
+title:  Benchmark View
 categories: XAP97
 parent: benchmarking.html
 weight: 200
@@ -67,23 +67,26 @@ The Benchmark view **Options** area provides the following options:
 - **Object type** -- type of object writtten to the space, possible options: **Entry**, **POJO**, **JMS**, **Externalizable**, **Serializable**, **FIFO**, **POJO Externalizable**, **MetaDataEntry Externalizable**, **FIFO Externalizable**, **UID Externalizable**. The selected object type is explained in the **Description** area.
 - **Threads** -- the number of concurrent threads that run the test. This allows you to run multiple threads that call the selected operation at the same time.
 
-{% lampon %} If you define that 1000 Entries be written to the space, and have 5 threads defined as part of the threads box, you will end up with 5000 Entries inside the space.
+{% tip %} If you define that 1000 Entries be written to the space, and have 5 threads defined as part of the threads box, you will end up with 5000 Entries inside the space.
 
 - **Iterations** -- the number of iterations the benchmark calls for the selected operation.
 
-{% lampon %} You can allow a read cycle to be conducted several times using the **Repeat Read/Get Operation** option.
+You can allow a read cycle to be conducted several times using the **Repeat Read/Get Operation** option.
 
 - **Entry size** -- the size of the Entry payload in bytes that is written to the space. This option is relevant only for the write and put operations.
 - **Sampling rate** -- the benchmark provides the average TP reading in the **Graph** or **Table** tabs based on the sampling rate. For example, if you choose to write 5000 Entries to the space and the sampling rate is 1000, the results graph and table display 5 sampling points, which reflect the average TP of the write operation for the last sampling period (the last 1000 write operations). When using the **Repeat Read/Get Operation** option, you can select a sampling rate that is greater than the number of iterations.
 - **Batches** -- this option allows you to call GigaSpaces batch operations (`writeMultiple, takeMultiple, readMultiple`). The number specified in this box is the number of batches that are performed in order to complete the number of iterations specified. Specifying `0` as the batch size calls the regular APIs.
 
-{% lampon %} The numbers in the **Iterations**, **Sampling rate**, and **Read/Take timeout** boxes are in thousands, and the number in the **Entry size** box is in bytes.
+The numbers in the **Iterations**, **Sampling rate**, and **Read/Take timeout** boxes are in thousands, and the number in the **Entry size** box is in bytes.
+{%endtip%}
 
 ## Lease
 
 Checking the **Return Lease** check defines that operations performed in the space also create a `Lease` object. You can specify the expiration time of the lease in the **Lease Time** area, or check the **FOREVER Lease** check box, which means the lease will not expire unless you remove it from the space.
 
-{% exclamation %} Checking the **Return Lease** check box might decrease performance.
+{% note %}
+Checking the **Return Lease** check box might decrease performance.
+{%endnote%}
 
 ## Admin Operations
 
@@ -110,7 +113,9 @@ The following operations can be performed when the **JavaSpaces** area is select
 - **Write and Take** -- writes and takes objects, according to the number of iterations. For example, defining 20,000 iterations in the **Iterations** text box writes 2,000 objects to the space, and takes those 2,000 objects from the space.
 - **Write and Notify** -- writes objects according to the number of iterations, and registers for notifications on those objects. For example, defining 20,000 iterations in the **Iterations** text box writes 2,000 objects to the space, sends 2,000 notifications, receives 2,000 notify acknowledgments, and registers for notifications on the written objects.
 
-{% infosign %} The referral to objects above means either Entries or POJOs, depending on the specified **Object Format**.
+{% info %}
+The referral to objects above means either Entries or POJOs, depending on the specified **Object Format**.
+{%endinfo%}
 
 ### Map API
 
@@ -157,7 +162,9 @@ Distributed cache is relevant when using read or get operations. This option sta
 
 To save the benchmark sample readings into a file, check the **Save results to file** check box, and specify a file. This generates a file with the results in tab-separated values.
 
-{% oksign %} The benchmark results are printed to an Excel file, which allows you to easily sort your results. To do this, open your printed Excel file, and select **Filter* > **AutoFilter** from the **Data** menu at the top.
+{%note%}
+The benchmark results are printed to an Excel file, which allows you to easily sort your results. To do this, open your printed Excel file, and select **Filter* > **AutoFilter** from the **Data** menu at the top.
+{%endnote%}
 
 ## Configuration
 

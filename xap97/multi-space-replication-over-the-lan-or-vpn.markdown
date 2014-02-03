@@ -2,7 +2,7 @@
 layout: post
 title:  Multi Space Replication over the LAN or VPN
 categories: XAP97
-parent: deployment.html
+parent: administrators-guide.html
 weight: 600
 ---
 
@@ -598,4 +598,8 @@ Or bootstrapping a new version of an application where a gateway target is added
 The topology might change during runtime, for instance a new space can be added and the existing spaces should be familiar with it and start replicating to it and receive replication from it. On the other hand a space can be removed and the existing should stop holding replication backlog for it and drop it from their list of gateway targets.
 
 {% refer %}For full details of how to add and remove gateway targets during runtime refer to [Changing Multi-Site Deployment during Runtime](./changing-multi-site-deployment-during-runtime.html){% endrefer %}
-{% exclamation %} This link refers to multi-site replication, where replication is done indirectly via local gateway delegator to the target gateway sink. However the subject in this context is the same for both cases.
+
+
+{% note %}
+This link refers to multi-site replication, where replication is done indirectly via local gateway delegator to the target gateway sink. However the subject in this context is the same for both cases.
+{%endnote%}

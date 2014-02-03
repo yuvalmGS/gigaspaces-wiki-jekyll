@@ -6,8 +6,10 @@ parent: performance-tuning-and-considerations.html
 weight: 600
 ---
 
+{%summary%}Performance benchmarks with GigaSpaces {%endsummary%}
 
-# The Art of Benchmarks
+
+# Overview
 
 Performance benchmarks with GigaSpaces' In-Memory Data Grid mainly involve testing latency and throughput. Since GigaSpaces offers data access routines for remote data access as well as colocated data access, you should test latency and throughput in both cases (as appropriate for your architecture and deployment topology).
 
@@ -19,18 +21,18 @@ Another dimension for these tests is concurrency - which measures how the system
 
 One more dimension is the grid size (the topology). This measures how the system scales as a function of the number of data-grid nodes leveraging GigaSpaces [In-Memory-Map-Reduce API](./task-execution-over-the-space.html). There is also a [client side caching](./client-side-caching.html) component that is viable in many scenarios that is important to test (read-mostly scenarios).  As you see the performance benchmark matrix is extensive and requires the benchmark tool to support all these options/scenarios.
 
-## Benchmark Results
+# Results
 
 The different benchmarks results can be found on the [benchmarks page](http://www.gigaspaces.com/benchmarks). We  update these from time to time and post new benchmarks results on [our benchmark blog](http://blog.gigaspaces.com/category/benchmarks).
 
-## Benchmark Tools
+# Tools
 
 - [GS-UI Benchmark View](./benchmark-view---gigaspaces-browser.html) — This is a Java Swing-based tool allowing you to run various tests. It does not currently have a good way to export the results and automate the benchmark scenarios. Still, with a matter of few clicks, you can get a good sense how your environment performs.
 - [Benchmark Utility - GigaSpaces CLI](./benchmark-utility---gigaspaces-cli.html) — This is the Java command line version of the GS-UI Benchmark View. It include similar options, but being a command-line tool allows automation of the benchmarks via scripts. The source code is provided for this tool.
 - [C++ Benchmark Framework](./c++-benchmark-framework.html) — XAP C++ API Benchmark framework. Source code provided.
 - [.NET Benchmark Example]({%currentneturl%}/dotnet-benchmark-example.html) - XAP .Net API Benchmark framework. Source code provided.
 
-## Large Scale Benchmarks
+# Large Scale
 
 Note that once you are running large scale benchmarks with a large number of concurrent accesses, or a large number of data grid partitions, you should consider our involvement to help tune the configuration of the environment and JVM, and in some cases we should help with the code, too, as some of the default behaviors for the basic API have special modifiers that may boost the performance.
 

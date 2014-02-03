@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Benchmark Utility - GigaSpaces CLI
+title:  Benchmark Utility
 categories: XAP97
 parent: benchmarking.html
 weight: 100

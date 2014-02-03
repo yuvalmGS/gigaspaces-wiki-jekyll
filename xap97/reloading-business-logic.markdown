@@ -13,8 +13,10 @@ weight: 250
 
 The service reloading feature allows you to reload business logic (Spring beans) without shutting down the application or undeploying a Processing Unit. In order to do this, any reloadable business logic needs to be defined in a special Spring XML file. The Spring XML file is then referenced very similar to the [Space Mode Context Loader](./space-mode-context-loader.html) from inside the pu.xml.
 
-{% infosign %} Service Reloading only works when downloading the processing unit to the GSC is disabled (pu.download deploy property should be set to false). For more information on how to do it, see [this page](./deploying-onto-the-service-grid.html#distributionToGSCs).
-   For service reloading to work, common classes have to be copied to the <GigaSpacesRoot>/lib/platform/ext folder
+{% info %}
+Service Reloading only works when downloading the processing unit to the GSC is disabled (pu.download deploy property should be set to false). For more information on how to do it, see [this page](./deploying-onto-the-service-grid.html#distributionToGSCs).
+For service reloading to work, common classes have to be copied to the <GigaSpacesRoot>/lib/platform/ext folder
+{%endinfo%}
 
 An example that demonstrates this is provided in the Solutions and Best Practices [Refreshable Business Logic Example page](/sbp/refreshable-business-logic-example.html).
 
@@ -49,7 +51,9 @@ We then need to define it in a specific Spring XML file (lets assume it is named
 </beans>
 {% endhighlight %}
 
-{% lampon %} This Spring XML file is a fully functional Spring definition and can hold several bean definitions, as well as other OpenSpaces components.
+{% tip %}
+This Spring XML file is a fully functional Spring definition and can hold several bean definitions, as well as other OpenSpaces components.
+{%endtip%}
 
 To enable service reloading, in our processing unit `pu.xml` file, we reference the `refreshable-beans.xml` file in the following manner:
 
@@ -61,7 +65,9 @@ To enable service reloading, in our processing unit `pu.xml` file, we reference 
 </beans>
 {% endhighlight %}
 
-{% lampon %} `refreshable-beans.xml` has its parent application context set to the `pu.xml`, allowing it to access any bean defined in its parent `pu.xml`. Also, the `refreshable-context-loader` only starts if the space is in primary mode (when working with a remote space, it is always in primary mode).
+{% tip %}
+`refreshable-beans.xml` has its parent application context set to the `pu.xml`, allowing it to access any bean defined in its parent `pu.xml`. Also, the `refreshable-context-loader` only starts if the space is in primary mode (when working with a remote space, it is always in primary mode).
+{%endtip%}
 
 Above configuration will let you refresh the code defined in the refreshable context. Actual execution of this reloading of context can be done using OpenSpaces sync remoting, which allows you to broadcast the reload operation to all active cluster members. Here is how this is configured:
 

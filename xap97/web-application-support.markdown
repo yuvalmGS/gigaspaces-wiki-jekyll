@@ -2,7 +2,7 @@
 layout: post
 title:  Web Application Support
 categories: XAP97
-parent: deployment.html
+parent: administrators-guide.html
 weight: 400
 ---
 

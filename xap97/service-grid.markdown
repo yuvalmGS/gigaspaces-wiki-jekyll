@@ -6,7 +6,6 @@ weight: 100
 parent: the-runtime-environment.html
 ---
 
-{% compositionsetup %}
 {% summary %}Overview of Service Grid Components{% endsummary %}
 
 {% anchor gsm %}
@@ -19,7 +18,9 @@ When a processing unit is uploaded to the GSM (using one of GigaSpaces deploymen
 
 Once provisioned, the GSM continuously monitors the processing unit instances to determine if they're functioning properly or not. When a certain instance fails, the GSM identifies that and re-provisions the failed instance on to another GSC, thus enforcing the processing unit's SLA.
 
-{%lampon%} It is common to start two GSM instances in each Service Grid for high-availability reasons: At any given point in time, each deployed processing unit is managed by a one GSM instance, and the other GSM(s) serve as its hot standby. If the active GSM fails for some reason, one of the standbys automatically takes over and start managing and monitoring the processing units that the failed GSM managed.
+{%tip%}
+It is common to start two GSM instances in each Service Grid for high-availability reasons: At any given point in time, each deployed processing unit is managed by a one GSM instance, and the other GSM(s) serve as its hot standby. If the active GSM fails for some reason, one of the standbys automatically takes over and start managing and monitoring the processing units that the failed GSM managed.
+{%endtip%}
 
 {% anchor gsc %}
 
@@ -47,7 +48,9 @@ The Lookup Service can be configured for either a [multicast](./how-to-configure
 
 Another important attribute in that context is the *lookup group*. The lookup group is a logical grouping of all the components that belong to the same runtime cluster. Using lookup groups, you can run multiple deployments on the same physical infrastructure, without them interfering with one another. For more details please refer to [Lookup Service Configuration](./lookup-service-configuration.html).
 
-{%lampon%}It is common to start at least two LUS instances in each Service Grid for high-availability reasons. Note that the lookup service can run in the same process with a GSM, or in standalone mode using its own process.
+{%tip%}
+It is common to start at least two LUS instances in each Service Grid for high-availability reasons. Note that the lookup service can run in the same process with a GSM, or in standalone mode using its own process.
+{%endtip%}
 
 The following services use the LUS:
 
@@ -59,7 +62,9 @@ The following services use the LUS:
 
 * Space Instances (actual instances of a Space that form a topology)
 
-{% exclamation %} For advanced information on the lookup service architecture, refer to [The Lookup Service](./the-lookup-service.html).
+{% info %}
+For advanced information on the lookup service architecture, refer to [The Lookup Service](./the-lookup-service.html).
+{%endinfo%}
 
 {% anchor gsa %}
 
@@ -110,7 +115,7 @@ In order to, for example, start 3 local GSCs, 2 global GSMs, and no global LUS, 
 gs-agent gsa.gsc 3 gsa.global.gsm 2 gsa.global.lus 0
 {% endhighlight %}
 
-In general, the `gsa.\[process type]` followed by a number controls the number of local processes of the specific process type that will be spawned by the GSA. The `gsa.global.\[process type\]` following by a number controls the number of globally managed processes of the specific process type.
+In general, the `gsa.[process type]` followed by a number controls the number of local processes of the specific process type that will be spawned by the GSA. The `gsa.global.[process type]` following by a number controls the number of globally managed processes of the specific process type.
 
 ### Lookup Service Considerations
 
@@ -129,4 +134,4 @@ gs-agent gsa.global.lus 0
 For instructions on how to configure service grid components refer to [Service Grid Configuration](./service-grid-configuration.html)
 
 
-{%tip%}You can use the [GigaSpaces Universal Deployer|SBP:Universal Deployer] to deploy complex multi processing unit applications.{%endtip%}
+{%tip%}You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.{%endtip%}

@@ -6,8 +6,8 @@ parent: service-grid.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|70 %}A registry of services (GSM, GSC, Space Instances, Processing Unit Instances) that can be lookup up using it.{% endsummary %}
+
+{% summary  %}A registry of services (GSM, GSC, Space Instances, Processing Unit Instances) that can be lookup up using it.{% endsummary %}
 
 # Overview
 
@@ -19,7 +19,9 @@ In a multicast enabled environment, the lookup groups can be set using either th
 
 In a unicast environment (where multicast is disabled), the lookup locators can be set using either `LOOKUPLOCATORS` environment variable (when using scripts), or by setting `-Dcom.gs.jini_lus.locators` system property. In a unicast environment, the LUS are started on specific machines (usually two LUS instances), and the lookup locators simply point to the two hosts the LUS instances are running on.
 
-{% lampon %} When a [GigaSpaces Container](./service-grid.html#gsc) is started with a specific lookup groups / lookup locators, any Processing Unit instance running within it (and Space instances as well) will inherit the configuration and join the virtualized LUS environment.
+{% tip %}
+When a [GigaSpaces Container](./service-grid.html#gsc) is started with a specific lookup groups / lookup locators, any Processing Unit instance running within it (and Space instances as well) will inherit the configuration and join the virtualized LUS environment.
+{%endtip%}
 
 # Registering and Using a Service
 
@@ -82,7 +84,7 @@ GSA spawns and manages service processes: LUS, GSM, GSC. The GSA monitors the sp
 
 # Starting the LUS
 
-The preferable way to start a LUS is using the [GigaSpaces Agent](./service-grid.html#gsa). A LUS can be started on its own using the `\[GSHOME\]/bin/startJiniLUS.(bat/sh)` script. Also note that by default, when using the `\[GSHOME\]/bin/gsm.(bat/sh)` script, a LUS is started embedded with the GSM.
+The preferable way to start a LUS is using the [GigaSpaces Agent](./service-grid.html#gsa). A LUS can be started on its own using the `[GSHOME]/bin/startJiniLUS.(bat/sh)` script. Also note that by default, when using the `[GSHOME]/bin/gsm.(bat/sh)` script, a LUS is started embedded with the GSM.
 
 # Configuring the LUS
 
@@ -115,4 +117,6 @@ call startJiniLUS.bat
 {% endtabcontent %}
 {% endinittab %}
 
-{% exclamation %} LUS specific configuration can be set using system properties (follows the \[component name\].[\property name\](\property name\) notation).
+{% note %}
+LUS specific configuration can be set using system properties (follows the \[component name\].\[property name\](property name) notation).
+{%endnote%}

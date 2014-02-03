@@ -2,7 +2,7 @@
 layout: post
 title:  Multi Site Replication over the WAN
 categories: XAP97
-parent: deployment.html
+parent: administrators-guide.html
 weight: 700
 ---
 

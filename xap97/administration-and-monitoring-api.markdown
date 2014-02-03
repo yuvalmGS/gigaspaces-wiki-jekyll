@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Admin and Monitoring
+title:  Admin and Monitoring API
 categories: XAP97
 parent: programmers-guide.html
 weight: 1700

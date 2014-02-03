@@ -6,8 +6,8 @@ parent: the-processing-unit-structure-and-configuration.html
 weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|70 %}The GigaSpaces runtime environment, aka Service Grid, provides SLA-driven capabilities when deploying and running processing units by using the available [GSCs](./service-grid.html#gsc) as a dynamic pool of processes which can host the processing unit{% endsummary %}
+
+{% summary   %}The GigaSpaces runtime environment, aka Service Grid, provides SLA-driven capabilities when deploying and running processing units by using the available [GSCs](./service-grid.html#gsc) as a dynamic pool of processes which can host the processing unit{% endsummary %}
 
 # Overview
 
@@ -78,7 +78,9 @@ The SLA definition, whether it comes in a separate file or embedded inside the `
 
 The SLA definition above creates 4 instances of a Processing Unit using the `partitioned-sync2backup` [space topology](/product_overview/space-topologies.html). It defines 2 partitions (`number-of-instances="2"`), each with one backup (`number-of-backups="1"`). In addition, it requires that a primary and a backup instance of the same partition will not be provisioned to the same GSC (`max-instances-per-vm="1"`).
 
-{% lampon %} It is up to the deployer to configure the SLA correctly. Trying to deploy a Processing Unit with a cluster schema that requires backups without specifying `numberOfBackups` causes the deployment to fail.
+{% tip %}
+It is up to the deployer to configure the SLA correctly. Trying to deploy a Processing Unit with a cluster schema that requires backups without specifying `numberOfBackups` causes the deployment to fail.
+{%endtip%}
 
 {% info %}
 In previous releases, the SLA definition also included dynamic runtime policies, e.g. creating additional processing unit instances based on CPU load, relocating a certain instance when the memory becomes saturated, etc. These capabilities are still supported, but are considered deprecated.  Version 7.0 introduces the [Administration and Monitoring API](./administration-and-monitoring-api.html) which supports the above and and much more.
@@ -108,9 +110,6 @@ From the client application's perspective (the one that connects to the space fr
 
 {% info %}
 Please refer to [this page](/product_overview/space-topologies.html) for more details about space clustering topologies and guidelines regarding when to use each of the topologies.
-{% endinfo %}
-
-{% info %}
 The number-of-backups parameter should be used with the partitioned-sync2backup cluster schema. It is not supported with the sync-replicated or async-replicated cluster schema.
 {% endinfo %}
 
@@ -147,7 +146,9 @@ The SLA definition allows you to define the maximum number of instances for a ce
 
 The max-instances parameter has different semantics when applied to processing units that contain a space with primary-backup semantics (i.e. that uses the  partitioned-sync2backup cluster schema and defines at least one backup) and when applied to a processing unit which contains no embedded space, or which contains a space with no primary-backup semantics.
 
-{% exclamation %} When applied to a processing unit which contains no embedded space, or which contains a space with no primary-backup semantics, the max-instances parameter defines the **total** number of instances that can be deployed on a single JVM or on a single machine.
+{% note %}
+When applied to a processing unit which contains no embedded space, or which contains a space with no primary-backup semantics, the max-instances parameter defines the **total** number of instances that can be deployed on a single JVM or on a single machine.
+{%endnote%}
 
 When applied to a processing unit which contains a space with primary-backup semantics, the max-instances parameter defines the total number of instances which belong to the same primary-backup group (or partition) that can be provisioned to a single JVM or a single machine.
 
@@ -634,8 +635,9 @@ You can change it to one of the below thresholds for more information:
 | FINER | Logs once a member is indicated as not alive (on each retry) |
 | FINEST | every fault detection attempt |
 
-{% exclamation %} For service-failure troubleshooting, Level.FINE should suffice.
+{% note %} For service-failure troubleshooting, Level.FINE should suffice.{%endnote%}
 
+{%comment%}
 # Schema
 
 The SLA schema and complete configuration options are described below:
@@ -643,3 +645,5 @@ The SLA schema and complete configuration options are described below:
 {% indent %}
 ![sla_schema.jpg](/attachment_files/sla_schema.jpg)
 {% endindent %}
+{%endcomment%}
+

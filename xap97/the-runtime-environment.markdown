@@ -2,7 +2,7 @@
 layout: post
 title:  The Runtime Environment
 categories: XAP97
-parent: deployment.html
+parent: administrators-guide.html
 weight: 100
 ---
 
@@ -10,13 +10,19 @@ weight: 100
 
 {% anchor GSRuntimeEnv %}
 
-# The GigaSpaces Runtime Environment
+# Overview
 
-The basic unit of deployment in the GigaSpaces XAP platform is the [Processing Unit|(packaging-and-deployment.html).
+{%section%}
+{%column width=50% %}
+The basic unit of deployment in the GigaSpaces XAP platform is the [Processing Unit](./packaging-and-deployment.html).
 
 Once packaged, a processing unit is deployed onto the GigaSpaces runtime environment, which is called the *Service Grid*. It is responsible for materializing the processing unit's configuration, provisioning its instances to the runtime infrastructure and making sure they continue to run properly over time.
+{%endcolumn%}
 
+{%column width=45% %}
 ![archi_deployenv.jpg](/attachment_files/archi_deployenv.jpg)
+{%endcolumn%}
+{%endsection%}
 
 {% info %}When developing your processing unit, you can [run and debug the processing unit within your IDE](./running-and-debugging-within-your-ide.html). You will typically deploy it to the GigaSpaces runtime environment when it's ready for production or when you want to run it in the real-life runtime environment{% endinfo %}
 

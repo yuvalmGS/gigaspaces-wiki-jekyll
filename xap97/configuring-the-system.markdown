@@ -2,7 +2,7 @@
 layout: post
 title:  Configuring the System
 categories: XAP97
-parent: administrators-guide.html
+parent: administration-tools.html
 weight: 200
 ---
 

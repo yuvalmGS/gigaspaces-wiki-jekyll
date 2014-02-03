@@ -2,7 +2,7 @@
 layout: post
 title:  Packaging and Deployment
 categories: XAP97
-parent: deployment.html
+parent: administrators-guide.html
 weight: 200
 ---
 

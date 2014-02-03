@@ -2,8 +2,8 @@
 layout: post
 title:  Logging
 categories: XAP97
-parent: administrators-guide.html
-weight: 500
+parent: programmers-guide.html
+weight: 1650
 ---
 
 
