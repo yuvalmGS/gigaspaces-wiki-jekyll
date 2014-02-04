@@ -482,13 +482,14 @@ Simple example that deploys a 2,1 cluster 2,1 with primary-zone=A.
 *sla.xml*
 
 {% highlight xml%}
-<sla:sla cluster-schema="partitioned-sync2backup"
-number-of-instances="2" number-of-backups="1" max-instances-per-zone="A/1,B/1"
-primary-zone="A" >
-<sla:requirements >
-<sla:zone name="A" />
-<sla:zone name="B" />
-</sla:requirements>
+<os-sla:sla cluster-schema="partitioned-sync2backup"
+            number-of-instances="2" number-of-backups="1" max-instances-per-zone="A/1,B/1"
+            primary-zone="A">
+            
+    <sla:requirements >
+        <sla:zone name="A"/>
+        <sla:zone name="B"/>
+    </sla:requirements>
 {%endhighlight%}
 
 *pu.xml*
