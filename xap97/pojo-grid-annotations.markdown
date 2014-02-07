@@ -170,7 +170,7 @@ public class Process {
 
 
 {%comment%}
-http://wiki.gigaspaces.com/wiki/display/XAP96/The+Space+Component#TheSpaceComponent-PrimaryBackupNotifications
+/the-space-component.html#TheSpaceComponent-PrimaryBackupNotifications
 {%endcomment%}
 
 

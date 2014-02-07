@@ -2,11 +2,11 @@
 layout: post
 title:  Client Side Caching
 categories: XAP97
-parent: deploying-and-interacting-with-the-space.html
-weight: 200
+parent: programmers-guide.html
+weight: 810
 ---
 
-{% compositionsetup %}{% summary page|60 %}A client application may run a local cache (near cache), which caches data in local memory of the client application. There are two variations provided: local cache and local view. Both allow the client application to cache specific or recently used data within client JVM and have it updated automatically by the space when that data changes.{% endsummary %}
+{% summary %}A client application may run a local cache (near cache), which caches data in local memory of the client application. There are two variations provided: local cache and local view. Both allow the client application to cache specific or recently used data within client JVM and have it updated automatically by the space when that data changes.{% endsummary %}
 
 # Summary
 
@@ -31,7 +31,7 @@ In both cases, once updates are performed (objects are added/updated/removed) on
 Client cache is not enabled by default.
 {% endtip %}
 
-# When Should You Use a Client-Side Cache?
+# When to use a Client-Side Cache?
 
 Client-side cache should be used when the application performs repetitive read operations on the same data. You should not use client-side caching when the data in the master is very frequently updated or when the read pattern of the client tends to be random (as opposed to repetitive or confined to a well-known data set).
 
@@ -48,6 +48,6 @@ Use local view in case you can encapsulate the information you need to distribut
 
 Use local cache in case you are not sure which information you need in the client cache and you want to read it in a dynamic manner. Therefore the local cache is more suitable for [query by ID](./id-queries.html) scenarios.
 
-# Learn More
+
 
 {% children %}

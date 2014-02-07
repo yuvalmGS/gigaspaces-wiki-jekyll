@@ -2,8 +2,8 @@
 layout: post
 title:  Handling Large Objects
 categories: XAP97
-parent: advanced-topics.html
-weight: 400
+parent: tuning-gigaspaces-performance.html
+weight: 200
 ---
 
 {% summary %}Storing large files in memory.{% endsummary %}

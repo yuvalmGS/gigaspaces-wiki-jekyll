@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  Asynchronous Persistency with the Mirror
+title:  Asynchronous Persistency
 categories: XAP97
-parent: persistency.html
-weight: 100
+parent: space-persistency.html
+weight: 600
 ---
 
-{% compositionsetup %}
-{% summary page|66 %}Reliable Asynchronous Persistency (Mirror){% endsummary %}
+
+{% summary  %}Reliable Asynchronous Persistency (Mirror){% endsummary %}
 
 # Overview
 

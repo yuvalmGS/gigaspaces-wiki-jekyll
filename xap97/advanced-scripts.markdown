@@ -30,4 +30,4 @@ If you need to start the [Service Grid](./service-grid.html) components manually
 
 # Misc 
 - **lookupbrowser** - Used with for special debug scenarios to inspect the lookup service. 
-- **platform-info** - prints GigaSpaces version info (Use the command line [version](./version-gigaspaces-cli.html) instead).
+- **platform-info** - prints GigaSpaces version info (Use the command line [version](./command-line-interface.html) instead).

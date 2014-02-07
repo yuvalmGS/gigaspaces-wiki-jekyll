@@ -2,7 +2,7 @@
 layout: post
 title:  Reloading Business Logic
 categories: XAP97
-parent: deployment.html
+parent: administrators-guide.html
 weight: 250
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  Clustered vs Non-Clustered Proxies
 categories: XAP97
-parent: modeling-and-accessing-your-data.html
+parent: data-grid-clustering.html
 weight: 50
 ---
 
@@ -103,6 +103,7 @@ The {{com.gigaspaces.client.protective.ProtectiveModeException}} is thrown when:
 - Changing/Updating an existing object modifying its routing field to a different value which doesn't match the partition it resides in.
 
 The error message looks like this:
+
 {%panel title=The ProtectiveModeException Exception%}
 Exception in thread "main" com.gigaspaces.client.protective.ProtectiveModeException: Operation is rejected - the routing value in the written entry of type 'com.test.Data' does not match this space partition id. The value within the entry's routing property named 'id' is 1 which matches partition id 2 while current partition id is 1. Having a mismatching routing value would result in a remote client not being able to locate this entry as the routing value will not match the partition the entry is located. (you can disable this protection, though it is not recommended, by setting the following system property: com.gs.protectiveMode.wrongEntryRoutingUsage=false)
 {%endpanel%}

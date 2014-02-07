@@ -2,11 +2,11 @@
 layout: post
 title:  Direct Persistency
 categories: XAP97
-parent: persistency.html
-weight: 200
+parent: space-persistency.html
+weight: 100
 ---
 
-{% compositionsetup %}
+
 {% summary %}Direct persistency mode support Read-Write Through{% endsummary %}
 
 # Overview

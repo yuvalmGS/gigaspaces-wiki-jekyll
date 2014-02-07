@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  GigaSpaces JPA Limitations
+title:  Limitations
 categories: XAP97
 parent: jpa-api.html
 weight: 300

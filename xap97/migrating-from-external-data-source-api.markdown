@@ -3,7 +3,7 @@ layout: post
 title:  Migrating From External Data Source API
 categories: XAP97
 parent: space-persistency.html
-weight: 300
+weight: 1000
 ---
 
 {% summary %}This page describes how EDS implementations prior to GigaSpaces version 9.5 should migrate to the new Space Persistency APIs.{% endsummary %}

@@ -2,8 +2,8 @@
 layout: post
 title:  Communication Protocol
 categories: XAP97
-parent: advanced-topics.html
-weight: 100
+parent: tuning-gigaspaces-performance.html
+weight: 300
 ---
 
 {% summary %}Setting communication protocol using exporters; `GenericExporter` configuration - ports, connections, and threads.{% endsummary %}

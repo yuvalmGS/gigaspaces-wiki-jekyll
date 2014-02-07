@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Space Synchronization Endpoint API
+title:  Synchronization Endpoint
 categories: XAP97
 parent: space-persistency.html
-weight: 700
+weight: 400
 ---
 
-{% compositionsetup %}
+
 {% summary %}The space synchronization endpoint API is used for synchronizing data from the space to an external application or a data base.{% endsummary %}
 
 # Overview

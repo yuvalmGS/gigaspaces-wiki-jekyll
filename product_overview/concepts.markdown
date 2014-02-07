@@ -3,7 +3,7 @@ layout: post
 title:  Concepts
 categories: PRODUCT_OVERVIEW
 parent: none
-weight: 300
+weight: 400
 ---
 
 {% summary %}This section describes the main concepts underlying GigaSpaces XAP.{% endsummary %}

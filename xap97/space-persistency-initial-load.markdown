@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  Space Persistency Initial Load
+title:  Initial Load
 categories: XAP97
 parent: space-persistency.html
-weight: 600
+weight: 500
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}Space data source initial Load pre-loads the space with data before it is available for clients.{% endsummary %}
+
+{% summary  %}Space data source initial Load pre-loads the space with data before it is available for clients.{% endsummary %}
 
 # Overview
 

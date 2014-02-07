@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Async Persistency - Mirror - Advanced
+title:  Advanced Configuration
 categories: XAP97
 parent: asynchronous-persistency-with-the-mirror.html
 weight: 100

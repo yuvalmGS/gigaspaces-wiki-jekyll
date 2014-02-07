@@ -157,8 +157,6 @@ For more details on monitoring and management using JMX, refer to the [JMX Manag
 
 The `list` command lists information about active Service Grid services.
 
-{% refer %}For the space list CLI, please refer to the [space list - GigaSpaces CLI](./space-list---gigaspaces-cli.html) section.{% endrefer %}
-
 The following values are allowed for **`type`**. Only one type can be specified.
 
 {: .table .table-bordered}

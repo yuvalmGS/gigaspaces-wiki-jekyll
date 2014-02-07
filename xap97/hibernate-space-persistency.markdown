@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Hibernate Space Persistency
+title:  Hibernate Integration
 categories: XAP97
 parent: space-persistency.html
 weight: 200

@@ -18,7 +18,11 @@ A **Space URL** is a string that represents an address of a space. In short, the
 * **Embedded** (e.g. `/./mySpace`) - Find an embedded (in-process) space called *mySpace*. If it doesn't exist it will be created automatically. 
 * **Remote** (e.g. `jini://*/*/mySpace`) - Find a remote space (hosted outside this process) called *mySpace*. If it doesn't exist an exception will be thrown.
 
-The easiest way to create or find a space is to leverage XAP's integration with Spring, as explained in [The Space Component](the-space-component.html). If you prefer to use pure code without spring, use the [Configurer API](./programmatic-api-(configurers).html).   
+The easiest way to create or find a space is to leverage XAP's integration with Spring, as explained in [The Space Component](the-space-component.html).
+
+{%comment%}
+If you prefer to use pure code without spring, use the [Configurer API](./programmatic-api-(configurers).html).
+{%endcomment%}
 
 # Embedded Space
 

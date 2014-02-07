@@ -142,6 +142,36 @@ public class User {
 
 {%learn%}./indexing.html{%endlearn%}
 
+# Unique Index
+
+{: .table .table-bordered}
+|Syntax     |   @SpaceIndex(type=SpaceIndexType.BASIC, unique = true)|
+|Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %})  |
+|Description| Unique constraints can be defined for an attribute or attributes of a space class. |
+|Note |   The uniqueness is enforced per partition and not over the whole cluster. |
+
+{% togglecloak id=44 %}**Example**{% endtogglecloak %}
+{% gcloak 44 %}
+{%highlight java%}
+@SpaceClass
+public class Person
+{
+  @SpaceIndex(type=SpaceIndexType.BASIC, unique = true)
+  private String lastName;
+
+  @SpaceIndex(type=SpaceIndexType.BASIC)
+  private String firstName;
+
+  @SpaceIndex(type=SpaceIndexType.EXTENDED)
+  private Integer age;
+ .
+ .
+}
+{%endhighlight%}
+{% endgcloak %}
+
+{%learn%}./indexing.html{%endlearn%}
+
 # SpaceIndex Path
 
 {: .table .table-bordered}

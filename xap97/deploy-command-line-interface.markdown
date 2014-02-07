@@ -2,7 +2,7 @@
 layout: post
 title:  Deploy with Command Line
 categories: XAP97
-parent: deployment.html
+parent: administrators-guide.html
 weight: 500
 ---
 
@@ -90,9 +90,7 @@ application.xml file describes the application dependencies:
 
 Undeploys an [application](./deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependencies) from the service grid, while respecting pu dependency order.
 
-{% tip %}
-For deploying an application see the [deploy-application ](./deploy-application---gigaspaces-cli.html) command.
-{% endtip %}
+
 
 #### Options
 
@@ -209,9 +207,6 @@ Multiple deployment properties can be injected by having ; between each property
 
 Undeploys an [application](./deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependencies) from the service grid, while respecting pu dependency order.
 
-{% tip %}
-For deploying an application see the [deploy-application ](./deploy-application---gigaspaces-cli.html) command.
-{% endtip %}
 
 #### Options
 

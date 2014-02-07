@@ -34,7 +34,7 @@ XML mapping can be defined in the same package as the class (using the class nam
 | `cpp-name` | string | The C++ name of the class.{% wbr %}If not specified then 'name' is used. | |
 | `dotnet-name` | string | The .NET name of the class, including the namespace.{% wbr %}If not specified then 'name' is used. | |
 | `replicate` | boolean | When running in partial replication mode, a `true` value for this field replicates all objects of this type to a target space or spaces. | `true` |
-| `persist` | boolean | When a space is defined as persistent, a `true` value for this annotation persists objects of this type.{% wbr %}{% refer %}For more details, refer to the [Persistency](./persistency.html) section.{% endrefer %}{% wbr %}| `true` |
+| `persist` | boolean | When a space is defined as persistent, a `true` value for this annotation persists objects of this type.{% wbr %}{% refer %}For more details, refer to the [Persistency](./space-persistency.html) section.{% endrefer %}{% wbr %}| `true` |
 | `fifo` | boolean | To enable FIFO-based notifications and take operations, this annotation should be `true`.{% wbr %}{% refer %}For more details, refer to the [FIFO operations](./fifo-support.html) section.{% endrefer %}{% wbr %}| `false` |
 
 {% note %}
