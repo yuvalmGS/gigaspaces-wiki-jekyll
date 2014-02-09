@@ -64,7 +64,7 @@ You can download all examples presented here from [GitHub](https://github.com/Gi
 {%endcolumn%}
 
 {%column width=75% %}
-{%align center%}**The Space**{%endalign%}
+{%align center%}**Interacting with the Space**{%endalign%}
 This part of the tutorial will introduce you to the space as a data store.
 
 You will learn how to:
@@ -96,7 +96,7 @@ Part II
 {%endcolumn%}
 
 {%column width=75% %}
-{%align center%}**The Data Grid**{%endalign%}
+{%align center%}**Deploying a Space**{%endalign%}
 In this part of the tutorial we will show you how you can deploy an In Memory Data Grid (IMDG) that provides scalability and failover.
 
 You will learn how to:

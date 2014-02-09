@@ -2,7 +2,7 @@
 layout: post
 title:  Parent Child Relationship
 categories: XAP97
-parent: modeling-and-accessing-your-data.html
+parent: modeling-your-data.html
 weight: 300
 ---
 

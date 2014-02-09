@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  The Data Grid
+title:  Deploying a Space
 categories: TUTORIALS
 weight: 200
 parent: java-home.html
