@@ -45,3 +45,5 @@ Below is a list of known issues in GigaSpaces 9.7.X.
 | GS-11557 | .Net add validation that both client and server classes are including the same aliases | 8546 | 9.7.0 | | .Net |
 | GS-11561 | Reading a POJO which contains a document using mongo EDS fails | | 9.7.0 | | Java |
 | GS-11592 | Web-ui ssh terminal blocked by java 1.7u51 | | 9.7.0 | | Java |
+| GS-11619 | Fix installation scripts in windows | | 9.7.0 | | All |
+| GS-11621 | Bad linux scripts for the benchmark cli tool | | 9.7.0 | | Java |
