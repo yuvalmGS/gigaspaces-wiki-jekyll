@@ -21,7 +21,7 @@ Following is an example of incrementing a property named `counter` inside an ent
 
 {% highlight java %}
 GigaSpace space = // ... obtain a space reference
-Uuid id = ...;
+Integer id = ...;
 IdQuery<WordCount> idQuery = new IdQuery<WordCount>(WordCount.class, id, routing);
 Integer newCounter = ChangeExtension.addAndGet(space, idQuery, "counter", 1);
 {% endhighlight %}
