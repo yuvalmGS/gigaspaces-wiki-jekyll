@@ -1,7 +1,9 @@
 ---
 layout: post
 title:  Real Time Analytics
-categories: RTA
+categories: PRODUCT_OVERVIEW
+weight: 1300
+parent: none
 ---
 
 {% summary %}Real Time Analytics{% endsummary %}

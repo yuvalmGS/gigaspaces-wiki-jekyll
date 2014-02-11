@@ -6,7 +6,7 @@ parent: data-grid-clustering.html
 weight: 200
 ---
 
-{% compositionsetup %}
+
 {% summary %}This section describes GigaSpaces IMDG Load-balancing and data-partitioning facilities.{% endsummary %}
 
 # Data Load-balancing

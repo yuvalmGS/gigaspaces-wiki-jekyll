@@ -10,11 +10,17 @@ weight: 100
 {% summary %}This page covers the Change API, its usage and behavior.{% endsummary %}
 
 # Overview
-
-The [GigaSpace.change](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/GigaSpace.html) and the [ChangeSet](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/ChangeSet.html) allows updating existing objects in space, by specifying only the required change instead of passing the entire updated object. Thus reducing required network traffic between the client and the space, and the network traffic generated from replicating the changes between the space instances (e.g between the primary space instance and its backup). Moreover, using this API also can prevent the need of reading the existing object prior to the change operation because the change operation can specify how to change the existing property without knowing its current value. For instance, implementing atomic [Counters](./counters.html) can be done by increasing a counter property of an integer property by some delta. Another example would be to add a value to a collection and so on.
-The change API supports [transactions](./transaction-management.html) in the same way the other space operation supports it, using a transactional `GigaSpace` instance.
-
+{%section%}
+{%column width=50% %}
+The [GigaSpace.change](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) and the [ChangeSet](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/ChangeSet.html) allows updating existing objects in space, by specifying only the required change instead of passing the entire updated object.
+Thus reducing required network traffic between the client and the space, and the network traffic generated from replicating the changes between the space instances (e.g between the primary space instance and its backup). Moreover, using this API also can prevent the need of reading the existing object prior to the change operation because the change operation can specify how to change the existing property without knowing its current value. For instance, implementing atomic [Counters](./counters.html) can be done by increasing a counter property of an integer property by some delta. Another example would be to add a value to a collection and so on.
+{%endcolumn%}
+{%column width=40% %}
 ![change-api.jpg](/attachment_files/change-api.jpg)
+{%endcolumn%}
+{%endsection%}
+
+The change API supports [transactions](./transaction-management.html) in the same way the other space operation supports it, using a transactional `GigaSpace` instance.
 
 # Basic Usage Example
 

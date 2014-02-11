@@ -1,10 +1,11 @@
 
+{%anchor take-operation%}
 
-# Take Operation
+# The Take Operation
 {%section%}
 {%column width=60% %}
 
-The `take` operations perform exactly like the corresponding `read` operations, except that the matching object is **removed from the space on one atomic operation. Two `take` operations will never return** copies of the same object, although if two equivalent objects were in the space the two `take` operations could return equivalent objects.
+The `take` operations behave exactly like the corresponding `read` operations, except that the matching object is **removed from the space on one atomic operation. Two `take` operations will never return** copies of the same object, although if two equivalent objects were in the space the two `take` operations could return equivalent objects.
 
 {%endcolumn%}
 {%column width=35% %}
@@ -65,23 +66,6 @@ The following example writes an `Employee` object into the space and removes it 
 {% endhighlight %}
 
 
-#### Take if exists
-A takeIfExists operation will return a matching object, or a null if there is currently no matching object in the space.
-If the only possible matches for the template have conflicting locks from one or more other transactions, the timeout value specifies how long the client is willing to wait for interfering transactions to settle before returning a value.
-If at the end of that time no value can be returned that would not interfere with transactional state, null is returned.
-
-##### Example:
-
-{% highlight java %}
-    Employee employee = new Employee("Last Name", new Integer(32));
-	employee.setFirstName("first name");
-	space.write(employee);
-
-	SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,
-				"firstName='first name'");
-	Employee e = space.takeIfExists(query);
-{% endhighlight %}
-
 
 #### Take multiple
 
@@ -137,8 +121,25 @@ To remove a batch of objects without returning these back into the client use `G
 
 {%endnote%}
 
+#### Take if exists
+A takeIfExists operation will return a matching object, or a null if there is currently no matching object in the space.
+If the only possible matches for the template have conflicting locks from one or more other transactions, the timeout value specifies how long the client is willing to wait for interfering transactions to settle before returning a value.
+If at the end of that time no value can be returned that would not interfere with transactional state, null is returned.
 
-#### Take asynchronous
+##### Example:
+
+{% highlight java %}
+    Employee employee = new Employee("Last Name", new Integer(32));
+	employee.setFirstName("first name");
+	space.write(employee);
+
+	SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,
+				"firstName='first name'");
+	Employee e = space.takeIfExists(query);
+{% endhighlight %}
+
+
+#### Asynchronous Take
 
 The GigaSpace interface supports asynchronous (non-blocking) take operations through the GigaSpace interface. It returns a [Future\<T\>](http://download.oracle.com/javase/6/docs/api/java/util/concurrent/Future.html) object, where T is the type of the object the request returns. Future<T>.get() can be used to query the object to see if a result has been returned or not.
 

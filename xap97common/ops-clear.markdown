@@ -1,5 +1,5 @@
 
-# Clear Operation
+# The Clear Operation
 
 {%section%}
 {%column width=60% %}

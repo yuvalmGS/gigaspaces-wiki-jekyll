@@ -1,14 +1,9 @@
 
-# Count Operation
+# The Count Operation
 
-{%section%}
-{%column width=60% %}
+
 You can use `GigaSpace.count` to count objects in a space.
-{%endcolumn%}
-{%column width=35% %}
-![POJO_clear.jpg](/attachment_files/POJO_clear.jpg)
-{%endcolumn%}
-{%endsection%}
+
 
 Examples:
 

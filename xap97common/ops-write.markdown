@@ -1,5 +1,5 @@
 
-# Write Operation
+# The Write Operation
 {%section%}
 {%column width=60% %}
 In order to write objects to the Space, you use the write method of the GigaSpace interface. The write method is used to write objects if these are introduced for the first time, or update them if these already exist in the space. In order to override these default semantics, you can use the overloaded write methods which accept update modifiers such as UpdateModifiers.UPDATE_ONLY.
@@ -28,10 +28,9 @@ The following example writes an `Employee` object into the space:
 
 Here is an example how you create a SpaceDocument, register it with the space and then write it into the space:
 
-{% inittab os_simple_space|top %}
-{% tabcontent SpaceDocument %}
 {%highlight java  %}
-public SpaceDocument createDocumemt() {
+
+     // Create the document
      DocumentProperties properties = new DocumentProperties()
        .setProperty("CatalogNumber", "av-9876")
        .setProperty("Category", "Aviation")
@@ -45,15 +44,9 @@ public SpaceDocument createDocumemt() {
               .setProperty("RequiresAssembly", true)
               .setProperty("NumberOfParts", 42));
 
-       return new SpaceDocument("Product", properties);
-}
-{%endhighlight%}
-{% endtabcontent  %}
+     SpaceDocument doc = new SpaceDocument("Product", properties);
 
-{% tabcontent Register %}
-
-{%highlight java  %}
-public void registerProductType(GigaSpace gigaspace) {
+     // Register the document
      // Create type descriptor:
      SpaceTypeDescriptor typeDescriptor = new SpaceTypeDescriptorBuilder(
 		"Product").idProperty("CatalogNumber")
@@ -62,19 +55,12 @@ public void registerProductType(GigaSpace gigaspace) {
 		.addPropertyIndex("Price", SpaceIndexType.EXTENDED).create();
      // Register type:
      space.getTypeManager().registerTypeDescriptor(typeDescriptor);
-}
-{%endhighlight%}
-{% endtabcontent  %}
-{% tabcontent Write %}
-{%highlight java  %}
-   SpaceDocument document = this.createDocument();
-   this.registerProductType( gigaspace );
 
-   LeaseContext<SpaceDocument> lc = space.write(document);
+    // Write the document into the space
+    LeaseContext<SpaceDocument> lc = space.write(document);
 {%endhighlight%}
-{% endtabcontent  %}
-{% endinittab   %}
 
+{%comment%}
 #### Delta Update
 
 You may update selected space object fields (delta) using the [WriteModifiers.PARTIAL_UPDATE](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/WriteModifiers.html) modifier. This option is useful when having objects with large number of fields where you would like to update only few of the space object fields. This optimizes the network utilization and avoids serializing/de-serializing the entire object fields when interacting with a remote space.
@@ -113,32 +99,6 @@ When updating an object, you can specify 0 (ZERO) as the lease time. This will i
 {% endhighlight %}
 
 Alternatively, you can use the [change](./change-api.html) operation and update specific fields or even nested fields or modify collections and maps without having to supply the entire collection or map upon such update.
-
-{%comment%}
-{% togglecloak id=write-multiple %}**Method summary...**{% endtogglecloak %}
-{% gcloak write-multiple %}
-Writes a new object to the space, returning its LeaseContext.
-
-{%highlight java%}
-<T> LeaseContext<T> write(T entry, long lease, long timeout, WriteModifiers modifiers)
-<T> LeaseContext<T> write(T entry)
-<T> LeaseContext<T> write(T entry, long lease)
-<T> LeaseContext<T> write(T entry, WriteModifiers modifiers)
-{%endhighlight%}
-
-{: .table .table-bordered}
-| Modifier and Type | Description | Default | Unit|
-|:-----|:------------|:--------|:----|
-| T          | POJO, SpaceDocument|| |
-|lease       |Time to live | Lease.FOREVER| milliseconds |
-|timeout     |The timeout of an update operation, in milliseconds. If the entry is locked by another transaction wait for the specified number of milliseconds for it to be released. | 0  |  milliseconds |
-|[WriteModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/client/WriteModifiers.html)|Provides modifiers to customize the behavior of write operations | UPDATE_OR_WRITE  |  |
-|[LeaseContext](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/LeaseContext.html) |LeaseContext is a return-value encapsulation of a write operation.||
-
-Note: Writing an object into a space might generate [notifications](./notify-container.html) to registered objects.
-
-[Java Doc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#write(T))
-{%endgcloak%}
 {%endcomment%}
 
 #### Time To Live
