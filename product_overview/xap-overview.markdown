@@ -37,7 +37,7 @@ The following diagram shows a component view of GigaSpaces XAP. The main compone
 
 ## OpenSpaces
 
-[Product Architecture](./product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) the primary framework for developing applications in GigaSpaces. Open Spaces uses Spring as a POJO-driven development infrastructure, and adds runtime and development components for developing POJO-driven EDA/SOA-based applications, and scaling them out simply across a pool of machines, without dependency on a J2EE container.
+Open Spaces is the primary framework for developing applications in GigaSpaces. Open Spaces uses Spring as a POJO-driven development infrastructure, and adds runtime and development components for developing POJO-driven EDA/SOA-based applications, and scaling them out simply across a pool of machines, without dependency on a J2EE container.
 
 To achieve these goals, Open Spaces adds the following components to the Spring development environment:
 
@@ -74,7 +74,7 @@ XAP relies on the JavaSpaces (space-based) model as its core middleware, and pro
 
 ## SLA-Driven Container
 
-SLA-Driven Containers (formerly known as Grid Service Containers or GSCs), enable deployment of Processing Units over a dynamic pool of machines, based on SLA definitions. Each container is a Java process which provides a hosting environment for application services bundled in a Processing Unit. The container virtualizes the underlying compute resources, and performs mapping between the application runtime and the underlying resources, based on SLA criteria such as CPU and memory usage, hardware configuration and software resource availability (JVM, DB, etc). It also provides self-healing capabilities for handling failure or scaling events.
+SLA-Driven Containers (known also as Grid Service Containers or GSCs), enable deployment of Processing Units over a dynamic pool of machines, based on SLA definitions. Each container is a Java process which provides a hosting environment for application services bundled in a Processing Unit. The container virtualizes the underlying compute resources, and performs mapping between the application runtime and the underlying resources, based on SLA criteria such as CPU and memory usage, hardware configuration and software resource availability (JVM, DB, etc). It also provides self-healing capabilities for handling failure or scaling events.
 
 ### SLA-Driven In-Memory Data Grid
 
@@ -124,7 +124,7 @@ The services can also be accessed by any other services, whether they reside in 
 
 # Remote Client Perspective
 
-Applications deployed in XAP are distributed across multiple machines. In the classic tier-based approach, remote client interactions were mainly RPC-based, or in some cases message-driven. RPC-based communication assumes direct reference to a remote server. This approach doesn't work in XAP-based applications, because they span multiple physical machines and change their location during runtime based on the SLA. This lead to a requirement that client interaction with XAP applications be done through a virtualized remote reference, which can keep track of different application instances during runtime, and route client requests to the appropriate instance based on the request type, its content, and so on.
+Applications deployed in XAP are distributed across multiple machines. In the classic tier-based approach, remote client interactions were mainly RPC-based, or in some cases message-driven. RPC-based communication assumes direct reference to a remote server. This approach doesn't work in XAP-based applications, because they span multiple physical machines and change their location during runtime based on the SLA. This lead to a requirement that client interaction with XAP applications can be done through a virtualized remote reference, which can keep track of different application instances during runtime, and route client requests to the appropriate instance based on the request type, its content, and so on.
 
 ## Modes of Interaction
 
