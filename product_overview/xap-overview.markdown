@@ -18,10 +18,10 @@ Applications running on XAP can be scaled out linearly, because XAP uses the [Sp
 
 **This overview introduces XAP from several different perspectives:**
 
-- **[A components perspective](#components)** which explains key capabilities of GigaSpaces XAP -- the Open Spaces framework; the space-based core middleware and the middleware facilities it provides; and the SLA-Driven Container.
-- **[A runtime perspective](#runtime)** which shows how GigaSpaces components execute and interact in runtime on multiple physical machines.
-- **[An SOA/EDA perspective](#soa)** which shows how GigaSpaces XAP and the Space-Based Architecture are actually a special case of SOA/EDA, and can be used to implement a Service Oriented Architecture which supports high-performance, stateful services.
-- **[A remote client perspective](#client)** which illustrates how GigaSpaces XAP is viewed and accessed by remote clients, whether they are running inside XAP Processing Units or as independent POJO services.
+- **[A components perspective](#components)** - explains key capabilities of GigaSpaces XAP -- the Open Spaces framework; the space-based core middleware and the middleware facilities it provides; and the SLA-Driven Container.
+- **[A runtime perspective](#runtime)** - shows how GigaSpaces components execute and interact in runtime on multiple physical machines.
+- **[An SOA/EDA perspective](#soa)** - shows how GigaSpaces XAP and the Space-Based Architecture are actually a special case of SOA/EDA, and can be used to implement a Service Oriented Architecture which supports high-performance, stateful services.
+- **[A remote client perspective](#client)** - illustrates how GigaSpaces XAP is viewed and accessed by remote clients, whether they are running inside XAP Processing Units or as independent POJO services.
 
 {% refer %} For a GigaSpaces XAP product architecture overview, see the [Product Architecture section](./product-architecture.html).{% endrefer %}
 
