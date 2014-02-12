@@ -119,7 +119,7 @@ The [.NET container]({%latestneturl%}/programmers-guide.html) bridges the techni
 
 Much like the .NET container, the [CPP Processing Unit]({%latestjavaurl%}/cpp-processing-unit.html) provides a native C++ runtime environment for C++ SBA applications.
 
-## Mule
+## Mule Integration
 
 Mule is a popular open source Enterprise Services Bus implementation in Java. The [Mule container integration]({%latestjavaurl%}/mule-esb.html) allows you to run a Mule application on top of the GigaSpaces XAP, and gain scalability, performance and high-availability, with almost no changes to the Mule application.
 
@@ -166,7 +166,7 @@ The messaging grid aspect of the space provides messaging capabilities such as:
 1. [FIFO]({%latestjavaurl%}/fifo-support.html) ordering.
 1. [Transaction Management]({%latestjavaurl%}/transaction-management.html).
 
-The core APIs used for messaging are the OpenSpaces [Notify]({%latestjavaurl%}/notify-container.html) and [Polling]({%latestjavaurl%}/polling-container.html) Containers. In addition, there is a [JMS 1.1 implementation]({%latestjavaurl%}/jms-api-support.html) available to be used with existing applications. More information can be found in the [Messaging and Events]({%latestjavaurl%}/messaging-support.html) section.
+The core APIs used for messaging are the OpenSpaces [Notify]({%latestjavaurl%}/notify-container.html) and [Polling]({%latestjavaurl%}/polling-container.html) Containers. In addition, a [JMS 1.1 implementation]({%latestjavaurl%}/jms-api-support.html) API is available to be used with existing JMS based applications. More information can be found in the [Messaging and Events]({%latestjavaurl%}/messaging-support.html) section.
 
 ## Processing Services
 
@@ -244,7 +244,7 @@ The ability to support a unified clustering model is a direct result of the unde
 
 In space-based architecture, adding additional cluster nodes results in a linear addition of compute power and memory capacity. This results in the application's ablility to support a higher workload, without adding to latency or application complexity.
 
-## Load Balancing
+## Data Load Balancing and Partitioning
 
 GigaSpaces XAP's ability to distribute the processing load and/or storage across the cluster nodes results in the ability to support high and fluctuating throughput in addition to large volumes of data.
 
@@ -287,7 +287,7 @@ The [Grid Service Agent (GSA)]({%latestjavaurl%}/service-grid.html#gsa) acts as 
 
 Usually, a single GSA is deployed on each individual machine. The GSA spawns [Grid Service Managers]({%latestjavaurl%}/service-grid.html#gsm), [Grid Service Containers]({%latestjavaurl%}/service-grid.html#gsc), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
 
-{% lampon %} Though [Grid Service Manager]({%latestjavaurl%}/service-grid.html#gsm), [Grid Service Container]({%latestjavaurl%}/service-grid.html#gsc), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
+{% lampon %}Though [Grid Service Manager]({%latestjavaurl%}/service-grid.html#gsm), [Grid Service Container]({%latestjavaurl%}/service-grid.html#gsc), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
 
 {% anchor gsm %}
 
@@ -297,7 +297,7 @@ The Grid Service Manager (GSM) is a special Deployment Infrastructure service re
 
 The GSM monitors SLA breach events throughout the life-cycle of the application, and is responsible for taking corrective actions once SLAs are breached.
 
-{% infosign %} It is common to start two instances of GSMs across a Deployment Infrastructure cloud, for high-availability reasons.
+{% infosign %}It is common to start two instances of GSMs across a Deployment Infrastructure cloud, for high-availability reasons.
 
 {% anchor gsc %}
 
