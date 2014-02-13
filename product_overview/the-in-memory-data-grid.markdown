@@ -119,7 +119,7 @@ Building on top of the core API, the Space also provides [higher level services]
 
 The space APIs are integrated tightly with the [Spring framework](http://www.springframework.org).
 This gives you the ability to use all of the benefits that Spring brings to the table, such as dependency injection, declarative transaction management, and a well defined application life cycle model.
-In addition, the higher level services (remoting and event processing), are also tightly integrated with Spring and follow the Spring framework proven design patterns. GigaSpaces XAP provides a set of well defined Spring bindings, utilizing Spring's support for custom namespaces, which allows you to easily create and wire GigaSpaces components within Spring.
+In addition, the higher level services (remoting and event processing), are also tightly integrated with Spring and follow the Spring framework proven design patterns. GigaSpaces XAP provides a set of well-defined Spring bindings, utilizing Spring's support for custom namespaces, which allows you to easily create and wire GigaSpaces components within Spring.
 
 # The Space as the Foundation for Space-Based Architecture
 
