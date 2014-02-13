@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Client-Side Caching over the WAN
+title:  Caching over the WAN
 categories: XAP97
 parent: client-side-caching.html
 weight: 300
 ---
 
-{% compositionsetup %}{% summary page|60 %}Client Caching Over WAN.{% endsummary %}
+{% summary page|60 %}Client Caching Over WAN.{% endsummary %}
 
 # Summary
 

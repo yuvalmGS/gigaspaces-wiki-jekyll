@@ -3,7 +3,7 @@ layout: post
 title:  Services on Top of the Grid
 categories: PRODUCT_OVERVIEW
 parent: none
-weight: 630
+weight: 800
 ---
 
 
@@ -76,4 +76,3 @@ With the [Event Driven Remoting]({%currentjavaurl%}/event-driven-remoting.html) 
 
 See [Space Based Remoting]({%currentjavaurl%}/space-based-remoting.html) page for more details when to use each of these options.
 
-{% children %}

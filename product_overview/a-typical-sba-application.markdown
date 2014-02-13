@@ -2,7 +2,7 @@
 layout: post
 title:  A Typical SBA Application
 categories: PRODUCT_OVERVIEW
-weight: 600
+weight: 700
 parent: none
 ---
 

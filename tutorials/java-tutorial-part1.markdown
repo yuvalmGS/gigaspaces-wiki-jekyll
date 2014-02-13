@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  The Space
+title:  Interacting with the Space
 categories: TUTORIALS
 weight: 100
 parent: java-home.html

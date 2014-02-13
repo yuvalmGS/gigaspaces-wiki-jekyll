@@ -8,6 +8,8 @@ weight: 100
 
 #### Troubleshooting Common Users Mistakes Which Might Lead to Issues
 
+
+
 {: .table .table-bordered}
 | Num. | Problem  | Troubleshooting Information & Possible causes | Logging information needed by GigaSpaces support |
 |:-----|:---------|:----------------------------------------------|:-------------------------------------------------|

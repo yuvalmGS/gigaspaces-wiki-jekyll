@@ -53,7 +53,8 @@ The following registers for notifications:
 
 {% highlight java %}
 GigaSpace space;
-SimpleNotifyEventListenerContainer
+
+ SimpleNotifyEventListenerContainer
 	notifyEventListenerContainer = new SimpleNotifyContainerConfigurer(space)
 	.template(new Employee())
 	.eventListenerAnnotation(new Object()

@@ -18,10 +18,10 @@ Applications running on XAP can be scaled out linearly, because XAP uses the [Sp
 
 **This overview introduces XAP from several different perspectives:**
 
-- **[A components perspective](#components)** which explains key capabilities of GigaSpaces XAP -- the Open Spaces framework; the space-based core middleware and the middleware facilities it provides; and the SLA-Driven Container.
-- **[A runtime perspective](#runtime)** which shows how GigaSpaces components execute and interact in runtime on multiple physical machines.
-- **[An SOA/EDA perspective](#soa)** which shows how GigaSpaces XAP and the Space-Based Architecture are actually a special case of SOA/EDA, and can be used to implement a Service Oriented Architecture which supports high-performance, stateful services.
-- **[A remote client perspective](#client)** which illustrates how GigaSpaces XAP is viewed and accessed by remote clients, whether they are running inside XAP Processing Units or as independent POJO services.
+- **[A components perspective](#components)** - explains key capabilities of GigaSpaces XAP -- the Open Spaces framework; the space-based core middleware and the middleware facilities it provides; and the SLA-Driven Container.
+- **[A runtime perspective](#runtime)** - shows how GigaSpaces components execute and interact in runtime on multiple physical machines.
+- **[An SOA/EDA perspective](#soa)** - shows how GigaSpaces XAP and the Space-Based Architecture are actually a special case of SOA/EDA, and can be used to implement a Service Oriented Architecture which supports high-performance, stateful services.
+- **[A remote client perspective](#client)** - illustrates how GigaSpaces XAP is viewed and accessed by remote clients, whether they are running inside XAP Processing Units or as independent POJO services.
 
 {% refer %} For a GigaSpaces XAP product architecture overview, see the [Product Architecture section](./product-architecture.html).{% endrefer %}
 
@@ -37,7 +37,7 @@ The following diagram shows a component view of GigaSpaces XAP. The main compone
 
 ## OpenSpaces
 
-[Product Architecture](./product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) the primary framework for developing applications in GigaSpaces. Open Spaces uses Spring as a POJO-driven development infrastructure, and adds runtime and development components for developing POJO-driven EDA/SOA-based applications, and scaling them out simply across a pool of machines, without dependency on a J2EE container.
+Open Spaces is the primary framework for developing applications in GigaSpaces. Open Spaces uses Spring as a POJO-driven development infrastructure, and adds runtime and development components for developing POJO-driven EDA/SOA-based applications, and scaling them out simply across a pool of machines, without dependency on a J2EE container.
 
 To achieve these goals, Open Spaces adds the following components to the Spring development environment:
 
@@ -74,7 +74,7 @@ XAP relies on the JavaSpaces (space-based) model as its core middleware, and pro
 
 ## SLA-Driven Container
 
-SLA-Driven Containers (formerly known as Grid Service Containers or GSCs), enable deployment of Processing Units over a dynamic pool of machines, based on SLA definitions. Each container is a Java process which provides a hosting environment for application services bundled in a Processing Unit. The container virtualizes the underlying compute resources, and performs mapping between the application runtime and the underlying resources, based on SLA criteria such as CPU and memory usage, hardware configuration and software resource availability (JVM, DB, etc). It also provides self-healing capabilities for handling failure or scaling events.
+SLA-Driven Containers (known also as Grid Service Containers or GSCs), enable deployment of Processing Units over a dynamic pool of machines, based on SLA definitions. Each container is a Java process which provides a hosting environment for application services bundled in a Processing Unit. The container virtualizes the underlying compute resources, and performs mapping between the application runtime and the underlying resources, based on SLA criteria such as CPU and memory usage, hardware configuration and software resource availability (JVM, DB, etc). It also provides self-healing capabilities for handling failure or scaling events.
 
 ### SLA-Driven In-Memory Data Grid
 
@@ -124,7 +124,7 @@ The services can also be accessed by any other services, whether they reside in 
 
 # Remote Client Perspective
 
-Applications deployed in XAP are distributed across multiple machines. In the classic tier-based approach, remote client interactions were mainly RPC-based, or in some cases message-driven. RPC-based communication assumes direct reference to a remote server. This approach doesn't work in XAP-based applications, because they span multiple physical machines and change their location during runtime based on the SLA. This lead to a requirement that client interaction with XAP applications be done through a virtualized remote reference, which can keep track of different application instances during runtime, and route client requests to the appropriate instance based on the request type, its content, and so on.
+Applications deployed in XAP are distributed across multiple machines. In the classic tier-based approach, remote client interactions were mainly RPC-based, or in some cases message-driven. RPC-based communication assumes direct reference to a remote server. This approach doesn't work in XAP-based applications, because they span multiple physical machines and change their location during runtime based on the SLA. This lead to a requirement that client interaction with XAP applications can be done through a virtualized remote reference, which can keep track of different application instances during runtime, and route client requests to the appropriate instance based on the request type, its content, and so on.
 
 ## Modes of Interaction
 
@@ -167,7 +167,7 @@ From a runtime perspective, there are several ways remote clients can interact w
 - **Remote client running in a Processing Unit on an SLA-Driven Container** -- a client can be deployed in its own Processing Unit, like the server instances, except that the client references services residing in remote Processing Units. In this mode the client is deployed and runs in an SLA-Driven Container, just like the server instances.
 - **Remote client running in a standalone processing unit** -- the client still runs in a processing unit, but outside the container. This allows it to leverage Processing Unit facilities to simplify its logic -- facilities such as the space abstraction and transactions -- without being dependent on the container. This mode can be useful for rich clients running as Swing applications, as web containers, and so on.
 - **Plain Java clients, J2EE** -- this can be either a regular POJO client that interacts with the space, or a Session Bean that obtains a reference to the space through the GigaSpaces SpaceFinder method, and uses that reference to interact with the space directly.
-- **[.NET]({%latestjavaurl%}/index.html)**, **[C++]({%latestjavaurl%}/xap-cpp.html)** -- GigaSpaces provides .NET and c++ libraries that enable direct interaction with services via the space, just like a POJO client.
+- **[.NET]({%latestjavaurl%}/index.html)**, **[C++]({%latestjavaurl%}/xap-cpp.html)** -- GigaSpaces provides .NET and C++ libraries that enable direct interaction with services via the space, just like a POJO client.
 
 ![Remote Clients.jpg](/attachment_files/Remote Clients.jpg)
 

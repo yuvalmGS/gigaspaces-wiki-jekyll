@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Space Persistency Advanced Topics
+title:  Advanced Topics
 categories: XAP97
 parent: space-persistency.html
-weight: 500
+weight: 800
 ---
 
-{% compositionsetup %}
+
 {% summary %}Space Persistency advanced topics such as advanced operations, tuning, troubleshooting, and limitations.{% endsummary %}
 
 # Overview

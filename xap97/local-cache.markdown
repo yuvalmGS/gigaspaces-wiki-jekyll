@@ -6,7 +6,7 @@ parent: client-side-caching.html
 weight: 100
 ---
 
-{% compositionsetup %}{% summary page|60 %}A local cache allows the client application to cache recently used data at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}
+ {% summary page %}A local cache allows the client application to cache recently used data at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}
 
 # Summary
 
@@ -16,7 +16,9 @@ A **Local Cache** is a [client side cache](./client-side-caching.html) that main
 ![local_cache.jpg](/attachment_files/local_cache.jpg)
 {% endindent %}
 
-{% plus %} For additional client side caching options, refer to [Client Side Caching](./client-side-caching.html).
+{% info %}
+For additional client side caching options, refer to [Client Side Caching](./client-side-caching.html).
+{%endinfo%}
 
 # Usage
 
@@ -76,11 +78,11 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
 {% endtabcontent %}
 {% endinittab %}
 
-### Transactional Operations
+#### Transactional Operations
 
 Transactional operations are **always** executed on the master space.
 
-### Space Persistency
+#### Space Persistency
 
 The local cache uses the entry's version to determine whether the local entry is up-to-date or stale when handling updates. Usually this mechanism is transparent to the user and does not require declaring a version property, since the master space and local cache maintain version information for each entry implicitly.
 
@@ -91,7 +93,7 @@ The exception is a master space with an [Space Persistency](./space-persistency.
 1. When writing new entries the space, it is recommended to use version 0 and let the space implicitly initialize to version 1.
 1. When using template matching to query the space, make sure that the template used has the version ID field set to ZERO to make sure the space will ignore it.
 
-### Multiple Cache Instances within the Same Client
+#### Multiple Cache Instances within the Same Client
 
 Running multiple local cache instances (for different master spaces) within the same client may cause problems unless you allocate reasonable headroom for the local cache to operate. Such issues will be manifested in `MemoryShortageException` being thrown sporadically.
 
@@ -107,7 +109,7 @@ Since there are only 100 objects to clear from LC2, not all of the 1000 objects 
 
 # Operations Flow
 
-## Read Operations
+#### Read Operations
 
 1. The local cache is checked. If the requested object is found in the local cache, it is returned back to the application.
 1. Otherwise, the master space is queried.
@@ -115,19 +117,21 @@ Since there are only 100 objects to clear from LC2, not all of the 1000 objects 
 
 - **Blocking Read** - read with timeout first checks the local cache (without blocking - i.e. timeout=0), and if requested object is not found, the master space is checked.
 
-## ReadMultiple Operations
+#### ReadMultiple Operations
 
 1. The local cache is checked. If all the requested objects are found within the local cache (based on the amount of the `maxObjects` parameter of the `readMultiple` call), they are returned back to the application.
 1. Otherwise, the master space is queried.
 1. All relevant matching objects are stored into the local cache and returned back to the application.
 
-{% plus %} To avoid a `readMultiple` call from the master space make sure you do not use `Integer.MAX_VALUE` as the `max_objects` value.
+{% info %}
+To avoid a `readMultiple` call from the master space make sure you do not use `Integer.MAX_VALUE` as the `max_objects` value.
+{%endinfo%}
 
-## Take/TakeMultiple Operations
+#### Take/TakeMultiple Operations
 
 Take is always executed on both the local space and the master space. Blocking Take (take with timeout > 0) will block until an object is available on the master space, just like regular take.
 
-## Write/Update Operations
+#### Write/Update Operations
 
 Writes are always executed on the master space. Updates are executed both on the master space and the local cache, to make sure the cache is consistent if the object is cached.
 
@@ -135,7 +139,7 @@ Writes are always executed on the master space. Updates are executed both on the
 
 # Synchronization
 
-## Update Policy
+#### Update Policy
 
 Each change on the master space triggers a notification at the local cache. The change is processed according to one of the following update policies:
 
@@ -153,9 +157,10 @@ Each change on the master space triggers a notification at the local cache. The 
 | Push Update Policy |
 | ![local_cache_push.jpg](/attachment_files/local_cache_push.jpg) |
 
-{% infosign %} Only **actual* object changes in master space are propagated to the cache - *update* and *take**. Object evictions or reloads from the data source do not update the local cache.
-
-{% infosign %} When the local cache updates the cached object (i.e. PUSH policy), it creates a new object with the relevant data and updates the cache to the new reference. If an application is holding a reference to the previous object it will not be changed - to get the changes the application should read it from the local cache again.
+{% info %}
+Only **actual* object changes in master space are propagated to the cache - *update* and *take**. Object evictions or reloads from the data source do not update the local cache.
+When the local cache updates the cached object (i.e. PUSH policy), it creates a new object with the relevant data and updates the cache to the new reference. If an application is holding a reference to the previous object it will not be changed - to get the changes the application should read it from the local cache again.
+{%endinfo%}
 
 In general, `Push` is usually recommended for applications that perform more reads than updates (when reducing cache misses is important), whereas `Pull` is usually recommended for applications that perform more updates than reads (when protecting the cache from abundant updates is important and cache misses are acceptable).
 
@@ -165,7 +170,7 @@ The update policy can be configured using `LocalCacheSpaceFactoryBean` for Sprin
 <os-core:local-cache id="localCacheSpace" space="space" update-mode="PULL"/>
 {% endhighlight %}
 
-## Batch Synchronization
+#### Batch Synchronization
 
 Changes in the server are grouped and sent to the client in batches. The following configuration settings control synchronization batching:
 
@@ -181,7 +186,7 @@ Batch settings can be configured using `LocalCacheSpaceFactoryBean` for Spring, 
     batch-size="1000" batch-timeout="100"/>
 {% endhighlight %}
 
-## Recovering From Disconnection
+#### Recovering From Disconnection
 
 When the connection between a local cache and remote master space is disrupted, the local cache starts trying to reconnect with the remote space. If the disconnection duration exceeds the **maximum disconnection duration**, the local cache enters a **disconnected** state, wherein each operation throws an exception stating the cache is disconnected. When the connection to the remote master space is restored, the local cache restarts with an empty cache (same as in the initialization process) before restoring the state to **connected**, ensuring the cache does not contain stale data after reconnection.
 
@@ -193,17 +198,17 @@ The maximum disconnection duration can be configured using `LocalCacheSpaceFacto
     space="space" max-disconnection-duration="60000"/>
 {% endhighlight %}
 
-## Advanced Notification
+#### Advanced Notification
 
 The  round-trip-time setting can be configured using the `space-config.dist-cache.events.lease-renew.round-trip-time` custom property. For more information about this setting refer to [Session Based Messaging API](./session-based-messaging-api.html).
 
 # Memory Eviction
 
-## Cache Policy
+#### Cache Policy
 
 When using a local cache with `GigaSpace`, the cache policy is hard-writed to `LRU` and cannot be changed. When using the local cache with `GigaMap`, the default cache policy is `com.j_spaces.map.eviction.FIFOEvictionStrategy`, and other policies may be used by setting the `space-config.dist-cache.eviction-strategy` custom property. For more details refer to the [Map API](./map-api.html#GigaMap with a Local (Near) Cache).
 
-## Memory Configuration Properties
+#### Memory Configuration Properties
 
 In order to properly configure the local cache eviction mechanism, you should consider tuning the following configuration elements:
 
@@ -222,9 +227,11 @@ In order to properly configure the local cache eviction mechanism, you should co
 
 See the [Memory Management Facilities](./memory-management-facilities.html) for additional details on these configuration properties.
 
-{% exclamation %} Having the property `space-config.engine.memory_usage.explicit-gc` set to 'enabled' is recommended only in extreme cases when there is high load on the system, with large amount of concurrent users accessing the local cache and when the amount of CPUs/Cores is relatively small.
+{% tip %}
+Having the property `space-config.engine.memory_usage.explicit-gc` set to 'enabled' is recommended only in extreme cases when there is high load on the system, with large amount of concurrent users accessing the local cache and when the amount of CPUs/Cores is relatively small.
+{%endtip%}
 
-## Handling Memory Shortage
+#### Handling Memory Shortage
 
 There might be cases when the local cache would not be able to evict its data fast enough. This will result in an exception thrown on the client side. The reasons for this behavior might be very large objects stored within the local cache, large amount of concurrent access to the local cache or relatively small JVM heap. In such a case a `RemoteException` will be thrown.
 
@@ -245,11 +252,13 @@ while(true)
 }
 {% endhighlight %}
 
-## Monitoring the Client Local Cache Eviction
+#### Monitoring the Client Local Cache Eviction
 
 The Client Local Cache eviction can be monitored by setting the client application `com.gigaspaces.core.memorymanager` logging entry level to `FINE`. Once changed, log entries will be displayed when objects are evicted from the local cache (starting, during, and when completing the eviction cycle), and when waiting for incoming activities.
 
-{% plus %} The logging level of `com.gigaspaces.core.memorymanager` can be changed while the client application is running using JConsole.
+{% note %}
+The logging level of `com.gigaspaces.core.memorymanager` can be changed while the client application is running using JConsole.
+{%endnote%}
 
 {% include /COM/jconsolejmapwarning.markdown %}
 
@@ -267,17 +276,17 @@ Tests of the **local cache** with XAP 7.0 having 10 client threads using a local
 
 This section is intended to summarize the changes in 8.0.5 for users upgrading from previous versions.
 
-## Maximum Disconnection Duration
+#### Maximum Disconnection Duration
 
 In previous versions the max disconnection duration was configured by setting the `space-config.dist-cache.events.lease` and/or `space-config.dist-cache.events.lease-renew.duration` custom properties. Configuring the max disconnection duration using these custom properties is still supported, but starting with 8.0.5 it is deprecated.
 
 In addition, since the reconnect mechanism has been improved in 8.0.5, the custom properties `space-config.dist-cache.retry-connections` and `space-config.dist-cache.delay-between-retries` are no longer required and will be ignored.
 
-## Batch Size & Timeout
+#### Batch Size & Timeout
 
 In previous versions the batch size and timeout were configured by setting the `space-config.dist-cache.events.batch.size` and `space-config.dist-cache.events.batch.timeout` custom properties, respectively. Configuring the batch size and timeout using these custom properties is still supported, but starting with 8.0.5 it is deprecated.
 
-## Summary of Configuration Changes
+#### Summary of Configuration Changes
 
 The following table summarizes the configuration changes made in 8.0.5:
 

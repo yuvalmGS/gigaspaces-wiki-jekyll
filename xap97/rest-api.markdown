@@ -6,8 +6,8 @@ parent: interoperability.html
 weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}The REST API exposing HTTP based interface to the Space.{% endsummary %}
+
+{% summary  %}The REST API exposing HTTP based interface to the Space.{% endsummary %}
 
 # Overview
 
@@ -117,4 +117,4 @@ See that Item3 does not exists:
 
 3.Package the project using maven: "mvn package". This will run the unit tests and package the project to a war file located at /target/RESTData.war
 
-4.[Deploy](./deploy---gigaspaces-cli.html) the war file.
+4.[Deploy](./deploy-command-line-interface.html) the war file.

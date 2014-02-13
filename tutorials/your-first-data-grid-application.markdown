@@ -6,7 +6,7 @@ weight: 200
 parent: xap-tutorials.html
 ---
 
-{% summary page %}This tutorial explains how to deploy and use a XAP [Data Grid]({%currentjavaurl%}/the-in-memory-data-grid.html) from a Java client application {% endsummary %}
+{% summary page %}This tutorial explains how to deploy and use a XAP [Data Grid](/product_overview/the-in-memory-data-grid.html) from a Java client application {% endsummary %}
  
 # Overview
 
@@ -241,7 +241,7 @@ public class Person {
 Read more about the GigaSpaces runtime environment, how to model your data in a clustered environment, and how to leverage the power capabilities of the Space.
 
 - [Elastic Processing Unit]({%currentjavaurl%}/elastic-processing-unit.html)
-- [Modeling and Accessing Your Data]({%currentjavaurl%}/modeling-and-accessing-your-data.html)
-- [Deploying and Interacting with the Space]({%currentjavaurl%}/deploying-and-interacting-with-the-space.html)
+- [Modeling and Accessing Your Data]({%currentjavaurl%}/modeling-your-data.html)
+- [Deploying and Interacting with the Space]({%currentjavaurl%}/administrators-guide.html)
 - [The GigaSpaces Runtime Environment]({%currentjavaurl%}/the-runtime-environment.html)
 

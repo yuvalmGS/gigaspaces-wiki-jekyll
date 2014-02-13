@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Monitoring the Client-Side Cache
+title:  Monitoring
 categories: XAP97
 parent: client-side-caching.html
 weight: 400
 ---
 
-{% compositionsetup %}{% summary page|60 %}The Local View/Cache Monitoring{% endsummary %}
+ {% summary page|60 %}The Local View/Cache Monitoring{% endsummary %}
 
 # Summary
 
@@ -67,10 +67,13 @@ You can specify up to 5 local View/Cache `GigaSpace` beans as part of the `gigaS
 See below example how you can monitor multiple local cache instances running within the same application:
 
 {% indent %}
-![clientCacheJMXMonitor.jpg](/attachment_files/clientCacheJMXMonitor.jpg)
+[<img src="/attachment_files/clientCacheJMXMonitor.jpg" width="120" height="80">](/attachment_files/clientCacheJMXMonitor.jpg)
+
 {% endindent %}
 
-{% exclamation %} This version of the local view/cache monitor does not reflect statistics for operations using the `readByID` operation from the local view/cache.
+{% note %}
+This version of the local view/cache monitor does not reflect statistics for operations using the `readByID` operation from the local view/cache.
+{%endnote%}
 
 {% comment %}
 The Local View/Cache JMX Monitor source code is available [here](/attachment_files/GSClientCacheJMXMonitor_src.zip) .

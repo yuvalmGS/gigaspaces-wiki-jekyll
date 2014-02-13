@@ -6,7 +6,7 @@ parent: cpp-api-basics.html
 weight: 200
 ---
 
-{% summary page|65 %}An overview of the main capabilities provided by GigaSpaces C++ API{% endsummary %}
+{% summary   %}An overview of the main capabilities provided by GigaSpaces C++ API{% endsummary %}
 
 # Overview
 

@@ -15,7 +15,7 @@ GigaSpaces using Thread resources in an extensive manner to scale the different 
 
 # Threads List
 
-- # - Indicates the thread name includes a running number.
+- Indicates the thread name includes a running number.
 - SPACE_NAME - Indicates the thread name includes the associated space name using this thread.
 
 {% tip %}

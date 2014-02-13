@@ -14,7 +14,7 @@ We recommend that you do the following before starting this step of the Tutorial
 
 - Make yourself familiar with the [JPA specification](http://download.oracle.com/javaee/5/tutorial/doc/bnbpz.html) and [OpenJPA](http://openjpa.apache.org/quick-start.html).
 
-- [Read this page]({%latestjavaurl%}/modeling-and-accessing-your-data.html) to learn about moving to a distributed data model
+- [Read this page]({%latestjavaurl%}/modeling-your-data.html) to learn about moving to a distributed data model
 
 # Working with JPA
 

@@ -14,7 +14,7 @@ This page assume prior knowledge of multi-site replication, please refer to [Mul
 
 # Overview
 
-A replication gateway is used in order to send replication from one space to another space by acting as the delegator of outgoing replication from one space to another, and by receiving incoming replication from a remote gateway and dispatching it to the local space. The gateway is composed from two components that handle this operation, a delegator and a sink. This components are configured in a standard `pu.xml` and usually the gateway should be deployed as a single processing unit (with one instance) into the service grid of each site configured with the local site relevant properties.
+A replication gateway is used in order to send replication events from one space to another space by acting as the delegator of outgoing replication from one space to another, and by receiving incoming replication from a remote gateway and dispatching it to the local space. The gateway is composed of two components that handle this operation, a delegator and a sink. These components are configured in a standard `pu.xml` and usually the gateway should be deployed as a single processing unit (with one instance) into the service grid on each site configured with the local site relevant properties.
 
 # Gateway Components
 
@@ -22,7 +22,7 @@ A replication gateway is used in order to send replication from one space to ano
 
 ## Gateway Delegator
 
-The gateway delegator main purpose is to delegate outgoing replication from one site to another, the need for the delegator arise from the common gateway usage topology, which is replicating data between spaces across WAN. In this case, usually each space instance machine cannot open a direct socket to the remote site, therefor it uses the local delegator which is deployed on the local network in order to create a replication connection to the remote site. The machine on which the delegator is deployed, should have access to the remote site over the WAN and the ability to open sockets with the ports for discovery and communication which are configured in the gateway. Because the delegator is an outgoing communication point for replication, it is also used in the [Bootstrap](./replication-gateway-bootstrapping-process.html) process to delegate the bootstrap related communication from the bootstrapped site to the bootstrap source site.
+The gateway's delegator main purpose is to delegate outgoing replication from one site to another, the need for the delegator arises from the common gateway usage topology, which is replicating data between spaces across the WAN. In this case, usually each space instance machine cannot open a direct socket to the remote site, therefor it uses the local delegator which is deployed on the local network in order to create a replication connection to the remote site. The machine on which the delegator is deployed, should have access to the remote site over the WAN and the ability to open sockets with the ports for discovery and communication which are configured in the gateway. Because the delegator is an outgoing communication point for replication, it is also used in the [Bootstrap](./replication-gateway-bootstrapping-process.html) process to delegate the bootstrap related communication from the bootstrapped site to the bootstrap source site.
 
 The delegator configuration block in the gateway `pu.xml` looks as follows:
 
@@ -39,7 +39,7 @@ In this example, this is a delegator of New-York's gateway which acts as a deleg
 
 ## Gateway Sink
 
-The gateway sink main purpose is to handle incoming replication, which is received by a remote gateway delegator from a remote site, and dispatch it into the local space. The sink has a special proxy to the local space that it uses in order to dispatch the replication into the space. The sink is also used the [Bootstrap](./replication-gateway-bootstrapping-process.html) process in both ends, it is used to initiate the bootstrap process and to fill in the local space with the data. It is also used at the bootstrap source site as the communication mediator between the remote sink and the local space which is used as the source for bootstrapping.
+The gateway sink main purpose is to handle incoming replication, which is received by a remote gateway delegator from a remote site, and dispatches it into the local space. The sink has a special proxy to the local space that it uses in order to dispatch the replication into the space. The sink is also used the [Bootstrap](./replication-gateway-bootstrapping-process.html) process in both ends, it is used to initiate the bootstrap process and to fill in the local space with the data. It is also used at the bootstrap source site as the communication mediator between the remote sink and the local space which is used as the source for bootstrapping.
 
 The sink configuration block in the gateway `pu.xml` looks as follows:
 
@@ -60,9 +60,9 @@ In this example, this is the sink of New-York gateway that is open for incoming 
 
 In the above configuration samples, there is a `gateway-lookup` attribute, this attribute points to the lookup related configuration parameters.
 
-The gateway components needs to locate each other in order to communicate with each other. This lookup is done both across sites and in some cases locally. Additionally the local space needs to locate the gateway delegator it needs to use for delegation, and the gateway sink needs to locate the local space in order to dispatch incoming replication to it.
+The gateway components should locate each other in order to communicate with each other. This lookup is done both across sites and in some cases locally. Additionally the local space needs to locate the gateway delegator it needs to use for delegation, and the gateway sink needs to locate the local space in order to dispatch incoming replication to it.
 
-We will split the lookup described here into two catagories:
+We will split the lookup described here into two categories:
 
 1. Local site lookup - locating components which reside in the local site (network)
 1. Cross site lookup - locating components between sites (different networks), this lookup is only relevant for gateway components locating each other.
@@ -73,10 +73,10 @@ This lookup is done using the locally deployed lookup services which are already
 
 ## Cross Site Lookup
 
-In most common scenarios, each site resides on a different LAN, and there is no direct network connection between the machines on different sites. However, the machines hosting the gateways of each site, needs to have some network connectivity available in order for the gateway to connect to each other and send the replication data between the sites. For the gateway to be able to communicate and locate each others, there need to be able to use two available ports, one used for the discovery process and the other for communication between the gateways. This are known as the discovery ports (Lookup service port) and the communication port (LRMI port). By default, each gateway will start an embedded lookup service which is used for the discovery process, that lookup service will be started with the specified discovery port for that gateway. This is not mandatory, and the gateway can use an already existing lookup service which will be explained later on.
+In most common scenarios, each site resides on a different LAN, and there is no direct network connection between the machines on different sites. However, the machines hosting the gateways of each site, needs to have some network connectivity available in order for the gateway to connect to each other and send the replication data between the sites. For the gateway to be able to communicate and locate each other, they need to be able to use two available ports, one used for the discovery process and the other for the communication between the gateways. These are known as the discovery ports (Lookup service port) and the communication port (LRMI port). By default, each gateway will start an embedded lookup service which is used for the discovery process, that lookup service will be started with the specified discovery port for that gateway. This is not mandatory, and the gateway can use an already existing lookup service which will be explained later on.
 Each component, delegator and sink, will publish themselves in the lookup services in order for the other gateway components to be able to locate them between the sites.
 
-The configuration which specifies the discovery and communication port, along with the lookup service machine host (which by default should be the gateway machine it self as it starts the embedded lookup service) is described in each gateway `pu.xml` as follows:
+The configuration which specifies the discovery and communication ports, along with the lookup service machine host (which by default should be the gateway machine it self as it starts the embedded lookup service) is described in each gateway `pu.xml` as follows:
 
 {% highlight xml %}
 <os-gateway:lookups id="gatewayLookups">
@@ -99,7 +99,7 @@ The communication port is optional, if there is no firewall between the gateways
 
 If there is no firewall, and all ports are available, there is no need to specify a communication port as any communication port specified by the OS will be ok.
 
-This process of spawning a new GSC and relocation of the gateway is also done when the gateway is configured to start an embedded lookup service (default) and the hosting GSC is not started with the matching discovery (lookup) port. This will not happen if the gateway is not configured to start an embedded gateway and is using an already existing one which is determines by the 'host' and 'discovery-port' attributes. In order to disable the creation of an embedded lookup service all the gateway components in the gateway processing unit (Both delegator and sink) needs to be configured with the following:
+This process of spawning a new GSC and relocation of the gateway is also done when the gateway is configured to start an embedded lookup service (default) and the hosting GSC is not started with the matching discovery (lookup) port. This will not happen if the gateway is not configured to start an embedded gateway and is using an already existing one which is determined by the 'host' and 'discovery-port' attributes. In order to disable the creation of an embedded lookup service all the gateway components in the gateway processing unit (Both delegator and sink) need to be configured with the following:
 
 {% highlight xml %}
 <os-gateway:delegator id="delegator" local-gateway-name=... gateway-lookups=... start-embedded-lus="false">
@@ -191,7 +191,7 @@ Below is an example `pu.xml` file for the gateway of New-York
 
 # Indirect Delegation (Delegation via other gateways)
 
-Some topologies may require in direct delegation, for example in the above topology, there bandwidth between London and Hong-Kong be very poor or maybe there is no direct connection between this two sites but they should still replicate to each other. This replication can be delegated from London to Hong-Kong via New-york and the other way around as well. This is accomplished by chaining delegators together, in this case the delegator of London to Hong-Kong will be actually connected to the delegator of New-York to Hong-Kong thus delegating the replication communication via New-York. In this case the gateway of London should be configured as follows:
+Some topologies may require in direct delegation, for example in the above topology, there bandwidth between London and Hong-Kong be very poor or maybe there is no direct connection between this two sites but they should still replicate to each other. This replication can be delegated from London to Hong-Kong via New-York and the other way around as well. This is accomplished by chaining delegators together, in this case the delegator of London to Hong-Kong will be actually connected to the delegator of New-York to Hong-Kong thus delegating the replication communication via New-York. In this case the gateway of London should be configured as follows:
 
 {% highlight xml %}
 <os-gateway:delegator id="delegator"
@@ -285,11 +285,11 @@ Sink pu.xml:
 
 It is also possible to bundle more than one sink and/or delegator in one processing unit, thus having one processing unit acting as the gateway of multiple spaces.
 It is important to understand that a gateway is a logical and not a physical term which relates to all of the deployed processing units that contains at least one of the gateway components with the same name (sink or delegator).
-Additionally, one can bundle two different gateways (i.e gateway components, sinks or delegators, with different name) in the same processing unit.
+Additionally, one can bundle two different gateways (i.e gateway components, sinks or delegators, with different names) in the same processing unit.
 
 # NAT Configuration
 
-When having Network Address Translation (NAT) while data transit across different routing devices over the WAN, you should use the [NAT mapping configuration](./how-to-set-gigaspaces-over-nat.html) with your WAN Gateway. Each site gateway should have a NAT mapping file that maps the remote site local IP to the public IP, therefore each site should have a different mapping file because it should not map its own local IP to the public IP. Additionally, in each site you should place the public IP in the Gateway lookup element of the remote sites Gateway, and the local IP in the lookup element of the local site Gateway, once again, in this case the gateways lookup element in the pu.xml of the Gateways will not be symmetric since the local gateway lookup element should contain the local IP at each site. After the lookup process is done, both Gateways connect directly as usual.
+When having Network Address Translation (NAT) data transit across different routing devices over the WAN, you should use the [NAT mapping configuration](./how-to-set-gigaspaces-over-nat.html) with your WAN Gateway. Each site gateway should have a NAT mapping file that maps the remote site local IP to the public IP, therefore each site should have a different mapping file because it should not map its own local IP to the public IP. Additionally, in each site you should place the public IP in the Gateway lookup element of the remote sites Gateway, and the local IP in the lookup element of the local site Gateway, once again, in this case the gateways lookup element in the pu.xml of the Gateways will not be symmetric since the local gateway lookup element should contain the local IP at each site. After the lookup process is done, both Gateways connect directly as usual.
 
 # Security
 

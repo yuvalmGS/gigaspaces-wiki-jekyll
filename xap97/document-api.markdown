@@ -2,8 +2,8 @@
 layout: post
 title:  Space Document
 categories: XAP97
-parent: getting-started.html
-weight: 300
+parent: programmers-guide.html
+weight: 550
 ---
 
 {% summary %}Working with Space Documents{% endsummary %}
@@ -693,6 +693,6 @@ Space Replication Filter are supported for space documents.
 
 If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](./document-pojo-interoperability.html).
 
-# Advanced Options
+
 
 {% children %}

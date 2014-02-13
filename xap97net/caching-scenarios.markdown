@@ -35,7 +35,7 @@ The in-line cache is implemented using the following configurations:
 - Read-through and Write-through: For persisting the cache data synchronously.
 - Write-behind - Mirror: For persisting the cache data asynchronously.
 
-Persistence logic can either be the out-of-the-box [NHibernate External Data Source](./nhibernate-external-data-source.html) or any custom persistence logic that implements the [external data source interfaces]({% currentjavaurl %}/persistency.html).
+Persistence logic can either be the out-of-the-box [NHibernate External Data Source](./nhibernate-external-data-source.html) or any custom persistence logic that implements the [external data source interfaces]({% currentjavaurl %}/space-persistency.html).
 
 The in-line cache ensures maximum performance when fetching data where the database is outside the critical path of the application transaction. (This makes more sense than it might seem: database contention is a primary source of application performance failure.)
 

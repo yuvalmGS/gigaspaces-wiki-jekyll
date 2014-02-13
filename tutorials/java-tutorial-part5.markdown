@@ -413,7 +413,7 @@ With a stateless PU
 ./gs.sh deploy -cluster total_members=4 -max-instances-per-machine 2 tutorial.jar
 {%endhighlight%}
 
-{%learn%}{%latestjavaurl%}/deploy---gigaspaces-cli.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/deploy-command-line-interface.html{%endlearn%}
 
 
 

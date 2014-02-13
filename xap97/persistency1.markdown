@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Persistency
-categories: XAP97
+categories:
 parent: programmers-guide.html
 weight: 700
 ---
@@ -22,21 +22,22 @@ Object-oriented development dominates the enterprise, and most client applicatio
 
 Because of this mismatch, an intermediate object-relational mapping (ORM) step is required to perform translation of objects to records when writing data to a database, and translation of records to objects when reading data from a database. This intermediate step is implemented in middleware that is detached from and transparent to the client application. Client calls to standard API read and write methods trigger the middleware functionality without a need for the client to intervene. Advanced middleware systems permit the client API to formulate and pass a database query for use when reading from the database.
 
-{% section %}
+
 
 {% column %}
 The Hibernate library, an ORM persistence and query service for the Java language, can provide this service for RDBMS. Hibernate allows you to express queries in its own portable SQL extension (HQL), as well as in native SQL. However, Hibernate is restricted to run at the client level, and does not relate to read/write-through caching.
 {% endcolumn %}
 
-{% column %}
 
+
+{%comment%}
 {% indent %}
 ![HibernateSpacedataSource.jpg](/attachment_files/HibernateSpacedataSource.jpg)
 {% endindent %}
 
-{% endcolumn %}
 
-{% endsection %}
+
+
 
 # Migrating Legacy Hibernate API Applications to GigaSpaces API
 
@@ -57,6 +58,9 @@ The following tables show the correspondence between the Hibernate basic API met
 | `get` |read, readByID|get |
 | `load` |read, readByID|get |
 | `createSQLQuery` | readByIDs, readMultiple(SQLQuery) , |Not supported|
+
+{%endcomment%}
+
 
 The [Moving from Hibernate to Space](/sbp/moving-from-hibernate-to-space.html) best practice includes step by step instructions for moving from Hibernate based application to GigaSpaces Data-Grid as the data access layer. This use Hibernate as the space persistency layer using write-through approach when pushing updates into the database.
 

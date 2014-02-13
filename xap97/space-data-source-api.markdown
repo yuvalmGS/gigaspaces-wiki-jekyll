@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Space Data Source API
+title:  Data Source
 categories: XAP97
 parent: space-persistency.html
-weight: 400
+weight: 300
 ---
 
-{% compositionsetup %}
+
 {% summary %}The Space Data Source API is used for reading data and meta data from the data source.{% endsummary %}
 
 # Overview

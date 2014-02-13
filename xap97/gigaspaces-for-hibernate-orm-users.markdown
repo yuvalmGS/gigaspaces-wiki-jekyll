@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  GigaSpaces for Hibernate ORM Users
+title:  GigaSpaces as Second Level Cache
 categories: XAP97
-parent: caching-scenarios.html
-weight: 100
+parent: space-persistency.html
+weight: 1100
 ---
 
-{% compositionsetup %}
+
 {% summary %}Using GigaSpaces as a Hibernate cache provider; creating a Hibernate-integrated Data Grid with your existing ORM.{% endsummary %}
 
 {% anchor 1 %}

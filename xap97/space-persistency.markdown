@@ -2,12 +2,12 @@
 layout: post
 title:  Space Persistency
 categories: XAP97
-parent: persistency.html
-weight: 400
+parent: programmers-guide.html
+weight: 700
 ---
 
-{% summary page|65 %}Space Persistency provides advanced persistency capabilities for the space architecture.{% endsummary %}
-{% compositionsetup %}
+{% summary  %}Space Persistency provides advanced persistency capabilities for the space architecture.{% endsummary %}
+
 
 # Overview
 
@@ -42,7 +42,9 @@ Persistency can be configured to run in Synchronous or Asynchronous mode:
 ![data-grid-async-persistNew.jpg](/attachment_files/data-grid-async-persistNew.jpg)
 {% endindent %}
 
-{% infosign %} The difference between the Synchronous or Asynchronous persistency mode concerns how data is persisted back to the database. The Synchronous mode data is persisted immediately once the operation is conducted where the client application wait for the `SpaceDataSource`/`SpaceSynchronizationEndpoint` to confirm the write. With the Asynchronous mode (mirror Service), data is persisted in a **reliable** asynchronous manner using the mirror Service as a write behind activity. This mode provides maximum performance.
+{% info %}
+The difference between the Synchronous or Asynchronous persistency mode concerns how data is persisted back to the database. The Synchronous mode data is persisted immediately once the operation is conducted where the client application wait for the `SpaceDataSource`/`SpaceSynchronizationEndpoint` to confirm the write. With the Asynchronous mode (mirror Service), data is persisted in a **reliable** asynchronous manner using the mirror Service as a write behind activity. This mode provides maximum performance.
+{%endinfo%}
 
 {% tip %}
 If you're migrating from a GigaSpaces version prior to {% latestxaprelease %} please see the [Migrating From External Data Source API](./migrating-from-external-data-source-api.html) page.
@@ -66,8 +68,9 @@ The ability to customize the space persistency functionality allows GigaSpaces t
  	|transaction committed|onTransactionSynchronization , afterTransactionSynchronization|ALL_IN_CACHE, LRU|read-write|
  	|transaction failed|onTransactionConsolidationFailure|ALL_IN_CACHE, LRU|read-write|
 
-{% infosign %} GigaSpaces built in Hibernate Persistency implementation is an extension of SpaceDataSource and SpaceSynchronizationEndpoint classes.
-
+{% info %}
+GigaSpaces built in Hibernate Persistency implementation is an extension of SpaceDataSource and SpaceSynchronizationEndpoint classes.
+{%endinfo%}
 
 
 For detailed API information see [Space Data Source API](./space-data-source-api.html) and [Space Synchronization Endpoint API](./space-synchronization-endpoint-api.html).
@@ -82,6 +85,4 @@ The [Cassandra Space Persistency Solution](./cassandra-space-persistency.html) a
 
 The GigaSpaces Cassandra Space Peristency Solution leverages the [Cassandra CQL](http://www.datastax.com/docs/0.8/dml/using_cql), [Cassandra JDBC Driver](http://code.google.com/a/apache-extras.org/p/cassandra-jdbc) and the [Cassandra Hector Library](http://hector-client.github.com/hector/build/html/index.html). Every application's write or take operation against the IMDG is delegated into the Mirror service that is using the Cassandra Mirror implementation to push the changes into the Cassandra database.
 
-# Advanced Information & Operations
-
-{% refer %}For more advanced information and operations, see [Space Persistency Advanced Topics](./space-persistency-advanced-topics.html).{% endrefer %}
+{%children%}

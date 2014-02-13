@@ -6,7 +6,7 @@ parent: client-side-caching.html
 weight: 200
 ---
 
-{% compositionsetup %}{% summary page|60 %} A Local View allows the client application to cache specific data based on client's criteria at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}
+ {% summary   %} A Local View allows the client application to cache specific data based on client's criteria at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}
 
 # Summary
 
@@ -20,9 +20,11 @@ During the local view initialization, data is loaded into the client's memory ba
 ![local_view.jpg](/attachment_files/local_view.jpg)
 {% endindent %}
 
-{% plus %} For additional client side caching options, refer to [Client Side Caching](./client-side-caching.html).
+{% note %}
+For additional client side caching options, refer to [Client Side Caching](./client-side-caching.html).
+{%endnote%}
 
-## Where the Local View Can be Used?
+#### Where the Local View Can be Used?
 
 The Local view can be used with financial applications (e.g. trading , market data , portfolio management) where each client (e.g. trader , broker) might need to access specific products / securities / equities data in real time. In this case, the application instance can generate a client side cache customized for the user needs.
 
@@ -121,7 +123,7 @@ The following operations are not supported when using local view, and should be 
 
 Data is **never** evicted from the local view (the cache policy is hardwired to `ALL_IN_CACHE`). Therefore, specifying a criteria that retrieves large amounts of data from the master space can cause the client to run out of memory.
 
-## Multiple Cache Instances within the Same Client
+#### Multiple Cache Instances within the Same Client
 
 Running multiple local view instances (for different master spaces) within the same client without allocating reasonable headroom for the local view to operate, may cause problems. This will be manifested in `MemoryShortageException` being thrown sporadically.
 
@@ -140,7 +142,7 @@ Starting with XAP 8.0.6, the local view uses [replication](./replication.html) i
 
 In those cases, the local view will automatically revert to notification-based synchronization.
 
-## Synchronization Batch
+#### Synchronization Batch
 
 Changes in the server are grouped and sent to the client in batches. The following configuration settings controls synchronization batching:
 
@@ -157,7 +159,7 @@ Batch settings can be configured using `LocalViewSpaceFactoryBean` for Spring, o
 </os-core:local-view>
 {% endhighlight %}
 
-## Recovering From Disconnection
+#### Recovering From Disconnection
 
 When the connection between a local view and remote master space is disrupted, the local view starts trying to reconnect with the remote space.
 
@@ -173,31 +175,33 @@ The maximum disconnection duration can be configured using `LocalViewSpaceFactor
 </os-core:local-view>
 {% endhighlight %}
 
-{% plus %} When the synchronization is replication-based (default), the local view is resilient to failover, which means that if a primary space fails and a backup space replaces it within the maximum disconnection duration, the local view will remain intact during the failover process. When the synchronization is notification-based this is not guaranteed since notifications might be lost during the failover process.
+{% info %}
+When the synchronization is replication-based (default), the local view is resilient to failover, which means that if a primary space fails and a backup space replaces it within the maximum disconnection duration, the local view will remain intact during the failover process. When the synchronization is notification-based this is not guaranteed since notifications might be lost during the failover process.
+{%endinfo%}
 
 # Upgrading From Previous Versions
 
 This section is intended to summarize the changes in 8.0.5 for users upgrading from previous versions.
 
-## Maximum Disconnection Duration
+#### Maximum Disconnection Duration
 
 In previous versions the max disconnection duration was configured by setting the `space-config.dist-cache.events.lease` and/or `space-config.dist-cache.events.lease-renew.duration` custom properties. Configuring the max disconnection duration using these custom properties is still supported, but starting 8.0.5 it is deprecated.
 
 In addition, since the reconnect mechanism has been improved in 8.0.5, the custom properties `space-config.dist-cache.retry-connections` and `space-config.dist-cache.delay-between-retries` are no longer required and will be ignored.
 
-## Batch Size & Timeout
+#### Batch Size & Timeout
 
 In previous versions the batch size and timeout were configured by setting the `space-config.dist-cache.events.batch.size` and `space-config.dist-cache.events.batch.timeout` custom properties, respectively. Configuring the batch size and timeout using these custom properties is still supported, but starting with 8.0.5 it is deprecated.
 
-## Notification
+#### Notification
 
 If local view synchronization is done using notifications, the round-trip-time can be configured using the `space-config.dist-cache.events.lease-renew.round-trip-time` custom property. For more information about this setting refer to [Session Based Messaging API](./session-based-messaging-api.html).
 
-## Configuring from Space URL
+#### Configuring from Space URL
 
 Creating a Local View directly from the space url is deprecated - use `LocalViewSpaceFactoryBean` or `LocalViewSpaceConfigurer` instead.
 
-## Server side local view properties
+#### Server side local view properties
 
 This properties can be configured on the space side and they will affect all the local views which are created on top of that space.
 
@@ -208,7 +212,7 @@ This properties can be configured on the space side and they will affect all the
 | `cluster-config.groups.group.repl-policy.redo-log-local-view-recovery-capacity` | Specifies the total capacity of replication packets the redo log can hold for a local view replication target while the local view is in recovery state (initial load process)| 1000000 |
 | `cluster-config.groups.group.repl-policy.local-view-max-disconnection-time` | Specifies the maximum amount of time (in milliseconds) the space will wait for the local view replication target before it is considered disconnected, after which the target will be dropped. | 300000 |
 
-## Summary of Configuration Changes
+#### Summary of Configuration Changes
 
 The following table summarizes the configuration changes made in 8.0.5
 

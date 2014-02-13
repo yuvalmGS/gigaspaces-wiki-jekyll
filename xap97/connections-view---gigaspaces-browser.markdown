@@ -6,13 +6,13 @@ parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
 weight: 100
 ---
 
-{% summary page|60 %}Displays information regarding all connected and disconnected proxies.{% endsummary %}
+{% summary %}Displays information regarding all connected and disconnected proxies.{% endsummary %}
 
 # Overview
 
 The Connections view exposes information regarding all connected and disconnected space proxies.
 
-{% lampon %} It is also possible to retrieve space connections using the **[space connections](./space-connections---gigaspaces-cli.html)** command
+{% lampon %} It is also possible to retrieve space connections using the **[space connections](./space---gigaspaces-cli.html)** command
 
 The following properties are exposed:
 

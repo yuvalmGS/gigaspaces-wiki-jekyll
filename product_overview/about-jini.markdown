@@ -2,7 +2,7 @@
 layout: post
 title:  About Jini
 categories: PRODUCT_OVERVIEW
-weight: 150
+weight: 200
 parent: none
 ---
 

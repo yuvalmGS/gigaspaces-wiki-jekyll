@@ -41,6 +41,7 @@ The space proxy router has the following responsibilities:
 
 
 Example : To increase the lookup duration timeout to 5 minutes you should have the following:
+
 {% inittab os_simple_space|top %}
  {% tabcontent Namespace %}
  {% highlight xml %}

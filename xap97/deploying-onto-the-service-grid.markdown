@@ -24,7 +24,7 @@ You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to
 
 # The Deployment Process
 
-Once built according to the processing unit [directory structure](./the-processing-unit-structure-and-configuration.html), the processing unit can be deployed via the various deployment tools available in GigaSpaces XAP ([UI](./graphical-user-interface.html), [CLI](./deploy---gigaspaces-cli.html), Ant, [Maven](./maven-plugin.html) or the [Admin API](./administration-and-monitoring-api.html)).
+Once built according to the processing unit [directory structure](./the-processing-unit-structure-and-configuration.html), the processing unit can be deployed via the various deployment tools available in GigaSpaces XAP ([UI](./graphical-user-interface.html), [CLI](./deploy-command-line-interface.html), Ant, [Maven](./maven-plugin.html) or the [Admin API](./administration-and-monitoring-api.html)).
 
 After you [package](./packaging-and-deployment.html) the processing unit and deploy it via one of the deployment tools, the deployment tool uploads it to all the running [GSMs](./service-grid.html#gsm), where it is extracted and provisioned to the [GSCs](./service-grid.html#gsc).
 
@@ -61,7 +61,7 @@ ProcessingUnit pu = admin.getGridServiceManagers().deploy(
 {% tabcontent Ant %}
 Deploying with Ant is based on the `org.openspaces.pu.container.servicegrid.deploy.Deploy` class (in fact, all of the deployment tools use this class although it is not exposed directly to the end user).
 
-In the below example we create an Ant macro using this class and use it to deploy our processing unit. The deploy class is executable via its `main()` method, and can accept various parameters to control the deployment process. These parameters are identical to these of the `deploy` CLI command, for a complete list of the available parameters please consult the [`deploy` CLI reference documentation.](./deploy---gigaspaces-cli.html).
+In the below example we create an Ant macro using this class and use it to deploy our processing unit. The deploy class is executable via its `main()` method, and can accept various parameters to control the deployment process. These parameters are identical to these of the `deploy` CLI command, for a complete list of the available parameters please consult the [`deploy` CLI reference documentation.](./deploy-command-line-interface.html).
 
 {% highlight xml %}
 <deploy file="/opt/gigaspaces/myPU.jar" />
@@ -83,7 +83,7 @@ In the below example we create an Ant macro using this class and use it to deplo
 
 {% endtabcontent %}
 {% tabcontent GigaSpaces CLI %}
-Deploying via the CLI is based on the `deploy` command. This command accepts various parameters to control the deployment process. These parameters are documented in full in the [`deploy` CLI reference documentation.](./deploy---gigaspaces-cli.html).
+Deploying via the CLI is based on the `deploy` command. This command accepts various parameters to control the deployment process. These parameters are documented in full in the [`deploy` CLI reference documentation.](./deploy-command-line-interface.html).
 
 {% highlight java %}
 > <gigaspaces root>/bin/gs.sh(bat) deploy myPU.jar

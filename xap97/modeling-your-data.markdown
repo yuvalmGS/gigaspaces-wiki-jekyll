@@ -2,8 +2,8 @@
 layout: post
 title:  Modeling your data
 categories: XAP97
-parent: modeling-and-accessing-your-data.html
-weight: 200
+parent: getting-started.html
+weight: 900
 ---
 
 {% summary %}How to model application data for in-memory data grid{% endsummary %}
