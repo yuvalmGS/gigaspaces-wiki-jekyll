@@ -64,15 +64,15 @@ public class PaymentListener {
 
 
 
-In this example we define: 
-{%indent%}
+In this example we define:
+
 {: .table .table-bordered}
 |Annotation | Description|
 |:----------|:-----------|
 |@EventDriven @Notify| the listener as a notification listener |
 |@EventTemplate|       the event that will trigger the listener; a payment that was cancelled|
 |@SpaceDataEvent|      the method that processes the event arrives. The return value is null, nothing will be written back into the space|
-{%endindent%}
+
 
 
 You can also define an event template using an SQLQuery.
@@ -112,7 +112,7 @@ public void notifyTest() {
 {%endhighlight%}
 
 
-Lets assume we want to implement a polling container that receives audit notifications.
+Lets assume we want to implement a polling container that receives audit notifications.  Here is an example on how you would define a polling listener:
 
 {%highlight java %}
 @EventDriven
@@ -134,6 +134,18 @@ public class AuditListener {
 	}
 }
 {%endhighlight%}
+
+And now we register the polling listener:
+
+{%highlight java%}
+	public void registerPollingListener() {
+		SimplePollingEventListenerContainer pollingEventListenerContainer = new SimplePollingContainerConfigurer(
+				space).eventListenerAnnotation(new AuditListener())
+				.pollingContainer();
+		pollingEventListenerContainer.start();
+	}
+{%endhighlight%}
+
 
 By default all events will trigger the notification. In our example we are restricting the events to be received by using the {{@NotifyType}} annotation. In our example we are only interested in write and update events. 
 
