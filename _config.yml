@@ -8,6 +8,7 @@ encoding: UTF-8
 latest_xap_release: "9.7"
 latest_xap_version: "9.7.0"
 latest_maven_version: "9.7.0-10496-RELEASE"
+petclinic_jpa_branch: "9_7_0_ga"
 latest_build_filename: "gigaspaces-xap-premium-9.7.0-ga-b10496.zip"
 latest_msi_filename: "GigaSpaces-XAP.NET-Premium-9.7.0.10496-GA-x86.msi"
 latest_gshome_dirname: "gigaspaces-xap-premium-9.7.0-ga"
@@ -16,7 +17,7 @@ latest_default_lookup_group: "gigaspaces-9.7.0-XAPPremium-ga"
 latest_java_url: "/xap97"
 latest_net_url: "/xap97net"
 
-latest_cloudify_release: "2.6"
+latest_cloudify_release: "2.7"
 
 base_javadoc_url: "http://www.gigaspaces.com/docs/JavaDoc%{version}/index.html?%{fqcn}.html"
 base_scaladoc_url: "http://www.gigaspaces.com/docs/scaladocs%{version}/#%{fqcn}"

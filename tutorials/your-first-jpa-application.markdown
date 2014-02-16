@@ -40,7 +40,7 @@ If you also wish to utilize the GigaSpaces XAP load balancing agent, you should 
 ## Example Source Code and Build Scripts
 
 You can download the example sources and build scripts [on Github](https://github.com/Gigaspaces/petclinic-jpa).
-Simply [download the sources as zip](https://github.com/Gigaspaces/petclinic-jpa/zipball/XAP-9.0.2) or clone the repo to your machine.
+Simply [download the sources as zip](https://github.com/Gigaspaces/petclinic-jpa/archive/{{site.petclinic_jpa_branch}}.zip) or clone the repo to your machine (make sure to use the `{{site.petclinic_jpa_branch}}` branch).
 
 {% comment %}
 =============================================================

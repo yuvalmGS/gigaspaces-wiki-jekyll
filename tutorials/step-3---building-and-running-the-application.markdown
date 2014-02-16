@@ -17,12 +17,12 @@ We recommend that you do the following before starting this step of the Tutorial
 
 # Building the Example Application
 
-The application sources and build scripts can be downloaded [here](https://github.com/Gigaspaces/PetClinic). This application uses a Maven build script, so you need to make sure you're connected to the internet when you first run it to allow Maven to download all the dependencies.
+The application sources and build scripts can be downloaded [here]({{https://github.com/Gigaspaces/petclinic-jpa/archive/{{site.petclinic_jpa_branch}}.zip}}). This application uses a Maven build script, so you need to make sure you're connected to the internet when you first run it to allow Maven to download all the dependencies.
 
 To build the example you should follow the following steps:
 
-- Download and unzip the [application sources](https://github.com/Gigaspaces/PetClinic)
-- Download and install [GigaSpaces XAP Premium Edition](http://www.gigaspaces.com/LatestProductVersion).
+- Download and unzip the [application sources](https://github.com/gigaspaces/petclinic-jpa)
+- Download and install [GigaSpaces XAP Premium Edition](http://www.gigaspaces.com/xap-download).
 - Install the Gigaspaces Maven Plugin as described [here]({%currentjavaurl%}/maven-plugin.html). Please take note of the GigaSpaces build number in the console output, e.g.:
 
 {% highlight java %}
@@ -36,10 +36,10 @@ D:\GS-Releases\{{ site.latest_gshome_dirname }}\tools\maven>installmavenrep.bat
 
 - cd to the root directory of the application
 - Edit the value of the `gsVersion` property in the `pom.xml` file at the root directory to reflect the GigaSpaces build you're using (this is the build number that the Maven plugin installation script outputs to the console when invoked).
-For example, if you are using GigaSpaces XAP 8.0.2 you should modify the `pom.xml` to have:
+For example, if you are using GigaSpaces XAP {{site.latest_xap_version}} you should modify the `pom.xml` to have:
 
 {% highlight java %}
-<gsVersion>8.0.2</gsVersion>
+<gsVersion>{{site.latest_maven_version}}</gsVersion>
 {% endhighlight %}
 
 - Run the following Maven command:
