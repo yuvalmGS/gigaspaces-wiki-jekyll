@@ -17,7 +17,7 @@ We recommend that you do the following before starting this step of the Tutorial
 
 # Building the Example Application
 
-The application sources and build scripts can be downloaded [here]({{https://github.com/Gigaspaces/petclinic-jpa/archive/{{site.petclinic_jpa_branch}}.zip}}). This application uses a Maven build script, so you need to make sure you're connected to the internet when you first run it to allow Maven to download all the dependencies.
+The application sources and build scripts can be downloaded [here]({{https://github.com/Gigaspaces/petclinic-jpa/archive/{{site.petclinic_jpa_branch}}.zip). This application uses a Maven build script, so you need to make sure you're connected to the internet when you first run it to allow Maven to download all the dependencies.
 
 To build the example you should follow the following steps:
 
