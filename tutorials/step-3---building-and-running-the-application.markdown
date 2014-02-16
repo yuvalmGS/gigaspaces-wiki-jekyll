@@ -26,7 +26,7 @@ To build the example you should follow the following steps:
 - Install the Gigaspaces Maven Plugin as described [here]({%currentjavaurl%}/maven-plugin.html). Please take note of the GigaSpaces build number in the console output, e.g.:
 
 {% highlight java %}
-D:\GS-Releases\{{ site.latest_gshome_dirname }}\tools\maven>installmavenrep.bat
+~/gs/xap/{{ site.latest_gshome_dirname }}/tools/maven>installmavenrep.sh
 ""
 ""
 "Installing XAP {% latestxaprelease %}.0-RELEASE jars"
