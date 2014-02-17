@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Step 1 - Adjusting Your JPA Domain Model to the XAP JPA Implementation
+title:  Step 1 - Adjusting Your JPA Domain Model to XAP
 categories: TUTORIALS
 weight: 100
 parent: your-first-jpa-application.html
 ---
 
-{% summary %}Adjusting Your JPA Domain Model to the XAP JPA Implementation{% endsummary %}
+{% summary %}This step explains how to adjust your JPA domain model to the XAP JPA implementation for maximum performance and scalability.{% endsummary %}
 
 # Before You Begin
 
