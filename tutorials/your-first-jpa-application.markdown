@@ -14,14 +14,7 @@ parent: xap-tutorials.html
 =============================================================
 {% endcomment %}
 
-{% section %}
-{% column width=10% %}
-![jpa.png](/attachment_files/jpa.png)
-{% endcolumn %}
-{% column width=90% %}
 **Summary:** {% excerpt %}This tutorial explains how the sample Spring PetClinic application can be fine tuned to use GigaSpaces XAP [JPA API]({%latestjavaurl%}/jpa-api.html) and deployed into the GigaSpaces XAP platform{% endexcerpt %}
-{% endcolumn %}
-{% endsection %}
 
 {% comment %}
 =============================================================
