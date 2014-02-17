@@ -325,7 +325,7 @@ SpaceProxyPtr space ( finder.find(spaceUrl) );
 
 (The above is copied from the file: `<Example Root>\HelloWorld.cpp`.)
 
-{% exclamation %} The space URL in this example is: `jini://localhost/*/mySpace?groups=javaspaces-hellospace`. It is passed to `main` in `run_HelloWorld.sh/.bat)` (see [Space URL](./space-url.html)).
+{% exclamation %} The space URL in this example is: `jini://localhost/*/mySpace?groups=javaspaces-hellospace`. It is passed to `main` in `run_HelloWorld.sh/.bat)` (see [Space URL](./the-space-configuration.html)).
 
 {% infosign %} This space URL specifies the network address of the Jini Lookup Service (localhost here), and queries it for **a space belonging to the lookup group** `javaspaces-hellospace`. There is only one space in this lookup group: the space instance started by `startAll.sh`. The space is purposely started with a switch that registers it to this lookup group.
 The **asterisk after localhost** represents the space container (a logical unit inside the server); this URL does not refer to a specific container. Note that the protocol used is Jini (other protocols are RMI and Java. Java is used for embedded spaces and to launch spaces on the server side).

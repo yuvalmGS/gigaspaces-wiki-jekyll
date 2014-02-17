@@ -189,7 +189,7 @@ sessionValidationScheduler.sessionManager = $sessionManager
 securityManager.sessionManager.sessionValidationScheduler = $sessionValidationScheduler
 {% endhighlight %}
 
-{% tip %}The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Space URL]({%latestjavaurl%}/space-url.html) to the IMDG deployed within your site.{% endtip %}
+{% tip %}The `sessionDAO.activeSessionsCacheName` parameter should include a standard [Space URL]({%latestjavaurl%}/the-space-configuration.html) to the IMDG deployed within your site.{% endtip %}
 
 ### Web Application Libraries
 

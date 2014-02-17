@@ -51,7 +51,7 @@ Connection con = DriverManager.getConnection("jdbc:gigaspaces:url:jini://*/*/myS
 You may use the GigaSpaces JDBC driver with remote or embedded space
 {% endtip %}
 
-{% refer %}For more details on the Space URL, refer to the [Space URL](./space-url.html) section.{% endrefer %}
+{% refer %}For more details on the Space URL, refer to the [Space URL](./the-space-configuration.html) section.{% endrefer %}
 
 Example:
 
@@ -503,7 +503,7 @@ char timestamp long clob blob empty_clob() empty_blob() lob true false
 
 # Configuration
 
-The JDBC Driver should be configured using the following properties. These should be part of the [The Space Component](./the-space-component.html) configuration when deployed:
+The JDBC Driver should be configured using the following properties. These should be part of the [The Space Component](./the-space-configuration.html#proxy) configuration when deployed:
 
 {: .table .table-bordered}
 | Parameter | Description | Default Value |

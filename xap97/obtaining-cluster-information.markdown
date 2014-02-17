@@ -85,7 +85,7 @@ public class MyBean {
 
 # Space Construction and ClusterInfo
 
-The [Space component](./the-space-component.html) implements the `ClusterInfoAware`, and uses it in order to construct an embedded space by mapping `ClusterInfo` properties to Space URL properties (if provided). Here is a mapping from `ClusterInfo` to Space URL properties:
+The [Space component](./the-space-configuration.html) implements the `ClusterInfoAware`, and uses it in order to construct an embedded space by mapping `ClusterInfo` properties to Space URL properties (if provided). Here is a mapping from `ClusterInfo` to Space URL properties:
 
 {: .table .table-bordered}
 |ClusterInfo|Space URL|

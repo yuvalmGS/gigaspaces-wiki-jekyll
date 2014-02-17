@@ -42,7 +42,7 @@ The OpenSpaces API is divided into four parts:
 
 ## Core API
 
-The core package of OpenSpaces provides APIs for direct access to a data grid, internally referred to as a "space." The main interface is the GigaSpace, which enables the basic interaction with the data grid. The core components include basic infrastructure support such as [Space]({%latestjavaurl%}/the-space-component.html) construction, simplified API using the [GigaSpace]({%latestjavaurl%}/the-gigaspace-interface.html) interface including [Transaction Management]({%latestjavaurl%}/transaction-management.html) and declarative transaction support. Core components also include support for [Map/Cache]({%latestjavaurl%}/map-api.html) construction and a simplified API using [GigaMap]({%latestjavaurl%}/map-api.html).
+The core package of OpenSpaces provides APIs for direct access to a data grid, internally referred to as a "space." The main interface is the GigaSpace, which enables the basic interaction with the data grid. The core components include basic infrastructure support such as [Space]({%latestjavaurl%}/the-space-configuration.html) construction, simplified API using the [GigaSpace]({%latestjavaurl%}/the-gigaspace-interface.html) interface including [Transaction Management]({%latestjavaurl%}/transaction-management.html) and declarative transaction support. Core components also include support for [Map/Cache]({%latestjavaurl%}/map-api.html) construction and a simplified API using [GigaMap]({%latestjavaurl%}/map-api.html).
 
 {% anchor Events%}
 

@@ -215,7 +215,7 @@ The url="/./space" instructs the GigaSpaces runtime to start the c++ worker with
 Having
     url="jini://*/*/space"
 means the c++ worker will access remote space(s).  These spaces may span multiple machines and may have any clustered topology (replicated or partitioned).
-See more details about the [Space URL](./space-url.html).
+See more details about the [Space URL](./the-space-configuration.html).
 
 Optional settings you may include as part of the processing unit declaration:
 

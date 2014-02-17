@@ -10,7 +10,7 @@ weight: 50
 
 # Introduction
 
-When deploying a Processing Unit(PU) configured with an embedded [Space](./the-space-component.html) with a clustered SLA or when running a remote clustered space, a clustered {{GigaSpace}} proxy is created.
+When deploying a Processing Unit(PU) configured with an embedded [Space](./the-space-configuration.html) with a clustered SLA or when running a remote clustered space, a clustered {{GigaSpace}} proxy is created.
 
 A clustered proxy is a smart proxy that performs operations against the entire cluster when needed.
 - The {{write}} operation will be routed based on the routing field value to the relevant partition (using the routing field hashcode to calculate the the target partition).
@@ -147,7 +147,7 @@ With this example the {{pu.xml}} includes the following:
 <os-remoting:service-exporter id="serviceExporter" />
 {%endhighlight%}
 
-Our Service using the [@PostPrimary](./the-space-component.html#Primary Backup Notifications) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](./obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID.
+Our Service using the [@PostPrimary](./the-space-notifications.html) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](./obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID.
 
 Here is how the service interface looks like:
 {%highlight java %}

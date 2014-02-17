@@ -283,7 +283,7 @@ com.gigaspaces.common.lookupfinder.level = INFO
 com.gigaspaces.common.resourceloader.level = INFO
 {% endhighlight %}
 
-SpaceURL and its constraints are explained [here](./space-url.html).
+SpaceURL and its constraints are explained [here](./the-space-configuration.html).
 Other loggers are related to this and applicable when a client trying to create a space proxy using a URL.
 
 ### Space Multicast Notifications

@@ -36,7 +36,7 @@ A C++ client may write and read objects from the space.
 ![POJO_read.jpg](/attachment_files/POJO_read.jpg)
 {% endindent %}
 
-The following code example constructs a space proxy by passing a [space URL](./space-url.html) string into the `SpaceFinder.find()` method.
+The following code example constructs a space proxy by passing a [space URL](./the-space-configuration.html) string into the `SpaceFinder.find()` method.
 The returned object is the `SpaceProxy` object. This allows performing all space operations such as write, read, take, notify registration, etc.
 
 {% highlight java %}

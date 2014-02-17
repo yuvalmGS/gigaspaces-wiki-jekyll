@@ -72,7 +72,7 @@ Open your favorite java IDE (Eclipse, IntelliJ IDEA, etc), Create a new project,
 
 ### Connecting to the Grid
 
-Since the Data grid is not located in our client process, we need some sort of address to find it. Data grids are searched using a `Space URL`, for example: `jini://*/*/myGrid`. This roughly translates to: Find a remote space called `myGrid` (for more information see [SpaceURL]({%currentjavaurl%}/space-url.html)).
+Since the Data grid is not located in our client process, we need some sort of address to find it. Data grids are searched using a `Space URL`, for example: `jini://*/*/myGrid`. This roughly translates to: Find a remote space called `myGrid` (for more information see [SpaceURL]({%currentjavaurl%}/the-space-configuration.html)).
 
 Now that we have an address, we can connect to the grid:       
 
@@ -241,7 +241,7 @@ public class Person {
 Read more about the GigaSpaces runtime environment, how to model your data in a clustered environment, and how to leverage the power capabilities of the Space.
 
 - [Elastic Processing Unit]({%currentjavaurl%}/elastic-processing-unit.html)
-- [Modeling and Accessing Your Data]({%currentjavaurl%}/modeling-your-data.html)
+- [Modeling and Accessing Your Data](/sbp/modeling-your-data.html)
 - [Deploying and Interacting with the Space]({%currentjavaurl%}/administrators-guide.html)
 - [The GigaSpaces Runtime Environment]({%currentjavaurl%}/the-runtime-environment.html)
 

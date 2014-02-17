@@ -21,7 +21,7 @@ Each space operation on a data-grid cluster is routed to a single member or mult
 
 # Client Proxy Connectivity Configuration
 
-The proxy Connectivity settings should be specified as part of the **space configuration** (server side). You may specify these as part of the [Space Component](./the-space-component.html#Reconnection) or via API.  The settings are loaded into the client side once it connects to the space. Client proxy connectivity settings controlled via the following settings:
+The proxy Connectivity settings should be specified as part of the **space configuration** (server side). You may specify these as part of the [Space Component](./the-space-configuration.html) or via API.  The settings are loaded into the client side once it connects to the space. Client proxy connectivity settings controlled via the following settings:
 
 {: .table .table-bordered}
 |Property|Description|Default|Unit|

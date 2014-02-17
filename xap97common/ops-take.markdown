@@ -1,5 +1,5 @@
 
-{%anchor take-operation%}
+{%anchor take%}
 
 # The Take Operation
 {%section%}
@@ -66,6 +66,7 @@ The following example writes an `Employee` object into the space and removes it 
 {% endhighlight %}
 
 
+{%anchor takeMultiple%}
 
 #### Take multiple
 
@@ -121,6 +122,8 @@ To remove a batch of objects without returning these back into the client use `G
 
 {%endnote%}
 
+{%anchor takeIfExists%}
+
 #### Take if exists
 A takeIfExists operation will return a matching object, or a null if there is currently no matching object in the space.
 If the only possible matches for the template have conflicting locks from one or more other transactions, the timeout value specifies how long the client is willing to wait for interfering transactions to settle before returning a value.
@@ -138,6 +141,7 @@ If at the end of that time no value can be returned that would not interfere wit
 	Employee e = space.takeIfExists(query);
 {% endhighlight %}
 
+{%anchor asynchronousTake%}
 
 #### Asynchronous Take
 

@@ -131,7 +131,7 @@ For security reasons, you may not want to expose the security credentials in you
 
 # Processing Unit
 
-{% refer %}[Configuring Processing Unit Elements](./configuring-processing-unit-elements.html), [Configuring the Space](./the-space-component.html){% endrefer %}
+{% refer %}[Configuring Processing Unit Elements](./configuring-processing-unit-elements.html), [Configuring the Space](./the-space-configuration.html){% endrefer %}
 
 A processing unit by itself is not secured. It inherits its security from the managing GSM and GSC. These protect the processing unit from being restarted, relocated, destroyed, and undeployed.
 

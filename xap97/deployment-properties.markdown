@@ -6,7 +6,7 @@ parent: the-processing-unit-structure-and-configuration.html
 weight: 400
 ---
 
-{% compositionsetup %}{% summary page|70 %}The processing unit can be injected with dynamic property values at deployment time. The mechanism leverages Spring's [`PropertyPlaceholderConfigurer`](http://static.springframework.org/spring/docs/2.5.x/reference/beans.html#beans-factory-placeholderconfigurer) to provide powerful and simple properties-based injection.{% endsummary %}
+ {% summary   %}The processing unit can be injected with dynamic property values at deployment time. The mechanism leverages Spring's [`PropertyPlaceholderConfigurer`](http://static.springframework.org/spring/docs/2.5.x/reference/beans.html#beans-factory-placeholderconfigurer) to provide powerful and simple properties-based injection.{% endsummary %}
 
 # Overview
 
@@ -115,7 +115,7 @@ Also note that the parsing of the SLA element happens on the deploy tool side, s
 
 # Using Deployment Properties to Override Space Schema and Cluster Schema
 
-When a [Space](./the-space-component.html) is created, two major groups of configuration elements determine its runtime configuration: the space schema and the cluster schema. The cluster schema controls the space clustering topology (partitioned or replicated), whether the replication to its replicas is synchronous or asynchronous, and various other aspects that control its clustering behavior. The space schema on the other hand, controls other elements which are not related to the space clustering topology, such as the eviction strategy (LRU, ALL_IN_CACHE), whether or not its persistent, etc.
+When a [Space](./the-space-configuration.html) is created, two major groups of configuration elements determine its runtime configuration: the space schema and the cluster schema. The cluster schema controls the space clustering topology (partitioned or replicated), whether the replication to its replicas is synchronous or asynchronous, and various other aspects that control its clustering behavior. The space schema on the other hand, controls other elements which are not related to the space clustering topology, such as the eviction strategy (LRU, ALL_IN_CACHE), whether or not its persistent, etc.
 
 The basis for these two configuration groups are XML files located inside the GigaSpaces libraries. In order to override the values in these XML files, one can simply specify the [XPath](http://en.wikipedia.org/wiki/XPath) expression that corresponds to the element to be overridden.
 

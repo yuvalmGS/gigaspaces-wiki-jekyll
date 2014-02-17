@@ -1,4 +1,6 @@
 
+{%anchor count%}
+
 # The Count Operation
 
 

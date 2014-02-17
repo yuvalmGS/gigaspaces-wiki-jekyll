@@ -1,4 +1,5 @@
 
+{%anchor read%}
 
 # The Read Operation
 {%section%}
@@ -58,7 +59,7 @@ The following example writes an `Employee` object into the space and reads it ba
 {% endhighlight %}
 
 
-
+{%anchor readMultiple%}
 
 #### Read multiple
 
@@ -108,6 +109,7 @@ The GigaSpace interface provides simple way to perform bulk read operations. You
 - Exception handling - operation many throw the following Exceptions. [ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/ReadMultipleException.html)
 {%endnote%}
 
+{%anchor readIfExists%}
 
 #### Read if exists
 A readIfExists operation will return a matching object, or a null if there is currently no matching object in the space.
@@ -126,6 +128,7 @@ If at the end of that time no value can be returned that would not interfere wit
 	Employee e = space.readIfExists(query);
 {% endhighlight %}
 
+{%anchor asynchronousRead%}
 
 #### Asynchronous Read
 

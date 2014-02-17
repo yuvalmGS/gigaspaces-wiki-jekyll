@@ -1,4 +1,6 @@
 
+{%anchor clear%}
+
 # The Clear Operation
 
 {%section%}

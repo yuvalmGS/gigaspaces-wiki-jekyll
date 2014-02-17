@@ -45,7 +45,7 @@ String url ="jini://*/*/xapTutorialSpace";
 
 You can configure the Space URL with several options.
 
-{%learn%}{%latestjavaurl%}/space-url.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/the-space-configuration.html{%endlearn%}
 
 
 When a client connects to a space, a proxy is created that holds a connection which implements the space API. All client interaction is performed through this proxy.

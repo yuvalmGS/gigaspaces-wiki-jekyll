@@ -6,8 +6,8 @@ parent: mule-esb.html
 weight: 400
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}OpenSpaces Mule SEDA model allows you to define services that are aware of the space mode they are working with; and to store SEDA queues in a virtualized space queue instead of Mule's default VM queues.{% endsummary %}
+
+{% summary  %}OpenSpaces Mule SEDA model allows you to define services that are aware of the space mode they are working with; and to store SEDA queues in a virtualized space queue instead of Mule's default VM queues.{% endsummary %}
 
 # Overview
 
@@ -27,7 +27,7 @@ http://www.openspaces.org/schema/mule/os-seda http://www.openspaces.org/schema/8
 
 # Space Mode Aware Service
 
-When working in an SBA architecture, where each Mule Processing Unit works with (and starts) an embedded Space cluster member, some cluster members are actually the backup members (in a primary-backup topology). In such a case, operations performed directly against the Space cluster member are not allowed (clustered operations are, of course, allowed). Many times, we want to start services that work directly against the cluster member only when they are working directly with a primary cluster member. For more details, see the [OpenSpaces Core Component - Space](./the-space-component.html#OpenSpacesCoreComponent-Space-Primary%2FBackup) section.
+When working in an SBA architecture, where each Mule Processing Unit works with (and starts) an embedded Space cluster member, some cluster members are actually the backup members (in a primary-backup topology). In such a case, operations performed directly against the Space cluster member are not allowed (clustered operations are, of course, allowed). Many times, we want to start services that work directly against the cluster member only when they are working directly with a primary cluster member. For more details, see the [OpenSpaces Core Component - Space](./the-space-configuration.html#proxy) section.
 
 This is easily achieved using OpenSpaces extensions to the Mule SEDA model. Here is an example:
 

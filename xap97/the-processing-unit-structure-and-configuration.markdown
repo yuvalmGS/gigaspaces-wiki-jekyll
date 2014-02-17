@@ -6,8 +6,8 @@ parent: packaging-and-deployment.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|70 %}This page describes the processing unit directory structure{% endsummary %}
+
+{% summary   %}This page describes the processing unit directory structure{% endsummary %}
 
 # The Processing Unit Jar File
 
@@ -118,7 +118,7 @@ Each GSC to which a certain instance was provisioned, downloads the processing u
 
 # Deploying Data Only Processing Units
 
-In some cases, your processing unit contains only a [Space](./the-space-component.html) and no custom code.
+In some cases, your processing unit contains only a [Space](./the-space-configuration.html#proxy) and no custom code.
 
 One way to package such processing unit is to use the standard processing unit packaging described above, and create a processing unit jar file which only includes a [deployment descriptor](./configuring-processing-unit-elements.html) with the required space definitions and SLA.
 

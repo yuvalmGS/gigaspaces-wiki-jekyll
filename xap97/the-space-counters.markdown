@@ -3,29 +3,38 @@ layout: post
 title:  Counters
 categories: XAP97
 parent: the-gigaspace-interface.html
-weight: 200
+weight: 3200
 ---
 
-{% compositionsetup %}
+
+{% summary %}Real Time atomic counter using the **GigaSpace.change API**{% endsummary %}
+
+
+# Overview
 
 {% section %}
-{% column %}
-{% summary page|60 %}Real Time atomic counter using the `GigaSpace.change` API{% endsummary %}
+{% column width=70% %}
+A growing number of applications such as real time ad impressions , ad optimization engines, social network , on-line gaming , need real-time counters when processing incoming streaming of events. The challenge is to update the counter in atomic manner without introducing a bottleneck event processing flow.
 {% endcolumn %}
-{% column %}
+{% column width=25% %}
 ![counter-logo.jpg](/attachment_files/counter-logo.jpg)
 {% endcolumn %}
 {% endsection %}
 
-# Overview
+GigaSpaces introducing Counter functionality via the `GigaSpace.change` API. It allows you to increment or decrement an Numerical field within your Space object (POJO or Document). This change may operate on a numeric property only (byte,short,int,long,float,double) or their corresponding Boxed variation. To maintain a counter you should use the Change operation with the `ChangeSet` increment/decrement method that adds/subtract the provided numeric value to the existing counter.
 
-A growing number of applications such as real time ad impressions , ad optimization engines, social network , on-line gaming , need real-time counters when processing incoming streaming of events. The challenge is to update the counter in atomic manner without introducing a bottleneck event processing flow. GigaSpaces introducing Counter functionality via the `GigaSpace.change` API. It allow you to increment or decrement an Numerical field within your Space object (POJO or Document). This change may operate on a numeric property only (byte,short,int,long,float,double) or their corresponding Boxed variation. To maintain a counter you should use the Change operation with the `ChangeSet` increment/decrement method that adds/subtract the provided numeric value to the existing counter. There is no need to use a transaction when getting the counter value as the counter is atomic.
 
-![change-api-counter.jpg](/attachment_files/change-api-counter.jpg)
-
+{% section %}
+{% column width=50% %}
+There is no need to use a transaction when getting the counter value as the counter is atomic.
 If the counter property does not exists, the delta will be set as its initial state. This simple API allows you to maintain counters with minimal impact on the system performance as it is replicating only the `ChangeSet` command and not the entire space object to the backup copy when running a clustered data-grid.
+{% endcolumn %}
+{% column width=45% %}
+![change-api-counter.jpg](/attachment_files/change-api-counter.jpg)
+{% endcolumn %}
+{% endsection %}
 
-# Incrementing a Counter
+# Incrementing
 
 Incrementing a Counter done using the `ChangeSet().increment` call:
 
@@ -36,7 +45,7 @@ IdQuery<WordCount> idQuery = new IdQuery<WordCount>(WordCount.class, id);
 space.change(idQuery, new ChangeSet().increment("mycounter", 1));
 {% endhighlight %}
 
-# Decrementing a Counter
+# Decrementing
 
 Decrementing a Counter done using the `ChangeSet().decrement` call:
 
@@ -47,7 +56,7 @@ IdQuery<WordCount> idQuery = new IdQuery<WordCount>(WordCount.class, id);
 space.change(idQuery, new ChangeSet().decrement("mycounter", 1));
 {% endhighlight %}
 
-# Clearing a Counter
+# Clearing
 
 Clearing the Counter value done using the `ChangeSet().unset` call:
 
@@ -58,7 +67,7 @@ IdQuery<WordCount> idQuery = new IdQuery<WordCount>(WordCount.class, id);
 space.change(idQuery, new ChangeSet().unset("mycounter"));
 {% endhighlight %}
 
-# Getting the Counter value
+# Getting the value
 
 Getting the Counter value done via the read call:
 
@@ -99,7 +108,7 @@ AsyncFuture<Integer> future = gigaSpace.execute(new GetCounterTask("myID"), rout
 int counterValue= future.get();
 {% endhighlight %}
 
-# Pre-Loading Counters
+# Pre-Loading
 
 When pre-loading the space via the [External Data Source initial-load](./space-persistency-initial-load.html) you may need to construct Counters data. The `initialLoad` method allows you to implement the logic to generate the counter data and load it into the space after the actual data been loaded from the external data source (database).
 

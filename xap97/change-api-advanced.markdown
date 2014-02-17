@@ -6,7 +6,7 @@ parent: change-api.html
 weight: 100
 ---
 
-{% compositionsetup %}
+
 {% summary %}This page covers the Change API more advanced scenarios.{% endsummary %}
 
 # Change and SpaceSynchronizationEndpoint
@@ -102,8 +102,9 @@ By default, the change result will only contain the number of entries which were
  	}
 {% endhighlight %}
 
+{%comment%}
 For the common use case you can use the [Change Extension](./change-extension.html) class which provide helper methods which simplify the most common use cases and allow you to do simple operation such as an atomic `addAndGet` operation. This extension are a syntactic sugaring on top of the above API.
-
+{%endcomment%}
 
 # Change and Replication Filters
 

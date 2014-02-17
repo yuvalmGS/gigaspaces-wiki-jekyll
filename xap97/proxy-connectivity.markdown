@@ -27,7 +27,7 @@ The space proxy router has the following responsibilities:
 
 # Configuration
 
- The space proxy router behavior is controlled using the following configuration properties, which can be specified as part of the [Space Component](./the-space-component.html#Reconnection) or via API:
+ The space proxy router behavior is controlled using the following configuration properties, which can be specified as part of the [Space Component](./the-space-configuration.html#proxy) or via API:
 
 {: .table .table-bordered}
 |Property|Description|Default value|
