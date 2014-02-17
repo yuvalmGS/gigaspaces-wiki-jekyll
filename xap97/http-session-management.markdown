@@ -6,14 +6,14 @@ parent: web-jetty-processing-unit-container.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}HTTP Session Management{% endsummary %}
+
+{% summary  %}HTTP Session Management{% endsummary %}
 
 # Overview
 
-The GigaSpaces-Jetty integration comes with a support for storing the [javax.servlet.http.HttpSession](http://download.oracle.com/javaee/1.3/api/javax/servlet/http/HttpSession.html) in the Space allowing supporting session replication and failover between different web application instances deployed into GigaSpaces containers.
+The XAP-Jetty integration comes with a support for storing the [javax.servlet.http.HttpSession](http://download.oracle.com/javaee/1.3/api/javax/servlet/http/HttpSession.html) in the Space allowing supporting session replication and failover between different web application instances deployed into XAP containers.
 
-The GigaSpaces HTTP Session Management provides the following:
+The XAP HTTP Session Management provides the following:
 
 - Avoid using database as the persistent storage media - Better performance and simplify the deployment
 - Allow management and control of full lifecycle of web application - From the load-balancer to the data
@@ -25,13 +25,13 @@ The GigaSpaces HTTP Session Management provides the following:
 For global HTTP Session Managment for Tomcat , JBoss , Weblogic , Websphere , Glassfish and other J2EE web/application servers see the [Global Http Session Sharing](./global-http-session-sharing.html).
 {% endtip %}
 
-# How to enable GigaSpaces HTTP Session Management
+# How to enable XAP's HTTP Session Management
 
 There are several ways to configure Space session based support, depending on the definition of which Space and how the Space was started.
 
 ## Using Deploy property
 
-Here is how you can deploy an existing WAR file without changing it (or use Spring) to use GigaSpaces HTTP Session Management:
+Here is how you can deploy an existing WAR file without changing it (or use Spring) to use XAP HTTP Session Management:
 
 {% highlight java %}
 gs deploy -properties embed://jetty.sessions.spaceUrl=jini://*/*/sessionSpace?useLocalCache myWar.war
@@ -62,7 +62,9 @@ Controlling the session Management done via the following properties:
 |`jetty.sessions.timeout`| Determines the HTTP session timeout in minutes (similar to `session-timeout` element in `web.xml`|30 minutes| No |
 |`jetty.sessions.lease`| The lease of the [SessionData](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/jee/sessions/jetty/SessionData.html) that is written to the Space |Long.MAX_VALUE | No |
 
-{% lampon %} OpenSpaces integration implements Jetty `SessionManager` and `SessionIdManager` in `GigaSesssionManager` and `GigaSessionIdManager`. When setting the **jetty.sessions.spaceUrl** they get automatically set as the session manager and session id manager of the web app.
+{% info %}
+XAP integration implements Jetty `SessionManager` and `SessionIdManager` in `GigaSesssionManager` and `GigaSessionIdManager`. When setting the **jetty.sessions.spaceUrl** they get automatically set as the session manager and session id manager of the web app.
+{%endinfo%}
 
 # Deployment Topologies
 

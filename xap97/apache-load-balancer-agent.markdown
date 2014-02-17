@@ -2,16 +2,16 @@
 layout: post
 title:  Apache Load Balancer Agent
 categories: XAP97
-parent: web-processing-unit-container.html
+parent: web-application-support.html
 weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}Provides dynamic load balancing integration with an Apache httpd server.{% endsummary %}
+
+{% summary  %}Provides dynamic load balancing integration with an Apache httpd server.{% endsummary %}
 
 # Overview
 
-GigaSpaces comes with a built-in utility allowing you to dynamically update an Apache httpd web server load-balancing configuration, based on deployed web applications.
+XAP comes with a built-in utility allowing you to dynamically update an Apache httpd web server load-balancing configuration, based on deployed web applications.
 
 The integration dynamically creates and updates the  [mod_proxy_balancer](http://httpd.apache.org/docs/2.2/mod/mod_proxy_balancer.html) configuration, based on the state of the deployed web applications. Once changes occur (relocation / failover / changes to the number of web application instances), the utility identifies the change, updates the balancer configuration, and sends a soft restart to Apache to take the new configuration into account.
 
@@ -34,7 +34,7 @@ Here is a description of the flow that eventually scales the web application dyn
 
 # Usage
 
-The agent resides within `GigaSpaces Root folder/tools/apache` and includes the `apache-lb-agent` script. The script should run within the same box where the Apache server is running.
+The agent resides within `XAP` Root folder/tools/apache` and includes the `apache-lb-agent` script. The script should run within the same box where the Apache server is running.
 
 The agent uses two main configurations. The first is the directory where the load-balancer configuration files are created (there is one per web application). The second is the command the script executes in order to update Apache with the changes made to the load-balancer configuration files.
 
@@ -52,7 +52,7 @@ Windows:
 apache-lb-agent.bat -apache c:\Apache2.2
 {% endhighlight %}
 
-When using just the Apache location, the configuration files are created under \[apache\]/conf/gigaspaces. The command executed is `\[apache\]/bin/apachectl graceful` on Unix, and `\[apache\]\bin\httpd.exe -k restart` on Windows.
+When using just the Apache location, the configuration files are created under [apache]/conf/gigaspaces. The command executed is `[apache]/bin/apachectl graceful` on Unix, and `[apache]\bin\httpd.exe -k restart` on Windows.
 
 The specific location of the configuration directory where the load-balancer configuration files are created, can be passed using the `-conf-dir` command line parameter. For example:
 
@@ -104,13 +104,13 @@ When running the Apache Load Balancer and the agent on Windows, please make sure
 |-update-interval `value`|The update interval command. The interval (in milliseconds) when the load balancer conf files will be updated). The agent updates the configuration files and sends the restart command periodically. All changes happening to the deployment are accumulated and then flushed. | 10000 (10 seconds)|
 |-restart-command `value`|The full apache restart command.| windows: httpd -k restart{% wbr %}unix: apachectl graceful|
 |-apachectl `location`|Controls the The `apachectl`/`httpd` executable name and full path location. This overrides the `-apache` parameter. If this argument is not specified the agent looking for the apachectl(on unix) or httpd.exe(on windows) executable under `apache root folder/bin/` folder.| |
-|-groups `value`|Lookup group name (or coma separated group names) to locate the lookup service via multicast discovery protocol. This option is relevant only when the load-balanacer machine has multicast connectivity with the GSM machine.|The GigaSpaces default group name specified via the `LOOKUPGROUPS` variable.|
-|-locators `value`|Host machine name(or coma separated host names) or IP(s) running the lookup service.| The GigaSpaces default locators specified via the `LOOKUPLOCATORS` variable.|
+|-groups `value`|Lookup group name (or coma separated group names) to locate the lookup service via multicast discovery protocol. This option is relevant only when the load-balanacer machine has multicast connectivity with the GSM machine.|The XAP default group name specified via the `LOOKUPGROUPS` variable.|
+|-locators `value`|Host machine name(or coma separated host names) or IP(s) running the lookup service.| The XAP default locators specified via the `LOOKUPLOCATORS` variable.|
 
 The agent listens for changes happening in the web application deployment topology running within the Service Grid. If custom lookup groups or lookup locators are used, the agent scripts use the built-in options within the product to change them (for example, in setenv.(bat/sh)).
 
 # Load Balancer Configuration
 
-A load-balancer configuration is created for each web application deployed into the service grid. The template used to generate the load-balancer configuration can be found under `GigaSpaces Root folder/tools/apache/balancer-template.vm`. The file is a velocity template, used to generate the actual load-balancer configuration. It is passed with an instance of the `org.openspaces.pu.container.jee.lb.apache.LoadBalancerInfo` object, which holds all the information regarding the currently deployed web application instances locations.
+A load-balancer configuration is created for each web application deployed into the service grid. The template used to generate the load-balancer configuration can be found under `XAP Root folder/tools/apache/balancer-template.vm`. The file is a velocity template, used to generate the actual load-balancer configuration. It is passed with an instance of the `org.openspaces.pu.container.jee.lb.apache.LoadBalancerInfo` object, which holds all the information regarding the currently deployed web application instances locations.
 
 Processing unit specific templates can be created by placing a **processing unit name.vm** file in the same location. Note, the processing unit name is the name of the processing unit which defaults to the war file name, but can be overridden using the `override-name` option.
