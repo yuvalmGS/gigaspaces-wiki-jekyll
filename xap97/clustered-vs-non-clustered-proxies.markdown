@@ -132,7 +132,9 @@ this.id = id;
 }
 {%endhighlight%}
 
-{%note%}When there is no explicit `@SpaceRouting` decoration the method annotated as the `@SpaceId` used as the `@SpaceRouting` method.{%endnote%}
+{%note%}
+When there is no explicit `@SpaceRouting` declared, the method annotated as the `@SpaceId` is used as the `@SpaceRouting` method.
+{%endnote%}
 
 ## A Remote Service Usage of a Clustered and a Non-Clustered Proxy
 
