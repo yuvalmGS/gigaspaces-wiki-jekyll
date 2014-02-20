@@ -2,11 +2,16 @@
 layout: post
 title:  Class Metadata
 categories: XAP97
-parent: pojo-metadata.html
-weight: 100
+parent: modeling-your-data.html
+weight: 110
 ---
 
 {% summary %}This section explains the different class metadata.{% endsummary %}
+
+
+
+The [GigaSpaces API](./the-gigaspace-interface.html) supports class and field-level decorations with POJOs. These can be specified via annotations on the space class source itself or external xml file accompanied with the class byte code files located within the jar/war. You can define common behavior for all class instances, and specific behavior for class fields.
+
 
 {%wbr%}
 

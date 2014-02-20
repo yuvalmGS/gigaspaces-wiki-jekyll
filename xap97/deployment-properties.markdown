@@ -23,7 +23,7 @@ Property injection to the processing unit's configuration is supported at the Sp
 Below you can find an example of an XML configuration which defines to property place holders, `spaceSchema` and `connectionTimeout`. In this example we also specify default values for them, which is always a good practice and does not force the deployer to specify values for these place holders.
 
 {% tip %}
-Note that for property place holders we use the `$\{placeholder name\`} notation.
+Note that for property place holders we use the `${placeholder name`} notation.
 {%endtip%}
 
 {% inittab os_simple_space|top %}

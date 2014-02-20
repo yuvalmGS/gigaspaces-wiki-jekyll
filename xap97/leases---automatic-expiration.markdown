@@ -2,11 +2,11 @@
 layout: post
 title:  Leases - Automatic Expiration
 categories: XAP97
-parent: getting-started.html
-weight: 800
+parent: the-gigaspace-interface.html
+weight: 7000
 ---
 
-{% compositionsetup %}{% summary %}Lease basics and explains how Leases can be managed{% endsummary %}
+{% summary %}Lease basics and explains how Leases can be managed{% endsummary %}
 
 # Overview
 

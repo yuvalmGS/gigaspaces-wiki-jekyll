@@ -3,7 +3,7 @@ layout: post
 title:  Space Document
 categories: XAP97
 parent: programmers-guide.html
-weight: 550
+weight: 20
 ---
 
 {% summary %}Working with Space Documents{% endsummary %}

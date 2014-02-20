@@ -2,8 +2,8 @@
 layout: post
 title:  Routing In Partitioned Spaces
 categories: XAP97
-parent: getting-started.html
-weight: 700
+parent: modeling-your-data.html
+weight: 300
 ---
 
 {% summary %}Understanding how space operations behave in a partitioned environment.{% endsummary %}

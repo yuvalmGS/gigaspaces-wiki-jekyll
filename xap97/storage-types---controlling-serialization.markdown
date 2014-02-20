@@ -2,8 +2,8 @@
 layout: post
 title:  Storage Types
 categories: XAP97
-parent: getting-started.html
-weight: 500
+parent: modeling-your-data.html
+weight: 200
 ---
 
 

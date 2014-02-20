@@ -2,8 +2,8 @@
 layout: post
 title:  Space Object ID
 categories: XAP97
-parent: getting-started.html
-weight: 400
+parent: modeling-your-data.html
+weight: 100
 ---
 
 {% summary %}Space Object ID Usage{% endsummary %}

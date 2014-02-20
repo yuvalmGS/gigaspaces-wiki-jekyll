@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Querying The Space
+title:  Querying the Space
 categories: XAP97
 parent: programmers-guide.html
 weight: 300

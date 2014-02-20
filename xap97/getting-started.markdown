@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  Basic Concepts
-categories: XAP97
-weight: 100
+categories:
+weight:
 parent: programmers-guide.html
 ---
 

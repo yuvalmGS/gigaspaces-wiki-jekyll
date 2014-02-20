@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Change API Advanced
+title:  Advanced
 categories: XAP97
 parent: change-api.html
 weight: 100
