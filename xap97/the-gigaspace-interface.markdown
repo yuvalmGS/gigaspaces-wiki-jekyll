@@ -394,7 +394,7 @@ Many times, especially when working with a Processing Unit that starts an embedd
 
 **Embedded Non-Clustered GigaSpace proxy vs. Embedded Clustered GigaSpace Proxy**
 
-The decision of working directly with a cluster member or against the whole cluster is done in the `GigaSpace` level. The `GigaSpacesFactoryBean` provides a clustered flag with the following logic as the default value: If the space is started in embedded mode (for example, `/./space`), the clustered flag is set to `false`. When the space is looked up in a remote protocol (i.e. jini://*/*/space), the clustered flag is set to `true`. Naturally, the flag can be set explicitly. Here is an example of how the clustered flag can be configured:
+The decision of working directly with a cluster member or against the whole cluster is done in the `GigaSpace` level. The `GigaSpacesFactoryBean` provides a clustered flag with the following logic as the default value: If the space is started in embedded mode (for example, `/./space`), the clustered flag is set to `false`. When the space is looked up in a remote protocol (i.e. `jini://*/*/space`), the clustered flag is set to `true`. Naturally, the flag can be set explicitly. Here is an example of how the clustered flag can be configured:
 
 {% inittab os_simple_space|top %}
 {% tabcontent Namespace %}

@@ -241,7 +241,7 @@ public class Person {
 Read more about the GigaSpaces runtime environment, how to model your data in a clustered environment, and how to leverage the power capabilities of the Space.
 
 - [Elastic Processing Unit]({%currentjavaurl%}/elastic-processing-unit.html)
-- [Modeling and Accessing Your Data]({%currentjavaurl%}/modeling-your-data.html)
+- [Modeling and Accessing Your Data](/sbp/modeling-your-data.html)
 - [Deploying and Interacting with the Space]({%currentjavaurl%}/administrators-guide.html)
 - [The GigaSpaces Runtime Environment]({%currentjavaurl%}/the-runtime-environment.html)
 

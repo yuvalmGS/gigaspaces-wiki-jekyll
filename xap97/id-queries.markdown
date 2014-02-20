@@ -63,7 +63,7 @@ for (Employee employee : result) {
 You can specify which properties should be populated when the result is created the [Projection API](./getting-partial-results-using-projection-api.html).
 
 {% tip %}
-See [Parent Child Relationship](./parent-child-relationship.html) for a full usage example of the `readByIds` operation.
+See [Parent Child Relationship](/sbp/parent-child-relationship.html) for a full usage example of the `readByIds` operation.
 ReadById is intended to objects with meaningful ids,if used with auto-generate="true" ids,the given object type will be ignored.
 {% endtip %}
 

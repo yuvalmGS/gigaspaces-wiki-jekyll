@@ -16,7 +16,7 @@ An XAP web processing unit can use [Jetty](http://www.eclipse.org/jetty/) as the
 ![web_app_archi.jpg](/attachment_files/web_app_archi.jpg)
 
 {% info %}
-For general web support features that are relevant, regardless of the web container used, please refer to [Web Processing Unit Container](./web-processing-unit-container.html).
+For general web support features that are relevant, regardless of the web container used, please refer to [Web Processing Unit Container](./web-application-support.html).
 {%endinfo%}
 
 {% tip %}
