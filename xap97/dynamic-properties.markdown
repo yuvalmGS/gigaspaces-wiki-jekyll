@@ -2,8 +2,8 @@
 layout: post
 title:  Dynamic Properties
 categories: XAP97
-parent: getting-started.html
-weight: 200
+parent: pojo-support.html
+weight: 100
 ---
 
 {% summary %}Using Dynamic Properties with POJO entries.{% endsummary %}
