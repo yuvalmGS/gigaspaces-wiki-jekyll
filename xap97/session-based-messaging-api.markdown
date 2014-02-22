@@ -27,7 +27,7 @@ The Event Session API is the low level API for notifications. It is preferable t
 2. Filter the events before sent to the client (optional). {%wbr%}
 3. Receive the event.
 
-![sessionbasedmessagingapt1.jpg](/attachment_files/sessionbasedmessagingapi1.jpg)
+![sessionbasedmessagingapt11.jpg](/attachment_files/sessionbasedmessagingapi11.jpg)
 
 The session-based messaging API is designed with the following objectives:{%wbr%}
 * *Simple and unified interfaces*  {%wbr%}
@@ -626,7 +626,7 @@ For the custom client-side FIFO-based notifications example, send a request to s
 
 Notifications are asynchronous by nature. The client that triggered the notification is unaware of the notification delivery, and does not wait for an acknowledgement from the client receiving the notification for successful arrival of the event before continuing with its operation -- i.e., when process A registers for notification delivery, and B writes an Entry to the space, process B does not wait for process A to receive the notification before taking control after the write operation. Process B might perform additional space operations before process A receives the notification.
 
-![sessionbasedmessagingapi2.jpg](/attachment_files/sessionbasedmessagingapi2.jpg)
+![sessionbasedmessagingapi22.jpg](/attachment_files/sessionbasedmessagingapi22.jpg)
 
 When a space running in a fault tolerant configuration (`primary-backup` or `partitioned-sync2backup` cluster schemas) and the primary space fails, the backup space takes over and sends the notifications to the registered clients. In such a configuration, the primary and backup spaces do not establish a handshake mechanism when a notification is sent to the client. The backup space, that is running in stand-by mode, is unaware of the notifications that have been sent by the primary space, and the acknowledgement that the recipients clients provided when receiving the events is not sent.
 
