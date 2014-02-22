@@ -28,7 +28,6 @@ The GigaSpaces LRMI protocol has been designed to allow multiple services runnin
 
 The GigaSpaces LRMI using two independent resource pools working collaboratively allowing a client to communicate with a server in a scalable manner: A client connection pool configured via the `com.gs.transport_protocol.lrmi.max-conn-pool` at the server side and a server Connection thread pool configured via the `com.gs.transport_protocol.lrmi.max-threads` also at the server side. You may configure these two pools' sizes and their resource timeouts to provide maximum throughput and low latency when a client communicates with a server. The default LRMI behavior will open a different connection at the client side and start a connection thread at the server side, once a multithreaded client accesses a server component. All client connections may be shared between all the client threads when communicating with the server. All server side connection threads may be shared between all client connections.
 
-{% toczone %}
 
 ## Client LRMI Connection Pool
 
@@ -95,10 +94,13 @@ The network failure detection mechanism is timeout-based -- each read operation 
 
 Failure detection uses a watchdog design pattern to monitor timeouts of NIO operations. Watchdog is a singleton thread that runs every predefined period of time, according to timeout resolution, checks all the threads that are currently registered and fires timeout event on the threads that exceeded their allowed timeout.
 
-{% comment %}
 
-{% infosign %} When network failure occurs and notify is used, the space tries to resend the notify the number of times specified in the `<notifier-retries>` property. When using a clustered space, `<notifier-retries>` is used together with the network failure detection properties.
-{% endcomment %}
+
+{% info %}
+When network failure occurs and notify is used, the space tries to resend the notify the number of times specified in the `<notifier-retries>` property. When using a clustered space, `<notifier-retries>` is used together with the network failure detection properties.
+{%endinfo%}
+
+
 
 A value for the `com.gs.transport_protocol.lrmi.idle_connection_timeout` and the `com.gs.transport_protocol.lrmi.request_timeout` properties should be determined based on the amount of total clients a system may have and the number of the concurrent activities these clients may have. Small values (100 and 30, respectively) are recommended for systems with very large amounts of clients with high concurrency. High values (900 and 300, respectively) are recommended for system with very small amount of clients with high concurrency.
 
@@ -148,7 +150,9 @@ The `LRMI` configuration options set as system proprties. They are listed below:
 | `com.gs.transport_protocol.lrmi.tcp-keep-alive` | Set the TCP keep alive mode (SO_KEEPALIVE).| `true` | Client & Server| Seconds|Yes|
 | `com.gs.transport_protocol.lrmi.timeout_resolution` | Resolution in percents. Timeout resolution indicates the accuracy of the request timeout. | `10` | Client | Percent|Yes|
 
-{% lampon %} If you are using the **notification slow consumer** mechanism see the [Slow Consumer](./slow-consumer.html#Configuration -- Server Side) for additional LRMI parameters to configure.
+{% tip %}
+If you are using the **notification slow consumer** mechanism see the [Slow Consumer](./slow-consumer.html#Configuration -- Server Side) for additional LRMI parameters to configure.
+{%endtip%}
 
 {% anchor portrange %}
 
@@ -261,7 +265,7 @@ The client displays the following:
 
 ## JVM Known Issue
 
-{% lampon %} In some cases you may encounter the following exception:
+In some cases you may encounter the following exception:
 
 {% highlight java %}
 CONFIG [com.gigaspaces.grid.gsc]: initialServiceLoadDelay=5000
@@ -278,9 +282,11 @@ at java.lang.Thread.run(Thread.java:595)
 
 This is a JVM bug resolved with JDJ 1.6u18. For more details, see [http://bugs.sun.com](http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6524172).
 
-{% lampon %} If your client application loses its connection to the server, you can follow a simple procedure to check if the server erased any of your notify templates in the interim. For each notify template, write an Entry to the space that matches the template and see if you receive a notification. If you do not receive a notification, this means that while you were disconnected, new Entries matching the notify template entered the space (you can try to find them -- depending on their lease time, they may still exist). As a result, your notify template was erased.
+{% info %}
+If your client application loses its connection to the server, you can follow a simple procedure to check if the server erased any of your notify templates in the interim. For each notify template, write an Entry to the space that matches the template and see if you receive a notification. If you do not receive a notification, this means that while you were disconnected, new Entries matching the notify template entered the space (you can try to find them -- depending on their lease time, they may still exist). As a result, your notify template was erased.
+{%endinfo%}
 
-{% endtoczone %}
+
 
 
 
