@@ -286,7 +286,7 @@ The GSA, by default, will start 2 local Grid Service Containers, and manage a gl
 
 **The GigaSpaces Agent**
 
-[The GigaSpaces Agent (GSA)](/product_overview/service-grid.html#gsa) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as the Grid Service Manager (aka [The GigaSpaces Manager](/sbp/service-grid.html#gsm)), the Grid Service Container (aka [The GigaSpaces Container](/sbp/service-grid.html#gsc)), and Lookup Service.
+[The GigaSpaces Agent (GSA)](/product_overview/service-grid.html#gsa) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as the Grid Service Manager (aka [The GigaSpaces Manager](/product_overview/service-grid.html#gsm)), the Grid Service Container (aka [The GigaSpaces Container](/product_overview/service-grid.html#gsc)), and Lookup Service.
 
 {% endpanel %}
 {% endgcloak %}
