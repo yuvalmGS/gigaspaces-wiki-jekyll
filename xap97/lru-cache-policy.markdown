@@ -3,10 +3,9 @@ layout: post
 title:  LRU-Cache Policy
 categories: XAP97
 parent: memory-management-facilities.html
-weight: 300
+weight: 200
 ---
 
-{% compositionsetup %}
 {% summary %}The LRU Cache policy{% endsummary %}
 
 # Overview

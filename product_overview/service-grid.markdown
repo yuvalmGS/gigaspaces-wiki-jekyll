@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Service Grid
-categories: XAP97
+categories: PRODUCT_OVERVIEW
 weight: 100
 parent: the-runtime-environment.html
 ---
@@ -84,54 +84,3 @@ Local processes simply start the process type (for example, a [Grid Service Cont
 
 Global processes take into account the number of process types [Grid Service Manager](#gsm) for example) that are currently running by other GSAs (within the same lookup groups or lookup locators). It will automatically try and run at least X number of processes *across* all the different GSAs (with a maximum of 1 process type per GSA). If a GSA running a process type that is managed globally fails, another GSA will identify the failure and start it in order to maintain at least X number of global process types.
 
-# Starting a Service Grid
-
-In order to start the GSA, the `<GSHOME>/bin/gs-agent.(sh/bat)` can be used.
-
-The preferable (and easiest) way to start a Service Grid is the [Grid Service Agent](#gsa). However, each of the components can be started manually.
-
-The following table summarized how to start each component:
-
-{: .table .table-bordered}
-|Component | Linux (XAP) | Windows (XAP) | Windows (XAP.NET) |
-|:---------|:------------|:--------------|:------------------|
-| GSA | `gs-agent.sh` | `gs-agent.bat` | gs-agent.exe |
-| GSC | `gsc.sh` | `gsc.bat` | `gsc.exe` |
-| GSM | `gsm_nolus.sh` | `gsm_nolus.bat` | N\A |
-| LUS | `startJiniLUS.sh` | `startJiniLUS.bat` | `lus.exe` |
-| GSM + LUS | `gsm.sh` | `gsm.bat` | `gsm.exe` |
-
-## GSA Parameters
-
-The GSA parameters control how many local process the GSA will spawn on startup (per process type), and the number of globally managed process the GSA will maintain (in cooperation with other GSAs) (per process type). By default, the GSA is started with 2 local [Grid Service Containers](#gsc), and manage 2 global [Grid Service Manager](#gsm) and 2 global [Lookup Service](#lus). This is the equivalent of starting the GSA with the following parameters:
-
-{% highlight java %}
-gs-agent gsa.gsc 2 gsa.global.gsm 2 gsa.global.lus 2
-{% endhighlight %}
-
-In order to, for example, start 3 local GSCs, 2 global GSMs, and no global LUS, the following command can be used:
-
-{% highlight java %}
-gs-agent gsa.gsc 3 gsa.global.gsm 2 gsa.global.lus 0
-{% endhighlight %}
-
-In general, the `gsa.[process type]` followed by a number controls the number of local processes of the specific process type that will be spawned by the GSA. The `gsa.global.[process type]` following by a number controls the number of globally managed processes of the specific process type.
-
-### Lookup Service Considerations
-
-When starting a [Lookup Service](#lus) and other services in unicast mode (not multicast), it means that specific machines will be the ones that will run the [Lookup Service](#lus). This means that on the machines running the LUS, the following command will be used (assuming other defaults are used for GSM and GSC):
-
-{% highlight java %}
-gs-agent gsa.global.lus 0 gsa.lus 1
-{% endhighlight %}
-
-And on machines that will not run the LUS, the following command should be used:
-
-{% highlight java %}
-gs-agent gsa.global.lus 0
-{% endhighlight %}
-
-For instructions on how to configure service grid components refer to [Service Grid Configuration](./service-grid-configuration.html)
-
-
-{%tip%}You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.{%endtip%}

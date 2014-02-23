@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Configuring the Processing Unit SLA
+title:  Configuring SLA
 categories: XAP97
 parent: the-processing-unit-structure-and-configuration.html
 weight: 200
