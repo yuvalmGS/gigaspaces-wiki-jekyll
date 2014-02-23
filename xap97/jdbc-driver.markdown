@@ -6,7 +6,7 @@ parent: other-data-access-apis.html
 weight: 100
 ---
 
- {% summary   %}GigaSpaces allows applications to connect to the IMDG using a JDBC driver. A GigaSpaces JDBC driver accepts SQL statements, translates them to space operations, and returns standard result sets. {% endsummary %}
+ {% summary%}GigaSpaces allows applications to connect to the IMDG using a JDBC driver. A GigaSpaces JDBC driver accepts SQL statements, translates them to space operations, and returns standard result sets. {% endsummary %}
 
 # Overview
 
@@ -378,7 +378,7 @@ As a workaround, construct a JDBC query that includes a relevant `WHERE` part.
 
 In order to partition the data and rout operations to the correct partition you should specify a "routing column" for each table. The "routing column" is specified through one of three mechanisms:
 
-1. A POJO with a [@SpaceRouting](./pojo-metadata.html) field can be sent to the space via the `snapshot` call prior to calling the JDBC API.
+1. A POJO with a [@SpaceRouting](./modeling-your-data.html) field can be sent to the space via the `snapshot` call prior to calling the JDBC API.
 2. Create the table through JDBC; the first index as part of the CREATE TABLE statement will be the routing field.
 3. If there is no indexed column, the first column as part of the CREATE TABLE will be the routing field.
 

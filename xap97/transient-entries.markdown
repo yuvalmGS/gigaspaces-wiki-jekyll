@@ -37,6 +37,6 @@ public class MyData {
 }
 {% endhighlight %}
 
-- Transient Space objects can be constructed using the `@SpacePersist` on the relevant getter method. See the [POJO Metadata](./pojo-metadata.html) for details.
+- Transient Space objects can be constructed using the `@SpacePersist` on the relevant getter method. See the [POJO Metadata](./modeling-your-data.html) for details.
 - Transient objects will be evicted from the space only by explicit take/clear operation.
 - Having a space Class using the `persist=true` and memory (transient) based spaces, will not generate any errors or exceptions, but will not write these into any persistent store. The Entries will be transient.

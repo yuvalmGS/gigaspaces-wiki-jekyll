@@ -110,7 +110,7 @@ public class Person {
 }
 {% endhighlight %}
 
-We've indicated that `-1` should be treated as `null` when performing template matching, and initialized age to `-1` so users of Person class need not set it explicitly whenever they use it. Note that gs.xml can be used instead of annotations to specify metadata - for more information refer to [POJO Metadata](./pojo-metadata.html).
+We've indicated that `-1` should be treated as `null` when performing template matching, and initialized age to `-1` so users of Person class need not set it explicitly whenever they use it. Note that gs.xml can be used instead of annotations to specify metadata - for more information refer to [POJO Metadata](./modeling-your-data.html).
 
 {% info%} Properties of primitive types are implicitly boxed when stored in the space and unboxed when reconstructed to a POJO.
 It is highly recommended to use the  primitive wrapper classes instead of primitives to simplify the code and avoid user errors.

@@ -14,7 +14,7 @@ weight: 1500
 
 {%section%}
 {%column width=50% %}
-The basic unit of deployment in the GigaSpaces XAP platform is the [Processing Unit](./packaging-and-deployment.html).
+The basic unit of deployment in the GigaSpaces XAP platform is the [Processing Unit]({%latestjavaurl%}/packaging-and-deployment.html).
 
 Once packaged, a processing unit is deployed onto the GigaSpaces runtime environment, which is called the *Service Grid*. It is responsible for materializing the processing unit's configuration, provisioning its instances to the runtime infrastructure and making sure they continue to run properly over time.
 {%endcolumn%}
@@ -24,7 +24,7 @@ Once packaged, a processing unit is deployed onto the GigaSpaces runtime environ
 {%endcolumn%}
 {%endsection%}
 
-{% info %}When developing your processing unit, you can [run and debug the processing unit within your IDE](./running-and-debugging-within-your-ide.html). You will typically deploy it to the GigaSpaces runtime environment when it's ready for production or when you want to run it in the real-life runtime environment{% endinfo %}
+{% info %}When developing your processing unit, you can [run and debug the processing unit within your IDE]({%latestjavaurl%}/running-and-debugging-within-your-ide.html). You will typically deploy it to the GigaSpaces runtime environment when it's ready for production or when you want to run it in the real-life runtime environment{% endinfo %}
 
 # Service Grid Architecture
 
@@ -44,15 +44,15 @@ In order to discover one another in the network, the GSCs and GSMs use a [Lookup
 
 Finally, the *GSA* [Grid Service Agent](./service-grid.html#gsa) component is used to start and manage the other components of the Service Grid (i.e. GSC, GSM, LUS). Typically, the GSA is started with the hosting machine's startup. Using the agent, you can bootstrap the entire cluster very easily, and start and stop additional GSCs, GSMs and lookup services at will.
 
-All of the above components are fully manageable from the GigaSpaces management interfaces such as the [UI](./graphical-user-interface.html), CLI and [Admin API](./administration-and-monitoring-api.html).
+All of the above components are fully manageable from the GigaSpaces management interfaces such as the [UI]({%latestjavaurl%}/graphical-user-interface.html), CLI and [Admin API]({%latestjavaurl%}/administration-and-monitoring-api.html).
 
 ## Optional Components
 
-* The Elastic Service Manager (ESM) manages the [Elastic Processing Unit](./elastic-processing-unit.html) together with the GSM.
+* The Elastic Service Manager (ESM) manages the [Elastic Processing Unit]({%latestjavaurl%}/elastic-processing-unit.html) together with the GSM.
 
-* The [Apache Load Balancer Agent](./apache-load-balancer-agent.html) is used when deploying web applications.
+* The [Apache Load Balancer Agent]({%latestjavaurl%}/apache-load-balancer-agent.html) is used when deploying web applications.
 
-* The Transaction Manager (TXM) is an optional component. When executing transactions that spans multiple space partitions you should use the Jini Transaction Manager or the Distributed Transaction Manager. See the [Transaction Management](./transaction-management.html) section for details.
+* The Transaction Manager (TXM) is an optional component. When executing transactions that spans multiple space partitions you should use the Jini Transaction Manager or the Distributed Transaction Manager. See the [Transaction Management]({%latestjavaurl%}/transaction-management.html) section for details.
 
 
 

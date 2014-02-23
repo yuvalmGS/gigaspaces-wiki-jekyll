@@ -407,7 +407,7 @@ pu.scale(new EagerScaleConfigurer().create());
 The Eager trigger has the following limitations:
 
 - Number of maximum machines is limited to the number of partitions calculated/defined during the deployment time. This limitation does not exist for stateless processing units.
-- Multiple Eager EPUs can run on the same [Lookup Service](./service-grid.html#lus) but on different machines. Machines are marked by starting a Grid Service Agent with a specific zone (With a commandline argument -Dcom.gs.zones=zone1).
+- Multiple Eager EPUs can run on the same [Lookup Service](/product_overview/service-grid.html#lus) but on different machines. Machines are marked by starting a Grid Service Agent with a specific zone (With a commandline argument -Dcom.gs.zones=zone1).
 
 {% highlight java %}
 ProcessingUnit pu1 = gsm.deploy(
@@ -454,7 +454,7 @@ The differences between the Eager scale trigger and a Manual capacity trigger in
 
 ## System Bootstrapping
 
-Each machine requires a single running [GigaSpaces Agent](./service-grid.html#gsa). The example below shows how to start a new GigaSpaces agent. The command line parameters instruct the agents to communicate with each other and start the specified amount of managers. It does not start any containers automatically. The EPU starts containers on demand.
+Each machine requires a single running [GigaSpaces Agent](/product_overview/service-grid.html#gsa). The example below shows how to start a new GigaSpaces agent. The command line parameters instruct the agents to communicate with each other and start the specified amount of managers. It does not start any containers automatically. The EPU starts containers on demand.
 
 That means that potentially any machine could be a management machine:
 

@@ -46,7 +46,7 @@ public class Person {
 {% endtabcontent %}
 {% endinittab %}
 {% endgcloak %}
-{%learn%}./persistency.html{%endlearn%}
+{%learn%}./space-persistency.html{%endlearn%}
 
 
 # Include Properties

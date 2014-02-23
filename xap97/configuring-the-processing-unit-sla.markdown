@@ -7,11 +7,11 @@ weight: 200
 ---
 
 
-{% summary   %}The GigaSpaces runtime environment, aka Service Grid, provides SLA-driven capabilities when deploying and running processing units by using the available [GSCs](./service-grid.html#gsc) as a dynamic pool of processes which can host the processing unit{% endsummary %}
+{% summary   %}The GigaSpaces runtime environment, aka Service Grid, provides SLA-driven capabilities when deploying and running processing units by using the available [GSCs](/product_overview/service-grid.html#gsc) as a dynamic pool of processes which can host the processing unit{% endsummary %}
 
 # Overview
 
-The GigaSpaces runtime environment (A.K.A the Service Grid) provides SLA-driven capabilities via the [GSM](./service-grid.html#gsm) and the [GSC](./service-grid.html#gsc) runtime components. The GSC is responsible for running one or more Processing Units; while the GSM is responsible for analyzing the deployment and provisioning the processing unit instances to the available GSCs.
+The GigaSpaces runtime environment (A.K.A the Service Grid) provides SLA-driven capabilities via the [GSM](/product_overview/service-grid.html#gsm) and the [GSC](/product_overview/service-grid.html#gsc) runtime components. The GSC is responsible for running one or more Processing Units; while the GSM is responsible for analyzing the deployment and provisioning the processing unit instances to the available GSCs.
 
 {% note title=Enforcing SLA definitions %}
 The SLA definition are only enforced when deploying the processing unit on to the GigaSpaces service grid, since this environment actively manages and controls the deployment using the GSM(s). When running within your IDE or in standalone mode these definitions are ignored.
@@ -579,7 +579,7 @@ In the above example: max-instances-per-zone="A/1,B/1.
 
 # Monitoring the Liveness of Processing Unit Instances
 
-The [GSM](./service-grid.html#gsm) monitors the liveness of all the processing unit instances it provisioned to the GSCs. The GSM pings each instance in the cluster to see whether it's available.
+The [GSM](/product_overview/service-grid.html#gsm) monitors the liveness of all the processing unit instances it provisioned to the GSCs. The GSM pings each instance in the cluster to see whether it's available.
 
 You can also control how often a processing unit instance will be monitored by the GSM, and in case of failure, how many times the GSM will retry to ping the instance and for how long it will wait between retry attempts.
 

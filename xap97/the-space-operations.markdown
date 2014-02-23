@@ -18,18 +18,17 @@ The interface includes the following main operations:
 
 {%section%}
 {%column width=50% %}
-{%panel bgColor=white | title=Write operations:%}
-With these operations objects are written into the space
-[write](#write){%wbr%}
-[writeMultiple](#writeMultiple){%wbr%}
-[asynchronous write](#writeAsynchronous)
+{%panel bgColor=white | title=Write objects into the space:%}
+[write](#write) one object into the space{%wbr%}
+[writeMultiple](#writeMultiple) objects into the space{%wbr%}
+[asynchronous write](#asynchronousWrite) to the space
 {%endpanel%}
 {%endcolumn%}
 {%column width=45% %}
-{%panel bgColor=white | title=Change operations:%}
-[change](#change)  one object in space{%wbr%}
-[changeMultiple](#changeMultiple) objects in space {%wbr%}
-[asynchronous change](#asynchronousChange) of objects
+{%panel bgColor=white | title=Change objects in space:%}
+[change](./change-api.html) one object in space{%wbr%}
+[changeMultiple](./change-api.html) objects in space {%wbr%}
+[asynchronous change](./change-api.html) of objects
 {%endpanel%}
 {%endcolumn%}
 {%endsection%}
@@ -37,23 +36,23 @@ With these operations objects are written into the space
 
 {%section%}
 {%column width=50% %}
-{%panel bgColor=white |  title=Read operations:%}
-[readById]() from the space{%wbr%}
-[readByIds]() from the space{%wbr%}
-[readMultiple]() objects from the space {%wbr%}
-[read asynchronous]() from the space {%wbr%}
-[read if exists]() {%wbr%}
-[read if exists by id]()
+{%panel bgColor=white |  title=Reading objects from the space:%}
+[readById](id-queries.html) from the space{%wbr%}
+[readByIds](id-queries.html) from the space{%wbr%}
+[readMultiple](#readMultiple) objects from the space {%wbr%}
+[read asynchronous](#asynchronousRead) from the space {%wbr%}
+[read if exists](#readIfExists) {%wbr%}
+[read if exists by id](#readIfExists)
 {%endpanel%}
 {%endcolumn%}
 {%column width=45% %}
-{%panel bgColor=white |  title=Take operations:%}
-[takeById]() remove object by id from space{%wbr%}
-[takeByIds]() remove objects by ids from space{%wbr%}
-[takeMultiple]() remove objects from space {%wbr%}
-[take asynchronous](){%wbr%}
-[take if exists]() {%wbr%}
-[take if exists by id]()
+{%panel bgColor=white |  title=Removing objects from the space:%}
+[takeById](#takeBuId) remove object by id from space{%wbr%}
+[takeByIds](#takeBuIds) remove objects by ids from space{%wbr%}
+[takeMultiple](#takeMultiple) remove objects from space {%wbr%}
+[take asynchronous](#asynchronousTake) remove{%wbr%}
+[take if exists](#takeIfExists) {%wbr%}
+[take if exists by id](#takeIfExists)
 {%endpanel%}
 {%endcolumn%}
 {%endsection%}
@@ -61,8 +60,8 @@ With these operations objects are written into the space
 {%section%}
 {%column width=50% %}
 {%panel bgColor=white |  title=Other operations:%}
-[clear]() an object type from space {%wbr%}
-[count]() objects in space
+[clear](#clear) an object type from space {%wbr%}
+[count](#count) objects in space
 {%endpanel%}
 {%endcolumn%}
 {%column width=45% %}

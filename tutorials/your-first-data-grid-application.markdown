@@ -29,7 +29,7 @@ Installing XAP is just as easy - unzip it into a directory of your choice:
 
 ### Starting a Service Grid
 
-A Data Grid requires a [Service Grid]({%currentjavaurl%}/service-grid.html) to host it. A service grid is composed of one or more machines (service grid nodes) running a [Service Grid Agent]({%currentjavaurl%}/service-grid.html#gsa) (or `GSA`), and provides a framework to deploy and monitor applications on those machines, in our case the Data Grid.
+A Data Grid requires a [Service Grid](/product_overview/service-grid.html) to host it. A service grid is composed of one or more machines (service grid nodes) running a [Service Grid Agent](/product_overview/service-grid.html#gsa) (or `GSA`), and provides a framework to deploy and monitor applications on those machines, in our case the Data Grid.
 
 In this tutorial you'll launch a single node service grid on your machine. To start the service grid, simply run the `gs-agent` script from the product's `bin` folder.
 

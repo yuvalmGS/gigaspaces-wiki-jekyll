@@ -161,7 +161,7 @@ spaceConfigurer.destroy();
 
 ## Using pu.xml
 
-A web application is still just a processing unit. This means that a **META-INF/spring/pu.xml** can be added, which can be used to define a [Space](./the-space-component.html) and [GigaSpace](./the-gigaspace-interface.html). Accessing the beans is relatively simple as they are automatically added to the web application context and can be accessed from there. The key they are stored under is the bean id that each bean corresponds to.
+A web application is still just a processing unit. This means that a **META-INF/spring/pu.xml** can be added, which can be used to define a [Space](./the-space-configuration.html). Accessing the beans is relatively simple as they are automatically added to the web application context and can be accessed from there. The key they are stored under is the bean id that each bean corresponds to.
 
 Here is an example that starts an embedded Space as part of the web application within the `pu.xml`. The following is the content of the `pu.xml`
 

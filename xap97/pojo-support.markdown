@@ -23,7 +23,7 @@ The `GigaSpace` interface fully supports POJOs. In terms of preconditions, your 
 
 # Metadata
 
-When writing POJOs to the Space, you can provide some metadata about the POJO's class to the space, using Java 5 annotations, or an XML configuration. This overview uses annotation to provide metadata. For a complete reference to POJO annotations and XML configuration, refer to the [POJO Metadata](./pojo-metadata.html) section.
+When writing POJOs to the Space, you can provide some metadata about the POJO's class to the space, using Java 5 annotations, or an XML configuration. This overview uses annotation to provide metadata. For a complete reference to POJO annotations and XML configuration, refer to the [POJO Metadata](./modeling-your-data.html) section.
 
 Here is an overview of the most commonly used POJO annotations:
 
@@ -40,7 +40,7 @@ Here is an overview of the most commonly used POJO annotations:
 {% info %}
  You can define space classes metadata by class and field level decorations. These can be defined via annotations or XML configurations files (*gs.xml file).
 {% endinfo %}
-{%learn%}./pojo-metadata.html{%endlearn%}
+{%learn%}./modeling-your-data.html{%endlearn%}
 
 
 

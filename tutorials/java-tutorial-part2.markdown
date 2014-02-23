@@ -65,7 +65,7 @@ The Lookup Service provides a mechanism for services to discover each other. Eac
 - Grid Service Agent (GSA)
 The GSA is a process manager that can spawn and manage service grid processes (Operating System level processes) such as the Grid Service Manager, The Grid Service Container, and The Lookup Service. Using the agent, you can bootstrap the entire data grid very easily, and start and stop additional GSCs, GSMs and lookup services at will. Usually, a single GSA is run per machine.
 
-{%learn%}{%latestjavaurl%}/service-grid.html{%endlearn%}
+{%learn%}/product_overview/service-grid.html{%endlearn%}
 
 
 {%endcolumn%}

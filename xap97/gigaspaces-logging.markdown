@@ -321,7 +321,7 @@ com.sun.jini.start.service.starter.level = INFO
 com.sun.jini.thread.TaskManager.level = INFO
 {% endhighlight %}
 
-Lookup Service is a runtime registry of GigaSpaces components. Each component registers itself to a LUS thereby providing visibility to other components. For e.g., a GSM discovers a GSC by looking at an entry in LUS and GSC discovers a GSM similarly. More information about LUS is [here](./the-lookup-service.html).
+Lookup Service is a runtime registry of GigaSpaces components. Each component registers itself to a LUS thereby providing visibility to other components. For e.g., a GSM discovers a GSC by looking at an entry in LUS and GSC discovers a GSM similarly. More information about LUS is [here](/product_overview/the-lookup-service.html).
 
 ### GSM
 
@@ -336,7 +336,7 @@ com.gigaspaces.grid.gsm.selector.level = INFO
 org.jini.rio.tools.webster.level = INFO
 {% endhighlight %}
 
-GSM manages the applications and maintains the SLA's of deployments. More information about GSM is [here](./service-grid.html#gsm).
+GSM manages the applications and maintains the SLA's of deployments. More information about GSM is [here](/product_overview/service-grid.html#gsm).
 
 ### GSC
 
@@ -347,7 +347,7 @@ com.gigaspaces.grid.gsm.GSMFaultDetectionHandler.level = INFO
 org.openspaces.pu.container.servicegrid.PUFaultDetectionHandler.level = INFO
 {% endhighlight %}
 
-GSC is the runtime environment for GigaSpaces applications. More information about GSC's is [here](./service-grid.html#gsc).
+GSC is the runtime environment for GigaSpaces applications. More information about GSC's is [here](/product_overview/service-grid.html#gsc).
 
 ### ESM
 
@@ -367,7 +367,7 @@ Elastic Middleware Services are explained [here](./elastic-middleware-services.h
 com.gigaspaces.grid.gsa.level = INFO
 {% endhighlight %}
 
-The GigaSpaces Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as The GigaSpaces Manager (GSM), The GigaSpaces Container (GSC), and Lookup Service (LUS). More information regarding GSA can be found [here](./service-grid.html#gsa).
+The GigaSpaces Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as The GigaSpaces Manager (GSM), The GigaSpaces Container (GSC), and Lookup Service (LUS). More information regarding GSA can be found [here](/product_overview/service-grid.html#gsa).
 {% endtabcontent %}
 {% tabcontent Security %}
 

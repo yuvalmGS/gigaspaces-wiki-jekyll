@@ -14,12 +14,12 @@ In addition to the scripts described [here](./scripts.html), the `bin` folder co
 
 # Service Grid Scripts 
 
-If you need to start the [Service Grid](./service-grid.html) components manually instead of via the [gs-agent](./service-grid.html#gsa), use the following scripts:
+If you need to start the [Service Grid](/product_overview/service-grid.html) components manually instead of via the [gs-agent](/product_overview/service-grid.html#gsa), use the following scripts:
  
-- **startJiniLUS** - starts an instance of the [LUS](./service-grid.html#lus). 
-- **gsc** - starts an instance of the [GSC](./service-grid.html#gsc). 
-- **gsm** - starts an instance of the [GSM](./service-grid.html#gsm) and [LUS](./service-grid.html#lus). 
-- **gsm_nolus** - starts an instance of the [GSM](./service-grid.html#gsm). 
+- **startJiniLUS** - starts an instance of the [LUS](/product_overview/service-grid.html#lus).
+- **gsc** - starts an instance of the [GSC](/product_overview/service-grid.html#gsc).
+- **gsm** - starts an instance of the [GSM](/product_overview/service-grid.html#gsm) and [LUS](/product_overview/service-grid.html#lus).
+- **gsm_nolus** - starts an instance of the [GSM](/product_overview/service-grid.html#gsm).
 - **esm** - starts an instance of the [ESM](./elastic-processing-unit.html). 
 - **startJiniTX_Mahalo** - starts an instance of the Distributed transaction manager. 
 

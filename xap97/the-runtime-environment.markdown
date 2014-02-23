@@ -17,7 +17,7 @@ A processing unit is deployed onto the XAP runtime environment, which is called 
 
 In order to start the GSA, the `<GSHOME>/bin/gs-agent.(sh/bat)` can be used.
 
-The preferable (and easiest) way to start a Service Grid is the [Grid Service Agent](#gsa). However, each of the components can be started manually.
+The preferable (and easiest) way to start a Service Grid is the [Grid Service Agent](/product_overview/service-grid.html#gsa). However, each of the components can be started manually.
 
 The following table summarized how to start each component:
 
@@ -32,7 +32,7 @@ The following table summarized how to start each component:
 
 ## GSA Parameters
 
-The GSA parameters control how many local process the GSA will spawn on startup (per process type), and the number of globally managed process the GSA will maintain (in cooperation with other GSAs) (per process type). By default, the GSA is started with 2 local [Grid Service Containers](#gsc), and manage 2 global [Grid Service Manager](#gsm) and 2 global [Lookup Service](#lus). This is the equivalent of starting the GSA with the following parameters:
+The GSA parameters control how many local process the GSA will spawn on startup (per process type), and the number of globally managed process the GSA will maintain (in cooperation with other GSAs) (per process type). By default, the GSA is started with 2 local [Grid Service Containers](#gsc), and manage 2 global [Grid Service Manager](#gsm) and 2 global [Lookup Service](/product_overview/service-grid.html#lus). This is the equivalent of starting the GSA with the following parameters:
 
 {% highlight java %}
 gs-agent gsa.gsc 2 gsa.global.gsm 2 gsa.global.lus 2
@@ -48,7 +48,7 @@ In general, the `gsa.[process type]` followed by a number controls the number of
 
 ### Lookup Service Considerations
 
-When starting a [Lookup Service](#lus) and other services in unicast mode (not multicast), it means that specific machines will be the ones that will run the [Lookup Service](#lus). This means that on the machines running the LUS, the following command will be used (assuming other defaults are used for GSM and GSC):
+When starting a [Lookup Service](/product_overview/service-grid.html#lus) and other services in unicast mode (not multicast), it means that specific machines will be the ones that will run the [Lookup Service](/product_overview/service-grid.html#lus). This means that on the machines running the LUS, the following command will be used (assuming other defaults are used for GSM and GSC):
 
 {% highlight java %}
 gs-agent gsa.global.lus 0 gsa.lus 1
@@ -60,8 +60,9 @@ And on machines that will not run the LUS, the following command should be used:
 gs-agent gsa.global.lus 0
 {% endhighlight %}
 
+{% comment%}
 For instructions on how to configure service grid components refer to [Service Grid Configuration](./service-grid-configuration.html)
-
+{%endcomment%}
 
 {%tip%}
 You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.
@@ -71,17 +72,18 @@ You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to
 
 GSA manages different process types. Each process type is defined within the `<GSHOME>\config\gsa` directory in an xml file that identifies the process type by its name.
 
-{% tip %}You can change the default location of the GSA configuration files using the `com.gigaspaces.grid.gsa.config-directory` system property.{% endtip %}
+{% tip %}You can change the default location of the GSA configuration files using the `com.gigaspaces.grid.gsa.config-directory` system property.
+{% endtip %}
 
 The following are the process types that come out of the box:
 
 {: .table .table-bordered}
 |Processes Type|Description|XML config file name|Properties file name|
 |:-------------|:----------|:-------------------|:-------------------|
-|gsc|Defines a [Grid Service Container}(./service-grid.html#gsc)|gsc.xml|gsc.properties|
-|gsm|Defines a [Grid Service Manager](./service-grid.html#gsm)|gsm.xml|gsm.properties|
-|lus|Defines a [Lookup Service](./service-grid.html#lus)| lus.xml|lus.properties|
-|gsm_lus|Defines a [Grid Service Manager](./service-grid.html#gs) and [Lookup Service|Service Grid#lus] within the same JVM|gsm_lus.xml|gsm_lus.properties|
+|gsc|Defines a [Grid Service Container}(/product_overview/service-grid.html#gsc)|gsc.xml|gsc.properties|
+|gsm|Defines a [Grid Service Manager](/product_overview/service-grid.html#gsm)|gsm.xml|gsm.properties|
+|lus|Defines a [Lookup Service](/product_overview/service-grid.html#lus)| lus.xml|lus.properties|
+|gsm_lus|Defines a [Grid Service Manager](/product_overview/service-grid.html#gs) and [Lookup Service](/product_overview/service-grid.html#lus) within the same JVM|gsm_lus.xml|gsm_lus.properties|
 |esm|Defines an Elastic Service Manager which is required for deploying [Elastic Processing Unit](./elastic-processing-unit.html)|esm.xml|esm.properties |
 
 Here is an example of the gsc xml configuration file:
@@ -181,6 +183,7 @@ call gsc.bat
 {% note %}
 Component specific configuration can be set using system properties (follows the \[component name\].\[property name\] notation).
 {%endnote%}
+
 {%comment%}
 
 =======================================Old version=================================================================
@@ -210,13 +213,13 @@ The service grid is composed of a number of components:
 
 ## Core Components
 
-A processing unit can be deployed to the Service Grid using one of GigaSpaces deployment tools (UI, CLI, API), which uploads it to the *GSM* [Grid Service Manager](./service-grid.html#gsm), the component which manages the deployment and life cycle of the processing unit). The GSM analyzes the deployment descriptor and determines how many instances of the processing unit should be created, and which containers should run them. It then ships the processing unit code to the running *GSC*'s [Grid Service Container](./service-grid.html#gsc) and instructs them to instantiate the processing unit instances. The GSC provides an isolated runtime for the processing unit instance, and exposes its state to the GSM for monitoring. This phase in the deployment process is called *provisioning*.
+A processing unit can be deployed to the Service Grid using one of GigaSpaces deployment tools (UI, CLI, API), which uploads it to the *GSM* [Grid Service Manager](/product_overview/service-grid.html#gsm), the component which manages the deployment and life cycle of the processing unit). The GSM analyzes the deployment descriptor and determines how many instances of the processing unit should be created, and which containers should run them. It then ships the processing unit code to the running *GSC*'s [Grid Service Container](./service-grid.html#gsc) and instructs them to instantiate the processing unit instances. The GSC provides an isolated runtime for the processing unit instance, and exposes its state to the GSM for monitoring. This phase in the deployment process is called *provisioning*.
 
 Once provisioned, the GSM continuously monitors the processing unit instances to determine if they're functioning properly or not. When a certain instance fails, the GSM identifies that and re-provisions the failed instance on to another GSC, thus enforcing the processing unit's SLA.
 
-In order to discover one another in the network, the GSCs and GSMs use a [Lookup Service](./service-grid.html#lus), also called *LUS*. Each GSM and GSC registers itself in the LUS, and monitors the LUS to discover other GSM and GSC instances.
+In order to discover one another in the network, the GSCs and GSMs use a [Lookup Service](/product_overview/service-grid.html#lus), also called *LUS*. Each GSM and GSC registers itself in the LUS, and monitors the LUS to discover other GSM and GSC instances.
 
-Finally, the *GSA* [Grid Service Agent](./service-grid.html#gsa) component is used to start and manage the other components of the Service Grid (i.e. GSC, GSM, LUS). Typically, the GSA is started with the hosting machine's startup. Using the agent, you can bootstrap the entire cluster very easily, and start and stop additional GSCs, GSMs and lookup services at will.
+Finally, the *GSA* [Grid Service Agent](/product_overview/service-grid.html#gsa) component is used to start and manage the other components of the Service Grid (i.e. GSC, GSM, LUS). Typically, the GSA is started with the hosting machine's startup. Using the agent, you can bootstrap the entire cluster very easily, and start and stop additional GSCs, GSMs and lookup services at will.
 
 All of the above components are fully manageable from the GigaSpaces management interfaces such as the [UI](./graphical-user-interface.html), CLI and [Admin API](./administration-and-monitoring-api.html).
 

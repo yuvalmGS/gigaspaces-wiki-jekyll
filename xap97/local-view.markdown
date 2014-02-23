@@ -137,7 +137,7 @@ If the JVM running client X's available memory breaches the `write_only_block_pe
 
 Starting with XAP 8.0.6, the local view uses [replication](./replication.html) instead of [notifications](./session-based-messaging-api.html) to synchronize with the master space. The reason for that change is that replication provides higher reliability than notification. In general this is an implementation detail that should not concern the user, except for the following cases:
 
-- Using a view query on a type/class configured to be [non-replicable](./pojo-metadata.html).
+- Using a view query on a type/class configured to be [non-replicable](./modeling-your-data.html).
 - Using a cluster with an [Active-Active](./replication-topologies.html) topology, or a non-clustered space.
 
 In those cases, the local view will automatically revert to notification-based synchronization.
