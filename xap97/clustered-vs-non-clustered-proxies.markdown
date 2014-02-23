@@ -10,15 +10,15 @@ weight: 50
 
 # Introduction
 
-When deploying a Processing Unit(PU) configured with an embedded [Space](./the-space-configuration.html) with a clustered SLA or when running a remote clustered space, a clustered {{GigaSpace}} proxy is created.
+When deploying a Processing Unit(PU) configured with an embedded [Space](./the-space-component.html) with a clustered SLA or when running a remote clustered space, a clustered `GigaSpace` proxy is created.
 
 A clustered proxy is a smart proxy that performs operations against the entire cluster when needed.
-- The {{write}} operation will be routed based on the routing field value to the relevant partition (using the routing field hashcode to calculate the the target partition).
-- The {{read}} operation will do the same by routing the operation to the relevant partition.
-- The {{writeMultiple}} will generate a entries bucket per partition for all entries that should be placed within the same partition and perform a parallel write to all relevant partition.
-- The {{readMultiple}} and {{clear}} operations will access all cluster partitions in a map-reduce fashion in case the query/template routing value is not specified.
-- The {{execute}} operation will be routing the {{Task}} to the relevant partition based on the routing value.
-- The {{execute}} operation will be routing the {{DistributedTask}} to all partitions if no routing value been specified or to a specific partitions in case a routing value been specified.
+* The `write` operation will be routed based on the routing field value to the relevant partition (using the routing field hashcode to calculate the the target partition).
+* The `read` operation will do the same by routing the operation to the relevant partition.
+* The `writeMultiple` will generate a entries bucket per partition for all entries that should be placed within the same partition and perform a parallel write to all relevant partition.
+* The `readMultiple` and `clear` operations will access all cluster partitions in a map-reduce fashion in case the query/template routing value is not specified.
+* The `execute` operation will be routing the `Task` to the relevant partition based on the routing value.
+* The `execute` operation will be routing the `DistributedTask` to all partitions if no routing value been specified or to a specific partitions in case a routing value been specified.
 
 Many times, especially when working with a PU that starts an embedded space, operations against the space should be performed directly on the cluster member without interacting with the other space cluster members (partitions). This is a core concept of the SBA and Processing Unit, where most if not all the operations should be performed in-memory without leaving the Processing Unit boundaries, when a Processing Unit starts an embedded space.
 
@@ -26,15 +26,15 @@ Many times, especially when working with a PU that starts an embedded space, ope
 ![clustered-vs-non-clustered-proxy.jpg](/attachment_files/clustered-vs-non-clustered-proxy.jpg)
 
 
-The decision of working directly with a cluster member or against the whole cluster is done in the {{GigaSpace}} level. The {{GigaSpacesFactoryBean}} provides a clustered flag with the following logic as the default value: If the space is started in embedded mode (for example, {{/./space}}), the clustered flag is set to {{false}}. When the space is looked up in a remote protocol (i.e. {{jini://*/*/space}}, the clustered flag is set to {{true}}.
+The decision of working directly with a cluster member or against the whole cluster is done in the `GigaSpace` level. The `GigaSpacesFactoryBean` provides a clustered flag with the following logic as the default value: If the space is started in embedded mode (for example, `/./space`), the clustered flag is set to `false`. When the space is looked up in a remote protocol (i.e. `jini://*/*/space`, the clustered flag is set to `true`.
 
-You can use the {{clustered}} property to control this behavior or use the API to use a non-clustered embedded proxy to create a clustered proxy. This allows the collocated business logic to access the entire cluster to perform cluster wide operations. Clustered and Non-Clustered proxies may be used with Collocated a [Task](./task-execution-over-the-space.html), [Service](./executor-based-remoting.html), [Notify Container](./notify-container.html) , [Polling Container](./polling-container.html) and any other Collocated business logic.
+You can use the `clustered` property to control this behavior or use the API to use a non-clustered embedded proxy to create a clustered proxy. This allows the collocated business logic to access the entire cluster to perform cluster wide operations. Clustered and Non-Clustered proxies may be used with Collocated a [Task](./task-execution-over-the-space.html), [Service](./executor-based-remoting.html), [Notify Container](./notify-container.html) , [Polling Container](./polling-container.html) and any other Collocated business logic.
 
 # How to Create a Clustered Proxy?
 You may use Spring based configuration or API to create a Clustered Proxy.
 
 ## Using Spring
-When using a Spring based {{pu.xml}} to construct the [GigaSpace](./the-gigaspace-interface.html) bean to be injected into the relevant other beans the following should be used to create a clustered and a non-clustered {{GigaSpace}} bean:
+When using a Spring based `pu.xml` to construct the [GigaSpace](./the-gigaspace-interface.html) bean to be injected into the relevant other beans the following should be used to create a clustered and a non-clustered `GigaSpace` bean:
 {%highlight java%}
 <os-core:space id="space" url="/./space" />
 <os-core:giga-space id="nonClusteredGigaSpace" space="space"/>
@@ -42,9 +42,9 @@ When using a Spring based {{pu.xml}} to construct the [GigaSpace](./the-gigaspac
 {%endhighlight%}
 
 ## Using API
-The {{GigaSpace.getClustered()}} method allows you to get a cluster wide proxy from a non-clustered proxy. In such a case the {{@GigaSpaceContext}} should be used to inject the non-clustered {{GigaSpace}} bean or the {{@TaskGigaSpace}} when executing a {{Task}} that is invoked at the space side.
+The `GigaSpace.getClustered()` method allows you to get a cluster wide proxy from a non-clustered proxy. In such a case the `@GigaSpaceContext` should be used to inject the non-clustered `GigaSpace` bean or the `@TaskGigaSpace` when executing a `Task` that is invoked at the space side.
 
-Another option is to use the {{GigaSpaceConfigurer}}:
+Another option is to use the `GigaSpaceConfigurer`:
 {%highlight java%}
 IJSpace space = // get Space either by injection or code creation
 GigaSpace gigaSpace = new GigaSpaceConfigurer(space).clustered(true).gigaSpace();
@@ -70,7 +70,7 @@ gigaSpaceClustered=gigaSpaceEmbedNonClustered.getClustered();
 }
 {%endhighlight%}
 
-An example of a {{DistributedTask}} implementation with a clustered and non-clustred proxy:
+An example of a `DistributedTask` implementation with a clustered and non-clustred proxy:
 {%highlight java%}
 public class MyTask implements ClusterInfoAware , DistributedTask<Integer, Integer>{
 @TaskGigaSpace
@@ -96,9 +96,9 @@ With a remote client, serialization and network activity will impact the perform
 
 # Protective Mode Exception when using a Non-Clustered Proxy
 
-To protect a user using a non-clustered proxy from writing or updates objects using a wrong routing field value, GigaSpaces running by default in Protective Mode. This will throw the {{ProtectiveModeException}} and block users from getting into such scenarios. You can turn off this behavior by using the following: {{com.gs.protectiveMode.wrongEntryRoutingUsage=false}}.
+To protect a user using a non-clustered proxy from writing or updates objects using a wrong routing field value, GigaSpaces running by default in Protective Mode. This will throw the `ProtectiveModeException` and block users from getting into such scenarios. You can turn off this behavior by using the following: `com.gs.protectiveMode.wrongEntryRoutingUsage=false`.
 
-The {{com.gigaspaces.client.protective.ProtectiveModeException}} is thrown when:
+The `com.gigaspaces.client.protective.ProtectiveModeException` is thrown when:
 - Writing a new object using a wrong routing field with a non-clustered proxy.
 - Changing/Updating an existing object modifying its routing field to a different value which doesn't match the partition it resides in.
 
@@ -132,11 +132,13 @@ this.id = id;
 }
 {%endhighlight%}
 
-{%note%}When there is no explicit {{@SpaceRouting}} decoration the method annotated as the {{@SpaceId}} used as the {{@SpaceRouting}} method.{%endnote%}
+{%note%}
+When there is no explicit `@SpaceRouting` declared, the method annotated as the `@SpaceId` is used as the `@SpaceRouting` method.
+{%endnote%}
 
 ## A Remote Service Usage of a Clustered and a Non-Clustered Proxy
 
-With this example the {{pu.xml}} includes the following:
+With this example the `pu.xml` includes the following:
 {%highlight java %}
 <os-core:space id="spaceEmbed" url="/./space" />
 <os-core:giga-space id="gigaSpaceEmbedNonClustered" space="spaceEmbed" />
@@ -156,7 +158,7 @@ public String myMethod(@Routing Integer routing);
 }
 {%endhighlight%}
 
-The {{@Routing}} used to decorate the method specified as the routing field.
+The `@Routing` used to decorate the method specified as the routing field.
 
 Here is how the service implementation looks like:
 {%highlight java%}
@@ -246,15 +248,15 @@ Service call - routing 1 partition 2 gigaSpaceEmbed - total visible objects:1
 
 ## A DistributedTask Usage of a Clustered and a Non-Clustered Proxy
 
-Our {{DistributedTask}} implements the [ClusterInfoAware](./obtaining-cluster-information.html). This allows it to be injected with the {{ClusterInfo}} that provides information about the cluster topology and the local partition ID. Here is how the {{DistributedTask}} looks like:
+Our `DistributedTask` implements the [ClusterInfoAware](./obtaining-cluster-information.html). This allows it to be injected with the `ClusterInfo` that provides information about the cluster topology and the local partition ID. Here is how the `DistributedTask` looks like:
 
-The {{pu.xml}} includes the following:
+The `pu.xml` includes the following:
 {%highlight java %}
 <os-core:space id="spaceEmbed" url="/./space" />
 <os-core:giga-space id="gigaSpaceEmbedNonClustered" space="spaceEmbed" />
 {%endhighlight%}
 
-The {{DistributedTask}} looks like this:
+The `DistributedTask` looks like this:
 {%highlight java %}
 package com.test;
 
@@ -317,7 +319,7 @@ GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/spa
 space.execute(new MyTask());
 {%endhighlight%}
 
-The {{DistributedTask}} execute output:
+The `DistributedTask` execute output:
 {%highlight java %}
 From Task Execute - partition 1 - Cluster info name[null] schema[partitioned] numberOfInstances[2] numberOfBackups[null] instanceId[1] backupId[null]
 From Task Execute - partition 2 - Cluster info name[null] schema[partitioned] numberOfInstances[2] numberOfBackups[null] instanceId[2] backupId[null]
@@ -333,7 +335,7 @@ From Task Execute - partition 2 gigaSpaceRemote - total visible objects:2
 
 ## Event Container Usage of Clustered and Non-Clustered Proxy
 
-With this example the {{pu.xml}} includes the following:
+With this example the `pu.xml` includes the following:
 {%highlight java %}
 <os-core:space id="spaceEmbed" url="/./space" />
 <os-core:giga-space id="gigaSpaceEmbedNonClustered" space="spaceEmbed" />
@@ -343,7 +345,7 @@ With this example the {{pu.xml}} includes the following:
 <context:component-scan base-package="com.test"/>
 {%endhighlight%}
 
-Our Event Container (notify container) using the [@PostPrimary|The Space Component#Primary Backup Notifications] to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext|Obtaining Cluster Information] that provides information about the cluster topology and the local partition ID.
+Our Event Container (notify container) using the [@PostPrimary](./the-space-component.html#Primary Backup Notifications) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](./obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID.
 
 Here is how the event container looks like:
 {%highlight java %}
@@ -420,11 +422,11 @@ From Notify Container - partition 2 Counting total space objects using a Cluster
 
 # Writing New Objects from a Collocated Business Logic
 
-When writing new objects from a collocated business logic with a partitioned space, the routing field must "match" the collocated space instance. See below example loading data into the space using a {{DistributedTask}} injected with a collocated proxy.
+When writing new objects from a collocated business logic with a partitioned space, the routing field must "match" the collocated space instance. See below example loading data into the space using a `DistributedTask` injected with a collocated proxy.
 
-With this example the routing field is a {{String}} data type. An {{Integer}} as a routing field data type is always preferred. Using such approach will make sure you will not get an error since *GigaSpaces will block writing objects with the wrong routing field value into the space* when a collocated proxy is used.
+With this example the routing field is a `String` data type. An `Integer` as a routing field data type is always preferred. Using such approach will make sure you will not get an error since *GigaSpaces will block writing objects with the wrong routing field value into the space* when a collocated proxy is used.
 
-With such an approach you can load large number of objects into the space very quickly since it will be running in parallel across all the partitions. Using {{writeMultiple}} will make this even faster.
+With such an approach you can load large number of objects into the space very quickly since it will be running in parallel across all the partitions. Using `writeMultiple` will make this even faster.
 
 {%highlight java %}
 public class LoadTask implements DistributedTask<Integer, Integer> ,ClusterInfoAware{

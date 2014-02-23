@@ -17,7 +17,7 @@ The word "multicast" is typically used to refer to IP Multicast, the implementat
 
 GigaSpaces uses multicast in the following cases:
 
-- [When deploying onto the service grid](./deploying-onto-the-service-grid.html) GigaSpaces XAP uses multicast to discover the [Lookup Service](./lookup-service-configuration.html ), and register their proxies.
+- [When deploying to the service grid](./deploying-onto-the-service-grid.html) GigaSpaces XAP uses multicast to discover the [Lookup Service](./lookup-service-configuration.html ), and register their proxies.
 - Clients use multicast to discover the [Lookup Service](./lookup-service-configuration.html ) and look up a matching service proxy (such as the space).
 
 {% tip title=What should I do in order to determine if multicast is enabled on my environment? %}
@@ -32,7 +32,29 @@ To enable the important capabilities above, you should enable multicast on machi
 - Space cluster replication uses unicast by default. You should use multicast replication when having more than 10 clients acting as replica spaces per target space.
 {% endtip %}
 
-{% exclamation %} In case you want to **disable the Jini Lookup Service Multicast announcements** please refer to [this](./lookup-service-configuration.html#Multicast Settings) section in the Wiki.
+{% note %}
+In case you want to **disable the Jini Lookup Service Multicast announcements** please refer to [this](./lookup-service-configuration.html#Multicast Settings) section in the Wiki.
+{%endnote%}
+
+# To Multicast or to not Multicast?
+
+Multicast is not a mandatory with XAP. It is used as a secondary mechanism for lookup service discovery. Unicast is the other mechanism. Both are turned on by default on the client side and on the service grid side (GSM,GSC,LUS).
+
+Multicast is not used with replication , notification , monitoring or any client activity against the space. Disabling multicast discovery means you are loosing dynamicy for the lookup service location. This means if the lookup service fails (very low probably to happen) you will be able to start it only on the machines listed on the `LOOKUPLOCATORS` list. Client `locators` should have the same list used.
+
+When multicast is disabled global lookup service should not be use. You should use only local lookup service configuration with the agent with the machines running the lookup service:
+{% highlight java %}
+gs-agent gsa.global.lus 0 gsa.lus 1 gsa.gsm.global 0 gsa.gsm 1
+{% endhighlight %}
+
+Machines not running the lookup service should have thier agent started using:
+{% highlight java %}
+gs-agent gsa.global.lus 0 gsa.lus 0 gsa.gsm.global 0 gsa.gsm 0
+{% endhighlight %}
+
+The GSC count should be added to the commands above above as usual.
+
+If you can't have multicast enabled within your network you should disable it on the client side and on the service grid side. It will save some CPU actvity performed continously.
 
 # Configuring Multicast on Linux
 
@@ -168,6 +190,8 @@ The problem of multicasts/broadcasts not passing the router/switch is a well kno
 
 [Wireshark (formerly Ethereal)](http://www.wireshark.org/) - accumulates years of network analyzing experience and is far more mature and known than other tools. It is a cross-platform packet sniffer/network analyzer tool (used both in Windows and Unix/Linux). It allows you to examine data from a live network, or from a capture file on disk. You can interactively browse the capture data, viewing summary and detail information for each packet. It has several powerful features, including a rich display filter language and the ability to view the reconstructed stream of a TCP session.
 
-{% infosign %} **To find TTL**, you should monitor some traffic (start-stop on the proper interface), in the monitoring log. Choose the packet you are interested in, and look at its IP layer - TTL (and other parameters) are shown.
+{% info %}
+**To find TTL**, you should monitor some traffic (start-stop on the proper interface), in the monitoring log. Choose the packet you are interested in, and look at its IP layer - TTL (and other parameters) are shown.
 
-{% infosign %} The **default TTL value is 3** (was 15). See [Multicast Settings](./lookup-service-configuration.html#LookupServiceConfiguration-MulticastSettings) section for details of how to modify that value.
+The **default TTL value is 3** (was 15). See [Multicast Settings](./lookup-service-configuration.html#LookupServiceConfiguration-MulticastSettings) section for details of how to modify that value.
+{%endinfo%}

@@ -1,21 +1,23 @@
 ---
 layout: post
-title:  Web Jetty Processing Unit Container
+title:  Jetty Processing Unit Container
 categories: XAP97
-parent: web-processing-unit-container.html
+parent: web-application-support.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}OpenSpaces integration with Jetty as the web container when running web applications on top of the Service Grid.{% endsummary %}
+
+{% summary  %}XAP integration with Jetty as the web container when running web applications on top of the Service Grid.{% endsummary %}
 
 # Overview
 
-An OpenSpaces web processing unit can use [Jetty](http://www.eclipse.org/jetty/) as the web container that will actually run the WAR file deployed into the Service Grid. Jetty itself comes built in with the GigaSpaces installation. The integration itself allows you to run both a pure WAR file (pure in a sense that it does not use a Space), as well as simplifying the introduction of Space (both embedded and remote) in a non Spring and Spring environment.
+An XAP web processing unit can use [Jetty](http://www.eclipse.org/jetty/) as the web container that will actually run the WAR file deployed into the Service Grid. Jetty itself comes built in with the GigaSpaces installation. The integration itself allows you to run both a pure WAR file (pure in a sense that it does not use a Space), as well as simplifying the introduction of Space (both embedded and remote) in a non Spring and Spring environment.
 
 ![web_app_archi.jpg](/attachment_files/web_app_archi.jpg)
 
-{% lampon %} For general web support features that are relevant, regardless of the web container used, please refer to [Web Processing Unit Container](./web-processing-unit-container.html).
+{% info %}
+For general web support features that are relevant, regardless of the web container used, please refer to [Web Processing Unit Container](./web-application-support.html).
+{%endinfo%}
 
 {% tip %}
 See the [http Session Management](./http-session-management.html) for details about clustering the Jetty HTTP session.
@@ -27,11 +29,11 @@ Jetty itself is configured using Spring, and allows you to control all aspects o
 
 By default, the instantiation mode is **plain**. In order to control (at deploy time) which instantiation mode is used, the deploy property **jetty.instance** can be passed with either the **plain** value (the default) or the **shared** value.
 
-In order to configure a custom Jetty configuration, a **jetty.pu.xml** should be added to **META-INF/spring** within the WAR file. Both the **plain** and **shared** mode actually correspond to a built in "jetty.pu.xml" file that exists within the OpenSpaces JAR file (explained below).
+In order to configure a custom Jetty configuration, a **jetty.pu.xml** should be added to **META-INF/spring** within the WAR file. Both the **plain** and **shared** mode actually correspond to a built in "jetty.pu.xml" file that exists within the XAP JAR file (explained below).
 
 # Plain Instantiation Mode
 
-The plain instantiation mode (which is the simplest and the default one), creates a Jetty instance for each web processing unit instance (web application). Its actual configuration can be found within the OpenSpaces JAR file under **org/openspaces/pu/container/jee/jetty/jetty.plain.pu.xml**.
+The plain instantiation mode (which is the simplest and the default one), creates a Jetty instance for each web processing unit instance (web application). Its actual configuration can be found within the XAP JAR file under **org/openspaces/pu/container/jee/jetty/jetty.plain.pu.xml**.
 
 This mode is simple, mainly because the context path that is created for each web application instance is exactly the same. Only the connector (port) that it runs on, is different. Note that when working in a virtualized environment, where more than one instance of the same web application can run on the same VM, this requires some thought. Naturally, the Service Grid allows you to control whether only one instance of the web application runs on a VM, using the **max-instances-per-vm* option, or even using the *max-instances-per-machine** option. What fits best, depends on the deployment and service requirements of the application.
 
@@ -87,7 +89,9 @@ Controlling the size of the data a client can push to the server can be done usi
 
 The above xml fragment from the **jetty.plain.xml** controls the port numbers that are used by the Jetty instance started. The `PortGenerator` is a utility class that does not do more than expose itself as the sum of the `basePort` property and the `portOffset` property. In our case, each instance of a web application that is deployed in plain mode, will have a unique port (that, by default, starts from 8080). For example, if a web application is deployed with 2 instances, the first instance will start on port 8080, the second instance will start on port 8081 (regardless of the host).
 
-{% infosign %} Note, in this case, if another web application is deployed on the same GSC, the `web.port` property should be changed (for example, to start from 9090), so there won't be any port clashes between the two web applications. By default, if a port is taken on the same host, the subsequent port will be used with up to 20 retries. To limit the number of retries, for example to 10 (instead of the default 20), you must define a bean named **retryPortCount** of class `Integer` and the value as the number of attempts. Setting a value of 1, will only try once using the `basePort` and `portOffset`.
+{% note %}
+In this case, if another web application is deployed on the same GSC, the `web.port` property should be changed (for example, to start from 9090), so there won't be any port clashes between the two web applications. By default, if a port is taken on the same host, the subsequent port will be used with up to 20 retries. To limit the number of retries, for example to 10 (instead of the default 20), you must define a bean named **retryPortCount** of class `Integer` and the value as the number of attempts. Setting a value of 1, will only try once using the `basePort` and `portOffset`.
+{%endnote%}
 
 {% highlight xml %}
 <bean id="retryPortCount" class="java.lang.Integer">
@@ -171,7 +175,9 @@ The bean that is actually used (and expected to be defined) within the configura
 
 This bean controls the actual web context that corresponds to the web application instance being deployed. Its context path is the property `web.context`, which defaults to `clusterInfo.name`. (The `clusterInfo.name` is the name of the processing unit, defaults to the war file name, but can be overridden using the override-name feature).
 
-{% infosign %} Note, in the plain mode, the context path can be the same for all different instances of the web application, even if they are running on the same GSC (JVM).
+{% note %}
+In the plain mode, the context path can be the same for all different instances of the web application, even if they are running on the same GSC (JVM).
+{%endnote%}
 
 ## Examples
 
@@ -183,7 +189,7 @@ Now, lets assume that the first machine fails. This means that the first two web
 
 # Shared Instantiation Mode
 
-The shared instantiation mode creates a single Jetty instance per GSC (JVM). Its actual configuration can be found within the OpenSpaces JAR file, under **org/openspaces/pu/container/jee/jetty/jetty.shared.pu.xml**. The benefits of this mode are obvious as only one instance of jetty is created per JVM (though note that the plain mode does share some resources between different Jetty instances).
+The shared instantiation mode creates a single Jetty instance per GSC (JVM). Its actual configuration can be found within the XAP JAR file, under **org/openspaces/pu/container/jee/jetty/jetty.shared.pu.xml**. The benefits of this mode are obvious as only one instance of jetty is created per JVM (though note that the plain mode does share some resources between different Jetty instances).
 
 The main difficulties when working with this mode come from the fact that it is possible that more than one web application instance will be running on the same GSC (JVM). In order to solve this problem, by default, when working in shared mode, the web context path is the actual web context, appended by a running number. For example, when deploying two instances of a petclinic web application, the first instance will be deployed under `petclinic_1` web app context, while the second will be deployed under `petclinic_2`.
 
@@ -291,7 +297,9 @@ The above shows how the Jetty instance is configured. The **Jetty** bean is actu
 
 The bean that is actually used (and expected to be defined) within the configuration is the **JettyHolder** (it must be named **JettyHolder**). In our case, the `JettyHolder` used is the `SharedJettyHolder`, which creates a single instance of Jetty on the GSC (JVM) level.
 
-{% infosign %} Note, this means that the first deployed web application in a shared mode will control how the Jetty instance will be created.
+{% note %}
+this means that the first deployed web application in a shared mode will control how the Jetty instance will be created.
+{%endnote%}
 
 ## Web Context
 

@@ -147,6 +147,3 @@ When the ping client running on a remote machine (other than the machine running
 
 Repeat the above steps #3, where the ping command is called from a machine different than the one running the space. You will have to install GigaSpaces both on the client and server machines.
 
-# What's Next?
-
-{% refer %}**[Get Started with GigaSpaces Tutorials](/tutorials/index.html)**{% endrefer %}

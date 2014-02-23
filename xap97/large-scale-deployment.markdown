@@ -30,9 +30,9 @@ To avoid the unregistering of spaces, add resources (memory, CPU) or spaces, or 
 -Dcom.gs.jini.config.maxLeaseDuration=8000
 {% endhighlight %}
 
-{% lampon %}  It is recommended to **increase these values to 40000/80000 respectively** in case a large cluster is used.
-
 {% note %}
+It is recommended to **increase these values to 40000/80000 respectively** in case a large cluster is used.
+
 Increasing these values causes a delay when the space recognizes failover, since the active election infrastructure is based on space un-registration.
 {% endnote %}
 
@@ -40,8 +40,9 @@ Increasing these values causes a delay when the space recognizes failover, since
 
 Since every space container starts an embedded `RMIRegistry` service, it creates a set of threads which consume some resources.
 
-{% lampon %} If the `RMIRegistry` service is not used, or if a full replication cluster or a large cluster is used; it is recommended to disable the `RMIRegistry` service in the space container and in the GSC/GSM.
-
+{% note%}
+If the `RMIRegistry` service is not used, or if a full replication cluster or a large cluster is used; it is recommended to disable the `RMIRegistry` service in the space container and in the GSC/GSM.
+{%endnote%}
 
 ## Lookup Service
 
