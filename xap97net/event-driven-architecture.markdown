@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Event Driven Architecture
+title:  Event Processing
 categories: XAP97NET
-parent: main-modules.html
-weight: 500
+parent: programmers-guide.html
+weight: 2800
 ---
 
 {%children%}

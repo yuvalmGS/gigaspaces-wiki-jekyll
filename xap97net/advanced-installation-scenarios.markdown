@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Advanced Installation Scenarios
+title:  Advanced Scenarios
 categories: XAP97NET
 parent: installation.html
 weight: 100

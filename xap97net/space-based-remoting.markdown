@@ -2,8 +2,8 @@
 layout: post
 title:  Space Based Remoting
 categories: XAP97NET
-parent: main-modules.html
-weight: 400
+parent: programmers-guide.html
+weight: 2900
 ---
 
 

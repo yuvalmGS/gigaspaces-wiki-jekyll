@@ -2,8 +2,8 @@
 layout: post
 title:  Indexing
 categories: XAP97NET
-parent: querying-the-space.html
-weight: 400
+parent: programmers-guide.html
+weight: 2200
 ---
 
 {% compositionsetup %}

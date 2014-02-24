@@ -2,8 +2,8 @@
 layout: post
 title:  GigaSpaces Services Manager
 categories: XAP97NET
-parent: administrators-guide.html
-weight: 500
+parent: installation.html
+weight: 300
 ---
 
 {% summary %}Installing and managing Service Grid as Windows Services{% endsummary %}

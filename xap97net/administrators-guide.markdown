@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Administrator's Guide
+title:  Deployment and Administration
 categories: XAP97NET
 parent: none
 weight: 400

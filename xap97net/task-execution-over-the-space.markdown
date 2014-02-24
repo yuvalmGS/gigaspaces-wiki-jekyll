@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  Task Execution Over The Space
+title:  Task Execution
 categories: XAP97NET
-parent: main-modules.html
-weight: 300
+parent: programmers-guide.html
+weight: 2700
 ---
 
-{% compositionsetup %}
 
-{% summary page %}Space task executors allow you to easily execute grid-wide tasks on the space.{% endsummary %}
+
+{% summary %}Space task executors allow you to easily execute grid-wide tasks on the space.{% endsummary %}
 
 # Overview
 

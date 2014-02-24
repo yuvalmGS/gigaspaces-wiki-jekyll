@@ -2,7 +2,7 @@
 layout: post
 title:  Object Entries
 categories: XAP97NET
-parent: modeling-your-data.html
+parent: programmers-guide.html
 weight: 100
 ---
 
