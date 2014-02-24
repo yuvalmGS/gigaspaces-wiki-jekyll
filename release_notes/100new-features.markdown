@@ -2,7 +2,7 @@
 layout: post
 title:  New Features and Improvements
 categories: RELEASE_NOTES
-parent: xap97.html
+parent: xap100.html
 weight: 200
 ---
 
