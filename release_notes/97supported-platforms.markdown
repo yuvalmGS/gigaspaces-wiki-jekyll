@@ -37,7 +37,7 @@ GigaSpaces is being tested with (32bit and 64bit JVMs):
 - Linux RHEL 5.x/6.x
 - Solaris 10
 
-{%note%}USE-10 sp3 has bugs which make OS network layer unreliable. This OS should be avoided with GigaSpaces.{%endnote%}
+{%note%}SUSE-10 sp3 has bugs which make the OS network layer unreliable. This OS should be avoided with GigaSpaces.{%endnote%}
 
 {%note%}Supported Java Versions & SDK End-of-Life
 - Java SE 1.5 EOL - based on information made publicly available by The Oracle Corporation (formerly Sun Microsystems), as of October 30th 2009, Java SE 1.5 SDK has reached its End of Service Life (EOSL).
