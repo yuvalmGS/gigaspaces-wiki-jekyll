@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Viewing Space Interrelations in Cluster - GigaSpaces Browser
+title:  Space Interrelations
 categories: XAP97
 parent: cluster-view---gigaspaces-browser.html
 weight: 300

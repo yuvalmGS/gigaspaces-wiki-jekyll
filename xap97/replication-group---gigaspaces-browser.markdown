@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Replication Group - GigaSpaces Browser
+title:  Replication Group
 categories: XAP97
 parent: working-with-clusters---gigaspaces-browser.html
 weight: 500

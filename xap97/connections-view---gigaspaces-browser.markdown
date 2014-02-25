@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Connections View - GigaSpaces Browser
+title:  Connections View
 categories: XAP97
 parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
 weight: 100

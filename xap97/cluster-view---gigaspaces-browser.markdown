@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Cluster View - GigaSpaces Browser
+title:  Cluster View
 categories: XAP97
 parent: working-with-clusters---gigaspaces-browser.html
 weight: 100
@@ -58,9 +58,4 @@ The views under the **Operations** node have the same functionality as the views
 - **Statistics view** -- displays statistics for operations performed in the cluster. For more details, refer to the [Statistics View](./statistics-view---gigaspaces-browser.html) section.
 - **Connections view** -- displays connections to the cluster (includes additional columns: **Cluster Member Name**, **Server IP Address**, **Server Port**). For more details, refer to the [Connections View](./connections-view---gigaspaces-browser.html) section.
 
-# More in this Section
-
-- [Top-level view: groups and cluster members](./visualizing-cluster-groups-and-members---gigaspaces-browser.html)
-- [Viewing space interrelations](./viewing-space-interrelations-in-cluster---gigaspaces-browser.html)
-- [Viewing space settings](./viewing-cluster-policy-settings-for-space---gigaspaces-browser.html)
-- [Customizing the cluster view display](./customizing-cluster-view---gigaspaces-browser.html)
+{%children%}

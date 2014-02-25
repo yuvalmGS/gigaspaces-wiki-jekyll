@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Space JMS - GigaSpaces Browser
+title:  Space JMS
 categories: XAP97
 parent: working-with-spaces---gigaspaces-browser.html
 weight: 100

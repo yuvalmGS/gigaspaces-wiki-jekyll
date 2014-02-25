@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Space Serialization and Engine Thread Pool - GigaSpaces Browser
+title:  Serialization and Thread Pool
 categories: XAP97
 parent: working-with-spaces---gigaspaces-browser.html
 weight: 400

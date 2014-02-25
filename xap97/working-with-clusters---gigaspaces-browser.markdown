@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  Working with Clusters - GigaSpaces Browser
+title:  Working with Clusters
 categories: XAP97
-parent: using-space-browser-tab---gigaspaces-management-center.html
+parent: gigaspaces-management-center.html
 weight: 500
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Viewing Cluster Policy Settings for Space - GigaSpaces Browser
+title:  Policy Settings
 categories: XAP97
 parent: cluster-view---gigaspaces-browser.html
 weight: 200

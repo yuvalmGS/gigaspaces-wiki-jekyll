@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Suggested Monitoring Tools
+title:  Monitoring Tools
 categories: XAP97
 parent: managing-and-monitoring-a-running-system.html
 weight: 600

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Query View - GigaSpaces Browser
+title:  Query View
 categories: XAP97
 parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
 weight: 400

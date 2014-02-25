@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Monitoring Network Activity
+title:  Network Monitoring
 categories: XAP97
 parent: managing-and-monitoring-a-running-system.html
 weight: 500

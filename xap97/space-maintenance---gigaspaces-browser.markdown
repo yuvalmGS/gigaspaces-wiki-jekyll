@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Space Maintenance - GigaSpaces Browser
+title:  Space Maintenance
 categories: XAP97
 parent: working-with-spaces---gigaspaces-browser.html
 weight: 200

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Space JMX Management
+title:  JMX Management
 categories: XAP97
 parent: managing-and-monitoring-a-running-system.html
 weight: 500
@@ -115,7 +115,7 @@ The container **Operations** tab allows you to perform different space container
 - **destroySpace** -- destroys a space in this container (type the space's name in the **spaceName** text box).
 - **createSpace (spaceName, schemaName, clusterConfigURL)** -- creates a space with a unique name in this container and writes the created space to the appropriate Storage Adapter. (Type the name of the space, the name of the schema, and the cluster configuration URL\*\*\* in the relevant text boxes).
 - **createSpace (spaceName, schemaName)** -- creates a space with a unique name in this container.
-- **getRuntimeConfigReport** -- displays a runtime configuration report. For more details, refer to the [Runtime Configuration Report](./space-container-configuration-general-tab---gigaspaces-browser.html#Runtime Configuration Report) section.
+- **getRuntimeConfigReport** -- displays a runtime configuration report. For more details, refer to the [Runtime Configuration Report](./managing-space-containers---gigaspaces-browser.html#Runtime Configuration Report) section.
 
 {% indent %}
 ![space_JMX_11_IMG995.gif](/attachment_files/space_JMX_11_IMG995.gif)

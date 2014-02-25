@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Pending Notify Templates Information
+title:  Pending Notify Templates
 categories: XAP97
-parent: using-space-browser-tab---gigaspaces-management-center.html
-weight: 400
+parent: gigaspaces-management-center.html
+weight: 700
 ---
 
 {% summary page|60 %}Information regarding pending notify templates{% endsummary %}

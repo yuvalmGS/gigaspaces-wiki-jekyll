@@ -307,7 +307,7 @@ NIC_ADDR=192.168.80.146; export NIC_ADDR
 
 {% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
-{% refer %}For details on viewing the exact configuration in which the system is currently running, refer to the [Container Maintenance](./space-container-configuration-general-tab---gigaspaces-browser.html#Runtime Configuration Report) section.{% endrefer %}
+{% refer %}For details on viewing the exact configuration in which the system is currently running, refer to the [Container Maintenance](./managing-space-containers---gigaspaces-browser.html#Runtime Configuration Report) section.{% endrefer %}
 
 ## Logging with RMI_OPTIONS
 

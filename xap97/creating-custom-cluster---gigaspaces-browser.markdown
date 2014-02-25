@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Creating Custom Cluster - GigaSpaces Browser
+title:  Creating Custom Cluster
 categories: XAP97
 parent: working-with-clusters---gigaspaces-browser.html
 weight: 200

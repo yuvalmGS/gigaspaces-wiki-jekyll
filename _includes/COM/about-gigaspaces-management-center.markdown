@@ -1,8 +1,8 @@
-# Overview
+
 
 GigaSpaces Management Center is a Graphical User Interface that allows you to view spaces, containers, and clusters and configure them, using the Space Browser tab. You can also deploy and manage services using the Deployments tab.
 
-{% lampon %} To start the GigaSpaces Management Center, run: 
+**To start the GigaSpaces Management Center, run:**
 
 `<GigaSpaces Root>\bin\gs-ui.bat/sh`
 

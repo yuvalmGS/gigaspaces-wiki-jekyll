@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  GigaSpaces Browser Tree Panel and Configuration Panel
+title:  Grid Tree & Configuration
 categories: XAP97
-parent: using-space-browser-tab---gigaspaces-management-center.html
+parent: gigaspaces-management-center.html
 weight: 100
 ---
 
@@ -94,7 +94,7 @@ Right-clicking a space container node ( ![container.gif](/attachment_files/conta
 {% endindent %}
 
 - **Refresh** -- refreshes the tree panel display.
-- **Runtime Configuration Report** -- displays the current configuration of the selected space container (see [Runtime Configuration Report](./space-container-configuration-general-tab---gigaspaces-browser.html#Runtime Configuration Report)).
+- **Runtime Configuration Report** -- displays the current configuration of the selected space container (see [Runtime Configuration Report](./managing-space-containers---gigaspaces-browser.html#Runtime Configuration Report)).
 - **Launch JConsole** -- launches a [JConsole](./space-jmx-management.html) for the selected space container.
 
 When the space container node is selected, its configuration data is displayed in the configuration panel on the right side.
@@ -138,3 +138,5 @@ A cluster is a collection of spaces from one or more space containers. The clust
 # Service View panel
 
 The **Service View** panel takes up most of the Space Browser screen; it is located on the right of the **Grid Tree** panel. This panel shows configuration details for the node selected in the tree on the left, allowing you to edit some of them.
+
+{%children%}

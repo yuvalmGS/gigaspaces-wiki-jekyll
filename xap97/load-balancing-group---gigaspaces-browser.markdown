@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Load-Balancing Group - GigaSpaces Browser
+title:  Load-Balancing Group
 categories: XAP97
 parent: working-with-clusters---gigaspaces-browser.html
 weight: 400

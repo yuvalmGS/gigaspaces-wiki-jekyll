@@ -1,6 +1,6 @@
-{% compositionsetup %}
 
-# Overview
+
+
 
 The Space Browser tab allows you to view and configure two main components in GigaSpaces -- space and cluster.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Statistics View - GigaSpaces Browser
+title:  Statistics View
 categories: XAP97
 parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
 weight: 500

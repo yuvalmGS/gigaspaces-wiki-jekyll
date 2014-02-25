@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Customizing Cluster View - GigaSpaces Browser
+title:  Customizing
 categories: XAP97
 parent: cluster-view---gigaspaces-browser.html
 weight: 100

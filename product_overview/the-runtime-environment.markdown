@@ -44,7 +44,7 @@ In order to discover one another in the network, the GSCs and GSMs use a [Lookup
 
 Finally, the *GSA* [Grid Service Agent](./service-grid.html#gsa) component is used to start and manage the other components of the Service Grid (i.e. GSC, GSM, LUS). Typically, the GSA is started with the hosting machine's startup. Using the agent, you can bootstrap the entire cluster very easily, and start and stop additional GSCs, GSMs and lookup services at will.
 
-All of the above components are fully manageable from the GigaSpaces management interfaces such as the [UI]({%latestjavaurl%}/graphical-user-interface.html), CLI and [Admin API]({%latestjavaurl%}/administration-and-monitoring-api.html).
+All of the above components are fully manageable from the GigaSpaces management interfaces such as the [UI]({%latestjavaurl%}/gigaspaces-management-center.html), CLI and [Admin API]({%latestjavaurl%}/administration-and-monitoring-api.html).
 
 ## Optional Components
 

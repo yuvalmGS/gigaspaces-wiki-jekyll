@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  GigaSpaces Browser Menus and Buttons
+title:  Menus and Buttons
 categories: XAP97
-parent: using-space-browser-tab---gigaspaces-management-center.html
-weight: 200
+parent: gigaspaces-management-center.html
+weight: 50
 ---
 
 {% summary %}Using the **File** menu, **Container** menu, **Space** menu, **Cluster** menu, **Windows** menu, **Help** menu, button toolbar, and address bar.{% endsummary %}

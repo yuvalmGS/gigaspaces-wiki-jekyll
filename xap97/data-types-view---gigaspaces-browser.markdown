@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Data Types View - GigaSpaces Browser
+title:  Data Types View
 categories: XAP97
 parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
 weight: 200

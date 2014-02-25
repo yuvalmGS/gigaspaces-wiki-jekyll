@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Failover Group - GigaSpaces Browser
+title:  Failover Group
 categories: XAP97
 parent: working-with-clusters---gigaspaces-browser.html
 weight: 300

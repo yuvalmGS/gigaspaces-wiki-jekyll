@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Space Memory Management - GigaSpaces Browser
+title:  Space Memory Management
 categories: XAP97
 parent: working-with-spaces---gigaspaces-browser.html
 weight: 300

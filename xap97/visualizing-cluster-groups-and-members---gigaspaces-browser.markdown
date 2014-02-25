@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Visualizing Cluster Groups and Members - GigaSpaces Browser
+title:  Groups and Members
 categories: XAP97
 parent: cluster-view---gigaspaces-browser.html
 weight: 400

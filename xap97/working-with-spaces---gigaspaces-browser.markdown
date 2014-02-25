@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  Working with Spaces - GigaSpaces Browser
+title:  Working with Spaces
 categories: XAP97
-parent: using-space-browser-tab---gigaspaces-management-center.html
+parent: gigaspaces-management-center.html
 weight: 600
 ---
 

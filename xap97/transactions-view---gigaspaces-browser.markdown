@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Transactions View - GigaSpaces Browser
+title:  Transactions View
 categories: XAP97
 parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
 weight: 600
