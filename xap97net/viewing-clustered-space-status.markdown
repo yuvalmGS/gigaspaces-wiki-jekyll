@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Viewing Clustered Space Status
-categories: XAP97
+categories: XAP97NET
 parent: troubleshooting.html
 weight: 300
 ---

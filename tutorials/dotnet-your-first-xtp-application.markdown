@@ -6,9 +6,9 @@ parent: dotnet-quick-start-guide.html
 weight: 300
 ---
 
-{% compositionsetup %}
 
-{% summary page|65 %}This example demonstrates basic usage of a .NET Processing Unit. The example contains two Processing Unit Containers; one that feeds data objects into the system, and another that reads these objects and processes them.{% endsummary %}
+
+{% summary  %}This example demonstrates basic usage of a .NET Processing Unit. The example contains two Processing Unit Containers; one that feeds data objects into the system, and another that reads these objects and processes them.{% endsummary %}
 
 {% section %}
 

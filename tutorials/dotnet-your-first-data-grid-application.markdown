@@ -6,7 +6,7 @@ parent: dotnet-quick-start-guide.html
 weight: 200
 ---
 
-{% summary page %}This tutorial explains how to deploy and use a XAP [Data Grid]({%currentneturl%}/the-in-memory-data-grid.html) from a .NET client application {% endsummary %}
+{% summary page %}This tutorial explains how to deploy and use a XAP [Data Grid](/product_overview/the-in-memory-data-grid.html) from a .NET client application {% endsummary %}
  
 # Overview
 
@@ -30,7 +30,7 @@ To install, simply double-click the `{{ site.latest_msi_filename }}` you've down
 
 ### Starting a Service Grid
 
-A Data Grid requires a [Service Grid]({%currentneturl%}/service-grid.html) to host it. A service grid is composed of one or more machines (service grid nodes) running a [Service Grid Agent]({%currentneturl%}/service-grid.html#gsa) (or `GSA`), and provides a framework to deploy and monitor applications on those machines, in our case the Data Grid.
+A Data Grid requires a [Service Grid](/product_overview/service-grid.html) to host it. A service grid is composed of one or more machines (service grid nodes) running a [Service Grid Agent]({%currentneturl%}/service-grid.html#gsa) (or `GSA`), and provides a framework to deploy and monitor applications on those machines, in our case the Data Grid.
 
 In this tutorial you'll launch a single node service grid on your machine. To start the service grid, simply run the `Gs-agent.exe` from the product's `bin` folder.
 
@@ -208,7 +208,7 @@ namespace XapDemo
 Read more about the GigaSpaces runtime environment, how to model your data in a clustered environment, and how to leverage the power capabilities of the Space.
 
 - [Elastic Processing Unit]({%currentneturl%}/elastic-processing-unit.html)
-- [Modeling and Accessing Your Data]({%currentneturl%}/modeling-and-accessing-your-data.html)
+- [Modeling and Accessing Your Data](/sbp/modeling-and-accessing-your-data.html)
 - [Deploying and Interacting with the Space]({%currentneturl%}/deploying-and-interacting-with-the-space.html)
-- [The GigaSpaces Runtime Environment]({%currentneturl%}/the-runtime-environment.html)
+- [The GigaSpaces Runtime Environment](./the-runtime-environment.html)
 {%endcomment%}

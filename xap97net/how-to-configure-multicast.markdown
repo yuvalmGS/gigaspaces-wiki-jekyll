@@ -31,7 +31,9 @@ To enable the important capabilities above, you should enable multicast on machi
 - Space cluster replication uses unicast by default. You should use multicast replication when having more than 10 clients acting as replica spaces per target space.
 {% endtip %}
 
-{% exclamation %} In case you want to **disable the Jini Lookup Service Multicast announcements** please refer to [this](./lookup-service-configuration.html#Multicast Settings) section in the Wiki.
+{% warning %}
+In case you want to **disable the Jini Lookup Service Multicast announcements** please refer to [this](./lookup-service-configuration.html#Multicast Settings) section in the Wiki.
+{%endwarning%}
 
 # Configuring Multicast on Windows
 
@@ -56,7 +58,8 @@ The problem of multicasts/broadcasts not passing the router/switch is a well kno
 
 [Wireshark (formerly Ethereal)](http://www.wireshark.org/) - accumulates years of network analyzing experience and is far more mature and known than other tools. It is a cross-platform packet sniffer/network analyzer tool (used both in Windows and Unix/Linux). It allows you to examine data from a live network, or from a capture file on disk. You can interactively browse the capture data, viewing summary and detail information for each packet. It has several powerful features, including a rich display filter language and the ability to view the reconstructed stream of a TCP session.
 
-{% infosign %} **To find TTL**, you should monitor some traffic (start-stop on the proper interface), in the monitoring log. Choose the packet you are interested in, and look at its IP layer - TTL (and other parameters) are shown.
+{% note %}
+**To find TTL**, you should monitor some traffic (start-stop on the proper interface), in the monitoring log. Choose the packet you are interested in, and look at its IP layer - TTL (and other parameters) are shown.
 
-{% infosign %} The **default TTL value is 3** (was 15). See [Multicast Settings](./lookup-service-configuration.html#LookupServiceConfiguration-MulticastSettings) section for details of how to modify that value.
-
+The **default TTL value is 3** (was 15). See [Multicast Settings](./lookup-service-configuration.html#LookupServiceConfiguration-MulticastSettings) section for details of how to modify that value.
+{%endnote%}

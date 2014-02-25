@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Tools
-categories: XAP97
+categories: XAP97NET
 parent: troubleshooting.html
 weight: 500
 ---

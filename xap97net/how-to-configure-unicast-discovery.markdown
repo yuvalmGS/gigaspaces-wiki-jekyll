@@ -14,7 +14,9 @@ There are many cases when you need to use a unicast-based services discovery. Fo
 
 In such cases, the Jini lookup discovery enables the user to discover services (spaces, GSC, GSM, processing units etc.) using unicast protocol.
 
-{% infosign %} Please refer to the [Lookup Service Configuration](./lookup-service-configuration.html) or the [Networking How Tos](./networking-how-tos.html) section for more details.
+{% info %}
+Please refer to the [Lookup Service Configuration](./lookup-service-configuration.html) or the [Networking How Tos](./networking-how-tos.html) section for more details.
+{%endinfo%}
 
 # Configuring the lookup locators property
 
@@ -38,8 +40,9 @@ For both **unicast AND multicast discovery**, use:
 jini://*/./mySpace?locators=machine1:4174,machine2:4174&groups=gigaspaces-9.0.0-XAPPremium-ga
 {% endhighlight %}
 
-{% exclamation %} When the locators attribute is used in conjunction with the jini://* prefix and groups attribute, the discovery will be unicast AND multicast.
+{% warning %} When the locators attribute is used in conjunction with the jini://* prefix and groups attribute, the discovery will be unicast AND multicast.
 If you want unicast only, you should disable multicast altogether.
+{%endwarning%}
 
 {% tip %}
 For **unicast discovery only**, you should disable multicast using **`com.gs.multicast.enabled=false`** system property, and use:
@@ -50,7 +53,9 @@ jini://machine1:4174,machine2:4174/./mySpace?locators=machine1:4174,machine2:417
 
 {% endtip %}
 
-{% infosign %} For troubleshooting purposes you should verify that the services (spaces, GSC, GSM, processing units etc.) print correct settings for the locators while they initialize. You can turn on the relevant loggings if required.
+{% info %}
+For troubleshooting purposes you should verify that the services (spaces, GSC, GSM, processing units etc.) print correct settings for the locators while they initialize. You can turn on the relevant loggings if required.
+{%endinfo%}
 
 # Configuring Jini Lookup Service Unicast Port
 

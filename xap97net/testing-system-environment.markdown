@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Testing System Environment
-categories: XAP97
+categories: XAP97NET
 parent: troubleshooting.html
 weight: 200
 ---
