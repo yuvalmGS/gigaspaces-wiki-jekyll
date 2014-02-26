@@ -220,8 +220,8 @@ The general properties are used to override various components such as the space
     new UrlSpaceConfigurer("/./space").addProperty("space-config.engine.cache_policy", "0");
 
    // Create the proxy
-   GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer(url)).gigaSpace();
-
+   GigaSpace gigaSpace = new GigaSpaceConfigurer(spaceConfigurer).gigaSpace();
+   .......
    // shutting down / closing the Space
    spaceConfigurer.destroy();
 {% endhighlight %}
@@ -281,6 +281,11 @@ Here is an example on how to create the proxy:
 
 {% endtabcontent %}
 {% endinittab %}
+
+{% note %}
+The application is always injected with `os-core:giga-space` bean that wraps always a `os-core:space`.
+{% endnote %}
+
 
 # Proxy Properties
 
@@ -492,12 +497,12 @@ gigaSpace.write(someObject, gigaSpace.getDefaultWriteModifiers().add(WriteModifi
 
 For further details on each of the available modifiers see:
 
-- [ReadModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/ReadModifiers.html)
-- [WriteModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/WriteModifiers.html)
-- [TakeModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/TakeModifiers.html)
-- [CountModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/CountModifiers.html)
-- [ClearModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/ClearModifiers.html)
-- [ChangeModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/ChangeModifiers.html)
+- [ReadModifiers]({%javadoc com/gigaspaces/client/ReadModifiers %})
+- [WriteModifiers]({%javadoc com/gigaspaces/client/WriteModifiers%})
+- [TakeModifiers]({%javadoc com/gigaspaces/client/TakeModifiers%})
+- [CountModifiers]({%javadoc com/gigaspaces/client/CountModifiers%})
+- [ClearModifiers]({%javadoc com/gigaspaces/client/ClearModifiers%})
+- [{%color green%}ChangeModifiers{%endcolor%}]({%javadoc com/gigaspaces/client/ChangeModifiers%})
 
 # Exception Hierarchy
 
