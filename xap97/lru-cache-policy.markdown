@@ -19,8 +19,6 @@ The space memory manager uses a dedicated thread called **Evictor** - this threa
 
 Evicting an object from the space requires the space engine to lock the LRU chain during the object removal, and to update the relevant indexes. This means that the eviction based on **available memory** that is done in batches, might impact the space responsiveness to client requests. Still, you might need to use this in case you can't estimate the amount of objects within the space.
 
-----------
-
 # When LRU Cache Policy Should be used?
 
 When having an application using a very large backend database leveraging the space as a frontend distributed cache using the `LRU` cache policy, the space can speed up read activity while keeping some of the data in memory. In this case - the motivation is to **access the database in the most optimal manner** when performing data access operations against the space to reduce the load on the database as much as you can.
