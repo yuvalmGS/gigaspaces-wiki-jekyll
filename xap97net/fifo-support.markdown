@@ -57,7 +57,7 @@ If class `Person` is not set to support FIFO, an exception will be thrown.
 
 ## Read with FIFO
 
-Reading without FIFO looks for a matching entry in the space and returns the first one found (if any), but not necessarily the one that was written first. Reading with FIFO guarantees that if there is more than one matching entry, the one that was written first will be returned (the write time is determined based on a timestamp that ensures that a client receives Entries in FIFO order). Executing read with FIFO again with the same template will return the same result, assuming the entry hasn't been changed or deleted.
+Reading without FIFO looks for a matching entry in the space and returns the first one found (if any), but not necessarily the one that was written first. Reading with FIFO guarantees that if there is more than one matching entry, the one that was written first will be returned (the write time is determined based on internal sequencing that ensures that a client receives Entries in FIFO order). Executing read with FIFO again with the same template will return the same result, assuming the entry hasn't been changed or deleted.
 
 ## Take with FIFO
 
@@ -67,7 +67,7 @@ A take operation using FIFO might be critical when building a Point-to-Point (P2
 
 ## Batch operations with FIFO
 
-When using the `ReadMultiple` or `TakeMultiple` with FIFO, the returned array will be ordered according to the time the entries were written to the space.
+When using the `ReadMultiple` or `TakeMultiple` with FIFO, the returned array will be ordered according to the order the entries were written to the space.
 
 ## Transactions and FIFO
 
