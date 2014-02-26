@@ -97,7 +97,7 @@ SpaceDocument docresult[] = gigaSpace.readMultiple(docQuery);
 
 # Immutable Objects Support
 
-Up to version 9.7, every space property needed to have both a getter and a setter, which made it impossible to implement read only properties. In version 9.7, you can define space properties that have only a getter, or no accessors at all. Refer to the [Constructor Based Property Injection](/xap97/pojo-metadata.html#SpaceClassConstructor) for more details.  	
+Up to version 9.7, every space property needed to have both a getter and a setter, which made it impossible to implement read only properties. In version 9.7, you can define space properties that have only a getter, or no accessors at all. Refer to the [Constructor Based Property Injection](/xap97/modeling-your-data.html) for more details.
 
 # Grid Activity Breakdown by Client in the Web UI
 
