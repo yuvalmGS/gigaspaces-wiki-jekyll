@@ -66,7 +66,7 @@ A take operation using FIFO might be critical when building a Point-to-Point (P2
 
 ## Batch operations with FIFO
 
-When using the `readMultiple` or `takeMultiple` with FIFO, the returned array will be ordered according to the time the entries were written to the space.
+When using the `readMultiple` or `takeMultiple` with FIFO, the returned array will be ordered according to the order the entries were written to the space.
 
 ## Transactions and FIFO
 
