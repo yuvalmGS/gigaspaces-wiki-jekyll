@@ -19,6 +19,57 @@ The space memory manager uses a dedicated thread called **Evictor** - this threa
 
 Evicting an object from the space requires the space engine to lock the LRU chain during the object removal, and to update the relevant indexes. This means that the eviction based on **available memory** that is done in batches, might impact the space responsiveness to client requests. Still, you might need to use this in case you can't estimate the amount of objects within the space.
 
+----------
+
+# When LRU Cache Policy Should be used?
+
+When having an application using a very large backend database leveraging the space as a frontend distributed cache using the `LRU` cache policy, the space can speed up read activity while keeping some of the data in memory. In this case - the motivation is to **access the database in the most optimal manner** when performing data access operations against the space to reduce the load on the database as much as you can.
+
+When using `read`, `readById` or `readByIds` operations performing a lookup for a single specific object(s), that cannot be found within the space (a "cache miss"), the database access by the space is very optimal. Only one raw is retrieved from the database per object lookup activity via the Space Data Source implementation. This will be conducted from the relevant partition only.
+
+But when performing queries, using `readMultiple` or `GSIterator` with a template or `SQLQuery` filter, that return a result set that may involve relatively large amount of objects, with a space running in `LRU` cache policy mode, the probability accessing the database retrieving large amount of data is very high:
+
+- When using `readMultiple` having `Integer.MAX_VALUE` as the `max_objects` parameter, every partition will access the database (parallel database access). This may overload the database.
+- When using `readMultiple` having `max_objects` < `Integer.MAX_VALUE` the database might be accessed even if there are enough objects matching the query criteria across all the space partitions.
+- When loading data from database data eviction process may be triggered. This may impact the performance.
+- Database access involves reading objects that will not be loaded into the space (result set with non-matching routing value that are filtred out by the partition).
+
+In order to minimize the above potential database overhead that impacts application response time, the `LRU` cache policy is recommended mostly with applications using the `read`, `readById` or `readByIds` operations.
+
+Constructing read operations using `SQLQuery` with `Order by`, `Group by` are not recommended as well as these reqire the entire data set many times. These should be conducted against the database directly where the database result set should include only the IDs , where the actual data should be retrieved via the space using the `readById` or `readByIds` operations. With partitioned space the routing value field should also be retrieved to perform the `readById` or `readByIds` operations against the correct partition.
+
+The `MEMORY_ONLY_SEARCH` modifier may allow you to control when operations will be conducted against the space and the persist store or just against the space. This will be give flexibility to minimize the database load.
+
+# MEMORY_ONLY_SEARCH Modifier
+
+When running with `LRU` Cache policy you may control `Polling Container` activity,all `read` operations, all `take` operations and `clear` operations to be conducted **both** against the space and the underlying persist store (default behavior) or just **only against the space** without interacting with the persist store. When conducting operations using the `MEMORY_ONLY_SEARCH` modifier the space data source or space sync endpoint (write-behind/Mirror) implementation will not be invoked.
+
+Polling Container example using `MemoryOnlySearch`:
+{% highlight java %}
+SingleReadReceiveOperationHandler receiveOperationHandler = new SingleReadReceiveOperationHandler();
+receiveOperationHandler.setUseMemoryOnlySearch(true);
+SimplePollingEventListenerContainer pollingEventListenerContainer = 
+		new SimplePollingContainerConfigurer(space)
+.template(new Data())
+.receiveOperationHandler(receiveOperationHandler)
+.eventListenerAnnotation(new Object() {
+	@SpaceDataEvent
+	public void eventHappened() {
+	}
+}).pollingContainer();
+{% endhighlight %}
+
+readMultiple operation example using `MEMORY_ONLY_SEARCH`:
+{% highlight java %}
+Data data[]=gigaspace.readMultiple(query , 0 , ReadModifiers.MEMORY_ONLY_SEARCH);
+{% endhighlight %}
+
+clear operation example using `MEMORY_ONLY_SEARCH`:
+{% highlight java %}
+gigaspace.clear(query,ClearModifiers.MEMORY_ONLY_SEARCH)
+{% endhighlight %}
+
+
 # How LRU Eviction Works
 
 LRU eviction has 2 eviction strategies:
