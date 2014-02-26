@@ -3,7 +3,7 @@ layout: post
 title:  Document-Object interoperability
 categories: XAP97NET
 weight: 300
-parent: document-(schema-free)-api.html
+parent: document-api.html
 ---
 
 {% summary %}Interoperability between Concrete Object and Document space entries{% endsummary %}

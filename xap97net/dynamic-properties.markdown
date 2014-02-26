@@ -6,7 +6,7 @@ parent: object-entries.html
 weight: 300
 ---
 
-{% compositionsetup %}
+
 
 {% summary %}Using Dynamic Properties with Object entries.{% endsummary %}
 
@@ -14,7 +14,7 @@ weight: 300
 
 Object entries' properties are bound by the schema of the Object class, which means a property cannot be added without changing the class, and since changing the class requires restarting the space, this can be a long and tiresome project.
 
-Starting with 8.0.1, GigaSpaces XAP provides the [Document API](./document-(schema-free)-entries.html), which is schema free, and thus enables users to add properties freely without worrying about schema changes. However, some users still prefer to continue working with standard objects (with fixed attributes) but would like to enjoy the benefits of dynamic properties.
+Starting with 8.0.1, GigaSpaces XAP provides the [Document API](./document-api.html), which is schema free, and thus enables users to add properties freely without worrying about schema changes. However, some users still prefer to continue working with standard objects (with fixed attributes) but would like to enjoy the benefits of dynamic properties.
 
 Dynamic properties can be used with Object as well. This provides better interoperability between Object and document entries, and provides excellent schema evolution support without switching from Objects to documents.
 

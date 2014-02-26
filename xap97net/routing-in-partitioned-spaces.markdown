@@ -8,7 +8,7 @@ weight: 600
 
 
 
-{% summary page|60 %}Understanding how space operations behave in a partitioned environment.{% endsummary %}
+{% summary  %}Understanding how space operations behave in a partitioned environment.{% endsummary %}
 
 # Overview
 
@@ -27,7 +27,7 @@ Target partition space ID =
     getRoutingPropertyValue(entry).hashCode() % (number of partitions)
 {% endhighlight %}
 
-The routing property can be explicitly set using the \[`SpaceRouting`\] attribute for [Object entries](./object-metadata.html) or via the `SpaceTypeDescriptorBuilder` for [document entries](./document-(schema-free)-entries.html). If the routing property is not explicitly set, the space id property is used for routing. If the space id property is not defined, the first indexed property (alphabetically) is used for routing, otherwise the first property (alphabetically) is used for routing.
+The routing property can be explicitly set using the \[`SpaceRouting`\] attribute for [Object entries](./object-metadata.html) or via the `SpaceTypeDescriptorBuilder` for [document entries](./document-api.html). If the routing property is not explicitly set, the space id property is used for routing. If the space id property is not defined, the first indexed property (alphabetically) is used for routing, otherwise the first property (alphabetically) is used for routing.
 
 {% exclamation %} It is highly recommended to explicitly define a routing property - when both space routing and space id are not defined, relying on implicit routing property selection can be confusing, being maintained mainly for backwards compatibility.
 

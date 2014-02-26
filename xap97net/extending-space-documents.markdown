@@ -2,7 +2,7 @@
 layout: post
 title:  Extending Space Documents
 categories: XAP97NET
-parent: document-(schema-free)-api.html
+parent: document-api.html
 weight: 100
 ---
 

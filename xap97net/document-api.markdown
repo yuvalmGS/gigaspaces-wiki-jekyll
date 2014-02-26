@@ -1,12 +1,11 @@
 ---
 layout: post
-title:  Document (Schema-Free) Entries
+title:  Document API
 categories: XAP97NET
-weight: 100
-parent:  document-(schema-free)-api.html
+weight: 200
+parent: programmers-guide.html
 ---
 
-{% compositionsetup %}
 
 {% summary %}Working with Space Documents{% endsummary %}
 
