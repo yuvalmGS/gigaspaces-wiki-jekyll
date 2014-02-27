@@ -36,7 +36,7 @@ In order to minimize the potential database overhead above, the `LRU` cache poli
 
 Constructing read operations using `SQLQuery` with `Order by`, `Group by` is not recommended either, as it reqires traversing the entire data set in many cases. In such cases, the preffered option is to perform the query directly against the database and select only the IDs, and then retreive the actual data from Space using the `readById` or `readByIds` operations. Then working with a partitioned space, it is recommended to store the routing value in a separate database column, and select it as so that the `readById` or `readByIds` operations will be more efficient.
 
-# 'MEMORY_ONLY_SEARCH' Modifier
+# The `MEMORY_ONLY_SEARCH` Modifier
 
 The `MEMORY_ONLY_SEARCH` modifier may be used to instruct the space to limit the query to the memory only and not access the database. This will be give flexibility to minimize the database load in cases where this modifier can be applied. 
 
@@ -54,6 +54,7 @@ SimplePollingEventListenerContainer pollingEventListenerContainer =
         .eventListenerAnnotation(new Object() {
             @SpaceDataEvent
         	public void eventHappened() {
+                //do something meaningful 
         	}
 }).pollingContainer();
 {% endhighlight %}
