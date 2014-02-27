@@ -28,7 +28,7 @@ To run and test the website locally, you should perform the following steps:
         git clone https://github.com/Gigaspaces/gigaspaces-wiki-jekyll.git
 
 * (Optional) If you want to edit a page in the solutions and best practices section: 
-  The solutions and best practices section is located in [a separate repository](github.com/Gigaspaces/gigaspaces-sbp-jekyll). If you have push permissions to it, clone it into the `sbp` directory as follows:
+  The solutions and best practices section is located in a separate repository. If you have push permissions to it, clone it into the `sbp` directory as follows:
         git clone https://github.com/Gigaspaces/gigaspaces-sbp-jekyll.git sbp 
 
   Otherwise, fork this repo and clone the fork into the `sbp` directory as follows: 
