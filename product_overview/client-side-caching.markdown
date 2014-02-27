@@ -1,16 +1,16 @@
 ---
 layout: post
 title:  Client Side Caching
-categories: XAP97
-parent: programmers-guide.html
-weight: 810
+categories: PRODUCT_OVERVIEW
+parent: caching-scenarios.html
+weight: 100
 ---
 
-{% summary %}A client application may run a local cache (near cache), which caches data in local memory of the client application. There are two variations provided: local cache and local view.{% endsummary %}
+{% summary %}A client application may run a local cache (near cache), which caches data in local memory of the client application. There are two variations provided: local cache and local view. Both allow the client application to cache specific or recently used data within client JVM and have it updated automatically by the space when that data changes.{% endsummary %}
 
-# Summary
 
-XAP supports client side caching of space data within the client application's JVM. When using client-side caching, the user essentially uses a two-layer cache architecture: The first layer is stored locally, within the client's JVM, and the second layer is stored within the remote master space. The remote master space may be used with any of the supported deployment topologies.
+
+GigaSpaces supports client side caching of space data within the client application's JVM. When using client-side caching, the user essentially uses a two-layer cache architecture: The first layer is stored locally, within the client's JVM, and the second layer is stored within the remote master space. The remote master space may be used with any of the supported deployment topologies.
 
 **In-line cache with a client cache**:
 ![in-line_cache-local-cache.jpg](/attachment_files/in-line_cache-local-cache.jpg)
@@ -18,18 +18,13 @@ XAP supports client side caching of space data within the client application's J
 **Side cache with a client cache**:
 ![side-cache-local-cache.jpg](/attachment_files/side-cache-local-cache.jpg)
 
-For a detailed description of the different caching scenarios please consult the [Product Overview](/product_overview/caching-scenarios.html)
-
-{%comment%}
 The client-side cache size is limited to the heap size of the client application's JVM. The client-side cache is updated automatically when the master copy of the object within the master space is updated.
-{%endcomment%}
 
 There are two variations provided:
 
-- [Local Cache](./local-cache.html) - This client side cache maintains any object used by the application. The cache data is loaded on demand (lazily), based on the client application's read activities.
-- [Local View](./local-view.html) - This client side cache maintains a specific subset of the entire data, and client side cache is populated when the client application is started.
+- [Local Cache]({%latestjavaurl%}/local-cache.html) - This client side cache maintains any object used by the application. The cache data is loaded on demand (lazily), based on the client application's read activities.
+- [Local View]({%latestjavaurl%}/local-view.html) - This client side cache maintains a specific subset of the entire data, and client side cache is populated when the client application is started.
 
-{%comment%}
 In both cases, once updates are performed (objects are added/updated/removed) on the master space, the master space propagates the changes to all relevant local views and caches.
 
 {% tip %}
@@ -51,8 +46,7 @@ Use local view in case you can encapsulate the information you need to distribut
 
 ## When to use a local cache?
 
-Use local cache in case you are not sure which information you need in the client cache and you want to read it in a dynamic manner. Therefore the local cache is more suitable for [query by ID](./id-queries.html) scenarios.
+Use local cache in case you are not sure which information you need in the client cache and you want to read it in a dynamic manner. Therefore the local cache is more suitable for [query by ID]({%latestjavaurl%}/id-queries.html) scenarios.
 
-{%endcomment%}
 
-{% children %}
+
