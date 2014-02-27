@@ -80,7 +80,7 @@ The following are the process types that come out of the box:
 {: .table .table-bordered}
 |Processes Type|Description|XML config file name|Properties file name|
 |:-------------|:----------|:-------------------|:-------------------|
-|gsc|Defines a [Grid Service Container}(/product_overview/service-grid.html#gsc)|gsc.xml|gsc.properties|
+|gsc|Defines a [Grid Service Container](/product_overview/service-grid.html#gsc)|gsc.xml|gsc.properties|
 |gsm|Defines a [Grid Service Manager](/product_overview/service-grid.html#gsm)|gsm.xml|gsm.properties|
 |lus|Defines a [Lookup Service](/product_overview/service-grid.html#lus)| lus.xml|lus.properties|
 |gsm_lus|Defines a [Grid Service Manager](/product_overview/service-grid.html#gs) and [Lookup Service](/product_overview/service-grid.html#lus) within the same JVM|gsm_lus.xml|gsm_lus.properties|
@@ -181,7 +181,7 @@ call gsc.bat
 {% endsection %}
 
 {% note %}
-Component specific configuration can be set using system properties (follows the \[component name\].\[property name\] notation).
+Component specific configuration can be set using system properties (follows the [component name].[property name] notation).
 {%endnote%}
 
 {%comment%}
