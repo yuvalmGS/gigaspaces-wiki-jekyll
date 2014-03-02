@@ -34,13 +34,13 @@ But when performing queries using `readMultiple` or `GSIterator` with a template
 
 In order to minimize the potential database overhead above, the `LRU` cache policy is recommended mostly for applications that use the `read`, `readById` or `readByIds` operations.
 
-Constructing read operations using `SQLQuery` with `Order by`, `Group by` is not recommended either, as it reqires traversing the entire data set in many cases. In such cases, the preffered option is to perform the query directly against the database and select only the IDs, and then retreive the actual data from Space using the `readById` or `readByIds` operations. Then working with a partitioned space, it is recommended to store the routing value in a separate database column, and select it as so that the `readById` or `readByIds` operations will be more efficient.
+Constructing read operations using `SQLQuery` with `Order by`, `Group by` is not recommended either, as it reqires traversing the entire result data set in many cases on the client side. In such cases, the preffered option is to perform the query directly against the database and select only the IDs, and then retreive the actual data from space using the `readById` or `readByIds` operations. When working with a partitioned space, it is recommended to store the routing value in a separate database column, and select it as so that the `readById` or `readByIds` operations will be more efficient.
 
 # The `MEMORY_ONLY_SEARCH` Modifier
 
-The `MEMORY_ONLY_SEARCH` modifier may be used to instruct the space to limit the query to the memory only and not access the database. This will be give flexibility to minimize the database load in cases where this modifier can be applied. 
+The `MEMORY_ONLY_SEARCH` modifier may be used to instruct the space to limit the query / template matching performed with read/take/clear/change operations to the data stored only in the space in-memory and not its backend persistence store (database). This give you the flexibility to minimize the database load in cases where this modifier can be applied. 
 
-This is very useful When running with the `LRU` cache policy and deploying a [Polling Container](polling-container.html). By default in such case, all `read`, `take` and `clear` operations will be conducted **both** against the space and the underlying persistent store. By using the `MEMORY_ONLY_SEARCH` modifier, the operations invokved by the polling container will **only access the space** for processing the search, without interacting with the persistent store. 
+This is very useful When running with the `LRU` cache policy and deploying a [Polling Container](polling-container.html). By default in such case, all `read`, `take` and `clear` operations will be conducted **both** against the space and the underlying persistent store. By using the `UseMemoryOnlySearch` Polling Container property, the operations invoked by the polling container will **only access the space** when conducting the search, without interacting with the persistent store.
 
 Here's a polling container example using the `MEMORY_ONLY_SEARCH` modifier:
 
@@ -59,18 +59,23 @@ SimplePollingEventListenerContainer pollingEventListenerContainer =
 }).pollingContainer();
 {% endhighlight %}
 
-readMultiple operation example using `MEMORY_ONLY_SEARCH`:
+Below `readById` , `readByIds`, `readMultiple` , `take` , `clear` , `takeMultiple` operations examples using `MEMORY_ONLY_SEARCH`:
 
 {% highlight java %}
-Data data[]=gigaspace.readMultiple(query , 0 , ReadModifiers.MEMORY_ONLY_SEARCH);
+Data result0 = gigaspace.readById(idquery , 0 , ReadModifiers.MEMORY_ONLY_SEARCH);
+
+ReadByIdsResult<Data> idsResult = gigaspace.readByIds(idsquery , ReadModifiers.MEMORY_ONLY_SEARCH);
+
+Data result1[] = gigaspace.readMultiple(query , 1000 , ReadModifiers.MEMORY_ONLY_SEARCH);
+
+Data result2 = gigaspace.take(query , 0 , TakeModifiers.EVICT_ONLY.add(TakeModifiers.MEMORY_ONLY_SEARCH));
+
+gigaspace.clear(query , ClearModifiers.EVICT_ONLY.add(ClearModifiers.MEMORY_ONLY_SEARCH));
+
+Data result3[] = gigaspace.takeMultiple(query , 1000 , TakeModifiers.EVICT_ONLY.add(TakeModifiers.MEMORY_ONLY_SEARCH));
 {% endhighlight %}
 
-clear operation example using `MEMORY_ONLY_SEARCH`:
-
-{% highlight java %}
-gigaspace.clear(query,ClearModifiers.MEMORY_ONLY_SEARCH)
-{% endhighlight %}
-
+The `TakeModifiers.EVICT_ONLY` and `ClearModifiers.EVICT_ONLY` should be used as well with the `take` and `clear` operations to remove matching entries only from the space.
 
 # How LRU Eviction Works
 
