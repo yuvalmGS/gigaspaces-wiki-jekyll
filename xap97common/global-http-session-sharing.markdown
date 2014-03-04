@@ -3,7 +3,7 @@
 Global HTTP Session Sharing allows transparent session replication between remote sites and session sharing between different application servers in real-time. The solution uses the [Shiro Session Manager library](http://shiro.apache.org/session-management.html)
 {% endsummary %}
 
-# Global HTTP Session Sharing - Massive Web Application Scaling
+# Massive Web Application Scaling
 
 It's becoming increasingly important for organizations to share HTTP session data across multiple data centers, multiple web server instances or different types of web servers. Here are few scenarios where HTTP session sharing is required:
 
@@ -52,7 +52,7 @@ The GigaSpaces Global HTTP Session Sharing architecture allows users to deploy t
 
 With this solution, there is no need to deploy a database to store the session, so you avoid the use of expensive database replication across multiple sites. Setting up GigaSpaces for session sharing between each site is simple and does not involve any code changes to the application.
 
-# What does GigaSpaces Global HTTP Session Management provide?
+# Overview
 
 GigaSpaces Global HTTP Session Management designed to deliver the application maximum performance with ZERO application code changes.
 
@@ -79,7 +79,7 @@ GigaSpaces Global HTTP Session Management features the following:
 
 - **Atomic HTTP request** session access support - multiple requests for the session attributes within the same HTTP request will be served without performing any remote calls. Master session copy will be updated when the HTTP request will be completed.
 
-# Using GigaSpaces Global HTTP Session Sharing with your Application
+# Global HTTP Session Sharing with your Application
 
 You simply need to configure your web application to use the Shiro session manager  with GigaSpaces, deploy the GigaSpaces in-memory data grid (IMDG) and its WAN Gateway in each data center and deploy your web application. That's it!
 
@@ -230,9 +230,9 @@ There are cases when applications store session data which is not defined as ser
 cacheManager.serializationType = XML
 {%endhighlight%}
 
-Session manager uses XStream libraries for serializing session data to XML. XStream serialization can be further customized, application can configure GigaSpaces session manager to use Refection Converter for Externalizable classes and register custom converters. Following two parameters in `shiro.ini` file can help in customizing serialization,
+Session manager uses XStream libraries for serializing session data to XML. XStream serialization can be further customized, application can configure GigaSpaces session manager to use the Reflection Converter for Externalizable classes and register custom converters. Following two parameters in `shiro.ini` file can help in customizing serialization,
 
-# When using Externalizable classes with customized serialization and want to stick to serialization based on Reflection enable this option
+# Externalizable classes with customized serialization
 {%highlight java%}
 # Default value is false
 cacheManager.registerReflectionConverter = true
@@ -253,7 +253,7 @@ cacheManager.username = gs
 cacheManager.password = gs
 {%endhighlight%}
 
-# Http Session Web Application Example
+# Example
 
 ## Single-Site Deployment
 
@@ -264,8 +264,11 @@ The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblo
 1. Deploy the HttpSession.war into Tomcat (or any other app server).
 1. Start your browser and access the web application via the following URL: http://localhost:8080/HttpSession
 
-{% note %}The URL above assumes the Web Server configured to use port 8080.{% endnote %}
-{% indent %}![httpSessionSharing4.jpg](/attachment_files/httpSessionSharing4.jpg){% endindent %}
+{% note %}
+The URL above assumes the Web Server configured to use port 8080.
+{% endnote %}
+
+![httpSessionSharing4.jpg](/attachment_files/httpSessionSharing4.jpg)
 
 1. Set some values for the Session Name and Attribute and click the **Update Session** button.
 1. View the session within the space via the GS-UI. Click the Data-Types icon , click the `org.openspaces.sessions.shiro.SpaceSession` class and Click the query button. The Query view will be displayed. You can double click any of the sessions and drill into the attributes map within the session to view the session attributes:
