@@ -23,7 +23,7 @@ categories: HOWTO
 {%panel bgColor=white | title=Usage%}
  You must use this plugin in the following scenarios:
 
-* Services and Best Practices
+* Solutions and Patterns
 * Java Tutorial
 * Product Overview
 {% endpanel %}
@@ -47,7 +47,7 @@ categories: HOWTO
 
  You must use this plugin in the following scenarios:
 
-* Services and Best Practices
+* Solutions and Patterns
 * Java Tutorial
 * Product Overview
 
@@ -69,7 +69,7 @@ In version {%latestxaprelease%} of XAP the ...
 {%panel bgColor=white | title=Usage%}
  You must use this plugin in the following scenarios:
 
-* Services and Best Practices
+* Solutions and Patterns
 * Java Tutorial
 * Product Overview
 

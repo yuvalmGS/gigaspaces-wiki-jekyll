@@ -25,7 +25,7 @@ module DocUtils
           return "XAP " + version 
         end
       elsif sectionPath == "sbp" 
-        "Solutions &amp; Best Practices"
+        "Solutions &amp; Patterns"
       elsif sectionPath == "api_documentation"
         "API Documentation"
       elsif sectionPath == "early_access"

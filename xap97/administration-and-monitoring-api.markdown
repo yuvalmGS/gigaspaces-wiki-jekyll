@@ -175,7 +175,7 @@ for (Machine machine : admin.getMachines()) {
 {% endinittab %}
 
 {% tip %}
-See a fully running example of a [Scaling Agent](/sbp/scaling-agent.html) as part of the Solutions & Best Practices section.
+See a fully running example of a [Scaling Agent](/sbp/scaling-agent.html) as part of the Solutions & Patterns section.
 {% endtip %}
 
 # Admin Construction

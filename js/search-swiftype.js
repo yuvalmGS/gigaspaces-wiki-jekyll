@@ -147,7 +147,7 @@ $(document).ready(function () {
                 if (this.endsWith(path,"net")) return "[XAP.NET] ";
                 else if (this.startsWith(path,"adm")) return "[XAP/Admin] ";
                 else if (this.startsWith(path,"xap")) return "[XAP/Java] ";
-                else if (path == "sbp") return "[Solution & Best Practices] ";
+                else if (path == "sbp") return "[Solution & Patterns] ";
             }
             return "";
         }

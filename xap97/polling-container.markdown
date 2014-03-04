@@ -1192,7 +1192,7 @@ public class SimpleListener {
 {% endinittab %}
 
 {% tip %}
-Learn more using about `TriggerOperationsHandler` using an example application on the [Best Practices wiki](/sbp/dynamic-polling-container-templates-using-triggeroperationhandler.html)
+Learn more using about `TriggerOperationsHandler` using an example application on the [Patterns wiki](/sbp/dynamic-polling-container-templates-using-triggeroperationhandler.html)
 {% endtip %}
 
 # Default Values of Polling Container Configuration Parameters

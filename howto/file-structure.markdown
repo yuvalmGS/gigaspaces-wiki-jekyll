@@ -25,7 +25,7 @@ to reuse the images in the future. We started the re grouping with the folder `s
 | `logos` |framework and product logos |
 | `navigation` | navigation icons and images |
 | `qsg` | images for Quick Start guide |
-| `sbp` | images for Services and Best Practices |
+| `sbp` | images for Solutions and Patterns |
 | `dotnet` | images for the .NET wiki |
 | `space_operations` | space operation related images and icons|
 
@@ -42,7 +42,7 @@ All downloadable artifacts like examples and presentations are placed in this di
 {: .table .table-bordered}
 |Subfolder name |Description|
 |:------|:---------------------------------------|
-| `sbp` |contains artifacts for the Services and Best Practices |
+| `sbp` |contains artifacts for the Solutions and Patterns |
 | `dotnet` |.NET related documents |
 
 
@@ -76,7 +76,7 @@ All other sections of the wiki are refrencing thes pages.
 
 ## `sbp`
 
-This is the directory that contains the Services and Best Practices documentation pages. 
+This is the directory that contains the Solutions and Patterns documentation pages. 
 
 
 ## `xap97`
