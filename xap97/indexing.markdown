@@ -93,7 +93,7 @@ By default, a property's index is inherited in sub classes (i.e. if a property i
 
 # Indexing at Run-time
 
-Indexes can be added dynamically at run-time using the GigaSpaces Management Center GUI or via API using the {{GigaSpaceTypeManager}} interface in conjunction with {{SpaceIndexFactory}}. See example below:
+Indexes can be added dynamically at run-time using the GigaSpaces Management Center GUI or via API using the `GigaSpaceTypeManager` interface in conjunction with `SpaceIndexFactory`. See example below:
 
 {% highlight java%}
    gigaspace.getTypeManager().asyncAddIndex("MyDataType",

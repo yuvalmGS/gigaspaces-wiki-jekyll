@@ -202,7 +202,7 @@ public class Data {
 
 - When mapping a Collection Data types or any other variable size field make sure the relevant database table column has a sufficient size that can accommodate the largest collection/variable size field you may have within your space object.
 
-- When fetching collections use the {{@Fetch(FetchMode.SELECT)}} annotation. This is a result of [hibernate bug HHH-1751](http://opensource.atlassian.com/projects/hibernate/browse/HHH-1751). The default {{@Fetch(FetchMode.JOIN)}} mode won't fetch all members. This will handle also duplicate entries creation when having the initial-load being called.
+- When fetching collections use the `@Fetch(FetchMode.SELECT)` annotation. This is a result of [hibernate bug HHH-1751](http://opensource.atlassian.com/projects/hibernate/browse/HHH-1751). The default `@Fetch(FetchMode.JOIN)` mode won't fetch all members. This will handle also duplicate entries creation when having the initial-load being called.
 
 {% endtip %}
 
