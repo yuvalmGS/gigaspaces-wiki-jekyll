@@ -37,8 +37,9 @@ The interface includes the following main operations:
 {%section%}
 {%column width=50% %}
 {%panel bgColor=white |  title=Reading objects from the space:%}
-[readById](id-queries.html) from the space{%wbr%}
-[readByIds](id-queries.html) from the space{%wbr%}
+[readById](#read) from the space{%wbr%}
+[readByIds](#readMultiple) from the space{%wbr%}
+[read](#read) object by template from the space{%wbr%}
 [readMultiple](#readMultiple) objects from the space {%wbr%}
 [read asynchronous](#asynchronousRead) from the space {%wbr%}
 [read if exists](#readIfExists) {%wbr%}
@@ -47,11 +48,12 @@ The interface includes the following main operations:
 {%endcolumn%}
 {%column width=45% %}
 {%panel bgColor=white |  title=Removing objects from the space:%}
-[takeById](#takeBuId) remove object by id from space{%wbr%}
-[takeByIds](#takeBuIds) remove objects by ids from space{%wbr%}
-[takeMultiple](#takeMultiple) remove objects from space {%wbr%}
-[take asynchronous](#asynchronousTake) remove{%wbr%}
-[take if exists](#takeIfExists) {%wbr%}
+[take](#take) object by template from space{%wbr%}
+[takeById](#take) object by id from space{%wbr%}
+[takeByIds](#takeMultiple) objects by ids from space{%wbr%}
+[takeMultiple](#takeMultiple)objects from space {%wbr%}
+[take asynchronous](#asynchronousTake){%wbr%}
+[take if exists](#takeIfExists){%wbr%}
 [take if exists by id](#takeIfExists)
 {%endpanel%}
 {%endcolumn%}

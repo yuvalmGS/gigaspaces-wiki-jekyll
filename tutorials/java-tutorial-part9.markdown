@@ -98,7 +98,7 @@ public class AuditArchiveContainer {
 {%endhighlight%}
 The example above removes 100(takeMultiple) AuditRecord objects from space at a time and writes them into Cassandra. The archive operation is performed on the bean that implements the ArchiveOpertaionHandler interface, in this case the CassandraArchiveOperationHandler bean.
 
-{%note%}Only Space Documents are supported for the event template. You can still write POJOs to the space, but the {{@EventTemplate}} used for taking objects from the space must be a SpaceDocument.{%endnote%}
+{%note%}Only Space Documents are supported for the event template. You can still write POJOs to the space, but the `@EventTemplate` used for taking objects from the space must be a SpaceDocument.{%endnote%}
 
 ### Attribute Mapping
 By default when serializing object/document properties to column values, the following serialization logic is applied:
@@ -125,7 +125,7 @@ When one of these objects is persisted in Cassandra, the following default colum
 |auditRecord.auditContent|auditContent(type: UTF8)|
 |auditRecord.userName|userName (type: UTF8)|
 
-The attributes will be mapped to the AuditRecord column family in Cassandra. Notice that the embedded class {{User}} was flattened and its properties are flattened as columns.
+The attributes will be mapped to the AuditRecord column family in Cassandra. Notice that the embedded class `User` was flattened and its properties are flattened as columns.
 
 
 It is possible to override this default behavior by providing a custom implementation.
@@ -197,7 +197,7 @@ Data Explorer
 
 
 ### Write your own Archive Container
-You can implement your own Archive Container to use your NoSQL backend or RDBMS for storing your information. Your class just needs to implement the {{ArchiveOperationHandler}} interface.
+You can implement your own Archive Container to use your NoSQL backend or RDBMS for storing your information. Your class just needs to implement the `ArchiveOperationHandler` interface.
 
 
 

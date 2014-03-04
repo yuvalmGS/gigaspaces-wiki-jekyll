@@ -38,11 +38,13 @@ Here is an overview of the most commonly used POJO annotations:
 - `@SpaceRouting`: The routing property for the POJO. In a partitioned space, this controls how instances of a certain class are distributed across the partitions. When two instances (even of different classes), have the same value for their routing property, they end up in the same partition.
 
 {% info %}
- You can define space classes metadata by class and field level decorations. These can be defined via annotations or XML configurations files (*gs.xml file).
+ You can define space classes metadata by class and field level decorations. These can be defined via annotations or XML configurations files (**gs.xml file**).
 {% endinfo %}
 {%learn%}./modeling-your-data.html{%endlearn%}
 
-
+{%warning%}
+When using  annotations and the gs.xml file to define metadata, the metadata in the gs.xml will be used and the annotations will be ignored. **It is not recommended to use the two metadata definitions for a space class at the same time**.
+{%endwarning%}
 
 {% note title=Primitives or Wrapper Classes for POJO Properties? %}
 GigaSpaces supports both primitives (`int`, `long`, `double`, `float`, etc.), and primitive wrappers (`java.lang.Integer`, `java.lang.Double`, etc.). In general, it is recommended that you use the primitive wrapper. This enables you to use the `null` values as a wildcard when using template matching.

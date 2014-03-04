@@ -59,20 +59,20 @@ The Grid Service Manager is the component which manages the deployment and life 
 - Grid Service Container (GSC)
 The Grid Service Container provides an isolated runtime for one (or more) processing unit instance and exposes its state to the GSM.
 
-- The Lookup Service (LUS)
-The Lookup Service provides a mechanism for services to discover each other. Each service can query the lookup service for other services, and register itself in the lookup service so other services may find it. For example, the GSM queries the LUS to find active GSCs.
- 
-- Grid Service Agent (GSA)
-The GSA is a process manager that can spawn and manage service grid processes (Operating System level processes) such as the Grid Service Manager, The Grid Service Container, and The Lookup Service. Using the agent, you can bootstrap the entire data grid very easily, and start and stop additional GSCs, GSMs and lookup services at will. Usually, a single GSA is run per machine.
-
-{%learn%}/product_overview/service-grid.html{%endlearn%}
-
-
 {%endcolumn%}
 {%column width=30% %}
 <img src="/attachment_files/qsg/gs_runtime-core.jpg"  >
 {%endcolumn%}
 {%endsection%}
+
+- The Lookup Service (LUS)
+The Lookup Service provides a mechanism for services to discover each other. Each service can query the lookup service for other services, and register itself in the lookup service so other services may find it. For example, the GSM queries the LUS to find active GSCs.
+
+- Grid Service Agent (GSA)
+The GSA is a process manager that can spawn and manage service grid processes (Operating System level processes) such as the Grid Service Manager, The Grid Service Container, and The Lookup Service. Using the agent, you can bootstrap the entire data grid very easily, and start and stop additional GSCs, GSMs and lookup services at will. Usually, a single GSA is run per machine.
+
+{%learn%}/product_overview/service-grid.html{%endlearn%}
+
 
 When you execute the gs-agent command above without any arguments, 1 GSA, 1 GSM, 1 LUS and 2 GSC's will be started. The gs-agent command takes several different parameters as arguments.
 
@@ -98,21 +98,21 @@ String spaceName = "xapTutorialSpace";
 
 public void startDataGrid() {
 	try {
-	// create an admin instance to interact with the cluster
-	Admin admin = new AdminFactory().createAdmin();
+	    // create an admin instance to interact with the cluster
+	    Admin admin = new AdminFactory().createAdmin();
 
-	// locate a grid service manager and deploy a partioned data grid
-	// with 2 primaries and one backup for each primary
-	GridServiceManager mgr = admin.getGridServiceManagers()
+	    // locate a grid service manager and deploy a partioned data grid
+	    // with 2 primaries and one backup for each primary
+	    GridServiceManager mgr = admin.getGridServiceManagers()
 			.waitForAtLeastOne();
 
-	ProcessingUnit pu = mgr.deploy(new SpaceDeployment(spaceName)
+	    ProcessingUnit pu = mgr.deploy(new SpaceDeployment(spaceName)
 			.partitioned(2, 1));
 
-       } catch (ProcessingUnitAlreadyDeployedException e) {
+    } catch (ProcessingUnitAlreadyDeployedException e) {
 	// already deployed, do nothing
 		e.printStackTrace();
-       }
+    }
 }
 {%endhighlight%}
 
@@ -154,7 +154,7 @@ You can start XAP's console and inspect the Data Grid components that have been 
 {% inittab os_simple_space|top %}
 {% tabcontent Windows%}
 {%highlight java%}
-GS_HOME/bin/gs_webui.bat 
+GS_HOME\bin\gs_webui.bat
 {%endhighlight%}
 {% endtabcontent %}
 {% tabcontent Unix%}

@@ -75,6 +75,9 @@ In this example we define:
 
 
 
+By default all events will trigger the notification. In our example we are restricting the events to be received by using the `@NotifyType` annotation. In our example we are only interested in write and update events.
+
+
 You can also define an event template using an SQLQuery.
 
 {%highlight java %}
@@ -147,14 +150,12 @@ And now we register the polling listener:
 {%endhighlight%}
 
 
-By default all events will trigger the notification. In our example we are restricting the events to be received by using the {{@NotifyType}} annotation. In our example we are only interested in write and update events. 
-
 {%learn%}{%latestjavaurl%}/event-processing.html{%endlearn%}
 
 # FIFO Support
 Sometimes it is necessary to process events in the order the way they have been created. By default events are not ordered. XAP supports FIFO (First In, First Out) processing of events.  To enable FIFO operations you can turn on FIFO support for classes which will participate in such operations.    
 
-Here is an example how you can enable FIFO support for a class using the {{@SpaceClass}} annotation:
+Here is an example how you can enable FIFO support for a class using the `@SpaceClass` annotation:
 
 {%highlight java %}
 @SpaceClass(fifoSupport=FifoSupport.OPERATION)
@@ -184,7 +185,7 @@ In addition to the polling containers you can also use a JMS facade on top of th
 # Master Worker Pattern
 {%section%}
 {%column width=70% %}
-The Master-Worker Pattern (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a {{Master}} and multiple {{Workers}}. 
+The Master-Worker Pattern (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a `Master` and multiple `Workers`.
 In GigaSpaces XAP, you can implement the Master-Worker pattern using several methods:
 
 - [Task Executors](/sbp/map-reduce-pattern---executors-example.html) - best for a scenario where the processing activity is collocated with the data (the data is stored within the same space as the tasks being executed).

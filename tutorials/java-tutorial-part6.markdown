@@ -50,7 +50,7 @@ Here is an example how you define a distributed transaction manager via the Spri
 {%note%}In order to make the XAP Interface transactional, the transaction manager must be provided to it when constructing the GigaSpace bean. You also need to add <tx:annotation-driven transaction-manager="transactionManager" />  to enable the configuration of transactional behavior based on annotations.{%endnote%}
 
 ### Transaction Demarcation
-In your Java code you can annotate your class or methods with the Spring {{@Transactional}} annotation and configure Spring to process the annotation such that every call to the annotated methods will be automatically performed under a transaction. The transaction starts before the method is called and commits when the method call returns. If an exception is thrown from the method the transaction is rolled back automatically. Note that you can control various aspects of the transaction like propagation by using the attributes of the {{@Transactional}} annotation.
+In your Java code you can annotate your class or methods with the Spring `@Transactional` annotation and configure Spring to process the annotation such that every call to the annotated methods will be automatically performed under a transaction. The transaction starts before the method is called and commits when the method call returns. If an exception is thrown from the method the transaction is rolled back automatically. Note that you can control various aspects of the transaction like propagation by using the attributes of the `@Transactional` annotation.
 
 Here is an example how to use the transactions in your code:
 {%highlight java%}
@@ -90,7 +90,7 @@ All event containers support transactions.
 ### Polling container
 Both the receive operation and the actual event action can be configured to be performed under a transaction. Transaction support is required when, for example, an exception occurs in the event listener, and the receive operation needs to be rolled back (and the actual data event is returned to the space). Adding transaction support is very simple in the polling container, and can be done by injecting a transaction manager into it. Let's take our payment polling container and make it transactional.
 
-You make a polling container transactional by adding the {{@TransactionalEvent}} annotation:
+You make a polling container transactional by adding the `@TransactionalEvent` annotation:
 {%highlight java%}
 @EventDriven
 @Notify
@@ -155,7 +155,7 @@ GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/xap
 {% endtabcontent %}
 {% endinittab %}
 
-You should enable the Space class to support the optimistic locking, by including the {{@SpaceVersion}} decoration on an int getter field. This field stores the current object version and is maintained by XAP. See below for an example:
+You should enable the Space class to support the optimistic locking, by including the `@SpaceVersion` decoration on an int getter field. This field stores the current object version and is maintained by XAP. See below for an example:
 {%highlight java%}
 @SpaceClass
 public class Account {
