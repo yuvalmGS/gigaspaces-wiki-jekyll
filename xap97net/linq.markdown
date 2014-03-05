@@ -6,7 +6,7 @@ parent: querying-the-space.html
 weight: 200
 ---
 
-{% compositionsetup %}
+
 {% summary %}Querying the space using LINQ{% endsummary %}
 
 # Overview

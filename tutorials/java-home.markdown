@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Full XAP Java Tutorial
+title:  Full Java Tutorial
 categories: TUTORIALS
 weight: 300
 parent: xap-tutorials.html
@@ -106,7 +106,7 @@ You will learn how to:
 - interact with the data grid
 - how to use the administration UI
 
- {%align right%}{%learn%}./java-tutorial-part3.html{%endlearn%}{%endalign%}
+ {%align right%}{%learn%}./java-tutorial-part2.html{%endlearn%}{%endalign%}
 {%endcolumn%}
 {%endsection%}
 {%endpanel%}
