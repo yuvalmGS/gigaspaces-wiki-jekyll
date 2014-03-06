@@ -89,7 +89,9 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gig
 
 ## Timeout Values
 
-The Jini distributed (mahalo) transaction manager allows to set the default timeout value for transactions. A timeout value is used when a transaction is not committed/rolled back (for example due to JVM crash) to control when the transaction will be discarded. By default the timeout value is 90 and is set in seconds. Controlling the timeout value can be done using:
+The Jini distributed (mahalo) transaction manager allows to set the default timeout value for transactions. A timeout value is used when a transaction is not committed/rolled back (for example due to JVM crash) to control when the transaction will be discarded. By default the timeout value is 90 and is set in seconds.
+
+For example, to change the default timeout to 2 minutes, use the following configuration:
 
 {% inittab os_simple_space|top %}
 {% tabcontent Namespace %}
@@ -98,7 +100,7 @@ The Jini distributed (mahalo) transaction manager allows to set the default time
 
 <os-core:space id="space" url="/./space" />
 
-<os-core:distributed-tx-manager id="transactionManager" default-timeout="1000"/>
+<os-core:distributed-tx-manager id="transactionManager" default-timeout="120"/>
 
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 {% endhighlight %}
@@ -113,7 +115,7 @@ The Jini distributed (mahalo) transaction manager allows to set the default time
 </bean>
 
 <bean id="transactionManager" class="org.openspaces.core.transaction.manager.DistributedJiniTransactionManager">
-	<property name="defaultTimeout" value="1000" />
+	<property name="defaultTimeout" value="120" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -127,7 +129,7 @@ The Jini distributed (mahalo) transaction manager allows to set the default time
 
 {% highlight java %}
 IJSpace space = new UrlSpaceConfigurer("/./space").space();
-PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().defaultTimeout(1000).transactionManager();
+PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().defaultTimeout(120).transactionManager();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gigaSpace();
 {% endhighlight %}
 
