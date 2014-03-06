@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  .NET Your First XTP Application
+title:  Your First XTP Application
 categories: TUTORIALS
 parent: dotnet-quick-start-guide.html
 weight: 300
