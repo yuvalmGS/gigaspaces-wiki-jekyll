@@ -6,15 +6,20 @@ parent: event-driven-architecture.html
 weight: 300
 ---
 
-{% compositionsetup %}
+
 
 {% summary %}The polling container implements the `IEventListenerContainer` interface, and allows you to perform polling receive operations against the space.{% endsummary %}
 
 # Overview
 
+{%section%}
+{%column width=60% %}
 The polling event container implements the [IEventListenerContainer](./event-listener-container.html) interface. Its life-cycle consists of performing polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the [DataEventArrived](./event-listener-container.html#DataEventArrived) event is invoked. A polling event operation is mainly used when simulating Queue semantics, or when using the master-worker design pattern.
-
+{%endcolumn%}
+{%column width=35% %}
 ![Net_polling_cont.jpg](/attachment_files/dotnet/Net_polling_cont.jpg)
+{%endcolumn%}
+{%endsection%}
 
 The examples in this page follow a certain pattern. Each code example has two tabs: Using EventListenerContainerFactory, and PollingEventListenerContainer Code Construction.
 
@@ -101,7 +106,9 @@ The example above performs single take operations (see [below](#Receive Operatio
 
 The polling event container performs receive operations only when the relevant space it is working against is in primary mode. When the space is in backup mode, no receive operations are performed. If the space moves from backup mode to primary mode, the receive operations are started.
 
-{% infosign %} This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
+{% info %}
+This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
+{%endinfo%}
 
 # FIFO Grouping
 
@@ -111,7 +118,10 @@ The FIFO Grouping designed to allow efficient processing of events with partial 
 
 By default, the polling event container starts a single thread that performs the receive operations and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads, the container will manage the scaling up and down of concurrent consumers automatically according to the load, however, there are a few parameters regarding this scaling logic which are described in [Auto Polling Consumer Scaling](./auto-polling-consumer-scaling.html). This provides faster processing of events. However, any FIFO behavior that might be configured in the space and/or template is lost.
 
-{% exclamation %} When using a FIFO Grouping, the FIFO order of each value is not broken. See [FIFO Grouping](./fifo-grouping.html) page for more details.
+{% note %}
+When using a FIFO Grouping, the FIFO order of each value is not broken. See [FIFO Grouping](./fifo-grouping.html) page for more details.
+{%endnote%}
+
 
 Here is an example of a polling container with 3 concurrent consumers and a maximum of 5 concurrent consumers:
 
@@ -135,7 +145,7 @@ public class SimpleListener
     }
 
     [DataEventHandler]
-    public Data ProcessData(Data event)
+    public Data ProcessData(Data ev)
     {
         //process Data here and return processed data
     }
@@ -211,7 +221,7 @@ public class SimpleListener
     }
 
     [DataEventHandler]
-    public Data ProcessData(Data event)
+    public Data ProcessData(Data ev)
     {
         //process Data here and return processed data
     }
@@ -247,7 +257,7 @@ public class SimpleListener
 {
 
     [DynamicEventTemplate]
-    public SqlQuery<Data> UnprocessedExpiredData
+    public SqlQuery<Data> UnprocessedExpiredData()
     {
         get
         {
@@ -259,7 +269,7 @@ public class SimpleListener
     }
 
     [DataEventHandler]
-    public Data EventListener(Data event)
+    public Data EventListener(Data ev)
     {
         //process Data here
     }
@@ -335,9 +345,13 @@ XAP.NET comes with several built-in receive operation-handler implementations:
 | `ReadReceiveOperationHandler` |Performs a single blocking Read operation, with the receive timeout. When used in conjuction with batch events, first tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.|
 | `ExclusiveReadReceiveOperationHandler` |Performs a single Read operation, under an exclusive read lock (similar to "select for update" in databases), with the receive timeout. Exclusive read lock mimics the Take operation, without actually taking the Entry from the space. When used in conjuction with batch events, First tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.
 
-{% exclamation %} This receive operation handler must be used within a transaction.|
+{% warning %}
+This receive operation handler must be used within a transaction.|
+{%endwarning%}
 
-{% infosign %} When using the `ExclusiveReadReceiveOperationHandler`, or even the `ReadReceiveOperationHandler`, it is important to remember that the actual event still remains in the space. If the data event is not taken from the space, or one of its properties changes in order **not** to match the container template, the same data event is read again.
+{% info %}
+When using the `ExclusiveReadReceiveOperationHandler`, or even the `ReadReceiveOperationHandler`, it is important to remember that the actual event still remains in the space. If the data event is not taken from the space, or one of its properties changes in order **not** to match the container template, the same data event is read again.
+{%endinfo%}
 
 Here is an example of how the receive operation handler can be configured with `ExclusiveReadReceiveOperationHandler`:
 
@@ -368,7 +382,7 @@ public class SimpleListener
     }
 
     [DataEventHandler]
-    public Data ProcessData(Data event)
+    public Data ProcessData(Data ev)
     {
         //process Data here and return processed data
     }
@@ -423,7 +437,7 @@ public class SimpleListener
     }
 
     [DataEventHandler]
-    public Data ProcessData(Data event)
+    public Data ProcessData(Data ev)
     {
         //process Data here and return processed data
     }
@@ -484,7 +498,7 @@ public class SimpleListener
     }
 
     [DataEventHandler]
-    public Data[] ProcessData(Data[] event)
+    public Data[] ProcessData(Data[] ev)
     {
         //process batch Data here and return processed data
     }
@@ -592,7 +606,7 @@ public class SimpleListener
  ...
 
     [DataEventHandler]
-    public Data ProcessData(Data event, ISpaceProxy spaceProxy, ITransaction transaction)
+    public Data ProcessData(Data ev, ISpaceProxy spaceProxy, ITransaction transaction)
     {
         //process Data here and return processed data
     }
@@ -678,7 +692,7 @@ public class SimpleListener
     }
 
     [DataEventHandler]
-    public Data ProcessData(Data event)
+    public Data ProcessData(Data ev)
     {
         //process Data here and return processed data
     }
