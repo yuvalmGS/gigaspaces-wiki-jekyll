@@ -178,7 +178,7 @@ A machine can run one or more [GSC](#gsc) processes. Each GSC communicates with 
 #### GigaSpaces Manager (GSM)
 
 The [GSM](#gsm) is a [Service Grid](#Service Grid) component which manages a set of [GigaSpaces Containers (GSC)](#gsc).
-A GSM has an API for deploying/undeploying processing units. When a GSM is instructed to deploy a Processing Unit, it allocates an appropriate, available GSC and tells that GSC to run an instance of that processing unit. It then continues to monitor that the GSC is alive and the SLA is not breached.
+A GSM has an API for deploying/undeploying processing units. When a GSM is instructed to deploy a Processing Unit, it finds an appropriate, available GSC and tells that GSC to run an instance of that processing unit. It then continuously monitors that processing unit instance to verify that it's alive, and that the SLA is not breached. 
 
 {% sub %}Key sentence: A GSM manages all the running containers in the network and deploys processing units to them.{% endsub %}
 {% endcolumn %}
