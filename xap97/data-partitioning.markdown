@@ -221,7 +221,7 @@ The following table specifies when the different batch operations executed in pa
 - When calling any of the batch operations with a template and set the routing id in the template (making sure all the space objects go to the same physical space in a cluster) you do not need to use jini transaction. Local transaction will suffice.
 - readMultiple/takeMultiple against any single partition is a synchronous call in the associated partition specific client proxy. The space operation is a synchronous operation. It will return as many requested objects as are currently present in the space, up to the number requested. If no objects are matched an empty array is returned.
 
-## Parallel Operation Thread Pool
+# Parallel Operation Thread Pool
 
 The client performs parallel operations using a dedicated thread pool managed at the proxy. You may tune this pool size via the following settings at the cluster config:
 
@@ -230,7 +230,7 @@ The client performs parallel operations using a dedicated thread pool managed at
 <proxy-broadcast-threadpool-max-size>64</proxy-broadcast-threadpool-max-size>
 {% endhighlight %}
 
-## Considerations
+# Considerations
 
 - The replication scheme does not take into account `IReplicatable` (partial replication) and replication matrix.
 - In some cases broadcast can cause ownership/SSI problems to happen.
