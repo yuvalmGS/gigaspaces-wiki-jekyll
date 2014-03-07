@@ -30,7 +30,7 @@ In some cases when querying the space for objects, only specific properties of o
 
 Projections are supported using a [SqlQuery](./sqlquery.html) or [ID Queries](./id-queries.html). Below is a simple example that demonstrates reading a `Person` object where only the 'FirstName' and 'LastName' properties are returned with the query result array. All other `Person` properties will not be returned:
 
-{% highlight java %}
+{% highlight csharp %}
 public class Person
 {
   ...
@@ -51,7 +51,7 @@ With the above example a specific Person is being read but only its 'FirstName' 
 
 You may use the same approach with the `SqlQuery` or `IdsQuery`:
 
-{% highlight java %}
+{% highlight csharp %}
 SqlQuery<Person> query = new SqlQuery<Person>("") {Projections = new []{"FirstName", "LastName"});
 Person result[] = space.ReadMultiple(query);
 
@@ -59,9 +59,9 @@ IdsQuery<Person> idsQuery = new IdsQuery<Person>(new Long[]{id1,id2}) {Projectio
 Person result[] = space.ReadByIds(idsQuery).ResultsArray;
 {% endhighlight %}
 
-The [SpaceDocument](./document-(schema-free)-entries.html) support projections as well:
+The [SpaceDocument](./document-api.html) support projections as well:
 
-{% highlight java %}
+{% highlight csharp %}
 SqlQuery<SpaceDocument> docQuery = new SqlQuery<SpaceDocument>(typeof(Person).Name ,"") {Projections = new []{"FirstName", "LastName"};
 SpaceDocument docresult[] = space.ReadMultiple(docQuery);
 {% endhighlight %}

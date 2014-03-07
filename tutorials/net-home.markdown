@@ -114,4 +114,31 @@ You will learn how to:
 {%endsection%}
 {%endpanel%}
 
+{%comment%}============================ Part III ==================={%endcomment%}
+{%panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
+{%section%}
+{%column width=20% %}
+{%align center %}
+[Part III](./net-tutorial-part3.html)
+
+<img src="/attachment_files/qsg/processing.png" width="100" height="100">
+{%endalign%}
+{%endcolumn%}
+
+{%column width=70% %}
+{%align center%}**Processing Services**{%endalign%}
+In this part of the tutorial we will introduce you to the different processing services you can run on top of the space.
+
+You will learn how to use:
+
+- Executor service
+- Remoting service
+
+
+{%align right%}{%learn%}./net-tutorial-part3.html{%endlearn%}{%endalign%}
+
+{%endcolumn%}
+{%endsection%}
+{%endpanel%}
+
 

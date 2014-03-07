@@ -16,7 +16,7 @@ The space can be queried for entries using [Template Matching](./template-matchi
 
 When you would like to access an object using its ID for read and take operations you should first specify the ID field. You can specify it via `@SpaceId (autogenerate=false)` annotation:
 
-{% highlight java %}
+{% highlight csharp %}
 
 [SpaceId (autoGenerate=false)]
 public String getEmployeeID() {
@@ -26,7 +26,7 @@ public String getEmployeeID() {
 
 To read the object back from the space using its ID and the `readById` operation:
 
-{% highlight java %}
+{% highlight csharp %}
 GigaSpace gigaSpace;
 Employee myEmployee = gigaSpace.readById(Employee.class , myEmployeeID , routingValue);
 {% endhighlight %}
@@ -35,7 +35,7 @@ Employee myEmployee = gigaSpace.readById(Employee.class , myEmployeeID , routing
 
 The following shows how to read multiple objects using their IDs:
 
-{% highlight java %}
+{% highlight csharp %}
 GigaSpace gigaSpace;
 
 // Initialize an ids array

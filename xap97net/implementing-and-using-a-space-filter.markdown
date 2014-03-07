@@ -27,7 +27,7 @@ A [SpaceFilterConfig](./spacefilterconfig-class.html) can be created in two ways
 
 If the filter implements the [ISpaceFilter Interface](./ispacefilter-interface.html), then a [SpaceFilterConfig](./spacefilterconfig-class.html) needs to be created for it, and each operation that needs to be filtered should be added to the `FilterOperations` list, as in the following code:
 
-{% highlight java %}
+{% highlight csharp %}
 SpaceFilterConfig mySpaceFilterConfig = new SpaceFilterConfig();
 mySpaceFilterConfig.FilterOperations = new List<FilterOperation>(new FilterOperation[]{ FilterOperation.BeforeWrite });
 mySpaceFilterConfig.Filter = new MySpaceFilter();
@@ -39,7 +39,7 @@ If the filter is based on the [SpaceFilterOperationDelegate](./spacefilteroperat
 
 Once a [SpaceFilterConfig](./spacefilterconfig-class.html) is created, it needs to be used when starting the space.
 
-{% highlight java %}
+{% highlight csharp %}
 spaceConfig.SpaceFiltersConfig = new List<SpaceFilterConfig>();
 spaceConfig.Add(mySpaceFilterConfig);
 

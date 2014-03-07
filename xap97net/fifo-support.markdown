@@ -18,7 +18,7 @@ The default space behavior is non-FIFO. The reason is that FIFO support comes at
 
 Setting FIFO support for a class can be done via the `FifoSupport` property on the `[SpaceClass]` attribute:
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass(FifoSupport = FifoSupport.Operation)]
 public class Person
 {
@@ -49,7 +49,7 @@ The `FifoSupport` modes are:
 
 To execute Read/Take operations with FIFO, use `ReadModifiers.Fifo` / `TakeModifiers.Fifo` respectively. For example:
 
-{% highlight java %}
+{% highlight csharp %}
 Person result = space.Take(new Person(), transaction, timeout, TakeModifiers.FIFO);
 {% endhighlight %}
 
@@ -79,7 +79,7 @@ For example, if a transactional polling container consumes data and throws an ex
 
 When registering for events, use `EventSessionConfig.Fifo` to instruct the space that events should be sent to the client in FIFO order. For example:
 
-{% highlight java %}
+{% highlight csharp %}
 // Create an event session configuration with FIFO:
 EventSessionConfig sessionConfig = new EventSessionConfig();
 sessionConfig.Fifo = true;

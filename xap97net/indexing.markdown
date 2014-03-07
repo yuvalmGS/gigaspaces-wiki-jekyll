@@ -6,8 +6,6 @@ parent: programmers-guide.html
 weight: 2200
 ---
 
-{% compositionsetup %}
-
 {% summary %} Using indexes to improve performance. {% endsummary %}
 
 # Overview
@@ -25,7 +23,9 @@ One might wonder why properties are not always indexed, or why all the propertie
 
 Usually it is recommended to index properties that are used in common queries. However, in some scenarios one might favor a smaller memory footprint, or faster performance for a specific query, and adding/removing an index should be considered.
 
-{% lampon %}  Remember that "Premature optimization is the root of all evil." It is always recommended to benchmark your code to get better results.
+{% info %}
+Remember that "Premature optimization is the root of all evil." It is always recommended to benchmark your code to get better results.
+{%endinfo%}
 
 # Index Types
 
@@ -43,7 +43,7 @@ Specifying which properties of a class are indexed is done using attributes or `
 
 {% tabcontent Annotations %}
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass]
 public class Person
 {
@@ -111,7 +111,7 @@ Below is an example of defining an index on a nested property:
 
 {% tabcontent Single Index Annotation %}
 
-{% highlight java %}
+{% highlight csharp %}
 
 [SpaceClass]
 public class Person
@@ -146,7 +146,7 @@ public class Address
 
 {% tabcontent Multiple Indexes Annotation %}
 
-{% highlight java %}
+{% highlight csharp %}
 
 [SpaceClass]
 public class Person
@@ -175,7 +175,7 @@ public class Person
 
 The following is an example of query code that automatically triggers this index:
 
-{% highlight java %}
+{% highlight csharp %}
 SqlQuery<Person> query = new SqlQuery<Person>(
     "PersonalInfo.SocialSecurity<10000050L and PersonalInfo.SocialSecurity>=10000010L");
 {% endhighlight %}
@@ -200,7 +200,7 @@ Setting an index on a Collection is done using the SpaceIndex.Path attribute whe
 
 The following example shows how to define an index on a List of Integers:
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass]
 public class CollectionIndexingExample
 {
@@ -218,7 +218,7 @@ public class CollectionIndexingExample
 
 The following query shows how to take advantage of the defined index:
 
-{% highlight java %}
+{% highlight csharp %}
 SqlQuery<CollectionIndexingExample> sqlQuery =
     new SqlQuery<CollectionIndexingExample>("Numbers[*] = 30");
 CollectionIndexingExample[] result = spaceProxy.ReadMultiple(sqlQuery);
@@ -230,7 +230,7 @@ Its also possible to index a nested property within a collection.
 
 The following example shows how to define an index on a Book.id property, which resides in a Collection property in Author:
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass]
 public class Author
 {
@@ -255,14 +255,14 @@ public class Book
 
 The following query shows how to take advantage of the defined index:
 
-{% highlight java %}
+{% highlight csharp %}
 SqlQuery<Author> sqlQuery = new SqlQuery<Author>("Books[*].Id = 57");
 Author result = spaceProxy.Read(sqlQuery);
 {% endhighlight %}
 
 Setting an index on a Collection within a nested property is also accepted:
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass]
 public class Employee
 {
@@ -311,7 +311,7 @@ The benchmark has a space with different sets of space objects data:
 |data2 = 'B' |100,000| 110,000 | 200,000 |
 |data1 = 'A' AND data2 = 'B' |1000 | 10,000 | 100,000|
 
-{% highlight java %}
+{% highlight csharp %}
 SQLQuery<Data> query = new SQLQuery<Data>(Data.class,"data1='A' and data2='B'");
 {% endhighlight %}
 
@@ -325,7 +325,7 @@ Compound indexes can be defined using annotations. The `CompoundSpaceIndex` anno
 
 Example: Below a compound index with two segments using annotations. Both are properties at the root level of the space class:
 
-{% highlight java %}
+{% highlight csharp %}
 [CompoundSpaceIndex(Paths = new[] {"IntProp", "StringProp"})]
 [CompoundSpaceIndex(Paths = new[] {"LongProp", "StringProp" })]
 public class WithCompoundIndex

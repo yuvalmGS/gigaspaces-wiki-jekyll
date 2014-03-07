@@ -6,8 +6,6 @@ parent: fifo-support.html
 weight: 100
 ---
 
-{% compositionsetup %}
-
 {% summary %}
 How to read/take a group of space entries with a common property value, in FIFO order (by order of insertion),
 without having to maintain a FIFO order for all the entries in the space.
@@ -81,7 +79,7 @@ Specifying which property of a class is the FG property is done using attributes
 
 {% tabcontent Annotations %}
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass]
 public class FlightReservation
 {
@@ -114,7 +112,7 @@ Specifying which properties of a class are a FG index is done using attributes o
 
 {% tabcontent Annotations %}
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceFifoGroupingIndex]
 public State ProcessingState { get; set; }
 [SpaceFifoGroupingIndex(Path = "Id")]
@@ -164,7 +162,7 @@ read entries from available FG. No ordering between different groups. Entries of
 
 To execute read/take operations with FG, use the `TakeModifiers.FifoGroupingPoll` modifier. For example:
 
-{% highlight java %}
+{% highlight csharp %}
 proxy.Take<FlightReservation>(new FlightReservation(), transaction, timeout, TakeModifiers.FifoGroupingPoll);
 {% endhighlight %}
 
@@ -181,7 +179,7 @@ Here is a simple example of a polling event container construction, using FifoGr
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven]
 public class FlightReservationEventListener
 {
@@ -207,7 +205,7 @@ public class FlightReservationEventListener
 
 Constructing the polling container that uses the `FlightReservationEventListener` class as the event listener, and starting it.
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 IEventListenerContainer<FlightReservation> eventListenerContainer = EventListenerContainerFactory.CreateContainer<FlightReservation>(spaceProxy, new FlightReservationEventListener());
 
@@ -221,7 +219,7 @@ eventListenerContainer.Dispose()
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<FlightReservation> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 ExclusiveReadReceiveOperationHandler<FlightReservation> receiveHandler = new ExclusiveReadReceiveOperationHandler<FlightReservation>();
@@ -237,7 +235,7 @@ pollingEventListenerContainer.Dispose();
 
 Event processing method
 
-{% highlight java %}
+{% highlight csharp %}
 public FlightReservationProcessData(IEventListenerContainer<FlightReservation> sender, DataEventArgs<FlightReservation> e)
 {
 	FlightReservation reservation = e.Data;

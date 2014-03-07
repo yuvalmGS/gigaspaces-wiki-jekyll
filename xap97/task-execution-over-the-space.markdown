@@ -203,11 +203,11 @@ int result = future.get();
 A `DistributedTask` is a task that ends up executing more than once (concurrently) and returns a result that is a reduced operation of all the different executions.
 
 {% section %}
-{% column %}
+{% column width=45% %}
 Phase 1 - Sending the Tasks to be executed:
 ![DistributedTaskExecution_phase1.jpg](/attachment_files/DistributedTaskExecution_phase1.jpg)
 {% endcolumn %}
-{% column %}
+{% column width=45%%}
 Phase 2 - Getting the results back to be reduced:
 ![DistributedTaskExecution_phase2.jpg](/attachment_files/DistributedTaskExecution_phase2.jpg)
 {% endcolumn %}
