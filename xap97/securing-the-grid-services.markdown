@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Securing the Grid Services
+title:  Grid Services
 categories: XAP97
 parent: securing-xap-components.html
 weight: 200

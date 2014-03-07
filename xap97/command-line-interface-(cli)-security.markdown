@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Command Line Interface CLI Security
+title:  Command Line Interface
 categories: XAP97
 parent: security-administration.html
 weight: 200

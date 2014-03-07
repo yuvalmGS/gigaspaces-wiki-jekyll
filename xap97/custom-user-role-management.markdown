@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Custom User-Role Management
+title:  User-Role Management
 categories: XAP97
 parent: custom-security.html
 weight: 200

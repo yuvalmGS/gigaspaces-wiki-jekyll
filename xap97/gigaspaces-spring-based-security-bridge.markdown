@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  GigaSpaces Spring-based Security bridge
+title:  Spring-based bridge
 categories: XAP97
 parent: spring-security-bridge.html
 weight: 200

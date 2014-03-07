@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Authenticating against an LDAP repository
+title:  LDAP Authenticating
 categories: XAP97
 parent: spring-security-bridge.html
 weight: 400

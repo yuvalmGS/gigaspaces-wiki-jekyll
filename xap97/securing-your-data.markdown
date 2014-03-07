@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Securing your Data
+title:  Data
 categories: XAP97
 parent: securing-xap-components.html
 weight: 100

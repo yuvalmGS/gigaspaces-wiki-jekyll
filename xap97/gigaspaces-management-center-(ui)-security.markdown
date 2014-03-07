@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  GigaSpaces Management Center (UI) Security
+title:  Management Center
 categories: XAP97
 parent: security-administration.html
 weight: 100

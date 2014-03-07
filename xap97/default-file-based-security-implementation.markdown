@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Default File-Based Security Implementation
+title:  Default File-Based Security
 categories: XAP97
 parent: security.html
 weight: 200

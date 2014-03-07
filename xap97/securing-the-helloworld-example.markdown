@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Securing the HelloWorld example
+title:  HelloWorld example
 categories: XAP97
 parent: security.html
 weight: 500

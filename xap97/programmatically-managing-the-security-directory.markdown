@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Programmatically Managing the Security Directory
+title:  Directory Management
 categories: XAP97
 parent: security-basics.html
 weight: 400
