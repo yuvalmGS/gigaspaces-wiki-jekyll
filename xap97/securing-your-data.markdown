@@ -508,5 +508,5 @@ Statement st = conn.createStatement();
 {% endhighlight %}
 
 {% note %}
-An alternative way of querying the Space using SQL syntax is the [SQLQuery](./sqlquery.html) class, with a privileged GigaSpace proxy.
+An alternative way of querying the Space using SQL syntax is the [SQLQuery](./query-sql.html) class, with a privileged GigaSpace proxy.
 {%endnote%}

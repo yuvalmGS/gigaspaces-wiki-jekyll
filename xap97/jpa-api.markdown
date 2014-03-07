@@ -574,7 +574,7 @@ result = gigaspace.read(query);
 
 GigaSpaces JPA native query execution is a powerful feature used for executing:
 
-- SQLQuery syntax-like queries ([SQLQuery](./sqlquery.html)).
+- SQLQuery syntax-like queries ([SQLQuery](./query-sql.html)).
 - GigaSpaces Tasks ([Task Execution over the Space](./task-execution-over-the-space.html)).
 - GigaSpaces Dynamic Scripts ([Dynamic Language Tasks](./dynamic-language-tasks.html)).
 
@@ -594,7 +594,7 @@ query.setParameter(1, "John Doe");
 author = (Author) query.getSingleResult();
 {% endhighlight %}
 
-For more details on the SQLQuery syntax, refer to the [SQLQuery](./sqlquery.html) page.
+For more details on the SQLQuery syntax, refer to the [SQLQuery](./query-sql.html) page.
 
 ### Task Execution
 

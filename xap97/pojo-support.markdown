@@ -92,7 +92,7 @@ GigaSpaces `POJO` rules:
 - Do not implement the `net.jini.core.entry` interface.
 - Follow the [JavaBeans specification](http://java.sun.com/javase/technologies/desktop/javabeans/docs/spec.html).
 - Have private fields.
-- Avoid using numeric [primitives](http://download.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) (long , int) as the POJO fields. Use their relevant Object wrapper instead Long and Integer. This will avoid the need to specify a null-value and simplify query construction when using the [SQLQuery](./sqlquery.html).
+- Avoid using numeric [primitives](http://download.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html) (long , int) as the POJO fields. Use their relevant Object wrapper instead Long and Integer. This will avoid the need to specify a null-value and simplify query construction when using the [SQLQuery](./query-sql.html).
 - Have getter and setter methods for every field you would like to be stored within the space object.
 - Include space class metadata decorations (indexed fields, affinity-keys, persisted mode, etc.).
 
@@ -132,7 +132,7 @@ When using a POJO as a space domain class, follow these guidelines:
 - When using the [org.openspaces.core.GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) interface, you can use [generics](http://en.wikipedia.org/wiki/Generics_in_Java) when conducting space operations.
 
 - When a space is configured to use the `ExternalDataSource`, the `@Spaceid` annotation or `id` tag `auto-generate` attribute should be set to **`false`**. The object must include a unique value with the `SpaceId` field when written into the space.
-- [SQLQuery](./sqlquery.html) should not be used to query base abstract class.
+- [SQLQuery](./query-sql.html) should not be used to query base abstract class.
 {%endcomment%}
 
 
@@ -154,7 +154,7 @@ POJO space mapping files `gs.xml` files can be loaded from:
 
 ## User Defined Space Class Fields
 
-You may have user defined data types (non-primitive data types) with your Space class. These should implement the `Serializable` or `Externalizable` interface. The user defined class nested fields can be used with queries and can be indexed. See the [Nested Properties](./sqlquery.html#Nested Properties) and the [Nested Properties Indexing](./indexing.html#Nested Properties Indexing) section for details.
+You may have user defined data types (non-primitive data types) with your Space class. These should implement the `Serializable` or `Externalizable` interface. The user defined class nested fields can be used with queries and can be indexed. See the [Nested Properties](./query-sql.html#Nested Properties) and the [Nested Properties Indexing](./indexing.html#Nested Properties Indexing) section for details.
 
 
 

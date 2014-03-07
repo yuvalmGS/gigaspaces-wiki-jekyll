@@ -374,7 +374,7 @@ public User[] findUsersByGroup() {
 {%endhighlight%}
 
 There are several additional query options available. For example you can query Nested Maps by key,query with Regular Expression, Enum attributes and others.
-{%learn%}{%latestjavaurl%}/sqlquery.html{%endlearn%}
+{%learn%}{%latestjavaurl%}/query-sql.html{%endlearn%}
 
 
 #### Query returning partial results

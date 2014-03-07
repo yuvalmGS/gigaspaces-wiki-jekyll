@@ -12,20 +12,26 @@ weight: 300
 # Overview
 
 {% section %}
-{% column width=40 %}
+{% column width=60% %}
 The `SQLQuery` class is used to query the space using SQL-like syntax. The query statement includes only the `WHERE` statement part - the selection aspect of a SQL statement is embedded in other parameters for a SQL query.
 
-{% refer %} For the full documentation of the class's methods and constructors, see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/SQLQuery.html).{% endrefer %}
 
 {% endcolumn %}
-{% column %}
+{% column width=35% %}
 ![space-projections.jpg](/attachment_files/space-projections.jpg)
 {% endcolumn %}
 {% endsection %}
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/jC57mId3SMg?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+{% refer %}
+For the full documentation of the class's methods and constructors, see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/SQLQuery.html).
+{% endrefer %}
 
-# Usage Examples
+
+{%comment%}
+<iframe width="640" height="360" src="//www.youtube.com/embed/jC57mId3SMg?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+{%endcomment%}
+
+# Examples
 
 An `SQLQuery` is composed from the **type** of entry to query and an **expression** in a SQL syntax.
 
@@ -138,6 +144,7 @@ In previous options, parameters could be passed via a POJO template as well. Thi
 # Properties Types
 
 {% anchor Nested Properties%}
+
 ## Nested Properties
 
 GigaSpaces SQL syntax contains various extensions to support matching nested properties, maps, collections and arrays.
@@ -373,7 +380,7 @@ Implementing case insensitive queries can be done via:
 
 ## Compound Index
 
-When having an **AND** query or a template that use two or more fields for matching a [Compound Index](./indexing.html#Compound Indexing) may boost the query execution time. The Compound Index should be defined on multiple properties for a specific space class and will be used implictly when a SQL Query or a [Template](./template-matching.html) will be using these properties.
+When having an **AND** query or a template that use two or more fields for matching a [Compound Index](./indexing.html#Compound Indexing) may boost the query execution time. The Compound Index should be defined on multiple properties for a specific space class and will be used implictly when a SQL Query or a [Template](./query-template-matching.html) will be using these properties.
 
 ## Re-using SQLQuery
 
@@ -398,7 +405,7 @@ OR
 ## Projecting Partial Results
 
 You can specify that the `SQLQuery` should contain only partial results which means that the returned object should only be populated with the projected properties.
-{% refer %}For details on how to use the projection API please refer to [Getting Partial Results Using Projection API](./getting-partial-results-using-projection-api.html){% endrefer %}
+{% refer %}For details on how to use the projection API please refer to [Getting Partial Results Using Projection API](./query-partial-results.html){% endrefer %}
 
 # Considerations
 
@@ -435,7 +442,7 @@ The following features support only simple SQL queries
 - Snapshot
 - Blocking operations
 - [Notifications](./session-based-messaging-api.html)
-- [GSIterator](./paging-support-with-space-iterator.html)
+- [GSIterator](./query-paging-support.html)
 
 ## Interface Classes
 
@@ -469,6 +476,6 @@ new SQLQuery<MyData>(MyData.class, "`count` = 5")
 
 
 <ul class="pager">
-  <li class="previous"><a href="./template-matching.html">&larr; Template Matching</a></li>
+  <li class="previous"><a href="./query-template-matching.html">&larr; Template Matching</a></li>
   <li class="next"><a href="./query-nested-properties.html">Nested Properties &rarr;</a></li>
 </ul>

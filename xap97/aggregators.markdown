@@ -35,12 +35,12 @@ The following built-in Aggregators provided:
 |SumTask| A sum calculation task accepting a Task to delegate the actual execution to. Implements the reduce(java.util.List) operation to calculate sum of all returned values.|
 
 {% note %}
-The [JDBC Driver](./jdbc-driver.html) support aggregate functions. Still , the Built-in Aggregators will perform better, especially when using [projections](./getting-partial-results-using-projection-api.html).
+The [JDBC Driver](./jdbc-driver.html) support aggregate functions. Still , the Built-in Aggregators will perform better, especially when using [projections](./query-partial-results.html).
 {% endnote %}
 
 # Example
 
-Below example using the `SumTask` to aggregate data using a specific field within the `MyData` objects. A [SQLQuery](./sqlquery.html) using a different field to specify the set of objects the aggregation process will be using. To speed up the aggregation process a [Projection](./getting-partial-results-using-projection-api.html) is used with the SQL Query to read only the specific field required for the aggregation activity (rather the entire space object content).
+Below example using the `SumTask` to aggregate data using a specific field within the `MyData` objects. A [SQLQuery](./query-sql.html) using a different field to specify the set of objects the aggregation process will be using. To speed up the aggregation process a [Projection](./query-partial-results.html) is used with the SQL Query to read only the specific field required for the aggregation activity (rather the entire space object content).
 
 The example using a [SpaceDocument](./document-api.html) to illustrate a generic data aggregation where the field used to query the space and the field used for the aggregation are parameters for the `SumAggregatorTask` constructor.
 

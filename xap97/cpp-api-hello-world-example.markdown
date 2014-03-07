@@ -388,7 +388,7 @@ If you want to perform more specific template matching, assign specific values t
 
 If you set `template.attribute1="value"`, the space returns an object of this class for which `attribute` equals to the value. When using a regular template, you can perform equality queries with `AND` conditions. For bigger/less-than queries or ranges, or more complex queries using `OR` conditions; use the `SQLQuery` class.
 
-{% refer %}For more details on SQL queries, refer to the [SQLQuery](./sqlquery.html) section.{% endrefer %}
+{% refer %}For more details on SQL queries, refer to the [SQLQuery](./query-sql.html) section.{% endrefer %}
 
 You can use the inheritance mechanism to match derived object-enabling queries in different level of abstraction.
 

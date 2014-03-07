@@ -195,7 +195,7 @@ GigaSpaces persistence options are explained [here](./space-persistency.html). O
 com.gigaspaces.query.level = INFO
 {% endhighlight %}
 
-GigaSpaces supports SQL queries on the data in space and logger corresponds to this [functionality](./sqlquery.html).
+GigaSpaces supports SQL queries on the data in space and logger corresponds to this [functionality](./query-sql.html).
 
 ### Space LRU and Eviction
 

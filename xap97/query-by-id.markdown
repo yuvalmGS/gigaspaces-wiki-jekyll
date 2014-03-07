@@ -10,7 +10,7 @@ weight: 100
 
 # Overview
 
-The space can be queried for entries using [Template Matching](./template-matching.html) or [SQLQuery](./sqlquery.html), but sometimes we know the exact id of the entry we need and prefer a faster solution. This is where id-based queries come handy.
+The space can be queried for entries using [Template Matching](./query-template-matching.html) or [SQLQuery](./query-sql.html), but sometimes we know the exact id of the entry we need and prefer a faster solution. This is where id-based queries come handy.
 
 # Reading an Entry By ID
 
@@ -60,7 +60,7 @@ for (Employee employee : result) {
 
 ## Getting Partial Results
 
-You can specify which properties should be populated when the result is created the [Projection API](./getting-partial-results-using-projection-api.html).
+You can specify which properties should be populated when the result is created the [Projection API](./query-partial-results.html).
 
 {% tip %}
 See [Parent Child Relationship](/sbp/parent-child-relationship.html) for a full usage example of the `readByIds` operation.
@@ -71,5 +71,5 @@ ReadById is intended to objects with meaningful ids,if used with auto-generate="
 
 <ul class="pager">
   <li class="previous"><a href="./querying-the-space.html">&larr; Querying the Space</a></li>
-  <li class="next"><a href="./template-matching.html">Template Matching &rarr;</a></li>
+  <li class="next"><a href="./query-template-matching.html">Template Matching &rarr;</a></li>
 </ul>

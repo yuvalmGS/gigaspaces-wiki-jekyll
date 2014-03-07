@@ -14,9 +14,10 @@ Template matching (a.k.a. Match by example) is a simple way to query the space -
 
 Since by convention the default constructor usually initializes all the properties to `null` either implicitly or explicitly, in most cases it's enough to simply set the properties which should be matched, without bothering with explicitly setting null to the other properties. Note that setting two or more properties with non-null values provides an **AND** behavior.
 
-{% info%} It is highly recommended to index one or more of the properties used in the template to speed up the matching process. For more information see [Indexing](./indexing.html).
-
-  If you require additional query options refer to [SQLQuery](./sqlquery.html).{%endinfo%}
+{% info%}
+It is highly recommended to index one or more of the properties used in the template to speed up the matching process. For more information see [Indexing](./indexing.html).
+If you require additional query options refer to [SQLQuery](./query-sql.html).
+{%endinfo%}
 
 # Examples
 
@@ -53,7 +54,7 @@ gigaspace.clear(null);
 
 # Indexes
 
-GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (regardless whether the space is persistent or not) that maintains a hash and btree like indexes for each indexed Space Class attribute. If you store a large number of Space objects from the same class type in the space, consider defining one or more indexes for attributes used with [template matching](./template-matching.html) or [SQL Query](./sqlquery.html). Defining indexes will improve the `read/take/readMultiple/takeMultiple/clear/count` operations response time significantly. Remember, indexes impact `write` and `take` operations response time, so choose your indexed fields carefully - each index has an overhead. GigaSpaces support index for equality , comparison (bigger/less than) queries and support [Regular Index](./indexing.html) for a specific field and a [Compound Index](./indexing.html#Compound Indexing) for multiple fields. Indexes can be defined for space class root level object or for a nested field allowing you to query different type of objects ("join") using the same query without any performance penalty.
+GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (regardless whether the space is persistent or not) that maintains a hash and btree like indexes for each indexed Space Class attribute. If you store a large number of Space objects from the same class type in the space, consider defining one or more indexes for attributes used with template matching or [SQL Query](./query-sql.html). Defining indexes will improve the `read,take,readMultiple,takeMultiple,clear,count` operations response time significantly. Remember, indexes impact `write` and `take` operations response time, so choose your indexed fields carefully - each index has an overhead. GigaSpaces support index for equality , comparison (bigger/less than) queries and support [Regular Index](./indexing.html) for a specific field and a [Compound Index](./indexing.html#Compound Indexing) for multiple fields. Indexes can be defined for space class root level object or for a nested field allowing you to query different type of objects ("join") using the same query without any performance penalty.
 
 # Inheritance Support
 
@@ -76,9 +77,9 @@ int numberOfCitizens = gigaSpace.count(new Citizen());
 When querying a partitioned cluster using a template, it is possible to use the routing property to control whether the query is broadcasted to the entire cluster or executed against a specific partition.
 For more information see [Routing In Partitioned Spaces](./routing-in-partitioned-spaces.html).
 
-# Considerations
 
-## Primitive Types
+
+# Primitive Types
 
 Properties with primitive types pose a problem - a primitive type cannot be set to null. For example, suppose class **Person** has property **age** of type **int**, and we wrote the following piece of code which writes and reads a person:
 
@@ -116,12 +117,12 @@ We've indicated that `-1` should be treated as `null` when performing template m
 It is highly recommended to use the  primitive wrapper classes instead of primitives to simplify the code and avoid user errors.
 {%endinfo%}
 
-## Nested Template Matching
+# Nested Template Matching
 
-Nested template matching is not supported - to match nested properties, collections and arrays use [SQLQuery](./sqlquery.html).
+Nested template matching is not supported - to match nested properties, collections and arrays use [SQLQuery](./query-sql.html).
 
 
 <ul class="pager">
-  <li class="previous"><a href="./id-queries.html">&larr; Id Query</a></li>
-  <li class="next"><a href="./sqlquery.html">SQL Query &rarr;</a></li>
+  <li class="previous"><a href="./query-by-id.html">&larr; Id Query</a></li>
+  <li class="next"><a href="./query-sql.html">SQL Query &rarr;</a></li>
 </ul>

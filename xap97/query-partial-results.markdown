@@ -11,10 +11,10 @@ weight: 800
 # Overview
 
 {% section %}
-{% column width=40 %}
+{% column width=60% %}
 In some cases when querying the space for objects, only specific properties of that objects are required and not the entire object (delta read). The same scenario is also relevant when subscribing for notifications on space data changes, where only specific properties are of interest to the subscriber. For that purpose the Projection API can be used where one can specify which properties are of interest and the space will only populate these properties with the actual data when the result is returned back to the user. This approach reduces network overhead , garbage memory generation and serialization CPU overhead.
 {% endcolumn %}
-{% column %}
+{% column width=35% %}
 ![space-projections.jpg](/attachment_files/space-projections.jpg)
 {% endcolumn %}
 {% endsection %}
@@ -23,7 +23,7 @@ In some cases when querying the space for objects, only specific properties of t
 
 # Specifying a Projection with your Query
 
-Projection supported using a [SQLQuery](./sqlquery.html) or [Id Queries](./id-queries.html). Below a simple example reading a `Person` object where only the 'firstName' and 'lastName' properties are returned with the query result array. All other `Person` properties will not be returned:
+Projection supported using a [SQLQuery](./query-sql.html) or [Id Queries](./query-by-id.html). Below a simple example reading a `Person` object where only the 'firstName' and 'lastName' properties are returned with the query result array. All other `Person` properties will not be returned:
 
 {% highlight java %}
 public class Person
@@ -79,6 +79,6 @@ Projected properties can specify both dynamic or fixed properties and the usage 
 
 
 <ul class="pager">
-  <li class="previous"><a href="./paging-support-with-space-iterator.html">&larr; Paging Support</a></li>
+  <li class="previous"><a href="./query-paging-support.html">&larr; Paging Support</a></li>
   <li class="next"><a href="./querying-the-space.html">Querying the Space &rarr;</a></li>
 </ul>

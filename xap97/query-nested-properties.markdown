@@ -10,14 +10,14 @@ weight: 400
 
 # Overview
 
-The [SQL Query](./sqlquery.html) page shows how to express complex queries on flat space entries (i.e entries which are composed of scalar types like integers and strings), but in reality space entries are often composed of more complex types.
+The [SQL Query](./query-sql.html) page shows how to express complex queries on flat space entries (i.e entries which are composed of scalar types like integers and strings), but in reality space entries are often composed of more complex types.
 For example, a **Person** class may have:
 
 - An **address** property of type **Address**, which is a user-defined class encapsulating address details (e.g. city, street).
 - A **phoneNumbers** property of type `Map<String, String>`, encapsulating various phone numbers (e.g. home, work, mobile).
 - A **groups** property of type `List<String>`, encapsulating various groups the person belongs to.
 
-An application would likely need to execute queries which involve such properties (e.g. a person which lives in city X, or is part of some group Y, or has a specific home phone number). This page explains how GigaSpaces [SQLQuery](./sqlquery.html) can be used to express such queries.
+An application would likely need to execute queries which involve such properties (e.g. a person which lives in city X, or is part of some group Y, or has a specific home phone number). This page explains how GigaSpaces [SQLQuery](./query-sql.html) can be used to express such queries.
 
 # Matching Paths
 
@@ -102,12 +102,10 @@ Note that since the index is specified on top of the **address** property, the `
 For more information see the [Nested Properties Indexing](./indexing.html#Nested Properties Indexing) section under [Indexing](./indexing.html).
 {%endinfo%}
 
-## Remarks
-
-{% info%}
+{% warning%}
 The type of the nested object must be a class - querying interfaces is not supported.
 Nested properties' classes should be `Serializable`, otherwise the entry will not be accessible from remote clients.
-{%endinfo%}
+{%endwarning%}
 
 # Nested Maps
 
@@ -230,12 +228,12 @@ public List<Car> getCars() {
 {% endhighlight %}
 
 {% note %}
-Note that since the index is specified on top of the **cars** property, the `path` is **[*].company** rather than **cars[*].company**.
+Note that since the index is specified on top of the **cars** property, the `path` is \[*\].company rather than cars\[*\].company**.
 The bigger the collection - the more memory is required to store the index at the server (since each item is indexed). Use with caution!
 For more information see the [Collection Indexing](./indexing.html#Collection Indexing) section under [Indexing](./indexing.html).
 {%endnote%}
 
 <ul class="pager">
-  <li class="previous"><a href="./sqlquery.html">&larr; SQLQuery</a></li>
+  <li class="previous"><a href="./query-sql.html">&larr; SQLQuery</a></li>
   <li class="next"><a href="./query-user-defined-classes.html">User Defined CLasses &rarr;</a></li>
 </ul>

@@ -6,8 +6,8 @@ parent: scala.html
 weight: 300
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}Predicate based `GigaSpace` query operations.{% endsummary %}
+
+{% summary  %}Predicate based `GigaSpace` query operations.{% endsummary %}
 
 {% info %}
 This feature makes use of Scala macros. As such, the minimum Scala version required in order to use it is 2.10
@@ -15,7 +15,7 @@ This feature makes use of Scala macros. As such, the minimum Scala version requi
 
 # Overview
 
-Support for predicate based queries on the `GigaSpace` proxy has been in added. This support is based on the new macros feature introduced in Scala 2.10.  Each predicate based query is transformed during compilation into an equivalent [SQLQuery](./sqlquery.html).
+Support for predicate based queries on the `GigaSpace` proxy has been in added. This support is based on the new macros feature introduced in Scala 2.10.  Each predicate based query is transformed during compilation into an equivalent [SQLQuery](./query-sql.html).
 
 # Usage
 

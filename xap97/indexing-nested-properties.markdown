@@ -124,7 +124,7 @@ SQLQuery<Person> query = new SQLQuery<Person>(Person.class,
 	"personalInfo.socialSecurity<10000050L and personalInfo.socialSecurity>=10000010L");
 {% endhighlight %}
 
-{% learn %}./sqlquery.html#Nested Properties{%endlearn%}
+{% learn %}./query-sql.html#Nested Properties{%endlearn%}
 
 {% info title=Map based nested properties %}
 Note that the same indexing techniques above are also applicable to Map-based nested properties, which means that in the example above the `Info` and `Address` classes could be replaced with a `java.util.Map<String,Object>`, with the map keys representing the property names.

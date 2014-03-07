@@ -15,7 +15,7 @@ The GigaSpaces JDBC interface allows database-driven applications to interact wi
 Applications can access the GigaSpaces Data Grid using the JDBC API; data written to the IMDG using the JDBC API can also be accessed using other APIs.
 
 {% note %}
-An alternative way of querying the space using SQL syntax is the [SQLQuery](./sqlquery.html) class. This class allows you to perform SQL queries directly against space objects, without adding O/R mapping complexity.
+An alternative way of querying the space using SQL syntax is the [SQLQuery](./query-sql.html) class. This class allows you to perform SQL queries directly against space objects, without adding O/R mapping complexity.
 {% endnote %}
 
 JDBC support in GigaSpaces is centered around the Space-Based Architecture - its main motivation is to enable more sophisticated querying of the space, beyond the template matching provided by the [The GigaSpace Interface](./the-gigaspace-interface.html).

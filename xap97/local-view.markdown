@@ -12,7 +12,7 @@ weight: 200
 
 A **Local View** is a [Client Side Cache](./client-side-caching.html) that maintains a subset of the master space's data, allowing the client to read distributed data without performing any remote calls or data serialization.
 
-Data is streamed into the client local view based on predefined criteria (a collection of [SQLQuery](./sqlquery.html) objects) specified by the client when the local view is created.
+Data is streamed into the client local view based on predefined criteria (a collection of [SQLQuery](./query-sql.html) objects) specified by the client when the local view is created.
 
 During the local view initialization, data is loaded into the client's memory based on the view criteria. Afterwards, the local view is continuously updated by the master space asynchronously  - any operation executed on the master space that affects an entry which matches the view criteria is automatically propagated to the client.
 
@@ -110,9 +110,9 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 # Read Only Cache
 
 The Local View is a **Read-Only** client side cache. The following operations are supported - these are served by the local view. The master space is not accessed when calling these:
-    - `read` , `readMultiple` , `asyncRead` , `count` , using [Template Matching](./template-matching.html), [Id Queries](./id-queries.html) or [SQLQuery](./sqlquery.html).
+    - `read` , `readMultiple` , `asyncRead` , `count` , using [Template Matching](./query-template-matching.html), [Id Queries](./query-by-id.html) or [SQLQuery](./query-sql.html).
     - [Notify Container](./notify-container.html) , [Session Based Messaging API](./session-based-messaging-api.html).
-    - [IteratorBuilder](./paging-support-with-space-iterator.html).
+    - [IteratorBuilder](./query-paging-support.html).
 
 The following operations are not supported when using local view, and should be performed using a regular space proxy:
     - Any operation that creates or changes data (`write`, `writeMultiple`, `update`, `updateMultiple`, `execute`).

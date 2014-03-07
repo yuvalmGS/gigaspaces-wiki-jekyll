@@ -10,11 +10,16 @@ weight: 700
 
 # Overview
 
+{%section%}
+{%column width=60% %}
 The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/GSIterator.html)  provides the ability to exhaustively read through all of the objects from the space that match one or more SQLQuery/templates.
 
 There are scenarios where the conventional read operation that returns a single space object does not fit and there is a need to return a collection of entries from the space. Generally, an iterator should be used in cases where returning all the entries in one result with the `readMultiple` operation will consume too much memory on the client or introduce too much latency before the first space object could be processed.
-
+{%endcolumn%}
+{%column width=35% %}
 ![paging-iteratorBuilder.jpg](/attachment_files/paging-iteratorBuilder.jpg)
+{%endcolumn%}
+{%endsection%}
 
 The iterator constructs a match set (a collection of space objects instances) that incrementally returns the necessary objects in chunks or pages. The `GSIterator` constructs a proxy object that can be used to access a match set created by a space. The `GSIterator` will initially contain some population of objects specified by the operation that created it. These objects can be retrieved by calling the `next` method. A successful call to `next` will remove the returned object from the match set. Match sets can end up in one of two terminal states: `exhausted` or `invalidated`.
 
@@ -108,7 +113,7 @@ The `GSIterator` constructed using the following parameters:
 
 ## Using GSIterator with SQLQuery
 
-When using the `GSIterator` with [SQLQuery](./sqlquery.html), only [simple SQL queries](./sqlquery.html#Simple Queries - Supported and Non-Supported Operators) are supported:
+When using the `GSIterator` with SQLQuery only [simple SQL queries](./query-sql.html#Simple Queries - Supported and Non-Supported Operators) are supported:
     (field1 < value1) AND (field2 > value2) AND (field3 == values3)...
 The following operators **are not supported** when using `GSIterator`:
 
@@ -187,5 +192,5 @@ Updates do affect the iterator.
 
 <ul class="pager">
   <li class="previous"><a href="./query-user-defined-classes.html">&larr; User Defined Class</a></li>
-  <li class="next"><a href="./getting-partial-results-using-projection-api.html">Partial Results &rarr;</a></li>
+  <li class="next"><a href="./query-partial-results.html">Partial Results &rarr;</a></li>
 </ul>
