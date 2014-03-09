@@ -3,18 +3,18 @@ layout: post
 title:  ID Queries
 categories: XAP97NET
 parent: querying-the-space.html
-weight: 50
+weight: 100
 ---
 
 {% summary %}How to query the space using entry ID{% endsummary %}
 
 # Overview
 
-The space can be queried for entries using [Template Matching](./template-matching.html) or [SQLQuery](./sqlquery.html), but sometimes we know the exact id of the entry we need and prefer a faster solution. This is where id-based queries come handy.
+The space can be queried for entries using [Template Matching](./query-template-matching.html) or [SQLQuery](./query-sql.html), but sometimes we know the exact id of the entry we need and prefer a faster solution. This is where id-based queries come handy.
 
 # Reading an Entry By ID
 
-When you would like to access an object using its ID for read and take operations you should first specify the ID field. You can specify it via `@SpaceId (autogenerate=false)` annotation:
+When you would like to access an object using its ID for read and take operations you should first specify the ID field. You can specify it via `[SpaceId (autogenerate=false)]` annotation:
 
 {% highlight csharp %}
 
@@ -24,11 +24,11 @@ public String getEmployeeID() {
 }
 {% endhighlight %}
 
-To read the object back from the space using its ID and the `readById` operation:
+To read the object back from the space using its ID and the `ReadById` operation:
 
 {% highlight csharp %}
 GigaSpace gigaSpace;
-Employee myEmployee = gigaSpace.readById(Employee.class , myEmployeeID , routingValue);
+Employee myEmployee = proxy.ReadById<Employee>(myEmployeeID , routingValue);
 {% endhighlight %}
 
 # Reading Multiple Entries by IDs
@@ -39,13 +39,13 @@ The following shows how to read multiple objects using their IDs:
 GigaSpace gigaSpace;
 
 // Initialize an ids array
-Integer[] ids = new Integer[] { ... };
+long?[] ids = new long?[] { ... };
 
 // Set a routing key value (not mandatory but more efficient)
 Integer routingKey = ...;
 
 // Read objects from space
-ReadByIdsResult<Employee> result = gigaSpace.readByIds(Employee.class, ids, routingKey);
+ReadByIdsResult<Employee> result = proxy.ReadByIds<Employee>( ids, routingKey);
 
 // Loop through results
 for (Employee employee : result) {

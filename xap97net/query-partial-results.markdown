@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Getting Partial Results Using The Projection API
+title:  Partial Results
 categories: XAP97NET
 parent: querying-the-space.html
 weight: 600
@@ -11,24 +11,17 @@ weight: 600
 # Overview
 
 {% section %}
-
-{% column width=40 %}
-
+{% column width=60% %}
 In some cases when querying the space for objects, only specific properties of objects are required and not the entire object (delta read). The same scenario is also relevant when subscribing for notifications on space data changes, where only specific properties are of interest to the subscriber. For that purpose the Projection API can be used where one can specify which properties are of interest and the space will only populate these properties with the actual data when the result is returned back to the user. This approach reduces network overhead , garbage memory generation and serialization CPU overhead.
-
 {% endcolumn %}
-
-{% column %}
-
+{% column width=35% %}
 ![space-projections.jpg](/attachment_files/dotnet/space-projections.jpg)
-
 {% endcolumn %}
-
 {% endsection %}
 
-# Specifying a Projection with your Query
+# Example
 
-Projections are supported using a [SqlQuery](./sqlquery.html) or [ID Queries](./id-queries.html). Below is a simple example that demonstrates reading a `Person` object where only the 'FirstName' and 'LastName' properties are returned with the query result array. All other `Person` properties will not be returned:
+Projections are supported using a [SqlQuery](./query-sql.html) or [ID Queries](./id-queries.html). Below is a simple example that demonstrates reading a `Person` object where only the 'FirstName' and 'LastName' properties are returned with the query result array. All other `Person` properties will not be returned:
 
 {% highlight csharp %}
 public class Person

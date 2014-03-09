@@ -71,12 +71,12 @@ The [ISpaceProxy](% netdoc GigaSpaces.Core.ISpaceProxy %) interface includes the
 
 
 {: .table .table-bordered}
-|[Id Based operations](./id-queries.html)|[Batch operations](#Batch Operations)|[Asynchronous operations](#Asynchronous Operations)|Data Count operations|
-|[ReadById](./id-queries.html#Reading an Object using its ID)<br/>TakeById<br/>[ReadByIds](./id-queries.html#Reading Multiple Objects using their IDs)<br/>TakeByIds<br/>ReadIfExistsById<br/>TakeIfExistsById|ReadMultiple<br/>TakeMultiple<br/>WriteMultiple<br/>ReadByIds<br/>TakeByIds|BeginExecute<br/>BeginTake<br/>EndExecute<br/>EndTake|Count|
+|[Id Based operations](./query-by-id.html)|[Batch operations](#Batch Operations)|[Asynchronous operations](#Asynchronous Operations)|Data Count operations|
+|[ReadById](./query-by-id.html#Reading an Object using its ID)<br/>TakeById<br/>[ReadByIds](./query-by-id.html#Reading Multiple Objects using their IDs)<br/>TakeByIds<br/>ReadIfExistsById<br/>TakeIfExistsById|ReadMultiple<br/>TakeMultiple<br/>WriteMultiple<br/>ReadByIds<br/>TakeByIds|BeginExecute<br/>BeginTake<br/>EndExecute<br/>EndTake|Count|
 
 {: .table .table-bordered}
-|[Data Query operations](./sqlquery.html)|Data Insert and Update operations|[Business logic execution operations](./task-execution-over-the-space.html)|Data removal operations|
-|Read<br/>ReadMultiple<br/>[GetSpaceIterator]({% currentjavaurl %}/paging-support-with-space-iterator.html)|Write<br/>WriteMultiple [change](./change-api.html) |Execute<br/>executorBuilder|Clean<br/>Clear<br/>Take<br/>TakeMultiple|
+|[Data Query operations](./query-sql.html)|Data Insert and Update operations|[Business logic execution operations](./task-execution-over-the-space.html)|Data removal operations|
+|Read<br/>ReadMultiple<br/>[GetSpaceIterator]({% currentjavaurl %}/query-paging-support.html)|Write<br/>WriteMultiple [change](./change-api.html) |Execute<br/>executorBuilder|Clean<br/>Clear<br/>Take<br/>TakeMultiple|
 
 { include ispaceproxy-code-snippets.markdown }
 
@@ -273,29 +273,29 @@ Each space object includes an ID. You may read or remove objects from the space 
 The `ReadByID` and `ReadByIDs` have a special performance optimization when running a [Local Cache](./local-cache.html) or [Local View](./local-view.html).
 {% endtip %}
 
-See the [Id Queries](./id-queries.html) for details.
+See the [Id Queries](./query-by-id.html) for details.
 
 ## Template Based
 
 The template is an object of the desired entry type, and the properties which are set on the template (i.e. not null) are matched against the respective properties of entries of the same type in the space. Properties with null values are ignored (not matched).
 
-See the [Template Matching](./template-matching.html) for details.
+See the [Template Matching](./query-template-matching.html) for details.
 
 ## SQL Based
 
-The [SQLQuery](./sqlquery.html) class is used to query the space using SQL-like syntax. The query statement includes only the `WHERE` clause. The selection aspect of a SQL statement is embedded in other parameters for a SQL query.
+The [SQLQuery](./query-sql.html) class is used to query the space using SQL-like syntax. The query statement includes only the `WHERE` clause. The selection aspect of a SQL statement is embedded in other parameters for a SQL query.
 
-See the [SQLQuery](./sqlquery.html) for details.
+
 
 ## Space Iterator
 
 The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/client/GSIterator.html) allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the `readMultiple` since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side.
 
-See the [Paging Support with Space Iterator]({% currentjavaurl %}/paging-support-with-space-iterator.html) for details.
+See the [Paging Support with Space Iterator]({% currentjavaurl %}/query-paging-support.html) for details.
 
 # ReadIfExists and Read Operations
 
-The two forms of the `Read` operations query the space for an object that matches the template/[SQLQuery](./sqlquery.html) provided. If a match is found, a copy of the matching object is returned. If no match is found, `null` is returned. Passing a `null` reference as the template will match any object.
+The two forms of the `Read` operations query the space for an object that matches the template/[SQLQuery](./query-sql.html) provided. If a match is found, a copy of the matching object is returned. If no match is found, `null` is returned. Passing a `null` reference as the template will match any object.
 
 Any matching object can be returned. Successive Read requests with the same template may or may not return equivalent objects, even if no intervening modifications have been made to the Space. Each invocation of `Read` may return a new object even if the same object is matched in the space. If you would like to Read objects in the same order they have been written into the space you should perform the read objects in a [FIFO mode](./fifo-support.html).
 

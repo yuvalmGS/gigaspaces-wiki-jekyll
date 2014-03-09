@@ -199,7 +199,7 @@ pollingEventListenerContainer.CloneEventListenersPerThread = true;
 
 # Static Template Definition
 
-When performing receive operations, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates, based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SqlQuery](./sqlquery.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
+When performing receive operations, a template is defined, creating a virtualized subset of data within the space that matches it. GigaSpaces supports templates, based on the actual domain model (with `null` values denoting wildcards), which are shown in the examples. GigaSpaces allows the use of [SqlQuery](./query-sql.html) in order to query the space, which can be easily used with the event container as the template. Here is an example of how it can be defined:
 
 {% inittab os_simple_space|top %}
 

@@ -21,7 +21,7 @@ In some cases when querying the space for objects, only specific properties of t
 
 
 
-# Specifying a Projection with your Query
+# Example
 
 Projection supported using a [SQLQuery](./query-sql.html) or [Id Queries](./query-by-id.html). Below a simple example reading a `Person` object where only the 'firstName' and 'lastName' properties are returned with the query result array. All other `Person` properties will not be returned:
 

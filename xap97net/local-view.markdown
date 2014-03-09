@@ -12,7 +12,7 @@ weight: 200
 
 A **Local View** is a [Client Side Cache](./client-side-caching.html) that maintains a subset of the master space's data. The Local View allows the client to read distributed data without performing any remote calls.
 
-Data is streamed into the client's local view based on predefined criteria (a collection of [SQLQuery](./sqlquery.html) objects). These criteria are specified by the client when the local view is created.
+Data is streamed into the client's local view based on predefined criteria (a collection of [SQLQuery](./query-sql.html) objects). These criteria are specified by the client when the local view is created.
 
 During the local view initialization, data is loaded into the client's memory based on the view criteria. Afterwards, the local view is continuously updated by the master space asynchronously; any operation executed on the master space that affects an entry which matches the view criteria is automatically propagated to the client.
 

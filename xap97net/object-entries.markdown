@@ -234,7 +234,7 @@ namespace MyCompany.MyProject
 For more information, see [GigaSpaces.NET - Interoperability With Non .NET Applications](./interoperability.html).
 
 {% note title=AliasName and SqlQuery %}
-When using space SqlQuery on an object with properties which are aliased, the query text needs to use the aliased property names. For more information about SqlQuery, see [GigaSpaces.NET - Sql Query](./sqlquery.html).
+When using space SqlQuery on an object with properties which are aliased, the query text needs to use the aliased property names. For more information about SqlQuery, see [GigaSpaces.NET - Sql Query](./query-sql.html).
 {% endnote %}
 
 # Persistency

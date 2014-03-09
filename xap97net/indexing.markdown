@@ -6,11 +6,11 @@ parent: programmers-guide.html
 weight: 2200
 ---
 
-{% summary %} Using indexes to improve performance. {% endsummary %}
+{% summary %} Using indexes to improve query performance. {% endsummary %}
 
 # Overview
 
-When a space looks for a match for a read or take operation, it iterates over non-null values in the template, looking for matches in the space. This process can be time consuming, especially when there are many potential matches. To improve performance, it is possible to index one or more properties. The space maintains additional data for indexed properties, which shortens the time required to determine a match, thus improving performance.
+When a space is looking for a match for a read or take operation, it iterates over non-null values in the template, looking for matches in the space. This process can be time consuming, especially when there are many potential matches. To improve performance, it is possible to index one or more properties. The space maintains additional data for indexed properties, which shortens the time required to determine a match, thus improving performance.
 
 # Choosing which Properties to Index
 
@@ -21,19 +21,20 @@ One might wonder why properties are not always indexed, or why all the propertie
 
 # When to Use Indexing
 
-Usually it is recommended to index properties that are used in common queries. However, in some scenarios one might favor a smaller memory footprint, or faster performance for a specific query, and adding/removing an index should be considered.
+Naturally the question arises of when to use indexing. Usually it is recommended to index properties that are used in common queries. However, in some scenarios one might favour less footprint, or faster performance for a specific query, and adding/removing an index should be considered.
 
-{% info %}
-Remember that "Premature optimization is the root of all evil." It is always recommended to benchmark your code to get better results.
-{%endinfo%}
+{% warning %}  Remember that "Premature optimization is the root of all evil". It is always recommended to benchmark your code to get better results. {%endwarning%}
 
 # Index Types
 
 The index type is determined by the **`SpaceIndexType`** enumeration. The index types are:
 
-**`None`** - No indexing is used.
-**`Basic`** - Basic index is used - which speeds up equality matches (equal to/not equal to).
-**`Extended`** - Extended index - which speeds up relative matches (bigger than/less than).
+**`NONE`** - No indexing is used.
+
+**`BASIC`** - Basic index is used - this speeds up equality matches (equal to/not equal to).
+
+**`EXTENDED`** - Extended index - this speeds up comparison matches (bigger than/less than).
+
 
 # Indexing at Design-time
 
@@ -47,7 +48,6 @@ Specifying which properties of a class are indexed is done using attributes or `
 [SpaceClass]
 public class Person
 {
-
     ...
     [SpaceIndex(Type=SpaceIndexType.Basic)]
     public String FirstName{ get; set;}
@@ -93,7 +93,11 @@ By default, a property's index is inherited in sub classes (i.e. if a property i
 
 Indexes can be added dynamically at run-time using the GigaSpaces Management Center GUI.
 
-{% exclamation %} Removing an index or changing an index type is currently not supported.
+{% note %}
+Removing an index or changing an index type is currently not supported.
+{%endnote%}
+
+{%comment%}
 
 # Nested Properties Indexing
 
@@ -180,9 +184,9 @@ SqlQuery<Person> query = new SqlQuery<Person>(
     "PersonalInfo.SocialSecurity<10000050L and PersonalInfo.SocialSecurity>=10000010L");
 {% endhighlight %}
 
-{% comment %}
-{% infosign %} For more information, see [Nested Object Queries](./sqlquery.html#Nested Object Query)
-{% endcomment %}
+
+{% infosign %} For more information, see [Nested Object Queries](./query-sql.html#Nested Object Query)
+
 
 {% info title=Nested Objects %}
 By default, nested objects are kept in a binary form inside the space. In order to support nested matching, the relevant property should be stored as document, or as object if it is in an interoperability scenario and it has a corresponding Java class.
@@ -376,3 +380,7 @@ When multiple class fields are indexed, the space looks for the field value inde
 The smallest set of space objects is the list of objects to perform the matching against (matching candidates). Once the candidates space object list has been constructed, it is scanned to locate space objects that fully match the given template - i.e. all non-null template fields match the corresponding space object fields.
 
 {% infosign %} Class fields that are not indexed are not used to construct the candidates list.
+{%endcomment%}
+
+
+{%children%}

@@ -46,7 +46,7 @@ We also decide that **CatalogNumber** will be a primary key, partitioning will b
 
 The following is an example of how to introduce a new document type:
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = ... //Obtain a space proxy
 // Create type descriptor:
 SpaceTypeDescriptorBuilder typeBuilder = new SpaceTypeDescriptorBuilder("Product");
@@ -65,7 +65,7 @@ Note that this code does not reflect the complete model - most of the properties
 
 To create a document in the space, create a `SpaceDocument` object using the type name, and set the desired properties. Then write it to the space using the regular `ISpaceProxy` write method:
 
-{% highlight java %}
+{% highlight csharp %}
 public void WriteProduct1(ISpaceProxy spaceProxy)
 {
     // 1. Create the document using the type name
@@ -94,7 +94,7 @@ public void WriteProduct1(ISpaceProxy spaceProxy)
     document["Reviews"] = new IDictionary<String, Object>[] {review1, review2});
 
     // 3. Write the document to the space:
-    spaceProxy.write(document);
+    spaceProxy.Write(document);
 }
 {% endhighlight %}
 
@@ -104,7 +104,7 @@ There are two ways to receive back a dictionary of the same generic type. One is
 
 The `DocumentProperties` class extends IDictionary<String, Object> and besides being strongly typed to String keys and Object values, it provides better performance when used.
 
-{% highlight java %}
+{% highlight csharp %}
 public void WriteProduct2(ISpaceProxy spaceProxy)
 {
     // 1. Create the document using the type name
@@ -133,13 +133,16 @@ public void WriteProduct2(ISpaceProxy spaceProxy)
     document["Reviews"] = new DocumentProperties[] {review1, review2});
 
     // 3. Write the document to the space:
-    spaceProxy.write(document);
+    spaceProxy.Write(document);
 }
 {% endhighlight %}
 
-{% plus %} The `ISpaceProxy.WriteMultiple` method can be used to write a batch of documents.
-{% exclamation %} Update semantics are the same as for concrete objects, except **partial update**, which is not currently supported.
-{% exclamation %} Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviors in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
+{% note %} The `ISpaceProxy.WriteMultiple` method can be used to write a batch of documents.{%endnote%}
+
+{% warning %}
+Update semantics are the same as for concrete objects, except **partial update**, which is not currently supported.
+Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviors in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
+{%endwarning%}
 
 # Reading and Removing Documents
 
@@ -150,7 +153,7 @@ There are three types of document queries:
 This type of query uses a SpaceDocument with _type_ and any other set of properties values as a template for the query
 For example: Read a document of type **Product** whose **Name** is **Anvil**:
 
-{% highlight java %}
+{% highlight csharp %}
 public SpaceDocument ReadProductByTemplate(ISpaceProxy spaceProxy)
 {
     // Create template:
@@ -164,11 +167,11 @@ public SpaceDocument ReadProductByTemplate(ISpaceProxy spaceProxy)
 
 ## Sql Query
 
-You can use the [SqlQuery](./sqlquery.html) to search for matching `SpaceDocument` entries.
+You can use the [SqlQuery](./query-sql.html) to search for matching `SpaceDocument` entries.
 
 For example: to read a document of type **Product** whose **Price** is greater than 15:
 
-{% highlight java %}
+{% highlight csharp %}
 public SpaceDocument ReadProductBySql(ISpaceProxy spaceProxy)
 {
     // Create query:
@@ -186,7 +189,7 @@ Consider indexing properties used in queries to boost performance.
 
 Queries on nested properties are supported. For example, to read products manufactured by **Acme**:
 
-{% highlight java %}
+{% highlight csharp %}
 public SpaceDocument[] ReadProductBySqlNested(ISpaceProxy spaceProxy)
 {
     // Create query:
@@ -203,7 +206,7 @@ public SpaceDocument[] ReadProductBySqlNested(ISpaceProxy spaceProxy)
 
 For example: Read a document of type **Product** whose ID is **hw-1234**:
 
-{% highlight java %}
+{% highlight csharp %}
 public SpaceDocument ReadProductById(ISpaceProxy spaceProxy)
 {
     return spaceProxy.ReadById(new IdQuery<SpaceDocument>("Product", "hw-1234"));
@@ -212,7 +215,7 @@ public SpaceDocument ReadProductById(ISpaceProxy spaceProxy)
 
 Queries by multiple Ids are supported. For example:
 
-{% highlight java %}
+{% highlight csharp %}
 public SpaceDocument[] ReadProductByMultipleIds(ISpaceProxy spaceProxy)
 {
     Object[] ids = new Object[] {"hw-1234", "av-9876"};
@@ -222,16 +225,24 @@ public SpaceDocument[] ReadProductByMultipleIds(ISpaceProxy spaceProxy)
 }
 {% endhighlight %}
 
-{% plus %} All other `ISpaceProxy` query operations (ReadIfExists, ReadMultiple, Take, TakeIfExists, TakeMultiple, Count, Clear) are supported for documents entries as well.
-{% plus %} All other Id based operations (ReadIfExists, TakeById, TakeIfExistsById, TakeByIds) are supported for documents as well.
-{% plus %} All overloads of those operations with timeout, transactions, modifiers etc. are supported for documents. The semantics is similar to concrete objects.
+{% note %}
+All other `ISpaceProxy` query operations (ReadIfExists, ReadMultiple, Take, TakeIfExists, TakeMultiple, Count, Clear) are supported for documents entries as well.
+All other Id based operations (ReadIfExists, TakeById, TakeIfExistsById, TakeByIds) are supported for documents as well.
+All overloads of those operations with timeout, transactions, modifiers etc. are supported for documents. The semantics is similar to concrete objects.
+{%endnote%}
 
 # Nested Properties
 
 The `Document` properties' values can be either scalars (integers, strings, enumerations, etc), collections (arrays, lists), or nested properties (dictionary or an extension of dictionary, such as `DocumentProperties`). Values must adhere to the same restrictions as in the concrete object model (e.g. be serializable). Nested properties can be queried by using the dot ('.') notation to describe paths, as shown above.
 
-{% plus %} It's highly recommended to use `DocumentProperties` for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
-{% exclamation %} While it's possible to use  `SpaceDocument` as a property, it is probably a mistake, since it contains extra information which is not relevant for nested properties (type name, version, etc.).
+{% note%}
+It's highly recommended to use `DocumentProperties` for nested documents since it contains performance and memory footprint optimizations which are tailored for GigaSpaces usage.
+{%endnote%}
+
+
+{% warning %}
+While it's possible to use  `SpaceDocument` as a property, it is probably a mistake, since it contains extra information which is not relevant for nested properties (type name, version, etc.).
+{%endwarning%}
 
 # Indexing
 
@@ -247,7 +258,7 @@ Event containers (both [polling container](./polling-container-component.html) a
 
 Here is a simple example of a polling event container configuration using a `SpaceDocument`:
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -274,7 +285,7 @@ public class SimpleListener
 
 FIFO support is off by default with `SpaceDocument` entries (as with concrete object entries). To enable FIFO support, modify the type introduction code and set the desired FIFO support mode. For example:
 
-{% highlight java %}
+{% highlight csharp %}
 // Create type descriptor:
 ISpaceProxy spaceProxy = ... //Obtain a space proxy
 // Create type descriptor:
@@ -286,7 +297,7 @@ ISpaceTypeDescriptor typeDescriptor = typeBuilder.Create();
 spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
-{% exclamation %} Changing FIFO support after a type has been registered is not supported.
+{% info %} Changing FIFO support after a type has been registered is not supported. {%endinfo%}
 
 # Transactions and Optimistic Locking
 
@@ -294,7 +305,7 @@ Transactions and isolation modifier semantics is identical to the concrete objec
 
 Optimistic locking is disabled by default with `SpaceDocument` entries (same as with concrete object). To enable it, modify the type introduction code and set the optimistic locking support. For example:
 
-{% highlight java %}
+{% highlight csharp %}
 // Create type descriptor:
 ISpaceProxy spaceProxy = ... //Obtain a space proxy
 // Create type descriptor:
@@ -306,15 +317,17 @@ ISpaceTypeDescriptor typeDescriptor = typeBuilder.Create();
 spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
-{% exclamation %} Changing optimistic locking after a type has been registered is not supported.
+{% warning %}
+Changing optimistic locking after a type has been registered is not supported.
+{%endwarning%}
 
 # Dynamic Properties Storage Type
 
 By default, the dynamic properties of the document will be deserialized fully and kept in space as an instance of their corresponding space type class. This allows indexing and nested matching against these properties. However, in some scenarios, the data kept inside the dynamic properties is not used for matching. In that case it is possible to keep these properties serialized in their binary format in the space, increasing performance and reducing memory consumption.
 
-However, the data stored in binary format will be not be visible via the management center or readable from an interoperable Java/C++ client, it will appear as binary large object to these clients and will only deserialized when a .NET client reads it. The way to specify the storage type is when constructing the type using the `SpaceTypeDescriptorBuilder`:
+However, the data stored in binary format will be not be visible via the management center or readable from an interoperable csharp/C++ client, it will appear as binary large object to these clients and will only deserialized when a .NET client reads it. The way to specify the storage type is when constructing the type using the `SpaceTypeDescriptorBuilder`:
 
-{% highlight java %}
+{% highlight csharp %}
 // Create type descriptor:
 ISpaceProxy spaceProxy = ... //Obtain a space proxy
 // Create type descriptor:
@@ -339,7 +352,7 @@ Example on how to implement an EDS that persists SpaceDocuments of type "Trade" 
 
 {% tabcontent Starting the Space %}
 
-{% highlight java %}
+{% highlight csharp %}
 [ContainerInitializing]
 public void Initialize(BasicProcessingUnitContainer container)
 {
@@ -369,10 +382,9 @@ public void Initialize(BasicProcessingUnitContainer container)
 
 {% tabcontent The EDS Implementation %}
 
-{% highlight java %}
+{% highlight csharp %}
 public class DocumentEDS : ISqlDataSource
 {
-
     public void Init(Dictionary<String, String> properties)
     {
         // initialize persistency layer
@@ -423,8 +435,10 @@ public class DocumentEDS : ISqlDataSource
 
 Concrete objects can be persisted via document EDS as well, in the same way.
 
-{% exclamation %} In order to support InitialLoad of documents the relevant types must be declared in the space config, so that they are registered in the space before InitialLoad is invoked.
-{% exclamation %} Document persistence is currently not provided by default - If needed, the External Data Source should be implemented to fit the required solution.
+{% warning %}
+In order to support InitialLoad of documents the relevant types must be declared in the space config, so that they are registered in the space before InitialLoad is invoked.
+Document persistence is currently not provided by default - If needed, the External Data Source should be implemented to fit the required solution.
+{%endwarning%}
 
 # Advanced Options
 
