@@ -23,9 +23,9 @@ In this part of the tutorial we will introduce you to the transaction processing
 {%endsection%}
 
 # Transaction Management
-XAP provides several transaction managers, and changing the implementation you work with is just a matter of changing the configuration. In this part of the tutorial will use XAP's Distributed Transaction Manager to demonstrate some of the features and capabilities.
+With the XAP .Net transaction model the developer is responsible for explicitly starting and managing the transaction. You obtain an object representing the underlying space transaction by calling `GigaSpacesFactory.CreateDistributedTransactionManager`. This call returns an implementation of the `ITransactionManager` interface used to create the transaction using the `ITransactionManager.Create()`.
 
-
+Here is an example how you use transactions:
 
 {%highlight csharp%}
 public void readWithTransaction()
@@ -47,60 +47,6 @@ public void readWithTransaction()
 	}
 }
 {%endhighlight%}
-
-{%comment%}
-Here is an example how you define a distributed transaction manager via the Spring configuration:
-{%highlight xml%}
-<!-- A bean representing a space (an IJSpace implementation) -->
-<os-core:space id="space" url="/./xapTutorialSpace" />
-
-<!-- Defines a distributed transaction manager. -->
-<os-core:distributed-tx-manager id="transactionManager" />
-
-<!-- Define the GigaSpace instance that the application will use to access the space -->
-<os-core:giga-space id="xapTutorialSpace" space="space" tx-manager="transactionManager" />
-
-<!-- enable the configuration of transactional behavior based on annotations -->
-<tx:annotation-driven transaction-manager="transactionManager" />
-{%endhighlight%}
-
-{%note%}In order to make the XAP Interface transactional, the transaction manager must be provided to it when constructing the GigaSpace bean. You also need to add <tx:annotation-driven transaction-manager="transactionManager" />  to enable the configuration of transactional behavior based on annotations.{%endnote%}
-
-### Transaction Demarcation
-In your Java code you can annotate your class or methods with the Spring `@Transactional` annotation and configure Spring to process the annotation such that every call to the annotated methods will be automatically performed under a transaction. The transaction starts before the method is called and commits when the method call returns. If an exception is thrown from the method the transaction is rolled back automatically. Note that you can control various aspects of the transaction like propagation by using the attributes of the `@Transactional` annotation.
-
-Here is an example how to use the transactions in your code:
-{%highlight java%}
-@Transactional
-public void createPayment() {
-	Payment payment = new Payment();
-	payment.setCreatedDate(new Date(System.currentTimeMillis()));
-	payment.setPayingAccountId(new Integer(1));
-	payment.setStatus(ETransactionStatus.PROCESSED);
-
-	space.write(payment);
-}
-{%endhighlight%}
-If an exception is thrown in this example, the object that was written into the space will be rolled back.
-
-### Transaction propagation
-Normally all code executed within a transaction runs in the same transaction scope. However, there are several options specifying behavior if a transactional method is executed when a transaction context already exists. For example, simply running in the existing transaction (the most common case); or suspending the existing transaction and creating a new transaction.
-
-Here is the example how you can define a new transaction to be started for a method:
-{%highlight java%}
-@Transactional(propagation = Propagation.REQUIRES_NEW)
-public void createNewPayment() {
-	Payment payment = new Payment();
-	payment.setCreatedDate(new Date(System.currentTimeMillis()));
-	payment.setPayingAccountId(new Integer(1));
-	payment.setStatus(ETransactionStatus.PROCESSED);
-
-	space.write(payment);
-}
-{%endhighlight%}
-{%learn%}{%latestneturl%}/transaction-management.html{%endlearn%}
-
-{%endcomment%}
 
 
 # Event Processing
