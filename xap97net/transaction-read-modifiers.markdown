@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  Read Modifiers
-categories: XAP97
-parent: transaction-management.html
-weight: 200
+categories:
+parent:
+weight:
 ---
 
- {% summary %}GigaSpaces EXCLUSIVE_READ_LOCK, READ_COMMITTED, DIRTY_READ, and REPEATABLE_READ modifiers.{% endsummary %}
+ {% summary %}GigaSpaces ExclusiveReadLock, ReadCommitted, DirtyRead, and RepeatableRead modifiers.{% endsummary %}
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
@@ -17,10 +17,10 @@ GigaSpaces `ReadModifiers` class (see [Javadoc](http://www.gigaspaces.com/docs/J
 
 Four main types of modifiers can be used:
 
-- `REPEATABLE_READ` - default modifier
-- `DIRTY_READ`
-- `READ_COMMITTED`
-- `EXCLUSIVE_READ_LOCK`
+- `RepeatableRead` - default modifier
+- `DirtyRead`
+- `ReadCommitted`
+- `ExclusiveReadLock`
 
 These should be used for backward compatibility with older versions of GigaSpaces:
 
@@ -30,7 +30,7 @@ These should be used for backward compatibility with older versions of GigaSpace
 You can use **bitwise** or the `|` operator to unite different modifiers.
 
 {% note %}
-`REPEATABLE_READ`, `DIRTY_READ`, and `READ_COMMITTED` are mutually exclusive (i.e. can't be used together). `EXCLUSIVE_READ_LOCK` can be joined with any of them.
+`RepeatableRead`, `DirtyRead`, and `ReadCommitted` are mutually exclusive (i.e. can't be used together). `ExclusiveReadLock` can be joined with any of them.
 {%endnote%}
 
 These modifiers can be set either at the proxy level - `IJSpace.setReadModifiers(int)`, or at the operation level (e.g. using one of `IJSpace` read/`readIfExists`/`readMultiple`/count methods with a modifiers parameter).
@@ -42,32 +42,32 @@ The following table describes the mapping between the [Spring TransactionDefinit
 {: .table .table-bordered}
 |Spring TransactionDefinition| GigaSpaces ReadModifiers |
 |:---------------------------|:-------------------------|
-|ISOLATION_READ_UNCOMMITTED| DIRTY_READ|
-|ISOLATION_READ_COMMITTED|READ_COMMITTED|
-|ISOLATION_REPEATABLE_READ|REPEATABLE_READ|
+|ISOLATION_READ_UNCOMMITTED| DirtyRead|
+|ISOLATION_ReadCommitted|ReadCommitted|
+|ISOLATION_RepeatableRead|RepeatableRead|
 
 {% comment %}
-|ISOLATION_SERIALIZABLE|EXCLUSIVE_READ_LOCK|
+|ISOLATION_SERIALIZABLE|ExclusiveReadLock|
 {% endcomment %}
 
 # Repeatable Read
 
-`REPEATABLE_READ` is the default modifier, defined by the JavaSpaces specification.
+`RepeatableRead` is the default modifier, defined by the JavaSpaces specification.
 
-The `REPEATABLE_READ` isolation level allows a transaction to acquire read locks on an object it returns to an application, and write locks an object it write, updates, or deletes. By using the `REPEATABLE_READ` isolation level, space operations issued multiple times within the same transaction always yield the same result. A transaction using the `REPEATABLE_READ` isolation level can retrieve and manipulate the same object as many times as needed until it completes its task. However, no other transaction can write, update, or delete an object that can affect the result being accessed, until the isolating transaction releases its locks. That is, when the isolating transaction is either committed or rolled back.
+The `RepeatableRead` isolation level allows a transaction to acquire read locks on an object it returns to an application, and write locks an object it write, updates, or deletes. By using the `RepeatableRead` isolation level, space operations issued multiple times within the same transaction always yield the same result. A transaction using the `RepeatableRead` isolation level can retrieve and manipulate the same object as many times as needed until it completes its task. However, no other transaction can write, update, or delete an object that can affect the result being accessed, until the isolating transaction releases its locks. That is, when the isolating transaction is either committed or rolled back.
 
-Transactions using the `REPEATABLE_READ` isolation level wait until the object that is write-locked by other transactions are unlocked before they acquire their own locks. This prevents them from reading "dirty" data. In addition, because other transactions cannot update or delete an object that is locked by a transaction using the `REPEATABLE_READ` isolation level, non-repeatable read situations are avoided.
+Transactions using the `RepeatableRead` isolation level wait until the object that is write-locked by other transactions are unlocked before they acquire their own locks. This prevents them from reading "dirty" data. In addition, because other transactions cannot update or delete an object that is locked by a transaction using the `RepeatableRead` isolation level, non-repeatable read situations are avoided.
 
 # Dirty Read
 
 The JavaSpaces specification defines the visibility of object for read operations as follows:
 A read operation performed under a `null` transaction can only access space objects that are not write-locked by non-null transactions. In other words, space objects that were written or taken by active transactions (transactions that have not been committed or rolled back) are not visible to the user performing a read operation.
 
-Sometimes it is desirable for non-transactional read operations to have full visibility of the objects in the space. The `DIRTY_READ` modifier, once set, enables read/`readIfExists`/`readMultiple`/count operations under a `null` transaction to have this complete visibility.
+Sometimes it is desirable for non-transactional read operations to have full visibility of the objects in the space. The `DirtyRead` modifier, once set, enables read/`readIfExists`/`readMultiple`/count operations under a `null` transaction to have this complete visibility.
 
 ## Code Example
 
-{% highlight java %}
+{% highlight csharp %}
 // write something under txn X and commit, making it publicly visible
 ijspace.write( something, txnX, Lease.FOREVER);
 txnX.commit();
@@ -78,14 +78,14 @@ ijspace.update( newSomething, txnY, Lease.FOREVER, IJSpace.NO_WAIT);
 // all read operations (read, readIfExists, readMultiple, count) return the
 // version of the object before txnY was committed (newSomething).
 // operations can be performed with a new txn Z or a null txn
-ijspace.read( tmpl, null, ReadModifiers.DIRTY_READ);
+ijspace.read( tmpl, null, ReadModifiers.DirtyRead);
 
 // Note: using the same txn (txn Y) will return matches that are visible under the transaction
 {% endhighlight %}
 
 # Read Committed
 
-The `READ_COMMITTED` modifier enables a read-committed isolation level in read operations.
+The `ReadCommitted` modifier enables a read-committed isolation level in read operations.
 
 Read-committed is the isolation-level in which a read operation (under a transaction or a `null` transaction) can not see changes made by other transactions, until those transactions are committed. At this level of isolation, dirty-reads are not possible, but unrepeatable-reads and phantoms might occur.
 
@@ -93,9 +93,9 @@ Read-committed is the default isolation level in database systems. This isolatio
 
 The read-committed isolation level is useful for the local cache, local view, and `GSIterators`, which performs readMultiple and keep their current status by registering notify templates.
 
-The `READ_COMMITTED` modifier is provided at the proxy level and the read API level. It is relevant for read, `readIfExists`, `readMultiple`, and count.
+The `ReadCommitted` modifier is provided at the proxy level and the read API level. It is relevant for read, `readIfExists`, `readMultiple`, and count.
 
-`READ_COMMITTED` and `DIRTY_READ` are mutually-exclusive. A space object under an (uncommitted) updating transaction or under a taking (unrolled) transaction returns the original (committed) value unless the operation is under the same transaction as the locking one.
+`ReadCommitted` and `DirtyRead` are mutually-exclusive. A space object under an (uncommitted) updating transaction or under a taking (unrolled) transaction returns the original (committed) value unless the operation is under the same transaction as the locking one.
 
 If the read operation is under a transaction, there is no need to "enlist" the space object in the transaction (unless its already enlisted).
 
@@ -116,10 +116,10 @@ If the read operation is under a transaction, there is no need to "enlist" the s
 | Read Committed transaction X or null | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed |
 | Dirty Read Transaction X or null| Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed |
 
-{% refer %}Refer to the [Space Locking and Blocking](./space-locking-and-blocking.html) section for GigaSpaces general locking and blocking rules.{% endrefer %}
+{% refer %}Refer to the [Space Locking and Blocking](./transaction-locking-and-blocking.html) section for GigaSpaces general locking and blocking rules.{% endrefer %}
 
 {% note %}
-- To read the original state of a space object that is locked under a transaction (take or update) you should use READ_COMMITTED mode.
+- To read the original state of a space object that is locked under a transaction (take or update) you should use ReadCommitted mode.
 - To read the current state of a space object that is locked under transaction (take or update) should use Dirty Read mode.
 - Dirty read (without transaction) does not blocks transactional take operation.
 {% endnote %}
@@ -128,7 +128,7 @@ If the read operation is under a transaction, there is no need to "enlist" the s
 
 The examples below assumes you are using `IJSpace` interface that is available via the `GigaSpaces.getSpace()`. If you are using the `GigaSpaces` interface and Spring automatic transaction demarcation, you will not need to specify the transaction object explicitly. Still, the blocking rules will be enforced.
 
-{% highlight java %}
+{% highlight csharp %}
 IJSpace ijspace= ...
 // write an object under txn X and commit, making it publicly visible
 ijspace.write( something, txnX, Lease.FOREVER);
@@ -139,7 +139,7 @@ ijspace.update( newSomething, txnY, Lease.FOREVER, IJSpace.NO_WAIT);
 
 // all read operations (read, readIfExists, readMultiple, count) return the last publicly visible match.
 // operations can be performed with a new txn Z or a null txn
-ijspace.read( tmpl, txnZ, ReadModifiers.READ_COMMITTED);
+ijspace.read( tmpl, txnZ, ReadModifiers.ReadCommitted);
 
 // Note: using the same txn (txn Y) will return matches that are visible under the transaction
 {% endhighlight %}
@@ -160,14 +160,14 @@ The following methods support exclusive read lock when used with a transaction:
 The exclusive read lock is supported in a clustered environment when using the Jini Transaction Manager.
 
 {% tip %}
-Starting with XAP 7.1.2 GigaSpaces throws `java.lang.IllegalArgumentException: Using EXCLUSIVE_READ_LOCK modifier without a transaction`{%wbr%}`is illegal` exception as a protection mechanism when performing exclusive read **without** using a transaction. You must use a transaction when using exclusive read lock.
+Starting with XAP 7.1.2 GigaSpaces throws `java.lang.IllegalArgumentException: Using ExclusiveReadLock modifier without a transaction`{%wbr%}`is illegal` exception as a protection mechanism when performing exclusive read **without** using a transaction. You must use a transaction when using exclusive read lock.
 {% endtip %}
 
 ## Code Example
 
-{% highlight java %}
+{% highlight csharp %}
 IJSpace space = ...
-space.setReadModifiers(ReadModifiers.EXCLUSIVE_READ_LOCK);
+space.setReadModifiers(ReadModifiers.ExclusiveReadLock);
 // this will allow all read operations with this proxy to use Exclusive Read Lock mode
 Lock lock = new Lock();
 lock.key = new Integer(1);

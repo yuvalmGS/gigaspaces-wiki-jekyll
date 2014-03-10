@@ -245,7 +245,7 @@ public class Employee {
 }
 {%endhighlight%}
 {% endgcloak %}
-{%learn%}./optimistic-locking.html{%endlearn%}
+{%learn%}./transaction-optimistic-locking.html{%endlearn%}
 
 # SpacePersist
 

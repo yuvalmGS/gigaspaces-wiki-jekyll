@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  Transactions
+title:  Transaction Management
 categories: XAP97NET
 parent: programmers-guide.html
 weight: 2400
 ---
 
-{% compositionsetup %}
 
-{% summary page|60 %}GigaSpaces .Net transaction model.{% endsummary %}
+
+{% summary %}GigaSpaces .Net transaction model.{% endsummary %}
 
 # Overview
 
@@ -21,7 +21,7 @@ If any error occurred, you need to abort the transaction by calling `ITransactio
 
 Suppose we have an order processing system, and we need to validate incoming orders before they continue to be processed. Our code could look something like this:
 
-{% highlight java %}
+{% highlight csharp %}
 public void ProcessNewOrder(ISpaceProxy space)
 {
     // Get an order which requires processing:
@@ -38,7 +38,7 @@ public void ProcessNewOrder(ISpaceProxy space)
 
 Naturally, this code is not safe because if something goes wrong between the Take and Write operations the order is lost. We can use transactions to make it safer:
 
-{% highlight java %}
+{% highlight csharp %}
 public void ProcessNewOrder(ISpaceProxy space, ITransactionManager txnManager)
 {
     // Create a transaction using the transaction manager:
@@ -86,14 +86,14 @@ Another thing that can go wrong is that the application will hang before the tra
 
 You can specify a transaction timeout when the transaction is created:
 
-{% highlight java %}
+{% highlight csharp %}
 // Create a transaction with a 5 minute timeout:
 txnManager.Create(5 ** 60 ** 1000);
 {% endhighlight %}
 
 Alternatively, you can set the default transaction timeout on the transaction manager:
 
-{% highlight java %}
+{% highlight csharp %}
 // Set the default transactions timeout to 5 minutes:
 txnManager.DefaultLeaseTime = 5 ** 60 ** 1000;
 {% endhighlight %}
@@ -109,3 +109,29 @@ When performing read operations with transactions the transaction isolation leve
 |ExclusiveReadLock | Allows read operations to have exclusive visibility of entities that are not locked by active transactions. |  |
 |ReadCommitted | Allows read operations to have visibility of already committed entities, regardless of the fact that these entities might be updated (with a newer version) or taken under an uncommitted transaction. |This modifier cannot be used together with: RepeatableRead, DirtyRead
 
+Here is an example that shows the use of isalotaion levels;
+
+{%highlight csharp%}
+
+public void readWithTransaction()
+{
+	ITransactionManager mgr = GigaSpacesFactory.CreateDistributedTransactionManager ();
+
+	// Create a transaction using the transaction manager:
+	ITransaction trn = mgr.Create ();
+
+	try {
+		// ...
+		SqlQuery<User> query = new SqlQuery<User> ("contacts.home = '770-123-5555'");
+		User user = proxy.Read<User> (query, trn, 0, ReadModifiers.RepeatableRead);
+		// ....
+		trn.Commit();
+	}catch(Exception e) {
+		// rollback the transaction
+		trn.Abort ();
+	}
+}
+{%endhighlight%}
+
+
+{%children%}

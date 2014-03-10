@@ -272,7 +272,7 @@ catch(ChangeException e)
 
 # Optimistic Locking
 
-The `change` operation has the same semantics as regular space `update` operation when it comes to [Optimistic Locking](./optimistic-locking.html). It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
+The `change` operation has the same semantics as regular space `update` operation when it comes to [Optimistic Locking](./transaction-optimistic-locking.html). It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
 
 {% highlight java %}
 GigaSpace space = // ... obtain a space reference

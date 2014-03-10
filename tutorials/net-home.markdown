@@ -168,3 +168,33 @@ You will learn how to use:
 {%endcolumn%}
 {%endsection%}
 {%endpanel%}
+
+
+{%comment%}============================ Part VI ==================={%endcomment%}
+
+{%panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
+{%section%}
+{%column width=20% %}
+{%align center %}
+[Part VI](./net-tutorial-part6.html)
+
+<img src="/attachment_files/qsg/transaction.png" width="100" height="100">
+{%endalign%}
+{%endcolumn%}
+
+{%column width=70% %}
+{%align center%}**Space Transactions**{%endalign%}
+In this part of the tutorial we will introduce you to the transaction processing capabilities of XAP.
+
+You will learn about:
+
+- Transaction managers
+- Transaction processing
+- Concurrency
+- Locking
+
+{%align right%}{%learn%}./net-tutorial-part6.html{%endlearn%}{%endalign%}
+
+{%endcolumn%}
+{%endsection%}
+{%endpanel%}

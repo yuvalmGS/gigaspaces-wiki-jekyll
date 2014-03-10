@@ -581,7 +581,7 @@ gigaspace.getTypeManager().registerTypeDescriptor(typeDescriptor);
 
 {% note %} Changing optimistic locking after a type has been registered is not supported. {%endnote%}
 
-For more information about optimistic locking, see the [Optimistic Locking](./optimistic-locking.html) page.
+For more information about optimistic locking, see the [Optimistic Locking](./transaction-optimistic-locking.html) page.
 
 # Local Cache / Local View
 

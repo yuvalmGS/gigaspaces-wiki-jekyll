@@ -254,7 +254,7 @@ Since the schema is flexible and new properties might be added after the type ha
 
 # Events
 
-Event containers (both [polling container](./polling-container-component.html) and [notify container](./notify-container-component.html)) support `SpaceDocument` entries.
+Event containers (both [polling container](./polling-container.html) and [notify container](./notify-container.html)) support `SpaceDocument` entries.
 
 Here is a simple example of a polling event container configuration using a `SpaceDocument`:
 

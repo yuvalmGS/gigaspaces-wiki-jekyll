@@ -3,7 +3,7 @@ layout: post
 title:  Space Transactions
 categories: TUTORIALS
 weight: 600
-parent: java-home.html
+parent: net-home.html
 ---
 
 
@@ -14,7 +14,7 @@ parent: java-home.html
 {%section%}
 {%column width=70% %}
 
-In this part of the tutorial we will introduce you to the transaction processing capabilities of XAP. The Spring Framework provides a transaction manager abstraction using the PlatformTransactionManager interface with several different built-in implementations, such as JDBC Data Source and JTA. XAP provides several implementations for Spring's PlatformTransactionManager, allowing you to use the XAP Distributed Transaction Manager and the Jini Distributed Transaction Manager. XAP can also be used within an XA transaction manager using JTA.
+In this part of the tutorial we will introduce you to the transaction processing capabilities of XAP.
 {%endcolumn%}
 {%column width=20% %}
 <img src="/attachment_files/qsg/transaction.png" width="100" height="100">
@@ -25,6 +25,30 @@ In this part of the tutorial we will introduce you to the transaction processing
 # Transaction Management
 XAP provides several transaction managers, and changing the implementation you work with is just a matter of changing the configuration. In this part of the tutorial will use XAP's Distributed Transaction Manager to demonstrate some of the features and capabilities.
 
+
+
+{%highlight csharp%}
+public void readWithTransaction()
+{
+	ITransactionManager mgr = GigaSpacesFactory.CreateDistributedTransactionManager ();
+
+	// Create a transaction using the transaction manager:
+	using (ITransaction txn = mgr.Create ()) {
+		try {
+			// ...
+			SqlQuery<User> query = new SqlQuery<User> ("contacts.home = '770-123-5555'");
+			User user = proxy.Read<User> (query, txn, 0, ReadModifiers.RepeatableRead);
+			// ....
+			txn.Commit ();
+		} catch (Exception e) {
+			// rollback the transaction
+			txn.Abort ();
+		}
+	}
+}
+{%endhighlight%}
+
+{%comment%}
 Here is an example how you define a distributed transaction manager via the Spring configuration:
 {%highlight xml%}
 <!-- A bean representing a space (an IJSpace implementation) -->
@@ -74,7 +98,9 @@ public void createNewPayment() {
 	space.write(payment);
 }
 {%endhighlight%}
-{%learn%}{%latestjavaurl%}/transaction-management.html{%endlearn%}
+{%learn%}{%latestneturl%}/transaction-management.html{%endlearn%}
+
+{%endcomment%}
 
 
 # Event Processing
@@ -83,46 +109,54 @@ All event containers support transactions.
 ### Polling container
 Both the receive operation and the actual event action can be configured to be performed under a transaction. Transaction support is required when, for example, an exception occurs in the event listener, and the receive operation needs to be rolled back (and the actual data event is returned to the space). Adding transaction support is very simple in the polling container, and can be done by injecting a transaction manager into it. Let's take our payment polling container and make it transactional.
 
-You make a polling container transactional by adding the `@TransactionalEvent` annotation:
-{%highlight java%}
-@EventDriven
-@Notify
-@TransactionalEvent
-public class PaymentListener {
-	@EventTemplate
+You make a polling container transactional by adding the `[TransactionalEvent]` annotation:
+{%highlight csharp%}
+using System;
+
+using GigaSpaces.Core.Events;
+using GigaSpaces.XAP.Events.Polling;
+using GigaSpaces.XAP.Events;
+
+using xaptutorial.model;
+
+[PollingEventDriven]
+[TransactionalEvent]
+public class AuditListener {
+
+	[EventTemplate]
 	Payment unprocessedData() {
 		Payment template = new Payment();
-		template.setStatus(ETransactionStatus.CANCELLED);
+		template.setStatus(ETransactionStatus.AUDITED);
 		return template;
 	}
 
-	@SpaceDataEvent
-	public Payment eventListener(Payment event) {
+	[DataEventHandler]
+	public Payment eventListener(Payment e) {
 		// process Payment
-		System.out.println("Notifier Received a payment");
+		Console.WriteLine("Polling Received a payment:");
 		return null;
 	}
 }
 {%endhighlight%}
 
-{%learn%}{%latestjavaurl%}/polling-container.html{%endlearn%}
+{%learn%}{%latestneturl%}/polling-container.html{%endlearn%}
 
 
 ### Notify Container
 Just like the Polling container, both the receive operation and the actual event action can be configured to be performed under a transaction. However, in case an error occurs (rollback), the notification is lost and not sent again.
 
-{%learn%}{%latestjavaurl%}/notify-container.html{%endlearn%}
+{%learn%}{%latestneturl%}/notify-container.html{%endlearn%}
 
 
 # Task Execution
 Executors fully support transactions similar to other XAP operations. Once an execute operation is executed within a declarative transaction, it will automatically join it. The transaction itself is then passed to the node the task executed on and added declaratively to it. This means that any XAP operation performed within the task execute operation will automatically join the transaction started on the client side.
-{%learn%}{%latestjavaurl%}/task-execution-over-the-space.html{%endlearn%}
+{%learn%}{%latestneturl%}/task-execution-over-the-space.html{%endlearn%}
 
 
 
 # Remoting Service
 Executor remoting supports transactional execution of services. On the client side, if there is an ongoing declarative transaction during the service invocation (a Space based transaction), the service will be executed under the same transaction. The transaction itself is passed to the server and any Space related operations (performed using XAP) will be executed under the same transaction.
-{%learn%}{%latestjavaurl%}/space-based-remoting.html{%endlearn%}
+{%learn%}{%latestneturl%}/space-based-remoting.html{%endlearn%}
 
 
 
@@ -137,46 +171,42 @@ XAP uses a version number for an object to accomplish optimistic locking. When a
 
 Here is an example of how optimistic locking is enabled in XAP. First we need to indicate to the space that it will hold versioned objects.
 
-{% inittab d1|top %}
-{% tabcontent Java %}
-{%highlight java%}
-GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/xapTutorialSpace").versioned(true)).gigaSpace();
+{%highlight csharp%}
+public void creatVersionedSpace()
+{
+	// Embedded Space
+	String url = "/./xapTutorialSpace";
+
+	// Create the SpaceProxy
+	ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
+	spaceProxy.OptimisticLocking = true;
+}
 {%endhighlight%}
-{% endtabcontent %}
 
-{% tabcontent Spring %}
-{%highlight java%}
-    <os-core:space id="space" url="jini://*/*/xapTutorialSpace"  versioned="true" />
-{%endhighlight%}
-{% endtabcontent %}
-{% endinittab %}
+You should enable the Space class to support the optimistic locking, by including the `[SpaceVersion]` decoration on an int getter field. This field stores the current object version and is maintained by XAP. See below for an example:
+{%highlight csharp%}
+namespace xaptutorial.model
+{
+	[SpaceClass]
+	public class Account {
+		[SpaceID]
+		[SpaceRouting]
+		private int? id { set; get; }
+		private String number{ set; get; }
+		private Double receipts{ set; get; }
+		private Double feeAmount{ set; get; }
+		private EAccountStatus status{ set; get; }
+		[SpaceVersion]
+		private int version{ set; get; }
 
-You should enable the Space class to support the optimistic locking, by including the `@SpaceVersion` decoration on an int getter field. This field stores the current object version and is maintained by XAP. See below for an example:
-{%highlight java%}
-@SpaceClass
-public class Account {
-	private Long id;
-	private String number;
-	private Double receipts;
-	private Double feeAmount;
-	private ECategoryType category;
-	private EAccountStatus status;
-	private int version;
-
-	@SpaceId
-	@SpaceRouting
-	public Long getId() {
-		return id;
-	}
-
-	@SpaceVersion
-	public int getVersion() {
-		return version;
+		// ...
 	}
 }
 {%endhighlight%}
-{%learn%}{%latestjavaurl%}/transaction-optimistic-locking.html{%endlearn%}
 
+{%comment%}
+{%learn%}{%latestneturl%}/optimistic-locking.html{%endlearn%}
+ {%endcomment%}
 
 
 
@@ -185,55 +215,43 @@ The pessimistic locking protocol provides data consistency in a multi user trans
 This scenario is different from the optimistic locking protocol since we assume with the pessimistic locking protocol, that every object that is read and retrieved from the space will eventually be updated where the transaction duration is relatively very short.
 
 Here is an example of pessimistic locking that uses the exclusive read lock ReadModifier:
-{%highlight java%}
-@Transactional(propagation = Propagation.REQUIRES_NEW)
-public void executePayment(Integer orderIDs[]) throws Exception {
-	// Read and lock the payment object
-	Payment payment = space.readById(Payment.class, 1L,
-		ReadModifiers.EXCLUSIVE_READ_LOCK);
+{%highlight csharp%}
+ITransactionManager mgr = GigaSpacesFactory.CreateDistributedTransactionManager ();
 
-	payment.setStatus(ETransactionStatus.CANCELLED);
-	space.write(payment);
+// Create a transaction using the transaction manager:
+using (ITransaction txn = mgr.Create ()) {
+    try {
+	    // Read and lock the payment object
+	    Payment payment = proxy.ReadById(1,txn,ReadModifiers.ExclusiveReadLock);
+
+	    payment.setStatus(ETransactionStatus.CANCELLED);
+	    space.Write(payment,txn);
+	    txn.Commit ();
+	} catch (Exception e) {
+       	// rollback the transaction
+        txn.Abort ();
+    }
 }
 {%endhighlight%}
-{%learn%}{%latestjavaurl%}/transaction-pessimistic-locking.html{%endlearn%}
 
-
-
+{%comment%}
+{%learn%}{%latestneturl%}/pessimistic-locking.html{%endlearn%}
+{%endcomment%}
 
 XAP provides additional read modifiers to denote the isolation level:
 
-- REPEATABLE_READ - default modifier
-- DIRTY_READ
-- READ_COMMITTED
-- EXCLUSIVE_READ_LOCK
-
-{%learn%}{%latestjavaurl%}/transaction-read-modifiers.html{%endlearn%}
-
-
-
-
-
-
-
-
-<ul class="pager">
-  <li class="previous"><a href="./java-tutorial-part5.html">&larr; The Processing Unit</a></li>
-  <li class="next"><a href="./java-tutorial-part7.html">Space Persistence &rarr;</a></li>
-</ul>
+- RepeatableRead  - default modifier
+- DirtyRead
+- ReadCommitted
+- ExclusiveReadLock
 
 {%comment%}
+{%learn%}{%latestneturl%}/gigaspaces-read-modifiers.html{%endlearn%}
+{%endcomment%}
 
-# What's Next
-
-Part VII of this tutorial will introduce you to space persistence.
-
-!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part VII|Tutorial Part VII] of this tutorial will introduce you to space persistence.
-
-
-
-
-#
-{align:center}[< Previous|Tutorial Part V] * [Home|XAP Tutorial] * [Next >|Tutorial Part VII] {align}
-
+{%comment%}
+<ul class="pager">
+  <li class="previous"><a href="./net-tutorial-part5.html">&larr; The Processing Unit</a></li>
+  <li class="next"><a href="./net-tutorial-part7.html">Space Persistence &rarr;</a></li>
+</ul>
 {%endcomment%}
