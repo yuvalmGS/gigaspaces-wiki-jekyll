@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Locking and Blocking
-categories:
-parent:
-weight:
+categories: XAP97NET
+parent:  transactions.html
+weight: 100
 ---
 
 
@@ -66,9 +66,10 @@ A `clear` lock provides its guarantee by blocking all other requests for read, t
 In general, when a space operation is called with a `null` transaction object, its scope is limited to the entry or entries passed to the operation. Any other space operations, with or without a transaction, can be executed without any blocking.
 
 
-
+{%comment%}
 # More in this Section
 
 - [Pessimistic Locking](./transaction-pessimistic-locking.html) -- In the pessimistic locking approach, your program must explicitly obtain a lock using a transaction on one or more objects before making any changes
 - [Optimistic Locking](./transaction-optimistic-locking.html) -- The optimistic locking protocol provides better performance and scalability when having concurrent access to the same data. Optimistic locking offers higher concurrency and better performance than pessimistic locking. It also avoids deadlocks.
 - [Read Modifiers](./transaction-read-modifiers.html) -- xap `ExclusiveReadLock`, `ReadCommitted`, `DirtyRead`, and `RepeatableRead` modifiers.
+{%endcomment%}

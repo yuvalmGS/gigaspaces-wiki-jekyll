@@ -68,6 +68,7 @@ This is sometimes considered a subset of Operational intelligence and is also id
 - [Query API]({%latestjavaurl%}/querying-the-space.html)
 - [Processing API]({%latestjavaurl%}/event-processing.html)
 - [Big Data Integration]({%latestjavaurl%}/big-data.html)
+- [Time Series](/sbp/time-series.html)
 
 {%endpanel%}
 

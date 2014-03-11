@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  Read Modifiers
-categories:
-parent:
-weight:
+categories: XAP97NET
+parent:  transactions.html
+weight: 200
 ---
 
- {% summary %}GigaSpaces ExclusiveReadLock, ReadCommitted, DirtyRead, and RepeatableRead modifiers.{% endsummary %}
+{% summary %}GigaSpaces ExclusiveReadLock, ReadCommitted, DirtyRead, and RepeatableRead modifiers.{% endsummary %}
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
@@ -33,22 +33,8 @@ You can use **bitwise** or the `|` operator to unite different modifiers.
 `RepeatableRead`, `DirtyRead`, and `ReadCommitted` are mutually exclusive (i.e. can't be used together). `ExclusiveReadLock` can be joined with any of them.
 {%endnote%}
 
-These modifiers can be set either at the proxy level - `IJSpace.setReadModifiers(int)`, or at the operation level (e.g. using one of `IJSpace` read/`readIfExists`/`readMultiple`/count methods with a modifiers parameter).
+These modifiers can be set either at the proxy level - `proxy.SetReadModifiers(int)`, or at the operation level (e.g. using one of  read/`ReadIfExists`/`ReadMultiple`/count methods with a modifiers parameter).
 
-# Spring TransactionDefinition Mapping to GigaSpaces ReadModifiers
-
-The following table describes the mapping between the [Spring TransactionDefinition](http://static.springsource.org/spring/docs/2.0.x/api/org/springframework/transaction/TransactionDefinition.html) Mapping to GigaSpaces ReadModifiers:
-
-{: .table .table-bordered}
-|Spring TransactionDefinition| GigaSpaces ReadModifiers |
-|:---------------------------|:-------------------------|
-|ISOLATION_READ_UNCOMMITTED| DirtyRead|
-|ISOLATION_ReadCommitted|ReadCommitted|
-|ISOLATION_RepeatableRead|RepeatableRead|
-
-{% comment %}
-|ISOLATION_SERIALIZABLE|ExclusiveReadLock|
-{% endcomment %}
 
 # Repeatable Read
 
@@ -69,16 +55,16 @@ Sometimes it is desirable for non-transactional read operations to have full vis
 
 {% highlight csharp %}
 // write something under txn X and commit, making it publicly visible
-ijspace.write( something, txnX, Lease.FOREVER);
+proxy.Write( something, txnX, long.MaxValue);
 txnX.commit();
 
 // update this something with a new one under a different txn Y
-ijspace.update( newSomething, txnY, Lease.FOREVER, IJSpace.NO_WAIT);
+proxy.Write( newSomething, txnY, long.MaxValue, 0);
 
-// all read operations (read, readIfExists, readMultiple, count) return the
+// all read operations (Read, ReadIfExists, ReadMultiple, Count) return the
 // version of the object before txnY was committed (newSomething).
 // operations can be performed with a new txn Z or a null txn
-ijspace.read( tmpl, null, ReadModifiers.DirtyRead);
+proxy.Read( tmpl, null, ReadModifiers.DirtyRead);
 
 // Note: using the same txn (txn Y) will return matches that are visible under the transaction
 {% endhighlight %}
@@ -116,7 +102,9 @@ If the read operation is under a transaction, there is no need to "enlist" the s
 | Read Committed transaction X or null | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed |
 | Dirty Read Transaction X or null| Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed | Allowed |
 
-{% refer %}Refer to the [Space Locking and Blocking](./transaction-locking-and-blocking.html) section for GigaSpaces general locking and blocking rules.{% endrefer %}
+{% refer %}
+Refer to the [Space Locking and Blocking](./transaction-locking-and-blocking.html) section for XAP general locking and blocking rules.
+{% endrefer %}
 
 {% note %}
 - To read the original state of a space object that is locked under a transaction (take or update) you should use ReadCommitted mode.
@@ -126,20 +114,20 @@ If the read operation is under a transaction, there is no need to "enlist" the s
 
 ## Code Example
 
-The examples below assumes you are using `IJSpace` interface that is available via the `GigaSpaces.getSpace()`. If you are using the `GigaSpaces` interface and Spring automatic transaction demarcation, you will not need to specify the transaction object explicitly. Still, the blocking rules will be enforced.
+The examples below assumes you are using `ISpaceProxy` interface.
 
 {% highlight csharp %}
-IJSpace ijspace= ...
+ISpaceProxy proxy;
 // write an object under txn X and commit, making it publicly visible
-ijspace.write( something, txnX, Lease.FOREVER);
+proxy.Write( user, txnX, long.MaxValue);
 txnX.commit();
 
 // update this object with a new one under a different txn Y
-ijspace.update( newSomething, txnY, Lease.FOREVER, IJSpace.NO_WAIT);
+proxy.Write( user, txnY, 0, long.MaxValue);
 
-// all read operations (read, readIfExists, readMultiple, count) return the last publicly visible match.
+// all read operations (read, ReadIfExists, ReadMultiple, Count) return the last publicly visible match.
 // operations can be performed with a new txn Z or a null txn
-ijspace.read( tmpl, txnZ, ReadModifiers.ReadCommitted);
+proxy.Read( user, txnZ, ReadModifiers.ReadCommitted);
 
 // Note: using the same txn (txn Y) will return matches that are visible under the transaction
 {% endhighlight %}
@@ -152,36 +140,39 @@ In the JavaSpaces specification, a read under a transaction does not allow other
 
 The following methods support exclusive read lock when used with a transaction:
 
-- `read()`
-- `readIfExists()`
-- `readByID()`
-- `readMultiple()`
+- `Read()`
+- `ReadIfExists()`
+- `ReadByID()`
+- `ReadMultiple()`
 
 The exclusive read lock is supported in a clustered environment when using the Jini Transaction Manager.
 
+{%comment%}
 {% tip %}
 Starting with XAP 7.1.2 GigaSpaces throws `java.lang.IllegalArgumentException: Using ExclusiveReadLock modifier without a transaction`{%wbr%}`is illegal` exception as a protection mechanism when performing exclusive read **without** using a transaction. You must use a transaction when using exclusive read lock.
 {% endtip %}
+{%endcomment%}
 
 ## Code Example
 
 {% highlight csharp %}
-IJSpace space = ...
-space.setReadModifiers(ReadModifiers.ExclusiveReadLock);
+ISpaceProxy proxy;
+proxy.ReadModifiers = ReadModifiers.ReadExclusiveLock;
 // this will allow all read operations with this proxy to use Exclusive Read Lock mode
 Lock lock = new Lock();
 lock.key = new Integer(1);
 lock.data = "my data";
-space.write(lock, null, Lease.FOREVER);
+proxy.Write(lock, null, long.MaxValue);
 Transaction txn1 = getTX();
 Lock lock_template1 = new Lock();
 lock_template1.key = new Integer(1);
-Lock lock1 = (Lock) space.read(lock_template1, txn1, 1000);
+Lock lock1 = (Lock) proxy.Read(lock_template1, txn1, 1000);
 If (lock1!= null)
-	System.out.println("Transaction " + txn1.id + " Got exclusive Read Lock on Entry:"
+	Console.WriteLine("Transaction " + txn1.id + " Got exclusive Read Lock on Entry:"
 		+ lock1.getId());
 {% endhighlight %}
 
+{%comment%}
 # MATCH_BY_ID & THROW_PARTIAL_FAILURE
 
 The matching behavior can be changed by adding one of these modifiers.
@@ -189,3 +180,4 @@ The matching behavior can be changed by adding one of these modifiers.
 Setting `MATCH_BY_ID` changes the matching algorithm, such that once a SpaceID is set the other fields' values are ignored. The matching is only done according to the SpaceID value.
 
 Setting `THROW_PARTIAL_FAILURE` is only effective when `readMultiple()` is called. When set and a matching can be performed **only on part of the partitions** instead of just returning the partial result a `QueryMultiplePartialFailureException` is thrown including the partial result and the source of the partial failure.
+{%endcomment%}

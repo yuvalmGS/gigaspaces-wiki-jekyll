@@ -7,7 +7,8 @@ weight:
 ---
 
 
-{% summary %}The optimistic locking protocol provides better performance and scalability when having concurrent access to the same data. Optimistic locking offers higher concurrency and better performance than pessimistic locking. It also avoids deadlocks.
+{% summary %}
+The optimistic locking protocol provides better performance and scalability when having concurrent access to the same data. Optimistic locking offers higher concurrency and better performance than pessimistic locking. It also avoids deadlocks.
 {% endsummary %}
 
 # Overview
@@ -39,37 +40,47 @@ Here are the steps you should execute to update data, using the optimistic locki
 
 Get a space proxy in `versioned` mode. This can be done using one of the options listed below. You may get remote or embedded space proxies. Make sure the proxy is in optimistic locking mode using the (`versioned`) option. This can be done using one of the options listed below:
 
-{% highlight java %}
-GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space").versioned(true)).gigaSpace();
-{% endhighlight %}
 
-or
+{%highlight csharp%}
+public void createVersionedSpace()
+{
+	// Embedded Space
+	String url = "/./mySpace";
 
-{% highlight java %}
-<os-core:space id="space" url="jini://*/*/mySpace"  versioned="true" />
-{% endhighlight %}
+	// Create the SpaceProxy
+	ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
+	spaceProxy.OptimisticLocking = true;
+}
+{%endhighlight%}
+
 
 ## Step 2 -- Enable the Space Class to Support Optimistic Locking
 
-You should enable the Space class to support the optimistic locking protocol, by including the `@SpaceVersion` decoration on an `int` getter field. This field stores the current object version and is maintained by GigaSpaces. See below for an example:
+You should enable the Space class to support the optimistic locking protocol, by including the `[SpaceVersion]` decoration on an `int` getter field. This field stores the current object version and is maintained by XAP. See below for an example:
 
-{% highlight java %}
-@SpaceClass
-public class Employee
-{
-	private int versionID;
-	@SpaceVersion
-	public int getVersionID(){return versionID;	}
-	public void setVersionID(int versionID)	{this.versionID=versionID;}
+{% highlight csharp %}
+	[SpaceClass]
+	public class Account {
+		[SpaceID]
+		[SpaceRouting]
+		private int? id { set; get; }
+		private String number{ set; get; }
+		private Double receipts{ set; get; }
+		private Double feeAmount{ set; get; }
+		private EAccountStatus status{ set; get; }
+		[SpaceVersion]
+		private int version{ set; get; }
+		// ......
+    }
 {% endhighlight %}
 
 ## Step 3 -- Read Objects without using a Transaction
 
-Read objects from the space without using a transaction. You may use the `readMultiple` method to get several objects in one call. Reading objects without using a transaction, allows multiple users to get the same objects at the same time, and allows them to be updated using the optimistic locking protocol. If objects are read using a transaction, no other user can update the objects until the object is committed or rolled back.
+Read objects from the space without using a transaction. You may use the `ReadMultiple` method to get several objects in one call. Reading objects without using a transaction, allows multiple users to get the same objects at the same time, and allows them to be updated using the optimistic locking protocol. If objects are read using a transaction, no other user can update the objects until the object is committed or rolled back.
 
 ## Step 4 -- Modify and Update the Objects
 
-Modify the objects you read from the space and call a `write` space operation to update the object within the space.
+Modify the objects you read from the space and call a `Write` space operation to update the object within the space.
 Use a transactional with your write operation. You **must** use a transaction when you update multiple space objects in the same context. When the write operation is called to update the object, the space does the following:
 
 - for each updated object, the Version ID in the updated object is compared with the Version ID of the corresponding object within the space. This is done at the space side.
@@ -86,7 +97,7 @@ It is recommended that you call the update operation just before the commit oper
 
 ## Step 5 -- Update Failure
 
-If you use optimistic locking and your update operation fails, an `org.openspaces.core.SpaceOptimisticLockingFailureException` is thrown. This exception is thrown when you try to write an object whose version ID value does not match the version of the existing object within the space - i.e. you are not using the latest version of the object. You can either roll back or refresh the failed object and try updating it again. This means you should repeat steps 3 and 4 - read the latest committed object from the space, back to the client side and perform the update again. For a fast refresh, you may re-read the object using `readByID` method. Make sure you also provide the `SpaceRouting` value.
+If you use optimistic locking and your update operation fails, an `Exception` is thrown. This exception is thrown when you try to write an object whose version ID value does not match the version of the existing object within the space - i.e. you are not using the latest version of the object. You can either roll back or refresh the failed object and try updating it again. This means you should repeat steps 3 and 4 - read the latest committed object from the space, back to the client side and perform the update again. For a fast refresh, you may re-read the object using `ReadByID` method. Make sure you also provide the `SpaceRouting` value.
 
 ## Step 6 -- Commit or Rollback Changes
 
@@ -100,7 +111,7 @@ By following the above procedure, you get a shorter locking duration, that impro
 
 We use the following Space Class with our examples:
 
-{% highlight java %}
+{% highlight csharp %}
 import com.gigaspaces.annotation.pojo.*;
 
 @SpaceClass

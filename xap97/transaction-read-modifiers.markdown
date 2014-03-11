@@ -69,16 +69,16 @@ Sometimes it is desirable for non-transactional read operations to have full vis
 
 {% highlight java %}
 // write something under txn X and commit, making it publicly visible
-ijspace.write( something, txnX, Lease.FOREVER);
+space.write( something, txnX, Lease.FOREVER);
 txnX.commit();
 
 // update this something with a new one under a different txn Y
-ijspace.update( newSomething, txnY, Lease.FOREVER, IJSpace.NO_WAIT);
+space.update( newSomething, txnY, Lease.FOREVER, IJSpace.NO_WAIT);
 
 // all read operations (read, readIfExists, readMultiple, count) return the
 // version of the object before txnY was committed (newSomething).
 // operations can be performed with a new txn Z or a null txn
-ijspace.read( tmpl, null, ReadModifiers.DIRTY_READ);
+space.read( tmpl, null, ReadModifiers.DIRTY_READ);
 
 // Note: using the same txn (txn Y) will return matches that are visible under the transaction
 {% endhighlight %}
@@ -129,17 +129,17 @@ If the read operation is under a transaction, there is no need to "enlist" the s
 The examples below assumes you are using `IJSpace` interface that is available via the `GigaSpaces.getSpace()`. If you are using the `GigaSpaces` interface and Spring automatic transaction demarcation, you will not need to specify the transaction object explicitly. Still, the blocking rules will be enforced.
 
 {% highlight java %}
-IJSpace ijspace= ...
+GigaSpace space= ...
 // write an object under txn X and commit, making it publicly visible
-ijspace.write( something, txnX, Lease.FOREVER);
+space.write( something, txnX, Lease.FOREVER);
 txnX.commit();
 
 // update this object with a new one under a different txn Y
-ijspace.update( newSomething, txnY, Lease.FOREVER, IJSpace.NO_WAIT);
+space.update( newSomething, txnY, Lease.FOREVER, Space.NO_WAIT);
 
 // all read operations (read, readIfExists, readMultiple, count) return the last publicly visible match.
 // operations can be performed with a new txn Z or a null txn
-ijspace.read( tmpl, txnZ, ReadModifiers.READ_COMMITTED);
+space.read( tmpl, txnZ, ReadModifiers.READ_COMMITTED);
 
 // Note: using the same txn (txn Y) will return matches that are visible under the transaction
 {% endhighlight %}
