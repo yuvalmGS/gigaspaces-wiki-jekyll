@@ -93,8 +93,15 @@ $(function () {
   $('#edit-on-github').click(function(e) { 
     var path = location.pathname;
     var repo = "https://github.com/gigaspaces/gigaspaces-wiki-jekyll";
-    if (path.indexOf("/sbp/") != -1) repo = "https://github.com/gigaspaces/gigaspaces-sbp-jekyll";
-    markdownFile = path.replace(".html", ".markdown");        
+    //handling directories 
+
+    if (path.indexOf("/", path.length - 1) !== -1) path = path.slice(0,-1);
+    if (path.indexOf(".html") == -1) path += "/index.html";
+    markdownFile = path.replace(".html", ".markdown");
+    if (path.indexOf("/sbp/") != -1) {
+      repo = "https://github.com/gigaspaces/gigaspaces-sbp-jekyll";
+      markdownFile = markdownFile.replace("/sbp/", "/")
+    }
     location.href=repo + "/edit/master" + markdownFile + "#";
   });
 
