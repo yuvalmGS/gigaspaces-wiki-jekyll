@@ -259,7 +259,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 
 IDataProcessor dataProcessor = new EventDrivenRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .timeout(15000)
-                               .asyncProxy();
+                               .proxy();
 
 DataRemoting dataRemoting = new DataRemoting();
 
@@ -395,7 +395,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 IDataProcessor dataProcessor = new EventDrivenRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .timeout(15000)
                                .remoteRoutingHandler(new DataRemoteRoutingHandler())
-                               .asyncProxy();
+                               .proxy();
 
 DataRemoting dataRemoting = new DataRemoting();
 
@@ -550,7 +550,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 IDataProcessor dataProcessor = new EventDrivenRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .timeout(15000)
                                .remoteInvocationAspect(new MyRemoteInvocationAspect())
-                               .asyncProxy();
+                               .proxy();
 
 DataRemoting dataRemoting = new DataRemoting();
 
@@ -726,7 +726,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 IDataProcessor dataProcessor = new EventDrivenRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .timeout(15000)
                                .metaArgumentsHandler(new MyMetaArgumentsHandler())
-                               .asyncProxy();
+                               .proxy();
 
 DataRemoting dataRemoting = new DataRemoting();
 
