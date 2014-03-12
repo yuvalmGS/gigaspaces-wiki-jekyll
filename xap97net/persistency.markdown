@@ -35,18 +35,23 @@ You can either use GigaSpaces NHibernate implementation, or create a custom impl
 {% tabcontent GigaSpaces NHibernate SQL Data Source Implementation %}
 The following code demonstrates how to start an embedded space with GigaSpaces NHibernate `SqlDataSource` implementation as its External Data Source.
 
-{% highlight java %}
+{% highlight csharp %}
 //Create a new space configuration object that is used to start a space
 SpaceConfig spaceConfig = new SpaceConfig();
+
 //Start a new ExternalDataSource config object
 spaceConfig.ExternalDataSourceConfig = new ExternalDataSourceConfig();
+
 //Start a new instance of NHibernateExternalDataSource and attach it to the config
 spaceConfig.ExternalDataSourceConfig.Instance = new NHibernateExternalDataSource();
+
 //Create custom properties that are required to build NHibernate session factory
 spaceConfig.ExternalDataSourceConfig.CustomProperties = new Dictionary<string, string>();
+
 //Point to NHibernate session factory config file
 spaceConfig.ExternalDataSourceConfig.CustomProperties.Add(NHibernateExternalDataSource.NHibernateConfigProperty,
 "[NHibernate config file]");
+
 //Optional - points to a directory that contains the NHibernate mapping files (hbm)
 spaceConfig.ExternalDataSourceConfig.CustomProperties.Add(NHibernateExternalDataSource.NHibernateHbmDirectory,
  "[NHibernate hbm files location]");
@@ -67,15 +72,19 @@ A custom .NET `SqlDataSource` implementation can be used as well.
 
 The following code demonstrates how to start an embedded space with a custom .NET `SqlDataSource` implementation as its External Data Source.
 
-{% highlight java %}
+{% highlight csharp %}
 //Create a new space configuration object that is used to start a space
 SpaceConfig spaceConfig = new SpaceConfig();
+
 //Start a new ExternalDataSource config object
 spaceConfig.ExternalDataSourceConfig = new ExternalDataSourceConfig();
+
 //Start a new instance of the custom implementation and attach it to the config
 spaceConfig.ExternalDataSourceConfig.Instance = new **CustomImplementation**();
+
 //if custom properties should be passed to the Init method put them here, otherwise there's no need to create a dictionary of custom properties
 spaceConfig.ExternalDataSourceConfig.CustomProperties = new Dictionary<string, string>();
+
 //Add custom properties to the dictionary
 spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("[Property name]", "[Property value]");
 
@@ -93,7 +102,7 @@ The number of objects passed between the .Net `IDataEnumerator` (Part of the `IS
 
 This can be done by adding a custom property to the `ExternalDataSourceConfig` object.
 
-{% highlight java %}
+{% highlight csharp %}
 spaceConfig.ExternalDataSourceConfig.CustomProperties = new Dictionary<string, string>();
 //Add custom properties to the dictionary
 spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size", "[batch size]");
@@ -109,6 +118,10 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size",
 
 To create a custom implementation, implement the `GigaSpaces.Core.Persistency.ISqlDataSource` interface.
 
-{% exclamation %} Before creating a custom implementation, read the following [considerations]({% currentjavaurl %}/space-data-source-api.html).
+{% warning %}
+Before creating a custom implementation, read the following [considerations]({% currentjavaurl %}/space-data-source-api.html).
+{%endwarning%}
 
-{% lampon %} See an example for the NHibernate implementation under `<GigaSpaces Root>\dotnet\practices\ExternalDataSource\NHibernate`.
+{% note %}
+See an example for the NHibernate implementation under `<GigaSpaces Root>\dotnet\practices\ExternalDataSource\NHibernate`.
+{%endnote%}

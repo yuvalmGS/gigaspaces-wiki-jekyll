@@ -77,32 +77,23 @@ using System.Collections.Generic;
 
 using GigaSpaces.Core.Metadata;
 
-namespace xaptutorial.model
-{
-	[SpaceClass]
 	public class User {
+
 		[SpaceID(AutoGenerate = false)]
 		[SpaceRouting]
-		private long? id { set; get; }
-		private String name{ set; get; }
-		private double? balance{ set; get; }
-		private double? creditLimit{ set; get; }
-		private EAccountStatus status{ set; get; }
-		private Address address{ set; get; }
-		private String[] comment{ set; get; }
-		private Dictionary<String, String> contacts{ set; get; }
-		private List<Group> groups{ set; get; }
-		private List<int?> ratings{ set; get; }
+		private long? Id { set; get; }
+		private String Name{ set; get; }
+		private double? Balance{ set; get; }
+		private double? CreditLimit{ set; get; }
+		private Nullable<EAccountStatus> Status{ set; get; }
+		private Address Address{ set; get; }
+		private String[] Comment{ set; get; }
+		public Dictionary<String, String> Contacts{ set; get; }
+		private List<Group> Groups{ set; get; }
+		private List<int?> Ratings{ set; get; }
 
-		public User() {
-		}
-
-		public long? getId() {
-			return id;
-		}
-
-		// .....
-    }
+	    //.....
+	}
 }
 {%endhighlight%}
 
@@ -209,7 +200,7 @@ When writing an object to the space, the object is created in space if it does n
 {%highlight csharp  %}
 public void writeUser() {
      User user = new User();
-     user.setId(new Long(1));
+     user.setId(new Long(1L));
      user.setName("John Smith");
      user.setStatus(EAccountStatus.ACTIVE);
 
@@ -225,12 +216,12 @@ Here is an example on how you write multiple objects to the space:
 public void writeUsers() {
      User[] users = new User[2];
      users[0] = new User();
-     users[0].setId(new Long(1));
+     users[0].setId(new Long(1L));
      users[0].setName("John Dow");
      users[0].setStatus(EAccountStatus.ACTIVE);
 
      users[1] = new User();
-     users[1].setId(new Long(2));
+     users[1].setId(new Long(2L));
      users[1].setName("John Dow");
      users[1].setStatus(EAccountStatus.ACTIVE);
 
@@ -244,7 +235,7 @@ Here is an example:
 {%highlight csharp%}
 public void writeOnlyWithLease() {
 	User user = new User();
-	user.setId( 1);
+	user.setId( 1L);
 	user.setName("John Smith");
 	user.setStatus(EAccountStatus.ACTIVE);
 
@@ -264,12 +255,12 @@ When you want to update only a couple of attributes on an object in space, you c
 {%highlight csharp  %}
 public void changeSet() {
 	User user = new User();
-	user.setId(1);
+	user.setId(1L);
 	user.setName("John Dow");
 	user.setStatus(EAccountStatus.ACTIVE);
 	proxy.Write(user);
 
-	IdQuery<User> idQuery = new IdQuery<User>(1);
+	IdQuery<User> idQuery = new IdQuery<User>(1L);
 	IChangeResult<User> changeResult =
 		proxy.Change<User>(idQuery,
 		new ChangeSet().Set("status", EAccountStatus.BLOCKED));
@@ -292,20 +283,22 @@ Now we are ready to query the space. XAP provides several ways to perform querie
 - Query by Template
 - Query by SQL
 
+
+
 #### Query by ID
 This is the simplest and fasted way to retrieve objects from the space.
 
 Here is an example of a query by id:
 {%highlight csharp  %}
 public User findUserById() {
-	return proxy.ReadById<User>(1);
+	return proxy.ReadById<User>(1L);
 }
 {%endhighlight%}
 
 You can also perform a bulk read for multiple Id's
 {%highlight csharp  %}
 public User[] findUsersByIds() {
-	object[] ids  = new object[3]{ 1, 2, 3 };
+	object[] ids  = new object[3]{ 1L, 2L, 3L };
 
 	IReadByIdsResult<User> result = proxy.ReadByIds<User>(ids);
 	return result.ResultsArray;
@@ -345,17 +338,17 @@ The SQLQuery class is used to query the space with an SQL-like syntax. The query
 
 {%highlight csharp  %}
 public User[] sqlFindUsersByName() {
-	SqlQuery<User> query = new SqlQuery<User>("name = 'John Dow'");
+	SqlQuery<User> query = new SqlQuery<User>("Name = 'John Dow'");
 	return proxy.ReadMultiple<User>(query);
 }
 
 public User[] sqlFindUsersByNameAndCreditLimit() {
-	SqlQuery<User> query = new SqlQuery<User>("name = 'John Dow' AND creditLimit > 1000");
+	SqlQuery<User> query = new SqlQuery<User>("Name = 'John Dow' AND CreditLimit > 1000");
 	return proxy.ReadMultiple<User>(query);
 }
 
 public User[] sqlFindUsersByNameAndIds() {
-	SqlQuery<User> query = new SqlQuery<User>( "name = 'John Dow' AND id IN(1,3,5)");
+	SqlQuery<User> query = new SqlQuery<User>( "Name = 'John Dow' AND Id IN(1L,3L,5L)");
 	return proxy.ReadMultiple<User>(query);
 }
 {%endhighlight%}
@@ -367,14 +360,13 @@ You can separate the values for the SQL criteria expression by placing a '?' sym
 For example:
 {%highlight csharp  %}
 public User[] sqlParameterFindUsersByName() {
-	SqlQuery<User> query = new SqlQuery<User>(  "name = ?")
-		.SetParameter(1, "John Dow");
+	SqlQuery<User> query = new SqlQuery<User>("Name = ?")
+	query.SetParameter(1, "John Dow");
 	return proxy.ReadMultiple<User>(query);
 }
 
 public User[] sqlParameterFindUsersByNameAndCreditLimit() {
-	SqlQuery<User> query = new SqlQuery<User>(
-			"name = ? AND creditLimit > ?");
+	SqlQuery<User> query = new SqlQuery<User>("Name = ? AND CreditLimit > ?");
 	query.SetParameter(1, "John Dow");
 	query.SetParameter(2, 1000);
 	return proxy.ReadMultiple<User>(query);
@@ -385,11 +377,49 @@ public User[] sqlParameterFindUsersByNameAndCreditLimit() {
 
 Many times a class has embedded classes as attributes. You can query for attributes within the embedded classes. Matching a nested attribute is done by specifying a Path which describes how to obtain its value. For example, our user class has an embedded attribute of an Address that has a zipCode attribute.
 
+{%note title=Nested Objects%}
+By default, nested objects are kept in a binary form inside the space. In order to support nested matching, the relevant property should be stored as document, or as object if it is in an interoperability scenario and it has a corresponding Java class.
+{%endnote%}
+
+{%learn%}{%latestneturl%}/property-storage-type.html{%endlearn%}
+
+Here is an example how would annotate a class to enable nested queries:
+
+{%highlight csharp%}
+	public class User {
+
+		[SpaceID(AutoGenerate = false)]
+		[SpaceRouting]
+		private long? Id { set; get; }
+
+		private String Name{ set; get; }
+		private double? Balance{ set; get; }
+		private double? CreditLimit{ set; get; }
+		private Nullable<EAccountStatus> Status{ set; get; }
+
+        [SpaceProperty(StorageType = StorageType.Document)]
+		private Address Address{ set; get; }
+		private String[] Comment{ set; get; }
+
+        [SpaceProperty(StorageType = StorageType.Document)]
+		public Dictionary<String, String> Contacts{ set; get; }
+
+        [SpaceProperty(StorageType = StorageType.Document)]
+		private List<Group> Groups{ set; get; }
+
+        [SpaceProperty(StorageType = StorageType.Document)]
+		private List<int?> Ratings{ set; get; }
+
+		//......
+	}
+}
+{%endhighlight%}
+
 Here is an example how you can query the space for all users that have a zip code of '12345'.
+
 {%highlight csharp  %}
 public User[] sqlFindUsersByZipCode() {
-	SqlQuery<User> query = new SqlQuery<User>(
-			"address.zipCode = 12345");
+	SqlQuery<User> query = new SqlQuery<User>("Address.ZipCode = 12345");
 	return proxy.ReadMultiple<User>(query);
 }
 {%endhighlight%}
@@ -400,13 +430,14 @@ public User[] sqlFindUsersByZipCode() {
 It is possible to query embedded collections. Our user class has a collection groups that he belongs to. We can query the space for all users that belong to a certain group:
 {%highlight csharp  %}
 public User[] findUsersByGroup() {
-	SqlQuery<User> sqlQuery = new SqlQuery<User>( "groups[*].id = 1");
+	SqlQuery<User> sqlQuery = new SqlQuery<User>( "Groups[*].id = 1");
 	return proxy.ReadMultiple<User>(sqlQuery);
 }
 {%endhighlight%}
 
 There are several additional query options available. For example you can query Nested Maps by key,query with Regular Expression, Enum attributes and others.
-{%learn%}{%latestneturl%}/sqlquery.html{%endlearn%}
+
+{%learn%}{%latestneturl%}/query-sql.html{%endlearn%}
 
 
 #### Query returning partial results
@@ -416,7 +447,7 @@ In some cases when querying the space for objects only specific attributes of an
 In this example below we are just interested in the name attribute of the user object:
 {%highlight csharp  %}
 public User[] findUsersByNameAndProjection() {
-	SqlQuery<User> query = new SqlQuery<User>( "name = ?"){Projections = new []{"name"}};
+	SqlQuery<User> query = new SqlQuery<User>( "Name = ?"){Projections = new []{"Name"}};
 	query.SetParameter (1, "John Dow");
 
 	return proxy.ReadMultiple<User>(query);
@@ -434,13 +465,13 @@ Here are some examples how you can query the space for documents:
 {%highlight csharp  %}
 public SpaceDocument readProductById() {
 	SpaceDocument template = new SpaceDocument("Product");
-	template.Properties["CatalogNumber"]= "av-9876";
+	template["CatalogNumber"]= "av-9876";
 	return proxy.Read(template);
 }
 
 public SpaceDocument readProductByTemplate() {
 	SpaceDocument template = new SpaceDocument("Product");
-	template.Properties["Name"]= "Jet Propelled Pogo Stick";
+	template["Name"]= "Jet Propelled Pogo Stick";
 	return proxy.Read(template);
 }
 
@@ -486,7 +517,7 @@ The take operation returns an object and removes it from the space. XAP provides
 Here are some examples:
 {%highlight csharp  %}
 public User takeUserById() {
-   return spaceProxy.TakeById<User>(User1);
+   return spaceProxy.TakeById<User>(1L);
 }
 
 public User takeUserByTemplate() {
@@ -496,7 +527,7 @@ public User takeUserByTemplate() {
 }
 
 public User[] takeUsersBySQL() {
-     SqlQuery<User> query = new SqlQuery<User>("status = ?");
+     SqlQuery<User> query = new SqlQuery<User>("Status = ?");
      query.setParameter(1, EAccountStatus.BLOCKED);
    return spaceProxy.TakeMultiple<User>(query);
 }
@@ -515,7 +546,7 @@ public void clearUserByTemplate() {
 }
 
 public void clearUserBySQL() {
-     SqlQuery<User> query = new SqlQuery<User>(User.class, "name = ?");
+     SqlQuery<User> query = new SqlQuery<User>(User.class, "Name = ?");
      query.setParameter(1, "John Dow");
      spaceProxy.Clear(query);
 }
@@ -548,36 +579,40 @@ using System.Collections.Generic;
 
 using GigaSpaces.Core.Metadata;
 
-namespace xaptutorial.model
-{
-	[SpaceClass]
 	public class User {
+
 		[SpaceID(AutoGenerate = false)]
 		[SpaceRouting]
-		private long? id { set; get; }
+		private long? Id { set; get; }
 		[SpaceIndex(Type = SpaceIndexType.Basic)]
-		private String name{ set; get; }
-		private double? balance{ set; get; }
+		private String Name{ set; get; }
+		private double? Balance{ set; get; }
 		[SpaceIndex(Type = SpaceIndexType.Extended)]
-		private double? creditLimit{ set; get; }
-		private EAccountStatus status{ set; get; }
-		[SpaceIndex(Path = "zipCode", Type = SpaceIndexType.Basic)]
+		private double? CreditLimit{ set; get; }
+
+        [SpaceProperty(StorageType = StorageType.Document)]
+		private Nullable<EAccountStatus> Status{ set; get; }
+
+        [SpaceProperty(StorageType = StorageType.Document)]
+        [SpaceIndex(Path = "ZipCode", Type = SpaceIndexType.Basic)]
 		private Address address{ set; get; }
-		[SpaceIndex(Path = "[*]")]
-		private String[] comment{ set; get; }
-		[SpaceIndex(Path = "home")]
-		private Dictionary<String, String> contacts{ set; get; }
-		[SpaceIndex(Path = "[*].id")]
-		private List<Group> groups{ set; get; }
-		[SpaceIndex(Path = "[*]")]
-		private List<int?> ratings{ set; get; }
 
-		public User() {
-		}
+		[SpaceIndex(Path = "[*]")]
+		private String[] Comment{ set; get; }
 
-		public long? getId() {
-			return id;
-		}
+        [SpaceProperty(StorageType = StorageType.Document)]
+		[SpaceIndex(Path = "HOME")]
+		public Dictionary<String, String> Contacts{ set; get; }
+
+        [SpaceProperty(StorageType = StorageType.Document)]
+		[SpaceIndex(Path = "[*].Id")]
+		private List<Group> Groups{ set; get; }
+
+        [SpaceProperty(StorageType = StorageType.Document)]
+		[SpaceIndex(Path = "[*]")]
+		private List<int?> Ratings{ set; get; }
+
+	    //........
     }
 }
 {%endhighlight  %}
@@ -594,18 +629,18 @@ using GigaSpaces.Core.Metadata;
 
 namespace xaptutorial.model
 {
-	[CompoundSpaceIndex(Paths = new[] {"name", "creditLimit"})]
+	[CompoundSpaceIndex(Paths = new[] {"Name", "CreditLimit"})]
 	[SpaceClass]
 	public class User {
 		[SpaceID(AutoGenerate = false)]
 		[SpaceRouting]
-		private long? id { set; get; }
+		private long? Id { set; get; }
 
 		// ......
     }
 }
 // Here is a query that will use this index
-SqlQuery<User> query = new SqlQuery<User>("name = 'John Dow' AND creditLimit > 1000");
+SqlQuery<User> query = new SqlQuery<User>("Name = 'John Dow' AND CreditLimit > 1000");
 {%endhighlight%}
 
 There are several additional indexing options available. For example you can index nested attributes, Nested Dictionaries, Collections, nested attributes within a Collection, free text search and others.

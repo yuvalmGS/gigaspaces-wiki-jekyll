@@ -9,7 +9,7 @@ module Jekyll
 
       
       def render(context)
-        output = "&nbsp;<a href=\"#{super}\" target=\"_blank\"><img style=\"display:inherit;\" src=\"/attachment_files/logos/java_icon.jpeg\" alt=\"Learn more\"></a>"
+        output = "&nbsp;<a href=\"#{super}\"><img style=\"display:inherit;\" src=\"/attachment_files/logos/java_icon.jpeg\" alt=\"Java API\"></a>"
       end
     end
   end

@@ -13,7 +13,7 @@ weight: 200
 
 # Overview
 
-GigaSpaces `ReadModifiers` class (see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/ReadModifiers.html)) provides static methods and constants to decode read-type modifiers. The sets of modifiers are represented as integers with distinct bit positions representing different modifiers.
+GigaSpaces `ReadModifiers` class (see [DotNetDoc]({%dotnetdoc GigaSpaces_Core_ReadModifiers %})) provides static methods and constants to decode read-type modifiers. The sets of modifiers are represented as integers with distinct bit positions representing different modifiers.
 
 Four main types of modifiers can be used:
 
@@ -22,10 +22,12 @@ Four main types of modifiers can be used:
 - `ReadCommitted`
 - `ExclusiveReadLock`
 
-These should be used for backward compatibility with older versions of GigaSpaces:
+{%comment%}
+These should be used for backward compatibility with older versions of XAP:
 
 - `MATCH_BY_ID`
 - `THROW_PARTIAL_FAILURE`
+{%endcomment%}
 
 You can use **bitwise** or the `|` operator to unite different modifiers.
 
@@ -33,7 +35,7 @@ You can use **bitwise** or the `|` operator to unite different modifiers.
 `RepeatableRead`, `DirtyRead`, and `ReadCommitted` are mutually exclusive (i.e. can't be used together). `ExclusiveReadLock` can be joined with any of them.
 {%endnote%}
 
-These modifiers can be set either at the proxy level - `proxy.SetReadModifiers(int)`, or at the operation level (e.g. using one of  read/`ReadIfExists`/`ReadMultiple`/count methods with a modifiers parameter).
+These modifiers can be set either at the proxy level - `proxy.ReadModifiers= int`, or at the operation level (e.g. using one of  read/`ReadIfExists`/`ReadMultiple`/count methods with a modifiers parameter).
 
 
 # Repeatable Read
@@ -77,15 +79,15 @@ Read-committed is the isolation-level in which a read operation (under a transac
 
 Read-committed is the default isolation level in database systems. This isolation level means that the read operations return the space objects that are currently committed, regardless of the fact that these space objects might be updated (with a newer version) or taken under an uncommitted transaction. This is opposed to the default space isolation-level (derived from the JavaSpaces specification), which is repeatable-read.
 
-The read-committed isolation level is useful for the local cache, local view, and `GSIterators`, which performs readMultiple and keep their current status by registering notify templates.
+The read-committed isolation level is useful for the local cache, local view, and `ISpaceIterator`, which performs ReadMultiple and keep their current status by registering notify templates.
 
-The `ReadCommitted` modifier is provided at the proxy level and the read API level. It is relevant for read, `readIfExists`, `readMultiple`, and count.
+The `ReadCommitted` modifier is provided at the proxy level and the read API level. It is relevant for read, `ReadIfExists`, `ReadMultiple`, and count.
 
 `ReadCommitted` and `DirtyRead` are mutually-exclusive. A space object under an (uncommitted) updating transaction or under a taking (unrolled) transaction returns the original (committed) value unless the operation is under the same transaction as the locking one.
 
 If the read operation is under a transaction, there is no need to "enlist" the space object in the transaction (unless its already enlisted).
 
-`readIfExists` has less space objects to wait for, unless these are new objects under an uncommitted transaction.
+`ReadIfExists` has less space objects to wait for, unless these are new objects under an uncommitted transaction.
 
 ## Locking and Blocking Rules
 
