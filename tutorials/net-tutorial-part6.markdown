@@ -191,9 +191,7 @@ XAP provides additional read modifiers to denote the isolation level:
 - ReadCommitted
 - ExclusiveReadLock
 
-{%comment%}
-{%learn%}{%latestneturl%}/gigaspaces-read-modifiers.html{%endlearn%}
-{%endcomment%}
+{%learn%}{%latestneturl%}/transaction-read-modifiers.html{%endlearn%}
 
 {%comment%}
 <ul class="pager">
