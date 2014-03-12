@@ -64,15 +64,15 @@ using xaptutorial.model;
 
 [Serializable]
 public class MerchantUserTask : ISpaceTask<HashSet<long?>> {
-	private long? merchantId;
+	private long? MerchantId;
 
 	public MerchantUserTask(long? merchantId) {
-		this.merchantId = merchantId;
+		this.MerchantId = merchantId;
 	}
 
 	public HashSet<long?> Execute(ISpaceProxy spaceProxy, ITransaction tx)  {
-		SqlQuery<Payment> query = new SqlQuery<Payment>( "merchantId = ? ");
-		query.SetParameter(1, merchantId);
+		SqlQuery<Payment> query = new SqlQuery<Payment>( "MerchantId = ? ");
+		query.SetParameter(1, MerchantId);
 
 		Payment[] payments = spaceProxy.ReadMultiple<Payment>(query, int.MaxValue);
 		HashSet<long?> userIds = new HashSet<long?>();
@@ -158,32 +158,45 @@ In the example below we are creating a distributed task that finds all merchants
 {% inittab d3|top %}
 {% tabcontent DistributedTask %}
 {%highlight csharp%}
-public class MerchantByCategoryTask implements DistributedTask<Merchant[], List<Merchant>> {
+using System;
+using System.Collections.Generic;
 
-    private ECategoryType categoryType;
-    @TaskGigaSpace
-    private transient GigaSpace gigaSpace;
+using GigaSpaces.Core;
+using GigaSpaces.Core.Metadata;
+using GigaSpaces.Core.Executors;
 
-    public MerchantByCategoryTask(ECategoryType categoryType) {
-      this.categoryType = categoryType;
-    }
+using xaptutorial.model;
 
-    public Merchant[] execute() throws Exception {
-       SQLQuery<Merchant> query = new SQLQuery<Merchant>(Merchant.class,"category = ?");
-       query.setParameter(1, categoryType);
-       return gigaSpace.readMultiple(query, Integer.MAX_VALUE);
-    }
-    public List<Merchant> reduce(List<AsyncResult<Merchant[]>> results) throws Exception {
-       List<Merchant> list = new ArrayList<Merchant>();
+[Serializable]
+public class MerchantByCategoryTask : IDistributedSpaceTask<List<Merchant>, Merchant[]> {
 
-       for (AsyncResult<Merchant[]> result : results) {
-         if (result.getException() != null) {
-           throw result.getException();
-         }
-         Collections.addAll(list, result.getResult());
-       }
-       return list;
-   }
+	private ECategoryType CategoryType;
+
+	public MerchantByCategoryTask(ECategoryType categoryType) {
+		this.CategoryType = categoryType;
+	}
+
+	public Merchant[] Execute(ISpaceProxy spaceProxy, ITransaction tx)   {
+		SqlQuery<Merchant> query = new SqlQuery<Merchant>( "Category = ?");
+		query.SetParameter(1, CategoryType);
+		return spaceProxy.ReadMultiple<Merchant>(query, int.MaxValue);
+	}
+
+	public List<Merchant> Reduce(SpaceTaskResultsCollection<Merchant[]> results){
+
+		List<Merchant> list = new List<Merchant>();
+
+		foreach (SpaceTaskResult<Merchant[]>  result in results) {
+			if (result.Exception != null) {
+				throw result.Exception;
+			}
+
+			foreach (Merchant res in result.Result) {
+				list.Add (res);
+			}
+	    }
+		return list;
+	}
 }
 {%endhighlight%}
 {% endtabcontent %}
