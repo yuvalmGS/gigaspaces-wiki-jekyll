@@ -97,7 +97,17 @@ $(function () {
     markdownFile = path.replace(".html", ".markdown");        
     location.href=repo + "/edit/master" + markdownFile + "#";
   });
-  $('#edit-on-github').tooltip();
 
+  $("#edit-on-github").popover({
+        placement: 'left',
+        html: 'true',
+        title : '<span class="text-info"><strong>Help Us Improve!</strong></span>'+
+                '<button type="button" id="close" class="close" onclick="$(&quot;#edit-on-github&quot;).popover(&quot;hide&quot;);">&times;</button>',
+        content : 'Found a mistake in this page? Click here to edit it in Github and propose your change!'
+   });
 
+  setTimeout(function() {  
+    $('#edit-on-github').popover('show');
+  }, 500);
+  
 })
