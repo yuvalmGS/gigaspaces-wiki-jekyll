@@ -3,7 +3,7 @@ layout: post
 title:  XAP 10.0
 categories: RELEASE_NOTES
 parent: none
-weight: 10000
+weight: 100
 ---
 
 
