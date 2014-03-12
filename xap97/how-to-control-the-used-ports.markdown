@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  How to Control the Used Ports
+title:  Port usage Control
 categories: XAP97
 parent: networking-how-tos.html
 weight: 700

@@ -1,0 +1,316 @@
+administration-and-monitoring-api.markdown:{%section%}
+administration-and-monitoring-api.markdown:{%endsection%}
+administration-and-monitoring-api.markdown:See a fully running example of a [Scaling Agent](/sbp/scaling-agent.html) as part of the Solutions & Patterns section.
+administration-and-monitoring-api.markdown:{%section%}
+administration-and-monitoring-api.markdown:{%endsection%}
+advanced-multi-nic-configuration.markdown:For the purpose of this section, the default is set to `ipoib0/192.168.60.145` and the required configuration is to use the internal connection specified by `eth0/192.168.80.145`
+advanced-multi-nic-configuration.markdown:{% refer %}For details on viewing the exact configuration in which the system is currently running, refer to the [Container Maintenance](./managing-space-containers---gigaspaces-browser.html#Runtime Configuration Report) section.{% endrefer %}
+aggregators.markdown:{%section%}
+aggregators.markdown:{%endsection%}
+all-in-cache-cache-policy.markdown:When running with large heap size you should tune the memory manager settings. This will avoid throwing `SpaceMemoryShortageException` too early. See the [Handling Large JVM Heap Size](./memory-management-facilities.html#HandlingLargeJVMHeapSize) section for details.
+apache-load-balancer-agent.markdown:The Apache configuration should be updated to include the load-balancer configuration directory, the relevant modules required and optionally to enable the load-balancer console. Here is an example of the configuration sections that should be added to Apache:
+application-view.markdown:It allow the user to compare the plan with the actual deployment in any given moment. the next sections give detailed explanation of the application map functionality
+archive-container.markdown:{%section%}
+archive-container.markdown:{%endsection%}
+archive-container.markdown:Adding transaction support is done by injecting a transaction manager into the archive-container and giga-space beans. See the example at the [Configuration](#Configuration) section.
+async-persistency---mirror---advanced.markdown:- When the Mirror Service is loaded, it does not perform memory recovery. See the [reliability section](#reliability) for more details.
+async-persistency---mirror---advanced.markdown:This section describes how the GigaSpaces Mirror Service handles different failure scenarios. The following table lists the services involved, and how the failure is handled in the cluster.
+authenticating-against-a-database.markdown:{% section %}
+authenticating-against-a-database.markdown:{% endsection %}
+authenticating-against-an-ldap-repository.markdown:{% section %}
+authenticating-against-an-ldap-repository.markdown:{% endsection %}
+benchmark-view---gigaspaces-browser.markdown:These options and tabs are described in the sections below.
+benchmark-view---gigaspaces-browser.markdown:These areas are detailed in the sections below.
+benchmark-view---gigaspaces-browser.markdown:{% refer %}For more details on transactions, refer to the [Transaction Manager](./transaction-management.html) section.{% endrefer %}
+benchmark-view---gigaspaces-browser.markdown:{% refer %}For more details, refer to the [Benchmark Utility](./benchmark-utility---gigaspaces-cli.html) section.{% endrefer %}
+cassandra-archive-operation-handler.markdown:{%section%}
+cassandra-archive-operation-handler.markdown:{%endsection%}
+change-api-advanced.markdown:{% section %}
+change-api-advanced.markdown:{% endsection %}
+change-api.markdown:{%section%}
+change-api.markdown:{%endsection%}
+change-api.markdown:{%section%}
+change-api.markdown:{%endsection%}
+client-side-caching-over-the-wan.markdown:For more advanced WAN based topologies see the [Multi-Site Replication over the WAN](./multi-site-replication-over-the-wan.html) section.
+cluster-replication-filters.markdown: you can **control the replication at the operation level, using configuration only**. For more details, refer to the [Replication Operations](./replication-operations.html) section.
+cluster-view---gigaspaces-browser.markdown:{% exclamation %} The view above does not display the number of objects for persistent spaces in LRU mode, since this might result in very high CPU usage. To change this, see the [Menus and Buttons](./gigaspaces-browser-menus-and-buttons.html#Display Persistent LRU Space Metrics) section.
+cluster-view---gigaspaces-browser.markdown:- **Data Types view** -- allows you to view all classes in the cluster and to inspect class objects. For more details, refer to the [Classes View](./data-types-view---gigaspaces-browser.html) section.
+cluster-view---gigaspaces-browser.markdown:- **Transactions view** -- displays all transactions in the cluster. For more details, refer to the [Transactions View](./transactions-view---gigaspaces-browser.html) section.
+cluster-view---gigaspaces-browser.markdown:- **Query view** -- allows you to query space classes and to inspect class objects. For more details, refer to the [Query View](./query-view---gigaspaces-browser.html) section.
+cluster-view---gigaspaces-browser.markdown:- **Statistics view** -- displays statistics for operations performed in the cluster. For more details, refer to the [Statistics View](./statistics-view---gigaspaces-browser.html) section.
+cluster-view---gigaspaces-browser.markdown:- **Connections view** -- displays connections to the cluster (includes additional columns: **Cluster Member Name**, **Server IP Address**, **Server Port**). For more details, refer to the [Connections View](./connections-view---gigaspaces-browser.html) section.
+command-line-interface-(cli)-security.markdown:The Command Line Interface can be used to manage and monitor a running system. It is mainly used for script automation, and when there is a limitation to run a Graphical User Interface. This section covers how security can be applied to the commands supported by the CLI tool.
+command-line-interface.markdown:This tool provides many commands that can be used to manage and gather information about the various GigaSpaces runtime components. This section describes the commands supported by GigaSpaces CLI.
+command-line-interface.markdown:For more details on monitoring and management using JMX, refer to the [JMX Management](./space-jmx-management.html) section.
+command-line-interface.markdown:See the [How to Configure Multicast](./how-to-configure-multicast.html) section for details on how to enable multicast.
+configuring-processing-unit-elements.markdown:This section focuses on the overall structure of the `pu.xml` file. The various GigaSpaces components that can be included in the `pu.xml` (such as [event containers](./messaging-support.html), [remote services](./space-based-remoting.html) and others) are covered in detail in their respective sections in the programmer's guide.
+configuring-the-processing-unit-sla.markdown:To control the location of the primary and backup instances please see the next section.
+controlling-the-replication-redo-log.markdown:{% summary %} This section describes how to control the replication queue (aka the redo log), what options it provides, and what are the trade-offs involved with each option.{% endsummary %}
+cpp-api-code-generator.markdown:{% refer %}For an explanation of the different `gs.xml` elements, refer to the [CPP API Mapping File](./cpp-api-mapping-file.html) section.{% endrefer %}
+cpp-api-code-generator.markdown:{% refer %}To find out about the **supported C++ types**, refer to the [Supported Types](./cpp-api-mapping-file.html#type -- Supported Types) section.{% endrefer %}
+cpp-api-code-generator.markdown:{% refer %}For an explanation of the `gsxml2cpp` command and how to use it, refer to the [gsxml2cpp Utility](./gsxml2cpp-utility.html) section.{% endrefer %}
+cpp-api-configuration-file.markdown:Some options should be predefined in the `JvmSettings` section:
+cpp-api-hello-world-example.markdown:{% refer %}To learn about GigaSpaces C++ API, refer to the [GigaSpaces C++ API](./gigaspaces-cpp-api.html) section.{% endrefer %}
+cpp-api-hello-world-example.markdown:{% refer %}For more details, refer to the [Installing GigaSpaces](./installation.html) section.{% endrefer %}
+cpp-api-hello-world-example.markdown:{% refer %} See the [Installing CPP API Package](./installing-cpp-api-package.html) section.{% endrefer %}
+cpp-api-hello-world-example.markdown:The above scripts and the Visual Studio solution define several environment settings that are necessary to build and run the example. This section lists these settings. Choose the tab below that matches your platform.
+cpp-api-hello-world-example.markdown:{% infosign %} The `id` tag defines the `uid` field as the primary key, while the `routing` tag defines the `id` field used for routing. For more details, refer to the [gs.xml reference](./cpp-api-mapping-file.html) section.
+cpp-api-hello-world-example.markdown:`HelloWorldMessage.h` contains the class declaration and `HelloworldMessage.cpp` contains serialization code that shouldn't be edited. You can use an existing class instead of having it generated by `gsxml2cpp`. For more details, refer to the [Writing Existing CPP Class to Space](./writing-existing-cpp-class-to-space.html) section for more details.
+cpp-api-hello-world-example.markdown:{% refer %}For more details on SQL queries, refer to the [SQLQuery](./query-sql.html) section.{% endrefer %}
+cpp-api-mapping-file.markdown:This section describes the elements that are available to be used in your `gs.xml` file.
+cpp-api-mapping-file.markdown:The gs.xml file allows you to define c++ classes in the space. To learn how to do this, see the [CPP API Code Generator](./cpp-api-code-generator.html) section.
+cpp-api-mapping-file.markdown:| `persist` | boolean | When a space is defined as persistent, a `true` value for this annotation persists objects of this type.{% wbr %}{% refer %}For more details, refer to the [Persistency](./space-persistency.html) section.{% endrefer %}{% wbr %}| `true` |
+cpp-api-mapping-file.markdown:| `fifo` | boolean | To enable FIFO-based notifications and take operations, this annotation should be `true`.{% wbr %}{% refer %}For more details, refer to the [FIFO operations](./fifo-support.html) section.{% endrefer %}{% wbr %}| `false` |
+cpp-api-usage-example.markdown:{% refer %}To learn about GigaSpaces C++ API, refer to the [GigaSpaces C++ API](./gigaspaces-cpp-api.html) section.{% endrefer %}
+cpp-type-converter.markdown:{% infosign %} Supported types are stated in the `gs.xml` file. For more details, refer to the [C++ Mapping File](./cpp-api-mapping-file.html#type -- Supported Types) section.
+creating-custom-cluster---gigaspaces-browser.markdown:This section intended only for advanced users interested with a special data-grid cluster topology that is not provided with the out of the box [supported topologies](./space-topologies.html). The supported out of the box data-grid cluster topologies are: synchronous replicated , a-synchronous replicated , partitioned , partitioned+ synchronous replicated. Any out of the box cluster topology can be deployed via the GS-UI or the [deploy CLI](./deploy-space-gigaspaces-cli.html) without the need to generate cluster configuration file as described below.
+custom-security.markdown:This section assumes that you are familiar with the [Security Basics](./security-basics.html), and more specifically with [Security Configurations](./security-configurations.html).
+data-event-listener.markdown:{%section%}
+data-event-listener.markdown:{%endsection%}
+data-grid-clustering.markdown:{% summary %}This section describe into details how the In-Memory-Data-Grid clustering works. It goes into the details of the fail-over, load-balancing, and replication facilities used.{% endsummary %}
+data-partitioning.markdown:{% summary %}This section describes GigaSpaces IMDG Load-balancing and data-partitioning facilities.{% endsummary %}
+data-partitioning.markdown:For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
+default-file-based-security-implementation.markdown:To provide other custom security implementations see the [Custom Security](./custom-security.html) section.
+deploy-command-line-interface.markdown:This tool provides many commands that can be used to manage and gather information about the various GigaSpaces runtime components. This section describes the commands supported by GigaSpaces CLI.
+deploying-and-interacting-with-the-space.markdown:This section covers the main APIs of GigaSpaces XAP. It explains how to:
+deploying-and-interacting-with-the-space.markdown:For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
+deploying-and-interacting-with-the-space.markdown:When creating the Space instance in your own application, you have to provide the instance ID on your own, as described in the [Space URL](./space-url.html) section. Therefore this option is not recommended for large Space clusters.
+deploying-and-interacting-with-the-space.markdown:If you are interested in the Map API (HashTable/JCache API), refer to the [Map API](./map-api.html) section.
+deploying-and-interacting-with-the-space.markdown:The Space can also be used to deliver events (messages) to your application. This is based on its ability to support blocking operations, and the Space's built-in notification API. This section only deals with the data access aspects of the Space. Refer to [this section](./messaging-support.html) for details about the Space's messaging capabilities.
+deploying-and-running-the-processing-unit.markdown:{% summary %}This section describes the various options to debug and run your processing units{% endsummary %}
+deploying-your-application-on-a-cloud.markdown:XAP 9 Comes with a built-in Cloudify recipe feature that allows the deployment and management of an entire application onto any cloud. For more information on supported Cloud and Cloud Drivers see the [Cloudify User Guide](http://www.cloudifysource.org/guide/). The following sections will demonstrate how to compose a recipe for deploying and managing your XAP application on the Cloud.
+deploying-your-application-on-a-cloud.markdown:- [Install the application](http://www.cloudifysource.org/guide/deploying/deploying_apps) using the `install-application` command, as described in the previous section.
+direct-persistency.markdown:{% refer %}See the [Space Persistency](./space-persistency.html) section for full details about the properties you may configure.{% endrefer %}
+document-api.markdown:{% section %}
+document-api.markdown:{% endsection %}
+durable-notifications.markdown:These differences are described in the following sections.
+dynamic-language-tasks.markdown:The following section goes through the steps needed in order to execute dynamic language tasks. The other sections in this page dive more deeply into different dynamic language support features.
+dynamic-language-tasks.markdown:There are several implementations of this class which is covered more in the client section. OpenSpaces comes with three different implementations of the `Script` interface, they are:
+dynamic-language-tasks.markdown:The different components implemented by scripting basically enables all the different scripting client side features which we will cover in the next sections. The annotation based injection is a much simplified way to use scripting on the client side and is shown in the Overview section.
+elastic-processing-unit.markdown:{% section %}
+elastic-processing-unit.markdown:{% endsection %}
+elastic-processing-unit.markdown:{% section %}
+elastic-processing-unit.markdown:{% endsection %}
+elastic-processing-unit.markdown:This page has three main sections:
+elastic-processing-unit.markdown:- The **EPU Deployment** section describes the required deployment parameters and capacity planning considerations.
+elastic-processing-unit.markdown:- The **Scale Triggers** section describes how to scale a PU after it has been deployed.
+elastic-processing-unit.markdown:Here is a typical example for a memory capacity Processing Unit deployment. The example also includes a scale trigger that is explained in the following sections of this page.
+event-driven-remoting.markdown:You may find an Event Driven Remoting example in the [Event Driven Remoting Example best practice](/sbp/event-driven-remoting-example.html) section.
+event-processing.markdown:{% summary %}This section will guide you through event processing APIs and configuration on top of the space{% endsummary %}
+executor-based-remoting.markdown:The XML tab corresponds to exporting the service using an xml configuration (explained in the next section). The Annotation tab corresponds to exporting the service using annotations.
+failover.markdown:{% summary %}This section describes GigaSpaces IMDG Failover facilities.{% endsummary %}
+fifo-grouping.markdown:The selected group is locked until the operation is terminated- the operation transaction is committed/ aborted.  See the [Exclusivity](./fifo-grouping.html#Exclusivity) section for more elaborations.
+fifo-grouping.markdown:- In the selecting template a null value will generally be rendered for this property which stands for bring any available group. An available group is any FG that matches the selection template and is not currently locked by another FG thread (see [Exclusivity](./fifo-grouping.html#Exclusivity) section).
+fifo-grouping.markdown:A group can be locked by a requesting template if no other template is locking the same FG designated property value, or - if another template is locking the same FG designated property value, the intersection between the 2 groups is null.
+fifo-grouping.markdown:If on the other hand polling container B got a FG with Label = "LABEL2" using an Order pojo with State property = 0, polling container C will be able to get FG with same label "LABEL2" using an Order pojo with State = 1, since the intersection between the groups is null. Exclusivity is released upon transaction termination.
+getting-started.markdown:This section describes the basic concepts of XAP.
+gigaspaces-browser-menus-and-buttons.markdown:- **Display Persistent LRU Space Metrics** -- see the following section.
+gigaspaces-browser-menus-and-buttons.markdown:- **System Properties** -- see the [following section](#Configured System Properties Window). {% anchor cluster %}
+gigaspaces-browser-tree-panel-and-configuration-panel.markdown:   {% exclamation %} The **Objects Count** column does not display the number of objects for persistent spaces running in LRU mode (this might result in very high CPU usage). To change this, see the [Menus and Buttons](./gigaspaces-browser-menus-and-buttons.html#Display Persistent LRU Space Metrics) section.
+gigaspaces-browser-tree-panel-and-configuration-panel.markdown:{% refer %}For more details on memory usage, refer to the [Memory Management](./memory-management-facilities.html) section.{% endrefer %}
+gigaspaces-browser-tree-panel-and-configuration-panel.markdown:{% refer %}For more details, refer to the [Cluster View](./cluster-view---gigaspaces-browser.html) section.{% endrefer %}
+gigaspaces-cpp-api---overview.markdown:{% refer %}For more details, refer to the [CPP API Code Generator](./cpp-api-code-generator.html) section.{% endrefer %}
+gigaspaces-cpp-api---overview.markdown:{% refer %}For more details, see the [Writing Existing C++ Class to Space](./writing-existing-cpp-class-to-space.html) section.{% endrefer %}
+gigaspaces-cpp-api---overview.markdown:See the [Elastic Processing Unit](./elastic-processing-unit.html) section for details about Dynamic Scalability.
+gigaspaces-for-hibernate-orm-users.markdown:Read further in this section for more details about these solutions, or jump to detailed instructions: [how to get a free distributed second-level cache](#step1) or [how to add a GigaSpaces data grid](#step2).
+gigaspaces-for-hibernate-orm-users.markdown:{% refer %}To learn more about OpenSpaces, see the [OpenSpaces](/product_overview/product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) section in this online help.{% endrefer %}
+gigaspaces-for-hibernate-orm-users.markdown:This section provides instructions on switching your existing Hibernate local cache, typically EhCache, with GigaSpaces. This will give you a powerful distributed cache with multiple clients and advanced clustering.
+gigaspaces-for-hibernate-orm-users.markdown:3. This step is different if you are managing your Hibernate configuration using Spring (refer to the Spring documentation, ORM Data Access, section 12.2.2), or directly using `hibernate.properties` or `hibernate.cfg.xml`. Select the relevant tab below.
+gigaspaces-for-hibernate-orm-users.markdown:Edit your SessionFactory Setup. This is the section inside your Spring Application Context File that controls the relevant Hibernate configuration (refer to the [Spring documentation, ORM Data Access](http://static.springframework.org/spring/docs/2.5.x/reference/orm.html), section 12.2.2).
+gigaspaces-for-hibernate-orm-users.markdown:Edit your `hibernate.properties` file. **Add or modify** the following properties in the Second-Level Cache section:
+gigaspaces-jpa-limitations.markdown:{% section %}
+gigaspaces-jpa-limitations.markdown:{% endsection %}
+gigaspaces-management-center-(ui)-security.markdown:{% refer %}This section assumes familiarity with the [Security Basics](./security-basics.html) section.{% endrefer %}
+gigaspaces-management-center.markdown:{% summary section %}GigaSpaces Management Center is a GUI that allows you to view spaces, containers, and clusters and configure them, using the Space Browser tab. You can also deploy and manage services using the Deployments tab.{% endsummary %}
+gsxml2cpp-utility.markdown:This section describes the `gsxml2cpp` utility usage and available options. The `gsxml2cpp` utility generates serializer code, created by the `gs.xml` file, allowing you to perform space operations in the space. To learn how to do this, see the [CPP API Code Generator](./cpp-api-code-generator.html) section.
+how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).markdown:**Please refer to these sections only if the out-of-the-box settings fail to work**.
+how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).markdown:{% exclamation %} Make sure your network and machines running GigaSpaces are configured to have multicast enabled. See the [Multicast Configuration](./how-to-configure-multicast.html) section for details on how to enable multicast.
+how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).markdown:{% refer %}For more details, refer to the **[Advanced Multi-NIC Configuration](./advanced-multi-nic-configuration.html)** section.{% endrefer %}
+how-to-configure-multicast.markdown:Refer to the [How to Determine Whether Multicast is Available](./how-to-determine-whether-multicast-is-available.html) section for more details.
+how-to-configure-multicast.markdown:In case you want to **disable the Jini Lookup Service Multicast announcements** please refer to [this](./lookup-service-configuration.html#Multicast Settings) section in the Wiki.
+how-to-configure-multicast.markdown:The **default TTL value is 3** (was 15). See [Multicast Settings](./lookup-service-configuration.html#LookupServiceConfiguration-MulticastSettings) section for details of how to modify that value.
+how-to-configure-unicast-discovery.markdown:{% summary %}The section explains How to Configure and use Unicast Discovery.{% endsummary %}
+how-to-configure-unicast-discovery.markdown:Please refer to the [Lookup Service Configuration](./lookup-service-configuration.html) or the [Networking How Tos](./networking-how-tos.html) section for more details.
+how-to-control-the-used-ports.markdown:- You can **completely disable multicast announcement traffic**. Refer to the [Lookup Service Configuration](./lookup-service-configuration.html) or [Setting GigaSpaces Over Firewall](./how-to-set-gigaspaces-over-a-firewall.html) sections for more details.
+how-to-determine-whether-multicast-is-available.markdown:See the [How to Configure Multicast](./how-to-configure-multicast.html) section for details on how to enable multicast.
+how-to-set-gigaspaces-over-a-firewall.markdown:In many scenarios, you need to set up GigaSpaces in environments which have a firewall running. This section&nbsp;provides&nbsp;GigaSpaces configuration recommendations for several firewall topologies:
+how-to-set-gigaspaces-over-a-firewall.markdown:1. All communications traversing the firewall should be switched to Unicast TCP (use GigaSpaces Jini unicast lookup locators and set the -Dcom.gs.multicast.discoveryPort as described in the next section), Jini Multicast discovery should be disabled.
+how-to-set-gigaspaces-over-a-firewall.markdown:{% refer %}For more details on the LRMI communication protocol, see the [Communication Protocol](./communication-protocol.html) section.{% endrefer %}
+indexing-collections.markdown:See the [Free Text Search](./query-sql.html#Free Text Search) section for more details.
+installation-java.markdown:- To verify a local installation, a remote installation, and the cluster configuration, refer to the [Testing System Environment](./testing-system-environment.html) section.
+installation-java.markdown:- To verify a local installation, a remote installation, and the cluster configuration, refer to the [Testing System Environment](./testing-system-environment.html) section.
+installation-java.markdown:Before you begin working with GigaSpaces, it is recommended to review the [Performance Tuning and Considerations](./performance-tuning-and-considerations.html) sections and apply the required changes. For example, you may need to update the [**max file descriptors limit**](./tuning-infrastructure.html#Max Processes and File Descriptors Limit) before you begin.
+installation-java.markdown: The recommendation is to review at least the following sections:
+installing-cpp-api-package.markdown:There are several environment settings that are necessary to build and run the examples that come with this package. This section lists these settings. Choose the tab below that matches your platform.
+interoperability.markdown:Please refer to the [interoperability section in our XAP.NET documentation]({%currentneturl%}/dotnet-java-interoperability.html).
+jdbc-driver.markdown:{% refer %}For more details on the Space URL, refer to the [Space URL](./the-space-configuration.html) section.{% endrefer %}
+jdbc-driver.markdown:- Indexed columns are translated into indexed fields. Make sure the `btree` index is turned on allowing fast processing of bigger than/less than queries. For more details, refer to the [Indexing](./indexing.html#Extended Indexing) section.
+jms-api-support.markdown:{% summary section %}GigaSpaces allows applications to use the space as a messaging hub. Applications use JMS to create topics and queues as usual; these are transparently translated into space Entries.{% endsummary %}
+jms-known-issues-and-considerations.markdown:    - In case of space failover (for more details, see the [JMS failover](./jms-failover.html) section).
+jms-space-interoperability.markdown:The following sections will show you how to use the `MessageConverter` to write objects to the space using the JMS API; and how to write JMS messages and read/take those messages using the space API.
+large-scale-deployment.markdown:{% refer %}For more details, refer to the [Viewing Clustered Space Status](./viewing-clustered-space-status.html) section.{% endrefer %}
+load-balancing-group---gigaspaces-browser.markdown:For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
+local-cache.markdown:This section is intended to summarize the changes in 8.0.5 for users upgrading from previous versions.
+local-view.markdown:This section is intended to summarize the changes in 8.0.5 for users upgrading from previous versions.
+lookup-service-configuration.markdown:When using multicast please review the following section **[How to Determine Whether Multicast is Available](./how-to-determine-whether-multicast-is-available.html)** and [How to Configure Multicast](./how-to-configure-multicast.html).
+lookup-service-configuration.markdown:If you are looking for a way to use a unicast discovery, please refer to the [How to Configure Unicast Discovery](./how-to-configure-unicast-discovery.html) section for more details.
+map-api.markdown:{% section %}
+map-api.markdown:{% endsection %}
+maven-plugin.markdown:You don't need to be an experienced Maven user to start working with this plugin. This section provides you with everything you need to know in order to start developing Processing Units with the Maven plugin. Experienced Maven users can use the Maven plugin to embed Processing Unit development with their existing development environment.
+maven-plugin.markdown:For example, to add `commons-logging` version 1.1.1 as a dependency to the processor Processing Unit, add the following XML snippet to the `<dependencies>` section of the `pom.xml` file:
+memory-management-facilities.markdown:|`space-config.engine.initial_load` | When a persistent space running in LRU cache policy mode is started/deployed, it loads data from the underlying data source before being available for clients to access. The default behavior is to load data up to 50% of the `space-config.engine.cache_size value`. See the [Reloading Data](./lru-cache-policy.html#Reloading Data) section for details. | 50 | LRU |
+mongodb-archive-operation-handler.markdown:{%section%}
+mongodb-archive-operation-handler.markdown:{%endsection%}
+mule-event-container-transport.markdown:In the above example, the Mule transaction factory used is Spring-based, wrapping the Spring `PlatformTransactionManager`. For more information regarding OpenSpaces support for transactions (including XA), see the [OpenSpaces Core Component - Transaction Manager](./transaction-management.html) section.
+mule-queue-provider.markdown:{% exclamation %} In such a scenario, the backup services probably shouldn't run at all and should start processing only in case of failover. In order to configure the SEDA services to be aware of the current space state of the cluster member they are working against, see the [Mule SEDA Model](./mule-seda-model.html) section.
+mule-seda-model.markdown:When working in an SBA architecture, where each Mule Processing Unit works with (and starts) an embedded Space cluster member, some cluster members are actually the backup members (in a primary-backup topology). In such a case, operations performed directly against the Space cluster member are not allowed (clustered operations are, of course, allowed). Many times, we want to start services that work directly against the cluster member only when they are working directly with a primary cluster member. For more details, see the [OpenSpaces Core Component - Space](./the-space-configuration.html#proxy) section.
+multi-site-replication-over-the-wan.markdown:{% refer %}For more details about all the available configuration elements of the space gateway targets please refer to the [Configuring Space Gateway Targets](./configuring-space-gateway-targets.html) section.{% endrefer %}
+multi-site-replication-over-the-wan.markdown:The following pages in this section provide more details on the Multi-Site Replication module:
+multi-space-replication-over-the-lan-or-vpn.markdown:{% refer %}For more details about all the available configuration elements of the space gateway targets please refer to the [Configuring Space Gateway Targets](./configuring-space-gateway-targets.html) section.{% endrefer %}
+notify-container.markdown:{% section %}
+notify-container.markdown:{% endsection %}
+notify-container.markdown:For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [Space FIFO support](./fifo-support.html) section.
+obtaining-cluster-information.markdown:{% refer %}For more details on how to use the `-cluster` option, see the [processing unit runtime modes section](./deploying-and-running-the-processing-unit.html){% endrefer %}
+other-data-access-apis.markdown:{% summary %}This section review the different APIs one can use to access the space{% endsummary %}
+packaging-and-deployment.markdown:{% summary page|70 %}This section deals with the internals of the GigaSpaces XAP packaging and deployment unit, namely the processing unit. It explains how to create it and how to run it in the various runtime modes.{% endsummary %}
+packaging-and-deployment.markdown:This section details the anatomy and details of the processing unit. It describes the various processing unit types,  explains its directory structure, deployment descriptor, SLA attributes and how you can debug, run and deploy it on to the GigaSpaces XAP runtime environment.
+performance-tuning-and-considerations.markdown:You can also find a checklist for [Moving your application into production](/sbp/moving-into-production-checklist.html) in the Patterns section.
+persistency-migrating-hibernate.markdown:{% summary %}GigaSpaces's persistency approach consists of several paradigms for data persistency, according to the application needs. This section gives a basic overview of each paradigm. {% endsummary %}
+persistency1.markdown:{% summary %}GigaSpaces's persistency approach consists of several paradigms for data persistency, according to the application needs. This section gives a basic overview of each paradigm. {% endsummary %}
+pojo-attribute-annotations.markdown:{% summary %}This section explains the different attribute metadata .{% endsummary %}
+pojo-attribute-annotations.markdown:See more details at the [Data-Partitioning](./data-partitioning.html) section.
+pojo-attribute-annotations.markdown:For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
+pojo-attribute-annotations.markdown:{% refer %}For more details and examples, refer to the [Storage Types - Controlling Serialization](./storage-types---controlling-serialization.html) section.{% endrefer %}
+pojo-attribute-annotations.markdown:{% refer %}For more details and examples, refer to the [FIFO Grouping](./fifo-grouping.html) section.{% endrefer %}
+pojo-attribute-annotations.markdown:{% refer %}For more details and examples, refer to the [FIFO Grouping](./fifo-grouping.html) section.{% endrefer %}
+pojo-class-annotations.markdown:{% summary %}This section explains the different class metadata.{% endsummary %}
+pojo-grid-annotations.markdown:{% summary %}This section explains the different data grid metadata.{% endsummary %}
+pojo-gs-xml.markdown:{% summary %}This section deals with the class level annotations.{% endsummary %}
+pojo-gs-xml.markdown:| `persist` | This field indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this attribute will persist objects of this type. {% refer %}For more details, refer to the [Persistency](./persistency.html) section. {% endrefer %} |
+pojo-gs-xml.markdown:| `replicate` | This field indicates the replication mode of the object. When a space is defined as replicated, a `true` value for this attribute will replicate objects of this type. {% refer %}For more details, refer to the [Replication](./replication.html) section. {% endrefer %}{% wbr %}{% tip %}{% wbr %}To control replication at the object level you should specify a [replication filter](./cluster-replication-filters.html){% wbr %}{% endtip %}|
+pojo-gs-xml.markdown:| `fifo-support` | To enable FIFO operations, set this attribute to one of the [FifoSupport](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/annotation/pojo/FifoSupport.html) enumeration values. {% refer %}For more details, refer to the [FIFO operations](./fifo-support.html) section.{% endrefer %} |
+pojo-gs-xml.markdown:For details about scaling a running space cluster **in runtime** see the [Dynamic Partitioning](/sbp/moving-into-production-checklist.html#Rebalancing - Dynamic Repartitioning) section.
+pojo-support.markdown:When writing POJOs to the Space, you can provide some metadata about the POJO's class to the space, using Java 5 annotations, or an XML configuration. This overview uses annotation to provide metadata. For a complete reference to POJO annotations and XML configuration, refer to the [POJO Metadata](./modeling-your-data.html) section.
+pojo-support.markdown:This page deals with the POJO class as a space domain class, used to model the space, and store application data into the IMDG. POJO classes deployed as services into the Service Grid are described in the [Data Event Listener](./data-event-listener.html) and [Space Based Remoting](./space-based-remoting.html) sections. In these cases, the POJO class is used to process incoming data, or is invoked remotely.
+pojo-support.markdown:You may have user defined data types (non-primitive data types) with your Space class. These should implement the `Serializable` or `Externalizable` interface. The user defined class nested fields can be used with queries and can be indexed. See the [Nested Properties](./query-sql.html#Nested Properties) and the [Nested Properties Indexing](./indexing.html#Nested Properties Indexing) section for details.
+pojo-support.markdown:{% refer %}**Next subchapter:** [POJO Metadata](./pojo-metadata.html) - This section deals with the annotations and gs.xml mapping file, troubleshooting procedures, considerations, UID generation and usage, as well as frequently used code snippets.{% endrefer %}
+polling-container.markdown:{% section %}
+polling-container.markdown:{% endsection %}
+polling-container.markdown:{% section %}
+polling-container.markdown:{% endsection %}
+polling-container.markdown://creating a transaction manager. For more details please refer to the [Transaction Management] section
+proxy-connectivity-(old).markdown:To allow a client using notifications (using the [Session Based Messaging API](./session-based-messaging-api.html) or the [Notify Container](./notify-container.html)) to reconnect and also re-register for notifications, use the `LeaseListener`. See the [Re-Register after complete space shutdown and restart](./notify-container.html#Re-Register after complete space shutdown and restart) section for details.
+proxy-connectivity-(old).markdown:See the [Resending Notifications after a Space-Client Disconnection](./notify-container.html#Resending Notifications after a Space-Client Disconnection) section for space-client disconnection behavior.
+proxy-connectivity.markdown:This section is intended to summarize the changes in 9.0.1 for users upgrading from previous versions.
+query-nested-properties.markdown:For more information see the [Nested Properties Indexing](./indexing.html#Nested Properties Indexing) section under [Indexing](./indexing.html).
+query-nested-properties.markdown:For more information see the [Nested Properties Indexing](./indexing.html#Nested properties indexing) section under [Indexing](./indexing.html).
+query-nested-properties.markdown:For more information see the [Collection Indexing](./indexing.html#Collection Indexing) section under [Indexing](./indexing.html).
+query-paging-support.markdown:{%section%}
+query-paging-support.markdown:{%endsection%}
+query-paging-support.markdown:| `net.jini.core.entry.Entry` | `snapshot()`{% wbr %} Returns a snapshot of the Entry returned by the last next call, as defined in section JS.2.6 of the [JavaSpaces specification](http://www.sun.com/software/jini/specs/js2_0.pdf#search=%22javaspaces%20specification%22). |
+query-paging-support.markdown:The snapshot method returns a snapshot of the Entry returned by the last next call (see section JS.2.6 of the [JavaSpaces specification](http://www.sun.com/software/jini/specs/js2_0.pdf#search=%22javaspaces%20specification%22)). If the last next call returned `null` or failed with an exception or error, the snapshot will throw an `IllegalStateException.` It is important to note that the `GSIterator.snapshot()`, unlike the `JavaSpace.snapshot()`, does not throw a `RemoteException`.
+query-partial-results.markdown:{% section %}
+query-partial-results.markdown:{% endsection %}
+query-sql.markdown:{% section %}
+query-sql.markdown:{% endsection %}
+query-sql.markdown:{% refer %} For an example of `SQLQuery` with `EventSession`, refer to the [Session Based Messaging API](./session-based-messaging-api.html#SQLQuery Template Registration) section.{% endrefer %}
+querying-the-space.markdown:{%section%}
+querying-the-space.markdown:This section explains the various mechanisms offered by GigaSpaces XAP to query the space for data, as well as related topics, such as how to use indexing to boost query performance and how the space can be iterated to fetch entries more efficiently.
+querying-the-space.markdown:{%endsection%}
+remoting-metadata.markdown:{% summary %}This section explains the different remoting metadata.{% endsummary %}
+replication-group---gigaspaces-browser.markdown:See the [Replication](./replication.html) section for details.
+replication-operations.markdown:{% compositionsetup %}{% summary %} This section describes in detail how each space operation is replicated provides relevant configuration and optimizations .{% endsummary %}
+replication-operations.markdown:{% infosign %} In replicated topology, **the take and clear operations are identical**. Therefore, referrals to the take operation in this section are also relevant for the clear operation.
+replication-operations.markdown:This is described under the [Cluster Replication Filters](./cluster-replication-filters.html) section.
+replication.markdown:{% summary %}This section gives a detailed description of the Space's replication mechanism, and how to configure and optimize it.{% endsummary %}
+rest-api.markdown:{% section %}
+rest-api.markdown:{% endsection %}
+scala.markdown:{% section %}
+scala.markdown:{% endsection %}
+scripts-gsinstance.markdown:This section explains how to start a light version of the GigaSpaces server, which loads a container and one space, using the `gsInstance` script. The `gsInstance` (which calls [SpaceFinder](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/SpaceFinder.html)) starts by default embedded Reggie and Webster services.
+scripts-gsinstance.markdown:GigaSpaces supports space monitoring and management using JMX - The Java Management Extensions. For more details, refer to the [JMX Management](./space-jmx-management.html) section.
+securing-xap-components.markdown:GigaSpaces XAP has security built over the major "server" component - GSA, GSM, GSC and also Processing Unit with Space data. This section explains how security relates to each component and the configurations needed to securing your application.
+security-administration.markdown:This section explains the administration tools for managing GigaSpaces XAP. The GUI provides a handy management tool for managing the users and roles, and comprehensive manageability of the secured components in the system. The CLI provides means for automation using the non-interactive mode. The Admin API provides a top level management and monitoring of all the GigaSpaces components.
+security-basics.markdown:This section provides an overview of the basic concepts of security, and an understanding of the authorities and default security implementation - which is important if you need to do any customizations, extend the defaults, or even implement your own security.
+security-concepts.markdown:The directory can be shared or defined individually for each service. This is an implementation specific configuration which is discussed in more detail in our "Default Security" section. As an example, in order for each service to access the same file-based directory, it needs to be shared or copied between the secured services - or better yet, configured to be downloaded from an HTTP server. If the implementation was based on a data-base, then the services can be configured with the same connection URL or a specific one.
+security.markdown:{% summary %}This section describes GigaSpaces security model{% endsummary %}
+security.markdown:{% section %}
+security.markdown:This section provides an understanding of GigaSpaces XAP Security, where it fits in the GigaSpaces architecture, which components can be secured, and how to configure and customize the security depending on your application security requirements.
+security.markdown:{% endsection %}
+security.markdown:{% section %}
+security.markdown:{% endsection %}
+security.markdown:To help you get started, the section goes through the [basics](./security-basics.html), how to secure the [components](./securing-xap-components.html), [administration tools](./security-administration.html), applying security to the [HelloWorld example](./securing-the-helloworld-example.html), and finally once you gain an in-depth understanding, shows you how to [customize](./custom-security.html) the security based on your application requirements. One such custom security implementation is the [Spring Security Bridge](./spring-security-bridge.html).
+session-based-messaging-api.markdown:Lease Renewal Manager provides a systematic lease renewal and management framework and is used by Event Session for managing the notification registration leases. Leases are managed in an automatic manner without any application intervention. More information regarding Lease Renewal Manager can be found at the [Leases - Automatic Expiration] section.
+setting-up-eclipse-to-work-with-xap.markdown:- Your network and machines running GigaSpaces are configured to have multicast enabled. See the [Multicast Configuration](Multicast Configuration) section for details on how to enable multicast.
+space-based-remoting.markdown:{%section%}
+space-based-remoting.markdown:{%endsection%}
+space-based-remoting.markdown:This section explains when you should choose to use each of the remoting implementations. Note that as far as the calling code is concerned, the choice between the implementations is transparent and requires only configuration changes.
+space-jmx-management.markdown:- **getRuntimeConfigReport** -- displays a runtime configuration report. For more details, refer to the [Runtime Configuration Report](./managing-space-containers---gigaspaces-browser.html#Runtime Configuration Report) section.
+space-jmx-management.markdown:{% refer %}For details on specific configuration file elements, refer to the Configuration Files Element List\*** section.{% endrefer %}
+space-jmx-management.markdown:{% refer %}For details on specific configuration file elements, refer to the Configuration Files Element List\*** section. {% endrefer %}
+space-jmx-management.markdown:{% infosign %} This way, you can view, restrict or modify most of the space and space container **configuration** (as set in the space/container schema files), or the basic **admin operations**, which were discussed in the above sections.
+space-mode-context-loader.markdown:Using the custom space mode events described in the [Space](./the-space-configuration.html) section, the bean can register for such events (by implementing the Spring `ApplicationListener` interface), and perform relevant actions based on the space mode event.
+space-persistency-advanced-topics.markdown:This sections covers advanced options related to Space Persistency.
+space-serialization-and-engine-thread-pool---gigaspaces-browser.markdown:See details about indexing in the Space Configuration section.
+space-serialization-and-engine-thread-pool---gigaspaces-browser.markdown:Extended Indexing Enabled -- When the Extended Indexing is turned on, a btree index is maintained for all space indexed class attributes. For more details see the [Indexing](./indexing.html) section.
+space-synchronization-endpoint-api.markdown:{% section %}
+space-synchronization-endpoint-api.markdown:{% endsection %}
+split-brain-and-island-scenarios.markdown:{% infosign %} Please refer to [Suggested Monitoring Tools](./suggested-monitoring-tools.html) section for more details on recommended tools.
+split-brain-and-primary-resolution.markdown:{% summary %}This section describes Data-Grid cluster split brain and primary resolution flow.{% endsummary %}
+spring-security-bridge.markdown:Spring Security is one of the most mature and widely used Spring projects. In the following sections, we present a brief introduction to Spring Security and GigaSpaces Spring-based security bridge.
+task-execution-over-the-space.markdown:{%section%}
+task-execution-over-the-space.markdown:{%endsection%}
+task-execution-over-the-space.markdown:{% section %}
+task-execution-over-the-space.markdown:{% endsection %}
+task-execution-over-the-space.markdown:See the [Aggregators](./aggregators.html) section for more details.
+task-metadata.markdown:{% summary %}This section explains the different Task metadata.{% endsummary %}
+the-processing-unit-structure-and-configuration.markdown:JAR files placed in the `<GigaSpaces root>/lib/optional/pu-common` directory will be loaded by each Processing Unit instance in its own separate classloader (called the Service Classloader, [see the](#ClassLoaders) section below).
+the-processing-unit-structure-and-configuration.markdown:JAR files specified in the Processing Unit's `META-INF/MANIFEST.MF` descriptor file will be loaded by each Processing Unit instance in its own separate classloader (called the Service Classloader, see the [Class Loaders](#classloaders) section below.
+the-processing-unit-structure-and-configuration.markdown:For more information see [Manifest Based Classpath|#ManifestBasedClasspath] section below.
+the-processing-unit-structure-and-configuration.markdown:JAR files placed in the `<GigaSpaces root>/lib/platform/ext` directory will be loaded once by the GSC-wide classloader and not separately by each Processing Unit instance (this classloader is called the Common Classloader, see the [Class Loaders](#classloaders) section below).
+the-runtime-environment.markdown:{% summary %}This section gives a detailed description of the XAP deployment & runtime environment.{% endsummary %}
+the-runtime-environment.markdown:{% section %}
+the-runtime-environment.markdown:{% endsection %}
+the-runtime-environment.markdown:{% section %}
+the-runtime-environment.markdown:{% endsection %}
+the-runtime-environment.markdown:{%section%}
+the-runtime-environment.markdown:{%endsection%}
+the-runtime-environment.markdown:* The Transaction Manager (TXM) is an optional component. When executing transactions that spans multiple space partitions you should use the Jini Transaction Manager or the Distributed Transaction Manager. See the [Transaction Management](./transaction-management.html) section for details.
+the-space-configuration.markdown:Make sure your network and machines running GigaSpaces are configured to have multicast enabled. See the [How to Configure Multicast](./how-to-configure-multicast.html) section for details on how to enable multicast.
+the-space-counters.markdown:{% section %}
+the-space-counters.markdown:{% endsection %}
+the-space-counters.markdown:{% section %}
+the-space-counters.markdown:{% endsection %}
+the-space-notifications.markdown:{%section%}
+the-space-notifications.markdown:{%endsection%}
+the-space-operations.markdown:{%section%}
+the-space-operations.markdown:{%endsection%}
+the-space-operations.markdown:{%section%}
+the-space-operations.markdown:{%endsection%}
+the-space-operations.markdown:{%section%}
+the-space-operations.markdown:{%endsection%}
+transaction-management.markdown:The section below lists the different types of transaction managers supported by GigaSpaces. Each transaction manager implements Spring's `PlatformTransactionManager` interface and therefore supports the Spring transaction framework (see below).
+transaction-read-modifiers.markdown:{% refer %}Refer to the [Space Locking and Blocking](./transaction-locking-and-blocking.html) section for GigaSpaces general locking and blocking rules.{% endrefer %}
+transactions-view---gigaspaces-browser.markdown:{% refer %}For details on transactions, refer to the [Transaction Management](./transaction-management.html) section.{% endrefer %}
+tuning-gigaspaces-performance.markdown:This section lists helpful recommendations for tuning your application when using GigaSpaces XAP to boost its performance, and improving its scalability.
+tuning-gigaspaces-performance.markdown:For more details on transaction support, refer to the [Transaction Management](./transaction-management.html) section.
+tuning-infrastructure.markdown:Windows 2003 has no parameter dealing directly with the number of **file handles**, it is not explicitly limited, but file handles allocations take part of heap shared section which is relatively small (default 512KB). Heap being exhausted might lead to the application failure.
+tuning-infrastructure.markdown:in the key "Windows" find "SharedSection=1024,3072,512", where 512KB is the size of heap shared section for the processes running in the background. The value should be increased, the recommendation is to increase it initially to 1024KB, max value 3072. **Reboot is necessary** to enable the new setting.
+tuning-java-virtual-machines.markdown:The recommendations in this section are for non-manager VMs only. Garbage collection, while necessary, introduces latency into your system by consuming resources that would otherwise be available to your application. If you are experiencing unacceptably high latencies in application processing, you might be able to improve performance by modifying your VM's garbage collection behavior. Garbage collection tuning options depend on the Java virtual machine you are using.
+tuning-threads-usage.markdown:GigaSpaces using Thread resources in an extensive manner to scale the different activities executed within the JVM process. The may happen at the client or server side. Some of the modules within the server or client side (proxy) require some tuning before moving into production. This section describes the important Thread (Thread pools) started and provides information when and how these should be tuned.
+using-jms-with-openspaces-example.markdown:The [OpenSpaces Data Example](./the-openspaces-data-example.html) demonstrates how to use a JMS feeder to send POJOs to the space. In order to make it happen we use two main features: Spring [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html) and JMS [MessageConverter](./jms-space-interoperability.html). This section describes how those features are used in the example.
+web-application-support.markdown:{%section%}
+web-application-support.markdown:{%endsection%}
+web-application-support.markdown:The previous section described several options of how to start an embedded Space within the web application. The recommended way to work with embedded Space, is to work with its clustered proxy (the `clustered` flag in GigaSpace set to `true`) for interactions that originate from a web request. This is mainly since the load balancer does not know about routing specific classes to each cluster member.
+web-application-support.markdown:In order to create a single point of view, in terms of clients connecting to a server, a load balancer is usually used. While there are many different types of load balancers (both hardware and software), solving the load balancing problem is not new (i.e. it is not something that is introduced because the web application is deployed on GigaSpaces). Examples of how to configure load balancers can be found in specific web container sections.
+web-application-support.markdown:GigaSpaces also comes with a built in integration with Apache httpd load balancer as described in the [Apache Load Balancer Agent](./apache-load-balancer-agent.html) section.
+web-jetty-processing-unit-container.markdown:All the above properties can be controlled during deployment (or by adding a **META-INF/spring/pu.properties** file). What they actually control (though very evident from the name) is explained in the following sections.
+web-jetty-processing-unit-container.markdown:All the above properties can be controlled during deployment (or by adding a **META-INF/spring/pu.properties** file). What they actually control (though very evident from the name) will be explained in the following sections.
+web-jetty-processing-unit-container.markdown:In this section, we will show how the plain mode can be configured with Apache and `mod_proxy` load balancer (more information here [http://docs.codehaus.org/display/JETTY/Configuring+mod_proxy](http://docs.codehaus.org/display/JETTY/Configuring+mod_proxy)). The plain deployment mode will be used in the example. First, after installing Apache 2.2, the `mod_proxy`, `mod_proxy_balancer`, and `mod_proxy_http` (at least) modules need to be enabled.
+web-processing-unit-container.markdown:The previous section described several options of how to start an embedded Space within the web application. The recommended way to work with embedded Space, is to work with its clustered proxy (the `clustered` flag in GigaSpace set to `true`) for interactions that originate from a web request. This is mainly since the load balancer does not know about routing specific classes to each cluster member.
+web-processing-unit-container.markdown:In order to create a single point of view, in terms of clients connecting to a server, a load balancer is usually used. While there are many different types of load balancers (both hardware and software), solving the load balancing problem is not new (i.e. it is not something that is introduced because the web application is deployed on GigaSpaces). Examples of how to configure load balancers can be found in specific web container sections.
+web-processing-unit-container.markdown:GigaSpaces also comes with a built in integration with Apache httpd load balancer as described in the [Apache Load Balancer Agent](./apache-load-balancer-agent.html) section.
+working-with-clusters---gigaspaces-browser.markdown:{% summary section %}Creating a cluster, replication options, load-balancing options, failover options, verifying and editing cluster definitions, visualizing clusters.{% endsummary %}
+working-with-spaces---gigaspaces-browser.markdown:{% summary section %}Performing operations on a space in the GigaSpaces Browser.{% endsummary %}
+xap-cpp.markdown:{% summary section %}The GigaSpaces c++ API has been designed to allow the same level of flexibility, usability and interoperability of the Java [POJO](./pojo-support.html) counterpart API for building scalable, low-latency SBA applications.{% endsummary %}
+xap-cpp.markdown:{% refer %}To learn more about GigaSpaces C++ package, refer to the [GigaSpaces CPP API - Overview](./gigaspaces-cpp-api---overview.html) section.{% endrefer %}

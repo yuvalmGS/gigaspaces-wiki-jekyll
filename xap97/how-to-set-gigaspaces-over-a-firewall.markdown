@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  How to Set GigaSpaces Over a Firewall
+title:  XAP Over a Firewall
 categories: XAP97
 parent: networking-how-tos.html
 weight: 600
 ---
 
-{% summary page|65 %}The GigaSpaces settings to enable functioning over a Firewall. {% endsummary %}
+{% summary   %}The GigaSpaces settings to enable functioning over a Firewall. {% endsummary %}
 
 # Overview
 
@@ -14,11 +14,13 @@ In many scenarios, you need to set up GigaSpaces in environments which have a fi
 
 - Basic configuration: GigaSpaces cluster (GSM and GSCs) running behind the firewall, with clients connecting through the firewall. Multicast traffic is allowed behind the firewall and unicast-only traffic comes from the clients through the firewall.
 
-   {% lampon %} **Basic configuration, suitable for most scenarios, requires mandatory setting of the following properties** (these system property settings are described below):
+{% note %}
+**Basic configuration, suitable for most scenarios, requires mandatory setting of the following properties** (these system property settings are described below):
     - `com.gs.multicast.discoveryPort`
     - `com.gigaspaces.start.httpPort`
     - `com.gs.transport_protocol.lrmi.bind-port`
     - `com.sun.jini.reggie.initialUnicastDiscoveryPort`.
+{%endnote%}
 
 - Same topology as above: All cluster components and clients communicate over **unicast only. Multicast traffic is prohibited**.
 - The firewall divides GigaSpaces cluster into zones. Some components (GSCs, GSM) are running in one firewall zone, while the rest of the components are running in another firewall zone/s. Only unicast traffic is allowed between firewall zones.
@@ -36,13 +38,18 @@ In many scenarios, you need to set up GigaSpaces in environments which have a fi
 1. Necessary listener **port ranges** should be defined per each IP address, where the GigaSpaces server components reside.
 {% exclamation %} Components such as GSM/Lookup Service, GSC, Mahalo use a single Webster (HTTPD service) and a single LRMI transport port per each component. Accordingly, the same quantity of Webster and LRMI ports should be planned per each IP address where those components reside.
 
-{% infosign %} Port ranges should be chosen continuously, as Webster and LRMI port bindings are performed **sequentially*, beginning from the low port number -- each additional component started on the *same machine** opens sequentially higher Webster and LRMI ports, beginning from the low port in the defined port range.
+{% info%}
+Port ranges should be chosen continuously, as Webster and LRMI port bindings are performed **sequentially*, beginning from the low port number -- each additional component started on the *same machine** opens sequentially higher Webster and LRMI ports, beginning from the low port in the defined port range.
+{%endinfo%}
 
 1. **Firewall rules for incoming traffic** should include opening TCP port per each statically defined GigaSpaces component listener, for each IP address where GigaSpaces component is running (excluding JMX MBean server).
 1. **JMX listener ports** presented in GigaSpaces components and assigned by RMIRegistry mechanism (default port range beginning - 10098; each component opens next available port) can remain dynamically assigned and should not be opened in the firewall. JMX connections are dedicated to administrative purposes and can be accessed by monitoring tools behind the firewall. Of course, MBeanServer and the RMI lookup will not be available outside firewall
 1. Each static GigaSpaces listener port behind the firewall should be mapped by NAT to the static IP address outside of the firewall. GigaSpaces clients/servers residing outside of the firewall should be set to work versus statically mapped by NAT listeners outside IP addresses.
 1. **Mandatory** -- the range of port numbers (just free unassigned ports allowed) should be above `1024` and below `65536`.
-{% lampon %} **Recommended port ranges** -- above `7100` in free unassigned IANA ranges (`7102`\-`7120`, `7130`\-`7160`, `7167`\-`7173`, `7175`\-`7199`, `7228`\-`7271`, `7282`\-`7299`, `7366`\-`7390`..., `47558`\-`47623`, `47625`\-`47805`, `47809`\-`47999`, `48004`\-`48127`, `48620`\-`49150`)
+
+{% note %}
+**Recommended port ranges** -- above `7100` in free unassigned IANA ranges (`7102`\-`7120`, `7130`\-`7160`, `7167`\-`7173`, `7175`\-`7199`, `7228`\-`7271`, `7282`\-`7299`, `7366`\-`7390`..., `47558`\-`47623`, `47625`\-`47805`, `47809`\-`47999`, `48004`\-`48127`, `48620`\-`49150`)
+{%endnote%}
 
 ## Listener Ports per GigaSpaces Component
 

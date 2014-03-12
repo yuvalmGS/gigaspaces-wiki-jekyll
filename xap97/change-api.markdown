@@ -11,11 +11,11 @@ weight: 3100
 
 # Overview
 {%section%}
-{%column width=50% %}
+{%column width=70% %}
 The [GigaSpace.change](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) and the [ChangeSet](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/ChangeSet.html) allows updating existing objects in space, by specifying only the required change instead of passing the entire updated object.
 Thus reducing required network traffic between the client and the space, and the network traffic generated from replicating the changes between the space instances (e.g between the primary space instance and its backup).
 {%endcolumn%}
-{%column width=40% %}
+{%column width=30% %}
 ![change-api.jpg](/attachment_files/change-api.jpg)
 {%endcolumn%}
 {%endsection%}

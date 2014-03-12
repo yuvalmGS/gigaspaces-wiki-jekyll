@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  How to Configure an Environment With Multiple Network-Cards (Multi-NIC)
+title:  Multiple Network-Cards
 categories: XAP97
 parent: networking-how-tos.html
 weight: 500
