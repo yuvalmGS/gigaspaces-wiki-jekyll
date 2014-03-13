@@ -109,33 +109,35 @@ $(function () {
   var githubPopupTitle = 'Help Us Improve!';
   var githubPopupText = 'Found a mistake in this page? Click here to edit it in Github and propose your change!';
 
-  
-  $("#edit-on-github").popover({
-    placement: 'left',
-    html: 'true',
-    title : '<span class="text-info"><strong>'+githubPopupTitle+'</strong></span>' +
-            '<button type="button" id="close" class="close" onclick="$(&quot;#edit-on-github&quot;).popover(&quot;hide&quot;);">&times;</button>',
-    content : githubPopupText
-  });
+  var mq = window.matchMedia( "(min-width: 1024px)" );
+  if (mq.matches) {
+    $("#edit-on-github").popover({
+      placement: 'left',
+      html: 'true',
+      title : '<span class="text-info"><strong>'+githubPopupTitle+'</strong></span>' +
+              '<button type="button" id="close" class="close" onclick="$(&quot;#edit-on-github&quot;).popover(&quot;hide&quot;);">&times;</button>',
+      content : githubPopupText
+    });
 
 
-  if (githubPopupPresented == null) {
-    setTimeout(function() {  
-      $('#edit-on-github').popover('show');
-      sessionStorage.setItem('githubPopupPresented', 'true');
-    }, 500);
-  } else {
-    $('#edit-on-github').on('mouseover', 
-      function () {
-        $('#edit-on-github').popover('show');  
-      }
-    );
+    if (githubPopupPresented == null) {
+      setTimeout(function() {  
+        $('#edit-on-github').popover('show');
+        sessionStorage.setItem('githubPopupPresented', 'true');
+      }, 500);
+    } else {
+      $('#edit-on-github').on('mouseover', 
+        function () {
+          $('#edit-on-github').popover('show');  
+        }
+      );
 
-    $('#edit-on-github').on('mouseleave', 
-      function () {
-        $('#edit-on-github').popover('hide');  
-      }
-    );
+      $('#edit-on-github').on('mouseleave', 
+        function () {
+          $('#edit-on-github').popover('hide');  
+        }
+      );
+    }
   }
 
 });
