@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  How to Set GigaSpaces Over NAT
+title:  XAP Over NAT
 categories: XAP97
 parent: networking-how-tos.html
 weight: 300

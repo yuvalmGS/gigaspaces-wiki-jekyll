@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  How to Determine Whether Multicast is Available
+title:  Is Multicast Available
 categories: XAP97
 parent: how-to-configure-multicast.html
 weight: 100

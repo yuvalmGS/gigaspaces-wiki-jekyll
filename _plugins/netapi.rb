@@ -9,7 +9,7 @@ module Jekyll
 
       
       def render(context)
-        output = "&nbsp;<a href=\"#{super}\"><img style=\"display:inherit;\" src=\"/attachment_files/logos/icon_dotnet.gif\" alt=\".NET API\"></a>"
+        output = "&nbsp;<a href=\"#{super}\"><img style=\"display:inherit;\" src=\"/attachment_files/logos/dotnet.jpeg\" alt=\".NET API\"></a>"
       end
     end
   end

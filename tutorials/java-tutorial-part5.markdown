@@ -14,7 +14,7 @@ parent: java-home.html
 
 # Overview
 {%section%}
-{%column width=70% %}
+{%column width=80% %}
 
 In this part of the tutorial we will introduce you the the Processing Unit (PU). The PU is the fundamental unit of deployment in XAP. The PU itself runs within a Processing Unit Container and is deployed onto the Service Grid. Once a PU is deployed, a PU instance is the actual runtime entity. There are two types of Processing Unit Containers:
 

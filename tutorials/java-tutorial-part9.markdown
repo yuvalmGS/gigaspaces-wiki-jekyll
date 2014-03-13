@@ -14,7 +14,7 @@ parent: java-home.html
 
 # Overview
 {%section%}
-{%column width=70% %}
+{%column width=80% %}
 
 In this part of the tutorial will introduce you to XAP's Big Data interface. Will show you how you can use Cassandra and other Big-Data storage systems to archive data or use them for space persistence.
 {%endcolumn%}

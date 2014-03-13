@@ -12,7 +12,7 @@ parent: net-home.html
 
 # Overview
 {%section%}
-{%column width=70% %}
+{%column width=80% %}
 
 In this part of the tutorial we will introduce you to the transaction processing capabilities of XAP.
 {%endcolumn%}

@@ -10,15 +10,23 @@ weight: 400
 
 # Essential Guidelines
 
-{% exclamation %} **It is essential to set the `groups` and `locators` system properties in the Java process which starts the Lookup Service or Mahalo services**. This is required in order to "tell" the Jini service which groups and locators it should join, and which to serve. If these properties are not set, the Lookup Service/Mahalo uses the Jini fallback values and that impact the SLA these services serve with.
+{% warning %}
+**It is essential to set the `groups` and `locators` system properties in the Java process which starts the Lookup Service or Mahalo services**. This is required in order to "tell" the Jini service which groups and locators it should join, and which to serve. If these properties are not set, the Lookup Service/Mahalo uses the Jini fallback values and that impact the SLA these services serve with.
+{%endwarning%}
 
-{% minus %} **Do not have more than two Jini Lookup Services across one site** - having the `gsInstance` running a Jini Lookup Service embedded by default can cause problems. As a result of not have more than two Jini Lookup Services across one site, spaces do not have to deal with registering themselves into too many Jini Lookup Services, and the Space Browser's freezing behavior is reduced.
+{% note %}
+**Do not have more than two Jini Lookup Services across one site** - having the `gsInstance` running a Jini Lookup Service embedded by default can cause problems. As a result of not have more than two Jini Lookup Services across one site, spaces do not have to deal with registering themselves into too many Jini Lookup Services, and the Space Browser's freezing behavior is reduced.
+{%endnote%}
 
-{% exclamation %} **Jini groups vs. locators** - Jini groups are irrelevant when using unicast lookup discovery - they are relevant only when using multicast lookup discovery. If you have multiple spaces with the same name and you are using unicast lookup discovery, you might end up getting the wrong proxy.
+{% warning %}
+**Jini groups vs. locators** - Jini groups are irrelevant when using unicast lookup discovery - they are relevant only when using multicast lookup discovery. If you have multiple spaces with the same name and you are using unicast lookup discovery, you might end up getting the wrong proxy.
+{%endwarning%}
 
 In such a case, make sure you have a different lookup group for each space, where each space is configured to use a specific lookup. A good practice is to have different space/service names.
 
-{% infosign %} When using multicast please review the following section **[How to Determine Whether Multicast is Available](./how-to-determine-whether-multicast-is-available.html)** and [How to Configure Multicast](./how-to-configure-multicast.html).
+{% info %}
+When using multicast please review the following section **[How to Determine Whether Multicast is Available](./how-to-determine-whether-multicast-is-available.html)** and [How to Configure Multicast](./how-to-configure-multicast.html).
+{%endinfo%}
 
 # Setting up the Lookup Service For Multicast Discovery (Using Lookup Group)
 
@@ -42,7 +50,9 @@ If you are looking for a way to use a unicast discovery, please refer to the [Ho
 
 # Multicast Settings
 
-{% oksign %} To support co-existence of different GigaSpaces versions, the defaults below may change between releases.
+{% note %}
+To support co-existence of different GigaSpaces versions, the defaults below may change between releases.
+{%endnote%}
 
 Adjusting the lookup services multicast settings can be done using the following system properties:
 
@@ -52,7 +62,9 @@ Adjusting the lookup services multicast settings can be done using the following
 - **`com.gs.multicast.ttl`** - The multicast packet time to live. Defaults to 3.
 - **`com.gs.multicast.enabled`** - a global property allowing you to completely enable or disable multicast in the system.
 
-{% infosign %} The two multicast addresses allow you to completely separate two different GigaSpaces installations, so lookup services won't communicate with each other (even on the wire level, which is different than the groups, which communicate on the content level).
+{% info %}
+The two multicast addresses allow you to completely separate two different GigaSpaces installations, so lookup services won't communicate with each other (even on the wire level, which is different than the groups, which communicate on the content level).
+{%endinfo%}
 
 # Troubleshooting the Discovery/Group Configuration
 
