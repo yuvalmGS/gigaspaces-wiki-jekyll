@@ -244,8 +244,7 @@ Blocking operations (i.e. `read` or `take` with `timeout` greater than `0`) are 
 
 {% highlight java %}
 long timeout = 100000;
-MyClass result = space.take(new SQLQuery<MyClass>(MyClass.class ,
-     "num > 500"), timeout);
+MyClass result = space.take(new SQLQuery<MyClass>(MyClass.class ,"num > 500"), timeout);
 {% endhighlight %}
 
 # Routing
@@ -258,16 +257,13 @@ For example, suppose the routing property of **`MyClass`** is **`num`**:
 
 {% highlight java %}
 // Execute query on partition #1
-SQLQuery<MyClass> query1 = new SQLQuery<MyClass>(MyClass.class,
-    "num = 1");
+SQLQuery<MyClass> query1 = new SQLQuery<MyClass>(MyClass.class,"num = 1");
 
 // Execute query on all partitions - no way to tell which partitions hold matching results:
-SQLQuery<MyClass> query2 = new SQLQuery<MyClass>(MyClass.class,
-    "num > 1");
+SQLQuery<MyClass> query2 = new SQLQuery<MyClass>(MyClass.class,"num > 1");
 
 // Execute query on all partitions - no way to tell which partitions hold matching results:
-SQLQuery<MyClass> query3 = new SQLQuery<MyClass>(MyClass.class,
-    "num = 1 OR name='smith'");
+SQLQuery<MyClass> query3 = new SQLQuery<MyClass>(MyClass.class,"num = 1 OR name='smith'");
 {% endhighlight %}
 
 Note that in `query1` the `num` property is used both for routing and matching.
@@ -275,8 +271,7 @@ Note that in `query1` the `num` property is used both for routing and matching.
 In some scenarios we may want to execute the query on a specific partition without matching the routing property (e.g. blocking operation). This can be done via the `setRouting` method:
 
 {% highlight java %}
-SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,
-    "num > 3");
+SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,"num > 3");
 query.setRouting(1);
 MyClass[] result = gigaspace.readMultiple(query);
 {% endhighlight %}
@@ -290,16 +285,14 @@ When using the SQL `like` operator you may use the following:
 `_` - match on a single character
 
 {% highlight java %}
-SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,
-    "name like 'A%'")
+SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,"name like 'A%'")
 {% endhighlight %}
 
 Querying the space using the Java Regular Expression provides more options than the SQL `like` operator. The Query syntax is done using the `rlike` operator:
 
 {% highlight java %}
 // Match all entries of type MyClass that have a name that starts with a or c:
-SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,
-    "name rlike '(a|c).*'");
+SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,"name rlike '(a|c).*'");
 {% endhighlight %}
 
 All the supported methods and options above are relevant also for using `rlike` with `SQLQuery`.
