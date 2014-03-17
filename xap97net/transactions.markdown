@@ -122,7 +122,7 @@ public void readWithTransaction()
 
 	try {
 		// ...
-		SqlQuery<User> query = new SqlQuery<User> ("contacts.home = '770-123-5555'");
+		SqlQuery<User> query = new SqlQuery<User> ("Contacts.Home = '770-123-5555'");
 		User user = proxy.Read<User> (query, trn, 0, ReadModifiers.RepeatableRead);
 		// ....
 		trn.Commit();

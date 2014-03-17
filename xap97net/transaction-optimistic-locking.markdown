@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Optimistic Locking
-categories:
-parent:
-weight:
+categories: XAP97NET
+parent:  transactions.html
+weight: 300
 ---
 
 
@@ -63,13 +63,13 @@ You should enable the Space class to support the optimistic locking protocol, by
 	public class Account {
 		[SpaceID]
 		[SpaceRouting]
-		private int? id { set; get; }
-		private String number{ set; get; }
-		private Double receipts{ set; get; }
-		private Double feeAmount{ set; get; }
-		private EAccountStatus status{ set; get; }
+		private long? Id { set; get; }
+		private String Number{ set; get; }
+		private double? Receipts{ set; get; }
+		private double? FeeAmount{ set; get; }
+		private Nullable<EAccountStatus> Status{ set; get; }
 		[SpaceVersion]
-		private int version{ set; get; }
+		private int Version{ set; get; }
 		// ......
     }
 {% endhighlight %}
@@ -295,10 +295,9 @@ If one of the returned objects is a `SpaceOptimisticLockingFailureException`, th
 The read and update methods:
 
 {% highlight java %}
-@Transactional(propagation=Propagation.NEVER)
 public Employee[] readEmployees(Employee template)
 {
-	return gigaspace.readMultiple(template, Integer.MAX_VALUE);
+	return proxy.ReadMultiple(template, int.MaxValue);
 }
 
 @Transactional(propagation=Propagation.REQUIRES_NEW)

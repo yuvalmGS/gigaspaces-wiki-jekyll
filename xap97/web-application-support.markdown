@@ -12,7 +12,7 @@ weight: 400
 # Overview
 
 {%section%}
-{%column width=50% %}
+{%column width=60% %}
 OpenSpaces integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid. The integration is built on top of the [Service Grid Processing Unit Container](./deploying-onto-the-service-grid.html).
 
 The integration allows you to make use of the following Service Grid features:
@@ -21,7 +21,7 @@ The integration allows you to make use of the following Service Grid features:
 - Management of the instances running (if a GSC fails, the web application instances running on it will be instantiated on a different GSC).
 - SLA monitor based dynamic allocation and de-allocation of web application instances.
 {%endcolumn%}
-{%column width=45% %}
+{%column width=40% %}
 ![archi_web.jpg](/attachment_files/archi_web.jpg)
 {%endcolumn%}
 {%endsection%}

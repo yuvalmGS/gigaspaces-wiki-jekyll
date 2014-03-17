@@ -12,21 +12,23 @@ weight: 1200
 # Overview
 
 {%section%}
-{%column width=50% %}
+{%column width=60% %}
 Spring provides support for [various remoting technologies](http://static.springframework.org/spring/docs/2.0.x/reference/remoting.html). GigaSpaces uses the same concepts to provide remoting, using the space as the underlying protocol.
 
 Some benefits of using the space as the transport layer include:
 
 - **High availability** -- since the space by its nature (based on the cluster topology) is highly available, remote invocations get this feature automatically when using the space as the transport layer.
 - **Load-balancing** -- when using a space with a partitioned cluster topology, each remote invocation is automatically directed to the appropriate partition (based on its routing handler), providing automatic load-balancing.
-- **Performance** -- remote invocations are represented in fast internal OpenSpaces objects, providing fast serialization and transport over the net.
-- **Asynchronous execution** -- by its nature, remoting support is asynchronous, allowing for much higher throughput of remote invocations. OpenSpaces allows you to use asynchronous execution using Futures, and also provides synchronous support (built on top of it).
 {%endcolumn%}
 
-{%column width=46% %}
+{%column width=40% %}
 ![archi_proce.jpg](/attachment_files/archi_proce.jpg)
 {%endcolumn%}
 {%endsection%}
+
+- **Performance** -- remote invocations are represented in fast internal OpenSpaces objects, providing fast serialization and transport over the net.
+- **Asynchronous execution** -- by its nature, remoting support is asynchronous, allowing for much higher throughput of remote invocations. OpenSpaces allows you to use asynchronous execution using Futures, and also provides synchronous support (built on top of it).
+
 
 
 The OpenSpaces API supports two types of remoting, distinguished by the underlying implementation used to send the remote call. The first is called [Executor Based Remoting](./executor-based-remoting.html), and the second is called [Event Driven Remoting](./event-driven-remoting.html).

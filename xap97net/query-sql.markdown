@@ -22,8 +22,7 @@ An `SqlQuery` is composed from the **type** of entry to query, an **expression**
 Read all entries of type **Person** whose **Age** is greater than or equal to **21**.
 
 {% highlight csharp %}
-Person[] persons = proxy.ReadMultiple<Person>(
-    new SqlQuery<Person>("Age >= 21"));
+Person[] persons = proxy.ReadMultiple<Person>(new SqlQuery<Person>("Age >= 21"));
 {% endhighlight %}
 
 Note that the expression is equivalent to the WHERE part of a query. The FROM part is derived from the generic argument of the `SqlQuery` class, and the SELECT part is not needed since the result is a fully-formed object.
@@ -33,8 +32,7 @@ Note that the expression is equivalent to the WHERE part of a query. The FROM pa
 Take up to **100** entries of type **Person** whose **Age** is greater than or equal to **21**, AND whose **FirstName** is **John**.
 
 {% highlight csharp %}
-SqlQuery<Person> query = new SqlQuery<Person>(
-    "Age >= ? AND FirstName = ?");
+SqlQuery<Person> query = new SqlQuery<Person>("Age >= ? AND FirstName = ?");
 query.SetParameter(1, 21);
 query.SetParameter(2, "John");
 Person[] persons = proxy.TakeMultiple<Person>(query, 100);
@@ -70,8 +68,7 @@ Blocking operations (i.e. `Read` or `Take` with `timeout` greater than `0`) are 
 
 {% highlight csharp %}
 long timeout = 100000;
-MyClass result = space.Take<MyClass>(new SQLQuery<MyClass>(
-    "Num > 500"), timeout);
+MyClass result = space.Take<MyClass>(new SQLQuery<MyClass>("Num > 500"), timeout);
 {% endhighlight %}
 
 # Routing
@@ -84,18 +81,15 @@ For example, suppose the routing property of **`MyClass`** is **`Num`**:
 
 {% highlight csharp %}
 // Execute query on partition #1
-SQLQuery<MyClass> query1 = new SQLQuery<MyClass>(
-    "Num = 1");
+SQLQuery<MyClass> query1 = new SQLQuery<MyClass>("Num = 1");
 
 // Execute query on all partitions -
 // no way to tell which partitions hold matching results:
-SQLQuery<MyClass> query2 = new SQLQuery<MyClass>(
-    "Num > 1");
+SQLQuery<MyClass> query2 = new SQLQuery<MyClass>("Num > 1");
 
 // Execute query on all partitions -
 // no way to tell which partitions hold matching results:
-SQLQuery<MyClass> query3 = new SQLQuery<MyClass>(
-    "Num = 1 OR Name='smith'");
+SQLQuery<MyClass> query3 = new SQLQuery<MyClass>("Num = 1 OR Name='smith'");
 {% endhighlight %}
 
 Note that in `query1` the `Num` property is used both for routing and matching.

@@ -551,7 +551,7 @@ export GSC_JAVA_OPTIONS=-Dcom.gs.zones="B"
 ### Deploy the PU
 
 Deploy your PU from CLI or UI.
-[See CLI example] (./deploy---gigaspaces-cli.html).
+[See CLI example](./deploy-command-line-interface.html#deploy-pu).
 
 When deployed all primary instances will be allocated in A and backups in B.
 If primary goes down for some reason, the order will be restored by using restart.

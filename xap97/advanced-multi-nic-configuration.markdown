@@ -1,18 +1,18 @@
 ---
 layout: post
-title:  Advanced Multi-NIC Configuration
+title:  Advanced Configuration
 categories: XAP97
-parent: how-to-configure-an-environment-with-multiple-network-cards-%28multi-nic%29.html
+parent: how-to-configure-an-environment-with-multiple-network-cards-(multi-nic).html
 weight: 100
 ---
 
-{% summary %}How to configure GigaSpaces for Multiple Network Interface Cards.{% endsummary %}
+{% summary %}How to configure XAP for Multiple Network Interface Cards.{% endsummary %}
 
 {% anchor 1 %}
 
-# 1. Viewing Network Interface Information
+# Configuration
 
-When loading GigaSpaces space (or when using the `<GigaSpaces Root>\bin\PlatformInfo` script), the Network Interface information is displayed. Each network card is identified by its Network Interface name and IP.
+When loading an XAP space (or when using the `<GigaSpaces Root>\bin\PlatformInfo` script), the Network Interface information is displayed. Each network card is identified by its Network Interface name and IP.
 
 For example, the following information describes 3 network cards: `(eth0/192.168.80.145, eth1/212.143.27.76, ipoib0/192.168.60.145)`
 
@@ -39,13 +39,13 @@ There is only one environment variable that needs to be configured when limiting
 
 There are multiple ways to specify the `NIC_ADDR`:
 
-# Specifying an explicit IP address. For example:
+### Specifying an explicit IP address. For example:
 
 {% highlight java %}
 NIC_ADDR=192.168.80.145
 {% endhighlight %}
 
-# Specifying a network interface name. For example:
+### Specifying a network interface name. For example:
 
 {% highlight java %}
 NIC_ADDR="#eth0:ip#"
@@ -53,7 +53,7 @@ NIC_ADDR="#eth0:ip#"
 
 In the above example, `eth0` is the interface name and the `ip` indicates that the registered ip of the interface will be used. It is recommended to use the ip address, however, the host name can also be used by replacing the `ip` with `host`.
 
-# Specifying the "local" network interface. For example:
+### Specifying the "local" network interface. For example:
 
 {% highlight java %}
 NIC_ADDR="#local:ip#"
@@ -63,15 +63,15 @@ This is equivalent to `InteAddress.getLocalHost().getHostAddress()`.
 
 {% anchor 2 %}
 
-# Specifying a Network Card to Bind the Jini Lookup Service (Reggie or Mahalo)
+### Specifying a Network Card to Bind the Jini Lookup Service (Reggie or Mahalo)
 
 {% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
-## Configuring Lookup Service
+### Configuring Lookup Service
 
 The lookup service should be configured to run against a specific Network IP Address (for more details, see [Jini Lookup Discovery Service Interface](./lookup-service-configuration.html)). The `NIC_ADDR` is used to control it.
 
-## Configuring Server Hostname
+### Configuring Server Hostname
 
 The server hostname should be configured to use the `NIC_ADDR` variable. By default The `NIC_ADDR` environment variable (exposed as part of the `<GigaSpaces Installation>\bin\setenv` script) omits the system property `java.rmi.server.hostname`. **Append the property to the `RMI_OPTIONS`**:
 
@@ -95,9 +95,11 @@ More specifically, multicast and unicast discovery both use this property to lim
 
 {% anchor 3 %}
 
-# Limiting Use to a Specific Network Interface (Multicast Only)
+### Limiting Use to a Specific Network Interface (Multicast Only)
 
-{% lampon %} By default, Jini is configured to support multicast over multiple (all) interface cards. The only time you need to change this, is if you want to limit these interface cards.
+{% note %}
+By default, Jini is configured to support multicast over multiple (all) interface cards. The only time you need to change this, is if you want to limit these interface cards.
+{%endnote%}
 
 Jini clients perform lookup discovery by either unicast and/or multicast. By default, the configuration is set to multicast. Multicast discovery is configured to use all the network interfaces. To limit the use to a specific network interface, the relevant Jini service configuration file needs to be changed.
 
@@ -133,7 +135,7 @@ multicastInterfaces=new java.net.NetworkInterface[]
 
 Unicast discovery can be either used with or without multicast.
 
-## Using Unicast to Register With a Lookup Service
+### Using Unicast to Register With a Lookup Service
 
 By default, the cluster member URLs are configured to use `jini://\*/container_name/space_name`, which performs lookup using the multicast protocol. To enable unicast in a clustered environment, specify the exact machine network interface card accessible for discovery.
 
@@ -196,7 +198,7 @@ Another simple way to set the unicast discovery is using `SpaceURL` locators att
 
 The comma-separated list of `IP:ports` pairs specify the exact machine network interface card by which the Jini lookup service performs discovery.
 
-## Using Unicast to Locate Other Cluster Members
+### Using Unicast to Locate Other Cluster Members
 
 By default the cluster member URLs are configured to use `jini://\*/container_name/space_name` which performs lookup using the multicast protocol.
 
@@ -222,7 +224,9 @@ Or, on a Windows-based machine:
 -Dcom.gs.cluster.url-protocol-prefix=jini://%NIC_ADDR%/
 {% endhighlight %}
 
-{% lampon %} You can set the `jini://` and/or `rmi://` protocols in the `com.gs.cluster.url-protocol-prefix` system property.
+{% note %}
+You can set the `jini://` and/or `rmi://` protocols in the `com.gs.cluster.url-protocol-prefix` system property.
+{%endnote%}
 
 {% endtoczone %}
 
@@ -269,7 +273,7 @@ Replicator: Connection established with target space
 [ target space: rep_cache_container2:rep_cache   ]
 {% endhighlight %}
 
-## Discovery by Unicast
+### Discovery by Unicast
 
 The configuration for unicast can be added to the `setenv` script, and should be appended to the `gsInstance` script loading an instance of each node.
 
@@ -303,13 +307,13 @@ NIC_ADDR=192.168.80.146; export NIC_ADDR
 
 {% anchor 6 %}
 
-# Troubleshooting Your Configuration
+# Troubleshooting your Configuration
 
 {% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 {% refer %}For details on viewing the exact configuration in which the system is currently running, refer to the [Container Maintenance](./managing-space-containers---gigaspaces-browser.html#Runtime Configuration Report) section.{% endrefer %}
 
-## Logging with RMI_OPTIONS
+### Logging with RMI_OPTIONS
 
 The `RMI_OPTIONS` environment variable specifies a system property used for logging calls:
 
@@ -319,7 +323,7 @@ java.rmi.server.logCalls=false
 
 This property can be set to `true`, enabling log output to the screen. Both lookup service and lookup registrars can be configured to show which network IP address they are trying to communicate with.
 
-## Identifying Wrong Configuration
+### Identifying Wrong Configuration
 
 Something similar to the following can indicate a wrong configuration:
 
@@ -330,7 +334,7 @@ sun.rmi.transport.DGCImpl[0:0:0, 2]: java.rmi.dgc.Lease
 dirty(java.rmi.server.ObjID[], long, java.rmi.dgc.Lease)]
 {% endhighlight %}
 
-## Bind Exception
+### Bind Exception
 
 A bind exception could be the cause of a machine trying to bind to a lookup service not on the correctly configured network interface. For example, if `node2` had its `$\{NIC_ADDR\`} configured to **`192.168.80.145`**, while its own network interface for `eth0` is **`192.168.80.147`**.
 

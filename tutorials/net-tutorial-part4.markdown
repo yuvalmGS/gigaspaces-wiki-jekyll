@@ -89,7 +89,7 @@ You can also define an event template using an SQLQuery.
 {%highlight csharp %}
 [EventTemplate]
 SqlQuery<Payment> unprocessedData() {
-    SqlQuery<Payment> template = new SqlQuery<Payment>("status = ?");
+    SqlQuery<Payment> template = new SqlQuery<Payment>("Status = ?");
     template.SetParameter(1, ETransactionStatus.CANCELLED);
 
     return template;
@@ -189,12 +189,12 @@ namespace xaptutorial.model
 	[SpaceClass(FifoSupport = FifoSupport.Operation)]
 	public class Payment   {
 		[SpaceID(AutoGenerate = true)]
-		private String id;
+		private String Id;
 		[SpaceIndex(Type = SpaceIndexType.Basic)]
-		private long? userId;
+		private long? UserId;
 		[SpaceRouting]
 		[SpaceIndex(Type = SpaceIndexType.Basic)]
-		private long?  merchantId;
+		private long?  MerchantId;
 
 		// ....
 	}
@@ -202,18 +202,6 @@ namespace xaptutorial.model
 {%endhighlight%}
 
 {%learn%}{%latestneturl%}/fifo-support.html{%endlearn%}
-
-
-
-
-{%comment%}
-
-# JMS
-In addition to the polling containers you can also use a JMS facade on top of the space to deliver events. The JMS facade is designed to enable integration with external feeders that cannot or were not designed to work with the space based API. 
-
-{%learn%}{%latestneturl%}/jms---basics.html{%endlearn%}
-
-{%endcomment%}
 
 
 # Master Worker Pattern

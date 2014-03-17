@@ -263,7 +263,7 @@ public void changeSet() {
 	IdQuery<User> idQuery = new IdQuery<User>(1L);
 	IChangeResult<User> changeResult =
 		proxy.Change<User>(idQuery,
-		new ChangeSet().Set("status", EAccountStatus.BLOCKED));
+		new ChangeSet().Set("Status", EAccountStatus.BLOCKED));
 
 	if (changeResult.NumberOfChangedEntries == 0) {
 		Console.WriteLine("Entry does not exist");
@@ -430,7 +430,7 @@ public User[] sqlFindUsersByZipCode() {
 It is possible to query embedded collections. Our user class has a collection groups that he belongs to. We can query the space for all users that belong to a certain group:
 {%highlight csharp  %}
 public User[] findUsersByGroup() {
-	SqlQuery<User> sqlQuery = new SqlQuery<User>( "Groups[*].id = 1");
+	SqlQuery<User> sqlQuery = new SqlQuery<User>( "Groups[*].Id = 1");
 	return proxy.ReadMultiple<User>(sqlQuery);
 }
 {%endhighlight%}

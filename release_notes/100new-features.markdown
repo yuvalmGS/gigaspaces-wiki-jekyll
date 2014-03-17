@@ -27,3 +27,6 @@ Below is a list of new features and improvements in GigaSpaces 10.0.X.
 | GS-11609 | Log on warning level when LRMI class loading failed because it cannot create a connection to the source | 10.0.0 | | | Java |
 | GS-11610 | End of life - shutting down a space from a remote proxy | 10.0.0 | | | All |
 | GS-11620 | Simplify view-query definition in openspaces-core.xsd | 10.0.0 | | | Java |
+| GS-11656 | Notification event triggering is moved to a custom LRMI thread pool (together with space tasks) | 10.0.0 | | | All |
+| GS-11657 | Change lrmi.space-task threadpool system properties to lrmi.custom | 10.0.0 | | | All |
+| GS-11659 | .Net add documentation regarding types of local cache | 10.0.0 | 8740 | | .NET |

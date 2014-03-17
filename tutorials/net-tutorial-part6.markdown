@@ -36,7 +36,7 @@ public void readWithTransaction()
 	using (ITransaction txn = mgr.Create ()) {
 		try {
 			// ...
-			SqlQuery<User> query = new SqlQuery<User> ("contacts.home = '770-123-5555'");
+			SqlQuery<User> query = new SqlQuery<User> ("Contacts.HOME = '770-123-5555'");
 			User user = proxy.Read<User> (query, txn, 0, ReadModifiers.RepeatableRead);
 			// ....
 			txn.Commit ();
@@ -137,13 +137,13 @@ namespace xaptutorial.model
 	public class Account {
 		[SpaceID]
 		[SpaceRouting]
-		private int? id { set; get; }
-		private String number{ set; get; }
-		private Double receipts{ set; get; }
-		private Double feeAmount{ set; get; }
-		private EAccountStatus status{ set; get; }
+		private long? Id { set; get; }
+		private String Number{ set; get; }
+		private double? Receipts{ set; get; }
+		private double? FeeAmount{ set; get; }
+		private Nullable<EAccountStatus> Status{ set; get; }
 		[SpaceVersion]
-		private int version{ set; get; }
+		private int Version{ set; get; }
 
 		// ...
 	}
@@ -152,7 +152,7 @@ namespace xaptutorial.model
 
 {%comment%}
 {%learn%}{%latestneturl%}/optimistic-locking.html{%endlearn%}
- {%endcomment%}
+{%endcomment%}
 
 
 
