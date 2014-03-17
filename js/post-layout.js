@@ -86,9 +86,6 @@ $(function () {
   //   persist: "location"
   // });
 
-  $('tooltip-test').tooltip();
-
-
 
   $('#edit-on-github').click(function(e) { 
     var path = location.pathname;
@@ -111,6 +108,7 @@ $(function () {
 
   var mq = window.matchMedia( "(min-width: 1024px)" );
   if (mq.matches) {
+
     $("#edit-on-github").popover({
       placement: 'left',
       html: 'true',
@@ -119,24 +117,32 @@ $(function () {
       content : githubPopupText
     });
 
-
-    if (githubPopupPresented == null) {
-      setTimeout(function() {  
-        $('#edit-on-github').popover('show');
-        sessionStorage.setItem('githubPopupPresented', 'true');
-      }, 500);
-    } else {
+    function enablePopoverOnMouseover() {
       $('#edit-on-github').on('mouseover', 
         function () {
           $('#edit-on-github').popover('show');  
         }
       );
-
+            
       $('#edit-on-github').on('mouseleave', 
         function () {
           $('#edit-on-github').popover('hide');  
         }
       );
+    }
+
+    if (githubPopupPresented == null) {
+      setTimeout(function() {  
+        $('#edit-on-github').popover('show');
+        sessionStorage.setItem('githubPopupPresented', 'true');
+
+        setTimeout(function() { 
+          $('#edit-on-github').popover('hide');
+          enablePopoverOnMouseover();
+        }, 5000);
+      }, 500);
+    } else {
+      enablePopoverOnMouseover();
     }
   }
 
