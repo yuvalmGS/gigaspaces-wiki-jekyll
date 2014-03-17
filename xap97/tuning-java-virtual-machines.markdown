@@ -98,7 +98,7 @@ For more details, see the [Java Tuning White Paper](http://java.sun.com/performa
 
 On 64-bit systems, the call stack for each thread is allocated with 1MB of memory space. Most threads do not use that much space. Using the `-XX:ThreadStackSize=256k` flag, you can decrease the stack size to 256k to allow more threads.
 
-The `-Xmn<size>` flag lets you manually set the size of the "young generation" memory space for short-lived objects. If your application generates lots of new objects, you might improve GCs dramatically by increasing this value. The "young generation" size should almost never be more than 50% of heap.
+The `-Xmn<size>` flag lets you manually set the size of the "young generation" memory space for short-lived objects. If your application generates lots of new objects, you might improve GCs dramatically by increasing this value. Performance in general will benefit from setting this to at least 20%, but the "young generation" size should almost never be more than 50% of heap.
 
 The -XX:+UseCompressedOops option can improve performance of the 64-bit JRE when the Java object heap is less than 32 gigabytes in size. In this case, HotSpot compresses object references to 32 bits, reducing the amount of data that it must process. Available in Sun JVM since JDK6u14.
 
