@@ -6,98 +6,37 @@ weight: 300
 parent: your-first-xtp-application.html
 ---
 
-{% compositionsetup %}
-{% compositionsetup %}
 
-{% comment %}
- Information Artifact Type: Tutorial
-{% endcomment %}
+**Tutorial summary**: Learn how to create and run a Processing Unit - a scalable unit of deployment, inside your development environment. Learn how to use the XAP basic API, by implementing a simple processor and feeder application.
 
-{% comment %}
---------------------------------------------------------------------------
-{% color grey %}Summary
-{% endcolor %}
--------------------------------------------------------------------------------
-{% endcomment %}
-
-{% excerpt %}
-**Tutorial summary**: Learn how to create and run a Processing Unit - a scalable unit of deployment, inside your development environment. Learn how to use the GigaSpaces basic API, by implementing a simple processor and feeder application. {% sub %}Approx 10 min{% endsub %} {% endexcerpt %}
-
-{% comment %}
-========================================================================================
-{% color grey %}OVERVIEW
-{% endcolor %}
-==========================================================================================
-{% endcomment %}
 
 # Overview
 
-{% comment %}
---------------------------------------------------------------------------
-{% color grey %}Example folder, sources and introduced features
-{% endcolor %}
--------------------------------------------------------------------------------
-{% endcomment %}
+You can find the sample application under `<XAP Root>\examples\helloworld` in the distribution.
 
-{% c %}
----------------SHOW FOR JAVA---------
-{% endc %}
-![folder_icon.gif](/attachment_files/folder_icon.gif) Example Folder - Sample application is located in <GigaSpaces Root>\examples\helloworld
 
-{% c %}
----------------END SHOW FOR DOTNET---------
-{% endc %}
-{% oksign %} Features Introduced - Space, GigaSpaces API, Processing Unit, Polling Container, Running inside the IDE.
-{% whr %}
+{% note title=Features Introduced %}
+Space, GigaSpaces API, Processing Unit, Polling Container, Running inside the IDE.
+{% endnote %}
 
-{% comment %}
---------------------------------------------------------------------------
-{% color grey %}Before you begin
-{% endcolor %}
--------------------------------------------------------------------------------
-{% endcomment %}
 
 #### Before you begin
 
 We recommend that you go through the following steps before you begin this tutorial:
-{% c %}
---------------START [JAVA]---------
-{% endc %}
 
-1. [Download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html)
-to work with GigaSpaces - this is needed to run the sample application described in this tutorial.
+1. [Download XAP and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html)
+to work with XAP - this is needed to run the sample application described in this tutorial.
 
 1. [Step One - Using Processing Units For Scaling](./step-one---using-processing-units-for-scaling.html)
 \- a short, one page introduction to scaling your application, using Processing Units - **Recommended**.
-{% c %}
----------------END [JAVA]---------
-{% endc %}
 
-{% whr %}
 
-{% comment %}
-----------------------------------------------------------------------------------
-{% color grey %}Goal
-{% endcolor %}
----------------------------------------------------------------------------------------
-{% endcomment %}
 
 #### Goals
 
 Create a scalable processor application (a Processing Unit) that processes objects as they are written to the space (data grid). Create a feeder application that feeds objects to the space (data grid) for the processor to read and process.
 
-{% comment %}
-----------------------------------------------------------------------------
-{% color grey %}Contents
-{% endcolor %}
----------------------------------------------------------------------------------
-{% endcomment %}
-
 #### Contents
-
-{% c %}
----------------START [JAVA]---------
-{% endc %}
 
 1. [The Message class to be fed and processed](#JObject).
 1. [The simple scalable processor application](#Processor Processing Unit).
@@ -105,53 +44,30 @@ Create a scalable processor application (a Processing Unit) that processes objec
 1. [Running the processor inside your IDE](#JRun Processor in IDE).
 1. [Running the feeder inside your IDE](#JRun Feeder in IDE).
 1. [Expected output](#JView Output)
-{% c %}
----------------END [JAVA]---------
-{% endc %}
 
-{% comment %}
------------------------------------------------------------------------------------------
-{% color grey %}Components
-{% endcolor %}
-----------------------------------------------------------------------------------------------
-{% endcomment %}
 
 #### Components
 
 There are two components in our scenario:
 
 {% section %}
-{% column width=30% %}
-
-# [Processor Processing Unit](#Processor Processing Unit) - Processes Message objects as they are written to the data grid (Space)
-
-{% c %}
----------------START [JAVA]---------
-{% endc %}
-It contains 3 components:
-a _Polling Container_ component that listens to new Message objects written to the _Space_, and a _Processor Bean_ that is delegated the actual processing work by the _Polling Container_.
+{% column width=40% %}
+(1)[Processor Processing Unit](#Processor Processing Unit) - Processes Message objects as they are written to the data grid (Space)
+It contains 3 components: {%wbr%}
+a `Polling Container` component that listens to new Message objects written to the `Space`, and a `Processor Bean` that is delegated the actual processing work by the `Polling Container`.
 
 The Processing Unit itself runs within a dedicated processing unit container in a host environment. (This can be your IDE, any Java process, or the GigaSpaces Grid Service Container - more on this in the next tutorial.)
-{% c %}
----------------END [JAVA]---------
-{% endc %}
 {% endcolumn %}
 {% column width=10% %}
 ![helloworld_processor_processing_unit.gif](/attachment_files/helloworld_processor_processing_unit.gif)
 {% endcolumn %}
-{% column width=25% %}
-{% c %}
----------------START [JAVA]---------
-{% endc %}
+{% column width=40% %}
 
-2. [Feeder](#Feeder) - an application that feeds unprocessed Message objects to the Space, and after a certain period of time, counts and reads one of them at random.
+(2) [Feeder](#Feeder) - an application that feeds unprocessed Message objects to the Space, and after a certain period of time, counts and reads one of them at random.
 
-3. [Message Object](#Object) - a simple POJO with an id and info attributes.
-{% c %}
----------------END [JAVA]---------
-{% endc %}
+(3) [Message Object](#Object) - a simple POJO with an id and info attributes.
 {% endcolumn %}
-{% column width=25% %}
+{% column width=10% %}
 ![helloworld_feeder.gif](/attachment_files/helloworld_feeder.gif)
 
 ![Message.gif](/attachment_files/Message.gif)
@@ -159,6 +75,7 @@ The Processing Unit itself runs within a dedicated processing unit container in 
 {% endsection %}
 
 {% comment %}
+=================================================================
 -----------------------------------------------------------------------------------------
 {% color grey %}Workflow
 {% endcolor %}
@@ -166,14 +83,9 @@ The Processing Unit itself runs within a dedicated processing unit container in 
 {% endcomment %}
 
 {% section %}
-{% column width=30% %}
-{% align left %}
+{% column width=70% %}
 
 #### The Workflow
-
-{% c %}
----------------START [JAVA]---------
-{% endc %}
 
 1. The _helloFeeder_ application writes 1000 Message objects (POJOs) to the _space_ and waits.
 
@@ -184,73 +96,34 @@ The Processing Unit itself runs within a dedicated processing unit container in 
 
 1. After waiting 100 milliseconds (to allow for all the objects to be processed), the feeder counts all the processed Message objects inside the _Processor Processing Unit_'s _Space_, and reads one of them at random.
 
-{% c %}
----------------END [JAVA]---------
-{% endc %}
-{% endalign %}
-
 {% endcolumn %}
-{% column width=50% %}
-
-{% comment %}
------------------------------------------------------------------------------------------
-{% color grey %}Workflow diagram
-{% endcolor %}
-----------------------------------------------------------------------------------------------
-{% endcomment %}
-
-{% align center %}
-
+{% column width=30% %}
 ![Helloworld_workflow.jpg](/attachment_files/Helloworld_workflow.jpg)
-{% endalign %}
-
-{% align center %}
 Diagram 1. The application connects to the space, writes, reads and takes a Message Object.
-{% endalign %}
-
 {% endcolumn %}
 {% endsection %}
 
-{% comment %}
-----------------------------------------------------------------------------
-{% color grey %}   Link to fast run
-{% endcolor %}
----------------------------------------------------------------------------------
-{% endcomment %}
+
 
 [![Jump arrow green.bmp](/attachment_files/Jump arrow green.bmp)](#Run All In IDE) [Jump](#Run All In IDE) ahead and [run the sample application](#Run All In IDE), in case you want to see the final outcome of this tutorial now
 
 {% anchor Jwalkthrough %}
 
-{% comment %}
-========================================================================================
-{% color grey %}CODE WALKTHROUGH
-{% endcolor %}
-==========================================================================================
-{% endcomment %}
-
-{% c %}
--------SHOW FOR JDK1.5JAVA---------
-{% endc %}
 
 # Code Walkthrough
 
-{% c %}
--------END FOR JDK1.5JAVA---------
-{% endc %}
 
 First let's take a look at the Message object that is being written to the space by the feeder application:
 
 {% anchor JObject %}
-{% c %}
--------START [.NET]-------
-{% endc %}
 
 #### The Message Object (Message.java)
 
 This is a simple POJO containing two attributes: _id_, which represents the object id, and _info_, which represents the information that this object holds. Both have setter and getter methods.
 
-{% exclamation %} The getter for the id attribute is annotated with the @SpaceRouting annotation that is used to route Message objects when they are written to the space. This is necessary for scaling the application, and will be explained in the next tutorial. For now, just remember that this annotation should decorate one of the object's properties.
+{% info %}
+The getter for the id attribute is annotated with the `@SpaceRouting` annotation that is used to route Message objects when they are written to the space. This is necessary for scaling the application, and will be explained in the next tutorial. For now, just remember that this annotation should decorate one of the object's properties.
+{%endinfo%}
 
 {% highlight java %}
 private Integer id;    // object id
@@ -265,9 +138,6 @@ public Integer getId() {
 }
 {% endhighlight %}
 
-{% c %}
--------END [JDK1.5]---------
-{% endc %}
 
 {% highlight java %}
 private String info;    // info represents the info the object holds
@@ -322,6 +192,7 @@ The Processing Unit is the GigaSpaces unit of deployment. It is packaged as a JA
 
 ----COMMENTED OUT-----
 {% endc %}
+
 **Processor Processing Unit Configuration** (META-INF/spring/pu.xml)
 
 A Processing Unit always has an XML file called pu.xml, that resides under the _META-INF\spring_ directory.
@@ -574,16 +445,21 @@ Use the _Display Selected Console_ button ![display_selected_console_button_with
 
 **Feeder expected output**
 
+
 The feeder starts, writes 100 message objects to the space, reads and prints one of them at random, and finally prints the number of processed messages in the space:
+{%highlight console%}
     Starting the Feeder (Will wait for the space to initialize first...)
     FEEDER WROTE 1000 objects
     Here is one of them printed out: id[47] info[Hello World !!]
     There are 841 processed Message objects in the space now.
     Press any key to continue . . .
+{%endhighlight%}
 
 **Processor expected output**
 
 The processor prints the _id_ and _info_ attributes for each messages it takes for processing:
+
+{%highlight console%}
     Processor PROCESSING : id[445] info[Hello ]
     Processor PROCESSING : id[904] info[Hello ]
     Processor PROCESSING : id[896] info[Hello ]
@@ -597,6 +473,7 @@ The processor prints the _id_ and _info_ attributes for each messages it takes f
     Processor PROCESSING : id[897] info[Hello ]
     Processor PROCESSING : id[875] info[Hello ]
     Processor PROCESSING : id[900] info[Hello ]
+{%endhighlight%}
 
 {% comment %}
 #### The Launch Configurations in the IDE
