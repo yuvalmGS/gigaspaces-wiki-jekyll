@@ -18,7 +18,7 @@ weight: 300
 
 {% column width=86% %}
 
-{% align center %}||![wiki_icon_folder.gif](/attachment_files/dotnet/wiki_icon_folder.gif)||Example Root|`<GigaSpaces Root>\Examples\ProcessingUnit` |
+{% align center %}||![wiki_icon_folder.gif](/attachment_files/dotnet/wiki_icon_folder.gif)||Example Root|`<XAP Root>\Examples\ProcessingUnit` |
 {% endalign %}
 
 {% endcolumn %}
@@ -31,7 +31,7 @@ weight: 300
 
 # Overview
 
-This example demonstrates a simple processing unit architecture project -- a complete SBA application that can easily scale. It demonstrates a usage of GigaSpaces's SBA related components, such as [Event Listener Container]({%latestneturl%}/event-driven-architecture.html), [Space Based Remoting]({%latestneturl%}/space-based-remoting.html) and the [Basic Processing Unit Container]({%latestneturl%}/basic-processing-unit-container.html).
+This example demonstrates a simple processing unit architecture project -- a complete SBA application that can easily scale. It demonstrates a usage of XAP's SBA related components, such as [Event Listener Container]({%latestneturl%}/event-driven-architecture.html), [Space Based Remoting]({%latestneturl%}/space-based-remoting.html) and the [Basic Processing Unit Container]({%latestneturl%}/basic-processing-unit-container.html).
 
 # Architecture
 
@@ -56,7 +56,7 @@ The example solution is based on three projects:
 
 The only object in our model is the `Data` object.
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass]
 public class Data
 {
@@ -111,10 +111,8 @@ The different attributes will be used to create and configure the polling contai
 In this example the processor is colocated with the space that it needs to process data from, therefore achieving high performance because the processor and the space reside in the same process. This cluster topology is built by a simple matter of configuration of the basic processing unit container which is detailed below.
 
 {% inittab dataprocessor|top %}
-
 {% tabcontent Code %}
-
-{% highlight java %}
+{% highlight csharp %}
 /// <summary>
 /// This class contain the processing logic, marked as polling event driven.
 /// </summary>
@@ -168,11 +166,9 @@ internal class DataProcessor : IProcessorStatisticsProvider
   }
 }
 {% endhighlight %}
-
 {% endtabcontent %}
 
 {% tabcontent Configuration %}
-
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
@@ -196,7 +192,6 @@ internal class DataProcessor : IProcessorStatisticsProvider
 
 We configure a single colocated space specified by the Url of the space, in our case "/./dataExampleSpace" (embedded space url). Since there's only one managed space proxy in the basic container, the data processor polling container will operate using that proxy.
 {% endtabcontent %}
-
 {% endinittab %}
 
 ## SLA File
@@ -204,7 +199,9 @@ We configure a single colocated space specified by the Url of the space, in our 
 This data processor comes with an sla.xml file which define the default topology, which in our case is a cluster of 2 primaries and a single backup per primary. This can be override at deploy time or by editing the sla.xml file that resides in the data processor deployment directory.
 
 {% refer %}See [Event Driven Architecture]({%latestneturl%}/event-driven-architecture.html) for more info about event listening abstraction.{% endrefer %}
+
 {% refer %}See [Space Based Remoting]({%latestneturl%}/space-based-remoting.html) for more info about remoting services over the grid.{% endrefer %}
+
 {% refer %}See [Basic Processing Unit Container]({%latestneturl%}/basic-processing-unit-container.html) for more info about the built in basic processing unit container.{% endrefer %}
 
 {% anchor datafeeder %}
@@ -217,7 +214,7 @@ The data feeder is in charge of feeding the cluster with unprocessed data every 
 
 {% tabcontent Code %}
 
-{% highlight java %}
+{% highlight csharp %}
 /// <summary>
 /// Data feeder feeds new data to the space that needs to be processed
 /// </summary>
@@ -292,11 +289,9 @@ public class DataFeeder
   }
 }
 {% endhighlight %}
-
 {% endtabcontent %}
 
 {% tabcontent Configuration %}
-
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
@@ -320,7 +315,6 @@ public class DataFeeder
 
 We configure a remote proxy to the cluster which is used by the feeder in order to feed unprocessed data into the cluster and to execute a remote service to obtain processing statistics
 {% endtabcontent %}
-
 {% endinittab %}
 
 The `Feed()` method does the actual work, by creating a new `Data` object with random data in an unprocessed state every second, and feeds it to the cluster. Additionaly every number of iterations it displays the statistics of processing of a certain type by executing a remote service which the processors expose. It does so by using an [Executor based remoting proxy]({%latestneturl%}/executor-based-remoting.html) to the remote service which is hosted in the grid.
@@ -329,15 +323,17 @@ The `Feed()` method does the actual work, by creating a new `Data` object with r
 
 This example includes `compile.bat` script.
 
-From the `<Example Root>` directory (`<GigaSpaces Root>\Examples\ProcessingUnit`), call:
+From the `<Example Root>` directory (`<XAP Root>\Examples\ProcessingUnit`), call:
 
-{% highlight java %}
+{% highlight console %}
 compile
 {% endhighlight %}
 
-This compiles all the related projects and creates the processing unit dlls inside each project, under the `Deployment` directory. It also copies the Processing Units Deployment directory to the `<GigaSpaces Root>\Runtime\deploy` directory, which simplifies deployment through the `gs-ui`.
+This compiles all the related projects and creates the processing unit dlls inside each project, under the `Deployment` directory. It also copies the Processing Units Deployment directory to the `<XAP Root>\Runtime\deploy` directory, which simplifies deployment through the `gs-ui`.
 
-{% exclamation %} The Deployment config file (`pu.config`) should always reside under the root directory of your application.
+{% note %}
+The Deployment config file (`pu.config`) should always reside under the root directory of your application.
+{%endnote%}
 
 {% anchor deployment %}
 
@@ -353,40 +349,44 @@ There are a few ways to deploy the Processing Units:
 
 ## Grid Deployment
 
-Under `<GigaSpaces Root>\Examples\ProcessingUnit`, there are two directories: `Feeder` and `Processor`. These contain the two Processing Unit projects, and in each of these directories there is a `Deployment\DataFeeder` and `Deplotmeny\DataProcessor` directories correspondingly. This directories are in the required structure to deploy a Processing Unit, and are copied by the `copydeploymentfiles` script to the `<GigaSpaces Root>\Runtime\deploy` directory. This simplifies the deployment of the processing units in to the Service Grid using GigaSpaces Managament Center or GigaSpaces Command Line Interface.
-Alternatively, a specific directory can be deployed using its fullpath, processing units that reside at the `<GigaSpaces Root>\Runtime\deploy` directory are automatically detected by GigaSpaces Managament Center or GigaSpaces Command Line Interface and can be deployed by their name.
+Under `<XAP Root>\Examples\ProcessingUnit`, there are two directories: `Feeder` and `Processor`. These contain the two Processing Unit projects, and in each of these directories there is a `Deployment\DataFeeder` and `Deplotmeny\DataProcessor` directories correspondingly. This directories are in the required structure to deploy a Processing Unit, and are copied by the `copydeploymentfiles` script to the `<XAP Root>\Runtime\deploy` directory. This simplifies the deployment of the processing units in to the Service Grid using the Management Center or the Command Line Interface.
+Alternatively, a specific directory can be deployed using its fullpath, processing units that reside at the `<XAP Root>\Runtime\deploy` directory are automatically detected by XAP Management Center or XAP Command Line Interface and can be deployed by their name.
 
 The `pu.config` resides in the `Deployment\DataFeeder(\Processor)` directory of each processing unit. This file defines exactly which Processing Unit Container to deploy, in our case `BasicProcessingUnitContainer` and configures it.
 
-After you run the build script and the copy deployment files script, the two directories are copied to the `<GigaSpaces Root>\Runtime\deploy` directory. This example runs in a partitioned cluster with two primary spaces and one backup space for each partition, you need to run Grid Service Agent which will start and manage one Grid Service Manager (GSM) and two Grid Service Containers (GSC), and then start the GigaSpaces Management Center.
+After you run the build script and the copy deployment files script, the two directories are copied to the `<XAP Root>\Runtime\deploy` directory. This example runs in a partitioned cluster with two primary spaces and one backup space for each partition, you need to run Grid Service Agent which will start and manage one Grid Service Manager (GSM) and two Grid Service Containers (GSC), and then start the Management Center.
 
-{% highlight java %}
-<GigaSpaces Root>\Bin\Gs-Agent.exe
-<GigaSpaces Root>\Bin\Gs-ui
+{% highlight console %}
+<XAP Root>\Bin\Gs-Agent.exe
+<XAP Root>\Bin\Gs-ui
 {% endhighlight %}
 
-{% exclamation %} Since the spaces are running inside the `DataProcessor`, the `DataProcessor` should be deployed first and the `DataFeeder` second.
+{% note %}
+Since the spaces are running inside the `DataProcessor`, the `DataProcessor` should be deployed first and the `DataFeeder` second.
+{%endnote%}
 
-1. In the GigaSpaces Management Center, click on the tab named Deployments, Details, and then click the **Deploy new application** button (![deploy button.jpg](/attachment_files/dotnet/deploy button.jpg)).
+|**Step 1.** In the Management Center, click on the tab named Deployments, Details, and then click the **Deploy new application** button| ![deploy button.jpg](/attachment_files/dotnet/deploy button.jpg).|
 
 {% indent %}
 ![deploy picture.jpg](/attachment_files/dotnet/deploy picture.jpg)
 {% endindent %}
 
-2. Now, all you need to do is type the name of the Processing Unit (identical to the name of the folder that is now in the `deploy` directory) in the `Processing Unit Name` field. Since there's an existing sla.xml with specific cluster topology, there's no need to specify the cluster topology at deploy time.
-3. Now in order to deploy the `DataFeeder` Procesing Unit, you repeat the same processes but type `DataFeeder` in the `Processing Unit Name` field. There is no need to select a `Cluster Schema` or `Number Of Instances`, since the feeder connects to the cluster and doesn't create spaces. However, you can deploy more than one `DataFeeder` by changing the `Number Of Instances` field.
-4. Now look at the deployed processing units view and see the events firing.
+**Step 2.** Now, all you need to do is type the name of the Processing Unit (identical to the name of the folder that is now in the `deploy` directory) in the `Processing Unit Name` field. Since there's an existing sla.xml with specific cluster topology, there's no need to specify the cluster topology at deploy time.
 
-Another way to deploy the processing units will be to use GigaSpaces Command Line Interface, in this case we do not require using GigaSpaces Management Center, we deploy it in the following manner:
+**Step 3.** Now in order to deploy the `DataFeeder` Procesing Unit, you repeat the same processes but type `DataFeeder` in the `Processing Unit Name` field. There is no need to select a `Cluster Schema` or `Number Of Instances`, since the feeder connects to the cluster and doesn't create spaces. However, you can deploy more than one `DataFeeder` by changing the `Number Of Instances` field.
 
-{% highlight java %}
-<GigaSpaces Root>\Bin\Gs-Cli.exe deploy DataProcessor
-<GigaSpaces Root>\Bin\Gs-Cli.exe deploy DataFeeder
+**Step 4.** Now look at the deployed processing units view and see the events firing.
+
+Another way to deploy the processing units will be to use XAP's Command Line Interface, in this case we do not require using XAP Management Center, we deploy it in the following manner:
+
+{% highlight console %}
+<XAP Root>\Bin\Gs-Cli.exe deploy DataProcessor
+<XAP Root>\Bin\Gs-Cli.exe deploy DataFeeder
 {% endhighlight %}
 
 ### Application Domain (AppDomain)
 
-Each processing unit instance is deployed in a seperate isolated AppDomain with in the Grid Service Container, therefore they do not affect each other and once undeployed all the related libraries are being unloaded as well.
+Each processing unit instance is deployed in a separate isolated AppDomain with in the Grid Service Container, therefore they do not affect each other and once undeployed all the related libraries are being unloaded as well.
 
 Once the processing units are deployed, they will appear in the managament center and the different components can be monitored:
 
@@ -398,7 +398,7 @@ Once the processing units are deployed, they will appear in the managament cente
 
 One option is to run the processing unit within the IDE, which should be used for debug purposes only since it is not deployed and managed by the service grid. The example contains one project named PUDebugExecuter, that shows how to start the processing unit projects within the IDE. It uses a class named `ProcessingUnitContainerHost` to host the processing unit container and manage its life cycle, it does so in the following manner:
 
-{% highlight java %}
+{% highlight csharp %}
 ProcessingUnitContainerHost processorContainerHost = new ProcessingUnitContainerHost(@"..\Processor\Deployment\DataProcessor", null, null);
 ProcessingUnitContainerHost feederContainerHost = new ProcessingUnitContainerHost(@"..\Feeder\Deployment\DataFeeder", null, null);
 
@@ -410,6 +410,3 @@ processorContainerHost.Dispose();
 This will host the two processing units, processor and feeder, which reside in the specified deployment directory.
 When the host is created the hosted processing units are immidiatly created and initialized, once the host is disposed it will dispose of the hosted processing unit container.
 
-
-
-{%children%}
