@@ -6,12 +6,6 @@ weight: 1000
 parent: java-home.html
 ---
 
-{%comment%}
-[< Previous|Tutorial Part IX] * [Home|XAP Tutorial] *
-{%endcomment%}
-
-
-
 {%summary%}This part of the tutorial will introduce you to security concepts of XAP.{%endsummary%}
 
 
@@ -300,15 +294,3 @@ The transport layer can be secured using an SSL communication filter.
   <li class="next"><a href="./java-home.html">Tutorial Home &rarr;</a></li>
 </ul>
 
-
-
-
-
-{%comment%}
-# What's Next
-!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Programmer's Guide](./programmers-guide.html) of this tutorial will introduce you to security aspects of XAP.
-
-
-#
-{align:center}[< Previous|Tutorial Part IX] * [Home|XAP Tutorial] *  {align}
-{%endcomment%}

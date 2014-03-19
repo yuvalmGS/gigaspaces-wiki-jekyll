@@ -56,7 +56,7 @@ public class PaymentListener {
 	[EventTemplate]
 	Payment unprocessedData() {
 		Payment template = new Payment();
-		template.setStatus(ETransactionStatus.CANCELLED);
+		template.Status=ETransactionStatus.CANCELLED;
 		return template;
 	}
 
@@ -120,7 +120,7 @@ You can now execute a simple test that writes a Payment object into the space th
 {%highlight csharp %}
 public void notifyTest() {
      Payment payment = new Payment();
-     payment.setStatus(ETransactionStatus.CANCELLED);
+     payment.Status=ETransactionStatus.CANCELLED;
      proxy.Write(payment);
 }
 {%endhighlight%}
@@ -143,7 +143,7 @@ public class AuditListener {
 	[EventTemplate]
 	Payment unprocessedData() {
 		Payment template = new Payment();
-		template.setStatus(ETransactionStatus.AUDITED);
+		template.Status=ETransactionStatus.AUDITED;
 		return template;
 	}
 
@@ -189,12 +189,12 @@ namespace xaptutorial.model
 	[SpaceClass(FifoSupport = FifoSupport.Operation)]
 	public class Payment   {
 		[SpaceID(AutoGenerate = true)]
-		private String Id;
+		public String Id;
 		[SpaceIndex(Type = SpaceIndexType.Basic)]
-		private long? UserId;
+		public long? UserId;
 		[SpaceRouting]
 		[SpaceIndex(Type = SpaceIndexType.Basic)]
-		private long?  MerchantId;
+		public long?  MerchantId;
 
 		// ....
 	}

@@ -64,7 +64,7 @@ using xaptutorial.model;
 
 [Serializable]
 public class MerchantUserTask : ISpaceTask<HashSet<long?>> {
-	private long? MerchantId;
+	public long? MerchantId;
 
 	public MerchantUserTask(long? merchantId) {
 		this.MerchantId = merchantId;
@@ -170,7 +170,7 @@ using xaptutorial.model;
 [Serializable]
 public class MerchantByCategoryTask : IDistributedSpaceTask<List<Merchant>, Merchant[]> {
 
-	private ECategoryType CategoryType;
+	public ECategoryType CategoryType;
 
 	public MerchantByCategoryTask(ECategoryType categoryType) {
 		this.CategoryType = categoryType;
@@ -217,7 +217,7 @@ public void executeDistributedTask(){
 By default, the task is broad casted to all primary nodes. You can also execute a distributed task on selected nodes based on different routing values:
 {%highlight csharp%}
     Merchant merchant = new Merchant();
-    merchant.setId(2);
+    merchant.Id=2;
     List<Merchant> result = proxy.Execute(task, merchant);
 {%endhighlight%}
 
@@ -240,9 +240,9 @@ A space task can also be executed asynchronously with the corresponding `BeginEx
 Here is an example that executes asynchronous using async result:
 
 {%highlight csharp%}
-public void executeDistributedTaskAsync(){
-	MerchantByCategoryTask task = new MerchantByCategoryTask(
-		ECategoryType.AUTOMOTIVE);
+public void executeDistributedTaskAsync()
+{
+	MerchantByCategoryTask task = new MerchantByCategoryTask(ECategoryType.AUTOMOTIVE);
 
 	IAsyncResult<List<Merchant>> asyncResult = proxy.BeginExecute(task, null /*callback*/, null /*state object*/);
 	//	...
@@ -250,7 +250,7 @@ public void executeDistributedTaskAsync(){
 	asyncResult.AsyncWaitHandle.WaitOne();
 	//Gets the actual result of the async execution
 	List<Merchant> result = proxy.EndExecute(asyncResult);
-	}
+}
 {%endhighlight%}
 
 {%learn%}{%latestneturl%}/task-execution-over-the-space.html{%endlearn%}

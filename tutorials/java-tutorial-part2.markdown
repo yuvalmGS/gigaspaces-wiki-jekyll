@@ -7,11 +7,6 @@ parent: java-home.html
 ---
 
 
-
-{%comment%}
-[< Previous|Tutorial Part I]  *  [Home|XAP Tutorial]  *  [Next >|Tutorial Part III]
- {%endcomment%}
-
 {%summary%}This part of the tutorial will introduce you to the XAP In Memory Data Grid (IMDG).{%endsummary%}
 
 
@@ -246,18 +241,5 @@ The Admin UI console has many more features which we will introduce you to throu
   <li class="next"><a href="./java-tutorial-part3.html">Processing Services &rarr;</a></li>
 </ul>
 
-{%comment%}
 
-# What's Next
-
-Tutorial Part III of this tutorial will introduce you to the processing services that can be performed over the space.
-
-!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part III|Tutorial Part III] of this tutorial will introduce you to the processing services that can be performed over the space.
- 
-
-#
-{align:center}[< Previous|Tutorial Part I] * [Home|XAP Tutorial] * [Next >|Tutorial Part III]{align}
-{%endcomment%}
-
- 
  

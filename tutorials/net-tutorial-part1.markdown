@@ -81,16 +81,16 @@ using GigaSpaces.Core.Metadata;
 
 		[SpaceID(AutoGenerate = false)]
 		[SpaceRouting]
-		private long? Id { set; get; }
-		private String Name{ set; get; }
-		private double? Balance{ set; get; }
-		private double? CreditLimit{ set; get; }
-		private Nullable<EAccountStatus> Status{ set; get; }
-		private Address Address{ set; get; }
-		private String[] Comment{ set; get; }
+		public long? Id { set; get; }
+		public String Name{ set; get; }
+		public double? Balance{ set; get; }
+		public double? CreditLimit{ set; get; }
+		public Nullable<EAccountStatus> Status{ set; get; }
+		public Address Address{ set; get; }
+		public String[] Comment{ set; get; }
 		public Dictionary<String, String> Contacts{ set; get; }
-		private List<Group> Groups{ set; get; }
-		private List<int?> Ratings{ set; get; }
+		public List<Group> Groups{ set; get; }
+		public List<int?> Ratings{ set; get; }
 
 	    //.....
 	}
@@ -200,9 +200,9 @@ When writing an object to the space, the object is created in space if it does n
 {%highlight csharp  %}
 public void writeUser() {
      User user = new User();
-     user.setId(new Long(1L));
-     user.setName("John Smith");
-     user.setStatus(EAccountStatus.ACTIVE);
+     user.Id= 1L;
+     user.Name="John Smith";
+     user.Status=EAccountStatus.ACTIVE;
 
      // Write the user to the space
      spaceProxy.Write(user);
@@ -216,14 +216,14 @@ Here is an example on how you write multiple objects to the space:
 public void writeUsers() {
      User[] users = new User[2];
      users[0] = new User();
-     users[0].setId(new Long(1L));
-     users[0].setName("John Dow");
-     users[0].setStatus(EAccountStatus.ACTIVE);
+     users[0].Id=1L;
+     users[0].Name="John Dow";
+     users[0].Status=EAccountStatus.ACTIVE;
 
      users[1] = new User();
-     users[1].setId(new Long(2L));
-     users[1].setName("John Dow");
-     users[1].setStatus(EAccountStatus.ACTIVE);
+     users[1].Id=2L;
+     users[1].Name="John Dow";
+     users[1].Status=EAccountStatus.ACTIVE;
 
      spaceProxy.WriteMultiple(users);
 }
@@ -235,9 +235,9 @@ Here is an example:
 {%highlight csharp%}
 public void writeOnlyWithLease() {
 	User user = new User();
-	user.setId( 1L);
-	user.setName("John Smith");
-	user.setStatus(EAccountStatus.ACTIVE);
+	user.Id=1L;
+	user.Name="John Smith";
+	user.Status=EAccountStatus.ACTIVE;
 
     // no transaction and 10 seconds lease time
 	proxy.Write(user,null,0,10000, WriteModifiers.WriteOnly);
@@ -255,9 +255,9 @@ When you want to update only a couple of attributes on an object in space, you c
 {%highlight csharp  %}
 public void changeSet() {
 	User user = new User();
-	user.setId(1L);
-	user.setName("John Dow");
-	user.setStatus(EAccountStatus.ACTIVE);
+	user.Id=1L;
+	user.Name="John Dow";
+	user.Status=EAccountStatus.ACTIVE;
 	proxy.Write(user);
 
 	IdQuery<User> idQuery = new IdQuery<User>(1L);
@@ -315,7 +315,7 @@ Read an entry of type User where the name is 'John Dow':
 {%highlight csharp  %}
 public User findUserByTemplate() {
 	User user = new User();
-	user.setName("John Dow");
+	user.Name="John Dow";
 	return proxy.Read(user);
 }
 {%endhighlight%}
@@ -324,7 +324,7 @@ You can also perform a bulk read with templates. In the example below will read 
 {%highlight csharp  %}
 public User[] findUsersByTemplate() {
 	User user = new User();
-	user.setStatus(EAccountStatus.ACTIVE);
+	user.Status=EAccountStatus.ACTIVE;
 	return proxy.ReadMultiple(user);
 }
 {%endhighlight%}
@@ -390,25 +390,25 @@ Here is an example how you would annotate a class to enable nested queries:
 
 		[SpaceID(AutoGenerate = false)]
 		[SpaceRouting]
-		private long? Id { set; get; }
+		public long? Id { set; get; }
 
-		private String Name{ set; get; }
-		private double? Balance{ set; get; }
-		private double? CreditLimit{ set; get; }
-		private Nullable<EAccountStatus> Status{ set; get; }
+		public String Name{ set; get; }
+		public double? Balance{ set; get; }
+		public double? CreditLimit{ set; get; }
+		public Nullable<EAccountStatus> Status{ set; get; }
 
         [SpaceProperty(StorageType = StorageType.Document)]
-		private Address Address{ set; get; }
-		private String[] Comment{ set; get; }
+		public Address Address{ set; get; }
+		public String[] Comment{ set; get; }
 
         [SpaceProperty(StorageType = StorageType.Document)]
 		public Dictionary<String, String> Contacts{ set; get; }
 
         [SpaceProperty(StorageType = StorageType.Document)]
-		private List<Group> Groups{ set; get; }
+		public List<Group> Groups{ set; get; }
 
         [SpaceProperty(StorageType = StorageType.Document)]
-		private List<int?> Ratings{ set; get; }
+		public List<int?> Ratings{ set; get; }
 
 		//......
 	}
@@ -522,7 +522,7 @@ public User takeUserById() {
 
 public User takeUserByTemplate() {
    User template = new User();
-   template.setName("John Dow");
+   template.Name="John Dow";
    return spaceProxy.Take<User>(template);
 }
 
@@ -563,7 +563,7 @@ public void clearAllObjectInSpace() {
 To improve performance, it is possible to index one or more attributes for an object. The space maintains additional data for indexed attributes, which shortens the time required to determine a match resulting in improved performance. However, indexes consume more resources and impacts the write operations performance.
 
 #### Inheritance
-By default, an attribute's index is inherited in sub classes (i.e. if an attribute is indexed in a super class, it is also indexed in a sub class). If you need to change the index type of an attribute in a subclass you can override the attribute and annotate it with `[SpaceIndex]` using the requested index type (to disable indexing use NONE).
+By default, a properties index is inherited in sub classes (i.e. if an attribute is indexed in a super class, it is also indexed in a sub class). If you need to change the index type of an attribute in a subclass you can override the attribute and annotate it with `[SpaceIndex]` using the requested index type (to disable indexing use NONE).
 
 #### Basic Index
 There are two basic index types provide:
@@ -583,22 +583,22 @@ using GigaSpaces.Core.Metadata;
 
 		[SpaceID(AutoGenerate = false)]
 		[SpaceRouting]
-		private long? Id { set; get; }
+		public long? Id { set; get; }
 		[SpaceIndex(Type = SpaceIndexType.Basic)]
-		private String Name{ set; get; }
-		private double? Balance{ set; get; }
+		public String Name{ set; get; }
+		public double? Balance{ set; get; }
 		[SpaceIndex(Type = SpaceIndexType.Extended)]
-		private double? CreditLimit{ set; get; }
+		public double? CreditLimit{ set; get; }
 
         [SpaceProperty(StorageType = StorageType.Document)]
-		private Nullable<EAccountStatus> Status{ set; get; }
+		public Nullable<EAccountStatus> Status{ set; get; }
 
         [SpaceProperty(StorageType = StorageType.Document)]
         [SpaceIndex(Path = "ZipCode", Type = SpaceIndexType.Basic)]
-		private Address address{ set; get; }
+		public Address address{ set; get; }
 
 		[SpaceIndex(Path = "[*]")]
-		private String[] Comment{ set; get; }
+		public String[] Comment{ set; get; }
 
         [SpaceProperty(StorageType = StorageType.Document)]
 		[SpaceIndex(Path = "HOME")]
@@ -606,11 +606,11 @@ using GigaSpaces.Core.Metadata;
 
         [SpaceProperty(StorageType = StorageType.Document)]
 		[SpaceIndex(Path = "[*].Id")]
-		private List<Group> Groups{ set; get; }
+		public List<Group> Groups{ set; get; }
 
         [SpaceProperty(StorageType = StorageType.Document)]
 		[SpaceIndex(Path = "[*]")]
-		private List<int?> Ratings{ set; get; }
+		public List<int?> Ratings{ set; get; }
 
 	    //........
     }
@@ -634,7 +634,7 @@ namespace xaptutorial.model
 	public class User {
 		[SpaceID(AutoGenerate = false)]
 		[SpaceRouting]
-		private long? Id { set; get; }
+		public long? Id { set; get; }
 
 		// ......
     }
@@ -673,77 +673,6 @@ There are several additional indexing options available. For example you can ind
 
 - use change api instead of update , especially if collections are used.
 {%endvbar%}
-
-
-{%comment%}
-# Other Data Access API's
-XAP provides a JDBC Driver, JPA API, MAP and Memcached API's.
-
-{%learn%}{%latestneturl%}/other-data-access-apis.html{%endlearn%}
-
-
-
-# Spring Integration
-All XAP components can be wired and configured with the application using corresponding Spring Beans.
-
-{%vbar title=The GigaSpaces Spring Integration supports:%}
-
-- Spring Automatic Transaction Demarcation
-- Spring Data
-- Spring JMS
-- Spring JPA
-- Spring Hibernate
-- Spring Remoting
-- String Batch
-- Spring Security
-- Mule
-
-{%endvbar%}
-
-Lets look at a Spring configuration file that represents the creation of an embedded space:
-
-
-{%highlight xml  %}
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:os-core="http://www.openspaces.org/schema/core" xmlns:os-events="http://www.openspaces.org/schema/events"
-	xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
-	xmlns:os-sla="http://www.openspaces.org/schema/sla"
-	xsi:schemaLocation="
-   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
-   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd>
-
-	<!-- Scan the packages for annotations / -->
-	<context:component-scan base-package="xap" />
-
-	<!-- Enables to configure Spring beans through annotations -->
-	<context:annotation-config />
-
-	<!-- A bean representing a space (an IJSpace implementation) -->
-	<os-core:space id="space" url="/./xapTutorialSpace" />
-
-	<!-- Define the GigaSpace instance that the application will use to access the space -->
-	<os-core:giga-space id="xapTutorialSpace" space="space"/>
-</beans>
-{%endhighlight%}
-
-
-And here is the code to access the Spring bean within your application:
-{%highlight csharp  %}
-public void findSpace()  {
-    FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext(
-	"classpath:/spring/application-context.xml");
-
-    GigaSpace space = (GigaSpace) context.getBean("xapTutorialSpace");
-}
-{%endhighlight%}
-
-
-{%info%}In the following parts of this tutorial we will introduce you the different schemas that support the XAP Spring integration. We will also use the Annotations to configure and inject components.{%endinfo%}
-
-{%endcomment%}
 
 
 <ul class="pager">

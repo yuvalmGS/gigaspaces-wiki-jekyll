@@ -7,10 +7,6 @@ parent: java-home.html
 ---
 
 
-{%comment%}
-[< Previous](./tutorial-part-II.html) * [Home](./XAP Tutorial) * [Next >](./Tutorial Part IV)
-{%endcomment%}
-
 {%summary%}This part of the tutorial explains the different processing services that are available over the space.{%endsummary%}
 
 
@@ -288,17 +284,3 @@ public class RemoteService {
   <li class="next"><a href="./java-tutorial-part4.html">Events and Messaging &rarr;</a></li>
 </ul>
 
-{%comment%}
-
-# What's Next
-
-Part IV  of this tutorial will introduce you to the event and messaging processing capabilities of XAP.
-
-
-!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part IV|Tutorial Part IV] of this tutorial will introduce you to the event and messaging processing capabilities of XAP.
-##
-
-#
-{align:center}[< Previous|Tutorial  Part II] * [Home|XAP Tutorial] * [Next >|Tutorial Part IV]{align}
-
-{%endcomment%}

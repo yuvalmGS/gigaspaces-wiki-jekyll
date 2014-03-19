@@ -8,12 +8,6 @@ parent: java-home.html
 
 
 
-{%comment%}
-
-[< Previous|Tutorial Part VII] * [Home|XAP Tutorial] * [Next >|Tutorial Part IX]  
-{%endcomment%}
-
-
  
 {%summary%}This part of the tutorial will introduce you to web deployment on top of the grid.{%endsummary%}
 
@@ -312,18 +306,6 @@ The integration dynamically creates and updates the mod_proxy_balancer configura
   <li class="next"><a href="./java-tutorial-part9.html">Big Data &rarr;</a></li>
 </ul>
 
-{%comment%}
-# What's next
-
-Part IX of this tutorial will introduce you to XAP's Big Data integration.
-
- # What's Next
-!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part IX|Tutorial Part IX] of this tutorial will introduce you to XAP's Big Data integration.
-
-
-# 
-{align:center}[< Previous|Tutorial Part VII] * [Home|XAP Tutorial] * [Next >|Tutorial Part IX] {align}
-{%endcomment%}
 
  
 

@@ -72,7 +72,7 @@ public class AuditListener {
 	[EventTemplate]
 	Payment unprocessedData() {
 		Payment template = new Payment();
-		template.setStatus(ETransactionStatus.AUDITED);
+		template.Status=ETransactionStatus.AUDITED;
 		return template;
 	}
 
@@ -137,13 +137,13 @@ namespace xaptutorial.model
 	public class Account {
 		[SpaceID]
 		[SpaceRouting]
-		private long? Id { set; get; }
-		private String Number{ set; get; }
-		private double? Receipts{ set; get; }
-		private double? FeeAmount{ set; get; }
-		private Nullable<EAccountStatus> Status{ set; get; }
+		public long? Id { set; get; }
+		public String Number{ set; get; }
+		public double? Receipts{ set; get; }
+		public double? FeeAmount{ set; get; }
+		public Nullable<EAccountStatus> Status{ set; get; }
 		[SpaceVersion]
-		private int Version{ set; get; }
+		public int Version{ set; get; }
 
 		// ...
 	}
@@ -170,7 +170,7 @@ using (ITransaction txn = mgr.Create ()) {
 	    // Read and lock the payment object
 	    Payment payment = proxy.ReadById(1,txn,ReadModifiers.ExclusiveReadLock);
 
-	    payment.setStatus(ETransactionStatus.CANCELLED);
+	    payment.Status=ETransactionStatus.CANCELLED;
 	    space.Write(payment,txn);
 	    txn.Commit ();
 	} catch (Exception e) {

@@ -222,18 +222,3 @@ XAP provides additional read modifiers to denote the isolation level:
   <li class="next"><a href="./java-tutorial-part7.html">Space Persistence &rarr;</a></li>
 </ul>
 
-{%comment%}
-
-# What's Next
-
-Part VII of this tutorial will introduce you to space persistence.
-
-!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part VII|Tutorial Part VII] of this tutorial will introduce you to space persistence.
-
-
-
-
-#
-{align:center}[< Previous|Tutorial Part V] * [Home|XAP Tutorial] * [Next >|Tutorial Part VII] {align}
-
-{%endcomment%}

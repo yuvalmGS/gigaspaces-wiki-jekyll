@@ -6,11 +6,6 @@ weight: 400
 parent: java-home.html
 ---
 
-
-{%comment%}
-[< Previous|Tutorial Part III] * [Home|XAP Tutorial] * [Next >|Tutorial Part V] 
- {%endcomment%}
-
 {%summary%}This part of the tutorial explains the different event and messaging services that are available over the space.{%endsummary%}
  
 
@@ -209,15 +204,3 @@ In GigaSpaces XAP, you can implement the Master-Worker pattern using several met
   <li class="next"><a href="./java-tutorial-part5.html">The Processing Unit &rarr;</a></li>
 </ul>
 
-{%comment%}
-# What's Next
-
-Part IV of this tutorial will introduce you to the concept of a Processing Unit which is the fundamental unit of deployment in GigaSpaces XAP.
-
-
-!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part IV|Tutorial Part V] of this tutorial will introduce you to the concept of a Processing Unit which is the fundamental unit of deployment in GigaSpaces XAP.
-
-# 
-{align:center}[< Previous|Tutorial Part III] * [Home|XAP Tutorial] * [Next >|Tutorial Part V]{align}
-
-{%endcomment%}

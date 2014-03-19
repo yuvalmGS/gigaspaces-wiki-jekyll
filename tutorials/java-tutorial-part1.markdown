@@ -7,10 +7,6 @@ parent: java-home.html
 ---
 
 
-{%comment%}
- [< Previous|XAP Tutorial] * [Home|XAP Tutorial] * [Next >|Tutorial  Part II]
-{%endcomment%}
-
 
 {%summary%}This tutorial will introduce you to the basic features of the GigaSpaces XAP platform.{%endsummary%}
 
@@ -654,7 +650,3 @@ public void findSpace()  {
 </ul>
 
 
-{%comment%}
-# What's Next
-Part two of this tutorial will show how you can create an In Memory Data Grid (IMDG) and how you can interact with it.
-{%endcomment%}

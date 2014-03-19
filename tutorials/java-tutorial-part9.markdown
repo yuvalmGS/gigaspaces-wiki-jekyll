@@ -6,9 +6,7 @@ weight: 900
 parent: java-home.html
 ---
 
-{%comment%}
-[< Previous|Tutorial Part VIII] * [Home|XAP Tutorial] * [Next >|Tutorial Part X]
-{%endcomment%}
+
 
 {%summary%}This part of the tutorial will introduce you to XAP's Big Data Integration.{%endsummary%}
 
@@ -216,27 +214,8 @@ The XAP Mirror Service provides reliable asynchronous persistency. This allows y
 
 
 
-
-
-
-
-
-
 <ul class="pager">
   <li class="previous"><a href="./java-tutorial-part8.html">&larr; Web Processing Unit</a></li>
   <li class="next"><a href="./java-tutorial-part10.html">Security &rarr;</a></li>
 </ul>
 
-{%comment%}
-
-# What's Next
-
-Part X  of this tutorial will introduce you to security aspects of XAP.
-
-!GS6:Images^Jump arrow green.bmp! {color:green}{*}Next step{*}{color} - [Part X|Tutorial Part X] of this tutorial will introduce you to security aspects of XAP.
-
-
-#
-{align:center}[< Previous|Tutorial Part VIII] * [Home|XAP Tutorial] * [Next >|Tutorial Part IX] {align}
-
-{%endcomment%}

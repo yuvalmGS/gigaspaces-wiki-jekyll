@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  The Processing Unit
-categories: TUTORIALS
+categories:
 weight: 500
-parent: java-home.html
+parent:
 ---
 
 
@@ -38,6 +38,7 @@ The Business-logic Only PU implements your application code, and does not includ
 #### Mixed PU
 This type of PU's includes both business logic and a space. Typically, the business logic interacts with a local space instance (i.e. a data grid instance running within the same PU instance) to achieve lowest possible latency and best performance.
 
+{%comment%}
 #### Elastic Processing Unit (EPU)
 An Elastic Processing Unit (EPU) is a Processing Unit with additional capabilities that simplify its deployment across multiple machines. Containers and machine resources such as Memory and CPU are automatically provisioned based on Memory and CPU requirements. When a machine failure occurs, or when scale requirements change, new machines are provisioned and the Processing Unit deployment distribution is balanced automatically. The PU scale is triggered by modifying the requirements through an API call. From that point in time the EPU continuously maintains the specified capacity (indefinitely, or until the next scale trigger).
 
@@ -53,7 +54,7 @@ XAP allows you to deploy web applications (packaged as a WAR file) onto the Serv
 XAP's Mule integration allows you to run a pure Mule application (with or without XAP special extension points and transports) as a PU.
 
 {%learn%}{%latestjavaurl%}/mule-processing-unit.html{%endlearn%}
-
+{%endcomment%}
 
 
 
@@ -93,7 +94,7 @@ The PU jar file is composed of several key elements:
 - META-INF/MANIFEST.MF (not mandatory): This file could be used for adding additional jars to the PU classpath, using the standard MANIFEST.MF Class-Path property.
 
 
-# The pu.xml file
+# The pu.conf file
 This file is a Spring framework XML configuration file. It leverages the Spring framework IoC container and extends it by using the Spring custom namespace mechanism.
 
 The definitions in the pu.xml file are divided into 2 major categories:
@@ -104,7 +105,7 @@ The definitions in the pu.xml file are divided into 2 major categories:
 
 Here is an example of a pu.xml file:
 
-{%highlight xml%}
+{%highlight console%}
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     top level element of the Spring configuration. Note the multiple namespace definition for both GigaSpaces and Spring.
@@ -280,9 +281,9 @@ GS_HOME/bin/gs-agent.sh
 
 And now we deploy the PU onto the IMDG:
 {%highlight java%}
-GS_HOME\bin\gs.sh deploy  eventPU.jar
+GS_HOME\bin\gs.sh deploy  EventPu.jar
 {%endhighlight%}
-We assume that the jar we created is named eventPU.jar
+We assume that the jar we created is named tutorial.jar
 
 If you startup the Admin UI you will be able to see that through the deployment a space called eventSpace was created and a PU named with the jar name.
 
@@ -293,7 +294,7 @@ Now its time to create a client that creates events and writes them into the spa
 
 {% inittab d2|top %}
 {% tabcontent Client Listener %}
-{%highlight java%}
+{%highlight console%}
 @EventDriven
 @Polling
 @NotifyType(write = true)
@@ -402,10 +403,10 @@ The deployment script for this scenario looks like this:
 {%highlight java%}
 
 With a statefull PU, embedded space
-./gs.sh deploy -cluster schema=partitioned total_members=4,0 -max-instances-per-machine 2 eventPU.jar
+./gs.sh deploy -cluster schema=partitioned total_members=4,0 -max-instances-per-machine 2 tutorial.jar
 
 With a stateless PU
-./gs.sh deploy -cluster total_members=4 -max-instances-per-machine 2 eventPU.jar
+./gs.sh deploy -cluster total_members=4 -max-instances-per-machine 2 tutorial.jar
 {%endhighlight%}
 
 {%learn%}{%latestjavaurl%}/deploy-command-line-interface.html{%endlearn%}
