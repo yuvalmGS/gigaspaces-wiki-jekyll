@@ -383,7 +383,7 @@ By default, nested objects are kept in a binary form inside the space. In order 
 
 {%learn%}{%latestneturl%}/property-storage-type.html{%endlearn%}
 
-Here is an example how would annotate a class to enable nested queries:
+Here is an example how you would annotate a class to enable nested queries:
 
 {%highlight csharp%}
 	public class User {

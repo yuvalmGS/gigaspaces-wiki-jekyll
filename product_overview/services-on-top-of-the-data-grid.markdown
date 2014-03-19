@@ -12,7 +12,7 @@ weight: 800
 
 # Overview
 
-GigaSpaces includes a set of built-in service components such as Task execution service components, Messaging services components, each implementing commonly used pattern and framework. It was designed to make the programming of distributed applications on-top of the space based API simpler and less intrusive.  All services follows the POJO/Spring based abstraction approach which include dependency injection and annotations. The GigaSpaces DataGrid is used as a shared clustering framework for all those components. The shared clustering provides general purpose solution that ensures the high availability, scalability, and transaction integrity of all those API's.
+GigaSpaces includes a set of built-in service components such as Task execution service components, Messaging services components, each implementing commonly used pattern and framework. It was designed to make the programming of distributed applications on-top of the space based API simpler and less intrusive.  All services follow the POJO/Spring based abstraction approach which include dependency injection and annotations. The GigaSpaces DataGrid is used as a shared clustering framework for all those components. The shared clustering provides general purpose solution that ensures the high availability, scalability, and transaction integrity of all those API's.
 
 # Choosing the Correct Service Component
 
@@ -20,22 +20,15 @@ This section explains when you should use each of the service components:
 
 ## Task Execution
 
-{%section%}
-{%column width=95% %}
-Task Execution provides a fine-grained API for performing ad-hoc parallel execution of user defined tasks. You should use this framework in the following scenarios:
+
+Task Execution {%javanet%}/task-execution-over-the-space.html{%endjavanet%} provides a fine-grained API for performing ad-hoc parallel execution of user defined tasks. You should use this framework in the following scenarios:
 
 - When the tasks are defined by clients and can be changed or added while the data-grid servers are running.
 
 - As a dynamic "stored procedure" enabling to execute complex multi stage queries or data manipulation where the data resides, thus enabling to send back only the end result of the calculation and avoid excess network traffic.
 
 - Map/Reduce pattern - when you need to perform aggregated operations over a cluster of distributed partitions.
-{%endcolumn%}
-{%column width=5% %}
-{%wbr%}{%wbr%}
-{%javaapi%}{%latestjavaurl%}/task-execution-over-the-space.html{%endjavaapi%}{%wbr%}
-{%netapi%}{%latestneturl%}/task-execution-over-the-space.html{%endnetapi%}
-{%endcolumn%}
-{%endsection%}
+
 
 Task execution comes in two flavors:
 
@@ -55,26 +48,15 @@ The Space's Messaging and Events support provides messaging handlers that simpli
 
 ### Notify Container
 
-{%section%}
-{%column width=95% %}
-The Notify Container is the equivalent of a publish/subscribe messaging. Uses the space.notify() API as the underlying event delivery mechanism. With this method the listener doesn't hold a connection to the space. The event handler is triggered by the space as soon as matching event arrived. Notify will call ALL matched subscribers at the same time.
-{%endcolumn%}
-{%column width=5% %}
-{%javaapi%}{%latestjavaurl%}/notify-container.html{%endjavaapi%}{%wbr%}
-{%netapi%}{%latestneturl%}/notify-container.html{%endnetapi%}
-{%endcolumn%}
-{%endsection%}
+
+The Notify Container {%javanet%}/notify-container.html{%endjavanet%}  is the equivalent of a publish/subscribe messaging. Uses the space.notify() API as the underlying event delivery mechanism. With this method the listener doesn't hold a connection to the space. The event handler is triggered by the space as soon as matching event arrived. Notify will call ALL matched subscribers at the same time.
+
+
 
 ### Polling Container
-{%section%}
-{%column width=95% %}
-The Polling Container is the equivalent of a point to point communication. It uses the space.take() API as the underlying event delivery mechanism. Unlike the notify container the Polling container blocks contentiously on space connection until a matching event arrives. Polling containers ensures that one and only one listener will be triggered per event even if there are more then one listener that matches that event.
-{%endcolumn%}
-{%column width=5% %}
-{%javaapi%}{%latestjavaurl%}/polling-container.html{%endjavaapi%}{%wbr%}
-{%netapi%}{%latestneturl%}/polling-container.html{%endnetapi%}
-{%endcolumn%}
-{%endsection%}
+
+The Polling Container {%javanet%}/polling-container.html{%endjavanet%}  is the equivalent of a point to point communication. It uses the space.take() API as the underlying event delivery mechanism. Unlike the notify container the Polling container blocks contentiously on space connection until a matching event arrives. Polling containers ensures that one and only one listener will be triggered per event even if there are more then one listener that matches that event.
+
 
 You should use the notify container for one to many or many to many relationship and polling container for one to one or many to one relationship.
 
@@ -92,28 +74,15 @@ There are basically two flavors to this framework:
 
 ### Executor Based Remoting
 
-{%section%}
-{%column width=95% %}
-The Executor Based Remoting used to deliver synchronous or asynchronous calls between the client and the server. In this mode the client invocation executes a task that invokes the relevant server method immediately when the call arrives to the server. The server must therefore be collocated with the space.
+
+The Executor Based Remoting {%javanet%}/executor-based-remoting.html{%endjavanet%} used to deliver synchronous or asynchronous calls between the client and the server. In this mode the client invocation executes a task that invokes the relevant server method immediately when the call arrives to the server. The server must therefore be collocated with the space.
 The client thread can wait for the execution to complete synchronously or use `Future` to receive the result asynchronously.
-{%endcolumn%}
-{%column width=5% %}
-{%javaapi%}{%latestjavaurl%}/executor-based-remoting.html{%endjavaapi%}{%wbr%}
-{%netapi%}{%latestneturl%}/executor-based-remoting.html{%endnetapi%}
-{%endcolumn%}
-{%endsection%}
+
 
 ### Event Driven Remoting
-{%section%}
-{%column width=95% %}
-With the Event Driven Remoting remote calls are queued in the space before they are executed. The implementation uses a polling container to handle the event and trigger the appropriate service implementation instance. Unlike the `Executor Based Remoting` the service implementation can be remote as well as collocated with the space.
 
-{%endcolumn%}
-{%column width=5% %}
-{%javaapi%}{%latestjavaurl%}/event-driven-remoting.html{%endjavaapi%}{%wbr%}
-{%netapi%}{%latestneturl%}/domain-service-host.html{%endnetapi%}
-{%endcolumn%}
-{%endsection%}
+With the Event Driven Remoting ([Jave version]({%latestjavaurl%}/event-driven-remoting.html) \| [.NET version]({%latestneturl%}/domain-service-host.html)) remote calls are queued in the space before they are executed. The implementation uses a polling container to handle the event and trigger the appropriate service implementation instance. Unlike the `Executor Based Remoting` the service implementation can be remote as well as collocated with the space.
+
 
 {%comment%}
 See [Space Based Remoting]({%currentjavaurl%}/space-based-remoting.html) page for more details when to use each of these options.
