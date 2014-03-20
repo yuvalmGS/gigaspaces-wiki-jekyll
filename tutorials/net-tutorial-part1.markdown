@@ -500,7 +500,7 @@ using GigaSpaces.Core.Linq;
    }
 {% endhighlight %}
 
-{%learn%}{%latestneturl%}/linq.html{%endlearn%}
+{%learn%}{%latestneturl%}/query-linq.html{%endlearn%}
 
 
 #### Removing Objects from Space

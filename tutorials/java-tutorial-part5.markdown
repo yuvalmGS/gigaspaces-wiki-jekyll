@@ -7,11 +7,14 @@ parent: java-home.html
 ---
 
 
+{%summary%}
+In this part of the tutorial we will introduce you the the Processing Unit (PU).
+{%endsummary%}
+
 # Overview
 {%section%}
 {%column width=80% %}
-
-In this part of the tutorial we will introduce you the the Processing Unit (PU). The PU is the fundamental unit of deployment in XAP. The PU itself runs within a Processing Unit Container and is deployed onto the Service Grid. Once a PU is deployed, a PU instance is the actual runtime entity. There are two types of Processing Unit Containers:
+The PU is the fundamental unit of deployment in XAP. The PU itself runs within a Processing Unit Container and is deployed onto the Service Grid. Once a PU is deployed, a PU instance is the actual runtime entity. There are two types of Processing Unit Containers:
 
 - Integrated Processing Unit Container
 A container that runs the PU inside an IDE (e.g. IntelliJ IDEA, Eclipse). The integrated processing unit container enables to run the PU inside your IDE for testing and debugging purposes.
@@ -60,7 +63,7 @@ XAP's Mule integration allows you to run a pure Mule application (with or withou
 # The PU Jar File
 Much like a JEE web application or an OSGi bundle, The PU is packaged as a .jar file and follows a certain directory structure which enables the XAP runtime environment to easily locate the deployment descriptor and load its classes and the libraries it depends on. A typical PU looks as follows:
 
-{%highlight java%}
+{%highlight console%}
 |----META-INF
 |--------spring
 |------------pu.xml
@@ -265,13 +268,13 @@ First we start the GigaSpace Agent (GSA) that will create our IMDG on this machi
 
 {% inittab d1|top %}
 {% tabcontent Windows %}
-{%highlight java%}
+{%highlight console%}
 GS_HOME\bin\gs-agent.bat
 {%endhighlight%}
 {% endtabcontent %}
 
 {% tabcontent Linux %}
-{%highlight java%}
+{%highlight console%}
 GS_HOME/bin/gs-agent.sh
 {%endhighlight%}
 {% endtabcontent %}
@@ -279,7 +282,7 @@ GS_HOME/bin/gs-agent.sh
 {% endinittab %}
 
 And now we deploy the PU onto the IMDG:
-{%highlight java%}
+{%highlight console%}
 GS_HOME\bin\gs.sh deploy  eventPU.jar
 {%endhighlight%}
 We assume that the jar we created is named eventPU.jar
@@ -399,7 +402,7 @@ public class PaymentProcessor {
 Lets assume that we have two machines available for our deployment. We want to deploy 4 instances of our PU, two on each machine.
 
 The deployment script for this scenario looks like this:
-{%highlight java%}
+{%highlight console%}
 
 With a statefull PU, embedded space
 ./gs.sh deploy -cluster schema=partitioned total_members=4,0 -max-instances-per-machine 2 eventPU.jar

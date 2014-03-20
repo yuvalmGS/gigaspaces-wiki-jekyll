@@ -34,9 +34,7 @@ GigaSpaces optimistic locking protocol:
 
 Here are the steps you should execute to update data, using the optimistic locking protocol:
 
-{% toczone minLevel=1|maxLevel=3|type=list|separator=pipe|location=top %}
-
-## Step 1 -- Get a Space Proxy in Versioned Mode
+#### Step 1 -- Get a Space Proxy in Versioned Mode
 
 Get a space proxy in `versioned` mode. This can be done using one of the options listed below. You may get remote or embedded space proxies. Make sure the proxy is in optimistic locking mode using the (`versioned`) option. This can be done using one of the options listed below:
 
@@ -54,7 +52,7 @@ public void createVersionedSpace()
 {%endhighlight%}
 
 
-## Step 2 -- Enable the Space Class to Support Optimistic Locking
+#### Step 2 -- Enable the Space Class to Support Optimistic Locking
 
 You should enable the Space class to support the optimistic locking protocol, by including the `[SpaceVersion]` decoration on an `int` getter field. This field stores the current object version and is maintained by XAP. See below for an example:
 
@@ -74,11 +72,11 @@ You should enable the Space class to support the optimistic locking protocol, by
     }
 {% endhighlight %}
 
-## Step 3 -- Read Objects without using a Transaction
+#### Step 3 -- Read Objects without using a Transaction
 
 Read objects from the space without using a transaction. You may use the `ReadMultiple` method to get several objects in one call. Reading objects without using a transaction, allows multiple users to get the same objects at the same time, and allows them to be updated using the optimistic locking protocol. If objects are read using a transaction, no other user can update the objects until the object is committed or rolled back.
 
-## Step 4 -- Modify and Update the Objects
+#### Step 4 -- Modify and Update the Objects
 
 Modify the objects you read from the space and call a `Write` space operation to update the object within the space.
 Use a transactional with your write operation. You **must** use a transaction when you update multiple space objects in the same context. When the write operation is called to update the object, the space does the following:
@@ -95,17 +93,17 @@ It is recommended that you call the update operation just before the commit oper
 ![optimistick_lock2.jpg](/attachment_files/optimistick_lock2.jpg)
 {% endindent %}
 
-## Step 5 -- Update Failure
+#### Step 5 -- Update Failure
 
 If you use optimistic locking and your update operation fails, an `Exception` is thrown. This exception is thrown when you try to write an object whose version ID value does not match the version of the existing object within the space - i.e. you are not using the latest version of the object. You can either roll back or refresh the failed object and try updating it again. This means you should repeat steps 3 and 4 - read the latest committed object from the space, back to the client side and perform the update again. For a fast refresh, you may re-read the object using `ReadByID` method. Make sure you also provide the `SpaceRouting` value.
 
-## Step 6 -- Commit or Rollback Changes
+#### Step 6 -- Commit or Rollback Changes
 
 At any time, you can commit or rollback the transaction. If you are using Spring automatic transaction demarcation, the commit is called implicitly once the method that started the transaction is completed.
+By following the above procedure, you get a shorter locking duration, that improves performance and concurrency of access among multiple users to the space object. The object version ID validation that is performed on Write, Take, and WriteMultiple requests, keeps the data within the space consistent.
 
-By following the above procedure, you get a shorter locking duration, that improves performance and concurrency of access among multiple users to the space object. The object version ID validation that is performed on `update`, `take`, and `updateMultiple` requests, keeps the data within the space consistent.
 
-{% endtoczone %}
+{%comment%}
 
 # Examples
 
@@ -352,6 +350,9 @@ while (true)
 {% tip %}
 When there are more than 2 clients (or 2 threads within the same client) that might update space objects at the same time, before re-reading the space objects, you should have a short sleep with a random duration. This allows one of the threads to complete the update successfully. Without such a sleep, you might have a contention with the update activity.
 {% endtip %}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++
+{%endcomment%}
 
 {% comment %}
 # Versioning

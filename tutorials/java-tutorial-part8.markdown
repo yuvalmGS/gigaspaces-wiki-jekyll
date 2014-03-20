@@ -43,12 +43,12 @@ You deploy a war file just like you deploy a pu jar.
 
 {% inittab d1 |top %}
 {% tabcontent Unix %}
-{%highlight java%}
+{%highlight console%}
 GS_HOME/bin/gs.sh deploy tutorial.war
 {%endhighlight%}
 {% endtabcontent %}
 {% tabcontent Windows %}
-{%highlight java%}
+{%highlight console%}
 GS_HOME\bin\gs.sh deploy tutorial.war
 {%endhighlight%}
 {% endtabcontent %}
@@ -110,7 +110,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(spaceConfigurer).gigaSpace();
 A web application is still just a processing unit. This means that a META-INF/spring/pu.xml can be added, where we define the standard XAP components. 
 
 Here is the layout of the war file structure:
-{%highlight java%}
+{%highlight console%}
 |----META-INF
 |--------spring
 |------------pu.xml
@@ -182,7 +182,7 @@ For example, if the session will be stored on a remote clustered space with a lo
 
 - Using Deploy property
 Here is how you can deploy an existing WAR file without changing it (or use Spring) to use XAP's HTTP Session Management:
-{%highlight java%}
+{%highlight console%}
 gs deploy -properties embed://jetty.sessions.spaceUrl=jini://*/*/sessionSpace?useLocalCache xapTutorialSpace.war
 {%endhighlight%}
 In this example we connect to a remote space called sessionSpace and create a local cache for the session caching.

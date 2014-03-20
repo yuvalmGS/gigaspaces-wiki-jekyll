@@ -193,9 +193,9 @@ XAP provides additional read modifiers to denote the isolation level:
 
 {%learn%}{%latestneturl%}/transaction-read-modifiers.html{%endlearn%}
 
-{%comment%}
+
 <ul class="pager">
   <li class="previous"><a href="./net-tutorial-part5.html">&larr; The Processing Unit</a></li>
-  <li class="next"><a href="./net-tutorial-part7.html">Space Persistence &rarr;</a></li>
+  <li class="next"><a href="./net-home.html">Tutorial Home&rarr;</a></li>
 </ul>
-{%endcomment%}
+

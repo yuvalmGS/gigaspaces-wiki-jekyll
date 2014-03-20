@@ -169,6 +169,36 @@ You will learn how to use:
 {%endsection%}
 {%endpanel%}
 
+{%comment%}============================ Part V ==================={%endcomment%}
+
+{%panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
+{%section%}
+{%column width=20% %}
+{%align center %}
+[Part V](./net-tutorial-part5.html)
+
+<img src="/attachment_files/qsg/pu.gif" width="100" height="100">
+{%endalign%}
+{%endcolumn%}
+
+{%column width=70% %}
+{%align center%}**The Processing Unit**{%endalign%}
+In this part of the tutorial we will introduce you the Processing Unit (PU). The PU is the fundamental unit of deployment in GigaSpaces XAP
+
+You will learn how to:
+
+- create a PU
+- configure the PU
+- deploy a PU
+- how to scale and provide failover
+
+
+{%align right%}{%learn%}./net-tutorial-part5.html{%endlearn%}{%endalign%}
+
+{%endcolumn%}
+{%endsection%}
+{%endpanel%}
+
 
 {%comment%}============================ Part VI ==================={%endcomment%}
 

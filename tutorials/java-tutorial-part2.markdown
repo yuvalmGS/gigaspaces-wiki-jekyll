@@ -13,7 +13,7 @@ parent: java-home.html
 # Overview
 {%section%}
 {%column width=80% %}
-In Part I you have learned about XAP's capabilities as a data store. In this part of the tutorial we will show you how you can deploy an In Memory Data Grid (IMDG) that provides scalability and failover. GigaSpaces XAP can be used as a scalable application platform on which you can host your Java application, similar to JEE and web containers. However, GigaSpaces XAP's IMDG can also be embedded within another Java application which is not hosted within the XAP platform. In this part of the tutorial we will show you how to start a data grid and how you can interact with it.  
+In Part I you have learned about XAP's capabilities as a data store. In this part of the tutorial we will show you how you can deploy an In Memory Data Grid (IMDG) that provides scalability and failover. XAP can be used as a scalable application platform on which you can host your Java application, similar to JEE and web containers. However, GigaSpaces XAP's IMDG can also be embedded within another Java application which is not hosted within the XAP platform. In this part of the tutorial we will show you how to start a data grid and how you can interact with it.
 {%endcolumn%}
 {%column width=20% %}
 <img src="/attachment_files/qsg/grid.gif" width="100" height="100">
@@ -28,13 +28,13 @@ To start an XAP data grid, run the following command:
 
 {% inittab tab1|top %}
 {% tabcontent Windows %}
-{%highlight java%}
+{%highlight console%}
 GS_HOME\bin\gs-agent.bat  
 {%endhighlight%}
 {% endtabcontent %}
 
 {% tabcontent Unix %}
-{%highlight java%}
+{%highlight console%}
 GS_HOME/bin/gs-agent.sh
 {%endhighlight%}
 {% endtabcontent %}
@@ -82,7 +82,7 @@ There are several ways you can deploy a new Data Grid; by command line, with jav
 
 We want to deploy a data grid that has two primary partitions and one backup for each primary partition.
 Here is the gs command that you would execute to achieve this:
-{%highlight java%}
+{%highlight console%}
 GS_HOME\bin\gs.sh deploy-space  -cluster schema=partitioned-sync2backup total_members=2,1  xapTutorialSpace
 {%endhighlight%}
 This command will start a space called xapTutorialSpace with two primary partitions and a backup for failover for each primary. 
@@ -116,7 +116,7 @@ Lets take our online payment system. We are expecting thousands or even millions
 Here is how you would configure your IMDG:
 Lets assume we have 4 machines available. On all machines we will start a GSA. The default gs-agent script will give us a total number of 8 GSC's. We want to deploy 4 partitions each having a backup and there should only be one instance per machine. 
 
-{%highlight java%}
+{%highlight console%}
 GS_HOME\bin\gs.sh deploy-space  -cluster schema=partitioned-sync2backup total_members=4,1 
        -max-instances-per-machine 1 xapTutorialSpace
 {%endhighlight%}
@@ -148,12 +148,12 @@ You can start XAP's console and inspect the Data Grid components that have been 
 
 {% inittab os_simple_space|top %}
 {% tabcontent Windows%}
-{%highlight java%}
+{%highlight console%}
 GS_HOME\bin\gs_webui.bat
 {%endhighlight%}
 {% endtabcontent %}
 {% tabcontent Unix%}
-{%highlight java%}
+{%highlight console%}
 GS_HOME/bin/gs_webui.sh
 {%endhighlight%}
 {% endtabcontent %}
