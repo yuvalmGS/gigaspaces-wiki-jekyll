@@ -55,7 +55,7 @@ It is highly recommended to use indexes on relevant properties to increase perfo
 {%panel title=The following LINQ operators are supported:%}
 
 - [Any](http://msdn.microsoft.com/en-us/library/system.linq.queryable.any) - Returns true if there are any entries matching the query in the space, false otherwise.
-- [Count](http://msdn.microsoft.com/en-us/library/system.linq.queryable.count) - Returns true if there are any entries matching the query in the space, false otherwise.
+- [Count](http://msdn.microsoft.com/en-us/library/system.linq.queryable.count) - Returns `int` `Count` of entries.
 - [LongCount](http://msdn.microsoft.com/en-us/library/system.linq.queryable.longcount) - Same as `Count`, but returns `long` instead of `int`.
 - [Single](http://msdn.microsoft.com/en-us/library/system.linq.queryable.single) - Returns the only matching entry from the space. Throws an exception if there are no matching entries or more than one match.
 - [SingleOrDefault](http://msdn.microsoft.com/en-us/library/system.linq.queryable.singleordefault) - Returns the only matching entry from the space, or null if there are no matching entries. Throws an exception if there is more than one match.
