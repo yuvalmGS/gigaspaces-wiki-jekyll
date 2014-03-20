@@ -65,7 +65,7 @@ Converting a numeric value to a String and using the string representation as th
 
 ## Example
 
-A cluster is defined with 3 partitions where each partition have one primary and one backup space.
+A cluster is defined with 3 partitions where each partition has one primary and one backup space.
 
 ![load_balancing1.jpg](/attachment_files/load_balancing1.jpg)
 
@@ -147,7 +147,7 @@ public class LoadBalancingCalc {
 
 		for (int i=0;i<dist.size() ; i++)
 		{
-			System.out.println("Partition " + i +  " have " + dist.get{% infosign %} + " objects");
+			System.out.println("Partition " + i +  " has " + dist.get{% infosign %} + " objects");
 		}
 		System.out.println();
 		System.out.println("Routing field values:");
@@ -170,16 +170,16 @@ Here is an example output:
 {% highlight java %}
 Total amount of objects:1000
 Total amount of partitions:10
-Partition 0 have 107 objects
-Partition 1 have 104 objects
-Partition 2 have 104 objects
-Partition 3 have 99 objects
-Partition 4 have 104 objects
-Partition 5 have 92 objects
-Partition 6 have 103 objects
-Partition 7 have 103 objects
-Partition 8 have 90 objects
-Partition 9 have 94 objects
+Partition 0 has 107 objects
+Partition 1 has 104 objects
+Partition 2 has 104 objects
+Partition 3 has 99 objects
+Partition 4 has 104 objects
+Partition 5 has 92 objects
+Partition 6 has 103 objects
+Partition 7 has 103 objects
+Partition 8 has 90 objects
+Partition 9 has 94 objects
 
 Routing field values:
 487,935,676,124,....
