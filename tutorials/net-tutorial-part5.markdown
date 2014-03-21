@@ -73,13 +73,15 @@ The file structure is composed of several key elements:
 
 - User class files: Your processing unit's classes (PaymentEventProcessor.cs)
 
-{%comment%}
+
 {%note title=Building the project with Visual Studio%}
+
 - Include in the References the GigaSpaceCore.dll
-- Change the project properties so the output directory is not the Release directory e.g.  `GS_HOME`\....\deploy
-- Configure the sla.xml and the pu.config file so that they are `always copied`
+- Change the project properties so the output directory points to `GS_HOME\NET v...\deploy\[pu-name\]`. The Admin UI and the command line interface will find the pu's to deploy under this file structure.
+- Configure the sla.xml and the pu.config file so that they are `[copy if newer]`
+
 {%endnote%}
-{%endcomment%}
+
 
 
 # The pu.conf file
@@ -232,7 +234,7 @@ GS_HOME/bin/gs-agent.sh
 
 And now we deploy the PU onto the IMDG:
 {%highlight console%}
-GS_HOME\bin\gs.sh deploy  eventProcessing
+GS_HOME\bin\gs.sh deploy  PaymentProcessor
 {%endhighlight%}
 
 
@@ -260,6 +262,7 @@ namespace UnitTest
     [TestClass]
     public class UnitTest
     {
+        // See note below !
         String url = "jini://*/*/eventSpace?groups=XAP-9.7.0-ga-NET-4.0.30319-x64";
 
         private ISpaceProxy proxy;
@@ -296,6 +299,11 @@ namespace UnitTest
 }
 
 {%endhighlight%}
+
+{%note%}
+When deploying the example with the admin UI, you need to configure the client space URL with the `groups` property default argument.
+You will find the value for the property in `GS_HOME\NET v....\Config\Settings.xml`. For example:  \[<XapNet.Groups>XAP-9.7.0-ga-NET-2.0.50727-x64</XapNet.Groups>\]
+{%endnote%}
 
 When you run this code you should see that the PU deployed onto the IMDG is processing the event, changes the status of the payment to PROCESSED and writes the event back into the space. The client then will receive an event because it has registered a listener that listens for processed payment events.
 
