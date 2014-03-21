@@ -34,9 +34,7 @@ To check your installed Java version:
 JAVA_HOME=C:\jdk1.6
 {% endhighlight %}
 
-# To check the JDK version, run **`%JAVA_HOME%\bin\java \-version`**
-
-A response like this from Java indicates you have a good JDK installed:
+To check the JDK version, run `%JAVA_HOME%\bin\java \-version`. A response like this from `Java` indicates you have a valid JDK installed:
 
 {% highlight java %}
 java version "1.6.0_23"
