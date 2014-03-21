@@ -13,8 +13,9 @@ weight: 500
 
 The GigaSpaces Data-Grid includes special interceptor that allow users to pre-load the Data-Grid with data before it is available for clients access. This interceptor called **Initial Load** and has a default implementation that is using the [Hibernate Space Persistency](./hibernate-space-persistency.html) implementation to load data from a database directly into the Data-Grid instances.
 
-To enable the initial load activity a `SpaceDataSource` should be specified.
-We distinguish between two modes of operation - if `SpaceSynchronizationEndpoint` is specified the mode is 'read-write', otherwise 'read-only'.
+![eds_initial_load.jpg](/attachment_files/eds_initial_load.jpg)
+
+To enable the initial load activity a `SpaceDataSource` should be specified. We distinguish between two modes of operation - if `SpaceSynchronizationEndpoint` is specified the mode is 'read-write', otherwise 'read-only'.
 
 - **read-only** - Space will be loading data from the persistency layer once started. It will access the persistency layer in case of a cache miss (only when running in LRU cache policy mode).
 - **read-write** - Space will be loading data from the persistency layer once started. It will write changes within the space back into the persistency layer in synchronous manner. For a-synchronous mode, the replication to the Mirror should be enabled and `SpaceSynchronizationEndpoint` should not be specified for the space but only for the mirror. The Mirror will be responsible to write the changes into the persistency layer.
@@ -38,14 +39,11 @@ Here is an example for a space configuration that performs only initial load fro
 </bean>
 {% endhighlight %}
 
-## Speeding-up Initial-Load
+# Speeding-up Initial-Load
 
 You can load 1TB data into a Data-Grid in less than 30 min by having each partition primary instance query a table column mapped to an object field storing the partition ID. This column should be added to every table. A typical setup to load 1TB in less than 30 min would be a database running on a multi-core machine with 1GB network and few partitions running on multiple multi-core machines. Without such initial-load optimization the more partitions the Data-Grid will have the initial-load time will be increased. Mapping the database files to SSD and using distributed database architecture (Nosql DB) would improve the initial-load time even further.
 
-# Parallel Load
-
-By default each Data-Grid primary partition loading its relevant data from the database (parallel load) and from there replicated to the backup instances.
-![eds_initial_load.jpg](/attachment_files/eds_initial_load.jpg)
+By default each Data-Grid primary partition loading its relevant data from the database and from there replicated to the backup instances.
 
 All irrelevant objects are filtered out during the data load process. You may optimize this activity by instructing each Data-Grid primary instance to a load-specific data set from the database via a custom query you may construct during the initial load phase.
 
@@ -81,7 +79,7 @@ public class SpaceDataSourceInitialLoadExample extends DefaultHibernateSpaceData
 }
 {% endhighlight %}
 
-## Controlling the Initial Load
+# Controlling the Initial Load
 
 Additional level of customization can be done by loading only the relevant data into each partition.
 
@@ -125,4 +123,29 @@ Make sure the routing field (i.e. PERSON_ID) will be an Integer type.
 Since each space partition stores a subset of the data , based on the entry routing field hash code value , you need to load the data from the database in the same manner the client load balance the data when interacting with the different partitions.
 
 The database query using the `MOD`, `PERSON_ID`, `number of partitions` and the `partition ID` to perform identical activity performed by a space client when performing write/read/take operations with partitioned space to rout the operation into the correct partition.
+
+
+# Multi-Parallel Initial Load
+
+The `ConcurrentMultiDataIterator` can be used for Multi-Parallel load. This will allow multiple threads to load data into each space primary partition. With the example below 4 threads will be used to load data into the space primary partition , each will handle a different `MyDataIterator`:
+
+{% highlight java %}
+public class MySpaceDataSource extends SpaceDataSource{
+
+	public DataIterator<Object> initialDataLoad() {
+		
+		MyDataIterator dataIteratorArry[] = new MyDataIterator [4];
+		dataIteratorArry[0] = new MyDataIterator(10,20);
+		dataIteratorArry[1] = new MyDataIterator(30,40);
+		dataIteratorArry[2] = new MyDataIterator(50,60);
+		dataIteratorArry[3] = new MyDataIterator(70,80);
+		
+		int threadPoolSize = dataIteratorArry.length;
+		ConcurrentMultiDataIterator  concurrentIterator = 
+		new ConcurrentMultiDataIterator(dataIteratorArry, threadPoolSize);
+		
+		return concurrentIterator;
+	}
+}
+{% endhighlight %}
 
