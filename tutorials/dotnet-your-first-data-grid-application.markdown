@@ -45,10 +45,10 @@ The Data grid can be deployed from command line, from the web management tool or
 Start a command line, navigate to the product's `bin` folder and run the following command:
 
 {% highlight bash %}
-gs-cli deploy-space -cluster total_members=2,1 myGrid
+gs-cli deploy-space -cluster total_members=2,1 myDataGrid
 {% endhighlight %}
   
-This command deploys a Data Grid (aka space) called **myGrid** with 2 partitions and 1 backup per partition (hence the `2,1` syntax). 
+This command deploys a Data Grid (aka space) called **myDataGrid** with 2 partitions and 1 backup per partition (hence the `2,1` syntax). 
 
 If you're using the web console mentioned above to see what's going on, you'll see the data grid has been deployed.
  
@@ -76,15 +76,15 @@ Launch Visual Studio, create a new C# *Console Application* and add a reference 
 
 ### Connecting to the Grid
 
-Since the Data grid is not located in our client process, we need some sort of address to find it. Data grids are searched using a `Space URL`, for example: `jini://*/*/myGrid?groups=$(XapNet.Groups)`. This roughly translates to: Find a remote space called `myGrid` (for more information see [SpaceURL]({%currentneturl%}/space-url.html)).
+Since the Data grid is not located in our client process, we need some sort of address to find it. Data grids are searched using a `Space URL`, for example: `jini://*/*/myDataGrid?groups=$(XapNet.Groups)`. This roughly translates to: Find a remote space called `myDataGrid` (for more information see [SpaceURL]({%currentneturl%}/space-url.html)).
 
 Now that we have an address, we can connect to the grid:       
 
 {% highlight csharp %}
-ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace("jini://*/*/myGrid?groups=$(XapNet.Groups)");
+ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace("jini://*/*/myDataGrid?groups=$(XapNet.Groups)");
 {% endhighlight %}
 
-The result is a `ISpaceProxy` instance, which is a proxy to the `myGrid` data grid. 
+The result is a `ISpaceProxy` instance, which is a proxy to the `myDataGrid` data grid. 
 
 ### Implementing a POCO
 
@@ -144,7 +144,7 @@ namespace XapDemo
     {
         static void Main(string[] args)
         {
-            String url = "jini://*/*/myGrid?groups=$(XapNet.Groups)";
+            String url = "jini://*/*/myDataGrid?groups=$(XapNet.Groups)";
             Console.WriteLine("Connecting to data grid " + url);
             ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
 
