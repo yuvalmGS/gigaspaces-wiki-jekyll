@@ -228,3 +228,31 @@ You will learn about:
 {%endcolumn%}
 {%endsection%}
 {%endpanel%}
+
+{%comment%}============================ Part VII ==================={%endcomment%}
+
+{%panel borderStyle=solid|borderColor=#3c78b5|bgColor=white %}
+{%section%}
+{%column width=20% %}
+{%align center %}
+[Part VII](./net-tutorial-part7.html)
+
+<img src="/attachment_files/qsg/persistence.png" width="100" height="100">
+{%endalign%}
+{%endcolumn%}
+
+{%column width=70% %}
+{%align center%}**Space Persistence**{%endalign%}
+In this part of the tutorial we will introduce you to space persistency.
+
+You will learn about:
+
+- Synchronous persistence
+- Asynchronos persistence
+- Persistence Adapter
+
+{%align right%}{%learn%}./net-tutorial-part7.html{%endlearn%}{%endalign%}
+
+{%endcolumn%}
+{%endsection%}
+{%endpanel%}

@@ -18,7 +18,9 @@ The mirror uses the External Data Source interface in write mode, and delegates 
 
 {% exclamation %} Before using the `ExternalDataSource.NHibernate` practice, compile it by calling `<GigaSpaces Root>\Bin\Practices\ExternalDataSource\NHibernate\build.bat`.
 
-{% infosign %} The database server used in this walkthrough is MySQL, and a database named `dotnetpersistency` is created in it.
+{% info %}
+The database server used in this walkthrough is MySQL, and a database named `dotnetpersistency` is created in it.
+{%endinfo%}
 
 # NHibernate Mapping and Configuration Files
 
@@ -113,7 +115,7 @@ namespace Entities
 
 # Starting the Spaces with NHibernate External Data Source
 
-This walkthrough demonstrates how to start the spaces with the NHibernate External Data Source from code, using a cluster in a [partitioned-sync2backup](/product_overview/terminology---data-grid-topologies.html) topology.
+This walk through demonstrates how to start the spaces with the NHibernate External Data Source from code, using a cluster in a [partitioned-sync2backup](/product_overview/terminology---data-grid-topologies.html) topology.
 Our cluster is 2,1 and a mirror. Therefore it consists of:
 
 - 2 partitioned primary spaces
@@ -144,6 +146,7 @@ spaceConfig.ExternalDataSourceConfig.Usage = Usage.ReadOnly
 spaceConfig.CustomProperties = new Dictionary<string, string>();
 //State the External Data Source is in All-In-Cache mode
 spaceConfig.CustomProperties.Add("space-config.engine.cache_policy", "1");
+
 //We need to configure this properties to let the cluster be aware that
 //there's a central database and not a database per space
 spaceConfig.CustomProperties.Add("cluster-config.cache-loader.external-data-source", "true");
@@ -155,11 +158,15 @@ spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 1, null, 2,
 ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace?mirror=true", spaceConfig);
 {% endhighlight %}
 
-{% lampon %} `<NHibernate config file>` (see code box above) should point to the NHibernate session factory [configuration file](#sessionfactory).
+{% info %}
+`<NHibernate config file>` (see code box above) should point to the NHibernate session factory [configuration file](#sessionfactory).
 
-{% lampon %} It is recommended that you put all the NHibernate HBM mapping files in one directory, and point `<NHibernate HBM files location>` (see code box above) to that directory.
+ It is recommended that you put all the NHibernate HBM mapping files in one directory, and point `<NHibernate HBM files location>` (see code box above) to that directory.
+{%endinfo%}
 
-{% exclamation %} You can also construct your own NHibernate session factory in code, and pass it to the constructor of the `NHibernateExternalDataSource`. In this case, there is no need to use `SpaceConfig.ExternalDataSourceConfig.CustomProperties`.
+{% note %}
+You can also construct your own NHibernate session factory in code, and pass it to the constructor of the `NHibernateExternalDataSource`. In this case, there is no need to use `SpaceConfig.ExternalDataSourceConfig.CustomProperties`.
+{%endnote%}
 
 To start the other members of the cluster, simply change the [ClusterInfo](./processing-unit-container.html#ClusterInfo):
 
