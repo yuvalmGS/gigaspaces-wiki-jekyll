@@ -16,7 +16,7 @@ GigaSpaces XAP.NET offers a collection of system properties which can be used to
 
 Like most .NET libraries, GigaSpaces XAP.NET configuration is based on [Application Configuration Files](http://msdn.microsoft.com/en-us/library/ms229689(VS.80).aspx). To set system properties via the configuration file:
 
-1. Add an Application Configuration File to your project (if your project already contains such a file skip this step):
+Step 1. Add an Application Configuration File to your project (if your project already contains such a file skip this step):
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -24,7 +24,7 @@ Like most .NET libraries, GigaSpaces XAP.NET configuration is based on [Applicat
 </configuration>
 {% endhighlight %}
 
-2. Add a definition for GigaSpaces configuration section:
+Step 2. Add a definition for GigaSpaces configuration section:
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -38,7 +38,7 @@ Like most .NET libraries, GigaSpaces XAP.NET configuration is based on [Applicat
 </configuration>
 {% endhighlight %}
 
-3. To add a system property, define a `SystemProperties` section in `GigaSpaces` section and add the desired properties names and values. The following example sets `com.gs.zones` to "foo":
+Step 3. To add a system property, define a `SystemProperties` section in `GigaSpaces` section and add the desired properties names and values. The following example sets `com.gs.zones` to "foo":
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
