@@ -17,7 +17,7 @@ One of two main failure scenarios might occur:
 - Process failure or machine crash
 - Network cable disconnection
 
-It takes GigaSpaces a few seconds to recover from process failure or a machine crash. In case of network cable disconnection, the client first has to detect that it has been disconnected from the machine running the space. Therefore, recovery time in this case is longer. For details on how network failure is detected and handled, see the [Communication Protocol]({%currentjavaurl%}/communication-protocol.html#watchdog) section.
+It takes GigaSpaces a few seconds to recover from process failure or a machine crash. In case of network cable disconnection, the client first has to detect that it has been disconnected from the machine running the space. Therefore, recovery time in this case is longer. For details on how network failure is detected and handled, see the [Communication Protocol]({%currentadmurl%}/tuning-communication-protocol.html#watchdog) section.
 
 # Reducing Failure Detection Time
 
@@ -80,11 +80,11 @@ The following parameters in the cluster schema [active election](#Active Electio
 
 ### Proxy Connectivity
 
-The [Proxy Connectivity]({%currentjavaurl%}/proxy-connectivity.html) defines the settings in which the system checks the liveness of space members.
+The [Proxy Connectivity]({%currentadmurl%}/tuning-proxy-connectivity.html) defines the settings in which the system checks the liveness of space members.
 
 ### Watchdog Parameters
 
-See the `com.gs.transport_protocol.lrmi.idle_connection_timeout` and the `com.gs.transport_protocol.lrmi.request_timeout` watchdog properties at the [Communication Protocol]({%currentjavaurl%}/communication-protocol.html#watchdog) section.
+See the `com.gs.transport_protocol.lrmi.idle_connection_timeout` and the `com.gs.transport_protocol.lrmi.request_timeout` watchdog properties at the [Communication Protocol]({%currentadmurl%}/tuning-communication-protocol.html#watchdog) section.
 
 ## Service Grid Parameters
 
@@ -126,4 +126,4 @@ When a Jini Lookup Service fails and is brought back online, a client (such as a
 
 The downside is that it may delay the discovery of services if these are not brought up quickly. A discovery can be delayed us much as 15 minutes. If you have two GSMs and one fails, but it will be brought back up only in the next hour, then it's discovery will take ~15 minutes after it has loaded.
 
-These settings can be configured - see [How to Configure Unicast Discovery](./how-to-configure-unicast-discovery.html).
+These settings can be configured - see [How to Configure Unicast Discovery](./network-unicast-discovery.html).

@@ -76,7 +76,7 @@ Another way to activate the example with an embedded space is:
 
 {% endinfo %}
 
-1. If you want to view the space in the [GigaSpaces Browser](./gigaspaces-management-center.html), execute `<GigaSpaces Root>\bin\gs-ui.sh/bat`.
+1. If you want to view the space in the [GigaSpaces Browser]({%currentadmurl%}/gigaspaces-management-center.html), execute `<GigaSpaces Root>\bin\gs-ui.sh/bat`.
 1. To start the sample application, execute `<Example Root>\bin\run_HelloWorld.sh/bat`.
 1. This is what you should see:
 

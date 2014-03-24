@@ -230,7 +230,7 @@ The Admin UI console has many more features which we will introduce you to throu
 
    
 
-{%learn%}{%latestjavaurl%}/web-management-console.html{%endlearn%}
+{%learn%}{%latestadmurl%}/web-management-console.html{%endlearn%}
 
  
 

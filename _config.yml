@@ -16,6 +16,7 @@ latest_gshome_net_dirname: "XAP.NET 9.7.0 x86"
 latest_default_lookup_group: "gigaspaces-9.7.0-XAPPremium-ga"
 latest_java_url: "/xap97"
 latest_net_url: "/xap97net"
+latest_adm_url: "/xap97adm"
 
 latest_cloudify_release: "2.7"
 

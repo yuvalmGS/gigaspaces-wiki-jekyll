@@ -66,8 +66,8 @@ weight: 500
 | `com.gs.filters.statistics.enabled` | Used by the space schema. | |
 | `com.gs.cluster.cache-loader.external-data-source` | Used by the cluster schemas for the `CacheLoader`. | |
 | `com.gs.cluster.cache-loader.shared-data-source` | Used by the cluster schemas for the `CacheLoader`. | |
-| `com.gs.cluster.livenessMonitorFrequency` | Defines the frequency in which liveness of 'live' members in a cluster is monitored. See [Viewing Clustered Space Status](./viewing-clustered-space-status.html) for more details. | Default 10000 ms&nbsp; |
-| `com.gs.cluster.livenessDetectorFrequency` | Defines the frequency in which liveness of members in a cluster is detected. See [Viewing Clustered Space Status](./viewing-clustered-space-status.html) | Default 5000 ms |
+| `com.gs.cluster.livenessMonitorFrequency` | Defines the frequency in which liveness of 'live' members in a cluster is monitored. See [Viewing Clustered Space Status]({%currentadmurl%}/troubleshooting-viewing-clustered-space-status.html) for more details. | Default 10000 ms&nbsp; |
+| `com.gs.cluster.livenessDetectorFrequency` | Defines the frequency in which liveness of members in a cluster is detected. See [Viewing Clustered Space Status]({%currentadmurl%}/troubleshooting-viewing-clustered-space-status.html) | Default 5000 ms |
 | `com.gs.number_implicit_indexs` | Used by default space schema. | the default number of implicit indexes: for `MemorySpace = 2`, `PersistentSpace = 1` |
 | `com.gs.callGC` | Boolean value.{% wbr %}Call garbage collection when performing eviction. This used when running in LRU cache policy and also at client side when using local cache. | `false` |
 | `com.gs.replication.disable_multicast_adaptor` | Boolean value.{% wbr %}Force disabling replication multicast adaptor. | `false` {% anchor xa %} |

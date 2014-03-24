@@ -593,7 +593,7 @@ For more information please refer to the API documentation: **[MirrorStatistics]
 
 # Monitoring the Remote Transport Activity
 
-You may monitor the remote communication activity via the Administration and Monitoring API. You may receive information in real-time about every aspect of the communication and transport activity. See the [Monitoring LRMI via the Administration API](./communication-protocol.html#Monitoring LRMI via the Administration API) for details.
+You may monitor the remote communication activity via the Administration and Monitoring API. You may receive information in real-time about every aspect of the communication and transport activity. See the [Monitoring LRMI via the Administration API]({%currentadmurl%}/tuning-communication-protocol.html#Monitoring LRMI via the Administration API) for details.
 
 
 {%children%}

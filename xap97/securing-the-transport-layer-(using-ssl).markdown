@@ -8,7 +8,7 @@ weight: 300
 
 {% summary %}GigaSpaces provides a generic network filter that also provides SSL support, through an SSL communication filter.{% endsummary %}
 
-{% refer %}[How to Set GigaSpaces Over a Firewall](./how-to-set-gigaspaces-over-a-firewall.html){% endrefer %}
+{% refer %}[How to Set GigaSpaces Over a Firewall]({%currentadmurl%}/network-over-firewall.html){% endrefer %}
 
 # Overview
 
@@ -17,8 +17,9 @@ GigaSpaces provides two types of communication filter:
 - Stream-based filter - for a protocol like ZIP. This type of filter does not support a handshake phase.
 - Block-based filter - for encryption network filters. These filters do support a handshake phase.
 
-{% infosign %} For now, GigaSpaces supports only one communication filter, and this filter is applied to all the connections in the JVM.
-
+{% info %}
+For now, GigaSpaces supports only one communication filter, and this filter is applied to all the connections in the JVM.
+{%endinfo%}
 # Usage
 
 The way to load and enable the communication filter, is by setting the system property `com.gs.lrmi.filter.factory`. The value should be the `communication filter factory` class name.
@@ -103,7 +104,7 @@ public class SSLClient {
 {% endhighlight %}
 
 As you can see, until now there is nothing special in the code -- it is the same code as if the SSL was not used.
-However, when you wish to run this code with SSL encryption, you should run it with the following system properties (both server and client), and have the [keystore](Securing the Transport Layer (using SSL)^keystore.ks) anywere in the classpath (both server and client).
+However, when you wish to run this code with SSL encryption, you should run it with the following system properties (both server and client), and have the [keystore](/download_files/keystore.ks) anywere in the classpath (both server and client).
 
 {% highlight java %}
 -Dcom.gs.lrmi.filter.factory=com.gigaspaces.lrmi.nio.filters.SSLFilterFactory

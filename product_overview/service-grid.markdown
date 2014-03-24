@@ -44,9 +44,9 @@ Note that the Lookup service is primarily used for establishing the initial conn
 
 Service registrations in the LUS are lease-based, and each service periodically renews its lease. That way, if a service hangs or disconnects from the LUS, its registration will be cancelled when the lease expires.
 
-The Lookup Service can be configured for either a [multicast]({%latestjavaurl%}/how-to-configure-multicast.html) or [unicast]({%latestjavaurl%}/how-to-configure-unicast-discovery.html) environment (default is multicast).
+The Lookup Service can be configured for either a [multicast]({%latestadmurl%}/network-multicast.html) or [unicast]({%latestadmurl%}/network-unicast-discovery.html) environment (default is multicast).
 
-Another important attribute in that context is the *lookup group*. The lookup group is a logical grouping of all the components that belong to the same runtime cluster. Using lookup groups, you can run multiple deployments on the same physical infrastructure, without them interfering with one another. For more details please refer to [Lookup Service Configuration]({%latestjavaurl%}/lookup-service-configuration.html).
+Another important attribute in that context is the *lookup group*. The lookup group is a logical grouping of all the components that belong to the same runtime cluster. Using lookup groups, you can run multiple deployments on the same physical infrastructure, without them interfering with one another. For more details please refer to [Lookup Service Configuration]({%latestadmurl%}/network-lookup-service-configuration.html).
 
 {%tip%}
 It is common to start at least two LUS instances in each Service Grid for high-availability reasons. Note that the lookup service can run in the same process with a GSM, or in standalone mode using its own process.

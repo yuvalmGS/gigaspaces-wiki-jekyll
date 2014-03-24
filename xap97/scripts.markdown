@@ -12,8 +12,8 @@ The `<gigaspaces root>/bin` folder includes scripts to manage and monitor [GigaS
 
 - **setenv** - Used by all scripts to configure and load [Common Environment Variables](./common-environment-variables.html).
 - **gs** - starts the GigaSpaces [interactive shell](./command-line-interface.html).
-- **gs-ui** - starts the [GigaSpaces Management Center](./gigaspaces-management-center.html).
-- **gs-webui** - starts the [Web Management Console](./web-management-console.html).
+- **gs-ui** - starts the [GigaSpaces Management Center]({%currentadmurl%}/gigaspaces-management-center.html).
+- **gs-webui** - starts the [Web Management Console]({%currentadmurl%}/web-management-console.html).
 - **gs-agent** - Starts the [GigaSpaces runtime environment](./the-runtime-environment.html) via the [Grid Service Agent](/product_overview/service-grid.html#gsa) (GSA), which starts and manages the [Service Grid](/product_overview/service-grid.html) components.
 
 {%note%} The `bin` folder also contains `advanced_scripts.zip` which contains [additional scripts](./advanced-scripts.html) occasionally useful for development and troubleshooting purposes.

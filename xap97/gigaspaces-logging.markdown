@@ -74,7 +74,7 @@ com.gigaspaces.client.cluster.liveness.level = INFO
 
 GigaSpaces Client can be another component or application that connects to a GigaSpaces cluster.
 Liveness check is a functionality that runs inside a GigaSpaces proxy (usually held by a client connecting to a space) to keep track of the cluster members.
-Additional info about GigaSpaces proxy can be found [here](./proxy-connectivity.html)
+Additional info about GigaSpaces proxy can be found [here]({%currentadmurl%}/tuning-proxy-connectivity.html)
 
 ### .Net API
 
@@ -141,7 +141,7 @@ com.gigaspaces.lrmi.channel.manager.level = INFO
 com.gigaspaces.lrmi.channel.protocol.level = INFO
 {% endhighlight %}
 
-GigaSpaces components communicate using internal communications adaptor, LRMI (Light Remote Method Invocation), which is based on NIO communication protocol. More information about lrmi is [here](./communication-protocol.html).
+GigaSpaces components communicate using internal communications adaptor, LRMI (Light Remote Method Invocation), which is based on NIO communication protocol. More information about lrmi is [here]({%currentadmurl%}/tuning-communication-protocol.html).
 {% endtabcontent %}
 {% tabcontent Class Loader %}
 
@@ -412,7 +412,7 @@ com.gigaspaces.admin.cli.level = INFO
 com.gigaspaces.jmx.level = INFO
 {% endhighlight %}
 
-Loggers corresponding to GigaSpaces Management Console/UI. Additional information regarding UI can be found [here](./gigaspaces-management-center.html).
+Loggers corresponding to GigaSpaces Management Console/UI. Additional information regarding UI can be found [here]({%currentadmurl%}/gigaspaces-management-center.html).
 {% endtabcontent %}
 {% endinittab %}
 

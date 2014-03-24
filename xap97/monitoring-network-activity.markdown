@@ -6,8 +6,8 @@ parent: managing-and-monitoring-a-running-system.html
 weight: 500
 ---
 
-{% compositionsetup %}
-{% summary %}Monitoring network and usage activity used by the [LRMI](./communication-protocol.html) layer between GigaSpaces component.{% endsummary %}
+
+{% summary %}Monitoring network and usage activity used by the [LRMI]({%currentadmurl%}/tuning-communication-protocol.html) layer between GigaSpaces component.{% endsummary %}
 
 # Overview
 

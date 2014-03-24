@@ -63,7 +63,7 @@ XAP relies on the JavaSpaces (space-based) model as its core middleware, and pro
 |:--------|:--------|
 | [Extended and Standard Query]({%latestjavaurl%}/query-sql.html) based on SQL, and ability to connect to IMDG using standard JDBC connector. | Makes the IMDG accessible to standard reporting tools, and makes accessing the IMDG just like accessing a JDBC-compatible database, reducing the learning curve. |
 | SQL-based continuous query support. | Brings relevant data close to the local memory of the relevant application instance. |
-| [GigaSpaces Management Center]({%latestjavaurl%}/gigaspaces-management-center.html) -- central management, monitoring and control of all IMDG instances on the network. | Allows the entire IMDG to be controlled and viewed from an administrator's console. |
+| [GigaSpaces Management Center]({%latestadmurl%}/gigaspaces-management-center.html) -- central management, monitoring and control of all IMDG instances on the network. | Allows the entire IMDG to be controlled and viewed from an administrator's console. |
 | [Mirror Service]({%latestjavaurl%}/asynchronous-persistency-with-the-mirror.html) -- transparent persistence of data from the entire IMDG to a legacy database or other data source. | Allows seamless integration with existing reporting and back-office systems. |
 | Real-time event notification -- application instances can selectively subscribe to specific events. | Provides capabilities usually offered by messaging systems, including slow-consumer support, FIFO, batching, pub/sub, content-based routing. |
 

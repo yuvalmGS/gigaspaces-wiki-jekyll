@@ -6,7 +6,7 @@ parent: data-grid-clustering.html
 weight: 300
 ---
 
-{% compositionsetup %}
+
 {% summary %}This section describes GigaSpaces IMDG Failover facilities.{% endsummary %}
 
 # Overview
@@ -19,8 +19,8 @@ The component responsible for failover in GigaSpaces is the clustered proxy. Whe
 
 Failover and Recovery process includes the following steps (we assume spaces deployed using the SLA driven container (GSC and GSM):
 
-1. Backup identifies that the primary space is not available and moving itself to a primary mode. For information on speeding up this step refer to [Failure Detection](./failure-detection.html).
-2. Space proxy router discovers the new primary space and routs the request to it. For information on speeding up this step refer to [Proxy Connectivity](./proxy-connectivity.html).
+1. Backup identifies that the primary space is not available and moving itself to a primary mode. For information on speeding up this step refer to [Failure Detection]({%currentadmurl%}/troubleshooting-failure-detection.html).
+2. Space proxy router discovers the new primary space and routs the request to it. For information on speeding up this step refer to [Proxy Connectivity]({%currentadmurl%}/tuning-proxy-connectivity.html).
 3. GSM identifies the backup space is missing and provision new space into existing GSC - preferably empty GSC or based on predefined SLA. You can tune this step by modifying the GSM settings.
 4. Backup started. It is looking for the look service and register itself.
 5. Backup identifies that a primary space exists (goes through primary election process) and moves itself into backup mode. If there are multiple GSMs and bad network or wrong locators configuration -- you might end up here with split-brain scenario where you have multiple primaries running.

@@ -59,4 +59,4 @@ Let's examine that format:
 * `<containerName>` - Indicates a specific member in the cluster to find. Use `*` for finding any cluster member.
 * `<spaceName>` - Name of space to find.
 
-{% infosign %} For more information regarding unicast and multicast lookup, see [Loouk Service Configuration](./lookup-service-configuration.html).
+{% infosign %} For more information regarding unicast and multicast lookup, see [Loouk Service Configuration]({%currentadmurl%}/network-lookup-service-configuration.html).

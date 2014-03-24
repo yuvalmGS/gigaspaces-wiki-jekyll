@@ -179,7 +179,7 @@ Using `-c` (or `-cluster`) with a URL of a clustered space displays configuratio
 Displays all live connections to the specified space.
 
 {% note %}
-It is also possible to retrieve space connections using the GigaSpaces UI **[Connections view](./connections-view---gigaspaces-browser.html)**.
+It is also possible to retrieve space connections using the GigaSpaces UI **[Connections view]({%currentadmurl%}/gigaspaces-browser-connection-view.html)**.
 {%endnote%}
 
 The information that is shown:

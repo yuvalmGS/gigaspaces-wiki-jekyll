@@ -134,7 +134,7 @@ A full description of the Space URL Properties can be found [here.](./the-space-
 
 
 ## Reconnection
-When working with a **remote space**, the space may become unavailable (network problems, processing unit relocation, etc.). For information on how such disruptions are handled and configured refer to [Proxy Connectivity](./proxy-connectivity.html).
+When working with a **remote space**, the space may become unavailable (network problems, processing unit relocation, etc.). For information on how such disruptions are handled and configured refer to [Proxy Connectivity]({%currentadmurl%}/tuning-proxy-connectivity.html).
 
 
 
