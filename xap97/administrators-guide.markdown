@@ -12,11 +12,12 @@ The primary focus of the Administrator's Guide, is to provide both a basic, as w
 
 {%comment%}
 After reading this guide, administrators and operators will be able to set up, validate, configure, monitor and troubleshoot various aspects of the GigaSpaces XAP platform.
-{%endcomment%}
+
 
 {% note %}
 Note that this guide is specific to XAP administration. For instructions on how to use the Management Center, Web Management Console, Network Configuration, Performance Tuning and Troubleshooting please refer to the [Administrator's Guide]({%currentadmurl%}/).
 {%endnote%}
+{%endcomment%}
 
 
 {%children%}

@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  System Properties List
+title:  Properties List
 categories: XAP97NET
-parent: configuration.html
+parent: system-configuration.html
 weight: 200
 ---
 
-# System Properties List
+
 
 {% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}
 
