@@ -8,7 +8,7 @@ weight: 200
 
 {% summary %}Pinging, destroying, cleaning, stopping, starting, and restarting a space using the button toolbar.{% endsummary %}
 
-# Basic Space Configuration
+
 
 To view the Space Configuration screen for a specific space, select that space's node (![Space Maintenance2.jpg](/attachment_files/Space Maintenance2.jpg)) in the **Container Tree** panel on the left.
 

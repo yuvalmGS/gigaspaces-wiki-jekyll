@@ -64,17 +64,15 @@ java://LookupServiceHostName:port/myContainerName/spaceName{%wbr%}
 
 
 **Distributed Unicast-Based Lookup Service Support**{%wbr%}
-In environments that do not support multicast, you can use the `locators` space URL property to instruct the started space or a client to locate the Jini Lookup Service on specific host names and ports.{%wbr%}
-
-The locators can have a comma-delimited lookup hosts list:{%wbr%}
+In environments that do not support multicast, you can use the `locators` space URL property to instruct the started space or a client to locate the Jini Lookup Service on specific host names and ports.The locators can have a comma-delimited lookup hosts list.
 
 The following URL formats are supported:{%wbr%}
 
-{%highlight xml%}
-jini://*/*/space_name?locators=h1:port,h2:port,h3:port{%wbr%}
-jini://LookupServiceHostName1:port1,....LookupServiceHostName n:port n/*/space_name {%wbr%}
-jini://LookupServiceHostName1:port1,....LookupServiceHostName n:port n/*/space_name?locators=LookupServiceHostName1:port,LookupServiceHostName2:port,LookupServiceHostName3:port{%wbr%}
-jini://LookupServiceHostName1:port1/*/space name?locators=LookupServiceHostName1:port,LookupServiceHostName2:port,LookupServiceHostName3:port {%wbr%}
+{%highlight console%}
+jini://*/*/space_name?locators=h1:port,h2:port,h3:port
+jini://LookupServiceHostName1:port1,....LookupServiceHostName n:port n/*/space_name
+jini://LookupServiceHostName1:port1,....LookupServiceHostName n:port n/*/space_name?locators=LookupServiceHostName1:port,LookupServiceHostName2:port,LookupServiceHostName3:port
+jini://LookupServiceHostName1:port1/*/space name?locators=LookupServiceHostName1:port,LookupServiceHostName2:port,LookupServiceHostName3:port
 {%endhighlight%}
 
 

@@ -8,7 +8,6 @@ weight: 300
 
 {% summary %}A failover group defines failover between spaces in the cluster.{% endsummary %}
 
-# Overview
 
 A group can define a failover policy, in which case clients of spaces belonging to the group receive and use a clustered proxy instead of a regular proxy. The failover policy of the group determines the failover behavior for the clustered proxy of any space in the group.
 A group that defines a failover policy is called a failover group. A failover group can also be a replication group and a load-balancing group.

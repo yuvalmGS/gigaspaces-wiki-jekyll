@@ -10,9 +10,9 @@ weight: 700
 
 # Overview
 
-GigaSpaces space and client components open different ports in various situations. The following list describes the different ports used by GigaSpaces and how these can be modified:
+XAP space and client components open different ports in various situations. The following list describes the different ports used by XAP and how these can be modified:
 
-{% refer %}Learn how to **[set GigaSpaces over a firewall](./network-over-firewall.html)**.{% endrefer %}
+{% refer %}Learn how to **[set XAP over a firewall](./network-over-firewall.html)**.{% endrefer %}
 
 {: .table .table-bordered}
 | Service | Description | Configuration Property| Default value |
@@ -26,7 +26,7 @@ GigaSpaces space and client components open different ports in various situation
 - When starting a space and providing the port as part of the URL - i.e. `java://localhost:PORT/container/space` - the specified port will be used both for the RMI registry listener and also for the container to register into the RMI registry.
 - The Jini Lookup Service uses unicast and multicast announcements and requests.
 - The **multicast** discovery protocol uses ports 4170.
-- You can **completely disable multicast announcement traffic**. Refer to the [Lookup Service Configuration](./network-lookup-service-configuration.html) or [Setting GigaSpaces Over Firewall](./network-over-firewall.html) sections for more details.
+- You can **completely disable multicast announcement traffic**. Refer to the [Lookup Service Configuration](./network-lookup-service-configuration.html) or [Setting XAP Over Firewall](./network-over-firewall.html) sections for more details.
 - When running a clustered space using replication via multicast, additional ports are used.
 
 {% comment %}

@@ -36,7 +36,10 @@ In many scenarios, you need to set up GigaSpaces in environments which have a fi
 1. All communications traversing the firewall should be switched to Unicast TCP (use GigaSpaces Jini unicast lookup locators and set the -Dcom.gs.multicast.discoveryPort as described in the next section), Jini Multicast discovery should be disabled.
 1. Specific listener ports of system components should be **statically set**.
 1. Necessary listener **port ranges** should be defined per each IP address, where the GigaSpaces server components reside.
-{% exclamation %} Components such as GSM/Lookup Service, GSC, Mahalo use a single Webster (HTTPD service) and a single LRMI transport port per each component. Accordingly, the same quantity of Webster and LRMI ports should be planned per each IP address where those components reside.
+
+{% warning %}
+Components such as GSM/Lookup Service, GSC, Mahalo use a single Webster (HTTPD service) and a single LRMI transport port per each component. Accordingly, the same quantity of Webster and LRMI ports should be planned per each IP address where those components reside.
+{%endwarning%}
 
 {% info%}
 Port ranges should be chosen continuously, as Webster and LRMI port bindings are performed **sequentially*, beginning from the low port number -- each additional component started on the *same machine** opens sequentially higher Webster and LRMI ports, beginning from the low port in the defined port range.
@@ -72,37 +75,37 @@ Add the following system properties to the command line:
 
 - **Optional** -- use the following system property to **disable the Jini multicast activity**. For unicast-only solutions:
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.multicast.enabled=false
 {% endhighlight %}
 
 - **Mandatory** -- Reggie Lookup Service: in this context, modify `com.gs.multicast.discoveryPort`, the port used during discovery for both unicast and multicast requests. Default value is `4174`.
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.multicast.discoveryPort=
 {% endhighlight %}
 
 - **Mandatory** -- Reggie Lookup Service: in this context, modify `com.sun.jini.reggie.initialUnicastDiscoveryPort`, the port used during unicast discovery. Default value is `0` - any available port.
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.sun.jini.reggie.initialUnicastDiscoveryPort=
 {% endhighlight %}
 
 - **Optional** -- `RMIRegistry` port (used for RMI lookup and for JMX MBean server). Default value is `10098`.
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gigaspaces.system.registryPort=
 {% endhighlight %}
 
 - **Mandatory** -- Webster HTTPD service port.
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gigaspaces.start.httpPort=
 {% endhighlight %}
 
 Settings example:
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.multicast.enabled=false
 -Dcom.gs.multicast.discoveryPort=7102
 -Dcom.gigaspaces.system.registryPort=7103
@@ -115,31 +118,31 @@ Add the following system properties to the command line:
 
 - **Mandatory** -- use the following system property to **disable the Jini multicast activity**. For unicast-only solutions:
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.multicast.enabled=false
 {% endhighlight %}
 
 - **Mandatory** -- Reggie Lookup Service: in this context, modify `com.gs.multicast.discoveryPort`, the port used during discovery for both unicast and multicast requests. Default value is `4174`.
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.multicast.discoveryPort=
 {% endhighlight %}
 
 - **Mandatory** -- `RMIRegistry` port (used for RMI lookup and for JMX MBean server). Default value is `10098`.
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gigaspaces.system.registryPort=
 {% endhighlight %}
 
 - **Optional** -- Webster HTTPD service port.
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gigaspaces.start.httpPort=
 {% endhighlight %}
 
 Settings example:
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.multicast.enabled=false
 -Dcom.gs.multicast.discoveryPort=7102
 -Dcom.gigaspaces.system.registryPort=7103
@@ -150,7 +153,7 @@ Settings example:
 
 Lookup locators unicast discovery port should be the same as defined in `gs.sh`, for example:
 
-{% highlight java %}
+{% highlight console %}
 LOOKUPLOCATORS=server111:7102; export LOOKUPLOCATORS
 {% endhighlight %}
 
@@ -159,7 +162,7 @@ LOOKUPLOCATORS=server111:7102; export LOOKUPLOCATORS
 {% refer %}For more details on the LRMI communication protocol, see the [Communication Protocol](./tuning-communication-protocol.html) section.{% endrefer %}
 The `com.gigaspaces.start.httpPort` Webster port number property can be defined by overriding as shown below, or using a system property:
 
-{% highlight java %}
+{% highlight console %}
 gsm.sh webster.xml
 gsc.sh webster.xml
 startJiniTX_Mahalo.sh webster.xml
@@ -187,7 +190,7 @@ In such a case you could disable the `Blocking Reliable Take` activity by using 
 
 Here is how you can configure the space to disable the Blocking Reliable Take activity:
 
-{% highlight java %}
+{% highlight xml %}
 <os-core:space id="space" url="/./space">
     <os-core:properties>
         <props>

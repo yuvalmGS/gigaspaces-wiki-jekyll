@@ -8,9 +8,9 @@ weight: 300
 
 {% summary %}As part of configuring  GigaSpaces, you can fine-tune settings that enhance system use of the JVM. {% endsummary %}
 
-# Overview - Tuning Java Virtual Machines
+# Overview
 
-GigaSpaces, being a Java process, requires a Java virtual machine (JVM) to run. As part of configuring  GigaSpaces, you can fine-tune settings that enhance system use of the JVM. A JVM provides the runtime execution environment for Java-based applications. GigaSpaces can run on JVMs from different JVM providers. When GigaSpaces starts it writes information about the JVM, including the JVM provider information, into this  log file and the standard output.
+XAP, being a Java process, requires a Java virtual machine (JVM) to run. As part of configuring  XAP, you can fine-tune settings that enhance system use of the JVM. A JVM provides the runtime execution environment for Java-based applications. XAP can run on JVMs from different JVM providers. When GigaSpaces starts it writes information about the JVM, including the JVM provider information, into this  log file and the standard output.
 
 Even though JVM tuning is dependent on the JVM provider, general tuning concepts apply to all JVMs.
 

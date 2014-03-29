@@ -6,16 +6,19 @@ parent: web-management-console.html
 weight: 100
 ---
 
+{%comment%}
 {% summary %}Configuring various options and customizing the management console.{% endsummary %}
+### Internationalization
+{%endcomment%}
 
 
-# Internationalization
+
 
 The management console allows for alternative locales which can be configured via XML. Currently, the supported locales
 are Chinese and English (which is the default). Users wishing to change the locale can do so in two ways:
 
 
-## Using a new configuration file
+### Using a new configuration file
 
 * Create a new file with the following contents:
 
@@ -43,7 +46,7 @@ are Chinese and English (which is the default). Users wishing to change the loca
 {% inittab external-locale-configuration|top %}
 {% tabcontent Linux %}
 
-{% highlight sh %}
+{% highlight console %}
 # specify the locale context location
 export WEBUI_JAVA_OPTIONS=-Dcom.gs.webui.context=classpath:config/locale.xml
 
@@ -54,7 +57,7 @@ bin/gs-webui.sh
 {% endtabcontent %}
 {% tabcontent Windows %}
 
-{% highlight bat %}
+{% highlight console %}
 :: specify the locale context location
 set WEBUI_JAVA_OPTIONS=-Dcom.gs.webui.context=classpath:config/locale.xml
 
@@ -67,7 +70,7 @@ bin\gs-webui.bat
 
 
 
-## Update the existing configuration file
+### Update the existing configuration file
 
 * Open the *gs-webui.war* archive (found under `[XAP_HOME]/tools/gs-webui`) for exploring and navigate to */WEB-INF/lib*.
 Open the *gs-webui-[version-build].jar* archive for exploring.

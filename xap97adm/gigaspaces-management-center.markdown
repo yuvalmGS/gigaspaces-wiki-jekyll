@@ -6,21 +6,39 @@ parent: none
 weight: 600
 ---
 
-{% summary section %}GigaSpaces Management Center is a GUI that allows you to view spaces, containers, and clusters and configure them, using the Space Browser tab. You can also deploy and manage services using the Deployments tab.{% endsummary %}
+{%wbr%}
 
-{% note title=Using the GigaSpaces Management Center in production and large-scale environments %}
+{%section%}
+{%column width=15% %}
+<img src="/attachment_files/subject/MonitoringAndManagement.png" width="80" height="80">
+{%endcolumn%}
+{%column width=85% %}
+XAP Management Center is a GUI that allows you to view spaces, containers, and clusters and configure them, using the Space Browser tab. You can also deploy and manage services using the Deployments tab.
+{%endcolumn%}
+{%endsection%}
+{%wbr%}
 
-- It is highly recommended to run the GigaSpaces Management Center on the **same network subnet** as the Data-Grid and other GigaSpaces runtime components are running. Since the GigaSpaces Management Center communicates with the Data-Grid,GSCs, GSM, GSA and Lookup-Service continuously, it should have fast connectivity with these components. High latency connectivity will impact the responsiveness of the GigaSpaces Management Center and its initial bootstrap time. In production environments you should use remote desktop products such as [VNC](http://www.realvnc.com/products/free/4.1/index.html) or [No Machine](http://www.nomachine.com), run the GigaSpaces Management Center at the **same** network subnet as the Data-Grid and the other GigaSpaces runtime components and run the VNC or NX client side to access the remote machines desktop from the administrator machine desktop.
-- With relatively large amount of GSCs , Services or Data-Grid partitions (over 20 units) it is recommended to increase the heap size of the GigaSpaces Management Center to 1G (-Xmx1g).
-{% endnote %}
-
-# Overview
-
-{% include /COM/about-gigaspaces-management-center.markdown %}
 
 
-# Space Browser tab
+- [Menus and Buttons](./gigaspaces-browser-menus-and-buttons.html){%wbr%}
+Using the File menu, Container menu, Space menu, Cluster menu, Windows menu, Help menu, button toolbar, and address bar.
 
-{% include /COM/about-using-space-browser-tab---gigaspaces-management-center.markdown %}
 
-{%children%}
+- [Tree Panel and Configurations](./gigaspaces-browser-tree-panel-and-configuration-panel.html){%wbr%}
+Using the Grid Tree and the Configuration Panel on the right.
+
+- [Space Containers](./gigaspaces-browser-managing-space-container.html){%wbr%}
+Using the Space Container Configuration tab of a container node in the Grid Tree, and tool buttons relevant for containers.
+
+
+- [Working with Clusters](./working-with-clusters---gigaspaces-browser.html){%wbr%}
+Creating a cluster, replication options, load-balancing options, failover options, verifying and editing cluster definitions, visualizing clusters.
+
+
+- [Working with Spaces](./working-with-spaces---gigaspaces-browser.html){%wbr%}
+Performing operations on a space in the XAP Browser.
+
+
+- [Pending Notifications](./pending-notify-templates-information.html){%wbr%}
+Information regarding pending notify templates
+

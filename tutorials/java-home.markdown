@@ -23,14 +23,17 @@ Throughout this tutorial we will create and use a simple internet payment servic
 
 Here is the simplified Class Model:
 
-{%indent %}
-[<img src="/attachment_files/qsg/class_diagram.png" width="200" height="140">](/attachment_files/qsg/class_diagram.png)
-{%endindent%}
- 
+
+{% popup /attachment_files/qsg/class_diagram.png, Class Diagram, Alt Title %}
+{%include lightbox.html%}
+
+
 
 {%comment%}
-| witdh=300px, height=300px!
+{%include lightbox.html%}
+[<img src="/attachment_files/qsg/class_diagram.png" width="200" height="140">](/attachment_files/qsg/class_diagram.png)
 {%endcomment%}
+
 
 You can download all examples presented here from [GitHub](https://github.com/Gigaspaces/xap-tutorial). Feel free to clown, fork and contribute to the tutorial code.
 

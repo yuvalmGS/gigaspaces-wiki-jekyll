@@ -7,10 +7,20 @@ weight: 900
 ---
 
 
-In this guide you will find information on how to tune your XAP application. Amongst the topics covered are JVM tuning, thread usage and benchmarking.
-
-You can also find a checklist for [Moving your application into production](/sbp/moving-into-production-checklist.html) in the Patterns section.
+In this guide you will find information on how to tune your XAP application. Amongst the topics covered are JVM tuning and thread usage.
 
 
+- [Infrastructure Tuning](./tuning-infrastructure.html){%wbr%}
+Recommendations for tuning the infrastructure on which XAP is running.
 
-{% children %}
+- [XAP Performance Tuning](./tuning-gigaspaces-performance.html){%wbr%}
+Recommendations for tuning XAP, boosting its performance, and improving its scalability.
+
+
+- [Tuning Threads](./tuning-threads-usage.html){%wbr%}
+This section describes Thread pool tuning.
+
+
+#### Related Topics
+
+- [Moving your application into production](/sbp/moving-into-production-checklist.html)

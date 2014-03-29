@@ -6,17 +6,38 @@ parent: none
 weight: 700
 ---
 
-{% summary %}The web management console is a new user interface for XAP allowing users to deploy, manage and monitor their Processing Units and Applications{% endsummary %}
+{%wbr%}
 
-# Overview
-
+{%section%}
+{%column width=15% %}
+<img src="/attachment_files/subject/WebManagementConsole.png" width="80" height="80">
+{%endcolumn%}
+{%column width=85% %}
 The XAP web management console is a web application which was designed to enable XAP users to quickly understand the state of a running XAP cluster and monitor the running components, i.e. physical hosts, JVMs and deployed processing units.
+{%endcolumn%}
+{%endsection%}
+{%wbr%}
 
-In terms of functionality, it does not currently replace the existing standalone GUI (the GigaSpaces Management Center), but rather completes it.
+- [Console](./web-management-console-console.html){%wbr%}
+The web management console is a new user interface for XAP allowing users to deploy, manage and monitor their Processing Units and Applications
 
-![dashboard803_9_6.png](/attachment_files/dashboard803_9_6.png)
+- [Configuration](./web-management-console-configuration.html){%wbr%}
+Configuring various options and customizing the management console.
+
+- [Starting the console](./web-management-console-starting.html){%wbr%}
+Reviews the different deployment option of the web management console
+
+- [Dashboard](./web-management-dashboard-view.html){%wbr%}
+Main Dashboard navigation view
+
+- [Application View](./web-management-application-view.html){%wbr%}
+Applications and Processing unit dependency view
+
+- [Host View](./web-management-hosts-view.html){%wbr%}
+Physical resources
+
+- [Data Grid View](./web-management-data-grid-view.html){%wbr%}
+Cluster wide information about your data grids including: data queries, metrics, metadata etc.
 
 
-{%children%}
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/9nFkfj2o5hk?feature=player_embedded" frameborder="0" allowfullscreen></iframe>

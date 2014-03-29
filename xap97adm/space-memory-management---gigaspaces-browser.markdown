@@ -8,7 +8,6 @@ weight: 300
 
 {% summary %}Using the **Memory Management** tab of the advanced space configuration dialog.{% endsummary %}
 
-# Overview
 
 ![Space Memory Management - GigaSpaces Browser.jpg](/attachment_files/Space Memory Management - GigaSpaces Browser.jpg)
 

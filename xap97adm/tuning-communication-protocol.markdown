@@ -36,13 +36,13 @@ The client LRMI connection pool maintained per server component - i.e. by each s
 {% tip %}
 You may need to change the `com.gs.transport_protocol.lrmi.max-conn-pool` value (1024) to have a smaller number. The default might be high for application with multiple partitions.
 
-{% highlight java %}
+{% highlight console %}
 Client total # of open connections = com.gs.transport_protocol.lrmi.max-conn-pool * # of partitions
 {% endhighlight %}
 
 This may result very large amount of connections started at the client side resulting "Too many open files" error. You should increase the OS' max file descriptors amount by calling the following before running the client application (on UNIX):
 
-{% highlight java %}
+{% highlight console %}
 ulimit -n 32000
 {% endhighlight %}
 
@@ -132,7 +132,7 @@ The `LRMI` configuration options set as system proprties. They are listed below:
 |:----------------|:------------|:--------------|:----------------------|:-----|:------------------------------------|
 | `com.gs.transport_protocol.lrmi.max-conn-pool` | The maximum amount of connections to the space server remote services that can work simultaneously in a client connection pool. Starts with 1 connection. Defined per each remote service (by default, each remote service has `1024` maximum connections). | `1024` | Server | Connection| No|
 | `com.gs.transport_protocol.lrmi.min-threads` | GigaSpaces maintains a thread pool in the client and server side, that manages incoming remote requests. The thread pool size is increased each time with one additional thread and shrinks when existing threads are not used for 5 minutes. This parameter specifies the minimum size of this thread pool. | `1` | Server | Threads | No|
-| `com.gs.transport_protocol.lrmi.max-threads` | This parameter specifies the maximum size of the thread pool.{% wbr %}{% exclamation %} Make sure the maximum size of the thread pool accommodates the maximum number of concurrent requests to the space. The client uses this pool for server requests into the client side - i.e. notify callbacks. When the pool is exhausted and all threads are consumed to process incoming requests, additional requests are blocked until existing requested processing are complete. Using a value as **1024** for the LRMI Connection Thread Pool should be sufficient for most large scale systems.| `128` | Server | Threads | No|
+| `com.gs.transport_protocol.lrmi.max-threads` | This parameter specifies the maximum size of the thread pool.{% wbr %}Make sure the maximum size of the thread pool accommodates the maximum number of concurrent requests to the space. The client uses this pool for server requests into the client side - i.e. notify callbacks. When the pool is exhausted and all threads are consumed to process incoming requests, additional requests are blocked until existing requested processing are complete. Using a value as **1024** for the LRMI Connection Thread Pool should be sufficient for most large scale systems.| `128` | Server | Threads | No|
 | `com.gs.transport_protocol.lrmi.bind-port` | Server port used for incoming client requests, or notifications from server to client. The server port is set by default to `0`, which means next free port. This means that whenever GigaSpaces is launched, it allocates one of the available ports. Define a specific port value to enforce a specific port on the space server or client side. You can define a range of ports, see [below](#portrange). | `0` | Server| | No|
 | `java.rmi.server.hostname` | Binds the GigaSpaces Server on a specified network interface. See details  [below](#server)). If `java.rmi.server.hostname` is `null` the system sets the localhost IP address. | `hostname` | Client & Server | | No|
 | `com.gs.transport_protocol.lrmi.idle_connection_timeout` | Watchdog idle connection timeout. | `900` sec| Client| Seconds |Yes|
@@ -162,7 +162,7 @@ You can define port range using the `com.gigaspaces.transport.bind-port` propert
 
 Here is how you can set a listening port rage for GSA/GSC/GSM:
 
-{% highlight java %}
+{% highlight console %}
 export EXT_JAVA_OPTIONS=-Dcom.gs.transport_protocol.lrmi.bind-port=7000-7100
 {% endhighlight %}
 
@@ -189,7 +189,7 @@ You can troubleshoot the space activity using LRMI logging. You can turn on LRMI
 
 `Step 2:` Locate the following line:
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.lrmi.level = INFO
 {% endhighlight %}
 
@@ -209,7 +209,7 @@ LRMI communication transport protocol debug messages are displayed.
 
 `Step 1:` Start `gsInstance` using the following Java system properties:
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.sun.management.jmxremote.port=5001
 -Dcom.sun.management.jmxremote.ssl=false
 -Dcom.sun.management.jmxremote.authenticate=false
@@ -243,7 +243,7 @@ When LRMI logging is turned on, the space displays the following when started:
 
 To test LRMI logging, you can run the space `ping` utility using the following command:
 
-{% highlight java %}
+{% highlight console %}
 /bin/gs.bat/space ping mySpace_container mySpace -r -i 1
 {% endhighlight %}
 
@@ -267,7 +267,7 @@ The client displays the following:
 
 In some cases you may encounter the following exception:
 
-{% highlight java %}
+{% highlight console %}
 CONFIG [com.gigaspaces.grid.gsc]: initialServiceLoadDelay=5000
 Exception in thread "LRMI Connection--pool-1-thread-1" java.lang.NullPointerException
 at sun.nio.ch.PollSelectorImpl.wakeup(PollSelectorImpl.java:84)
@@ -424,7 +424,7 @@ You may monitor the remote communication activity via the [Administration and Mo
    {% endhighlight %}
 
    	Example output:
-   {% highlight java %}
+   {% highlight console %}
    	--------- GSC 6af9bdbf-0754-4410-b3b9-3f78fd939e1c running on Machine 10.10.10.108 Pid:10212 Start Time:Wed Oct 09 15:17:09 EDT 2013 ---------
    	All Thread Count:156
    	LRMI Connection Thread Count:66

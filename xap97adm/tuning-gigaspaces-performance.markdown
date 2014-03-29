@@ -1,16 +1,16 @@
 ---
 layout: post
-title:  GigaSpaces Performance
+title:  XAP Performance
 categories: XAP97ADM
 parent:  tuning.html
 weight: 200
 ---
 
-{% summary %}Helpful recommendations for tuning GigaSpaces, boosting its performance, and improving its scalability.{% endsummary %}
+{% summary %}Helpful recommendations for tuning XAP, boosting its performance, and improving its scalability.{% endsummary %}
 
 # Overview
 
-This section lists helpful recommendations for tuning your application when using GigaSpaces XAP to boost its performance, and improving its scalability.
+This section lists helpful recommendations for tuning your application when using XAP to boost its performance, and improving its scalability.
 
 # Better Data Model
 
@@ -34,7 +34,7 @@ Pay attention to the size of your space class -- do you really need all this inf
 
 # Make proper use of Indexes
 
-GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (regardless whether the space is persistent or not) that maintains a hash and btree like indexes for each indexed Space Class attribute. If you store a large number of Space objects from the same class type in the space, consider defining one or more indexes for attributes used with [template matching](./query-template-matching.html) or [SQL Query](./query-sql.html). Defining indexes will improve the `read/take/readMultiple/takeMultiple/clear/count` operations response time significantly. Remember, indexes impact `write` and `take` operations response time, so choose your indexed fields carefully - each index has an overhead. GigaSpaces support index for equality , comparison (bigger/less than) queries and support [Regular Index](./indexing.html) for a specific field and a [Compound Index](./indexing.html#Compound Indexing) for multiple fields. Indexes can be defined for space class root level object or for a nested field allowing you to query different type of objects ("join") using the same query without any performance penalty. For bigger/less than/between queries use the **Extended index**.
+GigaSpaces XAP includes a sophisticated built-in real-time indexing engine (regardless whether the space is persistent or not) that maintains a hash and btree like indexes for each indexed Space Class attribute. If you store a large number of Space objects from the same class type in the space, consider defining one or more indexes for attributes used with [template matching]({%currentjavaurl%}/query-template-matching.html) or [SQL Query]({%currentjavaurl%}/query-sql.html). Defining indexes will improve the `read/take/readMultiple/takeMultiple/clear/count` operations response time significantly. Remember, indexes impact `write` and `take` operations response time, so choose your indexed fields carefully - each index has an overhead. GigaSpaces support index for equality , comparison (bigger/less than) queries and support [Regular Index]({%currentjavaurl%}/indexing.html) for a specific field and a [Compound Index]({%currentjavaurl%}/indexing.html#Compound Indexing) for multiple fields. Indexes can be defined for space class root level object or for a nested field allowing you to query different type of objects ("join") using the same query without any performance penalty. For bigger/less than/between queries use the **Extended index**.
 
 # Use Asynchronous Operation
 
@@ -87,7 +87,7 @@ If you access the space from a single JVM, or access it a large number of times 
 # Distribute Data and User Requests among Several Partitions
 
 A single machine is always limited in the amount of data and user requests it can handle.
-You can use [Data-Partitioning](./data-partitioning.html) to distribute the data and the calculation colocated with each partition. In more advanced scenarios you should use the [Master-Worker pattern](/sbp/master-worker-pattern.html) to distribute the data and the calculation in a different ratio.
+You can use [Data-Partitioning]({%currentjavaurl%}/data-partitioning.html) to distribute the data and the calculation colocated with each partition. In more advanced scenarios you should use the [Master-Worker pattern](/sbp/master-worker-pattern.html) to distribute the data and the calculation in a different ratio.
 
 # Memory Usage Considerations
 
@@ -107,11 +107,11 @@ You can use [Data-Partitioning](./data-partitioning.html) to distribute the data
 
 # Choose Local Transactions Over Distributed Transactions
 
-[Distributed Transactions](./transaction-management.html#Distributed Jini Transaction Manager) perform a lengthy 2PC process. [Local Transactions](./transaction-management.html#Local Jini Transaction Manager), in contrast, perform a 1PC process. If you are performing some operations under a transaction on a single space, use local transactions. The slower your network compared to other resources (for example, a disk), the greater will be the noticeable improvement.
+[Distributed Transactions]({%currentjavaurl%}/transaction-management.html#Distributed Jini Transaction Manager) perform a lengthy 2PC process. [Local Transactions]({%currentjavaurl%}/transaction-management.html#Local Jini Transaction Manager), in contrast, perform a 1PC process. If you are performing some operations under a transaction on a single space, use local transactions. The slower your network compared to other resources (for example, a disk), the greater will be the noticeable improvement.
 
 
 {% tip %}
-For more details on transaction support, refer to the [Transaction Management](./transaction-management.html) section.
+For more details on transaction support, refer to the [Transaction Management]({%currentjavaurl%}/transaction-management.html) section.
 {% endtip %}
 
 {%endcomment%}

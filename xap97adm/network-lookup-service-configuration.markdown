@@ -73,7 +73,7 @@ Using the [list LUS ]({%currentjavaurl%}/command-line-interface.html) CLI option
 
 The following result examples appear on the console:
 
-{% highlight java %}
+{% highlight console %}
 -----------------------------------------------------------------------
 -- Discovered Lookup Service at host [ 192.168.10.233 ].
 -- Lookup Service registered to the following jini groups:

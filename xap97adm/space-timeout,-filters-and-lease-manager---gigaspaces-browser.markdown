@@ -8,7 +8,6 @@ weight: 500
 
 {% summary %}Using the **General** tab of the advanced space configuration dialog.{% endsummary %}
 
-# Overview
 
 The **General* tab contains settings related to client and server timeout, and the *Lease Manager**.
 

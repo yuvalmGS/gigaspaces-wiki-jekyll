@@ -12,7 +12,9 @@ weight: 100
 
 The Connections view exposes information regarding all connected and disconnected space proxies.
 
-{% lampon %} It is also possible to retrieve space connections using the **[space connections]({%currentjavaurl%}/space---gigaspaces-cli.html)** command
+{% note %}
+It is also possible to retrieve space connections using the **[space connections]({%currentjavaurl%}/space---gigaspaces-cli.html)** command
+{%endnote%}
 
 The following properties are exposed:
 
@@ -40,7 +42,10 @@ You can choose to refresh the Connection view periodically. Select the desired r
 
 # Considerations
 
-- {% infosign %} Connections are created for a space **only when a space operation (eg. ping, write, etc.) is invoked**.
+- {% info %}
+Connections are created for a space **only when a space operation (eg. ping, write, etc.) is invoked**.
+{%endinfo%}
+
 - Information relates only to physical (live) connections. Logical connections will be shown in the future.
 - Disconnected connections are calculated and displayed only on the client side and are not supplied by MBean methods.
 

@@ -8,7 +8,6 @@ weight: 400
 
 {% summary %}Using the **Performance** tab of the advanced space configuration dialog.{% endsummary %}
 
-# Overview
 
 The Performance tab contains settings related to serialization of Entries, implicit indexing of Entries by fields, and the number of threads used by the GigaSpaces engine.
 

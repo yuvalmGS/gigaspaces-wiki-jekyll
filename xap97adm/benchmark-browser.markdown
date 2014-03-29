@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Benchmark View
+title:  Browser View
 categories: XAP97ADM
 parent: benchmarking.html
 weight: 200

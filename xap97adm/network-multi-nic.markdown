@@ -6,11 +6,11 @@ parent: network.html
 weight: 500
 ---
 
-{% summary %}Configuring GigaSpaces for a machine with multiple network cards. By default all network cards are used; you can limit GigaSpaces to specific ones.{% endsummary %}
+{% summary %}Configuring XAP for a machine with multiple network cards. By default all network cards are used; you can limit XAP to specific ones.{% endsummary %}
 
 # Overview
 
-GigaSpaces can be configured for a multiple network-card environment. For security reasons, network administrators may choose to configure their network with limited access of one card open to outside connections, and another card for internal connections. The default network card configuration is not always set to the network card used for internal connection, and thus needs to be configured.
+XAP can be configured for a multiple network-card environment. For security reasons, network administrators may choose to configure their network with limited access of one card open to outside connections, and another card for internal connections. The default network card configuration is not always set to the network card used for internal connection, and thus needs to be configured.
 
 The `java.rmi.server.hostname` system property is used to resolve the NIC address for all services, which bind to a specific network interface, e.g. Jini unicast discovery lookup host, Webster, etc. More specifically, multicast and unicast discovery both use this property to limit and set the desired network interface card.
 
@@ -23,15 +23,17 @@ To apply this configuration easily, the `NIC_ADDR` variable can be passed at the
 {% note icon=false %}
 
 {% indent %}
-The following procedure explains the general configuration process required to test and configure the Multi-NIC settings in GigaSpaces.
+The following procedure explains the general configuration process required to test and configure the Multi-NIC settings in XAP.
 **Please refer to these sections only if the out-of-the-box settings fail to work**.
 {% endindent %}
 
 {% endnote %}
 
-{% exclamation %} Make sure your network and machines running GigaSpaces are configured to have multicast enabled. See the [Multicast Configuration](./network-multicast.html) section for details on how to enable multicast.
+{% warning %}
+Make sure your network and machines running GigaSpaces are configured to have multicast enabled. See the [Multicast Configuration](./network-multicast.html) section for details on how to enable multicast.
+{%endwarning%}
 
-# Configuring GigaSpaces for Multiple NICs
+# Configuring XAP for Multiple NICs
 
 1. [Viewing the network interface information](./network-multi-nic-advanced.html#1) (optional)
 1. [Specifying a network card to bind the lookup service](./network-multi-nic-advanced.html#2)

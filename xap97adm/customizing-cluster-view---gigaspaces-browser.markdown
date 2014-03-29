@@ -9,7 +9,7 @@ weight: 100
 
 {% summary %}Changing cluster visualization behavior, refresh speed, and colors.{% endsummary %}
 
-# Overview
+
 
 **Cluster View offers several ways of customizing or manipulating the way it displays clusters:**
 

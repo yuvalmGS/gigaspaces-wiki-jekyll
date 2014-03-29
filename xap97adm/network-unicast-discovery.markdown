@@ -24,7 +24,7 @@ Services will use the locators property to locate the Jini Lookup Service to loo
 
 For example, considering the GSM(+LUS) is running on linux-lab1:4174 and linux-lab2:4174 machines:
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.jini_lus.locators=linux-lab1:4174,linux-lab2:4174
 {% endhighlight %}
 
@@ -42,7 +42,10 @@ For both **unicast AND multicast discovery**, use:
 jini://*/./mySpace?locators=linux-lab1:4174,linux-lab2:4174&groups=gigaspaces-{%currentversion%}-XAPPremium-ga
 {% endhighlight %}
 
-{% exclamation %} When the locators attribute is used in conjunction with the jini://* prefix and groups attribute, the discovery will be unicast AND multicast.
+{% warning %}
+When the locators attribute is used in conjunction with the jini://* prefix and groups attribute, the discovery will be unicast AND multicast.
+{%endwarning%}
+
 If you want unicast only, you should disable multicast altogether.
 
 {% tip %}
@@ -82,13 +85,13 @@ To tune the unicast retry intervals, the `com.gigaspaces.unicast.interval` syste
 
 Example:
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gigaspaces.unicast.interval=5000
 {% endhighlight %}
 
 Will cause the LookupLocatorDiscovery utility to wait 5 seconds between retries
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gigaspaces.unicast.interval=5000,10000
 {% endhighlight %}
 

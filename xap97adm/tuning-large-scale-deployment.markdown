@@ -6,7 +6,7 @@ parent: tuning-gigaspaces-performance.html
 weight: 110
 ---
 
-{% summary page|60 %}Instructions and best practices for tuning large-scale deployments.{% endsummary %}
+{% summary%}Instructions and best practices for tuning large-scale deployments.{% endsummary %}
 
 # Large Cluster Considerations
 
@@ -22,7 +22,7 @@ This occurs when a large amount of memory is consumed in the process, causing ex
 
 To avoid the unregistering of spaces, add resources (memory, CPU) or spaces, or tune the `LeaseRenewal maxLeaseDuration` and `roundTripTime`. These two values can be configured using the system properties:
 
-{% highlight java %}
+{% highlight console %}
 //Default value for roundTripTime 4 seconds
 -Dcom.gs.jini.config.roundTripTime=4000
 
@@ -57,4 +57,5 @@ When attempting to run hundreds of clients, which need to find a space and perfo
 ## Cluster Availability Monitoring
 
 When there are many clients monitoring the availability of a cluster, it is recommended to increase the value of the `Monitor` thread to a maximum. Usually, when there is no failover or there are no backup-only spaces, the `Monitor` thread can be safely set to its maximum value; since clients directly interact with the space members. If either is detected as unavailable, the `Detector` thread is responsible for detecting their re-availability.
+
 {% refer %}For more details, refer to the [Viewing Clustered Space Status](./viewing-clustered-space-status.html) section.{% endrefer %}

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Benchmark Utility
+title:  Utility
 categories: XAP97ADM
 parent: benchmarking.html
 weight: 100
@@ -193,39 +193,39 @@ Other possible values are:
 
 The following example uses the JavaSpaces API, writes 1,000 Entries into the space, 1K each, and reads them back into the client.
 
-{%highlight java%}
+{%highlight console%}
 run -read -objecttype entry -i 1000 -s 1024
 {%endhighlight%}
 
 The following example uses the JavaSpaces API, writes 1,000 POJOs into the space, 1K each, and takes them from the space. A remote cache is accessed.
 
-{%highlight java%}run -take -objecttype pojo -i 1000 -s 1024{%endhighlight%}
+{%highlight console%}run -take -objecttype pojo -i 1000 -s 1024{%endhighlight%}
 
 The following example uses the JavaSpaces API, writes 1,000 Entries into the space in [FIFO mode]({%currentjavaurl%}/fifo-support.html), 1K each, and reads them back into the client three times.
 
-{%highlight java%}run -read -objecttype fifo -i 1000 -s 1024 -rt 3{%endhighlight%}
+{%highlight console%}run -read -objecttype fifo -i 1000 -s 1024 -rt 3{%endhighlight%}
 
 The following example uses the Map API, puts 1,000 Entries into the space, 1K each, and gets them back into the client.
 
-{%highlight java%}run -map -read -i 1000 -s 1024{%endhighlight%}
+{%highlight console%}run -map -read -i 1000 -s 1024{%endhighlight%}
 
 The following example uses the Map API, puts 1,000 Entries into the space, 1K each, and removes them from the space. A remote space is accessed.
 
-{%highlight java%} run -map -take -i 1000 -s 1024{%endhighlight%}
+{%highlight console%} run -map -take -i 1000 -s 1024{%endhighlight%}
 
 The following example uses the Map API, puts 1,000 Entries into the space, 1K each, and gets them back into the client three times.
 
-{%highlight java%}run -map -read -i 1000 -s 1024 -rt 3{%endhighlight%}
+{%highlight console%}run -map -read -i 1000 -s 1024 -rt 3{%endhighlight%}
 
 The following example uses the Map API, puts 100,000 Entries into the space, gets them back, and removes them from the space. Throughput is displayed every 10,000 operations.
 
-{%highlight java%}run -map -all -i 100000 -showrate 10000{%endhighlight%}
+{%highlight console%}run -map -all -i 100000 -showrate 10000{%endhighlight%}
 
 The following example uses the JMS API, sends 10,000 JMS messages into the space (_MessageProducer.send()_), and receives them asynchronously (_MessageListener.onMessage()_) with notifications.
 
-{%highlight java%}run -i 100000 -notify -objecttype jms{%endhighlight%}
+{%highlight console%}run -i 100000 -notify -objecttype jms{%endhighlight%}
 
 The following example uses the JMS API, sends 100,000 JMS messages into the space (_MessageProducer.send()_), and receives them synchronously (_MessageConsumer.receive()_). Throughput is displayed every 10,000 operations.
 
-{%highlight java%}run -i 100000 -take -objecttype jms -showrate 10000{%endhighlight%}
+{%highlight console%}run -i 100000 -take -objecttype jms -showrate 10000{%endhighlight%}
 

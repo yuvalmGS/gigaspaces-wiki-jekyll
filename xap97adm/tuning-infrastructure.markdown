@@ -29,7 +29,7 @@ Linux has a Max Processes per user, as well as the limit of file descriptors all
 
 To improve performance and stability, you must set the limit of processes for the super-user root to be at least **8192**, but note that 32,000:
 
-{% highlight java %}
+{% highlight console %}
 ulimit -u 32000
 {% endhighlight %}
 
@@ -45,7 +45,7 @@ Verify that you set the ulimit using the -n option e.g. ulimit -n 8192, rather t
 
 In /etc/system file, the descriptors **hard limit** should be set (8192), and the file descriptors **soft limit** should be increased from 1024 to 8192 as shown below:
 
-{% highlight java %}
+{% highlight console %}
 set rlim_fd_max=8192
 set rlim_fd_cur=8192
 {% endhighlight %}
@@ -77,7 +77,6 @@ To increase it run regedit - HKEY_LOCAL_MACHINE->SYSTEM->CurrentControlSet->Cont
 in the key "Windows" find "SharedSection=1024,3072,512", where 512KB is the size of heap shared section for the processes running in the background. The value should be increased, the recommendation is to increase it initially to 1024KB, max value 3072. **Reboot is necessary** to enable the new setting.
 
 {%comment%}
-Roffler
 {% infosign %} See also - [File Descriptors - changing the value for Unix and Windows](http://www-01.ibm.com/support/docview.wss?rs=769&context=SSXLSW&dc=DB520&dc=DB560&uid=swg21138122&loc=en_US&cs=UTF-8&lang=en&rss=ct769tivoli)
 {%endcomment%}
 
@@ -95,7 +94,7 @@ Roffler
 Should be changed in order to secure fast fail-over in case of network failure (e.g. router failure).
 **Set**:
 
-{% highlight java %}
+{% highlight console %}
 echo 1  > /proc/sys/net/ipv4/tcp_keepalive_time
 {% endhighlight %}
 
@@ -109,7 +108,7 @@ Recommended value: 1 seconds
 **Description**: Determines the wait time between isAlive interval probes.
 **Set**:
 
-{% highlight java %}
+{% highlight console %}
 echo 1 > /proc/sys/net/ipv4/tcp_keepalive_intvl
 {% endhighlight %}
 
@@ -123,7 +122,7 @@ Recommended value: 1 seconds
 **Description***: Determines the number of probes before timing out.
 **Set**:
 
-{% highlight java %}
+{% highlight console %}
 echo 5  > /proc/sys/net/ipv4/tcp_keepalive_probes
 {% endhighlight %}
 
@@ -138,7 +137,7 @@ tcp_keepalive_interval is Solaris equivalent to the Linux TCP_KEEPALIVE_TIME set
 **Description**: Determines the maximum number of packets, queued on the input side, when the interface receives packets faster than kernel can process them.
 **Set**:
 
-{% highlight java %}
+{% highlight console %}
 echo 3000 > /proc/sys/net/core/netdev_max_backlog
 {% endhighlight %}
 
@@ -151,7 +150,7 @@ Recommended value: 3000
 Should be changed when a high rate of incoming connection requests result in connection failures.
 **Set**:
 
-{% highlight java %}
+{% highlight console %}
 echo 3000 > /proc/sys/net/core/somaxconn
 {% endhighlight %}
 
@@ -166,7 +165,7 @@ See also: [http://tldp.org/HOWTO/TCP-Keepalive-HOWTO/usingkeepalive.html](http:/
 To update the TCP parameters on widows run **regedit**.
 All the TCP/IP parameters are registry values that are located under the subkeys of
 
-{% highlight java %}
+{% highlight console %}
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters
 {% endhighlight %}
 

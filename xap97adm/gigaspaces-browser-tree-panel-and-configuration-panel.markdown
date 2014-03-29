@@ -38,17 +38,23 @@ In the Select Columns window, check the checkboxes of the columns you want to se
 ![space_network_view_selectColumns_window_6.5.jpg](/attachment_files/space_network_view_selectColumns_window_6.5.jpg)
 {% endindent %}
 
-{% infosign %} The **Name** (space name) and **Space Container Name** are default options and cannot be unchecked.
+{% info %}
+The **Name** (space name) and **Space Container Name** are default options and cannot be unchecked.
+{%endinfo%}
 
 The columns to choose from are as follows:
 
 - **Objects Count** -- the number of objects in the space.
 
-   {% exclamation %} The **Objects Count** column does not display the number of objects for persistent spaces running in LRU mode (this might result in very high CPU usage). To change this, see the [Menus and Buttons](./gigaspaces-browser-menus-and-buttons.html#Display Persistent LRU Space Metrics) section.
+{% warning %}
+The **Objects Count** column does not display the number of objects for persistent spaces running in LRU mode (this might result in very high CPU usage). To change this, see the [Menus and Buttons](./gigaspaces-browser-menus-and-buttons.html#Display Persistent LRU Space Metrics) section.
+{%endwarning%}
 
 - **Object Count Delta** -- shows an ascending or descending arrow, if the number of objects in the space is currently growing or being reduced (when objects are either written to or taken from the space). For example, if you are currently taking objects from a certain space, during the take operation, an arrow pointing down appears in this column (see screenshot above).
 
-   {% exclamation %} For this option to work, the **Objects Count** checkbox must also be selected.
+{% warning %}
+For this option to work, the **Objects Count** checkbox must also be selected.
+{%endwarning%}
 
 - **Templates Count** -- the number of templates in the space.
 - **Host Name** -- the name of the machine hosting the space container.

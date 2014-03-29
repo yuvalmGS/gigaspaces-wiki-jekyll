@@ -6,18 +6,23 @@ parent: web-management-console.html
 weight: 200
 ---
 
-{% summary %}Reviews the different deployment option of the web management console{% endsummary %}
 
-# Overview
+
+{%comment%}
+**Reviews the different deployment option of the web management console**
+{% summary %}Reviews the different deployment option of the web management console{% endsummary %}
+{%endcomment%}
+
+
 
 The Management Console is a web application which was designed to enable users to quickly understand the state of a running data grid cluster and monitor the running components, i.e. physical hosts, JVMs and deployed processing units.
 
-In terms of functionality, it does not replace the existing Java-based GUI (the GigaSpaces Management Center), but rather augments it and provides a lightweight alternative for monitoring a running cluster without the need to install the GigaSpaces XAP runtime and run the standalone Java-based user interface.
+In terms of functionality, it does not replace the existing Java-based GUI (the XAP Management Center), but rather augments it and provides a lightweight alternative for monitoring a running cluster without the need to install the GigaSpaces XAP runtime and run the standalone Java-based user interface.
 
-The management console web application is located under `GigaSpaces root/tools/gs-webui`. This directory contains the web application itself (in the form of a standard JEE `.war` file), and a launcher library and shell scripts used to start in standalone mode (see below).
+The management console web application is located under `XAP root/tools/gs-webui`. This directory contains the web application itself (in the form of a standard JEE `.war` file), and a launcher library and shell scripts used to start in standalone mode (see below).
 The management console web application can be started in one of the following ways:
 
-# Starting the Management Console Web Application in Standalone Mode
+### Starting the Management Console Web Application in Standalone Mode
 
 This is the simplest way to run the management console web application. Simply click the `gs-webui.sh(bat)` script to start a Jetty web container with the management console web application running within it. Once started, there's no need to deploy or perform any additional steps.
 
@@ -28,7 +33,7 @@ To override the default port, you can either use the `com.gs.webui.port` system 
 {% inittab starting-stanalone|top %}
 {% tabcontent Linux %}
 
-{% highlight java %}
+{% highlight console %}
 #Specify port via a command line argument
 ./gs-webui.sh -port 80
 
@@ -40,7 +45,7 @@ export WEBUI_JAVA_OPTIONS=-Dcom.gs.webui.port=80
 {% endtabcontent %}
 {% tabcontent Windows %}
 
-{% highlight java %}
+{% highlight console %}
 #Specify port via a command line argument
 gs-webui.bat -port 80
 
@@ -54,32 +59,32 @@ gs-webui.bat
 
 Note that you can also use the `WEBUI_JAVA_OPTIONS` environment variable to set any JVM parameter, such as heap size (defaults to `-Xmx512m`) and other JVM settings.
 
-# Deploying the Management Console Web Application to the GigaSpaces Runtime Environment
+### Deploying the Management Console Web Application to the XAP Runtime Environment
 
-To deploy the management console web application to the GigaSpaces [Runtime Environment](./the-runtime-environment.html), you should simply point your deployment tool of choice (CLI, Admin API or the standalone Java-based UI) to the `<GigaSpaces root>/tools/gs-webui/gs-webui.war` file and deploy it.
+To deploy the management console web application to the XAP [Runtime Environment]{%currentjavaurl%}/the-runtime-environment.html), you should simply point your deployment tool of choice (CLI, Admin API or the standalone Java-based UI) to the `<XAP root>/tools/gs-webui/gs-webui.war` file and deploy it.
 
 Note that in this case the management console application actually monitors the runtime environment on which it runs.
 
 Here's an example of how this can be done using the GS CLI:
 
-{% highlight java %}
-<GigaSpaces root>/bin/gs.sh(bat} deploy -properties embed://web.port=80;web.context=/ \
-<GigaSpaces root>/tools/gs-webui/gs-webui.war
+{% highlight console %}
+<XAP root>/bin/gs.sh(bat} deploy -properties embed://web.port=80;web.context=/
+<XAP root>/tools/gs-webui/gs-webui.war
 {% endhighlight %}
 
 The above command will deploy the management console web application to the GigaSpaces runtime environment, listening on port 80 with the root context path.
 
-For more details on GigaSpaces XAP web application support, please refer to [this page](./web-application-support.html).
+For more details on XAP's web application support, please refer to [this page]({%currentjavaurl%}/web-application-support.html).
 
-# Deploying the Management Console Web Application to a 3rd Party JEE Servlet Container
+#### Deploying the Management Console Web Application to a 3rd Party JEE Servlet Container
 
 It is also possible to deploy the web application to a 3rd party servlet container (e.g. Apache Tomcat). Please consult your web container documentation for deployment instructions.
 
-{% info Packaging the GigaSpaces runtime libraries when deploying to a 3rd party web container %}
-When deploying to a 3rd party web container like tomcat, you will need to repackage the `gs-webui.war` file and add all the `.jar` files located under `<GigaSpaces root>/lib/required` to the `WEB-INF/lib` directory of the `gs-webui.war` file. By default, they are not part of the the `gs-webui.war` file since they are automatically included in the classpath of both the standalone container and the GigaSpaces [Runtime Environment](./the-runtime-environment.html)
+{% info%}
+When deploying to a 3rd party web container like tomcat, you will need to repackage the `gs-webui.war` file and add all the `.jar` files located under `<XAP root>/lib/required` to the `WEB-INF/lib` directory of the `gs-webui.war` file. By default, they are not part of the the `gs-webui.war` file since they are automatically included in the classpath of both the standalone container and the XAP [Runtime Environment]({%currentjavaurl%}/the-runtime-environment.html)
 {% endinfo %}
 
-# Logging into the Web Dashboard
+#### Logging into the Web Dashboard
 
 After you've started the dashboard web application, point your browser to the proper location (For example, if you stated it using the standalone web container, the default URL is `http://<standalone server host>:8099`.
 You will see the following login screen (see inline notes for the available login options):
@@ -96,23 +101,23 @@ Currently, the web dashboard supports the following web browsers:
 **Internet explorer is currently not supported.**
 {% endinfo %}
 
-# Runtime Considerations
+#### Runtime Considerations
 
-## Deployment Location of the Dashboard Web Application
+#### Deployment Location of the Dashboard Web Application
 
-Since the dashboard web application communicates with the runtime components of the GigaSpaces cluster, and receives notification from the GigaSpaces [lookup service](./service-grid.html#lus), it is highly recommended to run the dashboard web application in the same network segment of the other cluster components. Note that this does not affect the dashboard web browser client, which communicates with the dashboard web application using standard http and can be located anywhere, provided that it has access to the dashboard web application.
+Since the dashboard web application communicates with the runtime components of the XAP cluster, and receives notification from the XAP [lookup service](/product_overview/service-grid.html#lus), it is highly recommended to run the dashboard web application in the same network segment of the other cluster components. Note that this does not affect the dashboard web browser client, which communicates with the dashboard web application using standard http and can be located anywhere, provided that it has access to the dashboard web application.
 
-# Running Via A Reverse Proxy
+#### Running Via A Reverse Proxy
 
 _Version 9.5.1 onwards_
 
 It is possible to set up a reverse proxy for the management console. This can be desirable e.g. when access to the Management Console is done via a gateway. Reverse proxy setups are currently available and tested only on the Apache web server.
 
-## Configuring The Proxy
+#### Configuring The Proxy
 
 Enable the relevant modules, by uncommenting (or adding) the following lines inside `httpd.conf`:
 
-{% highlight xml %}
+{% highlight console %}
 LoadModule  proxy_module         modules/mod_proxy.so
 LoadModule  proxy_http_module    modules/mod_proxy_http.so
 {% endhighlight %}
@@ -126,7 +131,7 @@ NameVirtualHost *:80
 </VirtualHost>
 {% endhighlight %}
 
-Create mappings to channel proxy paths (`webui-endpoint` being the proxied path obsecuring the address of the Management Console):
+Create mappings to channel proxy paths (`webui-endpoint` being the proxied path obscuring the address of the Management Console):
 
 {% highlight xml %}
 <VirtualHost *:80>
@@ -142,11 +147,11 @@ Set a redirection rule for serving the login page:
 {% highlight xml %}
 <VirtualHost *:80>
         ...
-        RedirectMatch /Gs_webui\.html /webui-endpoint/Gs_webui.html
+        RedirectMatch /Gs_webui.html /webui-endpoint/Gs_webui.html
 </VirtualHost>
 {% endhighlight %}
 
-## Debugging Your Proxy
+#### Debugging Your Proxy
 
 You can dump logging information to custom files on the Apache server by adding the following rules:
 

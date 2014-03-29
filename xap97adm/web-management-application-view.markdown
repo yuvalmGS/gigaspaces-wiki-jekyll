@@ -6,25 +6,27 @@ parent: web-management-console.html
 weight: 400
 ---
 
+{%comment%}
 {% summary %}Applications and Processing unit dependency view{% endsummary %}
 
 # Overview
+{%endcomment%}
 
 The Applications Module allow users to manage and monitor XAP applications. It offers a wide set of functionality from deployment to verification, monitoring and even log tracing.
 
 The picture below explains the different parts composing the Applications module
 ![apps_explained_9_6.png](/attachment_files/apps_explained_9_6.png)
 
-# The Application Map
+### The Application Map
 
 The application map is a graphical representation of the deployment plan (processing units, their SLA and their dependencies)
 It allow the user to compare the plan with the actual deployment in any given moment. the next sections give detailed explanation of the application map functionality
 
-### Overview
+#### Overview
 
 ![app_map_explained.png](/attachment_files/app_map_explained.png)
 
-### Understanding the processing unit display
+#### Understanding the processing unit display
 
 The application map depicts a shape per each processing unit
 ![pu.jpg](/attachment_files/pu.jpg)
@@ -34,13 +36,13 @@ Processing units that were not deployed in the context of an application, will b
 
 ![unassigned_selection_9_6.jpg](/attachment_files/unassigned_selection_9_6.jpg)
 
-### Processing Unit dependencies
+#### Processing Unit dependencies
 
 Dependencies between processing units are depicted by an arrow flowing in the direction of "depends on".
 For example, in the screenshot below, the feeder depends on the Space to be alive.
 
 {% info %}
-For more information on processing unit dependencies, see [Application deployment and processing unit dependencies](./deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependencies)
+For more information on processing unit dependencies, see [Application deployment and processing unit dependencies]({%currentjavaurl%}/deploying-onto-the-service-grid.html#Application Deployment and Processing Unit Dependencies)
 {% endinfo %}
 
 ![application_dependency_9_6.png](/attachment_files/application_dependency_9_6.png)
@@ -55,19 +57,19 @@ The following table explains these icons
 |![pipe.png](/attachment_files/pipe.png)|Event Container (Messaging)|
 |![world.png](/attachment_files/world.png)|Web application|
 
-### Contextual Actions
+#### Contextual Actions
 
 ![actions_explained.png](/attachment_files/actions_explained.png)
 
-# The Monitoring view
+### The Monitoring view
 
 The monitoring view, allow the user to monitor the performance of a the selected processing unit. The displayed statistics are at the cluster level.
 
-### Understanding the widgets
+#### Understanding the widgets
 
 ![metrics_explained.png](/attachment_files/metrics_explained.png)
 
-### Stateful Processing Unit metrics:
+#### Stateful Processing Unit metrics:
 In the case of backup spaces OS and VM metrics can be selected either for all instances of Processing Unit( Cluster ) or all instances without backups.
 The same with Processing Unit that has replication.
 
@@ -141,12 +143,12 @@ Total and average Space operation metrics are available for selection as well.
 - Mirror Update per sec.
 - Mirror Remove per sec.
 
-# The Infrastructure view
+### The Infrastructure view
 
 The infrastructure view allow the user to verify the application's topology. It maps the processing unit instances to hosts, providing some basic information about each host.
 ![infra_explained.png](/attachment_files/infra_explained.png)
 
-# The Services view
+### The Services view
 
 The services view allow the user to get information at the processing unit instance level and to correlate performance of several selected instances.
 
@@ -160,18 +162,18 @@ The services view allow the user to get information at the processing unit insta
 
 ### Contextual Actions
 
-# The Logs view
+### The Logs view
 
 The logs view allow the user to browse the application logs, filter or search them.
 ![logs_explained.png](/attachment_files/logs_explained.png)
 
-# Events time-line (per application)
+### Events time-line (per application)
 
 The events time line is filtered per application chosen from the application drop-down menu.
 The events time-line shows the deployment life cycle of all the processing units belonging to this application.
 
 {% info %}
-For more information on the events displayed, see [Events time-line tab in dashboard view](./dashboard-view.html#Events time-line)
+For more information on the events displayed, see [Events time-line tab in dashboard view](./web-management-dashboard-view.html#Events time-line)
 {% endinfo %}
 
 ![events_timeline_in_application.png](/attachment_files/events_timeline_in_application.png)
@@ -180,7 +182,7 @@ For more information on the events displayed, see [Events time-line tab in dashb
 ![new-in-91-ribbon.png](/attachment_files/new-in-91-ribbon.png)
 {%endcomment%}
 
-# Events table (per application)
+### Events table (per application)
 
 The events table is filtered per application chosen from the application drop-down menu.
 The events table shows the deployment life cycle of all the processing units belonging to this application.
@@ -191,7 +193,7 @@ The events table shows the deployment life cycle of all the processing units bel
 ![new-in-91-ribbon.png](/attachment_files/new-in-91-ribbon.png)
 {%endcomment%}
 
-# SSH terminal
+### SSH terminal
 
 There is an option to open SSH terminal for specific machine
 

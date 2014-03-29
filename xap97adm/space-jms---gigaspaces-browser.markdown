@@ -8,7 +8,6 @@ weight: 100
 
 {% summary %}Using the **JMS** tab of the advanced space configuration dialog.{% endsummary %}
 
-# Overview
 
 ![Space JMS - GigaSpaces Browser.jpg](/attachment_files/Space JMS - GigaSpaces Browser.jpg)
 

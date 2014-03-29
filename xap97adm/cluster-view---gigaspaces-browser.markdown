@@ -23,7 +23,9 @@ The Cluster View is divided into four main areas:
 
 - **Cluster tree** -- at the top of the tree is the cluster node (![spaceTreeIcon.gif](/attachment_files/spaceTreeIcon.gif)), each representing a space listed in the cluster configuration file.
 
-{% oksign %} Each cluster node (![GMC_space_OperationsClusterNode_icon_6.5.jpg](/attachment_files/GMC_space_OperationsClusterNode_icon_6.5.jpg)), which allows you to view all cluster information in one node (for more details, see [below](#Viewing Information for Entire Cluster)).
+{% note %}
+Each cluster node (![GMC_space_OperationsClusterNode_icon_6.5.jpg](/attachment_files/GMC_space_OperationsClusterNode_icon_6.5.jpg)), which allows you to view all cluster information in one node (for more details, see [below](#Viewing Information for Entire Cluster)).
+{%endnote%}
 
 - **Visual display** -- this area changes according to your selection in the tree. When you select the cluster node, the visual display shows the groups in the cluster.
 
@@ -40,7 +42,9 @@ When you select a group node, the display shows the spaces in the node. When you
 ![GMC_space_cluster_SpecificClusterNodeSelected_6.5.jpg](/attachment_files/GMC_space_cluster_SpecificClusterNodeSelected_6.5.jpg)
 {% endindent %}
 
-{% exclamation %} The view above does not display the number of objects for persistent spaces in LRU mode, since this might result in very high CPU usage. To change this, see the [Menus and Buttons](./gigaspaces-browser-menus-and-buttons.html#Display Persistent LRU Space Metrics) section.
+{% warning %}
+The view above does not display the number of objects for persistent spaces in LRU mode, since this might result in very high CPU usage. To change this, see the [Menus and Buttons](./gigaspaces-browser-menus-and-buttons.html#Display Persistent LRU Space Metrics) section.
+{%endwarning%}
 
 ## Viewing Information for Entire Cluster
 

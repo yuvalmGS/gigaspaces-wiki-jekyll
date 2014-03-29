@@ -65,13 +65,13 @@ All the classes above inherit from benchmarkBase Class, which includes a `long` 
 
 - Benchmark command example communicating with a remote space:
 
-{% highlight java %}
+{% highlight console %}
 benchmark "jini://localhost/*/mySpace?NoWriteLease=true" 1 1 2 10000 1000 100 Payload false
 {% endhighlight %}
 
 - Benchmark command example communicating with an embedded space (collocated with the benchmark program running in the same process):
 
-{% highlight java %}
+{% highlight console %}
 benchmark "/./mySpace?NoWriteLease=true" 1 1 2 10000 1000 100 Payload false
 {% endhighlight %}
 
@@ -81,24 +81,32 @@ The benchmark produces an output file that includes the test name, its duration 
 
 The benchmark program is located at:
 
-    <GigaSpaces Root>\cpp\examples\benchmark\
+{% highlight console %}
+<XAP Root>\cpp\examples\benchmark\
+{%endhighlight%}
 
 The benchmark classes xml decalration file is located at:
 
-    <GigaSpaces Root>\cpp\examples\benchmark\serializer\benchmark.gs.xml
+{% highlight console %}
+<XAP Root>\cpp\examples\benchmark\serializer\benchmark.gs.xml
+{%endhighlight%}
 
 The benchmark generated serializer code is located at:
 
-    <GigaSpaces Root>\cpp\examples\benchmark\serializer\
-
+{% highlight console %}
+<XAP Root>\cpp\examples\benchmark\serializer\
+{%endhighlight%}
 The benchmark serializer DLL is located at:
 
-    <GigaSpaces Root>\cpp\lib\platform\native\
+{% highlight console %}
+<XAP Root>\cpp\lib\platform\native\
+{%endhighlight%}
 
 The benchmark program executable is located at:
 
-    <GGigaSpaces Root>\cpp\bin\$(PLATFORM)\$(COMPILER)\
-
+{% highlight console %}
+<XAP Root>\cpp\bin\$(PLATFORM)\$(COMPILER)\
+{%endhighlight%}
 # Adding your Space Class
 
 To add your own Space Class into the benchmark framework you should add a class inherited from the Benchmark class and add your code.

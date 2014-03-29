@@ -8,7 +8,6 @@ weight: 400
 
 {% summary %}A load-balancing group defines load-balancing between spaces in the cluster.{% endsummary %}
 
-# Overview
 
 A group can define a load-balancing policy. If it does, then any other group that contains at least one space belonging to this group cannot define a load-balancing policy. Thus, the load-balancing policy of the group determines the load-balancing behavior for the clustered proxy of any space member in the group.
 If a group defines a load-balancing policy, it is called a load-balancing group (a load-balancing group can also be a replication group and a failover group).
