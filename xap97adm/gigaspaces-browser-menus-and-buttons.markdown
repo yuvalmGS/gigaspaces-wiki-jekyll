@@ -131,7 +131,7 @@ To edit an existing value, double click it, and type in your changes:
 
 ![GMC_space_SettingsMenuOption_Settings_ConfiguredSystemProp_Window_Editing_6.5.jpg](/attachment_files/GMC_space_SettingsMenuOption_Settings_ConfiguredSystemProp_Window_Editing_6.5.jpg)
 
-|![IMG365.gif](/attachment_files/IMG365.gif)|To add a new value, click the + button, which adds a new row. Type the property on the left side, and its value on the right side.|
+|![IMG365.gif](/attachment_files/IMG365.gif)| To add a new value, click the + button, which adds a new row. Type the property on the left side, and its value on the right side.|
 
 Press **OK** to accept the changes and exit the window, or **Cancel** to exit without saving the changes.
 

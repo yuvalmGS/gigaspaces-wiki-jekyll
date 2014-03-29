@@ -9,13 +9,13 @@ parent: java-home.html
 {%summary%}This part of the tutorial will introduce you to security concepts of XAP.{%endsummary%}
 
 
-# Overview
+
 {%section%}
-{%column width=80% %}
-In this part of the tutorial we will introduce you to XAP security, where it fits in the XAP architecture, which components can be secured, and how to configure and customize the security depending on your application security requirements. XAP Security provides comprehensive support for securing your data and services.
-{%endcolumn%}
-{%column width=20% %}
+{%column width=15% %}
 <img src="/attachment_files/qsg/security.png" width="100" height="100">
+{%endcolumn%}
+{%column width=85% %}
+In this part of the tutorial we will introduce you to XAP security, where it fits in the XAP architecture, which components can be secured, and how to configure and customize the security depending on your application security requirements. XAP Security provides comprehensive support for securing your data and services.
 {%endcolumn%}
 {%endsection%}
 

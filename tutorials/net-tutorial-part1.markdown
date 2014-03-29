@@ -10,14 +10,13 @@ parent: net-home.html
 
 {%summary%}This tutorial will introduce you to the basic features of the GigaSpaces XAP platform.{%endsummary%}
 
-# Overview
 
 {%section%}
-{%column width=80% %}
-In this part of the tutorial we will demonstrate how to create a space and how you can interact with it. We will also demonstrate how you can improve your space search performance by using indexes and returning partial results.
-{%endcolumn%}
-{%column width=20% %}
+{%column width=15% %}
 <img src="/attachment_files/qsg/data.png" width="100" height="100">
+{%endcolumn%}
+{%column width=85% %}
+In this part of the tutorial we will demonstrate how to create a space and how you can interact with it. We will also demonstrate how you can improve your space search performance by using indexes and returning partial results.
 {%endcolumn%}
 {%endsection%}
 

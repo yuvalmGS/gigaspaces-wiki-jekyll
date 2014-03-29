@@ -9,14 +9,14 @@ parent: java-home.html
 {%summary%}This part of the tutorial explains the different event and messaging services that are available over the space.{%endsummary%}
  
 
-# Overview
 {%section%}
-{%column width=80% %}
-The Space's Messaging and Events support provides messaging handlers that simplify event driven programming. Events are generated when objects are written, updated or taken from the space. With this framework you select events based on its content and designate a method that would be triggered as a result of that event, all through a simple and non-intrusive configuration. There are two main event handlers that are available:
-{%endcolumn%}
-{%column width=20% %}
+{%column width=15% %}
 <img src="/attachment_files/qsg/Events-Message.png" width="100" height="100">
 {%endcolumn%}
+{%column width=85% %}
+The Space's Messaging and Events support provides messaging handlers that simplify event driven programming. Events are generated when objects are written, updated or taken from the space. With this framework you select events based on its content and designate a method that would be triggered as a result of that event, all through a simple and non-intrusive configuration. There are two main event handlers that are available:
+{%endcolumn%}
+
 {%endsection%}
 
 # Notify Container

@@ -10,16 +10,15 @@ parent: java-home.html
 
 {%summary%}This part of the tutorial will introduce you to transactions.{%endsummary%}
 
-# Overview
 {%section%}
-{%column width=80% %}
+{%column width=15% %}
+<img src="/attachment_files/qsg/transaction.png" width="100" height="100">
+{%endcolumn%}
+{%column width=85% %}
 
 In this part of the tutorial we will introduce you to the transaction processing capabilities of XAP. The Spring Framework provides a transaction manager abstraction using the PlatformTransactionManager interface with several different built-in implementations, such as JDBC Data Source and JTA. XAP provides several implementations for Spring's PlatformTransactionManager, allowing you to use the XAP Distributed Transaction Manager and the Jini Distributed Transaction Manager. XAP can also be used within an XA transaction manager using JTA.
 {%endcolumn%}
-{%column width=20% %}
-<img src="/attachment_files/qsg/transaction.png" width="100" height="100">
 
-{%endcolumn%}
 {%endsection%}
 
 # Transaction Management

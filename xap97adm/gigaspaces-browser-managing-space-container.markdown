@@ -10,8 +10,14 @@ weight: 300
 
 # Overview
 
-To edit a container's configuration, select a container node (![IMG501.jpg](/attachment_files/IMG501.jpg)) in the **Container Tree** panel on the left, then select the **Container Configuration** tab at the bottom of the Configuration panel.
-
+{%section%}
+{%column width=10%}
+![IMG501.jpg](/attachment_files/IMG501.jpg)
+{%endcolumn%}
+{%column width=90% %}
+To edit a container's configuration, select a container node in the **Container Tree** panel on the left, then select the **Container Configuration** tab at the bottom of the Configuration panel.|
+{%endcolumn%}
+{%endsection%}
 
 # Lookup service options
 

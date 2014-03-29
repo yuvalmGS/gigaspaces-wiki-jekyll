@@ -10,19 +10,19 @@ parent: net-home.html
 
 {%summary%}This part of the tutorial will introduce you to transactions.{%endsummary%}
 
-# Overview
-{%section%}
-{%column width=80% %}
 
-In this part of the tutorial we will introduce you to the transaction processing capabilities of XAP.
-{%endcolumn%}
-{%column width=20% %}
+{%section%}
+{%column width=15% %}
 <img src="/attachment_files/qsg/transaction.png" width="100" height="100">
 
 {%endcolumn%}
+{%column width=85% %}
+
+In this part of the tutorial we will introduce you to the transaction processing capabilities of XAP.
+{%endcolumn%}
+
 {%endsection%}
 
-# Transaction Management
 With the XAP .Net transaction model the developer is responsible for explicitly starting and managing the transaction. You obtain an object representing the underlying space transaction by calling `GigaSpacesFactory.CreateDistributedTransactionManager`. This call returns an implementation of the `ITransactionManager` interface used to create the transaction using the `ITransactionManager.Create()`.
 
 Here is an example how you use transactions:

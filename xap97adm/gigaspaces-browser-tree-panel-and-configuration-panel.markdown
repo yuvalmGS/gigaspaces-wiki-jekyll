@@ -16,7 +16,15 @@ The left hand panel of the Space Browser is the **Grid Tree**. This panel allows
 ![IMG212.gif](/attachment_files/IMG212.gif)
 {% endindent %}
 
-The **Grid Tree** shows the following main types of nodes: Space Container ( ![cluster_node.gif](/attachment_files/cluster_node.gif)).
+{%section%}
+{%column width=5% %}
+![cluster_node.gif](/attachment_files/cluster_node.gif)
+{%endcolumn%}
+{%column width=95% %}
+The **Grid Tree** shows the following main types of nodes:
+{%endcolumn%}
+{%endsection%}
+
 
 # Spaces Network View
 
@@ -93,7 +101,7 @@ You can choose to refresh the Space Network view periodically. Select the desire
 
 # Space Container Node
 
-Right-clicking a space container node ( ![container.gif](/attachment_files/container.gif)) invokes a context menu containing the following options:
+|![container.gif](/attachment_files/container.gif) | Right-clicking a space container node (invokes a context menu containing the following options:
 
 {% indent %}
 ![grid_tree_containerNodeSelected_6.5.jpg](/attachment_files/grid_tree_containerNodeSelected_6.5.jpg)
@@ -110,7 +118,15 @@ Selecting the space container node also makes available the three leftmost butto
 # Space Node
 
 {% anchor spacenode %}
-Space nodes ( ![spaceTreeIcon.gif](/attachment_files/spaceTreeIcon.gif)) represent a single space in the system.
+
+{%section%}
+{%column width=5% %}
+![spaceTreeIcon.gif](/attachment_files/spaceTreeIcon.gif)
+{%endcolumn%}
+{%column width=95% %}
+Space nodes represent a single space in the system.
+{%endcolumn%}
+{%endsection%}
 
 **The space node has five possible views:**
 
@@ -138,8 +154,16 @@ When a space node is selected, its configuration data is displayed in the **Serv
 
 # Cluster Node
 
-A cluster is a collection of spaces from one or more space containers. The cluster node ( ![cluster_node.gif](/attachment_files/cluster_node.gif)) in the **Grid Tree** represents a cluster of spaces.
+{%section%}
+{%column width=5% %}
+![cluster_node.gif](/attachment_files/cluster_node.gif)
+{%endcolumn%}
+{%column width=95% %}
+A cluster is a collection of spaces from one or more space containers. The cluster node in the **Grid Tree** represents a cluster of spaces.
 {% refer %}For more details, refer to the [Cluster View](./cluster-view---gigaspaces-browser.html) section.{% endrefer %}
+{%endcolumn%}
+{%endsection%}
+
 
 # Service View panel
 

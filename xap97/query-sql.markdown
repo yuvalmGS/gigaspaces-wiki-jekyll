@@ -12,12 +12,12 @@ weight: 300
 # Overview
 
 {% section %}
-{% column width=60% %}
+{% column width=70% %}
 The `SQLQuery` class is used to query the space using SQL-like syntax. The query statement includes only the `WHERE` statement part - the selection aspect of a SQL statement is embedded in other parameters for a SQL query.
 
 
 {% endcolumn %}
-{% column width=35% %}
+{% column width=30% %}
 ![space-projections.jpg](/attachment_files/space-projections.jpg)
 {% endcolumn %}
 {% endsection %}

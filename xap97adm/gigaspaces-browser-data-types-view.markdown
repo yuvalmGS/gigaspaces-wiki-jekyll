@@ -14,9 +14,8 @@ The Data Types view displays a list of space data type (space classes) stored in
 
 Details are displayed for each Data Type -- i.e., attributes and their properties (names, types, indexed), whether the Data Type is FIFO enabled, whether the Data Type is partial-replication enabled, a list of Super Data Types (inherited classes), etc. These properties appear at the bottom of the panel when the Data Type is selected.
 
-{% indent %}
-![datatypeView1.jpg](/attachment_files/datatypeView1.jpg)
-{% endindent %}
+
+[<img src="/attachment_files/datatypeView1.jpg" width="120" height="80">](/attachment_files/datatypeView1.jpg)
 
 # Data Type List
 

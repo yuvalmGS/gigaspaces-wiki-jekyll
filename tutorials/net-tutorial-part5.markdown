@@ -11,22 +11,23 @@ In this part of the tutorial we will introduce you the the Processing Unit (PU).
 {%endsummary%}
 
 
-# Overview
-{%section%}
-{%column width=80% %}
 
-The PU is the fundamental unit of deployment in XAP. The PU itself runs within a Processing Unit Container and is deployed onto the Service Grid. Once a PU is deployed, a PU instance is the actual runtime entity. There are two types of Processing Unit Containers:
+{%section%}
+{%column width=15% %}
+<img src="/attachment_files/qsg/pu.gif" width="100" height="100">
+{%endcolumn%}
+{%column width=85% %}
+The PU is the fundamental unit of deployment in XAP. The PU itself runs within a Processing Unit Container and is deployed onto the Service Grid. Once a PU is deployed, a PU instance is the actual runtime entity.
+{%endcolumn%}
+{%endsection%}
+
+There are two types of Processing Unit Containers:
 
 - Integrated Processing Unit Container
 A container that runs the PU inside VisualStudio. The integrated processing unit container enables to run the PU inside VisualStudio for testing and debugging purposes.
 
 - Service Grid Processing Unit Container
 A Processing Unit Container which runs within a Grid Service Container. It enables running the PU within a service grid, which provides self-healing and SLA capabilities to components deployed on it.
-{%endcolumn%}
-{%column width=20% %}
-<img src="/attachment_files/qsg/pu.gif" width="100" height="100">
-{%endcolumn%}
-{%endsection%}
 
 # Processing Unit (PU)
 The PU is a deployable, independent, scalable unit, which is the building block for the Space Based Architecture (SBA). The PU is a combination of service beans and/or an embedded space instance.

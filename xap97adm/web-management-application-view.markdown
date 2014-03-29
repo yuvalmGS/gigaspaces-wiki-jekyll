@@ -15,6 +15,7 @@ weight: 400
 The Applications Module allow users to manage and monitor XAP applications. It offers a wide set of functionality from deployment to verification, monitoring and even log tracing.
 
 The picture below explains the different parts composing the Applications module
+
 ![apps_explained_9_6.png](/attachment_files/apps_explained_9_6.png)
 
 ### The Application Map

@@ -104,7 +104,7 @@ public class Person
     [SpaceProperty(NullValue = -1)]
     public int Age { get; set; }
 
-    // The rest of the class is omitted for brevity.
+    .......
 }
 {% endhighlight %}
 

@@ -35,7 +35,7 @@ Select the desired components for the dump and click "Generate", and a zip file 
 
 At the bottom panel of the web dashboard, the events time line is displayed upon selection of the "Events" tab.
 The events time-line shows the deployment life cycle of all the processing units.
-To filter by application, the events time line is also available in the Application tab. (see [Application View#Events time-line (per application)](./web-management-application-view.html#Events time-line (per application)))
+To filter by application, the events time line is also available in the Application tab. (see [Application View](./web-management-application-view.html#Events time-line (per application)))
 
 #### Life-cycle success events for each instance:
 

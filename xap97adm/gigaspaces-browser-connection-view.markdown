@@ -42,7 +42,7 @@ You can choose to refresh the Connection view periodically. Select the desired r
 
 # Considerations
 
-- {% info %}
+{% info %}
 Connections are created for a space **only when a space operation (eg. ping, write, etc.) is invoked**.
 {%endinfo%}
 
