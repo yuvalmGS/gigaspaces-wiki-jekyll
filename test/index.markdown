@@ -147,4 +147,12 @@ IMG200.png
 # Gist
 {% gist 1027674 %}
 
- 
+
+
+### Platform Configuration
+
+You will find the platform specific configuration under GS_HOME\NET v....\Config\Settings.xml.
+
+
+{%include /xap97source/dotnet/Settings-xml.markdown %}
+
