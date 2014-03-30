@@ -6,10 +6,12 @@ parent: querying-the-space.html
 weight: 800
 ---
 
+{% summary %}{% endsummary %}
+
+{%comment%}
 {% summary %}This page describes how you can obtain partial results when querying the space to improve application performance and reduce memory footprint.{% endsummary %}
 
 # Overview
-
 {% section %}
 {% column width=70% %}
 In some cases when querying the space for objects, only specific properties of that objects are required and not the entire object (delta read). The same scenario is also relevant when subscribing for notifications on space data changes, where only specific properties are of interest to the subscriber. For that purpose the Projection API can be used where one can specify which properties are of interest and the space will only populate these properties with the actual data when the result is returned back to the user. This approach reduces network overhead , garbage memory generation and serialization CPU overhead.
@@ -18,7 +20,9 @@ In some cases when querying the space for objects, only specific properties of t
 ![space-projections.jpg](/attachment_files/space-projections.jpg)
 {% endcolumn %}
 {% endsection %}
+{%endcomment%}
 
+In some cases when querying the space for objects, only specific properties of that objects are required and not the entire object (delta read). The same scenario is also relevant when subscribing for notifications on space data changes, where only specific properties are of interest to the subscriber. For that purpose the Projection API can be used where one can specify which properties are of interest and the space will only populate these properties with the actual data when the result is returned back to the user. This approach reduces network overhead , garbage memory generation and serialization CPU overhead.
 
 
 # Example

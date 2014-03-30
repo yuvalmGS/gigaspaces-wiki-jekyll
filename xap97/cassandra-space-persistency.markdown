@@ -8,16 +8,15 @@ weight: 100
 
 
 
-{% summary %} A Cassandra Space Persistency Solution {% endsummary %}
 
 
-Cassandra Space Data Source and Space Synchronization Endpoint
 
-GigaSpaces comes with built in implementations of [Space Data Source](./space-data-source-api.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html) for Cassandra, called `CassandraSpaceDataSource` and `CassandraSpaceSynchronizationEndpoint`, respectively.
+XAP comes with built in implementations of [Space Data Source](./space-data-source-api.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html) for Cassandra, called `CassandraSpaceDataSource` and `CassandraSpaceSynchronizationEndpoint`, respectively.
 
-{% indent %}
+
 ![CassMirrorNew.jpg](/attachment_files/CassMirrorNew.jpg)
-{% endindent %}
+
+{%wbr%}
 
 {% comment %}
 For information about the two see: [Cassandra Space Data Source](./cassandra-space-data-source.html) and [Cassandra Space Synchronization Endpoint](./cassandra-space-synchronization-endpoint.html).
@@ -26,5 +25,16 @@ For information about the two see: [Cassandra Space Data Source](./cassandra-spa
 For further details about the persistency APIs used see [Space Persistency](./space-persistency.html).
 
 
-{%children%}
+## Related Topics
+
+- [Data Source](./cassandra-space-data-source.html){%wbr%}
+The Space Data Source API is used for reading data and meta data from the Cassandra.
+
+- [Synchronization Endpoint](./cassandra-space-synchronization-endpoint.html){%wbr%}
+The space synchronization endpoint API is used for synchronizing data from the space to Cassandra data base.
+
+- [Hector Library](./cassandra-hector-client.html){%wbr%}
+Hector client library.
+
+
 

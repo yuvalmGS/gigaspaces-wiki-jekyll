@@ -2,13 +2,15 @@
 layout: post
 title:  Extending
 categories: XAP97
-parent: document-api.html
-weight: 100
+parent: document-overview.html
+weight: 200
 ---
 
+{%comment%}
 {% summary %}Extending the SpaceDocument class{% endsummary %}
 
 # Overview
+{%endcomment%}
 
 While documents provide us with a dynamic schema, they force us to give up Java's type-safety for working with typeless key-value pairs. GigaSpaces supports extending the SpaceDocument class to provide a type-safe wrapper for documents which is much easier to code with, while maintaining the dynamic schema.
 

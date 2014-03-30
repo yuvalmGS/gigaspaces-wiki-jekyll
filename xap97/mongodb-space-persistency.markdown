@@ -7,20 +7,18 @@ weight: 100
 ---
 
 
+{%comment%}
 {% summary %} A MongoDB Space Persistency Solution {% endsummary %}
+{%endcomment%}
 
 
-
-
-
-MongoDB Space Data Source and Space Synchronization Endpoint
-
-GigaSpaces comes with built in implementations of [Space Data Source](./space-data-source-api.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html)
+XAP comes with built in implementations of [Space Data Source](./space-data-source-api.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html)
  for MongoDB, called `MongoSpaceDataSource` and `MongoSpaceSynchronizationEndpoint`, respectively.
 
-{% indent %}
+{%wbr%}
+
 ![mongodbPersistence.jpg](/attachment_files/mongodbPersistence.jpg)
-{% endindent %}
+
 
 {% comment %}
 For information about the two see: [MongoDB Space Data Source](./mongodb-space-data-source.html) and [MongoDB Space Synchronization Endpoint](./mongodb-space-synchronization-endpoint.html).
@@ -29,6 +27,10 @@ For information about the two see: [MongoDB Space Data Source](./mongodb-space-d
 For further details about the persistency APIs used see [Space Persistency](./space-persistency.html).
 
 
+## Related Topics
 
+- [Data Source](./mongodb-space-data-source.html){%wbr%}
+The Space Data Source API is used for reading data and meta data from the MongoDB.
 
-{%children%}
+- [Synchronization Endpoint](./mongodb-space-synchronization-endpoint.html){%wbr%}
+The space synchronization endpoint API is used for synchronizing data from the space to MongoDB data base.

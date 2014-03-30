@@ -6,9 +6,12 @@ parent: querying-the-space.html
 weight: 400
 ---
 
+{%comment%}
 {% summary %}Query nested properties, maps and collections using SQL queries {% endsummary %}
-
 # Overview
+{%endcomment%}
+
+{% summary %}{% endsummary %}
 
 The [SQL Query](./query-sql.html) page shows how to express complex queries on flat space entries (i.e entries which are composed of scalar types like integers and strings), but in reality space entries are often composed of more complex types.
 For example, a **Person** class may have:

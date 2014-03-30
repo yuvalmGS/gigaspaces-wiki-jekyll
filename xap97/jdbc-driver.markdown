@@ -6,19 +6,24 @@ parent: other-data-access-apis.html
 weight: 100
 ---
 
+{% summary%}{% endsummary %}
+
+
+{%comment%}
  {% summary%}GigaSpaces allows applications to connect to the IMDG using a JDBC driver. A GigaSpaces JDBC driver accepts SQL statements, translates them to space operations, and returns standard result sets. {% endsummary %}
 
 # Overview
+{%endcomment%}
 
-The GigaSpaces JDBC interface allows database-driven applications to interact with spaces via SQL queries and commands. A query processor transparently translates SQL queries into legal space operations. No integration is required - all you need to do is point the application to the GigaSpaces JDBC driver like any other JDBC driver.
+The XAP JDBC interface allows database-driven applications to interact with spaces via SQL queries and commands. A query processor transparently translates SQL queries into legal space operations. No integration is required - all you need to do is point the application to the GigaSpaces JDBC driver like any other JDBC driver.
 
-Applications can access the GigaSpaces Data Grid using the JDBC API; data written to the IMDG using the JDBC API can also be accessed using other APIs.
+Applications can access the XAP Data Grid using the JDBC API; data written to the IMDG using the JDBC API can also be accessed using other APIs.
 
 {% note %}
 An alternative way of querying the space using SQL syntax is the [SQLQuery](./query-sql.html) class. This class allows you to perform SQL queries directly against space objects, without adding O/R mapping complexity.
 {% endnote %}
 
-JDBC support in GigaSpaces is centered around the Space-Based Architecture - its main motivation is to enable more sophisticated querying of the space, beyond the template matching provided by the [The GigaSpace Interface](./the-gigaspace-interface.html).
+JDBC support in XAP is centered around the Space-Based Architecture - its main motivation is to enable more sophisticated querying of the space, beyond the template matching provided by the [The GigaSpace Interface](./the-gigaspace-interface.html).
 
 GigaSpaces is not a full-fledged relational database and it does not support the full SQL92 standard (see [JDBC Supported Features](#Supported Features)). However, the existing SQL support is extremely useful for applications that need to execute queries on a space for real-time queries.
 
@@ -34,7 +39,7 @@ Porting existing JDBC code to the space is certainly doable (but would require s
 
 # Getting the GigaSpaces JDBC connection
 
-In order to get the GigaSpaces JDBC connection you should use the following JDBC Driver classname:
+In order to get the XAP JDBC connection you should use the following JDBC Driver classname:
 
 {% highlight java %}
 Class.forName("com.j_spaces.jdbc.driver.GDriver");

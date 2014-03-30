@@ -2,14 +2,17 @@
 layout: post
 title:  Transaction Management
 categories: XAP97
-parent: programmers-guide.html
-weight: 600
+parent: transaction-overview.html
+weight: 100
 ---
 
+{% summary %} {% endsummary %}
 
+{%comment%}
 {% summary %}OpenSpaces provides an implementation of Spring's PlatformTransactionManager enabling you to use XAP's distributed transaction manager.{% endsummary %}
 
 # Overview
+{%endcomment%}
 
 The Spring Framework provides a transaction manager abstraction using the `PlatformTransactionManager` interface with several different built-in implementations, such as JDBC Data Source and JTA. GigaSpaces provides several implementations for Spring's `PlatformTransactionManager`, allowing you to use the GigaSpaces local and Jini Distributed Transaction Managers.
 

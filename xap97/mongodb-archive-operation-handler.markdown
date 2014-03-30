@@ -6,13 +6,9 @@ parent: mongodb.html
 weight: 200
 ---
 
-{% summary page|60 %}Archives space objects to MongoDB.{% endsummary %}
-
 
 {%section%}
 {%column width=60% %}
-# Overview
-
 The [Archive Container](./archive-container.html) can be configured to work against MongoDB (without writing any extra code). The [ArchiveOperationHandler interface](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/archive/ArchiveOperationHandler.html) abstracts the Big-Data storage from the [Archive Container](./archive-container.html). The MongoDB Archive Operation Handler implements this interface by serializing space objects into MongoDB.
 {%endcolumn%}
 {%column width=35% %}
@@ -21,9 +17,8 @@ The [Archive Container](./archive-container.html) can be configured to work agai
 {%endcolumn%}
 {%endsection%}
 
-# Configuration
 
-## Library dependencies
+#### Library dependencies
 
 The MongoDB Archive Operation Handler uses the [MongoDB driver](http://www.allanbank.com/mongodb-async-driver/index.html) for communicating with the MongoDB cluster.
 Include the following in your `pom.xml`
@@ -57,7 +52,7 @@ Include the following in your `pom.xml`
 
 
 
-## Setup
+#### Setup
 
 {% inittab os_simple_space|top %}
 
@@ -108,7 +103,7 @@ archiveContainer.destroy();
 {% endtabcontent %}
 {% endinittab %}
 
-## `MongoArchiveOperationHandler` Properties
+#### MongoArchiveOperationHandler Properties
 
 {: .table .table-bordered}
 |Property|Description|

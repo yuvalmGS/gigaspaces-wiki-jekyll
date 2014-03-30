@@ -6,18 +6,28 @@ parent: other-data-access-apis.html
 weight: 200
 ---
 
+{% summary %} {%endsummary%}
+
+{%section%}
+{%column width=10% %}
+![jpa.png](/attachment_files/subject/jpa.png)
+{%endcolumn%}
+{%column width=90% %}
+The Java Persistency API (JPA) is a Java programming language framework managing relational data in applications using Java Platform. XAP's JPA allows you to use JPA's functionality, annotations and execute JPQL queries on Space. XAP's JPA implementation is based on [OpenJPA](http://openjpa.apache.org/).
+{%endcolumn%}
+{%endsection%}
+
+
+{%comment%}
 {% summary %}Using JPA with GigaSpaces.{% endsummary %}
-
-# Overview
-
-The Java Persistency API (JPA) is a Java programming language framework managing relational data in applications using Java Platform. GigaSpaces JPA allows you to use JPA's functionality, annotations and execute JPQL queries on Space. GigaSpaces JPA implementation is based on [OpenJPA](http://openjpa.apache.org/).
+{%endcomment%}
 
 {% info %}
 It is highly recommended that you [get yourself familiar with JPA](http://download.oracle.com/javaee/6/tutorial/doc/bnbpz.html) before reading this page.
 It is also recommended that you take the [XAP PetClinic JPA Tutorial](/tutorials/your-first-jpa-application.html) which describes how a standard JPA application (the Spring PetClinic) can be adapted to XAP JPA and deployed on to the XAP runtime environment
 {% endinfo %}
 
-# GigaSpaces JPA Configuration
+# XAP JPA Configuration
 
 ### OpenJPA
 

@@ -12,6 +12,7 @@ parent: java-home.html
 
 {%section%}
 {%column width=15% %}
+{%wbr%}
 <img src="/attachment_files/qsg/grid.gif" width="100" height="100">
 {%endcolumn%}
 {%column width=85% %}

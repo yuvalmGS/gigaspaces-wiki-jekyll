@@ -12,11 +12,10 @@ module Jekyll
 
 
   def render(context)
-    path, title, alt = @text.split(',').map(&:strip)
+    path, title, alt = @text.split('|').map(&:strip)
     output ="<div class=\"container\">
       <div class=\"row\">
-        <div style=\"float:left;width:120px;height=100px; padding-left:0px;padding-right:0px;position:relative;margin-left:0px;margin-right:0px;\">
-          <legend></legend>
+        <div style=\"float:left;width:150px;height=140px; padding-left:0px;padding-right:0px;position:relative;margin-left:0px;margin-right:0px;border:1px solid black;\">
          <p>
           <a  href=\"#{path}\" data-toggle=\"lightbox\" data-title=\"#{title}\">
              <img src=\"#{path}\" class=\"img-responsive\">
@@ -30,3 +29,4 @@ module Jekyll
 end
  
 Liquid::Template.register_tag('popup', Jekyll::LightboxTag)
+

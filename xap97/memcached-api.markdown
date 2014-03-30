@@ -6,16 +6,20 @@ parent: other-data-access-apis.html
 weight: 400
 ---
 
-{% compositionsetup %}
+{% summary%}{% endsummary %}
+
+{%comment%}
+
 {% summary page|60 %}memcached support on top of the space.{% endsummary %}
 
 # Overview
+{%endcomment%}
 
 [Memcached](http://memcached.org/) is a popular caching protocol and server. The integration provided allows to use GigaSpaces as a memcached server (talking the memcached protocol) enhancing the memcached to provide high availability, write behind, and all the other features that come built in with the space.
 
 The memcached support is provided as a template deployment (similar to how basic data grid deployment works), allowing to easily issue commands to deploy a memcached cluster using the CLI, Admin API, or the UI. See "[The Runtime Environment](./the-runtime-environment.html)" for an explanation of the moving parts and components in a GigaSpaces XAP server instance.
 
-# Why use Memcached with GigaSpaces XAP
+# Why use Memcached
 
 Memcached is a simple protocol, which makes it naturally cross-platform. This simplicity means a reduction in features, such as failover or distribution of data. The traditional memcached client/server architecture has one memcached client connected to a number of _disconnected_ memcached server instances, which share no data and are entirely unaware of each other.
 
@@ -80,7 +84,7 @@ String value=(String)c.get("key");
 // note that async versions of get exist as well
 {% endhighlight %}
 
-# Deploying memcached
+# Deploying
 
 Deploying memcached requires a single parameter, which is the space to use for the memcached data. The parameter is the space url, and can either be an embedded space, or a remote connection url to an already deployed url. Here are some examples to deploy memcached using the CLI:
 
@@ -137,7 +141,7 @@ while (true) {
 }
 {% endhighlight %}
 
-# memcached Deployment Descriptor
+# Deployment Descriptor
 
 The memcached deployment descriptor looks as follows, for deployment with a GigaSpaces processing unit:
 

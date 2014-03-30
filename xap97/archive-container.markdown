@@ -6,12 +6,12 @@ parent: big-data.html
 weight: 100
 ---
 
-
+{%comment%}
 {% summary %}Allows archiving of space objects to an external persistency service.{% endsummary %}
+{%endcomment%}
 
 {%section%}
 {%column width=60% %}
-# Overview
 The archive container is used to transfer historical data into Big-Data storage (for example Cassandra).
 
 The typical scenario is when streaming vast number of raw events through the Space, enriching them and then moving them to a Big-Data storage. Typically, there is no  intention of keeping them in the space nor querying them in the space.

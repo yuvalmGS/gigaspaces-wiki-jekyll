@@ -6,9 +6,13 @@ parent: querying-the-space.html
 weight: 700
 ---
 
+{% summary %}{% endsummary %}
+
+{%comment%}
 {% summary %}Reading large number of objects using multiple queries in one call in a continuous manner. {% endsummary %}
 
 # Overview
+
 
 {%section%}
 {%column width=70% %}
@@ -20,6 +24,11 @@ There are scenarios where the conventional read operation that returns a single 
 ![paging-iteratorBuilder.jpg](/attachment_files/paging-iteratorBuilder.jpg)
 {%endcolumn%}
 {%endsection%}
+{%endcomment%}
+
+The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/GSIterator.html)  provides the ability to exhaustively read through all of the objects from the space that match one or more SQLQuery/templates.
+
+There are scenarios where the conventional read operation that returns a single space object does not fit and there is a need to return a collection of entries from the space. Generally, an iterator should be used in cases where returning all the entries in one result with the `readMultiple` operation will consume too much memory on the client or introduce too much latency before the first space object could be processed.
 
 The iterator constructs a match set (a collection of space objects instances) that incrementally returns the necessary objects in chunks or pages. The `GSIterator` constructs a proxy object that can be used to access a match set created by a space. The `GSIterator` will initially contain some population of objects specified by the operation that created it. These objects can be retrieved by calling the `next` method. A successful call to `next` will remove the returned object from the match set. Match sets can end up in one of two terminal states: `exhausted` or `invalidated`.
 

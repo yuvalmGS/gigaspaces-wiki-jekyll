@@ -6,16 +6,18 @@ parent: programmers-guide.html
 weight: 300
 ---
 
-{% summary %}How to query entries from the space{% endsummary %}
+{%wbr%}
 
+{%comment%}
+{% summary %}How to query entries from the space{% endsummary %}
+{%endcomment%}
 
 {%section%}
-{%column width=50% %}
-This section explains the various mechanisms offered by GigaSpaces XAP to query the space for data, as well as related topics, such as how to use indexing to boost query performance and how the space can be iterated to fetch entries more efficiently.
+{%column width=10% %}
+![data-access.jpg](/attachment_files/subject/data-access.png)
 {%endcolumn%}
-
-{%column width=45% %}
-![space-projections.jpg](/attachment_files/space-projections.jpg)
+{%column width=90% %}
+This section explains the various mechanisms offered by GigaSpaces XAP to query the space for data, as well as related topics, such as how to use indexing to boost query performance and how the space can be iterated to fetch entries more efficiently.
 {%endcolumn%}
 {%endsection%}
 
@@ -27,7 +29,26 @@ This section explains the various mechanisms offered by GigaSpaces XAP to query 
 {%endcomment%}
 
 
+{%wbr%}
+
+- [Id Queries](./query-by-id.html){%wbr%}
+Id Based query - Primary Key based object retrieval from space.
+
+- [Query by template](./query-template-matching.html){%wbr%}
+Template matching (a.k.a. Match by example) is a simple way to query the space.
+
+- [SQL Query](./query-sql.html){%wbr%}
+The SQLQuery class is used to query the space using SQL-like syntax.
 
 
-{% children %}
+- [Nested property queries](./query-nested-properties.html){%wbr%}
+Query nested properties, maps and collections using SQL queries
 
+- [Query with user defined classes](./query-user-defined-classes.html){%wbr%}
+Query by matching a user defined class.
+
+- [Paging support](./query-paging-support.html){%wbr%}
+Reading large number of objects using multiple queries in one call in a continuous manner.
+
+- [Partial results](./query-partial-results.html){%wbr%}
+Obtaining partial results when querying the space to improve application performance and reduce memory footprint.

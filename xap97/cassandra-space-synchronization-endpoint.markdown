@@ -6,9 +6,6 @@ parent: cassandra-space-persistency.html
 weight: 200
 ---
 
-{% compositionsetup %}
-
-## Configuration
 
 A Cassandra based implementation of the [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html).
 
@@ -167,7 +164,7 @@ For more details about different configurations see [Space Persistency](./space-
 {: .table .table-bordered}
 |Property|Description|
 |:-------|:----------|
-|hectorClient|A configured [HectorCassandraClient](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/persistency/cassandra/HectorCassandraClient.html) bean. see [Hector Cassandra Client](./hector-cassandra-client.html).|
+|hectorClient|A configured [HectorCassandraClient](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/persistency/cassandra/HectorCassandraClient.html) bean. see [Hector Cassandra Client](./cassandra-hector-client.html).|
 |fixedPropertyValueSerializer|see [Property Value Serializer]( #Property-Value-Serializer).|
 |dynamicPropertyValueSerializer|see [Property Value Serializer](#Property-Value-Serializer).|
 |flattenedPropertiesFilter| see [Flattened Properties Filter](#Flattened-Properties-Filter).|

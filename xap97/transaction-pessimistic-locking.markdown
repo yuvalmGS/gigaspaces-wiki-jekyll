@@ -2,16 +2,15 @@
 layout: post
 title:  Pessimistic Locking
 categories: XAP97
-parent: transaction-management.html
-weight: 400
+parent: transaction-overview.html
+weight: 500
 ---
 
 
+{%comment%}
 {% summary %}In the pessimistic locking approach, your program must explicitly obtain a lock using a transaction on one or more objects before making any changes.{% endsummary %}
-
-
-
 # Overview
+{%endcomment%}
 
 The pessimistic locking protocol provides data consistency in a multi user transactional environment. It should be used when there might be a large number of clients trying to read and update the same object(s) at the same time. This protocol utilize the system resources (CPU, network) in a very efficient manner both at the client and space server side.
 

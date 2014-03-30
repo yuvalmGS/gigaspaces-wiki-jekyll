@@ -6,7 +6,6 @@ parent: mongodb-space-persistency.html
 weight: 200
 ---
 
-## Configuration 
 A MongoDB based implementation of the [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html). 
 
 ### Library dependencies 

@@ -2,18 +2,22 @@
 layout: post
 title:  Read Modifiers
 categories: XAP97
-parent: transaction-management.html
-weight: 200
+parent: transaction-overview.html
+weight: 300
 ---
 
+{% summary %}{% endsummary %}
+
+
+{%comment%}
  {% summary %}GigaSpaces EXCLUSIVE_READ_LOCK, READ_COMMITTED, DIRTY_READ, and REPEATABLE_READ modifiers.{% endsummary %}
 
 {% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
-
 # Overview
+{%endcomment%}
 
-GigaSpaces `ReadModifiers` class (see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/ReadModifiers.html)) provides static methods and constants to decode read-type modifiers. The sets of modifiers are represented as integers with distinct bit positions representing different modifiers.
+XAP `ReadModifiers` class (see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/ReadModifiers.html)) provides static methods and constants to decode read-type modifiers. The sets of modifiers are represented as integers with distinct bit positions representing different modifiers.
 
 Four main types of modifiers can be used:
 
@@ -33,9 +37,9 @@ You can use **bitwise** or the `|` operator to unite different modifiers.
 `REPEATABLE_READ`, `DIRTY_READ`, and `READ_COMMITTED` are mutually exclusive (i.e. can't be used together). `EXCLUSIVE_READ_LOCK` can be joined with any of them.
 {%endnote%}
 
-These modifiers can be set either at the proxy level - `IJSpace.setReadModifiers(int)`, or at the operation level (e.g. using one of `IJSpace` read/`readIfExists`/`readMultiple`/count methods with a modifiers parameter).
+These modifiers can be set either at the proxy level - `IJSpace.setReadModifiers(int)`, or at the operation level (e.g. using one of `IJSpace` read `readIfExists` `readMultiple` count methods with a modifiers parameter).
 
-# Spring TransactionDefinition Mapping to GigaSpaces ReadModifiers
+# Spring - XAP ReadModifiers
 
 The following table describes the mapping between the [Spring TransactionDefinition](http://static.springsource.org/spring/docs/2.0.x/api/org/springframework/transaction/TransactionDefinition.html) Mapping to GigaSpaces ReadModifiers:
 
@@ -182,7 +186,7 @@ If (lock1!= null)
 		+ lock1.getId());
 {% endhighlight %}
 
-# MATCH_BY_ID & THROW_PARTIAL_FAILURE
+### MATCH_BY_ID & THROW_PARTIAL_FAILURE
 
 The matching behavior can be changed by adding one of these modifiers.
 

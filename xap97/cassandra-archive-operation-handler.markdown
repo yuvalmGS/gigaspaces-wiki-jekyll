@@ -7,11 +7,10 @@ weight: 200
 ---
 
 
-{% summary  %}Archives space objects to Cassandra.{% endsummary %}
+
 
 {%section%}
 {%column width=60% %}
-# Overview
 
 The [Archive Container](./archive-container.html) can be configured to work against Cassandra (without writing any extra code). The [ArchiveOperationHandler interface](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/archive/ArchiveOperationHandler.html) abstracts the Big-Data storage from the [Archive Container](./archive-container.html). The Cassandra Archive Operation Handler implements this interface by [serializing](#Property Value Serializer) space objects into Cassandra.
 
@@ -21,9 +20,9 @@ The [Archive Container](./archive-container.html) can be configured to work agai
 {%endcolumn%}
 {%endsection%}
 
-# Configuration
 
-## Library dependencies
+
+#### Library dependencies
 
 The Cassandra Archive Operation Handler uses the [Hector Library](http://hector-client.github.com/hector/build/html/index.html) for communicating with the Cassandra cluster.
 Include the following in your `pom.xml`
@@ -94,7 +93,7 @@ Include the following in your `pom.xml`
 {% endtabcontent %}
 {% endinittab %}
 
-## Setup
+#### Setup
 
 {% inittab os_simple_space|top %}
 {% tabcontent Namespace %}
@@ -147,7 +146,7 @@ archiveContainer.destroy();
 {% endtabcontent %}
 {% endinittab %}
 
-## `CassandraArchiveOperationHandler` Properties
+#### CassandraArchiveOperationHandler Properties
 
 {: .table .table-bordered}
 |Property|Description|
@@ -161,7 +160,7 @@ archiveContainer.destroy();
 |columnFamilyNameConverter| see [Column Family Name Converter](./cassandra-space-synchronization-endpoint.html#Column Family Name Converter).|
 
 {%comment%}
-## XSD Schema
+#### XSD Schema
 
 - <os-archive:cassandra-archive-handler> schema:
 
@@ -171,7 +170,7 @@ archiveContainer.destroy();
 
 {%endcomment%}
 
-## Property Value Serializer
+#### Property Value Serializer
 
 By default when serializing object/document properties to column values, the following serialization logic is applied:
 
@@ -188,7 +187,7 @@ Object fromByteBuffer(ByteBuffer byteBuffer);
 
 Properties will only be serialized by the custom serializer if their type does not match a primitive type in Cassandra.
 
-# Known Limitations
+### Known Limitations
 
 The CassandraArchiveHandler has the following known limitations:
  *  The archiver must not write two different entries with the same ID. This would corrupt the entry in Cassandra.

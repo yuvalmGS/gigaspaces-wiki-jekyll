@@ -2,15 +2,19 @@
 layout: post
 title:  Interoperability
 categories: XAP97
-parent: document-api.html
-weight: 200
+parent: document-overview.html
+weight: 300
 ---
 
+{% summary %}{% endsummary %}
+
+{%comment%}
 {% summary %}Interoperability between POJO and Document space entries{% endsummary %}
 
 # Overview
+{%endcomment%}
 
-GigaSpaces offers interoperability between documents and POJOs via the space - it is possible to write POJOs and read them back as documents, and vice versa. This is usually useful in scenarios requiring reading and/or manipulating POJO objects without loading the concrete java classes.
+XAP offers interoperability between documents and POJOs via the space - it is possible to write POJOs and read them back as documents, and vice versa. This is usually useful in scenarios requiring reading and/or manipulating POJO objects without loading the concrete java classes.
 
 ![document_arch2.jpg](/attachment_files/document_arch2.jpg)
 
@@ -53,7 +57,7 @@ SpaceDocument[] documents = gigaSpace.readMultiple(
     new SpaceDocument(Product.class.getName()), Integer.MAX_VALUE);
 {% endhighlight %}
 
-## SQL Query
+#### SQL Query
 
 The `SQLQuery` class has been enhanced with a `QueryResultType` parameter. The following options are available:
 
@@ -82,7 +86,7 @@ SpaceDocument document = gigaSpace.read(
 
 This strategy both preserves backwards compatibility and simplifies non-interoperability scenarios, which are more common than interoperability scenarios.
 
-## ID Based Query
+#### ID Based Query
 
 In order to support ID queries for documents, the `IdQuery` class has been introduced, which encapsulates the type, id, routing and a `QueryResultType`. New `GigaSpace` signatures have been added for `readById`, `readIfExistsById`, `takeById`, `takeIfExistsById`. The result type is determined by the `QueryResultType`, similar to `SQLQuery`.
 
@@ -202,7 +206,7 @@ This behavior applies to arrays and collections as well (for example, if `Person
 This feature is new 8.0.1. In previous releases, there's no implicit conversion of nested properties.
 {%endnote%}
 
-# Local View / Local Cache
+# Local View / Cache
 
 [Local View](./local-view.html) and [Local Cache](./local-cache.html) supports both POJOs and Documents. Unlike an embedded space, the entry is stored in the cache as a user object (either POJO or document), which speeds up query performance since the result entries do not have to be transformed.
 

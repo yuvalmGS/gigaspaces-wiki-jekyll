@@ -6,10 +6,28 @@ parent: programmers-guide.html
 weight: 1600
 ---
 
+{%wbr%}
 
-{% summary %} XAP provides integration with Big Data  {% endsummary %}
+{%section%}
+{%column width=10% %}
+![big-data.png](/attachment_files/subject/big-data.png)
+{%endcolumn%}
+{%column width=90% %}
+XAP integrates with Cassandra and MongoDB NoSql data bases. These data bases can be used for data archiving and data persistence.
+{%endcolumn%}
+{%endsection%}
 
 
+{%wbr%}
 
 
-{%children%}
+- [Archive Handler](./archive-container.html){%wbr%}
+Allows archiving of space objects to an external persistency service.
+
+
+- [Cassandra](./cassandra.html){%wbr%}
+XAP Integration with Cassandra
+
+- [MongoDB](./mongodb.html){%wbr%}
+XAP Integration with MongoDB
+

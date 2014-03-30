@@ -1,26 +1,36 @@
 ---
 layout: post
-title:  Basic
+title:  Indexing
 categories: XAP97
-parent: indexing-overview.html
-weight: 50
+parent: programmers-guide.html
+weight: 400
 ---
-
-{% summary %}{% endsummary %}
-
-{%comment%}
-{% summary %} Using indexes to improve query performance. {% endsummary %}
-
-# Overview
-
-
 
 
 When a space is looking for a match for a read or take operation, it iterates over non-null values in the template, looking for matches in the space. This process can be time consuming, especially when there are many potential matches. To improve performance, it is possible to index one or more properties. The space maintains additional data for indexed properties, which shortens the time required to determine a match, thus improving performance.
 
-# Choosing which Properties to Index
-{%endcomment%}
 
+- [Basic concept](./indexing-overview.html){%wbr%}
+Basic index types
+
+- [Indexing Netsted properties](./indexing-nested-properties.html){%wbr%}
+An index can be defined on a nested property to improve performance of nested queries.
+
+- [Indexing colletions](./indexing-collections.html){%wbr%}
+An index can be defined on a Collection property (java.util.Collection implementation).
+
+
+- [Compound index](./indexing-compound.html){%wbr%}
+Compound indexes can be defined using annotations.
+
+
+- [Unique index](./indexing-unique.html){%wbr%}
+Unique constraints can be defined for an attribute or attributes of a space class.
+
+
+{%comment%}
+
+# Choosing which Properties to Index
 
 One might wonder why properties are not always indexed, or why all the properties in all the classes are not always indexed. The reason is that indexing has its downsides as well:
 
@@ -134,3 +144,8 @@ The smallest set of space objects is the list of objects to perform the matching
 
 {% info%} Class fields that are not indexed are not used to construct the candidates list. {%endinfo%}
 
+
+
+{%children%}
+
+{%endcomment%}

@@ -1,11 +1,15 @@
 ---
 layout: post
-title:  Space Document
+title:  Document API
 categories: XAP97
-parent: programmers-guide.html
-weight: 20
+parent: document-overview.html
+weight: 100
 ---
 
+
+{% summary %}{% endsummary %}
+
+{%comment%}
 {% summary %}Working with Space Documents{% endsummary %}
 
 # Overview
@@ -18,6 +22,8 @@ The GigaSpaces document API exposes the space as [Document Store](http://en.wiki
 ![doc_api.jpg](/attachment_files/doc_api.jpg)
 {% endcolumn %}
 {% endsection %}
+
+{%endcomment%}
 
 Unlike POJOs, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic - users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the class `SpaceTypeDescriptor`.
 

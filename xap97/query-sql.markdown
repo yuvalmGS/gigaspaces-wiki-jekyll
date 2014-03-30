@@ -6,21 +6,23 @@ parent: querying-the-space.html
 weight: 300
 ---
 
+{%summary%}{%endsummary%}
 
+{%comment%}
 {% summary %}The SQLQuery class is used to query the space using `SQL`-like syntax.{% endsummary %}
 
 # Overview
-
 {% section %}
 {% column width=70% %}
 The `SQLQuery` class is used to query the space using SQL-like syntax. The query statement includes only the `WHERE` statement part - the selection aspect of a SQL statement is embedded in other parameters for a SQL query.
-
-
 {% endcolumn %}
 {% column width=30% %}
 ![space-projections.jpg](/attachment_files/space-projections.jpg)
 {% endcolumn %}
 {% endsection %}
+{%endcomment%}
+
+The `SQLQuery` class is used to query the space using SQL-like syntax. The query statement includes only the `WHERE` statement part - the selection aspect of a SQL statement is embedded in other parameters for a SQL query.
 
 {% refer %}
 For the full documentation of the class's methods and constructors, see [Javadoc](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/SQLQuery.html).
@@ -30,6 +32,7 @@ For the full documentation of the class's methods and constructors, see [Javadoc
 {%comment%}
 <iframe width="640" height="360" src="//www.youtube.com/embed/jC57mId3SMg?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
 {%endcomment%}
+
 
 # Examples
 
@@ -143,11 +146,12 @@ SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,
 In previous options, parameters could be passed via a POJO template as well. This option is still available, but is deprecated and will be removed in future versions.
 {%endnote%}
 
+
 # Properties Types
 
 {% anchor Nested Properties%}
 
-## Nested Properties
+#### Nested Properties
 
 GigaSpaces SQL syntax contains various extensions to support matching nested properties, maps, collections and arrays.
 
@@ -162,7 +166,7 @@ Some examples:
 
 For more information see [Query Nested Properties](./query-nested-properties.html).
 
-## Enum Properties
+#### Enum Properties
 
 An enum property can be matched either using the enum's instance value or its string representation. For example:
 
@@ -182,7 +186,7 @@ public class Vehicle {
 
 {% info %} When using an Enum string value, the value must be identical (case sensitive) to the name of the Enum value.{%endinfo%}
 
-## Date Properties
+#### Date Properties
 
 A `Date` property can be matched either using the Date instance value or its string representation. For example:
 
@@ -224,7 +228,7 @@ These space properties should be configured with a valid Java format pattern as 
 Date properties are often used for comparison (greater/less than). Consider using [extended indexing](./indexing.html) to boost performance.
 {%endinfo%}
 
-## sysdate
+#### sysdate
 
 The `sysdate` value is evaluated differently when using the JDBC API vs when using it with `SQLQuery` API. When used with JDBC API it is evaluated using the space clock. When used with `SQLQuery` API it is evaluated using the client clock. If you have a partitioned space across multiple different machines and the clock across these machines is not synchronized you might not get the desired results. If you use JDBC API you should consider setting the date value as part of the SQL within the client side (since you  might write objects using the GigaSpace API). In this case , you should synchronize all the client machine time. In short - all the machines (client and server) clocks should be synchronized.
 
@@ -373,15 +377,15 @@ Implementing case insensitive queries can be done via:
 
 # Best Practice
 
-## Compound Index
+#### Compound Index
 
 When having an **AND** query or a template that use two or more fields for matching a [Compound Index](./indexing.html#Compound Indexing) may boost the query execution time. The Compound Index should be defined on multiple properties for a specific space class and will be used implictly when a SQL Query or a [Template](./query-template-matching.html) will be using these properties.
 
-## Re-using SQLQuery
+#### Re-using SQLQuery
 
 Constructing an `SQLQuery` instance is a relatively expensive operation. When possible, prefer using `SQLQuery.setParameters` and `SQLQuery.setParameter` to modify an existing query instead of creating a new one. However, remember that `SQLQuery` is not thread-safe.
 
-## Minimize OR usage
+#### Minimize OR usage
 
 When using the `OR` logical operator together with `AND` logical operator as part of your query you can speed up the query execution by minimizing the number of `OR` conditions in the query. For example:
 
@@ -397,13 +401,13 @@ OR
 (A = 'Y' AND B > '2000-10-1' AND B < '2003-11-1')
 {% endhighlight %}
 
-## Projecting Partial Results
+#### Projecting Partial Results
 
 You can specify that the `SQLQuery` should contain only partial results which means that the returned object should only be populated with the projected properties.
 {% refer %}For details on how to use the projection API please refer to [Getting Partial Results Using Projection API](./query-partial-results.html){% endrefer %}
 
 
-## Unsupported SQL Features
+#### Unsupported SQL Features
 
 {%panel title=SQLQuery **does not** support the following: %}
 
@@ -422,7 +426,7 @@ You can specify that the `SQLQuery` should contain only partial results which me
 
 {% anchor SimpleQueries %}
 
-## Simple vs. Complex Queries
+#### Simple vs. Complex Queries
 
 Most space operations and features support any SQL query, but some support only **simple** queries and not **complex** ones.
 
@@ -440,11 +444,11 @@ The following features support only simple SQL queries
 - [GSIterator](./query-paging-support.html)
 {%endpanel%}
 
-## Interface Classes
+#### Interface Classes
 
 `SQLQuery` supports concrete classes, derived classes and abstract classes. Interface classes are **not supported**.
 
-## Reserved Words
+#### Reserved Words
 
 The following are reserved keywords in the GigaSpaces SQL syntax:
 

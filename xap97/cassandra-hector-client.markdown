@@ -6,11 +6,7 @@ parent: cassandra-space-persistency.html
 weight: 300
 ---
 
-{% compositionsetup %}
 
-{% summary %}Hector Cassandra Client{% endsummary %}
-
-# Overview
 
 A wrapper around the [Hector Library](http://hector-client.github.com/hector/build/html/index.html) used for communicating with Cassandra.
 

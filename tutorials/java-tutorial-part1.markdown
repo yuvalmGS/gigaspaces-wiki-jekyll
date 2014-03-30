@@ -10,7 +10,8 @@ parent: java-home.html
 
 {%summary%}This tutorial will introduce you to the basic features of the GigaSpaces XAP platform.{%endsummary%}
 
-{%wbr%}
+
+
 
 {%section%}
 {%column width=15% %}
