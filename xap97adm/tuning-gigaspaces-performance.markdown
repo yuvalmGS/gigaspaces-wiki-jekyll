@@ -6,9 +6,8 @@ parent:  tuning.html
 weight: 200
 ---
 
-{% summary %}Helpful recommendations for tuning XAP, boosting its performance, and improving its scalability.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
 
 This section lists helpful recommendations for tuning your application when using XAP to boost its performance, and improving its scalability.
 

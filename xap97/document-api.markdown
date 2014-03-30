@@ -699,6 +699,3 @@ Space Replication Filter are supported for space documents.
 
 If you intend to use space filters in a mixed POJO-Document environment, please refer to [Document-POJO Interoperability](./document-pojo-interoperability.html).
 
-
-
-{% children %}

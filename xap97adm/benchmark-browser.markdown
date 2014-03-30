@@ -6,9 +6,8 @@ parent: benchmarking.html
 weight: 200
 ---
 
-{% summary %}The Benchmark view provides a user interface for benchmarking the space.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
 
 The Benchmark view provides a user interface for benchmarking the space.
 

@@ -2,13 +2,11 @@
 layout: post
 title:  FIFO Support
 categories: XAP97NET
-parent: programmers-guide.html
-weight: 2300
+parent: fifo-overview.html
+weight: 100
 ---
 
-{% summary %}How to get entries in the same order in which they were written to the space.{% endsummary %}
-
-# Overview
+{%summary%}{%endsummary%}
 
 Supporting FIFO (First In, First Out) behavior for Entries is a critical requirement when building messaging systems or implementing master-worker patterns. Users should be able to get Entries in the same order in which they were written. GigaSpaces supports both non-ordered Entries and FIFO ordered Entries when performing space operations.
 
@@ -43,7 +41,7 @@ The `FifoSupport` modes are:
 3. **`All`** - FIFO support is enabled. Any operation will be FIFO, overriding its other modifier or settings.
 4. **`Default`** - FIFO support will be derived from the base class recursively.
 
-# Space Operations with FIFO
+# Space Operations
 
 ## Query Operations with FIFO
 
@@ -75,7 +73,7 @@ FIFO Space operations can be performed using transactions. When transaction is r
 
 For example, if a transactional polling container consumes data and throws an exception which results into a rollback of transaction, same data will be processed by the polling container in the next attempt.
 
-# Events with FIFO
+# Events
 
 When registering for events, use `EventSessionConfig.Fifo` to instruct the space that events should be sent to the client in FIFO order. For example:
 
@@ -92,7 +90,7 @@ session.AddListener(new Person(), new EventHandler<SpaceDataEventArgs<Person>>(O
 {% infosign %} When using FIFO the client will use a single thread to invoke the listener callback method, so the events are both received and processed in FIFO order (i.e. if the client receives an event but the callback method haven't finished processing the previous event, the new event will be blocked until the previous one finishes). This is contrary to non-FIFO events, which are forwarded to the callback method as soon as they arrive, and thus might invoke the callback methods in parallel via multiple threads.
 {% exclamation %} Registering for FIFO notifications on a class that was not FIFO-enabled will throw an exception.
 
-# Persistent Space in FIFO Mode
+# Persistent Space
 
 When a space includes FIFO-enabled classes and is defined as persistent, the persistent store (RDBMS) includes the relevant information that enables FIFO operations. This might impact the performance, since an additional index is created for each table storing the Entry Class instances.
 

@@ -6,7 +6,7 @@ parent: benchmarking.html
 weight: 50
 ---
 
-{%summary%}Performance benchmarks with XAP {%endsummary%}
+{%summary%}{%endsummary%}
 
 
 Performance benchmarks with XAP's In-Memory Data Grid mainly involve testing latency and throughput. Since XAP offers data access routines for remote data access as well as colocated data access, you should test latency and throughput in both cases (as appropriate for your architecture and deployment topology).

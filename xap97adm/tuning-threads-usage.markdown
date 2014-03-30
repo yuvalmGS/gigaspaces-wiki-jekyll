@@ -6,12 +6,10 @@ parent: tuning.html
 weight: 500
 ---
 
-{% summary %}Tuning Threads Usage. {% endsummary %}
 
 
-# Overview
 
-GigaSpaces using Thread resources in an extensive manner to scale the different activities executed within the JVM process. The may happen at the client or server side. Some of the modules within the server or client side (proxy) require some tuning before moving into production. This section describes the important Thread (Thread pools) started and provides information when and how these should be tuned.
+XAP using Thread resources in an extensive manner to scale the different activities executed within the JVM process. The may happen at the client or server side. Some of the modules within the server or client side (proxy) require some tuning before moving into production. This section describes the important Thread (Thread pools) started and provides information when and how these should be tuned.
 
 # Threads List
 

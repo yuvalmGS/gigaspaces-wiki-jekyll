@@ -6,9 +6,7 @@ parent: network.html
 weight: 600
 ---
 
-{% summary   %}The GigaSpaces settings to enable functioning over a Firewall. {% endsummary %}
-
-# Overview
+{% summary   %} {% endsummary %}
 
 In many scenarios, you need to set up GigaSpaces in environments which have a firewall running. This section&nbsp;provides&nbsp;GigaSpaces configuration recommendations for several firewall topologies:
 

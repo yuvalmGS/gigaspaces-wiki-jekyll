@@ -2,18 +2,16 @@
 layout: post
 title:  Locking and Blocking
 categories: XAP97NET
-parent:  transactions.html
-weight: 100
+parent: transaction-overview.html
+weight: 200
 ---
 
 
-{% summary %}Using optimistic and pessimistic locking to preserve the integrity of changes in multi-user scenarios.{% endsummary %}
+{% summary %} {% endsummary %}
 
-
-# Overview
 
 Locking of objects occurs in multi-user systems to preserve the integrity of changes, so that changes made by one process do not accidentally overwrite changes made by another process.
-GigaSpaces provides two strategies for locking objects: Optimistic and pessimistic. Both of these are discussed below. The focus is on optimistic locking, the preferred strategy in the GigaSpaces context.
+XAP provides two strategies for locking objects: Optimistic and pessimistic. Both of these are discussed below. The focus is on optimistic locking, the preferred strategy in the GigaSpaces context.
 
 
 

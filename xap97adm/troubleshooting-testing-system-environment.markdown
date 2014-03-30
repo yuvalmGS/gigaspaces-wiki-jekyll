@@ -6,11 +6,13 @@ parent: troubleshooting.html
 weight: 200
 ---
 
+{% summary%}{% endsummary %}
 
-
+{%comment%}
 {% summary %}Verifying a local installation and a remote installation.{% endsummary %}
 
 # Overview
+{%endcomment%}
 
 To perform a simple system testing you should use the `gsInstance.bat` script on windows or `gsInstance.sh` script on linux.
 

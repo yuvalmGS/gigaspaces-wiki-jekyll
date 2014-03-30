@@ -6,11 +6,11 @@ parent: tuning-gigaspaces-performance.html
 weight: 300
 ---
 
-{% summary %}Setting communication protocol using exporters; `GenericExporter` configuration - ports, connections, and threads.{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
 
-GigaSpaces provides a pluggable communication adaptor, LRMI (**Light Remote Method Invocation**), built on top of [NIO communication protocol](http://en.wikipedia.org/wiki/New_I/O).
+
+XAP provides a pluggable communication adaptor, LRMI (**Light Remote Method Invocation**), built on top of [NIO communication protocol](http://en.wikipedia.org/wiki/New_I/O).
 
 {% indent %}
 ![lrmi.jpg](/attachment_files/lrmi.jpg)
@@ -26,7 +26,7 @@ The GigaSpaces LRMI protocol has been designed to allow multiple services runnin
 ![lrmi_archi2.jpg](/attachment_files/lrmi_archi2.jpg)
 {% endindent %}
 
-The GigaSpaces LRMI using two independent resource pools working collaboratively allowing a client to communicate with a server in a scalable manner: A client connection pool configured via the `com.gs.transport_protocol.lrmi.max-conn-pool` at the server side and a server Connection thread pool configured via the `com.gs.transport_protocol.lrmi.max-threads` also at the server side. You may configure these two pools' sizes and their resource timeouts to provide maximum throughput and low latency when a client communicates with a server. The default LRMI behavior will open a different connection at the client side and start a connection thread at the server side, once a multithreaded client accesses a server component. All client connections may be shared between all the client threads when communicating with the server. All server side connection threads may be shared between all client connections.
+The XAP LRMI using two independent resource pools working collaboratively allowing a client to communicate with a server in a scalable manner: A client connection pool configured via the `com.gs.transport_protocol.lrmi.max-conn-pool` at the server side and a server Connection thread pool configured via the `com.gs.transport_protocol.lrmi.max-threads` also at the server side. You may configure these two pools' sizes and their resource timeouts to provide maximum throughput and low latency when a client communicates with a server. The default LRMI behavior will open a different connection at the client side and start a connection thread at the server side, once a multithreaded client accesses a server component. All client connections may be shared between all the client threads when communicating with the server. All server side connection threads may be shared between all client connections.
 
 
 ## Client LRMI Connection Pool

@@ -6,9 +6,7 @@ parent: network.html
 weight: 700
 ---
 
-{% summary %}Default ports used by the space, container, and Jini Lookup Service, and how to configure them. {% endsummary %}
 
-# Overview
 
 XAP space and client components open different ports in various situations. The following list describes the different ports used by XAP and how these can be modified:
 

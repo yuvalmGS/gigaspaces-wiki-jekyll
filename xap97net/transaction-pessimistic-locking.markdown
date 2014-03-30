@@ -7,7 +7,8 @@ weight:
 ---
 
 
-{% summary %}In the pessimistic locking approach, your program must explicitly obtain a lock using a transaction on one or more objects before making any changes.{% endsummary %}
+{% summary %}
+In the pessimistic locking approach, your program must explicitly obtain a lock using a transaction on one or more objects before making any changes.{% endsummary %}
 
 
 

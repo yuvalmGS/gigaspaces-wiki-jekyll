@@ -2,7 +2,7 @@
 layout: post
 title:  Collections
 categories: XAP97NET
-parent: indexing.html
+parent: indexing-overview.html
 weight: 200
 ---
 

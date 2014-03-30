@@ -2,16 +2,13 @@
 layout: post
 title:  Document API
 categories: XAP97NET
-weight: 200
-parent: programmers-guide.html
+weight: 100
+parent: document-overview.html
 ---
 
+{%summary%}{%endsummary%}
 
-{% summary %}Working with Space Documents{% endsummary %}
-
-# Overview
-
-The GigaSpaces document API exposes the space as [Document Store](http://en.wikipedia.org/wiki/Document-oriented_database). A document, which is represented by the class `SpaceDocument`, is essentially a collection of key-value pairs, where the keys are strings and the values are primitives, `String`, `Date`, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
+The XAP document API exposes the space as [Document Store](http://en.wikipedia.org/wiki/Document-oriented_database). A document, which is represented by the class `SpaceDocument`, is essentially a collection of key-value pairs, where the keys are strings and the values are primitives, `String`, `Date`, other documents, or collections thereof. Most importantly, the Space is aware of the internal structure of a document, and thus can index document properties at any nesting level and expose rich query semantics for retrieving documents.
 
 Unlike concrete objects, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic - users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the interface `ISpaceTypeDescriptor`.
 
@@ -440,6 +437,3 @@ In order to support InitialLoad of documents the relevant types must be declared
 Document persistence is currently not provided by default - If needed, the External Data Source should be implemented to fit the required solution.
 {%endwarning%}
 
-# Advanced Options
-
-{% children %}

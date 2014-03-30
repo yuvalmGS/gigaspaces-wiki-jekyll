@@ -6,10 +6,14 @@ parent: troubleshooting.html
 weight: 400
 ---
 
+{% summary%}{% endsummary %}
 
+
+{%comment%}
 {% summary %}About failure detection, reducing failure detection time, and relevant parameters.{% endsummary %}
 
 # Overview
+{%endcomment%}
 
 Failure detection is the time it takes for the space and the client to detect that failure has occurred. Failure detection consists of two main phases:
 

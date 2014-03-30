@@ -6,6 +6,8 @@ parent: web-management-console.html
 weight: 300
 ---
 
+{% summary %}{% endsummary %}
+
 {%comment%}
 {% summary %}Main Dashboard navigation view{% endsummary %}
 
@@ -16,7 +18,7 @@ Once you've passed the login screen, you will enter the main dashboard screen. T
 
 ![dashboard803_9_6.png](/attachment_files/dashboard803_9_6.png)
 
-### Alerts panel
+# Alerts panel
 
 The Alerts panel displays XAP Alert groups (Alerts are grouped by correlation key) for more details see [Administrative Alerts]({%currentjavaurl%}/administrative-Alerts.html)
 
@@ -31,7 +33,7 @@ This can be done by opening the Alert Actions menu and clicking "Generate dump..
 
 Select the desired components for the dump and click "Generate", and a zip file will be downloaded containing log files for each of the selected components.
 
-### Events time-line panel
+# Events time-line panel
 
 At the bottom panel of the web dashboard, the events time line is displayed upon selection of the "Events" tab.
 The events time-line shows the deployment life cycle of all the processing units.

@@ -6,9 +6,14 @@ parent: troubleshooting.html
 weight: 300
 ---
 
+{% summary%}{% endsummary %}
+
+{%comment%}
 {% summary%}The status of clustered spaces can be viewed using different logging levels.{% endsummary %}
 
 # Overview
+
+{%endcomment%}
 
 The status of clustered spaces can be viewed using different logging levels. This status is managed by two threads - a `Monitor` and a `Detector`.
 

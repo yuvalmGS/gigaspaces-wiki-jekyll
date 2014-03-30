@@ -6,7 +6,9 @@ parent: network.html
 weight: 400
 ---
 
-{% summary %}Defining group names and unicast Locators for Jini Services; searching for available lookup services in the network.{% endsummary %}
+{% summary %}{% endsummary %}
+
+Defining group names and unicast Locators for Jini Services; searching for available lookup services in the network.
 
 # Essential Guidelines
 

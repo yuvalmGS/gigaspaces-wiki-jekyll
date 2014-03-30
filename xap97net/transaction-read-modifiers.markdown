@@ -2,18 +2,13 @@
 layout: post
 title:  Read Modifiers
 categories: XAP97NET
-parent:  transactions.html
-weight: 200
+parent: transaction-overview.html
+weight: 300
 ---
 
-{% summary %}GigaSpaces ExclusiveReadLock, ReadCommitted, DirtyRead, and RepeatableRead modifiers.{% endsummary %}
-
-{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
 
 
-# Overview
-
-GigaSpaces `ReadModifiers` class (see [DotNetDoc]({%dotnetdoc GigaSpaces_Core_ReadModifiers %})) provides static methods and constants to decode read-type modifiers. The sets of modifiers are represented as integers with distinct bit positions representing different modifiers.
+XAP `ReadModifiers` class (see [DotNetDoc]({%dotnetdoc GigaSpaces_Core_ReadModifiers %})) provides static methods and constants to decode read-type modifiers. The sets of modifiers are represented as integers with distinct bit positions representing different modifiers.
 
 Four main types of modifiers can be used:
 

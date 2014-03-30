@@ -6,9 +6,7 @@ parent: querying-the-space.html
 weight: 500
 ---
 
-{% summary %}Querying the space using SqlQuery{% endsummary %}
-
-# Overview
+{%summary%}{%endsummary%}
 
 The **`SqlQuery`** class is used to query the space using SQL-like syntax. This query can be passed as a template to the Read, Take, ReadMultiple, TakeMultiple, Count and Clear operations, as well as a template when registering for notification.
 

@@ -169,7 +169,7 @@ For example, index lists aren't maintained because the space is unaware of the m
 Non-Indexed fields that are not used for queries should be placed within a user defined class (payload object) and have their getter and setter placed within the payload class. This improves the read/write performance since these fields would not be introduced to the space class model.
 
 {% tip %}
-[Indexing](./indexing.html) is **critical** for good performance over large spaces. Don't forget to index properly with the @SpaceIndex(type=SpaceIndexType.BASIC) or @SpaceIndex(type=SpaceIndexType.EXTENDED) annotation or use the gs.xml equivalent.
+[Indexing](./indexing-overview.html) is **critical** for good performance over large spaces. Don't forget to index properly with the @SpaceIndex(type=SpaceIndexType.BASIC) or @SpaceIndex(type=SpaceIndexType.EXTENDED) annotation or use the gs.xml equivalent.
 {% endtip %}
 {%learn%}./indexing.html{%endlearn%}
 
@@ -181,4 +181,7 @@ Non-Indexed fields that are not used for queries should be placed within a user 
 
 
 # Jini Entry
+
+{%warning%}
 GigaSpace POJO **should not** implement the `net.jini.core.entry.Entry` interface. When doing so a **different handling performed** for the object ignoring all GigaSpace POJO annotations/xml decorations.
+{%endwarning%}

@@ -6,9 +6,9 @@ parent: network.html
 weight: 100
 ---
 
-{% summary %}The section explains How to Configure and use Unicast Discovery.{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
+
 
 There are many cases when you need to use a unicast-based services discovery. For example if you want to to use unicast with multicast (using Jini Groups), which is the default, or when **you do not have multicast enabled, or you prefer not to use multicast**.
 

@@ -6,6 +6,8 @@ parent: web-management-console.html
 weight: 400
 ---
 
+{% summary %}{% endsummary %}
+
 {%comment%}
 {% summary %}Applications and Processing unit dependency view{% endsummary %}
 
@@ -18,7 +20,7 @@ The picture below explains the different parts composing the Applications module
 
 ![apps_explained_9_6.png](/attachment_files/apps_explained_9_6.png)
 
-### The Application Map
+# Application Map
 
 The application map is a graphical representation of the deployment plan (processing units, their SLA and their dependencies)
 It allow the user to compare the plan with the actual deployment in any given moment. the next sections give detailed explanation of the application map functionality
@@ -119,15 +121,15 @@ Total and average Space operation metrics are available for selection as well.
 ![space_metrics.jpg](/attachment_files/space_metrics.jpg)
 
 
-#### Stateless Processing Unit metrics:
+# Stateless Processing Unit metrics:
 
 ![stateless_vm_metrics.jpg](/attachment_files/stateless_vm_metrics.jpg)
 
-#### Web Processing Unit metrics:
+# Web Processing Unit metrics:
 
 ![web_pu_metrics.jpg](/attachment_files/web_pu_metrics.jpg)
 
-#### Mirror metrics:
+# Mirror metrics:
 
 ###### OS metrics
 - Memory
@@ -144,7 +146,7 @@ Total and average Space operation metrics are available for selection as well.
 - Mirror Update per sec.
 - Mirror Remove per sec.
 
-### The Infrastructure view
+# The Infrastructure view
 
 The infrastructure view allow the user to verify the application's topology. It maps the processing unit instances to hosts, providing some basic information about each host.
 ![infra_explained.png](/attachment_files/infra_explained.png)
@@ -194,7 +196,7 @@ The events table shows the deployment life cycle of all the processing units bel
 ![new-in-91-ribbon.png](/attachment_files/new-in-91-ribbon.png)
 {%endcomment%}
 
-### SSH terminal
+# SSH terminal
 
 There is an option to open SSH terminal for specific machine
 

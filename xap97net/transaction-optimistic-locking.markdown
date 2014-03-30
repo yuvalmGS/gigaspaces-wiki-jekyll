@@ -2,16 +2,13 @@
 layout: post
 title:  Optimistic Locking
 categories: XAP97NET
-parent:  transactions.html
-weight: 300
+parent: transaction-overview.html
+weight: 400
 ---
 
 
-{% summary %}
-The optimistic locking protocol provides better performance and scalability when having concurrent access to the same data. Optimistic locking offers higher concurrency and better performance than pessimistic locking. It also avoids deadlocks.
-{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
 
 With optimistic locking, you write your business logic allowing multiple users to read the same object at the same time, but allow only one user to update the object successfully. The assumption is that there will be a relatively large number of users trying to read the same object, but a low probability of having a small number of users trying to update the same object at the same time.
 

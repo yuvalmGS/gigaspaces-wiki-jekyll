@@ -6,16 +6,15 @@ parent: benchmarking.html
 weight: 300
 ---
 
-{% summary %}How to configure and run the c++ POCO Benchmark Framework{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
 
-The GigaSpaces c++ API benchmark framework provides a simple report of the average response time in different scenarios, running with different space topologies and activating different types of operations and space classes.
+The XAP c++ API benchmark framework provides a simple report of the average response time in different scenarios, running with different space topologies and activating different types of operations and space classes.
 You can import the report to any spread sheet (e.g. Excel) for further processing and for producing graphical results.
 You can plug-in your own space entry classes in case the ones provided with the benchmark do not fit your needs.
 
 {% tip %}
-The benchmark source code can be found under: `<GigaSpaces Root>\cpp\examples\benchmark`.
+The benchmark source code can be found under: `<XAP Root>\cpp\examples\benchmark`.
 {%endtip%}
 
 # Benchmark Operations

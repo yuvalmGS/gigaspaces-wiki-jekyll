@@ -1,20 +1,21 @@
 ---
 layout: post
-title:  Document-Object interoperability
+title:  Interoperability
 categories: XAP97NET
 weight: 300
-parent: document-api.html
+parent: document-overview.html
 ---
 
-{% summary %}Interoperability between Concrete Object and Document space entries{% endsummary %}
+{% summary %} {% endsummary %}
 
 {%comment%}
-![new-in-801-banner.png](/attachment_files/dotnet/new-in-801-banner.png)
-{%endcomment%}
+{% summary %}Interoperability between Concrete Object and Document space entries{% endsummary %}
+
 
 # Overview
+{%endcomment%}
 
-GigaSpaces offers interoperability between documents and concrete objects via space - it is possible to write objects and read them as documents, and vice versa. This is usually useful in scenarios requiring reading and/or manipulating objects without loading the concrete .NET classes. This page describes how to do it.
+XAP offers interoperability between documents and concrete objects via space - it is possible to write objects and read them as documents, and vice versa. This is usually useful in scenarios requiring reading and/or manipulating objects without loading the concrete .NET classes. This page describes how to do it.
 
 # Requirements
 
@@ -80,4 +81,5 @@ public class MyObject
 {% endhighlight %}
 
 The storage type of the dynamic properties can be explicitly set in the attribute \[SpaceDynamicProperties(StorageType=StorageType.Binary)\] (the default is StorageType.Object).
+
 {% refer %}For more details about storage type refer to [Property Storage Type](./property-storage-type.html){% endrefer %}

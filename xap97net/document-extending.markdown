@@ -1,18 +1,18 @@
 ---
 layout: post
-title:  Extending Space Documents
+title:  Extending
 categories: XAP97NET
-parent: document-api.html
-weight: 100
+weight: 200
+parent: document-overview.html
 ---
 
-{% summary %}Extending the SpaceDocument class{% endsummary %}
 
-# Overview
 
 While documents provide us with a dynamic schema, they force us to give up .NET type-safety for working with typeless key-value pairs. GigaSpaces supports extending the SpaceDocument class to provide a type-safe wrapper for documents which is much easier to code with, while maintaining the dynamic schema.
 
-{% plus %} Do not confuse this with [Document-Object interoperability](./document-object-interoperability.html), which is a different feature.
+{% note %}
+Do not confuse this with [Document-Object interoperability](./document-object-interoperability.html), which is a different feature.
+{%endnote%}
 
 # Creating the Extension Class
 

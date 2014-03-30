@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Indexing
-categories: XAP97
+categories: XAP97NET
 parent: programmers-guide.html
-weight: 400
+weight: 2200
 ---
 
 

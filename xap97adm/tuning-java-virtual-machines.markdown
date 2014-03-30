@@ -6,9 +6,7 @@ parent: tuning.html
 weight: 300
 ---
 
-{% summary %}As part of configuring  GigaSpaces, you can fine-tune settings that enhance system use of the JVM. {% endsummary %}
-
-# Overview
+{% summary %}  {% endsummary %}
 
 XAP, being a Java process, requires a Java virtual machine (JVM) to run. As part of configuring  XAP, you can fine-tune settings that enhance system use of the JVM. A JVM provides the runtime execution environment for Java-based applications. XAP can run on JVMs from different JVM providers. When GigaSpaces starts it writes information about the JVM, including the JVM provider information, into this  log file and the standard output.
 

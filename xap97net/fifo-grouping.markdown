@@ -2,16 +2,20 @@
 layout: post
 title:  FIFO Grouping
 categories: XAP97NET
-parent: fifo-support.html
-weight: 100
+parent: fifo-overview.html
+weight: 200
 ---
 
+{%summary%}{%endsummary%}
+
+{%comment%}
 {% summary %}
 How to read/take a group of space entries with a common property value, in FIFO order (by order of insertion),
 without having to maintain a FIFO order for all the entries in the space.
 {% endsummary %}
 
 # Overview
+{%endcomment%}
 
 The FIFO groups features is designed to allow for efficient processing of events with partial ordering constraints. To better understand FIFO groups, let's first examine the constraints of total ordering, i.e. What it takes to process events in the exact order in which they arrive. There are two elements that effectively limit the scalability of processing events with total ordering:
 
