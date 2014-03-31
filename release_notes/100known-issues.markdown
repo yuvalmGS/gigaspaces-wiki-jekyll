@@ -21,7 +21,6 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | GS-11626 | Failed to deploy data example using secured space | | 10.0.0 | | Java |
 | GS-11629 | sla.xml has side effect on spring import | 8597 | 10.0.0 | | Java |
 | GS-11632 | NPE using DefaultSpaceInstance.runGc() when discoverUnmanagedSpaces used | 8587 | 10.0.0 | | All |
-| GS-11633 | Add Multi thread support to XAResourceImpl | 8698 | 10.0.0 | | All |
 | GS-11634 | Redundant apostrophes in the GS_JARS variable in setenv.bat | | 10.0.0 | | Java |
 | GS-11635 | Gigaspaces's jars missing from the classpath in startGroovy and startGroovy.bat | | 10.0.0 | | Java |
 | GS-11636 | problem deploying JPA pet clinic example petclinic-web | | 10.0.0 | | Java |
@@ -29,3 +28,7 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | GS-11647 | "Create" Permission wasn't added in GS-ui | 8758 | 10.0.0 | | All |
 | GS-11654 | .Net localCache freeze on a clear operation in rare condition | 8740 | 10.0.0 | | .NET |
 | GS-11660 | Bug in Linq - Parameters are valid only on the right side of the expression | | 10.0.0 | | .NET |
+| GS-11670 | .Net- Enum does not work in change api | 8739 | 10.0.0 | | .NET |
+| GS-11675 | Setting spaceDataSource should not move the space to LRU cache policy | | 10.0.0 | | All |
+| GS-11677 | GSUniversalDeployer maintainance for 9.7 version and security | 8812 | 10.0.0 | | All |
+| GS-11679 | Admin statistics history size overridden with default value | | 10.0.0 | | Java |
