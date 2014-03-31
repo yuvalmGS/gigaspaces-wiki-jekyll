@@ -2,18 +2,18 @@
 layout: post
 title:  HelloWorld example
 categories: XAP97
-parent: security.html
-weight: 500
+parent: security-overview.html
+weight: 600
 ---
 
-{% summary %}Get started with a simple HelloWorld example{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Introduction
+
 
 If you are new to the **Hello World** example, we suggest to first review the [Your First XTP Application](/tutorials/your-first-xtp-application.html) tutorial and its [Hello World screencast](http://www.youtube.com/watch?v=I2s8jg_Gufs&feature=relmfu). With this page we provide a short overview of the example, and get you started with applying security aspects to it.
 
 {% info %}
-The example distribution can be found under `<GigaSpaces root>/examples/helloworld`.
+The example distribution can be found under `<XAP root>/examples/helloworld`.
 {%endinfo%}
 
 # Overview

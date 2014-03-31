@@ -2,15 +2,15 @@
 layout: post
 title:  Default File-Based Security
 categories: XAP97
-parent: security.html
-weight: 200
+parent: security-overview.html
+weight: 300
 ---
 
-{% summary %}The default file-based users/roles directory; Overview, Getting Started, Configuration, and Custom Extensions{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
 
-GigaSpaces provides a default security implementation. The implementation uses a local file to store the users and roles. This file, needs to be shared or copied between the secured services. The default implementation has configurations for most of its defaults and some handy extension points (e.g. HTTP file-service).
+
+XAP provides a default security implementation. The implementation uses a local file to store the users and roles. This file, needs to be shared or copied between the secured services. The default implementation has configurations for most of its defaults and some handy extension points (e.g. HTTP file-service).
 
 To provide other custom security implementations see the [Custom Security](./custom-security.html) section.
 One such custom security implementation is the [Spring Security Bridge](./spring-security-bridge.html).

@@ -6,11 +6,11 @@ parent: securing-xap-components.html
 weight: 200
 ---
 
-{% summary %}Enabling security for Grid Service Agent, Manager and Container.{% endsummary %}
+{% summary %}{% endsummary %}
 
 # Enabling Security
 
-GigaSpaces security is enabled by setting a system property.
+XAP security is enabled by setting a system property.
 Append the following system property to `EXT_JAVA_OPTIONS` in `setenv` script.
 
 {% highlight java %}

@@ -2,13 +2,12 @@
 layout: post
 title:  Authorities
 categories: XAP97
-parent: security-basics.html
-weight: 200
+parent: security-overview.html
+weight: 120
 ---
 
-{% summary %}System, Grid, Space and Monitor authorities{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
 
 There are four categories of user authorities. These categories allow the flexibility of securing the different components of GigaSpaces.
 "**Authority**" refers to an abstraction given to a set of privileges of the same category. A "**Privilege**" (permission) is a granted right to perform an operation/action on a resource. For example, a user may have a `Grid Authority` of type `Provision PU`, which allows it to deploy and un-deploy in the Grid.

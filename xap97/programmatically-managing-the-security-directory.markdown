@@ -2,13 +2,12 @@
 layout: post
 title:  Directory Management
 categories: XAP97
-parent: security-basics.html
-weight: 400
+parent: security-overview.html
+weight: 140
 ---
 
-{% summary %}User and Role directory API{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
 
 The directory provides the means for managing users and roles. User and role information stored in a persistent storage need to be accessed for authentication purposes and for management (adding/modifying,associating, etc.).
 

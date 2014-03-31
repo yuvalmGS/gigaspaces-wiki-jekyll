@@ -7,7 +7,7 @@ weight: 100
 ---
 
 
-{% summary %}Secured Space, Processing Unit, Local Cache/View, Space Filters, Task Execution/Executors, Event Driven Remoting, JDBC{% endsummary %}
+{% summary %}{% endsummary %}
 
 # Secured Space
 

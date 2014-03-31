@@ -6,15 +6,15 @@ parent: security-administration.html
 weight: 100
 ---
 
-{% summary %}Security Administration using the GigaSpaces Management Center (UI){% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
 
-GigaSpaces Management Center (UI) allows to manage the Grid services and Processing Units running within the Grid containers. When security is enabled, the UI will restrict access to these services for non-privileged users.
+
+XAP Management Center (UI) allows to manage the Grid services and Processing Units running within the Grid containers. When security is enabled, the UI will restrict access to these services for non-privileged users.
 
 Administrators can use the UI to manage users and roles, and allow them to Login and operate based on their granted privileges.
 
-{% refer %}This section assumes familiarity with the [Security Basics](./security-basics.html) section.{% endrefer %}
+{% refer %}This section assumes familiarity with the [Security Basics](./security-concepts.html) section.{% endrefer %}
 
 # Managing Users and Roles
 

@@ -6,13 +6,15 @@ parent: securing-xap-components.html
 weight: 300
 ---
 
-{% summary %}GigaSpaces provides a generic network filter that also provides SSL support, through an SSL communication filter.{% endsummary %}
+{% summary %}{% endsummary %}
 
-{% refer %}[How to Set GigaSpaces Over a Firewall]({%currentadmurl%}/network-over-firewall.html){% endrefer %}
+XAP provides a generic network filter that also provides SSL support, through an SSL communication filter.
 
-# Overview
+{% refer %}[How to Set XAP Over a Firewall]({%currentadmurl%}/network-over-firewall.html){% endrefer %}
 
-GigaSpaces provides two types of communication filter:
+
+
+XAP provides two types of communication filter:
 
 - Stream-based filter - for a protocol like ZIP. This type of filter does not support a handshake phase.
 - Block-based filter - for encryption network filters. These filters do support a handshake phase.
@@ -20,13 +22,14 @@ GigaSpaces provides two types of communication filter:
 {% info %}
 For now, GigaSpaces supports only one communication filter, and this filter is applied to all the connections in the JVM.
 {%endinfo%}
+
 # Usage
 
 The way to load and enable the communication filter, is by setting the system property `com.gs.lrmi.filter.factory`. The value should be the `communication filter factory` class name.
 
 For example, to use an SSL communication filter, run GigaSpaces with:
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.lrmi.filter.factory=com.gigaspaces.lrmi.nio.filters.SSLFilterFactory
 {% endhighlight %}
 
@@ -44,7 +47,7 @@ If the communication filter needs its own parameters, it can acquire them by dir
 
 It uses the following system properties to get them:
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.lrmi.filter.security.keystore=keystore.ks
 -Dcom.gs.lrmi.filter.security.password=password
 {% endhighlight %}
@@ -106,7 +109,7 @@ public class SSLClient {
 As you can see, until now there is nothing special in the code -- it is the same code as if the SSL was not used.
 However, when you wish to run this code with SSL encryption, you should run it with the following system properties (both server and client), and have the [keystore](/download_files/keystore.ks) anywere in the classpath (both server and client).
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.lrmi.filter.factory=com.gigaspaces.lrmi.nio.filters.SSLFilterFactory
 -Dcom.gs.lrmi.filter.security.keystore=keystore.ks
 -Dcom.gs.lrmi.filter.security.password=password
@@ -118,7 +121,7 @@ With production environment you should have the SSLFilterFactory password (or an
 
 The indication that SSL is used is the message:
 
-{% highlight java %}
+{% highlight console %}
 Communication Filters Information:
 	CommunicationFilterFactory: com.gigaspaces.lrmi.nio.filters.SSLFilterFactory
 {% endhighlight %}

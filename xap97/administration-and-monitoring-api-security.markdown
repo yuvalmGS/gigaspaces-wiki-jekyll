@@ -6,12 +6,11 @@ parent: security-administration.html
 weight: 300
 ---
 
-{% summary %}Applying security to Admin API operations{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+The Admin API provides a way to administer and monitor all on XAP services and components using a simple API. The API, amongst others, provides the ability to operate on the currently running GigaSpaces Agents, XAP Managers, XAP Containers, Lookup Services, Processing Units and Spaces.
 
 {% refer %}[Administration and Monitoring API](./administration-and-monitoring-api.html){% endrefer %}
-The Admin API provides a way to administer and monitor all on GigaSpaces services and components using a simple API. The API, amongst others, provides the ability to operate on the currently running GigaSpaces Agents, GigaSpaces Managers, GigaSpaces Containers, Lookup Services, Processing Units and Spaces.
 
 # Constructing the Admin instance
 

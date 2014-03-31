@@ -2,13 +2,12 @@
 layout: post
 title:  Configuration
 categories: XAP97
-parent: security-basics.html
-weight: 300
+parent: security-overview.html
+weight: 130
 ---
 
-{% summary %}Configurations and defaults{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
 
 The security components (GSA, GSM, GSC and Processing Unit) can each have their own security configuration. As such, you can have different security behaviors even between Processing Units. But, all have one common concept: all configurations are declared using properties (either located in a properties file or part of the components properties).
 

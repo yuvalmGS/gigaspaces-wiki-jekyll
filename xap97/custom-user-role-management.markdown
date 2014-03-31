@@ -6,7 +6,7 @@ parent: custom-security.html
 weight: 200
 ---
 
-{% summary %}Customize user/role management to meet your application requirements{% endsummary %}
+Customize user/role management to meet your application requirements
 
 # User/Role management
 

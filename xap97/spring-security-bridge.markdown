@@ -2,14 +2,11 @@
 layout: post
 title:  Spring Security Bridge
 categories: XAP97
-parent: security.html
-weight: 700
+parent: security-overview.html
+weight: 800
 ---
 
-{% compositionsetup %}
-{% summary %}Declarative Spring-based custom security bridge{% endsummary %}
 
-# Overview
 
 Spring Security is one of the most mature and widely used Spring projects. In the following sections, we present a brief introduction to Spring Security and GigaSpaces Spring-based security bridge.
 

@@ -2,14 +2,10 @@
 layout: post
 title:  Custom Security
 categories: XAP97
-parent: security.html
-weight: 600
+parent: security-overview.html
+weight: 700
 ---
 
-
-{% summary %}Customize security to meet your application requirements{% endsummary %}
-
-# Overview
 
 GigaSpaces XAP security was designed with customization in mind - since there are numerous security standards and practices, users can either use the built in security features in the product or customize them to their own needs.
 
@@ -19,7 +15,7 @@ The following security aspects can be customized:
 - [User/Role Management](./custom-user-role-management.html) - Customize creation and management of users and roles.
 
 {% info %}
-This section assumes that you are familiar with the [Security Basics](./security-basics.html), and more specifically with [Security Configurations](./security-configurations.html).
+This section assumes that you are familiar with the [Security Basics](./security-concepts.html), and more specifically with [Security Configurations](./security-configurations.html).
 Before implementing custom security from scratch, consider the following alternatives:
 {%endinfo%}
 
@@ -51,3 +47,6 @@ If each processing unit has its **own** custom security implementation, the cust
 {% endhighlight %}
 
 {% info %} It is recommended that the custom security jar should only contain security-related classes. {%endinfo%}
+
+
+{%children%}

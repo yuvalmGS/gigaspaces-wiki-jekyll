@@ -7,9 +7,9 @@ weight: 200
 ---
 
 
-{% summary %}Applying security with the Command Line Interface{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
+
 
 The Command Line Interface can be used to manage and monitor a running system. It is mainly used for script automation, and when there is a limitation to run a Graphical User Interface. This section covers how security can be applied to the commands supported by the CLI tool.
 
@@ -25,13 +25,13 @@ Note that the login is being performed against the GSM. If the Grid is not secur
 {% tabcontent  Interactive %}
 Run the `gs` script and use the command line arguments **`-user`** and **`-password`** with the user credentials.
 
-{% highlight java %}
+{% highlight console %}
 gs(.sh/bat) -user uuu -password ppp
 {% endhighlight %}
 
 or, run the `gs` script, and then use the **`login`** command
 
-{% highlight java %}
+{% highlight console %}
 gs(.sh/bat)
 gs> login -user uuu -password ppp
 gs> ...
@@ -41,7 +41,7 @@ gs> ...
 {% tabcontent  Non-Interactive %}
 Run the `gs` script, and prefix **any** command with the command line arguments **`-user`** and **`-password`**.
 
-{% highlight java %}
+{% highlight console %}
 gs(.sh/.bat) -user uuu -password ppp [command]
 {% endhighlight %}
 
@@ -69,7 +69,7 @@ Here are some examples and how they are accomplished in both CLI modes:
 {% inittab login|tablocation=top %}
 {% tabcontent  Interactive %}
 
-{% highlight java %}
+{% highlight console %}
 gs(.sh/bat)
 gs> login -user uuu -password ppp
 gs> deploy /templates/datagrid
@@ -80,7 +80,7 @@ gs> deploy -user xxx -password yyy processor
 {% endtabcontent %}
 {% tabcontent  Non-Interactive %}
 
-{% highlight java %}
+{% highlight console %}
 gs -user uuu -password ppp deploy /templates/datagrid
 gs -user uuu -password ppp deploy -secured true -override-name myDataGrid /templates/datagrid
 gs -user uuu -password ppp deploy -user xxx -password yyy processor
@@ -96,7 +96,7 @@ The CLI **`undeploy`** command of a processing unit is done on its managing GSM.
 {% inittab login|tablocation=top %}
 {% tabcontent  Interactive %}
 
-{% highlight java %}
+{% highlight console %}
 gs(.sh/bat)
 gs> login -user uuu -password ppp
 gs> undeploy processor
@@ -105,7 +105,7 @@ gs> undeploy processor
 {% endtabcontent %}
 {% tabcontent  Non-Interactive %}
 
-{% highlight java %}
+{% highlight console %}
 gs -user uuu -password ppp undeploy processor
 {% endhighlight %}
 
@@ -125,7 +125,7 @@ For example, for the **`space clean`** command, the user _(uuu/ppp)_ needs **`Al
 {% inittab login|tablocation=top %}
 {% tabcontent  Interactive %}
 
-{% highlight java %}
+{% highlight console %}
 gs(.sh/bat)
 gs> login -user uuu -password ppp
 gs> space clean -url jini://*/*/space
@@ -134,7 +134,7 @@ gs> space clean -url jini://*/*/space
 {% endtabcontent %}
 {% tabcontent  Non-Interactive %}
 
-{% highlight java %}
+{% highlight console %}
 gs -user uuu -password ppp space clean -url jini://*/*/space
 {% endhighlight %}
 
@@ -146,7 +146,7 @@ For the **`space copy`** command, the user needs **`Read`** privileges on the so
 {% inittab login|tablocation=top %}
 {% tabcontent  Interactive %}
 
-{% highlight java %}
+{% highlight console %}
 gs(.sh/bat)
 gs> login -user uuu -password ppp
 gs> space copy jini://*/*/sourceSpace jini://*/*/targetSpace
@@ -155,7 +155,7 @@ gs> space copy jini://*/*/sourceSpace jini://*/*/targetSpace
 {% endtabcontent %}
 {% tabcontent  Non-Interactive %}
 
-{% highlight java %}
+{% highlight console %}
 gs -user uuu -password ppp space copy jini://*/*/sourceSpace jini://*/*/targetSpace
 {% endhighlight %}
 

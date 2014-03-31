@@ -6,11 +6,9 @@ parent: security-administration.html
 weight: 400
 ---
 
-{% summary %}Auditing of authentication and operations{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
-
-GigaSpaces provides the ability to audit the authentication requests and operations performed on a secured service. It facilitates the logging mechanism to declare the audit log file, and the level of auditing. The level can be dynamically modified using the `java.util.logging JMX Extensions`. This allows an easy extension for custom auditing.
+XAP provides the ability to audit the authentication requests and operations performed on a secured service. It facilitates the logging mechanism to declare the audit log file, and the level of auditing. The level can be dynamically modified using the `java.util.logging JMX Extensions`. This allows an easy extension for custom auditing.
 
 {% note %}
 Currently auditing of operations is limited to Space operations.
@@ -20,7 +18,7 @@ Currently auditing of operations is limited to Space operations.
 
 The configurations should be placed in the logging configuration file `<GigaSpaces root>/config/gs_logging.properties`.
 
-{% highlight java %}
+{% highlight console %}
 # gs_logging.properties
 
 com.gigaspaces.security.audit.enabled = true
@@ -30,7 +28,7 @@ com.gigaspaces.security.audit.handler = com.gigaspaces.security.audit.AuditHandl
 
 This configuration can also be supplied using system properties.
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gigaspaces.security.audit.enabled=true -Dcom.gigaspaces.security.audit.level=SEVERE ...
 {% endhighlight %}
 
@@ -43,7 +41,7 @@ The defaults of these configurations are:
 
 The `AuditHandler` is a declarable extension to the default GigaSpaces logging `Handler` (see [GigaSpaces Logging](./gigaspaces-logging.html)). As such, it accepts properties that configure the handler - amongst others are the logging message **formatter** and the **filename-pattern**.
 
-{% highlight java %}
+{% highlight console %}
 # gs_logging.properties
 
 ...

@@ -6,13 +6,11 @@ parent: security-administration.html
 weight: 500
 ---
 
-{% summary %}Setting the `java.security.policy` property.{% endsummary %}
 
-# Overview
 
 When accessing the space, you should have the `java.security.policy` property set correctly.
 You may use a default security file bundled with the distribution. It is located at:
-`<GigaSpaces Root>\policy\policy.all`:
+`<XAP Root>\policy\policy.all`:
 
 {% highlight java %}
 grant {
