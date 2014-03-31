@@ -6,9 +6,13 @@ parent: client-side-caching.html
 weight: 400
 ---
 
+
+
+{%comment%}
  {% summary page|60 %}The Local View/Cache Monitoring{% endsummary %}
 
 # Summary
+{%endcomment%}
 
 The Local View/Cache JMX Monitor monitors the number of objects stored within the client side cache and the activities performed with it. You can use [JConsole](http://java.sun.com/developer/technicalArticles/J2SE/jconsole.html) to graph the number of objects within the local view/cache and other exposed statistics while the application is running. The Local View/Cache JMX Monitor exposing the following statistics:
 

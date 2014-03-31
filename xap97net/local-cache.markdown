@@ -6,11 +6,11 @@ parent: client-side-caching.html
 weight: 100
 ---
 
-{% summary %}Local cache storage over a space proxy{% endsummary %}
 
-# Overview
+{% summary %} {% endsummary %}
 
-Local cache is a wrapper class for a space proxy, which increases performance in read-mostly scenarios for read operations that are matched by the `SpaceID` field or property. The cache stores Entries that are retrieved from the space proxy, and the subsequent retrieval of these Entries is done from the cache without using the proxy. The cache is highly concurrent, and the most important thing to realize is that it is implemented purely in .NET, which boosts performance significantly for read-mostly scenarios.
+
+**Local Cache** is a wrapper class for a space proxy, which increases performance in read-mostly scenarios for read operations that are matched by the `SpaceID` field or property. The cache stores Entries that are retrieved from the space proxy, and the subsequent retrieval of these Entries is done from the cache without using the proxy. The cache is highly concurrent, and the most important thing to realize is that it is implemented purely in .NET, which boosts performance significantly for read-mostly scenarios.
 
 # Usage
 
@@ -18,7 +18,7 @@ The `ILocalCache` interface implements the `ISpaceProxy`, and working with it is
 
 **The data object, in this case a session object:**
 
-{% highlight java %}
+{% highlight csharp %}
 public class Session
 {
   [..]
@@ -41,12 +41,12 @@ public class Session
 
 Important properties:
 
-- The session has a `\[SpaceID\]` property, objects without `\[SpaceID\]` will not be stored in the local cache.
+- The session has a `[SpaceID]` property, objects without `[SpaceID]` will not be stored in the local cache.
 - When working with the local cache, it is highly recommended to have a `\[SpaceVersion\]` property, otherwise Entries stored in the local cache might be of older version than the ones in the space, if they were updated not through the local cache.
 
 **Creating and using a local cache:**
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = // create or obtain a reference to a space proxy
 
 ILocalCache localCache = GigaSpacesFactory.CreateIdBasedLocalCache(spaceProxy);
@@ -73,7 +73,7 @@ The local cache also recognizes templates which are considered ID-based (A templ
 
 The following code is equivalent to the above but it uses templates:
 
-{% highlight java %}
+{% highlight csharp %}
 ...
 Session template = new Session();
 template.SessionId = // session guid
@@ -110,7 +110,7 @@ Once an Entry is loaded into the cache, it is kept synchronized with the remote 
 
 The local cache can be configured before it is initialized, by supplying the constructor with a custom `IdBasedLocalCacheConfig` object. The most common configuration option is the [eviction strategy](./cache-eviction-strategy.html).
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = // create or obtain a reference to a space proxy
 
 IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
@@ -124,7 +124,7 @@ ILocalCache localCache = GigaSpacesFactory.CreateIdBasedLocalCache(spaceProxy, c
 
 By default, the local cache stores all object types. However, in some scenarios it may be required to store only specific types in the local cache, while working with the other types by proxy only. It is possible to specify explicitly which types will be cached, by putting the desired types in the `IdBasedLocalCacheConfig.CachedTypes` list property. For example:
 
-{% highlight java %}
+{% highlight csharp %}
 IdBasedLocalCacheConfig cacheConfig = new IdBasedLocalCacheConfig();
 
 List<Type> cachedTypes = new List<Type>();
@@ -148,7 +148,7 @@ going through the proxy in case of cache miss, evicting entries and more.
 
 Here's an example of how to obtain and interact with the cache manager:
 
-{% highlight java %}
+{% highlight csharp %}
 ILocalCache localCache = // obtain a cache
 //Clear the cache if there are more than 10,000 caches entries
 if (localCache.LocalCacheManager.CachedEntriesCount > 10000)

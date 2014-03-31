@@ -3,13 +3,14 @@ layout: post
 title:  LINQ
 categories: XAP97NET
 parent: querying-the-space.html
-weight: 700
+weight: 800
 ---
 
 {%summary%}{%endsummary%}
 
 XAP.NET includes a custom LINQ provider, which enables developers to take advantage of their existing .NET skills to query the space without learning a new language.
-To enable the provider add the following `using` statement: 
+To enable the provider add the following `using` statement:
+
 {% highlight csharp   %}
 using GigaSpaces.Core.Linq; 
 {% endhighlight %}

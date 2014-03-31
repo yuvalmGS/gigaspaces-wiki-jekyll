@@ -6,7 +6,7 @@ parent: transaction-overview.html
 weight: 300
 ---
 
-
+{%summary%}{%endsummary%}
 
 XAP `ReadModifiers` class (see [DotNetDoc]({%dotnetdoc GigaSpaces_Core_ReadModifiers %})) provides static methods and constants to decode read-type modifiers. The sets of modifiers are represented as integers with distinct bit positions representing different modifiers.
 

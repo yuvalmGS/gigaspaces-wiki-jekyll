@@ -6,11 +6,16 @@ parent: client-side-caching.html
 weight: 200
 ---
 
+{% summary %}{%endsummary%}
+
+{%comment%}
+
 {% summary %} A Local View allows the client application to cache specific data based on client's criteria at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}
 
 # Introduction
+{%endcomment%}
 
-A **Local View** is a [Client Side Cache](./client-side-caching.html) that maintains a subset of the master space's data. The Local View allows the client to read distributed data without performing any remote calls.
+A **Local View** is a Client Side Cache that maintains a subset of the master space's data. The Local View allows the client to read distributed data without performing any remote calls.
 
 Data is streamed into the client's local view based on predefined criteria (a collection of [SQLQuery](./query-sql.html) objects). These criteria are specified by the client when the local view is created.
 
@@ -20,13 +25,13 @@ During the local view initialization, data is loaded into the client's memory ba
 ![local_view.jpg](/attachment_files/dotnet/local_view.jpg)
 {% endindent %}
 
-{% plus %} For additional client side caching options, refer to [Client Side Caching](./client-side-caching.html).
+
 
 # Initializing the Local View Class
 
 Creating a local view is similar to creating an `ISpaceProxy` instance, except the space should be wrapped with a local view before exposing it as an `ISpaceProxy`. The local view is configured in code using `IReadOnlySpaceProxy`. For example:
 
-{% highlight java %}
+{% highlight csharp %}
 //define names for the localView
 const String typeName1 = "com.gigaspaces.test.Alpha";
 const String typeName2 = "com.gigaspaces.test.Bravo";
@@ -76,7 +81,7 @@ Changes in the server are grouped and sent to the client in batches. The followi
 Setting lower values for batch size and timeout reduces data staleness but increases network load, and vice versa.
 Batch settings can be configured when creating the Local View by defining a `LocalViewConfig` object and sending it as a variable in the `GigaSpacesFactory.CreateLocalView` function. For example:
 
-{% highlight java %}
+{% highlight csharp %}
 //Create the configuration object
 LocalViewConfig myconfig = new LocalViewConfig();
 
@@ -101,7 +106,7 @@ When the connection to the remote master space is restored, the local view reloa
 
 The maximum disconnection duration can be configured using `LocalViewConfig` object at runtime when creating the local view. (default is 1 minute). For example:
 
-{% highlight java %}
+{% highlight csharp %}
 //Create the configuration object
 LocalViewConfig myconfig = new LocalViewConfig();
 
@@ -126,4 +131,6 @@ This properties can be configured on the space side and they will affect all the
 | `cluster-config.groups.group.repl-policy.redo-log-local-view-recovery-capacity` | Specifies the total capacity of replication packets the redo log can hold for a local view replication target while the local view is in recovery state (initial load process)| 1000000 |
 | `cluster-config.groups.group.repl-policy.local-view-max-disconnection-time` | Specifies the maximum amount of time (in milliseconds) the space will wait for the local view replication target before it is considered disconnected, after which the target will be dropped. | 300000 |
 
-{% plus %} When the synchronization is replication-based (default), the local view is resilient to failover, which means that if a primary space fails and a backup space replaces it within the maximum disconnection duration, the local view will remain intact during the failover process. When the synchronization is notification-based this is not guaranteed since notifications might be lost during the failover process.
+{% info %}
+When the synchronization is replication-based (default), the local view is resilient to failover, which means that if a primary space fails and a backup space replaces it within the maximum disconnection duration, the local view will remain intact during the failover process. When the synchronization is notification-based this is not guaranteed since notifications might be lost during the failover process.
+{%endinfo%}

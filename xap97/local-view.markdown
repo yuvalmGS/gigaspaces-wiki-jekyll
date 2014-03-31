@@ -6,11 +6,15 @@ parent: client-side-caching.html
 weight: 200
 ---
 
+{% summary page %}{% endsummary %}
+
+{%comment%}
  {% summary   %} A Local View allows the client application to cache specific data based on client's criteria at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}
 
 # Summary
+{%endcomment%}
 
-A **Local View** is a [Client Side Cache](./client-side-caching.html) that maintains a subset of the master space's data, allowing the client to read distributed data without performing any remote calls or data serialization.
+A **Local View** is a Client Side Cache that maintains a subset of the master space's data, allowing the client to read distributed data without performing any remote calls or data serialization.
 
 Data is streamed into the client local view based on predefined criteria (a collection of [SQLQuery](./query-sql.html) objects) specified by the client when the local view is created.
 

@@ -21,32 +21,31 @@ Throughout this tutorial we will create and use a simple internet payment servic
 - The Merchant will receive a percentage for each transaction.
 - Users will make payments with the online system.
 
+{%section%}
+{%column%}
 Here is the simplified Class Model:
+{%endcolumn%}
+{%column%}
+{% popup /attachment_files/qsg/class_diagram.png| Class Diagram| Class Diagram %}
+{%include lightbox.html%}
+{%endcolumn%}
+{%endsection%}
+{%wbr%}
 
-{%indent %}
-[<img src="/attachment_files/qsg/class_diagram.png" width="200" height="140">](/attachment_files/qsg/class_diagram.png)
-{%endindent%}
- 
 
-{%comment%}
-| witdh=300px, height=300px!
-{%endcomment%}
-
-{%comment%}
-You can download all examples presented here from [GitHub](https://github.com/Gigaspaces/xap-tutorial). Feel free to clown, fork and contribute to the tutorial code.
+You can download all examples presented here from [GitHub](https://github.com/Gigaspaces/xapnet-tutorial). Feel free to clown, fork and contribute to the tutorial code.
 
 # Let's get started
 
 {%panel%}
-- Download and unzip the latest XAP release from the [downloads page](http://www.gigaspaces.com/xap-download)
-- Unzip the distribution into a working directory; GS_HOME
-- Set the JAVA_HOME environment variable to point to the JDK root directory
-- Start your favorite Java IDE
+- Download the latest XAP release from the [downloads page](http://www.gigaspaces.com/xap-download)
+- Install the distribution
+- Start Visual Studio
 - Create a new project
-- Include all files from the GS_HOME/lib/required in the classpath
+- Include  `XAP_HOME/XAP.NT..xx/NET..vxx/Bin/GigaSpacesCore.dll` in the References
 {%endpanel%}
 
-{%endcomment%}
+
 
 
 # Tutorial Trail

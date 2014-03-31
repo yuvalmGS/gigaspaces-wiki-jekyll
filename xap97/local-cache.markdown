@@ -6,11 +6,16 @@ parent: client-side-caching.html
 weight: 100
 ---
 
+{% summary page %}{% endsummary %}
+
+
+{%comment%}
  {% summary page %}A local cache allows the client application to cache recently used data at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}
 
 # Summary
+{%endcomment%}
 
-A **Local Cache** is a [client side cache](./client-side-caching.html) that maintains a subset of the master space's data based on the client application's recent activity. The local cache is created empty, and whenever the client application executes a query the local cache first tries to fulfill it from the cache, otherwise it executes it on the master space and caches the result locally for future queries.
+A **Local Cache** is a Client Side Cache that maintains a subset of the master space's data based on the client application's recent activity. The local cache is created empty, and whenever the client application executes a query the local cache first tries to fulfill it from the cache, otherwise it executes it on the master space and caches the result locally for future queries.
 
 {% indent %}
 ![local_cache.jpg](/attachment_files/local_cache.jpg)

@@ -6,9 +6,7 @@ parent: client-side-caching.html
 weight: 300
 ---
 
-{% summary page|60 %}Client Caching Over WAN.{% endsummary %}
 
-# Summary
 
 A common use case of the local cache or the local view is with remote geographical sites where most of the activities are read only. In this case each site may use an application server or a web application running a local view/cache caching a subset of the data or the entire data set.
 
