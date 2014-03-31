@@ -14,14 +14,17 @@ XAP 9.7 is a minor release which includes new features and improvements, includi
 
 We try to maintain backward compatibility wherever possible. However, in some cases, no backward compatibility is provided.
 
-{%exclamation%} As a best practice, when upgrading to GigaSpaces 9.7, unzip the latest version of GigaSpaces 9.7 and port the necessary changes from your pre-9.7 environment into your new 9.7 environment. It is recommended to use the GigaSpaces 9.7 distribution as-is. Please refer to the  Upgrade Guide for more details.
+{%note%}
+As a best practice, when upgrading to GigaSpaces 9.7, unzip the latest version of GigaSpaces 9.7 and port the necessary changes from your pre-9.7 environment into your new 9.7 environment. It is recommended to use the GigaSpaces 9.7 distribution as-is. Please refer to the  Upgrade Guide for more details.
+{%endnote%}
 
-{%exclamation%}The following elements affect backward compatibility:
+{%note title=The following elements affect backward compatibility:%}
 
 - GigaSpaces API and Configuration
 - GigaSpaces XAP binary compatibility (including GigaSpaces management tools)
 - Client-Server
 - Server-Server
+{%endnote%}
 
 **Notes:**
 
