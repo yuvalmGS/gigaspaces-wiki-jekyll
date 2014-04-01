@@ -15,7 +15,7 @@ module Jekyll
     path, title, alt = @text.split('|').map(&:strip)
     output ="<div class=\"row\">
        <div style=\"float:left; padding-left:15px;padding-right:0px;position:relative;margin-left:0px;margin-right:0px;\">
-        <p><a href=\"http://www.youtube.com/watch?v=#{path}\" data-toggle=\"lightbox\"> <img src=\"/attachment_files/navigation/video.jpeg\" class=\"img-responsive\"></a></p>
+        <p><a href=\"http://www.youtube.com/watch?v=#{path}\" data-width=\"853\" data-height=\"480\" data-toggle=\"lightbox\"> <img src=\"/attachment_files/navigation/video.jpeg\" class=\"img-responsive\"></a></p>
        </div>
     </div>"
     end
