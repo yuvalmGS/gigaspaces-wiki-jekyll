@@ -40,7 +40,7 @@ Here is the simplified Class Model:
 {%endcomment%}
 
 
-You can download all examples presented here from [GitHub](https://github.com/Gigaspaces/xap-tutorial). Feel free to clown, fork and contribute to the tutorial code.
+You can download all examples presented here from [GitHub](https://github.com/Gigaspaces/xap-tutorial). Feel free to clone, fork and contribute to the tutorial code.
 
 # Let's get started
 
