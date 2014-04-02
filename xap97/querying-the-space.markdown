@@ -55,6 +55,6 @@ Obtaining partial results when querying the space to improve application perform
 
 {%wbr%}
 
-##### Additional Resources
-{%youtube jC57mId3SMg %}
+#### Additional Resources
+{%youtube jC57mId3SMg | XAP Query APIS%}
 {%include lightbox.html %}

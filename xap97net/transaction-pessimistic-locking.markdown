@@ -44,40 +44,35 @@ Having the above executed at the space side via [Executor Based Remoting](./exec
 See below example illustrating the usage of the exclusive locking mode implementing pessimistic locking:
 
 {% highlight csharp %}
-public void executeOrders(long? orderIDs[]) throws Exception
-{
-	Order orders[] = new Order [orderIDs[].length];
-	for (int i=0;i<orderIDs.length;i++)
-	{
-		orders[i]= proxy.ReadById<Order>(  orderIDs[i],orderIDs[i],5000,ReadModifiers.ExclusiveReadLock);
-                if (orders[i] != null)
-		     orders[i].setStatus(DONE);
-	}
-	Object rets[] = proxy.WriteMultiple(orders, new long[orderIDs.size()], WriteModifiers.UpdateOnly);
+public void executeUsers(long?[] userIDs)
+ {
+  ITransactionManager mgr = GigaSpacesFactory.CreateDistributedTransactionManager();
+   ITransaction txn = mgr.Create();
 
-	for (int i=0;i<rets.length;i++)
-	{
-		if (rets[i] == null)
-		{
-			throw (new ReadTimeOutException("can't update object " + orders[i]));
-		}
+   User[] users = new User[userIDs.Length];
 
-		if (rets[i] instanceof Exception)
-		{
-			if (rets[i] instanceof EntryNotInSpaceException)
-			{
-				throw (EntryNotInSpaceException)rets[i];
-			}
-			else if (rets[i] instanceof OperationTimeoutException )
-			{
-				throw (OperationTimeoutException)rets[i];
-			}
-			else
-			{
-				throw (Exception)rets[i];
-			}
-		}
-	}
+   for (int i = 0; i < userIDs.Length; i++)
+   {
+        users[i] = proxy.ReadById<User>(userIDs[i], userIDs[i], txn, 5000, ReadModifiers.ExclusiveReadLock);
+
+        if (users[i] != null)
+           users[i].Status = EAccountStatus.ACTIVE;
+   }
+
+   Object[] rets = proxy.WriteMultiple(users, txn, WriteModifiers.UpdateOnly);
+
+   for (int i = 0; i < rets.Length; i++)
+   {
+      if (rets[i] == null)
+      {
+          throw (new Exception("can't update object " + users[i]));
+      }
+
+      if ( rets[i].GetType().IsSubclassOf(typeof(Exception)))
+      {
+          // ....
+      }
+   }
 }
 {% endhighlight %}
 

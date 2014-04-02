@@ -153,20 +153,30 @@ Starting with XAP 7.1.2 GigaSpaces throws `java.lang.IllegalArgumentException: U
 ## Code Example
 
 {% highlight csharp %}
-ISpaceProxy proxy;
-proxy.ReadModifiers = ReadModifiers.ReadExclusiveLock;
-// this will allow all read operations with this proxy to use Exclusive Read Lock mode
-Lock lock = new Lock();
-lock.key = new Integer(1);
-lock.data = "my data";
-proxy.Write(lock, null, long.MaxValue);
-Transaction txn1 = getTX();
-Lock lock_template1 = new Lock();
-lock_template1.key = new Integer(1);
-Lock lock1 = (Lock) proxy.Read(lock_template1, txn1, 1000);
-If (lock1!= null)
-	Console.WriteLine("Transaction " + txn1.id + " Got exclusive Read Lock on Entry:"
-		+ lock1.getId());
+public void exclusiveReadLock()
+{
+    // this will allow all read operations with this proxy to use Exclusive Read Lock mode
+    proxy.ReadModifiers = ReadModifiers.ExclusiveReadLock;
+
+    Lock lok = new Lock();
+    lok.key = 1;
+    lok.data = "my data";
+    proxy.Write(lok, null, long.MaxValue);
+
+    ITransactionManager mgr = GigaSpacesFactory.CreateDistributedTransactionManager ();
+    ITransaction txn1 = mgr.Create();
+
+    Lock lock_template1 = new Lock();
+    lock_template1.key = 1;
+
+     Lock lock1 = proxy.Read<Lock>(lock_template1, txn1, 10000);
+
+     if (lock1 != null)
+     {
+         Console.WriteLine("Transaction " + txn1 + " Got exclusive Read Lock on Entry:"
+                    + lock1.key);
+     }
+}
 {% endhighlight %}
 
 {%comment%}
