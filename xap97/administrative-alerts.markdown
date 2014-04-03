@@ -3,12 +3,10 @@ layout: post
 title:  Administrative Alerts
 categories: XAP97
 weight: 300
-parent: administration-and-monitoring-api.html
+parent: administration-and-monitoring-overview.html
 ---
 
-{% summary %}Runtime administrative alerts - monitoring the "health state" of the system.{% endsummary %}
-
-# Overview
+{% summary %}{% endsummary %}
 
 
 

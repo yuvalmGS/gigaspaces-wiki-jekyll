@@ -2,16 +2,16 @@
 layout: post
 title:  SNMP Alerts
 categories: XAP97
-parent: administrative-alerts.html
-weight: 200
+parent: administration-and-monitoring-overview.html
+weight: 300
 ---
 
-{% compositionsetup %}
-{% summary %}Logging Gateway for Administrative alerts.{% endsummary %}
 
-# Overview
+{% summary %}{% endsummary %}
 
-The GigaSpaces `Alert` interface exposes the XAP environment and the application's health state. It allows users to register listeners on one or more alert types and receive notifications once an alert has been raised or has been resolved. You may use this framework to build a custom integration with a third party monitoring products to leverage the XAP alerting system.
+
+
+The XAP `Alert` interface exposes the XAP environment and the application's health state. It allows users to register listeners on one or more alert types and receive notifications once an alert has been raised or has been resolved. You may use this framework to build a custom integration with a third party monitoring products to leverage the XAP alerting system.
 A recommended approach for such integration would be to construct a listener that writes the chosen types of alerts into logger mechanism. Examples for such may be the log4j or the commons-logging frameworks.
 
 The main advantage with this approach is the ability to use an extensive set of out-of-box log appenders that translates log messages into different protocols and APIs to be consumed by third party products.

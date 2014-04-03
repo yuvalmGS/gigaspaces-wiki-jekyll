@@ -1,14 +1,15 @@
 ---
 layout: post
-title:  Admin and Monitoring API
+title:  Admin API
 categories: XAP97
-parent: programmers-guide.html
-weight: 1700
+parent: administration-and-monitoring-overview.html
+weight: 100
 ---
 
 
-{% summary%}Simple API to monitor and administer GigaSpaces services and components.{% endsummary %}
+{% summary%}{% endsummary %}
 
+{%comment%}
 {%section%}
 {%column width=50% %}
 # Overview
@@ -22,6 +23,8 @@ The Admin API provides a way to administer and monitor all of GigaSpaces service
 {% tip %}
 You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.
 {% endtip %}
+
+{%endcomment%}
 
 Before diving into the Admin API, here are some code examples showing how the Admin API can be used to display information on the of currently deployed services / components:
 
@@ -596,4 +599,3 @@ For more information please refer to the API documentation: **[MirrorStatistics]
 You may monitor the remote communication activity via the Administration and Monitoring API. You may receive information in real-time about every aspect of the communication and transport activity. See the [Monitoring LRMI via the Administration API]({%currentadmurl%}/tuning-communication-protocol.html#Monitoring LRMI via the Administration API) for details.
 
 
-{%children%}

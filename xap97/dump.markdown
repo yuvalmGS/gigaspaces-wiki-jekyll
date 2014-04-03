@@ -2,14 +2,13 @@
 layout: post
 title:  Dump
 categories: XAP97
-parent: administration-and-monitoring-api.html
-weight: 100
+parent: administration-and-monitoring-overview.html
+weight: 200
 ---
 
 
-{% summary  %}Simple API to generate dump files of the runtime GigaSpaces environment.{% endsummary %}
+{% summary  %}{% endsummary %}
 
-# Overview
 
 The dump feature of the Admin API allows to easily generate dump information out of GigaSpaces runtime environment. Here is an example:
 
@@ -119,7 +118,7 @@ Make sure the user that started the GS-UI has write permissions to the location 
 
 The dump file structure would look like this:
 
-{% highlight java %}
+{% highlight console %}
 dump_file.zip
 
     gsa-10.10.10.249-23610--1284928573201

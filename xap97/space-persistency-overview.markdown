@@ -23,7 +23,7 @@ XAP provides advanced persistency capabilities for the space architecture.
 
 
 - [Overview](./space-persistency.html){%wbr%}
-Space Persistency provides advanced persistency capabilities for the space architecture.
+XAP persistency overview.
 
 - [Direct persistence](./direct-persistency.html){%wbr%}
 Direct persistency mode support Read-Write Through
