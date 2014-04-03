@@ -28,6 +28,15 @@ SUSE linux is not supported, due to the instability of its network support layer
 - Hyper-threading should be enabled.
 - vMEM must be reserved (pinned).
 
+# Other considerations
+
+- Do not over-commit virtual memory
+- Reserve memory at the virtual machine level
+- When using asynchronous persistency with replication, use anti-affinity rules to ensure that primary and backup nodes
+do not share the same virtual machine host. For maximum reliability, ensure that no primary/backup pair is hosted on the
+same physical host machine.
+- Reserve sufficient memory for the operating system (~2GB per VM)
+
 # References
 
 High-performance settings should be used, per VMWare's recommendations [here](http://www.vmware.com/pdf/Perf_Best_Practices_vSphere5.0.pdf) and [here](http://www.vmware.com/files/pdf/techpaper/VMW-Tuning-Latency-Sensitive-Workloads.pdf).
