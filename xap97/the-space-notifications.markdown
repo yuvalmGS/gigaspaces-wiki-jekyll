@@ -2,14 +2,12 @@
 layout: post
 title:  Notifications
 categories: XAP97
-parent: the-gigaspace-interface.html
-weight: 3500
+weight: 500
+parent: the-gigaspace-interface-overview.html
 ---
 
-{% summary %}Space notifications {% endsummary %}
+{% summary %} {% endsummary %}
 
-
-# Overview
 Some of the space operations can generate notifications when they are executed. Notifications are also generated when working in clustered mode (schema) that includes a primary/backup schema. A listener can be defined to receive these notifications.
 
 The following space operations create notifications:

@@ -2,16 +2,16 @@
 layout: post
 title:  Hibernate Integration
 categories: XAP97
-parent: space-persistency.html
+parent: space-persistency-overview.html
 weight: 200
 ---
 
 
-{% summary%} The default Hibernate implementation of the [Space Persistency](./space-persistency.html) APIs.{% endsummary %}
+{% summary%}  {% endsummary %}
 
-# Overview
 
-GigaSpaces comes with a built in implementation of [Space Persistency](./space-persistency.html) APIs for Hibernate. This implementation is an extension of the `SpaceDataSource` and `SpaceSynchronizationEndpoint` classes. The implementation allows a custom objects persistency using Hibernate mappings.
+
+XAP comes with a built in implementation of [Space Persistency](./space-persistency.html) APIs for Hibernate. This implementation is an extension of the `SpaceDataSource` and `SpaceSynchronizationEndpoint` classes. The implementation allows a custom objects persistency using Hibernate mappings.
 
 {% indent %}
 ![HibernateSpacedataSource.jpg](/attachment_files/HibernateSpacedataSource.jpg)

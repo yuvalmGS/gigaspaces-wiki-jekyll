@@ -2,14 +2,14 @@
 layout: post
 title:  Direct Persistency
 categories: XAP97
-parent: space-persistency.html
+parent: space-persistency-overview.html
 weight: 100
 ---
 
 
-{% summary %}Direct persistency mode support Read-Write Through{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 When running in direct persistency mode (i.e. Read-Write Through) the IMDG interacts with the data source to persist its data where the client application would get the acknowledge for the IMDG operation only after **both** the IMDG and the `SpaceDataSource` acknowledged the operation. With this persistency mode, the IMDG operations performance would be heavily depended on the speed of the `SpaceSynchronizationEndpoint` to commit the data and provide acknowledge back to the IMDG for the successful operation of the transaction. When having a mapping layer in between the IMDG and the data source that converts the IMDG objects to relational database tables data (i.e. [Hibernate](http://www.hibernate.org)), the time which takes to perform the conversion would also impact the acknowledge time and the application overall performance.
 

@@ -1,25 +1,22 @@
 ---
 layout: post
-title:  POJO Support
+title:  Overview
 categories: XAP97
-parent: programmers-guide.html
-weight: 10
+parent: pojo-overview.html
+weight: 100
 ---
 
 
-{% summary %}Plain Old Java Object support - the [POJO](http://en.wikipedia.org/wiki/Plain_Old_Java_Object).{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
 
-GigaSpaces JavaSpaces `POJO` support allows you to use `JavaBean` classes as space domain classes, and perform space operations using these objects. POJO domain Classes should follow rules similar to the ones defined by [JPA](http://en.wikipedia.org/wiki/Java_Persistence_API), [Hibernate](http://www.hibernate.org) and other domain class frameworks.
 
-# Data Objects
 
 {%comment%}
 One of the differences between the `GigaSpace` interface and the classic `net.jini.Space.JavaSpace` interface is its support for POJOs as Space entries. The `JavaSpace` interface is rather intrusive and forces objects that are written to the Space to implement the `net.jini.core.entry.Entry` interface, and mark any field to be stored on the Space as `public`.
 {%endcomment%}
 
-The `GigaSpace` interface fully supports POJOs. In terms of preconditions, your POJO classes need to follow the JavaBeans conventions, i.e. have a no-argument constructor, and declare a getter and setter to every field you want saved on the Space. The POJO class does not have to implement `java.io.Serializable`, but its properties must. The reason for this, is that the POJOs fields are extracted when written to the Space, and stored in a special tuple format that enables the Space to index and analyze them more easily. Therefore the actual POJO is not sent over the network, but rather its properties.
+The XAP interface fully supports POJOs. In terms of preconditions, your POJO classes need to follow the JavaBeans conventions, i.e. have a no-argument constructor, and declare a getter and setter to every field you want saved on the Space. The POJO class does not have to implement `java.io.Serializable`, but its properties must. The reason for this, is that the POJOs fields are extracted when written to the Space, and stored in a special tuple format that enables the Space to index and analyze them more easily. Therefore the actual POJO is not sent over the network, but rather its properties.
 
 # Metadata
 

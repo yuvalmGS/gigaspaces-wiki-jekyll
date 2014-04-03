@@ -2,14 +2,17 @@
 layout: post
 title:  Executor Based Remoting
 categories: XAP97
-parent: space-based-remoting.html
-weight: 100
+parent: space-based-remoting-overview.html
+weight: 200
 ---
 
+{% summary%}{%endsummary%}
 
+{%comment%}
 {% summary%}Executor Remoting allows you to use remote invocations of POJO services, with the space as the transport layer using OpenSpaces Executors.{% endsummary %}
 
 # Overview
+{%endcomment%}
 
 Executor based remoting uses [Executors](./task-execution-over-the-space.html) to implement remoting capabilities on top of the space. Executor based remoting allows for direct invocation of services in an asynchronous manner as well as broadcast capabilities. Executor remoting works with services that are exposed within a processing unit that started a collocated space.
 

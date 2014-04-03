@@ -6,10 +6,13 @@ parent: event-processing.html
 weight: 500
 ---
 
-{% compositionsetup %}
+{% summary  %}{%endsummary%}
+
+{%comment%}
 {% summary page|60 %}Describe the common Exception Event Listener and its different adapters.{% endsummary %}
 
 # Overview
+{%endcomment%}
 
 OpenSpaces provides a mechanism allowing to hook into how exception raised by event listeners are handled, specifically when the event listeners are executed under the context of a transaction.
 

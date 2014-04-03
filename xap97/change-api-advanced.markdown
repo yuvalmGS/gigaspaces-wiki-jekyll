@@ -7,7 +7,7 @@ weight: 100
 ---
 
 
-{% summary %}This page covers the Change API more advanced scenarios.{% endsummary %}
+{% summary %}{% endsummary %}
 
 # Change and SpaceSynchronizationEndpoint
 

@@ -2,14 +2,13 @@
 layout: post
 title:  Operations
 categories: XAP97
-parent: the-gigaspace-interface.html
-weight: 3000
+weight: 200
+parent: the-gigaspace-interface-overview.html
 ---
 
 
-{% summary %}Describes the basic XAP API for interacting with the space{% endsummary %}
+{% summary %}{%endsummary%}
 
-# Overview
 
 XAP provides a simple space API using the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) interface for interacting with the space.
 

@@ -2,13 +2,11 @@
 layout: post
 title:  Filters
 categories: XAP97
-parent: the-gigaspace-interface.html
-weight: 5000
+weight: 600
+parent: the-gigaspace-interface-overview.html
 ---
 
-{% summary %}Space Filters are interceptors inside the GigaSpaces space engine.{% endsummary %}
-
-# Overview
+{% summary %} {% endsummary %}
 
 Space Filters are interceptors inside the GigaSpaces space engine that enable integration with external systems and/or implementation of user-defined logic based once space operations are executed.
 
@@ -101,7 +99,7 @@ The following Spring configuration registers this filter for before write (`0`),
 {% endtabcontent %}
 {% endinittab %}
 
-## Delegate Filters
+# Delegate Filters
 
 OpenSpaces comes with delegate implementations of `ISpaceFilter`, allowing you to use either annotations or explicit method listings in order to use POJOs as space filters.
 
@@ -249,7 +247,7 @@ The following Spring configuration XML shows how the filter can be configured, u
 {% endtabcontent %}
 {% endinittab %}
 
-## Accessing a Space within a Space Filter
+# Accessing a Space within a Space Filter
 
 Accessing a space within a space filter can cause a cycle construction exception, since the space can not be injected to the filter (because the space was not constructed yet). There are options to solve this with pure Spring, but OpenSpaces provides a simpler option by using the [GigaSpacesLateContext](./pojo-grid-annotations.html) annotation.
 

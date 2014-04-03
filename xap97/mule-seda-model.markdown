@@ -1,19 +1,19 @@
 ---
 layout: post
-title:  Mule SEDA Model
+title:  SEDA Model
 categories: XAP97
 parent: mule-esb.html
 weight: 400
 ---
 
 
-{% summary  %}OpenSpaces Mule SEDA model allows you to define services that are aware of the space mode they are working with; and to store SEDA queues in a virtualized space queue instead of Mule's default VM queues.{% endsummary %}
+{% summary  %} {% endsummary %}
 
-# Overview
+
 
 A [Mule model](http://www.mulesoft.org/documentation-3.2/display/MULE3USER/Models#Models) manages the runtime behavior of the service components that a Mule instance hosts. The manner in which these components are invoked and treated is all encapsulated inside the Mule model.
 
-OpenSpaces Mule model integration comes with two main features. The first is the ability to define services that are aware of the "direct" Space mode they are working with (the direct cluster member) and only start when working against a primary cluster member (in an SBA topology). The second feature is the ability to store SEDA queues in a virtualized space queue instead of Mule's default VM queues.
+XAP's Mule model integration comes with two main features. The first is the ability to define services that are aware of the "direct" Space mode they are working with (the direct cluster member) and only start when working against a primary cluster member (in an SBA topology). The second feature is the ability to store SEDA queues in a virtualized space queue instead of Mule's default VM queues.
 
 To use this model, we have to add `os-seda` to the namespaces.
 
@@ -63,7 +63,9 @@ OpenSpaces enhanced SEDA model allows storing of SEDA queues on top of the Space
 
 The enhanced SEDA queue model is mainly used when working in SBA mode. This means that each Mule Processing Unit instance starts a Space cluster member, and SEDA queues are stored directly in the cluster member this instance started. When working with a primary-backup topology, `os-seda` aware services of a Mule Processing Unit instance that started a backup cluster member are not started until the cluster member moves to primary mode.
 
-{% lampon %} In such a topology, SEDA queue content is replicated from the primary cluster member to the backup, allowing you to continue the processing seamlessly in case of the primary failure.
+{% info %}
+In such a topology, SEDA queue content is replicated from the primary cluster member to the backup, allowing you to continue the processing seamlessly in case of the primary failure.
+{%endinfo%}
 
 Here is an example of how it can be configured:
 

@@ -2,13 +2,13 @@
 layout: post
 title:  Leases - Automatic Expiration
 categories: XAP97
-parent: the-gigaspace-interface.html
-weight: 7000
+weight: 800
+parent: the-gigaspace-interface-overview.html
 ---
 
-{% summary %}Lease basics and explains how Leases can be managed{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 In distributed applications on a network, where there may be partial failures of the network or of components, there needs to be a way for components to be timed out if they have failed, or have become unreachable. Lease is a basic mechanism GigaSpaces provides to address this problem. GigaSpaces provides this functionality using Jini technology.
 

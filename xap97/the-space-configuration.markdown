@@ -2,14 +2,11 @@
 layout: post
 title:  Configuration
 categories: XAP97
-parent: the-gigaspace-interface.html
-weight: 1000
+weight: 100
+parent: the-gigaspace-interface-overview.html
 ---
 
-
-{% summary %}Describes the Space URL and properties to configure a Space{% endsummary %}
-
-# Overview
+{% summary %}{%endsummary%}
 
 When a client connects to a space, a proxy is created that holds a connection to the space. All client interaction is performed through this proxy.
 The proxy provides a simpler space API using the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html) interface.

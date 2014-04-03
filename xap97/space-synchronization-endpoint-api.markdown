@@ -2,14 +2,14 @@
 layout: post
 title:  Synchronization Endpoint
 categories: XAP97
-parent: space-persistency.html
+parent: space-persistency-overview.html
 weight: 400
 ---
 
 
-{% summary %}The space synchronization endpoint API is used for synchronizing data from the space to an external application or a data base.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 The [SpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/sync/SpaceSynchronizationEndpoint.html) is used for persisting data from the space to an external storage.
 The following data is synchronized:
@@ -211,7 +211,7 @@ public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint
 For implementation reference see our built in Hibernate and Cassandra implementations: [DefaultHibernateSpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/persistency/hibernate/DefaultHibernateSpaceSynchronizationEndpoint.html) and [CassandraSpaceSynchronizationEndpoint](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/persistency/cassandra/CassandraSpaceSynchronizationEndpoint.html) classes.
 {% endtip %}
 
-# Example of a Space synchronization endpoint implementation handling Consolidation Failure events
+# Example with Failure events
 
 The following example will demonstrate how to implement a space synchronization endpoint that stores in some external data store the list of distributed transactions that failed to consolidate and aborts them for later manual decision. Note, that there is a regular case where consolidation may show a false failure as described in [Gateway and Distributed Transactions](./multi-site-replication-over-the-wan.html#Configuring and Deploying the Gateway). This example will handle this case as well.
 

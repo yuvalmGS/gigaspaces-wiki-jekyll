@@ -1,26 +1,46 @@
 ---
 layout: post
-title:  Mule ESB
+title:  Mule ESB Integration
 categories: XAP97
-parent: integrations.html
-weight: 300
+parent: programmers-guide.html
+weight: 1550
 ---
 
-{% summary%}OpenSpaces Mule ESB integration allows you to use the Space as a Mule external transport, replace Mule VM transport with transport over the Space, enhances the Mule SEDA model, and can be packaged and run as a Processing Unit.{% endsummary %}
+{%wbr%}
 
-# Overview
+{%section%}
+{%column width=10% %}
+![big-data.png](/attachment_files/subject/mule.png)
+{%endcolumn%}
+{%column width=90% %}
+XAP comes with comprehensive support for Mule version 3.3. It allows you to use the Space as a Mule external transport, enabling receiving and dispatching of POJO messages over the Space.
+An additional transport called os-queue allows you to replace the Mule VM transport with highly available inter VM transport over the Space.
+It also enhances the Mule SEDA model, allowing you to store a Mule internal SEDA queue over the Space.
+A Mule application can be packaged and run as a Processing Unit  within one of the SLA-driven Processing Unit containers.
+{%endcolumn%}
+{%endsection%}
 
-OpenSpaces comes with comprehensive support for [Mule](http://www.mulesoft.org/) 3.3. It allows you to use the Space as a Mule external [transport](./mule-event-container-transport.html), enabling receiving and dispatching of POJO messages over the Space.
 
-An additional transport called [os-queue](./mule-queue-provider.html) allows you to replace Mule VM transport with highly available inter VM transport over the Space.
 
-OpenSpaces Mule integration also [enhances the Mule SEDA model](./mule-seda-model.html), allowing you to store a Mule internal SEDA queue over the Space.
+{%wbr%}
 
-Last, a Mule application can be [packaged and run as a Processing Unit](./mule-processing-unit.html) within one of the OpenSpaces Processing Unit containers -- most importantly the SLA-driven container.
 
-{% info %}
-See the [Distributed Multi Mule service example](/sbp/mule-esb-example.html) for a best practice approach when designing your Mule based application.
-{%endinfo%}
+- [Event Container](./mule-event-container-transport.html){%wbr%}
+XAP's event container transport uses event components that allow you to send and receive POJO messages over the Space using Mule.
 
-{% children %}
+- [Processing Unit](./mule-processing-unit.html){%wbr%}
+The Mule Processing Unit allows you to run Mule within a Processing Unit, thus leveraging all of the Processing Unit and SLA-driven container capabilities.
 
+- [Queue Provider](./mule-queue-provider.html){%wbr%}
+The XAP queue provider is used for internal space-based communication between services managed by Mule.
+
+
+- [SEDA Model](./mule-seda-model.html){%wbr%}
+XAP's Mule SEDA model allows you to define services that are aware of the space mode they are working with; and to store SEDA queues in a virtualized space queue instead of Mule’s default VM queues.
+
+{%wbr%}
+
+#### Additional Resources
+- [Mule](http://www.mulesoft.org/)
+
+- [Distributed Multi Mule service example](/sbp/mule-esb-example.html)

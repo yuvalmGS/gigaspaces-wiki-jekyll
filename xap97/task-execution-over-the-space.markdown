@@ -1,22 +1,19 @@
 ---
 layout: post
-title:  Task Execution
+title:  Overview
 categories: XAP97
-parent: programmers-guide.html
-weight: 1100
+parent: task-execution-overview.html
+weight: 100
 ---
 
-
-{% summary page %}Task executors allow you to easily execute grid-wide tasks on the space using the GigaSpace API.{% endsummary %}
-
-# Overview
+{%summary%}{%endsummary%}
 
 {%section%}
-{%column width=50% %}
+{%column width=70% %}
 OpenSpaces comes with support for executing tasks in a collocated asynchronous manner with the Space (processing unit that started an embedded Space). Tasks can be executed directly on a specific cluster member using typical routing declarations. Tasks can also be executed in a "broadcast" mode on all the primary cluster members concurrently and reduced to a single result on the client side. Tasks are completely dynamic both in terms of content and class definitions (the task class definition does not have to be defined within the space classpath).
 {%endcolumn%}
 
-{%column width=45% %}
+{%column width=30% %}
 ![Executors_task_flow_basic.jpg](/attachment_files/Executors_task_flow_basic.jpg)
 {%endcolumn%}
 {%endsection%}
@@ -25,8 +22,9 @@ OpenSpaces comes with support for executing tasks in a collocated asynchronous m
 The following [example](/sbp/map-reduce-pattern---executors-example.html) demonstrates how to use the task execution API
 {% endtip %}
 
+{%comment%}
 <iframe width="640" height="360" src="//www.youtube.com/embed/-07-0PXUoeM?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
-
+{%endcomment%}
 
 # Task API
 

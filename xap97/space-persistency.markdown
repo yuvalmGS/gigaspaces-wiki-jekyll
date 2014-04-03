@@ -1,15 +1,12 @@
 ---
 layout: post
-title:  Space Persistency
+title:  Overview
 categories: XAP97
-parent: programmers-guide.html
-weight: 700
+parent: space-persistency-overview.html
+weight: 50
 ---
 
-{% summary  %}Space Persistency provides advanced persistency capabilities for the space architecture.{% endsummary %}
-
-
-# Overview
+{% summary  %}  {% endsummary %}
 
 The Space Persistency is made of two components, A space data source & a space synchronization endpoint.
 These components provide advanced persistency capabilities for the space architecture to interact with a persistency layer.
@@ -85,4 +82,3 @@ The [Cassandra Space Persistency Solution](./cassandra-space-persistency.html) a
 
 The GigaSpaces Cassandra Space Peristency Solution leverages the [Cassandra CQL](http://www.datastax.com/docs/0.8/dml/using_cql), [Cassandra JDBC Driver](http://code.google.com/a/apache-extras.org/p/cassandra-jdbc) and the [Cassandra Hector Library](http://hector-client.github.com/hector/build/html/index.html). Every application's write or take operation against the IMDG is delegated into the Mirror service that is using the Cassandra Mirror implementation to push the changes into the Cassandra database.
 
-{%children%}

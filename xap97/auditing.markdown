@@ -16,7 +16,7 @@ Currently auditing of operations is limited to Space operations.
 
 # Configuration
 
-The configurations should be placed in the logging configuration file `<GigaSpaces root>/config/gs_logging.properties`.
+The configurations should be placed in the logging configuration file `<XAP root>/config/gs_logging.properties`.
 
 {% highlight console %}
 # gs_logging.properties
@@ -39,7 +39,7 @@ The defaults of these configurations are:
 | com.gigaspaces.security.audit.level | Audit level of interest; default is OFF |
 | com.gigaspaces.security.audit.handler | The Audit `java.util.logging.Handler` implementation accepting an `AuditLogRecord`; default is `AuditHandler` |
 
-The `AuditHandler` is a declarable extension to the default GigaSpaces logging `Handler` (see [GigaSpaces Logging](./gigaspaces-logging.html)). As such, it accepts properties that configure the handler - amongst others are the logging message **formatter** and the **filename-pattern**.
+The `AuditHandler` is a declarable extension to the default GigaSpaces logging `Handler` (see [GigaSpaces Logging](./logging-overview.html)). As such, it accepts properties that configure the handler - amongst others are the logging message **formatter** and the **filename-pattern**.
 
 {% highlight console %}
 # gs_logging.properties

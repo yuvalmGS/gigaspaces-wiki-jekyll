@@ -2,13 +2,11 @@
 layout: post
 title:  Metadata
 categories: XAP97
-parent: task-execution-over-the-space.html
-weight: 300
+parent: task-execution-overview.html
+weight: 400
 ---
 
-{% summary %}This section explains the different Task metadata.{% endsummary %}
-
-
+{%summary%}{%endsummary%}
 
 
 # Task Execution
@@ -34,7 +32,7 @@ public class MyTask implements Task<Integer>  {
 {%endhighlight%}
 {% endgcloak %}
 
-{%learn%}./task-execution-over-the-space.html{%endlearn%}
+{%learn%}./task-execution-overview.html{%endlearn%}
 
 
 # Task Routing
@@ -57,4 +55,4 @@ public class MyTask implements Task<Integer>  {
 }
 {%endhighlight%}
 {% endgcloak %}
-{%learn%}./task-execution-over-the-space.html{%endlearn%}
+{%learn%}./task-execution-overview.html{%endlearn%}

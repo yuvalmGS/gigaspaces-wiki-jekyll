@@ -1,15 +1,17 @@
 ---
 layout: post
-title:  Space Based Remoting
+title: Overview
 categories: XAP97
-parent: programmers-guide.html
-weight: 1200
+parent: space-based-remoting-overview.html
+weight: 100
 ---
 
-
+{%comment%}
 {% summary %}Remoting allows you to use remote invocations of POJO services, with the space as the transport layer.{% endsummary %}
 
 # Overview
+{%endcomment%}
+
 
 {%section%}
 {%column width=60% %}
@@ -48,4 +50,4 @@ However, there are two main scenarios where you should prefer [Event Driven Remo
 - When you would like the actual service to not to be co-located with the space. With [Executor Based Remoting](./executor-based-remoting.html), the remote service implementation can only be located within the space's JVM(s). With [Event Driven Remoting](./event-driven-remoting.html), you can locate the client on a remote machine and use the classic **Master/Worker pattern** for processing the invocation. This offloads the processing from the space (at the expense of moving your service away from the data it might need to do the processing).
 - When unexpected bursts of invocations are a probable scenario, using [Event Driven Remoting](./event-driven-remoting.html) may prove worthwhile, since invocations are not processed as they occur; they are "queued" in the space and are processed by the polling container when resources are available. By limiting the number of threads of the polling container you can make sure the invocations do not maximize the CPU of the space. (The [Alerts](./administrative-alerts.html) API can help monitor this situation.)
 
-{% children %}
+

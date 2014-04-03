@@ -2,14 +2,14 @@
 layout: post
 title:  Advanced Topics
 categories: XAP97
-parent: space-persistency.html
+parent: space-persistency-overview.html
 weight: 800
 ---
 
 
-{% summary %}Space Persistency advanced topics such as advanced operations, tuning, troubleshooting, and limitations.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 This sections covers advanced options related to Space Persistency.
 

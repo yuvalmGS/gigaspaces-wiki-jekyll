@@ -2,14 +2,11 @@
 layout: post
 title:  Dynamic Language Tasks
 categories: XAP97
-parent: task-execution-over-the-space.html
-weight: 200
+parent: task-execution-overview.html
+weight: 300
 ---
 
-
-{% summary   %}GigaSpaces supports the execution of tasks using scripting languages like JavaScipt and Groovy. These can be defined dynamically using the JDK 1.6 dynamic languages support. The dynamic language support is based on the [ordinary task executors](./task-execution-over-the-space.html) and OpenSpaces [remoting support](./space-based-remoting.html).{% endsummary %}
-
-# Overview
+{%summary%}{%endsummary%}
 
 [Event Driven Remoting](./event-driven-remoting.html) and [Executor Based Remoting](./executor-based-remoting.html) allow you to simply expose and execute custom services using the Space as the transport layer. The dynamic tasks feature (also known as "scripting support") allows you to utilize a built remote service, exposed using these two remoting mechanisms, that can execute dynamic language scripts in the space.
 A major benefit of using scripting or dynamic languages is the ability to simply change the behavior of the executed task without the need to recompile your application. As per the SBA paradigm, dynamic language scripts can be executed collocated with the Space, allowing you to execute the task as close as possible to the data it needs to access, and then return a result.

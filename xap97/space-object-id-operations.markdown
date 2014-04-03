@@ -6,7 +6,7 @@ parent: modeling-your-data.html
 weight: 100
 ---
 
-{% summary %}Space Object ID Usage{% endsummary %}
+{% summary %} {% endsummary %}
 
 # How Space Object ID is Generated?
 

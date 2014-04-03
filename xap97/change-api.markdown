@@ -2,14 +2,12 @@
 layout: post
 title:  Change API
 categories: XAP97
-parent: the-gigaspace-interface.html
-weight: 3100
+weight: 300
+parent: the-gigaspace-interface-overview.html
 ---
 
+{% summary %} {% endsummary %}
 
-{% summary %}This page covers the Change API, its usage and behavior.{% endsummary %}
-
-# Overview
 {%section%}
 {%column width=70% %}
 The [GigaSpace.change](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) and the [ChangeSet](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/ChangeSet.html) allows updating existing objects in space, by specifying only the required change instead of passing the entire updated object.

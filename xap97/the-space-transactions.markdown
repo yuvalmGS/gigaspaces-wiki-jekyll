@@ -2,13 +2,11 @@
 layout: post
 title:  Transactions
 categories: XAP97
-parent: the-gigaspace-interface.html
-weight: 4000
+weight: 500
+parent: the-gigaspace-interface-overview.html
 ---
 
-{% summary %}Describes transaction management when interacting with the space{% endsummary %}
 
-# Overview
 
 `GigaSpace` with the different OpenSpaces [transaction managers](./transaction-management.html) and Spring allow simple declarative definition of transactions. This boils down to the fact that if there is an ongoing transaction running, any operation performed using the `GigaSpace` interface joins it, using Spring's rich transaction support.
 

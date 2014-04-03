@@ -6,9 +6,13 @@ parent: event-processing.html
 weight: 200
 ---
 
+{% summary  %}{%endsummary%}
+
+{%comment%}
 {% summary  %}The notify event container wraps the space data event session API with event container abstraction.{% endsummary %}
 
 # Overview
+{%endcomment%}
 
 {% section %}
 {% column width=70% %}
@@ -19,7 +23,9 @@ The notify event container uses the space inherited support for notifications (c
 {% endcolumn %}
 {% endsection %}
 
+{%comment%}
 <iframe width="640" height="360" src="//www.youtube.com/embed/GwLfDYgl6f8?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
+{%endcomment%}
 
 ## Life Cycle Events
 

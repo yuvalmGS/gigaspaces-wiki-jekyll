@@ -2,14 +2,11 @@
 layout: post
 title:  Space Mode Context Loader
 categories: XAP97
-parent: the-gigaspace-interface.html
-weight: 6000
+weight: 700
+parent: the-gigaspace-interface-overview.html
 ---
 
 
-{% summary   %}Allows you to load a Spring application context only when the Processing Unit or space is in primary mode, and unload it when the Processing Unit or space is in backup mode.{% endsummary %}
-
-# Overview
 
 Most of the OpenSpaces built-in components take into account the state of the space (mainly applicable when starting an embedded space within the Processing Unit). This is important when working directly on a cluster member, since operations cannot be performed directly on a backup member.
 

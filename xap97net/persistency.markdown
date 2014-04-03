@@ -116,7 +116,7 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size",
 
 ## Server Side Logging
 
-{% refer %}To enable the .NET `ExternalDataSource` adapter logging, refer to the [GigaSpaces Logging]({% currentjavaurl %}/gigaspaces-logging.html#GigaSpacesLoggers) section.{% endrefer %}
+{% refer %}To enable the .NET `ExternalDataSource` adapter logging, refer to the [GigaSpaces Logging]({% currentjavaurl %}/logging-overview.html) section.{% endrefer %}
 
 {% endtoczone %}
 

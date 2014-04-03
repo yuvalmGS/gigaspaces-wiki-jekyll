@@ -1,17 +1,17 @@
 ---
 layout: post
-title:  Mule Processing Unit
+title:  Processing Unit
 categories: XAP97
 parent: mule-esb.html
 weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}The Mule Processing Unit allows you to run Mule within a Processing Unit, thus leveraging all of the Processing Unit and SLA-driven container capabilities.{% endsummary %}
 
-# Overview
+{% summary  %} {% endsummary %}
 
-OpenSpaces allows to configure, package and deploy a [Processing Unit](./packaging-and-deployment.html). The OpenSpaces Mule integration allows you to run a pure Mule application (with or without OpenSpaces special extension points and transports) as a Processing Unit.
+
+
+XAP allows to configure, package and deploy a [Processing Unit](./packaging-and-deployment.html). The OpenSpaces Mule integration allows you to run a pure Mule application (with or without OpenSpaces special extension points and transports) as a Processing Unit.
 
 # Configuration
 
@@ -29,7 +29,9 @@ In the example above, the `OpenSpacesMuleContextLoader` loads a Mule application
 
 Packaging of the Processing Unit should follow the [Processing Unit structure](./the-processing-unit-structure-and-configuration.html).
 
-{% exclamation %} When deploying a Processing Unit into the [SLA-driven container](./deploying-onto-the-service-grid.html), Mule JAR files should be "installed" into the GigaSpaces installation (on each node). The following minimum set of JARs need to be copied into **`<GigaSpaces Root>\lib\platform\mule`** (if the Mule directory does not exists, create it).
+{% note %}
+When deploying a Processing Unit into the [SLA-driven container](./deploying-onto-the-service-grid.html), Mule JAR files should be "installed" into the GigaSpaces installation (on each node). The following minimum set of JARs need to be copied into **`<GigaSpaces Root>\lib\platform\mule`** (if the Mule directory does not exists, create it).
+{%endnote%}
 
 - Copy the following JAR files from `<Mule Root>\lib\mule` to `<GigaSpaces Root>\lib\platform\mule`:
 `mule-core`, `mule-module-spring-config`, `mule-module-spring-extras`, `mule-transport-quartz`, `mule-transport-stdio`, `mule-transport-vm` . Other transports (if used) should be copied as well.
@@ -43,7 +45,7 @@ Note, since version 7.0, the required mule jar files can also be placed within t
 
 In the [Mule ESB example](/sbp/mule-esb-example.html), the following jars are required and should be placed under <GigaSpaces Root>\lib\platform\mule
 
-{% highlight java %}
+{% highlight console %}
 commons-beanutils-1.8.0.jar
 commons-cli-1.2.jar
 commons-io-1.4.jar

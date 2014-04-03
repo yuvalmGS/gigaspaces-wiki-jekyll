@@ -39,5 +39,10 @@ Physical resources
 - [Data Grid View](./web-management-data-grid-view.html){%wbr%}
 Cluster wide information about your data grids including: data queries, metrics, metadata etc.
 
+{%wbr%}
+
+#### Additional Resources
+{%youtube 9nFkfj2o5hk | Web Management Console%}
+{%include lightbox.html %}
 
 

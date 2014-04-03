@@ -6,9 +6,7 @@ parent: the-space-filters.html
 weight: 100
 ---
 
-{% summary %}The Space Filter interceptors.{% endsummary %}
-
-# Overview
+{% summary %} {% endsummary %}
 
 The Space Filter implementation may use the following interceptors. The relevant method should be annotated with the annotation listed below. The signature of these methods may include the following parameters:
 

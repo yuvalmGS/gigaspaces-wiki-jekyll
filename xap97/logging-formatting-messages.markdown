@@ -2,13 +2,11 @@
 layout: post
 title:  Formatting Log Messages
 categories: XAP97
-parent: gigaspaces-logging.html
-weight: 100
+parent: logging-overview.html
+weight: 300
 ---
 
-{% summary %}Formatting the logged output{% endsummary %}
 
-# Overview
 
 The logged output of a logger can be customized to any format, such as an XML or a human readable format.
 
@@ -35,7 +33,7 @@ The format is simply a string, which can contain any character including line-br
 
 By default, the logging configuration file comes with the following as the default format:
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.logger.GSSimpleFormatter.format = {0,date,yyyy-MM-dd HH:mm:ss,SSS} {6} {3} [{4}] - {5}
 {% endhighlight %}
 
@@ -46,13 +44,13 @@ Which translates to: **Date and time* printed down to the millisecond, **context
 If you wish to customize the format, change the default setting the in the logging configuration file (`<GigaSpaces>/config/gs_logging.properties`).
 For example,
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.logger.GSSimpleFormatter.format={0,date} {1}.{2}(..) {3} - {5}
 {% endhighlight %}
 
 Which translates to: **Date** in it's simplest form, **Class** name and **method**, the **log level** of the message and the **message**
 
-{% highlight java %}
+{% highlight console %}
 Jul 14, 2009  com.gigaspaces.Class.method(..) INFO - Sample message
 {% endhighlight %}
 

@@ -2,14 +2,14 @@
 layout: post
 title:  Data Source
 categories: XAP97
-parent: space-persistency.html
+parent: space-persistency-overview.html
 weight: 300
 ---
 
 
-{% summary %}The Space Data Source API is used for reading data and meta data from the data source.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 The [SpaceDataSource](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/datasource/SpaceDataSource.html) is used by the Space for interacting with the persistency layer in two cases:
 

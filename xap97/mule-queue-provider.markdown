@@ -1,23 +1,25 @@
 ---
 layout: post
-title:  Mule Queue Provider
+title:  Queue Provider
 categories: XAP97
 parent: mule-esb.html
 weight: 300
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}The OpenSpaces queue provider is used for internal space-based communication between services managed by Mule.{% endsummary %}
 
-# Overview
+{% summary   %}  {% endsummary %}
 
-The OpenSpaces queue provider is equivalent to the Mule [VM transport](http://www.mulesoft.org/documentation/display/MULE3USER/VM+Transport) and is used for internal communication between services managed by Mule based on the Space. By storing internal Mule messages in the Space using a virtualized queue, inter-service communication becomes highly available and fault-tolerant (in a primary-backup topology).
+
+
+XAP's queue provider is equivalent to the Mule [VM transport](http://www.mulesoft.org/documentation/display/MULE3USER/VM+Transport) and is used for internal communication between services managed by Mule based on the Space. By storing internal Mule messages in the Space using a virtualized queue, inter-service communication becomes highly available and fault-tolerant (in a primary-backup topology).
 
 When working with Mule and the OpenSpaces Mule integration, each Mule instance can participate in a Space cluster by starting an embedded Space which is a cluster member within the cluster. In this scenario, the queues are actually stored only in the relevant cluster member. In a primary-backup topology, this means that the queue content (the relevant messages that are passed between services) are backed up to the relevant cluster backup member.
 
 In this case, when the primary instance fails, the backup takes over and become primary, allowing services to continue and process messages without losing any data.
 
-{% exclamation %} In such a scenario, the backup services probably shouldn't run at all and should start processing only in case of failover. In order to configure the SEDA services to be aware of the current space state of the cluster member they are working against, see the [Mule SEDA Model](./mule-seda-model.html) section.
+{% note %}
+In such a scenario, the backup services probably shouldn't run at all and should start processing only in case of failover. In order to configure the SEDA services to be aware of the current space state of the cluster member they are working against, see the [Mule SEDA Model](./mule-seda-model.html) section.
+{%endnote%}
 
 In order to use the OpenSpaces queue provider, the following namespaces should be defined:
 

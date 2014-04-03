@@ -2,14 +2,11 @@
 layout: post
 title:  Logging API
 categories: XAP97
-parent: gigaspaces-logging.html
-weight: 50
+parent: logging-overview.html
+weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|70 %}Simple API extract and filter out logging information of GigaSpaces runtime.{% endsummary %}
-
-# Overview
+{% summary %}{% endsummary %}
 
 As part of the Administration API is an extensive logging extraction and filtering from different runtime components of GigaSpaces. Here is a very simple example:
 

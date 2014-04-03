@@ -1,16 +1,15 @@
 ---
 layout: post
-title:  Mule Event Container Transport
+title:  Event Container Transport
 categories: XAP97
 parent: mule-esb.html
 weight: 100
 ---
 
-{% summary%}OpenSpaces event container transport uses event components that allow you to send and receive POJO messages over the Space using Mule.{% endsummary %}
+{% summary%}  {% endsummary %}
 
-# Overview
 
-OpenSpaces event container transport uses [event components](./messaging-support.html) (namely the [polling container](./polling-container.html) and [notify container](./notify-container.html)) to receive POJO messages using the Space as the transport layer. It also allows you to send POJO messages using the Space as the transport layer.
+XAP event container transport uses [event components](./messaging-support.html) (namely the [polling container](./polling-container.html) and [notify container](./notify-container.html)) to receive POJO messages using the Space as the transport layer. It also allows you to send POJO messages using the Space as the transport layer.
 
 Since Mule configuration uses Spring, the event container transport can be easily integrated with OpenSpaces event components.
 

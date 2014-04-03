@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Management Console
+title:  Overview
 categories: XAP97ADM
 parent: web-management-console.html
 weight: 50

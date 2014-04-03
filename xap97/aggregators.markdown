@@ -2,17 +2,13 @@
 layout: post
 title:  Aggregators
 categories: XAP97
-parent: task-execution-over-the-space.html
-weight: 100
+parent: task-execution-overview.html
+weight: 200
 ---
 
 
-{% summary  %}Aggregating Data with GigaSpaces In-Memory Data-Grid using built-in aggregators.{% endsummary %}
-
-# Overview
-
 {%section%}
-{%column width=55% %}
+{%column width=60% %}
 With many systems such as pricing systems, risk management, trading and other analytic and business intelligence applications you may need to perform an aggregation activity across data stored within the data grid when generating reports or when running some business process. Such activity can leverage data stored in memory and will be much faster than performing it with a database.
 {%endcolumn%}
 {%column width=40% %}

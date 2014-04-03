@@ -7,7 +7,7 @@ weight: 200
 ---
 
 
-{% summary %} Using storage type per type and per property to determine in which way each property is stored in space.{% endsummary %}
+{% summary %} {% endsummary %}
 
 # Available Storage Types
 

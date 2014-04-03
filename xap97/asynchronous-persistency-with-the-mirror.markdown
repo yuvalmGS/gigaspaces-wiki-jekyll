@@ -2,16 +2,16 @@
 layout: post
 title:  Asynchronous Persistency
 categories: XAP97
-parent: space-persistency.html
+parent: space-persistency-overview.html
 weight: 600
 ---
 
 
-{% summary  %}Reliable Asynchronous Persistency (Mirror){% endsummary %}
+{% summary  %}  {% endsummary %}
 
-# Overview
 
-The GigaSpaces Mirror Service provides reliable asynchronous persistency. This allows you to asynchronously delegate the operations conducted with the In-Memory-Data-Grid (IMDG) into a backend database, significantly reducing the performance overhead.
+
+The XAP Mirror Service provides reliable asynchronous persistency. This allows you to asynchronously delegate the operations conducted with the In-Memory-Data-Grid (IMDG) into a backend database, significantly reducing the performance overhead.
 
 {% indent %}
 ![data-grid-async-persist.jpg](/attachment_files/data-grid-async-persist.jpg)
@@ -225,6 +225,3 @@ You may view Mirror and its replication statistics via the [GigaSpaces Managemen
 See also the [Mirror Monitor JMX utility](/sbp/mirror-monitor.html) for graphical mirror service monitoring via JMX
 {% endtip %}
 
-# Advanced Information & Operations
-
-{% refer %}For more advanced operations and information see [Async Persistency - Mirror - Advanced](./async-persistency---mirror---advanced.html).{% endrefer %}

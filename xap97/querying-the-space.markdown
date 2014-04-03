@@ -8,10 +8,6 @@ weight: 300
 
 {%wbr%}
 
-{%comment%}
-{% summary %}How to query entries from the space{% endsummary %}
-{%endcomment%}
-
 {%section%}
 {%column width=10% %}
 ![data-access.jpg](/attachment_files/subject/data-access.png)
@@ -20,14 +16,6 @@ weight: 300
 This section explains the various mechanisms offered by GigaSpaces XAP to query the space for data, as well as related topics, such as how to use indexing to boost query performance and how the space can be iterated to fetch entries more efficiently.
 {%endcolumn%}
 {%endsection%}
-
-
-{%comment%}
-
-<iframe width="640" height="360" src="//www.youtube.com/embed/jC57mId3SMg?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-
-{%endcomment%}
-
 
 {%wbr%}
 

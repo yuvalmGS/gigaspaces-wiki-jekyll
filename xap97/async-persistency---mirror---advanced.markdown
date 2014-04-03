@@ -7,7 +7,7 @@ weight: 100
 ---
 
 
-{% summary%}Reliable Asynchronous Persistency (Mirror) - advanced topics.{% endsummary %}
+{% summary%} {% endsummary %}
 
 # Custom Mirror Service Name
 

@@ -1,19 +1,18 @@
 ---
 layout: post
-title:  GigaSpaces as Second Level Cache
+title:  XAP as Second Level Cache
 categories: XAP97
-parent: space-persistency.html
+parent: space-persistency-overview.html
 weight: 1100
 ---
 
-
-{% summary %}Using GigaSpaces as a Hibernate cache provider; creating a Hibernate-integrated Data Grid with your existing ORM.{% endsummary %}
+{%summary%}{%endsummary%}
 
 {% anchor 1 %}
 
-# Overview
 
-This page explains how you can use GigaSpaces eXtreme Application Platform (XAP) to:
+
+This page explains how you can use  XAP to:
 
 - **Get a free 2nd-level distributed cache** for your [Hibernate](http://www.hibernate.org)-based database integration
 - **Scale up your database using the existing ORM** by adding a GigaSpaces Data Grid with back-end Hibernate integration
@@ -34,7 +33,9 @@ GigaSpaces as Hibernate 2nd level cache provides:
 
 Read further in this section for more details about these solutions, or jump to detailed instructions: [how to get a free distributed second-level cache](#step1) or [how to add a GigaSpaces data grid](#step2).
 
-{% infosign %} GigaSpaces fully supports the [Spring Framework](http://www.springframework.org), and can be plugged in very easily without changing your existing code.
+{% info%}
+XAP fully supports the [Spring Framework](http://www.springframework.org), and can be plugged in very easily without changing your existing code.
+{%endinfo%}
 
 ## The Existing Architecture
 
@@ -53,7 +54,9 @@ You can very easily replace your existing Hibernate cache provider, typically EH
 - **Powerful distributed cache** - multiple clients, each client's updates can be accessed by all other clients
 - **Effortless integration** using Spring
 
-{% infosign %} To learn how to do this, see [How to Switch Your Second-Level Cache Provider to GigaSpaces](#step1) below.
+{% info %}
+To learn how to do this, see [How to Switch Your Second-Level Cache Provider to GigaSpaces](#step1) below.
+{%endinfo%}
 
 ## Step 2: Scaling Up Your Database by Adding a Data Grid
 
@@ -68,7 +71,9 @@ If you need to scale up your database, you can use GigaSpaces as an In-Memory Da
 - **Event-driven** model enables notifications when data is modified
 - **Database access can be synchronous or asynchronous** - the [GigaSpaces Mirror Service](./asynchronous-persistency-with-the-mirror.html) allows data to be persisted to the database asynchronously, without a performance penalty
 
-{% infosign %} To learn how to do this, see the [Moving from Hibernate to Space](/sbp/moving-from-hibernate-to-space.html) best practice.
+{% info %}
+To learn how to do this, see the [Moving from Hibernate to Space](/sbp/moving-from-hibernate-to-space.html) best practice.
+{%endinfo%}
 
 ## Beyond the Data Grid: Scaling Out Your Application Using Space-Based Architecture
 

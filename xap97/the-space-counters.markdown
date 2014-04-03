@@ -2,26 +2,23 @@
 layout: post
 title:  Counters
 categories: XAP97
-parent: the-gigaspace-interface.html
-weight: 3200
+weight: 400
+parent: the-gigaspace-interface-overview.html
 ---
 
+ {% summary %} {% endsummary %}
 
-{% summary %}Real Time atomic counter using the **GigaSpace.change API**{% endsummary %}
-
-
-# Overview
 
 {% section %}
-{% column width=70% %}
-A growing number of applications such as real time ad impressions , ad optimization engines, social network , on-line gaming , need real-time counters when processing incoming streaming of events. The challenge is to update the counter in atomic manner without introducing a bottleneck event processing flow.
-{% endcolumn %}
-{% column width=25% %}
+{% column width=10% %}
 ![counter-logo.jpg](/attachment_files/counter-logo.jpg)
+{% endcolumn %}
+{% column width=90% %}
+A growing number of applications such as real time ad impressions , ad optimization engines, social network , on-line gaming , need real-time counters when processing incoming streaming of events. The challenge is to update the counter in atomic manner without introducing a bottleneck event processing flow.
 {% endcolumn %}
 {% endsection %}
 
-GigaSpaces introducing Counter functionality via the `GigaSpace.change` API. It allows you to increment or decrement an Numerical field within your Space object (POJO or Document). This change may operate on a numeric property only (byte,short,int,long,float,double) or their corresponding Boxed variation. To maintain a counter you should use the Change operation with the `ChangeSet` increment/decrement method that adds/subtract the provided numeric value to the existing counter.
+XAP introducing Counter functionality via the `GigaSpace.change` API. It allows you to increment or decrement an Numerical field within your Space object (POJO or Document). This change may operate on a numeric property only (byte,short,int,long,float,double) or their corresponding Boxed variation. To maintain a counter you should use the Change operation with the `ChangeSet` increment/decrement method that adds/subtract the provided numeric value to the existing counter.
 
 
 {% section %}

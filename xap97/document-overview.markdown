@@ -31,3 +31,10 @@ XAP supports extending the SpaceDocument class to provide a type-safe wrapper fo
 
 - [Interoperability](./document-pojo-interoperability.html){%wbr%}
 XAP offers interoperability between documents and POJOs via the space
+
+
+{%wbr%}
+
+#### Additional Resources
+{%youtube nBljYC3ciYc | Document API%}
+{%include lightbox.html %}

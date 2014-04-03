@@ -2,16 +2,16 @@
 layout: post
 title:  Initial Load
 categories: XAP97
-parent: space-persistency.html
+parent: space-persistency-overview.html
 weight: 500
 ---
 
 
-{% summary  %}Space data source initial Load pre-loads the space with data before it is available for clients.{% endsummary %}
+{% summary  %} {% endsummary %}
 
-# Overview
 
-The GigaSpaces Data-Grid includes special interceptor that allow users to pre-load the Data-Grid with data before it is available for clients access. This interceptor called **Initial Load** and has a default implementation that is using the [Hibernate Space Persistency](./hibernate-space-persistency.html) implementation to load data from a database directly into the Data-Grid instances.
+
+The XAP Data-Grid includes special interceptor that allow users to pre-load the Data-Grid with data before it is available for clients access. This interceptor called **Initial Load** and has a default implementation that is using the [Hibernate Space Persistency](./hibernate-space-persistency.html) implementation to load data from a database directly into the Data-Grid instances.
 
 ![eds_initial_load.jpg](/attachment_files/eds_initial_load.jpg)
 

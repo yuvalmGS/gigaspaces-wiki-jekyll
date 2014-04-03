@@ -2,13 +2,11 @@
 layout: post
 title:  Backing-up Files With a Custom Policy
 categories: XAP97
-parent: managing-log-files.html
-weight: 100
+parent: logging-overview.html
+weight: 500
 ---
 
-{% summary %}Custom backup policy{% endsummary %}
-
-# Overview
+{% summary %}{% endsummary %}
 
 A backup-policy can be configured to backup files. By default a `NullBackupPolicy` is configured, which does nothing. It can be replaced by a `DeleteBackupPolicy` to keep a backup of files for a specified period. The `BackupPolicy` interface allows custom implementations to be plugged-in.
 
@@ -24,7 +22,7 @@ By default, a file is kept for a 30 day period. After 30 days, the file is delet
 
 These properties can be configured either by modifying the logging configuration file:
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.logger.RollingFileHandler.backup-policy = com.gigaspaces.logger.DeleteBackupPolicy
 com.gigaspaces.logger.DeleteBackupPolicy.period = 30
 com.gigaspaces.logger.DeleteBackupPolicy.backup = 10
@@ -32,7 +30,7 @@ com.gigaspaces.logger.DeleteBackupPolicy.backup = 10
 
 or by use of a system property override:
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gigaspaces.logger.DeleteBackupPolicy.[property-name]=[property-value]
 
 For example:
@@ -43,7 +41,7 @@ For example:
 
 The `com.gigaspaces.logger.`**`BackupPolicy`** is an interface for a pluggable backup policy. For example, you may wish to write an implementation to zip files if reached a certain threshold. The interface has a single method, which is used to **track** newly created log files. A file is either created upon rollover or at initialization time. Implementation can keep track of files and decide whether to trigger the backup policy.
 
-{% highlight java %}
+{% highlight console %}
     public void track(File file);
 {% endhighlight %}
 

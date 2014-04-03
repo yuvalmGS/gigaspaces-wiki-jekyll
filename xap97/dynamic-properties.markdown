@@ -2,13 +2,13 @@
 layout: post
 title:  Dynamic Properties
 categories: XAP97
-parent: pojo-support.html
-weight: 100
+parent: pojo-overview.html
+weight: 200
 ---
 
-{% summary %}Using Dynamic Properties with POJO entries.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 POJO entries properties are bound by the schema of the POJO class definition, which means a property cannot be added without changing the class, and since changing the class requires restarting the space this can be a long and tiresome project.
 
 Starting with version 8.0, GigaSpaces provides the [Document API](./document-api.html), which is schema free, and enables users to add properties freely without worrying about the schema. However, some users still prefer to continue working with POJO but would like to enjoy the benefits of dynamic properties.

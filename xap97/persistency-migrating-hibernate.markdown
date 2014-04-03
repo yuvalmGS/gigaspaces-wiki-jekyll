@@ -2,15 +2,14 @@
 layout: post
 title:  Migrating from Hibernate
 categories: XAP97
-parent: space-persistency.html
+parent: space-persistency-overview.html
 weight: 900
 ---
 
-{% summary %}GigaSpaces's persistency approach consists of several paradigms for data persistency, according to the application needs. This section gives a basic overview of each paradigm. {% endsummary %}
 
-
-
-# Migrating Legacy Hibernate API Applications to GigaSpaces API
+{%comment%}
+# Migrating Legacy Hibernate API Applications to XAP API
+{%endcomment%}
 
 To benefit from data caching and other capabilities, it is worthwhile to migrate a legacy application that uses the Hibernate API, to the GigaSpace or GigaMap API. In such cases, these applications can benefit from the ability to scale when using the GigaSpaces Data Grid. This is achieved by partitioning the data across different spaces running on different machines, and having the business logic colocated with each partition. This allows the space and the business logic to run in same memory address, eliminating remote calls when accessing the data.
 
@@ -92,4 +91,4 @@ The space can load data from data sources, store data into data sources, and per
 
 The [Hibernate Space Persistency](./hibernate-space-persistency.html) support RDBMS. The [Cassandra Space Persistency](./cassandra-space-persistency.html) allows applications to leverage NoSQL Cassandra DB having a distributed database infrastructure as an alternative to RDBMS.
 
-{% children %}
+

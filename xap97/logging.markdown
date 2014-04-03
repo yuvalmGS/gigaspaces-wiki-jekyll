@@ -1,17 +1,17 @@
 ---
 layout: post
-title:  Logging
+title:  Overview
 categories: XAP97
-parent: programmers-guide.html
-weight: 1650
+parent: logging-overview.html
+weight: 100
 ---
 
 
-{% summary %}GigaSpaces logging facilities{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
 
-GigaSpaces makes logging calls by use of the Java <sup>TM</sup> platform's core logging facilities.
+
+XAP makes logging calls by use of the Java <sup>TM</sup> platform's core logging facilities.
 For more information on the JDK logging framework, please refer to the following online documentation: [Java Logging Overview](http://java.sun.com/j2se/1.5.0/docs/guide/logging/overview.html).
 
 # Configuration File
@@ -20,8 +20,8 @@ The logging configuration is initialized using a logging configuration file that
 
 The default configuration file is located under:
 
-{% highlight java %}
-<GigaSpaces>/config/gs_logging.properties
+{% highlight console %}
+<XAP>/config/gs_logging.properties
 {% endhighlight %}
 
 # Logging Level
@@ -67,7 +67,7 @@ Here are the different modules , their logging names and their default logging l
 
 ### Client General
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.client.level = INFO
 com.gigaspaces.client.cluster.liveness.level = INFO
 {% endhighlight %}
@@ -81,7 +81,7 @@ Additional info about GigaSpaces proxy can be found [here]({%currentadmurl%}/tun
 The logging configuration file includes declarations of the loggers available at the bridge between .NET and Java.
 
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.externaldatasource.dotnet.level = INFO
 com.gigaspaces.bridge.dispatcher.level = INFO
 com.gigaspaces.bridge.pbsexecuter.level = INFO
@@ -92,13 +92,13 @@ com.gigaspaces.dotnet.pu.level = INFO
 
 The logging configuration file includes declarations of the C++ Java Proxy logger, which logs info such as exceptions and JVM creation.
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.cpp.proxy.level = INFO
 {% endhighlight %}
 
 ### OpenSpaces
 
-{% highlight java %}
+{% highlight console %}
 org.openspaces.level = INFO
 org.openspaces.pu.container.support.level = WARNING
 org.openspaces.pu.container.jee.context.ProcessingUnitWebApplicationContext.level = WARNING
@@ -109,7 +109,7 @@ OpenSpaces wraps the GigaSpaces core product with Spring which enables Spring co
 
 ### Spring
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.spring.level = INFO
 {% endhighlight %}
 
@@ -117,14 +117,14 @@ GigaSpaces Spring application logging
 
 ### JMS API
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.jms.level = INFO
 {% endhighlight %}
 
 {% endtabcontent %}
 {% tabcontent Comunication Protocol %}
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.lrmi.nio.filters.SSLFilterFactory.level = INFO
 com.gigaspaces.lrmi.level = INFO
 com.gigaspaces.lrmi.stubcache.level = INFO
@@ -146,19 +146,19 @@ GigaSpaces components communicate using internal communications adaptor, LRMI (L
 {% tabcontent Class Loader %}
 
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.core.classloadercleaner.level = INFO
 com.gigaspaces.core.classloadercache.level = INFO
 {% endhighlight %}
 
-GigaSpaces applications are running as part of a GigaSpaces runtime container and packaged using the structure described [here](./the-processing-unit-structure-and-configuration.html).
+XAP applications are running as part of a XAP runtime container and packaged using the structure described [here](./the-processing-unit-structure-and-configuration.html).
 Application jars/classes are packaged in different folders and some of the classes could be loaded as part of GigaSpaces container (GSC's). There are multiple class loaders involved when an application is running. More information about the class loaders and their hierarchy is [here](./the-processing-unit-structure-and-configuration.html).
 {% endtabcontent %}
 {% tabcontent Space %}
 
 ### Space Core & Kernel
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.core.engine.level = INFO
 com.gigaspaces.core.lease.level = INFO
 com.gigaspaces.core.types.level = INFO
@@ -173,7 +173,7 @@ Core runtime for the space component of GigaSpaces, above loggers relate to this
 
 ### Space Filters
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.filters.level = INFO
 {% endhighlight %}
 
@@ -181,7 +181,7 @@ Space filters are described [here](./space-filters.html)
 
 ### Space Persistency
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.persistent.level = INFO
 com.gigaspaces.persistent.shared_iterator.level = INFO
 org.hibernate.level = WARNING
@@ -191,7 +191,7 @@ GigaSpaces persistence options are explained [here](./space-persistency.html). O
 
 ### Space Query
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.query.level = INFO
 {% endhighlight %}
 
@@ -199,7 +199,7 @@ GigaSpaces supports SQL queries on the data in space and logger corresponds to t
 
 ### Space LRU and Eviction
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.cache.level = INFO
 {% endhighlight %}
 
@@ -207,7 +207,7 @@ More information about LRU policy and Eviction behavior is [here](./lru-cache-po
 
 ### Space Notifications
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.core.notify.level = INFO
 {% endhighlight %}
 
@@ -216,7 +216,7 @@ Another way notifications can be used is thru Session based messaging which is d
 
 ### Space FIFO
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.core.fifo.level = INFO
 {% endhighlight %}
 
@@ -224,7 +224,7 @@ FIFO functionality is applicable for writes, reads and events (notifications) an
 
 ### Space Replication
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.core.cluster.replication.level = INFO
 com.gigaspaces.core.cluster.replication.redolog.level = INFO
 com.gigaspaces.core.cluster.sync_replication.level = INFO
@@ -235,7 +235,7 @@ Replication between spaces is one of the core features of GigaSpaces and is expl
 
 ### Space Partitioning
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.core.cluster.partition.level = INFO
 {% endhighlight %}
 
@@ -243,7 +243,7 @@ When cluster uses partitioned topology, data is partitioned across multiple inst
 
 ### Space Active-Election
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.cluster.active_election.level = INFO
 {% endhighlight %}
 
@@ -251,7 +251,7 @@ When multiple instances (primary/backup(s)), Active Election process is used by 
 
 ### POJO
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.pojo.level = INFO
 {% endhighlight %}
 
@@ -259,7 +259,7 @@ Logger corresponding to GigaSpaces POJO support, more info [here](./pojo-support
 
 ### Space XA manager
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.core.xa.level = INFO
 {% endhighlight %}
 
@@ -267,7 +267,7 @@ Logger corresponding to XA Transaction manager running in the space, more inform
 
 ### Space Jini Dist. TX manager
 
-{% highlight java %}
+{% highlight console %}
 com.sun.jini.mahalo.startup.level = INFO
 com.sun.jini.mahalo.destroy.level = INFO
 {% endhighlight %}
@@ -276,7 +276,7 @@ Logger for Jini Distributed Transaction manager, more information [here](./trans
 
 ### SpaceURL, SpaceValidator, SpaceURLParser
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.common.spaceurl.level = INFO
 com.gigaspaces.common.spacefinder.level = INFO
 com.gigaspaces.common.lookupfinder.level = INFO
@@ -288,7 +288,7 @@ Other loggers are related to this and applicable when a client trying to create 
 
 ### Space Multicast Notifications
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.worker.multicast.level = INFO
 {% endhighlight %}
 
@@ -298,7 +298,7 @@ Space notifications support multicast mode and this logger corresponds to this [
 
 ### Service Container - General
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.grid.space.SpaceHandler.level = FINE
 org.jini.rio.level = INFO
 com.gigaspaces.start.level = CONFIG
@@ -309,7 +309,7 @@ com.gigaspaces.management.level = INFO
 
 ### Lookup Service
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.core.lookupmanager.level = INFO
 com.sun.jini.reggie.level = INFO
 net.jini.discovery.LookupLocatorDiscovery.level = INFO
@@ -325,7 +325,7 @@ Lookup Service is a runtime registry of GigaSpaces components. Each component re
 
 ### GSM
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.grid.gsm.level = INFO
 com.gigaspaces.grid.gsm.peer.level = INFO
 com.gigaspaces.grid.gsm.feedback.level = INFO
@@ -340,7 +340,7 @@ GSM manages the applications and maintains the SLA's of deployments. More inform
 
 ### GSC
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.grid.gsc.level = INFO
 com.gigaspaces.grid.gsc.GSCFaultDetectionHandler.level = INFO
 com.gigaspaces.grid.gsm.GSMFaultDetectionHandler.level = INFO
@@ -351,7 +351,7 @@ GSC is the runtime environment for GigaSpaces applications. More information abo
 
 ### ESM
 
-{% highlight java %}
+{% highlight console %}
 org.openspaces.grid.esm.level = INFO
 {% endhighlight %}
 
@@ -363,7 +363,7 @@ Elastic Middleware Services are explained [here](./elastic-middleware-services.h
 
 ### GSA
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.grid.gsa.level = INFO
 {% endhighlight %}
 
@@ -371,7 +371,7 @@ The GigaSpaces Agent (GSA) acts as a process manager that can spawn and manage S
 {% endtabcontent %}
 {% tabcontent Security %}
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.security.level = INFO
 {% endhighlight %}
 
@@ -381,7 +381,7 @@ Logger corresponding to security of GigaSpaces components. This includes configu
 
     Any web application default logging level (logger name for them is web.[processing unit name].[instance id])
 
-{% highlight java %}
+{% highlight console %}
 web.level = INFO
 org.mortbay.level = WARNING
 {% endhighlight %}
@@ -390,7 +390,7 @@ Web application support in GigaSpaces is provided using a Jetty container. These
 {% endtabcontent %}
 {% tabcontent Mule Integration %}
 
-{% highlight java %}
+{% highlight console %}
 org.mule.level = WARNING
 org.mule.MuleServer.level = INFO
 org.mule.RegistryContext.level = INFO
@@ -403,7 +403,7 @@ These loggers correspond to Mule integration. More information about Mule integr
 {% tabcontent Management %}
 For GUI, browser, cluster view, JMX logging:
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.admin.level = INFO
 com.gigaspaces.admin.ui.level = INFO
 com.gigaspaces.admin.ui.cluster.view.level = INFO
@@ -420,13 +420,13 @@ Loggers corresponding to GigaSpaces Management Console/UI. Additional informatio
 
 The configuration defined in the `gs_logging.properties` file may be overridden by either using system properties or by providing an external configuration file with overrides. This external configuration file should be located in the classpath under:
 
-{% highlight java %}
+{% highlight console %}
 /config/gs_ext_logging.properties
 {% endhighlight %}
 
 Any configuration that you wish to override in `gs_logging.properties` file, should appear in `gs_ext_logging.properties` with its new value. The same applies for system properties, e.g.
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gigaspaces.exceptions.level=WARNING
 {% endhighlight %}
 
@@ -438,13 +438,13 @@ The recommended way to define system properties when starting service grid compo
 
 Your own configuration file may also be used instead of the platform's default. This is done by setting the configuration file location using a system property:
 
-{% highlight java %}
+{% highlight console %}
 -Djava.util.logging.config.file=myfile.properties
 {% endhighlight %}
 
 GigaSpaces scripts rely on the exported environment variable `GS_LOGGING_CONFIG_FILE` (declared in `<GigaSpaces>/bin/setenv script`). The preferred way to apply your override file is to use a wrapper script: export the new setting of this variable and call the original script. This ensures that when `setenv.sh(bat)` is called from within the platform's scripts, it will pick up the override.
 
-{% highlight java %}
+{% highlight console %}
 # unix
 
 export GS_LOGGING_CONFIG_FILE=myfile.properties
@@ -453,7 +453,7 @@ export GS_LOGGING_CONFIG_FILE=myfile.properties
 
 Provided that your application initializes the logging facility via the Logging API (e.g. `LogManager.readConfiguration(InputStream ins)`), you may wish to disable the GigaSpaces configuration altogether. Once disabled, your Java logging settings will take place. This is done with the following system property:
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.logging.disabled=true
 {% endhighlight %}
 
@@ -461,7 +461,7 @@ Provided that your application initializes the logging facility via the Logging 
 
 To troubleshoot and detect which logging properties file was loaded and from which location, set the following system property to **true**. This property already exists in the scripts (for convenience) and by default is set to **false**.
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.logging.debug=true
 {% endhighlight %}
 
@@ -470,7 +470,7 @@ To troubleshoot and detect which logging properties file was loaded and from whi
 GigaSpaces out of the box configures logging with two log Handlers,
 
 - `java.util.logging.ConsoleHandler`: A simple handler for writing formatted output to System.err (level is set to ALL)
-- `com.gigaspaces.logger.RollingFileHandler`: A handler that writes formatted output to a file that rolls over if a certain policy is triggered. see [Managing Log Files](./managing-log-files.html)
+- `com.gigaspaces.logger.RollingFileHandler`: A handler that writes formatted output to a file that rolls over if a certain policy is triggered. see [Managing Log Files](./logging-managing-files.html)
 
 Java util logging supports other handlers. MemoryHandler, SocketHandler or any other handler can be used instead of the above. More information about handlers is [here](http://docs.oracle.com/javase/6/docs/technotes/guides/logging/). You can also use one of the [open source logging frameworks](http://java-source.net/open-source/logging) that support java.util.logging.
 
@@ -478,13 +478,13 @@ Java util logging supports other handlers. MemoryHandler, SocketHandler or any o
 
 Formatters are in charge of formatting the log messages and adding meta data to them (date, time, level, etc).
 GigaSpaces configures the logging `Handler`'s `formatter` property with a single `Formatter` implementation class:
-`com.gigaspaces.logger.GSSimpleFormatter. This formatter class is based on the `java.util.logging.SimpleFormatter` class. see [Formatting Log Messages](./formatting-log-messages.html) for more details.
+`com.gigaspaces.logger.GSSimpleFormatter. This formatter class is based on the `java.util.logging.SimpleFormatter` class. see [Formatting Log Messages](./logging-formatting-messages.html) for more details.
 
 # Exception visibility
 
 GigaSpaces prints exception stack traces for messages with level `SEVERE` or higher.
 
-{% highlight java %}
+{% highlight console %}
 com.gigaspaces.exceptions.level = SEVERE
 {% endhighlight %}
 
@@ -508,7 +508,9 @@ To change the logging level in JConsole do the following:
 
 {% include /COM/jconsolejmapwarning.markdown %}
 
-{% infosign %} Note, you will need to use the logging level without the .level string e.g.: "com.gigaspaces.core.cluster.replication" and set value "FINE"
+{% info %}
+Note, you will need to use the logging level without the .level string e.g.: "com.gigaspaces.core.cluster.replication" and set value "FINE"
+{%endinfo%}
 
 The LoggingMXBean enables you to:
 
@@ -517,6 +519,7 @@ The LoggingMXBean enables you to:
 - Get the name of the parent for the specified logger
 - Sets the specified logger to the specified new level
 
+{%comment%}
 # FAQ
 
 {% togglecloak id=1 %}{% color blue %}How do I minimize cost when migrating to 7.0 ?{% endcolor %}{% endtogglecloak %}
@@ -525,17 +528,18 @@ To minimize migration cost from previous versions to 7.0, or if you just want to
 
 1. Modify the handlers property in `gs_logging.properties` - keep only the ConsoleHandler
 
-{% highlight java %}
+{% highlight console %}
 handlers=java.util.logging.ConsoleHandler
 {% endhighlight %}
 
 2. In your scripts, specify that you want the `FileHandler` to be considered:
 
-{% highlight java %}
+{% highlight console %}
 -Dhandlers=java.util.logging.FileHandler
 {% endhighlight %}
 
 This will also provide support for system property overrides of properties exposed by the FileHandler, e.g. `-Djava.util.logging.FileHandler.pattern=../logs/myfile.log`
 {% endgcloak %}
 
-{% children %}
+{%endcomment%}
+
