@@ -6,8 +6,29 @@ parent: configuration.html
 weight: 200
 ---
 
-You will find the platform specific configuration under `GS_HOME\NET v....\Config\Settings.xml`.
+# Overview
 
+This page explains how to configure XAP.NET Grid environment. In general, the default settings provided are good for small development or production environment. You should change these to satisfy your specific environment to increase the GSC capacity , specify lookup service location, specify zones , enable security, specify log files location, etc.
+
+You will find the XAP .NET grid configuration within the `GS_HOME\NET v....\Config\Settings.xml`. Each machine running XAP .NET grid should have its `Settings.xml` modified. 
+
+# Typical XAP .NET Grid Setup
+
+A typical XAP .NET grid setup process involves:
+**Step 1** 
+Set the `XapNet.HostName` to have the machine IP. This is required for machines with multiple networks address (multi-NIC).
+
+**Step 2**      
+Set the `XapNet.Locators` to have two machines IP comma separated that will run the lookup service (`IP1,IP2` or `MachineAddress1,MachineAddress2`). These machine XAP Agents should be started first!  The `XapNet.Locators`  should be set only with environments that do not have multicasting enabled or with environments where client applications don’t have multicasting enabled between client machine and XAP .Net grid machines. 
+
+**Step 3**
+Set the `XapNet.Gsc.Memory.Maximum` to have the right size.  Usually 20480 (20GB) will be a good number. For example. A machine with 64 GB RAM should have 3 GSCs running , each with 20GB GSC as Maximum size. 
+
+**Please make sure firewall and antivirus are DISABLED on XAP .Net Grid machines!**
+
+# Platform Configuration Properties
+
+Below common platform configuration properties you should set when you setup your XAP .Net grid:
 {: .table .table-bordered}
 | Property name  | Description | Default value  |
 |XapNet.Path| XAP .NET folder location |$(XapNet.SettingsFile)\..\.. |
