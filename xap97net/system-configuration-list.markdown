@@ -26,7 +26,7 @@ Set the `XapNet.Locators` to have two machines IP comma separated that will run 
 
 Set the `XapNet.Gsc.Memory.Maximum` to have the right size.  Usually 20480 (20GB) will be a good number. For example: A machine with 64 GB RAM should have 3 GSCs running , each with 20GB GSC as Maximum size. 
 
-**Please make sure firewall and antivirus are DISABLED on XAP .Net Grid machines!**
+**Please make sure firewall and any anti-virus SW are DISABLED on XAP .Net Grid machines!**
 
 # Platform Configuration Properties
 
