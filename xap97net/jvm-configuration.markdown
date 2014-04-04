@@ -6,7 +6,7 @@ parent: configuration.html
 weight: 300
 ---
 
-{% summary %}JVM Settings Configuration Section.{% endsummary %}
+{% summary %}.Net Client application JVM Settings Configuration.{% endsummary %}
 
 {% comment %}
 ![NewinXAP66.gif](/attachment_files/dotnet/NewinXAP66.gif)
