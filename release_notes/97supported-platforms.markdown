@@ -35,6 +35,7 @@ GigaSpaces is being tested with (32bit and 64bit JVMs):
 - Windows 2008 Server SP2
 - Linux RHEL 5.x/6.x
 - Solaris 10
+- [VMWare guidelines](/release_notes/vmware-guidelines.markdown)
 
 {%warning%}
 SUSE-10 sp3 has bugs which make the OS network layer unreliable. This OS should be avoided with GigaSpaces.
