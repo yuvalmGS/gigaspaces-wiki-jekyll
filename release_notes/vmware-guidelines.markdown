@@ -7,7 +7,7 @@ weight: 700
 ---
 
 {%summary%}GigaSpaces XAP Data-Grid , Message-Grid , Compute-Grid , local cache , remoting, Persistency , Service Grid
-and OpenSpaces API support deployment in virtualized environments running on VMWare Type 1 Hypervisors.{%endsummary}
+and OpenSpaces API support deployment in virtualized environments running on VMWare Type 1 Hypervisors.{%endsummary%}
 
 # Supported versions
 
