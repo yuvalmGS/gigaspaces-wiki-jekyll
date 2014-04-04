@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  JMS Known Issues and Considerations
+title:  Known Issues and Considerations
 categories: XAP97
-parent: jms---advanced.html
+parent: jms-advanced.html
 weight: 500
 ---
 
-{% summary %}JMS API open issues, unsupported features, and considerations {% endsummary %}
+JMS API open issues, unsupported features, and considerations
 
-# Overview
+
 
 - GS-2167 -- **Durable subscribers** are currently not supported. Trying to invoke the `Session.createDurableSubscriber` method or the `Session.unsubscribe` method throws a `JMSException`.
 - GS-2168 -- When consuming messages from a Queue, and a session recovery takes place, the `JMSRedelivered` header of the recovered messages is not set. This problem does not occur with Topic recovered messages.

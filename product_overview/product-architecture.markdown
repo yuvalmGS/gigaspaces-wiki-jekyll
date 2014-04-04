@@ -166,7 +166,7 @@ The messaging grid aspect of the space provides messaging capabilities such as:
 1. [FIFO]({%latestjavaurl%}/fifo-support.html) ordering.
 1. [Transaction Management]({%latestjavaurl%}/transaction-management.html).
 
-The core APIs used for messaging are the OpenSpaces [Notify]({%latestjavaurl%}/notify-container.html) and [Polling]({%latestjavaurl%}/polling-container.html) Containers. In addition, a [JMS 1.1 implementation]({%latestjavaurl%}/jms-api-support.html) API is available to be used with existing JMS based applications. More information can be found in the [Messaging and Events]({%latestjavaurl%}/messaging-support.html) section.
+The core APIs used for messaging are the OpenSpaces [Notify]({%latestjavaurl%}/notify-container.html) and [Polling]({%latestjavaurl%}/polling-container.html) Containers. In addition, a [JMS 1.1 implementation]({%latestjavaurl%}/messaging-support.html) API is available to be used with existing JMS based applications. More information can be found in the [Messaging and Events]({%latestjavaurl%}/messaging-support.html) section.
 
 ## Processing Services
 

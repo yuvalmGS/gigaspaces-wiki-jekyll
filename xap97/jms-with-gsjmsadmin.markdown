@@ -2,13 +2,11 @@
 layout: post
 title:  Working with GSJMSAdmin
 categories: XAP97
-parent: jms-administration-api.html
-weight: 200
+parent: messaging-support.html
+weight: 600
 ---
 
-{% summary page|60 %}Obtaining JMS resources without JNDI, Using JNDI with GSJMSAdmin.{% endsummary %}
 
-# Overview
 
 The `GSJMSAdmin` class is offered by GigaSpaces to simplify the obtaining of JMS resources. You can use this class to work with or without JNDI.
 
@@ -35,11 +33,12 @@ String url="rmi://myhost:myport/mySpace_container/mySpace;jini://myhost/./mySpac
 ConnectionFactory factory = admin.getConnectionfactory(url); // or a proxy
 {% endhighlight %}
 
-{% exclamation %} Using the following space URL:
+{% note title=Using the following space URL:%}
 
-    rmi://myhost:myport/myJMSSpace_container/myJMSSpace;jini://myhost/./myJMSSpace
+`rmi://myhost:myport/myJMSSpace_container/myJMSSpace;jini://myhost/./myJMSSpace`
 
 combines two separate Lookup Services: a Jini Lookup Service and the JNDI-based `RMIRegistry`, avoiding **Single Point of Failure**.
+{%endnote%}
 
 The following methods return a cached instance of a destination, or a new instance if no instance exists.
 
@@ -70,4 +69,6 @@ GSJMSAdmin admin = GSJMSAdmin.getInstance();
 Topic topic = admin.jndiLookup("GigaSpaces;ContainerName;spaceName;jms;destinations;MyTopic")
 {% endhighlight %}
 
-{% infosign %} The name used to look for the resource is the full binding name.
+{% info %}
+The name used to look for the resource is the full binding name.
+{%endinfo%}

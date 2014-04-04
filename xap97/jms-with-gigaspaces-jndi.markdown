@@ -1,16 +1,14 @@
 ---
 layout: post
-title:  Working with GigaSpaces JNDI
+title:  XAP JNDI
 categories: XAP97
-parent: jms-administration-api.html
-weight: 100
+parent: messaging-support.html
+weight: 500
 ---
 
-{% summary %}JNDI Overview, Binding/Obtaining `ConnectionFactory` and `Destination` instances.{% endsummary %}
 
-# Overview
 
-GigaSpaces runs a JNDI service where JMS objects can be bound by name. The administrator configures JMS destinations in the space configuration file. When the space is started, it creates and binds the configured destinations to JNDI, making them available for use.
+XAP runs a JNDI service where JMS objects can be bound by name. The administrator configures JMS destinations in the space configuration file. When the space is started, it creates and binds the configured destinations to JNDI, making them available for use.
 
 The application uses a JNDI context to obtain these objects, and to start working with JMS. The context is initialized with the values specified in the `jndi.properties` file in the GigaSpaces classpath. After obtaining the context, the client calls the `context.lookup()` method, passing the name of the required resource. If the resource is found in JNDI, it is returned to the client.
 
@@ -73,7 +71,9 @@ The example above:
 - Configures `MyTopic` and `TempTopic`.
 - Configures `MyQueue` and `TempQueue`
 
-{% exclamation %} When configuring destination as described above, the space binds the destinations to the following names:
+{% note %}
+When configuring destination as described above, the space binds the destinations to the following names:
+{%endnote%}
 
 {% highlight java %}
 GigaSpaces;ContainerName;spaceName;jms;destinations;MyTopic
@@ -93,7 +93,9 @@ InitialContext context = new InitialContext();
 Topic myTopic = (Topic)context.lookup("GigaSpaces;containername;spaceName;jms;destinations;MyTopic");
 {% endhighlight %}
 
-{% infosign %} To get the resource, use the full binding name. If you configure `MyTopic` in the space configuration, the space binds it to the name:
+{% info %}
+To get the resource, use the full binding name. If you configure `MyTopic` in the space configuration, the space binds it to the name:
+{%endinfo%}
 
 {% highlight java %}
 GigaSpaces;ContainerName;spaceName;jms;destinations;MyTopic.

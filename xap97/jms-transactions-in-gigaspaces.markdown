@@ -1,16 +1,13 @@
 ---
 layout: post
-title:  JMS Transactions in GigaSpaces
+title:  Transactions
 categories: XAP97
-parent: jms---advanced.html
+parent: jms-advanced.html
 weight: 200
 ---
 
-{% summary %}Using local and distributed transactions with the JMS implementation.{% endsummary %}
 
-# Overview
-
-GigaSpaces JMS implementation uses transactions to implement the `Session.CLIENT_ACKNOWLEDGE` mode and transacted sessions.
+XAP's JMS implementation uses transactions to implement the `Session.CLIENT_ACKNOWLEDGE` mode and transacted sessions.
 
 When using `CLIENT_ACKNOWLEDGE` mode, messages are consumed in a transaction, and sent without a transaction.
 
@@ -35,7 +32,9 @@ The JMS client uses a cluster that contains more than one space. The session is 
 - Consuming a message from a queue, and sending a message to another destination.
 - Sending more than one message, to more than one destination.
 
-{% infosign %} You do not need to use distributed transactions when consuming from a Topic, and sending a single message to another destination.
+{% info %}
+You do not need to use distributed transactions when consuming from a Topic, and sending a single message to another destination.
+{%endinfo%}
 
 ### Preparing JMS to Work with Distributed Transactions
 
@@ -53,7 +52,9 @@ To use Mahalo transactions in JMS transacted sessions, add the following system 
 com.gs.jms.use_mahalo=true
 {% endhighlight %}
 
-{% lampon %} You can avoid using distributed transactions by:
+{% info %}
+You can avoid using distributed transactions by:
+{%endinfo%}
 
 - Not involving more than one destination in a transaction.
 - Using only a single space (not a cluster).

@@ -1,15 +1,21 @@
 ---
 layout: post
-title:  JMS API Basic Usage
+title:  JMS Basics
 categories: XAP97
-parent: jms---basics.html
+parent: messaging-support.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary %}Basic JMS API Usage{% endsummary %}
 
-# Basic JMS Workflow
+The JMS 1.0.2 specification introduced two domains:
+
+- Point to Point – in this domain, a producer sends messages to a destination of type Queue. Each message is consumed by only one consumer.
+- Publish/Subscribe – in this domain, a producer publishes messages to a destination of type Topic. Any consumer that listens on that Topic receives the messages.
+
+In JMS 1.0.2, each domain used a separate set of interfaces. JMS 1.1 presents the unified model, that unites the usage of both domains under a single set of interfaces. GigaSpaces XAP JMS implementation supports both the unified model, and the separate domains.
+
+
+### Basic JMS Workflow
 
 1. Obtain/create a `ConnectionFactory` instance.
 1. Create a `Connection` with the `ConnectionFactory`.
@@ -28,7 +34,7 @@ weight: 100
 
 1. When the application finishes, release all resources by closing the connection.
 
-# Using Unified Messaging Model (JMS 1.1)
+### Using Unified Messaging Model (JMS 1.1)
 
 {% togglecloak id=X %}{% color #6999cb %}**Click to see the code example:**{% endcolor %}{% endtogglecloak %}
 {% gcloak X %}
@@ -74,9 +80,9 @@ connection.close();
 {% endpanel %}
 {% endgcloak %}
 
-# Using Separate Domains (JMS 1.0.2)
+### Using Separate Domains (JMS 1.0.2)
 
-## Publish/Subscribe
+#### Publish/Subscribe
 
 {% togglecloak id=y %}{% color #6999cb %}**Click to see the code example:**{% endcolor %}{% endtogglecloak %}
 {% gcloak y %}
@@ -123,7 +129,7 @@ topicConnection.close();
 {% endpanel %}
 {% endgcloak %}
 
-## Point to Point
+#### Point to Point
 
 {% togglecloak id=z %}{% color #6999cb %}**Click to see the code example:**{% endcolor %}{% endtogglecloak %}
 {% gcloak z %}

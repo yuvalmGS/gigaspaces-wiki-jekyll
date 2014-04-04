@@ -6,7 +6,7 @@ Here is a simple mapping between the J2EE common components and equivalent XAP c
 |Component|J2EE|XAP|
 |:--------|:---|:--|
 |Persistency|JPA|[Hibernate]({%latestjavaurl%}/hibernate-space-persistency.html), [JPA]({%latestjavaurl%}/jpa-api.html)|
-|Messaging|JMS,MDB|[JMS]({%latestjavaurl%}/jms-api-support.html), [Polling Container]({%latestjavaurl%}/polling-container.html), [Notify Container]({%latestjavaurl%}/notify-container.html) , [Native Messaging API]({%latestjavaurl%}/session-based-messaging-api.html), MDB {% star %} |
+|Messaging|JMS,MDB|[JMS]({%latestjavaurl%}/messaging-support.html), [Polling Container]({%latestjavaurl%}/polling-container.html), [Notify Container]({%latestjavaurl%}/notify-container.html) , [Native Messaging API]({%latestjavaurl%}/session-based-messaging-api.html), MDB {% star %} |
 |Security|JAAS, SSL|[Spring Security]({%latestjavaurl%}/spring-security-bridge.html), [SSL]({%latestjavaurl%}/securing-the-transport-layer-(using-ssl).html)|
 |Web Session Management|HttpSession|[HttpSession (via Jetty)]({%latestjavaurl%}/http-session-management.html)|
 |Transaction Management|JTA|[Spring Transaction via Jini Transaction Manager]({%latestjavaurl%}/transaction-management.html)|

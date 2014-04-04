@@ -1,17 +1,14 @@
 ---
 layout: post
-title:  Platform Interoperability
+title:  Overview
 categories: XAP97
-parent: programmers-guide.html
-weight: 1500
+parent: interoperability-overview.html
+weight: 100
 ---
 
 
-{% summary  %}The possibility for organizations whose projects include a combination of Java, .NET and C++ platforms to communicate and access each other easily and efficiently while also maintaining the benefits of the GigaSpaces scale-out application server.{% endsummary %}
 
-# Overview
-
-GigaSpaces introduces interoperability -- the possibility for organizations whose projects include a combination of Java, .NET and C++ platforms to communicate and access each other easily and efficiently, while also maintaining the benefits of the GigaSpaces scale-out application server:
+XAP introduces interoperability -- the possibility for organizations whose projects include a combination of Java, .NET and C++ platforms to communicate and access each other easily and efficiently, while also maintaining the benefits of the GigaSpaces scale-out application server:
 
 - **Transparency**: using your native API in the space transparently with minimum changes to existing assets. Objects are stored in the space in the same manner regardless of the platform they are written from. For example, an object can be written to the space from a Java feeder, processed using a c++ Processing Unit, and a .NET client can receive the notification.
 - **Performance**: communication between platforms is performed through the space directly, without the need for adapters or XML translation.
@@ -37,15 +34,11 @@ There are pros and cons for each alternative. Here are some points to help you d
 - The code generation tool does not support some of the advanced features in .NET. If you have a need for these features, it is recommended to use the generator to get started, and manually edit the generated code. In this case you need to be careful when changing the class, since regenerating the code might override your manual changes.
 
 
-# Writing Interoperable Classes
+### Writing Interoperable Classes
 Please refer to the [interoperability section in our XAP.NET documentation]({%currentneturl%}/dotnet-java-interoperability.html).
 
 
 
-# Code Generator
+### Code Generator
 Please refer to the [C++ Code Generation Guidelines](./cpp-api-code-generator.html).
-
-
-
-{%children%}
 

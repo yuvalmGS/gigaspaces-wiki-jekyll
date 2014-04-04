@@ -2,17 +2,17 @@
 layout: post
 title:  Scala
 categories: XAP97
-parent: interoperability.html
-weight: 300
+parent: interoperability-overview.html
+weight: 400
 ---
 
 
 {% section %}
-{% column %}
-{% summary page|65 %}XAP Scala integration.{% endsummary %}
-{% endcolumn %}
-{% column %}
+{% column width=10% %}
 ![scala-logo.jpg](/attachment_files/scala-logo.jpg)
+{% endcolumn %}
+{% column 90% %}
+XAP Scala integration.
 {% endcolumn %}
 {% endsection %}
 

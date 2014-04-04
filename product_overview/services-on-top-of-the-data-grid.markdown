@@ -62,7 +62,7 @@ You should use the notify container for one to many or many to many relationship
 
 ### JMS
 
-In addition to the polling containers you can also use a [JMS facade]({%currentjavaurl%}/jms-api-support.html) on top of the space to deliver events. The JMS facade is designed primarily to enable integration with external feeders that cannot or were not designed to work with the space based API. JMS in general provides less fine grained event matching semantics in comparison to the one provided by the space, and is therefore not the recommended way to deliver inter-application events.
+In addition to the polling containers you can also use a [JMS facade]({%currentjavaurl%}/messaging-support.html) on top of the space to deliver events. The JMS facade is designed primarily to enable integration with external feeders that cannot or were not designed to work with the space based API. JMS in general provides less fine grained event matching semantics in comparison to the one provided by the space, and is therefore not the recommended way to deliver inter-application events.
 
 See [Messaging Support]({%currentjavaurl%}/messaging-support.html) for details.
 

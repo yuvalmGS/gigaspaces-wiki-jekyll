@@ -2,21 +2,20 @@
 layout: post
 title:  JMS-Space Interoperability
 categories: XAP97
-parent: jms---basics.html
+parent: messaging-support.html
 weight: 300
 ---
 
-{% summary page|60 %}Creating JMS messages with the space API; reading/taking JMS messages with the space API; using JMS API with the `MessageConverter` to send custom POJOs to the space.{% endsummary %}
+{% summary%}  {% endsummary %}
 
-# Overview
 
 JMS-space interoperability allows JMS applications to communicate with non-JMS applications using the space, without having to know or deal with the space API.
 
-Gigaspaces introduced the ability for JMS applications to write messages to the space by implementing them as Externalizable `MetaDataEntries`, thus allowing non-JMS applications (usually space API applications) to read these `MetaDataEntries` using a template.
+XAP introduced the ability for JMS applications to write messages to the space by implementing them as Externalizable `MetaDataEntries`, thus allowing non-JMS applications (usually space API applications) to read these `MetaDataEntries` using a template.
 
-Furthermore, since GigaSpaces, an application using the space API can write JMS messages of any type to the space, using the space API (without knowing JMS). Therefore, it is possible to handle JMS messages the same way as any other Entry type.
+Furthermore, since XAP, an application using the space API can write JMS messages of any type to the space, using the space API (without knowing JMS). Therefore, it is possible to handle JMS messages the same way as any other Entry type.
 
-In GigaSpaces, it is possible for the JMS application to control and decide exactly which type of object is written to the space, as long as the written object is valid for the receiving/reading application. This is done using the new [MessageConverter](#Writing POJOs/Entries to Space using JMS API -- Message Converter) feature. A common use-case is writing a JMS message to the space, where the message is "stripped" on the space side, leaving only the message body, usually a POJO. The space application can then read the POJO using a template that includes only the POJO type.
+With XAP, it is possible for the JMS application to control and decide exactly which type of object is written to the space, as long as the written object is valid for the receiving/reading application. This is done using the new [MessageConverter](#Writing POJOs/Entries to Space using JMS API -- Message Converter) feature. A common use-case is writing a JMS message to the space, where the message is "stripped" on the space side, leaving only the message body, usually a POJO. The space application can then read the POJO using a template that includes only the POJO type.
 
 To summarize, the table below shows which operations are supported, allowing interoperability between the JMS and space API.
 
@@ -29,7 +28,9 @@ To summarize, the table below shows which operations are supported, allowing int
 | Read JMS messages from space | {% oksign %} | {% oksign %} |
 | Read Entries/POJOs from space | {% remove %} | {% oksign %} |
 
-{% exclamation %} As shown above, a JMS application **cannot read POJOs/Entries** from the space, unless they are part of a JMS message.
+{% note %}
+As shown above, a JMS application **cannot read POJOs/Entries** from the space, unless they are part of a JMS message.
+{%endnote%}
 
 The following sections will show you how to use the `MessageConverter` to write objects to the space using the JMS API; and how to write JMS messages and read/take those messages using the space API.
 
@@ -123,7 +124,9 @@ msg.setObjectProperty("JMS_GSMessageConverter", converter);
 producer.send(msg);
 {% endhighlight %}
 
-{% exclamation %} In this case, the `MessageConverter` is used even if another `MessageConverter` is set in the `ConnectionFactory`.
+{% note %}
+In this case, the `MessageConverter` is used even if another `MessageConverter` is set in the `ConnectionFactory`.
+{%endnote%}
 
 ## MessageConverter Resolution
 
@@ -132,9 +135,11 @@ In case a `MessageConverter` is set for a `ConnectionFactory`, and another `Mess
 1. The `MessageConverter` is set in the message's `JMS_GSMessageConverter` property.
 1. The `MessageConverter` is set in the `ConnectionFactory`.
 
-{% infosign %} If no `MessageConverter` is set, the JMS message is written as-is.
+{% note %}
+If no `MessageConverter` is set, the JMS message is written as-is.
 
-{% exclamation %} Only one `MessageConverter` is used each time.
+Only one `MessageConverter` is used each time.
+{%endnote%}
 
 ## Considerations
 
@@ -198,7 +203,9 @@ Use the space API to write the message in an ordinary way:
 spaceProxy.write(textMessage, null, Lease.Forever);
 {% endhighlight %}
 
-{% infosign %} The `SpaceWriter` example that resides in `<GigaSpaces Root>\examples\Basic\helloJMS` uses this technique to write JMS messages to the space.
+{% info %}
+The `SpaceWriter` example that resides in `<GigaSpaces Root>\examples\Basic\helloJMS` uses this technique to write JMS messages to the space.
+{%endinfo%}
 
 ## Reading/Taking JMS Messages
 

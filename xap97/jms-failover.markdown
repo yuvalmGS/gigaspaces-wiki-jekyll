@@ -1,14 +1,12 @@
 ---
 layout: post
-title:  JMS Failover
+title:  Failover
 categories: XAP97
-parent: jms---advanced.html
+parent: jms-advanced.html
 weight: 100
 ---
 
-{% summary page|60 %}JMS behavior during failover, How to recover JMS applications from failovers.{% endsummary %}
-
-# Overview
+{%summary%}{%endsummary%}
 
 The JMS layer is responsible for handling space failover properly. The goal is to make failover transparent to the JMS client. In a primary-backup architecture, when the primary space fails, the backup space takes its place as the primary space. This switch should be transparent to the client application, so it won't know that failover ever occurred.
 
@@ -18,11 +16,15 @@ In case of failover, any transaction related to the space that failed is aborted
 
 Failover handling in GigaSpaces JMS relates to transactions. The GigaSpaces JMS implementation uses transactions to implement the `Session.CLIENT_ACKNOWLEDGE` mode and transacted sessions. Consumed messages in `Session.CLIENT_ACKNOWLEDGE` mode are acknowledged only when the client calls `Message.acknowledge()`. Space failure aborts the transaction used at that time, and all unacknowledged messages are redelivered.
 
-{% exclamation %} When working in `Session.CLIENT_ACKNOWLEDGE` mode, produced messages are not included in the transaction.
+{% note %}
+When working in `Session.CLIENT_ACKNOWLEDGE` mode, produced messages are not included in the transaction.
+{%endnote%}
 
 Transacted sessions also use transactions. Consumed messages are not acknowledged and produced messages are not sent until `Session.commit()` is called. Failover aborts the transaction used at that time, and as a result, produced messages are disposed and consumed messages are redelivered.
 
-{% exclamation %} Failover might occur during the actual acknowledge action.
+{% note %}
+Failover might occur during the actual acknowledge action.
+{%endnote%}
 
 # Notifying the Client about Failovers
 
@@ -48,7 +50,9 @@ In transacted sessions, the client should react to this exception as it would re
 
 The client has to resend the produced messages that have been disposed. In case of a single consumer, the next message to arrive is the first unacknowledged message. The `JMSRedelivered` header of recovered messages is set.
 
-{% exclamation %} The `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [JMS Known Issues and Considerations](./jms-known-issues-and-considerations.html).
+{% note %}
+The `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [JMS Known Issues and Considerations](./jms-known-issues-and-considerations.html).
+{%endnote%}
 
 # Example Scenarios
 
@@ -66,7 +70,9 @@ The client has to resend the produced messages that have been disposed. In case 
 1. In the next `receive()` call, the client receives the first unacknowledged message.
 1. The `JMSRedelivered` header of recovered messages is set.
 
-{% exclamation %} In GigaSpaces 6.0, the `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [Known Issues and Limitations](./jms-known-issues-and-considerations.html).
+{% note %}
+In GigaSpaces 6.0, the `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [Known Issues and Limitations](./jms-known-issues-and-considerations.html).
+{%endnote%}
 
 ## Asynchronous Consumer
 
@@ -82,4 +88,6 @@ The client has to resend the produced messages that have been disposed. In case 
 
 {% endtoczone %}
 
-{% exclamation %} In GigaSpaces 6.0, the `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [Known Issues and Limitations](./jms-known-issues-and-considerations.html).
+{% note %}
+In GigaSpaces 6.0, the `JMSRedelivered` header is not set for messages redelivered from a Queue. For more details, see the [Known Issues and Limitations](./jms-known-issues-and-considerations.html).
+{%endnote%}

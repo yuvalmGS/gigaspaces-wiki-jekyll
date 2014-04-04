@@ -1,14 +1,11 @@
 ---
 layout: post
-title:  JMS User Security
+title:  Security
 categories: XAP97
-parent: jms---advanced.html
+parent: jms-advanced.html
 weight: 300
 ---
 
-{% summary %}Obtaining connections using client authentication.{% endsummary %}
-
-# Overview
 
 To use the Enterprise Messaging Grid security facilities, you must specify a user name and password when you create the connection:
 
@@ -30,4 +27,6 @@ QueueConnection queueConnection = queueConnectionFactory.createQueueConnection(u
 TopicConnection topicConnection = topicConnectionFactory.createTopicConnection(username,password);
 {% endhighlight %}
 
-{% infosign %} To use authentication, you must define a secured space with the same user/password.
+{% info %}
+To use authentication, you must define a secured space with the same user/password.
+{%endinfo%}

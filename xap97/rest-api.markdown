@@ -2,14 +2,11 @@
 layout: post
 title:  REST API
 categories: XAP97
-parent: interoperability.html
-weight: 200
+parent: interoperability-overview.html
+weight: 300
 ---
 
 
-{% summary  %}The REST API exposing HTTP based interface to the Space.{% endsummary %}
-
-# Overview
 
 {% section %}
 {% column %}
@@ -20,9 +17,9 @@ The REST API exposing HTTP based interface Space. It is leveraging the [GigaSpac
 1. PUT - can be used to perform a single or multiple write or update actions.
 1. DELETE - can be used to perform take / takeMultiple actions either by ID or by a space query.
 
-{% warning %}
+{% info %}
 POST is mapped to a WriteOnly action. An exception will be thrown when trying to write an object which already exists in space.
-{% endwarning %}
+{% endinfo %}
 
 {% endcolumn %}
 {% column %}
