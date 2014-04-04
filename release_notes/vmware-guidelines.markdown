@@ -23,7 +23,7 @@ SUSE linux is not supported, due to the instability of its network support layer
 
 # Configuration
 
-- Only Type 1 is supported.
+- Only Type 1 is recommended for production use.
 - vCPU may be over-subscribed, if it is under-utilized (less than 50%). In environments with high CPU utilization, vCPU must be reserved (pinned).
 - Hyper-threading should be enabled.
 - vMEM must be reserved (pinned).
