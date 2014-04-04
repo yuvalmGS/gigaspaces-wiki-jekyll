@@ -1,9 +1,13 @@
 
+{%comment%}
 {% summary page%}
 Global HTTP Session Sharing allows transparent session replication between remote sites and session sharing between different application servers in real-time. The solution uses the [Shiro Session Manager library](http://shiro.apache.org/session-management.html)
 {% endsummary %}
+{%endcomment%}
 
+{%comment%}
 # Massive Web Application Scaling
+{%endcomment%}
 
 It's becoming increasingly important for organizations to share HTTP session data across multiple data centers, multiple web server instances or different types of web servers. Here are few scenarios where HTTP session sharing is required:
 

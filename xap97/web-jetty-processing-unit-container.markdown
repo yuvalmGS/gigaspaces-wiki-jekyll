@@ -2,14 +2,14 @@
 layout: post
 title:  Jetty Processing Unit Container
 categories: XAP97
-parent: web-application-support.html
-weight: 100
+parent: web-application-overview.html
+weight: 200
 ---
 
 
-{% summary  %}XAP integration with Jetty as the web container when running web applications on top of the Service Grid.{% endsummary %}
+{% summary  %}{%endsummary%}
 
-# Overview
+
 
 An XAP web processing unit can use [Jetty](http://www.eclipse.org/jetty/) as the web container that will actually run the WAR file deployed into the Service Grid. Jetty itself comes built in with the GigaSpaces installation. The integration itself allows you to run both a pure WAR file (pure in a sense that it does not use a Space), as well as simplifying the introduction of Space (both embedded and remote) in a non Spring and Spring environment.
 

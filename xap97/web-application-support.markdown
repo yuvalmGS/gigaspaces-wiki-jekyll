@@ -1,18 +1,15 @@
 ---
 layout: post
-title:  Web Application Support
+title:  Overview
 categories: XAP97
-parent: administrators-guide.html
-weight: 400
+parent: web-application-overview.html
+weight: 100
 ---
 
+{%summary%}{%endsummary%}
 
-{% summary %}Allows you to deploy a web application (WAR) into the Service Grid.{% endsummary %}
 
-# Overview
 
-{%section%}
-{%column width=60% %}
 OpenSpaces integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid. The integration is built on top of the [Service Grid Processing Unit Container](./deploying-onto-the-service-grid.html).
 
 The integration allows you to make use of the following Service Grid features:
@@ -20,11 +17,11 @@ The integration allows you to make use of the following Service Grid features:
 - Dynamic allocation of several instances of a web application (probably fronted by a load balancer).
 - Management of the instances running (if a GSC fails, the web application instances running on it will be instantiated on a different GSC).
 - SLA monitor based dynamic allocation and de-allocation of web application instances.
-{%endcolumn%}
-{%column width=40% %}
+
+
+{%comment%}
 ![archi_web.jpg](/attachment_files/archi_web.jpg)
-{%endcolumn%}
-{%endsection%}
+{%endcomment%}
 
 The web application itself is a pure, JEE based, web application. The application can be the most generic web application, and automatically make use of the Service Grid features. The web application can define a Space (either embedded or remote) very easily (either using Spring or not).
 
@@ -215,5 +212,3 @@ In order to create a single point of view, in terms of clients connecting to a s
 
 GigaSpaces also comes with a built in integration with Apache httpd load balancer as described in the [Apache Load Balancer Agent](./apache-load-balancer-agent.html) section.
 
-
-{%children%}

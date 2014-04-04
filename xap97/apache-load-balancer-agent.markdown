@@ -2,16 +2,27 @@
 layout: post
 title:  Apache Load Balancer Agent
 categories: XAP97
-parent: web-application-support.html
-weight: 200
+parent: web-application-overview.html
+weight: 400
 ---
 
 
-{% summary  %}Provides dynamic load balancing integration with an Apache httpd server.{% endsummary %}
+{% summary  %}{% endsummary %}
 
-# Overview
 
+
+
+{%section%}
+{%column width=10% %}
+![transaction.png](/attachment_files/subject/loadbalancing.png)
+{%endcolumn%}
+{%column width=90% %}
 XAP comes with a built-in utility allowing you to dynamically update an Apache httpd web server load-balancing configuration, based on deployed web applications.
+{%endcolumn%}
+{%endsection%}
+
+
+
 
 The integration dynamically creates and updates the  [mod_proxy_balancer](http://httpd.apache.org/docs/2.2/mod/mod_proxy_balancer.html) configuration, based on the state of the deployed web applications. Once changes occur (relocation / failover / changes to the number of web application instances), the utility identifies the change, updates the balancer configuration, and sends a soft restart to Apache to take the new configuration into account.
 

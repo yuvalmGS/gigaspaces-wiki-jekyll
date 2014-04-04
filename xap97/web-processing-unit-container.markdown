@@ -2,14 +2,14 @@
 layout: post
 title:  Web Processing Unit Container
 categories: XAP97
-parent: web-application-support.html
-weight: 100
+parent: web-application-overview.html
+weight: 300
 ---
 
 
-{% summary  %}Allows you to deploy a web application (WAR) into the Service Grid.{% endsummary %}
+{% summary  %}{% endsummary %}
 
-# Overview
+
 
 OpenSpaces integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid. The integration is built on top of the [Service Grid Processing Unit Container](./deploying-onto-the-service-grid.html).
 
@@ -19,7 +19,9 @@ The integration allows you to make use of the following Service Grid features:
 - Management of the instances running (if a GSC fails, the web application instances running on it will be instantiated on a different GSC).
 - SLA monitor based dynamic allocation and de-allocation of web application instances.
 
+{%comment%}
 ![archi_web.jpg](/attachment_files/archi_web.jpg)
+{%endcomment%}
 
 The web application itself is a pure, JEE based, web application. The application can be the most generic web application, and automatically make use of the Service Grid features. The web application can define a Space (either embedded or remote) very easily (either using Spring or not).
 
@@ -29,7 +31,9 @@ The web container used behind the scenes is [Jetty](http://www.eclipse.org/jetty
 
 The integration can either deploy a packaged WAR file or an exploded WAR file. In order to deploy packaged WAR file, it can be specified using one of the deployment mechanisms (UI/CLI/Programmatic, see more [here](./deploying-onto-the-service-grid.html#deployDirections)). When deploying a WAR file, it goes through the following steps until it gets to the GSC:
 
-{% infosign %} Note that the deploy client, the GSMs, and the GSCs can run on different machines.
+{% info %}
+Note that the deploy client, the GSMs, and the GSCs can run on different machines.
+{%endinfo%}
 
 1. Point the deployment tool to the WAR file (UI/CLI/Programmatic).
 1. The WAR file itself is uploaded to the chosen GSM (which will act as the primary GSM of the deployment).
@@ -46,9 +50,11 @@ Deploying an exploded WAR is similar to deploying a packaged WAR. Here are the s
 1. Each GSC that is supposed to run an instance of the web application, downloads the web application into its own local file system. By default, it downloads it into `GSRoot/work/deployed-processing-units/[processing unit name]_[unique identifier]`.
 1. The appropriate web container is configured to run the web application using the local file system location.
 
-{% lampon %} The directory where the web applications are extracted (up to the `work` directory) on the GSC side can be controlled using the **`com.gs.work`** system property.
+{% info %}
+The directory where the web applications are extracted (up to the `work` directory) on the GSC side can be controlled using the **`com.gs.work`** system property.
 
-{% lampon %} The deploy directory location (up to the `deploy` directory) used on the GSM side can be controlled using the **`com.gs.deploy`** system property.
+The deploy directory location (up to the `deploy` directory) used on the GSM side can be controlled using the **`com.gs.deploy`** system property.
+{%endinfo%}
 
 # Web Application Structure
 
