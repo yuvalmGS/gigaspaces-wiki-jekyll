@@ -1,22 +1,22 @@
 ---
 layout: post
-title:  Polling Container Component
+title:  Polling Container
 categories: XAP97NET
-parent: event-driven-architecture.html
+parent: event-processing.html
 weight: 300
 ---
 
 
 
-{% summary %}The polling container implements the `IEventListenerContainer` interface, and allows you to perform polling receive operations against the space.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 {%section%}
-{%column width=60% %}
+{%column width=70% %}
 The polling event container implements the [IEventListenerContainer](./event-listener-container.html) interface. Its life-cycle consists of performing polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the [DataEventArrived](./event-listener-container.html#DataEventArrived) event is invoked. A polling event operation is mainly used when simulating Queue semantics, or when using the master-worker design pattern.
 {%endcolumn%}
-{%column width=35% %}
+{%column width=30% %}
 ![Net_polling_cont.jpg](/attachment_files/dotnet/Net_polling_cont.jpg)
 {%endcolumn%}
 {%endsection%}
@@ -56,7 +56,7 @@ public class SimpleListener
 
 Constructing the polling container that uses the `SimpleListener` class as the event listener, and starting it.
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 IEventListenerContainer<Data> eventListenerContainer = EventListenerContainerFactory.CreateContainer<Data>(spaceProxy, new SimpleListener());
 
@@ -70,7 +70,7 @@ eventListenerContainer.Dispose()
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 PollingEventListenerContainer<Data> pollingEventListenerContainer = new PollingEventListenerContainer<Data>(spaceProxy);
@@ -84,7 +84,7 @@ pollingEventListenerContainer.Dispose();
 
 Event processing method
 
-{% highlight java %}
+{% highlight csharp %}
 public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data> e)
 {
 	Data data = e.Data;
@@ -129,7 +129,7 @@ Here is an example of a polling container with 3 concurrent consumers and a maxi
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven(MinConcurrentConsumers = 3, MaxConcurrentConsumers = 5]
 public class SimpleListener
 {
@@ -156,7 +156,7 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.MinConcurrentConsumers = 3;
@@ -173,7 +173,7 @@ Sometimes, it is very convenient to have a listener instance per concurrent poll
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven(MinConcurrentConsumers = 3, MaxConcurrentConsumers = 5, CloneEventListenersPerThread = true]
 public class SimpleListener : ICloneable
 {
@@ -185,7 +185,7 @@ public class SimpleListener : ICloneable
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.MinConcurrentConsumers = 3;
@@ -205,7 +205,7 @@ When performing receive operations, a template is defined, creating a virtualize
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -232,7 +232,7 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.Template = new SqlQuery<Data>("Processed = false");
@@ -251,7 +251,7 @@ The event template object needs to be of IQuery<TData> type, which means if you 
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -280,7 +280,7 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.DynamicTemplate = new ExpiredDataTemplateProvider.GetDynamicTemplate;
@@ -312,7 +312,7 @@ Only polling containers support dynamic templates. Notify containers do not supp
 
 The polling receive container performs receive operations. The actual implementation of the receive operation is abstracted using the following interface:
 
-{% highlight java %}
+{% highlight csharp %}
 public interface IReceiveOperationHandler<TData>
 {
     /// <summary>
@@ -359,7 +359,7 @@ Here is an example of how the receive operation handler can be configured with `
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -393,7 +393,7 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 ExclusiveReadReceiveOperationHandler<Data> receiveHandler = new ExclusiveReadReceiveOperationHandler<Data>();
@@ -412,7 +412,7 @@ When working with a partitioned cluster, and configuring the polling container t
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -448,7 +448,7 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 TakeReceiveOperationHandler<Data> receiveHandler = new TakeReceiveOperationHandler<Data>();
@@ -475,7 +475,7 @@ Here is an example of batch notifications using `ReadReceiveOperationHandler`:
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven(ReceiveBatchSize = 100)]
 public class SimpleListener
 {
@@ -509,7 +509,7 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 ReadReceiveOperationHandler<Data> receiveHandler = new ReadReceiveOperationHandler<Data>();
@@ -537,7 +537,7 @@ Both the receive operation, and the actual event action can be configured to be 
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven]
 [TransactionalEvent(TransactionType = TransactionType.Distributed)]
 public class SimpleListener
@@ -550,7 +550,7 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 PollingEventListenerContainer<Data> pollingEventListenerContainer = new PollingEventListenerContainer<Data>(spaceProxy);
@@ -569,7 +569,7 @@ Here is an example how timeout value can be set with the polling container:
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven]
 [TransactionalEvent(TransactionType = TransactionType.Distributed, TransactionTimeout = 1000)]
 public class SimpleListener
@@ -582,7 +582,7 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.TransactionTimeout = 1000;
@@ -598,7 +598,7 @@ It is possible to receive a reference to the on going transaction as part of the
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven]
 [TransactionalEvent(TransactionType = TransactionType.Distributed)]
 public class SimpleListener
@@ -617,7 +617,7 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 PollingEventListenerContainer<Data> pollingEventListenerContainer = new PollingEventListenerContainer<Data>(spaceProxy);
@@ -635,7 +635,7 @@ pollingEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAd
 
 When configuring the polling event container to perform its receive operation, and event actions under a transaction, a transaction is started and commited for each unsuccessful receive operation, which results in a higher load on the space. The polling event container allows pluggable logic to be used in order to decide if the actual receive operation should be performed or not. This logic, called the trigger receive operation, is performed outside the receive transaction boundaries. The following interface is provided for custom implementation of this logic:
 
-{% highlight java %}
+{% highlight csharp %}
 public interface ITriggerOperationHandler<TData>
 {
     /// <summary>
@@ -669,7 +669,7 @@ XAP.NET comes with a built-in implementation of this interface, called `ReadTrig
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -703,7 +703,7 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 ReadTriggerOperationHandler<Data> triggerHandler = new ReadTriggerOperationHandler<Data>();
@@ -737,7 +737,7 @@ Here is an example of how to subscribe to this event:
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -756,13 +756,13 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.ContainerExceptionOccured += ExceptionHandler;
 {% endhighlight %}
 
-{% highlight java %}
+{% highlight csharp %}
 public void ExceptionHandler(object sender, ContainerExceptionEventArgs e)
 {
      Console.WriteLine("Container Name: " + ((IEventListenerContainer<Data>)sender).Name);
@@ -784,7 +784,7 @@ Here is an example of how to subscribe to this event:
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven]
 public class SimpleListener
 {
@@ -803,13 +803,13 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.UserExceptionOccured += ExceptionHandler;
 {% endhighlight %}
 
-{% highlight java %}
+{% highlight csharp %}
 public void ExceptionHandler(object sender, UserExceptionEventArgs<Data> e)
 {
      if (e.Exception is MySpecialException)

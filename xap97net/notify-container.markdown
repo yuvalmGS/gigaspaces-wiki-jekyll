@@ -1,20 +1,28 @@
 ---
 layout: post
-title:  Notify Container Component
+title:  Notify Container
 categories: XAP97NET
-parent: event-driven-architecture.html
+parent: event-processing.html
 weight: 200
 ---
 
 
 
-{% summary page %}The notify event container implements the `IEventListenerContainer` interface, and uses the space inheritance support for notifications, using a GigaSpaces unified event session API.{% endsummary %}
+{% summary%} {% endsummary %}
 
-# Overview
-
+{%section%}
+{%column width=70% %}
 The notify event container implements the [IEventListenerContainer](./event-listener-container.html) interface, and uses the space inheritance support for notifications, using a GigaSpaces data event session API. If a notification occurs, the [DataEventArrived](./event-listener-container.html#DataEventArrived) event is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
+{%endcolumn%}
+{%column width=30% %}
+<img src="/attachment_files/dotnet/Net_notify_cont.jpg" width="150" height="200">
 
+{%endcolumn%}
+{%endsection%}
+
+{%comment%}
 ![Net_notify_cont.jpg](/attachment_files/dotnet/Net_notify_cont.jpg)
+{%endcomment%}
 
 The examples in this page follow a certain pattern -- each code example has two tabs: Using EventListenerContainerFactory and NotifyEventListenerContainer Code Construction.
 
@@ -26,7 +34,7 @@ Here is a simple example of polling event container construction:
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -51,7 +59,7 @@ public class SimpleListener
 
 Constructing the notify container that uses the `SimpleListener` class as the event listener, and starting it.
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 IEventListenerContainer<Data> eventListenerContainer = EventListenerContainerFactory.CreateContainer<Data>(spaceProxy, new SimpleListener());
 
@@ -65,7 +73,7 @@ eventListenerContainer.Dispose()
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = new NotifyEventListenerContainer<Data>(spaceProxy);
@@ -79,7 +87,7 @@ notifyEventListenerContainer.Dispose();
 
 Event processing method
 
-{% highlight java %}
+{% highlight csharp %}
 public Data ProcessData(IEventListenerContainer<Data> sender, DataEventArgs<Data> e)
 {
 	Data data = e.Data;
@@ -101,7 +109,9 @@ The above example registers with the space for write notifications using the pro
 
 The notify event container registers for notifications only when the relevant space it is working against is in primary mode. When the space is in backup mode, no registration occurs. If the space moves from backup mode to primary mode, the container registers for notifications, and if it moved to backup mode, the registrations are canceled.
 
-{% infosign %} This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
+{% info %}
+This mostly applies when working with an embedded space directly with a cluster member. When working with a clustered space (performing operations against the whole cluster), the mode of the space is always primary.
+{%endinfo%}
 
 # Template Definition
 
@@ -111,7 +121,7 @@ When performing receive operations, a template is defined, creating a virtualize
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -140,7 +150,7 @@ public class SimpleListener
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 Data template = new Data();
@@ -165,7 +175,7 @@ The notify container can be configured with transaction support, so the event ac
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven]
 [TransactionalEvent(TransactionType = TransactionType.Distributed)]
 public class SimpleListener
@@ -178,7 +188,7 @@ public class SimpleListener
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = new NotifyEventListenerContainer<Data>(spaceProxy);
@@ -195,7 +205,7 @@ It is possible to receive a reference to the on going transaction as part of the
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven]
 [TransactionalEvent(TransactionType = TransactionType.Distributed)]
 public class SimpleListener
@@ -214,7 +224,7 @@ public class SimpleListener
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = new NotifyEventListenerContainer<Data>(spaceProxy);
@@ -236,7 +246,7 @@ The notify container allows you to mask which operations performed against the s
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven(NotifyType = DataEventType.Write | DataEventType.Update)]
 public class SimpleListener
 {
@@ -263,7 +273,7 @@ public class SimpleListener
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 notifyEventListenerContainer.NotifyType = DataEventType.Write | DataEventType.Update;
@@ -283,7 +293,7 @@ Below is an example of batching, where if the number of notifications has passed
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -323,7 +333,7 @@ public class SimpleListener
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 EventSessionConfig sessionConfig = new EventSessionConfig();
@@ -350,7 +360,7 @@ Here is an example of how FIFO events can be configured with the notify containe
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -388,7 +398,7 @@ public class SimpleListener
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 EventSessionConfig sessionConfig = new EventSessionConfig();
@@ -410,7 +420,7 @@ Here is an example of how Durable Notifications can be configured with the notif
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -448,7 +458,7 @@ public class SimpleListener
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 EventSessionConfig sessionConfig = new EventSessionConfig();
@@ -470,7 +480,7 @@ Here is how the notify container can be configured:
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven(PerformTakeOnNotify = true, IgnoreEventOnNullTake = true)]
 public class SimpleListener
 {
@@ -497,7 +507,7 @@ public class SimpleListener
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 notifyEventListenerContainer.PerformTakeOnNotify = true;
@@ -518,7 +528,7 @@ The notify container uses GigaSpaces [data event session API](./space-events.htm
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -546,7 +556,7 @@ public class SimpleListener
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference to it
 
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = new NotifyEventListenerContainer<Data>(spaceProxy);
@@ -560,7 +570,7 @@ notifyEventListenerContainer.Dispose();
 
 Event processing method
 
-{% highlight java %}
+{% highlight csharp %}
 public Data ProcessData(IEventListenerContainer sender, DataEventArgs<Data> e)
 {
     SpaceDataEventArgs eventArgs = (SpaceDataEventArgs)e.CustomEventArgs;
@@ -589,7 +599,7 @@ Here is how the notify container can be configured:
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven(QueuedEventHandling = true, QueuedEventHandlersPoolSize = 3)]
 public class SimpleListener
 {
@@ -616,7 +626,7 @@ public class SimpleListener
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 notifyEventListenerContainer.QueuedEventHandling = true;
@@ -633,7 +643,7 @@ Sometimes, it is very convenient to have a listener instance per concurrent queu
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven(QueuedEventHandling = true, QueuedEventHandlersPoolSize = 3, CloneEventListenersPerThread = true]
 public class SimpleListener : ICloneable
 {
@@ -645,7 +655,7 @@ public class SimpleListener : ICloneable
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 notifyEventListenerContainer.QueuedEventHandling = true;
@@ -676,7 +686,7 @@ Here is an example of how to subscribe to this event:
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -695,13 +705,13 @@ public class SimpleListener
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 notifyEventListenerContainer.ContainerExceptionOccured += ExceptionHandler;
 {% endhighlight %}
 
-{% highlight java %}
+{% highlight csharp %}
 public void ExceptionHandler(object sender, ContainerExceptionEventArgs e)
 {
      Console.WriteLine("Container Name: " + ((IEventListenerContainer<Data>)sender).Name);
@@ -723,7 +733,7 @@ Here is an example of how to subscribe to this event:
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [NotifyEventDriven]
 public class SimpleListener
 {
@@ -742,13 +752,13 @@ public class SimpleListener
 
 {% tabcontent NotifyEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
 notifyEventListenerContainer.UserExceptionOccured += ExceptionHandler;
 {% endhighlight %}
 
-{% highlight java %}
+{% highlight csharp %}
 public void ExceptionHandler(object sender, UserExceptionEventArgs<Data> e)
 {
      if (e.Exception is MySpecialException)

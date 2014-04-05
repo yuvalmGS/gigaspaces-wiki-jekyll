@@ -9,7 +9,6 @@ weight: 810
 
 XAP supports client side caching of space data within the client application's JVM. When using client-side caching, the user essentially uses a two-layer cache architecture: The first layer is stored locally, within the client's JVM, and the second layer is stored within the remote master space. The remote master space may be used with any of the supported deployment topologies.
 
-For a detailed description of the different caching scenarios please consult the [Product Overview](/product_overview/caching-scenarios.html)
 
 {%wbr%}
 
@@ -25,10 +24,13 @@ Client caching over the WAN.
 - [Monitoring client side cache](./monitoring-the-client-side-cache.html){%wbr%}
 Monitoring the Local View/Cache.
 
+{%wbr%}
 
 #### Additional Resources
 
-For more advanced WAN based topologies see the [Multi-Site Replication over the WAN](./multi-site-replication-over-the-wan.html) section.
+- For a detailed description of the different caching scenarios please consult the [Product Overview](/product_overview/caching-scenarios.html)
+
+- For more advanced WAN based topologies see the [Multi-Site Replication over the WAN](./multi-site-replication-over-the-wan.html) section.
 
 
 

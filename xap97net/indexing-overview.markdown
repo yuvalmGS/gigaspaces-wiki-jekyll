@@ -6,9 +6,19 @@ parent: programmers-guide.html
 weight: 2200
 ---
 
+{%wbr%}
 
+{%section%}
+{%column width=10% %}
+![data-access.jpg](/attachment_files/subject/data-access.png)
+{%endcolumn%}
+{%column width=90% %}
 When a space is looking for a match for a read or take operation, it iterates over non-null values in the template, looking for matches in the space. This process can be time consuming, especially when there are many potential matches. To improve performance, it is possible to index one or more properties. The space maintains additional data for indexed properties, which shortens the time required to determine a match, thus improving performance.
 
+{%endcolumn%}
+{%endsection%}
+
+{%wbr%}
 
 - [Basic concept](./indexing.html){%wbr%}
 Basic index types

@@ -2,18 +2,20 @@
 layout: post
 title:  Event Listener Container
 categories: XAP97NET
-parent: event-driven-architecture.html
+parent: event-processing.html
 weight: 100
 ---
 
+{%summary%}{%endsummary%}
 
-
-{% summary %}`IEventListenerContainer` is an interface that represents an abstraction for subscribing to, and receiving events over a space proxy.{% endsummary %}
-
-# Overview
-
+{%section%}
+{%column width=70% %}
 The `IEventListenerContainer` interface is an abstraction that allows subscribing to, and receiving events from the space, where in most cases, the business logic doesn't need to be aware of the actual container implementation. The benefit of doing this, is the loose coupling between how the events are received (the different containers), and what to do with a received event (the listener). This interface has two out-of-the-box implementors: [`PollingEventListenerContainer`](./polling-container.html) and [`NotifyEventListenerContainer`](./notify-container.html).
+{%endcolumn%}
+{%column width=30% %}
 ![Net_polling_notify_cont.jpg](/attachment_files/dotnet/Net_polling_notify_cont.jpg)
+{%endcolumn%}
+{%endsection%}
 
 {% anchor  DataEventArrived %}
 {% anchor  DataEventHandler %}
@@ -24,7 +26,7 @@ The `IEventListenerContainer` interface exposes the `DataEventArrived` event, wh
 
 Here is a simple example of event subscription:
 
-{% highlight java %}
+{% highlight csharp %}
 IEventListenerContainer<Data> container = // obtain a reference to a container
 
 container.DataEventArrived += MyEventHandler;
@@ -32,7 +34,7 @@ container.DataEventArrived += MyEventHandler;
 
 The event handler method:
 
-{% highlight java %}
+{% highlight csharp %}
 void MyEventHandler(object sender, DataEventArgs<Data> e)
 {
     // handle event
@@ -49,7 +51,7 @@ Sometimes it is better to use batch events, for instance to improve network traf
 
 Here is a simple example of event subscription:
 
-{% highlight java %}
+{% highlight csharp %}
 IEventListenerContainer<Data> container = // obtain a reference to a container
 
 container.BatchDataEventArrived += MyBatchEventHandler;
@@ -57,7 +59,7 @@ container.BatchDataEventArrived += MyBatchEventHandler;
 
 The event handler method:
 
-{% highlight java %}
+{% highlight csharp %}
 void MyEventHandler(object sender, BatchDataEventArgs<Data> e)
 {
     Data[] batch = e.Data;
@@ -85,7 +87,7 @@ Here are a few examples:
 
 **An event listening method that processes the data, and returns a processed result**
 
-{% highlight java %}
+{% highlight csharp %}
 public class SimpleListener
 {
     ...
@@ -100,7 +102,7 @@ public class SimpleListener
 
 **An event listening method that processes the data, executes an additional space operation that is needed to enrich the data, and returns an enriched data result**
 
-{% highlight java %}
+{% highlight csharp %}
 public class SimpleListener
 {
     ...
@@ -125,7 +127,7 @@ The return parameter, if not void, is the result that is written back to the spa
 
 For example:
 
-{% highlight java %}
+{% highlight csharp %}
 public EnrichedData ProcessData(Data event, ISpaceProxy proxy, ITransaction tx, SpaceDataEventArgs<object> args, IEventListenerContainer container)
 {% endhighlight %}
 
@@ -137,7 +139,7 @@ The `DelegateDataEventArrivedAdapter<TData, TResult>` receives a delegate to a m
 
 Here is a simple example:
 
-{% highlight java %}
+{% highlight csharp %}
 IEventListenerContainer<Data> container = // obtain a reference to a container
 
 container.DataEventArrived = new DelegateDataEventArrivedAdapter<Data, Data>(MyEventHandler).WriteBackDataEventHandler;
@@ -145,7 +147,7 @@ container.DataEventArrived = new DelegateDataEventArrivedAdapter<Data, Data>(MyE
 
 The event handler method:
 
-{% highlight java %}
+{% highlight csharp %}
 Data MyEventHandler(IEventListenerContainer sender, DataEventArgs<Data> e)
 {
     // handle event and return processed data to be written back to the space
@@ -164,11 +166,13 @@ The DataEventHandler attribute has two roles. The first is to mark a method to b
 - WriteLease -- the lease of the result object that is being written to the space (the default is lease forever).
 - UpdateTimeout -- if the operation is an update operation, determines how long to wait if the object is locked for updates (the default is 0).
 
-{% lampon %} The write back behavior is modified when using the `DelegateDataEventArrivedAdapter` by this attribute as well.
+{% info %}
+The write back behavior is modified when using the `DelegateDataEventArrivedAdapter` by this attribute as well.
+{%endinfo%}
 
 Here is a simple example:
 
-{% highlight java %}
+{% highlight csharp %}
 [DataEventHandler(WriteOrUpdate = false, WriteLease = 10000)]
 public EnrichedData MyEventHandler(Data data)
 {

@@ -1,14 +1,12 @@
 ---
 layout: post
-title:  Auto Polling Consumer Scaling
+title:  Auto Scaling
 categories: XAP97NET
 parent: polling-container.html
 weight: 100
 ---
 
 
-
-{% summary %}This page describes the automatic scaling policy of the polling container.{% endsummary %}
 
 By default, the [polling event container](./polling-container.html) starts a single thread that performs the receive operations, and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads. The container manages the scaling up and down of concurrent consumers automatically, according to the load.
 There are 5 parameters that control the scaling behavior:
@@ -29,7 +27,7 @@ Here is an example of how these properties can be configured:
 
 {% tabcontent Using EventListenerContainerFactory %}
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven(MinConcurrentConsumers = 1, MaxConcurrentConsumers = 5, DynamicScaleSampleRate = 1000, IdleIterationsThreshold = 10, BusyIterationThreshold = 50)]
 public class SimpleListener
 {
@@ -56,7 +54,7 @@ public class SimpleListener
 
 {% tabcontent PollingEventListenerContainer Code Construction %}
 
-{% highlight java %}
+{% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
 pollingEventListenerContainer.MinConcurrentConsumers = 1;

@@ -145,7 +145,7 @@ public class MyService : IService
 
 # Automatic Event Listener Creation And Management
 
-An [event listener container](./event-driven-architecture.html) is one of the most commonly used GigaSpaces components as part of a processing unit. Similarly to the other components, such event containers can be automatically detected, created and managed by the basic container. The basic container will automatically detect classes that need to be wrapped with the proper event listener container via the corresponding `EventDriven` attributes (`PollingEventDriven` or `NotifyEventDriven`) that mark them.
+An [event listener container](./event-processing.html) is one of the most commonly used GigaSpaces components as part of a processing unit. Similarly to the other components, such event containers can be automatically detected, created and managed by the basic container. The basic container will automatically detect classes that need to be wrapped with the proper event listener container via the corresponding `EventDriven` attributes (`PollingEventDriven` or `NotifyEventDriven`) that mark them.
 
 {% refer %}
 See [Polling Container Component](./polling-container.html) and [Notify Container Component](./notify-container.html) for more info regarding event listener containers.

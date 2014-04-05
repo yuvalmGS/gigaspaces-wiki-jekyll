@@ -31,7 +31,7 @@ weight: 300
 
 # Overview
 
-This example demonstrates a simple processing unit architecture project -- a complete SBA application that can easily scale. It demonstrates a usage of XAP's SBA related components, such as [Event Listener Container]({%latestneturl%}/event-driven-architecture.html), [Space Based Remoting]({%latestneturl%}/space-based-remoting.html) and the [Basic Processing Unit Container]({%latestneturl%}/basic-processing-unit-container.html).
+This example demonstrates a simple processing unit architecture project -- a complete SBA application that can easily scale. It demonstrates a usage of XAP's SBA related components, such as [Event Listener Container]({%latestneturl%}/event-processing.html), [Space Based Remoting]({%latestneturl%}/space-based-remoting.html) and the [Basic Processing Unit Container]({%latestneturl%}/basic-processing-unit-container.html).
 
 # Architecture
 
@@ -198,7 +198,7 @@ We configure a single colocated space specified by the Url of the space, in our 
 
 This data processor comes with an sla.xml file which define the default topology, which in our case is a cluster of 2 primaries and a single backup per primary. This can be override at deploy time or by editing the sla.xml file that resides in the data processor deployment directory.
 
-{% refer %}See [Event Driven Architecture]({%latestneturl%}/event-driven-architecture.html) for more info about event listening abstraction.{% endrefer %}
+{% refer %}See [Event Processing]({%latestneturl%}/event-processing.html) for more info about event listening abstraction.{% endrefer %}
 
 {% refer %}See [Space Based Remoting]({%latestneturl%}/space-based-remoting.html) for more info about remoting services over the grid.{% endrefer %}
 
