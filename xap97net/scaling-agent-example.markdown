@@ -2,35 +2,26 @@
 layout: post
 title:  Scaling Agent Example
 categories: XAP97NET
-parent: administration-and-monitoring-api.html
-weight: 100
+parent:  admin-modules.html
+weight: 200
 ---
 
 
 
-{% summary %}This example demonstrates how to harness the Service Grid Admin API to build an agent
-that monitors a deployed application, and scale it up on demand.{% endsummary %}
+{% summary %}  {% endsummary %}
 
 {% section %}
-
 {% column width=7% %}
-
 {% endcolumn %}
-
 {% column width=86% %}
-
-{% align center %}||![wiki_icon_folder.gif](/attachment_files/dotnet/wiki_icon_folder.gif)||Example Root|`<GigaSpaces Root>\Examples\ScalingAgent` |
+{% align center %}||![wiki_icon_folder.gif](/attachment_files/dotnet/wiki_icon_folder.gif)||Example Root|`<XAP Root>\Examples\ScalingAgent` |
 {% endalign %}
-
 {% endcolumn %}
-
 {% column width=7% %}
-
 {% endcolumn %}
-
 {% endsection %}
 
-# Overview
+
 
 The [Administration and Monitoring API](./administration-and-monitoring-api.html) allows you to monitor an application's health and its resources, to enforce a specific pre-defined configurable SLA that scales the application while it is running. This ensures a deterministic response time when there is an increasing number of users accessing the system, and also ensures the high-availability and robustness of the application.
 
@@ -53,7 +44,7 @@ The scaling agent periodically samples the throughput of feeds that are processe
 
 {% tabcontent Code %}
 
-{% highlight java %}
+{% highlight csharp %}
 [BasicProcessingUnitComponent( Name = "Agent" )]
 public class Agent : IDisposable
 {
@@ -201,7 +192,7 @@ public class Agent : IDisposable
 
 The processor waits for new feeds to be fed into the cluster, and acts upon such an event. Since the processor throughput needs to be monitored by the agent, the processor implements the `IServiceMonitorsProvider` interface to expose its throughput for external query.
 
-{% highlight java %}
+{% highlight csharp %}
 [PollingEventDriven(Name = "FeedProcessor", MinConcurrentConsumers = 1, MaxConcurrentConsumers = 4)]
 public class FeedProcessor : IDisposable, IServiceMonitorsProvider
 {
@@ -265,7 +256,7 @@ public class FeedProcessor : IDisposable, IServiceMonitorsProvider
 
 The processor exposes its throughput statistics via the `FeedProcessorTpMonitor` class, which is a custom implementation of the `IServiceMonitors` interface. The interface has a string-based ID, and a name value collection that represents the monitored fields and values, and can hold any custom data. In our case, the `FeedProcessorTpMonitor` ID is "Feed Processor Statistics", and it has a single property "Processing TP". These strings are used by the agent to extract the throughput value.
 
-{% highlight java %}
+{% highlight csharp %}
 /// <summary>
 /// Provide throughput monitoring statistics of this service
 /// </summary>

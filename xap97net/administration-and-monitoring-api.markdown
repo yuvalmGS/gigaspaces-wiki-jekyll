@@ -1,16 +1,13 @@
 ---
 layout: post
-title:  Administration and Monitoring API
+title:  Administration API
 categories: XAP97NET
 parent: admin-modules.html
 weight: 100
 ---
 
 
-
-{% summary %}Administration and monitoring API for GigaSpaces services and components.{% endsummary %}
-
-# Overview
+{%summary%}{%endsummary%}
 
 The Service Grid Admin API provides a way to administer and monitor all of GigaSpaces services and components, using a simple API. The API provides information and the ability to operate on the currently running Service Grid Agents, Service Grid Managers, Service Grid Containers, Lookup Services, Processing Units and Spaces.
 
@@ -20,7 +17,7 @@ Before diving into the Service Grid Admin API, here are some code examples showi
 
 {% tabcontent GSA %}
 
-{% highlight java %}
+{% highlight csharp %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -41,7 +38,7 @@ foreach (IGridServiceAgent gsa in admin.GridServiceAgents)
 
 {% tabcontent GSM %}
 
-{% highlight java %}
+{% highlight csharp %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -57,7 +54,7 @@ foreach (IGridServiceManager gsm in admin.GridServiceManagers)
 
 {% tabcontent GSC %}
 
-{% highlight java %}
+{% highlight csharp %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -79,7 +76,7 @@ foreach (IGridServiceContainer gsc in admin.GridServiceContainers)
 
 {% tabcontent Processing Unit %}
 
-{% highlight java %}
+{% highlight csharp %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -121,7 +118,7 @@ foreach (IProcessingUnit processingUnit in admin.getProcessingUnits())
 
 {% tabcontent Space %}
 
-{% highlight java %}
+{% highlight csharp %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -158,7 +155,7 @@ foreach (ISpace space in admin.Spaces)
 
 {% tabcontent Virtual Machine %}
 
-{% highlight java %}
+{% highlight csharp %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -192,7 +189,7 @@ foreach (IVirtualMachine virtualMachine in admin.VirtualMachines)
 
 {% tabcontent Machine %}
 
-{% highlight java %}
+{% highlight csharp %}
 ServiceGridAdminBuilder adminBuilder = new ServiceGridAdminBuilder();
 adminBuilder.Groups.Add("myGroup");
 IServiceGridAdmin admin = adminBuilder.CreateAdmin();
@@ -274,7 +271,7 @@ There are two ways the Service Grid Admin API can be used to access information 
 
 If we want to register, for example, for Grid Service Container additions, we can use the following code (note, removing the event listener is not shown here for clarity):
 
-{% highlight java %}
+{% highlight csharp %}
 admin.GridServiceContainers.GridServiceContainerAdded += HandleGridServiceContainerAdded;
 
 private void HandleGridServiceContainerAdded(object sender, GridServiceContainerEventArgs e)
@@ -286,7 +283,7 @@ private void HandleGridServiceContainerAdded(object sender, GridServiceContainer
 
 Removals are done in a similar manner:
 
-{% highlight java %}
+{% highlight csharp %}
 admin.GridServiceContainers.GridServiceContainerRemoved += HandleGridServiceContainerRemoved;
 
 void HandleGridServiceContainerRemoved(object sender, GridServiceContainerEventArgs e)
@@ -298,7 +295,7 @@ void HandleGridServiceContainerRemoved(object sender, GridServiceContainerEventA
 
 All other data structures use a similar API to register for events. Some might have specific events that go beyond just additions and removals, but they still use the same model. For example, here is how we can register for Space Mode change events across all currently running Space topologies and Space Instances:
 
-{% highlight java %}
+{% highlight csharp %}
 admin.Spaces.SpaceModeChanged += HandleSpaceModeChanged;
 
 void Spaces_SpaceModeChanged(object sender, SpaceModeChangedEventArgs e)
