@@ -2,11 +2,11 @@
 layout: post
 title:  Limitations
 categories: XAP97
-parent: multi-site-replication-over-the-wan.html
+parent: multi-site-replication-overview.html
 weight: 900
 ---
 
-# Limitations and Open Issues
+
 
 The following limitations and open issues apply to the multi-site gateway replication module:
 

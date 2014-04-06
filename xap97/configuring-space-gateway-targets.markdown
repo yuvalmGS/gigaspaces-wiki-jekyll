@@ -1,18 +1,14 @@
 ---
 layout: post
-title:  Configuring Space Gateway Targets
+title:  Configuring Targets
 categories: XAP97
-parent: multi-site-replication-over-the-wan.html
+parent: multi-site-replication-overview.html
 weight: 300
 ---
 
-{% summary %}This page explains how to configure replication gateway targets of a space.{% endsummary %}
 
-{% info %}
-This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
-{% endinfo %}
 
-# Overview
+
 
 Each space that is replicating to another space (or spaces) is actually replicating to the local gateway of the target space, and that gateway is in charge of dispatching the replication to the relevant partitions. Such replicating space needs be configured with the name of each of the target gateways and replication related parameters per gateway or for all gateways.
 

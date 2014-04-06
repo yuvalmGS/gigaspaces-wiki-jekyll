@@ -2,11 +2,11 @@
 layout: post
 title:   FAQ
 categories: XAP97
-parent: multi-site-replication-over-the-wan.html
+parent: multi-site-replication-overview.html
 weight: 1000
 ---
 
-# FAQ
+
 
 - **What's the Replication flow?**
 Replications starts with the local site cluster. Updates in the form of replication redo log packets are sent to the local delegator in an async manner which in turn writes them to the appropriate Sink(s) in a sync manner. This sink will perform operations corresponding to these packets on its local cluster.

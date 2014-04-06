@@ -1,18 +1,15 @@
 ---
 layout: post
-title:  Replication Gateway Bootstrapping Process
+title:  Bootstrapping Process
 categories: XAP97
-parent: multi-site-replication-over-the-wan.html
+parent: multi-site-replication-overview.html
 weight: 400
 ---
 
-{% summary %}This page is about bootstrapping a site from another site across gateways.{% endsummary %}
+{% summary %} {% endsummary %}
 
-{% info %}
-This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
-{% endinfo %}
 
-# Overview
+
 
 Bootstrapping a site from another site is a process in which one site space is starting fresh and it is being populated with the data of another site space. This can be useful after a very long disconnection where the replication redo-log in the source spaces that replicates to this site was dropped due to breaching capacity limitations, and the disconnected site should start fresh. Or some initiated downtime due to some maintenance of one site which should bootstrap once it is restarted.
 

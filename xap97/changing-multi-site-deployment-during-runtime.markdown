@@ -1,18 +1,13 @@
 ---
 layout: post
-title:  Changing Multi-Site Deployment during Runtime
+title:  Changing Deployment during Runtime
 categories: XAP97
-parent: multi-site-replication-over-the-wan.html
+parent: multi-site-replication-overview.html
 weight: 600
 ---
 
-{% summary %}This page explains how to configure replication gateway targets of a space.{% endsummary %}
 
-{% info %}
-This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
-{% endinfo %}
 
-# Overview
 
 The topology might change during runtime, for instance a new site can be added and the existing sites should be familiar with it and start replicating to it and receive replication from it. On the other hand a site can be removed and the existing should stop holding replication backlog for it and drop it from their list of gateway targets.
 

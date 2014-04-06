@@ -2,18 +2,14 @@
 layout: post
 title:  Conflict Resolution
 categories: XAP97
-parent: multi-site-replication-over-the-wan.html
+parent: multi-site-replication-overview.html
 weight: 500
 ---
 
-{% summary %}This page explains how multi-site replication conflict resolution works and how to customize its functionality.{% endsummary %}
-{% compositionsetup %}
+{% summary %}{% endsummary %}
 
-{% tip %}
-Please make sure you fully understand the multiple site replication basics before reading this page.
-{% endtip %}
 
-# Overview
+
 
 Multiple site conflict resolution is the ability to resolve conflicts caused when a Sink component attempts to perform operations on a local cluster and faces one of the following conflicts:
 

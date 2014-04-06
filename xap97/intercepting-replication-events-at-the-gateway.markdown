@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  Intercepting Replication Events at the Gateway
+title:  Intercepting Replication Events
 categories: XAP97
-parent: multi-site-replication-over-the-wan.html
+parent: multi-site-replication-overview.html
 weight: 800
 ---
 
-{% summary %}This page explains how to plugin a custom interceptor at the gateway which can be used to implement custom logic upon incoming replication events in a target gateway{% endsummary %}
-{% compositionsetup %}
+{% summary %}  {% endsummary %}
 
-# Overview
+
+
 
 The Synchronization Endpoint Interceptor allows a custom logic to be plugged in to the Replication Gateway, this can be used for various use cases. One use case is custom handling of distributed transaction consolidation failure events, where one for example, can keep track of such events in some database for later diagnostics and decision. The interceptor is plugged into the target gateway sink upon construction.
 

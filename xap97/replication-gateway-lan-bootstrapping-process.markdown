@@ -1,18 +1,14 @@
 ---
 layout: post
-title:  Replication Gateway LAN Bootstrapping Process
+title:  Gateway Bootstrapping
 categories: XAP97
-parent: multi-space-replication-over-the-lan-or-vpn.html
-weight: 100
+parent: multi-space-replication-overview.html
+weight: 200
 ---
 
-{% summary %}This page is about bootstrapping a space from another space via gateway.{% endsummary %}
+{% summary %} {% endsummary %}
 
-{% info %}
-This page assume prior knowledge of multi-space replication, please refer to [Multi-Space Replication](./multi-space-replication-over-the-lan-or-vpn.html) before reading this page.
-{% endinfo %}
 
-# Overview
 
 Bootstrapping a space from another space is a process in which one space is starting fresh and it is being populated with the data of another space. This can be useful after a very long disconnection where the replication redo-log in the source spaces that replicates to this space was dropped due to breaching capacity limitations, and the disconnected space should start fresh. Or some initiated downtime due to some maintenance of one space which should bootstrap once it is restarted. Another scenario would be an application upgrade where a newer version of the application is started in a new space and it needs to bootstrap its initial state from the existing application space.
 

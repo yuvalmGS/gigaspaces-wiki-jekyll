@@ -1,19 +1,12 @@
 ---
 layout: post
-title:  Replication Gateway Filtering
+title:  Filtering  Data
 categories: XAP97
-parent: multi-site-replication-over-the-wan.html
+parent: multi-site-replication-overview.html
 weight: 700
 ---
 
-{% summary %}This page explains how to filter specific data from being replicated through a gateway to another site.{% endsummary %}
-{% compositionsetup %}
 
-{% info %}
-This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
-{% endinfo %}
-
-# Overview
 
 In some cases, there can be data that should not be replicated between the sites but should still be replicated locally between the primary and the backup/mirror service. In this case using the replicate class level or object level decoration is irrelevant as there is a need to control the replication behavior only to the remote site. Since a replication channel to a gateway is like any other replication channel, therefore a custom [Replication Filter](./cluster-replication-filters.html) at the source space can be used to filter the relevant data from being sent to the target gateway.
 ![WAN-replicationfilter.jpg](/attachment_files/WAN-replicationfilter.jpg)

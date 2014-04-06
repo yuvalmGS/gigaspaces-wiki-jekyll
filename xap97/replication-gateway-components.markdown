@@ -1,22 +1,18 @@
 ---
 layout: post
-title:  Replication Gateway Components
+title:  Gateway Components
 categories: XAP97
-parent: multi-site-replication-over-the-wan.html
+parent: multi-site-replication-overview.html
 weight: 200
 ---
 
-{% summary %}This page is about the replication gateway components.{% endsummary %}
+{% summary %} {% endsummary %}
 
-{% info %}
-This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
-{% endinfo %}
 
-# Overview
 
 A replication gateway is used in order to send replication events from one space to another space by acting as the delegator of outgoing replication from one space to another, and by receiving incoming replication from a remote gateway and dispatching it to the local space. The gateway is composed of two components that handle this operation, a delegator and a sink. These components are configured in a standard `pu.xml` and usually the gateway should be deployed as a single processing unit (with one instance) into the service grid on each site configured with the local site relevant properties.
 
-# Gateway Components
+
 
 ![wan_gatway_archi.jpg](/attachment_files/wan_gatway_archi.jpg)
 

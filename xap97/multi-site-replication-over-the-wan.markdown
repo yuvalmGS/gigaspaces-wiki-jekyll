@@ -1,19 +1,15 @@
 ---
 layout: post
-title:  Multi Site Replication over the WAN
+title:  Overview
 categories: XAP97
-parent: administrators-guide.html
-weight: 700
+parent: multi-site-replication-overview.html
+weight: 50
 ---
 
-{% summary %}This page explains how to establish data synchronization between multiple sites (spaces), usually used over the WAN.{% endsummary %}
+{% summary %} {%endsummary%}
 
 
-{% info title=Licensing %}
-The Gateway requires a separate license in addition to the GigaSpaces commercial license. Please contact [GigaSpaces Customer Support](http://www.gigaspaces.com/content/customer-support-services) for more details.
-{% endinfo %}
 
-# Overview
 
 Multiple site replication is the ability to replicate state between different deployed spaces, where each space can be also physically located in a different geographical location (also termed a different deployment site).
 
@@ -43,7 +39,9 @@ The GigaSpaces WAN Gateway features the following:
 This page describe how to establish replication between multiple spaces in a typical WAN environment, where each space is a separate network and there is a need for a designated outbound and inbound gateway machine or machines on each network in order to interact with the other network. If this is not the case, and there is a direct network connection available between all space instances machine like VLAN or VPN please refer to [Multi-Space Replication over the LAN or VPN](./multi-space-replication-over-the-lan-or-vpn.html)
 {% endinfo %}
 
+{%comment%}
 <iframe width="640" height="360" src="//www.youtube.com/embed/V7rbbmWo3JU?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
+{%endcomment%}
 
 # Supported Toplogies
 

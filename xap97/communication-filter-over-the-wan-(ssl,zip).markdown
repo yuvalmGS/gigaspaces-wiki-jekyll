@@ -1,18 +1,14 @@
 ---
 layout: post
-title:  Communication Filter Over the Wan (SSL,ZIP)
+title:  Communication Filter
 categories: XAP97
-parent: multi-site-replication-over-the-wan.html
+parent: multi-site-replication-overview.html
 weight: 100
 ---
 
-{% summary %}This page is about putting filters over the network communication which goes across the WAN.{% endsummary %}
+{% summary %}{% endsummary %}
 
-{% info %}
-This page assume prior knowledge of multi-site replication, please refer to [Multi-Site Replication (WAN)](./multi-site-replication-over-the-wan.html) before reading this page.
-{% endinfo %}
 
-# Overview
 
 Filtering network communication across the WAN are done for two main reasons:
 
@@ -35,13 +31,13 @@ the address of the other. It could be named "address-matcher.config", placed und
 It should contain a line with a regular expression matching the remote sites gateway hosting machine address, lets assume its hostname is Site-A.
 The address matcher should look like this:
 
-{% highlight java %}
+{% highlight console %}
 .*Site-A.*
 {% endhighlight %}
 
 And on Site-A the address matcher file should look like this:
 
-{% highlight java %}
+{% highlight console %}
 .*Site-B.*
 {% endhighlight %}
 
@@ -51,7 +47,7 @@ This file can contain more than one line and can be commented using the # char a
 
 If you are starting your own GSC that will host the gateway processing unit, you should start it with the following system properties:
 
-{% highlight java %}
+{% highlight console %}
 -Dcom.gs.lrmi.filter.factory=<filter name>
 -Dcom.gs.lrmi.filter.address-matchers-file=config/<file name>
 {% endhighlight %}

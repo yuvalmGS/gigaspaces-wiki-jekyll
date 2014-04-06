@@ -7,13 +7,9 @@ weight: 100
 ---
 
 {% summary %}This page explains how multi-site replication conflict resolution works and how to customize its functionality.{% endsummary %}
-{% compositionsetup %}
 
-{% tip %}
-Please make sure you fully understand the multiple site replication basics before reading this page.
-{% endtip %}
 
-# Overview
+
 
 Multiple site conflict resolution is the ability to resolve conflicts caused when a Sink component attempts to perform operations on a local cluster and faces one of the following conflicts:
 

@@ -1,19 +1,14 @@
 ---
 layout: post
-title:  Multi Space Replication over the LAN or VPN
+title:  Overview
 categories: XAP97
-parent: administrators-guide.html
-weight: 600
+parent: multi-space-replication-overview.html
+weight: 100
 ---
 
-{% summary %}This page explains how to establish data synchronization between multiple spaces which have direct network communication between each other.{% endsummary %}
+{% summary %}  {% endsummary %}
 
 
-{% info title=Licensing %}
-The Gateway requires a separate license in addition to the GigaSpaces commercial license. Please contact [GigaSpaces Customer Support](http://www.gigaspaces.com/content/customer-support-services) for more details.
-{% endinfo %}
-
-# Overview
 
 Multiple space replication is the ability to replicate state between different deployed spaces, i.e different cluster of space instances. Where each of the space instances of each of the spaces are reachable via network to the other. In some cases, this may even be across WAN using VPN or other mechanism to establish a VLAN. However, it is required to have a direct network connection between all space instances of all of the clusters (or at least a connection between all space instances to the targeted space gateway machine). Replicating between spaces in the same network, is done using exactly the same mechanisms and gateway in the [Multi-Site Replication over the WAN](./multi-site-replication-over-the-wan.html) case, however in a simplified way since many if the configuration and some of the components are not needed as the spaces reside in the same network.
 
@@ -35,7 +30,9 @@ The GigaSpaces Gateway features the following:
 In the case where each space resides on a different network and there is no network connectivity between all space instances of all the spaces, please refer to [Multi-Site Replication over the WAN](./multi-site-replication-over-the-wan.html) to understand how to establish such replication between different networks.
 {% endinfo %}
 
+{%comment%}
 <iframe width="640" height="360" src="//www.youtube.com/embed/V7rbbmWo3JU?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
+{%endcomment%}
 
 # Supported Topologies
 
