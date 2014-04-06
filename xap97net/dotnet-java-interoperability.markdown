@@ -6,7 +6,7 @@ parent: interoperability.html
 weight: 100
 ---
 
-{% summary %}This page is focused on designing interoperable classes manually, and some related advanced features.{% endsummary %}
+{% summary %} {% endsummary %}
 
 {%comment%}
 {% refer %}The [.Net-Java Example](./dotnet-java-example.html) demonstrates many .NET-Java interoperability features.{% endrefer %}

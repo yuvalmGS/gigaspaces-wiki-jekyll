@@ -459,7 +459,77 @@ You can also define SLA deployment requirements on per processing unit instance 
 
 The above example verifies that the **first instance** is deployed to a specific machine (specified by its IP address), and its **second instance** for the same partition is deployed to a different machine. All instances share the "general" requirements of CPU and memory. The first instance **might be** the primary and the second might be the backup, but there is no guarantee these will remain primary/backup as these are runtime properties and might change during the life-cycle of the clustered space. The activation property of the space (primary or backup) is determined once the instance is deployed and is not controlled by the GSM but as part of the primary election process.
 
-To control the location of the primary and backup instances please see the next section.
+
+To control the location of the primary and backup instances during the life-cycle of the clustered space you should use the [Primary-Backup Zone Controller best practice](/sbp/primary-backup-zone-controller.html).
+
+### Example: Zone Based Partitioning Provisioning
+To accommodate partitions with different size we can use the zones configuration to provision each partition into a different zone. Each zone will be associated with GSCs having a different heap size (Xmx). The assumption here is a GSCs hosting a single partition instance (primary or a backup instance). With the following example we deploy a cluster with 3 partitions where each partition deployed into a different zone: Small (1GB GSC), Medium (2GB GSC ) and Large (3GB GSC).
+
+To start the small zone:
+{%highlight console%}
+set GSC_JAVA_OPTIONS=-Dcom.gs.zones=zoneSmall -Xmx1g
+gs-agent.bat
+{%endhighlight%}
+
+To start the medium zone:
+{%highlight console%}
+set GSC_JAVA_OPTIONS=-Dcom.gs.zones=zoneMedium -Xmx2g
+gs-agent.bat
+{%endhighlight%}
+
+To start the large zone:
+{%highlight console%}
+set GSC_JAVA_OPTIONS=-Dcom.gs.zones=zoneLarge -Xmx3g
+gs-agent.bat
+{%endhighlight%}
+
+Deploy a 3 partitions with a backup space cluster using the following sla.xml:
+
+{%highlight xml%}
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:os-sla="http://www.openspaces.org/schema/sla"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/sla/openspaces-sla.xsd">
+
+<os-sla:sla>
+	<os-sla:instance-SLAs>
+		<os-sla:instance-SLA instance-id="1">
+			<os-sla:requirements>
+				<os-sla:zone name="zoneSmall" />
+			</os-sla:requirements>
+		</os-sla:instance-SLA>
+		<os-sla:instance-SLA instance-id="1" backup-id="1">
+			<os-sla:requirements>
+				<os-sla:zone name="zoneSmall" />
+			</os-sla:requirements>
+		</os-sla:instance-SLA>
+		<os-sla:instance-SLA instance-id="2">
+			<os-sla:requirements>
+				<os-sla:zone name="zoneMedium" />
+			</os-sla:requirements>
+		</os-sla:instance-SLA>
+		<os-sla:instance-SLA instance-id="2" backup-id="1">
+			<os-sla:requirements>
+				<os-sla:zone name="zoneMedium" />
+			</os-sla:requirements>
+		</os-sla:instance-SLA>
+		<os-sla:instance-SLA instance-id="3">
+			<os-sla:requirements>
+				<os-sla:zone name="zoneLarge" />
+			</os-sla:requirements>
+		</os-sla:instance-SLA>
+		<os-sla:instance-SLA instance-id="3" backup-id="1">
+			<os-sla:requirements>
+				<os-sla:zone name="zoneLarge" />
+			</os-sla:requirements>
+		</os-sla:instance-SLA>
+	</os-sla:instance-SLAs>
+</os-sla:sla>
+</beans>
+{%endhighlight%}
+
 
 {% note %}
 When using instance level SLA, max-instances settings do not apply (or any cluster level setting).
