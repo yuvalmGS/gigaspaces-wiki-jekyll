@@ -9,7 +9,7 @@ weight: 1400
 {%wbr%}
 XAP provide a JMS implementation, built on top of the core JavaSpaces layer. JMS messages are implemented as POJO, indexed, and routed to the relevant space partition according to the destination name. GigaSpaces XAP JMS implementation supports the unified messaging model, introduced in version 1.1 of the JMS specification.
 
-{%wbr%}
+<hr/>
 
 
 - [JMS Basics](./jms-api-basic-usage.html){%wbr%}
@@ -33,7 +33,7 @@ Obtaining JMS resources without JNDI, using JNDI with GSJMSAdmin.
 - [Andvanced Options](./jms-advanced.html){%wbr%}
 Advanced options including transaction support and security.
 
-{%wbr%}
+<hr/>
 
 
 #### Additional Resources

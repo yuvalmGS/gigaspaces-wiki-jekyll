@@ -22,7 +22,7 @@ A Mule application can be packaged and run as a Processing Unit  within one of t
 
 
 
-{%wbr%}
+<hr/>
 
 
 - [Event Container](./mule-event-container-transport.html){%wbr%}
@@ -38,7 +38,7 @@ The XAP queue provider is used for internal space-based communication between se
 - [SEDA Model](./mule-seda-model.html){%wbr%}
 XAP's Mule SEDA model allows you to define services that are aware of the space mode they are working with; and to store SEDA queues in a virtualized space queue instead of Mule’s default VM queues.
 
-{%wbr%}
+<hr/>
 
 #### Additional Resources
 - [Mule](http://www.mulesoft.org/)

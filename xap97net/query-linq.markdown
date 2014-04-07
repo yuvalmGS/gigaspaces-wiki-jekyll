@@ -135,7 +135,7 @@ var query = from p in spaceProxy.Query<Person>()
 {% endhighlight %}
 
 {%note%}
-By default user-defined types are stored in the space in a binary format, which cannot be queried. If the path includes a user-defined type, the relevant property's storage type should be set to *Document*. For more information refer to [Property Storage Type](./property-storage-type.html).
+By default user-defined types are stored in the space in a binary format, which cannot be queried. If the path includes a user-defined type, the relevant property's storage type should be set to *Document*. For more information refer to [Property Storage Type](./poco-storage-type.html).
 {%endnote%}
 
 ## Sub-strings 
@@ -175,7 +175,7 @@ var query = from p in spaceProxy.Query<Person>()
 {% endhighlight %}
 
 {%info%}
-By default user-defined types are stored in the space in a binary format, which cannot be queried. If the path includes a user-defined type, the relevant property's storage type should be set to *Document*. For more information refer to [Property Storage Type](./property-storage-type.html).
+By default user-defined types are stored in the space in a binary format, which cannot be queried. If the path includes a user-defined type, the relevant property's storage type should be set to *Document*. For more information refer to [Property Storage Type](./poco-storage-type.html).
 {%endinfo%}
 
 # Projection 

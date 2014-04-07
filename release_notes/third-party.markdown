@@ -57,11 +57,11 @@ weight: 300
 | JOI - Java Object Inspector | [http://www.programmers-friend.org/JOI/](http://www.programmers-friend.org/JOI/) | 3.5.2 | CPL | [http://www.programmers-friend.org/cpl-v10.html](http://www.programmers-friend.org/cpl-v10.html) | Yes | GUI |
 | iSQL-Viewer | [http://isql.sourceforge.net/](http://isql.sourceforge.net/) | 3.0.0 | MPL 1.1 | [http://www.mozilla.org/MPL/](http://www.mozilla.org/MPL/) | Yes | GUI |
 | Google Web Toolkit | [http://code.google.com/webtoolkit/](http://code.google.com/webtoolkit/) | 2.4.0 | Apache2 | [http://code.google.com/webtoolkit/terms.html](http://code.google.com/webtoolkit/terms.html) | Yes | Web based dashboard |
-| FileUpload | [http://commons.apache.org/fileupload/](http://commons.apache.org/fileupload/) | 1.2.2 | Apache2 | [http://commons.apache.org/fileupload/license.html](http://commons.apache.org/fileupload/license.html) | Yes | Web based dashboard |
+| FileUpload | [http://commons.apache.org/fileupload/](http://commons.apache.org/fileupload/) | 1.2.2 | Apache2 | [http://commons.apache.org/fileupload/license.html](http://www.apache.org/licenses/) | Yes | Web based dashboard |
 | gwtupload | [http://code.google.com/p/gwtupload/](http://code.google.com/p/gwtupload/) | 0.6.3 | Apache2 | [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0) | Yes | Web based dashboard |
-| Commons Lang | [http://commons.apache.org/lang/](http://commons.apache.org/lang/) | 2.6 | Apache2 | [http://commons.apache.org/lang/license.html](http://commons.apache.org/lang/license.html) | Yes | Web based dashboard |
+| Commons Lang | [http://commons.apache.org/lang/](http://commons.apache.org/lang/) | 2.6 | Apache2 | [http://commons.apache.org/lang/license.html](http://www.apache.org/licenses/) | Yes | Web based dashboard |
 | Highcharts | [http://www.highcharts.com/products/highcharts](http://www.highcharts.com/products/highcharts) | 2.1.9 | Commercial | [http://highsoft.com/legal/Highslide-Software-License-1-3.pdf](http://highsoft.com/legal/Highslide-Software-License-1-3.pdf) | Yes | Web based dashboard |
-| Ext GWT | [http://www.sencha.com/products/gwt/](http://www.sencha.com/products/gwt/) | 2.2.5 | Commercial | [http://www.sencha.com/legal/sencha-commercial-software-license-agreement/](http://www.sencha.com/legal/sencha-commercial-software-license-agreement/) | Yes | Web based dashboard |
+| Ext GWT | [http://www.sencha.com/products/gwt/](http://www.sencha.com/products/) | 2.2.5 | Commercial | [http://www.sencha.com/legal/sencha-commercial-software-license-agreement/](http://www.sencha.com/products/extjs/license/) | Yes | Web based dashboard |
 | jQuery | [http://www.jquery.com/](http://www.jquery.com/) | 1.8.1 | MIT | [https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt](https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt) | Yes | Web based dashboard |
 | Raphaël | [http://www.raphaeljs.com/](http://www.raphaeljs.com/) | 2.1.0 | MIT | [http://raphaeljs.com/license.html](http://raphaeljs.com/license.html) | Yes | Web based dashboard |
 | Dracula Graph | [http://www.graphdracula.net/](http://www.graphdracula.net/) | 0.0.3 | MIT | [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php) | Yes | Web based dashboard |
@@ -89,7 +89,7 @@ weight: 300
 {: .table .table-bordered}
 | Product | Product Page | Version | License | License Page | Required | Component |
 |:--------|:-------------|:--------|:--------|:-------------|:---------|:----------|
-| Winhoard - The Hoard Memory Allocator | [http://www.cs.umass.edu/~emery/hoard/hoard-documentation.html](http://www.cs.umass.edu/~emery/hoard/hoard-documentation.html) | | Commercial | [http://www.otc.utexas.edu/Forms/SLAShortForm.doc](http://www.otc.utexas.edu/Forms/SLAShortForm.doc) | Yes | C++ |
+| Winhoard - The Hoard Memory Allocator | [http://www.cs.umass.edu/~emery/hoard/hoard-documentation.html](http://www.cs.umass.edu/~emery/hoard/hoard-documentation.html) | | Commercial | [http://www.otc.utexas.edu](http://www.otc.utexas.edu) | Yes | C++ |
 | Xerces-C++ | [http://xerces.apache.org/xerces-c/](http://xerces.apache.org/xerces-c/) | | Apache2 | [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html) | Yes | C++ |
 | ACE | [http://www.cs.wustl.edu/~schmidt/ACE.html](http://www.cs.wustl.edu/~schmidt/ACE.html) | | ACE | [http://www.cs.wustl.edu/~schmidt/ACE-copying.html](http://www.cs.wustl.edu/~schmidt/ACE-copying.html) | Yes | C++ |
 | Boost | [http://www.boost.org/](http://www.boost.org/) | | Boost | [http://www.boost.org/more/license_info.html](http://www.boost.org/more/license_info.html) | Yes | C++ |

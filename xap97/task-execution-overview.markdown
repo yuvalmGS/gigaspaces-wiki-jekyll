@@ -17,7 +17,7 @@ Task executors allow you to easily execute grid-wide tasks on the space using th
 {%endcolumn%}
 {%endsection%}
 
-{%wbr%}
+<hr/>
 
 
 - [Overview](./task-execution-over-the-space.html){%wbr%}
@@ -32,4 +32,4 @@ XAP supports the execution of tasks using scripting languages like JavaScipt and
 
 - [Metadata](./task-metadata.html){%wbr%}
 This section explains the different Task metadata.
-
+<hr/>

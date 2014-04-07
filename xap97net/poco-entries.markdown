@@ -1,20 +1,22 @@
 ---
 layout: post
-title:  Object Entries
+title:  Overview
 categories: XAP97NET
-parent: programmers-guide.html
-weight: 100
+parent: poco-overview.html
+weight: 50
 ---
 
-{% summary %} Understanding the semantics of Space Entries and .NET Objects{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
+
 
 A data unit stored in the space is called an **Entry**. However, as you've seen in [Writing Your First Application](/tutorials/your-first-data-grid-application.html), there was no entry in the code - the program simply wrote a plain .NET object to the space and then took it. The API is .NET-friendly, and supports storing & retrieving .NET objects, which are transformed into space entries under the hood. For example, when the program wrote a `Message` object with a `String` property called `Text`, it was actually stored as an entry, whose type name was Message, which held one string property called Text.
 
 Most of the time, the terms object and entry are used interchangeably, because the meaning is clear from the context, and the semantics are trivial. However, it is important to understand the difference between them. Moreover, some  features rely on applying semantics to an object to get a specific entry behavior. This page explains how objects are transformed to (and from) entries, and how that process can be controlled and customized.
 
-{% infosign %} A new GigaSpaces developer is not required to fully understand all the terms and concepts in this page at once. If it feels like too much new stuff, just make sure you get the basic idea from each section, and move on to other topics. Later on, when you have a better grasp of the framework, and you need more information about a specific feature, come back to this page to learn more.
+{% info %}
+A new GigaSpaces developer is not required to fully understand all the terms and concepts in this page at once. If it feels like too much new stuff, just make sure you get the basic idea from each section, and move on to other topics. Later on, when you have a better grasp of the framework, and you need more information about a specific feature, come back to this page to learn more.
+{%endinfo%}
 
 # Including/Excluding Data from an Entry
 
@@ -30,20 +32,20 @@ To customize a specific class, apply a `[SpaceClass]` attribute on the class, an
 
 #### Example 1.1 -- The default behaviour
 
-{% highlight java %}
+{% highlight csharp %}
 public class Person {...}
 {% endhighlight %}
 
 This is actually equivalent to the following declaration:
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass(IncludeFields=IncludeMembers.Public, IncludeProperties=IncludeMembers.Public)]
 public class Person {...}
 {% endhighlight %}
 
 #### Example 1.2 -- To exclude all properties and include all fields, even private ones:
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass(IncludeFields=IncludeMembers.All, IncludeProperties=IncludeMembers.None)]
 public class Person {...}
 {% endhighlight %}
@@ -54,7 +56,7 @@ To customize a specific field/property, apply a `[SpaceProperty]` to include it,
 
 #### Example 1.3 -- Storing all the Person properties except the Password property
 
-{% highlight java %}
+{% highlight csharp %}
 public class Person
 {
     [SpaceExclude]
@@ -77,7 +79,7 @@ Read-only properties (getter, without setter), are included in the entry, but wh
 
 If a property is used frequently when quering the space, you can instruct the space to index it for faster retrieval, by using the `[SpaceProperty]` attribute, and specifing `Index=SpaceIndexType.Basic`. For example:
 
-{% highlight java %}
+{% highlight csharp %}
 public class Person
 {
     [SpaceProperty(Index=SpaceIndexType.Basic)]
@@ -97,7 +99,7 @@ Examine the following piece of code:
 
 #### Example 2
 
-{% highlight java %}
+{% highlight csharp %}
 Message message = new Message();
 message.Text = "Same Same, But Different";
 proxy.Write(message);
@@ -114,7 +116,7 @@ So how do we utilize the Space ID?
 
 Let's add the following piece of code -- the `Message` class:
 
-{% highlight java %}
+{% highlight csharp %}
 private String _messageID;
 [SpaceID(AutoGenerate = true)]
 public String MessageID
@@ -134,7 +136,7 @@ Next, we'll see how to make the space use the object when generating the UID.
 
 Modify the `SpaceID` declaration from `true` to `false`:
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceID(AutoGenerate = false)]
 public String MessageID {...}
 {% endhighlight %}
@@ -152,7 +154,9 @@ There are two modes of SpaceID that are supported:
 
 The default is `AutoGenerate=false`. Note that only one property in a class can be marked as a SpaceID property.
 
-{% exclamation %} There is no need to explicitly index a field which is marked as SpaceID, because it is already indexed.
+{% note %}
+There is no need to explicitly index a field which is marked as SpaceID, because it is already indexed.
+{%endnote%}
 
 # Under the Hood
 
@@ -160,9 +164,11 @@ Each public property/field in the object is mapped to a property of the same nam
 
 While this generic approach solves simple scenarios easily, in some cases it is not enough. For example, you may want to exclude a specific property from being stored in the space, or specify that a certain property should be indexed for faster performance. For that end, you can use a set of .NET attributes to control how an object is mapped to an entry. If you don't want to (or can't) use XAP.NET attributes in your code, you can create an xml file that defines those behaviors, commonly called `gs.xml`.
 
-{% infosign %} Since working with .NET attributes is usually simpler and easier thant working with external xml files, this page demonstrates all the features using attributes. However, every feature shown here can also be implemented using `gs.xml`.
+{% info %}
+Since working with .NET attributes is usually simpler and easier thant working with external xml files, this page demonstrates all the features using attributes. However, every feature shown here can also be implemented using `gs.xml`.
 
-{% infosign %} Mapping a .NET object to a space entry does not involve .NET serialization, which means that the `[Serializable]` indication is not required, and in fact ignored. Even so, it is a good design practice to mark all objects stored in the space as `[Serializable]`, to keep in-line with .NET standards.
+Mapping a .NET object to a space entry does not involve .NET serialization, which means that the `[Serializable]` indication is not required, and in fact ignored. Even so, it is a good design practice to mark all objects stored in the space as `[Serializable]`, to keep in-line with .NET standards.
+{%endinfo%}
 
 # Routing
 
@@ -197,7 +203,7 @@ To specify a null value, the field or property should be marked with the `[Space
 
 #### Example 3.1 - Null value on a primitive int
 
-{% highlight java %}
+{% highlight csharp %}
 public class Person
 {
     [SpaceProperty(NullValue = -1)]
@@ -207,7 +213,7 @@ public class Person
 
 #### Example 3.2 - Null value on DateTime
 
-{% highlight java %}
+{% highlight csharp %}
 public class Person
 {
     [SpaceProperty(NullValue = "1900-01-01T12:00:00")]
@@ -219,7 +225,7 @@ public class Person
 
 By default, the name of the class in the space is the fully-qualified class name (i.e. including namespace), and the properties/fields names in the space equal to the .NET name. In some cases, usually in interoperability scenarios, you may need to map your .NET class name and properties to different names in the space. You can do that using the `AliasName` property on `[SpaceClass]` and `[SpaceProperty]`. For example, the following .NET Person class contains mapping to an equivalent Java Person class:
 
-{% highlight java %}
+{% highlight csharp %}
 namespace MyCompany.MyProject
 {
     [SpaceClass(AliasName="com.mycompany.myproject.Person")]
@@ -241,7 +247,7 @@ When using space SqlQuery on an object with properties which are aliased, the qu
 
 The space can be attached to an external data source, and persist its classes through it. It can be specified whether a certain class should be persisted or not. To do this, use the `[SpaceClass(Persist=true)]` or `[SpaceClass(Persist=false)]` class level attribute. The default is `[SpaceClass(Persist=true)]`.
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass(Persist=false)]
 public class Person {...}
 {% endhighlight %}
@@ -250,7 +256,7 @@ public class Person {...}
 
 Some cluster toplogies have replication defined, which means that some or all of the data is replicated between the spaces. In this case, it can be specified whether each class should be replicated or not, by using the `[SpaceClass(Replicate=true)]` or `[SpaceClass(Replicate=false)]` class level attribute. The default is `[SpaceClass(Replicate=true)]`.
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass(Replicate=false)]
 public class Person {...}
 {% endhighlight %}
@@ -259,7 +265,7 @@ public class Person {...}
 
 A class can be marked to operate in FIFO mode, which means that all the inserts, removals and notifications of this class should be done in First-in-First-out mode. It can be specified whether each class should operate in FIFO mode or not, by using the `[SpaceClass(Fifo=true)]` or `[SpaceClass(Fifo=false)]` class level attribute. The default is `[SpaceClass(Fifo=false)]`.
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass(Fifo=true)]
 public class Person {...}
 {% endhighlight %}

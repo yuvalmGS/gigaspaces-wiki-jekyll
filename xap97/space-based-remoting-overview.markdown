@@ -17,7 +17,7 @@ Remoting allows you to use remote invocations of POJO services, with the space a
 {%endcolumn%}
 {%endsection%}
 
-{%wbr%}
+<hr/>
 
 - [Overview](./space-based-remoting.html){%wbr%}
 Remoting services overview.
@@ -30,7 +30,7 @@ Executor Remoting allows you to use remote invocations of POJO services, with th
 Event Driven Remoting allows you to use remote invocations of POJO services, with the space as the transport layer using a polling container on the space side to process the invocations.
 
 
-{%wbr%}
+<hr/>
 
 #### Additional Resources
 {%youtube -07-0PXUoeM | Space based remoting%}

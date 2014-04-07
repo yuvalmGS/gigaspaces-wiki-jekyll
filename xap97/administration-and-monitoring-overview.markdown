@@ -21,7 +21,7 @@ The Admin API provides a way to administer and monitor all of XAP services and c
 {% endcolumn %}
 {% endsection %}
 
-{%wbr%}
+<hr/>
 
 - [Admin API](./administration-and-monitoring-api.html){%wbr%}
 Simple API to monitor and administer XAP services and components.
@@ -36,7 +36,7 @@ Runtime administrative alerts - monitoring the “health state” of the system.
 Logging Gateway for Administrative alerts.
 
 
-{%wbr%}
+<hr/>
 
 #### Additional Resources
 

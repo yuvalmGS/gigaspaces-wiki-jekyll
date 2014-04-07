@@ -2,13 +2,13 @@
 layout: post
 title:  Object Metadata
 categories: XAP97NET
-parent: object-entries.html
-weight: 100
+parent: modeling-your-data.html
+weight: 400
 ---
 
-{% summary %}Customizing object behaviour using space metadata attributes. {% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
+
 
 In general, every object can be stored in the space - it does not have to inherit from a base class, implement an interface, or have any attributes decorating it. It doesn't even have to be Serializable, although it is recommended as a design practice, to keep in-line with .NET standards. The only requirement is to have a parameterless constructor.
 
@@ -16,7 +16,9 @@ However, in many cases this generic approach is not enough. For example, you may
 
 If you don't want to (or can't) use XAP.NET attributes in your classes code, you can create an xml file that defines those behaviours, commonly called `gs.xml`.
 
-{% infosign %} Since working with attributes is usually simpler and easier, this page demonstrates all the features using attributes. However, every feature shown here can also be achieved using [`gs.xml`](./gs.xml-metadata.html).
+{% info %}
+Since working with attributes is usually simpler and easier, this page demonstrates all the features using attributes. However, every feature shown here can also be achieved using [`gs.xml`](./gs.xml-metadata.html).
+{%endinfo%}
 
 # Including/Excluding Content from the Space
 
@@ -30,20 +32,20 @@ To change this behaviour for a specific class, apply a `[SpaceClass]` attribute 
 
 #### Example 1 -- The default behaviour
 
-{% highlight java %}
+{% highlight csharp %}
 public class Person {...}
 {% endhighlight %}
 
 This is actually equivalent to the following declaration:
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass(IncludeFields=IncludeMembers.Public, IncludeProperties=IncludeMembers.Public)]
 public class Person {...}
 {% endhighlight %}
 
 #### Example 2 -- To ignore all properties and store all the fields, including private ones
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass(IncludeFields=IncludeMembers.All, IncludeProperties=IncludeMembers.None)]
 public class Person {...}
 {% endhighlight %}
@@ -63,7 +65,7 @@ To change the behaviour of a specific field/property, apply a `[SpaceProperty]` 
 
 #### Example 3 -- Storing all the Person properties except the Password property
 
-{% highlight java %}
+{% highlight csharp %}
 public class Person
 {
     [SpaceExclude]
@@ -75,7 +77,7 @@ public class Person
 
 If a property is commonly used in space queries, you can instruct the space to index that property for improved read performance. To do this, use the `[SpaceIndex]` attribute, and specify `Type=SpaceIndexType.Basic`.
 
-{% highlight java %}
+{% highlight csharp %}
 public class Person
 {
     [SpaceIndex(Type=SpaceIndexType.Basic)]
@@ -101,7 +103,9 @@ There are two modes of SpaceID that are supported:
 
 The default is `AutoGenerate=false`. Note that only one property in a class can be marked as a SpaceID property.
 
-{% exclamation %} There is no need to explicitly index a field which is marked as SpaceID, because it is already indexed.
+{% note %}
+There is no need to explicitly index a field which is marked as SpaceID, because it is already indexed.
+{%endnote%}
 
 # Routing
 
@@ -136,7 +140,7 @@ To specify a null value, the field or property should be marked with the `[Space
 
 Example #1 - Null value on a primitive int
 
-{% highlight java %}
+{% highlight csharp %}
 public class Person
 {
     [SpaceProperty(NullValue = -1)]
@@ -146,7 +150,7 @@ public class Person
 
 Example #2 - Null value on DateTime
 
-{% highlight java %}
+{% highlight csharp %}
 public class Person
 {
     [SpaceProperty(NullValue = "1900-01-01T12:00:00")]
@@ -158,7 +162,7 @@ public class Person
 
 By default, the name of the class in the space is the fully-qualified class name (i.e. including namespace), and the properties/fields names in the space equal to the .NET name. In some cases, usually in interoperability scenarios, you may need to map your .NET class name and properties to different names in the space. You can do that using the `AliasName` property on `[SpaceClass]` and `[SpaceProperty]`. For example, the following .NET Person class contains mapping to an equivalent Java Person class:
 
-{% highlight java %}
+{% highlight csharp %}
 namespace MyCompany.MyProject
 {
     [SpaceClass(AliasName="com.mycompany.myproject.Person")]
@@ -180,7 +184,7 @@ When using space SqlQuery on an object with properties which are aliased, the qu
 
 The space can be attached to an external data source and persist its classes through it. A certain class can be specified if it should be persisted or not. To do this, use the `[SpaceClass(Persist=true)]` or `[SpaceClass(Persist=false)]` class level attribute.
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass(Persist=false)]
 public class Person {...}
 {% endhighlight %}
@@ -191,7 +195,7 @@ The default is `[SpaceClass(Persist=true)]`.
 
 Some cluster toplogies have replication defined, which means that some or all of the data is replicated between the spaces. In this case, it can be specified whether each class should be replicated or not, by using the `[SpaceClass(Replicate=true)]` or `[SpaceClass(Replicate=false)]` class level attribute.
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass(Replicate=false)]
 public class Person {...}
 {% endhighlight %}
@@ -202,7 +206,7 @@ The default is `[SpaceClass(Replicate=true)]`.
 
 A class can be marked to operate in FIFO mode, which means that all the insert, removal and notification of this class should be done in First-in-First-out mode. It can be specified whether each class should operate in FIFO mode or not, by using the `[SpaceClass(Fifo=true)]` or `[SpaceClass(Fifo=false)]` class level attribute.
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass(Fifo=true)]
 public class Person {...}
 {% endhighlight %}

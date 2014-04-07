@@ -8,7 +8,7 @@ weight: 1650
 {%wbr%}
 This section explains how you can configure logging with XAP. We will show you how you can format the log output, choose file names, rollover policies and how to use the logging API.
 
-{%wbr%}
+<hr/>
 
 - [Overview](./logging.html){%wbr%}
 Logging concepts and options.
@@ -25,3 +25,4 @@ Managing log file naming, and rolling over policies.
 
 - [Backup custom policy](./logging-backing-custom-policy.html){%wbr%}
 Custom backup policy.
+<hr/>

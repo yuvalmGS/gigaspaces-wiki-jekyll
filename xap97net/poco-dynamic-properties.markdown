@@ -2,15 +2,11 @@
 layout: post
 title:  Dynamic Properties
 categories: XAP97NET
-parent: object-entries.html
+parent: poco-overview.html
 weight: 300
 ---
 
 
-
-{% summary %}Using Dynamic Properties with Object entries.{% endsummary %}
-
-# Overview
 
 Object entries' properties are bound by the schema of the Object class, which means a property cannot be added without changing the class, and since changing the class requires restarting the space, this can be a long and tiresome project.
 
@@ -20,9 +16,9 @@ Dynamic properties can be used with Object as well. This provides better interop
 
 # Enabling Dynamic Properties
 
-To enable dynamic properties add a `Dictionary<String, Object>` property to the relevant class and decorate it with `\[SpaceDynamicProperties\]`. For example, the following **Person** class has two fixed properties (Name and Id), and an additional **ExtraInfo** property used to host the dynamic properties:
+To enable dynamic properties add a `Dictionary<String, Object>` property to the relevant class and decorate it with `[SpaceDynamicProperties]`. For example, the following **Person** class has two fixed properties (Name and Id), and an additional **ExtraInfo** property used to host the dynamic properties:
 
-{% highlight java %}
+{% highlight csharp %}
 public class Person
 {
     public String Name { get; set; }
@@ -33,13 +29,15 @@ public class Person
 }
 {% endhighlight %}
 
-{% plus %} It is recommended to use the `DocumentProperties` class to host dynamic properties.
+{% info %}
+It is recommended to use the `DocumentProperties` class to host dynamic properties.
+{%endinfo%}
 
 # Using Dynamic Properties
 
 To write an entry with dynamic properties, simply populate them in the dynamic properties property. For example:
 
-{% highlight java %}
+{% highlight csharp %}
 Person p = new Person();
 p.Id = 7;
 p.Name = "smith";
@@ -53,7 +51,7 @@ When the entry is read from the space the dynamic properties will be stored in t
 
 Dynamic properties can also be used for matching. For example, suppose we want to get all persons who are not minors (defined here as those less than twenty-one years of age) and email them something:
 
-{% highlight java %}
+{% highlight csharp %}
 Person[] people = space.ReadMultiple<Person>(new SqlQuery<Person>("age > 21"));
 foreach (var person in people)
 {

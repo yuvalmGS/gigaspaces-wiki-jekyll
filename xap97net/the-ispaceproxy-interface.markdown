@@ -76,7 +76,7 @@ The [ISpaceProxy](% netdoc GigaSpaces.Core.ISpaceProxy %) interface includes the
 
 {: .table .table-bordered}
 |[Data Query operations](./query-sql.html)|Data Insert and Update operations|[Business logic execution operations](./task-execution-over-the-space.html)|Data removal operations|
-|Read<br/>ReadMultiple<br/>[GetSpaceIterator]({% currentjavaurl %}/query-paging-support.html)|Write<br/>WriteMultiple [change](./change-api.html) |Execute<br/>executorBuilder|Clean<br/>Clear<br/>Take<br/>TakeMultiple|
+|Read<br/>ReadMultiple<br/>[GetSpaceIterator](./query-paging-support.html)|Write<br/>WriteMultiple [change](./change-api.html) |Execute<br/>executorBuilder|Clean<br/>Clear<br/>Take<br/>TakeMultiple|
 
 { include ispaceproxy-code-snippets.markdown }
 
@@ -186,7 +186,7 @@ In a similar manner, the read timeout and write lease can be specified.
 {% endinittab %}
 
 {% tip %}
-See more examples for the `ISpaceProxy` interface usage with the [POJO Support]({% currentjavaurl %}/pojo-support.html) section.
+See more examples for the `ISpaceProxy` interface usage with the [POCO Support](./poco-overview.html) section.
 {% endtip %}
 
 # Saving Data to the Space
@@ -199,7 +199,7 @@ When performing a Write operation you may provide a lease (time to live) duratio
 
 If a Write returns without throwing an exception, that object is committed to the Space, possibly within a transaction. When the Write operation throws an exception, the exception type and message must be considered in order to know whether the object was successfully committed to the Space or not. For example, the `EntryAlreadyInSpaceException` when using write with a `WriteOnly` modifier means the object was not committed, as it already exists in the Space.
 
-Writing an object into a space might generate [notifications]({% currentjavaurl %}/notify-container.html) to registered objects.
+Writing an object into a space might generate [notifications](./notify-container.html) to registered objects.
 
 ## Returning Previous Value
 
@@ -291,7 +291,7 @@ The [SQLQuery](./query-sql.html) class is used to query the space using SQL-like
 
 The [IteratorBuilder](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/IteratorBuilder.html) with the [GSIterator](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/client/GSIterator.html) allows you to iterate over large amount of space objects in a **paging approach**. It avoids the need to retrieve the entire result set in one batch as the `readMultiple` since it is fetching the result set in batches. This optimizes the resource utilization (memory and CPU) involved when executing the query both at the client and server side.
 
-See the [Paging Support with Space Iterator]({% currentjavaurl %}/query-paging-support.html) for details.
+See the [Paging Support with Space Iterator](./query-paging-support.html) for details.
 
 # ReadIfExists and Read Operations
 
@@ -319,7 +319,7 @@ With a `RemoteException`, an object can be removed from a space and yet never re
 
 If you would like to take objects from the space in the same order they have been written into the space you should perform the take objects in a [FIFO mode](./fifo-support.html).
 
-Taking an object from the space might generate [notifications]({% currentjavaurl %}/notify-container.html) to registered objects/queries.
+Taking an object from the space might generate [notifications](./notify-container.html) to registered objects/queries.
 
 {% tip %}
 The `take` operation default timeout is `JavaSpace.NO_WAIT`.

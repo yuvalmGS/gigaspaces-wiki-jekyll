@@ -2,18 +2,18 @@
 layout: post
 title:  GS.XML Metadata
 categories: XAP97NET
-parent: object-entries.html
-weight: 200
+parent: modeling-your-data.html
+weight: 500
 ---
 
-{% summary page|65 %}This page explains how to use GS.XML to define space objects metadata.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 This page describes the usage of GS.XML to define space objects metadata.
 GS.XML is an XML file that contains the space type's metadata definitions. The metadata definitions available using the XML are equivalent to attribute-based space metadata functionality. The main advantage of using the GS.XML file for the space metadata definitions, is that the data model remains unchanged when used in the space. Data objects can have independent space metadata definitions that have no impact on the objects' code.
 
-{% refer %}For more info about space metadata definitions, refer to [Object Metadata](./object-metadata.html){% endrefer %}
+{% refer %}For more info about space metadata definitions, refer to [Object Metadata](./poco-metadata.html){% endrefer %}
 
 # GS.XML File Naming and Location
 
@@ -35,7 +35,7 @@ Schema definitions for the .NET GS.XML can be found in two locations
 
 See blow an example of `Car` class's space metadata definitions in GS.XML
 
-{% highlight java %}
+{% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE gigaspaces-mapping SYSTEM "..\..\..\Bin\gigaspaces-metadata-net.dtd">
 <gigaspaces-mapping>
@@ -64,8 +64,8 @@ See blow an example of `Car` class's space metadata definitions in GS.XML
 | `fifo` | Indicates whether the POJO should be saved in FIFO order in the space. To enable FIFO-based notifications and take operations, this annotation should be `true`. {% refer %}For more details, refer to the [FIFO operations](./fifo-support.html) section.{% endrefer %} |
 | `replicate` | Valid only in cluster toplogies that have replication defined. In this case, it specifies whether each class should be replicated or not |
 | `include-properties` |Gives the ability to expose or hide properties from the space (default is public).
-For more details, see: [Object Metadata](./object-metadata.html#Including/Excluding Content from the Space) |
-| `include-fields` |Gives the ability to expose or hide fields from the space (default is public) {% refer %}For more details, see: [Object Metadata](./object-metadata.html#Including/Excluding Content from the Space){% endrefer %} |
+For more details, see: [Object Metadata](./poco-metadata.html) |
+| `include-fields` |Gives the ability to expose or hide fields from the space (default is public) {% refer %}For more details, see: [Object Metadata](./poco-metadata.html){% endrefer %} |
 | `alias-name` |Gives the ability to map a .NET class name (including namespace) to a space class name |
 
 ### Field Level Elements
@@ -78,9 +78,9 @@ For more details, see: [Object Metadata](./object-metadata.html#Including/Exclud
 | `index` | Indicates if the field is indexed in the space. |
 | `null-value` | Represents a `null` value for the current field. Applicable mainly for primitive type fields that does not have explicit null vallue. |
 | `alias-name` | Defines the name the field will have when stored to the space. |
-| `storage-type` | Defines the storage format the field will have once stored to the space. See [this](./property-storage-type.html) page for details|
+| `storage-type` | Defines the storage format the field will have once stored to the space. See [this](./poco-storage-type.html) page for details|
 
-{% highlight java %}
+{% highlight xml %}
 <class name="GigaSpaces.Examples.SpaceOperations.Entities.Person" persist="false" replicate="false" fifo="false" >
 	<property name="Int_Field" null-value="-1" alias-name="int_Field" />
 	<property name="DateTime_Field" null-value="00:00:00.0000000, January 1, 0001" alias-name="dateTime_Field"/>

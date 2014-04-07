@@ -24,7 +24,7 @@ The Gateway requires a separate license in addition to the GigaSpaces commercial
 {% endinfo %}
 
 
-{%wbr%}
+<hr/>
 
 - [Overview](./multi-site-replication-over-the-wan.html){%wbr%}
 Establish data synchronization between multiple sites (spaces), usually used over the WAN.
@@ -59,7 +59,7 @@ Known issues and limitations
 - [FAQ](./multi-site-replication-over-the-wan---faq.html){%wbr%}
 Frequently asked questions.
 
-{%wbr%}
+<hr/>
 
 #### Additional Resources
 {%youtube V7rbbmWo3JU | Multi Site Deployment%}

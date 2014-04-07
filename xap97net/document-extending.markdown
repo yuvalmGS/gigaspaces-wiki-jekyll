@@ -16,14 +16,14 @@ Do not confuse this with [Document-Object interoperability](./document-object-in
 
 # Creating the Extension Class
 
-Let's create a type-safe document wrapper for the **Product** type described in the [Document Support](./document-(schema-free)-entries.html) page. The extensions are:
+Let's create a type-safe document wrapper for the **Product** type described in the [Document Support](./document-api.html) page. The extensions are:
 
-- Provide a parameterless constructor, since the type name is fixed.
+- Provide a parameter less constructor, since the type name is fixed.
 - Provide type-safe properties, but instead of using private fields to store/retrieve the values, use the index operator of the SpaceDocument class.
 
 Here's an example (only parts of the properties have been implemented to keep the example short):
 
-{% highlight java %}
+{% highlight csharp %}
 public class ProductDocument : SpaceDocument
 {
     private const String TypeName = "Product";
@@ -60,7 +60,7 @@ public class ProductDocument : SpaceDocument
 If your only intention is to write/update document entries, creating the extension class is sufficient - from the space's perspective it is equivalent to a `SpaceDocument` instance. However, if you attempt to read/take entries from the space, the results will be `SpaceDocument` instances, and the cast to `ProductDocument` will throw an exception.
 To overcome that, we need to include the document wrapper type in the type introduction:
 
-{% highlight java %}
+{% highlight csharp %}
 public void RegisterProductType(ISpaceProxy spaceProxy)
 {
     // Create type descriptor:
@@ -78,7 +78,7 @@ This wrapper type-registration is kept in the proxy and not propagated to the se
 
 The following code snippet demonstrate usage of the `ProductDocument` extensions we've created to write and read documents from the space.
 
-{% highlight java %}
+{% highlight csharp %}
 public void example(ISpaceProxy spaceProxy)
 {
     // Create a product document:

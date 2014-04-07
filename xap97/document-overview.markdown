@@ -19,7 +19,7 @@ The XAP document API exposes the space as [Document Store](http://en.wikipedia.o
 {% endcolumn %}
 {% endsection %}
 
-{%wbr%}
+<hr/>
 
 
 - [Document API](./document-api.html){%wbr%}
@@ -33,7 +33,7 @@ XAP supports extending the SpaceDocument class to provide a type-safe wrapper fo
 XAP offers interoperability between documents and POJOs via the space
 
 
-{%wbr%}
+<hr/>
 
 #### Additional Resources
 {%youtube nBljYC3ciYc | Document API%}

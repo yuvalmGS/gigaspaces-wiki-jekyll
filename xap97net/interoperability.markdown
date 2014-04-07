@@ -19,7 +19,7 @@ The possibility for organizations whose projects include a combination of Java, 
 
 
 
-{%wbr%}
+<hr/>
 
 
 - [.NET - Java Interoperability](./dotnet-java-interoperability.html){%wbr%}
@@ -27,3 +27,5 @@ This page is focused on designing interoperable classes manually, and some relat
 
 - [User Defined Objects](./interoperability-of-user-defined-objects.html){%wbr%}
 How to implement deep (complex) interoperable classes.
+
+<hr/>

@@ -18,7 +18,7 @@ XAP integrates with Cassandra and MongoDB NoSql data bases. These data bases can
 {%endsection%}
 
 
-{%wbr%}
+<hr/>
 
 
 - [Archive Handler](./archive-container.html){%wbr%}
@@ -31,3 +31,4 @@ XAP Integration with Cassandra
 - [MongoDB](./mongodb.html){%wbr%}
 XAP Integration with MongoDB
 
+<hr/>

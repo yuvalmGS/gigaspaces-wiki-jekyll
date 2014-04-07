@@ -18,7 +18,7 @@ When a space is looking for a match for a read or take operation, it iterates ov
 {%endcolumn%}
 {%endsection%}
 
-{%wbr%}
+<hr/>
 
 
 - [Basic concept](./indexing.html){%wbr%}
@@ -37,7 +37,7 @@ Compound indexes can be defined using annotations.
 
 - [Unique index](./indexing-unique.html){%wbr%}
 Unique constraints can be defined for an attribute or attributes of a space class.
-
+<hr/>
 
 {%comment%}
 

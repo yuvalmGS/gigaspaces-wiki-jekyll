@@ -17,7 +17,7 @@ This section explains the various mechanisms offered by GigaSpaces XAP to query 
 {%endcolumn%}
 {%endsection%}
 
-{%wbr%}
+<hr/>
 
 - [Id Queries](./query-by-id.html){%wbr%}
 Id Based query - Primary Key based object retrieval from space.
@@ -41,7 +41,7 @@ Reading large number of objects using multiple queries in one call in a continuo
 - [Partial results](./query-partial-results.html){%wbr%}
 Obtaining partial results when querying the space to improve application performance and reduce memory footprint.
 
-{%wbr%}
+<hr/>
 
 #### Additional Resources
 {%youtube jC57mId3SMg | XAP Query APIS%}

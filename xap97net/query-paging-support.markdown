@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  Paging Support
-categories:
-parent:
-weight:
+categories: XAP97NET
+parent: querying-the-space.html
+weight: 700
 ---
 
 {% summary %}{% endsummary %}

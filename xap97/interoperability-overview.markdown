@@ -19,7 +19,7 @@ The possibility for organizations whose projects include a combination of Java, 
 
 
 
-{%wbr%}
+<hr/>
 
 
 - [C++](./xap-cpp.html){%wbr%}
@@ -30,3 +30,4 @@ The REST API exposing HTTP based interface to the Space.
 
 - [Scala](./scala.html){%wbr%}
 XAP Scala integration.
+<hr/>

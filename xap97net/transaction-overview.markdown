@@ -18,7 +18,7 @@ XAP .Net provides an explicit transaction management programing model. It allows
 {%endcolumn%}
 {%endsection%}
 
-{%wbr%}
+<hr/>
 
 - [Transaction interface](./transactions.html){%wbr%}
 Transaction concept and API
@@ -34,3 +34,5 @@ The optimistic locking protocol provides better performance and scalability when
 
 - [Pessimistic Locking](./transaction-pessimistic-locking.html){%wbr%}
 In the pessimistic locking approach, your program must explicitly obtain a lock using a transaction on one or more objects before making any changes.
+
+<hr/>

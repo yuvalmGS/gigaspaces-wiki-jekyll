@@ -19,7 +19,7 @@ This section provides an understanding of GigaSpaces XAP Security, where it fits
 {% endcolumn %}
 {% endsection %}
 
-{%wbr%}
+<hr/>
 
 
 - [Overview](./security.html){%wbr%}
@@ -54,3 +54,5 @@ Customize security to meet your application requirements
 
 - [Spring Security](./spring-security-bridge.html){%wbr%}
 Declarative Spring-based custom security bridge
+
+<hr/>

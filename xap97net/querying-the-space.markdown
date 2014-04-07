@@ -5,6 +5,7 @@ categories: XAP97NET
 parent: programmers-guide.html
 weight: 2100
 ---
+
 {%wbr%}
 
 {%comment%}
@@ -20,8 +21,8 @@ This section explains the various mechanisms offered by GigaSpaces XAP to query 
 {%endcolumn%}
 {%endsection%}
 
+<hr/>
 
-{%wbr%}
 
 - [Id Queries](./query-by-id.html){%wbr%}
 Id Based query - Primary Key based object retrieval from space.
@@ -30,13 +31,13 @@ Id Based query - Primary Key based object retrieval from space.
 Template matching (a.k.a. Match by example) is a simple way to query the space.
 
 - [Prepared template](./query-prepared-template.html){%wbr%}
-Querying the space using a Prepared Template
+Querying the space using a Prepared Template.
 
 - [SQL Query](./query-sql.html){%wbr%}
 The SQLQuery class is used to query the space using SQL-like syntax.
 
 - [Nested property queries](./query-nested-properties.html){%wbr%}
-Query nested properties, maps and collections using SQL queries
+Query nested properties, maps and collections using SQL queries.
 
 - [Partial results](./query-partial-results.html){%wbr%}
 Obtaining partial results when querying the space to improve application performance and reduce memory footprint.
@@ -44,8 +45,7 @@ Obtaining partial results when querying the space to improve application perform
 - [Paging support](./query-paging-support.html){%wbr%}
 Reading large number of objects using multiple queries in one call in a continuous manner.
 
-
 - [LINQ](./query-linq.html){%wbr%}
 Querying the space using LINQ
-
+<hr/>
 

@@ -6,8 +6,8 @@ weight: 200
 parent: programmers-guide.html
 ---
 
-{%wbr%}
 
+{%wbr%}
 
 {% section %}
 {% column  width=10% %}
@@ -19,7 +19,7 @@ The XAP document API exposes the space as [Document Store](http://en.wikipedia.o
 {% endcolumn %}
 {% endsection %}
 
-{%wbr%}
+<hr/>
 
 
 - [Document API](./document-api.html){%wbr%}
@@ -31,6 +31,6 @@ XAP supports extending the SpaceDocument class to provide a type-safe wrapper fo
 
 - [Interoperability](./document-object-interoperability.html){%wbr%}
 Interoperability between Concrete Object and Document space entries.
-
+<hr/>
 
 

@@ -17,7 +17,7 @@ XAP promotes openness and interoperability, supporting common interfaces for acc
 {%endsection%}
 
 
-{%wbr%}
+<hr/>
 
 
 ![anyapi.png](/attachment_files/anyapi.png)
@@ -35,3 +35,4 @@ XAP allows applications to interact with the space and cache data using the Map 
 
 - [memcached API](./memcached-api.html){%wbr%}
 The memcached support is provided as a template deployment (similar to how basic data grid deployment works), allowing to easily issue commands to deploy a memcached cluster
+<hr/>

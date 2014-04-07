@@ -29,7 +29,7 @@ This section will guide you through event processing APIs and configuration on t
 {%endcomment%}
 
 
-{%wbr%}
+<hr/>
 
 
 - [Event Listener Container](./event-listener-container.html){%wbr%}
@@ -46,7 +46,7 @@ Allows you to perform polling receive operations against the space.
 Describe the common Exception Event Listener and its different adapters.
 {%endcomment%}
 
-{%wbr%}
+<hr/>
 
 
 

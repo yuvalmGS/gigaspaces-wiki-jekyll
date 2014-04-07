@@ -17,7 +17,7 @@ In this section we will show you how to create and configure a Space and how to 
 {%endcolumn%}
 {%endsection%}
 
-{%wbr%}
+<hr/>
 
 - [Overview](./the-gigaspace-interface.html){%wbr%}
 A Space is a logical in-memory service, which can store entries of information.
@@ -48,3 +48,4 @@ Allows you to load a Spring application context only when the Processing Unit or
 
 - [Lease](./leases---automatic-expiration.html){%wbr%}
 Lease basics and explains how Leases can be managed.
+<hr/>

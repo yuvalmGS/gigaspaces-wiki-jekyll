@@ -107,7 +107,7 @@ The space generates a unique identifier (UID) for every object in one of the fol
 #### Compound SpaceId
 You might need to construct a space id that will be comprised from a user defined class rather than using a Numeric or String type field. In such a case your user defined class used as the SpaceId data type must implement the ToString , GetHashCode and Equals methods. The compound ID class must implement a ToString method that return a unique String for each ID.
 
-{%learn%}{%latestneturl%}/object-entries.html{%endlearn%}
+{%learn%}{%latestneturl%}/poco-object-id.html{%endlearn%}
 
 
 #### Defining Routing
@@ -380,7 +380,7 @@ Many times a class has embedded classes as attributes. You can query for attribu
 By default, nested objects are kept in a binary form inside the space. In order to support nested matching, the relevant property should be stored as document, or as object if it is in an interoperability scenario and it has a corresponding Java class.
 {%endnote%}
 
-{%learn%}{%latestneturl%}/property-storage-type.html{%endlearn%}
+{%learn%}{%latestneturl%}/poco-storage-type.html{%endlearn%}
 
 Here is an example how you would annotate a class to enable nested queries:
 

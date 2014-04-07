@@ -337,7 +337,7 @@ ISpaceTypeDescriptor typeDescriptor = typeBuilder.Create();
 spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 {% endhighlight %}
 
-{% refer %}For more info on storage types, please refer to [Property Storage Type](./property-storage-type.html){% endrefer %}
+{% refer %}For more info on storage types, please refer to [Property Storage Type](./poco-storage-type.html){% endrefer %}
 
 # Persistency
 
