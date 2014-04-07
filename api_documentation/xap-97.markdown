@@ -17,7 +17,7 @@ parent: none
 
 [GigaSpaces 9.7.X C+\+ API Documentation](http://www.gigaspaces.com/docs/cppdocs9.7) -- _GigaSpaces C+\+ classes_
 
-[GigaSpaces 9.7.X Mongo-Datasource API Documentation](http://www.gigaspaces.com/docs/mongoeds-docs9.7)
+[GigaSpaces 9.7.X Mongo-Datasource API Documentation](http://www.gigaspaces.com/docs/mongoeds-docs9.7/apidocs/)
 
 {%endpanel%}
 
