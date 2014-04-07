@@ -60,33 +60,23 @@ You can deploy a war file just like a PU with the Web Administration UI:
 
 {%section%}
 {%column%}
-Host view
-
-[<img src="/attachment_files/qsg/Deploy-web1.png" width="120" height="80">](/attachment_files/qsg/Deploy-web1.png)
+{%popup /attachment_files/qsg/Deploy-web1.png | Host view%}
 {%endcolumn%}
 
 {%column%}
-Upload war file
-
-[<img src="/attachment_files/qsg/Deploy-web2.png" width="120" height="80">](/attachment_files/qsg/Deploy-web2.png)
+{%popup /attachment_files/qsg/Deploy-web2.png | Upload war file%}
 {%endcolumn%}
  
 {%column%}
-Application display
-
-[<img src="/attachment_files/qsg/Deploy-web3.png" width="120" height="80">](/attachment_files/qsg/Deploy-web3.png)
+{%popup /attachment_files/qsg/Deploy-web3.png | Application display%}
 {%endcolumn%}
 
 {%column%}
-Service display
-
-[<img src="/attachment_files/qsg/Deploy-web4.png" width="120" height="80">](/attachment_files/qsg/Deploy-web4.png)
+{%popup /attachment_files/qsg/Deploy-web4.png | Service display%}
 {%endcolumn%}
 
 {%column%}
-Web page display
-
-[<img src="/attachment_files/qsg/Deploy-web5.png" width="120" height="80">](/attachment_files/qsg/Deploy-web5.png)
+{%popup /attachment_files/qsg/Deploy-web5.png | Web page display%}
 {%endcolumn%}
 {%endsection%}
 
@@ -143,13 +133,16 @@ GigaSpace gigaSpace = (GigaSpace) getServletContext().getAttribute("xapTutorialS
 
 # Jetty Instance
 {%section%}
-{%column width=70% %}
+{%column width=80% %}
 
 Jetty itself is configured using Spring, and allows you to control all aspects of both the Jetty instance created, and the web application context. There are two flavors of how Jetty instances are created (by default). The first is the plain mode, where a Jetty instance is created for each web processing unit instance running within a GSC. The second is the shared mode, where a single Jetty instance is created, and shared between all the different web processing unit instances running on the same GSC. A custom Jetty instantiation and handling can also be configured.
 {%endcolumn%}
 {%column width=20% %}
 
+{%popup /attachment_files/qsg/web_app_archi.jpg %}
+{%comment%}
 [<img src="/attachment_files/qsg/web_app_archi.jpg" width="200" height="200">](/attachment_files/qsg/web_app_archi.jpg)
+{%endcomment%}
 
 {%endcolumn%}
 {%endsection%}
@@ -198,55 +191,42 @@ There are fully functional examples on GitHub available.{%try%}https://github.co
 
 {%section%}
 {%column%}
-Deploy http space
 
+
+{%popup /attachment_files/qsg/Deploy-session1.png | Deploy http Space%}
+{%comment%}
 [<img src="/attachment_files/qsg/Deploy-session1.png" width="120" height="100">](/attachment_files/qsg/Deploy-session1.png)
+{%endcomment%}
 {%endcolumn%}
 
 {%column%}
-Define deployment
-
-[<img src="/attachment_files/qsg/Deploy-session2.png" width="120" height="100">](/attachment_files/qsg/Deploy-session2.png)
+{%popup /attachment_files/qsg/Deploy-session2.png | Define deployment%}
 {%endcolumn%}
 
 {%column%}
-Inspect data grid
-
-[<img src="/attachment_files/qsg/Deploy-session3.png" width="120" height="100">](/attachment_files/qsg/Deploy-session3.png)
+{%popup /attachment_files/qsg/Deploy-session3.png | Inspect data grid%}
 {%endcolumn%}
 
 {%column%}
-Deploy war file
-
-[<img src="/attachment_files/qsg/Deploy-session4.png" width="120" height="100">](/attachment_files/qsg/Deploy-session4.png)
+{%popup /attachment_files/qsg/Deploy-session4.png | Deploy war file%}
 {%endcolumn%}
 {%endsection%}
 
 {%section%}
 {%column%}
-Select web URL
-
-[<img src="/attachment_files/qsg/Deploy-session51.png" width="120" height="100">](/attachment_files/qsg/Deploy-session51.png)
+{%popup /attachment_files/qsg/Deploy-session51.png | Select web URL%}
 {%endcolumn%}
 
 {%column%}
-Web page
-
-[<img src="/attachment_files/qsg/Deploy-session6.png" width="120" height="100">](/attachment_files/qsg/Deploy-session6.png)
-
+{%popup /attachment_files/qsg/Deploy-session6.png | Web page%}
 {%endcolumn%}
 
 {%column%}
-Inspect data grid
-
-[<img src="/attachment_files/qsg/Deploy-session65.png" width="120" height="100">](/attachment_files/qsg/Deploy-session65.png)
-
+{%popup /attachment_files/qsg/Deploy-session65.png | Inspect data grid%}
 {%endcolumn%}
 
 {%column%}
-Inspect session
-
-[<img src="/attachment_files/qsg/Deploy-session7.png" width="120" height="100">](/attachment_files/qsg/Deploy-session7.png)
+{%popup /attachment_files/qsg/Deploy-session7.png | Inspect session%}
 {%endcolumn%}
 {%endsection%}
 
@@ -256,7 +236,7 @@ Inspect session
 
 # Global HTTP Session Sharing
 {%section%}
-{%column width=70% %}
+{%column width=80% %}
 
 XAP lets you share HTTP session data across multiple data centers, multiple web server instances or different types of web servers. Here are few scenarios where HTTP session sharing is required:
 
@@ -271,9 +251,7 @@ XAP lets you share HTTP session data across multiple data centers, multiple web 
 
 {%endcolumn%}
 {%column width=20% %}
-
-[<img src="/attachment_files/qsg/httpSessionSharing1.png" width="200" height="200">](/attachment_files/qsg/httpSessionSharing1.png)
-
+{%popup /attachment_files/qsg/httpSessionSharing1.png %}
 {%endcolumn%}
 {%endsection%}
 
@@ -282,15 +260,13 @@ XAP lets you share HTTP session data across multiple data centers, multiple web 
 
 # Load Balancing
 {%section%}
-{%column width=70% %}
+{%column width=80% %}
 
 When deploying a highly available web site, usually a load balancer is used to load balance requests between at least two instances of a web containers that run the web applications. When using XAP to deploy web applications, running more than one instance of a web application becomes very easy. XAP comes with a built-in utility allowing you to dynamically update an Apache httpd web server load-balancing configuration, based on deployed web applications.
 
 {%endcolumn%}
 {%column width=20% %}
-
-[<img src="/attachment_files/qsg/httpd_lb_agent.jpg" width="200" height="200">](/attachment_files/qsg/httpd_lb_agent.jpg)
-
+{%popup /attachment_files/qsg/httpd_lb_agent.jpg %}
 {%endcolumn%}
 {%endsection%}
 
@@ -307,6 +283,6 @@ The integration dynamically creates and updates the mod_proxy_balancer configura
   <li class="next"><a href="./java-tutorial-part9.html">Big Data &rarr;</a></li>
 </ul>
 
-
+{%include lightbox.html%}
  
 

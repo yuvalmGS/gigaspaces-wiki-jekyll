@@ -24,7 +24,3 @@ end
  
 Liquid::Template.register_tag('youtube', Jekyll::VideoTag)
 
-# var thumb = "http://img.youtube.com/vi/"+ videoID +"/0.jpg"; //video thumbnail
-
-#    'gallery="youtubevideos" class="col-sm-3 col-md-3 col-xs-6"><img src="'+ thumb + '" class="img-responsive img-rounded">' +
-#           feedTitle  +'</a>';

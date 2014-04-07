@@ -12,13 +12,15 @@ weight: 350
 {%column width=10% %}
 ![transaction.png](/attachment_files/subject/war.png)
 {%endcolumn%}
-{%column width=90% %}
-XAP integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid. The integration is built on top of the Service Grid Processing Unit Container.
+{%column width=85% %}
+XAP's integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid. The integration is built on top of the Service Grid Processing Unit Container.
+{%endcolumn%}
+{%column width=5% %}
+{%popup /attachment_files/archi_web.jpg %}
 {%endcolumn%}
 {%endsection%}
 
-{%wbr%}
-
+<hr/>
 
 - [Overview](./web-application-support.html){%wbr%}
 Allows you to deploy a web application (WAR) into the Service Grid.
@@ -37,10 +39,10 @@ Provides dynamic load balancing integration with an Apache httpd server.
 
 - [Global HTTP Session Sharing](./global-http-session-sharing.html){%wbr%}
 Global HTTP Session Sharing allows transparent session replication between remote sites and session sharing between different application servers in real-time. The solution uses the Shiro Session Manager library
-
-{%wbr%}
+<hr/>
 
 #### Additional Resources
 
 [Global Http Session Sharing](http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2)
 
+{%include lightbox.html %}
