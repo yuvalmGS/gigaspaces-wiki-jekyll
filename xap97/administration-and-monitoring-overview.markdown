@@ -40,5 +40,12 @@ Logging Gateway for Administrative alerts.
 
 #### Additional Resources
 
+{%section%}
+{%column%}
 {%youtube j3FfHBqtj1o | Admin API%}
 {%include lightbox.html %}
+{%endcolumn%}
+{%column%}
+{%youtube 2jI6Z1z4UrU | Administrative Events%}
+{%endcolumn%}
+{%endsection%}
