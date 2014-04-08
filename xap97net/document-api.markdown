@@ -49,8 +49,8 @@ ISpaceProxy spaceProxy = ... //Obtain a space proxy
 SpaceTypeDescriptorBuilder typeBuilder = new SpaceTypeDescriptorBuilder("Product");
 typeBuilder.SetIdProperty("CatalogNumber");
 typeBuilder.SetRoutingProperty("Catagory");
-typeBuilder.AddPathIndex("Name");
-typeBuilder.AddPathIndex("Price", SpaceIndexType.Extended);
+typeBuilder.AddPropertyIndex("Name");
+typeBuilder.AddPropertyIndex("Price", SpaceIndexType.Extended);
 ISpaceTypeDescriptor typeDescriptor = typeBuilder.Create();
 // Register type descriptor:
 spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
