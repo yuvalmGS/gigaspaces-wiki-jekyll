@@ -6,9 +6,8 @@ parent: network.html
 weight: 500
 ---
 
-{% summary %}Configuring XAP for a machine with multiple network cards. By default all network cards are used; you can limit XAP to specific ones.{% endsummary %}
 
-# Overview
+
 
 XAP can be configured for a multiple network-card environment. For security reasons, network administrators may choose to configure their network with limited access of one card open to outside connections, and another card for internal connections. The default network card configuration is not always set to the network card used for internal connection, and thus needs to be configured.
 

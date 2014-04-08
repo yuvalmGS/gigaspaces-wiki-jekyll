@@ -6,9 +6,9 @@ parent: network.html
 weight: 200
 ---
 
-{% summary %}Enabling multicast on Linux and windows. {% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 Multicast is the delivery of information to a group of destinations simultaneously, using the most efficient strategy to deliver messages over each link of the network only once, and create copies only when the links to the destinations split.
 

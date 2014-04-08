@@ -6,7 +6,7 @@ parent: gigaspaces-management-center.html
 weight: 100
 ---
 
-{% summary %}Using the **File** menu, **Container** menu, **Space** menu, **Cluster** menu, **Windows** menu, **Help** menu, button toolbar, and address bar.{% endsummary %}
+{% summary %} {% endsummary %}
 
 # File Menu
 

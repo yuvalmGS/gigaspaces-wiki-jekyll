@@ -6,9 +6,9 @@ parent: gigaspaces-management-center.html
 weight: 300
 ---
 
-{% summary %}Using the Space Container Configuration tab of a container node in the Grid Tree, and tool buttons relevant for containers.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 {%section%}
 {%column width=10%}

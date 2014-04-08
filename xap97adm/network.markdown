@@ -17,7 +17,7 @@ In this guide we will show you how to configure the network including configurin
 {%endcolumn%}
 {%endsection%}
 
-{%wbr%}
+<hr/>
 
 
 
@@ -41,3 +41,5 @@ Settings to enable functioning over a Firewall.
 
 - [Controlling Port Usage](./network-ports.html){%wbr%}
 Default ports used by the space, container, and Jini Lookup Service and how to configure them.
+
+<hr/>

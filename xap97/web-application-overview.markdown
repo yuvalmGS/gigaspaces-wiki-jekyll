@@ -12,11 +12,8 @@ weight: 350
 {%column width=10% %}
 ![transaction.png](/attachment_files/subject/war.png)
 {%endcolumn%}
-{%column width=85% %}
+{%column width=90% %}
 XAP's integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid. The integration is built on top of the Service Grid Processing Unit Container.
-{%endcolumn%}
-{%column width=5% %}
-{%popup /attachment_files/archi_web.jpg %}
 {%endcolumn%}
 {%endsection%}
 

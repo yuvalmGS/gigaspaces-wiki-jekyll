@@ -16,7 +16,8 @@ weight: 700
 The XAP web management console is a web application which was designed to enable XAP users to quickly understand the state of a running XAP cluster and monitor the running components, i.e. physical hosts, JVMs and deployed processing units.
 {%endcolumn%}
 {%endsection%}
-{%wbr%}
+
+<hr/>
 
 - [Web Management Console](./web-management-console-console.html){%wbr%}
 The web management console is a new user interface for XAP allowing users to deploy, manage and monitor their Processing Units and Applications
@@ -39,7 +40,7 @@ Physical resources
 - [Data Grid View](./web-management-data-grid-view.html){%wbr%}
 Cluster wide information about your data grids including: data queries, metrics, metadata etc.
 
-{%wbr%}
+<hr/>
 
 #### Additional Resources
 {%youtube 9nFkfj2o5hk | Web Management Console%}

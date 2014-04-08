@@ -6,7 +6,9 @@ parent: network-multicast.html
 weight: 300
 ---
 
-{% summary %}Used to determine whether multicast is available.{% endsummary %}
+{% summary %}{% endsummary %}
+
+Used to determine whether multicast is available.
 
 # Syntax
 

@@ -6,7 +6,7 @@ parent: gigaspaces-management-center.html
 weight: 200
 ---
 
-{% summary %}Using the Grid Tree and the Configuration Panel on the right. {% endsummary %}
+{% summary %} {% endsummary %}
 
 # Grid Tree Panel
 

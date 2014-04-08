@@ -6,7 +6,7 @@ parent: network-multi-nic.html
 weight: 100
 ---
 
-{% summary %}How to configure XAP for Multiple Network Interface Cards.{% endsummary %}
+{% summary %} {% endsummary %}
 
 {% anchor 1 %}
 

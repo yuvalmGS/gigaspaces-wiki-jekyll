@@ -6,7 +6,6 @@ parent: gigaspaces-management-center.html
 weight: 50
 ---
 
-{% summary section %}XAP Management Center is a GUI that allows you to view spaces, containers, and clusters and configure them, using the Space Browser tab. You can also deploy and manage services using the Deployments tab.{% endsummary %}
 
 {% note title=Using the XAP Management Center in production and large-scale environments %}
 
@@ -14,7 +13,7 @@ weight: 50
 - With relatively large amount of GSCs , Services or Data-Grid partitions (over 20 units) it is recommended to increase the heap size of the XAP Management Center to 1G (-Xmx1g).
 {% endnote %}
 
-# Overview
+
 
 {% include /COM/about-gigaspaces-management-center.markdown %}
 

@@ -6,9 +6,11 @@ parent: none
 weight: 1000
 ---
 
+{%wbr%}
 
 In this guide you will find useful information on how to troubleshoot your XAP application. Common user issues, failure detection and tools are presented.
 
+<hr/>
 
 
 - [Common user Issues](./troubleshooting-common-user-issues.html){%wbr%}
@@ -25,3 +27,5 @@ About failure detection, reducing failure detection time, and relevant parameter
 
 - [Tools](./troubleshooting-tools.html){%wbr%}
 Troubleshooting tools for testing a running product and environmental issues.
+
+<hr/>
