@@ -200,12 +200,12 @@ public void writeUsers() {
      User[] users = new User[2];
      users[0] = new User();
      users[0].setId(new Long(1));
-     users[0].setName("John Dow");
+     users[0].setName("John Doe");
      users[0].setStatus(EAccountStatus.ACTIVE);
 
      users[1] = new User();
      users[1].setId(new Long(2));
-     users[1].setName("John Dow");
+     users[1].setName("John Doe");
      users[1].setStatus(EAccountStatus.ACTIVE);
 
      space.writeMultiple(users);
@@ -237,7 +237,7 @@ When you want to update only a couple of attributes on an object in space, you c
 public void ChangeSet() {
       User user = new User();
       user.setId(new Long(1));
-      user.setName("John Dow");
+      user.setName("John Doe");
       user.setStatus(EAccountStatus.ACTIVE);
       space.write(user);
 
@@ -287,11 +287,11 @@ Template matching (match by example) is a simple way to query the space. The tem
 
 The following examples assume the default constructor of the User class initializes all its attributes to null.
 
-Read an entry of type User where the name is 'John Dow':
+Read an entry of type User where the name is 'John Doe':
 {%highlight java  %}
 public User findUserByTemplate() {
      User user = new User();
-     user.setName("John Dow");
+     user.setName("John Doe");
      return space.read(user);
 }
 {%endhighlight%}
@@ -313,17 +313,17 @@ The SQLQuery class is used to query the space with an SQL-like syntax. The query
 
 {%highlight java  %}
 public User[] sqlFindUsersByName() {
-     SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Dow'");
+     SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Doe'");
      return space.readMultiple(query);
 }
 
 public User[] sqlFindUsersByNameAndCreditLimit() {
-     SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Dow' AND creditLimit > 1000");
+     SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Doe' AND creditLimit > 1000");
      return space.readMultiple(query);
 }
 
 public User[] sqlFindUsersByNameAndIds() {
-     SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Dow' AND id IN(1L,3L,5L)");
+     SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Doe' AND id IN(1L,3L,5L)");
      return space.readMultiple(query);
 }
 {%endhighlight%}
@@ -335,13 +335,13 @@ You can separate the values for the SQL criteria expression by placing a '?' sym
 For example:
 {%highlight java  %}
 public User[] sqlParameterFindUsersByName() {
-     SQLQuery<User> query = new SQLQuery<User>(User.class, "name = ?").setParameter(1, "John Dow");
+     SQLQuery<User> query = new SQLQuery<User>(User.class, "name = ?").setParameter(1, "John Doe");
      return space.readMultiple(query);
 }
 
 public User[] sqlParameterFindUsersByNameAndCreditLimit() {
      SQLQuery<User> query = new SQLQuery<User>(User.class,"name = ? AND creditLimit > ?");
-     query.setParameter(1, "John Dow");
+     query.setParameter(1, "John Doe");
      query.setParameter(2, new Double(1000));
      return space.readMultiple(query);
 }
@@ -382,7 +382,7 @@ In this example below we are just interested in the name attribute of the user o
 {%highlight java  %}
 public User[] findUsersByNameAndProjection() {
      SQLQuery<User> query = new SQLQuery<User>(User.class,"name = ?");
-     query.setParameter(1, "John Dow");
+     query.setParameter(1, "John Doe");
      query.setProjections("name");
 
      return space.readMultiple(query);
@@ -436,7 +436,7 @@ public User takeUserById() {
 
 public User takeUserByTemplate() {
    User template = new User();
-   template.setName("John Dow");
+   template.setName("John Doe");
    return space.take(template);
 }
 
@@ -461,7 +461,7 @@ public void clearUserByTemplate() {
 
 public void clearUserBySQL() {
      SQLQuery<User> query = new SQLQuery<User>(User.class, "name = ?");
-     query.setParameter(1, "John Dow");
+     query.setParameter(1, "John Doe");
      space.clear(query);
 }
 
@@ -538,7 +538,7 @@ public class User {
 }
 
 // Here is a query that will use this index
-SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Dow' AND creditLimit > 1000");
+SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Doe' AND creditLimit > 1000");
 {%endhighlight%}
 
 There are several additional indexing options available. For example you can index nested attributes, Nested Maps, Collections, nested attributes within a Collection, free text search and others.
