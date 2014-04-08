@@ -18,7 +18,7 @@ GigaSpaces supports VMWare vSphere 5+ running the following guest operating syst
 - Solaris 10
 
 {%warning%}
-SUSE linux is not supported, due to the instability of its network support layer.
+SUSE-10 sp3 is not recommended, due to the instability of its network support layer.
 {%endwarning%}
 
 # Configuration
