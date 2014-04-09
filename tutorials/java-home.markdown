@@ -7,7 +7,7 @@ parent: xap-tutorials.html
 ---
 
 
-{%summary%}This tutorial will introduce you to the basic features of GigaSpace's XAP platform.{%endsummary%}
+{%summary%}This tutorial will introduce you to the basic features of GigaSpaces' XAP platform.{%endsummary%}
 
 
 
