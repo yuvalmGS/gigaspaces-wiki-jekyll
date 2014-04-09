@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  9.7 Patches
+title:  Patches
 categories: RELEASE_NOTES
 parent: xap97.html
 weight: 300

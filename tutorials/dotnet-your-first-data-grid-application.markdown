@@ -6,8 +6,10 @@ parent: dotnet-quick-start-guide.html
 weight: 200
 ---
 
-{% summary page %}This tutorial explains how to deploy and use a XAP [Data Grid](/product_overview/the-in-memory-data-grid.html) from a .NET client application {% endsummary %}
- 
+{% summary  %}{% endsummary %}
+
+
+{%comment%}
 # Overview
 
 In this tutorial we will:
@@ -15,7 +17,12 @@ In this tutorial we will:
 1. Download and install **XAP.NET**.
 2. Deploy a Data Grid.
 3. Write code that connects to the Data Grid and interacts with it.
+{%endcomment%}
 
+This tutorial explains how to deploy and use an XAP [Data Grid](/product_overview/the-in-memory-data-grid.html) from a .NET client application.
+
+
+{%comment%}
 {% tip %} This tutorial contains code snippets in [C#](http://msdn.microsoft.com/en-us/library/kx37x362(v=vs.100).aspx), but naturally any other .NET language ([Visual Basic](http://msdn.microsoft.com/en-us/library/2x7h1hfk(v=vs.100).aspx), [C++/CLI](http://msdn.microsoft.com/en-us/library/xey702bw(v=vs.100).aspx), etc.) is supported as well.{%endtip%}
 
 # Download and Install XAP
@@ -27,8 +34,10 @@ Getting XAP.NET is simple: download it from the [Current Releases](http://www.gi
 To install, simply double-click the `{{ site.latest_msi_filename }}` you've downloaded and follow the wizard to complete the installation. By default, the product will be installed into `C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}`. 
 
 # Deploy a Data Grid
+{%endcomment%}
 
-### Starting a Service Grid
+
+# Starting a Service Grid
 
 A Data Grid requires a [Service Grid](/product_overview/service-grid.html) to host it. A service grid is composed of one or more machines (service grid nodes) running a [Service Grid Agent](/product_overview/service-grid.html#gsa) (or `GSA`), and provides a framework to deploy and monitor applications on those machines, in our case the Data Grid.
 
@@ -38,7 +47,7 @@ In this tutorial you'll launch a single node service grid on your machine. To st
 XAP provides a web-based tool for monitoring and management. From the `bin` folder start `Gs-webui.exe`, then browse to `http://localhost:8099`. Click the 'Login' button and take a look at the *Dashboard* and *Hosts* tabs - you'll see the service grid components created on your machine.
 {% endtip %}
 
-### Deploying the Data Grid
+# Deploying the Data Grid
 
 The Data grid can be deployed from command line, from the web management tool or via an Administration API. In this tutorial we'll use the command line.
 
@@ -56,6 +65,7 @@ If you're using the web console mentioned above to see what's going on, you'll s
 
 # Interacting with the Data Grid
 
+{%comment%}
 ### Setting up your IDE
 
 Launch Visual Studio, create a new C# *Console Application* and add a reference to **GigaSpaces.Core.dll** from `C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}\NET v4.0.30319\Bin`. If you're new to Visual Studio and .NET, follow these instructions:
@@ -73,6 +83,8 @@ Launch Visual Studio, create a new C# *Console Application* and add a reference 
 {% endgcloak %}
 
 {%warning%} If you're using XAP.NET x64, note that the [default platform for Console Applications is x86](http://connect.microsoft.com/VisualStudio/feedback/details/455103/new-c-console-application-targets-x86-by-default), and you must [change it to x64](http://msdn.microsoft.com/en-us/library/ms185328.aspx).{%endwarning%}
+
+{%endcomment%}
 
 ### Connecting to the Grid
 

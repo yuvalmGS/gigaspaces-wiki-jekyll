@@ -8,7 +8,7 @@ parent: net-home.html
 
 
 
-{%summary%}This tutorial will introduce you to the basic features of the GigaSpaces XAP platform.{%endsummary%}
+{%summary%}This part of the tutorial will introduce you to the basic features of the GigaSpaces XAP platform.{%endsummary%}
 
 
 {%section%}

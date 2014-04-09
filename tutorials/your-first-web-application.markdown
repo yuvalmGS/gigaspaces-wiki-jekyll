@@ -27,9 +27,11 @@ parent: xap-tutorials.html
 
 ## Before You Begin - Set Up Your Environment
 
-If you would like to build and run the tutorial sample application, [download GigaSpaces and set up your Eclipse development environment](./setting-up-your-ide-to-work-with-gigaspaces.html).
-If you also wish to utilize the GigaSpaces XAP load balancing agent, you should [download](http://httpd.apache.org/download.cgi) and install the [Apache 2.2 Http Server](http://httpd.apache.org/).
+{%panel%}
+Follow these [instructions](./installation-guide.html#java-installation) to download and install the latest version of XAP.
 
+If you also wish to utilize the GigaSpaces XAP load balancing agent, you should [download](http://httpd.apache.org/download.cgi) and install the [Apache 2.2 Http Server](http://httpd.apache.org/).
+{%endpanel%}
 {% comment %}
 =============================================================
          Quick Start Guide Steps

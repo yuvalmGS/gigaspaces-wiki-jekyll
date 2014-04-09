@@ -1,43 +1,47 @@
 ---
 layout: post
-title:  Your First XTP Application
+title:  Your First XAP Application
 categories: TUTORIALS
 parent: dotnet-quick-start-guide.html
-weight: 300
+weight: 400
 ---
 
+{% summary  %}  {% endsummary %}
 
-
-{% summary  %}This example demonstrates basic usage of a .NET Processing Unit. The example contains two Processing Unit Containers; one that feeds data objects into the system, and another that reads these objects and processes them.{% endsummary %}
-
-{% section %}
-
-{% column width=7% %}
-
-{% endcolumn %}
-
-{% column width=86% %}
-
-{% align center %}||![wiki_icon_folder.gif](/attachment_files/dotnet/wiki_icon_folder.gif)||Example Root|`<XAP Root>\Examples\ProcessingUnit` |
-{% endalign %}
-
-{% endcolumn %}
-
-{% column width=7% %}
-
-{% endcolumn %}
-
-{% endsection %}
-
-# Overview
+{%comment%}
+{%panel%}
+Follow these [instructions](./installation-guide.html#dotnet-installation) to download and install the latest version of XAP.
+{%endpanel%}
+{%endcomment%}
 
 This example demonstrates a simple processing unit architecture project -- a complete SBA application that can easily scale. It demonstrates a usage of XAP's SBA related components, such as [Event Listener Container]({%latestneturl%}/event-processing.html), [Space Based Remoting]({%latestneturl%}/space-based-remoting.html) and the [Basic Processing Unit Container]({%latestneturl%}/basic-processing-unit-container.html).
 
+You can find the example in the distribution:
+
+{% section %}
+{% column width=7% %}
+{% endcolumn %}
+{% column width=86% %}
+{% align center %}||![wiki_icon_folder.gif](/attachment_files/dotnet/wiki_icon_folder.gif)||Example Root|`<XAP Root>\Examples\ProcessingUnit` |
+{% endalign %}
+{% endcolumn %}
+{% column width=7% %}
+{% endcolumn %}
+{% endsection %}
+
 # Architecture
 
+{%section%}
+{%column width=90% %}
 This example includes a module that is deployed to the grid, and a domain model that consists of `Data` objects. The [DataFeeder](#datafeeder) module runs within a [Basic Processing Unit Container]({%latestneturl%}/basic-processing-unit-container.html) and writes `Data` objects with raw data into the remote space. The space is actually embedded within the other Processing Unit Container, which runs the [DataProcessor](#dataprocessor) module.
+{%endcolumn%}
+{%column width=10% %}
+{%popup /attachment_files/dotnet/dataexample architecture.jpg%}
+{%endcolumn%}
+{%endsection%}
 
 The `DataProcessor` service takes the new `Data` objects, processes the raw data and writes them back to the space.
+
 
 The example solution is based on three projects:
 
@@ -45,7 +49,7 @@ The example solution is based on three projects:
 2. Feeder - holds the DataFeeder processing unit logic.
 3. Processor - holds the DataProcessor processing unit logic and related classes.
 
-![dataexample architecture.jpg](/attachment_files/dotnet/dataexample architecture.jpg)
+
 
 ## Application Workflow
 
@@ -60,33 +64,15 @@ The only object in our model is the `Data` object.
 [SpaceClass]
 public class Data
 {
-[..]
-  /// <summary>
-  /// Gets the data type, used as the routing index inside the cluster
-  /// </summary>
+  // Gets the data type, used as the routing index inside the cluster
   [SpaceRouting]
-  public Nullable<int> Type
-  {
-    get { return _type; }
-    set { _type = value; }
-  }
-  /// <summary>
+  public Nullable<int> Type {set; get;};
+
   /// Gets the data info
-  /// </summary>
-  public string Info
-  {
-    get { return _info; }
-    set { _info = value; }
-  }
-  /// <summary>
+  public string Info {set; get;}
+
   /// Gets or sets the data processed state
-  /// </summary>
-  public bool Processed
-  {
-    get { return _processed; }
-    set { _processed = value; }
-  }
-[..]
+  public bool Processed  {set; get;}
 }
 {% endhighlight %}
 
@@ -113,18 +99,12 @@ In this example the processor is colocated with the space that it needs to proce
 {% inittab dataprocessor|top %}
 {% tabcontent Code %}
 {% highlight csharp %}
-/// <summary>
 /// This class contain the processing logic, marked as polling event driven.
-/// </summary>
 [PollingEventDriven(Name = "DataProcessor", MinConcurrentConsumers = 1, MaxConcurrentConsumers = 4)]
 [SpaceRemotingService]
 internal class DataProcessor : IProcessorStatisticsProvider
 {
-  [..]
-
-  /// <summary>
-  /// Gets an unprocessed data
-  /// </summary>
+  // Gets an unprocessed data
   [EventTemplate]
   public Data UnprocessedData
   {
@@ -135,16 +115,9 @@ internal class DataProcessor : IProcessorStatisticsProvider
       return template;
     }
   }
-
-  /// <summary>
-  /// Fake delay that represents processing time
-  /// </summary>
+  // Fake delay that represents processing time
   private const int ProcessingTime = 100;
-  /// <summary>
-  /// Receives a data and process it
-  /// </summary>
-  /// <param name="data">Data received</param>
-  /// <returns>Processed data</returns>
+
   [DataEventHandler]
   public Data ProcessData(Data data)
   {
@@ -158,11 +131,9 @@ internal class DataProcessor : IProcessorStatisticsProvider
       return data;
   }
 
-  [..]
-
   public int GetProcessObjectCount(int type)
   {
-      [..]
+    .....
   }
 }
 {% endhighlight %}
@@ -215,18 +186,11 @@ The data feeder is in charge of feeding the cluster with unprocessed data every 
 {% tabcontent Code %}
 
 {% highlight csharp %}
-/// <summary>
 /// Data feeder feeds new data to the space that needs to be processed
-/// </summary>
 [BasicProcessingUnitComponent(Name = "DataFeeder")]
 public class DataFeeder
 {
-  [..]
-
-  /// <summary>
   /// Starts the feeding process once the container is initialized.
-  /// </summary>
-  /// <param name="container">Managing container.</param>
   [ContainerInitialized]
   private void StartFeeding(BasicProcessingUnitContainer container)
   {
@@ -243,10 +207,7 @@ public class DataFeeder
     //Starts the working thread
     _feedingThread.Start();
   }
-
-  ///<summary>
   ///Destroys the processing unit, any allocated resources should be cleaned up in this method
-  ///</summary>
   public void Dispose()
   {
     //Set the started state to false
@@ -254,10 +215,7 @@ public class DataFeeder
     //Wait for the working thread to finish its work
     _feedingThread.Join(_feedDelay * 5);
   }
-
-  /// <summary>
   /// Generates and feeds data to the space
-  /// </summary>
   private void Feed()
   {
     try
@@ -410,3 +368,4 @@ processorContainerHost.Dispose();
 This will host the two processing units, processor and feeder, which reside in the specified deployment directory.
 When the host is created the hosted processing units are immidiatly created and initialized, once the host is disposed it will dispose of the hosted processing unit container.
 
+{%include lightbox.html%}

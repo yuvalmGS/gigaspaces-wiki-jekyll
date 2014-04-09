@@ -24,7 +24,7 @@ Space, GigaSpaces API, Processing Unit, Polling Container, Running inside the ID
 
 We recommend that you go through the following steps before you begin this tutorial:
 
-1. [Download XAP and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html)
+1. [Download XAP and set up your development environment](./installation-guide.html)
 to work with XAP - this is needed to run the sample application described in this tutorial.
 
 1. [Step One - Using Processing Units For Scaling](./step-one---using-processing-units-for-scaling.html)
@@ -357,7 +357,7 @@ Next, we compile and run the sample application
 
 ![Play arrow green.bmp](/attachment_files/Play arrow green.bmp) **Steps to run the application inside Eclipse IDE:**
 
-If you haven't already done so,[download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html)
+If you haven't already done so,[download GigaSpaces and set up your development environment](./installation-guide.html)
 \- This is needed for running the tutorial sample application.
 {% anchor JImporting Project to the IDE %} **Importing the project into Eclipse**
 

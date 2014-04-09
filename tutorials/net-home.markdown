@@ -3,11 +3,11 @@ layout: post
 title:  Full .NET Tutorial
 categories: TUTORIALS
 parent: dotnet-quick-start-guide.html
-weight: 400
+weight: 300
 ---
 
 
-{%summary%}This tutorial will introduce you to the basic features of GigaSpace's XAP platform.{%endsummary%}
+
 
 This Tutorial provides a high-level overview of the GigaSpaces XAP platform. Hands on examples are provided to demonstrate the core concepts and API's. The primary people who can benefit from this tutorial, are architects and developers who wish to build scaled-out applications with GigaSpaces XAP.
 
@@ -32,18 +32,6 @@ Here is the simplified Class Model:
 
 
 You can download all examples presented here from [GitHub](https://github.com/Gigaspaces/xapnet-tutorial). Feel free to clone, fork and contribute to the tutorial code.
-
-# Let's get started
-
-{%panel%}
-- Download the latest XAP release from the [downloads page](http://www.gigaspaces.com/xap-download)
-- Install the distribution
-- Start Visual Studio
-- Create a new project
-- Include  `XAP_HOME/XAP.NT..xx/NET..vxx/Bin/GigaSpacesCore.dll` in the References
-{%endpanel%}
-
-
 
 
 # Tutorial Trail

@@ -6,7 +6,7 @@ weight: 500
 parent: your-first-xtp-application.html
 ---
 
-{% compositionsetup %}
+
 
 {% comment %}
 --------------------------------------------------------------------------
@@ -54,7 +54,7 @@ parent: your-first-xtp-application.html
 
 We recommend that you go through the following steps before starting this tutorial:
 
-1. [Download GigaSpaces and Set Up Your Development Environment](./setting-up-your-ide-to-work-with-gigaspaces.html) to work with GigaSpaces - this is needed for running the tutorial sample application.
+1. [Download GigaSpaces and Set Up Your Development Environment](./installation-guide.html) to work with GigaSpaces - this is needed for running the tutorial sample application.
 1. [Step One - Using Processing Units for Scaling](./step-one---using-processing-units-for-scaling.html) - a short introduction to what a Processing Unit is - **Recommended**.
 1. [Step Two - Creating the Hello World Application](./step-two---creating-the-hello-world-application.html) - create and run a Processing Unit.
 1. [Step Three - Deploying the Hello World onto the Service Grid](./step-three---deploying-onto-the-service-grid.html) - deploy the Processing Unit onto the Service Grid and monitor it at runtime.
@@ -258,7 +258,7 @@ Next, we show you how to start the service grid components, by starting a grid s
 
 **Install GigaSpaces**
 
-{% exclamation %} After going through the previous tutorial [Step Two - Creating the Hello World Application](./step-two---creating-the-hello-world-application.html), you should have GigaSpaces installed and the Hello World sample application environment set. If not, please [download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html) to work with GigaSpaces - this is needed to run the tutorial sample application.
+{% exclamation %} After going through the previous tutorial [Step Two - Creating the Hello World Application](./step-two---creating-the-hello-world-application.html), you should have GigaSpaces installed and the Hello World sample application environment set. If not, please [download GigaSpaces and set up your development environment](./installation-guide.html) to work with GigaSpaces - this is needed to run the tutorial sample application.
 
 {% anchor Start Service Grid %}
 

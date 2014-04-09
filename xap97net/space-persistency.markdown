@@ -2,31 +2,29 @@
 layout: post
 title:  Space Persistency
 categories: XAP97NET
-parent: programmers-guide.html
-weight: 2500
+parent: space-persistency-overview.html
+weight: 100
 ---
 
 
 
+{% summary  %}{% endsummary %}
+
+{%comment%}
 {% summary  %}Using the GigaSpaces External Data Source interface to persist data stored in the space{% endsummary %}
 
 # Overview
+{%endcomment%}
 
-GigaSpaces [Space Persistency]({% currentjavaurl %}/space-persistency.html) interface is the key middleware connection link for loading and storing data to and from persistent data sources.
 
-.NET persistency is a GigaSpaces implementation on top of Java `SpaceDataSource` and `SpaceSynchronizationEndpoint` classes.
+The XAP persistence interface is the key middleware connection link for loading and storing data to and from persistent data sources.
 
-{% note %}
-Before you begin, it is recommended to read the [Space Persistency]({% currentjavaurl %}/space-persistency.html) section.
-{%endnote%}
 
 {% tip %}
-For a fully running example using the Mirror Service see `GigaSpaces Root\XAP.NET\NET vX\Examples\StockSba` folder.
+For a fully running example using the Mirror Service see `XAP Root\XAP.NET\NET vX\Examples\StockSba` folder.
 {% endtip %}
 
-# .NET Specific Settings
 
-{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 ## Creating a Space with ExternalDataSource
 
@@ -63,14 +61,14 @@ ISpaceProxy persistentSpace = GigaSpacesFactory.FindSpace("/./mySpace", spaceCon
 {% endhighlight %}
 
 {% note %}
-Before using the `ExternalDataSource.NHibernate` practice, compile it by calling `<GigaSpaces Root>\dotnet\practices\ExternalDataSource\NHibernate\build.bat`.
+Before using the `ExternalDataSource.NHibernate` practice, compile it by calling `<XAP Root>\dotnet\practices\ExternalDataSource\NHibernate\build.bat`.
 {%endnote%}
 
 {% info %}
 You can create your own NHibernate session factory and pass it to the `NHibernateExternalDataSource` constructor. In this case, there's no need to use `SpaceConfig.ExternalDataSourceConfig.CustomProperties`.
 {%endinfo%}
 
-{% refer %} For a demonstration of how to start a partitioned-sync2backup cluster with asynchronous NHibernate persistency, refer to the [NHibernate External Data Source](./nhibernate-external-data-source.html) section.{% endrefer %}
+{% refer %} For a demonstration of how to start a partitioned-sync2backup cluster with asynchronous NHibernate persistency, refer to the [NHibernate External Data Source](./hibernate-space-persistency.html) section.{% endrefer %}
 {% endtabcontent %}
 
 {% tabcontent Custom SQL Data Source Implementation %}
@@ -118,16 +116,16 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size",
 
 {% refer %}To enable the .NET `ExternalDataSource` adapter logging, refer to the [GigaSpaces Logging]({% currentjavaurl %}/logging-overview.html) section.{% endrefer %}
 
-{% endtoczone %}
+
 
 # Creating Custom ExternalDataSource Implementation
 
 To create a custom implementation, implement the `GigaSpaces.Core.Persistency.ISqlDataSource` interface.
 
-{% warning %}
+{% comment %}
 Before creating a custom implementation, read the following [considerations]({% currentjavaurl %}/space-data-source-api.html).
-{%endwarning%}
+{%endcomment%}
 
 {% note %}
-See an example for the NHibernate implementation under `<GigaSpaces Root>\dotnet\practices\ExternalDataSource\NHibernate`.
+See an example for the NHibernate implementation under `<XAP Root>\dotnet\practices\ExternalDataSource\NHibernate`.
 {%endnote%}

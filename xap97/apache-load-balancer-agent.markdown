@@ -103,9 +103,9 @@ Allow from 127.0.0.1
 
 {% endtip %}
 
-{% warning %}
+{%comment %}
 When running the Apache Load Balancer and the agent on Windows, please make sure you run the Apache Load Balancer Agent from a [windows cmd started as an administrator user](http://www.lytebyte.com/2008/10/22/how-to-run-as-administrator-in-vista-command-line). Starting it as a normal user will not allow the Apache Load Balancer Agent to reset the Apache Load Balancer successfully.
-{% endwarning %}
+{% endcomment %}
 
 {: .table .table-bordered}
 |Command Line parameter|Description|Default Value|

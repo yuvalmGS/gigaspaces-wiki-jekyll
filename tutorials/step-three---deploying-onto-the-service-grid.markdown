@@ -66,7 +66,7 @@ parent: your-first-xtp-application.html
 
 We recommend that you go through the following steps before starting this tutorial:
 
-1. [Download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html) - this is needed to run the tutorial sample application.
+1. [Download GigaSpaces and set up your development environment](./installation-guide.html) - this is needed to run the tutorial sample application.
 1. [Step One - Using Processing Units For Scaling](./step-one---using-processing-units-for-scaling.html) - a short introduction to how processing units are used for scaling your application - **Recommended**.
 1. [Step Two - Creating the Hello World Application](./step-two---creating-the-hello-world-application.html) - Create and run your first Processing Unit.
 
@@ -270,7 +270,7 @@ In some tutorials this part can be called Build/Build and Package
 
 **Install GigaSpaces**
 
-{% exclamation %} After going through the previous tutorial [Step Two - Creating the Hello World Application](./step-two---creating-the-hello-world-application.html), you should have GigaSpaces installed and the Hello World sample application environment set. If not, please [download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html) to work with GigaSpaces - this is needed to run the tutorial sample application.
+{% exclamation %} After going through the previous tutorial [Step Two - Creating the Hello World Application](./step-two---creating-the-hello-world-application.html), you should have GigaSpaces installed and the Hello World sample application environment set. If not, please [download GigaSpaces and set up your development environment](./installation-guide.html) to work with GigaSpaces - this is needed to run the tutorial sample application.
 
 {% anchor Start Service Grid %}
 

@@ -6,9 +6,11 @@ weight: 200
 parent: xap-tutorials.html
 ---
 
-{% summary page %}This tutorial explains how to deploy and use a XAP [Data Grid](/product_overview/the-in-memory-data-grid.html) from a Java client application {% endsummary %}
- 
-# Overview
+{%summary%}{%endsummary%}
+
+This tutorial explains how to deploy and use a XAP [Data Grid](/product_overview/the-in-memory-data-grid.html) from a Java client application.
+
+{%comment%}
 
 In this tutorial we will:
 
@@ -24,20 +26,21 @@ Installing XAP is just as easy - unzip it into a directory of your choice:
 
 * On Windows, you might unzip it into `c:\tools\`, which will create `c:\tools\{{ site.latest_gshome_dirname }}`.
 * On Unix, you might unzip it into `/usr/local/`, which will create `/usr/local/{{ site.latest_gshome_dirname }}`. You'll also need to grant execution permissions to the scripts in the `bin` folder.
+{%endcomment%}
 
-# Deploy a Data Grid
 
-### Starting a Service Grid
+
+# Starting a Service Grid
 
 A Data Grid requires a [Service Grid](/product_overview/service-grid.html) to host it. A service grid is composed of one or more machines (service grid nodes) running a [Service Grid Agent](/product_overview/service-grid.html#gsa) (or `GSA`), and provides a framework to deploy and monitor applications on those machines, in our case the Data Grid.
 
 In this tutorial you'll launch a single node service grid on your machine. To start the service grid, simply run the `gs-agent` script from the product's `bin` folder.
 
 {% tip title=Optional - The Web Console %}
-XAP provides a web-based tool for monitoring and management. From the `bin` folder start the `gs-webui` script, then browse to `[localhost:8099](http://localhost:8099)`. Click the 'Login' button and take a look at the *Dashboard* and *Hosts* tabs - you'll see the service grid components created on your machine.
+XAP provides a web-based tool for monitoring and management. From the `bin` folder start the `gs-webui` script, then browse to `localhost:8099`. Click the 'Login' button and take a look at the *Dashboard* and *Hosts* tabs - you'll see the service grid components created on your machine.
 {% endtip %}
 
-### Deploying the Data Grid
+# Deploying the Data Grid
 
 The Data grid can be deployed from command line, from the web management tool or via an Administration API. In this tutorial we'll use the command line.
 
@@ -60,15 +63,12 @@ This command deploys a Data Grid (aka space) called **myGrid** with 2 partitions
 
 If you're using the web console mentioned above to see what's going on, you'll see the data grid has been deployed.
  
-{%info%} Note that the Lite edition is limited to a single partition - if you're using it type `total_members=1,1` instead.{%endinfo%}
+{%info%}
+Note that the Lite edition is limited to a single partition - if you're using it type `total_members=1,1` instead.
+{%endinfo%}
 
 # Interacting with the Data Grid
 
-### Setting up you IDE
-
-Open your favorite java IDE (Eclipse, IntelliJ IDEA, etc), Create a new project, and add all the jars from `{{ site.latest_gshome_dirname }}/lib/required` to the project's classpath.
-
-{%info%} For more info see [Setting Classpath]({%currentjavaurl%}/setting-classpath.html).{%endinfo%}
 
 ### Connecting to the Grid
 
@@ -115,8 +115,10 @@ public class Person {
 
 Note that we've annotated the `ssn` property's getter with a custom XAP annotation (`@SpaceId`) to mark it as the entry'd ID.
 
-{%infosign%} The full source code of `Person` is available [at the end](#source) of this tutorial.
- 
+{%info%}
+The full source code of `Person` is available [at the end](#source) of this tutorial.
+{%endinfo%}
+
 ### Interacting with the grid
 
 Now that we have a `GigaSpace` instance connected to our grid and a POJO which can be stored, we can store entries in the grid using the `write()` method and read them using various `read()` methods:

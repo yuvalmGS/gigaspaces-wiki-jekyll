@@ -2,21 +2,21 @@
 layout: post
 title:  NHibernate External Data Source
 categories: XAP97NET
-parent: persistency.html
-weight: 100
+parent: space-persistency-overview.html
+weight: 200
 ---
 
+{% summary  %}{% endsummary %}
 
 
-{% summary page|65 %}A walkthrough of a common scenario for using the GigaSpaces NHibernate External Data Source.{% endsummary %}
 
-# Overview
-
-This page demonstrates how to use the GigaSpaces .Net NHibernate [External Data Source](./persistency.html) in a common scenario: a cluster topology with a mirror. This is asynchronous persistency, which means that the operation against the cluster members is persisted to the database in an asynchronous manner. Each cluster member uses the External Data Source in read-only mode. Therefore it only reads data from the External Data Source, and each write operation is replicated to the mirror space.
+This page demonstrates how to use the GigaSpaces .Net NHibernate External Data Source  in a common scenario: a cluster topology with a mirror. This is asynchronous persistency, which means that the operation against the cluster members is persisted to the database in an asynchronous manner. Each cluster member uses the External Data Source in read-only mode. Therefore it only reads data from the External Data Source, and each write operation is replicated to the mirror space.
 
 The mirror uses the External Data Source interface in write mode, and delegates destructive space operations (write, update, take) to the database through the External Data Source implementation.
 
-{% exclamation %} Before using the `ExternalDataSource.NHibernate` practice, compile it by calling `<GigaSpaces Root>\Bin\Practices\ExternalDataSource\NHibernate\build.bat`.
+{% note %}
+Before using the `ExternalDataSource.NHibernate` practice, compile it by calling `<XAP Root>\Bin\Practices\ExternalDataSource\NHibernate\build.bat`.
+{%endnote%}
 
 {% info %}
 The database server used in this walkthrough is MySQL, and a database named `dotnetpersistency` is created in it.
@@ -61,31 +61,22 @@ Each persistent class requires a mapping file that defines how to map the object
 {% tabcontent Person Class %}
 Our `Person` is defined in Assembly name entities.
 
-{% highlight java %}
+{% highlight csharp %}
 namespace Entities
 {
+  [SpaceClass(Persist = true)]
   public class Person
   {
-    private string _name;
-    private int _age;
-
     [SpaceID, SpaceRouting]
-    public string Name
-    {
-      get { return _name; }
-      set { _name = value; }
-    }
+    public string Name {set; get;}
+
     [SpaceProperty(NullValue = 0)]
-    public int Age
-    {
-      get { return _age; }
-      set { _age = value; }
-    }
+    public int Age{set; get;}
 
     public Person(string name, int age)
     {
-      _name = name;
-      _age = age;
+      this.Name = name;
+      this.Age = age;
     }
 
     public Person() { }
@@ -126,7 +117,7 @@ Our cluster is 2,1 and a mirror. Therefore it consists of:
 
 The following code starts a cluster member space with the NHibernate External Data Source:
 
-{% highlight java %}
+{% highlight csharp %}
 //Create a new space configuration object that is used to start a space
 SpaceConfig spaceConfig = new SpaceConfig();
 //Start a new ExternalDataSource config object
@@ -192,7 +183,7 @@ spaceConfig.ClusterInfo = new ClusterInfo("partitioned-sync2backup", 2, 1, 2, 1)
 
 The following code starts the mirror space with the NHibernate External Data Source:
 
-{% highlight java %}
+{% highlight csharp %}
 //Create a new space configuration object that is used to start a space
 SpaceConfig spaceConfig = new SpaceConfig();
 //Start a new ExternalDataSource config object

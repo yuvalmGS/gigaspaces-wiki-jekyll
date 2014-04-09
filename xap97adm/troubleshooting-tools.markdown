@@ -8,11 +8,8 @@ weight: 500
 
 {% summary%}{% endsummary %}
 
+
 {%comment%}
-{% summary  %}Troubleshooting tools for testing a running product and environmental issues. {% endsummary %}
-
-{%endcomment%}
-
 # CPU and Memory Dumper
 
 #### CPU Dumper Java Utility for Windows
@@ -66,8 +63,10 @@ do
    sleep 1
 done
 {% endhighlight %}
+{%endcomment%}
 
-#### Windows Debugging Tools
+
+# Windows Debugging Tools
 
 1. **userdump** - (correct version should be chosen - 32 or 64-bit according to the application) to get a dump
 1. **[Debugging Tools for Windows](http://www.microsoft.com/whdc/DevTools/Debugging/default.mspx)** - to navigate in the dump. While userdump is by default non-intrusive and should not kill the application, it causes the application freeze which could be for a few seconds and it, eventually, could crash the application. So, it is NOT 100% safe.

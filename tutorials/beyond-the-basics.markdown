@@ -6,7 +6,8 @@ weight: 700
 parent: xap-tutorials.html
 ---
 
-{% compositionsetup %}
+{%wbr%}
+
 
 {% section %}
 {% column width=10% %}
@@ -19,7 +20,7 @@ parent: xap-tutorials.html
 
 {% endcolumn %}
 {% column width=55% %}
-
+{%wbr%}
 [The OpenSpaces Data Example](./the-openspaces-data-example.html)
 A kitchen sink demonstration of all the major features in GigaSpaces XAP and the OpenSpaces API
 {% endcolumn %}
@@ -38,7 +39,7 @@ A kitchen sink demonstration of all the major features in GigaSpaces XAP and the
 
 {% endcolumn %}
 {% column width=55% %}
-
+{%wbr%}
 [XAP Order Management Tutorial](./xap-order-management-tutorial.html)
 Learn how to create a full blown order management system on top of XAP
 {% endcolumn %}

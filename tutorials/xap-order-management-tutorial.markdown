@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  XAP Order Management Tutorial
+title:  Order Management Tutorial
 categories: TUTORIALS
 weight: 200
 parent: beyond-the-basics.html
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}XAP Order Management Tutorial.{% endsummary %}
 
-# Overview
+{% summary   %} {% endsummary %}
+
+
 
 In this tutorial, you will see three core space-based concepts in action: architecture, application deployment, and scaling.
 
@@ -792,7 +792,7 @@ It's when the feeder module is deployed that things start to happen. It creates 
 
 The GS-UI is able to display the logs of the containers, which can show you where each order is being processed as well as its result.
 
-# So what do we have?
+### So what do we have?
 
 We've seen a number of things.
 

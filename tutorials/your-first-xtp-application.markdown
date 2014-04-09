@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Your First XTP Application
+title:  Your First XAP Application
 categories: TUTORIALS
 weight: 500
 parent: xap-tutorials.html
@@ -8,7 +8,7 @@ parent: xap-tutorials.html
 
 {% trainingbox %}
 
-{% compositionsetup %}
+
 
 {% comment %}
 =============================================================
@@ -18,9 +18,6 @@ parent: xap-tutorials.html
 
 **Summary:** {% excerpt %}This tutorial explains how to build your first GigaSpaces Application in 4 easy steps, from basic API usage to scaling your application and making it highly available{% endexcerpt %}
 
-
-{%youtube Q1zCFxqbqrQ | Installin & Configuring%}
-{%include lightbox.html%}
 
 {% comment %}
 =============================================================
@@ -34,8 +31,11 @@ parent: xap-tutorials.html
 
 ## Before You Begin - Set Up Your Environment
 
-If you would like to run the tutorial sample application, [download GigaSpaces and set up your development environment](./setting-up-your-ide-to-work-with-gigaspaces.html).
-The sample application used in all steps is located in ![folder.jpg](/attachment_files/folder.jpg) <GigaSpaces root>\examples\helloworld
+{%panel%}
+Follow these [instructions](./installation-guide.html#java-installation) to download and install the latest version of XAP.
+{%endpanel%}
+
+|The sample application used in all steps is located in| ![folder.jpg](/attachment_files/folder.jpg)| <XAP root>\examples\helloworld |
 
 {% comment %}
 =============================================================

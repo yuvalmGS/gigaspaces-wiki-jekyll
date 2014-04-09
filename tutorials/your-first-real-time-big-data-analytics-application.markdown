@@ -2,27 +2,29 @@
 layout: post
 title:  Your First Real Time Big Data Analytics Application
 categories: TUTORIALS
-weight: 800
+weight: 650
 parent: xap-tutorials.html
 ---
 
-{% summary %}How to use XAP for Real-time analysis of Big Data{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Introduction
+
 
 {% section %}
-{% column width=60% %}
+{% column width=80% %}
+{%wbr%}
 We live almost every aspect of our lives in a real-time world. Think about our social communications; we update our friends online via social networks and micro-blogging, we text from our cellphones, or message from our laptops. But it's not just our social lives; we shop online whenever we want, we search the web for immediate answers to our questions, we trade stocks online, we pay our bills, and do our banking. All online and all in real time.
+{% endcolumn %}
+{% column width=20% %}
+{%youtube ioHwEsARPWI  | Real Time Analytics%}
+{% endcolumn %}
+{% endsection %}
 
 Real time doesn't just affect our personal lives. Enterprises and government agencies need real-time insights to be successful, whether they are investment firms that need fast access to market views and risk analysis, or retailers that need to adjust their online campaigns and recommendations to their customers. Even homeland security has come to increasingly rely on real-time monitoring.
 The amount of data that flows in these systems is huge. Twitter, for example, 500 million Tweets per day, which is nearly 3,000 Tweets per second, on average.  At various peak moments through 2011, Twitter did as high as 8,000+ TPS, with at least one instance of over 25,000 tps. Facebook gets 100 billion hits per day with 3.2B Likes & Comments/day. Google get 2 billion searches a day. These numbers are growing as more and more users join the service.
 
 This tutorial explains the challenges of a Real-time (RT) Analytics system using Twitter as an example, and show in details how these challenges can be met by using GigaSpaces XAP.
-{% endcolumn %}
-{% column width=35% %}
-<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/ioHwEsARPWI?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/ioHwEsARPWI?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
-{% endcolumn %}
-{% endsection %}
+
 
 # The Challenge
 
@@ -42,25 +44,32 @@ These challenges are not simple to deal with as there are knock-on effects from 
 # Solution Architecture
 
 {% section %}
-{% column width=60% %}
+{% column width=90% %}
 In designing a solution, we need to consider the various challenges we must address.
 
 The first challenge is providing **unlimited scalability** - therefore, we are talking about dynamically increasing resources to meet demand, and hence implementing a distributed solution using parallelized processing approach.
 
 The second challenge is providing **low latency** - we can't afford to use a distributed file system such as Hadoop HDFS, a relational database or a distributed disk-based structured data store such as NoSQL database. All of these use physical I/O that becomes a bottleneck when dealing with massive writes. Furthermore, we want the business logic collocated with the data on a single platform for faster processing, with minimal network hops and integration issues.
-
-To overcome the latency challenge, we use an in-memory system of record. GigaSpaces XAP is built just for that. Its core component is [in-memory data grid]({%latestjavaurl%}/the-in-memory-data-grid.html) (IMDG, a.k.a. the Space) that partitions the data based on a specified attribute within the data object. The data grid uses a share nothing policy, and each primary node has consistent backup. In addition the grid keeps its SLA by self-healing crashed nodes, so it's completely consistent and highly-available.
-
-The third challenge is the **efficient processing** of the data in a distributed system. To achieve this, we use the **Map** / **Reduce** algorithm for distributed computing on large data sets on clusters of computers. In the **Map** step, we normalize the data so we can create local counters. In the **Reduce** step, we aggregate the entire set of interim results into a single set of results.
 {% endcolumn %}
-{% column width=35% %}
-![map_reduce.png](/attachment_files/map_reduce.png)
+{% column width=10% %}
+{%popup /attachment_files/map_reduce.png %}
 {% endcolumn %}
 {% endsection %}
 
+To overcome the latency challenge, we use an in-memory system of record. GigaSpaces XAP is built just for that. Its core component is [in-memory data grid](/product_overview/the-in-memory-data-grid.html) (IMDG, a.k.a. the Space) that partitions the data based on a specified attribute within the data object. The data grid uses a share nothing policy, and each primary node has consistent backup. In addition the grid keeps its SLA by self-healing crashed nodes, so it's completely consistent and highly-available.
+
+The third challenge is the **efficient processing** of the data in a distributed system. To achieve this, we use the **Map** / **Reduce** algorithm for distributed computing on large data sets on clusters of computers. In the **Map** step, we normalize the data so we can create local counters. In the **Reduce** step, we aggregate the entire set of interim results into a single set of results.
+
+
 {% section %}
-{% column width=55% %}
+{% column width=90% %}
 In our Twitter example, we need to build a flow that provides the **Map** / **Reduce** flow in real time. For this we use XAP's Processing and Messaging features collocated with its corresponding data.
+
+{% endcolumn %}
+{% column width=10% %}
+{%popup /attachment_files/map_reduce_tweets.png %}
+{% endcolumn %}
+{% endsection %}
 
 Our solution therefore uses 2 modules for persisting and processing data, as follows:
 
@@ -73,46 +82,47 @@ The processor's **Map** phase has the following logical steps:
 1. Generates a token counter per word, distributing the counters across the grid partitions for scalability and performance (triggered by the writing of filtered maps of tokens to the Space).
 
 The processor's **Reduce** phase aggregates the local results into global word counters.
+
+
+# Implementing the Solution
+
+{% section %}
+{% column width=90% %}
+To implement our solution, we use Cassandra (or a local file) as the historical data tier and build a XAP application that processes and persists the data in real-time using the following modules:
 {% endcolumn %}
-{% column width=40% %}
-![map_reduce_tweets.png](/attachment_files/map_reduce_tweets.png)
+{% column width=10% %}
+{%popup  /attachment_files/twitter_topo.png %}
 {% endcolumn %}
 {% endsection %}
 
-# Implementing the Solution as a XAP Application
-
-{% section %}
-{% column width=55% %}
-To implement our solution, we use Cassandra (or a local file) as the historical data tier and build a XAP application that processes and persists the data in real-time using the following modules:
-
 - The [`processor`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/processor) module is a XAP [processing unit]({%latestjavaurl%}/the-processing-unit-structure-and-configuration.html) that contains the Space and performs the real-time workflow of processing the incoming tweets. The processing of data objects is performed using event containers.
+
 - The [`feeder`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/feeder) module is implemented as a processing unit thereby enabling the dynamic deployment of multiple instances of the feeder across multiple nodes, increasing the load it can manage, and thus the ability handle larger tweet streams. The processing unit contains the following feeder strategies:
     - The [`TwitterHomeTimelineFeederTask`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/feeder/src/main/java/org/openspaces/bigdata/feeder/TwitterHomeTimelineFeederTask.java) class, which feeds in tweets from Twitter's public timeline using [Spring Social](http://www.springsource.org/spring-social), converting them to a canonical [Space Document]({%latestjavaurl%}/document-api.html) representation, and writes them to the Space ,which in turn invokes the relevant event processors of the processor module.
     - The [`ListBasedFeederTask`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/feeder/src/main/java/org/openspaces/bigdata/feeder/ListBasedFeederTask.java) class is a simulation feeder for testing purposes, which simulates tweets locally, avoiding the need to connect to the Twitter API over the Internet.
 
 - Optionally, the [`common`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/common) module for including items that are shared between the feeder and the processor modules (e.g. common interfaces, shared data model, etc.).
+
 - The [`bigDataApp`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/bigDataApp) directory contains the recipes and other scripts required to automatically deploy, monitor and manage the entire application together with the [Cassandra](http://cassandra.apache.org/) back-end using [Cloudify](http://www.cloudifysource.org).
-{% endcolumn %}
-{% column width=40% %}
-![twitter_topo.png](/attachment_files/twitter_topo.png)
-{% endcolumn %}
-{% endsection %}
+
+
 
 # Building the Application
 
 The following are step-by-step instructions building the application:
 
-1. [Download](http://www.gigaspaces.com/LatestProductVersion) and [install]({%latestjavaurl%}/installation.html) XAP
-Edit `<XapInstallationRoot>/gslicense.xml>` and place the license key file provided with the email sent to you after downloading GigaSpaces XAP as the `<licensekey>` value.
+{%panel%}
+1. Follow these [instructions](./installation-guide.html#java-installation) to download and install the latest version of XAP.
 
 2. Getting the Application
 The application source can be found under `<XapInstallationRoot>/recipes/apps/streaming-bigdata folder`.
+{%endpanel%}
 
 Alternatively, you can download the source files in zip format from the [repository home on github](https://github.com/CloudifySource/cloudify-recipes/archive/2_5_1.zip)
 The source are maintained in [Github Gigaspaces cloudify-recipes repository](https://github.com/CloudifySource/cloudify-recipes/tree/2_5_1/apps/streaming-bigdata).
 If you're a github user and have already [setup the github client](http://help.github.com/mac-set-up-git/), you can [fork](http://help.github.com/fork-a-repo) the repository and clone it to your local machine, as follows:
 
-{% highlight java %}
+{% highlight console %}
 cd <project root directory>
 git clone --branch=2_5_1 <your new repository URL>
 {% endhighlight %}
@@ -130,7 +140,7 @@ The application uses [Apache Maven](http://maven.apache.org/). If you don't have
 Move to the `<applicationRoot>` folder (contains the application's project files).
 Edit the pom.xml file and make sure the <gsVersion> include the correct GigaSpaces XAP release you have installed. For example if you have XAP {{ site.latest_xap_version }} installed you should have the following:
 
-{% highlight java %}
+{% highlight console %}
 <properties>
 	<gsVersion>{{ site.latest_maven_version }}</gsVersion>
 </properties>
@@ -138,19 +148,19 @@ Edit the pom.xml file and make sure the <gsVersion> include the correct GigaSpac
 
 To Build the project type the following at your command (Windows) or shell (*nix):
 
-{% highlight java %}
+{% highlight console %}
 mvn install
 {% endhighlight %}
 
 If you are getting **No gslicense.xml license file was found in current directory** error, please run the following:
 
-{% highlight java %}
+{% highlight console %}
 mvn package -DargLine="-Dcom.gs.home="<XapInstallationRoot>"
 {% endhighlight %}
 
 Where **XapInstallationRoot** should be XAP root folder - example:
 
-{% highlight java %}
+{% highlight console %}
 mvn package -DargLine="-Dcom.gs.home="c:/{{ site.latest_gshome_dirname }}"
 {% endhighlight %}
 
@@ -161,7 +171,7 @@ The Maven build will download the required dependencies, compile the source file
 
 Once the build is complete, a summary message similar to the following is displayed:
 
-{% highlight java %}
+{% highlight console %}
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Summary:
 [INFO]
@@ -188,20 +198,16 @@ Since the application is a Maven project, you can load it using your Java IDE an
 
 {%section%}
 {%column%}
-
-[<img src="/attachment_files/rt-ide1.jpg" width="120" height="100">](/attachment_files/rt-ide1.jpg)
+{%popup /attachment_files/rt-ide1.jpg%}
 {%endcolumn%}
 
 {%column%}
-
-[<img src="/attachment_files/rt-ide2.jpg" width="120" height="100">](/attachment_files/rt-ide2.jpg)
+{%popup /attachment_files/rt-ide2.jpg %}
 {%endcolumn%}
 
 {%column%}
-
-[<img src="/attachment_files/rt-ide3.jpg" width="120" height="100">](/attachment_files/rt-ide3.jpg)
+{%popup /attachment_files/rt-ide3.jpg %}
 {%endcolumn%}
-
 {%endsection%}
 
 
@@ -220,12 +226,12 @@ rt-processor project run configuration:
 {%section%}
 {%column%}
 
-[<img src="/attachment_files/rt-processor1.png" width="120" height="100">](/attachment_files/rt-processor1.png)
+{%popup /attachment_files/rt-processor1.png%}
 {%endcolumn%}
 
 {%column%}
 
-[<img src="/attachment_files/rt-processor2.png" width="120" height="100">](/attachment_files/rt-processor2.png)
+{%popup /attachment_files/rt-processor2.png%}
 {%endcolumn%}
 {%endsection%}
 
@@ -234,12 +240,12 @@ rt-feeder project run configuration:
 {%section%}
 {%column%}
 
-[<img src="/attachment_files/rt-feeder1.png" width="120" height="100">](/attachment_files/rt-feeder1.png)
+{%popup /attachment_files/rt-feeder1.png%}
 {%endcolumn%}
 
 {%column%}
 
-[<img src="/attachment_files/rt-feeder2.png" width="120" height="100">](/attachment_files/rt-feeder2.png)
+{%popup /attachment_files/rt-feeder2.png%}
 {%endcolumn%}
 {%endsection%}
 
@@ -253,7 +259,7 @@ Make sure you have updated **gslicense.xml** located under the GigaSpaces XAP ro
 
 To run the application, run the **processor** configuration, and then the **feeder** configuration. An output similar to the following is displayed:
 
-{% highlight java %}
+{% highlight console %}
 2013-02-22 13:09:38,524  INFO [org.openspaces.bigdata.processor.TokenFilter] - filtering tweet 305016632265297920
 2013-02-22 13:09:38,526  INFO [org.openspaces.bigdata.processor.FileArchiveOperationHandler] - Writing 1 object(s) to File
 2013-02-22 13:09:38,534  INFO [org.openspaces.bigdata.processor.TweetArchiveFilter] - Archived tweet 305016632265297920
@@ -299,78 +305,78 @@ The following are step-by-step instructions for running the application in XAP:
 1. Start a shell prompt in the `<XapInstallationRoot>/recipes/apps/streaming-bigdata` folder.
 1. Run
 
-{% highlight java %}
+{% highlight console %}
 mvn package
 {% endhighlight %}
 
 to compile and package the source code into JARs
 
-1. Change to the `<XapInstallationRoot>/bin>` folder.
-1. Choose between the `twitter-feeder` and the `list-feeder` spring profile (All tweets are persisted to a file-archiver, cassandra-archiver is explained next):
+Step 1: Change to the `<XapInstallationRoot>/bin>` folder.
+Step 2: Choose between the `twitter-feeder` and the `list-feeder` spring profile (All tweets are persisted to a file-archiver, cassandra-archiver is explained next):
 
-{% inittab d1|top %}
-{% tabcontent Unix (twitter) %}
+{% inittab d10|top %}
+{% tabcontent Unix twitter %}
 
-{% highlight java %}
+{% highlight console %}
 export GSC_JAVA_OPTIONS="-Dspring.profiles.active=twitter-feeder,file-archiver"
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent Unix (list) %}
+{% tabcontent Unix list %}
 
-{% highlight java %}
+{% highlight console %}
 export GSC_JAVA_OPTIONS="-Dspring.profiles.active=list-feeder,file-archiver"
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent Windows (twitter) %}
+{% tabcontent Windows twitter %}
 
-{% highlight java %}
+{% highlight console %}
 set GSC_JAVA_OPTIONS=-Dspring.profiles.active=twitter-feeder,file-archiver
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent Windows (list) %}
+{% tabcontent Windows list %}
 
-{% highlight java %}
+{% highlight console %}
 set GSC_JAVA_OPTIONS=-Dspring.profiles.active=list-feeder,file-archiver
 {% endhighlight %}
 
 {% endtabcontent %}
 {% endinittab %}
 
-1. Start a [Grid Service Agent]({%latestjavaurl%}/service-grid.html#gsa) by running the `gs-agent.sh/bat` script. This will start two [GSCs]({%latestjavaurl%}/service-grid.html#gsc) (GSCs are the container JVMs for your processing units) and a [GSM]({%latestjavaurl%}/service-grid.html#gsm).
+Step 3: Start a [Grid Service Agent](/product_overview/service-grid.html#gsa) by running the `gs-agent.sh/bat` script. This will start two [GSCs](/product_overview/service-grid.html#gsc) (GSCs are the container JVMs for your processing units) and a [GSM](/product_overview/service-grid.html#gsm).
 
 {% inittab d1|top %}
 {% tabcontent Unix %}
 
-{% highlight java %}
+{% highlight console %}
 nohup ./gs-agent.sh >/dev/null 2>&1
 {% endhighlight %}
 
 {% endtabcontent %}
 {% tabcontent Windows %}
 
-{% highlight java %}
+{% highlight console %}
 start /min gs-agent.bat
 {% endhighlight %}
 
 {% endtabcontent %}
 {% endinittab %}
 
-1. Then deploy the processor
+Step 4: Then deploy the processor
 
 {% inittab d1|top %}
 {% tabcontent Unix %}
 
-{% highlight java %}
+{% highlight console %}
 ./gs.sh deploy ../recipes/apps/streaming-bigdata/bigDataApp/processor/rt-analytics-processor.jar
 {% endhighlight %}
 
 {% endtabcontent %}
 {% tabcontent Windows %}
 
-{% highlight java %}
+{% highlight console %}
 gs deploy ..\recipes\apps\streaming-bigdata\bigDataApp\processor\rt-analytics-processor.jar
 {% endhighlight %}
 
@@ -379,7 +385,7 @@ gs deploy ..\recipes\apps\streaming-bigdata\bigDataApp\processor\rt-analytics-pr
 
 You should see the following output:
 
-{% highlight java %}
+{% highlight console %}
 Deploying [rt-analytics-processor.jar] with name [rt-processor-XAP-{% latestxaprelease %}] under groups [{{ site.latest_default_lookup_group }}] and locators []
 Uploading [rt-analytics-processor] to [http://127.0.0.1:61765/]
 Waiting indefinitely for [4] processing unit instances to be deployed...
@@ -390,19 +396,19 @@ Waiting indefinitely for [4] processing unit instances to be deployed...
 Finished deploying [4] processing unit instances
 {% endhighlight %}
 
-1. Next, deploy the feeder:
+Step 5: Next, deploy the feeder:
 
 {% inittab d1|top %}
 {% tabcontent Unix %}
 
-{% highlight java %}
+{% highlight console %}
 ./gs.sh deploy ../recipes/apps/streaming-bigdata/bigDataApp/feeder/rt-analytics-feeder.jar
 {% endhighlight %}
 
 {% endtabcontent %}
 {% tabcontent Windows %}
 
-{% highlight java %}
+{% highlight console %}
 gs deploy ..\recipes\apps\streaming-bigdata\bigDataApp\feeder\rt-analytics-feeder.jar
 {% endhighlight %}
 
@@ -437,14 +443,14 @@ To learn about additional options for deploying your XAP processing units, pleas
 
 To view the most popular words on Twitter , start the GS-UI using the gs-ui.bat/sh , click the Query icon as demonstrated below and execute the following SQL Query by clicking the ![rt-tw6.jpg](/attachment_files/rt-tw6.jpg) button:
 
-{% highlight java %}
+{% highlight console %}
 select uid,* from org.openspaces.bigdata.common.counters.GlobalCounter order by counter DESC
 {% endhighlight %}
 
 You should see the top most popular words on twitter ordered by their popularity:
 
 {% indent %}
-![rt-tw4new.jpg](/attachment_files/rt-tw4new.jpg)
+{%popup /attachment_files/rt-tw4new.jpg %}
 {% endindent %}
 
 You can re-execute the query just by clicking the ![rt-tw5.jpg](/attachment_files/rt-tw5.jpg) button again. This will give you real-time view on the most popular words on Twitter.
@@ -466,7 +472,7 @@ The following are step-by-step instructions configuring the application to persi
 1. Download, install, and start the Cassandra database. For more information, see Cassandra's [Getting Started](http://wiki.apache.org/cassandra/GettingStarted) page.
 2. Define the TWITTER cassandra keyspace by running the following shell command:
 
-{% highlight java %}
+{% highlight console %}
 <cassandra home>/bin/cassandra-cli --host <cassandra host name> --file <project home>/bigDataApp/cassandra/cassandraKeyspace.txt
 {% endhighlight %}
 
@@ -478,7 +484,7 @@ Notice how this time we use the `cassandra-archiver` profile (instead of the `fi
 {% inittab d1|top %}
 {% tabcontent Unix %}
 
-{% highlight java %}
+{% highlight console %}
 ./gs.sh gsa shutdown
 export GSC_JAVA_OPTIONS="-Dspring.profiles.active=twitter-feeder,cassandra-archiver -Dcassandra.hosts=127.0.0.1"
 nohup ./gs-agent.sh >/dev/null 2>&1
@@ -489,7 +495,7 @@ nohup ./gs-agent.sh >/dev/null 2>&1
 {% endtabcontent %}
 {% tabcontent Windows %}
 
-{% highlight java %}
+{% highlight console %}
 gs.bat gsa shutdown
 set GSC_JAVA_OPTIONS=-Dspring.profiles.active=twitter-feeder,cassandra-archiver -Dcassandra.hosts=127.0.0.1
 start /min gs-agent.bat
@@ -502,7 +508,7 @@ gs deploy ..\recipes\apps\streaming-bigdata\bigDataApp\feeder\rt-analytics-feede
 
 5. You can view the data within Cassandra using the Tweet column family - Move to the Cassandra `bin` folder and run the `cassandra-cli` command:
 
-{% highlight java %}
+{% highlight console %}
 >cassandra-cli.bat
 [default@unknown] connect localhost/9160;
 [default@unknown] use TWITTER;
@@ -592,7 +598,7 @@ XAP comes with a cloud emulator called `localcloud`. It allows you to test the r
 1. To start the localcloud services, at the prompt, type `bootstrap-localcloud`. This may take few minutes.
 1. To deploy the application, at the prompt, type:
 
-{% highlight java %}
+{% highlight console %}
 install-application <XapInstallationRoot>/recipes/apps/streaming-bigdata/bigDataApp
 {% endhighlight %}
 
@@ -918,3 +924,5 @@ public class CassandraExternalPersistence implements ExternalPersistence {
 {% endhighlight %}
 {% endcomment %}
 
+
+{%include lightbox.html%}

@@ -1,15 +1,16 @@
 ---
 layout: post
-title:  The OpenSpaces Data Example
+title:  Data Example
 categories: TUTORIALS
 weight: 100
 parent: beyond-the-basics.html
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}This example gives an extensive overview of the OpenSpaces APIs, the Processing Unit concept and the configuration options in the `sla.xml` and `pu.xml` files. The example contains two Processing Units; one that feeds data objects into the system, and another that reads those objects and processes them.{% endsummary %}
 
-# Overview
+{% summary %}{% endsummary %}
+
+This example gives an extensive overview of the OpenSpaces APIs, the Processing Unit concept and the configuration options in the `sla.xml` and `pu.xml` files. The example contains two Processing Units; one that feeds data objects into the system, and another that reads those objects and processes them.
+
 
 {% info %}
 The example is located under `<GigaSpaces Root>/examples/data`
@@ -92,7 +93,7 @@ Basically, every `Data` object is written to the space by the `DataFeeder` or by
 
 {% infosign %} Even though our object implements `Serializable`, it doesn't have to in all cases. This is relevant only when the `Data` object is used as a parameter in remote calls.
 
-# POJO Services and Wiring with Spring
+# POJO Services with Spring
 
 According to the diagram above, there are 5 different services in our application, each is independent of the others and performs different actions as detailed below.
 
@@ -387,15 +388,17 @@ This example includes a `build.xml` `ant` file and with a `build.bat/sh` script 
 
 From the `<Example Root>` directory (`<GigaSpaces Root>/examples/data`) call:
 
-{% highlight java %}
+{% highlight console %}
 build.bat/sh build
 {% endhighlight %}
 
 This compiles the code to a `pu` directory and copies the Processing Unit Deployment Descriptors, namely the `pu.xml` and `sla.xml`.
 
-{% exclamation %} The Deployment Descriptor should always reside under the `META-INF\spring` directory of your application.
+{% note %}
+The Deployment Descriptor should always reside under the `META-INF\spring` directory of your application.
+{%endnote%}
 
-# Build And Deployment
+# Deployment
 
 The example uses ant as its build tool and uses a standard `build.xml` file. It comes with a build script that runs Ant automatically. Running the build script with no parameters within the current directory will list all the relevant tasks that can be run with this example.
 
@@ -409,7 +412,7 @@ Run the GS-UI in order to see the 4 PU instances deployed (two partitions, each 
 
 Another option to deploy the example can be using the GS CLI using the deploy option. An interesting example of externally providing the SLA that applies to the deployed processing unit can be running:
 
-{% highlight java %}
+{% highlight console %}
 gs.(sh/bat) deploy -sla ../examples/data/partitioned-sla.xml ../examples/data/processor/dist/data-processor.jar
 {% endhighlight %}
 
