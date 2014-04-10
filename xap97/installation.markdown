@@ -6,18 +6,57 @@ parent: none
 weight: 50
 ---
 
+{%wbr%}
 
-
-This guide provides step by step instructions on how to install XAP on different operating systems for the supported languages.
-
+{%section%}
+{%column width=10% %}
+![data-access.jpg](/attachment_files/subject/data-access.png)
+{%endcolumn%}
+{%column width=90% %}
+This guide provides step by step instructions on how to download and install XAP on different operating systems for the supported languages.
+{%endcolumn%}
+{%endsection%}
+<hr/>
+{%note%}
 The latest version of XAP can be downloded [here](http://www.gigaspaces.com/xap-download).
+For a list of supported platforms please consult [the realease notes](/release_notes)
+{%endnote%}
 
 
-{%note%}For a list of supported platforms please consult [the realease notes](/release_notes) {%endnote%}
+- [XAP License](./license-key.html){%wbr%}
+Getting a license key and defining it in the space schema.
+
+- [Java Installation](./installation-java.html){%wbr%}
+Requirements and how to install GigaSpaces with Windows, Linux or Unix.
+
+- [C++ Installation](./installing-cpp-api-package.html){%wbr%}
+Requirements and how to install XAP c++ on Windows and Linux.
+
+- [Maven Plugin](./maven-plugin.html){%wbr%}
+Installing the XAP Maven plugin, creating and running a Processing Unit project.
+
+- [Eclipse setup](./setting-up-eclipse-to-work-with-xap.html){%wbr%}
+Setting up your IDE to work with XAP.
+
+- [Debugging with Eclipse](./running-and-debugging-within-your-ide.html){%wbr%}
+Explains how to run your processing unit inside your IDE or in unit tests.
+
+- [XAP as Windows Service](./running-gigaspaces-as-a-windows-service.html){%wbr%}
+Installing XAP as a Windows service.
 
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/Q1zCFxqbqrQ?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
 
 
+<hr/>
+#### Additional Resources
+{%section%}
+{%column%}
+{%youtube Q1zCFxqbqrQ | Installing XAP%}
+{%endcolumn%}
+{%column%}
+{%youtube _n8ZCnoAIyw | Maven Plugin%}
+{%endcolumn%}
+{%endsection%}
 
-{%children%}
+{%include lightbox.html%}
+

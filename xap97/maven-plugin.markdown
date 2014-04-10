@@ -6,9 +6,9 @@ parent: installation.html
 weight: 500
 ---
 
-{% summary%}Installing the OpenSpaces Maven plugin, creating and running a Processing Unit project.{% endsummary %}
+{% summary%}{% endsummary %}
 
-# Overview
+
 
 Maven is a tool used to automate and simplify the development cycle of any Java-based project. The OpenSpaces plugin for Maven utilizes Maven to simplify the development cycle of OpenSpaces-based applications. You can use this plugin to easily create, compile, package, run unit tests, execute and deploy Processing Units.
 
@@ -17,7 +17,6 @@ You don't need to be an experienced Maven user to start working with this plugin
 {% info %} The OpenSpaces Maven plugin has been tested with Maven 3.0. For further information about maven see: [apache.org; What is Maven?](http://maven.apache.org/what-is-maven.html)
 {%endinfo%}
 
-<iframe width="640" height="390" src="//www.youtube.com/embed/_n8ZCnoAIyw" frameborder="0" allowfullscreen></iframe>
 
 # Prior to Installation
 

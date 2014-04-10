@@ -6,11 +6,8 @@ parent: installation-java.html
 weight: 100
 ---
 
-{% summary %}Descriptions of the main environment variables set automatically by `setenv.bat`.{% endsummary %}
 
-# Overview
-
-The GigaSpaces environment configuration is maintained by a configuration script file. This script is located in the `<GigaSpaces Root>\bin` directory:
+The XAP environment configuration is maintained by a configuration script file. This script is located in the `<GigaSpaces Root>\bin` directory:
 
 - Windows: `setenv.bat`
 - UNIX: `Setenv.sh`

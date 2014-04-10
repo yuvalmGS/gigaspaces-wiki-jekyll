@@ -6,9 +6,6 @@ parent: maven-plugin.html
 weight: 100
 ---
 
-{% summary %}Processing unit assembly definition.{% endsummary %}
-
-# Overview
 
 This page contains information beyond the basics. It was created for those who want to know a little bit more about how OpenSpaces and Maven integrate. Basically, the information given in [OpenSpaces Maven Plugin](./maven-plugin.html) should be sufficient for the common user.
 

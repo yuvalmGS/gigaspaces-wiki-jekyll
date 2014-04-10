@@ -3,12 +3,12 @@ layout: post
 title:  Running and Debugging Within Your IDE
 categories: XAP97
 parent: installation.html
-weight: 650
+weight: 700
 ---
 
-{% summary %}Explains how to run your processing unit inside your IDE or in unit tests{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
+
 
 As part of your development process, you may want to run/debug your processing unit within your IDE, or create unit tests (with JUnit for example) to tests in isolation certain aspects of it.
 

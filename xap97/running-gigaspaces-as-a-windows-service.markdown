@@ -3,14 +3,14 @@ layout: post
 title:  XAP as Windows Service
 categories: XAP97
 parent: installation.html
-weight: 700
+weight: 800
 ---
 
 {% summary %} {% endsummary %}
 
 # Common Scenarios
 
-GigaSpaces infrastructure can be started using a GigaSpaces Grid Service Agent as explained in [GSA page](./service-grid.html#gsa). When using Windows based OS for running GigaSpaces infrastructure, users want to convert GSA into a windows service for following common reasons,
+GigaSpaces infrastructure can be started using a GigaSpaces Grid Service Agent as explained in [GSA page](/product_overview/service-grid.html#gsa). When using Windows based OS for running GigaSpaces infrastructure, users want to convert GSA into a windows service for following common reasons,
 
 1. GSA process should survive a user logoff.
 1. GSA command windows should be hidden so that they are not closed accidentally by users.
@@ -24,7 +24,7 @@ If your requirement is only item 1 and/or 2 above, you can use psexec (SysIntern
 
 If you need to fulfill all 3 reasons above, then you have to create a windows service for GSA.
 
-Easiest way to convert GSA into service is to use the .Net version of the product and create windows service using the instructions that are documented on our .Net [wiki]({%currentneturl%}/gigaspaces-services-manager.html).
+Easiest way to convert GSA into service is to use the .Net version of the product and create windows service using the instructions that are documented on our [.Net]({%currentneturl%}/installation.html).documentation.
 
 Some users are not comfortable using the .Net version of the product and want to use only Java version of the product. In such cases, there are many software that can help in converting a Java Application (like GigaSpaces) to a Windows Service.
 

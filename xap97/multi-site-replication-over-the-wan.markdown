@@ -216,9 +216,14 @@ Distributed transaction participants data will be processed individually if 10 s
 Note that by setting the "cluster-config.groups.group.repl-policy.processing-type" property to "global-source" all reliable asynchronous replication targets for that space will work in non-distributed transaction consolidation mode (For example, a Mirror would be in non-distributed transaction consolidation mode as well.)
 {% endinfo %}
 
-{% exclamation %} Consolidation failure can occur under normal circumstances, if the target gateway is restarted or crashed during the consolidation process. In a case where the transaction was successfully consolidated and executed on the target cluster but the gateway was stopped while sending confirmation to the transaction participants in the source site and some of them have received the confirmation while others have not. In such case, the transaction is actually successfully executed in the target site and by default when the consolidation failure event will occur the unconfirmed part will reach the conflict resolution handler which by default will abort it and the state will remain consistent.
-{% exclamation %} Due to the above, setting both dist-tx-wait-timeout-millis and dist-tx-wait-for-opers to unlimited (or very high value) is risky and may cause replication backlog accumulation due to a
+{% note %}
+Consolidation failure can occur under normal circumstances, if the target gateway is restarted or crashed during the consolidation process. In a case where the transaction was successfully consolidated and executed on the target cluster but the gateway was stopped while sending confirmation to the transaction participants in the source site and some of them have received the confirmation while others have not. In such case, the transaction is actually successfully executed in the target site and by default when the consolidation failure event will occur the unconfirmed part will reach the conflict resolution handler which by default will abort it and the state will remain consistent.
+{%endnote%}
+
+{% note %}
+Due to the above, setting both dist-tx-wait-timeout-millis and dist-tx-wait-for-opers to unlimited (or very high value) is risky and may cause replication backlog accumulation due to a
 packet which is unconsolidated and waits for consolidation which may never occur.
+{%endnote%}
 
 # Master-Slave Topology
 
@@ -763,7 +768,6 @@ The topology might change during runtime, for instance a new site can be added a
 # Read More
 
 The following pages in this section provide more details on the Multi-Site Replication module:
-{% children %}
 
 - [Replication Throughput Capacity](/sbp/wan-replication-gateway.html#Replication Throughput Capacity)
 - [WAN Gateway Replication Benchmark](/sbp/wan-replication-gateway.html#WAN Gateway Replication Benchmark)

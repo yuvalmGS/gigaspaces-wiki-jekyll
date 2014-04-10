@@ -82,3 +82,23 @@ For more information see [Advanced Installation Scenarios]({%latestneturl%}/adva
 
 GigaSpaces will send you a license to the email address you provided when you downloaded XAP. Enter this information in the `gslicense.xml` file
 that is located under the GS_HOME directory.
+
+The activation license key is in the following form:
+
+{%highlight console%}
+"Nov 16, 2020~user@XXXXXXXXXXXXXXXXXXXXX#PREMIUM^9.7XAPPremium%UNBOUND+UNLIMITED"
+{%endhighlight%}
+
+### Installing new License
+
+To install the license, insert the license string between the license key tags:
+
+{% highlight console %}
+<com>
+  <j_spaces>
+        <kernel>
+          <licensekey>Nov 16, 2020~user@XXXXXXX#PREMIUM^9.7XAPPremium%UNBOUND+UNLIMITED</licensekey>
+       </kernel>
+  </j_spaces>
+</com>
+{% endhighlight %}

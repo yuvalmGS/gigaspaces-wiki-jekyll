@@ -11,4 +11,4 @@ weight: 300
 
 ![Space Memory Management - GigaSpaces Browser.jpg](/attachment_files/Space Memory Management - GigaSpaces Browser.jpg)
 
-See the [Memory Management Facilities](./memory-management-facilities.html) for details.
+See the [Memory Management Facilities]({%currentjavaurl%}/memory-management-facilities.html) for details.

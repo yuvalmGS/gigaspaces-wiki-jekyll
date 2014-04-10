@@ -6,11 +6,11 @@ parent: installation.html
 weight: 400
 ---
 
-{% summary %}Requirements and how to install GigaSpaces c++ on Windows and Linux.{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
 
-GigaSpaces c++ API supported on Linux and Windows 32bit or 64bit machines.
+
+XAP's c++ API supported on Linux and Windows 32bit or 64bit machines.
 The current supported platforms and compilers are:
 
 - Linux

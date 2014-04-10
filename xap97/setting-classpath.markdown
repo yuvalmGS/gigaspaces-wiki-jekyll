@@ -6,11 +6,9 @@ parent: installation-java.html
 weight: 200
 ---
 
-{% summary %}JARs that should be in the classpath of applications accessing a remote or embedded space. {% endsummary %}
 
-# Overview
 
-GigaSpaces libraries are located under `<GigaSpaces Root>\lib`
+XAP libraries are located under `<XAP Root>\lib`
 
 You'll find three sub directories:
 **lib/required** - jar files that are required for any GigaSpaces application.

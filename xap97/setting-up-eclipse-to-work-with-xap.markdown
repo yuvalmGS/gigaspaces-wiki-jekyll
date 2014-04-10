@@ -6,10 +6,10 @@ parent: installation.html
 weight: 600
 ---
 
-{% compositionsetup %}
-{% summary page|70 %}Setting up your IDE to Work With GigaSpaces{% endsummary %}
 
-# Preparing your Development Environment
+
+
+
 
 {% anchor 0 %}
 Follow these steps to prepare your development environment:

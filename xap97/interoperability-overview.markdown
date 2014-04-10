@@ -21,6 +21,8 @@ The possibility for organizations whose projects include a combination of Java, 
 
 <hr/>
 
+- [.Net]({%currentneturl%}/interoperability.html){%wbr%}
+.Net interoperability.
 
 - [C++](./xap-cpp.html){%wbr%}
 The XAP c++ API has been designed to allow the same level of flexibility, usability and interoperability of the Java POJO counterpart API for building scalable, low-latency SBA applications.
