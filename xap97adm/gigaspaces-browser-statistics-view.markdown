@@ -6,9 +6,6 @@ parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
 weight: 500
 ---
 
-{% summary %}Provides graphical representation of space operations performed and average throughput.{% endsummary %}
-
-# Overview
 
 The Statistics view provides graphical representation of space operations performed and average throughput.
 

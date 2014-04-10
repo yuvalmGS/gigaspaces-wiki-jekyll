@@ -6,7 +6,6 @@ parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
 weight: 600
 ---
 
-{% summary %}The Transactions view allows you to view all of the trasactions that are currently taking place in the selected space.{% endsummary %}
 
 The Transactions view allows you to view all of the transactions that are currently taking place in the selected space (active transactions). This view can provide helpful information, for example, when a transaction is stuck.
 

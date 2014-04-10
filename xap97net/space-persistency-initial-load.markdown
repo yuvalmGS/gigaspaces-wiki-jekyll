@@ -130,8 +130,8 @@ public IDataEnumerator InitialLoad()
 	int initialLoadThreadPoolSize = 10;
 	bool idOrdering = false;
 
-	if (clusterInfo.getNumberOfInstances() > 1) {
-		hquery = "FROM  Person WHERE MOD(department,"
+	if (_numberOfPartitions > 1) {
+		hquery = "FROM  Person WHERE MOD(Department,"
 		+ _numberOfPartitions + ") = " + (_partitionNumber - 1);
 	} else {
 		hquery = "from  Person ";
@@ -146,12 +146,12 @@ public IDataEnumerator InitialLoad()
 
 
 {% note %}
-Make sure the routing field (i.e. `department`) will be an Integer type.
+Make sure the routing field (i.e. `Department`) will be an Integer type.
 {%endnote%}
 
 Since each space partition stores a subset of the data , based on the entry routing field hash code value , you need to load the data from the database in the same manner the client load balance the data when interacting with the different partitions.
 
-The database query using the `MOD`, `department`, `number of partitions` and the `partition ID` to perform identical activity performed by a space client when performing write/read/take operations with partitioned space to rout the operation into the correct partition.
+The database query using the `MOD`, `Department`, `number of partitions` and the `partition ID` to perform identical activity performed by a space client when performing write/read/take operations with partitioned space to rout the operation into the correct partition.
 
 {%learn%}./routing-in-partitioned-spaces.html{%endlearn%}
 
@@ -168,8 +168,11 @@ public IDataEnumerator InitialLoad()
 	int initialLoadThreadPoolSize = 10;
 	bool idOrdering = false;
 
-	Query query1 = new Query(null,"from Employee where age > 30");
+	Query query1 = new Query(null,"from Employee where Age > 30");
 	enumerators.Add(new NHibernateDataEnumerator(query1, sessionFactory, fetchSize, idOrdering);
+
+    Query query2 = new Query(null,"from Employee where LastName = ‘David’");
+    enumerators.Add(new NHibernateDataEnumerator(query2, sessionFactory, fetchSize, idOrdering);
 
     return new ConcurrentMultiDataEnumerator(enumerators.ToArray(), fetchSize, initialLoadThreadPoolSize);
 }

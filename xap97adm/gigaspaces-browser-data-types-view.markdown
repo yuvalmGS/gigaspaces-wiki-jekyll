@@ -6,16 +6,19 @@ parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
 weight: 200
 ---
 
-{% summary %}Used to view data stored on the space (Data Types information and number of instances).{% endsummary %}
-
-# Overview
 
 The Data Types view displays a list of space data type (space classes) stored in the space, and their instance count. You can view the Data Type instances content using the [Query view](./gigaspaces-browser-query-view.html). Clear the Data Type instances or completely delete the Data Type and all its instances from the space.
 
+
+{%section%}
+{%column width=80% %}
 Details are displayed for each Data Type -- i.e., attributes and their properties (names, types, indexed), whether the Data Type is FIFO enabled, whether the Data Type is partial-replication enabled, a list of Super Data Types (inherited classes), etc. These properties appear at the bottom of the panel when the Data Type is selected.
-
-
-[<img src="/attachment_files/datatypeView1.jpg" width="120" height="80">](/attachment_files/datatypeView1.jpg)
+{%endcolumn%}
+{%column width=20% %}
+{%popup /attachment_files/datatypeView1.jpg %}
+{%include lightbox.html%}
+{%endcolumn%}
+{%endsection%}
 
 # Data Type List
 

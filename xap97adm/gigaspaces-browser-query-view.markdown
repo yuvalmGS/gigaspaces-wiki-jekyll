@@ -6,7 +6,7 @@ parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
 weight: 400
 ---
 
-{% summary %}Used to query the space using SQL statements and view the resulting data set in tabular format.{% endsummary %}
+ Used to query the space using SQL statements and view the resulting data set in tabular format.
 
 
 The Query view allows you to query the space using SQL statements and to get the full resulting data set in tabular format.

@@ -6,9 +6,6 @@ parent: gigaspaces-browser-tree-panel-and-configuration-panel.html
 weight: 100
 ---
 
-{% summary %}Displays information regarding all connected and disconnected proxies.{% endsummary %}
-
-# Overview
 
 The Connections view exposes information regarding all connected and disconnected space proxies.
 
