@@ -6,7 +6,7 @@ parent: gigaspaces-management-center.html
 weight: 700
 ---
 
-{% summary%}Information regarding pending notify templates{% endsummary %}
+
 
 
 You may view the information regarding pending notify templates. The following information is exposed:

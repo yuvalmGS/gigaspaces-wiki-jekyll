@@ -6,7 +6,9 @@ parent: working-with-spaces---gigaspaces-browser.html
 weight: 400
 ---
 
+{%comment%}
 {% summary %}Using the **Performance** tab of the advanced space configuration dialog.{% endsummary %}
+{%endcomment%}
 
 
 The Performance tab contains settings related to serialization of Entries, implicit indexing of Entries by fields, and the number of threads used by the GigaSpaces engine.

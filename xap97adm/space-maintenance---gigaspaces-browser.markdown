@@ -1,16 +1,22 @@
 ---
 layout: post
-title:  Space Maintenance
+title:  Maintenance
 categories: XAP97ADM
 parent: working-with-spaces---gigaspaces-browser.html
 weight: 200
 ---
 
-{% summary %}Pinging, destroying, cleaning, stopping, starting, and restarting a space using the button toolbar.{% endsummary %}
+Pinging, destroying, cleaning, stopping, starting, and restarting a space using the button toolbar.
 
 
-
-To view the Space Configuration screen for a specific space, select that space's node (![Space Maintenance2.jpg](/attachment_files/Space Maintenance2.jpg)) in the **Container Tree** panel on the left.
+{%section%}
+{%column width=5% %}
+![Space Maintenance2.jpg](/attachment_files/Space Maintenance2.jpg)
+{%endcolumn%}
+{%column width=95% %}
+To view the Space Configuration screen for a specific space, select that space's node in the **Container Tree** panel on the left.
+{%endcolumn%}
+{%endsection%}
 
 ![Space Maintenance1.jpg](/attachment_files/Space Maintenance1.jpg)
 

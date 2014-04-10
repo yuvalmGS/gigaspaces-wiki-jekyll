@@ -6,7 +6,12 @@ parent: working-with-spaces---gigaspaces-browser.html
 weight: 100
 ---
 
+{%comment%}
 {% summary %}Using the **JMS** tab of the advanced space configuration dialog.{% endsummary %}
+{%endcomment%}
+
+Using the **JMS** tab of the advanced space configuration dialog.
+
 
 
 ![Space JMS - GigaSpaces Browser.jpg](/attachment_files/Space JMS - GigaSpaces Browser.jpg)

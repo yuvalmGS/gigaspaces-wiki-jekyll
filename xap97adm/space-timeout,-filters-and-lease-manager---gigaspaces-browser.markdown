@@ -6,7 +6,6 @@ parent: working-with-spaces---gigaspaces-browser.html
 weight: 500
 ---
 
-{% summary %}Using the **General** tab of the advanced space configuration dialog.{% endsummary %}
 
 
 The **General* tab contains settings related to client and server timeout, and the *Lease Manager**.

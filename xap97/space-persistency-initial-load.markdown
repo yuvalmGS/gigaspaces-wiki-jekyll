@@ -117,12 +117,12 @@ public class SpaceDataSourceInitialLoadExample extends DefaultHibernateSpaceData
 {% endhighlight %}
 
 {% note %}
-Make sure the routing field (i.e. PERSON_ID) will be an Integer type.
+Make sure the routing field (i.e. department) will be an Integer type.
 {%endnote%}
 
 Since each space partition stores a subset of the data , based on the entry routing field hash code value , you need to load the data from the database in the same manner the client load balance the data when interacting with the different partitions.
 
-The database query using the `MOD`, `PERSON_ID`, `number of partitions` and the `partition ID` to perform identical activity performed by a space client when performing write/read/take operations with partitioned space to rout the operation into the correct partition.
+The database query using the `MOD`, `department`, `number of partitions` and the `partition ID` to perform identical activity performed by a space client when performing write/read/take operations with partitioned space to rout the operation into the correct partition.
 
 
 # Multi-Parallel Initial Load

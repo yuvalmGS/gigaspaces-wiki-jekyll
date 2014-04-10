@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Space Memory Management
+title:  Memory Management
 categories: XAP97ADM
 parent: working-with-spaces---gigaspaces-browser.html
 weight: 300
 ---
 
-{% summary %}Using the **Memory Management** tab of the advanced space configuration dialog.{% endsummary %}
+ Using the **Memory Management** tab of the advanced space configuration dialog.
 
 
 ![Space Memory Management - GigaSpaces Browser.jpg](/attachment_files/Space Memory Management - GigaSpaces Browser.jpg)
