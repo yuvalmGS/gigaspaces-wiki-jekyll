@@ -78,36 +78,53 @@ See example below:
 {% highlight csharp %}
 public IDataEnumerator InitialLoad()
 {
-    List<IDataEnumerator> enumerators = new List<IDataEnumerator>();
-
 	int fetchSize = 100;
 	int initialLoadThreadPoolSize = 10;
 	bool idOrdering = false;
 
 	Query query = new Query(null,"from Employee where age > 30");
 
-	enumerators.Add(new NHibernateDataEnumerator(query, sessionFactory, fetchSize, idOrdering);
-
-    return new ConcurrentMultiDataEnumerator(enumerators.ToArray(), fetchSize, initialLoadThreadPoolSize);
+	return new NHibernateDataEnumerator(query, _sessionFactory, fetchSize, idOrdering);
 }
 {% endhighlight %}
 
 
-{%comment%}
+
 # Controlling the Initial Load
 
 Additional level of customization can be done by loading only the relevant data into each partition.
 
-In this case you should use the `partition ID` and `total amount of partitions` parameters to form the correct database query. The relevant table column mapped to the routing field should have `numeric` type to allow simple calculation of the matching rows that need to be retrieved from the database and loaded into the partition. This means your database query needs to "slice" the correct data set from the database tables based on the `partition ID`.
-`Partition ID` retrieval is explained in the [Obtaining Cluster Information](./obtaining-cluster-information.html) page. For example:
+In this case you should use the `partition ID` and `total number of partitions` parameters to form the correct database query.
+The relevant table column mapped to the routing field should have `numeric` type to allow simple calculation of the matching rows that need to be retrieved from the database and loaded into the partition. This means your database query needs to "slice" the correct data set from the database tables based on the `partition ID`.
+Here is an example how you can retrieve the `Partition ID` from within the `NHibernateExternalDataSource`.
 
+Modify the `Init()` method in the `NHibernateExternalDataSource` class to retrieve the current partition number and the number of partitions from the properties. Then you will use these numbers in your sql query statement to load the correct data with each cluster member.
+
+{%highlight csharp%}
+
+    int _partitionNumber;
+    int _numberOfPartitions;
+
+	public void Init(Dictionary<string, string> properties)
+	{
+        String partitionNumber;
+        String numberOfPartitions;
+
+        properties.TryGetValue("com.gigaspaces.datasource.partition-number", out partitionNumber);
+        properties.TryGetValue("com.gigaspaces.datasource.number-of-partitions", out numberOfPartitions);
+
+        _partitionNumber = Convert.ToInt16(partitionNumber);
+        _numberOfPartitions = Convert.ToInt16(numberOfPartitions);
+
+        // .....
+    }
+
+{%endhighlight%}
+
+Here is an example how to use this partition information in the query.
 {% highlight csharp %}
-public IDataEnumerator InitialLoad1()
+public IDataEnumerator InitialLoad()
 {
-    ClusterInfo clusterInfo;
-
-	List<IDataEnumerator> enumerators = new List<IDataEnumerator>();
-
 	String hquery;
 	int fetchSize = 100;
 	int initialLoadThreadPoolSize = 10;
@@ -115,49 +132,45 @@ public IDataEnumerator InitialLoad1()
 
 	if (clusterInfo.getNumberOfInstances() > 1) {
 		hquery = "FROM  Person WHERE MOD(department,"
-		+ clusterInfo.getNumberOfInstances() + ") = " + (clusterInfo.getInstanceId() - 1);
+		+ _numberOfPartitions + ") = " + (_partitionNumber - 1);
 	} else {
 		hquery = "from  Person ";
 	}
 
 	Query query = new Query(null,hquery);
 
-	enumerators.Add(new NHibernateDataEnumerator(query, sessionFactory, fetchSize, idOrdering);
-
-	return new ConcurrentMultiDataEnumerator(enumerators.ToArray(), fetchSize, initialLoadThreadPoolSize);
+	return new NHibernateDataEnumerator(query, sessionFactory, fetchSize, idOrdering);
 }
 {% endhighlight %}
 
+
+
 {% note %}
-Make sure the routing field (i.e. PERSON_ID) will be an Integer type.
+Make sure the routing field (i.e. `department`) will be an Integer type.
 {%endnote%}
 
 Since each space partition stores a subset of the data , based on the entry routing field hash code value , you need to load the data from the database in the same manner the client load balance the data when interacting with the different partitions.
 
-The database query using the `MOD`, `PERSON_ID`, `number of partitions` and the `partition ID` to perform identical activity performed by a space client when performing write/read/take operations with partitioned space to rout the operation into the correct partition.
+The database query using the `MOD`, `department`, `number of partitions` and the `partition ID` to perform identical activity performed by a space client when performing write/read/take operations with partitioned space to rout the operation into the correct partition.
 
+{%learn%}./routing-in-partitioned-spaces.html{%endlearn%}
 
 # Multi-Parallel Initial Load
 
-The `ConcurrentMultiDataIterator` can be used for Multi-Parallel load. This will allow multiple threads to load data into each space primary partition. With the example below 4 threads will be used to load data into the space primary partition , each will handle a different `MyDataIterator`:
+The `ConcurrentMultiDataEnumerator` can be used for Multi-Parallel load. This will allow multiple threads to load data into each space primary partition. With the example below 10 threads will be used to load data into the space primary partition , each will handle a different `IDataEnumerator`:
 
-{% highlight java %}
-public class MySpaceDataSource extends SpaceDataSource{
+{% highlight csharp %}
+public IDataEnumerator InitialLoad()
+{
+    List<IDataEnumerator> enumerators = new List<IDataEnumerator>();
 
-	public DataIterator<Object> initialDataLoad() {
-		
-		MyDataIterator dataIteratorArry[] = new MyDataIterator [4];
-		dataIteratorArry[0] = new MyDataIterator(10,20);
-		dataIteratorArry[1] = new MyDataIterator(30,40);
-		dataIteratorArry[2] = new MyDataIterator(50,60);
-		dataIteratorArry[3] = new MyDataIterator(70,80);
-		
-		int threadPoolSize = dataIteratorArry.length;
-		ConcurrentMultiDataIterator  concurrentIterator = 
-		new ConcurrentMultiDataIterator(dataIteratorArry, threadPoolSize);
-		
-		return concurrentIterator;
-	}
+	int fetchSize = 100;
+	int initialLoadThreadPoolSize = 10;
+	bool idOrdering = false;
+
+	Query query1 = new Query(null,"from Employee where age > 30");
+	enumerators.Add(new NHibernateDataEnumerator(query1, sessionFactory, fetchSize, idOrdering);
+
+    return new ConcurrentMultiDataEnumerator(enumerators.ToArray(), fetchSize, initialLoadThreadPoolSize);
 }
 {% endhighlight %}
-{%endcomment%}
