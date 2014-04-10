@@ -546,6 +546,10 @@ h1[id] {
   border-color: #d0e3f0;
 }
 
+.bs-callout-doc {
+  background-color: #ffffff;
+  border-color: #d3d3d3;
+}
 
 /*
  * Grid examples

@@ -24,7 +24,7 @@ module Jekyll
       end
 
       def add_tip(context, content)
-        output = "<div class=\"bs-callout bs-callout-success\">"
+        output = "<div class=\"bs-callout bs-callout-doc\">"
         unless @title.empty?
           output << "<strong>"
           output << Kramdown::Document.new(@title).to_html

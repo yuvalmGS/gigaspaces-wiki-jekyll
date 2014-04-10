@@ -43,12 +43,12 @@ Multicast is not a mandatory with XAP. It is used as a secondary mechanism for l
 Multicast is not used with replication , notification , monitoring or any client activity against the space. Disabling multicast discovery means you are loosing dynamicy for the lookup service location. This means if the lookup service fails (very low probably to happen) you will be able to start it only on the machines listed on the `LOOKUPLOCATORS` list. Client `locators` should have the same list used.
 
 When multicast is disabled global lookup service should not be use. You should use only local lookup service configuration with the agent with the machines running the lookup service:
-{% highlight java %}
+{% highlight bash %}
 gs-agent gsa.global.lus 0 gsa.lus 1 gsa.gsm.global 0 gsa.gsm 1
 {% endhighlight %}
 
 Machines not running the lookup service should have thier agent started using:
-{% highlight java %}
+{% highlight bash %}
 gs-agent gsa.global.lus 0 gsa.lus 0 gsa.gsm.global 0 gsa.gsm 0
 {% endhighlight %}
 
@@ -61,7 +61,7 @@ If you can't have multicast enabled within your network you should disable it on
 In some cases, Linux distributions do not have multicast enabled by default and the `/etc/hosts` file does not include the IP address associated with the server's hostname. An error that is frequently met is: `hostname associated with the localhost` in `/etc/hosts`. The machine's hostname in `/etc/hosts` should be associated with the IP address set to the server's network interface, or to the external static NAT IP address of the server (the address clients should connect to).
 Make sure the `/etc/hosts` has the machine's IP, together with the IP: `127.0.0.1`.
 
-{% highlight java %}
+{% highlight bash %}
 127.0.0.1        localhost
 192.168.10.127   Mylinux
 {% endhighlight %}
@@ -74,7 +74,7 @@ Before running GigaSpaces, make sure your network interface supports multicast, 
 
 To check if your network interface supports multicast, run the following `ifconfig`:
 
-{% highlight java %}
+{% highlight bash %}
 $ /sbin/ifconfig -a
 eth0      Link encap:Ethernet  HWaddr 00:30:48:2E:67:BA
           inet addr:192.168.10.127  Bcast:192.168.10.255  Mask:255.255.255.0
@@ -115,13 +115,13 @@ sit0      Link encap:IPv6-in-IPv4
 
 If the `MULTICAST` attribute in the fourth line of the `eth0` properties is not present, it's possible that your kernel has not been compiled with multicast support. Before re-compiling the kernel, try enabling multicast on your network interface (`eth0` in this case) via `ifconfig`:
 
-{% highlight java %}
+{% highlight bash %}
 $ /sbin/ifconfig etho multicast
 {% endhighlight %}
 
 To check that multicast routing is configured, run the following `route` command:
 
-{% highlight java %}
+{% highlight bash %}
 $ /sbin/route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
@@ -136,7 +136,7 @@ If the destination `224.0.0.0` entry is not present, you need to enable multicas
 
 To enable multicast routing, run the following `route` command as **root**:
 
-{% highlight java %}
+{% highlight bash %}
 $ /sbin/route -n add -net 224.0.0.0 netmask 240.0.0.0 dev eth0
 {% endhighlight %}
 
@@ -157,7 +157,7 @@ For more details on Linux `ifconfig` and `route` commands, refer to:
 {% tip %}
 [tcpdump](http://www.tcpdump.org/) is another useful command which dumps traffic on a network:
 
-{% highlight java %}
+{% highlight bash %}
 tcpdump -i eth0 ip multicast
 {% endhighlight %}
 

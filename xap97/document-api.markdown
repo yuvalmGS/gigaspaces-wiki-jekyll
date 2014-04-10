@@ -35,9 +35,7 @@ The Type controls **metadata** - so only the metadata is part of the type. A doc
 
 Note that the Document type does not describe the properties themselves (except for the names of the ID and Routing properties). These are completely dynamic and each instance can have a different set of properties (although in most cases Document instances of the same type are likely to have identical or similar set of properties).
 
-<%comment%}
-<iframe width="640" height="360" src="//www.youtube.com/embed/nBljYC3ciYc?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
-<%endcomment%]
+
 
 ## Schema Evolution with Space Documents
 
