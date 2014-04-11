@@ -40,7 +40,7 @@ This time instead of specifying the values directly in the expression we've used
 
 # Supported SQL Features
 
-{%panel title=SqlQuery supports the following:%}
+{%vbar title=SqlQuery supports the following:%}
 
 - `AND` / `OR` operators to combine two or more conditions.
 - All basic logical operations to create conditions: `=, <>, <,>, >=, <=, like, NOT like, is null, is NOT null, IN`.
@@ -50,7 +50,7 @@ This time instead of specifying the values directly in the expression we've used
 - `sysdate` - current system date and time.
 - `rownum` - limits the number of rows to select.
 - Sub queries.
-{%endpanel%}
+{%endvbar%}
 
 
 # Indexing
@@ -100,6 +100,103 @@ query.Routing = 1;
 MyClass[] result = space.ReadMultiple<MyClass>(query);
 {% endhighlight %}
 
+# Regular Expressions
+
+You can query the space using the SQL `like` operator or [Java Regular Expression](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/regex/Pattern.html) Query syntax.
+
+When using the SQL `like` operator you may use the following:
+`%` - match any string of any length (including zero length)
+`_` - match on a single character
+
+{% highlight csharp %}
+SqlQuery<MyClass> query = new SqlQuery<MyClass>("Name like 'A%'")
+{% endhighlight %}
+
+Querying the space using the Java Regular Expression provides more options than the SQL `like` operator. The Query syntax is done using the `rlike` operator:
+
+{% highlight csharp %}
+// Match all entries of type MyClass that have a name that starts with a or c:
+SqlQuery<MyClass> query = new SqlQuery<MyClass>("Name rlike '(a|c).*'");
+{% endhighlight %}
+
+All the supported methods and options above are relevant also for using `rlike` with `SqlQuery`.
+
+{% note %} `like` and `rlike` queries are not using indexed data, hence executing such may be relatively time consuming compared to other queries that do leverage indexed data. This means the space engine iterate the potential candidate list to find matching object using the Java regular expression utilizes. A machine using 3GHz CPU may iterate 100,000-200,000 objects per second when executing regular expression query. To speed up `like` and `rlike` queries make sure your query leveraging also at least one indexed field to minimize the candidate list. Running multiple partitions will also speed up the query execution since this will allow the system to iterate over the potential matching objects in a parallel manner across the different partitions.
+{%endnote%}
+
+# Free Text Search
+
+Free text search required almost with every application. Users placing some free text into a form and later the system allows users to search for records that includes one or more words within a free text field. A simple way to enable such fast search without using regualr expression query that my have some overhead can be done using the [Collection Indexing](./indexing.html#Collection Indexing), having an array or a collection of String values used for the query. Once the query is executed the SQL Query should use the searched words as usual. See example below:
+
+Our Space class includes the following - note the **words** and the **freeText** fields:
+
+{% highlight csharp %}
+public class MyData {
+
+    [@SpaceIndex (path="[*]")]
+	private String[] Words {set; get;}
+
+	private String FreeText{set; get;}
+
+	public String[] GetWords() {
+		return Words;
+	}
+
+	public void SetWords(String[] ws) {
+		this.Words=ws;
+	}
+
+	public String getFreeText() {
+		return FreeText;
+	}
+
+	public void setFreeText(String freeText) {
+		this.FreeText = freeText;
+		this.Words = FreeText.Split(" ");
+	}
+}
+{% endhighlight %}
+
+{% note %} Note how the **freeText** field is broken into the **words** array before placed into the indexed field.
+{%endnote%}
+
+You may write the data into the space using the following:
+
+{% highlight csharp %}
+MyData data = new MyPOJO(...);
+data.FreeText(freetext);
+proxy.Write(data);
+{% endhighlight %}
+
+You can query for objects having the word **hello** as part of the freeText field using the following:
+
+{% highlight csharp %}
+MyData results[] = proxy.ReadMultiple<MyData>(new SqlQuery<MyData>("Words[*]='hello'"));
+{% endhighlight %}
+
+You can also execute the following to seach for object having the within the freeText field the word **hello** or **everyone**:
+
+{% highlight csharp %}
+MyData results[] = proxy.ReadMultiple(new SqlQuery<MyData>("Words[*]='hello' OR Words[*]='everyone')");
+{% endhighlight %}
+
+With the above approach you avoid the overhead with regular expression queries.
+
+{% tip %}
+The same approach can be implemented also with the [SpaceDocument](./document-api.html).
+{% endtip %}
+
+{% comment %}
+To search for specific words in a specific order within the free text field you should use the indexed field and regular expression with another field that stores the free text.
+{% endcomment %}
+
+# Case Insensitive Query
+
+Implementing case insensitive queries can be done via:
+
+- `like` operator or `rlike` operator. Relatively slow. Not recommended when having large amount of objects.
+- Store the data in lower case and query on via lower case String value (or upper case)
+
 # Limitations
 
 ### Enums
@@ -129,8 +226,9 @@ The following features support only simple SQL queries
 
 ### Unsupported SQL Features
 
-{%panel title=SqlQuery **does not** support the following:%}
 
+
+{%vbar title=SqlQuery **does not** support the following:%}
 - Aggregate functions: COUNT, MAX, MIN, SUM, AVG.
 - Multiple tables select.
 - `DISTINCT`
@@ -142,19 +240,23 @@ The following features support only simple SQL queries
 - `LEFT OUTER JOIN`
 - `RIGHT OUTER JOIN`
 - `INNER JOIN`
-{%endpanel%}
+{%endvbar%}
 
 ### Reserved Words
 
-{%panel title=The following are reserved keywords in the GigaSpaces SQL syntax: %}
+
+
+{%vbar title=The following are reserved keywords in the GigaSpaces SQL syntax:%}
 ALTER ADD AND ASC BETWEEN BY CREATE CALL DROP DEFAULT_NULL DESC  DISTINCT END FROM GROUP IN IS LIKE
 MAX MIN NOT NULL OR ORDER SELECT SUBSTR SUM SYSDATE UPPER WHERE COUNT DELETE EXCEPTION ROWNUM INDEX
 INSERT INTO SET TABLE TO_CHAR TO_NUMBER FOR_UPDATE UPDATE UNION VALUES COMMIT ROLLBACK PRIMARY_KEY
 UID USING
-{%endpanel%}
+{%endvbar%}
 
 ### Reserved Separators and Operators:
 
-{%panel title=reserved syntax: %}
+
+
+{%vbar title=Reserved syntax:%}
 := || ; . ROWTYPE ~ < <= >  >= => != <> \(+\) ( ) \* / + - ? \{ \}
-{%endpanel%}
+{%endvbar%}
