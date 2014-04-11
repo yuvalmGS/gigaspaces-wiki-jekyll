@@ -349,6 +349,11 @@ public User[] sqlFindUsersByNameAndCreditLimit() {
 public User[] sqlFindUsersByNameAndIds() {
 	SqlQuery<User> query = new SqlQuery<User>( "Name = 'John Dow' AND Id IN(1L,3L,5L)");
 	return proxy.ReadMultiple<User>(query);
+
+public User[] sqlFindUsersByNameLike() {
+    SqlQuery<User> query = new SqlQuery<User>("Name like 'A%'");
+    return proxy.ReadMultiple<User>(query);
+
 }
 {%endhighlight%}
 
