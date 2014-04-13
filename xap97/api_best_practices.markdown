@@ -91,7 +91,12 @@ If this is not feasible, this protective mode can be disabled using the followin
 
 ## Define an index on the properties you need to query. 
 
+TBD
+
 ## Don't change nested properties on embedded space
+
+TBD
+
 ## Don't use externalizable unless you really know what you're doing 
 
-
+TBD
