@@ -27,16 +27,20 @@ For such cases we created the *Protective Mode*, which means that the validation
 Id property is essential for update operation and also XAP has a rich set of operations that use the id to perform read/take/update very efficiently without fetching the whole object. 
 Since 9.1 this is enforce by the protective mode:
 
-### Protective Mode: Type Without Space ID (Since 9.7)
-
-Writing an entry to the space without a [space ID]({%latestjavaurl%}/query-by-id.html) is error-prone - it can lead to duplicate entries, bad performance and more. Starting 9.7 a new protective mode has been added to protect against writing such entries. this protective mode can be disabled using the `com.gs.protectiveMode.typeWithoutId` system property.
-
+Writing an entry to the space without a [space ID]({%latestjavaurl%}/query-by-id.html) is error-prone - it can lead to duplicate entries, bad performance and more. 
 In case your application contains objects without an id you'll get the following exception:
 
-`com.gigaspaces.client.protective.ProtectiveModeException: Cannot introduce a type named 'MyClass' without an id property defined...`
+{% highlight java %}
+com.gigaspaces.client.protective.ProtectiveModeException: Cannot introduce a type named 'MyClass' without an id property defined...
+{% endhighlight %}
+
 
 It is highly recommended that you modify them and add a space ID.
-If this is not feasible, it can be disabled using the following system property: `-Dcom.gs.protectiveMode.typeWithoutId=false`
+If this is not feasible, it can be disabled using the following system property: 
+{% highlight console %}
+-Dcom.gs.protectiveMode.typeWithoutId=false
+{% endhighlight %}
+
 
 ## Define a routing property.
 
@@ -45,34 +49,36 @@ It is recommended to define such property explicitly to control how data is part
 
 See more info on [routing property]({%latestjavaurl%}/routing-in-partitioned-spaces.html).
 
-### Protective Mode: Object Without Routing Value(Since 9.7)
-
 Starting 9.7 a new protective mode has been added to protect against writing entries with null value routing.
 In case your application contains objects without routing you'll get the following exception:
 
-`com.gigaspaces.client.protective.ProtectiveModeException: Operation is rejected - no routing value provided when writing an entry of type 'MyClass' in a partitioned space. A routing value should be specified within the entry's property named 'myRoutingProperty'. Missing a routing value would result in a remote client not being able to locate this entry as the routing value will not match the partition the entry is located.... `
-
+{% highlight java %}
+com.gigaspaces.client.protective.ProtectiveModeException: Operation is rejected - no routing value provided when writing an entry of type 'MyClass' in a partitioned space. A routing value should be specified within the entry's property named 'myRoutingProperty'. Missing a routing value would result in a remote client not being able to locate this entry as the routing value will not match the partition the entry is located.... 
+{% endhighlight %}
 
 It is highly recommended that you modify them and add a routing value.
-If this is not feasible, and you know what you're doing, it can be disabled using the following system property: `-Dcom.gs.protectiveMode.wrongEntryRoutingUsage=false`
+If this is not feasible, and you know what you're doing, it can be disabled using the following system property:
+{% highlight console %}
+-Dcom.gs.protectiveMode.wrongEntryRoutingUsage=false
+{% endhighlight %}
 
-### Protective Mode: Wrong Routing Property(Since 9.7)
-
-Starting 9.7 a new protective mode has been added to protect against writing entries with a wrong routing value.
 In case your application writes directly to one of the partitions and assigns the wrong routing value you'll get the following exception:
 
-`com.gigaspaces.client.protective.ProtectiveModeException: Operation is rejected - the routing value in the written entry of type 'MyClass' does not match this space partition id. The value within the entry's routing property named 'symbol' is 100 which matches partition id 1 while current partition id is 2`
-
+{% highlight java %}
+com.gigaspaces.client.protective.ProtectiveModeException: Operation is rejected - the routing value in the written entry of type 'MyClass' does not match this space partition id. The value within the entry's routing property named 'symbol' is 100 which matches partition id 1 while current partition id is 2...
+{% endhighlight %}
 
 It is highly recommended that you modify them and set the right routing.
-If this is not feasible, and you knwo what you're doing, it can be disabled using the following system property: `-Dcom.gs.protectiveMode.wrongEntryRoutingUsage=false`
+If this is not feasible, and you know what you're doing, it can be disabled using the following system property: 
+{% highlight console %}
+-Dcom.gs.protectiveMode.wrongEntryRoutingUsage=false
+{% endhighlight %}
 
 
-## Don't use primitive types. If you must, then assign null values.
+## Don't use primitive types. 
 
-This is enforced by the protective mode:
-
-### Protective Mode: Template with Primitive Properties Without Null Values (Since 9.7)
+If you must, then assign null values.
+This is enforced by the protective mode since 9.7:
 
 When querying the space using [template matching]({%latestjavaurl%}/query-template-matching.html), null properties are ignored and non-null properties are matched. Since primitive properties cannot be set to null, a `nullValue` can be assigned to a property to indicate a value which will be treated as null when using template matching. 
 
@@ -81,11 +87,18 @@ See [primitive types matching]({%latestjavaurl%}/query-template-matching.html#pr
 Starting 9.7 a new protective mode has been added to protect against querying with a template which contains one or more primitive properties without a `nullValue`, since such templates are likely to produce unexpected results. 
 
 If your application uses template matching with such types, you'll get the following exception:
-`com.gigaspaces.client.protective.ProtectiveModeException: Operation is rejected - template matching on type MyClass is illegal because it has primitive properties without null value: id (int)...`
+
+{% highlight java %}
+com.gigaspaces.client.protective.ProtectiveModeException: Operation is rejected - template matching on type MyClass is illegal because it has primitive properties without null value: id (int)...
+{% endhighlight %}
+
 
 It is highly recommended that you define `nullValue` where appropriate, or switch to [SQLQuery]({%latestjavaurl%}/sqlquery.html) instead. 
 
-If this is not feasible, this protective mode can be disabled using the following system property: `-Dcom.gs.protectiveMode.primitiveWithoutNullValue=false` 
+If this is not feasible, this protective mode can be disabled using the following system property: 
+{% highlight console %}
+-Dcom.gs.protectiveMode.primitiveWithoutNullValue=false
+{% endhighlight %}
 
 
 
