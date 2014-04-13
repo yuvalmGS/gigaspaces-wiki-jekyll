@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  API Best Practices
+title:  API Best Practices and Protective Mode
 categories: XAP97
 weight: 200
 parent: none
@@ -11,16 +11,15 @@ parent: none
 {%section%}
 
 {%column width=90% %}
-This guide contains the API guidelines that should be followed when using XAP to achieve best performance and avoid common mistakes
-{%endcolumn%}
-{%endsection%}
-
-# API Best Practices and Protective Mode
-
+This guide contains the API guidelines that should be followed when using XAP to achieve best performance and avoid common mistakes.
 The following guidelines are highly recommended to build robust and efficient applications as well as to avoid common mistakes. 
 We design XAP to be very robust and provide clear exceptions when the usage is wrong. 
 Sometimes a plain validation is too harsh, as it might break backward-compatibility and prevent existing customers from upgrading to the latest version. 
 For such cases we created the *Protective Mode*, which means that the validation is on by default, but can be disabled using a system property. This protects new customers from repeating old mistakes, and encourages existing customers to fix their code (yet allows them to disable the protection if they choose so).
+
+{%endcolumn%}
+{%endsection%}
+
 
 ## Define an id property 
 
