@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  API Best Practices and Protective Mode
-categories: XAP97
+categories:
 weight: 200
 parent: none
 ---
