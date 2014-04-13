@@ -42,4 +42,3 @@ Global HTTP Session Sharing allows transparent session replication between remot
 
 [Global Http Session Sharing](http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2)
 
-{%include lightbox.html %}

@@ -38,4 +38,4 @@ Describe the common Exception Event Listener and its different adapters.
 #### Additional Resources
 
 {%youtube GwLfDYgl6f8 | Event Processing%}
-{%include lightbox.html %}
+

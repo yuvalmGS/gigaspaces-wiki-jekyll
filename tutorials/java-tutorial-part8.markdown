@@ -283,6 +283,5 @@ The integration dynamically creates and updates the mod_proxy_balancer configura
   <li class="next"><a href="./java-tutorial-part9.html">Big Data &rarr;</a></li>
 </ul>
 
-{%include lightbox.html%}
  
 

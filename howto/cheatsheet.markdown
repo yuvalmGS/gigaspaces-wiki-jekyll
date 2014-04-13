@@ -207,3 +207,10 @@ Markdown:
 <tr><td>{%fontsize 20%}This is font 20{%endfontsize%}</td><td>{%raw%} {%fontsize 20%}This is font 20{%endfontsize%} {%endraw%}</td></tr>
 <tr><td>{%fontsize 30%}This is font 30{%endfontsize%}</td><td>{%raw%} {%fontsize 30%}This is font 30{%endfontsize%} {%endraw%}</td></tr>
 </table>
+
+
+{% popup /attachment_files/qsg/class_diagram.png| Class Diagram| Class Diagram %}
+
+{%comment%}
+{%include scrolltop.html %}
+{%endcomment%}

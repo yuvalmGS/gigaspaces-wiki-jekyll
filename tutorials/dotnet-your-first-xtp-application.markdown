@@ -367,5 +367,3 @@ processorContainerHost.Dispose();
 
 This will host the two processing units, processor and feeder, which reside in the specified deployment directory.
 When the host is created the hosted processing units are immidiatly created and initialized, once the host is disposed it will dispose of the hosted processing unit container.
-
-{%include lightbox.html%}

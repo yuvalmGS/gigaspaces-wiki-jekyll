@@ -58,5 +58,5 @@ Installing XAP as a Windows service.
 {%endcolumn%}
 {%endsection%}
 
-{%include lightbox.html%}
+
 

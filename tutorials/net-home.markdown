@@ -25,7 +25,6 @@ Here is the simplified Class Model:
 {%endcolumn%}
 {%column%}
 {% popup /attachment_files/qsg/class_diagram.png| Class Diagram| Class Diagram %}
-{%include lightbox.html%}
 {%endcolumn%}
 {%endsection%}
 {%wbr%}

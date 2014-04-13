@@ -924,5 +924,3 @@ public class CassandraExternalPersistence implements ExternalPersistence {
 {% endhighlight %}
 {% endcomment %}
 
-
-{%include lightbox.html%}

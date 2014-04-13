@@ -63,7 +63,7 @@ Frequently asked questions.
 
 #### Additional Resources
 {%youtube V7rbbmWo3JU | Multi Site Deployment%}
-{%include lightbox.html %}
+
 
 
 

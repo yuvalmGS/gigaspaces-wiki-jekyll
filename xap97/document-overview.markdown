@@ -37,4 +37,3 @@ XAP offers interoperability between documents and POJOs via the space
 
 #### Additional Resources
 {%youtube nBljYC3ciYc | Document API%}
-{%include lightbox.html %}
