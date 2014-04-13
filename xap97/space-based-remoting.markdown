@@ -20,10 +20,6 @@ Some benefits of using the space as the transport layer include:
 
 - **High availability** -- since the space by its nature (based on the cluster topology) is highly available, remote invocations get this feature automatically when using the space as the transport layer.
 - **Load-balancing** -- when using a space with a partitioned cluster topology, each remote invocation is automatically directed to the appropriate partition (based on its routing handler), providing automatic load-balancing.
-{%endcolumn%}
-
-
-
 - **Performance** -- remote invocations are represented in fast internal OpenSpaces objects, providing fast serialization and transport over the net.
 - **Asynchronous execution** -- by its nature, remoting support is asynchronous, allowing for much higher throughput of remote invocations. OpenSpaces allows you to use asynchronous execution using Futures, and also provides synchronous support (built on top of it).
 
