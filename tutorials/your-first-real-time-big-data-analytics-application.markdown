@@ -103,7 +103,7 @@ To implement our solution, we use Cassandra (or a local file) as the historical 
 
 - Optionally, the [`common`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/common) module for including items that are shared between the feeder and the processor modules (e.g. common interfaces, shared data model, etc.).
 
-- The [`bigDataApp`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/bigDataApp) directory contains the recipes and other scripts required to automatically deploy, monitor and manage the entire application together with the [Cassandra](http://cassandra.apache.org/) back-end using [Cloudify](http://www.cloudifysource.org).
+- The [`bigDataApp`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/bigDataApp) directory contains the recipes and other scripts required to automatically deploy, monitor and manage the entire application together with the [Cassandra](http://cassandra.apache.org/) back-end using [Cloudify](http://getcloudify.org).
 
 
 
@@ -526,7 +526,7 @@ RowKey: 0439486840025000
 
 # Running the Example using Cloudify
 
-To run the application with the Cassandra DB as one application on any cloud, we will use [Cloudify](http://www.cloudifysource.org). A key concept with Cloudify is deploying and managing the entire application life cycle using a [Recipe](http://www.getcloudify.org/guide/{%latestcloudifyrelease%}/developing/recipes_overview). This approach provides total application life-cycle automation without any code or architecture change. Furthermore, it is cloud neutral so you don't get locked-in to a specific cloud vendor.
+To run the application with the Cassandra DB as one application on any cloud, we will use [Cloudify](http://getcloudify.org). A key concept with Cloudify is deploying and managing the entire application life cycle using a [Recipe](http://www.getcloudify.org/guide/{%latestcloudifyrelease%}/developing/recipes_overview.html). This approach provides total application life-cycle automation without any code or architecture change. Furthermore, it is cloud neutral so you don't get locked-in to a specific cloud vendor.
 
 The following snippet shows the application's recipe:
 
@@ -606,13 +606,13 @@ install-application <XapInstallationRoot>/recipes/apps/streaming-bigdata/bigData
 You can track the progress on the shell and on the web management console (localhost:8099).
 {% endinfo %}
 
-For more information, see [Deploying Applications](http://www.cloudifysource.org/guide/2.6/deploying/deploying_apps.html) page.
+For more information, see [Deploying Applications](http://getcloudify.org/guide/2.6/deploying/deploying_apps.html) page.
 
 ### Running on Clouds
 
 To run the application on one of the supported clouds, proceed the following steps:
 
-1. Configure the cloud driver configuration file and get the cloud certificate. For more information, see [Post-Installation Configuration](http://www.cloudifysource.org/guide/{%latestcloudifyrelease%}/setup/post_installation_configuration.html) page.
+1. Configure the cloud driver configuration file and get the cloud certificate. For more information, see [Post-Installation Configuration](http://getcloudify.org/guide/{%latestcloudifyrelease%}/setup/post_installation_configuration.html) page.
 1. Bootstrap the cloud. For more information, see [The Bootstrapping Process](http://shlomo-tech-tav.github.com/guide/bootstrapping/bootstrapping_process) page.
 1. To install and deploy the application, use the `install-application` command, as described in the previous section.
 

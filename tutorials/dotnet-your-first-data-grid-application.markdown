@@ -36,6 +36,11 @@ To install, simply double-click the `{{ site.latest_msi_filename }}` you've down
 # Deploy a Data Grid
 {%endcomment%}
 
+{%vbar title=Download and Install XAP%}
+GigaSpaces XAP.NET is packaged as a standard Windows Installer package (.msi file). After you have downloaded the latest version of XAP from the [downloads page](http://www.gigaspaces.com/xap-download), start the installation by double-click the msi file, and the installation wizard will pop up and guide you through the installation process.
+
+Once you accept the licence agreement, you will be asked to choose a setup type. Select 'Complete' to install all the features in the default path (C:\GigaSpaces\XAP.NET X.x.x). Selecting 'Custom' will allow you to customize the installation path, which features will be installed, and more.
+{%endvbar%}
 
 # Starting a Service Grid
 

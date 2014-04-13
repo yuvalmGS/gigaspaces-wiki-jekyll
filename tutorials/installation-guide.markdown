@@ -51,7 +51,7 @@ Once you accept the licence agreement, you will be asked to choose a setup type.
 
 
 
-### How to create a XAP.NET Project in Visual Studio
+{%vbar title=How to create a XAP.NET Project in Visual Studio %}
 
 1. Open Microsoft Visual Studio. From the **File** menu select **New > Project**. The **New Project** dialog appears.
 2. In the **Project types** tree, select **Visual C#**, then select **Console Application** in the **Templates** list.
@@ -60,7 +60,7 @@ Once you accept the licence agreement, you will be asked to choose a setup type.
 5. From the **Project** menu, select **Add Reference**. The **Add Reference** dialog appears.
 6. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}\NET v4.0.30319**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
 7. In the **Solution Explorer**, make sure you see **GigaSpaces.Core** in the project references. There's no need to reference any other assembly.
-
+{%endvbar%}
 
 
 {%warning%}
