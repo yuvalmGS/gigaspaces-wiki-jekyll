@@ -24,7 +24,7 @@ The `AlertLoggingGateway` example project provided with the GigaSpaces distribut
 
 ## AlertsLoggingGatway components
 
-##### SnmpTrapTransmitter
+#### SnmpTrapTransmitter
 
 The **SnmpTrapTransmitter** is a XAP PU responsible for the generic Alert-to-Log bridging. It does that by listening to all alerts in its alert filter file. Any incoming alerts are simply writing to commons logging log. Notice that, being generic in nature, the SnmpTrapTransmitter can be reused without any changes in similar projects.
 SnmpTrapTransmitter exposes the folowing configuration parameters:
@@ -73,7 +73,7 @@ public class SnmpTrapTransmitter {
 }
 {% endhighlight %}
 
-##### SnmpTrapSender
+#### SnmpTrapSender
 
 The **SnmpTrapSender** is a utility class that implements the SnmpTrapAppender's `SnmpTrapSenderFacade` interface with an implementation that queues and asynchronously transmits Alerts as SNMP traps. The SNMP transmission method - `sendTrap()` - uses snmp4j library as its underlying implementation.
 
@@ -100,12 +100,12 @@ public class SnmpTrapSender implements SnmpTrapSenderFacade {
 
 {% endhighlight %}
 
-##### commons-logging.properties and log4j.properties
+#### commons-logging.properties and log4j.properties
 
 The **Commons-logging.properties** file is a commons logging configuration file which re-directs its calls to a log4j logger. In our example this file contains redirection of commons-logging to log4j as the SNMP trapper we use is on top of log4j.
 **log4j.properties** is a log4j configuration file which delegates log writes to the SNMPTrapAppender, resulting in SNMP traps.
 
-{% highlight java %}
+{% highlight console %}
 log4j.rootCategory=INFO,TRAP_LOG
 log4j.appender.TRAP_LOG=org.apache.log4j.ext.SNMPTrapAppender
 log4j.appender.TRAP_LOG.ImplementationClassName=org.openspaces.example.alert.logging.snmp.SnmpTrapSender

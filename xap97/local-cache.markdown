@@ -140,7 +140,9 @@ Take is always executed on both the local space and the master space. Blocking T
 
 Writes are always executed on the master space. Updates are executed both on the master space and the local cache, to make sure the cache is consistent if the object is cached.
 
-{% infosign %} **Transactional** object update - updates the object in the master space. It also removes any old copies from the local cache. This is done to provide transactional consistency. Once a transaction is committed, the data is updated within the local cache according to the update policy.
+{% info %}
+**Transactional** object update - updates the object in the master space. It also removes any old copies from the local cache. This is done to provide transactional consistency. Once a transaction is committed, the data is updated within the local cache according to the update policy.
+{%endinfo%}
 
 # Synchronization
 

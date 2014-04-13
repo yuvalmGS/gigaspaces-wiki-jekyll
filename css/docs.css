@@ -512,10 +512,11 @@ h1[id] {
 
 /* Common styles for all types */
 .bs-callout {
-  margin: 20px 0;
-  padding: 15px 30px 15px 15px;
+  margin: 10px 0;
+  padding: 10px 30px 10px 15px;
   border-left: 5px solid #eee;
   display: inline-block;
+  width: 100%;
 }
 .bs-callout h4 {
   margin-top: 0;

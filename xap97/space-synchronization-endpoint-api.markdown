@@ -119,7 +119,7 @@ The methods which are in charge of data synchronization are: `onOperationsBatchS
 
 This API exposes the operation type, such as Write, Update, Remove and so on, as well as the entry itself where such exists. Before calling each of the `getDataAsDocument`, `getDataAsObject` and `getTypeDescriptor`, the corresponding "supports" methods must be called to verify that the operation indeed applies to the current entry. An invocation of `getDataAsObject` if the `supportsDataAsObject` methods return false, will throw an `UnsupportOperationException`.
 
-##### Batch Synchronization Event Example
+#### Batch Synchronization Event Example
 
 {% highlight java %}
 public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint {
@@ -152,7 +152,7 @@ public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint
 }
 {% endhighlight %}
 
-##### Getting the ID and Routing Field values
+#### Getting the ID and Routing Field values
 
 The `DataSyncOperation` allows you getting the Space ID (Key) and Routing Field values using the `TypeDescriptor` and the `SpaceDocument`. See below example:
 
@@ -177,7 +177,7 @@ public void onOperationsBatchSynchronization(OperationsBatchData operationsBatch
 Remove and Change operation do not contain the routing value.
 {%endnote%}
 
-##### Transaction Synchronization Event Example
+#### Transaction Synchronization Event Example
 
 {% highlight java %}
 public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint {

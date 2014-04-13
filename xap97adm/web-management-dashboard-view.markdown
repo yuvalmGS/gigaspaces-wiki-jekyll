@@ -20,7 +20,7 @@ Once you've passed the login screen, you will enter the main dashboard screen. T
 
 # Alerts panel
 
-The Alerts panel displays XAP Alert groups (Alerts are grouped by correlation key) for more details see [Administrative Alerts]({%currentjavaurl%}/administrative-Alerts.html)
+The Alerts panel displays XAP Alert groups (Alerts are grouped by correlation key) for more details see [Administrative Alerts]({%currentjavaurl%}/administrative-alerts.html)
 
 ![xap-dashboard-alerts-inline.png](/attachment_files/xap-dashboard-alerts-inline.png)
 

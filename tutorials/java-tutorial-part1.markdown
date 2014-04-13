@@ -551,27 +551,27 @@ There are several additional indexing options available. For example you can ind
 
 {%vbar title=When you code your space classes make sure:  %}
 
-- there are indexes for all relevant attributes including nested attributes you use for queries
+there are indexes for all relevant attributes including nested attributes you use for queries
 
-- numeric attribute queried with between / greater / less than should have an extended index.
+numeric attribute queried with between / greater / less than should have an extended index.
 
-- compound indexes should be used for attributes queried using AND query
+compound indexes should be used for attributes queried using AND query
 
-- space classes have empty no arg constructor
+space classes have empty no arg constructor
 
-- all nested classes are serializable
+all nested classes are serializable
 
-- do not use  int, long, etc. integer attributes, instead use Long.
+do not use  int, long, etc. integer attributes, instead use Long.
 
-- when possible use writeMultiple.
+when possible use writeMultiple.
 
-- use projection for read/readMultiple
+use projection for read/readMultiple
 
-- use clear for data removal and not take or takeMultiple
+use clear for data removal and not take or takeMultiple
 
-- no huge collections with many items
+no huge collections with many items
 
-- use change api instead of update , especially if collections are used.
+use change api instead of update , especially if collections are used.
 {%endvbar%}
 
 
@@ -587,17 +587,15 @@ XAP provides a JDBC Driver, JPA API, MAP and Memcached API's.
 All XAP components can be wired and configured with the application using corresponding Spring Beans.
 
 {%vbar title=The GigaSpaces Spring Integration supports:%}
-
-- Spring Automatic Transaction Demarcation
-- Spring Data
-- Spring JMS
-- Spring JPA
-- Spring Hibernate
-- Spring Remoting
-- String Batch
-- Spring Security
-- Mule
-
+Spring Automatic Transaction Demarcation{%wbr%}
+Spring Data{%wbr%}
+Spring JMS{%wbr%}
+Spring JPA{%wbr%}
+Spring Hibernate{%wbr%}
+Spring Remoting{%wbr%}
+String Batch{%wbr%}
+Spring Security{%wbr%}
+Mule
 {%endvbar%}
 
 Lets look at a Spring configuration file that represents the creation of an embedded space:

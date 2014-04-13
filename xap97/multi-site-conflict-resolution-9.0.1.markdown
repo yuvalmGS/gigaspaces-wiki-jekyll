@@ -11,18 +11,18 @@ weight: 100
 
 Multiple site conflict resolution is the ability to resolve conflicts caused when a Sink component attempts to perform operations on a local cluster and faces one of the following conflicts:
 
-##### Data Conflicts
+#### Data Conflicts
 
 - Entry is already in space conflict - occurs when the sink attempts to write an entry which already exists in the local cluster.
 - Entry is not in space conflict - occurs when the sink attempts to update an entry which doesn't exist in the local cluster.
 - Entry version conflict - occurs when the sink attempts to update an entry with a newer/older version than the one which is in the local cluster.
 - Entry is locked under transaction conflict - occurs when the sink attempts to update an entry in the local cluster which is locked under transaction.
 
-##### Register Type Descriptor Conflict
+#### Register Type Descriptor Conflict
 
 Occurs when an attempt to register a type descriptor over gateway replication in the local cluster configured in the sink component fails.
 
-##### Add Indexes Conflict
+#### Add Indexes Conflict
 
 Occurs when an attempt to add indexes over gateway replication to the local cluster configured in the sink component fails.
 

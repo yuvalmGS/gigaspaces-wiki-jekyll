@@ -48,7 +48,7 @@ Maven users should define the following dependency in their `pom.xml` file:
 ![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
 {%endcomment%}
 
-##### OpenJPA 2.0.1
+#### OpenJPA 2.0.1
 
 GigaSpaces 8.0.1 uses OpenJPA version 2.0.1.
 Note that it's no longer needed to set a maven dependency for OpenJPA since OpenSpaces has an OpenJPA dependency.
@@ -64,7 +64,7 @@ To enable the GigaSpaces JPA implementation you should specify  the following 3 
 
 Your persistence.xml file should be placed in any **/META-INF folder in your classpath.
 
-##### GigaSpaces JPA 8.0.1
+#### GigaSpaces JPA 8.0.1
 
 In 8.0.1, it is no longer needed to set the "abstractstore.AbstractStoreManager" property.
 Instead, make sure to set the "BrokerFactory" property to "org.openspaces.jpa.BrokerFactory" as shown in the example below.
@@ -92,7 +92,7 @@ The following is an example of a GigaSpaces JPA persistence.xml configuration fi
 </persistence-unit>
 {% endhighlight %}
 
-##### Transaction Read Lock Level
+#### Transaction Read Lock Level
 
 GigaSpaces JPA default read lock level is set to "read" which is equivalent to GigaSpaces' ReadModifiers.REPEATABLE_READ.In order to use ReadModifiers.EXCLUSIVE_READLOCK the "ReadLockLevel" property should be set to "write":
 
@@ -104,7 +104,7 @@ GigaSpaces JPA default read lock level is set to "read" which is equivalent to G
 
 Specifying a space connection URL or a space instance can be done in one of the following ways:
 
-##### Referencing an Existing Space Instance through Factory Properties
+#### Referencing an Existing Space Instance through Factory Properties
 
 Specifying a space instance is possible when creating an `EntityManagerFactory` in the following way:
 
@@ -115,7 +115,7 @@ properties.put("ConnectionFactory", gigaspace.getSpace());
 EntityManagerFactory emf = Persistence.createEntityManagerFactory("gigaspaces", properties);
 {% endhighlight %}
 
-##### Injection using Spring
+#### Injection using Spring
 
 It is possible to inject either an `EntityManager` or `EntityManagerFactory` using Spring. Before reading this, it is recommend that you [make yourself familiar with Spring's JPA support](http://static.springsource.org/spring/docs/3.0.x/reference/orm.html#orm-jpa).
 In the following example we'll see how to inject a space-based `EntityManagerFactory`.
@@ -364,7 +364,7 @@ Non-Indexed fields that are not used for queries should be placed within a user 
 
 GigaSpaces JPA supports a subset of JPQL. Here are a few examples of the supported queries:
 
-##### Querying on Properties of Nested Objects
+#### Querying on Properties of Nested Objects
 
 {% highlight java %}
 EntityManagerFactory emf = Persistence.createEntityManagerFactory("gigaspaces");
@@ -375,7 +375,7 @@ em.close();
 emf.close();
 {% endhighlight %}
 
-##### JOIN support for one to many relationship (Owner --> List<Pet>)
+#### JOIN support for one to many relationship (Owner --> List<Pet>)
 
 {% highlight java %}
 EntityManagerFactory emf = Persistence.createEntityManagerFactory("gigaspaces");
@@ -470,7 +470,7 @@ public class Vehicle {
 We used the `@Enumerated` annotation for persisting an Enum property.
 Please note that specifying a value for the `@Enumerated.value()` attribute has no effect since Enums are saved in GigaSpaces as is.
 
-##### Enums In JPQL
+#### Enums In JPQL
 
 It's possible to query according to an Enum property by setting an Enum parameter or by using the Enum's value in the query string:
 
@@ -642,7 +642,7 @@ Integer result = (Integer) query.getSingleResult(); // Task execution always ret
 Please note that task execution using JPA's native query API is always synchronous.
 {% endinfo %}
 
-##### Getting an EntityManagerFactory instance in a Task
+#### Getting an EntityManagerFactory instance in a Task
 
 Its possible to get an EntityManagerFactory instance (according to the bean definition in pu.xml) by implementing the ApplicationContextAware interface.
 For example:

@@ -148,7 +148,7 @@ Alert configuration settings can be changed (at runtime) for a pre-configured/pr
 
 A pre-configured but **disabled** alert can be easily enabled, but an already **enabled** alert type will need to be **disabled** prior to setting a new configuration.
 
-###### Enable a Disabled Predefined Alert
+#### Enable a Disabled Predefined Alert
 
 For a predefined but disabled alert, enable it by specifying the alert Class type. The configuration settings that were predefined will be used.
 
@@ -156,7 +156,7 @@ For a predefined but disabled alert, enable it by specifying the alert Class typ
 alertManager.enableAlert(CpuUtilizationAlertConfiguration.class);
 {% endhighlight %}
 
-###### Disable a Predefined Enabled Alert
+#### Disable a Predefined Enabled Alert
 
 Too disable an existing alert (yet keep its configuration), use the following code:
 

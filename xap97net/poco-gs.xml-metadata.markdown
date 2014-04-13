@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  GS.XML Metadata
+title:  File based Metadata
 categories: XAP97NET
 parent: modeling-your-data.html
 weight: 500

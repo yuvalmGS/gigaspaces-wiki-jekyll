@@ -22,10 +22,10 @@ The typical scenario is when streaming vast number of raw events through the Spa
 {%endcolumn%}
 {%endsection%}
 
-{%vbar%}
-- The Archive Container automatically moves objects from the Space to the Big-Data storage.
-- The Archive Container configures the set of objects to be archived.
-- The Archive Container supports Space fail-over, and Big-Data storage unavailability.
+{%vbar title=The Archive Container:%}
+- automatically moves objects from the Space to the Big-Data storage.
+- configures the set of objects to be archived.
+- supports Space fail-over, and Big-Data storage unavailability.
 - The persisted objects, can then be read by 3rd party tools directly from the Big-Data storage.
 - Big-Data storage is abstracted with the [`ArchiveOperationHandler`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/archive/ArchiveOperationHandler.html) interface. [Cassandra Archive Operation Handler](./cassandra-archive-operation-handler.html) implementation is available out of the box.
 {%endvbar%}

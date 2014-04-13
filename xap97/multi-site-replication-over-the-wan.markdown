@@ -157,6 +157,7 @@ have no meaning, all sites could designate the same ports as well-->
 In the above example we see that both the sink and delegator needs a reference to the gateway lookup configuration, and that's because both components are using this configuration to locate the relevant component or to register themselves. They use their local gateway name to identify themselves to the lookup configuration, where they should be registered and where they should look for their targets.
 
 The delegator and sink components are actually isolated and can even be deployed in separate processing units but the most simple deployment would be to bundle theses two together. However, in some cases you might want to separate this into two or more machines due to system loads or other reasons.
+
 {% refer %}For full details and available configuration please refer to [Replication Gateway Components](./replication-gateway-components.html){% endrefer %}
 
 ## Gateway and the Mirror Service
@@ -753,11 +754,13 @@ The [Multi-Master running example](/sbp/wan-replication-gateway.html) includes a
 # Filtering Replication Between Gateways
 
 In some cases, there can be data that should not be replicated between the sites but should still be replicated locally to the backup or a mirror service. Hence, specifying the object is not replicated does not fit. Since a replication channel to a gateway is like any other replication channel, a custom [Replication Filter](./cluster-replication-filters.html) at the source space can be used to filter the relevant data from being sent to the target gateway. This filtering should be based on the replication target name in order to identify that the replication filter is called for the correct outgoing replication to the gateway.
+
 {% refer %}For full details and example please refer to [Replication Gateway Filtering](./replication-gateway-filtering.html){% endrefer %}
 
 # Bootstrap One Site From Another Site
 
 Bootstrapping a site from another site is a process in which one site space is starting fresh and it is being populated with the data of another site space. This can be useful after a very long disconnection where the replication redo-log in the source spaces that replicates to this site was dropped due to breaching capacity limitations, and the disconnected site should start fresh. Other reasons may be an explicit planned downtime due-to some maintenance of one site which lead to a complete system bootstrap once restarted.
+
 {% refer %}For full details of how to enable the bootstrap mechanism refer to [Replication Gateway Bootstrapping Process](./replication-gateway-bootstrapping-process.html){% endrefer %}
 
 # Changing Sites Topology During Runtime

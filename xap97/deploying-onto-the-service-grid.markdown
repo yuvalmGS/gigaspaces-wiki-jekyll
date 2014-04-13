@@ -48,7 +48,7 @@ GigaSpaces provides several options to deploy a processing unit onto the Service
 
 {% inittab os_simple_space|top %}
 {% tabcontent Admin API %}
-Deploying via code is done using the GigaSpaces [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](./administration-and-monitoring-api.html) and [javadoc](% javadoc /index.html%) of the Admin API.
+Deploying via code is done using the GigaSpaces [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy the `myPU.jar` processing unit using one of the available GSMs. For more details please consult the [documentation](./administration-and-monitoring-api.html) and [javadoc]({%javadoc%}) of the Admin API.
 
 {% highlight java %}
 Admin admin = new AdminFactory().addGroup("myGroup").create();

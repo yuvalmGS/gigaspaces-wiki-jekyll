@@ -94,15 +94,15 @@ Together with the in-line cache and side cache scenarios, you can also use clien
 
 When using client cache, you use a two-layered cache architecture: The first layer runs locally, within the client, and the second layer runs in the remote IMDG. The remote IMDG may use any of the supported deployment topologies.
 
-##### In-line cache with a client cache:
+#### In-line cache with a client cache:
 
 ![in-line_cache-local-cache.jpg](/attachment_files/in-line_cache-local-cache.jpg)
 
-##### Side cache with a client cache:
+#### Side cache with a client cache:
 
 ![side-cache-local-cache.jpg](/attachment_files/side-cache-local-cache.jpg)
 
-##### Side cache using External Data Source with a client cache:
+#### Side cache using External Data Source with a client cache:
 
 ![side_cache-lazy-localcache.jpg](/attachment_files/side_cache-lazy-localcache.jpg)
 

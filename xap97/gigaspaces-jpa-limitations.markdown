@@ -54,7 +54,7 @@ QueryHint
 
 # JPQL
 
-##### Unsupported JPQL keywords/expressions
+#### Unsupported JPQL keywords/expressions
 
 - NOT.
 - BETWEEN (Supported in 8.0.1).
@@ -68,7 +68,7 @@ QueryHint
 - Arithmetic functions (ABS, SQRT, MOD, SIZE)
 - Datetime functions (CURRENT_DATE, CURRENT_TIME, CURRENT_TIMESTAMP)
 
-##### Joins
+#### Joins
 
 - Outer Joins.
 - Fetch Joins.

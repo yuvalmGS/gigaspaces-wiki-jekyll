@@ -526,7 +526,7 @@ RowKey: 0439486840025000
 
 # Running the Example using Cloudify
 
-To run the application with the Cassandra DB as one application on any cloud, we will use [Cloudify](http://www.cloudifysource.org). A key concept with Cloudify is deploying and managing the entire application life cycle using a [Recipe](http://www.cloudifysource.org/guide/{%latestcloudifyrelease%}/developing/recipes_overview). This approach provides total application life-cycle automation without any code or architecture change. Furthermore, it is cloud neutral so you don't get locked-in to a specific cloud vendor.
+To run the application with the Cassandra DB as one application on any cloud, we will use [Cloudify](http://www.cloudifysource.org). A key concept with Cloudify is deploying and managing the entire application life cycle using a [Recipe](http://www.getcloudify.org/guide/{%latestcloudifyrelease%}/developing/recipes_overview). This approach provides total application life-cycle automation without any code or architecture change. Furthermore, it is cloud neutral so you don't get locked-in to a specific cloud vendor.
 
 The following snippet shows the application's recipe:
 

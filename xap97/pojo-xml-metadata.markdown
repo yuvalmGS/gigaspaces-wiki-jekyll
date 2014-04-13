@@ -1,10 +1,12 @@
 ---
 layout: post
-title:  gs - XML
-categories:
-parent:
-weight:
+title:  File based Metadata
+categories: XAP97
+parent: modeling-your-data.html
+weight: 130
 ---
+
+{% summary %}{% endsummary %}
 
 {%comment%}
 {% summary %}This section deals with the class level annotations.{% endsummary %}
@@ -13,9 +15,7 @@ weight:
 The space mapping configuration file `gs.xml` allows you to define space class metadata when using a POJO class with getter or setter methods. Space mapping files are also required when using POJO objects with the `ExternalDataSource` interface. The `gs.xml` configuration file is loaded when the application and space are started. `gs.xml` files can be edited to include GigaSpaces specific attributes.
 
 
-## XML Tags
-
-### Class Level Tags
+# Class Level Tags
 
 - **`<class>`** -- a `class` and the associated Java class `ClassDescriptor` encapsulate meta data information of a concrete class.
 
@@ -23,11 +23,11 @@ The space mapping configuration file `gs.xml` allows you to define space class m
 | Attribute | Description |
 |:----------|:------------|
 | `name` | Contains the full qualified name of the specified class. Because this attribute is of the XML type `ID`, there can only be one `class-descriptor` per class. |
-| `persist` | This field indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this attribute will persist objects of this type. {% refer %}For more details, refer to the [Persistency](./persistency.html) section. {% endrefer %} |
-| `replicate` | This field indicates the replication mode of the object. When a space is defined as replicated, a `true` value for this attribute will replicate objects of this type. {% refer %}For more details, refer to the [Replication](./replication.html) section. {% endrefer %}{% wbr %}{% tip %}{% wbr %}To control replication at the object level you should specify a [replication filter](./cluster-replication-filters.html){% wbr %}{% endtip %}|
+| `persist` | This field indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this attribute will persist objects of this type. {% refer %}For more details, refer to the [Persistency](./space-persistency-overview.html) section. {% endrefer %} |
+| `replicate` | This field indicates the replication mode of the object. When a space is defined as replicated, a `true` value for this attribute will replicate objects of this type. {% refer %}For more details, refer to the [Replication](./replication.html) section. {% endrefer %}{% wbr %}{% exclamation %}To control replication at the object level you should specify a [replication filter](./cluster-replication-filters.html){% wbr %}|
 | `fifo-support` | To enable FIFO operations, set this attribute to one of the [FifoSupport](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/annotation/pojo/FifoSupport.html) enumeration values. {% refer %}For more details, refer to the [FIFO operations](./fifo-support.html) section.{% endrefer %} |
 
-### Field Level Tags
+# Field Level Tags
 
 {% tip %}
 All the fields are written automatically into space. If the field is a reference to another object, it has to be Serializable and it will be written into space as well. Only the fields which need special space behavior need to be specified in the gs.xml file. Specify the fields which are id's, indexes or need exclusions, etc.
