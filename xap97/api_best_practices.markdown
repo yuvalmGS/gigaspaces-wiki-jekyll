@@ -25,7 +25,7 @@ For such cases we created the *Protective Mode*, which means that the validation
 ## Define an id property 
 
 Id property is essential for update operation and also XAP has a rich set of operations that use the id to perform read/take/update very efficiently without fetching the whole object. 
-Since 9.1 this is enforce by the protective mode:
+Since 9.1 this is enforced by the protective mode:
 
 Writing an entry to the space without a [space ID]({%latestjavaurl%}/query-by-id.html) is error-prone - it can lead to duplicate entries, bad performance and more. 
 In case your application contains objects without an id you'll get the following exception:
