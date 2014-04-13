@@ -106,6 +106,37 @@ In order to have a space proxy with custom property the following configuration 
 
 This will create an embedded space with the additional provided custom properties.
 
+## Controliing the Mmory Manager
+
+The following will control the memory manager settings:
+{% highlight xml %}
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+<configSections>
+<section name="GigaSpaces.XAP" type="GigaSpaces.XAP.Configuration.GigaSpacesXAPConfiguration, GigaSpaces.Core"/>
+</configSections>
+	<GigaSpaces.XAP>
+		<ProcessingUnitContainer Type="GigaSpaces.XAP.ProcessingUnit.Containers.BasicContainer.BasicProcessingUnitContainer, GigaSpaces.Core">
+			<BasicContainer>
+				<SpaceProxies>
+					<add Name="MySpaceWithCustom" Url="/./mySpaceWithCustom">
+						<Properties>
+							<add Name="space-config.engine.memory_usage.high_watermark_percentage" Value="99"/>
+							<add Name="space-config.engine.memory_usage.write_only_block_percentage" Value="98"/>
+							<add Name="space-config.engine.memory_usage.write_only_check_percentage" Value="97"/>
+							<add Name="space-config.engine.memory_usage.low_watermark_percentage" Value="96"/>
+						</Properties>
+					</add>        
+				</SpaceProxies>
+			</BasicContainer>
+		</ProcessingUnitContainer>
+	</GigaSpaces.XAP>
+</configuration>
+{% endhighlight %}
+
+
+You should use the above settings with large heap size (above 10GB).
+
 # Basic Container Initialization Events
 
 The container exposes some events that can be used to be notified at the different stages of the container initialization.
