@@ -25,7 +25,7 @@ In order to use the OpenSpaces Maven plugin, Maven needs to be installed on the 
 All you need to do is add the Maven `bin` directory to the system `PATH` variable, and you are ready to go. To test whether the Maven command is accessible, open a command line window, type `mvn \-version`, and press Enter.
 The following message should be displayed:
 
-{% highlight java %}
+{% highlight bash %}
 >mvn -version
 
 Apache Maven 3.0 (r1004208; 2010-10-04 13:50:56+0200)
@@ -45,7 +45,7 @@ To install the OpenSpaces Maven plugin:
 
 Run the `installmavenrep` script from the `<GigaSpaces Root>\tools\maven` directory:
 
-{% highlight java %}
+{% highlight bash %}
 D:\gigaspaces-xap-premium-8.0.0-ga\tools\maven>installmavenrep.bat
 {% endhighlight %}
 
@@ -93,7 +93,7 @@ You can install the OpenSpaces artifacts using a public repository:
 
 You may view list of available project templates and their description using the following command:
 
-{% highlight java %}
+{% highlight bash %}
 mvn os:create
 {% endhighlight %}
 
@@ -110,7 +110,7 @@ The result is a list of available template names and descriptions:
 
 Use the -Dtemplate=<template> argument to specify a project template. Example:
 
-{% highlight java %}
+{% highlight bash %}
 mvn os:create -Dtemplate=basic-async-persistency
 {% endhighlight %}
 
@@ -118,7 +118,7 @@ mvn os:create -Dtemplate=basic-async-persistency
 
 The OpenSpaces Maven plugin can create Processing Unit projects. It generates the resources and the appropriate directory structure, making it easy to immediately start working on the Processing Units. Projects can be created in any directory. Before creating the project change to the directory where the project should be created. To create a Processing Unit project, use the following command-line:
 
-{% highlight java %}
+{% highlight bash %}
 mvn os:create
     -DgroupId=<group-id>
     -DartifactId=<artifact-id>
@@ -161,7 +161,7 @@ For a full overview of the OpenSpaces Maven plugin project templates, refer to: 
 
 In order to compile the Processing Unit project, use the following command line from the main project's directory.
 
-{% highlight java %}
+{% highlight bash %}
 mvn compile
 {% endhighlight %}
 
@@ -176,7 +176,7 @@ Sometimes, during development, the developer might want to run the Processing Un
 Make sure you are in the directory of the project.
 To run Processing Unit modules, use the following command-line (found in the `artifactId` folder):
 
-{% highlight java %}
+{% highlight bash %}
 mvn os:run
     -Dcluster=<"cluster-properties">
     -Dgroups=<groups>
@@ -196,7 +196,7 @@ mvn os:run
 
 **Example:**
 
-{% highlight java %}
+{% highlight bash %}
 mvn compile os:run -Dcluster="schema=partitioned total_members=1,1
 id=1" -Dproperties="embed://prop1=value1" -Dmodule=feeder
 {% endhighlight %}
@@ -227,7 +227,7 @@ In order to deploy Processing Units, you need to package them in a distributable
 Make sure you are in the directory of the project.
 To package the Processing Units, use the following command-line from the main project directory:
 
-{% highlight java %}
+{% highlight bash %}
 mvn package
 {% endhighlight %}
 
@@ -249,7 +249,7 @@ To suppress the execution of unit tests, add one of the following arguments to t
 
 For example:
 
-{% highlight java %}
+{% highlight bash %}
 >mvn package -DskipTests
 
  .. or ..
@@ -264,7 +264,7 @@ After packaging the Processing Units, you might want to test the validity of the
 Make sure you are in the directory of the project.
 To run Processing Units as standalone modules, use the following command-line:
 
-{% highlight java %}
+{% highlight bash %}
 mvn os:run-standalone
     -Dcluster=<"cluster-properties">
     -Dgroups=<groups>
@@ -284,7 +284,7 @@ mvn os:run-standalone
 
 **Example:**
 
-{% highlight java %}
+{% highlight bash %}
 mvn os:run-standalone -Dcluster="schema=partitioned total_members=1,1
 id=1" -Dproperties="embed://prop1=value1" -Dmodule=feeder
 {% endhighlight %}
@@ -310,7 +310,7 @@ GigaSpaces supports two forms of Processing Unit distributables: A single JAR ar
 Make sure you are in the directory of the project.
 Once your Processing Units are packaged, use the following command-line to deploy them to the Service Grid:
 
-{% highlight java %}
+{% highlight bash %}
 mvn os:deploy
     -Dsla=<sla>
     -Dcluster=<cluster>
@@ -348,7 +348,7 @@ If the current directory is the main project directory and the `pu-name` argumen
 
 The OpenSpaces Maven plugin makes it simple to undeploy Processing Units from the Service Grid. Make sure you are in the directory of the project. To undeploy a Processing Unit from the Service Grid, use the following command-line:
 
-{% highlight java %}
+{% highlight bash %}
 mvn os:undeploy
     -Dgroups=<groups>
     -Dlocators=<locators>
@@ -393,7 +393,7 @@ For example, to add `commons-logging` version 1.1.1 as a dependency to the proce
 
 {% anchor xml %}
 
-{% highlight java %}
+{% highlight xml %}
 <project>
     ...
     <dependencies>
@@ -427,7 +427,7 @@ It is possible to import a Processing Unit project into the Eclipse environment.
 
 Execute the following command from the project root directory:
 
-{% highlight java %}
+{% highlight bash %}
 mvn eclipse:eclipse
 {% endhighlight %}
 
@@ -466,7 +466,7 @@ When running a Processing Unit that uses persistency, e.g when using the _basic-
 
 To start the HSQLDB viewer use the following command-line:
 
-{% highlight java %}
+{% highlight bash %}
 mvn os:hsql-ui
     -Ddriver=<driver-class>
     -Durl=<url>
@@ -487,4 +487,3 @@ mvn os:hsql-ui
 {% info %} The default values are sufficient when using the data source values generated by the plugin. {%endinfo%}
 
 
-{%children%}

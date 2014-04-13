@@ -15,7 +15,7 @@ The OpenSpaces maven plugin uses the maven assembly plugin to generate the proce
 
 **assembly.xml**
 
-{% highlight java %}
+{% highlight xml %}
 <assembly>
   <id>assemble-pu</id>
   <formats>
@@ -87,7 +87,7 @@ To instruct Maven to use this assembly descriptor to generate the processing uni
 
 **pom.xml**
 
-{% highlight java %}
+{% highlight xml %}
 <build>
   ...
   <finalName>testing-feeder</finalName>
