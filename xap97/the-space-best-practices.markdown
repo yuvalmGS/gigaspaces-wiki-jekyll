@@ -53,7 +53,7 @@ A routing value should be specified within the entry's property named 'myRouting
 
 {% note%}
 It is highly recommended that you modify them and add a routing value.
-If this is not feasible, and you know what you're doing, it can be disabled using the following system property:
+If this is not feasible, you can disable it using the following system property:
 {% highlight bash %}
 -Dcom.gs.protectiveMode.wrongEntryRoutingUsage=false
 {%endhighlight%}
