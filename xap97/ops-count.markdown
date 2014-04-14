@@ -55,4 +55,3 @@ int count(ISpaceQuery<T> query) throws DataAccessException
 |[CountModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/client/CountModifiers.html)|Provides modifiers to customize the behavior of the count operations | NONE  |
 {% endgcloak  %}
 
-
