@@ -6,8 +6,7 @@ parent: xap97.html
 weight: 700
 ---
 
-{%summary%}GigaSpaces XAP Data-Grid , Message-Grid , Compute-Gorid , local cache , remoting, Persistency , Service Grid
-and OpenSpaces API support deployment in virtualized environments running on VMWare Type 1 Hypervisors.{%endsummary%}
+{%summary%}GigaSpaces XAP fully supports deployment on virtualized environments running on VMWare Type 1 Hypervisors. This includes all major product featurs and APIs, including data access, messaging, code execution, local cache, remoting and persistency.{%endsummary%}
 
 # Supported versions
 
@@ -23,7 +22,7 @@ SUSE-10 sp3 is not recommended, due to the instability of its network support la
 
 # Configuration
 
-- Only Hypervisor Type 1 is recommended for production use.
+- Only Type 1 Hypervisor is recommended for production use.
 - vCPU may be over-subscribed, if it is under-utilized (less than 50%). In environments with high CPU utilization, vCPU must be reserved (pinned).
 - Hyper-threading should be enabled.
 - vMEM must be reserved (pinned).
