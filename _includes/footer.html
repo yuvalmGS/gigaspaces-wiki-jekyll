@@ -42,4 +42,14 @@
 
     });
 
+    //mixpanel tracking 
+    if(mixpanel.cookie.props.Email) {
+        mixpanel.identify(mixpanel.cookie.props.Email);
+    }
+
+    var pageObj = {'Page Name' : document.title, 'URL' : window.location.pathname};
+    mixpanel.track('XAP Docs Page View', pageObj);
+    mixpanel.people.increment('XAP docs page views');
+
 </script>
+
