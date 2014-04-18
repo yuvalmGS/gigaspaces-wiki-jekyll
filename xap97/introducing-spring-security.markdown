@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Spring Security
 categories: XAP97
 parent: spring-security-bridge.html

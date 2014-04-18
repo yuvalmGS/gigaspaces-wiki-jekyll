@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Transactions
 categories: XAP97
 parent: jms-advanced.html

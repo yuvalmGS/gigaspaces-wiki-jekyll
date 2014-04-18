@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Java Security Policy File
 categories: XAP97
 parent: security-administration.html

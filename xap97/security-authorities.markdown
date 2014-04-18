@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Authorities
 categories: XAP97
 parent: security-overview.html

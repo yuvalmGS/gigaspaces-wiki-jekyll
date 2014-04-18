@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Hibernate Integration
 categories: XAP97
 parent: space-persistency-overview.html

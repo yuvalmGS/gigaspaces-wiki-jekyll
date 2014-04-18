@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Storing and Retrieving Entries
 categories: XAP97NET
 parent: the-space-api.html

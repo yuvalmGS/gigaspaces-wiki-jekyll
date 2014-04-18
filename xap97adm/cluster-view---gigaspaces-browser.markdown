@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Cluster View
 categories: XAP97ADM
 parent: working-with-clusters---gigaspaces-browser.html

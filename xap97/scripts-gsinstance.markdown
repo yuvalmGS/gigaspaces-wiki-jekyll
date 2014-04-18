@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  gsInstance
 categories: XAP97
 parent: advanced-scripts.html

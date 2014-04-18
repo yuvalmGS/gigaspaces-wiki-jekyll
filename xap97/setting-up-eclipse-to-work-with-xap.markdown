@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Eclipse setup
 categories: XAP97
 parent: installation.html

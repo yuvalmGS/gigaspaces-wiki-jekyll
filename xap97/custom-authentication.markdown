@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Authentication
 categories: XAP97
 parent: custom-security.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Apache Load Balancer Agent
 categories: XAP97
 parent: web-application-overview.html

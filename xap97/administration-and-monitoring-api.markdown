@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Admin API
 categories: XAP97
 parent: administration-and-monitoring-overview.html

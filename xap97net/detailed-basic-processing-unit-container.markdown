@@ -1,12 +1,12 @@
 ---
-layout: post
+layout: post97
 title:  Detailed Basic Processing Unit Container
 categories: XAP97NET
 parent: basic-processing-unit-container.html
 weight: 100
 ---
 
-{% compositionsetup %}
+
 
 {% summary %}Describing the built-in BasicProcessingUnitContainer which is an extension of the AbstractProcessingUnitContainer class.{% endsummary %}
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  SEDA Model
 categories: XAP97
 parent: mule-esb.html

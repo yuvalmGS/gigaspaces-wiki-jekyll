@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Managing and Monitoring a Running System
 categories: XAP97
 parent: administration-tools.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  CPP
 categories: XAP97
 parent: interoperability-overview.html

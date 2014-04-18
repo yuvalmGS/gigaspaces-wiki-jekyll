@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Initial Load
 categories: XAP97NET
 parent: space-persistency-overview.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Implementing and Using a Space Filter
 categories: XAP97NET
 weight: 100

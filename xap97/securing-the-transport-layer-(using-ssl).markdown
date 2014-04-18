@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Transport Layer
 categories: XAP97
 parent: securing-xap-components.html

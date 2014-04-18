@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Advanced Configuration
 categories: XAP97ADM
 parent: network-multi-nic.html

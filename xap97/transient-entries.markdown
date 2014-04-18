@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Transient Entries
 categories: XAP97
 parent: space-persistency-overview.html

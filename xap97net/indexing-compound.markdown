@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Compound
 categories: XAP97NET
 parent: indexing-overview.html

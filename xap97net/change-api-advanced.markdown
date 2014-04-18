@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Change API Advanced
 categories: XAP97NET
 parent: change-api.html

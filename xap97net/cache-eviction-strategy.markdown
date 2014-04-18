@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Cache Eviction Strategy
 categories: XAP97NET
 parent: local-cache.html

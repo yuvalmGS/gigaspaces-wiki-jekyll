@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Locking and Blocking
 categories: XAP97
 parent: transaction-overview.html

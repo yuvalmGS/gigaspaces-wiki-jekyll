@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Grid Metadata
 categories: XAP97
 parent: pojo-metadata.html

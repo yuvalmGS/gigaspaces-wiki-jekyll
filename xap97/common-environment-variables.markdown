@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Environment Variables
 categories: XAP97
 parent: installation-java.html

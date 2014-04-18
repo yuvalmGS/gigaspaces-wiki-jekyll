@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Interop Processing Unit
 categories: XAP97NET
 parent: processing-units.html

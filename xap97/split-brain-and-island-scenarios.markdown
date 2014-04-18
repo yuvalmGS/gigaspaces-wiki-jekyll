@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Split Brain and Island Scenarios
 categories: XAP97
 parent: failover-detection-and-tuning.html

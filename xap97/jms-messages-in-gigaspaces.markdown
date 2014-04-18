@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  JMS Messages in XAP
 categories: XAP97
 parent: messaging-support.html

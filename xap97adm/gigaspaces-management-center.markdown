@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Management Center
 categories: XAP97ADM
 parent: none

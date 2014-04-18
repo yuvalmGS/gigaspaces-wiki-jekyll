@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Space Filters
 categories: XAP97
 parent: the-space-component.html

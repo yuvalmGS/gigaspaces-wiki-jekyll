@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  gsxml2cpp Utility
 categories: XAP97
 parent: cpp-api-code-generator.html

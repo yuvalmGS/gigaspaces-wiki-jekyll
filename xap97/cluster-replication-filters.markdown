@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Replication Filters
 categories: XAP97
 parent: replication.html

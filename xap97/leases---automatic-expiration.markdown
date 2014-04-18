@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Leases - Automatic Expiration
 categories: XAP97
 weight: 800

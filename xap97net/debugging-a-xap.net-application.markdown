@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Debugging a XAP.NET Application
 categories: XAP97NET
 parent: installation.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  NHibernate External Data Source
 categories: XAP97NET
 parent: space-persistency-overview.html

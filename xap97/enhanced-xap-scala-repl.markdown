@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Enhanced XAP Scala REPL
 categories: XAP97
 parent: scala.html

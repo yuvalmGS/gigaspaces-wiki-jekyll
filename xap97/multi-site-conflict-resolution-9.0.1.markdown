@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Conflict Resolution 9.0.1
 categories: XAP97
 parent: multi-site-conflict-resolution.html

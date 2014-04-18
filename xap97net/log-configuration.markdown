@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Logging
 categories: XAP97NET
 parent: configuration.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Querying the Space
 categories: XAP97
 parent: programmers-guide.html

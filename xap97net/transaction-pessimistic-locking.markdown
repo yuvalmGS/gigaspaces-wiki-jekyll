@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Pessimistic Locking
 categories: XAP97NET
 parent: transaction-overview.html

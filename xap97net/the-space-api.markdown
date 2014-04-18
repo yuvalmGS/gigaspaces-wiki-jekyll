@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  The Space Interface
 categories: XAP97NET
 parent: programmers-guide.html

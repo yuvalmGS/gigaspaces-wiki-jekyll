@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Gateway Bootstrapping
 categories: XAP97
 parent: multi-space-replication-overview.html

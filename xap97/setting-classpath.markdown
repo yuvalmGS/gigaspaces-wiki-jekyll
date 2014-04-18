@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Setting Classpath
 categories: XAP97
 parent: installation-java.html

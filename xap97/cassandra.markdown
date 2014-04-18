@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Cassandra Integration
 categories: XAP97
 parent: big-data.html

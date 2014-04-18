@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  GigaSpaces CPP Processing Unit Example
 categories: XAP97
 parent: cpp-api-examples.html

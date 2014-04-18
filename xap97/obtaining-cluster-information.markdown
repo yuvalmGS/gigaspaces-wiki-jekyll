@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Obtaining Cluster Information
 categories: XAP97
 parent: packaging-and-deployment.html

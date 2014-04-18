@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Property Metadata
 categories: XAP97
 parent: modeling-your-data.html

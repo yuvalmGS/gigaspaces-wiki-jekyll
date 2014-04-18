@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Using GigaSpaces JMS Without Changing the Classpath
 categories: XAP97
 parent: jms-advanced.html

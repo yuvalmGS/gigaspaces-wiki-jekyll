@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Custom Data Event Filters
 categories: XAP97
 parent: session-based-messaging-api.html

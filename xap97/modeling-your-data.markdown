@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Modeling your Data
 categories: XAP97
 parent: programmers-guide.html

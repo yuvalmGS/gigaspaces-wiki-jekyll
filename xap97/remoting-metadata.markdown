@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Metadata
 categories:
 parent: space-based-remoting.html

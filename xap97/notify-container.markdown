@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Notify Container
 categories: XAP97
 parent: event-processing.html

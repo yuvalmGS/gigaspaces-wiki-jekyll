@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Migrating from Hibernate
 categories: XAP97
 parent: space-persistency-overview.html

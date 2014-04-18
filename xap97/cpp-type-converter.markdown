@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Type Converter
 categories: XAP97
 parent: cpp-api-basics.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Failover
 categories: XAP97
 parent: data-grid-clustering.html

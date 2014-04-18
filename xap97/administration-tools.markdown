@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Administration Tools
 categories: XAP97
 weight: 800

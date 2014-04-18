@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Consistency Level
 categories: XAP97
 parent: data-grid-clustering.html

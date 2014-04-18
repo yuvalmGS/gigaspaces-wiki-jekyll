@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Split Brain and Primary Resolution
 categories: XAP97
 parent: data-grid-clustering.html

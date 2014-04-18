@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Failure Detection
 categories: XAP97ADM
 parent: troubleshooting.html

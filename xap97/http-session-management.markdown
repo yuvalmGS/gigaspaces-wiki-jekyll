@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  HTTP Session Management
 categories: XAP97
 parent: web-application-overview.html

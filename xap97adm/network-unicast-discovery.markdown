@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Unicast Discovery
 categories: XAP97ADM
 parent: network.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Local Cache
 categories: XAP97NET
 parent: client-side-caching.html

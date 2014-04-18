@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Replication Operations
 categories: XAP97
 parent: replication.html

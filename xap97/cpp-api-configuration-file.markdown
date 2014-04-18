@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Configuration File
 categories: XAP97
 parent: cpp-api-basics.html

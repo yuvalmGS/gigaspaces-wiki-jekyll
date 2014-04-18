@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Deploy with Command Line
 categories: XAP97
 parent: administrators-guide.html

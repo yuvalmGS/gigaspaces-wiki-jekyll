@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  File based Metadata
 categories: XAP97NET
 parent: modeling-your-data.html

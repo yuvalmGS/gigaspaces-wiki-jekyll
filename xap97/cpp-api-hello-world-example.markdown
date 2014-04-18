@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Hello World Example
 categories: XAP97
 parent: xap-cpp.html

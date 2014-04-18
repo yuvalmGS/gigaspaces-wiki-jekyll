@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Reloading Business Logic
 categories: XAP97
 parent: administrators-guide.html

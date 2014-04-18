@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Network Configuration
 categories: XAP97ADM
 parent: none

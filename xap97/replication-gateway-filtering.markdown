@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Filtering  Data
 categories: XAP97
 parent: multi-site-replication-overview.html

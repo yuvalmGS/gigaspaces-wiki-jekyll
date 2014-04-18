@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Synchronization Endpoint
 categories: XAP97
 parent: mongodb-space-persistency.html

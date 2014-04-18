@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Split-Brain and Active Election - General Definition
 categories: XAP97
 parent: split-brain-and-island-scenarios.html

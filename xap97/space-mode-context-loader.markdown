@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Space Mode Context Loader
 categories: XAP97
 weight: 700

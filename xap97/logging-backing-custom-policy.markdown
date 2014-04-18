@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Backing-up Files With a Custom Policy
 categories: XAP97
 parent: logging-overview.html

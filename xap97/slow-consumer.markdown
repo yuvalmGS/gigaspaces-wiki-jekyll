@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Slow Consumer
 categories: XAP97
 parent: session-based-messaging-api.html

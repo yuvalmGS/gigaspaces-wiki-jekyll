@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  LRU-Cache Policy
 categories: XAP97
 parent: memory-management-facilities.html

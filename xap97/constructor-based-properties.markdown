@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Constructor Based Properties
 categories: XAP97
 parent: scala.html

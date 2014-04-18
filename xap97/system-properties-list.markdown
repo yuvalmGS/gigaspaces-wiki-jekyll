@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  System Properties List
 categories: XAP97
 parent: configuring-the-system.html

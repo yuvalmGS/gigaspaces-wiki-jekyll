@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Usage Example
 categories: XAP97
 parent: cpp-api-examples.html

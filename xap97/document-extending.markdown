@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Extending
 categories: XAP97
 parent: document-overview.html

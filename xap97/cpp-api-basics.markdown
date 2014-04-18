@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Basics API
 categories: XAP97
 parent: xap-cpp.html

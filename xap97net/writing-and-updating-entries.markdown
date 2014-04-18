@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Writing and Updating Entries
 categories: XAP97NET
 parent: the-space-api.html

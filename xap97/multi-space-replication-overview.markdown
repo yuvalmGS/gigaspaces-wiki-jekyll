@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Space Replication
 categories: XAP97
 parent: none

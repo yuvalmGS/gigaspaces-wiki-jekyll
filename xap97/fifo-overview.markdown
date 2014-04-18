@@ -1,9 +1,9 @@
 ---
-layout: post
-title:  First In First Out
+layout: post97
+title:  FIFO Ordering
 categories: XAP97
-parent: programmers-guide.html
-weight: 500
+parent: event-processing.html
+weight: 600
 ---
 
 {%wbr%}

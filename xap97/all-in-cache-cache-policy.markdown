@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  ALL IN CACHE-Cache Policy
 categories: XAP97
 parent: memory-management-facilities.html

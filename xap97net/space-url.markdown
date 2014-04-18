@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Space URL
 categories: XAP97NET
 parent: the-ispaceproxy-interface.html

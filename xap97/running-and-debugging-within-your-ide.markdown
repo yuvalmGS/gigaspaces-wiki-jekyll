@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Running and Debugging Within Your IDE
 categories: XAP97
 parent: installation.html

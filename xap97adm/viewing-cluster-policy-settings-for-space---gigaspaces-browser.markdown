@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Policy Settings
 categories: XAP97ADM
 parent: cluster-view---gigaspaces-browser.html

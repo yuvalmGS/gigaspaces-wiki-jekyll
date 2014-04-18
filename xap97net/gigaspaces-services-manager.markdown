@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  GigaSpaces Services Manager
 categories: XAP97NET
 parent: installation.html

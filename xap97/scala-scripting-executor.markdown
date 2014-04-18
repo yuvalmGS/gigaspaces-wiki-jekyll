@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Scala Scripting Executor
 categories: XAP97
 parent: scala.html

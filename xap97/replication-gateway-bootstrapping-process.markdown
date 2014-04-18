@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Bootstrapping Process
 categories: XAP97
 parent: multi-site-replication-overview.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Data Events
 categories: XAP97
 parent: notify-container.html

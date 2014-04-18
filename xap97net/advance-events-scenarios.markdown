@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Advance Events Scenarios
 categories: XAP97NET
 parent: space-events.html

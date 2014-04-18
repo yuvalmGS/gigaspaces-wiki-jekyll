@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  XAP as Second Level Cache
 categories: XAP97
 parent: space-persistency-overview.html

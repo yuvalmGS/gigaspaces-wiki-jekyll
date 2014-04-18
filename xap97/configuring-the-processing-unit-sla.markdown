@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Configuring SLA
 categories: XAP97
 parent: the-processing-unit-structure-and-configuration.html

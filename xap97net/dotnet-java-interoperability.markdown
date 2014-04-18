@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  .NET-Java Interoperability
 categories: XAP97NET
 parent: interoperability.html

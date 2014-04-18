@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Operations
 categories: XAP97
 weight: 200

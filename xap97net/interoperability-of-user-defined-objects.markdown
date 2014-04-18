@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Interoperability of User-Defined Objects
 categories: XAP97NET
 parent: interoperability.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Event Processing
 categories: XAP97
 parent: programmers-guide.html
@@ -32,6 +32,9 @@ Describe the common Space Data Event Listener and its different adapters.
 
 - [Event Exception Listener](./event-exception-handler.html){%wbr%}
 Describe the common Exception Event Listener and its different adapters.
+
+- [FIFO Ordering](./fifo-overview.html){%wbr%}
+XAP supports both non-ordered Entries and FIFO ordered Entries when performing space operations.
 
 <hr/>
 

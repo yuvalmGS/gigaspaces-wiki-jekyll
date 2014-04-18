@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Best Practices
 categories: XAP97
 weight: 900

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Auditing
 categories: XAP97
 parent: security-administration.html

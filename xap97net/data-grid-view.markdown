@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Data Grid View
 categories: XAP97NET
 parent: web-management-console.html

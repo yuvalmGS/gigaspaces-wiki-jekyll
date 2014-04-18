@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Writing Existing CPP Class to Space
 categories: XAP97
 parent: cpp-api-examples.html

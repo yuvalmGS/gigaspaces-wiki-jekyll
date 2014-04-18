@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Synchronous Replication
 categories: XAP97
 parent: replication.html

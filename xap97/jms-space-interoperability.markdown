@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  JMS-Space Interoperability
 categories: XAP97
 parent: messaging-support.html

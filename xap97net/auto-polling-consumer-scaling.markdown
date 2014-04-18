@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Auto Scaling
 categories: XAP97NET
 parent: polling-container.html

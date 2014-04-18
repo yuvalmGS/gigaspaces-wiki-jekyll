@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Monitoring
 categories: XAP97
 parent: client-side-caching.html

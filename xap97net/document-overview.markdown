@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Space Document
 categories: XAP97NET
 weight: 200

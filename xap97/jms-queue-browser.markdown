@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Browsing JMS Queues
 categories: XAP97
 parent: jms-advanced.html

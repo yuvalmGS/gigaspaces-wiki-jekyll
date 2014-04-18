@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Setting JVM Location
 categories: XAP97
 parent: installation-java.html

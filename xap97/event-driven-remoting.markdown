@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Event Driven Remoting
 categories: XAP97
 parent: space-based-remoting-overview.html

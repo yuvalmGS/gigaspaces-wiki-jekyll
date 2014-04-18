@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Formatting Log Messages
 categories: XAP97
 parent: logging-overview.html

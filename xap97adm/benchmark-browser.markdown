@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Browser View
 categories: XAP97ADM
 parent: benchmarking.html

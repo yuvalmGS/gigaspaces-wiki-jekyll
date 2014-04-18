@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Data Grid Clustering
 categories: XAP97
 parent: administrators-guide.html

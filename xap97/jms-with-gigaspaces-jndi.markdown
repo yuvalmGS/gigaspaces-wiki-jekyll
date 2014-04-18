@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  XAP JNDI
 categories: XAP97
 parent: messaging-support.html

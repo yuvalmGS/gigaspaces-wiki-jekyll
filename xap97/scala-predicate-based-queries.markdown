@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Scala Predicate Based Queries
 categories: XAP97
 parent: scala.html

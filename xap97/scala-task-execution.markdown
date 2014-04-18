@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Scala Task Execution
 categories: XAP97
 parent: scala.html

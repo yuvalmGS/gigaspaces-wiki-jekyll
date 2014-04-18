@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Partial Results
 categories: XAP97
 parent: querying-the-space.html

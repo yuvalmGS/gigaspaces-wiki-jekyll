@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Creating Custom Cluster
 categories: XAP97ADM
 parent: working-with-clusters---gigaspaces-browser.html

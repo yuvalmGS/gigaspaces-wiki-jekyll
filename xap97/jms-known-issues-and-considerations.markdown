@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Known Issues and Considerations
 categories: XAP97
 parent: jms-advanced.html

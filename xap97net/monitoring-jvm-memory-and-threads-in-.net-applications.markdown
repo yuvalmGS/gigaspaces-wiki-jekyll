@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Monitoring JVM Memory and Threads in .NET Applications
 categories: XAP97NET
 parent: debugging-a-xap.net-application.html

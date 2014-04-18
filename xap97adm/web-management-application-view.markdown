@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Application View
 categories: XAP97ADM
 parent: web-management-console.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Memcached API
 categories: XAP97
 parent: other-data-access-apis.html

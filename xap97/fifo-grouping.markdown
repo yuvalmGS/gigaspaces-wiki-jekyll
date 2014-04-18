@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  FIFO Grouping
 categories: XAP97
 parent: fifo-overview.html

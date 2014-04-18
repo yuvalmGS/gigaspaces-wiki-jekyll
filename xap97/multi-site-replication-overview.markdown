@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Multi Site Replication
 categories: XAP97
 parent: none

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Configuring Processing Unit Elements
 categories: XAP97
 weight: 100

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Transaction Management
 categories: XAP97
 parent: transaction-overview.html

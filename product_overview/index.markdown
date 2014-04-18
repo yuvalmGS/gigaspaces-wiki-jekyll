@@ -4,9 +4,6 @@ title:  Product Overview
 categories: PRODUCT_OVERVIEW
 ---
 
-{% summary %}GigaSpaces XAP is a platform for scaling out stateful applications. XAP uses the GigaSpaces space as a core middleware, and provides the Spring-based Open Spaces framework as a development environment.{% endsummary %}
-
-# Overview
 
 GigaSpaces XAP is a platform that scales out stateful applications in high-performance low-latency environments. It is designed to support eXtreme transactional applications such as OMS (Order Management Systems), pre-paid systems, trading, and market data; and real-time analytics applications such as profit-and-loss analysis, reconciliation, and Value at Risk.
 

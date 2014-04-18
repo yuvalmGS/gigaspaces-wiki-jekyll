@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  JPA Entity Id
 categories: XAP97
 parent: jpa-api.html

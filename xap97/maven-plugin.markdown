@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Maven Plugin
 categories: XAP97
 parent: installation.html

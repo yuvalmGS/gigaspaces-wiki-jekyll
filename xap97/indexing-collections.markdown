@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Collections
 categories: XAP97
 parent: indexing-overview.html

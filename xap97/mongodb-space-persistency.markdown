@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title: Space Persistency
 categories: XAP97
 parent: mongodb.html

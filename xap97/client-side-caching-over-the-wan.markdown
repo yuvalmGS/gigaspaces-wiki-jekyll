@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Caching over the WAN
 categories: XAP97
 parent: client-side-caching.html

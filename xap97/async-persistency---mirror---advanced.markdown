@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Advanced Configuration
 categories: XAP97
 parent: asynchronous-persistency-with-the-mirror.html

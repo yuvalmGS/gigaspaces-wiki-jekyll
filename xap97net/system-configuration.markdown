@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  System Configuration
 categories: XAP97NET
 parent: configuration.html

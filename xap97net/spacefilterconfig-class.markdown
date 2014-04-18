@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  SpaceFilterConfig Class
 categories: XAP97NET
 parent:  implementing-and-using-a-space-filter.html

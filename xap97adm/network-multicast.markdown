@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Multicast Configuration
 categories: XAP97ADM
 parent: network.html

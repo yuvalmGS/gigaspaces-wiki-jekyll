@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Polling Container
 categories: XAP97
 parent: event-processing.html

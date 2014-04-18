@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  XAP as Windows Service
 categories: XAP97
 parent: installation.html

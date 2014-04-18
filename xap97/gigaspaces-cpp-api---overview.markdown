@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  GigaSpaces CPP API - Overview
 categories: XAP97
 parent: cpp-api---advanced.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Management Center
 categories: XAP97
 parent: security-administration.html

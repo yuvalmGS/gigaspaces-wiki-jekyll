@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  API Code Generator
 categories: XAP97
 parent: cpp-api-basics.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Replication Group
 categories: XAP97ADM
 parent: working-with-clusters---gigaspaces-browser.html

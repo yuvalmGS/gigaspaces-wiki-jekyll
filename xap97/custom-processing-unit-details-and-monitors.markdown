@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Custom Processing Unit Details and Monitors
 categories: XAP97
 parent: the-processing-unit-structure-and-configuration.html

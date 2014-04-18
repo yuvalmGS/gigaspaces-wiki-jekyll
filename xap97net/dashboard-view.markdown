@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Dashboard View
 categories: XAP97NET
 parent: web-management-console.html

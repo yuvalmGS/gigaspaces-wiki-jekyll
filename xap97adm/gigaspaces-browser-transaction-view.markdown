@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Transactions View
 categories: XAP97ADM
 parent: gigaspaces-browser-tree-panel-and-configuration-panel.html

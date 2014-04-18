@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Event Container Transport
 categories: XAP97
 parent: mule-esb.html

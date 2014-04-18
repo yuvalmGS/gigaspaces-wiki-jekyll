@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  MongoDB Integration
 categories: XAP97
 parent: big-data.html

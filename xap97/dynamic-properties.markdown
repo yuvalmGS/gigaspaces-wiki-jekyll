@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Dynamic Properties
 categories: XAP97
 parent: pojo-overview.html

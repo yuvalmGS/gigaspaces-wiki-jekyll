@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Development
 categories: XAP97
 weight: 200
@@ -39,9 +39,6 @@ This section explains the various mechanisms offered by GigaSpaces XAP to query 
 
 - [Indexing](./indexing-overview.html){%wbr%}
 To improve performance, it is possible to index one or more properties.
-
-- [FIFO support](./fifo-overview.html){%wbr%}
-XAP supports both non-ordered Entries and FIFO ordered Entries when performing space operations.
 
 - [Transaction Management](./transaction-overview.html){%wbr%}
 Transaction concept and API.

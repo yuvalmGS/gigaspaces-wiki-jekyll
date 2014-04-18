@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Tools
 categories: XAP97ADM
 parent: troubleshooting.html

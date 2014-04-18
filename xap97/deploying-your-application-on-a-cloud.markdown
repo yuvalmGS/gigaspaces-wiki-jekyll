@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Deploying your Application on a Cloud
 categories: XAP97
 parent: packaging-and-deployment.html

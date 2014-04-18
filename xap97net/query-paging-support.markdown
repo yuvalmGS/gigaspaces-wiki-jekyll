@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Paging Support
 categories: XAP97NET
 parent: querying-the-space.html

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Web Application Support
 categories: XAP97
 parent: none

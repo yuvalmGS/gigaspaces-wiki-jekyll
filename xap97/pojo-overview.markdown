@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  POJO Support
 categories: XAP97
 parent: programmers-guide.html

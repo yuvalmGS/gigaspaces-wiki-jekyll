@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Notifications
 categories: XAP97
 weight: 500

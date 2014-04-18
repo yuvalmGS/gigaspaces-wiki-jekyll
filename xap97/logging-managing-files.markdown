@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  Managing Log Files
 categories: XAP97
 parent: logging-overview.html

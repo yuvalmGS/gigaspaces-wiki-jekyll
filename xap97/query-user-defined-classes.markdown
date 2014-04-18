@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post97
 title:  User Defined Classes
 categories: XAP97
 parent: querying-the-space.html
