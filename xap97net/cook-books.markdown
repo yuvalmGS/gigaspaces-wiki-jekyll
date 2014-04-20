@@ -13,19 +13,15 @@ parent: tutorials.html
  ![data-access.jpg](/attachment_files/subject/data-access.png)
  {%endcolumn%}
  {%column width=90% %}
- Here you will find a quick start guide that explains how to deploy and use a GigaSpace XAP Data Grid.
- A full Java tutorial is also provided that will introduce you to the basic capabilities and features of the XAP platform.
+ Here you will find example applications that will demonstrate basic XAP features.
  {%endcolumn%}
  {%endsection%}
 
  <hr/>
 
- - [XAP in 5 Minutes](./your-first-data-grid-application.html){%wbr%}
- This tutorial explains how to deploy and use a XAP Data Grid from a Java client application.
+ - [Processing Unit](./dotnet-your-first-xtp-application.html){%wbr%}
+ This example demonstrates a simple processing unit architecture project -- a complete SBA application that can easily scale. It demonstrates a usage of XAP's SBA related components, such as [Event Listener Container]({%latestneturl%}/event-processing.html), [Space Based Remoting]({%latestneturl%}/space-based-remoting.html) and the [Basic Processing Unit Container]({%latestneturl%}/basic-processing-unit-container.html).
 
-
- - [Full Tutorial](./java-home.html){%wbr%}
- This Tutorial provides a high-level overview of the GigaSpaces XAP platform. Hands on examples are provided to demonstrate the core concepts and API’s.
 
 
  <hr/>

@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Your First Application
+title:  Your First XAP Application
 categories: XAP97NET
 parent: cook-books.html
 weight: 100

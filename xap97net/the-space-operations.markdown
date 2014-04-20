@@ -27,9 +27,6 @@ The interface includes the following main operations:
 {%panel bgColor=white | title=Change objects in space:%}
 [change](./change-api.html) one object in space{%wbr%}
 [changeMultiple](./change-api.html) objects in space {%wbr%}
-{%comment%}
-[asynchronous change](./change-api.html) of objects
-{%endcomment%}
 {%endpanel%}
 {%endcolumn%}
 {%endsection%}
