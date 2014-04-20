@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Handling Large Objects
 categories: XAP97ADM
 parent: tuning-gigaspaces-performance.html

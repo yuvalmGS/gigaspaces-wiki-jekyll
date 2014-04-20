@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  XAP Over a Firewall
 categories: XAP97ADM
 parent: network.html

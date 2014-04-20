@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Grid Tree & Configuration
 categories: XAP97ADM
 parent: gigaspaces-management-center.html

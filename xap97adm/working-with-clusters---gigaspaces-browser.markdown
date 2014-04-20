@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Working with Clusters
 categories: XAP97ADM
 parent: gigaspaces-management-center.html

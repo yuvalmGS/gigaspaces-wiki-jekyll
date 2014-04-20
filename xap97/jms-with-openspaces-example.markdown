@@ -10,7 +10,7 @@ weight: 400
 
 ![folder_icon.gif](/attachment_files/folder_icon.gif) Example Root `<GigaSpaces Root>\examples\data`
 
-The [OpenSpaces Data Example](/tutorials/the-openspaces-data-example.html) demonstrates how to use a JMS feeder to send POJOs to the space. In order to make it happen we use two main features: Spring [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html) and JMS [MessageConverter](./jms-space-interoperability.html). This section describes how those features are used in the example.
+The [OpenSpaces Data Example](./the-openspaces-data-example.html) demonstrates how to use a JMS feeder to send POJOs to the space. In order to make it happen we use two main features: Spring [JmsTemplate](http://static.springframework.org/spring/docs/2.0.x/api/org/springframework/jms/core/JmsTemplate.html) and JMS [MessageConverter](./jms-space-interoperability.html). This section describes how those features are used in the example.
 
 # Architecture
 

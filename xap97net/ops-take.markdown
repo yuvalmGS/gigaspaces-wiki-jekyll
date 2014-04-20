@@ -15,7 +15,6 @@ The `take` operations behave exactly like the corresponding `read` operations, e
 
 
 If a `take` returns a non-null value, the object has been removed from the space, possibly within a transaction. This modifies the claims to once-only retrieval: A take is considered to be successful only if all enclosing transactions commit successfully.
-If a `RemoteException` is thrown, the take may or may not have been successful.
 If an `UnusableEntryException` is thrown, the take `removed` the unusable object from the space.
 If any other exception is thrown, the take did not occur, and no object was removed from the space.
 
@@ -42,27 +41,26 @@ To learn more about the different options refer to [Querying the Space](./queryi
 
 The following example writes an `Employee` object into the space and removes it from the space :
 
-{% highlight java %}
-    Employee employee = new Employee("Last Name", new Integer(32));
-    employee.setFirstName("first name");
-    space.write(employee);
+{% highlight csharp %}
+Employee employee = new Employee("Last Name", 32);
+employee.FirstName="first name";
+spaceProxy.Write(employee);
 
-    // Take by template
-    Employee template = new Employee(new Integer(32));
-    Employee e = space.take(template);
+// Take by template
+Employee template = new Employee(32);
+Employee e = spaceProxy.Take<Employee>(template);
 
-    // Take by id
-    Employee e = space.takeById(Employee.class, new Integer(32));
+// Take by id
+Employee e1 = spaceProxy.TakeById<Employee>(32);
 
-    // Take by IdQuery
-    IdQuery<Employee> query = new IdQuery<Employee>(Employee.class,
-    				new Integer(32));
-    Employee e = space.take(query);
+// Take by IdQuery
+IdQuery<Employee> query = new IdQuery<Employee>(32);
+Employee e2 = spaceProxy.Take<Employee>(query);
 
-    // Take by SQLQuery
-	SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,
-				"firstName='first name'");
-	Employee e = space.take(query);
+// Take by SQLQuery
+SqlQuery<Employee> query1 = new SqlQuery<Employee>("FirstName='first name'");
+Employee e3 = spaceProxy.Take<Employee>(query);
+
 {% endhighlight %}
 
 
@@ -80,45 +78,46 @@ The GigaSpace interface provides simple way to perform bulk take operations. You
 {%endsection%}
 
 {% info %}
-To remove a batch of objects without returning these back into the client use `GigaSpace.clear(SQLQuery)`;
+To remove a batch of objects without returning these back into the client use `ISPaceProxy.Clear(SqlQuery)`;
 {%endinfo%}
 
 ##### Examples:
 
-{% highlight java %}
-   Employee emps[] = new Employee[2];
-   emps[0] = new Employee("Last Name A", new Integer(31));
-   emps[1] = new Employee("Last Name B", new Integer(32));
+{% highlight csharp %}
+Employee[] emps = new Employee[2];
+emps[0] = new Employee("Last Name A",  31);
+emps[1] = new Employee("Last Name B",  32);
 
-   space.writeMultiple(emps);
+spaceProxy.WriteMultiple(emps);
 
-   // Take multiple by template
-   Employee[] employees = space.takeMultiple(Employee.class);
+// Take multiple by template
+Employee[] employees = spaceProxy.TakeMultiple<Employee>(new Employee());
 
-   // Take multiple by SQLQuery
-   SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,
-   				"lastName ='Last Name B'");
-   Employee[] e = space.takeMultiple(query);
+// Take multiple by SQLQuery
+SqlQuery<Employee> query = new SqlQuery<Employee>("LastName ='Last Name B'");
+Employee[] e = spaceProxy.TakeMultiple<Employee>(query);
 
-   // Take by Ids
-   Integer[] ids = new Integer[] { 31, 32 };
-   TakeByIdsResult<Employee> result = space.takeByIds(Employee.class,ids);
-   Employee[] employees = result.getResultsArray();
+// Take by Ids
+Object[] ids = new Object[] { 31, 32 };
+ITakeByIdsResult<Employee> result = spaceProxy.TakeByIds<Employee>(ids);
+Employee[] e1 = result.ResultsArray;
 
-   // Take by IdsQuery
-   Integer[] ids = new Integer[] { 31, 32 };
-   IdsQuery<Employee> query = new IdsQuery<Employee>(Employee.class, ids);
-   TakeByIdsResult<Employee> result = space.takeByIds(query);
-   Employee[] employees = result.getResultsArray();
-
+// Take by IdsQuery
+Object[] ids1 = new Object[] { 31, 32 };
+IdsQuery<Employee> query1 = new IdsQuery<Employee>(ids1);
+ITakeByIdsResult<Employee> result1 = spaceProxy.TakeByIds(query1);
+Employee[] employees1 = result1.ResultsArray;
 {% endhighlight %}
 
 {%note title=Here are few important considerations when using the batch operation: %}
 -  boosts the performance, since it performs multiple operations using one call. This method returns the matching results in one result object back to the client. This allows the client and server to utilize the network bandwidth in an efficient manner. In some cases, this batch operation can be up to 10 times faster than multiple single based operations.
 -  should be handled with care, since it can return a large data set (potentially all the space data). This might cause an out of memory error in the space and client process. You should use the [GSIterator](#Space Iterator) to return the result in batches (paging) in such cases.
 -  should be performed with transactions - this allows the client to roll back the space to its initial state prior the operation was started, in case of a failure.
--  operation **dos not support timeout** operations. The simple way to achieve this is by calling the `read` operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
--  in the event of a take error, DataAccessException will wrap a TakeMultipleException, accessible via DataAccessException.getRootCause().  [TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/TakeMultipleException.html)
+-  operation **dos not support timeout** operations. The simple way to achieve this is by calling the `Read` operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
+
+{%comment%}
+-  in the event of a take error, DataAccessException will wrap a TakeMultipleException, accessible via DataAccessException.getRootCause().  [TakeMultipleException](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Exceptions_TakeMultipleException.htm)
+{%endcomment%}
 
 {%endnote%}
 
@@ -131,125 +130,123 @@ If at the end of that time no value can be returned that would not interfere wit
 
 ##### Example:
 
-{% highlight java %}
-    Employee employee = new Employee("Last Name", new Integer(32));
-	employee.setFirstName("first name");
-	space.write(employee);
+{% highlight csharp %}
+Employee employee = new Employee("Last Name",  32);
+employee.FirstName="first name";
+spaceProxy.Write(employee);
 
-	SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,
-				"firstName='first name'");
-	Employee e = space.takeIfExists(query);
+SqlQuery<Employee> query = new SqlQuery<Employee>("FirstName='first name'");
+Employee e = spaceProxy.TakeIfExists<Employee>(query);
 {% endhighlight %}
+
+
 
 {%anchor asynchronousTake%}
 
 #### Asynchronous Take
 
-The GigaSpace interface supports asynchronous (non-blocking) take operations through the GigaSpace interface. It returns a [Future\<T\>](http://download.oracle.com/javase/6/docs/api/java/util/concurrent/Future.html) object, where T is the type of the object the request returns. Future<T>.get() can be used to query the object to see if a result has been returned or not.
-
-Alternatively, asyncTake also accept an implementation of [AsyncFutureListener](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/async/AsyncFutureListener.html), which will have its `AsyncFutureListener.onResult` method called when the result has been populated. This does not affect the return type of the `Future<T>`, but provides an additional mechanism for handling the asynchronous response.
-
+The GigaSpace interface supports asynchronous (non-blocking) take operations through the ISpaceProxy interface. It is implemented via a call back listener.
 
 ##### Example:
 
-{% highlight java %}
-    Employee employee = new Employee("Last Name", new Integer(32));
-    employee.setFirstName("first name");
- 	space.write(employee);
+{% highlight csharp %}
 
- 	Integer[] ids = new Integer[] { 31, 32 };
- 	IdsQuery<Employee> query = new IdsQuery<Employee>(Employee.class, ids);
- 	AsyncFuture<Employee> result = space.asyncTake(query);
+private void TakeListener (IAsyncResult<Employee> asyncResult)
+{
+    Employee result = spaceProxy.EndTake (asyncResult);
+}
 
- 	try {
- 	    Employee e = result.get();
- 	} catch (InterruptedException e) {
- 		e.printStackTrace();
- 	} catch (ExecutionException e) {
- 		e.printStackTrace();
- 	}
+public void asyncTake ()
+{
+    spaceProxy.BeginTake<Employee> (new SqlQuery<Employee> ("Id=1"), TakeListener, null);
+}
 {% endhighlight %}
+
+
 
 #### Modifiers
 
 The take operations can be configured with different modifiers.
 
 ##### Examples:
-{%highlight java%}
-	Employee template = new Employee();
+{%highlight csharp%}
+Employee template = new Employee();
 
-    // Takes objects in a FIFO mode
- 	Employee e = space.take(template, 0, TakeModifiers.FIFO);
+// Takes objects in a FIFO mode
+Employee e = spaceProxy.Take<Employee>(template, null, 0, TakeModifiers.Fifo);
 
-    // Takes objects according to FIFO group
-	Employee e = space.take(template, 0, TakeModifiers.FIFO_GROUPING_POLL);
+// Takes objects according to FIFO group without transactions
+Employee e1 = spaceProxy.Take<Employee>(template, null, 0, TakeModifiers.FifoGroupingPoll);
 {%endhighlight%}
 
 
-For further details on each of the available modifiers see: [TakeModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/client/TakeModifiers.html)
+For further details on each of the available modifiers see: [TakeModifiers](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/P_GigaSpaces_Core_ISpaceProxy_TakeModifiers.htm)
 
 
 {% togglecloak id=os-take %}**Method summary...**{% endtogglecloak %}
 {% gcloak os-take %}
 
-Take by template:{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#take(T){%endjavaapi%}
-{%highlight java%}
-<T> T take(T template) throws DataAccessException
-<T> T take(T template, long timeout, TakeModifiers modifiers)throws DataAccessException
+Take by template:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_ISpaceProxy_Take.htm{%endnetapi%}
+{%highlight csharp%}
+T take<T>(T template);
+T take<T>(T template, long timeout, TakeModifiers modifiers);
 .....
 {%endhighlight%}
 
-Take by Id:{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#takeById(java.lang.Class,%20java.lang.Object){%endjavaapi%}
-{%highlight java%}
-<T> T takeById(Class<T> clazz, Object id) throws DataAccessException
-<T> T takeById(Class<T> clazz, Object id, Object routing, long timeout, TakeModifiers modifiers)throws DataAccessException
+Take by Id:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_ISpaceProxy_TakeById.htm{%endnetapi%}
+{%highlight csharp%}
+T TakeById<T>(Object id);
+T TakeById<T>(Object id, Object routing, long timeout, TakeModifiers modifiers);
 .....
 {%endhighlight%}
 
-Take by ISpaceQuery:{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#take(com.gigaspaces.query.ISpaceQuery){%endjavaapi%}
-{%highlight java%}
-<T> T take(ISpaceQuery<T> query, Object id)throws DataAccessException
-<T> T take(ISpaceQuery<T> query, Object routing, long timeout, TakeModifiers modifiers)throws DataAccessException
-....
+Take by Id's:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_ISpaceProxy_TakeByIds.htm{%endnetapi%}
+{%highlight csharp%}
+ITakeByIdsResult<T> TakeByIds<T>(IdsQuery<T> idsQuery,ITransaction tx);
+ITakeByIdsResult<T> TakeByIds<T>(Object[] ids,Object routingKey,ITransaction tx,TakeModifiers modifiers);
+.....
 {%endhighlight%}
 
-Take multiple:{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#takeMultiple(com.gigaspaces.query.ISpaceQuery){%endjavaapi%}
-{%highlight java%}
-<T> T[] takeMultiple(ISpaceQuery<T> query) throws DataAccessException
-<T> T[] takeMultiple(ISpaceQuery<T> query, long timeout, TakeModifiers modifiers) throws DataAccessException
-<T> T[] takeMultiple(T template) throws DataAccessException
-<T> T[] takeMultiple(T template, long timeout, TakeModifiers modifiers) throws DataAccessException
-<T> T[] takeMultiple(ISpaceQuery<T> template, int maxEntries, TakeModifiers modifiers) throws DataAccessException
+
+Take multiple:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_ISpaceProxy_TakeMultiple.htm{%endnetapi%}
+{%highlight csharp%}
+T[] TakeMultiple<T>(T template);
+T[] TakeMultiple<T>(IQuery<T> query,ITransaction tx,int maxItems,TakeModifiers modifiers);
+T[] TakeMultiple<T>(T template,int maxItems);
 ...
 {%endhighlight%}
 
-Asynchronous take:{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#asyncTake(com.gigaspaces.query.ISpaceQuery){%endjavaapi%}
-{%highlight java%}
-<T> AsyncFuture<T> asyncTake(T template) throws DataAccessException
-<T> AsyncFuture<T> asyncTake(T template, long timeout, TakeModifiers modifiers, AsyncFutureListener<T> listener) throws DataAccessException
-<T> AsyncFuture<T> asyncTake(ISpaceQuery<T> query)throws DataAccessException
-<T> AsyncFuture<T> asyncTake(ISpaceQuery<T> query, long timeout, TakeModifiers modifiers, AsyncFutureListener<T> listener)throws DataAccessException
+
+Asynchronous take:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_ISpaceProxy_BeginTake.htm{%endnetapi%}
+{%highlight csharp%}
+IAsyncResult<T> BeginTake<T>(IQuery<T> query,AsyncCallback<T> userCallback,Object stateObject);
+IAsyncResult<T> BeginTake<T>(T template,long timeout,AsyncCallback<T> userCallback,Object stateObject);
+)
 .....
 {%endhighlight%}
 
-Take if exists:{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#takeIfExists(com.gigaspaces.query.ISpaceQuery){%endjavaapi%}
-{%highlight java%}
-<T> T takeIfExists(T template)throws DataAccessException
-<T> T takeIfExistsById(Class<T> clazz, Object id)throws DataAccessException
-<T> T takeIfExistsById(Class<T> clazz, Object id, Object routing, long timeout, TakeModifiers modifiers) throws DataAccessException
-<T> T takeIfExistsById(IdQuery<T> query, long timeout, TakeModifiers modifiers) throws DataAccessException
-....
+
+Take if exists:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_ISpaceProxy_TakeIfExists.htm{%endnetapi%}
+{%highlight csharp%}
+T TakeIfExists<T>(T template);
+T TakeIfExists<T>(IQuery<T> query,ITransaction tx,long timeout,TakeModifiers modifiers);
+.....
+
 {%endhighlight%}
 
-
+Take by id if exists:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_ISpaceProxy_TakeIfExistsById.htm{%endnetapi%}
+{%highlight csharp%}
+Object TakeIfExistsById(Type type,Object id);
+T TakeIfExistsById<T>(IdQuery<T> idQuery,ITransaction tx,long timeout,TakeModifiers modifiers);
+....
+{%endhighlight%}
 
 {: .table .table-bordered}
 | Modifier and Type | Description | Default | Unit|
 |:-----|:------------|:--------|:----|
-| T          | POJO, SpaceDocument|| |
+| T          | POCO, SpaceDocument|| |
 |timeout     | Time to wait for the response| 0  |  milliseconds |
-|query| [ISpaceQuery](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/query/ISpaceQuery.html)|      | |
-|[AsyncFutureListener](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/async/AsyncFutureListener.html) |Allows to register for a callback on an AsyncFuture to be notified when a result arrives||
-|[TakeModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/client/TakeModifiers.html)|Provides modifiers to customize the behavior of take operations | NONE  |  |
-
+|query| [IQuery](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_IQuery_1.htm)|      | |
+|[TakeModifiers](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/P_GigaSpaces_Core_ISpaceProxy_TakeModifiers.htm)|Provides modifiers to customize the behavior of take operations | NONE  |  |
+|[ITakeByIdsResult](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_IQuery_1.htm)|ResultSet||
 {%endgcloak%}

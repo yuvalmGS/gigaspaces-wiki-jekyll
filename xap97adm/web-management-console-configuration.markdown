@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Configuration
 categories: XAP97ADM
 parent: web-management-console.html

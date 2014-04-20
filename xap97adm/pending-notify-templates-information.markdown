@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Pending Notify Templates
 categories: XAP97ADM
 parent: gigaspaces-management-center.html

@@ -39,7 +39,7 @@ Unzip the ZIP file using your favorite unzip tool (e.g., WinZip) to the location
 **What's Next?**
 
 - To verify a local installation, a remote installation, and the cluster configuration, refer to the [Testing System Environment]({%currentadmurl%}/troubleshooting-testing-system-environment.html) section.
-- See the [Quick Start Guide](/tutorials/index.html) for your first steps with GigaSpaces.
+- See the [Quick Start Guide](./tutorials.html) for your first steps with GigaSpaces.
 
 
 # Installing on Linux
@@ -57,7 +57,7 @@ Step 3. Make sure all the machines running GigaSpaces can ping each other and th
 **What's Next?**
 
 - To verify a local installation, a remote installation, and the cluster configuration, refer to the [Testing System Environment]({%currentadmurl%}/troubleshooting-testing-system-environment.html) section.
-- See the [Quick Start Guide](/tutorials/index.html) for your first steps with GigaSpaces.
+- See the [Quick Start Guide](./tutorials.html) for your first steps with GigaSpaces.
 
 {% anchor 2 %}
 

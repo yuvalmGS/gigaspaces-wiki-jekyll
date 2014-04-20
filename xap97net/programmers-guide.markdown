@@ -29,7 +29,7 @@ The XAP document API exposes the space as Document Store. A document, which is r
 - [Modeling your Data](./modeling-your-data.html){%wbr%}
 Modeling your objects that are used to interact with the space.
 
-- [The Space Interface](./the-space-api.html){%wbr%}
+- [The Space Interface](./the-gigaspace-interface-overview.html){%wbr%}
 This section includes information about the different APIs for accessing and manipulating the Space data
 
 

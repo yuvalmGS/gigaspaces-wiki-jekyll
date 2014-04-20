@@ -283,11 +283,11 @@ In this type of example, the Deployment Infrastructure is responsible for making
 
 ## Grid Service Agent (GSA)
 
-The [Grid Service Agent (GSA)](/product_overview/service-grid.html#gsa) acts as a process manager that can spawn and manage Deployment Infrastructure processes (Operating System level processes) such as [Grid Service Manager](/product_overview/service-grid.html#gsm) and [Grid Service Container](/product_overview/service-grid.html#gsc).
+The [Grid Service Agent (GSA)](./service-grid.html#gsa) acts as a process manager that can spawn and manage Deployment Infrastructure processes (Operating System level processes) such as [Grid Service Manager](./service-grid.html#gsm) and [Grid Service Container](./service-grid.html#gsc).
 
-Usually, a single GSA is deployed on each individual machine. The GSA spawns [Grid Service Managers](/product_overview/service-grid.html#gsm), [Grid Service Containers](/product_overview/service-grid.html#gsc), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
+Usually, a single GSA is deployed on each individual machine. The GSA spawns [Grid Service Managers](./service-grid.html#gsm), [Grid Service Containers](./service-grid.html#gsc), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
 
-{% lampon %}Though [Grid Service Manager](/product_overview/service-grid.html#gsm), [Grid Service Container](/product_overview/service-grid.html#gsc), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
+{% lampon %}Though [Grid Service Manager](./service-grid.html#gsm), [Grid Service Container](./service-grid.html#gsc), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
 
 {% anchor gsm %}
 

@@ -35,7 +35,7 @@ GigaSpaces IMDG support variety of caching scenarios. Using GigaSpaces IMDG as a
 - Less load on the database layer - Since the cache will offload the database, you will have less contention generated at the database layer.
 - Continuous High-Availability - Zero downtime of your data access layer with the ability to survive system failures without any data loss.
 
-The [Caching Scenarios](/product_overview/caching-scenarios.html) describes the different caching options GigaSpaces support.
+The [Caching Scenarios](./caching-scenarios.html) describes the different caching options GigaSpaces support.
 
 # Characteristics of a Space
 
@@ -46,7 +46,7 @@ The space has a number of determining characteristics that should be configured 
 ### The Space Clustering Topology
 
 The space can have a single instance, in which case it runs on a single JVM, or multiple instances, in which case it can run on multiple JVMs.
-When it has multiple instances, the space can run in a number of [topologies](/product_overview/space-topologies.html) which determine how the data is distributed across those JVMs. In general, the data can be either **replicated**, which means it resides on all of the JVMs in the cluster, or **partitioned**, which means that the data is distributed across all of the JVMs, each containing a different subset of it. With a partitioned topology you can also assign one or more backup space instances for each partition.
+When it has multiple instances, the space can run in a number of [topologies](./space-topologies.html) which determine how the data is distributed across those JVMs. In general, the data can be either **replicated**, which means it resides on all of the JVMs in the cluster, or **partitioned**, which means that the data is distributed across all of the JVMs, each containing a different subset of it. With a partitioned topology you can also assign one or more backup space instances for each partition.
 
 ![topologies.jpg](/attachment_files/topologies.jpg)
 
@@ -110,7 +110,7 @@ The code space API is also supported in [.Net]({%latestneturl%}/programmers-guid
 
 # Services on Top of the Space
 
-Building on top of the core API, the Space also provides [higher level services](/product_overview/services-on-top-of-the-data-grid.html) onto the application. These services, along with the space's basic capabilities, provide the full stack of middleware features that you can build your application with.
+Building on top of the core API, the Space also provides [higher level services](./services-on-top-of-the-data-grid.html) onto the application. These services, along with the space's basic capabilities, provide the full stack of middleware features that you can build your application with.
 [The Task Execution API]({%latestjavaurl%}/task-execution-over-the-space.html) allows you send your code to the space and execute it on one or more  nodes in parallel, accessing the space data on each node locally.
 [Event containers]({%latestjavaurl%}/messaging-support.html) use the core API's operations and abstract your code from all the low level details involved in handling the event, such as event registration with the space, transaction initiation, etc. This has the benefit of abstracting your code from the lower level API and allows it to focus on your business logic and the application behavior.
 [Space-Based Remoting]({%latestjavaurl%}/space-based-remoting.html) allows you to use the space's messaging and code execution capabilities to enable application clients to invoke space side services transparently, using an application specific interface. Using the space as the transport mechanism for the remote calls, allows for location transparency, high availability and parallel execution of the calls, without changing the client code.
@@ -123,6 +123,6 @@ In addition, the higher level services (remoting and event processing), are also
 
 # The Space as the Foundation for Space-Based Architecture
 
-Besides its ability to function as an in-memory data grid, the Space's core features and the services on top of it, form the foundation for [Space-Based Architecture (SBA)](/product_overview/a-typical-sba-application.html). By using SBA, you can gain performance and scalability benefits not available with traditional tier-based architectures, even when these include an in-memory data grid, such as the Space.
+Besides its ability to function as an in-memory data grid, the Space's core features and the services on top of it, form the foundation for [Space-Based Architecture (SBA)](./a-typical-sba-application.html). By using SBA, you can gain performance and scalability benefits not available with traditional tier-based architectures, even when these include an in-memory data grid, such as the Space.
 The basic unit of scalability in SBA is the [processing unit]({%latestjavaurl%}/packaging-and-deployment.html). The Space can be embedded into the processing unit, or accessed remotely from it. When embedded into the processing unit, local services, such as event handler and service bean exposed remotely over the space, can interact with the local space instance to achieve unparalleled performance and scalability. The Space's built-in support for data partitioning is used to distribute the data and processing across the nodes, and for scaling the application.
 

@@ -17,7 +17,7 @@ GigaSpaces IMDG supports three kinds of caching mechanisms:In-line Cache, Side C
 - Less load on the database layer - Since the cache will isolate the database from the application somewhat, you will have less contention generated at the database layer.
 - Continuous High-Availability - Zero downtime of your data access layer with the ability to survive system failures without any data loss.
 
-Both the In-line cache and the Side cache support the common deployment toplogies: [replicated](/product_overview/terminology---data-grid-topologies.html#Primary Backup Data Grid), [partitioned](/product_overview/terminology---data-grid-topologies.html#Partitioned Data Grid) and [primary-backup partitioned](/product_overview/terminology---data-grid-topologies.html#Primary Backup Partitioned Data Grid).
+Both the In-line cache and the Side cache support the common deployment toplogies: [replicated](./terminology---data-grid-topologies.html#Primary Backup Data Grid), [partitioned](./terminology---data-grid-topologies.html#Partitioned Data Grid) and [primary-backup partitioned](./terminology---data-grid-topologies.html#Primary Backup Partitioned Data Grid).
 
 # In-line Cache
 

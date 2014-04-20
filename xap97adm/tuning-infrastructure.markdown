@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Infrastructure
 categories: XAP97ADM
 parent:  tuning.html

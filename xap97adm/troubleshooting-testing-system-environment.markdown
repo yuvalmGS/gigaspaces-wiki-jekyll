@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Testing System Environment
 categories: XAP97ADM
 parent: troubleshooting.html

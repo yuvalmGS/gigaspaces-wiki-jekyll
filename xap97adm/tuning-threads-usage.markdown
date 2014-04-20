@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Threads Usage
 categories: XAP97ADM
 parent: tuning.html

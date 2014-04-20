@@ -16,7 +16,7 @@ If no match is found, null is returned. Passing a null reference as the template
 
 Any matching object can be returned. Successive read requests with the same template may or may not return equivalent objects, even if no intervening modifications have been made to the space.
 Each invocation of `read` may return a new object even if the same object is matched in the space.
-If you would like to read objects in the same order they have been written into the space you should perform the read objects in a [FIFO mode](./fifo-support.html).
+If you would like to read objects in the same order they have been written into the space you should perform the read objects in a [FIFO mode](./fifo-overview.html).
 
 {% note %}
 The `read` operation default timeout is `JavaSpace.NO_WAIT`.

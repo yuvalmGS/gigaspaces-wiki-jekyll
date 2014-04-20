@@ -1,0 +1,31 @@
+---
+layout: post97
+title:  Cook Books
+categories: XAP97
+weight: 300
+parent: tutorials.html
+---
+
+ {%wbr%}
+
+ {%section%}
+ {%column width=10% %}
+ ![data-access.jpg](/attachment_files/subject/data-access.png)
+ {%endcolumn%}
+ {%column width=90% %}
+ Here you will find a quick start guide that explains how to deploy and use a GigaSpace XAP Data Grid.
+ A full Java tutorial is also provided that will introduce you to the basic capabilities and features of the XAP platform.
+ {%endcolumn%}
+ {%endsection%}
+
+ <hr/>
+
+ - [XAP in 5 Minutes](./your-first-data-grid-application.html){%wbr%}
+ This tutorial explains how to deploy and use a XAP Data Grid from a Java client application.
+
+
+ - [Full Tutorial](./java-home.html){%wbr%}
+ This Tutorial provides a high-level overview of the GigaSpaces XAP platform. Hands on examples are provided to demonstrate the core concepts and API’s.
+
+
+ <hr/>

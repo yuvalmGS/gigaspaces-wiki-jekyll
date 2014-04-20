@@ -45,8 +45,8 @@ This time instead of specifying the values directly in the expression we've used
 - `AND` / `OR` operators to combine two or more conditions.
 - All basic logical operations to create conditions: `=, <>, <,>, >=, <=, like, NOT like, is null, is NOT null, IN`.
 - `BETWEEN` (starting 8.0.1)
-- `ORDER BY (ASC | DESC)` for multiple POJO properties. Supported only by readMultiple. `ORDER BY` supports also nested object fields.
-- `GROUP BY` - performs DISTINCT on the POJO properties. Supported only by readMultiple. `GROUP BY` supports also nested object fields.
+- `ORDER BY (ASC | DESC)` for multiple POCO properties. Supported only by readMultiple. `ORDER BY` supports also nested object fields.
+- `GROUP BY` - performs DISTINCT on the POCO properties. Supported only by readMultiple. `GROUP BY` supports also nested object fields.
 - `sysdate` - current system date and time.
 - `rownum` - limits the number of rows to select.
 - Sub queries.
@@ -163,7 +163,7 @@ public class MyData {
 You may write the data into the space using the following:
 
 {% highlight csharp %}
-MyData data = new MyPOJO(...);
+MyData data = new MyPOCO(...);
 data.FreeText(freetext);
 proxy.Write(data);
 {% endhighlight %}

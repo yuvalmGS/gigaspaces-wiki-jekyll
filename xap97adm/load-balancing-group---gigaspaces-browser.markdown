@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Load-Balancing Group
 categories: XAP97ADM
 parent: working-with-clusters---gigaspaces-browser.html

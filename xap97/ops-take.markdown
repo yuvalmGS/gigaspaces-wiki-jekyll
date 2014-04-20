@@ -19,9 +19,10 @@ If a `RemoteException` is thrown, the take may or may not have been successful.
 If an `UnusableEntryException` is thrown, the take `removed` the unusable object from the space.
 If any other exception is thrown, the take did not occur, and no object was removed from the space.
 
+{%comment%}
 With a `RemoteException`, an object can be removed from a space and yet never returned to the client that performed the take, thus losing the object in between.
 In circumstances in which this is unacceptable, the take can be wrapped inside a transaction that is committed by the client when it has the requested object in hand.
-
+{%endcomment%}
 
 {%note%}
 If you would like to take objects from the space in the same order they have been written into the space you should perform the take objects in a [FIFO mode](./fifo-support.html).
@@ -118,8 +119,7 @@ To remove a batch of objects without returning these back into the client use `G
 -  should be handled with care, since it can return a large data set (potentially all the space data). This might cause an out of memory error in the space and client process. You should use the [GSIterator](#Space Iterator) to return the result in batches (paging) in such cases.
 -  should be performed with transactions - this allows the client to roll back the space to its initial state prior the operation was started, in case of a failure.
 -  operation **dos not support timeout** operations. The simple way to achieve this is by calling the `read` operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
--  in the event of a take error, DataAccessException will wrap a TakeMultipleException, accessible via DataAccessException.getRootCause().  [TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/TakeMultipleException.html)
-
+-  in the event of a take error, DataAccessException will wrap a TakeMultipleException, accessible via DataAccessException.getRootCause().  [TakeMultipleException](http://www.gigaspaces.com/docs/dotnetdocs9.7/html/Overload_GigaSpaces_Core_Exceptions_TakeMultipleException__ctor.htm)
 {%endnote%}
 
 {%anchor takeIfExists%}

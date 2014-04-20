@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  C++ Benchmark
 categories: XAP97ADM
 parent: benchmarking.html

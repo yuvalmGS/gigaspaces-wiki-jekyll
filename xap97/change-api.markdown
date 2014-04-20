@@ -112,15 +112,15 @@ In this case the key euro inside the map behind the balance will be increased by
 {: .table .table-bordered}
 |Operation Name|Description|Semantics|
 |:-------------|:----------|:--------|
-|**set**|sets a property value|sets value of the given property|
-|**unset**|unsets a property value|If the property is a fixed property, it will be set with null (null value for primitives), if it is a dynamic property it will be removed from the dynamic properties, note that for dynamic properties this is **not** equivalent to the set operation with `null` value|
-|**increment**|increase a numeric property by the given delta|This change may operate on a numeric property only (byte,short,int,long,float,double or their corresponding Boxed variation), if the property does not exists, the delta will be set as its initial state|
-|**decrement**|decrease a numeric property by the given delta|This change may operate on a numeric property only (byte,short,int,long,float,double or their corresponding Boxed variation), if the property does not exists, the -delta will be set as its initial state|
-|**addToCollection**|adds an item to a collection property|The item is added to the collection by applying the `Collection.add` operation with the given item on the collection behind the property, if the property do not exists an exception will be thrown|
-|**addAllToCollection**|adds a list of items to a collection property|The items are added to the collection by applying the `Collection.addAll` operation with the given items on the collection behind the property, if the property do not exists an exception will be thrown|
-|**removeFromCollection**|removes an item from a collection property|The item is removed from the collection by applying the `Collection.remove` operation with the given item on the collection behind the property, if the property do not exists an exception will be thrown|
-|**putInMap**|puts a key value pair in a map property|The key and value are put into a map by applying the `Map.put` operation with the given key and value on the map behind the property, if the property do not exists an exception will be thrown|
-|**removeFromMap**|removes a key and its associated value from a map property|The key is removed from a map by applying the `Map.remove` operation with the given key on the map behind the property, if the property do not exists an exception will be thrown|
+|**Set**|sets a property value|sets value of the given property|
+|**Unset**|unsets a property value|If the property is a fixed property, it will be set with null (null value for primitives), if it is a dynamic property it will be removed from the dynamic properties, note that for dynamic properties this is **not** equivalent to the set operation with `null` value|
+|**Increment**|increase a numeric property by the given delta|This change may operate on a numeric property only (byte,short,int,long,float,double or their corresponding Boxed variation), if the property does not exists, the delta will be set as its initial state|
+|**Decrement**|decrease a numeric property by the given delta|This change may operate on a numeric property only (byte,short,int,long,float,double or their corresponding Boxed variation), if the property does not exists, the -delta will be set as its initial state|
+|**AddToCollection**|adds an item to a collection property|The item is added to the collection by applying the `Collection.add` operation with the given item on the collection behind the property, if the property do not exists an exception will be thrown|
+|**AddAllToCollection**|adds a list of items to a collection property|The items are added to the collection by applying the `Collection.addAll` operation with the given items on the collection behind the property, if the property do not exists an exception will be thrown|
+|**RemoveFromCollection**|removes an item from a collection property|The item is removed from the collection by applying the `Collection.remove` operation with the given item on the collection behind the property, if the property do not exists an exception will be thrown|
+|**PutInMap**|puts a key value pair in a map property|The key and value are put into a map by applying the `Map.put` operation with the given key and value on the map behind the property, if the property do not exists an exception will be thrown|
+|**RemoveFromMap**|removes a key and its associated value from a map property|The key is removed from a map by applying the `Map.remove` operation with the given key on the map behind the property, if the property do not exists an exception will be thrown|
 
 # With the Embedded model
 

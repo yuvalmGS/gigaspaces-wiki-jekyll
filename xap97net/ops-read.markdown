@@ -19,7 +19,7 @@ Each invocation of `read` may return a new object even if the same object is mat
 If you would like to read objects in the same order they have been written into the space you should perform the read objects in a [FIFO mode](./fifo-support.html).
 
 {% note %}
-The `Read` operation default timeout is `JavaSpace.NO_WAIT`.
+The `Read` operation default timeout is `0`.
 {% endnote %}
 
 The read operation can be performed with the following options:
@@ -36,24 +36,25 @@ To learn more about the different options refer to [Querying the Space](./queryi
 The following example writes an `Employee` object into the space and reads it back from the space :
 
 {% highlight csharp %}
-    Employee employee = new Employee("Last Name", new Integer(32));
-    employee.FirstName("first name");
-    spaceProxy.Write(employee);
+Employee employee = new Employee("Last Name", 32);
+employee.FirstName="first name";
+spaceProxy.Write(employee);
 
-    // Read by template
-    Employee template = new Employee(new Integer(32));
-    Employee e = spaceProxy.Read(template);
+// Read by template
+Employee template = new Employee(32);
+Employee e = spaceProxy.Read(template);
 
-    // Read by id
-    Employee e = spaceProxy.ReadById<Employee.class>(new Integer(32));
+// Read by id
+Employee e1 = spaceProxy.ReadById<Employee>(32);
 
-    // Read by IdQuery
-    IdQuery<Employee> query = new IdQuery<Employee>( new Integer(32));
-    Employee e = spaceProxy.Read(query);
+// Read by IdQuery
+IdQuery<Employee> query1 = new IdQuery<Employee>( 32);
+Employee e2 = spaceProxy.Read<Employee>(query1);
 
-    // Read by SQLQuery
-	SQLQuery<Employee> query = new SQLQuery<Employee>("FirstName='first name'");
-	Employee e = spaceProxy.Read(query);
+// Read by SQLQuery
+SqlQuery<Employee> query2 = new SqlQuery<Employee>("FirstName='first name'");
+Employee e3 = spaceProxy.Read<Employee>(query2);
+
 {% endhighlight %}
 
 
@@ -73,37 +74,36 @@ The GigaSpace interface provides simple way to perform bulk read operations. You
 ##### Examples:
 
 {% highlight csharp %}
-   Employee emps[] = new Employee[2];
-   emps[0] = new Employee("Last Name A", new Integer(31));
-   emps[1] = new Employee("Last Name B", new Integer(32));
+Employee[] emps = new Employee[2];
+emps[0] = new Employee("Last Name A", 31);
+emps[1] = new Employee("Last Name B", 32);
 
-   spaceProxy.writeMultiple(emps);
+spaceProxy.WriteMultiple(emps);
 
-   // Read multiple by template
-   Employee[] employees = spaceProxy.ReadMultiple<Employee>(new Employee());
+// Read multiple by template
+Employee[] employees = spaceProxy.ReadMultiple<Employee>(new Employee());
 
-   // Read multiple by SQLQuery
-   SQLQuery<Employee> query = new SQLQuery<Employee>("LastName ='Last Name B'");
-   Employee[] e = spaceProxy.ReadMultiple(query);
+// Read multiple by SQLQuery
+SqlQuery<Employee> query = new SqlQuery<Employee>("LastName ='Last Name B'");
+Employee[] e = spaceProxy.ReadMultiple<Employee>(query);
 
-   // Read by Ids
-   Integer[] ids = new Integer[] { 31, 32 };
-   ReadByIdsResult<Employee> result = spaceProxy.readByIds<Employee>(ids);
-   Employee[] employees = result.getResultsArray();
+// Read by Ids
+Object[] ids = new Object[] { 31, 32 };
+IReadByIdsResult<Employee> result = spaceProxy.ReadByIds<Employee>(ids);
+Employee[] e1 = result.ResultsArray;
 
-   // Read by IdsQuery
-   Integer[] ids = new Integer[] { 31, 32 };
-   IdsQuery<Employee> query = new IdsQuery<Employee>(ids);
-   ReadByIdsResult<Employee> result = spaceProxy.ReadByIds(query);
-   Employee[] employees = result.getResultsArray();
-
+// Read by IdsQuery
+Object[] ids1 = new Object[] { 31, 32 };
+IdsQuery<Employee> query2 = new IdsQuery<Employee>(ids1);
+IReadByIdsResult<Employee> result2 = spaceProxy.ReadByIds<Employee>(query2);
+Employee[] employees2 = result.ResultsArray;
 {% endhighlight %}
 
 {%note title=Here are few important considerations when using the batch operation: %}
 - boosts the performance, since it perform multiple operations using one call. These methods returns the matching results in one result object back to the client. This allows the client and server to utilize the network bandwidth in an efficient manner. In some cases, these batch operations can be up to 10 times faster than multiple single based operations.
 - should be handled with care, since they can return a large data set (potentially all the space data). This might cause an out of memory error in the space and client process. You should use the [GSIterator](#Space Iterator) to return the result in batches (paging) in such cases.
-- **dos not support timeout** operations. The simple way to achieve this is by calling the `read` operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
-- Exception handling - operation many throw the following Exceptions. [ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/ReadMultipleException.html)
+- **dos not support timeout** operations. The simple way to achieve this is by calling the `Read` operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
+- Exception handling - operation many throw the following Exceptions. [ReadMultipleException](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_Exceptions_ReadMultipleException__ctor.htm)
 {%endnote%}
 
 {%anchor readIfExists%}
@@ -116,43 +116,40 @@ If at the end of that time no value can be returned that would not interfere wit
 ##### Example:
 
 {% highlight csharp %}
-    Employee employee = new Employee("Last Name", new Integer(32));
-	employee.FirstName("first name");
-	space.Write(employee);
+Employee employee = new Employee("Last Name", 32);
+employee.FirstName="first name";
+spaceProxy.Write(employee);
 
-	SQLQuery<Employee> query = new SQLQuery<Employee>("FirstName='first name'");
-	Employee e = spaceProxy.ReadIfExists(query);
+SqlQuery<Employee> query = new SqlQuery<Employee>("FirstName='first name'");
+Employee e = spaceProxy.ReadIfExists<Employee>(query);
 {% endhighlight %}
+
+
+
 
 {%anchor asynchronousRead%}
 
 #### Asynchronous Read
 
-The GigaSpace interface supports asynchronous (non-blocking) read operations through the GigaSpace interface. It returns a [Future\<T\>](http://download.oracle.com/javase/6/docs/api/java/util/concurrent/Future.html) object, where T is the type of the object the request returns. Future<T>.get() can be used to query the object to see if a result has been returned or not.
-
-Alternatively, asyncRead also accept an implementation of [AsyncFutureListener](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/async/AsyncFutureListener.html), which will have its `AsyncFutureListener.onResult` method called when the result has been populated. This does not affect the return type of the `Future<T>`, but provides an additional mechanism for handling the asynchronous response.
-
+The GigaSpace interface supports asynchronous (non-blocking) read operations through the ISpaceProxy interface. It is implemented via a call back listener.
 
 ##### Example:
 
 {% highlight csharp %}
-    Employee employee = new Employee("Last Name", new Integer(32));
-    employee.FirstName("first name");
- 	space.Write(employee);
 
- 	Integer[] ids = new Integer[] { 31, 32 };
- 	IdsQuery<Employee> query = new IdsQuery<Employee>(ids);
- 	AsyncFuture<Employee> result = spaceProxy.AsyncRead(query);
+private void ReadListener (IAsyncResult<Employee> asyncResult)
+{
+    Employee result = spaceProxy.EndRead (asyncResult);
+}
 
-    // This part of the code could be executed in a different Thread
- 	try {
- 	    Employee e = result.get();
- 	} catch (InterruptedException e) {
- 		e.printStackTrace();
- 	} catch (ExecutionException e) {
- 		e.printStackTrace();
- 	}
+public void asyncRead ()
+{
+    spaceProxy.BeginRead<Employee> (new SqlQuery<Employee> ("Id=1"), ReadListener, null);
+}
 {% endhighlight %}
+
+
+
 
 #### Modifiers
 
@@ -160,68 +157,66 @@ The read operations can be configured with different modifiers.
 
 ##### Examples:
 {%highlight csharp%}
-	Employee template = new Employee();
+Employee template = new Employee();
 
-    // Read objects in a FIFO mode
- 	Employee e = spaceProxy.Read(template, 0, ReadModifiers.FIFO);
+// Read objects in a FIFO mode
+Employee e = spaceProxy.Read<Employee>(template, null, 0, ReadModifiers.Fifo);
 
-    // Dirty read
-	Employee e = space.Read(template, 0, ReadModifiers.DIRTY_READ);
+// Dirty read
+Employee e1 = spaceProxy.Read<Employee>(template, null, 0, ReadModifiers.DirtyRead);
 {%endhighlight%}
 
 
-For further details on each of the available modifiers see: [ReadModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/client/ReadModifiers.html)
+For further details on each of the available modifiers see: [ReadModifiers](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/P_GigaSpaces_Core_IReadOnlySpaceProxy_ReadModifiers.htm)
 
 
 {% togglecloak id=os-read %}**Method summary...**{% endtogglecloak %}
 {% gcloak os-read %}
 
-Read by template:{%netapi%}{%javadoc GigaSpace.html#read(T)%}{%endnetapi%}
+Read by template:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_IReadOnlySpaceProxy_Read.htm{%endnetapi%}
 {%highlight csharp%}
-<T> T read(T template) throws DataAccessException
-<T> T read(T template, long timeout, ReadModifiers modifiers)throws DataAccessException
+T Read(T template);
+T Read(T template, long timeout, ReadModifiers modifiers);
 .....
 {%endhighlight%}
 
-Read by Id:{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#readById(java.lang.Class,%20java.lang.Object){%endjavaapi%}
-{%highlight java%}
-<T> T readById(Class<T> clazz, Object id) throws DataAccessException
-<T> T readById(Class<T> clazz, Object id, Object routing, long timeout, ReadModifiers modifiers)throws DataAccessException
+Read by Id:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_IReadOnlySpaceProxy_ReadById.htm{%endnetapi%}
+{%highlight csharp%}
+T ReadById<T>(Object id);
+T ReadById<T>(Object id,Object routing,ITransaction tx,long timeout);
 .....
 {%endhighlight%}
 
-Read by ISpaceQuery:{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#read(com.gigaspaces.query.ISpaceQuery){%endjavaapi%}
-{%highlight java%}
-<T> T read(ISpaceQuery<T> query, Object id)throws DataAccessException
-<T> T read(ISpaceQuery<T> query, Object routing, long timeout, ReadModifiers modifiers)throws DataAccessException
+Read by ISpaceQuery:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_IReadOnlySpaceProxy_Read.htm{%endnetapi%}
+{%highlight csharp%}
+T Read(ISpaceQuery<T> query, Object id);
+T Read(ISpaceQuery<T> query, Object routing, long timeout, ReadModifiers modifiers);
 ....
 {%endhighlight%}
 
-Read multiple:{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#readMultiple(com.gigaspaces.query.ISpaceQuery){%endjavaapi%}
+Read multiple:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_IReadOnlySpaceProxy_ReadMultiple.htm{%endnetapi%}
 {%highlight csharp%}
-<T> T[] readMultiple(ISpaceQuery<T> query) throws DataAccessException
-<T> T[] readMultiple(ISpaceQuery<T> query, long timeout, ReadModifiers modifiers) throws DataAccessException
-<T> T[] readMultiple(T template) throws DataAccessException
-<T> T[] readMultiple(T template, long timeout, ReadModifiers modifiers) throws DataAccessException
-<T> T[] readMultiple(ISpaceQuery<T> template, int maxEntries, ReadModifiers modifiers) throws DataAccessException
+T[] ReadMultiple<T>(T template);
+T[] ReadMultiple<T>(T template,ITransaction tx,int maxItems);
+T[] ReadMultiple<T>(IQuery<T> query,ITransaction tx,int maxItems,ReadModifiers modifiers);
 ...
 {%endhighlight%}
 
-Asynchronous Read:{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#asyncRead(com.gigaspaces.query.ISpaceQuery){%endjavaapi%}
-{%highlight java%}
-<T> AsyncFuture<T> asyncRead(T template) throws DataAccessException
-<T> AsyncFuture<T> asyncRead(T template, long timeout, ReadModifiers modifiers, AsyncFutureListener<T> listener) throws DataAccessException
-<T> AsyncFuture<T> asyncRead(ISpaceQuery<T> query)throws DataAccessException
-<T> AsyncFuture<T> asyncRead(ISpaceQuery<T> query, long timeout, ReadModifiers modifiers, AsyncFutureListener<T> listener)throws DataAccessException
+
+Asynchronous Read:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_IReadOnlySpaceProxy_BeginRead.htm{%endnetapi%}
+{%highlight csharp%}
+IAsyncResult<T> BeginRead<T>(T template,AsyncCallback<T> userCallback, Object stateObject);
+IAsyncResult<T> BeginRead<T>(T template,long timeout,AsyncCallback<T> userCallback,Object stateObject)
 .....
 {%endhighlight%}
 
-Read if exists:{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#readIfExists(com.gigaspaces.query.ISpaceQuery){%endjavaapi%}
+
+Read if exists:{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_IReadOnlySpaceProxy_ReadIfExists.htm{%endnetapi%}
 {%highlight csharp%}
-<T> T readIfExists(T template)throws DataAccessException
-<T> T readIfExistsById(Class<T> clazz, Object id)throws DataAccessException
-<T> T readIfExistsById(Class<T> clazz, Object id, Object routing, long timeout, ReadModifiers modifiers) throws DataAccessException
-<T> T readIfExistsById(IdQuery<T> query, long timeout, ReadModifiers modifiers) throws DataAccessException
+T ReadIfExists<T>(T template);
+T ReadIfExists<T>(T template,ITransaction tx);
+T ReadIfExists<T>(T template,ITransaction tx,long timeout,ReadModifiers modifiers);
+T ReadIfExists<T>(IQuery<T> query,ITransaction tx,long timeout);
 ....
 {%endhighlight%}
 
@@ -232,8 +227,7 @@ Read if exists:{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversio
 |:-----|:------------|:--------|:----|
 | T          | POCO, SpaceDocument|| |
 |timeout     | Time to wait for the response| 0  |  milliseconds |
-|query| [ISpaceQuery](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/query/ISpaceQuery.html)|      | |
-|[AsyncFutureListener](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/async/AsyncFutureListener.html) |Allows to register for a callback on an AsyncFuture to be notified when a result arrives||
-|[ReadModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/client/ReadModifiers.html)|Provides modifiers to customize the behavior of read operations | NONE  |  |
+|query| [IQuery](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_IQuery_1.htm)|      | |
+|[ReadModifiers](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/P_GigaSpaces_Core_IReadOnlySpaceProxy_ReadModifiers.htm)|Provides modifiers to customize the behavior of read operations | NONE  |  |
 
 {%endgcloak%}

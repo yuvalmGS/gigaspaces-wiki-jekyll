@@ -115,8 +115,10 @@ That file should be named `sla.xml`, and should be placed in the root directory 
 
 {% refer %}Read about SLA in [Service Grid Processing Unit Container](./basic-processing-unit-container.html).{% endrefer %}
 
+{%comment%}
 # Deployment
 
-There are several ways to deploy the Processing Unit Container into the Service Grid. Are all detailed extensively in the [.NET Processing Unit Data Example](/tutorials/dotnet-your-first-xtp-application.html#Deployment) section.
+There are several ways to deploy the Processing Unit Container into the Service Grid. Are all detailed extensively in the [.NET Processing Unit Data Example](./dotnet-your-first-xtp-application.html#Deployment) section.
 
 The most straightforward way is to use the GigaSpaces Management Center for deployment.
+{%endcomment%}

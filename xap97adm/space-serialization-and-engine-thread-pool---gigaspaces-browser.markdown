@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Serialization and Thread Pool
 categories: XAP97ADM
 parent: working-with-spaces---gigaspaces-browser.html

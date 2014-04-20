@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Proxy Connectivity (Old)
 categories: XAP97ADM
 parent: tuning-gigaspaces-performance.html

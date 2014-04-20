@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Failover Group
 categories: XAP97ADM
 parent: working-with-clusters---gigaspaces-browser.html

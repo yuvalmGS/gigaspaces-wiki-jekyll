@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  XAP Performance
 categories: XAP97ADM
 parent:  tuning.html

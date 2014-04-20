@@ -185,6 +185,9 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
 
 {% endinittab %}
 
+{%learn%}./local-cache.html{%endlearn%}
+
+
 # Local View
 
 XAP supports a [Local View](./local-view.html) configuration. This provides a front-end client side cache that will be used with any `read` or `readMultiple` operations implicitly. The local view will be loaded on start and will be updated implicitly by the space.
@@ -249,6 +252,8 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 {% endhighlight %}
 {% endtabcontent %}
 {% endinittab %}
+
+{%learn%}./local-view.html{%endlearn%}
 
 
 # Security

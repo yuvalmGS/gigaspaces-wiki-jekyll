@@ -2,25 +2,29 @@
 layout: post97
 title:  Change API
 categories: XAP97NET
-parent: the-ispaceproxy-interface.html
-weight: 100
+weight: 400
+parent: the-gigaspace-interface-overview.html
 ---
 
 
-{% summary %}This page covers the Change API, its usage and behavior.{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
 
+{%section%}
+{%column width=70% %}
 The `ISpaceProxy.Change` and the `ChangeSet` allows updating existing objects in space, by specifying only the required change instead of passing the entire updated object. Thus reducing required network traffic between the client and the space, and the network traffic generated from replicating the changes between the space instances (e.g between the primary space instance and its backup). Moreover, using this API also can prevent the need of reading the existing object prior to the change operation because the change operation can specify how to change the existing property without knowing its current value. For instance, implementing atomic counters can be done by increasing a counter property of an integer property by some delta. Another example would be to add a value to a collection and so on.
 The change API supports transactions in the same way the other space operation supports it.
-
+{%endcolumn%}
+{%column width=30% %}
 ![change-api.jpg](/attachment_files/dotnet/change-api.jpg)
+{%endcolumn%}
+{%endsection%}
 
-# Basic Usage Example
+# Example
 
 The following example demonstrates how to increase the property 'count' in a an object of type 'WordCount' with id 'the' by one.
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy space = // ... obtain a space reference
 String id = "myID";
 IdQuery<WordCount> idQuery = new IdQuery<WordCount>(id, routing);
@@ -38,12 +42,12 @@ The `ChangeSet` contains a predefined set of operations that can be invoked to a
 Each specified change may operate on any level of properties of the specified object, this is defined by specifying the path to the property that needs to be changed where '.' in the path specifies
 that this change is done on a nested property. For instance:
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass]
 public class Account
 {
   ...
-  [SpaceId]
+  [SpaceID]
   Guid Id {get; set;}
   Balance Balance {get; set;}
 
@@ -58,7 +62,7 @@ public class Balance
 }
 {% endhighlight %}
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
@@ -75,18 +79,18 @@ Each operation in the change set acts on a specified string path. This path poin
 
 The following demonstrates how the path works with a dictionary property instead of concrete properties:
 
-{% highlight java %}
+{% highlight csharp %}
 [SpaceClass]
 public class Account
 {
   ...
-  @SpaceId
+  [SpaceID]
   Guid getId {get; set;}
   IDictionary<String, double> Balance {get; set;}
 }
 {% endhighlight %}
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
@@ -118,30 +122,15 @@ With the [embedded model](/sbp/modeling-your-data.html#Embedded vs. Non-Embedded
 
 The change operations returns a `IChangeResult` object that provides information regarding the change operation affect.
 
-{% highlight java %}
-/// <summary>
-/// Result of a change operation.
-/// </summary>
-/// <typeparam name="T"></typeparam>
+{% highlight csharp %}
 public interface IChangeResult<T>
 {
-  /// <summary>
-  /// Gets a collection of <see cref="IChangedEntryDetails{T}"/>  of the changed
-  /// entries.
-  /// This is only supported if the <see cref="ChangeModifiers.ReturnDetailedResults"/> modifier was used,
-  /// otherwise this method will throw unsupported operation exception.
-  /// </summary>
-  /// <exception cref="NotSupportedException">If the corresponding change
-  /// operation was not used with the <see cref="ChangeModifiers.ReturnDetailedResults"/>.</exception>
   ICollection<IChangedEntryDetails<T>> Results { get;}
-  /// <summary>
-  /// Gets the number of changed entries.
-  /// </summary>
   int NumberOfChangedEntries { get; }
 }
 {% endhighlight %}
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
@@ -160,28 +149,15 @@ The `IChangeResult` contains the `NumberOfChangedEntries` which specifies how ma
 
 Upon any error a `ChangeException` will be thrown containing the following details:
 
-{% highlight java %}
+{% highlight csharp %}
 public class ChangeException
 {
-
-  /// <summary>
-  /// Gets the failed changes.
-  /// </summary>
   public ICollection<Exception> Errors {get;}
 
-  /// <summary>
-  /// Gets the entries that failed to change result.
-  /// </summary>
   public ICollection<IFailedChangedEntryDetails> FailedChanges {get;}
 
-  /// <summary>
-  /// Gets the successfully done changes.
-  /// </summary>
   public ICollection<IChangedEntryDetails<object>> SuccessfulChanges {get;}
 
-  /// <summary>
-  /// Gets the number of succesfull changes
-  /// </summary>
   public int NumOfSuccessfulChanges {get;}
 
 }
@@ -196,7 +172,7 @@ The `Errors` property contains general failure reason for executing the change o
 
 One may apply multiple changes in one `Change` operation by setting up multiple operation in the change set, this is done simply by chaining changes as follows:
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy space = // ... obtain a space reference
 IdQuery<MyObject> idQuery = new IdQuery<MyObject>(id, routing);
 space.Change(idQuery, new ChangeSet().Increment("SomeIntProperty", 1)
@@ -210,7 +186,7 @@ The changes will applied to the object sequentially (and atomically) keeping the
 
 By default, the change operation will not modify the existing remaining lease of the changed entries. In order to change the lease, the new lease should be specified on the `ChangeSet` using the `lease` operation.
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy space = // ... obtain a space reference
 space.Change(idQuery, new ChangeSet().Lease(1000)...);
 {% endhighlight %}
@@ -229,7 +205,7 @@ current thread context. In that case, all objects which are not locked will be c
 
 If there were no matching objects for the specified template, the operation will return immediately without waiting for the timeout to elapse. This is similar to the `(Read/Take)IfExists` operation semantic.
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 IdQuery<Account> idQuery = new IdQuery<Account>(id, routing);
@@ -255,9 +231,9 @@ catch(ChangeException e)
 
 # Change and Optimistic Locking
 
-The `Change` operation has the same semantics as regular space `Update` operation when it comes to [Optimistic Locking]({% currentjavaurl %}/transaction-optimistic-locking.html). It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
+The `Change` operation has the same semantics as regular space `Update` operation when it comes to [Optimistic Locking](./transaction-optimistic-locking.html). It will increase the version of the changed object and the expected version can be specified in the id query when optimistic locking is needed.
 
-{% highlight java %}
+{% highlight csharp %}
 ISpaceProxy space = // ... obtain a space reference
 Guid id = ...;
 Object routing = id; // In our case the space routing property is the space id property.
@@ -283,7 +259,9 @@ catch(ChangeException e)
 }
 {% endhighlight %}
 
-{% exclamation %} In order to prevent constructor overload ambiguity, when using id query with version, the space routing property needs to be specified as well. If the object has no space routing then its space id property is the routing property and it should be used as shown in the previous example.
+{% note %}
+In order to prevent constructor overload ambiguity, when using id query with version, the space routing property needs to be specified as well. If the object has no space routing then its space id property is the routing property and it should be used as shown in the previous example.
+{%endnote%}
 
 # Change and Notifications
 
@@ -300,9 +278,6 @@ there is no guarantee whether the operation succeeded or not as this mode does n
 3. **`ChangeModifiers.MemoryOnlySearch`** - Search for matching entries in cache memory only (do not use the underlying external data source). However, any changes done on the matches entries
 will propagate to the underlying external data source.
 
-# Change Extension
-
-See [Change Extension](./change-extension.html) which provide utility methods for common usage patterns.
 
 # Considerations
 

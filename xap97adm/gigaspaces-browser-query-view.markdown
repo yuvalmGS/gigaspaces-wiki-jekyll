@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Query View
 categories: XAP97ADM
 parent: gigaspaces-browser-tree-panel-and-configuration-panel.html

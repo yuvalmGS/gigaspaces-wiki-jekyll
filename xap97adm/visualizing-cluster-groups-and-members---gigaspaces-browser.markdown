@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Groups and Members
 categories: XAP97ADM
 parent: cluster-view---gigaspaces-browser.html

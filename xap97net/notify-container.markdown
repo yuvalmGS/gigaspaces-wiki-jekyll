@@ -522,7 +522,7 @@ notifyEventListenerContainer.IgnoreEventOnNullTake = true;
 
 # Space Data Event Args
 
-The notify container uses GigaSpaces [data event session API](./space-events.html) under the hood. When a notification is triggered, it contains SpaceDataEventArgs, which holds more information about the notification itself, such as the template and the DataEventType (e.g. was this notification triggered by a write or an update operation?). When using the notify container, it is possible to receive that additional information as a parameter of the event listener method:
+The notify container uses GigaSpaces [data event session API](./the-space-notifications.html) under the hood. When a notification is triggered, it contains SpaceDataEventArgs, which holds more information about the notification itself, such as the template and the DataEventType (e.g. was this notification triggered by a write or an update operation?). When using the notify container, it is possible to receive that additional information as a parameter of the event listener method:
 
 {% inittab os_simple_space|top %}
 

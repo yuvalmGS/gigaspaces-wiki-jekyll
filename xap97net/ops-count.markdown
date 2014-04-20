@@ -4,31 +4,27 @@
 # The Count Operation
 
 
-You can use `GigaSpace.count` to count objects in a space.
+You can use `ISpaceProxy.Count` to count objects in a space.
 
 
 Examples:
 
 {% highlight csharp %}
-    ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
+    ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace (url);
 
-   // Count with Template
-   Employee employee = new Employee("Last Name");
-   int count = spaceProxy.Count(employee);
+    // Count with Template
+    Employee employee = new Employee ("Last Name");
+    int counter = spaceProxy.Count(employee);
 
-   // Count with SQLQuery
-   String querystr	= "Age > 30";
-   SqlQuery query = new SqlQuery<Employee>( querystr);
-   int count = spaceProxy.Count(query);
+    // Count with SQLQuery
+    String querystr	= "Age > 30";
+    SqlQuery<Employee> query = new SqlQuery<Employee>( querystr);
+    int count1 = spaceProxy.Count(query);
 
-   // Count with IdsQuery
-   Integer[] ids = new Integer[] { 32, 33, 34 };
-   IdsQuery<Employee> query = new IdsQuery<Employee>(ids);
-   int count = spaceProxy.Count(query);
-
-   // Count with Modifier
-   SqlQuery<Employee> query = new SQLQuery<Employee>("FirstName='first name'");
-    int count = spaceProxy.Count(query, CountModifiers.EXCLUSIVE_READ_LOCK);
+    // Count with IdsQuery
+    Object[] ids = new object[] { 32, 33, 34 };
+    IdsQuery<Employee> query1 = new IdsQuery<Employee>(ids);
+    int count2 = spaceProxy.Count(query1);
 {% endhighlight %}
 
 
@@ -36,12 +32,12 @@ Examples:
 {% togglecloak id=os-count %}**Method summary...**{% endtogglecloak %}
 {% gcloak os-count %}
 
-Count objects in space.{%javaapi%}http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html#count(java.lang.Object){%endjavaapi%}
+Count objects in space.{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/Overload_GigaSpaces_Core_IReadOnlySpaceProxy_Count.htm{%endnetapi%}
 
 {%highlight java%}
-int count(T entry) throws DataAccessException
-int count(T entry, ClearModifiers modifiers) throws DataAccessException
-int count(ISpaceQuery<T> query) throws DataAccessException
+int Count(T entry);
+int Count(T entry, ClearModifiers modifiers);
+int Count(ISpaceQuery<T> query);
 ......
 
 {%endhighlight%}
@@ -51,7 +47,7 @@ int count(ISpaceQuery<T> query) throws DataAccessException
 |:-----|:------------|:-------- |
 |T          | POCO, SpaceDocument||
 |query         | SqlQuery, IdQuery||
-|[CountModifiers](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/client/CountModifiers.html)|Provides modifiers to customize the behavior of the count operations | NONE  |
+|[ReadModifiers](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/P_GigaSpaces_Core_IReadOnlySpaceProxy_ReadModifiers.htm)|Provides modifiers to customize the behavior of the count operations | NONE  |
 {% endgcloak  %}
 
 

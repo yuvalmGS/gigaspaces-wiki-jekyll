@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Large Scale Deployment
 categories: XAP97ADM
 parent: tuning-gigaspaces-performance.html

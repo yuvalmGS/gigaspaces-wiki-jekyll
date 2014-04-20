@@ -18,7 +18,7 @@ A growing number of applications such as real time ad impressions , ad optimizat
 {% endcolumn %}
 {% endsection %}
 
-XAP introducing Counter functionality via the `GigaSpace.change` API. It allows you to increment or decrement an Numerical field within your Space object (POJO or Document). This change may operate on a numeric property only (byte,short,int,long,float,double) or their corresponding Boxed variation. To maintain a counter you should use the Change operation with the `ChangeSet` increment/decrement method that adds/subtract the provided numeric value to the existing counter.
+XAP introducing Counter functionality via the `ISpaceProxy.Change` API. It allows you to increment or decrement an Numerical field within your Space object (POCO or Document). This change may operate on a numeric property only (byte,short,int,long,float,double) or their corresponding Boxed variation. To maintain a counter you should use the Change operation with the `ChangeSet` increment/decrement method that adds/subtract the provided numeric value to the existing counter.
 
 
 {% section %}
@@ -33,7 +33,7 @@ If the counter property does not exists, the delta will be set as its initial st
 
 # Incrementing
 
-Incrementing a Counter done using the `ChangeSet().increment` call:
+Incrementing a Counter done using the `ChangeSet().Increment` call:
 
 {% highlight java %}
 GigaSpace space = // ... obtain a space reference
@@ -44,7 +44,7 @@ space.change(idQuery, new ChangeSet().increment("mycounter", 1));
 
 # Decrementing
 
-Decrementing a Counter done using the `ChangeSet().decrement` call:
+Decrementing a Counter done using the `ChangeSet().Decrement` call:
 
 {% highlight java %}
 GigaSpace space = // ... obtain a space reference
@@ -55,7 +55,7 @@ space.change(idQuery, new ChangeSet().decrement("mycounter", 1));
 
 # Clearing
 
-Clearing the Counter value done using the `ChangeSet().unset` call:
+Clearing the Counter value done using the `ChangeSet().Unset` call:
 
 {% highlight java %}
 GigaSpace space = // ... obtain a space reference

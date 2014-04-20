@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:   Common User Issues
 categories: XAP97ADM
 parent: troubleshooting.html

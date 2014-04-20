@@ -1,5 +1,5 @@
 ---
-layout: post97
+layout: post97adm
 title:  Maintenance
 categories: XAP97ADM
 parent: working-with-spaces---gigaspaces-browser.html

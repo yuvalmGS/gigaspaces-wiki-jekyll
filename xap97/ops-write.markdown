@@ -4,7 +4,7 @@
 # The Write Operation
 {%section%}
 {%column width=60% %}
-In order to write objects to the Space, you use the write method of the GigaSpace interface. The write method is used to write objects if these are introduced for the first time, or update them if these already exist in the space. In order to override these default semantics, you can use the overloaded write methods which accept update modifiers such as UpdateModifiers.UPDATE_ONLY.
+In order to write objects to the Space, you use the write method of the GigaSpace interface. The write method is used to write objects if these are introduced for the first time, or update them if these already exist in the space. In order to override these default semantics, you can use the overloaded write methods which accept update modifiers such as WriteModifiers.UPDATE_ONLY.
 {%endcolumn%}
 {%column width=35% %}
 ![POJO_write.jpg](/attachment_files/POJO_write.jpg)

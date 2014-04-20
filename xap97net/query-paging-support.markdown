@@ -1,7 +1,7 @@
 ---
 layout: post97
 title:  Paging Support
-categories: XAP97NET
+categories:
 parent: querying-the-space.html
 weight: 700
 ---
@@ -32,34 +32,18 @@ There are scenarios where the conventional read operation that returns a single 
 
 The iterator constructs a match set (a collection of space objects instances) that incrementally returns the necessary objects in chunks or pages. The `GSIterator` constructs a proxy object that can be used to access a match set created by a space. The `GSIterator` will initially contain some population of objects specified by the operation that created it. These objects can be retrieved by calling the `next` method. A successful call to `next` will remove the returned object from the match set. Match sets can end up in one of two terminal states: `exhausted` or `invalidated`.
 
-Simple usage example for the `IteratorBuilder` with the `GSIterator`:
+Simple usage example for the `SpaceIteratorConfig` with the `SpaceIterator`:
 
-{% highlight java %}
-GigaSpace gigaspace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/mySpace")).gigaSpace();
+{% highlight csharp %}
+SqlQuery<Employee> query = new SqlQuery<Employee>("Name='John'");
 
-SQLQuery<MySpaceClass> query1 = new SQLQuery<MySpaceClass>(MySpaceClass.class,"fName like 'f%'");
-SQLQuery<MySpaceClass> query2 = new SQLQuery<MySpaceClass>(MySpaceClass.class,"lName like 'l%'");
+SpaceIteratorConfig config = new SpaceIteratorConfig();
+config.BufferSize = 1000;
+config.IteratorScope = IteratorScope.ExistingEntries;
 
-IteratorBuilder iteratorBuilder = new IteratorBuilder(gigaspace)
-	.addTemplate(query1)
-	.addTemplate(query2)
-	.bufferSize(100) // Limit of the number of objects to store for each iteration.
-	.iteratorScope(IteratorScope.CURRENT_AND_FUTURE) ;
-// Indicates that this iterator will be first pre-filled with existing matching objects anf future matching objects,
-// otherwise it will start iterating only on newly arriving objects to the space.
-
-GSIterator gsIterator = iteratorBuilder.iterate();
-int count = 0;
-
-for (;;)
+foreach (var employee in spaceProxy.GetSpaceIterator<Employee>(query, config))
 {
-        try
-        {
-	    MySpaceClass o = (MySpaceClass)gsIterator.next(60000);
-	    System.out.println((count ++ ) + " " + o);
-            } catch (NoSuchElementException e) {
-             // will be thrown if there is no matching object and 60000 ms gone by
-            }
+    Console.WriteLine("Got Employee: " + employee);
 }
 {% endhighlight %}
 
@@ -83,9 +67,9 @@ The maximum number of objects to pull from the space can be controlled using `bu
 
 The [IteratorScope](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/iterator/IteratorScope.html) determines the scope of a GSIterator. Here are the supported options:
 
-- `CURRENT` - Indicates that the iterator will process entries currently in the space, and ignores future changes.
-- `CURRENT_AND_FUTURE` - Indicates that the iterator will process both entries currently in the space and future changes.
-- `FUTURE` - Indicates that the iterator will ignore entries currently in the space, and process future changes.
+- `ExistingEntries` - Indicates that the iterator will process entries currently in the space, and ignores future changes.
+- `ExistingAndFutureEntries` - Indicates that the iterator will process both entries currently in the space and future changes.
+- `FutureEntries` - Indicates that the iterator will ignore entries currently in the space, and process future changes.
 
 # The GSIterator
 

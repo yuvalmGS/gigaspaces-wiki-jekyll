@@ -5,7 +5,7 @@
 
 {%section%}
 {%column width=60% %}
-You can use `GigaSpace.clear` to remove objects from the space. When using the clear operation no object/objects are returned.
+You can use `ISpaceProxy.Clear` to remove objects from the space. When using the clear operation no object/objects are returned.
 {%endcolumn%}
 {%column width=35% %}
 ![POJO_clear.jpg](/attachment_files/POJO_clear.jpg)
@@ -15,24 +15,24 @@ You can use `GigaSpace.clear` to remove objects from the space. When using the c
 Examples:
 
 {% highlight csharp %}
-   ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
+    ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
 
-   // Clear by Template
-   Employee employee = new Employee("Last Name", new Integer(32));
-   spaceProxy.Clear(employee);
+    // Clear by Template
+    Employee employee = new Employee ("Last Name", 32L);
+    spaceProxy.Clear(employee);
 
-   // Clear by SQLQuery
-   String querystr	= "Age > 30";
-   SqlQuery query = new S qlQuery<Employee>(querystr);
-   spaceProxy.clear(query);
+    // Clear by SQLQuery
+    String querystr	= "Age > 30";
+    SqlQuery<Employee> query = new SqlQuery<Employee> (querystr);
+    spaceProxy.Clear(query);
 
-   // Clear by IdQuery
-   IdQuery<Employee> query = new IdQuery<Employee>(new Integer(32));
-   spaceProxy.Clear(query);
+    // Clear by IdQuery
+    IdQuery<Employee> query1 = new IdQuery<Employee> (32L);
+    spaceProxy.Clear(query1);
 
-   // Clear with Modifier
-   SqlQuery<Employee> query = new SqlQuery<Employee>("FirstName='first name'");
-   spaceProxy.Clear(query, ClearModifiers.EVICT_ONLY);
+    // Clear with Modifier
+    SqlQuery<Employee> query2 = new SqlQuery<Employee> ("FirstName='first name'");
+    spaceProxy.Clear(query2, null,TakeModifiers.EvictOnly);
 {% endhighlight %}
 
 
@@ -40,17 +40,13 @@ Examples:
 {% togglecloak id=os-clear %}**Method summary...**{% endtogglecloak %}
 {% gcloak os-clear %}
 
-Clears objects from space.{%netapi%}{%dotnetdoc M_GigaSpaces_Core_ISpaceProxy_Clear%}{%endnetapi%}
-
-
-http://www.gigaspaces.com/docs/dotnetdocs9.7/html/N_GigaSpaces_Core_Admin.htm
-http://www.gigaspaces.com/docs/dotnetdocs9.7/html/T_GigaSpaces_Core_ISpaceProxy.htm
+Clears objects from space.{%netapi%}http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_ISpaceProxy.htm{%endnetapi%}
 
 
 {%highlight csharp%}
-void clear(T entry) throws DataAccessException
-void clear(T entry, ClearModifiers modifiers) throws DataAccessException
-void clear(ISpaceQuery<T> query) throws DataAccessException
+void Clear(T entry)
+void Clear(T entry, ITransaction tx, TakeModifiers modifiers)
+void Clear(ISpaceQuery<T> query)
 ......
 
 {%endhighlight%}
@@ -60,7 +56,7 @@ void clear(ISpaceQuery<T> query) throws DataAccessException
 |:-----|:------------|:-------- |
 |T          | POCO, SpaceDocument||
 |query         | SqlQuery, IdQuery||
-|[ClearModifiers]({%dotnetdoc /com/gigaspaces/client/ClearModifiers%}|Provides modifiers to customize the behavior of the clear operations | NONE  |
+|[TakeModifiers](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_TakeModifiers.htm)|Provides modifiers to customize the behavior of the clear operations | NONE  |
 {% endgcloak  %}
 
 
