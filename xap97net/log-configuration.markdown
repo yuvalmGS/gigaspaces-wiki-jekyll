@@ -33,9 +33,7 @@ The following example sets the trace level to `Error`, which means that only err
     <sources>
       <source name="GigaSpaces.Core" switchValue="Error">
         <listeners>
-          <add name="MyListener"
-  type="System.Diagnostics.EventLogTraceListener"
-  initializeData="GigaSpaces.Core"/>
+          <add name="MyListener" type="System.Diagnostics.EventLogTraceListener" initializeData="GigaSpaces.Core"/>
         </listeners>
       </source>
     </sources>

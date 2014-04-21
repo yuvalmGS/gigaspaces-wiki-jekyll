@@ -14,15 +14,15 @@ module DocUtils
         sectionPath = sectionPath.sub("dep","")
         version = sectionPath.insert(sectionPath.length - 1, ".")
         if isDotNet 
-          "XAP.NET " + version 
+          ".NET " + version
         elsif isAdmin
-          return "XAP " + version + " Admin Guide"
+          return "" + version + " Admin Guide"
         elsif isInstall
-          return "XAP " + version + " Installation Guide"
+          return "" + version + " Installation Guide"
         elsif isDeploy
-          return "XAP " + version + " Deployment Guide"
+          return "" + version + " Deployment Guide"
         else 
-          return "XAP " + version 
+          return "Java " + version
         end
       elsif sectionPath == "sbp" 
         "Solutions &amp; Patterns"
