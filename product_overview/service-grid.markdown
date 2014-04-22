@@ -72,7 +72,7 @@ For advanced information on the lookup service architecture, refer to [The Looku
 
 The Grid Service Agent (GSA) is a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as [The Grid Service Manager](#gsm), [The Grid Service Container](#gsc), and [The Lookup Service](#lus). Typically, the GSA is started with the hosting machine's startup. Using the agent, you can bootstrap the entire cluster very easily, and start and stop additional GSCs, GSMs and lookup services at will.
 
-Usually, a single GSA is run per machine. If you're setting up multiple Service Grids separated by [Lookup Groups or Locators](#lus]), you'll probably start a GSA per machine per group.
+Usually, a single GSA is run per machine. If you're setting up multiple Service Grids separated by [Lookup Groups or Locators](#lus), you'll probably start a GSA per machine per group.
 
 The GSA exposes the ability to start, restart, and kill a process either using the [Administration and Monitoring API]({%latestjavaurl%}/administration-and-monitoring-api.html) or the GigaSpaces UI.
 
