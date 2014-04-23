@@ -1,14 +1,11 @@
 ---
 layout: post97
-title:  GigaSpaces Services Manager
+title:  Services Manager
 categories: XAP97NET
 parent: installation.html
 weight: 300
 ---
 
-{% summary %}Installing and managing Service Grid as Windows Services{% endsummary %}
-
-# Overview
 
 When installing the Service Grid on a Microsoft Windows environment, many administrators prefer to setup the Service Grid as A *Windows Service*, which have several advantages over standard console applications:
 
@@ -33,7 +30,9 @@ Instead, GigaSpaces XAP.NET provides a supplementary tool called **GigaSpaces Se
 
 ![ServicesManager.jpg](/attachment_files/dotnet/ServicesManager.jpg)
 
-{% exclamation %} **Note:** Some operations require elevated permissions - make sure you run with appropriate permissions. If you're using Windows Vista or later and UAC is turned on, it is recommended to use 'Run As Administrator' (for more info see: [http://support.microsoft.com/kb/922708](http://support.microsoft.com/kb/922708))
+{% note %}
+**Note:** Some operations require elevated permissions - make sure you run with appropriate permissions. If you're using Windows Vista or later and UAC is turned on, it is recommended to use 'Run As Administrator' (for more info see: [http://support.microsoft.com/kb/922708](http://support.microsoft.com/kb/922708))
+{%endnote%}
 
 # Advanced
 
@@ -45,4 +44,6 @@ To view a service properties, right-click it and select **Properties**, or simpl
 
 The Service Properties window shows the name of the service configuration file. Either Click the configuration label to open the configuration file using your default XML viewer, or click the location label to open the service folder, then edit the configuration file using your favorite XML editor.
 
-{% exclamation %} **Note:** In order for configuration changes to take effect the service needs to be stopped and restarted.
+{% note %}
+**Note:** In order for configuration changes to take effect the service needs to be stopped and restarted.
+{%endnote%}

@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Interoperability
+title:  Platform Interoperability
 categories: XAP97NET
 parent: none
 weight: 250

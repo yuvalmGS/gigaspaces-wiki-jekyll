@@ -24,17 +24,28 @@ weight: 100
 The following guidelines and restrictions should be followed in order to enable platform interoperability:
 
 - The full class name (including package\namespace) in all platforms should be identical.
- {% lampon %} Since java packages use a different naming convention than .Net namespaces, it is recommended to use the `SpaceClass(AliasName="")` feature to map a .Net class to the respective java class.
+
+{% note %}
+Since java packages use a different naming convention than .Net namespaces, it is recommended to use the `SpaceClass(AliasName="")` feature to map a .Net class to the respective java class.
+{%endnote%}
 
 - The properties/fields stored in the space in all platforms should be identical.
- {% infosign %} In Java, only properties are serialized into the space. In .NET, both fields and properties are serialized, so you can mix and match them.
- {% lampon %} Since java properties start with a lowercase letter, whereas .Net properties usually start with an uppercase letter, it is recommended to use the `SpaceProperty(AliasName="")` feature to map a property/field name from .Net to java.
+
+{% vbar %}
+In Java, only properties are serialized into the space. In .NET, both fields and properties are serialized, so you can mix and match them.
+
+Since java properties start with a lowercase letter, whereas .Net properties usually start with an uppercase letter, it is recommended to use the `SpaceProperty(AliasName="")` feature to map a property/field name from .Net to java.
+{%endvbar%}
 
 - Only the types listed in the table below are supported. If one of your fields uses a different type, you can use the class only in a homogeneous environment.
- {% infosign %} Arrays of these types are supported as well.
- {% infosign %} You can also use .NET enumerations, which are treated as their underlying .NET type. Java enums are not supported.
- {% lampon %} If your class contains a field whose type is not in the table, you can use `SpaceExclude` to exclude it from the space.
- {% infosign %} Some of the types have different charactaristics in .NET and Java (signed\unsigned, nullable\not nullable, precision, etc.) This can lead to runtime exceptions (e.g. trying to store `null` in a .NET structure) or unexpected results (e.g. copying values between signed and unsigned fields).
+
+{% vbar %}
+Arrays of these types are supported as well.
+You can also use .NET enumerations, which are treated as their underlying .NET type. Java enums are not supported.
+If your class contains a field whose type is not in the table, you can use `SpaceExclude` to exclude it from the space.
+Some of the types have different charactaristics in .NET and Java (signed\unsigned, nullable\not nullable, precision, etc.) This can lead to runtime exceptions (e.g. trying to store `null` in a .NET structure) or unexpected results (e.g. copying values between signed and unsigned fields).
+{%endvbar%}
+
 
 # Supported Types for Matching and Interoperability
 
@@ -84,5 +95,5 @@ The following collections are mapped for interoperability:
 | [System.Collections.Generic.SortedDictionary<K,V>](http://msdn.microsoft.com/en-us/library/f7fta44c.aspx) | [java.util.TreeMap](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/TreeMap.html) | Sorted collection of key-value pairs. |
 | [System.Collections.Specialized.NameValueCollection](http://msdn2.microsoft.com/en-us/library/system.collections.specialized.namevaluecollection.aspx) [System.Collections.Specialized.StringDictionary](http://msdn2.microsoft.com/en-us/library/system.collections.specialized.stringdictionary.aspx) | [java.util.Properties](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/Properties.html) | Collection of key-value string pairs.**<sup>1</sup>** |
 
-1. In java, the `Properties` type allows the user to store keys and values which are not strings.
+In java, the `Properties` type allows the user to store keys and values which are not strings.
 

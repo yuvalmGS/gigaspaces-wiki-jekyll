@@ -1,7 +1,7 @@
 ---
-layout: post97
+layout: post97adm
 title:  Backing-up Files With a Custom Policy
-categories: XAP97
+categories: XAP97ADM
 parent: logging-overview.html
 weight: 500
 ---

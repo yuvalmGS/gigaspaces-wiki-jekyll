@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Interop Processing Unit
+title:  Processing Unit
 categories: XAP97NET
 parent: processing-units.html
 weight: 300

@@ -6,13 +6,13 @@ parent: installation.html
 weight: 200
 ---
 
-{% summary %}This section describes the XAP.NET product structure{% endsummary %}
 
-# Overview
+
+
 
 XAP .NET comes as a standalone product, that includes the following basic artifacts:
 
-{% toczone type=list|location=top %}
+
 
 # Product Directory Structure
 
@@ -50,4 +50,4 @@ The installer creates useful shortcuts in the start menu.
 {% sub %}**Figure 2. Shortcuts added to the Start Menu**{% endsub %}
 {% endindent %}
 
-{% endtoczone %}
+

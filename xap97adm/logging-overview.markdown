@@ -1,20 +1,17 @@
 ---
-layout: post97
+layout: post97adm
 title:  Logging
-categories: XAP97
-parent: programmers-guide.html
-weight: 1650
+categories: XAP97ADM
+parent: none
+weight: 750
 ---
 {%wbr%}
-This section explains how you can configure logging with XAP. We will show you how you can format the log output, choose file names, rollover policies and how to use the logging API.
+This section explains how you can configure logging with XAP. We will show you how you can format the log output, choose file names and rollover policies.
 
 <hr/>
 
 - [Overview](./logging.html){%wbr%}
 Logging concepts and options.
-
-- [Logging API](./logging-api.html){%wbr%}
-Simple API extract and filter out logging information of XAP runtime.
 
 
 - [Formatting messages](./logging-formatting-messages.html){%wbr%}

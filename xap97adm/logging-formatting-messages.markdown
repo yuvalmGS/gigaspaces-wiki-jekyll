@@ -1,7 +1,7 @@
 ---
-layout: post97
+layout: post97adm
 title:  Formatting Log Messages
-categories: XAP97
+categories: XAP97ADM
 parent: logging-overview.html
 weight: 300
 ---

@@ -1,7 +1,7 @@
 ---
-layout: post97
+layout: post97adm
 title:  Overview
-categories: XAP97
+categories: XAP97ADM
 parent: logging-overview.html
 weight: 100
 ---
@@ -151,8 +151,8 @@ com.gigaspaces.core.classloadercleaner.level = INFO
 com.gigaspaces.core.classloadercache.level = INFO
 {% endhighlight %}
 
-XAP applications are running as part of a XAP runtime container and packaged using the structure described [here](./the-processing-unit-structure-and-configuration.html).
-Application jars/classes are packaged in different folders and some of the classes could be loaded as part of GigaSpaces container (GSC's). There are multiple class loaders involved when an application is running. More information about the class loaders and their hierarchy is [here](./the-processing-unit-structure-and-configuration.html).
+XAP applications are running as part of a XAP runtime container and packaged using the structure described [here]({%currentjavaurl%}/the-processing-unit-structure-and-configuration.html).
+Application jars/classes are packaged in different folders and some of the classes could be loaded as part of GigaSpaces container (GSC's). There are multiple class loaders involved when an application is running. More information about the class loaders and their hierarchy is [here]({%currentjavaurl%}/the-processing-unit-structure-and-configuration.html).
 {% endtabcontent %}
 {% tabcontent Space %}
 
@@ -177,7 +177,7 @@ Core runtime for the space component of GigaSpaces, above loggers relate to this
 com.gigaspaces.filters.level = INFO
 {% endhighlight %}
 
-Space filters are described [here](./space-filters.html)
+Space filters are described [here]({%currentjavaurl%}/space-filters.html)
 
 ### Space Persistency
 
@@ -187,7 +187,7 @@ com.gigaspaces.persistent.shared_iterator.level = INFO
 org.hibernate.level = WARNING
 {% endhighlight %}
 
-GigaSpaces persistence options are explained [here](./space-persistency.html). One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here](./hibernate-space-persistency.html).
+GigaSpaces persistence options are explained [here]({%currentjavaurl%}/space-persistency.html). One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here]({%currentjavaurl%}/hibernate-space-persistency.html).
 
 ### Space Query
 
@@ -195,7 +195,7 @@ GigaSpaces persistence options are explained [here](./space-persistency.html). O
 com.gigaspaces.query.level = INFO
 {% endhighlight %}
 
-GigaSpaces supports SQL queries on the data in space and logger corresponds to this [functionality](./query-sql.html).
+GigaSpaces supports SQL queries on the data in space and logger corresponds to this [functionality]({%currentjavaurl%}/query-sql.html).
 
 ### Space LRU and Eviction
 
@@ -203,7 +203,7 @@ GigaSpaces supports SQL queries on the data in space and logger corresponds to t
 com.gigaspaces.cache.level = INFO
 {% endhighlight %}
 
-More information about LRU policy and Eviction behavior is [here](./lru-cache-policy.html)
+More information about LRU policy and Eviction behavior is [here]({%currentjavaurl%}/lru-cache-policy.html)
 
 ### Space Notifications
 
@@ -211,8 +211,8 @@ More information about LRU policy and Eviction behavior is [here](./lru-cache-po
 com.gigaspaces.core.notify.level = INFO
 {% endhighlight %}
 
-Notifications are a mechanism that can be used to identify events related to space data (write, update, take, etc). Notifications are typically used with a [Notify Container](./notify-container.html).
-Another way notifications can be used is thru Session based messaging which is discussed [here](./session-based-messaging-api.html).
+Notifications are a mechanism that can be used to identify events related to space data (write, update, take, etc). Notifications are typically used with a [Notify Container]({%currentjavaurl%}/notify-container.html).
+Another way notifications can be used is thru Session based messaging which is discussed [here]({%currentjavaurl%}/session-based-messaging-api.html).
 
 ### Space FIFO
 
@@ -220,7 +220,7 @@ Another way notifications can be used is thru Session based messaging which is d
 com.gigaspaces.core.fifo.level = INFO
 {% endhighlight %}
 
-FIFO functionality is applicable for writes, reads and events (notifications) and discussed [here](./fifo-support.html).
+FIFO functionality is applicable for writes, reads and events (notifications) and discussed [here]({%currentjavaurl%}/fifo-support.html).
 
 ### Space Replication
 
@@ -231,7 +231,7 @@ com.gigaspaces.core.cluster.sync_replication.level = INFO
 {% endhighlight %}
 
 When a cluster topology is replicated, replication functionality is enabled. More information about topologies is [here](/product_overview/space-topologies.html).
-Replication between spaces is one of the core features of GigaSpaces and is explained in detail [here](./replication.html).
+Replication between spaces is one of the core features of GigaSpaces and is explained in detail [here]({%currentjavaurl%}/replication.html).
 
 ### Space Partitioning
 
@@ -247,7 +247,7 @@ When cluster uses partitioned topology, data is partitioned across multiple inst
 com.gigaspaces.cluster.active_election.level = INFO
 {% endhighlight %}
 
-When multiple instances (primary/backup(s)), Active Election process is used by cluster members to determine which member acts as a primary. Additional information regarding active election process is [here](./split-brain-and-primary-resolution.html).
+When multiple instances (primary/backup(s)), Active Election process is used by cluster members to determine which member acts as a primary. Additional information regarding active election process is [here]({%currentjavaurl%}/split-brain-and-primary-resolution.html).
 
 ### POJO
 
@@ -255,7 +255,7 @@ When multiple instances (primary/backup(s)), Active Election process is used by 
 com.gigaspaces.pojo.level = INFO
 {% endhighlight %}
 
-Logger corresponding to GigaSpaces POJO support, more info [here](./pojo-support.html).
+Logger corresponding to GigaSpaces POJO support, more info [here]({%currentjavaurl%}/pojo-support.html).
 
 ### Space XA manager
 
@@ -263,7 +263,7 @@ Logger corresponding to GigaSpaces POJO support, more info [here](./pojo-support
 com.gigaspaces.core.xa.level = INFO
 {% endhighlight %}
 
-Logger corresponding to XA Transaction manager running in the space, more information [here](./transaction-management.html).
+Logger corresponding to XA Transaction manager running in the space, more information [here]({%currentjavaurl%}/transaction-management.html).
 
 ### Space Jini Dist. TX manager
 
@@ -272,7 +272,7 @@ com.sun.jini.mahalo.startup.level = INFO
 com.sun.jini.mahalo.destroy.level = INFO
 {% endhighlight %}
 
-Logger for Jini Distributed Transaction manager, more information [here](./transaction-management.html).
+Logger for Jini Distributed Transaction manager, more information [here]({%currentjavaurl%}/transaction-management.html).
 
 ### SpaceURL, SpaceValidator, SpaceURLParser
 
@@ -283,7 +283,7 @@ com.gigaspaces.common.lookupfinder.level = INFO
 com.gigaspaces.common.resourceloader.level = INFO
 {% endhighlight %}
 
-SpaceURL and its constraints are explained [here](./the-space-configuration.html).
+SpaceURL and its constraints are explained [here]({%currentjavaurl%}/the-space-configuration.html).
 Other loggers are related to this and applicable when a client trying to create a space proxy using a URL.
 
 ### Space Multicast Notifications
@@ -292,7 +292,7 @@ Other loggers are related to this and applicable when a client trying to create 
 com.gigaspaces.worker.multicast.level = INFO
 {% endhighlight %}
 
-Space notifications support multicast mode and this logger corresponds to this [functionality](./session-based-messaging-api.html#AdvancedOptions)
+Space notifications support multicast mode and this logger corresponds to this [functionality]({%currentjavaurl%}/session-based-messaging-api.html#AdvancedOptions)
 {% endtabcontent %}
 {% tabcontent Runtime %}
 
@@ -355,10 +355,10 @@ GSC is the runtime environment for GigaSpaces applications. More information abo
 org.openspaces.grid.esm.level = INFO
 {% endhighlight %}
 
-Elastic Service Manager (ESM) is an implementation of the Elastic Middleware Services. It is built on-top of the existing administrative API exposed by the GigaSpaces components. See [The Elastic Service Manager](./elastic-processing-unit.html) page for more details.
+Elastic Service Manager (ESM) is an implementation of the Elastic Middleware Services. It is built on-top of the existing administrative API exposed by the GigaSpaces components. See [The Elastic Service Manager]({%currentjavaurl%}/elastic-processing-unit.html) page for more details.
 
 {%comment%}
-Elastic Middleware Services are explained [here](./elastic-middleware-services.html).
+Elastic Middleware Services are explained [here]({%currentjavaurl%}/elastic-middleware-services.html).
 {%endcomment%}
 
 ### GSA
@@ -375,18 +375,18 @@ The GigaSpaces Agent (GSA) acts as a process manager that can spawn and manage S
 com.gigaspaces.security.level = INFO
 {% endhighlight %}
 
-Logger corresponding to security of GigaSpaces components. This includes configuration and runtime execution of security functionality. More information regarding GigaSpaces security is [here](./security.html).
+Logger corresponding to security of GigaSpaces components. This includes configuration and runtime execution of security functionality. More information regarding GigaSpaces security is [here]({%currentjavaurl%}/security.html).
 {% endtabcontent %}
 {% tabcontent Web Container %}
 
-    Any web application default logging level (logger name for them is web.[processing unit name].[instance id])
+Any web application default logging level (logger name for them is web.`[processing unit name].[instance id]`)
 
 {% highlight console %}
 web.level = INFO
 org.mortbay.level = WARNING
 {% endhighlight %}
 
-Web application support in GigaSpaces is provided using a Jetty container. These loggers correspond to Web Container. More information about GigaSpaces Web Application support is [here](./web-jetty-processing-unit-container.html).
+Web application support in GigaSpaces is provided using a Jetty container. These loggers correspond to Web Container. More information about GigaSpaces Web Application support is [here]({%currentjavaurl%}/web-jetty-processing-unit-container.html).
 {% endtabcontent %}
 {% tabcontent Mule Integration %}
 
@@ -397,7 +397,7 @@ org.mule.RegistryContext.level = INFO
 org.openspaces.esb.mule.level = WARNING
 {% endhighlight %}
 
-These loggers correspond to Mule integration. More information about Mule integration is here, [Mule ESB](./mule-esb.html) and [Mule Processing Unit](./mule-processing-unit.html)
+These loggers correspond to Mule integration. More information about Mule integration is here, [Mule ESB]({%currentjavaurl%}/mule-esb.html) and [Mule Processing Unit]({%currentjavaurl%}/mule-processing-unit.html)
 {% endtabcontent %}
 
 {% tabcontent Management %}
