@@ -98,7 +98,7 @@ Currently, the web dashboard supports the following web browsers:
 - [Moziila Firefox 11 or higher](http://www.mozilla.com/firefox/)
 - [Google Chrome 18 or higher](http://www.google.com/chrome)
 
-**Internet explorer is supported from version 10 and beyond.**
+**Internet explorer is supported from version 10 and higher.**
 {% endinfo %}
 
 #### Runtime Considerations
