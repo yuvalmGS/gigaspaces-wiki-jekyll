@@ -2,26 +2,31 @@
 layout: post97
 title:  API Mapping File
 categories: XAP97
-parent: cpp-api-code-generator.html
-weight: 100
+parent: xap-cpp.html
+weight: 30
 ---
 
-{% summary%}Elements that are available to be used in your `gs.xml` file and supported types.{% endsummary %}
+{% summary%}{% endsummary %}
 
-# Overview
+
 
 This section describes the elements that are available to be used in your `gs.xml` file.
-{% exclamation %} The `type` property is mandatory in case the `property` element is defined.
+
+{% note %}
+The `type` property is mandatory in case the `property` element is defined.
+{%endnote%}
 
 The gs.xml file allows you to define c++ classes in the space. To learn how to do this, see the [CPP API Code Generator](./cpp-api-code-generator.html) section.
 
-{% lampon %} To find out about the **supported c++ types**, see [below](#type--Supported-Types).
+{% note %}
+To find out about the **supported c++ types**, see [below](#type--Supported-Types).
+{%endnote%}
 
-The `\*.gs.xml` configuration needs to reside in a `<Root Folder>\config\mapping` folder where the `<Root Folder>` should be part of the application classpath.
+The `*.gs.xml` configuration needs to reside in a `<Root Folder>\config\mapping` folder where the `<Root Folder>` should be part of the application classpath.
 
 XML mapping can be defined in the same package as the class (using the class name as the file prefix).
 
-{% toczone %}
+
 
 # class
 
@@ -65,7 +70,7 @@ This attribute is used to add include file declaration to your generated c++ cod
 
 For example:
 
-{% highlight java %}
+{% highlight cpp %}
 <include-header file="UserMessage.h"/>
 {% endhighlight %}
 
@@ -140,7 +145,7 @@ Types that can be used with the `ref-property` attribute:
 
 For example:
 
-{% highlight java %}
+{% highlight cpp %}
 <class name="com.gigaspaces.tests.test_refNode" persist="true" replicate="true" fifo="false" >
     <property name="intIndex"  type="int" null-value="0" index="true"/>
     <ref-property class-ref="com.gigaspaces.tests.test_refChildNode" name="children" type="array"></ref-property>
@@ -166,9 +171,11 @@ Defines whether this field value is used when generating the Entry's UID. The fi
 | `name` | string | Specifies the name of the property for holding the UID. | |
 | `auto-generate` | String | Specifies if the Entry's UID is generated automatically by the space when written into the space. If `false`, the field is indexed automatically, and if `true`, the field isn't indexed | `false` |
 
-{% minus %} The `id` element cannot be used with multiple fields.
+{% note %}
+The `id` element cannot be used with multiple fields.
 
-{% exclamation %} The `id` element type must be string.
+The `id` element type must be string.
+{%endnote%}
 
 If `auto-generate` is declared as `false`, the field is indexed automatically. If `auto-generate` is declared as `true`, the field isn't indexed.
 
@@ -200,11 +207,13 @@ The `routing` element routes the field value under this element to the relevant 
 |:-------------------|:-----|:------------|
 | `name` | string | Specifies the property that allows identification of the `routing` element in the space. |
 
-{% exclamation %} When working with a partitioned persistent space that persists into a central data-source, make sure that a property mapped for `routing` is also mapped with `id`.
+{% info %}
+When working with a partitioned persistent space that persists into a central data-source, make sure that a property mapped for `routing` is also mapped with `id`.
+{%endinfo%}
 
 # Example
 
-{% highlight java %}
+{% highlight cpp %}
 <class name="com.gigaspaces.tests.completeType" persist="true" replicate="true" fifo="false" >
     <property name="idField" type="string" null-value="" />
     <id name="idField" auto-generate="true" />
@@ -227,4 +236,4 @@ The `routing` element routes the field value under this element to the relevant 
 </class>
 {% endhighlight %}
 
-{% endtoczone %}
+

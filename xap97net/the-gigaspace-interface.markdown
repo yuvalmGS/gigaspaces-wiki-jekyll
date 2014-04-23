@@ -9,7 +9,7 @@ parent: the-gigaspace-interface-overview.html
 {% summary %}{%endsummary%}
 
 
-A Space is a logical in-memory service, which can store entries of information. An entry is a domain object; In Java, an entry can be as simple a POCO or a SpaceDocument.
+A Space is a logical in-memory service, which can store entries of information. An entry is a domain object; In Java, an entry can be as simple a PONO or a SpaceDocument.
 
 When a client connects to a space, a proxy is created that holds a connection which implements the space API. All client interaction is performed through this proxy.
 

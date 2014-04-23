@@ -1,24 +1,24 @@
 ---
 layout: post97
-title:  Scala Task Execution
+title:  Task Execution
 categories: XAP97
 parent: scala.html
 weight: 500
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}Extended `GigaSpace` `execute` API.{% endsummary %}
 
-# Overview
 
-A wrapper around the `GigaSpace` API provides some sugaring on top of the `GigaSpace#execute` methods.
+
+
+
+A wrapper around the `XAP` API provides some sugaring on top of the `GigaSpace#execute` methods.
 
 # Usage
 
 Import `org.openspaces.scala.core.ScalaGigaSpacesImplicits.ScalaEnhancedGigaSpaceWrapper` into scope to use the methods demonstrated below.
 Some examples:
 
-{% highlight java %}
+{% highlight scala %}
 /** Import GigaSpace implicits into scope */
 import org.openspaces.scala.core.ScalaGigaSpacesImplicits._
 

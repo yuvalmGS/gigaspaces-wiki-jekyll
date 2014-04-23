@@ -2,22 +2,24 @@
 layout: post97
 title:  Hello World Example
 categories: XAP97
-parent: xap-cpp.html
-weight: 200
+parent: cpp-api-examples.html
+weight: 10
 ---
 
 
-{% summary   %}C++ environment setup and writing a Hello World C++ application.{% endsummary %}
+{% summary%}{% endsummary %}
 
-# Overview
+
 
 The example below demonstrates interaction between a sample application and a space.
 
-{% lampon %} The example source code can be found under: `<GigaSpaces Root>\cpp\examples\HelloWorld`.
+{% note %}
+The example source code can be found under: `<GigaSpaces Root>\cpp\examples\HelloWorld`.
+{%endnote%}
 
-{% refer %}To learn about GigaSpaces C++ API, refer to the [GigaSpaces C++ API](./gigaspaces-cpp-api.html) section.{% endrefer %}
+{% refer %}To learn about GigaSpaces C++ API, refer to the [GigaSpaces C++ API](./cpp-space-interface.html) section.{% endrefer %}
 
-# Building and Running the Example
+
 
 ## Prerequisites
 
@@ -25,11 +27,13 @@ The example below demonstrates interaction between a sample application and a sp
 
 The `JAVA_HOME` environment variable must be set to point to the appropriate JDK version.
 
-{% exclamation %} The JDK version must match the GigaSpaces version. GigaSpaces support JDK 6/7.
+{% note %}
+The JDK version must match the GigaSpaces version. GigaSpaces support JDK 6/7.
+{%endnote%}
 
 ### GigaSpaces Installation
 
-GigaSpaces needs to be installed in your local directory. Make sure that this version matches the JDK version installed on your machine.
+XAP needs to be installed in your local directory. Make sure that this version matches the JDK version installed on your machine.
 
 To verify the JVM version, run the following command: `>java -version`
 
@@ -46,14 +50,16 @@ You can build and run the application using the provided scripts or using the Vi
 {% inittab Building_and_running %}
 {% tabcontent Using Scripts %}
 
-{% infosign %} `<Example Root>` below refers to the path: `<GigaSpaces Root>\cpp\examples\HelloWorld`.
+{% info %}
+`<Example Root>` below refers to the path: `<GigaSpaces Root>\cpp\examples\HelloWorld`.
+{%endinfo%}
 
-1. Compile the example by running: `<Example Root>\bin\compile.sh/bat`. You should run this script from the `<Example Root>\bin` directory.
-1. Execute `<Example Root>\bin\startAll.sh/bat`. This starts a light version of the server with one space instance, and the Jini Lookup Service.
+Step 1. Compile the example by running: `<Example Root>\bin\compile.sh/bat`. You should run this script from the `<Example Root>\bin` directory.
+Step 2. Execute `<Example Root>\bin\startAll.sh/bat`. This starts a light version of the server with one space instance, and the Jini Lookup Service.
 
 {% anchor step2 %}
 
-{% info %}
+{% vbar %}
 If you want to start an **embedded space**, there is no need to perform this step.
 
 Open `<Example Root>\bin\run_HelloWorld.bat/.sh` in a text editor, and replace `jini://` with `java://`.
@@ -74,11 +80,11 @@ Another way to activate the example with an embedded space is:
 
     "%JSHOMEDIR%\cpp\bin\%PLATFORM%\%COMPILER%\HelloWorld" /./mySpace?groups=%LOOKUPGROUPS%
 
-{% endinfo %}
+{% endvbar %}
 
-1. If you want to view the space in the [GigaSpaces Browser]({%currentadmurl%}/gigaspaces-management-center.html), execute `<GigaSpaces Root>\bin\gs-ui.sh/bat`.
-1. To start the sample application, execute `<Example Root>\bin\run_HelloWorld.sh/bat`.
-1. This is what you should see:
+Step 3. If you want to view the space in the [GigaSpaces Browser]({%currentadmurl%}/gigaspaces-management-center.html), execute `<GigaSpaces Root>\bin\gs-ui.sh/bat`.
+Step 4. To start the sample application, execute `<Example Root>\bin\run_HelloWorld.sh/bat`.
+Step 5. This is what you should see:
 
 {% indent %}
 ![GigaSpacesCPP_BuildingandRunning_UsingScripts.jpg](/attachment_files/GigaSpacesCPP_BuildingandRunning_UsingScripts.jpg)
@@ -86,7 +92,7 @@ Another way to activate the example with an embedded space is:
 
 Here is an example for a linux makefile:
 
-{% highlight java %}
+{% highlight console %}
 CXXFLAGS = -fPIC -rdynamic -c -w -shared
 
 OBJS = HelloWorldMessage.o
@@ -126,22 +132,23 @@ When debugging the code in Linux, you may receive the signal SIGSEGV (segmentati
 {% endtabcontent %}
 {% tabcontent Using Visual Studio %}
 
-1. Start Visual Studio using the `<GigaSpaces Root>\cpp\GigaVisualStudio.bat` script.
+
+Step 6. Start Visual Studio using the `<GigaSpaces Root>\cpp\GigaVisualStudio.bat` script.
 {% exclamation %} You might need to edit this file (`GigaVisualStudio.bat`) and the file it calls (`env.cmd`) to include the correct values for the `JAVA_HOME` and `JSHOMEDIR` environment variables and the correct location of Visual Studio.
 
-1. Once Visual Studio is started, open the examples solution `<GigaSpaces Root>\cpp\examples\examples.sln`:
+Step 7. Once Visual Studio is started, open the examples solution `<GigaSpaces Root>\cpp\examples\examples.sln`:
 
 {% indent %}
 ![hello_CPP1.jpg](/attachment_files/hello_CPP1.jpg)
 {% endindent %}
 
-1. Make sure the Hello World project appears - make it the startup project:
+Step 8. Make sure the Hello World project appears - make it the startup project:
 
 {% indent %}
 ![hello_CPP2.jpg](/attachment_files/hello_CPP2.jpg)
 {% endindent %}
 
-1. Modify the Hello World project to have the following as the Command Arguments (`jini://localhost/*/mySpace`):
+Step 9. Modify the Hello World project to have the following as the Command Arguments (`jini://localhost/*/mySpace`):
 
 {% indent %}
 ![hello_CPP3.jpg](/attachment_files/hello_CPP3.jpg)
@@ -157,21 +164,21 @@ If you want to start an **embedded space**, there is no need to perform the last
 {% endindent %}
 {% endinfo %}
 
-1. Make sure that Hello World is the Startup Project:
+Step 10. Make sure that Hello World is the Startup Project:
 
 {% indent %}
 ![hello_CPP5.jpg](/attachment_files/hello_CPP5.jpg)
 {% endindent %}
 
-1. Make sure that Hello World is configured to run in the `Release` solution configuration mode.
-1. **Rebuild** the Hello World project.
-1. Run the Hello World Application:
+Step 11. Make sure that Hello World is configured to run in the `Release` solution configuration mode.
+Step 12. **Rebuild** the Hello World project.
+Step 13. Run the Hello World Application:
 
 {% indent %}
 ![hello_CPP6.jpg](/attachment_files/hello_CPP6.jpg)
 {% endindent %}
 
-1. This is what you should see:
+Step 14. This is what you should see:
 
 {% indent %}
 ![hello_CPP7.jpg](/attachment_files/hello_CPP7.jpg)
@@ -209,7 +216,9 @@ In addition, the variable **`PATH`** should be updated to include:
 
     %JSHOMEDIR%\cpp\lib\%PLATFORM%\%COMPILER%;%JSHOMEDIR%\cpp\bin\%PLATFORM%\%COMPILER%;%JAVA_HOME%\jre\bin\client
 
-{% lampon %} You can also run the `<GigaSpaces Root>\cpp\env.cmd` file to define these variables to match your platform.
+{% note %}
+You can also run the `<GigaSpaces Root>\cpp\env.cmd` file to define these variables to match your platform.
+{%endnote%}
 
 ## Additional Include Directories
 
@@ -243,7 +252,9 @@ Example:
     PLATFORM=linux-amd64
     COMPILER=gcc-4.1.2
 
-{% lampon %} You can also run the `<GigaSpaces Root>\cpp\setenv.sh` file to define these variables to match your platform.
+{% note %}
+You can also run the `<GigaSpaces Root>\cpp\setenv.sh` file to define these variables to match your platform.
+{%endnote%}
 
 ## Additional Include Paths
 
@@ -261,11 +272,13 @@ Paths:
     -L$(JSHOMEDIR)/cpp/open-source/platform-libs/$(PLATFORM)/$(COMPILER) \
     -L$(JAVA_HOME)/jre/lib/amd64/server/
 
-{% infosign %} The last path might differ from the example above, depending on your Java installation.
+{% info%}
+The last path might differ from the example above, depending on your Java installation.
+{%endinfo%}
 
 Libraries:
 
-{% highlight java %}
+{% highlight console %}
 -lgscpplib -lACE -lxerces-c -ljvm
 {% endhighlight %}
 
@@ -274,9 +287,11 @@ Libraries:
 
 # Code Walkthrough
 
-{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
-{% exclamation %} `<Example Root>` in the text below refers to `<GigaSpaces Root>/cpp/examples/HelloWorld`.
+
+{% note %}
+`<Example Root>` in the text below refers to `<GigaSpaces Root>/cpp/examples/HelloWorld`.
+{%endnote%}
 
 This application is a simple client that connects to a remote space, writes a data object into that space and then reads it back. We start by defining the properties of this data object which we refer to as a `Message`.
 
@@ -301,19 +316,23 @@ The following XML code represents this `Message` object (located at `<Example Ro
 </gigaspaces-mapping>
 {% endhighlight %}
 
-{% infosign %} The `id` tag defines the `uid` field as the primary key, while the `routing` tag defines the `id` field used for routing. For more details, refer to the [gs.xml reference](./cpp-api-mapping-file.html) section.
+{% info %}
+The `id` tag defines the `uid` field as the primary key, while the `routing` tag defines the `id` field used for routing. For more details, refer to the [gs.xml reference](./cpp-api-mapping-file.html) section.
+{%endinfo%}
 
 This XML file is used by the `gsxml2cpp` command that produces the `HelloWorldMessage.h` and `HelloworldMessage.cpp` files. This is performed by the following command:
 
-{% highlight java %}
+{% highlight console %}
 gsxml2cpp ../serializer/helloWorld.gs.xml HelloWorld ../serializer/HelloWorldMessage.cpp ../serializer/HelloWorldMessage.h
 {% endhighlight %}
 
-`HelloWorldMessage.h` contains the class declaration and `HelloworldMessage.cpp` contains serialization code that shouldn't be edited. You can use an existing class instead of having it generated by `gsxml2cpp`. For more details, refer to the [Writing Existing CPP Class to Space](./writing-existing-cpp-class-to-space.html) section for more details.
+`HelloWorldMessage.h` contains the class declaration and `HelloworldMessage.cpp` contains serialization code that shouldn't be edited. You can use an existing class instead of having it generated by `gsxml2cpp`. For more details, refer to the [Writing Existing CPP Class to Space](./cpp-writing-existing-class-to-space.html) section for more details.
 
 A shared library (DLL or SO file) is created from `HelloWorldMessage.h/cpp` files. This shared library is copied into the `<Gigaspaces Root>\lib\platform\native` directory, so that it can be loaded at runtime by the space.
 
-{% exclamation %} Each entry class name must be unique over GigaSpaces installation.
+{% note %}
+Each entry class name must be unique over GigaSpaces installation.
+{%endnote%}
 
 ## Connecting to Space
 
@@ -325,10 +344,14 @@ SpaceProxyPtr space ( finder.find(spaceUrl) );
 
 (The above is copied from the file: `<Example Root>\HelloWorld.cpp`.)
 
-{% exclamation %} The space URL in this example is: `jini://localhost/*/mySpace?groups=javaspaces-hellospace`. It is passed to `main` in `run_HelloWorld.sh/.bat)` (see [Space URL](./the-space-configuration.html)).
+{% note %}
+The space URL in this example is: `jini://localhost/*/mySpace?groups=javaspaces-hellospace`. It is passed to `main` in `run_HelloWorld.sh/.bat)` (see [Space URL](./the-space-configuration.html)).
+{%endnote%}
 
-{% infosign %} This space URL specifies the network address of the Jini Lookup Service (localhost here), and queries it for **a space belonging to the lookup group** `javaspaces-hellospace`. There is only one space in this lookup group: the space instance started by `startAll.sh`. The space is purposely started with a switch that registers it to this lookup group.
+{% info %}
+This space URL specifies the network address of the Jini Lookup Service (localhost here), and queries it for **a space belonging to the lookup group** `javaspaces-hellospace`. There is only one space in this lookup group: the space instance started by `startAll.sh`. The space is purposely started with a switch that registers it to this lookup group.
 The **asterisk after localhost** represents the space container (a logical unit inside the server); this URL does not refer to a specific container. Note that the protocol used is Jini (other protocols are RMI and Java. Java is used for embedded spaces and to launch spaces on the server side).
+{%endinfo%}
 
 ## Registering C++ Class to Space
 
@@ -341,7 +364,7 @@ The space must know about the data class that we declared previously. Thus, we n
 
 The application constructs an object called `msg` and **writes it to the space** by passing it as the first argument in the `SpaceProxy::write()` method. The second argument refers to the transaction object -- none in this example, the third defines the lease time.
 
-{% highlight java %}
+{% highlight cpp %}
 Message_ptr msg( new Message() );
 msg->id = 1;
 msg->content = "Hello World";
@@ -352,7 +375,7 @@ space->write(msg.get(), NULL_TX, 5000000);
 
 The `msg` object is of type `Message`. This is a class that satisfies the requirements of the space: it implements `OpenSpaces::IEntry`, has a default constructor, and a virtual function that returns the class space name.
 
-{% highlight java %}
+{% highlight cpp %}
 class Message: public IEntry
 {
 public:
@@ -378,7 +401,7 @@ public:
 
 The application creates an object, referred to as a template. This object is essentially the filter criteria used to query the space for matching objects. The template must be of a registered type, in this case, an object of type `Message`. This template has all attributes as `null`, which tells the space to return an object of type `Message`, regardless of its attribute values (if there are multiple objects matching the template, the space returns one of them).
 
-{% highlight java %}
+{% highlight cpp %}
 Message messageTemplate;
 {% endhighlight %}
 
@@ -398,7 +421,7 @@ The template is passed to the space in the first argument of the `SpaceProxy::re
 
 The third argument defines the wait time (block time) for read operations. This argument is set to `0`, meaning no wait. In this example, since we have written a matching object to the space prior the read operation, the application returns immediately with the desired object data, so the wait time is unimportant. But in real life, applications often read data that was supposed to be written or updated by other applications -- in which case the block time represents the period during which the data is expected to enter the space. If the block time is long, the application might block for a long time, waiting for the object to appear.
 
-{% highlight java %}
+{% highlight cpp %}
 Message_ptr result ( space->read(&messageTemplate, NULL_TX, 0) );
 {% endhighlight %}
 
@@ -409,4 +432,4 @@ Message_ptr result ( space->read(&messageTemplate, NULL_TX, 0) );
 In this example, the `read()` method returns the requested `Message` object (because it is written previously by the same application), and the application displays its content. If the object does not exist, the application returns immediately with a `NULL` value.
 
 Alternatively, you can perform the read operation with a timeout. The application returns `NULL` in case a matching object has not been written to the space during the specified timeout.
-{% endtoczone %}
+

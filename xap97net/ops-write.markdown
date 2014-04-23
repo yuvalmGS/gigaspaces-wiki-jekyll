@@ -12,7 +12,7 @@ In order to write objects to the Space, you use the write method of the GigaSpac
 {%endsection%}
 
 
-#### POCO Example
+#### PONO Example
 
 The following example writes an `Employee` object into the space:
 
@@ -218,7 +218,7 @@ ILeaseContext<T>[] WriteMultiple(T[] entries, ITransaction tx, long[] leases, Wr
 {: .table .table-bordered}
 | Modifier and Type | Description | default |
 |:-----|:------------|:-------- |
-|T          | POCO, SpaceDocument||
+|T          | PONO, SpaceDocument||
 |lease       |Time to live | Int64.MaxValue|milliseconds|
 |timeout     | The timeout of an update operation, in milliseconds. If the entry is locked by another transaction wait for the specified number of milliseconds for it to be released. | 0  |
 |[WriteModifiers](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/P_GigaSpaces_Core_ISpaceProxy_WriteModifiers.htm)|Provides modifiers to customize the behavior of write operations | UpdateOrWrite  |

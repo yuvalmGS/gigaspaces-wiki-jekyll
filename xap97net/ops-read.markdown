@@ -225,7 +225,7 @@ T ReadIfExists<T>(IQuery<T> query,ITransaction tx,long timeout);
 {: .table .table-bordered}
 | Modifier and Type | Description | Default | Unit|
 |:-----|:------------|:--------|:----|
-| T          | POCO, SpaceDocument|| |
+| T          | PONO, SpaceDocument|| |
 |timeout     | Time to wait for the response| 0  |  milliseconds |
 |query| [IQuery](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_IQuery_1.htm)|      | |
 |[ReadModifiers](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/P_GigaSpaces_Core_IReadOnlySpaceProxy_ReadModifiers.htm)|Provides modifiers to customize the behavior of read operations | NONE  |  |

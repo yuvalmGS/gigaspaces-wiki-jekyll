@@ -7,9 +7,19 @@ weight: 300
 ---
 
 
+{%wbr%}
 
-{% section %}
-{% column %}
+{%section%}
+{%column width=10% %}
+![data-access.jpg](/attachment_files/web-services.jpg)
+{%endcolumn%}
+{%column width=90% %}
+XAP REST interface.
+{%endcolumn%}
+{%endsection%}
+
+<hr/>
+
 The REST API exposing HTTP based interface Space. It is leveraging the [GigaSpace API](./the-gigaspace-interface.html). It support the following methods:
 
 1. GET - can be used to perform a readByID or a readMultiple action by a space query.
@@ -21,12 +31,7 @@ The REST API exposing HTTP based interface Space. It is leveraging the [GigaSpac
 POST is mapped to a WriteOnly action. An exception will be thrown when trying to write an object which already exists in space.
 {% endinfo %}
 
-{% endcolumn %}
-{% column %}
-![web-services.jpg](/attachment_files/web-services.jpg)
-{% endcolumn %}
 
-{% endsection %}
 
 ## Examples
 

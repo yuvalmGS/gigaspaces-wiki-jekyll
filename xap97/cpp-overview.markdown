@@ -1,17 +1,31 @@
 ---
 layout: post97
-title:  GigaSpaces CPP API - Overview
+title:  Overview
 categories: XAP97
-parent: cpp-api---advanced.html
-weight: 200
+parent: xap-cpp.html
+weight: 10
 ---
 
+{% summary %}{%endsummary%}
+{%comment%}
 {% summary page|65 %}GigaSpaces C++ API explained: About POCOs; space class metadata; using existing C++ classes with the space; dynamic scalability; deployment -- standalone and grid-based; configuration; compatibility and packaging.{% endsummary %}
 
 # Overview
+{%endcomment%}
+
+{%section %}
+{%column width=80% %}
+GigaSpaces C++ applications may use the [CPP Processing Unit](./cpp-processing-unit.html), which utilize the concept of Space-Based Architecture (SBA) by allowing simple development, packaging and deployment of application services together with middleware services.
+The C++ Processing Unit runs as an independent service, allowing you to distribute and parallelize your processing on several machines, thus achieving higher performance, lower latency, and scalability.
+{%endcolumn%}
+{%column width=20% %}
+{%popup /attachment_files/cpp-SBA-system-archi.jpg %}
+{%endcolumn%}
+{%endsection%}
 
 The GigaSpaces c++ API has been designed to address the following:
 
+{%vbar%}
 - **Being c++ friendly** -- allowing c++ engineers to use standard tools.
 - **Ease of use** -- the ability to build C++-based applications in a matter of minutes.
 - **Platform Support** -- to run on 32 and 64-bit platforms.
@@ -19,12 +33,14 @@ The GigaSpaces c++ API has been designed to address the following:
 - **Better Interoperability** -- to cope with space classes that contain nested classes.
 - **Common development flow**, **configuration** and **deployment based on OpenSpaces** -- **one** common space runtime for all applications: Java, .NET and C++.
 - **Using an alternative approach** for **internal JNI calls** -- based on lightweight command pattern protocol.
+{%endvbar%}
 
 ## Features
 
 GigaSpaces c++ API offers a very straightforward API that directly accepts the developers c++ objects. No additional serialization or marshalling code needs to be developed and maintained.
 
-The GigaSpaces c++ API provides the following:
+
+{%vbar title=The GigaSpaces c++ API provides the following:%}
 
 - **Single space operations and batch space operations**.
 - **Space transactions support**.
@@ -43,6 +59,9 @@ The GigaSpaces c++ API provides the following:
 - **Out of the box examples**.
 - **Boost Smart pointer interface - Alternative interface for C++ developers that uses only boost smart pointers**.
 
+{%endvbar%}
+
+
 ## How it Works
 
 c++ business logic can run as a standalone application or can be deployed into the Grid accessing the space in any of the supported runtime topologies: single space, clustered space, remote, or embedded.
@@ -59,23 +78,28 @@ In order to allow interoperability of POCO objects with both POJO (Java) and PON
 
 # Architecture
 
-## Standalone c++ Application
+#### Standalone c++ Application
 
+{%section %}
+{%column width=80% %}
 When the c++ application is running as a standalone application, the c++ business logic interacts with the space via remote calls. All space operations are conducted using c++ objects, where the actual interaction is performed via native PBS objects. The c++ objects are transformed to PBS objects in runtime, and sent to the space via the C+/\+ and Java runtime layers.
+{%endcolumn%}
+{%column width=20% %}
+{%popup /attachment_files/cpp_image004.jpg %}
+{%endcolumn%}
+{%endsection%}
 
-{% indent %}
-![cpp_image004.jpg](/attachment_files/cpp_image004.jpg)
-{% endindent %}
-
-## c++ Worker
-
+#### c++ Worker
+{%section %}
+{%column width=80% %}
 When the c++ business logic runs as a worker, collocated with the space; no remote calls are involved when interacting with the space. Interactions with the space are done using c++ objects, similar to the standalone c++ application configuration.
+{%endcolumn%}
+{%column width=20% %}
+{%popup /attachment_files/cpp_image006.jpg %}
+{%endcolumn%}
+{%endsection%}
 
-{% indent %}
-![cpp_image006.jpg](/attachment_files/cpp_image006.jpg)
-{% endindent %}
-
-# About POCOs
+# POCO
 
 The POCO is a wordplay on the famous POJO acronym and it stands for Plain Old c++ Object.
 
@@ -108,7 +132,7 @@ The same metadata decoration file is used across all languages -- the same `gs.x
 
 Here is the c++ `h` file that is generated or should be used with the above `gs.xml` file:
 
-{% highlight java %}
+{% highlight cpp %}
 class Message: public IEntry
 {
 public:
@@ -131,7 +155,7 @@ typedef boost::shared_ptr<Message>    Message_ptr;
 
 Here is the c++ code using the above class:
 
-{% highlight java %}
+{% highlight cpp  %}
 SpaceProxyPtr space ( finder.find("jini://*/*/mySpace") );
 Message_ptr msg( new Message() );
 msg->id = 1;
@@ -150,7 +174,8 @@ As you can see, the example above uses `boost::shared_ptr`. If you are not famil
 # Using Existing c++ Classes with the Space
 
 To use existing c++ classes with the space, you need to perform minor changes to your existing c++ classes (such as inheriting from the `IEntry` base class). This allows you to implement your own serialization and data transport protocol to gain total control of the byte stream content sent through the wire when the client interacts with the space process.
-{% refer %}For more details, see the [Writing Existing C++ Class to Space](./writing-existing-cpp-class-to-space.html) section.{% endrefer %}
+
+{% refer %}For more details, see the [Writing Existing C++ Class to Space](./cpp-writing-existing-class-to-space.html) section.{% endrefer %}
 
 # Interoperability -- Sharing Data across Java, .NET and c++ Applications
 

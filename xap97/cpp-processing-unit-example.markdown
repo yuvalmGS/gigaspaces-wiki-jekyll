@@ -1,20 +1,11 @@
 ---
 layout: post97
-title:  GigaSpaces CPP Processing Unit Example
+title:  Processing Unit
 categories: XAP97
 parent: cpp-api-examples.html
 weight: 200
 ---
 
-{% compositionsetup %}
-
-{% info %}
- **Summary:** {% excerpt %}Example application that demonstrates the concept of Processing Unit.{% endexcerpt %}
-{% whr %}
-{% toc minLevel=1|maxLevel=1|type=flat|separator=pipe %}
-{% endinfo %}
-
-# Overview
 
 The Processing Unit example is located at `<GigaSpaces Root>\cpp\examples\CppService\` and `<GigaSpaces Root>\cpp\examples\CppServiceOpenSpaces\`.
 If you use **Visual Studio** open the solution `examples.sln` located in `<GigaSpaces Root>\cpp\examples`. It is recommended to set your solution configuration to `Release` and do a rebuild that will generate all related files.
@@ -30,10 +21,9 @@ To create your own `CppWorker` you should inherit your class from `ICppWorker` a
 
 The rest of the interface is for deploying the service and we just need to change the name of the service to our new name.
 
-{% togglecloak id=1 %}  {% sub %}**Click Here to view the example code (the full source code can be found at `<GigaSpaces Root>\cpp\examples\CppService\CppService.cpp`)**{% endsub %}{% endtogglecloak %}
-{% gcloak 1 %}
 
-{% highlight java %}
+
+{% highlight cpp %}
 #include <windows.h>
 #endif
 
@@ -154,14 +144,13 @@ extern "C" EXPORT ICppWorker* getWorkerByClass(const char* className)
 }
 {% endhighlight %}
 
-{% endgcloak %}
+
 
 ## Processing Unit Configuration File
 
 The CPP PU following the standard [Processing Unit Configuration](./the-processing-unit-structure-and-configuration.html).
 
-{% togglecloak id=2 %}  {% sub %}**Click Here to view the CPP PU Configuration File**{% endsub %}{% endtogglecloak %}
-{% gcloak 2 %}
+
 
 The Processing Unit configuration file (`<GigaSpaces Root>\cpp\examples\CppServiceOpenSpaces\src\META-INF\spring\pu.xml`) includes the following:
 
@@ -200,7 +189,7 @@ The Processing Unit configuration file (`<GigaSpaces Root>\cpp\examples\CppServi
 </beans>
 {% endhighlight %}
 
-{% endgcloak %}
+
 
 # Building and Running the Example
 
@@ -208,20 +197,20 @@ The Processing Unit configuration file (`<GigaSpaces Root>\cpp\examples\CppServi
 - Select the _Release_ configuration and rebuild the solution.
 - Run:
 
-{% highlight java %}
+{% highlight console %}
 <GigaSpaces Root>\bin\gs-agent.bat/sh
 {% endhighlight %}
 
 The build and configuration files are located in `<GigaSpaces Root>\cpp\examples\CppServiceOpenSpaces` folder.
 To deploy the processing unit , move to the above folder and run the following:
 
-{% highlight java %}
+{% highlight console %}
 build deploy-local-cppexample
 {% endhighlight %}
 
 The following output will be displayed:
 
-{% highlight java %}
+{% highlight console %}
 D:\gigaspaces-xap-premium-7.1.0-ga\cpp\examples\CppServiceOpenSpaces>build.bat deploy-local-cppexample
 Buildfile: build.xml
 
@@ -257,7 +246,7 @@ Total time: 26 seconds
 
 The gs-agnet console will have the following output:
 
-{% highlight java %}
+{% highlight console %}
 [gsc][5/5352]   ----Find Proxy ------
 [gsc][5/5352]   -- Snapshot Done
 [gsc][5/5352]   *****Worker Running*****
@@ -279,19 +268,24 @@ To view the deployed CPP PU start the GS-UI:
 ![cpp_pu.jpg](/attachment_files/cpp_pu.jpg)
 
 To view the space deployed as part of the CPP PU move into the Deployed Processing Unit Tab:
+
 ![cpp_pu2.jpg](/attachment_files/cpp_pu2.jpg)
 
 To undeploy the CPP PU:
+
 ![cpp_pu3.jpg](/attachment_files/cpp_pu3.jpg)
 
 To deploy a clustered CPP PU, Click the *Deploy Application* button and have the following:
+
 ![cpp_pu6.jpg](/attachment_files/cpp_pu6.jpg)
 
 This will deploy the CPP PU with 2 partitions and a backup for each partition.
 
-{% tip %}
+
 After deploying and un-deploying the CPP PU, you will have to terminate the existing GSC and start a new fresh GSC to deploy the CPP PU again.
+
 ![cpp_pu4.jpg](/attachment_files/cpp_pu4.jpg)
+
 ![cpp_pu5.jpg](/attachment_files/cpp_pu5.jpg)
-{% endtip %}
+
 

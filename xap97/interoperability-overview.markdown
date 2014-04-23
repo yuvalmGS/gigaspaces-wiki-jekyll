@@ -21,6 +21,9 @@ The possibility for organizations whose projects include a combination of Java, 
 
 <hr/>
 
+- [Overview](./interoperability.html){%wbr%}
+XAP introduces interoperability – the possibility for organizations whose projects include a combination of Java, .NET and C++ platforms to communicate and access each other easily and efficiently
+
 - [.Net]({%currentneturl%}/interoperability.html){%wbr%}
 .Net interoperability.
 

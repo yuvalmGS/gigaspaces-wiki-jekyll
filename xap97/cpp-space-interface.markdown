@@ -1,14 +1,14 @@
 ---
 layout: post97
-title:  GigaSpaces CPP API
+title:  The Space Interface
 categories: XAP97
-parent: cpp-api-basics.html
-weight: 200
+parent: xap-cpp.html
+weight: 20
 ---
 
-{% summary   %}An overview of the main capabilities provided by GigaSpaces C++ API{% endsummary %}
+{% summary   %}{% endsummary %}
 
-# Overview
+
 
 The `SpaceProxy` is the primary interface that allows you to connect to the space and perform space operations. The basic space operations include the following:
 
@@ -22,7 +22,9 @@ The `SpaceProxy` is used with the different space topologies and runtime modes i
 
 The `SpaceProxy` supports single and batch space operations. Batch operations are used to optimize space operations with multiple objects and can boost the application performance when interacting with the space.
 
-{% lampon %} Please refer to the [GigaSpaces c++ Documentation](http://www.gigaspaces.com/docs/cppdocs{% latestxaprelease %}/annotated.html) for the API Documentation.
+{% note %}
+Please refer to the [GigaSpaces c++ Documentation](http://www.gigaspaces.com/docs/cppdocs{% latestxaprelease %}/annotated.html) for the API Documentation.
+{%endnote%}
 
 ## Writing and Reading from Space
 
@@ -39,7 +41,7 @@ A C++ client may write and read objects from the space.
 The following code example constructs a space proxy by passing a [space URL](./the-space-configuration.html) string into the `SpaceFinder.find()` method.
 The returned object is the `SpaceProxy` object. This allows performing all space operations such as write, read, take, notify registration, etc.
 
-{% highlight java %}
+{% highlight cpp %}
 SpaceFinder		finder;
 // Getting space proxy using the standard Space URL
 SpaceProxyPtr spaceProxy = finder.find( "jini://lookup-host/container-name/space-name" );
@@ -84,7 +86,7 @@ This can be used when the c++ application accesses a remote space. In this case,
 
 Below is an example for a `writeMultiple` call:
 
-{% highlight java %}
+{% highlight cpp %}
 // Prepare a vector (batch) of Person objects
 std::vector<IEntry*> myBatch(100);
 for (int i = 0; i < 100; i++) {
@@ -121,7 +123,7 @@ When using the `readMultiple` operation, the returned object includes all of the
 
 Below is an example of performing the `readMultiple` operation using `SQLQuery`:
 
-{% highlight java %}
+{% highlight cpp %}
 Person personQueryTemplate;
 personQueryTemplate.age = 30;
 // Match all Person entries where 'city' begins with 'A' and 'age' is older than 30
@@ -151,7 +153,7 @@ Once the listener is registered with a relevant template and operation type, and
 
 Below is an example for an `IRemoteEventListener` listener implementation:
 
-{% highlight java %}
+{% highlight cpp %}
 // The Listener class for a Person entry
  class PersonNotifyListener : public IRemoteEventListener
  {
@@ -169,7 +171,7 @@ Below is an example for an `IRemoteEventListener` listener implementation:
 
 Below is an example for a registered listener with a template and a `WRITE` operation type:
 
-{% highlight java %}
+{% highlight cpp %}
 // Prepare the session
   EventSessionFactoryPtr factory( EventSessionFactory::getFactory(spaceProxy));
 
@@ -210,7 +212,7 @@ Note, this can be avoided when working with the SBA model, where each cluster me
 
 Here is an example for creating a Local Transaction:
 
-{% highlight java %}
+{% highlight cpp %}
 SpaceFinder spaceFinder;
 SpaceProxyPtr spaceProxy = spaceFinder.find("jini://lookup-host/container-name/space-name");
 // Get the Local Transaction Manager
@@ -223,7 +225,7 @@ TransactionPtr txn = spaceProxy->getLocalTransaction();
 
 Here is an example of creating a Distributed Transaction based on Jini Mahalo:
 
-{% highlight java %}
+{% highlight cpp %}
 #define LOOKUP_GROUPS "MY-LOOKUP-GROUPS"	// Lookup groups for Jini Mahalo
 SpaceFinder spaceFinder;
 // The space must use the same lookup groups as the Jini Mahalo
@@ -240,7 +242,7 @@ Once a transaction is created it can be used with any of the space operations un
 
 Here is an example of using a transaction:
 
-{% highlight java %}
+{% highlight cpp %}
 Person person;
 Person personTemplate;
 PersonPtr personResponse;
@@ -269,18 +271,14 @@ txn->commit();
 
 # Iterating Large Amounts of Data
 
-The GSIterator provides the ability to exhaustively read through all of the Entries from a space that match one or more templates. GSIterator is based on JavaSpaces Iterator\***
-
-{% c %}
-[JavaSpaces Iterator](http://wiki.gigaspaces.com/wiki/display/OBS/JavaSpaces+Iterator)
-{% endc %}
+The GSIterator provides the ability to exhaustively read through all of the Entries from a space that match one or more templates.
 .
 
 A GSIterator is created by providing one or more matching templates. Iterating through the matching entries is done by calling the `getNext` method.
 
 The following example demonstrates how to create and use a GSIterator that matches `Person` entries:
 
-{% highlight java %}
+{% highlight cpp %}
 // Create a GSIterator using an empty Person template to match all Person entries
 Person personTemplate;
 GSIteratorPtr gsIterator(new GSIterator(spaceProxy, &personTemplate, 100, ExistingAndFutureEntries, Lease::FOREVER));
@@ -303,7 +301,7 @@ Note the use of `ExistingAndFutureEntries` argument when creating the GSIterator
 
 Here is another example, this time using _blocking iteration_:
 
-{% highlight java %}
+{% highlight cpp %}
 // Create a GSIterator
 Person personTemplate;
 GSIteratorPtr gsIteratorBlocking(new GSIterator(spaceProxy, &personTemplate, 100, ExistingAndFutureEntries, Lease::FOREVER));

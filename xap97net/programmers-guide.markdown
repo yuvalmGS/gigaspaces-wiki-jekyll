@@ -19,7 +19,7 @@ This guide is written for application developers who wish to build scaled-out ap
 
 <hr/>
 
-- [POCO Support](./poco-overview.html){%wbr%}
+- [PONO Support](./poco-overview.html){%wbr%}
 Understanding the semantics of Space Entries and .NET Objects
 
 - [Document API](./document-overview.html){%wbr%}
@@ -61,7 +61,7 @@ XAP support executing tasks in a collocated Space (processing unit that started 
 This section will guide you through event processing APIs and configuration on top of the space.
 
 - [Space Based Remoting](./space-based-remoting.html){%wbr%}
-Remoting allows you to use remote invocations of POCO services, with the space as the transport layer.
+Remoting allows you to use remote invocations of PONO services, with the space as the transport layer.
 
 - [Admininstration](./admin-modules.html){%wbr%}
 The Admin API provides a way to administer and monitor all of XAP services and components using a simple API. The API provides information and the ability to operate on the currently running GigaSpaces Agent, GigaSpaces Manager, GigaSpaces Container, Lookup Service, Processing Unit and Spaces.

@@ -8,7 +8,7 @@ weight: 200
 
 {%summary%}{%endsummary%}
 
-Template matching (a.k.a. Match by example) is a simple way to query the space - The template is a POCO of the desired entry type, and the properties which are set on the template (i.e. not null) are matched against the respective properties of entries of the same type in the space. Properties with null values are ignored (not matched).
+Template matching (a.k.a. Match by example) is a simple way to query the space - The template is a PONO of the desired entry type, and the properties which are set on the template (i.e. not null) are matched against the respective properties of entries of the same type in the space. Properties with null values are ignored (not matched).
 
 Since by convention the default constructor usually initializes all the properties to `null` either implicitly or explicitly, in most cases it's enough to simply set the properties which should be matched, without bothering with explicitly setting null to the other properties. Note that setting two or more properties with non-null values provides an **AND** behavior.
 
@@ -109,7 +109,7 @@ public class Person
 We've indicated that `-1` should be treated as `null` when performing template matching, and initialized age to `-1` so users of Person class need not set it explicitly whenever they use it. For more information refer to [Object Metadata](./poco-metadata.html).
 
 {% note%}
-Properties of primitive types are implicitly boxed when stored in the space and unboxed when reconstructed to a POCO.
+Properties of primitive types are implicitly boxed when stored in the space and unboxed when reconstructed to a PONO.
 It is highly recommended to use the  primitive wrapper classes instead of primitives to simplify the code and avoid user errors.
 {%endnote%}
 

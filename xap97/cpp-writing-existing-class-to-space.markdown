@@ -1,24 +1,26 @@
 ---
 layout: post97
-title:  Writing Existing CPP Class to Space
+title:  Writing Existing Class to Space
 categories: XAP97
 parent: cpp-api-examples.html
 weight: 300
 ---
 
-{% summary page|65 %}How to use an existing C++ class and write it to the space.{% endsummary %}
 
-# Overview
 
 This example shows you how to write your own c++ class to the space (as opposed to writing a class that is generated from a XML file). The code for this example is located at `<GigaSpaces Root>\cpp\examples\PocoFromExistingClass\`. This path will be referred to as `<Example Root>` in this page.
 
-{% exclamation %} This example can be built and run on **Windows OS** only. If you use **Visual Studio** open the solution `PocoFromExistingClass.sln` located in `<GigaSpaces Root>\cpp\examples\PocoFromExistingClass\`. It is recommended to set your solution configuration to `Release` and do a rebuild that will generate all related files.
+{% note %}
+This example can be built and run on **Windows OS** only. If you use **Visual Studio** open the solution `PocoFromExistingClass.sln` located in `<GigaSpaces Root>\cpp\examples\PocoFromExistingClass\`. It is recommended to set your solution configuration to `Release` and do a rebuild that will generate all related files.
+{%endnote%}
 
 {% refer %}It is assumed that you have read the [GigaSpaces C++ Hello World example](./cpp-api-hello-world-example.html) which serves as a starting point.{% endrefer %}
 
 To write your c++ class to the space, perform the following steps:
 
-# Create a `gs.xml` file that contains the class definition. For example, this is the file `<Example Root>\PocoFromExistingClass.gs.xml`:
+# Create a gs.xml file that contains the class definition.
+
+For example, this is the file `<Example Root>\PocoFromExistingClass.gs.xml`:
 
 {% highlight xml %}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -38,7 +40,7 @@ To write your c++ class to the space, perform the following steps:
 
 Note the line that informs `gsxml2cpp` about the file of your existing class:
 
-{% highlight xml %}
+{% highlight cpp %}
 <include-header file="UserMessage.h"/>
 {% endhighlight %}
 
@@ -46,34 +48,35 @@ Note the line that informs `gsxml2cpp` about the file of your existing class:
 
     {% infosign %} An example of an original class can be found at `<Example Root>\UserMessage_original.h.txt`; and an example of the same class with the changes listed below can be found at `<Example Root>\UserMessage.h`.
 
-1. Add an include statement and namespace as shown below:
+Step 1. Add an include statement and namespace as shown below:
 
-{% highlight java %}
+{% highlight cpp %}
 #include "IEntry.h"
 using namespace OpenSpaces;
 {% endhighlight %}
 
-1. Inherit from `IEntry`:
+Step 2. Inherit from `IEntry`:
 
-{% highlight java %}
+{% highlight cpp %}
 class UserMessage:  public IEntry /** (GigaSpaces) need to inherit for space operations **/
 {% endhighlight %}
 
-1. Implement the the `IEntry` interface (one function):
+Step 3. Implement the the `IEntry` interface (one function):
 
-{% highlight java %}
+{% highlight cpp %}
 virtual const char* GetSpaceClassName() const
 {
      return "UserMessage";
 }
 {% endhighlight %}
 
-{% exclamation %} The name of the class as returned by `GetSpaceClassName` should match the name of the class in the `gs.xml` file.
+{% note %}
+The name of the class as returned by `GetSpaceClassName` should match the name of the class in the `gs.xml` file.
     1. Make sure the class has a *default constructor**.
+    2. Optional -- initialize with `null values` in the constructor:
+{%endnote%}
 
-1. Optional -- initialize with `null values` in the constructor:
-
-{% highlight java %}
+{% highlight cpp %}
 UserMessage()
 {
 	// (GigaSpaces) Optional - initialize with null values in the class constructor
@@ -85,29 +88,39 @@ UserMessage()
 
 Note that these 3 fields are the ones specified in our `gs.xml` file.
 
-1. Optional -- add a smart pointer:
+Step 4. Optional -- add a smart pointer:
 
-{% highlight java %}
+{% highlight cpp %}
 typedef boost::shared_ptr<UserMessage>    UserMessagePtr;
 {% endhighlight %}
 
-1. Handle the c++ serializer code generation, build the shared library (DLL) from this code, and place the library in the appropiate directory (`<GigaSpaces Root>\lib\platform\native`).
+Step 5. Handle the c++ serializer code generation, build the shared library (DLL) from this code, and place the library in the appropiate directory (`<GigaSpaces Root>\lib\platform\native`).
 The following instructions show you how to do this in Visual Studio using the supplied makefile (`<Example Root>/makefileSerializer.mk`):
 
-1. Create a custom build for `PocoFromExistingClass.gs.xml`:
-![cpp_exisitng_xmlPropertiesSelect.PNG](/attachment_files/cpp_exisitng_xmlPropertiesSelect.PNG)
-![cpp_exisitng_xmlPropertiesCommandLine.PNG](/attachment_files/cpp_exisitng_xmlPropertiesCommandLine.PNG)
-    1. Type the following lines in the **Command Line** text box:
-    "$(JSHOMEDIR)/cpp/bin/$(PLATFORM)\$(COMPILER)/gsxml2cpp" "$(InputPath)" NA "$(InputDir)\UserMessageSerializer.cpp" DummyHeaderFile
-    nmake -f makefileSerializer.mk
+Step 6. Create a custom build for `PocoFromExistingClass.gs.xml`:
 
-{% infosign %} In Win64 use `makefileSerializer_win64.mk`
+![cpp_exisitng_xmlPropertiesSelect.PNG](/attachment_files/cpp_exisitng_xmlPropertiesSelect.PNG)
+
+![cpp_exisitng_xmlPropertiesCommandLine.PNG](/attachment_files/cpp_exisitng_xmlPropertiesCommandLine.PNG)
+
+Step 7. Type the following lines in the **Command Line** text box:
+
+{%highlight console%}
+"$(JSHOMEDIR)/cpp/bin/$(PLATFORM)\$(COMPILER)/gsxml2cpp" "$(InputPath)" NA "$(InputDir)\UserMessageSerializer.cpp" DummyHeaderFile
+  nmake -f makefileSerializer.mk
+{%endhighlight%}
+
+{% info %}
+In Win64 use `makefileSerializer_win64.mk`
+{%endinfo%}
 
 The first line is responsible for c++ code generation, and the second line is responsible for build and placement.
 
-{% exclamation %} The makefile specifies the target name for the generated serializer `.cpp` file and the serializer DLL. If you wish to use your own name then edit the file and change the value for `PROJNAME`.
+{% note %}
+The makefile specifies the target name for the generated serializer `.cpp` file and the serializer DLL. If you wish to use your own name then edit the file and change the value for `PROJNAME`.
+{%endnote%}
 
-1. **Rebuild** the example.
+Step 8. **Rebuild** the example.
 
 {% info %}
 Compiling the file `PocoFromExistingClass.gs.xml` causes the following:
@@ -116,5 +129,6 @@ Compiling the file `PocoFromExistingClass.gs.xml` causes the following:
 - The DLL `UserMessageSerializer.dll` is created and placed in `<GigaSpaces Root>\lib\platform\native\`.
 {% endinfo %}
 
-1. Run the example. The output should be as follows:
+Step 9. Run the example. The output should be as follows:
+
 ![cpp_exisitng_expectedOutput.png](/attachment_files/cpp_exisitng_expectedOutput.png)

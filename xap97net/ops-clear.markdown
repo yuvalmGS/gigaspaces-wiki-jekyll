@@ -54,7 +54,7 @@ void Clear(ISpaceQuery<T> query)
 {: .table .table-bordered}
 | Modifier and Type | Description | default |
 |:-----|:------------|:-------- |
-|T          | POCO, SpaceDocument||
+|T          | PONO, SpaceDocument||
 |query         | SqlQuery, IdQuery||
 |[TakeModifiers](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_TakeModifiers.htm)|Provides modifiers to customize the behavior of the clear operations | NONE  |
 {% endgcloak  %}

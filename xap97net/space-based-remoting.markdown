@@ -13,7 +13,7 @@ weight: 2900
 ![remoting.png](/attachment_files/subject/remoting.png)
 {%endcolumn%}
 {%column width=90% %}
-Remoting allows you to use remote invocations of POCO services, with the space as the transport layer.
+Remoting allows you to use remote invocations of PONO services, with the space as the transport layer.
 {%endcolumn%}
 {%endsection%}
 

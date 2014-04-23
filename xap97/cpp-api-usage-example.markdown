@@ -1,18 +1,19 @@
 ---
 layout: post97
-title:  Usage Example
+title:  Space API
 categories: XAP97
 parent: cpp-api-examples.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}Example application that demonstrates using the GigaSpaces C++ API.{% endsummary %}
 
-# Overview
+
+
+
 
 The API Usage Example demonstrates using the GigaSpaces C++ API to perform space operations.
-{% refer %}To learn about GigaSpaces C++ API, refer to the [GigaSpaces C++ API](./gigaspaces-cpp-api.html) section.{% endrefer %}
+
+{% refer %}To learn about GigaSpaces C++ API, refer to the [GigaSpaces C++ API](./cpp-space-interface.html) section.{% endrefer %}
 
 {% refer %}It is assumed that you have read the [GigaSpaces CPP API Hello World Example](./cpp-api-hello-world-example.html) which serves as a starting point.{% endrefer %}
 
@@ -22,13 +23,15 @@ This example runs by default using a predefined **embedded space**. It can work 
 
 # Building and Running the Example
 
-{% exclamation %} This example can be built and run on **Windows OS** only. If you use **Visual Studio** open the solution `examples.sln` located in `<GigaSpaces Root>\cpp\examples\`. It is recommended to set your solution configuration to `Release` and do a rebuild that will generate all related files.
+{% note %}
+This example can be built and run on **Windows OS** only. If you use **Visual Studio** open the solution `examples.sln` located in `<GigaSpaces Root>\cpp\examples\`. It is recommended to set your solution configuration to `Release` and do a rebuild that will generate all related files.
+{%endnote%}
 
 For more information on setting the environment refer to [Installing C++ Package](./installing-cpp-api-package.html#Setting the Environment).
 
 After running the example the console will have the following output:
 
-{%highlight java%}
+{%highlight console%}
 
 Retrieved a space proxy to /./APIUsageExampleEmbeddedSpace?groups=CPP-GROUP
 Did snapshot for Person class
@@ -50,5 +53,6 @@ Press Enter to end API Usage Example...
 
 {%endhighlight%}
 
-{% infosign %} The API Usage Example can work with any given space simply by providing the space URL as an argument. To do so change the project Command Arguments and specify the space URL string. For example, `jini://localhost/*/mySpace`.
-
+{% info %}
+The API Usage Example can work with any given space simply by providing the space URL as an argument. To do so change the project Command Arguments and specify the space URL string. For example, `jini://localhost/*/mySpace`.
+{%endinfo%}

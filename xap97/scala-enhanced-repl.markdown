@@ -1,15 +1,11 @@
 ---
 layout: post97
-title:  Enhanced XAP Scala REPL
+title:  Enhanced Scala REPL
 categories: XAP97
 parent: scala.html
 weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}Enhanced XAP Scala REPL.{% endsummary %}
-
-# Overview
 
 Following is a short demo of what can be done with the XAP scala shell. It should be noted that this shell is a regular Scala REPL with some initial imports and initialization code.
 
@@ -20,7 +16,7 @@ Following is a short demo of what can be done with the XAP scala shell. It shoul
 
 # The Demo
 
-{% highlight java %}
+{% highlight scala %}
 java version "1.7.0_15"
 Java(TM) SE Runtime Environment (build 1.7.0_15-b03)
 Java HotSpot(TM) 64-Bit Server VM (build 23.7-b01, mixed mode)
@@ -36,7 +32,7 @@ xap>
 
 We'll start by deploying a single space to the service grid, notice we already have an admin instance in scope to simplify this process:
 
-{% highlight java %}
+{% highlight scala %}
 xap> val gsm = admin.getGridServiceManagers.waitForAtLeastOne
 gsm: org.openspaces.admin.gsm.GridServiceManager = org.openspaces.admin.internal.gsm.DefaultGridServiceManager@ca43aa97
 
@@ -46,14 +42,14 @@ res0: org.openspaces.admin.pu.ProcessingUnit = org.openspaces.admin.internal.pu.
 
 We'll use some helper method that is imported into the session scope (from `org.openspaces.scala.repl.GigaSpacesScalaReplUtils`) to get a `GigaSpace` proxy:
 
-{% highlight java %}
+{% highlight scala %}
 xap> val Some(gigaSpace) = getGigaSpace("mySpace")
 gigaSpace: org.openspaces.core.GigaSpace = mySpace_container:mySpace
 {% endhighlight %}
 
 Now we'll execute some tasks using another helper method:
 
-{% highlight java %}
+{% highlight scala %}
 xap> execute(gigaSpace) { holder =>
      | holder.clusterInfo.getNumberOfInstances
      | }
@@ -73,7 +69,7 @@ contextDisplayName: String = org.openspaces.pu.container.support.ResourceApplica
 
 Let's define a new case class and write an entry to the space:
 
-{% highlight java %}
+{% highlight scala %}
 xap> @SpaceClass(includeProperties = IncludeProperties.CONSTRUCTOR)
      | case class Data(@BeanProperty @SpaceId id: String = null, @BeanProperty content: String = null)
 defined class Data
@@ -84,7 +80,7 @@ res3: com.j_spaces.core.LeaseContext[MyData] = com.gigaspaces.internal.lease.Spa
 
 Now execute a task that reads this entry and returns is `content` property:
 
-{% highlight java %}
+{% highlight scala %}
 xap> execute(gigaSpace) { holder =>
      |   holder.gigaSpace.read(Data()).content
      | }

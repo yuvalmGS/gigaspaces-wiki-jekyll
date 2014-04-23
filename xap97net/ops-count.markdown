@@ -45,7 +45,7 @@ int Count(ISpaceQuery<T> query);
 {: .table .table-bordered}
 | Modifier and Type | Description | default |
 |:-----|:------------|:-------- |
-|T          | POCO, SpaceDocument||
+|T          | PONO, SpaceDocument||
 |query         | SqlQuery, IdQuery||
 |[ReadModifiers](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/P_GigaSpaces_Core_IReadOnlySpaceProxy_ReadModifiers.htm)|Provides modifiers to customize the behavior of the count operations | NONE  |
 {% endgcloak  %}

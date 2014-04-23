@@ -1,27 +1,27 @@
 ---
 layout: post97
-title:  Scala Predicate Based Queries
+title:  Predicate Based Queries
 categories: XAP97
 parent: scala.html
 weight: 300
 ---
 
 
-{% summary  %}Predicate based `GigaSpace` query operations.{% endsummary %}
+{% summary  %}{% endsummary %}
+
+Support for predicate based queries on the `GigaSpace` proxy has been in added. This support is based on the new macros feature introduced in Scala 2.10.  Each predicate based query is transformed during compilation into an equivalent [SQLQuery](./query-sql.html).
+
 
 {% info %}
 This feature makes use of Scala macros. As such, the minimum Scala version required in order to use it is 2.10
 {% endinfo %}
 
-# Overview
-
-Support for predicate based queries on the `GigaSpace` proxy has been in added. This support is based on the new macros feature introduced in Scala 2.10.  Each predicate based query is transformed during compilation into an equivalent [SQLQuery](./query-sql.html).
 
 # Usage
 
 To use predicate based queries, import `import org.openspaces.scala.core.ScalaGigaSpacesImplicits._` into scope. Then call the `predicate` method on the `GigaSpace` instance as demonstrated:
 
-{% highlight java %}
+{% highlight scala %}
 /* Import GigaSpace implicits into scope */
 import org.openspaces.scala.core.ScalaGigaSpacesImplicits._
 
@@ -35,7 +35,7 @@ val predicateGigaSpace = gigaSpace.predicate
 
 For the purpose of demonstration, we will use the following example data class
 
-{% highlight java %}
+{% highlight scala %}
 case class Person @SpaceClassConstructor() (
 
   @BeanProperty

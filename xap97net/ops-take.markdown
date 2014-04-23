@@ -244,7 +244,7 @@ T TakeIfExistsById<T>(IdQuery<T> idQuery,ITransaction tx,long timeout,TakeModifi
 {: .table .table-bordered}
 | Modifier and Type | Description | Default | Unit|
 |:-----|:------------|:--------|:----|
-| T          | POCO, SpaceDocument|| |
+| T          | PONO, SpaceDocument|| |
 |timeout     | Time to wait for the response| 0  |  milliseconds |
 |query| [IQuery](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_IQuery_1.htm)|      | |
 |[TakeModifiers](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/P_GigaSpaces_Core_ISpaceProxy_TakeModifiers.htm)|Provides modifiers to customize the behavior of take operations | NONE  |  |

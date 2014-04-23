@@ -2,13 +2,12 @@
 layout: post97
 title:  Processing Unit
 categories: XAP97
-parent: cpp-api---advanced.html
-weight: 100
+parent: xap-cpp.html
+weight: 60
 ---
 
-{% summary page|65 %}The CPP Processing Unit{% endsummary %}
+{% summary%}{% endsummary %}
 
-# The CPP Processing Unit
 
 GigaSpaces XAP is a universal grid based runtime environment for real-time Java, c++ and .Net applications. The real-time environment includes business logic Service Level agreement based container allowing you to deploy your libraries and their statefull data to have self-healing, dynamic scalability and continuous high-availability capabilities out of the box.
 
@@ -33,7 +32,7 @@ Once the c++ business logic deployed with collocated spaces, there are no remote
 When the business logic deployed with a collocated space it can inherit the space active mode (Primary or backup). This means that you may have your business logic running in stand-by mode, none initialized as long as it's collocated space running in backup mode. Backup mode space would get its operations only from the existing primary space and is not accessible for client for direct interaction. Once the primary space and its collocated business logic fails (normally or abnormally), the collocated c++ business logic is initialized and started.
 
 {% tip %}
-You can find a fully running [C++ PU example](./gigaspaces-cpp-processing-unit-example.html) with source code, build scripts and running instructions.
+You can find a fully running [C++ PU example](./cpp-processing-unit-example.html) with source code, build scripts and running instructions.
 {% endtip %}
 
 # Scalability - How Can I Get More Horsepower?

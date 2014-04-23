@@ -103,9 +103,9 @@ ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace("jini://*/*/myDataGrid?grou
 
 The result is a `ISpaceProxy` instance, which is a proxy to the `myDataGrid` data grid. 
 
-### Implementing a POCO
+### Implementing a PONO
 
-We now have a `ISpaceProxy` instance connected to our grid, which we can use to store and retrieve entries. But what shall we write? Actually, any POCO can be stored in the space, so long as it has a default constructor and an ID property. For this tutorial let's define a `Person` class with the following properties:
+We now have a `ISpaceProxy` instance connected to our grid, which we can use to store and retrieve entries. But what shall we write? Actually, any PONO can be stored in the space, so long as it has a default constructor and an ID property. For this tutorial let's define a `Person` class with the following properties:
 
 {% highlight csharp %}
 using GigaSpaces.Core.Metadata;
@@ -123,7 +123,7 @@ Note that we've annotated the `Ssn` property with a custom XAP.NET attribute (`[
 
 ### Interacting with the grid
 
-Now that we have a `ISpaceProxy` instance connected to our grid and a POCO which can be stored, we can store entries in the grid using the `Write()` method and read them using various `Read()` methods:
+Now that we have a `ISpaceProxy` instance connected to our grid and a PONO which can be stored, we can store entries in the grid using the `Write()` method and read them using various `Read()` methods:
 
 {% highlight csharp %}
 Console.WriteLine("Write (store) a couple of entries in the data grid:");

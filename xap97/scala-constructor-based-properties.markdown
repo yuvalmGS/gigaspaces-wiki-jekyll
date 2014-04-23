@@ -6,10 +6,6 @@ parent: scala.html
 weight: 100
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}Immutable properties support - Constructor Based Properties.{% endsummary %}
-
-# Overview
 
 The `com.gigaspaces.annotation.pojo.SpaceClassConstructor` annotation on a constructor will cause the data class properties analysis to be based on properties found in the constructor (instead of getters/setters). This allows data class properties to be immutable.
 
@@ -17,7 +13,7 @@ The `com.gigaspaces.annotation.pojo.SpaceClassConstructor` annotation on a const
 
 Following is an example of such data class.
 
-{% highlight java %}
+{% highlight scala %}
 package org.openspaces.scala.example.data
 import scala.beans.BeanProperty
 

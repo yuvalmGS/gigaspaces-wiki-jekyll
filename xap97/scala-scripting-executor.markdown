@@ -1,15 +1,15 @@
 ---
 layout: post97
-title:  Scala Scripting Executor
+title:  Scripting Executor
 categories: XAP97
 parent: scala.html
 weight: 400
 ---
 
-{% compositionsetup %}
-{% summary page|65 %}Scala Scripting Support.{% endsummary %}
 
-# Overview
+{% summary  %}{% endsummary %}
+
+
 
 [Dynamic Language Tasks](./dynamic-language-tasks.html) has been extended and now supports Scala based script execution.
 
@@ -73,9 +73,9 @@ Here is how you would configure a processing unit to run a scripting executor wi
 - `org.openspaces.remoting.scripting.ScalaTypedStaticResourceScript` which extends [StaticResourceScript](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/remoting/scripting/StaticResourceScript.html).
 - `org.openspaces.remoting.scripting.ScalaTypedResourceLazyLoadingScript` which extends [ResourceLazyLoadingScript](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/remoting/scripting/ResourceLazyLoadingScript.html).
 
-## Example
+# Example
 
-{% highlight java %}
+{% highlight scala %}
 val code = """
 val readData: Any = gigaSpace.read(null)
 val numberAsString = someNumber.toString

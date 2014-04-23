@@ -63,11 +63,11 @@ These two scenarios are only applicable for remote clients.
 
 # The Space Object
 
-XAP supports two types of objects that can interact with the Space, POCOs and Documents.
+XAP supports two types of objects that can interact with the Space, PONOs and Documents.
 
-# POCO
+# PONO
 
-Any POCO can be used to interact with the space. The POCO needs to implement a default constructor, setters and getters for every property you want to store in the Space.
+Any PONO can be used to interact with the space. The PONO needs to implement a default constructor, setters and getters for every property you want to store in the Space.
 
 
 {%highlight csharp%}
@@ -115,7 +115,7 @@ Partitioning is used when the total number of objects is too big to be stored in
 
 
 
-{%info%}The routing attribute can be explicitly set using the `[SpaceRouting]` annotation for POCO entries or via the SpaceTypeDescriptorBuilder for document entries. If the routing attribute is not explicitly set, the space id attribute is used for routing. If the space id attribute is not defined, the first indexed attribute (alphabetically) is used for routing, otherwise the first attribute (alphabetically) is used for routing.{%endinfo%}
+{%info%}The routing attribute can be explicitly set using the `[SpaceRouting]` annotation for PONO entries or via the SpaceTypeDescriptorBuilder for document entries. If the routing attribute is not explicitly set, the space id attribute is used for routing. If the space id attribute is not defined, the first indexed attribute (alphabetically) is used for routing, otherwise the first attribute (alphabetically) is used for routing.{%endinfo%}
 
 {%learn%}{%latestjavaurl%}/data-partitioning.html{%endlearn%}
 
@@ -124,7 +124,7 @@ Partitioning is used when the total number of objects is too big to be stored in
 
 # Space Document
 
-The GigaSpaces document API exposes the space as Document Store. A document, which is represented by the class SpaceDocument, is essentially a collection of key-value pairs, where the keys are strings and the values are primitives, String, Date, other documents, or collections thereof. Unlike POCOs, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic, users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the class SpaceTypeDescriptor.
+The GigaSpaces document API exposes the space as Document Store. A document, which is represented by the class SpaceDocument, is essentially a collection of key-value pairs, where the keys are strings and the values are primitives, String, Date, other documents, or collections thereof. Unlike PONOs, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic, users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the class SpaceTypeDescriptor.
 
 To create a document we use a Dictionary<String,Object> for its properties. The SpaceDocument object is instantiated by using the type name and properties. XAP provides a special implementation of a Dictionary called  DocumentProperties.
 
@@ -179,7 +179,7 @@ public void registerProductType() {
 
 Only properties with special roles like ID and Routing are part of the schema definition. These meta model settings cannot be changed without restarting the space or dropping the type, clearing all its instances and reintroducing it again.
 
-{%info%}It is possible to write a POCO to the space and read it back as a document, and vice versa. This scenario is useful when you want to read or modify POCO objects without loading the concrete C# classes.{%endinfo%}
+{%info%}It is possible to write a PONO to the space and read it back as a document, and vice versa. This scenario is useful when you want to read or modify PONO objects without loading the concrete C# classes.{%endinfo%}
 
 {%learn%}{%latestneturl%}/document-object-interoperability.html{%endlearn%}
 
@@ -187,7 +187,7 @@ Only properties with special roles like ID and Routing are part of the schema de
 
 # Interacting with the Space
 
-All space operations are relevant to both the POCO and Document.
+All space operations are relevant to both the PONO and Document.
 
 
 #### Writing an object to space:
@@ -306,7 +306,7 @@ public User[] findUsersByIds() {
 
 
 #### Query by Template
-Template matching (match by example) is a simple way to query the space. The template is a POCO of the desired entry type, and the attributes which are set on the template (i.e. not null) are matched against the respective attributes of entries of the same type in the space. Attributes with null values are ignored (not matched).
+Template matching (match by example) is a simple way to query the space. The template is a PONO of the desired entry type, and the attributes which are set on the template (i.e. not null) are matched against the respective attributes of entries of the same type in the space. Attributes with null values are ignored (not matched).
 
 The following examples assume the default constructor of the User class initializes all its attributes to null.
 
@@ -462,7 +462,7 @@ public User[] findUsersByNameAndProjection() {
 
 
 #### Document Queries
-You can also query the space for documents. Just like the POCO queries, you can use query by ID, template and SQLQuery.
+You can also query the space for documents. Just like the PONO queries, you can use query by ID, template and SQLQuery.
 
 
 Here are some examples how you can query the space for documents:

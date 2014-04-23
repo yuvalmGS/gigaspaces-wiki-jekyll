@@ -2,13 +2,10 @@
 layout: post97
 title:  gsxml2cpp Utility
 categories: XAP97
-parent: cpp-api-code-generator.html
-weight: 200
+parent: xap-cpp.html
+weight: 80
 ---
 
-{% summary page|65 %}The `gsxml2cpp` utility generates serializer code, created by the `gs.xml` file, allowing you to perform space operations.{% endsummary %}
-
-# gsxml2cpp Utility
 
 This section describes the `gsxml2cpp` utility usage and available options. The `gsxml2cpp` utility generates serializer code, created by the `gs.xml` file, allowing you to perform space operations in the space. To learn how to do this, see the [CPP API Code Generator](./cpp-api-code-generator.html) section.
 
@@ -19,8 +16,9 @@ The gsxml2cpp utility is usually called by a custom build tool. See below exampl
 ![gsxml2cpp.jpg](/attachment_files/gsxml2cpp.jpg)
 
 ## Syntax
-
-    gs> gsxml2cpp <XML input file> <Package name> <output serializer file (.cpp)> <output classes file (.h)> <POJO output directory [optional]> <PONO output directory [optional]>
+{% highlight bash %}
+gs> gsxml2cpp <XML input file> <Package name> <output serializer file (.cpp)> <output classes file (.h)> <POJO output directory [optional]> <PONO output directory [optional]>
+{% endhighlight %}
 
 # Options
 
@@ -40,6 +38,6 @@ The `gsxml2cpp` command has the following parameters:
 
 ## Example
 
-{% highlight java %}
+{% highlight bash %}
 $gsxml2cpp ../serializer/helloWorld.gs.xml HelloWorld ../serializer/HelloWorldMessage.cpp ../serializer/HelloWorldMessage.h
 {% endhighlight %}
