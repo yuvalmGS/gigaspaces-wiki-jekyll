@@ -110,7 +110,7 @@ A better strategy would be to use a dummy generator like "increment" in hibernat
 - When a space is configured to be persistent, and a `POJO` is used as the Space Domain class, it must use the `SpaceId(autogenerate=false)` decoration.
 - When running in LRU Cache policy the `GigaSpace.count` operation using the data within the space only and does not access the space data source (database) to return the object count.
 - When a space is configured to be persistent, only Native serialization mode should be used.
-- Objects loaded via the `SpaceDataSource.initialDataLoad` can be expired using the `@SpaceLeaseExpiration` annotation. See the [POJO Support - Advanced](./leases---automatic-expiration.html) page for more details.
+- Objects loaded via the `SpaceDataSource.initialDataLoad` can be expired using the `@SpaceLeaseExpiration` annotation. See the [POJO Support - Advanced](./leases-automatic-expiration.html) page for more details.
 - When using the Map API, the key must be `Serializable`.
 - The `SpaceDataSource.initialDataLoad()` loads data into partitioned spaces, by reading all the data into the space and filtering it at the space side. To tune this behavior, you should execute the relevant query from the database on the partition ID, to fetch the relevant result set to load into the space. See the [Space Persistency Initial Load](./space-persistency-initial-load.html) for more details.
 - [Hibernate Lazy load](http://www.hibernate.org/162.html) is not supported when using the `DefaultHibernateSpaceDataSource` implementation. See [Space Object Modeling](/sbp/space-object-modeling.html) for more details.

@@ -322,7 +322,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gig
 
 The above configuration creates a Distributed Transaction Manager with a pool of 2 transaction (lease) renewal managers (a single manager can handle multiple transactions, more managers allow for better concurrency). Each transaction is renewed every 1 second (1000 milliseconds) with an expected round trip time of 500 milliseconds. This means that a transaction with a timeout of 10 seconds is renewed 10 times (approximately) and if the JVM crashes, the transaction expires within a second (at most).
 
-More information regarding Lease Renewal Manager can be found [here](./leases---automatic-expiration.html#LeaseRenewalManager).
+More information regarding Lease Renewal Manager can be found [here](./leases-automatic-expiration.html#LeaseRenewalManager).
 
 # XA/JTA Support
 

@@ -19,6 +19,8 @@ This page explains how you can use  XAP to:
 
 GigaSpaces as Hibernate 2nd level cache provides:
 
+{%vbar  %}
+
 - Unlimited cache capacity
 - All activities be monitored/profiled in real-time
 - Built-in support for replicated and/or partitioned cache topology
@@ -30,6 +32,7 @@ GigaSpaces as Hibernate 2nd level cache provides:
 - Built-in security
 - Built-in deployment environment
 - Built-in alerting system
+{%endvbar%}
 
 Read further in this section for more details about these solutions, or jump to detailed instructions: [how to get a free distributed second-level cache](#step1) or [how to add a GigaSpaces data grid](#step2).
 

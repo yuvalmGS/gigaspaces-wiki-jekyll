@@ -47,7 +47,7 @@ Starting with XAP 8.0, all GigaSpaces threads running within the JVM, using the 
 |Liveness-monitor| See the [Proxy Connectivity](./tuning-proxy-connectivity.html) for details.| Single thread per client proxy|Client|
 |LocalTransactionManagerImpl$Reaper SPACE_NAME | A thread that reaps expired transactions entries and other objects| Single thread per space | Server|
 |GSPingManager| Used by the Service Grid| |Server|
-|LeaseManager$Reaper SPACE_NAME |See the [Lease Manager]({%currentjavaurl%}/leases---automatic-expiration.html#Lease Manager) for details |Single Thread per space| Server|
+|LeaseManager$Reaper SPACE_NAME |See the [Lease Manager]({%currentjavaurl%}/leases-automatic-expiration.html#Lease Manager) for details |Single Thread per space| Server|
 |Cache PersistentGC|Responsible for backup activities (cleanup indexes)|Single Thread per space|Server|
 |SPACE\_NAME BackgroundFifoThread3\_Notify=false#|Threads that use segmentation in order to handle background events like handling waiting templates in a fifo fashion | Thread pool per space|Server|
 |SPACE\_NAME BackgroundFifoThread3\_Notify=true#|Threads that use segmentation in order to handle background notify events  in a fifo fashion|Thread pool per space|Server|

@@ -44,16 +44,20 @@ Space notifications
 Describes transaction management when interacting with the space
 {%endcomment%}
 
+- [Lease Time](./leases-automatic-expiration.html){%wbr%}
+Lease basics and explains how Leases can be managed.
+
 - [Filters](./the-space-filters.html){%wbr%}
 Space Filters are interceptors inside the GigaSpaces space engine.
 
 {%comment%}
 - [Space mode context](./space-mode-context-loader.html){%wbr%}
 Allows you to load a Spring application context only when the Processing Unit or space is in primary mode, and unload it when the Processing Unit or space is in backup mode.
+{%endcomment%}
 
-- [Lease](./leases---automatic-expiration.html){%wbr%}
-Lease basics and explains how Leases can be managed.
 
+
+{%comment%}
 - [Best Practices](./the-space-best-practices.html){%wbr%}
 This guide contains the API guidelines that should be followed when using XAP to achieve best performance and avoid common mistakes.
 {%endcomment%}

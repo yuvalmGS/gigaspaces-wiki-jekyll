@@ -39,10 +39,8 @@ The SQLQuery class is used to query the space using SQL-like syntax.
 - [Nested property queries](./query-nested-properties.html){%wbr%}
 Query nested properties, maps and collections using SQL queries.
 
-{%comment%}
 - [Partial results](./query-partial-results.html){%wbr%}
 Obtaining partial results when querying the space to improve application performance and reduce memory footprint.
-{%endcomment%}
 
 - [Paging support](./query-paging-support.html){%wbr%}
 Reading large number of objects using multiple queries in one call in a continuous manner.

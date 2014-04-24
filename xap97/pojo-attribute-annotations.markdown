@@ -320,7 +320,7 @@ public class MyData {
 }
 {%endhighlight%}
 {% endgcloak %}
-{%learn%}./leases---automatic-expiration.html{%endlearn%}
+{%learn%}./leases-automatic-expiration.html{%endlearn%}
 
 # SpaceStorageType
 

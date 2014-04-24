@@ -3,7 +3,7 @@ layout: post97
 title:  Partial Results
 categories: XAP97NET
 parent: querying-the-space.html
-weight: 600
+weight: 700
 ---
 
 {%summary%}{%endsummary%}

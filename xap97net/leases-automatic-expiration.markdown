@@ -1,7 +1,7 @@
 ---
 layout: post97
-title:  Leases - Automatic Expiration
-categories: XAP97
+title:  Lease Time
+categories: XAP97NET
 weight: 800
 parent: the-gigaspace-interface-overview.html
 ---
@@ -30,86 +30,86 @@ Few other ways Lease can be managed include,
 
 # Space Object Lease
 
-Leases can be used for objects written to GigaSpaces cluster. All the write operations in [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) interface support Lease. Lease duration is an argument that is passed to the write operations and they return a Lease Context which can be used to manage the Leases.
+Leases can be used for objects written to an XAP cluster. All the write operations in [ISpaceProxy](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_ISpaceProxy.htm) interface support Lease. Lease duration is an argument that is passed to the write operations and they return a Lease Context which can be used to manage the Leases.
 
-{% highlight java %}
-UrlSpaceConfigurer configurer=new UrlSpaceConfigurer("jini://*/*/space");
-GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
-
-MyMessage message1 = new MyMessage();
+{% highlight csharp %}
+MyMessage message1 = new MyMessage ();
 
 // Writes the message with 1000 millis/1 sec Lease
-LeaseContext<MyMessage> lease1 = gigaSpace.write(message1, 1000);
+ILeaseContext<MyMessage> lease1 = spaceProxy.Write (message1, 1000);
 
-MyMessage message2 = new MyMessage();
+MyMessage message2 = new MyMessage ();
 
-// Writes the message with Default Lease of Lease.FOREVER
-LeaseContext<MyMessage> lease2 = gigaSpace.write(message2);
+// Writes the message with Default Lease of FOREVER
+ILeaseContext<MyMessage> lease2 = spaceProxy.Write (message2);
 
-MyMessage message3 = new MyMessage();
+MyMessage message3 = new MyMessage ();
 
-// Writes the message with Lease of Lease.FOREVER
-LeaseContext<MyMessage> lease3 = gigaSpace.write(message3, Lease.FOREVER);
+// Writes the message with Lease of FOREVER
+ILeaseContext<MyMessage> lease3 = spaceProxy.Write (message3, long.MaxValue);
 {% endhighlight %}
 
 # Getting Lease Expiration Date
 
 You may use the `Lease.getExpiration` to retrieve the time where the space object will expire. See below simple example - It writes a space into the space with 10 seconds lease and later prints how much time is left for the space object to remain in space before it will expire:
 
-{% highlight java %}
-GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")).gigaSpace();
-
+{% highlight csharp %}
 // Writing object into the space with 10 seconds lease time
-LeaseContext<MyClass> o = space.write(new MyClass(),10000);
-String UID = o.getUID();
-System.out.println("Current Date:"+ new Date(System.currentTimeMillis()) + " Lease Expiration Date:" + new Date(o.getExpiration()));
+ILeaseContext<MyMessage> lease = spaceProxy.Write(new MyMessage(),10000);
+String UID = lease.Uid;
+
+Console.Write("Current Date:"+ new DateTime() + " Lease Expiration Date:" + new DateTime(lease.Expiration));
+
 while(true)
 {
-	long expiredDue = (o.getExpiration() - System.currentTimeMillis())/1000 ;
-	System.out.println("Object "+UID +" Expired in :" + expiredDue+ " seconds");
+    long expiredDue = (lease.Expiration - new DateTime().Millisecond) ;
+
+	Console.Write("Object "+UID +" Expired in :" + expiredDue+ " seconds");
+
 	if (expiredDue <= 0) break;
-	Thread.sleep(1000);
+	    Thread.Sleep(1000);
 }
 {% endhighlight %}
 
 # Manually Managing Space Object Lease
 
-GigaSpaces API returns the `LeaseContext` after every write operation/update operation. Space Object Leases can be renewed or cancelled based on the application needs.
+GigaSpaces API returns the `ILeaseContext` after every write operation/update operation. Space Object Leases can be renewed or cancelled based on the application needs.
 
-{% highlight java %}
-LeaseContext<Order> lease;
+{% highlight csharp %}
+ILeaseContext<Order> lease;
 
 ...
 public void writeOrder() {
 ...
 //Save lease from write operation
-lease = gigaSpace.write(singleOrder);
+lease = spaceProxy.Write(singleOrder);
 ...
 
 public void cancelLease() {
 ...
-lease.cancel();
+lease.Cancel();
 {% endhighlight %}
 
-Another alternative to using LeaseContext objects is to retrieve the objects and updating the Lease to desired duration.
+Another alternative to using ILeaseContext objects is to retrieve the objects and updating the Lease to desired duration.
 
-{% highlight java %}
+{% highlight csharp %}
 //Retrieve all processed low priority orders and expire the lease
 Order template = new Order();
 
-template.setType(OrderType.LOW);
-template.setProcessed(true);
+template.Type=OrderType.LOW;
+template.Processed=true;
 
-Order[] processedLowPriorityOrders = gigaSpace.readMultiple(template, 1000);
+Order[] processedLowPriorityOrders = spaceProxy.ReadMultiple(template, 1000);
 
 //Update the lease to expire in 1 second
-gigaSpace.writeMultiple(processedLowPriorityOrders,
+spaceProxy.WriteMultiple(processedLowPriorityOrders,
 		1000,					// Update the Lease to 1 second
-		UpdateModifiers.UPDATE_OR_WRITE); // Update existing object
+		WriteModifiers.UpdateOrWrite); // Update existing object
 {% endhighlight %}
 
 {% anchor LeaseRenewalManager %}
 
+{%comment%}
 # Managing Leases using LeaseRenewalManager
 
 LeaseRenewalManager provides systematic renewal and management of a set of leases associated with one or more remote entities on behalf of a local entity.
@@ -134,13 +134,13 @@ Each lease in the managed set also has two other associated attributes: a desire
 
 Each time a lease is renewed, the renewal manager will ask for an extension equal to the lease's renewal duration if the renewal duration is:
 
-- Lease.FOREVER, or
+- FOREVER, or
 - less than the remaining desired duration,
 
 otherwise it will ask for an extension equal to the lease's remaining desired duration.
 
 {% note %}
- Starting from XAP 9.5, Lease.ANY is not supported, equivalent is to use Lease.FOREVER when using LeaseRenewalManager.
+ Starting from XAP 9.5, Lease.ANY is not supported, equivalent is to use FOREVER when using LeaseRenewalManager.
 {% endnote %}
 
 Once a lease is given to a lease renewal manager, the manager will continue to renew the lease until one of the following occurs:
@@ -166,8 +166,8 @@ The time at which a lease is scheduled for renewal is based on the expiration ti
 
 The following pseudocode was derived from the code which computes the renewal time. In this code, rtt represents the value of the roundTripTime:
 
-{% highlight java %}
-  endTime = lease.getExpiration();
+{% highlight csharp %}
+  endTime = lease.Expiration;
   delta = endTime - now;
   if (delta <= rtt * 2) {
 	delta = rtt;
@@ -191,7 +191,7 @@ It is important to note that delta is never less than rtt when the renewal time 
 
 If an attempt to renew a lease fails with an indefinite exception, a renewal is rescheduled with an updated renewal time as computed by the following pseudocode:
 
-{% highlight java %}
+{% highlight csharp %}
   delta = endTime - renew;
   if (delta > rtt) {
 	  if (delta <= rtt * 3) {
@@ -221,7 +221,7 @@ Following example shows a client writing `Order`'s to the space with a limited l
 {% inittab os_simple_space|top %}
 {% tabcontent LeaseManagerClient %}
 
-{% highlight java %}
+{% highlight csharp %}
 ...
 
 public class LeaseManagerClient {
@@ -290,7 +290,7 @@ public class LeaseManagerClient {
 {% endtabcontent %}
 {% tabcontent Using Custom LeaseRenewalManager Configuration %}
 
-{% highlight java %}
+{% highlight csharp %}
 public LeaseManagerClient(String url) {
 
 ... // Same as previous one
@@ -355,7 +355,7 @@ private static final class LeaseRenewalConfiguration implements Configuration {
 {% endtabcontent %}
 {% tabcontent LeaseListener %}
 
-{% highlight java %}
+{% highlight csharp %}
 public class MyLeaseListener implements LeaseListener{
 
 	Logger logger = Logger.getLogger(this.getClass().getName());
@@ -373,7 +373,7 @@ public class MyLeaseListener implements LeaseListener{
 {% endtabcontent %}
 {% tabcontent Order %}
 
-{% highlight java %}
+{% highlight csharp %}
 public class Order implements Serializable {
 
 	private String id;
@@ -416,7 +416,7 @@ API page for [LeaseRenewalManager](http://www.gigaspaces.com/docs/JiniApi/net/ji
 
 Getting events once the space object lease expired can be done using the [Notify Container](./notify-container.html). See example below:
 
-{% highlight java %}
+{% highlight csharp %}
 SimpleListener myListenr = new SimpleListener();
 SimpleNotifyEventListenerContainer notifyEventListenerContainer = new SimpleNotifyContainerConfigurer(
 	gigaSpace).notifyLeaseExpire(true).
@@ -426,7 +426,7 @@ SimpleNotifyEventListenerContainer notifyEventListenerContainer = new SimpleNoti
 
 The `Listener`:
 
-{% highlight java %}
+{% highlight csharp %}
 public class SimpleListener implements SpaceDataEventListener<MyData> {
 	public void onEvent(MyData data, GigaSpace gigaSpace,
 			TransactionStatus txStatus, Object source) {
@@ -450,7 +450,7 @@ When Objects are written to a Persistent Space (backed by a permanent store usin
 
 You can control how often this thread invokes the invalidation process. This involves iterating through all the expired space objects since the last invalidation cycle, and allowing the JVM garbage collector to release the memory consumed for the object. To configure the Lease Manager interval use the following:
 
-{% highlight java %}
+{% highlight csharp %}
 space-config.lease_manager.expiration_time_interval=10000
 {% endhighlight %}
 
@@ -458,3 +458,5 @@ space-config.lease_manager.expiration_time_interval=10000
 - The `NOTIFY_LEASE_EXPIRATION` notification is called when the Lease Manager invalidates the object.
 - Notifications for expired objects sent **both from the primary and the backup space** (in case you have a backup running).
 - When a transaction is timed out, its locked objects are released when the lease manager thread is triggered. This means that if a client fails while a transaction is opened with locked objects (take, write, read, and update using transactions), the locked objects are released once the lease manager thread identifies the expired transaction.
+
+{%endcomment%}

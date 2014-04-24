@@ -46,7 +46,7 @@ Space Filters are interceptors inside the GigaSpaces space engine.
 - [Space mode context](./space-mode-context-loader.html){%wbr%}
 Allows you to load a Spring application context only when the Processing Unit or space is in primary mode, and unload it when the Processing Unit or space is in backup mode.
 
-- [Lease](./leases---automatic-expiration.html){%wbr%}
+- [Lease Time](./leases-automatic-expiration.html){%wbr%}
 Lease basics and explains how Leases can be managed.
 
 - [Best Practices](./the-space-best-practices.html){%wbr%}

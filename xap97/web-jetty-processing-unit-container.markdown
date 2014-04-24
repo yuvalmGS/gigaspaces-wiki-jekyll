@@ -102,43 +102,43 @@ In this case, if another web application is deployed on the same GSC, the `web.p
 ## Jetty Instance
 
 {% highlight xml %}
-<bean id="jettyHolder" class="org.openspaces.pu.container.jee.jetty.holder.SharedJettyHolder">
-<constructor-arg ref="jetty" />
+<bean id="jettyHolder"
+	class="org.openspaces.pu.container.jee.jetty.holder.SharedJettyHolder">
+	<constructor-arg ref="jetty" />
 </bean>
 
 <bean id="jetty" class="org.eclipse.jetty.server.Server">
+	<property name="threadPool">
+		<bean class="org.eclipse.jetty.util.thread.QueuedThreadPool">
+			<property name="minThreads" value="${web.threadPool.minThreads}" />
+			<property name="maxThreads" value="${web.threadPool.maxThreads}" />
+		</bean>
 
-<property name="threadPool">
-<bean class="org.eclipse.jetty.util.thread.QueuedThreadPool">
-<property name="minThreads" value="${web.threadPool.minThreads}"/>
-<property name="maxThreads" value="${web.threadPool.maxThreads}"/>
-</bean>
-</property>
-
-<property name="connectors">
-<list>
-<bean class="org.eclipse.jetty.server.nio.SelectChannelConnector">
-<property name="port" ref="port"/>
-<property name="maxIdleTime" value="${web.selector.maxIdleTime}"/>
-<property name="acceptors" value="${web.selector.acceptors}"/>
-<property name="statsOn" value="${web.statsOn}"/>
-<property name="confidentialPort" ref="confidentialPort"/>
-<property name="lowResourcesConnections" value="${web.selector.lowResourcesConnections}"/>
-<property name="lowResourcesMaxIdleTime" value="${web.selector.lowResourcesMaxIdleTime}"/>
-<property name="forwarded" value="${web.selector.forwarded}" />
-</bean>
-</list>
-</property>
-<property name="handler">
-<bean class="org.eclipse.jetty.server.handler.HandlerCollection">
-<property name="handlers">
-<list>
-<bean class="org.eclipse.jetty.server.handler.ContextHandlerCollection"/>
-<bean class="org.eclipse.jetty.server.handler.DefaultHandler"/>
-</list>
-</property>
-</bean>
-</property>
+	</property>
+	<property name="connectors">
+		<list>
+			<bean class="org.eclipse.jetty.server.nio.SelectChannelConnector">
+				<property name="port" ref="port" />
+				<property name="maxIdleTime" value="${web.selector.maxIdleTime}" />
+				<property name="acceptors" value="${web.selector.acceptors}" />
+				<property name="statsOn" value="${web.statsOn}" />
+				<property name="confidentialPort" ref="confidentialPort" />
+				<property name="lowResourcesConnections" value="${web.selector.lowResourcesConnections}" />
+				<property name="lowResourcesMaxIdleTime" value="${web.selector.lowResourcesMaxIdleTime}" />
+				<property name="forwarded" value="${web.selector.forwarded}" />
+			</bean>
+		</list>
+	</property>
+	<property name="handler">
+		<bean class="org.eclipse.jetty.server.handler.HandlerCollection">
+			<property name="handlers">
+				<list>
+					<bean class="org.eclipse.jetty.server.handler.ContextHandlerCollection" />
+					<bean class="org.eclipse.jetty.server.handler.DefaultHandler" />
+				</list>
+			</property>
+		</bean>
+	</property>
 </bean>
 </beans>
 {% endhighlight %}
@@ -152,25 +152,25 @@ The bean that is actually used (and expected to be defined) within the configura
 ## Web Context
 
 {% highlight xml %}
-<bean id="webAppContext" class="org.eclipse.jetty.webapp.WebAppContext">
-<property name="contextPath" ref="context" />
-<property name="war" value="${jee.deployPath}" />
-<property name="tempDirectory" value="${jee.deployPath}/WEB-INF/work" />
-<property name="copyWebDir" value="${web.context.copyWebDir}" />
-<property name="parentLoaderPriority" value="${web.context.classLoader.parentFirst}" />
-<property name="configurationClasses">
-<list>
-<value>org.eclipse.jetty.webapp.WebInfConfiguration</value>
-<value>org.eclipse.jetty.webapp.WebXmlConfiguration</value>
-<value>org.eclipse.jetty.webapp.MetaInfConfiguration</value>
-<value>org.eclipse.jetty.webapp.FragmentConfiguration</value>
-<value>org.eclipse.jetty.plus.webapp.EnvConfiguration</value>
-<value>org.eclipse.jetty.plus.webapp.PlusConfiguration</value>
-<value>org.eclipse.jetty.webapp.JettyWebXmlConfiguration</value>
-<value>org.eclipse.jetty.webapp.TagLibConfiguration</value>
-</list>
-</property>
-</bean>
+<<bean id="webAppContext" class="org.eclipse.jetty.webapp.WebAppContext">
+ <property name="contextPath" ref="context" />
+ <property name="war" value="${jee.deployPath}" />
+ <property name="tempDirectory" value="${jee.deployPath}/WEB-INF/work" />
+ <property name="copyWebDir" value="${web.context.copyWebDir}" />
+ <property name="parentLoaderPriority" value="${web.context.classLoader.parentFirst}" />
+ <property name="configurationClasses">
+ 	<list>
+ 		<value>org.eclipse.jetty.webapp.WebInfConfiguration</value>
+ 		<value>org.eclipse.jetty.webapp.WebXmlConfiguration</value>
+ 		<value>org.eclipse.jetty.webapp.MetaInfConfiguration</value>
+ 		<value>org.eclipse.jetty.webapp.FragmentConfiguration</value>
+ 		<value>org.eclipse.jetty.plus.webapp.EnvConfiguration</value>
+ 		<value>org.eclipse.jetty.plus.webapp.PlusConfiguration</value>
+ 		<value>org.eclipse.jetty.webapp.JettyWebXmlConfiguration</value>
+ 		<value>org.eclipse.jetty.webapp.TagLibConfiguration</value>
+ 	</list>
+ </property>
+ </bean>
 {% endhighlight %}
 
 This bean controls the actual web context that corresponds to the web application instance being deployed. Its context path is the property `web.context`, which defaults to `clusterInfo.name`. (The `clusterInfo.name` is the name of the processing unit, defaults to the war file name, but can be overridden using the override-name feature).
@@ -358,7 +358,7 @@ The second step (as per the link to jetty documentation) is to set the workerNam
 
 Then, the Apache httpd.conf should be modified to enable load balancing, here is an example:
 
-{% highlight java %}
+{% highlight console %}
 ProxyPass /balancer !
 ProxyPass /petclinic balancer://petclinic_cluster/ stickysession=JSESSIONID nofailover=On
 
@@ -399,7 +399,7 @@ The above provides an overview of how to configure apache load balancer by hand.
 
 Web Applications running inside the Jetty container can use SSL. Here is an example that defines SSLConnector,
 
-{% highlight java %}
+{% highlight xml %}
 <property name="connectors">
      <list>
          <bean class="org.eclipse.jetty.server.ssl.SslSelectChannelConnector">
@@ -444,7 +444,7 @@ Attached [example](/download_files/webapp-hash-security.zip) shows a web process
 
 Jetty configuration should include SecurityHandler configuration (`HashLoginService`) which will be something like below,
 
-{% highlight java %}
+{% highlight xml %}
 <property name="securityHandler">
 	<bean class="org.eclipse.jetty.security.ConstraintSecurityHandler">
 		<property name="loginService">
@@ -466,7 +466,7 @@ Attached [example](/download_files/webapp-jaas.zip) shows a web processing unit 
 
 Jetty configuration should include SecurityHandler configuration (`JAASLoginService`) which will be something like below,
 
-{% highlight java %}
+{% highlight xml %}
 <property name="securityHandler">
 	<bean class="org.eclipse.jetty.security.ConstraintSecurityHandler">
 		<property name="loginService">
@@ -483,7 +483,7 @@ Jetty configuration should include SecurityHandler configuration (`JAASLoginServ
 
 Login module definition is a configuration file that maps the module name to a Java class implementation and will be something like below,
 
-{% highlight java %}
+{% highlight console %}
 AASLogin {
           com.gigaspaces.web.jaas.MySecurityModule required
           debug="true" file="/realm.properties";

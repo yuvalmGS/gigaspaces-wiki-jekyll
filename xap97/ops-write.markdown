@@ -105,7 +105,7 @@ Alternatively, you can use the [change](./change-api.html) operation and update 
 
 #### Time To Live
 
-To write an object into the space with a limited time to live you should specify [a lease value](./leases---automatic-expiration.html) (in millisecond). The object will expire automatically from the space.
+To write an object into the space with a limited time to live you should specify [a lease value](./leases-automatic-expiration.html) (in millisecond). The object will expire automatically from the space.
 
 {% highlight java %}
    gigaSpace.write(myObject, 10000)

@@ -53,13 +53,13 @@ By default, the script assumes that Apache is installed under `PROGRAM_FILES/Apa
 
 Linux:
 
-{% highlight java %}
+{% highlight console %}
 apache-lb-agent.sh -apache /opt/apache
 {% endhighlight %}
 
 Windows:
 
-{% highlight java %}
+{% highlight console %}
 apache-lb-agent.bat -apache c:\Apache2.2
 {% endhighlight %}
 
@@ -69,20 +69,20 @@ The specific location of the configuration directory where the load-balancer con
 
 Linux:
 
-{% highlight java %}
+{% highlight console %}
 apache-lb-agent.sh -apache /opt/apache -conf-dir /var/apache/conf/gigaspaces
 {% endhighlight %}
 
 Windows:
 
-{% highlight java %}
+{% highlight console %}
 apache-lb-agent.bat -apache c:\Apache2.2 -conf-dir c:\Apache2.2\conf\gigaspaces
 {% endhighlight %}
 
-{% tip %}
+{% vbar% %}
 The Apache configuration should be updated to include the load-balancer configuration directory, the relevant modules required and optionally to enable the load-balancer console. Here is an example of the configuration sections that should be added to Apache:
 
-{% highlight java %}
+{% highlight console %}
 Include /opt/local/apache2/conf/gigaspaces/*.conf
 
 LoadModule proxy_module modules/mod_proxy.so
@@ -101,7 +101,7 @@ Allow from 127.0.0.1
 </Location>
 {% endhighlight %}
 
-{% endtip %}
+{% endvbar %}
 
 {%comment %}
 When running the Apache Load Balancer and the agent on Windows, please make sure you run the Apache Load Balancer Agent from a [windows cmd started as an administrator user](http://www.lytebyte.com/2008/10/22/how-to-run-as-administrator-in-vista-command-line). Starting it as a normal user will not allow the Apache Load Balancer Agent to reset the Apache Load Balancer successfully.
