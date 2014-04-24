@@ -207,7 +207,7 @@ namespace xaptutorial.model
 
 # Master Worker Pattern
 {%section%}
-{%column width=70% %}
+{%column width=80% %}
 The Master-Worker Pattern (sometimes called the Master-Slave or the Map-Reduce pattern) is used for parallel processing. It follows a simple approach that allows applications to perform simultaneous processing across multiple machines or processes via a `Master` and multiple `Workers`.
 In GigaSpaces XAP, you can implement the Master-Worker pattern using several methods:
 
@@ -217,7 +217,7 @@ In GigaSpaces XAP, you can implement the Master-Worker pattern using several met
 {%endcolumn%}
 {%column width=20% %}
 
-[<img src="/attachment_files/qsg/the_master_worker.jpg" width="200" height="200">](/attachment_files/qsg/the_master_worker.jpg)
+{%popup /attachment_files/qsg/the_master_worker.jpg%}
 
 {%endcolumn%}
 {%endsection%}

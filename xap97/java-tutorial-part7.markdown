@@ -36,12 +36,12 @@ Persistency can be configured to run in Synchronous(direct persistence) or Async
 # Synchronous Persistence
 {%section%}
 
-{%column width=70% %}
+{%column width=80% %}
 When running in direct persistency mode the IMDG interacts with the data source to persist its data where the client application would get the acknowledgment for the IMDG operation only after both the IMDG and the SpaceDataSource finished the operation. With this persistency mode, the IMDG operations performance would be heavily depended on the speed of the Space Synchronization Endpoint to commit the data and provide acknowledgment back to the IMDG for the successful operation of the transaction.
 {%endcolumn%}
 {%column width=20% %}
 
-[<img src="/attachment_files/qsg/data-grid-sync-persistNew.jpg" width="200" height="200">](/attachment_files/qsg/data-grid-sync-persistNew.jpg)
+{%popup /attachment_files/qsg/data-grid-sync-persistNew.jpg%}
 
 
 {%endcolumn%}
@@ -53,12 +53,12 @@ When running in direct persistency mode the IMDG interacts with the data source 
 
 # Asynchronous Persistence
 {%section%}
-{%column width=70% %}
+{%column width=80% %}
 The XAP Mirror Service provides reliable asynchronous persistency. This allows you to asynchronously delegate the operations conducted with the IMDG into a backend database, significantly reducing the performance overhead. The Mirror service ensures that data will not be lost in the event of a failure. This way, you can add persistency to your application just by running the Mirror Service, without touching the real-time portion of your application in either configuration or code. This service provides fine-grained control of which object needs to be persisted.
 {%endcolumn%}
 {%column width=20% %}
 
-[<img src="/attachment_files/qsg/data-grid-async-persistNew.jpg" width="200" height="200">](/attachment_files/qsg/data-grid-async-persistNew.jpg)
+{%popup /attachment_files/qsg/data-grid-async-persistNew.jpg %}
 
 
 {%endcolumn%}

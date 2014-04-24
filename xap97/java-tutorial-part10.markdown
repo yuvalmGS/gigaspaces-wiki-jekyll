@@ -207,7 +207,7 @@ XAP has security built over the major component, GSA, GSM, GSC and Processing Un
  {%endcolumn%}
 {%column width=20% %}
 
-[<img src="/attachment_files/qsg/security_ovreview.jpg" width="200" height="200">](/attachment_files/qsg/security_ovreview.jpg)
+{%popup /attachment_files/qsg/security_ovreview.jpg %}
 
 {%endcolumn%}
 {%endsection%}

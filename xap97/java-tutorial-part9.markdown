@@ -202,13 +202,13 @@ You can implement your own Archive Container to use your NoSQL backend or RDBMS 
 
 # Space Persistency
 {%section%}
-{%column width=70% %}
+{%column width=80% %}
 
 The XAP Mirror Service provides reliable asynchronous persistency. This allows you to asynchronously delegate the operations conducted with the In-Memory-Data-Grid (IMDG) into a backend database, significantly reducing the performance overhead. XAP comes with built in implementations of Space Data Source and Space Synchronization Endpoint for Cassandra, called CassandraSpaceDataSource and CassandraSpaceSynchronizationEndpoint, respectively.
 {%endcolumn%}
 {%column width=20% %}
 
-[<img src="/attachment_files/qsg/noSQL-EDS.jpg" width="200" height="200">](/attachment_files/qsg/noSQL-EDS.jpg)
+{%popup /attachment_files/qsg/noSQL-EDS.jpg %}
 
 {%endcolumn%}
 {%endsection%}
