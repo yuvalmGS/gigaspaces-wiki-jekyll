@@ -46,7 +46,9 @@ Note the line that informs `gsxml2cpp` about the file of your existing class:
 
 # Change the user class.
 
-    {% infosign %} An example of an original class can be found at `<Example Root>\UserMessage_original.h.txt`; and an example of the same class with the changes listed below can be found at `<Example Root>\UserMessage.h`.
+{% info %}
+An example of an original class can be found at `<Example Root>\UserMessage_original.h.txt`; and an example of the same class with the changes listed below can be found at `<Example Root>\UserMessage.h`.
+{%endinfo%}
 
 Step 1. Add an include statement and namespace as shown below:
 

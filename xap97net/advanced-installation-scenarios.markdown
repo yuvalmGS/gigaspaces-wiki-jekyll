@@ -2,13 +2,13 @@
 layout: post97
 title:  Advanced Scenarios
 categories: XAP97NET
-parent: installation.html
+parent: installation-overview.html
 weight: 100
 ---
 
-{% summary %}Common Questions and Answers about XAP.NET installations.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 GigaSpaces XAP.NET takes advantage of several runtime components from GigaSpaces XAP (and, as a consequence, Java). In most cases, this is transparent to the user, since the XAP.NET installation process includes the required Java and XAP files. However, in some cases, users may wish to use an existing Java or XAP installation (e.g. developing interoperability solutions, using both XAP and XAP.NET). This page explains how to install XAP.NET in such scenarios.
 
@@ -38,7 +38,10 @@ If you wish XAP.NET to use an existing XAP installation instead of creating an a
 #### Q. I've already installed XAP.NET. Can I configure it to work with a different XAP location?
 
 Yes. Edit the `Settings.xml` file (located in `<ProductRoot>\Config`) and change the value of `<XapNet.Runtime.Path>` to the new location.
-{% exclamation %} Mixing XAP.NET and XAP versions is not supported - always use the same version and build.
+
+{% note %}
+Mixing XAP.NET and XAP versions is not supported - always use the same version and build.
+{%endnote%}
 
 # Automated Setup
 
@@ -47,7 +50,9 @@ Yes. Edit the `Settings.xml` file (located in `<ProductRoot>\Config`) and change
 Yes. From the command line, type the following:
 `C:\>msiexec /i GigaSpaces-XAP.NET-9.0.0.5000-GA-x86.msi /quiet`
 
-{% plus %} For more information about installing msi packages from command line, see [http://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspx](http://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspx).
+{% info %}
+For more information about installing msi packages from command line, see [http://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspx](http://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspx).
+{%endinfo%}
 
 # Manual configuration without setup
 
@@ -58,21 +63,32 @@ XAP.NET installation is released as an `msi` file because simply copying the fil
 Sometimes, however, you may want to use XAP.NET without running setup (e.g. on a production server).
 To do that:
 
-1. Install XAP.NET on another machine (e.g. a developer's machine).
-2. Package the installed files into a zip file (or any other compression tool you prefer).
-3. Unzip the package on the target machine(s) wherever you prefer.
+Step 1. Install XAP.NET on another machine (e.g. a developer's machine).
+Step 2. Package the installed files into a zip file (or any other compression tool you prefer).
+Step 3. Unzip the package on the target machine(s) wherever you prefer.
 
-{% exclamation %} If you plan to use XAP.NET with .NET 4.0, make sure that the **Visual C++ 2010 Redistributable Package** ([x86](http://www.microsoft.com/download/en/details.aspx?id=5555) | [x64](http://www.microsoft.com/download/en/details.aspx?id=14632)) is installed on the target machine (this is required only for manual installation - if the msi is installed the C++ redist package is installed automatically if needed).
+{% note %}
+If you plan to use XAP.NET with .NET 4.0, make sure that the **Visual C++ 2010 Redistributable Package** [x86](http://www.microsoft.com/download/en/details.aspx?id=5555)  [x64](http://www.microsoft.com/download/en/details.aspx?id=14632)) is installed on the target machine (this is required only for manual installation - if the msi is installed the C++ redist package is installed automatically if needed).
+{%endnote%}
 
 The final touch is to configure the location of XAP.NET. This can be achieved in one of the following ways:
 
-1. **Windows Registry:** Create a registry key named `HKLM\SOFTWARE\GigaSpaces\XAP.NET\<version>\<clrversion>`, with a String value named `SettingsPath` which points to the location of the `Settings.xml` file. For example, the XAP.NET v9.5 x86 setup creates the following keys:
+Step 4. **Windows Registry:** Create a registry key named `HKLM\SOFTWARE\GigaSpaces\XAP.NET\<version>\<clrversion>`, with a String value named `SettingsPath` which points to the location of the `Settings.xml` file.
+
+For example, the XAP.NET v9.5 x86 setup creates the following keys:
 HKLM\SOFTWARE\GigaSpaces\XAP.NET\9.5.0.5000\CLR v2.0.50727\SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml
+
 HKLM\SOFTWARE\GigaSpaces\XAP.NET\9.5.0.5000\CLR v4.0.30319\SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v4.0.30319\Config\Settings.xml
-{% infosign %} Starting 8.0.3 the HKCU is supported as well, and is searched before HKLM.
-2. **Environment variable:** Create an environment variable named `XapNet_<version>_SettingsPath` which points to the settings file path. For example, for that same 9.5 version we would use:
+
+{% info %}
+Starting 8.0.3 the HKCU is supported as well, and is searched before HKLM.
+{%endinfo%}
+
+Step 5. **Environment variable:** Create an environment variable named `XapNet_<version>_SettingsPath` which points to the settings file path. For example, for that same 9.5 version we would use:
+
 XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml.
-3. **Application configuration file**: Use the XapNetSettingsFile element to configure the location of the settings file. For example:
+
+Step 6. **Application configuration file**: Use the XapNetSettingsFile element to configure the location of the settings file. For example:
 {% highlight xml %}
 <configuration>
     <configSections>
@@ -83,34 +99,40 @@ XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Co
     </GigaSpaces>
 </configuration>
 {% endhighlight %}
-4. **Code:** Use the following code to set the location of the settings file at runtime:
-{% highlight java %}
+
+Step 7. **Code:** Use the following code to set the location of the settings file at runtime:
+{% highlight csharp %}
     GigaSpacesFactory.Configuration.XapNetSettingsFile.Path = @"C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml"
 {% endhighlight %}
 
 #### Q. I need to minimize the installation size. Can I use a shared folder on a server to store part of the installation?
 
 Yes. You can manually set the registry settings shown above to point both java and XAP to a shared folder on a remote server.
-{% exclamation %} In such scenarios, the shared folder that contains XAP must be mapped as a network drive. XAP will fail to load if a network path is used (e.g. server\share).
+
+{% note %}
+In such scenarios, the shared folder that contains XAP must be mapped as a network drive. XAP will fail to load if a network path is used (e.g. server\share).
+{%endnote%}
 
 # Using GAC (Global Assembly Cache)
 
 #### Q. My application uses the Global Assembly Cache to locate 3rd party assemblies. Which XAP.NET assemblies do I need to register?
 
-1. Register the following XAP.NET assemblies in the Global Assembly Cache:
+Step 1. Register the following XAP.NET assemblies in the Global Assembly Cache:
     1. `Bin\GigaSpaces.Core.dll`
     2. `Bin\GigaSpaces.NetToJava.dll`
 
-2. Modify the GigaSpaces section definition in `Config\Default.config` and `Config\DefaultApp.config` to specify a strong-name for GigaSpaces.Core:
+Step 2. Modify the GigaSpaces section definition in `Config\Default.config` and `Config\DefaultApp.config` to specify a strong-name for GigaSpaces.Core:
 
-{% highlight java %}
+{% highlight csharp %}
 <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core"/>
 {% endhighlight %}
 
 Should be replaced it with:
 
-{% highlight java %}
+{% highlight csharp %}
 <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core, Version=9.5.0.5000, Culture=neutral, PublicKeyToken=94297b57ee0e4ad5"/>
 {% endhighlight %}
 
-{% infosign %} The `Version` should be set according to the version of XAP.NET in use (For example, if you're using XAP.NET 9.5 set the version to 9.5.0.5000).
+{% info %}
+The `Version` should be set according to the version of XAP.NET in use (For example, if you're using XAP.NET 9.5 set the version to 9.5.0.5000).
+{%endinfo%}

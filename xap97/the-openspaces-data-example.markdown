@@ -91,7 +91,9 @@ Note the annotations that are used in this object:
 
 Basically, every `Data` object is written to the space by the `DataFeeder` or by the `JMSDataFeeder` with the `processed` value set to `false`, and this value is later set to `true` by the `DataProcessor`.
 
-{% infosign %} Even though our object implements `Serializable`, it doesn't have to in all cases. This is relevant only when the `Data` object is used as a parameter in remote calls.
+{% info %}
+Even though our object implements `Serializable`, it doesn't have to in all cases. This is relevant only when the `Data` object is used as a parameter in remote calls.
+{%endinfo%}
 
 # POJO Services with Spring
 
@@ -136,7 +138,9 @@ Similar to the polling container, the `@EventTemplate` annotation is used to ann
 Unlike the `DataProcessor`, which defines the template in the form of a `Data` instance, the `DataProcessedCounter` defines a `SQLQuery`, using the class type and and the `WHERE` clause of the query. The SQL query is equivalent to the way we defined the template, and either can be used (although the `SQLQuery` allows more flexibility since it support `OR`, _greater than_ and _less than_ semantics.
 As with the polling container, the `pu.xml` should include the `<context:annotation-config/>` and `<os-events:annotation-support/>` tags (it's enough to specify them once for the entire processing unit, regardless of the number of actual event containers in your processing unit)
 
-{% infosign %} Note that code only contains the implementation of the counter. Everything else is configured through annotation (or alternatively can be configured via XML), which means you can change the event-handling mode without changing the handling code.
+{% info %}
+Note that code only contains the implementation of the counter. Everything else is configured through annotation (or alternatively can be configured via XML), which means you can change the event-handling mode without changing the handling code.
+{%endinfo%}
 
 {% anchor datafeeder %}
 

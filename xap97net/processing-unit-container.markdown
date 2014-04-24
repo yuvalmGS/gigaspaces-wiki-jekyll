@@ -81,13 +81,16 @@ A processing unit container is an extension of the `GigaSpaces.XAP.ProcessingUni
 ## Step 2 -- Create a Deployment pu.config File
 
 You need a config file, which is used to deploy the Processing Unit Container. This config file must be named `pu.config` and needs to be placed together with your processing unit container implementation assemblies.
+
 {% anchor pu.config %}
 
 ## Step 3 -- Configure the Deployment pu.config File
 
 The `pu.config` you've created needs to be edited to point to your Processing Unit Container implementation. The file should contain the following data:
 
-{% lampon %} It is recommended to use the `pu.config` file located in `<GigaSpaces Root>\Examples\ProcessingUnit\Feeder\Deployment` as a template.
+{% note %}
+It is recommended to use the `pu.config` file located in `<GigaSpaces Root>\Examples\ProcessingUnit\Feeder\Deployment` as a template.
+{%endnote%}
 
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>

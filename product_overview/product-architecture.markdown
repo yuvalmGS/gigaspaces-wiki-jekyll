@@ -287,7 +287,9 @@ The [Grid Service Agent (GSA)](./service-grid.html#gsa) acts as a process manage
 
 Usually, a single GSA is deployed on each individual machine. The GSA spawns [Grid Service Managers](./service-grid.html#gsm), [Grid Service Containers](./service-grid.html#gsc), and other processes. Once a process is spawned, the GSA assigns a unique id for it and manages its life cycle. The GSA will restart the process if it exits abnormally (exit code different than 0), or if a specific console output has been encountered (for example, OutOfMemoryError).
 
-{% lampon %}Though [Grid Service Manager](./service-grid.html#gsm), [Grid Service Container](./service-grid.html#gsc), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
+{% note %}
+Though [Grid Service Manager](./service-grid.html#gsm), [Grid Service Container](./service-grid.html#gsc), and other processes can be started independently, it is preferable that they be started using the GSA, thus allowing to easily monitor and manage them.
+{%endnote%}
 
 {% anchor gsm %}
 
@@ -297,7 +299,9 @@ The Grid Service Manager (GSM) is a special Deployment Infrastructure service re
 
 The GSM monitors SLA breach events throughout the life-cycle of the application, and is responsible for taking corrective actions once SLAs are breached.
 
-{% infosign %}It is common to start two instances of GSMs across a Deployment Infrastructure cloud, for high-availability reasons.
+{% info %}
+It is common to start two instances of GSMs across a Deployment Infrastructure cloud, for high-availability reasons.
+{%endinfo%}
 
 {% anchor gsc %}
 

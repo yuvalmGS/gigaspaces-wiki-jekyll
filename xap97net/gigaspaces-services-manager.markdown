@@ -2,7 +2,7 @@
 layout: post97
 title:  Services Manager
 categories: XAP97NET
-parent: installation.html
+parent: installation-overview.html
 weight: 300
 ---
 

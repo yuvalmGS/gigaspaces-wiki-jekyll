@@ -277,7 +277,9 @@ Wait to see the following output:
 **Partitioned Master-Local Cache Topology**
 In this topology, data is split between two spaces (partitions) according to an index field defined in the data. An algorithm, defined in the load-balancing policy, maps values of the index field to specific partitions.
 
-{% infosign %} This topology requires XAP Premium Edition.
+{% info %}
+This topology requires XAP Premium Edition.
+{%endinfo%}
 
 {% indent 2 %}
 ![HB Master Local Partitioned GS.jpg](/attachment_files/HB Master Local Partitioned GS.jpg)
@@ -312,7 +314,9 @@ Wait to see the following output:
 **Embedded Replicated Cache Topology**
 This topology consists of two or more space instances with replication between them, allowing two or more applications to work with their own dedicated data store, while working on the same data as the other applications.
 
-{% infosign %} This topology requires XAP Premium Edition.
+{% info %}
+This topology requires XAP Premium Edition.
+{%endinfo%}
 
 {% indent 2 %}
 ![Hibernate with 2 emedded replicated.jpg](/attachment_files/Hibernate with 2 emedded replicated.jpg)
@@ -346,7 +350,7 @@ See the [Moving from Hibernate to Space](/sbp/moving-from-hibernate-to-space.htm
 
 When using Hibernate Second Level Cache you can configure also GigaSpaces local cache. See below an example for both:
 
-{% highlight java %}
+{% highlight xml %}
 <property name="hibernateProperties">
    <props>
 	<prop key="hibernate.dialect">org.hibernate.dialect.${jdbc.platform}Dialect</prop>

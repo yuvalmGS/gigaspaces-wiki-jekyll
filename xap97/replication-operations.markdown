@@ -6,7 +6,7 @@ parent: replication.html
 weight: 500
 ---
 
-{% compositionsetup %}{% summary %} This section describes in detail how each space operation is replicated provides relevant configuration and optimizations .{% endsummary %}
+{% summary %} This section describes in detail how each space operation is replicated provides relevant configuration and optimizations .{% endsummary %}
 
 # Overview
 
@@ -19,7 +19,9 @@ The replication module used to synchronize the data and state between two space 
 1. Object/Notifications lease cancellation or renewal.
 1. Committed transactions.
 
-{% infosign %} All the operations that are replicated, are also recovered during the space recovery process. See [Space Instance Recovery](./space-instance-recovery.html)
+{% info %}
+All the operations that are replicated, are also recovered during the space recovery process. See [Space Instance Recovery](./space-instance-recovery.html)
+{%endinfo%}
 
 # Which Operations are Not Replicated?
 
@@ -53,7 +55,9 @@ public class MyPojo
 
 - **Operation level replication** - space can be configured so that only specific operations are replicated from a source space to the target space(s).
 
-{% infosign %} In replicated topology, **the take and clear operations are identical**. Therefore, referrals to the take operation in this section are also relevant for the clear operation.
+{% info %}
+In replicated topology, **the take and clear operations are identical**. Therefore, referrals to the take operation in this section are also relevant for the clear operation.
+{%endinfo%}
 
 This can be done by setting the following property:
 
@@ -105,8 +109,10 @@ A table describing the behavior of combining the different properties:
 | False | True | Client gets notification only from those spaces that it registered for notification.{% wbr %}Notification occurs when data has been delivered to the space, either by a client application or from the replication. |
 | True | True | Client gets notification from all cluster spaces after registration.{% wbr %}Client gets multiple notifications for every space event. |
 
-{% infosign %} Enabling both the Replicate notify templates and trigger notify templates triggers an event for each space, so it may result in more events than you initially intended.
+{% info %}
+Enabling both the Replicate notify templates and trigger notify templates triggers an event for each space, so it may result in more events than you initially intended.
  You can use the source of the event to check which space triggered it.
+{%endinfo%}
 
 # Conflicting operation handling
 
@@ -133,7 +139,9 @@ For example the take operation only replicates the object ID to minimize the net
 
 Additional optimizations that can affect the replication performance is the update operation. Regular object updates replicate the whole object state - all the properties even those that were not changed. This can be optimized by using `WriteModifier.PARTIAL_UPDATE` modifier when performing the object update. When this modifier is used, the replication will replicate only the changed properties and not the whole object.
 
-{% infosign %} When mirror is used additional settings are required to support the partial update. See [Optimizing the Mirror Activity](./asynchronous-persistency-with-the-mirror.html#Optimizing the Mirror Activity).
+{% info %}
+When mirror is used additional settings are required to support the partial update. See [Optimizing the Mirror Activity](./asynchronous-persistency-with-the-mirror.html#Optimizing the Mirror Activity).
+{%endinfo%}
 
 # Replication Filters
 

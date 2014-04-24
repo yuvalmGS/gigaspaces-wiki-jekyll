@@ -74,7 +74,9 @@ JConsole includes a [new tab](http://blog.luminis.nl/luminis/entry/top_threads_p
 
 - **[Download the topthreads.jar file](http://blog.luminis.nl/luminis/resource/peter/topthreads.jar)** and add it to your `<GigaSpaces Root>\lib\ui` folder.
 
-{% infosign %} `topthreads.jar` is used by default. If `topthreads.jar` isn't found, the `JTop.jar` file (which is part of the JDK) is used instead.
+{% info %}
+`topthreads.jar` is used by default. If `topthreads.jar` isn't found, the `JTop.jar` file (which is part of the JDK) is used instead.
+{%endinfo%}
 
 Below are some example screenshots:
 
@@ -207,7 +209,9 @@ The space extensions **Info** tab displays the MBean name and its Java class.
 
 There is an option to restrict the access to space and space container operations or attributes; for example, you can decide to hide some of the attributes and configuration, and disable execution of operations.
 
-{% infosign %} This way, you can view, restrict or modify most of the space and space container **configuration** (as set in the space/container schema files), or the basic **admin operations**, which were discussed in the above sections.
+{% info %}
+This way, you can view, restrict or modify most of the space and space container **configuration** (as set in the space/container schema files), or the basic **admin operations**, which were discussed in the above sections.
+{%endinfo%}
 
 To do this, modify the following space and space container **MBean Descriptors**, which are located inside the `<GigaSpaces Root>\lib\JSpaces.jar` file:
 

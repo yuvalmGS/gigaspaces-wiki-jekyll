@@ -521,7 +521,9 @@ OpenSpaces comes with several built-in receive operation-handler implementations
 |`MultiReadReceiveOperationHandler`|First tries to perform readMultiple (using a configured max Entries). If no values are returned, performs a blocking read operation with the receive timeout.|
 |`MultiExclusiveReadReceiveOperationHandler`|First tries to perform readMultiple (using a configured max Entries). If no values are returned, performs a blocking read operation with the receive timeout. Both read operations are performed under an exclusive read lock (similar to "select for update" in databases) which mimics a take operation without actually taking the Entry from the space. Note, this receive operation handler must be used within a transaction. |
 
-{% infosign %} When using the `ExclusiveReadReceiveOperationHandler` or even the `SingleReadReceiveOperationHandler`, it is important to remember that the actual event still remains in the space. If the data event is not taken from the space, or one of its properties changes in order **not** to match the container template, the same data event is read again.
+{% info %}
+When using the `ExclusiveReadReceiveOperationHandler` or even the `SingleReadReceiveOperationHandler`, it is important to remember that the actual event still remains in the space. If the data event is not taken from the space, or one of its properties changes in order **not** to match the container template, the same data event is read again.
+{%endinfo%}
 
 Here is an example of how the receive operation handler can be configured with `MultiTakeReceiveOperationHandler`:
 
@@ -938,7 +940,9 @@ SimplePollingEventListenerContainer pollingContainer configurer = new SimplePoll
 
 When using transactions with polling container a special care should be taken with timeout values. Transactions started by the polling container can have a timeout value associated with them (if not set will default to the default timeout value of the transaction manager, which is 60 Sec). If setting a specific timeout value, make sure the timeout value is higher than the timeout value for blocking operations and includes the expected execution time of the associated listener.
 
-{% infosign %} Note the timeout value is in seconds as per Spring spec for TransactionDefinition.
+{% info %}
+Note the timeout value is in seconds as per Spring spec for TransactionDefinition.
+{%endinfo%}
 
 Here is an example how timeout value (and transaction isolation) can be set with polling container:
 

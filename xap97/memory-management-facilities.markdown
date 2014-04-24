@@ -6,7 +6,7 @@ parent: administrators-guide.html
 weight: 240
 ---
 
-{% compositionsetup %}
+
 {% summary %}Setting Space cache policy, memory usage, and rules for exceeding physical memory capacity.{% endsummary %}
 
 # Overview
@@ -129,7 +129,9 @@ User[] evictedUsers = gigaSpace.takeMultiple(template, Integer.MAX_VALUE, TakeMo
 {% endtabcontent %}
 {% endinittab %}
 
-{% infosign %} It's important to note the following about the `TakeModifiers.EVICT_ONLY` modifier:
+{% info %}
+It's important to note the following about the `TakeModifiers.EVICT_ONLY` modifier:
+{%endinfo%}
 
 - It can be used with any take operation - `take`, `takeById`, `takeMultiple`, etc.
 - It can be used only with LRU policy.
@@ -165,6 +167,8 @@ The following properties used to control the memory manager.
 |`space-config.engine.initial_load` | When a persistent space running in LRU cache policy mode is started/deployed, it loads data from the underlying data source before being available for clients to access. The default behavior is to load data up to 50% of the `space-config.engine.cache_size value`. See the [Reloading Data](./lru-cache-policy.html#Reloading Data) section for details. | 50 | LRU |
 |`space-config.engine.memory_usage.`{%wbr%}`lruTouchThreshold` | LRU touch activity kicks-in when the percentage of objects within the space exceeds `space-config.engine.memory_usage.lruTouchThreshold` where the `space-config.engine.cache_size` is the max amount. This avoid the overhead involved with the LRU activity. A 0 value means always touch, 100 means no touch at all.{% wbr %}The default value of the `space-config.engine.memory_usage.lruTouchThreshold` is 50 which means the LRU touch activity will kick-in when the amount of objects within the space will cross half of the amount specified by the `space-config.engine.cache_size` value. | 50 | LRU |
 
-{% infosign %} A `com.j_spaces.core.MemoryShortageException` or an `org.openspaces.core.SpaceMemoryShortageException` are thrown only when the JVM garbage collection and the eviction mechanism do not evict enough memory. This can happen if the `space-config.engine.memory_usage.low_watermark_percentage` value is too high.
+{% note %}
+A `com.j_spaces.core.MemoryShortageException` or an `org.openspaces.core.SpaceMemoryShortageException` are thrown only when the JVM garbage collection and the eviction mechanism do not evict enough memory. This can happen if the `space-config.engine.memory_usage.low_watermark_percentage` value is too high.
+{%endnote%}
 
 {% children %}

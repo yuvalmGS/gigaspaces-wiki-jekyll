@@ -186,7 +186,9 @@ public class Feeder
 }
 {% endhighlight %}
 
-{% lampon %} The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container
+{% note %}
+The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container
+{%endnote%}
 
 # Creating a Space Proxy Programatically
 
@@ -243,7 +245,9 @@ BasicProcessingUnitContainer container = //Obtain a reference to the container
 IEventListenerContainer<Data> eventListenerContainer = container.GetEventListenerContainer<Data>("DataProcessor");
 {% endhighlight %}
 
-{% lampon %} For full API please read the API documentation file.
+{% note %}
+For full API please read the API documentation file.
+{%endnote%}
 
 # Security
 

@@ -423,7 +423,10 @@ Note that you can specify a _lease_ when writing objects to the space. This dete
 
 The `read` methods are used to retrieve objects from the Space. The `read` method returns a copy of the matching object to the client. To read more than one object, you should use the `readMultiple` methods of the `GigaSpace` interface. To define the criteria for the operation, all of these methods accept either a template object, or an `SQLQuery` instance. A template object is an example object of the class you would like to read. For an object in the space to match the template, each of the non-null properties in the template must match its values for these properties.
 
-{% infosign %} To simply read an object by its ID, you should use one of the `readById`/`readByIds` methods.
+{% info %}
+To simply read an object by its ID, you should use one of the `readById`/`readByIds` methods.
+{%endinfo%}
+
 Here is an example for reading with a template, and by id:
 
 {% highlight java %}

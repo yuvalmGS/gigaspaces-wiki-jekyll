@@ -12,7 +12,9 @@ weight: 100
 
 In order to determine how to monitor/detect and handle a Split Brain scenario, you need to first understand how our system works.
 
-{% infosign %} Attached is another [**presentation**](/presentation_files/Service-grid-FDH%20and%20SplitBrain.pdf) which will illustrate it. For more general details and definition of the Split-Brain please refer to [Split-Brain and Active Election - General Definition](./split-brain-and-active-election---general-definition.html) page.
+{% info %}
+Attached is another [**presentation**](/presentation_files/Service-grid-FDH%20and%20SplitBrain.pdf) which will illustrate it. For more general details and definition of the Split-Brain please refer to [Split-Brain and Active Election - General Definition](./split-brain-and-active-election---general-definition.html) page.
+{%endinfo%}
 
 There are 2 different mechanisms which deals with failover scenarios (note there is a difference between version 6.6 and 7.x):
 
@@ -31,9 +33,11 @@ In one scenario, we have two machines, each with a single GSA, GSC, GSM, and LUS
 
 Having one specific primary machine and one specific backup machine could be achieved by using [Zone configurations](./configuring-the-processing-unit-sla.html).
 
-{% infosign %} Bear in mind that once a failover occurs, the backup space will become a primary even though it is located in a backup zone. You will have to manually relocate the spaces back to their originally-targeted primary machines.
+{% info%}
+Bear in mind that once a failover occurs, the backup space will become a primary even though it is located in a backup zone. You will have to manually relocate the spaces back to their originally-targeted primary machines.
 
-{% infosign %} This [SpaceModeTest.java source](/download_files/SpaceModeTest.java) file is an example of how to determine the status of your spaces using the [Administration and Monitoring API](./administration-and-monitoring-api.html).
+This [SpaceModeTest.java source](/download_files/SpaceModeTest.java) file is an example of how to determine the status of your spaces using the [Administration and Monitoring API](./administration-and-monitoring-api.html).
+{%endinfo%}
 
 # Islands
 
@@ -47,7 +51,9 @@ But if it was the other way around - and the primary GSM lost connection with it
 
 1. A more complex form of "islands" would be if on both islands GSCs are available, leading both GSMs to behave as primaries and deploy the failed PUs. Reconciling at this point will need to take data integrity into account.
 
-{% infosign %} The only recommendation at this point would be to manually reconcile the cluster. Kill the GSM, with only one remaining managing GSM, reload the GSCs hosting the backup space instances, and in the end, load a backup GSM.
+{% info %}
+The only recommendation at this point would be to manually reconcile the cluster. Kill the GSM, with only one remaining managing GSM, reload the GSCs hosting the backup space instances, and in the end, load a backup GSM.
+{%endinfo%}
 
 # Common Causes For a Split-Brain
 
@@ -63,4 +69,6 @@ Below are the most common causes for Split-Brain scenarios and ways to detect th
 - **Network outages/disconnections** - As discussed, disconnections between the GSMs or GSMs and GSCs can cause any of the GSMs to get into what is called "islands".
     - You should be using a network monitoring tool to monitor network outages/disconnections and re connections on machines which run the GSMs and GSCs. Such tool should report and alert on exact datetime of the event.
 
-{% infosign %} Please refer to [Suggested Monitoring Tools](./suggested-monitoring-tools.html) section for more details on recommended tools.
+{% note %}
+Please refer to [Suggested Monitoring Tools](./suggested-monitoring-tools.html) section for more details on recommended tools.
+{%endnote%}

@@ -215,7 +215,9 @@ public class RepFilter implements IReplicationFilter{
 {% comment %}
 # Example - The XML Replication Filter
 
-{% infosign %} Download the [XML replication filter example](/attachment_files/XMLReplicationfilter.zip) and extract it under `\GigaSpaces Root\examples\Advanced\Integration_Plugins`.
+{% info %}
+Download the [XML replication filter example](/attachment_files/XMLReplicationfilter.zip) and extract it under `\GigaSpaces Root\examples\Advanced\Integration_Plugins`.
+{%endinfo%}
 
 The XML replication filter example illustrates a generic replication filter that allows you to define the data to be filtered via XML.
 The example is composed from 2 spaces: siteA space and siteB space, clustered via asynchronous replication policy, where a client application connects to spaceA and writes 2 entries. The XML file includes the class names and their values of a matching object. That object has security grants to be replicated to siteB.
@@ -282,7 +284,7 @@ To view siteA and siteB content - start the space browser. Notice that only one 
 
 #### Client Application
 
-{% highlight java %}
+{% highlight console %}
 welcome to GigaSpaces XML replication filter example!
 Connect to space jini://localhost/*/siteA
 CONFIG: Sets the system property ${com.gs.home} with value: E:\GigaSpacesXAP6.0\bin
@@ -307,7 +309,7 @@ m_counter = 2
 
 #### siteA output
 
-{% highlight java %}
+{% highlight console %}
 ********************************************************
 com.j_spaces.examples.xmlreplicationfilter.MyEntry
 ********************************************************

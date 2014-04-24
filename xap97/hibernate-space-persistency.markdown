@@ -155,7 +155,9 @@ When using annotations to decorate the Space Classes the `sessionFactory` would 
 </bean>
 {% endhighlight %}
 
-{% infosign %} The `external-data-source` element within the persistent schema allows for further configuration of the external data source. The values can be injected using the properties tag within the Space tag using the "xpath" notation.
+{% info %}
+The `external-data-source` element within the persistent schema allows for further configuration of the external data source. The values can be injected using the properties tag within the Space tag using the "xpath" notation.
+{%endinfo%}
 
 Here is an example for a Space Domain class with its Hibernate decorations. See the `@SpaceId` and the `@SpaceRouting` used to include the Space Class meta Data.
 
