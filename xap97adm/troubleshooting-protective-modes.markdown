@@ -1,9 +1,9 @@
 ---
-layout: post97
-title:  Best Practices
-categories: XAP97
-weight: 900
-parent: the-gigaspace-interface-overview.html
+layout: post97adm
+title:  Protective Modes
+categories: XAP97ADM
+weight: 150
+parent: troubleshooting.html
 ---
 
 {%summary%}{%endsummary%}
@@ -18,7 +18,7 @@ For such cases the **Protective Mode** was introduced, which means that the vali
 Id property is essential for update operation and also XAP has a rich set of operations that use the id to perform read/take/update very efficiently without fetching the whole object. 
 Since 9.1 this is enforced by the protective mode:
 
-Writing an entry to the space without a [space ID](./query-by-id.html) is error-prone - it can lead to duplicate entries, bad performance and more.
+Writing an entry to the space without a [space ID]({%currentjavaurl%}/query-by-id.html) is error-prone - it can lead to duplicate entries, bad performance and more.
 In case your application contains objects without an id you'll get the following exception:
 
 {%highlight bash%}
@@ -39,7 +39,7 @@ If this is not feasible, it can be disabled using the following system property:
 The routing property is used to partition the data across different partitions.
 It is recommended to define such property explicitly to control how data is partitioned and avoid common mistakes like writing data to the wrong partition.
 
-See more info on [routing property](./routing-in-partitioned-spaces.html).
+See more info on [routing property]({%currentjavaurl%}/routing-in-partitioned-spaces.html).
 
 Starting 9.7 a new protective mode has been added to protect against writing entries with null value routing.
 In case your application contains objects without routing you'll get the following exception:
@@ -79,9 +79,9 @@ If this is not feasible, and you know what you're doing, it can be disabled usin
 
 If you must use primitive property types, then assign null values. This is enforced by the protective mode since 9.7.
 
-When querying the space using [template matching](./query-template-matching.html), null properties are ignored and non-null properties are matched. Since primitive properties cannot be set to null, a `nullValue` can be assigned to a property to indicate a value which will be treated as null when using template matching.
+When querying the space using [template matching]({%currentjavaurl%}/query-template-matching.html), null properties are ignored and non-null properties are matched. Since primitive properties cannot be set to null, a `nullValue` can be assigned to a property to indicate a value which will be treated as null when using template matching.
 
-See [primitive types matching](./query-template-matching.html#primitive-types)
+See [primitive types matching]({%currentjavaurl%}/query-template-matching.html#primitive-types)
 
 Starting 9.7 a new protective mode has been added to protect against querying with a template which contains one or more primitive properties without a `nullValue`, since such templates are likely to produce unexpected results. 
 
@@ -92,7 +92,7 @@ com.gigaspaces.client.protective.ProtectiveModeException: Operation is rejected 
 {% endhighlight %}
 
 
-It is highly recommended that you define `nullValue` where appropriate, or switch to [SQLQuery](./query-sql.html) instead.
+It is highly recommended that you define `nullValue` where appropriate, or switch to [SQLQuery]({%currentjavaurl%}/query-sql.html) instead.
 
 {%note%}
 If this is not feasible, this protective mode can be disabled using the following system property: 

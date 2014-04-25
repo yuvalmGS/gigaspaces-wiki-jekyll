@@ -16,6 +16,9 @@ In this guide you will find useful information on how to troubleshoot your XAP a
 - [Common user Issues](./troubleshooting-common-user-issues.html){%wbr%}
 Troubleshooting Common Users Mistakes Which Might Lead to Issues
 
+- [Protective Modes](./troubleshooting-protective-modes.html){%wbr%}
+Guidelines for building highly  robust and efficient applications as well as to avoid common mistakes.
+
 - [Testing System environment](./troubleshooting-testing-system-environment.html){%wbr%}
 Verifying a local installation and a remote installation.
 

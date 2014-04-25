@@ -49,7 +49,5 @@ Allows you to load a Spring application context only when the Processing Unit or
 - [Lease Time](./leases-automatic-expiration.html){%wbr%}
 Lease basics and explains how Leases can be managed.
 
-- [Best Practices](./the-space-best-practices.html){%wbr%}
-This guide contains the API guidelines that should be followed when using XAP to achieve best performance and avoid common mistakes.
 
 <hr/>
