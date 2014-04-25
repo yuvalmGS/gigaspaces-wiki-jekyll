@@ -561,7 +561,7 @@ static class SpacePartitionsComperator implements Comparator<SpacePartition>{
 
 # Monitoring the Mirror Service
 
-You are now able to monitor various aspects of the mirror service using the administration and monitoring API.
+You may monitor various aspects of the mirror service using the administration and monitoring API.
 The mirror statistics are available using the `SpaceInstance` statistics. They can be used to monitor the state of the mirror space and whether or not it is functioning properly. These statistics are relevant only for a mirror space instance, and are not available for ordinary space instances. The code below traverses all the space instances and finds the mirror space by retreiving the mirror statistics object (if it isn't null this means it's a mirror space). It then prints out some of the available statistics.
 
 {% highlight java %}
