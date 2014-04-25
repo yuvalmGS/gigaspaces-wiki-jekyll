@@ -6,11 +6,11 @@ parent: tuning-gigaspaces-performance.html
 weight: 110
 ---
 
-{% summary%}Instructions and best practices for tuning large-scale deployments.{% endsummary %}
+{% summary%}{% endsummary %}
 
 # Large Cluster Considerations
 
-{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
+
 
 When designing a large cluster, there are several things that need to be taken into account to assure that the cluster will be able to handle heavy loads, and perform quickly and stably.
 
@@ -48,7 +48,7 @@ If the `RMIRegistry` service is not used, or if a full replication cluster or a 
 
 Do not start more than 2 Lookup Services per cluster. Preferably start these on your strongest machines.
 
-{% endtoczone %}
+
 
 # Many Clients Accessing Space
 

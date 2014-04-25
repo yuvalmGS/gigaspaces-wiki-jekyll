@@ -6,7 +6,7 @@ parent: tuning-gigaspaces-performance.html
 weight: 120
 ---
 
-{% summary %}Client Proxy Connectivity and reconnection options{% endsummary %}
+{% summary %}{% endsummary %}
 
 
 When a client connects to a data grid, the initial connection is actually a connection to a single member in the data grid, which is usually composed of multiple members (additional partitions, primary members vs. backup members, etc). That connection is implicitly wrapped in a proxy which implements the data grid API (write/read/take/etc), and contains an internal component called **Space Proxy Router** which communicates the executed operations from the proxy to the entire data grid.
@@ -130,6 +130,7 @@ There are two types of load balancers supported by the proxy:
 Configuring the load balancer type is done using the `space-config.proxy.router.load-balancer-type` space property.
 
 
+{%comment%}
 # Upgrading From Previous Versions
 
 This section is intended to summarize the changes in 9.0.1 for users upgrading from previous versions.
@@ -137,6 +138,8 @@ This section is intended to summarize the changes in 9.0.1 for users upgrading f
 {% info %}
 For detailed information regarding the old proxy router, refer to [Proxy Connectivity (Old)](./tuning-proxy-connectivity-(old).html).
 {%endinfo%}
+{%endcomment%}
+
 
 ## Reconnection Algorithm
 

@@ -6,9 +6,9 @@ parent: tuning-gigaspaces-performance.html
 weight: 200
 ---
 
-{% summary %}Storing large files in memory.{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
+
 
 GigaSpaces IMDG may store file and large objects in memory (audio files/movie files/large xml files). The GigaSpaces internal communication protocol implementation split large data objects passed between different remote processes (i.e. client and space) into multiple chunks (64K size by default). This provides scalable and stable system allowing clients to write and read large space objects. You may use any client interface; Java, .Net and C++ leveraging any of the supported data access API with large objects: [GigaSpace](./the-gigaspace-interface.html) , [GigaMap](./map-api.html) , [JDBC Driver](./jdbc-driver.html), [JMS](./jms-api-support.html), [JPA](./jpa-api.html), [Document](./document-api.html).
 
