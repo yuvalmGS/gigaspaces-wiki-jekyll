@@ -32,14 +32,15 @@ Simple usage example for the `SpaceIteratorConfig` with the `ISpaceIterator`:
 SqlQuery<Employee> query = new SqlQuery<Employee>("Name='John'");
 
 SpaceIteratorConfig config = new SpaceIteratorConfig();
-config.BufferSize = 1000;
-config.IteratorScope = IteratorScope.FutureEntries;
+config.BufferSize = 5000;
+config.IteratorScope = IteratorScope.ExistingEntries;
 
 ISpaceIterator<Employee> iter = spaceProxy.GetSpaceIterator<Employee> (query, config);
 
-foreach (var employee in iter)
+while(iter.MoveNext())
 {
-	Console.WriteLine("Got Employee: " + employee);
+    Employee employee = iter.Current;
+    Console.WriteLine("Got Employee: " + employee);
 }
 {% endhighlight %}
 
