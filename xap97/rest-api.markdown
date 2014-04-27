@@ -38,7 +38,7 @@ POST is mapped to a WriteOnly action. An exception will be thrown when trying to
 - writeMultiple
 
 {% highlight java %}
-curl -XPOST -d '[{"id":"1", "data":"testdata", "data2":"common", "nestedData" : {"nestedKey1":"nestedValue1"`,
+curl -XPOST -H "Content-Type: application/json" -d '[{"id":"1", "data":"testdata", "data2":"common", "nestedData" : {"nestedKey1":"nestedValue1"`,
 {"id":"2", "data":"testdata2", "data2":"common", "nestedData" : {"nestedKey2":"nestedValue2"`,
 {"id":"3", "data":"testdata3", "data2":"common", "nestedData" : {"nestedKey3":"nestedValue3"`]' http://localhost:8080/WebApp/rest/data/Item
 {% endhighlight %}
