@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Basic
+title:  Basic Index
 categories: XAP97
 parent: indexing-overview.html
 weight: 50

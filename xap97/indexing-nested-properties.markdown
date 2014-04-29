@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Nested Properties
+title:  Nested Property Index
 categories: XAP97
 parent: indexing-overview.html
 weight: 100

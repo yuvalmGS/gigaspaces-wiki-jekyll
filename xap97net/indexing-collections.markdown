@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Collections
+title:  Collection Index
 categories: XAP97NET
 parent: indexing-overview.html
 weight: 200

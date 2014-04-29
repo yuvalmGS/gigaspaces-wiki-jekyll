@@ -27,7 +27,7 @@ Basic index types
 An index can be defined on a nested property to improve performance of nested queries.
 
 - [Indexing colletions](./indexing-collections.html){%wbr%}
-An index can be defined on a Collection property (java.util.Collection implementation).
+An index can be defined on a Collection property.
 
 
 - [Compound index](./indexing-compound.html){%wbr%}
