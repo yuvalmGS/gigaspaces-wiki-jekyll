@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Compound
+title:  Compound Index
 categories: XAP97
 parent: indexing-overview.html
 weight: 300
