@@ -209,7 +209,7 @@ Configuring the `IDataProcessor` proxy can done in the following manner:
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="jini://**/**/space" />
+<os-core:space id="space" url="jini://*/*/space" />
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
