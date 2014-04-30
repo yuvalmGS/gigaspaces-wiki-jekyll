@@ -8,7 +8,7 @@ categories: API_DOCUMENTATION
 
 
 
-[XAP 9.7](./xap-97.html)
+[XAP 9.7](./xap-9.7.html)
 
 [XAP 9.6](./xap-96.html)
 

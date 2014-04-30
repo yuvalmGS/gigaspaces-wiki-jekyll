@@ -68,6 +68,9 @@ Here is a simple example of an archive container configuration:
   keyspace="${cassandra.keyspace}"
 />
 {% endhighlight %}
+
+
+
 {% highlight java %}
 @Archive(batchSize = 100)
 @TransactionalEvent(timeout = 120)
@@ -214,6 +217,11 @@ urlSpaceConfigurer.destroy();
 
 {% endtabcontent %}
 {% endinittab %}
+
+{%note%}
+For all possible Spring configuration options see the [schema definitions](/api_documentation/xap-{%currentversion%}.html#schemas)
+{%endnote%}
+
 
 The example above removes (takeMultiple) objects with a certain timestamp member value from space and writes them onto Cassandra.
 The takeMultiple operations are performed on the configured [GigaSpace](./the-gigaspace-interface.html) bean (in this case, if working in a clustered topology, it is performed directly on the cluster member).

@@ -21,3 +21,12 @@ parent: none
 
 {%endpanel%}
 
+
+{%anchor schemas%}
+
+{%panel title=XAP Java Schemas%}
+
+[openspaces-archive.xsd](./schema-9.7/archive.html)
+
+
+{%endpanel%}

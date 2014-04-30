@@ -1,0 +1,1732 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for "No namespace"</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
+         <!--
+        var propertiesBoxes= new Array('properties_archive-container_archive-handler', 
+				'properties_archive-container_receive-timeout', 
+				'properties_archive-container_recovery-interval', 
+				'properties_archive-container_concurrent-consumers', 
+				'properties_archive-container_max-concurrent-consumers', 
+				'properties_archive-container_max-events-per-task', 
+				'properties_archive-container_idle-task-execution-limit', 
+				'properties_archive-container_perform-snapshot', 
+				'properties_archive-container_batch-size', 
+				'properties_archive-container_use-fifo-grouping', 
+				'properties_cassandra-archive-handler_giga-space', 
+				'properties_cassandra-archive-handler_keyspace', 
+				'properties_cassandra-archive-handler_hosts', 
+				'properties_cassandra-archive-handler_port', 
+				'properties_cassandra-archive-handler_write-consistency');
+var usedByBoxes= new Array('usedBy_archive-container_archive-handler', 
+				'usedBy_archive-container_receive-timeout', 
+				'usedBy_archive-container_recovery-interval', 
+				'usedBy_archive-container_concurrent-consumers', 
+				'usedBy_archive-container_max-concurrent-consumers', 
+				'usedBy_archive-container_max-events-per-task', 
+				'usedBy_archive-container_idle-task-execution-limit', 
+				'usedBy_archive-container_perform-snapshot', 
+				'usedBy_archive-container_batch-size', 
+				'usedBy_archive-container_use-fifo-grouping', 
+				'usedBy_cassandra-archive-handler_giga-space', 
+				'usedBy_cassandra-archive-handler_keyspace', 
+				'usedBy_cassandra-archive-handler_hosts', 
+				'usedBy_cassandra-archive-handler_port', 
+				'usedBy_cassandra-archive-handler_write-consistency');
+var sourceBoxes= new Array('source_archive-container_archive-handler', 
+				'source_archive-container_receive-timeout', 
+				'source_archive-container_recovery-interval', 
+				'source_archive-container_concurrent-consumers', 
+				'source_archive-container_max-concurrent-consumers', 
+				'source_archive-container_max-events-per-task', 
+				'source_archive-container_idle-task-execution-limit', 
+				'source_archive-container_perform-snapshot', 
+				'source_archive-container_batch-size', 
+				'source_archive-container_use-fifo-grouping', 
+				'source_cassandra-archive-handler_giga-space', 
+				'source_cassandra-archive-handler_keyspace', 
+				'source_cassandra-archive-handler_hosts', 
+				'source_cassandra-archive-handler_port', 
+				'source_cassandra-archive-handler_write-consistency');
+var annotationBoxes= new Array('annotations_archive-container_archive-handler', 
+				'annotations_archive-container_receive-timeout', 
+				'annotations_archive-container_recovery-interval', 
+				'annotations_archive-container_concurrent-consumers', 
+				'annotations_archive-container_max-concurrent-consumers', 
+				'annotations_archive-container_max-events-per-task', 
+				'annotations_archive-container_idle-task-execution-limit', 
+				'annotations_archive-container_perform-snapshot', 
+				'annotations_archive-container_batch-size', 
+				'annotations_archive-container_use-fifo-grouping', 
+				'annotations_cassandra-archive-handler_giga-space', 
+				'annotations_cassandra-archive-handler_keyspace', 
+				'annotations_cassandra-archive-handler_hosts', 
+				'annotations_cassandra-archive-handler_port', 
+				'annotations_cassandra-archive-handler_write-consistency');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="archive-container_archive-handler"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b> / @archive-handler</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_archive-container_archive-handler" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_archive-container_archive-handler');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_archive-container_archive-handler" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="schema_archive.html#archiveHandlerRefType" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archiveHandlerRefType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_archive-container_archive-handler" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_archive-container_archive-handler');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_archive-container_archive-handler" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>required</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_archive-container_archive-handler" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_archive-container_archive-handler');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_archive-container_archive-handler" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_archive-container_archive-handler" type="image" src="img/btM.gif" value="-" onclick="switchState('source_archive-container_archive-handler');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_archive-container_archive-handler" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"archive-handler"</span><span class="tAN"> type=</span><span class="tAV">"archiveHandlerRefType"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:appinfo</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;tool:annotation</span><span class="tAN"> kind=</span><span class="tAV">"ref"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;tool:expected-type</span><span class="tAN"> type=</span><span class="tAV">"org.openspaces.archive.ArchiveOperationHandler"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/tool:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xsd:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">The archive handler that will archive objects taken from the Space.</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="archive-container_receive-timeout"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b> / @receive-timeout</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_archive-container_receive-timeout" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_archive-container_receive-timeout');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_archive-container_receive-timeout" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_archive-container_receive-timeout" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_archive-container_receive-timeout');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_archive-container_receive-timeout" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_archive-container_receive-timeout" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_archive-container_receive-timeout');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_archive-container_receive-timeout" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_archive-container_receive-timeout" type="image" src="img/btM.gif" value="-" onclick="switchState('source_archive-container_receive-timeout');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_archive-container_receive-timeout" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"receive-timeout"</span><span class="tAN"> type=</span><span class="tAV">"xsd:string"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Set the timeout to use for receive calls, in milliseconds. The default is 60000 ms, that is, 1 minute. NOTE: This value needs to be smaller than the transaction timeout used by the transaction manager (in the appropriate unit, of course).</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="archive-container_recovery-interval"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b> / @recovery-interval</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_archive-container_recovery-interval" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_archive-container_recovery-interval');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_archive-container_recovery-interval" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_archive-container_recovery-interval" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_archive-container_recovery-interval');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_archive-container_recovery-interval" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_archive-container_recovery-interval" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_archive-container_recovery-interval');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_archive-container_recovery-interval" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_archive-container_recovery-interval" type="image" src="img/btM.gif" value="-" onclick="switchState('source_archive-container_recovery-interval');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_archive-container_recovery-interval" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"recovery-interval"</span><span class="tAN"> type=</span><span class="tAV">"xsd:string"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Specify the interval between recovery attempts, in milliseconds. The default is 5000 ms, that is, 5 seconds.</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="archive-container_concurrent-consumers"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b> / @concurrent-consumers</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_archive-container_concurrent-consumers" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_archive-container_concurrent-consumers');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_archive-container_concurrent-consumers" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_archive-container_concurrent-consumers" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_archive-container_concurrent-consumers');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_archive-container_concurrent-consumers" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_archive-container_concurrent-consumers" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_archive-container_concurrent-consumers');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_archive-container_concurrent-consumers" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_archive-container_concurrent-consumers" type="image" src="img/btM.gif" value="-" onclick="switchState('source_archive-container_concurrent-consumers');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_archive-container_concurrent-consumers" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"concurrent-consumers"</span><span class="tAN"> type=</span><span class="tAV">"xsd:string"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Specify the number of concurrent consumers to create. Default is 1. Specifying a higher value for this setting will increase the standard level of scheduled concurrent consumers at runtime: This is effectively the minimum number of concurrent consumers which will be scheduled at any given time. This is a static setting; for dynamic scaling, consider specifying the "maxConcurrentConsumers" setting instead. Raising the number of concurrent consumers is recommendable in order to scale the consumption of events. However, note that any ordering guarantees are lost once multiple consumers are registered. In general, stick with 1 consumer for low-volume events.</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="archive-container_max-concurrent-consumers"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b> / @max-concurrent-consumers</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_archive-container_max-concurrent-consumers" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_archive-container_max-concurrent-consumers');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_archive-container_max-concurrent-consumers" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_archive-container_max-concurrent-consumers" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_archive-container_max-concurrent-consumers');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_archive-container_max-concurrent-consumers" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_archive-container_max-concurrent-consumers" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_archive-container_max-concurrent-consumers');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_archive-container_max-concurrent-consumers" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_archive-container_max-concurrent-consumers" type="image" src="img/btM.gif" value="-" onclick="switchState('source_archive-container_max-concurrent-consumers');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_archive-container_max-concurrent-consumers" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"max-concurrent-consumers"</span><span class="tAN"> type=</span><span class="tAV">"xsd:string"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Specify the maximum number of concurrent consumers to create. Default is 1. If this setting is higher than "concurrentConsumers", the listener container will dynamically schedule new consumers at runtime, provided that enough incoming messages are encountered. Once the load goes down again, the number of consumers will be reduced to the standard level ("concurrentConsumers") again. Raising the number of concurrent consumers is recommendable in order to scale the consumption of events. However, note that any ordering guarantees are lost once multiple consumers are registered. In general, stick with 1 consumer for low-volume events.</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="archive-container_max-events-per-task"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b> / @max-events-per-task</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_archive-container_max-events-per-task" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_archive-container_max-events-per-task');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_archive-container_max-events-per-task" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_archive-container_max-events-per-task" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_archive-container_max-events-per-task');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_archive-container_max-events-per-task" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_archive-container_max-events-per-task" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_archive-container_max-events-per-task');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_archive-container_max-events-per-task" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_archive-container_max-events-per-task" type="image" src="img/btM.gif" value="-" onclick="switchState('source_archive-container_max-events-per-task');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_archive-container_max-events-per-task" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"max-events-per-task"</span><span class="tAN"> type=</span><span class="tAV">"xsd:string"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Specify the maximum number of events to process in one task. More concretely, this limits the number of event reception attempts per task, which includes receive iterations that did not actually pick up a event until they hit their timeout (see "receiveTimeout" property). Default is unlimited (-1) in case of a standard TaskExecutor, and 1 in case of a SchedulingTaskExecutor that indicates a preference for short-lived tasks. Specify a number of 10 to 100 messages to balance between extremely long-lived and extremely short-lived tasks here. Long-lived tasks avoid frequent thread context switches through sticking with the same thread all the way through, while short-lived tasks allow thread pools to control the scheduling. Hence, thread pools will usually prefer short-lived tasks.</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="archive-container_idle-task-execution-limit"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b> / @idle-task-execution-limit</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_archive-container_idle-task-execution-limit" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_archive-container_idle-task-execution-limit');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_archive-container_idle-task-execution-limit" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_archive-container_idle-task-execution-limit" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_archive-container_idle-task-execution-limit');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_archive-container_idle-task-execution-limit" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_archive-container_idle-task-execution-limit" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_archive-container_idle-task-execution-limit');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_archive-container_idle-task-execution-limit" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_archive-container_idle-task-execution-limit" type="image" src="img/btM.gif" value="-" onclick="switchState('source_archive-container_idle-task-execution-limit');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_archive-container_idle-task-execution-limit" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"idle-task-execution-limit"</span><span class="tAN"> type=</span><span class="tAV">"xsd:string"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Specify the limit for idle executions of a receive task, not having received any event within its execution. If this limit is reached, the task will shut down and leave receiving to other executing tasks (in case of dynamic scheduling; see the "maxConcurrentConsumers" setting). Default is 1. Within each task execution, a number of event reception attempts (according to the "maxEventsPerTask" setting) will each wait for an incoming event (according to the "receiveTimeout" setting). If all of those receive attempts in a given task return without an event, the task is considered idle with respect to received events. Such a task may still be rescheduled; however, once it reached the specified "idleTaskExecutionLimit", it will shut down (in case of dynamic scaling). Raise this limit if you encounter too frequent scaling up and down. With this limit being higher, an idle consumer will be kept around longer, avoiding the restart of a consumer once a new load of messages comes in. Alternatively, specify a higher "maxMessagePerTask" and/or "receiveTimeout" value, which will also lead to idle consumers being kept around for a longer time (while also increasing the average execution time of each scheduled task).</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="archive-container_perform-snapshot"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b> / @perform-snapshot</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_archive-container_perform-snapshot" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_archive-container_perform-snapshot');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_archive-container_perform-snapshot" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:boolean</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_archive-container_perform-snapshot" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_archive-container_perform-snapshot');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_archive-container_perform-snapshot" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_archive-container_perform-snapshot" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_archive-container_perform-snapshot');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_archive-container_perform-snapshot" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_archive-container_perform-snapshot" type="image" src="img/btM.gif" value="-" onclick="switchState('source_archive-container_perform-snapshot');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_archive-container_perform-snapshot" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"perform-snapshot"</span><span class="tAN"> type=</span><span class="tAV">"xsd:boolean"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">If set to true will perform snapshot operation on the provided template before invoking the receive operation. Defaults to true.</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="archive-container_batch-size"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b> / @batch-size</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_archive-container_batch-size" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_archive-container_batch-size');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_archive-container_batch-size" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_archive-container_batch-size" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_archive-container_batch-size');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_archive-container_batch-size" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_archive-container_batch-size" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_archive-container_batch-size');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_archive-container_batch-size" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_archive-container_batch-size" type="image" src="img/btM.gif" value="-" onclick="switchState('source_archive-container_batch-size');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_archive-container_batch-size" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"batch-size"</span><span class="tAN"> type=</span><span class="tAV">"xsd:string"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Sets the maximum number of objects to hand over to the archiver in one method call. This parameter has affect only if the archive handler supports atomic batch archiving. Default is 50 See also {@link ArchiveOperationHandler#supportsAtomicBatchArchiving()}</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="archive-container_use-fifo-grouping"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b> / @use-fifo-grouping</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_archive-container_use-fifo-grouping" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_archive-container_use-fifo-grouping');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_archive-container_use-fifo-grouping" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:boolean</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_archive-container_use-fifo-grouping" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_archive-container_use-fifo-grouping');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_archive-container_use-fifo-grouping" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>simple</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_archive-container_use-fifo-grouping" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_archive-container_use-fifo-grouping');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_archive-container_use-fifo-grouping" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#archive-container" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">archive-container</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_archive-container_use-fifo-grouping" type="image" src="img/btM.gif" value="-" onclick="switchState('source_archive-container_use-fifo-grouping');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_archive-container_use-fifo-grouping" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"use-fifo-grouping"</span><span class="tAN"> type=</span><span class="tAV">"xsd:boolean"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Configures the archive container to work with FIFO grouping enabled.</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="cassandra-archive-handler_giga-space"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#cassandra-archive-handler" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">cassandra-archive-handler</a></b> / @giga-space</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_cassandra-archive-handler_giga-space" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_cassandra-archive-handler_giga-space');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_cassandra-archive-handler_giga-space" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>gigaSpaceRefType</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_cassandra-archive-handler_giga-space" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_cassandra-archive-handler_giga-space');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_cassandra-archive-handler_giga-space" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>required</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_cassandra-archive-handler_giga-space" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_cassandra-archive-handler_giga-space');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_cassandra-archive-handler_giga-space" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#cassandra-archive-handler" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">cassandra-archive-handler</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_cassandra-archive-handler_giga-space" type="image" src="img/btM.gif" value="-" onclick="switchState('source_cassandra-archive-handler_giga-space');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_cassandra-archive-handler_giga-space" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"giga-space"</span><span class="tAN"> type=</span><span class="tAV">"os-core:gigaSpaceRefType"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:appinfo</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;tool:annotation</span><span class="tAN"> kind=</span><span class="tAV">"ref"</span><span class="tEl">&gt;</span><span class="tI">
+        </span><span class="tEl">&lt;tool:expected-type</span><span class="tAN"> type=</span><span class="tAV">"org.openspaces.core.GigaSpace"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;/tool:annotation&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xsd:appinfo&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">The GigaSpace which controls which Space this archive handler will read entry type metadata from. Required.</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="cassandra-archive-handler_keyspace"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#cassandra-archive-handler" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">cassandra-archive-handler</a></b> / @keyspace</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_cassandra-archive-handler_keyspace" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_cassandra-archive-handler_keyspace');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_cassandra-archive-handler_keyspace" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_cassandra-archive-handler_keyspace" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_cassandra-archive-handler_keyspace');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_cassandra-archive-handler_keyspace" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>required</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_cassandra-archive-handler_keyspace" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_cassandra-archive-handler_keyspace');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_cassandra-archive-handler_keyspace" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#cassandra-archive-handler" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">cassandra-archive-handler</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_cassandra-archive-handler_keyspace" type="image" src="img/btM.gif" value="-" onclick="switchState('source_cassandra-archive-handler_keyspace');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_cassandra-archive-handler_keyspace" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"keyspace"</span><span class="tAN"> type=</span><span class="tAV">"xsd:string"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Specify the cassandra keyspace name. Required.</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="cassandra-archive-handler_hosts"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#cassandra-archive-handler" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">cassandra-archive-handler</a></b> / @hosts</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_cassandra-archive-handler_hosts" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_cassandra-archive-handler_hosts');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_cassandra-archive-handler_hosts" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_cassandra-archive-handler_hosts" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_cassandra-archive-handler_hosts');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_cassandra-archive-handler_hosts" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>required</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_cassandra-archive-handler_hosts" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_cassandra-archive-handler_hosts');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_cassandra-archive-handler_hosts" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#cassandra-archive-handler" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">cassandra-archive-handler</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_cassandra-archive-handler_hosts" type="image" src="img/btM.gif" value="-" onclick="switchState('source_cassandra-archive-handler_hosts');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_cassandra-archive-handler_hosts" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"hosts"</span><span class="tAN"> type=</span><span class="tAV">"xsd:string"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Specify comma delimited list of cassandra host names or ip addresses.</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="cassandra-archive-handler_port"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#cassandra-archive-handler" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">cassandra-archive-handler</a></b> / @port</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_cassandra-archive-handler_port" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_cassandra-archive-handler_port');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_cassandra-archive-handler_port" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_cassandra-archive-handler_port" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_cassandra-archive-handler_port');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_cassandra-archive-handler_port" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>optional</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_cassandra-archive-handler_port" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_cassandra-archive-handler_port');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_cassandra-archive-handler_port" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#cassandra-archive-handler" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">cassandra-archive-handler</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_cassandra-archive-handler_port" type="image" src="img/btM.gif" value="-" onclick="switchState('source_cassandra-archive-handler_port');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_cassandra-archive-handler_port" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"port"</span><span class="tAN"> type=</span><span class="tAV">"xsd:string"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Specify the cassandra port. Assumes same port for all cassandra hosts. If not specified uses default cassandra port.</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="cassandra-archive-handler_write-consistency"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="schema_archive.html#cassandra-archive-handler" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">cassandra-archive-handler</a></b> / @write-consistency</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Annotations</b></div>
+                           <div class="floatRight"><input id="button_annotations_cassandra-archive-handler_write-consistency" type="image" src="img/btM.gif" value="-" onclick="switchState('annotations_cassandra-archive-handler_write-consistency');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="annotations_cassandra-archive-handler_write-consistency" style="display:block"></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b>xsd:string</b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_cassandra-archive-handler_write-consistency" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_cassandra-archive-handler_write-consistency');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_cassandra-archive-handler_write-consistency" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>optional</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_cassandra-archive-handler_write-consistency" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_cassandra-archive-handler_write-consistency');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_cassandra-archive-handler_write-consistency" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="schema_archive.html#cassandra-archive-handler" target="mainFrame" title="http://www.openspaces.org/schema/archive" onclick="updatePageTitle('Schema documentation for namespace http://www.openspaces.org/schema/archive')">cassandra-archive-handler</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_cassandra-archive-handler_write-consistency" type="image" src="img/btM.gif" value="-" onclick="switchState('source_cassandra-archive-handler_write-consistency');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_cassandra-archive-handler_write-consistency" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xsd:attribute</span><span class="tAN"> name=</span><span class="tAV">"write-consistency"</span><span class="tAN"> type=</span><span class="tAV">"xsd:string"</span><span class="tAN"> use=</span><span class="tAV">"optional"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xsd:annotation</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xsd:documentation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">Specify the cassandra write consistency level. Supported values are ONE, QUORUM, ALL, ANY, EACH_QUORUM, LOCAL_QUORUM</span><span class="tEl">&lt;/xsd:documentation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xsd:annotation&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xsd:attribute&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.
+         </div>
+      </div><script type="text/javascript">
+         <!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>
