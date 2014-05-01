@@ -567,10 +567,12 @@ This example deploys a partitioned data grid with two partitions and a backup wh
             number-of-instances="2" number-of-backups="1" max-instances-per-zone="A/1,B/1"
             primary-zone="A">
             
-    <sla:requirements >
-        <sla:zone name="A"/>
-        <sla:zone name="B"/>
-    </sla:requirements>
+    <os-sla:requirements >
+        <os-sla:zone name="A"/>
+        <os-sla:zone name="B"/>
+    </os-sla:requirements>
+    
+</os-sla:sla>
 {%endhighlight%}
 
 *pu.xml*
