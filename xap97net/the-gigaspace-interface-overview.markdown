@@ -31,10 +31,8 @@ Describes the basic XAP API for interacting with the space
 - [Change API](./change-api.html){%wbr%}
 This page covers the Change API, its usage and behavior.
 
-{%comment%}
 - [Counters](./the-space-counters.html){%wbr%}
 Real Time atomic counter using the XAP.change API
-{%endcomment%}
 
 - [Notifications](./the-space-notifications.html){%wbr%}
 Space notifications
