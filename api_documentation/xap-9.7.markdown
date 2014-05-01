@@ -13,9 +13,17 @@ parent: none
 
 [Javadoc](http://www.gigaspaces.com/docs/JavaDoc9.7/index.html) -- _GigaSpaces XAP API, including all components_
 
+**gs.xml mapping schema**
+
+[gigaspaces-metadata.dtd](./schema-9.7/gs.html)
+
 **XAP Schemas**
 
-[Archive Container, Cassandra](./schema-9.7/archive.html)
+{: .table .table-bordered}
+|[openspaces-core.xsd](./schema-9.7/core.html)|[openspaces-admin.xsd](./schema-9.7/admin.html)|[openspaces-archive.xsd](./schema-9.7/archive.html)|
+|[openspaces-events.xsd](./schema-9.7/events.html)|[openspaces-gateway.xsd](./schema-9.7/gateway.html)|[openspaces-jdbc.xsd](./schema-9.7/jdbc.html)|
+|[openspaces-jms.xsd](./schema-9.7/jms.html)|[openspaces-remoting.xsd](./schema-9.7/remoting.html)|[openspaces-sla.xsd](./schema-9.7/sla.html)|
+
 
 {%endpanel%}
 

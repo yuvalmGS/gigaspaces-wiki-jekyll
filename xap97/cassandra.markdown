@@ -29,7 +29,7 @@ Cassandra is in use at Digg, Facebook, Twitter, Reddit, Rackspace, Cloudkick, Ci
 A MongoDB Space Persistency Solution
 
 - [Archive Handler](./cassandra-archive-operation-handler.html){%wbr%}
-Archives space objects to MongoDB.
+Archives space objects to a Cassandra backend.
 
 
 {%comment%}
