@@ -6,7 +6,7 @@ parent: transaction-overview.html
 weight: 500
 ---
 
-
+{%summary%}{%endsummary%}
 {%comment%}
 {% summary %}In the pessimistic locking approach, your program must explicitly obtain a lock using a transaction on one or more objects before making any changes.{% endsummary %}
 # Overview
