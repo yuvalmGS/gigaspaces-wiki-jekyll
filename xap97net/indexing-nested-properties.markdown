@@ -5,6 +5,7 @@ categories: XAP97NET
 parent: indexing-overview.html
 weight: 100
 ---
+{% summary %} {% endsummary %}
 
 An index can be defined on a nested property to improve performance of nested queries - this is highly recommended.
 
