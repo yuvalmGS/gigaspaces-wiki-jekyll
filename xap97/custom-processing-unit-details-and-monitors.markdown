@@ -1,13 +1,13 @@
 ---
 layout: post97
-title:  Custom Processing Unit Details and Monitors
+title:  Custom Processing Unit
 categories: XAP97
-parent: the-processing-unit-structure-and-configuration.html
-weight: 300
+parent: the-processing-unit-overview.html
+weight: 400
 ---
 
-{% compositionsetup %}
-{% summary page %}Processing units can expose custom details and monitors{% endsummary %}
+
+{% summary page %} {% endsummary %}
 
 A Processing Unit can implement the `ServiceDetailsProvider` and `ServiceMonitorsProvider` interfaces to expose information to calling APIs or to be viewable in the web-UI.
 

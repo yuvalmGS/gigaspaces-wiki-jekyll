@@ -20,7 +20,7 @@ GigaSpaces Security provides comprehensive support for securing your data, servi
 {% endcolumn %}
 {% column width=20% %}
 {%align center%}
-[<img src="/attachment_files/security_ovreview.jpg" width="200" height="200">](/attachment_files/security_ovreview.jpg)
+{%popup /attachment_files/security_ovreview.jpg%}
 {%endalign%}
 {% endcolumn %}
 {% endsection %}

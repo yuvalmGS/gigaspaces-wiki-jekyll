@@ -1,15 +1,15 @@
 ---
 layout: post97
-title:  Configuring Processing Unit Elements
+title:  Configuration
 categories: XAP97
-weight: 100
-parent: the-processing-unit-structure-and-configuration.html
+weight: 200
+parent: the-processing-unit-overview.html
 ---
 
 
-{% summary  %}This page describes the processing unit deployment configuration file (`pu.xml`){% endsummary %}
+{% summary  %} {% endsummary %}
 
-# Overview
+
 
 The processing unit's configuration is expressed using a number of configuration files, namely `pu.xml, sla.xml` and `pu.properties`, which are typically located under the `META-INF/spring` directory within the processing unit jar file.
 
@@ -105,10 +105,10 @@ Here's a sample `pu.xml` configuration file. Note the comments in the file which
 
 To import one more more xml files into your pu.xml you can use the following:
 
-{% highlight java %}
-    <import resource="classpath*:/applicationContext-component.xml" />
-	<import resource="classpath*:/applicationContext-matching.xml"/>
-	<import resource="classpath*:/applicationContext-services.xml"/>
-	<import resource="classpath*:/applicationContext-jmx.xml" />
-	<import resource="classpath*:/applicationContext-containers.xml"/>
+{% highlight xml %}
+<import resource="classpath*:/applicationContext-component.xml" />
+<import resource="classpath*:/applicationContext-matching.xml"/>
+<import resource="classpath*:/applicationContext-services.xml"/>
+<import resource="classpath*:/applicationContext-jmx.xml" />
+<import resource="classpath*:/applicationContext-containers.xml"/>
 {% endhighlight %}

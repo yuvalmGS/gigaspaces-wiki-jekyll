@@ -1,19 +1,19 @@
 ---
 layout: post97
-title:  The Processing Unit Structure and Configuration
+title:  Directory Structure
 categories: XAP97
-parent: packaging-and-deployment.html
+parent: the-processing-unit-overview.html
 weight: 100
 ---
 
 
-{% summary   %}This page describes the processing unit directory structure{% endsummary %}
+{% summary   %}{% endsummary %}
 
 # The Processing Unit Jar File
 
 Much like a JEE web application or an OSGi bundle, The Processing Unit is packaged as a .jar file and follows a certain directory structure which enables the GigaSpaces runtime environment to easily locate the deployment descriptor and load its classes and the libraries it depends on. A typical processing unit looks as follows:
 
-{% highlight java %}
+{% highlight console %}
 |----META-INF
 |--------spring
 |------------pu.xml
@@ -33,9 +33,9 @@ Much like a JEE web application or an OSGi bundle, The Processing Unit is packag
 
 The processing unit jar file is composed of several key elements:
 
-- **`META-INF/spring/pu.xml`** (mandatory): This is the processing unit's deployment descriptor, which is in fact a [Spring](http://www.springframework.org) context XML configuration with a number of GigaSpaces-specific namespace bindings. These bindings include GigaSpaces specific components (such as the space for example). The `pu.xml` file typically contains definitions of GigaSpaces components ([space](/product_overview/the-in-memory-data-grid.html), [event containers](./messaging-support.html), [remote service exporters](./space-based-remoting.html)) and user defined beans which would typically interact with those components (e.g. an event handler to which the event containers delegate the events, or a service beans which is exposed to remote clients by a remote service exporter).
+- **`META-INF/spring/pu.xml`** (mandatory): This is the processing unit's deployment descriptor, which is in fact a [Spring](http://www.springframework.org) context XML configuration with a number of GigaSpaces-specific namespace bindings. These bindings include GigaSpaces specific components (such as the space for example). The `pu.xml` file typically contains definitions of GigaSpaces components ([space](/product_overview/the-in-memory-data-grid.html), [event containers](./event-processing.html), [remote service exporters](./space-based-remoting.html)) and user defined beans which would typically interact with those components (e.g. an event handler to which the event containers delegate the events, or a service beans which is exposed to remote clients by a remote service exporter).
 
-- **`META-INF/spring/sla.xml`** (not mandatory): This file contains SLA definitions for the processing unit (i.e. number of instances, number of backup and deployment requirements). Note that this is optional, and can be replaced with an <os:sla> definition in the `pu.xml` file. If neither is present, the [default SLA](./configuring-the-processing-unit-sla.html) will be applied. Note, the `sla.xml` can also be placed at the root of the processing unit. SLA definitions can be also specified at the deploy time via the [deploy CLI](./deploy---gigaspaces-cli.html) or [deploy API](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsm/GridServiceManager).
+- **`META-INF/spring/sla.xml`** (not mandatory): This file contains SLA definitions for the processing unit (i.e. number of instances, number of backup and deployment requirements). Note that this is optional, and can be replaced with an `<os:sla>` definition in the `pu.xml` file. If neither is present, the [default SLA](./configuring-the-processing-unit-sla.html) will be applied. Note, the `sla.xml` can also be placed at the root of the processing unit. SLA definitions can be also specified at the deploy time via the [deploy CLI](./deploy-command-line-interface.html) or [deploy API](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/admin/gsm/GridServiceManagers.html).
 
 {% note %}
 SLA definitions are only enforced when deploying the processing unit to the GigaSpaces service grid, since this environment actively manages and controls the deployment using the [GSM](/product_overview/service-grid.html#gsm). When [running within your IDE](./running-and-debugging-within-your-ide.html) or in [standalone mode](./running-in-standalone-mode.html) these definitions are ignored.
@@ -139,7 +139,7 @@ In general, classloaders are created dynamically when deploying a PU into a GSC.
 
 Here is the structure of the class loaders when several processing units are deployed on the Service Grid (GSC):
 
-{% highlight java %}
+{% highlight console %}
 Bootstrap (Java)
                   |
                System (Java)
@@ -155,7 +155,7 @@ The following table shows which user controlled locations end up in which class 
 | Class Loader | User Locations | Built in Jar Files |
 |:-------------|:---------------|:-------------------|
 | Common | \[GSRoot\]/lib/platform/ext/\*.jar | gs-runtime.jar |
-| Processing Unit Instance (Service Class Loader) | \[PU\]/, \[PU\]/lib/\*.jar, \[PU\]/META-INF/MANIFEST.MF Class-Path Entry, \[GSRoot\]/lib/optional/pu-common/\*.jar | gs-openspaces.jar, org.springframework\*.jar |
+| Processing Unit Instance (Service Class Loader) | \[PU\], \[PU\]/lib/\*.jar, \[PU\]/META-INF/MANIFEST.MF Class-Path Entry, \[GSRoot\]/lib/optional/pu-common/\*.jar | gs-openspaces.jar, org.springframework\*.jar |
 
 In terms of class loader delegation model, the service (PU instance) class loader uses a **parent last delegation mode**. This means that the processing unit instance class loader will first try and load classes from its own class loader, and only if they are not found, will delegate up to the parent class loader.
 
@@ -167,7 +167,7 @@ When deploying applications using native libraries you should place the Java lib
 
 For applications that are using relatively large amount of third party libraries (PU using large amount of jars) the default permanent generation space size may not be adequate. In such a case, you should increase the permanent generation space size. Here are suggested values:
 
-{% highlight java %}
+{% highlight console %}
 -XX:PermSize=512m -XX:MaxPermSize=512m
 {% endhighlight %}
 
@@ -175,11 +175,11 @@ For applications that are using relatively large amount of third party libraries
 
 You may add additional jars to the processing unit classpath by having a manifest file located at `META-INF/MANIFEST.MF` and defining the property `Class-Path` as shown in the following example (using a simple `MANIFEST.MF` file):
 
-{% highlight java %}
+{% highlight console %}
 Manifest-Version: 1.0
 Class-Path: /home/user1/java/libs/user-lib.jar
  lib/platform/jdbc/hsqldb.jar
- ${MY\_LIBS\_DIRECTORY}/user-lib2.jar
+ ${MY_LIBS_DIRECTORY}/user-lib2.jar
  file:/home/user2/libs/lib.jar
 
 [REQUIRED EMPTY NEW LINE AT EOF]
@@ -189,7 +189,7 @@ In the previous example, the `Class-Path` property contains 4 different entries:
 
 1. `/home/user1/java/libs/user-lib.jar` - This entry uses an absolute path and will be resolved as such.
 1. `lib/platform/jdbc/hsqldb.jar` - This entry uses a relative path and as such its path is resolved in relative to the gigaspaces home directory.
-1. `${MY\_LIBS\_DIRECTORY}/user-lib2.jar` - In this entry the `${MY\_LIBS\_DIRECTORY}` will be resolved if an environment variable named `MY_LIBS_DIRECTORY` exists, and will be expanded appropriately.
+1. `${MY_LIBS_DIRECTORY}/user-lib2.jar` - In this entry the `${MY_LIBS_DIRECTORY}` will be resolved if an environment variable named `MY_LIBS_DIRECTORY` exists, and will be expanded appropriately.
 1. `file:/home/user2/libs/lib.jar` - This entry uses URL syntax
 
 ## The `pu-common` Directory
@@ -199,7 +199,7 @@ The `pu-common` directory may contain a jar file with a manifest file as describ
 ## Further details
 
 1. If an entry points to a non existing location, it will be ignored.
-1. If an entry included the `${SOME\_ENV\_VAL}` placeholder and there is no enviroment variable named `SOME\_ENV\_VAL`, it will be ignored.
+1. If an entry included the `${SOME_ENV_VAL}` placeholder and there is no enviroment variable named `SOME_ENV_VAL`, it will be ignored.
 1. Only file URLs are supported. (i.e http, etc... will be ignored)
 
 Further details about the manifest file can be found [here](http://docs.oracle.com/javase/6/docs/technotes/guides/jar/jar.html#JAR%20Manifest).

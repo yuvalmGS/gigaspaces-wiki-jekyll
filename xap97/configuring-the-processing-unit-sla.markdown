@@ -1,15 +1,15 @@
 ---
 layout: post97
-title:  Configuring SLA
+title:  SLA Definition
 categories: XAP97
-parent: the-processing-unit-structure-and-configuration.html
-weight: 200
+parent: the-processing-unit-overview.html
+weight: 300
 ---
 
 
-{% summary   %}The GigaSpaces runtime environment, aka Service Grid, provides SLA-driven capabilities when deploying and running processing units by using the available [GSCs](/product_overview/service-grid.html#gsc) as a dynamic pool of processes which can host the processing unit{% endsummary %}
+{% summary   %} {% endsummary %}
 
-# Overview
+
 
 The GigaSpaces runtime environment (A.K.A the Service Grid) provides SLA-driven capabilities via the [GSM](/product_overview/service-grid.html#gsm) and the [GSC](/product_overview/service-grid.html#gsc) runtime components. The GSC is responsible for running one or more Processing Units; while the GSM is responsible for analyzing the deployment and provisioning the processing unit instances to the available GSCs.
 
@@ -154,14 +154,19 @@ When applied to a processing unit which contains a space with primary-backup sem
 
 The most common usage of the max-instances feature is when using a processing unit which contains a space with primary-backup semantics. By setting its value to `1`, you ensure that a primary and its backup(s) cannot be provisioned to the same JVM (GSC) / physical machine.
 
-{% tip %}
-The `max-instances-per-vm` means for a PU with an embedded space the max amount of instances per partition. A partition may have primary or backup instance. The `max-instances-per-vm=1` means you won't have primary and a backup of the same partition provisioned into the same GSC. You may have multiple partitions with primary or backup instances provisioned into the same GSC. You can't limit the amount of instances from different partitions a GSC may host. If you have enough GSCs (as the amount of partitions X 2) you will end up having a single instance per GSC.
+{% vbar %}
+The `max-instances-per-vm` means for a PU with an embedded space the max amount of instances per partition. A partition may have primary or backup instance. The `max-instances-per-vm=1` means you won't have primary and a backup of the same partition provisioned into the same GSC. You may have multiple partitions with primary or backup instances provisioned into the same GSC. You can't limit the amount of instances from different partitions a GSC may host.
+
+If you have enough GSCs (as the amount of partitions X 2) you will end up having a single instance per GSC.
 If you won't have enough GSCs we will distribute the primary or backup instances of the different partitions across all the existing GSCs, and will do our best to distribute primary instances in even manner across all the GSCs on all the machines.
-If you will increase the amount of GSCs after the initial deploy you will have to "re-balance" the system - meaning; distribute all the primaries across all the GSCs. You may perform this activity via API or automatically by using the ESM. Rebalancing the instances will increase the capacity of the data-grid (more GSCs hosting the data-grid).
+If you will increase the amount of GSCs after the initial deploy you will have to "re-balance" the system - meaning; distribute all the primaries across all the GSCs.
+
+You may perform this activity via API or automatically by using the ESM. Rebalancing the instances will increase the capacity of the data-grid (more GSCs hosting the data-grid).
 The rebalance concept is based on the assumption that you had initially more partitions that GSCs. We call the ratio between partitions to GSCs the scaling factor; meaning how much your data-grid can expand itself without any shutdown and without increasing the amount of partitions.
+
 Example: you start with 4 GSCs and 20 partitions with backups (40 instances) which means each GSC will host initially 10 instances and may end up with 40 GSCs (after one or more re-balance operations) where each will host a single instance. With this example we have increased the capacity of the data grid to be 10 times larger without downtime while the amount of partitions remain the same.
 See the [capacity planning](/sbp/capacity-planning.html) for more details.
-{% endtip %}
+{% endvbar %}
 
 Here is an example of setting the `max-instances-per-vm` parameter:
 

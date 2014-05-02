@@ -3,7 +3,7 @@ layout: post97
 title:  Deploying onto the Service Grid
 categories: XAP97
 parent: deploying-and-running-the-processing-unit.html
-weight: 100
+weight: 200
 ---
 
 {% summary%}Explains how to deploy your processing unit onto the GigaSpaces [Service Grid](./the-runtime-environment.html) to get automated SLA management and self-healing capabilities{% endsummary %}
