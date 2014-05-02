@@ -6,6 +6,7 @@ parent: task-execution-overview.html
 weight: 200
 ---
 
+{% summary  %}  {% endsummary %}
 
 {%section%}
 {%column width=60% %}
